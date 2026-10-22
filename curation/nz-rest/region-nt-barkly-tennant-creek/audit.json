@@ -1,0 +1,129 @@
+[
+ {
+  "name": "Barkly Tableland",
+  "wiki": "Barkly Tableland",
+  "views": 5147,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Barkly Tableland",
+   "wiki": "Barkly Tableland",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Barkly_Tableland",
+    "https://northernterritory.com/tennant-creek-and-barkly-region/destinations"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Barkly_Tableland"
+   ],
+   "note": "Region: the vast cattle-country plain between Tennant Creek and Queensland (a destination-name candidate, not a spot).",
+   "views": 5147,
+   "coordinates": {
+    "lat": -19.64722222,
+    "lng": 134.19027778
+   },
+   "coordinates_source": "wikipedia:Barkly Tableland"
+  }
+ },
+ {
+  "name": "Barrow Creek Hotel",
+  "wiki": null,
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Barrow Creek Hotel",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "counted_sources": [],
+   "other_sources": [
+    "https://discovercentralaustralia.com/barrow-creek-hotel",
+    "https://www.exploroz.com/places/77297/nt+barrow-creek"
+   ],
+   "note": "Pub: historic 1926 pub and roadhouse with a tin ceiling, cellar and walls covered in visitors' messages and business cards (a venue; judge against the venue rule).",
+   "views": 0
+  }
+ },
+ {
+  "name": "Devils Marbles",
+  "wiki": "Karlu Karlu / Devils Marbles Conservation Reserve",
+  "views": 14079,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Devils Marbles",
+   "wiki": "Karlu Karlu / Devils Marbles Conservation Reserve",
+   "coordinates": {
+    "lat": -20.566667,
+    "lng": 134.266667
+   },
+   "coordinates_source": "wikivoyage:Barkly_Tableland listing (Devils Marbles Conservation Reserve)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Karlu_Karlu",
+    "https://en.wikivoyage.org/wiki/Devils_Marbles_Conservation_Reserve",
+    "https://northernterritory.com/tennant-creek-and-barkly-region/destinations"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Devils_Marbles"
+   ],
+   "note": "Landscape: a conservation reserve of granite boulders balanced on one another, a sacred Warumungu site about 105 km south of Tennant Creek, with a walking path and camping.",
+   "views": 14079
+  }
+ },
+ {
+  "name": "Heartbreak Hotel",
+  "wiki": "Cape Crawford",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Heartbreak Hotel",
+   "wiki": "Cape Crawford",
+   "coordinates": {
+    "lat": -16.66666667,
+    "lng": 135.8
+   },
+   "coordinates_source": "wikipedia:Cape Crawford",
+   "counted_sources": [
+    "https://northernterritory.com/tours/lost-city-helicopters"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cape_Crawford"
+   ],
+   "note": "Roadhouse: the Heartbreak Hotel at the Carpentaria and Tablelands highway junction, base for Lost City helicopter flights (Cape Crawford area). Coordinates are the Cape Crawford locality point, not the hotel; fix from OSM.",
+   "views": 0
+  }
+ },
+ {
+  "name": "Iytwelepenty / Davenport Range National Park",
+  "wiki": "Iytwelepenty / Davenport Range National Park",
+  "views": 704,
+  "counted_sources": 4,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Iytwelepenty / Davenport Range National Park",
+   "wiki": "Iytwelepenty / Davenport Range National Park",
+   "coordinates": {
+    "lat": -20.86,
+    "lng": 134.941
+   },
+   "coordinates_source": "wikipedia:Iytwelepenty_/_Davenport_Range_National_Park (park centre; visitor point to resolve)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Barkly_Tableland",
+    "https://en.wikivoyage.org/wiki/Tennant_Creek",
+    "https://northernterritory.com/tennant-creek-and-barkly-region/destinations",
+    "https://nt.gov.au/parks/find-a-park/iytwelepenty-davenport-ranges-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Iytwelepenty_/_Davenport_Range_National_Park"
+   ],
+   "note": "National park: rugged ranges east of Tennant Creek with 4WD tracks, permanent waterholes and rock wallabies, about 1,120 km2 (formerly Davenport Murchison National Park).",
+   "views": 704
+  }
+ }
+]

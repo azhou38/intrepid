@@ -1,0 +1,549 @@
+{
+ "spots": {
+  "uluru-kata-tjuta-national-park-1": {
+   "name": "Uluru",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "Sandstone monolith sacred to Anangu, with a 9.8 km base walk and sunrise and sunset viewing areas.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.344857,
+    "longitude": 131.032517
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "OSM natural=peak 'Uluṟu' (Nominatim/Photon); Wikipedia Uluru (-25.345,131.036) 330 m away is a rounded reference. MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge. Climb permanently closed, not mentioned."
+  },
+  "uluru-kata-tjuta-national-park-2": {
+   "name": "Kata Tjuta",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Group of 36 domed rock formations west of Uluru, sacred to Anangu, with walks through its gorges.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul); leave 45 min before closing",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.297893,
+    "longitude": 130.733613
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "OSM natural=peak 'Kata Tjuṯa' (Photon). MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge."
+  },
+  "uluru-kata-tjuta-national-park-3": {
+   "name": "Uluru Base Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Flat 9.8 km track around the base of Uluru, taking three to four hours, with sacred sites marked by signs.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.337011,
+    "longitude": 131.048479
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "OSM node on the route ('Northern Uluru Base Walk' marker, emergency=phone). Only a marker, not the route midpoint: the full loop is not available as a way (Overpass down). MEDIUM, flagged for review.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge. Loop: the marker is on the north-east side of the loop."
+  },
+  "uluru-kata-tjuta-national-park-4": {
+   "name": "Valley of the Winds Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Grade 4 circuit of about 7.4 km among the Kata Tjuta domes to two lookouts, taking three to four hours.",
+   "hours": "Park hours; closes at Karu Lookout from 11 AM when 36°C or more is forecast",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.284031,
+    "longitude": 130.746391
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "Midpoint of OSM way 27444533 'Valley of the Winds Walk' (2.4 km mapped of the walk). MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge. Draft said 2.5-3.5 h; Parks Australia gives 3-4 h."
+  },
+  "uluru-kata-tjuta-national-park-5": {
+   "name": "Uluru-Kata Tjuta Cultural Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Visitor and cultural centre near the base of Uluru, with Anangu art, galleries, exhibitions and a café.",
+   "hours": "7:00 AM – 5:45 PM daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -25.35977,
+    "longitude": 131.017413
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "OSM information=office 'Uluṟu-Kata Tjuṯa Cultural Centre' (Photon); a tourism=information node 'Visitor's Center' is 47 m away. MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge. Centre entry is free once inside the park."
+  },
+  "uluru-kata-tjuta-national-park-6": {
+   "name": "Field of Light",
+   "icon": "💡",
+   "category": "entertainment",
+   "bio": "Bruce Munro's light installation of illuminated stems near Yulara, seen at sunrise or after dark.",
+   "hours": "Sunrise and after-dark sessions (times vary by season)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -25.253621,
+    "longitude": 130.997032
+   },
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "AUD",
+   "ticketUrl": "https://www.ayersrockresort.com.au/fieldoflight",
+   "coordinates_source": "OSM tourism=artwork 'Field of Light' (Photon) + Commons geotag median 0.1 m... within 20 m. HIGH.",
+   "notes": "Adult general admission about $50 (operator page snippet, April 2025-Mar 2026 band; 2026-27 price not confirmed). Outside the park gate: no park pass needed. Star Pass and dinner packages cost more."
+  },
+  "uluru-kata-tjuta-national-park-7": {
+   "name": "Talinguru Nyakunytjaku",
+   "icon": "🌅",
+   "category": "viewpoint",
+   "bio": "Sunrise viewing area for Uluru and Kata Tjuta, with platforms and a 1.4 km circuit of two short walks.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.367573,
+    "longitude": 131.063859
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "OSM tourism=viewpoint 'Talinguru Nyakunytjaku Sunrise Viewpoint' (Photon). MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge."
+  },
+  "uluru-kata-tjuta-national-park-8": {
+   "name": "Mala Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2 km return walk from the Mala car park along Uluru's base to Kantju Gorge, with a daily ranger walk.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul); ranger walk 8 AM (Oct–Apr), 10 AM (May–Sep)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.340211,
+    "longitude": 131.027983
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "Midpoint of OSM way 227348304 'Mala Walk' (159 m mapped). MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge. Ranger-guided Mala walk is free with the pass."
+  },
+  "uluru-kata-tjuta-national-park-9": {
+   "name": "Kuniya Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "One-kilometre return walk to Mutitjulu Waterhole on Uluru's south side, with rock art and a creation story.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -25.352391,
+    "longitude": 131.033396
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "Midpoint of OSM way 25872901 'Kuniya Walk' (120 m mapped). MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge."
+  },
+  "uluru-kata-tjuta-national-park-10": {
+   "name": "Walpa Gorge Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2.6 km return walk into a gorge between two Kata Tjuta domes, with steep rock walls either side.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.300398,
+    "longitude": 130.72512
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "Midpoint of OSM way 17610762 'Walpa Gorge Walk' (289 m mapped). MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge."
+  },
+  "uluru-kata-tjuta-national-park-11": {
+   "name": "Yulara",
+   "icon": "🏨",
+   "category": "landmark",
+   "bio": "Resort village just outside the park, the base for accommodation, dining, tours and flights to Uluru.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -25.241011,
+    "longitude": 130.986941
+   },
+   "wiki": "Yulara, Northern Territory",
+   "free": true,
+   "ticketUrl": "https://www.ayersrockresort.com.au/",
+   "coordinates_source": "OSM place=town 'Yulara' (Photon). MEDIUM.",
+   "notes": "Outside the park gate, so no pass. Imalung Lookout is 57 m away (>25 m)."
+  },
+  "uluru-kata-tjuta-national-park-12": {
+   "name": "Imalung Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Sand-dune lookout on the Yulara drive loop with views of Uluru and part of Kata Tjuta.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -25.240615,
+    "longitude": 130.9873
+   },
+   "free": true,
+   "coordinates_source": "OSM tourism=viewpoint 'Imalung Lookout' (Photon). MEDIUM.",
+   "notes": "Inside Yulara, outside the park gate: free. 57 m from the Yulara town point."
+  },
+  "uluru-kata-tjuta-national-park-13": {
+   "name": "Kata Tjuta Dune Viewing Area",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Short walk up a sand dune beside the Kata Tjuta road, with views of the domes and Uluru in the distance.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -25.352499,
+    "longitude": 130.787037
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/",
+   "coordinates_source": "OSM highway=footway 'Kata Tjuta Dune Walk' (Photon); the 'Dune Viewing Area' marker is 9 m away. MEDIUM.",
+   "notes": "Cost is the 3-day adult park pass ($38, free under 18, sold at the entry station or online); the place itself has no separate charge."
+  },
+  "hermannsburg": {
+   "name": "Hermannsburg (Ntaria)",
+   "icon": "⛪",
+   "category": "historic",
+   "bio": "Aboriginal community on Larapinta Drive, a former Lutheran mission and the home of painter Albert Namatjira.",
+   "hours": "Historic Precinct 9:00 AM – 4:30 PM when open; closed for the 2026 season",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -23.942768,
+    "longitude": 132.779458
+   },
+   "wiki": "Hermannsburg, Northern Territory",
+   "costMin": 18.5,
+   "costMax": 18.5,
+   "currency": "AUD",
+   "ticketUrl": "https://hermannsburg.com.au/",
+   "coordinates_source": "OSM place=village 'Hermannsburg' (Photon). MEDIUM.",
+   "notes": "PRECINCT CLOSED for the 2026 season per its own site (fetched Oct 2026). Adult entry $18.50 from an older snippet of the same site; not re-verified. Recommend holding until it reopens."
+  },
+  "finke-gorge-national-park": {
+   "name": "Finke Gorge National Park",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Remote national park around the Finke River and Palm Valley, reached by high-clearance 4WD along the river bed.",
+   "hours": "Open 24 hours; road may close after rain",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -24.0575377,
+    "longitude": 132.7466031
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/finke-gorge-national-park",
+   "coordinates_source": "OSM tourism=camp_site 'Palm Valley Campground' (park visitor point; not Palm Valley's own pin, 3.4 km away). MEDIUM.",
+   "notes": "Cost is the NT Parks Visitor Pass, $10 adult per day ($20 for three days; NT residents exempt; by-laws March 2026, via search snippet); camping is extra."
+  },
+  "palm-valley": {
+   "name": "Palm Valley",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Oasis of rare red cabbage palms and cycads, with short walks and a lookout over Palm Creek.",
+   "hours": "Open 24 hours; road may close after rain",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -24.0466947,
+    "longitude": 132.7101679
+   },
+   "wiki": "Palm Valley (Northern Territory)",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/finke-gorge-national-park",
+   "coordinates_source": "OSM tourism=attraction 'Palm Valley' (Nominatim node, at Arankaia Walk). MEDIUM.",
+   "notes": "Cost is the NT Parks Visitor Pass, $10 adult per day ($20 for three days; NT residents exempt; by-laws March 2026, via search snippet); camping is extra. Near-duplicate risk with the park: kept as the valley, the park as its access/camping point."
+  },
+  "gosses-bluff": {
+   "name": "Gosses Bluff (Tnorala)",
+   "icon": "☄️",
+   "category": "nature",
+   "bio": "Ring of hills left by a meteorite impact, sacred ground on the Mereenie Loop road, reached by 4WD.",
+   "hours": "Open 24 hours; no overnight camping",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.79964,
+    "longitude": 132.31625
+   },
+   "wiki": "Gosses Bluff impact structure",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "coordinates_source": "OSM natural=peak 'Gosses Bluff North' (crater rim). The reserve visitor/lookout point was not found: pin LOW.",
+   "notes": "pin LOW: rim summit, not a standing point. Mereenie Loop pass needed to drive the road (about $5, older snippets; Central Land Council). Parks Pass applicability to Tnorala unverified."
+  },
+  "chambers-pillar": {
+   "name": "Chambers Pillar",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "A 50 m sandstone column rising from the desert plain, reached by a 4WD track south of Alice Springs, best at sunset.",
+   "hours": "Open 24 hours; road may close after rain",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -24.8755473,
+    "longitude": 133.8247663
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/chambers-pillar-historical-reserve",
+   "coordinates_source": "OSM tourism=viewpoint 'Chambers Pillar' (+natural=cliff same feature, 11 m). MEDIUM.",
+   "notes": "Cost is the NT Parks Visitor Pass, $10 adult per day ($20 for three days; NT residents exempt; by-laws March 2026, via search snippet); camping is extra."
+  },
+  "rainbow-valley": {
+   "name": "Rainbow Valley",
+   "icon": "🌈",
+   "category": "nature",
+   "bio": "Reserve of striped sandstone bluffs and cliffs south of Alice Springs, with short walks to the claypan.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -24.3315601,
+    "longitude": 133.6334563
+   },
+   "wiki": "Rainbow Valley Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/__data/assets/pdf_file/0013/200047/rainbow-valley-conservation-reserve-fact-sheet-and-map.pdf",
+   "coordinates_source": "OSM tourism=viewpoint 'Rainbow Valley' (Claypan Walk). MEDIUM.",
+   "notes": "Cost is the NT Parks Visitor Pass, $10 adult per day ($20 for three days; NT residents exempt; by-laws March 2026, via search snippet); camping is extra. ticketUrl is the agency fact sheet PDF; unloaded."
+  },
+  "ewaninga-conservation-reserve": {
+   "name": "Ewaninga Rock Carvings",
+   "icon": "🖼️",
+   "category": "historic",
+   "bio": "Small reserve of ancient rock engravings on a sandstone outcrop, south of Alice Springs on the Old South Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -24.0127354,
+    "longitude": 133.9537049
+   },
+   "wiki": "Napwerte / Ewaninga Rock Carvings Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "coordinates_source": "OSM leisure=nature_reserve centroid (small reserve) + Wikipedia ~1 km off; pin LOW, carvings' standing point not found.",
+   "notes": "pin LOW: reserve centroid. Cost is the NT Parks Visitor Pass, $10 adult per day ($20 for three days; NT residents exempt; by-laws March 2026, via search snippet); camping is extra. No specific agency page found (only the Find a park list)."
+  },
+  "henbury-meteorites-conservation-reserve": {
+   "name": "Henbury Meteorites",
+   "icon": "☄️",
+   "category": "nature",
+   "bio": "Twelve small craters formed by a meteorite impact about 4,700 years ago, with short walks around them.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -24.57248,
+    "longitude": 133.1462625
+   },
+   "wiki": "Henbury Meteorites Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/henbury-meteorites-conservation-reserve",
+   "coordinates_source": "OSM leisure=nature_reserve centroid agrees with Wikipedia (-24.5725,133.1478) within 150 m; pin LOW-MEDIUM, reserve centroid not the car park.",
+   "notes": "Name shortened from the article title (in wiki). Cost is the NT Parks Visitor Pass, $10 adult per day ($20 for three days; NT residents exempt; by-laws March 2026, via search snippet); camping is extra."
+  },
+  "curtin-springs": {
+   "name": "Curtin Springs",
+   "icon": "🐄",
+   "category": "landmark",
+   "bio": "Family-run cattle station and roadside inn on the Lasseter Highway with camping, a store and meals, on the way to Uluru.",
+   "hours": "Store opens 7:00 AM daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.31499,
+    "longitude": 131.756743
+   },
+   "wiki": "Curtin Springs",
+   "free": true,
+   "ticketUrl": "https://www.curtinsprings.com/wayside-inn/",
+   "coordinates_source": "Commons geotag median (15 files) and OSM place=hamlet node (-25.3143,131.7569) agree within 80 m. HIGH.",
+   "notes": "Hours: store from 7 AM; meals 7-2 and 5-6:30 (older post). Stopping is free; meals/camping extra."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Darwin",
+    "continent": "Oceania",
+    "id": "uluru-kata-tjuta-national-park",
+    "name": "Uluru-Kata Tjuta National Park",
+    "coordinates": {
+     "latitude": -25.275381,
+     "longitude": 130.976394
+    },
+    "category": "park",
+    "defaultZoomSpanKm": 60,
+    "rank": 1,
+    "icon": "🪨",
+    "tagline": "Uluru and the domes of Kata Tjuta, on Anangu country in the Red Centre.",
+    "description": "Uluru-Kata Tjuta National Park, in the Red Centre of the Northern Territory, is a World Heritage area managed jointly with its Anangu Traditional Owners. Uluru is a sandstone monolith ringed by a 9.8 km base walk, and Kata Tjuta is a group of 36 domes to the west with walks into its gorges. The Cultural Centre explains Anangu law and art. Most visitors stay at Yulara, the resort village just outside the park.",
+    "whyVisit": [
+     "Watch Uluru glow at sunrise and sunset",
+     "Hike among the Kata Tjuta domes",
+     "Circle Uluru on the Base Walk",
+     "Learn Anangu culture at the Cultural Centre"
+    ],
+    "highlights": [
+     "Sunrise and sunset",
+     "Kata Tjuta domes",
+     "Uluru Base Walk",
+     "Anangu culture"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Park pass required",
+      "detail": "Adults need a park pass: $38 for three days, free under 18. Buy it online or at the entry station on arrival."
+     },
+     {
+      "icon": "🌡️",
+      "title": "Walk early in the heat",
+      "detail": "Valley of the Winds closes at Karu Lookout from 11 am when 36°C or more is forecast. Start at dawn and carry water."
+     },
+     {
+      "icon": "🕔",
+      "title": "Opening hours change",
+      "detail": "The park shuts overnight: 5 am to 9 pm in summer, 6:30 am to 7:30 pm in June and July. Leave Kata Tjuta 45 minutes before closing."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "bestTimeBlurb": "The cooler months, {months}, suit the walks; in summer the heat can close Valley of the Winds by 11 am."
+   },
+   "spots": [
+    "uluru-kata-tjuta-national-park-1",
+    "uluru-kata-tjuta-national-park-2",
+    "uluru-kata-tjuta-national-park-3",
+    "uluru-kata-tjuta-national-park-4",
+    "uluru-kata-tjuta-national-park-5",
+    "uluru-kata-tjuta-national-park-6",
+    "uluru-kata-tjuta-national-park-7",
+    "uluru-kata-tjuta-national-park-8",
+    "uluru-kata-tjuta-national-park-9",
+    "uluru-kata-tjuta-national-park-10",
+    "uluru-kata-tjuta-national-park-11",
+    "uluru-kata-tjuta-national-park-12",
+    "uluru-kata-tjuta-national-park-13"
+   ],
+   "notes": "Pin: park entry station, from two agreeing Commons geotagged photos 'Uluru-Kata Tjuta National Park entry station' (-25.27538,130.97639) and 'Entrance to the Uluru Kata Tjuta National Park' (~70 m away); not OSM-mapped. >25 m from every spot. All 13 spots within span (farthest Kata Tjuta about 24 km from the pin; span 60 km, 75% = 45 km). Order kept as placement. Pass decision: $38 3-day adult pass costed on every in-gate spot (Uluru, Kata Tjuta, walks, Cultural Centre, Talinguru, dune area) since each needs it; Yulara, Imalung and Field of Light are outside the gate (Field of Light carries its own ticket). Climb is closed and not mentioned."
+  }
+ ],
+ "unverified": [
+  "Field of Light adult price ($50) and sessions",
+  "Hermannsburg: precinct closed 2026 season; $18.50 older",
+  "NT Parks Pass $10/day (snippet of March 2026 by-laws) for Finke Gorge, Palm Valley, Chambers Pillar, Rainbow Valley, Henbury, Ewaninga, Gosses Bluff",
+  "Hours 'Open 24 hours' for NT park spots (day-use hours not found)",
+  "Uluru park pass price date (page undated)",
+  "Gosses Bluff Parks Pass / Mereenie pass cost",
+  "Curtin Springs hours"
+ ],
+ "needs_browser": [
+  {
+   "id": "uluru-kata-tjuta-national-park-6",
+   "url": "https://www.ayersrockresort.com.au/fieldoflight",
+   "why": "operator page blocked; confirm price/times"
+  },
+  {
+   "id": "uluru-kata-tjuta-national-park-11",
+   "url": "https://www.ayersrockresort.com.au/",
+   "why": "not loaded"
+  },
+  {
+   "id": "finke-gorge-national-park",
+   "url": "https://nt.gov.au/parks/find-a-park/finke-gorge-national-park",
+   "why": "nt.gov.au blocks scripts (also palm-valley)"
+  },
+  {
+   "id": "chambers-pillar",
+   "url": "https://nt.gov.au/parks/find-a-park/chambers-pillar-historical-reserve",
+   "why": "nt.gov.au blocks scripts"
+  },
+  {
+   "id": "henbury-meteorites-conservation-reserve",
+   "url": "https://nt.gov.au/parks/find-a-park/henbury-meteorites-conservation-reserve",
+   "why": "nt.gov.au blocks scripts"
+  },
+  {
+   "id": "rainbow-valley",
+   "url": "https://nt.gov.au/__data/assets/pdf_file/0013/200047/rainbow-valley-conservation-reserve-fact-sheet-and-map.pdf",
+   "why": "fact sheet PDF; find a find-a-park page"
+  },
+  {
+   "id": "curtin-springs",
+   "url": "https://www.curtinsprings.com/wayside-inn/",
+   "why": "not loaded; homepage not found"
+  }
+ ],
+ "notes": [
+  "Overpass was down; pins from Nominatim/Photon OSM features and Commons geotags. LOW pins: gosses-bluff (rim summit), ewaninga-conservation-reserve (centroid); henbury (centroid) borderline; Base Walk uses a route marker, not the loop midpoint.",
+  "Walk midpoints use only the mapped OSM way segments (partial lengths).",
+  "Recommend NOT adding hermannsburg while its precinct is closed (2026 season); keep for review.",
+  "Field of Light pin corrected note: 1 geotag only (Commons) plus OSM artwork, both within 20 m.",
+  "Wiki omitted where it equals the name or the article is missing (Valley of the Winds, Cultural Centre have no article)."
+ ]
+}

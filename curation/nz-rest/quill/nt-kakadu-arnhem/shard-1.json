@@ -1,0 +1,352 @@
+{
+ "spots": {
+  "kakadu-national-park-1": {
+   "name": "Ubirr",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Rock art galleries on a short walk, then a climb to a sunset lookout over the floodplains.",
+   "hours": "Open daily in the Dry; access limited in the Wet",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.408607,
+    "longitude": 132.956564
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/rock-art/ubirr/",
+   "coordinates_source": "OSM highway=footway 'Ubirr Aboriginal Art Walk' (photon); Wikipedia -12.4095,132.9593 and Commons median within 300 m",
+   "notes": "Cost is the Kakadu park pass (AUD 25 Wet/discount to 31 Oct 2026, 40 Dry); no separate fee. Hours unsourced."
+  },
+  "kakadu-national-park-2": {
+   "name": "Nourlangie Rock",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Rock art shelter under the escarpment, reached by an easy walk to the main gallery and a lookout.",
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.863852,
+    "longitude": 132.811392
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/rock-art/burrungkuy-nourlangie/",
+   "coordinates_source": "OSM historic=archaeological_site 'Burrungkuy (Nourlangie Rock)' (photon); Wikipedia -12.8617,132.8125 within 250 m. MEDIUM",
+   "notes": "resolve-pin printed LOW (single OSM feature, but the exact site of the right type)."
+  },
+  "kakadu-national-park-3": {
+   "name": "Yellow Water",
+   "icon": "🐊",
+   "category": "nature",
+   "bio": "Billabong on the floodplain, cruised by boat from Cooinda for birds and crocodiles.",
+   "hours": "Cruises depart 6:45 AM to 4:30 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.896587,
+    "longitude": 132.517681
+   },
+   "wiki": null,
+   "costMin": 105,
+   "costMax": 130,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadutourism.com/see-and-do/tours/yellow-water-cruise",
+   "coordinates_source": "OSM amenity=ferry_terminal 'Yellow Water Cruises' (photon); Commons median 750 m",
+   "notes": "Cruise price approximate (1.5 h about 105, 2 h sunrise/sunset about 130, operator rates 2025 via search/Expedia); park pass extra. Pin is the cruise terminal (visitor point), not the billabong centroid."
+  },
+  "kakadu-national-park-4": {
+   "name": "Jim Jim Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Tallest waterfall in the park, at the end of a 4WD track and a rock-hopping walk to a plunge pool.",
+   "hours": "Dry season only; closed through 2026",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -13.272627,
+    "longitude": 132.839935
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/waterfalls/jim-jim-falls/",
+   "coordinates_source": "OSM waterway=waterfall 'Jim Jim Falls' (photon); Wikipedia 42 m",
+   "notes": "CLOSED all of 2026 (road works; target reopening 2027 Dry season). Owner call on adding now."
+  },
+  "kakadu-national-park-5": {
+   "name": "Twin Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Waterfall in the Arnhem Land escarpment, reached by a 4WD track and a walk to the gorge base.",
+   "hours": "Dry season only; closed through 2026",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -13.320317,
+    "longitude": 132.781428
+   },
+   "wiki": "Twin Falls (Northern Territory)",
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/waterfalls/twin-falls-gorge",
+   "coordinates_source": "OSM place=locality 'Twin Falls' (photon); Commons median 78 m; Wikipedia 347 m",
+   "notes": "Gorge closed since 2019 and all of 2026; reopening tied to boardwalk project. Bio drops the old boat-shuttle claim (not stated on the agency page). Recommend HOLD."
+  },
+  "kakadu-national-park-6": {
+   "name": "Gunlom",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Waterfall and clifftop plunge pools above a steep climb in the south of the park, with wide views.",
+   "hours": "Dry season only; high-clearance 4WD recommended",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -13.431404,
+    "longitude": 132.417674
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/waterfalls/gunlom-falls/",
+   "coordinates_source": "OSM waterway=waterfall 'Gunlom Waterfall' (photon); Commons median 14 m",
+   "notes": "Agency page: no swimming in the bottom pool. Dry-season-only from Wikivoyage; hours unsourced."
+  },
+  "kakadu-national-park-7": {
+   "name": "Maguk",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Plunge pool below a waterfall in monsoon rainforest, reached by a short walk from a 4WD track.",
+   "hours": "Dry season only; 4WD essential",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -13.319063,
+    "longitude": 132.438156
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/waterfalls/maguk/",
+   "coordinates_source": "OSM waterway=waterfall 'Maguk Waterfall' (photon); Wikipedia 4 m of earlier hint",
+   "notes": "Agency page shows a temporary crocodile closure; walk 2 km return, 1.5 h."
+  },
+  "kakadu-national-park-8": {
+   "name": "Bowali Visitor Centre",
+   "icon": "ℹ️",
+   "category": "museum",
+   "bio": "Visitor centre in Jabiru with displays on the park's ecology and Aboriginal culture, a gallery and a film.",
+   "hours": "9:00 AM – 5:00 PM (Apr–Oct); 10:00 AM – 4:00 PM (Nov–Mar)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -12.675012,
+    "longitude": 132.817158
+   },
+   "wiki": null,
+   "free": true,
+   "ticketUrl": "https://kakadu.gov.au/plan/visitor-centres/",
+   "coordinates_source": "OSM information=office 'Bowali Visitor's Centre' (photon); Wikivoyage -12.67548 within 55 m. MEDIUM",
+   "notes": "Printed LOW by resolve-pin (one precise OSM feature). Closed Christmas Day and New Year's Day. Free entry per Wikivoyage; agency page names no fee."
+  },
+  "kakadu-national-park-9": {
+   "name": "Warradjan Aboriginal Cultural Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Cultural centre at Yellow Water with exhibits on the traditional owners' story of the park and local art.",
+   "hours": "9:00 AM – 5:00 PM (Apr–Oct); 10:00 AM – 4:00 PM (Nov–Mar)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -12.898428,
+    "longitude": 132.52628
+   },
+   "wiki": null,
+   "free": true,
+   "ticketUrl": "https://kakadu.gov.au/things-do/galleries/warradjan-cultural-centre/",
+   "coordinates_source": "OSM building 'Warradjan Aboriginal Cultural Centre' (photon); Wikivoyage -12.8986,132.5267 within 50 m. MEDIUM",
+   "notes": "Entry fee not stated on agency page; free assumed (unverified)."
+  },
+  "kakadu-national-park-10": {
+   "name": "Mamukala Wetlands",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Wetlands with a bird hide on an easy 3 km return walk, filling with magpie geese by late August.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.6508484,
+    "longitude": 132.5739006
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/walks/mamukala-wetlands-walk/",
+   "coordinates_source": "OSM leisure=bird_hide 'Mamukala Wetlands Observation Deck' node 282618975 (Overpass); viewing platform node 4835919424 and 'Mamukala Wetlands Walk' within 100 m. MEDIUM",
+   "notes": "resolve-pin LOW (no result); pin from Overpass. Hours unsourced."
+  },
+  "kakadu-national-park-11": {
+   "name": "Cahills Crossing",
+   "icon": "🐊",
+   "category": "landmark",
+   "bio": "Tidal causeway on the East Alligator River, a viewing platform for watching estuarine crocodiles.",
+   "hours": "Open daily; time visits to the tide",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -12.4265501,
+    "longitude": 132.965466
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/croc-spotting/cahills-crossing-croc-spotting/",
+   "coordinates_source": "OSM way 178561642 bridge=low_water_crossing (Overpass center) agrees with Commons median -12.4269,132.9653 (3 m). MEDIUM. Placement's Wikipedia point is 60 km west and wrong",
+   "notes": "Best July to November. Never cross on foot."
+  },
+  "kakadu-national-park-12": {
+   "name": "Anbangbang Billabong",
+   "icon": "🦆",
+   "category": "hike",
+   "bio": "Billabong on a 2.5 km loop walk near Nourlangie, with birds and a view back to the rock.",
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -12.864565,
+    "longitude": 132.796942
+   },
+   "wiki": null,
+   "costMin": 25,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/walks/anbangbang-billabong-walk/",
+   "coordinates_source": "OSM highway=footway 'Anbangbang Billabong Walk' (photon) with natural=wetland 22 m and Wikipedia 8 m. HIGH",
+   "notes": "Loop may open in stages in the Dry by water level. Pinned at the billabong shore on the loop, not the loop midpoint."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "kakadu-national-park",
+    "name": "Kakadu National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Darwin",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -12.6745,
+     "longitude": 132.8168
+    },
+    "category": "park",
+    "defaultZoomSpanKm": 150,
+    "rank": 1,
+    "icon": "🐊",
+    "tagline": "Floodplains, escarpment waterfalls and Aboriginal rock art across a World Heritage park east of Darwin.",
+    "description": "Kakadu National Park covers about 20,000 square kilometres of floodplain, woodland and sandstone escarpment, and is World Heritage listed for both its nature and its culture. Rock art galleries at Ubirr and Nourlangie sit beside billabongs thick with birds and saltwater crocodiles. In the south, Gunlom and Maguk have waterfalls and plunge pools reached on dirt roads. Bowali Visitor Centre at Jabiru is the place to start.",
+    "whyVisit": [
+     "See rock art at Ubirr and Nourlangie",
+     "Cruise Yellow Water for crocodiles and birds",
+     "Climb to Gunlom's clifftop plunge pools",
+     "Watch crocodiles at Cahills Crossing"
+    ],
+    "highlights": [
+     "Aboriginal rock art",
+     "Billabong wildlife",
+     "Clifftop pools",
+     "Croc spotting"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Park pass required",
+      "detail": "A Kakadu park pass lasts seven days: adults $40 in the Dry ($25 until 31 Oct 2026), $25 in the Wet. NT residents are free."
+     },
+     {
+      "icon": "🚧",
+      "title": "Check the access report",
+      "detail": "Floods, fires and crocodile sightings close roads and sites, and Maguk needs a 4WD. Check the Kakadu Access Report before driving."
+     },
+     {
+      "icon": "🐊",
+      "title": "Be crocwise",
+      "detail": "Saltwater crocodiles live in these waterways. Swim only where signs allow, and never cross Cahills Crossing on foot."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "The Dry season, {months}, opens the roads and walks and fills the billabongs with birds; in the Wet many falls and tracks are cut off.",
+    "seasonalTags": [
+     {
+      "tag": "monsoon-dry-season",
+      "months": [
+       5,
+       6,
+       7,
+       8,
+       9,
+       10
+      ]
+     }
+    ]
+   },
+   "spots": [
+    "kakadu-national-park-1",
+    "kakadu-national-park-2",
+    "kakadu-national-park-3",
+    "kakadu-national-park-6",
+    "kakadu-national-park-7",
+    "kakadu-national-park-4",
+    "kakadu-national-park-8",
+    "kakadu-national-park-9",
+    "kakadu-national-park-11",
+    "kakadu-national-park-10",
+    "kakadu-national-park-12",
+    "kakadu-national-park-5"
+   ],
+   "notes": "Coordinates: a point ~55 m NNW of the Bowali Visitor Centre pin (Kakadu Highway precinct, Jabiru), >=25 m from Bowali; OSM road lookups timed out so it is NOT road-verified (flag LOW; owner may nudge). Span 150: Gunlom is ~95 km, farthest of shard-1, within 75% (112 km). Order for this shard: 1,2,3,6,7,4,8,9,11,10,12,5 (Gunlom and Maguk ahead of Jim Jim, closed in 2026; Twin Falls last). Jabiru (-23) should follow Bowali; Shard-2 spots slot after by importance. 4 reasons, 3 tips (rank 1). Park pass 2026 discount (AUD25 1 Jul-31 Oct 2026) is time-limited: refresh the tip after Oct 2026."
+  }
+ ],
+ "unverified": [
+  "Ubirr hours",
+  "Mamukala hours",
+  "Gunlom hours and walk time",
+  "Warradjan entry fee (free assumed)",
+  "Bowali fee (free assumed)",
+  "Yellow Water cruise price (approx from 2025 operator rates)",
+  "Cahills Crossing hours",
+  "Destination coordinate not road-verified"
+ ],
+ "needs_browser": [
+  {
+   "id": "kakadu-national-park-3",
+   "url": "https://kakadutourism.com/see-and-do/tours/yellow-water-cruise",
+   "why": "Loaded by script but no price shown; confirm price in browser"
+  }
+ ],
+ "notes": [
+  "Pins: Nourlangie, Bowali, Warradjan printed LOW by resolve-pin but each is the single precise OSM feature of the right type; Mamukala and Cahills Crossing from Overpass (bird_hide node; low_water_crossing way). Twin Falls place=locality pin (3 sources agree within 350 m).",
+  "Costs: the Kakadu park pass applies (AUD 25-40, 7 days); sites named on kakadu.gov.au pages with no separate fee carry it as costMin/costMax, as Litchfield does with its pass.",
+  "HOLD recommended: Twin Falls (gorge closed since 2019 and all 2026; fails 'open to public'). Jim Jim Falls closed all 2026, reopening targeted for 2027 Dry: owner call.",
+  "Maguk and Gunlom pages show crocodile/seasonal status; sites are Dry-season only.",
+  "Mirrai/Cahills draft bios fixed: Twin Falls boat shuttle removed (unsourced); Mamukala 300 m + 3 km loop replaced with 3 km return, ~1.5 h per agency; Maguk walk 2 km return."
+ ]
+}

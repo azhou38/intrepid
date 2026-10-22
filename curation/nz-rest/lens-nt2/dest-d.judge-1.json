@@ -1,0 +1,210 @@
+{
+ "dest:nitmiluk-national-park:header": {
+  "candidates": [
+   {
+    "file": "Katherine River in Nitmiluk National Park.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Wiki Loves Earth 2021 (rated 10) 4:3 colour photo of the gorge with cliffs either side, river and blue sky; 4032 px, bright. Full-height square crop keeps the gorge.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "00 0647 Katharine Gorge in Nitmiluk National Park.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Good but a flat cliff face with a small boat; second best (and the cruise why-visit uses its sibling).",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Katherine Gorge NT.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Quiet reflection scene, dull light.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Katherine Gorge, Nitmiluk National Park, April 2015.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "16:9, square crop shows one dark wall and little of the channel; subject at x~0.55.",
+    "hero_crop": {
+     "x": 0.58,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Nitmiluk National Park Gorge.jpg",
+    "verdict": "reject",
+    "check_failed": "4",
+    "reason": "Heavy HDR filter.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Nitmiluk National Park 0317.svg",
+    "verdict": "reject",
+    "check_failed": "4",
+    "reason": "A map.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Katherine River in Nitmiluk National Park.jpg"
+ },
+ "dest:nitmiluk-national-park:why1": {
+  "candidates": [
+   {
+    "file": "00 4648 Katharine Gorge in Nitmiluk National Park.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Gorge-cruise pontoon moored under the sandstone cliffs, categories Nitmiluk National Park, 2007, 3072 px. Boat is mid-frame, recognisable at card size (Jawoyn guides not visible).",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Katherine Gorge 06.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Gorge from the water but no boat; 2005 snapshot.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "00 4648 Katharine Gorge in Nitmiluk National Park.jpg"
+ },
+ "dest:nitmiluk-national-park:why2": {
+  "candidates": [
+   {
+    "file": "Katherine Gorge 05.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Two paddlers in a canoe-type kayak between high gorge walls; 2005 colour photo, category Nitmiluk National Park; paddlers small but centred, the gorge is the setting.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "KatherineGorgeCanoe.JPG",
+    "verdict": "reject",
+    "check_failed": "size",
+    "reason": "768x1024 portrait, below 1280 px.",
+    "hero_crop": "fail: too small"
+   }
+  ],
+  "choice": "Katherine Gorge 05.jpg"
+ },
+ "dest:nitmiluk-national-park:why3": {
+  "candidates": [
+   {
+    "file": "Waterfall in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season (4).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Leliyn (Edith Falls) cascade above the rocky plunge pool, tiny swimmers visible; 3264 px. Sky is bleached and falls modest, but it is the best of the set. Crop slightly left of centre.",
+    "hero_crop": {
+     "x": 0.45,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Waterfall in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season (2).jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Falls only a sliver behind rocks.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Edith Falls - panoramio.jpg",
+    "verdict": "reject",
+    "check_failed": "4",
+    "reason": "Camera date stamp overlay burned in; no pool.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Leliyn (Edith Falls) in Wet Season. Nitmiluk National Park NT.jpg",
+    "verdict": "reject",
+    "check_failed": "shape",
+    "reason": "Strong falls photo but 2:3 portrait; a 1.6:1 card crop leaves a mid-fall slice and no pool.",
+    "hero_crop": "fail: portrait"
+   }
+  ],
+  "choice": "Waterfall in Edith Falls, Nitmiluk National Park, Katherine, Northern Territory, Australia, during Dry Season (4).jpg"
+ },
+ "dest:nitmiluk-national-park:why4": {
+  "candidates": [
+   {
+    "file": "Jatbula Trail.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Flickr (Bruce Baker) 2015 colour photo captioned Jatbula Trail: creek over rocks and pools in the Nitmiluk bush; long exposure smooths the water but is not a heavy filter; 5760 px. Characteristic stretch of the walk.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Jatbula Trail.jpg"
+ },
+ "dest:katherine:header": {
+  "status": "none",
+  "candidates": [
+   {
+    "file": "Main-Street-Katherine4888.jpg",
+    "verdict": "reject",
+    "check_failed": "3/size",
+    "reason": "700 px and a shopfront street corner.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Taken on 2 River in Katherine, Northern Territory, Australia (2).jpg",
+    "verdict": "reject",
+    "check_failed": "file",
+    "reason": "File not found on Commons under this name; the 'River in Katherine' series is a river bend, not the town in its landscape.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Taken on 8 Rail Bridge now a Walking Bridge Katherine NT - panoramio.jpg",
+    "verdict": "reject",
+    "check_failed": "file",
+    "reason": "File not found under this name; a bridge, not a cityscape.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: no town panorama among candidates"
+ },
+ "dest:katherine:why1": {
+  "candidates": [
+   {
+    "file": "Cutta Cutta caves - panoramio.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "NOT in the candidate list (listed name was wrong): real file 'Cutta Cutta caves - panoramio.jpg', 4000x3000, CC BY 3.0, lit flowstone curtains inside Cutta Cutta chamber. Shows the limestone chambers; dark on purpose (cave interior).",
+    "hero_crop": "ok",
+    "dark_on_purpose": true
+   },
+   {
+    "file": "Cutta Cutta Caverns in Northern Territory, Australia (2).jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Surface karst pinnacle, not the chambers.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Cutta Cutta Caverns in Northern Territory, Australia (4).jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Entrance with railings in glare; hole in the ground, not the chambers.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Taken on 3 Cutta Cutta caves - panoramio.jpg",
+    "verdict": "reject",
+    "check_failed": "file",
+    "reason": "File not found under this name (real name above).",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Cutta Cutta caves - panoramio.jpg",
+  "note": "second judge to confirm the replacement file name; it was not offered as a candidate"
+ },
+ "dest:katherine:why2": {
+  "status": "none",
+  "candidates": [],
+  "choice": "none: no candidates offered"
+ },
+ "dest:katherine:why3": {
+  "status": "none",
+  "candidates": [],
+  "choice": "none: no candidates offered"
+ }
+}

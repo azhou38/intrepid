@@ -1,0 +1,413 @@
+{
+ "region": "nt-barkly-tennant-creek",
+ "existing_fixes": [],
+ "existing_in_app": "none: no tennant-creek, Barkly or Devils Marbles id in destinations.ts, spots.ts or git history",
+ "new_destinations": [
+  {
+   "id": "tennant-creek",
+   "name": "Tennant Creek",
+   "category": "city",
+   "coordinates": {
+    "latitude": -19.6472,
+    "longitude": 134.1903
+   },
+   "defaultZoomSpanKm": 30,
+   "rank": 5,
+   "name_evidence": "Wikivoyage 'Tennant Creek' city article (See/Do sections list the Telegraph Station, Pebbles, Lake Mary Ann, Nyinkka Nyunyu); NT tourism 'Tennant Creek and Barkly region' destinations chapter and top-10 things to do around Tennant Creek.",
+   "spots": [
+    "tennant-creek-1",
+    "tennant-creek-2",
+    "tennant-creek-3",
+    "tennant-creek-4",
+    "tennant-creek-5"
+   ],
+   "note": "Five kept spots within 13 km of the centre; 22 km reach. Centre is Wikipedia's rounded town point: refine with resolve-pin (place=town). Rank 5 (regional hub and gateway); owner may lift to 4. Barkly Tableland (Wikivoyage region) was weighed as the destination instead: its land is a vast cattle plain whose only visitor sights are the Stuart Highway stops 100-280 km away, no span could hold them, and travellers say 'Tennant Creek'; the Tableland is described in the destination text, not made a destination or spot."
+  }
+ ],
+ "placements": [
+  {
+   "id": "tennant-creek-1",
+   "name": "Tennant Creek Telegraph Station",
+   "action": "spot",
+   "destination": "tennant-creek",
+   "coordinates": {
+    "latitude": -19.554376,
+    "longitude": 134.228296
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "wikivoyage:Tennant_Creek listing (own geo tag) - agrees with Wikipedia article title; confirm with resolve-pin",
+   "wiki": "Tennant Creek Telegraph Station",
+   "icon": "📡",
+   "category": "historic",
+   "bio": "An 1872 stone Overland Telegraph station 10 km north of town, with a self-guided walk through the original buildings.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "ticketUrl": null,
+   "reason": "About 11 km from the Tennant Creek centre, inside the 22 km reach and visited from the town. 3 counted sources, 435 views.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "pin"
+   ]
+  },
+  {
+   "id": "tennant-creek-2",
+   "name": "Nyinkka Nyunyu Art and Culture Centre",
+   "action": "spot",
+   "destination": "tennant-creek",
+   "coordinates": {
+    "latitude": -19.651835,
+    "longitude": 134.188251
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "Wikivoyage listing with its own geo tag; confirm with resolve-pin",
+   "wiki": null,
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "A Warumungu cultural centre in town with art, interpretive exhibits and stories of the local Aboriginal people.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "ticketUrl": null,
+   "reason": "In the town centre. 2 counted sources, 0 views.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ]
+  },
+  {
+   "id": "tennant-creek-3",
+   "name": "Battery Hill Mining Centre",
+   "action": "spot",
+   "destination": "tennant-creek",
+   "coordinates": {
+    "latitude": -19.647971,
+    "longitude": 134.208048
+   },
+   "pin": "HIGH",
+   "coordinates_source": "osm:tourism=museum (Battery Hill Mining Centre), resolve-pin HIGH (from candidates.json)",
+   "wiki": null,
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "A gold-mining heritage centre with an underground tour and Australia's last working ten-head stamp battery.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "ticketUrl": null,
+   "reason": "On the edge of town. 1 counted source (NT tourism top-10), 0 views.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "id": "tennant-creek-4",
+   "name": "The Pebbles",
+   "action": "spot",
+   "destination": "tennant-creek",
+   "coordinates": {
+    "latitude": -19.533587,
+    "longitude": 134.180164
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "wikivoyage:Tennant_Creek listing (Kunjarra The Pebbles) with own geo tag; confirm with resolve-pin",
+   "wiki": null,
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A small field of granite boulders, known to the Warumungu as Kunjarra, a women's dancing site 10 km north of town.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "ticketUrl": null,
+   "reason": "About 13 km from the centre, inside the reach. 2 counted sources, 3135 views.",
+   "free": true,
+   "needs_research": [
+    "ticketUrl",
+    "pin"
+   ]
+  },
+  {
+   "id": "tennant-creek-5",
+   "name": "Lake Mary Ann",
+   "action": "spot",
+   "destination": "tennant-creek",
+   "coordinates": {
+    "latitude": -19.607551,
+    "longitude": 134.213147
+   },
+   "pin": "LOW",
+   "coordinates_source": "wikipedia:Lake_Mary_Ann (article coordinates)",
+   "wiki": "Lake Mary Ann",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A 1980 dam lake 5 km north of town for swimming, canoeing and picnics, with a walking track into the Honeymoon Ranges.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "ticketUrl": null,
+   "reason": "About 5 km from the centre. 3 counted sources, 733 views.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ]
+  },
+  {
+   "id": "devils-marbles",
+   "name": "Devils Marbles",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -20.566667,
+    "longitude": 134.266667
+   },
+   "pin": "LOW",
+   "coordinates_source": "wikivoyage:Barkly_Tableland listing (Devils Marbles Conservation Reserve); reserve-level point, not a visitor point",
+   "wiki": "Karlu Karlu / Devils Marbles Conservation Reserve",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Granite boulders balanced on one another along the Stuart Highway, a sacred Warumungu site with a walking path and camping.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "ticketUrl": null,
+   "reason": "About 105 km south of Tennant Creek, far outside any span, reached on its own along the Stuart Highway; standalone flagship stop (the area's headline sight, 14079 views, 3 counted sources). Not a destination: one place, not four spots round a base.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  },
+  {
+   "id": "iytwelepenty-davenport-range-national-park",
+   "name": "Iytwelepenty / Davenport Range National Park",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -20.86,
+    "longitude": 134.941
+   },
+   "pin": "LOW",
+   "coordinates_source": "wikipedia park centre (centroid, not a visitor point)",
+   "wiki": "Iytwelepenty / Davenport Range National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A remote national park of rugged ranges east of the Stuart Highway, with 4WD tracks, permanent waterholes and rock wallabies.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "ticketUrl": null,
+   "reason": "About 80 km south-east of Tennant Creek by long 4WD tracks, outside the span. It is a national park but has one kept spot (its waterhole is in review), so it does not clear the four-spot bar and stands alone. 4 counted sources, 704 views.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "pin"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  },
+  {
+   "id": "wycliffe-well",
+   "name": "Wycliffe Well",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -20.8,
+    "longitude": 134.233
+   },
+   "pin": "LOW",
+   "coordinates_source": "wikipedia:Wycliffe_Well (rounded, to resolve)",
+   "wiki": "Wycliffe Well",
+   "icon": "👽",
+   "category": "landmark",
+   "bio": "A Stuart Highway roadhouse and caravan park that calls itself the UFO capital of Australia, with sighting logs and alien-themed decor.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "ticketUrl": null,
+   "reason": "About 125 km south of Tennant Creek on the highway, 25 km south of Devils Marbles; not part of any span and a separate stop. 2 counted sources, 6947 views.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "pin"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  },
+  {
+   "id": "barrow-creek-telegraph-station",
+   "name": "Barrow Creek Telegraph Station",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -21.52956,
+    "longitude": 133.889588
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "wikipedia:Barrow Creek Telegraph Station (3 decimals checked: 5-6 decimals); confirm with resolve-pin",
+   "wiki": "Barrow Creek Telegraph Station",
+   "icon": "📡",
+   "category": "historic",
+   "bio": "An 1872 stone Overland Telegraph station reserve on the Stuart Highway with a self-guided walk through the original buildings.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "ticketUrl": null,
+   "reason": "About 205 km south of Tennant Creek, nearer Alice Springs than any base; standalone. Distinct from Tennant Creek Telegraph Station (different site). 1 counted source (NT Government), 1475 views.",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  },
+  {
+   "id": "newcastle-waters",
+   "name": "Newcastle Waters",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -17.366,
+    "longitude": 133.4015
+   },
+   "pin": "LOW",
+   "coordinates_source": "wikipedia:Newcastle_Waters (rounded, to resolve)",
+   "wiki": "Newcastle Waters",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "A drovers' ghost town off the Stuart Highway with preserved Jones's Store and Junction Hotel and a drovers' memorial park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "ticketUrl": null,
+   "reason": "About 280 km north of Tennant Creek and 5 hours from any destination; standalone. 1 counted source, 4579 views.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "pin"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  },
+  {
+   "id": "anmatjere-man",
+   "name": "Anmatjere Man",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": null,
+   "pin": "NONE",
+   "coordinates_source": "none yet: resolve-pin needed at Aileron Roadhouse (do not use the Aileron locality point)",
+   "wiki": null,
+   "icon": "🗿",
+   "category": "landmark",
+   "bio": "A 12 m steel-and-cement sculpture of an Anmatjere man beside the Stuart Highway at Aileron.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "ticketUrl": null,
+   "reason": "Aileron is about 135 km north of Alice Springs and about 600 km from Tennant Creek: it sits in the Alice Springs and Red Centre region, so this is a standalone stop. If the Alice region pass proposes it, merge. 1 counted source, 0 views.",
+   "free": true,
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "pin"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  }
+ ],
+ "folded": [
+  {
+   "name": "Barkly Tableland",
+   "disposition": "not a spot or destination: a region of cattle country (judge rejected as a place; skeptic kept as a name candidate). Used as description/name_evidence context for Tennant Creek. Kept place is not lost: its Wikivoyage region page supplies the sights placed here."
+  }
+ ],
+ "neighbour_check": [
+  {
+   "standalone": "devils-marbles",
+   "km_from_tennant_creek": 105,
+   "why_not_a_spot": "Over 100 km, past the 22 km reach; reached by highway as its own stop."
+  },
+  {
+   "standalone": "iytwelepenty-davenport-range-national-park",
+   "km_from_tennant_creek": 80,
+   "why_not_a_spot": "Remote 4WD range outside the 30 km span, not a town excursion."
+  },
+  {
+   "standalone": "wycliffe-well",
+   "km_from_tennant_creek": 125,
+   "why_not_a_spot": "Far beyond reach; highway roadhouse."
+  },
+  {
+   "standalone": "barrow-creek-telegraph-station",
+   "km_from_tennant_creek": 205,
+   "why_not_a_spot": "Far beyond reach."
+  },
+  {
+   "standalone": "newcastle-waters",
+   "km_from_tennant_creek": 280,
+   "why_not_a_spot": "Far beyond reach."
+  },
+  {
+   "note": "No standalone spot lies within 40 km of Tennant Creek's centre."
+  }
+ ],
+ "review": [
+  "Tennant Creek Museum",
+  "Winanjjikari Music Centre",
+  "Bill Allen Lookout",
+  "Banka Banka Station",
+  "Old Police Station Waterhole",
+  "Renner Springs",
+  "Attack Creek Historical Reserve",
+  "Cape Crawford Lost City",
+  "Connells Lagoon Conservation Reserve"
+ ],
+ "notes": "Reviews are held for the owner, not placed. Pins: every Wikipedia/Wikivoyage point must be re-resolved with resolve-pin before apply; Anmatjere Man has none. Davenport and Devils Marbles points are reserve-level.",
+ "counts": {
+  "kept": 11,
+  "inside_destinations": 5,
+  "standalone": 6,
+  "new_destinations": 1
+ }
+}

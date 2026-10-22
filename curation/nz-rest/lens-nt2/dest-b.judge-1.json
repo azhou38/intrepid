@@ -1,0 +1,327 @@
+{
+ "dest:west-macdonnell-national-park:header": {
+  "candidates": [
+   {
+    "file": "West MacDonnell Ranges.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Ranges under blue sky framed by dark foreground trees; decent but less striking than the Larapinta ranges view.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "West Macdonnell Ranges Larapinta Trail section 4 ranges.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Layered red ridges receding under a blue sky, colour, 4032 px, ridge central; wide landscape the park is known for.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "West Macdonnell Ranges, Mt Sonder.jpg",
+    "verdict": "reject",
+    "check_failed": "shape",
+    "reason": "2.5:1 strip, mountain tiny; fails aspect.",
+    "hero_crop": "fail: aspect 2.5"
+   },
+   {
+    "file": "Ormiston Gorge NT.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Waterhole under a red cliff, half sand and water; good for a spot, less wide than header ranges.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "West_MacDonnell_National_Park.JPG",
+    "verdict": "reject",
+    "check_failed": "size",
+    "reason": "1024 px wide; fails size.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "West Macdonnell Ranges Larapinta Trail section 4 ranges.jpg",
+  "status": "accept"
+ },
+ "dest:west-macdonnell-national-park:why1": {
+  "candidates": [
+   {
+    "file": "Ellery Creek Big Hole - West Macdonnell Ranges NT.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Still waterhole reflecting the red cliff at Ellery Creek Big Hole (file categories confirm), 3872 px, bright; shows a swimmable gorge waterhole.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Ormiston Gorge NT.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Waterhole with sand foreground; second choice.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Ormiston Gorge Water Hole.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Overexposed sky, 1424 px; weaker.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Ellery Creek Big Hole - West Macdonnell Ranges NT.jpg",
+  "status": "accept"
+ },
+ "dest:west-macdonnell-national-park:why2": {
+  "candidates": [
+   {
+    "file": "West Macdonnell Ranges Larapinta Trail section 4 path to Brinkley Bluff.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Fisheye ridge view on the Larapinta but no trail is visible; does not show the walk.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "West Macdonnell Ranges Larapinta Trail section 4 view.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Sunset view from the ridge; no trail visible.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "West Macdonnell Ranges Larapinta Trail section 4 view 8.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Wide fisheye dusk panorama, sun low, no trail, dark foreground.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: none of the Larapinta photos show a walker or trail",
+  "status": "none"
+ },
+ "dest:west-macdonnell-national-park:why3": {
+  "candidates": [
+   {
+    "file": "Standley chasm (47846617632).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Walkers between the sheer red walls of Standley Chasm, colour 2019, 1990 px; walls central; people small and not the focus.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Standley chasm (47846617632).jpg",
+  "status": "accept"
+ },
+ "dest:watarrka-national-park:header": {
+  "candidates": [
+   {
+    "file": "Canyon of the Kings, Kings Canyon, Watarrka National park, NT.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Gum trunk fills the foreground; canyon only a glimpse.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kings Canyon North Wall (9585383815).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Banded red sandstone wall of Kings Canyon with tiny walkers on the rim and wide sky; colour, 4272 px. Wall sits right of centre so needs a subject point.",
+    "hero_crop": {
+     "x": 0.75,
+     "y": 0.55
+    }
+   },
+   {
+    "file": "Kings Canyon Walk.jpg",
+    "verdict": "reject",
+    "check_failed": "shape",
+    "reason": "2.1:1 aspect; outside range.",
+    "hero_crop": "fail: aspect 2.1"
+   },
+   {
+    "file": "Kings Canyon Sunset.jpg",
+    "verdict": "reject",
+    "check_failed": "size",
+    "reason": "1000 px; fails size.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Kings Canyon North Wall (9585383815).jpg",
+  "status": "accept"
+ },
+ "dest:watarrka-national-park:why1": {
+  "candidates": [
+   {
+    "file": "Kings Canyon Rim Walk.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Fisheye shot with sun flare, walker cut at the right edge, domes not clear.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Top of the Rim at Kings Canyon.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Rim top looking across the canyon walls under blue sky, 3000x1688; shows the rim a walker stands on.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kings Canyon Walk.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Close rim rock formation, little context.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Top of the Rim at Kings Canyon.jpg",
+  "status": "accept"
+ },
+ "dest:watarrka-national-park:why2": {
+  "candidates": [
+   {
+    "file": "Lascar Kings Creek at the gorge of the canyon (4563009062).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Rocky creek-bed path under white gum trees below the canyon, visitors faint in the background; colour 2592 px (2010 Flickr), file titles Kings Creek.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Lascar Left and right walls of the canyon. Between them, the Kings Creek covered by trees (4563007994).jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Flat dirt path across scrub to a hill; does not show the creek or canyon.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Lascar Views of the canyon walls above - End of the Kings Creek Walk (4563006846).jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Canyon wall against sky seen from below, no creek.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Lascar Kings Creek at the gorge of the canyon (4563009062).jpg",
+  "status": "accept"
+ },
+ "dest:watarrka-national-park:why3": {
+  "candidates": [],
+  "choice": "none: no candidates found",
+  "status": "none"
+ },
+ "dest:uluru-kata-tjuta-national-park:header": {
+  "candidates": [
+   {
+    "file": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3688.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Uluru glowing in golden light with grass foreground and a desert oak; 6720 px. Rock low in a 3:2 frame (half sky), so zoom slightly.",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.65,
+     "zoom": 1.25
+    }
+   },
+   {
+    "file": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3701.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Uluru a thin strip on the horizon; tiny in the crop.",
+    "hero_crop": "fail: sliver"
+   },
+   {
+    "file": "Uluru at Sunset in November 2018.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Dim dusk, rock small behind a fence.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "UluruClip3ArtC1941.jpg",
+    "verdict": "reject",
+    "check_failed": "4/size",
+    "reason": "Aerial, 1048 px.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3688.jpg",
+  "status": "accept"
+ },
+ "dest:uluru-kata-tjuta-national-park:why1": {
+  "candidates": [
+   {
+    "file": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3688.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Uluru glowing orange in low sun; best photo of the reason, shared with the same destination's header (allowed).",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.65,
+     "zoom": 1.2
+    }
+   },
+   {
+    "file": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3701.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Rock a sliver on the horizon.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Uluru at Sunset in November 2018.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Dim dusk, small rock, fence in front.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3688.jpg",
+  "status": "accept"
+ },
+ "dest:uluru-kata-tjuta-national-park:why2": {
+  "candidates": [
+   {
+    "file": "Kata-Tjuta.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Several Kata Tjuta domes and the valley between them under blue sky, colour, 3468 px; domes recognisable.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "KataTjuta ValleyOfTheWinds.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Gorge floor with boulders and a dead tree, domes not recognisable; second choice.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Kata-Tjuta.jpg",
+  "status": "accept"
+ },
+ "dest:uluru-kata-tjuta-national-park:why3": {
+  "candidates": [
+   {
+    "file": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru, Kuniya Walk -- 2019 -- 3651.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Close detail of pitted rock wall with a branch; no walk or recognisable Uluru.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru, Kuniya Walk -- 2019 -- 3646.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Same wall detail; no walk shown.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru, Kuniya Walk -- 2019 -- 3636.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Boulders and bush; no walk or Uluru recognisable.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: only close-up details of the base, no photo showing the Base Walk",
+  "status": "none"
+ },
+ "dest:uluru-kata-tjuta-national-park:why4": {
+  "candidates": [],
+  "choice": "none: no candidates found",
+  "status": "none"
+ }
+}

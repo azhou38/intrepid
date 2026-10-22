@@ -1,0 +1,510 @@
+{
+ "spots": {
+  "kakadu-national-park-13": {
+   "name": "Injalak Arts",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Kunwinjku arts centre at Gunbalanya, just outside the park, where artists paint and weave; a permit or tour is needed.",
+   "hours": "8:30 AM – 4:30 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.327481,
+    "longitude": 133.056332
+   },
+   "wiki": null,
+   "free": true,
+   "ticketUrl": "https://injalak.com",
+   "coordinates_source": "OpenStreetMap way tourism=gallery \"Injalak Art Centre\" (MEDIUM, one precise OSM feature)",
+   "notes": "Gunbalanya is in Arnhem Land, outside Kakadu. CONTRADICTS the brief: the Kakadu page says 'Permit Required to Visit' and 'tour groups by appointment', NT tourism says a permit is needed (obtainable from the centre) and suggests booking a rock art tour; no source says the arts centre can be visited without one. injalak.com hours: Mon-Sat 8:30-4:30, Sun 9:30-4 (Kakadu page says Mon-Fri 8:30-5): shown the common range. Free entry per one listing. Cost-free so no park pass."
+  },
+  "kakadu-national-park-14": {
+   "name": "Nanguluwurr Art Site",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Rock art gallery on the Nanguluwurr walk with hand stencils, fish and turtle paintings and a two-masted lugger.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -12.843781,
+    "longitude": 132.819645
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/walks/nanguluwurr-art-site-walk",
+   "coordinates_source": "OpenStreetMap node historic=archaeological_site \"Nanguluwur Gallery\" (MEDIUM)",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Walk is 3.4 km return, ~2 hours, Grade 3. Name uses Parks Australia spelling (Nanguluwurr) instead of the draft's Nanguluwur. Pin is the gallery (walk end), 130 m from the Barrk Sandstone Walk midpoint pin."
+  },
+  "kakadu-national-park-15": {
+   "name": "Koolpin Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Gorge (Jarrangbarnmi) of waterholes and falls in the south-east, open by permit only or on guided 4WD tours.",
+   "hours": "Access by permit only",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -13.504735,
+    "longitude": 132.583734
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/walks/jarrangbarnmi-walk-koolpin-gorge",
+   "coordinates_source": "OpenStreetMap way waterway \"Koolpin Gorge\" midpoint (MEDIUM; feature of the gorge itself)",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Parks page: 2 km return, ~1.5 h, moderate to difficult, access by permit only (bushwalking/camping permit, apply via DCCEEW, 7 days; applications for 2027 open 1 Dec 2026; the page also says 2 km up the gorge needs no bushwalking permit: inconsistent). Permit fee not stated. Guided 4WD tours are also sold by operators. Visit hours include the tour/drive."
+  },
+  "kakadu-national-park-16": {
+   "name": "Motor Car Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Waterfall and pool at the end of a 7.5 km return walk along an old track through the Yurmikmik hills.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -13.533132,
+    "longitude": 132.478417
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/do/walks/yurmikmik-walks",
+   "coordinates_source": "OpenStreetMap node waterway=waterfall \"Yurmikmik (Motor Car) Falls\" (MEDIUM). Trail OSM midpoint is -13.522057,132.466168 (way 254765871)",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Category changed from hike to nature and pinned on the falls (a falls, not a route). Parks page: 7.5 km return, Grade 3, no time given (3-4 h is an estimate); described as a wet-season experience, and a permit is needed to bushwalk or camp in the area. A 2025 notice closed the car park for upgrades (check access report)."
+  },
+  "kakadu-national-park-17": {
+   "name": "Bardedjilidji Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2.5 km loop through sandstone outliers by the East Alligator River, with a rock shelter and grinding holes.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -12.436577,
+    "longitude": 132.969945
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/walks/bardedjilidji-walk",
+   "coordinates_source": "OpenStreetMap way highway=path \"Bardedjilidji Walk\" (id 25908697) midpoint (MEDIUM); official trailhead -12.432625,132.969782",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Parks page: 2.5 km loop, ~2 h, Grade 2, 'See it: May to December'. Starts at a small car park 500 m from the upstream boat ramp (East Alligator region); check access report."
+  },
+  "kakadu-national-park-18": {
+   "name": "Mirrai Lookout",
+   "icon": "🌄",
+   "category": "viewpoint",
+   "bio": "Short, steep 2 km return climb near Nourlangie to a lookout; start early on hot days.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.86485,
+    "longitude": 132.704748
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/do/walks/mirray-lookout-walk",
+   "coordinates_source": "OpenStreetMap node tourism=viewpoint \"Mirrai Lookout\" (MEDIUM); Parks page trailhead -12.862407,132.710706 is ~700 m away",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Draft said 3.6 km return near Bowali: wrong. Parks Australia: 2 km return, ~1.5 h, Grade 3, Burrungkuy (Nourlangie) region. Parks spells it Mirray Lookout; kept Mirrai (also the OSM spelling) so ids/search match the draft; owner may prefer Mirray."
+  },
+  "kakadu-national-park-19": {
+   "name": "Barrk Sandstone Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Difficult 12 km loop through sandstone country near Nourlangie; allow about six hours and start early.",
+   "hours": "Daylight hours; access January to October",
+   "visitHoursMin": 5,
+   "visitHoursMax": 7,
+   "coordinates": {
+    "latitude": -12.842599,
+    "longitude": 132.819151
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/do/walks/barrk-sandstone-walk",
+   "coordinates_source": "OpenStreetMap way highway=footway \"Barrk Sandstone Walk\" (id 174406038, 9.0 km mapped) midpoint (MEDIUM)",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Parks page: 12 km loop, ~6 h, difficult, access listed January to October; the page shows conflicting messages (open, and closed at the request of Traditional Owners): check the access report. Walk begins/ends near Burrungkuy; pin is mid-route, 130 m from Nanguluwurr Art Site."
+  },
+  "kakadu-national-park-20": {
+   "name": "Home Billabong",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Billabong behind Cooinda with a boardwalk and viewing platform, popular for barramundi; crocodiles may be present.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -12.909327,
+    "longitude": 132.521164
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/fishing-boating/home-billabong/",
+   "coordinates_source": "OpenStreetMap way natural=water \"Home Billabong\" centre (MEDIUM; a water polygon centre, not the platform)",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Draft '1.8 km return walk, best July to November' could not be sourced: Parks page only describes a fishing spot with boat ramp, open all year, 'crocodiles may be present'; the boardwalk and viewing platform come from NT tourism's Cooinda page (dry season, once water recedes). Walk length unverified. Route to Mardukal Billabong is closed (salvinia)."
+  },
+  "kakadu-national-park-21": {
+   "name": "Kungarre Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 3.6 km loop at South Alligator, with a shorter 1.4 km return walk to the boardwalk.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.677147,
+    "longitude": 132.489134
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/do/walks/kungarre-walk",
+   "coordinates_source": "OpenStreetMap way highway=footway \"Kungarre Walk\" (id 172750353) midpoint (MEDIUM)",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Parks page: 3.6 km loop (~2 h) or 1.4 km return to the boardwalk, Grade 2, toilets. Draft 'monsoon forest to a billabong with birdlife' not on the page, dropped."
+  },
+  "kakadu-national-park-22": {
+   "name": "Kubara Pools",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Six-kilometre return walk from Burrungkuy through savanna woodland and sandstone to monsoon forest pools; allow four hours.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4.5,
+   "coordinates": {
+    "latitude": -12.8353,
+    "longitude": 132.869788
+   },
+   "wiki": null,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "ticketUrl": "https://kakadu.gov.au/things-do/activities/walks/kubara-pools-walk",
+   "coordinates_source": "OpenStreetMap way highway=track \"Kubara Pools Walk\" (id 1244523541, 3.0 km one way) midpoint (MEDIUM); Parks start point -12.837073,132.858369",
+   "notes": "Cost is the standard adult Kakadu park pass ($40 for 7 days, per Parks Australia; reduced to $25 for 1 Jul-31 Oct 2026). Renamed from Gubara Pools to the Parks Australia spelling Kubara; id unchanged. Parks: 6 km return, ~4 h, Grade 3, open most of the year (most popular in the wet). Draft said 'with a swim': NT tourism says swimming is not permitted because of crocodiles, so the bio does not claim it."
+  },
+  "kakadu-national-park-23": {
+   "name": "Jabiru",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Kakadu's main service town, with shops, fuel, a swimming pool and accommodation, and the base for Ubirr and Nourlangie.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.673829,
+    "longitude": 132.836594
+   },
+   "wiki": "Jabiru, Northern Territory",
+   "free": true,
+   "ticketUrl": null,
+   "coordinates_source": "OpenStreetMap place=town \"Jabiru\" (MEDIUM)",
+   "notes": "No single steward, so no ticketUrl. Wikivoyage text predates 2022 (Jabiru was handed back to Traditional Owners; services have changed): confirm shops/pool. Pin is the OSM town point, ~2 km from Bowali Visitor Centre (-12.67548,132.817155)."
+  },
+  "arnhem-land-1": {
+   "name": "Nhulunbuy",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Gove Peninsula's main town, with shops, a bank and a library, and the base for the beaches and Yirrkala.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -12.180435,
+    "longitude": 136.775991
+   },
+   "wiki": null,
+   "free": true,
+   "ticketUrl": null,
+   "coordinates_source": "OpenStreetMap place=town \"Nhulunbuy\" (MEDIUM)",
+   "notes": "No ticketUrl (a town). Flying in and staying in town needs no permit; permits apply to recreation areas and to driving the Central Arnhem Road. Pin is ~0.9 km from the destination point."
+  },
+  "arnhem-land-2": {
+   "name": "Buku-Larrnggay Mulka Centre",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Art centre and museum at Yirrkala with Yolngu bark paintings, carvings and the original church panels.",
+   "hours": "Mon–Fri 8:00 AM – 4:30 PM, Sat 9:00 AM – 12:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.250303,
+    "longitude": 136.891387
+   },
+   "wiki": null,
+   "free": true,
+   "ticketUrl": "https://www.yirrkala.com",
+   "coordinates_source": "Wikivoyage listing and Wikipedia article coordinates agree within 10 m (HIGH, two sources)",
+   "notes": "Hours and free entry from the NT tourism listing (Saturday hours only there; other listings give Mon-Fri 8-4:30): unverified. Site loaded (title names the centre) but lists no hours. closedDays Sunday.",
+   "closedDays": [
+    0
+   ]
+  },
+  "arnhem-land-3": {
+   "name": "Galuru (East Woody Beach)",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach of white sand and rust-red cliffs 3 km from Nhulunbuy, for sunset strolls and the sandspit walk to East Woody Island.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.165497,
+    "longitude": 136.755788
+   },
+   "wiki": null,
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "AUD",
+   "ticketUrl": "https://www.dhimurru.com.au/permit-information/",
+   "coordinates_source": "OpenStreetMap way highway=unclassified \"East Woody Point\" (end of the access road at the beach); OSM has no beach feature (LOW)",
+   "notes": "pin: LOW. Visitor Access Permit required (Dhimurru: Gaaluru/East Woody, day use only, 2WD). Dhimurru Visitor Access Permit: $30 per adult for a day, $80 multi-day, teen half price, under 13 free (Nov 2025 flyer, includes fees); sold at book.dhimurru.com.au. No Wikipedia article for the beach, so no wiki title."
+  },
+  "arnhem-land-4": {
+   "name": "Dhamitjinya (East Woody Island)",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Island reached by walking the sandspit from East Woody Beach, with 360-degree views of the coastline.",
+   "hours": "Tides permitting",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.161389,
+    "longitude": 136.751111
+   },
+   "wiki": "East Woody Island",
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "AUD",
+   "ticketUrl": "https://www.dhimurru.com.au/permit-information/",
+   "coordinates_source": "Wikipedia article coordinates (island itself; LOW, single source, no OSM island feature found)",
+   "notes": "pin: LOW (island point from Wikipedia only, 600 m from the beach pin). Sandspit crossing depends on the tide (hours qualifier is an inference from 'walk the sandspit': unverified). Reached from East Woody Beach, so the same Dhimurru permit applies. Dhimurru Visitor Access Permit: $30 per adult for a day, $80 multi-day, teen half price, under 13 free (Nov 2025 flyer, includes fees); sold at book.dhimurru.com.au. "
+  },
+  "arnhem-land-5": {
+   "name": "Wirrwawuy (Cape Wirrawoi)",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Sand dunes at Cape Wirrawoi a few kilometres from town, popular for sunrise and sunset photographs.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -12.161102,
+    "longitude": 136.780104
+   },
+   "wiki": null,
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "AUD",
+   "ticketUrl": "https://www.dhimurru.com.au/permit-information/",
+   "coordinates_source": "OpenStreetMap node amenity=parking \"Cape Wirrawuy Car Park\" (MEDIUM)",
+   "notes": "Name given as Wirrwawuy (Cape Wirrawoi) to match the local-name convention used by the sibling spots. NT tourism: 5 km from town; Dhimurru lists Wirrwawuy 3 km, day use only, permit required. No Wikipedia article for the cape (draft wiki dropped). Dhimurru Visitor Access Permit: $30 per adult for a day, $80 multi-day, teen half price, under 13 free (Nov 2025 flyer, includes fees); sold at book.dhimurru.com.au. "
+  },
+  "arnhem-land-6": {
+   "name": "Garanhan (Macassan Beach)",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach about 35 minutes from Nhulunbuy with Yolngu stone pictures of the Macassan trepang trade and picnic tables.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -12.331364,
+    "longitude": 136.934768
+   },
+   "wiki": null,
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "AUD",
+   "ticketUrl": "https://www.dhimurru.com.au/permit-information/",
+   "coordinates_source": "OpenStreetMap node place=locality \"Macassan Beach\" (MEDIUM; named locality at the beach)",
+   "notes": "Dhimurru day-use and camping area (camping needs an extra permit). Facilities per NT tourism: picnic tables, fire pits, composting toilets. Dhimurru Visitor Access Permit: $30 per adult for a day, $80 multi-day, teen half price, under 13 free (Nov 2025 flyer, includes fees); sold at book.dhimurru.com.au. "
+  },
+  "arnhem-land-7": {
+   "name": "Banambarrna (Rainbow Cliffs)",
+   "icon": "🌈",
+   "category": "nature",
+   "bio": "Sheer 40 m laterite cliffs near Gove Airport, viewed from the beach below; the top is a sacred site.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -12.210226,
+    "longitude": 136.828753
+   },
+   "wiki": null,
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "AUD",
+   "ticketUrl": "https://www.dhimurru.com.au/permit-information/",
+   "coordinates_source": "OpenStreetMap node tourism=viewpoint \"Rainbow Cliffs\" (MEDIUM)",
+   "notes": "Dhimurru day-use and camping area. Do not stand on top (sacred). Dhimurru Visitor Access Permit: $30 per adult for a day, $80 multi-day, teen half price, under 13 free (Nov 2025 flyer, includes fees); sold at book.dhimurru.com.au. "
+  },
+  "arnhem-land-8": {
+   "name": "Bremer Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Beach island 45 minutes by fast boat from Nhulunbuy, visited on day trips with snorkelling and kayaks.",
+   "hours": "Day trips Wednesday to Sunday, April to October",
+   "visitHoursMin": 6,
+   "visitHoursMax": 7,
+   "coordinates": {
+    "latitude": -12.106754,
+    "longitude": 136.809181
+   },
+   "wiki": null,
+   "costMin": 179,
+   "costMax": 179,
+   "currency": "AUD",
+   "ticketUrl": "https://banubanu.rezdy.com/270993/bremer-island-day-trip-with-boat-transfers",
+   "coordinates_source": "OpenStreetMap node place=island \"Bremer Island\" (MEDIUM; island point)",
+   "notes": "Banubanu Beach Retreat day trip: about A$179 per person (Rezdy listing, ~6 h, includes transfers and island permit, lunch extra); NT tourism says from A$129: conflicting, approximate. Boat leaves Gove Boat Club ramp ~9 am, times vary with tide; schedule (Wed-Sun, Apr-Oct) from one listing: unverified. NT page gives a 15-minute flight from Gove Airport as an alternative. Operator site banubanu.com/bremer-island-day-tours returned 404 and the Rezdy page 403 to scripts."
+  },
+  "garig-gunak-barlu-national-park": {
+   "name": "Garig Gunak Barlu National Park",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Remote Cobourg Peninsula park of beaches, islands and reefs, reached by air, sea or a dry-season 4WD track with a permit.",
+   "hours": "Dry season only, roughly May to October",
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "coordinates": {
+    "latitude": -11.153992,
+    "longitude": 132.143669
+   },
+   "wiki": null,
+   "costMin": 232,
+   "costMax": 232,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/leisure/parks-reserves/permits-for-parks/permits-for-cobourg-peninsula-garig-gunak-barlu-national-park",
+   "coordinates_source": "OpenStreetMap way amenity=ranger_station \"Black Point Ranger Station\" (MEDIUM; visitors must check in here)",
+   "notes": "Park permit required; $232.10 per vehicle covers camping and transit through Arnhem Land for up to 5 adults for 7 nights (NT Government permits page via search snippet; Lonely Planet agrees on the total; the transit/camping split differs between sources). Pay at least 6 weeks ahead; Permits office 08 8999 4814. Fuel not sold in the park. Black Point Cultural Centre is on the owner's review list, not added (its pin is 25 m away). Standalone fields country/countryCode/continent/timezone included. Visit hours express a multi-day trip.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "arnhem-land",
+    "name": "Arnhem Land",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Darwin",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -12.215,
+     "longitude": 136.835
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 100,
+    "rank": 3,
+    "icon": "🎨",
+    "tagline": "Beaches, laterite cliffs and Yolngu art on the Gove Peninsula in north-east Arnhem Land.",
+    "description": "The Gove Peninsula sits at the north-eastern corner of Arnhem Land, about 600 km from Darwin on Yolngu country. Nhulunbuy is the base for white-sand beaches, rust-red cliffs and a sandspit walk to East Woody Island, while Yirrkala, 19 km away, is home to the Buku-Larrnggay Mulka art centre and museum. Bremer Island lies offshore for day trips by boat. Most of the land is Aboriginal-owned, so visits to its recreation areas need a permit.",
+    "whyVisit": [
+     "See Yolngu bark paintings at Yirrkala",
+     "Stand beneath the Rainbow Cliffs",
+     "Walk the sandspit to East Woody Island"
+    ],
+    "highlights": [
+     "Yolngu bark art",
+     "Laterite cliffs",
+     "Sandspit island walk"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Dhimurru permit needed",
+      "detail": "East Woody, Cape Wirrawoi, Rainbow Cliffs and Macassan Beach need a Dhimurru Visitor Access Permit: $30 per adult for a day."
+     },
+     {
+      "icon": "✈️",
+      "title": "Fly in or drive",
+      "detail": "Airnorth flies from Darwin to Gove. The Central Arnhem Road is unsealed, a dry-season route, and needs a separate transit permit."
+     },
+     {
+      "icon": "⛵",
+      "title": "Boat trips follow the tides",
+      "detail": "Bremer Island day trips leave Nhulunbuy at tide-dependent times; one operator runs them Wednesday to Sunday, April to October."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "The Dry season, {months}, brings sunny days and cooler nights and opens the Central Arnhem Road; the Wet, November to April, means storms and cyclone risk."
+   },
+   "spots": [
+    "arnhem-land-2",
+    "arnhem-land-1",
+    "arnhem-land-7",
+    "arnhem-land-3",
+    "arnhem-land-6",
+    "arnhem-land-8",
+    "arnhem-land-4",
+    "arnhem-land-5"
+   ],
+   "notes": "Placement order changed to importance: Buku-Larrnggay Mulka (3 counted sources, the cultural headline), Nhulunbuy (base), Rainbow Cliffs, East Woody Beach, Macassan Beach, Bremer Island, East Woody Island, Cape Wirrawoi. Ids unchanged. Destination point -12.215,136.835 is on the peninsula between Nhulunbuy and Yirrkala, 0.9 km from the Rainbow Cliffs pin and well over 25 m from every spot; all spots lie within 75% of the 100 km span (furthest: Macassan Beach ~16 km, Bremer ~12 km). 3 reasons / 3 tips for rank 3. Photos not done. Best months from NT tourism (Dry May-Oct) and Nhulunbuy climate guides."
+  }
+ ],
+ "unverified": [
+  "Injalak Arts: hours conflict (injalak.com Mon-Sat 8:30-4:30, Sun 9:30-4 vs Kakadu page Mon-Fri 8:30-5) and PERMIT: every source says a permit/tour is needed, contradicting the brief's 'permit not needed' (bio states it)",
+  "Buku-Larrnggay Mulka hours (Saturday 9-12 only from the NT tourism listing) and free entry",
+  "Home Billabong: walk length not found (draft's 1.8 km dropped); boardwalk and platform only from NT tourism's Cooinda page",
+  "Motor Car Falls: walk time (3-4 h) is an estimate; Parks gives 7.5 km return only; permit/car park status",
+  "Barrk Sandstone Walk: access status (page also says closed at request of Traditional Owners)",
+  "Koolpin Gorge: permit fee not stated; page inconsistent on whether 2 km up the gorge needs a permit",
+  "Mirrai/Mirray, Kubara, Nanguluwurr names changed/spelled per Parks Australia; owner to confirm Mirrai vs Mirray",
+  "Kakadu spots' cost: standard adult park pass $40/7 days (temporarily $25 until 31 Oct 2026); not a per-spot fee",
+  "Jabiru services (Wikivoyage text predates 2022)",
+  "East Woody Island hours qualifier 'Tides permitting' (inferred from the sandspit)",
+  "Bremer Island price (A$179 vs 'from A$129'), schedule (Wed-Sun, Apr-Oct) and 15-minute flight alternative",
+  "Dhimurru $30 day price is from the Nov 2025 flyer; Wirrwawuy/Galuru listed there as permit-required day-use areas",
+  "Garig Gunak Barlu: $232.10 per vehicle permit split, 6 weeks' advance payment, May-Oct season"
+ ],
+ "pins_LOW": [
+  "arnhem-land-3 Galuru (East Woody Beach): end of access road, no OSM beach feature",
+  "arnhem-land-4 Dhamitjinya (East Woody Island): Wikipedia island point only"
+ ],
+ "needs_browser": [
+  {
+   "id": "arnhem-land-8",
+   "url": "https://banubanu.rezdy.com/270993/bremer-island-day-trip-with-boat-transfers",
+   "why": "Rezdy returned 403 to scripts; operator site banubanu.com/bremer-island-day-tours returned 404; confirm the right booking link and price"
+  },
+  {
+   "id": "garig-gunak-barlu-national-park",
+   "url": "https://nt.gov.au/leisure/parks-reserves/permits-for-parks/permits-for-cobourg-peninsula-garig-gunak-barlu-national-park",
+   "why": "nt.gov.au blocks scripts; known only from search results"
+  }
+ ],
+ "notes": [
+  "Pins: resolve-pin.py mostly returned LOW (Overpass default down), so points come from targeted queries to the maps.mail.ru Overpass mirror and Nominatim; each entry records the OSM feature. Trails use the midpoint of the matching OSM way; Mirray lookout and Motor Car Falls are pinned on the feature itself.",
+  "Kakadu destination centre should avoid the new pins: Jabiru -12.673829,132.836594; Nanguluwurr -12.843781,132.819645; Barrk -12.842599,132.819151. None of the shard's pins is within 25 m of another's (nearest pair ~130 m).",
+  "Garig Gunak Barlu: its pin is the Black Point ranger station; Black Point Cultural Centre (review list) is 25 m away. Standalone; keep.",
+  "Cost field for Kakadu spots uses the standard park pass; if you prefer free:true for walks, say so.",
+  "Nothing judged should not be added."
+ ]
+}

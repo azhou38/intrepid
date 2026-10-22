@@ -1,0 +1,496 @@
+{
+ "spots": {
+  "west-macdonnell-national-park-1": {
+   "name": "Ormiston Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Red-walled gorge with a deep permanent waterhole about 500 m from the visitor centre and the Ormiston Pound circuit.",
+   "hours": "Open daily",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -23.62675,
+    "longitude": 132.72838
+   },
+   "wiki": null,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ormiston-gorge",
+   "coordinates_source": "OSM node 77923044 'Ormiston Gorge' tourism=attraction (MEDIUM; Wikipedia point is the pound centroid, not used)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. 'Ormiston Gorge' redirects to Wikipedia 'Ormiston Pound' so wiki omitted. Pound Walk 3-4 h loop needs a short cold swim at present."
+  },
+  "west-macdonnell-national-park-6": {
+   "name": "Larapinta Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Walking trail of about 230 km in 12 sections along the West MacDonnell Ranges from Alice Springs to Mount Sonder.",
+   "hours": "Open year-round; book multi-day walking and campsites online",
+   "visitHoursMin": 2,
+   "visitHoursMax": 48,
+   "coordinates": {
+    "latitude": -23.75756,
+    "longitude": 133.14756
+   },
+   "wiki": null,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/about-larapinta-trail",
+   "coordinates_source": "Midpoint of the whole route: computed from OSM 'Larapinta Trail Section 1-12' ways (224.8 km mapped, east to west), falls in Section 6; MEDIUM",
+   "notes": "Official tourism page gives 231 km (other sources 223 km); OSM sums to 224.8 km. Multi-day walker and camp fees apply (amounts not listed); $10 is the Parks Visitor Pass. Day sections have their own trailheads."
+  },
+  "west-macdonnell-national-park-2": {
+   "name": "Standley Chasm",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Sheer-walled red chasm on Arrernte land, reached by a 2.4 km round-trip path; also called Angkerle Atwatye.",
+   "hours": "Mon-Sat 8:00 AM - 5:00 PM; Sun 8:00 AM - 2:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.7161258,
+    "longitude": 133.470152
+   },
+   "wiki": "Standley Chasm",
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.standleychasm.com.au",
+   "coordinates_source": "OSM node 77923027 'Standley Chasm' (MEDIUM; chasm itself, ~1.2 km up the path from the kiosk/car park)",
+   "notes": "Adult $12 per several sources (official page loaded but did not show price); concessions and children cheaper. Last entry 4:30 PM (Sun 1:30 PM); gates locked after hours; closed Christmas Day and Good Friday. Privately run, so no Parks Pass."
+  },
+  "west-macdonnell-national-park-3": {
+   "name": "Simpsons Gap",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Gap in the ranges 18 km west of Alice Springs, with a waterhole, rock-wallaby habitat and a walking track.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.6736327,
+    "longitude": 133.7196035
+   },
+   "wiki": "Simpsons Gap",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "coordinates_source": "OSM node 77923070 'Simpsons Gap' (MEDIUM; waterhole node 2183385926 is 40 m away; Wikipedia point 220 m off)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Ranger station is at the car park (OSM -23.72298,133.73492)."
+  },
+  "west-macdonnell-national-park-4": {
+   "name": "Ellery Creek Big Hole",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Permanent waterhole beneath red cliffs, a five-minute walk from the car park, known for cold swimming and camping.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -23.77951,
+    "longitude": 133.07295
+   },
+   "wiki": null,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ellery-creek-big-hole",
+   "coordinates_source": "OSM node 1811173014 'Ellery Creek Big Hole' tourism=picnic_site at the waterhole car park/walk start (MEDIUM)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. No Wikipedia article (wiki omitted)."
+  },
+  "west-macdonnell-national-park-5": {
+   "name": "Glen Helen Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Gorge and waterhole a short stroll from the car park, used for swimming and as a lunch stop beside the Glen Helen resort.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.68922,
+    "longitude": 132.67672
+   },
+   "wiki": "Glen Helen Gorge",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "coordinates_source": "OSM node 831041144 'Glen Helen Gorge' tourism=attraction (MEDIUM)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Unverified whether the pass applies at the resort-side access."
+  },
+  "west-macdonnell-national-park-7": {
+   "name": "Mount Sonder",
+   "icon": "🏔️",
+   "category": "hike",
+   "bio": "Grade 4 summit walk to the 1,379 m peak at the Larapinta Trail's western end, with views over the ranges.",
+   "hours": "Open daily; start early, little shade",
+   "visitHoursMin": 5,
+   "visitHoursMax": 7,
+   "coordinates": {
+    "latitude": -23.57671,
+    "longitude": 132.58567
+   },
+   "wiki": "Mount Sonder",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/sections-of-the-larapinta-trail",
+   "coordinates_source": "OSM node 2374920719 'Mount Sonder' natural=peak (MEDIUM, summit)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Walk is Larapinta Section 12 from Redbank Gorge, ~15 km return, 5-7 h (trail guide, unofficial). DRAFT BIO ERROR FIXED: Mount Sonder is not the highest point of the West MacDonnells (Mount Zeil is). Also called Rutjupma."
+  },
+  "west-macdonnell-national-park-8": {
+   "name": "Serpentine Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Narrow gorge about 100 km west of Alice Springs, with a short walk through to Inarlanga Pass.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.7495217,
+    "longitude": 132.9787835
+   },
+   "wiki": "Serpentine Gorge",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "coordinates_source": "OSM node 77923019 'Serpentine Gorge' tourism=attraction (MEDIUM; waterhole 65 m away)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Swimming rules conflict across sources (not stated in bio)."
+  },
+  "west-macdonnell-national-park-9": {
+   "name": "Ochre Pits",
+   "icon": "🎨",
+   "category": "nature",
+   "bio": "Coloured ochre quarry faces that Arrernte people have mined for generations, with a short walk from the car park.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -23.7338869,
+    "longitude": 132.8695081
+   },
+   "wiki": "Ochre Pits",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "coordinates_source": "OSM node 77923025 'Ochre Pits' tourism=attraction (MEDIUM; Wikipedia point 280 m off)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt."
+  },
+  "west-macdonnell-national-park-10": {
+   "name": "Redbank Gorge",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Narrow chasm and cold swimming hole at the foot of Mount Sonder, reached by a short walk from the car park.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.5662281,
+    "longitude": 132.5196216
+   },
+   "wiki": "Redbank Gorge",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/redbank-gorge",
+   "coordinates_source": "OSM node 311977448 'Redbank Gorge' tourism=attraction (MEDIUM; picnic/car park is 1.2 km south)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Access road is unsealed; sources disagree whether 4WD is required (not stated in bio). Placement's provisional point was Serpentine Gorge's, not used."
+  },
+  "watarrka-national-park-1": {
+   "name": "Kings Canyon",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Sandstone canyon with walls up to 270 m high, seen from the Rim Walk or the creek-bed walk below.",
+   "hours": "Open daily; Rim Walk start before 9 AM on days forecast 36°C or higher",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -24.255298,
+    "longitude": 131.5708048
+   },
+   "wiki": "Kings Canyon (Northern Territory)",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park",
+   "coordinates_source": "OSM node 13446516527 'Watarrka National Park' information board at the 'Kings Canyon' car park (MEDIUM); Wikipedia point is 1 km off",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Placement's Wikipedia point not used (rounded, 1 km from the car park)."
+  },
+  "watarrka-national-park-2": {
+   "name": "Kings Canyon Rim Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Grade 4 loop of 6 km over the canyon rim, past the Garden of Eden waterhole; allow three to four hours.",
+   "hours": "Open daily; start before 9 AM on days forecast 36°C or higher",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -24.24895,
+    "longitude": 131.58324
+   },
+   "wiki": null,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park",
+   "coordinates_source": "Midpoint of the whole loop: computed from the 19 OSM 'Kings Canyon Rim Walk' ways (4.8 km mapped), halfway round from the start (HIGH: matches placement resolve-pin point within 10 m)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Official length 6 km (draft said 7); 3-4 h; steep climb at the start; on days forecast 36°C+ entry not permitted after 9 AM."
+  },
+  "watarrka-national-park-3": {
+   "name": "Kings Creek Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2 km return walk along Kings Creek at the foot of the canyon, a short alternative to the Rim Walk.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -24.25076,
+    "longitude": 131.57598
+   },
+   "wiki": null,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks",
+   "coordinates_source": "Midpoint of the OSM 'Kings Creek Walk' route (relation 13434585, ways joined; 680 m mapped one way) (MEDIUM)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. Renamed from draft 'King Creek Walk' to the official 'Kings Creek Walk' (id unchanged). Graded easy (Level 2), ~1 h, uneven surfaces; draft claim 'wheelchair accessible' removed (only part of the path is, per OSM/Wikivoyage)."
+  },
+  "watarrka-national-park-4": {
+   "name": "Kathleen Springs Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Paved, wheelchair-accessible 2.4 km return walk to a spring-fed waterhole at the head of Kathleen Gorge.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -24.337963,
+    "longitude": 131.680904
+   },
+   "wiki": null,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks",
+   "coordinates_source": "Midpoint of OSM way 55380964 'Kathleen Springs Walk' footway (1.2 km one way) (MEDIUM)",
+   "notes": "Cost is the NT Parks Visitor Pass, adult 1-day $10 (northernterritory.com park page); NT residents exempt. 2.4 km (Grade 1, ~1.5 h) per NT Parks snippet; other sources 2.5-2.6 km. Swimming not permitted at the waterhole."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Darwin",
+    "continent": "Oceania",
+    "category": "park",
+    "id": "west-macdonnell-national-park",
+    "name": "Tjoritja / West MacDonnell National Park",
+    "coordinates": {
+     "latitude": -23.7736624,
+     "longitude": 132.9732891
+    },
+    "defaultZoomSpanKm": 110,
+    "rank": 3,
+    "icon": "🏜️",
+    "tagline": "Red-walled gorges, cold waterholes and the Larapinta Trail along the ranges west of Alice Springs.",
+    "description": "Tjoritja / West MacDonnell National Park runs about 161 km west of Alice Springs along the MacDonnell Ranges, with most sights off the sealed Namatjira Drive. Gorges cut through the ranges hold permanent waterholes at Ellery Creek Big Hole, Ormiston Gorge and Redbank Gorge, while Standley Chasm and the Ochre Pits show other sides of the country. The Larapinta Trail follows the ranges to Mount Sonder, and Simpsons Gap is the nearest stop to town.",
+    "whyVisit": [
+     "Swim in cold gorge waterholes",
+     "Walk a section of the Larapinta Trail",
+     "See sheer cliffs at Standley Chasm"
+    ],
+    "highlights": [
+     "Cold waterholes",
+     "Long-distance trail",
+     "Narrow chasm"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Parks pass required",
+      "detail": "Visitors need an NT Parks Visitor Pass: adult $10 for a day, $20 for three days. NT residents are exempt. Buy online at parkbookings.nt.gov.au."
+     },
+     {
+      "icon": "🥶",
+      "title": "Waterholes are very cold",
+      "detail": "Gorge water stays cold even in summer and can cause hypothermia. At Ormiston Gorge diving and jumping are not allowed."
+     },
+     {
+      "icon": "⛺",
+      "title": "Book Larapinta camps",
+      "detail": "Multi-day Larapinta Trail walking and its campsites must be booked online before you arrive, and camping fees apply."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "bestTimeBlurb": "The cooler months, {months}, are the most popular time to visit and best for walking; summer days are very hot."
+   },
+   "spots": [
+    "west-macdonnell-national-park-1",
+    "west-macdonnell-national-park-6",
+    "west-macdonnell-national-park-2",
+    "west-macdonnell-national-park-3",
+    "west-macdonnell-national-park-4",
+    "west-macdonnell-national-park-5",
+    "west-macdonnell-national-park-7",
+    "west-macdonnell-national-park-8",
+    "west-macdonnell-national-park-9",
+    "west-macdonnell-national-park-10"
+   ],
+   "notes": "Importance order changed from the placement (Larapinta Trail moved to 2nd; ids unchanged). Destination point = OSM node at the Serpentine Gorge turn-off on Namatjira Drive (-23.7736624,132.9732891), roughly the middle of the park; picked so Simpsons Gap (~77 km) and Redbank (~51 km) lie inside 75% of the 110 km span (82.5 km); Ormiston visitor centre would have put Simpsons Gap at ~101 km. Not equal to any spot pin."
+  },
+  {
+   "destination": {
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Darwin",
+    "continent": "Oceania",
+    "category": "park",
+    "id": "watarrka-national-park",
+    "name": "Watarrka National Park",
+    "coordinates": {
+     "latitude": -24.2517823,
+     "longitude": 131.5115543
+    },
+    "defaultZoomSpanKm": 50,
+    "rank": 3,
+    "icon": "🏞️",
+    "tagline": "Kings Canyon's sandstone walls, a rim walk and easy creek and spring walks in the Red Centre.",
+    "description": "Watarrka National Park is known for Kings Canyon, a sandstone canyon with walls up to 270 m high. The Rim Walk circles the top and drops to the Garden of Eden waterhole, while an easy walk follows Kings Creek along the canyon floor. In the south of the park a paved path leads to Kathleen Springs. Kings Canyon Resort, a short drive west of the canyon, has the area's accommodation, dining and tours.",
+    "whyVisit": [
+     "Walk the Kings Canyon rim",
+     "Stroll Kings Creek below the canyon",
+     "Follow the paved path to Kathleen Springs"
+    ],
+    "highlights": [
+     "Canyon rim",
+     "Easy creek walk",
+     "Accessible waterhole"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Parks pass required",
+      "detail": "Visitors need an NT Parks Visitor Pass: adult $10 for a day, $20 for three days. NT residents are exempt. Buy online at parkbookings.nt.gov.au."
+     },
+     {
+      "icon": "🌡️",
+      "title": "Rim Walk heat rule",
+      "detail": "On days forecast 36°C or higher the Rim Walk must start before 9 am, with no entry after. Carry plenty of water; there is little shade."
+     },
+     {
+      "icon": "🚗",
+      "title": "Mereenie Loop permit",
+      "detail": "Driving in from Hermannsburg or Glen Helen on Larapinta Drive needs a Mereenie Loop Pass permit; get it before you set off."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "bestTimeBlurb": "The cooler months, {months}, avoid the heat limits that apply on the Rim Walk from September to April."
+   },
+   "spots": [
+    "watarrka-national-park-1",
+    "watarrka-national-park-2",
+    "watarrka-national-park-3",
+    "watarrka-national-park-4"
+   ],
+   "notes": "Destination point = Kings Canyon Resort (OSM node 77988056), the area's hub, ~6.7 km from the canyon car park; not a spot. All spots within ~20 km (limit 37.5 km). Kings Canyon pin is the canyon car park; Rim Walk pin is the loop midpoint, ~1.4 km apart. Resort is not a spot."
+  }
+ ],
+ "unverified": [
+  "Hours for all WMNP gorge/waterhole spots and Watarrka walks are the honest qualifier 'Open daily' (no site-specific hours found); Standley Chasm hours are from the official site",
+  "Whether the $10 NT Parks Visitor Pass applies at Glen Helen Gorge and every individual site (park pages state it for the park)",
+  "Standley Chasm adult price $12 (several sources agree; official page did not show it)",
+  "Mount Sonder visit time 5-7 h (unofficial trail guide); Larapinta total length differs by source (223/231 km)",
+  "Kathleen Springs Walk length 2.4 km (NT Parks snippet; others 2.5-2.6 km)",
+  "OSM mapped length of Kings Canyon Rim Walk is 4.8 km vs official 6 km; pin is the midpoint of the mapped loop"
+ ],
+ "needs_browser": [
+  {
+   "id": "west-macdonnell-national-park-1",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ormiston-gorge",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-6",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/about-larapinta-trail",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-3",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-4",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ellery-creek-big-hole",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-5",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-7",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/sections-of-the-larapinta-trail",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-8",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-9",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "west-macdonnell-national-park-10",
+   "url": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/redbank-gorge",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "watarrka-national-park-1",
+   "url": "https://nt.gov.au/parks/find-a-park/watarrka-national-park",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "watarrka-national-park-2",
+   "url": "https://nt.gov.au/parks/find-a-park/watarrka-national-park",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "watarrka-national-park-3",
+   "url": "https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  },
+  {
+   "id": "watarrka-national-park-4",
+   "url": "https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks",
+   "why": "nt.gov.au blocks scripts (403); found via WebSearch result only"
+  }
+ ],
+ "notes": [
+  "Kings Canyon Resort not added as a spot (accommodation/operator).",
+  "Draft errors fixed: Mount Sonder not highest point of the ranges; Rim Walk 6 km not 7; Kings Creek Walk name and 'wheelchair accessible' claim.",
+  "Park/WMNP spots carry cost 10 AUD (1-day adult NT Parks Visitor Pass) following the Litchfield precedent; Standley Chasm 12."
+ ]
+}

@@ -1,0 +1,127 @@
+{
+ "alice-springs-9": {
+  "coordinates": {
+   "latitude": -23.7041,
+   "longitude": 133.8769
+  },
+  "coordinates_source": "Unchanged: Wikipedia point of the museum article; sits inside an OSM building cluster (ways 967007739-44, -23.7037 to -23.7041, 133.8767-133.8771). No OSM feature or Commons geotag names the Old Gaol; OSM Nominatim returned nothing.",
+  "confidence": "LOW",
+  "note": "Could not improve. Old Gaol article point (-23.7031,133.877) is 111 m north; the OSM building cluster supports the current point. Keep and flag for owner map check."
+ },
+ "arnhem-land-3": {
+  "coordinates": {
+   "latitude": -12.164724,
+   "longitude": 136.754815
+  },
+  "coordinates_source": "OpenStreetMap: east end node of highway way 468097118 'East Woody Point' (road end at the beach); natural=beach way 49928797 runs along that shore (nearest beach vertex ~170 m). Moved ~200 m from the previous mid-road point.",
+  "confidence": "MEDIUM",
+  "note": "Road-end visitor/standing point; OSM has no named Galuru/Gaaluru feature. Island pin below is ~400 m away."
+ },
+ "arnhem-land-4": {
+  "coordinates": {
+   "latitude": -12.16117,
+   "longitude": 136.75066
+  },
+  "coordinates_source": "Centroid of OSM closed natural=coastline way 158247604 (the East Woody Island outline); Wikipedia 'East Woody Island' (-12.1614,136.7511) agrees within 50 m.",
+  "confidence": "HIGH",
+  "note": "Two independent sources within 100 m. About 400 m from the Galuru pin (>25 m)."
+ },
+ "nitmiluk-national-park-3": {
+  "coordinates": {
+   "latitude": -14.112955,
+   "longitude": 132.353165
+  },
+  "coordinates_source": "OSM named ways 'Jatbula Trail' (18 ways chained, 52.1 km mapped, Biddlecombe-end -14.2549,132.4330 to Leliyn -14.1789,132.1931); halfway point of the chain is -14.11295,132.32781, shifted ~2.7 km toward the Nitmiluk end to allow ~10 km unmapped at the start (full route ~62 km). Snapped on an OSM way.",
+  "confidence": "MEDIUM",
+  "note": "The OSM route relations are split into 5 'section' relations, so the whole route was assembled from ways. Start segments near Nitmiluk Gorge (-14.31,132.42 to -14.25,132.43) are only partly mapped; true midpoint is within about 3 km along the trail."
+ },
+ "elsey-national-park": {
+  "coordinates": {
+   "latitude": -14.953273,
+   "longitude": 133.220255
+  },
+  "coordinates_source": "OSM tourism=camp_site node 1811179295 'Jalmurark Campground' (Elsey NP main camp and day-use area); tourism=information node 12993135674 is 30 m away.",
+  "confidence": "MEDIUM",
+  "note": "Park visitor hub on Elsey Camp Drive, not the polygon centroid. Mataranka Falls viewpoint (Korowan) is 3.5 km east and Thermal Pools 6+ km west, so no pin clash."
+ },
+ "keep-river-national-park": {
+  "coordinates": {
+   "latitude": -15.87521,
+   "longitude": 129.05149
+  },
+  "coordinates_source": "OSM tourism=camp_site node 316581918 'Goorrandalng Camping Area' (Gurrandalng, the park's main camp and walk-start hub).",
+  "confidence": "MEDIUM",
+  "note": "Replaces the Jarnem Lookout point (a review-list walk). Park entrance info node is at -15.9702,129.0402 (not used). Jarnem Camping Area is -15.7626,129.0988."
+ },
+ "giwining-nature-park": {
+  "coordinates": {
+   "latitude": -14.75833,
+   "longitude": 131.59611
+  },
+  "coordinates_source": "OSM tourism=camp_site node 1811172150 'Djarrung Campground' (toilets node 12 m away; Flora River Walk starts here). Giwining is the Flora River Nature Park visitor area.",
+  "confidence": "MEDIUM",
+  "note": "No 'Lorrngorl' feature exists in OSM; Djarrung campground and Flora River Walk are the park's only visitor facilities there. About 700 m from the previous polygon point."
+ },
+ "gosses-bluff": {
+  "coordinates": {
+   "latitude": -23.817255,
+   "longitude": 132.314546
+  },
+  "coordinates_source": "OSM tourism=picnic_site node 311965802 on Namatjira Drive at the Tnorala viewing area (toilets 30 m away; viewpoint nodes 311965807 and 327775782 within 80 m).",
+  "confidence": "MEDIUM",
+  "note": "Visitor viewing/day-use point replaces the crater-rim peak, ~3.5 km north."
+ },
+ "ewaninga-conservation-reserve": {
+  "coordinates": {
+   "latitude": -24.012775,
+   "longitude": 133.953503
+  },
+  "coordinates_source": "OSM tourism=viewpoint node 2355812553 at the Ewaninga carvings (a second viewpoint 100 m SE, toilets and picnic site 200 m N).",
+  "confidence": "MEDIUM",
+  "note": "Only ~25 m from the previous centroid pin; the reserve is tiny, so the gain is feature-level confirmation."
+ },
+ "henbury-meteorites-conservation-reserve": {
+  "coordinates": {
+   "latitude": -24.571453,
+   "longitude": 133.143381
+  },
+  "coordinates_source": "OSM tourism=information node 1574650659 at the Henbury Meteorite Craters camp/picnic/toilet hub (camp_site 316581627 and picnic_site 1574651042 within 50 m). Main crater group (craters 1-14) is 300-500 m east.",
+  "confidence": "MEDIUM",
+  "note": "Car park/visitor hub rather than the reserve centroid (~0.7 km SE)."
+ },
+ "uluru-kata-tjuta-national-park-3": {
+  "coordinates": {
+   "latitude": -25.349529,
+   "longitude": 131.04961
+  },
+  "coordinates_source": "OSM hiking relation 13434620 'Uluru Base Walk' (14 ways, closed loop, 9.57 km mapped); point exactly half the loop length from the Mala-walk start, on the route.",
+  "confidence": "MEDIUM",
+  "note": "A closed loop has no unique midpoint: this is opposite the Mala car park (start), on the south-east side. OSM length is 9.6 km against the official 10.6 km."
+ },
+ "dest:tennant-creek": {
+  "coordinates": {
+   "latitude": -19.648165,
+   "longitude": 134.189985
+  },
+  "coordinates_source": "OSM place=town node 1852930060 'Tennant Creek'.",
+  "confidence": "HIGH",
+  "note": "About 110 m from the previous Wikipedia point; no spot pin within 150 m."
+ },
+ "dest:kakadu-national-park": {
+  "coordinates": {
+   "latitude": -12.6745,
+   "longitude": 132.8168
+  },
+  "coordinates_source": "Unchanged. On land in Jabiru, 50 m from OSM tourism=information node 3511903306 'Bowali Visitor's Centre' on the Kakadu Highway; Jabiru place=town node is 2 km east.",
+  "confidence": "MEDIUM",
+  "note": "Verified on land near Bowali; 69 m from spot kakadu-national-park-8, so no clash. No change needed."
+ },
+ "katherine-2": {
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "hours": null,
+  "source": "NOT FOUND. ksa.nt.edu.au (home, FAQ, contact, history) lists no visitor tours or prices (history only notes a 'Tourist Room' from 1991). Only stale third-party figures: Frommer's A$5 adult / A$2 child, tours at 9, 10, 11 am mid-March to mid-November; Wikitravel $7/$3.50; Tripadvisor 1-hour 11 am tours Mon-Fri May-Aug but flagged permanently closed. School phone (08) 8972 1833. Do not publish a price; consider dropping the spot unless the owner confirms tours still run.",
+  "confidence": "LOW"
+ }
+}

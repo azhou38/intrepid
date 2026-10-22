@@ -1,0 +1,526 @@
+{
+ "dest:tennant-creek:header": {
+  "status": "none",
+  "choice": "none: only Lake Mary Ann footbridge and a ute on a lookout road; no town cityscape",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/tc_lakemaryann.jpg",
+    "verdict": "reject",
+    "check_failed": "3 (header must be town in landscape); 2",
+    "reason": "footbridge with walkers, not the town",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/tc_billallen.jpg",
+    "verdict": "reject",
+    "check_failed": "3; 2",
+    "reason": "vehicle on a road is the focus, not the town",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   }
+  ]
+ },
+ "dest:kakadu-national-park:why4": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/cahills_platform.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/cahills_croc.jpg",
+    "verdict": "reject",
+    "check_failed": "2 (place) / crop",
+    "reason": "portrait croc; the 1.6:1 crop is just a croc head in brown water, crossing not visible: a stand-in for the place",
+    "hero_crop": "fail: croc fills crop, no place",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/cahills_platform.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "real colour photo 1600x1200, visitors at the Cahills Crossing viewing platform with the crossing and river; no crocodile visible, so REWORD the reason (e.g. \"Watch the tide at Cahills Crossing\" / \"Look out over Cahills Crossing\")",
+    "hero_crop": "ok (1.6:1 keeps platform, visitors and crossing)",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   }
+  ],
+  "note": "accept only with reworded reason; with the original wording the croc photo is the only one that shows crocs but it fails the place check"
+ },
+ "dest:arnhem-land:header": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/arn_beach.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/arn_bawaka_hill.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "vehicle intrudes at left edge; fine otherwise but arn_beach is stronger",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/arn_beach.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "3000x2437, red rocks and turquoise water, oblique low-drone view (not a pure aerial), vivid; crop shows 11-89% width, full height",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/bawaka_cult.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "good, person with spear small; backup",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/macassan2.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "rock shelf close-up, less striking",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   }
+  ]
+ },
+ "dest:arnhem-land:why1": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/looking_at_aboriginal_art_in_arnhem_land.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/looking_at_aboriginal_art_in_arnhem_land.jpg",
+    "verdict": "accept",
+    "check_failed": "1 (unproven venue)",
+    "reason": "4928x3280, Yolngu-style bark paintings with visitors and an Aboriginal man pointing; alt text says only \"Arnhem Land\", Yirrkala not stated; if the reason says Yirrkala, flag venue unverified, or reword \"See Yolngu bark paintings\"",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/buku.jpg",
+    "verdict": "reject",
+    "check_failed": "reason",
+    "reason": "named Buku-Larrnggay Mulka Centre but shows prints, not bark paintings",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/vea_buku1.jpg",
+    "verdict": "reject",
+    "check_failed": "reason",
+    "reason": "printmaking press, not bark paintings",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "East Arnhem Land Tourism (visiteastarnhem.com.au)"
+   }
+  ]
+ },
+ "dest:arnhem-land:why2": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/vea_rc_RainbowCliffs_JordyBowman_1000.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/vea_rc_RainbowCliffs_JordyBowman_1000.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "1333x1000 (>=1280), Rainbow Cliff over curved beach, cliff prominent; 1.6:1 crop keeps the cliff",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "East Arnhem Land Tourism (visiteastarnhem.com.au)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/dh_rc.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "crop",
+    "reason": "cliff small at right edge",
+    "hero_crop": "x 0.85 needed",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Dhimurru Aboriginal Corporation"
+   }
+  ]
+ },
+ "dest:arnhem-land:why3": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/vea_eastwoody2.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/vea_eastwoody2.jpg",
+    "verdict": "accept (weak)",
+    "check_failed": "none",
+    "reason": "1333x1000; tidal flats leading to East Woody Island at sunset, two tiny walkers at left; island is small but named place is shown; sunset so dark on purpose",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "East Arnhem Land Tourism (visiteastarnhem.com.au)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/vea_eastwoody1.jpg",
+    "verdict": "reject",
+    "check_failed": "size",
+    "reason": "1000x667 below 1280, though best spit view",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "East Arnhem Land Tourism (visiteastarnhem.com.au)"
+   }
+  ],
+  "note": "dark: sunset, dark on purpose"
+ },
+ "dest:katherine:header": {
+  "status": "none",
+  "choice": "none: no Katherine town panorama; only Nitmiluk Gorge / river stand-ins",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/ktc_lowlevel.jpg",
+    "verdict": "reject",
+    "check_failed": "size, aspect, 2",
+    "reason": "1200x576, aspect 2.1, river crossing",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Katherine Town Council"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/vk_banner.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Nitmiluk Gorge 30 km away, stand-in for the town",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Visit Katherine (Katherine Region Tourism)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/kath_river.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "gorge with cyclist, not the town",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / Northern Territory Tourism (northernterritory.com)"
+   }
+  ]
+ },
+ "dest:katherine:why2": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/km_c37482ca6f919c2771c76e46ac66c4b9.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/km_2e6ca13ddcc785da55809fd56efb9411.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "3",
+    "reason": "frontage, ordinary building",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Katherine Museum via ATDW / Tourism NT"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/km_c37482ca6f919c2771c76e46ac66c4b9.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "2048x1365, Gypsy Moth biplane in the museum hall: outback history inside the museum; crop ok",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Katherine Museum via ATDW / Tourism NT"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/km_74f7735288e6f9b0fc5f803a75c659c7.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "petrol pumps close-up; detail",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Katherine Museum via ATDW / Tourism NT"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/kmuseum_terminal.jpg",
+    "verdict": "reject",
+    "check_failed": "not shown/unclear",
+    "reason": "terminal not a clear view",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT"
+   }
+  ]
+ },
+ "dest:katherine:why3": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/ksa_e6ccb8.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/ksa_e6ccb8.jpg",
+    "verdict": "accept (weak)",
+    "check_failed": "none",
+    "reason": "4032x3024, teacher running a live maths lesson with students on screen: the lesson at work; staff-only setting, school permission not confirmed. Crop slightly cuts teacher at right/left, use x 0.45",
+    "hero_crop": "{x:0.45,y:0.5}",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Katherine School of the Air (Wix site)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/ksa_164b8b.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "art lesson, less clear",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Katherine School of the Air"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/ksa_7adc7d.jpg",
+    "verdict": "reject",
+    "check_failed": "4",
+    "reason": "faded archival print",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Katherine School of the Air"
+   }
+  ]
+ },
+ "dest:watarrka-national-park:why3": {
+  "status": "none",
+  "choice": "none: no candidates supplied",
+  "candidates": []
+ },
+ "dest:west-macdonnell-national-park:why2": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/larapinta/cfe3052378e6fbfbe0df4b26ba7e06f7.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/larapinta/8ba2e6f3f8761f441423a96eb00855f5.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "hikers fill foreground, gorge behind; passes but weaker",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/larapinta/cfe3052378e6fbfbe0df4b26ba7e06f7.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "3464x2311, two walkers on a trail above a red gorge; crop shows trail, walkers and gorge",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/larapinta/aff3dea49cc831789b7fb9eae9010c41.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "rocky scramble in shade, less scenic",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ],
+  "note": "Larapinta not named on the file itself beyond the listing; from the Tourism NT Larapinta listing"
+ },
+ "dest:uluru-kata-tjuta-national-park:why3": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/basewalk/48fd23d8926f03aea23e4dde0f874f49.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/basewalk/48fd23d8926f03aea23e4dde0f874f49.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "1600x1200, walker on the red Base Walk path under Uluru flank; crop fine; saturated but real",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ]
+ },
+ "dest:uluru-kata-tjuta-national-park:why4": {
+  "status": "none",
+  "choice": "none: Cultural Centre strip is 768 px tall (effective <1280 wide at 1.6:1) and the other photo is a rock-art shelter, not the Centre",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/uluru/cultural-centre-h.jpg",
+    "verdict": "reject",
+    "check_failed": "size",
+    "reason": "2560x768 strip, 1.6:1 crop only 1229 px wide, building partly lost",
+    "hero_crop": "fail: strip",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Parks Australia / uluru.gov.au (credit not stated)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/basetour/700a89194c772a6c29e8ebe05be9b59d.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "shows rock-art shelter tour, not the Cultural Centre; people are the focus",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ]
+ },
+ "dest:alice-springs:why1": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/desertpark/da4ed1d63f2e0d9206dccc15f4fb2aa9.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/desertpark/da4ed1d63f2e0d9206dccc15f4fb2aa9.jpg",
+    "verdict": "accept (weak)",
+    "check_failed": "none",
+    "reason": "4928x3280, ranger bird-of-prey show with audience and MacDonnell Ranges; birds tiny, park setting shown (note: show, not named place; Desert Park not proven on image)",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/desertpark/fa13ba155d0e5dc0b94d22f1f84da1ad.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "2",
+    "reason": "people at a glass exhibit, people main focus",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/desertpark/de80dcc6a35486349b61e746148d47fe.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "ranger and eagle portrait",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/desertpark/52ca98c494e686e75a17526248cadbbb.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "dingo close-up, stand-in",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ]
+ },
+ "dest:east-macdonnell-ranges:header": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/trephina/3e127780961fcf63b36b943b4be6c022.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/trephina/3e127780961fcf63b36b943b4be6c022.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "4928x3280, Trephina red cliffs and sandy creek, blue sky; crop 18-82% width ok",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/trephina/7fca8bb60502dc2e7f094bf8c1a0e6cf.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "dark silhouettes, subject unclear",
+    "hero_crop": "dark",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/eastmac/3c77f8a4fe6e1aa2c637e1032e284812.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "person prominent; second backup",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ]
+ },
+ "dest:east-macdonnell-ranges:why1": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/trephina/3e127780961fcf63b36b943b4be6c022.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/trephina/3e127780961fcf63b36b943b4be6c022.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "same file as header (allowed within destination); gorge walls and creek bed",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/trephina/95af4e539e7f873b6b75f9a21c084d60.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "flat scrub plateau",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/trephina/7fca8bb60502dc2e7f094bf8c1a0e6cf.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "dark",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ]
+ },
+ "dest:east-macdonnell-ranges:why2": {
+  "status": "none",
+  "choice": "none: only gorge scenery, no engravings visible",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/ndhala/5a7f27150eab8c1c8de3ff4bbeab4596.jpg",
+    "verdict": "reject",
+    "check_failed": "reason",
+    "reason": "2560x1920 N'Dhala cliffs, no rock engravings shown",
+    "hero_crop": "n/a",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ]
+ },
+ "dest:east-macdonnell-ranges:why3": {
+  "status": "accept",
+  "choice": "curation/nz-rest/lens-nt2/ext/arltunga/f22c6877a324d30a29a0790025de0223.jpg",
+  "candidates": [
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/arltunga/f22c6877a324d30a29a0790025de0223.jpg",
+    "verdict": "accept",
+    "check_failed": "none",
+    "reason": "4032x3024, Arltunga Police Station stone buildings with heritage sign in the townsite; shows several buildings and the site; crop ok",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/arltunga/5a9c8bb6e990961383b46301f24504ca.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "single restored building",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/arltunga/98c85715fdca18476a8ea9638f0044c1.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "single ruin",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   },
+   {
+    "file": "curation/nz-rest/lens-nt2/ext/arltunga/90fc2abbc39d57bfa09efba6c3ccf610.jpg",
+    "verdict": "reject (second best)",
+    "check_failed": "",
+    "reason": "battery frame, person in foreground",
+    "hero_crop": "ok",
+    "licence": "official photo, permission not confirmed",
+    "owner": "Tourism NT / ATDW (northernterritory.com listing image)"
+   }
+  ]
+ }
+}

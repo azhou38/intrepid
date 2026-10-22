@@ -1,0 +1,892 @@
+{
+ "spots": {
+  "alice-springs-1": {
+   "name": "Alice Springs Desert Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Desert wildlife park with a nocturnal house, free-flying bird shows and Aboriginal-guided talks, seven kilometres from town.",
+   "hours": "7:30 AM – 6:00 PM; last entry 4:30 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -23.708013,
+    "longitude": 133.834185
+   },
+   "wiki": "Alice Springs Desert Park",
+   "costMin": 41.5,
+   "costMax": 41.5,
+   "currency": "AUD",
+   "ticketUrl": "https://alicespringsdesertpark.com.au"
+  },
+  "alice-springs-2": {
+   "name": "Alice Springs Telegraph Station",
+   "icon": "📡",
+   "category": "historic",
+   "bio": "Best-preserved stop on the 1872 Overland Telegraph Line, with restored stone buildings, a post office and walking trails.",
+   "hours": "Reserve 8:00 AM – 9:00 PM; heritage precinct to 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -23.672824,
+    "longitude": 133.887059
+   },
+   "wiki": "Alice Springs Telegraph Station",
+   "costMin": 16.5,
+   "costMax": 16.5,
+   "currency": "AUD",
+   "ticketUrl": "https://alicespringstelegraphstation.com.au/"
+  },
+  "alice-springs-3": {
+   "name": "Araluen Cultural Precinct",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Arts centre galleries, the Central Australian Aviation Museum and Central Craft, in a precinct two kilometres west of town.",
+   "hours": "10:00 AM – 4:00 PM daily Mar–Oct; closed Mondays Nov–Feb",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.701634,
+    "longitude": 133.862579
+   },
+   "wiki": "Araluen Cultural Precinct",
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "ticketUrl": "https://araluenartscentre.nt.gov.au/"
+  },
+  "alice-springs-4": {
+   "name": "Anzac Hill",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Hilltop war memorial and lookout over Alice Springs and the MacDonnell Ranges, a short walk or drive from town.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -23.69473,
+    "longitude": 133.88211
+   },
+   "wiki": "Anzac Hill",
+   "free": true
+  },
+  "alice-springs-5": {
+   "name": "Emily Gap",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Sacred Arrernte gap east of town with a rock painting of the caterpillar dreaming, reached by a short walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -23.738772,
+    "longitude": 133.950972
+   },
+   "wiki": "Emily Gap",
+   "free": true,
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/yeperenye-emily-jessie-gaps-nature-park"
+  },
+  "alice-springs-6": {
+   "name": "Royal Flying Doctor Service Tourist Facility",
+   "icon": "🚁",
+   "category": "museum",
+   "bio": "Original 1939 flying doctor base with a John Flynn hologram, virtual-reality flight and museum.",
+   "hours": "9:30 AM – 5:00 PM; Sunday 1:00 PM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.704023,
+    "longitude": 133.877953
+   },
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "AUD",
+   "ticketUrl": "https://www.rfdsalicesprings.com.au/"
+  },
+  "alice-springs-7": {
+   "name": "Old Ghan Heritage Railway and Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Museum about the original Ghan railway, with a steam engine and historic carriages parked outside.",
+   "hours": "9:00 AM – 3:00 PM; closed Saturdays",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.777122,
+    "longitude": 133.867549
+   },
+   "wiki": "Old Ghan Heritage Railway and Museum",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "ticketUrl": "https://www.roadtransporthall.com"
+  },
+  "alice-springs-8": {
+   "name": "Olive Pink Botanic Garden",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Free arid-zone botanic garden with over 600 plant species, bushfood trails and a hill lookout over town.",
+   "hours": "8:00 AM – 6:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -23.706262,
+    "longitude": 133.884332
+   },
+   "wiki": "Olive Pink Botanic Garden",
+   "free": true,
+   "ticketUrl": "https://opbg.com.au/visit/"
+  },
+  "alice-springs-9": {
+   "name": "Women's Museum of Australia",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum of Australian women's achievements, housed in the Old Gaol, whose buildings are included in the ticket.",
+   "hours": "Tue–Sat 10:00 AM – 3:00 PM; doors close 2:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -23.7041,
+    "longitude": 133.8769
+   },
+   "wiki": "Women's Museum of Australia",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "ticketUrl": "https://www.wmoa.com.au/"
+  },
+  "alice-springs-10": {
+   "name": "Adelaide House",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "1926 stone hospital designed by John Flynn, now a small museum with a guided tour and tea.",
+   "hours": "Mon, Tue, Thu and market Sundays 10:00 AM – 1:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -23.69955,
+    "longitude": 133.88252
+   },
+   "wiki": "Adelaide House (Alice Springs)",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "ticketUrl": "https://aliceunitingchurch.org.au/"
+  },
+  "alice-springs-11": {
+   "name": "Alice Springs Reptile Centre",
+   "icon": "🐍",
+   "category": "entertainment",
+   "bio": "Over 100 reptiles in recreated habitats, with a saltwater crocodile viewed from underground and daily talks.",
+   "hours": "9:30 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -23.703018,
+    "longitude": 133.877933
+   },
+   "wiki": "Alice Springs Reptile Centre",
+   "costMin": 24,
+   "costMax": 24,
+   "currency": "AUD",
+   "ticketUrl": "https://www.alicespringsreptilecentre.com.au/"
+  },
+  "alice-springs-12": {
+   "name": "National Road Transport Museum",
+   "icon": "🚛",
+   "category": "museum",
+   "bio": "Halls of vintage trucks, including Bertha, Australia's first road train, plus classic cars and a Wall of Fame.",
+   "hours": "9:00 AM – 3:00 PM; closed Saturdays",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.776032,
+    "longitude": 133.866769
+   },
+   "wiki": "National Road Transport Museum",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "ticketUrl": "https://www.roadtransporthall.com"
+  },
+  "east-macdonnell-ranges-1": {
+   "name": "Trephina Gorge Nature Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Quartzite gorge lined with river red gums, with short walks, waterholes and the largest ghost gum in Central Australia.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -23.520955,
+    "longitude": 134.397135
+   },
+   "wiki": "Trephina Gorge Nature Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/trephina-gorge-nature-park"
+  },
+  "east-macdonnell-ranges-2": {
+   "name": "Arltunga Historical Reserve",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Central Australia's first town, a gold-rush site 110 km east of Alice Springs, with restored stone buildings.",
+   "hours": "Reserve 24 hours; visitor centre 8:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -23.456053,
+    "longitude": 134.687201
+   },
+   "wiki": "Arltunga Historical Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/arltunga-historical-reserve"
+  },
+  "east-macdonnell-ranges-3": {
+   "name": "Corroboree Rock",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "Dark grey dolomite column sacred to the Eastern Arrernte, with a short walk around its base off the Ross Highway.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -23.680773,
+    "longitude": 134.217583
+   },
+   "wiki": "Corroboree Rock Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/corroboree-rock-conservation-area"
+  },
+  "east-macdonnell-ranges-4": {
+   "name": "N'Dhala Gorge Nature Park",
+   "icon": "🖼️",
+   "category": "nature",
+   "bio": "Gorge protecting about 6,000 rock engravings along a 1.5 km walking track, reached only by 4WD.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -23.638618,
+    "longitude": 134.462901
+   },
+   "wiki": "N'Dhala Gorge Nature Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/ndhala-gorge-nature-park"
+  },
+  "west-macdonnell-national-park-1": {
+   "name": "Ormiston Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Red-walled gorge with a deep permanent waterhole about 500 m from the visitor centre and the Ormiston Pound circuit.",
+   "hours": "Open daily",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -23.62675,
+    "longitude": 132.72838
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ormiston-gorge"
+  },
+  "west-macdonnell-national-park-6": {
+   "name": "Larapinta Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Walking trail of about 230 km in 12 sections along the West MacDonnell Ranges from Alice Springs to Mount Sonder.",
+   "hours": "Open year-round; book multi-day walking and campsites online",
+   "visitHoursMin": 2,
+   "visitHoursMax": 48,
+   "coordinates": {
+    "latitude": -23.75756,
+    "longitude": 133.14756
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/about-larapinta-trail"
+  },
+  "west-macdonnell-national-park-2": {
+   "name": "Standley Chasm",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Sheer-walled red chasm on Arrernte land, reached by a 2.4 km round-trip path; also called Angkerle Atwatye.",
+   "hours": "Mon-Sat 8:00 AM - 5:00 PM; Sun 8:00 AM - 2:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.7161258,
+    "longitude": 133.470152
+   },
+   "wiki": "Standley Chasm",
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.standleychasm.com.au"
+  },
+  "west-macdonnell-national-park-3": {
+   "name": "Simpsons Gap",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Gap in the ranges 18 km west of Alice Springs, with a waterhole, rock-wallaby habitat and a walking track.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.6736327,
+    "longitude": 133.7196035
+   },
+   "wiki": "Simpsons Gap",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park"
+  },
+  "west-macdonnell-national-park-4": {
+   "name": "Ellery Creek Big Hole",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Permanent waterhole beneath red cliffs, a five-minute walk from the car park, known for cold swimming and camping.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -23.77951,
+    "longitude": 133.07295
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ellery-creek-big-hole"
+  },
+  "west-macdonnell-national-park-5": {
+   "name": "Glen Helen Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Gorge and waterhole a short stroll from the car park, used for swimming and as a lunch stop beside the Glen Helen resort.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.68922,
+    "longitude": 132.67672
+   },
+   "wiki": "Glen Helen Gorge",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park"
+  },
+  "west-macdonnell-national-park-7": {
+   "name": "Mount Sonder",
+   "icon": "🏔️",
+   "category": "hike",
+   "bio": "Grade 4 summit walk to the 1,379 m peak at the Larapinta Trail's western end, with views over the ranges.",
+   "hours": "Open daily; start early, little shade",
+   "visitHoursMin": 5,
+   "visitHoursMax": 7,
+   "coordinates": {
+    "latitude": -23.57671,
+    "longitude": 132.58567
+   },
+   "wiki": "Mount Sonder",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/sections-of-the-larapinta-trail"
+  },
+  "west-macdonnell-national-park-8": {
+   "name": "Serpentine Gorge",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Narrow gorge about 100 km west of Alice Springs, with a short walk through to Inarlanga Pass.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.7495217,
+    "longitude": 132.9787835
+   },
+   "wiki": "Serpentine Gorge",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park"
+  },
+  "west-macdonnell-national-park-9": {
+   "name": "Ochre Pits",
+   "icon": "🎨",
+   "category": "nature",
+   "bio": "Coloured ochre quarry faces that Arrernte people have mined for generations, with a short walk from the car park.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -23.7338869,
+    "longitude": 132.8695081
+   },
+   "wiki": "Ochre Pits",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park"
+  },
+  "west-macdonnell-national-park-10": {
+   "name": "Redbank Gorge",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Narrow chasm and cold swimming hole at the foot of Mount Sonder, reached by a short walk from the car park.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.5662281,
+    "longitude": 132.5196216
+   },
+   "wiki": "Redbank Gorge",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/redbank-gorge"
+  },
+  "watarrka-national-park-1": {
+   "name": "Kings Canyon",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Sandstone canyon with walls up to 270 m high, seen from the Rim Walk or the creek-bed walk below.",
+   "hours": "Open daily; Rim Walk start before 9 AM on days forecast 36°C or higher",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -24.255298,
+    "longitude": 131.5708048
+   },
+   "wiki": "Kings Canyon (Northern Territory)",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park"
+  },
+  "watarrka-national-park-2": {
+   "name": "Kings Canyon Rim Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Grade 4 loop of 6 km over the canyon rim, past the Garden of Eden waterhole; allow three to four hours.",
+   "hours": "Open daily; start before 9 AM on days forecast 36°C or higher",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -24.24895,
+    "longitude": 131.58324
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park"
+  },
+  "watarrka-national-park-3": {
+   "name": "Kings Creek Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2 km return walk along Kings Creek at the foot of the canyon, a short alternative to the Rim Walk.",
+   "hours": "Open daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -24.25076,
+    "longitude": 131.57598
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks"
+  },
+  "watarrka-national-park-4": {
+   "name": "Kathleen Springs Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Paved, wheelchair-accessible 2.4 km return walk to a spring-fed waterhole at the head of Kathleen Gorge.",
+   "hours": "Open daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -24.337963,
+    "longitude": 131.680904
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks"
+  },
+  "uluru-kata-tjuta-national-park-1": {
+   "name": "Uluru",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "Sandstone monolith sacred to Anangu, with a 9.8 km base walk and sunrise and sunset viewing areas.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.344857,
+    "longitude": 131.032517
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-2": {
+   "name": "Kata Tjuta",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Group of 36 domed rock formations west of Uluru, sacred to Anangu, with walks through its gorges.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul); leave 45 min before closing",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.297893,
+    "longitude": 130.733613
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-3": {
+   "name": "Uluru Base Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Flat 9.8 km track around the base of Uluru, taking three to four hours, with sacred sites marked by signs.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.349529,
+    "longitude": 131.04961
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-4": {
+   "name": "Valley of the Winds Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Grade 4 circuit of about 7.4 km among the Kata Tjuta domes to two lookouts, taking three to four hours.",
+   "hours": "Park hours; closes at Karu Lookout from 11 AM when 36°C or more is forecast",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -25.284031,
+    "longitude": 130.746391
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-5": {
+   "name": "Uluru-Kata Tjuta Cultural Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Visitor and cultural centre near the base of Uluru, with Anangu art, galleries, exhibitions and a café.",
+   "hours": "7:00 AM – 5:45 PM daily",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -25.35977,
+    "longitude": 131.017413
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-6": {
+   "name": "Field of Light",
+   "icon": "💡",
+   "category": "entertainment",
+   "bio": "Bruce Munro's light installation of illuminated stems near Yulara, seen at sunrise or after dark.",
+   "hours": "Sunrise and after-dark sessions (times vary by season)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -25.253621,
+    "longitude": 130.997032
+   },
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "AUD",
+   "ticketUrl": "https://www.ayersrockresort.com.au/fieldoflight"
+  },
+  "uluru-kata-tjuta-national-park-7": {
+   "name": "Talinguru Nyakunytjaku",
+   "icon": "🌅",
+   "category": "viewpoint",
+   "bio": "Sunrise viewing area for Uluru and Kata Tjuta, with platforms and a 1.4 km circuit of two short walks.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.367573,
+    "longitude": 131.063859
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-8": {
+   "name": "Mala Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2 km return walk from the Mala car park along Uluru's base to Kantju Gorge, with a daily ranger walk.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul); ranger walk 8 AM (Oct–Apr), 10 AM (May–Sep)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.340211,
+    "longitude": 131.027983
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-9": {
+   "name": "Kuniya Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "One-kilometre return walk to Mutitjulu Waterhole on Uluru's south side, with rock art and a creation story.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -25.352391,
+    "longitude": 131.033396
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-10": {
+   "name": "Walpa Gorge Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2.6 km return walk into a gorge between two Kata Tjuta domes, with steep rock walls either side.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.300398,
+    "longitude": 130.72512
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "uluru-kata-tjuta-national-park-11": {
+   "name": "Yulara",
+   "icon": "🏨",
+   "category": "landmark",
+   "bio": "Resort village just outside the park, the base for accommodation, dining, tours and flights to Uluru.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -25.241011,
+    "longitude": 130.986941
+   },
+   "wiki": "Yulara, Northern Territory",
+   "free": true,
+   "ticketUrl": "https://www.ayersrockresort.com.au/"
+  },
+  "uluru-kata-tjuta-national-park-12": {
+   "name": "Imalung Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Sand-dune lookout on the Yulara drive loop with views of Uluru and part of Kata Tjuta.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -25.240615,
+    "longitude": 130.9873
+   },
+   "free": true
+  },
+  "uluru-kata-tjuta-national-park-13": {
+   "name": "Kata Tjuta Dune Viewing Area",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Short walk up a sand dune beside the Kata Tjuta road, with views of the domes and Uluru in the distance.",
+   "hours": "Park hours by month: 5:00 AM – 9:00 PM (Dec–Feb) to 6:30 AM – 7:30 PM (Jun–Jul)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -25.352499,
+    "longitude": 130.787037
+   },
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "ticketUrl": "https://uluru.gov.au/"
+  },
+  "finke-gorge-national-park": {
+   "name": "Finke Gorge National Park",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Remote national park around the Finke River and Palm Valley, reached by high-clearance 4WD along the river bed.",
+   "hours": "Open 24 hours; road may close after rain",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -24.0575377,
+    "longitude": 132.7466031
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/finke-gorge-national-park"
+  },
+  "palm-valley": {
+   "name": "Palm Valley",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Oasis of rare red cabbage palms and cycads, with short walks and a lookout over Palm Creek.",
+   "hours": "Open 24 hours; road may close after rain",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -24.0466947,
+    "longitude": 132.7101679
+   },
+   "wiki": "Palm Valley (Northern Territory)",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/finke-gorge-national-park"
+  },
+  "gosses-bluff": {
+   "name": "Gosses Bluff (Tnorala)",
+   "icon": "☄️",
+   "category": "nature",
+   "bio": "Ring of hills left by a meteorite impact, sacred ground on the Mereenie Loop road, reached by 4WD.",
+   "hours": "Open 24 hours; no overnight camping",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -23.817255,
+    "longitude": 132.314546
+   },
+   "wiki": "Gosses Bluff impact structure",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD"
+  },
+  "chambers-pillar": {
+   "name": "Chambers Pillar",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "A 50 m sandstone column rising from the desert plain, reached by a 4WD track south of Alice Springs, best at sunset.",
+   "hours": "Open 24 hours; road may close after rain",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -24.8755473,
+    "longitude": 133.8247663
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/chambers-pillar-historical-reserve"
+  },
+  "rainbow-valley": {
+   "name": "Rainbow Valley",
+   "icon": "🌈",
+   "category": "nature",
+   "bio": "Reserve of striped sandstone bluffs and cliffs south of Alice Springs, with short walks to the claypan.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -24.3315601,
+    "longitude": 133.6334563
+   },
+   "wiki": "Rainbow Valley Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/__data/assets/pdf_file/0013/200047/rainbow-valley-conservation-reserve-fact-sheet-and-map.pdf"
+  },
+  "ewaninga-conservation-reserve": {
+   "name": "Ewaninga Rock Carvings",
+   "icon": "🖼️",
+   "category": "historic",
+   "bio": "Small reserve of ancient rock engravings on a sandstone outcrop, south of Alice Springs on the Old South Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -24.012775,
+    "longitude": 133.953503
+   },
+   "wiki": "Napwerte / Ewaninga Rock Carvings Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD"
+  },
+  "henbury-meteorites-conservation-reserve": {
+   "name": "Henbury Meteorites",
+   "icon": "☄️",
+   "category": "nature",
+   "bio": "Twelve small craters formed by a meteorite impact about 4,700 years ago, with short walks around them.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -24.571453,
+    "longitude": 133.143381
+   },
+   "wiki": "Henbury Meteorites Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/henbury-meteorites-conservation-reserve"
+  },
+  "curtin-springs": {
+   "name": "Curtin Springs",
+   "icon": "🐄",
+   "category": "landmark",
+   "bio": "Family-run cattle station and roadside inn on the Lasseter Highway with camping, a store and meals, on the way to Uluru.",
+   "hours": "Store opens 7:00 AM daily",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -25.31499,
+    "longitude": 131.756743
+   },
+   "wiki": "Curtin Springs",
+   "free": true,
+   "ticketUrl": "https://www.curtinsprings.com/wayside-inn/"
+  }
+ },
+ "existing_fixes": [],
+ "held": {
+  "hermannsburg": "Historic Precinct closed for the 2026 season"
+ },
+ "notes": [
+  "assembled from shards; see all-notes.json"
+ ]
+}

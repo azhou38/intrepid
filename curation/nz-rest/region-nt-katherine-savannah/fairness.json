@@ -1,0 +1,116 @@
+{
+ "inside_destinations": 6,
+ "standalone": 12,
+ "new_destinations": [
+  "Katherine (3 spots)",
+  "Nitmiluk National Park (3 spots, flagship exemption)"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Katherine Gorge",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Bitter Springs",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Douglas Hot Springs",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Gregory's Tree",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Escarpment Walk",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Giwining Nature Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Katherine Museum",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Katherine School of the Air",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "RAAF Base Tindal",
+   "views": 22127,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fails What qualifies rule 2: an air force base not open to the public (auto-keep was on views alone)."
+  },
+  {
+   "name": "Larrimah",
+   "views": 17274,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a roadhouse township whose only listed draw is its museum, which is judged separately (review)."
+  },
+  {
+   "name": "Borroloola",
+   "views": 8736,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Review: rule 3 wrapper for the Limmen/Caranbirini places, remote, little to do in town; one source."
+  },
+  {
+   "name": "Mataranka",
+   "views": 7860,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Review: a town is a spot only when the town is a draw; its draws (pools, park) are already kept, Wikivoyage lists a supermarket and campgrounds."
+  },
+  {
+   "name": "Pine Creek",
+   "views": 7350,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Review: its own draws (water gardens, museums) are minor and rejected under rule 3; the town is a wrapper."
+  },
+  {
+   "name": "Timber Creek",
+   "views": 5548,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Review: tiny roadhouse whose only draws are the Judbarra spots (Gregory's Tree), a wrapper under rule 3."
+  },
+  {
+   "name": "Daly River",
+   "views": 5294,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Review: a large river area with no single stop identified (rule 3); zero counted sources."
+  },
+  {
+   "name": "Savannah Way",
+   "views": 4905,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: a touring route from Broome to Cairns, not a place."
+  }
+ ],
+ "strongest_outsiders": [
+  "Daly Waters (9,991 views) kept standalone on the Stuart Highway",
+  "Limmen National Park (1,708 views) kept standalone",
+  "Judbarra / Gregory National Park (1,198) and Elsey National Park (1,178) kept standalone, 3 kept places each",
+  "Mataranka Thermal Pools (1,507) kept standalone",
+  "Keep River National Park (832) kept standalone"
+ ],
+ "benchmark": "No NZ benchmark place lies in this NT region. Negatives behave: a non-public base (RAAF Tindal) and a route (Savannah Way) are rejected, and gateway towns (Timber Creek, Borroloola, Mataranka) go to review rather than being kept."
+}

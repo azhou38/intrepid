@@ -1,0 +1,281 @@
+{
+ "dest:tennant-creek:header": {
+  "candidates": [
+   {
+    "file": "ANZAC Hill, Tennant Creek.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Real colour view but a white cross fills the foreground and the town is a thin strip of roofs under trees; not a town in its landscape, not spectacular.",
+    "hero_crop": "fail: cross dominates, town a sliver"
+   },
+   {
+    "file": "Tennant Creek at sunset.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Empty main road at dusk with a shopfront; street scene, not a panorama.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Tennant-creek0116.jpg",
+    "verdict": "reject",
+    "check_failed": "3/size",
+    "reason": "Street with road signs, 600 px, old-looking scan; fails size and spectacle.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: no wide, spectacular town-in-landscape photo; best is ANZAC Hill (cross-dominated)",
+  "status": "none"
+ },
+ "dest:tennant-creek:why1": {
+  "candidates": [
+   {
+    "file": "Battery Hill 03.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Steel mine headframe at the Battery Hill mining centre against a blue sky, colour, 4032 px; headframe central; shows the gold-mine site (the tour itself is underground). 4:3 so the 1.6:1 card shows the full width; headframe right of centre, inside crop.",
+    "hero_crop": {
+     "x": 0.62,
+     "y": 0.55
+    }
+   },
+   {
+    "file": "Battery Hill 04.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Closed adit with DANGER / NO ENTRY signs and rusted truck; signage is prominent, weaker than the headframe.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Battery Hill 01.jpg",
+    "verdict": "reject",
+    "check_failed": "2/3",
+    "reason": "Visitor-centre grounds with scattered relics and ramp; ordinary building and yard.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Battery Hill 03.jpg",
+  "status": "accept"
+ },
+ "dest:tennant-creek:why2": {
+  "candidates": [
+   {
+    "file": "Tennant Creek Telegraph Station 2.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Two stone station buildings with green roofs front-on, blue sky; page categories Tennant Creek Telegraph Station and Tennant Creek; 2009, public domain, 2592 px; buildings central.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Tennant Creek Telegraph Station.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Same place but the buildings are small and distant under a branch; second best.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Tennant Creek Telegraph Station 2.jpg",
+  "status": "accept"
+ },
+ "dest:kakadu-national-park:header": {
+  "candidates": [
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Nadap Lookout -- 2019 -- 4200.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Golden-hour sandstone and floodplain with the escarpment beyond; wide, colour, 6720 px; subject central in the square crop.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "00 2236 Kakadu National Park - Australien.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Lone sandstone outlier in green woodland, flat light; less striking than Nadap.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Gunwarrdehwarrde Lookout -- 2019 -- 4118.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Cliff and dense woodland under cloud; ok but less wide and less spectacular.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kakadu_2431.jpg",
+    "verdict": "reject",
+    "check_failed": "3/size/4",
+    "reason": "450 px wide aerial; fails size and aerial rule.",
+    "hero_crop": "fail: 450 px"
+   }
+  ],
+  "choice": "Kakadu (AU), Kakadu National Park, Nadap Lookout -- 2019 -- 4200.jpg",
+  "status": "accept"
+ },
+ "dest:kakadu-national-park:why1": {
+  "candidates": [
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Ubirr Rock Art -- 2019 -- 4169.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Ochre turtle painting on the Ubirr gallery wall, real colour photo, 6720 px; painting is central and clear at card size.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Ubirr Rock Art -- 2019 -- 4171.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Banded rock wall with small faint painting; less clear (second choice).",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Anbangbang Rock Shelter -- 2019 -- 4103.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Painted Nourlangie wall, busy and low contrast; acceptable alternative for the Nourlangie half.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Anbangbang Rock Shelter -- 2019 -- 4092.jpg",
+    "verdict": "reject",
+    "check_failed": "crop",
+    "reason": "White kangaroo and hunter painting is clear but 4:3 and tall in the 1.6:1 card, kangaroo head/feet would be cut.",
+    "hero_crop": {
+     "x": 0.4,
+     "y": 0.5
+    }
+   }
+  ],
+  "choice": "Kakadu (AU), Kakadu National Park, Ubirr Rock Art -- 2019 -- 4169.jpg",
+  "status": "accept"
+ },
+ "dest:kakadu-national-park:why2": {
+  "candidates": [
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 3896.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Saltwater crocodile cruising among lily pads at Yellow Water (categories: crocodilia of the NT, Kakadu); crocodile is in the middle band and recognisable, bright, 5136 px.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Yellow Water wetlands in Kakadu National Park at dawn.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Dusky dawn silhouette, birds specks; dark and not clear about the reason.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 4061.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Shows lily/vegetation, not recognisable as the billabong.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Kakadu (AU), Kakadu National Park, Yellow Water -- 2019 -- 3896.jpg",
+  "status": "accept"
+ },
+ "dest:kakadu-national-park:why3": {
+  "candidates": [
+   {
+    "file": "Gunlom Falls Kakadu NT.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Clifftop pool at Gunlom reflecting sky with the escarpment and plain beyond; colour, 3872 px, clear and wide.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Natural Infinity Pool at top of Gunlom Falls.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Top-of-falls stream and plain view; good but less pool-like (second choice).",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Gunlom Waterfall Creek area in Kakadu National Park.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Lower pool between rocks; fine but not the clifftop view.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "View from top of Gunlom Falls, Kakadu, 2004 - panoramio.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Grey overcast 2004 panoramio, flat.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Gunlom Falls Kakadu NT.jpg",
+  "status": "accept"
+ },
+ "dest:kakadu-national-park:why4": {
+  "candidates": [
+   {
+    "file": "CrocodileinwateratCC.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Crocodile is a thin dark line in flat brown water, tiny and unrecognisable at card size, no crossing visible.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Kakadu (AU), Kakadu National Park, Cahills Crossing -- 2019 -- 4160.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Real, good photo of the crossing with a 4WD fording it, but shows no crocodile, so it does not show the reason (usable if the reason is reworded to watch 4WDs ford Cahills Crossing).",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "CrocodileonbanknearCC.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Close-up of a crocodile's open jaws, portrait, animal fills the frame, place not shown: stand-in.",
+    "hero_crop": "fail: animal fills frame"
+   }
+  ],
+  "choice": "none: no photo shows crocodiles at Cahills Crossing clearly; reword reason to use the crossing photo (4160) if wanted",
+  "status": "none"
+ },
+ "dest:arnhem-land:header": {
+  "candidates": [
+   {
+    "file": "Arnhem Escarpment, Northern Territory (8851990389).jpg",
+    "verdict": "reject",
+    "check_failed": "1/2",
+    "reason": "Taken from Ubirr in Kakadu looking across the floodplain to the Arnhem escarpment: same Kakadu view, not Arnhem Land itself; washed-out white sky.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "East Alligator River (47540700).jpeg",
+    "verdict": "reject",
+    "check_failed": "3/aspect",
+    "reason": "Aspect 2.15 (over 2.0), watermark, 1920 px; fails size and shape.",
+    "hero_crop": "fail: 2.15 aspect"
+   }
+  ],
+  "choice": "none: no photo of Arnhem Land itself; only Kakadu views of its escarpment",
+  "status": "none"
+ },
+ "dest:arnhem-land:why1": {
+  "candidates": [
+   {
+    "file": "〈阿納姆地東部四個偉大易瑞卡立法者〉樹皮畫.jpg",
+    "verdict": "reject",
+    "check_failed": "1/2",
+    "reason": "Yolngu bark painting on display in a Taiwan museum; shows the art, not Yirrkala: stand-in.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: only a museum display in Taiwan; no photo of Yirrkala",
+  "status": "none"
+ },
+ "dest:arnhem-land:why2": {
+  "candidates": [],
+  "choice": "none: no candidates found",
+  "status": "none"
+ },
+ "dest:arnhem-land:why3": {
+  "candidates": [],
+  "choice": "none: no candidates found",
+  "status": "none"
+ }
+}

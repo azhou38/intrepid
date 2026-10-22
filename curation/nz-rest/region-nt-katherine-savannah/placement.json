@@ -1,0 +1,661 @@
+{
+ "region": "nt-katherine-savannah",
+ "new_destinations": [
+  {
+   "name": "Katherine",
+   "action": "new-destination",
+   "id": "katherine",
+   "category": "city",
+   "coordinates": {
+    "latitude": -14.46138889,
+    "longitude": 132.26611111
+   },
+   "coordinates_source": "provisional: Wikipedia town point (Katherine, Northern Territory); confirm OSM place=town via resolve-pin.py, and keep it off Katherine Museum/School of the Air pins",
+   "defaultZoomSpanKm": 60,
+   "span_note": "Spots: Museum 3 km, School of the Air, Cutta Cutta Caves 27 km south; 60 km keeps all within 75%. Nitmiluk's gorge (30 km) is its own park destination.",
+   "rank_suggestion": 4,
+   "name_evidence": "Wikivoyage page \"Katherine\" (see/do/eat/sleep chapter, with Nitmiluk and Cutta Cutta); Tourism NT region \"Katherine and surrounds\" (northernterritory.com/katherine-and-surrounds). A town of about 10,000 and third largest in the NT, the regional hub and base for Nitmiluk, so the sizable-settlement rule applies without a four-spot bar.",
+   "reason": "Regional hub with its own guidebook chapter (53,022 views, 2 counted sources); 3 kept spots (Museum, School of the Air, Cutta Cutta). Only 3 spots, so the call rests on the regional-hub rule; owner may prefer to leave them standalone.",
+   "needs_research": [
+    "description",
+    "whyVisit",
+    "goodToKnow",
+    "bestMonths",
+    "header and why-visit photos"
+   ],
+   "spot_count": 3
+  },
+  {
+   "name": "Nitmiluk National Park",
+   "action": "new-destination",
+   "id": "nitmiluk-national-park",
+   "category": "park",
+   "coordinates": null,
+   "coordinates_source": "none usable: no source point; needs the park's main visitor point via resolve-pin (Nitmiluk Gorge visitor centre/jetty area), different from the Katherine Gorge and Edith Falls spot pins",
+   "defaultZoomSpanKm": 70,
+   "span_note": "Gorge jetty to Edith Falls is about 33 km; the Jatbula Trail runs between them. 70 km keeps all within 75% once centred between them.",
+   "rank_suggestion": 2,
+   "name_evidence": "Wikivoyage \"Katherine\" Do section leads with Nitmiluk National Park; Tourism NT page northernterritory.com/katherine-and-surrounds/see-and-do/nitmiluk-national-park; Wikipedia \"Nitmiluk National Park\" (4,223 views); Darwin's own destination text calls it a base park.",
+   "reason": "The NT's third headline park (13 gorges, cruises, canoes, 58 km Jatbula Trail), so the flagship exemption is claimed with 3 kept spots (Katherine Gorge, Edith Falls, Jatbula Trail); Sweetwater Pool and Southern Rockhole are in review and would raise it to 5 if approved. Flagged for the owner as borderline.",
+   "needs_research": [
+    "coordinates (resolve-pin.py, visitor point)",
+    "description",
+    "whyVisit",
+    "goodToKnow",
+    "bestMonths",
+    "header and why-visit photos"
+   ],
+   "spot_count": 3
+  }
+ ],
+ "spots": [
+  {
+   "name": "Katherine Gorge",
+   "action": "spot",
+   "destination": "nitmiluk-national-park",
+   "id": "nitmiluk-national-park-1",
+   "wiki": null,
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A chain of sandstone gorges on the Katherine River, explored by cruise, canoe, helicopter or walks from the Nitmiluk jetty.",
+   "coordinates": null,
+   "coordinates_source": "none usable: candidate gave the Wikivoyage listing geotag (-14.314495, 132.421819) from the Katherine page, which may be the town-page point; pin at the gorge jetty/visitor centre via resolve-pin, different from the park destination's centre",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do"
+   ],
+   "reason": "Kept as a distinct spot, not merged: the Nitmiluk destination is the park and is not itself a spot, so the gorge (cruises, canoes, gorge walks from the jetty) is the headline spot; the park-level duplicate objection is resolved by that split. 2 counted sources (Wikivoyage, Tourism NT). Wikipedia title redirects to Nitmiluk National Park (views 0).",
+   "division_needed": "run build-spot-districts.py --only nitmiluk-national-park-1"
+  },
+  {
+   "name": "Edith Falls",
+   "action": "spot",
+   "destination": "nitmiluk-national-park",
+   "id": "nitmiluk-national-park-2",
+   "wiki": "Edith Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "A waterfall and plunge pool at Leliyn, the park's western entrance, with campgrounds and the Leliyn Trail.",
+   "coordinates": null,
+   "coordinates_source": "none usable: the candidate gave a Wikipedia centroid/rounded point (-14.1667, 132.1667), which must not be used; needs a visitor point (resolve-pin.py)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/leliyn-edith-falls"
+   ],
+   "reason": "2 counted sources (Wikivoyage, Tourism NT), 3529 views; Leliyn is the western side of Nitmiluk, finishing point of the Jatbula Trail.",
+   "division_needed": "run build-spot-districts.py --only nitmiluk-national-park-2"
+  },
+  {
+   "name": "Jatbula Trail",
+   "action": "spot",
+   "destination": "nitmiluk-national-park",
+   "id": "nitmiluk-national-park-3",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 58 km, four to six day walk through Nitmiluk from the Katherine Gorge to Edith Falls, past waterfalls and rock art.",
+   "coordinates": null,
+   "coordinates_source": "none: a long track pinned at the midpoint of its whole length; no usable source point. resolve-pin.py (midpoint of the OSM route=hiking relation) needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "permit/booking and ferry detail for the bio",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/jatbula-trail"
+   ],
+   "reason": "Rule 1 x2 (Wikivoyage, Tourism NT page): 58 km, 4-6 day DOC-style great walk, a benchmark-type multi-day track like Hump Ridge.",
+   "division_needed": "run build-spot-districts.py --only nitmiluk-national-park-3"
+  },
+  {
+   "name": "Katherine Museum",
+   "action": "spot",
+   "destination": "katherine",
+   "id": "katherine-1",
+   "wiki": null,
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A local history museum on Gorge Road with the Overland Telegraph Line, the Chinese in the Territory and a Gypsy Moth aircraft.",
+   "coordinates": {
+    "latitude": -14.442069,
+    "longitude": 132.273878
+   },
+   "coordinates_source": "provisional: Wikivoyage listing's own geotag (Katherine page); confirm with resolve-pin.py (OSM tourism=museum)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do"
+   ],
+   "reason": "Rule 1 x2 (Wikivoyage, Tourism NT): open daily 9-4, entry $7; Overland Telegraph, Chinese-in-Territory room and a Gypsy Moth aircraft.",
+   "division_needed": "run build-spot-districts.py --only katherine-1"
+  },
+  {
+   "name": "Katherine School of the Air",
+   "action": "spot",
+   "destination": "katherine",
+   "id": "katherine-2",
+   "wiki": "Katherine School of the Air",
+   "icon": "📻",
+   "category": "museum",
+   "bio": "A working distance-education school in Giles Street where visitors can watch outback lessons.",
+   "coordinates": {
+    "latitude": -14.451259,
+    "longitude": 132.269763
+   },
+   "coordinates_source": "provisional: Wikivoyage listing's own geotag (Katherine page); confirm with resolve-pin.py",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine"
+   ],
+   "reason": "Rule 1: Wikivoyage names it as a living outback school visitors watch; entry fee, 101 Giles St.",
+   "division_needed": "run build-spot-districts.py --only katherine-2"
+  },
+  {
+   "name": "Cutta Cutta Caves Nature Park",
+   "action": "spot",
+   "destination": "katherine",
+   "id": "katherine-3",
+   "wiki": "Cutta Cutta Caves Nature Park",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "A limestone cave system 27 km south of Katherine, seen on guided one-hour tours, plus a short woodland walk.",
+   "coordinates": {
+    "latitude": -14.57580556,
+    "longitude": 132.47138889
+   },
+   "coordinates_source": "provisional: Wikipedia article coordinates (8 decimals, likely the park/cave entrance); confirm with resolve-pin.py",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/cutta-cutta-caves-nature-park"
+   ],
+   "reason": "2 counted sources (Wikivoyage, Tourism NT), 840 views; 27 km from Katherine, inside its span and reached from the town.",
+   "division_needed": "run build-spot-districts.py --only katherine-3"
+  },
+  {
+   "name": "Mataranka Thermal Pools",
+   "action": "standalone",
+   "destination": null,
+   "id": "mataranka-thermal-pools",
+   "wiki": "Mataranka Thermal Pools",
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "A palm-fringed, sandy-bottomed thermal lagoon at about 34 C in Elsey National Park, the Mataranka headline swim.",
+   "coordinates": {
+    "latitude": -14.92483333,
+    "longitude": 133.13872222
+   },
+   "coordinates_source": "provisional: Wikipedia article coordinates (Mataranka Thermal Pools, 8 decimals); confirm with resolve-pin.py",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine"
+   ],
+   "reason": "Kept spot, standalone: about 105 km from Katherine, outside its span, and Elsey has only 3 kept places (park, pools, Bitter Springs) so no destination. Not a duplicate of the park spot: the pool is the named draw.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only mataranka-thermal-pools"
+  },
+  {
+   "name": "Bitter Springs",
+   "action": "standalone",
+   "destination": null,
+   "id": "bitter-springs",
+   "wiki": "Bitter Springs, Northern Territory",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "A natural thermal spring about 2 km from Mataranka with an accessible path to the water, closed in the wet season.",
+   "coordinates": null,
+   "coordinates_source": "none: no coordinate in sources; resolve-pin.py (OSM) needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/bitter-springs"
+   ],
+   "reason": "Rule 1: Tourism NT page (opened, 200); natural thermal spring with an accessible path, a distinct swim from the pools at Mataranka. Standalone with the other Mataranka places (only 3 kept).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only bitter-springs"
+  },
+  {
+   "name": "Elsey National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "elsey-national-park",
+   "wiki": "Elsey National Park",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "A national park on the upper Roper River around Mataranka, with thermal pools and walks beside the river.",
+   "coordinates": null,
+   "coordinates_source": "none usable: the candidate gave a Wikipedia centroid/rounded point (-14.9544, 133.1864), which must not be used; needs a visitor point (resolve-pin.py); use a different visitor point than the Thermal Pools",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/elsey-national-park"
+   ],
+   "reason": "A national park with only 2 other kept places (Thermal Pools, Bitter Springs) so it fails the 4-spot bar and is not flagship: a standalone spot, pinned at a visitor point other than the pools.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only elsey-national-park"
+  },
+  {
+   "name": "Judbarra / Gregory National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "judbarra-gregory-national-park",
+   "wiki": "Judbarra / Gregory National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "The Northern Territory's largest national park along the Victoria River, with escarpment walks and Gregory's Tree.",
+   "coordinates": null,
+   "coordinates_source": "none usable: the candidate gave a Wikipedia centroid/rounded point (-15.6161, 131.1272), which must not be used; needs a visitor point (resolve-pin.py); use the Victoria River roadhouse/visitor point",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gregory_National_Park",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do"
+   ],
+   "reason": "National park with only 2 other kept places (Gregory's Tree, Escarpment Walk; Calcite Flow Walk is in review), not flagship: standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only judbarra-gregory-national-park"
+  },
+  {
+   "name": "Gregory's Tree",
+   "action": "standalone",
+   "destination": null,
+   "id": "gregorys-tree",
+   "wiki": null,
+   "icon": "🌳",
+   "category": "historic",
+   "bio": "A boab marked in 1855 by explorer Augustus Gregory's expedition, beside the Victoria Highway near Timber Creek.",
+   "coordinates": {
+    "latitude": -15.566986,
+    "longitude": 130.367045
+   },
+   "coordinates_source": "provisional: Wikivoyage listing's own geotag (Gregory National Park page); confirm with resolve-pin.py",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gregory_National_Park",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/gregorys-tree-timber-creek"
+   ],
+   "reason": "Rule 1 x2 (Wikivoyage See, Tourism NT): the one named See item on the Gregory National Park page, a roadside heritage tree. Standalone: the Gregory park is not a destination.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only gregorys-tree"
+  },
+  {
+   "name": "Escarpment Walk",
+   "action": "standalone",
+   "destination": null,
+   "id": "escarpment-walk",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 3 km, 1.5 hour trail through rocky Top End escarpment country near the Victoria River roadhouse.",
+   "coordinates": null,
+   "coordinates_source": "none: a walk pinned halfway along its route; resolve-pin.py (OSM route midpoint) needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gregory_National_Park",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do"
+   ],
+   "reason": "Rule 1 x2 (Wikivoyage, Tourism NT): a 3 km, 1.5 hour trail through iconic Top End scenery. Skeptic notes it is part of the park spot; kept as a named walk of its own with a pin on the route, standalone because the park is not a destination.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only escarpment-walk"
+  },
+  {
+   "name": "Keep River National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "keep-river-national-park",
+   "wiki": "Keep River National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "A remote park on the Victoria Highway by the WA border, with sandstone ridges and Bungle Bungle-like formations.",
+   "coordinates": null,
+   "coordinates_source": "none usable: the candidate gave a Wikipedia centroid/rounded point (-15.8164, 129.1397), which must not be used; needs a visitor point (resolve-pin.py); pin at a visitor point (e.g. Gurrandalng car park), not the centroid",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/keep-river-national-park"
+   ],
+   "reason": "Rule 1: Tourism NT page; a national park with sandstone formations and walks. A second-tier park a guide recommends. Standalone: Goorrandalng and Jarnem walks are in review, so 0 kept spots.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only keep-river-national-park"
+  },
+  {
+   "name": "Limmen National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "limmen-national-park",
+   "wiki": "Limmen National Park",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A 9,370 sq km Gulf park reached by the Roper and Carpentaria highways, with river drives, wetlands and sandstone formations.",
+   "coordinates": null,
+   "coordinates_source": "none usable: the candidate gave a Wikipedia centroid/rounded point (-15.03, 135.14), which must not be used; needs a visitor point (resolve-pin.py); pin at a visitor point via resolve-pin.py",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/limmen-national-park"
+   ],
+   "reason": "Rule 1: Tourism NT page; large national park (9,370 sq km) with river, wetlands and sandstone formations. Standalone: its sub-places (Southern Lost City, Butterfly Springs) are in review, so 0 kept spots.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only limmen-national-park"
+  },
+  {
+   "name": "Douglas Hot Springs",
+   "action": "standalone",
+   "destination": null,
+   "id": "douglas-hot-springs",
+   "wiki": null,
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "A hot-spring park about 130 km north of Katherine with a 31 C pool in a tropical setting, on a gravel road.",
+   "coordinates": null,
+   "coordinates_source": "none: no coordinate in sources; resolve-pin.py (OSM) needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Katherine",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/tjuwaliyn-douglas-hot-springs-park"
+   ],
+   "reason": "Rule 1 x2 (Wikivoyage, Tourism NT): a natural hot spring park with a 31 C pool, a swimming stop. Standalone: 130 km from Katherine, far outside its span.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only douglas-hot-springs"
+  },
+  {
+   "name": "Umbrawarra Gorge Nature Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "umbrawarra-gorge-nature-park",
+   "wiki": "Umbrawarra Gorge Nature Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A red gorge 22 km south-west of Pine Creek with sandy-beached swimming holes and cliff-top views.",
+   "coordinates": {
+    "latitude": -13.97143932,
+    "longitude": 131.68927357
+   },
+   "coordinates_source": "provisional: Wikipedia article coordinates (8 decimals); confirm with resolve-pin.py",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Pine_Creek",
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do/umbrawarra-gorge-nature-park"
+   ],
+   "reason": "Rule 1 x2 (Wikivoyage Pine Creek, Tourism NT): sandy swimming holes and cliff-top views, 15 min walk from the car park. Standalone: Pine Creek (the base) was sent to review, and the park is about 90 km from Katherine.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only umbrawarra-gorge-nature-park"
+  },
+  {
+   "name": "Giwining Nature Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "giwining-nature-park",
+   "wiki": null,
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A spring-fed river park (Flora River) in the Katherine region, mostly a camping stop; swimming is not allowed because of crocodiles.",
+   "coordinates": null,
+   "coordinates_source": "none: no coordinate in sources; resolve-pin.py (OSM) needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do"
+   ],
+   "reason": "Rule 1 x2: Tourism NT and Lonely Planet (Giwining / Flora River Nature Park) name it; 25 km of spring-fed river with tufa dams and Kathleen and Djarrung Falls, 2WD dry-season access. Standalone: about 130 km from Katherine.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only giwining-nature-park"
+  },
+  {
+   "name": "Daly Waters",
+   "action": "standalone",
+   "destination": null,
+   "id": "daly-waters",
+   "wiki": "Daly Waters, Northern Territory",
+   "icon": "🛩️",
+   "category": "historic",
+   "bio": "A historic outback township on the Stuart Highway, once an aviation stop, known for its 1930s aerodrome and the Daly Waters Pub.",
+   "coordinates": {
+    "latitude": -16.2621,
+    "longitude": 133.3793
+   },
+   "coordinates_source": "provisional: Wikipedia article coordinates for the township (4 decimals); move to the aerodrome/pub via resolve-pin.py",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/katherine-and-surrounds/see-and-do"
+   ],
+   "reason": "Rule 1: Tourism NT destination page; a historic outback township (1930s aerodrome, the Daly Waters Pub with its beef-and-barra dinners and memorabilia), a well-known Stuart Highway stop. Standalone roadside icon, far from every destination.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "division_needed": "run build-spot-districts.py --only daly-waters"
+  }
+ ],
+ "existing_fixes": [],
+ "placed_not": "Reviews held for the owner (not placed): Sweetwater Pool, Southern Rockhole, Goorrandalng Walk, Jarnem Lookout Walk, Southern Lost City, Butterfly Springs, Mataranka, Never Never Museum, Butterfly Gorge, Caranbirini, Calcite Flow Walk, Timber Creek, Lake Copperfield, the two Pine Creek museums, Pine Creek, Top Didj, Old Borroloola Police Station Museum, Borroloola, Larrimah Museum, Daly River.",
+ "nitmiluk_decision": "Katherine Gorge is a distinct spot of the Nitmiluk National Park destination (the gorge cruises/canoes/walks), not merged: the park is a destination and not a spot, so there is no duplicate.",
+ "neighbour_checks": "No standalone spot lies within 40 km of the Katherine or Nitmiluk centres (nearest: Umbrawarra ~90 km, Mataranka places ~105 km, Douglas Hot Springs ~130 km, Giwining ~130 km), so none needs a reason beyond distance. Elsey/Mataranka has only 3 kept places (Elsey NP, Thermal Pools, Bitter Springs) and Judbarra has 3 (park, Tree, Walk): too few for a destination, so standalone. Keep River, Limmen, Daly Waters, Douglas Hot Springs, Umbrawarra and Giwining are isolated. No existing NT spots or destinations are duplicated (only Darwin, Litchfield, Adelaide River, Mary River NP, Tiwi Islands exist). Ids are new and not in git history.",
+ "region_json_note": "scripts/coverage-regions.json lists no destinations/standalone for this region yet; apply step must fill them."
+}

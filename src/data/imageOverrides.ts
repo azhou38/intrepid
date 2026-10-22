@@ -520,6 +520,10 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Adelaide River, Northern Territory": { x: 0.4, y: 0.65, zoom: 1.3 },
   "The Lost City": { x: 0.5, y: 0.5 },
   "Mary River National Park": { x: 0.5, y: 0.6 },
+  "Kakadu National Park": { x: 0.5, y: 0.45 },
+  "Watarrka National Park": { x: 0.7, y: 0.55 },
+  "Uluru-Kata Tjuta National Park": { x: 0.47, y: 0.7, zoom: 1.25 },
+  "File:Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3688.jpg": { x: 0.47, y: 0.62 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1804,6 +1808,14 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Batchelor, Northern Territory": "BatchelorOct192024.jpg",
   "Tiwi Islands": "MRF-D conducts a site survey at Tiwi Island (6629791).jpg",
   "Adelaide River, Northern Territory": "Adelaide River Lookout.jpg",
+  "Nitmiluk National Park": "Katherine River in Nitmiluk National Park.jpg",
+  "Alice Springs": "Alice Springs - Anzac Hill - panoramio.jpg",
+  "Tjoritja / West MacDonnell National Park": "West Macdonnell Ranges Larapinta Trail section 4 ranges.jpg",
+  "Arnhem Land": "ext-arnhem-land-header.jpg",
+  "East MacDonnell Ranges": "ext-east-macdonnell-ranges-header.jpg",
+  "Kakadu National Park": "Kakadu (AU), Kakadu National Park, Nadap Lookout -- 2019 -- 4200.jpg",
+  "Watarrka National Park": "Kings Canyon North Wall (9585383815).jpg",
+  "Uluru-Kata Tjuta National Park": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru -- 2019 -- 3688.jpg",
 };
 
 /**
@@ -1896,4 +1908,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Tasmania Zoo",
   "Platypus House",
   "Seahorse World",
+  "Katherine",
+  "Tennant Creek",
 ]);

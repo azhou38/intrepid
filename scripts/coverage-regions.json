@@ -557,29 +557,72 @@
     {
       "id": "nt-kakadu-arnhem",
       "name": "Kakadu & Arnhem Land (NT)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "arnhem-land",
+        "kakadu-national-park"
+      ],
+      "standalone": [
+        "garig-gunak-barlu-national-park"
+      ],
       "timezone": "Australia/Darwin"
     },
     {
       "id": "nt-katherine-savannah",
       "name": "Katherine & Savannah Way (NT)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "katherine",
+        "nitmiluk-national-park"
+      ],
+      "standalone": [
+        "mataranka-thermal-pools",
+        "bitter-springs",
+        "elsey-national-park",
+        "judbarra-gregory-national-park",
+        "gregorys-tree",
+        "escarpment-walk",
+        "keep-river-national-park",
+        "limmen-national-park",
+        "umbrawarra-gorge-nature-park",
+        "giwining-nature-park",
+        "daly-waters"
+      ],
       "timezone": "Australia/Darwin"
     },
     {
       "id": "nt-alice-red-centre",
       "name": "Alice Springs & Red Centre (NT)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "alice-springs",
+        "east-macdonnell-ranges",
+        "uluru-kata-tjuta-national-park",
+        "watarrka-national-park",
+        "west-macdonnell-national-park"
+      ],
+      "standalone": [
+        "finke-gorge-national-park",
+        "palm-valley",
+        "gosses-bluff",
+        "chambers-pillar",
+        "rainbow-valley",
+        "ewaninga-conservation-reserve",
+        "henbury-meteorites-conservation-reserve",
+        "curtin-springs"
+      ],
       "timezone": "Australia/Darwin"
     },
     {
       "id": "nt-barkly-tennant-creek",
       "name": "Barkly & Tennant Creek (NT)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "tennant-creek"
+      ],
+      "standalone": [
+        "devils-marbles",
+        "iytwelepenty-davenport-range-national-park",
+        "barrow-creek-telegraph-station",
+        "newcastle-waters",
+        "anmatjere-man"
+      ],
       "timezone": "Australia/Darwin"
     }
   ],

@@ -1,0 +1,80 @@
+{
+ "inside_destinations": 31,
+ "standalone": 1,
+ "new_destinations": [
+  "Kakadu National Park (23 spots)",
+  "Arnhem Land (8 spots)"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Gubara Pools",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wirrwawuy",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Garanhan (Macassan Beach)",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Banambarrna (Rainbow Cliffs)",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Nanguluwur Art Site",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Gunlom",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Warradjan Aboriginal Cultural Centre",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Mamukala Wetlands",
+   "views": 0,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Groote Eylandt",
+   "views": 32672,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "(auto-keep downgraded) One counted source (Wikivoyage Arnhem Land); island with fishing and cave paintings, permit needed for land outside communities. For: an island named by guides; against: little for a casual visitor, permit logistics, one source."
+  },
+  {
+   "name": "Gunbalanya",
+   "views": 15709,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Community reached by permit; the visitor draws are Injalak Arts and Injalak Hill, listed separately (rule 3: a town is not a spot beside its own attraction)."
+  },
+  {
+   "name": "Maningrida",
+   "views": 10811,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "NT Tourism destination page (found by search) names the community, its arts centre and fishing; permit from the Northern Land Council. For: a gateway with an arts centre; against: the sight is the arts centre and the fishing, not the town (rule 3), permit needed."
+  }
+ ],
+ "zero_view_left_out_note": "Every other rejected or reviewed candidate has 0 views, the same as the lowest kept; reviews are held for the owner (placement.json placed_not) and the rest were rejected under \"What qualifies\" rules 1-3 (name-only Parks menu entries, wrappers, private land).",
+ "strongest_outsiders": [
+  "Garig Gunak Barlu National Park (1,736 views) kept as standalone, 500 km from any destination",
+  "Injalak Arts (1,937 views) lies in Gunbalanya outside the park boundary but is reached on Kakadu tours, so is a Kakadu spot",
+  "Groote Eylandt (32,672 views, review) and Maningrida (10,811, review) are outside every destination"
+ ],
+ "benchmark": "No NZ benchmark place lies in this NT region. Negative-benchmark behaviour holds: wrappers (Cooinda, Gunbalanya) rejected, civic or permit-only places (Injalak Hill, Maningrida) sent to review rather than kept."
+}

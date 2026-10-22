@@ -1,0 +1,157 @@
+{
+ "dest:alice-springs:header": {
+  "candidates": [
+   {
+    "file": "Alice Springs - Anzac Hill - panoramio.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Real colour (2005) view from Anzac Hill down Todd Street with the MacDonnell Ranges gap behind; town in its landscape, 2592 px, CC BY 3.0, category Alice Springs. Square crop (14-86% width) keeps street and ranges.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Alice Springs, 2015 (02).JPG",
+    "verdict": "reject",
+    "check_failed": "3 (second best)",
+    "reason": "Good 16:9 town-and-ranges view but the square crop drops half the town; kept for the Anzac Hill why-visit.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Alice Springs, 2015 (01).JPG",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Square, but a tree trunk fills the right third of the frame.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Alice Springs, 2015 (03).JPG",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Roofs and car parks dominate; ranges a thin low strip.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Alice Springs - Anzac Hill - panoramio.jpg"
+ },
+ "dest:alice-springs:why1": {
+  "status": "none",
+  "candidates": [
+   {
+    "file": "Alice Springs Desert Park.JPG",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "A dried-up waterhole in 2006; no wildlife, does not show the Desert Park's wildlife.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Alice Springs Desert Park, October 2025 08.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Entrance path with Red Kangaroo posters, no animal; the signage, not the wildlife, is what is shown (a stand-in).",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: no candidate shows the park's wildlife"
+ },
+ "dest:alice-springs:why2": {
+  "candidates": [
+   {
+    "file": "Alice Springs Telegraph Station, 2015 (08).JPG",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Stone 1872-era station building with iron roof under a ghost gum, sharp 2015 colour photo, categories Alice Springs telegraph station; 16:9 fits the 1.6:1 card.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Alice Springs Telegraph Station 3.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "2009 compact-camera snap, flat sky and lawn; less striking.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Alice Springs Telegraph Station 6.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Verandah post cuts the frame; the Post and Telegraph Office is small.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Alice Springs Telegraph Station, 2015 (08).JPG"
+ },
+ "dest:alice-springs:why3": {
+  "candidates": [
+   {
+    "file": "Alice Springs, 2015 (02).JPG",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Wide view from Anzac Hill over the town centre to the MacDonnell Ranges; description names Anzac Hill; 3968 px, CC BY-SA 4.0. Recommend; the header uses a different file.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Alice Springs - Anzac Hill - panoramio.jpg",
+    "verdict": "reject",
+    "check_failed": "(spare)",
+    "reason": "Fine view, but used as the header; the 2015 file is wider and newer.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "ANZAC Hill, Alice Springs, October 2025 05.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Steps up the hill, not the view.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Alice Springs, 2015 (02).JPG"
+ },
+ "dest:east-macdonnell-ranges:header": {
+  "status": "none",
+  "candidates": [],
+  "choice": "none: no candidates offered"
+ },
+ "dest:east-macdonnell-ranges:why1": {
+  "status": "none",
+  "candidates": [
+   {
+    "file": "Trephina's Majestic Ghost Gum.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Worm's-eye close-up of a ghost gum against sky; no gorge, a detail not the gorge walk.",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "none: only a tree close-up"
+ },
+ "dest:east-macdonnell-ranges:why2": {
+  "status": "none",
+  "candidates": [
+   {
+    "file": "N'Dhala Gorge001a.jpg",
+    "verdict": "reject",
+    "check_failed": "2/4",
+    "reason": "Dated 1987 (Kodachrome slide scan; pre-2000) and shows a dry gorge, no engravings.",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "N'Dhala Gorge003a.jpg",
+    "verdict": "reject",
+    "check_failed": "3/4",
+    "reason": "1987 slide scan and a tight close-up of rock texture; engraving barely readable.",
+    "hero_crop": "fail: texture close-up"
+   },
+   {
+    "file": "N'Dhala Gorge005a.jpg",
+    "verdict": "reject",
+    "check_failed": "3/4",
+    "reason": "1987 slide scan; radiating motifs are clear but it is a close-up of rock, not a view of the place; pre-2000 fails the pre-filter.",
+    "hero_crop": "fail: close-up"
+   }
+  ],
+  "choice": "none: only 1987 scans / close-ups"
+ },
+ "dest:east-macdonnell-ranges:why3": {
+  "status": "none",
+  "candidates": [],
+  "choice": "none: no candidates offered"
+ }
+}

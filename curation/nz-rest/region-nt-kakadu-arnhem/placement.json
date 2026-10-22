@@ -1,0 +1,1057 @@
+{
+ "region": "nt-kakadu-arnhem",
+ "new_destinations": [
+  {
+   "name": "Kakadu National Park",
+   "action": "new-destination",
+   "id": "kakadu-national-park",
+   "category": "park",
+   "coordinates": null,
+   "coordinates_source": "none usable: candidate gave the Wikipedia centroid (-13.1,132.6), which must not be used. Needs a visitor point (e.g. Bowali/Jabiru hub or the middle of the spots) via resolve-pin; it must differ from every spot pin (Bowali, Jabiru, Warradjan)",
+   "defaultZoomSpanKm": 150,
+   "span_note": "Spots run from Cahills Crossing/Ubirr in the north to Gunlom and Maguk in the south (about 115 km north-south) and Injalak at Gunbalanya in the east; 150 km keeps all within 75% of the span once the centre sits near the middle of the park (about Cooinda-Jabiru).",
+   "rank_suggestion": 1,
+   "name_evidence": "Wikivoyage page \"Kakadu National Park\"; Parks Australia visitor site kakadu.gov.au/things-do; Tourism NT \"Top 10 things to do in Kakadu\". A flagship World Heritage park, so the four-spot bar is waived and it has 23 kept spots anyway.",
+   "reason": "Flagship park (3 counted sources, 48,810 views); its villages, walks, falls and rock art are its spots.",
+   "needs_research": [
+    "coordinates (resolve-pin.py, visitor point)",
+    "description",
+    "whyVisit",
+    "goodToKnow",
+    "bestMonths",
+    "header and why-visit photos"
+   ],
+   "spot_count": 23
+  },
+  {
+   "name": "Arnhem Land",
+   "action": "new-destination",
+   "id": "arnhem-land",
+   "category": "nature",
+   "coordinates": null,
+   "coordinates_source": "none usable: candidate gave the Wikipedia region centroid (-12.73,134.59), which is the middle of the whole region and not where visitors go. The destination is centred on the Gove Peninsula (the middle of Nhulunbuy, Yirrkala and the beaches) via resolve-pin; it must differ from the Nhulunbuy spot pin",
+   "defaultZoomSpanKm": 100,
+   "span_note": "Spots: Nhulunbuy, Yirrkala (19 km), Cape Wirrawoi (5 km), East Woody Beach/Island, Macassan Beach (about 35 minutes), Rainbow Cliffs, Bremer Island offshore. 100 km covers them; recheck once pins are resolved.",
+   "rank_suggestion": 3,
+   "name_evidence": "Wikivoyage region page \"Arnhem Land\" (lists Nhulunbuy, Yirrkala and the Gove beaches); Tourism NT region \"Arnhem Land\" (northernterritory.com/us/en/arnhem-land, with the Nhulunbuy (Gove) destination page and bucket list). Region name preferred over the town Nhulunbuy because the draws are the beaches, island and Yirrkala around it. Alternative name for the owner: \"Nhulunbuy & Gove Peninsula\". Note: the vast Aboriginal-owned Arnhem Land beyond Gove is permit-only; Gunbalanya (Injalak Arts) sits in the west and is placed under Kakadu because Kakadu tours reach it, and Garig Gunak Barlu is about 500 km west and stands alone.",
+   "reason": "The kept candidate \"Arnhem Land\" (86,682 views, 2 counted sources) is the destination itself; 8 kept spots cluster on the Gove Peninsula.",
+   "needs_research": [
+    "coordinates (resolve-pin.py)",
+    "description",
+    "whyVisit",
+    "goodToKnow",
+    "bestMonths",
+    "header and why-visit photos"
+   ],
+   "spot_count": 8
+  }
+ ],
+ "spots": [
+  {
+   "name": "Ubirr",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-1",
+   "wiki": null,
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Rock art galleries on a short walk, then a climb to a sunset lookout over the floodplains.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -12.4095, 'lng': 132.959} from wikivoyage listing geo (Ubirr)); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://kakadu.gov.au/things-do/itineraries/kakadu-adventure-5-days/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "4 counted sources, 4861 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-1"
+  },
+  {
+   "name": "Nourlangie Rock",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-2",
+   "wiki": null,
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Rock art shelter and lookout on the Burrungkuy road, with a 1 km walk past galleries under the escarpment.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -12.8617, 'lng': 132.812} from wikivoyage listing geo (Nourlangie Rock)); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "Wikivoyage See > Rock art lists it; Parks Australia and NT Tourism too (rule 1, 3 sources). Rock art galleries, 1 km walk, an obvious draw (rule 2).",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-2"
+  },
+  {
+   "name": "Yellow Water",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-3",
+   "wiki": null,
+   "icon": "🐊",
+   "category": "nature",
+   "bio": "Billabong on the floodplain, cruised by boat from Cooinda for birds and crocodiles.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "3 counted sources, 0 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-3"
+  },
+  {
+   "name": "Jim Jim Falls",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-4",
+   "wiki": null,
+   "icon": "💦",
+   "category": "nature",
+   "bio": "The park's tallest waterfall, at the end of a 4WD track and a rock-hopping walk, with a plunge pool below.",
+   "coordinates": {
+    "latitude": -13.272544,
+    "longitude": 132.839664
+   },
+   "coordinates_source": "wikivoyage listing geo (Jim Jim Falls)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "3 counted sources, 4172 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-4"
+  },
+  {
+   "name": "Twin Falls",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-5",
+   "wiki": "Twin Falls (Northern Territory)",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Waterfall in the Arnhem Land escarpment, reached by a boat shuttle up the gorge and a walk.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -13.321, 'lng': 132.781} from wikivoyage listing geo (Twin Falls)); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "Wikivoyage See > Waterfalls and Parks Australia; boat shuttle then walk, a headline Kakadu sight.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-5"
+  },
+  {
+   "name": "Gunlom",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-6",
+   "wiki": null,
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Waterfall and plunge pools at the top of a steep climb in the south of the park, with views over the park.",
+   "coordinates": {
+    "latitude": -13.4313,
+    "longitude": 132.4178
+   },
+   "coordinates_source": "wikivoyage listing geo (Gunlom Falls)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "Wikivoyage lists Gunlom Plunge Pool and Gunlom Falls, Parks Australia too; swim and climb with views, half a day.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-6"
+  },
+  {
+   "name": "Maguk",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-7",
+   "wiki": null,
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Waterfall and rock pools (Barramundi Gorge) in monsoon rainforest in the south of the park.",
+   "coordinates": {
+    "latitude": -13.316394,
+    "longitude": 132.437635
+   },
+   "coordinates_source": "wikivoyage listing geo (Maguk)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "3 counted sources, 391 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-7"
+  },
+  {
+   "name": "Bowali Visitor Centre",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-8",
+   "wiki": null,
+   "icon": "ℹ️",
+   "category": "museum",
+   "bio": "Visitor centre in Jabiru with displays on the park's ecology and Aboriginal culture, a gallery and a film.",
+   "coordinates": {
+    "latitude": -12.67548,
+    "longitude": 132.817155
+   },
+   "coordinates_source": "wikivoyage listing geo (Bowali Visitor Centre)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "(auto-keep) Wikivoyage See > Visitor and cultural centres; Parks Australia; exhibits and gallery, open daily, free. Confirmed by search: hours 9-5 dry, 10-4 wet.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-8"
+  },
+  {
+   "name": "Warradjan Aboriginal Cultural Centre",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-9",
+   "wiki": null,
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Cultural centre at Yellow Water with exhibits on the traditional owners' story of the park and local art.",
+   "coordinates": {
+    "latitude": -12.898572,
+    "longitude": 132.526658
+   },
+   "coordinates_source": "wikivoyage listing geo (Warradjan)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "Wikivoyage See > Visitor and cultural centres with hours, and Parks Australia gallery list; open to the public with exhibits (rule 2).",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-9"
+  },
+  {
+   "name": "Mamukala Wetlands",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-10",
+   "wiki": null,
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Wetlands with a bird hide on an easy 300 m walk and a 3 km loop, 30 km from Jabiru.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://kakadu.gov.au/things-do/itineraries/nature-culture-encounter-3-days/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "Parks Australia itinerary and NT Tourism top 10 name it; bird hide and loop, a recognised birdwatching stop.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-10"
+  },
+  {
+   "name": "Cahills Crossing",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-11",
+   "wiki": null,
+   "icon": "🐊",
+   "category": "landmark",
+   "bio": "Tidal causeway on the East Alligator River, the usual place to watch estuarine crocodiles from the bank.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -12.23944444, 'lng': 132.40305556} from wikipedia:Cahills Crossing); resolve-pin needed ; NOTE the candidate point (-12.239,132.403) is about 60 km west of the crossing on the East Alligator River near Ubirr, so it is wrong",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://kakadu.gov.au/things-do/",
+    "https://kakadu.gov.au/things-do/itineraries/kakadu-adventure-5-days/"
+   ],
+   "reason": "Parks Australia things-do and 5-day itinerary name it as the croc-spotting stop; a recognised wildlife and tidal causeway sight.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-11"
+  },
+  {
+   "name": "Anbangbang Billabong",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-12",
+   "wiki": null,
+   "icon": "🦆",
+   "category": "hike",
+   "bio": "Billabong on a 2.5 km loop walk near Nourlangie, with birds and a view back to the rock.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -12.86444444, 'lng': 132.79694444} from wikipedia:Anbangbang Billabong); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://kakadu.gov.au/things-do/itineraries/nature-culture-encounter-3-days/",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "2 counted sources, 1356 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-12"
+  },
+  {
+   "name": "Injalak Arts",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-13",
+   "wiki": null,
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Arts centre in Gunbalanya where Kunwinjku artists paint and weave, and the start of the Injalak Hill tours.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://kakadu.gov.au/things-do/",
+    "https://kakadu.gov.au/things-do/tours/cultural-tours/injalak-arts-rock-art-tours/"
+   ],
+   "reason": "2 counted sources, 1937 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-13"
+  },
+  {
+   "name": "Nanguluwur Art Site",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-14",
+   "wiki": null,
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Rock art gallery near Nourlangie Rock with hand stencils and spirit figures, on the Nanguluwurr walk.",
+   "coordinates": {
+    "latitude": -12.843959,
+    "longitude": 132.819553
+   },
+   "coordinates_source": "wikivoyage listing geo (Nanguluwur)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "Wikivoyage See > Rock art lists it with description; Parks Australia too; 2 sources, its own walk and a distinct gallery.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-14"
+  },
+  {
+   "name": "Koolpin Gorge",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-15",
+   "wiki": null,
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Gorge (Jarrangbarnmi) of waterholes and waterfalls in the south-east, reached by 4WD tour or permit.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "3 counted sources, 0 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-15"
+  },
+  {
+   "name": "Motor Car Falls",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-16",
+   "wiki": null,
+   "icon": "💦",
+   "category": "hike",
+   "bio": "Waterfall in monsoon forest on Motor Car Creek, a swimming spot reached on a 7.5 km return hike.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/",
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu"
+   ],
+   "reason": "3 counted sources, 0 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-16"
+  },
+  {
+   "name": "Bardedjilidji Walk",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-17",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy 2.5 km walk through sandstone outliers beside the East Alligator River, with an ancient occupation shelter.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/itineraries/living-landscape-7-days/"
+   ],
+   "reason": "Wikivoyage calls it one of Kakadu's most interesting short walks; Parks itinerary also; 2.5 km, 2 hours.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-17"
+  },
+  {
+   "name": "Mirrai Lookout",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-18",
+   "wiki": null,
+   "icon": "🌄",
+   "category": "viewpoint",
+   "bio": "Lookout at the end of a 3.6 km return walk with views over the escarpment.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "Wikivoyage and Parks Australia; 3.6 km return walk to a lookout over the escarpment, its own trailhead near Bowali.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-18"
+  },
+  {
+   "name": "Barrk Sandstone Walk",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-19",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Challenging 12 km walk past the main rock art gallery through sandstone country, 6 to 8 hours.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "Wikivoyage and Parks list the 12 km, 6-8 hour walk, a long walk with its own trailhead and sandstone country.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-19"
+  },
+  {
+   "name": "Home Billabong",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-20",
+   "wiki": null,
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Billabong viewing platform on a 1.8 km return floodplain walk near Yellow Water, best July to November.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/articles/top-10-things-to-do-in-kakadu",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "NT Tourism top 10 things in Kakadu and Parks; viewing platform on a 1.8 km floodplain walk near Yellow Water.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-20"
+  },
+  {
+   "name": "Kungarre Walk",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-21",
+   "wiki": null,
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "3.6 km return walk at South Alligator through monsoon forest to a billabong with birdlife.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://kakadu.gov.au/things-do/itineraries/nature-culture-encounter-3-days/",
+    "https://kakadu.gov.au/things-do/"
+   ],
+   "reason": "Two Parks sources (itinerary and things-do); 3.6 km walk to a billabong with birdlife at South Alligator.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-21"
+  },
+  {
+   "name": "Gubara Pools",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-22",
+   "wiki": null,
+   "icon": "🏊",
+   "category": "hike",
+   "bio": "Six-kilometre return walk to shady monsoon forest pools with a swim, allow four hours.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park"
+   ],
+   "reason": "Wikivoyage describes the 6 km return walk to pools with a swim, allow 4 hours; a worthwhile half-day walk.",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-22"
+  },
+  {
+   "name": "Jabiru",
+   "action": "spot",
+   "destination": "kakadu-national-park",
+   "id": "kakadu-national-park-23",
+   "wiki": "Jabiru, Northern Territory",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Town at the heart of the park, with the visitor centre, services and the base for Ubirr and Nourlangie.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -12.66666667, 'lng': 132.83333333} from wikipedia:Jabiru, Northern Territory); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kakadu_National_Park",
+    "https://kakadu.gov.au/things-do/itineraries/kakadu-adventure-5-days/"
+   ],
+   "reason": "2 counted sources, 9735 page views",
+   "division_needed": "run build-spot-districts.py --only kakadu-national-park-23"
+  },
+  {
+   "name": "Nhulunbuy",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-1",
+   "wiki": null,
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Town on the Gove Peninsula, the main base in East Arnhem Land and the start of the local sights.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -12.1825, 'lng': 136.78194444} from wikipedia:Nhulunbuy); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/us/en/arnhem-land/destinations/nhulunbuy-gove",
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list",
+    "https://en.wikivoyage.org/wiki/Arnhem_Land"
+   ],
+   "reason": "3 counted sources, 29735 page views",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-1"
+  },
+  {
+   "name": "Buku-Larrnggay Mulka Centre",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-2",
+   "wiki": null,
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Art centre, gallery and museum in Yirrkala with Yolngu bark paintings, carvings and the original church panels.",
+   "coordinates": {
+    "latitude": -12.250303,
+    "longitude": 136.891387
+   },
+   "coordinates_source": "wikivoyage listing geo (Buku-Larrnggay Mulka Centre)",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arnhem_Land",
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list",
+    "https://northernterritory.com/us/en/arnhem-land/destinations/nhulunbuy-gove"
+   ],
+   "reason": "3 counted sources, 892 page views",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-2"
+  },
+  {
+   "name": "Galuru (East Woody Beach)",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-3",
+   "wiki": "East Woody Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach of white sand and rust-red cliffs near Nhulunbuy, a sunset spot and the walk-out point for East Woody Island.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arnhem_Land",
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list"
+   ],
+   "reason": "Wikivoyage Arnhem Land and NT Tourism both name it: white sand, rust-red cliffs, sunset; 2 sources.",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-3"
+  },
+  {
+   "name": "Dhamitjinya (East Woody Island)",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-4",
+   "wiki": "East Woody Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Island reached by a sandspit walk from East Woody Beach, with 360-degree views of the coastline.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave a centroid/rounded point: {'lat': -12.16138889, 'lng': 136.75111111} from wikipedia:East Woody Island); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arnhem_Land",
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list"
+   ],
+   "reason": "Wikivoyage Arnhem Land and NT Tourism: sandspit walk to an island with 360-degree views; 2 sources.",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-4"
+  },
+  {
+   "name": "Wirrwawuy",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-5",
+   "wiki": "Cape Wirrawoi",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Sand dunes at Cape Wirrawoi, 5 km from town, for sunrise and sunset photographs.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list"
+   ],
+   "reason": "NT Tourism bucket list: sand dunes at Cape Wirrawoi for sunrise and sunset photographs, 5 km from town; second-tier beach/dune stop a source names.",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-5"
+  },
+  {
+   "name": "Garanhan (Macassan Beach)",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-6",
+   "wiki": null,
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach 35 minutes from town with Yolngu stone pictures of Macassan trade and picnic tables.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list"
+   ],
+   "reason": "NT Tourism: Yolngu stone pictures of Macassan trade, picnic tables, 35 min from Nhulunbuy; distinct historic site.",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-6"
+  },
+  {
+   "name": "Banambarrna (Rainbow Cliffs)",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-7",
+   "wiki": null,
+   "icon": "🌈",
+   "category": "nature",
+   "bio": "Sheer 40 m coloured laterite cliffs near Gove Airport, viewed from the beach below.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list"
+   ],
+   "reason": "NT Tourism: 40 m coloured laterite cliffs, viewed from the beach; the top is closed as sacred, so visiting is from below.",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-7"
+  },
+  {
+   "name": "Bremer Island",
+   "action": "spot",
+   "destination": "arnhem-land",
+   "id": "arnhem-land-8",
+   "wiki": null,
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Beach island reached by a short flight or boat from Nhulunbuy, with day cruises.",
+   "coordinates": null,
+   "coordinates_source": "none usable from sources (candidate gave no point); resolve-pin needed",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/articles/nhulunbuy-bucket-list"
+   ],
+   "reason": "NT Tourism: day cruises and flights to a beach island; the place the cruise goes to is the spot (COVERAGE: island).",
+   "division_needed": "run build-spot-districts.py --only arnhem-land-8"
+  }
+ ],
+ "standalone": [
+  {
+   "name": "Garig Gunak Barlu National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "garig-gunak-barlu-national-park",
+   "wiki": "Garig Gunak Barlu National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Darwin",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "National park covering the Cobourg Peninsula, its beaches, islands and waters, reached by air, sea or 4WD with a permit.",
+   "coordinates": null,
+   "coordinates_source": "none usable: candidate gave the Wikipedia centroid (-11.32111111,132.17833333); a visitor point (Black Point ranger station/cultural centre or the airstrip) is needed from resolve-pin or the Parks NT page",
+   "hours": null,
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "visitHours",
+    "coordinates (resolve-pin.py)",
+    "division (build-spot-districts.py)"
+   ],
+   "sources": [
+    "https://northernterritory.com/us/en/arnhem-land/see-and-do/garig-gunak-barlu-national-park",
+    "https://northernterritory.com/us/en/arnhem-land/see-and-do"
+   ],
+   "reason": "National park with only one kept place (Victoria Settlement and Black Point Cultural Centre went to review), so under the four-spot bar it is standalone, not a destination. If the owner approves both reviewed places it has three spots and is still below four. Nothing is within 40 km of it and about 500 km from the Arnhem Land destination."
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_within_40km_of_new_destinations": [],
+ "standalone_note": "Garig Gunak Barlu is about 500 km from the Arnhem Land destination centre and about 300 km from Kakadu; no standalone spot lies within 40 km of either proposed destination. Existing standalone NT spots (Adelaide River, Mary River NP, Tiwi Islands) are over 80 km from Kakadu.",
+ "placed_not": {
+  "review (held, not placed)": [
+   "Nawurlandja Lookout",
+   "Manngarre Rainforest Walk",
+   "Yurmikmik Walks",
+   "Bukbukluk Lookout",
+   "Marrawuddi Arts & Culture",
+   "Injalak Hill",
+   "Roy Marika Lookout",
+   "Gayngaru Wetlands",
+   "Gadalathami (Town Beach)",
+   "Victoria Settlement",
+   "Black Point Cultural Centre",
+   "Umbakumba Art Centre",
+   "Groote Eylandt",
+   "Maningrida"
+  ],
+  "note": "skeptic.json kept 32 places and sent the reviews to the owner; reviews are not placed."
+ }
+}

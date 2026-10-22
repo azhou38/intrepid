@@ -1,0 +1,585 @@
+{
+ "spots": {
+  "nitmiluk-national-park-1": {
+   "name": "Katherine Gorge",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A chain of sandstone gorges on the Katherine River, seen by cruise, canoe or helicopter from the Nitmiluk visitor area.",
+   "hours": "Daylight hours; cruises on set departures",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -14.316887,
+    "longitude": 132.421278
+   },
+   "costMin": 10,
+   "costMax": 139,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nitmiluktours.com.au/",
+   "coordinates_source": "OpenStreetMap amenity=parking 'Katherine Gorge' via Photon (Overpass was down), ~150 m from the Nitmiluk Visitor Centre building used for the destination; gorge access car park, MEDIUM",
+   "notes": "Cost range = NT Parks Visitor Pass ($10 adult day) up to a ~2-hour gorge cruise (reseller listing AU$139; operator price not loaded). No wiki: article redirects to Nitmiluk National Park."
+  },
+  "nitmiluk-national-park-2": {
+   "name": "Edith Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "A waterfall and plunge pool at Leliyn, Nitmiluk's western entrance, with a campground, kiosk and a 2.6 km Leliyn Trail.",
+   "hours": "Daylight hours; swimming may be restricted Nov-Apr",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -14.181079,
+    "longitude": 132.190869
+   },
+   "wiki": "Edith Falls",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://parkbookings.nt.gov.au/",
+   "coordinates_source": "OpenStreetMap waterway=waterfall 'Edith Falls' via Photon; agrees with Commons photos within ~600 m; MEDIUM-HIGH",
+   "notes": "$10 = NT Parks Visitor Pass adult day pass (Tourism NT Leliyn page). wiki 'Edith Falls' as per draft; confirm the article is the NT falls, not another place."
+  },
+  "nitmiluk-national-park-3": {
+   "name": "Jatbula Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 62 km, five to six day walk from Nitmiluk Gorge to Leliyn, camping beside springs, cascades and waterfalls each night.",
+   "hours": "Dry-season walking; booking required",
+   "visitHoursMin": 100,
+   "visitHoursMax": 144,
+   "coordinates": {
+    "latitude": -14.122102,
+    "longitude": 132.389934
+   },
+   "costMin": 140,
+   "costMax": 175,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/leisure/recreation/bushwalking-hiking/nitmiluk-national-park-jatbula-trail",
+   "coordinates_source": "OpenStreetMap track 'Jatbula Trail' (Nominatim), a point on the route part-way along; not a computed midpoint of the whole route (Overpass down) - pin LOW-MEDIUM",
+   "notes": "pin LOW: on the route, roughly the middle-third; recompute midpoint of the route relation when Overpass is back. Fees/season from a third-party 2026 guide (norther.com.au): ~$140-175 pp, season ~1 Jun-30 Sep; NT page says fees are paid when booking and numbers are limited. Length 62 km per Tourism NT (draft said 58)."
+  },
+  "katherine-1": {
+   "name": "Katherine Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A local history museum on Gorge Road with the Overland Telegraph, the Chinese in the Territory and a Gypsy Moth aircraft.",
+   "hours": "9:00 AM – 4:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -14.44329,
+    "longitude": 132.273007
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://www.katherinemuseum.com.au",
+   "coordinates_source": "OpenStreetMap tourism=museum 'Katherine Museum' via Photon, 130 m from the Wikivoyage geotag; MEDIUM",
+   "notes": "Hours 9-4 daily from Wikivoyage; another listing (visitkatherine.com.au) says Mon-Fri 9-2, so conflicting. Price 'from $10' per Tourism NT (Wikivoyage said $7)."
+  },
+  "katherine-2": {
+   "name": "Katherine School of the Air",
+   "icon": "📻",
+   "category": "museum",
+   "bio": "A working distance-education school in Giles Street where visitors can sit in on outback lessons and tour the tourist room.",
+   "hours": "Weekday tours in school term",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -14.45029,
+    "longitude": 132.269401
+   },
+   "wiki": "Katherine School of the Air",
+   "ticketUrl": "https://ksa.nt.edu.au/",
+   "coordinates_source": "OpenStreetMap amenity=school 'Katherine School of the Air' via Photon; MEDIUM",
+   "notes": "NO COST: entry fees apply but no amount was found anywhere (school phone (08) 8965 1555 / 8972 1833). Hours unsourced beyond a guide saying weekday tours in term. Verify wiki article exists."
+  },
+  "katherine-3": {
+   "name": "Cutta Cutta Caves Nature Park",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "A limestone cave system 27 km south of Katherine, seen on hourly guided tours between April and October.",
+   "hours": "8:30 AM – 4:30 PM; cave tours April to October",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -14.576451,
+    "longitude": 132.471816
+   },
+   "wiki": "Cutta Cutta Caves Nature Park",
+   "costMin": 27,
+   "costMax": 35,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/cutta-cutta-caves-nature-park",
+   "coordinates_source": "OpenStreetMap amenity=parking 'Cutta Cutta Caves' via Photon (cave_entrance 90 m away; Wikipedia point 85 m away), HIGH",
+   "notes": "Price range from Webjet ($27) and Adrenaline ($35) reseller listings; operator (Nitmiluk Tours) price unverified. Tour times unverified. Enclosed shoes mandatory."
+  },
+  "mataranka-thermal-pools": {
+   "name": "Mataranka Thermal Pools",
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "A palm-fringed thermal pool at about 34 C in Elsey National Park, reached by a short accessible path from the car park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -14.922953,
+    "longitude": 133.135629
+   },
+   "wiki": "Mataranka Thermal Pools",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/elsey-national-park/mataranka-thermal-pool",
+   "coordinates_source": "OpenStreetMap tourism=attraction 'Mataranka Thermal Pool' (Nominatim); Commons median 200 m away, Wikipedia point 400 m away; MEDIUM",
+   "notes": "Hours 'daily 24 hrs' from Time Out only (unverified); pass price from Tourism NT Elsey page."
+  },
+  "bitter-springs": {
+   "name": "Bitter Springs",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "A natural thermal spring about 8 km from Mataranka with a paved path and handrailed stairs into the water.",
+   "hours": "Daylight hours; closed in the wet season",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -14.911536,
+    "longitude": 133.0895
+   },
+   "wiki": "Bitter Springs, Northern Territory",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/elsey-national-park/bitter-springs",
+   "coordinates_source": "OpenStreetMap natural=spring 'Bitter Springs Thermal Pools' via Photon; MEDIUM",
+   "notes": "Draft said 2 km from Mataranka; the pin is ~8 km west of the thermal pools (distance changed in bio to ~8 km, from coordinates; verify). Wet-season closure typically Nov-May per Tourism NT. Hours unsourced."
+  },
+  "elsey-national-park": {
+   "name": "Elsey National Park",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "A national park on the upper Roper River around Mataranka, with thermal pools, riverside walks and boating and fishing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -14.957332,
+    "longitude": 133.193022
+   },
+   "wiki": "Elsey National Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/elsey-national-park",
+   "coordinates_source": "PROVISIONAL: OpenStreetMap leisure=nature_reserve 'Elsey National Park' via Photon (a park polygon point, 783 m from the Wikipedia centroid); no visitor-point feature (Jamurark camp, Stockyard Creek) found - Overpass down",
+   "notes": "pin LOW: not a verified visitor point; replace with a day-use/camp point (Jamurark campground or Stockyard Creek) when Overpass is back. Distinct from the Thermal Pools pin (>6 km)."
+  },
+  "judbarra-gregory-national-park": {
+   "name": "Judbarra / Gregory National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A vast Victoria River park of escarpments, boab country and walks, entered from the Victoria Highway.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -15.616473,
+    "longitude": 131.127974
+   },
+   "wiki": "Judbarra / Gregory National Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://northernterritory.com/us/en/katherine-and-surrounds/destinations/judbarra-gregory-national-park",
+   "coordinates_source": "OpenStreetMap pub/camp_site 'Victoria River Roadhouse' (Nominatim), the park's main stop on the Victoria Highway; MEDIUM",
+   "notes": "Draft claimed 'largest national park in NT' - wrong (Kakadu is larger) so removed; rock art removed (unsourced). ticketUrl is a Tourism NT page found by search; swap for the nt.gov.au park page after browser check. Pass applies per NT Parks (not loaded for this park)."
+  },
+  "gregorys-tree": {
+   "name": "Gregory's Tree",
+   "icon": "🌳",
+   "category": "historic",
+   "bio": "A boab marked in 1855 by Augustus Gregory's North Australia Expedition, with a car park and picnic area near Timber Creek.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -15.565968,
+    "longitude": 130.368045
+   },
+   "free": true,
+   "coordinates_source": "OpenStreetMap tourism=attraction 'Gregory's Tree' via Photon (reserve point 60 m away); MEDIUM-HIGH",
+   "notes": "Free per Tourism NT. Registered Sacred Site for the Ngaringman people (kept out of bio)."
+  },
+  "escarpment-walk": {
+   "name": "Escarpment Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 3 km, 1.5 hour walk up the Victoria River escarpment with lookouts and signs on Nungali-Ngaliwurru and Wardaman stories.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -15.607818,
+    "longitude": 131.115903
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "coordinates_source": "OpenStreetMap highway=path 'Escarpment Walk' via Photon (trailhead -15.6058,131.1152; lookout -15.6134,131.1168; pin is on the path between them)",
+   "notes": "pin MEDIUM: on-route point near the middle, not a computed midpoint. Cost is the NT Parks pass assumed to apply in the park (unverified). Sources disagree whether loop or return; trailhead ~2 km west of the roadhouse."
+  },
+  "keep-river-national-park": {
+   "name": "Keep River National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "A remote park by the WA border with sculpted sandstone walks; the unsealed access road can close Nov to Apr.",
+   "hours": "Dry-season access; road may close Nov-Apr",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -15.750589,
+    "longitude": 129.086514
+   },
+   "wiki": "Keep River National Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/keep-river-national-park",
+   "coordinates_source": "PROVISIONAL: OpenStreetMap tourism=viewpoint 'Jarnem Lookout' inside the park (Nominatim); no Gurrandalng car park feature found",
+   "notes": "pin LOW: a point inside the park at a walk's lookout (Jarnem Lookout Walk is a review item, not in the app); replace with the Gurrandalng car park / ranger area. Draft 'Bungle Bungle-like' dropped (unsourced)."
+  },
+  "limmen-national-park": {
+   "name": "Limmen National Park",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A 9,370 sq km Gulf park with river drives, wetlands and sandstone lost-city formations; mostly 4WD country.",
+   "hours": "Dry-season access",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -15.578353,
+    "longitude": 135.427629
+   },
+   "wiki": "Limmen National Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/limmen-national-park",
+   "coordinates_source": "OpenStreetMap office/ranger_station 'Nathan River Ranger Station' (Nominatim), the park's staffed visitor point; MEDIUM",
+   "notes": "Draft pin options were centroid-only. Nathan River Rd road works need confirming; sealed 'Carpentaria Highway' claim removed from bio."
+  },
+  "douglas-hot-springs": {
+   "name": "Douglas Hot Springs",
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "A hot-spring park south of Darwin on a gravel road, with a campground and designated safe-to-enter thermal waters.",
+   "hours": "Daylight hours; check park status",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -13.76472,
+    "longitude": 131.43944
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tjuwaliyn-douglas-hot-springs-park",
+   "coordinates_source": "OpenStreetMap tourism=camp_site 'Douglas Hot Springs' via Photon (reserve point 1.9 km away); MEDIUM",
+   "notes": "IMPORTANT: Tourism NT page said the park is closed 'until further notice' and may close for traditional-owner ceremonies; recommend holding until reopened. Draft '31 C pool' unsourced and removed. Distance: ~130 km from Katherine, 200 km from Darwin."
+  },
+  "umbrawarra-gorge-nature-park": {
+   "name": "Umbrawarra Gorge Nature Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A red gorge with a creek-side walk to a sandy-banked pool, 115 km from Katherine; the last 22 km is unsealed.",
+   "hours": "Daylight hours; best early to mid dry season",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -13.965406,
+    "longitude": 131.697864
+   },
+   "wiki": "Umbrawarra Gorge Nature Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/umbrawarra-gorge-nature-park",
+   "coordinates_source": "OpenStreetMap information=guidepost 'Umbrawarra Gorge' via Photon (at the entry/car park, 1.1 km from the reserve centroid); MEDIUM",
+   "notes": "Creek dries and stagnates late in the dry season; no water supply. Draft 'cliff-top views' unsourced and dropped."
+  },
+  "giwining-nature-park": {
+   "name": "Giwining Nature Park",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A spring-fed Flora River park with tufa dams and short walks to Kathleen and Djarrung Falls; no swimming because of crocodiles.",
+   "hours": "Dry season only (closed Nov-May)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -14.750048,
+    "longitude": 131.603103
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/leisure/parks-reserves/find-a-park-to-visit/giwining-flora-river-nature-park",
+   "coordinates_source": "PROVISIONAL: OpenStreetMap leisure=nature_reserve 'Giwining Nature Park' (Nominatim) - a polygon point, not a visitor point (Lorrngorl campground not found; Overpass down)",
+   "notes": "pin LOW: replace with Lorrngorl campground / falls car park. Park is 86 km west of Katherine on Victoria Hwy then 46 km unsealed (high-clearance 2WD, dry season). NT page says closed Nov-May; Tourism NT says dry season is Apr-Oct. Name is Giwining / Flora River Nature Park; kept 'Giwining Nature Park' as drafted."
+  },
+  "daly-waters": {
+   "name": "Daly Waters",
+   "icon": "🛩️",
+   "category": "historic",
+   "bio": "A historic outback township on the Stuart Highway with an aviation complex, a 1930s aerodrome and the Daly Waters Pub.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -16.254158,
+    "longitude": 133.369851
+   },
+   "wiki": "Daly Waters, Northern Territory",
+   "free": true,
+   "ticketUrl": "https://www.dalywaterspub.com.au",
+   "coordinates_source": "OpenStreetMap place=hamlet 'Daly Waters' via Photon; Commons median within 100 m; the pub is in the township; MEDIUM",
+   "notes": "Hours unsourced (pub hours conflict 7am-10/11pm/midnight). The township is free to walk; the aerodrome/aviation complex entry not found. ticketUrl is the pub's own site (200, title 'Daly Waters Pub')."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "nitmiluk-national-park",
+    "name": "Nitmiluk National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Darwin",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -14.315535,
+     "longitude": 132.420956
+    },
+    "category": "park",
+    "defaultZoomSpanKm": 70,
+    "rank": 2,
+    "icon": "🛶",
+    "tagline": "Sandstone gorges, plunge pools and a 62 km walk on Jawoyn country east of Katherine.",
+    "description": "Nitmiluk National Park is Jawoyn country, a chain of sandstone gorges cut by the Katherine River about 30 km from Katherine town. Visitors cruise or paddle the gorges, swim at Leliyn (Edith Falls) on the western side, or walk the Jatbula Trail between the two. The Nitmiluk Visitor Centre at the gorge is the first stop for cruises, canoe hire and helicopter flights.",
+    "whyVisit": [
+     "Cruise Nitmiluk Gorge with Jawoyn guides",
+     "Paddle a canoe through the gorges",
+     "Swim below the falls at Leliyn",
+     "Walk the Jatbula Trail"
+    ],
+    "highlights": [
+     "Gorge cruises",
+     "Canoeing",
+     "Leliyn swimming",
+     "Jatbula Trail"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Parks pass required",
+      "detail": "Visitors need an NT Parks Visitor Pass: $10 adult per day, $20 for three days. NT residents are exempt."
+     },
+     {
+      "icon": "🌧️",
+      "title": "Wet-season water levels",
+      "detail": "Rain from November to April lifts river levels and can restrict gorge activities; swimming at Leliyn may close from November to April."
+     },
+     {
+      "icon": "📅",
+      "title": "Book the Jatbula Trail",
+      "detail": "Numbers are limited and walking and camping fees are paid online when you book, so reserve well ahead of the dry season."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "bestTimeBlurb": "The dry season, {months}, is the time for gorge cruises, canoeing and the Jatbula Trail; from November to April rising water can restrict activities.",
+    "seasonalTags": [
+     {
+      "tag": "monsoon-dry-season",
+      "months": [
+       5,
+       6,
+       7,
+       8,
+       9,
+       10
+      ]
+     }
+    ]
+   },
+   "spots": [
+    "nitmiluk-national-park-1",
+    "nitmiluk-national-park-2",
+    "nitmiluk-national-park-3"
+   ],
+   "notes": "Pin = Nitmiluk Visitor Centre building (OSM, Photon; Overpass down), 150 m from the Katherine Gorge spot pin. Span 70 km: Edith Falls ~28 km and the Jatbula point ~22 km from the pin, both inside 75% (52 km). Order unchanged. Rank 2 -> 4 reasons, 3 tips. Cruise/canoe/helicopter claims from Tourism NT. Whether the NT Parks pass is $10 and Leliyn Nov-Apr restriction from Tourism NT pages. Free-text 'Jawoyn' (Nitmiluk Tours is Jawoyn-owned; Leliyn tourism page and cruise 'Jawoyn guides')."
+  },
+  {
+   "destination": {
+    "id": "katherine",
+    "name": "Katherine",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Darwin",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -14.464616,
+     "longitude": 132.263599
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 60,
+    "rank": 4,
+    "icon": "🌉",
+    "tagline": "The Top End's southern hub on the Katherine River, gateway to Nitmiluk and the Savannah Way.",
+    "description": "Katherine is the Northern Territory's third-largest town, sitting on the Stuart Highway and the Katherine River. It is the regional base for Nitmiluk Gorge 30 km to the north-east and for the Mataranka thermal pools to the south. In town, the museum and School of the Air tell the story of life in the outback, and Cutta Cutta Caves lie 27 km down the highway.",
+    "whyVisit": [
+     "Tour the limestone chambers of Cutta Cutta Caves",
+     "Visit Katherine Museum's outback history",
+     "See School of the Air lessons at work"
+    ],
+    "highlights": [
+     "Cutta Cutta Caves",
+     "Outback history",
+     "School of the Air"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "👟",
+      "title": "Cave tours need shoes",
+      "detail": "Cutta Cutta tours run April to October and require fully enclosed shoes; thongs and sandals are turned away."
+     },
+     {
+      "icon": "🕘",
+      "title": "Plan around weekdays",
+      "detail": "Most shops close on weekends and School of the Air tours run on school-term weekdays, so schedule town stops early in the week."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "bestTimeBlurb": "The dry season, {months}, is the time to visit: Cutta Cutta tours run, gorge swimming and canoeing are open and the days are mild.",
+    "seasonalTags": [
+     {
+      "tag": "monsoon-dry-season",
+      "months": [
+       5,
+       6,
+       7,
+       8,
+       9,
+       10
+      ]
+     }
+    ]
+   },
+   "spots": [
+    "katherine-3",
+    "katherine-1",
+    "katherine-2"
+   ],
+   "notes": "Pin = OSM place=town 'Katherine' (Photon), 3 km from the Museum and 1.5 km from School of the Air. Recommended importance order: katherine-3 (Cutta Cutta Caves), katherine-1 (Museum), katherine-2 (School of the Air) - ids unchanged. Only 3 spots; hub rule applies (owner may prefer standalone). 'Third-largest town' and ~10,000 from placement; shops-close-weekends from Wikivoyage; School of the Air weekday term tours from a guide listing (unverified)."
+  }
+ ],
+ "unverified": [
+  "nitmiluk-national-park-1: hours, cruise prices (cost range 10-139 uses a reseller figure for the cruise)",
+  "nitmiluk-national-park-2: hours",
+  "nitmiluk-national-park-3: fees 140-175 and season (third-party guide), visit hours",
+  "katherine-1: hours (Wikivoyage 9-4 vs 9-2 weekdays elsewhere) and price ($10 from Tourism NT)",
+  "katherine-2: hours, COST (none found - entry fees apply, amount unknown)",
+  "katherine-3: tour times and price (27-35 from resellers)",
+  "mataranka-thermal-pools, bitter-springs, elsey-national-park, judbarra-gregory-national-park, keep-river-national-park, limmen-national-park, douglas-hot-springs, umbrawarra-gorge-nature-park, giwining-nature-park, escarpment-walk, daly-waters: hours (no sourced hours; qualifiers/Open 24 hours used)",
+  "escarpment-walk: cost (NT Parks pass assumed)",
+  "daly-waters: aviation complex entry/hours",
+  "gregorys-tree: hours"
+ ],
+ "needs_browser": [
+  {
+   "id": "nitmiluk-national-park-1",
+   "url": "https://www.nitmiluktours.com.au/",
+   "why": "Cloudflare 403 to curl; WebFetch loaded it (lists cruises) but no prices; verify cruise prices and visitor centre hours"
+  },
+  {
+   "id": "nitmiluk-national-park-2",
+   "url": "https://parkbookings.nt.gov.au/",
+   "why": "named on Tourism NT page as the pass booking site; not loaded"
+  },
+  {
+   "id": "nitmiluk-national-park-3",
+   "url": "https://nt.gov.au/leisure/recreation/bushwalking-hiking/nitmiluk-national-park-jatbula-trail",
+   "why": "nt.gov.au blocks scripts; URL from search; confirm fees and season"
+  },
+  {
+   "id": "katherine-1",
+   "url": "https://www.katherinemuseum.com.au",
+   "why": "curl 406; Wikivoyage lists katherinemuseum.com (http) while Tourism NT says katherinemuseum.com.au; confirm which is live"
+  },
+  {
+   "id": "katherine-3",
+   "url": "https://nt.gov.au/parks/find-a-park/cutta-cutta-caves-nature-park",
+   "why": "nt.gov.au blocked; tours booked via Nitmiluk Tours - check whether a better booking link exists"
+  },
+  {
+   "id": "mataranka-thermal-pools",
+   "url": "https://nt.gov.au/parks/find-a-park/elsey-national-park/mataranka-thermal-pool",
+   "why": "nt.gov.au blocked; from search"
+  },
+  {
+   "id": "bitter-springs",
+   "url": "https://nt.gov.au/parks/find-a-park/elsey-national-park/bitter-springs",
+   "why": "nt.gov.au blocked; from Tourism NT page"
+  },
+  {
+   "id": "elsey-national-park",
+   "url": "https://nt.gov.au/parks/find-a-park/elsey-national-park",
+   "why": "nt.gov.au blocked; from Tourism NT page"
+  },
+  {
+   "id": "judbarra-gregory-national-park",
+   "url": "https://northernterritory.com/us/en/katherine-and-surrounds/destinations/judbarra-gregory-national-park",
+   "why": "Tourism NT page found by search; replace with the nt.gov.au park page once its exact URL is seen"
+  },
+  {
+   "id": "keep-river-national-park",
+   "url": "https://nt.gov.au/parks/find-a-park/keep-river-national-park",
+   "why": "nt.gov.au blocked; from Tourism NT page"
+  },
+  {
+   "id": "limmen-national-park",
+   "url": "https://nt.gov.au/parks/find-a-park/limmen-national-park",
+   "why": "nt.gov.au blocked; from Tourism NT page"
+  },
+  {
+   "id": "douglas-hot-springs",
+   "url": "https://nt.gov.au/parks/find-a-park/tjuwaliyn-douglas-hot-springs-park",
+   "why": "nt.gov.au blocked; also check whether the park has reopened"
+  },
+  {
+   "id": "umbrawarra-gorge-nature-park",
+   "url": "https://nt.gov.au/parks/find-a-park/umbrawarra-gorge-nature-park",
+   "why": "nt.gov.au blocked; from Tourism NT page"
+  },
+  {
+   "id": "giwining-nature-park",
+   "url": "https://nt.gov.au/leisure/parks-reserves/find-a-park-to-visit/giwining-flora-river-nature-park",
+   "why": "403 Cloudflare; URL from search results"
+  }
+ ],
+ "notes": [
+  "Overpass (all mirrors) was down; resolve-pin fell back to Photon for every spot, so every pin is an OSM feature found by Photon/Nominatim, graded LOW by the script but individually judged in coordinates_source. Explicit LOW pins: nitmiluk-national-park-3 (on-route, not midpoint), elsey-national-park, keep-river-national-park, giwining-nature-park (all park-polygon or lookout stand-ins).",
+  "Run 25 m pin-shared check at apply time; within the shard all pins are >100 m apart except none; Katherine Gorge vs Nitmiluk pin 150 m.",
+  "Douglas Hot Springs: park closed until further notice per Tourism NT; recommend holding it.",
+  "Bitter Springs: pin is ~8 km west of Mataranka Thermal Pools; draft said 2 km from Mataranka town."
+ ]
+}

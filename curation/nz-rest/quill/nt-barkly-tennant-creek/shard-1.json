@@ -1,0 +1,289 @@
+{
+ "spots": {
+  "tennant-creek-3": {
+   "name": "Battery Hill Mining Centre",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "A gold-mining heritage centre with mine museums, a working stamp battery and underground tours, beside the visitor centre.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -19.64799,
+    "longitude": 134.207964
+   },
+   "costMin": 14,
+   "costMax": 39,
+   "currency": "AUD",
+   "ticketUrl": "https://northernterritory.com/tennant-creek-and-barkly-region/see-and-do/battery-hill-gold-mining--heritage-centre",
+   "coordinates_source": "osm tourism=museum 'Battery Hill Mining Centre' (resolve-pin HIGH, Commons median 69 m)",
+   "notes": "Museum entry about $14 adult; underground mine tour about $39 adult (tours do not run daily). Hours: tourism listing says daily 9-5; another listing says weekends 9:30-4. Also the Telegraph Station key point and the visitor information centre."
+  },
+  "tennant-creek-1": {
+   "name": "Tennant Creek Telegraph Station",
+   "icon": "📡",
+   "category": "historic",
+   "bio": "An 1872 stone Overland Telegraph station 10 km north of town, with a self-guided walk through the original buildings.",
+   "hours": "Daylight hours; building key from Battery Hill",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -19.555755,
+    "longitude": 134.228954
+   },
+   "wiki": "Tennant Creek Telegraph Station",
+   "free": true,
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/tennant-creek-telegraph-station-historical-reserve",
+   "coordinates_source": "osm tourism=attraction 'Tennant Creek Telegraph Station' (resolve-pin: agrees with Wikipedia point within 45 m; the information board and reserve point are within 150 m)",
+   "notes": "Reserve open year-round; key for the buildings is collected from Battery Hill (Peko Road); drone permit needed. Park status page: Parks and Wildlife 08 8951 8250."
+  },
+  "tennant-creek-2": {
+   "name": "Nyinkka Nyunyu Art and Culture Centre",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "A Warumungu art and cultural centre on Paterson Street with art, exhibitions and an audio tour of local Aboriginal history.",
+   "hours": "Tuesday to Saturday, daytime hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -19.651762,
+    "longitude": 134.188322
+   },
+   "free": true,
+   "ticketUrl": "https://nyinkkanyunyu.com.au",
+   "coordinates_source": "osm amenity=arts_centre 'Nyinkka Nyunyu Cultural Centre' (resolve-pin HIGH)",
+   "notes": "Closed Sunday, Monday and public holidays. Hours conflict between listings (Tue-Fri 9-3:30 and Sat 10-2, or Tue-Fri 9-2 and Sat 9-12), so only the days are given. Entry free per NT tourism; Wikivoyage says fees apply."
+  },
+  "tennant-creek-4": {
+   "name": "The Pebbles",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A small outcrop of granite boulders north of town, known to the Warumungu as Kunjarra and a sacred women's site.",
+   "hours": "8:00 AM – 6:00 PM",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -19.532579,
+    "longitude": 134.179502
+   },
+   "free": true,
+   "ticketUrl": null,
+   "coordinates_source": "osm amenity=toilets 'Kunjarra (The Pebbles)' (resolve-pin HIGH; it is the site's car park/visitor point)",
+   "notes": "Day use only, no camping; stay on the walking track and do not climb the rocks. 6 km of unsealed road from the highway opposite the Telegraph Station, high clearance recommended; NT tourism page says no toilets currently (OSM toilets node is the visitor point). Sacred Warumungu site: no steward site linked."
+  },
+  "tennant-creek-5": {
+   "name": "Lake Mary Ann",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A dam lake 5 km north of town with swimming, canoeing, barbecues and picnic lawns, and a bike path from town.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -19.607628,
+    "longitude": 134.213137
+   },
+   "wiki": "Lake Mary Ann",
+   "free": true,
+   "ticketUrl": null,
+   "coordinates_source": "Wikipedia article point -19.607551,134.213147 and Commons photo median (2 files) within 10 m; OSM lake centroid is 630 m away in the water, park rec-ground 155 m",
+   "notes": "Also called Tingkkarli. No camping. NT tourism lists swimming, canoeing and kayaking; check signage."
+  },
+  "devils-marbles": {
+   "name": "Devils Marbles",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Granite boulders balanced along the Stuart Highway, known to the Warumungu as Karlu Karlu, with informal tracks and a campground.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -20.561597,
+    "longitude": 134.264943
+   },
+   "wiki": "Karlu Karlu / Devils Marbles Conservation Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://northernterritory.com/tennant-creek-and-barkly-region/destinations/karlu-karlu--devils-marbles-conservation-reserve",
+   "coordinates_source": "osm tourism=attraction 'Devils Marbles' (MEDIUM; Commons median of 31 files is 560 m SW, campground 780 m SW)",
+   "notes": "Cost is the NT Parks Visitor Pass adult 1-day $10 (NT tourism page; NT residents exempt; an Italian-language version says free, outdated). No official walks; do not climb the boulders. Campground booked and paid online. Dark Sky Sanctuary. About 96 km south of Tennant Creek. 24-hour access is not stated on the page: unverified."
+  },
+  "iytwelepenty-davenport-range-national-park": {
+   "name": "Iytwelepenty / Davenport Range National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "A remote national park of rugged ranges and permanent waterholes east of the Stuart Highway, reached by high-clearance 4WD.",
+   "hours": "Open year-round; high-clearance 4WD only",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -20.63639,
+    "longitude": 134.77944
+   },
+   "wiki": "Iytwelepenty / Davenport Range National Park",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/iytwelepenty-davenport-ranges-national-park",
+   "coordinates_source": "osm tourism=camp_site 'Whistleduck Creek' (park's main campground, MEDIUM; centroid -20.86,134.941 rejected; resolve-pin found no feature)",
+   "notes": "Parks pass required per the official page; $10 assumed from the NT Parks Visitor Pass adult 1-day price: unverified. Camping booked online (about $3.30 adult listed by a third party, old). Best April to September; check road conditions with Ali Curung Police 08 8964 1959. Bio 'rock wallabies' dropped: not sourced."
+  },
+  "barrow-creek-telegraph-station": {
+   "name": "Barrow Creek Telegraph Station",
+   "icon": "📡",
+   "category": "historic",
+   "bio": "An 1872 stone Overland Telegraph station reserve on the Stuart Highway with a self-guided walk through the old buildings.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -21.529583,
+    "longitude": 133.889581
+   },
+   "wiki": "Barrow Creek Telegraph Station",
+   "free": true,
+   "ticketUrl": "https://nt.gov.au/parks/find-a-park/barrow-creek-telegraph-station-historical-reserve",
+   "coordinates_source": "osm leisure=nature_reserve 'Barrow Creek Telegraph Station Historical Reserve' (resolve-pin HIGH, agrees with Wikipedia and Commons within 30 m)",
+   "notes": "Open all year, no camping, pets or fires. Self-guided walk sheet from the NT Government site or the Barrow Creek pub. Draft said 'from stone' wording kept; 1872 date from the draft/Wikipedia title, not re-sourced here."
+  },
+  "newcastle-waters": {
+   "name": "Newcastle Waters",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "A drovers' ghost town off the Stuart Highway with preserved Jones Store and Junction Hotel and a drovers' memorial park.",
+   "hours": "Daytime; access through Newcastle Waters Station",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -17.372508,
+    "longitude": 133.410698
+   },
+   "wiki": "Newcastle Waters",
+   "free": true,
+   "ticketUrl": null,
+   "coordinates_source": "osm place=hamlet 'Newcastle Waters' (the historic township; MEDIUM). Wikipedia point is 1.2 km NW and not used",
+   "notes": "Jones Store museum: NT tourism lists a $5 donation, National Trust says free. Township is about 3 km from the highway via the station; observe station rules. Jones Store opening hours not sourced. No site linked."
+  },
+  "anmatjere-man": {
+   "name": "Anmatjere Man",
+   "icon": "🗿",
+   "category": "landmark",
+   "bio": "A 12 m steel-and-cement sculpture of an Anmatjere man, 17 m with his spear, beside the Stuart Highway at Aileron.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -22.64366,
+    "longitude": 133.342797
+   },
+   "free": true,
+   "ticketUrl": null,
+   "coordinates_source": "osm tourism=artwork 'Anmatjere Man' (MEDIUM; Commons median 2 files is 430 m away); resolve-pin said LOW because one source",
+   "notes": "At the Aileron Roadhouse; companion Anmatjere Woman and Child sculpture. Made by Mark Egan, erected 2005."
+  }
+ },
+ "destinations": [
+  {
+   "id": "tennant-creek",
+   "name": "Tennant Creek",
+   "country": "Australia",
+   "countryCode": "AU",
+   "timezone": "Australia/Darwin",
+   "continent": "Oceania",
+   "coordinates": {
+    "latitude": -19.647222,
+    "longitude": 134.190278
+   },
+   "category": "city",
+   "defaultZoomSpanKm": 30,
+   "rank": 5,
+   "icon": "⛏️",
+   "tagline": "A gold-mining town on the Stuart Highway, halfway between Alice Springs and Darwin.",
+   "description": "Tennant Creek is a town of about 3,500 people on the edge of the Barkly Tableland, roughly 500 km north of Alice Springs. Gold found in 1925 created the township, and the Battery Hill Mining Centre keeps that history alive with underground tours. The Warumungu are the traditional custodians, and Nyinkka Nyunyu and the sacred Kunjarra tell their story. The Stuart Highway links it to the Devils Marbles to the south.",
+   "whyVisit": [
+    "Tour a gold mine at Battery Hill",
+    "Visit the 1872 Telegraph Station"
+   ],
+   "highlights": [
+    "Gold mining history",
+    "Overland Telegraph"
+   ],
+   "goodToKnow": [
+    {
+     "icon": "🔑",
+     "title": "Station key from Battery Hill",
+     "detail": "The Telegraph Station buildings are locked: collect the key at Battery Hill on Peko Road, which is also the visitor centre."
+    },
+    {
+     "icon": "🛣️",
+     "title": "Check roads first",
+     "detail": "The Pebbles is 6 km of unsealed road and floods can close roads in the Wet. Check conditions before heading out."
+    }
+   ],
+   "bestMonths": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "bestTimeBlurb": "The cooler months, {months}, suit sightseeing: summer days are very hot and floods can cut roads.",
+   "spots": [
+    "tennant-creek-3",
+    "tennant-creek-1",
+    "tennant-creek-2",
+    "tennant-creek-4",
+    "tennant-creek-5"
+   ],
+   "notes": "Centre is the Wikipedia/Commons town point (-19.647222,134.190278); OSM has no place=town node found by resolve-pin (it returned a printer's shop). Mark MEDIUM-LOW; owner may re-check. Order changed: Battery Hill first (mine tours, visitor centre), then Telegraph Station, Nyinkka Nyunyu, The Pebbles, Lake Mary Ann. Spots are within 13 km of centre, inside 75% of 30 km. Dates for Telegraph Station not in description."
+  }
+ ],
+ "unverified": [
+  "Nyinkka Nyunyu hours (conflicting listings) and cost (free vs fees apply)",
+  "Tennant Creek Telegraph Station hours",
+  "Devils Marbles 24-hour access and campground fee",
+  "Davenport Range pass price ($10 assumed)",
+  "Newcastle Waters / Jones Store hours",
+  "Battery Hill hours/prices (listings conflict)",
+  "Lake Mary Ann hours (daylight only per one source)",
+  "Tennant Creek destination hub pin (no OSM place node)"
+ ],
+ "needs_browser": [
+  {
+   "id": "tennant-creek-3",
+   "url": "https://northernterritory.com/tennant-creek-and-barkly-region/see-and-do/battery-hill-gold-mining--heritage-centre",
+   "why": "NT tourism page, not the operator; find Battery Hill's own site (discovercentralaustralia.com listing also exists)"
+  },
+  {
+   "id": "tennant-creek-1",
+   "url": "https://nt.gov.au/parks/find-a-park/tennant-creek-telegraph-station-historical-reserve",
+   "why": "nt.gov.au blocks scripts"
+  },
+  {
+   "id": "tennant-creek-2",
+   "url": "https://nyinkkanyunyu.com.au",
+   "why": "Wikivoyage's listed domain, not loaded"
+  },
+  {
+   "id": "devils-marbles",
+   "url": "https://northernterritory.com/tennant-creek-and-barkly-region/destinations/karlu-karlu--devils-marbles-conservation-reserve",
+   "why": "Loaded OK but is tourism board; check for the nt.gov.au Parks page"
+  },
+  {
+   "id": "iytwelepenty-davenport-range-national-park",
+   "url": "https://nt.gov.au/parks/find-a-park/iytwelepenty-davenport-ranges-national-park",
+   "why": "nt.gov.au blocks scripts; confirm pass price and open status"
+  },
+  {
+   "id": "barrow-creek-telegraph-station",
+   "url": "https://nt.gov.au/parks/find-a-park/barrow-creek-telegraph-station-historical-reserve",
+   "why": "nt.gov.au blocks scripts"
+  }
+ ],
+ "notes": [
+  "Wycliffe Well excluded: Wikipedia reports the roadhouse and caravan park were abandoned after the 2022 flood and vandalised, with no reopening reported (a weekendnotes listing for BIG4 Wycliffe Well may be older). Closed, so it fails 'a visitor can do or see something'. Re-check if the owner knows it reopened.",
+  "Pins: Lake Mary Ann, Telegraph Station, Devils Marbles, Davenport, Newcastle Waters, Anmatjere Man are MEDIUM (one precise OSM feature or two close sources); no LOW left. No pin within 25 m of another shard spot checked against src (no existing ids in region)."
+ ]
+}
