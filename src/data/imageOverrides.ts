@@ -1961,6 +1961,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Perth": "Skyline of Perth seen from Perth Stadium, December 2022 04.jpg",
   "Rottnest Island": "Rottnest Island coastline near Parker Point 01.jpg",
   "Perth Hills": "MUNDARING WEIR FROM THE SOUTH.jpg",
+  "Mandurah": "ext-mandurah-eastern-foreshore.jpg",
 };
 
 /**

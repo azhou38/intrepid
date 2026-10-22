@@ -2078,6 +2078,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [7, 8, 9, 10],
     bestTimeBlurb: "Visit in {months}, when the waterfalls are running and the bush is in flower; summers are hot.",
   },
+  {
+    id: 'mandurah', name: "Mandurah", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 54,
+    continent: 'Oceania', coordinates: { latitude: -32.5302495, longitude: 115.7208782 },
+    category: 'city', icon: "🐬", rank: 4,
+    tagline: "Dolphins, blue swimmer crabs and giant sculptures on an estuary south of Perth.",
+    description: "Mandurah sits between the Indian Ocean and the Peel-Harvey Estuary, twice the size of Sydney Harbour, about 50 minutes south of Perth by car or train. More than 100 bottlenose dolphins live in the estuary and canals all year, and crabbers wade the shallows with scoop nets in summer. Thomas Dambo's Giants hide in the bush around the city, and the Lake Clifton thrombolites, historic Pinjarra and the forest town of Dwellingup are within an easy drive.",
+    whyVisit: ["See wild dolphins in Mandurah's waterways", "Hunt for the Giants of Mandurah", "See the Lake Clifton thrombolites"],
+    whyVisitPhotos: ["Dolphins (Tursiops aduncus) in the Serpentine River, Western Australia, November 2023 10.jpg", "Giants of Mandurah - Yaburgurt Winjan Cirkelstone - 1.jpg", "Thrombolites of Lake Clifton, Yalgorup National Park 01.jpg"],
+    highlights: ["Wild dolphins", "Giant sculptures", "Living rocks"],
+    goodToKnow: [
+      { icon: "🦀", title: "Know the crab rules", detail: "Crabbing is open 1 December to 31 August; keep only crabs 127 mm or wider, 10 per person, and return any carrying eggs." },
+      { icon: "🚗", title: "Drive between the Giants", detail: "The Giants are spread over 40 km and the nearest is 6 km from the visitor centre, so bring a car and allow a full day." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Come in {months} for warm swimming and crabbing in the estuary; the resident dolphins can be seen all year.",
+    seasonalTags: [{ tag: 'beach-peak', strength: 0.6 }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
