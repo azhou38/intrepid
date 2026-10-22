@@ -2231,6 +2231,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "The dry season, {months}, brings warm, clear days; the wet is hot, humid and stormy.",
     seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9, 10] }],
   },
+  {
+    id: 'port-hedland', name: "Port Hedland", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 28,
+    continent: 'Oceania', coordinates: { latitude: -20.3111814, longitude: 118.5801181 },
+    category: 'city', icon: "🚢", rank: 5,
+    tagline: "Australia's highest-tonnage port, with ore ships, turtle beaches and moonrise flats.",
+    description: "Port Hedland, Marapikurrinya in the Kariyarra language, is the Pilbara's second-largest town and the highest-tonnage port in Australia, shipping iron ore railed in from mines inland. Ore carriers queue offshore within sight of the foreshore, and the salt mounds of Dampier Salt rise between the old port and South Hedland, 18 km away. Flatback turtles nest on the town beaches each summer.",
+    whyVisit: ["Watch ore carriers in Port Hedland harbour", "See old ore trains at the Don Rhodes Museum"],
+    whyVisitPhotos: ["Bulk Carrier Maria in Port Hedland Harbour, 2023, 03.jpg", "Don Rhodes general view, 2012.JPG"],
+    highlights: ["Ore carriers", "Mining museum"],
+    goodToKnow: [
+      { icon: "🐢", title: "Give nests space", detail: "Turtle nesting areas may be cordoned off from November to March; keep well clear of nests and tracks on the sand." },
+      { icon: "🏊", title: "Swim at Spoil Bank", detail: "The Spoil Bank beaches are safe for swimming; do not swim off the rocky Rock of Ages shore east of Koombana." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "Visit {months} for drier, milder days and the Staircase to the Moon; turtles nest in summer.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

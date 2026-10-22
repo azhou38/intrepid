@@ -603,6 +603,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Cable Beach Sunset Camel Ride.JPG": { x: 0.5, y: 0.55 },
   "File:Broome - Gantheaume Point 09.jpg": { x: 0.5, y: 0.6 },
   "Geraldton": { x: 0.6, y: 0.4, zoom: 1.5 },
+  "Port Hedland": { x: 0.55, y: 0.45, zoom: 1.2 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1975,6 +1976,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kalbarri National Park": "Nature's Window, Kalbarri National Park, Western Australia.jpg",
   "Geraldton": "Geraldton Foreshore October 2023 08.jpg",
   "Derby": "00 2013 Anlegesteg (Jetty) in Derby, Westaustralien.jpg",
+  "Port Hedland": "ext-port-hedland-foreshore.jpg",
 };
 
 /**
