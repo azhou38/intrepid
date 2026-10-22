@@ -1931,7 +1931,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: "⛰️", rank: 2,
     tagline: "Striped beehive domes and palm-lined chasms of the World Heritage Bungle Bungle Range.",
     description: "Purnululu National Park, country of the Gija and Jaru people, protects the Bungle Bungle Range, about 45,000 hectares of striped sandstone domes some 360 million years old, and is on the UNESCO World Heritage List. The north of the range hides narrow gorges such as Echidna Chasm and Mini Palms, while the south has the beehive domes, Cathedral Gorge and Piccaninny Creek. The two ends are 47 km apart, and the park is 304 km by road from Kununurra, so allow at least two nights.",
-    whyVisit: ["Walk into Cathedral Gorge's amphitheatre", "Squeeze through narrow Echidna Chasm", "Wander among the beehive domes", "Fly over the Bungle Bungle Range"],
+    whyVisit: ["Walk into Cathedral Gorge's amphitheatre", "Walk into narrow Echidna Chasm", "Wander among the beehive domes", "Fly over the Bungle Bungle Range"],
     whyVisitPhotos: ["Cathedral Gorge, Purnulu NP.jpg", "Bungle Bungles (2051696203).jpg", "The Domes Walk, Purnululu National Park.jpg", "The Bungle Bungle Ranges.jpg"],
     highlights: ["Cathedral Gorge", "Echidna Chasm", "Beehive domes", "Scenic flights"],
     goodToKnow: [
@@ -2017,7 +2017,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🏙️", rank: 4,
     tagline: "The Pilbara's main town, a base for Murujuga's rock art, Dampier and the islands.",
     description: "Karratha was founded in 1968 to house workers for the iron-ore and gas industries and is now the Pilbara's largest town, about 1,575 km north of Perth. Within a short drive are the Burrup Peninsula's Aboriginal rock engravings, the beach at Hearson Cove and the port town of Dampier, where boats leave for the islands offshore. To the east, Roebourne, the old pearling port of Cossack and the village of Point Samson make a coastal loop.",
-    whyVisit: ["See ancient rock engravings at Ngajarli", "Boat out to the Dampier Archipelago", "Visit the Red Dog statue at Dampier"],
+    whyVisit: ["See ancient rock engravings at Ngajarli", "Take a boat to the Dampier Archipelago", "Visit the Red Dog statue at Dampier"],
     whyVisitPhotos: ["Nganjarli Murujuga Rock Art 01.jpg", "ext-dampier-archipelago-tour-boat.jpg", "Dampier Red Dog, Western Australia.jpg"],
     highlights: ["Ancient rock art", "Island boat trips", "Red Dog statue"],
     goodToKnow: [
@@ -2168,7 +2168,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🐪", rank: 2,
     tagline: "Pearling town on a peninsula between the Indian Ocean and the mudflats of Roebuck Bay.",
     description: "Broome is the largest town in the Kimberley, founded on pearling in the late 19th century and a beach resort since the 1980s. Cable Beach runs 22 km along the Indian Ocean west of town, while Chinatown, the museum and Town Beach face Roebuck Bay. Hundreds of pearl divers from Japan, Malaya and elsewhere lie in its cemeteries, and the wrecks of flying boats shot up in the 1942 air raid still surface at the lowest tides. It is the usual starting point for the Gibb River Road.",
-    whyVisit: ["Ride a camel along Cable Beach", "Watch the Staircase to the Moon", "See dinosaur footprints at Gantheaume Point", "Catch a film at Sun Pictures"],
+    whyVisit: ["Ride a camel along Cable Beach", "Watch the Staircase to the Moon", "See dinosaur footprints at Gantheaume Point", "Watch a film at Sun Pictures"],
     whyVisitPhotos: ["Cable Beach Sunset Camel Ride.JPG", "Staircasetothemoon.jpg", "Broome - Gantheaume Point 09.jpg", "A crowd settle in at dusk to watch a film at Sun Picture Gardens, Broome, WA, Australia 02.jpg"],
     highlights: ["Cable Beach camels", "Staircase to the Moon", "Dinosaur footprints", "Open-air cinema"],
     goodToKnow: [
@@ -2186,7 +2186,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: "🏜️", rank: 3,
     tagline: "Murchison River gorges inland and 100 m sea cliffs on the coast, either side of Kalbarri.",
     description: "Kalbarri National Park protects the lower Murchison River, which has cut an 80 km gorge through red and white banded Tumblagooda sandstone east of the town of Kalbarri. South of town, coastal cliffs more than 100 m high have been worn into gorges, a sea stack and a natural arch. The gorge and the coast are reached by separate roads from town, and the gorge can be more than 10°C hotter than the coast. From July to October around 1,000 species of wildflowers bloom across the park.",
-    whyVisit: ["Walk out on the Kalbarri Skywalk", "Frame the river through Nature's Window", "Walk the red clifftops of the Kalbarri coast"],
+    whyVisit: ["Walk out on the Kalbarri Skywalk", "See the river through Nature's Window", "Walk the red clifftops of the Kalbarri coast"],
     whyVisitPhotos: ["Kalbarri Skywalk Platform Over the Murchison Gorge.jpg", "Murchison River Gorge - Nature's window (6136071267).jpg", "Cliffs at Kalbarri - Falaises roses (6101279965).jpg"],
     highlights: ["Skywalk platforms", "Nature's Window", "Coastal cliffs"],
     goodToKnow: [
@@ -2237,7 +2237,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🚢", rank: 5,
     tagline: "Australia's highest-tonnage port, with ore ships, turtle beaches and moonrise flats.",
     description: "Port Hedland, Marapikurrinya in the Kariyarra language, is the Pilbara's second-largest town and the highest-tonnage port in Australia, shipping iron ore railed in from mines inland. Ore carriers queue offshore within sight of the foreshore, and the salt mounds of Dampier Salt rise between the old port and South Hedland, 18 km away. Flatback turtles nest on the town beaches each summer.",
-    whyVisit: ["Watch ore carriers in Port Hedland harbour", "See old ore trains at the Don Rhodes Museum"],
+    whyVisit: ["Watch ore carriers in Port Hedland harbour", "See old ore trains at Don Rhodes Museum"],
     whyVisitPhotos: ["Bulk Carrier Maria in Port Hedland Harbour, 2023, 03.jpg", "Don Rhodes general view, 2012.JPG"],
     highlights: ["Ore carriers", "Mining museum"],
     goodToKnow: [
