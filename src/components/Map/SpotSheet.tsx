@@ -113,6 +113,13 @@ const CARD_GAP  = 12;
 const CARD_SNAP = CARD_W + CARD_GAP;
 // Cards either side of the active one that are rendered for real (see the carousel's map below).
 const CAROUSEL_WINDOW = 3;
+// The sheet's first frames mount only the active card and its two neighbours (the slide-in is when the JS thread is busiest);
+// the window widens to CAROUSEL_WINDOW once the slide is done.
+const CAROUSEL_WINDOW_AT_MOUNT = 1;
+const CAROUSEL_WIDEN_MS = 600;
+// The full-screen panels (hidden at half-screen) mount after the slide-in rather than during it; heading to full screen
+// still mounts them at once (revealPanels).
+const SPOT_PANEL_MOUNT_DELAY_MS = 900;
 // Clones of the spots at the other end on each side of the looping carousel (see extendedSpots).
 const LOOP_CLONES = 2;
 const SIDE_PAD  = (W - CARD_W) / 2;
@@ -441,6 +448,7 @@ function SpotSheet({
   // card beside it (the second spot) has to be there too until the slide stops and the jump happens, about a second
   // later; with one clone that side of the carousel stood empty meanwhile. Only worth doing with 2+ spots.
   const loopOffset = spots.length > 1 ? LOOP_CLONES : 0;
+  const nearLoopEnd = activeIndex <= CAROUSEL_WINDOW + loopOffset || activeIndex >= spots.length - 1 - CAROUSEL_WINDOW - loopOffset;
   const extendedSpots = useMemo(() => {
     if (spots.length <= 1) return spots.map((s, i) => ({ spot: s, realIndex: i }));
     const n = spots.length, at = (i: number) => ((i % n) + n) % n;
@@ -742,7 +750,9 @@ function SpotSheet({
   const transitionToRef = useRef<(next: 'peek' | 'collapsed' | 'full', reason: string) => void>(() => {});
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
-  const [panelsReady, revealPanels] = useDeferredMount();
+  const [panelsReady, revealPanels] = useDeferredMount(SPOT_PANEL_MOUNT_DELAY_MS);
+  const [carouselWindow, setCarouselWindow] = useState(CAROUSEL_WINDOW_AT_MOUNT);
+  useEffect(() => { const t = setTimeout(() => setCarouselWindow(CAROUSEL_WINDOW), CAROUSEL_WIDEN_MS); return () => clearTimeout(t); }, []);
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
@@ -1439,7 +1449,10 @@ isVisited ? (
               // (Wellington: 30 spots, 32 cards with the loop clones) used to mount every card at once — each with its
               // own photo fetch and gradient — on the tap that opens the sheet, which is what held the sheet back.
               // The two ends stay real too, so the loop's clone hand-off never lands on a blank card.
-              Math.abs(i - (activeIndex + loopOffset)) > CAROUSEL_WINDOW && i > 2 * loopOffset && i < extendedSpots.length - 1 - 2 * loopOffset ? (
+              // The loop's end cards are kept real only while the active card is near an end (the only time the clone
+              // hand-off can happen); a big destination used to mount ten end cards on every tap.
+              Math.abs(i - (activeIndex + loopOffset)) > carouselWindow
+                && (!nearLoopEnd || (i > 2 * loopOffset && i < extendedSpots.length - 1 - 2 * loopOffset)) ? (
                 <View key={`${item.spot.id}-${i}`} style={[st.card, st.cardShadowUnvisited, st.cardPlaceholder, { width: CARD_W, marginRight: CARD_GAP, height: '100%' }]} />
               ) : (
               <CarouselCard

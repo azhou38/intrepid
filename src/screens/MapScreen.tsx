@@ -1247,6 +1247,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
+const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const MAX_NEW_SPOT_IMAGES = 16;   // spot pin images registered per pass (see nativeSpotPins); further passes follow a frame apart
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
 // destination's headline spots nor is the first to lose its pin.
@@ -2484,8 +2485,17 @@ const destItems = useMemo((): DestItem[] =>
   // at one zoom still fits at every closer one: a photo pin (and its name) that shows zoomed out persists zooming in, and
   // zooming back out removes pins in exactly the reverse order. Nothing in it depends on where the camera is, so panning
   // never changes which pins show. It is recomputed only when the selection or the visited set changes.
-  const destPhotoPlan = useMemo(() => timed('destination pin plan', () => planDestPhotos(planCountry, planDest, selectedSpot, id => visitIndex.isDestVisited(id))),
-    [planCountry, planDest, selectedSpot, visitIndex]);
+  // The plan keeps destination pins clear of the selected spot, but re-planning every destination at every zoom (~50 ms)
+  // in the very commit that mounts the spot sheet held its slide-in back: the spot it plans around follows the selection
+  // once the sheet has slid in (PLAN_SPOT_DELAY_MS), and at once when the selection is cleared.
+  const [planSpot, setPlanSpot] = useState<Spot | null>(null);
+  useEffect(() => {
+    if (!selectedSpot) { setPlanSpot(null); return; }
+    const t = setTimeout(() => setPlanSpot(selectedSpot), PLAN_SPOT_DELAY_MS);
+    return () => clearTimeout(t);
+  }, [selectedSpot]);
+  const destPhotoPlan = useMemo(() => timed('destination pin plan', () => planDestPhotos(planCountry, planDest, planSpot, id => visitIndex.isDestVisited(id))),
+    [planCountry, planDest, planSpot, visitIndex]);
   // The same plan with nothing selected: what the spot plan keeps clear of, so selecting or closing never re-plans spots.
   const baseDestPhotoPlan = useMemo(() => planDestPhotos(null, null, null, id => visitIndex.isDestVisited(id)), [visitIndex]);
   // The plan at the current zoom: photoIds show now (spot planning keeps clear of them). dataIds, the pin layers' data, is
