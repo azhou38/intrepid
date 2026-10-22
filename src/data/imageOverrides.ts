@@ -580,6 +580,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:ext-jurien-north-head-bunker.jpg": { x: 0.45, y: 0.5, zoom: 1.6 },
   "File:Cape Mentelle, May 2025 07.jpg": { x: 0.45, y: 0.72 },
   "File:Northern end of the Cape to Cape Track, October 2023 03.jpg": { x: 0.6, y: 0.5 },
+  "Walpole Wilderness": { x: 0.65, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1927,6 +1928,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Jurien Bay": "Jurien Bay Jetty, Jurien Bay, 2012.JPG",
   "Blackwood Valley": "Blackwood River at Bridgetown, January 2022 01.jpg",
   "Margaret River Region": "Cape Freycinet and Conto's Beach.jpg",
+  "Walpole Wilderness": "Walpole-Nornalup - Tree Top Walk 2.JPG",
 };
 
 /**

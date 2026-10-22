@@ -1791,6 +1791,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring warm, dry days for the beaches and cellar doors, with wildflowers in spring.",
     seasonalTags: [{ tag: 'beach-peak' }],
   },
+  {
+    id: 'walpole-wilderness', name: "Walpole Wilderness", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 32,
+    continent: 'Oceania', coordinates: { latitude: -34.975495, longitude: 116.730838 },
+    category: 'park', icon: "🌳", rank: 3,
+    tagline: "Red tingle forest, river pools and wild Southern Ocean beaches around the town of Walpole.",
+    description: "The Walpole Wilderness is a group of national parks and reserves around the town of Walpole on the south coast. Forests of karri, jarrah and red tingle, a eucalypt that grows only around Walpole, surround granite peaks such as Mount Frankland, and the Deep and Frankland rivers feed the Walpole and Nornalup inlets. At the Valley of the Giants a steel walkway climbs 40 m into the tingle canopy, while Conspicuous Cliff and Mandalay Beach face the Southern Ocean.",
+    whyVisit: ["Walk among the tingle treetops", "Walk through fire-hollowed giant tingles", "Walk down to Conspicuous Cliff's surf beach"],
+    whyVisitPhotos: ["Tree Top Walk - Flickr - GregTheBusker.jpg", "Giant tingle trees (845071391).jpg", "Conspicuous Cliff.jpg"],
+    highlights: ["Tree Top Walk", "Hollow tingles", "Wild surf beach"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Tree Top Walk tickets", detail: "The Tree Top Walk costs $21 for adults, with last tickets at 4 pm. The Ancient Empire trail on the forest floor below is free." },
+      { icon: "🌊", title: "Swim in the inlet", detail: "Rips and strong currents make Conspicuous Cliff's beach unsafe for swimming; Coalmine Beach on Nornalup Inlet is calm." },
+      { icon: "🚗", title: "One park charges entry", detail: "Most parks here are free, but Mandalay Beach is in D'Entrecasteaux National Park: $17 per vehicle, or a WA parks pass." },
+    ],
+    bestMonths: [10, 11, 12, 1, 2, 3],
+    bestTimeBlurb: "Warm days in {months} suit the inlets and beaches; in winter the rivers run as rapids and whales pass the coast.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
