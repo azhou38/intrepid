@@ -564,6 +564,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Ellery Creek Big Hole": { x: 0.5, y: 0.5 },
   "Serpentine Gorge": { x: 0.5, y: 0.5 },
   "Redbank Gorge": { x: 0.55, y: 0.5 },
+  "Tennant Creek": { x: 0.6, y: 0.65 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1893,6 +1894,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Redbank Gorge": "ext/retry-redbank1.jpg",
   "Kings Canyon Rim Walk": "Top of the Rim at Kings Canyon.jpg",
   "Kings Creek Walk": "Lascar Kings Creek at the gorge of the canyon (4563009062).jpg",
+  "Tennant Creek": "ext-tennant-creek-header.jpg",
 };
 
 /**
@@ -1985,7 +1987,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Tasmania Zoo",
   "Platypus House",
   "Seahorse World",
-  "Tennant Creek",
   "Emily Gap",
   "Olive Pink Botanic Garden",
   "Women's Museum of Australia",
