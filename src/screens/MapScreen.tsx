@@ -1247,7 +1247,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
-const MAX_NEW_SPOT_IMAGES = 60;   // spot pin images registered per pass (see nativeSpotPins)
+const MAX_NEW_SPOT_IMAGES = 16;   // spot pin images registered per pass (see nativeSpotPins); further passes follow a frame apart
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
 // destination's headline spots nor is the first to lose its pin.
 const STANDALONE_IMPORTANCE = 2;
@@ -2814,6 +2814,8 @@ const destItems = useMemo((): DestItem[] =>
 
   const spotPhotoSpecsRef = useRef<Map<string, SpotPhotoImageSpec>>(new Map());
   const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
+  const spotImagesPendingRef = useRef(0);
+  const [spotImagesTick, setSpotImagesTick] = useState(0);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   const nativeSpotPins = useMemo(() => timed('spot pin layer data', () => {
@@ -2863,15 +2865,29 @@ const destItems = useMemo((): DestItem[] =>
       const b = labelBox(sp, spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right', 18);
       return blockers.some(o => b.l < o.r + 2 && b.r > o.l - 2 && b.t < o.b + 2 && b.b > o.t - 2);
     };
+    // A spot revealed ahead of its destination's own default zoom stays a small pin until its own photo zoom.
+    const isEarly = (sp: Spot) => {
+      const photoZoom = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
+      return !must.has(sp.id) && photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON;
+    };
+    // Register the pin images that are about to be drawn (an unregistered image is placed invisibly, and the pin then pops
+    // in): only the spots that show their photo now, most important first, a small batch per pass. Each image is a small
+    // view rnmapbox snapshots, so a big batch blocked the map for ~150 ms; what is left over is registered by the next pass,
+    // a frame later (spotImagesPendingRef), instead of waiting for the next pan or zoom as before.
+    let pending = 0;
+    for (const sp of sorted) {
+      if (!photoPlan.has(sp.id) || isEarly(sp)) continue;
+      const visited = visitIndex.isSpotVisited(sp.id);
+      const img = spotPhotoImageName(sp.id, visited);
+      if (specs.has(img)) continue;
+      if (fresh < MAX_NEW_SPOT_IMAGES) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
+      else pending++;
+    }
+    spotImagesPendingRef.current = pending;
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
-      // Register the pin image before its symbol enters the data (an unregistered image is placed invisibly, and the pin
-      // then pops in); a few per pass, most important first, so a wide view never snapshots hundreds at once.
-      if (!specs.has(img) && fresh < MAX_NEW_SPOT_IMAGES) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
-      // A spot revealed ahead of its destination's own default zoom stays a small pin until its own photo zoom.
-      const photoZoom = SPOT_PHOTO_ZOOM_BY_ID[sp.id];
-      const early = !must.has(sp.id) && photoZoom !== undefined && handoffZoom < photoZoom - ZOOM_EPSILON;
+      const early = isEarly(sp);
       features.push({
         type: 'Feature',
         id: sp.id,
@@ -2897,7 +2913,13 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }), [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta]);
+  }), [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta, spotImagesTick]);
+  // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
+  useEffect(() => {
+    if (spotImagesPendingRef.current <= 0) return;
+    const id = requestAnimationFrame(() => setSpotImagesTick(t => t + 1));
+    return () => cancelAnimationFrame(id);
+  }, [nativeSpotPins]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   // When the selection moves to another spot, the old spot's native pin is back at once, so its marker goes at once too
