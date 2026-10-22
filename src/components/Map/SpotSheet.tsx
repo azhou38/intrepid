@@ -1372,7 +1372,7 @@ isVisited ? (
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
               <Text style={st.carEyebrow}>{nearLabel ? (nearEyebrow ?? 'SPOTS') : 'SPOTS'}</Text>
-              <Text style={st.carDest}>{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
+              <Text style={st.carDest} numberOfLines={2} ellipsizeMode="tail">{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
             </View>
             {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
             {!!onGoToList && (
