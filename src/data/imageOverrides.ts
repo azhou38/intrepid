@@ -565,6 +565,13 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Serpentine Gorge": { x: 0.5, y: 0.5 },
   "Redbank Gorge": { x: 0.55, y: 0.5 },
   "Tennant Creek": { x: 0.6, y: 0.65 },
+  "Elsey National Park": { x: 0.55, y: 0.5 },
+  "Gregory's Tree": { x: 0.43, y: 0.45 },
+  "Judbarra / Gregory National Park": { x: 0.45, y: 0.5 },
+  "Limmen National Park": { x: 0.38, y: 0.5 },
+  "Iytwelepenty / Davenport Range National Park": { x: 0.5, y: 0.55, zoom: 1.3 },
+  "Barrow Creek Telegraph Station": { x: 0.63, y: 0.47, zoom: 1.4 },
+  "Garig Gunak Barlu National Park": { x: 0.45, y: 0.5, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1895,6 +1902,13 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kings Canyon Rim Walk": "Top of the Rim at Kings Canyon.jpg",
   "Kings Creek Walk": "Lascar Kings Creek at the gorge of the canyon (4563009062).jpg",
   "Tennant Creek": "ext-tennant-creek-header.jpg",
+  "Bitter Springs, Northern Territory": "20160813081338 - Mataranka's Bitter Springs at dawn (28377542874).jpg",
+  "Elsey National Park": "River in Mataranka, Northern Territory, Australia (3).jpg",
+  "Keep River National Park": "Goorrandandalng (49980056918).jpg",
+  "Limmen National Park": "Limmen DSC01283 NT (36746312296).jpg",
+  "Karlu Karlu / Devils Marbles Conservation Reserve": "Karlu Karlu Rocks in Devils Marbles Conservation Reserve, NT.jpg",
+  "Iytwelepenty / Davenport Range National Park": "P4150010 Old Police Station Waterhole - Iytwelepenty - Davenport Ranges National Park.jpg",
+  "Barrow Creek Telegraph Station": "Barrow Creek Telegraph Station.jpg",
 };
 
 /**
@@ -2010,4 +2024,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Valley of the Winds Walk",
   "Talinguru Nyakunytjaku",
   "Kathleen Springs Walk",
+  "Escarpment Walk",
+  "Anmatjere Man",
 ]);

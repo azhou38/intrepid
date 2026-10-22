@@ -1,0 +1,390 @@
+{
+ "spot:bitter-springs": {
+  "status": "accept",
+  "choice": "20160813081338 - Mataranka's Bitter Springs at dawn (28377542874).jpg",
+  "candidates": [
+   {
+    "file": "20160813081338 - Mataranka's Bitter Springs at dawn (28377542874).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2016 colour photo of the clear spring-fed creek at Bitter Springs among pandanus and palms; title and Elsey NP category name it; pool reads at thumbnail size; distinct from Mataranka Thermal Pools' walled pool",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Bitter Springs thermal pools, Elsey National Park, near Mataranka - panoramio.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Right place (geotag on Bitter Springs) but dark, shaded portrait shot, much weaker than the chosen file; date only an upload date (2010)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Pandanus species at Bitter Springs, Elsey National Park, Northern Territory, Australia.jpg",
+    "verdict": "reject",
+    "check_failed": null,
+    "reason": "Passes (2015, the spring pool), but geotag ~1.3 km off and the chosen file shows the spring more clearly; keep as backup",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY 2.0",
+  "owner": "Nguyenhai314 (Flickr)",
+  "page": "https://commons.wikimedia.org/wiki/File:20160813081338_-_Mataranka's_Bitter_Springs_at_dawn_(28377542874).jpg"
+ },
+ "spot:elsey-national-park": {
+  "status": "accept",
+  "choice": "River in Mataranka, Northern Territory, Australia (3).jpg",
+  "candidates": [
+   {
+    "file": "Elsey National Park.JPG",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Palm forest in Elsey NP, but a jumble of trunks with no recognisable feature at thumbnail size; undated (2000s camera)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "River in Mataranka, Northern Territory, Australia (3).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2014 photo of the green Roper River pool at Mataranka, categorised Elsey National Park and Roper River; the upper Roper is the park's own subject (bio), not Bitter Springs or Mataranka Thermal Pools, which keep their own photos",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Pandanus species at Bitter Springs, Elsey National Park, Northern Territory, Australia.jpg",
+    "verdict": "reject",
+    "check_failed": "unique subject",
+    "reason": "Shows Bitter Springs, which is its own neighbour spot",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons uploader (self-published)",
+  "page": "https://commons.wikimedia.org/wiki/File:River_in_Mataranka,_Northern_Territory,_Australia_(3).jpg"
+ },
+ "spot:escarpment-walk": {
+  "status": "none",
+  "choice": null,
+  "candidates": [
+   {
+    "file": "Judbarra - Gregory National Park (cropped).jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "2010 panorama from a Victoria River escarpment, geotagged ~3.7 km west of the walk's pin; nothing proves it was taken on the Escarpment Walk (a nearby view = stand-in); also a 3:1 strip whose square crop is only the cliff edge",
+    "hero_crop": "fail: 3:1 panorama, square shows only 32% (a cliff face)"
+   },
+   {
+    "file": "Victoria River.JPG",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Victoria River at the crossing: the river, not the walk (stand-in)",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null,
+  "page": null
+ },
+ "spot:giwining-nature-park": {
+  "status": "accept",
+  "choice": "ext/giwining.jpg",
+  "candidates": [
+   {
+    "file": "ext/giwining.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Tufa-dam waterfall on the Flora River, the Tourism NT Giwining page hero; colour, recent, falls centred in the square crop",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT",
+  "page": "https://northernterritory.com/katherine-and-surrounds/see-and-do/giwining-nature-park"
+ },
+ "spot:gregorys-tree": {
+  "status": "accept",
+  "choice": "ext/gtree-a.jpg",
+  "candidates": [
+   {
+    "file": "ext/gtree-a.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "The marked boab behind its viewing platform and signs, from the Tourism NT Gregory's Tree page; no people; trunk with carving visible",
+    "hero_crop": {
+     "x": 0.43,
+     "y": 0.45
+    }
+   },
+   {
+    "file": "ext/gtree-b.jpg",
+    "verdict": "reject",
+    "check_failed": null,
+    "reason": "Same tree, passes, but visitors on the platform and smaller in frame; second choice",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT",
+  "page": "https://northernterritory.com/katherine-and-surrounds/see-and-do/gregorys-tree"
+ },
+ "spot:judbarra-gregory-national-park": {
+  "status": "accept",
+  "choice": "ext/gnp-atdw.jpg",
+  "candidates": [
+   {
+    "file": "ext/gnp-atdw.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Victoria River below red escarpments at golden hour, the park's defining landscape (Tourism NT / ATDW park page); river and escarpment both in the square crop",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "ext/gnp-river.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Generic rocky rapids; not recognisable as this park",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Endless Stations 53 - Epic.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Highway under a huge sky; the park is a thin strip at the bottom",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT / ATDW",
+  "page": "https://northernterritory.com/katherine-and-surrounds/destinations/judbarra-gregory-national-park"
+ },
+ "spot:keep-river-national-park": {
+  "status": "accept",
+  "choice": "Goorrandandalng (49980056918).jpg",
+  "candidates": [
+   {
+    "file": "Keep River NP, NT.jpg",
+    "verdict": "reject",
+    "check_failed": null,
+    "reason": "Passes (2015 domes and palms) but palm dominates left; weaker",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Goorrandandalng (49980056918).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2019 Goorrandalng sandstone domes, geotagged in the park and categorised Keep River NP; striated domes fill the square crop",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Keep River National Park.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Arch silhouette, mostly dark rock framing a small view; less recognisable",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY 2.0",
+  "owner": "Flickr user (via Commons, FlickreviewR)",
+  "page": "https://commons.wikimedia.org/wiki/File:Goorrandandalng_(49980056918).jpg"
+ },
+ "spot:limmen-national-park": {
+  "status": "accept",
+  "choice": "Limmen DSC01283 NT (36746312296).jpg",
+  "candidates": [
+   {
+    "file": "Limmen DSC01283 NT (36746312296).jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2017 Southern Lost City sandstone pillar, the park's signature formation (in its bio), categorised Limmen NP",
+    "hero_crop": {
+     "x": 0.38,
+     "y": 0.5
+    }
+   },
+   {
+    "file": "Limmen DSC01271 NT (36746336296).jpg",
+    "verdict": "reject",
+    "check_failed": null,
+    "reason": "Same Lost City, passes, but pillars behind trees; second choice",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Limmen National Park, NT.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Canoe on a riverbank: the canoe is the focus",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY 2.0",
+  "owner": "Flickr user (via Commons, FlickreviewR)",
+  "page": "https://commons.wikimedia.org/wiki/File:Limmen_DSC01283_NT_(36746312296).jpg"
+ },
+ "spot:devils-marbles": {
+  "status": "accept",
+  "choice": "Karlu Karlu Rocks in Devils Marbles Conservation Reserve, NT.jpg",
+  "candidates": [
+   {
+    "file": "Karlu Karlu Rocks in Devils Marbles Conservation Reserve, NT.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2017, geotagged at the reserve: the famous split boulder among the Marbles, centred, 6000 px",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Karlu Karlu (Devils Marbles) - Northern Territory - Australia.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Boulders small on the horizon behind scrub",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Rocks in Karlu Karlu (Devils Marbles) Conservation Reserve.jpg",
+    "verdict": "reject",
+    "check_failed": null,
+    "reason": "Passes, but people atop the pile and less iconic; second choice",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Commons uploader (WLE 2019)",
+  "page": "https://commons.wikimedia.org/wiki/File:Karlu_Karlu_Rocks_in_Devils_Marbles_Conservation_Reserve,_NT.jpg"
+ },
+ "spot:iytwelepenty-davenport-range-national-park": {
+  "status": "accept",
+  "choice": "P4150010 Old Police Station Waterhole - Iytwelepenty - Davenport Ranges National Park.jpg",
+  "candidates": [
+   {
+    "file": "P4150010 Old Police Station Waterhole - Iytwelepenty - Davenport Ranges National Park.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2021 Old Police Station Waterhole, the park's main visitor site (permanent waterholes in bio), geotagged in the park",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Old Police Station ruins at Old Police Station Waterhole - Iytwelepenty - Davenport Ranges National Park.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Two stone chimney stubs; not recognisable as the park",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY-SA 4.0",
+  "owner": "Stitchingbushwalker",
+  "page": "https://commons.wikimedia.org/wiki/File:P4150010_Old_Police_Station_Waterhole_-_Iytwelepenty_-_Davenport_Ranges_National_Park.jpg"
+ },
+ "spot:barrow-creek-telegraph-station": {
+  "status": "accept",
+  "choice": "Barrow Creek Telegraph Station.jpg",
+  "candidates": [
+   {
+    "file": "Barrow Creek Telegraph Station.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "2014 stone telegraph station buildings under the red hill, with the station's name sign; highway in the foreground cut by zoom",
+    "hero_crop": {
+     "x": 0.6,
+     "y": 0.5,
+     "zoom": 1.25
+    }
+   },
+   {
+    "file": "Barrow Creek hut.jpg",
+    "verdict": "reject",
+    "check_failed": null,
+    "reason": "2007 stone hut, plausibly part of the station but not proven and overcast; second choice",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY 2.0",
+  "owner": "Ken Hodge (Flickr)",
+  "page": "https://commons.wikimedia.org/wiki/File:Barrow_Creek_Telegraph_Station.jpg"
+ },
+ "spot:newcastle-waters": {
+  "status": "accept",
+  "choice": "ext/jones-store.jpg",
+  "candidates": [
+   {
+    "file": "ext/jones-store.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "Jones Store, the preserved heritage store named in the bio (Tourism NT page); colour, recognisable; no separate Jones Store spot",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "ext/nc-b.jpg",
+    "verdict": "reject",
+    "check_failed": "3",
+    "reason": "Overgrown side wall of an unnamed building; not recognisable",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "official photo, permission not confirmed",
+  "owner": "Tourism NT",
+  "page": "https://northernterritory.com/tennant-creek-and-barkly-region/see-and-do/jones-store-newcastle-waters"
+ },
+ "spot:garig-gunak-barlu-national-park": {
+  "status": "accept",
+  "choice": "ext/gg_cobourg_white_sands.jpg",
+  "candidates": [
+   {
+    "file": "ext/gg_cobourg_white_sands.jpg",
+    "verdict": "accept",
+    "check_failed": null,
+    "reason": "White-sand beach and turquoise water on the Cobourg Peninsula (the park covers the peninsula); Flickr page checked: CC BY 2.0, taken 2008-05-16 in the same set as the park sign; 1000 px (>=960)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "ext/gg_np.jpg",
+    "verdict": "reject",
+    "check_failed": "2",
+    "reason": "Park entrance sign: a sign, not the place",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": "CC BY 2.0",
+  "owner": "kiwinz (Flickr)",
+  "page": "https://www.flickr.com/photos/92122093@N00/3885893126"
+ },
+ "spot:anmatjere-man": {
+  "status": "none",
+  "choice": null,
+  "candidates": [
+   {
+    "file": "ext/aileron_nt_flickr.jpg",
+    "verdict": "reject",
+    "check_failed": "licence",
+    "reason": "Right subject, but CC BY-ND 2.0: not allowed (no derivatives; app crops)",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "ext/aileron_man_flickr.jpg",
+    "verdict": "reject",
+    "check_failed": "licence/size",
+    "reason": "CC BY-NC 2.0 and 776 px wide",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Aileron-BigAboriginalManStatue.jpg",
+    "verdict": "reject",
+    "check_failed": "size",
+    "reason": "Right subject, CC0, but 318 px wide",
+    "hero_crop": "ok"
+   }
+  ],
+  "needs_brightening": false,
+  "licence": null,
+  "owner": null,
+  "page": null
+ }
+}
