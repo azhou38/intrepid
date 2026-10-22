@@ -2819,6 +2819,13 @@ const destItems = useMemo((): DestItem[] =>
       blockers.push({ l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 12, b: y });
       blockers.push(labelBox(selectedSpot, spotPhotoPlan?.nameAt.get(selectedSpot.id)?.side ?? 'left', SPOT_PIN_SIZE / 2 + SPOT_LABEL_GAP));
     }
+    // A spot whose photo pin would sit under the selected pin or its name is drawn as its small pin instead.
+    const pinHitsSelected = (sp: Spot) => {
+      if (!blockers.length) return false;
+      const m = mercatorPx(sp.coordinates.longitude, sp.coordinates.latitude, pxPerDegLng), x = m.x, y = -m.y;
+      const b = { l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 12, b: y - 2 };
+      return blockers.some(o => b.l < o.r && b.r > o.l && b.t < o.b && b.b > o.t);
+    };
     const hitsSelected = (sp: Spot) => {
       if (!blockers.length) return false;
       const b = labelBox(sp, spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right', 18);
@@ -2840,7 +2847,7 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: specs.has(img) && !early && photoPlan.has(sp.id) ? img : '',
+          img: specs.has(img) && !early && photoPlan.has(sp.id) && !pinHitsSelected(sp) ? img : '',
           label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON && !hitsSelected(sp) ? spotLabelLines(sp.name).join('\n') : '',
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
