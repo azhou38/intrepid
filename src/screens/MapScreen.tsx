@@ -2065,8 +2065,17 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }));
   // With nothing selected there is no breadcrumb, so it can't push the selector down: forget its last measured width. A
   // close left that width (and a fade input) behind, and the selector stayed pushed down over an empty map.
+  // The gate's inputs are reset to "hidden" too. A sheet closed while peeking (the map had been panned) left them at
+  // "show", so the next pin tap mounted the breadcrumb visible and it faded out over the new sheet's slide: a flash.
   const hasBreadcrumb = !!(selectedCountry || selectedDest || selectedSpot);
-  useLayoutEffect(() => { if (!hasBreadcrumb) crumbWidthSV.value = 0; }, [hasBreadcrumb]);
+  useLayoutEffect(() => {
+    if (hasBreadcrumb) return;
+    crumbWidthSV.value = 0;
+    crumbPeekSV.value = 0;
+    sheetCollapsedSV.value = 1;
+    returnPromptProgress.value = 0; returnPromptVisibleRef.current = false;
+    destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
+  }, [hasBreadcrumb]);
   // A breadcrumb wide enough to reach the map-type selector (top-right) pushes the selector down to just below it, in
   // step with the breadcrumb's own fade, and it returns to the corner when the breadcrumb is hidden or narrow again.
   const layersShiftStyle = useAnimatedStyle(() => {
@@ -3786,7 +3795,16 @@ const destItems = useMemo((): DestItem[] =>
     // SpotSheet's mount effect to report back. isFingerDraggingMap, not isMapInteracting — a
     // spot tapped while a previous pan is still coasting on momentum must still open collapsed
     // (see isFingerDraggingMap's own comment).
-    setSheetSnapState(isFingerDraggingMap() ? 'peek' : 'collapsed');
+    const openPeeked = isFingerDraggingMap();
+    setSheetSnapState(openPeeked ? 'peek' : 'collapsed');
+    // The spot sheet opens at half-screen, where there is no breadcrumb: snap the gate there rather than ease it over the
+    // slide, which showed a breadcrumb that was already up (the map had been panned) fading out (see handleMarkerPress).
+    if (!openPeeked) {
+      crumbPeekSV.value = 0;
+      sheetCollapsedSV.value = 1;
+      returnPromptProgress.value = 0; returnPromptVisibleRef.current = false;
+      destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
+    }
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // 280ms (down from 500) — tapping a new spot pin, the carousel itself is also sliding to
     // match (see SpotSheet's own focusSpotId effect), and the slower of the two dominates how
