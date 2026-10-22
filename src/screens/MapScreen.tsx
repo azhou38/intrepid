@@ -1,6 +1,7 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, useFrameCallback } from 'react-native-reanimated';
+import { perfMark, perfLog, timed, perfNow, registerFrameMonitor } from '../utils/perf';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
@@ -1483,6 +1484,25 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
 }
 
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
+  // [perf] how long each MapScreen render takes (render to commit), and UI-thread frames during a sheet's slide-in.
+  const renderT0 = perfNow();
+  useLayoutEffect(() => { perfLog('MapScreen render+commit', perfNow() - renderT0); });
+  const fStart = useSharedValue(0), fLast = useSharedValue(0), fCount = useSharedValue(0), fLong = useSharedValue(0), fWorst = useSharedValue(0);
+  const reportFrames = useCallback((frames: number, long: number, worst: number) => {
+    console.log(`[perf] UI frames in the 1.5 s after the tap: ${frames} frames, ${long} longer than 20 ms, worst ${worst.toFixed(0)} ms`);
+    frameMonitor.setActive(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const frameMonitor = useFrameCallback(info => {
+    const t = info.timestamp;
+    if (fStart.value === 0) { fStart.value = t; fLast.value = t; fCount.value = 0; fLong.value = 0; fWorst.value = 0; return; }
+    const gap = t - fLast.value;
+    fLast.value = t; fCount.value += 1;
+    if (gap > 20) fLong.value += 1;
+    if (gap > fWorst.value) fWorst.value = gap;
+    if (t - fStart.value >= 1500) { const c = fCount.value, l = fLong.value, w = fWorst.value; fStart.value = 0; runOnJS(reportFrames)(c, l, w); }
+  }, false);
+  useEffect(() => { registerFrameMonitor(() => { fStart.value = 0; frameMonitor.setActive(true); }); }, []);
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
   // The MapView's real rendered height (shorter than the device height — App.tsx's bottom tab
@@ -2458,7 +2478,7 @@ const destItems = useMemo((): DestItem[] =>
   // at one zoom still fits at every closer one: a photo pin (and its name) that shows zoomed out persists zooming in, and
   // zooming back out removes pins in exactly the reverse order. Nothing in it depends on where the camera is, so panning
   // never changes which pins show. It is recomputed only when the selection or the visited set changes.
-  const destPhotoPlan = useMemo(() => planDestPhotos(planCountry, planDest, selectedSpot, id => visitIndex.isDestVisited(id)),
+  const destPhotoPlan = useMemo(() => timed('destination pin plan', () => planDestPhotos(planCountry, planDest, selectedSpot, id => visitIndex.isDestVisited(id))),
     [planCountry, planDest, selectedSpot, visitIndex]);
   // The same plan with nothing selected: what the spot plan keeps clear of, so selecting or closing never re-plans spots.
   const baseDestPhotoPlan = useMemo(() => planDestPhotos(null, null, null, id => visitIndex.isDestVisited(id)), [visitIndex]);
@@ -2790,7 +2810,7 @@ const destItems = useMemo((): DestItem[] =>
   const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
-  const nativeSpotPins = useMemo(() => {
+  const nativeSpotPins = useMemo(() => timed('spot pin layer data', () => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.spots.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
     // Draw and data order: spotPhotoPlan's priority (a near carousel's spots first).
@@ -2871,7 +2891,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta]);
+  }), [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta]);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   // When the selection moves to another spot, the old spot's native pin is back at once, so its marker goes at once too
@@ -2890,7 +2910,7 @@ const destItems = useMemo((): DestItem[] =>
   // matter, so the projection needs no camera centre.
   const prevSpotLabelPlanRef = useRef<Map<string, 'left' | 'right' | 'none'>>(new Map());
   const spotLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
-  const spotLabelPlan = useMemo(() => {
+  const spotLabelPlan = useMemo(() => timed('spot label plan', () => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
     // ALL rendered spots (including ones mid-exit-fade) count for collision geometry — a spot
     // that just dropped below the zoom threshold is still on screen for PIN_EXIT_MS fading out,
@@ -3002,7 +3022,7 @@ const destItems = useMemo((): DestItem[] =>
     spotLabelHitRef.current = { pxPerDegLng, rects: hitRects };
     prevSpotLabelPlanRef.current = plan;
     return plan;
-  }, [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan, hiddenDestIds]);
+  }), [renderedSpots, pinPlanLngDelta, selectedSpot, savedSpots, visitIndex, destPinPlan, hiddenDestIds]);
   // The selected spot's name sits on the side its native pin's name uses (spotPhotoPlan), so selecting a spot or swiping
   // the carousel never flips the name from one side of the pin to the other; the marker-only plan is the fallback.
   const markerLabelSide = (id: string): 'left' | 'right' | 'none' => {
@@ -3455,6 +3475,7 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   const handleMarkerPress = useCallback((dest: Destination) => {
+    perfMark(`destination ${dest.id}`);
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
     // "anchor" destinations from OTHER countries are deliberately shown (as stamps) even
@@ -3607,6 +3628,7 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
+    perfMark(`spot ${spot.id}`);
     // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
     // destination's own context, and a standalone one starts its own near context.
     nearCtxRef.current = null;

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo } from 'react';
+import { perfLog, perfNow } from '../../utils/perf';
 import {
   View, Text, StyleSheet, Pressable, Image, Alert,
   Animated, Dimensions, Modal, TextInput, Platform,
@@ -646,6 +647,9 @@ function DestinationSheet({
   onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
   collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
+  // [perf] the sheet's first render to commit (its mount), after a selection.
+  const perfT0 = useRef(perfNow()).current;
+  useLayoutEffect(() => { perfLog('DestinationSheet mount', perfNow() - perfT0); }, []);
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
   const saveDestination   = useStore(s => s.saveDestination);

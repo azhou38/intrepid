@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
+import { perfLog, perfNow } from '../../utils/perf';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Alert,
   Dimensions, Platform, Linking, Image,
@@ -339,6 +340,9 @@ function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
   pillOffsetSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited, onGoToList, collapseSignal,
 }: Props) {
+  // [perf] the sheet's first render to commit (its mount), after a selection.
+  const perfT0 = useRef(perfNow()).current;
+  useLayoutEffect(() => { perfLog('SpotSheet mount', perfNow() - perfT0); }, []);
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
   const updateSpot   = useStore(s => s.updateSpot);
