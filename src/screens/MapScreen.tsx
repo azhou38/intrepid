@@ -2128,6 +2128,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     returnPromptProgress.value = withTiming(showReturnPrompt ? 1 : 0, { duration: showReturnPrompt ? 250 : 200 });
   }, [showReturnPrompt, returnPromptProgress]);
 
+  // TEMP crumb logs
+  useEffect(() => { void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `${Date.now() % 100000} dest=${showDestReturnPrompt} country=${showReturnPrompt} peek=${crumbPeekSV.value.toFixed(2)} coll=${sheetCollapsedSV.value.toFixed(2)}` }).catch(() => {}); }, [showDestReturnPrompt, showReturnPrompt]);
   useEffect(() => {
     if (showDestReturnPrompt === destReturnPromptVisibleRef.current) return;
     destReturnPromptVisibleRef.current = showDestReturnPrompt;
@@ -5682,7 +5684,7 @@ const destItems = useMemo((): DestItem[] =>
                 </View>
                 <Text style={styles.breadcrumbTxtDark}>{crumb.country}</Text>
               </Pressable>
-              <AnimatedPressable layout={crumbLayout} style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6}>
+              <AnimatedPressable layout={crumbLayout} style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6} onLayout={e => { void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `${Date.now() % 100000} segment w=${e.nativeEvent.layout.width.toFixed(1)}` }).catch(() => {}); }}>
                 {showDestReturnPrompt && (
                   <Reanimated.View entering={crumbArrowIn} exiting={crumbArrowOut} style={styles.crumbArrow}>
                     <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
