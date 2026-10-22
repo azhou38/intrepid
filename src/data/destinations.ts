@@ -1995,6 +1995,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit {months}, when days are warm and nights cold; summer often tops 40°C.",
     seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9] }],
   },
+  {
+    id: 'avon-valley', name: "Avon Valley", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 80,
+    continent: 'Oceania', coordinates: { latitude: -31.653519, longitude: 116.672693 },
+    category: 'nature', icon: "🦢", rank: 4,
+    tagline: "Historic river towns, a convict-era gaol and granite bushland an hour east of Perth.",
+    description: "The Avon Valley follows the Avon River through farmland east of Perth, linking the 19th-century towns of Toodyay, Northam, York and Beverley. Northam, the valley's largest town, is home to white swans, introduced to Western Australia in 1896. Toodyay keeps the gaol that held the bushranger Moondyne Joe, and Avon Valley National Park's granite outcrops rise above the river downstream. Every August the Avon Descent white-water race sets off from Northam.",
+    whyVisit: ["Walk York's heritage-lined Avon Terrace", "Cross Northam's suspension bridge", "Explore Toodyay's Newcastle Gaol"],
+    whyVisitPhotos: ["Avon Terrace, York, 2025 (03).jpg", "Avon River suspension bridge, Northam.jpg", "Toodyay WMAU bus trip gnangarra-5.jpg"],
+    highlights: ["Heritage main street", "River and swans", "Bushranger history"],
+    goodToKnow: [
+      { icon: "📅", title: "Check museum days", detail: "Toodyay's gaol and mill and York's Motor Museum open daily, but York's Residency Museum opens only Friday to Sunday." },
+      { icon: "🎟️", title: "National park entry fee", detail: "Avon Valley National Park charges $17 per vehicle, covered by a WA park pass. Its four campgrounds are basic, and dogs are not allowed." },
+    ],
+    bestMonths: [4, 5, 8, 9, 10],
+    bestTimeBlurb: "Visit in {months} for mild days and spring wildflowers; summer in the valley is hot.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

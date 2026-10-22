@@ -1950,6 +1950,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Gibb River Road": "Pentecost crossing with cockburn ranges.jpg",
   "Wyndham": "1 Hafenstadt Wyndham - Kimberleys Australien.jpg",
   "Karijini National Park": "Karijini National Park, Pilbara Region, Western Australia, Dales Gorge 02.jpg",
+  "Avon Valley": "Avon vally gnangarra-35.jpg",
 };
 
 /**
