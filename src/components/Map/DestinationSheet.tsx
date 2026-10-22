@@ -1119,14 +1119,8 @@ function DestinationSheet({
   // The hero's height, computed once on the UI thread and shared by the box and the photo inside it, so the photo moves
   // in step with the box (see FadeInImage's `frame`) instead of being re-fitted a frame late after each layout pass.
   const collapsedHeroHSV = useDerivedValue(() => COMPACT_H - Math.max(0, tabBarHAnim.value - TAB_BAR_TUCK));
-  // TEMPORARY test: the header height only changes once a snap has settled (not every frame of the drag or snap).
-  const heroSettledSV = useSharedValue(-1);
-  const heroHSV = useDerivedValue(() => {
-    const live = interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [fullHeroH, collapsedHeroHSV.value], Extrapolation.CLAMP);
-    const atRest = Math.abs(slideAnim.value - FULL_POS) < 1 || slideAnim.value >= COLLAPSED_Y - 1;
-    if (atRest || heroSettledSV.value < 0) heroSettledSV.value = live;
-    return heroSettledSV.value < 0 ? live : heroSettledSV.value;
-  });
+  const heroHSV = useDerivedValue(() =>
+    interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [fullHeroH, collapsedHeroHSV.value], Extrapolation.CLAMP));
   const heroAnimStyle = useAnimatedStyle(() => ({ height: heroHSV.value }));
   const heroFrame = useMemo(() => ({ width: W, fullH: fullHeroH, height: heroHSV, minH: collapsedHeroHSV }), [fullHeroH, heroHSV, collapsedHeroHSV]);
 
