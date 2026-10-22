@@ -2113,6 +2113,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "The dry season, {months}, brings blue skies and 30°C highs; wet-season rain closes the dirt roads.",
     seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9] }],
   },
+  {
+    id: 'southern-forests', name: "Southern Forests", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 66,
+    continent: 'Oceania', coordinates: { latitude: -34.44585, longitude: 116.03242 },
+    category: 'nature', icon: "🌲", rank: 3,
+    tagline: "Karri forests with climbable fire-lookout trees, waterfalls and a wild southern coast.",
+    description: "The Southern Forests are the karri country around Pemberton, Manjimup and Northcliffe. Karri grows only in south-west Western Australia and reaches about 90 m, and foresters once watched for fires from platforms pegged into the tallest trees; two of them can still be climbed. South of the forest, D'Entrecasteaux National Park runs 130 km along the coast, with mobile dunes that are moving inland over the trees.",
+    whyVisit: ["Climb the Gloucester Tree", "See Beedelup Falls in the karri forest", "Walk onto the Yeagarup Dunes"],
+    whyVisitPhotos: ["Climbing the gloucester tree (845071407).jpg", "Beedelupfalls.jpg", "ext-yeagarup-dunes-walkers.jpg"],
+    highlights: ["Fire-lookout climb", "Forest waterfall", "Mobile sand dunes"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Park entry fees", detail: "Most parks here charge $17 per vehicle a day, covering every park you enter that day; a WA park pass covers it." },
+      { icon: "🚙", title: "2WD coast access is rare", detail: "Most of the coast needs a 4WD. Point D'Entrecasteaux has a sealed road, and Yeagarup Lake is reachable by 2WD on gravel." },
+      { icon: "📵", title: "Patchy phone signal", detail: "Mobile coverage in D'Entrecasteaux and the forests is poor; download maps first and consider carrying a personal locator beacon." },
+    ],
+    bestMonths: [9, 10, 11],
+    bestTimeBlurb: "Spring, {months}, brings forest wildflowers, full waterfalls and whales passing the coast.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

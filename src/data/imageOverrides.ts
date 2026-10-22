@@ -1964,6 +1964,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Perth Hills": "MUNDARING WEIR FROM THE SOUTH.jpg",
   "Mandurah": "ext-mandurah-eastern-foreshore.jpg",
   "Kununurra": "ext-kununurra-from-kellys-knob.jpg",
+  "Southern Forests": "WAR Dave Evan's Bicentennial Tree 1 WNP X-2009.JPG",
 };
 
 /**
