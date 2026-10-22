@@ -1673,6 +1673,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [11, 12, 1, 2, 3],
     bestTimeBlurb: "Come {months} for warm, mostly dry beach days and the Woody Island ferry; winters are wet.",
   },
+  {
+    id: 'cape-le-grand-national-park', name: "Cape Le Grand National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 20,
+    continent: 'Oceania', coordinates: { latitude: -34.0036607, longitude: 122.1695561 },
+    category: 'park', icon: "🦘", rank: 3,
+    tagline: "White-sand bays, granite peaks and kangaroos lazing on the beach east of Esperance.",
+    description: "Cape Le Grand National Park covers the coast about 50 km by road east of Esperance, where granite headlands and peaks such as Frenchman Peak rise above a chain of white-sand bays. Western grey kangaroos often rest on the sand at Lucky Bay, which was tested in 2017 as having Australia's whitest sand. Sealed roads reach Lucky Bay, Hellfire Bay, Thistle Cove and Le Grand Beach, and Matthew Flinders named Lucky Bay when his ship sheltered there in 1802.",
+    whyVisit: ["Swim off Lucky Bay's white sand", "Climb Frenchman Peak for island views", "Walk the coastal trail between bays"],
+    whyVisitPhotos: ["Lucky Bay, Cape Le Grand National Park, January 2025 05.jpg", "Frenchmans Peak.jpg", "Thistle Cove, Cape Le Grand National Park, January 2025 18.jpg"],
+    highlights: ["White-sand bay", "Granite summit", "Bay-to-bay walk"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Park entry fee", detail: "Entry is $17 per vehicle per day ($10 concession), paid at the entry station on Cape Le Grand Road; a WA park pass covers it." },
+      { icon: "🏕️", title: "Book campsites early", detail: "Lucky Bay and Le Grand Beach are the only campgrounds and Lucky Bay fills fast; book ahead online. Campfires are not allowed." },
+      { icon: "🚙", title: "Beach driving risks", detail: "Cars bog easily in the soft sand, and rising tides cut off the beach route in from Wylie Bay. Check tides and ask a ranger first." },
+    ],
+    bestMonths: [10, 11, 12, 1, 2, 3],
+    bestTimeBlurb: "Visit {months} for warm beach days, with banksias in flower through spring.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

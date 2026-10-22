@@ -1914,6 +1914,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Ningaloo": "00 1870 Ningaloo Reef - Westaustralien.jpg",
   "Shark Bay": "Skipjack Point, Francois Peron National Park, Western Australia.jpg",
   "Esperance": "Esperance Waterfront, 2019 (04).jpg",
+  "Cape Le Grand National Park": "Cape Le Grande National Park Esperance 03.jpg",
 };
 
 /**
