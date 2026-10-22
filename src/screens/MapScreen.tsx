@@ -410,7 +410,6 @@ const SpotMarker = memo(function SpotMarker({ spot, isVisited, isSelected, exiti
                   {photoUrl && (
                     <PinPhoto
                       instant={photoWasCachedRef.current}
-                      boxSize={bubbleSize - 4}
                       subject={photoSubject(spotPhotoTitle(spot))}
                       source={{ uri: photoUrl }}
                       style={StyleSheet.absoluteFill as any}
