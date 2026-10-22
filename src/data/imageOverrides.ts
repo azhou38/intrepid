@@ -577,6 +577,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Hyden": { x: 0.42, y: 0.5 },
   "File:Mulkas cave.jpg": { x: 0.5, y: 0.3 },
   "Nambung National Park": { x: 0.5, y: 0.6, zoom: 1.25 },
+  "File:ext-jurien-north-head-bunker.jpg": { x: 0.45, y: 0.5, zoom: 1.6 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1921,6 +1922,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kalgoorlie-Boulder": "View of Kalgoorlie, Western Australia from museum headframe 05.jpg",
   "Hyden": "Wave-Rock-Hyden-WA.jpg",
   "Nambung National Park": "AUS Cervantes, Nambung National Park, Pinnacles Desert 017.jpg",
+  "Jurien Bay": "Jurien Bay Jetty, Jurien Bay, 2012.JPG",
 };
 
 /**

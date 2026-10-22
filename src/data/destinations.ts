@@ -1741,6 +1741,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [8, 9, 10],
     bestTimeBlurb: "Wildflowers bloom across the heath in {months}, before summer heat that often reaches 40°C.",
   },
+  {
+    id: 'jurien-bay', name: "Jurien Bay", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 32,
+    continent: 'Oceania', coordinates: { latitude: -30.3040478, longitude: 115.0406027 },
+    category: 'city', icon: "🦞", rank: 4,
+    tagline: "A crayfishing town on the Turquoise Coast, with sea lions on its offshore reefs.",
+    description: "Jurien Bay is a crayfishing town on Indian Ocean Drive, about two and a half hours north of Perth, whose marina shelters the fleet that exports western rock lobster. A limestone reef runs parallel to the shore, and the 162 m jetty, completed in 2011, starts a snorkel trail in its lee. The sealed Turquoise Way Trail follows the coast 14.5 km south to the Hill River mouth. Inland, Lesueur National Park holds about a tenth of Western Australia's known plant species.",
+    whyVisit: ["Snorkel with sea lions from the marina", "Climb Mount Lesueur for ocean views", "Explore wartime radar bunkers at North Head"],
+    whyVisitPhotos: ["Australian sea lion (Neophoca cinerea) at Sandland Island, September 2023 04.jpg", "Mount Lesueur.JPG", "ext-jurien-north-head-bunker.jpg"],
+    highlights: ["Sea lion tours", "Mount Lesueur summit", "Wartime radar bunkers"],
+    goodToKnow: [
+      { icon: "🦭", title: "Sea lions are wild", detail: "Sea lions resting on the beaches are not tame. Keep your distance and never feed them, as it makes them dependent on people." },
+      { icon: "🚙", title: "4WD for North Head", detail: "North Head and the bush camps beyond Sandy Cape need a 4WD; Sandy Cape's main campground is on a sealed road." },
+    ],
+    bestMonths: [8, 9, 10, 11],
+    bestTimeBlurb: "Lesueur's wildflowers bloom in {months}, when the coast is mild for walks and snorkelling.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
