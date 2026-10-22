@@ -1,0 +1,2928 @@
+{
+ "region": "wa-golden-outback",
+ "destinations": [
+  {
+   "id": "esperance",
+   "name": "Esperance",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -33.858228,
+    "longitude": 121.8931606
+   },
+   "coordinates_source": "OSM node/1918583620 place=town \"Esperance\" via Nominatim",
+   "defaultZoomSpanKm": 25,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Esperance ; https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance",
+    "wording": "Wikivoyage town guide 'Esperance' (See/Do: museum, Great Ocean Drive, beaches); Australia's Golden Outback page headed 'Esperance' in its Esperance Coast region"
+   },
+   "spots": [
+    "esperance-1",
+    "esperance-2",
+    "esperance-3",
+    "esperance-4",
+    "esperance-5",
+    "esperance-6",
+    "esperance-7",
+    "esperance-8"
+   ]
+  },
+  {
+   "id": "cape-le-grand-national-park",
+   "name": "Cape Le Grand National Park",
+   "category": "park",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -33.956084,
+    "longitude": 122.171214
+   },
+   "coordinates_source": "computed: middle of its spots' pins (bounding-box centre), per COVERAGE \"centre it on the middle of its spots\"",
+   "defaultZoomSpanKm": 30,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park ; https://exploreparks.dbca.wa.gov.au",
+    "wording": "Wikivoyage park article 'Cape Le Grand National Park'; Parks and Wildlife (DBCA) Explore Parks page; named on the Golden Outback Esperance page"
+   },
+   "spots": [
+    "cape-le-grand-national-park-1",
+    "cape-le-grand-national-park-2",
+    "cape-le-grand-national-park-3",
+    "cape-le-grand-national-park-4",
+    "cape-le-grand-national-park-5",
+    "cape-le-grand-national-park-6",
+    "cape-le-grand-national-park-7",
+    "cape-le-grand-national-park-8"
+   ]
+  },
+  {
+   "id": "kalgoorlie-boulder",
+   "name": "Kalgoorlie-Boulder",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -30.7464139,
+    "longitude": 121.473223
+   },
+   "coordinates_source": "OSM node/30772411 place=city \"Kalgoorlie\" via Nominatim",
+   "defaultZoomSpanKm": 20,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Kalgoorlie-Boulder ; https://www.australiasgoldenoutback.com/discover/goldfields/kalgoorlie-boulder",
+    "wording": "Wikivoyage city guide 'Kalgoorlie-Boulder'; Golden Outback page 'Kalgoorlie-Boulder' (Goldfields)"
+   },
+   "spots": [
+    "kalgoorlie-boulder-1",
+    "kalgoorlie-boulder-2",
+    "kalgoorlie-boulder-3",
+    "kalgoorlie-boulder-4"
+   ]
+  },
+  {
+   "id": "hyden",
+   "name": "Hyden",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -32.4487288,
+    "longitude": 118.864003
+   },
+   "coordinates_source": "OSM locality relation/11690138 \"Hyden\" centre (label point) via Nominatim",
+   "defaultZoomSpanKm": 35,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Hyden ; https://www.australiasgoldenoutback.com/discover/wheatbelt/hyden-wave-rock",
+    "wording": "Wikivoyage town guide 'Hyden' (See: Wave Rock, Hippo's Yawn, The Humps and Mulka's Cave, Lake Magic, The Lace Place, wildlife park); Golden Outback page 'Hyden & Wave Rock'"
+   },
+   "spots": [
+    "hyden-1",
+    "hyden-2",
+    "hyden-3",
+    "hyden-4",
+    "hyden-5",
+    "hyden-6"
+   ]
+  },
+  {
+   "id": "nullarbor-plain",
+   "name": "Nullarbor Plain",
+   "category": "desert",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -31.97342,
+    "longitude": 127.2145
+   },
+   "coordinates_source": "computed: middle of its spots' pins (bounding-box centre), per COVERAGE \"centre it on the middle of its spots\"",
+   "defaultZoomSpanKm": 230,
+   "name_evidence": {
+    "source": "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor ; https://en.wikivoyage.org/wiki/Eyre_Highway",
+    "wording": "Golden Outback page headed 'Norseman & Nullarbor'; Wikivoyage 'Nullarbor' redirects to the Eyre Highway article's 'Nullarbor Plain' section; 88,149 Wikipedia page views"
+   },
+   "spots": [
+    "nullarbor-plain-1",
+    "nullarbor-plain-2",
+    "nullarbor-plain-3",
+    "nullarbor-plain-4",
+    "nullarbor-plain-5",
+    "nullarbor-plain-6"
+   ]
+  },
+  {
+   "id": "merredin",
+   "name": "Merredin",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -31.4813329,
+    "longitude": 118.2779117
+   },
+   "coordinates_source": "OSM locality relation/11689038 \"Merredin\" centre (label point) via Nominatim",
+   "defaultZoomSpanKm": 15,
+   "name_evidence": {
+    "source": "https://www.australiasgoldenoutback.com/discover/wheatbelt/merredin ; https://en.wikivoyage.org/wiki/Merredin",
+    "wording": "Golden Outback page 'Merredin' (Merredin Peak and the Golden Pipeline, railway museum, Military Museum, Cummins Theatre); a Wikivoyage 'Merredin' page exists"
+   },
+   "spots": [
+    "merredin-1",
+    "merredin-2",
+    "merredin-3",
+    "merredin-4"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Twilight Beach",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Swimming beach on Esperance's Great Ocean Drive, known for the rock with a hole in it at Twilight Bay.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.891198,
+    "longitude": 121.824651
+   },
+   "coordinates_source": "resolve-pin.py: Photon natural=beach \"Twilight Beach\" + candidate OSM way/183604125 natural/beach",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "esperance-1",
+   "destination": "esperance",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Esperance",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "Inside Esperance's span (7 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Great Ocean Drive",
+   "category": "viewpoint",
+   "icon": "🚗",
+   "bio": "Circular 38 km coast drive from Esperance past Twilight Beach, Observatory Point and the Pink Lake.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "esperance-2",
+   "destination": "esperance",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "Inside Esperance's span (7 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Woody Island",
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "The only Recherche Archipelago island with visitor facilities, reached by boat from Esperance, with walks and a snorkel trail.",
+   "wiki": "Woody Island (Western Australia)",
+   "coordinates": {
+    "latitude": -33.9605001,
+    "longitude": 122.0203396
+   },
+   "coordinates_source": "OSM way/663168390 building \"Woody Island Visitor's Centre\" (the island's landing and visitor point) via Nominatim",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "esperance-3",
+   "destination": "esperance",
+   "sources": 0,
+   "note": "Inside Esperance's span (16 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Observatory Point",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "Lookout on the Great Ocean Drive over the coast and the Recherche islands, where French ships sheltered in 1792.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.908309,
+    "longitude": 121.794423
+   },
+   "coordinates_source": "resolve-pin.py: Photon tourism=viewpoint \"Observatory Point\" + candidate OSM way/220443491",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "esperance-4",
+   "destination": "esperance",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Esperance",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "Inside Esperance's span (11 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Blue Haven Beach",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Sheltered swimming beach south-west of Esperance on the Great Ocean Drive, reached by a steep staircase.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.884785,
+    "longitude": 121.860516
+   },
+   "coordinates_source": "resolve-pin.py: Photon tourism=viewpoint \"Blue Haven\" (the beach-top viewpoint and stair head)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "esperance-5",
+   "destination": "esperance",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "Inside Esperance's span (4 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Esperance Museum",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum of Esperance history in an old goods warehouse, with debris from the Skylab space station that fell here in 1979.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "esperance-6",
+   "destination": "esperance",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Esperance"
+   ],
+   "note": "Inside Esperance's span (0 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Esperance Stonehenge",
+   "category": "landmark",
+   "icon": "🗿",
+   "bio": "Full-size replica of Stonehenge on private farmland north-east of Esperance, with an entry fee.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.787858,
+    "longitude": 122.029589
+   },
+   "coordinates_source": "resolve-pin.py: Photon tourism=attraction \"Esperance Stonehenge\" + Wikipedia",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": false,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "esperance-7",
+   "destination": "esperance",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "Inside Esperance's span (15 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Fourth Beach",
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "Long surf beach on Esperance's Great Ocean Drive, popular for surfing and other water sports.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "esperance-8",
+   "destination": "esperance",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "Inside Esperance's span (6 km from its centre; 75% of 25 km = 19 km) and reached from that base."
+  },
+  {
+   "name": "Lucky Bay",
+   "category": "beach",
+   "icon": "🦘",
+   "bio": "White-sand bay in Cape Le Grand National Park where kangaroos come down onto the beach.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-1",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/cape-le-grande-national-park"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (7 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Hellfire Bay",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "White-sand bay between granite headlands in Cape Le Grand National Park, with high dunes and a picnic area.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -34.002859,
+    "longitude": 122.1647704
+   },
+   "coordinates_source": "resolve-pin.py candidate: Photon natural=beach \"Hellfire Bay Beach\"",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-2",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/cape-le-grande-national-park"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (5 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Frenchman Peak",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Granite peak in Cape Le Grand National Park with a two-hour return climb to views over the Recherche islands.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.96807,
+    "longitude": 122.16636
+   },
+   "coordinates_source": "OSM node/2644274359 natural=peak \"Frenchman Peak\"; Commons median (-33.967597, 122.166878) 60 m away",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-3",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/cape-le-grande-national-park"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (1 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Thistle Cove",
+   "category": "beach",
+   "icon": "🪨",
+   "bio": "Cove between granite headlands in Cape Le Grand National Park, with Whistling Rock and sculpted boulders by the car park.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.9994449,
+    "longitude": 122.2062155
+   },
+   "coordinates_source": "OSM amenity=parking \"Thistle Cove\" (the car park beside Whistling Rock) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-4",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (6 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Cape Le Grand Coastal Trail",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Coastal walk of about 15 km from Le Grand Beach to Rossiter Bay in four sections, past the park's bays.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-5",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/cape-le-grande-national-park"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (3 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Le Grand Beach",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Wide white beach with a campground at the western end of Cape Le Grand National Park, where the coastal trail starts.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.9093098,
+    "longitude": 122.087999
+   },
+   "coordinates_source": "OSM relation/16348732 natural=beach \"Le Grand Beach\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-6",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (9 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Mississippi Hill",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "Hill above Lucky Bay in Cape Le Grand National Park, a 30-minute return walk to views over the beaches.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.9936,
+    "longitude": 122.25443
+   },
+   "coordinates_source": "OSM node/2675680351 natural=peak \"Mississippi Hill\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-7",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (9 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Mount Le Grand",
+   "category": "hike",
+   "icon": "🧗",
+   "bio": "Granite peak in Cape Le Grand National Park, a three-hour return climb with no set path and caves on its eastern side.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.99306,
+    "longitude": 122.13511
+   },
+   "coordinates_source": "OSM node/3020141207 natural=peak \"Mount Le Grand\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 3.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-le-grand-national-park-8",
+   "destination": "cape-le-grand-national-park",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park"
+   ],
+   "note": "Inside Cape Le Grand National Park's span (5 km from its centre; 75% of 30 km = 22 km) and reached from that base."
+  },
+  {
+   "name": "Super Pit Lookout",
+   "category": "viewpoint",
+   "icon": "⛏️",
+   "bio": "Lookout off Mount Monger Road over the Super Pit, one of Australia's largest open-cut gold mines, with old machinery.",
+   "wiki": "Super Pit gold mine",
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "7:00 AM – 7:00 PM",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "kalgoorlie-boulder-1",
+   "destination": "kalgoorlie-boulder",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalgoorlie-Boulder",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/kalgoorlie-boulder"
+   ],
+   "note": "Inside Kalgoorlie-Boulder's span (5 km from its centre; 75% of 20 km = 15 km) and reached from that base."
+  },
+  {
+   "name": "Museum of the Goldfields",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Western Australian Museum site with a gold vault, Aboriginal objects and a viewing platform on an old headframe.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "kalgoorlie-boulder-2",
+   "destination": "kalgoorlie-boulder",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalgoorlie-Boulder",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/kalgoorlie-boulder"
+   ],
+   "note": "Inside Kalgoorlie-Boulder's span (0 km from its centre; 75% of 20 km = 15 km) and reached from that base."
+  },
+  {
+   "name": "Hannans North Tourist Mine",
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Open-air museum of early gold-mine buildings and machinery on the Goldfields Highway north of Kalgoorlie.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "kalgoorlie-boulder-3",
+   "destination": "kalgoorlie-boulder",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalgoorlie-Boulder",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/kalgoorlie-boulder"
+   ],
+   "note": "Inside Kalgoorlie-Boulder's span (2 km from its centre; 75% of 20 km = 15 km) and reached from that base."
+  },
+  {
+   "name": "Mount Charlotte Reservoir and Lookout",
+   "category": "viewpoint",
+   "icon": "🌅",
+   "bio": "Reservoir at the end of the Golden Pipeline on Mount Charlotte, with a short summit walk to a lookout over Kalgoorlie.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -30.7385783,
+    "longitude": 121.4783943
+   },
+   "coordinates_source": "OSM tourism=viewpoint \"Mount Charlotte Lookout\" via Nominatim; Commons median (-30.738606, 121.4787) 30 m away",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "kalgoorlie-boulder-4",
+   "destination": "kalgoorlie-boulder",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalgoorlie-Boulder",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/kalgoorlie-boulder"
+   ],
+   "note": "Inside Kalgoorlie-Boulder's span (1 km from its centre; 75% of 20 km = 15 km) and reached from that base."
+  },
+  {
+   "name": "Wave Rock",
+   "category": "landmark",
+   "icon": "🌊",
+   "bio": "Granite cliff 15 m high and 110 m long shaped like a breaking wave, 4 km from Hyden, with walks around it.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "hyden-1",
+   "destination": "hyden",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Wave_Rock",
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/hyden-wave-rock",
+    "https://en.wikivoyage.org/wiki/Hyden",
+    "https://en.wikivoyage.org/wiki/Wheatbelt_(Western_Australia)"
+   ],
+   "note": "Inside Hyden's span (3 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "The Humps",
+   "category": "hike",
+   "icon": "🪨",
+   "bio": "Granite dome 18 km north-east of Hyden with walk trails and Mulka's Cave, which holds about 450 Aboriginal handprints.",
+   "wiki": "The Humps",
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "hyden-2",
+   "destination": "hyden",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Hyden",
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/hyden-wave-rock"
+   ],
+   "note": "Inside Hyden's span (17 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Lake Magic",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "Gypsum salt lake beside the Wave Rock resort whose water changes colour, with a walk around its shore.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -32.43082,
+    "longitude": 118.90592
+   },
+   "coordinates_source": "OSM way/155350069 natural=water \"Lake Magic\" via Nominatim",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": false,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "hyden-3",
+   "destination": "hyden",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Hyden",
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/hyden-wave-rock"
+   ],
+   "note": "Inside Hyden's span (4 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Wave Rock Wildlife Park",
+   "category": "entertainment",
+   "icon": "🐨",
+   "bio": "Small bush wildlife park beside Wave Rock with kangaroos, koalas and white kangaroos.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": false,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "hyden-4",
+   "destination": "hyden",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Hyden"
+   ],
+   "note": "Inside Hyden's span (3 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "The Lace Place",
+   "category": "museum",
+   "icon": "🧵",
+   "bio": "Collection of lace dating back to the 1600s at the Wave Rock visitor area near Hyden.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": false,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "hyden-5",
+   "destination": "hyden",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Hyden",
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/hyden-wave-rock"
+   ],
+   "note": "Inside Hyden's span (3 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Buckley's Breakaway",
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Breakaway near Pingaring, south-west of Hyden, where orange clays meet white cliffs and gullies, a picnic and photography stop.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -32.64775,
+    "longitude": 118.7461069
+   },
+   "coordinates_source": "OSM natural=bare_rock \"Buckley's Breakaway\", Pingaring, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "hyden-6",
+   "destination": "hyden",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/kulin"
+   ],
+   "note": "Inside Hyden's span (25 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Merredin Military Museum",
+   "category": "museum",
+   "icon": "🪖",
+   "bio": "Museum in Merredin with Western Australia's largest collection of restored military vehicles.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -31.48323,
+    "longitude": 118.28064
+   },
+   "coordinates_source": "OSM way/1095343669 tourism=museum via Nominatim",
+   "hours": "10:00 AM – 3:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": false,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "merredin-1",
+   "destination": "merredin",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/merredin"
+   ],
+   "note": "Inside Merredin's span (0 km from its centre; 75% of 15 km = 11 km) and reached from that base."
+  },
+  {
+   "name": "Merredin Railway Museum",
+   "category": "museum",
+   "icon": "🚂",
+   "bio": "Restored steam-era railway station in Merredin with a signal tower, rolling stock and railway displays.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -31.48294,
+    "longitude": 118.278
+   },
+   "coordinates_source": "OSM way/1095343664 tourism=museum via Nominatim",
+   "hours": "11:00 AM – 2:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": false,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "merredin-2",
+   "destination": "merredin",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/merredin"
+   ],
+   "note": "Inside Merredin's span (0 km from its centre; 75% of 15 km = 11 km) and reached from that base."
+  },
+  {
+   "name": "Merredin Peak Trail",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Walk to the top of Merredin Peak beside the Golden Pipeline, with views over the town and farmland.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "merredin-3",
+   "destination": "merredin",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/merredin"
+   ],
+   "note": "Inside Merredin's span (0 km from its centre; 75% of 15 km = 11 km) and reached from that base."
+  },
+  {
+   "name": "Merredin Silo Art",
+   "category": "landmark",
+   "icon": "🎨",
+   "bio": "Kyle Hughes-Odgers' mural on the CBH grain silos in Merredin, one of the PUBLIC Silo Trail artworks.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "merredin-4",
+   "destination": "merredin",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/merredin"
+   ],
+   "note": "Inside Merredin's span (0 km from its centre; 75% of 15 km = 11 km) and reached from that base."
+  },
+  {
+   "name": "Ravensthorpe Range",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "Range of rocky hills north-east of Ravensthorpe with scenic drives and two lookouts, a biodiversity hotspot.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "ravensthorpe-range",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/ravensthorpe",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/hopetoun"
+   ],
+   "note": "Inside Ravensthorpe's span (13 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Ravensthorpe Silo Art",
+   "category": "landmark",
+   "icon": "🎨",
+   "bio": "Silo mural in Ravensthorpe showing the flowering cycle of a local banksia, part of the PUBLIC Silo Trail.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.5829161,
+    "longitude": 120.0388413
+   },
+   "coordinates_source": "OSM way/262804513 tourism=artwork \"Ravensthorpe Silo Art\", Dance Street, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "ravensthorpe-silo-art",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/ravensthorpe"
+   ],
+   "note": "Inside Ravensthorpe's span (1 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Hopetoun-Ravensthorpe Railway Heritage Walk Trail",
+   "category": "hike",
+   "icon": "🛤️",
+   "bio": "Heritage walk trail in sections along the old railway between Hopetoun and Ravensthorpe, including a 14 km loop.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "hopetoun-ravensthorpe-railway-heritage-walk-trail",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/ravensthorpe",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/hopetoun"
+   ],
+   "note": "Inside Ravensthorpe's span (20 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Big Lollipop",
+   "category": "landmark",
+   "icon": "🍭",
+   "bio": "Giant lollipop sculpture outside a sweet shop in Ravensthorpe, a roadside photo stop.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "big-lollipop",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/ravensthorpe"
+   ],
+   "note": "Inside Ravensthorpe's span (0 km from its centre; 75% of 35 km = 26 km) and reached from that base."
+  },
+  {
+   "name": "Eucla Telegraph Station",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Ruins of the 1877 telegraph station half-buried in sand dunes 4 km from Eucla, with a path to the beach and old jetty.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -31.7140438,
+    "longitude": 128.8864198
+   },
+   "coordinates_source": "OSM historic=ruins \"Eucla Telegraph Station\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "nullarbor-plain-1",
+   "destination": "nullarbor-plain",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eucla",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor"
+   ],
+   "note": "Inside Nullarbor Plain's span (161 km from its centre; 75% of 230 km = 172 km) and reached from that base."
+  },
+  {
+   "name": "Eucla",
+   "category": "landmark",
+   "icon": "🏜️",
+   "bio": "Easternmost town in Western Australia, a Nullarbor roadhouse stop on the escarpment above the Great Australian Bight.",
+   "wiki": "Eucla, Western Australia",
+   "coordinates": {
+    "latitude": -31.6768407,
+    "longitude": 128.8865164
+   },
+   "coordinates_source": "OSM locality relation/11690217 \"Eucla\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "nullarbor-plain-2",
+   "destination": "nullarbor-plain",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eucla",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor",
+    "https://en.wikivoyage.org/wiki/Eyre_Highway"
+   ],
+   "note": "Inside Nullarbor Plain's span (161 km from its centre; 75% of 230 km = 172 km) and reached from that base."
+  },
+  {
+   "name": "Eyre Bird Observatory",
+   "category": "nature",
+   "icon": "🐦",
+   "bio": "Bird research station in the restored 1897 Eyre Telegraph Station south of Cocklebiddy, reached by four-wheel drive.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -32.2464987,
+    "longitude": 126.3014692
+   },
+   "coordinates_source": "OSM node/1604654071 leisure=bird_hide \"Eyre Bird Observatory\" via Nominatim; Wikipedia (-32.24639, 126.30167) 20 m away",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 24,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "nullarbor-plain-3",
+   "destination": "nullarbor-plain",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eyre_Highway",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor"
+   ],
+   "note": "Inside Nullarbor Plain's span (91 km from its centre; 75% of 230 km = 172 km) and reached from that base."
+  },
+  {
+   "name": "Madura Pass",
+   "category": "viewpoint",
+   "icon": "🛣️",
+   "bio": "Eyre Highway pass down the Hampton Tablelands escarpment, with a lookout over the Roe Plains.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -31.89444,
+    "longitude": 127.02783
+   },
+   "coordinates_source": "OSM node/3068360574 natural=saddle \"Madura Pass\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "nullarbor-plain-4",
+   "destination": "nullarbor-plain",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Eyre_Highway",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor"
+   ],
+   "note": "Inside Nullarbor Plain's span (20 km from its centre; 75% of 230 km = 172 km) and reached from that base."
+  },
+  {
+   "name": "90 Mile Straight",
+   "category": "landmark",
+   "icon": "🪧",
+   "bio": "Signposted 146.6 km straight stretch of the Eyre Highway near Caiguna, Australia's longest straight road.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "nullarbor-plain-5",
+   "destination": "nullarbor-plain",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor"
+   ],
+   "note": "Inside Nullarbor Plain's span (166 km from its centre; 75% of 230 km = 172 km) and reached from that base."
+  },
+  {
+   "name": "Eucla National Park",
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Coastal national park around Eucla with the white Delisser Sandhills and the escarpment, explored by four-wheel drive.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "nullarbor-plain-6",
+   "destination": "nullarbor-plain",
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor",
+    "https://en.wikivoyage.org/wiki/Eucla"
+   ],
+   "note": "Inside Nullarbor Plain's span (167 km from its centre; 75% of 230 km = 172 km) and reached from that base."
+  },
+  {
+   "name": "Lake Ballard",
+   "category": "landmark",
+   "icon": "🗿",
+   "bio": "Salt lake 51 km from Menzies where Antony Gormley's 51 'Inside Australia' figures stand across the lakebed.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "lake-ballard",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Menzies",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/menzies",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/coolgardie-kambalda",
+    "https://en.wikivoyage.org/wiki/Kalgoorlie-Boulder"
+   ],
+   "note": "51 km of unsealed road from Menzies, which has too few kept spots (Niagara Dam, Kookynie) to be a destination; a trip of its own on the Golden Quest route."
+  },
+  {
+   "name": "Gwalia",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Ghost town 3 km from Leonora with the Gwalia Museum in the old mine offices, Hoover House and miners' cottages.",
+   "wiki": "Gwalia, Western Australia",
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "9:30 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "gwalia",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Leonora",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/leonora-gwalia"
+   ],
+   "note": "Ghost town 3 km from Leonora (merged into it); the Northern Goldfields have no destination (Leonora/Laverton have no cluster of four), and it is 230 km from Kalgoorlie."
+  },
+  {
+   "name": "Walga Rock",
+   "category": "landmark",
+   "icon": "🪨",
+   "bio": "Granite monolith 48 km west of Cue with a large gallery of Aboriginal rock paintings and a cave.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "walga-rock",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/cue",
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/mount-magnet",
+    "https://en.wikivoyage.org/wiki/Wave_Rock"
+   ],
+   "note": "48 km west of Cue on unsealed roads; the Murchison has no destination (Cue, Mount Magnet, Sandstone and Meekatharra each have fewer than four kept spots around them)."
+  },
+  {
+   "name": "Canning Stock Route",
+   "category": "hike",
+   "icon": "🚙",
+   "bio": "Historic 1,800 km desert stock route from Wiluna to Halls Creek, driven today as a multi-week four-wheel-drive trip.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 240,
+   "visitHoursMax": 480,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "canning-stock-route",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/wiluna",
+    "https://www.wiluna.wa.gov.au/about/tourism.aspx"
+   ],
+   "note": "Run-wide decision: the route is placed once, here, at the midpoint of its whole length (deep in the desert, far from any destination). The Kimberley's 'review' verdict for it is a duplicate."
+  },
+  {
+   "name": "Cape Arid National Park",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "Remote coastal national park east of Esperance with white beaches, four-wheel-drive tracks and whale watching.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "cape-arid-national-park",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback",
+    "https://en.wikivoyage.org/wiki/Cape_Arid_National_Park",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "A national park with no kept spots of its own: too thin to be a destination (COVERAGE: a park with fewer than four spots stands alone). About 120 km east of Esperance, outside every span."
+  },
+  {
+   "name": "Coolgardie",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Historic gold-rush town 40 km west of Kalgoorlie, with a heritage main street, a museum and old cemeteries.",
+   "wiki": "Coolgardie, Western Australia",
+   "coordinates": {
+    "latitude": -30.951181,
+    "longitude": 121.162113
+   },
+   "coordinates_source": "OSM locality relation/11690098 \"Coolgardie\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "coolgardie",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Coolgardie",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/coolgardie-kambalda"
+   ],
+   "note": "A gold-rush town with its own draws (heritage main street, Wikivoyage page). It is 37 km from Kalgoorlie-Boulder's centre (outside its 15 km reach) but a town is never a spot of another town that is a destination, and travellers make it a separate stop on the Great Eastern Highway. Coolgardie itself has only three kept spots around it (museum, cemetery, Burra Rock), too few for a destination."
+  },
+  {
+   "name": "Goldfields Exhibition Museum",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum of Coolgardie's gold-rush history in the old Warden's Court on Bayley Street, also the town's visitor centre.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "goldfields-exhibition-museum",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/goldfields/coolgardie-kambalda"
+   ],
+   "note": "Coolgardie's museum: reached from Coolgardie, 37 km from Kalgoorlie-Boulder's centre and outside its 15 km reach; Coolgardie is not a destination (three kept spots)."
+  },
+  {
+   "name": "Coolgardie Cemetery",
+   "category": "historic",
+   "icon": "🪦",
+   "bio": "Gold-rush cemetery of 1894 outside Coolgardie, with the grave of the explorer Ernest Giles.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -30.9515211,
+    "longitude": 121.1445878
+   },
+   "coordinates_source": "OSM landuse=cemetery \"Coolgardie Cemetery\" (small site, centroid) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "coolgardie-cemetery",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Coolgardie",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/coolgardie-kambalda"
+   ],
+   "note": "In Coolgardie, 39 km from Kalgoorlie-Boulder's centre and outside its 15 km reach; Coolgardie is not a destination."
+  },
+  {
+   "name": "Burra Rock",
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Granite outcrop south of Coolgardie with a woodline-era catchment wall and dam, relics, picnic and camping sites.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -31.38999,
+    "longitude": 121.19781
+   },
+   "coordinates_source": "OSM way/572394681 natural=rock \"Burra Rock\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "burra-rock",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Coolgardie",
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback"
+   ],
+   "note": "55 km south of Coolgardie on Burra Rock Road; no destination near it."
+  },
+  {
+   "name": "Red Hill Lookout",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "Lookout on Kambalda's highest point over the salt pan of Lake Lefroy, with 300 m and 1.7 km loop trails.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -31.21025,
+    "longitude": 121.67316
+   },
+   "coordinates_source": "OSM node/1650854444 tourism=viewpoint \"Red Hill Lookout\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "red-hill-lookout-kambalda",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kambalda",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/coolgardie-kambalda"
+   ],
+   "note": "In Kambalda, 52 km south-east of Kalgoorlie, outside its span; Kambalda (merged here) has no other kept spot."
+  },
+  {
+   "name": "Norseman",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Gold-mining town at the start of the Eyre Highway across the Nullarbor, with Beacon Hill lookout over the town.",
+   "wiki": "Norseman, Western Australia",
+   "coordinates": {
+    "latitude": -32.1984985,
+    "longitude": 121.7791456
+   },
+   "coordinates_source": "OSM locality relation/11689023 \"Norseman\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "norseman",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Norseman",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor"
+   ],
+   "note": "Junction town and western gateway to the Nullarbor, 380 km from the Nullarbor Plain destination's nearest spot (Caiguna) and 190 km from Kalgoorlie; its own draws (Beacon Hill lookout, historical collection) are not covered by another spot, so the town stays beside the Tin Camels."
+  },
+  {
+   "name": "Norseman Tin Camels",
+   "category": "landmark",
+   "icon": "🐪",
+   "bio": "Corrugated-iron camel sculptures in Norseman's main street honouring the camel trains that carried mail and freight.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "norseman-tin-camels",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor"
+   ],
+   "note": "In Norseman's main street; Norseman has only two kept spots (this and Dundas Rocks), too few for a destination."
+  },
+  {
+   "name": "Dundas Rocks",
+   "category": "viewpoint",
+   "icon": "🪨",
+   "bio": "Granite boulders by the Dundas ghost-town site south of Norseman, climbed for views at the end of a heritage drive.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -32.39434,
+    "longitude": 121.77196
+   },
+   "coordinates_source": "OSM way/1146466261 natural=bare_rock \"Dundas Rocks\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "dundas-rocks",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Norseman",
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor"
+   ],
+   "note": "22 km south of Norseman; Norseman is not a destination."
+  },
+  {
+   "name": "Menzies",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Small gold-rush town with heritage buildings and information boards on its main street, the base for Lake Ballard.",
+   "wiki": "Menzies, Western Australia",
+   "coordinates": {
+    "latitude": -29.6923668,
+    "longitude": 121.0291347
+   },
+   "coordinates_source": "OSM locality relation/11690160 \"Menzies\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "menzies",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Menzies",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/menzies"
+   ],
+   "note": "Small heritage town and the base for Lake Ballard; with three kept spots around it (Lake Ballard, Niagara Dam, Kookynie) it is not a destination."
+  },
+  {
+   "name": "Niagara Dam",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "Historic dam north of Menzies with the 1.6 km Breakaway Trail, a round-the-dam walk, picnics and camping.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "niagara-dam",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Menzies",
+    "https://www.australiasgoldenoutback.com/discover/goldfields/menzies"
+   ],
+   "note": "Near Kookynie, north of Menzies; Menzies is not a destination."
+  },
+  {
+   "name": "Kookynie",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Ghost town north of Menzies with ruins of a 1903 town of over 400 buildings and its surviving Grand Hotel.",
+   "wiki": "Kookynie, Western Australia",
+   "coordinates": {
+    "latitude": -29.3368967,
+    "longitude": 121.4923688
+   },
+   "coordinates_source": "OSM locality relation/11690161 \"Kookynie\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "kookynie",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/goldfields/menzies"
+   ],
+   "note": "Ghost town 75 km north-east of Menzies; no destination near it."
+  },
+  {
+   "name": "Laverton",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Northern Goldfields town at the start of the Outback Way, with a historic police station complex.",
+   "wiki": "Laverton, Western Australia",
+   "coordinates": {
+    "latitude": -28.6263144,
+    "longitude": 122.4033812
+   },
+   "coordinates_source": "OSM locality relation/11690162 \"Laverton\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "laverton",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/goldfields/laverton"
+   ],
+   "note": "Remote town at the start of the Outback Way; its draws beyond the Hall of Fame (police station complex, Giles Breakaway as a review candidate) are its own, and there is no destination within 300 km."
+  },
+  {
+   "name": "The Great Beyond – Explorers' Hall of Fame",
+   "category": "museum",
+   "icon": "🧭",
+   "bio": "Exhibition in Laverton on the explorers and pioneers of the outback, housing the town's visitor centre.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "great-beyond-explorers-hall-of-fame",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/goldfields/laverton"
+   ],
+   "note": "In Laverton; Laverton has one kept spot, so it is not a destination. Named as the skeptic asked ('The Great Beyond - Explorers' Hall of Fame')."
+  },
+  {
+   "name": "Hopetoun",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Seaside town on Mary Ann Haven with beaches, the eastern gateway to Fitzgerald River National Park.",
+   "wiki": "Hopetoun, Western Australia",
+   "coordinates": {
+    "latitude": -33.9467298,
+    "longitude": 120.1249342
+   },
+   "coordinates_source": "OSM locality relation/11688999 \"Hopetoun\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "hopetoun",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/hopetoun"
+   ],
+   "note": "Seaside town 42 km south of Ravensthorpe's centre: outside its 26 km reach, and a separate base with its own beaches, not a draw reached from Ravensthorpe. Cross-region: it is the eastern gateway to Fitzgerald River National Park (wa-great-southern), so the reconciler may make it that park's gateway spot if the park's span reaches it."
+  },
+  {
+   "name": "Wharton Beach",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Long white beach in Duke of Orleans Bay about an hour east of Esperance, for swimming, fishing and camping.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.94012,
+    "longitude": 122.52687
+   },
+   "coordinates_source": "OSM relation/16519166 natural=beach \"Wharton Beach\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "wharton-beach",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "In Duke of Orleans Bay, 59 km east of Esperance (outside its 19 km reach) and 33 km east of Cape Le Grand National Park's centre but outside the park; reached from Esperance via Condingup as a day trip."
+  },
+  {
+   "name": "Munglinup Beach",
+   "category": "beach",
+   "icon": "🤿",
+   "bio": "Beach west of Esperance with a natural lagoon for snorkelling and a small campground.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -33.88771,
+    "longitude": 120.7945
+   },
+   "coordinates_source": "OSM way/577635162 natural=beach \"Munglinup Beach\" via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "munglinup-beach",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance"
+   ],
+   "note": "About 100 km west of Esperance; no destination near it."
+  },
+  {
+   "name": "Stokes National Park",
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "Coastal national park around Stokes Inlet west of Esperance, with camping, canoeing, walks and the Moir Homestead ruins.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 24,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "stokes-national-park",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback",
+    "https://en.wikivoyage.org/wiki/Stokes_National_Park"
+   ],
+   "note": "A national park with no kept spots of its own (Margaret Cove is in review): too thin for a destination. 70 km west of Esperance, outside its span."
+  },
+  {
+   "name": "Goldfields Woodlands National Park",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Woodland national park on the Great Eastern Highway with walks, campgrounds, woodline relics and the pipeline at Woolgangie Rock.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 24,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "goldfields-woodlands-national-park",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback"
+   ],
+   "note": "A national park with no kept spots of its own, crossed on the Great Eastern Highway 90 km west of Coolgardie; too thin for a destination."
+  },
+  {
+   "name": "Goongarrie National Park",
+   "category": "nature",
+   "icon": "🌵",
+   "bio": "Quiet national park north of Kalgoorlie with walks over granite, Aboriginal rock holes and old railway cottages.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 24,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "goongarrie-national-park",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback"
+   ],
+   "note": "A national park with no kept spots of its own, 90 km north of Kalgoorlie; too thin for a destination."
+  },
+  {
+   "name": "Peak Charles National Park",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Remote national park around a granite peak seen 50 km away, with walks on Peak Charles and Peak Eleanora and a campground.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 24,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "peak-charles-national-park",
+   "destination": null,
+   "sources": 0,
+   "note": "A remote national park with no other kept spots, 110 km north-west of Esperance's nearest destination span; too thin for a destination."
+  },
+  {
+   "name": "Dryandra Woodland",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Woodland national park near Narrogin with numbats, over 100 bird species, walk trails and spring wildflowers.",
+   "wiki": "Dryandra Woodland National Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 24,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "id": "dryandra-woodland",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback",
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/narrogin"
+   ],
+   "note": "A national park with one kept spot (Barna Mia): too thin for a destination. Narrogin, 22 km away, is not a destination (and a park is never a spot of a town)."
+  },
+  {
+   "name": "Barna Mia",
+   "category": "nature",
+   "icon": "🦔",
+   "bio": "Sanctuary in Dryandra Woodland where guided night tours show endangered bilbies, woylies and bandicoots.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "free": false,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "barna-mia",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/narrogin"
+   ],
+   "note": "Inside Dryandra Woodland, which is standalone; booked night tours run from the park's village."
+  },
+  {
+   "name": "Gathercole Nature Reserve",
+   "category": "hike",
+   "icon": "🌸",
+   "bio": "Reserve near Wongan Hills with a loop trail over a granite outcrop, known for spring wildflowers and views.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "gathercole-nature-reserve",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback",
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/wongan-hills"
+   ],
+   "note": "Near Wongan Hills (a review candidate); no destination near it."
+  },
+  {
+   "name": "Boyagin Nature Reserve",
+   "category": "hike",
+   "icon": "🪨",
+   "bio": "Wheatbelt reserve with a walk up 50 m Boyagin Rock for views, picnic areas, numbats and tammar wallabies.",
+   "wiki": "Boyagin Rock",
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "boyagin-nature-reserve",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/tourism-region/australias-golden-outback"
+   ],
+   "note": "Between Brookton and Pingelly; no destination near it."
+  },
+  {
+   "name": "Kokerbin Rock",
+   "category": "viewpoint",
+   "icon": "🪨",
+   "bio": "Granite monolith near Kellerberrin with a drive or walk to the summit, a mini wave rock and a picnic area.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "kokerbin-rock",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/kellerberrin"
+   ],
+   "note": "Near Kellerberrin, 60 km west of Merredin, outside its span."
+  },
+  {
+   "name": "Beringbooding Rock",
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Granite rock north of Mukinbudin with a large rock catchment tank, Kangaroo Soak and free camping.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "beringbooding-rock",
+   "destination": null,
+   "sources": 0,
+   "note": "70 km north of Mukinbudin on gravel; no destination near it."
+  },
+  {
+   "name": "Elachbutting Rock",
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Granite rock north of Westonia with a rock wave, the Monty's Pass cave and free camping.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "elachbutting-rock",
+   "destination": null,
+   "sources": 0,
+   "note": "100 km north of Westonia on gravel; no destination near it."
+  },
+  {
+   "name": "Jilakin Rock",
+   "category": "viewpoint",
+   "icon": "🪨",
+   "bio": "Granite rock near Kulin with views over Jilakin Lake and picnics under the most inland stand of jarrah.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "jilakin-rock",
+   "destination": null,
+   "sources": 0,
+   "note": "17 km east of Kulin; Kulin has only three kept spots near it (this, the Tin Horse Highway and Yeerakine Rock; Buckley's Breakaway, 55 km away, is reached from Hyden), so it is not a destination. 55 km west of Hyden, outside Hyden's span."
+  },
+  {
+   "name": "Yorkrakine Rock",
+   "category": "hike",
+   "icon": "🪨",
+   "bio": "Granite rock 25 km north of Tammin with a walk trail to gnamma holes on top, picnic facilities and birdwatching.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "yorkrakine-rock",
+   "destination": null,
+   "sources": 0,
+   "note": "25 km north of Tammin; 75 km west of Merredin, outside its span."
+  },
+  {
+   "name": "Yeerakine Rock",
+   "category": "viewpoint",
+   "icon": "🪨",
+   "bio": "Granite rock 12 km south of Kondinin with summit views, a Light Horse silhouette and the site of Roe's 1848 camp.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "yeerakine-rock",
+   "destination": null,
+   "sources": 0,
+   "note": "12 km south of Kondinin; Kulin and Kondinin are not destinations; 60 km from Hyden, outside its span."
+  },
+  {
+   "name": "Toolibin Lake",
+   "category": "nature",
+   "icon": "🦢",
+   "bio": "Ramsar-listed Wheatbelt lake with a 1.6 km interpretive walk and 41 recorded waterbird species.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "toolibin-lake",
+   "destination": null,
+   "sources": 0,
+   "note": "40 km east of Narrogin; no destination near it."
+  },
+  {
+   "name": "Lake Dumbleyung",
+   "category": "nature",
+   "icon": "🚤",
+   "bio": "Large Wheatbelt lake where Donald Campbell set the 1964 water speed record in Bluebird, with a lookout on Pussy Cat Hill.",
+   "wiki": "Dumbleyung Lake",
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "lake-dumbleyung",
+   "destination": null,
+   "sources": 0,
+   "note": "Beside Dumbleyung town; no destination near it."
+  },
+  {
+   "name": "Kulin",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Wheatbelt town that is the base for the Tin Horse Highway, Jilakin Rock and Buckley's Breakaway.",
+   "wiki": "Kulin, Western Australia",
+   "coordinates": {
+    "latitude": -32.6688681,
+    "longitude": 118.1560242
+   },
+   "coordinates_source": "OSM locality relation/11688975 \"Kulin\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "kulin",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/kulin"
+   ],
+   "note": "The board calls it a base for the Eastern Wheatbelt, but it has only three kept spots around it within a town's span (Tin Horse Highway, Jilakin Rock, Yeerakine Rock), too few for a destination; its own draws (the Discovery Zone, the giant waterslide and museum, all review) stay in the bio."
+  },
+  {
+   "name": "Tin Horse Highway",
+   "category": "landmark",
+   "icon": "🐴",
+   "bio": "Road out of Kulin lined with over 70 tin horse sculptures along about 15 km to the Jilakin race track.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "tin-horse-highway",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/products/tin-horse-highway",
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/kulin"
+   ],
+   "note": "Runs east from Kulin; Kulin is not a destination."
+  },
+  {
+   "name": "Corrigin",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Wheatbelt 'Town of Windmills' on the way to Wave Rock, with a pioneer museum, Corrigin Rock and lookouts.",
+   "wiki": "Corrigin, Western Australia",
+   "coordinates": {
+    "latitude": -32.3330288,
+    "longitude": 117.8760602
+   },
+   "coordinates_source": "OSM locality relation/11689049 \"Corrigin\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "corrigin",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/corrigin"
+   ],
+   "note": "A stopover town on the way to Wave Rock with its own named draws (windmills, pioneer museum, Corrigin Rock and lookouts); 95 km from Hyden; it has one kept spot (the Dog Cemetery), too few for a destination."
+  },
+  {
+   "name": "Corrigin Dog Cemetery",
+   "category": "landmark",
+   "icon": "🐕",
+   "bio": "Pet cemetery founded in 1974 with over 200 dogs buried, marked by a large dog statue, 5 km west of Corrigin.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "corrigin-dog-cemetery",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/corrigin"
+   ],
+   "note": "5 km west of Corrigin; Corrigin is not a destination."
+  },
+  {
+   "name": "Southern Cross",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Golden Pipeline town on the Great Eastern Highway with star-named streets, a pioneer cemetery and Wimmera Hill Lookout.",
+   "wiki": "Southern Cross, Western Australia",
+   "coordinates": {
+    "latitude": -31.2282721,
+    "longitude": 119.327784
+   },
+   "coordinates_source": "OSM locality relation/11690087 \"Southern Cross\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "southern-cross",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/southern-cross"
+   ],
+   "note": "Golden Pipeline highway town with its own draws (Wimmera Hill Lookout, the star-named streets, the cemetery) beside its museum; 105 km east of Merredin, outside its span; one kept spot is too few for a destination."
+  },
+  {
+   "name": "Yilgarn History Museum",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum in Southern Cross's 1892 courthouse with a working gold-battery model, a camel wagon and mining displays.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "yilgarn-history-museum",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/southern-cross"
+   ],
+   "note": "In Southern Cross; Southern Cross is not a destination."
+  },
+  {
+   "name": "Narrogin",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Wheatbelt regional town and base for Dryandra Woodland, with a heritage walk trail and the Old Court House Museum.",
+   "wiki": "Narrogin",
+   "coordinates": {
+    "latitude": -32.9341978,
+    "longitude": 117.1778676
+   },
+   "coordinates_source": "OSM locality relation/11689081 \"Narrogin\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "narrogin",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/wheatbelt/narrogin"
+   ],
+   "note": "Regional town and the base for Dryandra; its kept neighbours are a national park (never a spot of a town) and its sanctuary, so it has no destination cluster of its own."
+  },
+  {
+   "name": "Cue",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Murchison gold town with a heritage streetscape and discovery centre, the base for Walga Rock and Big Bell.",
+   "wiki": "Cue, Western Australia",
+   "coordinates": {
+    "latitude": -27.4242648,
+    "longitude": 117.8971651
+   },
+   "coordinates_source": "OSM locality relation/11690058 \"Cue\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "cue",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/cue",
+    "https://en.wikivoyage.org/wiki/Goldfields-Esperance"
+   ],
+   "note": "Murchison town; Walga Rock (48 km) is its one kept neighbour, too few for a destination."
+  },
+  {
+   "name": "Mount Magnet",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Murchison gold town with a 37 km tourist trail to Warrmboo Hill views and a mining and pastoral museum.",
+   "wiki": "Mount Magnet, Western Australia",
+   "coordinates": {
+    "latitude": -28.0654747,
+    "longitude": 117.8482187
+   },
+   "coordinates_source": "OSM locality relation/11690059 \"Mount Magnet\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "mount-magnet",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/mount-magnet"
+   ],
+   "note": "Murchison town 80 km south of Cue; no kept spots of its own nearby."
+  },
+  {
+   "name": "Meekatharra",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Largest Murchison town on the Great Northern Highway, with a heritage walk, a state battery and Peace Gorge nearby.",
+   "wiki": "Meekatharra, Western Australia",
+   "coordinates": {
+    "latitude": -26.5925631,
+    "longitude": 118.4957043
+   },
+   "coordinates_source": "OSM locality relation/11690201 \"Meekatharra\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "meekatharra",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/meekatharra"
+   ],
+   "note": "Murchison town on the Great Northern Highway; no kept neighbours (Peace Gorge is review)."
+  },
+  {
+   "name": "Sandstone",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Remote gold-rush town with restored heritage buildings, a heritage trail, a museum and the Peter Denny Lookout.",
+   "wiki": "Sandstone, Western Australia",
+   "coordinates": {
+    "latitude": -27.9879555,
+    "longitude": 119.2979434
+   },
+   "coordinates_source": "OSM locality relation/11690205 \"Sandstone\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "sandstone",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/sandstone"
+   ],
+   "note": "Remote gold-rush town with its own heritage streets, museum and lookout beside London Bridge (3 km); one kept neighbour is too few for a destination."
+  },
+  {
+   "name": "London Bridge",
+   "category": "landmark",
+   "icon": "🌉",
+   "bio": "Natural rock arch about 350 million years old, 3 km south of Sandstone, a picnic and sunset spot for over a century.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "id": "london-bridge-sandstone",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/products/london-bridge",
+    "https://www.australiasgoldenoutback.com/products/sandstone-heritage-trail"
+   ],
+   "note": "3 km south of Sandstone; Sandstone is not a destination."
+  },
+  {
+   "name": "Wiluna",
+   "category": "landmark",
+   "icon": "🏘️",
+   "bio": "Outback town at the start of the Canning Stock Route, with heritage walk trails and the Last of the Nomads statue.",
+   "wiki": "Wiluna, Western Australia",
+   "coordinates": {
+    "latitude": -26.591911,
+    "longitude": 120.2253369
+   },
+   "coordinates_source": "OSM locality relation/11690168 \"Wiluna\" centre (label point) via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "wiluna",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/wiluna",
+    "https://www.wiluna.wa.gov.au/about/tourism.aspx"
+   ],
+   "note": "Gateway town for the Canning Stock Route with its own heritage walks and statue; its three kept neighbours (gallery, discovery centre, North Pool) are fewer than four, so it is not a destination."
+  },
+  {
+   "name": "Tjukurba Art Gallery",
+   "category": "museum",
+   "icon": "🎨",
+   "bio": "Working gallery in Wiluna where Martu artists paint, with their works and historic photographs on show.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "tjukurba-art-gallery",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/wiluna",
+    "https://www.wiluna.wa.gov.au/about/tourism.aspx"
+   ],
+   "note": "In Wiluna; Wiluna is not a destination."
+  },
+  {
+   "name": "Canning-Gunbarrel Discovery Centre",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum in Wiluna's restored old hospital on the town, the Canning Stock Route and the Gunbarrel Highway.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "canning-gunbarrel-discovery-centre",
+   "destination": null,
+   "sources": [
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/wiluna",
+    "https://www.wiluna.wa.gov.au/about/tourism.aspx"
+   ],
+   "note": "In Wiluna; Wiluna is not a destination."
+  },
+  {
+   "name": "North Pool",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "Waterhole 15 km from Wiluna among red earth and gum trees, for a picnic, a walk or the sunset.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -26.4467983,
+    "longitude": 120.1479564
+   },
+   "coordinates_source": "OSM natural=water \"North Pool\", Wiluna, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "north-pool-wiluna",
+   "destination": null,
+   "sources": [
+    "https://www.wiluna.wa.gov.au/about/tourism.aspx",
+    "https://www.australiasgoldenoutback.com/discover/gascoyne-murchison/wiluna"
+   ],
+   "note": "15 km from Wiluna; Wiluna is not a destination."
+  }
+ ]
+}
