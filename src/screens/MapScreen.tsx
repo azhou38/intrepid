@@ -1,5 +1,5 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
-import { flagSource, preloadFlags, flagLog } from '../utils/flags';
+import { flagSource, flagLog } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -1526,14 +1526,23 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
   return { photoAt, nameAt, sortOf };
 }
 
-// The country pills' flags, started when the module loads (see preloadFlags); the start-up photo prewarm waits for it.
-let flagsPreloaded: Promise<void> | null = null;
-const preloadPillFlags = () => (flagsPreloaded ??= preloadFlags(COUNTRY_GROUPS.map(g => g.countryCode)));
+// The country pills' flags, drawn invisibly at the pills' exact size from MapScreen's first render (FlagWarmup), two seconds
+// before the map is ready and the pills mount. React Native's iOS image loader runs four loads at a time, first come first
+// served, and in a dev build even bundled images are fetched from Metro through that queue: the pills' flags used to wait
+// behind every destination photo queued at start-up and showed seconds late. A view whose image is already in the decoded
+// image cache (same file, size and resize mode) skips the queue, so the pills now draw their flags at once.
+const PILL_FLAG_CODES = COUNTRY_GROUPS.map(g => g.countryCode);
+const FlagWarmup = memo(function FlagWarmup() {
+  return (
+    <View pointerEvents="none" style={styles.flagWarmup}>
+      {PILL_FLAG_CODES.map(cc => <Image key={cc} source={flagSource(cc)} style={styles.countryPillFlagImg} resizeMode="cover" onLoad={() => flagLog(`warm ${cc}`)} />)}
+    </View>
+  );
+});
 
 let tempLoggedRender = false;
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   if (!tempLoggedRender) { tempLoggedRender = true; flagLog('MapScreen first render'); }
-  preloadPillFlags();
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
   // The MapView's real rendered height (shorter than the device height — App.tsx's bottom tab
@@ -5104,6 +5113,8 @@ const destItems = useMemo((): DestItem[] =>
       onTouchEnd={handleRootTouchEnd}
       onTouchCancel={handleRootTouchEnd}
     >
+      {/* First in the tree, so its loads are queued before any photo's. */}
+      <FlagWarmup />
 
       {/* ── MAP ──────────────────────────────────────────────────────────── */}
       {styleResolved && (
@@ -5124,8 +5135,7 @@ const destItems = useMemo((): DestItem[] =>
           flagLog('map ready');
           setMapReady(true);
           // Pin photos for every destination, so a pin's photo is already there when it first appears instead of popping in.
-          // After the pills' flags: the image loader runs four loads at a time, and the flags must not queue behind these.
-          void preloadPillFlags().then(() => { flagLog("prewarm start"); prewarmDestinationPins(DESTINATIONS); });
+          prewarmDestinationPins(DESTINATIONS);
           // onDidFinishLoadingMap fires once the STYLE has loaded, but the globe's own
           // atmosphere/lighting shader keeps visibly settling for a bit after that — the
           // "shines white, then flashes" effect this delay is masking. There's no public event
@@ -6006,6 +6016,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   countryPillFlagImg: { width: 22, height: 22 },
+  flagWarmup: { position: 'absolute', left: 0, top: 0, flexDirection: 'row', opacity: 0 },
   countryPillFlagRingClip: {
     position: 'absolute', top: 0, left: 0,
     width: 12, height: 24, overflow: 'hidden',
