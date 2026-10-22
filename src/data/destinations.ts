@@ -653,9 +653,9 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: '🌌', rank: 1,
     tagline: "The world's northernmost capital: geothermal, geologic, and gloriously remote.",
     description: "Reykjavik is the world's northernmost national capital and one of its most extraordinary — a small, colorful city where geothermal energy heats everything, the Hallgrímskirkja towers over brightly painted houses, and the Northern Lights appear overhead in winter. Iceland's dramatic landscapes begin just outside the city.",
-    whyVisit: ['Chase the Northern Lights', "See Iceland's volcanoes erupt", 'See Hallgrímskirkja above the colourful city'],
-    whyVisitPhotos: ["Aurora Borealis outside Reykjavik (2).JPG", "001 Volcano eruption of Litli-Hrútur in Iceland in 2023 Photo by Giles Laurent.jpg", "Hallgrímskirkja.jpeg"],
-    highlights: ['Northern Lights', 'Volcanic gateway', 'Hallgrímskirkja'],
+    whyVisit: ['Chase the Northern Lights', 'See Hallgrímskirkja above the colourful city'],
+    whyVisitPhotos: ["Aurora Borealis outside Reykjavik (2).JPG", "Hallgrímskirkja.jpeg"],
+    highlights: ['Northern Lights', 'Hallgrímskirkja'],
     goodToKnow: [
       { icon: '🍷', title: 'Buy alcohol at duty-free', detail: 'Alcohol is heavily taxed — buying at the airport duty-free on arrival saves real money.' },
       { icon: '🌦️', title: 'Expect changeable weather', detail: 'Weather changes constantly; the local saying "wait five minutes" for different weather is accurate.' },
