@@ -1,5 +1,5 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
-import { flagSource, flagLog } from '../utils/flags';
+import { flagSource } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -1535,14 +1535,12 @@ const PILL_FLAG_CODES = COUNTRY_GROUPS.map(g => g.countryCode);
 const FlagWarmup = memo(function FlagWarmup() {
   return (
     <View pointerEvents="none" style={styles.flagWarmup}>
-      {PILL_FLAG_CODES.map(cc => <Image key={cc} source={flagSource(cc)} style={styles.countryPillFlagImg} resizeMode="cover" onLoad={() => flagLog(`warm ${cc}`)} />)}
+      {PILL_FLAG_CODES.map(cc => <Image key={cc} source={flagSource(cc)} style={styles.countryPillFlagImg} resizeMode="cover" />)}
     </View>
   );
 });
 
-let tempLoggedRender = false;
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
-  if (!tempLoggedRender) { tempLoggedRender = true; flagLog('MapScreen first render'); }
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
   // The MapView's real rendered height (shorter than the device height — App.tsx's bottom tab
@@ -4788,9 +4786,6 @@ const destItems = useMemo((): DestItem[] =>
                 <View style={styles.countryPillFlagClip}>
                   <Image
                     source={flagSource(cluster.countryCode)}
-                    onLoadStart={() => flagLog(`pill ${cluster.countryCode} loadStart`)}
-                    onLoad={() => flagLog(`pill ${cluster.countryCode} onLoad`)}
-                    onError={e => flagLog(`pill ${cluster.countryCode} error ${e.nativeEvent.error}`)}
                     style={styles.countryPillFlagImg}
                     resizeMode="cover"
                   />
@@ -5132,7 +5127,6 @@ const destItems = useMemo((): DestItem[] =>
           : { styleURL: MapboxGL.StyleURL.Light }
         )}
         onDidFinishLoadingMap={() => {
-          flagLog('map ready');
           setMapReady(true);
           // Pin photos for every destination, so a pin's photo is already there when it first appears instead of popping in.
           prewarmDestinationPins(DESTINATIONS);

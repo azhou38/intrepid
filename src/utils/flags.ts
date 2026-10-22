@@ -220,8 +220,3 @@ export function flagSource(countryCode: string): ImageSourcePropType {
   return __DEV__ ? remote : FLAGS[cc] ?? remote;
 }
 
-// TEMP flag-timing logs (remove after measuring)
-const T0 = Date.now();
-export function flagLog(msg: string) {
-  void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `+${Date.now() - T0}ms ${msg}` }).catch(() => {});
-}
