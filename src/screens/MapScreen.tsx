@@ -1246,6 +1246,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
+const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const MAX_NEW_SPOT_IMAGES = 16;   // spot pin images registered per pass (see nativeSpotPins); further passes follow a frame apart
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
@@ -2800,6 +2801,21 @@ const destItems = useMemo((): DestItem[] =>
   const spotPhotoSpecListRef = useRef<SpotPhotoImageSpec[]>([]);
   const spotImagesPendingRef = useRef(0);
   const [spotImagesTick, setSpotImagesTick] = useState(0);
+  // Each new pin image is a view the UI thread snapshots; a batch of them in the frames right after a selection froze the
+  // sheet's slide-in for ~130 ms (the sheet stalled, then jumped). So no new images are registered while a sheet slides in.
+  const pinImagesHoldUntilRef = useRef(0);
+  const pinImagesHoldKeyRef = useRef('');
+  const selectionKey = `${selectedDest?.id ?? ''}|${selectedSpot?.id ?? ''}`;
+  // Set during the render that changes the selection (an effect would run after it, too late for that render's pass).
+  if (selectionKey !== pinImagesHoldKeyRef.current) {
+    pinImagesHoldKeyRef.current = selectionKey;
+    pinImagesHoldUntilRef.current = Date.now() + PIN_IMAGE_HOLD_MS;
+  }
+  // The pass the hold postponed runs as soon as it ends.
+  useEffect(() => {
+    const t = setTimeout(() => setSpotImagesTick(n => n + 1), PIN_IMAGE_HOLD_MS + 20);
+    return () => clearTimeout(t);
+  }, [selectionKey]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   const nativeSpotPins = useMemo(() => {
@@ -2859,15 +2875,16 @@ const destItems = useMemo((): DestItem[] =>
     // view rnmapbox snapshots, so a big batch blocked the map for ~150 ms; what is left over is registered by the next pass,
     // a frame later (spotImagesPendingRef), instead of waiting for the next pan or zoom as before.
     let pending = 0;
+    const holdImages = Date.now() < pinImagesHoldUntilRef.current;
     for (const sp of sorted) {
       if (!photoPlan.has(sp.id) || isEarly(sp)) continue;
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
       if (specs.has(img)) continue;
-      if (fresh < MAX_NEW_SPOT_IMAGES) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
+      if (fresh < MAX_NEW_SPOT_IMAGES && !holdImages) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
       else pending++;
     }
-    spotImagesPendingRef.current = pending;
+    spotImagesPendingRef.current = holdImages ? 0 : pending;   // while held, the hold's own timer runs the next pass
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
