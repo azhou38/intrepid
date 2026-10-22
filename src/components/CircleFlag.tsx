@@ -9,11 +9,13 @@ interface Props {
   /** Wrap in a padded ring (useful over photos/colored backgrounds). */
   ring?: boolean;
   ringColor?: string;
+  /** Ring thickness in px (default 2). */
+  ringWidth?: number;
   style?: StyleProp<ViewStyle>;
 }
 
 /** Circular country flag image (bundled; utils/flags), used anywhere a flag icon appears in the app. */
-export default function CircleFlag({ countryCode, size = 20, ring = false, ringColor = '#fff', style }: Props) {
+export default function CircleFlag({ countryCode, size = 20, ring = false, ringColor = '#fff', ringWidth = 2, style }: Props) {
   const img = (
     <View style={{ width: size, height: size, borderRadius: size / 2, overflow: 'hidden', backgroundColor: '#E5E7EB' }}>
       <Image
@@ -24,7 +26,7 @@ export default function CircleFlag({ countryCode, size = 20, ring = false, ringC
     </View>
   );
   if (!ring) return <View style={style}>{img}</View>;
-  const ringSize = size + 4;
+  const ringSize = size + ringWidth * 2;
   return (
     <View style={[{
       width: ringSize, height: ringSize, borderRadius: ringSize / 2,
