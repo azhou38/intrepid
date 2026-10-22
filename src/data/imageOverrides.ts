@@ -581,6 +581,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Cape Mentelle, May 2025 07.jpg": { x: 0.45, y: 0.72 },
   "File:Northern end of the Cape to Cape Track, October 2023 03.jpg": { x: 0.6, y: 0.5 },
   "Walpole Wilderness": { x: 0.65, y: 0.5 },
+  "Fitzgerald River National Park": { x: 0.52, y: 0.52, zoom: 1.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1930,6 +1931,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Margaret River Region": "Cape Freycinet and Conto's Beach.jpg",
   "Walpole Wilderness": "Walpole-Nornalup - Tree Top Walk 2.JPG",
   "Stirling Range National Park": "Bluff Knoll 1 Stirling Range NP II-2012.jpeg",
+  "Fitzgerald River National Park": "Fitzgerald River National Park.jpg",
 };
 
 /**

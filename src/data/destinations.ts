@@ -1825,6 +1825,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [9, 10, 11, 12],
     bestTimeBlurb: "Wildflowers and birdlife are at their best in {months}, and the milder days suit the steep summit climbs.",
   },
+  {
+    id: 'fitzgerald-river-national-park', name: "Fitzgerald River National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -34.0977707, longitude: 119.6255726 },
+    category: 'park', icon: "🐋", rank: 4,
+    tagline: "Remote coastal wilderness of quartzite peaks, quiet inlets and whale-watching headlands.",
+    description: "Fitzgerald River National Park covers a long stretch of the south coast between Bremer Bay and Hopetoun, with the quartzite peaks of the Barrens Range rising behind its beaches and inlets. Seventy-five of its plant species grow nowhere else, and around 200 bird species live here. In the west, Point Ann looks over bays where southern right whales calve; the east has short summit walks, swimming beaches and the 23 km Hakea Trail, and much of the coast between is reached only by four-wheel drive.",
+    whyVisit: ["Look across the bay from Point Ann", "Climb East Mount Barren for coast views", "Visit the deep valley of Hamersley Inlet"],
+    whyVisitPhotos: ["Fitzgerald River National Park.jpg", "East Mount Barren.jpg", "Hamersley Inlet reflections.jpg"],
+    highlights: ["Point Ann lookout", "Summit views", "Valley inlet"],
+    goodToKnow: [
+      { icon: "🚙", title: "Check road access", detail: "Many park roads are gravel: avoid them when wet and obey closures, which stop dieback spreading. Quoin Head and Whalebone Beach need a high-clearance 4WD." },
+      { icon: "🎟️", title: "Park entry fee", detail: "Entry is $17 per vehicle ($10 concession). A WA Parks pass covers it, and dogs are not allowed anywhere in the park." },
+    ],
+    bestMonths: [8, 9, 10],
+    bestTimeBlurb: "In {months} southern right whales are still calving off Point Ann and the coastal heath is in flower.",
+    seasonalTags: [{ tag: 'wildlife-migration', months: [6, 7, 8, 9, 10], strength: 0.6 }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
