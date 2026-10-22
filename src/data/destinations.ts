@@ -1707,6 +1707,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [5, 6, 7, 8, 9],
     bestTimeBlurb: "The cooler months, {months}, bring mild days for walking Hannan Street and the lookouts; summers are hot.",
   },
+  {
+    id: 'hyden', name: "Hyden", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 35,
+    continent: 'Oceania', coordinates: { latitude: -32.4487288, longitude: 118.864003 },
+    category: 'landmark', icon: "🌊", rank: 3,
+    tagline: "Wheatbelt town beside Wave Rock, a granite cliff curled like a breaking surf wave.",
+    description: "Hyden is a small Wheatbelt town in the Shire of Kondinin, about four hours' drive east of Perth. Most visitors come for Wave Rock, the 15 m granite wave on the north face of Hyden Rock, and the short loop walk to Hippo's Yawn. Other granite outcrops rise from the farmland around it, among them The Humps, where Mulka's Cave holds hundreds of Aboriginal hand stencils.",
+    whyVisit: ["Walk beneath the curl of Wave Rock", "See hand stencils in Mulka's Cave", "See the colours of salt lake Lake Magic"],
+    whyVisitPhotos: ["Wave Rock - Cooke.jpg", "Mulkas cave.jpg", "Lake Magic, Hyden, Western Australia, October 2020 01.jpg"],
+    highlights: ["Granite wave", "Aboriginal rock art", "Gypsum salt lake"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Pay the vehicle fee", detail: "Wave Rock charges $12 per vehicle, paid at the meter or kiosk once you are in the reserve." },
+      { icon: "🚗", title: "A long day from Perth", detail: "Wave Rock is about 340 km from Perth, four hours each way by car; day coach tours also run from the city." },
+      { icon: "⚠️", title: "Keep off the lakeshore", detail: "Don't drive onto the shore of Lake Magic: vehicles bog in the soft ground, and recovery costs $500." },
+    ],
+    bestMonths: [9, 10, 11],
+    bestTimeBlurb: "Spring, {months}, brings wildflowers and orchids to the bush around the granite outcrops.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
