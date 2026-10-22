@@ -33,6 +33,10 @@ if len(d.get('highlights', [])) != n_why:
     sys.exit(f'refusing: highlights must have one entry per reason ({n_why})')
 if not 2 <= len(d.get('goodToKnow', [])) <= 3 or any(len(t.get('detail', '')) > 160 for t in d.get('goodToKnow', [])):
     sys.exit('refusing: goodToKnow must have two or three entries (3 for rank 1-3, 2 for rank 4-5), each detail 160 characters or fewer')
+import subprocess as _sp
+_fit = _sp.run(['python3', 'scripts/curation/tagline-fit.py', '--text', d.get('tagline', '')], capture_output=True, text=True)
+if _fit.returncode != 0:
+    sys.exit(f"refusing: the tagline must fill exactly two lines of the header (WRITING.md); tagline-fit.py says {_fit.stdout.splitlines()[0] if _fit.stdout else _fit.stderr}")
 if d['bestTimeBlurb'].count('{months}') != 1:
     sys.exit('refusing: bestTimeBlurb needs exactly one {months}')
 
