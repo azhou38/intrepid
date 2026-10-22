@@ -1,12 +1,21 @@
 # WA run tally (read out in the final report)
 
 ## Left out / not added
+- Bunda Cliffs: in South Australia, outside the run.
+- Pilbara recall: Pretty Pool, Cleaverville Beach, Miaree Pool, Crossing Pool (closed to campers since 2013), Whim Creek (hotel only): no reachable visitor source found.
 ## Added but weak
 ## Needs the owner
+- Boundary reconciliation: six places rejected by one region as another's were moved to their council area's region and judged there: Fernhook Falls, Mandalay Beach, Mount Frankland NP, Peppermint Grove Beach (South West); Sunset Beach, Geraldton (Coral Coast); Yongernow Malleefowl Centre (Great Southern).
 - Filter overrides by me: Wittenoom (Pilbara) moved from auto-keep to the judge (asbestos ghost town, state warns against visiting).
 - Filter overrides by me (moved from auto-reject to the judge): Sacred Heart Church, Beagle Bay (church rule; visitors see the mother-of-pearl altar); Merredin WWII Army Hospital Sites (hospital rule; a heritage site).
 ## Photos still missing
 ## Not verified
+- Wrong enumerator data to fix at Pins/scoring: London Bridge, Sandstone (England's coordinates and views); Big Lobster, Coral Coast (South Australia's views); Nanny Goat Hill (Ottawa coordinates, rejected anyway); Smiths Beach (Yallingup's town point); Museum of the Great Southern (Perth WA Museum point).
+- Brierley Jigsaw Gallery, Bridgetown: a permanent stop found behind the Puzzletown festival listing; not enumerated or judged.
+- Waterfall Beach (William Bay NP, Denmark): DBCA site the Great Southern enumeration missed; not judged.
+- Perth: rottnestisland.com and sealink.com.au block scripts; Rottnest spots' second sources were operator pages: check the island authority's pages in the browser at Quill. Wrong enumerator coordinates on South Beach (Miami), Cathedral Rocks (Antarctica), Henley Park (England): re-pin. Houghtons Wines sold in 2019 (now Nikola Estate): not judged under its current name.
+- Golden Outback: wrong enumerator coordinates to replace at Pins: Museum of the Goldfields (Perth WA Museum point), Esperance Bird and Animal Park (Gibson locality), Hannans North Tourist Mine (Hall of Fame point).
+- Great Southern proposer: Sepucralis Hill Lookout and the Mount Barren walk (Fitzgerald River NP) were rejected by the Golden Outback judge as outside its region; make sure the Great Southern covers them.
 - South West (Atlas): australiassouthwest.com blocks scripts (403); its 178 attraction listings were read in the in-app browser through the site's own listings API and passed to the South West and Great Southern enumerators (curation/wa/sources/).
 - Perth (Atlas): first pass missed Perth itself, Elizabeth Quay, Matilda Bay, Heirisson Island, London Court, Araluen, Leighton Beach and others; added in a recall pass (252 candidates).
 - Kimberley (Atlas): 53 candidates without coordinates (OSM down during enumeration); area-level Wikipedia pins for Cape Leveque, Horizontal Falls, Buccaneer Archipelago, Montgomery Reef.
