@@ -1324,15 +1324,15 @@ isVisited ? (
               <View style={st.heroContent}>
                 <Text style={[st.heroName, heroNameSize(activeSpot.name)]}>{activeSpot.name}</Text>
                 <View style={st.heroMeta}>
+                  {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} />}
+                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
                   {/* A standalone spot has no destination to name — just its country. */}
                   {!!destination && (
                     <>
-                      <Text style={st.heroMetaTxt}>{destination.name}</Text>
                       <View style={st.heroMetaDivider} />
+                      <Text style={st.heroMetaTxt}>{destination.name}</Text>
                     </>
                   )}
-                  {!!spotCountryCode(activeSpot) && <CircleFlag countryCode={spotCountryCode(activeSpot)!} size={13} />}
-                  <Text style={[st.heroMetaTxt, { marginLeft: 4 }]}>{spotCountry(activeSpot)}</Text>
                 </View>
               </View>
             </Reanimated.View>
