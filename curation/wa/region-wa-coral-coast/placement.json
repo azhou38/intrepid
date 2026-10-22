@@ -1,0 +1,3768 @@
+{
+ "region": "wa-coral-coast",
+ "existing_fixes": [],
+ "existing_in_app": "none: Western Australia has no destination or spot in src/data/destinations.ts or spots.ts; none of the ids below is in either file or their git history (checked with git log -S).",
+ "new_destinations": [
+  {
+   "id": "shark-bay",
+   "name": "Shark Bay",
+   "action": "new-destination",
+   "category": "nature",
+   "rank": 2,
+   "coordinates": null,
+   "provisional_coordinates": {
+    "latitude": -25.92694444,
+    "longitude": 113.53388889
+   },
+   "coordinates_source": "Denham, Shark Bay's main town and visitor hub (Wikipedia 'Denham, Western Australia'); to be set to the OSM place=town point or the Discovery Centre area in Pipeline C",
+   "defaultZoomSpanKm": 115,
+   "spots": [
+    "shark-bay-1",
+    "shark-bay-2",
+    "shark-bay-3",
+    "shark-bay-4",
+    "shark-bay-5",
+    "shark-bay-6",
+    "shark-bay-7",
+    "shark-bay-8",
+    "shark-bay-9",
+    "shark-bay-10",
+    "shark-bay-11",
+    "shark-bay-12"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage 'Shark Bay' region article (https://en.wikivoyage.org/wiki/Shark_Bay); UNESCO World Heritage Area 'Shark Bay, Western Australia'; Australia's Coral Coast destination pages",
+    "wording": "Wikivoyage heads the article 'Shark Bay' and lists Monkey Mia, Shell Beach, Hamelin Pool, Francois Peron NP, Eagle Bluff and Dirk Hartog Island under it; a World Heritage name travellers plan around"
+   },
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "note": "12 spots; farthest shark-bay-3 at 81.7 km (provisional points) within the 86 km reach. Region destination (like the Sapphire Coast): Denham, Monkey Mia and the Peron Peninsula are its spots. Francois Peron NP has only Skipjack Point among the keeps inside it (2 places), so it is a spot here, not a destination."
+  },
+  {
+   "id": "cape-range-national-park",
+   "name": "Cape Range National Park",
+   "action": "new-destination",
+   "category": "park",
+   "rank": 2,
+   "coordinates": null,
+   "provisional_coordinates": {
+    "latitude": -22.12333333,
+    "longitude": 113.92055556
+   },
+   "coordinates_source": "Wikipedia 'Cape Range National Park' (park point near the west-coast road; Milyering Discovery Centre, 10 km north, is the visitor hub: set in Pipeline C, but not on the Milyering spot's pin)",
+   "defaultZoomSpanKm": 40,
+   "spots": [
+    "cape-range-national-park-1",
+    "cape-range-national-park-2",
+    "cape-range-national-park-3",
+    "cape-range-national-park-4",
+    "cape-range-national-park-5",
+    "cape-range-national-park-6",
+    "cape-range-national-park-7",
+    "cape-range-national-park-8",
+    "cape-range-national-park-9",
+    "cape-range-national-park-10",
+    "cape-range-national-park-11"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage 'Cape Range National Park' article; DBCA Explore Parks 'Cape Range National Park'",
+    "wording": "Wikivoyage: a park on the western side of the Exmouth peninsula, part of the Ningaloo Coast World Heritage Area, with Turquoise Bay, Yardie Creek and Mandu Mandu Gorge"
+   },
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "note": "11 spots; farthest cape-range-national-park-2 at 24.8 km (provisional points) within the 30 km reach. Its gorges (Charles Knife, Shothole) are on the east side, reached from Exmouth, but lie inside the park and within the span: park rule (a park's walks and gorges leave the nearby town)."
+  },
+  {
+   "id": "nambung-national-park",
+   "name": "Nambung National Park",
+   "action": "new-destination",
+   "category": "park",
+   "rank": 2,
+   "coordinates": null,
+   "provisional_coordinates": {
+    "latitude": -30.6031,
+    "longitude": 115.1555
+   },
+   "coordinates_source": "Wikivoyage Nambung listing 'Pinnacles Desert Discovery Centre' (the park's visitor centre); not to be shared with the Pinnacles Desert spot's pin",
+   "defaultZoomSpanKm": 25,
+   "spots": [
+    "nambung-national-park-1",
+    "nambung-national-park-2",
+    "nambung-national-park-3",
+    "nambung-national-park-4"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage 'Nambung National Park' article; DBCA Explore Parks 'Nambung National Park'",
+    "wording": "Wikivoyage: the Pinnacles Desert, Lake Thetis, dunes and beaches north of Cervantes"
+   },
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "note": "4 spots; farthest nambung-national-park-4 at 14.1 km (provisional points) within the 19 km reach. Headline: the Pinnacles. Cervantes is the park's gateway village (a spot, as Punakaiki is Paparoa's); Lake Thetis lies just outside the park at Cervantes and is reached from the same base."
+  },
+  {
+   "id": "kalbarri-national-park",
+   "name": "Kalbarri National Park",
+   "action": "new-destination",
+   "category": "park",
+   "rank": 3,
+   "coordinates": null,
+   "provisional_coordinates": {
+    "latitude": -27.7109989,
+    "longitude": 114.1638162
+   },
+   "coordinates_source": "Kalbarri town, the park's base (OSM place=town via Photon); not the Kalbarri spot's pin in the end: Pipeline C sets the hub",
+   "defaultZoomSpanKm": 48,
+   "spots": [
+    "kalbarri-national-park-1",
+    "kalbarri-national-park-2",
+    "kalbarri-national-park-3",
+    "kalbarri-national-park-4",
+    "kalbarri-national-park-5",
+    "kalbarri-national-park-6",
+    "kalbarri-national-park-7",
+    "kalbarri-national-park-8",
+    "kalbarri-national-park-9",
+    "kalbarri-national-park-10",
+    "kalbarri-national-park-11",
+    "kalbarri-national-park-12",
+    "kalbarri-national-park-13"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage 'Kalbarri National Park' (redirects to the 'Kalbarri' article, which covers the town as 'the base for Kalbarri National Park'); Wikivoyage Mid West 'Other destinations: Kalbarri National Park'; DBCA Explore Parks 'Kalbarri National Park'",
+    "wording": "Mid West: 'Kalbarri National Park is in two sections: the 80 km gorge of the Murchison River ... and the coast south of Kalbarri town'"
+   },
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "note": "13 spots; farthest kalbarri-national-park-2 at 32.9 km (provisional points) within the 36 km reach. Every national park is a destination; Kalbarri town is its gateway spot, with the town's own beaches (Blue Holes, Chinaman's Beach). The alternative name 'Kalbarri' (Wikivoyage's title) is for the owner; one destination either way, never both."
+  },
+  {
+   "id": "exmouth",
+   "name": "Exmouth",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 3,
+   "coordinates": null,
+   "provisional_coordinates": {
+    "latitude": -21.93305556,
+    "longitude": 114.12805556
+   },
+   "coordinates_source": "Wikipedia 'Exmouth, Western Australia' town point (to be set to OSM place=town in Pipeline C)",
+   "defaultZoomSpanKm": 50,
+   "spots": [
+    "exmouth-1",
+    "exmouth-2",
+    "exmouth-3",
+    "exmouth-4"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage 'Exmouth (Western Australia)' city article; Australia's Coral Coast Exmouth page",
+    "wording": "Wikivoyage: Ningaloo's main town on the North West Cape, base for Cape Range NP, the reef, the lighthouse and the Muiron Islands trips"
+   },
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "note": "4 spots; farthest exmouth-2 at 33.4 km (provisional points) within the 38 km reach. Holds the North West Cape's town-side sights. Span 50 km only because the Muiron Islands (about 33 km NE, reached by boat from Exmouth) are its spot; without them Exmouth has 3 spots and would not qualify."
+  },
+  {
+   "id": "geraldton",
+   "name": "Geraldton",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 4,
+   "coordinates": null,
+   "provisional_coordinates": {
+    "latitude": -28.77444444,
+    "longitude": 114.60888889
+   },
+   "coordinates_source": "Wikipedia 'Geraldton' city point (OSM place=city to be confirmed in Pipeline C)",
+   "defaultZoomSpanKm": 35,
+   "spots": [
+    "geraldton-1",
+    "geraldton-2",
+    "geraldton-3",
+    "geraldton-4",
+    "geraldton-5",
+    "geraldton-6",
+    "geraldton-7",
+    "geraldton-8"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage 'Geraldton' city article; Wikivoyage Mid West ('the main town')",
+    "wording": "Wikivoyage Mid West: 'Geraldton the main town is a popular kitesurfing, windsurfing, fishing, sailing and surfing spot'; the Geraldton article lists the cathedral, Museum of Geraldton, HMAS Sydney memorial and Esplanade"
+   },
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "note": "8 spots; farthest geraldton-4 at 23.0 km (provisional points) within the 26 km reach. Regional hub (sizable settlement rule). Greenough and its Leaning Trees, about 20 km south, are a day trip from the city."
+  },
+  {
+   "id": "jurien-bay",
+   "name": "Jurien Bay",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 4,
+   "coordinates": null,
+   "provisional_coordinates": {
+    "latitude": -30.297,
+    "longitude": 115.042
+   },
+   "coordinates_source": "Wikipedia 'Jurien Bay, Western Australia' (rounded; Wikivoyage 'The jetty' -30.3025,115.0363 is the foreshore): set to OSM place=town in Pipeline C",
+   "defaultZoomSpanKm": 32,
+   "spots": [
+    "jurien-bay-1",
+    "jurien-bay-2",
+    "jurien-bay-3",
+    "jurien-bay-4"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage 'Jurien Bay' article; Australia's Coral Coast Jurien Bay page",
+    "wording": "Wikivoyage lists Jurien Bay Marine Park, North Head, Sandy Cape and Lesueur National Park from the town"
+   },
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "note": "4 spots; farthest jurien-bay-2 at 18.9 km (provisional points) within the 24 km reach. No named region was found for the stretch (Wikivoyage has no 'Turquoise Coast' page; 'Indian Ocean Drive' is a road), so the town that visitors base in is the destination."
+  }
+ ],
+ "placements": [
+  {
+   "id": "geraldton-1",
+   "name": "Museum of Geraldton",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -28.7682186,
+    "longitude": 114.6120992
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM tourism=museum 'Western Australia Museum - Geraldton' (Photon); Wikivoyage listing -28.7690,114.6120 about 90 m away",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A Western Australian Museum branch whose Shipwrecks Gallery holds relics of the Batavia and Zuytdorp.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Geraldton"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Geraldton's span (0.8 km from its hub, reach 26 km) and reached from Geraldton.",
+   "notes": "Candidate's Wikipedia point was the WA Museum in Perth (wrong); Wikipedia 'Museum of Geraldton' redirects to 'Western Australian Museum', so no wiki title."
+  },
+  {
+   "id": "geraldton-2",
+   "name": "HMAS Sydney II Memorial",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -28.7731484,
+    "longitude": 114.61607
+   },
+   "pin": "HIGH",
+   "coordinates_source": "OSM tourism=attraction 'HMAS Sydney Memorial' (Photon) and Wikivoyage Geraldton listing -28.773152,114.61605 agree",
+   "icon": "⚓",
+   "category": "monument",
+   "bio": "Memorial on Mount Scott to the cruiser HMAS Sydney, lost in 1941, with views over the city.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Geraldton"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Geraldton's span (0.7 km from its hub, reach 26 km) and reached from Geraldton.",
+   "notes": "Judge: show as 'HMAS Sydney II Memorial'."
+  },
+  {
+   "id": "geraldton-3",
+   "name": "St Francis Xavier Cathedral",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -28.7773428,
+    "longitude": 114.6118292
+   },
+   "pin": "HIGH",
+   "coordinates_source": "OSM amenity=place_of_worship 'St Francis Xavier Cathedral Geraldton' and Wikipedia article coordinates agree within 20 m",
+   "wiki": "St Francis Xavier's Cathedral, Geraldton",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Monsignor Hawes' Romanesque cathedral, open to visitors, with a small museum about Hawes beside it.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Geraldton"
+   ],
+   "views": 1789,
+   "counted_sources": 1,
+   "reason": "Inside Geraldton's span (0.4 km from its hub, reach 26 km) and reached from Geraldton."
+  },
+  {
+   "id": "geraldton-4",
+   "name": "Greenough",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.944,
+    "longitude": 114.744
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Mid West / Wikipedia 'Greenough' (rounded, settlement)",
+   "wiki": "Greenough, Western Australia",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Settlement depopulated in the late 19th century, its heritage buildings preserved on the Greenough Flats.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 3812,
+   "counted_sources": 2,
+   "reason": "Inside Geraldton's span (23.0 km from its hub, reach 26 km) and reached from Geraldton.",
+   "notes": "A town that is its own draw (preserved historic settlement, Central Greenough), not a wrapper for the Leaning Trees, which are a separate roadside icon on the flats."
+  },
+  {
+   "id": "geraldton-5",
+   "name": "Leaning Trees of Greenough",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -28.9253321,
+    "longitude": 114.7229608
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM tourism=attraction 'The Leaning Tree' on Brand Highway, Greenough (Nominatim/Photon)",
+   "icon": "🌳",
+   "category": "landmark",
+   "bio": "Trees on the Greenough Flats bent almost at right angles by the wind, with a signed photo stop.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Geraldton's span (20.1 km from its hub, reach 26 km) and reached from Geraldton.",
+   "notes": "Judge: plural 'Leaning Trees of Greenough' (several trees, one signed pull-out)."
+  },
+  {
+   "id": "geraldton-6",
+   "name": "Geraldton Regional Art Gallery",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -28.773382,
+    "longitude": 114.6113042
+   },
+   "pin": "HIGH",
+   "coordinates_source": "OSM tourism=gallery 'Geraldton Regional Art Gallery' (Photon) and Wikivoyage listing -28.7735,114.6115 agree",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Public gallery in Geraldton's former town hall showing changing contemporary exhibitions.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Geraldton"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Geraldton's span (0.3 km from its hub, reach 26 km) and reached from Geraldton."
+  },
+  {
+   "id": "geraldton-7",
+   "name": "Geraldton Esplanade",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -28.773247,
+    "longitude": 114.6028486
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM tourism=attraction 'Esplanade' (Photon), Wikivoyage listing -28.7728,114.6028 agrees",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "Waterfront walkways and a breakwater stroll with views back over the city and sea lions on the rocks.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Geraldton"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Geraldton's span (0.6 km from its hub, reach 26 km) and reached from Geraldton."
+  },
+  {
+   "id": "geraldton-8",
+   "name": "Sunset Beach",
+   "action": "spot",
+   "destination": "geraldton",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.723,
+    "longitude": 114.623
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Sunset Beach, Western Australia' (rounded suburb point; needs OSM natural=beach)",
+   "wiki": "Sunset Beach, Western Australia",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Northern Geraldton beach popular for windsurfing and kitesurfing, with toilets and a car park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "views": 771,
+   "counted_sources": 0,
+   "reason": "Inside Geraldton's span (5.9 km from its hub, reach 26 km) and reached from Geraldton.",
+   "notes": "Moved here from wa-perth at reconciliation; shown name 'Sunset Beach', wiki 'Sunset Beach, Western Australia'."
+  },
+  {
+   "id": "kalbarri-national-park-1",
+   "name": "Kalbarri Skywalk",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.5547184,
+    "longitude": 114.4341605
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM highway=footway 'Kalbarri Skywalk' (the walkway structure, Photon); Wikivoyage listing -27.556,114.434 about 150 m away",
+   "icon": "🌉",
+   "category": "viewpoint",
+   "bio": "Two walkways projecting 100 m above the Murchison River gorge, wheelchair accessible, with a kiosk.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri",
+    "https://exploreparks.dbca.wa.gov.au/site/kalbarri-national-park"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Inside Kalbarri National Park's span (31.8 km from its hub, reach 36 km) and reached from its base."
+  },
+  {
+   "id": "kalbarri-national-park-2",
+   "name": "Nature's Window",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.5530171,
+    "longitude": 114.4460634
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM tourism=viewpoint \"Nature's Window\" (Nominatim/Photon)",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "Sandstone arch framing the Murchison River gorge, reached on foot from the Skywalk car park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (32.9 km from its hub, reach 36 km) and reached from its base.",
+   "notes": "Distinct from the Skywalk (arch vs platforms) though they share the West Loop car park; pins must stay 25 m+ apart."
+  },
+  {
+   "id": "kalbarri-national-park-3",
+   "name": "Z Bend",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.6535367,
+    "longitude": 114.4566839
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM tourism=viewpoint 'Z-Bend Lookout' (Photon); Wikipedia 'Z Bend' -27.6553,114.4553 is the bend itself, 230 m away",
+   "wiki": "Z Bend",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Lookout over a tight bend of the Murchison River gorge, with a steeper trail down to the water.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (29.5 km from its hub, reach 36 km) and reached from its base."
+  },
+  {
+   "id": "kalbarri-national-park-4",
+   "name": "Natural Bridge",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.8275344,
+    "longitude": 114.1106008
+   },
+   "pin": "HIGH",
+   "coordinates_source": "OSM tourism=attraction 'Natural Bridge' on the Bigurda Trail and Wikivoyage 'Kalbarri Castle Cove' listing -27.827,114.112 agree",
+   "icon": "🌊",
+   "category": "viewpoint",
+   "bio": "Sea arch in the cliffs at Castle Cove, seen from lookouts that also take in Island Rock.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (14.0 km from its hub, reach 36 km) and reached from its base.",
+   "notes": "Island Rock (rejected as a duplicate) is in this spot's bio: one stop with shared lookouts at Castle Cove."
+  },
+  {
+   "id": "kalbarri-national-park-5",
+   "name": "Kalbarri",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.7109989,
+    "longitude": 114.1638162
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM place=town 'Kalbarri' (Photon)",
+   "wiki": "Kalbarri, Western Australia",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Holiday town at the mouth of the Murchison River, base for the park's gorges and coastal cliffs.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri",
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 13184,
+   "counted_sources": 3,
+   "reason": "Inside Kalbarri National Park's span (0.0 km from its hub, reach 36 km) and reached from its base.",
+   "notes": "Gateway town with draws of its own (river-mouth beaches, foreshore); listed as the park's spot, not a destination of its own (its own beaches are 2 spots)."
+  },
+  {
+   "id": "kalbarri-national-park-6",
+   "name": "Ross Graham Lookout",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.811335,
+    "longitude": 114.472893
+   },
+   "pin": "HIGH",
+   "coordinates_source": "OSM highway=path 'Ross Graham Lookout' and Wikivoyage listing -27.811,114.473 agree within 50 m",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Gorge lookout with an easy 350 m trail down to the Murchison River, the park's easiest river access.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (32.4 km from its hub, reach 36 km) and reached from its base."
+  },
+  {
+   "id": "kalbarri-national-park-7",
+   "name": "Hawks Head Lookout",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -27.8183,
+    "longitude": 114.464
+   },
+   "coordinates_source": "provisional only, not a pin: OSM 'Hawks Head Road' (the access road, not the lookout)",
+   "icon": "🦅",
+   "category": "viewpoint",
+   "bio": "Lookout on a natural overhang above the Murchison River gorge, 2 km north of Ross Graham Lookout.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (31.9 km from its hub, reach 36 km) and reached from its base."
+  },
+  {
+   "id": "kalbarri-national-park-8",
+   "name": "Red Bluff",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -27.7494,
+    "longitude": 114.141
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Kalbarri listing 'Red Bluff' (OSM match is a path)",
+   "icon": "🏜️",
+   "category": "viewpoint",
+   "bio": "Beach, cliffs and lookout at the north end of Kalbarri's coastal cliffs, near Wittecarra Creek.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (4.8 km from its hub, reach 36 km) and reached from its base."
+  },
+  {
+   "id": "kalbarri-national-park-9",
+   "name": "Pot Alley",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -27.7613,
+    "longitude": 114.1366
+   },
+   "coordinates_source": "provisional only, not a pin: OSM 'Pot Alley Road' (the access road)",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Ocean gorge in Kalbarri's coastal cliffs with a 400 m rocky trail down to a secluded beach.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (6.2 km from its hub, reach 36 km) and reached from its base."
+  },
+  {
+   "id": "kalbarri-national-park-10",
+   "name": "Mushroom Rock",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.7528142,
+    "longitude": 114.1359784
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM natural=rock 'Mushroom Rock' on the Mushroom Rock - Rainbow Valley Trail (Nominatim)",
+   "icon": "🍄",
+   "category": "nature",
+   "bio": "Mushroom-shaped rock on Kalbarri's coast, circled by a 1.5 km loop trail along the cliffs.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (5.4 km from its hub, reach 36 km) and reached from its base.",
+   "notes": "Rainbow Valley (rejected as a duplicate) is on this loop."
+  },
+  {
+   "id": "kalbarri-national-park-11",
+   "name": "Eagle Gorge",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -27.7677861,
+    "longitude": 114.1309237
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "OSM natural=gorge 'Eagle Gorge' (Nominatim); Wikivoyage listing -27.769,114.129 about 200 m away",
+   "icon": "🦅",
+   "category": "viewpoint",
+   "bio": "Coastal gorge lookout with a trail to the beach, and the start of the Bigurda Trail to Natural Bridge.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 221,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (7.1 km from its hub, reach 36 km) and reached from its base."
+  },
+  {
+   "id": "kalbarri-national-park-12",
+   "name": "Blue Holes",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -27.7194,
+    "longitude": 114.1533
+   },
+   "coordinates_source": "provisional only, not a pin: OSM 'Kalbarri Blue Holes Fish Habitat Protection Area' (protected-area centroid)",
+   "icon": "🤿",
+   "category": "beach",
+   "bio": "Rocky stone basins on Kalbarri's shore, a protected fish habitat known for snorkelling.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (1.4 km from its hub, reach 36 km) and reached from its base.",
+   "notes": "In Kalbarri town, outside the park boundary, but inside the span and reached from the park's base town."
+  },
+  {
+   "id": "kalbarri-national-park-13",
+   "name": "Chinaman's Beach",
+   "action": "spot",
+   "destination": "kalbarri-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -27.711,
+    "longitude": 114.164
+   },
+   "coordinates_source": "provisional only, not a pin: Kalbarri town (the beach is at the river mouth in town)",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sheltered beach at the Murchison River mouth in Kalbarri, a safe swimming spot for families.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Kalbarri National Park's span (0.0 km from its hub, reach 36 km) and reached from its base.",
+   "notes": "In Kalbarri town, outside the park boundary, but inside the span and reached from the park's base town."
+  },
+  {
+   "id": "shark-bay-1",
+   "name": "Monkey Mia",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.7947,
+    "longitude": 113.717
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage listing / Wikipedia 'Monkey Mia' (village point; the visitor point is the dolphin beach)",
+   "wiki": "Monkey Mia",
+   "icon": "🐬",
+   "category": "nature",
+   "bio": "Beach where wild bottlenose dolphins come into the shallows each morning to be fed under ranger supervision.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Monkey_Mia",
+    "https://en.wikivoyage.org/wiki/Shark_Bay",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 9585,
+   "counted_sources": 3,
+   "reason": "Inside Shark Bay's span (23.5 km from its hub, reach 86 km) and reached from its base."
+  },
+  {
+   "id": "shark-bay-2",
+   "name": "Shell Beach",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -26.21081,
+    "longitude": 113.76428
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "Wikipedia 'Shell Beach (Western Australia)' (the beach's own article); OSM 'Shell Beach' car park -26.2174,113.7771 is 1.5 km SE",
+   "wiki": "Shell Beach (Western Australia)",
+   "icon": "🐚",
+   "category": "beach",
+   "bio": "Beach made entirely of tiny cockle shells, piled metres deep along the shore of Shark Bay.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Shark_Bay",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 5545,
+   "counted_sources": 2,
+   "reason": "Inside Shark Bay's span (39.1 km from its hub, reach 86 km) and reached from its base."
+  },
+  {
+   "id": "shark-bay-3",
+   "name": "Hamelin Pool",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -26.4,
+    "longitude": 114.16
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Shark Bay listing 'Hamelin Pool' (Wikipedia's reserve point -26.441,114.349 is a centroid)",
+   "wiki": "Hamelin Pool Marine Nature Reserve",
+   "icon": "🪸",
+   "category": "nature",
+   "bio": "Hypersaline bay where living stromatolites, among the oldest forms of life, grow in the shallows.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Shark_Bay",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 3486,
+   "counted_sources": 2,
+   "reason": "Inside Shark Bay's span (81.7 km from its hub, reach 86 km) and reached from its base.",
+   "notes": "Judge: name 'Hamelin Pool' (wiki 'Hamelin Pool Marine Nature Reserve'). The board says the stromatolite boardwalk is closed; they can still be seen from the Hamelin Pool quarry: Pipeline C to confirm access and pin the viewing point."
+  },
+  {
+   "id": "shark-bay-4",
+   "name": "Francois Peron National Park",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.8382,
+    "longitude": 113.5563
+   },
+   "coordinates_source": "provisional only, not a pin: OSM tourism 'Peron Homestead' (the park's visitor point, Nominatim)",
+   "wiki": "Francois Peron National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Peron Peninsula park of red sand cliffs and turquoise water, reached by 4WD tracks north of Denham.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/francois-peron-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Denham",
+    "https://exploreparks.dbca.wa.gov.au/site/francois-peron-national-park"
+   ],
+   "views": 8746,
+   "counted_sources": 2,
+   "reason": "Inside Shark Bay's span (10.1 km from its hub, reach 86 km) and reached from its base.",
+   "notes": "A national park with only one other kept place inside it (Skipjack Point), so a spot of the Shark Bay region, not a destination (Beowa in the Sapphire Coast precedent)."
+  },
+  {
+   "id": "shark-bay-5",
+   "name": "Dirk Hartog Island",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.833,
+    "longitude": 113.033
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage listing 'Dirk Hartog Island' (island point; the visitor point is the homestead/landing)",
+   "wiki": "Dirk Hartog Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Island where Dirk Hartog landed in 1616, now a national park reached by barge, ferry or flight.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Shark_Bay",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 16267,
+   "counted_sources": 2,
+   "reason": "Inside Shark Bay's span (51.2 km from its hub, reach 86 km) and reached from its base.",
+   "notes": "Reached by barge from Shelter Bay (Steep Point area), ferry or flight; pin at the visitor landing/homestead, not the island centroid."
+  },
+  {
+   "id": "shark-bay-6",
+   "name": "Shark Bay World Heritage Discovery Centre",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.928102,
+    "longitude": 113.534782
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Shark Bay listing's own geo tag (not yet checked against OSM)",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Denham centre with exhibits on Shark Bay's World Heritage wildlife, stromatolites and history.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Denham"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Shark Bay's span (0.2 km from its hub, reach 86 km) and reached from its base."
+  },
+  {
+   "id": "shark-bay-7",
+   "name": "Denham",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.9281,
+    "longitude": 113.5372
+   },
+   "coordinates_source": "provisional only, not a pin: OSM boundary 'Denham' (Nominatim); needs place=town",
+   "wiki": "Denham, Western Australia",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Shark Bay's main town, on the Peron Peninsula, and the base for Monkey Mia and Francois Peron.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Denham",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 11393,
+   "counted_sources": 2,
+   "reason": "Inside Shark Bay's span (0.4 km from its hub, reach 86 km) and reached from its base.",
+   "notes": "Kept as a town with its own draws (foreshore, base town); the Discovery Centre, Ocean Park and Little Lagoon are separate spots. Owner may fold Denham into the destination description if it reads as a wrapper."
+  },
+  {
+   "id": "shark-bay-8",
+   "name": "Steep Point",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -26.1522827,
+    "longitude": 113.1560635
+   },
+   "pin": "HIGH",
+   "coordinates_source": "OSM natural=cape 'Steep Point' and Wikipedia article coordinates agree",
+   "wiki": "Steep Point",
+   "icon": "🧭",
+   "category": "viewpoint",
+   "bio": "The westernmost point of the Australian mainland, a cliff headland reached only by 4WD.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Shark_Bay"
+   ],
+   "views": 5215,
+   "counted_sources": 1,
+   "reason": "Inside Shark Bay's span (45.3 km from its hub, reach 86 km) and reached from its base.",
+   "notes": "4WD only. Inside the Shark Bay World Heritage Area, 43 km from Denham."
+  },
+  {
+   "id": "shark-bay-9",
+   "name": "Eagle Bluff",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -26.09,
+    "longitude": 113.58
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Shark Bay listing 'Eagle Bluff' (3 decimals)",
+   "icon": "🦈",
+   "category": "viewpoint",
+   "bio": "Clifftop boardwalk south of Denham with turtles and rays visible in the shallows below.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Shark_Bay"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Shark Bay's span (18.7 km from its hub, reach 86 km) and reached from its base."
+  },
+  {
+   "id": "shark-bay-10",
+   "name": "Skipjack Point",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.5,
+    "longitude": 113.5
+   },
+   "coordinates_source": "provisional only, not a pin: rough: north tip of the Peron Peninsula (no source point found; not a pin)",
+   "icon": "🐢",
+   "category": "viewpoint",
+   "bio": "Two viewing platforms over sharks, rays and dolphins, and the start of a trail to Cape Peron.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Denham"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Shark Bay's span (47.6 km from its hub, reach 86 km) and reached from its base."
+  },
+  {
+   "id": "shark-bay-11",
+   "name": "Little Lagoon",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.89,
+    "longitude": 113.55
+   },
+   "coordinates_source": "provisional only, not a pin: rough: 4 km north of Denham per Wikivoyage (no source point; not a pin)",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Shallow, sheltered lagoon north of Denham, good for paddling and reached by a trail from town.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Shark_Bay"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Shark Bay's span (4.4 km from its hub, reach 86 km) and reached from its base."
+  },
+  {
+   "id": "shark-bay-12",
+   "name": "Ocean Park Aquarium",
+   "action": "spot",
+   "destination": "shark-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -25.98,
+    "longitude": 113.56
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage listing / Wikipedia 'Ocean Park Aquarium'",
+   "wiki": "Ocean Park Aquarium",
+   "icon": "🐠",
+   "category": "entertainment",
+   "bio": "Aquarium in Denham with rescued turtles and sharks, shown on continuous guided tours.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Denham",
+    "https://en.wikivoyage.org/wiki/Shark_Bay"
+   ],
+   "facts_source": "Wikivoyage Shark Bay: daily 9AM-5PM",
+   "views": 777,
+   "counted_sources": 2,
+   "reason": "Inside Shark Bay's span (6.5 km from its hub, reach 86 km) and reached from its base."
+  },
+  {
+   "id": "nambung-national-park-1",
+   "name": "Pinnacles Desert",
+   "action": "spot",
+   "destination": "nambung-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.60583333,
+    "longitude": 115.1575
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'The Pinnacles (Western Australia)'",
+   "wiki": "The Pinnacles (Western Australia)",
+   "icon": "🗿",
+   "category": "nature",
+   "bio": "Field of limestone pillars in desert sand, seen from a loop drive with photo stops and walking trails.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Nambung_National_Park",
+    "https://exploreparks.dbca.wa.gov.au/site/nambung-national-park"
+   ],
+   "views": 17883,
+   "counted_sources": 2,
+   "reason": "Inside Nambung National Park's span (0.4 km from its hub, reach 19 km) and reached from its base."
+  },
+  {
+   "id": "nambung-national-park-2",
+   "name": "Lake Thetis",
+   "action": "spot",
+   "destination": "nambung-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.50722222,
+    "longitude": 115.08055556
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Lake Thetis' (lake centroid; visitor point is the car park/boardwalk)",
+   "wiki": "Lake Thetis",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Salt lake near Cervantes where living stromatolites, now rare, line the shore.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cervantes_(Western_Australia)",
+    "https://exploreparks.dbca.wa.gov.au/site/nambung-national-park"
+   ],
+   "views": 3579,
+   "counted_sources": 2,
+   "reason": "Inside Nambung National Park's span (12.9 km from its hub, reach 19 km) and reached from its base."
+  },
+  {
+   "id": "nambung-national-park-3",
+   "name": "Hangover Bay",
+   "action": "spot",
+   "destination": "nambung-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.593,
+    "longitude": 115.104
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Nambung listing 'Hangover Bay'",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "White-sand beach in Nambung National Park for swimming and snorkelling, where dolphins and sea lions visit.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cervantes_(Western_Australia)"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Nambung National Park's span (5.1 km from its hub, reach 19 km) and reached from its base."
+  },
+  {
+   "id": "nambung-national-park-4",
+   "name": "Cervantes",
+   "action": "spot",
+   "destination": "nambung-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.5015,
+    "longitude": 115.0676
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Nambung listing 'Cervantes Post Office' (town centre proxy)",
+   "wiki": "Cervantes, Western Australia",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Fishing village at the gateway to Nambung National Park, base for the Pinnacles and sea lion trips.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cervantes_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 16353,
+   "counted_sources": 2,
+   "reason": "Inside Nambung National Park's span (14.1 km from its hub, reach 19 km) and reached from its base."
+  },
+  {
+   "id": "jurien-bay-1",
+   "name": "Jurien Bay Marine Park",
+   "action": "spot",
+   "destination": "jurien-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.36666667,
+    "longitude": 114.96666667
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Jurien Bay Marine Park' (marine-area point, in the sea)",
+   "wiki": "Jurien Bay Marine Park",
+   "icon": "🦭",
+   "category": "nature",
+   "bio": "Offshore limestone reefs and islands where sea lions breed, visited by boat for snorkelling and diving.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Jurien_Bay",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 500,
+   "counted_sources": 2,
+   "reason": "Inside Jurien Bay's span (10.6 km from its hub, reach 24 km) and reached from Jurien Bay."
+  },
+  {
+   "id": "jurien-bay-2",
+   "name": "Lesueur National Park",
+   "action": "spot",
+   "destination": "jurien-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.1344,
+    "longitude": 115.101
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage / Wikipedia 'Lesueur National Park' (park point; visitor point is Lesueur Drive)",
+   "wiki": "Lesueur National Park",
+   "icon": "🌸",
+   "category": "nature",
+   "bio": "Wildflower park with profuse spring displays, explored on an 18.5 km sealed scenic drive.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/lesueur-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Jurien_Bay",
+    "https://exploreparks.dbca.wa.gov.au/site/lesueur-national-park",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 1258,
+   "counted_sources": 3,
+   "reason": "Inside Jurien Bay's span (18.9 km from its hub, reach 24 km) and reached from Jurien Bay."
+  },
+  {
+   "id": "jurien-bay-3",
+   "name": "Sandy Cape",
+   "action": "spot",
+   "destination": "jurien-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.1833,
+    "longitude": 114.9989
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Jurien Bay listing 'Sandy Cape'",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sheltered white beach north of Jurien Bay for swimming and snorkelling, with dunes behind it.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Jurien_Bay"
+   ],
+   "views": 1293,
+   "counted_sources": 1,
+   "reason": "Inside Jurien Bay's span (13.3 km from its hub, reach 24 km) and reached from Jurien Bay."
+  },
+  {
+   "id": "jurien-bay-4",
+   "name": "North Head",
+   "action": "spot",
+   "destination": "jurien-bay",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.231,
+    "longitude": 114.996
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Jurien Bay listing 'North Head'",
+   "icon": "🗼",
+   "category": "historic",
+   "bio": "Headland north of Jurien Bay with the remains of a Second World War radar station and walk trails.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Jurien_Bay"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Jurien Bay's span (8.6 km from its hub, reach 24 km) and reached from Jurien Bay."
+  },
+  {
+   "id": "exmouth-1",
+   "name": "Vlamingh Head Lighthouse",
+   "action": "spot",
+   "destination": "exmouth",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -21.80829,
+    "longitude": 114.11037
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Vlamingh Head Lighthouse'; Wikivoyage -21.808,114.112 (170 m); no OSM check yet",
+   "wiki": "Vlamingh Head Lighthouse",
+   "icon": "🗼",
+   "category": "viewpoint",
+   "bio": "1912 lighthouse on a hill at the tip of the North West Cape, a popular sunrise and sunset lookout.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Exmouth_(Western_Australia)"
+   ],
+   "views": 1149,
+   "counted_sources": 1,
+   "reason": "Inside Exmouth's span (14.0 km from its hub, reach 38 km) and reached from Exmouth."
+  },
+  {
+   "id": "exmouth-2",
+   "name": "Muiron Islands",
+   "action": "spot",
+   "destination": "exmouth",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -21.691,
+    "longitude": 114.319
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Exmouth listing 'South Muiron Island'",
+   "icon": "🤿",
+   "category": "nature",
+   "bio": "Offshore islands off the North West Cape, a turtle breeding ground visited by dive and snorkel boats.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "photo-override"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Exmouth_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Inside Exmouth's span (33.4 km from its hub, reach 38 km) and reached from Exmouth.",
+   "notes": "Judge: keep as one spot named 'Muiron Islands' (not South Muiron alone); 'Muiron Islands' redirects to 'Ningaloo Coast' on Wikipedia, so no wiki title (photo needs an override)."
+  },
+  {
+   "id": "exmouth-3",
+   "name": "Ningaloo Aquarium",
+   "action": "spot",
+   "destination": "exmouth",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -21.933,
+    "longitude": 114.126
+   },
+   "coordinates_source": "provisional only, not a pin: Exmouth town (Wikivoyage listings in town); the aquarium is in the Ningaloo Centre",
+   "icon": "🐠",
+   "category": "museum",
+   "bio": "Aquarium and discovery centre in Exmouth's Ningaloo Centre, with live marine animals and local history.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Exmouth_(Western_Australia)"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Exmouth's span (0.2 km from its hub, reach 38 km) and reached from Exmouth.",
+   "notes": "Judge: the same place as the Ningaloo Centre; one spot. Wikivoyage's hours are garbled: research afresh."
+  },
+  {
+   "id": "exmouth-4",
+   "name": "Bundegi Beach",
+   "action": "spot",
+   "destination": "exmouth",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -21.83,
+    "longitude": 114.18
+   },
+   "coordinates_source": "provisional only, not a pin: rough: just south of Point Murat (-21.815,114.185, Wikivoyage); not a pin",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach near the tip of the North West Cape for swimming, snorkelling, kayaking and fishing.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Exmouth_(Western_Australia)"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Exmouth's span (12.7 km from its hub, reach 38 km) and reached from Exmouth."
+  },
+  {
+   "id": "cape-range-national-park-1",
+   "name": "Turquoise Bay",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.0984,
+    "longitude": 113.8884
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Cape Range listing 'Turquoise Bay'",
+   "icon": "🤿",
+   "category": "beach",
+   "bio": "Ningaloo Reef beach where snorkellers reach coral straight from the sand, at any tide.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park",
+    "https://en.wikivoyage.org/wiki/Exmouth_(Western_Australia)"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Inside Cape Range National Park's span (4.3 km from its hub, reach 30 km) and reached from its base."
+  },
+  {
+   "id": "cape-range-national-park-2",
+   "name": "Yardie Creek",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.3223,
+    "longitude": 113.8126
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Cape Range listing 'Yardie Creek' (the candidate's Wikipedia point was Yardie Creek Station, wrong)",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Gorge at the end of the park road, explored on a walking trail or a boat tour between red cliffs.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (24.8 km from its hub, reach 30 km) and reached from its base."
+  },
+  {
+   "id": "cape-range-national-park-3",
+   "name": "Oyster Stacks",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.12,
+    "longitude": 113.88
+   },
+   "coordinates_source": "provisional only, not a pin: rough: near North Mandu / Turquoise Bay per Wikivoyage (no source point)",
+   "icon": "🐠",
+   "category": "beach",
+   "bio": "Five rocky islets off the beach, snorkelled at high tide for their fish and molluscs.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (4.2 km from its hub, reach 30 km) and reached from its base.",
+   "notes": "High tide only."
+  },
+  {
+   "id": "cape-range-national-park-4",
+   "name": "Mandu Mandu Gorge",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.149,
+    "longitude": 113.8826
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Cape Range listing 'Mandu Mandu' (campground; the walk needs a route midpoint)",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Scenic gorge in Cape Range, explored on a 3 km return walking trail.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (4.8 km from its hub, reach 30 km) and reached from its base.",
+   "notes": "A walk: pin at the midpoint of the Mandu Mandu Gorge trail."
+  },
+  {
+   "id": "cape-range-national-park-5",
+   "name": "Lakeside Beach",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.03,
+    "longitude": 113.92
+   },
+   "coordinates_source": "provisional only, not a pin: rough: beside Milyering Discovery Centre per Wikivoyage (no source point)",
+   "icon": "🤿",
+   "category": "beach",
+   "bio": "Ningaloo Reef beach with shore snorkelling over coral, near the Milyering visitor centre.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (10.4 km from its hub, reach 30 km) and reached from its base."
+  },
+  {
+   "id": "cape-range-national-park-6",
+   "name": "Charles Knife Canyon",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.0986,
+    "longitude": 114.006
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Exmouth listing 'Charles Knife Canyon'",
+   "icon": "🏜️",
+   "category": "viewpoint",
+   "bio": "Road climbing to the top of the range, with lookouts over Exmouth Gulf and the Badjirrajirra walk.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Exmouth_(Western_Australia)"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (9.2 km from its hub, reach 30 km) and reached from its base.",
+   "notes": "Wikivoyage reports a 2022 post-fire closure; DBCA's current page does not: check DBCA park alerts."
+  },
+  {
+   "id": "cape-range-national-park-7",
+   "name": "Shothole Canyon",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.0649,
+    "longitude": 114.011
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Exmouth listing 'Shothole Canyon'",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Rugged canyon in the east of Cape Range, followed by a 12 km 4WD track along its floor.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park",
+    "https://en.wikivoyage.org/wiki/Exmouth_(Western_Australia)"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Inside Cape Range National Park's span (11.4 km from its hub, reach 30 km) and reached from its base.",
+   "notes": "4WD only. Wikivoyage reports a 2022 post-fire closure; DBCA's current page does not: check DBCA park alerts."
+  },
+  {
+   "id": "cape-range-national-park-8",
+   "name": "Sandy Bay",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.2316,
+    "longitude": 113.843
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Cape Range listing 'Sandy Bay'",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sandy beach free of currents, used for swimming, snorkelling and kitesurfing.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (14.4 km from its hub, reach 30 km) and reached from its base."
+  },
+  {
+   "id": "cape-range-national-park-9",
+   "name": "Milyering Discovery Centre",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -22.0286,
+    "longitude": 113.923
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Cape Range listing 'Milyering Discovery Centre'",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Park visitor centre with displays on Cape Range and Ningaloo Reef, open daily and free.",
+   "hours": "9:00 AM – 3:45 PM",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park",
+    "https://exploreparks.dbca.wa.gov.au/site/cape-range-national-park"
+   ],
+   "facts_source": "Wikivoyage Cape Range NP: daily 9AM-3:45PM; DBCA/judge: free",
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Inside Cape Range National Park's span (10.5 km from its hub, reach 30 km) and reached from its base."
+  },
+  {
+   "id": "cape-range-national-park-10",
+   "name": "Bloodwood Creek Lookout",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": {
+    "latitude": -22.167986,
+    "longitude": 113.862841
+   },
+   "pin": "HIGH",
+   "coordinates_source": "resolve-pin HIGH at enumeration: OSM tourism=viewpoint 'Bloodwood Creek Lookout'",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Lookout platform over a creek system and the coast, with whale watching in season.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (7.7 km from its hub, reach 30 km) and reached from its base."
+  },
+  {
+   "id": "cape-range-national-park-11",
+   "name": "Mangrove Bay",
+   "action": "spot",
+   "destination": "cape-range-national-park",
+   "status": "spot-of-proposed-destination",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -21.9651,
+    "longitude": 113.9433
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Cape Range listing 'Mangrove Bay'",
+   "icon": "🐦",
+   "category": "nature",
+   "bio": "Bird hide over the mangroves near the park's northern entrance, with a campground nearby.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Inside Cape Range National Park's span (17.8 km from its hub, reach 30 km) and reached from its base."
+  },
+  {
+   "id": "dongara",
+   "name": "Dongara",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.2518,
+    "longitude": 114.9307
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Dongara listing 'The Visitor Centre' (town centre proxy)",
+   "wiki": "Dongara, Western Australia",
+   "icon": "🦞",
+   "category": "landmark",
+   "bio": "Old coastal town of heritage buildings and rock lobster boats, with the harbour and beaches of Port Denison.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Dongara",
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 8954,
+   "counted_sources": 3,
+   "reason": "Dongara cluster (Dongara, Big Lobster, Irwin River Trail) is 3 places: below the four-spot bar, so all three stand alone; 63 km from Geraldton, too far for its span. No destination contains it: nearest proposed destination geraldton is 62 km away (reach 26 km).",
+   "notes": "Port Denison merged in (judge: one place, the board's 'Dongara - Port Denison' page). Shown as 'Dongara'."
+  },
+  {
+   "id": "big-lobster-dongara",
+   "name": "Big Lobster",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.2506,
+    "longitude": 114.9371
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Dongara listing's own geo tag 'Big Lobster' (4 decimals)",
+   "icon": "🦞",
+   "category": "landmark",
+   "bio": "Giant fibreglass rock lobster at the highway turn-off into Dongara, a roadside photo stop.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "photo-override"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Dongara"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Part of the 3-place Dongara cluster (below the four-spot bar); 63 km from Geraldton. No destination contains it: nearest proposed destination geraldton is 62 km away (reach 26 km).",
+   "notes": "PHOTO KEY CLASH: Wikipedia 'Big Lobster' is the Kingston SE (South Australia) lobster, so the default photo would be the wrong place: needs a WIKI_IMAGE_OVERRIDES entry keyed 'Big Lobster' only if no other spot uses that key, or a distinct name. Its 8,621 views are the SA lobster's and are not this spot's score."
+  },
+  {
+   "id": "irwin-river-trail",
+   "name": "Irwin River Trail",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.265,
+    "longitude": 114.925
+   },
+   "coordinates_source": "provisional only, not a pin: rough: Irwin River between Dongara and Port Denison (no source point)",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 4.6 km boardwalk loop along both banks of the Irwin River between Dongara and Port Denison.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Dongara"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Part of the 3-place Dongara cluster (below the four-spot bar). No destination contains it: nearest proposed destination geraldton is 63 km away (reach 26 km).",
+   "notes": "A walk: pin at the midpoint of the 4.6 km loop. Estuary crossing is tide-dependent."
+  },
+  {
+   "id": "houtman-abrolhos",
+   "name": "Houtman Abrolhos",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.72,
+    "longitude": 113.78
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Mid West / Wikipedia 'Houtman Abrolhos' (archipelago centre, in the sea)",
+   "wiki": "Houtman Abrolhos",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Over a hundred coral islands off Geraldton where the Batavia was wrecked, reached by boat or plane.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 32196,
+   "counted_sources": 2,
+   "reason": "Offshore archipelago 60-70 km west of Geraldton, reached by boat or plane; would balloon Geraldton's span, so standalone (an island reached on its own). No destination contains it: nearest proposed destination geraldton is 81 km away (reach 26 km)."
+  },
+  {
+   "id": "hutt-lagoon",
+   "name": "Hutt Lagoon",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.16,
+    "longitude": 114.245
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Kalbarri listing 'Hutt Lagoon' (Wikipedia -28.133,114.217 is the lagoon centre)",
+   "wiki": "Hutt Lagoon",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "Salt lagoon near Port Gregory coloured pink by algae, seen from roadside lookouts.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri",
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 8125,
+   "counted_sources": 3,
+   "reason": "Port Gregory/Northampton cluster (Hutt Lagoon, Lynton, Hutt River, Horrocks, Northampton) has no name travellers use as a destination (Wikivoyage files Hutt Lagoon and Hutt River under Kalbarri#See; 'Chapman Valley' is a shire, rejected), and lies 50-70 km from Kalbarri's hub, outside its span: standalone. No destination contains it: nearest proposed destination kalbarri-national-park is 51 km away (reach 36 km)."
+  },
+  {
+   "id": "lynton-convict-depot",
+   "name": "Lynton Convict Depot",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.210088,
+    "longitude": 114.311057
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Lynton Convict Hiring Depot' (no OSM check yet)",
+   "wiki": "Lynton Convict Hiring Depot",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Site of an 1850s convict hiring depot near Port Gregory, whose convicts laid roads to the mines.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri",
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)"
+   ],
+   "views": 1201,
+   "counted_sources": 2,
+   "reason": "Port Gregory cluster: no traveller-used name for a destination; outside Kalbarri NP's and Geraldton's spans. No destination contains it: nearest proposed destination kalbarri-national-park is 57 km away (reach 36 km).",
+   "notes": "Wikipedia title 'Lynton Convict Hiring Depot'."
+  },
+  {
+   "id": "hutt-river-principality",
+   "name": "Hutt River Principality",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.073,
+    "longitude": 114.471
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Kalbarri listing / Wikipedia 'Principality of Hutt River'",
+   "wiki": "Principality of Hutt River",
+   "icon": "👑",
+   "category": "landmark",
+   "bio": "Farm that declared itself an independent micro-nation in 1970, with its own stamps and currency.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "open-to-visitors"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kalbarri",
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)"
+   ],
+   "views": 46338,
+   "counted_sources": 2,
+   "reason": "Port Gregory/Northampton cluster: no traveller-used name; outside every span. No destination contains it: nearest proposed destination kalbarri-national-park is 50 km away (reach 36 km).",
+   "notes": "FLAG FOR OWNER/RESEARCH: Wikivoyage Mid West says the Prince's death and an unpaid tax bill 'put an end to the pantomime in 2020'. If it is no longer open to visitors it fails 'What qualifies' rule 2 and should be withdrawn; placed only because the skeptic kept it."
+  },
+  {
+   "id": "northampton",
+   "name": "Northampton",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.35111111,
+    "longitude": 114.62805556
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Northampton, Western Australia'",
+   "wiki": "Northampton, Western Australia",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Historic town with a heritage walk past 37 buildings, Chiverton House Museum and churches by Monsignor Hawes.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 17509,
+   "counted_sources": 1,
+   "reason": "Small historic town between Geraldton (47 km) and Kalbarri; not inside either span. Not a base with four spots of its own. No destination contains it: nearest proposed destination geraldton is 47 km away (reach 26 km)."
+  },
+  {
+   "id": "horrocks-beach",
+   "name": "Horrocks Beach",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.38165,
+    "longitude": 114.43039
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Horrocks, Western Australia' (settlement point)",
+   "wiki": "Horrocks, Western Australia",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside settlement with a reef-fringed beach and rock art at the nearby Willigully Caves.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 5468,
+   "counted_sources": 1,
+   "reason": "Port Gregory/Northampton cluster: no traveller-used name; outside every span. No destination contains it: nearest proposed destination geraldton is 47 km away (reach 26 km).",
+   "notes": "Wikipedia title is the settlement 'Horrocks, Western Australia'; pin at the beach (OSM natural=beach)."
+  },
+  {
+   "id": "coral-bay",
+   "name": "Coral Bay",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -23.1435,
+    "longitude": 113.771
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Coral Bay listing 'People's Park' (town centre by the beach)",
+   "wiki": "Coral Bay, Western Australia",
+   "icon": "🐠",
+   "category": "beach",
+   "bio": "Resort village on Bill's Bay, where Ningaloo Reef's coral starts a few metres off the sand.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Coral_Bay",
+    "https://en.wikivoyage.org/wiki/Gascoyne",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 9782,
+   "counted_sources": 3,
+   "reason": "Coral Bay keeps 2 places (Coral Bay with its beach, Five Fingers Reef): below the four-spot bar, so standalone; 150 km south of Exmouth. No destination contains it: nearest proposed destination cape-range-national-park is 114 km away (reach 30 km).",
+   "notes": "Coral Bay Beach merged in (judge: the town is the beach); pin at the beach on Bill's Bay (OSM natural=beach), the visitor point."
+  },
+  {
+   "id": "five-fingers-reef",
+   "name": "Five Fingers Reef",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -23.19,
+    "longitude": 113.77
+   },
+   "coordinates_source": "provisional only, not a pin: rough: about 5 km south of Coral Bay per Wikivoyage (no source point)",
+   "icon": "🤿",
+   "category": "beach",
+   "bio": "Shore-snorkelling reef south of Coral Bay, reached by 4WD, with reef sharks, turtles and rays.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Coral_Bay"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Coral Bay cluster has 2 places: standalone. No destination contains it: nearest proposed destination cape-range-national-park is 120 km away (reach 30 km)."
+  },
+  {
+   "id": "ningaloo-reef",
+   "name": "Ningaloo Reef",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": null,
+   "coordinates_source": "provisional only, not a pin: no visitor point yet: the Wikipedia 'Ningaloo Coast' point (-22.5625,113.8103) is a centroid in the sea",
+   "wiki": "Ningaloo Coast",
+   "icon": "🪸",
+   "category": "nature",
+   "bio": "World Heritage fringing reef running 260 km along the coast, close enough to snorkel from the beach.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl",
+    "photo-override"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Cape_Range_National_Park",
+    "https://en.wikivoyage.org/wiki/Ningaloo",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 20292,
+   "counted_sources": 2,
+   "reason": "A 260 km fringing reef reached from Exmouth, Cape Range NP and Coral Bay: a long linear feature, so standalone at a visitor access point (not under whatever it touches). No destination contains it (a 260 km reef).",
+   "notes": "Ningaloo Coast merged in (same place; the 20,292 views are the 'Ningaloo Coast' article's). A 260 km fringing reef: standalone, not a spot of Cape Range NP, Exmouth or Coral Bay. Needs a visitor point not used by another spot (Turquoise Bay, Coral Bay and Five Fingers Reef are spots of their own)."
+  },
+  {
+   "id": "carnarvon",
+   "name": "Carnarvon",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -24.88388889,
+    "longitude": 113.65694444
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Carnarvon, Western Australia'",
+   "wiki": "Carnarvon, Western Australia",
+   "icon": "🍌",
+   "category": "landmark",
+   "bio": "The Gascoyne's main town, at the mouth of the Gascoyne River, home of the OTC Dish.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gascoyne",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 36280,
+   "counted_sources": 2,
+   "reason": "Carnarvon keeps 2 places in town (the town and the space museum); the Quobba coast is 75-150 km north. Below the four-spot bar despite being the Gascoyne hub (no rank 1-2 exemption): standalone. No destination contains it: nearest proposed destination shark-bay is 117 km away (reach 86 km)."
+  },
+  {
+   "id": "carnarvon-space-and-technology-museum",
+   "name": "Carnarvon Space and Technology Museum",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -24.86916667,
+    "longitude": 113.70472222
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'OTC Satellite Earth Station Carnarvon'",
+   "wiki": "OTC Satellite Earth Station Carnarvon",
+   "icon": "📡",
+   "category": "museum",
+   "bio": "Museum under the OTC Dish, which tracked the Gemini and Apollo missions, with an Apollo capsule simulator.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gascoyne"
+   ],
+   "views": 2077,
+   "counted_sources": 1,
+   "reason": "Carnarvon has 2 kept places: standalone. No destination contains it: nearest proposed destination shark-bay is 119 km away (reach 86 km).",
+   "notes": "Judge: keep one spot under the museum's name (it occupies the OTC Dish)."
+  },
+  {
+   "id": "quobba-blowholes",
+   "name": "Quobba Blowholes",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -24.49,
+    "longitude": 113.41
+   },
+   "coordinates_source": "provisional only, not a pin: rough: Point Quobba, 75 km north of Carnarvon per the board (no source point)",
+   "icon": "💨",
+   "category": "nature",
+   "bio": "Blowholes on the coast north of Carnarvon that jet seawater up to 20 m, with a snorkelling lagoon nearby.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/destinations/ningaloo/quobba-and-red-bluff",
+    "https://www.carnarvon.org.au/tours/point-quobba-blowholes-eco-reserve-pass"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Quobba coast (blowholes, Red Bluff, Gnaraloo) is 3 places spread over 75 km of station coast; 'Quobba' itself went to review. Below the four-spot bar: standalone. No destination contains it: nearest proposed destination shark-bay is 160 km away (reach 86 km)."
+  },
+  {
+   "id": "red-bluff-quobba",
+   "name": "Red Bluff",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -24.374,
+    "longitude": 113.42
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Gascoyne listing 'Red Bluff (Western Australia)'",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Remote coastal bluff north of Carnarvon, known for a powerful left-hand reef surf break.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gascoyne"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Quobba coast cluster of 3: standalone. No destination contains it: nearest proposed destination shark-bay is 173 km away (reach 86 km).",
+   "notes": "A different Red Bluff from Kalbarri's; same shown name is allowed."
+  },
+  {
+   "id": "gnaraloo",
+   "name": "Gnaraloo",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -23.82111111,
+    "longitude": 113.52583333
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Gnaraloo' (station point)",
+   "wiki": "Gnaraloo",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Remote station coast with the Tombstones surf breaks and coral snorkelling in Gnaraloo Bay.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 24,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gascoyne"
+   ],
+   "views": 1335,
+   "counted_sources": 1,
+   "reason": "Quobba coast cluster of 3: standalone. No destination contains it: nearest proposed destination cape-range-national-park is 193 km away (reach 30 km)."
+  },
+  {
+   "id": "kennedy-range-national-park",
+   "name": "Kennedy Range National Park",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -24.58,
+    "longitude": 115.05
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Gascoyne listing / Wikipedia 'Kennedy Range National Park' (park point)",
+   "wiki": "Kennedy Range National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Eroded mesa rising from the plain east of Carnarvon, known for spring wildflowers and wallabies.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/kennedy-range-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gascoyne",
+    "https://exploreparks.dbca.wa.gov.au/site/kennedy-range-national-park"
+   ],
+   "views": 1445,
+   "counted_sources": 2,
+   "reason": "A national park with no other kept spot (1 place): below the four-spot bar, so a standalone spot. No destination contains it: nearest proposed destination shark-bay is 214 km away (reach 86 km)."
+  },
+  {
+   "id": "mount-augustus",
+   "name": "Mount Augustus",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -24.325,
+    "longitude": 116.841667
+   },
+   "coordinates_source": "provisional only, not a pin: Wikivoyage Mount Augustus NP listing 'Mount Augustus' (summit area)",
+   "wiki": "Mount Augustus (Western Australia)",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Vast rock monolith on the Gascoyne plain, climbed on a summit hike or circled by drives and trails.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/mount-augustus-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gascoyne",
+    "https://en.wikivoyage.org/wiki/Mount_Augustus_National_Park",
+    "https://exploreparks.dbca.wa.gov.au/site/mount-augustus-national-park"
+   ],
+   "views": 23936,
+   "counted_sources": 3,
+   "reason": "A national park with one kept place (the monolith; the park entry merged): standalone spot. No destination contains it: nearest proposed destination shark-bay is 378 km away (reach 86 km).",
+   "notes": "Mount Augustus National Park merged in (the park exists for the monolith; one spot). Pin on the mountain (summit trail car park or natural=peak), not the park centroid."
+  },
+  {
+   "id": "lancelin",
+   "name": "Lancelin",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -31.014,
+    "longitude": 115.33
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Lancelin, Western Australia' (rounded)",
+   "wiki": "Lancelin, Western Australia",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Coastal town known for kitesurfing and windsurfing, with sandboarding dunes behind it.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 9949,
+   "counted_sources": 1,
+   "reason": "Lancelin keeps 2 places (town, dunes): standalone; 100 km south of Nambung's hub. No destination contains it: nearest proposed destination nambung-national-park is 49 km away (reach 19 km)."
+  },
+  {
+   "id": "lancelin-sand-dunes",
+   "name": "Lancelin Sand Dunes",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -31.0,
+    "longitude": 115.35
+   },
+   "coordinates_source": "provisional only, not a pin: rough: behind Lancelin town (no source point)",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "White sand dunes behind Lancelin used for sandboarding, with views over the town and coast.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Lancelin cluster of 2: standalone. No destination contains it: nearest proposed destination nambung-national-park is 48 km away (reach 19 km).",
+   "notes": "Distinct from Lancelin, which keeps its beaches and kitesurfing."
+  },
+  {
+   "id": "green-head",
+   "name": "Green Head",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -30.05,
+    "longitude": 114.96666667
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Green Head, Western Australia' (rounded)",
+   "wiki": "Green Head, Western Australia",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Coastal village on the Indian Ocean Drive, at the end of a 32 km coastal trail from Jurien Bay.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Jurien_Bay",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 3476,
+   "counted_sources": 2,
+   "reason": "No destination contains it: nearest proposed destination jurien-bay is 28 km away (reach 24 km)."
+  },
+  {
+   "id": "leeman",
+   "name": "Leeman",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.95,
+    "longitude": 114.98
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Leeman, Western Australia' (rounded)",
+   "wiki": "Leeman, Western Australia",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Cray-fishing town with the Point Louise surf break, snorkelling reef and bays for kayaking.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 3134,
+   "counted_sources": 1,
+   "reason": "No destination contains it: nearest proposed destination jurien-bay is 39 km away (reach 24 km)."
+  },
+  {
+   "id": "stockyard-gully-caves",
+   "name": "Stockyard Gully Caves",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.9,
+    "longitude": 115.1
+   },
+   "coordinates_source": "provisional only, not a pin: rough: inland from Leeman per the board (no source point)",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "Limestone cave on an old stock route, walked through for 300 m with a torch.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Jurien_Bay",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Inland from Leeman, outside Jurien Bay's span (reached from Leeman or Jurien Bay as a 4WD trip). No destination contains it: nearest proposed destination jurien-bay is 44 km away (reach 24 km).",
+   "notes": "Judge: name 'Stockyard Gully Caves'. 4WD only; floods in wet periods; torch needed."
+  },
+  {
+   "id": "mullewa",
+   "name": "Mullewa",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.53694444,
+    "longitude": 115.51194444
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Mullewa, Western Australia'",
+   "wiki": "Mullewa, Western Australia",
+   "icon": "🌼",
+   "category": "historic",
+   "bio": "Wildflower town with a Spanish mission-style church and Urawa Nature Reserve nearby.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mid_West_(Western_Australia)",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 8094,
+   "counted_sources": 2,
+   "reason": "Wildflower Country towns (Mullewa, Mingenew, Three Springs, Carnamah, Coalseam CP) are spread over 170 km with no common base; 'Wildflower Country' is the board's seasonal touring brand (rejected by the judge as a region brand, not a place), not a base visitors stay in. Standalone each. No destination contains it: nearest proposed destination geraldton is 92 km away (reach 26 km)."
+  },
+  {
+   "id": "mingenew",
+   "name": "Mingenew",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.19388889,
+    "longitude": 115.44111111
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Mingenew, Western Australia'",
+   "wiki": "Mingenew, Western Australia",
+   "icon": "🌼",
+   "category": "landmark",
+   "bio": "Wildflower Country town with Mingenew Hill lookout, a historical walk and a museum.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 3614,
+   "counted_sources": 1,
+   "reason": "Wildflower Country towns: no common base; standalone. No destination contains it: nearest proposed destination geraldton is 93 km away (reach 26 km)."
+  },
+  {
+   "id": "three-springs",
+   "name": "Three Springs",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.53333333,
+    "longitude": 115.76166667
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Three Springs, Western Australia'",
+   "wiki": "Three Springs, Western Australia",
+   "icon": "🌼",
+   "category": "landmark",
+   "bio": "Wildflower town with a heritage walk and a lookout over a large talc mine.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 4339,
+   "counted_sources": 1,
+   "reason": "Wildflower Country towns: no common base; standalone. No destination contains it: nearest proposed destination jurien-bay is 110 km away (reach 24 km)."
+  },
+  {
+   "id": "carnamah",
+   "name": "Carnamah",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -29.689,
+    "longitude": 115.887
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Carnamah, Western Australia'",
+   "wiki": "Carnamah, Western Australia",
+   "icon": "🚜",
+   "category": "landmark",
+   "bio": "Wheatbelt town with a giant tractor sculpture, an art and heritage trail and a homestead.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://www.australiascoralcoast.com/"
+   ],
+   "views": 3143,
+   "counted_sources": 1,
+   "reason": "Wildflower Country towns: no common base; standalone. No destination contains it: nearest proposed destination jurien-bay is 106 km away (reach 24 km)."
+  },
+  {
+   "id": "coalseam-conservation-park",
+   "name": "Coalseam Conservation Park",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "LOW",
+   "provisional_coordinates": {
+    "latitude": -28.95694444,
+    "longitude": 115.54777778
+   },
+   "coordinates_source": "provisional only, not a pin: Wikipedia 'Coalseam Conservation Park' (park point)",
+   "wiki": "Coalseam Conservation Park",
+   "icon": "🌼",
+   "category": "nature",
+   "bio": "Wildflower park with exposed coal seams, fossils, Irwin Lookout and a plateau loop trail.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/coalseam-conservation-park",
+   "needs_research": [
+    "coordinates",
+    "hours"
+   ],
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/site/coalseam-conservation-park",
+    "https://www.australiascoralcoast.com/"
+   ],
+   "facts_source": "Australia's Coral Coast via enumerator: no park entry fee",
+   "views": 642,
+   "counted_sources": 2,
+   "reason": "A park with one kept place (itself): standalone spot; 37 km from Mingenew, 45 km from Mullewa. No destination contains it: nearest proposed destination geraldton is 94 km away (reach 26 km)."
+  }
+ ],
+ "folded": [
+  {
+   "name": "Geraldton",
+   "disposition": "The destination geraldton itself (not a spot of itself)."
+  },
+  {
+   "name": "Kalbarri National Park",
+   "disposition": "The destination kalbarri-national-park itself."
+  },
+  {
+   "name": "Shark Bay",
+   "disposition": "The destination shark-bay itself."
+  },
+  {
+   "name": "Nambung National Park",
+   "disposition": "The destination nambung-national-park itself; its headline, the Pinnacles Desert, is spot 1."
+  },
+  {
+   "name": "Jurien Bay",
+   "disposition": "The destination jurien-bay itself."
+  },
+  {
+   "name": "Exmouth",
+   "disposition": "The destination exmouth itself."
+  },
+  {
+   "name": "Cape Range National Park",
+   "disposition": "The destination cape-range-national-park itself."
+  }
+ ],
+ "merged": [
+  {
+   "name": "Port Denison",
+   "into": "dongara",
+   "why": "Judge: twin town with Dongara, keep as one place (the board's 'Dongara - Port Denison' page)."
+  },
+  {
+   "name": "Coral Bay Beach",
+   "into": "coral-bay",
+   "why": "Judge: the town is the beach; one spot named Coral Bay pinned at the beach."
+  },
+  {
+   "name": "Ningaloo Coast",
+   "into": "ningaloo-reef",
+   "why": "Same place as Ningaloo Reef (the World Heritage reef and its coast); one spot."
+  },
+  {
+   "name": "Mount Augustus National Park",
+   "into": "mount-augustus",
+   "why": "The park exists for the monolith; one spot, named for what visitors go to see."
+  }
+ ],
+ "duplicates_elsewhere": [],
+ "neighbour_check": [
+  {
+   "standalone": "green-head",
+   "destination": "jurien-bay",
+   "km_from_centre_provisional": 28.4,
+   "why_not_a_spot": "28 km north of Jurien Bay, farther than all four Jurien Bay spots (the farthest, Lesueur NP, is 19 km). Its own seaside village on the Indian Ocean Drive with its own bays and its own visitors; with Leeman and Stockyard Gully it makes 3 places, below the bar. Widening Jurien Bay's span to 55 km would pull in a separate village. Owner may choose to fold Green Head and Leeman into Jurien Bay (span about 60 km) instead."
+  },
+  {
+   "standalone": "leeman",
+   "destination": "jurien-bay",
+   "km_from_centre_provisional": 39.0,
+   "why_not_a_spot": "39 km north of Jurien Bay: a separate cray-fishing town and the base for Stockyard Gully, not reached from Jurien Bay. Outside the 24 km reach; see Green Head."
+  }
+ ],
+ "review": [
+  {
+   "name": "Old Geraldton Gaol",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1 one source only: Wikivoyage says the cells are preserved inside what is now a craft centre (weekdays and Saturday morning).",
+   "objection": "For: preserved 19th-century cells open to look around. Against: one counted source, a craft shop in the building, short visit, limited hours; the board page does not mention it."
+  },
+  {
+   "name": "Point Moore Lighthouse",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rules 1 and 2 split: Wikivoyage and the Coral Coast board both name the 1877 candy-striped tower (Australia's tallest metal lighthouse), but there is no public access to the tower except occasional open days.",
+   "objection": "For: an iconic photographed landmark two sources name, with windsurfing at Point Moore beside it. Against: exterior-only most of the year (rule 2), a short look."
+  },
+  {
+   "name": "Back Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1 two sources but only as a surf break: Wikivoyage calls it Geraldton's most popular surf spot, the board a good break for beginners.",
+   "objection": "For: a beach named by two visitor sources. Against: a suburban surf beach no source recommends as a stop beyond surfing; friend test 'only if nearby'."
+  },
+  {
+   "name": "St Georges Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1 two sources but only as a windsurfing spot (Wikivoyage Do, Coral Coast board's windsurf list).",
+   "objection": "For: named twice. Against: a suburban beach 4 km north of town listed only in activity lists; not a place visitors are sent to see."
+  },
+  {
+   "name": "Irwin District Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1 one source: Wikivoyage Dongara lists the small museum in the 1870s courthouse, police station and jail.",
+   "objection": "For: heritage buildings with a museum inside, on the Dongara Heritage Walk. Against: open only Mon-Sat 10-noon, small, one source; a local-history stop."
+  },
+  {
+   "name": "The Loop, Kalbarri",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rules 1-3 arguable: DBCA promotes the 9 km Loop trail past Nature's Window and Wikivoyage names the Loop; but as described (the loop drive and car park) it overlaps Nature's Window and the Skywalk.",
+   "objection": "For: a named DBCA day hike. Against: near-duplicate of Nature's Window (rule 3) and closed after 7am Nov-Mar; if kept, keep it as 'The Loop Trail' (the hike), not the car park."
+  },
+  {
+   "name": "Port Gregory",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Town wrapper rule: the board's page is about the Pink Lake (Hutt Lagoon) at Port Gregory; the village itself is a small fishing village whose draws are the lagoon and the Lynton convict station beside it.",
+   "objection": "For: the board calls it a popular fishing and diving holiday village with a reef. Against: town listed beside its own attraction (Hutt Lagoon); keep the lagoon, mention the village."
+  },
+  {
+   "name": "Zuytdorp Cliffs",
+   "views": 3845,
+   "counted_sources": 1,
+   "reason": "Rule 1-2 arguable: Wikivoyage names the 150 km cliff line north of Kalbarri, but access is a long 4WD track and the wreck site is off-limits.",
+   "objection": "For: a dramatic named coast with a famous wreck story. Against: one source, no named access point or thing to do, long linear feature; most visitors see it only at Steep Point or from the air."
+  },
+  {
+   "name": "Kalbarri Pelican Feeding",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 4 arguable: Wikivoyage and the board describe the daily 8:45 am pelican feeding at the Grey Street foreshore; a daily custom at a permanent place, not an event, but timed.",
+   "objection": "For: two sources, a daily ritual like the Monkey Mia feeding. Against: it is an activity, not a place (the place is a grassy foreshore), and there is nothing to see outside that half hour."
+  },
+  {
+   "name": "Bernier and Dorre Islands",
+   "views": 0,
+   "counted_sources": 2,
+   "reason": "Rule 2 unclear: Wikivoyage mentions them only for their history (the 1908-09 lock hospitals) and access via Carnarvon; no source names anything a visitor does there.",
+   "objection": "For: two Wikivoyage mentions, a national park, historic significance. Against: no visitor activity or landing arrangement described; likely a reject unless a DBCA page shows public access."
+  },
+  {
+   "name": "Kori Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1 thin: Wikivoyage and DBCA mention it only by name and access road; nothing named to do.",
+   "objection": "For: a park beach two sources name. Against: near-duplicate of Lakeside on the same access road, no stated activity."
+  },
+  {
+   "name": "Osprey Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 3 arguable: Wikivoyage calls it Sandy Bay's continuation with a campground; DBCA lists its campground and kayak trail.",
+   "objection": "For: a DBCA kayak snorkel trail. Against: near-duplicate of Sandy Bay and mostly a campground."
+  },
+  {
+   "name": "Jurabi Turtle Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 1 one source: Wikivoyage says it facilitates seasonal viewing of nesting turtles beside the lighthouse.",
+   "objection": "For: a permanent interpretive centre for the Ningaloo turtle season the board promotes. Against: one counted source, the draw is seasonal (Nov-Mar) and at night."
+  },
+  {
+   "name": "Navy Pier, Exmouth",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Rule 2 arguable: Wikivoyage Exmouth and Gascoyne both name the Navy Pier dive, a renowned shore dive, but the pier is a working navy pier with access only on regulated dive trips with one operator (Dive Ningaloo). Case for: the place itself (the pier and its reef life) is the draw, as Kapiti Island is reached only by permit boat. Case against: certified divers only, one operator, no access otherwise, one counted source family.",
+   "objection": "A place reachable only by one dive operator's trip is close to 'an operator in place of its destination'; no Tourism WA or board page was opened for it."
+  },
+  {
+   "name": "SS Mildura Wreck",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage Exmouth: wreck visible at low tide 80 m off the cape tip, reached by Mildura Wreck Road) and a short visit: marginal, so review. Case for: a named, signposted shore-visible wreck at the tip of the cape. Case against: a low-tide look from the shore, likely under 30 minutes, near Vlamingh Head Lighthouse.",
+   "objection": "Only one counted source read; a second (DBCA or Tourism WA) would be needed for a keep."
+  },
+  {
+   "name": "Exmouth Town Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source with one line ('the long sandy strip by Mantarays'), so marginal: review. Case for: the town's beach, a second-tier beach stop. Case against: Wikivoyage says nothing to do there and points snorkellers to Cape Range beaches; the town's own beach adds little beside Bundegi and the Cape Range beaches.",
+   "objection": "A one-line mention is the weakest kind of counted source."
+  },
+  {
+   "name": "Paradise Beach, Coral Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage Coral Bay: quieter rugged beach around the headland, start of the drift-snorkel back to the bay), arguable as distinct: review. Case for: a named second-tier beach with its own snorkel route. Case against: 200-500 m from the main beach, effectively part of the Coral Bay Beach visit, and Wikivoyage says its coral is dead since 2022.",
+   "objection": "Near-duplicate of Coral Bay Beach."
+  },
+  {
+   "name": "Shark Sanctuary, Bill's Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Seasonal natural phenomenon at a place (brief: may be kept, season noted), one counted source (Wikivoyage Coral Bay: young tiger sharks in the shallows Nov-Jan, viewed from shore on a 1-2 km walk). Case for: a distinctive wildlife sight at a named place. Case against: only one source, seasonal and condition-dependent (high tide, calm day), and the place is the north end of Bill's Bay, part of the Coral Bay shore.",
+   "objection": "Outside Nov-Jan there is nothing specific to see beyond the beach walk."
+  },
+  {
+   "name": "Maud's Landing",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source and a short visit: Wikivoyage Coral Bay names it as the original landing, 'nice beach but breezy and no coral'. Case for: a named beach with history 3 km north of town. Case against: the guide's own description is lukewarm; locals' dog beach.",
+   "objection": "Faint praise from the only source; leans reject."
+  },
+  {
+   "name": "Kangaroo Point, Cervantes",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Two counted sources (Wikivoyage Nambung NP; Australia's Coral Coast Cervantes page) but both describe a boat-launch and shore-fishing beach with picnic shelters, 'usually strewn with seaweed' (Wikivoyage). Case for: named by both, with kangaroos and emus. Case against: a boat launch and picnic area more than a beach visitors travel to.",
+   "objection": "Hangover Bay is the better beach in the same park."
+  },
+  {
+   "name": "Lobster Shack, Cervantes",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Brief: a business is a place only when a visitor source singles it out. Australia's Coral Coast's Cervantes page calls a visit to Lobster Shack, the Indian Ocean Rock Lobster Factory, 'a highlight' (factory tours), and Wikivoyage names it as the base of the sea-lion trips and a lunch spot. Case for: a factory tour like a brewery tour, singled out by the board. Case against: it is a seafood restaurant and processing business and an operator base.",
+   "objection": "Restaurants and operators are rejected unless singled out; the board's 'highlight' is the only thing lifting it."
+  },
+  {
+   "name": "Jurien Bay Jetty",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "One counted source (Wikivoyage Jurien Bay: 162 m fishing and strolling jetty, built 2011) and a short visit. Case for: the town's named sight, a jetty walk. Case against: a 20-minute stroll, and the board's Jurien Bay page does not name it.",
+   "objection": "Leans toward folding into Jurien Bay's bio."
+  },
+  {
+   "name": "Badgingarra",
+   "views": 2183,
+   "counted_sources": 1,
+   "reason": "Australia's Coral Coast gives it a page, but its draws are mostly outside the town (Badgingarra National Park trail, Watheroo NP's Jingemia Cave); in town, the 4.2 km art trail and the Vern Westbrook heritage walk. Case for: own board section, wildflower base. Case against: a roadhouse farming town, mostly a spring wildflower stop.",
+   "objection": "Brief keeps towns given their own section; the in-town draws are thin."
+  },
+  {
+   "name": "Dandaragan",
+   "views": 2158,
+   "counted_sources": 1,
+   "reason": "Australia's Coral Coast page names only a church seen for its soapstone and arch, Aggie's Cottage (used by craft groups) and a scenic drive; the wildflowers are in Lesueur NP. Case for: own board section. Case against: nothing named to do for half an hour in the town itself.",
+   "objection": "Leans reject."
+  },
+  {
+   "name": "Eneabba",
+   "views": 4672,
+   "counted_sources": 1,
+   "reason": "Australia's Coral Coast's Eneabba page points to a caravan park's wildflower walks, nearby lakes (Indoon, Logue) and Tathra and Stockyard Gully national parks; nothing in the town itself. Case for: own board section and Carnamah-Eneabba wildflower drive. Case against: its draws are separate places.",
+   "objection": "Lake Indoon has its own board page and may be the better spot."
+  },
+  {
+   "name": "Coorow",
+   "views": 2053,
+   "counted_sources": 1,
+   "reason": "Australia's Coral Coast page names Coorow Farm's 1.2 km wildflower walk and drive (a board product page too) and stargazing lakes; seasonal wildflowers are the draw. Case for: own section, a named walk at the farm. Case against: a small farming town, a spring-only stop; the farm walk, not the town, is the draw.",
+   "objection": "If kept, the spot may be the Coorow Farm wildflower trail rather than the town."
+  },
+  {
+   "name": "Gascoyne Junction",
+   "views": 3170,
+   "counted_sources": 1,
+   "reason": "Gateway village whose draw is the journey beyond it (Pipiriki benchmark): Australia's Coral Coast's page is mostly about Mount Augustus and the Kennedy Range; in town only a museum collection and a picnic pergola. Case for: own board page, the base for Kennedy Range NP. Case against: its draws are the parks.",
+   "objection": "Also hosts the Gassy Dash (an event, not a reason)."
+  },
+  {
+   "name": "Quobba",
+   "views": 1526,
+   "counted_sources": 1,
+   "reason": "Australia's Coral Coast's 'Quobba and Red Bluff' page and Wikivoyage Gascoyne name the Quobba coast (fishing, surfing, snorkelling, Quobba Station stays). Case for: a named remote coast. Case against: it is an area and a station (accommodation), and its specific places, the Quobba Blowholes and Point Quobba lagoon, and Red Bluff, are separate candidates kept here.",
+   "objection": "Risk of a wrapper: keep the blowholes and Red Bluff rather than the area."
+  }
+ ],
+ "considered_not_proposed": [
+  {
+   "name": "Ningaloo / Ningaloo Coast (region)",
+   "why": "A region holding Exmouth, Cape Range NP and Coral Bay would overlap the park destination (every national park is a destination; a region and its sub-area cannot both be). Wikivoyage has no 'Ningaloo' page. Exmouth and Cape Range NP are proposed instead; Coral Bay stands alone."
+  },
+  {
+   "name": "Turquoise Coast",
+   "why": "No Wikivoyage page and no counted source using it as a destination heading was found (checked the Wikivoyage API); the stretch is split into Nambung NP (with Cervantes) and Jurien Bay, with Green Head, Leeman and Lancelin standalone."
+  },
+  {
+   "name": "Wildflower Country",
+   "why": "Australia's Coral Coast's seasonal touring brand for inland towns spread over 170 km with no common base; the judge rejected it as a region brand, not a place."
+  },
+  {
+   "name": "Francois Peron National Park",
+   "why": "Only Skipjack Point is kept inside it: two places, so not a destination; both are Shark Bay spots."
+  },
+  {
+   "name": "Carnarvon",
+   "why": "Gascoyne hub but only two kept places in reach (the town, the space museum): below the four-spot bar."
+  },
+  {
+   "name": "Coral Bay",
+   "why": "Two kept places (Coral Bay, Five Fingers Reef): below the bar."
+  },
+  {
+   "name": "Dongara - Port Denison",
+   "why": "Three kept places: below the bar."
+  },
+  {
+   "name": "Port Gregory / Northampton area",
+   "why": "Five kept places (Hutt Lagoon, Lynton, Hutt River, Horrocks Beach, Northampton) but no name travellers use for the area as a destination: Wikivoyage files Hutt Lagoon and Hutt River under Kalbarri; 'Chapman Valley' is a shire (rejected). Standalone."
+  }
+ ],
+ "notes": "Every pin is provisional unless `pin` is HIGH or MEDIUM: Overpass and Photon were unreachable or rate-limited during this run, so most spots carry coordinates null with `provisional_coordinates` (for span and neighbour reasoning only) and `needs_research` 'coordinates'; Pipeline C must run resolve-pin.py on every spot (route midpoint for walks, OSM natural=beach for beaches, visitor point for parks and islands, place=town for towns). Destination coordinates are all provisional. Hours, cost and ticketUrl are null with needs_research unless a source gave them (Milyering hours/free, Ocean Park hours, Coalseam free, DBCA park pages as ticketUrl for the parks). Spots of the seven proposed destinations carry status 'spot-of-proposed-destination' and go in with their destination. Hutt River Principality is flagged: Wikivoyage says it ended in 2020.",
+ "counts": {
+  "kept": 96,
+  "placements": 85,
+  "spots_in_new_destinations": 56,
+  "standalone": 29,
+  "new_destinations": 7,
+  "destination_self_entries": 7,
+  "merged": 4,
+  "review": 28
+ }
+}

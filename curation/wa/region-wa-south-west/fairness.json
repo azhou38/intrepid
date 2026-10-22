@@ -1,0 +1,1374 @@
+{
+ "region": "wa-south-west",
+ "inside_destinations": 67,
+ "became_destinations": [
+  "Busselton",
+  "Bunbury",
+  "Collie"
+ ],
+ "standalone": 11,
+ "merged_into_other_spots": 2,
+ "kept_total": 83,
+ "new_destinations": [
+  {
+   "id": "margaret-river-region",
+   "name": "Margaret River Region",
+   "rank": 2,
+   "spots": 34,
+   "defaultZoomSpanKm": 65
+  },
+  {
+   "id": "busselton",
+   "name": "Busselton",
+   "rank": 4,
+   "spots": 4,
+   "defaultZoomSpanKm": 26
+  },
+  {
+   "id": "bunbury",
+   "name": "Bunbury",
+   "rank": 4,
+   "spots": 5,
+   "defaultZoomSpanKm": 15
+  },
+  {
+   "id": "collie",
+   "name": "Collie",
+   "rank": 5,
+   "spots": 6,
+   "defaultZoomSpanKm": 30
+  },
+  {
+   "id": "southern-forests",
+   "name": "Southern Forests",
+   "rank": 3,
+   "spots": 13,
+   "defaultZoomSpanKm": 60
+  },
+  {
+   "id": "blackwood-valley",
+   "name": "Blackwood Valley",
+   "rank": 4,
+   "spots": 5,
+   "defaultZoomSpanKm": 40
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Bunker Bay",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Smiths Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Surfers Point",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Ferguson Valley",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "King Jarrah Heritage Trail",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Gnarabup Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Yallingup Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Calgardup Cave",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Giants Cave",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Boranup Forest",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Yeagarup Dunes",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Capes Raptor Centre",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_score": {
+  "views": 0,
+  "counted_sources": 0,
+  "note": "Several kept places score 0 views and 0 counted sources on the script's count (their counted sources were found by the judge on re-look), so every left-out candidate with any views or a counted source is listed below with its reason."
+ },
+ "stronger_left_out": [
+  {
+   "name": "Cape Leeuwin",
+   "views": 16436,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Margaret River 'See' names Cape Leeuwin; margaretriver.com (Margaret River Busselton Tourism Association, the regional board) 'Edge of the world: the great Cape Leeuwin' (where two oceans meet, whales). Strong name (16k views). Skeptic: Not a separate place from Cape Leeuwin Lighthouse: visitors reach the cape at the lighthouse precinct (ticketed grounds, interpretive centre), which is listed separately by Wikivoyage and the board. Keep as ONE spot (the lighthouse, with 'where two oceans meet' in its bio) rather than both; review only to decide which name carries it."
+  },
+  {
+   "name": "Busselton Underwater Observatory",
+   "views": 11122,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: part of a larger spot. It is at the end of Busselton Jetty and is sold as part of the jetty visit (Wikivoyage Busselton lists it under the jetty); Busselton Jetty is kept and its bio covers the observatory."
+  },
+  {
+   "name": "Margaret River wine region",
+   "views": 6863,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Margaret River: Wikivoyage says 'Margaret River is now the common term for the region between the capes'; kept as one under the Margaret River candidate (proposer decides whether the destination is the town or the region)."
+  },
+  {
+   "name": "Cape Naturaliste",
+   "views": 6196,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Leeuwin-Naturaliste NP and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) 'Cape Naturaliste' scenic-spot page (boardwalks, Whale Lookout walk, Cape Naturaliste loop, track to Sugarloaf Rock). Skeptic: Shares its car park and precinct with Cape Naturaliste Lighthouse, listed separately; the walks are short sections of the Cape to Cape Track. Keep as one with the lighthouse unless the owner wants the headland walks as their own spot."
+  },
+  {
+   "name": "Northcliffe",
+   "views": 4906,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: southernforestsandvalleys.com (Southern Forests & Valleys regional tourism) town page and itinerary name the Understory Art & Nature Walk, the Pioneer Museum, Mount Chudalup and Windy Harbour nearby. Skeptic: For: gateway to D'Entrecasteaux NP and Windy Harbour with a named art trail and museum. Against: one counted source, and its named draws (Understory, Mount Chudalup) are separate candidates, so the town may be a wrapper."
+  },
+  {
+   "name": "Boyup Brook",
+   "views": 4590,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: only southernforestsandvalleys.com (Southern Forests & Valleys regional tourism) lists it, with generic text ('natural wonders, local artisans, local produce'); no named sight. Skeptic: Against: one counted source and nothing specific to see or do (brief: a town with nothing a source names is reject or review). For: a listed town of the regional board, gateway for country-music events (events do not count)."
+  },
+  {
+   "name": "Lake Clifton",
+   "views": 4446,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-perth (the lake and its thrombolite boardwalk are in the Peel / Yalgorup National Park area; wa-perth's candidate list already has 'Lake Clifton Thrombolites')."
+  },
+  {
+   "name": "Prevelly",
+   "views": 2904,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: margaretriver.com (Margaret River Busselton Tourism Association, the regional board) 'Prevelly & Gnarabup' town page names the beaches, Margaret River Mouth, St John the Theologian Church, the Prevelly Sculpture Loop Walk and Surfers Point. Skeptic: Against: its headline draw is Surfers Point (kept separately), so the village is likely a wrapper or near-duplicate (COVERAGE: never list a town beside its own attraction). For: a named surf village with its own beaches and river mouth."
+  },
+  {
+   "name": "Diamond Tree",
+   "views": 2500,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: DBCA says the Diamond Tree is 'now permanently CLOSED for climbing' (rot in the base, 2019); what is left is a picnic area and short walk at a roadside tree. Its draw (climbing) is closed and Wikivoyage's listing is out of date."
+  },
+  {
+   "name": "Australind",
+   "views": 2015,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: harveyregion.com.au (Shire of Harvey tourism) Australind page names the Australind Jetty, the Leschenault Waterways Eco Museum, the estuary crabbing and the heritage trail. Skeptic: Against: one local-government tourism source; a residential satellite of Bunbury ('Australia's fastest growing regional location') with cafes and a big pub; a traveller from elsewhere rarely goes out of their way for it. For: estuary jetty and eco museum."
+  },
+  {
+   "name": "Moondyne Cave",
+   "views": 1370,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 / brief (closed places are rejected): Wikipedia says Moondyne Cave is not currently open for tours; Wikivoyage lists the name with no details, and neither margaretriver.com (Margaret River Busselton Tourism Association, the regional board) nor DBCA offers it."
+  },
+  {
+   "name": "Cullen Wines",
+   "views": 1334,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: westernaustralia.com (Tourism WA) Margaret River page names Cullen among the heritage winemakers; margaretriver.com (Margaret River Busselton Tourism Association, the regional board) page (the only biodynamic, carbon-positive winery in the region, wine room open daily). Skeptic: For: two counted sources, a pioneer estate. Against: a cellar door and restaurant like many others; the brief keeps a winery only when singled out as a destination."
+  },
+  {
+   "name": "Cape Mentelle Vineyards",
+   "views": 1333,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Board listing (australiassouthwest.com) and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) winery page: founding winery (1970), twice Jimmy Watson trophy winner, cellar door daily, vineyard tours. Skeptic: For: a founding estate a board names. Against: a cellar door like dozens of others, with no visitor attraction beyond tasting; the brief keeps a winery only when singled out as a destination in its own right."
+  },
+  {
+   "name": "Voyager Estate",
+   "views": 1273,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Board listing (australiassouthwest.com) and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) page: family estate in the Stevens Valley with a wine room, private tours and an award-winning restaurant (Regional Restaurant of the Year 2025). Skeptic: For: a well-known estate with tours. Against: tastings and dining only; no source read singles it out as a destination beyond the cellar door (brief winery rule)."
+  },
+  {
+   "name": "Howard Park Wines",
+   "views": 1256,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery rule: Australia's South West lists 'Howard Park and Madfish Wines' among its many winery listings, but no visitor source singles it out as a destination in its own right; a cellar door is a business. Fails rule 2's 'plain shop/restaurant' test."
+  },
+  {
+   "name": "Moss Wood",
+   "views": 913,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: not open to the public; margaretriver.com (Margaret River Busselton Tourism Association, the regional board) says visits are 'by appointment only', 'a privilege of Moss Wood membership', with a $100 charge. Tourism WA names it among heritage winemakers, but a walk-in visitor cannot go."
+  },
+  {
+   "name": "Aravina Estate",
+   "views": 885,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "winery with a cellar door; only one counted source (board listing shared with 8 Waves Brewing) and a Wikipedia article (not counted); no guide singles it out as a destination among Margaret River's many cellar doors"
+  },
+  {
+   "name": "Devil's Lair Winery",
+   "views": 849,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: no counted source found (margaretriver.com (Margaret River Busselton Tourism Association, the regional board) sitemap and Tourism WA pages do not name it); a wine brand with no public cellar door listed."
+  },
+  {
+   "name": "Gloucester National Park",
+   "views": 675,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "DBCA page: karri forest walks (Gloucester Tree–Cascades 12 km, 10 km loop, Pemberton town link), mountain biking, the Cascades rapids on Lefroy Brook, Aerial Adventure Pemberton. More than the tree alone. Skeptic: Near-duplicate of the Gloucester Tree, which is what visitors come for and which sits in it; one counted source (the agency's own page). Keep only if the Cascades/trails are not carried by the tree spot."
+  },
+  {
+   "name": "Fermoy Estate",
+   "views": 610,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Stella Bella Wines",
+   "views": 598,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Greater Beedelup National Park",
+   "views": 569,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: duplicate of Beedelup Falls: DBCA's park page is about the falls, the Walk-Through Tree and the loop walk between them, which the Beedelup Falls spot covers."
+  },
+  {
+   "name": "Brookland Valley Estate",
+   "views": 569,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Blackwood River National Park",
+   "views": 555,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "DBCA page: canoeing, swimming and fishing on WA's longest continuously flowing river, Sues Bridge and Chapman Pool day-use areas and campgrounds; free entry. The board also lists 'Blackwood River'. Skeptic: One counted source; the park is a string of river campgrounds rather than a single draw, and paddling the Blackwood is equally done from Nannup or Augusta; may be better as 'Blackwood River' with its access point."
+  },
+  {
+   "name": "Whicher National Park",
+   "views": 496,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted visitor source found (no DBCA site page, no board or Wikivoyage listing); only Wikipedia and a 2016 wildflower-society post."
+  },
+  {
+   "name": "Woodlands Wines",
+   "views": 491,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Driftwood Estate",
+   "views": 466,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Salitage Wines",
+   "views": 394,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery), near Pemberton: fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Hay Shed Hill Wines",
+   "views": 393,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Lenton Brae Estate",
+   "views": 378,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Ashbrook Estate",
+   "views": 360,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Yelverton National Park",
+   "views": 350,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rules 1-2: DBCA's page lists no visitor facilities, walks or sites, only rare-flora protection; no source names anything to see or do."
+  },
+  {
+   "name": "Picardy Wine",
+   "views": 334,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery), near Pemberton: fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Deep Woods Estate",
+   "views": 333,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Dalgarup National Park",
+   "views": 330,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted visitor source found (no DBCA site page, no Wikivoyage or board listing); only Wikipedia and AllTrails."
+  },
+  {
+   "name": "Lake Muir National Park",
+   "views": 327,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "The candidate park has no DBCA page, but the visitor point beside it does: DBCA's Lake Muir Observatory page (110 m boardwalk through the wetlands to a raised bird hide, picnic shelter, toilets; 'a popular rest stop on the Muir Highway'), also listed by Southern Forests and Valleys. If added, name it Lake Muir Observatory (it is in Lake Muir Nature Reserve, just north of the national park). Skeptic: A highway rest stop with a 15-30 minute boardwalk; the lake can be a dry bed in summer. Only the agency page plus a local tourism listing."
+  },
+  {
+   "name": "Wise Wine",
+   "views": 325,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery rule: one of many winery listings on the Australia's South West board; no source singles it out as a destination in its own right (a cellar door and restaurant, a business)."
+  },
+  {
+   "name": "Capel Vale Wines",
+   "views": 292,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Zarephath Wines",
+   "views": 272,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: Zarephath is in the Porongurups (wa-great-southern). It would fail anyway on the winery rule: no counted source singles it out."
+  },
+  {
+   "name": "Yourdamung Lake",
+   "views": 235,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source (Wikipedia only); a local lake and reserve. Note: the candidate's coordinates (-33.09, 116.33) are inland near Collie, not 'in Augusta' as its note says."
+  },
+  {
+   "name": "Woodside Valley Estate",
+   "views": 231,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery): fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Calgardup Bay",
+   "views": 216,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source names the bay as a place to go (re-looked: Wikipedia only); its visitor beaches (Gnarabup, Prevelly/Surfers Point, Redgate) are the named stops, so the bay is an umbrella name ('What qualifies' 1, 3)."
+  },
+  {
+   "name": "Smithbrook Wines",
+   "views": 144,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Winery/cellar door with no counted visitor source naming it as a destination in its own right (Wikipedia winery list only; Wikivoyage Margaret River names no individual winery), near Pemberton: fails rule 1 and the run's winery rule (a business, not a place)."
+  },
+  {
+   "name": "Pemberton Tramway",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A spot is a place, not the way you get there: the Pemberton Tramway Company is an operator's tram ride; the karri forest it runs through is covered by Gloucester Tree / Warren National Park."
+  },
+  {
+   "name": "St Mary's Church Busselton",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Church rule: Wikivoyage Busselton singles it out (built 1844-45, believed the oldest stone church in WA, graveyard with graves from 1841) and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) page says visitors can wander the graveyard and read the settlers' tombstones. Skeptic: For: a landmark guides single out, with a graveyard to explore. Against: the board files it under 'local services', it is a working parish church mostly seen from outside, and the visit is about 15 minutes."
+  },
+  {
+   "name": "Busselton Visitor Centre and Railway Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2-3: a visitor information centre (bookings, maps, souvenirs) beside Busselton Jetty; its railway display (the Ballaarat, WA's first steam locomotive, in Railway House) is a small exhibit in the jetty foreshore precinct, not a distinct draw."
+  },
+  {
+   "name": "Weld Hall Busselton",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a civic hall/community theatre (Weld Theatre), seen from the street; Wikivoyage describes only its exterior and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) lists it as a performance venue."
+  },
+  {
+   "name": "Ithaca Busselton",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a heritage house now operating as a motel (accommodation); seen from the street only."
+  },
+  {
+   "name": "Nglili Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Ngilgi Cave (Wikivoyage Dunsborough misspells Ngilgi as 'Nglili'; same cave west of Dunsborough on Caves Road). Kept as one under Ngilgi Cave."
+  },
+  {
+   "name": "Koombana Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Bunbury See names it (protected beach on Koombana Bay where wild dolphins come close to shore); westernaustralia.com (Tourism WA) Bunbury text names Koombana Bay and shoreline dolphins. Skeptic: For: wild dolphins at the beach. Against: Wikivoyage calls it 'a modest beach', and the dolphin interaction zone and visitor facilities are the Dolphin Discovery Centre on the same beach, so it is a near-duplicate of that spot."
+  },
+  {
+   "name": "Wardan Aboriginal Culture Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: not confirmed open. Wikivoyage Margaret River lists the name only; a museum directory lists it as temporarily closed, local news reported it might close and that bushfire risk had stopped its cultural use; margaretriver.com (Margaret River Busselton Tourism Association, the regional board) no longer lists it."
+  },
+  {
+   "name": "Margaret River School of Wine",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief: a business (wine education classes and tasting venue), not a place a source singles out as a destination; Wikivoyage names it only in a list."
+  },
+  {
+   "name": "Colonial Brewery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief: a brewery-restaurant; Wikivoyage mentions it only as a lunch-and-playground suggestion in a sample day, not as a destination in its own right (the region has dozens of breweries)."
+  },
+  {
+   "name": "Karri Forest Explorer",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: an 86 km drive route that links places judged on their own (Gloucester Tree, Beedelup Falls, Warren National Park and its Bicentennial Tree); it is the way between those spots, not a distinct place."
+  },
+  {
+   "name": "Heartbreak Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a one-way drive inside Warren National Park (DBCA Warren page: 'drive the Heartbreak Trail or the Karri Forest Explorer'); part of a larger spot."
+  },
+  {
+   "name": "Great Forest Trees Drive",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: the 50 km drive is part of Shannon National Park (DBCA Shannon page), which is kept as the spot; the drive goes in its bio."
+  },
+  {
+   "name": "Snake Gully Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a lookout inside Shannon National Park (DBCA names it with Big Tree Grove as a top spot in the park); part of a larger spot, kept via the park."
+  },
+  {
+   "name": "Big Tree Grove",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a grove on a walk inside Shannon National Park; part of the park, kept via Shannon National Park. (Its Wikipedia title is a California grove, so it also lacks a stable reference.)"
+  },
+  {
+   "name": "Harris Dam",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Collie (See): picnic lawns below the dam wall and a walk trail to the top for the view. Skeptic: One counted source; Wikivoyage itself says 'look is all you can do' (no water activities): a picnic area by a water-supply dam, mostly local use."
+  },
+  {
+   "name": "Glen Mervyn Dam",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Collie (See): a crescent-shaped dam for water skiing, boating and camping, with a bushland walk. Skeptic: One counted source; a local boating and camping reservoir that visitors from elsewhere rarely travel for."
+  },
+  {
+   "name": "Minninup Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Collie (See): a wide section of the Collie River 3 km south of town for swimming and canoeing; the Shire tests its water with Black Diamond and Stockton. Skeptic: One counted source; a local swimming hole, and Collie already has stronger swimming spots (Black Diamond, Stockton Lake, Honeymoon Pool)."
+  },
+  {
+   "name": "Swinging Bridge Collie",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a minor suspension footbridge in town; Wikivoyage presents it as a short treat for kids, a few minutes' look, and it is a point on the Collie River Walk."
+  },
+  {
+   "name": "Collie River Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Collie (Do/Hike): a 9 km walk following the Collie River through town. Skeptic: One line in one source; a town riverside path, more a local amenity than a draw from elsewhere."
+  },
+  {
+   "name": "Collie Railway Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Collie (Museums): reconstructed railway station with railway items and the rediscovered Welsh train drawings, open 9-4 daily, by donation. Open to the public with something to see. Skeptic: One counted source and a small volunteer museum; a 30-minute stop only if passing through Collie."
+  },
+  {
+   "name": "Coalfields Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Collie (Museums): mining, timber, farming and social history, open 10-3 daily, $5. Skeptic: One counted source; a small local-history museum; Collie's coal heritage is its one distinct theme."
+  },
+  {
+   "name": "Miners Institute Collie",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: an Art Deco hall (1953) Wikivoyage lists only for its exterior architecture; no public interior or tour named, so it is a civic building seen from the street."
+  },
+  {
+   "name": "Idée Fixe",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a restaurant, bar or café: a business, not a place to go (What qualifies 2)"
+  },
+  {
+   "name": "Puzzletown6255",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "an event: Puzzletown6255 is the Bridgetown puzzle festival (geocaching, games) run by the Brierley Jigsaw Gallery, not a permanent place (What qualifies 4)"
+  },
+  {
+   "name": "Southern Forests Wine Regions",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a wine-region grouping listing (Pemberton/Manjimup GIs), not a single place to go; its towns and cellar doors are judged separately"
+  },
+  {
+   "name": "Wayfinder Winery & Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "LifeTrail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): a walking-trail product/operator"
+  },
+  {
+   "name": "Aravina Escapes",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): tour product of Aravina Estate"
+  },
+  {
+   "name": "Willespie Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "Bonjour Margaret River – Private Driver & Wine Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business)"
+  },
+  {
+   "name": "Forest Adventures",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): forest adventure activity operator"
+  },
+  {
+   "name": "Jonathan Hook Studio Ceramics",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a working ceramics studio with a sales shop: a business, not a visitor draw (What qualifies 2)"
+  },
+  {
+   "name": "All Sea Charters",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a vehicle or operator, not a place"
+  },
+  {
+   "name": "Good Vibes South West Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business)"
+  },
+  {
+   "name": "Wayfinder Wine Bar & Restaurant",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a restaurant, bar or café: a business, not a place to go (What qualifies 2)"
+  },
+  {
+   "name": "Rústico at Hayshed Hill",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a restaurant, bar or café: a business, not a place to go (What qualifies 2)"
+  },
+  {
+   "name": "Subsea Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "The Market Bar",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a restaurant, bar or café: a business, not a place to go (What qualifies 2)"
+  },
+  {
+   "name": "Chariot Charters",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a vehicle or operator, not a place"
+  },
+  {
+   "name": "Boyup Brook Visitor Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a visitor information centre: a service, not a draw in itself (What qualifies 2/3)"
+  },
+  {
+   "name": "Whicher Ridge Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "Matters of Taste",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): food and wine tour operator"
+  },
+  {
+   "name": "Sound Relaxation Margaret River",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): a sound-bath wellness experience"
+  },
+  {
+   "name": "Tannin Road",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "Eagle Bay Brewing Co",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a brewery/taproom; one board listing and no guide singling it out as a destination in its own right (brewery rule)"
+  },
+  {
+   "name": "Margaret River Surfing Academy",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): surf school"
+  },
+  {
+   "name": "Saltwater Busselton",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a restaurant, bar or café: a business, not a place to go (What qualifies 2)"
+  },
+  {
+   "name": "Old Courthouse Complex",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a civic building seen from the pavement"
+  },
+  {
+   "name": "Wild Hop Brewing Company",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a brewery/taproom; one board listing, not singled out as a destination (brewery rule)"
+  },
+  {
+   "name": "Dunsborough Marketplace",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a shop or retail venue, not a visitor draw (What qualifies 2)"
+  },
+  {
+   "name": "Singlefile",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery (Singlefile Wines) or operator listing, not singled out as a destination; if it is the Denmark winery it is outside the region (wa-great-southern)"
+  },
+  {
+   "name": "Highland View Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a booked private farm tour (Tourism WA lists it as a Tour): a tour product rather than a place open whenever a visitor arrives (What qualifies 2/4)"
+  },
+  {
+   "name": "ArtSouthWA 2026 Southern Art & Craft Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "an annual art and craft trail event (dated 2026): an event, not a place (What qualifies 4)"
+  },
+  {
+   "name": "Walkabout on Country",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): Aboriginal cultural tour operator"
+  },
+  {
+   "name": "Cape2Camp",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): Cape to Cape walking tour operator"
+  },
+  {
+   "name": "Rivendell Winery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "The Journey Margaret River",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business)"
+  },
+  {
+   "name": "4xploring Rentals",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): four-wheel-drive hire"
+  },
+  {
+   "name": "Aerial Adventure Pemberton",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "a permanent high-ropes and zipline park (40 min to 2.5 h courses, ages 4+) in karri forest beside the Gloucester Tree; named by the regional board, the Pemberton Visitor Centre and margaretriver.com Skeptic: Against: it is an operator's activity course inside Gloucester National Park, next to the Gloucester Tree (risk of being part of that larger spot); paid, booked activity; closes for a winter break. For: a fixed permanent venue, like an amusement park, that visitors travel to Pemberton for."
+  },
+  {
+   "name": "Beyond Distilling",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a distillery tasting room; one board listing, not singled out as a destination (brewery/distillery rule)"
+  },
+  {
+   "name": "Yallingup Aboriginal Art",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a commercial art gallery/studio selling work: a shop, not a visitor draw on one listing (What qualifies 2)"
+  },
+  {
+   "name": "Edgewalkers",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): adventure/climbing operator"
+  },
+  {
+   "name": "Jilyara Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "Nannup Lavender Farm and Campground",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "lavender farm near Nannup with fields to walk and pick in (full flower Dec-Jan), a seasonal private garden, tearooms and shop; named by the regional board and Southern Forests and Valleys Skeptic: Against: mostly a café, gift shop and campground with only seasonal flowering and garden; one-hour stop only if nearby anyway. For: a recognisable farm-gate attraction two regional tourism sources list."
+  },
+  {
+   "name": "Untamed Escapes",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business)"
+  },
+  {
+   "name": "Secret Picnic Adventures",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): picnic experience operator"
+  },
+  {
+   "name": "Naturaliste Charters",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a vehicle or operator, not a place"
+  },
+  {
+   "name": "Ngalang Wongi Aboriginal Cultural Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): Aboriginal cultural tour operator"
+  },
+  {
+   "name": "Yongernow Australian Malleefowl Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "outside the region: belongs to wa-great-southern (Ongerup, Shire of Gnowangerup)"
+  },
+  {
+   "name": "Roelands Village",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "former Roelands mission run by the Woolkabunning Kiaka Aboriginal Corporation as a farm, accommodation and functions venue for groups; its own site names no regular public attraction beyond an annual festival (What qualifies 2/4)"
+  },
+  {
+   "name": "Adventure Connections",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): bike and kayak hire at Wellington National Park"
+  },
+  {
+   "name": "Vasse Virgin",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "an olive-oil and natural skincare producer's shop and tasting room: a shop, not a distinct draw (What qualifies 2)"
+  },
+  {
+   "name": "Vineyard 28",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a winery/cellar door listed only as one of dozens of Margaret River-region cellar doors; no visitor source singles it out as a destination in its own right"
+  },
+  {
+   "name": "Whale Watch Western Australia",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "operator, tour or service, not a place (a spot is a place, not the way you get there or a business): whale-watching cruise (the bay or coast it visits is the place)"
+  },
+  {
+   "name": "South West Eco Discoveries",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own."
+  },
+  {
+   "name": "Swings & Roundabouts",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business). (Swings & Roundabouts is a Yallingup winery/kitchen.)"
+  },
+  {
+   "name": "Tall Timbers",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brewery/cidery/distillery venue: one of many in the region; no visitor source singles it out as a destination in its own right (brief: brewery/distillery rule). (Tall Timbers is a Manjimup brewery/restaurant.)"
+  },
+  {
+   "name": "The Cidery and Blackwood Valley Brewing Company",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brewery/cidery/distillery venue: one of many in the region; no visitor source singles it out as a destination in its own right (brief: brewery/distillery rule)."
+  },
+  {
+   "name": "RedSands Campers",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Campervan hire: a vehicle/rental operator, not a place (COVERAGE.md: 'A spot is a place')."
+  },
+  {
+   "name": "Scenic Helicopters",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a vehicle or operator, not a place"
+  },
+  {
+   "name": "Shelter Brewing Co",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brewery/cidery/distillery venue: one of many in the region; no visitor source singles it out as a destination in its own right (brief: brewery/distillery rule)."
+  },
+  {
+   "name": "Oakway Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Off The Beaten Track WA",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own."
+  },
+  {
+   "name": "Passel Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Pemberton Discovery Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own."
+  },
+  {
+   "name": "Origins Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Busselton indoor market building with 50-80 makers and producers under one roof; Australia's South West listing and margaretriver.com (which lists an Origins Market Busselton tour). A permanent market hall is allowed by 'What qualifies' 4 if it trades most days. Skeptic: Trading days unconfirmed (may be only a few days a week, which fails rule 4); it is essentially a food hall and shops (rule 2). Keep only if it trades daily like a market hall."
+  },
+  {
+   "name": "Miami Bakehouse",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A shop/bakery/retail venue, not a place to visit ('What qualifies' 2: a venue that is only a shop or restaurant)."
+  },
+  {
+   "name": "Margaret River Distilling Company",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brewery/cidery/distillery venue: one of many in the region; no visitor source singles it out as a destination in its own right (brief: brewery/distillery rule)."
+  },
+  {
+   "name": "Koomal Dreaming",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own. Its tours run at Ngilgi Cave and the coast, which are the spots."
+  },
+  {
+   "name": "John Miller Design",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A shop/bakery/retail venue, not a place to visit ('What qualifies' 2: a venue that is only a shop or restaurant)."
+  },
+  {
+   "name": "Harvey River Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Happs Pottery + Icon Honey",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A shop/bakery/retail venue, not a place to visit ('What qualifies' 2: a venue that is only a shop or restaurant). Pottery gallery and honey shop at Happs, Dunsborough; also a near-duplicate of Happs Wines & Commonage Pottery."
+  },
+  {
+   "name": "Happs Wines & Commonage Pottery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business). The pottery is a sales gallery."
+  },
+  {
+   "name": "Green Door Winery & Cellar Door",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "GeoVino Wine Store",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A shop/bakery/retail venue, not a place to visit ('What qualifies' 2: a venue that is only a shop or restaurant)."
+  },
+  {
+   "name": "Fervor",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Roaming/pop-up dining experience in Margaret River: an operator and restaurant, not a permanent place ('What qualifies' 2 and 4)."
+  },
+  {
+   "name": "Fraser Gallop Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Forage Safaris",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own."
+  },
+  {
+   "name": "Fishbone Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Domaine Naturaliste",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Clairault Streicker Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Cape to Cape Explorer Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own. The Cape to Cape Track is the spot."
+  },
+  {
+   "name": "Burnside Organic Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Organic farm with accommodation and a winery near Margaret River: accommodation/farm business, not a public place to visit ('What qualifies' 2)."
+  },
+  {
+   "name": "Bettenay's Margaret River",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A shop/bakery/retail venue, not a place to visit ('What qualifies' 2: a venue that is only a shop or restaurant). (Bettenay's is a nougat shop and cellar door.)"
+  },
+  {
+   "name": "A Maze'n Margaret River",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Hedge maze and botanical gardens near Margaret River, a permanent paid family attraction for an hour or more ('What qualifies' 2); Australia's South West listing (counted); Wikivoyage Margaret River mentions 'one of the three mazes' without naming it. Skeptic: Only one counted source names it; a family amusement stop that two other mazes in the area duplicate in kind (Yallingup Maze). Marginal: friend test passes only for families."
+  },
+  {
+   "name": "Picnic Cheer",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own. (picnic set-up service)"
+  },
+  {
+   "name": "The Dam at Raintree",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Cannot confirm what or where it is beyond the board listing name; appears to be a private venue or accommodation ('Leave out: anything you cannot confirm exists, is open to visitors')."
+  },
+  {
+   "name": "Southern Forests Experiences",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own."
+  },
+  {
+   "name": "Hackersley Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Forest Explorers",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator or tour (COVERAGE.md: 'A spot is a place'); the places it visits are judged on their own."
+  },
+  {
+   "name": "Beerfarm",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brewery/cidery/distillery venue: one of many in the region; no visitor source singles it out as a destination in its own right (brief: brewery/distillery rule). (Metricup brewery on a dairy farm.)"
+  },
+  {
+   "name": "Ampersand Estates",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery/cellar door: one of dozens of cellar doors in the region; no visitor source singles it out as a destination in its own right (brief: winery rule; 'What qualifies' 2, venue that is only a business)."
+  },
+  {
+   "name": "Castle Rock",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-great-southern. The Australia's South West listing is Castle Rock and the Granite Skywalk in Porongurup National Park (confirmed by search), not the South West."
+  }
+ ],
+ "stronger_left_out_count": 157,
+ "strongest_outsiders": [
+  {
+   "name": "Bibbulmun Track",
+   "id": "bibbulmun-track",
+   "views": 13765,
+   "counted_sources": 2,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Harvey",
+   "id": "harvey",
+   "views": 9053,
+   "counted_sources": 0,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Donnybrook",
+   "id": "donnybrook",
+   "views": 8861,
+   "counted_sources": 0,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Munda Biddi Trail",
+   "id": "munda-biddi-trail",
+   "views": 5129,
+   "counted_sources": 2,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Mount Frankland National Park",
+   "id": "mount-frankland-national-park",
+   "views": 679,
+   "counted_sources": 1,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Peppermint Grove Beach",
+   "id": "peppermint-grove-beach",
+   "views": 582,
+   "counted_sources": 0,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Gnomesville",
+   "id": "gnomesville",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Boola Bidi Dreaming Centre",
+   "id": "boola-bidi-dreaming-centre",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Mandalay Beach",
+   "id": "mandalay-beach",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Fernhook Falls",
+   "id": "fernhook-falls",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "standalone"
+  },
+  {
+   "name": "Ferguson Valley",
+   "id": "ferguson-valley",
+   "views": 0,
+   "counted_sources": 0,
+   "placed_as": "standalone"
+  }
+ ],
+ "strongest_outsiders_left_out": [
+  {
+   "name": "Boyup Brook",
+   "views": 4590,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: only southernforestsandvalleys.com (Southern Forests & Valleys regional tourism) lists it, with generic text ('natural wonders, local artisans, local produce'); no named sight."
+  },
+  {
+   "name": "Lake Clifton",
+   "views": 4446,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-perth (the lake and its thrombolite boardwalk are in the Peel / Yalgorup National Park area; wa-perth's candidate list already has 'Lake Clifton Thrombolites')."
+  },
+  {
+   "name": "Australind",
+   "views": 2015,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: harveyregion.com.au (Shire of Harvey tourism) Australind page names the Australind Jetty, the Leschenault Waterways Eco Museum, the estuary crabbing and the heritage trail."
+  },
+  {
+   "name": "Whicher National Park",
+   "views": 496,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted visitor source found (no DBCA site page, no board or Wikivoyage listing); only Wikipedia and a 2016 wildflower-society post."
+  },
+  {
+   "name": "Yelverton National Park",
+   "views": 350,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rules 1-2: DBCA's page lists no visitor facilities, walks or sites, only rare-flora protection; no source names anything to see or do."
+  },
+  {
+   "name": "Dalgarup National Park",
+   "views": 330,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted visitor source found (no DBCA site page, no Wikivoyage or board listing); only Wikipedia and AllTrails."
+  },
+  {
+   "name": "Lake Muir National Park",
+   "views": 327,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "The candidate park has no DBCA page, but the visitor point beside it does: DBCA's Lake Muir Observatory page (110 m boardwalk through the wetlands to a raised bird hide, picnic shelter, toilets; 'a popular rest stop on the Muir Highway'), also listed by Southern Forests and Valleys. If added, name it Lake Muir Observatory (it is in Lake Muir Nature Reserve, just north of the national park)."
+  },
+  {
+   "name": "Yourdamung Lake",
+   "views": 235,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source (Wikipedia only); a local lake and reserve. Note: the candidate's coordinates (-33.09, 116.33) are inland near Collie, not 'in Augusta' as its note says."
+  },
+  {
+   "name": "Roelands Village",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "former Roelands mission run by the Woolkabunning Kiaka Aboriginal Corporation as a farm, accommodation and functions venue for groups; its own site names no regular public attraction beyond an annual festival (What qualifies 2/4)"
+  }
+ ],
+ "benchmark": {
+  "note": "COVERAGE step 6's benchmarks are New Zealand places and do not apply to this Western Australia region. Region checks instead: Busselton Jetty, Cape Leeuwin Lighthouse, the Leeuwin-Naturaliste caves (Ngilgi, Jewel, Lake, Mammoth, Calgardup, Giants), Gloucester Tree, Dave Evans Bicentennial Tree, the Cape to Cape Track and the Dolphin Discovery Centre are all kept and placed; operators and vehicles (Pemberton Tramway, Whale Watch WA, cruise and tour operators) are rejected in favour of the places; once-a-week markets and events (Puzzletown6255, the Southern Art & Craft Trail, the Blues at Bridgetown festival) are rejected; gateway villages whose draw lies beyond them (Northcliffe, Prevelly, Boyup Brook) went to review, not keep.",
+  "all_kept_placed": true,
+  "unplaced": []
+ }
+}

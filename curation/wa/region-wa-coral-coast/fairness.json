@@ -1,0 +1,651 @@
+{
+ "region": "wa-coral-coast",
+ "inside_destinations": {
+  "geraldton": 8,
+  "kalbarri-national-park": 13,
+  "shark-bay": 12,
+  "nambung-national-park": 4,
+  "jurien-bay": 4,
+  "exmouth": 4,
+  "cape-range-national-park": 11
+ },
+ "inside_destinations_total": 56,
+ "standalone": 29,
+ "new_destinations": 7,
+ "new_destination_ids": [
+  "shark-bay",
+  "cape-range-national-park",
+  "nambung-national-park",
+  "kalbarri-national-park",
+  "exmouth",
+  "geraldton",
+  "jurien-bay"
+ ],
+ "destination_self_entries": [
+  "Geraldton",
+  "Kalbarri National Park",
+  "Shark Bay",
+  "Nambung National Park",
+  "Jurien Bay",
+  "Exmouth",
+  "Cape Range National Park"
+ ],
+ "merged": [
+  "Port Denison -> dongara",
+  "Coral Bay Beach -> coral-bay",
+  "Ningaloo Coast -> ningaloo-reef",
+  "Mount Augustus National Park -> mount-augustus"
+ ],
+ "review_not_placed": 28,
+ "lowest_kept": [
+  {
+   "name": "Lancelin Sand Dunes",
+   "id": "lancelin-sand-dunes",
+   "views": 0,
+   "counted_sources": 0,
+   "placed": "standalone"
+  },
+  {
+   "name": "Museum of Geraldton",
+   "id": "geraldton-1",
+   "views": 0,
+   "counted_sources": 1,
+   "placed": "spot"
+  },
+  {
+   "name": "HMAS Sydney II Memorial",
+   "id": "geraldton-2",
+   "views": 0,
+   "counted_sources": 1,
+   "placed": "spot"
+  },
+  {
+   "name": "Leaning Trees of Greenough",
+   "id": "geraldton-5",
+   "views": 0,
+   "counted_sources": 1,
+   "placed": "spot"
+  },
+  {
+   "name": "Geraldton Regional Art Gallery",
+   "id": "geraldton-6",
+   "views": 0,
+   "counted_sources": 1,
+   "placed": "spot"
+  },
+  {
+   "name": "Geraldton Esplanade",
+   "id": "geraldton-7",
+   "views": 0,
+   "counted_sources": 1,
+   "placed": "spot"
+  },
+  {
+   "name": "Nature's Window",
+   "id": "kalbarri-national-park-2",
+   "views": 0,
+   "counted_sources": 1,
+   "placed": "spot"
+  },
+  {
+   "name": "Z Bend",
+   "id": "kalbarri-national-park-3",
+   "views": 0,
+   "counted_sources": 1,
+   "placed": "spot"
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Useless Loop",
+   "views": 17706,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2: Wikivoyage says the company salt town is off-limits to casual visitors."
+  },
+  {
+   "name": "Yalgoo",
+   "views": 8082,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Outside the region: belongs to wa-golden-outback. Australia's Golden Outback lists Yalgoo and Paynes Find as its destination, and the town is in the Murchison inland the regions brief assigns there."
+  },
+  {
+   "name": "Dalgaranga Meteorite Crater",
+   "views": 6723,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Outside the region: belongs to wa-golden-outback. It lies 75 km west of Mount Magnet in the Murchison inland, which the regions brief assigns to the Golden Outback."
+  },
+  {
+   "name": "Eneabba",
+   "views": 4672,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Australia's Coral Coast's Eneabba page points to a caravan park's wildflower walks, nearby lakes (Indoon, Logue) and Tathra and Stockyard Gully national parks; nothing in the town itself. Case for: own board section and Carnamah-Eneabba wildflower drive. Case against: its draws are separate places. Skeptic: Lake Indoon has its own board page and may be the better spot."
+  },
+  {
+   "name": "Zuytdorp Cliffs",
+   "views": 3845,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 1-2 arguable: Wikivoyage names the 150 km cliff line north of Kalbarri, but access is a long 4WD track and the wreck site is off-limits. Skeptic: For: a dramatic named coast with a famous wreck story. Against: one source, no named access point or thing to do, long linear feature; most visitors see it only at Steep Point or from the air."
+  },
+  {
+   "name": "Gascoyne Junction",
+   "views": 3170,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Gateway village whose draw is the journey beyond it (Pipiriki benchmark): Australia's Coral Coast's page is mostly about Mount Augustus and the Kennedy Range; in town only a museum collection and a picnic pergola. Case for: own board page, the base for Kennedy Range NP. Case against: its draws are the parks. Skeptic: Also hosts the Gassy Dash (an event, not a reason)."
+  },
+  {
+   "name": "Badgingarra",
+   "views": 2183,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Australia's Coral Coast gives it a page, but its draws are mostly outside the town (Badgingarra National Park trail, Watheroo NP's Jingemia Cave); in town, the 4.2 km art trail and the Vern Westbrook heritage walk. Case for: own board section, wildflower base. Case against: a roadhouse farming town, mostly a spring wildflower stop. Skeptic: Brief keeps towns given their own section; the in-town draws are thin."
+  },
+  {
+   "name": "Dandaragan",
+   "views": 2158,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Australia's Coral Coast page names only a church seen for its soapstone and arch, Aggie's Cottage (used by craft groups) and a scenic drive; the wildflowers are in Lesueur NP. Case for: own board section. Case against: nothing named to do for half an hour in the town itself. Skeptic: Leans reject."
+  },
+  {
+   "name": "Indian Ocean Drive",
+   "views": 2123,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: A spot is a place: a coastal touring road; the board's Indian Ocean Drive pages are a heading for its towns and beaches (Cervantes, Jurien Bay, Sandy Cape, Leeman), which are judged separately."
+  },
+  {
+   "name": "Coorow",
+   "views": 2053,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Australia's Coral Coast page names Coorow Farm's 1.2 km wildflower walk and drive (a board product page too) and stargazing lakes; seasonal wildflowers are the draw. Case for: own section, a named walk at the farm. Case against: a small farming town, a spring-only stop; the farm walk, not the town, is the draw. Skeptic: If kept, the spot may be the Coorow Farm wildflower trail rather than the town."
+  },
+  {
+   "name": "Quobba",
+   "views": 1526,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Australia's Coral Coast's 'Quobba and Red Bluff' page and Wikivoyage Gascoyne name the Quobba coast (fishing, surfing, snorkelling, Quobba Station stays). Case for: a named remote coast. Case against: it is an area and a station (accommodation), and its specific places, the Quobba Blowholes and Point Quobba lagoon, and Red Bluff, are separate candidates kept here. Skeptic: Risk of a wrapper: keep the blowholes and Red Bluff rather than the area."
+  },
+  {
+   "name": "Shark Bay Marine Park",
+   "views": 1384,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3: an umbrella marine reserve whose draws (Monkey Mia dolphins, Hamelin Pool, dugongs) are their own places; not a place to go in itself."
+  },
+  {
+   "name": "Faure Island",
+   "views": 1180,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2: Wikivoyage says boat trips pass it but do not land; a conservation reserve with no public access."
+  },
+  {
+   "name": "Drover's Cave National Park",
+   "views": 670,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2: Wikivoyage Jurien Bay says many caves are screened off, and its 'must-see', Stockyard Gully, is a separate park (Australia's Coral Coast lists Stockyard Gully National Park near Leeman). Nothing a visitor can do in Drovers Cave NP itself is named; the second listed source is only the board's home page."
+  },
+  {
+   "name": "Wooramel Seagrass Bank",
+   "views": 611,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2: an underwater prairie in open water, seen only incidentally from boat trips; no place to stand or go."
+  },
+  {
+   "name": "Boullanger Island",
+   "views": 592,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2/3: Wikivoyage Jurien Bay names it for the dibbler but says there is little reason to land on the marine park's islands; it is part of Jurien Bay Marine Park, which is kept."
+  },
+  {
+   "name": "Cervantes Islands",
+   "views": 374,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3, part of a larger spot: the sea-lion haul-out islets off Cervantes lie inside Jurien Bay Marine Park (Wikivoyage Nambung: the marine park runs from Green Head to Nambung's boundary) and boat trips do not land. The place visitors go is the marine park (kept separately)."
+  },
+  {
+   "name": "Carnamah Museum",
+   "views": 364,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2/3: re-looked for a counted source; Australia's Coral Coast's Carnamah page names it but says it opens only on Fridays 1:30-5 pm, so it is not there for most visitors, and it is a local-history collection that belongs in the Carnamah town spot."
+  },
+  {
+   "name": "Fig Tree Cave",
+   "views": 255,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2, closed: Wikivoyage Exmouth says the access road crosses private farmland and since 2020 the landowners have closed public access."
+  },
+  {
+   "name": "Seaview Cottage, Drummond Cove",
+   "views": 215,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 1/2: re-looked; no counted source, only an OpenStreetMap heritage building (alt name Mary Drummond's Cottage) with no sign it is open to visitors."
+  },
+  {
+   "name": "Bernier and Dorre Islands",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 2 unclear: Wikivoyage mentions them only for their history (the 1908-09 lock hospitals) and access via Carnarvon; no source names anything a visitor does there. Skeptic: For: two Wikivoyage mentions, a national park, historic significance. Against: no visitor activity or landing arrangement described; likely a reject unless a DBCA page shows public access."
+  },
+  {
+   "name": "Old Geraldton Gaol",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 1 one source only: Wikivoyage says the cells are preserved inside what is now a craft centre (weekdays and Saturday morning). Skeptic: For: preserved 19th-century cells open to look around. Against: one counted source, a craft shop in the building, short visit, limited hours; the board page does not mention it."
+  },
+  {
+   "name": "Point Moore Lighthouse",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rules 1 and 2 split: Wikivoyage and the Coral Coast board both name the 1877 candy-striped tower (Australia's tallest metal lighthouse), but there is no public access to the tower except occasional open days. Skeptic: For: an iconic photographed landmark two sources name, with windsurfing at Point Moore beside it. Against: exterior-only most of the year (rule 2), a short look."
+  },
+  {
+   "name": "Back Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 1 two sources but only as a surf break: Wikivoyage calls it Geraldton's most popular surf spot, the board a good break for beginners. Skeptic: For: a beach named by two visitor sources. Against: a suburban surf beach no source recommends as a stop beyond surfing; friend test 'only if nearby'."
+  },
+  {
+   "name": "St Georges Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 1 two sources but only as a windsurfing spot (Wikivoyage Do, Coral Coast board's windsurf list). Skeptic: For: named twice. Against: a suburban beach 4 km north of town listed only in activity lists; not a place visitors are sent to see."
+  },
+  {
+   "name": "Utakarra Racecourse",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 4: a race-meeting venue, only of interest on race days (Oct-April meetings); otherwise nothing to see."
+  },
+  {
+   "name": "Irwin District Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 1 one source: Wikivoyage Dongara lists the small museum in the 1870s courthouse, police station and jail. Skeptic: For: heritage buildings with a museum inside, on the Dongara Heritage Walk. Against: open only Mon-Sat 10-noon, small, one source; a local-history stop."
+  },
+  {
+   "name": "Russ Cottage",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3: a single 19th-century cottage maintained by the Irwin District Museum and one of 28 stops on the Dongara Heritage Walk; part of a larger place, no opening details."
+  },
+  {
+   "name": "Dongara Nature Reserve",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 1/2: Wikivoyage only notes it is a duneland area at the edge of town; no source names anything to do there; a local reserve."
+  },
+  {
+   "name": "The Loop, Kalbarri",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rules 1-3 arguable: DBCA promotes the 9 km Loop trail past Nature's Window and Wikivoyage names the Loop; but as described (the loop drive and car park) it overlaps Nature's Window and the Skywalk. Skeptic: For: a named DBCA day hike. Against: near-duplicate of Nature's Window (rule 3) and closed after 7am Nov-Mar; if kept, keep it as 'The Loop Trail' (the hike), not the car park."
+  },
+  {
+   "name": "Rainbow Valley",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3: duplicate of Mushroom Rock; the Mushroom Rock loop passes through Rainbow Valley's striated rocks (Wikivoyage lists them in one sentence)."
+  },
+  {
+   "name": "Port Gregory",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Town wrapper rule: the board's page is about the Pink Lake (Hutt Lagoon) at Port Gregory; the village itself is a small fishing village whose draws are the lagoon and the Lynton convict station beside it. Skeptic: For: the board calls it a popular fishing and diving holiday village with a reef. Against: town listed beside its own attraction (Hutt Lagoon); keep the lagoon, mention the village."
+  },
+  {
+   "name": "Kalbarri Pelican Feeding",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 4 arguable: Wikivoyage and the board describe the daily 8:45 am pelican feeding at the Grey Street foreshore; a daily custom at a permanent place, not an event, but timed. Skeptic: For: two sources, a daily ritual like the Monkey Mia feeding. Against: it is an activity, not a place (the place is a grassy foreshore), and there is nothing to see outside that half hour."
+  },
+  {
+   "name": "Rainbow Jungle",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2 closed: Wikivoyage says it was not open in 2022, and listings since mark the birdpark closed (destroyed by Cyclone Seroja in 2021); nothing confirms it reopened."
+  },
+  {
+   "name": "Chapman Valley",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3/feature-or-area: a farming shire, not a single place; the board page lists scattered features (Mills Lookout, Chapman River Nature Trail, a fishing park) rather than a place to go."
+  },
+  {
+   "name": "Blue Lagoon Pearl Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Operator/shop rule: Wikivoyage calls it primarily a sales pitch; a pearl business visited by boat tour, not a place."
+  },
+  {
+   "name": "Kori Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 1 thin: Wikivoyage and DBCA mention it only by name and access road; nothing named to do. Skeptic: For: a park beach two sources name. Against: near-duplicate of Lakeside on the same access road, no stated activity."
+  },
+  {
+   "name": "Osprey Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 3 arguable: Wikivoyage calls it Sandy Bay's continuation with a campground; DBCA lists its campground and kayak trail. Skeptic: For: a DBCA kayak snorkel trail. Against: near-duplicate of Sandy Bay and mostly a campground."
+  },
+  {
+   "name": "Jurabi Turtle Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 1 one source: Wikivoyage says it facilitates seasonal viewing of nesting turtles beside the lighthouse. Skeptic: For: a permanent interpretive centre for the Ningaloo turtle season the board promotes. Against: one counted source, the draw is seasonal (Nov-Mar) and at night."
+  },
+  {
+   "name": "Point Murat",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2, no public access: Wikivoyage Exmouth says Murat Road past the Bundegi turn-off is closed to all but authorised vehicles and the point is beside the naval station; the only public draws there are Bundegi Beach and the Navy Pier dive, judged as their own entries."
+  },
+  {
+   "name": "Navy Pier, Exmouth",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Rule 2 arguable: Wikivoyage Exmouth and Gascoyne both name the Navy Pier dive, a renowned shore dive, but the pier is a working navy pier with access only on regulated dive trips with one operator (Dive Ningaloo). Case for: the place itself (the pier and its reef life) is the draw, as Kapiti Island is reached only by permit boat. Case against: certified divers only, one operator, no access otherwise, one counted source family. Skeptic: A place reachable only by one dive operator's trip is close to 'an operator in place of its destination'; no Tourism WA or board page was opened for it."
+  },
+  {
+   "name": "Harold E Holt Naval Communication Station",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2, closed: Wikivoyage Exmouth says the base is off-limits; its towers are only seen from afar."
+  },
+  {
+   "name": "SS Mildura Wreck",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: One counted source (Wikivoyage Exmouth: wreck visible at low tide 80 m off the cape tip, reached by Mildura Wreck Road) and a short visit: marginal, so review. Case for: a named, signposted shore-visible wreck at the tip of the cape. Case against: a low-tide look from the shore, likely under 30 minutes, near Vlamingh Head Lighthouse. Skeptic: Only one counted source read; a second (DBCA or Tourism WA) would be needed for a keep."
+  },
+  {
+   "name": "Krait Memorial",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3, minor memorial: Wikivoyage Exmouth tells the Operation Jaywick story at length, but the site is a memorial near Learmonth jetty with nothing else to do."
+  },
+  {
+   "name": "Potshot Memorial",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3, minor roadside memorial: Wikivoyage Exmouth gives it one line ('on the main highway approaching Learmonth Airport')."
+  },
+  {
+   "name": "Learmonth Solar Observatory",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2: a working scientific facility; Wikivoyage Exmouth says 'No tours'."
+  },
+  {
+   "name": "Exmouth Town Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: One counted source with one line ('the long sandy strip by Mantarays'), so marginal: review. Case for: the town's beach, a second-tier beach stop. Case against: Wikivoyage says nothing to do there and points snorkellers to Cape Range beaches; the town's own beach adds little beside Bundegi and the Cape Range beaches. Skeptic: A one-line mention is the weakest kind of counted source."
+  },
+  {
+   "name": "Paradise Beach, Coral Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: One counted source (Wikivoyage Coral Bay: quieter rugged beach around the headland, start of the drift-snorkel back to the bay), arguable as distinct: review. Case for: a named second-tier beach with its own snorkel route. Case against: 200-500 m from the main beach, effectively part of the Coral Bay Beach visit, and Wikivoyage says its coral is dead since 2022. Skeptic: Near-duplicate of Coral Bay Beach."
+  },
+  {
+   "name": "Lookout Point, Coral Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3, part of a larger spot: a dune at the end of the town's car park overlooking the main beach and Paradise Beach; Wikivoyage Coral Bay itself says Coral Bay has few views and this gives 'a decent overview'. A ten-minute look belonging to the Coral Bay Beach visit."
+  },
+  {
+   "name": "Shark Sanctuary, Bill's Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Seasonal natural phenomenon at a place (brief: may be kept, season noted), one counted source (Wikivoyage Coral Bay: young tiger sharks in the shallows Nov-Jan, viewed from shore on a 1-2 km walk). Case for: a distinctive wildlife sight at a named place. Case against: only one source, seasonal and condition-dependent (high tide, calm day), and the place is the north end of Bill's Bay, part of the Coral Bay shore. Skeptic: Outside Nov-Jan there is nothing specific to see beyond the beach walk."
+  },
+  {
+   "name": "Maud's Landing",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: One counted source and a short visit: Wikivoyage Coral Bay names it as the original landing, 'nice beach but breezy and no coral'. Case for: a named beach with history 3 km north of town. Case against: the guide's own description is lukewarm; locals' dog beach. Skeptic: Faint praise from the only source; leans reject."
+  },
+  {
+   "name": "Pinnacles Desert Discovery Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 3, part of a larger spot: the discovery centre is the visitor centre at the start of the Pinnacles Desert drive and walk (DBCA: 'Just behind the visitor centre is the Pinnacles View Lookout'); the Pinnacles Desert spot covers it."
+  },
+  {
+   "name": "Kangaroo Point, Cervantes",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Two counted sources (Wikivoyage Nambung NP; Australia's Coral Coast Cervantes page) but both describe a boat-launch and shore-fishing beach with picnic shelters, 'usually strewn with seaweed' (Wikivoyage). Case for: named by both, with kangaroos and emus. Case against: a boat launch and picnic area more than a beach visitors travel to. Skeptic: Hangover Bay is the better beach in the same park."
+  },
+  {
+   "name": "Buller, Whittell and Green Islands",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2: Wikivoyage Nambung says landing is not allowed on Buller or Whittell and the Green Islands are off-limits in the seabird season; low scrubby islets with nothing to do, inside the marine park."
+  },
+  {
+   "name": "Grey (Cervantes)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 2/3: an off-grid squatter shack community (Wikivoyage Nambung); the source names it for its history, not as somewhere to visit, and it has no public attraction."
+  },
+  {
+   "name": "Lobster Shack, Cervantes",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: Brief: a business is a place only when a visitor source singles it out. Australia's Coral Coast's Cervantes page calls a visit to Lobster Shack, the Indian Ocean Rock Lobster Factory, 'a highlight' (factory tours), and Wikivoyage names it as the base of the sea-lion trips and a lunch spot. Case for: a factory tour like a brewery tour, singled out by the board. Case against: it is a seafood restaurant and processing business and an operator base. Skeptic: Restaurants and operators are rejected unless singled out; the board's 'highlight' is the only thing lifting it."
+  },
+  {
+   "name": "Jurien Bay Jetty",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "What qualifies: One counted source (Wikivoyage Jurien Bay: 162 m fishing and strolling jetty, built 2011) and a short visit. Case for: the town's named sight, a jetty walk. Case against: a 20-minute stroll, and the board's Jurien Bay page does not name it. Skeptic: Leans toward folding into Jurien Bay's bio."
+  },
+  {
+   "name": "Urawa Nature Reserve",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 1 too thin: Wikivoyage Mid West only lists the name in a sentence about Mullewa, with nothing to see or do; Australia's Coral Coast's Mullewa page does not name it. A local wildflower reserve."
+  },
+  {
+   "name": "Coral Coast Highway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: A spot is a place: a highway route (Geraldton to Exmouth) that links the region's places, each judged on its own."
+  },
+  {
+   "name": "Wildflower Country",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Region brand, not a place: the board's heading for the inland wildflower towns, each judged on its own."
+  },
+  {
+   "name": "Gassy Dash",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Rule 4: an annual off-road rally (March/April) on the Gascoyne riverbed, an event."
+  },
+  {
+   "name": "Island Rock",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Duplicate of Natural Bridge: Australia's Coral Coast covers 'Natural Bridge and Island Rock' as one stop with shared lookouts at Castle Cove, and Wikivoyage Kalbarri lists them in one listing. Keep as one spot (Natural Bridge, with Island Rock in its bio or name)."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Hutt River Principality",
+   "id": "hutt-river-principality",
+   "views": 46338,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Carnarvon",
+   "id": "carnarvon",
+   "views": 36280,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Houtman Abrolhos",
+   "id": "houtman-abrolhos",
+   "views": 32196,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Mount Augustus",
+   "id": "mount-augustus",
+   "views": 23936,
+   "counted_sources": 3,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Ningaloo Reef",
+   "id": "ningaloo-reef",
+   "views": 20292,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Northampton",
+   "id": "northampton",
+   "views": 17509,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Lancelin",
+   "id": "lancelin",
+   "views": 9949,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Coral Bay",
+   "id": "coral-bay",
+   "views": 9782,
+   "counted_sources": 3,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Dongara",
+   "id": "dongara",
+   "views": 8954,
+   "counted_sources": 3,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Hutt Lagoon",
+   "id": "hutt-lagoon",
+   "views": 8125,
+   "counted_sources": 3,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Mullewa",
+   "id": "mullewa",
+   "views": 8094,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed": "standalone"
+  },
+  {
+   "name": "Horrocks Beach",
+   "id": "horrocks-beach",
+   "views": 5468,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed": "standalone"
+  }
+ ],
+ "benchmark": {
+  "note": "The COVERAGE.md benchmarks are New Zealand places; none lies in this region. The equivalent rules were checked here.",
+  "long_feature_not_under_neighbour": "Ningaloo Reef (260 km) is a standalone spot, not a spot of Cape Range NP, Exmouth or Coral Bay (the Ninety Mile Beach rule).",
+  "place_not_vehicle": "No vehicle or operator is placed: Monkey Mia (the place), Muiron Islands (where the dive boats go, not the boats), Jurien Bay Marine Park (not the sea-lion tour), Dirk Hartog Island (not the barge). Blue Lagoon Pearl Farm rejected; Lobster Shack and Navy Pier (one-operator access) in review.",
+  "gateway_village_to_review": "Gascoyne Junction (gateway whose draw is Kennedy Range and Mount Augustus) is in review, not kept (the Pipiriki rule).",
+  "events_rejected": "Gassy Dash (annual rally) rejected; Utakarra Racecourse rejected (race days only).",
+  "closed_or_no_access_rejected": "Rainbow Jungle (closed), Fig Tree Cave (access closed), Useless Loop (company town), Learmonth Solar Observatory and Harold E Holt station (no public access), Faure Island (no landing).",
+  "minor_memorials_rejected": "Krait Memorial and Potshot Memorial rejected; HMAS Sydney II Memorial kept as a major memorial and hilltop lookout.",
+  "part_of_larger_spot": "Pinnacles Desert Discovery Centre, Rainbow Valley, Island Rock, Lookout Point (Coral Bay), Cervantes Islands and Boullanger Island folded into the spots that hold them.",
+  "town_wrapper": "Port Gregory (wrapper for Hutt Lagoon) in review; Carnamah Museum folded into Carnamah; Coral Bay Beach merged into Coral Bay; Port Denison merged into Dongara.",
+  "flag": "Hutt River Principality was kept by the skeptic on views, but Wikivoyage says it ended in 2020: Pipeline C must confirm it is open to visitors, or the owner withdraws it (rule 2)."
+ },
+ "summary": [
+  "Kept 96: 56 spots in 7 proposed destinations, 29 standalone, 7 destination self-entries, 4 merged; 28 reviews listed, not placed.",
+  "Lowest kept: Lancelin Sand Dunes (0 views, 0 counted in the score; the judge's re-look found a Tourism WA page), then 0-view one-source spots (Museum of Geraldton, HMAS Sydney II Memorial, Leaning Trees of Greenough, Nature's Window).",
+  "62 candidates left out or in review score above the lowest kept; each has a What-qualifies reason (strongest: Useless Loop 17,706 views, closed company town; Yalgoo and Dalgaranga moved to wa-golden-outback).",
+  "Strongest outsiders (standalone, outside every span): Hutt River Principality (46,338, flagged possibly closed), Carnarvon, Houtman Abrolhos, Mount Augustus, Ningaloo Reef, Northampton.",
+  "Benchmarks (WA equivalents): Ningaloo Reef standalone, no vehicles or operators, Gascoyne Junction in review, events and closed places rejected; Hutt River Principality flagged as possibly closed."
+ ]
+}

@@ -5,11 +5,14 @@
 - Pilbara recall: Pretty Pool, Cleaverville Beach, Miaree Pool, Crossing Pool (closed to campers since 2013), Whim Creek (hotel only): no reachable visitor source found.
 ## Added but weak
 ## Needs the owner
+- Pilbara: Millstream Chichester NP becomes a destination candidate if any of its review entries (Cliff Lookout, Mount Herbert, Snappy Gum Drive) is approved.
 - Boundary reconciliation: six places rejected by one region as another's were moved to their council area's region and judged there: Fernhook Falls, Mandalay Beach, Mount Frankland NP, Peppermint Grove Beach (South West); Sunset Beach, Geraldton (Coral Coast); Yongernow Malleefowl Centre (Great Southern).
 - Filter overrides by me: Wittenoom (Pilbara) moved from auto-keep to the judge (asbestos ghost town, state warns against visiting).
 - Filter overrides by me (moved from auto-reject to the judge): Sacred Heart Church, Beagle Bay (church rule; visitors see the mother-of-pearl altar); Merredin WWII Army Hospital Sites (hospital rule; a heritage site).
 ## Photos still missing
 ## Not verified
+- Perth placement: the Gravity Discovery Centre (Gingin) was never enumerated; Connor's Mill's $3 price may be stale; WA Museum Boola Bardip's Wikipedia title to confirm; Zig Zag Scenic Drive named from OSM (Wikivoyage calls it the Kalamunda Zig Zag).
+- Pilbara placement: Marble Bar Pool (the town's namesake jasper bar) was never enumerated; Spoil Bank may be renamed Spoilbank Marina; Roebourne's Old Gaol Museum reported closed (left out of its bio).
 - Wrong enumerator data to fix at Pins/scoring: London Bridge, Sandstone (England's coordinates and views); Big Lobster, Coral Coast (South Australia's views); Nanny Goat Hill (Ottawa coordinates, rejected anyway); Smiths Beach (Yallingup's town point); Museum of the Great Southern (Perth WA Museum point).
 - Brierley Jigsaw Gallery, Bridgetown: a permanent stop found behind the Puzzletown festival listing; not enumerated or judged.
 - Waterfall Beach (William Bay NP, Denmark): DBCA site the Great Southern enumeration missed; not judged.

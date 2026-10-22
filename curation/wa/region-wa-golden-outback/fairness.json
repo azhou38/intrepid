@@ -1,0 +1,870 @@
+{
+ "region": "wa-golden-outback",
+ "inside_destinations": 40,
+ "standalone": 53,
+ "new_destinations": [
+  {
+   "id": "esperance",
+   "name": "Esperance",
+   "rank": 3,
+   "spots": 8,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Esperance ; https://www.australiasgoldenoutback.com/discover/esperance-coast/esperance",
+    "wording": "Wikivoyage town guide 'Esperance' (See/Do: museum, Great Ocean Drive, beaches); Australia's Golden Outback page headed 'Esperance' in its Esperance Coast region"
+   }
+  },
+  {
+   "id": "cape-le-grand-national-park",
+   "name": "Cape Le Grand National Park",
+   "rank": 3,
+   "spots": 8,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Cape_Le_Grand_National_Park ; https://exploreparks.dbca.wa.gov.au",
+    "wording": "Wikivoyage park article 'Cape Le Grand National Park'; Parks and Wildlife (DBCA) Explore Parks page; named on the Golden Outback Esperance page"
+   }
+  },
+  {
+   "id": "kalgoorlie-boulder",
+   "name": "Kalgoorlie-Boulder",
+   "rank": 3,
+   "spots": 4,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Kalgoorlie-Boulder ; https://www.australiasgoldenoutback.com/discover/goldfields/kalgoorlie-boulder",
+    "wording": "Wikivoyage city guide 'Kalgoorlie-Boulder'; Golden Outback page 'Kalgoorlie-Boulder' (Goldfields)"
+   }
+  },
+  {
+   "id": "hyden",
+   "name": "Hyden",
+   "rank": 3,
+   "spots": 6,
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Hyden ; https://www.australiasgoldenoutback.com/discover/wheatbelt/hyden-wave-rock",
+    "wording": "Wikivoyage town guide 'Hyden' (See: Wave Rock, Hippo's Yawn, The Humps and Mulka's Cave, Lake Magic, The Lace Place, wildlife park); Golden Outback page 'Hyden & Wave Rock'"
+   }
+  },
+  {
+   "id": "nullarbor-plain",
+   "name": "Nullarbor Plain",
+   "rank": 3,
+   "spots": 6,
+   "name_evidence": {
+    "source": "https://www.australiasgoldenoutback.com/discover/esperance-coast/norseman-nullarbor ; https://en.wikivoyage.org/wiki/Eyre_Highway",
+    "wording": "Golden Outback page headed 'Norseman & Nullarbor'; Wikivoyage 'Nullarbor' redirects to the Eyre Highway article's 'Nullarbor Plain' section; 88,149 Wikipedia page views"
+   }
+  },
+  {
+   "id": "merredin",
+   "name": "Merredin",
+   "rank": 5,
+   "spots": 4,
+   "name_evidence": {
+    "source": "https://www.australiasgoldenoutback.com/discover/wheatbelt/merredin ; https://en.wikivoyage.org/wiki/Merredin",
+    "wording": "Golden Outback page 'Merredin' (Merredin Peak and the Golden Pipeline, railway museum, Military Museum, Cummins Theatre); a Wikivoyage 'Merredin' page exists"
+   }
+  },
+  {
+   "id": "ravensthorpe",
+   "name": "Ravensthorpe",
+   "rank": 5,
+   "spots": 4,
+   "name_evidence": {
+    "source": "https://www.australiasgoldenoutback.com/discover/esperance-coast/ravensthorpe",
+    "wording": "Golden Outback page 'Ravensthorpe' (PUBLIC silo art, historic buildings, Ravensthorpe Range drives and lookouts, the lollipop, the railway heritage trail); no Wikivoyage page"
+   }
+  }
+ ],
+ "kept_total": 107,
+ "kept_total_note": "93 placed spots (40 inside proposed destinations, 53 standalone) + 7 kept candidates that are the proposed destinations themselves + 7 merged into another kept spot (Recherche Archipelago, Mulka's Cave, Leonora, Burra Rock Conservation Park, Kambalda, Dundas, Jilakin Lake).",
+ "lowest_kept": [
+  {
+   "name": "Great Ocean Drive (Esperance)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1-3: the board's own listing and its suggested itinerary: a 38 km coastal loop from Esperance, the town's signature scenic drive, past Twilight Beach, Observatory Point and the Pink Lake."
+  },
+  {
+   "name": "Blue Haven Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1-3: the board's own listing: a sheltered swimming beach reached by a steep staircase; second-tier beach a real source names."
+  },
+  {
+   "name": "Esperance Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1+2: Wikivoyage See listing (rambling collection, 1979 Skylab debris) and the board's own product page; open to the public with paid entry."
+  },
+  {
+   "name": "Fourth Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1-3: the board's own listing; a long surf beach popular for water sports on the Esperance coast road."
+  },
+  {
+   "name": "Thistle Cove",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1-3: Wikivoyage See listing: a cove between granite headlands with the 'whistling rock' monolith beside the car park and sculpted boulders."
+  },
+  {
+   "name": "Le Grand Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1-3: Wikivoyage See listing in Cape Le Grand National Park: a wide white beach with a campsite and the start of the coastal trail to a headland lookout."
+  },
+  {
+   "name": "Mount Le Grand",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1-3: Wikivoyage Do (3-hr off-track climb, caves on the eastern side) and the board's Cape Le Grand page (rock climbing at Mount Le Grand)."
+  },
+  {
+   "name": "Wave Rock Wildlife Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Two counted sources: Wikivoyage Hyden (See: daily 9-5, kangaroos, koalas) and the Australia's Golden Outback board page (wildlife park with koalas and white kangaroos)."
+  },
+  {
+   "name": "Buckley's Breakaway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Rule 1-3: the Golden Outback Kulin page names it as a picnic spot and 'a photographer's delight': orange clays against white cliffs and gullies, also a spring wildflower spot. A second-tier natural stop a real source names."
+  },
+  {
+   "name": "Merredin Military Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Three counted sources: Wikivoyage Merredin (daily 10-3, adult $10), Australia's Golden Outback board page (WA's largest collection of restored military vehicles) and the Central Wheatbelt drive trail; rule 2."
+  },
+  {
+   "name": "Merredin Railway Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Two counted sources: Wikivoyage Merredin (daily 11-2, $15) and the Australia's Golden Outback board page (restored station, signal tower, rolling stock); rule 2."
+  },
+  {
+   "name": "Merredin Peak Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "reason": "Two counted sources: Australia's Golden Outback board page listing (Golden Pipeline walk to the top of Merredin Peak, views) and Central Wheatbelt Visitor Centre's drive trail (Merredin Peak Reserve and Railway Dam); a walk: rule 2."
+  }
+ ],
+ "lowest_kept_score": {
+  "views": 0,
+  "counted_sources": 1
+ },
+ "lowest_kept_note": "Ranked by views, then counted sources. Nine kept places show counted_sources 0 in verdicts.json (Woody Island, Peak Charles NP, Beringbooding, Elachbutting, Jilakin, Yorkrakine and Yeerakine rocks, Toolibin Lake, Lake Dumbleyung): each judge reason records a counted source found on re-look (DBCA, Tourism WA, Wheatbelt Tourism or the board), so their real count is at least 1; all have views above 0, so they rank above the twelve listed.",
+ "stronger_left_out": [
+  {
+   "name": "Lake Hillier",
+   "views": 44580,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: re-looked: Tourism WA (westernaustralia.com) has an attraction page for it; famous pink lake on Middle Island, 44,580 page views. | Review objection: Rule 2: there is no public landing; it is seen only from a scenic flight or an occasional cruise, so a visitor cannot stand there; COVERAGE allows 'what a scenic flight flies over' as the spot, which argues for keeping, but nothing can be done on site."
+  },
+  {
+   "name": "Great Victoria Desert",
+   "views": 34087,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 It is a vast desert region with no visitor point; not a spot (rule 2: nothing to do at a place)."
+  },
+  {
+   "name": "Pink Lake (Esperance)",
+   "views": 29219,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: one counted source (Wikivoyage Esperance See listing); the Golden Outback Esperance page does not name it. | Review objection: Wikivoyage itself says it is 'not particularly pink nor lake-like', a salt pan whose colour has gone; visitors expecting a pink lake are disappointed. Case for: well known name (29k views), a roadside look on the edge of town."
+  },
+  {
+   "name": "Nullarbor Links",
+   "views": 15506,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "COVERAGE 'a spot is a place' / Rule 3: an 18-hole golf course spread over 1,365 km of the Eyre Highway with holes at roadhouses in WA and SA; it is an activity with no single place to pin."
+  },
+  {
+   "name": "CY O'Connor Pipeline",
+   "views": 10605,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not a place: a 530 km water pipeline; it is seen at its stops, chiefly Mount Charlotte Reservoir and Lookout (Wikivoyage Kalgoorlie-Boulder), so as a spot it is a duplicate of that."
+  },
+  {
+   "name": "Yalgoo",
+   "views": 8082,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1 + 2, town: the Shire of Yalgoo's tourism pages (fetched) give the town its own attractions. These are the Courthouse Museum (open on call to the Shire, with toilets and an information bay), the Dominican Chapel of St Hyacinth (a Monsignor Hawes chapel, which has its own attraction page), the restored railway station, Jokers Tunnel, a heritage trail, and the Yalgoo Arts and Cultural Centre. It is also the base for the Dalgaranga crater, the wildflower drives and the Gascoyne Murchison Outback Pathways. | Review objection: The only source is the shire's own website: Wikivoyage has no Yalgoo page, the Golden Outback board page returned 404, and Tourism WA's page did not render to a script, so it was not confirmed. The town has about 100 people, and most of its pull is the seasonal wildflowers and the station country beyond it. Its listed draws are small and some open only on request (the courthouse museum is 'call Shire for details'). A town with one source and short stops is marginal. If kept, it is a low-rank gateway, and the Hawes chapel might be the stronger single spot."
+  },
+  {
+   "name": "Outback Way",
+   "views": 7554,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "COVERAGE 'a spot is a place': a 2,700 km road from Laverton to Winton, mostly in the NT and Queensland; it is a way of travelling, and the places along it are the spots."
+  },
+  {
+   "name": "Great Western Woodlands",
+   "views": 7274,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3 / not a place: a 16-million-hectare bioregion with no single visitor point; visitors experience it in the parks that are candidates in their own right (Goldfields Woodlands NP, Boorabbin NP, Burra Rock, Kalgoorlie Arboretum)."
+  },
+  {
+   "name": "Bunda Cliffs",
+   "views": 7173,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Outside the region: the Bunda Cliffs and their signposted viewing spots run east of Eucla and Border Village, in South Australia (candidate coordinates 131.1 E); they belong to no WA region."
+  },
+  {
+   "name": "Dalgaranga Meteorite Crater",
+   "views": 6723,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1 + 3, one counted source: the Shire of Yalgoo's tourism attraction page (fetched) lists it with daylight opening hours, signposting and no facilities on Dalgaranga Station, 100 km north of Yalgoo. It is a distinct natural draw: Australia's smallest well-preserved impact crater (24 m across, 3 m deep) and the only known crater made by a mesosiderite meteorite. It is permanent and open to the public (rules 2 and 4). | Review objection: Only one counted source: no board, Wikivoyage or guidebook page was found. australiasgoldenoutback.com has no page for it, and ExplorOz is a 4WD place directory, not counted. It is a small hollow on a pastoral station about 100 km from town on unsealed station roads, so the visit is a short look of perhaps 15-30 minutes. That is the marginal combination COVERAGE sends to review (one source and a short visit). The case for keeping it is that it is a scientifically unique, quirky stop that a shire signposts for visitors."
+  },
+  {
+   "name": "Kellerberrin",
+   "views": 5475,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: own board page naming a folk museum, Kellerberrin Hill Lookout and Kokerbin Rock nearby. | Review objection: Small Wheatbelt service town on the Great Eastern Highway; its strongest draw (Kokerbin Rock) is 40 km away and would be its own spot; one counted source and no Wikivoyage page; fails the friend test unless passing through."
+  },
+  {
+   "name": "Mundrabilla meteorite",
+   "views": 3519,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: the meteorite is not there (the masses are in museums); what the visitor finds is the Mundrabilla roadhouse with a small museum, which is a business, and one counted source."
+  },
+  {
+   "name": "Peak Hill",
+   "views": 2653,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Australia's Golden Outback board page (Meekatharra) names the ghost town's ruins and old gold mines; 2653 page views. | Review objection: Named in passing only; remote, beside a mining area, and what remains to see is unconfirmed. One source."
+  },
+  {
+   "name": "Lake Lefroy",
+   "views": 2583,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Golden Outback board names it (a 40 km salt pan used for land sailing and speed-record attempts, yacht hire by arrangement); 2,583 page views. | Review objection: Its visitor viewpoint is Red Hill Lookout (kept), so as a view it is a near-duplicate; land sailing is an activity by prior arrangement, not a place a visitor can just turn up to."
+  },
+  {
+   "name": "Lake Carnegie",
+   "views": 2047,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Remote ephemeral salt lake with no visitor access."
+  },
+  {
+   "name": "Kanowna",
+   "views": 2005,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1: one counted source (Wikivoyage Kalgoorlie-Boulder listing: two cemeteries, a length of train platform, abandoned mines); the board Kalgoorlie page does not name it. | Review objection: Very little left to see on a flat plain; a 'only if nearby' stop. Case for: an authentic ghost town of a once 12,000-strong town, 29 km from Kalgoorlie."
+  },
+  {
+   "name": "Hippo's Yawn",
+   "views": 1998,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1: Wikivoyage Hyden and the board Hyden & Wave Rock page both name it; a gaping cavern in granite. | Review objection: Rule 3: it is 1 km from Wave Rock on the Wave Rock walk trail and is visited as part of the same stop (Wikivoyage suggests parking there and walking to Wave Rock); likely belongs in Wave Rock's bio rather than as its own spot."
+  },
+  {
+   "name": "Lake Towerrinning",
+   "views": 1723,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1-2: the Shire of West Arthur's lake page (the reserve is vested in the shire) describes water sports including skiing, BBQs, picnic shelters, a boardwalk, a playground and 128 bird species; a private campground adjoins it. | Review objection: A local water-ski and camping lake 32 km south of Darkan; no tourism-board or guidebook page was found, so it may be a place mostly locals use."
+  },
+  {
+   "name": "Nannine",
+   "views": 1632,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Australia's Golden Outback board page (Meekatharra) names the ghost town's ruins and old mines. | Review objection: Named in passing only; very little remains of the townsite; one source."
+  },
+  {
+   "name": "Jerdacuttup",
+   "views": 1616,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 1/2: the source names only unnamed 'beaches and camping areas' around a rural community; nothing specific to see, so the town test fails."
+  },
+  {
+   "name": "Collgar Wind Farm",
+   "views": 1539,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Australia's Golden Outback board page listing and the Merredin page suggest the drive to see the 111 turbines. | Review objection: Private energy infrastructure seen from the road; likely a short look, not half an hour (rule 2). One source."
+  },
+  {
+   "name": "Bonnie Rock",
+   "views": 1271,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source names the rock as a place to visit; the Wheatbelt Way names only the Bonnie Rock townsite, and the rest are campsite listings."
+  },
+  {
+   "name": "Serpentine Lakes",
+   "views": 1012,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Remote salt lakes on the WA/SA border in the Great Victoria Desert, reached only by 4WD expedition."
+  },
+  {
+   "name": "Twilight Cove",
+   "views": 1005,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Golden Outback board names it (fishing and whale watching in season, 32 km south of Cocklebiddy); 1,005 page views. | Review objection: One counted source and 4WD-only access; second source needed for a marginal place."
+  },
+  {
+   "name": "Lake Yealering",
+   "views": 919,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1-2: the Shire of Wickepin's Explore page names it (picnic area, BBQs, walk trail round the banks, kayaking, sailing and skiing when full, black swans, astrophotography) and Australia's Golden Outback describes it similarly. | Review objection: An ephemeral town lake used mainly for local recreation; fails the friend test unless already nearby, and is often dry."
+  },
+  {
+   "name": "Golden Pipeline Heritage Trail",
+   "views": 845,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not a place: a self-drive heritage route along the Mundaring-Kalgoorlie pipeline; its stops (pump stations, Mount Charlotte Reservoir) are the places."
+  },
+  {
+   "name": "Lake Wells",
+   "views": 829,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Remote salt lake, no visitor access."
+  },
+  {
+   "name": "Lake Johnston",
+   "views": 818,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Only campsite listings on the Hyden-Norseman Road."
+  },
+  {
+   "name": "Lake Magenta",
+   "views": 690,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 A remote nature reserve with no visitor facilities named."
+  },
+  {
+   "name": "Wongan Hills",
+   "views": 671,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: own board page naming the Mount O'Brien lookout, Mount Matilda walk, pioneer museum and spring wildflower reserves. | Review objection: Small farming town, 671 page views, one counted source; the lookout and walk are 10 km west and the wildflowers seasonal; a traveller from elsewhere goes mainly in wildflower season."
+  },
+  {
+   "name": "Boyagin Rock",
+   "views": 653,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Boyagin Nature Reserve (same coordinates; the rock is the reserve's centrepiece): kept as one spot under the reserve."
+  },
+  {
+   "name": "Frank Hann National Park",
+   "views": 653,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: Parks WA visitor page (wildflowers along Lake King-Norseman Road, bushwalks); open and free. | Review objection: No facilities or marked walks; the page itself says you can see it from your car on a through road, so it may be a drive-through rather than a place to stop for half an hour. One source."
+  },
+  {
+   "name": "Rossiter Bay",
+   "views": 646,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Wikivoyage See listing and the board's combined 'Mississippi Hill and Rossiter Bay' listing; the 1841 Eyre rescue site at the end of the coastal trail. | Review objection: Wikivoyage itself says 'the bay is not particularly exciting'; its interest is historical; could fold into Mississippi Hill or the coastal trail."
+  },
+  {
+   "name": "Shark Lake",
+   "views": 595,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 A nature reserve 13 km north of Esperance; no visitor source names facilities or a reason to go."
+  },
+  {
+   "name": "Boorabbin National Park",
+   "views": 592,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: DBCA Explore Parks page ('nature's rest stop' on the Great Eastern Highway: bushwalk among wildflowers, banksias, the old Boorabbin townsite). | Review objection: One counted source; the agency itself frames it as a leg-stretch stop on the highway."
+  },
+  {
+   "name": "Matuwa Kurrara Kurrara National Park",
+   "views": 588,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rules 1 and 2 fail: no visitor page (the Parks WA URL is a 404) and the only reports (ExplorOz, 2024 forum) say traditional owners are not yet receiving visitors; camping and tourism not permitted."
+  },
+  {
+   "name": "Burtville",
+   "views": 587,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Golden Outback board names it as a historic site of a former outback town near Laverton; a ghost town to explore, 587 page views. | Review objection: One counted source, mentioned in passing; little remains and access is by outback tracks."
+  },
+  {
+   "name": "Lennonville",
+   "views": 564,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Australia's Golden Outback board page (Mount Magnet) names exploring the remains of abandoned settlements such as Lennonville. | Review objection: Named in passing only; little is left of the townsite, so it may not hold a visitor for half an hour (rule 2). One source."
+  },
+  {
+   "name": "Gill Pinnacle",
+   "views": 564,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 A remote inselberg on Ngaanyatjarra lands near Warburton (permit area); the note's 'Wheatbelt' is wrong."
+  },
+  {
+   "name": "Lake Darlot",
+   "views": 532,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Remote salt lake near Leinster/Wiluna, no visitor access."
+  },
+  {
+   "name": "Puntapin Rock",
+   "views": 464,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted visitor source found (Wikipedia only; Wikivoyage has no Wagin page)."
+  },
+  {
+   "name": "Yeo Lake",
+   "views": 453,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Remote salt lake in a nature reserve, no visitor access."
+  },
+  {
+   "name": "Charles Darwin Reserve",
+   "views": 431,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: the Golden Outback Perenjori page names it (a Bush Heritage reserve of national ecological significance, 230 animal and 680 plant species, camping June-September at Samphire Campground, booked through Bush Heritage); Bush Heritage also runs guided visits. | Review objection: Open only by booking in a limited season (sources disagree: Apr-Oct or Jun-Sep); one counted source. Boundary unsure: the Shire of Perenjori is administratively Mid West, next to the coral-coast wildflower towns (Morawa, Three Springs), though the Golden Outback brand lists it under the Wheatbelt."
+  },
+  {
+   "name": "Lake Baandee",
+   "views": 422,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2/4 and 1: Wheatbelt Tourism only notes it as a gazetted water-ski area when full, depending on the season; nothing to see or do when dry, and no visitor facility named."
+  },
+  {
+   "name": "Wagin Lake",
+   "views": 416,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Only a naturalists' trip note and a local news story about a bird hide."
+  },
+  {
+   "name": "Culham Inlet",
+   "views": 408,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: the board's own listing: a landlocked estuary west of Hopetoun with fishing and lookouts. | Review objection: One source; mainly a fishing spot; of local appeal."
+  },
+  {
+   "name": "Yenyening Lakes",
+   "views": 400,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: two counted sources, Australia's Golden Outback product page and Wheatbelt Tourism's Granite Outcrops & Salt Lakes page (birdlife, water sports, photography). Boundary unsure: 32 km SE of Beverley, spanning the Beverley, Brookton and Quairading shires; Beverley is in wa-perth's Avon Valley. | Review objection: Salt lakes that need generous rain to fill; mainly a local recreation spot; may belong to wa-perth."
+  },
+  {
+   "name": "Lake Cronin",
+   "views": 370,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Only ExplorOz/community listings: a 4WD sandy-track day-use stop off the Hyden-Norseman road."
+  },
+  {
+   "name": "Parkeyerring Lake",
+   "views": 361,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1"
+  },
+  {
+   "name": "Lake Gore",
+   "views": 358,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Ramsar wetland west of Esperance with no visitor facilities named; Esperance's visitor lake is Lake Monjingup."
+  },
+  {
+   "name": "Baladjie Rock",
+   "views": 352,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: Central Wheatbelt Visitor Centre's Eastern Wheatbelt drive trail lists it under granite outcrops; climb for views over Baladjie Lake. | Review objection: One counted source; remote picnic and camping spot."
+  },
+  {
+   "name": "Lake Monjingup",
+   "views": 290,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1+2: the board's own listing: a lake with a boardwalk, picnic area, bird watching and spring wildflowers. | Review objection: One counted source; a local nature reserve (Lake Monjingup Reserve) of the 'ordinary reserve near a town' kind COVERAGE leaves out unless guides feature it."
+  },
+  {
+   "name": "Old Homestead Cave",
+   "views": 290,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: no counted source found on re-look (only Wikipedia and OSM; a search turned up no visitor page); a wild 36 km cave for experienced cavers, not open to the public."
+  },
+  {
+   "name": "Lake Hopkins",
+   "views": 265,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Remote salt lake on Ngaanyatjarra lands (permits)."
+  },
+  {
+   "name": "Cave Hill",
+   "views": 246,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: the Golden Outback board names Cave Hill among Coolgardie's outback nature reserves; a granite hill with caves, a camping and 4WD spot in the Great Western Woodlands. | Review objection: One counted source, 4WD access only, and no detail on what the visitor does there in the source; no DBCA page found (exploreparks 404)."
+  },
+  {
+   "name": "Woody Lake Nature Reserve",
+   "views": 233,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1+2: the board lists the Woody Lake Nature Reserve Canoe Trail, a waymarked paddle through paperbark channels. | Review objection: One counted source and it is listed as a product; a local wetland reserve; paddling needs your own canoe or hire."
+  },
+  {
+   "name": "Gnarlbine Rock",
+   "views": 219,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 Gnarlbine Rock/Soak, 30 km SW of Coolgardie on the Holland Track, appears only in the heritage register and blogs."
+  },
+  {
+   "name": "Datjoin Rock",
+   "views": 214,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: named as a Wheatbelt Way stop near Beacon with a picnic area (guidebook, not directly read). | Review objection: Source thin and not opened directly; a minor outcrop."
+  },
+  {
+   "name": "Lake Grace South",
+   "views": 210,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 The visitor point for the Lake Grace system is the Lake Grace Lookout (a separate listing on the board)."
+  },
+  {
+   "name": "Badjaling Nature Reserve",
+   "views": 203,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 No walk or facilities; Quairading's visitor reserves are Nookaminnie Rock and Pink Lake."
+  },
+  {
+   "name": "Yardina Rock",
+   "views": 138,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source after a re-look (web search found only Wikipedia, heritage/NRM records or community camping listings): fails rule 1 No visitor information exists for it at all."
+  },
+  {
+   "name": "Hoover House",
+   "views": 127,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: part of a larger spot - Hoover House stands within the Gwalia historic site / Gwalia Museum precinct (the board describes it alongside the museum and the Oregon headframe), and it operates as a guest house; mention it in the Gwalia Museum spot."
+  },
+  {
+   "name": "Totadgin Conservation Park",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "review",
+   "reason": "Rule 1: named only by the regional board (Merredin and Hyden & Wave Rock pages: mini wave rock, interpretive trail, picnic spot); Wikivoyage Hyden does not mention it, so effectively one counted source. | Review objection: A small local conservation park 14 km from Merredin; 'mini wave rock' invites comparison with the real one an hour south; a stop only if nearby."
+  },
+  {
+   "name": "Archer Drive Lookout",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1: named on the board's Esperance and Ravensthorpe pages: a walking trail and scenic drive to a lookout over farmland and mountains in the Ravensthorpe Range. | Review objection: Rule 3: likely one of the two lookouts on the Ravensthorpe Range (kept as its own spot), so a part of a larger place; keep one or the other."
+  },
+  {
+   "name": "Mount Short Scenic Drive",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1: on both board pages: a 40 km four-wheel-drive track to Mount Short, the highest point in the region. | Review objection: 4WD only; a drive rather than a place (the place is Mount Short); local appeal."
+  },
+  {
+   "name": "Mount Madden Scenic Drive",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1: on both board pages: a 160 km, five-to-six-hour circuit with views and spring wildflowers at Pallarup Rocks. | Review objection: A long farmland loop drive, not a place; the place visitors stop at is Pallarup Rocks, which would be the spot if any."
+  },
+  {
+   "name": "Golden Quest Discovery Trail",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Not a place: a 965 km self-drive touring route (Coolgardie-Menzies-Leonora-Laverton); its stops (Lake Ballard, Niagara Dam, Gwalia, Kookynie) are the spots. Mention it in descriptions."
+  },
+  {
+   "name": "Norseman Historical Collection",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1-2: Golden Outback board names it (a local museum with a large piece of Skylab). | Review objection: Only one real counted source: the Wikivoyage Esperance mention of Skylab refers to Esperance, not this collection; a small volunteer collection with limited hours."
+  },
+  {
+   "name": "Murchison GeoRegion Trail",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A spot is a place: this is a regional road-trip route through many sites (Walga Rock, The Granites etc.), each of which is its own candidate; not a distinct place (rule 3)."
+  },
+  {
+   "name": "PUBLIC Silo Art Trail",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Not a place (COVERAGE 'A spot is a place'): a trail of painted silos across many towns; each silo (Merredin CBH silos, Ravensthorpe silos) is the place and should be judged as its own candidate."
+  },
+  {
+   "name": "Sandstone Heritage Trail",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Not a place: an 18 km self-drive (plus town walk) linking Sandstone's buildings, London Bridge and the brewery site; its stops are judged separately (London Bridge kept) and the town (Sandstone, kept) covers the rest, so this is a duplicate of Sandstone."
+  },
+  {
+   "name": "Pathways to Wave Rock",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Not a place: a 760 km self-drive trail through Wheatbelt towns to Wave Rock; Wave Rock and the towns are the spots."
+  }
+ ],
+ "stronger_left_out_note": "Every review or reject candidate whose score (views, then counted sources) beats the lowest-scoring kept place (views 0, 1 counted source). Each carries the judge's concrete 'What qualifies' reason and, for review, the skeptic's objection. Review entries are the owner's decision (placement.json -> review). The highest-scoring are Lake Hillier (review: no public landing, seen only from the air or an occasional cruise), Great Victoria Desert (reject: no counted source, no visitor point), Pink Lake (review: one source, no longer pink), Nullarbor Links (reject: a golf course strung over 1,365 km, not one place) and CY O'Connor Pipeline (reject: a pipeline seen at its stops, chiefly Mount Charlotte, which is kept).",
+ "strongest_outsiders": [
+  {
+   "name": "Canning Stock Route",
+   "views": 44694,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "canning-stock-route"
+  },
+  {
+   "name": "Lake Hillier",
+   "views": 44580,
+   "counted_sources": 0,
+   "verdict": "review",
+   "placed_as": null
+  },
+  {
+   "name": "Great Victoria Desert",
+   "views": 34087,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "placed_as": null
+  },
+  {
+   "name": "Norseman",
+   "views": 16969,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "norseman"
+  },
+  {
+   "name": "Laverton",
+   "views": 16796,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "laverton"
+  },
+  {
+   "name": "Coolgardie",
+   "views": 15548,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "coolgardie"
+  },
+  {
+   "name": "Wiluna",
+   "views": 13718,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "wiluna"
+  },
+  {
+   "name": "Meekatharra",
+   "views": 13579,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "meekatharra"
+  },
+  {
+   "name": "Leonora",
+   "views": 12035,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "merged into Gwalia (gwalia)"
+  },
+  {
+   "name": "Narrogin",
+   "views": 11345,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "narrogin"
+  },
+  {
+   "name": "Southern Cross",
+   "views": 10672,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "southern-cross"
+  },
+  {
+   "name": "Mount Magnet",
+   "views": 9776,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "mount-magnet"
+  },
+  {
+   "name": "Hopetoun",
+   "views": 9715,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "hopetoun"
+  },
+  {
+   "name": "Yalgoo",
+   "views": 8082,
+   "counted_sources": 1,
+   "verdict": "review",
+   "placed_as": null
+  },
+  {
+   "name": "Cue",
+   "views": 7190,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "cue"
+  },
+  {
+   "name": "Dalgaranga Meteorite Crater",
+   "views": 6723,
+   "counted_sources": 1,
+   "verdict": "review",
+   "placed_as": null
+  },
+  {
+   "name": "Gwalia",
+   "views": 6239,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "gwalia"
+  },
+  {
+   "name": "Kambalda",
+   "views": 5543,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "merged into Red Hill Lookout (red-hill-lookout-kambalda)"
+  },
+  {
+   "name": "Kellerberrin",
+   "views": 5475,
+   "counted_sources": 1,
+   "verdict": "review",
+   "placed_as": null
+  },
+  {
+   "name": "Corrigin",
+   "views": 5109,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "corrigin"
+  },
+  {
+   "name": "Kulin",
+   "views": 4368,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "kulin"
+  },
+  {
+   "name": "Sandstone",
+   "views": 4197,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "sandstone"
+  },
+  {
+   "name": "Menzies",
+   "views": 4015,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "menzies"
+  },
+  {
+   "name": "Peak Hill",
+   "views": 2653,
+   "counted_sources": 1,
+   "verdict": "review",
+   "placed_as": null
+  },
+  {
+   "name": "Lake Lefroy",
+   "views": 2583,
+   "counted_sources": 1,
+   "verdict": "review",
+   "placed_as": null
+  }
+ ],
+ "strongest_outsiders_note": "Candidates of any verdict outside every proposed destination's span (75% of defaultZoomSpanKm), by views; kept ones are placed as standalone spots (placed_as).",
+ "benchmark": {
+  "applies": "The NZ benchmark in COVERAGE step 6 cannot be run on a WA region; region checks instead.",
+  "checks": [
+   "Lucky Bay, Hellfire Bay, Frenchman Peak: spots of Cape Le Grand National Park (pass).",
+   "Wave Rock: headline spot of Hyden (pass). Super Pit Lookout: headline spot of Kalgoorlie-Boulder (pass).",
+   "Lake Ballard (Antony Gormley's Inside Australia): standalone, not under a town 51 km away (pass).",
+   "A spot is a place, not the vehicle: Woody Island is the spot, not the boat tour (Woody Island Eco Tours); Nullarbor Links, Outback Way, Golden Quest Discovery Trail, Golden Pipeline Heritage Trail, Pathways to Wave Rock, PUBLIC Silo Art Trail and Wheatbelt Way rejected as routes, while each silo is its own spot (pass).",
+   "Long feature at its access point: 90 Mile Straight pinned at its sign near Caiguna, not its midpoint; Canning Stock Route placed once at the midpoint of the whole route per the run-wide decision (pass).",
+   "Town wrappers: Leonora, Kambalda and Dundas merged into their one attraction; Hyden, Esperance, Kalgoorlie-Boulder, Merredin and Ravensthorpe are destinations, not spots (pass).",
+   "National parks: Cape Le Grand (8 spots) is a destination; Cape Arid, Stokes, Goldfields Woodlands, Goongarrie, Peak Charles and Dryandra Woodland have fewer than four kept spots and stand alone; no park is a spot of another park (pass). Eucla National Park is a spot of the Nullarbor Plain region, not of a park.",
+   "Gateway villages whose draw is the journey beyond go to review, not keep: Yalgoo and the Dalgaranga crater are review per the brief; Laverton and Wiluna were kept by the judges as towns with draws of their own (heritage, museum, police station complex / heritage walks, statue).",
+   "Negative benchmarks: no once-a-week market, festival, civic building or minor memorial is placed (Boulder Town Hall, Menzies Town Hall, Kambalda Pioneer Cemetery, Traveller's Cross and Eyre Memorial are review or reject)."
+  ]
+ },
+ "pins_note": "50 of 93 placed spots still need a pin (Overpass down this run); none was taken from memory or from a town page."
+}
