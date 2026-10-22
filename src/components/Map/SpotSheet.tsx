@@ -277,7 +277,7 @@ function CostValue({ spot }: { spot: Spot }) {
 }
 
 // The full-screen header's place line: the flag and country, then a divider and the destination (a standalone spot has
-// none). When the whole line does not fit, the destination moves to a line of its own below, without the divider. Its
+// none). When the whole line does not fit, the destination moves to a line of its own below; the divider stays after the country. Its
 // width on one line is measured from an invisible copy laid out unconstrained; until a spot's copy is measured the line
 // is drawn as one row. Its own component, so a measurement re-renders only this line.
 function HeroPlaceMeta({ spot, destination }: { spot: Spot; destination?: Destination | null }) {
@@ -306,7 +306,7 @@ function HeroPlaceMeta({ spot, destination }: { spot: Spot; destination?: Destin
     <View onLayout={e => setAvail(e.nativeEvent.layout.width)}>
       {split ? (
         <View style={{ gap: 6 }}>
-          <View style={st.heroMeta}>{country}</View>
+          <View style={st.heroMeta}>{country}<View style={st.heroMetaDivider} /></View>
           <Text style={st.heroMetaTxt}>{destination!.name}</Text>
         </View>
       ) : (
