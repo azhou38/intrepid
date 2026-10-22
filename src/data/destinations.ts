@@ -1639,6 +1639,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Come in {months}: whale sharks stay until August, humpbacks arrive in June and the gorges are cool to walk.",
     seasonalTags: [{ tag: 'wildlife-migration', months: [3, 4, 5, 6, 7, 8], strength: 0.8 }],
   },
+  {
+    id: 'shark-bay', name: "Shark Bay", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 115,
+    continent: 'Oceania', coordinates: { latitude: -25.928769, longitude: 113.535072 },
+    category: 'nature', icon: "🐬", rank: 2,
+    tagline: "Wild dolphins, a beach of shells and living stromatolites on WA's westernmost coast.",
+    description: "Shark Bay is a World Heritage Area on WA's Gascoyne coast, divided by the long Peron Peninsula, with the town of Denham and the resort at Monkey Mia near its tip. Its shallow, salty bays hold vast seagrass banks grazed by dugongs, and the hypersaline inner lagoons let shells and stromatolites build up where elsewhere they would be eaten. Steep Point, the mainland's westernmost tip, and Dirk Hartog Island, where the Dutch navigator landed in 1616, are reached only by 4WD, barge or boat.",
+    whyVisit: ["Watch dolphins come ashore at Monkey Mia", "Walk on the cockle shells of Shell Beach", "See ancient stromatolites at Hamelin Pool", "Drive past Francois Peron's red cliffs"],
+    whyVisitPhotos: ["00 1560 Monkey Mia - Western Australia.jpg", "Shell Beach (2052468810).jpg", "Stromatolites in Sharkbay.jpg", "Skipjack Point, Francois Peron National Park, Western Australia.jpg"],
+    highlights: ["Dolphin encounters", "Shell beach", "Ancient stromatolites", "Red-cliff 4WD"],
+    goodToKnow: [
+      { icon: "🐬", title: "Arrive early for dolphins", detail: "Dolphins visit Monkey Mia's beach between 7:45 am and noon, with a ranger briefing at 7:45 am; sessions can end well before noon." },
+      { icon: "🎟️", title: "Monkey Mia's own fee", detail: "Monkey Mia charges its own entry fee ($15 adult a day); WA Park Passes are not valid there, though they cover Francois Peron." },
+      { icon: "🚙", title: "4WD past the homestead", detail: "Beyond Peron Homestead the tracks are deep soft sand: take a high-clearance 4WD, no caravans, and lower your tyre pressure." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "The cooler months, {months}, suit 4WD tracks and wildlife cruises; summer days often pass 35°C.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

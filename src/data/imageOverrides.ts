@@ -572,6 +572,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Iytwelepenty / Davenport Range National Park": { x: 0.5, y: 0.55, zoom: 1.3 },
   "Barrow Creek Telegraph Station": { x: 0.63, y: 0.47, zoom: 1.4 },
   "Garig Gunak Barlu National Park": { x: 0.45, y: 0.5, zoom: 1.3 },
+  "Shark Bay": { x: 0.62, y: 0.62, zoom: 1.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1910,6 +1911,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Iytwelepenty / Davenport Range National Park": "P4150010 Old Police Station Waterhole - Iytwelepenty - Davenport Ranges National Park.jpg",
   "Barrow Creek Telegraph Station": "Barrow Creek Telegraph Station.jpg",
   "Ningaloo": "00 1870 Ningaloo Reef - Westaustralien.jpg",
+  "Shark Bay": "Skipjack Point, Francois Peron National Park, Western Australia.jpg",
 };
 
 /**
