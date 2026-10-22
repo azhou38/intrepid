@@ -2095,6 +2095,24 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Come in {months} for warm swimming and crabbing in the estuary; the resident dolphins can be seen all year.",
     seasonalTags: [{ tag: 'beach-peak', strength: 0.6 }],
   },
+  {
+    id: 'kununurra', name: "Kununurra", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 56,
+    continent: 'Oceania', coordinates: { latitude: -15.773092, longitude: 128.738839 },
+    category: 'city', icon: "🛶", rank: 3,
+    tagline: "East Kimberley town on the Ord River, gateway to Lake Argyle and the Bungle Bungles.",
+    description: "Kununurra was built from 1958 for the Ord River Irrigation Scheme, whose dams formed Lake Kununurra beside the town and Lake Argyle 70 km away by road. The banded sandstone of Mirima National Park's Hidden Valley rises on the edge of town, and Kelly's Knob looks out over the green irrigated farms. With an airport and about 4,500 people, it is the East Kimberley's main base for Purnululu, El Questro and the Mitchell Plateau.",
+    whyVisit: ["Cruise Lake Argyle among its islands", "Walk Hidden Valley in Mirima National Park", "Look out over Mirima from Kelly's Knob"],
+    whyVisitPhotos: ["Lake Argyle Isle.jpg", "Hidden Valley National Park.jpg", "Mirima NP Kununurra WA from Kellys knob.jpg"],
+    highlights: ["Lake Argyle", "Hidden Valley", "Kelly's Knob view"],
+    goodToKnow: [
+      { icon: "🍎", title: "Quarantine at the border", detail: "Western Australia restricts fruit, vegetables and plants brought from the Northern Territory: eat or bin them before the checkpoint." },
+      { icon: "🚗", title: "Reserve a hire car", detail: "The airport's car hire fleets are small, so book a vehicle well ahead of a dry-season visit." },
+      { icon: "🌊", title: "Ivanhoe Crossing floods", detail: "The causeway is always under water: cross on foot or by 4WD only when levels are low, never after rain, and don't swim there." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "The dry season, {months}, brings blue skies and 30°C highs; wet-season rain closes the dirt roads.",
+    seasonalTags: [{ tag: 'monsoon-dry-season', months: [5, 6, 7, 8, 9] }],
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

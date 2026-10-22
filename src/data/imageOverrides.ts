@@ -597,6 +597,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Perth": { x: 0.45, y: 0.5 },
   "File:The Basin on Rottnest Island in 2019.jpg": { x: 0.5, y: 0.65 },
   "Perth Hills": { x: 0.38, y: 0.5 },
+  "Kununurra": { x: 0.45, y: 0.6, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1962,6 +1963,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Rottnest Island": "Rottnest Island coastline near Parker Point 01.jpg",
   "Perth Hills": "MUNDARING WEIR FROM THE SOUTH.jpg",
   "Mandurah": "ext-mandurah-eastern-foreshore.jpg",
+  "Kununurra": "ext-kununurra-from-kellys-knob.jpg",
 };
 
 /**
