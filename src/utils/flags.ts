@@ -224,6 +224,13 @@ export function preloadFlags(countryCodes: string[], maxMs = 3000): Promise<void
   const uris = countryCodes
     .map(cc => Image.resolveAssetSource(flagSource(cc))?.uri)
     .filter((u): u is string => !!u && /^https?:/.test(u));
-  const all = Promise.all(uris.map(u => Image.prefetch(u).catch(() => false))).then(() => undefined);
-  return Promise.race([all, new Promise<void>(r => setTimeout(r, maxMs))]);
+  flagLog(`preload start ${uris.length} uris, first ${uris[0] ?? Image.resolveAssetSource(flagSource(countryCodes[0]))?.uri}`);
+  const all = Promise.all(uris.map(u => Image.prefetch(u).then(ok => { flagLog(`prefetch ${ok} ${u.slice(-40)}`); return ok; }).catch(e => { flagLog(`prefetch err ${e}`); return false; }))).then(() => { flagLog('preload all done'); });
+  return Promise.race([all, new Promise<void>(r => setTimeout(() => { flagLog('preload TIMEOUT'); r(); }, maxMs))]);
+}
+
+// TEMP flag-timing logs (remove after measuring)
+const T0 = Date.now();
+export function flagLog(msg: string) {
+  void fetch('http://10.34.229.235:9799/', { method: 'POST', body: `+${Date.now() - T0}ms ${msg}` }).catch(() => {});
 }

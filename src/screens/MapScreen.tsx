@@ -1,5 +1,5 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
-import { flagSource, preloadFlags } from '../utils/flags';
+import { flagSource, preloadFlags, flagLog } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
@@ -1530,7 +1530,9 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
 let flagsPreloaded: Promise<void> | null = null;
 const preloadPillFlags = () => (flagsPreloaded ??= preloadFlags(COUNTRY_GROUPS.map(g => g.countryCode)));
 
+let tempLoggedRender = false;
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
+  if (!tempLoggedRender) { tempLoggedRender = true; flagLog('MapScreen first render'); }
   preloadPillFlags();
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
@@ -4777,6 +4779,9 @@ const destItems = useMemo((): DestItem[] =>
                 <View style={styles.countryPillFlagClip}>
                   <Image
                     source={flagSource(cluster.countryCode)}
+                    onLoadStart={() => flagLog(`pill ${cluster.countryCode} loadStart`)}
+                    onLoad={() => flagLog(`pill ${cluster.countryCode} onLoad`)}
+                    onError={e => flagLog(`pill ${cluster.countryCode} error ${e.nativeEvent.error}`)}
                     style={styles.countryPillFlagImg}
                     resizeMode="cover"
                   />
@@ -5116,10 +5121,11 @@ const destItems = useMemo((): DestItem[] =>
           : { styleURL: MapboxGL.StyleURL.Light }
         )}
         onDidFinishLoadingMap={() => {
+          flagLog('map ready');
           setMapReady(true);
           // Pin photos for every destination, so a pin's photo is already there when it first appears instead of popping in.
           // After the pills' flags: the image loader runs four loads at a time, and the flags must not queue behind these.
-          void preloadPillFlags().then(() => prewarmDestinationPins(DESTINATIONS));
+          void preloadPillFlags().then(() => { flagLog("prewarm start"); prewarmDestinationPins(DESTINATIONS); });
           // onDidFinishLoadingMap fires once the STYLE has loaded, but the globe's own
           // atmosphere/lighting shader keeps visibly settling for a bit after that — the
           // "shines white, then flashes" effect this delay is masking. There's no public event
