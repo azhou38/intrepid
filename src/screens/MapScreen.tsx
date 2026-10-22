@@ -1578,7 +1578,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // The breadcrumb pill's measured width (it is centred, so a long destination name widens it toward the map-type
   // selector in the top-right corner — see layersShiftStyle).
   const crumbWidthSV = useSharedValue(0);
-  const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value }));
+  // 0 while a destination sheet is held back until the camera lands (destAfterCamera): the back pill then leaves with the
+  // sheet that is sliding away instead of lingering as a bare X over the empty map, and returns with the destination sheet.
+  const pillShownSV = useSharedValue(1);
+  const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value, opacity: pillShownSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
   // Cleared again immediately after — DestinationSheet only reads these in its initial
@@ -1746,6 +1749,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // animation, so the map jumped from the zoomed-in view to the zoomed-out one with no frames between. (The Explore sheet
   // no longer mounts on a close at all: it stays mounted, hidden, behind a selection.)
   const [destAfterCamera, setDestAfterCamera] = useState(false);
+  useEffect(() => {
+    pillShownSV.value = destAfterCamera ? withTiming(0, { duration: 150 }) : 1;
+  }, [destAfterCamera]);
   const destAfterCameraRef = useRef(false);
   const sheetAfterCameraTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const releaseSheetsAfterCamera = useCallback(() => {
