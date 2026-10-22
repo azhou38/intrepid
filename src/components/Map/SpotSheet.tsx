@@ -30,6 +30,7 @@ import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../.
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
+import { flagSource } from '../../utils/flags';
 import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import GoogleRating from './GoogleRating';
 import spotRatings from '../../data/spotRatings.json';
@@ -1524,6 +1525,23 @@ isVisited ? (
             </View>
             <View pointerEvents="none" style={st.peekNameRow}>
               <Text style={st.peekNameTxt} numberOfLines={1}>{activeSpot.name}</Text>
+              {/* As in the full-screen header: the destination (none for a standalone spot), a divider, the flag and country. */}
+              <View style={st.peekMetaRow}>
+                {!!destination && (
+                  <>
+                    <Text style={[st.peekMetaTxt, st.peekMetaShrink]} numberOfLines={1}>{destination.name}</Text>
+                    <View style={st.peekMetaDivider} />
+                  </>
+                )}
+                {!!spotCountryCode(activeSpot) && (
+                  <View style={st.peekFlagCircle}>
+                    <View style={st.peekFlagClip}>
+                      <Image source={flagSource(spotCountryCode(activeSpot)!)} style={st.peekFlagImg} resizeMode="cover" />
+                    </View>
+                  </View>
+                )}
+                <Text style={[st.peekMetaTxt, st.peekMetaShrink]} numberOfLines={1}>{spotCountry(activeSpot)}</Text>
+              </View>
             </View>
           </Pressable>
         </Reanimated.View>
@@ -1899,7 +1917,15 @@ const st = StyleSheet.create({
   peekScrim: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.35)' },
   peekPillRow: { alignItems: 'center', paddingTop: 8 },
   peekPill: { width: 36, height: 4, borderRadius: 2, backgroundColor: 'rgba(229,231,235,0.85)' },
-  peekNameRow: { position: 'absolute', left: 16, right: 16, bottom: 10 },
+  peekNameRow: { position: 'absolute', left: 16, right: 16, bottom: 8, gap: 2 },
+  // The meta row under the name, matching DestinationSheet's peek strip: 13 pt medium, the header's divider, a white-ringed flag.
+  peekMetaRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
+  peekMetaTxt: { fontSize: 13, color: 'rgba(255,255,255,0.92)', fontWeight: '500' },
+  peekMetaShrink: { flexShrink: 1 },
+  peekMetaDivider: { width: 1, height: 11, backgroundColor: 'rgba(255,255,255,0.40)', marginHorizontal: 3 },
+  peekFlagCircle: { width: 18, height: 18, borderRadius: 9, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center' },
+  peekFlagClip: { width: 15, height: 15, borderRadius: 7.5, overflow: 'hidden' },
+  peekFlagImg: { width: 15, height: 15 },
   // Matches DestinationSheet's own peekNameTxt exactly — same serif face as the full-screen
   // hero name, just smaller to fit this thin bottom-screen strip.
   peekNameTxt: { fontSize: 30, fontFamily: 'PlayfairDisplay_700Bold', color: 'white', letterSpacing: -0.4 },
