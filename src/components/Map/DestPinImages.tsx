@@ -63,9 +63,11 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
   return (
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={st.box}>
+        <View collapsable={false} style={st.outline}>
         <View collapsable={false} style={[st.disc, { borderColor: ring }, selected && st.discSelected]}>
           {!url && NO_PHOTO.has(dest.name) && <PhotoPlaceholder icon={dest.icon} category={dest.category} size={DEST_PIN_SIZE - BORDER * 2} />}
           {url && <PinPhoto key={tries} instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} onError={retry} resizeMode="cover" />}
+        </View>
         </View>
         {badge > 0 && (
           <View collapsable={false} style={st.badge}>
@@ -89,6 +91,12 @@ export default memo(function DestPinImages({ specs }: { specs: DestPinImageSpec[
 
 const st = StyleSheet.create({
   box: { width: DEST_PIN_BOX, height: DEST_PIN_BOX, alignItems: 'center', justifyContent: 'center' },
+  // A faint, thin grey hairline around the whole pin (outside the white or green ring), so a white ring still reads
+  // against a light map.
+  outline: {
+    width: DEST_PIN_SIZE + 2, height: DEST_PIN_SIZE + 2, borderRadius: (DEST_PIN_SIZE + 2) / 2,
+    borderWidth: 1, borderColor: 'rgba(107,114,128,0.35)',
+  },
   disc: {
     width: DEST_PIN_SIZE, height: DEST_PIN_SIZE, borderRadius: DEST_PIN_SIZE / 2,
     borderWidth: BORDER, backgroundColor: PLACEHOLDER, overflow: 'hidden',
