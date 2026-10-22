@@ -3414,80 +3414,83 @@ const destItems = useMemo((): DestItem[] =>
     durationMs = 500,
   ) => {
     cancelCountryCapture();
-
-    const bounds = getCountryBounds(cluster.countryCode);
-    if (!bounds) {
-      const dests = DESTINATIONS.filter(d => d.country === cluster.country);
-      if (dests.length > 0) {
-        fitCoords(dests.map(d => d.coordinates), { top: 120, right: 120, bottom: 300, left: 120 }, 500, mode);
+    // Held while a back tap's sheet swap and pin plan land first (cameraHoldUntilRef; see afterSheetSlideIn), as for the
+    // destination fits.
+    afterSheetSlideIn(() => {
+      const bounds = getCountryBounds(cluster.countryCode);
+      if (!bounds) {
+        const dests = DESTINATIONS.filter(d => d.country === cluster.country);
+        if (dests.length > 0) {
+          fitCoords(dests.map(d => d.coordinates), { top: 120, right: 120, bottom: 300, left: 120 }, 500, mode);
+        }
+        return;
       }
-      return;
-    }
 
-    const SHRINK = 0.9;                     // final size = 90% of the "borders touch" fit
-    const FIT_MS = durationMs;
+      const SHRINK = 0.9;                     // final size = 90% of the "borders touch" fit
+      const FIT_MS = durationMs;
 
-    // The MapView is absoluteFill inside MapScreen's root, whose top edge IS the screen's top
-    // edge — so screen-y and map-y coincide and the bounds below need no rebasing. Its HEIGHT
-    // is shorter than the device's, though: App.tsx's bottom Tab.Navigator reserves layout
-    // space below it (the tab bar isn't absolutely positioned), the same fact the sheets' own
-    // pillOffsetSV reactions account for. Measured via onLayout, falling back to the same
-    // BOTTOM_TAB_H constant those sheets use.
-    const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
+      // The MapView is absoluteFill inside MapScreen's root, whose top edge IS the screen's top
+      // edge — so screen-y and map-y coincide and the bounds below need no rebasing. Its HEIGHT
+      // is shorter than the device's, though: App.tsx's bottom Tab.Navigator reserves layout
+      // space below it (the tab bar isn't absolutely positioned), the same fact the sheets' own
+      // pillOffsetSV reactions account for. Measured via onLayout, falling back to the same
+      // BOTTOM_TAB_H constant those sheets use.
+      const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
 
-    // Already resolved this country at this geometry — go straight to the known camera, skipping the
-    // recompute. A plain centre+zoom stop, so 'flyTo' works here just as it does for the fit below.
-    // Keyed by framing too — the same country resolves to a different camera in each window.
-    const cacheKey = `${cluster.countryCode}:${framing}`;
-    const cached = countryCamCacheRef.current[cacheKey];
-    if (cached && cached.mapH === mapViewH) {
+      // Already resolved this country at this geometry — go straight to the known camera, skipping the
+      // recompute. A plain centre+zoom stop, so 'flyTo' works here just as it does for the fit below.
+      // Keyed by framing too — the same country resolves to a different camera in each window.
+      const cacheKey = `${cluster.countryCode}:${framing}`;
+      const cached = countryCamCacheRef.current[cacheKey];
+      if (cached && cached.mapH === mapViewH) {
+        beginProgrammaticCameraMove(FIT_MS);
+        cameraRef.current?.setCamera({
+          centerCoordinate: [cached.lng, cached.lat],
+          zoomLevel: cached.zoom,
+          animationDuration: FIT_MS,
+          animationMode: mode,
+        });
+        return;
+      }
+
+      const topBound = 0;                     // the very top of the screen
+      const bottomBound = framing === 'full'
+        ? Math.max(40, mapViewH - PEEK_STRIP_H) // top of the peek strip — all the visible map
+        : H / 2;                                // matches CountrySheet's own COLLAPSED_Y
+
+      // Padding describing the same window. The fitWindow mode ignores it, but a build that predates the native
+      // patch (it needs `expo run:ios`) falls back to the stock fit, which does size correctly from it — so an
+      // app running new JS on old native lands the right size rather than an arbitrary one.
+      const availH = Math.max(40, bottomBound - topBound);
+      const insetV = availH * (1 - SHRINK) / 2;
+      const insetH = SCREEN_W_GLOBAL * (1 - SHRINK) / 2;
+
       beginProgrammaticCameraMove(FIT_MS);
       cameraRef.current?.setCamera({
-        centerCoordinate: [cached.lng, cached.lat],
-        zoomLevel: cached.zoom,
+        bounds: {
+          ne: [bounds.ne.longitude, bounds.ne.latitude],
+          sw: [bounds.sw.longitude, bounds.sw.latitude],
+          paddingTop:    topBound + insetV,
+          paddingBottom: Math.max(0, mapViewH - bottomBound) + insetV,
+          paddingLeft:   insetH,
+          paddingRight:  insetH,
+          // Fields added by the @rnmapbox/maps patch (not in its types): frame the bounds inside this screen
+          // window at `shrink` of its size. See the block comment above.
+          mode: 'fitWindow',
+          windowTop: topBound,
+          windowBottom: bottomBound,
+          shrink: SHRINK,
+        } as any,
         animationDuration: FIT_MS,
         animationMode: mode,
       });
-      return;
-    }
 
-    const topBound = 0;                     // the very top of the screen
-    const bottomBound = framing === 'full'
-      ? Math.max(40, mapViewH - PEEK_STRIP_H) // top of the peek strip — all the visible map
-      : H / 2;                                // matches CountrySheet's own COLLAPSED_Y
-
-    // Padding describing the same window. The fitWindow mode ignores it, but a build that predates the native
-    // patch (it needs `expo run:ios`) falls back to the stock fit, which does size correctly from it — so an
-    // app running new JS on old native lands the right size rather than an arbitrary one.
-    const availH = Math.max(40, bottomBound - topBound);
-    const insetV = availH * (1 - SHRINK) / 2;
-    const insetH = SCREEN_W_GLOBAL * (1 - SHRINK) / 2;
-
-    beginProgrammaticCameraMove(FIT_MS);
-    cameraRef.current?.setCamera({
-      bounds: {
-        ne: [bounds.ne.longitude, bounds.ne.latitude],
-        sw: [bounds.sw.longitude, bounds.sw.latitude],
-        paddingTop:    topBound + insetV,
-        paddingBottom: Math.max(0, mapViewH - bottomBound) + insetV,
-        paddingLeft:   insetH,
-        paddingRight:  insetH,
-        // Fields added by the @rnmapbox/maps patch (not in its types): frame the bounds inside this screen
-        // window at `shrink` of its size. See the block comment above.
-        mode: 'fitWindow',
-        windowTop: topBound,
-        windowBottom: bottomBound,
-        shrink: SHRINK,
-      } as any,
-      animationDuration: FIT_MS,
-      animationMode: mode,
+      // Arm the capture of the camera this lands on, so later visits (and the country close's half-zoom) can
+      // use it. The map idle that follows this single move holds the final camera; handleMapIdle accepts it
+      // once FIT_MS has elapsed.
+      countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
     });
-
-    // Arm the capture of the camera this lands on, so later visits (and the country close's half-zoom) can
-    // use it. The map idle that follows this single move holds the final camera; handleMapIdle accepts it
-    // once FIT_MS has elapsed.
-    countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
-  }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove]);
+  }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove, afterSheetSlideIn]);
 
   // The zoom fitCountryDefaultView's half-screen ('topHalf') framing lands on: the camera it captured last time, or else an
   // estimate from the country's bounds (the same 90% fit, in mercator). Only a look-ahead target for the pin planning while
@@ -4147,7 +4150,10 @@ const destItems = useMemo((): DestItem[] =>
     // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan): the camera only starts once
     // the country sheet has slid in, so the destination's spot pins and photo pins used to wait for it before fading.
     const target = countryTargetZoom(cluster);
-    if (target !== null) beginBackPlan(target, SHEET_SLIDE_IN_MS + 500);
+    if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
+    // The camera waits for the swap, as for the X close and "← Destination": started with it, it zoomed out while the new
+    // selection was still rendering, over pins planned for the old one (they piled up, then a crowd flashed in).
+    cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
     handleCountryPress(cluster, 'flyTo');
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan]);
 
