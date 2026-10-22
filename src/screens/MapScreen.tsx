@@ -2189,7 +2189,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Country pills deliberately keep the live zoom: they belong to the wider view and would otherwise pop in over a
   // still zoomed-in map.
   const planZoomTargetRef = useRef<number | null>(null);
-  if (selectedCountry || selectedDest) planZoomTargetRef.current = null;
+  // Set by a back tap ("← Destination", "← Country"; see beginBackPlan): its target is kept although the parent is
+  // selected, so the pins plan at the parent's view from the tap exactly as for an X close.
+  const planWithSelRef = useRef(false);
+  if ((selectedCountry || selectedDest) && !planWithSelRef.current) planZoomTargetRef.current = null;
   let planZoomTarget = planZoomTargetRef.current;
   // The same look-ahead for closing a spot back INTO its destination (the "‹ Destination" back), which keeps the
   // destination selected and so can't use planZoomTarget (cleared above while one is selected). Spot pins, dots and names
@@ -2210,7 +2213,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       spotCloseTargetRef.current = null;
       if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
     }
-    if (arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; }
+    if (arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; planWithSelRef.current = false; }
   }
   const closeTarget = planZoomTargetRef.current ?? spotCloseTargetRef.current;
   // Pin planning runs ahead of the (heavy, laggy) per-frame renders.
@@ -2390,6 +2393,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, []);
   const releaseSpotCloseTarget = useCallback(() => {
     if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
+    if (planWithSelRef.current) {   // a back tap's plan (see beginBackPlan) ends with the move too
+      planWithSelRef.current = false;
+      planZoomTargetRef.current = null;
+      if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
+      setHeldSelTick(t => t + 1);
+    }
     if (spotCloseTargetRef.current === null) return;
     spotCloseTargetRef.current = null;
     setHeldSelTick(t => t + 1);
@@ -2407,6 +2416,23 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     planZoomTimerRef.current = setTimeout(() => {
       planZoomTimerRef.current = null;
       if (planZoomTargetRef.current === null) return;
+      planZoomTargetRef.current = null;
+      setHeldSelTick(t => t + 1);
+    }, durationMs + 800);
+    setHeldSelTick(t => t + 1);
+  }, []);
+  // The same plan for a back tap ("← Destination", "← Country"), which selects the parent instead of clearing the selection:
+  // the pins plan at the parent's view (targetZoom) from the tap, as for an X close, while the camera waits for the sheet
+  // swap and then flies there. Ends when the camera arrives, at the map idle, on a gesture or after the safety timer.
+  const beginBackPlan = useCallback((targetZoom: number, durationMs: number) => {
+    if (targetZoom >= camZoomRef.current - ZOOM_EPSILON) return;
+    planZoomTargetRef.current = targetZoom;
+    planWithSelRef.current = true;
+    if (planZoomTimerRef.current) clearTimeout(planZoomTimerRef.current);
+    planZoomTimerRef.current = setTimeout(() => {
+      planZoomTimerRef.current = null;
+      if (!planWithSelRef.current) return;
+      planWithSelRef.current = false;
       planZoomTargetRef.current = null;
       setHeldSelTick(t => t + 1);
     }, durationMs + 800);
@@ -3970,26 +3996,19 @@ const destItems = useMemo((): DestItem[] =>
       suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650 + BACK_CAMERA_DELAY_MS);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       setDestHomeToDefault(selectedDest, 'topHalf');
-      // Plan the spot pins at the view this lands on (see spotCloseTargetRef) — only when it zooms out.
+      // Plan the pins at the view this lands on from the tap, as an X close does (see beginBackPlan) — only when it zooms out.
       const target = destDefaultCamera(selectedDest, 'topHalf').zoom;
       if (target < camZoomRef.current - ZOOM_EPSILON) {
         // The destination sheet mounts once the camera lands, not during the zoom-out (see destAfterCamera).
         holdSheetUntilCamera(500, target);
-        spotCloseTargetRef.current = target;
-        if (spotCloseTimerRef.current) clearTimeout(spotCloseTimerRef.current);
-        spotCloseTimerRef.current = setTimeout(() => {
-          spotCloseTimerRef.current = null;
-          if (spotCloseTargetRef.current === null) return;
-          spotCloseTargetRef.current = null;
-          setHeldSelTick(t => t + 1);
-        }, 500 + 800 + BACK_CAMERA_DELAY_MS);
+        beginBackPlan(target, 500 + BACK_CAMERA_DELAY_MS);
       }
       // The zoom-out starts once the spot sheet has slid away and the destination sheet has slid up: running in the same
       // frames as the two sheets made both stutter (as the camera flight did for a pin tap's slide-in).
       cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
       fitDestinationDefaultView(selectedDest, 'flyTo', 'topHalf');
     }
-  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera, holdSheetUntilCamera]);
+  }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera, holdSheetUntilCamera, beginBackPlan]);
 
   // Spot close/back, provenance-routed: entered from the destination → return to it;
   // entered laterally (map tap at spot zoom, or search) → back to the map as it was.
@@ -4125,22 +4144,12 @@ const destItems = useMemo((): DestItem[] =>
     // animateCamera's own comment on the equivalent zoom-IN case). Always lands on the
     // country's default view, however far out the user has zoomed — this is deliberate upward
     // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
-    // Plan the pins at the country's view from the tap, as the spot → destination back does (spotCloseTargetRef): the
-    // camera only starts once the country sheet has slid in, so the destination's spot pins and photo pins used to wait
-    // for it before fading.
+    // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan): the camera only starts once
+    // the country sheet has slid in, so the destination's spot pins and photo pins used to wait for it before fading.
     const target = countryTargetZoom(cluster);
-    if (target !== null && target < camZoomRef.current - ZOOM_EPSILON) {
-      spotCloseTargetRef.current = target;
-      if (spotCloseTimerRef.current) clearTimeout(spotCloseTimerRef.current);
-      spotCloseTimerRef.current = setTimeout(() => {
-        spotCloseTimerRef.current = null;
-        if (spotCloseTargetRef.current === null) return;
-        spotCloseTargetRef.current = null;
-        setHeldSelTick(t => t + 1);
-      }, SHEET_SLIDE_IN_MS + 500 + 800);
-    }
+    if (target !== null) beginBackPlan(target, SHEET_SLIDE_IN_MS + 500);
     handleCountryPress(cluster, 'flyTo');
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom]);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
