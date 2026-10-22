@@ -670,13 +670,18 @@ function SpotSheet({
   // Carousel content fades out / peek strip fades in over the same [collapsed, peek] range,
   // so the two never overlap mid-transition — mirrors DestinationSheet's own compactAnimStyle
   // / peekAnimStyle opacity pair. Above collapsed, the full-screen cross-fade above.
+  // 1 while the sheet is sliding in from below on its way to half-screen: it then passes through the peek zone, where the
+  // peek strip would show and fade out again on the way up (and the carousel fade in). An opening slide shows the
+  // carousel throughout instead; the strip is for a sheet dropped to peek.
+  const enteringSV = useSharedValue(leaving ? 0 : 1);
+  useAnimatedReaction(() => slideAnim.value <= COLLAPSED_Y + 0.5, (arrived) => { if (arrived) enteringSV.value = 0; });
   const carouselOpacityStyle = useAnimatedStyle(() => ({
-    opacity: slideAnim.value <= COLLAPSED_Y
+    opacity: enteringSV.value === 1 ? 1 : slideAnim.value <= COLLAPSED_Y
       ? interpolate(slideAnim.value, [FULL_FADE_END_Y, COLLAPSED_Y], [0, 1], Extrapolation.CLAMP)
       : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [1, 0], Extrapolation.CLAMP),
   }));
   const peekOpacityStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
+    opacity: enteringSV.value === 1 ? 0 : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
   const backdropStyle = useAnimatedStyle(() => ({
     opacity: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
@@ -876,7 +881,9 @@ function SpotSheet({
       return;
     }
     // Collapsed, or already peeked if the map is being interacted with.
-    transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
+    const toPeek = !!isMapInteracting?.();
+    if (toPeek) enteringSV.value = 0;
+    transitionToRef.current(toPeek ? 'peek' : 'collapsed', 'mount');
   }, []);
 
   // Turned into the outgoing sheet while mounted: the same slide off the bottom an outgoing copy does on mount.

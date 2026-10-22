@@ -1022,8 +1022,12 @@ function DestinationSheet({
   // sheet actually drops down that far (fading in over the same range the hero itself holds
   // steady at its collapsed height — see heroAnimStyle's CLAMP), so the two never
   // double-render mid-transition.
+  // 1 while the sheet is sliding in from below on its way to half-screen (see SpotSheet's enteringSV): the peek strip then
+  // stays hidden instead of showing in the peek zone and fading out on the way up.
+  const enteringSV = useSharedValue(leaving ? 0 : 1);
+  useAnimatedReaction(() => slideAnim.value <= collapsedYAnim.value + 0.5, (arrived) => { if (arrived) enteringSV.value = 0; });
   const peekAnimStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
+    opacity: enteringSV.value === 1 ? 0 : interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
   // Continuously writes the back-to-country pill's target "bottom" offset as slideAnim (or
   // scroll position — see below) moves, so the parent's pill mirrors the sheet's own top edge
@@ -1223,7 +1227,9 @@ function DestinationSheet({
       });
       return;
     }
-    transitionToRef.current(resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed', 'mount');
+    const mountSnap = resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed';
+    if (mountSnap === 'peek') enteringSV.value = 0;
+    transitionToRef.current(mountSnap, 'mount');
   }, []);
 
   // Turned into the outgoing sheet while mounted: the same slide off the bottom an outgoing copy does on mount.
