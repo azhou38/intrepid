@@ -12,6 +12,14 @@ const MANIFEST = (imageManifest as { entries: Record<string, ManifestEntry> }).e
 // Width to request for a full-width header photo, in pixels. The header shows a roughly square crop
 // of a (usually 3:2) photo at full screen width, so the photo needs ~1.5× the screen's pixel width to
 // fill it without being upscaled — 900px, the old request, was blown up ~2× on a 3× phone.
+// The manifest's thumbnail URL for a place, synchronously (null when the manifest has none, or the place is photoless).
+// Used to tell whether a photo cached on disk is still the one the place uses.
+export function manifestThumbUrl(title: string, width: number): string | null {
+  if (NO_PHOTO.has(title)) return null;
+  const e = MANIFEST[manifestKey(title)];
+  return e ? buildThumbUrl(e, width) : null;
+}
+
 export const HEADER_PX = Math.min(1920, Math.ceil(Dimensions.get('window').width * PixelRatio.get() * 1.5));
 
 // Full-resolution images (headers/hero photos) — keyed by destination/spot/country id. Only header-sized
