@@ -670,18 +670,18 @@ function SpotSheet({
   // Carousel content fades out / peek strip fades in over the same [collapsed, peek] range,
   // so the two never overlap mid-transition — mirrors DestinationSheet's own compactAnimStyle
   // / peekAnimStyle opacity pair. Above collapsed, the full-screen cross-fade above.
-  // 1 while the sheet is sliding in from below on its way to half-screen: it then passes through the peek zone, where the
+  // 1 while the sheet is sliding in from below on its way to half-screen, or sliding off the bottom on a close/back/leave: it then passes through the peek zone, where the
   // peek strip would show and fade out again on the way up (and the carousel fade in). An opening slide shows the
   // carousel throughout instead; the strip is for a sheet dropped to peek.
-  const enteringSV = useSharedValue(leaving ? 0 : 1);
-  useAnimatedReaction(() => slideAnim.value <= COLLAPSED_Y + 0.5, (arrived) => { if (arrived) enteringSV.value = 0; });
+  const hidePeekSV = useSharedValue(leaving ? 0 : 1);
+  useAnimatedReaction(() => slideAnim.value <= COLLAPSED_Y + 0.5, (arrived) => { if (arrived) hidePeekSV.value = 0; });
   const carouselOpacityStyle = useAnimatedStyle(() => ({
-    opacity: enteringSV.value === 1 ? 1 : slideAnim.value <= COLLAPSED_Y
+    opacity: hidePeekSV.value === 1 ? 1 : slideAnim.value <= COLLAPSED_Y
       ? interpolate(slideAnim.value, [FULL_FADE_END_Y, COLLAPSED_Y], [0, 1], Extrapolation.CLAMP)
       : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [1, 0], Extrapolation.CLAMP),
   }));
   const peekOpacityStyle = useAnimatedStyle(() => ({
-    opacity: enteringSV.value === 1 ? 0 : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
+    opacity: hidePeekSV.value === 1 ? 0 : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
   const backdropStyle = useAnimatedStyle(() => ({
     opacity: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP),
@@ -828,7 +828,7 @@ function SpotSheet({
     closingRef.current = true;
     if (__DEV__) console.log('[sheet] Spot', activeSpot.id, snapStateRef.current, '-> closed', 'reason=exit');
     sheetPose.set(null);
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
   // The UI-thread exit (exitSV, see its prop): marks the sheet closing on the JS side, slides it out, and reports back.
@@ -843,7 +843,7 @@ function SpotSheet({
       if (prev === null || cur === prev) return;
       exitingSV.value = true;
       runOnJS(markExiting)();
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
     [exitSV],
   );
@@ -875,14 +875,14 @@ function SpotSheet({
   useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
         if (finished && onExited) runOnJS(onExited)();
       });
       return;
     }
     // Collapsed, or already peeked if the map is being interacted with.
     const toPeek = !!isMapInteracting?.();
-    if (toPeek) enteringSV.value = 0;
+    if (toPeek) hidePeekSV.value = 0;
     transitionToRef.current(toPeek ? 'peek' : 'collapsed', 'mount');
   }, []);
 
@@ -890,7 +890,7 @@ function SpotSheet({
   useEffect(() => {
     if (!leaveNow) return;
     closingRef.current = true;
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
       if (finished && onExited) runOnJS(onExited)();
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps

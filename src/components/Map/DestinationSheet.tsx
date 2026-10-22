@@ -1022,12 +1022,12 @@ function DestinationSheet({
   // sheet actually drops down that far (fading in over the same range the hero itself holds
   // steady at its collapsed height — see heroAnimStyle's CLAMP), so the two never
   // double-render mid-transition.
-  // 1 while the sheet is sliding in from below on its way to half-screen (see SpotSheet's enteringSV): the peek strip then
+  // 1 while the sheet is sliding in from below on its way to half-screen (see SpotSheet's hidePeekSV): the peek strip then
   // stays hidden instead of showing in the peek zone and fading out on the way up.
-  const enteringSV = useSharedValue(leaving ? 0 : 1);
-  useAnimatedReaction(() => slideAnim.value <= collapsedYAnim.value + 0.5, (arrived) => { if (arrived) enteringSV.value = 0; });
+  const hidePeekSV = useSharedValue(leaving ? 0 : 1);
+  useAnimatedReaction(() => slideAnim.value <= collapsedYAnim.value + 0.5, (arrived) => { if (arrived) hidePeekSV.value = 0; });
   const peekAnimStyle = useAnimatedStyle(() => ({
-    opacity: enteringSV.value === 1 ? 0 : interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
+    opacity: hidePeekSV.value === 1 ? 0 : interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
   // Continuously writes the back-to-country pill's target "bottom" offset as slideAnim (or
   // scroll position — see below) moves, so the parent's pill mirrors the sheet's own top edge
@@ -1222,13 +1222,13 @@ function DestinationSheet({
   useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
         if (finished && onExited) runOnJS(onExited)();
       });
       return;
     }
     const mountSnap = resolvedInitialSnap === 'full' ? 'full' : isMapInteracting?.() ? 'peek' : 'collapsed';
-    if (mountSnap === 'peek') enteringSV.value = 0;
+    if (mountSnap === 'peek') hidePeekSV.value = 0;
     transitionToRef.current(mountSnap, 'mount');
   }, []);
 
@@ -1236,7 +1236,7 @@ function DestinationSheet({
   useEffect(() => {
     if (!leaveNow) return;
     closingRef.current = true;
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
       if (finished && onExited) runOnJS(onExited)();
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1285,7 +1285,7 @@ function DestinationSheet({
     closingRef.current = true;
     if (__DEV__) console.log('[sheet] Destination', destination.id, snapStateRef.current, '-> closed', 'reason=exit');
     sheetPose.set(null);
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
   // The UI-thread exit (exitSV, see its prop): marks the sheet closing on the JS side, slides it out, and reports back.
@@ -1300,7 +1300,7 @@ function DestinationSheet({
       if (prev === null || cur === prev) return;
       exitingSV.value = true;
       runOnJS(markExiting)();
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
     [exitSV],
   );
@@ -1323,7 +1323,7 @@ function DestinationSheet({
   const dismissSheetRef = useRef(() => {});
   dismissSheetRef.current = () => {
     sheetPose.set(null);
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
       if (finished) {
         runOnJS(logDismiss)();
         runOnJS(onClose)(true);
