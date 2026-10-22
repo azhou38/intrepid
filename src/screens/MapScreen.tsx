@@ -1246,6 +1246,7 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // At most this many spots draw as full photo pins at once; the rest of the revealed spots collapse to a small
 // photo-less dot (SpotDots below) that lives exactly as long as the full pin would have — same reveal zoom, same
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
+const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const MAX_NEW_SPOT_IMAGES = 16;   // spot pin images registered per pass (see nativeSpotPins); further passes follow a frame apart
@@ -3161,6 +3162,16 @@ const destItems = useMemo((): DestItem[] =>
   // early, and nothing can be left stuck on. A user gesture also clears it (see
   // handleCameraChanged), so taking over the map mid-animation restores the south-limit
   // glide-back immediately.
+  // A pin tap that opens a sheet starts the camera's flight only once the sheet has slid in (SHEET_SLIDE_IN_MS): the map
+  // flying and the sheet sliding in the same frames made the slide stutter (the slide was smooth with the camera move
+  // switched off, and closing, which moves the camera after the sheet is gone, was always smooth). handleMarkerPress and
+  // handleSpotPress set the hold; the camera helpers below wait it out.
+  const cameraHoldUntilRef = useRef(0);
+  const afterSheetSlideIn = useCallback((move: () => void) => {
+    const wait = cameraHoldUntilRef.current - Date.now();
+    cameraHoldUntilRef.current = 0;
+    if (wait > 0) setTimeout(move, wait); else move();
+  }, []);
   const beginProgrammaticCameraMove = useCallback((durationMs: number) => {
     programmaticCameraMoveRef.current = true;
     if (programmaticCameraMoveTimerRef.current) clearTimeout(programmaticCameraMoveTimerRef.current);
@@ -3172,14 +3183,16 @@ const destItems = useMemo((): DestItem[] =>
 
   const animateCamera = useCallback((reg: Region, duration = 500, mode: 'easeTo' | 'flyTo' = 'easeTo') => {
     cancelCountryCapture();
-    beginProgrammaticCameraMove(duration);
-    cameraRef.current?.setCamera({
-      centerCoordinate: [reg.longitude, reg.latitude],
-      zoomLevel: latDeltaToZoom(reg.latitudeDelta),
-      animationDuration: duration,
-      animationMode: mode,
+    afterSheetSlideIn(() => {
+      beginProgrammaticCameraMove(duration);
+      cameraRef.current?.setCamera({
+        centerCoordinate: [reg.longitude, reg.latitude],
+        zoomLevel: latDeltaToZoom(reg.latitudeDelta),
+        animationDuration: duration,
+        animationMode: mode,
+      });
     });
-  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove, afterSheetSlideIn]);
 
   // Computes an explicit centerCoordinate + zoomLevel ourselves (the exact same primitives
   // animateCamera uses) rather than handing raw coordinates to setCamera's `bounds` field —
@@ -3411,14 +3424,16 @@ const destItems = useMemo((): DestItem[] =>
   ) => {
     cancelCountryCapture();
     const cam = destDefaultCamera(dest, framing, zoomFactor);
-    beginProgrammaticCameraMove(durationMs);
-    cameraRef.current?.setCamera({
-      centerCoordinate: [cam.lng, cam.lat],
-      zoomLevel: cam.zoom,
-      animationDuration: durationMs,
-      animationMode: mode,
+    afterSheetSlideIn(() => {
+      beginProgrammaticCameraMove(durationMs);
+      cameraRef.current?.setCamera({
+        centerCoordinate: [cam.lng, cam.lat],
+        zoomLevel: cam.zoom,
+        animationDuration: durationMs,
+        animationMode: mode,
+      });
     });
-  }, [cancelCountryCapture, beginProgrammaticCameraMove, destDefaultCamera]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove, destDefaultCamera, afterSheetSlideIn]);
 
   // The selected destination's "home" for its breadcrumb return arrow (destHomeRegion +
   // destHomeZoomRef), set to the exact default view `framing` puts the camera on — computed, not
@@ -3460,14 +3475,16 @@ const destItems = useMemo((): DestItem[] =>
     const centerLat = invMercY(
       mercY(spot.coordinates.latitude) - (targetY - mapViewH / 2) / worldSize,
     );
-    beginProgrammaticCameraMove(durationMs);
-    cameraRef.current?.setCamera({
-      centerCoordinate: [spot.coordinates.longitude, centerLat],
-      zoomLevel,
-      animationDuration: durationMs,
-      animationMode: mode,
+    afterSheetSlideIn(() => {
+      beginProgrammaticCameraMove(durationMs);
+      cameraRef.current?.setCamera({
+        centerCoordinate: [spot.coordinates.longitude, centerLat],
+        zoomLevel,
+        animationDuration: durationMs,
+        animationMode: mode,
+      });
     });
-  }, [cancelCountryCapture, beginProgrammaticCameraMove]);
+  }, [cancelCountryCapture, beginProgrammaticCameraMove, afterSheetSlideIn]);
 
   // ── Close (X) zoom rule ─────────────────────────────────────────────────────
   // A bare-X close (a laterally-entered spot/destination, or a country) animates the camera to
@@ -3504,6 +3521,7 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   const handleMarkerPress = useCallback((dest: Destination) => {
+    cameraHoldUntilRef.current = Date.now() + SHEET_SLIDE_IN_MS;
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
     // "anchor" destinations from OTHER countries are deliberately shown (as stamps) even
@@ -3656,6 +3674,7 @@ const destItems = useMemo((): DestItem[] =>
 
   // ── Spot selection ──────────────────────────────────────────────────────────
   const handleSpotPress = useCallback((spot: Spot) => {
+    cameraHoldUntilRef.current = Date.now() + SHEET_SLIDE_IN_MS;
     // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
     // destination's own context, and a standalone one starts its own near context.
     nearCtxRef.current = null;
