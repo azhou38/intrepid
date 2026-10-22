@@ -1808,6 +1808,23 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [10, 11, 12, 1, 2, 3],
     bestTimeBlurb: "Warm days in {months} suit the inlets and beaches; in winter the rivers run as rapids and whales pass the coast.",
   },
+  {
+    id: 'stirling-range-national-park', name: "Stirling Range National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Perth', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -34.3680113, longitude: 118.2427468 },
+    category: 'park', icon: "⛰️", rank: 3,
+    tagline: "The only major mountain range in WA's south, with steep summit walks and spring wildflowers.",
+    description: "Stirling Range National Park protects a chain of peaks rising more than 1,000 m above the farmland about an hour and a half's drive north of Albany. Its Noongar name, Koi Kyenunu-ruff, means 'mist rolling around the mountains', and mist often wraps the peaks. Short, steep trails climb Bluff Knoll, Toolbrunup Peak, Mount Trio and Mount Hassell, and a 42 km scenic drive on mostly gravel roads runs through the heart of the park between them.",
+    whyVisit: ["Climb Bluff Knoll to the summit", "Scramble up Toolbrunup Peak", "Take the scenic drive through the peaks"],
+    whyVisitPhotos: ["Bluff knoll-16.jpg", "Mt Toolbrunup - panoramio.jpg", "Northern end of Stirling Range Drive, April 2022 03.jpg"],
+    highlights: ["Bluff Knoll summit", "Toolbrunup scramble", "Gravel scenic drive"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Park entry fee", detail: "Entry is $17 per vehicle ($10 concession), paid at the station on Bluff Knoll Road; a WA Parks pass covers it." },
+      { icon: "🌧️", title: "Weather turns fast", detail: "The peaks get sudden cold changes with rain or hail. Carry warm, waterproof layers and two to three litres of water each." },
+      { icon: "🔥", title: "Fire-danger days", detail: "Stay off the trails on days of extreme fire danger. Hiking off marked trails? Register at the shelter by the entry station." },
+    ],
+    bestMonths: [9, 10, 11, 12],
+    bestTimeBlurb: "Wildflowers and birdlife are at their best in {months}, and the milder days suit the steep summit climbs.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

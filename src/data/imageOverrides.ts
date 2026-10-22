@@ -1929,6 +1929,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Blackwood Valley": "Blackwood River at Bridgetown, January 2022 01.jpg",
   "Margaret River Region": "Cape Freycinet and Conto's Beach.jpg",
   "Walpole Wilderness": "Walpole-Nornalup - Tree Top Walk 2.JPG",
+  "Stirling Range National Park": "Bluff Knoll 1 Stirling Range NP II-2012.jpeg",
 };
 
 /**
