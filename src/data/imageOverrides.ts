@@ -609,6 +609,13 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Gloucester Tree": { x: 0.4, y: 0.5 },
   "Yeagarup Dunes": { x: 0.5, y: 0.7, zoom: 1.4 },
   "Gnomesville": { x: 0.7, y: 0.5 },
+  "Mount Clarence, Western Australia": { x: 0.5, y: 0.35 },
+  "Emu Point": { x: 0.5, y: 0.65, zoom: 1.4 },
+  "Gull Rock National Park": { x: 0.5, y: 0.6, zoom: 1.4 },
+  "Point Ann": { x: 0.65, y: 0.5 },
+  "Hamersley Inlet": { x: 0.3, y: 0.5 },
+  "Bremer Bay, Western Australia": { x: 0.5, y: 0.65, zoom: 1.4 },
+  "Valley of the Giants Tree Top Walk": { x: 0.6, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -1633,7 +1640,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Brisbane Water National Park": "Staples Lookout (15411525226).jpg",
   "Patonga, New South Wales": "Patonga (14501610426).jpg",
   "Wamberal": "Wamberal Lagoon.jpg",
-  "Little Beach": "Little Beach - Bouddi National Park.jpg",
+  "Little Beach": "Little Beach at Two Peoples Bay Nature Reserve WA.jpg",
   "Wyrrabalong National Park": "Bateau Bay NSW 2261, Australia - panoramio.jpg",
   "Patonga to Pearl Beach Walking Track": "Warrah Lookout (15195007861).jpg",
   "Woy Woy": "Fishermans Wharf Woy Woy - panoramio.jpg",
@@ -2009,6 +2016,18 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Manjimup, Western Australia": "Brockman Street, Manjimup, January 2022 02.jpg",
   "Bibbulmun Track": "Footbridge over the Deep River.jpg",
   "Peppermint Grove Beach": "Peppermint Grove Beach, Western Australia, August 2020 14.jpg",
+  "Cheyne Beach Whaling Station": "Cheynes IV, Whaling Station, 2018 (04).jpg",
+  "Mount Clarence, Western Australia": "Mount Clarence WA 6330, Australia - panoramio (2).jpg",
+  "Museum of the Great Southern": "Museum of the Great Southern, Albany, April 2022 04.jpg",
+  "Emu Point": "Emu Point, 2018 (01).jpg",
+  "Gull Rock National Park": "Gull Rock Beach, April 2022 01.jpg",
+  "Frenchman Bay": "Whalers Beach, Frenchman Bay, April 2022 01.jpg",
+  "Porongurup National Park": "Tree-in-the-Rock, Porongurup National Park, April 2022 01.jpg",
+  "Mount Barker, Western Australia": "Mount Barker railway station, Western Australia, 2018 (01).jpg",
+  "Bremer Bay, Western Australia": "John Cove beach, Bremer Bay, 2018 (07).jpg",
+  "The Kodja Place": "The Kodja Place Rose Maze, April 2021 02.jpg",
+  "Yongergnow Australian Malleefowl Centre": "Yongergnow Building.jpg",
+  "Peaceful Bay, Western Australia": "Peaceful Bay Denmark WA.jpg",
 };
 
 /**
@@ -2138,4 +2157,12 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Ferguson Valley",
   "Harvey, Western Australia",
   "Boola Bidi Dreaming Centre",
+  "Princess Royal Fortress",
+  "Ocean Beach (Western Australia)",
+  "Devils Slide",
+  "Cheynes Beach",
+  "Mount Hassell",
+  "Blowholes",
+  "Mount Clare",
+  "Fernhook Falls",
 ]);
