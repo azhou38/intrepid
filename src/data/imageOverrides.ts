@@ -635,7 +635,6 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Deep Reach Pool": { x: 0.5, y: 0.5 },
   "Karlamilyi National Park": { x: 0.5, y: 0.5 },
   "Jurien Bay Marine Park": { x: 0.5, y: 0.55, zoom: 1.7 },
-  "Red Bluff": { x: 0.4, y: 0.3, zoom: 1.4 },
   "Sandy Bay": { x: 0.5, y: 0.4 },
   "Lucky Bay": { x: 0.5, y: 0.55, zoom: 1.5 },
   "Frenchman Peak": { x: 0.5, y: 0.6, zoom: 1.4 },
@@ -652,6 +651,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "WA Maritime Museum": { x: 0.62, y: 0.48, zoom: 1.5 },
   "Mettam's Pool": { x: 0.5, y: 0.55 },
   "Cathedral Rocks": { x: 0.55, y: 0.4, zoom: 1.6 },
+  "Red Bluff (Kalbarri)": { x: 0.4, y: 0.3, zoom: 1.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -850,7 +850,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Pouakai Crossing": "Pouakai Circuit, Egmont National Park, New Zealand 19.jpg",
   "Wilkies Pools": "Wilkies Pools, New Zealand (3).JPG",
   "Bridge to Nowhere": "Bridge to Nowhere (25430934253).jpg",
-  "The Esplanade": "Geraldton Foreshore October 2023 08.jpg",
+  "The Esplanade": "Victoria Esplanade playground and railway track.jpg",
   "Wellington Botanic Garden": "Wellington Botanical Gardens Rose Garden.jpg",
   "Wellington Waterfront": "Whairepo Lagoon from Frank Kits park.jpg",
   "Wellington Zoo": "Lion, Wellington.jpg",
@@ -1676,7 +1676,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Brisbane Water National Park": "Staples Lookout (15411525226).jpg",
   "Patonga, New South Wales": "Patonga (14501610426).jpg",
   "Wamberal": "Wamberal Lagoon.jpg",
-  "Little Beach": "Little Beach at Two Peoples Bay Nature Reserve WA.jpg",
+  "Little Beach": "Little Beach - Bouddi National Park.jpg",
   "Wyrrabalong National Park": "Bateau Bay NSW 2261, Australia - panoramio.jpg",
   "Patonga to Pearl Beach Walking Track": "Warrah Lookout (15195007861).jpg",
   "Woy Woy": "Fishermans Wharf Woy Woy - panoramio.jpg",
@@ -1722,7 +1722,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Tacking Point Lighthouse": "Tacking Point Lighthouse qtl1b.jpg",
   "Shelly Beach, Port Macquarie": "Shelly Beach on the Wednesday, 6th August 2008 at 11-58am. - panoramio.jpg",
   "Flynns Beach": "2020-12-23 Flynn's Beach, New South Wales 3.jpg",
-  "Town Beach": "Town Beach and environs at high tide, Broome, WA, Australia 08.jpg",
+  "Town Beach": "Town Beach - panoramio.jpg",
   "Skywalk": "Skywalk (50227539572).jpg",
   "Wonga Walk": "Crystal Shower Falls in Dorrigo National Park.jpg",
   "Dangar Falls": "Dangar Falls Dorrigo-retouched-by-karstn.jpg",
@@ -2114,7 +2114,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Natural Bridge": "OIC kalbarri natural bridge closeup.jpg",
   "Kalbarri, Western Australia": "00 1795. Kalbarri, Western Australia.jpg",
   "Hawks Head Lookout": "Murchison River Gorge - Hawk's Head (6137011836).jpg",
-  "Red Bluff": "The red bluff knoll.jpg",
   "Eagle Gorge": "Kalbarri Eagle Gorge 1234.jpg",
   "Ningaloo Reef": "00 0865 Ningaloo Reef, Western Australia.jpg",
   "Mandu Mandu Gorge": "Mandy Mandu Gorge.jpg",
@@ -2208,6 +2207,11 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Penguin Island (Western Australia)": "Penguin Island and Shoalwater, Western Australia, seen from the island, May 2022 02.jpg",
   "Rockingham Museum": "Rockingham museum 1.jpg",
   "Cathedral Rocks": "Cathedral Rocks, Rottnest Island, April 2026 03.jpg",
+  "Little Beach (Two Peoples Bay)": "Little Beach at Two Peoples Bay Nature Reserve WA.jpg",
+  "Town Beach (Broome)": "Town Beach and environs at high tide, Broome, WA, Australia 08.jpg",
+  "The Esplanade (Geraldton)": "Geraldton Foreshore October 2023 08.jpg",
+  "Red Bluff (Kalbarri)": "Toujours menaçant (6136948408).jpg",
+  "Red Bluff (Quobba)": "The red bluff knoll.jpg",
 };
 
 /**
@@ -2361,7 +2365,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Marble Bar, Western Australia",
   "Greenough, Western Australia",
   "Geraldton Regional Art Gallery",
-  "North Head",
   "Ross Graham Lookout",
   "Mushroom Rock",
   "Blue Holes",
@@ -2419,4 +2422,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Perth's Outback Splash",
   "Gingin, Western Australia",
   "Mount Cooke",
+  "North Head (Jurien Bay)",
 ]);
