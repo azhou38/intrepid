@@ -619,6 +619,21 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Kelly's Knob": { x: 0.5, y: 0.55 },
   "Echidna Chasm": { x: 0.5, y: 0.4 },
   "Boab Prison Tree, Wyndham": { x: 0.65, y: 0.5 },
+  "Hamersley Gorge": { x: 0.5, y: 0.2 },
+  "Knox Lookout": { x: 0.5, y: 0.5 },
+  "Murujuga National Park": { x: 0.5, y: 0.5 },
+  "Red Dog (Pilbara)": { x: 0.35, y: 0.45 },
+  "Dampier Archipelago": { x: 0.5, y: 0.5 },
+  "Cossack, Western Australia": { x: 0.65, y: 0.6 },
+  "Dalgety House Museum": { x: 0.5, y: 0.5 },
+  "Don Rhodes Mining and Transport Museum": { x: 0.3, y: 0.5 },
+  "Mount Nameless": { x: 0.45, y: 0.4, zoom: 1.6 },
+  "Doolena Gorge": { x: 0.5, y: 0.5 },
+  "Old Onslow": { x: 0.5, y: 0.5 },
+  "Thevenard Island": { x: 0.5, y: 0.55 },
+  "Millstream Chichester National Park": { x: 0.44, y: 0.35, zoom: 1.3 },
+  "Deep Reach Pool": { x: 0.5, y: 0.5 },
+  "Karlamilyi National Park": { x: 0.5, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2056,6 +2071,21 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Emma Gorge": "Emma's Gorge.jpg",
   "Five Rivers Lookout": "Five Rivers Lookout.jpg",
   "Big Crocodile": "Wyndham, The Kimberley (2052480212).jpg",
+  "Dales Gorge": "Fortescue Falls within Dales Gorge (Karijini National Park).jpg",
+  "Weano Gorge": "Weano Gorge.jpg",
+  "Hancock Gorge": "Hancock Gorge.jpg",
+  "Hamersley Gorge": "Spa Pool.jpg",
+  "Joffre Falls": "Joffre Gorge.jpg",
+  "Kalamina Gorge": "Karijini National Park, Pilbara Region, Western Australia, Kalmina Gorge 01.jpg",
+  "Karijini Visitor Centre": "Karijini NP Visitor Centre.JPG",
+  "Murujuga National Park": "Safe Harbour.jpg",
+  "Red Dog (Pilbara)": "Dampier Red Dog, Western Australia.jpg",
+  "Cossack, Western Australia": "Cossack, former Courthouse.jpg",
+  "Roebourne, Western Australia": "Former Roebourne Shire Offices (1888).jpg",
+  "Dalgety House Museum": "Dalgety House Museum, Port Hedland, 2012.JPG",
+  "Tom Price, Western Australia": "Aerial View of Tom Price.jpg",
+  "Mount Nameless": "Tom Price WA - Mount Nameless.JPG",
+  "Python Pool": "Millstream National Park, Pilbara, Western Australia, Python Pool.jpg",
 };
 
 /**
@@ -2202,4 +2232,9 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Fitzroy Crossing, Western Australia",
   "Halls Creek, Western Australia",
   "El Questro Wilderness Park",
+  "Cooke Point",
+  "Cemetery Beach",
+  "Spinifex Hill Studios",
+  "Paraburdoo, Western Australia",
+  "Marble Bar, Western Australia",
 ]);
