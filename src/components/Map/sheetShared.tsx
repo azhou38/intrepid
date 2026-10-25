@@ -1469,7 +1469,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
         // no trailing margin).
         const headerOnly = !v.notes && !itemsForVisit.length && !v.photos?.length;
         const readOnly = !!isReadOnly?.(v);
-        // Only a title so far — invite the dates, the first thing most people add.
+        // Only a title so far: invite the details (dates, places, photos, notes), not just the dates.
         const titleOnly = headerOnly && !v.startDate && !readOnly;
         return (
           <View key={v.id} style={vcS.memCardShadow}>
@@ -1489,8 +1489,8 @@ export function VisitCardList<T extends VisitSelectorItem>({
                   )}
                   {titleOnly && (
                     <Pressable style={vcS.memAddDates} onPress={() => onEditVisit(v)} hitSlop={6}>
-                      <Calendar size={13} color="#9CA3AF" />
-                      <Text style={vcS.memAddDatesTxt}>Add {noun.toLowerCase()} dates</Text>
+                      <Plus size={13} color="#9CA3AF" strokeWidth={2.5} />
+                      <Text style={vcS.memAddDatesTxt}>Add details</Text>
                     </Pressable>
                   )}
                   {/* Otherwise nothing at all for an undated trip, rather than a "no dates" label. */}
