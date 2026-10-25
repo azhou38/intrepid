@@ -71,6 +71,14 @@ export default function ProfileScreen() {
   // The selector's sliding pill: levelSV is the selected item's index (animated between them), selectorWSV the row's inner
   // width (three equal items and two 1 pt dividers).
   const levelSV = useSharedValue(WORLD_MODES.findIndex(m => m.mode === 'countries'));
+  // Once the selector is pinned (the page has scrolled past where it sits), a hairline and a soft shadow fade in under
+  // it, so it reads as a bar that stays while the sections slide beneath.
+  const scrollSV = useSharedValue(0);
+  const stickyYSV = useSharedValue(0);
+  const stuckStyle = useAnimatedStyle(() => {
+    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 2) / 10));
+    return { borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
+  });
   const selectorWSV = useSharedValue(0);
   const pillStyle = useAnimatedStyle(() => {
     const itemW = Math.max(0, (selectorWSV.value - 2) / 3);
@@ -181,6 +189,8 @@ export default function ProfileScreen() {
       style={styles.container}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
+      onScroll={e => { scrollSV.value = e.nativeEvent.contentOffset.y; }}
+      scrollEventThrottle={16}
       stickyHeaderIndices={[1]}
       keyboardDismissMode="on-drag"
       keyboardShouldPersistTaps="handled"
@@ -204,7 +214,7 @@ export default function ProfileScreen() {
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
           every section below show; it stays pinned at the top as they scroll. ── */}
-      <View style={styles.selectorSticky}>
+      <Animated.View style={[styles.selectorSticky, stuckStyle]} onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
         <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
           {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
           <Animated.View pointerEvents="none" style={[styles.selectorPill, pillStyle]} />
@@ -232,7 +242,7 @@ export default function ProfileScreen() {
             );
           })}
         </View>
-      </View>
+      </Animated.View>
 
       {/* ── The map, its own card under the selector ── */}
       <View style={styles.mapCard}>
@@ -554,7 +564,10 @@ const styles = StyleSheet.create({
   // Stats row
   // The level selector: pinned while scrolling (on the page colour, so nothing shows round its corners). The selected
   // count sits on a dark pill.
-  selectorSticky: { backgroundColor: '#F9FAFB', paddingHorizontal: 16 },
+  selectorSticky: {
+    backgroundColor: '#F9FAFB', paddingHorizontal: 16, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
+    shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowRadius: 8, shadowOpacity: 0,
+  },
   statsHeader: {
     flexDirection: 'row', alignItems: 'center', padding: 6, marginBottom: 12,
     backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
