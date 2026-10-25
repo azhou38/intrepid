@@ -1490,7 +1490,9 @@ export function VisitCardList<T extends VisitSelectorItem>({
                   {titleOnly && (
                     <Pressable style={vcS.memAddDates} onPress={() => onEditVisit(v)} hitSlop={6}>
                       <Plus size={13} color="#9CA3AF" strokeWidth={2.5} />
-                      <Text style={vcS.memAddDatesTxt}>Add details</Text>
+                      <Text style={vcS.memAddDatesTxt}>
+                        {hasSelector ? `Add dates, ${pluralNoun} visited, photos, and notes` : 'Add dates, photos, and notes'}
+                      </Text>
                     </Pressable>
                   )}
                   {/* Otherwise nothing at all for an undated trip, rather than a "no dates" label. */}
