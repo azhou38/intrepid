@@ -1634,6 +1634,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // in its temporal dead zone when the worklet closes over it, which surfaced as
   // "Cannot read property 'value' of undefined".
   const pillPeekSV = useSharedValue(0);
+  // A spot's "← Destination" pill shows only at peek, where the carousel and its "‹ Destination" title are out of sight:
+  // it fades in with pillPeekSV, and takes taps only while peeking (this state), so the invisible pill never blocks the map.
+  const spotBackPeekStyle = useAnimatedStyle(() => ({ opacity: pillPeekSV.value }));
+  const [sheetPeeking, setSheetPeeking] = useState(false);
   // 1 whenever the open sheet — country, destination or spot — is sitting at half-screen
   // ('collapsed'): forces the breadcrumb bar (Country | Destination) to hide there regardless of
   // what crumbGateStyle's other inputs say, since the sheet's own header already names the
@@ -1964,6 +1968,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const setSheetSnapState = useCallback((state: 'peek' | 'collapsed' | 'full') => {
     sheetSnapStateRef.current = state;
     const peeking = state === 'peek';
+    setSheetPeeking(peeking);
     pillPeekSV.value = withTiming(peeking ? 1 : 0, {
       duration: peeking ? 220 : 160,
       easing: Easing.out(Easing.quad),
@@ -6076,9 +6081,11 @@ const destItems = useMemo((): DestItem[] =>
               // have none), which fades out as the sheet slides up to full screen and back in as it slides down
               // (upPillBackStyle), rather than popping when the snap state flips.
               const full = mapState === 'sheet';
-              // A spot's carousel title is its destination's name and goes back to it (SpotSheet onTitlePress), so the pill
-              // only names the destination when the carousel is titled by something else (a standalone spot's district).
-              const backName = selectedSpot ? (nearCtx ? (selectedDest?.name ?? null) : null) : selectedDest ? selectedDest.country : null;
+              // A spot's carousel title is its destination's name and goes back to it (SpotSheet onTitlePress). At peek the
+              // carousel is out of sight, so the pill then fades in to name the destination (spotBackPeek). A carousel titled by
+              // something else (a standalone spot's district) keeps the pill throughout.
+              const spotBackPeek = !!selectedSpot && !!selectedDest && !nearCtx;
+              const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
                   {full ? (
@@ -6091,7 +6098,10 @@ const destItems = useMemo((): DestItem[] =>
                     </Pressable>
                   )}
                   {!!backName && (
-                    <Reanimated.View style={upPillBackStyle} pointerEvents={full ? 'none' : 'auto'}>
+                    <Reanimated.View
+                      style={spotBackPeek ? [upPillBackStyle, spotBackPeekStyle] : upPillBackStyle}
+                      pointerEvents={full || (spotBackPeek && !sheetPeeking) ? 'none' : 'auto'}
+                    >
                       <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={handleUpNav} hitSlop={6}>
                         <Text style={styles.upPillArrow}>←</Text>
                         <Text style={styles.upPillTxt} numberOfLines={1}>{backName}</Text>
