@@ -1478,7 +1478,7 @@ function DestinationSheet({
     if (isVisited) {
       // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
-        'Remove visit?',
+        localVisits.length > 1 ? 'Remove visits?' : 'Remove visit?',
         removeDestinationMessage(destination.name, visitedSpotsIn(useStore.getState(), destination.id)),
         [
           { text: 'Cancel', style: 'cancel' },

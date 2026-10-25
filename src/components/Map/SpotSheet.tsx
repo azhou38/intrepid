@@ -1143,9 +1143,11 @@ function SpotSheet({
   // Un-marks a visited spot, always after a "Remove visit?" confirmation. From the hero's "Visited" pill or a carousel
   // card's "Visited" tag.
   const unmarkSpotVisited = (spot: Spot) => {
-    // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
+    // Un-visits it entirely: its own trips and rating, and its ticks on destination trips. "Visits" when it has several.
+    const rec = useStore.getState().savedSpots[spot.id];
+    const trips = rec?.visits?.length ?? (rec?.visitDate ? 1 : 0);
     Alert.alert(
-      'Remove visit?',
+      trips > 1 ? 'Remove visits?' : 'Remove visit?',
       `This will delete all logged visits for ${spot.name}.`,
       [
         { text: 'Cancel', style: 'cancel' },

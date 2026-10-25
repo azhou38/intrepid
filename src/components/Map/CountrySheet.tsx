@@ -305,7 +305,7 @@ function CountrySheet({
     if (isCountryVisited) {
       // Un-visits it entirely: its own trips and everything logged for its destinations and spots.
       Alert.alert(
-        'Remove visit?',
+        localVisits.length > 1 ? 'Remove visits?' : 'Remove visit?',
         removeCountryMessage(cluster.country, visitedPlacesInCountry(useStore.getState(), cluster.countryCode)),
         [
           { text: 'Cancel', style: 'cancel' },
