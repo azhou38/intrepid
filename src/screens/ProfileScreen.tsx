@@ -9,7 +9,9 @@ import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
-import { SPOTS, spotCountry, spotCountryCode } from '../data/spots';
+import { SPOTS, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle } from '../data/spots';
+import { NO_PHOTO } from '../data/imageOverrides';
+import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 // Country outlines for My World: Natural Earth 1:50m admin-0 (public domain), simplified, in the Miller projection as SVG
 // paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
@@ -436,15 +438,33 @@ export default function ProfileScreen() {
           {exploredSpots.length === 0 ? (
             <Text style={styles.topEmpty}>No spots visited yet.</Text>
           ) : (
-            <ScrollView style={styles.exploredScroll} nestedScrollEnabled showsVerticalScrollIndicator={exploredSpots.length > 24}>
-              <View style={styles.chipWrap}>
-                {exploredSpots.map(sp => (
-                  <View key={sp.id} style={styles.chip}>
-                    <Text style={styles.chipIcon}>{sp.icon}</Text>
-                    <Text style={styles.chipTxt} numberOfLines={1}>{sp.name}</Text>
+            // One row per spot, as for destinations: its photo, its name, and where it is (its destination and country).
+            <ScrollView style={styles.destRowsScroll} nestedScrollEnabled showsVerticalScrollIndicator={exploredSpots.length > 5}>
+              {exploredSpots.map((sp, k) => {
+                const dest = spotDestination(sp);
+                const where = [dest?.name, spotCountry(sp)].filter(Boolean).join(' · ');
+                return (
+                  <View key={sp.id} style={[styles.destRow, k > 0 && styles.destRowBorder]}>
+                    <View style={styles.destThumb}>
+                      {/* The same small-photo key as the destination sheet's spot pickers, so either can reuse it. */}
+                      {NO_PHOTO.has(spotPhotoTitle(sp))
+                        ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={46} />
+                        : <EntityPhoto
+                            cacheKey={`pick_spot_${sp.id}`}
+                            cache={thumbCache}
+                            load={() => getOrFetchWikiThumbnail(`pick_spot_${sp.id}`, thumbCache, spotPhotoTitle(sp), 300)}
+                            subject={photoSubject(spotPhotoTitle(sp))}
+                            placeholderColor="#E5E7EB"
+                            fallback={<PhotoPlaceholder icon={sp.icon} category={sp.category} size={46} />}
+                          />}
+                    </View>
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.destRowName} numberOfLines={1}>{sp.name}</Text>
+                      <Text style={styles.destRowSub} numberOfLines={1}>{where}</Text>
+                    </View>
                   </View>
-                ))}
-              </View>
+                );
+              })}
             </ScrollView>
           )}
         </View>
@@ -548,13 +568,6 @@ const styles = StyleSheet.create({
   topToggleBtnOn:  { backgroundColor: 'white', shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
   topToggleTxt:    { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   topToggleTxtOn:  { color: '#111827' },
-  // Destinations and Spots Explored: name chips that wrap, in a box that scrolls once it is full.
-  exploredScroll: { maxHeight: 232 },
-  chipWrap:   { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  chip:       { flexDirection: 'row', alignItems: 'center', gap: 6, maxWidth: '100%',
-                paddingLeft: 6, paddingRight: 10, paddingVertical: 5, borderRadius: 14, backgroundColor: '#F3F4F6' },
-  chipTxt:    { fontSize: 13, fontWeight: '600', color: '#374151', flexShrink: 1 },
-  chipIcon:   { fontSize: 13 },
   // Destinations Explored's search box.
   searchBox:    { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10, paddingHorizontal: 12, height: 38,
                   borderRadius: 12, backgroundColor: '#F3F4F6' },
