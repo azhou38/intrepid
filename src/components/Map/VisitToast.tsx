@@ -62,7 +62,8 @@ export function VisitToastHost({ bottom }: { bottom: number }) {
 }
 
 const st = StyleSheet.create({
-  wrap: { position: 'absolute', left: 12, right: 12, alignItems: 'center', zIndex: 50 },
+  // Above every sheet (they reach zIndex/elevation 210), so the bar is never drawn under one.
+  wrap: { position: 'absolute', left: 12, right: 12, alignItems: 'center', zIndex: 1000, elevation: 1000 },
   bar: {
     flexDirection: 'row', alignItems: 'center', gap: 10, maxWidth: 520, alignSelf: 'stretch',
     backgroundColor: '#111827', borderRadius: 14, paddingLeft: 12, paddingRight: 6, paddingVertical: 8,

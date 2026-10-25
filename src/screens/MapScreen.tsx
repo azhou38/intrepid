@@ -6176,8 +6176,9 @@ const destItems = useMemo((): DestItem[] =>
         </Reanimated.View>
       )}
 
-      {/* "Marked visited · Add details · Undo" after a one-tap Mark Visited (or un-mark), from any sheet. */}
-      <VisitToastHost bottom={12} />
+      {/* "Marked visited · Add details · Undo" after a one-tap Mark Visited (or un-mark), from any sheet. This screen runs
+          under the app's tab bar (88 pt on iOS, 64 on Android, as the sheets reserve), so the bar sits just above it. */}
+      <VisitToastHost bottom={(Platform.OS === 'ios' ? 88 : 64) + 12} />
     </View>
   );
 }
