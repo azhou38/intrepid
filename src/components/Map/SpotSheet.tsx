@@ -119,8 +119,9 @@ const CAROUSEL_WIDEN_MS = 600;
 // The full-screen panels (hidden at half-screen) mount after the slide-in rather than during it; heading to full screen
 // still mounts them at once (revealPanels).
 const SPOT_PANEL_MOUNT_DELAY_MS = 900;
-// Clones of the spots at the other end on each side of the looping carousel (see extendedSpots).
-const LOOP_CLONES = 2;
+// Most clones of the spots at the other end on each side of the looping carousel (see extendedSpots); fewer when the
+// destination has fewer spots.
+const MAX_LOOP_CLONES = 6;
 const SIDE_PAD  = (W - CARD_W) / 2;
 
 // "Explore nearby" grid card — same square SpotCard, same width formula, as the destination
@@ -488,23 +489,28 @@ function SpotSheet({
     const d2 = (s: Spot) => { const dx = (s.coordinates.longitude - a.longitude) * k, dy = s.coordinates.latitude - a.latitude; return dx * dx + dy * dy; };
     return spots.filter(s => s.id !== activeSpot.id).sort((x, y) => d2(x) - d2(y)).slice(0, NEARBY_MAX);
   }, [spots, activeSpot]);
-  // Endless-scroll illusion: clones of the last LOOP_CLONES spots are prepended and clones of the first LOOP_CLONES
+  // Endless-scroll illusion: clones of the last few spots are prepended and clones of the first few
   // appended, so scrolling past either real end reveals cards that look identical to wrapping around — then the moment a
   // clone settles, we silently (non-animated) reposition to the matching real card, which is imperceptible since the two
-  // render identically. Two clones a side, not one: a swipe from the last spot lands on the first spot's clone, and the
-  // card beside it (the second spot) has to be there too until the slide stops and the jump happens, about a second
-  // later; with one clone that side of the carousel stood empty meanwhile. Only worth doing with 2+ spots.
-  const loopOffset = spots.length > 1 ? LOOP_CLONES : 0;
-  const nearLoopEnd = activeIndex <= CAROUSEL_WINDOW + loopOffset || activeIndex >= spots.length - 1 - CAROUSEL_WINDOW - loopOffset;
+  // render identically. The jump only comes once a slide has fully stopped (about a second after the release), so each
+  // side carries up to six clones, a whole copy of the list when it is shorter: with two, a second or third quick swipe past
+  // the wrap ran off the end of the content, bounced back on empty space and only went through once the jump had happened.
+  // Only worth doing with 2+ spots.
+  const loopOffset = spots.length > 1 ? Math.min(spots.length, MAX_LOOP_CLONES) : 0;
   const extendedSpots = useMemo(() => {
     if (spots.length <= 1) return spots.map((s, i) => ({ spot: s, realIndex: i }));
-    const n = spots.length, at = (i: number) => ((i % n) + n) % n;
+    const n = spots.length, at = (i: number) => ((i % n) + n) % n, c = Math.min(n, MAX_LOOP_CLONES);
     return [
-      ...Array.from({ length: LOOP_CLONES }, (_, k) => { const r = at(k - LOOP_CLONES); return { spot: spots[r], realIndex: r }; }),
+      ...Array.from({ length: c }, (_, k) => { const r = at(k - c); return { spot: spots[r], realIndex: r }; }),
       ...spots.map((s, i) => ({ spot: s, realIndex: i })),
-      ...Array.from({ length: LOOP_CLONES }, (_, k) => { const r = at(k); return { spot: spots[r], realIndex: r }; }),
+      ...Array.from({ length: c }, (_, k) => { const r = at(k); return { spot: spots[r], realIndex: r }; }),
     ];
   }, [spots]);
+  // How many cards apart two spots are going round the loop, so a clone counts as near the spot it copies.
+  const loopDistance = (a: number, b: number) => {
+    const n = spots.length, d = Math.abs(a - b) % Math.max(1, n);
+    return loopOffset ? Math.min(d, n - d) : d;
+  };
   const [activeTab, setActiveTab] = useState<'visit' | 'about'>('visit');
   // Drives the standalone per-visit edit sheet for BOTH creating a new visit module ('new') and
   // editing one specific existing module (the Visit object) — identical mechanism to
@@ -1513,11 +1519,9 @@ isVisited ? (
               // Only the cards near the active one are real; the rest are same-sized blank cards. A big destination
               // (Wellington: 30 spots, 32 cards with the loop clones) used to mount every card at once — each with its
               // own photo fetch and gradient — on the tap that opens the sheet, which is what held the sheet back.
-              // The two ends stay real too, so the loop's clone hand-off never lands on a blank card.
-              // The loop's end cards are kept real only while the active card is near an end (the only time the clone
-              // hand-off can happen); a big destination used to mount ten end cards on every tap.
-              Math.abs(i - (activeIndex + loopOffset)) > carouselWindow
-                && (!nearLoopEnd || (i > 2 * loopOffset && i < extendedSpots.length - 1 - 2 * loopOffset)) ? (
+              // Nearness is counted round the loop, so a clone of a card next to the active one is real too and the clone
+              // hand-off never lands on a blank card; clones of far-off spots stay blank.
+              loopDistance(item.realIndex, activeIndex) > carouselWindow ? (
                 <View key={`${item.spot.id}-${i}`} style={[st.card, st.cardShadowUnvisited, st.cardPlaceholder, { width: CARD_W, marginRight: CARD_GAP, height: '100%' }]} />
               ) : (
               <CarouselCard
