@@ -9,7 +9,8 @@ import { Check } from 'lucide-react-native';
 //   showVisitToast({ message, actionLabel?, onAction?, onUndo? })   — from any sheet
 //   <VisitToastHost bottom={…} />                                    — once, in MapScreen
 
-export type VisitToastSpec = { message: string; actionLabel?: string; onAction?: () => void; onUndo?: () => void };
+// `removed`: an un-mark ("Visit removed"), shown without the green tick.
+export type VisitToastSpec = { message: string; actionLabel?: string; onAction?: () => void; onUndo?: () => void; removed?: boolean };
 
 const SHOW_MS = 4500;
 let listener: ((t: VisitToastSpec) => void) | null = null;
@@ -44,7 +45,7 @@ export function VisitToastHost({ bottom }: { bottom: number }) {
       style={[st.wrap, { bottom, opacity: anim, transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}
     >
       <View style={st.bar}>
-        <View style={st.icon}><Check size={13} color="white" strokeWidth={3} /></View>
+        {!toast.removed && <View style={st.icon}><Check size={13} color="white" strokeWidth={3} /></View>}
         <Text style={st.msg} numberOfLines={1}>{toast.message}</Text>
         {!!toast.onAction && (
           <Pressable onPress={run(toast.onAction)} hitSlop={8} style={st.btn}>

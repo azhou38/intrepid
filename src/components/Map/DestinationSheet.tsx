@@ -1481,7 +1481,7 @@ function DestinationSheet({
         const id = destination.id;
         unvisitDestination(id);
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        showVisitToast({ message: 'Visit removed', onUndo: () => saveDestination(id, 'visited', {}) });
+        showVisitToast({ message: 'Visit removed', removed: true, onUndo: () => saveDestination(id, 'visited', {}) });
         return;
       }
       // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.

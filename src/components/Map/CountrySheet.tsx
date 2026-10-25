@@ -308,7 +308,7 @@ function CountrySheet({
         const code = cluster.countryCode;
         unvisitCountry(code);
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        showVisitToast({ message: 'Visit removed', onUndo: () => saveCountryVisited(code, {}) });
+        showVisitToast({ message: 'Visit removed', removed: true, onUndo: () => saveCountryVisited(code, {}) });
         return;
       }
       // Un-visits it entirely: its own trips and everything logged for its destinations and spots.

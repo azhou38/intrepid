@@ -1145,7 +1145,7 @@ function SpotSheet({
     if (!spotHasDetails(useStore.getState(), spot.id)) {
       unvisitSpot(spot.id);
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-      showVisitToast({ message: 'Visit removed', onUndo: () => saveSpotVisited(spot.id, spot.destinationId) });
+      showVisitToast({ message: 'Visit removed', removed: true, onUndo: () => saveSpotVisited(spot.id, spot.destinationId) });
       return;
     }
     // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
