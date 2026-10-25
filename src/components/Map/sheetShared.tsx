@@ -1497,10 +1497,13 @@ export function VisitCardList<T extends VisitSelectorItem>({
                   )}
                   {/* Otherwise nothing at all for an undated trip, rather than a "no dates" label. */}
                   {!!v.startDate && (
-                    <Text style={vcS.memDateVal}>
-                      {fmtVisitRangeShort(v)}
-                      {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
-                    </Text>
+                    <View style={vcS.memDateRow}>
+                      <Calendar size={13} color="#9CA3AF" />
+                      <Text style={vcS.memDateVal}>
+                        {fmtVisitRangeShort(v)}
+                        {days != null && !(days === 1 && hideSingleDayCount) && `  ·  ${days} day${days === 1 ? '' : 's'}`}
+                      </Text>
+                    </View>
                   )}
                 </View>
                 {!readOnly && (
@@ -1643,6 +1646,7 @@ const vcS = StyleSheet.create({
   memTripNameHeading:  { fontSize:25, fontFamily:'PlayfairDisplay_700Bold', color:'white', marginBottom:4 },
   memRatingRow:        { marginBottom:8 },
   memDateVal:          { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
+  memDateRow:          { flexDirection:'row', alignItems:'center', gap:6 },
   // Empty state (visited, nothing logged) — see VisitCardList. With no "Add Visit +" button below the
   // card, the panel (overflow hidden, for the tab swipe) clipped its shadow's lower half; this leaves the
   // shadow the same room below as listWrap's paddingTop gives it above.
