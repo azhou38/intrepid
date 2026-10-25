@@ -36,6 +36,8 @@ interface AppState {
   // The profile's username (without the @; '' until set) and its photo (a file in the app's documents, or null).
   userHandle: string;
   userAvatarUri: string | null;
+  // When the profile was first created on this device (ISO date), shown as "Joined …".
+  joinedAt?: string;
 
   saveDestination: (id: string, type: 'visited', extra?: Partial<Omit<SavedDestination, 'destinationId' | 'type'>>) => void;
   unsaveDestination: (id: string) => void;
@@ -189,6 +191,12 @@ export const useStore = create<AppState>()(
       onRehydrateStorage: () => (state) => {
         if (state && Object.keys(state.savedDestinations).length === 0) {
           state.savedDestinations = buildDefaultSaved();
+        }
+        // The joined date is set once, the first time the store loads without one (saved so it never moves).
+        if (state && !state.joinedAt) {
+          const joinedAt = new Date().toISOString();
+          state.joinedAt = joinedAt;
+          setTimeout(() => useStore.setState({ joinedAt }), 0);
         }
         // Backfill for state persisted before savedCountries existed.
         if (state && !state.savedCountries) {

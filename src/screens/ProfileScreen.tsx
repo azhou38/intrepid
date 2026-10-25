@@ -63,6 +63,7 @@ export default function ProfileScreen() {
   const userName          = useStore(s => s.userName);
   const userHandle        = useStore(s => s.userHandle) ?? '';
   const userAvatarUri     = useStore(s => s.userAvatarUri) ?? null;
+  const joinedAt          = useStore(s => s.joinedAt);
   const [editOpen, setEditOpen] = useState(false);
 
   const visitedDests = useMemo(() =>
@@ -339,9 +340,7 @@ export default function ProfileScreen() {
       <Text style={styles.profileName} numberOfLines={1}>{userName}</Text>
       {!!userHandle && <Text style={styles.profileHandle} numberOfLines={1}>@{userHandle}</Text>}
       <Text style={styles.profileSub}>
-        {stats.firstVisitDate
-          ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
-          : 'World Traveler'}
+        {joinedAt ? `Joined ${new Date(joinedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}` : ''}
       </Text>
       {/* Room for the Edit Profile button, which is drawn in the page (see below) so it can be tapped. */}
       <View style={styles.editBtn} onLayout={e => setEditFrame(e.nativeEvent.layout)}>
