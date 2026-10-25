@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
 import { Search, X } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -79,7 +79,20 @@ export default function ProfileScreen() {
   // Each style reads both values itself: a style re-runs only for the shared values it reads directly, not ones read
   // inside a helper it calls (with a shared stuckT() helper the bar never filled in).
   // Read on the UI thread, so everything driven by the scroll keeps step with the page.
-  const onPageScroll = useAnimatedScrollHandler(e => { scrollSV.value = e.contentOffset.y; });
+  // Never left half-way between the full header and the pinned bar: a scroll that comes to rest inside the transition
+  // (a drag let go without a fling, or a fling that runs out there) settles at the top or the pinned point, whichever is
+  // nearer. A fling that passes through, either way, is left alone, so swiping back up the page flows to the top.
+  const pageRef = useAnimatedRef<Animated.ScrollView>();
+  const settle = (y: number) => {
+    'worklet';
+    const pin = stickyYSV.value;
+    if (y > 1 && y < pin - 1) scrollTo(pageRef, 0, y < pin / 2 ? 0 : pin, true);
+  };
+  const onPageScroll = useAnimatedScrollHandler({
+    onScroll: e => { scrollSV.value = e.contentOffset.y; },
+    onEndDrag: e => { if (Math.abs(e.velocity?.y ?? 0) < 0.1) settle(e.contentOffset.y); },
+    onMomentumEnd: e => { settle(e.contentOffset.y); },
+  });
   // As it pins, the selector card gives way to a row of plain tab headings (the number and name, a sliding underline
   // under the selected one): the card fades and settles back while the tabs fade in, and the bar's background, drawn as
   // its own layer, shortens to the tabs. cardHSV is the card's height. t is eased (smoothstep) so the change starts and
@@ -287,17 +300,13 @@ export default function ProfileScreen() {
     </Animated.View>
     {/* The level selector (child 1) pins to the top while the sections it controls scroll beneath. */}
     <Animated.ScrollView
+      ref={pageRef}
       style={{ flex: 1 }}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
       onScroll={onPageScroll}
       scrollEventThrottle={16}
       stickyHeaderIndices={[1]}
-      // Never left half-way between the full header and the pinned bar: a scroll that ends in the transition settles at
-      // the top or where the bar is fully pinned, whichever is nearer; past that the page scrolls freely.
-      snapToOffsets={[0, 16 + headerH + 16 - COMPACT_H]}
-      snapToEnd={false}
-      decelerationRate="normal"
       keyboardDismissMode="on-drag"
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
