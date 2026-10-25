@@ -17,7 +17,7 @@ export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
 export const SPOT_SELECTED_GLOW = 'spotselglow';
 // The same glow in black, for the satellite map, where white would be lost on bright imagery and black reads better.
 export const SPOT_SELECTED_GLOW_DARK = 'spotselglow:dark';
-export const GLOW_MARGIN = 6;
+export const GLOW_MARGIN = 7;
 
 // A little over a third of the photo pin's size (SpotMarker: a 28pt bubble, 10pt tail), same geometry, white
 // (solid green once visited): the tail's two edges are
@@ -76,7 +76,7 @@ const GLOW_PATH = `M ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} L ${G_CX} ${G_CY + G_TI
 // Nine thin steps rather than a few wide ones, so the falloff reads as a soft blur, not bands; together they reach about the
 // old disc glow's 0.6 next to the pin.
 // Widths up to twice the margin, so the outermost reaches the image's edge.
-const GLOW_STROKES = [9, 8, 7, 6, 5, 4, 3, 2, 1].map(k => ({ w: (GLOW_MARGIN * 2 * k) / 9, o: 0.13 }));
+const GLOW_STROKES = [9, 8, 7, 6, 5, 4, 3, 2, 1].map(k => ({ w: (GLOW_MARGIN * 2 * k) / 9, o: 0.15 }));
 
 const SelectedGlow = memo(function SelectedGlow({ name, color }: { name: string; color: string }) {
   const imageRef = useRef<{ refresh: () => void } | null>(null);
