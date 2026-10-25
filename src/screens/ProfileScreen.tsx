@@ -419,7 +419,7 @@ export default function ProfileScreen() {
               <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Destinations</Text>
               <Text style={styles.topBy}>by spots</Text>
             </View>
-            <ScrollView style={styles.topScroll} nestedScrollEnabled showsVerticalScrollIndicator={topDestinations.length > 8}>
+            <ScrollView style={styles.topScroll} contentContainerStyle={styles.topScrollContent} nestedScrollEnabled showsVerticalScrollIndicator={topDestinations.length > 8}>
               {topDestinations.map(({ dest, count }) => (
                 <View key={dest.id} style={styles.countryRow}>
                   <CircleFlag countryCode={dest.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} />
@@ -620,7 +620,10 @@ const styles = StyleSheet.create({
   destRowName:    { fontSize: 15, fontWeight: '700', color: '#111827' },
   destRowSub:     { fontSize: 12, color: '#6B7280', marginTop: 2 },
   // Top Destinations: up to about eight rows, then it scrolls.
-  topScroll:  { maxHeight: 300 },
+  // The scroll box clips at its edges, which cut off the flags' shadows: its content gets a few points of room inside, and
+  // the box is pulled out by the same amount so the rows stay where they were.
+  topScroll:  { maxHeight: 300, marginHorizontal: -6, marginTop: -4 },
+  topScrollContent: { paddingHorizontal: 6, paddingTop: 4, paddingBottom: 2 },
   destName:   { width: 110 },
 
   // Top Countries
