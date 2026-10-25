@@ -142,17 +142,26 @@ export const spotCostTone = (spot: Spot): Tone => {
   return usd <= 10 ? 'green' : usd <= 30 ? 'yellow' : 'orange';
 };
 
+// A price's amounts as shown: a whole number as is, one with cents always to two decimal places ("27.50", never "27.5");
+// in a range, both ends take two decimals when either has cents ("27.50 – 30.00").
+function costAmounts(spot: Spot): [string, string | null] {
+  const min = spot.costMin!, max = spot.costMax == null || spot.costMax === min ? null : spot.costMax;
+  const cents = !Number.isInteger(min) || (max != null && !Number.isInteger(max));
+  const f = (n: number) => (cents ? n.toFixed(2) : String(n));
+  return [f(min), max == null ? null : f(max)];
+}
+
 export function formatSpotCost(spot: Spot): string {
   if (spot.free || spot.costMin == null) return 'Free';
   const fmt = CURRENCY_FORMAT[spot.currency ?? 'USD'] ?? CURRENCY_FORMAT.USD;
-  const one = (n: number) => `${fmt.prefix ?? ''}${n}${fmt.suffix ?? ''}`;
-  if (spot.costMax == null || spot.costMax === spot.costMin) return one(spot.costMin);
+  const [lo, hi] = costAmounts(spot);
+  if (hi == null) return `${fmt.prefix ?? ''}${lo}${fmt.suffix ?? ''}`;
   // One currency marker for the whole range, not one per value — "NOK 140 – 160" / "$13 –
   // 35", never "140 NOK – 160 NOK" / "$13 – $35". A suffix-style currency (the Nordic kr-
   // based codes, placed after the number on a single value to disambiguate which krona/krone
   // it is) moves to the front here instead of repeating at both ends of the range.
-  if (fmt.suffix) return `${fmt.suffix.trim()} ${spot.costMin} – ${spot.costMax}`;
-  return `${fmt.prefix ?? ''}${spot.costMin} – ${spot.costMax}`;
+  if (fmt.suffix) return `${fmt.suffix.trim()} ${lo} – ${hi}`;
+  return `${fmt.prefix ?? ''}${lo} – ${hi}`;
 }
 
 // The label under the cost on the spot sheet: what the price is for (see costBasis). A spot not yet classified keeps the
@@ -179,7 +188,8 @@ export function splitSpotCost(spot: Spot): { code: string; amount: string } | nu
   const fmt = CURRENCY_FORMAT[spot.currency ?? 'USD'] ?? CURRENCY_FORMAT.USD;
   const code = (fmt.suffix ?? (fmt.prefix && /^[A-Z]{3} $/.test(fmt.prefix) ? fmt.prefix : '')).trim();
   if (!code) return null;
-  const amount = spot.costMax == null || spot.costMax === spot.costMin ? `${spot.costMin}` : `${spot.costMin} – ${spot.costMax}`;
+  const [lo, hi] = costAmounts(spot);
+  const amount = hi == null ? lo : `${lo} – ${hi}`;
   return { code, amount };
 }
 
