@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
-         ExternalLink, Ticket, MapPin, Globe, Image as ImageIcon } from 'lucide-react-native';
+         ExternalLink, Ticket, Globe, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
@@ -32,8 +32,6 @@ import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
 import { flagSource } from '../../utils/flags';
 import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
-import GoogleRating from './GoogleRating';
-import spotRatings from '../../data/spotRatings.json';
 import { fitNameFontSize } from '../../utils/fitNameFontSize';
 import { photoSubject } from '../../utils/subjectCrop';
 import { titleStatGap } from '../../utils/titleStatGap';
@@ -1662,18 +1660,13 @@ function SpotGallery({ spotId }: { spotId: string }) {
 // Temporarily hides the About tab's opening-hours row (the live open/closed status and the week list). Set to true to bring it back.
 const SHOW_OPENING_HOURS = false;
 
-// The Google rating for a spot, if one has been fetched (src/data/spotRatings.json, keyed by spot id).
-const spotRating = (s: Spot): { rating: number; count?: number } | undefined =>
-  (spotRatings as Record<string, { rating: number; count?: number }>)[s.id];
-
-// Icon colours for the three at-a-glance facts on the About tab: icon colour on a light tint of the same hue.
-// Time and cost are traffic-lit by visitTimeTone / spotCostTone (spots.ts); location stays purple.
+// Icon colours for the two at-a-glance facts on the About tab: icon colour on a light tint of the same hue, traffic-lit
+// by visitTimeTone / spotCostTone (spots.ts).
 const GLANCE_TONE = {
   green:  { bg: '#DCFCE7', fg: '#16A34A' },
   yellow: { bg: '#FEF9C3', fg: '#CA8A04' },
   orange: { bg: '#FFEDD5', fg: '#EA580C' },
 };
-const GLANCE_PLACE = { bg: '#EDE9FE', fg: '#7C3AED' };
 
 // ── About panel (shared between visited/non-visited) ──────────────────────────
 function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; tabbed?: boolean; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
@@ -1698,8 +1691,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
     <>
       {/* Unvisited: tuck up under the slim cap. Visited (`tabbed`): sit below the full tab bar, which would otherwise clip the icons. */}
       <View style={[st.section, { marginTop: tabbed ? 4 : -10 }]}>
-        {/* Three at-a-glance facts, each icon on its own tinted circle: time needed and cost (traffic-light coloured) and where it is
-            (purple) — the destination, or the country for a standalone spot. */}
+        {/* Two at-a-glance facts, each icon on its own tinted circle: time needed and cost (traffic-light coloured). */}
         <View style={st.glanceCard}>
           <View style={st.glanceItem}>
             <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_TONE[visitTimeTone(spot.visitHoursMin)].bg }]}>
@@ -1715,18 +1707,6 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
             </View>
             <CostValue spot={spot} />
             <Text style={st.glanceLbl}>Cost (Adult)</Text>
-          </View>
-          <View style={st.glanceDivider} />
-          <View style={st.glanceItem}>
-            {/* Google rating in place of the location: the number, the stars and the Google mark. Shown only once the spot
-                has a rating in src/data/spotRatings.json (see scripts/fetch-google-ratings.ts); no rating, no column. */}
-            {spotRating(spot) ? (
-              <GoogleRating rating={spotRating(spot)!.rating} count={spotRating(spot)!.count} />
-            ) : (
-              <View style={[st.glanceIconCircle, { backgroundColor: GLANCE_PLACE.bg }]}>
-                <MapPin size={20} color={GLANCE_PLACE.fg} />
-              </View>
-            )}
           </View>
         </View>
       </View>
@@ -2064,7 +2044,7 @@ const st = StyleSheet.create({
   // No top padding: the icons sit right at the content's own 16 px inset below the tab bar / cap.
   glanceItem: { flex: 1, alignItems: 'center', paddingTop: 0, paddingBottom: 18, paddingHorizontal: 6, gap: 4 },
   glanceDivider: { width: 1, backgroundColor: '#E5E7EB', marginTop: 0, marginBottom: 14 },
-  // Colour comes inline per fact (GLANCE_TIME / GLANCE_COST / GLANCE_PLACE).
+  // Colour comes inline per fact (GLANCE_TONE).
   glanceIconCircle: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
   glanceVal: { fontSize: 16, fontWeight: '700', color: '#111827', lineHeight: 22 },
   glanceLbl: { fontSize: 12, color: '#9CA3AF', fontWeight: '500' },
