@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
-import { Search, X } from 'lucide-react-native';
+import { Search, X, Pencil } from 'lucide-react-native';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
@@ -17,6 +17,7 @@ import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
 import WorldMapModal from '../components/WorldMapModal';
+import EditProfileSheet, { ProfileAvatar } from '../components/EditProfileSheet';
 import EntityPhoto from '../components/Map/EntityPhoto';
 import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
@@ -58,6 +59,9 @@ export default function ProfileScreen() {
   const stats  = useStats();
   const visitIndex        = useVisitIndex();
   const userName          = useStore(s => s.userName);
+  const userHandle        = useStore(s => s.userHandle) ?? '';
+  const userAvatarUri     = useStore(s => s.userAvatarUri) ?? null;
+  const [editOpen, setEditOpen] = useState(false);
 
   const visitedDests = useMemo(() =>
     DESTINATIONS.filter(d => visitIndex.isDestVisited(d.id)),
@@ -288,10 +292,9 @@ export default function ProfileScreen() {
       style={[styles.profileHeader, { position: 'absolute', top: insets.top + 16, left: 0, right: 0 }, headerFade]}
       onLayout={e => { const h = e.nativeEvent.layout.height; setHeaderH(h); stickyYSV.value = 16 + h + 16 - COMPACT_H; }}
     >
-      <View style={styles.avatar}>
-        <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
-      </View>
+      <ProfileAvatar uri={userAvatarUri} name={userName} size={88} />
       <Text style={styles.profileName} numberOfLines={1}>{userName}</Text>
+      {!!userHandle && <Text style={styles.profileHandle} numberOfLines={1}>@{userHandle}</Text>}
       <Text style={styles.profileSub}>
         {stats.firstVisitDate
           ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
@@ -313,7 +316,15 @@ export default function ProfileScreen() {
       showsVerticalScrollIndicator={false}
     >
       {/* Room for the profile header, which sits fixed behind the page (above the ScrollView). */}
-      <View style={{ height: headerH + 16 }} />
+      {/* It holds the header's controls, since the header itself sits behind the page: Edit at the top right, and the
+          avatar, which opens the same sheet. */}
+      <View style={{ height: headerH + 16 }}>
+        <Pressable style={styles.avatarHit} onPress={() => setEditOpen(true)} accessibilityLabel="Edit profile" />
+        <Pressable style={styles.editBtn} onPress={() => { Haptics.selectionAsync(); setEditOpen(true); }} hitSlop={8} accessibilityLabel="Edit profile">
+          <Pencil size={13} color="#374151" strokeWidth={2.4} />
+          <Text style={styles.editTxt}>Edit</Text>
+        </Pressable>
+      </View>
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
           every section below show; it stays pinned at the top as they scroll. ── */}
@@ -325,9 +336,7 @@ export default function ProfileScreen() {
         <Animated.View pointerEvents="none" style={[styles.stuckBg, stuckStyle]} />
         {/* The small centred avatar and name, shown only while the bar is pinned. */}
         <Animated.View pointerEvents="none" style={[styles.compactHeader, compactStyle]}>
-          <View style={styles.compactAvatar}>
-            <Text style={styles.compactAvatarText}>{userName.charAt(0).toUpperCase()}</Text>
-          </View>
+          <ProfileAvatar uri={userAvatarUri} name={userName} size={26} />
           <Text style={styles.compactName} numberOfLines={1}>{userName}</Text>
         </Animated.View>
 
@@ -664,6 +673,7 @@ export default function ProfileScreen() {
         </View>
       )}
     </Animated.ScrollView>
+    <EditProfileSheet visible={editOpen} onClose={() => setEditOpen(false)} />
     <WorldMapModal
       visible={mapOpen}
       onClose={() => setMapOpen(false)}
@@ -746,23 +756,22 @@ const styles = StyleSheet.create({
   // Profile header
   // The avatar centred, the name and the line under it centred below.
   profileHeader: { alignItems: 'center', paddingHorizontal: 16 },
-  avatar: {
-    width: 88, height: 88, borderRadius: 44,
-    backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
-  },
-  avatarText:  { fontSize: 36, fontWeight: '800', color: 'white' },
   profileName: { fontSize: 22, fontWeight: '800', color: '#111827', marginTop: 12 },
   profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2, textAlign: 'center' },
+  profileHandle: { fontSize: 14, fontWeight: '600', color: '#6B7280', marginTop: 1 },
+  // Over the header's avatar (88 pt, centred at the top), in the page's room for the header.
+  avatarHit:   { position: 'absolute', top: 0, alignSelf: 'center', width: 88, height: 88, borderRadius: 44 },
+  editBtn:     {
+    position: 'absolute', top: 0, right: 16, flexDirection: 'row', alignItems: 'center', gap: 5,
+    paddingHorizontal: 11, paddingVertical: 6, borderRadius: 14, backgroundColor: 'white',
+    borderWidth: 1, borderColor: '#E5E7EB',
+  },
+  editTxt:     { fontSize: 13, fontWeight: '600', color: '#374151' },
   // The pinned bar's own small avatar and name, in its top strip (COMPACT_H tall).
   compactHeader: {
     position: 'absolute', top: 0, left: 16, right: 16, height: COMPACT_H,
     flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
   },
-  compactAvatar: {
-    width: 26, height: 26, borderRadius: 13,
-    backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
-  },
-  compactAvatarText: { fontSize: 12, fontWeight: '800', color: 'white' },
   compactName: { fontSize: 16, fontWeight: '700', color: '#111827', flexShrink: 1 },
 
   // Stats row

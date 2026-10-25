@@ -33,6 +33,9 @@ interface AppState {
   savedCountries: Record<string, SavedCountry>;
   selectedDestinationId: string | null;
   userName: string;
+  // The profile's username (without the @; '' until set) and its photo (a file in the app's documents, or null).
+  userHandle: string;
+  userAvatarUri: string | null;
 
   saveDestination: (id: string, type: 'visited', extra?: Partial<Omit<SavedDestination, 'destinationId' | 'type'>>) => void;
   unsaveDestination: (id: string) => void;
@@ -52,6 +55,7 @@ interface AppState {
   unvisitCountry: (countryCode: string) => void;
   selectDestination: (id: string | null) => void;
   setUserName: (name: string) => void;
+  setProfile: (p: { name: string; handle: string; avatarUri: string | null }) => void;
   // Places opened from search, most recent first (see RecentSearch) — shown as the search bar's
   // "Recent" suggestions.
   recentSearches: RecentSearch[];
@@ -83,6 +87,8 @@ export const useStore = create<AppState>()(
       savedCountries: {},
       selectedDestinationId: null,
       userName: 'Explorer',
+      userHandle: '',
+      userAvatarUri: null,
 
       saveDestination: (id, type, extra = {}) =>
         set((s) => ({
@@ -164,6 +170,7 @@ export const useStore = create<AppState>()(
 
       selectDestination: (id) => set({ selectedDestinationId: id }),
       setUserName: (name) => set({ userName: name }),
+      setProfile: ({ name, handle, avatarUri }) => set({ userName: name, userHandle: handle, userAvatarUri: avatarUri }),
 
       recentSearches: [],
       // Moves an already-listed place back to the top rather than listing it twice.
