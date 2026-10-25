@@ -1374,7 +1374,8 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
   // spots selected: then the spot's pin is the one that persists, and the destination's follows the zoom rules like any
   // other (it used to stay up beside the spot at continent zoom).
   const forceDest = selectedSpot ? null : planDest;
-  const selCC = planCountry?.countryCode ?? planDest?.countryCode;
+  // Likewise the selected country's head start (its pins eligible from its own view): not with a spot selected.
+  const selCC = selectedSpot ? undefined : (planCountry?.countryCode ?? planDest?.countryCode);
   const selCountryZoom = selCC ? zoomForPanLatDelta(getCountryStampThreshold(selCC)) : Infinity;
   const spotU = selectedSpot ? unit(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude) : null;
   type Box = { l: number; r: number; t: number; b: number };
@@ -2352,15 +2353,17 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // explicitly (selectedCountry) OR only implicitly via a directly-selected destination
       // (e.g. reached through search with no country context) — either way, its country
       // shouldn't blink out other destinations there.
-      const inSelectedCountry =
-        selectedCountry?.country === d.country || selectedDest?.country === d.country;
-      const isSelected = selectedDest?.id === d.id;
+      // With a spot selected, none of this applies: the destinations follow the zoom rules like any others, so zooming out
+      // from a spot thins its country's dots as usual (see stampGeoJSON).
+      const inSelectedCountry = !selectedSpot
+        && (selectedCountry?.country === d.country || selectedDest?.country === d.country);
+      const isSelected = !selectedSpot && selectedDest?.id === d.id;
       // Eligible if: it's the selected destination; or in the selected country (always shown);
       // or within the current rank tier (or saved, which is always shown); or a rank-1 anchor
       // worldwide while drilled into a country/destination (so every country pill can form).
       // gateRank: also eligible from the moment its photo pin joins the layer, transparent, ahead of its gate.
       const rankOk = d.rank <= visibleRank || Math.max(1, d.rank - (saved ? 1 : 0)) <= gateRank || saved;
-      const anchorRank1 = (selectedCountry || selectedDest) && d.rank === 1;
+      const anchorRank1 = !selectedSpot && (selectedCountry || selectedDest) && d.rank === 1;
       // Inside a country's own view (its pill has gone) every one of its destinations is a candidate at once, whatever
       // its rank: the native pin layer then reveals each one by collision as room opens up, which Mapbox fades in.
       // A pin added to the layer's data instead appears instantly (Mapbox skips the fade for symbols in freshly
@@ -2371,7 +2374,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       added.add(d.id);
     }
     return results;
-  }, [visibleRank, gateRank, visitIndex, selectedCountry, selectedDest, insideCountries]);
+  }, [visibleRank, gateRank, visitIndex, selectedCountry, selectedDest, insideCountries, selectedSpot]);
 
   // NOTE: there is deliberately NO viewport-bounds culling of the render set. There are only
   // ~45 destinations total, so rendering every eligible one (Mapbox natively clips whatever
@@ -2731,7 +2734,9 @@ const destItems = useMemo((): DestItem[] =>
 
   const lastStampRef = useRef<{ sig: string; value: GeoJSON.FeatureCollection<GeoJSON.Point> } | null>(null);
   const stampGeoJSON = useMemo(() => {
-    const selCountryCode = planCountry?.countryCode ?? planDest?.countryCode;
+    // With a spot selected its country's dots fade with the zoom like any others (they used to stay up zooming out, all
+    // on the earliest tier); the selected country's head start is for a country or destination selected on its own.
+    const selCountryCode = selectedSpot ? undefined : (planCountry?.countryCode ?? planDest?.countryCode);
 
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const dest of DESTINATIONS) {
@@ -2767,7 +2772,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { type: 'FeatureCollection' as const, features };
     lastStampRef.current = { sig, value };
     return value;
-  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot]);
 
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
