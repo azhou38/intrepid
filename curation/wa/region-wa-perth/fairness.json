@@ -1,0 +1,1200 @@
+{
+ "region": "wa-perth",
+ "inside_destinations": 85,
+ "standalone": 5,
+ "standalone_spots": [
+  "Yanchep National Park",
+  "Crystal Cave",
+  "New Norcia",
+  "Gingin",
+  "Mount Cooke"
+ ],
+ "new_destinations": [
+  {
+   "id": "perth",
+   "name": "Perth",
+   "rank": 2,
+   "spots": 46
+  },
+  {
+   "id": "rottnest-island",
+   "name": "Rottnest Island",
+   "rank": 2,
+   "spots": 4
+  },
+  {
+   "id": "perth-hills",
+   "name": "Perth Hills",
+   "rank": 4,
+   "spots": 15
+  },
+  {
+   "id": "rockingham",
+   "name": "Rockingham",
+   "rank": 4,
+   "spots": 5
+  },
+  {
+   "id": "mandurah",
+   "name": "Mandurah",
+   "rank": 4,
+   "spots": 5
+  },
+  {
+   "id": "avon-valley",
+   "name": "Avon Valley",
+   "rank": 4,
+   "spots": 10
+  }
+ ],
+ "kept_total": 100,
+ "kept_accounting": "100 kept = 85 destination spots + 5 standalone + 8 merged/destination-level (Fremantle West End, Mundaring, Northam, Perth Hills, Rockingham, Perth, Rottnest Island, Mandurah) + 2 placed in wa-south-west (Bibbulmun Track, Munda Biddi Trail)",
+ "review_for_owner": 47,
+ "lowest_kept": [
+  {
+   "name": "Cathedral Rocks",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Leighton Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Mundaring Sculpture Park",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Oliver Hill Battery",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Sorrento Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Trigg Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Perth's Outback Splash",
+   "views": 505,
+   "counted_sources": 0
+  },
+  {
+   "name": "Bold Park",
+   "views": 750,
+   "counted_sources": 0
+  },
+  {
+   "name": "The Basin",
+   "views": 758,
+   "counted_sources": 0
+  },
+  {
+   "name": "Armadale Reptile Centre",
+   "views": 786,
+   "counted_sources": 0
+  }
+ ],
+ "score_rule": "score = (views, counted_sources); the lowest kept spots have 0 views and 0 counted sources on the enumerator score (their counted sources were found by the judge), so every left-out or review candidate with any views or any counted source is listed below with its reason.",
+ "stronger_left_out": [
+  {
+   "name": "WACA Ground",
+   "views": 68294,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2 and 4: a cricket ground you visit for matches, and the WACA's own site says its museum and ground tours are temporarily closed during the ground improvement works. Wikivoyage mentions it only as a home ground, not as a See listing."
+  },
+  {
+   "name": "Swan River",
+   "views": 28313,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a river running through the whole metro area is an area, not a place to go; its visitor points (Elizabeth Quay, Kings Park, Heirisson Island, Matilda Bay, foreshore paths) are the spots, and cruises are operators."
+  },
+  {
+   "name": "Garden Island",
+   "views": 14984,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: an active naval base (HMAS Stirling); Wikivoyage Rockingham says only parts can be reached by private boat in daylight with restrictions; no visitor source names it as a place to go."
+  },
+  {
+   "name": "Crown Perth",
+   "views": 12848,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 / business rule: a casino and hotel complex (Wikivoyage lists it as an entertainment precinct of casino, theatre, bars); a venue that is a business, not a place to see."
+  },
+  {
+   "name": "Hyde Park, Perth",
+   "views": 7173,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3 and the 'ordinary suburban park' benchmark: a pleasant inner-city park with lakes, lawns and a playground, used by locals for picnics; no guide singles out something to see."
+  },
+  {
+   "name": "Old Swan Brewery",
+   "views": 6538,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: the former brewery is now apartments and a restaurant; seen from the road or riverside path only. No counted source names it as somewhere to go."
+  },
+  {
+   "name": "His Majesty's Theatre",
+   "views": 5248,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a performance venue (Wikivoyage Perth mentions it only as where WA Opera and Ballet perform); nothing to do there without a show ticket."
+  },
+  {
+   "name": "Northbridge",
+   "views": 4919,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: a neighbourhood whose daytime draws (the Art Gallery, WA Museum, PICA) are separate spots, leaving restaurants and bars, which are not spots on their own (rule 2). Keep only if the owner wants districts as spots. For: For: Wikivoyage gives it its own district page and Tourism WA has a 'places' page for it: Perth's arts, dining and nightlife quarter, with street art, Chinatown and the Cultural Centre."
+  },
+  {
+   "name": "Waroona",
+   "views": 4850,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: A shire page, not the town: a town with nothing of its own named to see. Waroona Dam or Drakesbrook Weir may be the real candidates. For: Town rule: Destination Perth has a Shire of Waroona page, but its draws are Waroona Dam, Drakesbrook Weir, Lane Poole, Yalgorup and Preston Beach, not the town; the town gets only \"experience the charm of Waroona's town centre\" and a visitor centre with a gallery. Case for: a highway town with a visitor centre."
+  },
+  {
+   "name": "HMAS Ovens",
+   "views": 4800,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: duplicate/part of the Western Australian Maritime Museum: the submarine is toured as part of a museum ticket on Victoria Quay; keep it as one with the museum and mention it in the museum's bio."
+  },
+  {
+   "name": "London Court",
+   "views": 4722,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 2: it is a shopping arcade, which the rule fails as a shop venue; it is a quick photo stop on the way between Hay Street Mall and St Georges Terrace. For: Rule 1: Visit Perth (City of Perth) lists it as a 1937 Tudor-style heritage arcade; Tourism WA lists laneway walking tours that feature it."
+  },
+  {
+   "name": "Government House, Perth",
+   "views": 4672,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against rule 2 and 4: the house itself is exterior-only except on open days, and the gardens open only Tue-Thu 12-2pm, so most visitors see it from the street. For: For: Tourism WA and Visit Perth both list it; the 1864 Governor's residence has 3.2 ha of gardens open to the public, and the house opens on a few open days a year."
+  },
+  {
+   "name": "Herdsman Lake",
+   "views": 3706,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Leave-out rule: an urban wetland park mainly used by local walkers and birders; one agency source, no tourism-board listing found. For: Rule 1+2: DBCA park page for Herdsman Lake Regional Park (birdwatching wetland, Discovery Centre, walk and cycle trails), free."
+  },
+  {
+   "name": "Hotham Valley Railway",
+   "views": 3367,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "\"A spot is a place\": a heritage railway whose rides run between Pinjarra and Dwellingup, both of which are candidates; the ride belongs in the Dwellingup (or Pinjarra) bio and ticketUrl."
+  },
+  {
+   "name": "Sunset Heritage Precinct",
+   "views": 2903,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: no visitor source; the former Sunset Hospital site has 'remained largely unused since 1995', with only open grounds and picnic facilities, and the state is seeking redevelopment proposals (EOI closed Aug 2026)."
+  },
+  {
+   "name": "Barracks Arch",
+   "views": 2793,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against rule 2 and 3: a free-standing arch you look at from the street for a few minutes, in front of Parliament House; a photo stop, not a half-hour visit. For: For: Wikivoyage Perth/Downtown lists it as a See item, and Tourism WA has an attraction page: the 1866 arch at the end of St Georges Terrace that is all that remains of the Pensioner Guard barracks."
+  },
+  {
+   "name": "North Beach",
+   "views": 2752,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Named only in a list, with nothing said about it; one weak counted source for a suburban beach near better-known Trigg and Scarborough. For: Rule 1: Destination Perth's beaches guide names North Beach in its Sunset Coast list; an open beach on the coastal path."
+  },
+  {
+   "name": "Tranby House",
+   "views": 2442,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: I found no counted source (only Wikipedia, aumuseums, Hello Perth and Weekend Notes; the National Trust site blocks scripts), and it opens only a few days a week (Fri-Sun by the latest listing). For: For: a National Trust house museum (Peninsula Farm, built 1839, one of WA's oldest surviving houses) at Maylands, open to the public with a guide, set in riverside gardens with tearooms next door."
+  },
+  {
+   "name": "Langley Park",
+   "views": 2275,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2 and 4: a riverside lawn in the city used for events and as an overflow car park; no counted source names it as somewhere to go."
+  },
+  {
+   "name": "Perth Observatory",
+   "views": 2273,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against rule 4: you can only visit on a booked tour (night tours Fri-Sun, day tours Sunday afternoons), so it is not there whenever you arrive. One counted source. For: For: Tourism WA lists it (WA's oldest observatory, at Bickley, with night sky tours, a museum and Sunday day tours), and the observatory's own site confirms public tours."
+  },
+  {
+   "name": "Mount Eliza",
+   "views": 2186,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, duplicate of Kings Park: Mount Eliza is the ridge Kings Park sits on, and its summit lookout (Kaarta Gar-up) is part of the Kings Park visit. No visitor source lists it apart from the park."
+  },
+  {
+   "name": "Matilda Bay",
+   "views": 2060,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One counted source, a passing mention; a riverside picnic reserve that locals use more than visitors; near Kings Park. For: Rule 1: DBCA's 'Enjoy nature in Perth' says to relax at Matilda Bay Reserve, grassy riverside parkland facing Perth city and Kings Park."
+  },
+  {
+   "name": "Perth Gaol",
+   "views": 1774,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, part of a larger spot: the 1856 Old Gaol is part of WA Museum Boola Bardip; Wikivoyage describes it under the museum's listing ('The Old Gaol building at the rear houses colonial artefacts')."
+  },
+  {
+   "name": "Sandalford Wines",
+   "views": 1606,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule: a winery, brewery or shop is a place only when a visitor source singles it out as a destination; Wikivoyage Perth/Swan Valley only lists it by name in a bare list of cellar doors along West Swan Road, with no description. Sandalford is one of WA's oldest estates (has a Wikipedia article, 1,606 views), but no counted source singles it out."
+  },
+  {
+   "name": "Redemptorist Monastery",
+   "views": 1517,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2 (church rule): a working monastery and church in North Perth; no visitor source names anything to see or do there (no interior tour, art or guide mention). Heritage register and Wikipedia only."
+  },
+  {
+   "name": "C.Y. O'Connor Beach",
+   "views": 1404,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 1: the mention is a passing one for a dog beach; no counted source describes the statue or the beach as a place to go. Mainly local use. For: Rule 1: Destination Perth's Fremantle beaches guide names O'Connor Reserve as a dog-friendly beach; the beach is known for the C.Y. O'Connor statue standing in the water."
+  },
+  {
+   "name": "Old Court House, Perth",
+   "views": 1382,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "a civic building seen from the pavement"
+  },
+  {
+   "name": "Fremantle Town Hall",
+   "views": 1353,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "a civic building seen from the pavement"
+  },
+  {
+   "name": "Ocean Reef Marina",
+   "views": 1342,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: no visitor source names it; it is a boat marina still under development (the coastal pool and beach were due to open in 2026, not confirmed open). A marina is a local facility, not a visitor draw today."
+  },
+  {
+   "name": "Moore River National Park",
+   "views": 1339,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source found on a re-look (no DBCA visitor page: its URL is a 404; Wikipedia says there are no facilities). Rule 2: banksia heath with no visitor access point."
+  },
+  {
+   "name": "Old Perth Boys School",
+   "views": 1308,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: the 1854 school is now a Curtin University venue; public access is limited to occasional exhibitions and events. No counted source names it."
+  },
+  {
+   "name": "Fremantle War Memorial",
+   "views": 1239,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "a minor memorial"
+  },
+  {
+   "name": "The Nostalgia Box",
+   "views": 1234,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: I found no counted source (only Wikipedia, blogs and ticket sites)."
+  },
+  {
+   "name": "Kuljak Island",
+   "views": 1234,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-3: an artificial island on a capped former rubbish tip off Ascot Waters with footpaths; no visitor source (the Swan River kangaroo island visitors go to is Heirisson Island, a different place downstream). A local riverside reserve."
+  },
+  {
+   "name": "Perth Cultural Centre",
+   "views": 1220,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3, duplicate wrapper: the precinct is the setting of the Art Gallery of WA, WA Museum Boola Bardip and PICA, which are judged as spots in their own right. Keep those, and mention the precinct in their bios."
+  },
+  {
+   "name": "Claisebrook Cove",
+   "views": 1180,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One counted source; an urban redevelopment and dining precinct that few visitor sources treat as a sight. For: Rule 1: Wikivoyage Perth/City See listing ('spend an hour or so wandering' the architecture; footbridge views of the city at night)."
+  },
+  {
+   "name": "Bell Cottage Ruin",
+   "views": 1108,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: the state heritage entry says the ruin is fenced, inaccessible to the public and obscured from view by trees; heritage register only, no visitor source."
+  },
+  {
+   "name": "All Saints Anglican Church, Henley Brook",
+   "views": 1095,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One source plus a 20-30 minute stop; marginal by rule. For: For: Wikivoyage Swan Valley See listing names it as Western Australia's oldest church (1841) with a historic cemetery, grounds and a walk to the Swan River; entry free (church rule: a landmark a guide singles out). Against: one counted source and a short visit; still a working parish church."
+  },
+  {
+   "name": "Yellagonga Regional Park",
+   "views": 1069,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: DBCA writes a page for every regional park; it is suburban parkland that DBCA itself calls 'a leafy oasis in the heart of suburbia', and no guide names it (close to the 'regional park beside a city that no guide mentions' rule). For: For: the DBCA visitor page (managing agency) describes Lake Joondalup and Lake Goollelal with walking and cycling circuits, birdlife and settler-era ruins."
+  },
+  {
+   "name": "East Perth Cemeteries",
+   "views": 1021,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1 and 4: I found no counted source (only the National Trust's own site, Wikipedia and a paid walking tour), and the grounds open only on Sundays 2-4pm."
+  },
+  {
+   "name": "Queens Gardens",
+   "views": 955,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, ordinary city park: small gardens in East Perth with a Peter Pan statue; no counted source."
+  },
+  {
+   "name": "Shoalwater Islands Marine Park",
+   "views": 909,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 3: an area containing Penguin Island, Seal Island and Point Peron, which are separate spots; much of what it offers is tours. Better as the context in those bios than as its own spot. For: Rule 1: DBCA visitor page (snorkelling, dive wreck, kayak tours to Seal Island with sea lions, boardwalks) and Destination Perth Rockingham page. Case for: two counted sources and a real range of water activities."
+  },
+  {
+   "name": "Berndt Museum of Anthropology",
+   "views": 892,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, duplicate of Lawrence Wilson Art Gallery: its exhibitions are shown in the Janet Holmes à Court Gallery inside the Lawrence Wilson Art Gallery. No counted source names it."
+  },
+  {
+   "name": "Canning River Regional Park",
+   "views": 862,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3, local reserve: six kilometres of riverside bushland with walking, canoeing and picnics; only the DBCA page names it, and it is a local recreation park rather than a place visitors travel for."
+  },
+  {
+   "name": "Western Australian Rail Transport Museum",
+   "views": 862,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: I found no counted source directly (only the operator, Wikipedia and blogs), and it opens only on Wednesdays and Sundays (rule 4: not there whenever you arrive). For: For: a real museum of WA rolling stock at Bassendean run by Rail Heritage WA (locomotives from 1881's Katie to the first mainline diesel), with paid entry. Wikipedia cites a Tourism WA listing."
+  },
+  {
+   "name": "Sunset Coast",
+   "views": 839,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: a tourism-brand stretch of coastline (Perth's northern beaches), not a single place; its beaches (Cottesloe, Scarborough, Trigg etc.) are judged as candidates in their own right. No counted source names it as somewhere to go as one spot."
+  },
+  {
+   "name": "Museum of Perth",
+   "views": 814,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source names it (only Wikipedia's museum category and its own events pages). It moved to the Bon Marché Arcade in 2024, and I found no current hours."
+  },
+  {
+   "name": "The Cloisters",
+   "views": 809,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: an 1858 school building on St Georges Terrace now used as offices; exterior only. No counted source names it."
+  },
+  {
+   "name": "Wellington Square",
+   "views": 797,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, ordinary city park: a city park used for sport and events; no counted source."
+  },
+  {
+   "name": "Cantonment Hill",
+   "views": 788,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Marginal per the one-source-and-short-visit rule; may be best mentioned in the Army Museum's bio. For: For: Wikivoyage Fremantle See listing ('a terrific view of Fremantle Harbour'), free lookout beside the Army Museum. Against: one counted source and a short viewpoint visit; the signal station building is not open; Visit Fremantle points visitors to Monument Hill instead."
+  },
+  {
+   "name": "Sunset Beach, Western Australia",
+   "views": 771,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-coral-coast (coordinates -28.72 114.62 are Geraldton).",
+   "score_note": "enumerator signal belongs to another place or another region"
+  },
+  {
+   "name": "Edith Dircksey Cowan Memorial",
+   "views": 697,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, minor memorial: a clock-tower memorial at the Kings Park entrance. No counted source names it as somewhere to go."
+  },
+  {
+   "name": "Schmidt-Lademann House",
+   "views": 674,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1 and 2: a private heritage house in Wembley Downs; no counted source and no public access."
+  },
+  {
+   "name": "Stirling Gardens",
+   "views": 672,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, ordinary city park: no counted source names the gardens. The 'Kangaroos in the City' bronzes that Wikivoyage lists are nearby, a separate candidate if anything."
+  },
+  {
+   "name": "Beeliar Regional Park",
+   "views": 666,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3, local reserve: a chain of 19 suburban wetlands south of Perth; only the DBCA page names it, with nothing specific to go to."
+  },
+  {
+   "name": "Boyagin Rock",
+   "views": 653,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-golden-outback (DBCA places Boyagin Nature Reserve in Australia's Golden Outback, Narrogin office; Wheatbelt, Shire of Brookton/Pingelly, not the Avon Valley list).",
+   "score_note": "enumerator signal belongs to another place or another region"
+  },
+  {
+   "name": "Fremantle Court House and Police Station Complex",
+   "views": 641,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "a civic building seen from the pavement"
+  },
+  {
+   "name": "Bicton Baths",
+   "views": 626,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 'places only locals use': a neighbourhood river swimming spot with one agency page and no tourism-board listing. For: Rule 1+2: DBCA Explore Parks has a site page (Swan Canning Riverpark) for swimming, canoeing and walking at this 1926 river baths; free, open access."
+  },
+  {
+   "name": "Russell Square",
+   "views": 620,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, ordinary city park: a small Northbridge square; no counted source."
+  },
+  {
+   "name": "Avon Terrace",
+   "views": 618,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 3: it is York's town centre itself; if York is listed (as a town or destination) this is a near-duplicate and belongs in York's description. For: Rule 1: Wikivoyage York names the main street lined with 19th-century buildings, and Destination Perth's York page describes its heritage streetscape and walking trails."
+  },
+  {
+   "name": "Rockingham Lakes Regional Park",
+   "views": 617,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: an umbrella area; its draws are better judged as places of their own (Cape Peron, Lake Richmond), and a park-wide pin would duplicate them. For: For: the DBCA page names two real draws, the Lake Richmond thrombolites ('a star attraction of the park') and Cape Peron, its hub, with snorkelling, viewing platforms and a coastal walk."
+  },
+  {
+   "name": "Esplanade Park, Fremantle",
+   "views": 614,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Two counted sources name it, but as a place to pass through on the way to the Fishing Boat Harbour. For: For: Tourism WA's Fremantle page (Ferris wheel at Esplanade Park) and Visit Fremantle (Esplanade Reserve on the Discovery Trail, skate park, playground). Against rule 3 / Leave out: an urban park under Norfolk pines whose draws are a seasonal-ish tourist wheel and a youth skate park; 'an ordinary park' negative benchmark."
+  },
+  {
+   "name": "Solidarity Park",
+   "views": 583,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3, ordinary city park: a small park beside Parliament House known for protests; no counted source."
+  },
+  {
+   "name": "Peppermint Grove Beach",
+   "views": 582,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-south-west (the coordinates, -33.52 115.51, are the Capel coast south of Bunbury, not Perth).",
+   "score_note": "enumerator signal belongs to another place or another region"
+  },
+  {
+   "name": "Supreme Court Gardens",
+   "views": 569,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2 and 4: small city gardens mainly used as an events venue; no counted source."
+  },
+  {
+   "name": "Wyola Wreck",
+   "views": 561,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-3: no counted source as a visitor place; the stern frame of a tug buried in the sand at CY O'Connor Beach, North Coogee, plus a shallow dive site in the WA Museum's wreck notes. A short look or a specialist dive, not a general draw."
+  },
+  {
+   "name": "Sir James Mitchell Park",
+   "views": 560,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: a riverside lawn and playgrounds used by locals; it is the view rather than the park that is the draw. If kept, name it South Perth Foreshore and check it is not the same place as another candidate (the Old Mill and Perth Zoo are on the same foreshore). For: For: Tourism WA's 'South Perth Foreshore' listing, which names Sir James Mitchell Park, calls it an iconic tourist destination with the best panoramic views of the Perth skyline across the Swan River."
+  },
+  {
+   "name": "Marmion Marine Park",
+   "views": 538,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 3: an area whose visitor points are Mettam's Pool and Hillarys Boat Harbour, which are separate candidates; most of it needs a boat or charter. For: Rule 1: DBCA visitor page (reefs, Boyinaboat Reef dive trail off Hillarys, Mettam's Pool, whale watching). Case for: a named marine park with shore-access diving."
+  },
+  {
+   "name": "West Australian Reptile Park",
+   "views": 533,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: one counted source for a small private park, and Caversham Wildlife Park nearby covers the same wildlife-park draw better. For: For: the Swan Valley's tourism site lists it (pythons, venomous snakes, crocodiles, wombats and dingoes, with presentations) at Henley Brook. Rule 2: paid wildlife park."
+  },
+  {
+   "name": "Como Beach",
+   "views": 521,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source found (Wikivoyage Perth districts, Destination Perth beaches guides and Tourism WA beaches page do not name it); a local Swan River beach in Como."
+  },
+  {
+   "name": "Old Kerosene Store",
+   "views": 498,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1 and 2: no counted source names it, and no public access is confirmed; a heritage building seen from outside."
+  },
+  {
+   "name": "Kanyana Wildlife Rehabilitation Centre",
+   "views": 471,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Tour-only access two days a week, bookings essential; one counted source for a marginal place. For: For: Experience Perth Hills names it among the hills' 10 must-visit wildlife experiences (Discovery Tours, nocturnal tours; bilbies and woylies); Destination Perth listed it. Against rule 2: it is a working wildlife hospital visitors can enter only on booked tours on Thursdays and Sundays, not whenever they arrive."
+  },
+  {
+   "name": "Kalamunda National Park",
+   "views": 426,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: No facilities; the draw is the Bibbulmun Track (a separate candidate) and the terminus in Kalamunda town. Near-duplicate of Bibbulmun Track and Kalamunda. For: Rule 1: DBCA visitor page; the Bibbulmun Track northern terminus and Piesse Brook walks start here. Case for: the start of WA's best-known long walk."
+  },
+  {
+   "name": "E Shed Markets",
+   "views": 400,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 4: a market that trades only Friday to Sunday (and public holidays), not daily."
+  },
+  {
+   "name": "Thomson Bay",
+   "views": 384,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Likely a near-duplicate of Rottnest Island; useful only if the island becomes a destination with the settlement as its gateway spot. For: For: the island's main settlement where the ferries land, with the shops, bakery, museum and accommodation; visitors base there (town rule). Against rule 3: it is the arrival point of Rottnest Island rather than a separate draw, and no counted source names it as somewhere to go in itself."
+  },
+  {
+   "name": "Old Central Fire Station",
+   "views": 375,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Against: open only Tue-Thu and the first and third Saturdays (rule 4), aimed at families, and a short visit; one source for a marginal stop. For: For: Visit Perth lists it as the DFES Education and Heritage Centre (fire brigade history, vintage fire trucks, free) in the 1901 fire station on Murray Street. One counted source."
+  },
+  {
+   "name": "Halliday House",
+   "views": 369,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1 and 2: a heritage house in Bassendean with no counted source and no confirmed public opening."
+  },
+  {
+   "name": "Banyowla Regional Park",
+   "views": 361,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source; regional bushland on the metro edge that no guide mentions (the COVERAGE 'regional park beside a city' case)."
+  },
+  {
+   "name": "Jandakot Regional Park",
+   "views": 356,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3, local reserve: banksia woodland with bridle trails; only the DBCA page, which pitches it to horse riders."
+  },
+  {
+   "name": "Lawrence Wilson Art Gallery",
+   "views": 346,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source found (only UWA's own pages and art-listing sites); a university gallery open Tue-Sat."
+  },
+  {
+   "name": "Helena National Park",
+   "views": 343,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Its only named draw is Mount Dale, a separate candidate; without it the park is unmarked bush with no facilities. Keep one (Mount Dale) unless the park has another visitor point. For: Rule 1: DBCA visitor page (jarrah and wandoo forest, Bibbulmun Track). Case for: a national park with a visitor page and a road-access lookout."
+  },
+  {
+   "name": "Peace Memorial Rose Garden",
+   "views": 320,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1 and 3: a local rose garden in Nedlands with no counted source; a short look."
+  },
+  {
+   "name": "Mahogany Inn",
+   "views": 315,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Brief rule: accommodation venue (a historic inn operating as a B&B/function venue); no visitor source names it as a sight."
+  },
+  {
+   "name": "Wungong Regional Park",
+   "views": 268,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3, local reserve: Darling Range bushland around Wungong Dam; only the DBCA page names it."
+  },
+  {
+   "name": "Fremantle Walking Tours and Trails",
+   "views": 220,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A spot is a place: a set of tours and self-guided trails, not a place; the places they visit (West End, Round House, Prison) are their own candidates."
+  },
+  {
+   "name": "Samuel Ferguson's Cottage",
+   "views": 215,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-3: only Wikipedia/heritage listings; a cottage (ruin) that is one numbered stop on the Toodyay Pioneer Heritage Trail, a minor part of a larger walk with nothing to do for half an hour."
+  },
+  {
+   "name": "Holy Trinity Church, York",
+   "views": 73,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 (church rule): Wikivoyage York gives only its date and convict builders and where it stands; no source names an interior, art or tour to see."
+  },
+  {
+   "name": "St Philip's Church, Culham",
+   "views": 13,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 (church rule): Wikivoyage Toodyay gives only its location and 1857 date; a rural church with nothing named to see or do."
+  },
+  {
+   "name": "Chinatown Perth",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 and 3: a small precinct of Asian groceries and restaurants with a gate on Roe Street, inside Northbridge. It is shops and restaurants, and part of the Northbridge candidate; keep it as one with Northbridge (its bio can mention Chinatown)."
+  },
+  {
+   "name": "Pinnaroo Valley Memorial Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a minor memorial"
+  },
+  {
+   "name": "Whalers' Tunnel",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: part of the Round House (it runs under it on Arthur Head to Bathers Beach); keep as one with the Round House and mention the tunnel in its bio."
+  },
+  {
+   "name": "The Moores Building",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Part-of signal: if Fremantle Arts Centre is kept, this is a near-duplicate; could also be folded into the West End spot. For: For: Wikivoyage Do listing: a contemporary art gallery with six exhibition spaces in the West End, free entry. Against rule 3: Wikivoyage itself calls it part of Fremantle Arts Centre; a small gallery whose shows come and go."
+  },
+  {
+   "name": "Cappuccino Strip",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Could be judged a recognised landmark street (keep) or folded into a Fremantle town/West End spot. For: For: Fremantle's famous cafe street (South Terrace), named by Wikivoyage (walking area), Visit Fremantle ('the famous Cappuccino Strip', a stop on the Fremantle Discovery Trail) and Tourism WA. Against rule 2: it is a strip of cafes and restaurants; a street of businesses, which the bar fails unless the street itself is the recognised attraction."
+  },
+  {
+   "name": "Rottnest Quokkas",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place / rule 3: the quokkas live across the whole island; they are Rottnest Island's draw, not a separate place. Duplicate of Rottnest Island (mention in its bio)."
+  },
+  {
+   "name": "Swan Valley Visitor Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a visitor information centre, not an attraction; the museum it is attached to (Guildford courthouse/gaol) would be judged on its own."
+  },
+  {
+   "name": "Houghtons Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: the Houghton name has left the Swan Valley — the winery was sold to Oakover in 2019 and the site is now Nikola Estate; Wikivoyage's link is marked dead. Under this name it is not a place to go."
+  },
+  {
+   "name": "Oakover Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: one of dozens of Swan Valley cellar doors in a bare Wikivoyage list, no source singles it out as a destination."
+  },
+  {
+   "name": "Jarrah Ridge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "Sitella Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "Talijancich",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "Carilley Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "The Olive Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door/farm shop in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "Feral Brewing",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief brewery rule: a brewery taproom in a bare Wikivoyage list; no source singles it out as a destination in its own right."
+  },
+  {
+   "name": "Lancaster Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "Garbin Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "Jane Brook Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination."
+  },
+  {
+   "name": "Edgecombe Wines",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a family cafe and cellar door (Wikivoyage Eat listing 'Edgecombe Brothers'); no source singles it out as a destination."
+  },
+  {
+   "name": "Henley Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Brief winery rule: a cellar door in a bare Wikivoyage list, not singled out as a destination. (Candidate coordinates are Henley Park in England.)",
+   "score_note": "enumerator signal belongs to another place or another region"
+  },
+  {
+   "name": "Wild Swan",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule: a winery, brewery or shop is a place only when a visitor source singles it out as a destination; Wikivoyage Perth/Swan Valley only lists it by name in a bare list of cellar doors along West Swan Road, with no description."
+  },
+  {
+   "name": "Black Swan",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule: a winery, brewery or shop is a place only when a visitor source singles it out as a destination; Wikivoyage Perth/Swan Valley only lists it by name in a bare list of cellar doors along West Swan Road, with no description."
+  },
+  {
+   "name": "Margaret River Chocolate Factory (Swan Valley)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a shop (chocolate factory shop and café), named only in the Wikivoyage Swan Valley bare list; not a place in its own right."
+  },
+  {
+   "name": "Lilac Hill Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule: a winery, brewery or shop is a place only when a visitor source singles it out as a destination; Wikivoyage Perth/Swan Valley only lists it by name in a bare list of cellar doors along West Swan Road, with no description."
+  },
+  {
+   "name": "Ironbark Brewery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule: a winery, brewery or shop is a place only when a visitor source singles it out as a destination; Wikivoyage Perth/Swan Valley only lists it by name in a bare list of cellar doors along West Swan Road, with no description."
+  },
+  {
+   "name": "Riverbank Estate",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule: a winery, brewery or shop is a place only when a visitor source singles it out as a destination; Wikivoyage Perth/Swan Valley only lists it by name in a bare list of cellar doors along West Swan Road, with no description."
+  },
+  {
+   "name": "Rocky Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: The two sources may be two different Rocky Pools (Swan View/John Forrest vs Kalamunda NP); the Wikivoyage mention is only a trail access point, not a listing. Confirm which one and its coordinates before keeping. For: Rule 1: Wikivoyage Perth/The Hills mentions Rocky Pool in Swan View as a start of the Railway Reserves Heritage Trail; DBCA Kalamunda National Park lists a \"Rocky Pool\" attraction (on Piesse Brook). Case for: a natural swimming hole named by two sources."
+  },
+  {
+   "name": "Goat Farm Mountain Bike Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Mostly used by local riders who bring their own bikes; a passing mention in one counted source; closer to \"a place only locals use\" than a visitor draw. For: Rule 1: Wikivoyage Perth/The Hills (Do: mountain biking) names it; Trails WA carries it as a trail (Greenmount). Case for: a real open-access mountain bike park in the hills."
+  },
+  {
+   "name": "Lake C. Y. O'Connor",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: duplicate of Mundaring Weir. It is the reservoir behind the weir; Wikivoyage Perth mentions it only as 'Mundaring Weir/Lake C Y O'Connor' (kangaroos near the car park)."
+  },
+  {
+   "name": "Kalamunda Farmers Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a market that runs only some days"
+  },
+  {
+   "name": "Mandurah Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One counted source, a small local museum; fails the friend test unless already in Mandurah. For: Rule 1: Wikivoyage Mandurah See listing only (\"small local history museum\", gold-coin donation). Case for: open to the public, about an hour."
+  },
+  {
+   "name": "Amaze Miniature Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One counted source with a one-word description; opens four days a week; a local family attraction. For: Rule 1: Wikivoyage Mandurah See listing (Wed-Sat 10-4:30). Case for: a family attraction a guide names."
+  },
+  {
+   "name": "Mandjar Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: It is Mandurah's foreshore and marina where tours leave from (a tour base, not a draw of its own), so it may be a near-duplicate of Mandurah itself. For: Rule 1: Wikivoyage Mandurah names Mandjar Bay as the base for dolphin tours; Visit Mandurah lists it as one of the best places to see dolphins. Case for: dolphins are seen from the shore here, on the town's waterfront."
+  },
+  {
+   "name": "Mandurah Hill",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One counted source, a suburban dune lookout with a short visit; no tourism board mention found. For: Rule 1: Wikivoyage Rockingham See listing only (\"wonderful look out with excellent views\", Golden Bay). Case for: a free lookout a guide names."
+  },
+  {
+   "name": "Rockingham Waterfront Village",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rules 2-4: a dining and shopping precinct whose Wikivoyage mention is as the venue for festivals (International Food Festival, Cast Aways); the beach beside it is the Rockingham Beach spot."
+  },
+  {
+   "name": "Scarborough Sunset Markets",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: a weekly market (Thursday evenings in summer, Saturdays in winter); belongs in Scarborough Beach's text, not a spot."
+  },
+  {
+   "name": "Trigg Point",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: duplicate of Trigg Beach: the surf break at the point of Trigg Beach; Destination Perth names it only in a list of surf spots."
+  },
+  {
+   "name": "Strickland Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: A passing mention in a surf list; Wikivoyage Rottnest Island does not name it; one of many Rottnest bays and a ride from the settlement. For: Rule 1: Destination Perth names it only in a list of surf spots (Rottnest Island's main surf break). Case for: a named bay on Rottnest that surfers go to."
+  },
+  {
+   "name": "The Great Escape Water Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a small commercial water park (three slides, mini golf, trampolines) inside Hillarys Boat Harbour; part of that larger spot and a business rather than a place."
+  },
+  {
+   "name": "Sculptures by the Sea",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: an annual autumn exhibition on Cottesloe Beach (Wikivoyage calls it an annual exposition), not there whenever you arrive."
+  },
+  {
+   "name": "Manning Farmers Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a market that runs only some days"
+  },
+  {
+   "name": "Perth City Farmers Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a market that runs only some days"
+  },
+  {
+   "name": "Twilight Hawkers Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: a Friday-night food market running October to April only (Wikivoyage Perth), a weekly seasonal market."
+  },
+  {
+   "name": "Mandurah Crab Fest",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: an annual festival on the third weekend of March (Wikivoyage Mandurah)."
+  },
+  {
+   "name": "York Courthouse",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a civic building seen from the pavement"
+  },
+  {
+   "name": "St Patrick's Church, York",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 (church rule): Wikivoyage York gives its history (convict architect Joseph Nunan) but names nothing to see or do inside, and no opening."
+  },
+  {
+   "name": "York Suspension Bridge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 3: a few minutes' walk across, and it is a 1988 rebuild; better as part of York town's bio than a spot of its own. For: Rule 1+3: Wikivoyage York See listing and Destination Perth's Avon Valley road trip ('cross the river by suspension bridge'); a footbridge over the Avon by Holy Trinity."
+  },
+  {
+   "name": "Pelham Reserve",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Leave-out rule: an ordinary town reserve with picnic sites; mainly a local park, seasonally interesting for wildflowers. For: Rule 1: Wikivoyage Toodyay See listing (wooded hill, Drummond memorial, WWI range, WWII bunker) and Destination Perth's Toodyay page and road trip (spring wildflowers, stargazing over town)."
+  },
+  {
+   "name": "St Stephen's Church, Toodyay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 (church rule): Wikivoyage says only that it is a small 1862 redbrick Anglican church still in use; nothing named to see inside."
+  },
+  {
+   "name": "Toodyay Miniature Railway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: closed (Wikivoyage: 'remains closed in 2023')."
+  },
+  {
+   "name": "St John's Church, Northam",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2 (church rule): Wikivoyage lists opening hours (Fri-Mon 11-3) but names nothing to see; no other visitor source."
+  },
+  {
+   "name": "Northam Heritage Forum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One counted source, a one-line listing; limited opening days; a small volunteer railway museum. For: Rule 1+2: Wikivoyage Northam See listing (old locomotives in a disused railway station, Fri-Mon 11-3)."
+  },
+  {
+   "name": "Mount Ommanney Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: One counted source and a one-line mention; no tourism-board page found; a short-stop town lookout. For: Rule 1: Wikivoyage Northam See listing (lookout reached by road or a hike)."
+  },
+  {
+   "name": "Northam Silos",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: Wikivoyage says the painted silos cannot be properly seen without trespassing on an industrial site; no public access to view them."
+  },
+  {
+   "name": "Yonderup Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Sent to review for the owner. Against: Rule 3: a second cave in the same park, toured less often than Crystal Cave; likely a near-duplicate of the Crystal Cave spot. For: Rule 1: DBCA Yanchep page names it as a guided-tour cave alongside Crystal Cave."
+  },
+  {
+   "name": "Yanchep Koala Boardwalk",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: part of Yanchep National Park (DBCA describes the koala boardwalk as one of the park's features beside the main picnic area); a short stroll, not a separate place."
+  },
+  {
+   "name": "Mandurah War Memorial",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a minor memorial"
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "New Norcia",
+   "views": 19249,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "nearest_destination": "avon-valley (103 km from its centre)",
+   "placed_as": "standalone spot new-norcia"
+  },
+  {
+   "name": "Gingin",
+   "views": 8152,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "nearest_destination": "perth (69 km from its centre)",
+   "placed_as": "standalone spot gingin"
+  },
+  {
+   "name": "Waroona",
+   "views": 4850,
+   "counted_sources": 0,
+   "verdict": "review",
+   "nearest_destination": "mandurah (40 km from its centre)",
+   "reason": "review: A shire page, not the town: a town with nothing of its own named to see. Waroona Dam or Drakesbrook Weir may be the real candidates."
+  },
+  {
+   "name": "Mount Cooke",
+   "views": 4263,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "nearest_destination": "perth-hills (45 km from its centre)",
+   "placed_as": "standalone spot mount-cooke"
+  },
+  {
+   "name": "Yanchep National Park",
+   "views": 2983,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "nearest_destination": "perth (47 km from its centre)",
+   "placed_as": "standalone spot yanchep-national-park"
+  },
+  {
+   "name": "Moore River National Park",
+   "views": 1339,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "nearest_destination": "perth (99 km from its centre)",
+   "reason": "Rule 1: no counted source found on a re-look (no DBCA visitor page: its URL is a 404; Wikipedia says there are no facilities). Rule 2: banksia heath with no visitor access point."
+  },
+  {
+   "name": "Crystal Caves",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "nearest_destination": "perth (48 km from its centre)",
+   "placed_as": "standalone spot crystal-cave"
+  },
+  {
+   "name": "Yonderup Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "nearest_destination": "perth (48 km from its centre)",
+   "reason": "review: Rule 3: a second cave in the same park, toured less often than Crystal Cave; likely a near-duplicate of the Crystal Cave spot."
+  }
+ ],
+ "strongest_outsiders_note": "Candidates whose candidate point lies outside every proposed destination's reach (75% of its span), strongest first. Kept ones are placed as standalone spots; the rest carry their \"What qualifies\" reason. Enumerator points known to be wrong (South Beach, Cathedral Rocks, Henley Park, and three out-of-region places) are left out of this list.",
+ "benchmark": {
+  "nz_benchmarks": "Not applicable: none of the COVERAGE NZ benchmark places is in Western Australia.",
+  "negatives_rejected": "Weekly or seasonal markets rejected (Manning Farmers Market, E Shed Markets, Twilight Hawkers Market); civic buildings seen from the pavement rejected (Old Court House, Fremantle Town Hall, Fremantle Court House, York Courthouse); minor memorials rejected (Fremantle War Memorial, Edith Dircksey Cowan Memorial, Bali Memorial); ordinary city parks rejected (Hyde Park, Queens Gardens, Russell Square, Wellington Square).",
+  "vehicles_and_operators": "Hotham Valley Railway rejected as a ride (its towns, Pinjarra and Dwellingup, are the spots); Penguin Island and Rottnest are the places, not their ferries; HMAS Ovens folded into the Maritime Museum; Fremantle Walking Tours rejected.",
+  "gateway_to_review": "Thomson Bay (Rottnest's ferry settlement, whose draw is the island beyond it) went to review, not keep, as Pipiriki does in the NZ benchmark."
+ }
+}

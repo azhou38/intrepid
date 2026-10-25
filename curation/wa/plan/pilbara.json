@@ -1,0 +1,1175 @@
+{
+ "region": "wa-pilbara",
+ "destinations": [
+  {
+   "id": "karijini",
+   "name": "Karijini National Park",
+   "category": "park",
+   "rank": 2,
+   "coordinates": {
+    "latitude": -22.49611111,
+    "longitude": 118.39722222
+   },
+   "coordinates_source": "wikipedia:Karijini National Park (the park's visual centre between the Dales and Weano areas, 7 km west of the Karijini Visitor Centre; reference, confirm at Pins)",
+   "defaultZoomSpanKm": 75,
+   "name_evidence": {
+    "source": "DBCA Explore Parks park page; Wikivoyage \"Karijini National Park\" park page; Wikivoyage Pilbara",
+    "wording": "Karijini National Park; Wikivoyage Pilbara calls it \"this region's top attraction\""
+   },
+   "spots": [
+    "karijini-1",
+    "karijini-2",
+    "karijini-3",
+    "karijini-4",
+    "karijini-5",
+    "karijini-6",
+    "karijini-7",
+    "karijini-8",
+    "karijini-9"
+   ]
+  },
+  {
+   "id": "karratha",
+   "name": "Karratha",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -20.7370067,
+    "longitude": 116.8478592
+   },
+   "coordinates_source": "OpenStreetMap node 3887250742 (place=town, Karratha), via Nominatim",
+   "defaultZoomSpanKm": 55,
+   "name_evidence": {
+    "source": "Wikivoyage \"Karratha\" city page; Australia's North West (regional tourism board) Karratha page",
+    "wording": "Karratha: the Pilbara's main town and the city to stay in; its page lists Dampier, Red Dog, Murujuga (Ngajarli), the Dampier Archipelago, Roebourne, Cossack and Point Samson"
+   },
+   "spots": [
+    "karratha-1",
+    "karratha-2",
+    "karratha-3",
+    "karratha-4",
+    "karratha-5",
+    "karratha-6",
+    "karratha-7"
+   ]
+  },
+  {
+   "id": "port-hedland",
+   "name": "Port Hedland",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -20.3111814,
+    "longitude": 118.5801181
+   },
+   "coordinates_source": "OpenStreetMap relation 11690181 (Port Hedland locality) label point, via Nominatim; confirm the place node at Pins",
+   "defaultZoomSpanKm": 28,
+   "name_evidence": {
+    "source": "Wikivoyage \"Port Hedland\" city page; Australia's North West (regional tourism board) Port Hedland page",
+    "wording": "Port Hedland: the port town, with Cooke Point, the turtle beaches, Dalgety House, Spinifex Hill Studios and the Staircase to the Moon"
+   },
+   "spots": [
+    "port-hedland-1",
+    "port-hedland-2",
+    "port-hedland-3",
+    "port-hedland-4",
+    "port-hedland-5",
+    "port-hedland-6"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Dales Gorge",
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "Gorge of red terraced cliffs with permanent waterfalls, ferns and pools, home to Fortescue Falls and Fern Pool.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.47727,
+    "longitude": 118.56147
+   },
+   "coordinates_source": "OpenStreetMap node 3232578187 (tourism=viewpoint, Dales Gorge)",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-1",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Headline gorge and the park's main campground (2 counted sources); 17 km from the centre. Fern Pool, Circular Pool Lookout and the Gorge Rim Walk were judged part of it; Fortescue Falls (review) is named in its bio."
+  },
+  {
+   "name": "Weano Gorge",
+   "category": "nature",
+   "icon": "🧗",
+   "bio": "Gorge at the Weano Recreation Area whose trail descends to the narrow Handrail Pool.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.35235,
+    "longitude": 118.28486
+   },
+   "coordinates_source": "OpenStreetMap node 4546395895 (tourism=attraction, Weano Gorge)",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-2",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Headline gorge area (2 counted sources); Handrail Pool judged part of it. 20 km from the centre."
+  },
+  {
+   "name": "Hancock Gorge",
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Class 5 trail from the Weano day-use area through narrow Hancock Gorge to Kermits Pool.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.3592,
+    "longitude": 118.2857
+   },
+   "coordinates_source": "OpenStreetMap mean of the Hancock Gorge Trail ways (route midpoint, approximate)",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-3",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park"
+   ],
+   "note": "Distinct gorge trail (DBCA: one of the most spectacular short trails in WA); pin is an approximate route midpoint, re-resolve at Pins. 19 km from the centre."
+  },
+  {
+   "name": "Hamersley Gorge",
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "Swimming gorge of folded, rippled rock in the park's north-west, a separate area from the other gorges.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.2574,
+    "longitude": 117.98652
+   },
+   "coordinates_source": "OpenStreetMap node 4738088449 (information board at the Hamersley Gorge access)",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-4",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park",
+    "https://en.wikipedia.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Headline swimming gorge (2 counted sources), a separate area 50 km north-west of the centre but inside the park and visited from the park's campgrounds and Tom Price; within 75% of the 75 km span."
+  },
+  {
+   "name": "Joffre Falls",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "Waterfall and slot canyon with a lookout over Joffre Gorge and a scramble down to its pool.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.39091,
+    "longitude": 118.26846
+   },
+   "coordinates_source": "OpenStreetMap node 2876078783 (waterway=waterfall, Joffre Waterfall)",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-5",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Distinct falls and gorge (2 counted sources); 17 km from the centre."
+  },
+  {
+   "name": "Knox Lookout",
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "Lookout 200 m from the car park over Knox Gorge, with a steep 2 km trail down into the gorge.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.36994,
+    "longitude": 118.29647
+   },
+   "coordinates_source": "OpenStreetMap node 1962414450 (tourism=viewpoint, Knox Lookout)",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-6",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Distinct gorge lookout and descent (2 counted sources); 18 km from the centre."
+  },
+  {
+   "name": "Mount Bruce",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Western Australia's second-highest peak, Punurrunha (1,234 m), with a 9 km summit trail over the Hamersley Range.",
+   "wiki": "Mount Bruce (Western Australia)",
+   "coordinates": {
+    "latitude": -22.56805556,
+    "longitude": 118.07611111
+   },
+   "coordinates_source": "wikipedia:Mount Bruce (Western Australia)",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-7",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Peak with a marked summit trail (2 counted sources), 34 km west of the centre beside the park road; pin is the Wikipedia summit point, re-pin at the midpoint of the Punurrunha trail at Pins."
+  },
+  {
+   "name": "Kalamina Gorge",
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Gorge with a trail and picnic area, a gentle introduction to Karijini's gorges.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.41434,
+    "longitude": 118.40368
+   },
+   "coordinates_source": "OpenStreetMap way 1193755145 (natural=gorge, Kalamina Gorge)",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-8",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Kept gorge walk (2 counted sources); 9 km from the centre."
+  },
+  {
+   "name": "Karijini Visitor Centre",
+   "category": "museum",
+   "icon": "ℹ️",
+   "bio": "Park visitor centre with displays on Karijini and its Traditional Owners, the first stop before the gorges.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.48034,
+    "longitude": 118.4622
+   },
+   "coordinates_source": "OpenStreetMap way 179740208 (tourism=information, Karijini Visitor Centre)",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "karijini-9",
+   "destination": "karijini",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karijini-national-park",
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park"
+   ],
+   "note": "Kept (2 counted sources) as a short exhibit stop; last in order since nobody travels for it. 7 km from the centre."
+  },
+  {
+   "name": "Murujuga National Park",
+   "category": "historic",
+   "icon": "🪨",
+   "bio": "World Heritage rock-art park on the Burrup, where the Ngajarli boardwalk passes petroglyphs up to 47,000 years old.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.63637,
+    "longitude": 116.78752
+   },
+   "coordinates_source": "OpenStreetMap node 6538543085 (tourism=attraction, Deep Gorge): Ngajarli, the park's only developed visitor site",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/murujuga-national-park",
+   "closedDays": null,
+   "needs_research": [],
+   "id": "karratha-1",
+   "destination": "karratha",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/murujuga-national-park",
+    "https://en.wikivoyage.org/wiki/Murujuga_National_Park",
+    "https://en.wikipedia.org/wiki/Murujuga_National_Park"
+   ],
+   "note": "Kept (2 counted sources, 2,406 views); merged with Ngajarli (Deep Gorge), its only developed visitor site (skeptic: \"the two may be one place\"). With one spot it is far below the four-spot bar for its own destination, so it is a spot of Karratha: 13 km from the centre and visited from Karratha. Hours and free entry from the Ngajarli source (\"free and open at all hours\")."
+  },
+  {
+   "name": "Red Dog",
+   "category": "monument",
+   "icon": "🐕",
+   "bio": "Memorial statue at the entrance to Dampier to Red Dog, the roaming cattle dog of the Pilbara.",
+   "wiki": "Red Dog (Pilbara)",
+   "coordinates": {
+    "latitude": -20.66419,
+    "longitude": 116.7175
+   },
+   "coordinates_source": "OpenStreetMap node 8015559588 (historic=memorial, Red Dog Memorial at Dampier entrance)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [],
+   "id": "karratha-2",
+   "destination": "karratha",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Karratha",
+    "https://en.wikipedia.org/wiki/Red_Dog_(Pilbara)"
+   ],
+   "note": "Quirky roadside icon (36,505 views); 16 km from the centre at the Dampier entrance. Open-access roadside statue, so open at all hours and free."
+  },
+  {
+   "name": "Dampier Archipelago",
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "Group of 42 islands off Dampier with beaches, diving, snorkelling and camping, reached by boat.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.53333333,
+    "longitude": 116.6
+   },
+   "coordinates_source": "wikipedia:Dampier Archipelago",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours"
+   ],
+   "id": "karratha-3",
+   "destination": "karratha",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Karratha",
+    "https://en.wikipedia.org/wiki/Dampier_Archipelago"
+   ],
+   "note": "Island group reached by boat from Dampier (the place, not the cruise); centroid 34 km from the centre. Pin is the Wikipedia centroid in the water: at Pins take the Dampier boat ramp or the main visited island's point."
+  },
+  {
+   "name": "Cossack",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Ghost town of restored 1880s bluestone buildings at the old pearling port, with a museum, heritage trail and beach.",
+   "wiki": "Cossack, Western Australia",
+   "coordinates": {
+    "latitude": -20.678383,
+    "longitude": 117.1886006
+   },
+   "coordinates_source": "OpenStreetMap node 308858717 (place=hamlet, Cossack), via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "id": "karratha-4",
+   "destination": "karratha",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Karratha",
+    "https://en.wikipedia.org/wiki/Cossack,_Western_Australia"
+   ],
+   "note": "Second-tier heritage draw, the town itself is the attraction; the Cossack Museum and Tien Tsin Lookout were judged part of it. 36 km from the centre, a day trip from Karratha."
+  },
+  {
+   "name": "Point Samson",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Coastal village at the end of the road past Cossack, with beaches, a snorkelling reef and whale watching.",
+   "wiki": "Point Samson, Western Australia",
+   "coordinates": {
+    "latitude": -20.6304515,
+    "longitude": 117.194867
+   },
+   "coordinates_source": "OpenStreetMap relation 11690033 (Point Samson locality) label point, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "karratha-5",
+   "destination": "karratha",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Karratha",
+    "https://en.wikipedia.org/wiki/Point_Samson,_Western_Australia"
+   ],
+   "note": "Kept as a harbour/beach village a guide recommends; its beaches (Honeymoon Cove) are not separate candidates, so the village carries them. 38 km from the centre."
+  },
+  {
+   "name": "Roebourne",
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "Historic town of restored 1880s stone buildings, with a heritage trail and the Mount Welcome lookout.",
+   "wiki": "Roebourne, Western Australia",
+   "coordinates": {
+    "latitude": -20.7723709,
+    "longitude": 117.145828
+   },
+   "coordinates_source": "OpenStreetMap relation 11690034 (Roebourne locality) label point, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "karratha-6",
+   "destination": "karratha",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Karratha",
+    "https://en.wikipedia.org/wiki/Roebourne"
+   ],
+   "note": "Heritage town with its own draws (heritage trail, lookout); 31 km from the centre on the road to Cossack."
+  },
+  {
+   "name": "Dampier",
+   "category": "beach",
+   "icon": "⚓",
+   "bio": "Port town with a foreshore, the Hampton Harbour and Shark Cage beaches, and boats out to the Dampier Archipelago.",
+   "wiki": "Dampier, Western Australia",
+   "coordinates": {
+    "latitude": -20.6624798,
+    "longitude": 116.7119013
+   },
+   "coordinates_source": "OpenStreetMap relation 11690015 (Dampier locality) label point, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "karratha-7",
+   "destination": "karratha",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Karratha"
+   ],
+   "note": "Kept town with its own regional-tourism page (foreshore, Shark Cage and Hampton Harbour beaches); 16 km from the centre. Last in order: its headline (Red Dog) and the archipelago are their own spots."
+  },
+  {
+   "name": "Cooke Point",
+   "category": "viewpoint",
+   "icon": "🌕",
+   "bio": "Headland where ore ships queue for the port and the Staircase to the Moon rises over the mudflats from March to October.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.29902,
+    "longitude": 118.64027
+   },
+   "coordinates_source": "OpenStreetMap node 12049219300 (natural=cape, Cooke Point)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [],
+   "id": "port-hedland-1",
+   "destination": "port-hedland",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Hedland"
+   ],
+   "note": "Merged with Staircase to the Moon (kept, 4 counted sources): a recurring phenomenon is not a spot (What qualifies 4), so it goes in the bio of its place; Cooke Point is the viewing point the sources name and the Staircase candidate's own pin (the Kimberley judge did the same with Town Beach, Broome). 6 km from the centre."
+  },
+  {
+   "name": "Cemetery Beach",
+   "category": "beach",
+   "icon": "🐢",
+   "bio": "Town beach that is a flatback turtle rookery, with nesting from November to January and hatchlings to March.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.30813,
+    "longitude": 118.60489
+   },
+   "coordinates_source": "OpenStreetMap way 565049833 (leisure=park, Cemetery Beach Park)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "port-hedland-2",
+   "destination": "port-hedland",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Hedland"
+   ],
+   "note": "Second-tier beach with a wildlife draw; pin is the OSM Cemetery Beach Park, re-pin to the natural=beach at Pins. 2.6 km from the centre."
+  },
+  {
+   "name": "Dalgety House Museum",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Regional history museum in Dalgety House by the visitor centre, with an exhibition on the lost SS Koombana.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.31338,
+    "longitude": 118.57679
+   },
+   "coordinates_source": "OpenStreetMap way 333934398 (tourism=museum, Dalgety House Museum)",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "port-hedland-3",
+   "destination": "port-hedland",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Hedland"
+   ],
+   "note": "Museum (1 counted source); 0.4 km from the centre."
+  },
+  {
+   "name": "Spinifex Hill Studios",
+   "category": "museum",
+   "icon": "🎨",
+   "bio": "Aboriginal art centre and gallery in South Hedland, the town's cultural attraction, open on weekdays.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.4045,
+    "longitude": 118.5966
+   },
+   "coordinates_source": "Wikivoyage Port Hedland listing geo tag (the gallery is its own listing)",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": [
+    0,
+    6
+   ],
+   "needs_research": [
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "port-hedland-4",
+   "destination": "port-hedland",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Hedland"
+   ],
+   "note": "Art centre with a gallery (1 counted source); 10 km south of the centre in South Hedland, part of Port Hedland. Pin from its own Wikivoyage listing geo tag."
+  },
+  {
+   "name": "Don Rhodes Mining and Transport Museum",
+   "category": "museum",
+   "icon": "🚂",
+   "bio": "Open-air park of old mining machinery and locomotives with interpretive signs, free to wander.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.3116,
+    "longitude": 118.6053
+   },
+   "coordinates_source": "OpenStreetMap node 9847433346 (tourism=museum, Don Rhodes Mining and Transport Museum)",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "port-hedland-5",
+   "destination": "port-hedland",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Don_Rhodes_Mining_and_Transport_Museum",
+    "https://www.openstreetmap.org/?mlat=-20.3116&mlon=118.6053"
+   ],
+   "note": "Kept on a Tourism WA attraction listing; 2.6 km from the centre."
+  },
+  {
+   "name": "Spoil Bank",
+   "category": "beach",
+   "icon": "⛵",
+   "bio": "Sand spit of harbour dredgings with swimming beaches, now the Spoilbank Marina precinct for boating and walks.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.30207,
+    "longitude": 118.59325
+   },
+   "coordinates_source": "OpenStreetMap way 565050232 (natural=beach, Spoil Bank)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [],
+   "id": "port-hedland-6",
+   "destination": "port-hedland",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Hedland"
+   ],
+   "note": "Beach/foreshore (2 counted sources per judge); 1.7 km from the centre."
+  },
+  {
+   "name": "Tom Price",
+   "category": "landmark",
+   "icon": "⛏️",
+   "bio": "Iron ore mining town below Mount Nameless, the closest town to Karijini National Park.",
+   "wiki": "Tom Price, Western Australia",
+   "coordinates": {
+    "latitude": -22.6892972,
+    "longitude": 117.7974898
+   },
+   "coordinates_source": "OpenStreetMap relation 11690010 (Tom Price locality) label point, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "tom-price",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Pilbara",
+    "https://en.wikipedia.org/wiki/Tom_Price,_Western_Australia"
+   ],
+   "note": "Kept town, outside Karijini National Park and 66 km from the park's centre (outside its span); a gateway for the park, named in its description. With Mount Nameless and Paraburdoo only three kept places sit round it, so it is not a destination."
+  },
+  {
+   "name": "Mount Nameless",
+   "category": "viewpoint",
+   "icon": "🏔️",
+   "bio": "Tom Price's 1,128 m peak, Jarndunmunha, with a 4WD track and a hiking trail to a summit lookout.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.71799,
+    "longitude": 117.76463
+   },
+   "coordinates_source": "OpenStreetMap node 2296851227 (tourism=viewpoint, Mt Nameless)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [],
+   "id": "mount-nameless",
+   "destination": null,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tom_Price,_Western_Australia"
+   ],
+   "note": "Kept (regional tourism board Tom Price page); a Tom Price outing 5 km from the town, outside the park and 69 km from Karijini's centre."
+  },
+  {
+   "name": "Paraburdoo",
+   "category": "landmark",
+   "icon": "🛬",
+   "bio": "Mining town with the airport for Karijini, the Radio Hill Lookout, Kelly's Pool and a haul-truck display.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -23.2006373,
+    "longitude": 117.6704999
+   },
+   "coordinates_source": "OpenStreetMap way 156406796 (place=town, Paraburdoo), via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [],
+   "id": "paraburdoo",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Karijini_National_Park",
+    "https://en.wikipedia.org/wiki/Paraburdoo"
+   ],
+   "note": "Kept town (close to review per skeptic); 58 km from Tom Price and 105 km from Karijini's centre: no destination near it."
+  },
+  {
+   "name": "Newman",
+   "category": "landmark",
+   "icon": "🚛",
+   "bio": "Mining town and Great Northern Highway stop with a haul-truck lookout, Kalgans Pool and a visitor centre.",
+   "wiki": "Newman, Western Australia",
+   "coordinates": {
+    "latitude": -23.357394,
+    "longitude": 119.7331631
+   },
+   "coordinates_source": "OpenStreetMap relation 11690174 (Newman locality) label point, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "newman",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Pilbara",
+    "https://en.wikipedia.org/wiki/Newman,_Western_Australia"
+   ],
+   "note": "Kept town and highway stop; nothing else kept around it (Mount Whaleback is in review), 150 km from Karijini's centre."
+  },
+  {
+   "name": "Marble Bar",
+   "category": "historic",
+   "icon": "🌡️",
+   "bio": "Hot historic outback town, once the district's administrative centre, with the Iron Clad Hotel and old barracks.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -21.1714929,
+    "longitude": 119.7456168
+   },
+   "coordinates_source": "OpenStreetMap relation 11690176 (Marble Bar locality) label point, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "marble-bar",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Pilbara",
+    "https://en.wikipedia.org/wiki/Marble_Bar"
+   ],
+   "note": "Kept town; with Doolena Gorge only two kept places, so not a destination. 190 km from Port Hedland."
+  },
+  {
+   "name": "Doolena Gorge",
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Gorge on the Coongan River north of Marble Bar, with a seasonal waterhole that glows in the sunset light.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -20.92556,
+    "longitude": 119.78556
+   },
+   "coordinates_source": "OpenStreetMap node 1811172326 (tourism=camp_site, Doolena Gorge; the campground in the gorge)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "doolena-gorge",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Pilbara"
+   ],
+   "note": "Kept (2 counted sources); 28 km north of Marble Bar, which is not a destination. Pin is the OSM campsite in the gorge (approximate per the tally): confirm at Pins."
+  },
+  {
+   "name": "Onslow",
+   "category": "beach",
+   "icon": "🌅",
+   "bio": "Small port town with Sunrise and Sunset beaches, the Ian Blair Walkway and the Goods Shed Museum.",
+   "wiki": "Onslow, Western Australia",
+   "coordinates": {
+    "latitude": -21.6382467,
+    "longitude": 115.1134438
+   },
+   "coordinates_source": "OpenStreetMap relation 11690003 (Onslow locality) label point, via Nominatim",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "id": "onslow",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Onslow",
+    "https://en.wikipedia.org/wiki/Onslow,_Western_Australia"
+   ],
+   "note": "Kept town (its own Wikivoyage page). Only three kept places around it (Onslow, Old Onslow, Thevenard Island): two or three never make a destination, so all three stand alone. Onslow Point Lookout is in review."
+  },
+  {
+   "name": "Old Onslow",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Ruins of the 1885 Onslow settlement on the Ashburton River: its gaol, courthouse, police station and cemetery.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -21.712,
+    "longitude": 114.9494
+   },
+   "coordinates_source": "Wikivoyage Onslow listing geo tag (the ruins are their own listing)",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [],
+   "id": "old-onslow",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Onslow",
+    "https://en.wikipedia.org/wiki/Old_Onslow"
+   ],
+   "note": "Kept ghost town; 19 km south-west of Onslow, which is not a destination. Pin from its own Wikivoyage listing geo tag."
+  },
+  {
+   "name": "Thevenard Island",
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "Mackerel Islands resort island 22 km off Onslow, with a coral reef for diving, snorkelling and fishing.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -21.4567,
+    "longitude": 114.9998
+   },
+   "coordinates_source": "wikipedia:Thevenard Island",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours",
+    "ticketUrl"
+   ],
+   "id": "thevenard-island",
+   "destination": null,
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Onslow",
+    "https://en.wikivoyage.org/wiki/Mackerel_Islands",
+    "https://en.wikipedia.org/wiki/Thevenard_Island"
+   ],
+   "note": "Kept as the visited island of the Mackerel Islands (the \"Mackerel Islands\" candidate was judged its duplicate; Direction Island reported closed). Named for the island, with the group name in the bio. 23 km off Onslow, no destination near. Pin: Wikipedia island point; at Pins take the resort/jetty point."
+  },
+  {
+   "name": "Millstream Chichester National Park",
+   "category": "nature",
+   "icon": "🌴",
+   "bio": "Spring-fed oasis of pools and palm-lined creeks whose 1919 homestead holds displays on pastoral and Aboriginal history.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -21.58957,
+    "longitude": 117.07206
+   },
+   "coordinates_source": "OpenStreetMap way 28141479 (Millstream Homestead): the park's visitor hub, its main visitor point",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/millstream-chichester-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "cost",
+    "hours"
+   ],
+   "id": "millstream-chichester-national-park",
+   "destination": null,
+   "sources": 0,
+   "note": "Kept (2 counted sources). Only three kept places within it besides the park (Deep Reach Pool, Python Pool, Millstream Homestead), so it does not clear the four-spot bar and is a standalone spot. Merged with Millstream Homestead, which is the park's visitor hub (skeptic: \"effectively the park's visitor centre; could fold into the park spot\"), so the park is pinned at it. Name follows the Wikipedia and DBCA title (no hyphen). If the owner approves Cliff Lookout, Mount Herbert or Snappy Gum Drive (review), the park reaches four spots and should be proposed as a destination."
+  },
+  {
+   "name": "Deep Reach Pool",
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "Spring-fed pool in Millstream for swimming and canoeing, home of the Warlu serpent in Aboriginal story.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -21.61043,
+    "longitude": 117.1107
+   },
+   "coordinates_source": "OpenStreetMap relation 16165963 (natural=water, Deep Reach Pool)",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/millstream-chichester-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours"
+   ],
+   "id": "deep-reach-pool",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/millstream-chichester-national-park"
+   ],
+   "note": "Kept (DBCA); inside Millstream Chichester National Park, which is a standalone spot rather than a destination, so the pool stands alone. Pin is the water body's centroid: take the day-use area at Pins."
+  },
+  {
+   "name": "Python Pool",
+   "category": "nature",
+   "icon": "🐍",
+   "bio": "Spring-fed pool below a seasonal waterfall in the Chichester Range, at the end of the Camel Trail.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -21.33368,
+    "longitude": 117.23844
+   },
+   "coordinates_source": "OpenStreetMap way 28138321 (natural=water, Python Pool)",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/millstream-chichester-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours"
+   ],
+   "id": "python-pool",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/millstream-chichester-national-park"
+   ],
+   "note": "Kept (DBCA); in the park's Chichester section 33 km north of Deep Reach Pool. Pin is the pool's OSM water way: take the car park at Pins."
+  },
+  {
+   "name": "Karlamilyi National Park",
+   "category": "nature",
+   "icon": "🚙",
+   "bio": "Western Australia's largest and most remote national park, on the Rudall River, for self-sufficient 4WD travellers.",
+   "wiki": null,
+   "coordinates": {
+    "latitude": -22.33333333,
+    "longitude": 122.48333333
+   },
+   "coordinates_source": "wikipedia:Karlamilyi National Park",
+   "hours": null,
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/park/karlamilyi-national-park",
+   "closedDays": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "hours"
+   ],
+   "id": "karlamilyi-national-park",
+   "destination": null,
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/karlamilyi-national-park",
+    "https://en.wikivoyage.org/wiki/Pilbara",
+    "https://en.wikipedia.org/wiki/Karlamilyi_National_Park"
+   ],
+   "note": "Kept national park (2 counted sources) with no kept spots inside it, so a standalone spot. Pin is the Wikipedia centroid: take a visitor point (campground or main track) at Pins."
+  }
+ ]
+}

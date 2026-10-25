@@ -1,0 +1,601 @@
+{
+ "spots": [
+  {
+   "id": "canberra-51",
+   "name": "Belconnen Arts Centre",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🎨",
+   "bio": "Arts centre in Belconnen with galleries, a theatre and studio spaces.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.235946,
+    "lng": 149.067867
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Belconnen page)",
+   "km_from_destination": 7.5,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Belconnen",
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: Wikivoyage Belconnen and Visit Canberra museums and galleries name it; galleries, Tue-Sun 10-4, on the lake.",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.23582,
+     "lon": 149.068009,
+     "src": "osm",
+     "name": "Belconnen Arts Centre",
+     "type": "amenity=arts_centre (nominatim)"
+    },
+    "agreeing": [
+     "osm",
+     "osm",
+     "osm"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Belconnen Arts Centre",
+      "type": "amenity=arts_centre (nominatim)",
+      "lat": -35.2358198,
+      "lon": 149.0680094,
+      "from_hint_m": 19
+     },
+     {
+      "src": "osm",
+      "name": "Belconnen Arts Centre",
+      "type": "amenity=arts_centre (nominatim)",
+      "lat": -35.2358198,
+      "lon": 149.0680094,
+      "from_hint_m": 19
+     },
+     {
+      "src": "osm",
+      "name": "Belconnen Arts Centre",
+      "type": "amenity=arts_centre (nominatim)",
+      "lat": -35.2358237,
+      "lon": 149.0684273,
+      "from_hint_m": 53
+     },
+     {
+      "src": "osm",
+      "name": "Belconnen Arts Centre",
+      "type": "amenity=arts_centre (nominatim)",
+      "lat": -35.2358237,
+      "lon": 149.0684273,
+      "from_hint_m": 53
+     },
+     {
+      "src": "osm",
+      "name": "Strathnairn Arts Community",
+      "type": "leisure=common (nominatim)",
+      "lat": -35.2325764,
+      "lon": 148.9941967,
+      "from_hint_m": 6709
+     }
+    ],
+    "hint": {
+     "lat": -35.235946,
+     "lon": 149.067867,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-52",
+   "name": "Strathnairn Arts",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🎨",
+   "bio": "Arts centre and gallery at Strathnairn in Holt.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.232372,
+    "lng": 148.99383
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Belconnen page)",
+   "km_from_destination": 12.2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Belconnen",
+    "https://www.visitcanberra.com.au/attractions"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: Wikivoyage Belconnen and Visit Canberra attractions name it; galleries in a 1920s homestead and farm precinct, Wed-Sun.",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.232576,
+     "lon": 148.994197,
+     "src": "osm",
+     "name": "Strathnairn Arts Community",
+     "type": "leisure=common (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Strathnairn Arts Community",
+      "type": "leisure=common (nominatim)",
+      "lat": -35.2325764,
+      "lon": 148.9941967,
+      "from_hint_m": 40
+     }
+    ],
+    "hint": {
+     "lat": -35.232372,
+     "lon": 148.99383,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-53",
+   "name": "The Pinnacle Nature Reserve",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Nature reserve in Hawker with a bushwalk to a lookout at The Pinnacle over the city.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.257311,
+    "lng": 149.040655
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Belconnen page)",
+   "km_from_destination": 7.1,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Belconnen",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: Wikivoyage Belconnen describes a 154 ha reserve with hike, views over the Molonglo to the Brindabellas and kangaroos.",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.256567,
+     "lon": 149.039582,
+     "src": "osm",
+     "name": "The Pinnacle Nature Reserve",
+     "type": "leisure=nature_reserve (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "The Pinnacle Nature Reserve",
+      "type": "leisure=nature_reserve (nominatim)",
+      "lat": -35.2565673,
+      "lon": 149.0395821,
+      "from_hint_m": 128
+     },
+     {
+      "src": "commons",
+      "name": "1 geotagged files",
+      "type": "photo median",
+      "lat": -35.257474,
+      "lon": 149.04078,
+      "from_hint_m": 21
+     }
+    ],
+    "hint": {
+     "lat": -35.257311,
+     "lon": 149.040655,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-54",
+   "name": "Shepherds Lookout",
+   "destination": "canberra",
+   "category": "viewpoint",
+   "icon": "👀",
+   "bio": "Lookout at the end of Stockdill Drive in Holt, with views over the ACT and across the NSW border.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.241369,
+    "lng": 148.977156
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Belconnen page)",
+   "km_from_destination": 12.9,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Belconnen"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: Wikivoyage Belconnen: 600 m walk to a platform over the Murrumbidgee, wheelchair friendly; a named lookout.",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": null,
+    "agreeing": [],
+    "candidates": [],
+    "hint": {
+     "lat": -35.241369,
+     "lon": 148.977156,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-55",
+   "name": "Weston Park",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Park in Weston Creek with a small train, a maze, picnic areas and kangaroos.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra"
+   ],
+   "reason": "Kept by the judge: Wikivoyage and Visit Canberra's 100 things name it as a popular park with a small train, maze and picnics (rule 2).",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.293024,
+     "lon": 149.090894,
+     "src": "osm",
+     "name": "Weston Park",
+     "type": "leisure=park (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Weston Park",
+      "type": "leisure=park (nominatim)",
+      "lat": -35.2930237,
+      "lon": 149.0908938,
+      "from_hint_m": 1071
+     },
+     {
+      "src": "osm",
+      "name": "Weston",
+      "type": "boundary=administrative (nominatim)",
+      "lat": -35.3324882,
+      "lon": 149.0587356,
+      "from_hint_m": 5480
+     },
+     {
+      "src": "osm",
+      "name": "District of Weston Creek",
+      "type": "boundary=administrative (nominatim)",
+      "lat": -35.343397,
+      "lon": 149.0477964,
+      "from_hint_m": 7043
+     }
+    ],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-56",
+   "name": "Calthorpes' House",
+   "destination": "canberra",
+   "category": "historic",
+   "icon": "🏠",
+   "bio": "Early Canberra cottage in Red Hill with guided tours, part of the three-house pass with Lanyon and Mugga-Mugga.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/South_Canberra",
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong_and_Country_ACT"
+   ],
+   "reason": "Kept by the judge: Historic house with guided tours (Sat Sun 1-4pm, $7), four counted sources including VisitCanberra and the three-house pass. Opened Wikivoyage South Canberra.",
+   "merged_from": null,
+   "counted_sources": 4,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.326499,
+     "lon": 149.121268,
+     "src": "osm",
+     "name": "Calthorpes House",
+     "type": "tourism=museum (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Calthorpes House",
+      "type": "tourism=museum (nominatim)",
+      "lat": -35.3264995,
+      "lon": 149.121268,
+      "from_hint_m": 3696
+     }
+    ],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-57",
+   "name": "St John the Baptist Church",
+   "destination": "canberra",
+   "category": "religious",
+   "icon": "⛪",
+   "bio": "Anglican church consecrated in 1845, Canberra's oldest church, with a small museum in the grounds.",
+   "wiki": "St John the Baptist Church, Reid",
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/North_Canberra",
+    "https://en.wikivoyage.org/wiki/Canberra",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra"
+   ],
+   "reason": "Kept by the judge: Rule 2: Wikivoyage (North Canberra and Canberra) and VisitCanberra's 100 things all name Canberra's oldest church (1845) and its small schoolhouse museum, so there is something to see inside; three co",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.325383,
+     "lon": 149.151298,
+     "src": "osm",
+     "name": "St. John the Baptist Cathedral",
+     "type": "amenity=place_of_worship (nominatim)"
+    },
+    "agreeing": [
+     "osm"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "St. John the Baptist Cathedral",
+      "type": "amenity=place_of_worship (nominatim)",
+      "lat": -35.3253827,
+      "lon": 149.1512981,
+      "from_hint_m": 5498
+     },
+     {
+      "src": "osm",
+      "name": "St. John the Baptist Cathedral",
+      "type": "amenity=place_of_worship (nominatim)",
+      "lat": -35.3253827,
+      "lon": 149.1512981,
+      "from_hint_m": 5498
+     }
+    ],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-58",
+   "name": "Canberra Reptile Zoo",
+   "destination": "canberra",
+   "category": "entertainment",
+   "icon": "🐍",
+   "bio": "Reptile zoo in Nicholls with snakes, lizards and owls.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.19105,
+    "lng": 149.08394
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Gungahlin page)",
+   "km_from_destination": 12.0,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Gungahlin",
+    "https://www.visitcanberra.com.au/things-to-do/family-fun"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: Wikivoyage Gungahlin and Visit Canberra family-fun both name it; daily 10-5, reptile displays and Snake Tales program (rule 2 permanent venue).",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": {
+     "lat": -35.190647,
+     "lon": 149.082458,
+     "src": "commons",
+     "name": "1 geotagged files",
+     "type": "photo median"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "commons",
+      "name": "1 geotagged files",
+      "type": "photo median",
+      "lat": -35.190647,
+      "lon": 149.082458,
+      "from_hint_m": 142
+     }
+    ],
+    "hint": {
+     "lat": -35.19105,
+     "lon": 149.08394,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-59",
+   "name": "Canberra Walk-in Aviary",
+   "destination": "canberra",
+   "category": "entertainment",
+   "icon": "🦜",
+   "bio": "Walk-in aviary in Nicholls with native birds.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.190434,
+    "lng": 149.084694
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Gungahlin page)",
+   "km_from_destination": 12.0,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Gungahlin",
+    "https://www.visitcanberra.com.au/things-to-do/family-fun"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: Wikivoyage Gungahlin and Visit Canberra name it; 500+ birds, 60 species, feed them, open daily.",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.190218,
+     "lon": 149.084997,
+     "src": "osm",
+     "name": "Canberra Walk in Aviary",
+     "type": "tourism=zoo (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Canberra Walk in Aviary",
+      "type": "tourism=zoo (nominatim)",
+      "lat": -35.190218,
+      "lon": 149.0849967,
+      "from_hint_m": 37
+     }
+    ],
+    "hint": {
+     "lat": -35.190434,
+     "lon": 149.084694,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-60",
+   "name": "Pialligo Redwood Forest",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Redwood forest on Pialligo Avenue in the east of the ACT.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.320062,
+    "lng": 149.201003
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Airport_and_East page)",
+   "km_from_destination": 9.4,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Airport_and_East"
+   ],
+   "reason": "Kept by the judge: Wikivoyage lists it open 24 hours: Walter Burley Griffin's redwood planting, a heritage forest to walk through (rule 1, 2). Opened that page.",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.317968,
+     "lon": 149.199557,
+     "src": "osm",
+     "name": "Pialligo Redwood Forest",
+     "type": "leisure=park (nominatim)"
+    },
+    "agreeing": [
+     "osm"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Pialligo Redwood Forest",
+      "type": "leisure=park (nominatim)",
+      "lat": -35.3179684,
+      "lon": 149.1995566,
+      "from_hint_m": 268
+     },
+     {
+      "src": "osm",
+      "name": "Pialligo Redwood Forest",
+      "type": "leisure=park (nominatim)",
+      "lat": -35.3179684,
+      "lon": 149.1995566,
+      "from_hint_m": 268
+     }
+    ],
+    "hint": {
+     "lat": -35.320062,
+     "lon": 149.201003,
+     "from": "placement"
+    }
+   }
+  }
+ ]
+}

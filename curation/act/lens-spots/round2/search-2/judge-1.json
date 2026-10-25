@@ -1,0 +1,44 @@
+{
+ "spot:canberra-58": {
+  "candidates": [
+   {
+    "file": "ext/canberra-reptile-zoo-entrance.jpg",
+    "url": "https://www.canberrareptilezoo.com.au/images/IMG_5293.JPG",
+    "page": "https://www.canberrareptilezoo.com.au/zoo.toy",
+    "width": 3666,
+    "height": 2750,
+    "licence": "official photo, permission not confirmed (owner: Canberra Reptile Zoo / Reptiles Inc)",
+    "why": "The zoo's own entrance gate, wrapped in a giant painted snake, Gold Creek Village; colour, landscape, subject fills the frame. Other site images (slides) are 650 px, too small; entrance-sign photo is a sign (reject)."
+   }
+  ],
+  "choice": "ext/canberra-reptile-zoo-entrance.jpg",
+  "hero_crop": "ok (entrance arch centred, landscape 4:3)"
+ },
+ "spot:canberra-61": {
+  "candidates": [],
+  "choice": "none: Commons name/geosearch (4 km) and Wikipedia have nothing of the gorge (only Molonglo River at Rossi/Captains Flat/Coombs, other places); Openverse blocked (Cloudflare challenge); Parks ACT pages 403",
+  "needs_browser": [
+   "https://www.parks.act.gov.au/find-a-park/molonglo-gorge-nature-reserve",
+   "https://api.openverse.org/v1/images/?q=Molonglo+Gorge"
+  ],
+  "hero_crop": "n/a"
+ },
+ "spot:canberra-62": {
+  "candidates": [],
+  "choice": "none: Commons name, Kowen/Glenburn searches and 4 km geosearch find nothing; no Wikipedia article; Openverse blocked; Parks ACT 403",
+  "needs_browser": [
+   "https://www.parks.act.gov.au/find-a-park/kowen-forest",
+   "https://api.openverse.org/v1/images/?q=Glenburn+Homestead+Kowen"
+  ],
+  "hero_crop": "n/a"
+ },
+ "spot:canberra-65": {
+  "candidates": [],
+  "choice": "none: Commons has only wildlife at Callum Brae (cockatoo, lizard, gang-gang: stand-ins) and Rutidosis plant close-ups, no landscape of the grassland; no Wikipedia article; Openverse blocked",
+  "needs_browser": [
+   "https://api.openverse.org/v1/images/?q=Jerrabomberra+West+Grasslands",
+   "https://www.parks.act.gov.au/find-a-park/jerrabomberra-west-grasslands"
+  ],
+  "hero_crop": "n/a"
+ }
+}

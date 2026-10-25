@@ -7,14 +7,16 @@
 and OSM feature type:
   osm      OpenStreetMap features whose name shares a word with the spot, of the type the category implies (peak/viewpoint for a
            hill or lookout, beach for a beach, waterfall, the MIDPOINT of the route for a trail, track or hike (not its trailhead), the building for a museum, ...)
-  photon   the Photon geocoder biased to the hint (fallback when Overpass is down)
+  nominatim OpenStreetMap features found by name through Nominatim when Overpass is down (the same OSM features, typed the same
+           way, a trail's midpoint from its way geometry); calls are paced to one a second across processes (Nominatim's policy)
+  photon   the Photon geocoder biased to the hint (last fallback when Overpass and Nominatim both fail)
   wiki     the spot's English Wikipedia coordinates (often rounded to the town: a reference, not a pin)
   commons  geotagged Commons files near the hint whose title shares a word with the spot
 Prints the recommended point and a confidence: HIGH when two independent sources agree within 100 m, MEDIUM for one precise OSM
 feature, LOW otherwise (then do not guess: leave the spot unpinned for the owner, or pin the midpoint of the agency's route and say so).
 A recommended point has at least 5 decimal places; a spot written with round coordinates (-39.0640, 174.0400) is a memory pin.
 """
-import json, math, re, subprocess, sys, time, unicodedata, urllib.parse
+import fcntl, json, math, os, re, subprocess, sys, time, unicodedata, urllib.parse
 
 
 def fold(t):
@@ -27,7 +29,7 @@ name, cat, wiki = opt('--name'), opt('--category', ''), opt('--wiki')
 if not name or opt('--lat') is None:
     sys.exit(__doc__)
 lat0, lon0 = float(opt('--lat')), float(opt('--lon'))
-UA = 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)'
+UA = 'IntrepidApp-Curation/1.0'
 TYPES = {   # category -> Overpass selectors that name the thing itself
     'viewpoint': ['natural=peak', 'tourism=viewpoint', 'natural=cliff', 'natural=rock'],
     'hike': ['highway=trailhead', 'natural=peak', 'tourism=viewpoint', 'information=route_marker', 'amenity=parking'],
@@ -69,7 +71,27 @@ sels = TYPES.get(cat, TYPES['nature'])
 ALL = sorted({x for v in TYPES.values() for x in v})
 
 
+def overpass_up():
+    # Probe Overpass's status page once and remember the answer for five minutes across processes: while it is down, every query
+    # would wait out its timeout three times before the Nominatim fallback ran.
+    f = '/tmp/resolve-pin-overpass-health'
+    try:
+        t, ok = open(f).read().split()
+        if time.time() - float(t) < 300: return ok == '1'
+    except Exception:
+        pass
+    r = subprocess.run(['curl', '-s', '-m', '10', '-o', '/dev/null', '-w', '%{http_code}', '-A', UA, 'https://overpass-api.de/api/status'], capture_output=True, text=True)
+    ok = r.stdout.strip() == '200'
+    open(f, 'w').write(f'{time.time()} {int(ok)}')
+    return ok
+
+
+OVERPASS_UP = overpass_up()
+
+
 def search(selectors):
+    if not OVERPASS_UP:
+        return None, []
     body = ''
     for sel in selectors:
         k, v = sel.split('=')
@@ -97,7 +119,7 @@ cands += found
 # A trail or hike is pinned roughly at the CENTRE of the route (halfway along its length), not at the trailhead.
 if cat == 'hike' or re.search(r'\b(Track|Walk|Walkway|Trail|Circuit|Crossing|Route)\b', name, re.I):
     tq = '[out:json][timeout:40];(way["highway"~"path|track|footway|steps"](around:8000,%s,%s);rel["route"~"hiking|foot"](around:8000,%s,%s););out geom tags 400;' % (lat0, lon0, lat0, lon0)
-    to = get('https://overpass-api.de/api/interpreter', ('data=' + urllib.parse.quote(tq)).encode())
+    to = get('https://overpass-api.de/api/interpreter', ('data=' + urllib.parse.quote(tq)).encode()) if OVERPASS_UP else None
     for e in (to or {}).get('elements', []):
         t = e.get('tags', {}); n = fold(t.get('name') or '')
         if not [w for w in words if w in n]: continue
@@ -115,7 +137,71 @@ if cat == 'hike' or re.search(r'\b(Track|Walk|Walkway|Trail|Circuit|Crossing|Rou
                 mid = (pts[i][0] + f * (pts[i + 1][0] - pts[i][0]), pts[i][1] + f * (pts[i + 1][1] - pts[i][1])); break
             acc += d
         cands.append({'src': 'osm', 'name': t.get('name'), 'type': f'trail midpoint ({sum(seg)/1000:.1f} km)', 'lat': mid[0], 'lon': mid[1], 'match': 1.0})
+
+def nominatim(q):
+    # One request a second across every process running this script (Nominatim's usage policy): a lock file holds the time
+    # of the last call.
+    lock = '/tmp/resolve-pin-nominatim.lock'
+    with open(lock, 'a+') as fh:
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        fh.seek(0); last = float(fh.read().strip() or 0)
+        wait = 1.1 - (time.time() - last)
+        if wait > 0: time.sleep(wait)
+        r = get('https://nominatim.openstreetmap.org/search?' + urllib.parse.urlencode(q))
+        fh.seek(0); fh.truncate(); fh.write(str(time.time())); fh.flush()
+        fcntl.flock(fh, fcntl.LOCK_UN)
+    return r
+
+
+def flat_pts(geo):
+    t, c = geo.get('type'), geo.get('coordinates')
+    if t == 'LineString': return [(y, x) for x, y in c]
+    if t == 'MultiLineString': return [(y, x) for line in c for x, y in line]
+    if t == 'GeometryCollection': return [p for g in geo.get('geometries', []) for p in flat_pts(g)]
+    return []
+
+
+nom_ok = False
 if o is None:
+    d = 0.08
+    res = nominatim({'format': 'jsonv2', 'q': name, 'viewbox': f'{lon0 - d},{lat0 + d},{lon0 + d},{lat0 - d}', 'bounded': 1,
+                     'limit': 10, 'polygon_geojson': 1})
+    nom_ok = res is not None
+    is_trail = cat == 'hike' or re.search(r'\b(Track|Walk|Walkway|Trail|Circuit|Crossing|Route)\b', name, re.I)
+    short = ' '.join(w for w in re.findall(r"[A-Za-zĀ-ſ']+", name) if fold(w) in words)
+    if nom_ok and not is_trail and short and fold(short) != fold(name):
+        # OSM's name can differ from the visitor name ("Sugar Loaf Rock"): look again by the distinctive words alone. Not for a
+        # trail, where a peak or car park at one end must not stand in for the route's midpoint.
+        res = (res or []) + (nominatim({'format': 'jsonv2', 'q': short, 'viewbox': f'{lon0 - d},{lat0 + d},{lon0 + d},{lat0 - d}',
+                                        'bounded': 1, 'limit': 10, 'polygon_geojson': 1}) or [])
+    squash = lambda t: fold(t).replace(' ', '').replace('-', '')
+    # Only classes that are places: a road named after one ("Wave Rock Road", "Cable Beach Road West") is not it. Paths and
+    # routes only for a trail.
+    PLACE_CLASSES = {'natural', 'tourism', 'leisure', 'historic', 'waterway', 'man_made', 'amenity', 'boundary', 'place', 'landuse'}
+    for e in res or []:
+        if e.get('category') not in PLACE_CLASSES and not (is_trail and e.get('category') in ('highway', 'route')):
+            continue
+        if e.get('category') == 'tourism' and e.get('type') in ('caravan_site', 'camp_site', 'hotel', 'motel', 'guest_house', 'hostel', 'chalet', 'apartment', 'information', 'alpine_hut', 'wilderness_hut'):
+            continue   # the caravan park or visitor info office named after a place is not the place
+        if e.get('category') == 'amenity' and e.get('type') in ('parking', 'toilets', 'restaurant', 'cafe', 'fuel', 'bar', 'pub', 'fast_food'):
+            continue
+        if e.get('category') == 'highway' and e.get('type') not in ('path', 'footway', 'track', 'bridleway', 'steps', 'cycleway'):
+            continue
+        n = fold(e.get('name') or e.get('display_name', '').split(',')[0])
+        if not [w for w in words if w in n or w in squash(n)]: continue
+        la, lo = float(e['lat']), float(e['lon']); kind = f"{e.get('category')}={e.get('type')}"
+        pts = flat_pts(e.get('geojson') or {})
+        trail = is_trail and len(pts) > 1
+        if trail:
+            seg = [dist(*pts[i], *pts[i + 1]) for i in range(len(pts) - 1)]; half = sum(seg) / 2; acc = 0
+            for i, dd in enumerate(seg):
+                if acc + dd >= half:
+                    f = (half - acc) / dd if dd else 0
+                    la, lo = pts[i][0] + f * (pts[i + 1][0] - pts[i][0]), pts[i][1] + f * (pts[i + 1][1] - pts[i][1]); break
+                acc += dd
+            kind = f'trail midpoint ({sum(seg)/1000:.1f} km, nominatim)'
+        cands.append({'src': 'osm', 'name': e.get('name'), 'type': kind + ('' if trail else ' (nominatim)'), 'lat': la, 'lon': lo, 'match': 1.0})
+if o is None and not nom_ok:
     p = get('https://photon.komoot.io/api/?limit=8&lat=%s&lon=%s&q=%s' % (lat0, lon0, urllib.parse.quote(name)))
     for f in (p or {}).get('features', []):
         pr = f['properties']; lo, la = f['geometry']['coordinates']

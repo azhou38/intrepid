@@ -1,0 +1,1795 @@
+{
+ "spots": {
+  "canberra-1": {
+   "name": "Parliament House",
+   "icon": "🏛️",
+   "category": "landmark",
+   "wiki": "Parliament House, Canberra",
+   "bio": "Seat of Australia's federal parliament on Capital Hill, with free daily tours, public galleries and a roof lawn.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.aph.gov.au/Visit_Parliament",
+   "ticket_note": "aph.gov.au answers scripts with a WAF block page; check in a browser (homepage is the Parliament's own site).",
+   "notes": "Hours from Wikivoyage: non-sitting days 9-5, sitting days 9-6; free tours 10AM, 1PM, 3PM no booking. Not read on the official site (blocked). Moved 0 m from OSM point. | BROWSER: aph.gov.au/Visit_Parliament/Plan_your_Visit: free admission, 9-5 on non-sitting days and 8:30-6 on sitting days (public galleries after 6 pm while sitting), closed Christmas Day, airport-style security screening (allow 15 minutes); no photo-ID requirement is stated. | Mount Ainslie and Parliament House bios: no photo ID is required (aph.gov.au: airport-style screening, allow 15 minutes).",
+   "coordinates": {
+    "latitude": -35.30756,
+    "longitude": 149.124604
+   },
+   "coordinates_source": "OSM tourism=attraction 'Parliament House' (HIGH: Wikipedia and Commons median agree within 100 m); moved 57 m from placement point"
+  },
+  "canberra-2": {
+   "name": "Australian War Memorial",
+   "icon": "🕊️",
+   "category": "museum",
+   "bio": "National war museum and memorial on Anzac Parade, free to enter, with a Last Post Ceremony every day at 4.30 pm.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.awm.gov.au",
+   "notes": "Official visit page (awm.gov.au/visit): entry free, tickets not required; galleries 10am-5pm daily except Christmas Day, Last Post 4.30pm. Page warns the Memorial is being redeveloped and some galleries may be closed. Visit time from Wikivoyage 'allow 4-7 hours' trimmed to a typical range.",
+   "coordinates": {
+    "latitude": -35.280578,
+    "longitude": 149.149306
+   },
+   "coordinates_source": "OSM tourism=museum 'Australian War Memorial' (HIGH, Wikipedia and Commons agree); moved 21 m from placement point"
+  },
+  "canberra-3": {
+   "name": "National Gallery of Australia",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "National art gallery by Lake Burley Griffin, with Aboriginal and Torres Strait Islander art, Blue Poles and a sculpture garden.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nga.gov.au/visit",
+   "ticket_note": "nga.gov.au returns 403 to scripts: BLOCKED, check title in a real browser.",
+   "notes": "Hours and free entry (special exhibitions extra) from Wikivoyage South Canberra listing; official page blocked. Sculpture garden claim from draft/VisitCanberra, not re-read. | BROWSER: nga.gov.au/visit: free admission, open every day 10-5, sculpture garden sunrise to 9 pm; a 2026-2030 capital works program closes parts of the gallery and sculpture garden temporarily.",
+   "coordinates": {
+    "latitude": -35.300932,
+    "longitude": 149.136659
+   },
+   "coordinates_source": "OSM amenity=arts_centre 'National Gallery of Australia' (HIGH, OSM and Wikipedia agree); moved 74 m from placement point"
+  },
+  "canberra-4": {
+   "name": "National Museum of Australia",
+   "icon": "🏺",
+   "category": "museum",
+   "bio": "National museum on Acton Peninsula covering Australian history, with a First Australians gallery and free entry.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nma.gov.au/visit",
+   "ticket_note": "nma.gov.au behind Cloudflare 'Just a moment': BLOCKED, check in a browser.",
+   "notes": "Daily 9-5, free except special exhibitions, from Wikivoyage Acton listing; official page blocked. | BROWSER: nma.gov.au/visit: free general admission, daily 9-5, closed Christmas Day.",
+   "coordinates": {
+    "latitude": -35.292836,
+    "longitude": 149.119843
+   },
+   "coordinates_source": "OSM tourism=attraction 'National Museum of Australia' (HIGH, Wikipedia agrees); moved 93 m from placement point"
+  },
+  "canberra-5": {
+   "name": "Old Parliament House",
+   "icon": "🏛️",
+   "category": "museum",
+   "wiki": "Old Parliament House, Canberra",
+   "bio": "Australia's former Parliament House, now the Museum of Australian Democracy, with its chambers and PM's office open.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.moadoph.gov.au",
+   "notes": "moadoph.gov.au/visit: 'Free entry', open 9am-5pm daily (closed Christmas Day); guided tours listed on site (price not read). Site notes building works and some closed exhibitions/rooms. Wikivoyage's $2 entry is outdated. Merged from Museum of Australian Democracy.",
+   "coordinates": {
+    "latitude": -35.302352,
+    "longitude": 149.130018
+   },
+   "coordinates_source": "OSM tourism=attraction 'Old Parliament House' (HIGH, Wikipedia and Commons agree); moved 30 m from placement point"
+  },
+  "canberra-6": {
+   "name": "Questacon",
+   "icon": "🔬",
+   "category": "museum",
+   "bio": "Interactive science and technology centre in Parkes with hands-on galleries, so allow at least two hours.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 27.5,
+   "costMax": 27.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.questacon.edu.au",
+   "notes": "questacon.edu.au/visiting: open daily 9-5 (closed Christmas Day), pre-booking and timed entry advised, suggests at least 2 hours for exhibitions (4 with cafe, shop). /tickets page: adult $27.50 (first price table; concession $20, family $85); the page does not label the columns so the adult price is the first listed.",
+   "coordinates": {
+    "latitude": -35.298506,
+    "longitude": 149.131255
+   },
+   "coordinates_source": "OSM tourism=attraction 'Questacon' (MEDIUM, single OSM feature); moved 13 m from placement point"
+  },
+  "canberra-7": {
+   "name": "Australian National Botanic Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Native plant gardens at the foot of Black Mountain, with a rainforest gully and a Red Centre garden.",
+   "hours": "8:30 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://visit.anbg.gov.au",
+   "notes": "visit.anbg.gov.au/visit/opening-hours: open 8.30am-5pm every day except Christmas Day, gates locked outside; parts may close in dangerous weather. Free entry from Wikivoyage Acton listing (parking charged); official fee line not read. Site title: Australian National Botanic Gardens | Parks Australia. Garden features from the site's navigation.",
+   "coordinates": {
+    "latitude": -35.27775,
+    "longitude": 149.10761
+   },
+   "coordinates_source": "OSM leisure=garden 'Australian National Botanic Gardens' (HIGH, OSM+Commons agree); moved 190 m from placement point"
+  },
+  "canberra-8": {
+   "name": "Lake Burley Griffin",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Artificial lake at Canberra's centre, with a 40 km shoreline, cruises, boat hire and swimming beaches.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/lake-burley-griffin",
+   "notes": "NCA page (title 'Lake Burley Griffin | National Capital Authority'): shoreline 40.5 km, 3 designated swimming beaches, cruises, kayak/SUP hire. Cruise and hire prices are extras, not the price. Pin: LOW, see coordinates_source. The '25 km shared path' in the draft is not on the NCA page, so dropped.",
+   "pin": "LOW",
+   "coordinates": {
+    "latitude": -35.293333,
+    "longitude": 149.113889
+   },
+   "coordinates_source": "Wikipedia article 'Lake Burley Griffin' coordinates (point in the lake's West Basin water; resolve-pin gave only a LOW Commons median 560 m away); a lake is correctly pinned in water; 0 m from placement point"
+  },
+  "canberra-9": {
+   "name": "National Arboretum Canberra",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "250-hectare arboretum of rare and endangered trees in the Molonglo Valley, with over 94 forests and a playground.",
+   "hours": "6:00 AM – 8:30 PM (7:00 AM – 5:30 PM in winter)",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationalarboretum.act.gov.au/visit",
+   "ticket_note": "nationalarboretum.act.gov.au is Cloudflare-blocked: BLOCKED, check in a browser.",
+   "notes": "Area 250 ha (Wikipedia) and 44,000 trees (VisitCanberra attractions page). Hours and free entry NOT read from a source; Village Centre/cafe hours differ from the grounds. | BROWSER: page loads and is titled 'Visit - National Arboretum'; its opening-hours widget renders by script and shows no text: hours stay unverified. | Entry: no fee is stated on the Visit pages (only photography/venue hire fees); free is the reading of that. Hours from nationalarboretum.act.gov.au/visit/opening-hours (grounds daily 6-8:30 pm in daylight saving, 7-5:30 otherwise).",
+   "coordinates": {
+    "latitude": -35.287897,
+    "longitude": 149.06925
+   },
+   "coordinates_source": "OSM tourism=attraction 'National Arboretum Canberra' (MEDIUM, single OSM feature of right type; a leisure=garden node is 540 m away); moved 244 m from placement point"
+  },
+  "canberra-10": {
+   "name": "Mount Ainslie",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Summit lookout reached on foot, by bike or car, with views down Anzac Parade to Parliament House and the lake.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-ainslie-nature-reserve",
+   "notes": "Agency page parks.act.gov.au blocked; ACT reserves and lookouts are free. Wikivoyage: road via North Canberra, 843 m, view along the Anzac Parade axis. Pin on the summit peak node; Wikivoyage's Ainslie Lookout point is about 80 m away.",
+   "coordinates": {
+    "latitude": -35.26979,
+    "longitude": 149.15868
+   },
+   "coordinates_source": "OSM natural=peak 'Mount Ainslie' (HIGH, OSM agrees); moved 2 m from placement point"
+  },
+  "canberra-11": {
+   "name": "National Library of Australia",
+   "icon": "📚",
+   "category": "museum",
+   "bio": "National library beside Lake Burley Griffin with exhibitions, a bookshop and free daily guided tours.",
+   "hours": "Mon–Thu 8:00 AM – 8:00 PM, Fri 8:00 AM – 5:00 PM, Sat–Sun 9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.296524,
+    "longitude": 149.129574
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.library.gov.au/visit",
+   "coordinates_source": "OSM amenity=library (Nominatim) + Wikipedia article + Commons median, within 100 m (HIGH); moved 19 m from placement point",
+   "notes": "Hours from library.gov.au/visit/opening-hours (building hours; closed Good Friday and Christmas Day). Free daily 45-minute tour at 11 am from library.gov.au/visit/library-tours; the pages do not state an entry fee in words, entry treated as free (public building, free tours, exhibitions)."
+  },
+  "canberra-12": {
+   "name": "High Court of Australia",
+   "icon": "⚖️",
+   "category": "landmark",
+   "bio": "Home of Australia's highest court in Parkes, with a vast public hall and courtrooms open to watch sittings.",
+   "hours": "Mon–Fri 9:45 AM – 4:30 PM",
+   "closedDays": [
+    0,
+    6
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.29896,
+    "longitude": 149.135714
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.hcourt.gov.au/visiting-high-court/visitors",
+   "coordinates_source": "OSM amenity=courthouse (Nominatim), HIGH, 13 m from placement; moved 13 m from placement point",
+   "notes": "Official visitor page (hcourt.gov.au/visiting-high-court/visitors) says building closes to the public at 4.30pm, Court Guides in each open courtroom, free public tour for groups over 10 at 10:45am (booked), sittings about two weeks a month except January and July, 10:00-12:45 and 2:15-4:15. It does not state an opening time or weekdays; Mon-Fri 9:45 AM start is from Wikivoyage (updated 2017). No entry fee mentioned. | Weekday hours: the official page gives no opening time, only that the building closes at 4:30 pm; 9:45 am is Wikivoyage (2017). Unverified."
+  },
+  "canberra-13": {
+   "name": "Royal Australian Mint",
+   "icon": "🪙",
+   "category": "museum",
+   "bio": "Working coin factory in Deakin with a free museum, a viewing gallery over the production floor and free tours.",
+   "hours": "Mon–Fri 8:30 AM – 5:00 PM, Sat–Sun 10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.318889,
+    "longitude": 149.092899
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.ramint.gov.au/visit-our-museum",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 10 m from placement; moved 10 m from placement point",
+   "notes": "Hours, 'Entry is free', free tours, closed Good Friday and Christmas Day: ramint.gov.au/visit-our-museum."
+  },
+  "canberra-14": {
+   "name": "National Portrait Gallery",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Gallery on King Edward Terrace in Parkes showing portraits of people who have shaped the nation.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.300007,
+    "longitude": 149.133964
+   },
+   "wiki": "National Portrait Gallery (Australia)",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.portrait.gov.au/content/plan-your-visit/",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 1 m from placement; moved 7 m from placement point",
+   "notes": "portrait.gov.au/content/plan-your-visit: open every day 10-5 except 25 December, entry free (parking and some exhibitions paid). 'Some 400 portraits' is from Wikivoyage (South Canberra)."
+  },
+  "canberra-15": {
+   "name": "National Zoo and Aquarium",
+   "icon": "🦁",
+   "category": "entertainment",
+   "bio": "Zoo and aquarium by Scrivener Dam with lions, giraffes, sharks and keeper-led animal encounters.",
+   "hours": "9:30 AM – 5:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -35.303329,
+    "longitude": 149.067722
+   },
+   "wiki": "National Zoo & Aquarium",
+   "costMin": 65,
+   "costMax": 68,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationalzoo.com.au",
+   "coordinates_source": "OSM tourism=zoo (Nominatim), HIGH, 330 m from placement (Wikipedia point sits in the park edge; OSM zoo feature used); moved 346 m from placement point",
+   "notes": "Hours: nationalzoo.com.au/visitor-information ('open every day except Christmas day 9.30am until 5.00pm'). Animal list from the site's Animals menu (lion, tiger, giraffe, rhino, koala, blacktip reef shark). Adult price A$55 is NOT from a fetched page: the official entry-prices page publishes the price table as an image; A$55 is what a web search reports for the zoo's visitor-information gate prices (family 2+3 A$152); 2026 event listings show A$60. Needs a look at the image. | Adult $65 online / $68 at the gate (nationalzoo.com.au/entry-prices, read in the browser); the shard's A$55 came from an old search snippet."
+  },
+  "canberra-16": {
+   "name": "Mount Stromlo Observatory",
+   "icon": "🔭",
+   "category": "museum",
+   "bio": "Observatory site on Mount Stromlo with an 11-sign heritage trail and the Director's Residence, open daily.",
+   "hours": "8:00 AM – 6:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.319362,
+    "longitude": 149.008803
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://rsaa.anu.edu.au/observatories/mount-stromlo-observatory/information-for-visitors-activities",
+   "coordinates_source": "OSM amenity=university 'Mount Stromlo Observatory' (Nominatim), MEDIUM, 160 m from placement; moved 197 m from placement point",
+   "notes": "rsaa.anu.edu.au visitor page: site open daily 8-6, Director's Residence 9-5, Heritage Trail has 11 interpretive signs; the Cafe and Visitor Centre are currently closed; all large telescopes were decommissioned after the 2003 firestorm (the draft's 'rebuilt' is not supported, dropped). Public astronomy nights run April to September only (event, kept out of the bio). No entry fee mentioned; treated as free. Re-check the cafe/visitor-centre closure. Pin is an OSM institution centroid on the observatory site, not a precise visitor point."
+  },
+  "canberra-17": {
+   "name": "National Film and Sound Archive",
+   "icon": "🎞️",
+   "category": "museum",
+   "bio": "Art deco archive of Australian film, television and sound in Acton, with free displays and the Arc cinema.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.282864,
+    "longitude": 149.120954
+   },
+   "wiki": "National Film and Sound Archive",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nfsa.gov.au/plan-your-visit",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 5 m from placement; moved 16 m from placement point",
+   "notes": "nfsa.gov.au is behind a bot wall (403). Hours (10am-4pm daily, closed Christmas Day and New Year's Day), free general entry and the Arc cinema ticketing are from a web search summary of the official page: verify in a browser. Wikivoyage (2019) says Sat-Sun 10-4 only, stale. 1930s art deco building from Wikivoyage. | BROWSER: nfsa.gov.au/plan-your-visit (the old /visit-us redirects): entry free, daily 10-4, closed Christmas Day and New Year's Day; the cinema and special events are ticketed."
+  },
+  "canberra-18": {
+   "name": "Australian Institute of Sport",
+   "icon": "🏅",
+   "category": "entertainment",
+   "bio": "Elite athlete training campus in Bruce, visited on 90-minute guided tours that include the Sportex exhibit.",
+   "hours": "Mon–Fri 8:00 AM – 5:00 PM, Sat–Sun 9:30 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.247375,
+    "longitude": 149.104454
+   },
+   "costMin": 21.5,
+   "costMax": 21.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.ausport.gov.au/ais/visit",
+   "coordinates_source": "OSM amenity=college 'Australian Institute of Sport' (Nominatim), HIGH, 33 m from placement; Wikivoyage visitor-centre listing is ~290 m west; moved 31 m from placement point",
+   "notes": "ausport.gov.au/ais/visit/visit/tours and /plan-your-visit: Visitor Centre Mon-Fri 8-5, weekends and public holidays 9:30-4; tours at 10, 11:30, 1 and 2:30, 90 minutes; adult A$21.50 (child 14, concession 17.5, family 62). Sportex is only accessible as part of a tour. Campus entry itself is free per Wikivoyage (Jul 2026); price recorded is the tour. Pin is the campus point; the Visitor Centre on Leverrier St is ~290 m west."
+  },
+  "canberra-19": {
+   "name": "Cockington Green Gardens",
+   "icon": "🏘️",
+   "category": "entertainment",
+   "bio": "Handmade miniature buildings from 30 countries in landscaped gardens, with a miniature steam train ride.",
+   "hours": "9:30 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.191554,
+    "longitude": 149.08665
+   },
+   "costMin": 26,
+   "costMax": 26,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://cockingtongreen.com.au/",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 33 m from placement; moved 42 m from placement point",
+   "notes": "cockingtongreen.com.au/visit-us and /admissions: open 7 days 9:30-5, last entry 4:15, closed Christmas and Boxing Day, adult A$26 (child 16.50, senior 19.50), minimum recommended viewing time 1.5 hours; display may close in extreme weather. 30 countries and train from the site. Train ride availability: the site lists a Train Reinstatement Project page, check the train is running."
+  },
+  "canberra-20": {
+   "name": "National Dinosaur Museum",
+   "icon": "🦖",
+   "category": "museum",
+   "bio": "Dinosaur museum in Gold Creek Village with skeletons, life-like models, animatronics and fossils.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.194347,
+    "longitude": 149.087984
+   },
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://nationaldinosaurmuseum.com.au/",
+   "coordinates_source": "OSM tourism=museum (Nominatim), HIGH, 13 m from placement; moved 16 m from placement point",
+   "notes": "nationaldinosaurmuseum.com.au/visit-us: General Admission adult (17+) A$25, child A$15, concession A$18, family A$75, every day 10am-5pm. Wikivoyage's 'closed Fri' (2016) is stale. Closed days not stated on the site."
+  },
+  "canberra-21": {
+   "name": "Black Mountain",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Nature reserve above the city with bushwalks through eucalypt forest to the summit and Black Mountain Tower.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.273859,
+    "longitude": 149.097567
+   },
+   "wiki": "Black Mountain (Australian Capital Territory)",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/black-mountain-nature-reserve",
+   "coordinates_source": "OpenStreetMap natural=peak \"Black Mountain\" (Nominatim), summit with the tower; 0 m from placement pin; Wikipedia point is 0.8 km off on the slope",
+   "notes": "Free reserve; hours Open 24 hours is the open-access assumption (unverified on agency page). Parks ACT page blocked."
+  },
+  "canberra-22": {
+   "name": "Red Hill",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Nature reserve with the 3.2 km Red Track loop and a hilltop lookout over Parliament House and Lake Burley Griffin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.323739,
+    "longitude": 149.112817
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/red-hill-nature-reserve",
+   "coordinates_source": "OpenStreetMap natural=peak \"Red Hill\" (Nominatim), summit lookout; pin as computed by the run",
+   "notes": "Free reserve; open-access hours assumed. Parks ACT page blocked. Bio claims (3.2 km Red Track, lookout over Parliament House) from the draft/Wikivoyage; confirm on the agency page."
+  },
+  "canberra-23": {
+   "name": "Aboriginal Tent Embassy",
+   "icon": "⛺",
+   "category": "historic",
+   "bio": "Protest site opposite Old Parliament House, founded in January 1972 and among the world's longest continuing.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.301185,
+    "longitude": 149.130382
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/aboriginal-tent-embassy",
+   "coordinates_source": "OpenStreetMap tourism=attraction \"Aboriginal Tent Embassy\" (HIGH); 0 m from placement pin",
+   "notes": "Founding date and \"one of the world's longest continuing protest sites\" from the National Capital Authority page; that page is the managing agency's, loaded, title names the place. \"Opposite Old Parliament House\" is from general knowledge of the site, not read on a fetched page; confirm or reword."
+  },
+  "canberra-24": {
+   "name": "National Carillon",
+   "icon": "🔔",
+   "category": "landmark",
+   "bio": "57-bell carillon on Queen Elizabeth II Island in Lake Burley Griffin, with free recitals on Wednesdays and Sundays.",
+   "hours": "Recitals Wed 6:30 PM, Sun 12:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.298488,
+    "longitude": 149.141739
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/national-carillon",
+   "coordinates_source": "OpenStreetMap man_made=tower \"National Carillon\" (HIGH); 0 m from placement pin",
+   "notes": "57 bells, free concerts Wed 6:30 pm and Sun 12:30 pm, guided tours (booked) from the NCA page. The cached page is stale (mentions \"Sunday 18 November\"), so the recital times should be rechecked. \"Island open daily\" and the footbridge access are not stated on the page; access is via Kings Avenue northbound."
+  },
+  "canberra-25": {
+   "name": "National Archives of Australia",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "National archives in the heritage East Block, with free exhibitions on the Constitution and on Australians and government.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.304941,
+    "longitude": 149.130574
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.naa.gov.au/australian-capital-territory",
+   "coordinates_source": "OpenStreetMap tourism=museum \"National Archives of Australia\" (HIGH); 0 m from placement pin",
+   "notes": "Hours Mon-Sun 9-5, closed Good Friday and Christmas Day, admission free, exhibitions Voices / Dhuniai and Connections: naa.gov.au ACT page. Public holidays listed as closed for the research centre."
+  },
+  "canberra-26": {
+   "name": "Anzac Parade",
+   "icon": "🎖️",
+   "category": "monument",
+   "bio": "Ceremonial avenue lined with military memorials from the Australian War Memorial to Russell, for a walk or drive.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.286966,
+    "longitude": 149.142967
+   },
+   "wiki": "Anzac Parade, Canberra",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/anzac-parade",
+   "coordinates_source": "Midpoint of the OpenStreetMap \"Anzac Parade\" way chain (highway=secondary, 1.26 km from the Russell end to the War Memorial end); resolve-pin.py returned LOW, so computed from Overpass geometry. About 0.4 km from the placement hint is not applicable (no hint)",
+   "notes": "resolve-pin LOW; midpoint computed by hand from OSM ways 546708959, 572753316, 666660159, 1528987803, 1528987804. NCA page lists the memorials and opening on 25 April 1965."
+  },
+  "canberra-27": {
+   "name": "Commonwealth Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Lakeside park on Lake Burley Griffin with sculpture gardens, ponds and an amphitheatre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.289029,
+    "longitude": 149.130239
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/commonwealth-park",
+   "coordinates_source": "OpenStreetMap leisure=park \"Commonwealth Park\" (HIGH, Nominatim point); 0 m from placement pin. It is a park centroid; check it is not within 25 m of Regatta Point or another spot",
+   "notes": "NCA page: sculptured gardens, ponds, artworks, Stage 88, amphitheatre, playground, National Capital Exhibition at Regatta Point. Bio omits \"Sylvia Crowe\" (not read on a fetched page)."
+  },
+  "canberra-28": {
+   "name": "Canberra Glassworks",
+   "icon": "🫧",
+   "category": "museum",
+   "bio": "Glass art centre in the heritage Kingston Powerhouse, where visitors watch glassblowers at work in the Hotshop.",
+   "hours": "Tue–Sun 10:00 AM – 4:00 PM",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.311543,
+    "longitude": 149.143704
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://canberraglassworks.com/",
+   "coordinates_source": "OpenStreetMap amenity=arts_centre \"The Canberra Glassworks\" (MEDIUM); 0 m from placement pin",
+   "notes": "Open Tue to Sun 10am-4pm and \"Entry by donation\" from canberraglassworks.com (home, exhibitions and tours pages). Site calls itself the largest glass-making facility in the Southern Hemisphere dedicated to studio glass. \"Kingston Powerhouse\" heritage detail is from the draft; the site says \"explore the history of the building\" but the powerhouse name was not read on a fetched page."
+  },
+  "canberra-29": {
+   "name": "Lanyon Homestead",
+   "icon": "🏡",
+   "category": "historic",
+   "bio": "1850s homestead on the Murrumbidgee with guided house tours, convict-era outbuildings, gardens and a cafe.",
+   "hours": "Wed–Sun 10:00 AM – 3:00 PM",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.490793,
+    "longitude": 149.073386
+   },
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.historicplaces.com.au/lanyon-homestead",
+   "coordinates_source": "OpenStreetMap tourism=museum \"Lanyon Homestead\" (HIGH); 0 m from placement pin",
+   "notes": "ACT Historic Places page: house entry by guided tour only, adult $12, concession $10, under 12 free, garden entry free; the ACT Historic Places contact list gives Wednesday to Sunday 10am-3pm; cafe Wed-Sun 8am-2:30pm. The Opening hours accordion did not render in the fetch, so the hours come from the contact list on the same page."
+  },
+  "canberra-30": {
+   "name": "Mulligans Flat Woodland Sanctuary",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Fenced woodland sanctuary in Gungahlin with walking and cycling tracks and reintroduced eastern quolls.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.164288,
+    "longitude": 149.16
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mulligans-flat-nature-reserve",
+   "coordinates_source": "LOW: Commons geotagged-photo median (4 files), provisional only. The run pin (-35.168715, 149.169825) is the leisure=nature_reserve centroid, not allowed",
+   "notes": "pin LOW: needs the Wildbark visitor centre / main entrance car park point from the agency map. Overpass was rate limited. Hours unverified: sanctuary gate times not read (parks page blocked); \"984-hectare\" and quolls from draft; confirm."
+  },
+  "canberra-31": {
+   "name": "Tidbinbilla Nature Reserve",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Nature reserve in the Brindabella foothills with walking trails, live animal displays and the Birrigai Rock Shelter.",
+   "hours": "7:30 AM – 8:00 PM (to 6:00 PM in winter)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 16.09,
+   "costMax": 16.09,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.tidbinbilla.act.gov.au/visit",
+   "coordinates": {
+    "latitude": -35.4403356,
+    "longitude": 148.9426741
+   },
+   "coordinates_source": "OSM tourism=information (Tidbinbilla Nature Reserve Visitor Centre, node via Nominatim), agrees within ~12 m with the Wikivoyage listing for Tidbinbilla Visitor Centre (-35.440434, 148.942631): HIGH. Visitor point, not the reserve centroid. Moved 3853 m from the placement point.",
+   "notes": "Day pass per private vehicle (up to 8 seats) $15.53 and reserve hours 7:30-6 winter / 7:30-8 daylight saving, visitor centre 9-5, per the tidbinbilla.act.gov.au/visit page as relayed by a web search; the page is Cloudflare-blocked to scripts so not read directly. Wikivoyage (older) says $11 per vehicle. A 2026 fee determination may raise it to $16.09 from 1 July 2026. Pedestrians and cyclists pay nothing. Not a park-pass spot (no ACT park pass). | BROWSER: tidbinbilla.act.gov.au/visit: day pass $16.09 per private vehicle (seniors/concession $9.66, motorcycle $6.01), reserve 7:30 am to 8 pm in daylight saving and to 6 pm otherwise, visitor centre 9-5 daily, closed Christmas Day and on total fire ban days."
+  },
+  "canberra-32": {
+   "name": "Canberra Deep Space Communication Complex",
+   "icon": "📡",
+   "category": "museum",
+   "bio": "NASA deep-space tracking station with a free visitor centre of space exhibits, including a piece of Apollo 11 Moon rock.",
+   "hours": "10:00 AM – 4:00 PM (Sat–Sun)",
+   "closedDays": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.cdscc.nasa.gov/",
+   "coordinates": {
+    "latitude": -35.403463,
+    "longitude": 148.982942
+   },
+   "coordinates_source": "Commons photo median of 35 geotagged files, 258 m from the Wikipedia article point (-35.401389, 148.981667); no OSM feature found. LOW: neither is the visitor centre door. Moved 258 m from the placement point.",
+   "notes": "Hours and free entry from cdscc.nasa.gov/Pages/opening_hours.html: Sat-Sun 10-4, some additional days in ACT school holidays; closed public holidays per Wikivoyage. The page also holds a commented-out line saying daily 9-5; ignored. Title of cdscc.nasa.gov names the complex. Cafe and giftshop closed. Weekday opening in school holidays means closedDays is approximate. | The operator page (cdscc.nasa.gov) gives Sat-Sun 10-4, free, no booking, plus ACT school-holiday days. The \"temporarily closed to drop-in visitors\" CSIRO line is for the CSIRO Discovery Centre (canberra-38, dropped)."
+  },
+  "canberra-33": {
+   "name": "Jerrabomberra Wetlands",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Wetland nature reserve with flat walking tracks, boardwalks, bird hides and more than 170 recorded bird species.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/jerrabomberra-wetlands-nature-reserve",
+   "coordinates": {
+    "latitude": -35.3168888,
+    "longitude": 149.1633252
+   },
+   "coordinates_source": "OSM building \"Jerrabomberra Wetlands Office\", Dairy Road (via Nominatim), ~300 m from the 4-file Commons photo median (-35.31437, 149.16229): the Dairy Road visitor end of the reserve. The OSM nature_reserve centroid (-35.312054, 149.15647) and the Wikipedia point were rejected as centroids. Moved 636 m from the placement point.",
+   "notes": "The reserve website says open 24 hours, 7 days; Wikivoyage and an earlier VisitCanberra draft say 8 AM-6 PM. Operator site used. Free (no fee on VisitCanberra page or operator site). Visitor point not confirmed against an agency car-park map: parks.act.gov.au blocked."
+  },
+  "canberra-34": {
+   "name": "Stromlo Forest Park",
+   "icon": "🚵",
+   "category": "hike",
+   "bio": "Shared-use forest park west of the city with more than 50 km of mountain-bike, running and walking trails.",
+   "hours": "6:00 AM – 9:00 PM (to 6:00 PM outside daylight saving)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.stromloforestpark.act.gov.au/",
+   "coordinates": {
+    "latitude": -35.320029,
+    "longitude": 149.0256075
+   },
+   "coordinates_source": "OSM building \"Stromlo Forest Park Pavillion\", Dave McInnes Road (via Nominatim), agrees within ~30 m with the Wikipedia point (-35.320278, 149.025556) and the Wikivoyage listing (-35.32016, 149.025382): HIGH. The draft MEDIUM pin (horse-riding school, 2.3 km away) was rejected. Park hub, not a trail midpoint, since it is a network of trails. Moved 28 m from the placement point.",
+   "notes": "Hours from Wikivoyage (daily 6AM-6PM, to 9PM in daylight saving; free). 50 km+ trails from VisitCanberra cycling page. VisitCanberra mentions a paid parking model, so parking is charged but is not the price. Official site is a redirect from stromloforestpark.com.au to stromloforestpark.act.gov.au, Cloudflare-blocked. | BROWSER: page loads, titled 'Home - Stromlo Forest Park'; its opening hours render by script: hours and free entry stay on the Wikivoyage figures."
+  },
+  "canberra-35": {
+   "name": "National Capital Exhibition",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free exhibition at Regatta Point on how Canberra was planned and built, with a scale model of the national area.",
+   "hours": "9:00 AM – 5:00 PM (Sat–Sun 10:00 AM – 4:00 PM)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/national-capital-exhibition",
+   "coordinates": {
+    "latitude": -35.290415,
+    "longitude": 149.131349
+   },
+   "coordinates_source": "OSM tourism=museum (Nominatim), within 20 m of the Wikivoyage point (-35.29042, 149.13117): HIGH. Moved 16 m from the placement point.",
+   "notes": "Hours, free entry and closed Christmas Day and Boxing Day from the NCA page (title names the exhibition). Open on public holidays 10-4."
+  },
+  "canberra-36": {
+   "name": "Blundells Cottage",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "Stone farm worker's cottage built around 1860, now a free house museum open three days a week.",
+   "hours": "10:00 AM – 2:00 PM (Wed, Sat, Sun)",
+   "closedDays": [
+    1,
+    2,
+    4,
+    5
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/blundells-cottage",
+   "coordinates": {
+    "latitude": -35.2927998,
+    "longitude": 149.1417718
+   },
+   "coordinates_source": "OSM building=house \"Blundells Cottage\", Wendouree Drive (via Nominatim), ~15 m from the single Commons geotagged file (-35.292727, 149.141865): the cottage itself. The Wikivoyage point is a 3-decimal value and was not used. Moved 30 m from the placement point.",
+   "notes": "NCA page: open Wednesdays, Saturdays and Sundays 10-2, entry free; may close in extreme weather. Wikivoyage lists Sat-Sun only and closed Christmas and New Year's Day; NCA page used (not stating the holiday closures). Bio avoids the stale \"lake shore\" wording."
+  },
+  "canberra-37": {
+   "name": "Commonwealth Place",
+   "icon": "🚩",
+   "category": "landmark",
+   "bio": "Lakeside public square in Parkes with the International Flag Display and views over Lake Burley Griffin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/commonwealth-place",
+   "coordinates": {
+    "latitude": -35.297289,
+    "longitude": 149.133924
+   },
+   "coordinates_source": "OSM leisure=park \"Commonwealth Place\" (Nominatim); the square is about 100 x 50 m, so the feature centre is the visitor point. Within ~100 m of the Wikivoyage International Flag Display point (-35.298, 149.1329). Moved 17 m from the placement point.",
+   "notes": "Open 24 hours and free: the International Flag Display (110 flags, illuminated at night) per Wikivoyage South Canberra, July 2026; NCA page names the square (completed 2002, jetties, Speakers Square) but gives no hours. The flag display has its own NCA page (/attractions/international-flag-display); treat it as part of this spot, not a second spot."
+  },
+  "canberra-39": {
+   "name": "Canberra Museum and Gallery",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Civic Square museum and gallery with a permanent Canberra history display and the Nolan Collection of Sidney Nolan paintings.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.cmag.com.au/",
+   "coordinates": {
+    "latitude": -35.280664,
+    "longitude": 149.130945
+   },
+   "coordinates_source": "OSM tourism=museum (Nominatim), within 30 m of the Wikipedia point (-35.280682, 149.130628): HIGH. Moved 29 m from the placement point.",
+   "notes": "Hours Monday-Sunday 10am-4pm from the cmag.com.au homepage (title \"Canberra Museum & Gallery\"); Wikivoyage's older hours differ. Most exhibitions free, charges may apply for some temporary ones (cmag.com.au/about). Permanent history gallery from Wikivoyage Civic; Nolan Collection managed by CMAG for the Australian Government."
+  },
+  "canberra-40": {
+   "name": "Canberra Railway Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Volunteer-run railway museum in Kingston with historic locomotives and carriages from over 100 years of rail history.",
+   "hours": "10:00 AM – 3:00 PM (Sat–Sun and ACT public holidays)",
+   "closedDays": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.canberrarail.org.au/",
+   "coordinates": {
+    "latitude": -35.317846,
+    "longitude": 149.154265
+   },
+   "coordinates_source": "OSM tourism=museum (Nominatim), within 20 m of the Wikivoyage point (-35.3176, 149.155): HIGH. Moved 69 m from the placement point.",
+   "notes": "Hours and prices from canberrarail.org.au homepage (adult $10, concession $7.50, child 5-15 $5, under 5 free): Sat-Sun and ACT public holidays 10-3, extra days Wed-Sun in ACT school holidays and Floriade. The /canberrarailwaymuseum subpage still says Sundays only (stale). Site title is \"Home\"; the site is the museum's (Canberra Railway Museum Facebook/footers). canberrarailwaymuseum.org.au does not resolve."
+  },
+  "canberra-41": {
+   "name": "The Big Powerful Owl",
+   "icon": "🦉",
+   "category": "landmark",
+   "bio": "Eight-metre concrete and fibreglass owl by artist Bruce Armstrong on Benjamin Way, one of Australia's Big Things.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.2475722,
+    "longitude": 149.0674998
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM tourism=artwork node 1314840562 \"Owl\" (artwork_type=sculpture); 8 m from the Wikipedia \"Owl (Armstrong)\" point and 15 m from the Wikivoyage listing point; 6 m of the placement point",
+   "notes": "Wikivoyage Canberra/Belconnen: 8 m sculpture by Bruce Armstrong, 2011, Benjamin Way. Public outdoor sculpture, always viewable (hours: Open 24 hours is inferred for an outdoor street sculpture, not sourced). Free outdoor sculpture; no steward page.",
+   "wiki": "Owl (Armstrong)",
+   "ticket_note": "Outdoor public sculpture with no operator or steward page."
+  },
+  "canberra-42": {
+   "name": "Mount Majura",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Peak north of Mount Ainslie reached by walking tracks only, one starting near Antill Street in Watson.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.237479,
+    "longitude": 149.182051
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak \"Mount Majura\" (Nominatim), 136 m from the Wikipedia point; MEDIUM",
+   "notes": "Wikivoyage North Canberra: access to the peak by walking tracks only; service road closed to the public; popular trail starts near Antill Street, Watson. Free; Canberra Nature Park has no entry fee. Visit range is an estimate for a return walk (unverified).",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve",
+   "ticket_note": "parks.act.gov.au blocks scripts; reserve page named in the draft sources."
+  },
+  "canberra-43": {
+   "name": "Mount Taylor",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "856-metre hill in Canberra Nature Park with a zig-zag walking track to the summit from the north face.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.371962,
+    "longitude": 149.075538
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak \"Mount Taylor\" (Nominatim), 251 m from the Wikipedia point; MEDIUM",
+   "notes": "Wikipedia: 856 m, part of Canberra Nature Park, walking tracks to the peak, zig-zag Mount Taylor Walking Track built 2007, foot trail from a car park off Sulwood Drive. Wikivoyage Canberra lists it among the popular bushwalking hills. Visit range estimated (unverified). ticketUrl follows the parks.act.gov.au URL pattern of the Mount Ainslie and Mount Majura reserve pages and must be checked in a browser.",
+   "wiki": "Mount Taylor (Australian Capital Territory)",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve"
+  },
+  "canberra-44": {
+   "name": "Hall",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small heritage village north of Canberra with a 20-site heritage walk, cafés on Victoria Street and nearby cellar doors.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.1702288,
+    "longitude": 149.0667491
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM place=village node 249060149 \"Hall\"; HIGH-equivalent (the resolve-pin boundary centroid is 0 m from it)",
+   "notes": "Wikivoyage Canberra/Hall: National Trust (ACT) Hall Heritage Walk of 20 historic sites; cafes on Victoria Street; VisitCanberra Hall and Wineries page: cafes, cellar doors, popular One Tree Hill section of the Centenary Trail. A village has no hours: Open 24 hours; individual cafes and cellar doors keep their own hours. Free to walk. Wikipedia: 298 people at the 2021 census (bio omits the number).",
+   "wiki": "Hall, Australian Capital Territory",
+   "ticket_note": "A village with no single steward; VisitCanberra neighbourhood page is a tourism page, not an operator."
+  },
+  "canberra-45": {
+   "name": "Kambah Pool",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Swimming spot among big boulders in the Murrumbidgee River, a 10-minute walk from the car park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.399437,
+    "longitude": 149.010818
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=swimming_area \"Kambah Pool\" (Nominatim); 45 m from the Wikivoyage point; MEDIUM",
+   "notes": "Wikivoyage: swimming spot with big boulders mid-river, 10-minute walk from the car. Reserve open 24 hours assumed (road gate or closure times unverified). Free; no entry fee found. Kambah Pool Toilets (Wikivoyage) listed 7AM-9PM, 6PM in winter.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool",
+   "ticket_note": "Page from the draft sources; parks.act.gov.au blocks scripts."
+  },
+  "canberra-46": {
+   "name": "Pine Island Reserve",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Riverside reserve on the Murrumbidgee with swimming, fishing and kayaking, and facilities for picnics.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.428066,
+    "longitude": 149.061495
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=park way 554600749 \"Pine Island Reserve\" (centre), next to the Pine Island Central Toilets point; 951 m from the Wikipedia point, which is the reserve centroid on the river; MEDIUM",
+   "notes": "Wikivoyage Tuggeranong: small reserve on the Murrumbidgee with plenty of facilities; swimming, fishing, kayaking. Bio drops the Discovery Track start (the track is its own spot). Open 24 hours assumed (unverified). Free.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island",
+   "ticket_note": "Page from the draft sources; parks.act.gov.au blocks scripts."
+  },
+  "canberra-47": {
+   "name": "Casuarina Sands",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Murrumbidgee River beach with shady picnic areas, a playground, electric barbecues and walking tracks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.3194795,
+    "longitude": 148.9526939
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=beach way 708347469 \"Casuarina Sands Beach\" (centre); resolve-pin returned none, so found by Overpass name search; MEDIUM",
+   "notes": "Parks ACT lead list: riverside beach in the Cotter Recreation Area. Open 24 hours assumed (road/gate times unverified). Free; no entry fee found. OSM picnic_site node 306099008 is 100 m away at -35.3198,148.9539.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands",
+   "ticket_note": "Page from the draft sources; parks.act.gov.au blocks scripts."
+  },
+  "canberra-48": {
+   "name": "Murrumbidgee Discovery Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "27 km walk along the Murrumbidgee from Point Hut Crossing to Casuarina Sands, through Pine Island and Kambah Pool.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 10,
+   "coordinates": {
+    "latitude": -35.401592,
+    "longitude": 149.020831
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM way (name \"Murrumbidgee Discovery Trail\", trail midpoint via Nominatim). The whole route could not be traced because Overpass was unreachable, so this is by reasoning: the route is 27 km with Casuarina Sands to Kambah Pool 14 km (Parks ACT figure), putting the true midpoint near Kambah Pool; this OSM segment lies ~1.1 km east of it on the Kambah-to-Pine Island leg. MEDIUM, approximate midpoint",
+   "notes": "VisitCanberra: 27 km one way, 12 hours suggested, Hard, dogs not permitted, cycling permitted between Kambah Pool and Pine Island, price Free. Open 24 hours. Visit range is for sections or the full walk (unverified).",
+   "ticketUrl": "https://visitcanberra.com.au/attractions/690d879f532c2504579f51ab/murrumbidgee-discovery-track",
+   "ticket_note": "VisitCanberra (ACT Government tourism) attraction page, title checked; its contact is parks.act.gov.au, whose track page is blocked/unknown."
+  },
+  "canberra-49": {
+   "name": "Canberra Centenary Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "145 km self-guided loop around Canberra for walkers, runners and cyclists, through urban and rural land.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -35.1635779,
+    "longitude": 149.0734214
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM highway=path way 248953907 \"Canberra Centenary Trail\" near Hall; LOW, approximate: the loop is not a single OSM relation I could read (Overpass unreachable), so this is a point on the trail at the north side, roughly opposite its Capital Hill start (VisitCanberra), not a computed halfway point",
+   "notes": "VisitCanberra: 145 km self-guided shared-use loop, 7-day walk (~20 km a day), 3-day ride, or 1-day challenge; 10 km of extra feature walks; Free. Open 24 hours. Visit range is for one day section (unverified). The bio omits \"seven sections\" (VisitCanberra gives a 7-day walk, not seven official sections).",
+   "ticketUrl": "https://visitcanberra.com.au/attractions/56b23b95d270154b4553c60c/canberra-centenary-trail",
+   "ticket_note": "VisitCanberra attraction page, title checked; the managing parks.act.gov.au page was not found."
+  },
+  "canberra-50": {
+   "name": "Lake Ginninderra",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "105-hectare lake built in 1974 in Belconnen, ringed by a 7 km paved path, with parks and cafés along the shore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.2291079,
+    "longitude": 149.0730773
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=water relation 409874 \"Lake Ginninderra\" centre, on the Diddams Close peninsula shore, beside the water; Nominatim's reverse shows lakeside land (bench) here; MEDIUM. Replaces the resolve-pin result (Ginninderra Creek, wrong feature)",
+   "notes": "Wikivoyage Belconnen: 105 ha artificial reservoir built 1974, fed by Ginninderra Creek, 7 km shared path, John Knight Memorial Park, Emu Bank. Open 24 hours; free. Cafes are on Emu Bank (Kiln at Belco Arts, Lighthouse Pub).",
+   "ticket_note": "A lake with no single steward."
+  },
+  "canberra-51": {
+   "name": "Belconnen Arts Centre",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Lakeside arts centre on Emu Bank with galleries, a 400-seat theatre, a design shop and a café.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.2358198,
+    "longitude": 149.0680094
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.belcoarts.com.au/",
+   "coordinates_source": "OSM amenity=arts_centre (Nominatim), 3 candidates agree; 19 m from placement point (Wikivoyage listing tag). HIGH",
+   "notes": "Hours from belcoarts.com.au/visit-us: 10am-4pm Tue-Sun, closed public holidays (limited hours on ANZAC Day). Free entry: only a 2024 CityNews piece quoting the centre says free admission; the official site states no gallery price. Site (belconnenartscentre.com.au redirects to belcoarts.com.au, title Belco Arts). 400-seat theatre and cafe from Wikivoyage. | Free entry rests on a 2024 CityNews quote; the official site gives hours only."
+  },
+  "canberra-52": {
+   "name": "Strathnairn Arts",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Gallery precinct in a converted 1920s homestead and woolshed in Holt, with a shop and café.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.2323507,
+    "longitude": 148.9940116
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.strathnairn.com.au/",
+   "coordinates_source": "OSM tourism=gallery \"Strathnairn Homestead\" (Nominatim); 20 m from the Wikivoyage listing tag. The OSM leisure=common centroid (MEDIUM, 40 m away) was not used. HIGH",
+   "notes": "strathnairn.com.au/galleries, /about-us and /shop: homestead galleries + shop open Wed-Sun 10am-4pm; 3 gallery spaces; converted 1920s homestead on 9.5 ha with Woolshed gallery. Free entry from Wikivoyage listing (site states no admission price). Cafe Stepping Stone hours differ (site links to its own page). | Free entry rests on Wikivoyage only; the official site gives hours only."
+  },
+  "canberra-53": {
+   "name": "The Pinnacle Nature Reserve",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Woodland reserve in Hawker where trails climb The Pinnacle for views over the Molonglo valley to the Brindabellas.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.257311,
+    "longitude": 149.040655
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/the-pinnacle-nature-reserve",
+   "coordinates_source": "Wikivoyage listing own geo tag (Springvale Drive / summit-lookout area), confirmed by Commons geotagged photo \"Pinnacle Sunset.jpg\" 21 m away. The OSM leisure=nature_reserve centroid (128 m away) was rejected as a park centroid. MEDIUM",
+   "notes": "Hours/cost: Wikivoyage (Free; no gates stated, treated as open access; the reserve is in Canberra Nature Park, which has no entry fee). 154 ha, 708 m summit loop, dirt car parks on Springvale Drive, no toilets (Wikivoyage). Agency page found by search, BLOCKED to scripts. No trail length from a route relation was available (Overpass down), so pinned at the summit/lookout point rather than a route midpoint."
+  },
+  "canberra-54": {
+   "name": "Shepherds Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Lookout over the Murrumbidgee River at the end of Stockdill Drive in Holt, reached by a short bush walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.24099,
+    "longitude": 148.97731
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout",
+   "coordinates_source": "ExplorOz \"Lookout Position\" -35.24099,148.97731 (5 dp); the Wikivoyage listing tag is 40 m away. resolve-pin.py returned LOW (no OSM feature; Overpass and Nominatim empty). Two non-OSM sources agree within 45 m. MEDIUM-LOW",
+   "notes": "VisitCanberra shepherds-lookout page: park at the car park on Stockdill Drive, walk through Woodstock Nature Reserve, 1.2 km return, easy, about 45 minutes; ACT border marked by power lines 3 km downstream; dogs on lead. Wikivoyage says a 600 m walk. 24 hours is an assumption for an open-access reserve lookout (no gate stated). Agency page BLOCKED. pin: LOW per resolve-pin (no OSM feature); point sourced from ExplorOz and Wikivoyage."
+  },
+  "canberra-55": {
+   "name": "Weston Park",
+   "icon": "🌳",
+   "category": "nature",
+   "wiki": "Weston Park, Canberra",
+   "bio": "Lakeside park in Yarralumla with picnic areas, a miniature railway, a maze and mini golf.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.2926355,
+    "longitude": 149.0902706
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM amenity=cafe \"Yarralumla Play Station Cafe\", Pescott Lane (Nominatim), the park's visitor hub, 60 m from the OSM leisure=park centroid (-35.293024,149.090894), which was not used. MEDIUM",
+   "notes": "Park itself is free to enter (picnic tables, barbecues, toilets per search of the ACT master plan summaries); the miniature train, maze, mini golf and Farm Friends are run by Yarralumla Play Station (9 Pescott Lane) and charge separately: their price and hours not read, unverified. Open 24 hours assumed for an open park. VisitCanberra Yarralumla Play Station page describes maze, 2.4 km paths, Farm Friends, miniature railway. | The park is open space; the railway, maze and mini golf are Yarralumla Play Station (prices and hours unread).",
+   "ticket_note": "Managing agency page (parks.act.gov.au urban parks) blocked to scripts and its exact URL not found; operator of the train/maze is Yarralumla Play Station, a separate business."
+  },
+  "canberra-56": {
+   "name": "Calthorpes' House",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "Furnished 1927 house in Red Hill, shown on guided tours with the Calthorpe family's original belongings.",
+   "hours": "Guided tours Sat 1:00 PM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.326499,
+    "longitude": 149.121268
+   },
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.historicplaces.com.au/calthorpes-house",
+   "coordinates_source": "OSM tourism=museum (Nominatim); 11 m from the Wikivoyage listing tag. HIGH",
+   "notes": "Official page historicplaces.com.au/calthorpes-house (ACT Historic Places): adult $12, concession $10, under 12 free; entry by guided tour only, book ahead. Tours 2026 Jul-Dec are Saturdays 1pm-4pm in 45-minute slots (events.humanitix.com/calthorpes-house-tours-2026). Wikivoyage says Sat Sun 1-4pm and $7 (stale price); the official opening-hours widget did not render, so Sunday tours are unverified and hours show Saturday only and closedDays is omitted: check on the official page. Not in the three-house pass price. | BROWSER: historicplaces.com.au/calthorpes-house: adult $12, concession $10, under 12 free; entry by guided tour only; the hours widget renders by script."
+  },
+  "canberra-57": {
+   "name": "St John the Baptist Church",
+   "icon": "⛪",
+   "category": "religious",
+   "wiki": "St John the Baptist Church, Reid",
+   "bio": "Canberra's oldest church, consecrated in 1845, with a pioneer churchyard and a schoolhouse museum.",
+   "hours": "Church daily 9:00 AM – 5:00 PM; museum Sat–Sun 2:00 PM – 4:00 PM, Wed 10:00 AM – 12:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.287647,
+    "longitude": 149.140396
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.stjohnscanberra.org/",
+   "coordinates_source": "Commons geotagged photo cluster of the church exterior (-35.287647,149.140396, 18 files median ~54 m from the Wikivoyage 4-dp tag). The pin supplied by the run (-35.325383,149.151298, OSM place_of_worship, HIGH) is St John the Baptist CATHEDRAL in Forrest/Griffith, 4.3 km away: WRONG, rejected. MEDIUM",
+   "notes": "Schoolhouse Museum hours and adult $5 (children free) from stjohnscanberra.org/visit/schoolhouse-museum; closed a few weeks over summer school holidays (VisitCanberra). Church \"daily 9am-5pm\" is from the ACT Canberra Tracks listing seen only in search results (page BLOCKED): unverified. The church and churchyard are free; only the museum charges, so free:true. | BROWSER: canberratracks.act.gov.au: church daily 9 am to 5 pm; schoolhouse museum Wed 10-12, Sat, Sun and public holidays 2-4."
+  },
+  "canberra-58": {
+   "name": "Canberra Reptile Zoo",
+   "icon": "🐍",
+   "category": "entertainment",
+   "bio": "Reptile zoo in Gold Creek Village with over 100 species of reptiles, amphibians and native animals.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.190728,
+    "longitude": 149.0827085
+   },
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.canberrareptilezoo.com.au/",
+   "coordinates_source": "OSM building \"Canberra Reptile Zoo\" (Nominatim), 25 m from the Commons photo median (-35.190647,149.082458); replaces the LOW photo-median pin. HIGH",
+   "notes": "Hours: open 7 days 10am-5pm, closed Christmas Day only (canberrareptilezoo.com.au/zoo.toy). Adult 17+ $25 at the door, $22.50 online (reptilesinc.com.au/buytickets, the zoo's ticket page). Site title: Reptiles Inc & Canberra Reptile Zoo."
+  },
+  "canberra-59": {
+   "name": "Canberra Walk-in Aviary",
+   "icon": "🦜",
+   "category": "entertainment",
+   "bio": "Walk-in aviary in Gold Creek Village where visitors feed around 600 birds of nearly 60 species.",
+   "hours": "10:00 AM – 5:00 PM (Sep–Apr), 10:00 AM – 3:30 PM (May–Aug)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.190218,
+    "longitude": 149.084997
+   },
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.canberrawalkinaviary.com.au/",
+   "coordinates_source": "OSM tourism=zoo \"Canberra Walk-in Aviary\" (Nominatim); 40 m from the placement point. MEDIUM",
+   "notes": "canberrawalkinaviary.com.au/visitor-info: open every day except Christmas Day, weather permitting; Sep-Apr 10am-5pm (last admission 4:30pm); May-Aug 10am-3:30pm (close 4pm); admission includes food for the birds; adult $20 (effective 1 Jan 2026). 160 m from the Reptile Zoo pin."
+  },
+  "canberra-60": {
+   "name": "Pialligo Redwood Forest",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Walter Burley Griffin's 1918 redwood planting, Australia's largest stand of mature redwoods, with a 3 km walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.3179684,
+    "longitude": 149.1995566
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=park \"Pialligo Redwood Forest\" (Nominatim); 2 sources (Wikivoyage tag) within ~250 m; the forest is small so the centroid sits on the grove, and the front car park is on Pialligo Avenue. HIGH per run",
+   "notes": "Wikivoyage Airport and East: open 24 hours, free, 3 km circular walking track, no bikes or vehicles past the front car park, dogs on lead, no toilets. VisitCanberra confirms the 3 km track and \"Australia's largest stand of mature Redwood species\", Commonwealth Heritage List. Planted 1918 per Wikivoyage; VisitCanberra gives no date.",
+   "ticket_note": "No single steward found (Defence is reported as lessee by a Canberra Times opinion piece); VisitCanberra is a tourism board, not the operator."
+  },
+  "canberra-61": {
+   "name": "Molonglo Gorge Nature Reserve",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Day-use reserve protecting the Molonglo River gorge, with a picnic area, playground and the Blue Tiles walk along the river.",
+   "hours": "Daylight hours (day use only)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.327875,
+    "longitude": 149.248709
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=playground 'Molonglo George Nature Reserve (South)' in the Molonglo Gorge recreation area (resolve-pin MEDIUM); 0 m from the recreation area, 466 m from the OSM reserve centroid (not used) and 1.2 km from the Wikivoyage listing tag (placement point -35.328093,149.261864), moved 1.2 km",
+   "notes": "Wikivoyage Airport and East: day use only, free toilets, electric barbecues, picnic shelters and climbing playground at the main recreation area; free; Blue Tiles Walk 6.4 km return. Parks ACT (search summary, page blocked): 506 ha, walking track about 3 km upstream to Blue Tiles. Cost: no entry fee (Wikivoyage 'Free'). Hours 'daylight' derived from 'day-use only'; no hours range sourced.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/molonglo-gorge-nature-reserve"
+  },
+  "canberra-62": {
+   "name": "Glenburn Homestead",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Heritage precinct in Kowen Forest with ruins, gravesites and farm machinery, and three self-guided loop trails.",
+   "hours": "Open 24 hours (closed on Total Fire Ban days)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.307601,
+    "longitude": 149.313939
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM historic=ruins 'Glenburn homestead' (resolve-pin MEDIUM), 21 m from the placement point",
+   "notes": "Wikivoyage Airport and East: open 24 hours, closed on Total Fire Ban days, no toilets/water/bins, three signposted loop trails, free. Heritage-registered 2015. An undated CityNews item says walkers and cyclists enter through a locked gate at Charcoal Kiln Road/Kings Highway because the site is inside a commercial pine forest, so check access before visiting.",
+   "ticket_note": "No Glenburn page found; the Parks ACT Kowen Forest page (https://www.parks.act.gov.au/find-a-nature-park/plantations/kowen-forest) does not mention it. Orchestrator to check in a browser for a Glenburn or Friends of Glenburn page; omit otherwise."
+  },
+  "canberra-63": {
+   "name": "One Tree Hill Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Hill north of Hall reached by a one-hour uphill walk on the Canberra Centenary Trail, with views over Canberra.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.142087,
+    "longitude": 149.091384
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'One Tree Hill' (resolve-pin MEDIUM), 4 m from the placement point",
+   "notes": "Wikivoyage Hall: bushwalk of about an hour one-way via the Canberra Centenary Trail from Hoskins and Hall Streets, small car park beside the trail. VisitCanberra Hall page: 'popular section of the Centenary Trail' to the lookout. No fee or hours stated: open-access hill, hours unverified. Visit time is round trip.",
+   "ticket_note": "No single steward page found; the Parks ACT Canberra Centenary Trail page is a candidate but is blocked and covers the whole trail."
+  },
+  "canberra-64": {
+   "name": "Goorooyarroo Nature Reserve",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Woodland nature reserve beside Mulligans Flat in Gungahlin, with walking tracks and picnic areas.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.212533,
+    "longitude": 149.179976
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM tourism=information node beside an OSM amenity=parking way on the reserve's southern edge, inside the OSM reserve relation 6092536 (bbox -35.213..-35.171, 149.168..149.201); not the centroid (-35.1917,149.1828). Not a resolve-pin result (it returned only the centroid), so MEDIUM at best: 'pin': 'MEDIUM-manual', confirm the entrance on Parks ACT's map",
+   "notes": "Parks ACT lead list only (page blocked): woodland reserve with walking tracks and picnic areas, adjoining Mulligans Flat. Hours and cost not read: nature reserves in the ACT charge no entry (brief). Overpass was unavailable so the car park choice came from one earlier query.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/goorooyarroo-nature-reserve"
+  },
+  "canberra-65": {
+   "name": "Jerrabomberra West Grasslands",
+   "icon": "🌾",
+   "category": "hike",
+   "bio": "Canberra Nature Park grassland reserve with an 8 km return Grassy Plains walk from the Callum Brae car park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "coordinates": {
+    "latitude": -35.37317,
+    "longitude": 149.162405
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "LOW: OSM leisure=nature_reserve centroid of Jerrabomberra West Grasslands Nature Reserve (resolve-pin MEDIUM, but a centroid, not a visitor point; midpoint of the Grassy Plains walk not in OSM found). Needs the Callum Brae car park or the walk's midpoint from the Parks ACT map",
+   "notes": "Parks ACT lead list only (page blocked): 8 km return Grassy Plains walk from the Callum Brae car park, about three hours. 'Callum Brae' Wikipedia title is a New Zealand suburb, not this place. Hours/cost unread: ACT reserves charge no entry (brief); hours unverified; access via Callum Brae noted as limited by the judge. | BROWSER: access is by footpath through Callum Brae Nature Reserve (its car park starts the 8 km return, 3 hour Grassy Plains walk); access points are limited.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/jerrabomberra-west-grasslands-nature-reserve",
+   "pin": "LOW"
+  },
+  "canberra-66": {
+   "name": "Oakey Hill",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Weston Creek hill with easy walking tracks to a 684 m summit, views to the Brindabellas and kangaroos at dusk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.33773,
+    "longitude": 149.068
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "Wikipedia 'Oakey Hill' article coordinates (the hill itself, 5 decimals), corroborated 190 m away by the Wikivoyage Woden listing tag (-35.339231,149.068114, Heysen Street); the OSM result was only a natural=grassland reserve centroid 329 m away (not used). MEDIUM",
+   "notes": "Wikipedia: 684 m highest point marked by a survey station, rises 80 m above Lyons, Curtin and Weston, walking tracks generally easy with short steep climbs, views to Red Hill, Mount Ainslie and the Brindabellas. Wikivoyage Woden: open 24 hours, free, reliable place to see eastern grey kangaroos at dusk. The Wikivoyage entry is marked dead link and no Parks ACT page was found.",
+   "ticket_note": "No Parks ACT page for Oakey Hill found by search; orchestrator to look in a browser (parks.act.gov.au blocks scripts).",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/oakey-hill-nature-reserve"
+  },
+  "canberra-67": {
+   "name": "Mount Wanniassa",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "809 m peak in Wanniassa Hills Nature Reserve with trails on both slopes and views over Woden and Tuggeranong.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.391612,
+    "longitude": 149.11517
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'Mount Wanniassa' (resolve-pin MEDIUM), 474 m from the Wikipedia/placement point (-35.3895,149.1197)",
+   "notes": "Wikivoyage Tuggeranong: 809 m, climbed via established walking trails on east and west slopes, views of Woden and Tuggeranong. Parks ACT Wanniassa Hills Nature Reserve (search summary): 262 ha, ridgetop views of southern Canberra, dogs on-leash on tracks. Hours and cost unread (page blocked); no entry fee for ACT reserves (brief).",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/wanniassa-hills-nature-reserve"
+  },
+  "canberra-68": {
+   "name": "Tuggeranong Hill",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Steep track to a summit with views over the Lanyon Valley and the rest of southern Canberra.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.453153,
+    "longitude": 149.107714
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'Tuggeranong Hill' (resolve-pin MEDIUM), 21 m from the placement point",
+   "notes": "Wikipedia: part of Canberra Nature Park, a walk to the top gives views of Lanyon Valley and southern Canberra; broadcast translator on top with a service track. Parks ACT (search summary): 365 ha reserve, steep track to the summit; a south-eastern section and part of Rob Roy Range are on leased land and closed to the public. Hours, cost and walk length not sourced; no entry fee for ACT reserves (brief). Visit time is an editorial estimate.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/tuggeranong-hill-nature-reserve"
+  },
+  "canberra-69": {
+   "name": "Gibraltar Peak",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Steep 8.2 km return climb in Tidbinbilla Nature Reserve to a summit with views over Canberra and the reserve.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.458675,
+    "longitude": 148.947814
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'Gibraltar Peak' (resolve-pin HIGH, agrees with 19 geotagged Commons files), 104 m from the placement point. Summit rather than route midpoint: the peak is the spot",
+   "notes": "VisitCanberra: 8.2 km walk, moderate to hard, about three to four hours return, from Dalsetta via Eliza Saddle; Wikivoyage and Wikipedia: 8.2 km, 2 to 3 hours. VisitCanberra notes the Tidbinbilla Visitor Centre was closed with the reserve open as normal. Reserve gate hours and any entry fee not sourced (tidbinbilla.act.gov.au blocked): free assumed, unverified. Hours 'Daylight hours' is generic for a bushwalk. | Inside Tidbinbilla Nature Reserve: the reserve charges $16.09 per private vehicle per day (canberra-31 carries the price); shown here as \"Park Pass Needed\".",
+   "wiki": "Gibraltar Peak (Canberra)",
+   "ticketUrl": "https://tidbinbilla.act.gov.au/",
+   "needs": "park-pass"
+  },
+  "namadgi-national-park-1": {
+   "name": "Gibraltar Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Waterfall with a drop of over 50 m, with a barbecue and picnic area off Corin Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.486834,
+    "longitude": 148.934594
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap waterway=waterfall (nominatim), HIGH; moved ~7.6 km from the placement point, which was the Wikivoyage listing coordinate (-35.5375,148.878), a wrong location",
+   "notes": "Wikivoyage Namadgi lists it under See (Corin Rd, Paddys River; drop over 50 m); lookout/barbecue/picnic from Wikivoyage Tuggeranong and Country ACT via the placement draft. Wikivoyage states Namadgi has no fees or permits. Visit time is an estimate. | BROWSER: Parks ACT walking tracks page: the 400 m return walk to the Gibraltar Falls lookout is CLOSED until further notice (2026-10-24); the falls are also seen from the road.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-2": {
+   "name": "Booroomba Rocks",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Granite outcrop on Booroomba Rocks Road, reached by a 2.5 km return walk and also a rock-climbing site.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.5626332,
+    "longitude": 148.9896006
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap natural=peak node \"Booroomba Rocks peak\" (way 8047339456), within 70 m of the Wikipedia coordinates (HIGH); 0.7 km from placement point. Lies on the walk between car park and cliff edge, about 300 m from the route midpoint (OSM has no route relation)",
+   "notes": "Wikivoyage Do lists it as a trail through rocks (says 4 km); the Parks ACT walking tracks page (draft) gives 2.5 km return; bio avoids the distance. Visit time is an estimate. | BROWSER: Parks ACT walking tracks page: Booroomba Rocks is a Grade 4 walk, 2.5 km return from the Booroomba Rocks car park (about 1.5 hours).",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-3": {
+   "name": "Orroral Homestead",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Hut from the 1860s, the oldest in Namadgi and among the best conserved, with signs on pastoral life.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.6391575,
+    "longitude": 148.9613265
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap way 583614115 Orroral Homestead (tourism=alpine_hut, building), MEDIUM; agrees with the Wikivoyage listing within 20 m. The Commons photo median (LOW, 1.2 km off, at the tracking station) was rejected",
+   "notes": "Wikivoyage Namadgi: easy walk for those at Orroral Campground; informative signs inside. Opening hours not stated by any source I could read; hut is open-air heritage site, 'Open 24 hours' is an assumption: unverified.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-4": {
+   "name": "Honeysuckle Creek Tracking Station",
+   "icon": "📡",
+   "category": "historic",
+   "bio": "Former NASA Apollo tracking station site, believed to have first televised Armstrong's moon step, with signs on what stood here.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.5831838,
+    "longitude": 148.9777905
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap node 4374907087 \"Honeysuckle Creek Former Space Tracking Station\" (tourism=attraction), MEDIUM; within 5 m of the Wikipedia/Wikivoyage coordinates (HIGH); 25 m from placement",
+   "notes": "Wikivoyage Namadgi: operated 1967-1981, 26-metre dish, little remains, plenty of information on what stood there. Access is by Apollo Road: unverified hours (assumed open access).",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-5": {
+   "name": "Yankee Hat",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Aboriginal rock painting of a kangaroo, dingos, emus and humans, reached on foot from Old Boboyan Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.7505869,
+    "longitude": 148.9536654
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap node 800055143 \"Yankee Hat Rock Art Site\" (historic=archaeological_site, tourism=attraction), MEDIUM; on the Yankee Hat Walking Track. NOT the Yankee Hat peak (-35.755,148.935, Wikivoyage), which is ~1.7 km west",
+   "notes": "Wikivoyage Namadgi: mountain 1,441 m with an Aboriginal rock painting (kangaroo, dingos, emus, humans, echidna or turtle). Walking track exists in OSM (Yankee Hat Walking Track from Yankee Hat Carpark); length and time unverified.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-6": {
+   "name": "Bimberi Peak",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "The highest point in the ACT at 1,911 m, in the remote Bimberi area of Namadgi.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 6,
+   "visitHoursMax": 10,
+   "coordinates": {
+    "latitude": -35.65932,
+    "longitude": 148.79055
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap natural=peak \"Bimberi Peak\" (nominatim), MEDIUM; within 25 m of Wikivoyage (-35.65926,148.79056) and 210 m of Wikipedia",
+   "notes": "Wikivoyage lists it as Mount Bimberi, highest in the ACT at 1,911 m. A summit hike: pinned on the summit; route length, access and the 6-10 hr visit range are unverified estimates.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-7": {
+   "name": "Settlers Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "6 km loop from Boboyan Road through pastoral sites, with a 9 km option to Waterhole Hut.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.8755867,
+    "longitude": 148.9856765
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap node 574151648 \"Brayshaws Hut parking\" (amenity=parking), the trailhead; LOW: not a route midpoint, OSM has no Settlers Track route and the Parks ACT route map is blocked",
+   "notes": "Source is the Parks ACT self-guided-walk PDF (403 to scripts). Wikivoyage: Brayshaws and Westermans homesteads are mostly visited by those walking the Settlers Track. Walk time unverified. pin LOW.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-8": {
+   "name": "Gudgenby Homestead",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Hut built in 1845 by a Scottish immigrant, dismantled in 1964 and restored, off Boboyan Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.7429348,
+    "longitude": 148.9854107
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap node 5039993512 \"Gudgenby Homestead No2\" (tourism=alpine_hut), MEDIUM; 20 m from the Wikivoyage listing coordinate",
+   "notes": "Wikivoyage: 1.6 km deviation off Boboyan Rd, built 1845, dismantled 1964, timber stored then restored. Placement draft said 'stored for re-erection'; Wikivoyage says restored, so the bio follows it.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park"
+  },
+  "namadgi-national-park-9": {
+   "name": "Corin Forest",
+   "icon": "🛷",
+   "category": "entertainment",
+   "bio": "Mountain resort near Tidbinbilla with a 1.2 km alpine slide through Mountain Ash forest and winter snowplay.",
+   "hours": "Seasonal, mostly weekends (see the operator's calendar)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.515317,
+    "longitude": 148.921434
+   },
+   "costBasis": "ticket",
+   "coordinates_source": "OpenStreetMap node \"Corin Forest Mountain Resort\" (tourism=attraction), HIGH; 25 m from Wikivoyage, 33 m from placement",
+   "notes": "Operator site corin.com.au: hours vary by season (2026/27: 9:00-17:00; Sat-Sun only 1 Nov-18 Dec, daily 19 Dec-31 Jan, closed 25 Dec; weekdays closed in much of the year; check before travelling), bookings essential. Alpine slide $30 Youth/Adult (age 8+), from the slide page; snowplay tickets are separate and 2027 bookings not yet open. Visit time is an estimate. | Wikivoyage places Corin Forest outside Namadgi National Park; it sits on Corin Road beside the park. It is an operator, kept as a place.",
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "AUD",
+   "ticketUrl": "https://www.corin.com.au/"
+  },
+  "namadgi-national-park-10": {
+   "name": "Tharwa",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "One of the original ACT settlements on the Murrumbidgee, with its old bridge, gateway to Namadgi.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.5097122,
+    "longitude": 149.0696159
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OpenStreetMap place=village node \"Tharwa\" (Overpass); Commons photo median 187 m away; Wikipedia 434 m",
+   "notes": "Wikivoyage Tuggeranong and Country ACT lists Tharwa Village. Namadgi Visitor Centre is on Naas Rd nearby (Mon-Fri 9-4, Sat-Sun 9-4:30, Wikivoyage Dec 2021), but is a separate place. No single steward: no ticketUrl.",
+   "wiki": "Tharwa, Australian Capital Territory",
+   "ticket_note": "A village with no single steward"
+  }
+ },
+ "existing_fixes": [],
+ "held": [],
+ "notes": {
+  "unverified": [
+   "canberra-1 Parliament House hours and free tour times: from Wikivoyage only (official site blocked)",
+   "canberra-3 National Gallery of Australia hours and free entry: Wikivoyage only",
+   "canberra-4 National Museum of Australia hours and free entry: Wikivoyage only",
+   "canberra-5 Old Parliament House: tour prices not read",
+   "canberra-6 Questacon adult price $27.50 read from unlabelled first column",
+   "canberra-7 ANBG free entry: Wikivoyage only",
+   "canberra-9 National Arboretum hours and free entry: no source read",
+   "canberra-10 Mount Ainslie hours (Open 24 hours) and any road closure times: unverified",
+   "canberra-15 National Zoo and Aquarium: adult price A$55 (official price table is an image; figure from a web search of the zoo's gate prices; events listed A$60)",
+   "canberra-17 National Film and Sound Archive: hours 10-4 daily and free entry from a search summary only (site blocked)",
+   "canberra-12 High Court: Mon-Fri 9:45 AM start from Wikivoyage 2017; official page gives only the 4:30 PM close",
+   "canberra-11 National Library: free entry not stated in words on the pages read (free tours stated)",
+   "canberra-16 Mount Stromlo: free entry not stated in words; visitor centre and cafe reported closed",
+   "canberra-19 Cockington Green: whether the miniature steam train is currently running",
+   "canberra-21 hours/free (Parks ACT page blocked)",
+   "canberra-22 hours/free and Red Track 3.2 km (Parks ACT blocked)",
+   "canberra-24 recital times (NCA page stale) and island hours",
+   "canberra-23 \"opposite Old Parliament House\" wording",
+   "canberra-28 Kingston Powerhouse naming",
+   "canberra-30 hours, size, quolls (Parks ACT blocked) and pin",
+   "canberra-27 pin is a park point from Nominatim; Sylvia Crowe omitted",
+   "canberra-31: Tidbinbilla day-pass price ($15.53/vehicle) and hours come from a search summary of tidbinbilla.act.gov.au/visit, not read directly; Wikivoyage says $11",
+   "canberra-33: Jerrabomberra Wetlands 24-hour access (operator site) conflicts with 8AM-6PM (Wikivoyage); visitor-point pin not checked against an agency map",
+   "canberra-34: Stromlo Forest Park hours (Wikivoyage only); official site blocked",
+   "canberra-32: CDSCC weekday school-holiday opening not fixed, closedDays approximate",
+   "canberra-40: Railway Museum extra opening days follow ACT school holidays and Floriade",
+   "canberra-38: no current hours, link or cost: centre is closed to the public",
+   "canberra-41 hours (outdoor sculpture, Open 24 hours inferred)",
+   "canberra-42/43/45/46/47 visit durations and Open 24 hours (reserve and road gate times)",
+   "canberra-43 Mount Taylor parks.act.gov.au URL is pattern-based, not read",
+   "canberra-48 and canberra-49 visit-hours ranges",
+   "canberra-44 Hall cafe and cellar door hours (not given as the village hours)",
+   "canberra-51 free gallery entry (only a 2024 CityNews quote; official site gives no price)",
+   "canberra-52 free entry (Wikivoyage only)",
+   "canberra-53 and canberra-54 24-hour access (assumed for open reserve)",
+   "canberra-55 Yarralumla Play Station prices and hours (train, maze, mini golf)",
+   "canberra-56 Sunday tours (official opening-hours widget did not render)",
+   "canberra-57 church daily 9-5 (Canberra Tracks, page blocked)",
+   "canberra-60 forest planting year only from Wikivoyage",
+   "canberra-61 Molonglo Gorge: hours (only 'day use only' sourced) and Parks ACT page content",
+   "canberra-62 Glenburn Homestead: 24-hour access (Wikivoyage) versus a locked gate (undated CityNews); free",
+   "canberra-63 One Tree Hill Lookout: hours, free, no steward page",
+   "canberra-64 Goorooyarroo: hours, cost, and the exact entrance pin",
+   "canberra-65 Jerrabomberra West Grasslands: hours, cost, access, and the pin (LOW)",
+   "canberra-66 Oakey Hill: free/24 hours from Wikivoyage only (dead-link entry); no agency page",
+   "canberra-67 Mount Wanniassa: hours, cost, trail length",
+   "canberra-68 Tuggeranong Hill: hours, cost, walk length",
+   "canberra-69 Gibraltar Peak: Tidbinbilla gate hours, entry fee (assumed free), walk duration varies by source (2-3 h vs 3-4 h)",
+   "Hours 'Open 24 hours' for the park sites (3,4,5,8) assumed open-access, not read on Parks ACT",
+   "Visit-hour ranges for all but Corin Forest are estimates",
+   "Bimberi Peak walk length/time",
+   "Yankee Hat and Settlers Track walk length/time",
+   "Corin Forest weekday closures: seasonal, see notes",
+   "Gibraltar Falls lookout/barbecue/picnic facts from the draft's Wikivoyage Tuggeranong page, not re-read"
+  ],
+  "needs_browser": [
+   {
+    "id": "canberra-1",
+    "url": "https://www.aph.gov.au",
+    "why": "WAF block; confirm hours, tours, site title"
+   },
+   {
+    "id": "canberra-3",
+    "url": "https://www.nga.gov.au/visit",
+    "why": "403; confirm hours, free entry, title"
+   },
+   {
+    "id": "canberra-4",
+    "url": "https://www.nma.gov.au/visit",
+    "why": "Cloudflare; confirm hours, free entry, title"
+   },
+   {
+    "id": "canberra-9",
+    "url": "https://www.nationalarboretum.act.gov.au/visit",
+    "why": "Cloudflare; confirm hours, free entry, title"
+   },
+   {
+    "id": "canberra-10",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-ainslie-nature-reserve",
+    "why": "parks.act.gov.au blocked; confirm page and any road hours"
+   },
+   {
+    "id": "canberra-17",
+    "url": "https://www.nfsa.gov.au/visit-us",
+    "why": "403 bot wall: confirm hours, free entry and page title names the NFSA"
+   },
+   {
+    "id": "canberra-21",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/black-mountain-nature-reserve",
+    "why": "Parks ACT Cloudflare 403; confirm page title, hours and that it is the official page"
+   },
+   {
+    "id": "canberra-22",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/red-hill-nature-reserve",
+    "why": "Parks ACT Cloudflare 403"
+   },
+   {
+    "id": "canberra-30",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mulligans-flat-nature-reserve",
+    "why": "Parks ACT Cloudflare 403; also read gate hours and the Wildbark / entrance car park location"
+   },
+   {
+    "id": "canberra-31",
+    "url": "https://www.tidbinbilla.act.gov.au/visit",
+    "why": "Cloudflare 403: confirm day-pass price per vehicle, reserve hours, visitor centre hours; also confirm the homepage title names Tidbinbilla"
+   },
+   {
+    "id": "canberra-34",
+    "url": "https://www.stromloforestpark.act.gov.au/",
+    "why": "Cloudflare 403 (redirect from stromloforestpark.com.au): confirm the title names Stromlo Forest Park, the hours, and that the park itself is free"
+   },
+   {
+    "id": "canberra-33",
+    "url": "https://www.parks.act.gov.au/find-a-park/jerrabomberra-wetlands-nature-reserve",
+    "why": "parks.act.gov.au blocked: confirm hours (24 h vs 8-6) and entry car park location"
+   },
+   {
+    "id": "canberra-42",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve",
+    "why": "parks.act.gov.au blocks scripts; check title, hours, free"
+   },
+   {
+    "id": "canberra-43",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve",
+    "why": "URL guessed from the Mount Ainslie/Majura pattern; confirm it exists and names Mount Taylor (else find the page via the site search)"
+   },
+   {
+    "id": "canberra-45",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool",
+    "why": "blocked; check title, hours, gate closures"
+   },
+   {
+    "id": "canberra-46",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island",
+    "why": "blocked; check title, hours"
+   },
+   {
+    "id": "canberra-47",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands",
+    "why": "blocked (403 seen); check title, hours"
+   },
+   {
+    "id": "canberra-48",
+    "url": "https://www.parks.act.gov.au/find-a-park/murrumbidgee-river-corridor/kambah-pool",
+    "why": "optional: Parks ACT walking-tracks page lists the track sections (14 km Casuarina Sands to Kambah Pool, 7 km Kambah Pool to Pine Island); check for a dedicated track page to replace the VisitCanberra link"
+   },
+   {
+    "id": "canberra-53",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/the-pinnacle-nature-reserve",
+    "why": "403 bot wall; confirm title, car park and any hours; ticketUrl BLOCKED"
+   },
+   {
+    "id": "canberra-54",
+    "url": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout",
+    "why": "403 bot wall; confirm page names Shepherd's Lookout; ticketUrl BLOCKED"
+   },
+   {
+    "id": "canberra-55",
+    "url": "https://www.parks.act.gov.au/",
+    "why": "find the Weston Park page (urban parks) and set ticketUrl; none recorded"
+   },
+   {
+    "id": "canberra-57",
+    "url": "https://canberratracks.act.gov.au/heritage-trails/track-2-the-limestone-plains/st-johns-church",
+    "why": "403; confirm church daily hours"
+   },
+   {
+    "id": "canberra-56",
+    "url": "https://www.historicplaces.com.au/calthorpes-house",
+    "why": "loads, but opening-hours widget is dynamic: read the days/times in a browser"
+   },
+   {
+    "id": "canberra-61",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/molonglo-gorge-nature-reserve",
+    "why": "Parks ACT 403; confirm title, hours, cost (a second path /find-a-park/canberra-nature-park/molonglo-gorge-nature-reserve also exists)"
+   },
+   {
+    "id": "canberra-62",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/plantations/kowen-forest",
+    "why": "blocked; look for any Glenburn Homestead page and current access"
+   },
+   {
+    "id": "canberra-64",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/goorooyarroo-nature-reserve",
+    "why": "blocked; confirm title, hours, entrance and car park for the pin"
+   },
+   {
+    "id": "canberra-65",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/jerrabomberra-west-grasslands-nature-reserve",
+    "why": "blocked; confirm title, access, the Callum Brae car park location for the pin"
+   },
+   {
+    "id": "canberra-66",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/oakey-hill-nature-reserve",
+    "why": "URL is a pattern guess, not seen: search parks.act.gov.au for an Oakey Hill page before using"
+   },
+   {
+    "id": "canberra-67",
+    "url": "https://www.parks.act.gov.au/find-a-park/canberra-nature-park/wanniassa-hills-nature-reserve",
+    "why": "blocked; found by search (note /find-a-park/ path); confirm title and the Mount Wanniassa walk"
+   },
+   {
+    "id": "canberra-68",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/tuggeranong-hill-nature-reserve",
+    "why": "blocked; confirm title, hours, walk length"
+   },
+   {
+    "id": "canberra-69",
+    "url": "https://tidbinbilla.act.gov.au/",
+    "why": "blocked (Cloudflare); confirm title, reserve hours and entry fee; also the Gibraltar Peak walk page"
+   },
+   {
+    "id": "namadgi-national-park-1",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-2",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-3",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-4",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-5",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-6",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-7",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-8",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park",
+    "why": "parks.act.gov.au blocks scripts; check the park/track page names the place, hours and that entry is free, and replace ticketUrl with a deep link if one exists"
+   },
+   {
+    "id": "namadgi-national-park-7",
+    "url": "https://www.parks.act.gov.au/__data/assets/pdf_file/0005/404591/the-settlers-track-self-guided-walk.pdf",
+    "why": "Settlers Track route map and length; take the route midpoint (pin is LOW, trailhead)"
+   },
+   {
+    "id": "namadgi-national-park-2",
+    "url": "https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park/namadgi-national-park-walking-tracks",
+    "why": "Booroomba Rocks distance, time and car park"
+   }
+  ],
+  "notes": [
+   "LOW pin: canberra-8 Lake Burley Griffin uses the Wikipedia point in the lake water.",
+   "None judged unfit to add.",
+   "No LOW pins. canberra-16 is MEDIUM (OSM institution centroid on the observatory site).",
+   "canberra-18 AIS pin is the campus point; Visitor Centre ~290 m west per Wikivoyage listing.",
+   "Nothing judged should-not-be-added. canberra-16: telescopes decommissioned after 2003; the draft's 'rebuilt after the 2003 bushfires' was dropped; still a visitable heritage site (kept).",
+   "No pin within 60 m of any other spot in src or this shard.",
+   "parks.act.gov.au not needed for this shard.",
+   "canberra-30 pin LOW",
+   "canberra-26 pin hand-computed from OSM way geometry after resolve-pin LOW",
+   "canberra-38 CSIRO Discovery Centre should not be added: closed to the public since before 2025 and to schools Feb 2025 (CSIRO Alumni page citing the Canberra Times).",
+   "canberra-32 pin is LOW (Commons median); no OSM feature for the complex or visitor centre. Raise for the run.",
+   "canberra-37 Commonwealth Place and the International Flag Display are one place; only one spot.",
+   "No other Canberra spots exist in src/data/spots.ts, so no pin-shared check against existing spots; all ten pins in this shard are >= 25 m apart (nearest: Commonwealth Place to the National Capital Exhibition ~800 m).",
+   "Overpass was unreachable from this shard (connection refused), so the whole-route midpoints of the Murrumbidgee Discovery Track and the Canberra Centenary Trail could not be computed; see each coordinates_source. Centenary Trail pin is LOW (approximate).",
+   "Placement pin for Lake Ginninderra (resolve-pin: Ginninderra Creek stream) was rejected as the wrong feature.",
+   "Nothing should be dropped. The Big Powerful Owl is the marginal one (one counted source, a 15-minute stop), already kept by the owner.",
+   "Hall: bio keeps the 20-site heritage walk (Wikivoyage) and cafes; no cost; no ticketUrl (village).",
+   "costBasis is entry/free for all ten (Canberra Nature Park, Murrumbidgee River Corridor have no entry fee per VisitCanberra \"Price: Free\" on the trails; reserves not read on parks.act.gov.au, blocked).",
+   "Pin problems: canberra-57 supplied pin was the wrong church (cathedral 4.3 km away), replaced. canberra-54 Shepherds Lookout is LOW per resolve-pin (no OSM feature, Overpass down); used ExplorOz lookout position + Wikivoyage tag (45 m apart). canberra-53 pinned at the summit/lookout (listing tag + Commons photo), not the reserve centroid and not a route midpoint.",
+   "No spot judged unfit to add.",
+   "All pins checked >=25 m from the shard's others and from src/data points (no Canberra points present in src at time of check).",
+   "Overpass API was down for most of the run, so no car park/trailhead query could be repeated for Goorooyarroo or Jerrabomberra West.",
+   "No ACT park pass applies; no spot uses needs.",
+   "Distances to other app spots were not checked against src (no ACT spots exist there); shard-internal spots are all far apart (>2 km).",
+   "Settlers Track pin is LOW (trailhead parking)",
+   "Gibraltar Falls placement coordinate was ~7.6 km wrong",
+   "No spot should be dropped"
+  ]
+ }
+}

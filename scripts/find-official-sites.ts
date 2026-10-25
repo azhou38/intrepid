@@ -9,7 +9,7 @@ import { DESTINATIONS } from '../src/data/destinations';
 
 const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined; };
 const country = arg('--country'), limit = Number(arg('--limit') ?? Infinity);
-const UA = 'IntrepidApp-Sites/1.0 (personal hobby project; alexzhou38@gmail.com)';
+const UA = 'IntrepidApp-Sites/1.0 (personal hobby project)';
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 const cc = (s: typeof SPOTS[number]) => s.countryCode ?? DESTINATIONS.find(d => d.id === s.destinationId)?.countryCode;
 

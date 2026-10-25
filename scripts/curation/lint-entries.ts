@@ -21,8 +21,9 @@
 //               only for spots whose photo comes from that lookup (no override, no supplied photo)
 // Destinations
 //   shape       whyVisit not two to four (or highlights / whyVisitPhotos not matching its count), goodToKnow not two or three (or a tip detail over 160 characters), a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
-//   voice       marketing words in tagline or description
-// With --offline only the checks that need no network run (shape, voice, bio, no-ticket, pin, pin-shared).
+//   voice       marketing words in tagline or description, or a semicolon in the bestTimeBlurb
+//   transient   a whyVisit reason, highlight or tagline that promises a passing state (an eruption, smoke, a plume, a one-off)
+// With --offline only the checks that need no network run (shape, voice, transient, bio, no-ticket, pin, pin-shared).
 // Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -71,6 +72,9 @@ if (!destIds.size && !standaloneIds.size) { console.error('usage: lint-entries.t
 // Destinations the owner approved below the four-spot bar as flagship parks (Tasmania, 2026-10-20).
 const FLAGSHIP_EXEMPT = new Set(['mount-field', 'southwest-national-park']);
 const SOURCE_MENTION = /wikivoyage|wikipedia|lonely planet|rough guide|tripadvisor|wikimedia|openstreetmap|according to|per the brief|in the brief|the guidebook/i;
+// A passing state promised as a reason, highlight or tagline (WRITING.md → "Voice": only what is there whenever a visitor arrives).
+// A geyser erupting is its normal, permanent state, so "geyser(s) erupt" is not flagged; nor is steam from geothermal vents.
+const TRANSIENT = /\b(?<!geysers? )(?<!geyser )(erupt\w*|eruptions?)\b|\b(plumes?|smok(e|es|ing)|lava (flow|flows|flowing|lake)|temporary|this year|until \w+ 20\d\d|one-off)\b/i;
 const textOf = (o: any): string[] => typeof o === 'string' ? [o] : Array.isArray(o) ? o.flatMap(textOf) : o && typeof o === 'object' ? Object.entries(o).filter(([k]) => k !== 'wiki' && k !== 'ticketUrl').flatMap(([, v]) => textOf(v)) : [];
 const MARKETING = /\b(stunning|breathtaking|must[- ]see|must[- ]visit|world[- ]class|iconic|unforgettable|hidden gem|picturesque|nestled|paradise|best in the world|bucket[- ]list|jaw[- ]dropping|awe[- ]inspiring|spectacular)\b/i;
 const norm = (s: string) => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -116,14 +120,20 @@ async function checkWiki(title: string): Promise<string | null> {
       const n = w.trim().split(/\s+/).length;
       if (n < 2 || n > 8) add(it, 'shape', `whyVisit "${w}" is ${n} words (needs 2–8)`);
       // A reason is an action and its subject, never a bare name ("Len Lye Centre", "Tongariro Alpine Crossing").
-      if (!/^(See|Visit|Walk|Hike|Cross|Climb|Swim|Soak|Taste|Sail|Cruise|Explore|Watch|Spot|Meet|Ride|Paddle|Kayak|Dive|Snorkel|Wander|Stroll|Sip|Eat|Try|Hunt|Ski|Soar|Fly|Drive|Join|Feed|Stay|Discover|Relax|Trek|Camp|Float|Raft|Bungy|Gaze|Admire|Browse|Tour|Cycle|Bike|Surf|Fish|Dine|Shop|Roam|Find|Enjoy|Experience|Take|Hear|Step|Stand|Ascend|Descend|Sample|Look|Spend|Go|Board|Paraglide|Zipline|Scramble|Marvel|Sandboard|Dig|Punt|View|Photograph|Pan|Learn|Feel|Taste|Cheer|Shelter|Pause|Pass|Reach|Follow|Hunt|Scale|Wade|Bathe|Ramble|Savour|Sunbathe|Stargaze|Whale-watch|Heli-hike|Stop)\b/i.test(w.trim())) add(it, 'shape', `whyVisit "${w}" does not start with an action (e.g. "Walk the…", "See the…")`);
+      if (!/^(See|Visit|Walk|Hike|Cross|Climb|Swim|Soak|Taste|Sail|Cruise|Explore|Watch|Spot|Meet|Ride|Paddle|Kayak|Dive|Snorkel|Wander|Stroll|Sip|Eat|Try|Hunt|Ski|Soar|Fly|Drive|Join|Feed|Stay|Discover|Relax|Trek|Camp|Float|Raft|Bungy|Gaze|Admire|Browse|Tour|Cycle|Bike|Surf|Fish|Dine|Shop|Roam|Find|Enjoy|Experience|Take|Hear|Step|Stand|Ascend|Descend|Sample|Look|Spend|Go|Board|Paraglide|Zipline|Scramble|Marvel|Sandboard|Dig|Punt|View|Photograph|Pan|Learn|Feel|Taste|Cheer|Shelter|Pause|Pass|Reach|Follow|Hunt|Scale|Wade|Bathe|Ramble|Savour|Sunbathe|Stargaze|Whale-watch|Heli-hike|Stop|Chase|Canoe|Listen|Picnic|Golf|Sled|Ski-tour|Snowshoe|Abseil)\b/i.test(w.trim())) add(it, 'shape', `whyVisit "${w}" does not start with an action (e.g. "Walk the…", "See the…")`);
     }
     if ((d.highlights?.length ?? 0) !== nWhy) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs one per whyVisit: ${nWhy})`);
+    // Promise only what is there whenever a visitor arrives (WRITING.md → "Voice"): a passing state is never a reason.
+    for (const w of [...(d.whyVisit ?? []), ...(d.highlights ?? []), d.tagline ?? '']) {
+      const m = w.match(TRANSIENT);
+      if (m) add(it, 'transient', `"${w}" promises a passing state ("${m[0]}"): only what is there whenever a visitor arrives`);
+    }
     // Two or three tips by popularity (WRITING.md: 3 for rank 1–3, 2 for rank 4–5), each detail three to four lines on screen.
     const nTips = d.goodToKnow?.length ?? 0;
     if (nTips < 2 || nTips > 3) add(it, 'shape', `${nTips} goodToKnow (needs 2–3: 3 for rank 1–3, 2 for rank 4–5)`);
     for (const t of d.goodToKnow ?? []) if (t.detail.length > 160) add(it, 'shape', `goodToKnow "${t.title}" detail is ${t.detail.length} characters (max 160, aim ~120)`);
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
+    if ((d.bestTimeBlurb ?? '').includes(';')) add(it, 'voice', 'bestTimeBlurb has a semicolon: give a second thought its own sentence (WRITING.md)');
     for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {
       const m = (v ?? '').replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
     }

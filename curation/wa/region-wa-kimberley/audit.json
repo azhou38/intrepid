@@ -1,0 +1,120 @@
+[
+ {
+  "name": "Broome",
+  "wiki": "Broome, Western Australia",
+  "views": 97199,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Broome",
+   "wiki": "Broome, Western Australia",
+   "coordinates": {
+    "lat": -17.961944,
+    "lng": 122.236111
+   },
+   "coordinates_source": "wv listing geo tag (wv-Kimberley_(Western_Australia).txt: broome)",
+   "views": 97199,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Broome"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Broome,_Western_Australia"
+   ],
+   "note": "town: the Kimberley's main town and beach resort, the base for Cable Beach and the Dampier Peninsula"
+  }
+ },
+ {
+  "name": "Camballin",
+  "wiki": "Camballin, Western Australia",
+  "views": 1746,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Camballin",
+   "wiki": "Camballin, Western Australia",
+   "coordinates": {
+    "lat": -17.989675,
+    "lng": 124.192448
+   },
+   "coordinates_source": "wv listing geo tag (wv-Kimberley_(Western_Australia).txt: camballin)",
+   "views": 1746,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kimberley_(Western_Australia)",
+    "https://en.wikivoyage.org/wiki/Broome"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Camballin,_Western_Australia"
+   ],
+   "note": "small town on the Great Northern Highway with freshwater fishing on the Fitzroy River (no accommodation per source)"
+  }
+ },
+ {
+  "name": "El Questro Station",
+  "views": 3087,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "El Questro Station",
+   "coordinates": {
+    "lat": -16.00885,
+    "lng": 127.98075
+   },
+   "coordinates_source": "wikipedia:El Questro Wilderness Park",
+   "views": 3087,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kununurra",
+    "https://en.wikivoyage.org/wiki/Gibb_River_Road"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/El_Questro_Station"
+   ],
+   "note": "wilderness park: 700,000-acre station and wilderness park with gorges, springs and a resort",
+   "redirect_to": "El Questro Wilderness Park"
+  }
+ },
+ {
+  "name": "Kununurra Agricultural Show",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Kununurra Agricultural Show",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kununurra"
+   ],
+   "other_sources": [],
+   "note": "event: two-day agricultural show in mid July (not permanent)"
+  }
+ },
+ {
+  "name": "Purnululu National Park",
+  "views": 9016,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Purnululu National Park",
+   "coordinates": {
+    "lat": -17.448789,
+    "lng": 128.546055
+   },
+   "coordinates_source": "wv listing geo tag (wv-Kimberley_(Western_Australia).txt: purnululu national park)",
+   "views": 9016,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Purnululu_National_Park",
+    "https://exploreparks.dbca.wa.gov.au/park/purnululu-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Purnululu_National_Park"
+   ],
+   "note": "park: UNESCO-listed national park of the Bungle Bungle Range, with trails, gorges and two campgrounds"
+  }
+ }
+]

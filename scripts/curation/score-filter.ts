@@ -27,9 +27,14 @@ const REJECT: [RegExp, string][] = [
   [/^(?!.*\b(museum|gallery|garden|cave)\b).*\b(hospital|library|town hall|council chambers?|court ?house|post office|police station|primary school|high school|public school)\b/i, 'a civic building seen from the pavement'],
   [/\b(cenotaph|war memorial|memorial (hall|gates|park)|bridge of remembrance|honour roll|plaque)\b/i, 'a minor memorial'],
   [/\b(cruises?|ferry (service|terminal|timetable)|charters?|bus tours?|day tours?|tours? company|flights?|scenic flights?|helicopters?)\b/i, 'a vehicle or operator, not a place'],
-  [/\b(church|chapel|uniting|anglican|presbyterian|catholic parish|community hall|rsl club|bowling club|golf club)\b/i, 'a local church or club'],
+  [/\b(community hall|rsl club|bowling club|golf club)\b/i, 'a local club or hall'],
   [/\b(caravan park|holiday park|motel|hotel|backpackers|resort|hostel)\b/i, 'accommodation'],
 ];
+// A church, chapel or cathedral: never kept or rejected for being one (COVERAGE.md "What qualifies" 2). The judge decides whether a
+// visitor source names something to see or do there (Beagle Bay's mother-of-pearl altar) or it is a parish church seen from the street.
+// Natural features named after one (Cathedral Gorge, Chapel Rock) are not churches.
+const CHURCH = /\b(church|chapel|cathedral|basilica|uniting|anglican|presbyterian|catholic parish)\b/i;
+const CHURCH_FEATURE = /\b(church|chapel|cathedral)\s+(gorge|caves?|rocks?|peak|falls|range|beach|cove|pool|hill|spire)\b/i;
 // A candidate that is part of another place (an outlook on a track, a site inside a park) needs a judgement, never an auto-keep.
 // Names that look like a feature or an area rather than a place to go (a river, a catchment, a parkland, a raceway): never an
 // auto-keep, however good the score, because the judge must decide whether anything there is a visitor draw.
@@ -49,6 +54,7 @@ for (const c of cands) {
     out.push({ ...base, verdict: n >= 1 && views >= 300 ? 'keep' : 'marginal', rule: 'existing', reason: n >= 1 && views >= 300 ? 'existing spot with a counted source' : 'existing spot with no counted source or little interest: re-judge' });
     continue;
   }
+  if (CHURCH.test(c.name) && !CHURCH_FEATURE.test(c.name)) { out.push({ ...base, verdict: 'marginal', rule: 'church', reason: 'a church: keep only if a visitor source names something to see or do there, never for being a church' }); continue; }
   if (rej && n < 2) { out.push({ ...base, verdict: 'reject', rule: 'auto-reject', reason: rej[1] }); continue; }
   if (rej) { out.push({ ...base, verdict: 'marginal', rule: 'reject-signal-with-sources', reason: `${rej[1]}, but ${n} counted sources name it` }); continue; }
   // No counted source: never a script reject. The judge re-looks for a source first: a second-tier stop a real source names must not

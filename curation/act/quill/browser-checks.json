@@ -1,0 +1,37 @@
+{
+  "_note": "Checked in the in-app browser on 2026-10-24 (the sites block scripts). `set` replaces the shard's fields; `drop` removes a spot (closed or not for the public). The merge reads this after the shards and the fact-check facts.",
+  "drop": {
+    "canberra-38": "CSIRO Discovery Centre: closed to the public (CSIRO's own pages: closed to visitors in 2020, to school visits in 2025); the judge's keep rested on an out-of-date Wikivoyage listing."
+  },
+  "set": {
+    "canberra-1": { "hours": "9:00 AM – 5:00 PM", "free": true, "ticketUrl": "https://www.aph.gov.au/Visit_Parliament", "note": "aph.gov.au/Visit_Parliament/Plan_your_Visit: free admission, 9-5 on non-sitting days and 8:30-6 on sitting days (public galleries after 6 pm while sitting), closed Christmas Day, airport-style security screening (allow 15 minutes); no photo-ID requirement is stated." },
+    "canberra-3": { "hours": "10:00 AM – 5:00 PM", "free": true, "ticketUrl": "https://www.nga.gov.au/visit", "note": "nga.gov.au/visit: free admission, open every day 10-5, sculpture garden sunrise to 9 pm; a 2026-2030 capital works program closes parts of the gallery and sculpture garden temporarily." },
+    "canberra-4": { "hours": "9:00 AM – 5:00 PM", "free": true, "ticketUrl": "https://www.nma.gov.au/visit", "note": "nma.gov.au/visit: free general admission, daily 9-5, closed Christmas Day." },
+    "canberra-9": { "ticketUrl": "https://www.nationalarboretum.act.gov.au/visit", "note": "page loads and is titled 'Visit - National Arboretum'; its opening-hours widget renders by script and shows no text: hours stay unverified." },
+    "canberra-17": { "hours": "10:00 AM – 4:00 PM", "free": true, "ticketUrl": "https://www.nfsa.gov.au/plan-your-visit", "note": "nfsa.gov.au/plan-your-visit (the old /visit-us redirects): entry free, daily 10-4, closed Christmas Day and New Year's Day; the cinema and special events are ticketed." },
+    "canberra-31": { "costMin": 16.09, "costMax": 16.09, "currency": "AUD", "costBasis": "park", "costPer": "Per Vehicle/Day", "hours": "7:30 AM – 8:00 PM (to 6:00 PM in winter)", "ticketUrl": "https://www.tidbinbilla.act.gov.au/visit", "note": "tidbinbilla.act.gov.au/visit: day pass $16.09 per private vehicle (seniors/concession $9.66, motorcycle $6.01), reserve 7:30 am to 8 pm in daylight saving and to 6 pm otherwise, visitor centre 9-5 daily, closed Christmas Day and on total fire ban days." },
+    "canberra-34": { "ticketUrl": "https://www.stromloforestpark.act.gov.au/", "note": "page loads, titled 'Home - Stromlo Forest Park'; its opening hours render by script: hours and free entry stay on the Wikivoyage figures." },
+    "canberra-56": { "note": "historicplaces.com.au/calthorpes-house: adult $12, concession $10, under 12 free; entry by guided tour only; the hours widget renders by script." },
+    "canberra-57": { "note": "canberratracks.act.gov.au: church daily 9 am to 5 pm; schoolhouse museum Wed 10-12, Sat, Sun and public holidays 2-4." },
+    "canberra-10": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-ainslie-nature-reserve" },
+    "canberra-21": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/black-mountain-nature-reserve" },
+    "canberra-22": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/red-hill-nature-reserve" },
+    "canberra-30": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mulligans-flat-nature-reserve" },
+    "canberra-33": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/jerrabomberra-wetlands-nature-reserve" },
+    "canberra-42": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve" },
+    "canberra-43": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve" },
+    "canberra-45": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool" },
+    "canberra-46": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island" },
+    "canberra-47": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands" },
+    "canberra-53": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/the-pinnacle-nature-reserve" },
+    "canberra-54": { "ticketUrl": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout" },
+    "canberra-61": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/molonglo-gorge-nature-reserve" },
+    "canberra-64": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/goorooyarroo-nature-reserve" },
+    "canberra-65": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/jerrabomberra-west-grasslands-nature-reserve", "note": "access is by footpath through Callum Brae Nature Reserve (its car park starts the 8 km return, 3 hour Grassy Plains walk); access points are limited." },
+    "canberra-66": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/oakey-hill-nature-reserve" },
+    "canberra-67": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/wanniassa-hills-nature-reserve" },
+    "canberra-68": { "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/tuggeranong-hill-nature-reserve" },
+    "namadgi-national-park-1": { "note": "Parks ACT walking tracks page: the 400 m return walk to the Gibraltar Falls lookout is CLOSED until further notice (2026-10-24); the falls are also seen from the road." },
+    "namadgi-national-park-2": { "note": "Parks ACT walking tracks page: Booroomba Rocks is a Grade 4 walk, 2.5 km return from the Booroomba Rocks car park (about 1.5 hours)." }
+  }
+}

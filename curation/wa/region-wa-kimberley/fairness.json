@@ -1,0 +1,748 @@
+{
+ "region": "wa-kimberley",
+ "inside_destinations": {
+  "broome": 9,
+  "derby": 4,
+  "gibb-river-road": 6,
+  "kununurra": 5,
+  "wyndham": 4,
+  "purnululu": 4,
+  "total": 32,
+  "note": "32 spots of six proposed destinations; a further five kept candidates (Broome, Derby, Kununurra, Wyndham, Purnululu National Park) are the destinations themselves"
+ },
+ "standalone": 17,
+ "standalone_ids": [
+  "horizontal-falls",
+  "montgomery-reef",
+  "eighty-mile-beach",
+  "dampier-peninsula",
+  "sacred-heart-church-beagle-bay",
+  "fitzroy-crossing",
+  "danggu-geikie-gorge",
+  "halls-creek",
+  "china-wall",
+  "wolfe-creek-crater",
+  "mitchell-falls",
+  "mitchell-river-national-park",
+  "king-george-falls",
+  "prince-regent-national-park",
+  "el-questro-wilderness-park",
+  "emma-gorge",
+  "zebedee-springs"
+ ],
+ "new_destinations": [
+  {
+   "id": "broome",
+   "name": "Broome",
+   "rank": 3,
+   "spots": 9
+  },
+  {
+   "id": "derby",
+   "name": "Derby",
+   "rank": 5,
+   "spots": 4
+  },
+  {
+   "id": "gibb-river-road",
+   "name": "Gibb River Road",
+   "rank": 3,
+   "spots": 6
+  },
+  {
+   "id": "kununurra",
+   "name": "Kununurra",
+   "rank": 3,
+   "spots": 5
+  },
+  {
+   "id": "wyndham",
+   "name": "Wyndham",
+   "rank": 5,
+   "spots": 4
+  },
+  {
+   "id": "purnululu",
+   "name": "Purnululu National Park",
+   "rank": 2,
+   "spots": 4
+  }
+ ],
+ "kept_total": 54,
+ "lowest_kept": [
+  {
+   "name": "Zebedee Springs",
+   "views": 0,
+   "counted_sources": 0,
+   "placed_as": "zebedee-springs"
+  },
+  {
+   "name": "China Wall",
+   "views": 0,
+   "counted_sources": 0,
+   "placed_as": "china-wall"
+  },
+  {
+   "name": "Sacred Heart Church, Beagle Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "sacred-heart-church-beagle-bay"
+  },
+  {
+   "name": "Town Beach, Broome",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "broome-3"
+  },
+  {
+   "name": "Japanese Cemetery, Broome",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "broome-8"
+  },
+  {
+   "name": "Broome Historical Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "broome-9"
+  },
+  {
+   "name": "Willie Creek Pearl Farm",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "broome-5"
+  },
+  {
+   "name": "Malcolm Douglas Crocodile Park",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "broome-6"
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Canning Stock Route",
+   "views": 44694,
+   "counted_sources": 0,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): A route, not a place you stop at for half an hour; Wikivoyage calls it beyond its scope; most of its length and its southern trailhead (Wiluna) lie outside the Kimberley (probably wa-golden-outback / Pilbara), so the proposer must decide one region and pin it at the midpoint; permits needed."
+  },
+  {
+   "name": "Gwion Gwion Rock Paintings",
+   "views": 20324,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Not one place: an art style found at hundreds of remote sites, mostly reached on guided tours or flights (an operator), and the candidate has no coordinates; better listed as a named accessible site (e.g. on the Mitchell Falls walk or near Kalumburu) if a source names one, otherwise mentioned in a destination description."
+  },
+  {
+   "name": "Bungle Bungle Range",
+   "views": 13502,
+   "counted_sources": 2,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 3 duplicate of Purnululu National Park: the range is the park's headline landform and the park is named for the place (COVERAGE: a park destination is named as the park); kept as one under Purnululu National Park."
+  },
+  {
+   "name": "Buccaneer Archipelago",
+   "views": 11250,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Visitors go for Horizontal Falls, a candidate of its own inside the archipelago; the archipelago as a whole is an area seen only from boats and planes, so it risks being a near-duplicate wrapper of Horizontal Falls."
+  },
+  {
+   "name": "Kalumburu",
+   "views": 10216,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Neither source names something to see in the community itself, only the two permits needed to enter; access is at the Traditional Owners' discretion and may be closed. The candidate note is wrong: Mitchell Falls is reached from a turn-off on Kalumburu Road, not from Kalumburu."
+  },
+  {
+   "name": "Gibb River Road",
+   "views": 10177,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): A road is the way you get there, and its places (Windjana, Tunnel Creek, Bell, Galvans, Manning, Emma gorges, El Questro) are spots of their own (A spot is a place); the owner should decide whether a 647 km 4WD route is a spot, pinned at its midpoint."
+  },
+  {
+   "name": "Warmun",
+   "views": 4217,
+   "counted_sources": 2,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Only one-line mentions, no own guide section, and an Aboriginal community where the visitor draw is the art centre rather than the town: the Warmun Art Centre may be the right spot, or it is a gateway village whose draw is the journey beyond (Pipiriki benchmark -> review)."
+  },
+  {
+   "name": "James Price Point",
+   "views": 3970,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Re-looked for a counted source and found none: only science news on the Walmadany dinosaur tracks and a Q&A travel blog that says there are no tourist facilities; the tracks are intertidal and visible only at low tide (rule 1 fails)."
+  },
+  {
+   "name": "Cape Leveque",
+   "views": 3518,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Kooljaman, the resort that held the visitor access, closed indefinitely on 1 Nov 2021 and no reopening was found; an operator says Cape Leveque point is closed indefinitely and access is limited (rule 2: open to the public is unconfirmed)."
+  },
+  {
+   "name": "Roebuck Bay",
+   "views": 3351,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: An area, not a stop: visitors reach the bay at Broome Bird Observatory and Town Beach, both candidates of their own, so the bay is a near-duplicate of them (rule 3). Wikivoyage Broome names it only in passing."
+  },
+  {
+   "name": "Beagle Bay",
+   "views": 3108,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Duplicate of Sacred Heart Church, Beagle Bay: the only thing any visitor source names here is the church (Wikivoyage Kimberley), so the community is a wrapper around its own attraction (COVERAGE: a town is a spot only when the town itself is a draw)."
+  },
+  {
+   "name": "One Arm Point",
+   "views": 2716,
+   "counted_sources": 0,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Several operators report the hatchery closed for repairs after cyclone damage; a community permit is needed; without the hatchery the draw is the views and crafts only."
+  },
+  {
+   "name": "Camballin",
+   "views": 1746,
+   "counted_sources": 2,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2: a town with nothing a source names to see; Wikivoyage gives one line ('has fishing on the Fitzroy River') and lists it only as a place the highway passes; no accommodation per source. (Audit disagreed: script keep, auditor review; verdicts.json records reject, so it is not placed; the owner may treat it as review.)"
+  },
+  {
+   "name": "Pioneer Cemetery, Wyndham",
+   "views": 1592,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 3: minor historic cemetery; Wikivoyage gives it one line (12 meatworks graves) and no other visitor source singles it out; the 1,592 views are borrowed from an unrelated title."
+  },
+  {
+   "name": "Home Valley Station",
+   "views": 1577,
+   "counted_sources": 0,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): It is a station resort (accommodation business); the gorges and Cockburn Range views it offers are the places, and none is named here as a spot."
+  },
+  {
+   "name": "Drysdale River National Park",
+   "views": 1497,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2: DBCA page (fetched) says there is no vehicle access and no infrastructure, entry by permit only (not issued Jan-May), best seen from a scenic flight; a rarely visited wilderness that a visitor cannot simply go to (COVERAGE: rarely visited places fail)."
+  },
+  {
+   "name": "Lombadina",
+   "views": 1456,
+   "counted_sources": 0,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Only one counted source and that one not readable now; the community's own site is an operator page; a visit is on community terms with seasonal weekend closures, and the beach and church are modest."
+  },
+  {
+   "name": "Mount Elizabeth Station",
+   "views": 1344,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Brief: accommodation and stations are rejected as businesses; the gorges are the places and should be the spots if sources name them. Keep only if the station itself is treated as a destination base."
+  },
+  {
+   "name": "Piccaninny Crater",
+   "views": 1198,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2: Wikivoyage Purnululu says it 'can really only be seen from the air'; eroded beyond recognition on the ground, with no visitor access or trail, so a visitor cannot go and see it."
+  },
+  {
+   "name": "MV Koolama",
+   "views": 1059,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Visible only at low tide and only from the wharf; a ten-minute look with a single source."
+  },
+  {
+   "name": "Cape Londonderry",
+   "views": 1056,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Re-looked for a counted source and found none: it appears only in a cruise operator's helicopter-flight brochure; no road access and nothing a visitor can do there (rules 1 and 2)."
+  },
+  {
+   "name": "Mornington Wilderness Camp",
+   "views": 519,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Closed: Wikivoyage Gibb River Road says 'Mornington Camp has closed down' (rule 2), and it is an operator's camp rather than a place."
+  },
+  {
+   "name": "Kimberley Marine Park",
+   "views": 453,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2 and 3: a marine-park administrative zone along the whole coast, not a place a visitor goes to; its draws (Horizontal Falls, Montgomery Reef, King George Falls) are judged on their own."
+  },
+  {
+   "name": "Bunuba National Park",
+   "views": 394,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 1: Wikipedia only; no DBCA visitor page found (404) and no tourism listing names it; its visitor sights are listed under their own names."
+  },
+  {
+   "name": "Lawley River National Park",
+   "views": 385,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 1: Wikipedia only; no DBCA visitor page (404) or tourism source; no visitor access described."
+  },
+  {
+   "name": "Niiwalarra Islands National Park",
+   "views": 321,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 1: Wikipedia only; no DBCA visitor page (404) or tourism listing; offshore islands with no visitor access described."
+  },
+  {
+   "name": "Warlibirri National Park",
+   "views": 288,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 1: Wikipedia only; no DBCA visitor page (Explore Parks 404) or tourism source names it as somewhere to go."
+  },
+  {
+   "name": "Staircase to the Moon",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "rejected",
+   "reason": "What qualifies: Duplicate of Town Beach, Broome: a seasonal phenomenon whose place is Town Beach (Wikivoyage Broome: 'the favourite viewing spot is Town Beach'); keep it as one by putting the phenomenon and its dry-season full-moon dates in Town Beach's bio (brief: a seasonal phenomenon is kept as its place)."
+  },
+  {
+   "name": "Imintji",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A service stop (campground and community store) rather than a draw: Wikivoyage Gibb River Road lists an art centre, camping and store; Visit Broome says the store is not open in 2026, so no fuel. Fails rule 2 (a business/services stop) and rule 3 (its visitors are there for Bell Gorge)."
+  },
+  {
+   "name": "Reddell Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): One passing sentence and nothing to do beyond a quiet beach; close to Gantheaume Point, so it may be a near-duplicate of that stop."
+  },
+  {
+   "name": "Kabbarli Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): One source, which also calls the approach grubby through the port industrial area; a short look, similar red rocks to Gantheaume Point nearby."
+  },
+  {
+   "name": "Pearl Luggers",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): It is Willie Creek's pearl showroom: a shop with an attached tour (brief: shops and operators are rejected); one counted source."
+  },
+  {
+   "name": "Short Street Gallery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A commercial gallery selling art (Wikivoyage Broome: 'for sale'), i.e. a shop (rule 2)."
+  },
+  {
+   "name": "Broome Fruit Bat Roost",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): One sentence in one source, a dusk-only spectacle with no defined site, and a short look; may be too minor."
+  },
+  {
+   "name": "SSJG Heritage Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Opens only weekday mornings Feb-Nov, by donation, a small single-room exhibit; one source."
+  },
+  {
+   "name": "Shinju Matsuri",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A festival held the last two weeks of August (rule 4)."
+  },
+  {
+   "name": "Broome Turf Club",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A racecourse with races only May-August (rule 4: a recurring event venue, not a place to visit when you arrive)."
+  },
+  {
+   "name": "Broome Golf Club",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2/Leave out: a sports club; Wikivoyage mentions it only in passing, noting most visitors come just for a meal at the clubhouse, i.e. a restaurant."
+  },
+  {
+   "name": "Frosty's Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): One sentence in one source; a ten-minute look; probably only worth it alongside the Boab Prison Tree."
+  },
+  {
+   "name": "Norval Gallery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Temporarily closed per Wikivoyage Derby, and a commercial gallery selling art (rule 2)."
+  },
+  {
+   "name": "One Mile Dinner Camp",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A picnic spot at the end of the golf course, a local reserve used at sundown (Leave out: local parks and reserves; rule 3, minor historic site)."
+  },
+  {
+   "name": "Derby Speedway",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A motorsport venue with races May-October (rule 4: recurring events)."
+  },
+  {
+   "name": "Mud Crab Races, Derby",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: An event held two or three times a year (rule 4)."
+  },
+  {
+   "name": "Derby Sportsmen's Club",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A golf club, a local sports amenity (rule 2)."
+  },
+  {
+   "name": "Derby Memorial Swimming Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: A local public pool, an amenity rather than a visitor draw (rule 2; Leave out)."
+  },
+  {
+   "name": "Adcock Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): One passing line; no second counted source found (Visit Broome and DBCA do not list it); a lesser gorge beside better-known ones."
+  },
+  {
+   "name": "Wunnamurra Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): A bare mention with no description; on a private cattle station reached through it; a marginal place needs two sources."
+  },
+  {
+   "name": "Warla Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): A bare mention with no description; on a private cattle station; a marginal place needs two sources."
+  },
+  {
+   "name": "Queen Victoria's Head",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): One line in one source; a look from the road, not a half-hour stop."
+  },
+  {
+   "name": "Mitchell Plateau",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 3: duplicate of Mitchell River National Park / Mitchell Falls. The plateau is the park's area; Wikivoyage only names it as the destination of Kalumburu Road, and sources name the falls and park as the place visitors go."
+  },
+  {
+   "name": "The Domes",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): For keep: DBCA lists the Domes Walk as its own trail and it is where visitors see the iconic beehives up close; if the range itself is listed as the park or a broad area, this walk may deserve its own spot."
+  },
+  {
+   "name": "The Window",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Rule 3: it is a point along the Piccaninny Creek bed route (the same walk as Piccaninny Creek Lookout and Whip Snake Gorge); DBCA does not give it its own heading. Likely better folded into one Piccaninny Gorge/Creek spot."
+  },
+  {
+   "name": "Whip Snake Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 3: part of a larger route: a side canyon reached by continuing past The Window, a 10 km return extension of the Piccaninny Creek walk; one Wikivoyage line, no separate DBCA entry."
+  },
+  {
+   "name": "Piccaninny Creek Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Rule 3: it branches off the Cathedral Gorge trail and shares the Piccaninny car park with The Domes, Cathedral Gorge and The Window; may be best as one Piccaninny Creek spot rather than a separate lookout."
+  },
+  {
+   "name": "Osmand Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 3: a minor lookout on the Bloodwoods/Escarpment trail beside Echidna Chasm; Wikivoyage gives one line and DBCA only names it as a destination from the Echidna car park, not a draw in itself."
+  },
+  {
+   "name": "Diversion Dam",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Rule 3: it is the downstream end of Lake Kununurra and carries the highway; a picnic/fishing pull-out more for locals than visitors; Australia's North West does not single it out."
+  },
+  {
+   "name": "Elephant Rock",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Mostly seen from Lily Creek Lagoon or the highway; Wikivoyage says the climb is rough, unmarked and underwhelming, so it may be a view rather than a place to go (near-duplicate of Lily Creek Lagoon)."
+  },
+  {
+   "name": "Celebrity Tree Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Wikivoyage itself says several trees have died and plaques have dropped off, so there is little to see; arguably an ordinary town park (negative benchmark) and the venue of the Ord Valley Muster."
+  },
+  {
+   "name": "Lily Creek Lagoon",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Rule 3: a side-arm of Lake Kununurra, so a near-duplicate if Lake Kununurra is kept; a short waterside stop in town."
+  },
+  {
+   "name": "Kununurra Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Small volunteer museum with weekday-afternoon hours and no second source; a 'only if you're nearby anyway' stop."
+  },
+  {
+   "name": "Lake Kununurra Golf Club",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2/Leave out: a sports club; Wikivoyage lists it as a golf course, not an attraction a traveller goes out of their way for."
+  },
+  {
+   "name": "Kununurra Leisure Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2: a local gym and public pool (amenity), not a visitor attraction."
+  },
+  {
+   "name": "Ord Valley Muster",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 4: a week-long annual festival in May, not a permanent place; belongs in Kununurra's best-time text."
+  },
+  {
+   "name": "Kununurra Agricultural Show",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 4: an event (two days in mid July per Wikivoyage's Events section), not a permanent place."
+  },
+  {
+   "name": "Kununurra Race Club",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 4: a venue that only matters on race and rodeo days in the dry season; otherwise nothing to see."
+  },
+  {
+   "name": "Afghan Cemetery, Wyndham",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Rule 3: a small historic cemetery and a short look; only one counted source; may be a minor memorial."
+  },
+  {
+   "name": "Wyndham Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Volunteer-run with erratic hours, open Apr-Oct 10-2 only; a short visit; may be closed when a visitor arrives (rule 2/4 risk)."
+  },
+  {
+   "name": "Fisherman's Jetty, Wyndham",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 3: a working fishing jetty given one line in Wikivoyage as a place to spot saltwater crocodiles; no second source and not a distinct draw."
+  },
+  {
+   "name": "Three Mile Valley",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): No distance, trail or managing agency named; possibly a local walk only. Needs a second source before it goes in."
+  },
+  {
+   "name": "Prison Boab Memorial Swimming Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "rejected",
+   "reason": "What qualifies: Rule 2: a town swimming pool (local amenity), not a visitor attraction."
+  },
+  {
+   "name": "Chinatown",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Rule 2: Wikivoyage describes it as mainly shops and cafes ('don't expect gongs'); without a second source naming something to see (heritage buildings, Sun Pictures, pearl showrooms) it is a shopping strip. Name 'Chinatown' needs a wiki disambiguator."
+  },
+  {
+   "name": "Chamberlain Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "sent to review",
+   "reason": "Review (owner decides): Rule 3 and 2: inside El Questro Wilderness Park and seen only on the operator's boat cruise (May-Sep), so it may be part of an El Questro spot rather than distinct."
+  }
+ ],
+ "stronger_left_out_note": "Every left-out candidate scoring above the lowest kept (0 views, 0 counted sources) is listed; each has the judge's What-qualifies reason (rejects) or the skeptic's objection (reviews). The highest-scored ones: Canning Stock Route (review; wa-golden-outback places it), Gwion Gwion Rock Paintings (review: an art style at hundreds of sites, not one place), Bungle Bungle Range (merged into the Purnululu destination itself), Buccaneer Archipelago (review: fold into Horizontal Falls), Kalumburu (review: permits, nothing named to see), Gibb River Road (review as a spot; proposed as a destination). No strong outsider is left out without a concrete reason.",
+ "strongest_outsiders": [
+  {
+   "name": "Wolfe Creek Crater",
+   "views": 33990,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "standalone spot wolfe-creek-crater"
+  },
+  {
+   "name": "Halls Creek",
+   "views": 17731,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "standalone spot halls-creek"
+  },
+  {
+   "name": "Horizontal Falls",
+   "views": 16632,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "standalone spot horizontal-falls"
+  },
+  {
+   "name": "Fitzroy Crossing",
+   "views": 13179,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "standalone spot fitzroy-crossing"
+  },
+  {
+   "name": "Buccaneer Archipelago",
+   "views": 11250,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Review: Visitors go for Horizontal Falls, a candidate of its own inside the archipelago; the archipelago as a whole is an area seen only from boats and planes, so it risks being a near-duplicate wrapper of Horizontal Falls."
+  },
+  {
+   "name": "Kalumburu",
+   "views": 10216,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Review: Neither source names something to see in the community itself, only the two permits needed to enter; access is at the Traditional Owners' discretion and may be closed. The candidate note is wrong: Mitchell Falls is reached from a turn-off on Kalumburu Road, not from Kalumburu."
+  },
+  {
+   "name": "Eighty Mile Beach",
+   "views": 9911,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "placed_as": "standalone spot eighty-mile-beach"
+  },
+  {
+   "name": "Dampier Peninsula",
+   "views": 6277,
+   "counted_sources": 3,
+   "verdict": "keep",
+   "placed_as": "standalone spot dampier-peninsula"
+  },
+  {
+   "name": "Warmun",
+   "views": 4217,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Review: Only one-line mentions, no own guide section, and an Aboriginal community where the visitor draw is the art centre rather than the town: the Warmun Art Centre may be the right spot, or it is a gateway village whose draw is the journey beyond (Pipiriki benchmark -> review)."
+  },
+  {
+   "name": "James Price Point",
+   "views": 3970,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "What qualifies: Re-looked for a counted source and found none: only science news on the Walmadany dinosaur tracks and a Q&A travel blog that says there are no tourist facilities; the tracks are intertidal and visible only at low tide (rule 1 fails)."
+  },
+  {
+   "name": "Cape Leveque",
+   "views": 3518,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Review: Kooljaman, the resort that held the visitor access, closed indefinitely on 1 Nov 2021 and no reopening was found; an operator says Cape Leveque point is closed indefinitely and access is limited (rule 2: open to the public is unconfirmed)."
+  },
+  {
+   "name": "Beagle Bay",
+   "views": 3108,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "What qualifies: Duplicate of Sacred Heart Church, Beagle Bay: the only thing any visitor source names here is the church (Wikivoyage Kimberley), so the community is a wrapper around its own attraction (COVERAGE: a town is a spot only when the town itself is a draw)."
+  },
+  {
+   "name": "Montgomery Reef",
+   "views": 3108,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "placed_as": "standalone spot montgomery-reef"
+  },
+  {
+   "name": "El Questro Station",
+   "views": 3087,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "standalone spot el-questro-wilderness-park"
+  },
+  {
+   "name": "One Arm Point",
+   "views": 2716,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Review: Several operators report the hatchery closed for repairs after cyclone damage; a community permit is needed; without the hatchery the draw is the views and crafts only."
+  }
+ ],
+ "benchmark": {
+  "note": "The NZ benchmark list (COVERAGE step 6) has no Kimberley places; these are its Kimberley analogues.",
+  "gateway_village_to_review": "Warmun (Purnululu gateway community) sent to review, as Pipiriki would be: pass",
+  "long_feature_at_its_access": "Eighty Mile Beach placed standalone at its main access point (the caravan park), not under a neighbour: pass",
+  "place_not_vehicle": "Horizontal Falls, Montgomery Reef, King George Falls, Prince Regent NP, Lake Argyle and Chamberlain Gorge are the places; no seaplane, cruise or boat tour is a spot: pass",
+  "phenomenon_not_spot": "Staircase to the Moon merged into Town Beach: pass",
+  "events_rejected": "Shinju Matsuri, Ord Valley Muster, Kununurra Agricultural Show, Mud Crab Races, Broome Turf Club, speedway rejected (rule 4): pass",
+  "amenities_rejected": "golf clubs, public pools, leisure centre rejected (rule 2): pass",
+  "town_wrapper": "Beagle Bay rejected as a wrapper for Sacred Heart Church; Broome, Derby, Kununurra and Wyndham are destinations, not spots beside their attractions: pass",
+  "park_and_feature": "Wolfe Creek Crater, Windjana Gorge, Tunnel Creek, Danggu Geikie Gorge kept once each (park and feature one place): pass"
+ },
+ "lowest_kept_note": "Zebedee Springs and China Wall carry 0 counted sources in verdicts.json, though the judge's re-look found Tourism WA attraction pages for both (and Australia's North West for China Wall)."
+}

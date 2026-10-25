@@ -1,0 +1,3119 @@
+{
+ "region": "wa-south-west",
+ "note": "Western Australia has no destinations or spots in the app yet: every destination below is a proposal for the owner, not added. Placed: every skeptic/verdict keep (83), two of them merged into another kept spot. Reviews are listed, not placed. Coordinates marked in needs_research are hints only; every pin is resolved with resolve-pin.py in the next stage, and hours, cost and ticketUrl go to Pipeline C research. Names follow the judges' notes (Black Diamond Lake, King Jarrah).",
+ "destinations": [
+  {
+   "id": "margaret-river-region",
+   "name": "Margaret River Region",
+   "category": "nature",
+   "rank": 2,
+   "coordinates": {
+    "lat": -33.955,
+    "lng": 115.075
+   },
+   "coordinates_source": "wikipedia:Margaret River, Western Australia (the town, the region's visitor hub and the middle of its spots between the two capes)",
+   "defaultZoomSpanKm": 65,
+   "name_evidence": {
+    "source": "westernaustralia.com (Tourism WA): travel stories \"Bays, Beaches and Sting Rays in the Margaret River Region\" and the page \"Margaret River region beaches\"; margaretriver.com, the regional board (Margaret River Busselton Tourism Association); Wikivoyage \"Margaret River\": \"now the common term for the region between the capes\"",
+    "wording": "Margaret River Region"
+   },
+   "shape_note": "The named region rather than the inland town: its draws (caves, lighthouses, surf beaches, wineries, karri forest) run 95 km from Cape Naturaliste to Cape Leeuwin, and the town is one stop in the middle. Leeuwin-Naturaliste National Park covers the same strip; under \"No overlapping destinations\" the region visitors plan around is the destination and the park is its spot (a park as a spot of a region, not of another park). Busselton, inside the span on its north-east edge, is proposed as its own city destination (a separate base, as Blenheim is to Marlborough); the alternative is to fold Busselton's four spots in here, since the regional board brands Busselton as part of the Margaret River Region.",
+   "spots": [
+    "margaret-river-region-1",
+    "margaret-river-region-2",
+    "margaret-river-region-3",
+    "margaret-river-region-4",
+    "margaret-river-region-5",
+    "margaret-river-region-6",
+    "margaret-river-region-7",
+    "margaret-river-region-8",
+    "margaret-river-region-9",
+    "margaret-river-region-10",
+    "margaret-river-region-11",
+    "margaret-river-region-12",
+    "margaret-river-region-13",
+    "margaret-river-region-14",
+    "margaret-river-region-15",
+    "margaret-river-region-16",
+    "margaret-river-region-17",
+    "margaret-river-region-18",
+    "margaret-river-region-19",
+    "margaret-river-region-20",
+    "margaret-river-region-21",
+    "margaret-river-region-22",
+    "margaret-river-region-23",
+    "margaret-river-region-24",
+    "margaret-river-region-25",
+    "margaret-river-region-26",
+    "margaret-river-region-27",
+    "margaret-river-region-28",
+    "margaret-river-region-29",
+    "margaret-river-region-30",
+    "margaret-river-region-31",
+    "margaret-river-region-32",
+    "margaret-river-region-33",
+    "margaret-river-region-34"
+   ],
+   "spot_count": 34,
+   "farthest_spot_km": 46.9,
+   "action": "new-destination (proposal for the owner; not added)"
+  },
+  {
+   "id": "busselton",
+   "name": "Busselton",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "lat": -33.64777778,
+    "lng": 115.34583333
+   },
+   "coordinates_source": "wikipedia:Busselton",
+   "defaultZoomSpanKm": 26,
+   "name_evidence": {
+    "source": "Wikivoyage \"Busselton\" (own page, Cities list of South West (Western Australia)); westernaustralia.com places-to-visit/margaret-river-and-the-south-west/busselton",
+    "wording": "Busselton"
+   },
+   "shape_note": "Sizable city and regional hub (COVERAGE \"Sizable settlements are destinations\"), with its own jetty, museums and homestead; Dunsborough, Cape Naturaliste and Meelup are filed under the Margaret River Region, which visitors reach them from.",
+   "spots": [
+    "busselton-1",
+    "busselton-2",
+    "busselton-3",
+    "busselton-4"
+   ],
+   "spot_count": 4,
+   "farthest_spot_km": 18.7,
+   "action": "new-destination (proposal for the owner; not added)"
+  },
+  {
+   "id": "bunbury",
+   "name": "Bunbury",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "lat": -33.32722222,
+    "lng": 115.63694444
+   },
+   "coordinates_source": "wikipedia:Bunbury, Western Australia",
+   "defaultZoomSpanKm": 15,
+   "name_evidence": {
+    "source": "Wikivoyage \"Bunbury\" (own page; South West Cities list: \"A bustling port city with fine beaches, surfing and dolphins\"); westernaustralia.com \"Bunbury Geographe\" page",
+    "wording": "Bunbury"
+   },
+   "shape_note": "The region's largest city with five kept spots inside 3 km. The Ferguson Valley, Gnomesville, Harvey and Donnybrook are 23-36 km inland and stand alone (see their entries).",
+   "spots": [
+    "bunbury-1",
+    "bunbury-2",
+    "bunbury-3",
+    "bunbury-4",
+    "bunbury-5"
+   ],
+   "spot_count": 5,
+   "farthest_spot_km": 1.8,
+   "action": "new-destination (proposal for the owner; not added)"
+  },
+  {
+   "id": "collie",
+   "name": "Collie",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "lat": -33.363,
+    "lng": 116.156
+   },
+   "coordinates_source": "wikipedia:Collie, Western Australia (needs an OSM place=town point)",
+   "defaultZoomSpanKm": 30,
+   "name_evidence": {
+    "source": "Wikivoyage \"Collie\" (own page; South West Cities list: \"A historical coal mining town among the tall trees\"); westernaustralia.com South West page",
+    "wording": "Collie"
+   },
+   "shape_note": "Wellington National Park has only three kept spots of its own (the dam, Honeymoon Pool, the Wambenger Trails), below the four a park needs, so the park and its sights go under the town visitors base from (COVERAGE: too-thin parks go under the nearest real destination). Wikivoyage also lists Wellington National Park under South West \"Other destinations\": the owner may prefer the park as the destination with Collie's two mine lakes as standalone spots. Collie itself is the destination, so it is not also a spot.",
+   "spots": [
+    "collie-1",
+    "collie-2",
+    "collie-3",
+    "collie-4",
+    "collie-5",
+    "collie-6"
+   ],
+   "spot_count": 6,
+   "farthest_spot_km": 20.3,
+   "action": "new-destination (proposal for the owner; not added)"
+  },
+  {
+   "id": "southern-forests",
+   "name": "Southern Forests",
+   "category": "nature",
+   "rank": 3,
+   "coordinates": {
+    "lat": -34.445,
+    "lng": 116.034
+   },
+   "coordinates_source": "wikipedia:Pemberton, Western Australia (the region's main visitor hub; needs an OSM place=town point)",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "southernforestsandvalleys.com, the regional tourism organisation (\"Southern Forests & Valleys\"); westernaustralia.com travel story \"Feasting Al Fresco in the Southern Forests\" and its \"Southern Forests Wine Region\" page (Pemberton and Manjimup)",
+    "wording": "Southern Forests"
+   },
+   "shape_note": "The named region rather than Pemberton alone: Pemberton's draws are the climbing trees, falls and parks around it, and Manjimup (25 km) and Northcliffe (21 km) share them. No park here has four kept spots of its own (Warren 1, D'Entrecasteaux 1 here, Shannon 0), so the parks are spots of the region. Wikivoyage has no \"Southern Forests\" page (it has Pemberton), so the name rests on the regional brand and Tourism WA; the fallback is \"Pemberton\" with the same spots.",
+   "spots": [
+    "southern-forests-1",
+    "southern-forests-2",
+    "southern-forests-3",
+    "southern-forests-4",
+    "southern-forests-5",
+    "southern-forests-6",
+    "southern-forests-7",
+    "southern-forests-8",
+    "southern-forests-9",
+    "southern-forests-10",
+    "southern-forests-11",
+    "southern-forests-12",
+    "southern-forests-13"
+   ],
+   "spot_count": 13,
+   "farthest_spot_km": 44.3,
+   "action": "new-destination (proposal for the owner; not added)"
+  },
+  {
+   "id": "blackwood-valley",
+   "name": "Blackwood Valley",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "lat": -33.909,
+    "lng": 115.962
+   },
+   "coordinates_source": "midpoint of its town spots (Wikipedia points of Bridgetown, Balingup and Nannup), per COVERAGE \"centre it on the middle of its spots\"",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": {
+    "source": "westernaustralia.com \"Blackwood Valley Wine Region\" page (Bridgetown, Balingup, Nannup, Boyup Brook); southernforestsandvalleys.com (\"Southern Forests & Valleys\": the \"Valleys\" are the Blackwood towns)",
+    "wording": "Blackwood Valley"
+   },
+   "shape_note": "Three small Blackwood River towns 24-35 km apart, each modest alone, plus the river and Golden Valley Tree Park: five kept spots that one valley drive links. The weakest name of the six (a wine-region and valley name, not a Wikivoyage page): if the owner rejects it, its five spots are standalone.",
+   "spots": [
+    "blackwood-valley-1",
+    "blackwood-valley-2",
+    "blackwood-valley-3",
+    "blackwood-valley-4",
+    "blackwood-valley-5"
+   ],
+   "spot_count": 5,
+   "farthest_spot_km": 19.9,
+   "action": "new-destination (proposal for the owner; not added)"
+  }
+ ],
+ "entries": [
+  {
+   "name": "Cape Leeuwin Lighthouse",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-1",
+   "wiki": "Cape Leeuwin Lighthouse",
+   "category": "landmark",
+   "icon": "🗼",
+   "coordinates": {
+    "lat": -34.37416667,
+    "lng": 115.13583333
+   },
+   "coordinates_source": "wikipedia:Cape Leeuwin Lighthouse (resolve to the OSM man_made=lighthouse)",
+   "bio": "Lighthouse built in 1895 on Cape Leeuwin, where the Indian and Southern oceans meet, with guided tours of the tower.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3797,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Headline of the southern cape; carries Cape Leeuwin (review) in its bio, as the skeptic advised.",
+   "distance_from_destination_km": 46.9
+  },
+  {
+   "name": "Ngilgi Cave",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-2",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🦇",
+   "coordinates": {
+    "lat": -33.6422,
+    "lng": 115.0342
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Leeuwin-Naturaliste National Park; resolve to the OSM cave entrance)",
+   "bio": "Show cave just outside Yallingup with a long history of Aboriginal and European use and guided or self-guided tours.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3869,
+   "counted_sources": 3,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 35.0
+  },
+  {
+   "name": "Cape to Cape Track",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-3",
+   "wiki": null,
+   "category": "hike",
+   "icon": "🥾",
+   "coordinates": null,
+   "coordinates_source": "pin at the midpoint of the whole OSM route (resolve-pin.py); the candidate point was a LOW footway segment",
+   "bio": "Coastal walking track from Cape Naturaliste to Cape Leeuwin, walked over several days or in day sections.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4788,
+   "counted_sources": 3,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Run-wide decision: placed once, in wa-south-west, at the midpoint of the whole route; the whole track lies inside the region's span.",
+   "distance_from_destination_km": 6.9
+  },
+  {
+   "name": "Margaret River",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-4",
+   "wiki": "Margaret River, Western Australia",
+   "category": "landmark",
+   "icon": "🍷",
+   "coordinates": {
+    "lat": -33.955,
+    "lng": 115.075
+   },
+   "coordinates_source": "wikipedia:Margaret River, Western Australia (rounded: resolve to OSM place=town)",
+   "bio": "Inland town at the heart of the wine region, the main base for its wineries, surf beaches, caves and forests.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 31859,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). The town is the destination's hub and has its own main street of food and wine; the region carries the destination name, so the town stays a spot (skeptic: \"proposer decides destination vs spot\").",
+   "distance_from_destination_km": 0.0
+  },
+  {
+   "name": "Jewel Cave",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-5",
+   "wiki": "Jewel Cave (Western Australia)",
+   "category": "nature",
+   "icon": "💎",
+   "coordinates": {
+    "lat": -34.2917,
+    "lng": 115.13
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve to the OSM cave entrance)",
+   "bio": "Show cave south of Margaret River with the world's longest straw stalactite found in a show cave.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 37.8
+  },
+  {
+   "name": "Lake Cave",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-6",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🕳️",
+   "coordinates": {
+    "lat": -34.079224,
+    "lng": 115.030169
+   },
+   "coordinates_source": "OSM natural=cave_entrance \"Lake Cave\" (LOW: confirm with resolve-pin.py)",
+   "bio": "Show cave with a permanent underground lake and the Suspended Table formation, seen on guided tours.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 14.4
+  },
+  {
+   "name": "Mammoth Cave",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-7",
+   "wiki": "Mammoth Cave (Western Australia)",
+   "category": "nature",
+   "icon": "🦴",
+   "coordinates": {
+    "lat": -34.0581,
+    "lng": 115.031
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve to the OSM cave entrance)",
+   "bio": "Self-guided show cave on Caves Road with the largest megafauna fossil deposit in Australia.",
+   "hours": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3347,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 12.2
+  },
+  {
+   "name": "Surfers Point",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-8",
+   "wiki": null,
+   "category": "beach",
+   "icon": "🏄",
+   "coordinates": {
+    "lat": -33.976757,
+    "lng": 114.985918
+   },
+   "coordinates_source": "OSM tourism=viewpoint \"Surfers Point\" (HIGH)",
+   "bio": "Margaret River's main surf break at Prevelly, with lawns for watching the surf and whales from June to December.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Carries Prevelly (review) if the owner keeps the village as its own stop.",
+   "distance_from_destination_km": 8.6
+  },
+  {
+   "name": "Cape Naturaliste Lighthouse",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-9",
+   "wiki": "Cape Naturaliste Lighthouse",
+   "category": "landmark",
+   "icon": "🗼",
+   "coordinates": {
+    "lat": -33.53736,
+    "lng": 115.018737
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve to the OSM man_made=lighthouse)",
+   "bio": "Lighthouse on Cape Naturaliste near Dunsborough, with coastal views and boardwalks to a whale lookout.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1525,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Carries Cape Naturaliste (review) and its headland walks in its bio, as the skeptic advised.",
+   "distance_from_destination_km": 46.7
+  },
+  {
+   "name": "Hamelin Bay",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-10",
+   "wiki": "Hamelin Bay, Western Australia",
+   "category": "beach",
+   "icon": "🐟",
+   "coordinates": null,
+   "coordinates_source": "OSM natural=beach to be resolved (candidate point was the Wikipedia locality; Photon: place=hamlet -34.220276, 115.031347)",
+   "bio": "White-sand bay south of Margaret River where wild stingrays come into the shallows beside a historic jetty.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7212,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 29.8
+  },
+  {
+   "name": "Meelup Beach",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-11",
+   "wiki": null,
+   "category": "beach",
+   "icon": "🏖️",
+   "coordinates": {
+    "lat": -33.573387,
+    "lng": 115.087329
+   },
+   "coordinates_source": "OSM natural=beach \"Meelup Beach\" (HIGH)",
+   "bio": "Sheltered swimming and snorkelling beach in Meelup Regional Park near Dunsborough, on a coastal trail.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Meelup Regional Park (also kept) is merged into this spot: both judges said keep one, the beach or the park, and the beach is the place visitors go; Eagle Bay and Bunker Bay, inside the park, are their own spots.",
+   "distance_from_destination_km": 42.5
+  },
+  {
+   "name": "Canal Rocks",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-12",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🪨",
+   "coordinates": {
+    "lat": -33.668753,
+    "lng": 114.994542
+   },
+   "coordinates_source": "wikipedia:Canal Rocks",
+   "bio": "Granite rocks south of Yallingup split by a sea channel, crossed by a timber walkway, with rock pools and a lookout.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1885,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 32.7
+  },
+  {
+   "name": "Leeuwin-Naturaliste National Park",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-13",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🌊",
+   "coordinates": null,
+   "coordinates_source": "needs the park's main visitor point that no other spot uses (not the Wikipedia centroid, not Calgardup Cave, which is its own spot)",
+   "bio": "National park along the capes coast holding the show caves, both lighthouses, karri forest and the Cape to Cape Track.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/leeuwin-naturaliste-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 2548,
+   "counted_sources": 3,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). The park covers the same strip as the region: under \"No overlapping destinations\" the region visitors plan around is the destination and the park is a spot, never a destination of its own here.",
+   "distance_from_destination_km": 31.6
+  },
+  {
+   "name": "Vasse Felix",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-14",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🍷",
+   "coordinates": {
+    "lat": -33.8225,
+    "lng": 115.0375
+   },
+   "coordinates_source": "wikipedia:Vasse Felix (resolve to the OSM winery building)",
+   "bio": "Margaret River's founding wine estate, with a cellar door, a wine museum and an art gallery.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2650,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 15.1
+  },
+  {
+   "name": "Leeuwin Estate",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-15",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🎨",
+   "coordinates": {
+    "lat": -34.01305556,
+    "lng": 115.06583333
+   },
+   "coordinates_source": "wikipedia:Leeuwin Estate (resolve to the OSM winery building)",
+   "bio": "Founding Margaret River winery with a daily cellar door and a gallery of the paintings behind its Art Series labels.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2439,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 6.5
+  },
+  {
+   "name": "Boranup Forest",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-16",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🌲",
+   "coordinates": {
+    "lat": -34.174896,
+    "lng": 115.060626
+   },
+   "coordinates_source": "OSM tourism=viewpoint \"Boranup Karri Forest\" (via Photon; confirm with resolve-pin.py)",
+   "bio": "The westernmost karri forest, crossed by Boranup Drive off Caves Road, with a lookout and a picnic area.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). A named stop inside Leeuwin-Naturaliste NP that the agency and board single out; the park is a spot, not a destination, so no park-in-park issue.",
+   "distance_from_destination_km": 24.5
+  },
+  {
+   "name": "Injidup Natural Spa",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-17",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🫧",
+   "coordinates": {
+    "lat": -33.680163,
+    "lng": 114.992407
+   },
+   "coordinates_source": "OSM tourism=viewpoint \"Inhidup Natural Spa\" (via Photon; name misspelt in OSM: confirm)",
+   "bio": "Natural rock pool on the coast near Yallingup, a short walk from the car park, about a metre deep at high tide.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 31.5
+  },
+  {
+   "name": "Yallingup Beach",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-18",
+   "wiki": null,
+   "category": "beach",
+   "icon": "🏄",
+   "coordinates": {
+    "lat": -33.634341,
+    "lng": 115.028589
+   },
+   "coordinates_source": "OSM natural=beach \"Yallingup Beach\" (via Photon; confirm with resolve-pin.py)",
+   "bio": "Surf and snorkelling beach at Yallingup, with a reef-sheltered lagoon and a well-known surf break.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Yallingup (the village, also kept) is merged into this spot: both judges said the beach is the town's draw and listing both would be a wrapper; the village goes in the destination description.",
+   "distance_from_destination_km": 35.9
+  },
+  {
+   "name": "Sugarloaf Rock",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-19",
+   "wiki": "Sugarloaf Rock (Western Australia)",
+   "category": "viewpoint",
+   "icon": "🌅",
+   "coordinates": {
+    "lat": -33.55936,
+    "lng": 115.005124
+   },
+   "coordinates_source": "wikipedia:Sugarloaf Rock (Western Australia) (resolve to the OSM car park or viewpoint)",
+   "bio": "Conical granite rock off the coast south of Cape Naturaliste, a sunset stop with a car park on the Cape to Cape Track.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 43,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 44.5
+  },
+  {
+   "name": "Dunsborough",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-20",
+   "wiki": "Dunsborough, Western Australia",
+   "category": "landmark",
+   "icon": "🏘️",
+   "coordinates": {
+    "lat": -33.61666667,
+    "lng": 115.1
+   },
+   "coordinates_source": "wikipedia:Dunsborough, Western Australia (rounded: resolve to OSM place=town)",
+   "bio": "Seaside town on Geographe Bay, the nearest base for Cape Naturaliste, Meelup and the northern beaches.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 11767,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Closer to Busselton (25 km) than to Margaret River (38 km), but filed under the capes: Tourism WA and the board treat it as the base for Cape Naturaliste and Meelup, which are Margaret River Region spots.",
+   "distance_from_destination_km": 37.7
+  },
+  {
+   "name": "Augusta",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-21",
+   "wiki": "Augusta, Western Australia",
+   "category": "landmark",
+   "icon": "🐋",
+   "coordinates": {
+    "lat": -34.312,
+    "lng": 115.159
+   },
+   "coordinates_source": "wikipedia:Augusta, Western Australia (rounded: resolve to OSM place=town)",
+   "bio": "Town on the Hardy Inlet near Cape Leeuwin, at the south-western tip of the continent, and a base for whale watching.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 17278,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Kept as a town spot beside Cape Leeuwin Lighthouse: the inlet and whale watching are draws no other spot covers (COVERAGE: a town stays a spot when it has draws of its own).",
+   "distance_from_destination_km": 40.4
+  },
+  {
+   "name": "Gracetown",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-22",
+   "wiki": "Gracetown, Western Australia",
+   "category": "beach",
+   "icon": "🏄",
+   "coordinates": {
+    "lat": -33.87,
+    "lng": 114.99
+   },
+   "coordinates_source": "wikipedia:Gracetown, Western Australia (rounded: resolve to OSM place=village or the bay's beach)",
+   "bio": "Small surf village on Cowaramup Bay, known for the North Point, South Point and Huzza's breaks.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3577,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). The skeptic said keep the town or its beach, not both; only the village was kept, so it carries Gracetown Beach.",
+   "distance_from_destination_km": 12.3
+  },
+  {
+   "name": "Eagle Bay",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-23",
+   "wiki": "Eagle Bay, Western Australia",
+   "category": "beach",
+   "icon": "🤿",
+   "coordinates": {
+    "lat": -33.557084,
+    "lng": 115.063953
+   },
+   "coordinates_source": "OSM natural=beach \"Eagle Bay\" (via Photon; confirm with resolve-pin.py)",
+   "bio": "Calm swimming bay near Cape Naturaliste, with Point Piquet and the HMAS Swan dive wreck offshore.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2238,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 44.3
+  },
+  {
+   "name": "Bunker Bay",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-24",
+   "wiki": null,
+   "category": "beach",
+   "icon": "🏖️",
+   "coordinates": {
+    "lat": -33.543575,
+    "lng": 115.033863
+   },
+   "coordinates_source": "OSM natural=beach \"Bunker Bay Beach\" (via Photon; confirm with resolve-pin.py)",
+   "bio": "Sheltered beach beside Cape Naturaliste near Dunsborough, with a café and snorkelling.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 45.9
+  },
+  {
+   "name": "Smiths Beach",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-25",
+   "wiki": "Smiths Beach, Western Australia",
+   "category": "beach",
+   "icon": "🌊",
+   "coordinates": {
+    "lat": -33.658845,
+    "lng": 115.017012
+   },
+   "coordinates_source": "OSM natural=beach \"Smiths Beach\" (via Photon; the enumerator's point was Yallingup's town point and is not carried over)",
+   "bio": "Long white-sand beach near Yallingup with the Supertubes surf break and a snorkelling lagoon nearby.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 33.4
+  },
+  {
+   "name": "Redgate Beach",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-26",
+   "wiki": null,
+   "category": "beach",
+   "icon": "🌊",
+   "coordinates": {
+    "lat": -34.043323,
+    "lng": 115.001482
+   },
+   "coordinates_source": "OSM natural=beach \"Redgate Beach\" (via Photon; the candidate point was the Redgate locality)",
+   "bio": "Surf beach with granite boulders south of Prevelly, linked to the Georgette wreck and Grace Bussell's rescue.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 452,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 11.9
+  },
+  {
+   "name": "Gnarabup Beach",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-27",
+   "wiki": null,
+   "category": "beach",
+   "icon": "🏖️",
+   "coordinates": {
+    "lat": -33.984355,
+    "lng": 114.990057
+   },
+   "coordinates_source": "OSM natural=beach \"Gnarabup Beach\" (LOW: confirm with resolve-pin.py)",
+   "bio": "Reef-sheltered swimming and surf beach at Gnarabup, patrolled in summer, with a beach café.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 8.5
+  },
+  {
+   "name": "Calgardup Cave",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-28",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🔦",
+   "coordinates": {
+    "lat": -34.050283,
+    "lng": 115.024918
+   },
+   "coordinates_source": "OSM natural=cave_entrance \"Calgardup Cave\" (via Photon; Wikivoyage listing point -34.052077, 115.025285 agrees within 210 m)",
+   "bio": "Self-guided show cave on Caves Road with an underground stream, beside the national park's visitor centre.",
+   "hours": "9:00 AM – 4:15 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 11.6
+  },
+  {
+   "name": "Giants Cave",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-29",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🧗",
+   "coordinates": {
+    "lat": -34.0906,
+    "lng": 115.044
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve to the OSM cave entrance)",
+   "bio": "Adventure cave near Boranup, 86 m deep, explored self-guided with ladders and scrambles over about an hour.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Open only part of the year (closed May to September outside school holidays): a seasonal venue, still a spot.",
+   "distance_from_destination_km": 15.3
+  },
+  {
+   "name": "Cape Leeuwin Waterwheel",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-30",
+   "wiki": null,
+   "category": "historic",
+   "icon": "⚙️",
+   "coordinates": {
+    "lat": -34.368771,
+    "lng": 115.1355
+   },
+   "coordinates_source": "OSM tourism=attraction \"Cape Leeuwin Waterwheel\" (HIGH)",
+   "bio": "Waterwheel built in 1895, now encrusted in limestone, beside the road to Cape Leeuwin Lighthouse.",
+   "hours": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). About 600 m from the lighthouse pin, so the two pins stay apart.",
+   "distance_from_destination_km": 46.3
+  },
+  {
+   "name": "Ellensbrook Homestead",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-31",
+   "wiki": null,
+   "category": "historic",
+   "icon": "🏡",
+   "coordinates": {
+    "lat": -33.91042,
+    "lng": 114.991345
+   },
+   "coordinates_source": "OSM historic=building \"Ellensbrook\" (via Photon; the candidate note's \"near Augusta\" was wrong, as the skeptic said)",
+   "bio": "Bussell family homestead from 1857, restored by the National Trust, on the coast north-west of Margaret River.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 9.2
+  },
+  {
+   "name": "Capes Raptor Centre",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-32",
+   "wiki": null,
+   "category": "entertainment",
+   "icon": "🦅",
+   "coordinates": null,
+   "coordinates_source": "none in the candidate; Photon found no OSM feature: resolve from the operator's address (Boodjidup Road)",
+   "bio": "Bird-of-prey sanctuary near Margaret River with a 1 km bush trail past the aviaries and twice-daily flight displays.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    2
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup). Successor to Eagles Heritage at the same Boodjidup Road site; there is no existing Eagles Heritage spot, so no duplicate.",
+   "hours_note": "Closed Tuesdays outside school holidays (source: board listing); confirm in research.",
+   "distance_from_destination_km": 2.8
+  },
+  {
+   "name": "Cowaramup",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-33",
+   "wiki": "Cowaramup, Western Australia",
+   "category": "landmark",
+   "icon": "🐄",
+   "coordinates": {
+    "lat": -33.85,
+    "lng": 115.11
+   },
+   "coordinates_source": "wikipedia:Cowaramup, Western Australia (rounded: resolve to OSM place=village)",
+   "bio": "Village on Bussell Highway known for its 42 life-size fibreglass cows, cellar doors and chocolate shops.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5771,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 12.1
+  },
+  {
+   "name": "Yallingup Maze",
+   "action": "spot",
+   "destination": "margaret-river-region",
+   "id": "margaret-river-region-34",
+   "wiki": null,
+   "category": "entertainment",
+   "icon": "🌀",
+   "coordinates": {
+    "lat": -33.711528,
+    "lng": 115.030615
+   },
+   "coordinates_source": "OSM leisure=maze \"Yallingup Maze\" (HIGH)",
+   "bio": "Large timber maze with towers and bridges plus mini golf on Caves Road south of Yallingup.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Margaret River Region span and reached from its bases (Margaret River, Dunsborough, Augusta, Yallingup).",
+   "distance_from_destination_km": 27.4
+  },
+  {
+   "name": "Busselton Jetty",
+   "action": "spot",
+   "destination": "busselton",
+   "id": "busselton-1",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🚂",
+   "coordinates": {
+    "lat": -33.637433,
+    "lng": 115.340785
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve: the pin is the jetty's shore end or midpoint)",
+   "bio": "Timber jetty almost 2 km long into Geographe Bay, with a train to the end and an underwater observatory.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 11122,
+   "counted_sources": 3,
+   "candidate_name": null,
+   "reason": "Inside Busselton's span and reached from the city. The Underwater Observatory (rejected as part of the jetty) goes in this bio. Also inside the Margaret River Region's span, but visitors reach it from Busselton itself.",
+   "distance_from_destination_km": 1.2
+  },
+  {
+   "name": "Wonnerup House",
+   "action": "spot",
+   "destination": "busselton",
+   "id": "busselton-2",
+   "wiki": null,
+   "category": "historic",
+   "icon": "🏡",
+   "coordinates": {
+    "lat": -33.628774,
+    "lng": 115.432275
+   },
+   "coordinates_source": "OSM historic=manor \"Wonnerup House\" (via Photon; Wikivoyage listing point -33.6276, 115.433 agrees within 150 m)",
+   "bio": "National Trust homestead from 1859 east of Busselton, with its dairy, kitchen, school and teacher's house.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 752,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside Busselton's span and reached from the city.",
+   "hours_note": "Open Friday and Saturday (source: board page); confirm times in research.",
+   "distance_from_destination_km": 8.3
+  },
+  {
+   "name": "Busselton Museum",
+   "action": "spot",
+   "destination": "busselton",
+   "id": "busselton-3",
+   "wiki": null,
+   "category": "museum",
+   "icon": "🧈",
+   "coordinates": {
+    "lat": -33.652512,
+    "lng": 115.349827
+   },
+   "coordinates_source": "OSM tourism=museum \"The Busselton Museum\" (LOW: check the building)",
+   "bio": "Local history museum in the 1918 Old Butter Factory, with rooms on dairying, timber, the sea and group settlement.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    2
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": "Old Butter Factory and Busselton Museum",
+   "reason": "Inside Busselton's span and reached from the city.",
+   "name_note": "Shown as \"Busselton Museum\" (the OSM and board name); the candidate name \"Old Butter Factory and Busselton Museum\" is the long form: owner may keep either.",
+   "distance_from_destination_km": 0.6
+  },
+  {
+   "name": "Tuart Forest National Park",
+   "action": "spot",
+   "destination": "busselton",
+   "id": "busselton-4",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🌳",
+   "coordinates": null,
+   "coordinates_source": "needs the park's visitor point (picnic area or walk trailhead) from OSM or DBCA, not the Wikipedia centroid",
+   "bio": "Small national park east of Busselton protecting tuart forest, with walks among the tall trees.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/tuart-forest-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 1051,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside Busselton's span and reached from the city. A small park with no kept spots of its own, so not a destination (COVERAGE: such parks go under the nearest real destination); its centroid is 19 km from Busselton, inside the 26 km span. If its visitor point falls beyond 19.5 km, widen the span to 30 km.",
+   "distance_from_destination_km": 18.7
+  },
+  {
+   "name": "Dolphin Discovery Centre",
+   "action": "spot",
+   "destination": "bunbury",
+   "id": "bunbury-1",
+   "wiki": null,
+   "category": "entertainment",
+   "icon": "🐬",
+   "coordinates": {
+    "lat": -33.320762,
+    "lng": 115.64967
+   },
+   "coordinates_source": "OSM tourism=attraction \"Dolphin Discovery Centre\" (LOW: name and type match)",
+   "bio": "Centre on Koombana Beach with aquariums, a 360-degree digital dolphinarium and eco-cruises to find wild dolphins.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside Bunbury's span and reached from the city. Carries Koombana Beach (review, a near-duplicate per the skeptic) in its bio.",
+   "distance_from_destination_km": 1.4
+  },
+  {
+   "name": "Wyalup-Rocky Point",
+   "action": "spot",
+   "destination": "bunbury",
+   "id": "bunbury-2",
+   "wiki": null,
+   "category": "viewpoint",
+   "icon": "🪨",
+   "coordinates": null,
+   "coordinates_source": "none in the candidate; Photon found no match: resolve from OSM (Bunbury Back Beach)",
+   "bio": "Basalt headland in Bunbury with 130-million-year-old rock columns, a beach lookout and Noongar interpretive signs.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside Bunbury's span and reached from the city.",
+   "distance_from_destination_km": 1.0
+  },
+  {
+   "name": "Bunbury Wildlife Park",
+   "action": "spot",
+   "destination": "bunbury",
+   "id": "bunbury-3",
+   "wiki": null,
+   "category": "entertainment",
+   "icon": "🦘",
+   "coordinates": {
+    "lat": -33.342227,
+    "lng": 115.629597
+   },
+   "coordinates_source": "OSM tourism=zoo \"Bunbury Wildlife Park\" (LOW: name and type match)",
+   "bio": "City-run wildlife park with kangaroos, dingoes, quokkas and birds, and keeper talks.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside Bunbury's span and reached from the city.",
+   "distance_from_destination_km": 1.8
+  },
+  {
+   "name": "Bunbury Regional Art Gallery",
+   "action": "spot",
+   "destination": "bunbury",
+   "id": "bunbury-4",
+   "wiki": null,
+   "category": "museum",
+   "icon": "🖼️",
+   "coordinates": {
+    "lat": -33.32498,
+    "lng": 115.635233
+   },
+   "coordinates_source": "OSM tourism=museum \"Bunbury Regional Art Gallery\" (LOW: name and type match)",
+   "bio": "Free public art gallery in central Bunbury showing changing exhibitions through the year.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside Bunbury's span and reached from the city.",
+   "distance_from_destination_km": 0.3
+  },
+  {
+   "name": "Bunbury Museum and Heritage Centre",
+   "action": "spot",
+   "destination": "bunbury",
+   "id": "bunbury-5",
+   "wiki": null,
+   "category": "museum",
+   "icon": "🏛️",
+   "coordinates": {
+    "lat": -33.326403,
+    "lng": 115.639434
+   },
+   "coordinates_source": "OSM building \"Bunbury Museum and Heritage Centre\" (LOW: name match)",
+   "bio": "Free city museum in the 1886 Bunbury State School, telling Noongar, shipwreck and whaling history.",
+   "hours": null,
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside Bunbury's span and reached from the city.",
+   "distance_from_destination_km": 0.2
+  },
+  {
+   "name": "Wellington National Park",
+   "action": "spot",
+   "destination": "collie",
+   "id": "collie-1",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🌲",
+   "coordinates": null,
+   "coordinates_source": "needs the park's visitor point not used by another spot (e.g. Potters Gorge day-use area) from OSM or DBCA",
+   "bio": "Forest park in the Collie River valley with swimming, kayaking, walk trails, mountain-bike tracks and campgrounds.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/wellington-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 713,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside Collie's span and reached from the town. Three kept spots of its own (below four), so a spot of Collie rather than a destination; see the destination's shape_note.",
+   "distance_from_destination_km": 17.1
+  },
+  {
+   "name": "Wellington Dam",
+   "action": "spot",
+   "destination": "collie",
+   "id": "collie-2",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🎨",
+   "coordinates": null,
+   "coordinates_source": "needs the mural lookout or kiosk point from OSM (the candidate point was the hydro power station's Wikipedia article)",
+   "bio": "Dam wall in Wellington National Park painted with the world's largest dam mural, by Guido van Helten, seen from a lookout.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/wellington-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside Collie's span and reached from the town.",
+   "distance_from_destination_km": 15.8
+  },
+  {
+   "name": "Black Diamond Lake",
+   "action": "spot",
+   "destination": "collie",
+   "id": "collie-3",
+   "wiki": null,
+   "category": "nature",
+   "icon": "💧",
+   "coordinates": null,
+   "coordinates_source": "none in the candidate; Photon found no OSM match: resolve from OSM or the Shire of Collie page",
+   "bio": "Former coal-mine lake west of Collie with vivid blue-green water, used for swimming.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": "Black Diamond Pool",
+   "reason": "Inside Collie's span and reached from the town. Named Black Diamond Lake, the board's name, as the judge directed.",
+   "distance_from_destination_km": 5.2
+  },
+  {
+   "name": "Honeymoon Pool",
+   "action": "spot",
+   "destination": "collie",
+   "id": "collie-4",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🏊",
+   "coordinates": {
+    "lat": -33.378949,
+    "lng": 115.938594
+   },
+   "coordinates_source": "OSM tourism=camp_site \"Honeymoon Pool\" (via Photon; LOW from resolve-pin.py: pin the day-use area in research)",
+   "bio": "Swimming and canoeing spot on the Collie River with a viewing platform, picnic area and three campgrounds.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/wellington-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside Collie's span and reached from the town. 20 km from Collie, inside the 30 km span.",
+   "distance_from_destination_km": 20.3
+  },
+  {
+   "name": "Stockton Lake",
+   "action": "spot",
+   "destination": "collie",
+   "id": "collie-5",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🏞️",
+   "coordinates": null,
+   "coordinates_source": "needs the lake's shore or day-use point (the candidate point is the OSM lake centroid, in the water)",
+   "bio": "Old coal-mine lake east of Collie ringed by white chalky cliffs, used for swimming, water skiing and camping.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside Collie's span and reached from the town. The skeptic noted it is a near-twin of Black Diamond Lake; both were kept, so both are placed.",
+   "distance_from_destination_km": 7.0
+  },
+  {
+   "name": "Wambenger Trails",
+   "action": "spot",
+   "destination": "collie",
+   "id": "collie-6",
+   "wiki": null,
+   "category": "hike",
+   "icon": "🚵",
+   "coordinates": null,
+   "coordinates_source": "needs a trailhead or the network's midpoint from Trails WA or OSM (the candidate note's \"near Bridgetown\" was wrong)",
+   "bio": "Mountain-bike network of about 170 km of singletrack in Wellington National Park, linking the dam and Honeymoon Pool.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside Collie's span and reached from the town.",
+   "distance_from_destination_km": 15.7
+  },
+  {
+   "name": "Gloucester Tree",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-1",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🌳",
+   "coordinates": {
+    "lat": -34.447622,
+    "lng": 116.055709
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve to the OSM feature)",
+   "bio": "Karri fire-lookout tree near Pemberton from 1947, with spiral pegs to climb to its lookout platform.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8442,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. Carries Gloucester National Park (review, near-duplicate per the skeptic) and the Aerial Adventure course next to it in its bio if the owner rejects those.",
+   "distance_from_destination_km": 2.0
+  },
+  {
+   "name": "Dave Evans Bicentennial Tree",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-2",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🌲",
+   "coordinates": {
+    "lat": -34.495332,
+    "lng": 115.975004
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve to the OSM feature)",
+   "bio": "Karri 75 m tall in Warren National Park, pegged for climbing in 1988 to mark the bicentenary.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/warren-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 4143,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe.",
+   "distance_from_destination_km": 7.8
+  },
+  {
+   "name": "Beedelup Falls",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-3",
+   "wiki": null,
+   "category": "nature",
+   "icon": "💦",
+   "coordinates": {
+    "lat": -34.419959,
+    "lng": 115.868533
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (resolve to the OSM waterway=waterfall)",
+   "bio": "Waterfall in karri forest west of Pemberton, with a suspension bridge and the Walk-Through Tree on a loop walk.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. Greater Beedelup National Park was rejected as its duplicate; the falls carry it.",
+   "distance_from_destination_km": 15.4
+  },
+  {
+   "name": "Pemberton",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-4",
+   "wiki": "Pemberton, Western Australia",
+   "category": "landmark",
+   "icon": "🏘️",
+   "coordinates": {
+    "lat": -34.445,
+    "lng": 116.034
+   },
+   "coordinates_source": "wikipedia:Pemberton, Western Australia (rounded: resolve to OSM place=town)",
+   "bio": "Karri-forest timber town, the region's main base, with cellar doors and forest walks from the main street.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 10706,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. The skeptic noted its headline draws are separate spots; kept as the region's hub town (Wikivoyage page, Tourism WA \"town of towering timbers\"). If the owner reads it as a wrapper, fold it into the destination description.",
+   "distance_from_destination_km": 0.0
+  },
+  {
+   "name": "Yeagarup Dunes",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-5",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🏜️",
+   "coordinates": null,
+   "coordinates_source": "needs the Yeagarup Lake boardwalk car park from OSM or DBCA (Photon: Yeagarup Lake water=lake -34.543788, 115.87357, the lake centroid)",
+   "bio": "Mobile dunes in D'Entrecasteaux National Park, with a boardwalk over Yeagarup Lake and 4WD tracks across the sand.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. Reached by the Pemberton side road; 19 km from Pemberton.",
+   "distance_from_destination_km": 18.4
+  },
+  {
+   "name": "Warren National Park",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-6",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🛶",
+   "coordinates": null,
+   "coordinates_source": "needs a visitor point other than the Bicentennial Tree (e.g. Warren campground or the Heartbreak Trail) from OSM or DBCA",
+   "bio": "Karri forest park on the Warren River near Pemberton, with the Heartbreak Trail drive, canoeing and two campgrounds.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/warren-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 645,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. One kept spot of its own, so a spot of the region, not a destination.",
+   "distance_from_destination_km": 9.4
+  },
+  {
+   "name": "D'Entrecasteaux National Park",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-7",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🌊",
+   "coordinates": {
+    "lat": -34.842596,
+    "lng": 116.002001
+   },
+   "coordinates_source": "OSM natural=cape \"Point D'Entrecasteaux\" (via Photon: the skeptic's chosen visitor point; pin its lookout car park in research)",
+   "bio": "Wild coastal park between Augusta and Walpole, with Point D'Entrecasteaux, Windy Harbour and the Black Point basalt columns.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1986,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. Long linear park placed at its main 2WD visitor point, Point D'Entrecasteaux and Windy Harbour, reached from Northcliffe (44 km from Pemberton, inside the 45 km radius). Its far-east Mandalay Beach is reached from Walpole and stands alone.",
+   "distance_from_destination_km": 44.3
+  },
+  {
+   "name": "Big Brook Dam",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-8",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🏞️",
+   "coordinates": null,
+   "coordinates_source": "needs the day-use area point (the candidate point is the reservoir centroid, in the water)",
+   "bio": "Forest dam near Pemberton with a 3.5 km sealed loop walk, a small beach and picnic areas.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe.",
+   "distance_from_destination_km": 4.4
+  },
+  {
+   "name": "Shannon National Park",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-9",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🌲",
+   "coordinates": null,
+   "coordinates_source": "needs the park's visitor point (the Shannon day-use area or campground) from OSM or DBCA, not the Wikipedia centroid",
+   "bio": "Old-growth karri park east of Northcliffe, with the Great Forest Trees Drive, Snake Gully Lookout and Big Tree Grove.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/shannon-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 706,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. Its centroid is 35 km from Pemberton, inside the 45 km radius; reached on the drive from Manjimup or Pemberton to Walpole.",
+   "distance_from_destination_km": 35.1
+  },
+  {
+   "name": "Manjimup Heritage Park",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-10",
+   "wiki": null,
+   "category": "museum",
+   "icon": "🚂",
+   "coordinates": {
+    "lat": -34.241083,
+    "lng": 116.147233
+   },
+   "coordinates_source": "Commons geotag median (LOW: resolve to OSM)",
+   "bio": "Heritage park in Manjimup with a timber museum, an Age of Steam museum, a historic hamlet and an electricity museum.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": "Manjimup Heritage Park & Power Up Museum",
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe.",
+   "distance_from_destination_km": 24.9
+  },
+  {
+   "name": "King Jarrah",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-11",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🌳",
+   "coordinates": {
+    "lat": -34.227758,
+    "lng": 116.179506
+   },
+   "coordinates_source": "OSM tourism=picnic_site \"King Jarrah\" (via Photon; not the Dwellingup trail of the same name)",
+   "bio": "Jarrah about 500 years old and 45 m tall, spared by sleeper cutters, on a short sealed path near Manjimup.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "candidate_name": "King Jarrah Heritage Trail",
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. Named \"King Jarrah\", the sources' name, as the judge directed.",
+   "distance_from_destination_km": 27.6
+  },
+  {
+   "name": "Manjimup",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-12",
+   "wiki": "Manjimup, Western Australia",
+   "category": "landmark",
+   "icon": "🍎",
+   "coordinates": {
+    "lat": -34.24111111,
+    "lng": 116.14638889
+   },
+   "coordinates_source": "wikipedia:Manjimup, Western Australia (resolve to OSM place=town)",
+   "bio": "Regional hub of the Southern Forests farming district, with its heritage park and King Jarrah on the town's edge.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 12717,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. Kept as the region's second town (COVERAGE: sizable settlements and hubs); the skeptic noted its best sights are separate spots, so it sits low in the order. If the owner reads it as a wrapper for its heritage park, fold it into the description.",
+   "distance_from_destination_km": 24.9
+  },
+  {
+   "name": "Understory Art and Nature Trail",
+   "action": "spot",
+   "destination": "southern-forests",
+   "id": "southern-forests-13",
+   "wiki": null,
+   "category": "hike",
+   "icon": "🗿",
+   "coordinates": {
+    "lat": -34.630068,
+    "lng": 116.128547
+   },
+   "coordinates_source": "OSM highway=footway \"Understory, Art In Nature Trail\" (via Photon: one segment; pin the loop's midpoint in research)",
+   "bio": "Sculpture trail of 1.2 km through Northcliffe's forest with dozens of artworks, entered from the visitor centre.",
+   "hours": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": "Understory Art & Nature Trail",
+   "reason": "Inside the Southern Forests span and reached from Pemberton, Manjimup or Northcliffe. In Northcliffe (the candidate note's \"near Dunsborough\" was wrong); 21 km from Pemberton. Carries Northcliffe (review) if the owner rejects the village.",
+   "distance_from_destination_km": 22.3
+  },
+  {
+   "name": "Blackwood River",
+   "action": "spot",
+   "destination": "blackwood-valley",
+   "id": "blackwood-valley-1",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🛶",
+   "coordinates": null,
+   "coordinates_source": "long river: pin its main visitor access point (the Nannup town reach or Wrights Bridge, per the skeptic), not the Wikipedia point near Augusta",
+   "bio": "The South West's main paddling river, with canoe sections and swimming pools between Bridgetown and Nannup.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "views": 3734,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Blackwood Valley span and reached along the valley road between Nannup, Balingup and Bridgetown. A long linear feature placed where visitors reach it (COVERAGE \"How far a spot reaches\"). Carries Blackwood River National Park (review) if the owner rejects it.",
+   "distance_from_destination_km": 19.9
+  },
+  {
+   "name": "Bridgetown",
+   "action": "spot",
+   "destination": "blackwood-valley",
+   "id": "blackwood-valley-2",
+   "wiki": "Bridgetown, Western Australia",
+   "category": "historic",
+   "icon": "🏘️",
+   "coordinates": {
+    "lat": -33.95833333,
+    "lng": 116.13805556
+   },
+   "coordinates_source": "wikipedia:Bridgetown, Western Australia (resolve to OSM place=town)",
+   "bio": "Blackwood River town of historic buildings and galleries, with an art trail through its streets.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 11132,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Blackwood Valley span and reached along the valley road between Nannup, Balingup and Bridgetown. Its Blues festival is an event and goes in the description, not a spot.",
+   "distance_from_destination_km": 17.1
+  },
+  {
+   "name": "Nannup",
+   "action": "spot",
+   "destination": "blackwood-valley",
+   "id": "blackwood-valley-3",
+   "wiki": "Nannup, Western Australia",
+   "category": "historic",
+   "icon": "🌿",
+   "coordinates": {
+    "lat": -33.982,
+    "lng": 115.765
+   },
+   "coordinates_source": "wikipedia:Nannup, Western Australia (rounded: resolve to OSM place=town)",
+   "bio": "Small forest town on the Blackwood River with a heritage trail of 51 sites, galleries and the Tank 7 lookout.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 13275,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Blackwood Valley span and reached along the valley road between Nannup, Balingup and Bridgetown.",
+   "distance_from_destination_km": 19.9
+  },
+  {
+   "name": "Balingup",
+   "action": "spot",
+   "destination": "blackwood-valley",
+   "id": "blackwood-valley-4",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🎨",
+   "coordinates": {
+    "lat": -33.78694444,
+    "lng": 115.98194444
+   },
+   "coordinates_source": "wikipedia:Balingup (resolve to OSM place=village)",
+   "bio": "Small Blackwood valley village of artisans' shops and scarecrows on one of the state's best-known scenic drives.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4889,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "Inside the Blackwood Valley span and reached along the valley road between Nannup, Balingup and Bridgetown. Kept beside Golden Valley Tree Park: the main street's artisans are a draw the tree park does not cover.",
+   "distance_from_destination_km": 13.7
+  },
+  {
+   "name": "Golden Valley Tree Park",
+   "action": "spot",
+   "destination": "blackwood-valley",
+   "id": "blackwood-valley-5",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🍂",
+   "coordinates": {
+    "lat": -33.801139,
+    "lng": 115.996452
+   },
+   "coordinates_source": "OSM leisure=park \"Golden Valley Tree Park\" (via Photon: the park area; pin its entrance in research). The candidate's Commons point was at the Gloucester Tree and is not used.",
+   "bio": "Arboretum of 60 ha south of Balingup with more than 500 tree species and walk trails, best in autumn colour.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Inside the Blackwood Valley span and reached along the valley road between Nannup, Balingup and Bridgetown.",
+   "distance_from_destination_km": 12.4
+  },
+  {
+   "name": "Bibbulmun Track",
+   "action": "standalone",
+   "destination": null,
+   "id": "bibbulmun-track",
+   "wiki": null,
+   "category": "hike",
+   "icon": "🥾",
+   "coordinates": null,
+   "coordinates_source": "pin at the midpoint of the whole OSM route=hiking relation (resolve-pin.py), per the run-wide decision",
+   "bio": "Long-distance walking track of about 1,000 km from Kalamunda in the Perth Hills to Albany through the southern forests.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 13765,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Run-wide decision: placed once, here, at the midpoint of the whole route. A 1,000 km track crosses several destinations and belongs to none (COVERAGE: a long linear feature is not a spot of whatever it touches). If its midpoint falls within 40 km of a proposed destination's centre, it still stands alone for this reason.",
+   "destinations_within_40km": {},
+   "why_not_spot_of": {}
+  },
+  {
+   "name": "Munda Biddi Trail",
+   "action": "standalone",
+   "destination": null,
+   "id": "munda-biddi-trail",
+   "wiki": null,
+   "category": "hike",
+   "icon": "🚴",
+   "coordinates": null,
+   "coordinates_source": "pin at the midpoint of the whole OSM route (resolve-pin.py), per the run-wide decision",
+   "bio": "Off-road cycling trail of about 1,000 km from Mundaring to Albany, through jarrah and karri forest and the trail towns.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5129,
+   "counted_sources": 2,
+   "candidate_name": null,
+   "reason": "Run-wide decision: placed once, here, at the midpoint of the whole route; a 1,000 km trail belongs to no one destination.",
+   "destinations_within_40km": {},
+   "why_not_spot_of": {}
+  },
+  {
+   "name": "Ferguson Valley",
+   "action": "standalone",
+   "destination": null,
+   "id": "ferguson-valley",
+   "wiki": null,
+   "category": "nature",
+   "icon": "🍇",
+   "coordinates": {
+    "lat": -33.44,
+    "lng": 115.85
+   },
+   "coordinates_source": "wikipedia:Ferguson, Western Australia (the locality point; rounded: resolve to the valley's visitor point)",
+   "bio": "Inland valley of vineyards, microbreweries and orchards in the hills between Donnybrook and Harvey.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "An inland food-and-wine valley with its own drive, reached as a day out from Bunbury or Collie; two kept places (with Gnomesville) are too few for a destination.",
+   "destinations_within_40km": {
+    "bunbury": 23.4,
+    "collie": 29.7
+   },
+   "why_not_spot_of": {
+    "bunbury": "Inland hill valley 23 km from Bunbury: visitors drive its own wine-and-produce loop, and Bunbury's span (15 km, its five city spots within 3 km) would have to balloon to 45 km to hold it.",
+    "collie": "On the far side of Wellington National Park from Collie (30 km); visitors reach it from Bunbury and Dardanup, not Collie."
+   }
+  },
+  {
+   "name": "Gnomesville",
+   "action": "standalone",
+   "destination": null,
+   "id": "gnomesville",
+   "wiki": null,
+   "category": "landmark",
+   "icon": "🧙",
+   "coordinates": {
+    "lat": -33.465079,
+    "lng": 115.91094
+   },
+   "coordinates_source": "OSM tourism=attraction \"Gnomesville\" (via Photon; the candidate point was the Wellington Mill locality)",
+   "bio": "Roadside village of thousands of garden gnomes at the Wellington Mill roundabout in the Ferguson Valley.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Quirky roadside icon on the Ferguson Valley drive; partly damaged by a November 2024 flood and under restoration (confirm in research).",
+   "destinations_within_40km": {
+    "bunbury": 29.7,
+    "collie": 25.4
+   },
+   "why_not_spot_of": {
+    "bunbury": "30 km inland of Bunbury on the Ferguson Valley drive; outside Bunbury's city span.",
+    "collie": "25 km from Collie but reached from the Ferguson Valley side (Wellington Mill road from Dardanup), not from Collie; Collie's span is 30 km (22.5 km radius)."
+   }
+  },
+  {
+   "name": "Harvey",
+   "action": "standalone",
+   "destination": null,
+   "id": "harvey",
+   "wiki": "Harvey, Western Australia",
+   "category": "landmark",
+   "icon": "🧀",
+   "coordinates": {
+    "lat": -33.08,
+    "lng": 115.89
+   },
+   "coordinates_source": "wikipedia:Harvey, Western Australia (rounded: resolve to OSM place=town)",
+   "bio": "Farming town on the Harvey River known for its cheese, craft beer, wine and orange juice, and its Noongar and Italian heritage.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 9053,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "A town on the South Western Highway with its own Tourism WA section; with the Boola Bidi Dreaming Centre it makes two kept places, too few for a destination. Kept beside Boola Bidi: the source's draws (cheese, beer, wine, juice) are the town's own, not the cultural centre's.",
+   "destinations_within_40km": {
+    "bunbury": 36.2,
+    "collie": 40.0
+   },
+   "why_not_spot_of": {
+    "bunbury": "36 km north of Bunbury, a separate highway town that visitors stop in on their own; Bunbury's span would balloon.",
+    "collie": "40 km away over the scarp; not reached from Collie."
+   }
+  },
+  {
+   "name": "Boola Bidi Dreaming Centre",
+   "action": "standalone",
+   "destination": null,
+   "id": "boola-bidi-dreaming-centre",
+   "wiki": null,
+   "category": "museum",
+   "icon": "🪃",
+   "coordinates": null,
+   "coordinates_source": "none in the candidate; Photon found no match: resolve from OSM (Stirling Gardens precinct, Harvey)",
+   "bio": "Noongar cultural centre in Harvey with Elder-guided walks and a 900 m knowledge path along the Harvey River.",
+   "hours": "10:00 AM – 3:00 PM",
+   "closedDays": [
+    2,
+    3
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "A cultural centre in Harvey, which is not a destination (see Harvey).",
+   "destinations_within_40km": {
+    "bunbury": 36.2,
+    "collie": 40.0
+   },
+   "why_not_spot_of": {
+    "bunbury": "In Harvey, 36 km north of Bunbury (see Harvey).",
+    "collie": "In Harvey, about 40 km from Collie (see Harvey)."
+   }
+  },
+  {
+   "name": "Donnybrook",
+   "action": "standalone",
+   "destination": null,
+   "id": "donnybrook",
+   "wiki": "Donnybrook, Western Australia",
+   "category": "landmark",
+   "icon": "🍎",
+   "coordinates": {
+    "lat": -33.58,
+    "lng": 115.82
+   },
+   "coordinates_source": "wikipedia:Donnybrook, Western Australia (rounded: resolve to OSM place=town)",
+   "bio": "Apple-growing town on the South Western Highway with heritage buildings and a large free-entry fun park.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8861,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "A highway town between the Geographe coast and the Blackwood valley; no destination's span reaches it.",
+   "destinations_within_40km": {
+    "bunbury": 32.8,
+    "collie": 39.4,
+    "blackwood-valley": 38.9
+   },
+   "why_not_spot_of": {
+    "bunbury": "33 km inland on the highway; a separate town, outside a city span.",
+    "collie": "39 km south-west of Collie, not reached from it.",
+    "blackwood-valley": "39 km from the valley centre, on the Geographe side (Tourism WA lists it on its Bunbury Geographe page, not the Blackwood Valley); the span would have to grow to 52 km."
+   }
+  },
+  {
+   "name": "Peppermint Grove Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "peppermint-grove-beach",
+   "wiki": null,
+   "category": "beach",
+   "icon": "🏖️",
+   "coordinates": null,
+   "coordinates_source": "needs the OSM natural=beach or the lookout (the candidate point is the Wikipedia locality, rounded)",
+   "bio": "Geographe Bay swimming beach near Capel with a beach park, a lookout up about 120 steps and the Capel River mouth.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 582,
+   "counted_sources": 0,
+   "candidate_name": null,
+   "reason": "A holiday settlement's beach in the Shire of Capel, between Bunbury and Busselton.",
+   "destinations_within_40km": {
+    "busselton": 20.8,
+    "bunbury": 24.5
+   },
+   "why_not_spot_of": {
+    "busselton": "21 km from Busselton, just outside its 26 km span (19.5 km radius); the beach belongs to Capel's holiday settlement and its source is the Bunbury Geographe board's Capel page, so it is not a Busselton spot.",
+    "bunbury": "24 km from Bunbury, outside its 15 km city span."
+   }
+  },
+  {
+   "name": "Mandalay Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "mandalay-beach",
+   "wiki": null,
+   "category": "beach",
+   "icon": "⚓",
+   "coordinates": {
+    "lat": -35.001959,
+    "lng": 116.531173
+   },
+   "coordinates_source": "OSM tourism=viewpoint \"Mandalay Beach\" (via Photon; confirm with resolve-pin.py)",
+   "bio": "Remote beach in D'Entrecasteaux National Park with whale-watching platforms and the 1911 Mandalay wreck at low tide.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/mandalay-beach",
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Moved here at reconciliation. Reached from Walpole (wa-great-southern), 77 km from the Southern Forests centre; no wa-south-west destination is near. If wa-great-southern proposes a Walpole or Walpole-Nornalup destination whose span reaches it, it becomes that destination's spot.",
+   "destinations_within_40km": {},
+   "why_not_spot_of": {}
+  },
+  {
+   "name": "Fernhook Falls",
+   "action": "standalone",
+   "destination": null,
+   "id": "fernhook-falls",
+   "wiki": null,
+   "category": "nature",
+   "icon": "💦",
+   "coordinates": {
+    "lat": -34.817392,
+    "lng": 116.594682
+   },
+   "coordinates_source": "OSM waterway=waterfall \"Fernhook Falls\" (via Photon; confirm with resolve-pin.py)",
+   "bio": "Deep River cascades over granite into Rowell's Pool in the Walpole forests, with walk trails and boardwalks.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/fernhook-falls",
+   "needs_research": [
+    "coordinates",
+    "hours"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Moved here at reconciliation. 66 km from the Southern Forests centre and reached from Walpole (wa-great-southern); standalone unless a Walpole destination there takes it.",
+   "destinations_within_40km": {},
+   "why_not_spot_of": {}
+  },
+  {
+   "name": "Mount Frankland National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-frankland-national-park",
+   "wiki": null,
+   "category": "nature",
+   "icon": "⛰️",
+   "coordinates": null,
+   "coordinates_source": "needs the Mount Frankland Wilderness Lookout car park (Towerman's Hut) from OSM or DBCA, not the park centroid",
+   "bio": "Granite peak in the Walpole Wilderness with a summit walk to a lookout over karri and tingle forest.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": "https://exploreparks.dbca.wa.gov.au/site/mount-frankland-national-park",
+   "needs_research": [
+    "coordinates",
+    "hours"
+   ],
+   "views": 679,
+   "counted_sources": 1,
+   "candidate_name": null,
+   "reason": "Moved here at reconciliation. A small park (the judge: a standalone spot, not a destination); reached from Walpole (wa-great-southern), about 75 km from Pemberton. Standalone unless a Walpole destination there takes it.",
+   "destinations_within_40km": {},
+   "why_not_spot_of": {}
+  },
+  {
+   "name": "Busselton",
+   "action": "new-destination",
+   "destination": "busselton",
+   "id": "busselton",
+   "coordinates": {
+    "lat": -33.64777778,
+    "lng": 115.34583333
+   },
+   "coordinates_source": "wikipedia:Busselton",
+   "views": 25343,
+   "counted_sources": 2,
+   "reason": "The kept town is the base of a proposed destination of the same name (see destinations[]); it is not also listed as its own spot (no destination is a spot of itself).",
+   "_dist": {}
+  },
+  {
+   "name": "Bunbury",
+   "action": "new-destination",
+   "destination": "bunbury",
+   "id": "bunbury",
+   "coordinates": {
+    "lat": -33.32722222,
+    "lng": 115.63694444
+   },
+   "coordinates_source": "wikipedia:Bunbury, Western Australia",
+   "views": 57775,
+   "counted_sources": 2,
+   "reason": "The kept town is the base of a proposed destination of the same name (see destinations[]); it is not also listed as its own spot (no destination is a spot of itself).",
+   "_dist": {}
+  },
+  {
+   "name": "Collie",
+   "action": "new-destination",
+   "destination": "collie",
+   "id": "collie",
+   "coordinates": {
+    "lat": -33.363,
+    "lng": 116.156
+   },
+   "coordinates_source": "wikipedia:Collie, Western Australia (needs an OSM place=town point)",
+   "views": 14054,
+   "counted_sources": 2,
+   "reason": "The kept town is the base of a proposed destination of the same name (see destinations[]); it is not also listed as its own spot (no destination is a spot of itself).",
+   "_dist": {}
+  }
+ ],
+ "merged": [
+  {
+   "name": "Yallingup",
+   "into": "Yallingup Beach",
+   "id": "margaret-river-region-18",
+   "reason": "Judge and skeptic: the beach is the village's draw (Ngilgi Cave, Canal Rocks, Injidup and Smiths Beach are their own spots); listing the village beside its beach is a wrapper. The village goes in the destination description."
+  },
+  {
+   "name": "Meelup Regional Park",
+   "into": "Meelup Beach",
+   "id": "margaret-river-region-11",
+   "reason": "Both judges: the park and its beach overlap; keep one. The beach is where visitors go; Eagle Bay and Bunker Bay, inside the park, are their own spots, and the park's coastal trail goes in Meelup Beach's bio."
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Boyup Brook",
+   "views": 4590,
+   "counted_sources": 0,
+   "reason": "Re-looked: only southernforestsandvalleys.com (Southern Forests & Valleys regional tourism) lists it, with generic text ('natural wonders, local artisans, local produce'); no named sight.",
+   "skeptic_objection": "Against: one counted source and nothing specific to see or do (brief: a town with nothing a source names is reject or review). For: a listed town of the regional board, gateway for country-music events (events do not count).",
+   "coordinates": {
+    "lat": -33.834,
+    "lng": 116.388
+   },
+   "if_approved": "If approved: standalone (east of the Blackwood Valley span)."
+  },
+  {
+   "name": "Northcliffe",
+   "views": 4906,
+   "counted_sources": 0,
+   "reason": "Re-looked: southernforestsandvalleys.com (Southern Forests & Valleys regional tourism) town page and itinerary name the Understory Art & Nature Walk, the Pioneer Museum, Mount Chudalup and Windy Harbour nearby.",
+   "skeptic_objection": "For: gateway to D'Entrecasteaux NP and Windy Harbour with a named art trail and museum. Against: one counted source, and its named draws (Understory, Mount Chudalup) are separate candidates, so the town may be a wrapper.",
+   "coordinates": {
+    "lat": -34.633,
+    "lng": 116.124
+   },
+   "if_approved": "If approved: a Southern Forests spot; otherwise carried by the Understory trail and D'Entrecasteaux NP."
+  },
+  {
+   "name": "Australind",
+   "views": 2015,
+   "counted_sources": 0,
+   "reason": "Re-looked: harveyregion.com.au (Shire of Harvey tourism) Australind page names the Australind Jetty, the Leschenault Waterways Eco Museum, the estuary crabbing and the heritage trail.",
+   "skeptic_objection": "Against: one local-government tourism source; a residential satellite of Bunbury ('Australia's fastest growing regional location') with cafes and a big pub; a traveller from elsewhere rarely goes out of their way for it. For: estuary jetty and eco museum.",
+   "coordinates": {
+    "lat": -33.28,
+    "lng": 115.726
+   },
+   "if_approved": "If approved: standalone or a Bunbury spot (8 km north on the Leschenault Inlet; would need Bunbury's span widened to 22 km)."
+  },
+  {
+   "name": "Prevelly",
+   "views": 2904,
+   "counted_sources": 0,
+   "reason": "Re-looked: margaretriver.com (Margaret River Busselton Tourism Association, the regional board) 'Prevelly & Gnarabup' town page names the beaches, Margaret River Mouth, St John the Theologian Church, the Prevelly Sculpture Loop Walk and Surfers Point.",
+   "skeptic_objection": "Against: its headline draw is Surfers Point (kept separately), so the village is likely a wrapper or near-duplicate (COVERAGE: never list a town beside its own attraction). For: a named surf village with its own beaches and river mouth.",
+   "coordinates": {
+    "lat": -33.9825,
+    "lng": 114.99222222
+   },
+   "if_approved": "If approved: a Margaret River Region spot; otherwise carried by Surfers Point and Gnarabup Beach."
+  },
+  {
+   "name": "St Mary's Church Busselton",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Church rule: Wikivoyage Busselton singles it out (built 1844-45, believed the oldest stone church in WA, graveyard with graves from 1841) and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) page says visitors can wander the graveyard and read the settlers' tombstones.",
+   "skeptic_objection": "For: a landmark guides single out, with a graveyard to explore. Against: the board files it under 'local services', it is a working parish church mostly seen from outside, and the visit is about 15 minutes.",
+   "coordinates": {
+    "lat": -33.652753,
+    "lng": 115.345626
+   },
+   "if_approved": "A Busselton spot."
+  },
+  {
+   "name": "Koombana Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Bunbury See names it (protected beach on Koombana Bay where wild dolphins come close to shore); westernaustralia.com (Tourism WA) Bunbury text names Koombana Bay and shoreline dolphins.",
+   "skeptic_objection": "For: wild dolphins at the beach. Against: Wikivoyage calls it 'a modest beach', and the dolphin interaction zone and visitor facilities are the Dolphin Discovery Centre on the same beach, so it is a near-duplicate of that spot.",
+   "coordinates": {
+    "lat": -33.319631,
+    "lng": 115.645328
+   },
+   "if_approved": "Skeptic: near-duplicate of the Dolphin Discovery Centre (bunbury-1); if approved, a Bunbury spot."
+  },
+  {
+   "name": "Cape Leeuwin",
+   "views": 16436,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Margaret River 'See' names Cape Leeuwin; margaretriver.com (Margaret River Busselton Tourism Association, the regional board) 'Edge of the world: the great Cape Leeuwin' (where two oceans meet, whales). Strong name (16k views).",
+   "skeptic_objection": "Not a separate place from Cape Leeuwin Lighthouse: visitors reach the cape at the lighthouse precinct (ticketed grounds, interpretive centre), which is listed separately by Wikivoyage and the board. Keep as ONE spot (the lighthouse, with 'where two oceans meet' in its bio) rather than both; review only to decide which name carries it.",
+   "coordinates": {
+    "lat": -34.37416667,
+    "lng": 115.13583333
+   },
+   "if_approved": "Skeptic: one place with Cape Leeuwin Lighthouse (margaret-river-region-1); if approved, it is carried by the lighthouse, not added."
+  },
+  {
+   "name": "Cape Naturaliste",
+   "views": 6196,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Leeuwin-Naturaliste NP and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) 'Cape Naturaliste' scenic-spot page (boardwalks, Whale Lookout walk, Cape Naturaliste loop, track to Sugarloaf Rock).",
+   "skeptic_objection": "Shares its car park and precinct with Cape Naturaliste Lighthouse, listed separately; the walks are short sections of the Cape to Cape Track. Keep as one with the lighthouse unless the owner wants the headland walks as their own spot.",
+   "coordinates": {
+    "lat": -33.5303,
+    "lng": 115.0039
+   },
+   "if_approved": "Skeptic: one place with Cape Naturaliste Lighthouse (margaret-river-region-9); if approved, carried by the lighthouse unless the owner wants the headland walks as their own spot."
+  },
+  {
+   "name": "Cape Mentelle Vineyards",
+   "views": 1333,
+   "counted_sources": 1,
+   "reason": "Board listing (australiassouthwest.com) and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) winery page: founding winery (1970), twice Jimmy Watson trophy winner, cellar door daily, vineyard tours.",
+   "skeptic_objection": "For: a founding estate a board names. Against: a cellar door like dozens of others, with no visitor attraction beyond tasting; the brief keeps a winery only when singled out as a destination in its own right.",
+   "coordinates": {
+    "lat": -33.9675,
+    "lng": 115.03777778
+   },
+   "if_approved": "A Margaret River Region spot."
+  },
+  {
+   "name": "Voyager Estate",
+   "views": 1273,
+   "counted_sources": 1,
+   "reason": "Board listing (australiassouthwest.com) and margaretriver.com (Margaret River Busselton Tourism Association, the regional board) page: family estate in the Stevens Valley with a wine room, private tours and an award-winning restaurant (Regional Restaurant of the Year 2025).",
+   "skeptic_objection": "For: a well-known estate with tours. Against: tastings and dining only; no source read singles it out as a destination beyond the cellar door (brief winery rule).",
+   "coordinates": {
+    "lat": -33.99694444,
+    "lng": 115.05416667
+   },
+   "if_approved": "A Margaret River Region spot."
+  },
+  {
+   "name": "Cullen Wines",
+   "views": 1334,
+   "counted_sources": 0,
+   "reason": "Re-looked: westernaustralia.com (Tourism WA) Margaret River page names Cullen among the heritage winemakers; margaretriver.com (Margaret River Busselton Tourism Association, the regional board) page (the only biodynamic, carbon-positive winery in the region, wine room open daily).",
+   "skeptic_objection": "For: two counted sources, a pioneer estate. Against: a cellar door and restaurant like many others; the brief keeps a winery only when singled out as a destination.",
+   "coordinates": {
+    "lat": -33.81916667,
+    "lng": 115.0375
+   },
+   "if_approved": "A Margaret River Region spot."
+  },
+  {
+   "name": "Wadandi Track",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Rule 1: the Shire of Augusta Margaret River (managing authority) trail page names it: a walk/cycle rail trail on the former Busselton–Flinders Bay railway, 46 km open in two sections (Busselton Jetty–Carbunup River, Cowaramup–Sebbes Road), being completed to 109 km by 2028. Rule 2 met (walk or ride it).",
+   "skeptic_objection": "Only one counted source and that is a council page, not a tourism or guide listing; the trail is incomplete until 2028 and the note placed it 'around Augusta', whereas the open sections are Busselton and Cowaramup; may be better added once finished. Case for: state-funded flagship trail the region is promoting.",
+   "coordinates": null,
+   "if_approved": "If approved: a Margaret River Region or Busselton spot at its route midpoint; incomplete until 2028."
+  },
+  {
+   "name": "Gloucester National Park",
+   "views": 675,
+   "counted_sources": 1,
+   "reason": "DBCA page: karri forest walks (Gloucester Tree–Cascades 12 km, 10 km loop, Pemberton town link), mountain biking, the Cascades rapids on Lefroy Brook, Aerial Adventure Pemberton. More than the tree alone.",
+   "skeptic_objection": "Near-duplicate of the Gloucester Tree, which is what visitors come for and which sits in it; one counted source (the agency's own page). Keep only if the Cascades/trails are not carried by the tree spot.",
+   "coordinates": {
+    "lat": -34.44444444,
+    "lng": 116.05861111
+   },
+   "if_approved": "If approved: a spot of Southern Forests, pinned at the Cascades, not the Gloucester Tree."
+  },
+  {
+   "name": "Blackwood River National Park",
+   "views": 555,
+   "counted_sources": 1,
+   "reason": "DBCA page: canoeing, swimming and fishing on WA's longest continuously flowing river, Sues Bridge and Chapman Pool day-use areas and campgrounds; free entry. The board also lists 'Blackwood River'.",
+   "skeptic_objection": "One counted source; the park is a string of river campgrounds rather than a single draw, and paddling the Blackwood is equally done from Nannup or Augusta; may be better as 'Blackwood River' with its access point.",
+   "coordinates": {
+    "lat": -34.0671,
+    "lng": 115.433
+   },
+   "if_approved": "If approved: a Blackwood Valley spot or standalone, pinned at Sues Bridge; otherwise carried by Blackwood River."
+  },
+  {
+   "name": "Lake Muir National Park",
+   "views": 327,
+   "counted_sources": 0,
+   "reason": "The candidate park has no DBCA page, but the visitor point beside it does: DBCA's Lake Muir Observatory page (110 m boardwalk through the wetlands to a raised bird hide, picnic shelter, toilets; 'a popular rest stop on the Muir Highway'), also listed by Southern Forests and Valleys. If added, name it Lake Muir Observatory (it is in Lake Muir Nature Reserve, just north of the national park).",
+   "skeptic_objection": "A highway rest stop with a 15-30 minute boardwalk; the lake can be a dry bed in summer. Only the agency page plus a local tourism listing.",
+   "coordinates": {
+    "lat": -34.446,
+    "lng": 116.68
+   },
+   "if_approved": "If approved, name it Lake Muir Observatory (DBCA site, in Lake Muir Nature Reserve); standalone (beyond the Southern Forests span on the Muir Highway)."
+  },
+  {
+   "name": "Harris Dam",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Collie (See): picnic lawns below the dam wall and a walk trail to the top for the view.",
+   "skeptic_objection": "One counted source; Wikivoyage itself says 'look is all you can do' (no water activities): a picnic area by a water-supply dam, mostly local use.",
+   "coordinates": {
+    "lat": -33.40152,
+    "lng": 115.97855
+   },
+   "if_approved": "A Collie spot (inside its 30 km span, reached from the town)."
+  },
+  {
+   "name": "Glen Mervyn Dam",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Collie (See): a crescent-shaped dam for water skiing, boating and camping, with a bushland walk.",
+   "skeptic_objection": "One counted source; a local boating and camping reservoir that visitors from elsewhere rarely travel for.",
+   "coordinates": null,
+   "if_approved": "A Collie spot (inside its 30 km span, reached from the town)."
+  },
+  {
+   "name": "Minninup Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Collie (See): a wide section of the Collie River 3 km south of town for swimming and canoeing; the Shire tests its water with Black Diamond and Stockton.",
+   "skeptic_objection": "One counted source; a local swimming hole, and Collie already has stronger swimming spots (Black Diamond, Stockton Lake, Honeymoon Pool).",
+   "coordinates": {
+    "lat": -33.376662,
+    "lng": 116.138021
+   },
+   "if_approved": "A Collie spot (inside its 30 km span, reached from the town)."
+  },
+  {
+   "name": "Collie River Walk",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Collie (Do/Hike): a 9 km walk following the Collie River through town.",
+   "skeptic_objection": "One line in one source; a town riverside path, more a local amenity than a draw from elsewhere.",
+   "coordinates": null,
+   "if_approved": "A Collie spot (inside its 30 km span, reached from the town)."
+  },
+  {
+   "name": "Collie Railway Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Collie (Museums): reconstructed railway station with railway items and the rediscovered Welsh train drawings, open 9-4 daily, by donation. Open to the public with something to see.",
+   "skeptic_objection": "One counted source and a small volunteer museum; a 30-minute stop only if passing through Collie.",
+   "coordinates": {
+    "lat": -33.360034,
+    "lng": 116.154757
+   },
+   "if_approved": "A Collie spot (inside its 30 km span, reached from the town)."
+  },
+  {
+   "name": "Coalfields Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Collie (Museums): mining, timber, farming and social history, open 10-3 daily, $5.",
+   "skeptic_objection": "One counted source; a small local-history museum; Collie's coal heritage is its one distinct theme.",
+   "coordinates": null,
+   "if_approved": "A Collie spot (inside its 30 km span, reached from the town)."
+  },
+  {
+   "name": "Aerial Adventure Pemberton",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "a permanent high-ropes and zipline park (40 min to 2.5 h courses, ages 4+) in karri forest beside the Gloucester Tree; named by the regional board, the Pemberton Visitor Centre and margaretriver.com",
+   "skeptic_objection": "Against: it is an operator's activity course inside Gloucester National Park, next to the Gloucester Tree (risk of being part of that larger spot); paid, booked activity; closes for a winter break. For: a fixed permanent venue, like an amusement park, that visitors travel to Pemberton for.",
+   "coordinates": {
+    "lat": -34.447417,
+    "lng": 116.056821
+   },
+   "if_approved": "If approved: a Southern Forests spot, moved 25 m clear of the Gloucester Tree pin."
+  },
+  {
+   "name": "Nannup Lavender Farm and Campground",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "lavender farm near Nannup with fields to walk and pick in (full flower Dec-Jan), a seasonal private garden, tearooms and shop; named by the regional board and Southern Forests and Valleys",
+   "skeptic_objection": "Against: mostly a café, gift shop and campground with only seasonal flowering and garden; one-hour stop only if nearby anyway. For: a recognisable farm-gate attraction two regional tourism sources list.",
+   "coordinates": null,
+   "if_approved": "A Blackwood Valley spot."
+  },
+  {
+   "name": "Origins Market",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Busselton indoor market building with 50-80 makers and producers under one roof; Australia's South West listing and margaretriver.com (which lists an Origins Market Busselton tour). A permanent market hall is allowed by 'What qualifies' 4 if it trades most days.",
+   "skeptic_objection": "Trading days unconfirmed (may be only a few days a week, which fails rule 4); it is essentially a food hall and shops (rule 2). Keep only if it trades daily like a market hall.",
+   "coordinates": null,
+   "if_approved": "A Busselton spot."
+  },
+  {
+   "name": "A Maze'n Margaret River",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Hedge maze and botanical gardens near Margaret River, a permanent paid family attraction for an hour or more ('What qualifies' 2); Australia's South West listing (counted); Wikivoyage Margaret River mentions 'one of the three mazes' without naming it.",
+   "skeptic_objection": "Only one counted source names it; a family amusement stop that two other mazes in the area duplicate in kind (Yallingup Maze). Marginal: friend test passes only for families.",
+   "coordinates": {
+    "lat": -33.987681,
+    "lng": 115.088265
+   },
+   "if_approved": "A Margaret River Region spot."
+  },
+  {
+   "name": "Torpedo Rocks",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Granite outcrops and lookout above Yallingup on the Torpedo Trail (3 km loop) and Cape to Cape Track; Trails WA (opened) names the Torpedo Rock car park and lookout. Re-look found one counted source.",
+   "skeptic_objection": "Part of a larger walk (Torpedo Trail / Cape to Cape) and a short lookout; one source; could be folded into Yallingup or the Cape to Cape spot ('What qualifies' 3).",
+   "coordinates": {
+    "lat": -33.6475,
+    "lng": 115.0181
+   },
+   "if_approved": "A Margaret River Region spot."
+  }
+ ],
+ "duplicates_elsewhere": [
+  {
+   "name": "Bibbulmun Track",
+   "also_kept_in": [
+    "wa-perth",
+    "wa-great-southern"
+   ],
+   "placed_here_as": "bibbulmun-track",
+   "note": "Run-wide decision: placed once in wa-south-west at the whole route's midpoint; the other regions must not place it."
+  },
+  {
+   "name": "Munda Biddi Trail",
+   "also_kept_in": [
+    "wa-perth",
+    "wa-great-southern"
+   ],
+   "placed_here_as": "munda-biddi-trail",
+   "note": "Same run-wide decision."
+  },
+  {
+   "name": "Cape to Cape Track",
+   "also_kept_in": [],
+   "placed_here_as": "margaret-river-region-3",
+   "note": "Placed in wa-south-west per the run-wide decision."
+  }
+ ],
+ "cross_region_notes": [
+  "Mandalay Beach, Fernhook Falls and Mount Frankland National Park lie in wa-south-west but are reached from Walpole; wa-great-southern kept Walpole and Walpole-Nornalup National Park. If that region proposes a Walpole destination whose span reaches them, move these three under it (their ids stay)."
+ ],
+ "existing_fixes": []
+}

@@ -1,0 +1,123 @@
+[
+ {
+  "name": "Art Gallery of Western Australia",
+  "wiki": "Art Gallery of Western Australia",
+  "views": 4949,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Art Gallery of Western Australia",
+   "wiki": "Art Gallery of Western Australia",
+   "coordinates": {
+    "lat": -31.950588,
+    "lng": 115.860943
+   },
+   "coordinates_source": "wikipedia:Art Gallery of Western Australia",
+   "views": 4949,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Northbridge",
+    "https://en.wikivoyage.org/wiki/Perth"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Art_Gallery_of_Western_Australia"
+   ],
+   "note": "Museum: state art gallery with rotating contemporary, international and Indigenous exhibitions."
+  }
+ },
+ {
+  "name": "Fremantle Court House and Police Station Complex",
+  "wiki": "Fremantle Police Station complex",
+  "views": 641,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Fremantle Court House and Police Station Complex",
+   "wiki": "Fremantle Police Station complex",
+   "coordinates": {
+    "lat": -32.054817,
+    "lng": 115.750199
+   },
+   "coordinates_source": "wikipedia:Old Fremantle Police Station and Court House Complex",
+   "views": 641,
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.openstreetmap.org/way/232590742",
+    "https://en.wikipedia.org/wiki/Fremantle_Police_Station_complex"
+   ],
+   "note": "Heritage complex: 19th-century court and police station on OSM.",
+   "redirect_to": "Old Fremantle Police Station and Court House Complex"
+  }
+ },
+ {
+  "name": "John Forrest National Park",
+  "wiki": "John Forrest National Park",
+  "views": 4239,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "John Forrest National Park",
+   "wiki": "John Forrest National Park",
+   "coordinates": {
+    "lat": -31.88194444,
+    "lng": 116.07388889
+   },
+   "coordinates_source": "wikipedia:John Forrest National Park",
+   "views": 4239,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/John_Forrest_National_Park",
+    "https://exploreparks.dbca.wa.gov.au/park/john-forrest-national-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/John_Forrest_National_Park"
+   ],
+   "note": "National park: bushland national park in the Darling Range with Rocky Pool and Mount Helena walks."
+  }
+ },
+ {
+  "name": "Manning Farmers Market",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Manning Farmers Market",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Perth"
+   ],
+   "other_sources": [],
+   "note": "Market: Saturday farmers market in Manning with more than 50 stalls."
+  }
+ },
+ {
+  "name": "Perth Mint",
+  "wiki": "Perth Mint",
+  "views": 21819,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Perth Mint",
+   "wiki": "Perth Mint",
+   "coordinates": {
+    "lat": -31.9573,
+    "lng": 115.8692
+   },
+   "coordinates_source": "wikipedia:Perth Mint",
+   "views": 21819,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Perth"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Perth_Mint",
+    "https://www.openstreetmap.org/relation/18990831"
+   ],
+   "note": "Museum: historic gold-refining mint in central Perth with tours."
+  }
+ }
+]

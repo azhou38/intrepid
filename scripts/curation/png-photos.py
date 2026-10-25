@@ -66,7 +66,7 @@ pending_ext = []
 for s, e in ext.items():
     fn = os.path.join(SCRATCH, s.split(':')[1] + '.jpg')
     if not os.path.exists(fn):
-        req = urllib.request.Request(e['url'], headers={'User-Agent': 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)'})
+        req = urllib.request.Request(e['url'], headers={'User-Agent': 'IntrepidApp-Curation/1.0'})
         open(fn, 'wb').write(urllib.request.urlopen(req, timeout=60).read())
     accept.append({'slot': s, 'accept': fn, 'page': e['page'], 'hero_crop': e['hero_crop'], 'author': e['author'], 'licence': e['licence'], 'source': 'flickr'})
 

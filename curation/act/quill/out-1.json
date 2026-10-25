@@ -1,0 +1,234 @@
+{
+ "spots": {
+  "canberra-1": {
+   "name": "Parliament House",
+   "icon": "🏛️",
+   "category": "landmark",
+   "wiki": "Parliament House, Canberra",
+   "bio": "Seat of Australia's federal parliament on Capital Hill, with free daily tours, public galleries and a roof lawn.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.aph.gov.au",
+   "ticket_note": "aph.gov.au answers scripts with a WAF block page; check in a browser (homepage is the Parliament's own site).",
+   "notes": "Hours from Wikivoyage: non-sitting days 9-5, sitting days 9-6; free tours 10AM, 1PM, 3PM no booking. Not read on the official site (blocked). Moved 0 m from OSM point.",
+   "coordinates": {
+    "latitude": -35.30756,
+    "longitude": 149.124604
+   },
+   "coordinates_source": "OSM tourism=attraction 'Parliament House' (HIGH: Wikipedia and Commons median agree within 100 m); moved 57 m from placement point"
+  },
+  "canberra-2": {
+   "name": "Australian War Memorial",
+   "icon": "🕊️",
+   "category": "museum",
+   "bio": "National war museum and memorial on Anzac Parade, free to enter, with a Last Post Ceremony every day at 4.30 pm.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.awm.gov.au",
+   "notes": "Official visit page (awm.gov.au/visit): entry free, tickets not required; galleries 10am-5pm daily except Christmas Day, Last Post 4.30pm. Page warns the Memorial is being redeveloped and some galleries may be closed. Visit time from Wikivoyage 'allow 4-7 hours' trimmed to a typical range.",
+   "coordinates": {
+    "latitude": -35.280578,
+    "longitude": 149.149306
+   },
+   "coordinates_source": "OSM tourism=museum 'Australian War Memorial' (HIGH, Wikipedia and Commons agree); moved 21 m from placement point"
+  },
+  "canberra-3": {
+   "name": "National Gallery of Australia",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "National art gallery by Lake Burley Griffin, with Aboriginal and Torres Strait Islander art, Blue Poles and a sculpture garden.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nga.gov.au",
+   "ticket_note": "nga.gov.au returns 403 to scripts: BLOCKED, check title in a real browser.",
+   "notes": "Hours and free entry (special exhibitions extra) from Wikivoyage South Canberra listing; official page blocked. Sculpture garden claim from draft/VisitCanberra, not re-read.",
+   "coordinates": {
+    "latitude": -35.300932,
+    "longitude": 149.136659
+   },
+   "coordinates_source": "OSM amenity=arts_centre 'National Gallery of Australia' (HIGH, OSM and Wikipedia agree); moved 74 m from placement point"
+  },
+  "canberra-4": {
+   "name": "National Museum of Australia",
+   "icon": "🏺",
+   "category": "museum",
+   "bio": "National museum on Acton Peninsula covering Australian history, with a First Australians gallery and free entry.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nma.gov.au",
+   "ticket_note": "nma.gov.au behind Cloudflare 'Just a moment': BLOCKED, check in a browser.",
+   "notes": "Daily 9-5, free except special exhibitions, from Wikivoyage Acton listing; official page blocked.",
+   "coordinates": {
+    "latitude": -35.292836,
+    "longitude": 149.119843
+   },
+   "coordinates_source": "OSM tourism=attraction 'National Museum of Australia' (HIGH, Wikipedia agrees); moved 93 m from placement point"
+  },
+  "canberra-5": {
+   "name": "Old Parliament House",
+   "icon": "🏛️",
+   "category": "museum",
+   "wiki": "Old Parliament House, Canberra",
+   "bio": "Australia's former Parliament House, now the Museum of Australian Democracy, with its chambers and PM's office open.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.moadoph.gov.au",
+   "notes": "moadoph.gov.au/visit: 'Free entry', open 9am-5pm daily (closed Christmas Day); guided tours listed on site (price not read). Site notes building works and some closed exhibitions/rooms. Wikivoyage's $2 entry is outdated. Merged from Museum of Australian Democracy.",
+   "coordinates": {
+    "latitude": -35.302352,
+    "longitude": 149.130018
+   },
+   "coordinates_source": "OSM tourism=attraction 'Old Parliament House' (HIGH, Wikipedia and Commons agree); moved 30 m from placement point"
+  },
+  "canberra-6": {
+   "name": "Questacon",
+   "icon": "🔬",
+   "category": "museum",
+   "bio": "Interactive science and technology centre in Parkes with hands-on galleries, so allow at least two hours.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 27.5,
+   "costMax": 27.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.questacon.edu.au",
+   "notes": "questacon.edu.au/visiting: open daily 9-5 (closed Christmas Day), pre-booking and timed entry advised, suggests at least 2 hours for exhibitions (4 with cafe, shop). /tickets page: adult $27.50 (first price table; concession $20, family $85); the page does not label the columns so the adult price is the first listed.",
+   "coordinates": {
+    "latitude": -35.298506,
+    "longitude": 149.131255
+   },
+   "coordinates_source": "OSM tourism=attraction 'Questacon' (MEDIUM, single OSM feature); moved 13 m from placement point"
+  },
+  "canberra-7": {
+   "name": "Australian National Botanic Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Native plant gardens at the foot of Black Mountain, with a rainforest gully, a Red Centre garden and water dragons.",
+   "hours": "8:30 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://visit.anbg.gov.au",
+   "notes": "visit.anbg.gov.au/visit/opening-hours: open 8.30am-5pm every day except Christmas Day, gates locked outside; parts may close in dangerous weather. Free entry from Wikivoyage Acton listing (parking charged); official fee line not read. Site title: Australian National Botanic Gardens | Parks Australia. Garden features from the site's navigation.",
+   "coordinates": {
+    "latitude": -35.27775,
+    "longitude": 149.10761
+   },
+   "coordinates_source": "OSM leisure=garden 'Australian National Botanic Gardens' (HIGH, OSM+Commons agree); moved 190 m from placement point"
+  },
+  "canberra-8": {
+   "name": "Lake Burley Griffin",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Artificial lake at Canberra's centre, with a path around its 40 km shore, cruises, boat hire and swimming beaches.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/lake-burley-griffin",
+   "notes": "NCA page (title 'Lake Burley Griffin | National Capital Authority'): shoreline 40.5 km, 3 designated swimming beaches, cruises, kayak/SUP hire. Cruise and hire prices are extras, not the price. Pin: LOW, see coordinates_source. The '25 km shared path' in the draft is not on the NCA page, so dropped.",
+   "pin": "LOW",
+   "coordinates": {
+    "latitude": -35.293333,
+    "longitude": 149.113889
+   },
+   "coordinates_source": "Wikipedia article 'Lake Burley Griffin' coordinates (point in the lake's West Basin water; resolve-pin gave only a LOW Commons median 560 m away); a lake is correctly pinned in water; 0 m from placement point"
+  },
+  "canberra-9": {
+   "name": "National Arboretum Canberra",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "250-hectare arboretum of over 44,000 rare and endangered trees in the Molonglo Valley, with a playground and views.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationalarboretum.act.gov.au",
+   "ticket_note": "nationalarboretum.act.gov.au is Cloudflare-blocked: BLOCKED, check in a browser.",
+   "notes": "Area 250 ha (Wikipedia) and 44,000 trees (VisitCanberra attractions page). Hours and free entry NOT read from a source; Village Centre/cafe hours differ from the grounds.",
+   "coordinates": {
+    "latitude": -35.287897,
+    "longitude": 149.06925
+   },
+   "coordinates_source": "OSM tourism=attraction 'National Arboretum Canberra' (MEDIUM, single OSM feature of right type; a leisure=garden node is 540 m away); moved 244 m from placement point"
+  },
+  "canberra-10": {
+   "name": "Mount Ainslie",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Summit lookout reached on foot, by bike or car, with views down Anzac Parade to Parliament House and the lake.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-ainslie-nature-reserve",
+   "notes": "Agency page parks.act.gov.au blocked; ACT reserves and lookouts are free. Wikivoyage: road via North Canberra, 843 m, view along the Anzac Parade axis. Pin on the summit peak node; Wikivoyage's Ainslie Lookout point is about 80 m away.",
+   "coordinates": {
+    "latitude": -35.26979,
+    "longitude": 149.15868
+   },
+   "coordinates_source": "OSM natural=peak 'Mount Ainslie' (HIGH, OSM agrees); moved 2 m from placement point"
+  }
+ },
+ "unverified": [
+  "canberra-1 Parliament House hours and free tour times: from Wikivoyage only (official site blocked)",
+  "canberra-3 National Gallery of Australia hours and free entry: Wikivoyage only",
+  "canberra-4 National Museum of Australia hours and free entry: Wikivoyage only",
+  "canberra-5 Old Parliament House: tour prices not read",
+  "canberra-6 Questacon adult price $27.50 read from unlabelled first column",
+  "canberra-7 ANBG free entry: Wikivoyage only",
+  "canberra-9 National Arboretum hours and free entry: no source read",
+  "canberra-10 Mount Ainslie hours (Open 24 hours) and any road closure times: unverified"
+ ],
+ "needs_browser": [
+  {
+   "id": "canberra-1",
+   "url": "https://www.aph.gov.au",
+   "why": "WAF block; confirm hours, tours, site title"
+  },
+  {
+   "id": "canberra-3",
+   "url": "https://www.nga.gov.au/visit",
+   "why": "403; confirm hours, free entry, title"
+  },
+  {
+   "id": "canberra-4",
+   "url": "https://www.nma.gov.au/visit",
+   "why": "Cloudflare; confirm hours, free entry, title"
+  },
+  {
+   "id": "canberra-9",
+   "url": "https://www.nationalarboretum.act.gov.au/visit",
+   "why": "Cloudflare; confirm hours, free entry, title"
+  },
+  {
+   "id": "canberra-10",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-ainslie-nature-reserve",
+   "why": "parks.act.gov.au blocked; confirm page and any road hours"
+  }
+ ],
+ "notes": [
+  "LOW pin: canberra-8 Lake Burley Griffin uses the Wikipedia point in the lake water.",
+  "None judged unfit to add."
+ ]
+}

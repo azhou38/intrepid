@@ -1,0 +1,508 @@
+{
+ "spots": [
+  {
+   "id": "canberra-61",
+   "name": "Molonglo Gorge Nature Reserve",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Day-use nature reserve along the Molonglo River gorge near Queanbeyan.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.328093,
+    "lng": 149.261864
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Airport_and_East page)",
+   "km_from_destination": 15.0,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Airport_and_East"
+   ],
+   "reason": "Kept by the judge: Wikivoyage Airport and East describes a signposted 15 km river-gorge reserve with a main recreation area (run rule: named nature reserve kept). Opened that page.",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.327103,
+     "lon": 149.253734,
+     "src": "osm",
+     "name": "Molonglo Gorge Nature Reserve",
+     "type": "leisure=nature_reserve (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Molonglo Gorge Nature Reserve",
+      "type": "leisure=nature_reserve (nominatim)",
+      "lat": -35.3271031,
+      "lon": 149.2537335,
+      "from_hint_m": 747
+     },
+     {
+      "src": "osm",
+      "name": "Molonglo George Nature Reserve (South)",
+      "type": "leisure=playground (nominatim)",
+      "lat": -35.3278749,
+      "lon": 149.2487093,
+      "from_hint_m": 1195
+     }
+    ],
+    "hint": {
+     "lat": -35.328093,
+     "lon": 149.261864,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-62",
+   "name": "Glenburn Homestead",
+   "destination": "canberra",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Historic homestead at Kowen, open daily according to the listing.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.307549,
+    "lng": 149.313719
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Airport_and_East page)",
+   "km_from_destination": 19.3,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Airport_and_East"
+   ],
+   "reason": "Kept by the judge: Wikivoyage Airport and East lists it as a heritage precinct open 24 hours with 1830s structures, ruins, gravesites and farm machinery; a historic homestead with things to see (run rule). Opened that p",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.307601,
+     "lon": 149.313939,
+     "src": "osm",
+     "name": "Glenburn homestead",
+     "type": "historic=ruins (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Glenburn homestead",
+      "type": "historic=ruins (nominatim)",
+      "lat": -35.3076006,
+      "lon": 149.3139389,
+      "from_hint_m": 21
+     }
+    ],
+    "hint": {
+     "lat": -35.307549,
+     "lon": 149.313719,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-63",
+   "name": "One Tree Hill Lookout",
+   "destination": "canberra",
+   "category": "viewpoint",
+   "icon": "👀",
+   "bio": "Hilltop lookout reached by walking from Hall, with views over Canberra, on the Canberra Centenary Trail.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.142098,
+    "lng": 149.091424
+   },
+   "coordinates_source": "wikivoyage listing",
+   "km_from_destination": 17.3,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Gungahlin",
+    "https://en.wikivoyage.org/wiki/Canberra/Hall",
+    "https://visitcanberra.com.au/our-neighbourhoods/north-canberra/hall-and-wineries"
+   ],
+   "reason": "Kept by the judge: Rule 1/2/3: Wikivoyage Hall and Gungahlin plus Visit Canberra (100 things, a popular Centenary Trail section) name the hilltop lookout; about one hour walk each way; it is a hill/lookout separate from",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.142087,
+     "lon": 149.091384,
+     "src": "osm",
+     "name": "One Tree Hill",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "One Tree Hill",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.1420866,
+      "lon": 149.091384,
+      "from_hint_m": 4
+     },
+     {
+      "src": "commons",
+      "name": "1 geotagged files",
+      "type": "photo median",
+      "lat": -35.157006,
+      "lon": 149.096847,
+      "from_hint_m": 1731
+     }
+    ],
+    "hint": {
+     "lat": -35.142098,
+     "lon": 149.091424,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-64",
+   "name": "Goorooyarroo Nature Reserve",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Woodland reserve beside Mulligans Flat with walking tracks and picnic areas.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/goorooyarroo-nature-reserve"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: ACT parks agency page (via parks-act-leads, Canberra Nature Park; relied on the agency lead list) names woodland reserve with walking tracks and picnic areas.",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": null,
+    "agreeing": [],
+    "candidates": [],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-65",
+   "name": "Jerrabomberra West Grasslands",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "🌾",
+   "bio": "8 km return Grassy Plains walk from the Callum Brae car park, about three hours.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/jerrabomberra-west-grasslands-nature-reserve"
+   ],
+   "reason": "Kept by the judge: Parks ACT (nature reserve page, via leads): nature reserve with the 8 km Grassy Plains walk; a named walk in a reserve.",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.37317,
+     "lon": 149.162405,
+     "src": "osm",
+     "name": "Jerrabomberra West Grasslands Nature Reserve",
+     "type": "leisure=nature_reserve (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Jerrabomberra West Grasslands Nature Reserve",
+      "type": "leisure=nature_reserve (nominatim)",
+      "lat": -35.3731698,
+      "lon": 149.1624049,
+      "from_hint_m": 10082
+     }
+    ],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-66",
+   "name": "Oakey Hill",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Hill in Weston Creek with a walk to the summit and views over Canberra.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.33773,
+    "lng": 149.068
+   },
+   "coordinates_source": "wikipedia:Oakey Hill",
+   "km_from_destination": 5.4,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Woden"
+   ],
+   "reason": "Kept by the judge: Oakey Hill: Wikivoyage Woden lists Oakey Hill Nature Reserve with short walking trails, free, 24 hours, and a dependable place to see grey kangaroos at dusk; also named in Wikivoyage Canberra's bushwa",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.340399,
+     "lon": 149.069549,
+     "src": "osm",
+     "name": "Oakey Hill Nature Reserve",
+     "type": "natural=grassland (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Oakey Hill Nature Reserve",
+      "type": "natural=grassland (nominatim)",
+      "lat": -35.3403994,
+      "lon": 149.0695486,
+      "from_hint_m": 329
+     },
+     {
+      "src": "wiki",
+      "name": "Oakey Hill",
+      "type": "article",
+      "lat": -35.33773,
+      "lon": 149.068,
+      "from_hint_m": 0
+     }
+    ],
+    "hint": {
+     "lat": -35.33773,
+     "lon": 149.068,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-67",
+   "name": "Mount Wanniassa",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "809 m peak in Wanniassa Hills Nature Reserve with walking trails on both slopes and views of Woden and Tuggeranong.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.3895,
+    "lng": 149.1197
+   },
+   "coordinates_source": "wikipedia:Mount Wanniassa",
+   "km_from_destination": 10.4,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong",
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong_and_Country_ACT"
+   ],
+   "reason": "Kept by the judge: Mount Wanniassa: Wikivoyage Tuggeranong gives it a listing (809 m, established trails on east and west slopes, views of Woden and Tuggeranong), in Wanniassa Hills Nature Reserve; a hill kept when a vi",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.391612,
+     "lon": 149.11517,
+     "src": "osm",
+     "name": "Mount Wanniassa",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Mount Wanniassa",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.3916123,
+      "lon": 149.1151696,
+      "from_hint_m": 474
+     },
+     {
+      "src": "wiki",
+      "name": "Mount Wanniassa",
+      "type": "article",
+      "lat": -35.3895,
+      "lon": 149.1197,
+      "from_hint_m": 0
+     }
+    ],
+    "hint": {
+     "lat": -35.3895,
+     "lon": 149.1197,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-68",
+   "name": "Tuggeranong Hill",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Hill with a steep track to the summit and views over the Lanyon Valley and Tuggeranong.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.45333333,
+    "lng": 149.10777778
+   },
+   "coordinates_source": "wikipedia:Tuggeranong Hill",
+   "km_from_destination": 17.3,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong",
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong_and_Country_ACT",
+    "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/tuggeranong-hill-nature-reserve"
+   ],
+   "reason": "Kept by the judge: Tuggeranong Hill: Wikivoyage Tuggeranong lists it and the parks agency has a Tuggeranong Hill Nature Reserve page (two counted sources); steep track to the summit with views over the Lanyon Valley. Op",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.453153,
+     "lon": 149.107714,
+     "src": "osm",
+     "name": "Tuggeranong Hill",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Tuggeranong Hill",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.4531526,
+      "lon": 149.1077142,
+      "from_hint_m": 21
+     }
+    ],
+    "hint": {
+     "lat": -35.45333333,
+     "lon": 149.10777778,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-69",
+   "name": "Gibraltar Peak",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Steep 8 km return walk in Tidbinbilla Nature Reserve to a summit with panoramic views over Canberra and the reserve.",
+   "wiki": "Gibraltar Peak (Canberra)",
+   "coordinates": {
+    "lat": -35.4593,
+    "lng": 148.94866667
+   },
+   "coordinates_source": "wikipedia:Gibraltar Peak (Canberra)",
+   "km_from_destination": 22.7,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong_and_Country_ACT",
+    "https://visitcanberra.com.au/attractions/5975920f8765ed4134b0dbed/gibraltar-peak"
+   ],
+   "reason": "Kept by the judge: a named peak with two counted sources (Wikivoyage, VisitCanberra attraction page which I opened): 8.2 km, 2-3 hour climb to panoramic views; a separate place from the reserve and distinct from its oth",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.458675,
+     "lon": 148.947814,
+     "src": "osm",
+     "name": "Gibraltar Peak",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [
+     "commons"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Gibraltar Peak",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.4586751,
+      "lon": 148.9478136,
+      "from_hint_m": 104
+     },
+     {
+      "src": "commons",
+      "name": "19 geotagged files",
+      "type": "photo median",
+      "lat": -35.458415,
+      "lon": 148.947287,
+      "from_hint_m": 159
+     }
+    ],
+    "hint": {
+     "lat": -35.4593,
+     "lon": 148.94866667,
+     "from": "placement"
+    }
+   }
+  }
+ ]
+}

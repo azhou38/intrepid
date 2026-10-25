@@ -447,6 +447,15 @@
       ]
     },
     {
+      "id": "act-canberra",
+      "name": "Canberra & ACT",
+      "destinations": [
+        "canberra",
+        "namadgi-national-park"
+      ],
+      "standalone": []
+    },
+    {
       "id": "tas-hobart-southeast",
       "name": "Hobart & Southeast (TAS)",
       "destinations": [
@@ -625,6 +634,240 @@
         "anmatjere-man"
       ],
       "timezone": "Australia/Darwin"
+    },
+    {
+      "id": "wa-perth",
+      "name": "Perth & Surrounds (WA)",
+      "destinations": [
+        "perth",
+        "rottnest-island",
+        "perth-hills",
+        "mandurah",
+        "avon-valley"
+      ],
+      "standalone": [
+        "yanchep-national-park",
+        "crystal-cave",
+        "new-norcia",
+        "gingin",
+        "mount-cooke"
+      ],
+      "timezone": "Australia/Perth"
+    },
+    {
+      "id": "wa-south-west",
+      "name": "South West (WA)",
+      "destinations": [
+        "margaret-river-region",
+        "bunbury",
+        "collie",
+        "southern-forests",
+        "blackwood-valley"
+      ],
+      "standalone": [
+        "bibbulmun-track",
+        "munda-biddi-trail",
+        "ferguson-valley",
+        "gnomesville",
+        "harvey",
+        "boola-bidi-dreaming-centre",
+        "donnybrook",
+        "peppermint-grove-beach"
+      ],
+      "timezone": "Australia/Perth"
+    },
+    {
+      "id": "wa-great-southern",
+      "name": "Great Southern (WA)",
+      "destinations": [
+        "albany",
+        "torndirrup-national-park",
+        "denmark",
+        "walpole-wilderness",
+        "stirling-range-national-park",
+        "fitzgerald-river-national-park"
+      ],
+      "standalone": [
+        "porongurup-national-park",
+        "castle-rock-granite-skywalk",
+        "devils-slide-porongurup",
+        "mount-barker-wa",
+        "bremer-bay",
+        "katanning",
+        "the-kodja-place",
+        "yongergnow-malleefowl-centre",
+        "cheynes-beach"
+      ],
+      "timezone": "Australia/Perth"
+    },
+    {
+      "id": "wa-golden-outback",
+      "name": "Golden Outback & Wheatbelt (WA)",
+      "destinations": [
+        "esperance",
+        "cape-le-grand-national-park",
+        "kalgoorlie-boulder",
+        "hyden",
+        "nullarbor-plain",
+        "merredin"
+      ],
+      "standalone": [
+        "ravensthorpe-range",
+        "ravensthorpe-silo-art",
+        "hopetoun-ravensthorpe-railway-heritage-walk-trail",
+        "big-lollipop",
+        "lake-ballard",
+        "gwalia",
+        "walga-rock",
+        "canning-stock-route",
+        "cape-arid-national-park",
+        "coolgardie",
+        "goldfields-exhibition-museum",
+        "coolgardie-cemetery",
+        "burra-rock",
+        "red-hill-lookout-kambalda",
+        "norseman",
+        "norseman-tin-camels",
+        "dundas-rocks",
+        "menzies",
+        "niagara-dam",
+        "kookynie",
+        "laverton",
+        "great-beyond-explorers-hall-of-fame",
+        "hopetoun",
+        "wharton-beach",
+        "munglinup-beach",
+        "stokes-national-park",
+        "goldfields-woodlands-national-park",
+        "goongarrie-national-park",
+        "peak-charles-national-park",
+        "dryandra-woodland",
+        "barna-mia",
+        "gathercole-nature-reserve",
+        "boyagin-nature-reserve",
+        "kokerbin-rock",
+        "beringbooding-rock",
+        "elachbutting-rock",
+        "jilakin-rock",
+        "yorkrakine-rock",
+        "yeerakine-rock",
+        "toolibin-lake",
+        "lake-dumbleyung",
+        "kulin",
+        "tin-horse-highway",
+        "corrigin",
+        "corrigin-dog-cemetery",
+        "southern-cross",
+        "yilgarn-history-museum",
+        "narrogin",
+        "cue",
+        "mount-magnet",
+        "meekatharra",
+        "sandstone",
+        "london-bridge-sandstone",
+        "wiluna",
+        "tjukurba-art-gallery",
+        "canning-gunbarrel-discovery-centre",
+        "north-pool-wiluna"
+      ],
+      "timezone": "Australia/Perth"
+    },
+    {
+      "id": "wa-coral-coast",
+      "name": "Coral Coast & Mid West (WA)",
+      "destinations": [
+        "shark-bay",
+        "nambung-national-park",
+        "kalbarri-national-park",
+        "geraldton",
+        "jurien-bay",
+        "ningaloo"
+      ],
+      "standalone": [
+        "dongara",
+        "big-lobster-dongara",
+        "irwin-river-trail",
+        "houtman-abrolhos",
+        "hutt-lagoon",
+        "lynton-convict-depot",
+        "northampton",
+        "horrocks-beach",
+        "carnarvon",
+        "carnarvon-space-and-technology-museum",
+        "quobba-blowholes",
+        "red-bluff-quobba",
+        "gnaraloo",
+        "kennedy-range-national-park",
+        "mount-augustus",
+        "lancelin",
+        "lancelin-sand-dunes",
+        "green-head",
+        "leeman",
+        "stockyard-gully-caves",
+        "mullewa",
+        "mingenew",
+        "three-springs",
+        "carnamah",
+        "coalseam-conservation-park"
+      ],
+      "timezone": "Australia/Perth"
+    },
+    {
+      "id": "wa-pilbara",
+      "name": "Pilbara (WA)",
+      "destinations": [
+        "karijini",
+        "karratha",
+        "port-hedland"
+      ],
+      "standalone": [
+        "tom-price",
+        "mount-nameless",
+        "paraburdoo",
+        "newman",
+        "marble-bar",
+        "doolena-gorge",
+        "onslow",
+        "old-onslow",
+        "thevenard-island",
+        "millstream-chichester-national-park",
+        "deep-reach-pool",
+        "python-pool",
+        "karlamilyi-national-park"
+      ],
+      "timezone": "Australia/Perth"
+    },
+    {
+      "id": "wa-kimberley",
+      "name": "Kimberley (WA)",
+      "destinations": [
+        "broome",
+        "derby",
+        "gibb-river-road",
+        "kununurra",
+        "wyndham",
+        "purnululu"
+      ],
+      "standalone": [
+        "horizontal-falls",
+        "montgomery-reef",
+        "eighty-mile-beach",
+        "dampier-peninsula",
+        "sacred-heart-church-beagle-bay",
+        "fitzroy-crossing",
+        "danggu-geikie-gorge",
+        "halls-creek",
+        "china-wall",
+        "wolfe-creek-crater",
+        "mitchell-falls",
+        "mitchell-river-national-park",
+        "king-george-falls",
+        "prince-regent-national-park",
+        "el-questro-wilderness-park",
+        "emma-gorge",
+        "zebedee-springs"
+      ],
+      "timezone": "Australia/Perth"
     }
   ],
   "PG": [

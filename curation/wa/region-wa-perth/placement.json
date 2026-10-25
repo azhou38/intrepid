@@ -1,0 +1,4587 @@
+{
+ "region": "wa-perth",
+ "note": "Drafts: every spot goes to Pipeline C research (hours, cost or free, official site) before it is applied. Coordinates are provisional (candidate, OSM or Wikipedia points) and are re-resolved with resolve-pin.py at the Pins stage; null coordinates mean the enumerator point was wrong or missing and was not carried over. Western Australia has no destinations in the app: all six destinations below are proposals for the owner, so every non-standalone spot is \"spot-of-proposed-destination\" and goes in with its destination.",
+ "proposed_new_destinations": [
+  {
+   "id": "perth",
+   "name": "Perth",
+   "category": "city",
+   "rank": 2,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -31.9558967,
+    "longitude": 115.8605784
+   },
+   "coordinates_source": "OSM place=city node 29277817 \"Perth\" (Photon)",
+   "defaultZoomSpanKm": 50,
+   "spots": [
+    "perth-1",
+    "perth-2",
+    "perth-3",
+    "perth-4",
+    "perth-5",
+    "perth-6",
+    "perth-7",
+    "perth-8",
+    "perth-9",
+    "perth-10",
+    "perth-11",
+    "perth-12",
+    "perth-13",
+    "perth-14",
+    "perth-15",
+    "perth-16",
+    "perth-17",
+    "perth-18",
+    "perth-19",
+    "perth-20",
+    "perth-21",
+    "perth-22",
+    "perth-23",
+    "perth-24",
+    "perth-25",
+    "perth-26",
+    "perth-27",
+    "perth-28",
+    "perth-29",
+    "perth-30",
+    "perth-31",
+    "perth-32",
+    "perth-33",
+    "perth-34",
+    "perth-35",
+    "perth-36",
+    "perth-37",
+    "perth-38",
+    "perth-39",
+    "perth-40",
+    "perth-41",
+    "perth-42",
+    "perth-43",
+    "perth-44",
+    "perth-45",
+    "perth-46"
+   ],
+   "spot_count": 46,
+   "name_evidence": {
+    "source": "Wikivoyage \"Perth\" (guide status; listed first under Cities on Wikivoyage \"Western Australia\")",
+    "wording": "\"Perth — The state capital of Western Australia and one of the most remote large cities in the world\"; districts City of Perth, Northbridge, Fremantle, The Coast, Swan Valley, The Suburbs"
+   },
+   "why": "The state capital and the base for the region. Holds the city, the Sunset Coast beaches, Fremantle (filed under Perth: COVERAGE \"Fremantle → Perth\") and the Swan Valley (a Wikivoyage district of Perth, 20-35 km out, visited as a day trip from the city). Span 50 km (75% = 37.5 km) reaches Perth's Outback Splash (34.8 km) without reaching Rockingham, the Perth Hills or Yanchep."
+  },
+  {
+   "id": "rottnest-island",
+   "name": "Rottnest Island",
+   "category": "island",
+   "rank": 2,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -32.0070095,
+    "longitude": 115.5205271
+   },
+   "coordinates_source": "OSM place=island relation 8145344 \"Rottnest Island\" (Photon); visual centre of the island (Thomson Bay settlement, the ferry landing, is 2.6 km east)",
+   "defaultZoomSpanKm": 16,
+   "spots": [
+    "rottnest-island-1",
+    "rottnest-island-2",
+    "rottnest-island-3",
+    "rottnest-island-4"
+   ],
+   "spot_count": 4,
+   "name_evidence": {
+    "source": "Wikivoyage \"Rottnest Island\" (own article, listed under \"Perth surrounds\" on Wikivoyage Perth); Tourism WA Rottnest Island page",
+    "wording": "\"Rottnest Island — Where locals like to relax and home to the irresistible quokkas\"; Wikivoyage Perth: \"One of the best day trips in Perth is to visit Rottnest Island\""
+   },
+   "why": "Car-free island reserve 18 km off Fremantle with its own accommodation, ferries and island tours; 81,891 views, the region's top trip after Perth itself. Four kept spots (The Basin, Wadjemup Lighthouse, Cathedral Rocks, Oliver Hill Battery), so it clears the four-spot bar. Rank 2: quokkas on Rottnest are a national highlight; owner may prefer 3."
+  },
+  {
+   "id": "perth-hills",
+   "name": "Perth Hills",
+   "category": "nature",
+   "rank": 4,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -32.037061,
+    "longitude": 116.155511
+   },
+   "coordinates_source": "centre of the bounding box of its pinned spots (no single visitor hub covers the scarp from Walyunga to Serpentine. Research may re-centre on Kalamunda or Mundaring visitor centre and widen the span.)",
+   "defaultZoomSpanKm": 54,
+   "spots": [
+    "perth-hills-1",
+    "perth-hills-2",
+    "perth-hills-3",
+    "perth-hills-4",
+    "perth-hills-5",
+    "perth-hills-6",
+    "perth-hills-7",
+    "perth-hills-8",
+    "perth-hills-9",
+    "perth-hills-10",
+    "perth-hills-11",
+    "perth-hills-12",
+    "perth-hills-13",
+    "perth-hills-14",
+    "perth-hills-15"
+   ],
+   "spot_count": 15,
+   "name_evidence": {
+    "source": "Wikivoyage \"Perth/The Hills\" (listed under \"Outside the city\" on Wikivoyage Perth); Experience Perth Hills / Destination Perth \"Perth Hills\" pages (cited in the verdicts)",
+    "wording": "Wikivoyage: \"The Hills — Wine, trees, hills, parks, and dams\" and \"The Perth Hills is the 'brand' used by tourism bodies\""
+   },
+   "why": "A named tourism region along the Darling Scarp, set apart from the city by Wikivoyage (\"Outside the city\") and branded by the tourism bodies. Fifteen kept spots: national parks, the weir, waterfalls, wildlife parks and the hills towns. Folding them into Perth would need a Perth span of about 90 km (Serpentine Falls is 46 km and Mount Dale 43 km from the CBD), which COVERAGE calls a ballooned span. Owner option: if the Hills are judged \"filed under Perth\" (the Sydney \"Hills\" example), they become Perth spots with Perth widened, or the outer ones (Serpentine, Mount Dale, Walyunga) stand alone. Its circle covers eastern Perth because the scarp runs north-south: say so to the owner."
+  },
+  {
+   "id": "rockingham",
+   "name": "Rockingham",
+   "category": "city",
+   "rank": 4,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -32.2851899,
+    "longitude": 115.7426524
+   },
+   "coordinates_source": "OSM place=town relation 11689405 \"Rockingham\" (Photon)",
+   "defaultZoomSpanKm": 16,
+   "spots": [
+    "rockingham-1",
+    "rockingham-2",
+    "rockingham-3",
+    "rockingham-4",
+    "rockingham-5"
+   ],
+   "spot_count": 5,
+   "name_evidence": {
+    "source": "Wikivoyage \"Rockingham (Western Australia)\" (own town article, not a Perth district); Destination Perth Rockingham page",
+    "wording": "Wikivoyage Perth: \"Penguin Island ... located five minutes off the coast of Rockingham, a 45-minute drive south of Perth\"; Wikivoyage Outer Perth: \"Rockingham, including Safety Bay and Penguin Island\""
+   },
+   "why": "The base for Penguin Island and the Shoalwater Islands, with its own Wikivoyage article; five kept spots within 7 km. The town itself is not listed as a spot (its draws are the beach, the island and the headland: the town wrapper rule). Owner option: if Rockingham is judged a Perth day trip filed under Perth, its five spots become Perth spots with Perth's span widened to about 90 km, or stand alone."
+  },
+  {
+   "id": "mandurah",
+   "name": "Mandurah",
+   "category": "city",
+   "rank": 4,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -32.5302495,
+    "longitude": 115.7208782
+   },
+   "coordinates_source": "OSM place=city node 32566858 \"Mandurah\" (Photon)",
+   "defaultZoomSpanKm": 52,
+   "spots": [
+    "mandurah-1",
+    "mandurah-2",
+    "mandurah-3",
+    "mandurah-4",
+    "mandurah-5"
+   ],
+   "spot_count": 5,
+   "name_evidence": {
+    "source": "Wikivoyage \"Western Australia\" Cities list and Wikivoyage \"Mandurah\" (own article)",
+    "wording": "\"Mandurah — a rapidly growing city nestled between estuary and ocean is popular for fishing and crabbing\""
+   },
+   "why": "WA's second-largest city and one of nine cities Wikivoyage lists for the state: a sizable settlement and the base for the Peel. Five kept spots: the Giants of Mandurah, Lake Clifton Thrombolites, Pinjarra, Dwellingup and Yalgorup National Park. Span 52 km (75% = 39 km) reaches Dwellingup (38.3 km). No visitor source found for a \"Peel\" region name, so the city names the destination (COVERAGE \"Prefer the region travellers name\": none verified). Mandurah's own waterfront and dolphins go in its description (Mandjar Bay is in review)."
+  },
+  {
+   "id": "avon-valley",
+   "name": "Avon Valley",
+   "category": "nature",
+   "rank": 4,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -31.829079,
+    "longitude": 116.554619
+   },
+   "coordinates_source": "centre of the bounding box of its pinned spots (no single hub: York, Northam and Toodyay are 22-48 km apart)",
+   "defaultZoomSpanKm": 66,
+   "spots": [
+    "avon-valley-1",
+    "avon-valley-2",
+    "avon-valley-3",
+    "avon-valley-4",
+    "avon-valley-5",
+    "avon-valley-6",
+    "avon-valley-7",
+    "avon-valley-8",
+    "avon-valley-9",
+    "avon-valley-10"
+   ],
+   "spot_count": 10,
+   "name_evidence": {
+    "source": "Destination Perth \"Avon Valley\" page and Avon Valley road trip (cited in the verdicts for Beverley, York Motor Museum, Mount Brown Lookout, Newcastle Gaol Museum); Wikivoyage Perth",
+    "wording": "Wikivoyage Perth: \"the famous wild flowers around Kings Park and the neighbouring Avon Valley region are blooming\"; Destination Perth gives Beverley \"its own section\" of its Avon Valley page"
+   },
+   "why": "The named region of heritage towns on the Avon River (York, Toodyay, Northam, Beverley) and Avon Valley National Park; ten kept spots. Named for the region, not York, because Toodyay, Northam and Beverley are 25-48 km from York and each has its own draws (COVERAGE \"Prefer the region travellers name over one town in it\"). Northam is not a spot: its draw is Bernard Park's suspension bridge, which is."
+  }
+ ],
+ "span_check": [
+  "perth: reach 37.5 km; farthest pinned spot Perth's Outback Splash at 34.8 km",
+  "rottnest-island: reach 12.0 km; farthest pinned spot The Basin at 2.5 km",
+  "perth-hills: reach 40.5 km; farthest pinned spot Serpentine Falls at 39.2 km",
+  "rockingham: reach 12.0 km; farthest pinned spot Point Peron at 5.8 km",
+  "mandurah: reach 39.0 km; farthest pinned spot Dwellingup at 38.3 km",
+  "avon-valley: reach 49.5 km; farthest pinned spot Beverley at 46.7 km"
+ ],
+ "destination_distances_km": {
+  "perth->rottnest-island": 32.6,
+  "perth->perth-hills": 29.2,
+  "perth->rockingham": 38.3,
+  "perth-hills->rottnest-island": 60.0,
+  "perth-hills->rockingham": 47.7,
+  "rockingham->rottnest-island": 37.3,
+  "mandurah->perth": 65.2,
+  "mandurah->rottnest-island": 61.2,
+  "mandurah->perth-hills": 68.4,
+  "mandurah->rockingham": 27.3,
+  "avon-valley->perth": 67.0,
+  "avon-valley->rottnest-island": 99.6,
+  "avon-valley->perth-hills": 44.2,
+  "avon-valley->rockingham": 91.8,
+  "avon-valley->mandurah": 110.6
+ },
+ "placements": [
+  {
+   "name": "Kings Park and Botanic Garden",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-1",
+   "coordinates": {
+    "latitude": -31.962135,
+    "longitude": 115.831712
+   },
+   "coordinates_source": "wikipedia:Kings Park, Western Australia",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point of the park; re-pin at its main visitor point (Fraser Avenue / Kaarta Gar-up lookout area) with resolve-pin.",
+   "distance_from_destination_km": 2.8,
+   "reason": "Perth's headline attraction, 3.6 km from the city centre.",
+   "spot": {
+    "name": "Kings Park and Botanic Garden",
+    "wiki": "Kings Park, Western Australia",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "Inner-city bushland and botanic garden on Mount Eliza above the Swan River, with walks and views over the city.",
+    "hours": null,
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 29324,
+    "counted_sources": 1
+   },
+   "verdict_reason": "1 counted sources, 29324 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Kings_Park,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Fremantle Prison",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-2",
+   "coordinates": {
+    "latitude": -32.055014,
+    "longitude": 115.753487
+   },
+   "coordinates_source": "wikipedia:Fremantle Prison",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 14.9,
+   "reason": "Fremantle is filed under Perth (COVERAGE); 18 km from the city centre, inside the span.",
+   "spot": {
+    "name": "Fremantle Prison",
+    "icon": "⛓️",
+    "category": "historic",
+    "bio": "UNESCO World Heritage convict-built prison in Fremantle, open for tours and exhibitions.",
+    "hours": null,
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 36302,
+    "counted_sources": 1
+   },
+   "verdict_reason": "1 counted sources, 36302 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://en.wikipedia.org/wiki/Fremantle_Prison"
+   ]
+  },
+  {
+   "name": "Fremantle",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-3",
+   "coordinates": {
+    "latitude": -32.0542,
+    "longitude": 115.7475
+   },
+   "coordinates_source": "wikipedia:Fremantle",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia town point (in the West End); resolve against OSM place=town at research. The OSM relation label point (-32.0534, 115.7586) lies 1 km east, away from the historic centre.",
+   "distance_from_destination_km": 15.3,
+   "reason": "A town that is itself a draw (the West End streets and the Cappuccino Strip, which no other spot covers), so it is a spot beside its attractions; filed under Perth, not its own destination (COVERAGE names Fremantle → Perth). Fremantle West End is merged into it.",
+   "spot": {
+    "name": "Fremantle",
+    "icon": "🏘️",
+    "category": "landmark",
+    "bio": "Historic port city whose heritage-listed West End is Australia's largest intact Victorian-era port streetscape.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 109655,
+    "counted_sources": 1
+   },
+   "verdict_reason": "1 counted sources, 109655 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Fremantle"
+   ]
+  },
+  {
+   "name": "Cottesloe Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-4",
+   "coordinates": {
+    "latitude": -31.99583,
+    "longitude": 115.7506
+   },
+   "coordinates_source": "wikipedia:Cottesloe Beach",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia article of the beach itself; confirm against OSM natural=beach.",
+   "distance_from_destination_km": 11.3,
+   "reason": "Perth's best-known beach, 11 km from the centre.",
+   "spot": {
+    "name": "Cottesloe Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Ocean beach west of central Perth with a heritage pavilion, swimming and sunsets over the Indian Ocean.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 11993,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 11993 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Coast",
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Cottesloe_Beach"
+   ]
+  },
+  {
+   "name": "WA Museum Boola Bardip",
+   "candidate_name": "Western Australian Museum",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-5",
+   "coordinates": {
+    "latitude": -31.949629,
+    "longitude": 115.862402
+   },
+   "coordinates_source": "wikipedia:Western Australian Museum",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point of the organisation article; re-pin on the Perth building (Cultural Centre) with resolve-pin.",
+   "distance_from_destination_km": 0.7,
+   "reason": "The state museum, 0.8 km from the centre.",
+   "spot": {
+    "name": "WA Museum Boola Bardip",
+    "icon": "🏛️",
+    "category": "museum",
+    "bio": "The state museum in Perth's Cultural Centre, with eight permanent galleries of the state's natural and social history.",
+    "hours": "9:00 AM – 5:00 PM",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 7256,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1, obvious draw: Wikivoyage Perth/Northbridge lists it (daily 9AM-5PM), and Lonely Planet calls WA Museum Boola Bardip 'an unmissable attraction'. The state museum, eight permanent galleries, hours of visit. Name it WA Museum Boola Bardip (the Perth site), not the organisation.",
+   "judge_objection": "'Western Australian Museum' is also the name of the statewide organisation with sites in Fremantle, Albany, Geraldton and Kalgoorlie; the spot must be the Perth building only.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Northbridge",
+    "https://en.wikipedia.org/wiki/Western_Australian_Museum"
+   ],
+   "notes": "Named for the Perth site per the judge, not the statewide organisation. The `wiki` title is left empty: \"Western Australian Museum\" is the organisation's article; research must find the Perth building's exact article title (if any) before a photo is looked up."
+  },
+  {
+   "name": "Art Gallery of Western Australia",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-6",
+   "coordinates": {
+    "latitude": -31.950588,
+    "longitude": 115.860943
+   },
+   "coordinates_source": "wikipedia:Art Gallery of Western Australia",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 0.6,
+   "reason": "Central Perth.",
+   "spot": {
+    "name": "Art Gallery of Western Australia",
+    "icon": "🖼️",
+    "category": "museum",
+    "bio": "The state art gallery in Perth's Cultural Centre, showing contemporary, international and Indigenous art.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "closedDays": [
+     2
+    ],
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 4949,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 4949 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Northbridge",
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Art_Gallery_of_Western_Australia"
+   ]
+  },
+  {
+   "name": "Perth Mint",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-7",
+   "coordinates": {
+    "latitude": -31.9573,
+    "longitude": 115.8692
+   },
+   "coordinates_source": "wikipedia:Perth Mint",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); confirm on the building.",
+   "distance_from_destination_km": 0.8,
+   "reason": "Central Perth.",
+   "spot": {
+    "name": "Perth Mint",
+    "icon": "🪙",
+    "category": "museum",
+    "bio": "Australia's oldest operating mint, a gold refinery in central Perth with tours and gold-pour demonstrations.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 21819,
+    "counted_sources": 1
+   },
+   "verdict_reason": "1 counted sources, 21819 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Perth_Mint",
+    "https://www.openstreetmap.org/relation/18990831"
+   ]
+  },
+  {
+   "name": "Swan Valley",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-8",
+   "pin_note": "Candidate point (-31.8333, 116.0) is a rounded Wikipedia centroid. Pin on the valley's cellar-door strip (West Swan Road / Swan Valley Food and Wine Trail), NOT the Swan Valley Visitor Centre in Guildford (that is Guildford's point).",
+   "reason": "A Wikivoyage district of Perth visited as a day trip from the city (about 20 km out); a wine region with no single winery kept, so the region itself is the spot.",
+   "spot": {
+    "name": "Swan Valley",
+    "wiki": "Swan Valley (Western Australia)",
+    "icon": "🍷",
+    "category": "nature",
+    "bio": "Perth's nearest wine region, a valley of cellar doors, breweries and food producers on the city's north-eastern edge.",
+    "hours": null,
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 3932,
+    "counted_sources": 2
+   },
+   "verdict_reason": "Rule 1: Wikivoyage district 'Perth/Swan_Valley', Wikivoyage Perth and Tourism WA (Swan Valley under Perth and Surrounds); wine, brewery and food region. Area: name evidence for the proposer (destination or spot).",
+   "judge_objection": "An area, not a single place; the proposer decides.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikivoyage.org/wiki/Perth/Swan_Valley",
+    "https://en.wikipedia.org/wiki/Swan_Valley_(Western_Australia)"
+   ],
+   "notes": "Owner option: a Swan Valley destination (Wikivoyage district, Tourism WA) was considered; with no winery or brewery kept as a spot it would hold only Guildford and the wildlife and water parks, and travellers file it under Perth (COVERAGE: Hawkesbury → Sydney)."
+  },
+  {
+   "name": "Elizabeth Quay",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-9",
+   "coordinates": {
+    "latitude": -31.9578042,
+    "longitude": 115.8569293
+   },
+   "coordinates_source": "OSM (Photon) place=neighbourhood way 1160603183 \"Elizabeth Quay\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 0.4,
+   "reason": "Central Perth.",
+   "spot": {
+    "name": "Elizabeth Quay",
+    "icon": "⚓",
+    "category": "landmark",
+    "bio": "Riverside precinct on the Swan River in central Perth, with a footbridge, an island playground and a ferry jetty.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 7490,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1+2: Destination Perth's 'Things to Do at Elizabeth Quay: Complete Guide' (riverside precinct, bridge, Island playground, ferry jetty) ; free, open any time, an hour's wander.",
+   "judge_objection": "Script found no counted source (Wikivoyage mentions it only for transport); largely a dining and transport hub.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Elizabeth_Quay"
+   ]
+  },
+  {
+   "name": "Perth Zoo",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-10",
+   "coordinates": {
+    "latitude": -31.975561,
+    "longitude": 115.852216
+   },
+   "coordinates_source": "wikipedia:Perth Zoo",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 2.3,
+   "reason": "South Perth, 2.5 km from the centre.",
+   "spot": {
+    "name": "Perth Zoo",
+    "icon": "🦒",
+    "category": "entertainment",
+    "bio": "Zoo in South Perth, open since 1898, with native and exotic animals and guided tours.",
+    "hours": "9:00 AM – 5:00 PM",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 8760,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1, obvious draw: Wikivoyage Perth/The Suburbs lists it, Visit Perth lists it (open daily 9-5), and Tourism WA names it among WA's animal encounters. A zoo open since 1898, a half day or more.",
+   "judge_objection": "Little: it is a city zoo rather than a uniquely Western Australian sight, but it is the state's main zoo.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Suburbs",
+    "https://en.wikipedia.org/wiki/Perth_Zoo"
+   ]
+  },
+  {
+   "name": "Western Australian Maritime Museum",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-11",
+   "coordinates": {
+    "latitude": -32.0547317,
+    "longitude": 115.7392077
+   },
+   "coordinates_source": "osm:way/47121746 (tourism=museum)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 15.9,
+   "reason": "Fremantle, filed under Perth. HMAS Ovens (rejected as part of this museum) goes in its bio.",
+   "spot": {
+    "name": "Western Australian Maritime Museum",
+    "icon": "⛵",
+    "category": "museum",
+    "bio": "Museum on Fremantle's Victoria Quay with the America's Cup yacht Australia II and tours of the submarine HMAS Ovens.",
+    "hours": null,
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: Wikivoyage Fremantle See listing and Tourism WA's Fremantle page; museum with Australia II and the HMAS Ovens submarine tour, open daily.",
+   "judge_objection": "None of substance; 0 views is a title mismatch with its Wikipedia article.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://www.openstreetmap.org/way/47121746",
+    "https://en.wikipedia.org/wiki/Western_Australian_Maritime_Museum"
+   ]
+  },
+  {
+   "name": "Fremantle Markets",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-12",
+   "coordinates": {
+    "latitude": -32.0562,
+    "longitude": 115.749212
+   },
+   "coordinates_source": "wikipedia:Fremantle Markets",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 15.3,
+   "reason": "Fremantle, filed under Perth. A permanent market hall trading three days a week (kept by the judge).",
+   "spot": {
+    "name": "Fremantle Markets",
+    "icon": "🛍️",
+    "category": "market",
+    "bio": "Heritage market hall in Fremantle with over 150 stalls, trading Friday to Sunday.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "closedDays": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 2678,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 2678 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Fremantle_Markets"
+   ]
+  },
+  {
+   "name": "Aquarium of Western Australia",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-13",
+   "coordinates": {
+    "latitude": -31.82668,
+    "longitude": 115.738118
+   },
+   "coordinates_source": "wikipedia:Aquarium of Western Australia",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 18.4,
+   "reason": "Hillarys, 17 km north of the centre; its own pin, about 300 m from Hillarys Boat Harbour's.",
+   "spot": {
+    "name": "Aquarium of Western Australia",
+    "icon": "🐠",
+    "category": "entertainment",
+    "bio": "The state aquarium at Hillarys Boat Harbour, with an underwater tunnel through its tanks.",
+    "hours": "10:00 AM – 5:00 PM",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 6209,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage Perth/The Coast See listing (underwater tunnel, open daily 10-5, paid entry); the state's main aquarium, a 1-2 hour visit.",
+   "judge_objection": "One counted source in the shard; next to Hillarys Boat Harbour, so the two must not be merged or share a pin.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Coast",
+    "https://en.wikipedia.org/wiki/Aquarium_of_Western_Australia"
+   ]
+  },
+  {
+   "name": "Scarborough Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-14",
+   "coordinates": {
+    "latitude": -31.8970518,
+    "longitude": 115.7550568
+   },
+   "coordinates_source": "osm:way/141331765 (natural=beach)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 11.9,
+   "reason": "Sunset Coast, 13 km from the centre.",
+   "spot": {
+    "name": "Scarborough Beach",
+    "wiki": "Scarborough Beach, Western Australia",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "Popular surf beach on Perth's north coast, with a beachfront skate park and swimming.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/The Coast See listing, Destination Perth's own Scarborough Beach page (\"one of Perth's most popular seaside destinations\"; skate park, surf). Open access.",
+   "judge_objection": "None strong.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Coast",
+    "https://www.experienceperth.com/things-to-do",
+    "https://www.openstreetmap.org/way/141331765"
+   ]
+  },
+  {
+   "name": "Swan Bells",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-15",
+   "coordinates": {
+    "latitude": -31.958903,
+    "longitude": 115.858243
+   },
+   "coordinates_source": "wikipedia:Swan Bells",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 0.4,
+   "reason": "Central Perth.",
+   "spot": {
+    "name": "Swan Bells",
+    "icon": "🔔",
+    "category": "landmark",
+    "bio": "Bell tower at Barrack Square housing a peal of 18 bells, with an observation deck over the river and city.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 8505,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1 and 2: Wikivoyage Perth/Downtown lists the Bell Tower at Barrack Square (go inside, see and hear the 18 bells, river and city views from the observation deck). A paid attraction with six levels and bell-ringing experiences.",
+   "judge_objection": "One counted source only, and Wikivoyage notes locals see it as controversial. Tourism WA has no listing for it that I could find.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Swan_Bells"
+   ]
+  },
+  {
+   "name": "Caversham Wildlife Park",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-16",
+   "coordinates": {
+    "latitude": -31.83364,
+    "longitude": 115.951031
+   },
+   "coordinates_source": "wikipedia:Caversham Wildlife Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 16.1,
+   "reason": "Inside Whiteman Park, 15 km north-east of the centre; its own pin, distinct from the park's.",
+   "spot": {
+    "name": "Caversham Wildlife Park",
+    "icon": "🦘",
+    "category": "entertainment",
+    "bio": "Wildlife park in Whiteman Park with about 200 species of native animals, kangaroo feeding and koala encounters.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 2718,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1: Tourism WA lists it (the largest private collection of native animals in WA, about 200 species, in Whiteman Park), with hand-feeding kangaroos and koala encounters. Rule 2: open daily, a half-day visit.",
+   "judge_objection": "One counted source; it is inside Whiteman Park, so if Whiteman Park is kept the two must not share a pin.",
+   "sources": [
+    "https://www.openstreetmap.org/node/3237117857",
+    "https://en.wikipedia.org/wiki/Caversham_Wildlife_Park"
+   ]
+  },
+  {
+   "name": "Optus Stadium",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-17",
+   "coordinates": {
+    "latitude": -31.95111111,
+    "longitude": 115.88916667
+   },
+   "coordinates_source": "wikipedia:Perth Stadium",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point; confirm on the stadium.",
+   "distance_from_destination_km": 2.7,
+   "reason": "Burswood, 3 km from the centre.",
+   "spot": {
+    "name": "Optus Stadium",
+    "wiki": "Perth Stadium",
+    "icon": "🏟️",
+    "category": "entertainment",
+    "bio": "Perth's main stadium, hosting AFL football, cricket and major events, with behind-the-scenes stadium tours.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 173142,
+    "counted_sources": 1
+   },
+   "verdict_reason": "1 counted sources, 173142 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Suburbs",
+    "https://en.wikipedia.org/wiki/Optus_Stadium"
+   ]
+  },
+  {
+   "name": "WA Shipwrecks Museum",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-18",
+   "coordinates": {
+    "latitude": -32.0570928,
+    "longitude": 115.7425338
+   },
+   "coordinates_source": "OSM (Photon) tourism=museum way 49736345 \"Western Australian Museum Shipwrecks\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 15.8,
+   "reason": "Fremantle, filed under Perth.",
+   "spot": {
+    "name": "WA Shipwrecks Museum",
+    "wiki": "Western Australian Shipwrecks Museum",
+    "icon": "🚢",
+    "category": "museum",
+    "bio": "Free maritime archaeology museum in Fremantle's 1850s Commissariat building, displaying timbers of the Batavia.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: Wikivoyage Fremantle See listing, Visit Fremantle top free things and Tourism WA's Fremantle page all name it; free museum with the Batavia timbers, 1-2 hr visit.",
+   "judge_objection": "Weak score only because it has no article of its own under this title (Wikipedia: 'Western Australian Shipwrecks Museum'); none on substance.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle"
+   ],
+   "notes": "Wikipedia title per the judge (\"Western Australian Shipwrecks Museum\"); confirm the exact title at research."
+  },
+  {
+   "name": "Round House",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-19",
+   "coordinates": {
+    "latitude": -32.056118,
+    "longitude": 115.741271
+   },
+   "coordinates_source": "wikipedia:Round House (Western Australia)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 15.8,
+   "reason": "Fremantle, filed under Perth. Whalers' Tunnel (rejected as part of it) goes in its bio.",
+   "spot": {
+    "name": "Round House",
+    "wiki": "Round House (Western Australia)",
+    "icon": "🏛️",
+    "category": "historic",
+    "bio": "Western Australia's oldest public building, built in 1831 on Arthur Head, now a free museum above Bathers Bay.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 5087,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: Wikivoyage Fremantle See listing and Visit Fremantle's top free things; WA's oldest public building (1831), a free small museum on Arthur Head with views over Bathers Bay.",
+   "judge_objection": "A short visit (30 min) on a small headland; strong enough with two sources.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://en.wikipedia.org/wiki/Round_House_(Western_Australia)"
+   ]
+  },
+  {
+   "name": "Fremantle Arts Centre",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-20",
+   "coordinates": {
+    "latitude": -32.047469,
+    "longitude": 115.754137
+   },
+   "coordinates_source": "wikipedia:Fremantle Arts Centre",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 14.3,
+   "reason": "Fremantle, filed under Perth.",
+   "spot": {
+    "name": "Fremantle Arts Centre",
+    "icon": "🎨",
+    "category": "museum",
+    "bio": "Contemporary arts centre in a former asylum building in Fremantle, with galleries, a courtyard and a café.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 3815,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 3815 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Fremantle_Arts_Centre"
+   ]
+  },
+  {
+   "name": "Heirisson Island",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-21",
+   "coordinates": {
+    "latitude": -31.9657807,
+    "longitude": 115.8820498
+   },
+   "coordinates_source": "wikipedia:Heirisson Island",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 2.3,
+   "reason": "2.2 km from the centre.",
+   "spot": {
+    "name": "Heirisson Island",
+    "icon": "🦘",
+    "category": "nature",
+    "bio": "Island in the Swan River, reached from the Causeway, where a small mob of wild kangaroos roams.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 6110,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage Perth/City See listing (wild kangaroos roam the island in the Swan River, free, reached from the Causeway); a distinct wildlife stop in the city.",
+   "judge_objection": "Wikivoyage says there are only five or six kangaroos, often hiding; a short visit that can disappoint.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Heirisson_Island"
+   ]
+  },
+  {
+   "name": "Whiteman Park",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-22",
+   "coordinates": {
+    "latitude": -31.821791,
+    "longitude": 115.928442
+   },
+   "coordinates_source": "wikipedia:Whiteman Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point; re-pin at the park's visitor village (not Caversham Wildlife Park's pin).",
+   "distance_from_destination_km": 16.2,
+   "reason": "15 km north-east of the centre.",
+   "spot": {
+    "name": "Whiteman Park",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "Recreation reserve in Perth's north with bushland, museums and kangaroos, and home to Caversham Wildlife Park.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 2514,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 2514 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Suburbs",
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Whiteman_Park"
+   ]
+  },
+  {
+   "name": "Adventure World",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-23",
+   "coordinates": {
+    "latitude": -32.095629,
+    "longitude": 115.818099
+   },
+   "coordinates_source": "wikipedia:Adventure World (amusement park)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 16.0,
+   "reason": "Bibra Lake, 16 km south of the centre.",
+   "spot": {
+    "name": "Adventure World",
+    "wiki": "Adventure World (amusement park)",
+    "icon": "🎢",
+    "category": "entertainment",
+    "bio": "Western Australia's main theme park, at Bibra Lake, with rides and waterslides; open September to April.",
+    "hours": null,
+    "visitHoursMin": 4,
+    "visitHoursMax": 7,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 22721,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1 and 2: Wikivoyage Perth/The Suburbs lists it (Bibra Lake theme and water park, rides and waterslides). WA's main theme park, a full day; a seasonal venue (Sept-April) is fine under rule 4.",
+   "judge_objection": "No Tourism WA page found; it is closed through the winter months.",
+   "sources": [
+    "https://www.openstreetmap.org/way/25803408",
+    "https://en.wikipedia.org/wiki/Adventure_World_(amusement_park)"
+   ]
+  },
+  {
+   "name": "Guildford",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-24",
+   "coordinates": {
+    "latitude": -31.8985059,
+    "longitude": 115.9702294
+   },
+   "coordinates_source": "OSM (Photon) place=suburb relation 5455956 \"Guildford\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 12.2,
+   "reason": "Wikivoyage Swan Valley district; 11 km north-east of the centre.",
+   "spot": {
+    "name": "Guildford",
+    "wiki": "Guildford, Western Australia",
+    "icon": "🏘️",
+    "category": "historic",
+    "bio": "One of Western Australia's oldest settlements, a heritage town on the Swan River at the gateway to the Swan Valley.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 5653,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Town rule: Wikivoyage Swan Valley See listing ('one of WA's oldest settlements', whole town a heritage locality, James St) and Perth page (antique stores); the gateway to the Swan Valley.",
+   "judge_objection": "A suburb now absorbed into Perth; its draw is a heritage streetscape, a 1-2 hr wander.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Swan_Valley",
+    "https://en.wikipedia.org/wiki/Guildford,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Lake Monger",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-25",
+   "coordinates": {
+    "latitude": -31.9294,
+    "longitude": 115.8265
+   },
+   "coordinates_source": "wikipedia:Galup",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 4.4,
+   "reason": "4 km north-west of the centre.",
+   "spot": {
+    "name": "Lake Monger",
+    "wiki": "Galup",
+    "icon": "🦢",
+    "category": "nature",
+    "bio": "Inner-city lake known for its black swans, with boardwalks and a 3.5 km circuit facing the city skyline.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 5262,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1, two counted sources: Tourism WA lists Galup (Lake Monger) as the home of Perth's black swans, with boardwalks and a 3.5 km lake circuit, and Wikivoyage Perth names it among Perth's parks; Lonely Planet has a point-of-interest entry. A second-tier stop for swans and the city skyline.",
+   "judge_objection": "It is a suburban lake park mainly used by locals for walking and jogging, close to the 'ordinary suburban park' negative benchmark.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Lake_Monger"
+   ],
+   "notes": "Tourism WA calls it \"Galup (Lake Monger)\"; the Wikipedia article is \"Galup\". Owner may prefer the name \"Galup\"."
+  },
+  {
+   "name": "Hillarys Boat Harbour",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-26",
+   "coordinates": {
+    "latitude": -31.824056,
+    "longitude": 115.736069
+   },
+   "coordinates_source": "wikipedia:Hillarys Boat Harbour",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 18.8,
+   "reason": "17 km north of the centre; its own pin, separate from the aquarium's.",
+   "spot": {
+    "name": "Hillarys Boat Harbour",
+    "icon": "⚓",
+    "category": "landmark",
+    "bio": "Marina on Perth's north coast with a boardwalk, a sheltered swimming beach and the state aquarium next door.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 2999,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage Perth/The Coast Do listing (marina with sheltered swimming beach, boardwalk) and Destination Perth's beaches guide names it a coastal tourist hub; free, open any time, an hour or more on the boardwalk and beach.",
+   "judge_objection": "Largely a marina of restaurants and shops (a 'plain shops/restaurants' venue); AQWA next door may be the real draw and the two sit 300 m apart, so placement must keep them distinct.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Coast",
+    "https://en.wikipedia.org/wiki/Hillarys_Boat_Harbour"
+   ]
+  },
+  {
+   "name": "Carnac Island",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-27",
+   "coordinates": {
+    "latitude": -32.1228,
+    "longitude": 115.6636
+   },
+   "coordinates_source": "wikipedia:Carnac Island",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); re-pin at the beach where boats land.",
+   "distance_from_destination_km": 26.3,
+   "reason": "Reached by boat from Fremantle; 26 km from Perth's centre, inside the span. Not a Rockingham spot: 18 km north of it and not reached from there.",
+   "spot": {
+    "name": "Carnac Island",
+    "icon": "🦭",
+    "category": "nature",
+    "bio": "Island nature reserve off Fremantle where Australian sea lions haul out, reached by boat for swimming and snorkelling.",
+    "hours": null,
+    "visitHoursMin": 3,
+    "visitHoursMax": 5,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 7394,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1+2: Tourism WA attraction page and DBCA Carnac Island Nature Reserve page; a day-trip island off Fremantle where Australian sea lions haul out, reached by boat, with swimming and snorkelling.",
+   "judge_objection": "Access is limited: boat only, visitors must stay on the beach (tiger snakes), and DBCA restricts beach access November-March; operators sell the trips.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carnac_Island"
+   ],
+   "notes": "Access limits for research: visitors stay on the beach (tiger snakes) and DBCA restricts beach access November to March."
+  },
+  {
+   "name": "Bathers Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-28",
+   "coordinates": {
+    "latitude": -32.0585,
+    "longitude": 115.7418
+   },
+   "coordinates_source": "wikipedia:Bathers Beach, Fremantle",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); re-pin on OSM natural=beach.",
+   "distance_from_destination_km": 16.0,
+   "reason": "Fremantle, filed under Perth.",
+   "spot": {
+    "name": "Bathers Beach",
+    "wiki": "Bathers Beach, Fremantle",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Sheltered beach below Fremantle's Round House, with a licensed area on the sand and an art precinct.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1962,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: Visit Fremantle top free things (Manjaree / Bathers Beach) and Tourism WA's Fremantle page name it; a swimming beach below the Round House with a licensed area on the sand and the Bathers Beach art precinct.",
+   "judge_objection": "Small town beach; near-duplicate risk with the Round House/Fishing Boat Harbour precinct.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://www.openstreetmap.org/relation/3126803",
+    "https://en.wikipedia.org/wiki/Bathers_Beach,_Fremantle"
+   ]
+  },
+  {
+   "name": "Fishing Boat Harbour",
+   "candidate_name": "Fisherman's Wharf",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-29",
+   "coordinates": {
+    "latitude": -32.0619956,
+    "longitude": 115.7452249
+   },
+   "coordinates_source": "OSM (Photon) leisure=marina way 47117508 \"Fishing Boat Harbour\" (centroid in the water: re-pin on the boardwalk)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 16.0,
+   "reason": "Fremantle, filed under Perth. Named \"Fishing Boat Harbour\" per the judge (\"Fisherman's Wharf\" is only one restaurant's seating there).",
+   "spot": {
+    "name": "Fishing Boat Harbour",
+    "icon": "🐟",
+    "category": "landmark",
+    "bio": "Fremantle's working fishing harbour, with boardwalks, fish and chips and the Bon Scott statue.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: keep as 'Fishing Boat Harbour' (Fremantle Fishing Boat Harbour), the place Visit Fremantle (top 10 free, #9), Tourism WA's Fremantle page and Wikivoyage ('Esplanade and Boat harbour') name: boardwalks, working fishing fleet, the Bon Scott statue, fish and chips. 'Fisherman's Wharf' is only Cicerello's outdoor seating there.",
+   "judge_objection": "Partly a dining strip (rule: restaurants alone fail); the Bon Scott statue and boardwalk carry it.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle"
+   ]
+  },
+  {
+   "name": "Mettam's Pool",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-30",
+   "coordinates": {
+    "latitude": -31.8674059,
+    "longitude": 115.7523799
+   },
+   "coordinates_source": "osm:way/25498022 (natural=beach)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 14.2,
+   "reason": "Sunset Coast, 14 km north-west of the centre.",
+   "spot": {
+    "name": "Mettam's Pool",
+    "icon": "🤿",
+    "category": "beach",
+    "bio": "Sheltered reef lagoon in Marmion Marine Park on Perth's north coast, for snorkelling close to shore.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/The Coast See listing, DBCA Marmion Marine Park (\"safe snorkelling close to shore\") and Destination Perth Sunset Coast (\"the best snorkeling spot in Perth\"). Open access.",
+   "judge_objection": "A small lagoon; conditions depend on swell.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Coast",
+    "https://exploreparks.dbca.wa.gov.au/park/marmion-marine-park"
+   ]
+  },
+  {
+   "name": "City Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-31",
+   "pin_note": "Candidate point (-31.934, 115.764) is the City Beach suburb (Wikipedia suburb article); pin on OSM natural=beach.",
+   "reason": "Sunset Coast, 9 km west of the centre.",
+   "spot": {
+    "name": "City Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Patrolled swimming beach sheltered by groynes on Perth's coast, west of the city centre.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 4877,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1+2: Tourism WA attraction page ('one of Perth's most popular coastal attractions'), Destination Perth beaches guide and Wikivoyage Perth/The Coast intro; groyne-sheltered patrolled swimming beach.",
+   "judge_objection": "Script found no counted source (it had none attached); now two. One of many metro beaches; neighbours Floreat Beach.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_Western_Australia",
+    "https://en.wikipedia.org/wiki/City_Beach,_Western_Australia"
+   ],
+   "notes": "No `wiki`: \"City Beach, Western Australia\" is the suburb article, not the beach."
+  },
+  {
+   "name": "Trigg Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-32",
+   "coordinates": {
+    "latitude": -31.8773458,
+    "longitude": 115.7515833
+   },
+   "coordinates_source": "osm:way/25498075 (natural=beach)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 13.5,
+   "reason": "Sunset Coast; one spot with Trigg Point per the judge.",
+   "spot": {
+    "name": "Trigg Beach",
+    "icon": "🏄",
+    "category": "beach",
+    "bio": "Beach beside Trigg Point on Perth's north coast, known for the city's most consistent surf break.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rules 1-3, re-looked for a counted source: Wikivoyage Perth/The Coast (Do: surf \"you should be able to find a wave on Trigg Beach\") and Destination Perth (Sunset Coast and Scarborough Beach pages: \"Perth's most consistent surf break\"). Keep as one spot with Trigg Point.",
+   "judge_objection": "Close to Scarborough Beach (about 2 km) and could be read as its northern extension.",
+   "sources": [
+    "https://www.openstreetmap.org/way/25498075"
+   ]
+  },
+  {
+   "name": "Scitech",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-33",
+   "coordinates": {
+    "latitude": -31.9443,
+    "longitude": 115.847
+   },
+   "coordinates_source": "wikipedia:Scitech",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); re-pin on the building.",
+   "distance_from_destination_km": 1.8,
+   "reason": "West Perth, 1.8 km from the centre.",
+   "spot": {
+    "name": "Scitech",
+    "icon": "🔭",
+    "category": "museum",
+    "bio": "Hands-on science discovery centre in West Perth with interactive galleries and a planetarium.",
+    "hours": "9:30 AM – 4:00 PM",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 2194,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1: Tourism WA and Visit Perth both list it (science discovery centre with six interactive galleries and Australasia's largest planetarium, open daily 9.30-4). Rule 2: a paid half-day attraction.",
+   "judge_objection": "Aimed at children; a reviewer could argue adults without kids would not go out of their way for it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Perth,_Western_Australia",
+    "https://en.wikipedia.org/wiki/Scitech"
+   ]
+  },
+  {
+   "name": "Old Mill",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-34",
+   "coordinates": {
+    "latitude": -31.9662,
+    "longitude": 115.847
+   },
+   "coordinates_source": "wikipedia:Old Mill, Perth",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); re-pin on the mill.",
+   "distance_from_destination_km": 1.7,
+   "reason": "South Perth, 1.9 km from the centre.",
+   "spot": {
+    "name": "Old Mill",
+    "wiki": "Old Mill, Perth",
+    "icon": "🌾",
+    "category": "historic",
+    "bio": "The 1835 windmill at Mill Point by the Narrows Bridge, the oldest surviving colonial structure in the Perth area.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1257,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1, two counted sources: Wikivoyage Perth/The Suburbs and Tourism WA both list it. The 1835 windmill at Mill Point by the Narrows Bridge is the oldest surviving colonial structure in the Perth area, with grounds open daily.",
+   "judge_objection": "The mill and miller's cottage interiors open only on limited days (Wikivoyage: Tue-Fri 10-4, weekend afternoons; other guides say fewer), so on many days it is an exterior look of under half an hour.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Suburbs",
+    "https://en.wikipedia.org/wiki/Old_Mill,_Perth"
+   ]
+  },
+  {
+   "name": "Perth Institute of Contemporary Arts",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-35",
+   "coordinates": {
+    "latitude": -31.949811,
+    "longitude": 115.860213
+   },
+   "coordinates_source": "wikipedia:Perth Institute of Contemporary Arts",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 0.7,
+   "reason": "Central Perth; its own pin beside the Art Gallery (the two are about 70 m apart: check pin-shared).",
+   "spot": {
+    "name": "Perth Institute of Contemporary Arts",
+    "icon": "🎨",
+    "category": "museum",
+    "bio": "Contemporary arts centre in Perth's Cultural Centre with free, changing exhibitions of local and international artists.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "closedDays": [
+     1
+    ],
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1255,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1, two counted sources: Wikivoyage Perth/Northbridge lists it, and Visit Perth (the City of Perth's visitor site) lists PICA as a venue with year-round exhibitions in one of Australia's largest exhibition spaces. Rule 2: free galleries, Tue-Sun.",
+   "judge_objection": "It is next to the Art Gallery of WA in the same precinct, and its programme is rotating contemporary work that a general visitor may skip. A reviewer could call it secondary to AGWA.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Northbridge",
+    "https://en.wikipedia.org/wiki/Perth_Institute_of_Contemporary_Arts"
+   ]
+  },
+  {
+   "name": "Aviation Heritage Museum",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-36",
+   "coordinates": {
+    "latitude": -32.0493,
+    "longitude": 115.859
+   },
+   "coordinates_source": "wikipedia:Aviation Heritage Museum (Western Australia)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); re-pin on the museum.",
+   "distance_from_destination_km": 10.4,
+   "reason": "Bull Creek, 11 km south of the centre.",
+   "spot": {
+    "name": "Aviation Heritage Museum",
+    "wiki": "Aviation Heritage Museum (Western Australia)",
+    "icon": "✈️",
+    "category": "museum",
+    "bio": "Aviation museum at Bull Creek with about 30 civil and military aircraft, including an Avro Lancaster.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 3644,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1: Tourism WA lists it (civilian and military aviation displays, about 30 aircraft including a Lancaster, guided tours) at Bull Creek. Rule 2: open year-round; the museum's own site suggests an hour or two.",
+   "judge_objection": "One counted source only, and it is a specialist museum in the suburbs; a reviewer could send it to review.",
+   "sources": [
+    "https://www.openstreetmap.org/way/1285020779",
+    "https://en.wikipedia.org/wiki/Aviation_Heritage_Museum_(Western_Australia)"
+   ]
+  },
+  {
+   "name": "St Mary's Cathedral",
+   "candidate_name": "St Mary's Cathedral, Perth",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-37",
+   "coordinates": {
+    "latitude": -31.9556,
+    "longitude": 115.8665
+   },
+   "coordinates_source": "wikipedia:St Mary's Cathedral, Perth",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 0.6,
+   "reason": "Central Perth.",
+   "spot": {
+    "name": "St Mary's Cathedral",
+    "wiki": "St Mary's Cathedral, Perth",
+    "icon": "⛪",
+    "category": "religious",
+    "bio": "Catholic cathedral in central Perth where the 1865 nave meets a modern curved extension and second spire.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.5,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 6259,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 2 (church rule satisfied): Tourism WA attraction page describes what to see (the 1865 nave joined to a modern curved extension and second spire) and says it is open daily to visitors.",
+   "judge_objection": "One counted source; a working cathedral that is not a headline Perth sight.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/St_Mary's_Cathedral,_Perth"
+   ]
+  },
+  {
+   "name": "Kangaroos in the City",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-38",
+   "coordinates": {
+    "latitude": -31.95597,
+    "longitude": 115.8599
+   },
+   "coordinates_source": "wikivoyage listing geo tag (Perth City page)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikivoyage listing geo tag (5 decimals, its own listing point); confirm against OSM artwork node.",
+   "distance_from_destination_km": 0.1,
+   "reason": "Central Perth.",
+   "spot": {
+    "name": "Kangaroos in the City",
+    "icon": "🦘",
+    "category": "monument",
+    "bio": "Larger-than-life bronze kangaroo statues on the corner of Barrack Street and St Georges Terrace in central Perth.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.25,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Quirky landmark rule: Wikivoyage Perth/City See listing (larger-than-life bronze kangaroos, 'a magnet for international visitors'), free, always there.",
+   "judge_objection": "A short photo stop (0-15 min) on a city corner; one counted source.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth"
+   ]
+  },
+  {
+   "name": "Bold Park",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-39",
+   "coordinates": {
+    "latitude": -31.946,
+    "longitude": 115.771
+   },
+   "coordinates_source": "wikipedia:Bold Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (3 decimals); re-pin at the Reabold Hill car park or summit boardwalk.",
+   "distance_from_destination_km": 8.5,
+   "reason": "7 km west of the centre.",
+   "spot": {
+    "name": "Bold Park",
+    "icon": "🌿",
+    "category": "nature",
+    "bio": "Coastal bushland park in Perth's west with the Zamia Trail and the boardwalk up Reabold Hill to a lookout.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 750,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1: managed by the Botanic Gardens and Parks Authority, which publishes a visitor map and runs free guided walks; Trails WA lists the Reabold Hill Summit Boardwalk (the highest point on the coastal plain, views to the ocean, Perth and the Darling Scarp); Wikivoyage Perth names it among Perth's parks. Rule 2: the Zamia Trail (5.1 km) and lookouts.",
+   "judge_objection": "An urban bushland park that is mostly used by locals; a reviewer could send it to review.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Perth,_Western_Australia",
+    "https://en.wikipedia.org/wiki/Bold_Park"
+   ]
+  },
+  {
+   "name": "Wireless Hill Park",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-40",
+   "coordinates": {
+    "latitude": -32.02921,
+    "longitude": 115.82758
+   },
+   "coordinates_source": "wikipedia:Wireless Hill Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 8.7,
+   "reason": "Ardross, 11 km south-west of the centre.",
+   "spot": {
+    "name": "Wireless Hill Park",
+    "icon": "📡",
+    "category": "nature",
+    "bio": "Bushland park with spring wildflowers, a hilltop lookout over the Swan River and a museum in the old radio station.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1748,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1: Tourism WA lists it (38 ha of bushland with spring wildflowers and orchids, a hilltop lookout over Perth and the Swan River, and the Wireless Hill Museum in the old radio station). Rule 2: walks, lookout and museum fill an hour or more.",
+   "judge_objection": "One counted source; the City of Melville and Bushland Perth pages are local, and the museum opens only on limited days.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Perth,_Western_Australia",
+    "https://en.wikipedia.org/wiki/Wireless_Hill_Park"
+   ]
+  },
+  {
+   "name": "Leighton Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-41",
+   "coordinates": {
+    "latitude": -32.0240663,
+    "longitude": 115.750719
+   },
+   "coordinates_source": "osm:way/30832296 (natural=beach)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 12.8,
+   "reason": "North Fremantle, filed under Perth.",
+   "spot": {
+    "name": "Leighton Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "White-sand beach at North Fremantle for swimming, surfing and kitesurfing.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1+2: Destination Perth's Fremantle beaches guide (picturesque, fine white sand, swimming and kitesurfing) and Wikivoyage Perth/The Coast (reached from North Fremantle station, surfing); free.",
+   "judge_objection": "Second-tier city beach; near Cottesloe.",
+   "sources": [
+    "https://www.openstreetmap.org/way/30832296"
+   ]
+  },
+  {
+   "name": "Sorrento Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-42",
+   "coordinates": {
+    "latitude": -31.8286105,
+    "longitude": 115.7439239
+   },
+   "coordinates_source": "osm:relation/2958130 (natural=beach)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 17.9,
+   "reason": "Beside Hillarys, 17 km north of the centre.",
+   "spot": {
+    "name": "Sorrento Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Beach on Perth's north coast with a netted swimming enclosure, a reef and a picnic area.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1+2: Tourism WA attraction page and Destination Perth listing (netted swimming enclosure, reef, picnic area), and Wikivoyage Perth/The Coast names it as a notable beach.",
+   "judge_objection": "Beside Hillarys Boat Harbour; one of many metro beaches.",
+   "sources": [
+    "https://www.openstreetmap.org/relation/2958130"
+   ]
+  },
+  {
+   "name": "South Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-43",
+   "pin_note": "Enumerator point was South Beach, Miami: never carried over. OSM natural=beach way 50343032 \"South Beach\" (-32.0763, 115.7513) is the likely feature; confirm with resolve-pin.",
+   "reason": "South Fremantle, filed under Perth.",
+   "spot": {
+    "name": "South Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Family swimming beach in South Fremantle with barbecues, shade and a traditional sauna.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: Wikivoyage Fremantle Do listing and Visit Fremantle's free things ('much-loved' family swimming beach with BBQs, shade, sauna). NOTE: the candidate's coordinates (25.78, -80.14) are South Beach, Miami: the pin must be re-resolved in South Fremantle (about -32.076, 115.751 per Wikivoyage).",
+   "judge_objection": "A suburban family beach; second tier.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://www.openstreetmap.org/way/50343032"
+   ]
+  },
+  {
+   "name": "Swanbourne Beach",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-44",
+   "coordinates": {
+    "latitude": -31.968745,
+    "longitude": 115.7545443
+   },
+   "coordinates_source": "osm:way/141331766 (natural=beach)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 10.1,
+   "reason": "9 km west of the centre.",
+   "spot": {
+    "name": "Swanbourne Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Perth's only clothing-optional beach, 500 m north of the main Swanbourne swimming beach.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/The Coast See listing (Perth's only clothing-optional beach, 500 m north of the main beach). Second-tier beach a guide names.",
+   "judge_objection": "One counted source; its draw is niche, and Cottesloe next door is the main beach.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Coast",
+    "https://www.openstreetmap.org/way/141331766"
+   ]
+  },
+  {
+   "name": "Army Museum of Western Australia",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-45",
+   "coordinates": {
+    "latitude": -32.04520556,
+    "longitude": 115.7544
+   },
+   "coordinates_source": "wikipedia:Army Museum of Western Australia",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 14.1,
+   "reason": "Fremantle, filed under Perth. Cantonment Hill (review) would go in its bio.",
+   "spot": {
+    "name": "Army Museum of Western Australia",
+    "icon": "🪖",
+    "category": "museum",
+    "bio": "Military museum in Fremantle's old Artillery Barracks at the foot of Cantonment Hill.",
+    "hours": "10:30 AM – 3:00 PM",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "closedDays": [
+     1,
+     2,
+     6
+    ],
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1034,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: Wikivoyage Fremantle See listing with hours and prices; a military museum in the old Artillery Barracks, 1-2 hr visit.",
+   "judge_objection": "Opens only Wed-Fri and Sun, 10:30-3; one counted source.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fremantle",
+    "https://en.wikipedia.org/wiki/Army_Museum_of_Western_Australia"
+   ]
+  },
+  {
+   "name": "Perth's Outback Splash",
+   "action": "spot",
+   "destination": "perth",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-46",
+   "coordinates": {
+    "latitude": -31.654397,
+    "longitude": 115.958319
+   },
+   "coordinates_source": "wikipedia:Perth's Outback Splash",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Candidate point from a Wikipedia list; re-pin on the park.",
+   "distance_from_destination_km": 34.8,
+   "reason": "Upper Swan, 34.8 km from the centre: inside the 37.5 km reach.",
+   "spot": {
+    "name": "Perth's Outback Splash",
+    "icon": "💦",
+    "category": "entertainment",
+    "bio": "Outdoor water park in the Swan Valley with nine slides, mazes and mini golf; open September to April.",
+    "hours": null,
+    "visitHoursMin": 3,
+    "visitHoursMax": 5,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 505,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1-2, 4: Tourism WA attraction listing ('one of WA's top outdoor entertainment destinations') and the Swan Valley tourism listing name it; a water park with 9 slides, mazes and mini-golf, a half-day visit. Seasonal venue (Sept-April), which rule 4 allows.",
+   "judge_objection": "A family amusement venue mainly for locals' children; closed May-August since 2024.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Perth,_Western_Australia",
+    "https://en.wikipedia.org/wiki/Perth's_Outback_Splash"
+   ]
+  },
+  {
+   "name": "The Basin",
+   "action": "spot",
+   "destination": "rottnest-island",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rottnest-island-1",
+   "coordinates": {
+    "latitude": -31.9886,
+    "longitude": 115.536
+   },
+   "coordinates_source": "wikipedia:The Basin (Rottnest Island)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); re-pin on OSM natural=beach.",
+   "distance_from_destination_km": 2.5,
+   "reason": "Rottnest's best-known swimming beach, 2.7 km from the island centre.",
+   "spot": {
+    "name": "The Basin",
+    "wiki": "The Basin (Rottnest Island)",
+    "icon": "🏊",
+    "category": "beach",
+    "bio": "Sheltered swimming beach on Rottnest Island with a shallow reef pool, patrolled in summer.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 758,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1-2: Rottnest's best-known swimming beach: the Rottnest Island Authority's beach guide (rottnestisland.com, blocked to scripts) and the ferry operators' guides rank it first; patrolled in summer, shallow reef pool. Second-tier beach a source names: keep.",
+   "judge_objection": "No unblocked counted source opened (rottnestisland.com returns a bot wall; Wikivoyage Rottnest names beaches only generally); check the RIA page in a browser.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_Western_Australia",
+    "https://en.wikipedia.org/wiki/The_Basin_(Rottnest_Island)"
+   ]
+  },
+  {
+   "name": "Wadjemup Lighthouse",
+   "action": "spot",
+   "destination": "rottnest-island",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rottnest-island-2",
+   "coordinates": {
+    "latitude": -32.00754,
+    "longitude": 115.50399
+   },
+   "coordinates_source": "wikipedia:Wadjemup Lighthouse",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 1.6,
+   "reason": "Island centre, 1.6 km.",
+   "spot": {
+    "name": "Wadjemup Lighthouse",
+    "icon": "🗼",
+    "category": "landmark",
+    "bio": "Lighthouse on Rottnest Island's highest point, with views across the island and tours of the tower.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 2128,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1-2: Wikivoyage Rottnest See listing; stop on every island tour (Rottnest Express Grand Island Tour), on the island's highest point with views; lighthouse tours run by the island authority.",
+   "judge_objection": "Operators say you can't always enter; a short stop. Part of the island, but a distinct named sight.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Rottnest_Island",
+    "https://en.wikipedia.org/wiki/Wadjemup_Lighthouse"
+   ]
+  },
+  {
+   "name": "Cathedral Rocks",
+   "action": "spot",
+   "destination": "rottnest-island",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rottnest-island-3",
+   "pin_note": "Enumerator point was Cathedral Rocks, Antarctica: never carried over. OSM has an emergency access point \"Cathedral Rocks\" at -32.0219, 115.4515; pin the viewing platform with resolve-pin.",
+   "reason": "West End of the island, about 7 km from the centre.",
+   "spot": {
+    "name": "Cathedral Rocks",
+    "icon": "🦭",
+    "category": "viewpoint",
+    "bio": "Viewing platform at Rottnest's West End over a colony of New Zealand fur seals.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1-2: purpose-built viewing platform over a New Zealand fur seal colony at Rottnest's West End, a stop on island tours (Rottnest Express Grand Island Tour, opened) and in Rottnest Island Authority material. NOTE: the candidate's coordinates (-77.85, 162.6) are Cathedral Rocks, Antarctica: re-resolve near Cape Vlamingh (about -32.02, 115.45).",
+   "judge_objection": "Short look (15-30 min) and the second counted source is an operator; could be folded into a West End/Cape Vlamingh spot.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rottnest_Island"
+   ]
+  },
+  {
+   "name": "Oliver Hill Battery",
+   "action": "spot",
+   "destination": "rottnest-island",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rottnest-island-4",
+   "coordinates": {
+    "latitude": -32.0073495,
+    "longitude": 115.5166311
+   },
+   "coordinates_source": "osm:node/6420216274 (place=locality \"Oliver Hill\") — the hill, not the battery: re-pin on the gun emplacement",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 0.4,
+   "reason": "Island centre, 0.4 km; reached by the island's heritage train.",
+   "spot": {
+    "name": "Oliver Hill Battery",
+    "icon": "💣",
+    "category": "historic",
+    "bio": "Restored WWII gun battery on Rottnest Island, with 9.2-inch guns and tunnels shown on guided tours.",
+    "hours": null,
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1-2: Wikivoyage Rottnest See ('wartime remnants, such as old barracks and cannons') and the island's guided Oliver Hill guns-and-tunnels tour (Rottnest Express Grand Island Tour, opened): restored 9.2-inch WWII guns and tunnels, a 45-60 min tour, reached by the heritage train.",
+   "judge_objection": "Tour-led access; the second counted source is an operator, the authority's own page was bot-blocked.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rottnest_Island"
+   ]
+  },
+  {
+   "name": "John Forrest National Park",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-1",
+   "coordinates": {
+    "latitude": -31.88194444,
+    "longitude": 116.07388889
+   },
+   "coordinates_source": "wikipedia:John Forrest National Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point of the park; re-pin at the main picnic area / visitor point, not the reserve centroid.",
+   "distance_from_destination_km": 18.9,
+   "reason": "A thin park (no separate kept spots), so a spot of the named region rather than its own destination.",
+   "spot": {
+    "name": "John Forrest National Park",
+    "icon": "🌲",
+    "category": "nature",
+    "bio": "Darling Range national park east of Perth, with walks to Rocky Pool and National Park Falls and picnic areas.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 4239,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 4239 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/John_Forrest_National_Park",
+    "https://exploreparks.dbca.wa.gov.au/park/john-forrest-national-park",
+    "https://en.wikipedia.org/wiki/John_Forrest_National_Park"
+   ]
+  },
+  {
+   "name": "Mundaring Weir",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-2",
+   "coordinates": {
+    "latitude": -31.9568473,
+    "longitude": 116.1649589
+   },
+   "coordinates_source": "OSM (Photon) waterway=dam way 30594590 \"Mundaring Weir\" (Wikivoyage listing point -31.95382, 116.16522 is 330 m north)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 9.0,
+   "reason": "Lake C. Y. O'Connor, the reservoir behind it, is the same place (one spot).",
+   "spot": {
+    "name": "Mundaring Weir",
+    "icon": "💧",
+    "category": "landmark",
+    "bio": "Dam on the Helena River in the Perth Hills, with a walk over the weir wall, picnic areas and a museum.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 5089,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-4: Wikivoyage Perth/The Hills See listing (walk over the weir, picnic areas, museum) and Destination Perth (Perth Hills and Mundaring pages: \"Explore the Mundaring Weir and No 1 Pump Station\"). Open access, an hour or more.",
+   "judge_objection": "Lake C. Y. O'Connor is the same reservoir: keep one spot (this one), not both.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Hills",
+    "https://en.wikipedia.org/wiki/Mundaring_Weir"
+   ]
+  },
+  {
+   "name": "Lesmurdie Falls",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-3",
+   "pin_note": "Candidate point was Mundy Regional Park's page point: not carried over. Wikivoyage listing point -31.99557, 116.032775; resolve on OSM waterway=waterfall.",
+   "reason": "Kalamunda hills.",
+   "spot": {
+    "name": "Lesmurdie Falls",
+    "icon": "🌊",
+    "category": "nature",
+    "bio": "Waterfall on the Darling Scarp in Lesmurdie Falls National Park, flowing after winter rain, with views to Perth.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/The Hills See listing (\"one of the more spectacular waterfalls on the Darling Range escarpment\") and Destination Perth Kalamunda page (lookouts at Lesmurdie Falls). Open access.",
+   "judge_objection": "Flows only after winter rain; in summer it is a dry rock face with a city view.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Hills",
+    "https://en.wikipedia.org/wiki/Lesmurdie_Falls"
+   ]
+  },
+  {
+   "name": "Serpentine Falls",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-4",
+   "coordinates": {
+    "latitude": -32.3680112,
+    "longitude": 116.0114254
+   },
+   "coordinates_source": "osm:node/2351035085 (waterway=waterfall)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 39.2,
+   "reason": "Serpentine-Jarrahdale, part of the Perth Hills on Destination Perth's Perth Hills page.",
+   "spot": {
+    "name": "Serpentine Falls",
+    "icon": "💦",
+    "category": "nature",
+    "bio": "The main attraction of Serpentine National Park, a waterfall with a picnic ground that flows mainly in autumn and winter.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/Outer Perth See listing and DBCA Serpentine National Park (\"main attraction\"). Open daily, picnic ground.",
+   "judge_objection": "Water flows mainly in autumn and winter; park entry fee.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Outer_Perth",
+    "https://exploreparks.dbca.wa.gov.au/park/serpentine-national-park",
+    "https://en.wikipedia.org/wiki/Serpentine_Falls"
+   ]
+  },
+  {
+   "name": "Lake Leschenaultia",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-5",
+   "coordinates": {
+    "latitude": -31.85416667,
+    "longitude": 116.25055556
+   },
+   "coordinates_source": "wikipedia:Lake Leschenaultia",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point; Wikivoyage listing point -31.85297, 116.25147 agrees within 200 m; re-pin at the day-use area.",
+   "distance_from_destination_km": 22.2,
+   "reason": "Chidlow, the north-eastern edge of the hills.",
+   "spot": {
+    "name": "Lake Leschenaultia",
+    "icon": "🛶",
+    "category": "nature",
+    "bio": "Lake in the Perth Hills for swimming, canoeing and picnics, with mountain bike trails around it.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 6280,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/Outer Perth See listing and Destination Perth Perth Hills page (\"Enjoy a picnic, canoe or swim at Lake Leschenaultia\"); swimming, canoeing, MTB trails.",
+   "judge_objection": "The Wikivoyage listing has no description; otherwise a clear day-trip lake.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Outer_Perth",
+    "https://en.wikipedia.org/wiki/Lake_Leschenaultia"
+   ]
+  },
+  {
+   "name": "Kalamunda",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-6",
+   "coordinates": {
+    "latitude": -31.9721215,
+    "longitude": 116.058138
+   },
+   "coordinates_source": "OSM (Photon) place=suburb relation 11689344 \"Kalamunda\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 11.7,
+   "reason": "A town with draws of its own (the History Village, the Zig Zag Cultural Centre, the Bibbulmun terminus) that no other spot covers.",
+   "spot": {
+    "name": "Kalamunda",
+    "wiki": "Kalamunda, Western Australia",
+    "icon": "🏘️",
+    "category": "landmark",
+    "bio": "Hills town at the northern end of the Bibbulmun Track, with the Kalamunda History Village and a heritage walk.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 6287,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Town rule: Destination Perth gives it its own page (Kalamunda History Village, Zig Zag Cultural Centre, heritage walk, Bibbulmun northern terminus) and Wikivoyage Perth/The Hills covers it; a base for the Perth Hills.",
+   "judge_objection": "Its Sunday farmers market is a weekly event and not a reason; the town may be filed under Perth.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Hills",
+    "https://en.wikipedia.org/wiki/Kalamunda,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Zig Zag Scenic Drive",
+   "candidate_name": "Kalamunda Zig Zag Trail",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-7",
+   "coordinates": {
+    "latitude": -31.9413838,
+    "longitude": 116.0480617
+   },
+   "coordinates_source": "OSM (Photon) highway=unclassified way 1064751411 \"Zig Zag Scenic Drive\" (a point on the way; take the route midpoint with resolve-pin)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 14.7,
+   "reason": "Gooseberry Hill, Kalamunda hills.",
+   "spot": {
+    "name": "Zig Zag Scenic Drive",
+    "icon": "🛣️",
+    "category": "viewpoint",
+    "bio": "One-way scenic drive down a former railway zig-zag on the Darling Scarp, with views over Perth; also walkable.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 1,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/The Hills See listing, a popular scenic drive (also walkable) on a converted rail line with views over Perth; a distinct Perth Hills icon.",
+   "judge_objection": "Only one counted source and the listing's link is dead; it is a drive of 15-20 minutes. Check the gates/one-way hours before writing hours.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Hills"
+   ],
+   "notes": "Named as OpenStreetMap names the road; Wikivoyage calls it \"Kalamunda Zig Zag Trail\". \"One-way\" and gate hours must be confirmed at research (the judge flagged the gates)."
+  },
+  {
+   "name": "Railway Reserves Heritage Trail",
+   "candidate_name": "Railway Reserve Heritage Trail",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-8",
+   "pin_note": "Pin at the midpoint of the whole OSM route (North and South Loop ways near -31.88, 116.06-116.17) with resolve-pin.",
+   "reason": "Named the board's spelling (\"Railway Reserves\") per the judge.",
+   "spot": {
+    "name": "Railway Reserves Heritage Trail",
+    "icon": "🚲",
+    "category": "hike",
+    "bio": "Walking and cycling loop along the Perth Hills' former railway lines, with a trailhead at Mundaring's sculpture park.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 725,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Perth/The Hills Do listing and Destination Perth (Perth Hills: \"Walk the Railway Reserves Heritage Trail\"; Mundaring and Kalamunda pages). Open-access walk and ride trail.",
+   "judge_objection": "A long loop trail that visitors join at any point; pin needs the midpoint of the route. Name is \"Railway Reserves Heritage Trail\" in the board's spelling.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/The_Hills"
+   ]
+  },
+  {
+   "name": "Araluen Botanic Park",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-9",
+   "coordinates": {
+    "latitude": -32.1217117,
+    "longitude": 116.101802
+   },
+   "coordinates_source": "OSM (Photon) leisure=park way 30594672 \"Araluen Botanic Park\" (centroid: re-pin at the entrance)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 10.7,
+   "reason": "Armadale hills (Roleystone).",
+   "spot": {
+    "name": "Araluen Botanic Park",
+    "icon": "🌷",
+    "category": "nature",
+    "bio": "Botanic park of 59 ha in the hills near Roleystone, with camellia and heritage rose collections.",
+    "hours": null,
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1133,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1+2: Destination Perth attraction listing and Perth Hills pages; a 59 ha paid botanic park with camellia and heritage rose collections, open daily.",
+   "judge_objection": "Its fame is the spring tulip festival (an event); outside August-October it is a quieter garden.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Araluen_Botanic_Park"
+   ],
+   "notes": "Its spring tulip festival is an event: mention in the destination's best-time text, not as a reason."
+  },
+  {
+   "name": "Mount Dale",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-10",
+   "coordinates": {
+    "latitude": -32.1262703,
+    "longitude": 116.299596
+   },
+   "coordinates_source": "osm:node/2349262820 (natural=peak)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 16.8,
+   "reason": "Helena National Park's road-access lookout (Helena NP itself is in review as a near-duplicate of this).",
+   "spot": {
+    "name": "Mount Dale",
+    "icon": "⛰️",
+    "category": "viewpoint",
+    "bio": "Lookout in Helena National Park with views over the Darling Range, and a drop-off point on the Bibbulmun Track.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1300,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: DBCA Helena National Park page calls it \"the park's major attraction accessible by road\", with panoramic views over the Darling Range, and a Bibbulmun Track drop-off point; the Bibbulmun Track Foundation names it too.",
+   "judge_objection": "A drive-up lookout; the visit can be short unless combined with a walk.",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/helena-national-park",
+    "https://www.openstreetmap.org/way/2349262820",
+    "https://en.wikipedia.org/wiki/Mount_Dale"
+   ]
+  },
+  {
+   "name": "Serpentine National Park",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-11",
+   "pin_note": "Must take a different visitor point from Serpentine Falls (judge): the Kitty's Gorge Walk Trail midpoint or the Baldwin's Bluff trailhead. OSM \"Kitty's Gorge Trail\" way 42404931 (-32.3503, 116.0305) is one candidate.",
+   "reason": "A thin park (two kept places), so a spot of the named region.",
+   "spot": {
+    "name": "Serpentine National Park",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "Darling Range park south of Perth with the Kitty's Gorge and Baldwin's Bluff walks and spring wildflowers.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 871,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: DBCA visitor page (Serpentine Falls, Kitty's Gorge Walk Trail, Baldwin's Bluff Nature Track, wildflowers) and Destination Perth Perth Hills page (Serpentine-Jarrahdale: forests and walking tracks).",
+   "judge_objection": "Its headline is Serpentine Falls, a separate spot: the park must take a different visitor point (Kitty's Gorge or Baldwin's Bluff) and photo, or the two are near-duplicates.",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/serpentine-national-park",
+    "https://en.wikipedia.org/wiki/Serpentine_National_Park"
+   ]
+  },
+  {
+   "name": "Walyunga National Park",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-12",
+   "coordinates": {
+    "latitude": -31.70611111,
+    "longitude": 116.08972222
+   },
+   "coordinates_source": "wikipedia:Walyunga National Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point; Wikivoyage listing -31.7248, 116.0707 (Allen Road entrance); re-pin at the Walyunga Pool day-use area.",
+   "distance_from_destination_km": 37.3,
+   "reason": "Swan hills, 30 km north-east of Perth; Wikivoyage: \"covers 1,800 hectares of the Darling Range, tucked behind the Darling Scarp\". Not an Avon Valley spot: it is reached from Perth by the Great Northern Highway (32 km from Perth's centre), and lies at the far western edge of the Avon Valley's circle (47 km) while the Avon Valley's visitors base in York, Northam and Toodyay.",
+   "spot": {
+    "name": "Walyunga National Park",
+    "icon": "🏞️",
+    "category": "nature",
+    "bio": "Avon River gorge in the Darling Range with granite boulders, picnic areas, canoeing and an Aboriginal heritage trail.",
+    "hours": null,
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1853,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 1853 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Outer_Perth",
+    "https://exploreparks.dbca.wa.gov.au/park/walyunga-national-park",
+    "https://en.wikipedia.org/wiki/Walyunga_National_Park"
+   ]
+  },
+  {
+   "name": "Cohunu Koala Park",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-13",
+   "coordinates": {
+    "latitude": -32.230305,
+    "longitude": 116.0141507
+   },
+   "coordinates_source": "OSM (Photon) tourism=zoo node 5325445471 \"Cohunu Koala Park\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 25.3,
+   "reason": "Byford, Serpentine-Jarrahdale.",
+   "spot": {
+    "name": "Cohunu Koala Park",
+    "icon": "🐨",
+    "category": "entertainment",
+    "bio": "Family-run wildlife sanctuary at Byford, open since 1972, with koalas, wombats, dingoes and a walk-through aviary.",
+    "hours": null,
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1684,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1, two counted sources: Tourism WA lists it (family-run sanctuary at Byford since 1972) and Frommer's has a guide entry (hand-feed kangaroos, see koalas, wombats and dingoes, walk-through aviary). Rule 2: paid, open daily.",
+   "judge_objection": "A 2016 Zoochat report called it poor value, and Frommer's koala-holding claim needs checking.",
+   "sources": [
+    "https://www.openstreetmap.org/node/5325445471",
+    "https://en.wikipedia.org/wiki/Cohunu_Koala_Park"
+   ]
+  },
+  {
+   "name": "Mundaring Community Sculpture Park",
+   "candidate_name": "Mundaring Sculpture Park",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-14",
+   "coordinates": {
+    "latitude": -31.9041165,
+    "longitude": 116.1652411
+   },
+   "coordinates_source": "osm:way/1525369124 (leisure=park)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 14.8,
+   "reason": "Named per the judge. Mundaring (the town) is folded into it and the destination description.",
+   "spot": {
+    "name": "Mundaring Community Sculpture Park",
+    "icon": "🗿",
+    "category": "landmark",
+    "bio": "Town park in Mundaring with works by eight Western Australian artists, including the Moodae-ring acoustic sculpture.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1-2: Tourism WA attraction listing (Mundaring Community Sculpture Park: sculptures by eight WA artists, the Moodae-ring acoustic sculpture) and Experience Perth Hills town guides name it; sculpture walk, playground, trailhead of the Munda Biddi and Railway Reserves Heritage Trails. Name in the app should be 'Mundaring Community Sculpture Park'.",
+   "judge_objection": "Essentially a small town park with a playground; the Saturday farmers' market there is not part of the spot (rule 4). Could be argued a local park (review).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mundaring,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Armadale Reptile Centre",
+   "action": "spot",
+   "destination": "perth-hills",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "perth-hills-15",
+   "coordinates": {
+    "latitude": -32.1766,
+    "longitude": 116.0147
+   },
+   "coordinates_source": "wikipedia:Armadale Reptile Centre",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (4 decimals); re-pin on the centre.",
+   "distance_from_destination_km": 20.4,
+   "reason": "Named by Experience Perth Hills; Armadale hills.",
+   "spot": {
+    "name": "Armadale Reptile Centre",
+    "icon": "🐍",
+    "category": "entertainment",
+    "bio": "Wildlife centre in Armadale with more than 50 reptile species, plus kangaroos and dingoes.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 786,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rule 1-2: Tourism WA attraction listing (westernaustralia.com/en/attraction/armadale-reptile-centre) and Experience Perth Hills '10 must-visit nature and wildlife experiences' both name it; open six days with paid entry, 50+ reptile species plus kangaroos and dingoes, a 1-2 hr visit.",
+   "judge_objection": "A small suburban wildlife centre (786 views); friend test says 'only if nearby with kids'. Closed Wednesdays outside school holidays.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Perth,_Western_Australia",
+    "https://en.wikipedia.org/wiki/Armadale_Reptile_Centre"
+   ]
+  },
+  {
+   "name": "Penguin Island",
+   "action": "spot",
+   "destination": "rockingham",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rockingham-1",
+   "coordinates": {
+    "latitude": -32.305461,
+    "longitude": 115.690728
+   },
+   "coordinates_source": "wikipedia:Penguin Island (Western Australia)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point of the island; re-pin at the ferry landing / beach where visitors arrive.",
+   "distance_from_destination_km": 5.4,
+   "reason": "Rockingham's headline: the island is the spot, not the ferry.",
+   "spot": {
+    "name": "Penguin Island",
+    "wiki": "Penguin Island (Western Australia)",
+    "icon": "🐧",
+    "category": "nature",
+    "bio": "Island off Rockingham with a colony of little penguins and walking trails, reached by ferry from Mersey Point.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 10212,
+    "counted_sources": 2
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Rockingham See listing (little penguin colony, walking trails, ferry from Mersey Point) and Destination Perth (\"Visit Penguin Island/Goolidja Goorda\"). The island is the spot, not the ferry.",
+   "judge_objection": "Closed in part of the year for penguin breeding (check the season for hours).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Rockingham_(Western_Australia)",
+    "https://en.wikivoyage.org/wiki/Perth",
+    "https://en.wikipedia.org/wiki/Penguin_Island"
+   ],
+   "notes": "Closed for part of the year for penguin breeding: research writes the season into hours."
+  },
+  {
+   "name": "Point Peron",
+   "action": "spot",
+   "destination": "rockingham",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rockingham-2",
+   "coordinates": {
+    "latitude": -32.26527778,
+    "longitude": 115.68611111
+   },
+   "coordinates_source": "wikipedia:Cape Peron",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point of Cape Peron; re-pin at the lookout or main car park.",
+   "distance_from_destination_km": 5.8,
+   "reason": "The hub of Rockingham Lakes Regional Park (DBCA), 6 km west of Rockingham.",
+   "spot": {
+    "name": "Point Peron",
+    "wiki": "Cape Peron",
+    "icon": "🏖️",
+    "category": "nature",
+    "bio": "Headland near Rockingham with beaches, snorkelling, scenic trails, a lookout and WWII ruins.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1599,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Rockingham See listing (beaches, trails, WWII ruins) and Destination Perth (\"Point Peron's scenic trails and lookout\"); DBCA calls Cape Peron the hub of Rockingham Lakes Regional Park.",
+   "judge_objection": "None strong; overlaps the Shoalwater Islands Marine Park candidate.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Rockingham_(Western_Australia)",
+    "https://en.wikipedia.org/wiki/Point_Peron"
+   ]
+  },
+  {
+   "name": "Rockingham Beach",
+   "action": "spot",
+   "destination": "rockingham",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rockingham-3",
+   "pin_note": "No point found (Photon matched only Rockingham Beach Road); pin on OSM natural=beach at the foreshore.",
+   "reason": "Rockingham's foreshore.",
+   "spot": {
+    "name": "Rockingham Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Sheltered family beach on Rockingham's foreshore, the only north-facing beach in the Perth region.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Rockingham See listing (\"the best, and busiest beach in the city\", the only north-facing beach in the Perth region) and Destination Perth Rockingham page (sheltered for families, Churchill Park dive trail).",
+   "judge_objection": "A city beach beside the foreshore; may read as part of Rockingham itself.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Rockingham_(Western_Australia)"
+   ]
+  },
+  {
+   "name": "Lake Richmond",
+   "action": "spot",
+   "destination": "rockingham",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rockingham-4",
+   "coordinates": {
+    "latitude": -32.286,
+    "longitude": 115.715
+   },
+   "coordinates_source": "wikipedia:Lake Richmond",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point (3 decimals); re-pin at the boardwalk / viewing platform.",
+   "distance_from_destination_km": 2.6,
+   "reason": "2.5 km west of the centre; distinct from the Lake Clifton Thrombolites (a different lake, 50 km south).",
+   "spot": {
+    "name": "Lake Richmond",
+    "wiki": "Lake Richmond, Western Australia",
+    "icon": "🪨",
+    "category": "nature",
+    "bio": "Lake in Rockingham with viewing points over a critically endangered community of living thrombolites.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 901,
+    "counted_sources": 2
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Rockingham See listing (one of only two places in WA to see thrombolites) and DBCA Rockingham Lakes Regional Park (\"star attraction of the park\"). Open access viewing points.",
+   "judge_objection": "Near-duplicate in kind of the Lake Clifton Thrombolites, which are better known; a short visit.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Rockingham_(Western_Australia)",
+    "https://exploreparks.dbca.wa.gov.au/park/rockingham-lakes-regional-park",
+    "https://en.wikipedia.org/wiki/Lake_Richmond,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Rockingham Museum",
+   "action": "spot",
+   "destination": "rockingham",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "rockingham-5",
+   "coordinates": {
+    "latitude": -32.2752836,
+    "longitude": 115.7328451
+   },
+   "coordinates_source": "osm:way/700513234 (tourism=museum)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 1.4,
+   "reason": "Rockingham.",
+   "spot": {
+    "name": "Rockingham Museum",
+    "icon": "🏛️",
+    "category": "museum",
+    "bio": "Local history museum in Rockingham's Art Deco former Road Board building, with interactive displays.",
+    "hours": null,
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Rockingham See listing (local history in the historic Road Board building, about an hour) and Destination Perth Rockingham page (Art Deco building, interactive displays). Two counted sources.",
+   "judge_objection": "A small local-history museum open only four afternoons a week; fails the friend test unless already in Rockingham, so it could fairly sit at review.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Rockingham_(Western_Australia)"
+   ]
+  },
+  {
+   "name": "Giants of Mandurah",
+   "action": "spot",
+   "destination": "mandurah",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "mandurah-1",
+   "pin_note": "A trail of five sculptures, not one point: pin at the midpoint of the trail (or the first giant) from the official trail map, and say so in the bio.",
+   "reason": "Mandurah's headline draw.",
+   "spot": {
+    "name": "Giants of Mandurah",
+    "icon": "🗿",
+    "category": "landmark",
+    "bio": "Five giant recycled-wood sculptures by artist Thomas Dambo, hidden around the Mandurah area.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Mandurah See listing and Destination Perth Mandurah page (\"world-class outdoor sculpture trail\"); Visit Mandurah calls it a must-do. Free, open access, a half day to see them all.",
+   "judge_objection": "Five sculptures spread across the region: it is a trail, not one point; pin and bio must say so.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mandurah"
+   ]
+  },
+  {
+   "name": "Lake Clifton Thrombolites",
+   "action": "spot",
+   "destination": "mandurah",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "mandurah-2",
+   "coordinates": {
+    "latitude": -32.7453302,
+    "longitude": 115.6539364
+   },
+   "coordinates_source": "OSM (Photon) tourism=attraction node 6552864954 \"Thrombolites\" (boardwalk way 482892134 alongside)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 24.7,
+   "reason": "24 km south of Mandurah, reached from it.",
+   "spot": {
+    "name": "Lake Clifton Thrombolites",
+    "icon": "🪨",
+    "category": "nature",
+    "bio": "Boardwalk over thrombolites, rare living rock-like structures, on the shore of Lake Clifton in Yalgorup National Park.",
+    "hours": null,
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 2
+   },
+   "verdict_reason": "Rules 1-3: Wikivoyage Mandurah See listing and DBCA Yalgorup National Park (boardwalk to the thrombolites, \"ancient living rock legends\"). Open access boardwalk.",
+   "judge_objection": "A short boardwalk visit (20-30 min); overlaps Yalgorup NP, whose headline it is.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mandurah",
+    "https://exploreparks.dbca.wa.gov.au/park/yalgorup-national-park",
+    "https://en.wikipedia.org/wiki/Lake_Clifton"
+   ]
+  },
+  {
+   "name": "Pinjarra",
+   "action": "spot",
+   "destination": "mandurah",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "mandurah-3",
+   "coordinates": {
+    "latitude": -32.6318966,
+    "longitude": 115.869247
+   },
+   "coordinates_source": "OSM (Photon) place=town relation 11689118 \"Pinjarra\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 17.9,
+   "reason": "18 km south-east of Mandurah.",
+   "spot": {
+    "name": "Pinjarra",
+    "wiki": "Pinjarra, Western Australia",
+    "icon": "🏘️",
+    "category": "historic",
+    "bio": "Historic Peel town on the Murray River, with a heritage trail past 19 historic sites from the Edenvale precinct.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 18817,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Town rule, re-looked for a counted source: Destination Perth has its own Pinjarra page (1.3 km heritage trail past 19 historic sites from Edenvale Heritage Precinct, Murray River, Exchange Hotel tour).",
+   "judge_objection": "A small town 20 minutes from Mandurah; its events (Pinjarra Festival) are not reasons.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pinjarra,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Dwellingup",
+   "action": "spot",
+   "destination": "mandurah",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "mandurah-4",
+   "coordinates": {
+    "latitude": -32.7116497,
+    "longitude": 116.0680276
+   },
+   "coordinates_source": "OSM (Photon) place=town relation 11689101 \"Dwellingup\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 38.3,
+   "reason": "38.3 km from Mandurah, inside the 39 km reach; the Peel's forest town (Hotham Valley Railway, rejected as a vehicle, runs to it from Pinjarra).",
+   "spot": {
+    "name": "Dwellingup",
+    "wiki": "Dwellingup, Western Australia",
+    "icon": "🌲",
+    "category": "landmark",
+    "bio": "Darling Range forest town and base for Lane Poole Reserve, the Bibbulmun and Munda Biddi trails and Hotham Valley Railway.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 6,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 5757,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Town rule, re-looked for a counted source: Tourism WA has a Dwellingup place page (\"Dwellingup Trail Town\") and Destination Perth its own Dwellingup page (Lane Poole Reserve, Bibbulmun Track, Munda Biddi, Hotham Valley Railway, Treetops Adventure). A base visitors stay in.",
+   "judge_objection": "Many of its draws lie in Lane Poole Reserve outside town.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dwellingup,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Yalgorup National Park",
+   "action": "spot",
+   "destination": "mandurah",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "mandurah-5",
+   "coordinates": {
+    "latitude": -32.8464331,
+    "longitude": 115.6682661
+   },
+   "coordinates_source": "OSM (Photon) tourism=camp_site way 1124908016 \"Martins Tank\" (the park's campground; a different point from the thrombolites, as the judge asked)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 35.5,
+   "reason": "A thin park (two kept places), so a spot of Mandurah; 35.5 km south.",
+   "spot": {
+    "name": "Yalgorup National Park",
+    "icon": "🦢",
+    "category": "nature",
+    "bio": "Coastal park south of Mandurah with ten Ramsar-listed lakes, tuart woodland and the Heathlands Walk Trail.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 756,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rules 1-3: DBCA visitor page (ten Ramsar lakes, Heathlands Walk Trail, Martins Tank campground) and Destination Perth Waroona page (tuart trees, thrombolites, Heathlands Trail over Lake Preston).",
+   "judge_objection": "Its best-known draw is the Lake Clifton Thrombolites, a separate spot: the park must take a different visitor point (Heathlands Walk / Martins Tank).",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/yalgorup-national-park",
+    "https://en.wikipedia.org/wiki/Yalgorup_National_Park"
+   ]
+  },
+  {
+   "name": "York",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-1",
+   "coordinates": {
+    "latitude": -31.8889034,
+    "longitude": 116.7691483
+   },
+   "coordinates_source": "OSM (Photon) place=town relation 11689692 \"York\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 21.3,
+   "reason": "A town whose streetscape is the draw (Avon Terrace, in review, is part of it); its museums and lookout are separate spots.",
+   "spot": {
+    "name": "York",
+    "wiki": "York, Western Australia",
+    "icon": "🏘️",
+    "category": "historic",
+    "bio": "Historic Avon Valley town 97 km east of Perth, with one of Western Australia's best-preserved Victorian town centres.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 22751,
+    "counted_sources": 1
+   },
+   "verdict_reason": "1 counted sources, 22751 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/York_(Western_Australia)",
+    "https://en.wikipedia.org/wiki/York,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Toodyay",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-2",
+   "coordinates": {
+    "latitude": -31.5511748,
+    "longitude": 116.4671695
+   },
+   "coordinates_source": "OSM (Photon) place=town relation 11689541 \"Toodyay\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 32.0,
+   "reason": "Kept as a town with draws no other spot covers (its heritage walk and the Bilya Walk Track; Wikivoyage Perth names it a day-trip destination in itself), beside Connor's Mill and Newcastle Gaol.",
+   "spot": {
+    "name": "Toodyay",
+    "wiki": "Toodyay, Western Australia",
+    "icon": "🏘️",
+    "category": "historic",
+    "bio": "Historic Avon River town of 19th-century buildings, with a heritage walk and the Bilya Walk Track.",
+    "hours": null,
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 10435,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Towns rule: Wikivoyage has its own Toodyay page, Destination Perth a Toodyay page and Tourism WA a destination page; historic Avon Valley town with museums, heritage walk and Bilya Walk Track.",
+   "judge_objection": "The town's draws (Connor's Mill, Newcastle Gaol) are candidates too, so the proposer must avoid listing the town as a wrapper around them.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Toodyay",
+    "https://en.wikipedia.org/wiki/Toodyay"
+   ]
+  },
+  {
+   "name": "Avon Valley National Park",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-3",
+   "coordinates": {
+    "latitude": -31.625,
+    "longitude": 116.18361111
+   },
+   "coordinates_source": "wikipedia:Avon Valley National Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point; re-pin at a campground or day-use area (not the reserve centroid).",
+   "distance_from_destination_km": 41.8,
+   "reason": "Reached from Toodyay; a thin park, so a spot of the region.",
+   "spot": {
+    "name": "Avon Valley National Park",
+    "icon": "🏞️",
+    "category": "nature",
+    "bio": "Granite outcrops and river valleys along the Avon River, with campgrounds and bushwalks.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 1249,
+    "counted_sources": 2
+   },
+   "verdict_reason": "2 counted sources, 1249 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Perth/Outer_Perth",
+    "https://exploreparks.dbca.wa.gov.au/park/avon-valley-national-park",
+    "https://en.wikipedia.org/wiki/Avon_Valley_National_Park"
+   ]
+  },
+  {
+   "name": "Bernard Park",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-4",
+   "coordinates": {
+    "latitude": -31.6503677,
+    "longitude": 116.6723106
+   },
+   "coordinates_source": "osm:way/248632323 (leisure=park)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 22.8,
+   "reason": "Northam's draw; Northam itself is folded into it and the destination description (town wrapper rule).",
+   "spot": {
+    "name": "Bernard Park",
+    "icon": "🌉",
+    "category": "landmark",
+    "bio": "Riverside park in Northam with one of Australia's longest pedestrian suspension bridges and white swans.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage Northam See listing, and Tourism WA attraction pages for Bernard Park and for its Suspension Bridge (one of Australia's longest pedestrian suspension bridges; white swans); free, open any time, a riverside walk circuit.",
+   "judge_objection": "Its headline is the bridge; the spot should be named for what visitors come for (park plus bridge), and it is a short visit.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Northam_(Western_Australia)"
+   ]
+  },
+  {
+   "name": "Connor's Mill",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-5",
+   "coordinates": {
+    "latitude": -31.55047222,
+    "longitude": 116.46530556
+   },
+   "coordinates_source": "wikipedia:Connor's Mill",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 32.1,
+   "reason": "Toodyay.",
+   "spot": {
+    "name": "Connor's Mill",
+    "icon": "🌾",
+    "category": "historic",
+    "bio": "Three-storey 1875 flour mill in Toodyay, still in working order and now a museum.",
+    "hours": "10:00 AM – 3:30 PM",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": 3,
+    "costMax": 3,
+    "currency": "AUD",
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 457,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage Toodyay See listing (1875 mill, working order, daily 10-3:30, $3), Tourism WA attraction page 'Connor's Mill Museum' and Destination Perth's Toodyay page.",
+   "judge_objection": "A small three-storey museum; about half an hour.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Toodyay",
+    "https://en.wikipedia.org/wiki/Connor's_Mill"
+   ],
+   "notes": "Cost of $3 is from Wikivoyage and may be dated: confirm at research."
+  },
+  {
+   "name": "Newcastle Gaol Museum",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-6",
+   "coordinates": {
+    "latitude": -31.5535,
+    "longitude": 116.4671
+   },
+   "coordinates_source": "wikipedia:Newcastle Gaol Museum",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia list point (4 decimals); re-pin on the gaol.",
+   "distance_from_destination_km": 31.7,
+   "reason": "Toodyay.",
+   "spot": {
+    "name": "Newcastle Gaol Museum",
+    "icon": "⛓️",
+    "category": "museum",
+    "bio": "Toodyay's 1865 gaol, now a museum, where the legend of the bushranger Moondyne Joe began.",
+    "hours": "10:00 AM – 3:00 PM",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 460,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage Toodyay See listing (1865 gaol, daily 10-3, paid) and Destination Perth's Toodyay page and Avon Valley road trip (where the Moondyne Joe legend began).",
+   "judge_objection": "A small local museum; about half an hour.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Toodyay"
+   ]
+  },
+  {
+   "name": "York Motor Museum",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-7",
+   "coordinates": {
+    "latitude": -31.88905806,
+    "longitude": 116.76864806
+   },
+   "coordinates_source": "wikipedia:York Motor Museum",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 21.3,
+   "reason": "York.",
+   "spot": {
+    "name": "York Motor Museum",
+    "icon": "🚗",
+    "category": "museum",
+    "bio": "Community-run motor museum in York with about 90 vintage cars and motorcycles.",
+    "hours": "9:00 AM – 4:00 PM",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 822,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage York See listing (daily 9-4, about 90 vehicles, paid entry) and Destination Perth's York page and Avon Valley road trip; a 1 hour museum visit.",
+   "judge_objection": "A community-run museum in a country town; Destination Perth's 'only community-owned motor museum in Australia' claim is unverified.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/York_(Western_Australia)"
+   ]
+  },
+  {
+   "name": "Mount Brown Lookout",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-8",
+   "coordinates": {
+    "latitude": -31.8874503,
+    "longitude": 116.784631
+   },
+   "coordinates_source": "OSM (Photon) tourism=viewpoint node 537502787 \"Mt Brown Lookout\" (peak node 3020140860 is 80 m away)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 22.7,
+   "reason": "York.",
+   "spot": {
+    "name": "Mount Brown Lookout",
+    "icon": "🔭",
+    "category": "viewpoint",
+    "bio": "Hilltop lookout above York with a 360-degree view of the town and a free picnic area.",
+    "hours": "Open 24 hours",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage York See listing and Destination Perth's Avon Valley road trip ('360 degree panoramic view of York', free barbecue, picnic area); open 24 hours.",
+   "judge_objection": "A drive-up lookout; a short visit unless picnicking.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/York_(Western_Australia)"
+   ]
+  },
+  {
+   "name": "Residency Museum",
+   "candidate_name": "Residency Museum, York",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-9",
+   "coordinates": {
+    "latitude": -31.8929408,
+    "longitude": 116.7753862
+   },
+   "coordinates_source": "osm:way/708451758 (tourism=museum)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 22.0,
+   "reason": "York.",
+   "spot": {
+    "name": "Residency Museum",
+    "wiki": "Residency Museum, York",
+    "icon": "🏛️",
+    "category": "museum",
+    "bio": "Local history museum in York, in the 1850s residence built for the convict depot's deputy superintendent.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "closedDays": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 272,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: Wikivoyage York See listing (1850s convict-depot residence, local history museum) and Destination Perth's York page ('well worth a visit').",
+   "judge_objection": "Opens only Fri 1-3 and weekends 11-3 (volunteer-run), so many visitors find it shut; a small local museum.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/York_(Western_Australia)",
+    "https://en.wikipedia.org/wiki/Residency_Museum,_York"
+   ],
+   "notes": "Opens Friday 1-3 pm and weekends 11 am-3 pm (Wikivoyage): hours differ by day, so research writes them."
+  },
+  {
+   "name": "Beverley",
+   "action": "spot",
+   "destination": "avon-valley",
+   "destination_status": "proposed (spot-of-proposed-destination: goes in with the destination)",
+   "id": "avon-valley-10",
+   "coordinates": {
+    "latitude": -32.1076853,
+    "longitude": 116.9256264
+   },
+   "coordinates_source": "OSM (Photon) place=town relation 11690522 \"Beverley\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "distance_from_destination_km": 46.7,
+   "reason": "Destination Perth gives it its own section of the Avon Valley page.",
+   "spot": {
+    "name": "Beverley",
+    "wiki": "Beverley, Western Australia",
+    "icon": "🏘️",
+    "category": "historic",
+    "bio": "One of Western Australia's first towns, in the Avon Valley south of York, with colonial architecture.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 5540,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Town rule, re-looked for a counted source: Destination Perth Avon Valley page gives Beverley its own section (one of WA's first towns, colonial architecture, heritage). (Wikivoyage \"Beverley\" is the English town, not this one.)",
+   "judge_objection": "A small Avon Valley town; its August festival is not a reason, and York nearby is the stronger base.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Beverley,_Western_Australia"
+   ]
+  },
+  {
+   "name": "Yanchep National Park",
+   "action": "standalone",
+   "id": "yanchep-national-park",
+   "coordinates": {
+    "latitude": -31.56055556,
+    "longitude": 115.69083333
+   },
+   "coordinates_source": "wikipedia:Yanchep National Park",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Wikipedia point of the park; re-pin at the visitor centre / Loch McNess day-use area.",
+   "reason": "46 km north of Perth's centre, outside Perth's 37.5 km reach; a thin park (two kept places: it and Crystal Cave; Yonderup Cave in review), so standalone.",
+   "spot": {
+    "name": "Yanchep National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Perth",
+    "icon": "🐨",
+    "category": "nature",
+    "bio": "Park north of Perth with a koala boardwalk, kangaroos, guided cave tours, walking trails and a lagoon.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 2983,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2: DBCA Explore Parks park page (koala boardwalk, kangaroos, caves on guided tours, trails, Wangi Mia Aboriginal experience, visitor centre).",
+   "judge_objection": "None of substance; the koala and cave candidates are parts of this park.",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/yanchep-national-park",
+    "https://en.wikipedia.org/wiki/Yanchep_National_Park"
+   ]
+  },
+  {
+   "name": "Crystal Cave",
+   "candidate_name": "Crystal Caves",
+   "action": "standalone",
+   "id": "crystal-cave",
+   "coordinates": {
+    "latitude": -31.5475805,
+    "longitude": 115.6927826
+   },
+   "coordinates_source": "osm:node/4068621552 (natural=cave_entrance)",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "reason": "Inside Yanchep National Park, which is standalone; named \"Crystal Cave\" as DBCA names it (judge).",
+   "spot": {
+    "name": "Crystal Cave",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Perth",
+    "icon": "💎",
+    "category": "nature",
+    "bio": "Show cave in Yanchep National Park, visited only on a ticketed guided tour.",
+    "hours": null,
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 0,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Rule 1+2+3: DBCA Yanchep page ('Explore Crystal or Yonderup Cave on a guided tour') with its own Crystal Cave attraction tile; a ticketed guided tour, distinct from the park's picnic areas.",
+   "judge_objection": "Rule 3: it lies inside Yanchep National Park and might be better as a line in the park's bio; name is 'Crystal Cave' on DBCA, not 'Caves'.",
+   "sources": [
+    "https://exploreparks.dbca.wa.gov.au/park/yanchep-national-park"
+   ]
+  },
+  {
+   "name": "New Norcia",
+   "action": "standalone",
+   "id": "new-norcia",
+   "coordinates": {
+    "latitude": -30.9706028,
+    "longitude": 116.2146638
+   },
+   "coordinates_source": "OSM (Photon) place=village relation 11689727 \"New Norcia\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "reason": "130 km north of Perth with no destination near it.",
+   "spot": {
+    "name": "New Norcia",
+    "wiki": "New Norcia, Western Australia",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Perth",
+    "icon": "⛪",
+    "category": "historic",
+    "bio": "Australia's only monastic town, a Benedictine community with a 19th-century abbey, museum, art gallery and town tours.",
+    "hours": null,
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 19249,
+    "counted_sources": 1
+   },
+   "verdict_reason": "Towns rule / rule 1: Wikivoyage Wheatbelt lists it as 'Australia's only monastic town'; a Benedictine monastery town with museum, art gallery and town tours, open to visitors.",
+   "judge_objection": "Wikivoyage's own page redirects to the Wheatbelt region (one line); a richer counted source (the town's visitor centre or Tourism WA) should be attached by the proposer.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/New_Norcia",
+    "https://en.wikipedia.org/wiki/New_Norcia"
+   ],
+   "notes": "The judge asked for a richer counted source than Wikivoyage's one-line Wheatbelt mention: research should add the New Norcia visitor centre or Tourism WA page."
+  },
+  {
+   "name": "Gingin",
+   "action": "standalone",
+   "id": "gingin",
+   "coordinates": {
+    "latitude": -31.346075,
+    "longitude": 115.9031818
+   },
+   "coordinates_source": "OSM (Photon) place=town relation 11689559 \"Gingin\"",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "reason": "68 km north of Perth, 31 km from Yanchep; no destination near it.",
+   "spot": {
+    "name": "Gingin",
+    "wiki": "Gingin, Western Australia",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Perth",
+    "icon": "🏘️",
+    "category": "historic",
+    "bio": "Historic town around Gingin Brook north of Perth, with Granville Park, walking trails and heritage buildings.",
+    "hours": null,
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 8152,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Town rule, re-looked for a counted source: Destination Perth \"Gingin & Guilderton\" page (historic town around Gingin Brook, Granville Park, walking trails, heritage).",
+   "judge_objection": "Its standout draw is the Gravity Discovery Centre outside town, which should be its own spot; the town itself is a short stop.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gingin,_Western_Australia"
+   ],
+   "notes": "The Gravity Discovery Centre outside town is its standout draw per the judge, but it was not enumerated; flag it for recall."
+  },
+  {
+   "name": "Mount Cooke",
+   "action": "standalone",
+   "id": "mount-cooke",
+   "coordinates": {
+    "latitude": -32.42388889,
+    "longitude": 116.3125
+   },
+   "coordinates_source": "wikipedia:Mount Cooke",
+   "pin_confidence": "PROVISIONAL: resolve with resolve-pin.py at the Pins stage",
+   "pin_note": "Pin on the summit (judge), from OSM natural=peak; Wikipedia point (-32.4239, 116.3125) is the reference.",
+   "reason": "In Monadnocks Conservation Park off Albany Highway, 45.5 km from the Perth Hills centre (outside its 40.5 km reach), 57 km from Mandurah and 56 km from Rockingham; reached on its own, so standalone. A named day section of the Bibbulmun Track, which is placed in wa-south-west.",
+   "spot": {
+    "name": "Mount Cooke",
+    "country": "Australia",
+    "countryCode": "AU",
+    "continent": "Oceania",
+    "timezone": "Australia/Perth",
+    "icon": "⛰️",
+    "category": "hike",
+    "bio": "The highest point of the Darling Range at 582 m, an 11 km return summit walk from the Sullivan Rock car park.",
+    "hours": null,
+    "visitHoursMin": 3,
+    "visitHoursMax": 4.5,
+    "free": null,
+    "costMin": null,
+    "costMax": null,
+    "currency": null,
+    "ticketUrl": null
+   },
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "score": {
+    "views": 4263,
+    "counted_sources": 0
+   },
+   "verdict_reason": "Rules 1-3: re-looked for a counted source: the Bibbulmun Track Foundation's Darling Range page names Mt Cooke (582 m, the highest point in the Darling Range, outstanding views) and the Shire of Wandering publishes a Mount Cooke Trail walk page (11 km, about 4 hours from the Sullivan Rock car park). A summit day walk in Monadnocks Conservation Park.",
+   "judge_objection": "Part of the Bibbulmun Track (a candidate itself); keep only as a named day section. Pin on the summit, not the car park on Albany Highway.",
+   "sources": [
+    "https://www.openstreetmap.org/node/3020140906",
+    "https://en.wikipedia.org/wiki/Mount_Cooke"
+   ]
+  }
+ ],
+ "merged": [
+  {
+   "name": "Fremantle West End",
+   "into": "Fremantle (perth-3)",
+   "reason": "The West End is Fremantle's heritage town centre, the draw that makes the town a spot; two spots would be one place (judge: \"the proposer may fold it into\" Fremantle)."
+  },
+  {
+   "name": "Mundaring",
+   "into": "Perth Hills description; Mundaring Community Sculpture Park (perth-hills-14)",
+   "reason": "Town wrapper rule: its draws (Mundaring Weir, the Railway Reserves Heritage Trail, the sculpture park) are spots of their own; the town is a village strip with a visitor centre (judge objection)."
+  },
+  {
+   "name": "Northam",
+   "into": "Avon Valley description; Bernard Park (avon-valley-4)",
+   "reason": "Town wrapper rule: its main draw is Bernard Park's suspension bridge (judge objection; Wikivoyage says the highway town lacks old-world ambiance)."
+  },
+  {
+   "name": "Perth Hills",
+   "into": "destination perth-hills",
+   "reason": "An area, not a pin: it is the proposed destination."
+  },
+  {
+   "name": "Rockingham",
+   "into": "destination rockingham",
+   "reason": "The base town is the proposed destination; as a spot it would wrap Rockingham Beach and the foreshore (town wrapper rule)."
+  },
+  {
+   "name": "Perth",
+   "into": "destination perth",
+   "reason": "Destination-level."
+  },
+  {
+   "name": "Rottnest Island",
+   "into": "destination rottnest-island",
+   "reason": "Destination-level island with four spots."
+  },
+  {
+   "name": "Mandurah",
+   "into": "destination mandurah",
+   "reason": "Destination-level city."
+  }
+ ],
+ "duplicates_elsewhere": [
+  {
+   "name": "Bibbulmun Track",
+   "placed_in": "wa-south-west",
+   "reason": "Run-wide decision: placed once, at the midpoint of the whole route, in wa-south-west. Its northern terminus (Kalamunda) and Mount Dale/Mount Cooke are named in those spots' bios."
+  },
+  {
+   "name": "Munda Biddi Trail",
+   "placed_in": "wa-south-west",
+   "reason": "Run-wide decision: placed once in wa-south-west. Its trailhead is Mundaring Community Sculpture Park."
+  }
+ ],
+ "review": [
+  {
+   "name": "Northbridge",
+   "views": 4919,
+   "counted_sources": 1,
+   "case_for": "For: Wikivoyage gives it its own district page and Tourism WA has a 'places' page for it: Perth's arts, dining and nightlife quarter, with street art, Chinatown and the Cultural Centre.",
+   "judge_objection": "Against: a neighbourhood whose daytime draws (the Art Gallery, WA Museum, PICA) are separate spots, leaving restaurants and bars, which are not spots on their own (rule 2). Keep only if the owner wants districts as spots."
+  },
+  {
+   "name": "Perth Observatory",
+   "views": 2273,
+   "counted_sources": 0,
+   "case_for": "For: Tourism WA lists it (WA's oldest observatory, at Bickley, with night sky tours, a museum and Sunday day tours), and the observatory's own site confirms public tours.",
+   "judge_objection": "Against rule 4: you can only visit on a booked tour (night tours Fri-Sun, day tours Sunday afternoons), so it is not there whenever you arrive. One counted source."
+  },
+  {
+   "name": "Western Australian Rail Transport Museum",
+   "views": 862,
+   "counted_sources": 0,
+   "case_for": "For: a real museum of WA rolling stock at Bassendean run by Rail Heritage WA (locomotives from 1881's Katie to the first mainline diesel), with paid entry. Wikipedia cites a Tourism WA listing.",
+   "judge_objection": "Against: I found no counted source directly (only the operator, Wikipedia and blogs), and it opens only on Wednesdays and Sundays (rule 4: not there whenever you arrive)."
+  },
+  {
+   "name": "Old Central Fire Station",
+   "views": 375,
+   "counted_sources": 0,
+   "case_for": "For: Visit Perth lists it as the DFES Education and Heritage Centre (fire brigade history, vintage fire trucks, free) in the 1901 fire station on Murray Street. One counted source.",
+   "judge_objection": "Against: open only Tue-Thu and the first and third Saturdays (rule 4), aimed at families, and a short visit; one source for a marginal stop."
+  },
+  {
+   "name": "Tranby House",
+   "views": 2442,
+   "counted_sources": 0,
+   "case_for": "For: a National Trust house museum (Peninsula Farm, built 1839, one of WA's oldest surviving houses) at Maylands, open to the public with a guide, set in riverside gardens with tearooms next door.",
+   "judge_objection": "Against: I found no counted source (only Wikipedia, aumuseums, Hello Perth and Weekend Notes; the National Trust site blocks scripts), and it opens only a few days a week (Fri-Sun by the latest listing)."
+  },
+  {
+   "name": "Government House, Perth",
+   "views": 4672,
+   "counted_sources": 0,
+   "case_for": "For: Tourism WA and Visit Perth both list it; the 1864 Governor's residence has 3.2 ha of gardens open to the public, and the house opens on a few open days a year.",
+   "judge_objection": "Against rule 2 and 4: the house itself is exterior-only except on open days, and the gardens open only Tue-Thu 12-2pm, so most visitors see it from the street."
+  },
+  {
+   "name": "Barracks Arch",
+   "views": 2793,
+   "counted_sources": 0,
+   "case_for": "For: Wikivoyage Perth/Downtown lists it as a See item, and Tourism WA has an attraction page: the 1866 arch at the end of St Georges Terrace that is all that remains of the Pensioner Guard barracks.",
+   "judge_objection": "Against rule 2 and 3: a free-standing arch you look at from the street for a few minutes, in front of Parliament House; a photo stop, not a half-hour visit."
+  },
+  {
+   "name": "Sir James Mitchell Park",
+   "views": 560,
+   "counted_sources": 0,
+   "case_for": "For: Tourism WA's 'South Perth Foreshore' listing, which names Sir James Mitchell Park, calls it an iconic tourist destination with the best panoramic views of the Perth skyline across the Swan River.",
+   "judge_objection": "Against: a riverside lawn and playgrounds used by locals; it is the view rather than the park that is the draw. If kept, name it South Perth Foreshore and check it is not the same place as another candidate (the Old Mill and Perth Zoo are on the same foreshore)."
+  },
+  {
+   "name": "Yellagonga Regional Park",
+   "views": 1069,
+   "counted_sources": 1,
+   "case_for": "For: the DBCA visitor page (managing agency) describes Lake Joondalup and Lake Goollelal with walking and cycling circuits, birdlife and settler-era ruins.",
+   "judge_objection": "Against: DBCA writes a page for every regional park; it is suburban parkland that DBCA itself calls 'a leafy oasis in the heart of suburbia', and no guide names it (close to the 'regional park beside a city that no guide mentions' rule)."
+  },
+  {
+   "name": "Rockingham Lakes Regional Park",
+   "views": 617,
+   "counted_sources": 1,
+   "case_for": "For: the DBCA page names two real draws, the Lake Richmond thrombolites ('a star attraction of the park') and Cape Peron, its hub, with snorkelling, viewing platforms and a coastal walk.",
+   "judge_objection": "Against: an umbrella area; its draws are better judged as places of their own (Cape Peron, Lake Richmond), and a park-wide pin would duplicate them."
+  },
+  {
+   "name": "West Australian Reptile Park",
+   "views": 533,
+   "counted_sources": 0,
+   "case_for": "For: the Swan Valley's tourism site lists it (pythons, venomous snakes, crocodiles, wombats and dingoes, with presentations) at Henley Brook. Rule 2: paid wildlife park.",
+   "judge_objection": "Against: one counted source for a small private park, and Caversham Wildlife Park nearby covers the same wildlife-park draw better."
+  },
+  {
+   "name": "Kanyana Wildlife Rehabilitation Centre",
+   "views": 471,
+   "counted_sources": 0,
+   "case_for": "For: Experience Perth Hills names it among the hills' 10 must-visit wildlife experiences (Discovery Tours, nocturnal tours; bilbies and woylies); Destination Perth listed it. Against rule 2: it is a working wildlife hospital visitors can enter only on booked tours on Thursdays and Sundays, not whenever they arrive.",
+   "judge_objection": "Tour-only access two days a week, bookings essential; one counted source for a marginal place."
+  },
+  {
+   "name": "Peninsula Farm",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "For: the National Trust heritage house and farm (formerly Tranby House, now 'Peninsula Farm at Wu-rut Woorat', 1839) on the Swan River; Hello Perth visitor guide names it, the house is open with volunteer guides and an entry fee, the grounds daily, with a cafe. Likely the same place as any 'Tranby House' candidate: keep as one under its current name.",
+   "judge_objection": "The house opens only Friday and Saturday; one visitor source; a suburban heritage house museum, 'only if nearby'."
+  },
+  {
+   "name": "Cantonment Hill",
+   "views": 788,
+   "counted_sources": 1,
+   "case_for": "For: Wikivoyage Fremantle See listing ('a terrific view of Fremantle Harbour'), free lookout beside the Army Museum. Against: one counted source and a short viewpoint visit; the signal station building is not open; Visit Fremantle points visitors to Monument Hill instead.",
+   "judge_objection": "Marginal per the one-source-and-short-visit rule; may be best mentioned in the Army Museum's bio."
+  },
+  {
+   "name": "The Moores Building",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "For: Wikivoyage Do listing: a contemporary art gallery with six exhibition spaces in the West End, free entry. Against rule 3: Wikivoyage itself calls it part of Fremantle Arts Centre; a small gallery whose shows come and go.",
+   "judge_objection": "Part-of signal: if Fremantle Arts Centre is kept, this is a near-duplicate; could also be folded into the West End spot."
+  },
+  {
+   "name": "Cappuccino Strip",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "For: Fremantle's famous cafe street (South Terrace), named by Wikivoyage (walking area), Visit Fremantle ('the famous Cappuccino Strip', a stop on the Fremantle Discovery Trail) and Tourism WA. Against rule 2: it is a strip of cafes and restaurants; a street of businesses, which the bar fails unless the street itself is the recognised attraction.",
+   "judge_objection": "Could be judged a recognised landmark street (keep) or folded into a Fremantle town/West End spot."
+  },
+  {
+   "name": "Esplanade Park, Fremantle",
+   "views": 614,
+   "counted_sources": 0,
+   "case_for": "For: Tourism WA's Fremantle page (Ferris wheel at Esplanade Park) and Visit Fremantle (Esplanade Reserve on the Discovery Trail, skate park, playground). Against rule 3 / Leave out: an urban park under Norfolk pines whose draws are a seasonal-ish tourist wheel and a youth skate park; 'an ordinary park' negative benchmark.",
+   "judge_objection": "Two counted sources name it, but as a place to pass through on the way to the Fishing Boat Harbour."
+  },
+  {
+   "name": "Armstrong Bay",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "For: (Little) Armstrong Bay is repeatedly named by Rottnest guides as one of the island's best beginner snorkelling bays. Against: sources found are ferry operators, not counted; one of dozens of Rottnest bays; the candidate is 'Armstrong Bay' while guides name 'Little Armstrong Bay'.",
+   "judge_objection": "Rottnest has 60+ bays; listing many dilutes the island; one beach spot (The Basin) may suffice."
+  },
+  {
+   "name": "Thomson Bay",
+   "views": 384,
+   "counted_sources": 0,
+   "case_for": "For: the island's main settlement where the ferries land, with the shops, bakery, museum and accommodation; visitors base there (town rule). Against rule 3: it is the arrival point of Rottnest Island rather than a separate draw, and no counted source names it as somewhere to go in itself.",
+   "judge_objection": "Likely a near-duplicate of Rottnest Island; useful only if the island becomes a destination with the settlement as its gateway spot."
+  },
+  {
+   "name": "All Saints Anglican Church, Henley Brook",
+   "views": 1095,
+   "counted_sources": 1,
+   "case_for": "For: Wikivoyage Swan Valley See listing names it as Western Australia's oldest church (1841) with a historic cemetery, grounds and a walk to the Swan River; entry free (church rule: a landmark a guide singles out). Against: one counted source and a short visit; still a working parish church.",
+   "judge_objection": "One source plus a 20-30 minute stop; marginal by rule."
+  },
+  {
+   "name": "Rocky Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Perth/The Hills mentions Rocky Pool in Swan View as a start of the Railway Reserves Heritage Trail; DBCA Kalamunda National Park lists a \"Rocky Pool\" attraction (on Piesse Brook). Case for: a natural swimming hole named by two sources.",
+   "judge_objection": "The two sources may be two different Rocky Pools (Swan View/John Forrest vs Kalamunda NP); the Wikivoyage mention is only a trail access point, not a listing. Confirm which one and its coordinates before keeping."
+  },
+  {
+   "name": "Goat Farm Mountain Bike Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Perth/The Hills (Do: mountain biking) names it; Trails WA carries it as a trail (Greenmount). Case for: a real open-access mountain bike park in the hills.",
+   "judge_objection": "Mostly used by local riders who bring their own bikes; a passing mention in one counted source; closer to \"a place only locals use\" than a visitor draw."
+  },
+  {
+   "name": "Helena National Park",
+   "views": 343,
+   "counted_sources": 1,
+   "case_for": "Rule 1: DBCA visitor page (jarrah and wandoo forest, Bibbulmun Track). Case for: a national park with a visitor page and a road-access lookout.",
+   "judge_objection": "Its only named draw is Mount Dale, a separate candidate; without it the park is unmarked bush with no facilities. Keep one (Mount Dale) unless the park has another visitor point."
+  },
+  {
+   "name": "Kalamunda National Park",
+   "views": 426,
+   "counted_sources": 1,
+   "case_for": "Rule 1: DBCA visitor page; the Bibbulmun Track northern terminus and Piesse Brook walks start here. Case for: the start of WA's best-known long walk.",
+   "judge_objection": "No facilities; the draw is the Bibbulmun Track (a separate candidate) and the terminus in Kalamunda town. Near-duplicate of Bibbulmun Track and Kalamunda."
+  },
+  {
+   "name": "Mandurah Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Mandurah See listing only (\"small local history museum\", gold-coin donation). Case for: open to the public, about an hour.",
+   "judge_objection": "One counted source, a small local museum; fails the friend test unless already in Mandurah."
+  },
+  {
+   "name": "Amaze Miniature Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Mandurah See listing (Wed-Sat 10-4:30). Case for: a family attraction a guide names.",
+   "judge_objection": "One counted source with a one-word description; opens four days a week; a local family attraction."
+  },
+  {
+   "name": "Mandjar Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Mandurah names Mandjar Bay as the base for dolphin tours; Visit Mandurah lists it as one of the best places to see dolphins. Case for: dolphins are seen from the shore here, on the town's waterfront.",
+   "judge_objection": "It is Mandurah's foreshore and marina where tours leave from (a tour base, not a draw of its own), so it may be a near-duplicate of Mandurah itself."
+  },
+  {
+   "name": "Captain Fawcett 4WD Trail",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "Rule 1: DBCA site page (four-wheel-drive track through jarrah forest) and Trails WA (40 km, Dwellingup to Quindanning). Case for: a named agency-promoted route.",
+   "judge_objection": "Only for experienced 4WD drivers with their own vehicle; Trails WA says it is currently impassable and closed for winter; a vehicle route rather than a place most visitors go."
+  },
+  {
+   "name": "Waroona",
+   "views": 4850,
+   "counted_sources": 0,
+   "case_for": "Town rule: Destination Perth has a Shire of Waroona page, but its draws are Waroona Dam, Drakesbrook Weir, Lane Poole, Yalgorup and Preston Beach, not the town; the town gets only \"experience the charm of Waroona's town centre\" and a visitor centre with a gallery. Case for: a highway town with a visitor centre.",
+   "judge_objection": "A shire page, not the town: a town with nothing of its own named to see. Waroona Dam or Drakesbrook Weir may be the real candidates."
+  },
+  {
+   "name": "Mandurah Hill",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Rockingham See listing only (\"wonderful look out with excellent views\", Golden Bay). Case for: a free lookout a guide names.",
+   "judge_objection": "One counted source, a suburban dune lookout with a short visit; no tourism board mention found."
+  },
+  {
+   "name": "Shoalwater Islands Marine Park",
+   "views": 909,
+   "counted_sources": 1,
+   "case_for": "Rule 1: DBCA visitor page (snorkelling, dive wreck, kayak tours to Seal Island with sea lions, boardwalks) and Destination Perth Rockingham page. Case for: two counted sources and a real range of water activities.",
+   "judge_objection": "Rule 3: an area containing Penguin Island, Seal Island and Point Peron, which are separate spots; much of what it offers is tours. Better as the context in those bios than as its own spot."
+  },
+  {
+   "name": "Marmion Marine Park",
+   "views": 538,
+   "counted_sources": 1,
+   "case_for": "Rule 1: DBCA visitor page (reefs, Boyinaboat Reef dive trail off Hillarys, Mettam's Pool, whale watching). Case for: a named marine park with shore-access diving.",
+   "judge_objection": "Rule 3: an area whose visitor points are Mettam's Pool and Hillarys Boat Harbour, which are separate candidates; most of it needs a boat or charter."
+  },
+  {
+   "name": "Strickland Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Destination Perth names it only in a list of surf spots (Rottnest Island's main surf break). Case for: a named bay on Rottnest that surfers go to.",
+   "judge_objection": "A passing mention in a surf list; Wikivoyage Rottnest Island does not name it; one of many Rottnest bays and a ride from the settlement."
+  },
+  {
+   "name": "Floreat Beach",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "Rule 1: Destination Perth's 'Best Beaches in Perth' names it among the Sunset Coast beaches and Tourism WA's City Beach page mentions the promenade linking to it; a patrolled swimming beach.",
+   "judge_objection": "Rule 3: it adjoins City Beach on one promenade and is only ever named in passing beside it; likely a near-duplicate of City Beach."
+  },
+  {
+   "name": "North Beach",
+   "views": 2752,
+   "counted_sources": 0,
+   "case_for": "Rule 1: Destination Perth's beaches guide names North Beach in its Sunset Coast list; an open beach on the coastal path.",
+   "judge_objection": "Named only in a list, with nothing said about it; one weak counted source for a suburban beach near better-known Trigg and Scarborough."
+  },
+  {
+   "name": "C.Y. O'Connor Beach",
+   "views": 1404,
+   "counted_sources": 0,
+   "case_for": "Rule 1: Destination Perth's Fremantle beaches guide names O'Connor Reserve as a dog-friendly beach; the beach is known for the C.Y. O'Connor statue standing in the water.",
+   "judge_objection": "Rule 1: the mention is a passing one for a dog beach; no counted source describes the statue or the beach as a place to go. Mainly local use."
+  },
+  {
+   "name": "Bicton Baths",
+   "views": 626,
+   "counted_sources": 0,
+   "case_for": "Rule 1+2: DBCA Explore Parks has a site page (Swan Canning Riverpark) for swimming, canoeing and walking at this 1926 river baths; free, open access.",
+   "judge_objection": "Rule 'places only locals use': a neighbourhood river swimming spot with one agency page and no tourism-board listing."
+  },
+  {
+   "name": "York Suspension Bridge",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1+3: Wikivoyage York See listing and Destination Perth's Avon Valley road trip ('cross the river by suspension bridge'); a footbridge over the Avon by Holy Trinity.",
+   "judge_objection": "Rule 3: a few minutes' walk across, and it is a 1988 rebuild; better as part of York town's bio than a spot of its own."
+  },
+  {
+   "name": "Avon Terrace",
+   "views": 618,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage York names the main street lined with 19th-century buildings, and Destination Perth's York page describes its heritage streetscape and walking trails.",
+   "judge_objection": "Rule 3: it is York's town centre itself; if York is listed (as a town or destination) this is a near-duplicate and belongs in York's description."
+  },
+  {
+   "name": "Pelham Reserve",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Toodyay See listing (wooded hill, Drummond memorial, WWI range, WWII bunker) and Destination Perth's Toodyay page and road trip (spring wildflowers, stargazing over town).",
+   "judge_objection": "Leave-out rule: an ordinary town reserve with picnic sites; mainly a local park, seasonally interesting for wildflowers."
+  },
+  {
+   "name": "Northam Heritage Forum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1+2: Wikivoyage Northam See listing (old locomotives in a disused railway station, Fri-Mon 11-3).",
+   "judge_objection": "One counted source, a one-line listing; limited opening days; a small volunteer railway museum."
+  },
+  {
+   "name": "Mount Ommanney Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Northam See listing (lookout reached by road or a hike).",
+   "judge_objection": "One counted source and a one-line mention; no tourism-board page found; a short-stop town lookout."
+  },
+  {
+   "name": "Yonderup Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: DBCA Yanchep page names it as a guided-tour cave alongside Crystal Cave.",
+   "judge_objection": "Rule 3: a second cave in the same park, toured less often than Crystal Cave; likely a near-duplicate of the Crystal Cave spot."
+  },
+  {
+   "name": "Matilda Bay",
+   "views": 2060,
+   "counted_sources": 0,
+   "case_for": "Rule 1: DBCA's 'Enjoy nature in Perth' says to relax at Matilda Bay Reserve, grassy riverside parkland facing Perth city and Kings Park.",
+   "judge_objection": "One counted source, a passing mention; a riverside picnic reserve that locals use more than visitors; near Kings Park."
+  },
+  {
+   "name": "London Court",
+   "views": 4722,
+   "counted_sources": 0,
+   "case_for": "Rule 1: Visit Perth (City of Perth) lists it as a 1937 Tudor-style heritage arcade; Tourism WA lists laneway walking tours that feature it.",
+   "judge_objection": "Rule 2: it is a shopping arcade, which the rule fails as a shop venue; it is a quick photo stop on the way between Hay Street Mall and St Georges Terrace."
+  },
+  {
+   "name": "Herdsman Lake",
+   "views": 3706,
+   "counted_sources": 0,
+   "case_for": "Rule 1+2: DBCA park page for Herdsman Lake Regional Park (birdwatching wetland, Discovery Centre, walk and cycle trails), free.",
+   "judge_objection": "Leave-out rule: an urban wetland park mainly used by local walkers and birders; one agency source, no tourism-board listing found."
+  },
+  {
+   "name": "Claisebrook Cove",
+   "views": 1180,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Perth/City See listing ('spend an hour or so wandering' the architecture; footbridge views of the city at night).",
+   "judge_objection": "One counted source; an urban redevelopment and dining precinct that few visitor sources treat as a sight."
+  }
+ ],
+ "neighbour_check": [],
+ "existing_fixes": [],
+ "existing_fixes_note": "No Western Australian spots or destinations exist in src/data yet; nothing to move."
+}

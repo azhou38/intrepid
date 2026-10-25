@@ -1,0 +1,239 @@
+{
+ "spots": {
+  "canberra-41": {
+   "name": "The Big Powerful Owl",
+   "icon": "🦉",
+   "category": "landmark",
+   "bio": "Eight-metre concrete and fibreglass owl by artist Bruce Armstrong on Benjamin Way, one of Australia's Big Things.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.2475722,
+    "longitude": 149.0674998
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM tourism=artwork node 1314840562 \"Owl\" (artwork_type=sculpture); 8 m from the Wikipedia \"Owl (Armstrong)\" point and 15 m from the Wikivoyage listing point; 6 m of the placement point",
+   "notes": "Wikivoyage Canberra/Belconnen: 8 m sculpture by Bruce Armstrong, 2011, Benjamin Way. Public outdoor sculpture, always viewable (hours: Open 24 hours is inferred for an outdoor street sculpture, not sourced). Free outdoor sculpture; no steward page.",
+   "wiki": "Owl (Armstrong)",
+   "ticket_note": "Outdoor public sculpture with no operator or steward page."
+  },
+  "canberra-42": {
+   "name": "Mount Majura",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Peak north of Mount Ainslie reached by walking tracks only, one starting near Antill Street in Watson.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.237479,
+    "longitude": 149.182051
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak \"Mount Majura\" (Nominatim), 136 m from the Wikipedia point; MEDIUM",
+   "notes": "Wikivoyage North Canberra: access to the peak by walking tracks only; service road closed to the public; popular trail starts near Antill Street, Watson. Free; Canberra Nature Park has no entry fee. Visit range is an estimate for a return walk (unverified).",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve",
+   "ticket_note": "parks.act.gov.au blocks scripts; reserve page named in the draft sources."
+  },
+  "canberra-43": {
+   "name": "Mount Taylor",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "856-metre hill in Canberra Nature Park with a zig-zag walking track to the summit from the north face.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.371962,
+    "longitude": 149.075538
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak \"Mount Taylor\" (Nominatim), 251 m from the Wikipedia point; MEDIUM",
+   "notes": "Wikipedia: 856 m, part of Canberra Nature Park, walking tracks to the peak, zig-zag Mount Taylor Walking Track built 2007, foot trail from a car park off Sulwood Drive. Wikivoyage Canberra lists it among the popular bushwalking hills. Visit range estimated (unverified). ticketUrl follows the parks.act.gov.au URL pattern of the Mount Ainslie and Mount Majura reserve pages and must be checked in a browser.",
+   "wiki": "Mount Taylor (Australian Capital Territory)",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve"
+  },
+  "canberra-44": {
+   "name": "Hall",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small heritage village north of Canberra with a 20-site heritage walk, cafés on Victoria Street and nearby cellar doors.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.1702288,
+    "longitude": 149.0667491
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM place=village node 249060149 \"Hall\"; HIGH-equivalent (the resolve-pin boundary centroid is 0 m from it)",
+   "notes": "Wikivoyage Canberra/Hall: National Trust (ACT) Hall Heritage Walk of 20 historic sites; cafes on Victoria Street; VisitCanberra Hall and Wineries page: cafes, cellar doors, popular One Tree Hill section of the Centenary Trail. A village has no hours: Open 24 hours; individual cafes and cellar doors keep their own hours. Free to walk. Wikipedia: 298 people at the 2021 census (bio omits the number).",
+   "wiki": "Hall, Australian Capital Territory",
+   "ticket_note": "A village with no single steward; VisitCanberra neighbourhood page is a tourism page, not an operator."
+  },
+  "canberra-45": {
+   "name": "Kambah Pool",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Swimming spot among big boulders in the Murrumbidgee River, a 10-minute walk from the car park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.399437,
+    "longitude": 149.010818
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=swimming_area \"Kambah Pool\" (Nominatim); 45 m from the Wikivoyage point; MEDIUM",
+   "notes": "Wikivoyage: swimming spot with big boulders mid-river, 10-minute walk from the car. Reserve open 24 hours assumed (road gate or closure times unverified). Free; no entry fee found. Kambah Pool Toilets (Wikivoyage) listed 7AM-9PM, 6PM in winter.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool",
+   "ticket_note": "Page from the draft sources; parks.act.gov.au blocks scripts."
+  },
+  "canberra-46": {
+   "name": "Pine Island Reserve",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Riverside reserve on the Murrumbidgee with swimming, fishing and kayaking, and facilities for picnics.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.428066,
+    "longitude": 149.061495
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=park way 554600749 \"Pine Island Reserve\" (centre), next to the Pine Island Central Toilets point; 951 m from the Wikipedia point, which is the reserve centroid on the river; MEDIUM",
+   "notes": "Wikivoyage Tuggeranong: small reserve on the Murrumbidgee with plenty of facilities; swimming, fishing, kayaking. Bio drops the Discovery Track start (the track is its own spot). Open 24 hours assumed (unverified). Free.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island",
+   "ticket_note": "Page from the draft sources; parks.act.gov.au blocks scripts."
+  },
+  "canberra-47": {
+   "name": "Casuarina Sands",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sandy Murrumbidgee River beach in the Cotter Recreation Area for picnics, fishing and walks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.3194795,
+    "longitude": 148.9526939
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=beach way 708347469 \"Casuarina Sands Beach\" (centre); resolve-pin returned none, so found by Overpass name search; MEDIUM",
+   "notes": "Parks ACT lead list: riverside beach in the Cotter Recreation Area. Open 24 hours assumed (road/gate times unverified). Free; no entry fee found. OSM picnic_site node 306099008 is 100 m away at -35.3198,148.9539.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands",
+   "ticket_note": "Page from the draft sources; parks.act.gov.au blocks scripts."
+  },
+  "canberra-48": {
+   "name": "Murrumbidgee Discovery Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "27 km walk along the Murrumbidgee from Point Hut Crossing to Casuarina Sands, through Pine Island and Kambah Pool.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 10,
+   "coordinates": {
+    "latitude": -35.401592,
+    "longitude": 149.020831
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM way (name \"Murrumbidgee Discovery Trail\", trail midpoint via Nominatim). The whole route could not be traced because Overpass was unreachable, so this is by reasoning: the route is 27 km with Casuarina Sands to Kambah Pool 14 km (Parks ACT figure), putting the true midpoint near Kambah Pool; this OSM segment lies ~1.1 km east of it on the Kambah-to-Pine Island leg. MEDIUM, approximate midpoint",
+   "notes": "VisitCanberra: 27 km one way, 12 hours suggested, Hard, dogs not permitted, cycling permitted between Kambah Pool and Pine Island, price Free. Open 24 hours. Visit range is for sections or the full walk (unverified).",
+   "ticketUrl": "https://visitcanberra.com.au/attractions/690d879f532c2504579f51ab/murrumbidgee-discovery-track",
+   "ticket_note": "VisitCanberra (ACT Government tourism) attraction page, title checked; its contact is parks.act.gov.au, whose track page is blocked/unknown."
+  },
+  "canberra-49": {
+   "name": "Canberra Centenary Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "145 km self-guided loop around Canberra for walkers, runners and cyclists, through urban and rural land.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -35.1635779,
+    "longitude": 149.0734214
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM highway=path way 248953907 \"Canberra Centenary Trail\" near Hall; LOW, approximate: the loop is not a single OSM relation I could read (Overpass unreachable), so this is a point on the trail at the north side, roughly opposite its Capital Hill start (VisitCanberra), not a computed halfway point",
+   "notes": "VisitCanberra: 145 km self-guided shared-use loop, 7-day walk (~20 km a day), 3-day ride, or 1-day challenge; 10 km of extra feature walks; Free. Open 24 hours. Visit range is for one day section (unverified). The bio omits \"seven sections\" (VisitCanberra gives a 7-day walk, not seven official sections).",
+   "ticketUrl": "https://visitcanberra.com.au/attractions/56b23b95d270154b4553c60c/canberra-centenary-trail",
+   "ticket_note": "VisitCanberra attraction page, title checked; the managing parks.act.gov.au page was not found."
+  },
+  "canberra-50": {
+   "name": "Lake Ginninderra",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "105-hectare lake built in 1974 in Belconnen, ringed by a 7 km paved path, with parks and cafés along the shore.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.2291079,
+    "longitude": 149.0730773
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=water relation 409874 \"Lake Ginninderra\" centre, on the Diddams Close peninsula shore, beside the water; Nominatim's reverse shows lakeside land (bench) here; MEDIUM. Replaces the resolve-pin result (Ginninderra Creek, wrong feature)",
+   "notes": "Wikivoyage Belconnen: 105 ha artificial reservoir built 1974, fed by Ginninderra Creek, 7 km shared path, John Knight Memorial Park, Emu Bank. Open 24 hours; free. Cafes are on Emu Bank (Kiln at Belco Arts, Lighthouse Pub).",
+   "ticket_note": "A lake with no single steward."
+  }
+ },
+ "unverified": [
+  "canberra-41 hours (outdoor sculpture, Open 24 hours inferred)",
+  "canberra-42/43/45/46/47 visit durations and Open 24 hours (reserve and road gate times)",
+  "canberra-43 Mount Taylor parks.act.gov.au URL is pattern-based, not read",
+  "canberra-48 and canberra-49 visit-hours ranges",
+  "canberra-44 Hall cafe and cellar door hours (not given as the village hours)"
+ ],
+ "needs_browser": [
+  {
+   "id": "canberra-42",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve",
+   "why": "parks.act.gov.au blocks scripts; check title, hours, free"
+  },
+  {
+   "id": "canberra-43",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve",
+   "why": "URL guessed from the Mount Ainslie/Majura pattern; confirm it exists and names Mount Taylor (else find the page via the site search)"
+  },
+  {
+   "id": "canberra-45",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool",
+   "why": "blocked; check title, hours, gate closures"
+  },
+  {
+   "id": "canberra-46",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island",
+   "why": "blocked; check title, hours"
+  },
+  {
+   "id": "canberra-47",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands",
+   "why": "blocked (403 seen); check title, hours"
+  },
+  {
+   "id": "canberra-48",
+   "url": "https://www.parks.act.gov.au/find-a-park/murrumbidgee-river-corridor/kambah-pool",
+   "why": "optional: Parks ACT walking-tracks page lists the track sections (14 km Casuarina Sands to Kambah Pool, 7 km Kambah Pool to Pine Island); check for a dedicated track page to replace the VisitCanberra link"
+  }
+ ],
+ "notes": [
+  "Overpass was unreachable from this shard (connection refused), so the whole-route midpoints of the Murrumbidgee Discovery Track and the Canberra Centenary Trail could not be computed; see each coordinates_source. Centenary Trail pin is LOW (approximate).",
+  "Placement pin for Lake Ginninderra (resolve-pin: Ginninderra Creek stream) was rejected as the wrong feature.",
+  "Nothing should be dropped. The Big Powerful Owl is the marginal one (one counted source, a 15-minute stop), already kept by the owner.",
+  "Hall: bio keeps the 20-site heritage walk (Wikivoyage) and cafes; no cost; no ticketUrl (village).",
+  "costBasis is entry/free for all ten (Canberra Nature Park, Murrumbidgee River Corridor have no entry fee per VisitCanberra \"Price: Free\" on the trails; reserves not read on parks.act.gov.au, blocked)."
+ ]
+}

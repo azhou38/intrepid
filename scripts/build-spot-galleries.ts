@@ -30,7 +30,7 @@ import { BAD_CATEGORY, BAD_TITLE, colourStats } from './photo-checks';
 
 const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined; };
 const dest = arg('--dest'), only = arg('--spot'), candOut = arg('--candidates'), country = arg('--country');
-const UA = 'IntrepidApp-Galleries/1.0 (personal hobby project; alexzhou38@gmail.com)';
+const UA = 'IntrepidApp-Galleries/1.0 (personal hobby project)';
 const ROOT = process.cwd();
 const OUT = resolvePath(ROOT, 'src/data/spotGalleries.json');
 const CATS = resolvePath(ROOT, 'scripts/spot-gallery-categories.json');

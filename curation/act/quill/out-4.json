@@ -1,0 +1,240 @@
+{
+ "spots": {
+  "canberra-31": {
+   "name": "Tidbinbilla Nature Reserve",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Nature reserve in the Brindabella foothills with walking trails, live animal displays and the Birrigai Rock Shelter.",
+   "hours": "7:30 AM – 8:00 PM (to 6:00 PM outside daylight saving)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": 15.53,
+   "costMax": 15.53,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.tidbinbilla.act.gov.au/",
+   "coordinates": {
+    "latitude": -35.4403356,
+    "longitude": 148.9426741
+   },
+   "coordinates_source": "OSM tourism=information (Tidbinbilla Nature Reserve Visitor Centre, node via Nominatim), agrees within ~12 m with the Wikivoyage listing for Tidbinbilla Visitor Centre (-35.440434, 148.942631): HIGH. Visitor point, not the reserve centroid. Moved 3853 m from the placement point.",
+   "notes": "Day pass per private vehicle (up to 8 seats) $15.53 and reserve hours 7:30-6 winter / 7:30-8 daylight saving, visitor centre 9-5, per the tidbinbilla.act.gov.au/visit page as relayed by a web search; the page is Cloudflare-blocked to scripts so not read directly. Wikivoyage (older) says $11 per vehicle. A 2026 fee determination may raise it to $16.09 from 1 July 2026. Pedestrians and cyclists pay nothing. Not a park-pass spot (no ACT park pass)."
+  },
+  "canberra-32": {
+   "name": "Canberra Deep Space Communication Complex",
+   "icon": "📡",
+   "category": "museum",
+   "bio": "NASA deep-space tracking station with a free visitor centre of space exhibits, including a piece of Apollo 11 Moon rock.",
+   "hours": "10:00 AM – 4:00 PM (Sat–Sun)",
+   "closedDays": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.cdscc.nasa.gov/",
+   "coordinates": {
+    "latitude": -35.403463,
+    "longitude": 148.982942
+   },
+   "coordinates_source": "Commons photo median of 35 geotagged files, 258 m from the Wikipedia article point (-35.401389, 148.981667); no OSM feature found. LOW: neither is the visitor centre door. Moved 258 m from the placement point.",
+   "notes": "Hours and free entry from cdscc.nasa.gov/Pages/opening_hours.html: Sat-Sun 10-4, some additional days in ACT school holidays; closed public holidays per Wikivoyage. The page also holds a commented-out line saying daily 9-5; ignored. Title of cdscc.nasa.gov names the complex. Cafe and giftshop closed. Weekday opening in school holidays means closedDays is approximate."
+  },
+  "canberra-33": {
+   "name": "Jerrabomberra Wetlands",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Wetland nature reserve with flat walking tracks, boardwalks, bird hides and more than 170 recorded bird species.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.jerrabomberrawetlands.org.au/",
+   "coordinates": {
+    "latitude": -35.3168888,
+    "longitude": 149.1633252
+   },
+   "coordinates_source": "OSM building \"Jerrabomberra Wetlands Office\", Dairy Road (via Nominatim), ~300 m from the 4-file Commons photo median (-35.31437, 149.16229): the Dairy Road visitor end of the reserve. The OSM nature_reserve centroid (-35.312054, 149.15647) and the Wikipedia point were rejected as centroids. Moved 636 m from the placement point.",
+   "notes": "The reserve website says open 24 hours, 7 days; Wikivoyage and an earlier VisitCanberra draft say 8 AM-6 PM. Operator site used. Free (no fee on VisitCanberra page or operator site). Visitor point not confirmed against an agency car-park map: parks.act.gov.au blocked."
+  },
+  "canberra-34": {
+   "name": "Stromlo Forest Park",
+   "icon": "🚵",
+   "category": "hike",
+   "bio": "Shared-use forest park west of the city with more than 50 km of mountain-bike, running and walking trails.",
+   "hours": "6:00 AM – 9:00 PM (to 6:00 PM outside daylight saving)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.stromloforestpark.act.gov.au/",
+   "coordinates": {
+    "latitude": -35.320029,
+    "longitude": 149.0256075
+   },
+   "coordinates_source": "OSM building \"Stromlo Forest Park Pavillion\", Dave McInnes Road (via Nominatim), agrees within ~30 m with the Wikipedia point (-35.320278, 149.025556) and the Wikivoyage listing (-35.32016, 149.025382): HIGH. The draft MEDIUM pin (horse-riding school, 2.3 km away) was rejected. Park hub, not a trail midpoint, since it is a network of trails. Moved 28 m from the placement point.",
+   "notes": "Hours from Wikivoyage (daily 6AM-6PM, to 9PM in daylight saving; free). 50 km+ trails from VisitCanberra cycling page. VisitCanberra mentions a paid parking model, so parking is charged but is not the price. Official site is a redirect from stromloforestpark.com.au to stromloforestpark.act.gov.au, Cloudflare-blocked."
+  },
+  "canberra-35": {
+   "name": "National Capital Exhibition",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free exhibition at Regatta Point on how Canberra was planned and built, with a scale model of the national area.",
+   "hours": "9:00 AM – 5:00 PM (Sat–Sun 10:00 AM – 4:00 PM)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/national-capital-exhibition",
+   "coordinates": {
+    "latitude": -35.290415,
+    "longitude": 149.131349
+   },
+   "coordinates_source": "OSM tourism=museum (Nominatim), within 20 m of the Wikivoyage point (-35.29042, 149.13117): HIGH. Moved 16 m from the placement point.",
+   "notes": "Hours, free entry and closed Christmas Day and Boxing Day from the NCA page (title names the exhibition). Open on public holidays 10-4."
+  },
+  "canberra-36": {
+   "name": "Blundells Cottage",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "Stone farm worker's cottage built around 1860, now a free house museum open three days a week.",
+   "hours": "10:00 AM – 2:00 PM (Wed, Sat, Sun)",
+   "closedDays": [
+    1,
+    2,
+    4,
+    5
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/blundells-cottage",
+   "coordinates": {
+    "latitude": -35.2927998,
+    "longitude": 149.1417718
+   },
+   "coordinates_source": "OSM building=house \"Blundells Cottage\", Wendouree Drive (via Nominatim), ~15 m from the single Commons geotagged file (-35.292727, 149.141865): the cottage itself. The Wikivoyage point is a 3-decimal value and was not used. Moved 30 m from the placement point.",
+   "notes": "NCA page: open Wednesdays, Saturdays and Sundays 10-2, entry free; may close in extreme weather. Wikivoyage lists Sat-Sun only and closed Christmas and New Year's Day; NCA page used (not stating the holiday closures). Bio avoids the stale \"lake shore\" wording."
+  },
+  "canberra-37": {
+   "name": "Commonwealth Place",
+   "icon": "🚩",
+   "category": "landmark",
+   "bio": "Lakeside public square in Parkes with the International Flag Display and views over Lake Burley Griffin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/commonwealth-place",
+   "coordinates": {
+    "latitude": -35.297289,
+    "longitude": 149.133924
+   },
+   "coordinates_source": "OSM leisure=park \"Commonwealth Place\" (Nominatim); the square is about 100 x 50 m, so the feature centre is the visitor point. Within ~100 m of the Wikivoyage International Flag Display point (-35.298, 149.1329). Moved 17 m from the placement point.",
+   "notes": "Open 24 hours and free: the International Flag Display (110 flags, illuminated at night) per Wikivoyage South Canberra, July 2026; NCA page names the square (completed 2002, jetties, Speakers Square) but gives no hours. The flag display has its own NCA page (/attractions/international-flag-display); treat it as part of this spot, not a second spot."
+  },
+  "canberra-38": {
+   "name": "CSIRO Discovery Centre",
+   "icon": "🔬",
+   "category": "museum",
+   "bio": "Science exhibition centre of the CSIRO on Black Mountain, with exhibits on Australian research.",
+   "hours": "Closed to the public",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "coordinates": {
+    "latitude": -35.27309,
+    "longitude": 149.11519
+   },
+   "coordinates_source": "Wikivoyage Acton listing (-35.27309, 149.11519); resolve-pin found no OSM feature. LOW. Moved 0 m from the placement point.",
+   "notes": "SHOULD NOT BE ADDED: the Discovery Centre has closed to the general public and in Feb 2025 CSIRO shut it to school visitors too (CSIRO Alumni, \"CSIRO shuts education centre after visitor numbers fall\", alumni.csiro.au/csiro-shuts-education-centre-after-visitor-numbers-fall/, quoting the Canberra Times). Wikivoyage listing (Mon-Fri 9-4, free) is out of date. Hours, official link and pin are not usable. Fails COVERAGE rule 2 (closed).",
+   "ticket_note": "no usable official page: closed to the public"
+  },
+  "canberra-39": {
+   "name": "Canberra Museum and Gallery",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Civic Square museum and gallery with a permanent Canberra history display and the Nolan Collection of Sidney Nolan paintings.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.cmag.com.au/",
+   "coordinates": {
+    "latitude": -35.280664,
+    "longitude": 149.130945
+   },
+   "coordinates_source": "OSM tourism=museum (Nominatim), within 30 m of the Wikipedia point (-35.280682, 149.130628): HIGH. Moved 29 m from the placement point.",
+   "notes": "Hours Monday-Sunday 10am-4pm from the cmag.com.au homepage (title \"Canberra Museum & Gallery\"); Wikivoyage's older hours differ. Most exhibitions free, charges may apply for some temporary ones (cmag.com.au/about). Permanent history gallery from Wikivoyage Civic; Nolan Collection managed by CMAG for the Australian Government."
+  },
+  "canberra-40": {
+   "name": "Canberra Railway Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Volunteer-run railway museum in Kingston where visitors can board historic steam locomotives and carriages.",
+   "hours": "10:00 AM – 3:00 PM (Sat–Sun and ACT public holidays)",
+   "closedDays": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.canberrarail.org.au/",
+   "coordinates": {
+    "latitude": -35.317846,
+    "longitude": 149.154265
+   },
+   "coordinates_source": "OSM tourism=museum (Nominatim), within 20 m of the Wikivoyage point (-35.3176, 149.155): HIGH. Moved 69 m from the placement point.",
+   "notes": "Hours and prices from canberrarail.org.au homepage (adult $10, concession $7.50, child 5-15 $5, under 5 free): Sat-Sun and ACT public holidays 10-3, extra days Wed-Sun in ACT school holidays and Floriade. The /canberrarailwaymuseum subpage still says Sundays only (stale). Site title is \"Home\"; the site is the museum's (Canberra Railway Museum Facebook/footers). canberrarailwaymuseum.org.au does not resolve."
+  }
+ },
+ "unverified": [
+  "canberra-31: Tidbinbilla day-pass price ($15.53/vehicle) and hours come from a search summary of tidbinbilla.act.gov.au/visit, not read directly; Wikivoyage says $11",
+  "canberra-33: Jerrabomberra Wetlands 24-hour access (operator site) conflicts with 8AM-6PM (Wikivoyage); visitor-point pin not checked against an agency map",
+  "canberra-34: Stromlo Forest Park hours (Wikivoyage only); official site blocked",
+  "canberra-32: CDSCC weekday school-holiday opening not fixed, closedDays approximate",
+  "canberra-40: Railway Museum extra opening days follow ACT school holidays and Floriade",
+  "canberra-38: no current hours, link or cost: centre is closed to the public"
+ ],
+ "needs_browser": [
+  {
+   "id": "canberra-31",
+   "url": "https://www.tidbinbilla.act.gov.au/visit",
+   "why": "Cloudflare 403: confirm day-pass price per vehicle, reserve hours, visitor centre hours; also confirm the homepage title names Tidbinbilla"
+  },
+  {
+   "id": "canberra-34",
+   "url": "https://www.stromloforestpark.act.gov.au/",
+   "why": "Cloudflare 403 (redirect from stromloforestpark.com.au): confirm the title names Stromlo Forest Park, the hours, and that the park itself is free"
+  },
+  {
+   "id": "canberra-33",
+   "url": "https://www.parks.act.gov.au/find-a-park/jerrabomberra-wetlands-nature-reserve",
+   "why": "parks.act.gov.au blocked: confirm hours (24 h vs 8-6) and entry car park location"
+  }
+ ],
+ "notes": [
+  "canberra-38 CSIRO Discovery Centre should not be added: closed to the public since before 2025 and to schools Feb 2025 (CSIRO Alumni page citing the Canberra Times).",
+  "canberra-32 pin is LOW (Commons median); no OSM feature for the complex or visitor centre. Raise for the run.",
+  "canberra-37 Commonwealth Place and the International Flag Display are one place; only one spot.",
+  "No other Canberra spots exist in src/data/spots.ts, so no pin-shared check against existing spots; all ten pins in this shard are >= 25 m apart (nearest: Commonwealth Place to the National Capital Exhibition ~800 m)."
+ ]
+}

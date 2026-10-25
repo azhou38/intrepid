@@ -1,0 +1,130 @@
+[
+ {
+  "id": "canberra-1",
+  "field": "bio",
+  "current": "with free daily tours, public galleries and a roof lawn",
+  "status": "unverifiable",
+  "fix": "Roof lawn and public galleries are supported (Wikipedia: people can walk on the grass roofs; visitors' galleries). Free daily tours and the 9-5 hours are Wikivoyage only; aph.gov.au is WAF-blocked. Confirm in a browser or reword to 'with public galleries, grass-roof lawns and tours' (fits bio-fit).",
+  "source": "https://en.wikipedia.org/wiki/Parliament_House,_Canberra; https://www.aph.gov.au (blocked)"
+ },
+ {
+  "id": "canberra-1",
+  "field": "ticketUrl",
+  "current": "https://www.aph.gov.au",
+  "status": "unverifiable",
+  "fix": "Blocked (WAF Block Page); needs_browser: check title names Parliament of Australia.",
+  "source": "https://www.aph.gov.au"
+ },
+ {
+  "id": "canberra-3",
+  "field": "hours/free/ticketUrl",
+  "current": "10:00 AM – 5:00 PM, free",
+  "status": "unverifiable",
+  "fix": "nga.gov.au 403; hours and free entry from Wikivoyage only. needs_browser.",
+  "source": "https://www.nga.gov.au/visit"
+ },
+ {
+  "id": "canberra-4",
+  "field": "hours/free/ticketUrl",
+  "current": "9:00 AM – 5:00 PM, free",
+  "status": "unverifiable",
+  "fix": "nma.gov.au Cloudflare-blocked; hours and free entry from Wikivoyage only. needs_browser.",
+  "source": "https://www.nma.gov.au/visit"
+ },
+ {
+  "id": "canberra-7",
+  "field": "bio",
+  "current": "water dragons",
+  "status": "unverifiable",
+  "fix": "No page read mentions water dragons; Wikipedia supports rainforest gully. Reword 'and water dragons' to 'and bushland trails' or confirm on visit.anbg.gov.au. Free entry also unconfirmed on official pages (hours page 8:30-5 confirmed).",
+  "source": "https://visit.anbg.gov.au/visit/visit-gardens/opening-hours/"
+ },
+ {
+  "id": "canberra-8",
+  "field": "bio",
+  "current": "with a path around its 40 km shore",
+  "status": "unsupported",
+  "fix": "NCA gives a 40.5 km shoreline, not a 40 km path; the shared-path length was dropped in the notes. Fix: 'Artificial lake at Canberra's centre, with a 40 km shoreline, cruises, boat hire and three swimming beaches.' (passes bio-fit; NCA lists 3 designated swimming beaches, kayak/SUP hire, cruises).",
+  "source": "https://www.nca.gov.au/attractions/lake-burley-griffin"
+ },
+ {
+  "id": "canberra-9",
+  "field": "hours / free",
+  "current": "Open 24 hours; free: true",
+  "status": "unsupported",
+  "fix": "No source read for 24-hour access or free entry (site Cloudflare-blocked). Bio facts: 250 ha supported (Wikipedia); 44,000 trees from VisitCanberra only. Check in a browser; do not ship 'Open 24 hours' unsourced.",
+  "source": "https://www.nationalarboretum.act.gov.au/visit (blocked)"
+ },
+ {
+  "id": "canberra-10",
+  "field": "hours",
+  "current": "Open 24 hours",
+  "status": "unverifiable",
+  "fix": "parks.act.gov.au blocked; 843 m supported by Wikipedia. Lookout road/gate hours unconfirmed. needs_browser.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-ainslie-nature-reserve"
+ },
+ {
+  "id": "canberra-12",
+  "field": "hours",
+  "current": "Mon–Fri 9:45 AM – 4:30 PM, closedDays [0,6]",
+  "status": "unverifiable",
+  "fix": "Official page gives no opening time or weekdays, only 'ordinary opening hours' and sittings 10:00-12:45, 2:15-4:15; start time and weekday-only are Wikivoyage 2017. Bio facts (public hall, courtrooms, watch sittings) supported.",
+  "source": "https://www.hcourt.gov.au/visiting-high-court/visitors"
+ },
+ {
+  "id": "canberra-14",
+  "field": "bio",
+  "current": "some 400 portraits",
+  "status": "unverifiable",
+  "fix": "Count is Wikivoyage only; official plan-your-visit page (10-5 daily, free) does not state it. Safe fix: 'showing portraits of people who have shaped the nation'.",
+  "source": "https://www.portrait.gov.au/content/plan-your-visit/"
+ },
+ {
+  "id": "canberra-15",
+  "field": "costMin/costMax",
+  "current": "55",
+  "status": "unverifiable",
+  "fix": "Official entry-prices page publishes the table as an image; A$55 is from a search snippet and events show A$60. Fetched pages show no adult figure. Read the price image in a browser; keep 55 only if it shows adult gate price A$55. Hours 9:30-5 and animals supported.",
+  "source": "https://www.nationalzoo.com.au/entry-prices"
+ },
+ {
+  "id": "canberra-17",
+  "field": "hours/free/ticketUrl",
+  "current": "10:00 AM – 4:00 PM, free",
+  "status": "unverifiable",
+  "fix": "nfsa.gov.au 403 bot wall; hours from a search summary only, Wikivoyage says weekends only (stale). needs_browser.",
+  "source": "https://www.nfsa.gov.au/visit-us"
+ },
+ {
+  "id": "canberra-19",
+  "field": "bio",
+  "current": "miniature steam train ride",
+  "status": "supported",
+  "fix": "Cockington Green's train page lists a running schedule (10:00-4:45) and a $5 ride, so the train bio line is supported; note the ride costs extra and is weather-dependent. Admission A$26 adult confirmed.",
+  "source": "https://cockingtongreen.com.au/train; https://cockingtongreen.com.au/admissions"
+ },
+ {
+  "id": "dest-canberra",
+  "field": "goodToKnow[1] Security screening",
+  "current": "Bring photo ID and leave large bags behind.",
+  "status": "unsupported",
+  "fix": "Screening is sourced (High Court: 'All visitors are required to go through security screening'; Wikivoyage: screened at Parliament House). Photo ID is not required by either source. Fix detail: 'Parliament House and the High Court screen visitors on entry. Leave large bags behind: the High Court bans any over 30 cm.' (122 chars).",
+  "source": "https://www.hcourt.gov.au/visiting-high-court/visitors"
+ },
+ {
+  "id": "dest-canberra",
+  "field": "goodToKnow[2] Check opening days",
+  "current": "The High Court and Royal Australian Mint keep different weekday and weekend hours",
+  "status": "unsupported",
+  "fix": "Mint verified (Mon-Fri 8:30-5, weekends 10-4). Blundells Cottage verified (Wed, Sat, Sun 10-2). High Court weekday-only hours are not on the official page. Fix: 'The Royal Australian Mint opens shorter hours at weekends, and Blundells Cottage opens only Wednesdays, Saturdays and Sundays.'",
+  "source": "https://www.ramint.gov.au/visit-our-museum; https://www.nca.gov.au/attractions/blundells-cottage"
+ },
+ {
+  "id": "dest-canberra",
+  "field": "whyVisit[0] Tour Parliament House",
+  "current": "Tour Parliament House",
+  "status": "unverifiable",
+  "fix": "Tours exist but free/daily rests on Wikivoyage; aph.gov.au blocked. Reason is acceptable if tours are confirmed in a browser.",
+  "source": "https://www.aph.gov.au (blocked)"
+ }
+]

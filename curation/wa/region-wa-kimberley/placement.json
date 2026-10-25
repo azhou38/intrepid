@@ -1,0 +1,2482 @@
+{
+ "region": "wa-kimberley",
+ "existing_in_app": "none: no Australia/Perth destinations or spots in src/data; ids broome, derby, gibb-river-road, kununurra, wyndham, purnululu and every standalone slug are new and absent from git history of src/data",
+ "existing_fixes": [],
+ "new_destinations": [
+  {
+   "id": "broome",
+   "name": "Broome",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -17.961944,
+    "longitude": 122.236111
+   },
+   "coordinates_source": "Wikipedia \"Broome, Western Australia\" town point (Wikivoyage geo tag agrees)",
+   "defaultZoomSpanKm": 32,
+   "spots": [
+    "broome-1",
+    "broome-2",
+    "broome-3",
+    "broome-4",
+    "broome-5",
+    "broome-6",
+    "broome-7",
+    "broome-8",
+    "broome-9"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage \"Broome\" city article; Tourism WA destination page",
+    "wording": "Wikivoyage: Broome (See/Do: Cable Beach, Sun Pictures, pearl farms); Tourism WA Kimberley menu \"Explore More: Broome, Kununurra, Dampier Peninsula, Bungle Bungle Range\""
+   },
+   "note": "The town is the destination, not a spot. Rank 3: the Kimberley's main town and resort, comparable to Darwin (rank 3).",
+   "candidate_itself": "Broome"
+  },
+  {
+   "id": "derby",
+   "name": "Derby",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -17.303191,
+    "longitude": 123.628723
+   },
+   "coordinates_source": "photon (OSM) place=town \"Derby\"",
+   "defaultZoomSpanKm": 18,
+   "spots": [
+    "derby-1",
+    "derby-2",
+    "derby-3",
+    "derby-4"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage \"Derby (Western Australia)\"; Visit Broome Derby page",
+    "wording": "Wikivoyage: \"best known for its giant prison Boab tree\", with the long tidal jetty; the west end of the Gibb River Road"
+   },
+   "note": "Four in-town spots; the town is the destination (a base at the west end of the Gibb), not a wrapper spot beside its own attractions.",
+   "candidate_itself": "Derby"
+  },
+  {
+   "id": "gibb-river-road",
+   "name": "Gibb River Road",
+   "category": "nature",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -17.122625,
+    "longitude": 125.431007
+   },
+   "coordinates_source": "centre of its spots (Windjana Gorge to Manning Gorge), as COVERAGE asks for a region destination",
+   "defaultZoomSpanKm": 105,
+   "spots": [
+    "gibb-river-road-1",
+    "gibb-river-road-2",
+    "gibb-river-road-3",
+    "gibb-river-road-4",
+    "gibb-river-road-5",
+    "gibb-river-road-6"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage itinerary \"Gibb River Road\"; Australia's North West homepage; Visit Broome Gibb River Road page",
+    "wording": "Wikivoyage: \"a bucket-list Australian adventure\"; Australia's North West: \"The Legendary Outback Drive\""
+   },
+   "note": "A touring region travellers name (\"doing the Gibb\"), camped along for days, not one town. Covers the western and central gorges only (Windjana to Manning); its eastern end (El Questro, Emma Gorge, Zebedee) is 300 km further and stays standalone rather than balloon the span. The \"Gibb River Road\" candidate itself is in review as a spot; if this destination is approved, that review item is answered by it. Owner decision: a road-named destination; the alternative is six standalone spots.",
+   "candidate_itself": null
+  },
+  {
+   "id": "kununurra",
+   "name": "Kununurra",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -15.773092,
+    "longitude": 128.738839
+   },
+   "coordinates_source": "photon (OSM) place=town \"Kununurra\" (Wikipedia 59 m)",
+   "defaultZoomSpanKm": 56,
+   "spots": [
+    "kununurra-1",
+    "kununurra-2",
+    "kununurra-3",
+    "kununurra-4",
+    "kununurra-5"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage \"Kununurra\"; Tourism WA destination page",
+    "wording": "Tourism WA Kimberley menu \"Explore More: Broome, Kununurra, Dampier Peninsula, Bungle Bungle Range\"; Wikivoyage: the east-Kimberley base for Lake Argyle, Mirima and Purnululu"
+   },
+   "note": "The east Kimberley base; Tourism WA itself names the destination Kununurra, so no broader region name is used. Span 56 km (reach 42) holds Lake Argyle's dam (about 39 km). Wyndham (73 km) is its own destination.",
+   "candidate_itself": "Kununurra"
+  },
+  {
+   "id": "wyndham",
+   "name": "Wyndham",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -15.486798,
+    "longitude": 128.12362
+   },
+   "coordinates_source": "photon (OSM) place=village \"Wyndham\" (Three Mile town centre)",
+   "defaultZoomSpanKm": 42,
+   "spots": [
+    "wyndham-1",
+    "wyndham-2",
+    "wyndham-3",
+    "wyndham-4"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage \"Wyndham (Western Australia)\"; Australia's North West Wyndham guide",
+    "wording": "Wikivoyage See: Five Rivers Lookout atop the Bastion Range, the giant croc statue, the Grotto, the Prison Tree"
+   },
+   "note": "Four kept spots around the town; the town is the destination, not a wrapper spot. Span 42 km (reach 31.5) holds The Grotto (29 km).",
+   "candidate_itself": "Wyndham"
+  },
+  {
+   "id": "purnululu",
+   "name": "Purnululu National Park",
+   "category": "park",
+   "rank": 2,
+   "coordinates": {
+    "latitude": -17.404409,
+    "longitude": 128.394341
+   },
+   "coordinates_source": "centre of its spots (Echidna Chasm and Cathedral Gorge OSM points); replace with the visitor centre point when resolved",
+   "defaultZoomSpanKm": 40,
+   "spots": [
+    "purnululu-1",
+    "purnululu-2",
+    "purnululu-3",
+    "purnululu-4"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage \"Purnululu National Park\"; DBCA park page; Tourism WA \"Bungle Bungle Range\" destination page",
+    "wording": "UNESCO World Heritage Bungle Bungle Range; Wikivoyage park article with See listings (Cathedral Gorge, Echidna Chasm, Mini Palms, Kungkalanayi)"
+   },
+   "note": "Flagship park (UNESCO World Heritage) with four kept spots; the park is the destination itself. Bungle Bungle Range (rejected as a duplicate) is this destination. Rank 2: a guidebook top-billing sight of WA.",
+   "candidate_itself": "Purnululu National Park"
+  }
+ ],
+ "span_check": [
+  {
+   "destination": "broome",
+   "farthest_spot_km": 22.4,
+   "reach_km": 24.0,
+   "ok": true
+  },
+  {
+   "destination": "derby",
+   "farthest_spot_km": 9.2,
+   "reach_km": 13.5,
+   "ok": true
+  },
+  {
+   "destination": "gibb-river-road",
+   "farthest_spot_km": 74.5,
+   "reach_km": 78.75,
+   "ok": true
+  },
+  {
+   "destination": "kununurra",
+   "farthest_spot_km": 38.8,
+   "reach_km": 42.0,
+   "ok": true
+  },
+  {
+   "destination": "wyndham",
+   "farthest_spot_km": 29.1,
+   "reach_km": 31.5,
+   "ok": true
+  },
+  {
+   "destination": "purnululu",
+   "farthest_spot_km": 8.7,
+   "reach_km": 30.0,
+   "ok": true
+  }
+ ],
+ "placements": [
+  {
+   "id": "broome-1",
+   "name": "Cable Beach",
+   "candidate_name": "Cable Beach",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.950154,
+    "longitude": 122.205827
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) natural=beach \"Cable Beach\"; Wikipedia article point 232 m south",
+   "wiki": "Cable Beach",
+   "icon": "🐪",
+   "category": "beach",
+   "bio": "Broome's 22 km white-sand beach on the Indian Ocean, known for camel rides along the shore at sunset.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Broome's headline sight: Wikivoyage Broome ('what Broome is famous for', 22 km of white sand, camel rides), Australia's North West homepage feature, Visit Broome (rule 1, three counted sources).). Score: 5567 views, 1 counted sources. 3.5 km from Broome's centre (reach 24 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-2",
+   "name": "Gantheaume Point",
+   "candidate_name": "Gantheaume Point",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.974114,
+    "longitude": 122.177458
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) man_made=lighthouse \"Gantheaume Point Lighthouse\"; Wikipedia 84 m and Commons median 81 m agree",
+   "wiki": "Gantheaume Point",
+   "icon": "🦕",
+   "category": "viewpoint",
+   "bio": "Red rock headland over blue sea, with dinosaur footprint casts and real prints exposed only at the lowest tides.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Wikivoyage Broome See listing: red rock formations against blue sea and dinosaur footprints (concrete replicas at the sign, real prints beyond the jetty at the lowest tides) (rules 1-3).). Score: 1808 views, 1 counted sources. 6.3 km from Broome's centre (reach 24 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-3",
+   "name": "Town Beach",
+   "candidate_name": "Town Beach, Broome",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.971683,
+    "longitude": 122.235375
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) natural=beach \"Town Beach - Guwarrigun\" (the sand by the museum and jetty)",
+   "icon": "🌕",
+   "category": "beach",
+   "bio": "Sheltered beach by Croc Jetty, the favourite place to watch the Staircase to the Moon and low-tide flying-boat wrecks.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Wikivoyage Broome names it as Broome's favourite Staircase to the Moon viewing spot and the access to the WWII flying-boat wrecks at very low tide; Visit Broome lists Town Beach among Broome's areas and has a Catalina wr…). Score: 0 views, 1 counted sources. 1.1 km from Broome's centre (reach 24 km).",
+   "note": "Staircase to the Moon (rejected as a phenomenon) is merged into this spot: its dry-season full-moon dates go in the bio/hours research. Two OSM beach features carry the name (Jiljirrgun and Guwarrigun); Pipeline C confirms which is Town Beach proper.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-4",
+   "name": "Sun Pictures",
+   "candidate_name": "Sun Pictures",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.953477,
+    "longitude": 122.243214
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) amenity=cinema \"Sun Pictures\"; Commons median 5 m",
+   "wiki": "Sun Pictures",
+   "icon": "🎬",
+   "category": "entertainment",
+   "bio": "Open-air cinema in Chinatown screening films nightly since 1916, the oldest of its kind still running in the world.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1+2: Wikivoyage Broome 'Do' listing; opened 1916, the world's oldest open-air cinema still operating, screening nightly, a recognised attraction rather than a plain venue.). Score: 93599 views, 1 counted sources. 1.2 km from Broome's centre (reach 24 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-5",
+   "name": "Willie Creek Pearl Farm",
+   "candidate_name": "Willie Creek Pearl Farm",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.761379,
+    "longitude": 122.21454
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) \"Willie Creek Pearl Farm\" (office=company); Wikivoyage listing geo 31 m",
+   "icon": "🦪",
+   "category": "entertainment",
+   "bio": "Working pearl farm 38 km north of Broome, where tours show the nursery, the creek and how pearls are harvested.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: A place, not just an operator: a working pearl farm 38 km north of Broome whose tour shows the nursery, the creek and harvesting; named by Wikivoyage Broome (See) and Visit Broome (rule 1, two counted sources; rule 2).). Score: 0 views, 1 counted sources. 22.4 km from Broome's centre (reach 24 km).",
+   "note": "Open March to December, 4WD access road or transfer (Wikivoyage); hours and price for research.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-6",
+   "name": "Malcolm Douglas Crocodile Park",
+   "candidate_name": "Malcolm Douglas Crocodile Park",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.879057,
+    "longitude": 122.337914
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) leisure=park \"Malcolm Douglas Crocodile Park\"; Wikivoyage listing geo 44 m",
+   "icon": "🐊",
+   "category": "entertainment",
+   "bio": "Wildlife park on the Broome road with several crocodile species, birds and other animals, and an afternoon feeding.",
+   "hours": "2:00 PM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Broome See listing: a wildlife park with several crocodile species, birds and other fauna, daily 2-5pm, 3pm feeding, paid entry (rules 1-2).). Score: 0 views, 1 counted sources. 14.2 km from Broome's centre (reach 24 km).",
+   "note": "Daily 2-5 pm with a 3 pm feeding, paid entry (Wikivoyage); price for research.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-7",
+   "name": "Broome Bird Observatory",
+   "candidate_name": "Broome Bird Observatory",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.97555,
+    "longitude": 122.344661
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) building \"Broome Bird Observatory\"; Wikipedia 54 m",
+   "icon": "🐦",
+   "category": "nature",
+   "bio": "Bird observatory on the shore of Roebuck Bay, where about 300 species are recorded, among them its migratory waders.",
+   "hours": "8:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Broome Do listing: 300 species, the Roebuck Bay migratory waders, hours (Apr-Oct 8am-4pm), entry fee and camping (rules 1, 2 and 4: a seasonal venue is fine).). Score: 548 views, 1 counted sources. 11.6 km from Broome's centre (reach 24 km).",
+   "note": "April to October 8 am-4 pm, entry fee, camping; dirt access road (Wikivoyage). Roebuck Bay (rejected as an area) is reached here and at Town Beach.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-8",
+   "name": "Japanese Cemetery",
+   "candidate_name": "Japanese Cemetery, Broome",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.957667,
+    "longitude": 122.223332
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) landuse=cemetery \"Japanese Cemetery\"; Commons median of 5 files 67 m",
+   "icon": "🪦",
+   "category": "historic",
+   "bio": "Pearling-era cemetery with the graves of about 900 Japanese divers, beside Chinese, Malay and Afghan sections.",
+   "hours": "7:00 AM – 8:00 PM",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Broome See listing: 900 Japanese pearl divers plus Chinese, Malay and Afghan sections, open daily 7am-8pm; a heritage site that tells Broome's pearling story, not a minor plaque (rules 1-3).). Score: 0 views, 1 counted sources. 1.4 km from Broome's centre (reach 24 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "broome-9",
+   "name": "Broome Historical Museum",
+   "candidate_name": "Broome Historical Museum",
+   "action": "spot",
+   "destination": "broome",
+   "coordinates": {
+    "latitude": -17.968067,
+    "longitude": 122.236405
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) tourism=museum \"Broome Historical Museum\"; Commons median 3 m",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Local museum telling the story of Broome's pearling industry and the 1942 Japanese air raid on the town.",
+   "hours": "10:00 AM – 1:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Broome See listing: pearling and the 1942 Japanese air raid, open daily, paid entry (rules 1-2).). Score: 0 views, 1 counted sources. 0.7 km from Broome's centre (reach 24 km).",
+   "note": "Open daily with short hours, paid entry (Wikivoyage, skeptic); confirm current hours and price.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "derby-1",
+   "name": "Boab Prison Tree",
+   "candidate_name": "Boab Prison Tree, Derby",
+   "action": "spot",
+   "destination": "derby",
+   "coordinates": {
+    "latitude": -17.350718,
+    "longitude": 123.669928
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) natural=tree \"Boab Prison Tree\"; Wikipedia 4 m",
+   "wiki": "Boab Prison Tree, Derby",
+   "icon": "🌳",
+   "category": "historic",
+   "bio": "Hollow boab about 1,500 years old with a girth of 14.7 m, standing beside the highway just south of Derby.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Derby's best-known sight: Wikivoyage Derby See listing (1,500-year-old hollow boab, 14.7 m girth) and Visit Broome's Derby page (rule 1, two counted sources).). Score: 5967 views, 1 counted sources. 6.9 km from Derby's centre (reach 14 km).",
+   "note": "Skeptic: the prison legend is a myth (the tree was an ossuary); the bio does not repeat it as fact. Frosty's Pool (review) is at the same turn-off.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "derby-2",
+   "name": "Derby Jetty",
+   "candidate_name": "Derby Jetty",
+   "action": "spot",
+   "destination": "derby",
+   "coordinates": {
+    "latitude": -17.291568,
+    "longitude": 123.606927
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) man_made=pier \"Derby Whalf\" [sic]; Wikivoyage listing geo 264 m (on the access road)",
+   "icon": "🌅",
+   "category": "landmark",
+   "bio": "Horseshoe-shaped 1960s jetty where tides range up to 12 m, a local spot for fishing and watching the sunset.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Wikivoyage Derby See listing: the 1960s horseshoe jetty for fishing and sunset, with a tidal range up to 12 m; Visit Broome's Derby page leads on those tides (rules 1-3; a harbour stop a guide names).). Score: 0 views, 1 counted sources. 2.7 km from Derby's centre (reach 14 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "derby-3",
+   "name": "Mowanjum Art and Culture Centre",
+   "candidate_name": "Mowanjum Culture Centre",
+   "action": "spot",
+   "destination": "derby",
+   "coordinates": {
+    "latitude": -17.352991,
+    "longitude": 123.697559
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Mowanjum Art and Culture Centre\"; Wikivoyage listing geo 419 m",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Art and culture centre of the Worrorra, Ngarinyin and Wunambal peoples on the Gibb River Road, with a museum.",
+   "hours": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "closedDays": [
+    0,
+    1
+   ],
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Derby See listing (Worrorra, Ngarinyin and Wunambal art, crafts and museum; hours; $5) and Visit Broome's Derby page (Mowanjum Art and Culture Centre) (rule 1, two counted sources; rule 2).). Score: 0 views, 1 counted sources. 9.2 km from Derby's centre (reach 14 km).",
+   "note": "Name as Visit Broome and OSM give it (candidate: Mowanjum Culture Centre). Closed Sundays and Mondays, $5 (Wikivoyage): confirm; hours for research.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "derby-4",
+   "name": "Wharfinger's House Museum",
+   "candidate_name": "Wharfinger's House Museum",
+   "action": "spot",
+   "destination": "derby",
+   "coordinates": {
+    "latitude": -17.3007,
+    "longitude": 123.6258
+   },
+   "pin": "LOW",
+   "coordinates_source": "Wikivoyage Derby listing geo tag (the listing's own point); resolve-pin found no OSM feature: re-resolve",
+   "icon": "🏠",
+   "category": "museum",
+   "bio": "Local history museum in the old wharfinger's stilted bungalow, with displays on the town's aviation history.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Derby See listing (local history museum in the wharfinger's stilted bungalow) and Visit Broome's Derby page (Wharfinger House Museum, aviation history) (rule 1, two counted sources).). Score: 0 views, 1 counted sources. 0.4 km from Derby's centre (reach 14 km).",
+   "note": "Entry by key from the visitor centre during its hours (Wikivoyage).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "gibb-river-road-1",
+   "name": "Windjana Gorge",
+   "candidate_name": "Windjana Gorge",
+   "action": "spot",
+   "destination": "gibb-river-road",
+   "coordinates": {
+    "latitude": -17.407115,
+    "longitude": 124.947853
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Windjana Gorge\" (in the gorge, 600 m from the campground and car park)",
+   "wiki": "Windjana Gorge",
+   "icon": "🐊",
+   "category": "nature",
+   "bio": "Gorge 3.5 km long cut through an ancient Devonian reef, with fossils in its walls and freshwater crocodiles.",
+   "hours": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: DBCA park page for Bandilngan (Windjana Gorge) National Park (3.5 km gorge through a Devonian reef, walking trails, fossils, freshwater crocodiles, open May-Nov), Wikivoyage Kimberley and Visit Broome (rule 1, three coun…). Score: 1139 views, 1 counted sources. 60.3 km from Gibb River Road's centre (reach 79 km).",
+   "note": "Bandilngan (Windjana Gorge) National Park, DBCA; open May to November (DBCA). Park and gorge are one place: one spot.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "gibb-river-road-2",
+   "name": "Bell Gorge",
+   "candidate_name": "Bell Gorge",
+   "action": "spot",
+   "destination": "gibb-river-road",
+   "coordinates": {
+    "latitude": -17.00012,
+    "longitude": 125.207005
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Bell Creek Gorge\"; OSM natural=gorge \"Bell Gorge\" 750 m north",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Waterfall tumbling into a deep swimming pool, reached by a 2 km walk from the car park off Silent Grove Road.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: DBCA site page Dalmanyi (Bell Gorge): a waterfall and deep swimming pool reached by a 2 km walk; Australia's North West listing and Visit Broome ('one of the Gibb's most spectacular gorges') (rule 1, three counted source…). Score: 0 views, 1 counted sources. 27.4 km from Gibb River Road's centre (reach 79 km).",
+   "note": "Dalmanyi (Bell Gorge), DBCA site page; dry-season 4WD access. The candidate note (1 km from Imintji) was wrong.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "gibb-river-road-3",
+   "name": "Tunnel Creek",
+   "candidate_name": "Tunnel Creek",
+   "action": "spot",
+   "destination": "gibb-river-road",
+   "coordinates": {
+    "latitude": -17.607654,
+    "longitude": 125.145693
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Tunnel Creek\"; candidate OSM attraction 50 m",
+   "wiki": "Tunnel Creek National Park",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "Wade 750 m through a limestone tunnel carved by a creek, home to bats and linked to the story of Jandamarra.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: DBCA page for Dimalurru (Tunnel Creek) National Park: a 750 m walk through a limestone tunnel with bats, crocodiles and Jandamarra history; also Visit Broome and Australia's North West (rule 1, three counted sources).). Score: 731 views, 1 counted sources. 61.9 km from Gibb River Road's centre (reach 79 km).",
+   "note": "Dimalurru (Tunnel Creek) National Park, DBCA; closed in the wet. wiki: the Tunnel Creek article's point is 18 km away (check the title).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "gibb-river-road-4",
+   "name": "Manning Gorge",
+   "candidate_name": "Manning Gorge",
+   "action": "spot",
+   "destination": "gibb-river-road",
+   "coordinates": {
+    "latitude": -16.637596,
+    "longitude": 125.914162
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) waterway=waterfall \"Manning Gorge Falls\" (the swimming gorge; the campground trailhead is 2.4 km south)",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Swimming gorge and waterfall reached by a walk from the Mount Barnett campground, on station land.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Gibb River Road (swimming gorge 10 km north of Mount Barnett) and Visit Broome (its own section: walk, campground, day passes) (rule 1, two counted sources).). Score: 0 views, 1 counted sources. 74.5 km from Gibb River Road's centre (reach 79 km).",
+   "note": "Day-use fee paid at Mount Barnett Roadhouse (Visit Broome); amount for research. A walk: Pipeline C may move the pin to the trail midpoint.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "gibb-river-road-5",
+   "name": "Galvans Gorge",
+   "candidate_name": "Galvans Gorge",
+   "action": "spot",
+   "destination": "gibb-river-road",
+   "coordinates": {
+    "latitude": -16.801167,
+    "longitude": 125.844338
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) natural=water \"Galvans Gorge\" (the pool); Wikivoyage listing geo 15 m",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Small gorge and swimming hole a short walk from the Gibb River Road, with a waterfall and a lone boab above the pool.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "needs_research": [
+    "hours",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Wikivoyage Gibb River Road and Visit Broome ('a beautiful little gorge with easy access ... a delightful spot for a refreshing swim', in Wunaamin Conservation Park) (rule 1, two counted sources).). Score: 0 views, 1 counted sources. 56.7 km from Gibb River Road's centre (reach 79 km).",
+   "note": "Visit Broome: easy access, a swim; in Wunaamin Conservation Park. \"Lone boab\" is from Wikipedia/common photos: Pipeline C to confirm or cut.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "gibb-river-road-6",
+   "name": "Wunaamin Miliwundi Ranges Conservation Park",
+   "candidate_name": "Wunaamin Miliwundi Ranges",
+   "action": "spot",
+   "destination": "gibb-river-road",
+   "coordinates": {
+    "latitude": -17.066821,
+    "longitude": 125.248258
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=camp_site \"Silent Grove Camping Area\", the park's main visitor point (not Bell Gorge's point)",
+   "wiki": "Wunaamin Miliwundi Ranges",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Rugged ranges park along the Gibb River Road holding Lennard River Gorge, Mount Hart and the Silent Grove campground.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "name",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1 re-look: Australia's North West page for Wunaamin Miliwundi Ranges Conservation Park (fetched) and DBCA's Wunaamin park page name it; it holds Bell Gorge, Lennard River Gorge, Silent Grove campground and Mount Har…). Score: 2762 views, 0 counted sources. 20.4 km from Gibb River Road's centre (reach 79 km).",
+   "note": "Name to confirm with DBCA (formerly King Leopold Ranges Conservation Park; the judge notes 2023 names Wunaamin and Miluwindi). Must not use Bell Gorge's photo.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "kununurra-1",
+   "name": "Lake Argyle",
+   "candidate_name": "Lake Argyle",
+   "action": "spot",
+   "destination": "kununurra",
+   "coordinates": {
+    "latitude": -16.121821,
+    "longitude": 128.738746
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Lake Argyle Dam Wall\" (the visitor point at the dam and village); Wikivoyage listing geo 69 m",
+   "wiki": "Lake Argyle",
+   "icon": "🚤",
+   "category": "nature",
+   "bio": "Vast reservoir on the Ord River, Australia's second-largest artificial lake, with cruises, swimming and the dam wall.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1+2: Wikivoyage Kununurra See listing (enormous lake, resort village, dam, picnic area, scenery) and the Kimberley page's lake beaches; Australia's second-largest artificial lake with cruises, swimming and the infin…). Score: 20239 views, 1 counted sources. 38.8 km from Kununurra's centre (reach 42 km).",
+   "note": "Lake Argyle Cruises is the operator; the lake is the spot.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "kununurra-2",
+   "name": "Mirima National Park",
+   "candidate_name": "Mirima National Park",
+   "action": "spot",
+   "destination": "kununurra",
+   "coordinates": {
+    "latitude": -15.7711,
+    "longitude": 128.7511
+   },
+   "pin": "LOW",
+   "coordinates_source": "Wikivoyage Kununurra listing geo tag; OSM gave only the reserve centroid: re-resolve to the Hidden Valley car park",
+   "wiki": "Mirima National Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Hidden Valley's banded sandstone, nicknamed the mini Bungle Bungles, with walks of 0.4 to 4 km just outside town.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Kununurra and the DBCA Mirima page (both fetched) name it, Hidden Valley's banded sandstone 'mini Bungle Bungles' with 0.4-4 km walk trails 2 km from town.). Score: 770 views, 2 counted sources. 1.3 km from Kununurra's centre (reach 42 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "kununurra-3",
+   "name": "Lake Kununurra",
+   "candidate_name": "Lake Kununurra",
+   "action": "spot",
+   "destination": "kununurra",
+   "coordinates": {
+    "latitude": -15.808833,
+    "longitude": 128.739611
+   },
+   "pin": "LOW",
+   "coordinates_source": "Wikipedia article point (lake); re-resolve to a visitor point (foreshore or cruise jetty)",
+   "wiki": "Lake Kununurra",
+   "icon": "🌅",
+   "category": "nature",
+   "bio": "Lake 55 km long on the Ord River with a drowned forest, picnic and swimming spots, birdlife and sunset cruises.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Kununurra See listing and Australia's North West Kununurra guide ('Ord River & Lake Kununurra', sunset cruises; both fetched); rule 2: drowned forest, picnic and swimming spots, cruises and birdlife.). Score: 1562 views, 1 counted sources. 4.0 km from Kununurra's centre (reach 42 km).",
+   "note": "Lily Creek Lagoon and Elephant Rock (review) are its side-arm and its view.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "kununurra-4",
+   "name": "Kelly's Knob",
+   "candidate_name": "Kelly's Knob",
+   "action": "spot",
+   "destination": "kununurra",
+   "coordinates": {
+    "latitude": -15.765278,
+    "longitude": 128.7425
+   },
+   "pin": "LOW",
+   "coordinates_source": "Commons geotagged file (1); OSM reserve centroid 190 m: re-resolve to the lookout car park or summit",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Hilltop lookout over Kununurra and the Ord irrigation area, popular at sunrise and sunset.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Kununurra and Australia's North West ('a trip to Kelly's Knob is a must', sunrise and sunset; both fetched); rule 2: hilltop lookout with a trail to the summit over Kununurra and the Ord irrigation are…). Score: 0 views, 1 counted sources. 1.0 km from Kununurra's centre (reach 42 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "kununurra-5",
+   "name": "Ivanhoe Crossing",
+   "candidate_name": "Ivanhoe Crossing",
+   "action": "spot",
+   "destination": "kununurra",
+   "coordinates": {
+    "latitude": -15.688364,
+    "longitude": 128.687489
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) highway \"Ivanhoe Crossing\" (the causeway itself); Commons file 160 m",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "Causeway across the Ord River north of town, a fishing and photo stop where crocodiles make swimming unsafe.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Kununurra 'Further out' listing and Australia's North West Kununurra guide (fetched) both name it; rule 2: causeway on the Ord where visitors fish, picnic and watch the river; a named local icon.). Score: 0 views, 1 counted sources. 10.9 km from Kununurra's centre (reach 42 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "wyndham-1",
+   "name": "Five Rivers Lookout",
+   "candidate_name": "Five Rivers Lookout",
+   "action": "spot",
+   "destination": "wyndham",
+   "coordinates": {
+    "latitude": -15.450846,
+    "longitude": 128.119707
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) tourism=viewpoint \"Five Rivers Lookout\"; Wikivoyage listing geo 61 m",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Lookout on the Bastion Range above Wyndham over five rivers meeting Cambridge Gulf, a sunset picnic spot.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Wyndham, Tourism WA attraction page and Australia's North West listing (fetched) all name it; rule 2: summit of the Bastion Range over five rivers and Cambridge Gulf, a sunset picnic spot.). Score: 0 views, 1 counted sources. 4.0 km from Wyndham's centre (reach 32 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "wyndham-2",
+   "name": "The Grotto",
+   "candidate_name": "The Grotto, Wyndham",
+   "action": "spot",
+   "destination": "wyndham",
+   "coordinates": {
+    "latitude": -15.714669,
+    "longitude": 128.25644
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) tourism=attraction \"The Grotto - Parking\"; Wikivoyage listing geo 26 m",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Rock amphitheatre reached by about 140 steps, with a swimming hole and a waterfall in the wet season.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Wyndham and Australia's North West Kununurra guide (both fetched) name it: a gorge reached by 140 steps with a swimming hole and wet-season waterfall.). Score: 0 views, 1 counted sources. 29.1 km from Wyndham's centre (reach 32 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "wyndham-3",
+   "name": "Big Crocodile",
+   "candidate_name": "Big Crocodile, Wyndham",
+   "action": "spot",
+   "destination": "wyndham",
+   "coordinates": {
+    "latitude": -15.487535,
+    "longitude": 128.123656
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"The Big Crocodile\"",
+   "icon": "🐊",
+   "category": "landmark",
+   "bio": "Giant crocodile statue greeting arrivals in Wyndham, one of Australia's roadside big things.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Quirky roadside icon (COVERAGE include list): Wikivoyage Wyndham and Australia's North West Wyndham guide ('Big Croc', fetched) both name it; one of Australia's big things.). Score: 0 views, 1 counted sources. 0.1 km from Wyndham's centre (reach 32 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "wyndham-4",
+   "name": "Prison Tree",
+   "candidate_name": "Boab Prison Tree, Wyndham",
+   "action": "spot",
+   "destination": "wyndham",
+   "coordinates": {
+    "latitude": -15.675112,
+    "longitude": 128.085398
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Boab Prison Tree\"; candidate OSM point 44 m",
+   "wiki": "Boab Prison Tree, Wyndham",
+   "icon": "🌳",
+   "category": "historic",
+   "bio": "Hollow boab about 2,000 years old, said to have held prisoners in the 1890s, off King River Road.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Wyndham and Visit Kununurra's 'Prison Tree' listing (the visitor centre, fetched) name it; a 2,000-year-old hollow boab used as the Hillgrove Lock-up, a quirky historic icon.). Score: 2651 views, 1 counted sources. 21.3 km from Wyndham's centre (reach 32 km).",
+   "note": "Named \"Prison Tree\" (Visit Kununurra's listing) so it does not share a name with Derby's Boab Prison Tree; owner may prefer another form. King River Road is 4WD only (Visit Kununurra).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "purnululu-1",
+   "name": "Cathedral Gorge",
+   "candidate_name": "Cathedral Gorge",
+   "action": "spot",
+   "destination": "purnululu",
+   "coordinates": {
+    "latitude": -17.480497,
+    "longitude": 128.373324
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Cathedral Gorge\" (the amphitheatre); OSM path 700 m south",
+   "icon": "⛪",
+   "category": "nature",
+   "bio": "Vast rock amphitheatre in the southern Bungle Bungles, reached by a 2 km return walk from Piccaninny car park.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Purnululu and DBCA Purnululu (both fetched) single it out as the awe-inspiring amphitheatre of the southern Bungle Bungles; rule 2: 2 km return walk; one of the park's two signature walks.). Score: 0 views, 1 counted sources. 8.7 km from Purnululu National Park's centre (reach 30 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "purnululu-2",
+   "name": "Echidna Chasm",
+   "candidate_name": "Echidna Chasm",
+   "action": "spot",
+   "destination": "purnululu",
+   "coordinates": {
+    "latitude": -17.328322,
+    "longitude": 128.415358
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) \"Echidna Chasm\" feature; Wikivoyage listing geo 45 m; trail 260 m",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Palm-lined chasm up to 200 m deep and barely a metre wide, a 2 km return walk from Bloodwoods car park.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Purnululu See listing (fetched) and DBCA Purnululu page (fetched) both name it as a highlight of the northern Bungle Bungles; rule 2: 2 km return walk into a 200 m deep, metre-wide palm-lined chasm.). Score: 0 views, 1 counted sources. 8.7 km from Purnululu National Park's centre (reach 30 km).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "purnululu-3",
+   "name": "Kungkalanayi Lookout",
+   "candidate_name": "Kungkalanayi Lookout",
+   "action": "spot",
+   "destination": "purnululu",
+   "coordinates": null,
+   "pin": "NONE",
+   "coordinates_source": "no feature found (Overpass down; Photon no match): resolve from DBCA's Purnululu map",
+   "icon": "🌄",
+   "category": "viewpoint",
+   "bio": "Lookout with a 360-degree view over the Bungle Bungle Range, a 500 m walk from its car park, at its best at sunset.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Purnululu (500 m walk, 360-degree panorama of the Bungle Bungles, aflame at sunset) and DBCA Purnululu page (fetched, own heading); rule 2: the park's sunset viewpoint with its own car park.). Score: 0 views, 1 counted sources. Inside Purnululu National Park (pin pending).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "purnululu-4",
+   "name": "Mini Palms Gorge",
+   "candidate_name": "Mini Palms Gorge",
+   "action": "spot",
+   "destination": "purnululu",
+   "coordinates": null,
+   "pin": "NONE",
+   "coordinates_source": "no feature found: resolve the Mini Palms trail midpoint from OSM or DBCA's map (from Bloodwoods car park)",
+   "icon": "🌴",
+   "category": "hike",
+   "bio": "Rocky gorge filled with palms, a 4.4 km return trail with a scramble to viewing platforms in the northern Bungle Bungles.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Purnululu and DBCA Purnululu page (both fetched) name it among the northern highlights; rule 2: a 4.4 km return trail to viewing platforms over a palm-filled gorge.). Score: 0 views, 1 counted sources. Inside Purnululu National Park (pin pending).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "horizontal-falls",
+   "name": "Horizontal Falls",
+   "candidate_name": "Horizontal Falls",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -16.378928,
+    "longitude": 123.959524
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=viewpoint \"Horizontal Falls\"; Wikipedia 509 m",
+   "wiki": "Horizontal Falls",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Tidal rush through two narrow gaps in Talbot Bay's cliffs, seen by seaplane or boat tour from Broome and Derby.",
+   "hours": "Tours only",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Headline draw named by Tourism WA (its own destination page in the Kimberley menu), Australia's North West (homepage feature 'Garaan-ngaddim Horizontal Falls'), DBCA (Lalang-gaddam Marine Park, 'awe-inspiring') and Wikiv…). Score: 16632 views, 2 counted sources.",
+   "note": "Garaan-ngaddim, in Lalang-gaddam Marine Park; the tour is the way in. Buccaneer Archipelago (review) is folded in if approved.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "montgomery-reef",
+   "name": "Montgomery Reef",
+   "candidate_name": "Montgomery Reef",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -15.933273,
+    "longitude": 124.268129
+   },
+   "pin": "LOW",
+   "coordinates_source": "photon (OSM) natural=reef \"Montgomery Reef\" (a centroid of a 400 km² reef; Wikipedia 7 km): keep as a reef point or move to the cruises' viewing area",
+   "wiki": "Montgomery Reef",
+   "icon": "🪸",
+   "category": "nature",
+   "bio": "Huge tidal reef that emerges as the tide falls, with water cascading off it, seen on coast cruises and scenic flights.",
+   "hours": "Tours only",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Re-looked and found a counted source: DBCA's Lalang-gaddam Marine Park page names Yowjab (Montgomery Reef) as one of the park's two awe-inspiring sights, and features it in its gallery; it is the place the Kimberley coas…). Score: 3108 views, 0 counted sources.",
+   "note": "Yowjab, in Lalang-gaddam Marine Park (DBCA).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "eighty-mile-beach",
+   "name": "Eighty Mile Beach",
+   "candidate_name": "Eighty Mile Beach",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -19.754841,
+    "longitude": 120.673059
+   },
+   "pin": "LOW",
+   "coordinates_source": "photon (OSM) tourism=caravan_site \"Eighty Mile Beach Caravan Park\" (the main access point); move onto the OSM natural=beach in front of it",
+   "wiki": "Eighty Mile Beach",
+   "icon": "🐢",
+   "category": "beach",
+   "bio": "Beach 220 km long between Broome and Port Hedland, for fishing, shell-combing, sunsets and migratory shorebirds.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Re-looked and found a counted source: DBCA's Eighty Mile Beach Marine Park page (220 km beach for fishing, shell-combing, sunsets, Ramsar shorebirds, flatback turtles Oct-Feb; caravan park access). A long linear feature …). Score: 9911 views, 0 counted sources.",
+   "note": "Long linear feature pinned at its main visitor access (the caravan park, Shire of Broome, in this region). Flatback turtles nest Oct-Feb (DBCA). Pilbara run did not take it: no duplicate.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "dampier-peninsula",
+   "name": "Dampier Peninsula",
+   "candidate_name": "Dampier Peninsula",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "NONE",
+   "coordinates_source": "an area: Wikipedia centroid (-17.21, 122.81) is not a visitor point; Pipeline C picks a visitor point not used by Sacred Heart Church",
+   "wiki": "Dampier Peninsula",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Red-cliffed peninsula north of Broome with remote beaches and Aboriginal communities that welcome visitors.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1+2: Tourism WA gives it its own destination page (Kimberley 'Explore More': Broome, Kununurra, Dampier Peninsula, Bungle Bungle Range) and Wikivoyage names it; beaches, Cape Leveque, Beagle Bay church and Aborigina…). Score: 6277 views, 3 counted sources.",
+   "note": "Tourism WA destination page. Becomes a proposed destination if the owner approves Cape Leveque, Lombadina and One Arm Point from review (then 4 spots).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "sacred-heart-church-beagle-bay",
+   "name": "Sacred Heart Church",
+   "candidate_name": "Sacred Heart Church, Beagle Bay",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -16.980787,
+    "longitude": 122.666101
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Church of the Sacred Heart\"; Commons median 208 m",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Hand-built church at Beagle Bay whose altar is inlaid with mother-of-pearl, blending Aboriginal and Catholic art.",
+   "hours": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: A church a visitor source singles out for its interior: Wikivoyage Kimberley lists it under Other destinations, a hand-built church whose mother-of-pearl altar fuses Indigenous and Catholic art (rule 2: an interior visit…). Score: 0 views, 1 counted sources.",
+   "note": "Beagle Bay community (rejected) is the wrapper for this church; mention it in the bio only. A community entry fee may apply.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "fitzroy-crossing",
+   "name": "Fitzroy Crossing",
+   "candidate_name": "Fitzroy Crossing",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -18.194444,
+    "longitude": 125.566667
+   },
+   "pin": "LOW",
+   "coordinates_source": "Wikipedia article point (town); re-resolve to OSM place=town",
+   "wiki": "Fitzroy Crossing, Western Australia",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Fitzroy River town with the 1897 Crossing Inn, the old river crossing and Aboriginal art galleries.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates"
+   ],
+   "reason": "Kept (judge: Base town with its own Australia's North West page (base for Geikie Gorge, Tunnel Creek and Windjana; Crossing Inn of 1897, old crossing, art galleries in the visitor centre) and a Wikivoyage Kimberley Towns entry (rule …). Score: 13179 views, 1 counted sources.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "danggu-geikie-gorge",
+   "name": "Danggu Geikie Gorge",
+   "candidate_name": "Geikie Gorge",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -18.105804,
+    "longitude": 125.70053
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=information \"Geikie Gorge River Cruise\" (the park's visitor area and boat landing); Commons median 600 m",
+   "wiki": "Danggu Gorge National Park",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Towering limestone walls of a Fitzroy River gorge, seen on a riverbank walk or a boat tour past freshwater crocodiles.",
+   "hours": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Wikivoyage Kimberley and DBCA Danggu Geikie Gorge National Park page (fetched: towering limestone walls, sandbank walk trail, freshwater crocodiles); a classic Kimberley gorge.). Score: 943 views, 2 counted sources.",
+   "note": "Named as the judge asked (Danggu Geikie Gorge, wiki Danggu Gorge National Park).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "halls-creek",
+   "name": "Halls Creek",
+   "candidate_name": "Halls Creek",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -18.23,
+    "longitude": 127.67
+   },
+   "pin": "LOW",
+   "coordinates_source": "Wikipedia article point (rounded): re-resolve to OSM place=town",
+   "wiki": "Halls Creek, Western Australia",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "Gold-rush town on the Great Northern Highway, the base for Old Halls Creek, Caroline Pool and Sawpit Gorge.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates"
+   ],
+   "reason": "Kept (judge: Town a visitor source gives its own page and that visitors base in: Wikivoyage Kimberley lists it as the gateway to Wolfe Creek Crater; Australia's North West has a Halls Creek page naming China Wall, Old Halls Creek, Ca…). Score: 17731 views, 1 counted sources.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "china-wall",
+   "name": "China Wall",
+   "candidate_name": "China Wall",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -18.2503,
+    "longitude": 127.722816
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"China Wall\"; Commons median of 5 files 170 m",
+   "icon": "🧱",
+   "category": "nature",
+   "bio": "White quartz vein running like a wall across the hills near Halls Creek, with a short walk and a creek picnic spot.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "ticketUrl": null,
+   "ticketUrl_note": "open public place with no single steward: no link expected (WRITING.md), unless research finds an agency page",
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [],
+   "reason": "Kept (judge: Rule 1 and 2: counted sources found on re-look: Tourism WA attraction page (westernaustralia.com/au/attraction/china-wall) and Australia's North West listing (australiasnorthwest.com/listing/china-wall/162, fetched) name…). Score: 0 views, 0 counted sources.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "wolfe-creek-crater",
+   "name": "Wolfe Creek Crater",
+   "candidate_name": "Wolfe Creek Crater",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -19.171417,
+    "longitude": 127.79537
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Wolfe Creek Meteorite Crater\"; Wikipedia 76 m",
+   "wiki": "Wolfe Creek Crater",
+   "icon": "☄️",
+   "category": "nature",
+   "bio": "Meteorite crater on the edge of the Tanami Desert, with a 400 m return walk up to its rim for sunrise views.",
+   "hours": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1+2, obvious draw: DBCA park page (Wolfe Creek Meteorite Crater National Park: 400 m return walk to the rim, sunrise over the crater) and Wikivoyage park page; the world's second-largest crater with meteorite fragme…). Score: 33990 views, 2 counted sources.",
+   "note": "Wolfe Creek Meteorite Crater National Park (DBCA): park and crater are one place, one spot.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "mitchell-falls",
+   "name": "Mitchell Falls",
+   "candidate_name": "Mitchell Falls",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -14.823138,
+    "longitude": 125.695272
+   },
+   "pin": "HIGH",
+   "coordinates_source": "photon (OSM) waterway=waterfall \"Mitchell Falls\"; Wikivoyage listing geo 77 m",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Four-tiered waterfall on the Mitchell Plateau, reached by a walk from the Mitchell Falls campground or by helicopter.",
+   "hours": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: obvious Kimberley headline draw; Wikivoyage Wyndham listing, DBCA Mitchell River National Park page (fetched: 'Mitchell Falls must be the natural highlight', walk from Mitchell Falls Campground) and Australia's N…). Score: 872 views, 1 counted sources.",
+   "note": "Uunguu Visitor Pass and DBCA park pass; dry season 4WD via Kalumburu Road.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "mitchell-river-national-park",
+   "name": "Mitchell River National Park",
+   "candidate_name": "Mitchell River National Park",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -14.822352,
+    "longitude": 125.717118
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=camp_site \"Mitchell Falls Campground\", the park's visitor hub (not the falls' point)",
+   "wiki": "Mitchell River National Park (Western Australia)",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Remote plateau park with rock art, Little Mertens Falls and the campground for Mitchell Falls, open in the dry season.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1 re-look: DBCA Explore Parks page for Mitchell River National Park (fetched) is a counted source, with campground, trails, rock art, Little Mertens Falls and Mitchell Falls; rule 2: a multi-day park visit.). Score: 1806 views, 0 counted sources.",
+   "note": "Kept beside Mitchell Falls because the park offers more (rock art, Little Mertens Falls, campground). Must not share the falls' photo.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "king-george-falls",
+   "name": "King George Falls",
+   "candidate_name": "King George Falls",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -14.037677,
+    "longitude": 127.32671
+   },
+   "pin": "LOW",
+   "coordinates_source": "Commons geotagged file (1); no OSM feature: resolve from DBCA's site page",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Western Australia's highest twin falls, plunging into the King George River, reached only by boat or scenic flight.",
+   "hours": "Tours only",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: Australia's North West page (fetched), Tourism WA attraction page, DBCA site page and Wikivoyage Wyndham all name it; WA's highest twin falls, a headline Kimberley coast sight. The boat or flight is the way in, t…). Score: 0 views, 1 counted sources.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "prince-regent-national-park",
+   "name": "Prince Regent National Park",
+   "candidate_name": "Prince Regent National Park",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": null,
+   "pin": "NONE",
+   "coordinates_source": "no point found: pin King Cascade (the cruises' stop) or another DBCA visitor point; the Wikipedia point (-15.5674, 125.4685) is a centroid",
+   "wiki": "Prince Regent National Park",
+   "icon": "🛥️",
+   "category": "nature",
+   "bio": "Remote wilderness park on the Prince Regent River with King Cascade and terraced falls, reached only by boat or flight.",
+   "hours": "Tours only",
+   "visitHoursMin": 3,
+   "visitHoursMax": 24,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1: DBCA page (fetched) promotes it as a bucket-list wilderness reached by boat or flight, with the Prince Regent River, King Cascade and terraced waterfalls; the cruise is the way in, the park is the place (COVERAGE…). Score: 1303 views, 1 counted sources.",
+   "note": "Dambimangari visitor pass required.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "el-questro-wilderness-park",
+   "name": "El Questro Wilderness Park",
+   "candidate_name": "El Questro Station",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -16.00768,
+    "longitude": 127.981218
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) place=hamlet \"El Questro Station\" (the station village and campground); Wikipedia 140 m",
+   "wiki": "El Questro Wilderness Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Vast wilderness park on a cattle station at the Gibb River Road's eastern end, with gorges, thermal springs and walks.",
+   "hours": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 24,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Rule 1+2: Wikivoyage (Gibb River Road and Wyndham pages) lists El Questro Resort, Emma Gorge and El Questro Gorge; a 700,000-acre wilderness park open to visitors with a park pass, gorges and Zebedee thermal springs.). Score: 3087 views, 2 counted sources.",
+   "note": "Renamed from the candidate \"El Questro Station\" as the audit asked. Park pass required. Becomes a proposed destination if El Questro Gorge and Chamberlain Gorge are approved from review.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "emma-gorge",
+   "name": "Emma Gorge",
+   "candidate_name": "Emma Gorge",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -15.894397,
+    "longitude": 128.133632
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) tourism=attraction \"Emma Gorge Waterfall\" (the pool at the walk's end); trail 750 m south",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "Gorge walk in El Questro to a pool fed by a waterfall, with a thermal spring warming one corner.",
+   "hours": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Tourism WA attraction page (a gorge with a pool fed by a waterfall and a thermal spring, about 50 minutes from Kununurra), Wikivoyage Gibb River Road and Visit Broome (rule 1, three counted sources).). Score: 0 views, 1 counted sources.",
+   "note": "El Questro park pass. A walk: Pipeline C may move the pin to the trail midpoint.",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  },
+  {
+   "id": "zebedee-springs",
+   "name": "Zebedee Springs",
+   "candidate_name": "Zebedee Springs",
+   "action": "standalone",
+   "destination": null,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Perth",
+   "coordinates": {
+    "latitude": -16.013672,
+    "longitude": 128.025104
+   },
+   "pin": "MEDIUM",
+   "coordinates_source": "photon (OSM) natural=spring \"Zebedee Springs\"; walk trail 100 m",
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "Thermal pools in a palm forest inside El Questro, a 1.5 km return walk, open to the public in the mornings.",
+   "hours": "Mornings only",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticketUrl": null,
+   "hours_source": "Wikivoyage listing or open-access place; Pipeline C confirms",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (judge: Re-looked and found a counted source: Tourism WA's Zebedee Springs attraction page (thermal pools in a palm forest, 1.5 km return walk, public access mornings May-Sept); Visit Broome's Gibb River Road page also pictures …). Score: 0 views, 0 counted sources.",
+   "note": "Public access mornings May-September; afternoons reserved for Homestead guests (Tourism WA).",
+   "photo": null,
+   "photo_verdict": "none (Lens judges photos)"
+  }
+ ],
+ "folded": [
+  {
+   "name": "Broome",
+   "candidate_verdict": "keep",
+   "action": "new-destination",
+   "into": "broome",
+   "reason": "The town is the destination itself (its draws are its spots); never a spot of itself."
+  },
+  {
+   "name": "Derby",
+   "candidate_verdict": "keep",
+   "action": "new-destination",
+   "into": "derby",
+   "reason": "The town is the destination itself; its jetty, boab and museums are the spots (skeptic: no town wrapper beside them)."
+  },
+  {
+   "name": "Kununurra",
+   "candidate_verdict": "keep",
+   "action": "new-destination",
+   "into": "kununurra",
+   "reason": "The town is the destination itself (skeptic: \"may be better as a destination than a spot\")."
+  },
+  {
+   "name": "Wyndham",
+   "candidate_verdict": "keep",
+   "action": "new-destination",
+   "into": "wyndham",
+   "reason": "The town is the destination itself; Five Rivers Lookout and the others are its spots (skeptic: no town wrapper)."
+  },
+  {
+   "name": "Purnululu National Park",
+   "candidate_verdict": "keep",
+   "action": "new-destination",
+   "into": "purnululu",
+   "reason": "The park is the destination itself; its gorges and lookout are its spots."
+  }
+ ],
+ "merged": [
+  {
+   "name": "Staircase to the Moon",
+   "into": "broome-3 (Town Beach)",
+   "why": "rejected by the judge as a phenomenon whose place is Town Beach; its dates go in Town Beach's bio/hours"
+  },
+  {
+   "name": "Bungle Bungle Range",
+   "into": "purnululu (destination)",
+   "why": "rejected by the judge as the park's own landform"
+  },
+  {
+   "name": "Beagle Bay",
+   "into": "sacred-heart-church-beagle-bay",
+   "why": "rejected by the judge as a wrapper for its church"
+  },
+  {
+   "name": "Mitchell Plateau",
+   "into": "mitchell-river-national-park",
+   "why": "rejected by the judge as the park's area"
+  }
+ ],
+ "renamed": [
+  {
+   "candidate": "El Questro Station",
+   "name": "El Questro Wilderness Park",
+   "why": "audit: name it El Questro Wilderness Park"
+  },
+  {
+   "candidate": "Geikie Gorge",
+   "name": "Danggu Geikie Gorge",
+   "why": "skeptic: name it Danggu Geikie Gorge, wiki Danggu Gorge National Park"
+  },
+  {
+   "candidate": "Big Crocodile, Wyndham",
+   "name": "Big Crocodile",
+   "why": "skeptic: no town in the name"
+  },
+  {
+   "candidate": "Boab Prison Tree, Wyndham",
+   "name": "Prison Tree",
+   "why": "skeptic: drop \", Wyndham\"; \"Boab Prison Tree\" is taken by Derby's tree (no two spots share a name), so Visit Kununurra's \"Prison Tree\" is used"
+  },
+  {
+   "candidate": "The Grotto, Wyndham",
+   "name": "The Grotto",
+   "why": "skeptic"
+  },
+  {
+   "candidate": "Town Beach, Broome",
+   "name": "Town Beach",
+   "why": "WRITING.md names"
+  },
+  {
+   "candidate": "Japanese Cemetery, Broome",
+   "name": "Japanese Cemetery",
+   "why": "WRITING.md names"
+  },
+  {
+   "candidate": "Sacred Heart Church, Beagle Bay",
+   "name": "Sacred Heart Church",
+   "why": "WRITING.md names"
+  },
+  {
+   "candidate": "Mowanjum Culture Centre",
+   "name": "Mowanjum Art and Culture Centre",
+   "why": "the name Visit Broome and OSM use"
+  },
+  {
+   "candidate": "Wunaamin Miliwundi Ranges",
+   "name": "Wunaamin Miliwundi Ranges Conservation Park",
+   "why": "the park is the place; DBCA name to confirm"
+  }
+ ],
+ "neighbour_check": [
+  {
+   "standalone": "horizontal-falls",
+   "nearest_centre": "derby",
+   "distance_km": 108.6,
+   "within_40km": false,
+   "why_not_a_spot": "About 109 km from Derby's centre and 254 km from Broome's; reached only by seaplane or boat tour."
+  },
+  {
+   "standalone": "montgomery-reef",
+   "nearest_centre": "derby",
+   "distance_km": 166.9,
+   "within_40km": false,
+   "why_not_a_spot": "167 km from the nearest proposed centre (derby), far past its reach; a remote place reached on its own."
+  },
+  {
+   "standalone": "eighty-mile-beach",
+   "nearest_centre": "broome",
+   "distance_km": 258.4,
+   "within_40km": false,
+   "why_not_a_spot": "258 km from the nearest proposed centre (broome), far past its reach; a remote place reached on its own."
+  },
+  {
+   "standalone": "dampier-peninsula",
+   "nearest_centre": null,
+   "within_40km": null,
+   "why_not_a_spot": "Begins about 40 km north of Broome but its draws (Beagle Bay, Cape Leveque) are 110-200 km away; pin pending."
+  },
+  {
+   "standalone": "sacred-heart-church-beagle-bay",
+   "nearest_centre": "derby",
+   "distance_km": 108.4,
+   "within_40km": false,
+   "why_not_a_spot": "About 118 km from Broome's centre (reach 24 km) and 108 km from Derby's: a Dampier Peninsula stop, reached up the peninsula road from Broome, not a Broome or Derby one."
+  },
+  {
+   "standalone": "fitzroy-crossing",
+   "nearest_centre": "gibb-river-road",
+   "distance_km": 120.0,
+   "within_40km": false,
+   "why_not_a_spot": "No proposed destination within 40 km; Danggu Geikie Gorge (about 17 km) is its only kept neighbour, and two places never make a destination. Over 120 km from the Gibb River Road centre."
+  },
+  {
+   "standalone": "danggu-geikie-gorge",
+   "nearest_centre": "gibb-river-road",
+   "distance_km": 113.0,
+   "within_40km": false,
+   "why_not_a_spot": "No proposed destination within 40 km; it is a one-feature national park reached from Fitzroy Crossing (itself standalone)."
+  },
+  {
+   "standalone": "halls-creek",
+   "nearest_centre": "purnululu",
+   "distance_km": 119.6,
+   "within_40km": false,
+   "why_not_a_spot": "No proposed destination within 40 km; with China Wall it is two kept places, short of four. Purnululu is about 140 km away."
+  },
+  {
+   "standalone": "china-wall",
+   "nearest_centre": "purnululu",
+   "distance_km": 117.9,
+   "within_40km": false,
+   "why_not_a_spot": "No proposed destination within 40 km; a Halls Creek stop (6 km), and Halls Creek is standalone."
+  },
+  {
+   "standalone": "wolfe-creek-crater",
+   "nearest_centre": "purnululu",
+   "distance_km": 206.4,
+   "within_40km": false,
+   "why_not_a_spot": "206 km from the nearest proposed centre (purnululu), far past its reach; a remote place reached on its own."
+  },
+  {
+   "standalone": "mitchell-falls",
+   "nearest_centre": "gibb-river-road",
+   "distance_km": 257.2,
+   "within_40km": false,
+   "why_not_a_spot": "257 km from the nearest proposed centre (gibb-river-road), far past its reach; a remote place reached on its own."
+  },
+  {
+   "standalone": "mitchell-river-national-park",
+   "nearest_centre": "gibb-river-road",
+   "distance_km": 257.6,
+   "within_40km": false,
+   "why_not_a_spot": "258 km from the nearest proposed centre (gibb-river-road), far past its reach; a remote place reached on its own."
+  },
+  {
+   "standalone": "king-george-falls",
+   "nearest_centre": "wyndham",
+   "distance_km": 182.5,
+   "within_40km": false,
+   "why_not_a_spot": "183 km from the nearest proposed centre (wyndham), far past its reach; a remote place reached on its own."
+  },
+  {
+   "standalone": "prince-regent-national-park",
+   "nearest_centre": null,
+   "within_40km": null,
+   "why_not_a_spot": "Pin pending; on any plausible point it lies far outside every proposed destination's reach (remote park or area)."
+  },
+  {
+   "standalone": "el-questro-wilderness-park",
+   "nearest_centre": "wyndham",
+   "distance_km": 59.9,
+   "within_40km": false,
+   "why_not_a_spot": "About 85 km from Kununurra and 60 km from Wyndham; a park of its own at the east end of the Gibb, outside both towns' reach. Only two kept spots inside it, so not a destination yet."
+  },
+  {
+   "standalone": "emma-gorge",
+   "nearest_centre": "wyndham",
+   "distance_km": 45.3,
+   "within_40km": false,
+   "why_not_a_spot": "About 66 km from Kununurra's centre (past its 42 km reach) and 45 km from Wyndham's (past its 31.5 km reach); inside El Questro Wilderness Park, reached on the El Questro permit, so it goes with El Questro rather than a town."
+  },
+  {
+   "standalone": "zebedee-springs",
+   "nearest_centre": "wyndham",
+   "distance_km": 59.5,
+   "within_40km": false,
+   "why_not_a_spot": "Inside El Questro, about 81 km from Kununurra and 60 km from Wyndham."
+  }
+ ],
+ "review": [
+  {
+   "name": "Warmun",
+   "views": 4217,
+   "counted_sources": 2,
+   "case_for": "Rule 1: named twice by Wikivoyage (Kimberley region page and Kununurra 'Go next') as the Purnululu entry point with a long-standing Aboriginal art scene; the Warmun Art Centre is a recognised gallery.",
+   "objection": "Only one-line mentions, no own guide section, and an Aboriginal community where the visitor draw is the art centre rather than the town: the Warmun Art Centre may be the right spot, or it is a gateway village whose draw is the journey beyond (Pipiriki benchmark -> review).",
+   "coordinates": {
+    "lat": -17.03333333,
+    "lng": 128.21666667
+   },
+   "would_go": "standalone (or the Warmun Art Centre as the spot), about 160 km from the Purnululu centre"
+  },
+  {
+   "name": "Lombadina",
+   "views": 1456,
+   "counted_sources": 0,
+   "case_for": "Re-looked for a counted source: Lombadina's own site invites visitors (day pass $10 per vehicle; craft shop, bush-timber church and beach open weekdays 8am-4pm; mud-crabbing, kayak and whale-watching tours), and a Lonely Planet Dampier Peninsula article (search snippet; the URL now redirects) names its Aboriginal-led tours. Visit Broome names it as one of the four peninsula communities.",
+   "objection": "Only one counted source and that one not readable now; the community's own site is an operator page; a visit is on community terms with seasonal weekend closures, and the beach and church are modest.",
+   "coordinates": {
+    "lat": -16.515,
+    "lng": 122.89166667
+   },
+   "would_go": "standalone; with Cape Leveque and One Arm Point approved, a Dampier Peninsula destination becomes possible"
+  },
+  {
+   "name": "Kalumburu",
+   "views": 10216,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Gibb River Road names it as the end of the 208 km Kalumburu Road, and Visit Broome's Gibb River Road page gives it a section (two counted sources); a remote mission community with beaches and fishing (Honeymoon Bay, McGowans Island).",
+   "objection": "Neither source names something to see in the community itself, only the two permits needed to enter; access is at the Traditional Owners' discretion and may be closed. The candidate note is wrong: Mitchell Falls is reached from a turn-off on Kalumburu Road, not from Kalumburu.",
+   "coordinates": {
+    "lat": -14.295,
+    "lng": 126.642
+   },
+   "would_go": "standalone"
+  },
+  {
+   "name": "Cape Leveque",
+   "views": 3518,
+   "counted_sources": 1,
+   "case_for": "Headland at the tip of the Dampier Peninsula, named by Wikivoyage Broome (Go next) and Lonely Planet (POI 'Cape Leveque (Kooljaman)'); a well-known Kimberley beach and red-cliff destination (rule 1).",
+   "objection": "Kooljaman, the resort that held the visitor access, closed indefinitely on 1 Nov 2021 and no reopening was found; an operator says Cape Leveque point is closed indefinitely and access is limited (rule 2: open to the public is unconfirmed).",
+   "coordinates": {
+    "lat": -16.391,
+    "lng": 122.927
+   },
+   "would_go": "standalone; one of the three that would make a Dampier Peninsula destination"
+  },
+  {
+   "name": "Buccaneer Archipelago",
+   "views": 11250,
+   "counted_sources": 1,
+   "case_for": "Island group named by Visit Broome (Derby: 'the islands of the Buccaneer Archipelago') and Wikivoyage Broome (boat trips reach it), and inside DBCA's Lalang-gaddam Marine Park; it is the place the Derby and Broome cruises go to.",
+   "objection": "Visitors go for Horizontal Falls, a candidate of its own inside the archipelago; the archipelago as a whole is an area seen only from boats and planes, so it risks being a near-duplicate wrapper of Horizontal Falls.",
+   "coordinates": {
+    "lat": -16.11666667,
+    "lng": 123.33333333
+   },
+   "would_go": "fold into Horizontal Falls (skeptic: keep Horizontal Falls as the one spot)"
+  },
+  {
+   "name": "Canning Stock Route",
+   "views": 44694,
+   "counted_sources": 0,
+   "case_for": "A 1,850 km historic 4WD route that Australia's North West's Halls Creek page names among the outback drives from Halls Creek and that Wikivoyage Kimberley mentions as a 'full-on expedition' (rule 1 met once).",
+   "objection": "A route, not a place you stop at for half an hour; Wikivoyage calls it beyond its scope; most of its length and its southern trailhead (Wiluna) lie outside the Kimberley (probably wa-golden-outback / Pilbara), so the proposer must decide one region and pin it at the midpoint; permits needed.",
+   "coordinates": null,
+   "would_go": "not placed here: wa-golden-outback keeps it and places it once (run-wide decision)"
+  },
+  {
+   "name": "Reddell Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Broome names it: the quiet south-west-facing beach between Gantheaume Point and Kabbarli Lookout (rule 1, one source).",
+   "objection": "One passing sentence and nothing to do beyond a quiet beach; close to Gantheaume Point, so it may be a near-duplicate of that stop.",
+   "coordinates": null,
+   "would_go": "broome spot"
+  },
+  {
+   "name": "Kabbarli Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Broome See listing: scenic red rocks at Entrance Point where ships turn into Roebuck Bay (rule 1, one source).",
+   "objection": "One source, which also calls the approach grubby through the port industrial area; a short look, similar red rocks to Gantheaume Point nearby.",
+   "coordinates": {
+    "lat": -18.0077,
+    "lng": 122.2091
+   },
+   "would_go": "broome spot"
+  },
+  {
+   "name": "Pearl Luggers",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Broome See listing: two restored pearl luggers beside a showroom, seen on a 90-minute guided tour ($30) on the pearling industry (rule 2: a tour of heritage vessels).",
+   "objection": "It is Willie Creek's pearl showroom: a shop with an attached tour (brief: shops and operators are rejected); one counted source.",
+   "coordinates": {
+    "lat": -17.9554,
+    "lng": 122.2446
+   },
+   "would_go": "broome spot"
+  },
+  {
+   "name": "Broome Fruit Bat Roost",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Broome names it: thousands of fruit bats rise at dusk from the roost at the end of Short Street (rule 1, one source).",
+   "objection": "One sentence in one source, a dusk-only spectacle with no defined site, and a short look; may be too minor.",
+   "coordinates": null,
+   "would_go": "broome spot"
+  },
+  {
+   "name": "SSJG Heritage Centre",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Broome See listing: exhibits on the Sisters of St John of God's work among Aboriginal people (rule 1, one source).",
+   "objection": "Opens only weekday mornings Feb-Nov, by donation, a small single-room exhibit; one source.",
+   "coordinates": {
+    "lat": -17.9589,
+    "lng": 122.2388
+   },
+   "would_go": "broome spot"
+  },
+  {
+   "name": "Frosty's Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Derby See listing: a rusting 1944 swimming pool built by soldiers by the highway at the Boab turn-off (a quirky roadside curiosity).",
+   "objection": "One sentence in one source; a ten-minute look; probably only worth it alongside the Boab Prison Tree.",
+   "coordinates": null,
+   "would_go": "derby spot"
+  },
+  {
+   "name": "Gibb River Road",
+   "views": 10177,
+   "counted_sources": 1,
+   "case_for": "Named by Wikivoyage (its own itinerary article: 'a bucket-list Australian adventure'), Australia's North West homepage ('The Legendary Outback Drive') and Visit Broome (its own page) (rule 1, three counted sources): the drive is the attraction for many visitors.",
+   "objection": "A road is the way you get there, and its places (Windjana, Tunnel Creek, Bell, Galvans, Manning, Emma gorges, El Questro) are spots of their own (A spot is a place); the owner should decide whether a 647 km 4WD route is a spot, pinned at its midpoint.",
+   "coordinates": null,
+   "would_go": "answered by the proposed gibb-river-road destination if approved; otherwise a standalone spot at the route midpoint"
+  },
+  {
+   "name": "Adcock Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Gibb River Road names it as a scenic spot 4 km south of the road (rule 1, one source).",
+   "objection": "One passing line; no second counted source found (Visit Broome and DBCA do not list it); a lesser gorge beside better-known ones.",
+   "coordinates": {
+    "lat": -16.9259,
+    "lng": 125.7786
+   },
+   "would_go": "gibb-river-road spot"
+  },
+  {
+   "name": "Wunnamurra Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Gibb River Road names it near Mount Elizabeth Station (rule 1, one source).",
+   "objection": "A bare mention with no description; on a private cattle station reached through it; a marginal place needs two sources.",
+   "coordinates": null,
+   "would_go": "standalone (Mount Elizabeth, past the Gibb destination's reach) or gibb-river-road spot after span check"
+  },
+  {
+   "name": "Warla Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Gibb River Road names it near Mount Elizabeth Station (rule 1, one source).",
+   "objection": "A bare mention with no description; on a private cattle station; a marginal place needs two sources.",
+   "coordinates": null,
+   "would_go": "as Wunnamurra Gorge"
+  },
+  {
+   "name": "Queen Victoria's Head",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Wikivoyage Gibb River Road names it as a prominent rock 6 km past the Lennard River crossing (a roadside landform a guide names).",
+   "objection": "One line in one source; a look from the road, not a half-hour stop.",
+   "coordinates": null,
+   "would_go": "gibb-river-road spot (near the Lennard River crossing)"
+  },
+  {
+   "name": "The Domes",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1 met (Wikivoyage Purnululu and DBCA's 'The Domes' 1.4 km walk, both fetched), but rule 3 is doubtful: the beehive domes ARE the Bungle Bungle Range most visitors mean, so this is likely a near-duplicate of a Bungle Bungle Range spot.",
+   "objection": "For keep: DBCA lists the Domes Walk as its own trail and it is where visitors see the iconic beehives up close; if the range itself is listed as the park or a broad area, this walk may deserve its own spot.",
+   "coordinates": null,
+   "would_go": "purnululu spot"
+  },
+  {
+   "name": "The Window",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Purnululu (fetched) names it, 2 km from Piccaninny car park, dramatic at sunset; one counted source only.",
+   "objection": "Rule 3: it is a point along the Piccaninny Creek bed route (the same walk as Piccaninny Creek Lookout and Whip Snake Gorge); DBCA does not give it its own heading. Likely better folded into one Piccaninny Gorge/Creek spot.",
+   "coordinates": null,
+   "would_go": "purnululu spot (or one Piccaninny Creek spot with Piccaninny Creek Lookout)"
+  },
+  {
+   "name": "Piccaninny Creek Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Purnululu and DBCA (fetched: 'Creek Lookout Trail within Piccaninny Gorge, 2.8 km return', views over the creek and domes) both name it.",
+   "objection": "Rule 3: it branches off the Cathedral Gorge trail and shares the Piccaninny car park with The Domes, Cathedral Gorge and The Window; may be best as one Piccaninny Creek spot rather than a separate lookout.",
+   "coordinates": {
+    "lat": -17.4894,
+    "lng": 128.3752
+   },
+   "would_go": "purnululu spot (see The Window)"
+  },
+  {
+   "name": "Diversion Dam",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Kununurra only (fetched): dam with gates and machinery, shady picnic area, boat ramp and fishing; one counted source and a short stop.",
+   "objection": "Rule 3: it is the downstream end of Lake Kununurra and carries the highway; a picnic/fishing pull-out more for locals than visitors; Australia's North West does not single it out.",
+   "coordinates": {
+    "lat": -15.7918,
+    "lng": 128.6954
+   },
+   "would_go": "kununurra spot"
+  },
+  {
+   "name": "Elephant Rock",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Kununurra (fetched) lists it, and Australia's North West's Lily Creek Lagoon listing names 'the iconic Sleeping Buddha/Elephant Rock' as the view; a recognisable local landmark.",
+   "objection": "Mostly seen from Lily Creek Lagoon or the highway; Wikivoyage says the climb is rough, unmarked and underwhelming, so it may be a view rather than a place to go (near-duplicate of Lily Creek Lagoon).",
+   "coordinates": null,
+   "would_go": "kununurra spot (or fold into Lily Creek Lagoon)"
+  },
+  {
+   "name": "Celebrity Tree Park",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Kununurra only (fetched): a free 24-hour park where stars of the film Australia planted trees; quirky story, one counted source.",
+   "objection": "Wikivoyage itself says several trees have died and plaques have dropped off, so there is little to see; arguably an ordinary town park (negative benchmark) and the venue of the Ord Valley Muster.",
+   "coordinates": null,
+   "would_go": "kununurra spot"
+  },
+  {
+   "name": "Lily Creek Lagoon",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Kununurra and Australia's North West Kununurra guide (own listing: wetlands, birdlife, views of Elephant Rock; both fetched) - two counted sources.",
+   "objection": "Rule 3: a side-arm of Lake Kununurra, so a near-duplicate if Lake Kununurra is kept; a short waterside stop in town.",
+   "coordinates": null,
+   "would_go": "kununurra spot"
+  },
+  {
+   "name": "Kununurra Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Kununurra only (fetched): local-history museum, Mon-Fri afternoons, donation entry.",
+   "objection": "Small volunteer museum with weekday-afternoon hours and no second source; a 'only if you're nearby anyway' stop.",
+   "coordinates": null,
+   "would_go": "kununurra spot"
+  },
+  {
+   "name": "Yarliyil Art Gallery",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "Rule 1 re-look: Australia's North West blog '5 reasons to say Howdy to Halls Creek' (fetched) names Yarliyil Arts Gallery as the place to see local Aboriginal art; Shire of Halls Creek galleries page also lists it; rule 2: a gallery open to drop-in visitors.",
+   "objection": "One counted source (a tourism-board blog post, not a listing) for an art centre whose primary role is selling art; marginal under the 'shop' exclusion, though Aboriginal art centres are a recognised visitor draw.",
+   "coordinates": {
+    "lat": -18.222,
+    "lng": 127.67
+   },
+   "would_go": "standalone (Halls Creek)"
+  },
+  {
+   "name": "Afghan Cemetery, Wyndham",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Wyndham only (fetched): graves of 11 Afghan cameleers facing Mecca, with an unusual history.",
+   "objection": "Rule 3: a small historic cemetery and a short look; only one counted source; may be a minor memorial.",
+   "coordinates": {
+    "lat": -15.4854,
+    "lng": 128.132
+   },
+   "would_go": "wyndham spot"
+  },
+  {
+   "name": "Wyndham Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Wyndham and Australia's North West Wyndham guide (both fetched) name it, in the old courthouse with memorabilia and photos.",
+   "objection": "Volunteer-run with erratic hours, open Apr-Oct 10-2 only; a short visit; may be closed when a visitor arrives (rule 2/4 risk).",
+   "coordinates": {
+    "lat": -15.4615,
+    "lng": 128.1011
+   },
+   "would_go": "wyndham spot"
+  },
+  {
+   "name": "MV Koolama",
+   "views": 1059,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Wyndham only (fetched): a 1942 wartime wreck in the mud 40 m from the wharf, with a gripping story.",
+   "objection": "Visible only at low tide and only from the wharf; a ten-minute look with a single source.",
+   "coordinates": {
+    "lat": -15.449783,
+    "lng": 128.101066
+   },
+   "would_go": "wyndham spot"
+  },
+  {
+   "name": "Three Mile Valley",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Wyndham only (fetched): 'a pleasant hike beneath the Bastion Range'; one counted source with no detail.",
+   "objection": "No distance, trail or managing agency named; possibly a local walk only. Needs a second source before it goes in.",
+   "coordinates": null,
+   "would_go": "wyndham spot"
+  },
+  {
+   "name": "Gwion Gwion Rock Paintings",
+   "views": 20324,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage's Kimberley page features them (image and art context); internationally known rock art with high page views.",
+   "objection": "Not one place: an art style found at hundreds of remote sites, mostly reached on guided tours or flights (an operator), and the candidate has no coordinates; better listed as a named accessible site (e.g. on the Mitchell Falls walk or near Kalumburu) if a source names one, otherwise mentioned in a destination description.",
+   "coordinates": null,
+   "would_go": "not one place: mention in descriptions, or a named accessible site if a source gives one"
+  },
+  {
+   "name": "Chinatown",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Broome (fetched) names Chinatown as the traditional retail strip along Carnarvon St; Broome's historic pearling-era quarter is a stop most visitors walk.",
+   "objection": "Rule 2: Wikivoyage describes it as mainly shops and cafes ('don't expect gongs'); without a second source naming something to see (heritage buildings, Sun Pictures, pearl showrooms) it is a shopping strip. Name 'Chinatown' needs a wiki disambiguator.",
+   "coordinates": null,
+   "would_go": "broome spot (wiki needs a disambiguator; Sun Pictures sits in it)"
+  },
+  {
+   "name": "One Arm Point",
+   "views": 2716,
+   "counted_sources": 0,
+   "case_for": "Rule 1 re-look: Lonely Planet attraction 'Ardyaloon (One Arm Point)' and Visit Broome listing for the Ardyaloon Trochus Hatchery (fetched) name it as a Dampier Peninsula stop with hatchery tours and beaches.",
+   "objection": "Several operators report the hatchery closed for repairs after cyclone damage; a community permit is needed; without the hatchery the draw is the views and crafts only.",
+   "coordinates": {
+    "lat": -16.4463507,
+    "lng": 123.0605664
+   },
+   "would_go": "standalone; one of the three for a Dampier Peninsula destination"
+  },
+  {
+   "name": "Mount Elizabeth Station",
+   "views": 1344,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Wikivoyage Gibb River Road (fetched) and Australia's North West Gibb River Road page ('Mt Elizabeth Station Stay') name it; the base for Wunnamurra and Warla gorges.",
+   "objection": "Brief: accommodation and stations are rejected as businesses; the gorges are the places and should be the spots if sources name them. Keep only if the station itself is treated as a destination base.",
+   "coordinates": {
+    "lat": -16.4185,
+    "lng": 126.1028
+   },
+   "would_go": "standalone (or fold its gorges in)"
+  },
+  {
+   "name": "Home Valley Station",
+   "views": 1577,
+   "counted_sources": 0,
+   "case_for": "Rule 1 re-look: Tourism Australia's Gibb River Road itinerary (fetched) uses Balanggarra Home Valley Station as a multi-night base 'where towering gorges meet waterfalls and billabongs', and Australia's North West lists it among the Gibb's main stops.",
+   "objection": "It is a station resort (accommodation business); the gorges and Cockburn Range views it offers are the places, and none is named here as a spot.",
+   "coordinates": {
+    "lat": -15.72361111,
+    "lng": 127.83083333
+   },
+   "would_go": "standalone"
+  },
+  {
+   "name": "Chamberlain Gorge",
+   "views": 0,
+   "counted_sources": 1,
+   "case_for": "Rule 1: Tourism WA attraction page (fetched) names Chamberlain Gorge in El Questro Wilderness Park; the gorge is the place the cruise goes to.",
+   "objection": "Rule 3 and 2: inside El Questro Wilderness Park and seen only on the operator's boat cruise (May-Sep), so it may be part of an El Questro spot rather than distinct.",
+   "coordinates": null,
+   "would_go": "standalone; with El Questro Gorge, makes El Questro Wilderness Park a destination (4 spots)"
+  },
+  {
+   "name": "El Questro Gorge",
+   "views": 0,
+   "counted_sources": 0,
+   "case_for": "Rule 1 re-look: El Questro's own walking-trail guide (elquestro.com.au, the park's operator; fetched) describes the El Questro Gorge Trail to Halfway Pool and Micking Pool; travel press (Australian Geographic) names it a highlight.",
+   "objection": "Rule 3: part of El Questro Wilderness Park; no Wikivoyage or Tourism WA listing found, and the operator's own document is the only counted source; Emma Gorge is the park's better-known gorge.",
+   "coordinates": null,
+   "would_go": "standalone; see Chamberlain Gorge"
+  }
+ ],
+ "duplicates_elsewhere": [
+  {
+   "name": "Canning Stock Route",
+   "here": "review",
+   "placed_in": "wa-golden-outback (kept there; run-wide decision)"
+  },
+  {
+   "name": "Eighty Mile Beach",
+   "here": "kept, standalone",
+   "placed_in": "wa-kimberley (not in the Pilbara placement)"
+  }
+ ],
+ "not_destinations": [
+  {
+   "cluster": "Dampier Peninsula",
+   "kept": [
+    "Dampier Peninsula",
+    "Sacred Heart Church"
+   ],
+   "why": "two kept places; Tourism WA names it as a destination, so it becomes one if the owner approves Cape Leveque, Lombadina and One Arm Point (review)."
+  },
+  {
+   "cluster": "El Questro Wilderness Park",
+   "kept": [
+    "El Questro Wilderness Park",
+    "Emma Gorge",
+    "Zebedee Springs"
+   ],
+   "why": "two spots inside the park plus the park; with El Questro Gorge and Chamberlain Gorge approved from review it reaches four (Tourism WA names El Questro Wilderness Park)."
+  },
+  {
+   "cluster": "Fitzroy Crossing",
+   "kept": [
+    "Fitzroy Crossing",
+    "Danggu Geikie Gorge"
+   ],
+   "why": "two kept places."
+  },
+  {
+   "cluster": "Halls Creek",
+   "kept": [
+    "Halls Creek",
+    "China Wall"
+   ],
+   "why": "two kept places (Yarliyil Art Gallery in review); Wolfe Creek Crater is about 106 km south."
+  },
+  {
+   "cluster": "Mitchell River National Park",
+   "kept": [
+    "Mitchell River National Park",
+    "Mitchell Falls"
+   ],
+   "why": "one spot inside the park: a park needs four (or flagship status)."
+  },
+  {
+   "cluster": "Lalang-gaddam Marine Park / Buccaneer Archipelago",
+   "kept": [
+    "Horizontal Falls",
+    "Montgomery Reef"
+   ],
+   "why": "two places 100 km apart, seen from tours; Kimberley Marine Park was rejected as an administrative zone."
+  }
+ ],
+ "counts": {
+  "kept": 54,
+  "spots_of_new_destinations": 32,
+  "standalone": 17,
+  "destination_itself": 5,
+  "new_destinations": 6,
+  "review": 37
+ },
+ "notes": [
+  "Overpass was unavailable during resolve-pin; points come from Photon (OSM) features, Wikipedia and Commons. Every pin is a draft: Pipeline C reruns resolve-pin.py (HIGH/MEDIUM only) and moves walks (Mini Palms Gorge, Manning Gorge, Emma Gorge) to their trail midpoints where the spot is the walk.",
+  "Pins marked LOW or NONE carry needs_research \"coordinates\": Wharfinger's House Museum, Mirima National Park, Lake Kununurra, Kelly's Knob, Kungkalanayi Lookout, Mini Palms Gorge, Montgomery Reef, Eighty Mile Beach, Dampier Peninsula, Fitzroy Crossing, Halls Creek, King George Falls, Prince Regent National Park.",
+  "Hours given come from the Wikivoyage listings named in the verdicts (Broome Bird Observatory, Japanese Cemetery, Broome Historical Museum, Malcolm Douglas, Mowanjum) or are open-access places; Pipeline C confirms them. Prices are null with needs_research except Mowanjum ($5, Wikivoyage).",
+  "Standalone spots carry country, countryCode, continent and timezone; run build-spot-districts.py for every new id.",
+  "Bios: run bio-fit.py before applying; no bio names a source.",
+  "Photos: none chosen here (skeptic photo_verdict \"none\"); Lens judges. Pairs that must not share a photo: Bell Gorge / Wunaamin Miliwundi Ranges Conservation Park; Mitchell Falls / Mitchell River National Park; Emma Gorge, Zebedee Springs / El Questro Wilderness Park; Sacred Heart Church / Dampier Peninsula."
+ ]
+}

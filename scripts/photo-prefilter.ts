@@ -27,7 +27,7 @@ import { HEADER_MIN_WIDTH, HEADER_ASPECT_MIN, HEADER_ASPECT_MAX } from './destin
 
 const arg = (f: string) => { const i = process.argv.indexOf(f); return i > 0 ? process.argv[i + 1] : undefined; };
 const jsonOut = arg('--json'), strict = process.argv.includes('--strict'), refresh = process.argv.includes('--refresh');
-const UA = 'IntrepidApp-Prefilter/1.0 (personal hobby project; alexzhou38@gmail.com)';
+const UA = 'IntrepidApp-Prefilter/1.0 (personal hobby project)';
 const ROOT = process.cwd();
 const MANIFEST = resolvePath(ROOT, 'src/data/imageManifest.json');
 const CACHE = resolvePath(ROOT, 'scripts/prefilter-cache.json');

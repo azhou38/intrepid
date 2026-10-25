@@ -10,7 +10,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve as resolvePath } from 'node:path';
 
-export const UA = 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)';
+export const UA = 'IntrepidApp-Curation/1.0';
 const DIR = resolvePath(process.cwd(), '.cache/curation/http');
 const GAP_MS = 1000;
 const FAIL_MAX_AGE_DAYS = 1;

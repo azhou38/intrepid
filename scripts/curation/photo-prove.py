@@ -25,7 +25,7 @@ path = args[0]
 def opt(name, default):
     return type(default)(args[args.index(name) + 1]) if name in args else default
 SAMPLE = opt('--sample', 8); MIN_W = opt('--min-width', 960)
-UA = {'User-Agent': 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)'}
+UA = {'User-Agent': 'IntrepidApp-Curation/1.0'}
 BAD_CAT = re.compile(r'\b(maps?|drawings?|paintings?|lithographs?|engravings?|illustrations?|satellite|aerial views? of|historical|history of|black and white|sepia|logos?|flags? of|coat of arms|diagrams?|floor plans?|postcards?|posters?|stamps?|renderings?)\b', re.I)
 ARCHIVE = re.compile(r'(library|archives?|collection|state records)', re.I)
 

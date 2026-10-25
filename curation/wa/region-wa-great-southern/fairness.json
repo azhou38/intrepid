@@ -1,0 +1,745 @@
+{
+ "region": "wa-great-southern",
+ "inside_destinations": 47,
+ "standalone": 9,
+ "became_destinations_or_base": [
+  "Albany",
+  "Denmark",
+  "Torndirrup National Park",
+  "Stirling Range National Park",
+  "Fitzgerald River National Park",
+  "Walpole (base of Walpole Wilderness)",
+  "Walpole-Nornalup National Park (container of Walpole Wilderness)"
+ ],
+ "merged_duplicates": [
+  "Valley of the Giants",
+  "Granite Skywalk"
+ ],
+ "duplicates_elsewhere": [
+  "Bibbulmun Track",
+  "Munda Biddi Trail"
+ ],
+ "kept_total": 67,
+ "review_total": 22,
+ "new_destinations": [
+  {
+   "id": "albany",
+   "name": "Albany",
+   "rank": 3,
+   "spots": 18
+  },
+  {
+   "id": "torndirrup-national-park",
+   "name": "Torndirrup National Park",
+   "rank": 4,
+   "spots": 7
+  },
+  {
+   "id": "denmark",
+   "name": "Denmark",
+   "rank": 3,
+   "spots": 5
+  },
+  {
+   "id": "walpole-wilderness",
+   "name": "Walpole Wilderness",
+   "rank": 3,
+   "spots": 7
+  },
+  {
+   "id": "stirling-range-national-park",
+   "name": "Stirling Range National Park",
+   "rank": 3,
+   "spots": 4
+  },
+  {
+   "id": "fitzgerald-river-national-park",
+   "name": "Fitzgerald River National Park",
+   "rank": 4,
+   "spots": 6
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "HMAS Perth Wreck",
+   "views": 0,
+   "counted_sources": 0,
+   "placed_as": "albany"
+  },
+  {
+   "name": "Stony Hill",
+   "views": 0,
+   "counted_sources": 0,
+   "placed_as": "torndirrup-national-park"
+  },
+  {
+   "name": "Museum of the Great Southern",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "albany"
+  },
+  {
+   "name": "Dog Rock",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "albany"
+  },
+  {
+   "name": "Misery Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "torndirrup-national-park"
+  },
+  {
+   "name": "Lights Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "denmark"
+  },
+  {
+   "name": "Giant Tingle Tree",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "walpole-wilderness"
+  },
+  {
+   "name": "Conspicuous Cliff",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "walpole-wilderness"
+  },
+  {
+   "name": "Circular Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "walpole-wilderness"
+  },
+  {
+   "name": "Coalmine Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "walpole-wilderness"
+  },
+  {
+   "name": "Mount Clare",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "walpole-wilderness"
+  },
+  {
+   "name": "Mount Hassell",
+   "views": 0,
+   "counted_sources": 1,
+   "placed_as": "stirling-range-national-park"
+  }
+ ],
+ "lowest_kept_score": {
+  "views": 0,
+  "counted_sources": 0
+ },
+ "stronger_left_out": [
+  {
+   "name": "Bornholm",
+   "views": 118006,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: a rural locality with no visitor source and nothing named to see; its coast is West Cape Howe NP, judged separately. (Candidate coordinates and views belong to the Danish island.)"
+  },
+  {
+   "name": "Kojonup",
+   "views": 7316,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: Australia's South West has a Kojonup destination page and Wikivoyage's Perth to Albany itinerary calls it a 'popular stop'; the town has The Kodja Place and the Military Barracks museum. | Objection: Against: its one real draw, The Kodja Place, is a separate candidate, so the town would be a wrapper beside its own attraction (COVERAGE 'A town is a spot only when the town itself is a draw'); a service stop on Albany Highway rather than a base."
+  },
+  {
+   "name": "Michaelmas Island",
+   "views": 5100,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: a nature reserve island with no visitor access; seen only from Gull Rock lookouts. No counted source names it as a place to go."
+  },
+  {
+   "name": "Bald Island",
+   "views": 4709,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: an offshore nature reserve with no visitor access; only a Wikipedia category names it."
+  },
+  {
+   "name": "King George Sound",
+   "views": 4022,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: a body of water, seen from the places on its shore (Middleton Beach, Emu Point, Torndirrup lookouts, Princess Royal Fortress); no counted source names it as a place to go, and whale-watching tours on it are operators."
+  },
+  {
+   "name": "Wilson Inlet",
+   "views": 1773,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: re-looked and found Tourism WA's attraction page (paddling, kayak and canoe hire, fishing, the 12 km Wilson Inlet Heritage Trail to Crusoe Beach, inlet cruises). Case for: a counted source and a range of things to do. Case against: rule 3, a water body whose visitor points are Ocean Beach (kept) and Denmark's riverfront; the Heritage Trail might be the better spot. | Objection: A 20 km water body has no single visitor point; overlaps Ocean Beach."
+  },
+  {
+   "name": "Cape Riche",
+   "views": 1571,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Re-looked: one counted source, Visit Albany's (amazingalbany.com.au) nature-based camping page, which names Cape Riche as a caretaker-run campground; the City of Albany camping page agrees. Case for: a remote cape for fishing, swimming, snorkelling, headland rock walks and Mount Melville. Case against: named only as a campground, no source describes a sight; one source. | Objection: A campground listing is not a visitor 'See' entry; mostly anglers and campers."
+  },
+  {
+   "name": "Eclipse Island",
+   "views": 1213,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: lighthouse island with no public access, seen from Torndirrup's lookouts; no counted source names it as a place to go."
+  },
+  {
+   "name": "Mount Melville",
+   "views": 816,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: a summit with an observation tower ('the Spark Plug') and walk trails over Albany, Princess Royal Harbour and King George Sound; Lonely Planet carried a 'Mt Melville Lookout Tower' sight (seen in search only; the page now redirects). | Objection: Against: no counted source could be opened (Visit Albany's walks and parks pages do not name it), reviewers report the upper stairs closed and trees blocking views; Mount Clarence and Mount Adelaide are Albany's promoted lookouts."
+  },
+  {
+   "name": "Breaksea Island",
+   "views": 812,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: lighthouse island in King George Sound with no public access; seen from the Gull Rock lookouts. No counted source names it as a place to go."
+  },
+  {
+   "name": "Goode Beach",
+   "views": 681,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: a sheltered Vancouver Peninsula beach; RAC's Albany beach guide names it as the access to Mistaken Island (walkable at low tide). | Objection: Against: no counted source names Goode Beach itself as a place to go (Visit Albany's beaches page omits it); it is a residential suburb beach."
+  },
+  {
+   "name": "Mount Frankland National Park",
+   "views": 679,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-south-west. Wikipedia places the park in the South West region, and the neighbouring localities (North Walpole, Broke) are in the Shire of Manjimup."
+  },
+  {
+   "name": "Albany Town Hall",
+   "views": 674,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2 and 4: an 1887 civic building seen from the street; its only visitor listing (Wikivoyage Do) is as a theatre for plays and concerts, i.e. recurring shows, which are not spots. The candidate carries no counted source of its own."
+  },
+  {
+   "name": "Plantagenet Wines",
+   "views": 587,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery rule: a business-directory listing (Mountain Country Tourism) of a cellar door; the region's first winery (1975) but not singled out by a visitor source as a destination in its own right."
+  },
+  {
+   "name": "Green Island (Great Southern)",
+   "views": 574,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: small island with no visitor use; only a Wikipedia category names it."
+  },
+  {
+   "name": "Shelter Island",
+   "views": 572,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: Visit Albany says Shelter Island is a class 1A nature reserve (no access); the visitor place is the beach in front of it (see Muttonbird Island)."
+  },
+  {
+   "name": "Doubtful Islands",
+   "views": 498,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: offshore island group with no visitor access; only a Wikipedia category names it."
+  },
+  {
+   "name": "Chatham Island",
+   "views": 483,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: small offshore reserve island west of Walpole with no visitor access; only a Wikipedia category names it."
+  },
+  {
+   "name": "Vancouver Arts Centre",
+   "views": 477,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: an arts venue and community arts hub (Wikivoyage: 'a focal point for all forms of the arts'), not a sight; Visit Albany's heritage and arts page does not list it (the Town Hall is now the flagship gallery)."
+  },
+  {
+   "name": "Puntapin Rock",
+   "views": 464,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-golden-outback (4 km south-east of Wagin in the Wheatbelt, per Wikipedia)."
+  },
+  {
+   "name": "Gibraltar Rock",
+   "views": 394,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: re-looked and found no counted source; only climbing guides (UKClimbing) describe it, reached by an unmarked 4WD track and taped path, and DBCA lists no visitor site or trail for it."
+  },
+  {
+   "name": "Torbay Head",
+   "views": 389,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: DBCA attraction page (named by Vancouver in 1792; DBCA calls it the southernmost point of WA) and Visit Albany notes West Cape Howe as WA's southern promontory; a 'southernmost point' is the kind of landmark people seek out. | Objection: Against: reached only by 4WD or a long sandy walk, mostly seen from Shelley Beach; likely folded into West Cape Howe National Park."
+  },
+  {
+   "name": "Seal Island (Albany)",
+   "views": 384,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: small reserve island in King George Sound with no access; only a Wikipedia category names it."
+  },
+  {
+   "name": "Castle Rock Estate",
+   "views": 364,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Winery rule: a cellar door named once in a board itinerary PDF, not singled out as a destination in its own right; one of many Great Southern cellar doors."
+  },
+  {
+   "name": "Oyster Harbour",
+   "views": 357,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: re-looked and found Tourism WA's attraction page (swimming beaches, picnic areas, fishing, boat cruises up the Kalgan River). Case for: a counted source naming it as a family outing. Case against: rule 3, the harbour is a water body visited from Emu Point on its southern shore (kept); as a spot it is a near-duplicate of Emu Point. | Objection: Its visitor point is Emu Point."
+  },
+  {
+   "name": "Hassell National Park",
+   "views": 352,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: DBCA says 'there are no facilities or visitor sites in this park... best seen from your vehicle'; a 550 m-wide strip along the highway."
+  },
+  {
+   "name": "Irwin Inlet",
+   "views": 310,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: DBCA site page only (picnic, boating and fishing; sand spit reached by 4WD from Peaceful Bay). Case for: a named DBCA visitor site. Case against: one source, and visitors mostly reach it from Peaceful Bay, which is kept; a quiet fishing spot rather than a draw. | Objection: Locals' fishing spot; overlaps Peaceful Bay."
+  },
+  {
+   "name": "Residency Museum",
+   "views": 287,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Museum of the Great Southern: the Residency building is the WA Museum's Museum of the Great Southern site on Residency Road (Visit Albany lists only the Museum of the Great Southern); keep as one under that name."
+  },
+  {
+   "name": "Saddle Island",
+   "views": 176,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: offshore island with no visitor access; only a Wikipedia category names it."
+  },
+  {
+   "name": "Gould Island",
+   "views": 103,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-golden-outback (at 122.86 E, off the Esperance coast); in any case an inaccessible island named only by a Wikipedia category."
+  },
+  {
+   "name": "Natural Bridge",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Duplicate of The Gap: DBCA and Australia's South West list one attraction, 'The Gap and Natural Bridge', reached from one car park and platform system; keep as one spot (The Gap and Natural Bridge)."
+  },
+  {
+   "name": "St Mary Inlet",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1: DBCA site page names it (scenic inlet behind the dunes near Point Ann, birdwatching, shore walk at low water, campground). Case for: a named visitor site with a campground listed by Wikivoyage. Case against: rule 3, it sits beside Point Ann (the park's whale-watching point) and may be part of that visit rather than a distinct draw. | Objection: No formal paths; the visit is mainly camping or a look on the way to Point Ann."
+  },
+  {
+   "name": "Brig Amity Replica",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Albany See listing and Visit Albany's heritage page both describe boarding the full-size replica of the 1826 settlers' brig with volunteer guides; a distinct thing to do. | Objection: Against: Visit Albany says 'the Amity is part of the Museum of the Great Southern site on Residency Road', so it may be part of a larger spot (rule 3); volunteer-staffed with variable hours. Either keep it as its own spot or fold it into the Museum of the Great Southern's bio."
+  },
+  {
+   "name": "Old Post Office, Albany",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1-2: one counted source (Wikivoyage See) names it for its spiral tower stair and a museum inside; a heritage building the public can enter. | Objection: Wikivoyage also says it now houses restaurants and a weaver; whether the museum is still open is unconfirmed, and with one source and a short visit it is marginal (a building on the Stirling Terrace heritage walk rather than a destination in itself)."
+  },
+  {
+   "name": "Desert Mounted Corps War Memorial",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: duplicate of Mount Clarence. The memorial stands at the top of Mount Clarence where Wikivoyage's Mount Clarence Trails begin, and is the same visitor stop (views over the harbour); keep the two as one spot, Mount Clarence, and name the memorial in its bio."
+  },
+  {
+   "name": "Quaranup Point Possession Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Albany Do listing names the 1.6 km walk from the old Quarantine Station to Point Possession, where Vancouver claimed WA for Britain; a real walk with a historic endpoint. | Objection: Against: only one counted source, short, and not among Visit Albany's 10 Great Walks; no coordinates yet."
+  },
+  {
+   "name": "Albany Historic Town Trails",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a self-guided route linking 39 heritage places in central Albany is a way to see the town, not a place; it is covered by Albany itself (and Visit Albany's 'Landmarks and Laneways')."
+  },
+  {
+   "name": "Albany Whale Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A spot is a place, not an operator: this is a whale-watching and harbour cruise company; the place is King George Sound (a separate candidate)."
+  },
+  {
+   "name": "Cable Beach (Albany)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a rough fishing beach right next to The Gap and Natural Bridge (DBCA: 'swimming is not recommended', for experienced anglers); not a distinct draw for a visitor beyond the Gap."
+  },
+  {
+   "name": "Ledge Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Gull Rock National Park: Ledge Beach (with Boiler Bay) is the park's one visitor site and DBCA's only attraction for it; keep as one under Gull Rock National Park, pinned at Ledge Beach."
+  },
+  {
+   "name": "Sinker Reef Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a clifftop view at the end of a 2 km sandy 4WD/walking track inside Two Peoples Bay reserve; one DBCA page, part of the larger reserve."
+  },
+  {
+   "name": "Shelley Beach Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Shelley Beach: the clifftop lookout on the road down to the beach is the same stop (Visit Albany describes the lookout within Shelley Beach); keep as one under Shelley Beach."
+  },
+  {
+   "name": "Dunsky Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 1: named only in a DBCA gallery caption, with no attraction page; 4WD-only beach in West Cape Howe NP."
+  },
+  {
+   "name": "Barren Range",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: duplicate of West Mount Barren (and East Mount Barren): the range is a landscape seen along the park, and its visitable points are the individual peaks, kept separately."
+  },
+  {
+   "name": "Hellfire Bay",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-golden-outback. The DBCA page places Hellfire Bay in Cape Le Grand National Park (Esperance), not Fitzgerald River NP as the candidate note says."
+  },
+  {
+   "name": "Hakea Trail",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: named only as a DBCA gallery caption and as the foot route to Whalebone Beach; DBCA has no trail page for it (exploreparks /trail/hakea-trail 404). Case for: a coastal walk through the park's plant diversity linking Quoin Head and Whalebone Beach. Case against: one weak mention, and rule 3, it may be best folded into Whalebone Beach/Quoin Head. | Objection: No length, trailhead or trail page found; a gallery caption is a thin source."
+  },
+  {
+   "name": "Hamersley Drive",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3 / 'a spot is a place': a road through the park named only in a DBCA gallery caption; its stops (Hamersley Inlet, East Mount Barren) are the places and are judged on their own."
+  },
+  {
+   "name": "Denmark Historical Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: one counted source, a Wikivoyage See listing (16 Mitchell St, local history of Denmark's timber and industrial times). Case for: open to the public, a half-hour indoor visit. Case against: a small volunteer local-history museum with limited hours; the friend test says only if nearby, and it needs a second source. | Objection: Single source, short visit, local interest only."
+  },
+  {
+   "name": "Denmark Wineries",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not a place: a grouping of many cellar doors around Denmark; the winery rule keeps only an estate a visitor source singles out as a destination, and none is named here."
+  },
+  {
+   "name": "Hilltop Lookout",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: DBCA site page and the Walpole Visitor Centre name it (forest-clearing view over the Frankland River, Nornalup Inlet and the Southern Ocean). Case for: two sources and a real view. Case against: rule 3, a short stop on the same one-way Hilltop Road as the Giant Tingle Tree, about 1 km apart; could be folded into that spot. | Objection: A ten-minute look on the way to the Giant Tingle Tree."
+  },
+  {
+   "name": "Stirling Range Scenic Drive",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: DBCA's Stirling Range park page names the 42 km mostly unsealed scenic drive through the heart of the park with stops. Case for: the main non-hiking way to see the range, a real half-day outing. Case against: 'a spot is a place': a road, whose stops (peaks, lookouts, picnic areas) are the places; it overlaps the park itself. | Objection: Drives are routes, not places; it duplicates the park."
+  },
+  {
+   "name": "Honeymoon Pool",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-south-west (Honeymoon Pool is in Wellington National Park near Collie, Worsley 6225, per OpenStreetMap)."
+  },
+  {
+   "name": "Denmark Animal Farm and Pentland Alpaca Stud",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1: Australia's South West board listing and its own site (animal park, open every day 10-4, WA's first alpaca farm, about 50 alpacas). Case for: a permanent, open, family visitor farm. Case against: rule 2/business: largely a gift shop and petting farm, and the friend test says only if nearby; one source. | Objection: A small commercial farm attraction with a shop."
+  },
+  {
+   "name": "Denmark Chocolate Company",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Business rule: a chocolate maker and shop, not a place to see."
+  },
+  {
+   "name": "Albany Tours",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator: a tour company, not a place; the places it visits are the spots."
+  },
+  {
+   "name": "Kaarl Wirn Cultural Tours Albany",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator: an Aboriginal cultural tour operator, not a place; the places it visits are the spots."
+  },
+  {
+   "name": "WOW Wilderness EcoCruise",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator: a cruise on the Walpole and Nornalup inlets; the place is the inlets (Coalmine Beach and the park are kept)."
+  },
+  {
+   "name": "Whale Watch Western Australia",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Operator: a whale-watching company, not a place."
+  },
+  {
+   "name": "Mount Trio Bush Camp and Caravan Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not a spot: accommodation (a bush camp and caravan park), even though the board lists it."
+  },
+  {
+   "name": "Cheynes Beach Caravan Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not a spot: accommodation (a caravan park). The beach beside it, Cheynes Beach, has its own board listing and is the place to judge."
+  },
+  {
+   "name": "The Lake House Denmark",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Business rule: accommodation, restaurant and cellar door, not a landmark estate a guide singles out."
+  },
+  {
+   "name": "Fernhook Falls",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-south-west. OpenStreetMap places it in North Walpole, a locality of the Shire of Manjimup, in Mount Frankland South NP."
+  },
+  {
+   "name": "Mandalay Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Outside the region: belongs to wa-south-west. DBCA places it in D'Entrecasteaux NP, and OpenStreetMap places it in Broke, a locality of the Shire of Manjimup."
+  },
+  {
+   "name": "Mount Romance Sandalwood Factory",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Business rule: a sandalwood factory and shop with product tours, named only in an accommodation directory (WA Holiday Guide), not a counted visitor source."
+  },
+  {
+   "name": "Mount Barker Wineries",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not a place: a grouping of the sub-region's wineries (Mount Barker Wine Producers' list); the winery rule keeps only a singled-out estate."
+  }
+ ],
+ "stronger_left_out_count": 65,
+ "stronger_left_out_note": "The lowest kept spots score 0 views and 0 counted sources on the verdict file (HMAS Perth Wreck, Stony Hill: their counted sources were found by the judge on re-look, after scoring), so every left-out candidate with any views or any counted source is listed. Each has a concrete 'What qualifies' reason: no public access (offshore islands), a duplicate of a kept spot, an operator, accommodation or business, a body of water, outside the region, or (reviews) a marginal case for the owner. None is left out for want of a home.",
+ "strongest_outsiders": [
+  {
+   "name": "Katanning",
+   "views": 19139,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "placed_as": "standalone:katanning"
+  },
+  {
+   "name": "Bremer Bay",
+   "views": 12002,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "placed_as": "standalone:bremer-bay"
+  },
+  {
+   "name": "Mount Barker",
+   "views": 10765,
+   "counted_sources": 0,
+   "verdict": "keep",
+   "placed_as": "standalone:mount-barker-wa"
+  },
+  {
+   "name": "Kojonup",
+   "views": 7316,
+   "counted_sources": 0,
+   "verdict": "review",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Bald Island",
+   "views": 4709,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Porongurup National Park",
+   "views": 2542,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "standalone:porongurup-national-park"
+  },
+  {
+   "name": "Castle Rock",
+   "views": 2173,
+   "counted_sources": 3,
+   "verdict": "keep",
+   "placed_as": "standalone:castle-rock-granite-skywalk"
+  },
+  {
+   "name": "Cape Riche",
+   "views": 1571,
+   "counted_sources": 0,
+   "verdict": "review",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Plantagenet Wines",
+   "views": 587,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Doubtful Islands",
+   "views": 498,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Puntapin Rock",
+   "views": 464,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Gibraltar Rock",
+   "views": 394,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Castle Rock Estate",
+   "views": 364,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Hassell National Park",
+   "views": 352,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Saddle Island",
+   "views": 176,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Gould Island",
+   "views": 103,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "placed_as": "not placed"
+  },
+  {
+   "name": "Granite Skywalk",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "keep",
+   "placed_as": "merged into castle-rock-granite-skywalk"
+  },
+  {
+   "name": "Cheynes Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "standalone:cheynes-beach"
+  },
+  {
+   "name": "Devils Slide",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "standalone:devils-slide-porongurup"
+  },
+  {
+   "name": "The Kodja Place",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "keep",
+   "placed_as": "standalone:the-kodja-place"
+  }
+ ],
+ "benchmark": {
+  "note": "COVERAGE step 6's benchmarks are New Zealand places and do not apply to this Western Australia region. Region checks instead: the Great Southern headlines are kept and placed: Bluff Knoll, the Valley of the Giants Tree Top Walk, The Gap and Natural Bridge, Greens Pool and Elephant Rocks, the National Anzac Centre (Princess Royal Fortress), Albany's Historic Whaling Station, Misery Beach, Castle Rock Granite Skywalk and Point Ann. Operators and vehicles are rejected in favour of their places (Albany Whale Tours, Whale Watch WA, WOW Wilderness EcoCruise, Kaarl Wirn and Albany Tours; the Bremer Canyon orca trips are in Bremer Bay's bio only). Accommodation and shops are rejected (caravan parks, The Lake House, Denmark Chocolate Company). Inaccessible islands are rejected (Michaelmas, Breaksea, Bald, Eclipse). A civic building is rejected (Albany Town Hall), a memorial is merged into its hill (Desert Mounted Corps, into Mount Clarence), and a road and a drive are not spots (Hamersley Drive rejected; Stirling Range Scenic Drive in review). Gateway towns whose draw is beyond them are standalone at low priority (Mount Barker, Bremer Bay) or the base of their destination (Walpole), never wrappers beside their attractions; Kojonup is in review for exactly that reason.",
+  "passed": true
+ }
+}

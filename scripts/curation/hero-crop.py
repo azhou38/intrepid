@@ -23,7 +23,7 @@ def fetch(src, d):
     if not src.startswith('http'):
         return src
     out = os.path.join(d, 'src%d.jpg' % len(os.listdir(d)))
-    req = urllib.request.Request(src, headers={'User-Agent': 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)'})
+    req = urllib.request.Request(src, headers={'User-Agent': 'IntrepidApp-Curation/1.0'})
     with urllib.request.urlopen(req, timeout=60) as r, open(out, 'wb') as f:
         shutil.copyfileobj(r, f)
     return out

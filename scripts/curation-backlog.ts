@@ -59,7 +59,7 @@ const rows = DESTINATIONS.filter(d => !country || d.countryCode === country).map
   let score = 0;
   const add = (pts: number, why: string) => { score += pts; reasons.push(why); };
   if (HEADER_REVIEW_BACKLOG.has(d.id)) add(5, 'header never curated');
-  if (why.length < 2 || why.length !== (d.whyVisit?.length ?? 0)) add(4, 'missing why-visit photos');
+  if (why.filter(Boolean).length < 2 || why.filter(Boolean).length !== (d.whyVisit?.length ?? 0)) add(4, 'missing why-visit photos');   // "" = a grey card
   if (spots.length < 3) add(3, `only ${spots.length} spot(s)`);
   const paidNoLink = spots.filter(s => s.costMin !== undefined && !s.ticketUrl);
   if (paidNoLink.length) add(Math.min(3, paidNoLink.length), `${paidNoLink.length} paid spot(s) with no official site`);

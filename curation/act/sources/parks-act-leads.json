@@ -1,0 +1,19 @@
+{
+  "_note": "Read in the in-app browser (parks.act.gov.au blocks scripts: Cloudflare). The agency's own 'Find a nature park' pages and their recreation-area lists. A counted source (the managing agency's visitor pages). Names only appear here once; the run's recall pass checks each against the enumerators' candidates.",
+  "agency_parks": [
+    "Canberra Centenary Trail", "Canberra Nature Park", "Googong Foreshores (NSW side: outside the run)",
+    "Jerrabomberra Wetlands Nature Reserve", "Lower Cotter Catchment Reserve", "Molonglo River Reserve",
+    "Murrumbidgee River Corridor", "Namadgi National Park", "National Arboretum Canberra", "Plantations",
+    "Tidbinbilla Nature Reserve", "Urban Parks"
+  ],
+  "recreation_areas": {
+    "namadgi": ["Orroral Campground", "Mount Clear Campground", "Namadgi walking tracks", "Namadgi Visitor Information Centre", "historic huts"],
+    "murrumbidgee_corridor": ["Angle Crossing", "Uriarra Crossing", "Tharwa Sandwash (a scenic picnic area in Gigerline Nature Reserve)", "Casuarina Sands (riverside beach, Cotter Recreation Area)", "Murrays Corner (picnic area on a bend of Paddys River)", "Pine Island", "Kambah Pool", "Point Hut Crossing"],
+    "molonglo_river_reserve": ["Molonglo River Reserve walking tracks", "Namarag (nature under restoration, a recreation hub)"],
+    "lower_cotter": ["Cotter Campground", "Blue Range Hut"],
+    "canberra_nature_park": ["Mount Ainslie Nature Reserve", "Melrose Nature Reserve (Tuggeranong, near the NSW border)", "O'Connor Ridge Nature Reserve"],
+    "plantations": ["Tuggeranong Pines", "Kowen Forest (the largest commercial pine plantation)", "Pierces Creek Forest (near the Cotter)"],
+    "urban_parks": ["John Knight Memorial Park", "Lake Ginninderra District Park", "Margaret Timpson Town Park", "Acton District Park", "Black Mountain Peninsula District Park", "Bowen Park", "City Hill", "Glebe Park", "Grevillea District Park", "Haig District Park", "La Trobe Park", "Lennox Gardens District Park (Canberra Beijing Garden and Canberra Nara Peace Park)", "Molonglo Reach District Park", "Telopea District Park", "Weston Park", "Yarralumla Bay District Park", "Crace Community Recreation Park"]
+  },
+  "url_base": "https://www.parks.act.gov.au/find-a-nature-park/"
+}

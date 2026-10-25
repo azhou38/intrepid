@@ -30,7 +30,7 @@ for i, (sid, lat, lon) in enumerate(todo):
     url = f'https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat={lat}&lon={lon}&zoom=10&addressdetails=1&accept-language=en'
     d = None
     for _ in range(4):
-        r = subprocess.run(['curl', '-s', '-m', '30', '-A', 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)', url], capture_output=True, text=True)
+        r = subprocess.run(['curl', '-s', '-m', '30', '-A', 'IntrepidApp-Curation/1.0', url], capture_output=True, text=True)
         try:
             d = json.loads(r.stdout); break
         except Exception:

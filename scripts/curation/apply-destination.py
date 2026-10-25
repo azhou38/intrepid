@@ -2,13 +2,16 @@
 """Adds a NEW destination to src/data (Quill's final copy + Lens's agreed photos).
 
   python3 scripts/curation/apply-destination.py curation/<branch>/quill/<id>/final.json --picks picks.json [--dry-run]
+        [--before <id> | --after <id>]   (place it by popularity among its country's destinations of the same rank)
 
 final.json: { destination: { id, name, country, countryCode, timezone, continent, coordinates, category, defaultZoomSpanKm,
               rank, icon, tagline, description, whyVisit[2-4 by popularity], highlights[one per reason], goodToKnow[2-3 {icon,title,detail}, by popularity], bestMonths,
               bestTimeBlurb, seasonalTags? }, spots, notes }
-picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges)
+picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges; with
+             --allow-missing-why a reason with no photo in any tier may be "" or null: it shows as a grey card)
 
-Writes the entry into src/data/destinations.ts after the last destination of the same country (or at the end), the header
+Writes the entry into src/data/destinations.ts among its country's destinations: after the last one of the same or a better
+rank (or at --before/--after <id>, chosen by popularity), since file order decides pin priority within a rank; the header
 into WIKI_IMAGE_OVERRIDES keyed by the destination's name, and `whyVisitPhotos` from picks. A destination with no
 accepted header is NOT added (check-destination-headers would fail and the pin would show an unrelated photo): the script
 refuses and says so. Add its spots afterwards with apply-placement.py --dest <id> --overrides <final.json>.
@@ -24,11 +27,18 @@ picks = json.load(open(args[args.index('--picks') + 1])) if '--picks' in args el
 dry = '--dry-run' in args
 
 no_header = '--allow-no-header' in args   # no passing header exists in any tier: still add the destination, with NO_PHOTO (the owner is asked for one)
+# A strong reason with no honest photo in any tier keeps its wording and gets a grey card (an empty slot, "" in whyVisitPhotos)
+# rather than being reworded away from the destination's real draw; the owner is asked for a photo (IMAGES.md, "Photos still missing").
+missing_why = '--allow-missing-why' in args
 n_why = len(d.get('whyVisit', []))
 if not 2 <= n_why <= 4:
     sys.exit(f'refusing: whyVisit must have two to four reasons (4 for the most popular, 3 average, 2 less popular); have {n_why}')
-if (not picks.get('header') and not no_header) or len(picks.get('why', [])) != n_why or not all(picks['why']):
-    sys.exit(f"refusing: {d['id']} needs an accepted header and one why-visit photo per reason ({n_why}) (picks.json); have {picks}")
+picks['why'] = [w or '' for w in picks.get('why', [])]
+if (not picks.get('header') and not no_header) or len(picks['why']) != n_why or (not all(picks['why']) and not missing_why):
+    sys.exit(f"refusing: {d['id']} needs an accepted header and one why-visit photo per reason ({n_why}) (picks.json; pass --allow-missing-why to leave a grey card); have {picks}")
+for i, w in enumerate(picks['why'], 1):
+    if not w:
+        print(f'why-visit photo missing: dest:{d["id"]}:why{i} ("{d["whyVisit"][i - 1]}"): a grey card until the owner supplies one')
 if len(d.get('highlights', [])) != n_why:
     sys.exit(f'refusing: highlights must have one entry per reason ({n_why})')
 if not 2 <= len(d.get('goodToKnow', [])) <= 3 or any(len(t.get('detail', '')) > 160 for t in d.get('goodToKnow', [])):
@@ -37,6 +47,8 @@ import subprocess as _sp
 _fit = _sp.run(['python3', 'scripts/curation/tagline-fit.py', '--text', d.get('tagline', '')], capture_output=True, text=True)
 if _fit.returncode != 0:
     sys.exit(f"refusing: the tagline must fill exactly two lines of the header (WRITING.md); tagline-fit.py says {_fit.stdout.splitlines()[0] if _fit.stdout else _fit.stderr}")
+if ';' in d['bestTimeBlurb']:
+    sys.exit('refusing: the bestTimeBlurb has a semicolon: give a second thought its own sentence (WRITING.md)')
 if d['bestTimeBlurb'].count('{months}') != 1:
     sys.exit('refusing: bestTimeBlurb needs exactly one {months}')
 _fit = _sp.run(['python3', 'scripts/curation/blurb-fit.py', '--text', d['bestTimeBlurb'], '--months', ','.join(str(m) for m in d.get('bestMonths', []))], capture_output=True, text=True)
@@ -82,15 +94,33 @@ L = src.split('\n')
 end = len(L) - 1
 while end > 0 and L[end].strip() != '];':
     end -= 1
-# the last destination of this country: its closing '  },' is the line before the next '  {' of another country, or '];'
-last_close = None
+# Where it goes: the map gives photo pins by rank, then by place in this file (COVERAGE.md -> "Pin priority on the map"), so a
+# country's destinations are kept in popularity order within each rank. The new one goes after the last destination of its
+# country with the same or a better rank (before the first one ranked lower), unless --before/--after <id> names the place
+# the curator judged by popularity (visitor numbers, guidebook prominence). With no destination of its country yet: at the end.
+blocks = []   # (first line, closing line, id, rank) of each destination of this country
 for i, l in enumerate(L[:end]):
     if f"countryCode: '{d['countryCode']}'" in l:
+        j0 = i
+        while L[j0] != '  {':
+            j0 -= 1
         j = i
         while L[j] != '  },':
             j += 1
-        last_close = j
-at = last_close + 1 if last_close is not None else end
+        bid = re.search(r"id: '([^']+)'", '\n'.join(L[j0:j])).group(1)
+        brank = int(re.search(r'rank: (\d+)', '\n'.join(L[j0:j])).group(1))
+        blocks.append((j0, j, bid, brank))
+place = next((args[args.index(f) + 1], f) for f in ('--before', '--after') if f in args) if ('--before' in args or '--after' in args) else None
+if place:
+    hit = [b for b in blocks if b[2] == place[0]]
+    if not hit:
+        sys.exit(f"refusing: {place[1]} {place[0]}: no destination of {d['countryCode']} with that id")
+    at = hit[0][0] if place[1] == '--before' else hit[0][1] + 1
+elif blocks:
+    lower = [b for b in blocks if b[3] > d['rank']]
+    at = lower[0][0] if lower else blocks[-1][1] + 1
+else:
+    at = end
 L[at:at] = lines
 if not dry:
     open('src/data/destinations.ts', 'w').write('\n'.join(L))

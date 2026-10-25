@@ -1,0 +1,126 @@
+[
+ {
+  "name": "Albany",
+  "wiki": "Albany, Western Australia",
+  "views": 70464,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Albany",
+   "wiki": "Albany, Western Australia",
+   "coordinates": {
+    "lat": -35.022778,
+    "lng": 117.881389
+   },
+   "coordinates_source": "wikipedia:Albany, Western Australia",
+   "views": 70464,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Albany_(Western_Australia)",
+    "https://www.westernaustralia.com/en/discover/regions/great-southern"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Albany,_Western_Australia"
+   ],
+   "note": "Town: regional city and the region's main base, the oldest European settlement in WA, with the Torndirrup and Stirling Range gateway."
+  }
+ },
+ {
+  "name": "Bluff Knoll",
+  "wiki": "Bluff Knoll",
+  "views": 15019,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Bluff Knoll",
+   "wiki": "Bluff Knoll",
+   "coordinates": {
+    "lat": -34.37555556,
+    "lng": 118.25611111
+   },
+   "coordinates_source": "wikipedia:Bluff Knoll",
+   "views": 15019,
+   "counted_sources": [
+    "https://exploreparks.dbca.wa.gov.au/site/bluff-knoll",
+    "https://www.westernaustralia.com/en/discover/regions/great-southern",
+    "https://australiassouthwest.com/listings/bluff-knoll/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bluff_Knoll"
+   ],
+   "note": "Peak: highest peak in southern WA (1,099 m) with a summit walk and eastern lookout."
+  }
+ },
+ {
+  "name": "Desert Mounted Corps War Memorial",
+  "wiki": "Desert Mounted Corps War Memorial",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Desert Mounted Corps War Memorial",
+   "wiki": "Desert Mounted Corps War Memorial",
+   "coordinates": {
+    "lat": -35.025135,
+    "lng": 117.89519
+   },
+   "coordinates_source": "resolve-pin HIGH: photon historic=memorial 'Desert Mounted Corps Memorial'",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Albany_(Western_Australia)"
+   ],
+   "other_sources": [],
+   "note": "War memorial: Port Said monument unveiled in 1932 on Albany's hill, with good views over the harbour."
+  }
+ },
+ {
+  "name": "Little Beach",
+  "wiki": "Little Beach, Western Australia",
+  "views": 0,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Little Beach",
+   "wiki": "Little Beach, Western Australia",
+   "coordinates": {
+    "lat": -34.973597,
+    "lng": 118.195621
+   },
+   "coordinates_source": "resolve-pin HIGH: photon natural=beach 'Little Beach'",
+   "views": 0,
+   "counted_sources": [
+    "https://exploreparks.dbca.wa.gov.au/site/little-beach",
+    "https://exploreparks.dbca.wa.gov.au/park/two-peoples-bay-nature-reserve",
+    "https://australiassouthwest.com/listings/little-beach/"
+   ],
+   "other_sources": [],
+   "note": "Beach: sheltered sandy beach at Two Peoples Bay for swimming, diving and canoeing."
+  }
+ },
+ {
+  "name": "Old Post Office, Albany",
+  "wiki": null,
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Old Post Office, Albany",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.027668,
+    "lng": 117.886895
+   },
+   "coordinates_source": "resolve-pin HIGH: photon tourism=viewpoint 'Old Albany Post Office, 1869'",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Albany_(Western_Australia)"
+   ],
+   "other_sources": [],
+   "note": "Historic building: former customs and bond store on Stirling Terrace with a magnificent spiral tower stair, now housing restaurants and a museum."
+  }
+ }
+]
