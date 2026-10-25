@@ -883,7 +883,7 @@ export function PhotoCollage({ photos, onAdd, onDelete, onReorder, hideAddMore, 
     return (
       <Pressable style={pcS.addOnly} onPress={onAdd}>
         <Camera size={22} color="#9CA3AF" />
-        <Text style={pcS.addTxt}>Add your travel photos</Text>
+        <Text style={pcS.addTxt}>Add your trip photos</Text>
       </Pressable>
     );
   }
@@ -2198,7 +2198,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
             <View style={esS.section}>
               <View style={esS.sectionHead}>
                 <Text style={esS.sectionTitle}>Photos</Text>
-                {/* Redundant with PhotoCollage's own big "Add your travel photos" placeholder
+                {/* Redundant with PhotoCollage's own big "Add your trip photos" placeholder
                     while empty — only becomes the add-more affordance (in place of the
                     collage's own, suppressed via hideAddMore below) once there's at least
                     one photo. */}
