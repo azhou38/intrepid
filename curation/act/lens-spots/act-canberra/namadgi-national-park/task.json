@@ -1,0 +1,173 @@
+{
+ "group": "namadgi-national-park",
+ "generated": "2026-10-25T06:31:41.004Z",
+ "slots": [
+  {
+   "slot": "dest:namadgi-national-park:header",
+   "key": "Namadgi National Park",
+   "current": {
+    "file": "Mount Ginini - Namadgi National Park - 2.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "skip",
+   "flags": []
+  },
+  {
+   "slot": "dest:namadgi-national-park:why1",
+   "key": "File:Gibraltar Falls 1.JPG",
+   "current": {
+    "file": "Gibraltar Falls 1.JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "skip",
+   "flags": []
+  },
+  {
+   "slot": "dest:namadgi-national-park:why2",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "dest:namadgi-national-park:why3",
+   "key": "File:Yankee Hat art-MJC.jpg",
+   "current": {
+    "file": "Yankee Hat art-MJC.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "skip",
+   "flags": []
+  },
+  {
+   "slot": "spot:namadgi-national-park-1",
+   "key": "Gibraltar Falls",
+   "current": {
+    "file": "Gibraltar Falls 8.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-2",
+   "key": "Booroomba Rocks",
+   "current": {
+    "file": "Booroomba.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 800 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-3",
+   "key": "Orroral Homestead",
+   "current": {
+    "file": "2003CanberraBushfires.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-4",
+   "key": "Honeysuckle Creek Tracking Station",
+   "current": {
+    "file": "Site of Honeysuckle Creek tracking station, near Canberra, Australia.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: 600 px wide (min 960)"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-5",
+   "key": "Yankee Hat",
+   "current": {
+    "file": "Yankee Doodle.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-6",
+   "key": "Bimberi Peak",
+   "current": {
+    "file": "Bimberi Peak summit 1.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: dated 1956"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-7",
+   "key": "Settlers Track",
+   "current": {
+    "file": "West Bank Access Restrictions July 2025.pdf",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: excluded category or title (map/drawing/historical/...)"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-8",
+   "key": "Gudgenby Homestead",
+   "current": {
+    "file": "Weetangera Public school site1 2014-09-12.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 55789 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-9",
+   "key": "Corin Forest",
+   "current": {
+    "file": "Corin Hardy.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:namadgi-national-park-10",
+   "key": "Tharwa, Australian Capital Territory",
+   "current": {
+    "file": "Looking south-east on North Street in Tharwa (1).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 235 m from the pin; a name word is in the title, description or categories; 2000 px; colour ok"
+   ]
+  }
+ ]
+}

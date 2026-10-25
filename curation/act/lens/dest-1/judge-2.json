@@ -1,0 +1,243 @@
+{
+ "dest:canberra:header": {
+  "candidates": [
+   {
+    "file": "Old and new Parliament Houses; Canberra Australia.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Featured picture from Lake Burley Griffin: Old and new Parliament House, hills, kayaks; 16:9 square crop keeps building and mast central",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Canberra (AU), Parliament House and Old Parliament House -- 2019 -- 1767.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "half sky, roof terrace foreground, axis view tiny",
+    "hero_crop": "fail: subject small and distant"
+   },
+   {
+    "file": "Canberra panorama from Mount Ainslie.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aspect 2.27 outside header 0.6-2.0 (also used as why3)",
+    "hero_crop": "n/a"
+   },
+   {
+    "file": "Parliament House at dusk, Canberra ACT.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "single building at dusk, not city in setting (used as why1)",
+    "hero_crop": "n/a"
+   }
+  ],
+  "choice": "Old and new Parliament Houses; Canberra Australia.jpg"
+ },
+ "dest:canberra:why1": {
+  "candidates": [
+   {
+    "file": "Parliament House at dusk, Canberra ACT.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Parliament House facade, flag mast, reflection; dusk on purpose (dark: true acceptable); 3:2 fits 1.6:1",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Canberra (AU), Parliament House and Old Parliament House -- 2019 -- 1767.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "roof terrace, building not clear",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Great Hall - Parliament of Australia.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "empty interior, not striking; likely official image",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Parliament House at dusk, Canberra ACT.jpg",
+  "dark": true,
+  "note": "dusk on purpose; add to dark-on-purpose if below floor"
+ },
+ "dest:canberra:why2": {
+  "candidates": [
+   {
+    "file": "Australian War Memorial front view.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Memorial front with Hall of Memory dome, central, clear at card size; 16:9 within 1.3-2.0",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Australian War Memorial, Canberra, 2017, 17.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "good courtyard view but foreground crowd dominates; second choice",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Australian War Memorial front view panorama 1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aspect 2.2, more empty sky",
+    "hero_crop": "n/a"
+   }
+  ],
+  "choice": "Australian War Memorial front view.jpg"
+ },
+ "dest:canberra:why3": {
+  "candidates": [
+   {
+    "file": "Canberra panorama from Mount Ainslie.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Anzac Parade from Mount Ainslie to Parliament, lake and ranges; 12142 px; subject central so a 1.6:1 crop shows middle 70% with the Parade and Parliament",
+    "hero_crop": "{x:0.5,y:0.5} ok (square shows 29-71%)"
+   },
+   {
+    "file": "Southern view of Canberra from Mount Ainslie lookout.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aspect 8.4 strip, 948 px high",
+    "hero_crop": "fail: sliver"
+   }
+  ],
+  "choice": "Canberra panorama from Mount Ainslie.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "dest:namadgi-national-park:header": {
+  "candidates": [
+   {
+    "file": "Mount Ginini - Namadgi National Park - 2.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Summit of Mount Ginini inside Namadgi: granite tors and ranges, colour 2006 photo, 1632 px (>=1500). Weak but the park itself; over half the frame is sky so zoom needed",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.62,
+     "zoom": 1.3
+    }
+   },
+   {
+    "file": "Looking towards Namadgi National Park from the district of Paddys River in the ACT.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "range seen across farmland and sheds, not the park itself",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Mount Aggie, Brindabella Range, Namadgi National Park 12.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "overcast, burnt dead trees, flat",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Mount Ginini - Namadgi National Park - 2.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.62,
+   "zoom": 1.3
+  },
+  "note": "crop checked by reasoning only for zoom; plain centre crop shows 14-86% width"
+ },
+ "dest:namadgi-national-park:why1": {
+  "candidates": [
+   {
+    "file": "Gibraltar Falls 1.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Gibraltar Falls cascade over granite (Category:Gibraltar Falls), 2288x1712, landscape; central",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Gibraltar Falls 8.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "portrait 1712x2288 fails landscape",
+    "hero_crop": "fail: portrait"
+   }
+  ],
+  "choice": "Gibraltar Falls 1.JPG"
+ },
+ "dest:namadgi-national-park:why3": {
+  "candidates": [
+   {
+    "file": "Yankee Hat art-MJC.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Yankee Hat Aboriginal paintings (file page, 2005): shows the rock art itself, 1600x1200; a close detail but the reason is the art",
+    "hero_crop": "ok"
+   },
+   {
+    "file": "Namadgi National Park - Yankee Hat (2).JPG",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "boulder and paddock, art not visible; setting only",
+    "hero_crop": "ok"
+   }
+  ],
+  "choice": "Yankee Hat art-MJC.jpg"
+ }
+}

@@ -1,0 +1,231 @@
+{
+ "group": "canberra-1",
+ "generated": "2026-10-25T06:31:41.003Z",
+ "slots": [
+  {
+   "slot": "dest:canberra:header",
+   "key": "Canberra",
+   "current": {
+    "file": "Old and new Parliament Houses; Canberra Australia.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "skip",
+   "flags": []
+  },
+  {
+   "slot": "dest:canberra:why1",
+   "key": "File:Parliament House at dusk, Canberra ACT.jpg",
+   "current": {
+    "file": "Parliament House at dusk, Canberra ACT.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "skip",
+   "flags": []
+  },
+  {
+   "slot": "dest:canberra:why2",
+   "key": "File:Australian War Memorial front view.jpg",
+   "current": {
+    "file": "Australian War Memorial front view.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "skip",
+   "flags": []
+  },
+  {
+   "slot": "dest:canberra:why3",
+   "key": "File:Canberra panorama from Mount Ainslie.jpg",
+   "current": {
+    "file": "Canberra panorama from Mount Ainslie.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "skip",
+   "flags": []
+  },
+  {
+   "slot": "spot:canberra-1",
+   "key": "Parliament House, Canberra",
+   "current": {
+    "file": "Parliament House at dusk, Canberra ACT.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 148 m from the pin; a name word is in the title, description or categories; 5505 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:canberra-2",
+   "key": "Australian War Memorial",
+   "current": {
+    "file": "Australian War Memorial front view.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-3",
+   "key": "National Gallery of Australia",
+   "current": {
+    "file": "National Gallery from SW, Canberra Australia.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 94 m from the pin; a name word is in the title, description or categories; 5023 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:canberra-4",
+   "key": "National Museum of Australia",
+   "current": {
+    "file": "National Museum of Australia logo.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-5",
+   "key": "Old Parliament House, Canberra",
+   "current": {
+    "file": "Museum of Australian Democracy, Old Parliament of Australia (Front face).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-6",
+   "key": "Questacon",
+   "current": {
+    "file": "Questacon - National Science and Technology Centre.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-7",
+   "key": "Australian National Botanic Gardens",
+   "current": {
+    "file": "National botanical gardens08.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-8",
+   "key": "Lake Burley Griffin",
+   "current": {
+    "file": "Lake Burley Griffin From Black Mountain Tower (cropped).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 2437 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-9",
+   "key": "National Arboretum Canberra",
+   "current": {
+    "file": "Canberra National Arboretum with Telstra Tower 2, Canberra ACT.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-10",
+   "key": "Mount Ainslie",
+   "current": {
+    "file": "Mount Ainslie.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 5517 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-11",
+   "key": "National Library of Australia",
+   "current": {
+    "file": "National Library of Australia-East side with reflection.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:canberra-12",
+   "key": "High Court of Australia",
+   "current": {
+    "file": "Coat of arms of the Commonwealth of Australia.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: excluded category or title (map/drawing/historical/...)",
+    "proof: 512 px wide (min 960)",
+    "proof: dated 1913"
+   ]
+  },
+  {
+   "slot": "spot:canberra-13",
+   "key": "Royal Australian Mint",
+   "current": {
+    "file": "Royal Australian Mint - panoramio.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 96 m from the pin; a name word is in the title, description or categories; 3606 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:canberra-14",
+   "key": "National Portrait Gallery (Australia)",
+   "current": {
+    "file": "National Portrait Gallery of Australia building (South face).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  }
+ ]
+}
