@@ -152,7 +152,7 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* ── My World map: the card's lower half, under the selector ── */}
+      {/* ── The panel under the selector: the map, then the sections for the chosen level ── */}
       <View style={styles.mapCard}>
 
         <View pointerEvents="none" style={styles.mapWrap}>
@@ -170,12 +170,12 @@ export default function ProfileScreen() {
             ))}
           </Svg>
         </View>
-      </View>
 
-      {/* Everything below follows the level chosen in My World's header. */}
+      {/* The sections below follow the level chosen in the selector: they sit inside the same panel as the map, under it,
+          so everything the selector controls is visibly part of it. */}
       {worldMode === 'countries' && (<>
       {/* ── Countries explored ──────────────────────────────────────── */}
-      <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+      <View style={styles.panelSection}>
         <View style={styles.cardHeaderRow}>
           <Text style={styles.cardTitle}>Countries Explored</Text>
           <Text style={styles.cardBadge}>{stats.totalCountries}</Text>
@@ -205,7 +205,7 @@ export default function ProfileScreen() {
       </View>
       {/* ── Top Countries ───────────────────────────────────────────── */}
       {visitedDests.length > 0 && (
-        <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+        <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Countries</Text>
             <Text style={styles.topBy}>by destinations</Text>
@@ -228,7 +228,7 @@ export default function ProfileScreen() {
 
       {/* ── Destinations: Destinations Explored, Top Destinations (by visited spots) ── */}
       {worldMode === 'destinations' && (<>
-        <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+        <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
             <Text style={styles.cardBadge}>{exploredDests.length}</Text>
@@ -249,7 +249,7 @@ export default function ProfileScreen() {
           )}
         </View>
         {topDestinations.length > 0 && (
-          <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+          <View style={styles.panelSection}>
             <View style={styles.cardHeaderRow}>
               <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Destinations</Text>
               <Text style={styles.topBy}>by spots</Text>
@@ -272,7 +272,7 @@ export default function ProfileScreen() {
 
       {/* ── Spots: Spots Explored ── */}
       {worldMode === 'spots' && (
-        <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+        <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
             <Text style={styles.cardBadge}>{exploredSpots.length}</Text>
@@ -294,6 +294,7 @@ export default function ProfileScreen() {
         </View>
       )}
 
+      </View>
     </ScrollView>
     </View>
   );
@@ -326,7 +327,9 @@ const styles = StyleSheet.create({
   },
   statItemOn:  { backgroundColor: '#ECFDF5' },
   statValueOn: { color: '#059669' },
-  // The map: the card's lower half, joined to the selector above it.
+  // A section inside the panel (Explored, Top …): separated from the map or the section above by a hairline.
+  panelSection: { padding: 16, borderTopWidth: 1, borderTopColor: '#F3F4F6' },
+  // The panel: the map and the level's sections, joined to the selector above it.
   mapCard: {
     marginHorizontal: 16, marginBottom: 14, overflow: 'hidden', backgroundColor: 'white',
     borderBottomLeftRadius: 18, borderBottomRightRadius: 18,
