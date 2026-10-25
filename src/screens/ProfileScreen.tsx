@@ -538,8 +538,8 @@ export default function ProfileScreen() {
       {worldMode === 'destinations' && (<>
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
-            {/* The title with its count beside it and the search's magnifier at the right; the search, once opened,
-                takes the whole line in their place. */}
+            {/* The title, and the search's magnifier at the right; the search, once opened, takes the whole line in their
+                place. */}
             {destSearchOpen ? (
               <FoldingSearch value={destQuery} placeholder="Search destinations or countries"
                 onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)}
@@ -547,7 +547,6 @@ export default function ProfileScreen() {
             ) : (<>
               <View style={styles.titleWithCount}>
                 <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
-                <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredDests.length}</Text></View>
               </View>
               {destSearchable && <SearchToggle onPress={() => toggleSearch(false, setDestSearchOpen, setDestQuery)} />}
             </>)}
@@ -635,7 +634,6 @@ export default function ProfileScreen() {
             ) : (<>
               <View style={styles.titleWithCount}>
                 <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
-                <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredSpots.length}</Text></View>
               </View>
               {spotSearchable && <SearchToggle onPress={() => toggleSearch(false, setSpotSearchOpen, setSpotQuery)} />}
             </>)}
@@ -902,10 +900,7 @@ const styles = StyleSheet.create({
   },
   cardTitle:  { fontSize: 15, fontWeight: '700', color: '#111827', marginBottom: 12 },
   cardBadge:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
-  // An Explored section's title with its count in an indigo pill right after it.
   titleWithCount: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
-  countPill:    { minWidth: 26, height: 22, paddingHorizontal: 8, borderRadius: 11, backgroundColor: '#EEF2FF', alignItems: 'center', justifyContent: 'center' },
-  countPillTxt: { fontSize: 13, fontWeight: '800', color: '#4F46E5' },
   searchInHeader: { flex: 1, marginBottom: 0, height: 34 },
   searchToggle: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: '#F3F4F6' },
 
