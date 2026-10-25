@@ -533,7 +533,7 @@ const SPOT_MINI_STYLE: any = {
 // unchanged. Nothing about WHEN a spot shows or takes its photo changes: only the moment of change is faded.
 const SPOT_FADE_SLOTS = 4;
 // A spot pin's fade in and out, and the cross-fade between its small and photo pins.
-const SPOT_PIN_FADE_IN_MS = 100;
+const SPOT_PIN_FADE_IN_MS = 210;
 const SPOT_PIN_FADE_OUT_MS = 170;
 type SpotFadePhase = 'idle' | 'running' | 'draining';
 type SpotFeature = GeoJSON.Feature<GeoJSON.Point>;
@@ -581,7 +581,10 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
         if (enterSlot < 0) { entering.current.delete(id); continue; }   // every enter layer busy: it shows at once
         entering.current.set(id, enterSlot);
       }
-      if (enterSlot >= 0) armed.current.enter.push(enterSlot);
+      // Its fade starts in this same update: an idle entering layer already rests at opacity 0, so the pins it gets now
+      // show from 0 whichever of the data or the opacity change reaches the map first. (Waiting a frame to start it held
+      // the new pins unseen while the JS thread was busy with a zoom, a visible pause after the destination's pin.)
+      if (enterSlot >= 0) { enterPhase.current[enterSlot] = 'running'; armed.current.enter.push(enterSlot); }
       shown.current = next;
     }
     const features: SpotFeature[] = [];
@@ -598,8 +601,8 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
     }
     return { type: 'FeatureCollection' as const, features };
   }, [shape, tick]);
-  // A slot armed in this render starts its fade a frame later (the layer has drawn its new pins at the starting opacity
-  // by then), and is cleared when the fade is done; the emptied layer returns to its resting opacity a frame after that.
+  // A slot armed in this render is cleared when its fade is done; the emptied layer returns to its resting opacity a
+  // frame after that.
   useEffect(() => {
     if (heldNew.current.length) {
       const ids = heldNew.current;
@@ -613,16 +616,12 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
     if (!enter.length && !exit.length) return;
     armed.current = { enter: [], exit: [] };
     const timers: ReturnType<typeof setTimeout>[] = [];
-    const raf = requestAnimationFrame(() => {
-      for (const k of enter) enterPhase.current[k] = 'running';
+    for (const k of enter) timers.push(setTimeout(() => {
+      for (const [id, slot] of entering.current) if (slot === k) entering.current.delete(id);
+      enterPhase.current[k] = 'draining';
       setTick(n => n + 1);
-      for (const k of enter) timers.push(setTimeout(() => {
-        for (const [id, slot] of entering.current) if (slot === k) entering.current.delete(id);
-        enterPhase.current[k] = 'draining';
-        setTick(n => n + 1);
-        requestAnimationFrame(() => { enterPhase.current[k] = 'idle'; setTick(n => n + 1); });
-      }, SPOT_PIN_FADE_IN_MS + 20));
-    });
+      requestAnimationFrame(() => { enterPhase.current[k] = 'idle'; setTick(n => n + 1); });
+    }, SPOT_PIN_FADE_IN_MS + 20));
     for (const k of exit) timers.push(setTimeout(() => {
       for (const [key, g] of ghosts.current) if (g.slot === k) ghosts.current.delete(key);
       exitPhase.current[k] = 'draining';
@@ -630,7 +629,7 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
       requestAnimationFrame(() => { exitPhase.current[k] = 'idle'; setTick(n => n + 1); });
     }, SPOT_PIN_FADE_OUT_MS + 20));
     // Not cancelled on re-render: each slot's fade runs to its end (a cleanup here would strand pins half-faded).
-    void raf; void timers;
+    void timers;
   });
   // Opacity of each slot's layers. Entering: 0 while idle (so pins added to it start unseen), 1 while running (faded in
   // over SPOT_PIN_FADE_IN_MS). Exiting: 1 while idle (a copy added to it shows exactly as the pin did), 0 while running.
