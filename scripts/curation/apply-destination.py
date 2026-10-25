@@ -2,6 +2,7 @@
 """Adds a NEW destination to src/data (Quill's final copy + Lens's agreed photos).
 
   python3 scripts/curation/apply-destination.py curation/<branch>/quill/<id>/final.json --picks picks.json [--dry-run]
+        [--before <id> | --after <id>]   (place it by popularity among its country's destinations of the same rank)
 
 final.json: { destination: { id, name, country, countryCode, timezone, continent, coordinates, category, defaultZoomSpanKm,
               rank, icon, tagline, description, whyVisit[2-4 by popularity], highlights[one per reason], goodToKnow[2-3 {icon,title,detail}, by popularity], bestMonths,
@@ -9,7 +10,8 @@ final.json: { destination: { id, name, country, countryCode, timezone, continent
 picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges; with
              --allow-missing-why a reason with no photo in any tier may be "" or null: it shows as a grey card)
 
-Writes the entry into src/data/destinations.ts after the last destination of the same country (or at the end), the header
+Writes the entry into src/data/destinations.ts among its country's destinations: after the last one of the same or a better
+rank (or at --before/--after <id>, chosen by popularity), since file order decides pin priority within a rank; the header
 into WIKI_IMAGE_OVERRIDES keyed by the destination's name, and `whyVisitPhotos` from picks. A destination with no
 accepted header is NOT added (check-destination-headers would fail and the pin would show an unrelated photo): the script
 refuses and says so. Add its spots afterwards with apply-placement.py --dest <id> --overrides <final.json>.
@@ -92,15 +94,33 @@ L = src.split('\n')
 end = len(L) - 1
 while end > 0 and L[end].strip() != '];':
     end -= 1
-# the last destination of this country: its closing '  },' is the line before the next '  {' of another country, or '];'
-last_close = None
+# Where it goes: the map gives photo pins by rank, then by place in this file (COVERAGE.md -> "Pin priority on the map"), so a
+# country's destinations are kept in popularity order within each rank. The new one goes after the last destination of its
+# country with the same or a better rank (before the first one ranked lower), unless --before/--after <id> names the place
+# the curator judged by popularity (visitor numbers, guidebook prominence). With no destination of its country yet: at the end.
+blocks = []   # (first line, closing line, id, rank) of each destination of this country
 for i, l in enumerate(L[:end]):
     if f"countryCode: '{d['countryCode']}'" in l:
+        j0 = i
+        while L[j0] != '  {':
+            j0 -= 1
         j = i
         while L[j] != '  },':
             j += 1
-        last_close = j
-at = last_close + 1 if last_close is not None else end
+        bid = re.search(r"id: '([^']+)'", '\n'.join(L[j0:j])).group(1)
+        brank = int(re.search(r'rank: (\d+)', '\n'.join(L[j0:j])).group(1))
+        blocks.append((j0, j, bid, brank))
+place = next((args[args.index(f) + 1], f) for f in ('--before', '--after') if f in args) if ('--before' in args or '--after' in args) else None
+if place:
+    hit = [b for b in blocks if b[2] == place[0]]
+    if not hit:
+        sys.exit(f"refusing: {place[1]} {place[0]}: no destination of {d['countryCode']} with that id")
+    at = hit[0][0] if place[1] == '--before' else hit[0][1] + 1
+elif blocks:
+    lower = [b for b in blocks if b[3] > d['rank']]
+    at = lower[0][0] if lower else blocks[-1][1] + 1
+else:
+    at = end
 L[at:at] = lines
 if not dry:
     open('src/data/destinations.ts', 'w').write('\n'.join(L))
