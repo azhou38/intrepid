@@ -1370,6 +1370,10 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
     const half = Math.min(90, Math.min(d.name.length, perLine) * 6.3 + 4) / 2;
     nameFoot.set(d.id, { l: -half, r: half, t: R + 3, b: R + 4 + lines * 13 + 1 });
   }
+  // The selected destination's pin and name show at every zoom, so zooming out keeps it on the map. Not with one of its
+  // spots selected: then the spot's pin is the one that persists, and the destination's follows the zoom rules like any
+  // other (it used to stay up beside the spot at continent zoom).
+  const forceDest = selectedSpot ? null : planDest;
   const selCC = planCountry?.countryCode ?? planDest?.countryCode;
   const selCountryZoom = selCC ? zoomForPanLatDelta(getCountryStampThreshold(selCC)) : Infinity;
   const spotU = selectedSpot ? unit(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude) : null;
@@ -1392,7 +1396,7 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
     if (spotU) { const x = spotU.x * scale, y = spotU.y * scale; pinTaken.push({ l: x - 75, r: x + 75, t: y - 60, b: y + 60 }); }
     for (const d of ordered) {
       if (pinAt.has(d.id)) continue;
-      if (planDest?.id === d.id) { pinAt.set(d.id, -1); pins.push(d.id); pinTaken.push(pinBox(d.id)); continue; }
+      if (forceDest?.id === d.id) { pinAt.set(d.id, -1); pins.push(d.id); pinTaken.push(pinBox(d.id)); continue; }
       if (destEligibleZoom(d, isDestVisited(d.id), selCC, selCountryZoom) > z + ZOOM_EPSILON) continue;
       const box = pinBox(d.id);
       if (pinTaken.some(t => hit(t, box))) continue;
@@ -1404,10 +1408,10 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
     for (const d of ordered) {
       if (!pinAt.has(d.id) || nameAt.has(d.id)) continue;
       const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
-      if (level !== undefined && z >= level - ZOOM_EPSILON && planDest?.id !== d.id) continue;
+      if (level !== undefined && z >= level - ZOOM_EPSILON && forceDest?.id !== d.id) continue;
       const box = nameBox(d.id);
-      if (planDest?.id !== d.id && nameTaken.some(t => hit(t, box))) continue;
-      nameAt.set(d.id, pinAt.get(d.id)! < 0 && planDest?.id === d.id ? -1 : i); names.push(d.id); nameTaken.push(box);
+      if (forceDest?.id !== d.id && nameTaken.some(t => hit(t, box))) continue;
+      nameAt.set(d.id, pinAt.get(d.id)! < 0 && forceDest?.id === d.id ? -1 : i); names.push(d.id); nameTaken.push(box);
     }
   }
   const tierOf = (i: number) => (i < 0 ? '' : `z${i}`);
