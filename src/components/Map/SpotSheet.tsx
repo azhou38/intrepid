@@ -812,6 +812,8 @@ function SpotSheet({
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
   const [panelsReady, revealPanels] = useDeferredMount(SPOT_PANEL_MOUNT_DELAY_MS);
+  // Set once an upward drag has asked for the full-screen content (see the pan's onUpdate), so it asks only once per drag.
+  const revealAskedSV = useSharedValue(false);
   const [carouselWindow, setCarouselWindow] = useState(CAROUSEL_WINDOW_AT_MOUNT);
   useEffect(() => { const t = setTimeout(() => setCarouselWindow(CAROUSEL_WINDOW), CAROUSEL_WIDEN_MS); return () => clearTimeout(t); }, []);
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
@@ -1039,12 +1041,17 @@ function SpotSheet({
     .failOffsetX([-10, 10])
     .onStart(() => {
       dragEngagedSV.value = false;
+      revealAskedSV.value = false;
       lastPos.value = slideAnim.value;
     })
     .onUpdate(e => {
       // A map pinch/pan in progress (or just finished) owns this touch: a finger that lands on this
       // sheet during a two-finger map gesture must not drag it (see mapGestureAtSV).
       if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) return;
+      // An upward drag is heading for full screen: mount the full-screen content now (revealPanels), while the finger is
+      // still moving, instead of when the sheet arrives. A swipe up within ~a second of opening used to land on a blank
+      // white sheet while that content was mounted.
+      if (e.translationY < -10 && !revealAskedSV.value) { revealAskedSV.value = true; runOnJS(revealPanels)(); }
       // Defense-in-depth mirror of the old directional check — activeOffsetY/failOffsetX
       // should already guarantee this, but costs nothing to double-check.
       if (Math.abs(e.translationX) >= Math.abs(e.translationY)) return;
@@ -1303,6 +1310,9 @@ isVisited ? (
         {/* An outgoing copy (leaving) only ever rests at half-screen or peek, where this whole
             full-screen layer is fully transparent (contentOpacityStyle) — so it skips it, keeping
             the copy cheap to mount in the busy commit that swaps sheets (MapScreen "Sheet swaps"). */}
+        {/* Until the full-screen content is mounted, the hero's dark backdrop stands in for it, so a quick swipe up shows
+            the photo area loading rather than a blank white sheet. */}
+        {!leaving && !panelsReady && <View pointerEvents="none" style={[st.heroBackdrop, { height: HERO_H - insets.bottom }]} />}
         {!leaving && panelsReady && (
         <GestureDetector gesture={tabSwipeGesture}>
         <View style={{ flex: 1 }}>
