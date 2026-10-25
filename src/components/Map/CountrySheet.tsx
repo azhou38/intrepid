@@ -349,24 +349,6 @@ function CountrySheet({
   // instantly instead of animating.
   const tabSwipeBaseSV = useSharedValue(0);
 
-  // The tabs are not equal thirds (the middle one is just its label's width, so the outer two have room for
-  // "Destinations (12)"), so the underline follows the tabs' measured centres.
-  const tabCentersSV = useSharedValue<number[]>([]);
-  const onTabLayout = (i: number, x: number, w: number) => {
-    const next = tabCentersSV.value.slice(0, TAB_ORDER.length);
-    next[i] = x + w / 2;
-    tabCentersSV.value = next;
-  };
-  const tabIndicatorStyle = useAnimatedStyle(() => {
-    const centers = tabCentersSV.value;
-    const n = TAB_ORDER.length;
-    const measured = centers.length >= n && centers.slice(0, n).every(c => typeof c === 'number');
-    const xs = TAB_ORDER.map((_, i) => -i * W).reverse();
-    if (!measured) {
-      return { left: `${interpolate(tabSlideAnim.value, xs, TAB_ORDER.map((_, i) => ((i + 0.5) * 100) / n).reverse(), Extrapolation.CLAMP)}%` as `${number}%`, marginLeft: -14 };
-    }
-    return { left: interpolate(tabSlideAnim.value, xs, centers.slice(0, n).reverse(), Extrapolation.CLAMP), marginLeft: -14 };
-  });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
   }));
@@ -946,7 +928,6 @@ function CountrySheet({
           {i > 0 && <View style={st.tabDivider} />}
           <Pressable
             style={[st.tabBtn, TAB_ORDER.length === 3 && i === 1 && st.tabBtnMiddle]}
-            onLayout={e => onTabLayout(i, e.nativeEvent.layout.x, e.nativeEvent.layout.width)}
             onPress={() => {
               // Tapping a subtab from half/bottom-screen expands to full, same as
               // DestinationSheet's own tab bar — the tab bar is only fully readable at
@@ -965,12 +946,10 @@ function CountrySheet({
                 {tab === 'visit' ? 'My Visit' : 'About'}
               </Text>
             )}
+            <TabUnderline index={i} slide={tabSlideAnim} />
           </Pressable>
         </React.Fragment>
       ))}
-      <Animated.View style={[st.tabIndicatorTrack, tabIndicatorStyle]}>
-        <View style={st.tabIndicator} />
-      </Animated.View>
     </>
   );
 
@@ -1309,6 +1288,15 @@ function CountrySheet({
   );
 }
 
+// The selected tab's underline: one per tab, centred under its own label (the tabs differ in width), shown in full on the
+// selected tab and cross-faded with its neighbour's as the panels are swiped between them.
+function TabUnderline({ index, slide }: { index: number; slide: SharedValue<number> }) {
+  const style = useAnimatedStyle(() => ({
+    opacity: interpolate(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], [0, 1, 0], Extrapolation.CLAMP),
+  }));
+  return <Animated.View pointerEvents="none" style={[st.tabUnderline, style]} />;
+}
+
 const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFill, zIndex: 200, elevation: 200 },
 
@@ -1398,8 +1386,7 @@ const st = StyleSheet.create({
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
   tabBtnTxtActive: { color: '#111827' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
-  tabIndicatorTrack: { position: 'absolute', bottom: 0, width: 28 },
-  tabIndicator: { width: 28, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
+  tabUnderline: { position: 'absolute', bottom: 0, alignSelf: 'center', width: 28, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
   // ── Tab content slide track ─────────────────────────────────────────────────
   slideTrack: { overflow: 'hidden', width: W },
