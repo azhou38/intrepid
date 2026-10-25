@@ -5,6 +5,12 @@ import * as Haptics from 'expo-haptics';
 import { X } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import CircleFlag from './CircleFlag';
+import EntityPhoto from './Map/EntityPhoto';
+import PhotoPlaceholder from './Map/PhotoPlaceholder';
+import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
+import { photoSubject } from '../utils/subjectCrop';
+import { NO_PHOTO } from '../data/imageOverrides';
+import { spotPhotoTitle } from '../data/spots';
 import SpotPinImages, { SPOT_MINI_PIN_VISITED } from './Map/SpotPinImages';
 import type { Destination } from '../types';
 import type { Spot } from '../data/spots';
@@ -22,7 +28,8 @@ const LEVELS: { level: WorldLevel; label: string }[] = [
 
 type Picked =
   | { kind: 'country'; code: string; name: string; dests: number; spots: number }
-  | { kind: 'place'; name: string; sub: string; code?: string };
+  // A destination or spot: its photo (the same small-photo key as the Profile's Explored rows), name, country and flag.
+  | { kind: 'place'; name: string; sub: string; code?: string; photoKey: string; photoTitle: string; icon?: string; category?: string };
 
 export default function WorldMapModal({
   visible, onClose, level, onLevelChange, visitedCountryCodes, countryName, dests, spots, countsByCountry, spotsByDest,
@@ -48,12 +55,14 @@ export default function WorldMapModal({
     features: level === 'destinations'
       ? dests.map(d => ({
         type: 'Feature', geometry: { type: 'Point', coordinates: [d.coordinates.longitude, d.coordinates.latitude] },
-        properties: { name: d.name, sub: d.country, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0 },
+        properties: { name: d.name, sub: d.country, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
+          photoKey: `pick_${d.id}`, photoTitle: d.name, icon: d.icon, category: d.category },
       }))
       : level === 'spots'
         ? spots.map(({ spot, country, countryCode }) => ({
           type: 'Feature', geometry: { type: 'Point', coordinates: [spot.coordinates.longitude, spot.coordinates.latitude] },
-          properties: { name: spot.name, sub: country, code: countryCode ?? '' },
+          properties: { name: spot.name, sub: country, code: countryCode ?? '',
+            photoKey: `pick_spot_${spot.id}`, photoTitle: spotPhotoTitle(spot), icon: spot.icon, category: spot.category },
         }))
         : [],
   }), [level, dests, spots, spotsByDest]);
@@ -70,7 +79,9 @@ export default function WorldMapModal({
           Haptics.selectionAsync();
           const n = Number(f.properties?.spots ?? 0);
           const sub = n > 0 ? `${f.properties?.sub} · ${n} spot${n === 1 ? '' : 's'} visited` : f.properties?.sub;
-          setPicked({ kind: 'place', name: f.properties?.name, sub, code: f.properties?.code || undefined });
+          const pr = f.properties ?? {};
+          setPicked({ kind: 'place', name: pr.name, sub, code: pr.code || undefined,
+            photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category });
           return;
         }
       } else {
@@ -200,10 +211,25 @@ export default function WorldMapModal({
               </>
             ) : (
               <>
-                {!!picked.code && <CircleFlag countryCode={picked.code} size={30} ring ringWidth={1.5} style={st.flagRing} />}
+                <View style={st.photo}>
+                  {NO_PHOTO.has(picked.photoTitle)
+                    ? <PhotoPlaceholder icon={picked.icon} category={picked.category} size={52} />
+                    : <EntityPhoto
+                        key={picked.photoKey}
+                        cacheKey={picked.photoKey}
+                        cache={thumbCache}
+                        load={() => getOrFetchWikiThumbnail(picked.photoKey, thumbCache, picked.photoTitle, 300)}
+                        subject={photoSubject(picked.photoTitle)}
+                        placeholderColor="#E5E7EB"
+                        fallback={<PhotoPlaceholder icon={picked.icon} category={picked.category} size={52} />}
+                      />}
+                </View>
                 <View style={{ flex: 1 }}>
                   <Text style={st.cardTitle} numberOfLines={1}>{picked.name}</Text>
-                  <Text style={st.cardSub} numberOfLines={1}>{picked.sub}</Text>
+                  <View style={st.subRow}>
+                    {!!picked.code && <CircleFlag countryCode={picked.code} size={13} />}
+                    <Text style={[st.cardSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{picked.sub}</Text>
+                  </View>
                 </View>
               </>
             )}
@@ -239,5 +265,7 @@ const st = StyleSheet.create({
   },
   cardTitle: { fontSize: 16, fontWeight: '700', color: '#111827' },
   cardSub: { fontSize: 13, color: '#6B7280', marginTop: 2 },
+  photo: { width: 52, height: 52, borderRadius: 12, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  subRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
   flagRing: { shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 3 },
 });
