@@ -3033,12 +3033,35 @@ const destItems = useMemo((): DestItem[] =>
         },
       });
     }
+    // The selected spot, drawn by the map in its own layers above every other spot pin (spotSelected*), with its name and a
+    // blue glow under it (spotSelectedGlow). It used to be swapped for an on-screen marker, which loaded its own photo (a grey
+    // disc while it did), trailed the map in a camera move, drew its name in another font, and arrived a render or more
+    // after the selection. Its photo is registered here if it was not (a spot shown as a small pin), and shown once it is.
+    if (selectedSpot) {
+      const visited = visitIndex.isSpotVisited(selectedSpot.id);
+      const img = spotPhotoImageName(selectedSpot.id, visited);
+      const selHasPhoto = specs.has(img);
+      if (!selHasPhoto && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
+      features.push({
+        type: 'Feature',
+        id: selectedSpot.id,
+        geometry: { type: 'Point', coordinates: [selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude] },
+        properties: {
+          id: selectedSpot.id,
+          mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
+          img: selHasPhoto ? img : '',
+          label: spotLabelLines(selectedSpot.name).join('\n'),
+          side: spotPhotoPlan?.nameAt.get(selectedSpot.id)?.side ?? 'left', sort: -2_000_000,
+          sel: 1,
+        },
+      });
+    }
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
     spotPhotoPrevRef.current = new Set(features.filter(f => f.properties!.img).map(f => String(f.properties!.id)));
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
     // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
     // collection to Mapbox each frame.
-    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}|${f.properties!.label ? 1 : 0}|${f.properties!.side}`).join(',');
+    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}|${f.properties!.label ? 1 : 0}|${f.properties!.side}|${f.properties!.sel ?? ''}`).join(',');
     const last = lastSpotShapeRef.current;
     if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
@@ -5519,13 +5542,29 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
+          {/* The selected spot's blue glow, under every pin: a soft disc behind its bubble (the native pin image's tip sits 2 pt
+              above the coordinate, its bubble centre a tail and a radius higher). */}
+          <MapboxGL.CircleLayer
+            id="spotSelectedGlow"
+            belowLayerID="destStampCircles"
+            filter={['==', ['get', 'sel'], 1] as any}
+            style={{
+              circleRadius: SPOT_PIN_SIZE / 2 + 8,
+              circleColor: '#2F6BFF',
+              circleOpacity: 0.45,
+              circleBlur: 0.45,
+              circleTranslate: [0, -(2 + 10 + SPOT_PIN_SIZE / 2)],
+              circleTranslateAnchor: 'viewport',
+              circlePitchAlignment: 'viewport',
+            }}
+          />
           {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
               collapsed to a core. It yields to the photo pin in Mapbox's own collision pass (see its style), so the two
               never show together. */}
           <MapboxGL.SymbolLayer
             id="spotMiniPins"
             belowLayerID="destStampCircles"
-            filter={['==', ['get', 'img'], ''] as any}
+            filter={['all', ['==', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]] as any}
             style={{
               iconImage: ['get', 'mini'] as any,
               iconAnchor: 'bottom',
@@ -5547,7 +5586,7 @@ const destItems = useMemo((): DestItem[] =>
           <MapboxGL.SymbolLayer
             id="spotPhotos"
             belowLayerID="destStampCircles"
-            filter={['!=', ['get', 'img'], ''] as any}
+            filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]] as any}
             style={{
               iconImage: ['get', 'img'] as any,
               iconAnchor: 'bottom',
@@ -5578,6 +5617,38 @@ const destItems = useMemo((): DestItem[] =>
               textHaloWidth: 1.5,
             }}
           />
+          {/* The selected spot, above every other spot pin: its small pin until its photo is registered, then its photo pin
+              and name, the same images and text as the layers above, always drawn. */}
+          <MapboxGL.SymbolLayer
+            id="spotSelectedMini"
+            belowLayerID="destStampCircles"
+            filter={['all', ['==', ['get', 'sel'], 1], ['==', ['get', 'img'], '']] as any}
+            style={{ iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
+          />
+          <MapboxGL.SymbolLayer
+            id="spotSelectedPhoto"
+            belowLayerID="destStampCircles"
+            filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
+            style={{
+              iconImage: ['get', 'img'] as any,
+              iconAnchor: 'bottom',
+              iconAllowOverlap: true,
+              iconIgnorePlacement: true,
+              textField: ['get', 'label'] as any,
+              textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+              textSize: 12,
+              textMaxWidth: 10,
+              textAnchor: ['case', ['==', ['get', 'side'], 'left'], 'right', 'left'] as any,
+              textOffset: ['case', ['==', ['get', 'side'], 'left'], ['literal', [-1.5, 0]], ['literal', [1.5, 0]]] as any,
+              textJustify: 'auto',
+              textTranslate: [0, -23],
+              textAllowOverlap: true,
+              textIgnorePlacement: true,
+              textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
+              textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
+              textHaloWidth: 1.5,
+            }}
+          />
         </MapboxGL.ShapeSource>
 
         {/* All MarkerViews require the map style to be loaded before Mapbox can
@@ -5594,50 +5665,7 @@ const destItems = useMemo((): DestItem[] =>
             Memoized above so pins don't re-sync (and flicker) on every pan frame. */}
         {destPhotoMarkers}
 
-        {/* Spot pins — teardrop markers whose pointed tip sits on the exact coordinate.
-            Solid-or-hidden like every other pin: visibility is a binary zoom cutoff
-            (visibleSpots' per-destination isPastDestDefaultZoom gate) and the
-            appearance/disappearance itself is the FadePin mount/exit cross-fade — never a
-            continuous zoom-tied opacity, which could leave pins resting half-faded when the
-            camera settled mid-ramp.
-            Rendered after the country pills and destination photos, in depth order (see spotsByDepth:
-            lower on the map = in front). Not reordered when the selection changes: moving a keyed
-            MarkerView means removing and re-adding its native view, which made pins blink. */}
-        {spotsByDepth.map(({ item: spot, exiting }) => {
-          const isSelectedSpot = selectedSpot?.id === spot.id;
-          const isVisitedSpot = visitIndex.isSpotVisited(spot.id);
-          return (
-            <SpotMarker
-              key={spot.id}
-              spot={spot}
-              isVisited={isVisitedSpot}
-              isSelected={isSelectedSpot}
-              exiting={exiting}
-              isSatellite={mapType === 'satellite'}
-              labelSide={markerLabelSide(spot.id)}
-              onPress={onSpotPinPress}
-            />
-          );
-        })}
-        {/* The selected spot is drawn a second time on top of everything else. MarkerViews stack by when
-            they were MOUNTED, not by JSX order, and reordering the keyed list would remove and
-            re-add native views (the pins blinked when that was tried). So instead this identical
-            copy is mounted after the rest — and re-keyed whenever the set of spot pins changes, so
-            a pin that appears later can never end up over it. The original stays put underneath, so
-            a re-mount of the copy is never visible. */}
-        {selectedSpot && renderedSpots.some(r => r.item.id === selectedSpot.id && !r.exiting) && (
-          <SpotMarker
-            key={`top-${selectedSpot.id}-${renderedSpots.length}`}
-            spot={selectedSpot}
-            isVisited={visitIndex.isSpotVisited(selectedSpot.id)}
-            isSelected
-            exiting={false}
-            instant
-            isSatellite={mapType === 'satellite'}
-            labelSide={markerLabelSide(selectedSpot.id)}
-            onPress={handleSpotPress}
-          />
-        )}
+        {/* The selected spot is drawn by the map itself (spotSelected* in the spotPins source), not as a marker. */}
 
 
         </>}
