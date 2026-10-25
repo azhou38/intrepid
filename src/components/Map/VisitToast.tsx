@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Animated, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Animated, Easing, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Check } from 'lucide-react-native';
 
 // The bar that follows a one-tap "Mark Visited": "Marked visited · Add details · Undo", for a few
@@ -22,26 +22,34 @@ export function VisitToastHost({ bottom }: { bottom: number }) {
 
   const hide = useCallback(() => {
     if (timer.current) { clearTimeout(timer.current); timer.current = null; }
-    Animated.timing(anim, { toValue: 0, duration: 160, useNativeDriver: true }).start(({ finished }) => { if (finished) setToast(null); });
+    Animated.timing(anim, { toValue: 0, duration: 220, easing: Easing.in(Easing.cubic), useNativeDriver: true })
+      .start(({ finished }) => { if (finished) setToast(null); });
   }, [anim]);
 
   useEffect(() => {
     listener = t => {
       if (timer.current) clearTimeout(timer.current);
-      setToast({ ...t, key: Date.now() });
       anim.setValue(0);
-      Animated.timing(anim, { toValue: 1, duration: 200, useNativeDriver: true }).start();
+      setToast({ ...t, key: Date.now() });
       timer.current = setTimeout(hide, SHOW_MS);
     };
     return () => { listener = null; if (timer.current) clearTimeout(timer.current); };
   }, [anim, hide]);
+
+  // The fade starts once the bar is on screen: started together with setToast, it ran (natively) before the view had
+  // mounted, and the bar appeared at full opacity at once.
+  useEffect(() => {
+    if (!toast) return;
+    anim.setValue(0);
+    Animated.timing(anim, { toValue: 1, duration: 320, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
+  }, [toast?.key]);
 
   if (!toast) return null;
   const run = (fn?: () => void) => () => { hide(); fn?.(); };
   return (
     <Animated.View
       pointerEvents="box-none"
-      style={[st.wrap, { bottom, opacity: anim, transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}
+      style={[st.wrap, { bottom, opacity: anim, transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [12, 0] }) }, { scale: anim.interpolate({ inputRange: [0, 1], outputRange: [0.97, 1] }) }] }]}
     >
       <View style={st.bar}>
         <View style={st.icon}><Check size={13} color="white" strokeWidth={3} /></View>
