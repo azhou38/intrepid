@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
 import { Search, X } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -76,16 +76,54 @@ export default function ProfileScreen() {
   // slide beneath. Before that its top strip is see-through, over the bottom of the full profile header.
   const scrollSV = useSharedValue(0);
   const stickyYSV = useSharedValue(1e6);
+  // On the UI thread, so the morphing avatar and name keep step with the page.
+  const onPageScroll = useAnimatedScrollHandler(e => { scrollSV.value = e.contentOffset.y; });
   // Each style reads both values itself: a style re-runs only for the shared values it reads directly, not ones read
   // inside a helper it calls (with a shared stuckT() helper the bar never filled in).
   const stuckStyle = useAnimatedStyle(() => {
     const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
     return { backgroundColor: `rgba(249,250,251,${t})`, borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
   });
-  const compactStyle = useAnimatedStyle(() => {
-    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
-    return { opacity: t, transform: [{ translateY: (1 - t) * 6 }] };
+  // The avatar and name morph from the full header into the pinned bar: they are drawn once, in a layer over the page
+  // (the header's own copies are kept only for layout), and as the page scrolls from the top to where the bar pins they
+  // slide and shrink from their place in the header to a small row centred in the bar's top strip. headerSV holds where
+  // the header's avatar and name sit in the scroll content ({ ax, ay, nx, ny, nw, nh }; nw 0 until measured).
+  const headerSV = useSharedValue({ ax: 16, ay: 16, nx: 86, ny: 0, nw: 0, nh: 0 });
+  const [morphReady, setMorphReady] = useState(false);
+  const [nameW, setNameW] = useState(0);
+  const morphP = (s: number, pin: number) => { 'worklet'; return Math.min(1, Math.max(0, s / Math.max(1, pin))); };
+  const avatarMorph = useAnimatedStyle(() => {
+    const s = scrollSV.value, h = headerSV.value, p = morphP(s, stickyYSV.value);
+    const rowW = MINI_AVATAR + 8 + h.nw * NAME_K;
+    const left = (SCREEN_W - rowW) / 2;
+    const cx = (h.ax + AVATAR / 2) + ((left + MINI_AVATAR / 2) - (h.ax + AVATAR / 2)) * p;
+    const cy = (h.ay + AVATAR / 2 - s) + (COMPACT_H / 2 - (h.ay + AVATAR / 2 - s)) * p;
+    return { opacity: h.nw > 0 ? 1 : 0, transform: [{ translateX: cx - AVATAR / 2 }, { translateY: cy - AVATAR / 2 }, { scale: 1 + (MINI_AVATAR / AVATAR - 1) * p }] };
   });
+  const nameMorph = useAnimatedStyle(() => {
+    const s = scrollSV.value, h = headerSV.value, p = morphP(s, stickyYSV.value);
+    const rowW = MINI_AVATAR + 8 + h.nw * NAME_K;
+    const left = (SCREEN_W - rowW) / 2;
+    const cx = (h.nx + h.nw / 2) + ((left + MINI_AVATAR + 8 + h.nw * NAME_K / 2) - (h.nx + h.nw / 2)) * p;
+    const cy = (h.ny + h.nh / 2 - s) + (COMPACT_H / 2 - (h.ny + h.nh / 2 - s)) * p;
+    return { width: h.nw, opacity: h.nw > 0 ? 1 : 0, transform: [{ translateX: cx - h.nw / 2 }, { translateY: cy - h.nh / 2 }, { scale: 1 + (NAME_K - 1) * p }] };
+  });
+  // The line under the name fades as the name leaves it.
+  const subFade = useAnimatedStyle(() => ({ opacity: 1 - morphP(scrollSV.value, stickyYSV.value) }));
+  // Where the column holding the name sits in the header, and the header in the content (the name's own layout is
+  // relative to the column).
+  const headerLayout = useRef({ hx: 16, hy: 16, hh: AVATAR, cx: 70, cy: 0, nx: 0, ny: 0, nh: 0 });
+  // Called from each of the three layouts (header, column, name) and when the name's width is known, in whatever
+  // order they arrive.
+  const placeHeader = () => {
+    const hl = headerLayout.current;
+    if (!hl.nh) return;
+    headerSV.value = {
+      ax: hl.hx, ay: hl.hy + (hl.hh - AVATAR) / 2,
+      nx: hl.hx + hl.cx + hl.nx, ny: hl.hy + hl.cy + hl.ny, nh: hl.nh, nw: nameW,
+    };
+  };
+  useEffect(placeHeader, [nameW]);
   const selectorWSV = useSharedValue(0);
   const pillStyle = useAnimatedStyle(() => {
     const itemW = Math.max(0, (selectorWSV.value - 2) / 3);
@@ -192,11 +230,11 @@ export default function ProfileScreen() {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
     {/* The name and level selector (child 0) pin to the top while the sections the selector controls scroll beneath. */}
-    <ScrollView
+    <Animated.ScrollView
       style={styles.container}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
-      onScroll={e => { scrollSV.value = e.nativeEvent.contentOffset.y; }}
+      onScroll={onPageScroll}
       scrollEventThrottle={16}
       stickyHeaderIndices={[1]}
       keyboardDismissMode="on-drag"
@@ -207,17 +245,31 @@ export default function ProfileScreen() {
       {/* ── Profile header ──────────────────────────────────────────── */}
       {/* Where the pinned bar starts is measured here: the bar's own onLayout reads 0, inside the sticky wrapper the
           ScrollView puts round it. It starts 16 below the header (its margin), less its overlapping top strip. */}
-      <View style={styles.profileHeader} onLayout={e => { const l = e.nativeEvent.layout; stickyYSV.value = l.y + l.height + 16 - COMPACT_H; }}>
-        <View style={styles.avatar}>
+      <View style={styles.profileHeader} onLayout={e => {
+        const l = e.nativeEvent.layout;
+        stickyYSV.value = l.y + l.height + 16 - COMPACT_H;
+        Object.assign(headerLayout.current, { hx: l.x, hy: l.y, hh: l.height });
+        placeHeader();
+      }}>
+        {/* Kept for layout; the visible avatar and name are the morphing copies over the page. */}
+        <View style={[styles.avatar, morphReady && { opacity: 0 }]}>
           <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
         </View>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.profileName}>{userName}</Text>
-          <Text style={styles.profileSub}>
+        <View style={{ flex: 1 }} onLayout={e => { Object.assign(headerLayout.current, { cx: e.nativeEvent.layout.x, cy: e.nativeEvent.layout.y }); placeHeader(); }}>
+          <Text
+            style={[styles.profileName, morphReady && { opacity: 0 }]}
+            numberOfLines={1}
+            onLayout={e => {
+              const l = e.nativeEvent.layout;
+              Object.assign(headerLayout.current, { nx: l.x, ny: l.y, nh: l.height });
+              placeHeader();
+            }}
+          >{userName}</Text>
+          <Animated.Text style={[styles.profileSub, subFade]}>
             {stats.firstVisitDate
               ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
               : 'World Traveler'}
-          </Text>
+          </Animated.Text>
         </View>
       </View>
 
@@ -227,14 +279,6 @@ export default function ProfileScreen() {
           component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
       <View style={{ marginTop: -COMPACT_H }}>
       <Animated.View style={[styles.selectorSticky, stuckStyle]}>
-        {/* The small centred avatar and name, shown only while the bar is pinned. */}
-        <Animated.View pointerEvents="none" style={[styles.compactHeader, compactStyle]}>
-          <View style={styles.compactAvatar}>
-            <Text style={styles.compactAvatarText}>{userName.charAt(0).toUpperCase()}</Text>
-          </View>
-          <Text style={styles.compactName} numberOfLines={1}>{userName}</Text>
-        </Animated.View>
-
         <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
           {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
           <Animated.View pointerEvents="none" style={[styles.selectorPill, pillStyle]} />
@@ -534,7 +578,16 @@ export default function ProfileScreen() {
           )}
         </View>
       )}
-    </ScrollView>
+    </Animated.ScrollView>
+    {/* The morphing avatar and name, over the page and the pinned bar (see avatarMorph). */}
+    <View pointerEvents="none" style={[StyleSheet.absoluteFill, { top: insets.top }]}>
+      <Animated.View style={[styles.avatar, styles.morphLayer, avatarMorph]}>
+        <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
+      </Animated.View>
+      <Animated.Text style={[styles.profileName, styles.morphLayer, nameMorph]} numberOfLines={1}>{userName}</Animated.Text>
+      {/* Measures the name's natural width (the header's Text stretches to its column). */}
+      <Text style={[styles.profileName, styles.measure]} onLayout={e => { setNameW(Math.ceil(e.nativeEvent.layout.width)); setMorphReady(true); }}>{userName}</Text>
+    </View>
     <WorldMapModal
       visible={mapOpen}
       onClose={() => setMapOpen(false)}
@@ -568,6 +621,9 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 
 // The pinned bar's top strip, holding its small avatar and name.
 const COMPACT_H = 40;
+// The header's avatar and the pinned bar's small one, and how far the name shrinks into the bar (22 pt → 16 pt).
+const AVATAR = 56, MINI_AVATAR = 26, NAME_K = 16 / 22;
+const SCREEN_W = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
@@ -584,17 +640,9 @@ const styles = StyleSheet.create({
   avatarText:  { fontSize: 22, fontWeight: '800', color: 'white' },
   profileName: { fontSize: 22, fontWeight: '800', color: '#111827' },
   profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2 },
-  // The pinned bar's own small avatar and name, in its top strip (COMPACT_H tall).
-  compactHeader: {
-    position: 'absolute', top: 0, left: 16, right: 16, height: COMPACT_H,
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-  },
-  compactAvatar: {
-    width: 26, height: 26, borderRadius: 13,
-    backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
-  },
-  compactAvatarText: { fontSize: 12, fontWeight: '800', color: 'white' },
-  compactName: { fontSize: 16, fontWeight: '700', color: '#111827', flexShrink: 1 },
+  // The morphing avatar and name: placed by transform from the layer's top-left corner.
+  morphLayer: { position: 'absolute', top: 0, left: 0 },
+  measure: { position: 'absolute', top: 0, left: 0, opacity: 0 },
 
   // Stats row
   // The level selector: pinned while scrolling (on the page colour, so nothing shows round its corners). The selected
