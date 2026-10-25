@@ -277,6 +277,11 @@ export default function ProfileScreen() {
       onScroll={onPageScroll}
       scrollEventThrottle={16}
       stickyHeaderIndices={[1]}
+      // Never left half-way between the full header and the pinned bar: a scroll that ends in the transition settles at
+      // the top or where the bar is fully pinned, whichever is nearer; past that the page scrolls freely.
+      snapToOffsets={[0, 16 + headerH + 16 - COMPACT_H]}
+      snapToEnd={false}
+      decelerationRate="normal"
       keyboardDismissMode="on-drag"
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
