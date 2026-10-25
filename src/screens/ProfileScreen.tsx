@@ -189,7 +189,7 @@ export default function ProfileScreen() {
                 onPress={() => { flagTapRef.current = true; Haptics.selectionAsync(); setFlagTip(t => (t === code ? null : code)); }}
                 hitSlop={3}
               >
-                <CircleFlag countryCode={code} size={24} />
+                <CircleFlag countryCode={code} size={24} ring ringWidth={1.5} style={styles.flagRing} />
                 {flagTip === code && (
                   <View pointerEvents="none" style={styles.flagTipWrap}>
                     <View style={styles.flagTip}>
@@ -212,7 +212,7 @@ export default function ProfileScreen() {
           </View>
           {topCountries.map(({ country, count, code }) => (
             <View key={code} style={styles.countryRow}>
-              <CircleFlag countryCode={code} size={22} />
+              <CircleFlag countryCode={code} size={22} ring ringWidth={1.5} style={styles.flagRing} />
               <Text style={styles.countryName} numberOfLines={1}>{country}</Text>
               <View style={styles.countryBarTrack}>
                 <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
@@ -240,7 +240,7 @@ export default function ProfileScreen() {
               <View style={styles.chipWrap}>
                 {exploredDests.map(d => (
                   <View key={d.id} style={styles.chip}>
-                    <CircleFlag countryCode={d.countryCode} size={16} />
+                    <CircleFlag countryCode={d.countryCode} size={16} ring ringWidth={1.5} style={styles.flagRing} />
                     <Text style={styles.chipTxt} numberOfLines={1}>{d.name}</Text>
                   </View>
                 ))}
@@ -257,7 +257,7 @@ export default function ProfileScreen() {
             <ScrollView style={styles.topScroll} nestedScrollEnabled showsVerticalScrollIndicator={topDestinations.length > 8}>
               {topDestinations.map(({ dest, count }) => (
                 <View key={dest.id} style={styles.countryRow}>
-                  <CircleFlag countryCode={dest.countryCode} size={22} />
+                  <CircleFlag countryCode={dest.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} />
                   <Text style={[styles.countryName, styles.destName]} numberOfLines={1}>{dest.name}</Text>
                   <View style={styles.countryBarTrack}>
                     <View style={[styles.countryBarFill, { width: `${(count / maxDestCount) * 100}%` }]} />
@@ -384,6 +384,8 @@ const styles = StyleSheet.create({
   // Flag grid
   flagGrid:  { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   flagItem:  { alignItems: 'center' },
+  // Every flag here in the map's frame: a thin white ring with a soft shadow (the country pills and breadcrumb flags).
+  flagRing:  { shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 3 },
   // The name bubble over a tapped flag: centred above it, with a small pointer underneath.
   flagTipWrap:  { position: 'absolute', bottom: 30, left: -80, right: -80, alignItems: 'center' },
   flagTip:      { backgroundColor: '#111827', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5, maxWidth: 184 },
