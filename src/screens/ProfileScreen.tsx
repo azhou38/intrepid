@@ -538,23 +538,24 @@ export default function ProfileScreen() {
       {worldMode === 'destinations' && (<>
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
-            {/* The title with its count beside it; the search's magnifier at the right. */}
-            <View style={styles.titleWithCount}>
-              <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
-              <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredDests.length}</Text></View>
-            </View>
-            {destSearchable && <SearchToggle open={destSearchOpen} onPress={() => toggleSearch(destSearchOpen, setDestSearchOpen, setDestQuery)} />}
+            {/* The title with its count beside it and the search's magnifier at the right; the search, once opened,
+                takes the whole line in their place. */}
+            {destSearchOpen ? (
+              <FoldingSearch value={destQuery} placeholder="Search destinations"
+                onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)}
+                onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
+            ) : (<>
+              <View style={styles.titleWithCount}>
+                <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
+                <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredDests.length}</Text></View>
+              </View>
+              {destSearchable && <SearchToggle onPress={() => toggleSearch(false, setDestSearchOpen, setDestQuery)} />}
+            </>)}
           </View>
           {exploredDests.length === 0 ? (
             <Text style={styles.topEmpty}>No destinations visited yet.</Text>
           ) : (
             <>
-            {/* Search: a destination's name (a country is picked from the chips). Folded away behind the magnifier in the
-                header until wanted; offered once there are enough to need it. */}
-            {destSearchable && (
-              <FoldingSearch open={destSearchOpen} value={destQuery} placeholder="Search destinations"
-                onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)} onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
-            )}
             {/* Filter by country: All, then each country with visited destinations (flag, name, count). */}
             {destCountries.length > 1 && (
               <CountryChips countries={destCountries} total={exploredDests.length} selected={destCountry} query={q}
@@ -627,22 +628,22 @@ export default function ProfileScreen() {
       {worldMode === 'spots' && (
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
-            <View style={styles.titleWithCount}>
-              <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
-              <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredSpots.length}</Text></View>
-            </View>
-            {spotSearchable && <SearchToggle open={spotSearchOpen} onPress={() => toggleSearch(spotSearchOpen, setSpotSearchOpen, setSpotQuery)} />}
+            {spotSearchOpen ? (
+              <FoldingSearch value={spotQuery} placeholder="Search spots or destinations"
+                onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)}
+                onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
+            ) : (<>
+              <View style={styles.titleWithCount}>
+                <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
+                <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredSpots.length}</Text></View>
+              </View>
+              {spotSearchable && <SearchToggle onPress={() => toggleSearch(false, setSpotSearchOpen, setSpotQuery)} />}
+            </>)}
           </View>
           {exploredSpots.length === 0 ? (
             <Text style={styles.topEmpty}>No spots visited yet.</Text>
           ) : (
             <>
-            {/* Search: a spot's or its destination's name (a country is picked from the chips). Folded away behind the
-                magnifier in the header until wanted; offered once there are enough to need it. */}
-            {spotSearchable && (
-              <FoldingSearch open={spotSearchOpen} value={spotQuery} placeholder="Search spots or destinations"
-                onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)} onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
-            )}
             {spotCountries.length > 1 && (
               <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
                 onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
@@ -757,23 +758,22 @@ function CountryChips({ countries, total, selected, query, onSelect, onClearQuer
   );
 }
 
-// The magnifier in an Explored section's header that unfolds its search (a close mark while it is open).
-function SearchToggle({ open, onPress }: { open: boolean; onPress: () => void }) {
+// The magnifier in an Explored section's header that opens its search.
+function SearchToggle({ onPress }: { onPress: () => void }) {
   return (
-    <Pressable onPress={onPress} hitSlop={10} style={styles.searchToggle} accessibilityLabel={open ? 'Close search' : 'Search'}>
-      {open ? <X size={14} color="#6B7280" strokeWidth={2.5} /> : <Search size={15} color="#6B7280" strokeWidth={2.3} />}
+    <Pressable onPress={onPress} hitSlop={10} style={styles.searchToggle} accessibilityLabel="Search">
+      <Search size={15} color="#6B7280" strokeWidth={2.3} />
     </Pressable>
   );
 }
 
-// An Explored section's search box, shown only while unfolded: it opens with the keyboard up, its close mark clears it
-// and folds it away, and leaving it empty folds it away too.
-function FoldingSearch({ open, value, placeholder, onChangeText, onClose, onBlurEmpty }: {
-  open: boolean; value: string; placeholder: string; onChangeText: (t: string) => void; onClose: () => void; onBlurEmpty: () => void;
+// An Explored section's search box, in its header line in place of the title while open: it opens with the keyboard
+// up, its close mark clears it and folds it away, and leaving it empty folds it away too.
+function FoldingSearch({ value, placeholder, onChangeText, onClose, onBlurEmpty }: {
+  value: string; placeholder: string; onChangeText: (t: string) => void; onClose: () => void; onBlurEmpty: () => void;
 }) {
-  if (!open) return null;
   return (
-    <View style={styles.searchBox}>
+    <View style={[styles.searchBox, styles.searchInHeader]}>
       <Search size={14} color="#9CA3AF" />
       <TextInput
         style={styles.searchInput}
@@ -899,6 +899,7 @@ const styles = StyleSheet.create({
   titleWithCount: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
   countPill:    { minWidth: 26, height: 22, paddingHorizontal: 8, borderRadius: 11, backgroundColor: '#EEF2FF', alignItems: 'center', justifyContent: 'center' },
   countPillTxt: { fontSize: 13, fontWeight: '800', color: '#4F46E5' },
+  searchInHeader: { flex: 1, marginBottom: 0, height: 34 },
   searchToggle: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: '#F3F4F6' },
 
   // My World
