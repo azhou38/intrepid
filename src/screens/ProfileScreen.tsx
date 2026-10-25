@@ -84,6 +84,19 @@ export default function ProfileScreen() {
   const maxDestCount = topDestinations[0]?.count ?? 1;
   // The Explored lists for destinations and spots, alphabetical.
   const exploredDests = useMemo(() => [...visitedDests].sort((x, y) => x.name.localeCompare(y.name)), [visitedDests]);
+  // Destinations Explored can be filtered to one country: the countries with visited destinations, most first.
+  const [destCountry, setDestCountry] = useState<string | null>(null);
+  const destCountries = useMemo(() => {
+    const m = new Map<string, { code: string; name: string; count: number }>();
+    for (const d of visitedDests) {
+      const r = m.get(d.countryCode) ?? { code: d.countryCode, name: d.country, count: 0 };
+      r.count += 1; m.set(d.countryCode, r);
+    }
+    return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
+  }, [visitedDests]);
+  const shownDests = useMemo(
+    () => (destCountry ? exploredDests.filter(d => d.countryCode === destCountry) : exploredDests),
+    [exploredDests, destCountry]);
   const exploredSpots = useMemo(() => [...visitedSpots].sort((x, y) => x.name.localeCompare(y.name)), [visitedSpots]);
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
@@ -289,9 +302,30 @@ export default function ProfileScreen() {
           {exploredDests.length === 0 ? (
             <Text style={styles.topEmpty}>No destinations visited yet.</Text>
           ) : (
-            <ScrollView style={styles.exploredScroll} nestedScrollEnabled showsVerticalScrollIndicator={exploredDests.length > 24}>
+            <>
+            {/* Filter by country: All, then each country with visited destinations (flag, name, count). */}
+            {destCountries.length > 1 && (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}>
+                {[{ code: null as string | null, name: 'All', count: exploredDests.length }, ...destCountries].map(c => {
+                  const on = destCountry === c.code;
+                  return (
+                    <Pressable key={c.code ?? 'all'} style={[styles.filterChip, on && styles.filterChipOn]} hitSlop={4}
+                      onPress={() => {
+                        Haptics.selectionAsync();
+                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+                        setDestCountry(on && c.code ? null : c.code);
+                      }}>
+                      {!!c.code && <CircleFlag countryCode={c.code} size={14} />}
+                      <Text style={[styles.filterTxt, on && styles.filterTxtOn]} numberOfLines={1}>{c.name}</Text>
+                      <Text style={[styles.filterCount, on && styles.filterTxtOn]}>{c.count}</Text>
+                    </Pressable>
+                  );
+                })}
+              </ScrollView>
+            )}
+            <ScrollView style={styles.exploredScroll} nestedScrollEnabled showsVerticalScrollIndicator={shownDests.length > 24}>
               <View style={styles.chipWrap}>
-                {exploredDests.map(d => (
+                {shownDests.map(d => (
                   <View key={d.id} style={styles.chip}>
                     <CircleFlag countryCode={d.countryCode} size={16} ring ringWidth={1.5} style={styles.flagRing} />
                     <Text style={styles.chipTxt} numberOfLines={1}>{d.name}</Text>
@@ -299,6 +333,7 @@ export default function ProfileScreen() {
                 ))}
               </View>
             </ScrollView>
+            </>
           )}
         </View>
         {topDestinations.length > 0 && (
@@ -438,6 +473,15 @@ const styles = StyleSheet.create({
                 paddingLeft: 6, paddingRight: 10, paddingVertical: 5, borderRadius: 14, backgroundColor: '#F3F4F6' },
   chipTxt:    { fontSize: 13, fontWeight: '600', color: '#374151', flexShrink: 1 },
   chipIcon:   { fontSize: 13 },
+  // Destinations Explored's country filter: a sideways row of chips; the chosen one is green.
+  filterScroll: { marginHorizontal: -16, marginBottom: 10, flexGrow: 0 },
+  filterRow:    { paddingHorizontal: 16, gap: 6 },
+  filterChip:   { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 10, paddingVertical: 6,
+                  borderRadius: 14, borderWidth: 1, borderColor: '#E5E7EB', backgroundColor: 'white' },
+  filterChipOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
+  filterTxt:    { fontSize: 12, fontWeight: '600', color: '#374151' },
+  filterTxtOn:  { color: '#047857' },
+  filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // Top Destinations: up to about eight rows, then it scrolls.
   topScroll:  { maxHeight: 300 },
   destName:   { width: 110 },
