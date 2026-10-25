@@ -533,7 +533,7 @@ const SPOT_MINI_STYLE: any = {
 // unchanged. Nothing about WHEN a spot shows or takes its photo changes: only the moment of change is faded.
 const SPOT_FADE_SLOTS = 4;
 // A spot pin's fade in and out, and the cross-fade between its small and photo pins.
-const SPOT_PIN_FADE_IN_MS = 170;
+const SPOT_PIN_FADE_IN_MS = 100;
 const SPOT_PIN_FADE_OUT_MS = 170;
 type SpotFadePhase = 'idle' | 'running' | 'draining';
 type SpotFeature = GeoJSON.Feature<GeoJSON.Point>;
