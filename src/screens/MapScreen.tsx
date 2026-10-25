@@ -122,7 +122,7 @@ import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec }
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
 import SpotPhotoImages, { spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
-import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
+import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED, SPOT_SELECTED_GLOW, GLOW_MARGIN } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -5576,21 +5576,21 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* The selected spot's blue glow, under every pin: a soft disc behind its bubble (the native pin image's tip sits 2 pt
-              above the coordinate, its bubble centre a tail and a radius higher). Only once its photo pin is drawn (img set): it
-              used to show on its own while the photo was still being registered, and the pin followed a moment later. */}
-          <MapboxGL.CircleLayer
+          {/* The selected spot's blue glow, under every pin: the pin's own teardrop outline in soft blue (SpotPinImages'
+              SPOT_SELECTED_GLOW), so the shading runs evenly round the bubble and the tail. Its image reaches GLOW_MARGIN past
+              the pin, so it is shifted down by that much to put its tip on the pin's. Only once the photo pin is drawn (img
+              set): it used to show on its own while the photo was still being registered. */}
+          <MapboxGL.SymbolLayer
             id="spotSelectedGlow"
             belowLayerID="destStampCircles"
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
-              circleRadius: SPOT_PIN_SIZE / 2 + 8,
-              circleColor: '#1D4ED8',
-              circleOpacity: 0.6,
-              circleBlur: 0.45,
-              circleTranslate: [0, -(2 + 10 + SPOT_PIN_SIZE / 2)],
-              circleTranslateAnchor: 'viewport',
-              circlePitchAlignment: 'viewport',
+              iconImage: SPOT_SELECTED_GLOW,
+              iconAnchor: 'bottom',
+              iconOffset: [0, GLOW_MARGIN],
+              iconAllowOverlap: true,
+              iconIgnorePlacement: true,
+              iconPitchAlignment: 'viewport',
             }}
           />
           {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
