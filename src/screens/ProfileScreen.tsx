@@ -402,9 +402,12 @@ export default function ProfileScreen() {
                     </View>
                     <View style={{ flex: 1 }}>
                       <Text style={styles.destRowName} numberOfLines={1}>{d.name}</Text>
-                      <Text style={styles.destRowSub} numberOfLines={1}>
-                        {d.country}{n > 0 ? ` · ${n} spot${n === 1 ? '' : 's'} visited` : ''}
-                      </Text>
+                      <View style={styles.destRowSubRow}>
+                        <CircleFlag countryCode={d.countryCode} size={12} />
+                        <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>
+                          {d.country}{n > 0 ? ` · ${n} spot${n === 1 ? '' : 's'} visited` : ''}
+                        </Text>
+                      </View>
                     </View>
                   </View>
                 );
@@ -619,6 +622,8 @@ const styles = StyleSheet.create({
   destThumb:      { width: 46, height: 46, borderRadius: 10, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   destRowName:    { fontSize: 15, fontWeight: '700', color: '#111827' },
   destRowSub:     { fontSize: 12, color: '#6B7280', marginTop: 2 },
+  // The line under a destination's name: a tiny flag, then its country (and spots visited).
+  destRowSubRow:  { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
   // Top Destinations: up to about eight rows, then it scrolls.
   // The scroll box clips at its edges, which cut off the flags' shadows: its content gets a few points of room inside, and
   // the box is pulled out by the same amount so the rows stay where they were.
