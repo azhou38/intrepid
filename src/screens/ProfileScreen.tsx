@@ -12,6 +12,7 @@ import { SPOTS, spotCountry, spotCountryCode } from '../data/spots';
 // paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
+import WorldMapModal from '../components/WorldMapModal';
 import { ALL_COUNTRIES } from '../data/countries';
 
 const COUNTRY_NAME = new Map(ALL_COUNTRIES.map(c => [c.code, c.name]));
@@ -77,6 +78,19 @@ export default function ProfileScreen() {
   const exploredDests = useMemo(() => [...visitedDests].sort((x, y) => x.name.localeCompare(y.name)), [visitedDests]);
   const exploredSpots = useMemo(() => [...visitedSpots].sort((x, y) => x.name.localeCompare(y.name)), [visitedSpots]);
   const maxCountryCount = topCountries[0]?.count ?? 1;
+
+  // The map opens full screen to explore (WorldMapModal), on the same level; its tap card counts per country.
+  const [mapOpen, setMapOpen] = useState(false);
+  const countsByCountry = useMemo(() => {
+    const m = new Map<string, { dests: number; spots: number }>();
+    const row = (c: string) => { const r = m.get(c) ?? { dests: 0, spots: 0 }; m.set(c, r); return r; };
+    for (const d of visitedDests) row(d.countryCode).dests++;
+    for (const sp of visitedSpots) { const c = spotCountryCode(sp); if (c) row(c).spots++; }
+    return m;
+  }, [visitedDests, visitedSpots]);
+  const modalSpots = useMemo(
+    () => visitedSpots.map(sp => ({ spot: sp, country: spotCountry(sp) ?? '', countryCode: spotCountryCode(sp) })),
+    [visitedSpots]);
 
   // Countries Explored: tapping a flag shows its country's name in a small bubble above it for a moment.
   const [flagTip, setFlagTip] = useState<string | null>(null);
@@ -159,6 +173,7 @@ export default function ProfileScreen() {
       {/* ── The panel under the selector: the map, then the sections for the chosen level ── */}
       <View style={styles.mapCard}>
 
+        <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
         <View pointerEvents="none" style={styles.mapWrap}>
           <Svg width={WORLD_W} height={WORLD_H} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
             <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
@@ -173,7 +188,10 @@ export default function ProfileScreen() {
                 fill="#10B981" stroke="white" strokeWidth={worldMode === 'spots' ? 0.35 : 0.5} />
             ))}
           </Svg>
+          {/* A hint that the map opens. */}
+          <View style={styles.mapHint}><Text style={styles.mapHintTxt}>Tap to explore</Text></View>
         </View>
+        </Pressable>
 
       {/* The sections below follow the level chosen in the selector: they sit inside the same panel as the map, under it,
           so everything the selector controls is visibly part of it. */}
@@ -312,6 +330,17 @@ export default function ProfileScreen() {
 
       </View>
     </ScrollView>
+    <WorldMapModal
+      visible={mapOpen}
+      onClose={() => setMapOpen(false)}
+      level={worldMode}
+      onLevelChange={setWorldMode}
+      visitedCountryCodes={[...visitedCountrySet]}
+      countryName={code => COUNTRY_NAME.get(code) ?? code}
+      dests={visitedDests}
+      spots={modalSpots}
+      countsByCountry={countsByCountry}
+    />
     </View>
   );
 }
@@ -372,6 +401,8 @@ const styles = StyleSheet.create({
 
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
+  mapHint:       { position: 'absolute', right: 8, bottom: 8, backgroundColor: 'rgba(17,24,39,0.65)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
+  mapHintTxt:    { fontSize: 11, fontWeight: '600', color: 'white' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
   topBy:         { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // Top Countries' Destinations · Spots toggle: a small segmented control beside its title.
