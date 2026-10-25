@@ -916,9 +916,9 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: "🥾", rank: 4,
     tagline: "Bush walks, historic huts and Aboriginal rock art across the ACT's high country.",
     description: "Namadgi covers about 46% of the Australian Capital Territory, a mountain landscape of granite tors, waterfalls and snow-capped ranges south-west of Canberra. Walks lead to granite outcrops, 19th-century settlers' huts and Aboriginal rock art, and the Honeysuckle Creek site recalls the Apollo moon landing broadcasts. The visitor centre is on Naas Road near Tharwa village, the park's gateway.",
-    whyVisit: ["See the drop at Gibraltar Falls", "Climb up to Booroomba Rocks", "See Aboriginal rock art at Yankee Hat"],
+    whyVisit: ["See waterfalls tumble from the ranges", "Walk among granite tors", "Find Aboriginal rock art and old huts"],
     whyVisitPhotos: ["Gibraltar Falls 1.JPG", "Booroomba.JPG", "Yankee Hat art-MJC.jpg"],
-    highlights: ["Waterfall drop", "Granite outcrop", "Rock painting"],
+    highlights: ["Waterfalls", "Granite tors", "Rock art & huts"],
     goodToKnow: [
       { icon: "📍", title: "Start at the visitor centre", detail: "The Namadgi Visitor Centre on Naas Road near Tharwa has track information and track conditions. Check its opening hours before you go." },
       { icon: "🎟️", title: "Book Corin Forest ahead", detail: "The Corin Forest alpine slide and snowplay need advance booking and open on limited days in much of the year. Check the operator's calendar." },
@@ -949,9 +949,9 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🏛️", rank: 3,
     tagline: "Australia's capital, with free national museums, a lake at its centre and bush hills.",
     description: "Canberra is Australia's planned capital, laid out around Lake Burley Griffin by Walter Burley Griffin. Parliament House, the High Court and the national museums, galleries, library and archives stand in a short run along the lake and Anzac Parade, and most are free to enter. Bush-covered hills such as Mount Ainslie, Black Mountain and Red Hill rise within the city, and Tidbinbilla Nature Reserve and the Murrumbidgee River are a short drive south and west.",
-    whyVisit: ["Tour Parliament House", "Visit the Australian War Memorial", "See the city from Mount Ainslie"],
+    whyVisit: ["See Australia's parliament at work", "Explore free national museums and galleries", "Take in the bush capital from its hills"],
     whyVisitPhotos: ["Parliament House at dusk, Canberra ACT.jpg", "Australian War Memorial front view.jpg", "Canberra panorama from Mount Ainslie.jpg"],
-    highlights: ["Federal Parliament", "War memorial", "Anzac Parade views"],
+    highlights: ["Parliament", "National museums", "Bush capital"],
     goodToKnow: [
       { icon: "🚗", title: "Distances are long", detail: "Institutions sit in a few clusters, so a day on foot or by bike works around the lake. A car or rideshare helps for the outer reserves." },
       { icon: "🛂", title: "Security screening", detail: "Parliament House and the High Court screen visitors on entry. Allow 15 minutes and leave large bags behind: the High Court bans any over 30 cm." },
