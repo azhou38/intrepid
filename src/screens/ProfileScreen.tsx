@@ -3,18 +3,23 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable,
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
-import MapboxGL from '@rnmapbox/maps';
+import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
+// Country outlines for My World: Natural Earth 1:50m admin-0 (public domain), simplified, projected equirectangular as SVG
+// paths in a 360 × 180 box (x = longitude + 180, y = 90 − latitude), one entry per ISO 3166-1 code.
+import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
 
 const TOTAL_COUNTRIES = 195;
-// My World's map: the card's width (the screen less its 16 pt margins) and height, and the scale from Mapbox's 512 pt world.
+// My World's map: the whole world drawn as SVG (a Mapbox view cannot zoom out far enough to fit it in the card), from
+// 86° N to 60° S (Antarctica left out), at the card's width.
+const WORLD_Y0 = 4, WORLD_Y1 = 150;
 const WORLD_W = Dimensions.get('window').width - 32;
-const WORLD_H = Math.round(WORLD_W * 0.6);
-const WORLD_SCALE = WORLD_W / 512;
+const WORLD_H = Math.round((WORLD_W * (WORLD_Y1 - WORLD_Y0)) / 360);
+const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: 90 - lat });
 
 type WorldMode = 'countries' | 'destinations' | 'spots';
 const WORLD_MODES: { mode: WorldMode; label: string }[] = [
@@ -52,16 +57,12 @@ export default function ProfileScreen() {
 
   // My World shows one level at a time: the visited countries filled in, or a dot per visited destination or spot.
   const [worldMode, setWorldMode] = useState<WorldMode>('countries');
-  const visitedCountryCodes = useMemo(() => [...visitIndex.visitedCountryCodes], [visitIndex]);
+  const visitedCountrySet = visitIndex.visitedCountryCodes;
   const visitedSpots = useMemo(() => SPOTS.filter(sp => visitIndex.isSpotVisited(sp.id)), [visitIndex]);
-  const pointsGeoJSON = useMemo((): GeoJSON.FeatureCollection => ({
-    type: 'FeatureCollection',
-    features: (worldMode === 'spots' ? visitedSpots : worldMode === 'destinations' ? visitedDests : []).map(p => ({
-      type: 'Feature',
-      geometry: { type: 'Point', coordinates: [p.coordinates.longitude, p.coordinates.latitude] },
-      properties: {},
-    })),
-  }), [worldMode, visitedSpots, visitedDests]);
+  const worldDots = useMemo(
+    () => (worldMode === 'spots' ? visitedSpots : worldMode === 'destinations' ? visitedDests : [])
+      .map(p => worldPoint(p.coordinates.longitude, p.coordinates.latitude)),
+    [worldMode, visitedSpots, visitedDests]);
 
   const worldBadge = worldMode === 'countries' ? `${stats.totalCountries} / ${TOTAL_COUNTRIES}`
     : worldMode === 'destinations' ? `${visitedDests.length} / ${DESTINATIONS.length}`
@@ -127,59 +128,19 @@ export default function ProfileScreen() {
         </View>
 
         <View pointerEvents="none" style={styles.mapWrap}>
-          <MapboxGL.MapView
-            style={styles.worldMap}
-            styleURL={MapboxGL.StyleURL.Light}
-            projection="mercator"
-            scrollEnabled={false}
-            zoomEnabled={false}
-            rotateEnabled={false}
-            pitchEnabled={false}
-            logoEnabled={false}
-            compassEnabled={false}
-            scaleBarEnabled={false}
-            attributionEnabled={false}
-          >
-            <MapboxGL.Camera
-              defaultSettings={{ centerCoordinate: [0, 12], zoomLevel: 0 }}
-              animationDuration={0}
-            />
-            {/* Countries: each visited country filled in (one worldview, so disputed areas are not drawn twice). */}
-            {worldMode === 'countries' && visitedCountryCodes.length > 0 && (
-              <MapboxGL.VectorSource id="worldCountries" url="mapbox://mapbox.country-boundaries-v1">
-                <MapboxGL.FillLayer
-                  id="worldCountryFill"
-                  sourceLayerID="country_boundaries"
-                  filter={['all',
-                    ['in', ['get', 'iso_3166_1'], ['literal', visitedCountryCodes]],
-                    ['match', ['get', 'worldview'], ['all', 'US'], true, false]] as any}
-                  style={{ fillColor: '#10B981', fillOpacity: 0.55 }}
-                />
-                <MapboxGL.LineLayer
-                  id="worldCountryLine"
-                  sourceLayerID="country_boundaries"
-                  filter={['all',
-                    ['in', ['get', 'iso_3166_1'], ['literal', visitedCountryCodes]],
-                    ['match', ['get', 'worldview'], ['all', 'US'], true, false]] as any}
-                  style={{ lineColor: '#059669', lineWidth: 0.6 }}
-                />
-              </MapboxGL.VectorSource>
-            )}
+          <Svg width={WORLD_W} height={WORLD_H} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
+            <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
+            {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
+              <Path key={k} d={d}
+                fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
+                stroke="white" strokeWidth={0.15} />
+            ))}
             {/* Destinations or spots: a dot at each one visited (spots smaller, as there are more of them). */}
-            {worldMode !== 'countries' && pointsGeoJSON.features.length > 0 && (
-              <MapboxGL.ShapeSource id="worldPoints" shape={pointsGeoJSON}>
-                <MapboxGL.CircleLayer
-                  id="worldPointDots"
-                  style={{
-                    circleRadius: worldMode === 'spots' ? 3 : 4.5,
-                    circleColor: '#10B981',
-                    circleStrokeColor: 'white',
-                    circleStrokeWidth: worldMode === 'spots' ? 1 : 1.5,
-                  }}
-                />
-              </MapboxGL.ShapeSource>
-            )}
-          </MapboxGL.MapView>
+            {worldMode !== 'countries' && worldDots.map((p, k) => (
+              <Circle key={k} cx={p.x} cy={p.y} r={worldMode === 'spots' ? 1.4 : 2}
+                fill="#10B981" stroke="white" strokeWidth={worldMode === 'spots' ? 0.35 : 0.5} />
+            ))}
+          </Svg>
           {/* How many of this level are visited, over the map's top-right corner. */}
           <View style={styles.worldPctBadge}>
             <Text style={styles.worldPctText}>{worldBadge}</Text>
@@ -275,14 +236,7 @@ const styles = StyleSheet.create({
   },
   worldPctBadge: { position: 'absolute', top: 10, right: 10, backgroundColor: '#EEF2FF', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 5 },
   worldPctText:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
-  // The whole world, flat: at zoom 0 Mapbox draws it 512 pt wide (the narrowest it goes), wider than the card, so the map
-  // is laid out at that width and scaled down to the card's (a globe showed only one side of the Earth).
-  mapWrap:       { overflow: 'hidden', height: WORLD_H },
-  worldMap:      {
-    width: 512, height: WORLD_H / WORLD_SCALE,
-    marginLeft: (WORLD_W - 512) / 2, marginTop: (WORLD_H - WORLD_H / WORLD_SCALE) / 2,
-    transform: [{ scale: WORLD_SCALE }],
-  },
+  mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
   // Countries · Destinations · Spots: a segmented toggle under the heading.
   worldToggle: {
     flex: 1, flexDirection: 'row', padding: 3,
