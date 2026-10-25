@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
 import { Search, X } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -80,14 +80,15 @@ export default function ProfileScreen() {
   // inside a helper it calls (with a shared stuckT() helper the bar never filled in).
   // Read on the UI thread, so everything driven by the scroll keeps step with the page.
   const onPageScroll = useAnimatedScrollHandler(e => { scrollSV.value = e.contentOffset.y; });
-  // As it pins, the selector card also shrinks (to PINNED_K, its top held under the strip) so the pinned bar is compact
-  // and quieter, and the bar's background, drawn as its own layer, shortens to fit it. cardHSV is the card's height.
-  // t is eased (smoothstep) so the change starts and ends gently.
+  // As it pins, the selector card gives way to a row of plain tab headings (the number and name, a sliding underline
+  // under the selected one): the card fades and settles back while the tabs fade in, and the bar's background, drawn as
+  // its own layer, shortens to the tabs. cardHSV is the card's height. t is eased (smoothstep) so the change starts and
+  // ends gently. `pinned` (from the halfway point) decides which of the two takes taps.
   const cardHSV = useSharedValue(70);
   const stuckStyle = useAnimatedStyle(() => {
     const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
     const t = r * r * (3 - 2 * r), h = cardHSV.value;
-    const full = COMPACT_H + h + 12, small = COMPACT_H - PINNED_LIFT + h * PINNED_K + 8;
+    const full = COMPACT_H + h + 12, small = COMPACT_H + TABS_H;
     return {
       height: full + (small - full) * t, opacity: t,
       borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t,
@@ -96,8 +97,20 @@ export default function ProfileScreen() {
   const cardStyle = useAnimatedStyle(() => {
     const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
     const t = r * r * (3 - 2 * r), h = cardHSV.value;
-    return { transform: [{ translateY: -(h * (1 - PINNED_K) / 2 + PINNED_LIFT) * t }, { scale: 1 - (1 - PINNED_K) * t }] };
+    return { opacity: 1 - t, transform: [{ translateY: -6 * t }, { scale: 1 - 0.06 * t }] };
   });
+  const tabsStyle = useAnimatedStyle(() => {
+    const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
+    const t = r * r * (3 - 2 * r);
+    return { opacity: t, transform: [{ translateY: (1 - t) * 8 }] };
+  });
+  const [pinned, setPinned] = useState(false);
+  useAnimatedReaction(
+    () => scrollSV.value - stickyYSV.value + FADE / 2 > 0,
+    (v, prev) => { if (v !== prev) runOnJS(setPinned)(v); },
+  );
+  // The tabs' underline slides with the selection, like the pill.
+  const underlineStyle = useAnimatedStyle(() => ({ transform: [{ translateX: levelSV.value * TAB_W + TAB_W * 0.2 }] }));
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
   const headerFade = useAnimatedStyle(() => ({
@@ -211,6 +224,14 @@ export default function ProfileScreen() {
 
 
 
+  const selectMode = (mode: WorldMode) => {
+    if (mode === worldMode) return;
+    Haptics.selectionAsync();
+    // The sections below swap with an animation, so the change is seen to follow the selection.
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setWorldMode(mode);
+  };
+
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
     {/* ── Profile header ──────────────────────────────────────────── */}
@@ -266,34 +287,37 @@ export default function ProfileScreen() {
         </Animated.View>
 
         <Animated.View
+          pointerEvents={pinned ? 'none' : 'auto'}
           style={[styles.statsHeader, cardStyle]}
           onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; cardHSV.value = e.nativeEvent.layout.height; }}
         >
           {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
           <Animated.View pointerEvents="none" style={[styles.selectorPill, pillStyle]} />
           {WORLD_MODES.map(({ mode, label }, i) => {
-            const on = worldMode === mode;
             const value = mode === 'countries' ? stats.totalCountries : mode === 'destinations' ? stats.totalDestinations : stats.totalSpots;
             return (
               <React.Fragment key={mode}>
                 {i > 0 && <StatDivider index={i} level={levelSV} />}
-                <Pressable
-                  style={styles.statItem}
-                  onPress={() => {
-                    if (on) return;
-                    Haptics.selectionAsync();
-                    // The sections below swap with an animation, so the change is seen to follow the selection.
-                    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-                    setWorldMode(mode);
-                  }}
-                  hitSlop={4}
-                >
+                <Pressable style={styles.statItem} onPress={() => selectMode(mode)} hitSlop={4}>
                   <StatText index={i} level={levelSV} style={styles.statValue} on="#FFFFFF" off="#9CA3AF">{value}</StatText>
                   <StatText index={i} level={levelSV} style={styles.statLabel} on="#D1D5DB" off="#6B7280">{label}</StatText>
                 </Pressable>
               </React.Fragment>
             );
           })}
+        </Animated.View>
+        {/* The pinned bar's tab headings, in place of the card. */}
+        <Animated.View pointerEvents={pinned ? 'auto' : 'none'} style={[styles.tabs, tabsStyle]}>
+          {WORLD_MODES.map(({ mode, label }, i) => {
+            const value = mode === 'countries' ? stats.totalCountries : mode === 'destinations' ? stats.totalDestinations : stats.totalSpots;
+            return (
+              <Pressable key={mode} style={styles.tab} onPress={() => selectMode(mode)} hitSlop={{ top: 6, bottom: 6 }}>
+                <StatText index={i} level={levelSV} style={styles.tabValue} on="#111827" off="#9CA3AF">{value}</StatText>
+                <StatText index={i} level={levelSV} style={styles.tabLabel} on="#111827" off="#9CA3AF">{label}</StatText>
+              </Pressable>
+            );
+          })}
+          <Animated.View style={[styles.tabUnderline, underlineStyle]} />
         </Animated.View>
       </View>
       </View>
@@ -603,8 +627,9 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 const COMPACT_H = 40;
 // How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
 const FADE = 36;
-// The pinned selector's size (a scale of the full card) and how far it rises toward the strip.
-const PINNED_K = 0.8, PINNED_LIFT = 4;
+// The pinned bar's tab row: its height and each tab's width (the row spans the screen less the 16 pt margins).
+const TABS_H = 36;
+const TAB_W = (Dimensions.get('window').width - 32) / 3;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
@@ -637,6 +662,12 @@ const styles = StyleSheet.create({
   // Its top strip (room for the small avatar and name; the sticky View's negative margin) overlaps the bottom of the
   // full header until it pins, so the page keeps its old spacing; the background fills in only once pinned (stuckStyle).
   selectorSticky: { paddingTop: COMPACT_H, paddingHorizontal: 16 },
+  // The pinned bar's tab headings: plain text on the bar, the number and the level's name, with an underline.
+  tabs: { position: 'absolute', top: COMPACT_H, left: 16, right: 16, height: TABS_H, flexDirection: 'row' },
+  tab: { flex: 1, flexDirection: 'row', alignItems: 'baseline', justifyContent: 'center', gap: 4, paddingTop: 8 },
+  tabValue: { fontSize: 15, fontWeight: '800' },
+  tabLabel: { fontSize: 13, fontWeight: '600' },
+  tabUnderline: { position: 'absolute', left: 0, bottom: 0, width: TAB_W * 0.6, height: 2, borderRadius: 1, backgroundColor: '#111827' },
   stuckBg: {
     position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: '#F9FAFB',
     borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
