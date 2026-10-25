@@ -601,6 +601,8 @@ interface Props {
   // the pill track the sheet's top edge in true lockstep while dragging, instead of lagging
   // behind it.
   pillOffsetSV?: SharedValue<number>;
+  // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Country" pill's fade.
+  pillFullSV?: SharedValue<number>;
   // While true, some other UI (the spot carousel) owns the pill's position instead — this
   // sheet's writes to pillOffsetSV are suppressed so the two don't fight.
   pillOffsetLockedSV?: SharedValue<boolean>;
@@ -648,7 +650,7 @@ interface Props {
 
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
-  onSnapStateChange, pillOffsetSV, pillOffsetLockedSV, initialTab, initialSnap,
+  onSnapStateChange, pillOffsetSV, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
   collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited,
 }: Props) {
   const insets            = useSafeAreaInsets();
@@ -1047,6 +1049,8 @@ function DestinationSheet({
   useAnimatedReaction(
     () => [slideAnim.value, scrollYSV.value] as const,
     ([value, scrollY]) => {
+      // The "← Country" pill fades out over the first part of the slide up to full screen (MapScreen's upPillBackStyle).
+      if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, collapsedYAnim.value], [1, 0], Extrapolation.CLAMP);
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
       // Approximate rendered height of the back pill itself (MapScreen's st.upPill) — used
       // to convert its target *top* position (matching where the hero's close button used
