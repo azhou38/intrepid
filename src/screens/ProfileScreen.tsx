@@ -591,11 +591,12 @@ export default function ProfileScreen() {
               </View>
             )}
             {shownSpots.length === 0 && <Text style={styles.topEmpty}>No spots match.</Text>}
-            {/* One row per spot, as for destinations: its photo, its name, and where it is (its destination and country). */}
+            {/* One row per spot, as for destinations: its photo, its name, and under it its country with a tiny flag on the
+                left and its destination (none for a standalone spot) on the right. */}
             <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownSpots.length > 5}>
               {shownSpots.map((sp, k) => {
                 const dest = spotDestination(sp);
-                const where = [dest?.name, spotCountry(sp)].filter(Boolean).join(' · ');
+                const code = spotCountryCode(sp);
                 return (
                   <View key={sp.id} style={[styles.destRow, k > 0 && styles.destRowBorder]}>
                     <View style={styles.destThumb}>
@@ -613,7 +614,13 @@ export default function ProfileScreen() {
                     </View>
                     <View style={{ flex: 1 }}>
                       <Text style={styles.destRowName} numberOfLines={1}>{sp.name}</Text>
-                      <Text style={styles.destRowSub} numberOfLines={1}>{where}</Text>
+                      <View style={styles.destRowSubRow}>
+                        {!!code && <CircleFlag countryCode={code} size={12} />}
+                        <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{spotCountry(sp)}</Text>
+                        {!!dest && (
+                          <Text style={[styles.destRowSub, styles.spotRowDest]} numberOfLines={1}>{dest.name}</Text>
+                        )}
+                      </View>
                     </View>
                   </View>
                 );
@@ -776,6 +783,8 @@ const styles = StyleSheet.create({
   destRowSub:     { fontSize: 12, color: '#6B7280', marginTop: 2 },
   // The line under a destination's name: a tiny flag, then its country (and spots visited).
   destRowSubRow:  { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
+  // A spot row's destination, at the right end of that line.
+  spotRowDest:    { marginTop: 0, marginLeft: 'auto', paddingLeft: 8, flexShrink: 1, textAlign: 'right' },
   // Top Destinations: up to about eight rows, then it scrolls.
   // The scroll box clips at its edges, which cut off the flags' shadows: its content gets a few points of room inside, and
   // the box is pulled out by the same amount so the rows stay where they were.
