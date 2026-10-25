@@ -529,9 +529,13 @@ export default function ProfileScreen() {
                       <Text style={styles.destRowName} numberOfLines={1}>{d.name}</Text>
                       <View style={styles.destRowSubRow}>
                         <CircleFlag countryCode={d.countryCode} size={12} />
-                        <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>
-                          {d.country}{n > 0 ? ` · ${n} spot${n === 1 ? '' : 's'} visited` : ''}
-                        </Text>
+                        <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{d.country}</Text>
+                        {n > 0 && <View style={styles.subDivider} />}
+                        {n > 0 && (
+                          <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>
+                            {n} spot{n === 1 ? '' : 's'} visited
+                          </Text>
+                        )}
                       </View>
                     </View>
                   </View>
@@ -597,7 +601,7 @@ export default function ProfileScreen() {
             )}
             {shownSpots.length === 0 && <Text style={styles.topEmpty}>No spots match.</Text>}
             {/* One row per spot, as for destinations: its photo, its name, and under it its country with a tiny flag on the
-                left, then a separator and its destination (none for a standalone spot). */}
+                left, then a vertical divider and its destination (none for a standalone spot). */}
             <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownSpots.length > 5}>
               {shownSpots.map((sp, k) => {
                 const dest = spotDestination(sp);
@@ -622,8 +626,9 @@ export default function ProfileScreen() {
                       <View style={styles.destRowSubRow}>
                         {!!code && <CircleFlag countryCode={code} size={12} />}
                         <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{spotCountry(sp)}</Text>
+                        {!!dest && <View style={styles.subDivider} />}
                         {!!dest && (
-                          <Text style={[styles.destRowSub, styles.spotRowDest]} numberOfLines={1}>· {dest.name}</Text>
+                          <Text style={[styles.destRowSub, styles.spotRowDest]} numberOfLines={1}>{dest.name}</Text>
                         )}
                       </View>
                     </View>
@@ -788,6 +793,8 @@ const styles = StyleSheet.create({
   destRowSub:     { fontSize: 12, color: '#6B7280', marginTop: 2 },
   // The line under a destination's name: a tiny flag, then its country (and spots visited).
   destRowSubRow:  { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
+  // The thin vertical line between the parts of a row's sub line.
+  subDivider:     { width: StyleSheet.hairlineWidth * 2, height: 11, backgroundColor: '#D1D5DB', marginHorizontal: 2 },
   // A spot row's destination, after its country and a separator.
   spotRowDest:    { marginTop: 0, flexShrink: 1 },
   // Top Destinations: up to about eight rows, then it scrolls.
