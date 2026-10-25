@@ -14,6 +14,9 @@ import { SPOTS, spotCountry, spotCountryCode } from '../data/spots';
 import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
 import WorldMapModal from '../components/WorldMapModal';
+import EntityPhoto from '../components/Map/EntityPhoto';
+import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
+import { photoSubject } from '../utils/subjectCrop';
 import { ALL_COUNTRIES } from '../data/countries';
 
 const COUNTRY_NAME = new Map(ALL_COUNTRIES.map(c => [c.code, c.name]));
@@ -357,15 +360,31 @@ export default function ProfileScreen() {
               </ScrollView>
             )}
             {shownDests.length === 0 && <Text style={styles.topEmpty}>No destinations match.</Text>}
-            <ScrollView style={styles.exploredScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownDests.length > 24}>
-              <View style={styles.chipWrap}>
-                {shownDests.map(d => (
-                  <View key={d.id} style={styles.chip}>
-                    <CircleFlag countryCode={d.countryCode} size={16} ring ringWidth={1.5} style={styles.flagRing} />
-                    <Text style={styles.chipTxt} numberOfLines={1}>{d.name}</Text>
+            {/* One row per destination: its photo, its name, and its country with how many of its spots are visited. */}
+            <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownDests.length > 5}>
+              {shownDests.map((d, k) => {
+                const n = spotsByDest.get(d.id) ?? 0;
+                return (
+                  <View key={d.id} style={[styles.destRow, k > 0 && styles.destRowBorder]}>
+                    <View style={styles.destThumb}>
+                      {/* The same small-photo key as the country sheet's destination pickers, so either can reuse it. */}
+                      <EntityPhoto
+                        cacheKey={`pick_${d.id}`}
+                        cache={thumbCache}
+                        load={() => getOrFetchWikiThumbnail(`pick_${d.id}`, thumbCache, d.name, 300)}
+                        subject={photoSubject(d.name)}
+                        placeholderColor="#E5E7EB"
+                      />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.destRowName} numberOfLines={1}>{d.name}</Text>
+                      <Text style={styles.destRowSub} numberOfLines={1}>
+                        {d.country}{n > 0 ? ` · ${n} spot${n === 1 ? '' : 's'} visited` : ''}
+                      </Text>
+                    </View>
                   </View>
-                ))}
-              </View>
+                );
+              })}
             </ScrollView>
             </>
           )}
@@ -520,6 +539,13 @@ const styles = StyleSheet.create({
   filterTxt:    { fontSize: 12, fontWeight: '600', color: '#374151' },
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
+  // Destinations Explored's rows: photo, name, country and spots visited; about five rows, then the list scrolls.
+  destRowsScroll: { maxHeight: 300 },
+  destRow:        { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8 },
+  destRowBorder:  { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#E5E7EB' },
+  destThumb:      { width: 46, height: 46, borderRadius: 10, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  destRowName:    { fontSize: 15, fontWeight: '700', color: '#111827' },
+  destRowSub:     { fontSize: 12, color: '#6B7280', marginTop: 2 },
   // Top Destinations: up to about eight rows, then it scrolls.
   topScroll:  { maxHeight: 300 },
   destName:   { width: 110 },
