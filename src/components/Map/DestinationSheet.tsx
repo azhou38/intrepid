@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo } from 'react';
+import * as Haptics from 'expo-haptics';
 import { flagSource } from '../../utils/flags';
 import {
   View, Text, StyleSheet, Pressable, Image, Alert,
@@ -29,7 +30,8 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
 import { useStore, useVisitIndex } from '../../store';
-import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn } from '../../utils/visitStatus';
+import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn, destinationHasDetails } from '../../utils/visitStatus';
+import { showVisitToast } from './VisitToast';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
 import { SPOTS, spotPhotoTitle, type Spot } from '../../data/spots';
@@ -730,9 +732,9 @@ function DestinationSheet({
   // Does NOT close the editor itself — VisitModuleSheet auto-commits on every field change,
   // so this fires many times per editing session; only its own Save/X button calls onClose.
   const handleSaveVisitModule = (v: Visit) => {
-    // The destination only gets a record of its own here, on a genuine save — not the moment
-    // "Add Visit" was tapped (see handleMarkVisited). updateSaved below patches fields onto an
-    // EXISTING record, so one has to exist first when this is the very first trip.
+    // Opened straight into the editor (a long press on "Mark Visited"), the destination gets its record here, on a
+    // genuine save; after a one-tap Mark Visited it already has one. updateSaved below patches fields onto an EXISTING
+    // record, so one has to exist first.
     if (!saved) saveDestination(destination.id, 'visited', {});
     setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
@@ -746,9 +748,8 @@ function DestinationSheet({
     // Remove Trip on a brand-new trip that was never saved.
     if (!saved) return;
     const updated = localVisits.filter(v => v.id !== id);
-    // That was the only trip logged for this destination — drops its record (also the legacy
-    // visitDate/notes/photos fields) rather than leaving one with an empty visits array.
-    if (updated.length === 0) { unsaveDestination(destination.id); return; }
+    // Removing a trip leaves the destination visited, even its last one: being there is marked on its own now ("Mark
+    // Visited"), and a trip is only its details. Un-visiting is the "Visited" pill.
     updateSaved(destination.id, { visits: updated, visitDate: updated[0]?.startDate });
   };
 
@@ -1472,8 +1473,17 @@ function DestinationSheet({
   pan = pan.simultaneousWithExternalGesture(scrollRef);
 
   // Actions
+  // "Mark Visited" marks the destination visited in one tap, with an "Add details · Undo" bar (see SpotSheet).
   const handleMarkVisited = () => {
     if (isVisited) {
+      // Nothing logged and no spot visited: un-mark at once, with Undo. Otherwise ask first, as before.
+      if (!destinationHasDetails(useStore.getState(), destination.id)) {
+        const id = destination.id;
+        unvisitDestination(id);
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        showVisitToast({ message: 'Visit removed', onUndo: () => saveDestination(id, 'visited', {}) });
+        return;
+      }
       // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
         'Remove visit?',
@@ -1488,11 +1498,19 @@ function DestinationSheet({
       );
       return;
     }
-    // Opens the trip editor WITHOUT marking the destination visited yet — that only happens
-    // once the user actually saves a trip inside it (see handleSaveVisitModule). Tapping "Add
-    // Visit" and then closing with X or Remove Trip before ever saving should leave the
-    // destination exactly as it was.
+    const id = destination.id;
+    saveDestination(id, 'visited', {});
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    showVisitToast({
+      message: 'Marked visited', actionLabel: 'Add details',
+      onAction: () => setEditingVisitModule('new'),
+      onUndo: () => unvisitDestination(id),
+    });
+  };
+  // Long press on "Mark Visited", or "Add details": the trip editor straight away (the destination becomes visited on save).
+  const handleAddVisitDetails = () => {
     setEditingVisitModule('new');
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
   // Top offset animates continuously with the drag, same reasoning as heroAnimStyle's own
   // height: at full-screen the row needs to clear the status bar (insets.top + 20), but at
@@ -1645,13 +1663,19 @@ function DestinationSheet({
                 Save actions stay on the right. */}
             <Reanimated.View style={[st.heroTopRow, heroTopRowStyle, { justifyContent: 'flex-end' }]}>
               <View style={st.heroActionsRight}>
+                {isVisited && (
+                  <Pressable style={st.heroVisitPill} onPress={handleAddVisitDetails} hitSlop={10}>
+                    <Plus size={15} color="white" strokeWidth={2.75} />
+                    <Text style={st.heroVisitPillTxt}>Add details</Text>
+                  </Pressable>
+                )}
                 <Pressable
                   style={[st.heroVisitPill, isVisited && st.heroIconBtnVisited]}
-                  onPress={handleMarkVisited} hitSlop={10}>
+                  onPress={handleMarkVisited} onLongPress={isVisited ? undefined : handleAddVisitDetails} hitSlop={10}>
                   {isVisited
                     ? <Check size={15} color="white" strokeWidth={2.75} />
                     : <Plus size={15} color="white" strokeWidth={2.75} />}
-                  <Text style={st.heroVisitPillTxt}>{isVisited ? 'Visited' : 'Add Visit'}</Text>
+                  <Text style={st.heroVisitPillTxt}>{isVisited ? 'Visited' : 'Mark Visited'}</Text>
                 </Pressable>
               </View>
             </Reanimated.View>

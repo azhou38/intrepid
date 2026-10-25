@@ -1437,9 +1437,9 @@ export function VisitCardList<T extends VisitSelectorItem>({
   const pluralNoun   = selectorLabel ? selectorLabel.replace(/\s+Visited$/i, '').toLowerCase() : '';
   const singularNoun = pluralNoun.endsWith('s') ? pluralNoun.slice(0, -1) : pluralNoun;
 
-  // Visited, nothing logged yet: an invitation to log it rather than an empty trip card.
+  // Visited, nothing logged yet (marked with one tap): an invitation to add the details, never a requirement.
   if (visits.length === 0) {
-    const what = hasSelector ? `dates, the ${pluralNoun} you visited, notes and photos` : 'a date, notes and photos';
+    const what = hasSelector ? `dates, the ${pluralNoun} you visited, photos or notes` : 'a date, photos or notes';
     return (
       <View style={[vcS.listWrap, vcS.emptyWrap]}>
         <View style={vcS.memCardShadow}>
@@ -1447,8 +1447,8 @@ export function VisitCardList<T extends VisitSelectorItem>({
             <View style={vcS.emptyIcon}>
               <NotebookPen size={22} color="#059669" />
             </View>
-            <Text style={vcS.emptyTitle}>Log your {noun.toLowerCase()}</Text>
-            <Text style={vcS.emptySub}>Add {what} to remember it by.</Text>
+            <Text style={vcS.emptyTitle}>You've been here</Text>
+            <Text style={vcS.emptySub}>Add {what}?</Text>
             <View style={vcS.emptyBtn}>
               <Plus size={15} color="white" strokeWidth={2.75} />
               <Text style={vcS.emptyBtnTxt}>Add {noun}</Text>

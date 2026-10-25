@@ -111,6 +111,7 @@ import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotPhotoTitle, spotCountry, spotCountr
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
 import PinPhoto from '../components/Map/PinPhoto';
+import { VisitToastHost } from '../components/Map/VisitToast';
 import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
@@ -6174,6 +6175,9 @@ const destItems = useMemo((): DestItem[] =>
           </Animated.View>
         </Reanimated.View>
       )}
+
+      {/* "Marked visited · Add details · Undo" after a one-tap Mark Visited (or un-mark), from any sheet. */}
+      <VisitToastHost bottom={12} />
     </View>
   );
 }

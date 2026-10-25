@@ -22,7 +22,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Check, Plus, Users, Languages, Coins, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
-import { countryTripsOf, visitedPlacesInCountry, removeCountryMessage } from '../../utils/visitStatus';
+import { countryTripsOf, visitedPlacesInCountry, removeCountryMessage, countryHasDetails } from '../../utils/visitStatus';
+import { showVisitToast } from './VisitToast';
 import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
 import { SPOTS } from '../../data/spots';
@@ -275,9 +276,9 @@ function CountrySheet({
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
   // in place. Identical mechanism to DestinationSheet's own handleSaveVisitModule.
   const handleSaveVisitModule = useCallback((v: Visit) => {
-    // The country only actually becomes "visited" here, on a genuine save — not the moment
-    // "Add Visit" was tapped (see handleMarkVisited). updateSavedCountry below patches fields
-    // onto an EXISTING record, so one has to exist first when this is the very first visit.
+    // Opened straight into the editor (a long press on "Mark Visited"), the country gets its record here, on a genuine
+    // save; after a one-tap Mark Visited it already has one. updateSavedCountry below patches fields onto an EXISTING
+    // record, so one has to exist first.
     if (!savedCountry) saveCountryVisited(cluster.countryCode, {});
     setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
@@ -290,19 +291,26 @@ function CountrySheet({
   const handleDeleteVisitModule = useCallback((id: string) => {
     if (!savedCountry) return;
     const updated = localVisits.filter(v => v.id !== id);
-    // That was the last trip logged for this country — drops its record, which holds nothing but trips.
-    if (updated.length === 0) { unsaveCountry(cluster.countryCode); return; }
+    // Removing a trip leaves the country visited, even its last one: being there is marked on its own now ("Mark
+    // Visited"), and a trip is only its details. Un-visiting is the "Visited" pill.
     updateSavedCountry(cluster.countryCode, { visits: updated, visitDate: updated[0]?.startDate });
   }, [savedCountry, localVisits, cluster.countryCode, unsaveCountry, updateSavedCountry]);
   // Fired instead of handleDeleteVisitModule when removing the synthesized 'legacy' visit — see
   // VisitModuleSheet's own onRemoveLegacy doc.
   const handleRemoveLegacyVisit = useCallback(() => unsaveCountry(cluster.countryCode), [cluster.countryCode, unsaveCountry]);
 
-  // Header "Add Visit"/"Visited" pill — identical mechanism to DestinationSheet's own
-  // handleMarkVisited. Opens the trip editor WITHOUT marking the country visited yet (that only
-  // happens once the user actually saves a trip inside it, see handleSaveVisitModule).
+  // Header "Mark Visited"/"Visited" pill — same mechanism as DestinationSheet's own handleMarkVisited.
+  // "Mark Visited" marks the country visited in one tap, with an "Add details · Undo" bar (see SpotSheet).
   const handleMarkVisited = useCallback(() => {
     if (isCountryVisited) {
+      // Nothing logged and none of its places visited: un-mark at once, with Undo. Otherwise ask first, as before.
+      if (!countryHasDetails(useStore.getState(), cluster.countryCode)) {
+        const code = cluster.countryCode;
+        unvisitCountry(code);
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        showVisitToast({ message: 'Visit removed', onUndo: () => saveCountryVisited(code, {}) });
+        return;
+      }
       // Un-visits it entirely: its own trips and everything logged for its destinations and spots.
       Alert.alert(
         'Remove visit?',
@@ -314,9 +322,20 @@ function CountrySheet({
       );
       return;
     }
+    const code = cluster.countryCode;
+    saveCountryVisited(code, {});
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    showVisitToast({
+      message: 'Marked visited', actionLabel: 'Add details',
+      onAction: () => setEditingVisitModule('new'),
+      onUndo: () => unvisitCountry(code),
+    });
+  }, [isCountryVisited, localVisits, cluster.countryCode, cluster.country, unvisitCountry, saveCountryVisited]);
+  // Long press on "Mark Visited", or "Add details": the trip editor straight away (the country becomes visited on save).
+  const handleAddVisitDetails = useCallback(() => {
     setEditingVisitModule('new');
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-  }, [isCountryVisited, localVisits, cluster.countryCode, cluster.country, unvisitCountry]);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+  }, []);
 
   // ── Tabs ───────────────────────────────────────────────────────────────────
   const TAB_ORDER: CountryTab[] = useMemo(
@@ -1038,14 +1057,20 @@ function CountrySheet({
                   instead, identical to DestinationSheet's own hero top row. */}
               <Animated.View style={[st.headerTopRow, headerTopRowStyle, { justifyContent: 'flex-end' }]}>
                 <View style={st.headerActionsRight}>
+                  {isCountryVisited && (
+                    <Pressable style={st.headerVisitPill} onPress={handleAddVisitDetails} hitSlop={10}>
+                      <Plus size={15} color="white" strokeWidth={2.75} />
+                      <Text style={st.headerVisitPillTxt}>Add details</Text>
+                    </Pressable>
+                  )}
                   <Pressable
                     style={[st.headerVisitPill, isCountryVisited && st.headerVisitPillActive]}
-                    onPress={handleMarkVisited} hitSlop={10}
+                    onPress={handleMarkVisited} onLongPress={isCountryVisited ? undefined : handleAddVisitDetails} hitSlop={10}
                   >
                     {isCountryVisited
                       ? <Check size={15} color="white" strokeWidth={2.75} />
                       : <Plus size={15} color="white" strokeWidth={2.75} />}
-                    <Text style={st.headerVisitPillTxt}>{isCountryVisited ? 'Visited' : 'Add Visit'}</Text>
+                    <Text style={st.headerVisitPillTxt}>{isCountryVisited ? 'Visited' : 'Mark Visited'}</Text>
                   </Pressable>
                 </View>
               </Animated.View>

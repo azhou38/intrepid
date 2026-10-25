@@ -27,6 +27,8 @@ import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
 import { formatSpotCost, splitSpotCost, spotCostLabel, formatVisitTime, spotCostTone, visitTimeTone, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
+import { spotHasDetails } from '../../utils/visitStatus';
+import { showVisitToast } from './VisitToast';
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
@@ -138,12 +140,12 @@ const CARD_TITLE_STAT_GAP = 8.6;
 const CARD_INFO_BOTTOM = 12;
 
 // ── Carousel preview card (one per spot in the collapsed carousel) ───────────
-function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
+function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, gradId }: {
   spot: Spot; isActive: boolean; onPress: () => void;
-  // Tapping the "Add Visit" tag (unvisited spots only) — makes this card the active spot and
-  // opens its trip editor, same as the hero's own "Add Visit" pill (handleMarkVisited), instead
-  // of marking the spot visited immediately with no editor, which is what this used to do.
+  // Tapping the "Mark Visited" tag (unvisited spots only) marks the spot visited at once, with the "Add details · Undo"
+  // bar (VisitToast); a long press opens its trip editor instead, for someone who wants to log the visit straight away.
   onAddVisit: () => void;
+  onAddVisitDetails: () => void;
   // Unique PER RENDERED CARD (not just per spot) — the endless-scroll illusion renders
   // clones of the first/last spot alongside the real ones, so multiple simultaneously-
   // mounted cards can share the same spot.id. Reusing spot.id as the SVG gradient's <Defs>
@@ -208,10 +210,11 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, gradId }: {
             <Pressable
               style={st.cardAddVisitTag}
               onPress={onAddVisit}
+              onLongPress={onAddVisitDetails}
               hitSlop={6}
             >
               <Plus size={13} color="white" strokeWidth={3} />
-              <Text style={st.cardAddVisitTagTxt}>Add Visit</Text>
+              <Text style={st.cardAddVisitTagTxt}>Mark Visited</Text>
             </Pressable>
           )}
           {/* Bottom overlay: name, time/cost and the description, layered over the photo (which fills the whole card)
@@ -451,8 +454,8 @@ function SpotSheet({
   // Saves one visit module — appends a brand new one ('new') or replaces just the matching id
   // in place. Identical mechanism to DestinationSheet's/CountrySheet's own handleSaveVisitModule.
   const handleSaveVisitModule = useCallback((v: Visit) => {
-    // The spot only actually becomes "visited" here, on a genuine save — not the moment "Add
-    // Visit" was tapped (see handleMarkVisited).
+    // Opened straight into the editor (a long press on "Mark Visited"), the spot gets its record here, on a genuine save;
+    // after a one-tap Mark Visited it already has one.
     if (!savedSpot) saveSpotVisited(activeSpot.id, activeSpot.destinationId);
     setRevealVisit(true);
     const base = localVisits.filter(x => x.id !== 'legacy');
@@ -462,15 +465,13 @@ function SpotSheet({
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
   }, [savedSpot, localVisits, activeSpot.id, activeSpot.destinationId, saveSpotVisited, updateSpot]);
 
-  // That was the last (or only ever synthesized legacy) visit logged for this spot — not just
-  // "visited with zero trips", so this unsaves the spot entirely (also dropping its rating, same
-  // as the old "Remove visit" flow did), rather than leaving a record with an empty visits array.
+  // Removing a trip leaves the spot visited, even its last one: being there is marked on its own now ("Mark Visited"), and
+  // a trip is only its details. Un-visiting is the "Visited" pill.
   const handleDeleteVisitModule = useCallback((id: string) => {
     if (!savedSpot) return;
     const updated = localVisits.filter(v => v.id !== id);
-    if (updated.length === 0) { unsaveSpot(activeSpot.id); return; }
     updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
-  }, [savedSpot, localVisits, activeSpot.id, unsaveSpot, updateSpot]);
+  }, [savedSpot, localVisits, activeSpot.id, updateSpot]);
 
   const carouselRef = useRef<ScrollView>(null);
   const scrollRef    = useRef<GHScrollView>(null);
@@ -1115,12 +1116,37 @@ function SpotSheet({
   pan = pan.simultaneousWithExternalGesture(scrollRef);
 
   // ── Actions ──────────────────────────────────────────────────────────────────
-  // Identical mechanism to DestinationSheet's/CountrySheet's own handleMarkVisited — tapping
-  // "Add Visit" opens the trip editor WITHOUT marking the spot visited yet (that only happens
-  // once the user actually saves a trip inside it, see handleSaveVisitModule), rather than
-  // marking it visited immediately.
+  // "Mark Visited" marks the spot visited in one tap (a record with nothing logged yet), with an "Add details · Undo" bar;
+  // the details are optional and stay one tap away (the bar, the "Add details" pill, the My Visit tab). Same in
+  // DestinationSheet and CountrySheet.
+  // Makes a spot of this carousel the active card (a tag tapped on a neighbour card, or "Add details" for a spot that is
+  // no longer the active one).
+  const selectSpot = (spot: Spot) => {
+    const idx = spots.findIndex(s => s.id === spot.id);
+    if (idx < 0 || idx === activeIndex) return;
+    setActiveIndex(idx);
+    carouselRef.current?.scrollTo({ x: (idx + loopOffset) * CARD_SNAP, animated: true });
+    onActiveSpotChange?.(spots[idx]);
+  };
+  const markSpotVisited = (spot: Spot) => {
+    saveSpotVisited(spot.id, spot.destinationId);
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    showVisitToast({
+      message: 'Marked visited', actionLabel: 'Add details',
+      onAction: () => { selectSpot(spot); setEditingVisitModule('new'); },
+      onUndo: () => unvisitSpot(spot.id),
+    });
+  };
   const handleMarkVisited = () => {
     if (isVisited) {
+      // Nothing logged: un-mark at once, with Undo. Trips, a rating, notes or photos would be lost: ask first, as before.
+      if (!spotHasDetails(useStore.getState(), activeSpot.id)) {
+        const spot = activeSpot;
+        unvisitSpot(spot.id);
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        showVisitToast({ message: 'Visit removed', onUndo: () => saveSpotVisited(spot.id, spot.destinationId) });
+        return;
+      }
       // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
       Alert.alert(
         'Remove visit?',
@@ -1132,6 +1158,10 @@ function SpotSheet({
       );
       return;
     }
+    markSpotVisited(activeSpot);
+  };
+  // Long press on "Mark Visited", or "Add details": the trip editor straight away (the spot becomes visited on save).
+  const handleAddVisitDetails = () => {
     setEditingVisitModule('new');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
   };
@@ -1373,13 +1403,19 @@ isVisited ? (
                 DestinationSheet. Only the visited-status pill stays, on the right. */}
             <View style={[st.heroTopRow, { top: heroTopRowTop, justifyContent: 'flex-end' }]}>
               <View style={st.heroActionsRight}>
+                {isVisited && (
+                  <Pressable style={st.heroVisitPill} onPress={handleAddVisitDetails} hitSlop={10}>
+                    <Plus size={15} color="white" strokeWidth={2.75} />
+                    <Text style={st.heroVisitPillTxt}>Add details</Text>
+                  </Pressable>
+                )}
                 <Pressable
                   style={[st.heroVisitPill, isVisited && st.heroIconBtnVisited]}
-                  onPress={handleMarkVisited} hitSlop={10}>
+                  onPress={handleMarkVisited} onLongPress={isVisited ? undefined : handleAddVisitDetails} hitSlop={10}>
                   {isVisited
                     ? <Check size={15} color="white" strokeWidth={2.75} />
                     : <Plus size={15} color="white" strokeWidth={2.75} />}
-                  <Text style={st.heroVisitPillTxt}>{isVisited ? 'Visited' : 'Add Visit'}</Text>
+                  <Text style={st.heroVisitPillTxt}>{isVisited ? 'Visited' : 'Mark Visited'}</Text>
                 </Pressable>
               </View>
             </View>
@@ -1547,22 +1583,13 @@ isVisited ? (
                   }
                   snapToFullRef.current();
                 }}
-                onAddVisit={() => {
-                  // Same selection logic as onPress above, but goes straight into the trip
-                  // editor instead — matching handleMarkVisited's own not-visited branch
-                  // (inlined rather than called directly, since that reads the CURRENT
-                  // activeSpot/isVisited from this render's closure, which would still be
-                  // whatever spot was active before this tap changed it).
-                  if (item.realIndex !== activeIndex) {
-                    setActiveIndex(item.realIndex);
-                    carouselRef.current?.scrollTo({ x: (item.realIndex + loopOffset) * CARD_SNAP, animated: true });
-                    onActiveSpotChange?.(spots[item.realIndex]);
-                  }
+                onAddVisit={() => { selectSpot(item.spot); markSpotVisited(item.spot); }}
+                onAddVisitDetails={() => {
                   // The editor opens straight over the carousel; the sheet stays put underneath. It
                   // only goes full-screen once a trip is saved (revealVisit), to show it on My Visit —
                   // expanding first made the sheet visibly rise before the editor appeared.
-                  setEditingVisitModule('new');
-                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                  selectSpot(item.spot);
+                  handleAddVisitDetails();
                 }}
               />
               )
