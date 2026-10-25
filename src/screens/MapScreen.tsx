@@ -4118,8 +4118,14 @@ const destItems = useMemo((): DestItem[] =>
     // 'flyTo' — same big-pan/deep-zoom-out case as handleCloseDestinationSheetToCountry.
     // Not openPeeked: choosing the country in the breadcrumb brings its sheet up to half-screen (and frames the map
     // for the top half), like selecting the country any other way — it used to stay at the bottom of the screen.
+    // The same pin plan and camera hold as the "← Country" back pill (handleCloseDestinationSheetToCountry): pins planned
+    // for the country's view from the tap, and the camera waiting for the sheet swap. Without them the zoom-out ran over
+    // pins still planned for the destination or spot, and they clumped.
+    const target = countryTargetZoom(cluster);
+    if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
+    cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
     handleCountryPress(cluster, 'flyTo', false);
-  }, [crumb, selectedSpot, selectedDest, handleCountryPress, visitIndex]);
+  }, [crumb, selectedSpot, selectedDest, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan]);
 
   // Provenance back for a laterally-entered destination ('map'/'search' origin, i.e. the back
   // pill shows a bare X rather than "‹ Country"): tear down the whole selection stack, and
