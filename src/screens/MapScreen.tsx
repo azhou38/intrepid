@@ -2842,14 +2842,14 @@ const destItems = useMemo((): DestItem[] =>
     [nearCtx, selectedSpotDestId, selectedSpotDestId ? null : selectedSpot?.id],
   );
 
-  // What the breadcrumb names as "where you are": the selected destination, or — for a standalone spot, which has no
-  // destination — the spot itself under its own country.
+  // What the breadcrumb names as "where you are": the selected destination under its country, or — for a standalone spot
+  // (and its district carousel), which has no destination — its country alone (`standalone`), with no second segment.
   const crumb = (() => {
     if (selectedSpot && (!selectedSpot.destinationId || nearCtx)) {
       const countryCode = spotCountryCode(selectedSpot), country = spotCountry(selectedSpot);
-      return countryCode && country ? { name: selectedSpot.name, country, countryCode } : null;
+      return countryCode && country ? { name: selectedSpot.name, country, countryCode, standalone: true } : null;
     }
-    return selectedDest ? { name: selectedDest.name, country: selectedDest.country, countryCode: selectedDest.countryCode } : null;
+    return selectedDest ? { name: selectedDest.name, country: selectedDest.country, countryCode: selectedDest.countryCode, standalone: false } : null;
   })();
   const visibleSpots = useMemo(() => {
     // Coarse OUTER gate: is the camera at or past ANY destination's own default zoom at all?
@@ -5828,7 +5828,26 @@ const destItems = useMemo((): DestItem[] =>
           }}
           pointerEvents="box-none"
         >
-          {crumb ? (
+          {crumb?.standalone ? (
+            /* Standalone spot: its country alone (it has no destination to name). A tap flies to the country's default
+               view, like the country segment of the destination breadcrumb. */
+            <Pressable
+              style={styles.breadcrumbPillBlack}
+              onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}
+              onPress={handleZoomToCountry}
+              hitSlop={6}
+            >
+              <View pointerEvents="none" style={styles.crumbBlackBg} />
+              <View style={styles.breadcrumbPillRow}>
+                <View style={styles.bcFlagCircle}>
+                  <View style={styles.bcFlagClip}>
+                    <Image source={flagSource(crumb.countryCode)} style={styles.bcFlagImg} resizeMode="cover" />
+                  </View>
+                </View>
+                <Text style={styles.breadcrumbTxtLight}>{crumb.country}</Text>
+              </View>
+            </Pressable>
+          ) : crumb ? (
             /* Destination view: single white pill (fixed height) so black segment overflows below */
             <View style={styles.breadcrumbPillWhite} onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}>
               <Reanimated.View pointerEvents="none" style={[styles.crumbWhiteBg, { right: CRUMB_ARROW_SLOT }, destCrumbLeft]} />
