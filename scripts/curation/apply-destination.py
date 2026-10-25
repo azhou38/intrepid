@@ -45,6 +45,8 @@ import subprocess as _sp
 _fit = _sp.run(['python3', 'scripts/curation/tagline-fit.py', '--text', d.get('tagline', '')], capture_output=True, text=True)
 if _fit.returncode != 0:
     sys.exit(f"refusing: the tagline must fill exactly two lines of the header (WRITING.md); tagline-fit.py says {_fit.stdout.splitlines()[0] if _fit.stdout else _fit.stderr}")
+if ';' in d['bestTimeBlurb']:
+    sys.exit('refusing: the bestTimeBlurb must be one plain sentence with no semicolons (WRITING.md)')
 if d['bestTimeBlurb'].count('{months}') != 1:
     sys.exit('refusing: bestTimeBlurb needs exactly one {months}')
 _fit = _sp.run(['python3', 'scripts/curation/blurb-fit.py', '--text', d['bestTimeBlurb'], '--months', ','.join(str(m) for m in d.get('bestMonths', []))], capture_output=True, text=True)

@@ -21,7 +21,7 @@
 //               only for spots whose photo comes from that lookup (no override, no supplied photo)
 // Destinations
 //   shape       whyVisit not two to four (or highlights / whyVisitPhotos not matching its count), goodToKnow not two or three (or a tip detail over 160 characters), a whyVisit reason outside 2–8 words, or bestTimeBlurb without exactly one {months}
-//   voice       marketing words in tagline or description
+//   voice       marketing words in tagline or description, or a semicolon in the bestTimeBlurb
 //   transient   a whyVisit reason, highlight or tagline that promises a passing state (an eruption, smoke, a plume, a one-off)
 // With --offline only the checks that need no network run (shape, voice, transient, bio, no-ticket, pin, pin-shared).
 // Fetches go through the shared cache (http-cache.ts). Prints one line per failing entry; --json writes them all.
@@ -133,6 +133,7 @@ async function checkWiki(title: string): Promise<string | null> {
     if (nTips < 2 || nTips > 3) add(it, 'shape', `${nTips} goodToKnow (needs 2–3: 3 for rank 1–3, 2 for rank 4–5)`);
     for (const t of d.goodToKnow ?? []) if (t.detail.length > 160) add(it, 'shape', `goodToKnow "${t.title}" detail is ${t.detail.length} characters (max 160, aim ~120)`);
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
+    if ((d.bestTimeBlurb ?? '').includes(';')) add(it, 'voice', 'bestTimeBlurb has a semicolon: one plain sentence, no clause-joining punctuation (WRITING.md)');
     for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {
       const m = (v ?? '').replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
     }
