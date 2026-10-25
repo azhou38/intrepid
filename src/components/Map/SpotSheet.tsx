@@ -1802,9 +1802,7 @@ const st = StyleSheet.create({
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
   carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -8 },
   // The chevron sits 2 pt further left than the title (-10 vs -8); the extra right margin keeps the title where it was.
-  // Playfair's line box carries a tall ascender, so the letters sit below the box's middle: drop the chevron 2 pt to
-  // centre it on the name's letters rather than on the box.
-  carDestChevron: { marginLeft: -2, marginRight: 3, transform: [{ translateY: 2 }] },
+  carDestChevron: { marginLeft: -2, marginRight: 3 },
   carCounter: { fontSize: 13, fontWeight: '700', color: '#9CA3AF', marginLeft: 12 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
                    marginLeft: 12, paddingHorizontal: 8, paddingVertical: 5,
