@@ -109,8 +109,13 @@ export default function ProfileScreen() {
     () => scrollSV.value - stickyYSV.value + FADE / 2 > 0,
     (v, prev) => { if (v !== prev) runOnJS(setPinned)(v); },
   );
-  // The tabs' underline slides with the selection, like the pill.
-  const underlineStyle = useAnimatedStyle(() => ({ transform: [{ translateX: levelSV.value * TAB_W + TAB_W * 0.2 }] }));
+  // The tabs' underline slides with the selection, like the pill; tabsWSV is the tab row's measured width (three equal
+  // tabs, so the middle one is centred on the screen).
+  const tabsWSV = useSharedValue(0);
+  const underlineStyle = useAnimatedStyle(() => {
+    const w = tabsWSV.value / 3;
+    return { width: w * 0.6, opacity: w > 0 ? 1 : 0, transform: [{ translateX: levelSV.value * w + w * 0.2 }] };
+  });
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
   const headerFade = useAnimatedStyle(() => ({
@@ -307,7 +312,11 @@ export default function ProfileScreen() {
           })}
         </Animated.View>
         {/* The pinned bar's tab headings, in place of the card. */}
-        <Animated.View pointerEvents={pinned ? 'auto' : 'none'} style={[styles.tabs, tabsStyle]}>
+        <Animated.View
+          pointerEvents={pinned ? 'auto' : 'none'}
+          style={[styles.tabs, tabsStyle]}
+          onLayout={e => { tabsWSV.value = e.nativeEvent.layout.width; }}
+        >
           {WORLD_MODES.map(({ mode, label }, i) => {
             const value = mode === 'countries' ? stats.totalCountries : mode === 'destinations' ? stats.totalDestinations : stats.totalSpots;
             return (
@@ -627,9 +636,8 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 const COMPACT_H = 40;
 // How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
 const FADE = 36;
-// The pinned bar's tab row: its height and each tab's width (the row spans the screen less the 16 pt margins).
+// The pinned bar's tab row height.
 const TABS_H = 36;
-const TAB_W = (Dimensions.get('window').width - 32) / 3;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
@@ -663,11 +671,13 @@ const styles = StyleSheet.create({
   // full header until it pins, so the page keeps its old spacing; the background fills in only once pinned (stuckStyle).
   selectorSticky: { paddingTop: COMPACT_H, paddingHorizontal: 16 },
   // The pinned bar's tab headings: plain text on the bar, the number and the level's name, with an underline.
+  // Spans the bar edge to edge less the page margins, whichever box absolute offsets count from: left and right are equal.
   tabs: { position: 'absolute', top: COMPACT_H, left: 16, right: 16, height: TABS_H, flexDirection: 'row' },
-  tab: { flex: 1, flexDirection: 'row', alignItems: 'baseline', justifyContent: 'center', gap: 4, paddingTop: 8 },
+  // Equal thirds; the text centred in each (it may run past a third's edges rather than wrap, staying centred).
+  tab: { flex: 1, flexDirection: 'row', alignItems: 'baseline', justifyContent: 'center', gap: 4, paddingTop: 8, overflow: 'visible' },
   tabValue: { fontSize: 15, fontWeight: '800' },
   tabLabel: { fontSize: 13, fontWeight: '600' },
-  tabUnderline: { position: 'absolute', left: 0, bottom: 0, width: TAB_W * 0.6, height: 2, borderRadius: 1, backgroundColor: '#111827' },
+  tabUnderline: { position: 'absolute', left: 0, bottom: 0, height: 2, borderRadius: 1, backgroundColor: '#111827' },
   stuckBg: {
     position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: '#F9FAFB',
     borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
