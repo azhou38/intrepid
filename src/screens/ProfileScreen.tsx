@@ -76,16 +76,14 @@ export default function ProfileScreen() {
   // slide beneath. Before that its top strip is see-through, over the bottom of the full profile header.
   const scrollSV = useSharedValue(0);
   const stickyYSV = useSharedValue(1e6);
-  const stuckT = () => {
-    'worklet';
-    return Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
-  };
+  // Each style reads both values itself: a style re-runs only for the shared values it reads directly, not ones read
+  // inside a helper it calls (with a shared stuckT() helper the bar never filled in).
   const stuckStyle = useAnimatedStyle(() => {
-    const t = stuckT();
+    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
     return { backgroundColor: `rgba(249,250,251,${t})`, borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
   });
   const compactStyle = useAnimatedStyle(() => {
-    const t = stuckT();
+    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
     return { opacity: t, transform: [{ translateY: (1 - t) * 6 }] };
   });
   const selectorWSV = useSharedValue(0);
