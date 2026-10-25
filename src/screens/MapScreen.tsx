@@ -4117,19 +4117,20 @@ const destItems = useMemo((): DestItem[] =>
       minRank:      Math.min(...dests.map(d => d.rank)),
       visitedCount: dests.filter(d => visitIndex.isDestVisited(d.id)).length,
     };
-    // Exit destination mode then show country card
-    // handleCountryPress clears selectedDest, mapState, and zoomedIntoDestination directly.
-    // 'flyTo' — same big-pan/deep-zoom-out case as handleCloseDestinationSheetToCountry.
-    // Not openPeeked: choosing the country in the breadcrumb brings its sheet up to half-screen (and frames the map
-    // for the top half), like selecting the country any other way — it used to stay at the bottom of the screen.
-    // The same pin plan and camera hold as the "← Country" back pill (handleCloseDestinationSheetToCountry): pins planned
-    // for the country's view from the tap, and the camera waiting for the sheet swap. Without them the zoom-out ran over
-    // pins still planned for the destination or spot, and they clumped.
+    // Only the camera moves: it flies out to the country's default view, and the selection, its sheet and the breadcrumb
+    // all stay as they are (it used to open the country's sheet, closing the destination or spot). The destination
+    // segment then offers the way back. Framing follows the sheet's current snap, as for the other breadcrumb resets.
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    // The fly's own camera-changed events must not read as a user gesture and drop the sheet to peek.
+    suppressPeekPushRef.current = true;
+    if (suppressPeekPushTimerRef.current) clearTimeout(suppressPeekPushTimerRef.current);
+    suppressPeekPushTimerRef.current = setTimeout(() => { suppressPeekPushRef.current = false; }, 900);
+    // Pins planned for the country's view from the tap, with the selection kept, so they don't clump on the way out
+    // (the same plan as the "← Country" back pill).
     const target = countryTargetZoom(cluster);
-    if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
-    cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
-    handleCountryPress(cluster, 'flyTo', false);
-  }, [crumb, selectedSpot, selectedDest, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan]);
+    if (target !== null) beginBackPlan(target, 1000);
+    fitCountryDefaultView(cluster, 'flyTo', sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf');
+  }, [crumb, selectedSpot, selectedDest, visitIndex, countryTargetZoom, beginBackPlan, fitCountryDefaultView]);
 
   // Provenance back for a laterally-entered destination ('map'/'search' origin, i.e. the back
   // pill shows a bare X rather than "‹ Country"): tear down the whole selection stack, and
