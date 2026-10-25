@@ -184,19 +184,25 @@ export default function ProfileScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-    {/* The level selector (child 1) pins to the top while the sections it controls scroll beneath it. */}
+    {/* The name and level selector (child 0) pin to the top while the sections the selector controls scroll beneath. */}
     <ScrollView
       style={styles.container}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
       onScroll={e => { scrollSV.value = e.nativeEvent.contentOffset.y; }}
       scrollEventThrottle={16}
-      stickyHeaderIndices={[1]}
+      stickyHeaderIndices={[0]}
       keyboardDismissMode="on-drag"
       keyboardShouldPersistTaps="handled"
-      contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
+      contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
       showsVerticalScrollIndicator={false}
     >
+      {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
+          every section below show; it stays pinned at the top as they scroll. ── */}
+      {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
+          component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
+      <View onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
+      <Animated.View style={[styles.selectorSticky, stuckStyle]}>
       {/* ── Profile header ──────────────────────────────────────────── */}
       <View style={styles.profileHeader}>
         <View style={styles.avatar}>
@@ -212,12 +218,6 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
-          every section below show; it stays pinned at the top as they scroll. ── */}
-      {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
-          component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
-      <View onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
-      <Animated.View style={[styles.selectorSticky, stuckStyle]}>
         <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
           {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
           <Animated.View pointerEvents="none" style={[styles.selectorPill, pillStyle]} />
@@ -555,7 +555,7 @@ const styles = StyleSheet.create({
   // Profile header
   profileHeader: {
     flexDirection: 'row', alignItems: 'center', gap: 14,
-    marginHorizontal: 16, marginBottom: 16,
+    marginBottom: 16,
   },
   avatar: {
     width: 56, height: 56, borderRadius: 28,
@@ -569,7 +569,7 @@ const styles = StyleSheet.create({
   // The level selector: pinned while scrolling (on the page colour, so nothing shows round its corners). The selected
   // count sits on a dark pill.
   selectorSticky: {
-    backgroundColor: '#F9FAFB', paddingHorizontal: 16, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
+    backgroundColor: '#F9FAFB', paddingHorizontal: 16, paddingTop: 16, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
     shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowRadius: 8, shadowOpacity: 0,
   },
   statsHeader: {
