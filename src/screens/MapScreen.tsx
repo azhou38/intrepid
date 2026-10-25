@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { flagSource } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, interpolate as rInterpolate, Extrapolation as RExtrapolation } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import MapboxGL from '@rnmapbox/maps';
@@ -1617,6 +1617,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // SpotSheet from a core-Animated listener since its slideAnim isn't a Reanimated value)
   // while open, so the pill glides in lockstep with whichever sheet is currently driving it.
   const upPillBottomSV = useSharedValue(insets.bottom + 90);
+  // How far the open destination/spot sheet is toward full screen (0 at half-screen or below, 1 at full), written on the
+  // UI thread by the sheet beside pillOffsetSV. The "← Parent" pill fades with it: out as the sheet slides up to full
+  // screen, back in as it slides down, instead of appearing and disappearing when the snap state flips.
+  const upPillFullSV = useSharedValue(0);
+  const upPillBackStyle = useAnimatedStyle(() => ({
+    opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP),
+  }));
   // Guards against DestinationSheet's continuous writes fighting the spot-carousel effect's
   // own target while a spot is selected on top of an still-mounted destination sheet.
   const spotOwnsPillSV = useSharedValue(false);
@@ -5921,6 +5928,7 @@ const destItems = useMemo((): DestItem[] =>
           onSelectSpot={destSheetOnSelectSpot}
           onCollapsedTopChange={setDestCardTop}
           pillOffsetSV={upPillBottomSV}
+          pillFullSV={upPillFullSV}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
@@ -5954,6 +5962,7 @@ const destItems = useMemo((): DestItem[] =>
           onCollapse={handleCloseSheet}
           onActiveSpotChange={handleActiveSpotChange}
           pillOffsetSV={upPillBottomSV}
+          pillFullSV={upPillFullSV}
           peekSignal={peekSheetSignal}
           peekSV={peekSheetSV}
           exitSignal={sheetExitSignal}
@@ -6030,26 +6039,32 @@ const destItems = useMemo((): DestItem[] =>
           <Animated.View
             style={{ opacity: breadcrumbAnim, transform: [{ scale: breadcrumbScale }] }}
           >
-            {mapState === 'sheet' ? (
-              // Full-screen: a simple down arrow that collapses the sheet back to its
-              // bottom-screen carousel view, instead of navigating up a level.
-              <Pressable style={styles.upPillBare} onPress={handlePillCollapse} hitSlop={6}>
-                <ChevronDown size={24} color="#374151" strokeWidth={2.5} />
-              </Pressable>
-            ) : (() => {
-              // Half-screen and peek: "← Parent" (a spot's destination, a destination's country; a country, and a
-              // standalone spot with no destination selected, have none) to the right of an X that closes to the map.
+            {(() => {
+              // Full-screen: a simple down arrow that collapses the sheet back to its bottom-screen carousel view, in
+              // place of the X. Half-screen and peek: an X that closes to the map. Beside it, "← Parent" (a spot's
+              // destination, a destination's country; a country, and a standalone spot with no destination selected,
+              // have none), which fades out as the sheet slides up to full screen and back in as it slides down
+              // (upPillBackStyle), rather than popping when the snap state flips.
+              const full = mapState === 'sheet';
               const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
-                  <Pressable style={[styles.upPill, styles.upPillFixed, styles.upPillRound]} onPress={handleCloseToMap} hitSlop={6}>
-                    <X size={15} color="#374151" strokeWidth={2.5} />
-                  </Pressable>
-                  {!!backName && (
-                    <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={handleUpNav} hitSlop={6}>
-                      <Text style={styles.upPillArrow}>←</Text>
-                      <Text style={styles.upPillTxt} numberOfLines={1}>{backName}</Text>
+                  {full ? (
+                    <Pressable style={styles.upPillBare} onPress={handlePillCollapse} hitSlop={6}>
+                      <ChevronDown size={24} color="#374151" strokeWidth={2.5} />
                     </Pressable>
+                  ) : (
+                    <Pressable style={[styles.upPill, styles.upPillFixed, styles.upPillRound]} onPress={handleCloseToMap} hitSlop={6}>
+                      <X size={15} color="#374151" strokeWidth={2.5} />
+                    </Pressable>
+                  )}
+                  {!!backName && (
+                    <Reanimated.View style={upPillBackStyle} pointerEvents={full ? 'none' : 'auto'}>
+                      <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={handleUpNav} hitSlop={6}>
+                        <Text style={styles.upPillArrow}>←</Text>
+                        <Text style={styles.upPillTxt} numberOfLines={1}>{backName}</Text>
+                      </Pressable>
+                    </Reanimated.View>
                   )}
                 </View>
               );

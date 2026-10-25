@@ -353,6 +353,8 @@ interface Props {
   // Replaces the old settle-only onCollapsedTopChange-driven retarget, which visibly lagged
   // behind the sheet's own drag.
   pillOffsetSV?: SharedValue<number>;
+  // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Destination" pill's fade.
+  pillFullSV?: SharedValue<number>;
   // Fires on every snap transition — lets the caller know when this sheet is peeking (e.g.
   // to avoid re-triggering peek while already there). Identical to DestinationSheet's.
   onSnapStateChange?: (state: 'peek' | 'collapsed' | 'full') => void;
@@ -397,7 +399,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, collapseSignal,
+  pillOffsetSV, pillFullSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -766,6 +768,8 @@ function SpotSheet({
   useAnimatedReaction(
     () => [slideAnim.value, scrollYSV.value] as const,
     ([value, scrollY]) => {
+      // The "← Destination" pill fades out over the first part of the slide up to full screen (MapScreen's upPillBackStyle).
+      if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP);
       if (!pillOffsetSV) return;
       const PILL_H = 36;
       const SCREEN_H = H - BOTTOM_TAB_H;
