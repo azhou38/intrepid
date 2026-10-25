@@ -189,7 +189,8 @@ export default function ProfileScreen() {
             const value = mode === 'countries' ? stats.totalCountries : mode === 'destinations' ? stats.totalDestinations : stats.totalSpots;
             return (
               <React.Fragment key={mode}>
-                {i > 0 && <View style={styles.statDivider} />}
+                {/* A divider only between two unselected items: never against the selected one. */}
+                {i > 0 && <View style={[styles.statDivider, (on || WORLD_MODES[i - 1].mode === worldMode) && styles.statDividerHidden]} />}
                 <Pressable
                   style={[styles.statItem, on && styles.statItemOn]}
                   onPress={() => {
@@ -468,15 +469,16 @@ const styles = StyleSheet.create({
   profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2 },
 
   // Stats row
-  // The level selector: the top of the My World card, pinned while scrolling (on the page colour, so nothing shows round
-  // its corners). The selected count sits on a soft green pill.
+  // The level selector: pinned while scrolling (on the page colour, so nothing shows round its corners). The selected
+  // count sits on a dark pill.
   selectorSticky: { backgroundColor: '#F9FAFB', paddingHorizontal: 16 },
   statsHeader: {
     flexDirection: 'row', alignItems: 'center', padding: 6, marginBottom: 12,
     backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
   },
-  statItemOn:  { backgroundColor: '#ECFDF5' },
-  statValueOn: { color: '#059669' },
+  // The selected level in the app's own dark selection style (the breadcrumb's active segment, the dark buttons).
+  statItemOn:  { backgroundColor: '#111827' },
+  statValueOn: { color: 'white' },
   // A section inside the panel (Explored, Top …): separated from the map or the section above by a hairline.
   // Each section below the selector is a card of its own (the map, Explored, Top …).
   panelSection: {
@@ -489,10 +491,11 @@ const styles = StyleSheet.create({
   },
   statItem:    { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 12 },
   statValueOff:    { color: '#9CA3AF' },
-  statLabelOn:     { color: '#047857', fontWeight: '600' },
+  statLabelOn:     { color: '#D1D5DB', fontWeight: '600' },
   statValue:   { fontSize: 22, fontWeight: '800', color: '#111827' },
   statLabel:   { fontSize: 10, color: '#6B7280', marginTop: 2 },
   statDivider: { width: 1, height: 28, backgroundColor: '#E5E7EB' },
+  statDividerHidden: { backgroundColor: 'transparent' },
 
   // Generic card
   card: {
