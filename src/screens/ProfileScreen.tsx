@@ -725,7 +725,7 @@ function wordMatch(text: string, q: string) {
   return !q || (' ' + text.toLowerCase()).includes(' ' + q);
 }
 
-// An Explored list's country chips: All, then each country (flag, name, count). While the search has text, only the
+// An Explored list's country chips: All, then each country (flag, name, count), a selected one first. While the search has text, only the
 // countries whose name it could be are shown, as suggestions (all of them when it fits none); tapping one filters by it
 // and, when the text was that country's name, clears the text. The selected country always stays in the row.
 function CountryChips({ countries, total, selected, query, onSelect, onClearQuery }: {
@@ -734,10 +734,17 @@ function CountryChips({ countries, total, selected, query, onSelect, onClearQuer
 }) {
   const fits = query ? countries.filter(c => wordMatch(c.name, query)) : [];
   const shown = fits.length ? countries.filter(c => fits.includes(c) || c.code === selected) : countries;
+  // The selected country leads the row (before All), and the row scrolls back to its start when the choice changes,
+  // so the chosen chip is always in view.
+  const sel = shown.find(c => c.code === selected);
+  const all = { code: null as string | null, name: 'All', count: total };
+  const chips = sel ? [sel, all, ...shown.filter(c => c !== sel)] : [all, ...shown];
+  const rowRef = useRef<GHScrollView>(null);
+  useEffect(() => { rowRef.current?.scrollTo({ x: 0, animated: true }); }, [selected]);
   return (
-    <GHScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}
+    <GHScrollView ref={rowRef} horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}
       keyboardShouldPersistTaps="handled">
-      {[{ code: null as string | null, name: 'All', count: total }, ...shown].map(c => {
+      {chips.map(c => {
         const on = selected === c.code;
         const suggested = !!c.code && fits.some(f => f.code === c.code);
         return (
