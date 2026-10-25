@@ -24,7 +24,7 @@ type Picked =
   | { kind: 'place'; name: string; sub: string; code?: string };
 
 export default function WorldMapModal({
-  visible, onClose, level, onLevelChange, visitedCountryCodes, countryName, dests, spots, countsByCountry,
+  visible, onClose, level, onLevelChange, visitedCountryCodes, countryName, dests, spots, countsByCountry, spotsByDest,
 }: {
   visible: boolean;
   onClose: () => void;
@@ -35,6 +35,8 @@ export default function WorldMapModal({
   dests: Destination[];
   spots: { spot: Spot; country: string; countryCode?: string }[];
   countsByCountry: Map<string, { dests: number; spots: number }>;
+  // Visited spots per destination id: a destination's card says how many, when any are logged.
+  spotsByDest: Map<string, number>;
 }) {
   const insets = useSafeAreaInsets();
   const mapRef = useRef<MapboxGL.MapView>(null);
@@ -45,7 +47,7 @@ export default function WorldMapModal({
     features: level === 'destinations'
       ? dests.map(d => ({
         type: 'Feature', geometry: { type: 'Point', coordinates: [d.coordinates.longitude, d.coordinates.latitude] },
-        properties: { name: d.name, sub: d.country, code: d.countryCode },
+        properties: { name: d.name, sub: d.country, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0 },
       }))
       : level === 'spots'
         ? spots.map(({ spot, country, countryCode }) => ({
@@ -53,7 +55,7 @@ export default function WorldMapModal({
           properties: { name: spot.name, sub: country, code: countryCode ?? '' },
         }))
         : [],
-  }), [level, dests, spots]);
+  }), [level, dests, spots, spotsByDest]);
 
   // A tap: whatever highlighted feature is under the finger (a dot first, then a visited country), else nothing.
   const onMapPress = async (e: any) => {
@@ -65,7 +67,9 @@ export default function WorldMapModal({
         const f = hit?.features?.[0];
         if (f) {
           Haptics.selectionAsync();
-          setPicked({ kind: 'place', name: f.properties?.name, sub: f.properties?.sub, code: f.properties?.code || undefined });
+          const n = Number(f.properties?.spots ?? 0);
+          const sub = n > 0 ? `${f.properties?.sub} · ${n} spot${n === 1 ? '' : 's'} visited` : f.properties?.sub;
+          setPicked({ kind: 'place', name: f.properties?.name, sub, code: f.properties?.code || undefined });
           return;
         }
       } else {

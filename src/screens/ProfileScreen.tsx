@@ -88,6 +88,11 @@ export default function ProfileScreen() {
     for (const sp of visitedSpots) { const c = spotCountryCode(sp); if (c) row(c).spots++; }
     return m;
   }, [visitedDests, visitedSpots]);
+  const spotsByDest = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const sp of visitedSpots) if (sp.destinationId) m.set(sp.destinationId, (m.get(sp.destinationId) ?? 0) + 1);
+    return m;
+  }, [visitedSpots]);
   const modalSpots = useMemo(
     () => visitedSpots.map(sp => ({ spot: sp, country: spotCountry(sp) ?? '', countryCode: spotCountryCode(sp) })),
     [visitedSpots]);
@@ -340,6 +345,7 @@ export default function ProfileScreen() {
       dests={visitedDests}
       spots={modalSpots}
       countsByCountry={countsByCountry}
+      spotsByDest={spotsByDest}
     />
     </View>
   );
