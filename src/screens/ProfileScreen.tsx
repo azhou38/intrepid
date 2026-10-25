@@ -210,7 +210,7 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* ── The panel under the selector: the map, then the sections for the chosen level ── */}
+      {/* ── The map, its own card under the selector ── */}
       <View style={styles.mapCard}>
 
         <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
@@ -238,9 +238,9 @@ export default function ProfileScreen() {
           <View style={styles.mapHint}><Text style={styles.mapHintTxt}>Tap to explore</Text></View>
         </View>
         </Pressable>
+      </View>
 
-      {/* The sections below follow the level chosen in the selector: they sit inside the same panel as the map, under it,
-          so everything the selector controls is visibly part of it. */}
+      {/* The sections below follow the level chosen in the selector, each a card of its own. */}
       {worldMode === 'countries' && (<>
       {/* ── Countries explored ──────────────────────────────────────── */}
       <View style={styles.panelSection}>
@@ -434,8 +434,6 @@ export default function ProfileScreen() {
           )}
         </View>
       )}
-
-      </View>
     </ScrollView>
     <WorldMapModal
       visible={mapOpen}
@@ -474,19 +472,20 @@ const styles = StyleSheet.create({
   // its corners). The selected count sits on a soft green pill.
   selectorSticky: { backgroundColor: '#F9FAFB', paddingHorizontal: 16 },
   statsHeader: {
-    flexDirection: 'row', alignItems: 'center', padding: 6,
-    backgroundColor: 'white', borderTopLeftRadius: 18, borderTopRightRadius: 18,
-    borderWidth: 1, borderBottomWidth: 0, borderColor: '#F3F4F6',
+    flexDirection: 'row', alignItems: 'center', padding: 6, marginBottom: 12,
+    backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
   },
   statItemOn:  { backgroundColor: '#ECFDF5' },
   statValueOn: { color: '#059669' },
   // A section inside the panel (Explored, Top …): separated from the map or the section above by a hairline.
-  panelSection: { padding: 16, borderTopWidth: 1, borderTopColor: '#F3F4F6' },
-  // The panel: the map and the level's sections, joined to the selector above it.
+  // Each section below the selector is a card of its own (the map, Explored, Top …).
+  panelSection: {
+    marginHorizontal: 16, marginBottom: 12, padding: 16, backgroundColor: 'white',
+    borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
+  },
   mapCard: {
-    marginHorizontal: 16, marginBottom: 14, overflow: 'hidden', backgroundColor: 'white',
-    borderBottomLeftRadius: 18, borderBottomRightRadius: 18,
-    borderWidth: 1, borderTopWidth: 0, borderColor: '#F3F4F6',
+    marginHorizontal: 16, marginBottom: 12, overflow: 'hidden', backgroundColor: 'white',
+    borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
   },
   statItem:    { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 12 },
   statValueOff:    { color: '#9CA3AF' },
