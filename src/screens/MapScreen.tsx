@@ -1621,9 +1621,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // UI thread by the sheet beside pillOffsetSV. The "← Parent" pill fades with it: out as the sheet slides up to full
   // screen, back in as it slides down, instead of appearing and disappearing when the snap state flips.
   const upPillFullSV = useSharedValue(0);
-  const upPillBackStyle = useAnimatedStyle(() => ({
-    opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP),
-  }));
   // Guards against DestinationSheet's continuous writes fighting the spot-carousel effect's
   // own target while a spot is selected on top of an still-mounted destination sheet.
   const spotOwnsPillSV = useSharedValue(false);
@@ -1636,7 +1633,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const pillPeekSV = useSharedValue(0);
   // A spot's "← Destination" pill shows only at peek, where the carousel and its "‹ Destination" title are out of sight:
   // it fades in with pillPeekSV, and takes taps only while peeking (this state), so the invisible pill never blocks the map.
-  const spotBackPeekStyle = useAnimatedStyle(() => ({ opacity: pillPeekSV.value }));
+  // 1 while that rule applies (a destination's spot open). One style always carries both fades: a second animated style
+  // swapped in and out left its opacity of 0 stuck on the pill after it was removed, hiding the "← Country" pill when a
+  // spot went back to its destination.
+  const spotBackPeekSV = useSharedValue(0);
+  const upPillBackPeekStyle = useAnimatedStyle(() => ({
+    opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
+      * (spotBackPeekSV.value ? pillPeekSV.value : 1),
+  }));
   const [sheetPeeking, setSheetPeeking] = useState(false);
   // 1 whenever the open sheet — country, destination or spot — is sitting at half-screen
   // ('collapsed'): forces the breadcrumb bar (Country | Destination) to hide there regardless of
@@ -2819,6 +2823,8 @@ const destItems = useMemo((): DestItem[] =>
   else if (nearCtxRef.current?.spots.some(s => s.id === selectedSpot.id)) { /* keep */ }
   else nearCtxRef.current = selectedSpot.destinationId ? null : nearContextFor(selectedSpot);
   const nearCtx = nearCtxRef.current;
+  const spotBackPeekOn = !!selectedSpot && !!selectedDest && !nearCtx;
+  useEffect(() => { spotBackPeekSV.value = spotBackPeekOn ? 1 : 0; }, [spotBackPeekOn, spotBackPeekSV]);
   const selectedSpotDestId = selectedSpot?.destinationId;
   const carouselSpots = useMemo(
     () => nearCtx ? nearCtx.spots
@@ -6079,12 +6085,12 @@ const destItems = useMemo((): DestItem[] =>
               // place of the X. Half-screen and peek: an X that closes to the map. Beside it, "← Parent" (a spot's
               // destination, a destination's country; a country, and a standalone spot with no destination selected,
               // have none), which fades out as the sheet slides up to full screen and back in as it slides down
-              // (upPillBackStyle), rather than popping when the snap state flips.
+              // (upPillBackPeekStyle), rather than popping when the snap state flips.
               const full = mapState === 'sheet';
               // A spot's carousel title is its destination's name and goes back to it (SpotSheet onTitlePress). At peek the
               // carousel is out of sight, so the pill then fades in to name the destination (spotBackPeek). A carousel titled by
               // something else (a standalone spot's district) keeps the pill throughout.
-              const spotBackPeek = !!selectedSpot && !!selectedDest && !nearCtx;
+              const spotBackPeek = spotBackPeekOn;
               const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
@@ -6099,7 +6105,7 @@ const destItems = useMemo((): DestItem[] =>
                   )}
                   {!!backName && (
                     <Reanimated.View
-                      style={spotBackPeek ? [upPillBackStyle, spotBackPeekStyle] : upPillBackStyle}
+                      style={upPillBackPeekStyle}
                       pointerEvents={full || (spotBackPeek && !sheetPeeking) ? 'none' : 'auto'}
                     >
                       <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={handleUpNav} hitSlop={6}>
