@@ -69,7 +69,7 @@ dest_ids = set(re.findall(r"^\s*id: '([a-z0-9-]+)', name: ", dest_src, re.M))
 
 STANDALONE_DEFAULT = {k: _cd[k] for k in ('country', 'countryCode', 'continent', 'timezone')}
 FIELDS = ['name', 'wiki', 'icon', 'category', 'bio', 'hours', 'visitHoursMin', 'visitHoursMax', 'free', 'costMin', 'costMax',
-          'currency', 'closedDays', 'ticketUrl']
+          'currency', 'costBasis', 'costPer', 'needs', 'closedDays', 'ticketUrl']
 
 # Ids are assigned per region by the placement agents, which did not know about each other: two regions can both have
 # handed out `tongariro-7`. Keep an id if it is free, otherwise take the destination's next number (ids are never reused,
