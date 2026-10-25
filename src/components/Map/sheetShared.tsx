@@ -2314,7 +2314,8 @@ const esS = StyleSheet.create({
   dateIconBadgeEmpty: { backgroundColor:'#F3F4F6' },
   dateTextCol:   { flex:1, gap:2 },
   dateRangeTxt:  { fontSize:16, fontWeight:'700', color:'#111827' },
-  dateRangePh:   { fontSize:16, fontWeight:'700', color:'#C4C9D4' },
+  // The same type as the notes placeholder (reviewPreviewPh): the editor's two empty prompts read alike.
+  dateRangePh:   { fontSize:15, color:'#C4C9D4', lineHeight:24 },
   dateSubTxt:    { fontSize:13, color:'#9CA3AF' },
   spotsCountBadge:   { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
                        paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
