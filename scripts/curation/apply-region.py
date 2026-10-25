@@ -68,8 +68,8 @@ dest_src = open('src/data/destinations.ts').read()
 dest_ids = set(re.findall(r"^\s*id: '([a-z0-9-]+)', name: ", dest_src, re.M))
 
 STANDALONE_DEFAULT = {k: _cd[k] for k in ('country', 'countryCode', 'continent', 'timezone')}
-FIELDS = ['name', 'wiki', 'icon', 'category', 'bio', 'hours', 'visitHoursMin', 'visitHoursMax', 'free', 'costMin', 'costMax',
-          'currency', 'costBasis', 'costPer', 'needs', 'closedDays', 'ticketUrl']
+FIELDS = ['name', 'wiki', 'icon', 'category', 'bio', 'visitHoursMin', 'visitHoursMax', 'free', 'costMin', 'costMax',
+          'currency', 'costBasis', 'costPer', 'needs', 'ticketUrl']
 
 # Ids are assigned per region by the placement agents, which did not know about each other: two regions can both have
 # handed out `tongariro-7`. Keep an id if it is free, otherwise take the destination's next number (ids are never reused,
@@ -125,7 +125,7 @@ for e in place[key]:
     if act == 'standalone':
         for k, v in STANDALONE_DEFAULT.items():
             spot[k] = q.get(k, v)
-    missing = [k for k in ('icon', 'category', 'bio', 'hours', 'visitHoursMin', 'visitHoursMax') if k not in spot]
+    missing = [k for k in ('icon', 'category', 'bio', 'visitHoursMin', 'visitHoursMax') if k not in spot]
     if missing:
         skipped.append((sid, name, f'Quill entry lacks {missing}')); continue
     if not (spot.get('free') or spot.get('costMin') is not None):
@@ -192,7 +192,6 @@ def set_field(text, k, v):
         'str': re.compile(r'\b' + k + r': ' + STR),
         'num': re.compile(r'\b' + k + r': -?[\d.]+'),
         'bool': re.compile(r'\b' + k + r': (?:true|false)'),
-        'arr': re.compile(r'\b' + k + r': \[[^\]]*\]'),
         'coord': re.compile(r'\b' + k + r': \{[^}]*\}'),
     }
     if k == 'coordinates':
@@ -201,8 +200,6 @@ def set_field(text, k, v):
         kind, lit = 'num', f'{k}: {v}' if v is not None else None
     elif k == 'free':
         kind, lit = 'bool', 'free: true' if v else None
-    elif k == 'closedDays':
-        kind, lit = 'arr', f"closedDays: [{', '.join(str(x) for x in v)}]" if v else None
     else:
         kind, lit = 'str', f'{k}: {q(v)}' if v is not None else None
     rx = pat[kind]

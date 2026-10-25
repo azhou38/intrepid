@@ -1,7 +1,7 @@
 // Quill's tiering (PIPELINES.md → "Cost and speed"): scale effort to the spot. A beach, lookout, roadside icon or monument is
-// almost always "free, open any time"; those need no researcher, only a one-line bio. Anything that may charge, keep hours or
+// almost always "free, open any time"; those need no researcher, only a one-line bio. Anything that may charge or
 // have an official page (a museum, tour, zoo, cave, garden, winery, national park, a place inside a fee-charging park) goes to the
-// full researcher → writer → fact-checker chain, where hours, price and link errors actually appeared.
+// full researcher → writer → fact-checker chain, where price and link errors actually appeared.
 //
 //   npx tsx scripts/curation/tier-spots.ts --file spots.json --out tiers.json
 //   npx tsx scripts/curation/tier-spots.ts --ids sydney-12,hay --out tiers.json     (existing spots, to calibrate)
@@ -22,7 +22,7 @@ else if (one('--ids')) input = one('--ids')!.split(',').map(id => { const s = SP
 else { console.error('usage: tier-spots.ts (--file spots.json | --ids a,b) --out tiers.json'); process.exit(1); }
 
 const SIMPLE_CATEGORIES = new Set(['beach', 'viewpoint', 'landmark', 'monument']);
-// Name cues that mean it may charge, keep hours, or have its own site: full chain.
+// Name cues that mean it may charge or have its own site: full chain.
 const NEEDS_RESEARCH = /national park|conservation|state forest|garden|park\b|reserve|falls|gorge|walk|track|trail|zoo|aquarium|museum|gallery|cave|tour|cruise|winery|vineyard|distillery|brewery|observatory|railway|gaol|jail|resort|farm|centre|center|house|castle|fort |lighthouse|cellar|experience|tower|island|mine|market|baths|pool|pier|wharf|jetty|cemetery|station|hall|school|dam|lake|river|reef|circuit|sculpture|guitar|memorial|anzac|highway|road\b|drive/i;
 // Text cues that it is inside, or run by, something that charges.
 const FEE_TEXT = /\b(national park|state conservation|fee|fees|entry|admission|permit|ticket|tolls?|\$\d|booking|book ahead|guided)\b/i;
@@ -32,13 +32,13 @@ const VISIT: Record<string, [number, number]> = { beach: [1, 3], viewpoint: [0, 
 
 const simple: any[] = [], timed: any[] = [];
 for (const e of input) {
-  const why = !SIMPLE_CATEGORIES.has(e.category) ? `category ${e.category} may charge or keep hours`
+  const why = !SIMPLE_CATEGORIES.has(e.category) ? `category ${e.category} may charge`
     : NEEDS_RESEARCH.test(e.name) ? 'name suggests an operator, park or ticketed site'
     : FEE_TEXT.test(`${e.note ?? ''}`) ? 'its source text mentions a fee, a park or a booking' : null;
   if (why) { timed.push({ id: e.id, reason: why }); continue; }
   const town = e.category === 'landmark' && TOWN.test((e.note ?? '').slice(0, 120));
   const [min, max] = town ? [1, 3] : VISIT[e.category];
-  simple.push({ id: e.id, facts: { ...(town ? { category: 'historic' } : {}), hours: /^(big|giant)\b/i.test(e.name) ? 'Visible from the road at any time' : 'Open 24 hours', visitHoursMin: min, visitHoursMax: max, free: true, basis: 'default for a free, open-access place; no ticketUrl (no single steward)' } });
+  simple.push({ id: e.id, facts: { ...(town ? { category: 'historic' } : {}), visitHoursMin: min, visitHoursMax: max, free: true, basis: 'default for a free, open-access place; no ticketUrl (no single steward)' } });
 }
 const auditSize = Math.min(simple.length, Math.max(3, Math.ceil(simple.length * 0.12)));   // ~12% of the simple spots, at least 3
 const step = Math.max(1, Math.floor(simple.length / Math.max(1, auditSize)));

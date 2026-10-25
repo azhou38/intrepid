@@ -19,13 +19,13 @@ import Reanimated, {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
-import { Check, Clock, CalendarClock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
+import { Check, Clock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
          ExternalLink, Ticket, Globe, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, splitSpotCost, spotCostLabel, formatVisitTime, spotCostTone, visitTimeTone, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
+import { formatSpotCost, splitSpotCost, spotCostLabel, formatVisitTime, spotCostTone, visitTimeTone, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
@@ -1657,9 +1657,6 @@ function SpotGallery({ spotId }: { spotId: string }) {
   );
 }
 
-// Temporarily hides the About tab's opening-hours row (the live open/closed status and the week list). Set to true to bring it back.
-const SHOW_OPENING_HOURS = false;
-
 // Icon colours for the two at-a-glance facts on the About tab: icon colour on a light tint of the same hue, traffic-lit
 // by visitTimeTone / spotCostTone (spots.ts).
 const GLANCE_TONE = {
@@ -1670,13 +1667,9 @@ const GLANCE_TONE = {
 
 // ── About panel (shared between visited/non-visited) ──────────────────────────
 function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearbyHlScrollRef }: { spot: Spot; tabbed?: boolean; nearbySpots: Spot[]; onSelectNearby: (spot: Spot) => void; onExplore?: () => void; nearbyHlScrollRef?: React.RefObject<GHScrollView | null> }) {
-  const [hoursOpen, setHoursOpen] = useState(false);
   // The favicon URL that failed to load (not a bare flag): this panel is reused as the spot changes, so a flag set by one spot's
   // missing favicon used to stick and show the globe for every spot opened after it.
   const [failedFavicon, setFailedFavicon] = useState<string | null>(null);
-  // "Today" per the spot's OWN destination timezone (not the device's) — agrees with the live
-  // status text below, which is also computed in that timezone. See getSpotOpenStatus.
-  const today = zonedNowForSpot(spot).getDay();
   const ticketFaviconUri = useMemo(() => {
     if (!spot.ticketUrl) return null;
     try {
@@ -1710,75 +1703,6 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
           </View>
         </View>
       </View>
-
-      {/* Two separate cards now (not one joined by a hairline) — a tinted collapsed row
-          (today's hours, tap to expand) and, only while open, its own plain white card
-          listing the full week. No "OPENING HOURS" eyebrow and no "Today" tag on the
-          matching row below — just the bold value line and (when open) that row's own
-          tinted text, matching how it already picked today out. Closed today switches every
-          element of the collapsed row (and the matching week row) from green to red, rather
-          than just the "Closed" value text — the card as a whole should read as a status. */}
-      {SHOW_OPENING_HOURS && (() => {
-        // Live status (Open/Closes soon/Opens soon/Closed, incl. a same-day special closure) —
-        // see getSpotOpenStatus's own comment for what it can and can't parse from `hours`.
-        const status = getSpotOpenStatus(spot);
-        // 'closed' gets its own light red, distinct from the amber used for the "soon" states —
-        // closed is the more final/negative state, so it reads differently from a countdown.
-        const statusColor = status.kind === 'open' ? '#16A34A'
-          : status.kind === 'closing-soon' || status.kind === 'opening-soon' ? '#D97706'
-          : status.kind === 'closed' ? '#DC2626'
-          : '#111827';
-        // The whole row is tinted by the status, like its text: light green open, amber soon, red closed.
-        const statusTint = status.kind === 'open' ? { bg: '#F0FDF4', border: '#BBF7D0' }
-          : status.kind === 'closing-soon' || status.kind === 'opening-soon' ? { bg: '#FFFBEB', border: '#FDE68A' }
-          : status.kind === 'closed' ? { bg: '#FEF2F2', border: '#FECACA' }
-          : { bg: 'white', border: '#D8DBE0' };
-        const closedToday = hoursForDay(spot, today) === 'Closed';
-        const todayHoliday = specialClosureOn(spot, zonedNowForSpot(spot));
-        return (
-          <>
-            {/* hoursCard and hoursWeekCard now share ONE section so there's no gap between
-                them when open — hoursCard drops its bottom radius/border and hoursWeekCard
-                its top radius, so the two read as a single attached box, not separate cards. */}
-            <View style={[st.section, { gap: 0 }]}>
-              <Pressable
-                style={[st.hoursCard, { backgroundColor: statusTint.bg, borderColor: statusTint.border }, hoursOpen && st.hoursCardOpen]}
-                onPress={() => setHoursOpen(o => !o)}
-              >
-                <CalendarClock size={20} color={statusColor} />
-                <Text numberOfLines={1}>
-                  <Text style={[st.hoursTxt, { color: statusColor }]}>{status.label}</Text>
-                  {status.detail && (
-                    <Text style={st.hoursTxtDetail}> · {status.detail}</Text>
-                  )}
-                </Text>
-                {hoursOpen
-                  ? <ChevronUp size={18} color={statusColor} style={{ marginLeft: 'auto' }} />
-                  : <ChevronRight size={18} color={statusColor} style={{ marginLeft: 'auto' }} />}
-              </Pressable>
-
-              {hoursOpen && (
-                <View style={st.hoursWeekCard}>
-                  {DAY_NAMES.map((day, i) => {
-                    const isToday = i === today;
-                    // Only today has a real calendar date to check a special closure against —
-                    // the other rows are "this weekday in general", not a specific future date.
-                    const val = isToday && todayHoliday ? `Closed (${todayHoliday})` : hoursForDay(spot, i);
-                    return (
-                      <View key={day} style={[st.hoursWeekRow, i > 0 && st.hoursWeekRowBorder]}>
-                        <Text style={[st.hoursWeekDay, isToday && (closedToday ? st.hoursWeekDayTodayClosed : [st.hoursWeekDayToday, { color: statusColor }])]}>{day}</Text>
-                        <Text style={[st.hoursWeekVal, isToday && (closedToday ? st.hoursWeekDayTodayClosed : [st.hoursWeekDayToday, { color: statusColor }])]}>
-                          {val}
-                        </Text>
-                      </View>
-                    );
-                  })}
-                </View>
-              )}
-            </View>
-          </>
-        );
-      })()}
 
       {SHOW_SPOT_GALLERY && <SpotGallery spotId={spot.id} />}
 
@@ -2051,32 +1975,6 @@ const st = StyleSheet.create({
   costValWrap: { alignSelf: 'stretch', alignItems: 'center' },
   // Invisible copy of the one-line price in a wide box (600 pt), only to measure its natural width via onTextLayout.
   costMeasure: { position: 'absolute', opacity: 0, left: 0, top: 0, width: 600 },
-  // Collapsed hours row — white card, light gray border (not joined to the week list below it,
-  // which only exists as a separate card while open — see SpotAbout's own comment).
-  hoursCard: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: 'white',
-               borderRadius: 16, padding: 14, borderWidth: 1, borderColor: '#D8DBE0' },
-  // While open, the week list sits flush underneath — square off the bottom and drop the
-  // border there so the two read as one attached box, not two separate cards.
-  hoursCardOpen: { borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderBottomWidth: 0 },
-  // Color set inline per status (green/orange/neutral) — see getSpotOpenStatus.
-  hoursTxt: { fontSize: 16, fontWeight: '600', lineHeight: 22 },
-  // The "· Closes 6:00 PM" part after the label — always black (unlike the colored label).
-  hoursTxtDetail: { fontSize: 16, fontWeight: '600', color: '#111827', lineHeight: 22 },
-  // The full-week card, only rendered while open — attached directly under hoursCard (see its
-  // own comment), so its top corners are square and its border color matches; each row joined
-  // to the next by a top hairline instead of each row having its own card.
-  hoursWeekCard: { backgroundColor: 'white', borderRadius: 16, borderTopLeftRadius: 0, borderTopRightRadius: 0,
-                   overflow: 'hidden', borderWidth: 1, borderColor: '#D8DBE0' },
-  hoursWeekRow:     { flexDirection: 'row', justifyContent: 'space-between',
-                      paddingHorizontal: 16, paddingVertical: 13 },
-  hoursWeekRowBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#F3F4F6' },
-  hoursWeekDay:     { fontSize: 14, color: '#6B7280', fontWeight: '600' },
-  hoursWeekVal:     { fontSize: 14, color: '#374151', fontWeight: '600' },
-  // Color is applied inline as `statusColor`, matching the header text live (green/orange/
-  // neutral) instead of a fixed color — see getSpotOpenStatus. Weight matches the other rows
-  // (hoursWeekDay/hoursWeekVal) — only the color sets today's row apart, not extra boldness.
-  hoursWeekDayToday: { fontWeight: '600' },
-  hoursWeekDayTodayClosed: { color: '#DC2626', fontWeight: '600' },
   // Official site — one white card; the row is a favicon-sized tile, a gray eyebrow and the name.
   linksCard: { backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#E5E7EB', overflow: 'hidden' },
   linksRow: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12 },

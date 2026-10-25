@@ -3,8 +3,8 @@
 
   python3 scripts/curation/png-apply-spots.py [--dry-run]
 
-Inputs (curation/png/): triage.json (which spots are complete enough: pin, cost, hours), spots-input.json (name, wiki, category,
-note), quill/research-N.json (hours, cost, visit time, ticketUrl), tiers.json (simple spots' default facts and category),
+Inputs (curation/png/): triage.json (which spots are complete enough: pin, cost), spots-input.json (name, wiki, category,
+note), quill/research-N.json (cost, visit time, ticketUrl), tiers.json (simple spots' default facts and category),
 quill/bios-all.json (the drafted bios) and quill/facts-N.json (the fact-checker's verdicts: `fix` replaces the bio, `cut` drops the
 spot). A spot with a bio that fails the fact-check stays out and is listed. Writes the spots with `country`, `countryCode`,
 `continent` and `timezone` (Bougainville is its own time zone), and prints what was added and what was held.
@@ -50,9 +50,8 @@ for sid, t in tri.items():
     facts = simple.get(sid)
     cat = (facts or {}).get('category') or s['category']
     if facts:
-        hours, vmin, vmax = facts['hours'], facts['visitHoursMin'], facts['visitHoursMax']; free = True; cost = None
+        vmin, vmax = facts['visitHoursMin'], facts['visitHoursMax']; free = True; cost = None
     else:
-        hours = (t['hours'] or '').rstrip('*').strip()
         vmin = r.get('visitHoursMin'); vmax = r.get('visitHoursMax')
         if vmin is None or vmax is None: vmin, vmax = (0.25, 0.5) if cat in ('viewpoint', 'landmark', 'monument') else (1, 3)
         free = bool(r.get('free')) or t['cost'] == 'assumed-free'
@@ -61,7 +60,7 @@ for sid, t in tri.items():
     fields = [f'id: {J(sid)}', 'country: "Papua New Guinea"', 'countryCode: "PG"', 'continent: "Oceania"', f'timezone: "{tz(co)}"', f'name: {J(s["name"])}']
     if wiki and wiki != s['name']: fields.append(f'wiki: {J(wiki)}')
     fields += [f'icon: {J(icon(s["name"], cat, facts))}', f'coordinates: {{ latitude: {co["lat"]}, longitude: {co["lng"]} }}', f'category: {J(cat)}', f'bio: {J(bio)}',
-               f'hours: {J(hours)}', f'visitHoursMin: {vmin}', f'visitHoursMax: {vmax}']
+               f'visitHoursMin: {vmin}', f'visitHoursMax: {vmax}']
     if free: fields.append('free: true')
     elif cost and cost[0] is not None:
         fields += [f'costMin: {cost[0]}', f'costMax: {cost[1] if cost[1] is not None else cost[0]}']

@@ -5,7 +5,7 @@
                                               [--dest <id>] [--overrides curation/<branch>/quill/<dest>/final.json]
 
 --dest restricts the run to the placements of one destination (use it after apply-destination.py has added that destination);
---overrides merges the copy editor's `spots` changes (bio, hours, cost, ticketUrl, …) over each placement's spot before it is written.
+--overrides merges the copy editor's `spots` changes (bio, cost, ticketUrl, …) over each placement's spot before it is written.
 
 Adds, to src/data/spots.ts, every placement whose `action` is
   "spot"        and whose `destination` already exists in src/data/destinations.ts  → after that destination's last spot
@@ -14,7 +14,7 @@ and writes each one's accepted photo into WIKI_IMAGE_OVERRIDES (keyed by wiki ti
   - spots of a PROPOSED destination (`spot-of-proposed-destination`, or a destination not in destinations.ts yet): they go
     in with the destination, when it is written (Quill + Lens);
   - placements flagged `status` (held: needs an external photo, no photo, …) and any entry without an accepted photo;
-  - a draft that Pipeline C has not researched: `needs_research` left, placeholder hours, or no cost and not free;
+  - a draft that Pipeline C has not researched: `needs_research` left, or no cost and not free;
   - a spot whose id is already in spots.ts or in git history (ids are never reused).
 A cost in the entry gets the currency (default AUD; pass --currency). The destination and standalone fields follow
 WRITING.md. Run, then: build-image-manifest.ts, tsc, audit-spot-coordinates.ts, photo-prefilter.ts. Prints what it added
@@ -57,7 +57,6 @@ def spot_line(sid, dest, e):
     f.append(f"coordinates: {{ latitude: {c['latitude']}, longitude: {c['longitude']} }}")
     f.append(f"category: '{s['category']}'")
     f.append(f"bio: {q(s['bio'])}")
-    f.append(f"hours: {q(s['hours'])}")
     f.append(f"visitHoursMin: {s['visitHoursMin']}, visitHoursMax: {s['visitHoursMax']}")
     if s.get('free'):
         f.append('free: true')
@@ -69,8 +68,6 @@ def spot_line(sid, dest, e):
         f.append(f"costPer: {q(s['costPer'])}")
     if s.get('needs'):
         f.append(f"needs: '{s['needs']}'")
-    if s.get('closedDays'):
-        f.append(f"closedDays: [{', '.join(str(d) for d in s['closedDays'])}]")
     if s.get('ticketUrl'):
         f.append(f"ticketUrl: {q(s['ticketUrl'])}")
     return '  { ' + ', '.join(f) + ' },'
@@ -145,12 +142,10 @@ for e in place['placements']:
         skipped.append((name, f'id {sid} was used before (git history)')); continue
     if 'spot' not in e:
         skipped.append((name, 'no full spot entry')); continue
-    # A placement entry is a draft until Pipeline C has researched it (PIPELINES.md): no hours placeholder, a cost or
+    # A placement entry is a draft until Pipeline C has researched it (PIPELINES.md): a cost or
     # `free`, and a ticketUrl decision. Sea Life Sydney went in with none of these.
     sp = e['spot']
     gaps = list(e.get('needs_research') or [])
-    if not sp.get('hours') or 'check the operator' in str(sp.get('hours')).lower():
-        gaps.append('hours')
     if not sp.get('free') and sp.get('costMin') is None:
         gaps.append('cost')
     if gaps:

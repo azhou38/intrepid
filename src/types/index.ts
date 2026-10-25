@@ -88,8 +88,7 @@ export interface Destination {
   name: string;
   country: string;
   countryCode: string;
-  // IANA timezone identifier (e.g. "Europe/Paris") — used to compute each spot's live open/
-  // closed status in the destination's own local time rather than the device's.
+  // IANA timezone identifier (e.g. "Europe/Paris").
   timezone: string;
   continent: Continent;
   coordinates: { latitude: number; longitude: number };
