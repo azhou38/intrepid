@@ -1507,7 +1507,7 @@ function DestinationSheet({
       onUndo: () => unvisitDestination(id),
     });
   };
-  // Long press on "Mark Visited", or "Add details": the trip editor straight away (the destination becomes visited on save).
+  // Long press on "Mark Visited": the trip editor straight away (the destination becomes visited on save).
   const handleAddVisitDetails = () => {
     setEditingVisitModule('new');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -1663,12 +1663,6 @@ function DestinationSheet({
                 Save actions stay on the right. */}
             <Reanimated.View style={[st.heroTopRow, heroTopRowStyle, { justifyContent: 'flex-end' }]}>
               <View style={st.heroActionsRight}>
-                {isVisited && (
-                  <Pressable style={st.heroVisitPill} onPress={handleAddVisitDetails} hitSlop={10}>
-                    <Plus size={15} color="white" strokeWidth={2.75} />
-                    <Text style={st.heroVisitPillTxt}>Add details</Text>
-                  </Pressable>
-                )}
                 <Pressable
                   style={[st.heroVisitPill, isVisited && st.heroIconBtnVisited]}
                   onPress={handleMarkVisited} onLongPress={isVisited ? undefined : handleAddVisitDetails} hitSlop={10}>

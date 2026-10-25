@@ -140,12 +140,14 @@ const CARD_TITLE_STAT_GAP = 8.6;
 const CARD_INFO_BOTTOM = 12;
 
 // ── Carousel preview card (one per spot in the collapsed carousel) ───────────
-function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, gradId }: {
+function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, onRemoveVisit, gradId }: {
   spot: Spot; isActive: boolean; onPress: () => void;
   // Tapping the "Mark Visited" tag (unvisited spots only) marks the spot visited at once, with the "Add details · Undo"
   // bar (VisitToast); a long press opens its trip editor instead, for someone who wants to log the visit straight away.
   onAddVisit: () => void;
   onAddVisitDetails: () => void;
+  // Tapping the green "Visited" tag un-marks the spot (see handleMarkVisited's visited branch).
+  onRemoveVisit: () => void;
   // Unique PER RENDERED CARD (not just per spot) — the endless-scroll illusion renders
   // clones of the first/last spot alongside the real ones, so multiple simultaneously-
   // mounted cards can share the same spot.id. Reusing spot.id as the SVG gradient's <Defs>
@@ -202,10 +204,10 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
           {/* Replaces the old always-present bookmark — a green tag only when actually
               visited, matching the "Visited" status pills used elsewhere in the app. */}
           {isVisited ? (
-            <View style={st.cardVisitedTag}>
+            <Pressable style={st.cardVisitedTag} onPress={onRemoveVisit} hitSlop={6}>
               <Check size={13} color="white" strokeWidth={3} />
               <Text style={st.cardVisitedTagTxt}>Visited</Text>
-            </View>
+            </Pressable>
           ) : (
             <Pressable
               style={st.cardAddVisitTag}
@@ -1137,30 +1139,30 @@ function SpotSheet({
       onUndo: () => unvisitSpot(spot.id),
     });
   };
-  const handleMarkVisited = () => {
-    if (isVisited) {
-      // Nothing logged: un-mark at once, with Undo. Trips, a rating, notes or photos would be lost: ask first, as before.
-      if (!spotHasDetails(useStore.getState(), activeSpot.id)) {
-        const spot = activeSpot;
-        unvisitSpot(spot.id);
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        showVisitToast({ message: 'Visit removed', onUndo: () => saveSpotVisited(spot.id, spot.destinationId) });
-        return;
-      }
-      // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
-      Alert.alert(
-        'Remove visit?',
-        'This will delete all logged visits for this spot.',
-        [
-          { text: 'Cancel', style: 'cancel' },
-          { text: 'Remove', style: 'destructive', onPress: () => unvisitSpot(activeSpot.id) },
-        ]
-      );
+  // Un-marks a visited spot: nothing logged, at once with Undo; trips, a rating, notes or photos would be lost, so it asks
+  // first, as before. From the hero's "Visited" pill or a carousel card's "Visited" tag.
+  const unmarkSpotVisited = (spot: Spot) => {
+    if (!spotHasDetails(useStore.getState(), spot.id)) {
+      unvisitSpot(spot.id);
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+      showVisitToast({ message: 'Visit removed', onUndo: () => saveSpotVisited(spot.id, spot.destinationId) });
       return;
     }
-    markSpotVisited(activeSpot);
+    // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
+    Alert.alert(
+      'Remove visit?',
+      'This will delete all logged visits for this spot.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Remove', style: 'destructive', onPress: () => unvisitSpot(spot.id) },
+      ]
+    );
   };
-  // Long press on "Mark Visited", or "Add details": the trip editor straight away (the spot becomes visited on save).
+  const handleMarkVisited = () => {
+    if (isVisited) unmarkSpotVisited(activeSpot);
+    else markSpotVisited(activeSpot);
+  };
+  // Long press on "Mark Visited", or "Add details" in the bar: the trip editor straight away (the spot becomes visited on save).
   const handleAddVisitDetails = () => {
     setEditingVisitModule('new');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -1403,12 +1405,6 @@ isVisited ? (
                 DestinationSheet. Only the visited-status pill stays, on the right. */}
             <View style={[st.heroTopRow, { top: heroTopRowTop, justifyContent: 'flex-end' }]}>
               <View style={st.heroActionsRight}>
-                {isVisited && (
-                  <Pressable style={st.heroVisitPill} onPress={handleAddVisitDetails} hitSlop={10}>
-                    <Plus size={15} color="white" strokeWidth={2.75} />
-                    <Text style={st.heroVisitPillTxt}>Add details</Text>
-                  </Pressable>
-                )}
                 <Pressable
                   style={[st.heroVisitPill, isVisited && st.heroIconBtnVisited]}
                   onPress={handleMarkVisited} onLongPress={isVisited ? undefined : handleAddVisitDetails} hitSlop={10}>
@@ -1584,6 +1580,7 @@ isVisited ? (
                   snapToFullRef.current();
                 }}
                 onAddVisit={() => { selectSpot(item.spot); markSpotVisited(item.spot); }}
+                onRemoveVisit={() => { selectSpot(item.spot); unmarkSpotVisited(item.spot); }}
                 onAddVisitDetails={() => {
                   // The editor opens straight over the carousel; the sheet stays put underneath. It
                   // only goes full-screen once a trip is saved (revealVisit), to show it on My Visit —

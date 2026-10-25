@@ -331,7 +331,7 @@ function CountrySheet({
       onUndo: () => unvisitCountry(code),
     });
   }, [isCountryVisited, localVisits, cluster.countryCode, cluster.country, unvisitCountry, saveCountryVisited]);
-  // Long press on "Mark Visited", or "Add details": the trip editor straight away (the country becomes visited on save).
+  // Long press on "Mark Visited": the trip editor straight away (the country becomes visited on save).
   const handleAddVisitDetails = useCallback(() => {
     setEditingVisitModule('new');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -1057,12 +1057,6 @@ function CountrySheet({
                   instead, identical to DestinationSheet's own hero top row. */}
               <Animated.View style={[st.headerTopRow, headerTopRowStyle, { justifyContent: 'flex-end' }]}>
                 <View style={st.headerActionsRight}>
-                  {isCountryVisited && (
-                    <Pressable style={st.headerVisitPill} onPress={handleAddVisitDetails} hitSlop={10}>
-                      <Plus size={15} color="white" strokeWidth={2.75} />
-                      <Text style={st.headerVisitPillTxt}>Add details</Text>
-                    </Pressable>
-                  )}
                   <Pressable
                     style={[st.headerVisitPill, isCountryVisited && st.headerVisitPillActive]}
                     onPress={handleMarkVisited} onLongPress={isCountryVisited ? undefined : handleAddVisitDetails} hitSlop={10}
