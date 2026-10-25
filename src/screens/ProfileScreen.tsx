@@ -30,6 +30,14 @@ const WORLD_Y0 = 0, WORLD_Y1 = WORLD_VH;
 const WORLD_W = Dimensions.get('window').width - 32;
 const WORLD_H = Math.round((WORLD_W * WORLD_VH) / 360);
 const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP - miller(lat) });
+// A spot pin on the card's map, in its map units: the app's teardrop (a round head, the tail's edges tangent to it) with
+// its tip on the place. PIN_TIP is the tip's distance below the head's centre.
+const PIN_R = 1.5, PIN_TIP = 3.4;
+const PIN_TY = (PIN_R * PIN_R) / PIN_TIP, PIN_TX = PIN_R * Math.sqrt(1 - (PIN_R * PIN_R) / (PIN_TIP * PIN_TIP));
+const pinPath = (x: number, y: number) => {
+  const cy = y - PIN_TIP;
+  return `M ${x - PIN_TX} ${cy + PIN_TY} L ${x} ${y} L ${x + PIN_TX} ${cy + PIN_TY} A ${PIN_R} ${PIN_R} 0 1 0 ${x - PIN_TX} ${cy + PIN_TY} Z`;
+};
 
 type WorldMode = 'countries' | 'destinations' | 'spots';
 const WORLD_MODES: { mode: WorldMode; label: string }[] = [
@@ -187,10 +195,16 @@ export default function ProfileScreen() {
                 fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
                 stroke="white" strokeWidth={0.15} />
             ))}
-            {/* Destinations or spots: a dot at each one visited (spots smaller, as there are more of them). */}
-            {worldMode !== 'countries' && worldDots.map((p, k) => (
-              <Circle key={k} cx={p.x} cy={p.y} r={worldMode === 'spots' ? 1.4 : 2}
-                fill="#10B981" stroke="white" strokeWidth={worldMode === 'spots' ? 0.35 : 0.5} />
+            {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
+                read differently from destinations, as on the full-screen map. */}
+            {worldMode === 'destinations' && worldDots.map((p, k) => (
+              <Circle key={k} cx={p.x} cy={p.y} r={2} fill="#10B981" stroke="white" strokeWidth={0.5} />
+            ))}
+            {worldMode === 'spots' && worldDots.map((p, k) => (
+              <React.Fragment key={k}>
+                <Path d={pinPath(p.x, p.y)} fill="#10B981" stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
+                <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
+              </React.Fragment>
             ))}
           </Svg>
           {/* A hint that the map opens. */}
