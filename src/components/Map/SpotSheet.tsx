@@ -1131,6 +1131,8 @@ function SpotSheet({
   };
   const markSpotVisited = (spot: Spot) => {
     saveSpotVisited(spot.id, spot.destinationId);
+    // Up to full screen on the new My Visit tab (the same reveal a saved trip gets).
+    setRevealVisit(true);
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     showVisitToast({
       message: 'Marked visited', actionLabel: 'Add details',

@@ -316,6 +316,8 @@ function CountrySheet({
     }
     const code = cluster.countryCode;
     saveCountryVisited(code, {});
+    // Up to full screen on the new My Visit tab (the same reveal a saved trip gets).
+    setRevealVisit(true);
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     showVisitToast({
       message: 'Marked visited', actionLabel: 'Add details',
