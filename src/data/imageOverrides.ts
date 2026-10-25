@@ -653,6 +653,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Cathedral Rocks": { x: 0.55, y: 0.4, zoom: 1.6 },
   "Red Bluff (Kalbarri)": { x: 0.4, y: 0.3, zoom: 1.4 },
   "File:Canberra panorama from Mount Ainslie.jpg": { x: 0.5, y: 0.5 },
+  "Namadgi National Park": { x: 0.5, y: 0.62, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2215,6 +2216,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Red Bluff (Quobba)": "The red bluff knoll.jpg",
   "Collie": "ext-collie-header.jpg",
   "Canberra": "Old and new Parliament Houses; Canberra Australia.jpg",
+  "Namadgi National Park": "Mount Ginini - Namadgi National Park - 2.jpg",
 };
 
 /**
