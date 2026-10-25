@@ -6004,6 +6004,7 @@ const destItems = useMemo((): DestItem[] =>
           onSnapStateChange={handleSheetSnapStateChange}
           // A standalone spot has no destination sheet to open a list in.
           onGoToList={liveSpotSheet && selectedSpot!.destinationId && !nearCtx ? handleGoToListView : undefined}
+          onTitlePress={liveSpotSheet && selectedDest && !nearCtx ? handleUpNav : undefined}
           collapseSignal={collapseSheetSignal}
         />
       )}
@@ -6075,7 +6076,9 @@ const destItems = useMemo((): DestItem[] =>
               // have none), which fades out as the sheet slides up to full screen and back in as it slides down
               // (upPillBackStyle), rather than popping when the snap state flips.
               const full = mapState === 'sheet';
-              const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
+              // A spot's carousel title is its destination's name and goes back to it (SpotSheet onTitlePress), so the pill
+              // only names the destination when the carousel is titled by something else (a standalone spot's district).
+              const backName = selectedSpot ? (nearCtx ? (selectedDest?.name ?? null) : null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
                   {full ? (

@@ -19,7 +19,7 @@ import Reanimated, {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
-import { Check, Clock, ChevronUp, ChevronDown, ChevronRight, LayoutGrid, Plus,
+import { Check, Clock, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, LayoutGrid, Plus,
          ExternalLink, Ticket, Globe, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
@@ -389,6 +389,8 @@ interface Props {
   // "Grid view" — swaps this carousel for the destination sheet's full-screen Spots grid,
   // which is often easier to scan than swiping card-by-card.
   onGoToList?: () => void;
+  // Tapping the carousel's destination title goes back to that destination's sheet (it replaces the "← Destination" pill).
+  onTitlePress?: () => void;
   // Bump this to imperatively collapse from the parent — used by the shared back pill's
   // down-arrow while this sheet is full-screen (the hero's own close button was removed in
   // favor of that pill, same as DestinationSheet).
@@ -397,7 +399,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, pillFullSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, collapseSignal,
+  pillOffsetSV, pillFullSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, onTitlePress, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -1461,7 +1463,21 @@ isVisited ? (
               <Text style={st.carEyebrow}>
                 {nearLabel && nearEyebrow === 'NEAR' ? 'NEAR' : 'SPOT'}{spots.length > 1 ? ` ${activeIndex + 1} / ${spots.length}` : ''}
               </Text>
-              <Text style={st.carDest} numberOfLines={2} ellipsizeMode="tail">{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
+              {onTitlePress ? (
+                // The destination's name doubles as the back button: "‹ Canberra" opens Canberra's sheet.
+                <Pressable
+                  style={({ pressed }) => [st.carDestBtn, pressed && { opacity: 0.5 }]}
+                  onPress={onTitlePress}
+                  hitSlop={{ top: 6, bottom: 6, left: 8, right: 8 }}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Back to ${destination?.name ?? ''}`}
+                >
+                  <ChevronLeft size={20} color="#111827" strokeWidth={2.5} style={st.carDestChevron} />
+                  <Text style={[st.carDest, { flexShrink: 1 }]} numberOfLines={2} ellipsizeMode="tail">{destination?.name}</Text>
+                </Pressable>
+              ) : (
+                <Text style={st.carDest} numberOfLines={2} ellipsizeMode="tail">{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
+              )}
             </View>
             {!!onGoToList && (
               <Pressable
@@ -1788,6 +1804,8 @@ const st = StyleSheet.create({
   carHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingTop: 3, paddingBottom: 9 },
   carEyebrow: { fontSize: 10, fontWeight: '800', color: '#9CA3AF', letterSpacing: 1.3, marginBottom: 2 },
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
+  carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -4 },
+  carDestChevron: { marginRight: 1 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
                    marginLeft: 12, paddingHorizontal: 8, paddingVertical: 5,
                    borderRadius: 8, borderWidth: 1, borderColor: '#E5E7EB' },
