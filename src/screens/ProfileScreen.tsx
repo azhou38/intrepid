@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, Dimensions, Pressable,
+  View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation,
 } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
@@ -97,11 +97,14 @@ export default function ProfileScreen() {
 
 
   return (
+    <View style={[styles.container, { paddingTop: insets.top }]}>
+    {/* The level selector (child 1) pins to the top while the sections it controls scroll beneath it. */}
     <ScrollView
       style={styles.container}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
-      contentContainerStyle={{ paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100 }}
+      stickyHeaderIndices={[1]}
+      contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
       showsVerticalScrollIndicator={false}
     >
       {/* ── Profile header ──────────────────────────────────────────── */}
@@ -119,8 +122,9 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* ── My World: the three counts head the map and choose what it (and Top Countries) shows ── */}
-      <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14, padding: 0, overflow: 'hidden' }]}>
+      {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
+          every section below show; it stays pinned at the top as they scroll. ── */}
+      <View style={styles.selectorSticky}>
         <View style={styles.statsHeader}>
           {WORLD_MODES.map(({ mode, label }, i) => {
             const on = worldMode === mode;
@@ -129,18 +133,27 @@ export default function ProfileScreen() {
               <React.Fragment key={mode}>
                 {i > 0 && <View style={styles.statDivider} />}
                 <Pressable
-                  style={styles.statItem}
-                  onPress={() => { if (!on) { Haptics.selectionAsync(); setWorldMode(mode); } }}
+                  style={[styles.statItem, on && styles.statItemOn]}
+                  onPress={() => {
+                    if (on) return;
+                    Haptics.selectionAsync();
+                    // The sections below swap with an animation, so the change is seen to follow the selection.
+                    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+                    setWorldMode(mode);
+                  }}
                   hitSlop={4}
                 >
-                  <Text style={[styles.statValue, !on && styles.statValueOff]}>{value}</Text>
+                  <Text style={[styles.statValue, on ? styles.statValueOn : styles.statValueOff]}>{value}</Text>
                   <Text style={[styles.statLabel, on && styles.statLabelOn]}>{label}</Text>
-                  <View style={[styles.statUnderline, on && styles.statUnderlineOn]} />
                 </Pressable>
               </React.Fragment>
             );
           })}
         </View>
+      </View>
+
+      {/* ── My World map: the card's lower half, under the selector ── */}
+      <View style={styles.mapCard}>
 
         <View pointerEvents="none" style={styles.mapWrap}>
           <Svg width={WORLD_W} height={WORLD_H} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
@@ -282,6 +295,7 @@ export default function ProfileScreen() {
       )}
 
     </ScrollView>
+    </View>
   );
 }
 
@@ -302,16 +316,25 @@ const styles = StyleSheet.create({
   profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2 },
 
   // Stats row
-  // My World's header: the three counts, each a button; the selected one is dark with a green underline.
+  // The level selector: the top of the My World card, pinned while scrolling (on the page colour, so nothing shows round
+  // its corners). The selected count sits on a soft green pill.
+  selectorSticky: { backgroundColor: '#F9FAFB', paddingHorizontal: 16 },
   statsHeader: {
-    flexDirection: 'row', alignItems: 'center',
-    paddingTop: 14, borderBottomWidth: 1, borderBottomColor: '#F3F4F6',
+    flexDirection: 'row', alignItems: 'center', padding: 6,
+    backgroundColor: 'white', borderTopLeftRadius: 18, borderTopRightRadius: 18,
+    borderWidth: 1, borderBottomWidth: 0, borderColor: '#F3F4F6',
   },
-  statItem:    { flex: 1, alignItems: 'center' },
+  statItemOn:  { backgroundColor: '#ECFDF5' },
+  statValueOn: { color: '#059669' },
+  // The map: the card's lower half, joined to the selector above it.
+  mapCard: {
+    marginHorizontal: 16, marginBottom: 14, overflow: 'hidden', backgroundColor: 'white',
+    borderBottomLeftRadius: 18, borderBottomRightRadius: 18,
+    borderWidth: 1, borderTopWidth: 0, borderColor: '#F3F4F6',
+  },
+  statItem:    { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 12 },
   statValueOff:    { color: '#9CA3AF' },
-  statLabelOn:     { color: '#111827', fontWeight: '600' },
-  statUnderline:   { marginTop: 10, width: 28, height: 2.5, borderRadius: 2, backgroundColor: 'transparent' },
-  statUnderlineOn: { backgroundColor: '#10B981' },
+  statLabelOn:     { color: '#047857', fontWeight: '600' },
   statValue:   { fontSize: 22, fontWeight: '800', color: '#111827' },
   statLabel:   { fontSize: 10, color: '#6B7280', marginTop: 2 },
   statDivider: { width: 1, height: 28, backgroundColor: '#E5E7EB' },
