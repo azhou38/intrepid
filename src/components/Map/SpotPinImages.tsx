@@ -15,7 +15,7 @@ export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
 // rather than a disc behind the bubble. GLOW_MARGIN is how far it reaches past the pin; the layer shifts the image down by
 // it so its tip sits on the pin's tip (iconOffset).
 export const SPOT_SELECTED_GLOW = 'spotselglow';
-export const GLOW_MARGIN = 9;
+export const GLOW_MARGIN = 6;
 
 // A little over a third of the photo pin's size (SpotMarker: a 28pt bubble, 10pt tail), same geometry, white
 // (solid green once visited): the tail's two edges are
@@ -74,7 +74,8 @@ const GLOW_COLOR = '#1D4ED8';
 // Outermost first; each stroke is centred on the outline, so it reaches half its width past the pin.
 // Nine thin steps rather than a few wide ones, so the falloff reads as a soft blur, not bands; together they reach about the
 // old disc glow's 0.6 next to the pin.
-const GLOW_STROKES = [18, 16, 14, 12, 10, 8, 6, 4, 2].map(w => ({ w, o: 0.09 }));
+// Widths up to twice the margin, so the outermost reaches the image's edge.
+const GLOW_STROKES = [9, 8, 7, 6, 5, 4, 3, 2, 1].map(k => ({ w: (GLOW_MARGIN * 2 * k) / 9, o: 0.09 }));
 
 const SelectedGlow = memo(function SelectedGlow() {
   const imageRef = useRef<{ refresh: () => void } | null>(null);
