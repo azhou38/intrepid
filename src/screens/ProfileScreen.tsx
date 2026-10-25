@@ -125,6 +125,13 @@ export default function ProfileScreen() {
     () => (q ? destCountries.filter(c => c.name.toLowerCase().includes(q) || exploredDests.some(d => d.countryCode === c.code && d.name.toLowerCase().includes(q))) : destCountries),
     [destCountries, exploredDests, q]);
   const exploredSpots = useMemo(() => [...visitedSpots].sort((x, y) => x.name.localeCompare(y.name)), [visitedSpots]);
+  // Spots Explored's search: a spot's name, its destination or its country.
+  const [spotQuery, setSpotQuery] = useState('');
+  const sq = spotQuery.trim().toLowerCase();
+  const shownSpots = useMemo(() => !sq ? exploredSpots : exploredSpots.filter(sp => {
+    const hay = [sp.name, spotDestination(sp)?.name, spotCountry(sp)].filter(Boolean).join(' ').toLowerCase();
+    return hay.includes(sq);
+  }), [exploredSpots, sq]);
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
   // The map opens full screen to explore (WorldMapModal), on the same level; its tap card counts per country.
@@ -438,9 +445,32 @@ export default function ProfileScreen() {
           {exploredSpots.length === 0 ? (
             <Text style={styles.topEmpty}>No spots visited yet.</Text>
           ) : (
-            // One row per spot, as for destinations: its photo, its name, and where it is (its destination and country).
-            <ScrollView style={styles.destRowsScroll} nestedScrollEnabled showsVerticalScrollIndicator={exploredSpots.length > 5}>
-              {exploredSpots.map((sp, k) => {
+            <>
+            {/* Search: a spot, a destination or a country. Shown once there are enough to need it. */}
+            {exploredSpots.length > 8 && (
+              <View style={styles.searchBox}>
+                <Search size={15} color="#9CA3AF" />
+                <TextInput
+                  style={styles.searchInput}
+                  value={spotQuery}
+                  onChangeText={setSpotQuery}
+                  placeholder="Search spots, destinations or countries"
+                  placeholderTextColor="#9CA3AF"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="search"
+                />
+                {!!spotQuery && (
+                  <Pressable onPress={() => setSpotQuery('')} hitSlop={8} accessibilityLabel="Clear search">
+                    <X size={15} color="#9CA3AF" strokeWidth={2.5} />
+                  </Pressable>
+                )}
+              </View>
+            )}
+            {shownSpots.length === 0 && <Text style={styles.topEmpty}>No spots match.</Text>}
+            {/* One row per spot, as for destinations: its photo, its name, and where it is (its destination and country). */}
+            <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownSpots.length > 5}>
+              {shownSpots.map((sp, k) => {
                 const dest = spotDestination(sp);
                 const where = [dest?.name, spotCountry(sp)].filter(Boolean).join(' · ');
                 return (
@@ -466,6 +496,7 @@ export default function ProfileScreen() {
                 );
               })}
             </ScrollView>
+            </>
           )}
         </View>
       )}
