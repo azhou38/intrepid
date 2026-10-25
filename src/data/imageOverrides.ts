@@ -2212,6 +2212,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "The Esplanade (Geraldton)": "Geraldton Foreshore October 2023 08.jpg",
   "Red Bluff (Kalbarri)": "Toujours menaçant (6136948408).jpg",
   "Red Bluff (Quobba)": "The red bluff knoll.jpg",
+  "Collie": "ext-collie-header.jpg",
 };
 
 /**
@@ -2329,7 +2330,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Kathleen Springs Walk",
   "Escarpment Walk",
   "Anmatjere Man",
-  "Collie",
   "Bunbury Wildlife Park",
   "Black Diamond Lake",
   "Wambenger Trails",
