@@ -1805,7 +1805,8 @@ const st = StyleSheet.create({
   carEyebrow: { fontSize: 10, fontWeight: '800', color: '#9CA3AF', letterSpacing: 1.3, marginBottom: 2 },
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
   carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -12 },
-  carDestChevron: { marginRight: 1 },
+  // The chevron sits 2 pt further left than the title (-14 vs -12); the extra right margin keeps the title where it was.
+  carDestChevron: { marginLeft: -2, marginRight: 3 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
                    marginLeft: 12, paddingHorizontal: 8, paddingVertical: 5,
                    borderRadius: 8, borderWidth: 1, borderColor: '#E5E7EB' },
