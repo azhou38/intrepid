@@ -1490,7 +1490,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
                   {titleOnly && (
                     <Pressable style={vcS.memAddDates} onPress={() => onEditVisit(v)} hitSlop={6}>
                       <Plus size={13} color="#9CA3AF" strokeWidth={2.5} />
-                      <Text style={vcS.memAddDatesTxt}>
+                      <Text style={[vcS.memAddDatesTxt, { flexShrink: 1 }]} numberOfLines={1} ellipsizeMode="tail">
                         {hasSelector ? `Add dates, ${pluralNoun} visited, photos, and notes` : 'Add dates, photos, and notes'}
                       </Text>
                     </Pressable>
@@ -1655,7 +1655,7 @@ const vcS = StyleSheet.create({
   emptyBtn:            { flexDirection:'row', alignItems:'center', gap:6, height:40, paddingHorizontal:18,
                          borderRadius:20, backgroundColor:'#111827' },
   emptyBtnTxt:         { fontSize:14, fontWeight:'700', color:'white' },
-  memAddDates:         { flexDirection:'row', alignItems:'center', gap:6, alignSelf:'flex-start' },
+  memAddDates:         { flexDirection:'row', alignItems:'center', gap:6, alignSelf:'flex-start', maxWidth:'100%' },
   memAddDatesTxt:      { fontSize:14, fontWeight:'600', color:'#9CA3AF' },
   memEditBtn:          { flexDirection:'row', alignItems:'center', gap:5, paddingHorizontal:10, paddingVertical:6,
                          borderRadius:10, backgroundColor:'rgba(255,255,255,0.14)' },
