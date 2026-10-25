@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable,
 } from 'react-native';
@@ -66,6 +66,12 @@ export default function ProfileScreen() {
 
   // Countries Explored: tapping a flag shows its country's name in a small bubble above it for a moment.
   const [flagTip, setFlagTip] = useState<string | null>(null);
+  // A tap anywhere else on the screen (or a scroll) closes the bubble; a tap on a flag is that flag's own (see onPress).
+  const flagTapRef = useRef(false);
+  const onScreenTouchEnd = () => setTimeout(() => {
+    if (!flagTapRef.current) setFlagTip(null);
+    flagTapRef.current = false;
+  }, 0);
   useEffect(() => {
     if (!flagTip) return;
     const t = setTimeout(() => setFlagTip(null), 2500);
@@ -85,6 +91,8 @@ export default function ProfileScreen() {
   return (
     <ScrollView
       style={styles.container}
+      onTouchEnd={onScreenTouchEnd}
+      onScrollBeginDrag={() => setFlagTip(null)}
       contentContainerStyle={{ paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100 }}
       showsVerticalScrollIndicator={false}
     >
@@ -170,7 +178,7 @@ export default function ProfileScreen() {
               <Pressable
                 key={code}
                 style={[styles.flagItem, flagTip === code && { zIndex: 10 }]}
-                onPress={() => { Haptics.selectionAsync(); setFlagTip(t => (t === code ? null : code)); }}
+                onPress={() => { flagTapRef.current = true; Haptics.selectionAsync(); setFlagTip(t => (t === code ? null : code)); }}
                 hitSlop={3}
               >
                 <CircleFlag countryCode={code} size={24} />
