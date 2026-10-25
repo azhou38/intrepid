@@ -349,8 +349,8 @@ function CountrySheet({
   // instantly instead of animating.
   const tabSwipeBaseSV = useSharedValue(0);
 
-  // Each tab is as wide as its label plus an equal share of the row's spare width (so "Destinations (12)" never wraps and
-  // the gaps round the labels match), so the underline follows the tabs' measured centres rather than fixed thirds.
+  // The tabs are not equal thirds (the middle one is just its label's width, so the outer two have room for
+  // "Destinations (12)"), so the underline follows the tabs' measured centres.
   const tabCentersSV = useSharedValue<number[]>([]);
   const onTabLayout = (i: number, x: number, w: number) => {
     const next = tabCentersSV.value.slice(0, TAB_ORDER.length);
@@ -945,7 +945,7 @@ function CountrySheet({
         <React.Fragment key={tab}>
           {i > 0 && <View style={st.tabDivider} />}
           <Pressable
-            style={st.tabBtn}
+            style={[st.tabBtn, TAB_ORDER.length === 3 && i === 1 && st.tabBtnMiddle]}
             onLayout={e => onTabLayout(i, e.nativeEvent.layout.x, e.nativeEvent.layout.width)}
             onPress={() => {
               // Tapping a subtab from half/bottom-screen expands to full, same as
@@ -1391,8 +1391,10 @@ const st = StyleSheet.create({
     marginTop: -20,
     borderBottomWidth: 1, borderBottomColor: '#D1D5DB',
   },
-  // Label width plus an equal share of the spare width (flexBasis auto + flexGrow 1), never squeezed below its label.
-  tabBtn:    { flexGrow: 1, flexShrink: 0, flexBasis: 'auto', paddingHorizontal: 10, paddingVertical: 15, alignItems: 'center' },
+  // The tabs share the row equally; with three (My Visit · About · Destinations) the middle one takes just its label's
+  // width, so it sits exactly in the centre and the two either side are equal and wide enough for "Destinations (12)".
+  tabBtn:    { flex: 1, paddingVertical: 15, alignItems: 'center' },
+  tabBtnMiddle: { flex: 0, paddingHorizontal: 22 },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
   tabBtnTxtActive: { color: '#111827' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
