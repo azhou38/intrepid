@@ -509,8 +509,9 @@ const styles = StyleSheet.create({
 
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
-  mapHint:       { position: 'absolute', left: 8, bottom: 8, backgroundColor: 'rgba(17,24,39,0.65)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
-  mapHintTxt:    { fontSize: 11, fontWeight: '600', color: 'white' },
+  // A quiet hint that the map opens: a translucent white pill with grey text, not a dark badge.
+  mapHint:       { position: 'absolute', left: 8, bottom: 8, backgroundColor: 'rgba(255,255,255,0.75)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
+  mapHintTxt:    { fontSize: 11, fontWeight: '500', color: '#6B7280' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
   topBy:         { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // Top Countries' Destinations · Spots toggle: a small segmented control beside its title.
