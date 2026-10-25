@@ -1804,7 +1804,7 @@ const st = StyleSheet.create({
   carHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingTop: 3, paddingBottom: 9 },
   carEyebrow: { fontSize: 10, fontWeight: '800', color: '#9CA3AF', letterSpacing: 1.3, marginBottom: 2 },
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
-  carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -8 },
+  carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -12 },
   carDestChevron: { marginRight: 1 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
                    marginLeft: 12, paddingHorizontal: 8, paddingVertical: 5,
