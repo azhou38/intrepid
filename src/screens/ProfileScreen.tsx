@@ -147,7 +147,12 @@ export default function ProfileScreen() {
   });
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
-  const editFade = useAnimatedStyle(() => ({ opacity: 1 - Math.min(1, Math.max(0, scrollSV.value / 40)) }));
+  // The Edit Profile button is drawn in the fixed header (it holds still and fades with it), which sits behind the page
+  // and so takes no taps: a clear target over it, above the page, takes them while the page is at its top (editTap).
+  // editFrame is where the button sits in the header.
+  const [editFrame, setEditFrame] = useState<{ x: number; y: number; width: number; height: number } | null>(null);
+  const [editTap, setEditTap] = useState(true);
+  useAnimatedReaction(() => scrollSV.value < 8, (v, prev) => { if (v !== prev) runOnJS(setEditTap)(v); });
   const headerFade = useAnimatedStyle(() => ({
     opacity: 1 - Math.min(1, Math.max(0, scrollSV.value / Math.max(1, stickyYSV.value - FADE))),
   }));
@@ -328,7 +333,10 @@ export default function ProfileScreen() {
           : 'World Traveler'}
       </Text>
       {/* Room for the Edit Profile button, which is drawn in the page (see below) so it can be tapped. */}
-      <View style={{ height: EDIT_H, marginTop: 14 }} />
+      <View style={styles.editBtn} onLayout={e => setEditFrame(e.nativeEvent.layout)}>
+        <Pencil size={12} color="#6B7280" strokeWidth={2.2} />
+        <Text style={styles.editTxt}>Edit Profile</Text>
+      </View>
     </Animated.View>
     {/* The level selector (child 1) pins to the top while the sections it controls scroll beneath. */}
     <Animated.ScrollView
@@ -345,22 +353,9 @@ export default function ProfileScreen() {
       showsVerticalScrollIndicator={false}
     >
       {/* Room for the profile header, which sits fixed behind the page (above the ScrollView). */}
-      {/* It holds the header's controls, since the header itself sits behind the page: the Edit Profile button in the
-          room left for it under the header's text (it fades as the page scrolls), and the avatar, which opens the same
-          sheet. */}
+      {/* Tapping the avatar here opens Edit Profile too (the header itself sits behind the page and takes no taps). */}
       <View style={{ height: headerH + 16 }}>
         <Pressable style={styles.avatarHit} onPress={() => setEditOpen(true)} accessibilityLabel="Edit profile" />
-        <Animated.View style={[styles.editWrap, { top: headerH - EDIT_H }, editFade]}>
-          <Pressable
-            style={({ pressed }) => [styles.editBtn, pressed && { opacity: 0.7 }]}
-            onPress={() => { Haptics.selectionAsync(); setEditOpen(true); }}
-            hitSlop={6}
-            accessibilityLabel="Edit profile"
-          >
-            <Pencil size={14} color="#111827" strokeWidth={2.4} />
-            <Text style={styles.editTxt}>Edit Profile</Text>
-          </Pressable>
-        </Animated.View>
       </View>
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
@@ -712,6 +707,14 @@ export default function ProfileScreen() {
         </View>
       )}
     </Animated.ScrollView>
+    {editTap && !!editFrame && (
+      <Pressable
+        style={{ position: 'absolute', top: insets.top + 16 + editFrame.y, left: editFrame.x, width: editFrame.width, height: editFrame.height }}
+        onPress={() => { Haptics.selectionAsync(); setEditOpen(true); }}
+        hitSlop={8}
+        accessibilityLabel="Edit profile"
+      />
+    )}
     <EditProfileSheet visible={editOpen} onClose={() => setEditOpen(false)} />
     <WorldMapModal
       visible={mapOpen}
@@ -785,7 +788,7 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 // The pinned bar's top strip, holding its small avatar and name.
 const COMPACT_H = 40;
 // The Edit Profile button's height.
-const EDIT_H = 34;
+const EDIT_H = 26;
 // How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
 const FADE = 36;
 // The pinned bar's tab row height.
@@ -802,14 +805,12 @@ const styles = StyleSheet.create({
   profileHandle: { fontSize: 14, fontWeight: '600', color: '#6B7280', marginTop: 1 },
   // Over the header's avatar (88 pt, centred at the top), in the page's room for the header.
   avatarHit:   { position: 'absolute', top: 0, alignSelf: 'center', width: 88, height: 88, borderRadius: 44 },
-  // The Edit Profile button: a white pill with a pencil, centred under the name.
-  editWrap:    { position: 'absolute', left: 0, right: 0, alignItems: 'center' },
+  // The Edit Profile button: a quiet grey pill with a pencil, under the header's text.
   editBtn:     {
-    height: EDIT_H, flexDirection: 'row', alignItems: 'center', gap: 7, paddingHorizontal: 18, borderRadius: EDIT_H / 2,
-    backgroundColor: 'white', borderWidth: 1, borderColor: '#D1D5DB',
-    shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
+    height: EDIT_H, flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 12, borderRadius: EDIT_H / 2,
+    backgroundColor: '#F3F4F6', marginTop: 10,
   },
-  editTxt:     { fontSize: 14, fontWeight: '700', color: '#111827' },
+  editTxt:     { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   // The pinned bar's own small avatar and name, in its top strip (COMPACT_H tall).
   compactHeader: {
     position: 'absolute', top: 0, left: 16, right: 16, height: COMPACT_H,
