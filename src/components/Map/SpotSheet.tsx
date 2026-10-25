@@ -1460,17 +1460,20 @@ isVisited ? (
               <Text style={st.carEyebrow}>{nearLabel ? (nearEyebrow ?? 'SPOTS') : 'SPOTS'}</Text>
               <Text style={st.carDest} numberOfLines={2} ellipsizeMode="tail">{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
             </View>
-            {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
-            {!!onGoToList && (
-              <Pressable
-                style={st.carListBtn}
-                onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); onGoToList(); }}
-                hitSlop={8}
-              >
-                <LayoutGrid size={14} color="#6B7280" />
-                <Text style={st.carListBtnTxt}>Grid view</Text>
-              </Pressable>
-            )}
+            {/* Grid view button with the "X / Y" counter under it, so the title gets the row's width. */}
+            <View style={st.carRight}>
+              {!!onGoToList && (
+                <Pressable
+                  style={st.carListBtn}
+                  onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); onGoToList(); }}
+                  hitSlop={8}
+                >
+                  <LayoutGrid size={14} color="#6B7280" />
+                  <Text style={st.carListBtnTxt}>Grid view</Text>
+                </Pressable>
+              )}
+              {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
+            </View>
           </View>
 
           {/* flex:1 (new) — rather than sizing itself off content and leaving the exact
@@ -1786,9 +1789,10 @@ const st = StyleSheet.create({
   carHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingTop: 3, paddingBottom: 9 },
   carEyebrow: { fontSize: 10, fontWeight: '800', color: '#9CA3AF', letterSpacing: 1.3, marginBottom: 2 },
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
-  carCounter: { fontSize: 13, fontWeight: '700', color: '#9CA3AF' },
+  carRight:   { alignItems: 'flex-end', gap: 4, marginLeft: 12, marginTop: -5 },
+  carCounter: { fontSize: 13, fontWeight: '700', color: '#9CA3AF', paddingRight: 2 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
-                   marginLeft: 12, paddingHorizontal: 8, paddingVertical: 5,
+                   paddingHorizontal: 8, paddingVertical: 5,
                    borderRadius: 8, borderWidth: 1, borderColor: '#E5E7EB' },
   carListBtnTxt: { fontSize: 12.5, fontWeight: '600', color: '#6B7280' },
 
