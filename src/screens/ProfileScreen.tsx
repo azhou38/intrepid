@@ -592,7 +592,7 @@ export default function ProfileScreen() {
             )}
             {shownSpots.length === 0 && <Text style={styles.topEmpty}>No spots match.</Text>}
             {/* One row per spot, as for destinations: its photo, its name, and under it its country with a tiny flag on the
-                left and its destination (none for a standalone spot) on the right. */}
+                left, then a separator and its destination (none for a standalone spot). */}
             <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownSpots.length > 5}>
               {shownSpots.map((sp, k) => {
                 const dest = spotDestination(sp);
@@ -618,7 +618,7 @@ export default function ProfileScreen() {
                         {!!code && <CircleFlag countryCode={code} size={12} />}
                         <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{spotCountry(sp)}</Text>
                         {!!dest && (
-                          <Text style={[styles.destRowSub, styles.spotRowDest]} numberOfLines={1}>{dest.name}</Text>
+                          <Text style={[styles.destRowSub, styles.spotRowDest]} numberOfLines={1}>· {dest.name}</Text>
                         )}
                       </View>
                     </View>
@@ -783,8 +783,8 @@ const styles = StyleSheet.create({
   destRowSub:     { fontSize: 12, color: '#6B7280', marginTop: 2 },
   // The line under a destination's name: a tiny flag, then its country (and spots visited).
   destRowSubRow:  { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
-  // A spot row's destination, at the right end of that line.
-  spotRowDest:    { marginTop: 0, marginLeft: 'auto', paddingLeft: 8, flexShrink: 1, textAlign: 'right' },
+  // A spot row's destination, after its country and a separator.
+  spotRowDest:    { marginTop: 0, flexShrink: 1 },
   // Top Destinations: up to about eight rows, then it scrolls.
   // The scroll box clips at its edges, which cut off the flags' shadows: its content gets a few points of room inside, and
   // the box is pulled out by the same amount so the rows stay where they were.
