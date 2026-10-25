@@ -508,6 +508,151 @@ const HANDOFF_FADE_MS = 170;
 // Set by MapScreen while a close is zooming out to a known view: pins leaving the plan then use a short fade.
 const closeFade = { fast: false };
 const CLOSE_EXIT_MS = 90;
+// The small spot pin's symbol style (see the spotMiniPins layer).
+const SPOT_MINI_STYLE: any = {
+  iconImage: ['get', 'mini'] as any,
+  iconAnchor: 'bottom',
+  // Placed AFTER the photo layer (it sits beneath it, and Mapbox places the top layer first) and WITHOUT overlap, so a
+  // spot that has its photo pin never also draws the small pin behind it (the mini pin's bubble used to show beside
+  // the photo pin's narrow tail). Where the photo pin does not fit, the mini pin takes its place; the photo pin
+  // fading in or out cross-fades with it through the same collision pass.
+  // iconIgnorePlacement: small pins never block anything, each other included, so they show at the same zooms as
+  // before (zoomed into a destination, where spots are dense, they used to hide one another).
+  // A spot without a photo pin (see the plan in nativeSpotPins) always shows its small pin, as before.
+  iconAllowOverlap: true,
+  iconIgnorePlacement: true,
+  iconPadding: 0,
+  symbolSortKey: ['get', 'sort'] as any,
+};
+// ── Spot pin fades ────────────────────────────────────────────────────────────────────────────────────────────────────
+// The spot pins are native symbol layers (nativeSpotPins): a spot is in the source data exactly while it is revealed, and
+// draws as its photo pin or its small pin by `img`. Mapbox animates a layer's opacity only when it is a constant (see
+// destTierStyle), so a pin added to or dropped from the data used to pop. Here a pin that has just appeared (or switched
+// between small and photo) sits for one fade in an "entering" layer whose constant opacity goes 0 -> 1, and a pin that has
+// just gone keeps a copy in an "exiting" layer whose opacity goes 1 -> 0; everything else stays in the settled layers,
+// unchanged. Nothing about WHEN a spot shows or takes its photo changes: only the moment of change is faded.
+const SPOT_FADE_SLOTS = 4;
+// A spot pin's fade in and out, and the cross-fade between its small and photo pins.
+const SPOT_PIN_FADE_IN_MS = 170;
+const SPOT_PIN_FADE_OUT_MS = 170;
+type SpotFadePhase = 'idle' | 'running' | 'draining';
+type SpotFeature = GeoJSON.Feature<GeoJSON.Point>;
+const spotKind = (f: SpotFeature) => (f.properties?.img ? 'photo' : 'mini');
+function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
+  const shown = useRef(new Map<string, { kind: string; f: SpotFeature }>());   // id -> what the last data had for it
+  const entering = useRef(new Map<string, number>());                         // id -> its entering slot, while fading in
+  const ghosts = useRef(new Map<string, { slot: number; f: SpotFeature }>());   // `${id}~${kind}` -> exiting copy
+  const held = useRef(new Map<string, SpotFeature>());   // id -> its small pin, kept at full opacity under its photo pin while that fades in
+  const heldNew = useRef<string[]>([]);
+  const enterPhase = useRef<SpotFadePhase[]>(Array(SPOT_FADE_SLOTS).fill('idle'));
+  const exitPhase = useRef<SpotFadePhase[]>(Array(SPOT_FADE_SLOTS).fill('idle'));
+  const armed = useRef<{ enter: number[]; exit: number[] }>({ enter: [], exit: [] });
+  const lastShape = useRef<typeof shape | null>(null);
+  const [tick, setTick] = useState(0);
+  const out = useMemo(() => {
+    if (lastShape.current !== shape) {
+      const first = lastShape.current === null;
+      lastShape.current = shape;
+      const next = new Map<string, { kind: string; f: SpotFeature }>();
+      for (const f of shape.features) next.set(String(f.properties!.id), { kind: spotKind(f), f });
+      const freeSlot = (phase: SpotFadePhase[], taken: number[]) => phase.findIndex((p, i) => p === 'idle' && !taken.includes(i));
+      // Gone, or switched kind: a copy fades out from where it was.
+      let exitSlot = -1;
+      for (const [id, prev] of shown.current) {
+        const now = next.get(id);
+        if (now && now.kind === prev.kind) continue;
+        entering.current.delete(id);
+        // Small pin -> photo pin: the small pin stays as it is, under the photo pin fading in over it, and goes once that
+        // fade is done, so the pin never thins out mid-switch.
+        if (now && prev.kind === 'mini') { held.current.set(id, prev.f); heldNew.current.push(id); continue; }
+        if (exitSlot < 0) exitSlot = freeSlot(exitPhase.current, armed.current.exit);
+        if (exitSlot < 0) continue;   // every exit layer busy: it simply goes, as before
+        ghosts.current.set(`${id}~${prev.kind}`, { slot: exitSlot, f: prev.f });
+      }
+      if (exitSlot >= 0) { exitPhase.current[exitSlot] = 'running'; armed.current.exit.push(exitSlot); }
+      // New, or switched kind: it fades in (not on the map's first data, which is drawn at once as before).
+      let enterSlot = -1;
+      for (const [id, now] of next) {
+        const prev = shown.current.get(id);
+        ghosts.current.delete(`${id}~${now.kind}`);   // back before its copy finished fading out
+        if (first || (prev && prev.kind === now.kind)) continue;
+        if (prev && now.kind === 'mini') { held.current.delete(id); continue; }   // photo pin -> small pin: no fade-in
+        if (enterSlot < 0) enterSlot = freeSlot(enterPhase.current, armed.current.enter);
+        if (enterSlot < 0) { entering.current.delete(id); continue; }   // every enter layer busy: it shows at once
+        entering.current.set(id, enterSlot);
+      }
+      if (enterSlot >= 0) armed.current.enter.push(enterSlot);
+      shown.current = next;
+    }
+    const features: SpotFeature[] = [];
+    for (const [id, { f }] of shown.current) {
+      const k = entering.current.get(id);
+      features.push({ ...f, properties: { ...f.properties, slot: k === undefined ? '' : `e${k}` } });
+    }
+    for (const [id, f] of held.current) {
+      if (!shown.current.has(id)) continue;   // the spot itself has gone: its exiting copy handles it
+      features.push({ ...f, id: `${id}~held`, properties: { ...f.properties, slot: '', ghost: 1 } });
+    }
+    for (const [key, g] of ghosts.current) {
+      features.push({ ...g.f, id: key, properties: { ...g.f.properties, slot: `x${g.slot}`, ghost: 1 } });
+    }
+    return { type: 'FeatureCollection' as const, features };
+  }, [shape, tick]);
+  // A slot armed in this render starts its fade a frame later (the layer has drawn its new pins at the starting opacity
+  // by then), and is cleared when the fade is done; the emptied layer returns to its resting opacity a frame after that.
+  useEffect(() => {
+    if (heldNew.current.length) {
+      const ids = heldNew.current;
+      heldNew.current = [];
+      setTimeout(() => {
+        for (const id of ids) held.current.delete(id);
+        setTick(n => n + 1);
+      }, SPOT_PIN_FADE_IN_MS + 60);
+    }
+    const { enter, exit } = armed.current;
+    if (!enter.length && !exit.length) return;
+    armed.current = { enter: [], exit: [] };
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    const raf = requestAnimationFrame(() => {
+      for (const k of enter) enterPhase.current[k] = 'running';
+      setTick(n => n + 1);
+      for (const k of enter) timers.push(setTimeout(() => {
+        for (const [id, slot] of entering.current) if (slot === k) entering.current.delete(id);
+        enterPhase.current[k] = 'draining';
+        setTick(n => n + 1);
+        requestAnimationFrame(() => { enterPhase.current[k] = 'idle'; setTick(n => n + 1); });
+      }, SPOT_PIN_FADE_IN_MS + 20));
+    });
+    for (const k of exit) timers.push(setTimeout(() => {
+      for (const [key, g] of ghosts.current) if (g.slot === k) ghosts.current.delete(key);
+      exitPhase.current[k] = 'draining';
+      setTick(n => n + 1);
+      requestAnimationFrame(() => { exitPhase.current[k] = 'idle'; setTick(n => n + 1); });
+    }, SPOT_PIN_FADE_OUT_MS + 20));
+    // Not cancelled on re-render: each slot's fade runs to its end (a cleanup here would strand pins half-faded).
+    void raf; void timers;
+  });
+  // Opacity of each slot's layers. Entering: 0 while idle (so pins added to it start unseen), 1 while running (faded in
+  // over SPOT_PIN_FADE_IN_MS). Exiting: 1 while idle (a copy added to it shows exactly as the pin did), 0 while running.
+  const enterOn = enterPhase.current.map(p => p !== 'idle');
+  const exitOn = exitPhase.current.map(p => p === 'idle');
+  return { shape: out, enterOn, exitOn, tick };
+}
+// The style of one slot's layer: the settled layer's own style, with a constant opacity that Mapbox animates when it flips.
+const spotSlotStyleCache = new Map<string, any>();
+function spotSlotStyle(base: any, baseKey: string, on: boolean, entering: boolean, text: boolean) {
+  const key = `${baseKey}|${on ? 1 : 0}|${entering ? 'e' : 'x'}`;
+  let st = spotSlotStyleCache.get(key);
+  if (!st) {
+    // Only the fade itself is animated: an entering layer drops back to 0 at once while empty, an exiting one to 1.
+    const ms = entering ? (on ? SPOT_PIN_FADE_IN_MS : 0) : (on ? 0 : SPOT_PIN_FADE_OUT_MS);
+    st = { ...base, iconOpacity: on ? 1 : 0, iconOpacityTransition: { duration: ms, delay: 0 } };
+    if (text) { st.textOpacity = on ? 1 : 0; st.textOpacityTransition = { duration: ms, delay: 0 }; }
+    spotSlotStyleCache.set(key, st);
+  }
+  return st;
+}
+
 function FadePin({ exiting, instant, slow, children }: { exiting: boolean; instant?: boolean; slow?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
   // identical, already-visible pin, where fading in would just dim the overlap.
@@ -3038,6 +3183,38 @@ const destItems = useMemo((): DestItem[] =>
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta, spotImagesTick]);
+  // Spot pins fade in and out as they appear, go, or switch between their small and photo pins (useSpotPinFades).
+  const spotFades = useSpotPinFades(nativeSpotPins.shape);
+  // The photo pin's symbol style (see the spotPhotos layer); its name's colours follow the map type.
+  const spotPhotoStyle = useMemo((): any => ({
+      iconImage: ['get', 'img'] as any,
+      iconAnchor: 'bottom',
+      // The plan in nativeSpotPins already spaced the photo pins: draw every one (a spot whose photo Mapbox hid would
+      // have no pin at all, since its small pin is not drawn), still recording it so names avoid it.
+      iconAllowOverlap: true,
+      iconIgnorePlacement: false,
+      iconPadding: 2,
+      // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey: with a sort
+      // key Mapbox draws each pin's icon and name together, one pin at a time, so a later pin's photo covered an
+      // earlier pin's name. Without one it draws every icon first and every name above them.
+      symbolZOrder: 'source',
+      textField: ['get', 'label'] as any,
+      textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+      textSize: 12,
+      textMaxWidth: 10,
+      // The side is spotPhotoPlan's (right of the pin, else left), fixed once the name shows; the plan already kept
+      // names clear, so they are always drawn. A name on the right is left-aligned, one on the left right-aligned.
+      textAnchor: ['case', ['==', ['get', 'side'], 'left'], 'right', 'left'] as any,
+      textOffset: ['case', ['==', ['get', 'side'], 'left'], ['literal', [-1.5, 0]], ['literal', [1.5, 0]]] as any,
+      textJustify: 'auto',
+      textTranslate: [0, -23],
+      textOptional: true,
+      textAllowOverlap: true,
+      textPadding: 2,
+      textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
+      textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
+      textHaloWidth: 1.5,
+  }), [mapType]);
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
@@ -5504,73 +5681,53 @@ const destItems = useMemo((): DestItem[] =>
         <SpotPhotoImages specs={nativeSpotPins.specs} />
         <MapboxGL.ShapeSource
           id="spotPins"
-          shape={nativeSpotPins.shape}
+          shape={spotFades.shape}
           hitbox={{ width: 32, height: 40 }}
           onPress={(e) => {
+            // A pin's fading-out copy (useSpotPinFades) is not a pin any more.
+            if (e.features[0]?.properties?.ghost) return;
             const id = e.features[0]?.properties?.id as string | undefined;
             const spot = id ? SPOT_BY_ID.get(id) : undefined;
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
-              collapsed to a core. It yields to the photo pin in Mapbox's own collision pass (see its style), so the two
-              never show together. */}
-          <MapboxGL.SymbolLayer
-            id="spotMiniPins"
-            belowLayerID="destStampCircles"
-            filter={['==', ['get', 'img'], ''] as any}
-            style={{
-              iconImage: ['get', 'mini'] as any,
-              iconAnchor: 'bottom',
-              // Placed AFTER the photo layer (it sits beneath it, and Mapbox places the top layer first) and WITHOUT overlap, so a
-              // spot that has its photo pin never also draws the small pin behind it (the mini pin's bubble used to show beside
-              // the photo pin's narrow tail). Where the photo pin does not fit, the mini pin takes its place; the photo pin
-              // fading in or out cross-fades with it through the same collision pass.
-              // iconIgnorePlacement: small pins never block anything, each other included, so they show at the same zooms as
-              // before (zoomed into a destination, where spots are dense, they used to hide one another).
-              // A spot without a photo pin (see the plan in nativeSpotPins) always shows its small pin, as before.
-              iconAllowOverlap: true,
-              iconIgnorePlacement: true,
-              iconPadding: 0,
-              symbolSortKey: ['get', 'sort'] as any,
-            }}
-          />
-          {/* The photo pin and its name. Mapbox places them by priority (sort), fades a pin in or out as room opens or
-              closes, and drops a name that does not fit (textOptional) without dropping its pin. */}
-          <MapboxGL.SymbolLayer
-            id="spotPhotos"
-            belowLayerID="destStampCircles"
-            filter={['!=', ['get', 'img'], ''] as any}
-            style={{
-              iconImage: ['get', 'img'] as any,
-              iconAnchor: 'bottom',
-              // The plan in nativeSpotPins already spaced the photo pins: draw every one (a spot whose photo Mapbox hid would
-              // have no pin at all, since its small pin is not drawn), still recording it so names avoid it.
-              iconAllowOverlap: true,
-              iconIgnorePlacement: false,
-              iconPadding: 2,
-              // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey: with a sort
-              // key Mapbox draws each pin's icon and name together, one pin at a time, so a later pin's photo covered an
-              // earlier pin's name. Without one it draws every icon first and every name above them.
-              symbolZOrder: 'source',
-              textField: ['get', 'label'] as any,
-              textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
-              textSize: 12,
-              textMaxWidth: 10,
-              // The side is spotPhotoPlan's (right of the pin, else left), fixed once the name shows; the plan already kept
-              // names clear, so they are always drawn. A name on the right is left-aligned, one on the left right-aligned.
-              textAnchor: ['case', ['==', ['get', 'side'], 'left'], 'right', 'left'] as any,
-              textOffset: ['case', ['==', ['get', 'side'], 'left'], ['literal', [-1.5, 0]], ['literal', [1.5, 0]]] as any,
-              textJustify: 'auto',
-              textTranslate: [0, -23],
-              textOptional: true,
-              textAllowOverlap: true,
-              textPadding: 2,
-              textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
-              textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
-              textHaloWidth: 1.5,
-            }}
-          />
+          {/* Settled layers first (the small pin under every revealed spot that has no photo pin placed, then the photo
+              pin and its name), each followed by its copies for pins fading in or out (useSpotPinFades). The small pins
+              come before the photo pins so they draw beneath them, as before. */}
+          {[
+            <MapboxGL.SymbolLayer
+              key="spotMiniPins"
+              id="spotMiniPins"
+              belowLayerID="destStampCircles"
+              filter={['all', ['==', ['get', 'img'], ''], ['==', ['get', 'slot'], '']] as any}
+              style={SPOT_MINI_STYLE}
+            />,
+            ...Array.from({ length: SPOT_FADE_SLOTS }, (_, k) => (['e', 'x'] as const).map(kind => (
+              <MapboxGL.SymbolLayer
+                key={`spotMiniPins-${kind}${k}`}
+                id={`spotMiniPins-${kind}${k}`}
+                belowLayerID="destStampCircles"
+                filter={['all', ['==', ['get', 'img'], ''], ['==', ['get', 'slot'], `${kind}${k}`]] as any}
+                style={spotSlotStyle(SPOT_MINI_STYLE, 'mini', kind === 'e' ? spotFades.enterOn[k] : spotFades.exitOn[k], kind === 'e', false)}
+              />
+            ))).flat(),
+            <MapboxGL.SymbolLayer
+              key="spotPhotos"
+              id="spotPhotos"
+              belowLayerID="destStampCircles"
+              filter={['all', ['!=', ['get', 'img'], ''], ['==', ['get', 'slot'], '']] as any}
+              style={spotPhotoStyle}
+            />,
+            ...Array.from({ length: SPOT_FADE_SLOTS }, (_, k) => (['e', 'x'] as const).map(kind => (
+              <MapboxGL.SymbolLayer
+                key={`spotPhotos-${kind}${k}`}
+                id={`spotPhotos-${kind}${k}`}
+                belowLayerID="destStampCircles"
+                filter={['all', ['!=', ['get', 'img'], ''], ['==', ['get', 'slot'], `${kind}${k}`]] as any}
+                style={spotSlotStyle(spotPhotoStyle, `photo|${mapType}`, kind === 'e' ? spotFades.enterOn[k] : spotFades.exitOn[k], kind === 'e', true)}
+              />
+            ))).flat(),
+          ]}
         </MapboxGL.ShapeSource>
 
         {/* All MarkerViews require the map style to be loaded before Mapbox can
