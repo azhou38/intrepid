@@ -5576,14 +5576,17 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* The selected spot's blue glow, under every pin: the pin's own teardrop outline in soft blue (SpotPinImages'
-              SPOT_SELECTED_GLOW), so the shading runs evenly round the bubble and the tail. Its image reaches GLOW_MARGIN past
-              the pin, so it is shifted down by that much to put its tip on the pin's. Only once the photo pin is drawn (img
-              set): it used to show on its own while the photo was still being registered. */}
+          {/* The selected spot's glow, under every pin: the pin's own teardrop outline in soft white (black on the satellite
+              map; SpotPinImages' SPOT_SELECTED_GLOW), so the shading runs evenly round the bubble and the tail. Its image
+              reaches GLOW_MARGIN past the pin, so it is shifted down by that much to put its tip on the pin's.
+              Every photo pin carries one, invisible, and the selected spot's is turned up (iconOpacity, which switches
+              without a transition): a glow symbol that only appeared on selection was new to Mapbox's placement and faded in
+              over ~0.3 s after the pin, whereas one that is already placed shows at once. Only on photo pins (img set): it
+              used to show on its own while the selected spot's photo was still being registered. */}
           <MapboxGL.SymbolLayer
             id="spotSelectedGlow"
             belowLayerID="destStampCircles"
-            filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
+            filter={['!=', ['get', 'img'], ''] as any}
             style={{
               iconImage: mapType === 'satellite' ? SPOT_SELECTED_GLOW_DARK : SPOT_SELECTED_GLOW,
               iconAnchor: 'bottom',
@@ -5591,6 +5594,8 @@ const destItems = useMemo((): DestItem[] =>
               iconAllowOverlap: true,
               iconIgnorePlacement: true,
               iconPitchAlignment: 'viewport',
+              iconOpacity: ['case', ['==', ['get', 'sel'], 1], 1, 0] as any,
+              iconOpacityTransition: { duration: 0, delay: 0 },
             }}
           />
           {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
