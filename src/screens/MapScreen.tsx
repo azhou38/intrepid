@@ -535,26 +535,67 @@ const SPOT_FADE_SLOTS = 4;
 // A spot pin's fade in and out, and the cross-fade between its small and photo pins.
 const SPOT_PIN_FADE_IN_MS = 210;
 const SPOT_PIN_FADE_OUT_MS = 170;
-type SpotFadePhase = 'idle' | 'running' | 'draining';
+// A fading-out copy is drawn at full opacity this long before its fade starts. Mapbox applies a layer's new opacity at
+// once but loads new source data in the background, so starting the fade in the same update let it finish before the
+// copies arrived while a zoom kept the map busy, and the small pins vanished at once.
+const SPOT_PIN_FADE_OUT_DELAY_MS = 80;
+type SpotFadePhase = 'idle' | 'armed' | 'running' | 'draining';
 type SpotFeature = GeoJSON.Feature<GeoJSON.Point>;
 const spotKind = (f: SpotFeature) => (f.properties?.img ? 'photo' : 'mini');
-function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
-  const shown = useRef(new Map<string, { kind: string; f: SpotFeature }>());   // id -> what the last data had for it
+// Gate layers, as the destination pins' fade tiers (destTierStyle): every revealed spot is drawn in the layer of its own
+// reveal zoom (its `gate`, from nativeSpotPins), whose CONSTANT opacity switches off the moment the camera's planned zoom
+// passes below that gate. Mapbox applies a layer's opacity at once, so the pins fade out with the zoom, or straight away
+// on a back or close tap (handoffZoom is then the target), where waiting for them to leave the source data held them
+// until the data had loaded, after a pan or zoom had settled. A pin that leaves the data with its layer switched off stays
+// in it (frozen) until that fade is done. More reveal zooms than layers: the rest fade out through the exiting layers.
+const SPOT_GATE_SLOTS = 12;
+const spotGateOf = (f: SpotFeature) => Number(f.properties?.gate ?? -1);   // -1: not gated (a near carousel's spots)
+function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>, onZoom: number, aheadZoom: number) {
+  const shown = useRef(new Map<string, { kind: string; f: SpotFeature; base: string }>());   // id -> what the last data had for it
   const entering = useRef(new Map<string, number>());                         // id -> its entering slot, while fading in
   const ghosts = useRef(new Map<string, { slot: number; f: SpotFeature }>());   // `${id}~${kind}` -> exiting copy
   const held = useRef(new Map<string, SpotFeature>());   // id -> its small pin, kept at full opacity under its photo pin while that fades in
   const heldNew = useRef<string[]>([]);
+  const frozen = useRef(new Map<string, { f: SpotFeature; slot: number }>());   // id -> its pin, left in its gate layer as that fades out
+  const frozenNew = useRef<string[]>([]);
   const enterPhase = useRef<SpotFadePhase[]>(Array(SPOT_FADE_SLOTS).fill('idle'));
   const exitPhase = useRef<SpotFadePhase[]>(Array(SPOT_FADE_SLOTS).fill('idle'));
   const armed = useRef<{ enter: number[]; exit: number[] }>({ enter: [], exit: [] });
   const lastShape = useRef<typeof shape | null>(null);
+  const gateOfSlot = useRef<(number | null)[]>(Array(SPOT_GATE_SLOTS).fill(null));
+  const gateOn = useRef<boolean[]>(Array(SPOT_GATE_SLOTS).fill(true));
   const [tick, setTick] = useState(0);
+  // Each gate layer holds one reveal zoom: those of the pins in the data, the pins it showed last (they may be leaving
+  // now) and its frozen pins. Highest first, as they are the first to switch off on the way out.
+  const gates = new Set<number>();
+  for (const f of shape.features) { const g = spotGateOf(f); if (g >= 0) gates.add(g); }
+  for (const { f } of shown.current.values()) { const g = spotGateOf(f); if (g >= 0) gates.add(g); }
+  for (const { slot } of frozen.current.values()) { const g = gateOfSlot.current[slot]; if (g !== null) gates.add(g); }
+  gateOfSlot.current.forEach((g, k) => { if (g !== null && !gates.has(g)) gateOfSlot.current[k] = null; });
+  for (const g of [...gates].sort((x, y) => y - x)) {
+    if (gateOfSlot.current.includes(g)) continue;
+    const k = gateOfSlot.current.indexOf(null);
+    if (k < 0) break;
+    gateOfSlot.current[k] = g;
+  }
+  const slotOfGate = new Map<number, number>();
+  gateOfSlot.current.forEach((g, k) => { if (g !== null) slotOfGate.set(g, k); });
+  // On while both the planned zoom and the look-ahead (the zoom a fast zoom-out is about to reach) are at or past the
+  // gate: the same threshold as the reveal itself (isSpotRevealed), switched off a little early on a fast zoom-out as the
+  // destination tiers are. An empty layer keeps its last state.
+  const reached = (g: number, z: number) => z >= g - ZOOM_EPSILON;
+  gateOfSlot.current.forEach((g, k) => { if (g !== null) gateOn.current[k] = reached(g, onZoom) && reached(g, aheadZoom); });
+  const baseOf = (f: SpotFeature) => {
+    const g = spotGateOf(f), k = g >= 0 ? slotOfGate.get(g) : undefined;
+    return k === undefined ? '' : `g${k}`;
+  };
+  const slotSig = gateOfSlot.current.join(',');
   const out = useMemo(() => {
     if (lastShape.current !== shape) {
       const first = lastShape.current === null;
       lastShape.current = shape;
-      const next = new Map<string, { kind: string; f: SpotFeature }>();
-      for (const f of shape.features) next.set(String(f.properties!.id), { kind: spotKind(f), f });
+      const next = new Map<string, { kind: string; f: SpotFeature; base: string }>();
+      for (const f of shape.features) next.set(String(f.properties!.id), { kind: spotKind(f), f, base: '' });
       const freeSlot = (phase: SpotFadePhase[], taken: number[]) => phase.findIndex((p, i) => p === 'idle' && !taken.includes(i));
       // Gone, or switched kind: a copy fades out from where it was.
       let exitSlot = -1;
@@ -562,6 +603,9 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
         const now = next.get(id);
         if (now && now.kind === prev.kind) continue;
         entering.current.delete(id);
+        // Gone with its gate layer switched off: it stays where it is, in that layer, which is already fading it out.
+        const gk = prev.base.startsWith('g') ? Number(prev.base.slice(1)) : -1;
+        if (!now && gk >= 0 && !gateOn.current[gk]) { frozen.current.set(id, { f: prev.f, slot: gk }); frozenNew.current.push(id); continue; }
         // Small pin -> photo pin: the small pin stays as it is, under the photo pin fading in over it, and goes once that
         // fade is done, so the pin never thins out mid-switch.
         if (now && prev.kind === 'mini') { held.current.set(id, prev.f); heldNew.current.push(id); continue; }
@@ -569,12 +613,13 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
         if (exitSlot < 0) continue;   // every exit layer busy: it simply goes, as before
         ghosts.current.set(`${id}~${prev.kind}`, { slot: exitSlot, f: prev.f });
       }
-      if (exitSlot >= 0) { exitPhase.current[exitSlot] = 'running'; armed.current.exit.push(exitSlot); }
+      if (exitSlot >= 0) { exitPhase.current[exitSlot] = 'armed'; armed.current.exit.push(exitSlot); }
       // New, or switched kind: it fades in (not on the map's first data, which is drawn at once as before).
       let enterSlot = -1;
       for (const [id, now] of next) {
         const prev = shown.current.get(id);
         ghosts.current.delete(`${id}~${now.kind}`);   // back before its copy finished fading out
+        frozen.current.delete(id);
         if (first || (prev && prev.kind === now.kind)) continue;
         if (prev && now.kind === 'mini') { held.current.delete(id); continue; }   // photo pin -> small pin: no fade-in
         if (enterSlot < 0) enterSlot = freeSlot(enterPhase.current, armed.current.enter);
@@ -588,19 +633,24 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
       shown.current = next;
     }
     const features: SpotFeature[] = [];
-    for (const [id, { f }] of shown.current) {
+    for (const [id, s] of shown.current) {
       const k = entering.current.get(id);
-      features.push({ ...f, properties: { ...f.properties, slot: k === undefined ? '' : `e${k}` } });
+      s.base = baseOf(s.f);
+      features.push({ ...s.f, properties: { ...s.f.properties, slot: k === undefined ? s.base : `e${k}` } });
     }
     for (const [id, f] of held.current) {
       if (!shown.current.has(id)) continue;   // the spot itself has gone: its exiting copy handles it
-      features.push({ ...f, id: `${id}~held`, properties: { ...f.properties, slot: '', ghost: 1 } });
+      features.push({ ...f, id: `${id}~held`, properties: { ...f.properties, slot: baseOf(f), ghost: 1 } });
     }
     for (const [key, g] of ghosts.current) {
       features.push({ ...g.f, id: key, properties: { ...g.f.properties, slot: `x${g.slot}`, ghost: 1 } });
     }
+    for (const { f, slot } of frozen.current.values()) {
+      features.push({ ...f, properties: { ...f.properties, slot: `g${slot}`, ghost: 1 } });
+    }
     return { type: 'FeatureCollection' as const, features };
-  }, [shape, tick]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shape, tick, slotSig]);
   // A slot armed in this render is cleared when its fade is done; the emptied layer returns to its resting opacity a
   // frame after that.
   useEffect(() => {
@@ -611,6 +661,14 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
         for (const id of ids) held.current.delete(id);
         setTick(n => n + 1);
       }, SPOT_PIN_FADE_IN_MS + 60);
+    }
+    if (frozenNew.current.length) {
+      const ids = frozenNew.current;
+      frozenNew.current = [];
+      setTimeout(() => {
+        for (const id of ids) frozen.current.delete(id);
+        setTick(n => n + 1);
+      }, SPOT_PIN_FADE_OUT_MS + 60);
     }
     const { enter, exit } = armed.current;
     if (!enter.length && !exit.length) return;
@@ -623,34 +681,102 @@ function useSpotPinFades(shape: GeoJSON.FeatureCollection<GeoJSON.Point>) {
       requestAnimationFrame(() => { enterPhase.current[k] = 'idle'; setTick(n => n + 1); });
     }, SPOT_PIN_FADE_IN_MS + 20));
     for (const k of exit) timers.push(setTimeout(() => {
-      for (const [key, g] of ghosts.current) if (g.slot === k) ghosts.current.delete(key);
-      exitPhase.current[k] = 'draining';
+      exitPhase.current[k] = 'running';
       setTick(n => n + 1);
-      requestAnimationFrame(() => { exitPhase.current[k] = 'idle'; setTick(n => n + 1); });
-    }, SPOT_PIN_FADE_OUT_MS + 20));
+      setTimeout(() => {
+        for (const [key, g] of ghosts.current) if (g.slot === k) ghosts.current.delete(key);
+        exitPhase.current[k] = 'draining';
+        setTick(n => n + 1);
+        requestAnimationFrame(() => { exitPhase.current[k] = 'idle'; setTick(n => n + 1); });
+      }, SPOT_PIN_FADE_OUT_MS + 20);
+    }, SPOT_PIN_FADE_OUT_DELAY_MS));
     // Not cancelled on re-render: each slot's fade runs to its end (a cleanup here would strand pins half-faded).
     void timers;
   });
   // Opacity of each slot's layers. Entering: 0 while idle (so pins added to it start unseen), 1 while running (faded in
-  // over SPOT_PIN_FADE_IN_MS). Exiting: 1 while idle (a copy added to it shows exactly as the pin did), 0 while running.
+  // over SPOT_PIN_FADE_IN_MS). Exiting: 1 while idle or armed (a copy added to it shows exactly as the pin did), 0 while
+  // running. Gate: on or off with its reveal zoom.
   const enterOn = enterPhase.current.map(p => p !== 'idle');
-  const exitOn = exitPhase.current.map(p => p === 'idle');
-  return { shape: out, enterOn, exitOn, tick };
+  const exitOn = exitPhase.current.map(p => p === 'idle' || p === 'armed');
+  return { shape: out, enterOn, exitOn, gateOn: [...gateOn.current], tick };
 }
 // The style of one slot's layer: the settled layer's own style, with a constant opacity that Mapbox animates when it flips.
 const spotSlotStyleCache = new Map<string, any>();
-function spotSlotStyle(base: any, baseKey: string, on: boolean, entering: boolean, text: boolean) {
-  const key = `${baseKey}|${on ? 1 : 0}|${entering ? 'e' : 'x'}`;
+function spotSlotStyle(base: any, baseKey: string, on: boolean, mode: 'e' | 'x' | 'g', text: boolean) {
+  const key = `${baseKey}|${on ? 1 : 0}|${mode}`;
   let st = spotSlotStyleCache.get(key);
   if (!st) {
-    // Only the fade itself is animated: an entering layer drops back to 0 at once while empty, an exiting one to 1.
-    const ms = entering ? (on ? SPOT_PIN_FADE_IN_MS : 0) : (on ? 0 : SPOT_PIN_FADE_OUT_MS);
+    // Only the fade itself is animated: an entering layer drops back to 0 at once while empty, an exiting one to 1. A gate
+    // layer fades both ways.
+    const ms = mode === 'e' ? (on ? SPOT_PIN_FADE_IN_MS : 0) : mode === 'x' ? (on ? 0 : SPOT_PIN_FADE_OUT_MS)
+      : on ? SPOT_PIN_FADE_IN_MS : SPOT_PIN_FADE_OUT_MS;
     st = { ...base, iconOpacity: on ? 1 : 0, iconOpacityTransition: { duration: ms, delay: 0 } };
     if (text) { st.textOpacity = on ? 1 : 0; st.textOpacityTransition = { duration: ms, delay: 0 }; }
     spotSlotStyleCache.set(key, st);
   }
   return st;
 }
+
+// The spot pins' source and layers. Their fades live here, not in MapScreen: each fade step re-renders only this, where it
+// used to re-render the whole screen several times per change, which slowed the camera-driven pin updates on a fast zoom.
+const SpotPinsLayer = React.memo(function SpotPinsLayer({ shape, onZoom, aheadZoom, photoStyle, photoStyleKey, onPressSpot }: {
+  shape: GeoJSON.FeatureCollection<GeoJSON.Point>;
+  onZoom: number;
+  aheadZoom: number;
+  photoStyle: any;
+  photoStyleKey: string;
+  onPressSpot: (id: string) => void;
+}) {
+  // Spot pins fade in and out as they appear, go, or switch between their small and photo pins (useSpotPinFades).
+  const spotFades = useSpotPinFades(shape, onZoom, aheadZoom);
+  const gateOnRef = useRef(spotFades.gateOn);
+  gateOnRef.current = spotFades.gateOn;
+  // Each kind of pin: its settled layer, then its copies fading in or out, then its gate layers.
+  const layers = (kind: 'mini' | 'photo') => {
+    const img = kind === 'mini' ? ['==', ['get', 'img'], ''] : ['!=', ['get', 'img'], ''];
+    const base = kind === 'mini' ? SPOT_MINI_STYLE : photoStyle;
+    const key = kind === 'mini' ? 'mini' : photoStyleKey;
+    const id = kind === 'mini' ? 'spotMiniPins' : 'spotPhotos';
+    const slot = (name: string, on: boolean, mode: 'e' | 'x' | 'g') => (
+      <MapboxGL.SymbolLayer
+        key={`${id}-${name}`}
+        id={`${id}-${name}`}
+        belowLayerID="destStampCircles"
+        filter={['all', img, ['==', ['get', 'slot'], name]] as any}
+        style={spotSlotStyle(base, key, on, mode, kind === 'photo')}
+      />
+    );
+    return [
+      <MapboxGL.SymbolLayer
+        key={id}
+        id={id}
+        belowLayerID="destStampCircles"
+        filter={['all', img, ['==', ['get', 'slot'], '']] as any}
+        style={base}
+      />,
+      ...Array.from({ length: SPOT_FADE_SLOTS }, (_, k) => [slot(`e${k}`, spotFades.enterOn[k], 'e'), slot(`x${k}`, spotFades.exitOn[k], 'x')]).flat(),
+      ...Array.from({ length: SPOT_GATE_SLOTS }, (_, k) => slot(`g${k}`, spotFades.gateOn[k], 'g')),
+    ];
+  };
+  return (
+    <MapboxGL.ShapeSource
+      id="spotPins"
+      shape={spotFades.shape}
+      hitbox={{ width: 32, height: 40 }}
+      onPress={(e) => {
+        const p = e.features[0]?.properties;
+        // A pin's fading-out copy (useSpotPinFades) is not a pin any more, nor is one whose gate layer is off.
+        if (!p || p.ghost) return;
+        const slot = String(p.slot ?? '');
+        if (slot.startsWith('g') && !gateOnRef.current[Number(slot.slice(1))]) return;
+        if (p.id) onPressSpot(String(p.id));
+      }}
+    >
+      {/* The small pins come before the photo pins so they draw beneath them, as before. */}
+      {[...layers('mini'), ...layers('photo')]}
+    </MapboxGL.ShapeSource>
+  );
+});
 
 function FadePin({ exiting, instant, slow, children }: { exiting: boolean; instant?: boolean; slow?: boolean; children: React.ReactNode }) {
   // `instant`: mounts fully opaque (no fade-in) — for a duplicate that sits exactly over an
@@ -3159,6 +3285,17 @@ const destItems = useMemo((): DestItem[] =>
       else pending++;
     }
     spotImagesPendingRef.current = holdImages ? 0 : pending;   // while held, the hold's own timer runs the next pass
+    // Each pin's gate, the zoom it is revealed at (as visibleSpots decides it), for its gate layer (useSpotPinFades): the
+    // selected destination's spots at its own default zoom or their earlier reveal, any other spot at its reveal zoom, and
+    // a near carousel's spots, which show at any zoom, none.
+    const nearIds = nearCtx ? new Set(nearCtx.spots.map(s => s.id)) : null;
+    const selDestLevel = selectedDest ? DEST_ZOOM_LEVEL_BY_ID[selectedDest.id] : undefined;
+    const gateOf = (sp: Spot) => {
+      if (nearIds?.has(sp.id)) return -1;
+      const own = SPOT_REVEAL_ZOOM_BY_ID[sp.id] ?? -1;
+      if (selectedDest && selDestLevel !== undefined && spotParentKey(sp) === selectedDest.id) return own < 0 ? selDestLevel : Math.min(own, selDestLevel);
+      return own;
+    };
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
       const img = spotPhotoImageName(sp.id, visited);
@@ -3174,6 +3311,7 @@ const destItems = useMemo((): DestItem[] =>
           label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON && !hitsSelected(sp) ? spotLabelLines(sp.name).join('\n') : '',
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
+          gate: gateOf(sp),
         },
       });
     }
@@ -3182,15 +3320,23 @@ const destItems = useMemo((): DestItem[] =>
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
     // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
     // collection to Mapbox each frame.
-    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}|${f.properties!.label ? 1 : 0}|${f.properties!.side}`).join(',');
+    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}|${f.properties!.label ? 1 : 0}|${f.properties!.side}|${f.properties!.gate}`).join(',');
     const last = lastSpotShapeRef.current;
     if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta, spotImagesTick]);
-  // Spot pins fade in and out as they appear, go, or switch between their small and photo pins (useSpotPinFades).
-  const spotFades = useSpotPinFades(nativeSpotPins.shape);
+  }, [visibleSpots, selectedSpot, selectedDest, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta, spotImagesTick]);
+  // The zoom the spot pins' gate layers switch off at, ahead of the camera on a fast zoom-out as the destination tiers'
+  // (destGateZoom), and at once at a back tap's target (see SpotPinsLayer).
+  const spotGateAheadZoom = backPlan ? closeTarget! : Math.min(handoffZoom, destGateZoom);
+  // A tap on a spot pin (SpotPinsLayer). Stable, so the layer re-renders only when its pins or style change.
+  const spotPinPressRef = useRef<(id: string) => void>(() => {});
+  spotPinPressRef.current = (id: string) => {
+    const spot = SPOT_BY_ID.get(id);
+    if (spot && !pressBlocked()) handleSpotPress(spot);
+  };
+  const onSpotLayerPress = useCallback((id: string) => spotPinPressRef.current(id), []);
   // The photo pin's symbol style (see the spotPhotos layer); its name's colours follow the map type.
   const spotPhotoStyle = useMemo((): any => ({
       iconImage: ['get', 'img'] as any,
@@ -5685,56 +5831,7 @@ const destItems = useMemo((): DestItem[] =>
             stamps and photo pins, and present for exactly as long as the full pin would have been. */}
         <SpotPinImages />
         <SpotPhotoImages specs={nativeSpotPins.specs} />
-        <MapboxGL.ShapeSource
-          id="spotPins"
-          shape={spotFades.shape}
-          hitbox={{ width: 32, height: 40 }}
-          onPress={(e) => {
-            // A pin's fading-out copy (useSpotPinFades) is not a pin any more.
-            if (e.features[0]?.properties?.ghost) return;
-            const id = e.features[0]?.properties?.id as string | undefined;
-            const spot = id ? SPOT_BY_ID.get(id) : undefined;
-            if (spot && !pressBlocked()) handleSpotPress(spot);
-          }}
-        >
-          {/* Settled layers first (the small pin under every revealed spot that has no photo pin placed, then the photo
-              pin and its name), each followed by its copies for pins fading in or out (useSpotPinFades). The small pins
-              come before the photo pins so they draw beneath them, as before. */}
-          {[
-            <MapboxGL.SymbolLayer
-              key="spotMiniPins"
-              id="spotMiniPins"
-              belowLayerID="destStampCircles"
-              filter={['all', ['==', ['get', 'img'], ''], ['==', ['get', 'slot'], '']] as any}
-              style={SPOT_MINI_STYLE}
-            />,
-            ...Array.from({ length: SPOT_FADE_SLOTS }, (_, k) => (['e', 'x'] as const).map(kind => (
-              <MapboxGL.SymbolLayer
-                key={`spotMiniPins-${kind}${k}`}
-                id={`spotMiniPins-${kind}${k}`}
-                belowLayerID="destStampCircles"
-                filter={['all', ['==', ['get', 'img'], ''], ['==', ['get', 'slot'], `${kind}${k}`]] as any}
-                style={spotSlotStyle(SPOT_MINI_STYLE, 'mini', kind === 'e' ? spotFades.enterOn[k] : spotFades.exitOn[k], kind === 'e', false)}
-              />
-            ))).flat(),
-            <MapboxGL.SymbolLayer
-              key="spotPhotos"
-              id="spotPhotos"
-              belowLayerID="destStampCircles"
-              filter={['all', ['!=', ['get', 'img'], ''], ['==', ['get', 'slot'], '']] as any}
-              style={spotPhotoStyle}
-            />,
-            ...Array.from({ length: SPOT_FADE_SLOTS }, (_, k) => (['e', 'x'] as const).map(kind => (
-              <MapboxGL.SymbolLayer
-                key={`spotPhotos-${kind}${k}`}
-                id={`spotPhotos-${kind}${k}`}
-                belowLayerID="destStampCircles"
-                filter={['all', ['!=', ['get', 'img'], ''], ['==', ['get', 'slot'], `${kind}${k}`]] as any}
-                style={spotSlotStyle(spotPhotoStyle, `photo|${mapType}`, kind === 'e' ? spotFades.enterOn[k] : spotFades.exitOn[k], kind === 'e', true)}
-              />
-            ))).flat(),
-          ]}
-        </MapboxGL.ShapeSource>
+        <SpotPinsLayer shape={nativeSpotPins.shape} onZoom={handoffZoom} aheadZoom={spotGateAheadZoom} photoStyle={spotPhotoStyle} photoStyleKey={`photo|${mapType}`} onPressSpot={onSpotLayerPress} />
 
         {/* All MarkerViews require the map style to be loaded before Mapbox can
             project coordinates to screen positions. Gate on mapReady. */}
