@@ -5585,7 +5585,7 @@ const destItems = useMemo((): DestItem[] =>
               used to show on its own while the selected spot's photo was still being registered. */}
           <MapboxGL.SymbolLayer
             id="spotSelectedGlow"
-            belowLayerID="destStampCircles"
+            aboveLayerID="destStampCircles"
             filter={['!=', ['get', 'img'], ''] as any}
             style={{
               iconImage: mapType === 'satellite' ? SPOT_SELECTED_GLOW_DARK : SPOT_SELECTED_GLOW,
@@ -5657,17 +5657,19 @@ const destItems = useMemo((): DestItem[] =>
               textHaloWidth: 1.5,
             }}
           />
-          {/* The selected spot, above every other spot pin: its small pin until its photo is registered, then its photo pin
-              and name, the same images and text as the layers above, always drawn. */}
+          {/* The selected spot, above every other spot pin and above the destination dots (destStampCircles; the other spot
+              layers sit below them), so zoomed out it is not buried under the dots: its small pin until its photo is
+              registered, then its photo pin and name, the same images and text as the layers above, always drawn. The glow,
+              the small pin and the photo pin are chained (aboveLayerID) so they keep that order. */}
           <MapboxGL.SymbolLayer
             id="spotSelectedMini"
-            belowLayerID="destStampCircles"
+            aboveLayerID="spotSelectedGlow"
             filter={['all', ['==', ['get', 'sel'], 1], ['==', ['get', 'img'], '']] as any}
             style={{ iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
           />
           <MapboxGL.SymbolLayer
             id="spotSelectedPhoto"
-            belowLayerID="destStampCircles"
+            aboveLayerID="spotSelectedMini"
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
               iconImage: ['get', 'img'] as any,
