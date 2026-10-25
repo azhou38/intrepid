@@ -1,10 +1,9 @@
-# Job: Pipeline B, first pass (searcher + first judge) for ONE group
-Repo: the repository root you were started in (edit nothing except candidates.json and judge-1.json in curation/<branch>/lens/<GROUP>/). Roles: .claude/agents/image-searcher.md and image-judge.md — their checklists carry the photo rules; open IMAGES.md only for a case they don't settle. Input: curation/<branch>/lens/<GROUP>/task.json from `npx tsx scripts/curation/lens-triage.ts`.
+# Job: Pipeline B, first pass for ONE group (gaps search + first judge)
+Repo: the repository root you were started in (edit nothing except candidates.json and judge-1.json in your group folder). Roles: .claude/agents/image-searcher.md and image-judge.md; their checklists carry the photo rules, so open IMAGES.md only for a case they don't settle. Input: the group folder, already prepared by the orchestrator with `lens-triage.ts`, `photo-prove.py` and `gather-photo-candidates.py`: `task.json`, `candidates.json` (with `_unresolved`), `sheets/<slot>.jpg` per search slot and `sheets/confirm.jpg`.
 
 Each slot in task.json has a status:
-- `skip` — already accepted (scripts/curation/photo-verdicts.json). Do nothing.
-- `confirm` — nobody has judged the current photo. Judge it only: `keep-current`, or reject with the failed check (then search that slot as below).
-- `search` — no photo, a pre-filter finding, or flagged by the owner. SEARCH up to 6 Commons candidates (Openverse etc. only if Commons has nothing), then JUDGE them and the current photo.
-Look at photos on contact sheets (several thumbnails per Read) and read the file page of anything you'd choose. Fetch pages with `npx tsx scripts/curation/fetch.ts`. Wikimedia ~1 request/second, back off 30/60/120 s on 429.
-Write candidates.json ({slot:[{file,page,width,height,licence,why}]}) and judge-1.json (per slot {candidates:[…], choice: '<file>'|'keep-current'|'none: <why>'}).
-Final message: the slots where you chose a NEW file (these, and only these, go to the second judge), then one line per other slot.
+- `skip` or `proven`: done. Do nothing.
+- `confirm`: judge the current photo only, from `sheets/confirm.jpg` (open it at 960 px only if the sheet can't settle it): `keep-current`, or reject with the failed check. A rejected confirm slot needs candidates: run `python3 scripts/curation/gather-photo-candidates.py <group> --slots <slot>` after setting its status to `search` in task.json, then judge it as below.
+- `search`: LOOK at `sheets/<slot>.jpg`, choose the best candidate by number (or `none: <why>`), then open only your pick at 960 px and its file page (licence, location, subject) and run `hero-crop.py` on it. Search further (image-searcher checklist) only when the sheet has fewer than 3 candidates or the slot is under `_unresolved`.
+Write judge-1.json (per slot `{candidates:[…the ones you assessed…], choice: '<file or local path as in candidates.json>'|'keep-current'|'none: <why>', hero_crop}`), then `python3 scripts/curation/run-ledger.py validate judge <group>/judge-1.json`.
+Final message (at most 8 lines): the slots where you chose a NEW file (these, and only these, go to the second judge), counts of keep-current / none, and every unresolved source.

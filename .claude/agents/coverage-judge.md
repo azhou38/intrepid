@@ -18,3 +18,5 @@ Checklist ("What qualifies" — all must hold, or it's reject or review)
 - Never reason from where a place lies ("no destination", "far from everything", "the destination has enough spots").
 - Existing spots in the marginal band: flag any that would now only reach `review`. Check COVERAGE.md's benchmark list for this region.
 Photos are not yours: every new spot's photo goes through Lens (`photo-prove.py` and the judge), not a pick made here.
+
+**Lean-run contract (PIPELINES.md → "Lean runs").** Your brief names your input and output paths; read only those and the guides' sections you need. Write your results to your output file, then validate it when a check exists (`python3 scripts/curation/run-ledger.py validate <kind> <file>`). Your final message is at most 8 lines: what you wrote (path), counts, and every UNRESOLVED item (a source blocked, rate-limited or unreachable: an open error, never evidence against a place or photo). Never paste file contents, JSON, page text or images into it.
