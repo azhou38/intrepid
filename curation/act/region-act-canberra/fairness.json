@@ -1,0 +1,1206 @@
+{
+ "region": "act-canberra",
+ "inside_destinations": {
+  "total": 79,
+  "canberra": 69,
+  "namadgi-national-park": 10
+ },
+ "standalone": 0,
+ "new_destinations": [
+  {
+   "id": "canberra",
+   "name": "Canberra",
+   "rank": 3,
+   "spots": 69
+  },
+  {
+   "id": "namadgi-national-park",
+   "name": "Namadgi National Park",
+   "rank": 4,
+   "spots": 10
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Red Hill Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "CSIRO Discovery Centre",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Goorooyarroo Nature Reserve",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Big Powerful Owl",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Shepherds Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tharwa Village",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Historic Glenburn Homestead",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Molonglo Gorge Nature Reserve",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Pialligo Redwood Forest",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Yankee Hat",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_score": {
+  "views": 0,
+  "counted_sources": 1,
+  "note": "Ten kept places tie or nearly tie at 0 views and one counted source (a place with no Wikipedia article but named by Wikivoyage or the ACT parks agency)."
+ },
+ "stronger_left_out": [
+  {
+   "name": "Royal Military College, Duntroon",
+   "views": 31595,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage: grounds open to the public (most buildings restricted), with Changi Chapel built by POWs on Miles Road (opened and read)."
+  },
+  {
+   "name": "Manuka Oval",
+   "views": 28149,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Cricket ground for matches; no tour or museum named."
+  },
+  {
+   "name": "2003 Canberra bushfires",
+   "views": 24442,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "An event, not a place; no visitor source."
+  },
+  {
+   "name": "Canberra Stadium",
+   "views": 20558,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sports stadium open for events only; no tour named."
+  },
+  {
+   "name": "Telstra Tower",
+   "views": 16807,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Telstra Tower is closed to the public for repairs since mid-2021, set to reopen December 2027, per the Wikivoyage Acton listing updated Aug 2026 (rule 2: closed). Opened Wikivoyage Acton."
+  },
+  {
+   "name": "Australian Defence Force Academy",
+   "views": 16431,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: Wikivoyage says the grounds are open but 'of little interest to travellers'; only an annual open day is offered."
+  },
+  {
+   "name": "Summernats",
+   "views": 10501,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Annual January car festival: an event."
+  },
+  {
+   "name": "Government House",
+   "views": 9210,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Residence seen only from a lookout off the road (exterior only; run rule)."
+  },
+  {
+   "name": "Russell Offices",
+   "views": 8959,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: defence office complex, not visitable."
+  },
+  {
+   "name": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+   "views": 7881,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "AIATSIS: Wikivoyage Acton lists it (Mon-Fri 9-5) as somewhere to learn Aboriginal and Torres Strait Islander culture, with public exhibits and a library. Case for: cultural stop with a source; against: a research institute whose public exhibits are modest and one source. Opened Wikivoyage Acton."
+  },
+  {
+   "name": "Kemal Atatürk Memorial",
+   "views": 6926,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Parliamentary Triangle",
+   "views": 6294,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Precinct that contains Parliament House, High Court, National Gallery, Archives and others already candidates here; overlaps (run rule). Wikivoyage names it as the heart of Canberra sightseeing."
+  },
+  {
+   "name": "Floriade",
+   "views": 5807,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Annual spring flower festival: an event (rule 4); the permanent place is Commonwealth Park, judged separately."
+  },
+  {
+   "name": "AIS Arena",
+   "views": 5654,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: indoor sports arena; the visit is the AIS precinct and tours, not the arena."
+  },
+  {
+   "name": "Civic Square",
+   "views": 5463,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Civic open space whose sights (Legislative Assembly, Canberra Museum and Gallery, theatre, library) are separate candidates or civic buildings; Wikivoyage 'See' lists it as a block, nothing to do in the square itself beyond the Mount Ainslie sight line."
+  },
+  {
+   "name": "Capital Hill",
+   "views": 5327,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Duplicate of Parliament House, the place visitors go to on this hill."
+  },
+  {
+   "name": "Australian Alps Walking Track",
+   "views": 5127,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Namadgi 'Do' names the northernmost section; long cross-border trail, only the northern end lies in the ACT (rule: long tracks are review)."
+  },
+  {
+   "name": "Australian-American Memorial",
+   "views": 4660,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage North Canberra calls it the only sight of interest at Russell Offices (the main Canberra page names it too): a tall column visitors can walk to. Case for: a landmark visible from the lake axis, free, always open. Case against: a minor memorial, a short stop, set in a defence office area."
+  },
+  {
+   "name": "Geoscience Australia",
+   "views": 4431,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 1/2: Wikivoyage Tuggeranong: education centre of minerals, rocks, fossils, free, weekdays 9-5."
+  },
+  {
+   "name": "Big Splash Waterpark Canberra",
+   "views": 4032,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/2: commercial water park, no counted source in Wikivoyage or VisitCanberra pages I read; a business."
+  },
+  {
+   "name": "The Lodge",
+   "views": 3385,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Prime Minister's residence seen from outside only (run rule)."
+  },
+  {
+   "name": "Captain James Cook Memorial",
+   "views": 3362,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "VisitCanberra attractions and 100-things lists name this lakeside water jet and globe (counted, read); a landmark guides single out beside Lake Burley Griffin, but a lakeside memorial that is a short stop; the jet runs only at set hours."
+  },
+  {
+   "name": "Supreme Court of the Australian Capital Territory",
+   "views": 3180,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: court building seen from the street; no counted source."
+  },
+  {
+   "name": "Casino Canberra",
+   "views": 2966,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Commercial gaming venue (run rule: casinos rejected)."
+  },
+  {
+   "name": "St Christopher's Cathedral",
+   "views": 2717,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: no counted source names anything to see or do there; Wikipedia only."
+  },
+  {
+   "name": "Big Swoop",
+   "views": 2687,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Big Swoop has no counted visitor source and no coordinates; only Wikipedia's big-things category names it (rule 1)."
+  },
+  {
+   "name": "Cotter Dam",
+   "views": 2610,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Tuggeranong and Country ACT (counted per candidate; I could not locate the listing text) and Wikipedia note a dam-wall viewing platform and picnics; a short, accessible stop."
+  },
+  {
+   "name": "Parkes",
+   "views": 2423,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "a suburb/district with nothing a source names to see; its visitor points (Parliament House, etc.) are the national institutions judged separately"
+  },
+  {
+   "name": "Orroral Valley Tracking Station",
+   "views": 2322,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Namadgi page lists the former NASA Earth station on Orroral Rd and it starts the Orroral Valley Circuit; single counted source"
+  },
+  {
+   "name": "Scrivener Dam",
+   "views": 2098,
+   "counted_sources": 5,
+   "verdict": "review",
+   "reason": "Wikivoyage has a viewing platform off Lady Denman Drive at the dam that created the lake; a short stop beside the zoo, named in several listings but a quick look (rule 3)."
+  },
+  {
+   "name": "Cameron Offices",
+   "views": 1920,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: government office seen from outside only."
+  },
+  {
+   "name": "City Hill",
+   "views": 1765,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source found; civic hill and roundabout park, nothing visitors go in for."
+  },
+  {
+   "name": "National Multicultural Festival",
+   "views": 1752,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Annual February festival, not there whenever a visitor arrives (rule 4)."
+  },
+  {
+   "name": "Mount Gingera",
+   "views": 1705,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One counted source (Parks ACT walking tracks page, via leads; not opened - blocks scripts): 14.5 km return summit walk, peak a source names."
+  },
+  {
+   "name": "Canberra Theatre Centre",
+   "views": 1685,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Performing venue as a building; nothing to see between shows."
+  },
+  {
+   "name": "Australian Institute of Anatomy",
+   "views": 1559,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Duplicate: the Australian Institute of Anatomy is the building that houses the National Film and Sound Archive in Acton (same coordinates as the Acton cultural precinct); judge it as that national institution, not here (run rule: duplicates). Wikipedia alone names it."
+  },
+  {
+   "name": "Albert Hall",
+   "views": 1454,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/4: no counted source (not in Wikivoyage Canberra pages or VisitCanberra's 100 things); an events hall."
+  },
+  {
+   "name": "Viking Park",
+   "views": 1452,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Sports stadium with no tour or museum named (run rule: stadiums; rule 2)."
+  },
+  {
+   "name": "Mount Ginini",
+   "views": 1439,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Re-looked: Wikivoyage Namadgi mentions only Mount Franklin skiing and the Ginini Flats wetland, not the peak; Wikipedia alone does not count."
+  },
+  {
+   "name": "All Saints Anglican Church",
+   "views": 1430,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: local parish church, no counted source naming anything to see."
+  },
+  {
+   "name": "Remembrance Driveway",
+   "views": 1419,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Remembrance Driveway is a long commemorative road route Sydney-Canberra with roadside plantings; no counted visitor source names a place to stop in the ACT (rule 1, rule 3)."
+  },
+  {
+   "name": "Commonwealth Avenue Bridge",
+   "views": 1402,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source; a road bridge seen from the lake shore, part of the lakeside setting."
+  },
+  {
+   "name": "Royal Canberra Show",
+   "views": 1326,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Annual event, not there whenever one arrives."
+  },
+  {
+   "name": "Canberra Balloon Spectacular",
+   "views": 1287,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Annual March balloon event: an event."
+  },
+  {
+   "name": "Corin Dam",
+   "views": 1232,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Namadgi 'See' lists it (entry has no text); Corin Dam Road area is a recognised picnic and walking stop, but the visitor source says nothing of what to do."
+  },
+  {
+   "name": "Lake Tuggeranong",
+   "views": 1220,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Only Wikivoyage's Tuggeranong pages (one family) name it: 'nice small walk around the lake', otherwise somewhere to sit. One source family, short visit."
+  },
+  {
+   "name": "Gungahlin Enclosed Oval",
+   "views": 1210,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: sports venue, no tour or museum named."
+  },
+  {
+   "name": "Mount Franklin (Australian Capital Territory)",
+   "views": 1204,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Wikivoyage only mentions cross-country skiing there; the other counted source is the Namadgi tracks page on parks.act.gov.au (blocked, not read). Remote summit walk with Franklin Shelter."
+  },
+  {
+   "name": "Cuppacumbalong Homestead",
+   "views": 1202,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage names only 'Cuppacumbalong Pottery' at Tharwa, a craft studio/shop; no source gives homestead tours."
+  },
+  {
+   "name": "Australia Day Live Concert",
+   "views": 1132,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Annual concert: event."
+  },
+  {
+   "name": "National Convention Centre Canberra",
+   "views": 1123,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: conference and event venue, nothing for a visitor to do; no counted source."
+  },
+  {
+   "name": "PS Enterprise",
+   "views": 1065,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: a historic paddle steamer article on Wikipedia; no counted source shows it can be visited in Canberra."
+  },
+  {
+   "name": "St Paul's Church, Manuka",
+   "views": 1052,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: local church, Wikipedia only."
+  },
+  {
+   "name": "Gubur Dhaura",
+   "views": 1017,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Sacred site; visitor access not confirmed and no visitor source."
+  },
+  {
+   "name": "Canberra Nature Park",
+   "views": 1015,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Umbrella for about 39 separate reserves; each reserve (Mount Ainslie, Black Mountain, Mulligans Flat) is judged on its own, so the container is not a single place."
+  },
+  {
+   "name": "Tuggeranong Homestead",
+   "views": 987,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 2: Wikivoyage says it is used as a venue for events, conferences and weddings, no public visit named."
+  },
+  {
+   "name": "Mount Coree",
+   "views": 964,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source found naming it as a place to go (Wikivoyage Namadgi omits it); Wikipedia only."
+  },
+  {
+   "name": "Lennox Gardens",
+   "views": 953,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor source; small garden park in Parkes."
+  },
+  {
+   "name": "Bendora Dam",
+   "views": 948,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Namadgi 'See' (and Wikipedia): 1961 arch dam, first of its type in Australia, with lookouts."
+  },
+  {
+   "name": "Glebe Park",
+   "views": 941,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Civic names it as a pleasant stroll and an autumn-colour photo spot (one counted source); 40 ha? urban park. Case for: a guide singles it out, free, open always. Case against: an ordinary city-centre park, one source, short visit."
+  },
+  {
+   "name": "Royal Canberra Golf Club",
+   "views": 915,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Private golf club, not open to visitors as an attraction (club rule)."
+  },
+  {
+   "name": "Mugga Lane Zoo",
+   "views": 892,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/2: no counted source; a small government-run wildlife facility not presented to visitors by Wikivoyage or VisitCanberra (Mugga Mugga Cottage nearby is a separate candidate)."
+  },
+  {
+   "name": "Vietnam Forces National Memorial",
+   "views": 886,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Tharwa Bridge",
+   "views": 885,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Tharwa: Wikivoyage mentions the old bridge only inside the Tharwa Village listing."
+  },
+  {
+   "name": "Canberra International Sports and Aquatic Centre",
+   "views": 880,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: leisure/training venue and health club."
+  },
+  {
+   "name": "Korean War Memorial",
+   "views": 844,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Anzac Parade and a minor memorial; no source singles it out as a visit in its own right."
+  },
+  {
+   "name": "Fractured Heart",
+   "views": 838,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Fractured Heart is an illuminart sculpture built as a backdrop for a 2011 ARIA Awards performance; Wikivoyage Acton gives no location or evidence it is a permanent public attraction (rules 2 and 4)."
+  },
+  {
+   "name": "New Zealand Memorial",
+   "views": 808,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Reconciliation Place",
+   "views": 788,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (only Wikipedia); a commemorative open space in Parkes, a minor memorial-type place (rules 1, 3)."
+  },
+  {
+   "name": "Southern Cross Stadium",
+   "views": 775,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Indoor sports stadium with no tour or museum named (run rule: stadiums; rule 2)."
+  },
+  {
+   "name": "Telopea Park",
+   "views": 761,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; local suburban park."
+  },
+  {
+   "name": "Rats of Tobruk Memorial",
+   "views": 749,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Reserve Bank of Australia Building",
+   "views": 745,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Former bank office building seen from outside; heritage listing alone is not a visit (rule 2)."
+  },
+  {
+   "name": "Woden Cemetery",
+   "views": 741,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/2: cemetery with no counted source naming it as a visit."
+  },
+  {
+   "name": "Australian Centre for Christianity and Culture",
+   "views": 729,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a church and cultural centre; I found no mention in the Wikivoyage Canberra page I read, so no counted source names anything to see or do."
+  },
+  {
+   "name": "Haig Park",
+   "views": 728,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage describes a windbreak of tree rows between two hills (opened); nothing to see or do beyond a local walk; the market is Sunday-only and an event."
+  },
+  {
+   "name": "King George V Memorial",
+   "views": 697,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikipedia only) and a minor memorial sculpture (rules 1, 3)."
+  },
+  {
+   "name": "Ginini Flats Wetlands Ramsar Site",
+   "views": 684,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Namadgi 'See' names it: the ACT's only Ramsar wetland; one counted source."
+  },
+  {
+   "name": "Bendora Arboretum",
+   "views": 622,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Namadgi 'See': 1940 experimental plantings, 52 species, 5 km grade-2 walk."
+  },
+  {
+   "name": "Canberra Peace Park",
+   "views": 616,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor source; small commemorative park."
+  },
+  {
+   "name": "Lindsay Pryor National Arboretum",
+   "views": 611,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Wikivoyage Woden lists it twice (Woden and Weston Creek pages): lakeside arboretum good for autumn colour and a stroll (rule 1, 2)."
+  },
+  {
+   "name": "Canberra Centenary Column",
+   "views": 604,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor commemorative sculpture on London Circuit, a ten-minute look with no guide singling it out beyond a one-line listing (rule 3)."
+  },
+  {
+   "name": "Australian Merchant Navy Memorial",
+   "views": 603,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (Wikipedia only) and a minor commemorative monument (rules 1, 3)."
+  },
+  {
+   "name": "Kings Park",
+   "views": 602,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage (opened) gives Kings Park a section with six memorials and the Griffin plans; the National Capital Exhibition is the visit and may be its own candidate."
+  },
+  {
+   "name": "Corroboree Park",
+   "views": 599,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor source; local park."
+  },
+  {
+   "name": "Mount Rogers",
+   "views": 553,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Mount Rogers: only Wikipedia and OSM name it; no visitor source (rule 1)."
+  },
+  {
+   "name": "Lower Molonglo Water Quality Control Centre",
+   "views": 552,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A sewage treatment plant; no counted source found naming it as somewhere to go."
+  },
+  {
+   "name": "Australian Peacekeeping Memorial",
+   "views": 542,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Boer War Memorial",
+   "views": 535,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Anzac Parade and a minor memorial (rule 3); no source singles it out as a visit."
+  },
+  {
+   "name": "Kingston Foreshore Redevelopment",
+   "views": 535,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A dining and apartment precinct whose draws are cafes and a weekend market (rule 2, 4)."
+  },
+  {
+   "name": "ACT Memorial",
+   "views": 529,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Minor war memorial on London Circuit, a plaque-scale stop (rule 3)."
+  },
+  {
+   "name": "Deakin Telephone Exchange",
+   "views": 512,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: heritage telephone exchange viewable from outside only; no counted source."
+  },
+  {
+   "name": "Acton Tunnel",
+   "views": 507,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: road tunnel, no counted source."
+  },
+  {
+   "name": "Magna Carta Place",
+   "views": 478,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source (only Wikipedia); a commemorative open space in Parkes, a minor memorial-type place (rules 1, 3)."
+  },
+  {
+   "name": "National Police Memorial",
+   "views": 475,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikivoyage Kings Park paragraph names it only in a list of six memorials: part of the memorial cluster around Lake Burley Griffin: a minor memorial (rule 3)."
+  },
+  {
+   "name": "Stranger Pond",
+   "views": 466,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "no counted source found (Wikipedia reservoir category only); a small urban pond"
+  },
+  {
+   "name": "Petrov's Bridge",
+   "views": 463,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source; footbridge structure."
+  },
+  {
+   "name": "Royal Australian Air Force Memorial",
+   "views": 446,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Yarramundi Reach",
+   "views": 437,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Riverside reach next to the Lindsay Pryor arboretum, with nothing a source names to see beyond it (part of that area; rule 3)."
+  },
+  {
+   "name": "Royal Australian Navy Memorial",
+   "views": 413,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Statues of Dorothy Tangney and Enid Lyons",
+   "views": 408,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; two statues in a street/park setting are a minor public artwork (rule 1, rule 3)."
+  },
+  {
+   "name": "Centenary of Women's Suffrage Commemorative Fountain",
+   "views": 397,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; a small commemorative fountain on the lake shore is a minor memorial (rule 3)."
+  },
+  {
+   "name": "Australian Service Nurses National Memorial",
+   "views": 396,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "part of Anzac Parade / a minor memorial: no visitor source singles it out as a visit in its own right; the avenue is the place (Wikivoyage North Canberra lists it only as one of the Anzac Parade memorials)."
+  },
+  {
+   "name": "Callum Brae",
+   "views": 394,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Private heritage precinct with limited access; its coordinates are in New Zealand (wrong place)."
+  },
+  {
+   "name": "Gungahlin Cemetery",
+   "views": 388,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/2: cemetery, no counted source."
+  },
+  {
+   "name": "Immigration Bridge",
+   "views": 386,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source; proposed footbridge structure."
+  },
+  {
+   "name": "Art, Not Apart",
+   "views": 339,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Annual arts festival: event."
+  },
+  {
+   "name": "National Workers Memorial",
+   "views": 331,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Named only in the Wikivoyage Kings Park list of memorials: part of the memorial cluster around Lake Burley Griffin: a minor memorial (rule 3)."
+  },
+  {
+   "name": "National Rose Gardens",
+   "views": 302,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor source; small rose garden beside Old Parliament House, part of the Parliamentary Triangle gardens."
+  },
+  {
+   "name": "Tuggeranong Arts Centre",
+   "views": 278,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1/2: Wikivoyage Tuggeranong and Country ACT list galleries and a theatre, Tue-Sat."
+  },
+  {
+   "name": "Australian Girls Own Gallery",
+   "views": 239,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No visitor source (only Wikipedia); location and opening not confirmed (rule 1, rule 2)."
+  },
+  {
+   "name": "Federal Golf Club",
+   "views": 237,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A private golf club in Red Hill; the run rejects golf clubs."
+  },
+  {
+   "name": "Brindabella Hills Winery",
+   "views": 0,
+   "counted_sources": 4,
+   "verdict": "reject",
+   "reason": "One of dozens of Canberra district cellar doors; sources list it among Hall wineries and none singles it out as a destination in its own right (run rule on wineries)."
+  },
+  {
+   "name": "Hartley Hall Markets",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "Monthly Sunday market: not there whenever you arrive."
+  },
+  {
+   "name": "Gold Creek Village",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "A shopping and dining precinct whose attractions (Cockington Green, the dinosaur museum, reptile zoo, aviary) are separate places; the village is a wrapper (rule 3) and its shops and restaurants fail rule 2."
+  },
+  {
+   "name": "Aboriginal Dreamings Gallery",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "Retail art gallery and shop; the run rules reject a retail gallery even when Wikivoyage and VisitCanberra list it (rule 2: shop)."
+  },
+  {
+   "name": "Mugga-Mugga Cottage",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "review",
+   "reason": "Wikivoyage lists a 1830s cottage open 10-2 on the first weekend of each month only, so it is not there whenever a visitor arrives (rule 4)."
+  },
+  {
+   "name": "Dendy Cinemas Canberra",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Commercial cinema, a business venue not a place to visit (run rule: cinemas rejected)."
+  },
+  {
+   "name": "Holey Moley Golf Club",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Indoor mini-golf novelty venue, a business (run rule)."
+  },
+  {
+   "name": "Mount Pleasant Lookout",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Mount Pleasant Lookout: Wikivoyage North Canberra lists it (Artillery memorial with two cannons, Gen. Bridges grave, view over Duntroon); parks agency has a reserve page. Short stop. Case for: two counted sources, a drive-up lookout with things to see. Opened Wikivoyage."
+  },
+  {
+   "name": "Hall Village Christmas Fair and Street Party",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 4: annual event, not a permanent place."
+  },
+  {
+   "name": "GoBoat Canberra",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator: boat hire on Lake Burley Griffin."
+  },
+  {
+   "name": "Lake Burley Griffin Cruises",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator/cruise; also listed as temporarily suspended; the place is the lake."
+  },
+  {
+   "name": "Love Boats Canberra",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator: boat hire."
+  },
+  {
+   "name": "Lake Ginninderra Shared Path",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Part of Lake Ginninderra: the 7 km loop is the lake's own path."
+  },
+  {
+   "name": "Tuggeranong Schoolhouse Museum",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 1/2: Wikivoyage lists the 130-year-old schoolhouse with pastoral-era furniture."
+  },
+  {
+   "name": "Murrumbidgee Country Club",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Golf club; a business/club, not a place to visit (run rule)."
+  },
+  {
+   "name": "Dairy Farmers Hill",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A lookout hill inside the National Arboretum: part of National Arboretum (rule 3)."
+  },
+  {
+   "name": "National Bonsai and Penjing Collection",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A collection inside the National Arboretum's Village Centre: part of National Arboretum (rule 3); keep the larger."
+  },
+  {
+   "name": "Stromlo Cottage",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Wikivoyage Woden and the Weston Creek page both list a 1926 heritage cottage that tells Canberra's story (two counted sources). Opened Woden page."
+  },
+  {
+   "name": "POD Playground at the National Arboretum",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A playground within the National Arboretum: part of a larger spot (rule 3)."
+  },
+  {
+   "name": "Museum of Australian Democracy",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Duplicate of Old Parliament House (same building; run rule)."
+  },
+  {
+   "name": "Axxe Urban Axe Throwing",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "commercial venue/business, not a place (operators, clubs, shops, play venues rejected)"
+  },
+  {
+   "name": "Craft and Design Canberra",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Craft and design gallery (The Treasury) named on two VisitCanberra pages (opened); public gallery, free entry likely, but small."
+  },
+  {
+   "name": "Gallery of Small Things",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Quirky 'smallest gallery' in Watson, two VisitCanberra pages plus Wikivoyage; opens Thu-Sun only."
+  },
+  {
+   "name": "Breakr",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "commercial venue/business, not a place (operators, clubs, shops, play venues rejected)"
+  },
+  {
+   "name": "Treetops Adventure Canberra",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Commercial aerial obstacle course operator: business, not a place."
+  },
+  {
+   "name": "National Folk Festival",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Annual Easter festival: event."
+  },
+  {
+   "name": "Dhawura Tours",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator or vehicle, not a place: a tour operator (VisitCanberra first-nations page). A spot is a place."
+  },
+  {
+   "name": "Traditional Owners Aboriginal Corporation tours",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator or vehicle, not a place: a tour operator. A spot is a place."
+  },
+  {
+   "name": "Canberra Wine Region",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "a wine region of ~140 vineyards straddling the ACT and NSW, not a single place a visitor can go to; its cellar doors are judged individually (all rejected)"
+  },
+  {
+   "name": "Cuppacumbalong Pottery",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "pottery studio with sales (a shop/workshop); Wikivoyage mentions it only inside the Tharwa Village listing, so the two 'counted sources' are one mention of the same place"
+  },
+  {
+   "name": "Cotter Reserve",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Parks ACT: the Cotter Recreation Area (river picnicking and swimming) that locals call the Cotter; the one name for the cluster of Cotter sites."
+  },
+  {
+   "name": "Canberra District Wine Region",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A region of 140 cellar doors, not one place a visitor goes for half an hour."
+  }
+ ],
+ "stronger_left_out_note": "144 candidates left out or sent to review have more views or more counted sources than the lowest kept spot (0 views, 1 counted source). Each carries the judge's concrete \"What qualifies\" reason (event, closed to the public, minor memorial, duplicate, operator or retail, restricted site, not there whenever you arrive, or a precinct that duplicates its member institutions). The 29 with 3000+ views or 3+ sources are the ones a reader should check: Royal Military College Duntroon, Manuka Oval, Canberra Stadium, Telstra Tower (closed until December 2027), Government House, the Lodge, Floriade, Summernats, Parliamentary Triangle (review), Scrivener Dam (review), Mugga-Mugga Cottage (review), Gold Creek Village (a wrapper), Aboriginal Dreamings Gallery (retail).",
+ "strongest_outsiders": {
+  "outside_every_span": [],
+  "note": "No kept place lies outside both spans. The strongest places outside the ACT (Queanbeyan, Googong, Bungendore and others, 40 in outside-act.json) are NSW and out of the region.",
+  "outside_act": [
+   {
+    "name": "Queanbeyan",
+    "why": "NSW city next to the ACT border; Wikivoyage names it as Canberra's fifth town centre but says it is not covered (NSW)."
+   },
+   {
+    "name": "Googong",
+    "why": "NSW township near Queanbeyan, outside the ACT (named by Wikivoyage as an associated area)."
+   },
+   {
+    "name": "Bungendore",
+    "why": "NSW village east of the ACT; Wikivoyage says it is not covered (NSW)."
+   },
+   {
+    "name": "Yass",
+    "why": "NSW town; named in VisitCanberra's wine region listings as a Yass, NSW location."
+   },
+   {
+    "name": "Murrumbateman",
+    "why": "NSW wine village 30 minutes from Canberra; named by Wikivoyage and VisitCanberra as outside the ACT (NSW)."
+   },
+   {
+    "name": "Captains Flat",
+    "why": "NSW village near Queanbeyan named by Wikivoyage's associated-areas note."
+   },
+   {
+    "name": "Michelago",
+    "why": "NSW village named by Wikivoyage's associated-areas note."
+   },
+   {
+    "name": "Lake George",
+    "why": "NSW lake; named by Wikipedia/WeekendNotes as a lookout and view site, outside the ACT."
+   },
+   {
+    "name": "Lake George Winery",
+    "why": "NSW winery named on VisitCanberra's wine page (Lake George area)."
+   },
+   {
+    "name": "Lerida Estate",
+    "why": "Winery named on VisitCanberra's wine page; location not stated, likely NSW (Lake George area)."
+   }
+  ]
+ },
+ "review_held": [
+  "Glebe Park",
+  "Canberra Merry-Go-Round",
+  "Canberra City Art Trail",
+  "Tuggeranong Art Trail",
+  "Captain James Cook Memorial",
+  "Australian-American Memorial",
+  "Mount Pleasant Lookout",
+  "Classics Museum",
+  "Drill Hall Gallery",
+  "Shine Dome",
+  "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+  "Canberra Fire Museum",
+  "Gossan Hill",
+  "Hall School Museum and Heritage Centre",
+  "Bridge to Bridge Loop",
+  "Evatt Wetlands and Ginninderra Creek Trail",
+  "John Knight Memorial Park",
+  "Umbagong District Park Grinding Grooves",
+  "Cooleman Ridge",
+  "Mugga-Mugga Cottage",
+  "Tuggeranong Schoolhouse Museum",
+  "Geoscience Australia",
+  "Tuggeranong Arts Centre",
+  "Lake Tuggeranong",
+  "Sparrow Hill and East Kowen Forest Trails",
+  "Lindsay Pryor National Arboretum",
+  "Scrivener Dam",
+  "Stromlo Cottage",
+  "Parliamentary Triangle",
+  "Manuka Pool",
+  "Yarralumla Bay",
+  "Craft and Design Canberra",
+  "Gallery of Small Things",
+  "Kings Park",
+  "Red Rocks Gorge",
+  "Majura Pines",
+  "Changi Chapel",
+  "Royal Military College, Duntroon",
+  "Duntroon Dairy",
+  "Birrigai Time Trail",
+  "Orroral Valley Tracking Station",
+  "Australian Alps Walking Track",
+  "Mount Gingera",
+  "Mount Franklin (Australian Capital Territory)",
+  "Orroral Valley Circuit",
+  "Ginini Flats Wetlands Ramsar Site",
+  "Hospital Hill Lookout",
+  "Bendora Dam",
+  "Corin Dam",
+  "Cotter Dam",
+  "Bendora Arboretum",
+  "Cotter Reserve",
+  "Point Hut Crossing",
+  "Uriarra Crossing",
+  "Mugga-Mugga",
+  "Geoscience Australia Education Centre",
+  "Aranda Bushland Nature Reserve",
+  "Molonglo River Reserve",
+  "Tharwa Sandwash",
+  "Blue Range Hut",
+  "Tuggeranong Pines",
+  "Canberra Nara Peace Park",
+  "Canberra Beijing Garden"
+ ],
+ "benchmark": {
+  "applicable": false,
+  "note": "The NZ benchmarks (Red Rocks, Kapiti Island, Ninety Mile Beach and so on) do not apply to the ACT. The matching tests here: TSS-Earnslaw-style vehicles and operators absent (no Corin Forest-style operator is kept except Corin Forest itself, a place with a fixed site; judged keep); a gateway village whose draw is beyond it (Tharwa) is a kept village in its own right per the judges' run rule; negative benchmarks held: a civic building seen from the street (Supreme Court of the ACT, Civic Square) rejected, a once-weekly market (Hartley Hall Markets) rejected, an event (Floriade, Summernats) rejected, a closed attraction (Telstra Tower) rejected."
+ }
+}

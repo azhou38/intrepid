@@ -1,0 +1,684 @@
+{
+ "spots": [
+  {
+   "id": "canberra-21",
+   "name": "Black Mountain",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Nature reserve with forest walks to the summit by Black Mountain Tower and views over the city.",
+   "wiki": "Black Mountain (Australian Capital Territory)",
+   "coordinates": {
+    "lat": -35.26666667,
+    "lng": 149.1
+   },
+   "coordinates_source": "wikipedia:Black Mountain (Australian Capital Territory)",
+   "km_from_destination": 3.4,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Acton"
+   ],
+   "reason": "Kept by the judge: Black Mountain (nature reserve): Wikivoyage Acton gives it a listing with several bushwalks and picnic areas and the summit; the most-used reserve beside the Botanic Gardens. Keep the reserve and reje",
+   "merged_from": [
+    "Black Mountain Nature Reserve"
+   ],
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.273859,
+     "lon": 149.097567,
+     "src": "osm",
+     "name": "Black Mountain",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Black Mountain",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.2738587,
+      "lon": 149.0975675,
+      "from_hint_m": 831
+     },
+     {
+      "src": "wiki",
+      "name": "Black Mountain (Australian Capital Territory)",
+      "type": "article",
+      "lat": -35.26666667,
+      "lon": 149.1,
+      "from_hint_m": 0
+     }
+    ],
+    "hint": {
+     "lat": -35.26666667,
+     "lon": 149.1,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-22",
+   "name": "Red Hill",
+   "destination": "canberra",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "Nature reserve with the 3.2 km Red Track loop and a hilltop lookout over Parliament House and the lake.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.333263,
+    "lng": 149.120295
+   },
+   "coordinates_source": "OpenStreetMap feature with Wikipedia tag (no type), Overpass query",
+   "km_from_destination": 4.3,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/South_Canberra"
+   ],
+   "reason": "Kept by the judge: Red Hill Lookout: Wikivoyage South Canberra lists Red Hill with two lookouts, a cafe and vehicle access, and Wikivoyage Canberra names Red Hill among bushwalks; a hill kept when a visitor source names",
+   "merged_from": [
+    "Red Hill Nature Reserve"
+   ],
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.323739,
+     "lon": 149.112817,
+     "src": "osm",
+     "name": "Red Hill",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Red Hill",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.3237387,
+      "lon": 149.1128172,
+      "from_hint_m": 1259
+     },
+     {
+      "src": "osm",
+      "name": "Red Hill",
+      "type": "boundary=administrative (nominatim)",
+      "lat": -35.3334376,
+      "lon": 149.1205858,
+      "from_hint_m": 33
+     },
+     {
+      "src": "osm",
+      "name": "Red Hill",
+      "type": "natural=wood (nominatim)",
+      "lat": -35.3292104,
+      "lon": 149.1190628,
+      "from_hint_m": 465
+     },
+     {
+      "src": "commons",
+      "name": "16 geotagged files",
+      "type": "photo median",
+      "lat": -35.336764,
+      "lon": 149.116255,
+      "from_hint_m": 535
+     }
+    ],
+    "hint": {
+     "lat": -35.333263,
+     "lon": 149.120295,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-23",
+   "name": "Aboriginal Tent Embassy",
+   "destination": "canberra",
+   "category": "historic",
+   "icon": "✊",
+   "bio": "Protest and cultural site on the Parliament lawns, a long-standing landmark of Aboriginal political history.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.30111111,
+    "lng": 149.13
+   },
+   "coordinates_source": "wikipedia:Aboriginal Tent Embassy",
+   "km_from_destination": 2.6,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra"
+   ],
+   "reason": "Kept by the judge: Wikivoyage Canberra names it (one counted source); a long-standing protest and cultural site on the Parliament lawns with its own history, exempted from the Anzac/lakeside memorial rule (run brief). R",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.301185,
+     "lon": 149.130382,
+     "src": "osm",
+     "name": "Aboriginal Tent Embassy",
+     "type": "tourism=attraction (nominatim)"
+    },
+    "agreeing": [
+     "wiki"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Aboriginal Tent Embassy",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.301185,
+      "lon": 149.130382,
+      "from_hint_m": 36
+     },
+     {
+      "src": "wiki",
+      "name": "Aboriginal Tent Embassy",
+      "type": "article",
+      "lat": -35.30111111,
+      "lon": 149.13,
+      "from_hint_m": 0
+     }
+    ],
+    "hint": {
+     "lat": -35.30111111,
+     "lon": 149.13,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-24",
+   "name": "National Carillon",
+   "destination": "canberra",
+   "category": "landmark",
+   "icon": "🔔",
+   "bio": "Carillon on Queen Elizabeth II Island in Lake Burley Griffin, reached by footbridge, with recitals.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.2985,
+    "lng": 149.1417
+   },
+   "coordinates_source": "wikipedia:National Carillon",
+   "km_from_destination": 3.7,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/attractions",
+    "https://en.wikivoyage.org/wiki/Canberra/North_Canberra"
+   ],
+   "reason": "Kept by the judge: Named by Wikivoyage and Visit Canberra, with recitals; landmark on the lake island.",
+   "merged_from": [
+    "Queen Elizabeth II Island"
+   ],
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.298488,
+     "lon": 149.141739,
+     "src": "osm",
+     "name": "National Carillon",
+     "type": "man_made=tower (nominatim)"
+    },
+    "agreeing": [
+     "osm"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "National Carillon",
+      "type": "man_made=tower (nominatim)",
+      "lat": -35.2984879,
+      "lon": 149.1417391,
+      "from_hint_m": 4
+     },
+     {
+      "src": "osm",
+      "name": "National Carillon",
+      "type": "man_made=tower (nominatim)",
+      "lat": -35.2984879,
+      "lon": 149.1417391,
+      "from_hint_m": 4
+     },
+     {
+      "src": "commons",
+      "name": "22 geotagged files",
+      "type": "photo median",
+      "lat": -35.298356,
+      "lon": 149.142912,
+      "from_hint_m": 111
+     }
+    ],
+    "hint": {
+     "lat": -35.2985,
+     "lon": 149.1417,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-25",
+   "name": "National Archives of Australia",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "📜",
+   "bio": "National archives in the heritage-listed East Block, with exhibitions.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.304877,
+    "lng": 149.130574
+   },
+   "coordinates_source": "wikipedia:National Archives of Australia",
+   "km_from_destination": 2.8,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/South_Canberra",
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries",
+    "https://www.visitcanberra.com.au/attractions"
+   ],
+   "reason": "Kept by the judge: National institution with two permanent public exhibitions in the Kings Avenue building (Wikivoyage).",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.304941,
+     "lon": 149.130574,
+     "src": "osm",
+     "name": "National Archives of Australia",
+     "type": "tourism=museum (nominatim)"
+    },
+    "agreeing": [
+     "osm",
+     "wiki",
+     "commons"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "National Archives of Australia",
+      "type": "tourism=museum (nominatim)",
+      "lat": -35.3049409,
+      "lon": 149.1305743,
+      "from_hint_m": 7
+     },
+     {
+      "src": "osm",
+      "name": "National Archives of Australia",
+      "type": "tourism=museum (nominatim)",
+      "lat": -35.3049409,
+      "lon": 149.1305743,
+      "from_hint_m": 7
+     },
+     {
+      "src": "wiki",
+      "name": "National Archives of Australia",
+      "type": "article",
+      "lat": -35.304877,
+      "lon": 149.130574,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "5 geotagged files",
+      "type": "photo median",
+      "lat": -35.304821014404,
+      "lon": 149.130947,
+      "from_hint_m": 34
+     }
+    ],
+    "hint": {
+     "lat": -35.304877,
+     "lon": 149.130574,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-26",
+   "name": "Anzac Parade",
+   "destination": "canberra",
+   "category": "monument",
+   "icon": "🎖️",
+   "bio": "Ceremonial avenue lined with military memorials from the Australian War Memorial to Russell, for a walk or drive.",
+   "wiki": "Anzac Parade, Canberra",
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/North_Canberra"
+   ],
+   "reason": "Kept by the judge: Wikivoyage North Canberra describes the 1.1 km avenue and a 2 km memorial walk to the War Memorial (opened); judged as the one avenue, with its individual memorials rejected as parts.",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": null,
+    "agreeing": [],
+    "candidates": [],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-27",
+   "name": "Commonwealth Park",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌷",
+   "bio": "Lakeside park designed by Dame Sylvia Crowe, with sculptures, ponds and walkways beside Lake Burley Griffin.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.28833333,
+    "lng": 149.13416667
+   },
+   "coordinates_source": "wikipedia:Commonwealth Park",
+   "km_from_destination": 3.2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://www.visitcanberra.com.au/things-to-do/family-fun",
+    "https://en.wikivoyage.org/wiki/Canberra"
+   ],
+   "reason": "Kept by the judge: Wikivoyage Canberra (read) and VisitCanberra name the lakeside park with sculptures, ponds, walkways and an open-air theatre, designed by Dame Sylvia Crowe in 1964; the park is a permanent place and F",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.289029,
+     "lon": 149.130239,
+     "src": "osm",
+     "name": "Commonwealth Park",
+     "type": "leisure=park (nominatim)"
+    },
+    "agreeing": [
+     "osm"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Commonwealth Park",
+      "type": "leisure=park (nominatim)",
+      "lat": -35.2890295,
+      "lon": 149.130239,
+      "from_hint_m": 365
+     },
+     {
+      "src": "osm",
+      "name": "Commonwealth Park",
+      "type": "leisure=park (nominatim)",
+      "lat": -35.2890295,
+      "lon": 149.130239,
+      "from_hint_m": 365
+     },
+     {
+      "src": "osm",
+      "name": "Commonwealth Avenue Bridge",
+      "type": "man_made=bridge (nominatim)",
+      "lat": -35.2933898,
+      "lon": 149.1266921,
+      "from_hint_m": 882
+     }
+    ],
+    "hint": {
+     "lat": -35.28833333,
+     "lon": 149.13416667,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-28",
+   "name": "Canberra Glassworks",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🫙",
+   "bio": "Contemporary glass art centre in the heritage Kingston Powerhouse, with a hot shop where glassblowers work.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.3115975,
+    "lng": 149.1436952
+   },
+   "coordinates_source": "wikipedia:Canberra Glassworks",
+   "km_from_destination": 4.2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries",
+    "https://www.visitcanberra.com.au/attractions"
+   ],
+   "reason": "Kept by the judge: Two counted sources (VisitCanberra museums page and attractions page; also Wikivoyage South Canberra): glassblowers work in the hot shop in the historic Kingston Power House, plus gallery; a 30+ minut",
+   "merged_from": [
+    "Kingston Powerhouse"
+   ],
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.311543,
+     "lon": 149.143704,
+     "src": "osm",
+     "name": "The Canberra Glassworks",
+     "type": "amenity=arts_centre (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "The Canberra Glassworks",
+      "type": "amenity=arts_centre (nominatim)",
+      "lat": -35.3115433,
+      "lon": 149.1437041,
+      "from_hint_m": 6
+     }
+    ],
+    "hint": {
+     "lat": -35.3115975,
+     "lon": 149.1436952,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-29",
+   "name": "Lanyon Homestead",
+   "destination": "canberra",
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Early settler's homestead in Tuggeranong with guided tours, walks and a garden, run by the ACT heritage service.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.50944444,
+    "lng": 149.06888889
+   },
+   "coordinates_source": "wikipedia:Lanyon Homestead",
+   "km_from_destination": 23.7,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong",
+    "https://en.wikivoyage.org/wiki/Canberra/Country_ACT",
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries",
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong_and_Country_ACT",
+    "https://www.visitcanberra.com.au/our-neighbourhoods/southern-nature-reserves-and-national-parks"
+   ],
+   "reason": "Kept by the judge: Heritage homestead with guided tours, garden and cafe, open 10-4 except Mondays; Wikivoyage and Visit Canberra (rule 2).",
+   "merged_from": null,
+   "counted_sources": 5,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.490793,
+     "lon": 149.073386,
+     "src": "osm",
+     "name": "Lanyon Homestead",
+     "type": "tourism=museum (nominatim)"
+    },
+    "agreeing": [
+     "osm"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Lanyon Homestead",
+      "type": "tourism=museum (nominatim)",
+      "lat": -35.4907927,
+      "lon": 149.0733855,
+      "from_hint_m": 2116
+     },
+     {
+      "src": "osm",
+      "name": "Lanyon Homestead",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.4906957,
+      "lon": 149.0733027,
+      "from_hint_m": 2125
+     },
+     {
+      "src": "wiki",
+      "name": "Lanyon Homestead",
+      "type": "article",
+      "lat": -35.50944444,
+      "lon": 149.06888889,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "2 geotagged files",
+      "type": "photo median",
+      "lat": -35.456516,
+      "lon": 149.091437,
+      "from_hint_m": 6236
+     }
+    ],
+    "hint": {
+     "lat": -35.50944444,
+     "lon": 149.06888889,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-30",
+   "name": "Mulligans Flat Woodland Sanctuary",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🦘",
+   "bio": "984-hectare woodland sanctuary in Gungahlin with walking and cycling tracks, spotted quolls and the Wildbark visitor centre.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.16,
+    "lng": 149.16
+   },
+   "coordinates_source": "wikipedia:Mulligans Flat Woodland Sanctuary",
+   "km_from_destination": 16.2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://en.wikivoyage.org/wiki/Canberra/Gungahlin",
+    "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mulligans-flat-nature-reserve"
+   ],
+   "reason": "Kept by the judge: Fenced woodland sanctuary with trails and quolls; Wikivoyage, Visit Canberra and ACT Parks (rule 2).",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.168715,
+     "lon": 149.169825,
+     "src": "osm",
+     "name": "Mulligans Flat Woodland Sanctuary",
+     "type": "leisure=nature_reserve (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Mulligans Flat Woodland Sanctuary",
+      "type": "leisure=nature_reserve (nominatim)",
+      "lat": -35.1687148,
+      "lon": 149.1698254,
+      "from_hint_m": 1319
+     },
+     {
+      "src": "wiki",
+      "name": "Mulligans Flat Woodland Sanctuary",
+      "type": "article",
+      "lat": -35.16,
+      "lon": 149.16,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "4 geotagged files",
+      "type": "photo median",
+      "lat": -35.164288,
+      "lon": 149.16,
+      "from_hint_m": 477
+     }
+    ],
+    "hint": {
+     "lat": -35.16,
+     "lon": 149.16,
+     "from": "placement"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,221 @@
+{
+ "spots": {
+  "canberra-11": {
+   "name": "National Library of Australia",
+   "icon": "📚",
+   "category": "museum",
+   "bio": "National library beside Lake Burley Griffin with exhibitions, a bookshop and free daily guided tours.",
+   "hours": "Mon–Thu 8:00 AM – 8:00 PM, Fri 8:00 AM – 5:00 PM, Sat–Sun 9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.296524,
+    "longitude": 149.129574
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.library.gov.au/visit",
+   "coordinates_source": "OSM amenity=library (Nominatim) + Wikipedia article + Commons median, within 100 m (HIGH); moved 19 m from placement point",
+   "notes": "Hours from library.gov.au/visit/opening-hours (building hours; closed Good Friday and Christmas Day). Free daily 45-minute tour at 11 am from library.gov.au/visit/library-tours; the pages do not state an entry fee in words, entry treated as free (public building, free tours, exhibitions)."
+  },
+  "canberra-12": {
+   "name": "High Court of Australia",
+   "icon": "⚖️",
+   "category": "landmark",
+   "bio": "Home of Australia's highest court in Parkes, with a vast public hall and courtrooms open to watch sittings.",
+   "hours": "Mon–Fri 9:45 AM – 4:30 PM",
+   "closedDays": [
+    0,
+    6
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.29896,
+    "longitude": 149.135714
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.hcourt.gov.au/visiting-high-court/visitors",
+   "coordinates_source": "OSM amenity=courthouse (Nominatim), HIGH, 13 m from placement; moved 13 m from placement point",
+   "notes": "Official visitor page (hcourt.gov.au/visiting-high-court/visitors) says building closes to the public at 4.30pm, Court Guides in each open courtroom, free public tour for groups over 10 at 10:45am (booked), sittings about two weeks a month except January and July, 10:00-12:45 and 2:15-4:15. It does not state an opening time or weekdays; Mon-Fri 9:45 AM start is from Wikivoyage (updated 2017). No entry fee mentioned."
+  },
+  "canberra-13": {
+   "name": "Royal Australian Mint",
+   "icon": "🪙",
+   "category": "museum",
+   "bio": "Working coin factory in Deakin with a free museum, a viewing gallery over the production floor and free tours.",
+   "hours": "Mon–Fri 8:30 AM – 5:00 PM, Sat–Sun 10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.318889,
+    "longitude": 149.092899
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.ramint.gov.au/visit-our-museum",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 10 m from placement; moved 10 m from placement point",
+   "notes": "Hours, 'Entry is free', free tours, closed Good Friday and Christmas Day: ramint.gov.au/visit-our-museum."
+  },
+  "canberra-14": {
+   "name": "National Portrait Gallery",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Gallery on King Edward Terrace in Parkes showing some 400 portraits of people who have shaped the nation.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.300007,
+    "longitude": 149.133964
+   },
+   "wiki": "National Portrait Gallery (Australia)",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.portrait.gov.au/content/plan-your-visit/",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 1 m from placement; moved 7 m from placement point",
+   "notes": "portrait.gov.au/content/plan-your-visit: open every day 10-5 except 25 December, entry free (parking and some exhibitions paid). 'Some 400 portraits' is from Wikivoyage (South Canberra)."
+  },
+  "canberra-15": {
+   "name": "National Zoo and Aquarium",
+   "icon": "🦁",
+   "category": "entertainment",
+   "bio": "Zoo and aquarium by Scrivener Dam with lions, giraffes, sharks and keeper-led animal encounters.",
+   "hours": "9:30 AM – 5:00 PM",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -35.303329,
+    "longitude": 149.067722
+   },
+   "wiki": "National Zoo & Aquarium",
+   "costMin": 55,
+   "costMax": 55,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationalzoo.com.au",
+   "coordinates_source": "OSM tourism=zoo (Nominatim), HIGH, 330 m from placement (Wikipedia point sits in the park edge; OSM zoo feature used); moved 346 m from placement point",
+   "notes": "Hours: nationalzoo.com.au/visitor-information ('open every day except Christmas day 9.30am until 5.00pm'). Animal list from the site's Animals menu (lion, tiger, giraffe, rhino, koala, blacktip reef shark). Adult price A$55 is NOT from a fetched page: the official entry-prices page publishes the price table as an image; A$55 is what a web search reports for the zoo's visitor-information gate prices (family 2+3 A$152); 2026 event listings show A$60. Needs a look at the image."
+  },
+  "canberra-16": {
+   "name": "Mount Stromlo Observatory",
+   "icon": "🔭",
+   "category": "museum",
+   "bio": "Observatory site on Mount Stromlo with an 11-sign heritage trail and the Director's Residence, open daily.",
+   "hours": "8:00 AM – 6:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.319362,
+    "longitude": 149.008803
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://rsaa.anu.edu.au/observatories/mount-stromlo-observatory/information-for-visitors-activities",
+   "coordinates_source": "OSM amenity=university 'Mount Stromlo Observatory' (Nominatim), MEDIUM, 160 m from placement; moved 197 m from placement point",
+   "notes": "rsaa.anu.edu.au visitor page: site open daily 8-6, Director's Residence 9-5, Heritage Trail has 11 interpretive signs; the Cafe and Visitor Centre are currently closed; all large telescopes were decommissioned after the 2003 firestorm (the draft's 'rebuilt' is not supported, dropped). Public astronomy nights run April to September only (event, kept out of the bio). No entry fee mentioned; treated as free. Re-check the cafe/visitor-centre closure. Pin is an OSM institution centroid on the observatory site, not a precise visitor point."
+  },
+  "canberra-17": {
+   "name": "National Film and Sound Archive",
+   "icon": "🎞️",
+   "category": "museum",
+   "bio": "Art deco archive of Australian film, television and sound in Acton, with free displays and the Arc cinema.",
+   "hours": "10:00 AM – 4:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.282864,
+    "longitude": 149.120954
+   },
+   "wiki": "National Film and Sound Archive",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nfsa.gov.au/visit-us",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 5 m from placement; moved 16 m from placement point",
+   "notes": "nfsa.gov.au is behind a bot wall (403). Hours (10am-4pm daily, closed Christmas Day and New Year's Day), free general entry and the Arc cinema ticketing are from a web search summary of the official page: verify in a browser. Wikivoyage (2019) says Sat-Sun 10-4 only, stale. 1930s art deco building from Wikivoyage."
+  },
+  "canberra-18": {
+   "name": "Australian Institute of Sport",
+   "icon": "🏅",
+   "category": "entertainment",
+   "bio": "Elite athlete training campus in Bruce, visited on 90-minute guided tours that include the Sportex exhibit.",
+   "hours": "Mon–Fri 8:00 AM – 5:00 PM, Sat–Sun 9:30 AM – 4:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.247375,
+    "longitude": 149.104454
+   },
+   "costMin": 21.5,
+   "costMax": 21.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.ausport.gov.au/ais/visit",
+   "coordinates_source": "OSM amenity=college 'Australian Institute of Sport' (Nominatim), HIGH, 33 m from placement; Wikivoyage visitor-centre listing is ~290 m west; moved 31 m from placement point",
+   "notes": "ausport.gov.au/ais/visit/visit/tours and /plan-your-visit: Visitor Centre Mon-Fri 8-5, weekends and public holidays 9:30-4; tours at 10, 11:30, 1 and 2:30, 90 minutes; adult A$21.50 (child 14, concession 17.5, family 62). Sportex is only accessible as part of a tour. Campus entry itself is free per Wikivoyage (Jul 2026); price recorded is the tour. Pin is the campus point; the Visitor Centre on Leverrier St is ~290 m west."
+  },
+  "canberra-19": {
+   "name": "Cockington Green Gardens",
+   "icon": "🏘️",
+   "category": "entertainment",
+   "bio": "Handmade miniature buildings from 30 countries in landscaped gardens, with a miniature steam train ride.",
+   "hours": "9:30 AM – 5:00 PM",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.191554,
+    "longitude": 149.08665
+   },
+   "costMin": 26,
+   "costMax": 26,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://cockingtongreen.com.au/",
+   "coordinates_source": "OSM tourism=attraction (Nominatim), HIGH, 33 m from placement; moved 42 m from placement point",
+   "notes": "cockingtongreen.com.au/visit-us and /admissions: open 7 days 9:30-5, last entry 4:15, closed Christmas and Boxing Day, adult A$26 (child 16.50, senior 19.50), minimum recommended viewing time 1.5 hours; display may close in extreme weather. 30 countries and train from the site. Train ride availability: the site lists a Train Reinstatement Project page, check the train is running."
+  },
+  "canberra-20": {
+   "name": "National Dinosaur Museum",
+   "icon": "🦖",
+   "category": "museum",
+   "bio": "Dinosaur museum in Gold Creek Village with skeletons, life-like models, animatronics and fossils.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.194347,
+    "longitude": 149.087984
+   },
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://nationaldinosaurmuseum.com.au/",
+   "coordinates_source": "OSM tourism=museum (Nominatim), HIGH, 13 m from placement; moved 16 m from placement point",
+   "notes": "nationaldinosaurmuseum.com.au/visit-us: General Admission adult (17+) A$25, child A$15, concession A$18, family A$75, every day 10am-5pm. Wikivoyage's 'closed Fri' (2016) is stale. Closed days not stated on the site."
+  }
+ },
+ "unverified": [
+  "canberra-15 National Zoo and Aquarium: adult price A$55 (official price table is an image; figure from a web search of the zoo's gate prices; events listed A$60)",
+  "canberra-17 National Film and Sound Archive: hours 10-4 daily and free entry from a search summary only (site blocked)",
+  "canberra-12 High Court: Mon-Fri 9:45 AM start from Wikivoyage 2017; official page gives only the 4:30 PM close",
+  "canberra-11 National Library: free entry not stated in words on the pages read (free tours stated)",
+  "canberra-16 Mount Stromlo: free entry not stated in words; visitor centre and cafe reported closed",
+  "canberra-19 Cockington Green: whether the miniature steam train is currently running"
+ ],
+ "needs_browser": [
+  {
+   "id": "canberra-17",
+   "url": "https://www.nfsa.gov.au/visit-us",
+   "why": "403 bot wall: confirm hours, free entry and page title names the NFSA"
+  }
+ ],
+ "notes": [
+  "No LOW pins. canberra-16 is MEDIUM (OSM institution centroid on the observatory site).",
+  "canberra-18 AIS pin is the campus point; Visitor Centre ~290 m west per Wikivoyage listing.",
+  "Nothing judged should-not-be-added. canberra-16: telescopes decommissioned after 2003; the draft's 'rebuilt after the 2003 bushfires' was dropped; still a visitable heritage site (kept).",
+  "No pin within 60 m of any other spot in src or this shard.",
+  "parks.act.gov.au not needed for this shard."
+ ]
+}

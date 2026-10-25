@@ -1,0 +1,240 @@
+{
+ "spots": {
+  "canberra-51": {
+   "name": "Belconnen Arts Centre",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Lakeside arts centre on Emu Bank with free galleries, a 400-seat theatre, a design shop and a café.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.2358198,
+    "longitude": 149.0680094
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.belcoarts.com.au/",
+   "coordinates_source": "OSM amenity=arts_centre (Nominatim), 3 candidates agree; 19 m from placement point (Wikivoyage listing tag). HIGH",
+   "notes": "Hours from belcoarts.com.au/visit-us: 10am-4pm Tue-Sun, closed public holidays (limited hours on ANZAC Day). Free entry: only a 2024 CityNews piece quoting the centre says free admission; the official site states no gallery price. Site (belconnenartscentre.com.au redirects to belcoarts.com.au, title Belco Arts). 400-seat theatre and cafe from Wikivoyage."
+  },
+  "canberra-52": {
+   "name": "Strathnairn Arts",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Gallery precinct in a converted 1920s homestead and woolshed in Holt, with a shop and café.",
+   "hours": "10:00 AM – 4:00 PM",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.2323507,
+    "longitude": 148.9940116
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.strathnairn.com.au/",
+   "coordinates_source": "OSM tourism=gallery \"Strathnairn Homestead\" (Nominatim); 20 m from the Wikivoyage listing tag. The OSM leisure=common centroid (MEDIUM, 40 m away) was not used. HIGH",
+   "notes": "strathnairn.com.au/galleries, /about-us and /shop: homestead galleries + shop open Wed-Sun 10am-4pm; 3 gallery spaces; converted 1920s homestead on 9.5 ha with Woolshed gallery. Free entry from Wikivoyage listing (site states no admission price). Cafe Stepping Stone hours differ (site links to its own page)."
+  },
+  "canberra-53": {
+   "name": "The Pinnacle Nature Reserve",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Woodland reserve in Hawker where trails climb The Pinnacle for views over the Molonglo valley to the Brindabellas.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.257311,
+    "longitude": 149.040655
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/the-pinnacle-nature-reserve",
+   "coordinates_source": "Wikivoyage listing own geo tag (Springvale Drive / summit-lookout area), confirmed by Commons geotagged photo \"Pinnacle Sunset.jpg\" 21 m away. The OSM leisure=nature_reserve centroid (128 m away) was rejected as a park centroid. MEDIUM",
+   "notes": "Hours/cost: Wikivoyage (Free; no gates stated, treated as open access; the reserve is in Canberra Nature Park, which has no entry fee). 154 ha, 708 m summit loop, dirt car parks on Springvale Drive, no toilets (Wikivoyage). Agency page found by search, BLOCKED to scripts. No trail length from a route relation was available (Overpass down), so pinned at the summit/lookout point rather than a route midpoint."
+  },
+  "canberra-54": {
+   "name": "Shepherds Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Lookout over the Murrumbidgee River at the end of Stockdill Drive in Holt, reached by a short bush walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.24099,
+    "longitude": 148.97731
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout",
+   "coordinates_source": "ExplorOz \"Lookout Position\" -35.24099,148.97731 (5 dp); the Wikivoyage listing tag is 40 m away. resolve-pin.py returned LOW (no OSM feature; Overpass and Nominatim empty). Two non-OSM sources agree within 45 m. MEDIUM-LOW",
+   "notes": "VisitCanberra shepherds-lookout page: park at the car park on Stockdill Drive, walk through Woodstock Nature Reserve, 1.2 km return, easy, about 45 minutes; ACT border marked by power lines 3 km downstream; dogs on lead. Wikivoyage says a 600 m walk. 24 hours is an assumption for an open-access reserve lookout (no gate stated). Agency page BLOCKED. pin: LOW per resolve-pin (no OSM feature); point sourced from ExplorOz and Wikivoyage."
+  },
+  "canberra-55": {
+   "name": "Weston Park",
+   "icon": "🌳",
+   "category": "nature",
+   "wiki": "Weston Park, Canberra",
+   "bio": "Lakeside park in Yarralumla with picnic areas, a miniature railway, a maze and mini golf.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.2926355,
+    "longitude": 149.0902706
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM amenity=cafe \"Yarralumla Play Station Cafe\", Pescott Lane (Nominatim), the park's visitor hub, 60 m from the OSM leisure=park centroid (-35.293024,149.090894), which was not used. MEDIUM",
+   "notes": "Park itself is free to enter (picnic tables, barbecues, toilets per search of the ACT master plan summaries); the miniature train, maze, mini golf and Farm Friends are run by Yarralumla Play Station (9 Pescott Lane) and charge separately: their price and hours not read, unverified. Open 24 hours assumed for an open park. VisitCanberra Yarralumla Play Station page describes maze, 2.4 km paths, Farm Friends, miniature railway.",
+   "ticket_note": "Managing agency page (parks.act.gov.au urban parks) blocked to scripts and its exact URL not found; operator of the train/maze is Yarralumla Play Station, a separate business."
+  },
+  "canberra-56": {
+   "name": "Calthorpes' House",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "Furnished 1927 house in Red Hill, shown on guided tours with the Calthorpe family's original belongings.",
+   "hours": "Guided tours Sat 1:00 PM – 4:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.326499,
+    "longitude": 149.121268
+   },
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.historicplaces.com.au/calthorpes-house",
+   "coordinates_source": "OSM tourism=museum (Nominatim); 11 m from the Wikivoyage listing tag. HIGH",
+   "notes": "Official page historicplaces.com.au/calthorpes-house (ACT Historic Places): adult $12, concession $10, under 12 free; entry by guided tour only, book ahead. Tours 2026 Jul-Dec are Saturdays 1pm-4pm in 45-minute slots (events.humanitix.com/calthorpes-house-tours-2026). Wikivoyage says Sat Sun 1-4pm and $7 (stale price); the official opening-hours widget did not render, so Sunday tours are unverified and hours show Saturday only and closedDays is omitted: check on the official page. Not in the three-house pass price."
+  },
+  "canberra-57": {
+   "name": "St John the Baptist Church",
+   "icon": "⛪",
+   "category": "religious",
+   "wiki": "St John the Baptist Church, Reid",
+   "bio": "Canberra's oldest church, consecrated in 1845, with a pioneer churchyard and a schoolhouse museum.",
+   "hours": "Church daily 9:00 AM – 5:00 PM; museum Sat–Sun 2:00 PM – 4:00 PM, Wed 10:00 AM – 12:00 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.287647,
+    "longitude": 149.140396
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.stjohnscanberra.org/",
+   "coordinates_source": "Commons geotagged photo cluster of the church exterior (-35.287647,149.140396, 18 files median ~54 m from the Wikivoyage 4-dp tag). The pin supplied by the run (-35.325383,149.151298, OSM place_of_worship, HIGH) is St John the Baptist CATHEDRAL in Forrest/Griffith, 4.3 km away: WRONG, rejected. MEDIUM",
+   "notes": "Schoolhouse Museum hours and adult $5 (children free) from stjohnscanberra.org/visit/schoolhouse-museum; closed a few weeks over summer school holidays (VisitCanberra). Church \"daily 9am-5pm\" is from the ACT Canberra Tracks listing seen only in search results (page BLOCKED): unverified. The church and churchyard are free; only the museum charges, so free:true."
+  },
+  "canberra-58": {
+   "name": "Canberra Reptile Zoo",
+   "icon": "🐍",
+   "category": "entertainment",
+   "bio": "Reptile zoo in Gold Creek Village with over 100 species of reptiles, amphibians and native animals.",
+   "hours": "10:00 AM – 5:00 PM",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.190728,
+    "longitude": 149.0827085
+   },
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.canberrareptilezoo.com.au/",
+   "coordinates_source": "OSM building \"Canberra Reptile Zoo\" (Nominatim), 25 m from the Commons photo median (-35.190647,149.082458); replaces the LOW photo-median pin. HIGH",
+   "notes": "Hours: open 7 days 10am-5pm, closed Christmas Day only (canberrareptilezoo.com.au/zoo.toy). Adult 17+ $25 at the door, $22.50 online (reptilesinc.com.au/buytickets, the zoo's ticket page). Site title: Reptiles Inc & Canberra Reptile Zoo."
+  },
+  "canberra-59": {
+   "name": "Canberra Walk-in Aviary",
+   "icon": "🦜",
+   "category": "entertainment",
+   "bio": "Walk-in aviary in Gold Creek Village where visitors feed around 600 birds of nearly 60 species.",
+   "hours": "10:00 AM – 5:00 PM (Sep–Apr), 10:00 AM – 3:30 PM (May–Aug)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.190218,
+    "longitude": 149.084997
+   },
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.canberrawalkinaviary.com.au/",
+   "coordinates_source": "OSM tourism=zoo \"Canberra Walk-in Aviary\" (Nominatim); 40 m from the placement point. MEDIUM",
+   "notes": "canberrawalkinaviary.com.au/visitor-info: open every day except Christmas Day, weather permitting; Sep-Apr 10am-5pm (last admission 4:30pm); May-Aug 10am-3:30pm (close 4pm); admission includes food for the birds; adult $20 (effective 1 Jan 2026). 160 m from the Reptile Zoo pin."
+  },
+  "canberra-60": {
+   "name": "Pialligo Redwood Forest",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Walter Burley Griffin's 1918 redwood planting, Australia's largest stand of mature redwoods, with a 3 km walk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.3179684,
+    "longitude": 149.1995566
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=park \"Pialligo Redwood Forest\" (Nominatim); 2 sources (Wikivoyage tag) within ~250 m; the forest is small so the centroid sits on the grove, and the front car park is on Pialligo Avenue. HIGH per run",
+   "notes": "Wikivoyage Airport and East: open 24 hours, free, 3 km circular walking track, no bikes or vehicles past the front car park, dogs on lead, no toilets. VisitCanberra confirms the 3 km track and \"Australia's largest stand of mature Redwood species\", Commonwealth Heritage List. Planted 1918 per Wikivoyage; VisitCanberra gives no date.",
+   "ticket_note": "No single steward found (Defence is reported as lessee by a Canberra Times opinion piece); VisitCanberra is a tourism board, not the operator."
+  }
+ },
+ "unverified": [
+  "canberra-51 free gallery entry (only a 2024 CityNews quote; official site gives no price)",
+  "canberra-52 free entry (Wikivoyage only)",
+  "canberra-53 and canberra-54 24-hour access (assumed for open reserve)",
+  "canberra-55 Yarralumla Play Station prices and hours (train, maze, mini golf)",
+  "canberra-56 Sunday tours (official opening-hours widget did not render)",
+  "canberra-57 church daily 9-5 (Canberra Tracks, page blocked)",
+  "canberra-60 forest planting year only from Wikivoyage"
+ ],
+ "needs_browser": [
+  {
+   "id": "canberra-53",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/the-pinnacle-nature-reserve",
+   "why": "403 bot wall; confirm title, car park and any hours; ticketUrl BLOCKED"
+  },
+  {
+   "id": "canberra-54",
+   "url": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout",
+   "why": "403 bot wall; confirm page names Shepherd's Lookout; ticketUrl BLOCKED"
+  },
+  {
+   "id": "canberra-55",
+   "url": "https://www.parks.act.gov.au/",
+   "why": "find the Weston Park page (urban parks) and set ticketUrl; none recorded"
+  },
+  {
+   "id": "canberra-57",
+   "url": "https://canberratracks.act.gov.au/heritage-trails/track-2-the-limestone-plains/st-johns-church",
+   "why": "403; confirm church daily hours"
+  },
+  {
+   "id": "canberra-56",
+   "url": "https://www.historicplaces.com.au/calthorpes-house",
+   "why": "loads, but opening-hours widget is dynamic: read the days/times in a browser"
+  }
+ ],
+ "notes": [
+  "Pin problems: canberra-57 supplied pin was the wrong church (cathedral 4.3 km away), replaced. canberra-54 Shepherds Lookout is LOW per resolve-pin (no OSM feature, Overpass down); used ExplorOz lookout position + Wikivoyage tag (45 m apart). canberra-53 pinned at the summit/lookout (listing tag + Commons photo), not the reserve centroid and not a route midpoint.",
+  "No spot judged unfit to add.",
+  "All pins checked >=25 m from the shard's others and from src/data points (no Canberra points present in src at time of check)."
+ ]
+}

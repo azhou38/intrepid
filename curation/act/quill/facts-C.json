@@ -1,0 +1,162 @@
+[
+ {
+  "id": "canberra-51",
+  "field": "bio / free / costBasis",
+  "current": "free galleries; free: true, costBasis entry",
+  "status": "unverifiable",
+  "fix": "Official visit page (https://www.belcoarts.com.au/visit-us/) gives hours only and no admission statement; Wikivoyage Canberra/Belconnen does not say free either. Only a 2024 CityNews quote supports free admission. Keep free: true if the owner accepts that; otherwise reword the bio to 'Lakeside arts centre on Emu Bank with galleries, a 400-seat theatre, a design shop and a caf\u00e9.' (hours, Tue-Sun 10-4, closed Mon and public holidays, are supported).",
+  "source": "https://www.belcoarts.com.au/visit-us/ ; https://en.wikivoyage.org/wiki/Canberra/Belconnen"
+ },
+ {
+  "id": "canberra-52",
+  "field": "free",
+  "current": "free: true",
+  "status": "unverifiable",
+  "fix": "Only the Wikivoyage Belconnen listing says 'Free entry'; strathnairn.com.au (home, /about-us, /shop, /galleries) states Wed-Sun 10am-4pm but no admission price. Hours and closedDays [1,2] are supported. Keep free: true with a note that it rests on Wikivoyage alone.",
+  "source": "https://www.strathnairn.com.au/about-us ; https://en.wikivoyage.org/wiki/Canberra/Belconnen"
+ },
+ {
+  "id": "canberra-55",
+  "field": "hours / bio",
+  "current": "Open 24 hours; 'miniature railway, a maze and mini golf'",
+  "status": "unverifiable",
+  "fix": "Bio facts are supported by Wikivoyage Canberra/South Canberra (Yarralumla Play Station in Weston Park: 36-hole mini-golf, miniature railway, walk-in maze, farm, caf\u00e9; train from $7, mini-golf from $15). But those attractions are run by Yarralumla Play Station with their own hours and prices (yarralumlaplaystation.com.au did not load, fetch failed), and 'Open 24 hours' for the park has no source. Bio and free: true (park entry) can stay; if kept, add the paid-extras point to the notes, not the bio.",
+  "source": "https://en.wikivoyage.org/wiki/Canberra/South_Canberra"
+ },
+ {
+  "id": "canberra-57",
+  "field": "hours",
+  "current": "Church daily 9:00 AM - 5:00 PM",
+  "status": "unverifiable",
+  "fix": "stjohnscanberra.org (home, /visit/schoolhouse-museum) gives only service times and the museum hours; no daily church opening hours anywhere official. Museum hours (Sat-Sun 2-4, Wed 10-12, adults $5, children free) are supported, and so is the 1845 consecration (Wikipedia, Wikivoyage). Suggest hours 'Museum Sat-Sun 2:00 PM - 4:00 PM, Wed 10:00 AM - 12:00 PM; church grounds open' or drop the church 9-5 part. Note the museum is shut 18 Dec-1 Feb each summer.",
+  "source": "https://www.stjohnscanberra.org/visit/schoolhouse-museum"
+ },
+ {
+  "id": "canberra-46",
+  "field": "bio",
+  "current": "facilities for picnics",
+  "status": "unsupported",
+  "fix": "Wikivoyage (Tuggeranong) says only 'plenty of facilities' and swimming, fishing and kayaking; picnics are not stated. Fix: 'Riverside reserve on the Murrumbidgee with swimming, fishing and kayaking, and plenty of facilities.'",
+  "source": "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong"
+ },
+ {
+  "id": "canberra-47",
+  "field": "bio",
+  "current": "in the Cotter Recreation Area for picnics, fishing and walks",
+  "status": "unverifiable",
+  "fix": "No fetchable source: parks.act.gov.au is blocked, and Wikivoyage Tuggeranong and Weston Creek pages mention only Cotter Campground. Check the Parks ACT page in a browser; if it does not name the Cotter Recreation Area, reword to 'Sandy beach on the Murrumbidgee River near the Cotter confluence' only if sourced.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands"
+ },
+ {
+  "id": "canberra-54",
+  "field": "ticketUrl / hours",
+  "current": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout; Open 24 hours",
+  "status": "unverifiable",
+  "fix": "Agency page is blocked and the 24-hour access is assumed. Wikivoyage says a 600 m walking track, the researcher's VisitCanberra note says 1.2 km return (consistent with 'short bush walk').",
+  "source": "https://en.wikivoyage.org/wiki/Canberra/Belconnen"
+ },
+ {
+  "id": "canberra-43",
+  "field": "ticketUrl",
+  "current": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve",
+  "status": "unverifiable",
+  "fix": "URL was built from the pattern of sibling pages, never read (403). Do not ship unverified: open in a browser, and if it is not the Mount Taylor page, find the real one. Bio facts (856 m, Canberra Nature Park, zig-zag track built 2007 on the north face) are supported by Wikipedia.",
+  "source": "https://en.wikipedia.org/wiki/Mount_Taylor_(Australian_Capital_Territory)"
+ },
+ {
+  "id": "canberra-49",
+  "field": "coordinates",
+  "current": "-35.1636, 149.0734 (LOW, a point near Hall, not a halfway point)",
+  "status": "unverifiable",
+  "fix": "Bio is supported (VisitCanberra: 145 km self-guided shared-use loop for walkers, runners and cyclists; Free). The pin is not a computed midpoint, as the researcher states; keep only if the owner accepts a LOW pin.",
+  "source": "https://visitcanberra.com.au/attractions/56b23b95d270154b4553c60c/canberra-centenary-trail"
+ },
+ {
+  "id": "canberra-48",
+  "field": "coordinates",
+  "current": "midpoint approximate",
+  "status": "unverifiable",
+  "fix": "Bio supported (VisitCanberra: 27 km, Point Hut Crossing in the south to Casuarina Sands in the north, via Pine Island and Kambah Pool; Free). Pin is by reasoning, ~1 km off the true midpoint.",
+  "source": "https://visitcanberra.com.au/attractions/690d879f532c2504579f51ab/murrumbidgee-discovery-track"
+ },
+ {
+  "id": "canberra-59",
+  "field": "hours",
+  "current": "10:00 AM - 5:00 PM (Sep-Apr), 10:00 AM - 3:30 PM (May-Aug)",
+  "status": "stale",
+  "fix": "Supported by the official page (Sep-Apr 10-5, last admission 4:30; May-Aug 10-3:30, close 4pm; adult $20, effective 10 Oct 2025; open every day except Christmas). Wikivoyage (May-Aug 10-4, '500 birds from 60 species') is the stale source; do not use it. No change needed.",
+  "source": "https://www.canberrawalkinaviary.com.au/visitor-info/"
+ },
+ {
+  "id": "canberra-56",
+  "field": "hours / closedDays",
+  "current": "Guided tours Sat 1:00 PM - 4:00 PM",
+  "status": "stale",
+  "fix": "Official page lists Calthorpes House 'Saturday, 1pm - 4pm', adult $12, concession $10, under 12 free, entry by guided tour only: all supported (basis tour correct). Wikivoyage's Sat-Sun and $7 are stale. No change needed; this resolves the Saturday-only flag.",
+  "source": "https://www.historicplaces.com.au/calthorpes-house"
+ },
+ {
+  "id": "canberra-42",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve"
+ },
+ {
+  "id": "canberra-43",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-taylor-nature-reserve"
+ },
+ {
+  "id": "canberra-45",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool"
+ },
+ {
+  "id": "canberra-46",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island"
+ },
+ {
+  "id": "canberra-47",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands"
+ },
+ {
+  "id": "canberra-53",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/the-pinnacle-nature-reserve",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/the-pinnacle-nature-reserve"
+ },
+ {
+  "id": "canberra-54",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://www.parks.act.gov.au/home/features/explore-shepherds-lookout"
+ },
+ {
+  "id": "fetch failed; canberra-55 prices/hours",
+  "field": "ticketUrl (needs_browser)",
+  "current": "https://yarralumlaplaystation.com.au/",
+  "status": "unverifiable",
+  "fix": "Blocked to scripts (403/fetch failed); check title in a browser, do not drop or guess.",
+  "source": "https://yarralumlaplaystation.com.au/"
+ }
+]

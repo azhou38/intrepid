@@ -1,0 +1,768 @@
+{
+ "spots": [
+  {
+   "id": "canberra-1",
+   "name": "Parliament House",
+   "destination": "canberra",
+   "category": "landmark",
+   "icon": "🏛️",
+   "bio": "Australia's Parliament House on Capital Hill, with free tours and public galleries.",
+   "wiki": "Parliament House, Canberra",
+   "coordinates": {
+    "lat": -35.30805556,
+    "lng": 149.12444444
+   },
+   "coordinates_source": "wikipedia",
+   "km_from_destination": 2.4,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/South_Canberra",
+    "https://en.wikivoyage.org/wiki/Canberra",
+    "https://www.visitcanberra.com.au/attractions",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra"
+   ],
+   "reason": "Kept by the judge: Free tours, galleries and roof lawn; four counted sources.",
+   "merged_from": null,
+   "counted_sources": 4,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.30756,
+     "lon": 149.124604,
+     "src": "osm",
+     "name": "Parliament House",
+     "type": "tourism=attraction (nominatim)"
+    },
+    "agreeing": [
+     "wiki",
+     "commons"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Parliament House",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.3075604,
+      "lon": 149.1246038,
+      "from_hint_m": 57
+     },
+     {
+      "src": "osm",
+      "name": "Old Parliament House",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.3023519,
+      "lon": 149.1300176,
+      "from_hint_m": 812
+     },
+     {
+      "src": "wiki",
+      "name": "Parliament House, Canberra",
+      "type": "article",
+      "lat": -35.30805556,
+      "lon": 149.12444444,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "60 geotagged files",
+      "type": "photo median",
+      "lat": -35.307663,
+      "lon": 149.12489,
+      "from_hint_m": 60
+     }
+    ],
+    "hint": {
+     "lat": -35.30805556,
+     "lon": 149.12444444,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-2",
+   "name": "Australian War Memorial",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🕊️",
+   "bio": "National war museum, shrine and memorial on Anzac Parade, with free entry and the Last Post Ceremony.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.2805,
+    "lng": 149.1491
+   },
+   "coordinates_source": "wikipedia:Australian War Memorial",
+   "km_from_destination": 4.7,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/North_Canberra",
+    "https://en.wikivoyage.org/wiki/Canberra",
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://www.visitcanberra.com.au/attractions"
+   ],
+   "reason": "Kept by the judge: Canberra's flagship national museum and memorial, five counted sources, free entry, daily Last Post ceremony.",
+   "merged_from": null,
+   "counted_sources": 5,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.280578,
+     "lon": 149.149306,
+     "src": "osm",
+     "name": "Australian War Memorial",
+     "type": "tourism=museum (nominatim)"
+    },
+    "agreeing": [
+     "wiki",
+     "commons"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Australian War Memorial",
+      "type": "tourism=museum (nominatim)",
+      "lat": -35.2805779,
+      "lon": 149.1493057,
+      "from_hint_m": 21
+     },
+     {
+      "src": "wiki",
+      "name": "Australian War Memorial",
+      "type": "article",
+      "lat": -35.2805,
+      "lon": 149.1491,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "32 geotagged files",
+      "type": "photo median",
+      "lat": -35.280558,
+      "lon": 149.148974,
+      "from_hint_m": 13
+     }
+    ],
+    "hint": {
+     "lat": -35.2805,
+     "lon": 149.1491,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-3",
+   "name": "National Gallery of Australia",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "National gallery on the lake shore, holding the largest collection of Aboriginal and Torres Strait Islander art and Blue Poles.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.3003,
+    "lng": 149.1364
+   },
+   "coordinates_source": "wikipedia:National Gallery of Australia",
+   "km_from_destination": 3.2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://www.visitcanberra.com.au/things-to-do/first-nations-experiences",
+    "https://www.visitcanberra.com.au/attractions"
+   ],
+   "reason": "Kept by the judge: National gallery with Blue Poles and the largest Indigenous art collection, plus sculpture garden; four counted sources.",
+   "merged_from": null,
+   "counted_sources": 4,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.300932,
+     "lon": 149.136659,
+     "src": "osm",
+     "name": "National Gallery of Australia",
+     "type": "amenity=arts_centre (nominatim)"
+    },
+    "agreeing": [
+     "osm",
+     "wiki"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "National Gallery of Australia",
+      "type": "amenity=arts_centre (nominatim)",
+      "lat": -35.3009318,
+      "lon": 149.1366593,
+      "from_hint_m": 74
+     },
+     {
+      "src": "osm",
+      "name": "National Gallery of Australia",
+      "type": "amenity=arts_centre (nominatim)",
+      "lat": -35.3009318,
+      "lon": 149.1366593,
+      "from_hint_m": 74
+     },
+     {
+      "src": "osm",
+      "name": "National Portrait Gallery",
+      "type": "tourism=attraction;gallery (nominatim)",
+      "lat": -35.2998647,
+      "lon": 149.1338471,
+      "from_hint_m": 237
+     },
+     {
+      "src": "osm",
+      "name": "Canberra Museum and Gallery",
+      "type": "tourism=museum (nominatim)",
+      "lat": -35.280664,
+      "lon": 149.1309449,
+      "from_hint_m": 2241
+     },
+     {
+      "src": "osm",
+      "name": "The Gallery",
+      "type": "landuse=residential (nominatim)",
+      "lat": -35.2713069,
+      "lon": 149.1293304,
+      "from_hint_m": 3291
+     }
+    ],
+    "hint": {
+     "lat": -35.3003,
+     "lon": 149.1364,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-4",
+   "name": "National Museum of Australia",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🏺",
+   "bio": "National museum on Acton Peninsula with the First Australians Gallery, building tours and a Discovery Centre.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.293056,
+    "lng": 149.120833
+   },
+   "coordinates_source": "wikipedia:National Museum of Australia",
+   "km_from_destination": 1.8,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Acton",
+    "https://www.visitcanberra.com.au/things-to-do/museums-and-galleries",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://www.visitcanberra.com.au/attractions"
+   ],
+   "reason": "Kept by the judge: National museum with First Australians Gallery and building tours; four counted sources.",
+   "merged_from": null,
+   "counted_sources": 4,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.292836,
+     "lon": 149.119843,
+     "src": "osm",
+     "name": "National Museum of Australia",
+     "type": "tourism=attraction (nominatim)"
+    },
+    "agreeing": [
+     "wiki"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "National Museum of Australia",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.2928363,
+      "lon": 149.1198428,
+      "from_hint_m": 93
+     },
+     {
+      "src": "osm",
+      "name": "Australia",
+      "type": "boundary=administrative (nominatim)",
+      "lat": -24.7761086,
+      "lon": 134.755,
+      "from_hint_m": 1753400
+     },
+     {
+      "src": "wiki",
+      "name": "National Museum of Australia",
+      "type": "article",
+      "lat": -35.293056,
+      "lon": 149.120833,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "33 geotagged files",
+      "type": "photo median",
+      "lat": -35.292869,
+      "lon": 149.120972,
+      "from_hint_m": 24
+     }
+    ],
+    "hint": {
+     "lat": -35.293056,
+     "lon": 149.120833,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-5",
+   "name": "Old Parliament House",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Former Parliament House, now the Museum of Australian Democracy, with exhibitions and a role-play area.",
+   "wiki": "Old Parliament House, Canberra",
+   "coordinates": {
+    "lat": -35.30222222,
+    "lng": 149.12972222
+   },
+   "coordinates_source": "wikipedia:Old Parliament House, Canberra",
+   "km_from_destination": 2.6,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/South_Canberra",
+    "https://www.visitcanberra.com.au/attractions",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra"
+   ],
+   "reason": "Kept by the judge: Former Parliament House now Museum of Australian Democracy; one place with that candidate (kept here, the other rejected as duplicate). Wikivoyage and Visit Canberra.",
+   "merged_from": [
+    "Museum of Australian Democracy"
+   ],
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.302352,
+     "lon": 149.130018,
+     "src": "osm",
+     "name": "Old Parliament House",
+     "type": "tourism=attraction (nominatim)"
+    },
+    "agreeing": [
+     "wiki",
+     "commons"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Old Parliament House",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.3023519,
+      "lon": 149.1300176,
+      "from_hint_m": 30
+     },
+     {
+      "src": "wiki",
+      "name": "Old Parliament House, Canberra",
+      "type": "article",
+      "lat": -35.30222222,
+      "lon": 149.12972222,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "64 geotagged files",
+      "type": "photo median",
+      "lat": -35.301992,
+      "lon": 149.129928,
+      "from_hint_m": 32
+     }
+    ],
+    "hint": {
+     "lat": -35.30222222,
+     "lon": 149.12972222,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-6",
+   "name": "Questacon",
+   "destination": "canberra",
+   "category": "museum",
+   "icon": "🔬",
+   "bio": "Interactive science and technology centre in Parkes with hands-on exhibits.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.298505,
+    "lng": 149.131394
+   },
+   "coordinates_source": "OpenStreetMap feature with Wikipedia tag (tourism), Overpass query",
+   "km_from_destination": 2.7,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/South_Canberra",
+    "https://www.visitcanberra.com.au/attractions",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://www.visitcanberra.com.au/things-to-do/family-fun"
+   ],
+   "reason": "Kept by the judge: Interactive science centre in Parkes; four counted sources (rule 2).",
+   "merged_from": null,
+   "counted_sources": 4,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.298506,
+     "lon": 149.131255,
+     "src": "osm",
+     "name": "Questacon",
+     "type": "tourism=attraction (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Questacon",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.2985062,
+      "lon": 149.1312548,
+      "from_hint_m": 13
+     }
+    ],
+    "hint": {
+     "lat": -35.298505,
+     "lon": 149.131394,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-7",
+   "name": "Australian National Botanic Gardens",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "Botanic garden under Black Mountain with about 4,300 native plant species, rainforest and desert gardens, and free guided walks.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.27888889,
+    "lng": 149.10916667
+   },
+   "coordinates_source": "wikipedia:Australian National Botanic Gardens",
+   "km_from_destination": 2.2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Acton",
+    "https://www.visitcanberra.com.au/attractions",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra"
+   ],
+   "reason": "Kept by the judge: VisitCanberra and Wikivoyage (read) name the gardens as the easiest place to experience the bush, with rainforest to desert plantings and a trail to Black Mountain; national institution, free entry (r",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.27775,
+     "lon": 149.10761,
+     "src": "osm",
+     "name": "Australian National Botanic Gardens",
+     "type": "leisure=garden (nominatim)"
+    },
+    "agreeing": [
+     "osm",
+     "commons"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Australian National Botanic Gardens",
+      "type": "leisure=garden (nominatim)",
+      "lat": -35.2777504,
+      "lon": 149.1076103,
+      "from_hint_m": 190
+     },
+     {
+      "src": "osm",
+      "name": "Australian National Botanic Gardens",
+      "type": "leisure=garden (nominatim)",
+      "lat": -35.2777504,
+      "lon": 149.1076103,
+      "from_hint_m": 190
+     },
+     {
+      "src": "osm",
+      "name": "Australian National Botanic Gardens",
+      "type": "leisure=nature_reserve (nominatim)",
+      "lat": -35.2808354,
+      "lon": 149.1043955,
+      "from_hint_m": 485
+     },
+     {
+      "src": "osm",
+      "name": "Australian National Botanic Gardens",
+      "type": "leisure=nature_reserve (nominatim)",
+      "lat": -35.2808354,
+      "lon": 149.1043955,
+      "from_hint_m": 485
+     },
+     {
+      "src": "osm",
+      "name": "STEP Regional Botanic Garden",
+      "type": "leisure=nature_reserve (nominatim)",
+      "lat": -35.2857245,
+      "lon": 149.0666172,
+      "from_hint_m": 3941
+     }
+    ],
+    "hint": {
+     "lat": -35.27888889,
+     "lon": 149.10916667,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-8",
+   "name": "Lake Burley Griffin",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "Artificial lake from 1963 at the centre of Canberra, with a 25 km shared path, cruises, boat hire and waterfront sights.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.29333333,
+    "lng": 149.11388889
+   },
+   "coordinates_source": "wikipedia:Lake Burley Griffin",
+   "km_from_destination": 1.2,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/attractions",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://en.wikivoyage.org/wiki/Canberra"
+   ],
+   "reason": "Kept by the judge: Central lake with a 25 km path, cruises and waterfront sights; Visit Canberra and Wikivoyage list it (rule 1,2).",
+   "merged_from": null,
+   "counted_sources": 3,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": {
+     "lat": -35.296976,
+     "lon": 149.109696,
+     "src": "commons",
+     "name": "19 geotagged files",
+     "type": "photo median"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "wiki",
+      "name": "Lake Burley Griffin",
+      "type": "article",
+      "lat": -35.29333333,
+      "lon": 149.11388889,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "19 geotagged files",
+      "type": "photo median",
+      "lat": -35.296976,
+      "lon": 149.109696,
+      "from_hint_m": 556
+     }
+    ],
+    "hint": {
+     "lat": -35.29333333,
+     "lon": 149.11388889,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-9",
+   "name": "National Arboretum Canberra",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Arboretum in the Molonglo Valley with over 44,000 trees from around the world, sculptures, a playground and skyline views.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.29,
+    "lng": 149.07
+   },
+   "coordinates_source": "wikipedia:National Arboretum Canberra",
+   "km_from_destination": 3.0,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/attractions",
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://www.visitcanberra.com.au/things-to-do/cycling-in-canberra",
+    "https://en.wikivoyage.org/wiki/Canberra/Woden",
+    "https://en.wikivoyage.org/wiki/Canberra/Weston_Creek,_Molonglo_Valley_and_Woden",
+    "https://www.visitcanberra.com.au/things-to-do"
+   ],
+   "reason": "Kept by the judge: Six counted sources incl. Wikivoyage with Dairy Farmers Hill lookout and Visit Canberra (rule 2).",
+   "merged_from": null,
+   "counted_sources": 6,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.287897,
+     "lon": 149.06925,
+     "src": "osm",
+     "name": "National Arboretum Canberra",
+     "type": "tourism=attraction (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "National Arboretum Canberra",
+      "type": "tourism=attraction (nominatim)",
+      "lat": -35.2878969,
+      "lon": 149.0692496,
+      "from_hint_m": 244
+     },
+     {
+      "src": "osm",
+      "name": "National Arboretum Canberra",
+      "type": "leisure=garden (nominatim)",
+      "lat": -35.2930556,
+      "lon": 149.0654004,
+      "from_hint_m": 539
+     },
+     {
+      "src": "osm",
+      "name": "Lindsay Pryor National Arboretum",
+      "type": "natural=wood (nominatim)",
+      "lat": -35.2953857,
+      "lon": 149.0809515,
+      "from_hint_m": 1162
+     }
+    ],
+    "hint": {
+     "lat": -35.29,
+     "lon": 149.07,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-10",
+   "name": "Mount Ainslie",
+   "destination": "canberra",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "Summit lookout reached on foot, by bike or by car, with views down Anzac Parade to Parliament House and over Lake Burley Griffin.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.2698,
+    "lng": 149.1587
+   },
+   "coordinates_source": "openstreetmap node 167206093 (natural=peak)",
+   "km_from_destination": 6.1,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-ainslie-nature-reserve"
+   ],
+   "reason": "Kept by the judge: Agency page names the summit (road, walk, bike) and Wikivoyage's North Canberra calls Ainslie Lookout Canberra's most important lookout, with the axis view to Parliament House (opened). Mount Ainslie ",
+   "merged_from": [
+    "Mount Ainslie Lookout"
+   ],
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "HIGH",
+    "recommended": {
+     "lat": -35.26979,
+     "lon": 149.15868,
+     "src": "osm",
+     "name": "Mount Ainslie",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [
+     "osm"
+    ],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Mount Ainslie",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.2697904,
+      "lon": 149.1586795,
+      "from_hint_m": 2
+     },
+     {
+      "src": "osm",
+      "name": "Mount Ainslie",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.2697904,
+      "lon": 149.1586795,
+      "from_hint_m": 2
+     },
+     {
+      "src": "osm",
+      "name": "Ainslie",
+      "type": "boundary=administrative (nominatim)",
+      "lat": -35.2621952,
+      "lon": 149.14788,
+      "from_hint_m": 1298
+     }
+    ],
+    "hint": {
+     "lat": -35.2698,
+     "lon": 149.1587,
+     "from": "placement"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,226 @@
+{
+ "spots": {
+  "canberra-61": {
+   "name": "Molonglo Gorge Nature Reserve",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Day-use reserve protecting the Molonglo River gorge, with a picnic area, playground and the Blue Tiles walk along the river.",
+   "hours": "Daylight hours (day use only)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.327875,
+    "longitude": 149.248709
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM leisure=playground 'Molonglo George Nature Reserve (South)' in the Molonglo Gorge recreation area (resolve-pin MEDIUM); 0 m from the recreation area, 466 m from the OSM reserve centroid (not used) and 1.2 km from the Wikivoyage listing tag (placement point -35.328093,149.261864), moved 1.2 km",
+   "notes": "Wikivoyage Airport and East: day use only, free toilets, electric barbecues, picnic shelters and climbing playground at the main recreation area; free; Blue Tiles Walk 6.4 km return. Parks ACT (search summary, page blocked): 506 ha, walking track about 3 km upstream to Blue Tiles. Cost: no entry fee (Wikivoyage 'Free'). Hours 'daylight' derived from 'day-use only'; no hours range sourced.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/molonglo-gorge-nature-reserve"
+  },
+  "canberra-62": {
+   "name": "Glenburn Homestead",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Heritage precinct in Kowen Forest with ruins, gravesites and farm machinery, and three self-guided loop trails.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.307601,
+    "longitude": 149.313939
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM historic=ruins 'Glenburn homestead' (resolve-pin MEDIUM), 21 m from the placement point",
+   "notes": "Wikivoyage Airport and East: open 24 hours, closed on Total Fire Ban days, no toilets/water/bins, three signposted loop trails, free. Heritage-registered 2015. An undated CityNews item says walkers and cyclists enter through a locked gate at Charcoal Kiln Road/Kings Highway because the site is inside a commercial pine forest, so check access before visiting.",
+   "ticket_note": "No Glenburn page found; the Parks ACT Kowen Forest page (https://www.parks.act.gov.au/find-a-nature-park/plantations/kowen-forest) does not mention it. Orchestrator to check in a browser for a Glenburn or Friends of Glenburn page; omit otherwise."
+  },
+  "canberra-63": {
+   "name": "One Tree Hill Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Hill north of Hall reached by a one-hour uphill walk on the Canberra Centenary Trail, with views over Canberra.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.142087,
+    "longitude": 149.091384
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'One Tree Hill' (resolve-pin MEDIUM), 4 m from the placement point",
+   "notes": "Wikivoyage Hall: bushwalk of about an hour one-way via the Canberra Centenary Trail from Hoskins and Hall Streets, small car park beside the trail. VisitCanberra Hall page: 'popular section of the Centenary Trail' to the lookout. No fee or hours stated: open-access hill, hours unverified. Visit time is round trip.",
+   "ticket_note": "No single steward page found; the Parks ACT Canberra Centenary Trail page is a candidate but is blocked and covers the whole trail."
+  },
+  "canberra-64": {
+   "name": "Goorooyarroo Nature Reserve",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Woodland nature reserve beside Mulligans Flat in Gungahlin, with walking tracks and picnic areas.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.212533,
+    "longitude": 149.179976
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM tourism=information node beside an OSM amenity=parking way on the reserve's southern edge, inside the OSM reserve relation 6092536 (bbox -35.213..-35.171, 149.168..149.201); not the centroid (-35.1917,149.1828). Not a resolve-pin result (it returned only the centroid), so MEDIUM at best: 'pin': 'MEDIUM-manual', confirm the entrance on Parks ACT's map",
+   "notes": "Parks ACT lead list only (page blocked): woodland reserve with walking tracks and picnic areas, adjoining Mulligans Flat. Hours and cost not read: nature reserves in the ACT charge no entry (brief). Overpass was unavailable so the car park choice came from one earlier query.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/goorooyarroo-nature-reserve"
+  },
+  "canberra-65": {
+   "name": "Jerrabomberra West Grasslands",
+   "icon": "🌾",
+   "category": "hike",
+   "bio": "Canberra Nature Park grassland reserve with an 8 km return Grassy Plains walk from the Callum Brae car park.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "coordinates": {
+    "latitude": -35.37317,
+    "longitude": 149.162405
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "LOW: OSM leisure=nature_reserve centroid of Jerrabomberra West Grasslands Nature Reserve (resolve-pin MEDIUM, but a centroid, not a visitor point; midpoint of the Grassy Plains walk not in OSM found). Needs the Callum Brae car park or the walk's midpoint from the Parks ACT map",
+   "notes": "Parks ACT lead list only (page blocked): 8 km return Grassy Plains walk from the Callum Brae car park, about three hours. 'Callum Brae' Wikipedia title is a New Zealand suburb, not this place. Hours/cost unread: ACT reserves charge no entry (brief); hours unverified; access via Callum Brae noted as limited by the judge.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/jerrabomberra-west-grasslands-nature-reserve",
+   "pin": "LOW"
+  },
+  "canberra-66": {
+   "name": "Oakey Hill",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Weston Creek hill with easy walking tracks to a 684 m summit, views to the Brindabellas and kangaroos at dusk.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.33773,
+    "longitude": 149.068
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "Wikipedia 'Oakey Hill' article coordinates (the hill itself, 5 decimals), corroborated 190 m away by the Wikivoyage Woden listing tag (-35.339231,149.068114, Heysen Street); the OSM result was only a natural=grassland reserve centroid 329 m away (not used). MEDIUM",
+   "notes": "Wikipedia: 684 m highest point marked by a survey station, rises 80 m above Lyons, Curtin and Weston, walking tracks generally easy with short steep climbs, views to Red Hill, Mount Ainslie and the Brindabellas. Wikivoyage Woden: open 24 hours, free, reliable place to see eastern grey kangaroos at dusk. The Wikivoyage entry is marked dead link and no Parks ACT page was found.",
+   "ticket_note": "No Parks ACT page for Oakey Hill found by search; orchestrator to look in a browser (parks.act.gov.au blocks scripts)."
+  },
+  "canberra-67": {
+   "name": "Mount Wanniassa",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "809 m peak in Wanniassa Hills Nature Reserve with trails on both slopes and views over Woden and Tuggeranong.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.391612,
+    "longitude": 149.11517
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'Mount Wanniassa' (resolve-pin MEDIUM), 474 m from the Wikipedia/placement point (-35.3895,149.1197)",
+   "notes": "Wikivoyage Tuggeranong: 809 m, climbed via established walking trails on east and west slopes, views of Woden and Tuggeranong. Parks ACT Wanniassa Hills Nature Reserve (search summary): 262 ha, ridgetop views of southern Canberra, dogs on-leash on tracks. Hours and cost unread (page blocked); no entry fee for ACT reserves (brief).",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-park/canberra-nature-park/wanniassa-hills-nature-reserve"
+  },
+  "canberra-68": {
+   "name": "Tuggeranong Hill",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Steep track to a summit with views over the Lanyon Valley and the rest of southern Canberra.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.453153,
+    "longitude": 149.107714
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'Tuggeranong Hill' (resolve-pin MEDIUM), 21 m from the placement point",
+   "notes": "Wikipedia: part of Canberra Nature Park, a walk to the top gives views of Lanyon Valley and southern Canberra; broadcast translator on top with a service track. Parks ACT (search summary): 365 ha reserve, steep track to the summit; a south-eastern section and part of Rob Roy Range are on leased land and closed to the public. Hours, cost and walk length not sourced; no entry fee for ACT reserves (brief). Visit time is an editorial estimate.",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/tuggeranong-hill-nature-reserve"
+  },
+  "canberra-69": {
+   "name": "Gibraltar Peak",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Steep 8.2 km return climb in Tidbinbilla Nature Reserve to a summit with views over Canberra and the reserve.",
+   "hours": "Daylight hours",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.458675,
+    "longitude": 148.947814
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM natural=peak 'Gibraltar Peak' (resolve-pin HIGH, agrees with 19 geotagged Commons files), 104 m from the placement point. Summit rather than route midpoint: the peak is the spot",
+   "notes": "VisitCanberra: 8.2 km walk, moderate to hard, about three to four hours return, from Dalsetta via Eliza Saddle; Wikivoyage and Wikipedia: 8.2 km, 2 to 3 hours. VisitCanberra notes the Tidbinbilla Visitor Centre was closed with the reserve open as normal. Reserve gate hours and any entry fee not sourced (tidbinbilla.act.gov.au blocked): free assumed, unverified. Hours 'Daylight hours' is generic for a bushwalk.",
+   "wiki": "Gibraltar Peak (Canberra)",
+   "ticketUrl": "https://tidbinbilla.act.gov.au/"
+  }
+ },
+ "unverified": [
+  "canberra-61 Molonglo Gorge: hours (only 'day use only' sourced) and Parks ACT page content",
+  "canberra-62 Glenburn Homestead: 24-hour access (Wikivoyage) versus a locked gate (undated CityNews); free",
+  "canberra-63 One Tree Hill Lookout: hours, free, no steward page",
+  "canberra-64 Goorooyarroo: hours, cost, and the exact entrance pin",
+  "canberra-65 Jerrabomberra West Grasslands: hours, cost, access, and the pin (LOW)",
+  "canberra-66 Oakey Hill: free/24 hours from Wikivoyage only (dead-link entry); no agency page",
+  "canberra-67 Mount Wanniassa: hours, cost, trail length",
+  "canberra-68 Tuggeranong Hill: hours, cost, walk length",
+  "canberra-69 Gibraltar Peak: Tidbinbilla gate hours, entry fee (assumed free), walk duration varies by source (2-3 h vs 3-4 h)"
+ ],
+ "needs_browser": [
+  {
+   "id": "canberra-61",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/molonglo-gorge-nature-reserve",
+   "why": "Parks ACT 403; confirm title, hours, cost (a second path /find-a-park/canberra-nature-park/molonglo-gorge-nature-reserve also exists)"
+  },
+  {
+   "id": "canberra-62",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/plantations/kowen-forest",
+   "why": "blocked; look for any Glenburn Homestead page and current access"
+  },
+  {
+   "id": "canberra-64",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/goorooyarroo-nature-reserve",
+   "why": "blocked; confirm title, hours, entrance and car park for the pin"
+  },
+  {
+   "id": "canberra-65",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/jerrabomberra-west-grasslands-nature-reserve",
+   "why": "blocked; confirm title, access, the Callum Brae car park location for the pin"
+  },
+  {
+   "id": "canberra-66",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/oakey-hill-nature-reserve",
+   "why": "URL is a pattern guess, not seen: search parks.act.gov.au for an Oakey Hill page before using"
+  },
+  {
+   "id": "canberra-67",
+   "url": "https://www.parks.act.gov.au/find-a-park/canberra-nature-park/wanniassa-hills-nature-reserve",
+   "why": "blocked; found by search (note /find-a-park/ path); confirm title and the Mount Wanniassa walk"
+  },
+  {
+   "id": "canberra-68",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/tuggeranong-hill-nature-reserve",
+   "why": "blocked; confirm title, hours, walk length"
+  },
+  {
+   "id": "canberra-69",
+   "url": "https://tidbinbilla.act.gov.au/",
+   "why": "blocked (Cloudflare); confirm title, reserve hours and entry fee; also the Gibraltar Peak walk page"
+  }
+ ],
+ "notes": [
+  "Overpass API was down for most of the run, so no car park/trailhead query could be repeated for Goorooyarroo or Jerrabomberra West.",
+  "No ACT park pass applies; no spot uses needs.",
+  "Distances to other app spots were not checked against src (no ACT spots exist there); shard-internal spots are all far apart (>2 km)."
+ ]
+}

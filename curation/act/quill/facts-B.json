@@ -1,0 +1,210 @@
+[
+ {
+  "id": "canberra-30",
+  "field": "bio",
+  "current": "spotted-tailed quolls",
+  "status": "unsupported",
+  "fix": "Reintroduced quolls there are eastern quolls. Wildbark visitor centre not found on any fetched page. Reword: \"Fenced woodland sanctuary in Gungahlin with walking and cycling tracks and reintroduced eastern quolls.\" (bio-fit ok)",
+  "source": "https://en.wikipedia.org/wiki/Mulligans_Flat_Woodland_Sanctuary (eastern quolls reintroduced 2016; 1253 ha since 2018, not 984)"
+ },
+ {
+  "id": "canberra-30",
+  "field": "hours",
+  "current": "Open 24 hours",
+  "status": "unverifiable",
+  "fix": "Fenced, gated sanctuary; no source for 24-hour access. Agency page blocked: check in browser and replace with the real gate hours.",
+  "source": "parks.act.gov.au (needs_browser)"
+ },
+ {
+  "id": "canberra-21",
+  "field": "hours",
+  "current": "Open 24 hours",
+  "status": "unverifiable",
+  "fix": "Open-access assumption for a nature reserve; confirm on the Parks ACT page. Bio (bushwalks to summit and tower) consistent with Wikipedia (Telstra/Black Mountain Tower near the summit) but walk detail unsourced.",
+  "source": "https://en.wikipedia.org/wiki/Black_Mountain,_Australian_Capital_Territory"
+ },
+ {
+  "id": "canberra-22",
+  "field": "bio",
+  "current": "3.2 km Red Track loop",
+  "status": "unsupported",
+  "fix": "No fetched page gives 3.2 km or a Red Track. Reword: \"Nature reserve with walking tracks and a hilltop lookout over Parliament House and Lake Burley Griffin.\" (bio-fit ok; the lookout views are on Wikipedia's Red Hill article and Wikivoyage lists two lookouts)",
+  "source": "https://en.wikipedia.org/wiki/Red_Hill,_Australian_Capital_Territory ; https://en.wikivoyage.org/wiki/Canberra/South"
+ },
+ {
+  "id": "canberra-22",
+  "field": "hours",
+  "current": "Open 24 hours",
+  "status": "unverifiable",
+  "fix": "Assumed; Wikivoyage notes vehicle access to the summit and a cafe. Confirm on Parks ACT page.",
+  "source": "parks.act.gov.au (needs_browser)"
+ },
+ {
+  "id": "canberra-23",
+  "field": "bio",
+  "current": "lawns opposite Old Parliament House",
+  "status": "supported",
+  "fix": "Resolved: Wikipedia says since 1992 it has been on the lawn opposite Old Parliament House; NCA page confirms 26 January 1972 and 'one of the world's longest continuing protest sites'. No change.",
+  "source": "https://en.wikipedia.org/wiki/Aboriginal_Tent_Embassy ; https://www.nca.gov.au/attractions/aboriginal-tent-embassy"
+ },
+ {
+  "id": "canberra-24",
+  "field": "hours",
+  "current": "Island open daily; recitals Wed 6:30 PM, Sun 12:30 PM",
+  "status": "unverifiable",
+  "fix": "Recital times are on the live NCA page (Wed 6:30 pm, Sun 12:30 pm; the stale 18 November line is only a one-off cancellation notice), so they stand. 'Island open daily' is on no page; use \"Recitals Wed 6:30 PM, Sun 12:30 PM\" and keep 'Access via Kings Avenue northbound' out of hours.",
+  "source": "https://www.nca.gov.au/attractions/national-carillon"
+ },
+ {
+  "id": "canberra-28",
+  "field": "bio",
+  "current": "heritage Kingston Powerhouse",
+  "status": "supported",
+  "fix": "Resolved: Wikipedia says the Glassworks is in the Kingston Powerhouse (1913-15). Hours Tue-Sun 10-4 and entry by donation confirmed on canberraglassworks.com; costBasis donation ok with free: true.",
+  "source": "https://en.wikipedia.org/wiki/Canberra_Glassworks ; https://canberraglassworks.com/"
+ },
+ {
+  "id": "canberra-27",
+  "field": "bio",
+  "current": "sculpture gardens, ponds, an amphitheatre and the National Capital Exhibition",
+  "status": "supported",
+  "fix": "Wikipedia: ponds, sculptures, Stage 88, Regatta Point; NCE is at Regatta Point in the park. 'Amphitheatre' is from the NCA page per the notes. Fine.",
+  "source": "https://en.wikipedia.org/wiki/Commonwealth_Park,_Canberra"
+ },
+ {
+  "id": "canberra-31",
+  "field": "costMin",
+  "current": "15.53 per vehicle per day",
+  "status": "unverifiable",
+  "fix": "Figure appears in search snippets dated 2023-Nov 2024 (day pass $15.53, annual $42.58); official page is Cloudflare-blocked and a 2026 fee determination may have raised it. Basis (park, Per Vehicle/Day) is right. Confirm in browser.",
+  "source": "https://www.tidbinbilla.act.gov.au/visit (needs_browser)"
+ },
+ {
+  "id": "canberra-31",
+  "field": "hours",
+  "current": "7:30 AM - 8:00 PM (to 6:00 PM outside daylight saving)",
+  "status": "unverifiable",
+  "fix": "Not read from the official page. Confirm in browser.",
+  "source": "https://www.tidbinbilla.act.gov.au/visit (needs_browser)"
+ },
+ {
+  "id": "canberra-31",
+  "field": "bio",
+  "current": "live animal displays and the Birrigai Rock Shelter",
+  "status": "supported",
+  "fix": "Wikivoyage lists live animal displays; Wikipedia has the Birrigai Rock Shelter (oldest Aboriginal rock shelter in the ACT) at Tidbinbilla. No change.",
+  "source": "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong ; https://en.wikipedia.org/wiki/Tidbinbilla_Nature_Reserve"
+ },
+ {
+  "id": "canberra-32",
+  "field": "closed",
+  "current": "closed flag (CSIRO 'Temporarily closed to drop-in visitors')",
+  "status": "supported",
+  "fix": "The CSIRO line was not found. The operator's own page (cdscc.nasa.gov/Pages/opening_hours.html, loaded) says the visitor centre is open Saturdays and Sundays 10 am-4 pm, no booking for general visitors, entry free, extra school-holiday days, cafe and giftshop closed; Wikivoyage agrees and adds closed public holidays. The 'temporarily closed' line most likely refers to the CSIRO Discovery Centre (canberra-38, dropped). Do not flag canberra-32 closed; keep hours. Suggest hours qualifier \"Sat-Sun 10:00 AM - 4:00 PM\" is fine; closedDays is approximate (extra school-holiday days, public holidays). Page also holds a stale line 'daily 9-5', ignore.",
+  "source": "https://www.cdscc.nasa.gov/Pages/opening_hours.html"
+ },
+ {
+  "id": "canberra-32",
+  "field": "coordinates",
+  "current": "LOW Commons median",
+  "status": "unverifiable",
+  "fix": "Pin is LOW (source says so); Wikipedia/Wikivoyage point -35.401389, 148.981667 is the complex. Not a fact error but needs a visitor-centre point.",
+  "source": "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong"
+ },
+ {
+  "id": "canberra-33",
+  "field": "hours",
+  "current": "Open 24 hours",
+  "status": "supported",
+  "fix": "Operator site says open 24 hours a day, 7 days a week (loaded). Wikivoyage's 8-6 is older. Bio '170+ species' (Wikipedia: over 170 species recorded), bird hides (Wikipedia) fine. Free parking on Dairy Road; entry free. Only parks.act.gov.au (blocked) left to confirm the visitor point.",
+  "source": "https://www.jerrabomberrawetlands.org.au/ ; https://en.wikipedia.org/wiki/Jerrabomberra_Wetlands"
+ },
+ {
+  "id": "canberra-34",
+  "field": "hours",
+  "current": "6:00 AM - 9:00 PM (to 6:00 PM outside daylight saving)",
+  "status": "supported",
+  "fix": "Official site opening-hours page (search snippet, stromloforestpark.act.gov.au/visit/opening-hours): 6am-6pm non-daylight saving, 6am-9pm daylight saving; gates locked at closing time. Page itself is blocked to scripts; free entry (parking not a price) still to confirm in browser.",
+  "source": "https://www.stromloforestpark.act.gov.au/visit/opening-hours (needs_browser)"
+ },
+ {
+  "id": "canberra-34",
+  "field": "bio",
+  "current": "more than 50 km of mountain-bike, running and walking trails",
+  "status": "supported",
+  "fix": "Wikipedia: over 50 km of single-track MTB trails plus a 2.5 km running trail and equestrian trails. 'walking' is not named; acceptable. No change.",
+  "source": "https://en.wikipedia.org/wiki/Stromlo_Forest_Park"
+ },
+ {
+  "id": "canberra-35",
+  "field": "hours",
+  "current": "9:00 AM - 5:00 PM (Sat-Sun 10:00 AM - 4:00 PM)",
+  "status": "supported",
+  "fix": "NCA page: weekdays 9-5, weekends and public holidays 10-4, closed Christmas and Boxing Day, free. Matches.",
+  "source": "https://www.nca.gov.au/attractions/national-capital-exhibition"
+ },
+ {
+  "id": "canberra-36",
+  "field": "hours",
+  "current": "10:00 AM - 2:00 PM (Wed, Sat, Sun)",
+  "status": "supported",
+  "fix": "NCA page: Wed, Sat, Sun 10 am-2 pm, entry free, built around 1860. Matches.",
+  "source": "https://www.nca.gov.au/attractions/blundells-cottage"
+ },
+ {
+  "id": "canberra-37",
+  "field": "hours",
+  "current": "Open 24 hours",
+  "status": "supported",
+  "fix": "Wikivoyage lists the International Flag Display at Commonwealth Place as open 24 hours with 110 flags; NCA page confirms the square (2002).",
+  "source": "https://en.wikivoyage.org/wiki/Canberra/South ; https://www.nca.gov.au/attractions/commonwealth-place"
+ },
+ {
+  "id": "canberra-39",
+  "field": "hours",
+  "current": "10:00 AM - 4:00 PM",
+  "status": "supported",
+  "fix": "cmag.com.au homepage: Monday-Sunday 10am-4pm; Wikipedia: entry free, permanent Reflecting Canberra collection; Nolan Collection managed by CMAG. Wikivoyage's older hours are stale.",
+  "source": "https://www.cmag.com.au/"
+ },
+ {
+  "id": "canberra-40",
+  "field": "bio",
+  "current": "board historic steam locomotives and carriages",
+  "status": "unverifiable",
+  "fix": "Hours and prices confirmed (Sat-Sun and ACT public holidays 10-3, adult $10). No page says visitors can board steam locomotives. Reword: \"Volunteer-run railway museum in Kingston with historic locomotives and carriages from over 100 years of rail history.\" (check bio-fit).",
+  "source": "https://www.canberrarail.org.au/"
+ },
+ {
+  "id": "canberra-40",
+  "field": "hours",
+  "current": "10:00 AM - 3:00 PM (Sat-Sun and ACT public holidays)",
+  "status": "supported",
+  "fix": "Homepage also lists Wed, Thu, Sat, Sun in ACT school holidays and Floriade (entry notes say Wed-Sun; Fri is not open). Fine.",
+  "source": "https://www.canberrarail.org.au/"
+ },
+ {
+  "id": "canberra-25",
+  "field": "hours",
+  "current": "9:00 AM - 5:00 PM",
+  "status": "supported",
+  "fix": "naa.gov.au ACT page: exhibitions Mon-Sun 9-5 (research centre 9:30-4:30 Mon-Fri); East Block heritage-listed per Wikipedia; Voices exhibition is on the Constitution. Free.",
+  "source": "https://www.naa.gov.au/australian-capital-territory ; https://en.wikipedia.org/wiki/National_Archives_of_Australia"
+ },
+ {
+  "id": "canberra-26",
+  "field": "bio",
+  "current": "from the Australian War Memorial to Russell",
+  "status": "supported",
+  "fix": "Wikipedia: connects the War Memorial to Constitution Avenue/lake, bisects Constitution Avenue between Civic and Russell Hill; NCA page: opened 25 April 1965. Pin is hand-computed.",
+  "source": "https://en.wikipedia.org/wiki/Anzac_Parade,_Canberra"
+ },
+ {
+  "id": "canberra-29",
+  "field": "cost/hours",
+  "current": "$12 guided tour; Wed-Sun 10-3",
+  "status": "supported",
+  "fix": "historicplaces.com.au: adult $12 (concession $10), house entry by guided tour only, garden free; Wednesday to Sunday 10am-3pm; 1850s homestead, convict-era outbuildings (Convict Barn), gardens, cafe. costBasis tour is right.",
+  "source": "https://www.historicplaces.com.au/lanyon-homestead"
+ }
+]

@@ -1,0 +1,595 @@
+{
+ "spots": [
+  {
+   "id": "canberra-41",
+   "name": "The Big Powerful Owl",
+   "destination": "canberra",
+   "category": "landmark",
+   "icon": "🦉",
+   "bio": "Eight-metre concrete and fibreglass owl sculpture on Benjamin Way in Belconnen, a photo stop.",
+   "wiki": "Owl (Armstrong)",
+   "coordinates": {
+    "lat": -35.24759,
+    "lng": 149.06752
+   },
+   "coordinates_source": "wikipedia:Owl (Armstrong)",
+   "km_from_destination": 6.3,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Belconnen"
+   ],
+   "reason": "Kept by the judge: Rule 1/3: Wikivoyage Belconnen names the 8 m Bruce Armstrong sculpture as one of Australia's Big Things (quirky roadside icon, photo stop). Same sculpture as Owl (Armstrong): keep one.",
+   "merged_from": [
+    "Owl (Armstrong)"
+   ],
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": null,
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "wiki",
+      "name": "Owl (Armstrong)",
+      "type": "article",
+      "lat": -35.24759,
+      "lon": 149.06752,
+      "from_hint_m": 0
+     }
+    ],
+    "hint": {
+     "lat": -35.24759,
+     "lon": 149.06752,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-42",
+   "name": "Mount Majura",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Hill north of Mount Ainslie with a walking track to the summit and views over the city.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.2375,
+    "lng": 149.18055556
+   },
+   "coordinates_source": "wikipedia:Mount Majura",
+   "km_from_destination": 9.8,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/North_Canberra",
+    "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mount-majura-nature-reserve"
+   ],
+   "reason": "Kept by the judge: Wikivoyage names it as another important lookout in North Canberra reached by walking tracks, and ACT Parks has a reserve page. Separate peak from Mount Ainslie.",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.237479,
+     "lon": 149.182051,
+     "src": "osm",
+     "name": "Mount Majura",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Mount Majura",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.237479,
+      "lon": 149.1820512,
+      "from_hint_m": 136
+     },
+     {
+      "src": "wiki",
+      "name": "Mount Majura",
+      "type": "article",
+      "lat": -35.2375,
+      "lon": 149.18055556,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "14 geotagged files",
+      "type": "photo median",
+      "lat": -35.241089,
+      "lon": 149.17068833333,
+      "from_hint_m": 982
+     }
+    ],
+    "hint": {
+     "lat": -35.2375,
+     "lon": 149.18055556,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-43",
+   "name": "Mount Taylor",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "Hill on the south side with a walk to the summit and views over Woden and the Brindabellas.",
+   "wiki": "Mount Taylor (Australian Capital Territory)",
+   "coordinates": {
+    "lat": -35.37194444,
+    "lng": 149.07277778
+   },
+   "coordinates_source": "wikipedia:Mount Taylor (Australian Capital Territory)",
+   "km_from_destination": 8.7,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra"
+   ],
+   "reason": "Kept by the judge: Mount Taylor: Wikivoyage Canberra names it among the popular bushwalking hills of the urban parks, with a summit walk and views over Woden; a hill kept when a visitor source names it (run rule). Opene",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.371962,
+     "lon": 149.075538,
+     "src": "osm",
+     "name": "Mount Taylor",
+     "type": "natural=peak (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Mount Taylor",
+      "type": "natural=peak (nominatim)",
+      "lat": -35.3719623,
+      "lon": 149.0755379,
+      "from_hint_m": 251
+     },
+     {
+      "src": "wiki",
+      "name": "Mount Taylor (Australian Capital Territory)",
+      "type": "article",
+      "lat": -35.37194444,
+      "lon": 149.07277778,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "4 geotagged files",
+      "type": "photo median",
+      "lat": -35.371388888889,
+      "lon": 149.0807,
+      "from_hint_m": 722
+     }
+    ],
+    "hint": {
+     "lat": -35.37194444,
+     "lon": 149.07277778,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-44",
+   "name": "Hall",
+   "destination": "canberra",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Small heritage village of about 300 people with a heritage walk and cafés, and access to One Tree Hill.",
+   "wiki": "Hall, Australian Capital Territory",
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Hall",
+    "https://visitcanberra.com.au/our-neighbourhoods/north-canberra/hall-and-wineries"
+   ],
+   "reason": "Kept by the judge: Wikivoyage Canberra/Hall (read) and VisitCanberra give the village its own page with a See section, the 20-site National Trust Hall Heritage Walk and access to wineries and One Tree Hill; the run keep",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": null,
+    "agreeing": [],
+    "candidates": [],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-45",
+   "name": "Kambah Pool",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🏊",
+   "bio": "Swimming spot among big boulders in the Murrumbidgee River, a 10-minute walk from the car park.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.3991,
+    "lng": 149.0111
+   },
+   "coordinates_source": "wikivoyage listing",
+   "km_from_destination": 13.9,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong_and_Country_ACT",
+    "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/kambah-pool"
+   ],
+   "reason": "Kept by the judge: Two counted sources (Wikivoyage Tuggeranong/Country ACT, Parks ACT): swimming among big boulders in the Murrumbidgee, 10 min walk.",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.399437,
+     "lon": 149.010818,
+     "src": "osm",
+     "name": "Kambah Pool",
+     "type": "leisure=swimming_area (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Kambah Pool",
+      "type": "leisure=swimming_area (nominatim)",
+      "lat": -35.3994374,
+      "lon": 149.0108183,
+      "from_hint_m": 45
+     }
+    ],
+    "hint": {
+     "lat": -35.3991,
+     "lon": 149.0111,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-46",
+   "name": "Pine Island Reserve",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "Riverside reserve on the Murrumbidgee with swimming, fishing and kayaking, and a start for the Murrumbidgee Discovery Track.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.43305556,
+    "lng": 149.07
+   },
+   "coordinates_source": "wikipedia:Pine Island Reserve",
+   "km_from_destination": 15.3,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong",
+    "https://www.visitcanberra.com.au/our-neighbourhoods/southern-nature-reserves-and-national-parks",
+    "https://en.wikivoyage.org/wiki/Canberra/Tuggeranong_and_Country_ACT",
+    "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/pine-island"
+   ],
+   "reason": "Kept by the judge: Murrumbidgee riverside reserve named by the ACT parks agency (relied on parks-act-leads) and VisitCanberra, plus two Wikivoyage pages, with swimming, fishing and kayaking; second-tier nature stop (rul",
+   "merged_from": null,
+   "counted_sources": 4,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.428066,
+     "lon": 149.061495,
+     "src": "osm",
+     "name": "Pine Island Reserve",
+     "type": "leisure=park (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Pine Island Reserve",
+      "type": "leisure=park (nominatim)",
+      "lat": -35.4280663,
+      "lon": 149.0614954,
+      "from_hint_m": 951
+     },
+     {
+      "src": "wiki",
+      "name": "Pine Island Reserve",
+      "type": "article",
+      "lat": -35.43305556,
+      "lon": 149.07,
+      "from_hint_m": 0
+     },
+     {
+      "src": "commons",
+      "name": "3 geotagged files",
+      "type": "photo median",
+      "lat": -35.425493,
+      "lon": 149.069721,
+      "from_hint_m": 842
+     }
+    ],
+    "hint": {
+     "lat": -35.43305556,
+     "lon": 149.07,
+     "from": "placement"
+    }
+   }
+  },
+  {
+   "id": "canberra-47",
+   "name": "Casuarina Sands",
+   "destination": "canberra",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Sandy Murrumbidgee River beach in the Cotter Recreation Area for picnics, fishing and walks.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor/casuarina-sands"
+   ],
+   "reason": "Kept by the judge: Parks ACT (leads, riverside beach in Cotter Recreation Area): sandy Murrumbidgee beach for picnics, fishing and walks; a second-tier swimming and river stop.",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": null,
+    "agreeing": [],
+    "candidates": [],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-48",
+   "name": "Murrumbidgee Discovery Track",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "27 km walking and cycling track along the Murrumbidgee from Point Hut Crossing to Casuarina Sands.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/attractions",
+    "https://www.parks.act.gov.au/find-a-nature-park?queries_parent_query_posted=1&queries_parent_query=Murrumbidgee+River+Corridor"
+   ],
+   "reason": "Kept by the judge: 27 km track named by VisitCanberra and the ACT parks agency (two counted sources); a walk a guide promotes (rule 1, 2). Pine Island is a separate place at one end.",
+   "merged_from": null,
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "LOW",
+    "recommended": null,
+    "agreeing": [],
+    "candidates": [],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-49",
+   "name": "Canberra Centenary Trail",
+   "destination": "canberra",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "145 km self-guided loop around Canberra in seven sections, through urban and rural land, for walkers and cyclists.",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "km_from_destination": null,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "source_urls": [
+    "https://www.visitcanberra.com.au/articles/100-things-to-do-in-canberra",
+    "https://www.visitcanberra.com.au/things-to-do/cycling-in-canberra"
+   ],
+   "reason": "Kept by the judge: 145 km signed loop entirely around Canberra, named by VisitCanberra's 100 things and cycling pages (opened cycling page) and listed by the parks agency (parks-act-leads, relied on); walkable by sectio",
+   "merged_from": [
+    "Centenary Trail"
+   ],
+   "counted_sources": 2,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.261893,
+     "lon": 149.111529,
+     "src": "osm",
+     "name": "Canberra Centenary Trail",
+     "type": "trail midpoint (1.0 km, nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Canberra Centenary Trail",
+      "type": "trail midpoint (1.0 km, nominatim)",
+      "lat": -35.261893442830136,
+      "lon": 149.11152881956735,
+      "from_hint_m": 4082
+     },
+     {
+      "src": "osm",
+      "name": "Canberra Centenary Trail",
+      "type": "trail midpoint (0.6 km, nominatim)",
+      "lat": -35.26613068339447,
+      "lon": 149.1600993178712,
+      "from_hint_m": 6390
+     },
+     {
+      "src": "osm",
+      "name": "Canberra Centenary Trail",
+      "type": "trail midpoint (0.0 km, nominatim)",
+      "lat": -35.220472650000005,
+      "lon": 149.1780395,
+      "from_hint_m": 11061
+     },
+     {
+      "src": "osm",
+      "name": "Canberra Centenary Trail",
+      "type": "trail midpoint (0.0 km, nominatim)",
+      "lat": -35.220544857220865,
+      "lon": 149.17832416915212,
+      "from_hint_m": 11071
+     },
+     {
+      "src": "osm",
+      "name": "Canberra Centenary Trail",
+      "type": "trail midpoint (0.0 km, nominatim)",
+      "lat": -35.22019615,
+      "lon": 149.17784419999998,
+      "from_hint_m": 11074
+     }
+    ],
+    "hint": {
+     "lat": -35.29759,
+     "lon": 149.10127,
+     "from": "destination hub"
+    }
+   }
+  },
+  {
+   "id": "canberra-50",
+   "name": "Lake Ginninderra",
+   "destination": "canberra",
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "Artificial lake from 1974 in Belconnen with a 7 km shared path around it and parks along the shore.",
+   "wiki": null,
+   "coordinates": {
+    "lat": -35.23333333,
+    "lng": 149.06666667
+   },
+   "coordinates_source": "wikipedia:Lake Ginninderra",
+   "km_from_destination": 7.8,
+   "needs_research": [
+    "hours",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "source_urls": [
+    "https://en.wikivoyage.org/wiki/Canberra/Belconnen"
+   ],
+   "reason": "Kept by the judge: Rule 1/2: Wikivoyage Belconnen names the 105 ha lake with a 7 km path, lakeside parks and the Emu Bank foreshore (lake spot, the path is part of it).",
+   "merged_from": null,
+   "counted_sources": 1,
+   "pin": {
+    "confidence": "MEDIUM",
+    "recommended": {
+     "lat": -35.220607,
+     "lon": 149.067142,
+     "src": "osm",
+     "name": "Ginninderra Creek",
+     "type": "waterway=stream (nominatim)"
+    },
+    "agreeing": [],
+    "candidates": [
+     {
+      "src": "osm",
+      "name": "Ginninderra Creek",
+      "type": "waterway=stream (nominatim)",
+      "lat": -35.2206069,
+      "lon": 149.0671421,
+      "from_hint_m": 1417
+     },
+     {
+      "src": "osm",
+      "name": "Ginninderra Creek",
+      "type": "waterway=stream (nominatim)",
+      "lat": -35.2152005,
+      "lon": 149.0535463,
+      "from_hint_m": 2345
+     },
+     {
+      "src": "osm",
+      "name": "Ginninderra Havens",
+      "type": "landuse=residential (nominatim)",
+      "lat": -35.2341023,
+      "lon": 149.0607071,
+      "from_hint_m": 549
+     },
+     {
+      "src": "osm",
+      "name": "Ginninderra Heights",
+      "type": "landuse=residential (nominatim)",
+      "lat": -35.2326892,
+      "lon": 149.0592366,
+      "from_hint_m": 679
+     },
+     {
+      "src": "osm",
+      "name": "Ginninderra Grove",
+      "type": "landuse=residential (nominatim)",
+      "lat": -35.2306008,
+      "lon": 149.0595192,
+      "from_hint_m": 718
+     }
+    ],
+    "hint": {
+     "lat": -35.23333333,
+     "lon": 149.06666667,
+     "from": "placement"
+    }
+   }
+  }
+ ]
+}

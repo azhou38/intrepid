@@ -2262,7 +2262,6 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Shepherds Lookout": "Shepherd's Lookout.jpg",
   "Pialligo Redwood Forest": "Pialligo Redwood Forest view south.jpg",
   "Gibraltar Peak (Canberra)": "Gibraltar Rocks - panoramio (3).jpg",
-  "Booroomba Rocks": "https://live.staticflickr.com/2008/2081213843_cc61baeb05_b.jpg",
   "Orroral Homestead": "Orroral Homestead AJT.jpg",
   "Yankee Hat": "Namadgi National Park - Yankee Hat (2).JPG",
 };

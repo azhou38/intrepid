@@ -1,0 +1,225 @@
+{
+ "spots": {
+  "canberra-21": {
+   "name": "Black Mountain",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Nature reserve above the city with bushwalks through eucalypt forest to the summit and Black Mountain Tower.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.273859,
+    "longitude": 149.097567
+   },
+   "wiki": "Black Mountain (Australian Capital Territory)",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/black-mountain-nature-reserve",
+   "coordinates_source": "OpenStreetMap natural=peak \"Black Mountain\" (Nominatim), summit with the tower; 0 m from placement pin; Wikipedia point is 0.8 km off on the slope",
+   "notes": "Free reserve; hours Open 24 hours is the open-access assumption (unverified on agency page). Parks ACT page blocked."
+  },
+  "canberra-22": {
+   "name": "Red Hill",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Nature reserve with the 3.2 km Red Track loop and a hilltop lookout over Parliament House and Lake Burley Griffin.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.323739,
+    "longitude": 149.112817
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/red-hill-nature-reserve",
+   "coordinates_source": "OpenStreetMap natural=peak \"Red Hill\" (Nominatim), summit lookout; pin as computed by the run",
+   "notes": "Free reserve; open-access hours assumed. Parks ACT page blocked. Bio claims (3.2 km Red Track, lookout over Parliament House) from the draft/Wikivoyage; confirm on the agency page."
+  },
+  "canberra-23": {
+   "name": "Aboriginal Tent Embassy",
+   "icon": "⛺",
+   "category": "historic",
+   "bio": "Protest site on the lawns opposite Old Parliament House, founded on 26 January 1972 and among the longest continuing in the world.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.301185,
+    "longitude": 149.130382
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/aboriginal-tent-embassy",
+   "coordinates_source": "OpenStreetMap tourism=attraction \"Aboriginal Tent Embassy\" (HIGH); 0 m from placement pin",
+   "notes": "Founding date and \"one of the world's longest continuing protest sites\" from the National Capital Authority page; that page is the managing agency's, loaded, title names the place. \"Opposite Old Parliament House\" is from general knowledge of the site, not read on a fetched page; confirm or reword."
+  },
+  "canberra-24": {
+   "name": "National Carillon",
+   "icon": "🔔",
+   "category": "landmark",
+   "bio": "57-bell carillon on Queen Elizabeth II Island in Lake Burley Griffin, with free recitals on Wednesdays and Sundays.",
+   "hours": "Island open daily; recitals Wed 6:30 PM, Sun 12:30 PM",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.298488,
+    "longitude": 149.141739
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/national-carillon",
+   "coordinates_source": "OpenStreetMap man_made=tower \"National Carillon\" (HIGH); 0 m from placement pin",
+   "notes": "57 bells, free concerts Wed 6:30 pm and Sun 12:30 pm, guided tours (booked) from the NCA page. The cached page is stale (mentions \"Sunday 18 November\"), so the recital times should be rechecked. \"Island open daily\" and the footbridge access are not stated on the page; access is via Kings Avenue northbound."
+  },
+  "canberra-25": {
+   "name": "National Archives of Australia",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "National archives in the heritage East Block, with free exhibitions on the Constitution and on Australians and government.",
+   "hours": "9:00 AM – 5:00 PM",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.304941,
+    "longitude": 149.130574
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.naa.gov.au/australian-capital-territory",
+   "coordinates_source": "OpenStreetMap tourism=museum \"National Archives of Australia\" (HIGH); 0 m from placement pin",
+   "notes": "Hours Mon-Sun 9-5, closed Good Friday and Christmas Day, admission free, exhibitions Voices / Dhuniai and Connections: naa.gov.au ACT page. Public holidays listed as closed for the research centre."
+  },
+  "canberra-26": {
+   "name": "Anzac Parade",
+   "icon": "🎖️",
+   "category": "monument",
+   "bio": "Ceremonial avenue lined with military memorials from the Australian War Memorial to Russell, for a walk or drive.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.286966,
+    "longitude": 149.142967
+   },
+   "wiki": "Anzac Parade, Canberra",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/anzac-parade",
+   "coordinates_source": "Midpoint of the OpenStreetMap \"Anzac Parade\" way chain (highway=secondary, 1.26 km from the Russell end to the War Memorial end); resolve-pin.py returned LOW, so computed from Overpass geometry. About 0.4 km from the placement hint is not applicable (no hint)",
+   "notes": "resolve-pin LOW; midpoint computed by hand from OSM ways 546708959, 572753316, 666660159, 1528987803, 1528987804. NCA page lists the memorials and opening on 25 April 1965."
+  },
+  "canberra-27": {
+   "name": "Commonwealth Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Lakeside park beside Lake Burley Griffin with sculpture gardens, ponds, an amphitheatre and the National Capital Exhibition.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.289029,
+    "longitude": 149.130239
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nca.gov.au/attractions/commonwealth-park",
+   "coordinates_source": "OpenStreetMap leisure=park \"Commonwealth Park\" (HIGH, Nominatim point); 0 m from placement pin. It is a park centroid; check it is not within 25 m of Regatta Point or another spot",
+   "notes": "NCA page: sculptured gardens, ponds, artworks, Stage 88, amphitheatre, playground, National Capital Exhibition at Regatta Point. Bio omits \"Sylvia Crowe\" (not read on a fetched page)."
+  },
+  "canberra-28": {
+   "name": "Canberra Glassworks",
+   "icon": "🫧",
+   "category": "museum",
+   "bio": "Glass art centre in the heritage Kingston Powerhouse, where visitors watch glassblowers at work in the Hotshop.",
+   "hours": "Tue–Sun 10:00 AM – 4:00 PM",
+   "closedDays": [
+    1
+   ],
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.311543,
+    "longitude": 149.143704
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://canberraglassworks.com/",
+   "coordinates_source": "OpenStreetMap amenity=arts_centre \"The Canberra Glassworks\" (MEDIUM); 0 m from placement pin",
+   "notes": "Open Tue to Sun 10am-4pm and \"Entry by donation\" from canberraglassworks.com (home, exhibitions and tours pages). Site calls itself the largest glass-making facility in the Southern Hemisphere dedicated to studio glass. \"Kingston Powerhouse\" heritage detail is from the draft; the site says \"explore the history of the building\" but the powerhouse name was not read on a fetched page."
+  },
+  "canberra-29": {
+   "name": "Lanyon Homestead",
+   "icon": "🏡",
+   "category": "historic",
+   "bio": "1850s homestead on the Murrumbidgee with guided house tours, convict-era outbuildings, gardens and a cafe.",
+   "hours": "Wed–Sun 10:00 AM – 3:00 PM",
+   "closedDays": [
+    1,
+    2
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.490793,
+    "longitude": 149.073386
+   },
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.historicplaces.com.au/lanyon-homestead",
+   "coordinates_source": "OpenStreetMap tourism=museum \"Lanyon Homestead\" (HIGH); 0 m from placement pin",
+   "notes": "ACT Historic Places page: house entry by guided tour only, adult $12, concession $10, under 12 free, garden entry free; the ACT Historic Places contact list gives Wednesday to Sunday 10am-3pm; cafe Wed-Sun 8am-2:30pm. The Opening hours accordion did not render in the fetch, so the hours come from the contact list on the same page."
+  },
+  "canberra-30": {
+   "name": "Mulligans Flat Woodland Sanctuary",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Fenced woodland sanctuary in Gungahlin with walking and cycling tracks, spotted-tailed quolls and the Wildbark visitor centre.",
+   "hours": "Open 24 hours",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.164288,
+    "longitude": 149.16
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mulligans-flat-nature-reserve",
+   "coordinates_source": "LOW: Commons geotagged-photo median (4 files), provisional only. The run pin (-35.168715, 149.169825) is the leisure=nature_reserve centroid, not allowed",
+   "notes": "pin LOW: needs the Wildbark visitor centre / main entrance car park point from the agency map. Overpass was rate limited. Hours unverified: sanctuary gate times not read (parks page blocked); \"984-hectare\" and quolls from draft; confirm."
+  }
+ },
+ "unverified": [
+  "canberra-21 hours/free (Parks ACT page blocked)",
+  "canberra-22 hours/free and Red Track 3.2 km (Parks ACT blocked)",
+  "canberra-24 recital times (NCA page stale) and island hours",
+  "canberra-23 \"opposite Old Parliament House\" wording",
+  "canberra-28 Kingston Powerhouse naming",
+  "canberra-30 hours, size, quolls (Parks ACT blocked) and pin",
+  "canberra-27 pin is a park point from Nominatim; Sylvia Crowe omitted"
+ ],
+ "needs_browser": [
+  {
+   "id": "canberra-21",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/black-mountain-nature-reserve",
+   "why": "Parks ACT Cloudflare 403; confirm page title, hours and that it is the official page"
+  },
+  {
+   "id": "canberra-22",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/red-hill-nature-reserve",
+   "why": "Parks ACT Cloudflare 403"
+  },
+  {
+   "id": "canberra-30",
+   "url": "https://www.parks.act.gov.au/find-a-nature-park/canberra-nature-park/mulligans-flat-nature-reserve",
+   "why": "Parks ACT Cloudflare 403; also read gate hours and the Wildbark / entrance car park location"
+  }
+ ],
+ "notes": [
+  "canberra-30 pin LOW",
+  "canberra-26 pin hand-computed from OSM way geometry after resolve-pin LOW"
+ ]
+}
