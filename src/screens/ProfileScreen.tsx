@@ -79,11 +79,16 @@ export default function ProfileScreen() {
   // Each style reads both values itself: a style re-runs only for the shared values it reads directly, not ones read
   // inside a helper it calls (with a shared stuckT() helper the bar never filled in).
   const stuckStyle = useAnimatedStyle(() => {
-    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
+    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
     return { backgroundColor: `rgba(249,250,251,${t})`, borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
   });
+  // The full header fades out over the same stretch as the bar fills in, so the small avatar and name never cut in over
+  // a header still showing behind them.
+  const headerFade = useAnimatedStyle(() => ({
+    opacity: 1 - Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE)),
+  }));
   const compactStyle = useAnimatedStyle(() => {
-    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
+    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
     return { opacity: t, transform: [{ translateY: (1 - t) * 6 }] };
   });
   const selectorWSV = useSharedValue(0);
@@ -207,7 +212,7 @@ export default function ProfileScreen() {
       {/* ── Profile header ──────────────────────────────────────────── */}
       {/* Where the pinned bar starts is measured here: the bar's own onLayout reads 0, inside the sticky wrapper the
           ScrollView puts round it. It starts 16 below the header (its margin), less its overlapping top strip. */}
-      <View style={styles.profileHeader} onLayout={e => { const l = e.nativeEvent.layout; stickyYSV.value = l.y + l.height + 16 - COMPACT_H; }}>
+      <Animated.View style={[styles.profileHeader, headerFade]} onLayout={e => { const l = e.nativeEvent.layout; stickyYSV.value = l.y + l.height + 16 - COMPACT_H; }}>
         <View style={styles.avatar}>
           <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
         </View>
@@ -217,7 +222,7 @@ export default function ProfileScreen() {
             ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
             : 'World Traveler'}
         </Text>
-      </View>
+      </Animated.View>
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
           every section below show; it stays pinned at the top as they scroll. ── */}
@@ -566,6 +571,8 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 
 // The pinned bar's top strip, holding its small avatar and name.
 const COMPACT_H = 40;
+// How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
+const FADE = 36;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
