@@ -1472,7 +1472,7 @@ isVisited ? (
                   accessibilityRole="button"
                   accessibilityLabel={`Back to ${destination?.name ?? ''}`}
                 >
-                  <ChevronLeft size={18} color="#374151" strokeWidth={2.5} style={st.carDestChevron} />
+                  <ChevronLeft size={20} color="#111827" strokeWidth={2.5} style={st.carDestChevron} />
                   <Text style={[st.carDest, { flexShrink: 1 }]} numberOfLines={2} ellipsizeMode="tail">{destination?.name}</Text>
                 </Pressable>
               ) : (
@@ -1804,11 +1804,8 @@ const st = StyleSheet.create({
   carHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingTop: 3, paddingBottom: 9 },
   carEyebrow: { fontSize: 10, fontWeight: '800', color: '#9CA3AF', letterSpacing: 1.3, marginBottom: 2 },
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
-  // The destination title as a pill, styled like the Grid view button, so it reads as tappable.
-  carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginTop: 2,
-                paddingLeft: 4, paddingRight: 10, paddingVertical: 2, borderRadius: 10,
-                backgroundColor: '#F3F4F6', borderWidth: 1, borderColor: '#E5E7EB' },
-  carDestChevron: { marginRight: 2 },
+  carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -8 },
+  carDestChevron: { marginRight: 1 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
                    marginLeft: 12, paddingHorizontal: 8, paddingVertical: 5,
                    borderRadius: 8, borderWidth: 1, borderColor: '#E5E7EB' },
