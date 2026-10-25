@@ -149,25 +149,6 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* ── Top Countries ───────────────────────────────────────────── */}
-      {topCountries.length > 0 && (
-        <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
-          <Text style={styles.cardTitle}>Top Countries</Text>
-          {topCountries.map(({ country, count, code }) => (
-            <View key={country} style={styles.countryRow}>
-              <CircleFlag countryCode={code} size={22} />
-              <Text style={styles.countryName} numberOfLines={1}>{country}</Text>
-              <View style={styles.countryBarTrack}>
-                <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
-              </View>
-              <Text style={styles.countryCount}>
-                {count} {count === 1 ? 'dest' : 'dests'}
-              </Text>
-            </View>
-          ))}
-        </View>
-      )}
-
       {/* ── Countries explored ──────────────────────────────────────── */}
       <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
         <View style={styles.cardHeaderRow}>
@@ -187,6 +168,25 @@ export default function ProfileScreen() {
           </View>
         )}
       </View>
+      {/* ── Top Countries ───────────────────────────────────────────── */}
+      {topCountries.length > 0 && (
+        <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+          <Text style={styles.cardTitle}>Top Countries</Text>
+          {topCountries.map(({ country, count, code }) => (
+            <View key={country} style={styles.countryRow}>
+              <CircleFlag countryCode={code} size={22} />
+              <Text style={styles.countryName} numberOfLines={1}>{country}</Text>
+              <View style={styles.countryBarTrack}>
+                <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
+              </View>
+              <Text style={styles.countryCount}>
+                {count} {count === 1 ? 'dest' : 'dests'}
+              </Text>
+            </View>
+          ))}
+        </View>
+      )}
+
     </ScrollView>
   );
 }
