@@ -1800,8 +1800,8 @@ const st = StyleSheet.create({
   pill:    { width: 36, height: 4, borderRadius: 2, backgroundColor: 'rgba(0,0,0,0.18)' },
   carHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingTop: 3, paddingBottom: 9 },
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
-  carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -12 },
-  // The chevron sits 2 pt further left than the title (-14 vs -12); the extra right margin keeps the title where it was.
+  carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -8 },
+  // The chevron sits 2 pt further left than the title (-10 vs -8); the extra right margin keeps the title where it was.
   carDestChevron: { marginLeft: -2, marginRight: 3 },
   carCounter: { fontSize: 13, fontWeight: '700', color: '#9CA3AF', marginLeft: 12 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
