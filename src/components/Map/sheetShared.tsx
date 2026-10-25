@@ -1439,7 +1439,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
 
   // Visited, nothing logged yet (marked with one tap): an invitation to add the details, never a requirement.
   if (visits.length === 0) {
-    const what = hasSelector ? `dates, the ${pluralNoun} you visited, photos or notes` : 'a date, photos or notes';
+    const what = hasSelector ? `dates, ${pluralNoun} visited, photos and notes` : 'dates, photos and notes';
     return (
       <View style={[vcS.listWrap, vcS.emptyWrap]}>
         <View style={vcS.memCardShadow}>
@@ -1448,7 +1448,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
               <NotebookPen size={22} color="#059669" />
             </View>
             <Text style={vcS.emptyTitle}>You've been here</Text>
-            <Text style={vcS.emptySub}>Add {what}?</Text>
+            <Text style={vcS.emptySub}>Add {what}.</Text>
             <View style={vcS.emptyBtn}>
               <Plus size={15} color="white" strokeWidth={2.75} />
               <Text style={vcS.emptyBtnTxt}>Add {noun}</Text>
