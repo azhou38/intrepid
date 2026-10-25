@@ -203,19 +203,12 @@ export default function ProfileScreen() {
           component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
       <View onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
       <Animated.View style={[styles.selectorSticky, stuckStyle]}>
-      {/* ── Profile header ──────────────────────────────────────────── */}
+      {/* ── Profile header: the avatar and name, small and centred over the selector ── */}
       <View style={styles.profileHeader}>
         <View style={styles.avatar}>
           <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
         </View>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.profileName}>{userName}</Text>
-          <Text style={styles.profileSub}>
-            {stats.firstVisitDate
-              ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
-              : 'World Traveler'}
-          </Text>
-        </View>
+        <Text style={styles.profileName} numberOfLines={1}>{userName}</Text>
       </View>
 
         <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
@@ -554,22 +547,21 @@ const styles = StyleSheet.create({
 
   // Profile header
   profileHeader: {
-    flexDirection: 'row', alignItems: 'center', gap: 14,
-    marginBottom: 16,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+    marginBottom: 12,
   },
   avatar: {
-    width: 56, height: 56, borderRadius: 28,
+    width: 28, height: 28, borderRadius: 14,
     backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
   },
-  avatarText:  { fontSize: 22, fontWeight: '800', color: 'white' },
-  profileName: { fontSize: 22, fontWeight: '800', color: '#111827' },
-  profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2 },
+  avatarText:  { fontSize: 13, fontWeight: '800', color: 'white' },
+  profileName: { fontSize: 16, fontWeight: '700', color: '#111827', flexShrink: 1 },
 
   // Stats row
   // The level selector: pinned while scrolling (on the page colour, so nothing shows round its corners). The selected
   // count sits on a dark pill.
   selectorSticky: {
-    backgroundColor: '#F9FAFB', paddingHorizontal: 16, paddingTop: 16, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
+    backgroundColor: '#F9FAFB', paddingHorizontal: 16, paddingTop: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
     shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowRadius: 8, shadowOpacity: 0,
   },
   statsHeader: {
