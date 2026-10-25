@@ -831,7 +831,7 @@ const styles = StyleSheet.create({
   profileHeader: { alignItems: 'center', paddingHorizontal: 16 },
   profileName: { fontSize: 22, fontWeight: '800', color: '#111827', marginTop: 12 },
   profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2, textAlign: 'center' },
-  profileHandle: { fontSize: 14, fontWeight: '600', color: '#6B7280', marginTop: 1 },
+  profileHandle: { fontSize: 14, fontWeight: '600', color: '#6B7280', marginTop: 4 },
   // Over the header's avatar (88 pt, centred at the top), in the page's room for the header.
   avatarHit:   { position: 'absolute', top: 0, alignSelf: 'center', width: 88, height: 88, borderRadius: 44 },
   // The Edit Profile button: a quiet grey pill with a pencil, under the header's text.
