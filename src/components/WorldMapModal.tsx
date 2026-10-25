@@ -98,6 +98,9 @@ export default function WorldMapModal({
           compassEnabled={false}
           scaleBarEnabled={false}
           attributionEnabled={false}
+          // No double-tap zoom: with it, every tap waited to see if a second followed (~0.3 s) before the map reported it,
+          // so tapping a country or dot lagged. Pinch still zooms.
+          gestureSettings={{ doubleTapToZoomInEnabled: false, doubleTouchToZoomOutEnabled: false }}
           onPress={onMapPress}
         >
           <MapboxGL.Camera defaultSettings={{ centerCoordinate: [10, 25], zoomLevel: 0.4 }} minZoomLevel={0} maxZoomLevel={9} animationDuration={0} />
