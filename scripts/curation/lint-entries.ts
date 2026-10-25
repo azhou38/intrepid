@@ -133,7 +133,7 @@ async function checkWiki(title: string): Promise<string | null> {
     if (nTips < 2 || nTips > 3) add(it, 'shape', `${nTips} goodToKnow (needs 2–3: 3 for rank 1–3, 2 for rank 4–5)`);
     for (const t of d.goodToKnow ?? []) if (t.detail.length > 160) add(it, 'shape', `goodToKnow "${t.title}" detail is ${t.detail.length} characters (max 160, aim ~120)`);
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
-    if ((d.bestTimeBlurb ?? '').includes(';')) add(it, 'voice', 'bestTimeBlurb has a semicolon: one plain sentence, no clause-joining punctuation (WRITING.md)');
+    if ((d.bestTimeBlurb ?? '').includes(';')) add(it, 'voice', 'bestTimeBlurb has a semicolon: give a second thought its own sentence (WRITING.md)');
     for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {
       const m = (v ?? '').replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
     }
