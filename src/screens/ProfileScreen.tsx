@@ -59,10 +59,6 @@ export default function ProfileScreen() {
     })),
   }), [worldMode, visitedSpots, visitedDests]);
 
-  const pct = ((stats.totalCountries / TOTAL_COUNTRIES) * 100).toFixed(1);
-  const worldSub = worldMode === 'countries' ? `${pct}% of the world explored`
-    : worldMode === 'destinations' ? `${visitedDests.length} destination${visitedDests.length === 1 ? '' : 's'} visited`
-    : `${visitedSpots.length} spot${visitedSpots.length === 1 ? '' : 's'} visited`;
   const worldBadge = worldMode === 'countries' ? `${stats.totalCountries} / ${TOTAL_COUNTRIES}`
     : worldMode === 'destinations' ? `${visitedDests.length} / ${DESTINATIONS.length}`
     : `${visitedSpots.length} / ${SPOTS.length}`;
@@ -107,31 +103,23 @@ export default function ProfileScreen() {
 
       {/* ── My World map ────────────────────────────────────────────── */}
       <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14, padding: 0, overflow: 'hidden' }]}>
+        {/* Which level the map shows (countries, destinations or spots), and how many of them are visited. */}
         <View style={styles.worldHeader}>
-          <View>
-            <Text style={styles.worldTitle}>My World</Text>
-            <Text style={styles.worldSub}>{worldSub}</Text>
+          <View style={styles.worldToggle}>
+            {WORLD_MODES.map(({ mode, label }) => {
+              const on = worldMode === mode;
+              return (
+                <Pressable
+                  key={mode}
+                  style={[styles.worldToggleBtn, on && styles.worldToggleBtnOn]}
+                  onPress={() => { if (!on) { Haptics.selectionAsync(); setWorldMode(mode); } }}
+                  hitSlop={4}
+                >
+                  <Text style={[styles.worldToggleTxt, on && styles.worldToggleTxtOn]}>{label}</Text>
+                </Pressable>
+              );
+            })}
           </View>
-          <View style={styles.worldPctBadge}>
-            <Text style={styles.worldPctText}>{worldBadge}</Text>
-          </View>
-        </View>
-
-        {/* Which level the map shows: countries, destinations or spots. */}
-        <View style={styles.worldToggle}>
-          {WORLD_MODES.map(({ mode, label }) => {
-            const on = worldMode === mode;
-            return (
-              <Pressable
-                key={mode}
-                style={[styles.worldToggleBtn, on && styles.worldToggleBtnOn]}
-                onPress={() => { if (!on) { Haptics.selectionAsync(); setWorldMode(mode); } }}
-                hitSlop={4}
-              >
-                <Text style={[styles.worldToggleTxt, on && styles.worldToggleTxtOn]}>{label}</Text>
-              </Pressable>
-            );
-          })}
         </View>
 
         <View pointerEvents="none" style={styles.mapWrap}>
@@ -187,6 +175,10 @@ export default function ProfileScreen() {
               </MapboxGL.ShapeSource>
             )}
           </MapboxGL.MapView>
+          {/* How many of this level are visited, over the map's top-right corner. */}
+          <View style={styles.worldPctBadge}>
+            <Text style={styles.worldPctText}>{worldBadge}</Text>
+          </View>
         </View>
       </View>
 
@@ -273,18 +265,16 @@ const styles = StyleSheet.create({
 
   // My World
   worldHeader: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-    padding: 16, paddingBottom: 12,
+    flexDirection: 'row', alignItems: 'center', gap: 10,
+    padding: 12, paddingBottom: 12,
   },
-  worldTitle:    { fontSize: 17, fontWeight: '800', color: '#111827' },
-  worldSub:      { fontSize: 12, color: '#9CA3AF', marginTop: 2 },
-  worldPctBadge: { backgroundColor: '#EEF2FF', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 5 },
+  worldPctBadge: { position: 'absolute', top: 10, right: 10, backgroundColor: '#EEF2FF', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 5 },
   worldPctText:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
   mapWrap:       { overflow: 'hidden' },
   worldMap:      { height: 210, width: '100%' },
   // Countries · Destinations · Spots: a segmented toggle under the heading.
   worldToggle: {
-    flexDirection: 'row', marginHorizontal: 16, marginBottom: 12, padding: 3,
+    flex: 1, flexDirection: 'row', padding: 3,
     backgroundColor: '#F3F4F6', borderRadius: 10,
   },
   worldToggleBtn:    { flex: 1, alignItems: 'center', paddingVertical: 7, borderRadius: 8 },
