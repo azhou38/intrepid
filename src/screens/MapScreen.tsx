@@ -5586,7 +5586,7 @@ const destItems = useMemo((): DestItem[] =>
             style={{
               circleRadius: SPOT_PIN_SIZE / 2 + 8,
               circleColor: '#2F6BFF',
-              circleOpacity: 0.45,
+              circleOpacity: 0.6,
               circleBlur: 0.45,
               circleTranslate: [0, -(2 + 10 + SPOT_PIN_SIZE / 2)],
               circleTranslateAnchor: 'viewport',
