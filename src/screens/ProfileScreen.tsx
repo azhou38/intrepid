@@ -7,6 +7,8 @@ import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, u
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+// The chips' sideways scroller is gesture-handler's, so it takes its drags before the sections' level swipe.
+import { Gesture, GestureDetector, ScrollView as GHScrollView } from 'react-native-gesture-handler';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle } from '../data/spots';
@@ -145,6 +147,7 @@ export default function ProfileScreen() {
   });
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
+  const editFade = useAnimatedStyle(() => ({ opacity: 1 - Math.min(1, Math.max(0, scrollSV.value / 40)) }));
   const headerFade = useAnimatedStyle(() => ({
     opacity: 1 - Math.min(1, Math.max(0, scrollSV.value / Math.max(1, stickyYSV.value - FADE))),
   }));
@@ -279,6 +282,29 @@ export default function ProfileScreen() {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setWorldMode(mode);
   };
+  // A sideways swipe over the sections moves to the next (leftward) or previous level. It only starts once the finger
+  // has gone 25 pt sideways, and fails on a vertical move first, so scrolling the page is unaffected; the chips' own
+  // sideways scroller takes its drags first.
+  // The gesture is made once, so it calls through a ref to this render's stepMode (and selectMode).
+  const stepMode = (dir: number) => {
+    const i = WORLD_MODES.findIndex(m => m.mode === worldMode) + dir;
+    if (i >= 0 && i < WORLD_MODES.length) selectMode(WORLD_MODES[i].mode);
+  };
+  const stepRef = useRef(stepMode);
+  stepRef.current = stepMode;
+  const callStep = useRef((dir: number) => stepRef.current(dir)).current;
+  const swipeXSV = useSharedValue(0);
+  const levelSwipe = useMemo(() => Gesture.Pan()
+    .activeOffsetX([-25, 25])
+    .failOffsetY([-12, 12])
+    .onUpdate(e => { swipeXSV.value = e.translationX * 0.2; })
+    .onEnd(e => {
+      if (Math.abs(e.translationX) > 60 || Math.abs(e.velocityX) > 600) runOnJS(callStep)(e.translationX < 0 ? 1 : -1);
+    })
+    .onFinalize(() => { swipeXSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }); }),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  []);
+  const swipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: swipeXSV.value }] }));
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -300,6 +326,8 @@ export default function ProfileScreen() {
           ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
           : 'World Traveler'}
       </Text>
+      {/* Room for the Edit Profile button, which is drawn in the page (see below) so it can be tapped. */}
+      <View style={{ height: EDIT_H, marginTop: 14 }} />
     </Animated.View>
     {/* The level selector (child 1) pins to the top while the sections it controls scroll beneath. */}
     <Animated.ScrollView
@@ -316,14 +344,22 @@ export default function ProfileScreen() {
       showsVerticalScrollIndicator={false}
     >
       {/* Room for the profile header, which sits fixed behind the page (above the ScrollView). */}
-      {/* It holds the header's controls, since the header itself sits behind the page: Edit at the top right, and the
-          avatar, which opens the same sheet. */}
+      {/* It holds the header's controls, since the header itself sits behind the page: the Edit Profile button in the
+          room left for it under the header's text (it fades as the page scrolls), and the avatar, which opens the same
+          sheet. */}
       <View style={{ height: headerH + 16 }}>
         <Pressable style={styles.avatarHit} onPress={() => setEditOpen(true)} accessibilityLabel="Edit profile" />
-        <Pressable style={styles.editBtn} onPress={() => { Haptics.selectionAsync(); setEditOpen(true); }} hitSlop={8} accessibilityLabel="Edit profile">
-          <Pencil size={13} color="#374151" strokeWidth={2.4} />
-          <Text style={styles.editTxt}>Edit</Text>
-        </Pressable>
+        <Animated.View style={[styles.editWrap, { top: headerH - EDIT_H }, editFade]}>
+          <Pressable
+            style={({ pressed }) => [styles.editBtn, pressed && { opacity: 0.7 }]}
+            onPress={() => { Haptics.selectionAsync(); setEditOpen(true); }}
+            hitSlop={6}
+            accessibilityLabel="Edit profile"
+          >
+            <Pencil size={14} color="#111827" strokeWidth={2.4} />
+            <Text style={styles.editTxt}>Edit Profile</Text>
+          </Pressable>
+        </Animated.View>
       </View>
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
@@ -393,6 +429,10 @@ export default function ProfileScreen() {
       </View>
       </View>
 
+      {/* Everything the selector controls (the map and the sections) can be swiped sideways to the next or previous
+          level; it leans a little with the finger while it is dragged. */}
+      <GestureDetector gesture={levelSwipe}>
+      <Animated.View collapsable={false} style={swipeStyle}>
       {/* ── The map, its own card under the selector ── */}
       <View style={styles.mapCard}>
 
@@ -672,6 +712,8 @@ export default function ProfileScreen() {
           )}
         </View>
       )}
+      </Animated.View>
+      </GestureDetector>
     </Animated.ScrollView>
     <EditProfileSheet visible={editOpen} onClose={() => setEditOpen(false)} />
     <WorldMapModal
@@ -706,7 +748,7 @@ function CountryChips({ countries, total, selected, query, onSelect, onClearQuer
   const fits = query ? countries.filter(c => wordMatch(c.name, query)) : [];
   const shown = fits.length ? countries.filter(c => fits.includes(c) || c.code === selected) : countries;
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}
+    <GHScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}
       keyboardShouldPersistTaps="handled">
       {[{ code: null as string | null, name: 'All', count: total }, ...shown].map(c => {
         const on = selected === c.code;
@@ -725,7 +767,7 @@ function CountryChips({ countries, total, selected, query, onSelect, onClearQuer
           </Pressable>
         );
       })}
-    </ScrollView>
+    </GHScrollView>
   );
 }
 
@@ -745,6 +787,8 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 
 // The pinned bar's top strip, holding its small avatar and name.
 const COMPACT_H = 40;
+// The Edit Profile button's height.
+const EDIT_H = 34;
 // How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
 const FADE = 36;
 // The pinned bar's tab row height.
@@ -761,12 +805,14 @@ const styles = StyleSheet.create({
   profileHandle: { fontSize: 14, fontWeight: '600', color: '#6B7280', marginTop: 1 },
   // Over the header's avatar (88 pt, centred at the top), in the page's room for the header.
   avatarHit:   { position: 'absolute', top: 0, alignSelf: 'center', width: 88, height: 88, borderRadius: 44 },
+  // The Edit Profile button: a white pill with a pencil, centred under the name.
+  editWrap:    { position: 'absolute', left: 0, right: 0, alignItems: 'center' },
   editBtn:     {
-    position: 'absolute', top: 0, right: 16, flexDirection: 'row', alignItems: 'center', gap: 5,
-    paddingHorizontal: 11, paddingVertical: 6, borderRadius: 14, backgroundColor: 'white',
-    borderWidth: 1, borderColor: '#E5E7EB',
+    height: EDIT_H, flexDirection: 'row', alignItems: 'center', gap: 7, paddingHorizontal: 18, borderRadius: EDIT_H / 2,
+    backgroundColor: 'white', borderWidth: 1, borderColor: '#D1D5DB',
+    shadowColor: '#000', shadowOpacity: 0.06, shadowRadius: 4, shadowOffset: { width: 0, height: 1 },
   },
-  editTxt:     { fontSize: 13, fontWeight: '600', color: '#374151' },
+  editTxt:     { fontSize: 14, fontWeight: '700', color: '#111827' },
   // The pinned bar's own small avatar and name, in its top strip (COMPACT_H tall).
   compactHeader: {
     position: 'absolute', top: 0, left: 16, right: 16, height: COMPACT_H,
