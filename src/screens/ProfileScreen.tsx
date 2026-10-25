@@ -7,7 +7,7 @@ import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
-import { SPOTS, spotCountry, spotCountryCode } from '../data/spots';
+import { SPOTS } from '../data/spots';
 // Country outlines for My World: Natural Earth 1:50m admin-0 (public domain), simplified, in the Miller projection as SVG
 // paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
@@ -52,18 +52,26 @@ export default function ProfileScreen() {
   // My World shows one level at a time (the counts at its top choose it): the visited countries filled in, or a dot per
   // visited destination or spot. Top Countries follows it: ranked by visited spots on Spots, by destinations otherwise.
   const [worldMode, setWorldMode] = useState<WorldMode>('countries');
-  const topMode: 'destinations' | 'spots' = worldMode === 'spots' ? 'spots' : 'destinations';
+  // Top Countries (on Countries): ranked by visited destinations.
   const topCountries = useMemo(() => {
     const by = new Map<string, { country: string; code: string; count: number }>();
-    const add = (code: string | undefined, country: string | undefined) => {
-      if (!code || !country) return;
-      const row = by.get(code) ?? { country, code, count: 0 };
-      row.count += 1; by.set(code, row);
-    };
-    if (topMode === 'destinations') for (const d of visitedDests) add(d.countryCode, d.country);
-    else for (const sp of visitedSpots) add(spotCountryCode(sp), spotCountry(sp));
+    for (const d of visitedDests) {
+      const row = by.get(d.countryCode) ?? { country: d.country, code: d.countryCode, count: 0 };
+      row.count += 1; by.set(d.countryCode, row);
+    }
     return [...by.values()].sort((x, y) => y.count - x.count || x.country.localeCompare(y.country)).slice(0, 8);
-  }, [topMode, visitedDests, visitedSpots]);
+  }, [visitedDests]);
+  // Top Destinations (on Destinations): every destination with a visited spot, ranked by how many of its spots are visited.
+  const topDestinations = useMemo(() => {
+    const n = new Map<string, number>();
+    for (const sp of visitedSpots) if (sp.destinationId) n.set(sp.destinationId, (n.get(sp.destinationId) ?? 0) + 1);
+    return DESTINATIONS.filter(d => n.has(d.id)).map(d => ({ dest: d, count: n.get(d.id)! }))
+      .sort((x, y) => y.count - x.count || x.dest.name.localeCompare(y.dest.name));
+  }, [visitedSpots]);
+  const maxDestCount = topDestinations[0]?.count ?? 1;
+  // The Explored lists for destinations and spots, alphabetical.
+  const exploredDests = useMemo(() => [...visitedDests].sort((x, y) => x.name.localeCompare(y.name)), [visitedDests]);
+  const exploredSpots = useMemo(() => [...visitedSpots].sort((x, y) => x.name.localeCompare(y.name)), [visitedSpots]);
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
   // Countries Explored: tapping a flag shows its country's name in a small bubble above it for a moment.
@@ -151,6 +159,8 @@ export default function ProfileScreen() {
         </View>
       </View>
 
+      {/* Everything below follows the level chosen in My World's header. */}
+      {worldMode === 'countries' && (<>
       {/* ── Countries explored ──────────────────────────────────────── */}
       <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
         <View style={styles.cardHeaderRow}>
@@ -181,15 +191,12 @@ export default function ProfileScreen() {
         )}
       </View>
       {/* ── Top Countries ───────────────────────────────────────────── */}
-      {(visitedDests.length > 0 || visitedSpots.length > 0) && (
+      {visitedDests.length > 0 && (
         <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Countries</Text>
-            <Text style={styles.topBy}>{topMode === 'spots' ? 'by spots' : 'by destinations'}</Text>
+            <Text style={styles.topBy}>by destinations</Text>
           </View>
-          {topCountries.length === 0 && (
-            <Text style={styles.topEmpty}>No {topMode} visited yet.</Text>
-          )}
           {topCountries.map(({ country, count, code }) => (
             <View key={code} style={styles.countryRow}>
               <CircleFlag countryCode={code} size={22} />
@@ -198,10 +205,79 @@ export default function ProfileScreen() {
                 <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
               </View>
               <Text style={styles.countryCount}>
-                {count} {topMode === 'destinations' ? (count === 1 ? 'dest' : 'dests') : (count === 1 ? 'spot' : 'spots')}
+                {count} {count === 1 ? 'dest' : 'dests'}
               </Text>
             </View>
           ))}
+        </View>
+      )}
+      </>)}
+
+      {/* ── Destinations: Destinations Explored, Top Destinations (by visited spots) ── */}
+      {worldMode === 'destinations' && (<>
+        <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+          <View style={styles.cardHeaderRow}>
+            <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
+            <Text style={styles.cardBadge}>{exploredDests.length}</Text>
+          </View>
+          {exploredDests.length === 0 ? (
+            <Text style={styles.topEmpty}>No destinations visited yet.</Text>
+          ) : (
+            <ScrollView style={styles.exploredScroll} nestedScrollEnabled showsVerticalScrollIndicator={exploredDests.length > 24}>
+              <View style={styles.chipWrap}>
+                {exploredDests.map(d => (
+                  <View key={d.id} style={styles.chip}>
+                    <CircleFlag countryCode={d.countryCode} size={16} />
+                    <Text style={styles.chipTxt} numberOfLines={1}>{d.name}</Text>
+                  </View>
+                ))}
+              </View>
+            </ScrollView>
+          )}
+        </View>
+        {topDestinations.length > 0 && (
+          <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+            <View style={styles.cardHeaderRow}>
+              <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Destinations</Text>
+              <Text style={styles.topBy}>by spots</Text>
+            </View>
+            <ScrollView style={styles.topScroll} nestedScrollEnabled showsVerticalScrollIndicator={topDestinations.length > 8}>
+              {topDestinations.map(({ dest, count }) => (
+                <View key={dest.id} style={styles.countryRow}>
+                  <CircleFlag countryCode={dest.countryCode} size={22} />
+                  <Text style={[styles.countryName, styles.destName]} numberOfLines={1}>{dest.name}</Text>
+                  <View style={styles.countryBarTrack}>
+                    <View style={[styles.countryBarFill, { width: `${(count / maxDestCount) * 100}%` }]} />
+                  </View>
+                  <Text style={styles.countryCount}>{count} {count === 1 ? 'spot' : 'spots'}</Text>
+                </View>
+              ))}
+            </ScrollView>
+          </View>
+        )}
+      </>)}
+
+      {/* ── Spots: Spots Explored ── */}
+      {worldMode === 'spots' && (
+        <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
+          <View style={styles.cardHeaderRow}>
+            <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
+            <Text style={styles.cardBadge}>{exploredSpots.length}</Text>
+          </View>
+          {exploredSpots.length === 0 ? (
+            <Text style={styles.topEmpty}>No spots visited yet.</Text>
+          ) : (
+            <ScrollView style={styles.exploredScroll} nestedScrollEnabled showsVerticalScrollIndicator={exploredSpots.length > 24}>
+              <View style={styles.chipWrap}>
+                {exploredSpots.map(sp => (
+                  <View key={sp.id} style={styles.chip}>
+                    <Text style={styles.chipIcon}>{sp.icon}</Text>
+                    <Text style={styles.chipTxt} numberOfLines={1}>{sp.name}</Text>
+                  </View>
+                ))}
+              </View>
+            </ScrollView>
+          )}
         </View>
       )}
 
@@ -256,6 +332,16 @@ const styles = StyleSheet.create({
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
   topBy:         { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
+  // Destinations and Spots Explored: name chips that wrap, in a box that scrolls once it is full.
+  exploredScroll: { maxHeight: 232 },
+  chipWrap:   { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
+  chip:       { flexDirection: 'row', alignItems: 'center', gap: 6, maxWidth: '100%',
+                paddingLeft: 6, paddingRight: 10, paddingVertical: 5, borderRadius: 14, backgroundColor: '#F3F4F6' },
+  chipTxt:    { fontSize: 13, fontWeight: '600', color: '#374151', flexShrink: 1 },
+  chipIcon:   { fontSize: 13 },
+  // Top Destinations: up to about eight rows, then it scrolls.
+  topScroll:  { maxHeight: 300 },
+  destName:   { width: 110 },
 
   // Top Countries
   countryRow: {
