@@ -122,7 +122,7 @@ import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec }
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
 import SpotPhotoImages, { spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
-import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED, SPOT_SELECTED_GLOW, GLOW_MARGIN } from '../components/Map/SpotPinImages';
+import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED, SPOT_SELECTED_GLOW, SPOT_SELECTED_GLOW_DARK, GLOW_MARGIN } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -5585,7 +5585,7 @@ const destItems = useMemo((): DestItem[] =>
             belowLayerID="destStampCircles"
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
-              iconImage: SPOT_SELECTED_GLOW,
+              iconImage: mapType === 'satellite' ? SPOT_SELECTED_GLOW_DARK : SPOT_SELECTED_GLOW,
               iconAnchor: 'bottom',
               iconOffset: [0, GLOW_MARGIN],
               iconAllowOverlap: true,

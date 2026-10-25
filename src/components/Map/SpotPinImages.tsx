@@ -15,6 +15,8 @@ export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
 // rather than a disc behind the bubble. GLOW_MARGIN is how far it reaches past the pin; the layer shifts the image down by
 // it so its tip sits on the pin's tip (iconOffset).
 export const SPOT_SELECTED_GLOW = 'spotselglow';
+// The same glow in black, for the satellite map, where white would be lost on bright imagery and black reads better.
+export const SPOT_SELECTED_GLOW_DARK = 'spotselglow:dark';
 export const GLOW_MARGIN = 6;
 
 // A little over a third of the photo pin's size (SpotMarker: a 28pt bubble, 10pt tail), same geometry, white
@@ -70,14 +72,13 @@ const G_W = G_R * 2 + G_PAD * 2 + GLOW_MARGIN * 2, G_H = G_R * 2 + 10 + G_PAD * 
 const G_CX = GLOW_MARGIN + G_PAD + G_R, G_CY = GLOW_MARGIN + G_PAD + G_R;
 const GLOW_PATH = `M ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} L ${G_CX} ${G_CY + G_TIP_D} L ${G_CX + G_TAN_X} ${G_CY + G_TAN_Y} `
   + `A ${G_R} ${G_R} 0 1 0 ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} Z`;
-const GLOW_COLOR = '#FFFFFF';
 // Outermost first; each stroke is centred on the outline, so it reaches half its width past the pin.
 // Nine thin steps rather than a few wide ones, so the falloff reads as a soft blur, not bands; together they reach about the
 // old disc glow's 0.6 next to the pin.
 // Widths up to twice the margin, so the outermost reaches the image's edge.
 const GLOW_STROKES = [9, 8, 7, 6, 5, 4, 3, 2, 1].map(k => ({ w: (GLOW_MARGIN * 2 * k) / 9, o: 0.11 }));
 
-const SelectedGlow = memo(function SelectedGlow() {
+const SelectedGlow = memo(function SelectedGlow({ name, color }: { name: string; color: string }) {
   const imageRef = useRef<{ refresh: () => void } | null>(null);
   useEffect(() => {
     const t1 = setTimeout(() => imageRef.current?.refresh(), 60);
@@ -85,11 +86,11 @@ const SelectedGlow = memo(function SelectedGlow() {
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
   return (
-    <MapboxGL.Image name={SPOT_SELECTED_GLOW} ref={imageRef as any}>
+    <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={{ width: G_W, height: G_H }}>
         <Svg width={G_W} height={G_H}>
           {GLOW_STROKES.map(({ w, o }) => (
-            <Path key={w} d={GLOW_PATH} fill={GLOW_COLOR} fillOpacity={o} stroke={GLOW_COLOR} strokeOpacity={o}
+            <Path key={w} d={GLOW_PATH} fill={color} fillOpacity={o} stroke={color} strokeOpacity={o}
               strokeWidth={w} strokeLinejoin="round" />
           ))}
         </Svg>
@@ -103,7 +104,8 @@ export default memo(function SpotPinImages() {
     <MapboxGL.Images>
       <MiniPin name={SPOT_MINI_PIN_UNVISITED} visited={false} />
       <MiniPin name={SPOT_MINI_PIN_VISITED} visited />
-      <SelectedGlow />
+      <SelectedGlow name={SPOT_SELECTED_GLOW} color="#FFFFFF" />
+      <SelectedGlow name={SPOT_SELECTED_GLOW_DARK} color="#000000" />
     </MapboxGL.Images>
   );
 });
