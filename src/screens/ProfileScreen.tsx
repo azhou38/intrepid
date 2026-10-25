@@ -538,11 +538,12 @@ export default function ProfileScreen() {
       {worldMode === 'destinations' && (<>
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
-            <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
-            <View style={styles.headerRight}>
-              {destSearchable && <SearchToggle open={destSearchOpen} onPress={() => toggleSearch(destSearchOpen, setDestSearchOpen, setDestQuery)} />}
-              <Text style={styles.cardBadge}>{exploredDests.length}</Text>
+            {/* The title with its count beside it; the search's magnifier at the right. */}
+            <View style={styles.titleWithCount}>
+              <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
+              <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredDests.length}</Text></View>
             </View>
+            {destSearchable && <SearchToggle open={destSearchOpen} onPress={() => toggleSearch(destSearchOpen, setDestSearchOpen, setDestQuery)} />}
           </View>
           {exploredDests.length === 0 ? (
             <Text style={styles.topEmpty}>No destinations visited yet.</Text>
@@ -626,11 +627,11 @@ export default function ProfileScreen() {
       {worldMode === 'spots' && (
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
-            <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
-            <View style={styles.headerRight}>
-              {spotSearchable && <SearchToggle open={spotSearchOpen} onPress={() => toggleSearch(spotSearchOpen, setSpotSearchOpen, setSpotQuery)} />}
-              <Text style={styles.cardBadge}>{exploredSpots.length}</Text>
+            <View style={styles.titleWithCount}>
+              <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
+              <View style={styles.countPill}><Text style={styles.countPillTxt}>{exploredSpots.length}</Text></View>
             </View>
+            {spotSearchable && <SearchToggle open={spotSearchOpen} onPress={() => toggleSearch(spotSearchOpen, setSpotSearchOpen, setSpotQuery)} />}
           </View>
           {exploredSpots.length === 0 ? (
             <Text style={styles.topEmpty}>No spots visited yet.</Text>
@@ -894,7 +895,10 @@ const styles = StyleSheet.create({
   },
   cardTitle:  { fontSize: 15, fontWeight: '700', color: '#111827', marginBottom: 12 },
   cardBadge:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
-  headerRight: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  // An Explored section's title with its count in an indigo pill right after it.
+  titleWithCount: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
+  countPill:    { minWidth: 26, height: 22, paddingHorizontal: 8, borderRadius: 11, backgroundColor: '#EEF2FF', alignItems: 'center', justifyContent: 'center' },
+  countPillTxt: { fontSize: 13, fontWeight: '800', color: '#4F46E5' },
   searchToggle: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: '#F3F4F6' },
 
   // My World
