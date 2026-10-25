@@ -7,7 +7,7 @@ import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, u
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-// The chips' sideways scroller is gesture-handler's, so it takes its drags before the sections' level swipe.
+// Top Countries' tab swipe, and the chips' sideways scroller (gesture-handler's, so the two cooperate).
 import { Gesture, GestureDetector, ScrollView as GHScrollView } from 'react-native-gesture-handler';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
@@ -282,31 +282,9 @@ export default function ProfileScreen() {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setWorldMode(mode);
   };
-  // A sideways swipe over the sections moves to the next (leftward) or previous level. It only starts once the finger
-  // has gone 25 pt sideways, and fails on a vertical move first, so scrolling the page is unaffected; the chips' own
-  // sideways scroller takes its drags first.
-  // The gesture is made once, so it calls through a ref to this render's stepMode (and selectMode).
-  const stepMode = (dir: number) => {
-    const i = WORLD_MODES.findIndex(m => m.mode === worldMode) + dir;
-    if (i >= 0 && i < WORLD_MODES.length) selectMode(WORLD_MODES[i].mode);
-  };
-  const stepRef = useRef(stepMode);
-  stepRef.current = stepMode;
-  const callStep = useRef((dir: number) => stepRef.current(dir)).current;
-  const swipeXSV = useSharedValue(0);
-  const levelSwipe = useMemo(() => Gesture.Pan()
-    .activeOffsetX([-25, 25])
-    .failOffsetY([-12, 12])
-    .onUpdate(e => { swipeXSV.value = e.translationX * 0.2; })
-    .onEnd(e => {
-      if (Math.abs(e.translationX) > 60 || Math.abs(e.velocityX) > 600) runOnJS(callStep)(e.translationX < 0 ? 1 : -1);
-    })
-    .onFinalize(() => { swipeXSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }); }),
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  []);
-  const swipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: swipeXSV.value }] }));
-  // Top Countries' own tabs (ranked by destinations or by spots) swipe the same way inside its box: left to Spots,
-  // right to Destinations. A swipe that starts in the box is the box's, not the level's (it blocks levelSwipe).
+  // Top Countries' own tabs (ranked by destinations or by spots) can be swiped inside its box: left to Spots, right to
+  // Destinations. It only starts once the finger has gone 25 pt sideways, and fails on a vertical move first, so
+  // scrolling the page is unaffected. Swiping elsewhere on the page does nothing.
   const pickTopRank = (m: 'destinations' | 'spots') => {
     if (m === topRank) return;
     Haptics.selectionAsync();
@@ -320,14 +298,13 @@ export default function ProfileScreen() {
   const topSwipe = useMemo(() => Gesture.Pan()
     .activeOffsetX([-25, 25])
     .failOffsetY([-12, 12])
-    .blocksExternalGesture(levelSwipe)
     .onUpdate(e => { topSwipeXSV.value = e.translationX * 0.2; })
     .onEnd(e => {
       if (Math.abs(e.translationX) > 60 || Math.abs(e.velocityX) > 600) runOnJS(callTopRank)(e.translationX < 0);
     })
     .onFinalize(() => { topSwipeXSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }); }),
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  [levelSwipe]);
+  []);
   const topSwipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: topSwipeXSV.value }] }));
 
   return (
@@ -453,10 +430,6 @@ export default function ProfileScreen() {
       </View>
       </View>
 
-      {/* Everything the selector controls (the map and the sections) can be swiped sideways to the next or previous
-          level; it leans a little with the finger while it is dragged. */}
-      <GestureDetector gesture={levelSwipe}>
-      <Animated.View collapsable={false} style={swipeStyle}>
       {/* ── The map, its own card under the selector ── */}
       <View style={styles.mapCard}>
 
@@ -738,8 +711,6 @@ export default function ProfileScreen() {
           )}
         </View>
       )}
-      </Animated.View>
-      </GestureDetector>
     </Animated.ScrollView>
     <EditProfileSheet visible={editOpen} onClose={() => setEditOpen(false)} />
     <WorldMapModal
