@@ -71,13 +71,22 @@ export default function ProfileScreen() {
   // The selector's sliding pill: levelSV is the selected item's index (animated between them), selectorWSV the row's inner
   // width (three equal items and two 1 pt dividers).
   const levelSV = useSharedValue(WORLD_MODES.findIndex(m => m.mode === 'countries'));
-  // Once the selector is pinned (the page has scrolled past where it sits), a hairline and a soft shadow fade in under
-  // it, so it reads as a bar that stays while the sections slide beneath.
+  // Once the selector is pinned (the page has scrolled past where it sits), the bar fills in: its background, a small
+  // centred avatar and name, and a hairline and soft shadow under it, so it reads as a bar that stays while the sections
+  // slide beneath. Before that its top strip is see-through, over the bottom of the full profile header.
   const scrollSV = useSharedValue(0);
   const stickyYSV = useSharedValue(0);
+  const stuckT = () => {
+    'worklet';
+    return Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
+  };
   const stuckStyle = useAnimatedStyle(() => {
-    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 2) / 10));
-    return { borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
+    const t = stuckT();
+    return { backgroundColor: `rgba(249,250,251,${t})`, borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
+  });
+  const compactStyle = useAnimatedStyle(() => {
+    const t = stuckT();
+    return { opacity: t, transform: [{ translateY: (1 - t) * 6 }] };
   });
   const selectorWSV = useSharedValue(0);
   const pillStyle = useAnimatedStyle(() => {
@@ -191,25 +200,40 @@ export default function ProfileScreen() {
       onScrollBeginDrag={() => setFlagTip(null)}
       onScroll={e => { scrollSV.value = e.nativeEvent.contentOffset.y; }}
       scrollEventThrottle={16}
-      stickyHeaderIndices={[0]}
+      stickyHeaderIndices={[1]}
       keyboardDismissMode="on-drag"
       keyboardShouldPersistTaps="handled"
-      contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
+      contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
       showsVerticalScrollIndicator={false}
     >
-      {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
-          every section below show; it stays pinned at the top as they scroll. ── */}
-      {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
-          component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
-      <View onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
-      <Animated.View style={[styles.selectorSticky, stuckStyle]}>
-      {/* ── Profile header: the avatar and name, small and centred over the selector ── */}
+      {/* ── Profile header ──────────────────────────────────────────── */}
       <View style={styles.profileHeader}>
         <View style={styles.avatar}>
           <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
         </View>
-        <Text style={styles.profileName} numberOfLines={1}>{userName}</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.profileName}>{userName}</Text>
+          <Text style={styles.profileSub}>
+            {stats.firstVisitDate
+              ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
+              : 'World Traveler'}
+          </Text>
+        </View>
       </View>
+
+      {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
+          every section below show; it stays pinned at the top as they scroll. ── */}
+      {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
+          component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
+      <View style={{ marginTop: -COMPACT_H }} onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
+      <Animated.View style={[styles.selectorSticky, stuckStyle]}>
+        {/* The small centred avatar and name, shown only while the bar is pinned. */}
+        <Animated.View pointerEvents="none" style={[styles.compactHeader, compactStyle]}>
+          <View style={styles.compactAvatar}>
+            <Text style={styles.compactAvatarText}>{userName.charAt(0).toUpperCase()}</Text>
+          </View>
+          <Text style={styles.compactName} numberOfLines={1}>{userName}</Text>
+        </Animated.View>
 
         <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
           {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
@@ -542,26 +566,43 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
   return <Animated.View style={[styles.statDivider, a]} />;
 }
 
+// The pinned bar's top strip, holding its small avatar and name.
+const COMPACT_H = 40;
+
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
 
   // Profile header
   profileHeader: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-    marginBottom: 12,
+    flexDirection: 'row', alignItems: 'center', gap: 14,
+    marginHorizontal: 16, marginBottom: 16,
   },
   avatar: {
-    width: 28, height: 28, borderRadius: 14,
+    width: 56, height: 56, borderRadius: 28,
     backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
   },
-  avatarText:  { fontSize: 13, fontWeight: '800', color: 'white' },
-  profileName: { fontSize: 16, fontWeight: '700', color: '#111827', flexShrink: 1 },
+  avatarText:  { fontSize: 22, fontWeight: '800', color: 'white' },
+  profileName: { fontSize: 22, fontWeight: '800', color: '#111827' },
+  profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2 },
+  // The pinned bar's own small avatar and name, in its top strip (COMPACT_H tall).
+  compactHeader: {
+    position: 'absolute', top: 0, left: 16, right: 16, height: COMPACT_H,
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+  },
+  compactAvatar: {
+    width: 26, height: 26, borderRadius: 13,
+    backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
+  },
+  compactAvatarText: { fontSize: 12, fontWeight: '800', color: 'white' },
+  compactName: { fontSize: 16, fontWeight: '700', color: '#111827', flexShrink: 1 },
 
   // Stats row
   // The level selector: pinned while scrolling (on the page colour, so nothing shows round its corners). The selected
   // count sits on a dark pill.
+  // Its top strip (room for the small avatar and name; the sticky View's negative margin) overlaps the bottom of the
+  // full header until it pins, so the page keeps its old spacing; the background fills in only once pinned (stuckStyle).
   selectorSticky: {
-    backgroundColor: '#F9FAFB', paddingHorizontal: 16, paddingTop: 10, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
+    paddingTop: COMPACT_H, paddingHorizontal: 16, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
     shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowRadius: 8, shadowOpacity: 0,
   },
   statsHeader: {
