@@ -1459,10 +1459,6 @@ isVisited ? (
           {/* Heading — indicates you're browsing the spots within this destination */}
           <View style={st.carHeader}>
             <View style={{ flex: 1 }}>
-              {/* One heading line: "SPOT 3 / 12" (or "NEAR 3 / 12" for the nearby loop), the counter in the same type. */}
-              <Text style={st.carEyebrow}>
-                {nearLabel && nearEyebrow === 'NEAR' ? 'NEAR' : 'SPOT'}{spots.length > 1 ? ` ${activeIndex + 1} / ${spots.length}` : ''}
-              </Text>
               {onTitlePress ? (
                 // The destination's name doubles as the back button: "‹ Canberra" opens Canberra's sheet.
                 <Pressable
@@ -1479,6 +1475,7 @@ isVisited ? (
                 <Text style={st.carDest} numberOfLines={2} ellipsizeMode="tail">{nearLabel ?? (destination ? destination.name : spotCountry(activeSpot))}</Text>
               )}
             </View>
+            {spots.length > 1 && <Text style={st.carCounter}>{activeIndex + 1} / {spots.length}</Text>}
             {!!onGoToList && (
               <Pressable
                 style={st.carListBtn}
@@ -1802,11 +1799,11 @@ const st = StyleSheet.create({
   pillRow: { alignItems: 'center', paddingTop: 8, paddingBottom: 3 },
   pill:    { width: 36, height: 4, borderRadius: 2, backgroundColor: 'rgba(0,0,0,0.18)' },
   carHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingTop: 3, paddingBottom: 9 },
-  carEyebrow: { fontSize: 10, fontWeight: '800', color: '#9CA3AF', letterSpacing: 1.3, marginBottom: 2 },
   carDest:    { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
   carDestBtn: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', marginLeft: -12 },
   // The chevron sits 2 pt further left than the title (-14 vs -12); the extra right margin keeps the title where it was.
   carDestChevron: { marginLeft: -2, marginRight: 3 },
+  carCounter: { fontSize: 13, fontWeight: '700', color: '#9CA3AF', marginLeft: 12 },
   carListBtn:    { flexDirection: 'row', alignItems: 'center', gap: 4,
                    marginLeft: 12, paddingHorizontal: 8, paddingVertical: 5,
                    borderRadius: 8, borderWidth: 1, borderColor: '#E5E7EB' },
