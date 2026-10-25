@@ -11,7 +11,7 @@ import MapboxGL from '@rnmapbox/maps';
 export const SPOT_MINI_PIN_UNVISITED = 'spotmini:0';
 export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
 // The selected spot's glow: the photo pin's own teardrop outline (SpotPhotoImages: a 28pt bubble, 10pt tail, 2pt padding)
-// traced in soft black strokes, wider and fainter outward, so the shading runs evenly round the whole pin, tail included,
+// traced in soft white strokes, wider and fainter outward, so the shading runs evenly round the whole pin, tail included,
 // rather than a disc behind the bubble. GLOW_MARGIN is how far it reaches past the pin; the layer shifts the image down by
 // it so its tip sits on the pin's tip (iconOffset).
 export const SPOT_SELECTED_GLOW = 'spotselglow';
@@ -70,7 +70,7 @@ const G_W = G_R * 2 + G_PAD * 2 + GLOW_MARGIN * 2, G_H = G_R * 2 + 10 + G_PAD * 
 const G_CX = GLOW_MARGIN + G_PAD + G_R, G_CY = GLOW_MARGIN + G_PAD + G_R;
 const GLOW_PATH = `M ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} L ${G_CX} ${G_CY + G_TIP_D} L ${G_CX + G_TAN_X} ${G_CY + G_TAN_Y} `
   + `A ${G_R} ${G_R} 0 1 0 ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} Z`;
-const GLOW_COLOR = '#000000';
+const GLOW_COLOR = '#FFFFFF';
 // Outermost first; each stroke is centred on the outline, so it reaches half its width past the pin.
 // Nine thin steps rather than a few wide ones, so the falloff reads as a soft blur, not bands; together they reach about the
 // old disc glow's 0.6 next to the pin.
