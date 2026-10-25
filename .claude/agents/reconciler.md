@@ -1,6 +1,6 @@
 ---
 name: reconciler
-description: Pipeline C step 5. Couples a destination's why-visit reasons (two to four) to their photos and applies the finished entries and agreed photos to src/data.
+description: Pipeline C step 5. Couples a destination's why-visit reasons (two to four; general experiences, or an iconic attraction by name: WRITING.md → whyVisit) to their photos and applies the finished entries and agreed photos to src/data.
 tools: Bash, Read, Write, Edit
 model: haiku
 ---
