@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable,
 } from 'react-native';
@@ -12,6 +12,9 @@ import { SPOTS, spotCountry, spotCountryCode } from '../data/spots';
 // paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
+import { ALL_COUNTRIES } from '../data/countries';
+
+const COUNTRY_NAME = new Map(ALL_COUNTRIES.map(c => [c.code, c.name]));
 
 // My World's map: the whole world drawn as SVG (a Mapbox view cannot zoom out far enough to fit it in the card), in the
 // Miller projection (a 2:1 wall-map shape: a flat latitude scale squashed it into a thin strip), 84° N to 58° S, at the
@@ -60,6 +63,14 @@ export default function ProfileScreen() {
     return [...by.values()].sort((x, y) => y.count - x.count || x.country.localeCompare(y.country)).slice(0, 8);
   }, [topMode, visitedDests, visitedSpots]);
   const maxCountryCount = topCountries[0]?.count ?? 1;
+
+  // Countries Explored: tapping a flag shows its country's name in a small bubble above it for a moment.
+  const [flagTip, setFlagTip] = useState<string | null>(null);
+  useEffect(() => {
+    if (!flagTip) return;
+    const t = setTimeout(() => setFlagTip(null), 2500);
+    return () => clearTimeout(t);
+  }, [flagTip]);
 
   // My World shows one level at a time: the visited countries filled in, or a dot per visited destination or spot.
   const [worldMode, setWorldMode] = useState<WorldMode>('countries');
@@ -156,9 +167,22 @@ export default function ProfileScreen() {
         {stats.visitedCountryCodes.length > 0 && (
           <View style={styles.flagGrid}>
             {stats.visitedCountryCodes.map(code => (
-              <View key={code} style={styles.flagItem}>
+              <Pressable
+                key={code}
+                style={[styles.flagItem, flagTip === code && { zIndex: 10 }]}
+                onPress={() => { Haptics.selectionAsync(); setFlagTip(t => (t === code ? null : code)); }}
+                hitSlop={3}
+              >
                 <CircleFlag countryCode={code} size={24} />
-              </View>
+                {flagTip === code && (
+                  <View pointerEvents="none" style={styles.flagTipWrap}>
+                    <View style={styles.flagTip}>
+                      <Text style={styles.flagTipTxt} numberOfLines={1}>{COUNTRY_NAME.get(code) ?? code}</Text>
+                    </View>
+                    <View style={styles.flagTipArrow} />
+                  </View>
+                )}
+              </Pressable>
             ))}
           </View>
         )}
@@ -278,4 +302,12 @@ const styles = StyleSheet.create({
   // Flag grid
   flagGrid:  { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   flagItem:  { alignItems: 'center' },
+  // The name bubble over a tapped flag: centred above it, with a small pointer underneath.
+  flagTipWrap:  { position: 'absolute', bottom: 30, left: -80, right: -80, alignItems: 'center' },
+  flagTip:      { backgroundColor: '#111827', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5, maxWidth: 184 },
+  flagTipTxt:   { fontSize: 12, fontWeight: '600', color: 'white' },
+  flagTipArrow: {
+    width: 0, height: 0, borderLeftWidth: 5, borderRightWidth: 5, borderTopWidth: 5,
+    borderLeftColor: 'transparent', borderRightColor: 'transparent', borderTopColor: '#111827',
+  },
 });
