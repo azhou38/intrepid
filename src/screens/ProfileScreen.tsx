@@ -178,25 +178,41 @@ export default function ProfileScreen() {
     }
     return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
   }, [visitedDests]);
-  // A search over them: it matches a destination's name or its country, and narrows the country filters too.
+  // A search over them, by destination name only. A country is a filter, not text: typing narrows the country chips to
+  // the countries it could be (suggestions to tap), and typing a whole country name applies it (searchOrCountry).
   const [destQuery, setDestQuery] = useState('');
   const q = destQuery.trim().toLowerCase();
-  const matchesQuery = (name: string, country: string) => !q || name.toLowerCase().includes(q) || country.toLowerCase().includes(q);
   const shownDests = useMemo(
-    () => exploredDests.filter(d => (!destCountry || d.countryCode === destCountry) && matchesQuery(d.name, d.country)),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    () => exploredDests.filter(d => (!destCountry || d.countryCode === destCountry) && wordMatch(d.name, q)),
     [exploredDests, destCountry, q]);
-  const shownDestCountries = useMemo(
-    () => (q ? destCountries.filter(c => c.name.toLowerCase().includes(q) || exploredDests.some(d => d.countryCode === c.code && d.name.toLowerCase().includes(q))) : destCountries),
-    [destCountries, exploredDests, q]);
   const exploredSpots = useMemo(() => [...visitedSpots].sort((x, y) => x.name.localeCompare(y.name)), [visitedSpots]);
-  // Spots Explored's search: a spot's name, its destination or its country.
+  // Spots Explored works the same way: search by a spot's name or its destination's, filter by country with chips.
+  const [spotCountryF, setSpotCountryF] = useState<string | null>(null);
+  const spotCountries = useMemo(() => {
+    const m = new Map<string, { code: string; name: string; count: number }>();
+    for (const sp of visitedSpots) {
+      const code = spotCountryCode(sp);
+      if (!code) continue;
+      const r = m.get(code) ?? { code, name: spotCountry(sp) ?? code, count: 0 };
+      r.count += 1; m.set(code, r);
+    }
+    return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
+  }, [visitedSpots]);
   const [spotQuery, setSpotQuery] = useState('');
   const sq = spotQuery.trim().toLowerCase();
-  const shownSpots = useMemo(() => !sq ? exploredSpots : exploredSpots.filter(sp => {
-    const hay = [sp.name, spotDestination(sp)?.name, spotCountry(sp)].filter(Boolean).join(' ').toLowerCase();
-    return hay.includes(sq);
-  }), [exploredSpots, sq]);
+  const shownSpots = useMemo(() => exploredSpots.filter(sp =>
+    (!spotCountryF || spotCountryCode(sp) === spotCountryF) &&
+    (wordMatch(sp.name, sq) || wordMatch(spotDestination(sp)?.name ?? '', sq))),
+  [exploredSpots, spotCountryF, sq]);
+  // Typing a whole country name (one of the chips) applies it as the filter and clears the text.
+  const searchOrCountry = (text: string, countries: { code: string; name: string }[], setText: (t: string) => void, setCountry: (c: string | null) => void) => {
+    const hit = countries.find(c => c.name.toLowerCase() === text.trim().toLowerCase());
+    if (hit) {
+      Haptics.selectionAsync();
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+      setCountry(hit.code); setText('');
+    } else setText(text);
+  };
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
   // The map opens full screen to explore (WorldMapModal), on the same level; its tap card counts per country.
@@ -466,15 +482,15 @@ export default function ProfileScreen() {
             <Text style={styles.topEmpty}>No destinations visited yet.</Text>
           ) : (
             <>
-            {/* Search: a destination or a country. Shown once there are enough to need it. */}
+            {/* Search: a destination's name (a country is picked from the chips). Shown once there are enough to need it. */}
             {(exploredDests.length > 8 || destCountries.length > 3) && (
               <View style={styles.searchBox}>
                 <Search size={15} color="#9CA3AF" />
                 <TextInput
                   style={styles.searchInput}
                   value={destQuery}
-                  onChangeText={setDestQuery}
-                  placeholder="Search destinations or countries"
+                  onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)}
+                  placeholder="Search destinations"
                   placeholderTextColor="#9CA3AF"
                   autoCorrect={false}
                   autoCapitalize="none"
@@ -490,25 +506,14 @@ export default function ProfileScreen() {
             )}
             {/* Filter by country: All, then each country with visited destinations (flag, name, count). */}
             {destCountries.length > 1 && (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}>
-                {[{ code: null as string | null, name: 'All', count: exploredDests.length }, ...shownDestCountries].map(c => {
-                  const on = destCountry === c.code;
-                  return (
-                    <Pressable key={c.code ?? 'all'} style={[styles.filterChip, on && styles.filterChipOn]} hitSlop={4}
-                      onPress={() => {
-                        Haptics.selectionAsync();
-                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-                        setDestCountry(on && c.code ? null : c.code);
-                      }}>
-                      {!!c.code && <CircleFlag countryCode={c.code} size={14} />}
-                      <Text style={[styles.filterTxt, on && styles.filterTxtOn]} numberOfLines={1}>{c.name}</Text>
-                      <Text style={[styles.filterCount, on && styles.filterTxtOn]}>{c.count}</Text>
-                    </Pressable>
-                  );
-                })}
-              </ScrollView>
+              <CountryChips countries={destCountries} total={exploredDests.length} selected={destCountry} query={q}
+                onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
             )}
-            {shownDests.length === 0 && <Text style={styles.topEmpty}>No destinations match.</Text>}
+            {shownDests.length === 0 && (
+              <Text style={styles.topEmpty}>
+                {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Tap a country above to filter by it.' : 'No destinations match.'}
+              </Text>
+            )}
             {/* One row per destination: its photo, its name, and its country with how many of its spots are visited. */}
             <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownDests.length > 5}>
               {shownDests.map((d, k) => {
@@ -578,15 +583,16 @@ export default function ProfileScreen() {
             <Text style={styles.topEmpty}>No spots visited yet.</Text>
           ) : (
             <>
-            {/* Search: a spot, a destination or a country. Shown once there are enough to need it. */}
+            {/* Search: a spot's or its destination's name (a country is picked from the chips). Shown once there are
+                enough to need it. */}
             {exploredSpots.length > 8 && (
               <View style={styles.searchBox}>
                 <Search size={15} color="#9CA3AF" />
                 <TextInput
                   style={styles.searchInput}
                   value={spotQuery}
-                  onChangeText={setSpotQuery}
-                  placeholder="Search spots, destinations or countries"
+                  onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)}
+                  placeholder="Search spots or destinations"
                   placeholderTextColor="#9CA3AF"
                   autoCorrect={false}
                   autoCapitalize="none"
@@ -599,7 +605,15 @@ export default function ProfileScreen() {
                 )}
               </View>
             )}
-            {shownSpots.length === 0 && <Text style={styles.topEmpty}>No spots match.</Text>}
+            {spotCountries.length > 1 && (
+              <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
+                onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
+            )}
+            {shownSpots.length === 0 && (
+              <Text style={styles.topEmpty}>
+                {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Tap a country above to filter by it.' : 'No spots match.'}
+              </Text>
+            )}
             {/* One row per spot, as for destinations: its photo, its name, and under it its country with a tiny flag on the
                 left, then a vertical divider and its destination (none for a standalone spot). */}
             <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownSpots.length > 5}>
@@ -658,6 +672,44 @@ export default function ProfileScreen() {
 }
 
 // A selector item's text, fading between its selected and unselected colours as the pill slides to or from it.
+// Whether `text` has a word starting with `q` ("kak" finds Kakadu, "new z" New Zealand); an empty query matches all.
+function wordMatch(text: string, q: string) {
+  return !q || (' ' + text.toLowerCase()).includes(' ' + q);
+}
+
+// An Explored list's country chips: All, then each country (flag, name, count). While the search has text, only the
+// countries whose name it could be are shown, as suggestions (all of them when it fits none); tapping one filters by it
+// and, when the text was that country's name, clears the text. The selected country always stays in the row.
+function CountryChips({ countries, total, selected, query, onSelect, onClearQuery }: {
+  countries: { code: string; name: string; count: number }[]; total: number; selected: string | null; query: string;
+  onSelect: (code: string | null) => void; onClearQuery: () => void;
+}) {
+  const fits = query ? countries.filter(c => wordMatch(c.name, query)) : [];
+  const shown = fits.length ? countries.filter(c => fits.includes(c) || c.code === selected) : countries;
+  return (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}
+      keyboardShouldPersistTaps="handled">
+      {[{ code: null as string | null, name: 'All', count: total }, ...shown].map(c => {
+        const on = selected === c.code;
+        const suggested = !!c.code && fits.some(f => f.code === c.code);
+        return (
+          <Pressable key={c.code ?? 'all'} style={[styles.filterChip, on && styles.filterChipOn]} hitSlop={4}
+            onPress={() => {
+              Haptics.selectionAsync();
+              LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+              onSelect(on && c.code ? null : c.code);
+              if (suggested && !on) onClearQuery();
+            }}>
+            {!!c.code && <CircleFlag countryCode={c.code} size={14} />}
+            <Text style={[styles.filterTxt, on && styles.filterTxtOn]} numberOfLines={1}>{c.name}</Text>
+            <Text style={[styles.filterCount, on && styles.filterTxtOn]}>{c.count}</Text>
+          </Pressable>
+        );
+      })}
+    </ScrollView>
+  );
+}
+
 function StatText({ index, level, style, on, off, children }: { index: number; level: SharedValue<number>; style: any; on: string; off: string; children: React.ReactNode }) {
   const a = useAnimatedStyle(() => ({
     color: interpolateColor(Math.min(1, Math.abs(level.value - index)), [0, 1], [on, off]),
@@ -775,7 +827,7 @@ const styles = StyleSheet.create({
   searchBox:    { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10, paddingHorizontal: 12, height: 38,
                   borderRadius: 12, backgroundColor: '#F3F4F6' },
   searchInput:  { flex: 1, fontSize: 14, color: '#111827', paddingVertical: 0 },
-  // Destinations Explored's country filter: a sideways row of chips; the chosen one is green.
+  // The Explored lists' country filter: a sideways row of chips; the chosen one is green.
   filterScroll: { marginHorizontal: -16, marginBottom: 10, flexGrow: 0 },
   filterRow:    { paddingHorizontal: 16, gap: 6 },
   filterChip:   { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 10, paddingVertical: 6,
