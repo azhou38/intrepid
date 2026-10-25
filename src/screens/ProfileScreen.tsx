@@ -541,7 +541,7 @@ export default function ProfileScreen() {
             {/* The title with its count beside it and the search's magnifier at the right; the search, once opened,
                 takes the whole line in their place. */}
             {destSearchOpen ? (
-              <FoldingSearch value={destQuery} placeholder="Search destinations"
+              <FoldingSearch value={destQuery} placeholder="Search destinations or countries"
                 onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)}
                 onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
             ) : (<>
@@ -629,7 +629,7 @@ export default function ProfileScreen() {
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
             {spotSearchOpen ? (
-              <FoldingSearch value={spotQuery} placeholder="Search spots or destinations"
+              <FoldingSearch value={spotQuery} placeholder="Search spots, destinations or countries"
                 onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)}
                 onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
             ) : (<>
