@@ -10,7 +10,7 @@ import {
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef,
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
@@ -339,7 +339,6 @@ function CountrySheet({
   const defaultTab: CountryTab = isCountryVisited ? 'visit' : 'about';
   const startTab: CountryTab = (initialTab && TAB_ORDER.includes(initialTab)) ? initialTab : defaultTab;
   const [activeTab, setActiveTab] = useState<CountryTab>(startTab);
-  const isTabSelected = (tab: CountryTab) => activeTab === tab;
   const tabSlideFor = (tab: CountryTab) => -Math.max(0, TAB_ORDER.indexOf(tab)) * W;
   const tabSlideAnim = useSharedValue(tabSlideFor(startTab));
   // A Reanimated shared value, not a plain ref — mutating a plain ref's `.current` from
@@ -349,6 +348,19 @@ function CountrySheet({
   // instantly instead of animating.
   const tabSwipeBaseSV = useSharedValue(0);
 
+  // The sliding underline, centred on each tab. The tabs differ in width (with three, About in the middle is just its label's
+  // width and the outer two are equal), so every centre follows from one measurement: the middle tab's x and width (three
+  // tabs: left centre x/2, middle x + w/2, right x + w + x/2), or the first tab's width (two equal tabs).
+  const tabRefSV = useSharedValue({ x: 0, w: 0 });
+  const tabIndicatorStyle = useAnimatedStyle(() => {
+    const n = TAB_ORDER.length, { x, w } = tabRefSV.value;
+    const centers = w === 0 ? null : n === 3 ? [x / 2, x + w / 2, x + w + x / 2] : [w / 2, w + w / 2];
+    const xs = TAB_ORDER.map((_, i) => -i * W).reverse();
+    if (!centers) {
+      return { left: `${interpolate(tabSlideAnim.value, xs, TAB_ORDER.map((_, i) => ((i + 0.5) * 100) / n).reverse(), Extrapolation.CLAMP)}%` as `${number}%` };
+    }
+    return { left: interpolate(tabSlideAnim.value, xs, centers.slice(0, n).reverse(), Extrapolation.CLAMP) };
+  });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
   }));
@@ -928,6 +940,7 @@ function CountrySheet({
           {i > 0 && <View style={st.tabDivider} />}
           <Pressable
             style={[st.tabBtn, TAB_ORDER.length === 3 && i === 1 && st.tabBtnMiddle]}
+            onLayout={i === (TAB_ORDER.length === 3 ? 1 : 0) ? e => { tabRefSV.value = { x: e.nativeEvent.layout.x, w: e.nativeEvent.layout.width }; } : undefined}
             onPress={() => {
               // Tapping a subtab from half/bottom-screen expands to full, same as
               // DestinationSheet's own tab bar — the tab bar is only fully readable at
@@ -936,20 +949,14 @@ function CountrySheet({
               switchTab(tab);
             }}
           >
-            {tab === 'destinations' ? (
-              // Count as plain text after the label — "Destinations (8)".
-              <Text style={[st.tabBtnTxt, isTabSelected('destinations') && st.tabBtnTxtActive]} numberOfLines={1}>
-                Destinations{dests.length > 0 ? ` (${dests.length})` : ''}
-              </Text>
-            ) : (
-              <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]} numberOfLines={1}>
-                {tab === 'visit' ? 'My Visit' : 'About'}
-              </Text>
-            )}
-            <TabUnderline index={i} slide={tabSlideAnim} />
+            {/* The destinations count as plain text after the label — "Destinations (8)". */}
+            <TabLabel index={i} slide={tabSlideAnim}>
+              {tab === 'destinations' ? `Destinations${dests.length > 0 ? ` (${dests.length})` : ''}` : tab === 'visit' ? 'My Visit' : 'About'}
+            </TabLabel>
           </Pressable>
         </React.Fragment>
       ))}
+      <Animated.View pointerEvents="none" style={[st.tabIndicator, tabIndicatorStyle]} />
     </>
   );
 
@@ -1288,13 +1295,13 @@ function CountrySheet({
   );
 }
 
-// The selected tab's underline: one per tab, centred under its own label (the tabs differ in width), shown in full on the
-// selected tab and cross-faded with its neighbour's as the panels are swiped between them.
-function TabUnderline({ index, slide }: { index: number; slide: SharedValue<number> }) {
+// A tab's label, grey to black as its panel slides into place: driven by the same slide as the underline, so the colour
+// changes with the swipe rather than when the tab state catches up after it.
+function TabLabel({ index, slide, children }: { index: number; slide: SharedValue<number>; children: React.ReactNode }) {
   const style = useAnimatedStyle(() => ({
-    opacity: interpolate(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], [0, 1, 0], Extrapolation.CLAMP),
+    color: interpolateColor(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], ['#9CA3AF', '#111827', '#9CA3AF']),
   }));
-  return <Animated.View pointerEvents="none" style={[st.tabUnderline, style]} />;
+  return <Animated.Text style={[st.tabBtnTxt, style]} numberOfLines={1}>{children}</Animated.Text>;
 }
 
 const st = StyleSheet.create({
@@ -1384,9 +1391,8 @@ const st = StyleSheet.create({
   tabBtn:    { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabBtnMiddle: { flex: 0, paddingHorizontal: 22 },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
-  tabBtnTxtActive: { color: '#111827' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
-  tabUnderline: { position: 'absolute', bottom: 0, alignSelf: 'center', width: 28, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
+  tabIndicator: { position: 'absolute', bottom: 0, width: 28, marginLeft: -14, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
   // ── Tab content slide track ─────────────────────────────────────────────────
   slideTrack: { overflow: 'hidden', width: W },
