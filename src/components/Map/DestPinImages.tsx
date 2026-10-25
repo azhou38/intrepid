@@ -4,7 +4,7 @@ import PinPhoto from './PinPhoto';
 import { photoSubject } from '../../utils/subjectCrop';
 import MapboxGL from '@rnmapbox/maps';
 import type { Destination } from '../../types';
-import { thumbCache, fetchWikiThumbnail } from '../../utils/photoCache';
+import { destPinPhotoUri, loadDestPinPhoto } from '../../utils/pinPhotoCache';
 import { NO_PHOTO } from '../../data/imageOverrides';
 import PhotoPlaceholder from './PhotoPlaceholder';
 
@@ -33,15 +33,14 @@ export const destPinImageName = (id: string, visited: boolean, badge: number, se
 const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSpec }) {
   const { dest, name, visited, badge, selected } = spec;
   const imageRef = useRef<{ refresh: () => void } | null>(null);
-  const [url, setUrl] = useState<string | null>(thumbCache.get(dest.id) ?? null);
+  // The photo from the disk cache when it is there (instant), else downloaded once into it (pinPhotoCache).
+  const [url, setUrl] = useState<string | null>(() => destPinPhotoUri(dest));
   useEffect(() => {
-    if (thumbCache.has(dest.id)) { setUrl(thumbCache.get(dest.id)!); return; }
+    if (url) return;
     let live = true;
-    fetchWikiThumbnail(dest.name, 120).then(u => {
-      if (u) { thumbCache.set(dest.id, u); if (live) setUrl(u); }
-    });
+    loadDestPinPhoto(dest).then(u => { if (u && live) setUrl(u); });
     return () => { live = false; };
-  }, [dest.id, dest.name]);
+  }, [dest.id]);
 
   // The snapshot is taken from the view as drawn, so give the photo a moment to land in the view first, and take a
   // second one a little later in case the first ran just before it did.
@@ -58,6 +57,12 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
     timers.current.push(setTimeout(() => imageRef.current?.refresh(), 60));
     timers.current.push(setTimeout(() => imageRef.current?.refresh(), 500));
   };
+  // Once the photo is actually showing (PinPhoto's onShown): the timed snapshots after the load could all land before the
+  // render that shows a cropped photo, busy at start-up, and the pin kept its grey disc.
+  const snapShown = () => {
+    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 30));
+    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 400));
+  };
 
   const ring = visited ? VISITED_COLOR : 'white';
   return (
@@ -66,7 +71,7 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
         <View collapsable={false} style={st.outline}>
         <View collapsable={false} style={[st.disc, { borderColor: ring }, selected && st.discSelected]}>
           {!url && NO_PHOTO.has(dest.name) && <PhotoPlaceholder icon={dest.icon} category={dest.category} size={DEST_PIN_SIZE - BORDER * 2} />}
-          {url && <PinPhoto key={tries} instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} onError={retry} resizeMode="cover" />}
+          {url && <PinPhoto key={tries} instant subject={photoSubject(dest.name)} source={{ uri: url }} style={st.photo} onLoad={snap} onShown={snapShown} onError={retry} resizeMode="cover" />}
         </View>
         </View>
         {badge > 0 && (

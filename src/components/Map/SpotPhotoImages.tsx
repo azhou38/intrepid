@@ -61,7 +61,7 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoI
         <View collapsable={false} style={[st.bubble, { borderColor: ring }]}>
           <View collapsable={false} style={st.clip}>
             {!url && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} />}
-            {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={snap} resizeMode="cover" />}
+            {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={snap} onShown={snap} resizeMode="cover" />}
           </View>
         </View>
       </View>

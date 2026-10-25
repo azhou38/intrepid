@@ -1,5 +1,7 @@
 import * as FileSystem from 'expo-file-system/legacy';
 import { SPOTS, spotPhotoTitle, type Spot } from '../data/spots';
+import { DESTINATIONS } from '../data/destinations';
+import type { Destination } from '../types';
 import { fetchWikiThumbnail, thumbCache, manifestThumbUrl } from './photoCache';
 
 // Spot pin photos kept on disk, so a destination's pins show their photos at once on every later visit (and after a
@@ -16,6 +18,7 @@ const DIR = FileSystem.cacheDirectory ? `${FileSystem.cacheDirectory}pinphotos/`
 const MAX_PARALLEL = 6;
 
 const onDisk = new Map<string, string>();       // spot id -> local file URI
+const destOnDisk = new Map<string, string>();   // destination id -> local file URI (its photo pin; see loadDestPinPhoto)
 const inFlight = new Map<string, Promise<string | null>>();
 const queue: (() => void)[] = [];
 let running = 0;
@@ -28,6 +31,12 @@ const hash = (str: string) => { let h = 5381; for (let i = 0; i < str.length; i+
 const fileFor = (spot: Spot) => {
   const url = manifestThumbUrl(spotPhotoTitle(spot), PIN_PHOTO_WIDTH) ?? spotPhotoTitle(spot);
   return `${DIR}${spot.id.replace(/[^a-zA-Z0-9_-]/g, '_')}__${hash(url)}.jpg`;
+};
+
+// A destination's pin photo: the same kind of file, prefixed so it cannot collide with a spot's.
+const destFileFor = (d: Destination) => {
+  const url = manifestThumbUrl(d.name, PIN_PHOTO_WIDTH) ?? d.name;
+  return `${DIR}dest__${d.id.replace(/[^a-zA-Z0-9_-]/g, '_')}__${hash(url)}.jpg`;
 };
 
 // Read what is already on disk once, at first use.
@@ -44,6 +53,11 @@ function init(): Promise<void> {
         const f = fileFor(sp);
         current.add(f.slice(DIR.length));
         if (names.has(f.slice(DIR.length))) onDisk.set(sp.id, f);
+      }
+      for (const d of DESTINATIONS) {
+        const f = destFileFor(d);
+        current.add(f.slice(DIR.length));
+        if (names.has(f.slice(DIR.length))) destOnDisk.set(d.id, f);
       }
       // Files of replaced photos (and of the old spot-only names) are deleted in the background.
       for (const n of names) if (!current.has(n)) FileSystem.deleteAsync(`${DIR}${n}`, { idempotent: true }).catch(() => {});
@@ -92,4 +106,38 @@ export function loadPinPhoto(spot: Spot): Promise<string | null> {
 // Start downloading these spots' pin photos now (in the given order, most important first).
 export function prefetchPinPhotos(spots: Spot[]): void {
   for (const sp of spots) if (!onDisk.has(sp.id)) loadPinPhoto(sp);
+}
+
+// Destination pin photos, kept on disk like the spots' (DestPinImages): each launch used to download every destination's
+// pin photo again, and a request refused in that start-up burst left its pin a grey disc.
+export const destPinPhotoUri = (d: Destination): string | null => destOnDisk.get(d.id) ?? null;
+const destInFlight = new Map<string, Promise<string | null>>();
+export function loadDestPinPhoto(d: Destination): Promise<string | null> {
+  const have = destOnDisk.get(d.id);
+  if (have) return Promise.resolve(have);
+  const pending = destInFlight.get(d.id);
+  if (pending) return pending;
+  const p = (async () => {
+    await init();
+    const again = destOnDisk.get(d.id);
+    if (again) return again;
+    const url = await fetchWikiThumbnail(d.name, PIN_PHOTO_WIDTH);
+    if (!url) return null;
+    if (!thumbCache.has(d.id)) thumbCache.set(d.id, url);
+    if (!DIR) return url;
+    return new Promise<string | null>(resolve => {
+      queue.push(async () => {
+        try {
+          const target = destFileFor(d);
+          const res = await FileSystem.downloadAsync(url, target);
+          if (res.status >= 200 && res.status < 300) { destOnDisk.set(d.id, target); resolve(target); }
+          else { await FileSystem.deleteAsync(target, { idempotent: true }); resolve(url); }
+        } catch { resolve(url); }
+        finally { running--; runNext(); }
+      });
+      runNext();
+    });
+  })().finally(() => destInFlight.delete(d.id));
+  destInFlight.set(d.id, p);
+  return p;
 }
