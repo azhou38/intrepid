@@ -4072,15 +4072,6 @@ const destItems = useMemo((): DestItem[] =>
     handleCloseSpotToDestination(undefined, true);
   }, [handleCloseSpotToDestination]);
 
-  // One-shot: clear the mount hints once consumed (see declaration above) so a later,
-  // unrelated destination-sheet mount doesn't inherit them.
-  useEffect(() => {
-    if (destInitialTab || destInitialSnap) {
-      setDestInitialTab(undefined);
-      setDestInitialSnap(undefined);
-    }
-  }, [destInitialTab, destInitialSnap]);
-
   // Same one-shot clearing for CountrySheet's mount hints.
   useEffect(() => {
     if (countryInitialTab || countryInitialSnap) {
@@ -5203,6 +5194,16 @@ const destItems = useMemo((): DestItem[] =>
   // instead of being dropped and re-mounted as an outgoing copy (a second destination sheet mount, ~100 ms, in the
   // busiest commit of the swap). Same element position and key, so React keeps the instance.
   const liveDestSheet = mapState !== 'world' && !!selectedDest && !selectedSpot && !destAfterCamera;
+  // One-shot: clear the destination sheet's mount hints (see their declaration) once it has mounted with them, so a later,
+  // unrelated mount doesn't inherit them. NOT right after they are set: when the camera has to zoom out first the sheet is
+  // held back (destAfterCamera), and clearing them at once had it mount later with no hint, opening to half-screen instead
+  // of the full-screen Spots grid. Also dropped when no destination is selected any more (closed before it mounted).
+  useEffect(() => {
+    if ((liveDestSheet || !selectedDest) && (destInitialTab || destInitialSnap)) {
+      setDestInitialTab(undefined);
+      setDestInitialSnap(undefined);
+    }
+  }, [liveDestSheet, selectedDest, destInitialTab, destInitialSnap]);
   const destLeavesInPlace = !liveDestSheet && leavingSheetRef.current?.kind === 'dest' && !!leavingSheetRef.current.dest && leavingSheetRef.current.liveKey !== undefined;
   // The same for the spot sheet, when a spot's sheet gives way to a destination's or a country's (back to the destination).
   const liveSpotSheet = !!selectedSpot && !!spotFocusId;
