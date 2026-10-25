@@ -3,6 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
 import { Search, X } from 'lucide-react-native';
+import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -65,6 +66,18 @@ export default function ProfileScreen() {
   // My World shows one level at a time (the counts at its top choose it): the visited countries filled in, or a dot per
   // visited destination or spot. Top Countries follows it: ranked by visited spots on Spots, by destinations otherwise.
   const [worldMode, setWorldMode] = useState<WorldMode>('countries');
+  // The selector's sliding pill: levelSV is the selected item's index (animated between them), selectorWSV the row's inner
+  // width (three equal items and two 1 pt dividers).
+  const levelSV = useSharedValue(WORLD_MODES.findIndex(m => m.mode === 'countries'));
+  const selectorWSV = useSharedValue(0);
+  const pillStyle = useAnimatedStyle(() => {
+    const itemW = Math.max(0, (selectorWSV.value - 2) / 3);
+    return { width: itemW, transform: [{ translateX: levelSV.value * (itemW + 1) }], opacity: selectorWSV.value > 0 ? 1 : 0 };
+  });
+  // The pill follows the level wherever it is chosen (here, or on the full-screen map).
+  useEffect(() => {
+    levelSV.value = withTiming(WORLD_MODES.findIndex(m => m.mode === worldMode), { duration: 280, easing: Easing.out(Easing.cubic) });
+  }, [worldMode]);
   // Top Countries (on Countries): ranked by visited destinations or visited spots, its own small toggle.
   const [topRank, setTopRank] = useState<'destinations' | 'spots'>('destinations');
   const topCountries = useMemo(() => {
@@ -183,16 +196,17 @@ export default function ProfileScreen() {
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
           every section below show; it stays pinned at the top as they scroll. ── */}
       <View style={styles.selectorSticky}>
-        <View style={styles.statsHeader}>
+        <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
+          {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
+          <Animated.View pointerEvents="none" style={[styles.selectorPill, pillStyle]} />
           {WORLD_MODES.map(({ mode, label }, i) => {
             const on = worldMode === mode;
             const value = mode === 'countries' ? stats.totalCountries : mode === 'destinations' ? stats.totalDestinations : stats.totalSpots;
             return (
               <React.Fragment key={mode}>
-                {/* A divider only between two unselected items: never against the selected one. */}
-                {i > 0 && <View style={[styles.statDivider, (on || WORLD_MODES[i - 1].mode === worldMode) && styles.statDividerHidden]} />}
+                {i > 0 && <StatDivider index={i} level={levelSV} />}
                 <Pressable
-                  style={[styles.statItem, on && styles.statItemOn]}
+                  style={styles.statItem}
                   onPress={() => {
                     if (on) return;
                     Haptics.selectionAsync();
@@ -202,8 +216,8 @@ export default function ProfileScreen() {
                   }}
                   hitSlop={4}
                 >
-                  <Text style={[styles.statValue, on ? styles.statValueOn : styles.statValueOff]}>{value}</Text>
-                  <Text style={[styles.statLabel, on && styles.statLabelOn]}>{label}</Text>
+                  <StatText index={i} level={levelSV} style={styles.statValue} on="#FFFFFF" off="#9CA3AF">{value}</StatText>
+                  <StatText index={i} level={levelSV} style={styles.statLabel} on="#D1D5DB" off="#6B7280">{label}</StatText>
                 </Pressable>
               </React.Fragment>
             );
@@ -452,6 +466,21 @@ export default function ProfileScreen() {
   );
 }
 
+// A selector item's text, fading between its selected and unselected colours as the pill slides to or from it.
+function StatText({ index, level, style, on, off, children }: { index: number; level: SharedValue<number>; style: any; on: string; off: string; children: React.ReactNode }) {
+  const a = useAnimatedStyle(() => ({
+    color: interpolateColor(Math.min(1, Math.abs(level.value - index)), [0, 1], [on, off]),
+  }));
+  return <Animated.Text style={[style, a]}>{children}</Animated.Text>;
+}
+// The divider before item `index`: shown only between two unselected items, fading out as the pill nears either side.
+function StatDivider({ index, level }: { index: number; level: SharedValue<number> }) {
+  const a = useAnimatedStyle(() => ({
+    opacity: Math.min(1, Math.abs(level.value - (index - 1)), Math.abs(level.value - index)),
+  }));
+  return <Animated.View style={[styles.statDivider, a]} />;
+}
+
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
 
@@ -476,9 +505,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', padding: 6, marginBottom: 12,
     backgroundColor: 'white', borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
   },
-  // The selected level in the app's own dark selection style (the breadcrumb's active segment, the dark buttons).
-  statItemOn:  { backgroundColor: '#111827' },
-  statValueOn: { color: 'white' },
+  // The selected level in the app's own dark selection style (the breadcrumb's active segment, the dark buttons): a pill
+  // that slides behind the items.
+  selectorPill: { position: 'absolute', top: 6, bottom: 6, left: 6, borderRadius: 12, backgroundColor: '#111827' },
   // A section inside the panel (Explored, Top …): separated from the map or the section above by a hairline.
   // Each section below the selector is a card of its own (the map, Explored, Top …).
   panelSection: {
@@ -490,12 +519,9 @@ const styles = StyleSheet.create({
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
   },
   statItem:    { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 12 },
-  statValueOff:    { color: '#9CA3AF' },
-  statLabelOn:     { color: '#D1D5DB', fontWeight: '600' },
   statValue:   { fontSize: 22, fontWeight: '800', color: '#111827' },
   statLabel:   { fontSize: 10, color: '#6B7280', marginTop: 2 },
   statDivider: { width: 1, height: 28, backgroundColor: '#E5E7EB' },
-  statDividerHidden: { backgroundColor: 'transparent' },
 
   // Generic card
   card: {
