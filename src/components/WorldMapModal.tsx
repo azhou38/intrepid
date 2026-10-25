@@ -5,6 +5,7 @@ import * as Haptics from 'expo-haptics';
 import { X } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import CircleFlag from './CircleFlag';
+import SpotPinImages, { SPOT_MINI_PIN_VISITED } from './Map/SpotPinImages';
 import type { Destination } from '../types';
 import type { Spot } from '../data/spots';
 
@@ -63,7 +64,7 @@ export default function WorldMapModal({
     if (x == null || y == null || !mapRef.current) { setPicked(null); return; }
     try {
       if (level !== 'countries') {
-        const hit = await mapRef.current.queryRenderedFeaturesAtPoint([x, y], undefined, ['wmDots']);
+        const hit = await mapRef.current.queryRenderedFeaturesAtPoint([x, y], undefined, [level === 'spots' ? 'wmPins' : 'wmDots']);
         const f = hit?.features?.[0];
         if (f) {
           Haptics.selectionAsync();
@@ -137,13 +138,29 @@ export default function WorldMapModal({
               />
             </MapboxGL.VectorSource>
           )}
-          {level !== 'countries' && (
+          {/* The app's small spot pin (the green, visited one), so spots read differently from destinations' dots. */}
+          <SpotPinImages />
+          {level === 'destinations' && (
             <MapboxGL.ShapeSource id="wmPoints" shape={points}>
               <MapboxGL.CircleLayer
                 id="wmDots"
                 style={{
-                  circleRadius: ['interpolate', ['linear'], ['zoom'], 0, level === 'spots' ? 3 : 4, 8, level === 'spots' ? 7 : 9] as any,
+                  circleRadius: ['interpolate', ['linear'], ['zoom'], 0, 4, 8, 9] as any,
                   circleColor: '#10B981', circleStrokeColor: 'white', circleStrokeWidth: 1.5,
+                }}
+              />
+            </MapboxGL.ShapeSource>
+          )}
+          {level === 'spots' && (
+            <MapboxGL.ShapeSource id="wmSpotPoints" shape={points}>
+              <MapboxGL.SymbolLayer
+                id="wmPins"
+                style={{
+                  iconImage: SPOT_MINI_PIN_VISITED,
+                  iconAnchor: 'bottom',
+                  iconSize: ['interpolate', ['linear'], ['zoom'], 0, 1.1, 8, 2] as any,
+                  iconAllowOverlap: true,
+                  iconIgnorePlacement: true,
                 }}
               />
             </MapboxGL.ShapeSource>
