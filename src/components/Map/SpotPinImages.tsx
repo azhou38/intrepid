@@ -76,7 +76,7 @@ const GLOW_PATH = `M ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} L ${G_CX} ${G_CY + G_TI
 // Nine thin steps rather than a few wide ones, so the falloff reads as a soft blur, not bands; together they reach about the
 // old disc glow's 0.6 next to the pin.
 // Widths up to twice the margin, so the outermost reaches the image's edge.
-const GLOW_STROKES = [9, 8, 7, 6, 5, 4, 3, 2, 1].map(k => ({ w: (GLOW_MARGIN * 2 * k) / 9, o: 0.11 }));
+const GLOW_STROKES = [9, 8, 7, 6, 5, 4, 3, 2, 1].map(k => ({ w: (GLOW_MARGIN * 2 * k) / 9, o: 0.13 }));
 
 const SelectedGlow = memo(function SelectedGlow({ name, color }: { name: string; color: string }) {
   const imageRef = useRef<{ refresh: () => void } | null>(null);
