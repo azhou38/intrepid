@@ -1,14 +1,23 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, Dimensions,
+  View, Text, StyleSheet, ScrollView, Dimensions, Pressable,
 } from 'react-native';
+import * as Haptics from 'expo-haptics';
 import MapboxGL from '@rnmapbox/maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
+import { SPOTS } from '../data/spots';
 import CircleFlag from '../components/CircleFlag';
 
 const TOTAL_COUNTRIES = 195;
+
+type WorldMode = 'countries' | 'destinations' | 'spots';
+const WORLD_MODES: { mode: WorldMode; label: string }[] = [
+  { mode: 'countries', label: 'Countries' },
+  { mode: 'destinations', label: 'Destinations' },
+  { mode: 'spots', label: 'Spots' },
+];
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
@@ -37,21 +46,26 @@ export default function ProfileScreen() {
 
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
-  const coverageGeoJSON = useMemo((): GeoJSON.FeatureCollection => ({
+  // My World shows one level at a time: the visited countries filled in, or a dot per visited destination or spot.
+  const [worldMode, setWorldMode] = useState<WorldMode>('countries');
+  const visitedCountryCodes = useMemo(() => [...visitIndex.visitedCountryCodes], [visitIndex]);
+  const visitedSpots = useMemo(() => SPOTS.filter(sp => visitIndex.isSpotVisited(sp.id)), [visitIndex]);
+  const pointsGeoJSON = useMemo((): GeoJSON.FeatureCollection => ({
     type: 'FeatureCollection',
-    features: visitedDests.map(dest => {
-      const countInCountry = stats.countryCount[dest.country] ?? 1;
-      const intensity = Math.min(countInCountry / 4, 1);
-      const opacity = 0.28 + intensity * 0.42;
-      return {
-        type: 'Feature',
-        geometry: { type: 'Point', coordinates: [dest.coordinates.longitude, dest.coordinates.latitude] },
-        properties: { opacity },
-      };
-    }),
-  }), [visitedDests, stats.countryCount]);
+    features: (worldMode === 'spots' ? visitedSpots : worldMode === 'destinations' ? visitedDests : []).map(p => ({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [p.coordinates.longitude, p.coordinates.latitude] },
+      properties: {},
+    })),
+  }), [worldMode, visitedSpots, visitedDests]);
 
   const pct = ((stats.totalCountries / TOTAL_COUNTRIES) * 100).toFixed(1);
+  const worldSub = worldMode === 'countries' ? `${pct}% of the world explored`
+    : worldMode === 'destinations' ? `${visitedDests.length} destination${visitedDests.length === 1 ? '' : 's'} visited`
+    : `${visitedSpots.length} spot${visitedSpots.length === 1 ? '' : 's'} visited`;
+  const worldBadge = worldMode === 'countries' ? `${stats.totalCountries} / ${TOTAL_COUNTRIES}`
+    : worldMode === 'destinations' ? `${visitedDests.length} / ${DESTINATIONS.length}`
+    : `${visitedSpots.length} / ${SPOTS.length}`;
 
   return (
     <ScrollView
@@ -96,11 +110,28 @@ export default function ProfileScreen() {
         <View style={styles.worldHeader}>
           <View>
             <Text style={styles.worldTitle}>My World</Text>
-            <Text style={styles.worldSub}>{pct}% of the world explored</Text>
+            <Text style={styles.worldSub}>{worldSub}</Text>
           </View>
           <View style={styles.worldPctBadge}>
-            <Text style={styles.worldPctText}>{stats.totalCountries} / {TOTAL_COUNTRIES}</Text>
+            <Text style={styles.worldPctText}>{worldBadge}</Text>
           </View>
+        </View>
+
+        {/* Which level the map shows: countries, destinations or spots. */}
+        <View style={styles.worldToggle}>
+          {WORLD_MODES.map(({ mode, label }) => {
+            const on = worldMode === mode;
+            return (
+              <Pressable
+                key={mode}
+                style={[styles.worldToggleBtn, on && styles.worldToggleBtnOn]}
+                onPress={() => { if (!on) { Haptics.selectionAsync(); setWorldMode(mode); } }}
+                hitSlop={4}
+              >
+                <Text style={[styles.worldToggleTxt, on && styles.worldToggleTxtOn]}>{label}</Text>
+              </Pressable>
+            );
+          })}
         </View>
 
         <View pointerEvents="none" style={styles.mapWrap}>
@@ -120,33 +151,42 @@ export default function ProfileScreen() {
               defaultSettings={{ centerCoordinate: [10, 15], zoomLevel: 0.8 }}
               animationDuration={0}
             />
-            {visitedDests.length > 0 && (
-              <MapboxGL.ShapeSource id="coverage" shape={coverageGeoJSON}>
+            {/* Countries: each visited country filled in (one worldview, so disputed areas are not drawn twice). */}
+            {worldMode === 'countries' && visitedCountryCodes.length > 0 && (
+              <MapboxGL.VectorSource id="worldCountries" url="mapbox://mapbox.country-boundaries-v1">
+                <MapboxGL.FillLayer
+                  id="worldCountryFill"
+                  sourceLayerID="country_boundaries"
+                  filter={['all',
+                    ['in', ['get', 'iso_3166_1'], ['literal', visitedCountryCodes]],
+                    ['match', ['get', 'worldview'], ['all', 'US'], true, false]] as any}
+                  style={{ fillColor: '#10B981', fillOpacity: 0.55 }}
+                />
+                <MapboxGL.LineLayer
+                  id="worldCountryLine"
+                  sourceLayerID="country_boundaries"
+                  filter={['all',
+                    ['in', ['get', 'iso_3166_1'], ['literal', visitedCountryCodes]],
+                    ['match', ['get', 'worldview'], ['all', 'US'], true, false]] as any}
+                  style={{ lineColor: '#059669', lineWidth: 0.6 }}
+                />
+              </MapboxGL.VectorSource>
+            )}
+            {/* Destinations or spots: a dot at each one visited (spots smaller, as there are more of them). */}
+            {worldMode !== 'countries' && pointsGeoJSON.features.length > 0 && (
+              <MapboxGL.ShapeSource id="worldPoints" shape={pointsGeoJSON}>
                 <MapboxGL.CircleLayer
-                  id="coverageCircles"
+                  id="worldPointDots"
                   style={{
-                    circleRadius: 18,
+                    circleRadius: worldMode === 'spots' ? 3 : 4.5,
                     circleColor: '#10B981',
-                    circleOpacity: ['get', 'opacity'] as any,
-                    circleStrokeWidth: 0,
-                    circleBlur: 1.2,
+                    circleStrokeColor: 'white',
+                    circleStrokeWidth: worldMode === 'spots' ? 1 : 1.5,
                   }}
                 />
               </MapboxGL.ShapeSource>
             )}
           </MapboxGL.MapView>
-        </View>
-
-        {/* Legend */}
-        <View style={styles.legend}>
-          <View style={styles.legendItem}>
-            <View style={[styles.legendDot, { backgroundColor: 'rgba(16,185,129,0.7)' }]} />
-            <Text style={styles.legendLabel}>Visited</Text>
-          </View>
-          <View style={styles.legendItem}>
-            <View style={[styles.legendDot, { backgroundColor: '#E5E7EB' }]} />
-            <Text style={styles.legendLabel}>Not Visited</Text>
-          </View>
         </View>
       </View>
 
@@ -242,13 +282,15 @@ const styles = StyleSheet.create({
   worldPctText:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
   mapWrap:       { overflow: 'hidden' },
   worldMap:      { height: 210, width: '100%' },
-  legend: {
-    flexDirection: 'row', gap: 16,
-    paddingHorizontal: 16, paddingVertical: 12,
+  // Countries · Destinations · Spots: a segmented toggle under the heading.
+  worldToggle: {
+    flexDirection: 'row', marginHorizontal: 16, marginBottom: 12, padding: 3,
+    backgroundColor: '#F3F4F6', borderRadius: 10,
   },
-  legendItem:  { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  legendDot:   { width: 10, height: 10, borderRadius: 5 },
-  legendLabel: { fontSize: 12, color: '#6B7280', fontWeight: '500' },
+  worldToggleBtn:    { flex: 1, alignItems: 'center', paddingVertical: 7, borderRadius: 8 },
+  worldToggleBtnOn:  { backgroundColor: 'white', shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
+  worldToggleTxt:    { fontSize: 13, fontWeight: '600', color: '#6B7280' },
+  worldToggleTxtOn:  { color: '#111827' },
 
   // Top Countries
   countryRow: {
