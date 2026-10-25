@@ -421,7 +421,7 @@ const styles = StyleSheet.create({
 
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
-  mapHint:       { position: 'absolute', right: 8, bottom: 8, backgroundColor: 'rgba(17,24,39,0.65)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
+  mapHint:       { position: 'absolute', left: 8, bottom: 8, backgroundColor: 'rgba(17,24,39,0.65)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
   mapHintTxt:    { fontSize: 11, fontWeight: '600', color: 'white' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
   topBy:         { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
