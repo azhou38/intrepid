@@ -1451,7 +1451,7 @@ export function VisitCardList<T extends VisitSelectorItem>({
             <Text style={vcS.emptySub}>Add {what}.</Text>
             <View style={vcS.emptyBtn}>
               <Plus size={15} color="white" strokeWidth={2.75} />
-              <Text style={vcS.emptyBtnTxt}>Add {noun}</Text>
+              <Text style={vcS.emptyBtnTxt}>Add Details</Text>
             </View>
           </Pressable>
         </View>
