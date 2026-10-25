@@ -928,6 +928,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Autumn and spring, {months}, are the milder months for beach walks and surf checks along the Ballina coast.",
   },
   {
+    id: 'canberra', name: "Canberra", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -35.2975906, longitude: 149.1012676 },
+    category: 'city', icon: "🏛️", rank: 3,
+    tagline: "Australia's capital, with free national museums, a lake at its centre and bush hills.",
+    description: "Canberra is Australia's planned capital, laid out around Lake Burley Griffin by Walter Burley Griffin. Parliament House, the High Court and the national museums, galleries, library and archives stand in a short run along the lake and Anzac Parade, and most are free to enter. Bush-covered hills such as Mount Ainslie, Black Mountain and Red Hill rise within the city, and Tidbinbilla Nature Reserve and the Murrumbidgee River are a short drive south and west.",
+    whyVisit: ["Tour Parliament House", "Visit the Australian War Memorial", "See the city from Mount Ainslie"],
+    whyVisitPhotos: ["Parliament House at dusk, Canberra ACT.jpg", "Australian War Memorial front view.jpg", "Canberra panorama from Mount Ainslie.jpg"],
+    highlights: ["Federal Parliament", "War memorial", "Anzac Parade views"],
+    goodToKnow: [
+      { icon: "🚗", title: "Distances are long", detail: "Institutions sit in a few clusters, so a day on foot or by bike works around the lake. A car or rideshare helps for the outer reserves." },
+      { icon: "🛂", title: "Security screening", detail: "Parliament House and the High Court screen visitors on entry. Allow 15 minutes and leave large bags behind: the High Court bans any over 30 cm." },
+      { icon: "📅", title: "Check opening days", detail: "The Royal Australian Mint opens shorter hours at weekends, and Blundells Cottage opens only Wednesdays, Saturdays and Sundays." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Spring and autumn, {months}, bring mild days. Winter nights are frosty.",
+  },
+  {
     id: 'broken-hill', name: "Broken Hill", country: "Australia", countryCode: 'AU', timezone: 'Australia/Broken_Hill', defaultZoomSpanKm: 40,
     continent: 'Oceania', coordinates: { latitude: -31.97528, longitude: 141.448349 },
     category: 'city', icon: "⛏️", rank: 3,
