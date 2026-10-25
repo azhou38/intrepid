@@ -27,7 +27,14 @@ new cost rules (costBasis / costPer / needs). Merging curation/act therefore als
 - ACT spots' division: the geocoder gave a mix of district names and nothing for Namadgi, so every spot is "Australian Capital Territory" (the ACT is one level of government).
 - Booroomba Rocks why-visit photo: no passing photo (Commons: 800x600 lead or ~1090 px portrait climbing shots; Openverse nothing; Parks ACT 600x400 aerial): grey card.
 ## Photos still missing
-- dest:namadgi-national-park:why2 ("Climb up to Booroomba Rocks"): grey card until a photo is supplied.
+- Why-visit: dest:namadgi-national-park:why2 ("Climb up to Booroomba Rocks"): grey card (the only passing Booroomba photos are 1024 px, under the 1280 why-visit minimum).
+- Spots with NO_PHOTO (placeholder): Casuarina Sands, Canberra Centenary Trail, Molonglo Gorge Nature Reserve, Glenburn Homestead, Jerrabomberra West Grasslands, Oakey Hill (only candidate shows a hill with a bin in the frame), Settlers Track (only a Waterhole Hut photo exists), and one more listed in outcome.json. Parks ACT pages carry 600 px photos only (below 960); Openverse's API sat behind a Cloudflare challenge in the browser too.
+## Photo flags
+- Official photo, permission not confirmed: Canberra Reptile Zoo entrance (canberrareptilezoo.com.au).
+- Flickr CC photos (CC BY / BY-SA, 1024 px): Kambah Pool, Murrumbidgee Discovery Track, Canberra Walk-in Aviary, One Tree Hill Lookout, Goorooyarroo, Honeysuckle Creek, Bimberi Peak, Gudgenby Homestead, Corin Forest, Booroomba Rocks. Weak accepts: Discovery Track, Yankee Hat spot photo (a boulder, not the art), Honeysuckle (foundations).
+- Botanic Gardens photo: fir0002's rainforest photo is dual GFDL / CC BY-NC licensed (check NC); brightened copy served.
+- Yankee Hat art why-visit photo fails the pre-filter only on a Commons category ("Rock paintings of animals"); it is a photograph, kept.
+- Parliament House dusk photo (spot and why-visit) is dark on purpose.
 ## Not verified
 - parks.act.gov.au blocks scripts: its pages were read in the in-app browser (titles confirmed for all ticketUrls; hours and fees for the reserves were not stated there, so "Open 24 hours" for open reserves is assumed). The Stromlo Forest Park hours page and the Tidbinbilla visitor figures were read in the browser.
 - A judge named Collector Wines, Shaw Estate, Four Winds, Helm, Dog Trap, Pankhurst and Yarrh as NSW from its own knowledge (all rejected as cellar doors anyway).
