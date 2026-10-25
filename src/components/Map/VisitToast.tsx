@@ -2,15 +2,14 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Check } from 'lucide-react-native';
 
-// The bar that follows a one-tap "Mark Visited" (or a one-tap un-mark): "Marked visited · Add details · Undo", for a few
+// The bar that follows a one-tap "Mark Visited": "Marked visited · Add details · Undo", for a few
 // seconds, at the bottom of the map screen. Marking a place visited no longer opens the trip editor; this keeps the
 // details one tap away without asking for them, and Undo covers a mis-tap without a confirmation dialog.
 //
 //   showVisitToast({ message, actionLabel?, onAction?, onUndo? })   — from any sheet
 //   <VisitToastHost bottom={…} />                                    — once, in MapScreen
 
-// `removed`: an un-mark ("Visit removed"), shown without the green tick.
-export type VisitToastSpec = { message: string; actionLabel?: string; onAction?: () => void; onUndo?: () => void; removed?: boolean };
+export type VisitToastSpec = { message: string; actionLabel?: string; onAction?: () => void; onUndo?: () => void };
 
 const SHOW_MS = 4500;
 let listener: ((t: VisitToastSpec) => void) | null = null;
@@ -45,7 +44,7 @@ export function VisitToastHost({ bottom }: { bottom: number }) {
       style={[st.wrap, { bottom, opacity: anim, transform: [{ translateY: anim.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}
     >
       <View style={st.bar}>
-        {!toast.removed && <View style={st.icon}><Check size={13} color="white" strokeWidth={3} /></View>}
+        <View style={st.icon}><Check size={13} color="white" strokeWidth={3} /></View>
         <Text style={st.msg} numberOfLines={1}>{toast.message}</Text>
         {!!toast.onAction && (
           <Pressable onPress={run(toast.onAction)} hitSlop={8} style={st.btn}>

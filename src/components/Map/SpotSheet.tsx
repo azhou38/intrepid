@@ -27,7 +27,6 @@ import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
 import { formatSpotCost, splitSpotCost, spotCostLabel, formatVisitTime, spotCostTone, visitTimeTone, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
-import { spotHasDetails } from '../../utils/visitStatus';
 import { showVisitToast } from './VisitToast';
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
@@ -1139,15 +1138,9 @@ function SpotSheet({
       onUndo: () => unvisitSpot(spot.id),
     });
   };
-  // Un-marks a visited spot: nothing logged, at once with Undo; trips, a rating, notes or photos would be lost, so it asks
-  // first, as before. From the hero's "Visited" pill or a carousel card's "Visited" tag.
+  // Un-marks a visited spot, always after a "Remove visit?" confirmation. From the hero's "Visited" pill or a carousel
+  // card's "Visited" tag.
   const unmarkSpotVisited = (spot: Spot) => {
-    if (!spotHasDetails(useStore.getState(), spot.id)) {
-      unvisitSpot(spot.id);
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-      showVisitToast({ message: 'Visit removed', removed: true, onUndo: () => saveSpotVisited(spot.id, spot.destinationId) });
-      return;
-    }
     // Un-visits it entirely: its own trips and rating, and its ticks on destination trips.
     Alert.alert(
       'Remove visit?',

@@ -265,26 +265,3 @@ export function withoutCountry(r: VisitRecords, countryCode: string): VisitRecor
   };
 }
 
-// ── Quick un-marking ───────────────────────────────────────────────────────────────────────────
-// A place marked visited with one tap and nothing logged can be un-marked with one tap (and an Undo). Anything more —
-// its own trips, rating, notes or photos, places below it that are visited, or a visit that only exists as a tick on a
-// trip above it (no record of its own) — would be lost, so un-visiting it still asks first.
-export function spotHasDetails(r: VisitRecords, spotId: string): boolean {
-  const rec = r.savedSpots[spotId];
-  if (!rec) return true;
-  return !!(rec.visits?.length || rec.rating || rec.notes || rec.photos?.length || rec.visitDate);
-}
-export function destinationHasDetails(r: VisitRecords, destinationId: string): boolean {
-  const rec = r.savedDestinations[destinationId];
-  if (!rec) return true;
-  if (rec.visits?.length || rec.visitDate || rec.notes || rec.photos?.length) return true;
-  if (visitedSpotsIn(r, destinationId) > 0) return true;
-  return Object.values(r.savedCountries).some(c => (c.visits ?? []).some(v => (v.spotIds ?? []).includes(destinationId)));
-}
-export function countryHasDetails(r: VisitRecords, countryCode: string): boolean {
-  const rec = r.savedCountries[countryCode];
-  if (!rec) return true;
-  if (rec.visits?.length || rec.visitDate || rec.notes) return true;
-  const n = visitedPlacesInCountry(r, countryCode);
-  return n.destinations + n.spots > 0;
-}

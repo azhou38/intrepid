@@ -30,7 +30,7 @@ import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handl
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
 import { useStore, useVisitIndex } from '../../store';
-import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn, destinationHasDetails } from '../../utils/visitStatus';
+import { destinationTripsOf, removeDestinationMessage, visitedSpotsIn } from '../../utils/visitStatus';
 import { showVisitToast } from './VisitToast';
 import SpotCard from './SpotCard';
 import type { Destination, PhotoEntry, Visit, GoodToKnowTip } from '../../types';
@@ -1476,14 +1476,6 @@ function DestinationSheet({
   // "Mark Visited" marks the destination visited in one tap, with an "Add details · Undo" bar (see SpotSheet).
   const handleMarkVisited = () => {
     if (isVisited) {
-      // Nothing logged and no spot visited: un-mark at once, with Undo. Otherwise ask first, as before.
-      if (!destinationHasDetails(useStore.getState(), destination.id)) {
-        const id = destination.id;
-        unvisitDestination(id);
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        showVisitToast({ message: 'Visit removed', removed: true, onUndo: () => saveDestination(id, 'visited', {}) });
-        return;
-      }
       // Un-visits it entirely: its own trips, its spots' visits, and its ticks on country trips.
       Alert.alert(
         'Remove visit?',

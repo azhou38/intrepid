@@ -22,7 +22,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Check, Plus, Users, Languages, Coins, Maximize, Landmark } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
-import { countryTripsOf, visitedPlacesInCountry, removeCountryMessage, countryHasDetails } from '../../utils/visitStatus';
+import { countryTripsOf, visitedPlacesInCountry, removeCountryMessage } from '../../utils/visitStatus';
 import { showVisitToast } from './VisitToast';
 import type { Destination, CountryCluster, Visit } from '../../types';
 import { DESTINATIONS } from '../../data/destinations';
@@ -303,14 +303,6 @@ function CountrySheet({
   // "Mark Visited" marks the country visited in one tap, with an "Add details · Undo" bar (see SpotSheet).
   const handleMarkVisited = useCallback(() => {
     if (isCountryVisited) {
-      // Nothing logged and none of its places visited: un-mark at once, with Undo. Otherwise ask first, as before.
-      if (!countryHasDetails(useStore.getState(), cluster.countryCode)) {
-        const code = cluster.countryCode;
-        unvisitCountry(code);
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        showVisitToast({ message: 'Visit removed', removed: true, onUndo: () => saveCountryVisited(code, {}) });
-        return;
-      }
       // Un-visits it entirely: its own trips and everything logged for its destinations and spots.
       Alert.alert(
         'Remove visit?',
