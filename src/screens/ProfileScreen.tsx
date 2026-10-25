@@ -112,15 +112,15 @@ export default function ProfileScreen() {
   const subFade = useAnimatedStyle(() => ({ opacity: 1 - morphP(scrollSV.value, stickyYSV.value) }));
   // Where the column holding the name sits in the header, and the header in the content (the name's own layout is
   // relative to the column).
-  const headerLayout = useRef({ hx: 16, hy: 16, hh: AVATAR, cx: 70, cy: 0, nx: 0, ny: 0, nh: 0 });
-  // Called from each of the three layouts (header, column, name) and when the name's width is known, in whatever
-  // order they arrive.
+  const headerLayout = useRef({ hx: 16, hy: 16, ax: 0, ay: 0, nx: 0, ny: 0, nh: 0 });
+  // Called from each of the three layouts (header, avatar, name; the avatar's and name's are relative to the header) and
+  // when the name's width is known, in whatever order they arrive.
   const placeHeader = () => {
     const hl = headerLayout.current;
     if (!hl.nh) return;
     headerSV.value = {
-      ax: hl.hx, ay: hl.hy + (hl.hh - AVATAR) / 2,
-      nx: hl.hx + hl.cx + hl.nx, ny: hl.hy + hl.cy + hl.ny, nh: hl.nh, nw: nameW,
+      ax: hl.hx + hl.ax, ay: hl.hy + hl.ay,
+      nx: hl.hx + hl.nx, ny: hl.hy + hl.ny, nh: hl.nh, nw: nameW,
     };
   };
   useEffect(placeHeader, [nameW]);
@@ -248,14 +248,16 @@ export default function ProfileScreen() {
       <View style={styles.profileHeader} onLayout={e => {
         const l = e.nativeEvent.layout;
         stickyYSV.value = l.y + l.height + 16 - COMPACT_H;
-        Object.assign(headerLayout.current, { hx: l.x, hy: l.y, hh: l.height });
+        Object.assign(headerLayout.current, { hx: l.x, hy: l.y });
         placeHeader();
       }}>
         {/* Kept for layout; the visible avatar and name are the morphing copies over the page. */}
-        <View style={[styles.avatar, morphReady && { opacity: 0 }]}>
+        <View
+          style={[styles.avatar, morphReady && { opacity: 0 }]}
+          onLayout={e => { Object.assign(headerLayout.current, { ax: e.nativeEvent.layout.x, ay: e.nativeEvent.layout.y }); placeHeader(); }}
+        >
           <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
         </View>
-        <View style={{ flex: 1 }} onLayout={e => { Object.assign(headerLayout.current, { cx: e.nativeEvent.layout.x, cy: e.nativeEvent.layout.y }); placeHeader(); }}>
           <Text
             style={[styles.profileName, morphReady && { opacity: 0 }]}
             numberOfLines={1}
@@ -270,7 +272,6 @@ export default function ProfileScreen() {
               ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
               : 'World Traveler'}
           </Animated.Text>
-        </View>
       </View>
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
@@ -622,26 +623,27 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 // The pinned bar's top strip, holding its small avatar and name.
 const COMPACT_H = 40;
 // The header's avatar and the pinned bar's small one, and how far the name shrinks into the bar (22 pt → 16 pt).
-const AVATAR = 56, MINI_AVATAR = 26, NAME_K = 16 / 22;
+const AVATAR = 88, MINI_AVATAR = 26, NAME_K = 16 / 22;
 const SCREEN_W = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
 
   // Profile header
+  // The avatar centred, the name and the line under it centred below.
   profileHeader: {
-    flexDirection: 'row', alignItems: 'center', gap: 14,
+    alignItems: 'center',
     marginHorizontal: 16, marginBottom: 16,
   },
   avatar: {
-    width: 56, height: 56, borderRadius: 28,
+    width: AVATAR, height: AVATAR, borderRadius: AVATAR / 2,
     backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
   },
-  avatarText:  { fontSize: 22, fontWeight: '800', color: 'white' },
-  profileName: { fontSize: 22, fontWeight: '800', color: '#111827' },
-  profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2 },
+  avatarText:  { fontSize: 36, fontWeight: '800', color: 'white' },
+  profileName: { fontSize: 22, fontWeight: '800', color: '#111827', marginTop: 12 },
+  profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2, textAlign: 'center' },
   // The morphing avatar and name: placed by transform from the layer's top-left corner.
-  morphLayer: { position: 'absolute', top: 0, left: 0 },
+  morphLayer: { position: 'absolute', top: 0, left: 0, marginTop: 0 },
   measure: { position: 'absolute', top: 0, left: 0, opacity: 0 },
 
   // Stats row
