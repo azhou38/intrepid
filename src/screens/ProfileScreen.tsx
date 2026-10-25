@@ -11,6 +11,10 @@ import { SPOTS } from '../data/spots';
 import CircleFlag from '../components/CircleFlag';
 
 const TOTAL_COUNTRIES = 195;
+// My World's map: the card's width (the screen less its 16 pt margins) and height, and the scale from Mapbox's 512 pt world.
+const WORLD_W = Dimensions.get('window').width - 32;
+const WORLD_H = Math.round(WORLD_W * 0.6);
+const WORLD_SCALE = WORLD_W / 512;
 
 type WorldMode = 'countries' | 'destinations' | 'spots';
 const WORLD_MODES: { mode: WorldMode; label: string }[] = [
@@ -126,6 +130,7 @@ export default function ProfileScreen() {
           <MapboxGL.MapView
             style={styles.worldMap}
             styleURL={MapboxGL.StyleURL.Light}
+            projection="mercator"
             scrollEnabled={false}
             zoomEnabled={false}
             rotateEnabled={false}
@@ -136,7 +141,7 @@ export default function ProfileScreen() {
             attributionEnabled={false}
           >
             <MapboxGL.Camera
-              defaultSettings={{ centerCoordinate: [10, 15], zoomLevel: 0.8 }}
+              defaultSettings={{ centerCoordinate: [0, 12], zoomLevel: 0 }}
               animationDuration={0}
             />
             {/* Countries: each visited country filled in (one worldview, so disputed areas are not drawn twice). */}
@@ -270,8 +275,14 @@ const styles = StyleSheet.create({
   },
   worldPctBadge: { position: 'absolute', top: 10, right: 10, backgroundColor: '#EEF2FF', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 5 },
   worldPctText:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
-  mapWrap:       { overflow: 'hidden' },
-  worldMap:      { height: 210, width: '100%' },
+  // The whole world, flat: at zoom 0 Mapbox draws it 512 pt wide (the narrowest it goes), wider than the card, so the map
+  // is laid out at that width and scaled down to the card's (a globe showed only one side of the Earth).
+  mapWrap:       { overflow: 'hidden', height: WORLD_H },
+  worldMap:      {
+    width: 512, height: WORLD_H / WORLD_SCALE,
+    marginLeft: (WORLD_W - 512) / 2, marginTop: (WORLD_H - WORLD_H / WORLD_SCALE) / 2,
+    transform: [{ scale: WORLD_SCALE }],
+  },
   // Countries · Destinations · Spots: a segmented toggle under the heading.
   worldToggle: {
     flex: 1, flexDirection: 'row', padding: 3,
