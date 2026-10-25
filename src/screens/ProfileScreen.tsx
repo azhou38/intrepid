@@ -8,18 +8,25 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
-// Country outlines for My World: Natural Earth 1:50m admin-0 (public domain), simplified, projected equirectangular as SVG
-// paths in a 360 × 180 box (x = longitude + 180, y = 90 − latitude), one entry per ISO 3166-1 code.
+// Country outlines for My World: Natural Earth 1:50m admin-0 (public domain), simplified, in the Miller projection as SVG
+// paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
 
 const TOTAL_COUNTRIES = 195;
-// My World's map: the whole world drawn as SVG (a Mapbox view cannot zoom out far enough to fit it in the card), from
-// 86° N to 60° S (Antarctica left out), at the card's width.
-const WORLD_Y0 = 4, WORLD_Y1 = 150;
+// My World's map: the whole world drawn as SVG (a Mapbox view cannot zoom out far enough to fit it in the card), in the
+// Miller projection (a 2:1 wall-map shape: a flat latitude scale squashed it into a thin strip), 84° N to 58° S, at the
+// card's width.
+const miller = (lat: number) => {
+  const phi = (Math.max(-89.9, Math.min(89.9, lat)) * Math.PI) / 180;
+  return (1.25 * Math.log(Math.tan(Math.PI / 4 + 0.4 * phi)) * 180) / Math.PI;
+};
+const MILLER_TOP = miller(84);
+const WORLD_VH = MILLER_TOP - miller(-58);
+const WORLD_Y0 = 0, WORLD_Y1 = WORLD_VH;
 const WORLD_W = Dimensions.get('window').width - 32;
-const WORLD_H = Math.round((WORLD_W * (WORLD_Y1 - WORLD_Y0)) / 360);
-const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: 90 - lat });
+const WORLD_H = Math.round((WORLD_W * WORLD_VH) / 360);
+const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP - miller(lat) });
 
 type WorldMode = 'countries' | 'destinations' | 'spots';
 const WORLD_MODES: { mode: WorldMode; label: string }[] = [
