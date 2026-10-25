@@ -214,7 +214,10 @@ export default function ProfileScreen() {
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
           every section below show; it stays pinned at the top as they scroll. ── */}
-      <Animated.View style={[styles.selectorSticky, stuckStyle]} onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
+      {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
+          component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
+      <View onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
+      <Animated.View style={[styles.selectorSticky, stuckStyle]}>
         <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
           {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
           <Animated.View pointerEvents="none" style={[styles.selectorPill, pillStyle]} />
@@ -243,6 +246,7 @@ export default function ProfileScreen() {
           })}
         </View>
       </Animated.View>
+      </View>
 
       {/* ── The map, its own card under the selector ── */}
       <View style={styles.mapCard}>
