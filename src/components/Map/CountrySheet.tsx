@@ -349,14 +349,24 @@ function CountrySheet({
   // instantly instead of animating.
   const tabSwipeBaseSV = useSharedValue(0);
 
-  const tabIndicatorStyle = useAnimatedStyle(() => ({
-    left: `${interpolate(
-      tabSlideAnim.value,
-      TAB_ORDER.map((_, i) => -i * W).reverse(),
-      TAB_ORDER.map((_, i) => (i * 100) / TAB_ORDER.length).reverse(),
-      Extrapolation.CLAMP,
-    )}%` as `${number}%`,
-  }));
+  // Each tab is as wide as its label plus an equal share of the row's spare width (so "Destinations (12)" never wraps and
+  // the gaps round the labels match), so the underline follows the tabs' measured centres rather than fixed thirds.
+  const tabCentersSV = useSharedValue<number[]>([]);
+  const onTabLayout = (i: number, x: number, w: number) => {
+    const next = tabCentersSV.value.slice(0, TAB_ORDER.length);
+    next[i] = x + w / 2;
+    tabCentersSV.value = next;
+  };
+  const tabIndicatorStyle = useAnimatedStyle(() => {
+    const centers = tabCentersSV.value;
+    const n = TAB_ORDER.length;
+    const measured = centers.length >= n && centers.slice(0, n).every(c => typeof c === 'number');
+    const xs = TAB_ORDER.map((_, i) => -i * W).reverse();
+    if (!measured) {
+      return { left: `${interpolate(tabSlideAnim.value, xs, TAB_ORDER.map((_, i) => ((i + 0.5) * 100) / n).reverse(), Extrapolation.CLAMP)}%` as `${number}%`, marginLeft: -14 };
+    }
+    return { left: interpolate(tabSlideAnim.value, xs, centers.slice(0, n).reverse(), Extrapolation.CLAMP), marginLeft: -14 };
+  });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
   }));
@@ -936,6 +946,7 @@ function CountrySheet({
           {i > 0 && <View style={st.tabDivider} />}
           <Pressable
             style={st.tabBtn}
+            onLayout={e => onTabLayout(i, e.nativeEvent.layout.x, e.nativeEvent.layout.width)}
             onPress={() => {
               // Tapping a subtab from half/bottom-screen expands to full, same as
               // DestinationSheet's own tab bar — the tab bar is only fully readable at
@@ -946,24 +957,18 @@ function CountrySheet({
           >
             {tab === 'destinations' ? (
               // Count as plain text after the label — "Destinations (8)".
-              <Text style={[st.tabBtnTxt, isTabSelected('destinations') && st.tabBtnTxtActive]}>
+              <Text style={[st.tabBtnTxt, isTabSelected('destinations') && st.tabBtnTxtActive]} numberOfLines={1}>
                 Destinations{dests.length > 0 ? ` (${dests.length})` : ''}
               </Text>
             ) : (
-              <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]}>
+              <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]} numberOfLines={1}>
                 {tab === 'visit' ? 'My Visit' : 'About'}
               </Text>
             )}
           </Pressable>
         </React.Fragment>
       ))}
-      <Animated.View
-        style={[
-          st.tabIndicatorTrack,
-          { width: `${100 / TAB_ORDER.length}%` },
-          tabIndicatorStyle,
-        ]}
-      >
+      <Animated.View style={[st.tabIndicatorTrack, tabIndicatorStyle]}>
         <View style={st.tabIndicator} />
       </Animated.View>
     </>
@@ -1386,11 +1391,12 @@ const st = StyleSheet.create({
     marginTop: -20,
     borderBottomWidth: 1, borderBottomColor: '#D1D5DB',
   },
-  tabBtn:    { flex: 1, paddingVertical: 15, alignItems: 'center' },
+  // Label width plus an equal share of the spare width (flexBasis auto + flexGrow 1), never squeezed below its label.
+  tabBtn:    { flexGrow: 1, flexShrink: 0, flexBasis: 'auto', paddingHorizontal: 10, paddingVertical: 15, alignItems: 'center' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
   tabBtnTxtActive: { color: '#111827' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
-  tabIndicatorTrack: { position: 'absolute', bottom: 0, alignItems: 'center' },
+  tabIndicatorTrack: { position: 'absolute', bottom: 0, width: 28 },
   tabIndicator: { width: 28, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
   // ── Tab content slide track ─────────────────────────────────────────────────
