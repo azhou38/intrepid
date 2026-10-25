@@ -229,6 +229,17 @@ export default function ProfileScreen() {
     (!spotCountryF || spotCountryCode(sp) === spotCountryF) &&
     (wordMatch(sp.name, sq) || wordMatch(spotDestination(sp)?.name ?? '', sq))),
   [exploredSpots, spotCountryF, sq]);
+  // Each Explored search is folded behind a magnifier in its header until wanted (FoldingSearch).
+  const destSearchable = exploredDests.length > 8 || destCountries.length > 3;
+  const spotSearchable = exploredSpots.length > 8;
+  const [destSearchOpen, setDestSearchOpen] = useState(false);
+  const [spotSearchOpen, setSpotSearchOpen] = useState(false);
+  const toggleSearch = (open: boolean, setOpen: (v: boolean) => void, setQuery: (t: string) => void) => {
+    Haptics.selectionAsync();
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    if (open) setQuery('');
+    setOpen(!open);
+  };
   // Typing a whole country name (one of the chips) applies it as the filter and clears the text.
   const searchOrCountry = (text: string, countries: { code: string; name: string }[], setText: (t: string) => void, setCountry: (c: string | null) => void) => {
     const hit = countries.find(c => c.name.toLowerCase() === text.trim().toLowerCase());
@@ -528,33 +539,20 @@ export default function ProfileScreen() {
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
-            <Text style={styles.cardBadge}>{exploredDests.length}</Text>
+            <View style={styles.headerRight}>
+              {destSearchable && <SearchToggle open={destSearchOpen} onPress={() => toggleSearch(destSearchOpen, setDestSearchOpen, setDestQuery)} />}
+              <Text style={styles.cardBadge}>{exploredDests.length}</Text>
+            </View>
           </View>
           {exploredDests.length === 0 ? (
             <Text style={styles.topEmpty}>No destinations visited yet.</Text>
           ) : (
             <>
-            {/* Search: a destination's name (a country is picked from the chips). Shown once there are enough to need it. */}
-            {(exploredDests.length > 8 || destCountries.length > 3) && (
-              <View style={styles.searchBox}>
-                <Search size={15} color="#9CA3AF" />
-                <TextInput
-                  style={styles.searchInput}
-                  value={destQuery}
-                  onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)}
-                  placeholder="Search destinations"
-                  placeholderTextColor="#9CA3AF"
-                  autoCorrect={false}
-                  autoCapitalize="none"
-                  returnKeyType="search"
-                  clearButtonMode="never"
-                />
-                {!!destQuery && (
-                  <Pressable onPress={() => setDestQuery('')} hitSlop={8} accessibilityLabel="Clear search">
-                    <X size={15} color="#9CA3AF" strokeWidth={2.5} />
-                  </Pressable>
-                )}
-              </View>
+            {/* Search: a destination's name (a country is picked from the chips). Folded away behind the magnifier in the
+                header until wanted; offered once there are enough to need it. */}
+            {destSearchable && (
+              <FoldingSearch open={destSearchOpen} value={destQuery} placeholder="Search destinations"
+                onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)} onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
             )}
             {/* Filter by country: All, then each country with visited destinations (flag, name, count). */}
             {destCountries.length > 1 && (
@@ -629,33 +627,20 @@ export default function ProfileScreen() {
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
-            <Text style={styles.cardBadge}>{exploredSpots.length}</Text>
+            <View style={styles.headerRight}>
+              {spotSearchable && <SearchToggle open={spotSearchOpen} onPress={() => toggleSearch(spotSearchOpen, setSpotSearchOpen, setSpotQuery)} />}
+              <Text style={styles.cardBadge}>{exploredSpots.length}</Text>
+            </View>
           </View>
           {exploredSpots.length === 0 ? (
             <Text style={styles.topEmpty}>No spots visited yet.</Text>
           ) : (
             <>
-            {/* Search: a spot's or its destination's name (a country is picked from the chips). Shown once there are
-                enough to need it. */}
-            {exploredSpots.length > 8 && (
-              <View style={styles.searchBox}>
-                <Search size={15} color="#9CA3AF" />
-                <TextInput
-                  style={styles.searchInput}
-                  value={spotQuery}
-                  onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)}
-                  placeholder="Search spots or destinations"
-                  placeholderTextColor="#9CA3AF"
-                  autoCorrect={false}
-                  autoCapitalize="none"
-                  returnKeyType="search"
-                />
-                {!!spotQuery && (
-                  <Pressable onPress={() => setSpotQuery('')} hitSlop={8} accessibilityLabel="Clear search">
-                    <X size={15} color="#9CA3AF" strokeWidth={2.5} />
-                  </Pressable>
-                )}
-              </View>
+            {/* Search: a spot's or its destination's name (a country is picked from the chips). Folded away behind the
+                magnifier in the header until wanted; offered once there are enough to need it. */}
+            {spotSearchable && (
+              <FoldingSearch open={spotSearchOpen} value={spotQuery} placeholder="Search spots or destinations"
+                onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)} onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
             )}
             {spotCountries.length > 1 && (
               <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
@@ -771,6 +756,44 @@ function CountryChips({ countries, total, selected, query, onSelect, onClearQuer
   );
 }
 
+// The magnifier in an Explored section's header that unfolds its search (a close mark while it is open).
+function SearchToggle({ open, onPress }: { open: boolean; onPress: () => void }) {
+  return (
+    <Pressable onPress={onPress} hitSlop={10} style={styles.searchToggle} accessibilityLabel={open ? 'Close search' : 'Search'}>
+      {open ? <X size={14} color="#6B7280" strokeWidth={2.5} /> : <Search size={15} color="#6B7280" strokeWidth={2.3} />}
+    </Pressable>
+  );
+}
+
+// An Explored section's search box, shown only while unfolded: it opens with the keyboard up, its close mark clears it
+// and folds it away, and leaving it empty folds it away too.
+function FoldingSearch({ open, value, placeholder, onChangeText, onClose, onBlurEmpty }: {
+  open: boolean; value: string; placeholder: string; onChangeText: (t: string) => void; onClose: () => void; onBlurEmpty: () => void;
+}) {
+  if (!open) return null;
+  return (
+    <View style={styles.searchBox}>
+      <Search size={14} color="#9CA3AF" />
+      <TextInput
+        style={styles.searchInput}
+        value={value}
+        onChangeText={onChangeText}
+        placeholder={placeholder}
+        placeholderTextColor="#9CA3AF"
+        autoFocus
+        autoCorrect={false}
+        autoCapitalize="none"
+        returnKeyType="search"
+        clearButtonMode="never"
+        onBlur={() => { if (!value.trim()) { LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); onBlurEmpty(); } }}
+      />
+      <Pressable onPress={() => { LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); onClose(); }} hitSlop={8} accessibilityLabel="Close search">
+        <X size={14} color="#9CA3AF" strokeWidth={2.5} />
+      </Pressable>
+    </View>
+  );
+}
+
 function StatText({ index, level, style, on, off, children }: { index: number; level: SharedValue<number>; style: any; on: string; off: string; children: React.ReactNode }) {
   const a = useAnimatedStyle(() => ({
     color: interpolateColor(Math.min(1, Math.abs(level.value - index)), [0, 1], [on, off]),
@@ -871,6 +894,8 @@ const styles = StyleSheet.create({
   },
   cardTitle:  { fontSize: 15, fontWeight: '700', color: '#111827', marginBottom: 12 },
   cardBadge:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
+  headerRight: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  searchToggle: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: '#F3F4F6' },
 
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
