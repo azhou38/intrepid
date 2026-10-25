@@ -158,7 +158,7 @@ export default function WorldMapModal({
                 style={{
                   iconImage: SPOT_MINI_PIN_VISITED,
                   iconAnchor: 'bottom',
-                  iconSize: ['interpolate', ['linear'], ['zoom'], 0, 1.1, 8, 2] as any,
+                  iconSize: ['interpolate', ['linear'], ['zoom'], 0, 0.9, 8, 1.6] as any,
                   iconAllowOverlap: true,
                   iconIgnorePlacement: true,
                 }}
