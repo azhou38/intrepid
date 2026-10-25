@@ -49,8 +49,10 @@ export default function ProfileScreen() {
 
   const visitedSpots = useMemo(() => SPOTS.filter(sp => visitIndex.isSpotVisited(sp.id)), [visitIndex]);
 
-  // Top Countries, ranked by visited destinations or visited spots (the toggle in its header).
-  const [topMode, setTopMode] = useState<'destinations' | 'spots'>('destinations');
+  // My World shows one level at a time (the counts at its top choose it): the visited countries filled in, or a dot per
+  // visited destination or spot. Top Countries follows it: ranked by visited spots on Spots, by destinations otherwise.
+  const [worldMode, setWorldMode] = useState<WorldMode>('countries');
+  const topMode: 'destinations' | 'spots' = worldMode === 'spots' ? 'spots' : 'destinations';
   const topCountries = useMemo(() => {
     const by = new Map<string, { country: string; code: string; count: number }>();
     const add = (code: string | undefined, country: string | undefined) => {
@@ -78,8 +80,6 @@ export default function ProfileScreen() {
     return () => clearTimeout(t);
   }, [flagTip]);
 
-  // My World shows one level at a time: the visited countries filled in, or a dot per visited destination or spot.
-  const [worldMode, setWorldMode] = useState<WorldMode>('countries');
   const visitedCountrySet = visitIndex.visitedCountryCodes;
   const worldDots = useMemo(
     () => (worldMode === 'spots' ? visitedSpots : worldMode === 'destinations' ? visitedDests : [])
@@ -111,42 +111,27 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* ── Stats row: Countries · Destinations · Spots ─────────────── */}
-      <View style={[styles.statsRow, { marginHorizontal: 16, marginBottom: 14 }]}>
-        {[
-          { value: stats.totalCountries,    label: 'Countries'    },
-          { value: stats.totalDestinations, label: 'Destinations' },
-          { value: stats.totalSpots,        label: 'Spots'        },
-        ].map(({ value, label }, i) => (
-          <React.Fragment key={label}>
-            {i > 0 && <View style={styles.statDivider} />}
-            <View style={styles.statItem}>
-              <Text style={styles.statValue}>{value}</Text>
-              <Text style={styles.statLabel}>{label}</Text>
-            </View>
-          </React.Fragment>
-        ))}
-      </View>
-
-      {/* ── My World map ────────────────────────────────────────────── */}
+      {/* ── My World: the three counts head the map and choose what it (and Top Countries) shows ── */}
       <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14, padding: 0, overflow: 'hidden' }]}>
-        {/* Which level the map shows (countries, destinations or spots), and how many of them are visited. */}
-        <View style={styles.worldHeader}>
-          <View style={styles.worldToggle}>
-            {WORLD_MODES.map(({ mode, label }) => {
-              const on = worldMode === mode;
-              return (
+        <View style={styles.statsHeader}>
+          {WORLD_MODES.map(({ mode, label }, i) => {
+            const on = worldMode === mode;
+            const value = mode === 'countries' ? stats.totalCountries : mode === 'destinations' ? stats.totalDestinations : stats.totalSpots;
+            return (
+              <React.Fragment key={mode}>
+                {i > 0 && <View style={styles.statDivider} />}
                 <Pressable
-                  key={mode}
-                  style={[styles.worldToggleBtn, on && styles.worldToggleBtnOn]}
+                  style={styles.statItem}
                   onPress={() => { if (!on) { Haptics.selectionAsync(); setWorldMode(mode); } }}
                   hitSlop={4}
                 >
-                  <Text style={[styles.worldToggleTxt, on && styles.worldToggleTxtOn]}>{label}</Text>
+                  <Text style={[styles.statValue, !on && styles.statValueOff]}>{value}</Text>
+                  <Text style={[styles.statLabel, on && styles.statLabelOn]}>{label}</Text>
+                  <View style={[styles.statUnderline, on && styles.statUnderlineOn]} />
                 </Pressable>
-              );
-            })}
-          </View>
+              </React.Fragment>
+            );
+          })}
         </View>
 
         <View pointerEvents="none" style={styles.mapWrap}>
@@ -200,18 +185,7 @@ export default function ProfileScreen() {
         <View style={[styles.card, { marginHorizontal: 16, marginBottom: 14 }]}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Countries</Text>
-            {/* Rank by visited destinations or by visited spots. */}
-            <View style={styles.topToggle}>
-              {(['destinations', 'spots'] as const).map(m => {
-                const on = topMode === m;
-                return (
-                  <Pressable key={m} style={[styles.topToggleBtn, on && styles.worldToggleBtnOn]} hitSlop={4}
-                    onPress={() => { if (!on) { Haptics.selectionAsync(); setTopMode(m); } }}>
-                    <Text style={[styles.topToggleTxt, on && styles.worldToggleTxtOn]}>{m === 'destinations' ? 'Destinations' : 'Spots'}</Text>
-                  </Pressable>
-                );
-              })}
-            </View>
+            <Text style={styles.topBy}>{topMode === 'spots' ? 'by spots' : 'by destinations'}</Text>
           </View>
           {topCountries.length === 0 && (
             <Text style={styles.topEmpty}>No {topMode} visited yet.</Text>
@@ -252,12 +226,16 @@ const styles = StyleSheet.create({
   profileSub:  { fontSize: 13, color: '#9CA3AF', marginTop: 2 },
 
   // Stats row
-  statsRow: {
+  // My World's header: the three counts, each a button; the selected one is dark with a green underline.
+  statsHeader: {
     flexDirection: 'row', alignItems: 'center',
-    backgroundColor: 'white', borderRadius: 18, padding: 16,
-    borderWidth: 1, borderColor: '#F3F4F6',
+    paddingTop: 14, borderBottomWidth: 1, borderBottomColor: '#F3F4F6',
   },
   statItem:    { flex: 1, alignItems: 'center' },
+  statValueOff:    { color: '#9CA3AF' },
+  statLabelOn:     { color: '#111827', fontWeight: '600' },
+  statUnderline:   { marginTop: 10, width: 28, height: 2.5, borderRadius: 2, backgroundColor: 'transparent' },
+  statUnderlineOn: { backgroundColor: '#10B981' },
   statValue:   { fontSize: 22, fontWeight: '800', color: '#111827' },
   statLabel:   { fontSize: 10, color: '#6B7280', marginTop: 2 },
   statDivider: { width: 1, height: 28, backgroundColor: '#E5E7EB' },
@@ -275,25 +253,9 @@ const styles = StyleSheet.create({
   cardBadge:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
 
   // My World
-  worldHeader: {
-    flexDirection: 'row', alignItems: 'center', gap: 10,
-    padding: 12, paddingBottom: 12,
-  },
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
-  // Countries · Destinations · Spots: a segmented toggle under the heading.
-  worldToggle: {
-    flex: 1, flexDirection: 'row', padding: 3,
-    backgroundColor: '#F3F4F6', borderRadius: 10,
-  },
-  worldToggleBtn:    { flex: 1, alignItems: 'center', paddingVertical: 7, borderRadius: 8 },
-  worldToggleBtnOn:  { backgroundColor: 'white', shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
-  worldToggleTxt:    { fontSize: 13, fontWeight: '600', color: '#6B7280' },
-  worldToggleTxtOn:  { color: '#111827' },
-  // Top Countries' Destinations · Spots toggle: the same segmented look, sized to its labels.
-  topToggle:     { flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
-  topToggleBtn:  { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 7 },
-  topToggleTxt:  { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
+  topBy:         { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
 
   // Top Countries
   countryRow: {
