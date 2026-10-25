@@ -232,3 +232,8 @@ export interface SavedCountry {
   // see CountrySheet's own isCountryVisited.
   visits?: Visit[];
 }
+
+// Where a profile photo's round avatar sits on the photo: the photo's own size (w, h), how far it is zoomed past filling
+// the circle (z ≥ 1), and how far its centre is moved from the circle's, as fractions of its drawn width and height
+// (fx, fy). Any circle draws the photo the same way (avatarImageFrame in CircleCropper), so no cropped copy is needed.
+export type AvatarCrop = { w: number; h: number; z: number; fx: number; fy: number };

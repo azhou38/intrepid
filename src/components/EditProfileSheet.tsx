@@ -5,10 +5,20 @@ import * as FileSystem from 'expo-file-system/legacy';
 import * as Haptics from 'expo-haptics';
 import { Camera } from 'lucide-react-native';
 import { useStore } from '../store';
+import CircleCropper, { avatarImageFrame } from './CircleCropper';
+import type { AvatarCrop } from '../types';
 
-// The profile's avatar: its photo when one is set, else its first initial on the app's indigo.
-export function ProfileAvatar({ uri, name, size }: { uri: string | null; name: string; size: number }) {
+// The profile's avatar: its photo when one is set (placed by its crop when it has one, else centred, filling the
+// circle), else its first initial on the app's indigo.
+export function ProfileAvatar({ uri, name, size, crop }: { uri: string | null; name: string; size: number; crop?: AvatarCrop | null }) {
   const box = { width: size, height: size, borderRadius: size / 2 };
+  if (uri && crop) {
+    return (
+      <View style={[box, st.avatarBg, { overflow: 'hidden' }]}>
+        <Image source={{ uri }} style={[{ position: 'absolute' }, avatarImageFrame(crop, size)]} />
+      </View>
+    );
+  }
   if (uri) return <Image source={{ uri }} style={[box, st.avatarBg]} />;
   return (
     <View style={[box, st.avatarBg, st.center]}>
@@ -23,43 +33,58 @@ const HANDLE_MAX = 30;
 const cleanHandle = (t: string) => t.toLowerCase().replace(/^@+/, '').replace(/[^a-z0-9._]/g, '').slice(0, HANDLE_MAX);
 const AVATAR_DIR = FileSystem.documentDirectory ?? '';
 
-// Edit Profile: the avatar (choose a photo from the library, cropped square, or remove it), the name and the username.
+// Edit Profile: the avatar (choose a photo from the library and place it in a circle, move and scale it again, or remove
+// it), the name and the username.
 // Nothing is saved until Save; a chosen photo is copied into the app's documents then (the picker's copy sits in a cache
 // the system may clear), and the photo it replaces is deleted.
 export default function EditProfileSheet({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   const userName = useStore(s => s.userName);
   const userHandle = useStore(s => s.userHandle) ?? '';
   const userAvatarUri = useStore(s => s.userAvatarUri) ?? null;
+  const userAvatarCrop = useStore(s => s.userAvatarCrop) ?? null;
   const setProfile = useStore(s => s.setProfile);
 
   const [name, setName] = useState(userName);
   const [handle, setHandle] = useState(userHandle);
   const [avatar, setAvatar] = useState<string | null>(userAvatarUri);
+  const [crop, setCrop] = useState<AvatarCrop | null>(userAvatarCrop);
+  // The photo open in the circular cropper (a new pick, or the current photo to move and scale), with its size.
+  const [cropping, setCropping] = useState<{ uri: string; w: number; h: number } | null>(null);
   const [saving, setSaving] = useState(false);
   // Each opening starts from what is saved.
   useEffect(() => {
     if (!visible) return;
-    setName(userName); setHandle(userHandle); setAvatar(userAvatarUri); setSaving(false);
+    setName(userName); setHandle(userHandle); setAvatar(userAvatarUri); setCrop(userAvatarCrop); setSaving(false);
   }, [visible]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const changed = name.trim() !== userName || handle !== userHandle || avatar !== userAvatarUri;
+  const changed = name.trim() !== userName || handle !== userHandle || avatar !== userAvatarUri || crop !== userAvatarCrop;
   const canSave = !!name.trim() && changed && !saving;
 
+  // A picked photo goes straight to the circular cropper (the system's own crop is square only).
   const pickPhoto = async () => {
-    const r = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ['images'], allowsEditing: true, aspect: [1, 1], quality: 0.8 });
-    if (!r.canceled && r.assets[0]) setAvatar(r.assets[0].uri);
+    const r = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ['images'], quality: 0.85 });
+    const a = !r.canceled ? r.assets[0] : null;
+    // After the picker has finished closing, so the cropper is not presented over a dismissing screen.
+    if (a) setTimeout(() => setCropping({ uri: a.uri, w: a.width, h: a.height }), 400);
   };
+  const adjustPhoto = () => {
+    if (!avatar) return;
+    if (crop) { setCropping({ uri: avatar, w: crop.w, h: crop.h }); return; }
+    Image.getSize(avatar, (w, h) => setCropping({ uri: avatar, w, h }), () => {});
+  };
+  const removePhoto = () => { setAvatar(null); setCrop(null); };
   const photoOptions = () => {
     if (!avatar) { pickPhoto(); return; }
     if (Platform.OS === 'ios') {
       ActionSheetIOS.showActionSheetWithOptions(
-        { options: ['Choose Photo', 'Remove Photo', 'Cancel'], destructiveButtonIndex: 1, cancelButtonIndex: 2 },
-        i => { if (i === 0) pickPhoto(); else if (i === 1) setAvatar(null); },
+        { options: ['Choose Photo', 'Move and Scale', 'Remove Photo', 'Cancel'], destructiveButtonIndex: 2, cancelButtonIndex: 3 },
+        i => { if (i === 0) pickPhoto(); else if (i === 1) adjustPhoto(); else if (i === 2) removePhoto(); },
       );
     } else {
       Alert.alert('Profile Photo', undefined, [
         { text: 'Choose Photo', onPress: pickPhoto },
-        { text: 'Remove Photo', style: 'destructive', onPress: () => setAvatar(null) },
+        { text: 'Move and Scale', onPress: adjustPhoto },
+        { text: 'Remove Photo', style: 'destructive', onPress: removePhoto },
         { text: 'Cancel', style: 'cancel' },
       ]);
     }
@@ -82,7 +107,7 @@ export default function EditProfileSheet({ visible, onClose }: { visible: boolea
       // Keeping the picker's own file is better than losing the change.
       uri = avatar;
     }
-    setProfile({ name: name.trim(), handle, avatarUri: uri });
+    setProfile({ name: name.trim(), handle, avatarUri: uri, avatarCrop: crop });
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     onClose();
   };
@@ -99,7 +124,7 @@ export default function EditProfileSheet({ visible, onClose }: { visible: boolea
         </View>
 
         <Pressable style={st.avatarWrap} onPress={photoOptions} accessibilityLabel="Change profile photo">
-          <ProfileAvatar uri={avatar} name={name || userName} size={104} />
+          <ProfileAvatar uri={avatar} name={name || userName} size={104} crop={crop} />
           <View style={st.cameraBadge}><Camera size={15} color="white" strokeWidth={2.4} /></View>
         </Pressable>
         <Pressable onPress={photoOptions} hitSlop={6} style={{ alignSelf: 'center' }}>
@@ -137,6 +162,14 @@ export default function EditProfileSheet({ visible, onClose }: { visible: boolea
           <Text style={st.hint}>Letters, numbers, dots and underscores.</Text>
         </View>
       </View>
+      <CircleCropper
+        uri={cropping?.uri ?? null}
+        width={cropping?.w ?? 1}
+        height={cropping?.h ?? 1}
+        initial={cropping && cropping.uri === avatar ? crop : null}
+        onCancel={() => setCropping(null)}
+        onDone={c => { setAvatar(cropping!.uri); setCrop(c); setCropping(null); }}
+      />
     </Modal>
   );
 }

@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent } from '../types';
+import type { SavedDestination, SavedSpot, SavedCountry, PhotoEntry, Continent, AvatarCrop } from '../types';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS } from '../data/spots';
 import {
@@ -36,6 +36,8 @@ interface AppState {
   // The profile's username (without the @; '' until set) and its photo (a file in the app's documents, or null).
   userHandle: string;
   userAvatarUri: string | null;
+  // Where the round avatar sits on that photo (see AvatarCrop); null draws it centred, filling the circle.
+  userAvatarCrop?: AvatarCrop | null;
   // When the profile was first created on this device (ISO date), shown as "Joined …".
   joinedAt?: string;
 
@@ -57,7 +59,7 @@ interface AppState {
   unvisitCountry: (countryCode: string) => void;
   selectDestination: (id: string | null) => void;
   setUserName: (name: string) => void;
-  setProfile: (p: { name: string; handle: string; avatarUri: string | null }) => void;
+  setProfile: (p: { name: string; handle: string; avatarUri: string | null; avatarCrop: AvatarCrop | null }) => void;
   // Places opened from search, most recent first (see RecentSearch) — shown as the search bar's
   // "Recent" suggestions.
   recentSearches: RecentSearch[];
@@ -172,7 +174,8 @@ export const useStore = create<AppState>()(
 
       selectDestination: (id) => set({ selectedDestinationId: id }),
       setUserName: (name) => set({ userName: name }),
-      setProfile: ({ name, handle, avatarUri }) => set({ userName: name, userHandle: handle, userAvatarUri: avatarUri }),
+      setProfile: ({ name, handle, avatarUri, avatarCrop }) =>
+        set({ userName: name, userHandle: handle, userAvatarUri: avatarUri, userAvatarCrop: avatarUri ? avatarCrop : null }),
 
       recentSearches: [],
       // Moves an already-listed place back to the top rather than listing it twice.

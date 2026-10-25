@@ -63,6 +63,7 @@ export default function ProfileScreen() {
   const userName          = useStore(s => s.userName);
   const userHandle        = useStore(s => s.userHandle) ?? '';
   const userAvatarUri     = useStore(s => s.userAvatarUri) ?? null;
+  const userAvatarCrop    = useStore(s => s.userAvatarCrop) ?? null;
   const joinedAt          = useStore(s => s.joinedAt);
   const [editOpen, setEditOpen] = useState(false);
 
@@ -336,7 +337,7 @@ export default function ProfileScreen() {
       style={[styles.profileHeader, { position: 'absolute', top: insets.top + 16, left: 0, right: 0 }, headerFade]}
       onLayout={e => { const h = e.nativeEvent.layout.height; setHeaderH(h); stickyYSV.value = 16 + h + 16 - COMPACT_H; }}
     >
-      <ProfileAvatar uri={userAvatarUri} name={userName} size={88} />
+      <ProfileAvatar uri={userAvatarUri} name={userName} size={88} crop={userAvatarCrop} />
       <Text style={styles.profileName} numberOfLines={1}>{userName}</Text>
       {!!userHandle && <Text style={styles.profileHandle} numberOfLines={1}>@{userHandle}</Text>}
       <Text style={styles.profileSub}>
@@ -378,7 +379,7 @@ export default function ProfileScreen() {
         <Animated.View pointerEvents="none" style={[styles.stuckBg, stuckStyle]} />
         {/* The small centred avatar and name, shown only while the bar is pinned. */}
         <Animated.View pointerEvents="none" style={[styles.compactHeader, compactStyle]}>
-          <ProfileAvatar uri={userAvatarUri} name={userName} size={26} />
+          <ProfileAvatar uri={userAvatarUri} name={userName} size={26} crop={userAvatarCrop} />
           <Text style={styles.compactName} numberOfLines={1}>{userName}</Text>
         </Animated.View>
 
