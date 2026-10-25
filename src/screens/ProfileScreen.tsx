@@ -7,7 +7,7 @@ import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
-import { SPOTS } from '../data/spots';
+import { SPOTS, spotCountry, spotCountryCode } from '../data/spots';
 // Country outlines for My World: Natural Earth 1:50m admin-0 (public domain), simplified, in the Miller projection as SVG
 // paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
@@ -52,15 +52,19 @@ export default function ProfileScreen() {
   // My World shows one level at a time (the counts at its top choose it): the visited countries filled in, or a dot per
   // visited destination or spot. Top Countries follows it: ranked by visited spots on Spots, by destinations otherwise.
   const [worldMode, setWorldMode] = useState<WorldMode>('countries');
-  // Top Countries (on Countries): ranked by visited destinations.
+  // Top Countries (on Countries): ranked by visited destinations or visited spots, its own small toggle.
+  const [topRank, setTopRank] = useState<'destinations' | 'spots'>('destinations');
   const topCountries = useMemo(() => {
     const by = new Map<string, { country: string; code: string; count: number }>();
-    for (const d of visitedDests) {
-      const row = by.get(d.countryCode) ?? { country: d.country, code: d.countryCode, count: 0 };
-      row.count += 1; by.set(d.countryCode, row);
-    }
+    const add = (code: string | undefined, country: string | undefined) => {
+      if (!code || !country) return;
+      const row = by.get(code) ?? { country, code, count: 0 };
+      row.count += 1; by.set(code, row);
+    };
+    if (topRank === 'destinations') for (const d of visitedDests) add(d.countryCode, d.country);
+    else for (const sp of visitedSpots) add(spotCountryCode(sp), spotCountry(sp));
     return [...by.values()].sort((x, y) => y.count - x.count || x.country.localeCompare(y.country)).slice(0, 8);
-  }, [visitedDests]);
+  }, [topRank, visitedDests, visitedSpots]);
   // Top Destinations (on Destinations): every destination with a visited spot, ranked by how many of its spots are visited.
   const topDestinations = useMemo(() => {
     const n = new Map<string, number>();
@@ -204,12 +208,24 @@ export default function ProfileScreen() {
         )}
       </View>
       {/* ── Top Countries ───────────────────────────────────────────── */}
-      {visitedDests.length > 0 && (
+      {(visitedDests.length > 0 || visitedSpots.length > 0) && (
         <View style={styles.panelSection}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Countries</Text>
-            <Text style={styles.topBy}>by destinations</Text>
+            {/* Rank by visited destinations or by visited spots. */}
+            <View style={styles.topToggle}>
+              {(['destinations', 'spots'] as const).map(m => {
+                const on = topRank === m;
+                return (
+                  <Pressable key={m} style={[styles.topToggleBtn, on && styles.topToggleBtnOn]} hitSlop={4}
+                    onPress={() => { if (!on) { Haptics.selectionAsync(); LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); setTopRank(m); } }}>
+                    <Text style={[styles.topToggleTxt, on && styles.topToggleTxtOn]}>{m === 'destinations' ? 'Destinations' : 'Spots'}</Text>
+                  </Pressable>
+                );
+              })}
+            </View>
           </View>
+          {topCountries.length === 0 && <Text style={styles.topEmpty}>No {topRank} visited yet.</Text>}
           {topCountries.map(({ country, count, code }) => (
             <View key={code} style={styles.countryRow}>
               <CircleFlag countryCode={code} size={22} ring ringWidth={1.5} style={styles.flagRing} />
@@ -218,7 +234,7 @@ export default function ProfileScreen() {
                 <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
               </View>
               <Text style={styles.countryCount}>
-                {count} {count === 1 ? 'dest' : 'dests'}
+                {count} {topRank === 'destinations' ? (count === 1 ? 'dest' : 'dests') : (count === 1 ? 'spot' : 'spots')}
               </Text>
             </View>
           ))}
@@ -358,6 +374,12 @@ const styles = StyleSheet.create({
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
   topBy:         { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
+  // Top Countries' Destinations · Spots toggle: a small segmented control beside its title.
+  topToggle:       { flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
+  topToggleBtn:    { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 7 },
+  topToggleBtnOn:  { backgroundColor: 'white', shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
+  topToggleTxt:    { fontSize: 12, fontWeight: '600', color: '#6B7280' },
+  topToggleTxtOn:  { color: '#111827' },
   // Destinations and Spots Explored: name chips that wrap, in a box that scrolls once it is full.
   exploredScroll: { maxHeight: 232 },
   chipWrap:   { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
