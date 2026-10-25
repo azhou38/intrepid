@@ -75,7 +75,7 @@ export default function ProfileScreen() {
   // centred avatar and name, and a hairline and soft shadow under it, so it reads as a bar that stays while the sections
   // slide beneath. Before that its top strip is see-through, over the bottom of the full profile header.
   const scrollSV = useSharedValue(0);
-  const stickyYSV = useSharedValue(0);
+  const stickyYSV = useSharedValue(1e6);
   const stuckT = () => {
     'worklet';
     return Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + 12) / 12));
@@ -207,7 +207,9 @@ export default function ProfileScreen() {
       showsVerticalScrollIndicator={false}
     >
       {/* ── Profile header ──────────────────────────────────────────── */}
-      <View style={styles.profileHeader}>
+      {/* Where the pinned bar starts is measured here: the bar's own onLayout reads 0, inside the sticky wrapper the
+          ScrollView puts round it. It starts 16 below the header (its margin), less its overlapping top strip. */}
+      <View style={styles.profileHeader} onLayout={e => { const l = e.nativeEvent.layout; stickyYSV.value = l.y + l.height + 16 - COMPACT_H; }}>
         <View style={styles.avatar}>
           <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
         </View>
@@ -225,7 +227,7 @@ export default function ProfileScreen() {
           every section below show; it stays pinned at the top as they scroll. ── */}
       {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
           component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
-      <View style={{ marginTop: -COMPACT_H }} onLayout={e => { stickyYSV.value = e.nativeEvent.layout.y; }}>
+      <View style={{ marginTop: -COMPACT_H }}>
       <Animated.View style={[styles.selectorSticky, stuckStyle]}>
         {/* The small centred avatar and name, shown only while the bar is pinned. */}
         <Animated.View pointerEvents="none" style={[styles.compactHeader, compactStyle]}>
