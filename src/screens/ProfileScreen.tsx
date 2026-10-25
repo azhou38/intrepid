@@ -82,10 +82,10 @@ export default function ProfileScreen() {
     const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
     return { backgroundColor: `rgba(249,250,251,${t})`, borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
   });
-  // The full header fades out over the same stretch as the bar fills in, so the small avatar and name never cut in over
-  // a header still showing behind them.
+  // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
+  const [headerH, setHeaderH] = useState(150);
   const headerFade = useAnimatedStyle(() => ({
-    opacity: 1 - Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE)),
+    opacity: 1 - Math.min(1, Math.max(0, scrollSV.value / Math.max(1, stickyYSV.value - FADE))),
   }));
   const compactStyle = useAnimatedStyle(() => {
     const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
@@ -196,9 +196,29 @@ export default function ProfileScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-    {/* The name and level selector (child 0) pin to the top while the sections the selector controls scroll beneath. */}
+    {/* ── Profile header ──────────────────────────────────────────── */}
+    {/* Fixed behind the page: it holds still and fades while the selector slides up over it, gone by the time the pinned
+        bar's small avatar and name fade in. Scrolling with the page, it was sliced by the top edge before it had faded.
+        Its height sizes the room left for it at the top of the page and where the pinned bar starts (16 below it, less
+        the bar's overlapping top strip; the bar's own onLayout reads 0 inside the ScrollView's sticky wrapper). */}
+    <Animated.View
+      pointerEvents="none"
+      style={[styles.profileHeader, { position: 'absolute', top: insets.top + 16, left: 0, right: 0 }, headerFade]}
+      onLayout={e => { const h = e.nativeEvent.layout.height; setHeaderH(h); stickyYSV.value = 16 + h + 16 - COMPACT_H; }}
+    >
+      <View style={styles.avatar}>
+        <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
+      </View>
+      <Text style={styles.profileName} numberOfLines={1}>{userName}</Text>
+      <Text style={styles.profileSub}>
+        {stats.firstVisitDate
+          ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
+          : 'World Traveler'}
+      </Text>
+    </Animated.View>
+    {/* The level selector (child 1) pins to the top while the sections it controls scroll beneath. */}
     <ScrollView
-      style={styles.container}
+      style={{ flex: 1 }}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
       onScroll={e => { scrollSV.value = e.nativeEvent.contentOffset.y; }}
@@ -209,20 +229,8 @@ export default function ProfileScreen() {
       contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
       showsVerticalScrollIndicator={false}
     >
-      {/* ── Profile header ──────────────────────────────────────────── */}
-      {/* Where the pinned bar starts is measured here: the bar's own onLayout reads 0, inside the sticky wrapper the
-          ScrollView puts round it. It starts 16 below the header (its margin), less its overlapping top strip. */}
-      <Animated.View style={[styles.profileHeader, headerFade]} onLayout={e => { const l = e.nativeEvent.layout; stickyYSV.value = l.y + l.height + 16 - COMPACT_H; }}>
-        <View style={styles.avatar}>
-          <Text style={styles.avatarText}>{userName.charAt(0).toUpperCase()}</Text>
-        </View>
-        <Text style={styles.profileName} numberOfLines={1}>{userName}</Text>
-        <Text style={styles.profileSub}>
-          {stats.firstVisitDate
-            ? `Exploring since ${new Date(stats.firstVisitDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
-            : 'World Traveler'}
-        </Text>
-      </Animated.View>
+      {/* Room for the profile header, which sits fixed behind the page (above the ScrollView). */}
+      <View style={{ height: headerH + 16 }} />
 
       {/* ── The level selector: Countries / Destinations / Spots. It heads the My World card and chooses what the map and
           every section below show; it stays pinned at the top as they scroll. ── */}
@@ -579,10 +587,7 @@ const styles = StyleSheet.create({
 
   // Profile header
   // The avatar centred, the name and the line under it centred below.
-  profileHeader: {
-    alignItems: 'center',
-    marginHorizontal: 16, marginBottom: 16,
-  },
+  profileHeader: { alignItems: 'center', paddingHorizontal: 16 },
   avatar: {
     width: 88, height: 88, borderRadius: 44,
     backgroundColor: '#6366F1', alignItems: 'center', justifyContent: 'center',
