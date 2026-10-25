@@ -3,7 +3,7 @@
 usage: ov.py spec.json tag — spec {name:[queries]}; Openverse (non-Wikimedia, CC0/PDM/BY/BY-SA), >=1280px; writes ov/<tag>-<name>.jpg sheets and ov/<tag>.json"""
 import sys,json,io,re,urllib.request,urllib.parse
 from PIL import Image,ImageDraw
-UA={'User-Agent':'IntrepidApp-Photos/1.0 (alexzhou38@gmail.com)'}
+UA={'User-Agent':'IntrepidApp-Photos/1.0'}
 def get(u,t=40): return urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=t).read()
 MINW=int(sys.argv[3]) if len(sys.argv)>3 else 1280
 spec=json.load(open(sys.argv[1]));tag=sys.argv[2];allr={}

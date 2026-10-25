@@ -19,7 +19,7 @@ from PIL import Image
 spec = importlib.util.spec_from_file_location('br', os.path.join(os.path.dirname(__file__), 'brighten.py'))
 br = importlib.util.module_from_spec(spec); spec.loader.exec_module(br)
 
-UA = 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)'
+UA = 'IntrepidApp-Curation/1.0'
 STEPS = [120, 250, 500, 960, 1280, 1920]
 REPO_RAW = 'https://raw.githubusercontent.com/azhou38/intrepid'
 

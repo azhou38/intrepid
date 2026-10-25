@@ -12,7 +12,7 @@ import concurrent.futures as cf, hashlib, io, json, os, sys, time, urllib.reques
 from PIL import Image, ImageStat
 
 FLOOR_P40, FLOOR_MEAN = 0.22, 0.30   # IMAGES.md → "Brightness": below either, a photo is too dark (headers, why-visit AND spot photos alike)
-UA = 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)'
+UA = 'IntrepidApp-Curation/1.0'
 CACHE = '.cache/curation/thumbs'
 os.makedirs(CACHE, exist_ok=True)
 

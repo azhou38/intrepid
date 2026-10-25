@@ -29,7 +29,7 @@ name, cat, wiki = opt('--name'), opt('--category', ''), opt('--wiki')
 if not name or opt('--lat') is None:
     sys.exit(__doc__)
 lat0, lon0 = float(opt('--lat')), float(opt('--lon'))
-UA = 'IntrepidApp-Curation/1.0 (alexzhou38@gmail.com)'
+UA = 'IntrepidApp-Curation/1.0'
 TYPES = {   # category -> Overpass selectors that name the thing itself
     'viewpoint': ['natural=peak', 'tourism=viewpoint', 'natural=cliff', 'natural=rock'],
     'hike': ['highway=trailhead', 'natural=peak', 'tourism=viewpoint', 'information=route_marker', 'amenity=parking'],

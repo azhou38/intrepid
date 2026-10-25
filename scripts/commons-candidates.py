@@ -3,7 +3,7 @@
 usage: spot_cands.py spec.json tag  — spec: {name:[queries]}; prints candidates, writes sheets/sc-<tag>-<n>.jpg"""
 import sys,json,re,io,urllib.request,urllib.parse
 from PIL import Image, ImageDraw
-UA={'User-Agent':'intrepid-photo-audit/1.0 (alexzhou38@gmail.com)'}
+UA={'User-Agent':'intrepid-photo-audit/1.0'}
 BAD=re.compile(r'\b(map|maps|satellite|locator|flag|coat of arms|logo|plan|diagram|drawing|illustration|sketch|painting|engraving|lithograph|poster|chart|aerial view|landsat|nasa|stamp|banknote|coin|svg)\b',re.I)
 def api(p):
     return json.load(urllib.request.urlopen(urllib.request.Request('https://commons.wikimedia.org/w/api.php?'+urllib.parse.urlencode(p),headers=UA),timeout=30))
