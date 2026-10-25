@@ -3057,6 +3057,17 @@ const destItems = useMemo((): DestItem[] =>
       const img = spotPhotoImageName(selectedSpot.id, visited);
       const selHasPhoto = specs.has(img);
       if (!selHasPhoto && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
+      // The carousel's neighbours (two either side) get their photos registered ahead, so swiping to one finds its pin
+      // image ready: a spot that was only a small pin used to show its blue glow first and its photo pin a moment later.
+      const ci = carouselSpots.findIndex(s => s.id === selectedSpot.id), cn = carouselSpots.length;
+      if (ci >= 0 && cn > 1 && !holdImages) {
+        for (const k of [1, -1, 2, -2]) {
+          const nb = carouselSpots[(((ci + k) % cn) + cn) % cn];
+          if (nb.id === selectedSpot.id || fresh >= MAX_NEW_SPOT_IMAGES) continue;
+          const nv = visitIndex.isSpotVisited(nb.id), nimg = spotPhotoImageName(nb.id, nv);
+          if (!specs.has(nimg)) { specs.set(nimg, { name: nimg, spot: nb, visited: nv }); added = true; fresh++; }
+        }
+      }
       features.push({
         type: 'Feature',
         id: selectedSpot.id,
@@ -3082,7 +3093,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta, spotImagesTick]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, pinPlanLngDelta, spotImagesTick, carouselSpots]);
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
@@ -5566,11 +5577,12 @@ const destItems = useMemo((): DestItem[] =>
           }}
         >
           {/* The selected spot's blue glow, under every pin: a soft disc behind its bubble (the native pin image's tip sits 2 pt
-              above the coordinate, its bubble centre a tail and a radius higher). */}
+              above the coordinate, its bubble centre a tail and a radius higher). Only once its photo pin is drawn (img set): it
+              used to show on its own while the photo was still being registered, and the pin followed a moment later. */}
           <MapboxGL.CircleLayer
             id="spotSelectedGlow"
             belowLayerID="destStampCircles"
-            filter={['==', ['get', 'sel'], 1] as any}
+            filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
               circleRadius: SPOT_PIN_SIZE / 2 + 8,
               circleColor: '#2F6BFF',
