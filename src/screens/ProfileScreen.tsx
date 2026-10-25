@@ -305,6 +305,30 @@ export default function ProfileScreen() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   []);
   const swipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: swipeXSV.value }] }));
+  // Top Countries' own tabs (ranked by destinations or by spots) swipe the same way inside its box: left to Spots,
+  // right to Destinations. A swipe that starts in the box is the box's, not the level's (it blocks levelSwipe).
+  const pickTopRank = (m: 'destinations' | 'spots') => {
+    if (m === topRank) return;
+    Haptics.selectionAsync();
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setTopRank(m);
+  };
+  const topRankRef = useRef(pickTopRank);
+  topRankRef.current = pickTopRank;
+  const callTopRank = useRef((left: boolean) => topRankRef.current(left ? 'spots' : 'destinations')).current;
+  const topSwipeXSV = useSharedValue(0);
+  const topSwipe = useMemo(() => Gesture.Pan()
+    .activeOffsetX([-25, 25])
+    .failOffsetY([-12, 12])
+    .blocksExternalGesture(levelSwipe)
+    .onUpdate(e => { topSwipeXSV.value = e.translationX * 0.2; })
+    .onEnd(e => {
+      if (Math.abs(e.translationX) > 60 || Math.abs(e.velocityX) > 600) runOnJS(callTopRank)(e.translationX < 0);
+    })
+    .onFinalize(() => { topSwipeXSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }); }),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [levelSwipe]);
+  const topSwipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: topSwipeXSV.value }] }));
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -496,7 +520,8 @@ export default function ProfileScreen() {
       </View>
       {/* ── Top Countries ───────────────────────────────────────────── */}
       {(visitedDests.length > 0 || visitedSpots.length > 0) && (
-        <View style={styles.panelSection}>
+        <GestureDetector gesture={topSwipe}>
+        <Animated.View style={[styles.panelSection, topSwipeStyle]} collapsable={false}>
           <View style={styles.cardHeaderRow}>
             <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Countries</Text>
             {/* Rank by visited destinations or by visited spots. */}
@@ -505,7 +530,7 @@ export default function ProfileScreen() {
                 const on = topRank === m;
                 return (
                   <Pressable key={m} style={[styles.topToggleBtn, on && styles.topToggleBtnOn]} hitSlop={4}
-                    onPress={() => { if (!on) { Haptics.selectionAsync(); LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); setTopRank(m); } }}>
+                    onPress={() => pickTopRank(m)}>
                     <Text style={[styles.topToggleTxt, on && styles.topToggleTxtOn]}>{m === 'destinations' ? 'Destinations' : 'Spots'}</Text>
                   </Pressable>
                 );
@@ -525,7 +550,8 @@ export default function ProfileScreen() {
               </Text>
             </View>
           ))}
-        </View>
+        </Animated.View>
+        </GestureDetector>
       )}
       </>)}
 
