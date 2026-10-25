@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation,
+  View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
+import { Search, X } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -94,9 +95,17 @@ export default function ProfileScreen() {
     }
     return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
   }, [visitedDests]);
+  // A search over them: it matches a destination's name or its country, and narrows the country filters too.
+  const [destQuery, setDestQuery] = useState('');
+  const q = destQuery.trim().toLowerCase();
+  const matchesQuery = (name: string, country: string) => !q || name.toLowerCase().includes(q) || country.toLowerCase().includes(q);
   const shownDests = useMemo(
-    () => (destCountry ? exploredDests.filter(d => d.countryCode === destCountry) : exploredDests),
-    [exploredDests, destCountry]);
+    () => exploredDests.filter(d => (!destCountry || d.countryCode === destCountry) && matchesQuery(d.name, d.country)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [exploredDests, destCountry, q]);
+  const shownDestCountries = useMemo(
+    () => (q ? destCountries.filter(c => c.name.toLowerCase().includes(q) || exploredDests.some(d => d.countryCode === c.code && d.name.toLowerCase().includes(q))) : destCountries),
+    [destCountries, exploredDests, q]);
   const exploredSpots = useMemo(() => [...visitedSpots].sort((x, y) => x.name.localeCompare(y.name)), [visitedSpots]);
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
@@ -148,6 +157,8 @@ export default function ProfileScreen() {
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
       stickyHeaderIndices={[1]}
+      keyboardDismissMode="on-drag"
+      keyboardShouldPersistTaps="handled"
       contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
       showsVerticalScrollIndicator={false}
     >
@@ -303,10 +314,32 @@ export default function ProfileScreen() {
             <Text style={styles.topEmpty}>No destinations visited yet.</Text>
           ) : (
             <>
+            {/* Search: a destination or a country. Shown once there are enough to need it. */}
+            {(exploredDests.length > 8 || destCountries.length > 3) && (
+              <View style={styles.searchBox}>
+                <Search size={15} color="#9CA3AF" />
+                <TextInput
+                  style={styles.searchInput}
+                  value={destQuery}
+                  onChangeText={setDestQuery}
+                  placeholder="Search destinations or countries"
+                  placeholderTextColor="#9CA3AF"
+                  autoCorrect={false}
+                  autoCapitalize="none"
+                  returnKeyType="search"
+                  clearButtonMode="never"
+                />
+                {!!destQuery && (
+                  <Pressable onPress={() => setDestQuery('')} hitSlop={8} accessibilityLabel="Clear search">
+                    <X size={15} color="#9CA3AF" strokeWidth={2.5} />
+                  </Pressable>
+                )}
+              </View>
+            )}
             {/* Filter by country: All, then each country with visited destinations (flag, name, count). */}
             {destCountries.length > 1 && (
               <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}>
-                {[{ code: null as string | null, name: 'All', count: exploredDests.length }, ...destCountries].map(c => {
+                {[{ code: null as string | null, name: 'All', count: exploredDests.length }, ...shownDestCountries].map(c => {
                   const on = destCountry === c.code;
                   return (
                     <Pressable key={c.code ?? 'all'} style={[styles.filterChip, on && styles.filterChipOn]} hitSlop={4}
@@ -323,7 +356,8 @@ export default function ProfileScreen() {
                 })}
               </ScrollView>
             )}
-            <ScrollView style={styles.exploredScroll} nestedScrollEnabled showsVerticalScrollIndicator={shownDests.length > 24}>
+            {shownDests.length === 0 && <Text style={styles.topEmpty}>No destinations match.</Text>}
+            <ScrollView style={styles.exploredScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownDests.length > 24}>
               <View style={styles.chipWrap}>
                 {shownDests.map(d => (
                   <View key={d.id} style={styles.chip}>
@@ -473,6 +507,10 @@ const styles = StyleSheet.create({
                 paddingLeft: 6, paddingRight: 10, paddingVertical: 5, borderRadius: 14, backgroundColor: '#F3F4F6' },
   chipTxt:    { fontSize: 13, fontWeight: '600', color: '#374151', flexShrink: 1 },
   chipIcon:   { fontSize: 13 },
+  // Destinations Explored's search box.
+  searchBox:    { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10, paddingHorizontal: 12, height: 38,
+                  borderRadius: 12, backgroundColor: '#F3F4F6' },
+  searchInput:  { flex: 1, fontSize: 14, color: '#111827', paddingVertical: 0 },
   // Destinations Explored's country filter: a sideways row of chips; the chosen one is green.
   filterScroll: { marginHorizontal: -16, marginBottom: 10, flexGrow: 0 },
   filterRow:    { paddingHorizontal: 16, gap: 6 },
