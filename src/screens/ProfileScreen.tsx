@@ -71,9 +71,7 @@ export default function ProfileScreen() {
       .map(p => worldPoint(p.coordinates.longitude, p.coordinates.latitude)),
     [worldMode, visitedSpots, visitedDests]);
 
-  const worldBadge = worldMode === 'countries' ? `${stats.totalCountries} / ${TOTAL_COUNTRIES}`
-    : worldMode === 'destinations' ? `${visitedDests.length} / ${DESTINATIONS.length}`
-    : `${visitedSpots.length} / ${SPOTS.length}`;
+
 
   return (
     <ScrollView
@@ -148,10 +146,6 @@ export default function ProfileScreen() {
                 fill="#10B981" stroke="white" strokeWidth={worldMode === 'spots' ? 0.35 : 0.5} />
             ))}
           </Svg>
-          {/* How many of this level are visited, over the map's top-right corner. */}
-          <View style={styles.worldPctBadge}>
-            <Text style={styles.worldPctText}>{worldBadge}</Text>
-          </View>
         </View>
       </View>
 
@@ -241,8 +235,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', gap: 10,
     padding: 12, paddingBottom: 12,
   },
-  worldPctBadge: { position: 'absolute', top: 10, right: 10, backgroundColor: '#EEF2FF', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 5 },
-  worldPctText:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
   // Countries · Destinations · Spots: a segmented toggle under the heading.
   worldToggle: {
