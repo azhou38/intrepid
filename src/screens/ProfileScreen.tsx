@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
 import { Search, X } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -109,12 +109,22 @@ export default function ProfileScreen() {
     () => scrollSV.value - stickyYSV.value + FADE / 2 > 0,
     (v, prev) => { if (v !== prev) runOnJS(setPinned)(v); },
   );
-  // The tabs' underline slides with the selection, like the pill; tabsWSV is the tab row's measured width (three equal
-  // tabs, so the middle one is centred on the screen).
-  const tabsWSV = useSharedValue(0);
+  // The tabs' underline slides with the selection, like the pill, under each tab's text: tabXSV/tabWSV are where each
+  // tab's text sits in the row (measured).
+  const tabXSV = useSharedValue([0, 0, 0]);
+  const tabWSV = useSharedValue([0, 0, 0]);
+  const tabRef = useRef([0, 0, 0]);
+  const tabTextRef = useRef([{ x: 0, w: 0 }, { x: 0, w: 0 }, { x: 0, w: 0 }]);
+  const placeUnderline = () => {
+    tabXSV.value = tabRef.current.map((x, k) => x + tabTextRef.current[k].x);
+    tabWSV.value = tabTextRef.current.map(t => t.w);
+  };
   const underlineStyle = useAnimatedStyle(() => {
-    const w = tabsWSV.value / 3;
-    return { width: w * 0.6, opacity: w > 0 ? 1 : 0, transform: [{ translateX: levelSV.value * w + w * 0.2 }] };
+    const xs = tabXSV.value, ws = tabWSV.value, l = levelSV.value;
+    return {
+      width: interpolate(l, [0, 1, 2], ws), opacity: ws[1] > 0 ? 1 : 0,
+      transform: [{ translateX: interpolate(l, [0, 1, 2], xs) }],
+    };
   });
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
@@ -315,14 +325,27 @@ export default function ProfileScreen() {
         <Animated.View
           pointerEvents={pinned ? 'auto' : 'none'}
           style={[styles.tabs, tabsStyle]}
-          onLayout={e => { tabsWSV.value = e.nativeEvent.layout.width; }}
         >
           {WORLD_MODES.map(({ mode, label }, i) => {
             const value = mode === 'countries' ? stats.totalCountries : mode === 'destinations' ? stats.totalDestinations : stats.totalSpots;
             return (
-              <Pressable key={mode} style={styles.tab} onPress={() => selectMode(mode)} hitSlop={{ top: 6, bottom: 6 }}>
-                <StatText index={i} level={levelSV} style={styles.tabValue} on="#111827" off="#9CA3AF">{value}</StatText>
-                <StatText index={i} level={levelSV} style={styles.tabLabel} on="#111827" off="#9CA3AF">{label}</StatText>
+              // The middle tab takes its text's own width and the outer two share the rest equally, so the middle tab is
+              // centred on the screen whatever the counts' widths.
+              <Pressable
+                key={mode}
+                style={[styles.tab, i !== 1 && { flex: 1 }]}
+                onPress={() => selectMode(mode)}
+                hitSlop={{ top: 6, bottom: 6 }}
+                onLayout={e => { tabRef.current[i] = e.nativeEvent.layout.x; placeUnderline(); }}
+              >
+                <View style={styles.tabText} onLayout={e => {
+                  // The underline spans the text, not the whole tab: offset by where the text sits in it.
+                  tabTextRef.current[i] = { x: e.nativeEvent.layout.x, w: e.nativeEvent.layout.width };
+                  placeUnderline();
+                }}>
+                  <StatText index={i} level={levelSV} style={styles.tabValue} on="#111827" off="#9CA3AF">{value}</StatText>
+                  <StatText index={i} level={levelSV} style={styles.tabLabel} on="#111827" off="#9CA3AF">{label}</StatText>
+                </View>
               </Pressable>
             );
           })}
@@ -674,7 +697,8 @@ const styles = StyleSheet.create({
   // Spans the bar edge to edge less the page margins, whichever box absolute offsets count from: left and right are equal.
   tabs: { position: 'absolute', top: COMPACT_H, left: 16, right: 16, height: TABS_H, flexDirection: 'row' },
   // Equal thirds; the text centred in each (it may run past a third's edges rather than wrap, staying centred).
-  tab: { flex: 1, flexDirection: 'row', alignItems: 'baseline', justifyContent: 'center', gap: 4, paddingTop: 8, overflow: 'visible' },
+  tab: { alignItems: 'center', justifyContent: 'center', paddingHorizontal: 10 },
+  tabText: { flexDirection: 'row', alignItems: 'baseline', gap: 4 },
   tabValue: { fontSize: 15, fontWeight: '800' },
   tabLabel: { fontSize: 13, fontWeight: '600' },
   tabUnderline: { position: 'absolute', left: 0, bottom: 0, height: 2, borderRadius: 1, backgroundColor: '#111827' },
