@@ -27,7 +27,7 @@ new cost rules (costBasis / costPer / needs). Merging curation/act therefore als
 - ACT spots' division: the geocoder gave a mix of district names and nothing for Namadgi, so every spot is "Australian Capital Territory" (the ACT is one level of government).
 - Booroomba Rocks why-visit photo: no passing photo (Commons: 800x600 lead or ~1090 px portrait climbing shots; Openverse nothing; Parks ACT 600x400 aerial): grey card.
 ## Photos still missing
-- Why-visit: dest:namadgi-national-park:why2 ("Climb up to Booroomba Rocks"): grey card (the only passing Booroomba photos are 1024 px, under the 1280 why-visit minimum).
+- Why-visit: none now. Namadgi why2 ("Climb up to Booroomba Rocks") uses Booroomba.JPG (800x600, Leighblackall) by the owner's decision, under the 1280 px minimum; replace with a larger photo when one exists.
 - Spots with NO_PHOTO (placeholder): Casuarina Sands, Canberra Centenary Trail, Molonglo Gorge Nature Reserve, Glenburn Homestead, Jerrabomberra West Grasslands, Oakey Hill (only candidate shows a hill with a bin in the frame), Settlers Track (only a Waterhole Hut photo exists), and one more listed in outcome.json. Parks ACT pages carry 600 px photos only (below 960); Openverse's API sat behind a Cloudflare challenge in the browser too.
 ## Photo flags
 - Official photo, permission not confirmed: Canberra Reptile Zoo entrance (canberrareptilezoo.com.au).

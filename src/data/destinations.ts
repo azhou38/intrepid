@@ -917,7 +917,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Bush walks, historic huts and Aboriginal rock art across the ACT's high country.",
     description: "Namadgi covers about 46% of the Australian Capital Territory, a mountain landscape of granite tors, waterfalls and snow-capped ranges south-west of Canberra. Walks lead to granite outcrops, 19th-century settlers' huts and Aboriginal rock art, and the Honeysuckle Creek site recalls the Apollo moon landing broadcasts. The visitor centre is on Naas Road near Tharwa village, the park's gateway.",
     whyVisit: ["See the drop at Gibraltar Falls", "Climb up to Booroomba Rocks", "See Aboriginal rock art at Yankee Hat"],
-    whyVisitPhotos: ["Gibraltar Falls 1.JPG", "", "Yankee Hat art-MJC.jpg"],
+    whyVisitPhotos: ["Gibraltar Falls 1.JPG", "Booroomba.JPG", "Yankee Hat art-MJC.jpg"],
     highlights: ["Waterfall drop", "Granite outcrop", "Rock painting"],
     goodToKnow: [
       { icon: "📍", title: "Start at the visitor centre", detail: "The Namadgi Visitor Centre on Naas Road near Tharwa has track information and track conditions. Check its opening hours before you go." },
