@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
 } from 'react-native';
 import { Search, X } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, withTiming, Easing, interpolateColor, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -78,9 +78,25 @@ export default function ProfileScreen() {
   const stickyYSV = useSharedValue(1e6);
   // Each style reads both values itself: a style re-runs only for the shared values it reads directly, not ones read
   // inside a helper it calls (with a shared stuckT() helper the bar never filled in).
+  // Read on the UI thread, so everything driven by the scroll keeps step with the page.
+  const onPageScroll = useAnimatedScrollHandler(e => { scrollSV.value = e.contentOffset.y; });
+  // As it pins, the selector card also shrinks (to PINNED_K, its top held under the strip) so the pinned bar is compact
+  // and quieter, and the bar's background, drawn as its own layer, shortens to fit it. cardHSV is the card's height.
+  // t is eased (smoothstep) so the change starts and ends gently.
+  const cardHSV = useSharedValue(70);
   const stuckStyle = useAnimatedStyle(() => {
-    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
-    return { backgroundColor: `rgba(249,250,251,${t})`, borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t };
+    const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
+    const t = r * r * (3 - 2 * r), h = cardHSV.value;
+    const full = COMPACT_H + h + 12, small = COMPACT_H - PINNED_LIFT + h * PINNED_K + 8;
+    return {
+      height: full + (small - full) * t, opacity: t,
+      borderBottomColor: `rgba(229,231,235,${t})`, shadowOpacity: 0.08 * t,
+    };
+  });
+  const cardStyle = useAnimatedStyle(() => {
+    const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
+    const t = r * r * (3 - 2 * r), h = cardHSV.value;
+    return { transform: [{ translateY: -(h * (1 - PINNED_K) / 2 + PINNED_LIFT) * t }, { scale: 1 - (1 - PINNED_K) * t }] };
   });
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
@@ -88,7 +104,8 @@ export default function ProfileScreen() {
     opacity: 1 - Math.min(1, Math.max(0, scrollSV.value / Math.max(1, stickyYSV.value - FADE))),
   }));
   const compactStyle = useAnimatedStyle(() => {
-    const t = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
+    const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
+    const t = r * r * (3 - 2 * r);
     return { opacity: t, transform: [{ translateY: (1 - t) * 6 }] };
   });
   const selectorWSV = useSharedValue(0);
@@ -217,11 +234,11 @@ export default function ProfileScreen() {
       </Text>
     </Animated.View>
     {/* The level selector (child 1) pins to the top while the sections it controls scroll beneath. */}
-    <ScrollView
+    <Animated.ScrollView
       style={{ flex: 1 }}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
-      onScroll={e => { scrollSV.value = e.nativeEvent.contentOffset.y; }}
+      onScroll={onPageScroll}
       scrollEventThrottle={16}
       stickyHeaderIndices={[1]}
       keyboardDismissMode="on-drag"
@@ -236,8 +253,10 @@ export default function ProfileScreen() {
           every section below show; it stays pinned at the top as they scroll. ── */}
       {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
           component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
-      <View style={{ marginTop: -COMPACT_H }}>
-      <Animated.View style={[styles.selectorSticky, stuckStyle]}>
+      <View style={{ marginTop: -COMPACT_H }} pointerEvents="box-none">
+      <View style={styles.selectorSticky} pointerEvents="box-none">
+        {/* The pinned bar's background, hairline and shadow, behind the strip and the card. */}
+        <Animated.View pointerEvents="none" style={[styles.stuckBg, stuckStyle]} />
         {/* The small centred avatar and name, shown only while the bar is pinned. */}
         <Animated.View pointerEvents="none" style={[styles.compactHeader, compactStyle]}>
           <View style={styles.compactAvatar}>
@@ -246,7 +265,10 @@ export default function ProfileScreen() {
           <Text style={styles.compactName} numberOfLines={1}>{userName}</Text>
         </Animated.View>
 
-        <View style={styles.statsHeader} onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; }}>
+        <Animated.View
+          style={[styles.statsHeader, cardStyle]}
+          onLayout={e => { selectorWSV.value = e.nativeEvent.layout.width - 12; cardHSV.value = e.nativeEvent.layout.height; }}
+        >
           {/* The dark pill slides to the selected level; the numbers and dividers fade with it. */}
           <Animated.View pointerEvents="none" style={[styles.selectorPill, pillStyle]} />
           {WORLD_MODES.map(({ mode, label }, i) => {
@@ -272,8 +294,8 @@ export default function ProfileScreen() {
               </React.Fragment>
             );
           })}
-        </View>
-      </Animated.View>
+        </Animated.View>
+      </View>
       </View>
 
       {/* ── The map, its own card under the selector ── */}
@@ -545,7 +567,7 @@ export default function ProfileScreen() {
           )}
         </View>
       )}
-    </ScrollView>
+    </Animated.ScrollView>
     <WorldMapModal
       visible={mapOpen}
       onClose={() => setMapOpen(false)}
@@ -581,6 +603,8 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 const COMPACT_H = 40;
 // How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
 const FADE = 36;
+// The pinned selector's size (a scale of the full card) and how far it rises toward the strip.
+const PINNED_K = 0.8, PINNED_LIFT = 4;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
@@ -612,8 +636,10 @@ const styles = StyleSheet.create({
   // count sits on a dark pill.
   // Its top strip (room for the small avatar and name; the sticky View's negative margin) overlaps the bottom of the
   // full header until it pins, so the page keeps its old spacing; the background fills in only once pinned (stuckStyle).
-  selectorSticky: {
-    paddingTop: COMPACT_H, paddingHorizontal: 16, borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
+  selectorSticky: { paddingTop: COMPACT_H, paddingHorizontal: 16 },
+  stuckBg: {
+    position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: '#F9FAFB',
+    borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: 'transparent',
     shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowRadius: 8, shadowOpacity: 0,
   },
   statsHeader: {
