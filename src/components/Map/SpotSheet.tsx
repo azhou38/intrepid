@@ -25,7 +25,7 @@ import * as Haptics from 'expo-haptics';
 import { useStore, useVisitIndex } from '../../store';
 import type { Destination, Visit } from '../../types';
 import type { Spot } from '../../data/spots';
-import { DAY_NAMES, hoursForDay, formatSpotCost, splitSpotCost, formatVisitTime, spotCostTone, visitTimeTone, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
+import { DAY_NAMES, hoursForDay, formatSpotCost, splitSpotCost, spotCostLabel, formatVisitTime, spotCostTone, visitTimeTone, getSpotOpenStatus, specialClosureOn, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle, zonedNowForSpot } from '../../data/spots';
 import { photoCache, thumbCache, getOrFetchWikiThumbnail, HEADER_PX } from '../../utils/photoCache';
 import { buildThumbUrl, type ManifestEntry } from '../../utils/imageUrl';
 import spotGalleries from '../../data/spotGalleries.json';
@@ -1698,7 +1698,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
               <Clock size={20} color={GLANCE_TONE[visitTimeTone(spot.visitHoursMin)].fg} />
             </View>
             <Text style={st.glanceVal} numberOfLines={1}>{formatVisitTime(spot.visitHoursMin, spot.visitHoursMax)}</Text>
-            <Text style={st.glanceLbl}>Time needed</Text>
+            <Text style={st.glanceLbl}>Time Needed</Text>
           </View>
           <View style={st.glanceDivider} />
           <View style={st.glanceItem}>
@@ -1706,7 +1706,7 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
               <Ticket size={20} color={GLANCE_TONE[spotCostTone(spot)].fg} />
             </View>
             <CostValue spot={spot} />
-            <Text style={st.glanceLbl}>Cost (Adult)</Text>
+            <Text style={st.glanceLbl} numberOfLines={1}>{spotCostLabel(spot)}</Text>
           </View>
         </View>
       </View>
