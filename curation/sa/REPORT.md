@@ -575,3 +575,4 @@ Also dropped as not spots: Whyalla (town duplicates its destination), Gumeracha 
 - Yurrebilla Trail (spot): Yurrebilla.jpg: 391px wide, minimum 960 for a spot
 ## Owner decisions
 - All 38 added destinations approved as applied (rank, name and span unchanged).
+- Official (non-Commons) photos: owner allowed use of all 10 (credits now read "used with owner permission"). Further candidates in lens/gaps/out-*.json are still unapplied.
