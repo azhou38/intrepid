@@ -2553,4 +2553,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Naracoorte",
   "Gawler Ranges National Park",
   "Innamincka",
+  "Leigh Creek",
 ]);

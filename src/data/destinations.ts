@@ -2839,6 +2839,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [4, 5, 6, 7, 8, 9, 10],
     bestTimeBlurb: "{months} are the cooler months for walking and cycling between the towns.",
   },
+  {
+    id: 'leigh-creek', name: "Leigh Creek", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 75,
+    continent: 'Oceania', coordinates: { latitude: -30.5833, longitude: 138.4 },
+    category: 'city', icon: "🏜️", rank: 5,
+    tagline: "Gateway town to the northern Flinders, with fossils, ruins and outback art",
+    description: "Leigh Creek is the gateway town to the northern Flinders Ranges, 540 km north of Adelaide. Its coalfield closed in 2015, and the dam beside it is now used for kayaking and fishing. Around it are the stone township of Beltana, the sculptures and ochre pits at Lyndhurst, and Nilpena Ediacara National Park, where guided tours reach a field of early animal fossils.",
+    whyVisit: ["See Earth's earliest animal fossils", "Explore preserved outback heritage towns"],
+    whyVisitPhotos: ["Excavated fossil bed at Nilpena Ediacara National Park.jpg", "Beltana Railway Station Building 2021.jpg"],
+    highlights: ["Ediacaran fossils", "Heritage townships"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Book Nilpena tours early", detail: "There is no independent access to Nilpena. Guide-led tours leave from the park entrance, and booking well ahead is recommended." },
+      { icon: "⛽", title: "Plan for distance", detail: "Sights lie tens of kilometres apart and towns are small. Carry water, spare fuel and supplies between stops." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} brings cool, clear days for exploring the outback, while summers are very hot.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
