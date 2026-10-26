@@ -979,6 +979,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Southern right whales visit in {months}, and Hindmarsh Falls runs fullest in the same wetter season.",
   },
   {
+    id: 'adelaide-hills', name: "Adelaide Hills", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -35.0295, longitude: 138.81 },
+    category: 'nature', icon: "🍇", rank: 3,
+    tagline: "Wineries, bushland and a German-settled village a short drive east of Adelaide",
+    description: "The Adelaide Hills are the wooded ranges east of Adelaide, reached in about half an hour. Hahndorf, founded by German settlers, anchors the region with its main street of galleries and bakeries. Around it are cool-climate vineyards, farms and national park bushland with lookouts over the city and plains. Mount Lofty, at 710 m, is the high point of the ranges.",
+    whyVisit: ["Wander a historic German village", "Walk bushland trails above the city", "Meet native animals up close"],
+    whyVisitPhotos: ["German Arms Hotel, Hahndorf, South Australia.jpg", "", "Red kangaroo at Cleland Wildlife Park.jpg"],
+    highlights: ["German village", "Bushland walks", "Native wildlife"],
+    goodToKnow: [
+      { icon: "🚗", title: "Drive, don't wait", detail: "Public transport reaches only parts of the Hills, so a car makes the villages, farms and lookouts easy to link." },
+      { icon: "🔥", title: "Check fire danger days", detail: "Parks can close on high fire danger days in summer. Check the NPWS SA closures page before heading out." },
+      { icon: "🅿️", title: "Weekends in Hahndorf are busy", detail: "Hahndorf's main street crowds on weekends. Arrive early or visit midweek for easier parking." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "{months} bring mild days, autumn colour in the gardens and green spring hillsides.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,

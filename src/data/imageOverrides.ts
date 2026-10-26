@@ -2280,6 +2280,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Ikara-Flinders Ranges National Park": "Bunyeroo Valley Lookout, Ikara-Flinders Ranges National Park.jpg",
   "McLaren Vale": "McLaren Vale wine region - panoramio.jpg",
   "Victor Harbor": "VictorHarborFromGranite Island.jpg",
+  "Adelaide Hills": "Piccadilly Valley.JPG",
 };
 
 /**
