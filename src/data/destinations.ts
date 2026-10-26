@@ -962,6 +962,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are mild for cellar doors and beach walks, while summer days can run hot.",
   },
   {
+    id: 'victor-harbor', name: "Victor Harbor", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -35.55424, longitude: 138.62275 },
+    category: 'city', icon: "🐋", rank: 3,
+    tagline: "Whales, penguins and a horse-drawn tram on South Australia's Encounter Bay coast",
+    description: "Victor Harbor is a seaside town on Encounter Bay on the southern Fleurieu coast, built around a foreshore and the causeway to Granite Island. A horse-drawn tram crosses the causeway to the island, where little penguins breed and a walking trail circles the coast. Southern right whales come close to shore in winter, and the town has a whale centre and a free clifftop platform on the Heysen Trail. The sheltered bay at Port Elliot and the Bluff headland are a short drive east and west.",
+    whyVisit: ["Watch southern right whales from shore", "Ride a horse-drawn tram to an island", "Walk the coast to sheltered bays"],
+    whyVisitPhotos: ["", "Horse Drawn Tram - Victor Harbor.jpg", "Horseshoe Bay, Port Elliot 20250527-114108.jpg"],
+    highlights: ["Winter whale watching", "Horse-drawn tram", "Coastal walks"],
+    goodToKnow: [
+      { icon: "🐋", title: "Whale season", detail: "Southern right whales are usually seen from June to October, so winter is the time to scan the bay from the foreshore or a lookout." },
+      { icon: "🎟️", title: "Free island entry", detail: "Entry to Granite Island Recreation Park is free. Horse-drawn tram rides and guided tours are run separately and charged on top." },
+      { icon: "💧", title: "Waterfall timing", detail: "Hindmarsh Falls runs strongest in winter and spring, which suits a combined day with whale watching." },
+    ],
+    bestMonths: [6, 7, 8, 9, 10],
+    bestTimeBlurb: "Southern right whales visit in {months}, and Hindmarsh Falls runs fullest in the same wetter season.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
