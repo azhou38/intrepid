@@ -1,0 +1,97 @@
+{
+ "spots": {
+  "adelaide-hills-21": {
+   "name": "Kyeema Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Stringybark woodland park south of Adelaide with walking trails and more than 80 recorded bird species.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kyeema-conservation-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "No coordinate in draft; take the park's visitor/car park point from NPWS maps or OSM, not the centroid.",
+    "cost": "parks.sa.gov.au: Free entry; open daily; closed on Catastrophic Fire Danger days. Page says it is on the Fleurieu Peninsula, 60.9 km from Adelaide; destination tag adelaide-hills is Atlas's, check span and placement.",
+    "other": "Former prison camp history in draft bio not on the park page, so left out of the bio."
+   }
+  },
+  "para-wirra-conservation-park": {
+   "name": "Para Wirra Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Northern Adelaide Hills park with walks, a campground, grazing kangaroos and the Barossa Goldfields mining ruins.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.68067182,
+    "longitude": 138.83008091
+   },
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/para-wirra-conservation-park",
+   "coordinates_source": "pending serial pin pass (draft: Wikipedia article point, a centroid)",
+   "notes": {
+    "pin": "Draft point is the Wikipedia centroid; use the western vehicle entry gate off Para Wirra Road or the main picnic ground car park.",
+    "cost": "parks.sa.gov.au: vehicle entry $14.40 per vehicle, must be paid before entry; camping from $27.50/night. Western gate open sunrise to sunset except Christmas Day. Park closed 6pm-midnight Wednesdays 1/9/2026-31/8/2027 for pest control (irrelevant to day visits).",
+    "other": "Mack Creek Hike and Lake Discovery Walk named on the agency's Adelaide Hills page, not the park page."
+   }
+  },
+  "adelaide-international-bird-sanctuary-national-park": {
+   "name": "Adelaide International Bird Sanctuary National Park",
+   "icon": "🦅",
+   "category": "nature",
+   "bio": "Coastal national park north of Adelaide on a migratory flyway, protecting resident and visiting shorebirds.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.59444444,
+    "longitude": 138.39833333
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/adelaide-international-bird-sanctuary-national-park",
+   "coordinates_source": "pending serial pin pass (draft: Wikipedia article point, a centroid)",
+   "notes": {
+    "pin": "Draft is the park centroid. The park is split into units along 60 km of coast; pick the main visitor point (e.g. the Parham or Thompson Beach birdwatching area) but not Thompson Beach's own pin (thompson-beach is a separate spot).",
+    "cost": "parks.sa.gov.au: Free entry, 28.25 km from Adelaide. Alert: Buckland Park area closed on selected days 11 May 2026-10 May 2027 for pest control.",
+    "other": "Official name carries 'Winaityinaityi Pangkara'; kept out of name per naming rule."
+   }
+  },
+  "thompson-beach": {
+   "name": "Thompson Beach",
+   "icon": "🦅",
+   "category": "beach",
+   "bio": "Samphire coast beach town on the Adelaide International Bird Sanctuary, known for migratory shorebirds from October to April.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.493687,
+    "longitude": 138.2931
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass (draft coordinate, source unrecorded)",
+   "notes": {
+    "pin": "Draft has 6 decimals; confirm against OSM natural=beach or the birdwatching car park at the beach.",
+    "cost": "Open access coastal settlement and beach; no agency page of its own.",
+    "ticket": "No single official site (open beach and shack settlement)."
+   },
+   "ticket_note": "Open beach with no single steward; Wikivoyage sanctuary page and NPWS name it, neither is an official site for the beach."
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "Kyeema: former prison camp claim from draft not on park page; park page places it on the Fleurieu Peninsula while tagged adelaide-hills",
+  "Thompson Beach: no price source needed (open beach); dolphin sightings from draft not verified, omitted"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Nothing judged unfit to add. Kyeema and Para Wirra pages loaded and titles checked."
+ ]
+}

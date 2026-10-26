@@ -32,3 +32,5 @@ A spot inside a park that charges entry and has no fee of its own is `free: true
 - Wording: no current closure (floods, roadworks, 6-9 Nov park closure) in any bio or tip; say "check current conditions" at most.
 - Adelaide Holocaust Museum (adelaide-51): closed for re-curation until December 2026. Held. Army Museum of South Australia (adelaide-52): to be relocated from Keswick Barracks to a venue not yet chosen. Held until a source confirms where and when it is open.
 - Bay Discovery Centre (adelaide-53): no cost (council page behind a bot wall): browser check; unfinished until it has a cost.
+- Deep Creek NP (fleurieu): add pass `deep-creek` (AUD 14.40 per vehicle, Deep Creek NP page). Blowhole Beach (yankalilla-?) is inside it: free, needs 'park-pass', parkPass 'deep-creek' (not its own 'park' price).
+- Talisker Conservation Park (fleurieu): closed until further notice after a fire (NPWS alert); its NPWS page 404s. Re-check at apply; hold if still closed.

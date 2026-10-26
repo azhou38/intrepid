@@ -1,0 +1,223 @@
+{
+ "spots": {
+  "swan-reach-observatory": {
+   "name": "Swan Reach Observatory",
+   "icon": "🔭",
+   "category": "entertainment",
+   "bio": "Research-grade 70 cm telescope near Swan Reach, open to the public on pre-booked stargazing sessions.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": null,
+   "costMin": 85,
+   "costMax": 85,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.swanreachobservatory.com.au",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Observatory on Murraylands Rd, Swan Reach SA 5354 (operator's address); pin the building, near the Swan Reach ferry side.",
+    "cost": "From $85 per SATC attraction listing; operator site gives no price. Entry strictly by pre-booking, opened 13 Nov 2025."
+   }
+  },
+  "swan-reach-district-museum": {
+   "name": "Swan Reach and District Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Local history museum in a 1917 school building at Swan Reach, with the Mid Murray Classic Car Gallery of 16+ vehicles.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "No official site found; SATC listing only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Former school building in Swan Reach township; pin the museum entrance.",
+    "cost": "No price found; assumed free/donation for a small volunteer museum, unverified."
+   }
+  },
+  "river-murray-dark-sky-reserve": {
+   "name": "River Murray International Dark Sky Reserve",
+   "icon": "🌌",
+   "category": "nature",
+   "bio": "Australia's first International Dark Sky Reserve, 3,200 sq km along the Murray where the Milky Way shows clearly.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "wiki": "River Murray International Dark Sky Reserve",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward; SATC and park pages only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Reserve core site is in Swan Reach Conservation Park (4WD only); visitors use public stargazing sites such as Shell Hill Reserve and the observatory. Pin a public-access viewing point, not the centroid, away from the observatory and Shell Hill pins.",
+    "cost": "Free to be in; guided tours priced separately by operators."
+   }
+  },
+  "big-bend-walker-flat": {
+   "name": "Big Bend (Walker Flat)",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Tallest cliffs on the Murray at its longest bend, with a lookout near Nildottie and a free ferry at Walker Flat.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council/regional tourism pages only; no single steward.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Pin the cliff lookout near Nildottie / Big Bend lookout, not the Walker Flat ferry landing.",
+    "cost": "Ferry is free; Big Bend by Night is a separate private farm tour, not priced here."
+   }
+  },
+  "shell-hill-reserve": {
+   "name": "Shell Hill Reserve",
+   "icon": "🦪",
+   "category": "nature",
+   "bio": "Five-million-year-old oyster-shell deposit near Swan Reach that doubles as a Dark Sky viewing site.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site; SATC listing only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Reserve with car park on SATC listing; use the reserve's car park point (OSM/SATC)."
+   }
+  },
+  "ngaut-ngaut-conservation-park": {
+   "name": "Ngaut Ngaut Conservation Park",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Aboriginal heritage site at the Devon Downs rock shelter, visited only on guided tours led by Nganguraku guides.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "wiki": "Ngaut Ngaut Conservation Park",
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ngaut-ngaut-conservation-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Park is on the west bank of the Murray ~12 km south of Swan Reach near Nildottie; tours meet at a point given on booking. Pin the park's rock-shelter / Devon Downs access, or the tour meeting place if published.",
+    "cost": "$15 adult from a 2021 secondary source (concession $12.50, child $9); parks page says 'fees apply for tours' with no figure."
+   }
+  },
+  "hunter-road-lookout": {
+   "name": "Hunter Road Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Free clifftop lookout over the Murray, Blanchetown and Paisley Wetlands, 2.3 km off the Sturt Highway.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward; SATC listing only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Lookout at the end of Hunter Road, Paisley, 2.3 km off the Sturt Highway; pin on the lookout platform."
+   }
+  },
+  "brookfield-conservation-park": {
+   "name": "Brookfield Conservation Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Park near Blanchetown known for southern hairy-nosed wombats and the Three Habitat Walk, with periodic closures for pest control.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "wiki": "Brookfield Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/brookfield-conservation-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Public section car park / Three Habitat Walk start near Blanchetown (parks.sa.gov.au); visitors use the Three Habitat Walk area.",
+    "cost": "Free entry per parks page; open 7am to sunset, closed on set dates through to Dec 2026 for pest control."
+   }
+  },
+  "karoonda-art-sculpture-trail": {
+   "name": "Karoonda Art and Sculpture Trail",
+   "icon": "🗿",
+   "category": "landmark",
+   "bio": "Walkable trail of sculptures along Karoonda's main street, including the Geofacts and the Karoonda Shuffle Screens.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No dedicated site found; regional tourism pages only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Main street (Railway Tce / Cleve-Karoonda area) in Karoonda; pin midway along the sculpture line, distinct from the silo art pin."
+   }
+  },
+  "karoonda-silo-art": {
+   "name": "Karoonda Day and Night Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Painted silos by Heesco showing country life and a steam train, with changing artwork projected on them after dark.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site; regional tourism pages only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Silos at Karoonda railway siding; pin the silos."
+   }
+  },
+  "karoonda-pioneer-park": {
+   "name": "Pioneer Park (Karoonda)",
+   "icon": "🚂",
+   "category": "historic",
+   "bio": "Pioneer buildings, machinery, carriages and rolling stock, with a 1 km nature trail in the mallee, open to walk through.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site found; regional tourism pages only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Pioneer Park, Karoonda (SATC lists a car park); pin park entrance."
+   }
+  },
+  "lameroo-silo-art": {
+   "name": "Lameroo Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Two painted grain silos by Smug, a 2024 and 2025 diptych, with a park beside them.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site; SATC and regional tourism pages only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Grain silos at Lameroo with the adjoining park; pin the silos."
+   }
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "swan-reach-district-museum: entry cost not found (set free, unverified)",
+  "ngaut-ngaut-conservation-park: $15 adult tour price from a 2021 secondary source; parks page gives no figure",
+  "swan-reach-observatory: $85 only from SATC listing, operator site has no price",
+  "lameroo-silo-art: Smug 2024/2025 diptych from the draft note, not re-checked",
+  "river-murray-dark-sky-reserve: 'first International Dark Sky Reserve in Australia' from the observatory's site (2019 accreditation)"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Observatory is by pre-booking only and opened Nov 2025; tours/sessions SATC-priced.",
+  "Hunter Road Lookout is Riverland-sourced but lies in this region.",
+  "Swan Reach Conservation Park (core site, 4WD only) not in this shard."
+ ]
+}
