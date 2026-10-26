@@ -1309,6 +1309,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Mild days in {months} suit river walks and the safari park, with spring wildflowers in the mallee.",
   },
   {
+    id: 'coffin-bay', name: "Coffin Bay", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -34.624406, longitude: 135.469651 },
+    category: 'nature', icon: "🦪", rank: 4,
+    tagline: "An oyster-farming village on a calm bay, beside a wild coastal national park.",
+    description: "Coffin Bay is a small village on the western side of the Eyre Peninsula, about 40 minutes' drive from Port Lincoln. Matthew Flinders named the bay after his friend Sir Isaac Coffin, and the town is known for its oysters. Coffin Bay National Park to the west has windswept cliffs, dunes, surf beaches and sheltered bays, and Kellidie Bay Conservation Park lies to the east. An 8 km foreshore trail follows the shore past the jetty and the oyster-growing waters.",
+    whyVisit: ["Taste oysters fresh from the bay", "Explore a wild coastal national park", "Paddle calm, sheltered waters"],
+    whyVisitPhotos: ["Coffin Bay oyster beds, 2017 (05).jpg", "Coffin Bay National Park limestone cliffs.jpg", "Kellidie Bay, 2017 (02).jpg"],
+    highlights: ["Fresh oysters", "Coastal national park", "Sheltered bays"],
+    goodToKnow: [
+      { icon: "🚙", title: "Know your 4WD access", detail: "The park's northern beaches need a high-clearance 4WD, while Yangie Bay and Point Avoid can be reached in a 2WD." },
+      { icon: "🎟️", title: "Pay park entry first", detail: "Vehicle entry to Coffin Bay National Park is $14.40 and must be paid before you go in." },
+    ],
+    bestMonths: [11, 12, 1, 2, 3],
+    bestTimeBlurb: "{months} are the warm months for swimming, boating and fishing on the bay, and the village is busiest then.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
