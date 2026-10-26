@@ -1,0 +1,322 @@
+{
+ "spots": {
+  "barossa-valley-1": {
+   "name": "Penfolds Barossa Valley",
+   "icon": "🍷",
+   "category": "landmark",
+   "bio": "Penfolds' Nuriootpa cellar door runs tastings and a make-your-own-blend session at the winery behind Grange.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.4795862,
+    "longitude": 138.9922861
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 2800392101 \"Penfolds Barossa Valley Cellar Door\" (tourism=attraction, shop=wine); resolve-pin returned LOW (Overpass down)",
+   "wiki": "Penfolds",
+   "costMin": 95,
+   "costMax": 100,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.penfolds.com/en-au/",
+   "notes": "Prices are Time Out's listings (Make Your Own Blend $95, Barossa Ultimate Tasting $100), not the official page; bookings needed for guided experiences, guests 18+. Entering the cellar door is not itself ticketed. Penfolds URL is the homepage (deep links return 410); title 'Sites-PenfoldsAU-Site' does not name the place, so check in browser."
+  },
+  "barossa-valley-2": {
+   "name": "Seppeltsfield Winery",
+   "icon": "🍷",
+   "category": "historic",
+   "bio": "Historic Seppeltsfield estate, reached along a palm-lined avenue, offers cellar tours and tastings including 100-year-old tawny.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.4892227,
+    "longitude": 138.9184062
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 7129624923 \"Seppeltsfield Cellar Door\" (craft=winery, tourism=attraction), 100 m from the Wikipedia point",
+   "wiki": "Seppeltsfield (wine)",
+   "costMin": 180,
+   "costMax": 180,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://seppeltsfield.com.au/",
+   "notes": "Official site loaded (title 'Seppeltsfield Barossa'). Cheapest listed guided experience: Milestone Wine Tour and Tasting from A$180 (experienceoz listing, 2025); official pages state only 'tasting fees apply'. Walking the estate is free via the Self-Guided History Experience podcast stops (price not shown; unverified). Estate open 10am daily, closed Good Friday and Christmas/Boxing/New Year's Day."
+  },
+  "barossa-valley-3": {
+   "name": "Whispering Wall",
+   "icon": "🧱",
+   "category": "landmark",
+   "bio": "The curved 1903 Barossa Reservoir dam wall carries a whisper along its 144 m length to the far end.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.645632,
+    "longitude": 138.847167
+   },
+   "coordinates_source": "MEDIUM: Wikipedia \"Barossa Dam\" coordinates (6 dp); OSM node 937530476 \"Whispering Wall\" (tourism=attraction) is 110 m away on the same wall",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "SA Water reserve; no operator site found",
+   "notes": "Free admission and parking per tourism listings; closes on Total Fire Ban days (not in bio)."
+  },
+  "barossa-valley-4": {
+   "name": "Menglers Hill Lookout",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Hilltop lookout above the Barossa Valley, with a sculpture park beside the car park.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.5372847,
+    "longitude": 138.9994166
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 952758657 \"Menglers Hill Lookout\" (tourism=viewpoint); the Sculpture Park is OSM artwork 70 m away",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run roadside lookout; no official page checked",
+   "notes": "Free, no gate."
+  },
+  "barossa-valley-5": {
+   "name": "Barossa Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Local-history museum in Tanunda's Old Telegraph Station, with displays on the Barossa's settlers and heritage.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.5264066,
+    "longitude": 138.9574745
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 9802952015 \"Barossa Museum\" (tourism=museum, Mill Street)",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticket_note": "Official site not reachable (barossamuseum.org.au failed to load; barossa.com listing 403)",
+   "notes": "Adult $5, child $2 per the Barossa Visitor Centre heritage factsheet (Dec 2024). Opening days differ by source (Mon/Thu/Fri/Sat 10-3 vs Fri/Mon 12-4), check before relying."
+  },
+  "barossa-valley-6": {
+   "name": "Springton",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Village best known for the Herbig Family Tree, a hollow red gum up to 500 years old where a settler family once lived.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.7070453,
+    "longitude": 139.0893592
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 1953967515 \"Springton\" (place=town); Herbig Family Tree is OSM node 3924796969 at -34.7100031,139.0885377, 340 m away",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town with no single steward; the Herbig tree is run by the J. F. Herbig Memorial Family Association (site not verified)",
+   "notes": "Herbig Family Tree: free entry, donations welcomed, site always open; about 7 m across and 24 m tall; tree age quoted 300-500 years."
+  },
+  "barossa-valley-7": {
+   "name": "Angaston",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Eastern Barossa town with a heritage main street, galleries and food producers.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.5027712,
+    "longitude": 139.0490357
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 180957512 \"Angaston\" (place=village); the Wikipedia point (-34.5, 139.05) is a rounded memory-style pin and was not used",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town",
+   "notes": ""
+  },
+  "barossa-valley-8": {
+   "name": "Eden Valley",
+   "icon": "🏘️",
+   "category": "viewpoint",
+   "bio": "High-country wine village with a scenic lookout on Burkes Hill and a historic main street.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.6310241,
+    "longitude": 139.0932881
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 3924785645 \"Eden Valley Lookout\" (tourism=viewpoint, on Burkes Hill Road); the village itself is about 1.3 km south (CFS at -34.6424,139.0979); the OSM place=locality 'Eden Valley' node is 4 km east and a locality centroid, not used",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Village",
+   "notes": "Pinned on the lookout since the spot is categorised viewpoint and the bio leads with it."
+  },
+  "barossa-valley-9": {
+   "name": "Lyndoch",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Southern gateway village of the Barossa, with wineries and a bakery-lined main street.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.6012473,
+    "longitude": 138.8882999
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 193757707 \"Lyndoch\" (place=village)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town",
+   "notes": ""
+  },
+  "barossa-valley-10": {
+   "name": "Greenock",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Heritage village with a 27-site Historical Walk and an aviation museum nearby.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.456067,
+    "longitude": 138.9306142
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 180957524 \"Greenock\" (place=village)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town",
+   "notes": "Walk site count and aviation museum are from Atlas's draft, from tourism sources; not re-verified here."
+  },
+  "barossa-valley-11": {
+   "name": "Nuriootpa",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "The Barossa's commercial centre and a base for the valley's wineries, with shops and services.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.4693354,
+    "longitude": 138.9939006
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 180957503 \"Nuriootpa\" (place=town)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town",
+   "notes": "Bio kept generic; Wikivoyage/SA Tourism list it as a base for the valley."
+  },
+  "barossa-valley-12": {
+   "name": "Kapunda",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Copper-mining town on the Barossa's western edge, with Cornish mining heritage, a local museum and Gundry's Hill Lookout.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.339951,
+    "longitude": 138.915863
+   },
+   "coordinates_source": "MEDIUM: OSM via overpass.openstreetmap.fr (Overpass main instances down; Nominatim/Photon rate-limited): node 180957537 \"Kapunda\" (place=town)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town",
+   "notes": "Copper mined 1844-1879 (Wikipedia). Map the Miner statue is a separate spot (barossa-valley-13)."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "barossa-valley",
+    "name": "Barossa Valley",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -34.5217025,
+     "longitude": 138.9603091
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 45,
+    "rank": 2,
+    "icon": "🍷",
+    "tagline": "A wine region an hour from Adelaide, with German-heritage towns and old cellar doors.",
+    "description": "The Barossa Valley is a wine region about an hour's drive north of Adelaide, with Tanunda, Nuriootpa and Angaston as its main towns. German settlers shaped its villages, bakeries and restaurants, and large cellar doors such as Penfolds and Seppeltsfield stand alongside small family wineries. Lookouts on the ranges above the valley floor give views across the vineyards, and the old copper town of Kapunda marks its western edge.",
+    "whyVisit": [
+     "Taste Shiraz at historic cellar doors",
+     "Wander German-heritage villages and bakeries",
+     "Look over vineyards from hilltop lookouts",
+     "Hear a whisper carry along a dam wall"
+    ],
+    "highlights": [
+     "Cellar doors",
+     "German heritage",
+     "Valley views",
+     "Whispering Wall"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚗",
+      "title": "A car or bike helps",
+      "detail": "Public transport within the valley is limited, so hire a car or bike, or join a tour from Adelaide."
+     },
+     {
+      "icon": "🍷",
+      "title": "Nominate a driver",
+      "detail": "Police watch for drink-driving here, and the roads wind between large gum trees, so book a tour or appoint a driver."
+     },
+     {
+      "icon": "📅",
+      "title": "Book guided experiences",
+      "detail": "Blending sessions and cellar tours at the big estates are booked ahead, and guests must be 18 or over."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "{months} bring harvest and mild days. The Vintage Festival starts on Easter Monday in odd years."
+   },
+   "spots": [
+    "barossa-valley-1",
+    "barossa-valley-2",
+    "barossa-valley-3",
+    "barossa-valley-4",
+    "barossa-valley-5",
+    "barossa-valley-6",
+    "barossa-valley-7",
+    "barossa-valley-8",
+    "barossa-valley-9",
+    "barossa-valley-10",
+    "barossa-valley-11",
+    "barossa-valley-12",
+    "barossa-valley-13",
+    "barossa-valley-14",
+    "barossa-valley-15"
+   ],
+   "notes": [
+    "Coordinates: OSM place=town node 193757622 \"Tanunda\" (overpass.openstreetmap.fr); nearest spot pin is Barossa Museum, 600 m away. The draft's Wikipedia point (-34.5333,138.95) was a rounded valley centroid and was replaced.",
+    "Span kept at 45 km: the furthest shard-1 spots are Springton (~24 km from Tanunda) and Kapunda (~20 km); Gawler (barossa-valley-14, ~21 km) and the rest are inside 75% of 45 = 33.75 km.",
+    "Spot order: Penfolds, Seppeltsfield, Whispering Wall, Menglers Hill, Barossa Museum as drafted; ids 13-15 (Map the Miner, Gawler, Warren Conservation Park) are in shard 2, not reviewed here. Kapunda (12) and Gawler (14) look closer to a town-centre tier than to the later positions and could move up in the merge.",
+    "Sources: Wikivoyage Barossa Valley (hour's drive, towns, limited public transport, drink-driving and road warning, Vintage Festival on Easter Monday in odd years, German-heritage food); Penfolds booking and age rule from Rezdy/Time Out listings. Vintage Festival date and 'best months' are guidebook-style consensus, not a single source.",
+    "Tagline and blurb pass tagline-fit and blurb-fit."
+   ]
+  }
+ ],
+ "unverified": [
+  "barossa-valley-1 Penfolds price (Time Out $95/$100, not official)",
+  "barossa-valley-2 Seppeltsfield price (A$180 from a third-party listing; official page gives none)",
+  "barossa-valley-5 Barossa Museum $5 adult (visitor centre factsheet) and opening days",
+  "barossa-valley-10 Greenock 27-site walk and aviation museum (Atlas draft)",
+  "goodToKnow booking/age tip from Rezdy/Time Out Penfolds listings"
+ ],
+ "needs_browser": [
+  {
+   "id": "barossa-valley-1",
+   "url": "https://www.penfolds.com/en-au/",
+   "why": "deep links return 410 and the homepage title does not name the place; confirm the cellar door page and price in a browser"
+  },
+  {
+   "id": "barossa-valley-5",
+   "url": "https://www.barossamuseum.org.au",
+   "why": "site did not load by script; barossa.com listing returned 403; find the official site and hours"
+  }
+ ],
+ "notes": [
+  "Overpass main instances, Nominatim and Photon were down/rate-limited; resolve-pin returned LOW with no feature, so all pins come from OSM features read through overpass.openstreetmap.fr (same data), cross-checked with Wikipedia where it has precise coordinates. Whispering Wall pin uses Wikipedia's 6-dp point (OSM node is 110 m away, 4 dp).",
+  "No LOW pins. Nothing judged unfit to add."
+ ]
+}

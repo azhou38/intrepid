@@ -16,3 +16,6 @@ A spot inside a park that charges entry and has no fee of its own is `free: true
 - `flinders-chase` — AUD 14.90 per adult (see above).
 - `lake-eyre`, `witjira`, `wabma-kadarbu` (The Bubbler / Blanche Cup) — AUD 14.40 per vehicle each (Parks SA park pages, read by the Outback Quill agent).
 - Any other park whose Quill entry names a fee: add its pass the same way at merge.
+- Goolwa Motor Museum (fleurieu): Tripadvisor and Wanderlog list it as permanently closed and no official site was found; browser check (escapegvh.com.au page, Cloudflare wall) before applying; if closed, drop.
+- Rename at merge: Strathalbyn Districts Museum -> "Strathalbyn Heritage Museum"; Goolwa Animal Farm (not Animal Farm Goolwa).
+- Softfoot Alpaca Farm (fleurieu, mclaren-vale-16): in Hindmarsh Valley, move under victor-harbor.

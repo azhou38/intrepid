@@ -1,0 +1,347 @@
+{
+ "spots": {
+  "mclaren-vale-13": {
+   "name": "Wangkuntila-Aldinga Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A coastal conservation park near Aldinga Beach with sand blows, the Aldinga Washpool lagoon and walking trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.292287,
+    "longitude": 138.45803
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; resolve-pin gave only a LOW photo median 2.3 km away",
+   "notes": [
+    "pin: LOW (board listing point, not a verified entrance)",
+    "Parks SA fees tab: 'Come and enjoy this park for free'; no other fees or permits"
+   ],
+   "wiki": "Aldinga Scrub Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/wangkuntila-aldinga-conservation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "mclaren-vale-14": {
+   "name": "Onkaparinga River Recreation Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Estuary wetlands on the Onkaparinga River near Noarlunga with boardwalks, kayaking, fishing and shared trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.160828,
+    "longitude": 138.497558
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; OSM reserve centroid (-35.165247,138.497593) rejected as a centroid",
+   "notes": [
+    "pin: LOW (board listing point; visitor point not verified)",
+    "Parks SA: free entry"
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/onkaparinga-river-recreation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "mclaren-vale-15": {
+   "name": "Cox Scrub Conservation Park",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A conservation park near Ashbourne with three loop walks: Quarry (3.5 km), Stringybark (4 km) and Emu Wren (8.5 km).",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.301033,
+    "longitude": 138.754739
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; the draft Wikipedia point (-35.3355,138.7294) is 5 km away and was not used",
+   "notes": [
+    "pin: LOW (board listing point; walk midpoint not available; the two sources disagree by 5 km, owner to check)",
+    "Parks SA: free entry"
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cox-scrub-conservation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "mclaren-vale-16": {
+   "name": "Softfoot Alpaca Farm",
+   "icon": "🦙",
+   "category": "entertainment",
+   "bio": "A Hindmarsh Valley alpaca farm with guided buggy tours, alpaca feeding and a nocturnal marsupial safari.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.482891,
+    "longitude": 138.562733
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited",
+   "notes": [
+    "pin: LOW (board listing point; operator address 594 Sawpit Road, Hindmarsh Valley)",
+    "PLACEMENT: this farm is in Hindmarsh Valley, about 8 km from Victor Harbor and ~30 km from McLaren Vale; it belongs under victor-harbor (or standalone), not mclaren-vale. Moving it is for the placement owner; id stays mclaren-vale-16",
+    "$250 is the tour price on the board listing and resale sites; whether it is per person or per group of up to 5 is unconfirmed"
+   ],
+   "free": false,
+   "costMin": 250,
+   "costMax": 250,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "costPer": "Per Tour",
+   "ticketUrl": "https://www.theswagman.rest/"
+  },
+  "victor-harbor-1": {
+   "name": "Granite Island Recreation Park",
+   "icon": "🐧",
+   "category": "nature",
+   "bio": "A small island linked to Victor Harbor by a causeway, with little penguins, a coastal walk and a horse-drawn tram.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.55973,
+    "longitude": 138.627207
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; Wikipedia (Granite Island Recreation Park) -35.5641,138.6302 is 0.5 km away",
+   "notes": [
+    "pin: LOW (board point at the causeway end vs Wikipedia point on the island)",
+    "Parks SA: free entry (park fees tab); tram rides and tours are separate operators, not priced here"
+   ],
+   "wiki": "Granite Island (South Australia)",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/granite-island-recreation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "victor-harbor-2": {
+   "name": "South Australian Whale Centre",
+   "icon": "🐋",
+   "category": "museum",
+   "bio": "A museum and visitor centre in a railway goods shed with a 3D theatrette and whale-sighting information.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.555424,
+    "longitude": 138.624542
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; address 2 Railway Terrace",
+   "notes": [
+    "pin: LOW (board listing point)",
+    "Centre's own site: adult $5, child/concession $4, family $15, open 7 days 10:00-16:00. A renovation closure was reported in 2021; site is live now"
+   ],
+   "free": false,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://sawhalecentre.com.au/"
+  },
+  "victor-harbor-3": {
+   "name": "The Bluff",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A headland above Encounter Bay, also known as Rosetta Head, with views along the Fleurieu coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.591389,
+    "longitude": 138.603889
+   },
+   "coordinates_source": "wikipedia:Rosetta Head (draft hint, DMS-rounded); resolve-pin.py could not run",
+   "notes": [
+    "pin: LOW (Wikipedia point, not checked against an OSM summit or lookout)"
+   ],
+   "wiki": "Rosetta Head",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open headland, no single steward site verified"
+  },
+  "victor-harbor-4": {
+   "name": "Port Elliot",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A historic seaside village on the coast east of Victor Harbor, with a sheltered bay.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.534569,
+    "longitude": 138.67876
+   },
+   "coordinates_source": "wikipedia:Port Elliot, South Australia (town point); resolve-pin.py could not run",
+   "notes": [
+    "pin: LOW (town point from Wikipedia, not checked against OSM place=town)"
+   ],
+   "wiki": "Port Elliot, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "town, no single steward"
+  },
+  "victor-harbor-5": {
+   "name": "Horseshoe Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A small, sheltered sandy bay beside the historic village of Port Elliot on the Fleurieu coast.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.532894,
+    "longitude": 138.684265
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited",
+   "notes": [
+    "pin: LOW (board listing point for the beach, 0.57 km from the Port Elliot point; not checked against OSM natural=beach)"
+   ],
+   "wiki": "Horseshoe Bay, Port Elliot",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no steward"
+  },
+  "victor-harbor-6": {
+   "name": "Urimbirra Wildlife Experience",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "An open-range wildlife park at Hindmarsh Valley with kangaroo feeding, koala patting and over 70 species of Australian animals.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.519276,
+    "longitude": 138.632693
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited",
+   "notes": [
+    "pin: LOW (board listing point; address 10 Welch Road, Hindmarsh Valley)",
+    "Board listing prices: adult $16, child 4-14 $8, senior/student $12; operator's own site open daily 10-4 but shows no price"
+   ],
+   "free": false,
+   "costMin": 16,
+   "costMax": 16,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.urimbirra.com.au/"
+  },
+  "victor-harbor-7": {
+   "name": "Hindmarsh Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A 20 m waterfall best seen in winter and spring, reached by a short walk to a viewing platform.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.437633,
+    "longitude": 138.584012
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited",
+   "notes": [
+    "pin: LOW (board listing point; falls ~13 km from Victor Harbor)",
+    "No fee mentioned by the Visit Victor Harbor page; treated as free open access"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "no single steward site; the Visit Victor Harbor page is a tourism listing"
+  },
+  "victor-harbor-8": {
+   "name": "Nakurami Kondoli Whale Lookout",
+   "icon": "🐋",
+   "category": "viewpoint",
+   "bio": "A free whale-watching platform at Kings Beach on the Heysen Trail, near Waitpinga.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.59672,
+    "longitude": 138.584371
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited",
+   "notes": [
+    "pin: LOW (board listing point at Waitpinga)"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open lookout, no steward site verified"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "victor-harbor",
+    "name": "Victor Harbor",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.55424,
+     "longitude": 138.62275
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 40,
+    "rank": 3,
+    "icon": "🐋",
+    "tagline": "Whales, penguins and a horse-drawn tram on South Australia's Encounter Bay coast",
+    "description": "Victor Harbor is a seaside town on Encounter Bay on the southern Fleurieu coast, built around a foreshore and the causeway to Granite Island. A horse-drawn tram crosses the causeway to the island, where little penguins breed and a walking trail circles the coast. Southern right whales come close to shore in winter, and the town has a whale centre and a free clifftop platform on the Heysen Trail. The sheltered bay at Port Elliot and the Bluff headland are a short drive east and west.",
+    "whyVisit": [
+     "Watch southern right whales from shore",
+     "Ride a horse-drawn tram to an island",
+     "Walk the coast to sheltered bays"
+    ],
+    "highlights": [
+     "Winter whale watching",
+     "Horse-drawn tram",
+     "Coastal walks"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🐋",
+      "title": "Whale season",
+      "detail": "Southern right whales are usually seen from June to October, so winter is the time to scan the bay from the foreshore or a lookout."
+     },
+     {
+      "icon": "🎟️",
+      "title": "Free island entry",
+      "detail": "Entry to Granite Island Recreation Park is free. Horse-drawn tram rides and guided tours are run separately and charged on top."
+     },
+     {
+      "icon": "💧",
+      "title": "Waterfall timing",
+      "detail": "Hindmarsh Falls runs strongest in winter and spring, which suits a combined day with whale watching."
+     }
+    ],
+    "bestMonths": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "Southern right whales visit in {months}, and Hindmarsh Falls runs fullest in the same wetter season."
+   },
+   "spots": [
+    "victor-harbor-1",
+    "victor-harbor-2",
+    "victor-harbor-3",
+    "victor-harbor-4",
+    "victor-harbor-5",
+    "victor-harbor-6",
+    "victor-harbor-7",
+    "victor-harbor-8",
+    "victor-harbor-9",
+    "victor-harbor-10",
+    "victor-harbor-11",
+    "victor-harbor-12",
+    "victor-harbor-13",
+    "victor-harbor-14",
+    "victor-harbor-15"
+   ],
+   "notes": [
+    "coordinates: Victa Cinema (Ocean Street, town centre) from Wikipedia geosearch; the draft point -35.55,138.61667 was a rounded Wikipedia town point. LOW, resolve-pin not run.",
+    "All spots lie within about 14 km of the pin (Hindmarsh Falls farthest), inside 75% of the 40 km span.",
+    "Spot order kept as the draft (ids 9-15 are in other shards); Port Elliot arguably ahead of The Bluff."
+   ]
+  }
+ ],
+ "unverified": [
+  "Softfoot tour $250: per person or per group of up to 5 not confirmed from the operator's own page",
+  "Urimbirra $16 adult from the board listing only; the operator's site shows no price",
+  "Hindmarsh Falls and Nakurami Kondoli have no fee mentioned; assumed free",
+  "Whale Centre 2021 renovation closure: site is live and lists 7 days 10-4 but current status unconfirmed"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "resolve-pin.py hung for 1h+ (Overpass unreachable, Nominatim and Wikipedia API returning 429/blocked from many parallel agents), so NO spot has a HIGH/MEDIUM pin. Coordinates are the southaustralia.com tourism-board listing points (Wikipedia for The Bluff and Port Elliot); every spot is pin LOW and should be re-run through resolve-pin when the services recover.",
+  "No spot is a duplicate or should be dropped. Softfoot Alpaca Farm is misplaced under mclaren-vale (it is in Hindmarsh Valley near Victor Harbor).",
+  "Parks SA fee pages (Granite Island, Wangkuntila-Aldinga, Onkaparinga River, Cox Scrub) all state free entry."
+ ]
+}
