@@ -30,3 +30,5 @@ A spot inside a park that charges entry and has no fee of its own is `free: true
 - Katarapko (riverland-6) into Murray River National Park (riverland-2). Ninety Mile Beach (coorong-national-park-2) and the agency's Ocean Beach are one stretch: keep one. Raukkan (-11) and Raukkan Church (-10) are one stop: merge unless the pin pass finds distinct points.
 - Parks: add pass `ikara-flinders` (AUD 14.40 per vehicle), `gluepot` (AUD 10 per vehicle per day) to the park-pass plan above.
 - Wording: no current closure (floods, roadworks, 6-9 Nov park closure) in any bio or tip; say "check current conditions" at most.
+- Adelaide Holocaust Museum (adelaide-51): closed for re-curation until December 2026. Held. Army Museum of South Australia (adelaide-52): to be relocated from Keswick Barracks to a venue not yet chosen. Held until a source confirms where and when it is open.
+- Bay Discovery Centre (adelaide-53): no cost (council page behind a bot wall): browser check; unfinished until it has a cost.
