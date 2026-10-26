@@ -330,6 +330,36 @@ export default function ProfileScreen() {
   []);
   const topSwipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: topSwipeXSV.value }] }));
 
+  // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
+  const worldMapAt = (w: number) => (
+    <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
+    <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }]}>
+      <Svg width={w} height={Math.round((w * WORLD_VH) / 360)} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
+        <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
+        {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
+          <Path key={k} d={d}
+            fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
+            stroke="white" strokeWidth={0.15} />
+        ))}
+        {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
+            read differently from destinations, as on the full-screen map. */}
+        {worldMode === 'destinations' && worldDots.map((p, k) => (
+          <Circle key={k} cx={p.x} cy={p.y} r={2} fill="#10B981" stroke="white" strokeWidth={0.5} />
+        ))}
+        {worldMode === 'spots' && worldDots.map((p, k) => (
+          <React.Fragment key={k}>
+            <Path d={pinPath(p.x, p.y)} fill="#10B981" stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
+            <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
+          </React.Fragment>
+        ))}
+      </Svg>
+      {/* A hint that the map opens. */}
+      <View style={styles.mapHint}><Text style={styles.mapHintTxt}>Tap to explore</Text></View>
+    </View>
+    </Pressable>
+  );
+  const worldMap = worldMapAt(WORLD_W);
+  const worldMapInCard = worldMapAt(WORLD_W - 34);
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
     {/* ── Profile header ──────────────────────────────────────────── */}
@@ -443,34 +473,7 @@ export default function ProfileScreen() {
       </View>
 
       {/* ── The map, its own card under the selector ── */}
-      <View style={styles.mapCard}>
-
-        <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
-        <View pointerEvents="none" style={styles.mapWrap}>
-          <Svg width={WORLD_W} height={WORLD_H} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
-            <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
-            {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
-              <Path key={k} d={d}
-                fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
-                stroke="white" strokeWidth={0.15} />
-            ))}
-            {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
-                read differently from destinations, as on the full-screen map. */}
-            {worldMode === 'destinations' && worldDots.map((p, k) => (
-              <Circle key={k} cx={p.x} cy={p.y} r={2} fill="#10B981" stroke="white" strokeWidth={0.5} />
-            ))}
-            {worldMode === 'spots' && worldDots.map((p, k) => (
-              <React.Fragment key={k}>
-                <Path d={pinPath(p.x, p.y)} fill="#10B981" stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
-                <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
-              </React.Fragment>
-            ))}
-          </Svg>
-          {/* A hint that the map opens. */}
-          <View style={styles.mapHint}><Text style={styles.mapHintTxt}>Tap to explore</Text></View>
-        </View>
-        </Pressable>
-      </View>
+      {worldMode === 'countries' && <View style={styles.mapCard}>{worldMap}</View>}
 
       {/* The sections below follow the level chosen in the selector, each a card of its own. */}
       {worldMode === 'countries' && (<>
@@ -557,6 +560,8 @@ export default function ProfileScreen() {
               {destSearchable && <SearchToggle onPress={() => toggleSearch(false, setDestSearchOpen, setDestQuery)} />}
             </>)}
           </View>
+          {/* The map is part of this card: the header above covers it and the grid below. */}
+          <View style={styles.mapInCard}>{worldMapInCard}</View>
           {exploredDests.length === 0 ? (
             <Text style={styles.topEmpty}>No destinations visited yet.</Text>
           ) : (
@@ -628,6 +633,8 @@ export default function ProfileScreen() {
               {spotSearchable && <SearchToggle onPress={() => toggleSearch(false, setSpotSearchOpen, setSpotQuery)} />}
             </>)}
           </View>
+          {/* The map is part of this card: the header above covers it and the grid below. */}
+          <View style={styles.mapInCard}>{worldMapInCard}</View>
           {exploredSpots.length === 0 ? (
             <Text style={styles.topEmpty}>No spots visited yet.</Text>
           ) : (
@@ -885,6 +892,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 16, marginBottom: 12, padding: 16, backgroundColor: 'white',
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
   },
+  // The map inside an Explored card: full width of the card, rounded, with room around it.
+  mapInCard: { marginTop: 12, marginBottom: 12, borderRadius: 12, overflow: 'hidden' },
   mapCard: {
     marginHorizontal: 16, marginBottom: 12, overflow: 'hidden', backgroundColor: 'white',
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
