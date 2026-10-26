@@ -1047,6 +1047,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring mild weather for coastal walks and drives, while summer is hot and busy.",
   },
   {
+    id: 'coober-pedy', name: "Coober Pedy", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -29.011111, longitude: 134.755556 },
+    category: 'city', icon: "💎", rank: 3,
+    tagline: "Opal-mining town of underground homes, churches and desert landscapes in the outback.",
+    description: "Coober Pedy is an opal-mining town on the Stuart Highway in outback South Australia, where homes and churches are dug into the hillsides. Visitors tour old mines and underground dwellings, and the Serbian Orthodox church is bored out of solid rock. Outside town, the Kanku-Breakaways' eroded hills and the pale Moon Plain have both served as film locations. About 20 km out there is no electric light, so the night sky is easy to see.",
+    whyVisit: ["Tour underground opal mines", "Visit homes and churches dug into rock", "Explore eroded desert hills and plains"],
+    whyVisitPhotos: ["Outback Trip - Coober Pedy Opal Mine (4157698270).jpg", "Coober Pedy - Underground house.jpg", "Sunset at Breakaways.jpg"],
+    highlights: ["Opal mines", "Underground living", "Desert landscapes"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Buy a Breakaways permit", detail: "Entry to Kanku-Breakaways is $13.50 per vehicle, bought online or at the Coober Pedy Visitor Information Centre." },
+      { icon: "⚠️", title: "Stay off the diggings", detail: "Old opal shafts are deep and easy to fall into, so see a worked-out mine on a tour rather than wandering the mine fields." },
+      { icon: "🌡️", title: "Underground stays cool", detail: "Underground workings hold about 22-24 °C all year, so a mine tour is a cool break from the surface heat." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} bring milder days for mine tours and desert drives. Summer heat on the surface is extreme.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
