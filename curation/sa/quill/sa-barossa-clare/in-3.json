@@ -1,0 +1,433 @@
+{
+ "destinations": [
+  {
+   "id": "burra",
+   "name": "Burra",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -33.66666667,
+    "longitude": 138.93333333
+   },
+   "coordinates_source": "Wikipedia: Burra, South Australia (town centre; re-pin)",
+   "defaultZoomSpanKm": 25,
+   "name_evidence": {
+    "source": "Wikivoyage \"Burra (South Australia)\"; Burra Heritage Passport on clarevalley.com.au and southaustralia.com",
+    "wording": "Wikivoyage has its own Burra page; the Burra Heritage Passport unites its mine, gaol, dugouts and station"
+   },
+   "spots": [
+    "burra-1",
+    "burra-2",
+    "burra-3",
+    "burra-4",
+    "burra-5"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "nature",
+   "icon": "🎨",
+   "bio": "Small town with the Blyth Mosaic, the 4.4 km Dean Nicolle Eucalypt Walk and nearby Brooks Lookout.",
+   "wiki": "Blyth, South Australia",
+   "coordinates_source": "candidate (wikipedia:Blyth, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-10",
+   "name": "Blyth",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.83333333,
+    "longitude": 138.48333333
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "🎨",
+   "bio": "Silo mural of the last train through town (2020), first of the Clare Valley Silo Art Trail.",
+   "wiki": "Farrell Flat silo art",
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-11",
+   "name": "Farrell Flat Silo Art",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Open-air copper-mine museum with tours, covering the enginehouse, powder magazine, lookout and Peacocks Chimney.",
+   "wiki": "Burra Mine",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "burra-1",
+   "name": "Burra Mine Site",
+   "destination": "burra",
+   "coordinates": null,
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Burra_(South_Australia)",
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "National Trust gaol in Burra with exercise yards and cells, open through the Burra Heritage Passport.",
+   "wiki": "Redruth Gaol",
+   "coordinates_source": "candidate (wikipedia:Redruth Gaol); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 864,
+   "counted_sources": 1,
+   "id": "burra-2",
+   "name": "Redruth Gaol",
+   "destination": "burra",
+   "coordinates": {
+    "latitude": -33.6645,
+    "longitude": 138.933
+   },
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Restored creek-bank dugouts where Burra's early miners lived, opened with the Burra Heritage Passport key.",
+   "wiki": "Miners Dugouts",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "burra-3",
+   "name": "Miners Dugouts",
+   "destination": "burra",
+   "coordinates": null,
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚉",
+   "bio": "Former station with a museum of the town and its railway, free entry via the Burra Passport.",
+   "wiki": "Burra railway station",
+   "coordinates_source": "candidate (wikipedia:Burra railway station); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 631,
+   "counted_sources": 2,
+   "id": "burra-4",
+   "name": "Burra Railway Station",
+   "destination": "burra",
+   "coordinates": {
+    "latitude": -33.6742,
+    "longitude": 138.9196
+   },
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Burra_(South_Australia)",
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⛏️",
+   "bio": "National Trust interpretive centre on 1850s Burra mining with relics and ore samples.",
+   "wiki": "Bon Accord Mine Complex",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "burra-5",
+   "name": "Bon Accord Mine Complex",
+   "destination": "burra",
+   "coordinates": null,
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🩷",
+   "bio": "Pink salt lake beside the highway at Lochiel, with a lookout and the Loch-Eel sculpture.",
+   "wiki": "Lake Bumbunga",
+   "coordinates_source": "candidate (wikipedia:Lake Bumbunga); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5191,
+   "counted_sources": 1,
+   "id": "lake-bumbunga",
+   "name": "Lake Bumbunga",
+   "destination": null,
+   "coordinates": {
+    "latitude": -33.9,
+    "longitude": 138.18333333
+   },
+   "note": "about 39 km from Clare, reached from the Port Wakefield-Clare road at Lochiel rather than from Clare Valley; outside the Clare Valley span",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "🎨",
+   "bio": "Silo mural honouring local authors including Colin Thiele, on the Clare Valley Silo Art Trail.",
+   "wiki": "Eudunda silo art",
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "eudunda-silo-art",
+   "name": "Eudunda Silo Art",
+   "destination": null,
+   "coordinates": null,
+   "note": "41 km from the Barossa centre and 57 km from Clare; outside both spans, a roadside stop on the Sturt Highway side",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🚉",
+   "bio": "Historic railway town on the Barrier Highway with a Historic Walk of 35 or more buildings.",
+   "wiki": "Terowie, South Australia",
+   "coordinates_source": "candidate (wikipedia:Terowie, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7512,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ],
+   "id": "terowie",
+   "name": "Terowie",
+   "destination": null,
+   "coordinates": {
+    "latitude": -33.155538,
+    "longitude": 138.918589
+   },
+   "note": "57 km from Burra, on the Barrier Highway; a historic town on its own",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Bundaleer Reservoir Reserve and forest near Jamestown with a loop trail, kayaking, fishing and picnics.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/bundaleer-reservoir-reserve/"
+   ],
+   "id": "bundaleer-forest",
+   "name": "Bundaleer Forest",
+   "destination": null,
+   "coordinates": null,
+   "note": "about 75 km from Clare; Jamestown cluster stands alone (see notes)",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/bundaleer-reservoir-reserve/"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Creek-side heritage trail built by WWI veterans, with interpretive displays and picnic spots.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/listings/attraction/diggers-walk-belalie-creek/"
+   ],
+   "id": "diggers-walk-belalie-creek",
+   "name": "Diggers Walk Belalie Creek",
+   "destination": null,
+   "coordinates": null,
+   "note": "Jamestown cluster, about 70+ km from Clare",
+   "sources": [
+    "https://flindersandoutback.com.au/listings/attraction/diggers-walk-belalie-creek/"
+   ]
+  }
+ ]
+}

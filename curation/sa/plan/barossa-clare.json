@@ -1,0 +1,1489 @@
+{
+ "region": "sa-barossa-clare",
+ "destinations": [
+  {
+   "id": "barossa-valley",
+   "name": "Barossa Valley",
+   "category": "nature",
+   "rank": 2,
+   "coordinates": {
+    "latitude": -34.53333333,
+    "longitude": 138.95
+   },
+   "coordinates_source": "Wikipedia: Barossa Valley (point to be re-pinned at Tanunda centre)",
+   "defaultZoomSpanKm": 45,
+   "name_evidence": {
+    "source": "Wikivoyage \"Barossa Valley\"; southaustralia.com/destinations/barossa; barossa.com",
+    "wording": "Barossa Valley / the Barossa is the named wine region and destination page; Tanunda is its base"
+   },
+   "spots": [
+    "barossa-valley-1",
+    "barossa-valley-2",
+    "barossa-valley-3",
+    "barossa-valley-4",
+    "barossa-valley-5",
+    "barossa-valley-6",
+    "barossa-valley-7",
+    "barossa-valley-8",
+    "barossa-valley-9",
+    "barossa-valley-10",
+    "barossa-valley-11",
+    "barossa-valley-12",
+    "barossa-valley-13",
+    "barossa-valley-14",
+    "barossa-valley-15"
+   ]
+  },
+  {
+   "id": "clare-valley",
+   "name": "Clare Valley",
+   "category": "nature",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -33.83361111,
+    "longitude": 138.61
+   },
+   "coordinates_source": "Wikipedia: Clare Valley (region point; re-pin to Clare centre)",
+   "defaultZoomSpanKm": 50,
+   "name_evidence": {
+    "source": "southaustralia.com/destinations/clare-valley; clarevalley.com.au (Clare Valley Tourism); Wikivoyage \"Yorke Peninsula and Clare Valley\"",
+    "wording": "Clare Valley is a named region with its own tourism board and destination page"
+   },
+   "spots": [
+    "clare-valley-1",
+    "clare-valley-2",
+    "clare-valley-3",
+    "clare-valley-4",
+    "clare-valley-5",
+    "clare-valley-6",
+    "clare-valley-7",
+    "clare-valley-8",
+    "clare-valley-9",
+    "clare-valley-10",
+    "clare-valley-11"
+   ]
+  },
+  {
+   "id": "burra",
+   "name": "Burra",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -33.66666667,
+    "longitude": 138.93333333
+   },
+   "coordinates_source": "Wikipedia: Burra, South Australia (town centre; re-pin)",
+   "defaultZoomSpanKm": 25,
+   "name_evidence": {
+    "source": "Wikivoyage \"Burra (South Australia)\"; Burra Heritage Passport on clarevalley.com.au and southaustralia.com",
+    "wording": "Wikivoyage has its own Burra page; the Burra Heritage Passport unites its mine, gaol, dugouts and station"
+   },
+   "spots": [
+    "burra-1",
+    "burra-2",
+    "burra-3",
+    "burra-4",
+    "burra-5"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "landmark",
+   "icon": "🍷",
+   "bio": "Penfolds cellar door at Nuriootpa offers tours and blending experiences at the Barossa estate behind the Grange name.",
+   "wiki": "Penfolds",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 25574,
+   "counted_sources": 1,
+   "id": "barossa-valley-1",
+   "name": "Penfolds Barossa Valley",
+   "destination": "barossa-valley",
+   "coordinates": null,
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🍷",
+   "bio": "Historic Seppeltsfield estate, reached along a palm-lined avenue, offers tastings including 100-year-old tawny.",
+   "wiki": "Seppeltsfield (wine)",
+   "coordinates_source": "candidate (wikipedia:Seppeltsfield (wine)); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3056,
+   "counted_sources": 2,
+   "id": "barossa-valley-2",
+   "name": "Seppeltsfield Winery",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.48774,
+    "longitude": 138.91757
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley",
+    "https://southaustralia.com/destinations/barossa"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🧱",
+   "bio": "The 1903 Barossa Reservoir dam wall carries a whisper along its 140 m curve to the far end.",
+   "wiki": "Whispering Wall",
+   "coordinates_source": "candidate (wikipedia:Barossa Dam); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 815,
+   "counted_sources": 1,
+   "id": "barossa-valley-3",
+   "name": "Whispering Wall",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.645632,
+    "longitude": 138.847167
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🏞️",
+   "bio": "Lookout above the Barossa Valley with a sculpture park and a large car park, free to visit.",
+   "wiki": "Mengler Hill",
+   "coordinates_source": "candidate (wikipedia:Mengler Hill); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 652,
+   "counted_sources": 1,
+   "id": "barossa-valley-4",
+   "name": "Menglers Hill Lookout",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.5375,
+    "longitude": 139.0052
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Local-history museum in the Old Telegraph Station at Tanunda, a stop on the Tanunda Heritage Trail.",
+   "wiki": "Barossa Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "barossa-valley-5",
+   "name": "Barossa Museum",
+   "destination": "barossa-valley",
+   "coordinates": null,
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Eastern Barossa town with a heritage main street, galleries and food producers.",
+   "wiki": "Angaston, South Australia",
+   "coordinates_source": "candidate (wikipedia:Angaston, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5912,
+   "counted_sources": 2,
+   "id": "barossa-valley-7",
+   "name": "Angaston",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.5,
+    "longitude": 139.05
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley",
+    "https://southaustralia.com/destinations/barossa"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Southern gateway village of the Barossa, listed by regional guides for its wineries and bakery-lined main street.",
+   "wiki": "Lyndoch, South Australia",
+   "coordinates_source": "candidate (wikipedia:Lyndoch, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4225,
+   "counted_sources": 2,
+   "id": "barossa-valley-9",
+   "name": "Lyndoch",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.60375,
+    "longitude": 138.886624
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley",
+    "https://southaustralia.com/destinations/barossa"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Heritage village with a 27-site Historical Walk and an aviation museum nearby.",
+   "wiki": "Greenock, South Australia",
+   "coordinates_source": "candidate (wikipedia:Greenock, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1504,
+   "counted_sources": 2,
+   "id": "barossa-valley-10",
+   "name": "Greenock",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.45777778,
+    "longitude": 138.9275
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley",
+    "https://southaustralia.com/destinations/barossa"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Village best known for the Herbig Family Tree, a hollow red gum about 500 years old where the settler family once lived.",
+   "wiki": "Springton, South Australia",
+   "coordinates_source": "candidate (wikipedia:Springton, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1615,
+   "counted_sources": 1,
+   "id": "barossa-valley-6",
+   "name": "Springton",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.7085,
+    "longitude": 139.0901
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://www.barossa.com/trip-inspiration/places/towns/tanunda"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🏘️",
+   "bio": "High-country village with a scenic lookout at Burke's Hill and a historic main street.",
+   "wiki": "Eden Valley, South Australia",
+   "coordinates_source": "candidate (wikipedia:Eden Valley, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2822,
+   "counted_sources": 2,
+   "id": "barossa-valley-8",
+   "name": "Eden Valley",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.641,
+    "longitude": 139.098
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://southaustralia.com/destinations/barossa",
+    "https://www.barossa.com/trip-inspiration/places/towns/tanunda"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Barossa's commercial centre, listed by Wikivoyage and SA Tourism as a base for the valley.",
+   "wiki": "Nuriootpa, South Australia",
+   "coordinates_source": "candidate (wikipedia:Nuriootpa, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8509,
+   "counted_sources": 2,
+   "id": "barossa-valley-11",
+   "name": "Nuriootpa",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.46666667,
+    "longitude": 138.98333333
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley",
+    "https://southaustralia.com/destinations/barossa"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Historic town at the Barossa's southern edge with a Wikivoyage page of its own.",
+   "wiki": "Gawler, South Australia",
+   "coordinates_source": "candidate (wikipedia:Gawler); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 18118,
+   "counted_sources": 2,
+   "id": "barossa-valley-14",
+   "name": "Gawler",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.59805556,
+    "longitude": 138.745
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gawler",
+    "https://en.wikivoyage.org/wiki/Barossa_Valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Copper-mining heritage town on the Barossa's western edge, listed by Wikivoyage and Barossa tourism.",
+   "wiki": "Kapunda",
+   "coordinates_source": "candidate (wikipedia:Kapunda); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 9393,
+   "counted_sources": 2,
+   "id": "barossa-valley-12",
+   "name": "Kapunda",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.33888889,
+    "longitude": 138.91666667
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Barossa_Valley",
+    "https://www.barossa.com/trip-inspiration/places/towns/tanunda"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "🗿",
+   "bio": "A 7 m bronze Cornish miner statue on the Thiele Highway at Kapunda, with a picnic area and lookout.",
+   "wiki": "Map the Miner",
+   "coordinates_source": "candidate (wikipedia:Map the Miner); re-pin with resolve-pin.py",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1531,
+   "counted_sources": [],
+   "id": "barossa-valley-13",
+   "name": "Map the Miner",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.3521,
+    "longitude": 138.9067
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Free conservation park with three walking trails, including a Heysen Trail section through stringybark woodland.",
+   "wiki": "Warren Conservation Park",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 267,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/warren-conservation-park",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ],
+   "id": "barossa-valley-15",
+   "name": "Warren Conservation Park",
+   "destination": "barossa-valley",
+   "coordinates": null,
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/warren-conservation-park",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "religious",
+   "icon": "🍷",
+   "bio": "Jesuit winery founded in 1851 with St Aloysius Church and cellars open to visitors.",
+   "wiki": "Sevenhill Cellars",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-1",
+   "name": "Sevenhill Cellars",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "Rail trail for walkers and cyclists running through the Clare Valley wine country between Clare and Auburn.",
+   "wiki": "Riesling Trail",
+   "coordinates_source": "route midpoint to be taken from the whole OSM route",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1339,
+   "counted_sources": 3,
+   "id": "clare-valley-2",
+   "name": "Riesling Trail",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://southaustralia.com/destinations/clare-valley",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "Georgian-style 1879 mansion near Mintaro open to visitors, known as a film location.",
+   "wiki": "Martindale Hall",
+   "coordinates_source": "candidate (wikipedia:Martindale Hall); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4918,
+   "counted_sources": 3,
+   "id": "clare-valley-3",
+   "name": "Martindale Hall",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.9378,
+    "longitude": 138.7294
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://www.clarevalley.com.au/explore/history-heritage",
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Heritage village of slate and stone buildings, listed by Clare Valley Tourism and SA Tourism.",
+   "wiki": "Mintaro, South Australia",
+   "coordinates_source": "candidate (wikipedia:Mintaro, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3268,
+   "counted_sources": 3,
+   "id": "clare-valley-4",
+   "name": "Mintaro",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.91694444,
+    "longitude": 138.72083333
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/regions-towns",
+    "https://www.clarevalley.com.au/explore/history-heritage",
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "Free conservation park near Clare with a waterfall and the Cascades walk.",
+   "wiki": "Spring Gully Conservation Park",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 430,
+   "counted_sources": 2,
+   "id": "clare-valley-5",
+   "name": "Spring Gully Conservation Park",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://www.parks.sa.gov.au/parks/spring-gully-conservation-park"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 1 km loop of about 45 minutes to a 455 m lookout through remnant woodland.",
+   "wiki": "Neagles Rock Short Walk",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-6",
+   "name": "Neagles Rock Short Walk",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Heritage village at the southern end of the Clare Valley where the Riesling and Rattler Trails meet.",
+   "wiki": "Auburn, South Australia",
+   "coordinates_source": "candidate (wikipedia:Auburn, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3280,
+   "counted_sources": 3,
+   "id": "clare-valley-7",
+   "name": "Auburn",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -34.02722222,
+    "longitude": 138.68555556
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/regions-towns",
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🐑",
+   "bio": "Historic pastoral station near Clare offering farm tours.",
+   "wiki": "Bungaree Station",
+   "coordinates_source": "candidate (wikipedia:Bungaree, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "clare-valley-8",
+   "name": "Bungaree Station",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.74416667,
+    "longitude": 138.56083333
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://www.clarevalley.com.au/explore/history-heritage"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "A 19 km walking and cycling rail trail from Riverton to Auburn that joins the Riesling Trail.",
+   "wiki": "Rattler Trail",
+   "coordinates_source": "route midpoint to be taken from the whole OSM route",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 290,
+   "counted_sources": 1,
+   "id": "clare-valley-9",
+   "name": "Rattler Trail",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🎨",
+   "bio": "Small town with the Blyth Mosaic, the 4.4 km Dean Nicolle Eucalypt Walk and nearby Brooks Lookout.",
+   "wiki": "Blyth, South Australia",
+   "coordinates_source": "candidate (wikipedia:Blyth, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-10",
+   "name": "Blyth",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.83333333,
+    "longitude": 138.48333333
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "🎨",
+   "bio": "Silo mural of the last train through town (2020), first of the Clare Valley Silo Art Trail.",
+   "wiki": "Farrell Flat silo art",
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-11",
+   "name": "Farrell Flat Silo Art",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Open-air copper-mine museum with tours, covering the enginehouse, powder magazine, lookout and Peacocks Chimney.",
+   "wiki": "Burra Mine",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "burra-1",
+   "name": "Burra Mine Site",
+   "destination": "burra",
+   "coordinates": null,
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Burra_(South_Australia)",
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "National Trust gaol in Burra with exercise yards and cells, open through the Burra Heritage Passport.",
+   "wiki": "Redruth Gaol",
+   "coordinates_source": "candidate (wikipedia:Redruth Gaol); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 864,
+   "counted_sources": 1,
+   "id": "burra-2",
+   "name": "Redruth Gaol",
+   "destination": "burra",
+   "coordinates": {
+    "latitude": -33.6645,
+    "longitude": 138.933
+   },
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Restored creek-bank dugouts where Burra's early miners lived, opened with the Burra Heritage Passport key.",
+   "wiki": "Miners Dugouts",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "burra-3",
+   "name": "Miners Dugouts",
+   "destination": "burra",
+   "coordinates": null,
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚉",
+   "bio": "Former station with a museum of the town and its railway, free entry via the Burra Passport.",
+   "wiki": "Burra railway station",
+   "coordinates_source": "candidate (wikipedia:Burra railway station); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 631,
+   "counted_sources": 2,
+   "id": "burra-4",
+   "name": "Burra Railway Station",
+   "destination": "burra",
+   "coordinates": {
+    "latitude": -33.6742,
+    "longitude": 138.9196
+   },
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Burra_(South_Australia)",
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⛏️",
+   "bio": "National Trust interpretive centre on 1850s Burra mining with relics and ore samples.",
+   "wiki": "Bon Accord Mine Complex",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "burra-5",
+   "name": "Bon Accord Mine Complex",
+   "destination": "burra",
+   "coordinates": null,
+   "note": "inside burra span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🩷",
+   "bio": "Pink salt lake beside the highway at Lochiel, with a lookout and the Loch-Eel sculpture.",
+   "wiki": "Lake Bumbunga",
+   "coordinates_source": "candidate (wikipedia:Lake Bumbunga); re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5191,
+   "counted_sources": 1,
+   "id": "lake-bumbunga",
+   "name": "Lake Bumbunga",
+   "destination": null,
+   "coordinates": {
+    "latitude": -33.9,
+    "longitude": 138.18333333
+   },
+   "note": "about 39 km from Clare, reached from the Port Wakefield-Clare road at Lochiel rather than from Clare Valley; outside the Clare Valley span",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "🎨",
+   "bio": "Silo mural honouring local authors including Colin Thiele, on the Clare Valley Silo Art Trail.",
+   "wiki": "Eudunda silo art",
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "eudunda-silo-art",
+   "name": "Eudunda Silo Art",
+   "destination": null,
+   "coordinates": null,
+   "note": "41 km from the Barossa centre and 57 km from Clare; outside both spans, a roadside stop on the Sturt Highway side",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🚉",
+   "bio": "Historic railway town on the Barrier Highway with a Historic Walk of 35 or more buildings.",
+   "wiki": "Terowie, South Australia",
+   "coordinates_source": "candidate (wikipedia:Terowie, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7512,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ],
+   "id": "terowie",
+   "name": "Terowie",
+   "destination": null,
+   "coordinates": {
+    "latitude": -33.155538,
+    "longitude": 138.918589
+   },
+   "note": "57 km from Burra, on the Barrier Highway; a historic town on its own",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Bundaleer Reservoir Reserve and forest near Jamestown with a loop trail, kayaking, fishing and picnics.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/bundaleer-reservoir-reserve/"
+   ],
+   "id": "bundaleer-forest",
+   "name": "Bundaleer Forest",
+   "destination": null,
+   "coordinates": null,
+   "note": "about 75 km from Clare; Jamestown cluster stands alone (see notes)",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/bundaleer-reservoir-reserve/"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Creek-side heritage trail built by WWI veterans, with interpretive displays and picnic spots.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/listings/attraction/diggers-walk-belalie-creek/"
+   ],
+   "id": "diggers-walk-belalie-creek",
+   "name": "Diggers Walk Belalie Creek",
+   "destination": null,
+   "coordinates": null,
+   "note": "Jamestown cluster, about 70+ km from Clare",
+   "sources": [
+    "https://flindersandoutback.com.au/listings/attraction/diggers-walk-belalie-creek/"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🎨",
+   "bio": "Self-guided walk past heritage-building murals and a permanent outdoor gallery on Ayr Street.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/listings/attraction/jamestown-mural-walk-and-outdoor-gallery/"
+   ],
+   "id": "jamestown-mural-walk-and-outdoor-gallery",
+   "name": "Jamestown Mural Walk and Outdoor Gallery",
+   "destination": null,
+   "coordinates": null,
+   "note": "Jamestown cluster, about 70+ km from Clare",
+   "sources": [
+    "https://flindersandoutback.com.au/listings/attraction/jamestown-mural-walk-and-outdoor-gallery/"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚉",
+   "bio": "Local-history museum in the 1885 railway station with an 1870s carriage and R.M. Williams links.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://flindersandoutback.com.au/listings/attraction/jamestown-railway-station-museum/"
+   ],
+   "id": "jamestown-railway-station-museum",
+   "name": "Jamestown Railway Station Museum",
+   "destination": null,
+   "coordinates": null,
+   "note": "Jamestown cluster, about 70+ km from Clare",
+   "sources": [
+    "https://flindersandoutback.com.au/listings/attraction/jamestown-railway-station-museum/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Recreation park near Crystal Brook with walking trails, 1850s homestead ruins and a Heysen Trail section.",
+   "wiki": "Bowman Park",
+   "coordinates_source": "candidate (wikipedia:Bowman Park); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 563,
+   "counted_sources": 0,
+   "id": "bowman-park",
+   "name": "Bowman Park",
+   "destination": null,
+   "coordinates": {
+    "latitude": -33.316667,
+    "longitude": 138.233333
+   },
+   "note": "about 60 km from Clare, near Crystal Brook at the region edge; confirm the region against sa-flinders/sa-yorke",
+   "sources": []
+  }
+ ],
+ "review": [
+  {
+   "name": "Château Tanunda",
+   "reason": "For: grand 1890 chateau open daily with 40-min cellar tours and croquet lawn; Wikivoyage and southaustralia.com list it. Against: both list it as a winery/cellar door, which the rules exclude unless a recognised attraction.",
+   "judge_objection": "For: grand 1890 chateau open daily with 40-min cellar tours and croquet lawn; Wikivoyage and southaustralia.com list it. Against: both list it as a winery/cellar door, which the rules exclude unless a recognised attraction."
+  },
+  {
+   "name": "Jacob's Creek Visitor Centre",
+   "reason": "For: barossa.com and Wikivoyage list it; self-guided Trail of Discovery creek walk and demonstration vineyard make a 30+ min stop at a famous brand. Against: it is a cellar door/visitor centre of a winery.",
+   "judge_objection": "For: barossa.com and Wikivoyage list it; self-guided Trail of Discovery creek walk and demonstration vineyard make a 30+ min stop at a famous brand. Against: it is a cellar door/visitor centre of a winery."
+  },
+  {
+   "name": "Louden Brae School",
+   "reason": "For: tourism-board listing of a restored 1905 one-teacher schoolhouse, famed as R.M. Williams' school. Against: single source, a stone building with a short visit, and the page gives no open-to-public detail (directions via the visitor outlet), so interior access is unconfirmed.",
+   "judge_objection": "For: tourism-board listing of a restored 1905 one-teacher schoolhouse, famed as R.M. Williams' school. Against: single source, a stone building with a short visit, and the page gives no open-to-public detail (directions via the visitor outlet), so interior access is unconfirmed."
+  },
+  {
+   "name": "R.M. Williams Story (Jamestown)",
+   "reason": "For: tourism-board listing of an outdoor interpretive display on the R.M. Williams brand founder, born near Jamestown, in Robinson Park (free, always accessible). Against: single source, an outdoor panel display likely 15 minutes, close in theme to the Louden Brae School and the museum's R.M. Williams exhibit.",
+   "judge_objection": "For: tourism-board listing of an outdoor interpretive display on the R.M. Williams brand founder, born near Jamestown, in Robinson Park (free, always accessible). Against: single source, an outdoor panel display likely 15 minutes, close in theme to the Louden Brae School and the museum's R.M. Williams exhibit."
+  }
+ ],
+ "merged": [
+  {
+   "name": "Tanunda",
+   "into": "Barossa Valley (destination base) and Barossa Museum",
+   "reason": "town is the base and its attraction (Barossa Museum) is kept; wrapper"
+  },
+  {
+   "name": "Seppeltsfield",
+   "into": "Seppeltsfield Winery",
+   "reason": "town is a wrapper for the estate"
+  },
+  {
+   "name": "Sevenhill",
+   "into": "Sevenhill Cellars",
+   "reason": "village draw is the Jesuit winery and church; wrapper"
+  },
+  {
+   "name": "Clare",
+   "into": "Clare Valley (destination base)",
+   "reason": "mentioned in the destination description"
+  },
+  {
+   "name": "Burra",
+   "into": "Burra (destination)",
+   "reason": "town is the destination"
+  },
+  {
+   "name": "Barossa Valley / Clare Valley",
+   "into": "the destinations of the same name",
+   "reason": "region candidates become destinations, not spots"
+  },
+  {
+   "name": "Eudunda",
+   "into": "Eudunda Silo Art",
+   "reason": "town kept only for its silo art; wrapper"
+  }
+ ],
+ "duplicates_elsewhere": [
+  {
+   "name": "Para Wirra Conservation Park",
+   "home": "adelaide"
+  },
+  {
+   "name": "Heysen Trail (review)",
+   "home": "flinders"
+  },
+  {
+   "name": "Mawson Trail (review)",
+   "home": "flinders"
+  }
+ ]
+}

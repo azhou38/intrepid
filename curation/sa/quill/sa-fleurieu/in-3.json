@@ -1,0 +1,427 @@
+{
+ "destinations": [
+  {
+   "id": "goolwa",
+   "name": "Goolwa",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -35.5,
+    "longitude": 138.76666667
+   },
+   "coordinates_source": "wikipedia:Goolwa, South Australia",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "Wikivoyage 'Goolwa' article (See: Barrage, motor museum, Signal Point); fleurieupeninsula.com.au",
+    "wording": "Goolwa: town on the Murray Mouth with Wikivoyage See listings (barrage walk, motor museum, wharf precinct); Hindmarsh Island is reached from it"
+   },
+   "spots": [
+    "goolwa-1",
+    "goolwa-2",
+    "goolwa-3",
+    "goolwa-4",
+    "goolwa-5",
+    "goolwa-6",
+    "goolwa-7",
+    "goolwa-8",
+    "goolwa-9",
+    "goolwa-10",
+    "goolwa-11"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A council-run lookout on Kleinigs Hill, above the seaside town of Victor Harbor.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "victor-harbor-9",
+   "name": "Kleinigs Hill Lookout",
+   "destination": "victor-harbor",
+   "coordinates": null,
+   "note": "Council-run lookout above Victor Harbor named by southaustralia.com and the board.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "Waitpinga and Parsons beaches, Waitpinga Cliffs and a section of the Wild South Coast Way, with views to Kangaroo Island.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 394,
+   "counted_sources": 2,
+   "id": "victor-harbor-10",
+   "name": "Newland Head Conservation Park",
+   "destination": "victor-harbor",
+   "coordinates": null,
+   "note": "Parks SA and board: Waitpinga and Parsons beaches, Waitpinga Cliffs, Wild South Coast Way section, views to Kangaroo Island.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/attractions",
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A coastal village with a surf beach and an old winery.",
+   "wiki": "Middleton, South Australia",
+   "coordinates_source": "wikipedia:Middleton, South Australia",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 2839,
+   "counted_sources": 2,
+   "id": "victor-harbor-11",
+   "name": "Middleton",
+   "destination": "victor-harbor",
+   "coordinates": {
+    "latitude": -35.510463,
+    "longitude": 138.706496
+   },
+   "note": "2 counted sources, 2839 page views",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/",
+    "https://southaustralia.com/destinations/fleurieu-peninsula"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "A heritage museum in Victor Harbor, open to the public, covering the history of the town and district.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "victor-harbor-12",
+   "name": "Victor Harbor National Trust Museum",
+   "destination": "victor-harbor",
+   "coordinates": null,
+   "note": "Heritage museum in Victor Harbor listed by the board's heritage and arts pages (two counted sources); open to the public, a half-hour or more of local history.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/heritage",
+    "https://www.fleurieupeninsula.com.au/things-to-do/arts-and-culture"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Selwyn's Rock, a glacial outcrop near Inman Valley reached by a very short walk with steps.",
+   "wiki": "Selwyn's Rock",
+   "coordinates_source": "wikipedia:Inman Valley, South Australia",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "victor-harbor-13",
+   "name": "Glacier Rock",
+   "destination": "victor-harbor",
+   "coordinates": {
+    "latitude": -35.49526,
+    "longitude": 138.454944
+   },
+   "note": "Wikivoyage (Victor Harbor) and the board: Selwyn's Rock, a glacial outcrop reached by a very short walk with steps.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor",
+    "https://en.wikivoyage.org/wiki/Victor_Harbor"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A named river walk at Victor Harbor following the Hindmarsh River, a short outing from the town.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "victor-harbor-14",
+   "name": "Hindmarsh River Walking Trail",
+   "destination": "victor-harbor",
+   "coordinates": null,
+   "note": "Named river walk at Victor Harbor on two board pages; a guide-named walk, second tier.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/attractions",
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A river trail at Victor Harbor with barbecue facilities, toilets and a car park.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "victor-harbor-15",
+   "name": "Inman River Trail",
+   "destination": "victor-harbor",
+   "coordinates": null,
+   "note": "Named river trail at Victor Harbor with barbecue, toilets and carpark on two board pages; second-tier walk.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/attractions",
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "A historic Scottish-founded town inland from the Fleurieu coast, known for its antiques shops.",
+   "wiki": "Strathalbyn, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 9379,
+   "counted_sources": 2,
+   "id": "goolwa-1",
+   "name": "Strathalbyn",
+   "destination": "goolwa",
+   "coordinates": null,
+   "note": "2 counted sources, 9379 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Fleurieu_Peninsula",
+    "https://www.fleurieupeninsula.com.au/"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🌉",
+   "bio": "A barrage you can walk halfway across, with a picnic area and interpretive signs at the Murray Mouth.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "id": "goolwa-2",
+   "name": "Goolwa Barrage",
+   "destination": "goolwa",
+   "coordinates": null,
+   "note": "Wikivoyage Goolwa See: you can walk halfway across the barrage, with a picnic area and interpretive signs; a named place a visitor can walk (rule 1-2).",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "An interactive interpretive centre on Goolwa's wharf precinct about the Murray Mouth and river.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "goolwa-3",
+   "name": "Signal Point Experience Centre",
+   "destination": "goolwa",
+   "coordinates": null,
+   "note": "Interactive interpretive centre on Goolwa's wharf precinct about the Murray Mouth and river; board arts page lists it and Wikivoyage describes the precinct with its map of the lake system.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/arts-and-culture"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A surf beach near the Murray Mouth with a car park and cafe.",
+   "wiki": "Goolwa Beach",
+   "coordinates_source": "wikipedia:Goolwa Beach",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 245,
+   "counted_sources": 1,
+   "id": "goolwa-4",
+   "name": "Goolwa Beach",
+   "destination": "goolwa",
+   "coordinates": {
+    "latitude": -35.51353,
+    "longitude": 138.76975
+   },
+   "note": "Board lists the surf beach at Goolwa near the Murray Mouth with carpark and cafe; second-tier beach.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦅",
+   "bio": "An island at the Murray Mouth reached by bridge from Goolwa, for birdwatching and fishing.",
+   "wiki": "Hindmarsh Island",
+   "coordinates_source": "wikipedia:Hindmarsh Island",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost"
+   ],
+   "views": 5886,
+   "counted_sources": 1,
+   "id": "goolwa-5",
+   "name": "Hindmarsh Island",
+   "destination": "goolwa",
+   "coordinates": {
+    "latitude": -35.51666667,
+    "longitude": 138.86666667
+   },
+   "note": "Wikivoyage (Goolwa) says the Murray Mouth is seen from Hindmarsh Island; board page covers birdwatching, fishing and Lonely Island; island reached by bridge from Goolwa.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/"
+   ]
+  }
+ ]
+}

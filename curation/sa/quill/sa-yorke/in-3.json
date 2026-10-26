@@ -1,0 +1,432 @@
+{
+ "destinations": [
+  {
+   "id": "innes-national-park",
+   "name": "Dhilba Guuranda-Innes National Park",
+   "category": "park",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -35.2278,
+    "longitude": 136.8947
+   },
+   "coordinates_source": "candidate: Wikipedia area point (park centroid); needs the visitor point (visitor centre / campground)",
+   "defaultZoomSpanKm": 50,
+   "name_evidence": {
+    "source": "parks.sa.gov.au and yorkepeninsula.com.au",
+    "wording": "Dhilba Guuranda-Innes National Park, the headline Yorke attraction (Ethel wreck, lighthouses, surf, walks)"
+   },
+   "spots": [
+    "innes-national-park-1",
+    "innes-national-park-2",
+    "innes-national-park-3",
+    "innes-national-park-4",
+    "innes-national-park-5",
+    "innes-national-park-6",
+    "innes-national-park-7",
+    "innes-national-park-8",
+    "innes-national-park-9",
+    "innes-national-park-10",
+    "innes-national-park-11",
+    "innes-national-park-12"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum in the old Smith stump-jump plough factory, with a Zanoni shipwreck display.",
+   "wiki": "Ardrossan Heritage Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-16",
+   "name": "Ardrossan Heritage Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two sources: yorkepeninsula.com.au and visityorkepeninsula.com.au museums page (in the old Smith stump-jump plough factory, shipwreck Zanoni display, open seven days 10-4).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "1878 schoolroom in Stansbury holding farm and industry displays, open only some afternoons.",
+   "wiki": "Stansbury Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-17",
+   "name": "Stansbury Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two counted sources (Wikivoyage Stansbury See; visityorkepeninsula.com.au museums page): 1878 schoolroom with farm and industry displays. Objection: volunteer-run, open Wed and Sun afternoons.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Stansbury",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum in a former produce store covering the salt industry and shipwrecks, open at weekends.",
+   "wiki": "Edithburgh Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-18",
+   "name": "Edithburgh Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two counted sources: Wikivoyage Edithburgh See (adults $3) and the visityorkepeninsula.com.au museums page (salt industry, shipwrecks, produce-store building). Objection: weekend afternoons only.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Edithburgh"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🎖️",
+   "bio": "Private museum with a large WWI, WWII and Vietnam collection and memorial gardens.",
+   "wiki": "Bublacowie Military Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 376,
+   "counted_sources": 0,
+   "id": "yorke-peninsula-19",
+   "name": "Bublacowie Military Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two sources: visityorkepeninsula.com.au museums page (extensive WWI/WWII/Vietnam collection, memorial gardens, tours) and History SA; guided visits last an hour or two. Objection: private museum, open Sun to Tue or by appointment.",
+   "sources": []
+  },
+  {
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "Lighthouse and lookout on Cape Spencer, also the park's whale-watching cliff.",
+   "wiki": "Cape Spencer Lighthouse (South Australia)",
+   "coordinates_source": "candidate: wikipedia:Cape Spencer Lighthouse (South Australia)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 347,
+   "counted_sources": 2,
+   "id": "innes-national-park-1",
+   "name": "Cape Spencer Lighthouse",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.29894444,
+    "longitude": 136.88252778
+   },
+   "note": "Lighthouse and lookout on Cape Spencer in Innes National Park, named by parks.sa.gov.au and yorkepeninsula.com.au (Cape Spencer Lookout); also the park's whale-watching cliff. One spot with Cape Spencer (duplicate).",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "Surf beach and campground at the western end of the park.",
+   "wiki": "Pondalowie Bay",
+   "coordinates_source": "candidate: wikipedia:Pondalowie Bay",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 829,
+   "counted_sources": 2,
+   "id": "innes-national-park-2",
+   "name": "Pondalowie Bay",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.23611111,
+    "longitude": 136.83694444
+   },
+   "note": "Surf beach and campground in the park, named by parks.sa.gov.au and yorkepeninsula.com.au; a beach (and Yorke's best-known surf break) is a standard second-tier keep.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🚢",
+   "bio": "Remains of the 1904 wreck of the Ethel on Ethel Beach.",
+   "wiki": "Ethel (ship)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "innes-national-park-3",
+   "name": "Ethel Wreck",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "Remains of the Ethel (1904) on Ethel Beach in the park, named by parks.sa.gov.au ('Visit... the shipwreck of the Ethel') and yorkepeninsula.com.au (rules 1, 2). Ethel Beach is a duplicate of this.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Headland lookout reached by a 4 km return walk with views of the rugged coast.",
+   "wiki": "Royston Head",
+   "coordinates_source": "candidate: wikipedia:Royston Head",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 237,
+   "counted_sources": 1,
+   "id": "innes-national-park-4",
+   "name": "Royston Head",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.19027778,
+    "longitude": 136.84583333
+   },
+   "note": "Headland lookout, 2-hour 4 km return hike with 'amazing views of the rugged peninsula coast' (parks.sa.gov.au); a headland a guide singles out, second tier but real.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "⚓",
+   "bio": "Village in the park with the visitor centre, jetty and campground.",
+   "wiki": "Stenhouse Bay, South Australia",
+   "coordinates_source": "candidate: wikipedia:Stenhouse Bay, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 864,
+   "counted_sources": 1,
+   "id": "innes-national-park-5",
+   "name": "Stenhouse Bay",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.28333333,
+    "longitude": 136.93333333
+   },
+   "note": "Village in Dhilba Guuranda-Innes National Park with the visitor centre, jetty, campground and whale-watching cliffs; named by yorkepeninsula.com.au and the parks page (rules 1, 2). Stands in for Stenhouse Bay Jetty (duplicate).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "1 km loop to West Cape lighthouse with 360 degree views.",
+   "wiki": "West Cape (South Australia)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 376,
+   "counted_sources": 1,
+   "id": "innes-national-park-6",
+   "name": "West Cape Headland Hike",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "30-minute 1 km loop to West Cape lighthouse with 360 degree views, named on parks.sa.gov.au and highlighted by rangers (rules 1, 2).",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Abandoned gypsum township with ruins, interpretive signs and heritage cottages.",
+   "wiki": "Inneston, South Australia",
+   "coordinates_source": "candidate: wikipedia:Inneston, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1080,
+   "counted_sources": 1,
+   "id": "innes-national-park-7",
+   "name": "Inneston",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.274394,
+    "longitude": 136.89018
+   },
+   "note": "Abandoned gypsum township in the park, a named see on the parks.sa.gov.au page (ruins, interpretive signs, heritage cottages); one spot with Inneston Historic Walk (duplicate of this).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "2 km cliff-top loop with views over Investigator Strait.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "innes-national-park-8",
+   "name": "Stenhouse Bay Lookout Walk",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "parks.sa.gov.au lists it as an easy 1 hour, 2 km cliff-top loop with views over Investigator Strait \"among the best in the park\"; a distinct walk from the jetty car park.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  }
+ ]
+}
