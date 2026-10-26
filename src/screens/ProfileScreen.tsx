@@ -713,28 +713,40 @@ function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?
       {tiles.map(t => (
         <View key={t.key} style={styles.tile}>
           {t.photo}
-          {/* The scrim sits only behind the text (the bottom half) and eases in over several stops, so there is no visible edge. */}
-          <Svg style={styles.tileScrim} pointerEvents="none">
-            <Defs>
-              <SvgLinearGradient id="tileScrim" x1="0" y1="0" x2="0" y2="1">
-                <Stop offset="0" stopColor="#000" stopOpacity={0} />
-                <Stop offset="0.3" stopColor="#000" stopOpacity={0.05} />
-                <Stop offset="0.6" stopColor="#000" stopOpacity={0.22} />
-                <Stop offset="0.85" stopColor="#000" stopOpacity={0.45} />
-                <Stop offset="1" stopColor="#000" stopOpacity={0.58} />
-              </SvgLinearGradient>
-            </Defs>
-            <Rect width="100%" height="100%" fill="url(#tileScrim)" />
-          </Svg>
-          <View style={styles.tileText} pointerEvents="none">
-            <Text style={styles.tileName} numberOfLines={1}>{t.name}</Text>
-            <View style={styles.tileSubRow}>
-              {!!t.countryCode && <CircleFlag countryCode={t.countryCode} size={11} />}
-              {!!t.sub && <Text style={styles.tileSub} numberOfLines={1}>{t.sub}</Text>}
-            </View>
-          </View>
+          {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
+              spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
+          <TileFooter name={t.name} countryCode={t.countryCode} sub={t.sub} />
         </View>
       ))}
+    </View>
+  );
+}
+
+// A tile's footer: the name and sub line over a dark gradient that fills the footer's own box (full tile width, as tall as the
+// text plus room to fade in above it).
+function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: string | null; sub: string }) {
+  const [box, setBox] = useState<{ w: number; h: number } | null>(null);
+  return (
+    <View style={styles.tileFooter} pointerEvents="none"
+      onLayout={e => setBox({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
+      {!!box && (
+        <Svg width={box.w} height={box.h} style={StyleSheet.absoluteFill}>
+          <Defs>
+            <SvgLinearGradient id="tileScrim" x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0" stopColor="#000" stopOpacity={0} />
+              <Stop offset="0.25" stopColor="#000" stopOpacity={0.12} />
+              <Stop offset="0.55" stopColor="#000" stopOpacity={0.4} />
+              <Stop offset="1" stopColor="#000" stopOpacity={0.78} />
+            </SvgLinearGradient>
+          </Defs>
+          <Rect x={0} y={0} width={box.w} height={box.h} fill="url(#tileScrim)" />
+        </Svg>
+      )}
+      <Text style={styles.tileName} numberOfLines={1}>{name}</Text>
+      <View style={styles.tileSubRow}>
+        {!!countryCode && <CircleFlag countryCode={countryCode} size={11} />}
+        {!!sub && <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>}
+      </View>
     </View>
   );
 }
@@ -956,8 +968,7 @@ const styles = StyleSheet.create({
   // The Explored photo grid: square tiles, three across.
   tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
-  tileScrim: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '55%' },
-  tileText: { position: 'absolute', left: 8, right: 8, bottom: 8 },
+  tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: 28, paddingHorizontal: 8, paddingBottom: 8 },
   tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
   tileSub:  { flexShrink: 1, fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
