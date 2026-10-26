@@ -1115,6 +1115,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit in {months} for mild days and comfortable gorge walks, as summer heat is extreme.",
   },
   {
+    id: 'naracoorte', name: "Naracoorte", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 85,
+    continent: 'Oceania', coordinates: { latitude: -36.955, longitude: 140.74285 },
+    category: 'city', icon: "🦇", rank: 3,
+    tagline: "A farming town beside South Australia's fossil caves and the Coonawarra's red-soil vineyards.",
+    description: "Naracoorte is a Limestone Coast town on the road between Adelaide and Melbourne. South of town, Naracoorte Caves National Park is South Australia's only World Heritage site, with caves that preserved the bones of Australian megafauna over the last two to three million years. To the south the terra rossa soil of Coonawarra and Penola grows Cabernet Sauvignon, while Bool Lagoon to the south-west is a large wetland for waterbirds. The town's flour-mill museum covers the wool industry.",
+    whyVisit: ["Tour World Heritage fossil caves", "Taste Cabernet on red soil", "Watch waterbirds on the wetlands"],
+    whyVisitPhotos: ["57. Skeleton shadow, Victoria Fossil Cave, Naracoorte.jpg", "Wynns Coonawarra - Grapevines.jpg", ""],
+    highlights: ["Fossil caves", "Coonawarra wine", "Wetland birds"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Cave entry is free", detail: "Entering Naracoorte Caves National Park costs nothing, but every cave tour is ticketed, so book ahead online for the longer ones." },
+      { icon: "🦇", title: "Bat season varies", detail: "Bats use the Bat Centre cave only part of the year, so check the park's bat information before planning around the evening flight." },
+      { icon: "🍷", title: "Cellar doors on one road", detail: "More than 20 Coonawarra cellar doors sit along a single stretch of road, so they are easy to link in a half day." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "{months} bring mild days for cave tours, cellar doors and wetland walks.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,

@@ -2549,4 +2549,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Oakey Hill",
   "File:",
   "Settlers Track",
+  "Naracoorte",
 ]);
