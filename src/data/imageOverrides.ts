@@ -704,6 +704,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg": { x: 0.35, y: 0.5 },
   "File:Nikon 003.jpg": { x: 0.35, y: 0.5 },
   "Robe": { x: 0.35, y: 0.4, zoom: 1.3 },
+  "Goolwa": { x: 0.5, y: 0.6, zoom: 1.4 },
+  "File:Goolwa beach 2009.jpg": { x: 0.5, y: 0.6, zoom: 1.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2306,6 +2308,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Yorke Peninsula": "Corny point rainbow.jpg",
   "Copper Coast": "South Beach Port Hughes.jpg",
   "Robe": "View of Robe coastline and Obelisk 20230214 2.jpg",
+  "Goolwa": "Goolwa beach 2009.jpg",
 };
 
 /**

@@ -1229,6 +1229,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Summer, {months}, brings mild days of about 22°C for swimming, surfing and driving Long Beach.",
   },
   {
+    id: 'goolwa', name: "Goolwa", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -35.5028883, longitude: 138.7837286 },
+    category: 'city', icon: "🚤", rank: 4,
+    tagline: "A river-port town where the Murray meets the sea, with a barrage and a wharf precinct.",
+    description: "Goolwa sits on the lower Murray where the river meets Lake Alexandrina, a few kilometres from the Southern Ocean. A series of barrages holds back the sea, and you can walk halfway across the Goolwa Barrage. The wharf precinct has an interpretive centre on the Murray Mouth, and a bridge leads to Hindmarsh Island and its waterbirds. A surf beach runs south-east of town, and Strathalbyn and Langhorne Creek are an easy drive inland.",
+    whyVisit: ["Walk out across the Murray barrage", "Watch waterbirds near the Murray Mouth", "Walk Goolwa's open surf beach"],
+    whyVisitPhotos: ["Goolwa Barrage, South Australia.jpg", "", "Goolwa beach 2009.jpg"],
+    highlights: ["Barrage walk", "River-mouth birds", "Surf beach"],
+    goodToKnow: [
+      { icon: "🚗", title: "Barrage access is from Goolwa", detail: "Reach the barrage by Barrage Road from the Goolwa side. There is no way onto it from Hindmarsh Island." },
+      { icon: "🏖️", title: "Check beach driving rules", detail: "Four-wheel drives use the track behind the surf club, best at low tide with tyres lowered. Rules change, so check with the council." },
+    ],
+    bestMonths: [3, 4, 5, 10, 11],
+    bestTimeBlurb: "Visit in {months} for mild days on the river and beach. Summer is hotter and winter is wetter.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
