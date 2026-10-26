@@ -38,6 +38,7 @@ const MILLER_TOP = miller(84);
 const WORLD_VH = MILLER_TOP - miller(-58);
 const WORLD_Y0 = 0, WORLD_Y1 = WORLD_VH;
 const WORLD_W = Dimensions.get('window').width - 32;
+const SCREEN_W = Dimensions.get('window').width;
 const WORLD_H = Math.round((WORLD_W * WORLD_VH) / 360);
 const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP - miller(lat) });
 // A spot pin on the card's map, in its map units: the app's teardrop (a round head, the tail's edges tangent to it) with
@@ -358,8 +359,7 @@ export default function ProfileScreen() {
     </View>
     </Pressable>
   );
-  const worldMap = worldMapAt(WORLD_W);
-  const worldMapInCard = worldMapAt(WORLD_W - 34);
+  const worldMap = worldMapAt(worldMode === 'countries' ? WORLD_W : SCREEN_W);
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
     {/* ── Profile header ──────────────────────────────────────────── */}
@@ -545,25 +545,24 @@ export default function ProfileScreen() {
 
       {/* ── Destinations: Destinations Explored, Top Destinations (by visited spots) ── */}
       {worldMode === 'destinations' && (<>
-        <View style={styles.panelSection}>
-          <View style={styles.cardHeaderRow}>
-            {/* The title, and the search's magnifier at the right; the search, once opened, takes the whole line in their
-                place. */}
-            {destSearchOpen ? (
+        <View style={styles.exploredSection}>
+          {destSearchOpen && (
+            <View style={[styles.cardHeaderRow, styles.exploredPad]}>
               <FoldingSearch value={destQuery} placeholder="Search destinations or countries"
                 onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)}
                 onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
-            ) : (<>
-              <View style={styles.titleWithCount}>
-                <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Destinations Explored</Text>
+            </View>
+          )}
+          <View>
+            {worldMap}
+            {destSearchable && !destSearchOpen && (
+              <View style={styles.exploredSearchBtn}>
+                <SearchToggle onPress={() => toggleSearch(false, setDestSearchOpen, setDestQuery)} />
               </View>
-              {destSearchable && <SearchToggle onPress={() => toggleSearch(false, setDestSearchOpen, setDestQuery)} />}
-            </>)}
+            )}
           </View>
-          {/* The map is part of this card: the header above covers it and the grid below. */}
-          <View style={styles.mapInCard}>{worldMapInCard}</View>
           {exploredDests.length === 0 ? (
-            <Text style={styles.topEmpty}>No destinations visited yet.</Text>
+            <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
           ) : (
             <>
             {/* Filter by country: All, then each country with visited destinations (flag, name, count). */}
@@ -572,7 +571,7 @@ export default function ProfileScreen() {
                 onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
             )}
             {shownDests.length === 0 && (
-              <Text style={styles.topEmpty}>
+              <Text style={[styles.topEmpty, styles.exploredPad]}>
                 {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Tap a country above to filter by it.' : 'No destinations match.'}
               </Text>
             )}
@@ -620,23 +619,24 @@ export default function ProfileScreen() {
 
       {/* ── Spots: Spots Explored ── */}
       {worldMode === 'spots' && (
-        <View style={styles.panelSection}>
-          <View style={styles.cardHeaderRow}>
-            {spotSearchOpen ? (
+        <View style={styles.exploredSection}>
+          {spotSearchOpen && (
+            <View style={[styles.cardHeaderRow, styles.exploredPad]}>
               <FoldingSearch value={spotQuery} placeholder="Search spots, destinations or countries"
                 onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)}
                 onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
-            ) : (<>
-              <View style={styles.titleWithCount}>
-                <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Spots Explored</Text>
+            </View>
+          )}
+          <View>
+            {worldMap}
+            {spotSearchable && !spotSearchOpen && (
+              <View style={styles.exploredSearchBtn}>
+                <SearchToggle onPress={() => toggleSearch(false, setSpotSearchOpen, setSpotQuery)} />
               </View>
-              {spotSearchable && <SearchToggle onPress={() => toggleSearch(false, setSpotSearchOpen, setSpotQuery)} />}
-            </>)}
+            )}
           </View>
-          {/* The map is part of this card: the header above covers it and the grid below. */}
-          <View style={styles.mapInCard}>{worldMapInCard}</View>
           {exploredSpots.length === 0 ? (
-            <Text style={styles.topEmpty}>No spots visited yet.</Text>
+            <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
           ) : (
             <>
             {spotCountries.length > 1 && (
@@ -644,7 +644,7 @@ export default function ProfileScreen() {
                 onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
             )}
             {shownSpots.length === 0 && (
-              <Text style={styles.topEmpty}>
+              <Text style={[styles.topEmpty, styles.exploredPad]}>
                 {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Tap a country above to filter by it.' : 'No spots match.'}
               </Text>
             )}
@@ -702,9 +702,9 @@ function wordMatch(text: string, q: string) {
 // An Explored list as a grid of rounded photo tiles, four across: the name in white at the bottom left over a dark
 // scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
 const TILE_COLS = 4;
-const TILE_GAP = 6;
-// A tile's side: the screen less the card's margins (16 each side), padding (16) and border (1).
-const TILE = Math.floor((Dimensions.get('window').width - 2 * (16 + 16 + 1) - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
+const TILE_GAP = 3;
+// A tile's side: the full screen width, less the gaps.
+const TILE = Math.floor((SCREEN_W - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
 function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[] }) {
   return (
     <View style={styles.tileGrid}>
@@ -893,7 +893,10 @@ const styles = StyleSheet.create({
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
   },
   // The map inside an Explored card: full width of the card, rounded, with room around it.
-  mapInCard: { marginTop: 12, marginBottom: 12, borderRadius: 12, overflow: 'hidden' },
+  // The Explored sections have no card: the map, pills and photo grid run the full screen width.
+  exploredSection: { marginBottom: 12 },
+  exploredPad: { paddingHorizontal: 16 },
+  exploredSearchBtn: { position: 'absolute', top: 10, right: 12 },
   mapCard: {
     marginHorizontal: 16, marginBottom: 12, overflow: 'hidden', backgroundColor: 'white',
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
@@ -936,7 +939,7 @@ const styles = StyleSheet.create({
                   borderRadius: 12, backgroundColor: '#F3F4F6' },
   searchInput:  { flex: 1, fontSize: 14, color: '#111827', paddingVertical: 0 },
   // The Explored lists' country filter: a sideways row of chips; the chosen one is green.
-  filterScroll: { marginHorizontal: -16, marginBottom: 10, flexGrow: 0 },
+  filterScroll: { marginTop: 12, marginBottom: 10, flexGrow: 0 },
   filterRow:    { paddingHorizontal: 16, gap: 6 },
   filterChip:   { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 10, paddingVertical: 6,
                   borderRadius: 14, borderWidth: 1, borderColor: '#E5E7EB', backgroundColor: 'white' },
@@ -945,8 +948,8 @@ const styles = StyleSheet.create({
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, four across.
-  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
-  tile:     { width: TILE, height: TILE, borderRadius: 10, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
+  tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   tileText: { position: 'absolute', left: 5, right: 5, bottom: 5 },
   tileName: { fontSize: 11, fontWeight: '700', color: 'white' },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
