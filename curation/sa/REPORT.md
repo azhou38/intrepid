@@ -573,3 +573,5 @@ Also dropped as not spots: Whyalla (town duplicates its destination), Gumeracha 
 - Woomera Missile Park (spot): Woomera.jpg: also used for woomera-heritage-centre
 - Yeldulknie Conservation Park (spot): Serpentine Lakes.JPG: also used for coober-pedy
 - Yurrebilla Trail (spot): Yurrebilla.jpg: 391px wide, minimum 960 for a spot
+## Owner decisions
+- All 38 added destinations approved as applied (rank, name and span unchanged).
