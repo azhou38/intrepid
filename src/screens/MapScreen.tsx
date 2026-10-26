@@ -1031,7 +1031,7 @@ function destSpotPhotoFloor(destId: string): number {
   return destSpotPhotoFloorCache.get(destId) ?? Infinity;
 }
 // The country pills showing at zoom `z` (the same rules as MapScreen's countryPills, at that zoom), for the photo plan.
-function pillsAtZoom(z: number, planCountry: { countryCode: string } | null, planDest: Destination | null): { latitude: number; longitude: number }[] {
+function pillsAtZoom(z: number, planCountry: { countryCode: string } | null, planDest: Destination | null): { countryCode: string; latitude: number; longitude: number }[] {
   const span = (SCREEN_W_GLOBAL * 360) / (256 * Math.pow(2, z));
   const cands = COUNTRY_GROUPS.filter(g => {
     const sel = planCountry?.countryCode === g.countryCode;
@@ -1045,12 +1045,12 @@ function pillsAtZoom(z: number, planCountry: { countryCode: string } | null, pla
   });
   const pxPerDegLng = SCREEN_W_GLOBAL / span;
   const placed: { x: number; y: number }[] = [];
-  const out: { latitude: number; longitude: number }[] = [];
+  const out: { countryCode: string; latitude: number; longitude: number }[] = [];
   for (const g of cands) {
     const p = mercatorPx(g.longitude, g.latitude, pxPerDegLng);
     if (placed.some(o => Math.abs(p.x - o.x) < 100 && Math.abs(p.y - o.y) < 30)) continue;
     placed.push(p);
-    out.push({ latitude: g.latitude, longitude: g.longitude });
+    out.push({ countryCode: g.countryCode, latitude: g.latitude, longitude: g.longitude });
   }
   return out;
 }
@@ -1382,6 +1382,35 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
   type Box = { l: number; r: number; t: number; b: number };
   const hit = (a: Box, b: Box) => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t;
   const pins: string[] = [], names: string[] = [];
+  // The country pills at every ladder zoom, and for each country the zooms it shows at. A pin stays up at every closer
+  // zoom, but a pill can come BACK as the camera zooms in: it is dropped where a more famous neighbour's pill is within
+  // 100 x 30 pt, and zooming in spreads them apart. A pin placed while its pill was dropped would then sit under it
+  // (Amsterdam under the Netherlands' pill). So a pin or name must also clear every pill that shows at any closer zoom.
+  const pillsByStep = ladder.map(z => pillsAtZoom(z, planCountry, planDest));
+  const pillPos = new Map<string, { x: number; y: number }>();
+  const pillSteps = new Map<string, number[]>();
+  pillsByStep.forEach((ps, j) => ps.forEach(p => {
+    if (!pillPos.has(p.countryCode)) pillPos.set(p.countryCode, unit(p.longitude, p.latitude));
+    const a = pillSteps.get(p.countryCode); if (a) a.push(j); else pillSteps.set(p.countryCode, [j]);
+  }));
+  // Whether a box hanging off destination `id` (offsets from its point, screen points) would sit under a pill at ladder
+  // step `i` or any later one. The pill box is the one used for the pills showing now: 150 x 84 pt around its point.
+  const underLaterPill = (id: string, i: number, off: Box): boolean => {
+    const u = pos.get(id)!;
+    const s0 = 512 * Math.pow(2, ladder[i]);
+    for (const [cc, pu] of pillPos) {
+      // Cheap reject at the closest scale of the range, where the two are nearest in screen points.
+      if (Math.abs(u.x - pu.x) * s0 >= 75 + Math.max(-off.l, off.r) || Math.abs(u.y - pu.y) * s0 >= 42 + Math.max(-off.t, off.b)) continue;
+      for (const j of pillSteps.get(cc)!) {
+        if (j < i) continue;
+        const sj = 512 * Math.pow(2, ladder[j]);
+        const dx = (pu.x - u.x) * sj, dy = (pu.y - u.y) * sj;   // pill point relative to the destination's point
+        if (off.l < dx + 75 && off.r > dx - 75 && off.t < dy + 42 && off.b > dy - 42) return true;
+      }
+    }
+    return false;
+  };
+  const pinOff: Box = { l: -R, r: R, t: -R, b: R };
   for (let i = 0; i < ladder.length; i++) {
     const z = ladder[i];
     const scale = 512 * Math.pow(2, z);   // Mapbox's world size in screen points (512 px tiles)
@@ -1391,7 +1420,7 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
     // Pins keep clear of the pins and names already placed (a name, once shown, is never covered), the country pills
     // showing at this zoom and the selected spot.
     const pinTaken: Box[] = [...pins.map(pinBox), ...names.map(nameBox)];
-    for (const p of pillsAtZoom(z, planCountry, planDest)) {
+    for (const p of pillsByStep[i]) {
       const u = unit(p.longitude, p.latitude), x = u.x * scale, y = u.y * scale;
       pinTaken.push({ l: x - 75, r: x + 75, t: y - 42, b: y + 42 });
     }
@@ -1402,6 +1431,7 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
       if (destEligibleZoom(d, isDestVisited(d.id), selCC, selCountryZoom) > z + ZOOM_EPSILON) continue;
       const box = pinBox(d.id);
       if (pinTaken.some(t => hit(t, box))) continue;
+      if (underLaterPill(d.id, i, pinOff)) continue;
       pinAt.set(d.id, i); pins.push(d.id); pinTaken.push(box);
     }
     // Then the names of placed pins, in the same order, clear of every pin and every name already shown. A name only
@@ -1413,6 +1443,7 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
       if (level !== undefined && z >= level - ZOOM_EPSILON && forceDest?.id !== d.id) continue;
       const box = nameBox(d.id);
       if (forceDest?.id !== d.id && nameTaken.some(t => hit(t, box))) continue;
+      if (forceDest?.id !== d.id) { const f = nameFoot.get(d.id)!; if (underLaterPill(d.id, i, f)) continue; }
       nameAt.set(d.id, pinAt.get(d.id)! < 0 && forceDest?.id === d.id ? -1 : i); names.push(d.id); nameTaken.push(box);
     }
   }
