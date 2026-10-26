@@ -742,7 +742,7 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
           <Rect x={0} y={0} width={box.w} height={box.h} fill="url(#tileScrim)" />
         </Svg>
       )}
-      <Text style={styles.tileName} numberOfLines={1}>{name}</Text>
+      <Text style={styles.tileName} numberOfLines={3}>{name}</Text>
       <View style={styles.tileSubRow}>
         {!!countryCode && <CircleFlag countryCode={countryCode} size={11} />}
         {!!sub && <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>}
