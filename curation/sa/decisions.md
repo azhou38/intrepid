@@ -19,3 +19,14 @@ A spot inside a park that charges entry and has no fee of its own is `free: true
 - Goolwa Motor Museum (fleurieu): Tripadvisor and Wanderlog list it as permanently closed and no official site was found; browser check (escapegvh.com.au page, Cloudflare wall) before applying; if closed, drop.
 - Rename at merge: Strathalbyn Districts Museum -> "Strathalbyn Heritage Museum"; Goolwa Animal Farm (not Animal Farm Goolwa).
 - Softfoot Alpaca Farm (fleurieu, mclaren-vale-16): in Hindmarsh Valley, move under victor-harbor.
+
+## Held from the apply list (closed or unfinished; the report lists each with what unblocks it)
+- Migration Museum (adelaide-15): closed from 1 July 2026 for 18-24 months. Unblocks on reopening.
+- Tandanya (adelaide-16): closed, relaunch planned for 2027. Unblocks on reopening.
+- Classic Jets Fighter Museum (adelaide-62): possibly closed, no price, no working site. Unblocks on a source confirming it is open and its price.
+- Goolwa Motor Museum and Wheal Hughes Copper Mine: see the checks above.
+
+## Merges at the final merge
+- Katarapko (riverland-6) into Murray River National Park (riverland-2). Ninety Mile Beach (coorong-national-park-2) and the agency's Ocean Beach are one stretch: keep one. Raukkan (-11) and Raukkan Church (-10) are one stop: merge unless the pin pass finds distinct points.
+- Parks: add pass `ikara-flinders` (AUD 14.40 per vehicle), `gluepot` (AUD 10 per vehicle per day) to the park-pass plan above.
+- Wording: no current closure (floods, roadworks, 6-9 Nov park closure) in any bio or tip; say "check current conditions" at most.

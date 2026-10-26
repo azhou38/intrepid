@@ -1,0 +1,375 @@
+{
+ "spots": {
+  "murray-bridge-13": {
+   "name": "Tailem Bend Info Station and Rail Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Volunteer-run 1913 railway station at Tailem Bend with a signal box, rail museum and local history room.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Tailem Bend railway station (Railway Terrace area); use OSM museum/station node",
+    "cost": "free per southaustralia.com listing",
+    "hours": "volunteer run, hours vary"
+   },
+   "free": true,
+   "ticket_note": "No official site found; volunteer-run, listed only on tourism pages"
+  },
+  "murray-bridge-14": {
+   "name": "Tailem Bend Historic Rail Trail",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "Free marked heritage walk through Tailem Bend, with interpretive signs at the railway cottages and institute.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the marked route; route map from the tourism board / council, not yet located"
+   },
+   "free": true,
+   "ticket_note": "Council-run trail, no single official page verified"
+  },
+  "murray-bridge-15": {
+   "name": "Lower Murray Canoe Trail",
+   "icon": "🛶",
+   "category": "hike",
+   "bio": "A paddling route of about 21 km from Tailem Bend to Wellington, in four sections with interpretive signs.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Centre of the route (Tailem Bend to Wellington, about 21 km); Tailem Bend is the start"
+   },
+   "free": true,
+   "ticket_note": "No official page verified; listed on tourism pages as a free trail"
+  },
+  "mannum-1": {
+   "name": "Mannum Dock Discovery Centre",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "River history museum at Mannum Dock, where the 1897 paddle steamer PS Marion can be boarded.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Mannum Dock on the riverfront, OSM museum node",
+    "cost": "$7.50 from southaustralia.com listing; adult basis not stated"
+   },
+   "costMin": 7.5,
+   "costMax": 7.5,
+   "currency": "AUD",
+   "ticket_note": "Run by Mid Murray Council; council site blocks scripts, exact page needs a browser"
+  },
+  "mannum-2": {
+   "name": "Mannum Waterfalls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Small seasonal waterfall just outside Mannum, with a car park, picnic area and public toilets.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM waterfall node or car park at the falls"
+   },
+   "free": true,
+   "ticket_note": "Open-access site with no steward page"
+  },
+  "mannum-3": {
+   "name": "River Rides Motorcycle Museum",
+   "icon": "🏍️",
+   "category": "museum",
+   "bio": "Mannum museum of historic motorbikes and racing memorabilia, with about 52 bikes on display.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Mannum township; OSM museum node if present",
+    "cost": "entry price not found"
+   },
+   "ticket_note": "Only a Facebook page found (facebook.com/people/River-Rides-Motorcycle-Museum/61571508965595), not an official site",
+   "free": null
+  },
+  "mannum-4": {
+   "name": "Mary Ann Reserve",
+   "icon": "🛠️",
+   "category": "monument",
+   "bio": "Mannum reserve with a replica boiler and pumping engine marking Mary Ann, the first Murray paddle steamer.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Reserve on Mannum riverfront (OSM park/memorial node)"
+   },
+   "free": true,
+   "ticket_note": "Open reserve"
+  },
+  "mannum-5": {
+   "name": "Hermann Gass Bird Sanctuary",
+   "icon": "🐦",
+   "category": "nature",
+   "bio": "Bird sanctuary and picnic area on the Murray at Mannum, reached by kayak past river red gums.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Sanctuary car park near Mannum on the river; OSM nature reserve node is a centroid, use car park"
+   },
+   "free": true,
+   "ticket_note": "Open sanctuary, no steward page"
+  },
+  "mannum-6": {
+   "name": "Lenger Reserve",
+   "icon": "🌱",
+   "category": "nature",
+   "bio": "A 95 ha National Trust bird sanctuary near Mannum with 208 native plant species and a pug-and-pine cottage.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Entrance at 884 Springs Road (Purnong Road), signposted from Punthari; reserve centroid is not the visitor point",
+    "cost": "open daily, no camping (National Trust page)"
+   },
+   "free": true,
+   "ticketUrl": "https://www.nationaltrust.org.au/places/lenger-reserve/"
+  },
+  "coorong-national-park-1": {
+   "name": "42 Mile Crossing",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Campground and dune walk to the Coorong's Ocean Beach, a separate access point on the Younghusband Peninsula.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "42 Mile Crossing campground (agency); dune walk of 1.3 km to the beach",
+    "cost": "no park entry fee listed; campsites from $12.30 per night is accommodation, not a cost; 4WD-only campground, mainland access only in summer"
+   },
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-2": {
+   "name": "Ninety Mile Beach",
+   "icon": "🌊",
+   "category": "beach",
+   "bio": "The 4WD-only ocean beach of the Younghusband Peninsula, a filming location for Storm Boy.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Ocean Beach access via 42 Mile Crossing or Tea Tree Crossing; not the NZ Ninety Mile Beach",
+    "dup": "Same stretch as the agency's Ocean Beach; confirm 42 Mile Crossing (campground and dune walk) stays a distinct spot",
+    "cost": "no entry fee listed; beach conditions alert (erosion, dune collapse)"
+   },
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-3": {
+   "name": "Jack Point Pelican Observatory Walk",
+   "icon": "🦩",
+   "category": "nature",
+   "bio": "A 1.2 km, 20-minute walk to a viewing area over the largest Australian pelican breeding colony.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the 1.2 km return walk, or Jack Point car park (agency map)"
+   },
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "mannum",
+    "name": "Mannum",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -34.915143,
+     "longitude": 139.304393
+    },
+    "coordinates_source": "pending serial pin pass",
+    "category": "city",
+    "defaultZoomSpanKm": 40,
+    "rank": 5,
+    "icon": "🚤",
+    "tagline": "Murray River town where the paddle steamers began, with riverside pubs and a dock museum",
+    "description": "Mannum sits on the Murray River just over an hour from Adelaide. It is known as the birthplace of the Murray paddle steamers, and the dock museum and Mary Ann Reserve tell that story. Riverbank pubs overlook the water, and kayakers head downstream to a bird sanctuary lined with river red gums. Mannum Waterfalls and the Palmer granite outcrops sit a short drive inland.",
+    "whyVisit": [
+     "Cruise the Murray by paddle steamer",
+     "Spot birds from the river"
+    ],
+    "highlights": [
+     "Paddle steamers",
+     "River birdlife"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "💧",
+      "title": "Falls flow seasonally",
+      "detail": "Mannum Waterfalls flow seasonally, so expect only a trickle in the drier months."
+     },
+     {
+      "icon": "☀️",
+      "title": "Lenger Reserve timing",
+      "detail": "Lenger Reserve is signposted from Punthari and allows no camping. Visit outside the hottest summer months."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "Mild weather in {months} suits river cruises and walks along the Murray."
+   },
+   "spots": [
+    "mannum-1",
+    "mannum-5",
+    "mannum-2",
+    "mannum-4",
+    "mannum-3",
+    "mannum-6"
+   ],
+   "notes": [
+    "Coordinates are the drafted town point; pin pass to confirm (OSM place=town).",
+    "Mannum is 40 km span: Lenger Reserve (Purnong Road, about 20 km east) lies inside 75% of 40 km; recheck at pin pass.",
+    "Order changed from draft: Hermann Gass Bird Sanctuary moved to second (named 'world-renowned' on the tourism page)."
+   ]
+  },
+  {
+   "destination": {
+    "id": "coorong-national-park",
+    "name": "Coorong National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -36.049,
+     "longitude": 139.554
+    },
+    "coordinates_source": "pending serial pin pass (drafted centroid; replace with a visitor point such as Parnka Point or the Meningie area)",
+    "category": "park",
+    "defaultZoomSpanKm": 110,
+    "rank": 3,
+    "icon": "🦩",
+    "tagline": "Lagoons, dunes and pelicans in a wetland of international importance",
+    "description": "Coorong National Park runs along a chain of salty lagoons behind the Younghusband Peninsula, about 200 km south-east of Adelaide. The wetland is of international importance and is known for pelicans and migratory waders. Visitors bird-watch, walk, fish, kayak, camp and drive 4WD tracks, and Ngarrindjeri and European history runs through the park. Access is via Meningie or Kingston off the Princes Highway.",
+    "whyVisit": [
+     "Watch pelicans and migratory waders",
+     "Drive the ocean beach by 4WD",
+     "Paddle the quiet lagoon by kayak"
+    ],
+    "highlights": [
+     "Pelican colonies",
+     "4WD ocean beach",
+     "Lagoon kayaking"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚙",
+      "title": "Ocean Beach is 4WD only",
+      "detail": "Beach conditions change with erosion and dune collapses. Check the park alert and drive only with sand-driving experience."
+     },
+     {
+      "icon": "🔥",
+      "title": "Fire closures",
+      "detail": "The park closes on days of Catastrophic Fire Danger and may close on Extreme days. Check the CFS before you set out."
+     },
+     {
+      "icon": "⛺",
+      "title": "Pay before you enter",
+      "detail": "Campsite fees must be paid before entry and sites are not powered. 42 Mile Crossing is 4WD-only and reachable from the mainland only in summer."
+     }
+    ],
+    "bestMonths": [
+     12,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "bestTimeBlurb": "Summer and autumn ({months}) are warm and dry, with easy road access and good camping."
+   },
+   "spots": [
+    "coorong-national-park-1",
+    "coorong-national-park-2",
+    "coorong-national-park-3",
+    "coorong-national-park-4",
+    "coorong-national-park-5",
+    "coorong-national-park-6",
+    "coorong-national-park-7",
+    "coorong-national-park-8",
+    "coorong-national-park-9",
+    "coorong-national-park-10",
+    "coorong-national-park-11",
+    "coorong-national-park-12",
+    "coorong-national-park-13",
+    "coorong-national-park-14",
+    "coorong-national-park-15",
+    "coorong-national-park-16",
+    "coorong-national-park-17",
+    "coorong-national-park-18"
+   ],
+   "notes": [
+    "Draft spot order kept (only 1-3 are in this shard; the other 15 are written elsewhere).",
+    "Park has no entry fee listed on its page (fees: accommodation from $12.30 per night); spots are free, costBasis 'open'.",
+    "Dest coordinates: drafted centroid, needs a visitor point at the pin pass."
+   ]
+  }
+ ],
+ "unverified": [
+  "River Rides Motorcycle Museum: entry price and any official site not found (cost left null; only a Facebook page)",
+  "Mannum Dock Discovery Centre: $7.50 from the tourism listing, adult basis not confirmed",
+  "Mannum Waterfalls: seasonal flow stated by the draft/tourism note only"
+ ],
+ "needs_browser": [
+  {
+   "id": "mannum-1",
+   "url": "https://www.mid-murray.sa.gov.au",
+   "why": "Council site (Cloudflare wall) likely hosts the Mannum Dock page; find exact URL for ticketUrl"
+  },
+  {
+   "id": "murray-bridge-13",
+   "url": "https://www.murraybridge.sa.gov.au",
+   "why": "Council site blocked; check for a Tailem Bend rail museum / trail page"
+  }
+ ],
+ "notes": [
+  "Pins left pending; hints in each notes.pin.",
+  "Ninety Mile Beach and 42 Mile Crossing are close (same Ocean Beach); kept as drafted.",
+  "Lenger Reserve (mannum-6) and Hermann Gass (mannum-5) are distinct places; no spot should be dropped."
+ ]
+}
