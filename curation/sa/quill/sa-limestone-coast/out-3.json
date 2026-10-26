@@ -1,0 +1,326 @@
+{
+ "spots": {
+  "beachport-6": {
+   "name": "Southend Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered Rivoli Bay beach beside the village of Southend, used for swimming, sailing and boating.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach and village with no single steward; no official site",
+   "notes": {
+    "pin": "Pin the beach itself (OSM natural=beach on Rivoli Bay at Southend), not the village centre. Parking is free.",
+    "text": "Draft said beach, boating and a cafe; the cafe is unsourced so dropped. Sailing is from the Rivoli Bay Sailing Club off the beach (southaustralia.com)."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "beachport-7": {
+   "name": "Millicent Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A National Trust museum in an 1873 school building with a shipwreck room and a large horse-drawn vehicle collection.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": false,
+   "costMin": 14,
+   "costMax": 14,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/millicent-museum/",
+   "notes": {
+    "pin": "1 Mount Gambier Road, Millicent (NT page address); it shares the Visitor Information Centre complex.",
+    "text": "Renamed from Millicent National Trust Museum: the Trust now titles it 'Millicent Museum'. Adult $14, concession $10, children 5-15 $2 per the NT page (may be dated). Open Mon-Fri 9-5, Sat-Sun and public holidays 10-4. The 'gallery' of the draft is not sourced; the shipwreck room and carriages are.",
+    "review": "Millicent is about 35 km from Beachport; kept in beachport per draft."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "naracoorte-1": {
+   "name": "Naracoorte Caves National Park",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "South Australia's World Heritage fossil caves, with guided tours, a fossil centre and a bat observation centre.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -37.03611111,
+    "longitude": 140.79763889
+   },
+   "free": false,
+   "costMin": 13.5,
+   "costMax": 40.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.naracoortecaves.sa.gov.au/",
+   "coordinates_source": "provisional draft (Wikipedia); pending serial pin pass",
+   "notes": {
+    "pin": "Wikivoyage geotag -37.035658,140.796569 and Caves Cafe -37.036163,140.7966 mark the Wonambi visitor centre area; use that visitor point.",
+    "text": "Park entry is free; tours are paid. Adult tours: Stick-Tomato Cave self-guided $13.50 (includes Wonambi Fossil Centre), Wonambi alone $8.50, Alexandra Cave $28.50 (30 min), Bat Tour $33 (1 hr), Victoria Fossil Cave $40.50 (1 hr), 90-minute adventure/World Heritage tours up to $79.50. Range is the main guided/self-guided cave tours. Open 9am-5pm. Bat tours depend on season (bats away in colder months): not verified."
+   }
+  },
+  "naracoorte-4": {
+   "name": "Coonawarra",
+   "icon": "🍷",
+   "category": "nature",
+   "bio": "A wine region of red terra rossa soil near Penola, known for Cabernet Sauvignon, with more than 20 cellar doors.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://coonawarra.org/",
+   "notes": {
+    "pin": "Pin on the cellar-door strip along the Riddoch Highway at Coonawarra locality (e.g. OSM place=locality/hamlet Coonawarra), not Penola town.",
+    "text": "Category left as drafted ('nature') since the schema has no wine category; consider 'historic'/'nature' at review. Free as a region; cellar-door tastings are individually priced (not stored)."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "naracoorte-3": {
+   "name": "Bool Lagoon",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "A Ramsar-listed wetland south-west of Naracoorte with a 500 m boardwalk over the water and birdwatching.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -37.11666667,
+    "longitude": 140.68333333
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "parks.sa.gov.au page for Bool Lagoon Game Reserve not found at guessed slugs (404); not linked rather than guessed",
+   "coordinates_source": "provisional draft (Wikipedia); pending serial pin pass",
+   "notes": {
+    "pin": "The 500 m boardwalk is at the Bool Lagoon main visitor area (Little Bool Lagoon side); Gahnia Walk (430 m return) starts at the main entrance car park. Use the boardwalk/entrance car park, not the reserve centroid.",
+    "text": "Official listing says vehicle entry is free (campsite fees apply). Lagoon can dry out in summer. About 150 bird species noted by southaustralia.com; Ramsar from draft/Wikipedia."
+   }
+  },
+  "naracoorte-5": {
+   "name": "Mary MacKillop Penola Centre",
+   "icon": "⛪",
+   "category": "museum",
+   "bio": "A gallery and the 1867 schoolhouse in Penola telling the story of Mary MacKillop, Australia's first saint.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.379236,
+    "longitude": 140.839559
+   },
+   "free": false,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.mackilloppenola.org.au/",
+   "wiki": "Mary MacKillop Interpretive Centre",
+   "coordinates_source": "provisional draft (Wikipedia); pending serial pin pass",
+   "notes": {
+    "pin": "Penola, Petticoat Lane area; Wikipedia article is of the interpretive centre itself.",
+    "text": "General admission $8, open 7 days 10am-4pm, closed Good Friday and Christmas Day (centre's Plan Your Visit page). Mary MacKillop canonised 2010 (public fact); bio uses 'first saint' - verify wording at review."
+   }
+  },
+  "naracoorte-2": {
+   "name": "Sheep's Back Museum",
+   "icon": "🐑",
+   "category": "museum",
+   "bio": "A National Trust museum in an 1870s flour mill on Naracoorte's wool industry, with a robotic shearer.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.955159,
+    "longitude": 140.7353
+   },
+   "free": false,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/the-sheeps-back-museum",
+   "wiki": "The Sheeps Back Museum",
+   "coordinates_source": "Wikivoyage listing geotag for the museum (-36.955159,140.7353); pending serial pin pass",
+   "notes": {
+    "pin": "36 Macdonnell St, Naracoorte; Wikivoyage listing geotag is for the museum itself. Note it is about 600 m from the destination point.",
+    "text": "Adult $10 (NT page; Wikivoyage's older $8). Houses the Visitor Information Centre. Wikipedia article title for wiki unverified, so wiki field should be dropped if no such article exists.",
+    "wiki_unverified": true
+   }
+  },
+  "kingston-big-lobster": {
+   "name": "Larry the Lobster",
+   "icon": "🦞",
+   "category": "landmark",
+   "bio": "A 17 m fibreglass lobster built in 1979 at the entrance to Kingston SE and a classic roadside photo stop.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "wiki": "Big Lobster",
+   "ticket_note": "Council page (kingstondc.sa.gov.au) is a stewardship page, blocked to scripts; the lobster is privately owned with a shop attached",
+   "notes": {
+    "pin": "Princes Highway entrance to Kingston SE; Wikipedia 'Big Lobster' or OSM tourism=attraction node.",
+    "text": "17 m, 1979 per Wikipedia/Australian Geographic. Renamed none. Standalone."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "kingston-cape-jaffa-lighthouse": {
+   "name": "Cape Jaffa Lighthouse",
+   "icon": "🏛️",
+   "category": "landmark",
+   "bio": "A lighthouse opened in 1872 on Margaret Brock Reef, now a National Trust museum at Kingston SE with guided tours.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.835941,
+    "longitude": 139.846272
+   },
+   "free": false,
+   "costMin": 17,
+   "costMax": 17,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/cape-jaffa-lighthouse/",
+   "wiki": "Cape Jaffa Lighthouse",
+   "coordinates_source": "provisional draft (Wikipedia); pending serial pin pass",
+   "notes": {
+    "pin": "Draft point (-36.8359,139.8463) is Wikipedia's; confirm it sits at the Kingston SE foreshore/jetty site and not at the original reef site.",
+    "text": "Adult $17, child $8 (NT page, 2026); an older booking page showed $15. Tours on the hour 10am-3pm daily in SA school holidays only, 45 min; outside holidays phone 0427 854 175 (Kingston National Trust)."
+   }
+  },
+  "mount-monster-conservation-park": {
+   "name": "Mount Monster Conservation Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A conservation park 12 km south of Keith with a rare granite outcrop and a short hike to the summit.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.19997899,
+    "longitude": 140.31865533
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-monster-conservation-park",
+   "wiki": "Mount Monster Conservation Park",
+   "coordinates_source": "provisional draft (Wikipedia); pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia point is the park centroid; use the summit-walk start or the park's car park / OSM peak Mount Monster.",
+    "text": "Park page loaded and titled; 'Free entry' under Park fees. Granite outcrop found in only one other SA location; walk to summit gives views."
+   }
+  },
+  "bordertown-wildlife-park": {
+   "name": "Bordertown Wildlife Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "A free 4.5 ha wildlife park at Bordertown's eastern entrance, home to a mob of white kangaroos.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.tatiara.sa.gov.au/council-services/parks-and-gardens/bordertown-wildlife-park",
+   "notes": {
+    "pin": "Eastern entrance of Bordertown at the Dukes Highway turn-off; OSM leisure=wildlife_hide/zoo or the council page.",
+    "text": "Free. Entry into the enclosure is not permitted and feeding is not allowed; visitors drive or walk around the fence (council page via search). Roughly 10 animals per council (2015 figure ~17); bio avoids a count. Tatiara council page URL came from search results, not loaded."
+   },
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "council URL from search, site blocks scripts; verify in browser"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "naracoorte",
+    "name": "Naracoorte",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -36.955,
+     "longitude": 140.74285
+    },
+    "coordinates_source": "pending serial pin pass",
+    "category": "city",
+    "defaultZoomSpanKm": 85,
+    "rank": 3,
+    "icon": "🦇",
+    "tagline": "A farming town beside South Australia's fossil caves and the Coonawarra's red-soil vineyards.",
+    "description": "Naracoorte is a Limestone Coast town on the road between Adelaide and Melbourne. South of town, Naracoorte Caves National Park is South Australia's only World Heritage site, with caves that preserved the bones of Australian megafauna over the last two to three million years. To the south the terra rossa soil of Coonawarra and Penola grows Cabernet Sauvignon, while Bool Lagoon to the south-west is a large wetland for waterbirds. The town's flour-mill museum covers the wool industry.",
+    "whyVisit": [
+     "Tour World Heritage fossil caves",
+     "Taste Cabernet on red soil",
+     "Watch waterbirds on the wetlands"
+    ],
+    "highlights": [
+     "Fossil caves",
+     "Coonawarra wine",
+     "Wetland birds"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Cave entry is free",
+      "detail": "Entering Naracoorte Caves National Park costs nothing, but every cave tour is ticketed, so book ahead online for the longer ones."
+     },
+     {
+      "icon": "🦇",
+      "title": "Bat season varies",
+      "detail": "Bats use the Bat Centre cave only part of the year, so check the park's bat information before planning around the evening flight."
+     },
+     {
+      "icon": "🍷",
+      "title": "Cellar doors on one road",
+      "detail": "More than 20 Coonawarra cellar doors sit along a single stretch of road, so they are easy to link in a half day."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "{months} bring mild days for cave tours, cellar doors and wetland walks."
+   },
+   "spots": [
+    "naracoorte-1",
+    "naracoorte-4",
+    "naracoorte-3",
+    "naracoorte-5",
+    "naracoorte-2"
+   ],
+   "notes": [
+    "Spot order changed from draft by importance: caves, Coonawarra, Bool Lagoon, Mary MacKillop Centre, Sheep's Back Museum (ids unchanged).",
+    "Span 85 km kept: Penola is ~47 km from centre, within 75% (63.75 km).",
+    "Season timing is judgement from climate (autumn/spring mild); bat-flight timing and wetland water levels unverified.",
+    "Coordinates unchanged for pin pass."
+   ]
+  }
+ ],
+ "unverified": [
+  "Bat Centre seasonal availability at Naracoorte",
+  "Wikipedia titles for 'The Sheeps Back Museum' wiki field",
+  "Wetland water-level seasonality at Bool Lagoon",
+  "Mary MacKillop 'first saint' wording"
+ ],
+ "needs_browser": [
+  {
+   "id": "bordertown-wildlife-park",
+   "url": "https://www.tatiara.sa.gov.au/council-services/parks-and-gardens/bordertown-wildlife-park",
+   "why": "Tatiara council site returns Cloudflare 403"
+  },
+  {
+   "id": "kingston-big-lobster",
+   "url": "https://www.kingstondc.sa.gov.au/discover/things-to-see-and-do/the-big-lobster",
+   "why": "Kingston council site returns Cloudflare 403; could serve as ticketUrl"
+  }
+ ],
+ "notes": [
+  "No resolve-pin run; all pins pending the serial pass.",
+  "Millicent Museum renamed from Millicent National Trust Museum."
+ ]
+}

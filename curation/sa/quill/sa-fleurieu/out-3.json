@@ -1,0 +1,344 @@
+{
+ "spots": {
+  "victor-harbor-9": {
+   "name": "Kleinigs Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Lookout on Hindmarsh Road over Victor Harbor and Granite Island, with a telescope and a mosaic whale called Kondoli.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.5459701,
+    "longitude": 138.6271917
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open lookout with no operator site (council page is bot-blocked).",
+   "coordinates_source": "southaustralia.com listing geotag for Kleinigs Hill Lookout (Hindmarsh Road); OSM/Overpass unavailable so only one source, LOW",
+   "notes": [
+    "pin LOW: single tourism-board geotag; Commons photo median is 1 km NE; verify on a map",
+    "Free per City of Victor Harbor via search summary; council page bot-blocked"
+   ]
+  },
+  "victor-harbor-10": {
+   "name": "Newland Head Conservation Park",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Conservation park on the Fleurieu's south coast with Waitpinga and Parsons beaches, cliff walks and views to Kangaroo Island.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.6279988,
+    "longitude": 138.5001354
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/newland-head-conservation-park",
+   "coordinates_source": "NPWS SA park page: Waitpinga campground point (park's main visitor point), agrees with Commons photo at -35.62772,138.50065 (80 m); not the OSM reserve centroid",
+   "notes": [
+    "NPWS page lists fees as accommodation only (campsites from $13.30 per night); no vehicle entry fee shown, so free/open. Beaches not suitable for swimming.",
+    "Closed on days of Catastrophic Fire Danger."
+   ]
+  },
+  "victor-harbor-11": {
+   "name": "Middleton",
+   "icon": "🏄",
+   "category": "beach",
+   "wiki": "Middleton, South Australia",
+   "bio": "A coastal village east of Port Elliot with a surf beach and a rocky point on the Fleurieu coast.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.511059,
+    "longitude": 138.715954
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open village and beach with no single steward.",
+   "coordinates_source": "OSM place=village node (Nominatim) 'Middleton'",
+   "notes": [
+    "Draft bio's 'old winery' dropped: only a farm-stay listing named The Old Middleton Winery found, no public cellar door.",
+    "Southern right whales reported off Middleton Point June to October (one travel site only), left out of bio."
+   ]
+  },
+  "victor-harbor-12": {
+   "name": "Victor Harbor National Trust Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Heritage museum in an 1866 house at Victor Harbor, with period rooms and displays on the town's colonial history.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.5563291,
+    "longitude": 138.624879
+   },
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://victorharbornattrust.org.au/",
+   "coordinates_source": "southaustralia.com listing geotag for the museum (Flinders Parade); single source, LOW",
+   "notes": [
+    "pin LOW: single tourism-board geotag, OSM unavailable",
+    "Adult $6 (concession $5, child $4, family $16, National Trust members free) from the museum's own site. Volunteer-run, open about 11am-3pm Wednesday to Monday, daily in school and public holidays."
+   ]
+  },
+  "victor-harbor-13": {
+   "name": "Glacier Rock",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Permian glacial pavement in the Inman River bed, with ice-scratched bedrock first recorded by a geologist in 1859.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.4967691,
+    "longitude": 138.5128017
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open natural site; no operator site.",
+   "coordinates_source": "southaustralia.com listing geotag for Glacier Rock, agrees within ~50 m with the Wikipedia coordinates for Selwyn's Rock (-35.4965, 138.5124) as quoted by a search summary",
+   "notes": [
+    "The draft hint (-35.49526,138.454944) is the Inman Valley locality centroid, 5 km west of the rock; not used.",
+    "wiki omitted: 'Selwyn's Rock' only redirects to the Inman Valley locality article.",
+    "Site is in the river bed below a cafe on Inman Valley Road (address given as 1 Mount Alma Road)."
+   ]
+  },
+  "victor-harbor-14": {
+   "name": "Hindmarsh River Walking Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy river walk near Victor Harbor through paperbark woodland and past a lagoon, with birdlife along the way.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.545019,
+    "longitude": 138.628804
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed open trail; the visitor-board page is not an operator site.",
+   "coordinates_source": "southaustralia.com listing geotag (trail start area near Bridge Terrace), NOT the route midpoint",
+   "notes": [
+    "pin LOW: trailhead-area point, route midpoint not resolved (OSM unavailable); raise to owner to midpoint the route",
+    "Length reported as 4, 7 or 8 km depending on source; start at end of Bridge Terrace or McCracken Picnic Area; five stages 30 min to 3 hours."
+   ]
+  },
+  "victor-harbor-15": {
+   "name": "Inman River Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Flat riverside walk from Muwerang (Kent Reserve) with a bird hide, ending at Victor Harbor Cemetery.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.5622726,
+    "longitude": 138.6104043
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed open trail; no operator site.",
+   "coordinates_source": "southaustralia.com listing geotag for the Inman River Trail, NOT the route midpoint",
+   "notes": [
+    "pin LOW: single tourism-board geotag, route midpoint not resolved (OSM unavailable); raise to owner",
+    "About 8 km, flat; Clydesdales of the Horse Drawn Tram can be seen near the route."
+   ]
+  },
+  "goolwa-1": {
+   "name": "Strathalbyn",
+   "icon": "🏘️",
+   "category": "historic",
+   "wiki": "Strathalbyn, South Australia",
+   "bio": "Scottish-founded town on the Angas River with heritage streets and St Andrew's Church, inland from Goolwa.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.2597434,
+    "longitude": 138.8943459
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open town with no single steward.",
+   "coordinates_source": "southaustralia.com Strathalbyn destination point (town centre), within 250 m of the OSM boundary node -35.2576,138.8957",
+   "notes": [
+    "Antiques-shops claim in the draft bio is from a generic listing only, dropped.",
+    "Founded 1839 by Scottish settlers (dates vary by source)."
+   ]
+  },
+  "goolwa-2": {
+   "name": "Goolwa Barrage",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "Walk halfway across the barrage that holds back the sea from the Murray, with a picnic area and signs.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.527558,
+    "longitude": 138.808388
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Government-managed open structure; no operator site.",
+   "coordinates_source": "OSM waterway=dam 'Goolwa Barrage' (Nominatim)",
+   "notes": [
+    "Entry free; board listing gives hours 8.30-12.30 and 1.30-4.30 daily, another source 8-5.30: not stored. Reached from the Goolwa side by Barrage Road, no access from Hindmarsh Island.",
+    "Seals and pelicans are often seen."
+   ]
+  },
+  "goolwa-3": {
+   "name": "Signal Point Experience Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Wharf-side gallery and interpretive centre in Goolwa on Indigenous and colonial heritage and the Murray Mouth.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.5034056,
+    "longitude": 138.7854932
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "Steward is Alexandrina Council; its page returned a bot wall, see needs_browser. visitalexandrina.com is the tourism site, not used.",
+   "coordinates_source": "southaustralia.com listing geotag (1 Laurie Lane), matches the median of geotagged Commons files at the wharf (-35.50338,138.78555)",
+   "notes": [
+    "Free entry per the tourism-board listing; gallery open Wednesday to Sunday 10am-4pm per Visit Alexandrina (not stored)."
+   ]
+  },
+  "goolwa-4": {
+   "name": "Goolwa Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Surf beach east of Goolwa with a car park, kiosk and surf club, and a vehicle track to the Murray Mouth.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.52189036,
+    "longitude": 138.7733574
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach; council-managed.",
+   "coordinates_source": "southaustralia.com listing geotag, at the car park/beach entrance by the surf club; Wikipedia's point (-35.51353,138.76975) is ~1 km north on the dunes/beach",
+   "notes": [
+    "pin LOW-ish: one geotag plus Wikipedia disagreeing by 1 km; chose the car park/entrance where visitors stand",
+    "Vehicles not allowed on the beach west of the access track; 40 km/h limit; sand dunes off limits; 4WD rules may change."
+   ]
+  },
+  "goolwa-5": {
+   "name": "Hindmarsh Island",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Island across the bridge from Goolwa, with a lookout over the Murray Mouth where waders and pelicans gather.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.5117086,
+    "longitude": 138.810252
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Island with many operators; no single official site.",
+   "coordinates_source": "southaustralia.com Hindmarsh Island destination point (island village); Wikipedia's -35.5167,138.8667 is the island's centre and was not used",
+   "notes": [
+    "pin LOW: single tourism-board point; the Murray Mouth lookout (the main draw) is further SE and not pinned.",
+    "Bridge opened 2001."
+   ]
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "goolwa",
+    "name": "Goolwa",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.5028883,
+     "longitude": 138.7837286
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 60,
+    "rank": 4,
+    "icon": "🚤",
+    "tagline": "A river-port town where the Murray meets the sea, with a barrage and a wharf precinct.",
+    "description": "Goolwa sits on the lower Murray where the river meets Lake Alexandrina, a few kilometres from the Southern Ocean. A series of barrages holds back the sea, and you can walk halfway across the Goolwa Barrage. The wharf precinct has an interpretive centre on the Murray Mouth, and a bridge leads to Hindmarsh Island and its waterbirds. A surf beach runs south-east of town, and Strathalbyn and Langhorne Creek are an easy drive inland.",
+    "whyVisit": [
+     "Walk out across the Murray barrage",
+     "Watch waterbirds near the Murray Mouth",
+     "Walk Goolwa's open surf beach"
+    ],
+    "highlights": [
+     "Barrage walk",
+     "River-mouth birds",
+     "Surf beach"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚗",
+      "title": "Barrage access is from Goolwa",
+      "detail": "Reach the barrage by Barrage Road from the Goolwa side. There is no way onto it from Hindmarsh Island."
+     },
+     {
+      "icon": "🏖️",
+      "title": "Check beach driving rules",
+      "detail": "Four-wheel drives use the track behind the surf club, best at low tide with tyres lowered. Rules change, so check with the council."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "Visit in {months} for mild days on the river and beach. Summer is hotter and winter is wetter."
+   },
+   "spots": [
+    "goolwa-2",
+    "goolwa-3",
+    "goolwa-4",
+    "goolwa-5",
+    "goolwa-1",
+    "goolwa-10",
+    "goolwa-6",
+    "goolwa-9",
+    "goolwa-11",
+    "goolwa-8",
+    "goolwa-7"
+   ],
+   "notes": [
+    "Coordinates: southaustralia.com Goolwa destination point -35.50289,138.78373 (town centre), 190 m from the Signal Point pin; Wikipedia's -35.5,138.7667 is a rounded point.",
+    "Span kept at 60 km: Strathalbyn ~29 km, Langhorne Creek ~32 km, Tolderol ~36 km from the centre, all inside 75% (45 km).",
+    "Order changed: Goolwa's own barrage, Signal Point, beach and Hindmarsh Island first, then Strathalbyn, Goolwa Motor Museum, Langhorne Creek, Gilbert's Motor Museum, Strathalbyn museum, Animal Farm, Tolderol. Ids unchanged.",
+    "Gilbert's Motor Museum is in Strathalbyn (34 High Street, adult $10), not Goolwa; Goolwa Motor Museum is at 45 Gardiner St (shard 4 to confirm). Strathalbyn Districts Museum is a second Strathalbyn museum.",
+    "Facts: Hindmarsh Island bridge, barrage walk and Murray Mouth birds (Visit Alexandrina, board, Wikivoyage); beach vehicle rules (Fleurieu news, 4WD guides). Rank 4: 3 reasons, 2 tips. No seasonal tags. whyVisitPhotos still to be picked: barrage, Murray Mouth birds (Hindmarsh Island lookout), Goolwa Beach."
+   ]
+  }
+ ],
+ "unverified": [
+  "Kleinigs Hill Lookout: free entry stated by a search summary of the council page, council page bot-blocked",
+  "Middleton: southern right whales off Middleton Point June to October (single travel-site source), omitted from bio",
+  "Goolwa Barrage opening hours conflict between sources (not stored)",
+  "Hindmarsh River Walking Trail length (4, 7 or 8 km by source)",
+  "Goolwa Beach: vehicle access rules may be tightened (reported talk of closing to 4WDs)"
+ ],
+ "needs_browser": [
+  {
+   "id": "goolwa-3",
+   "url": "https://www.alexandrina.sa.gov.au/discover/visit/signal-point-gallery",
+   "why": "council page behind bot wall; confirm title and use as ticketUrl if it names Signal Point"
+  },
+  {
+   "id": "victor-harbor-9",
+   "url": "https://www.victor.sa.gov.au/community-information/community-facilities/parks-gardens-reserves/kleinigs-hill-lookout",
+   "why": "council page behind bot wall; confirm free entry and pin"
+  }
+ ],
+ "notes": [
+  "Overpass was down and Nominatim returned 429 under load from parallel shards, so resolve-pin gave HIGH only for Newland Head's reserve centroid (rejected as a park pin) and MEDIUM for Middleton, Strathalbyn and the barrage; other pins come from southaustralia.com listing geotags and the NPWS Waitpinga campground point, all stated per spot.",
+  "LOW pins to re-check: victor-harbor-9, victor-harbor-12, victor-harbor-14 and victor-harbor-15 (trailhead area, not route midpoint), goolwa-4, goolwa-5.",
+  "Nothing judged should not be added. Goolwa-9 (Gilbert's) and goolwa-10 may overlap names with goolwa-1's area but are different places."
+ ]
+}

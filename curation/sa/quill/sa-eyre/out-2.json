@@ -1,0 +1,360 @@
+{
+ "spots": {
+  "lincoln-national-park-3": {
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lincoln-national-park",
+   "name": "Cape Donington",
+   "icon": "🌅",
+   "category": "viewpoint",
+   "bio": "A headland on the south-east coast of Lincoln National Park with a lighthouse and views to Donington Island.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "wiki": "Cape Donington",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia point (34.733,136.0) is a rounded region point, not the headland: pin the Cape Donington Lighthouse / lookout feature (OSM man_made=lighthouse) instead. Not named on the NPWS park page.",
+    "cost": "Lincoln NP vehicle entry $14.40 per vehicle (parks.sa.gov.au/parks/lincoln-national-park, fees box); applies if reached through the park."
+   }
+  },
+  "lincoln-national-park-4": {
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lincoln-national-park",
+   "name": "Sleaford Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach in Lincoln National Park, with lookouts for southern right whales between May and October.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.898337,
+    "longitude": 135.76709
+   },
+   "wiki": "Sleaford Bay",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia point is the bay centroid (likely in water). Use the Wanna Lookout / Lone Pine Lookout (NPWS: most accessible whale spotting) or the beach access car park.",
+    "cost": "Lincoln NP vehicle entry $14.40 per vehicle, same park fee."
+   }
+  },
+  "coffin-bay-1": {
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coffin-bay-national-park",
+   "name": "Coffin Bay National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Coastal park of high cliffs, big dunes, surf beaches and sheltered bays west of Coffin Bay, with 4WD tracks north.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -34.6737,
+    "longitude": 135.4301
+   },
+   "wiki": "Coffin Bay National Park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia point is a park centroid. Use a visitor point: the park entrance/information bay off Coffin Bay town road, or Yangie Bay / Point Avoid car park (different from Yangie Bay spot pin).",
+    "cost": "Vehicle entry $14.40 per vehicle (parks.sa.gov.au coffin-bay-national-park, fees box)."
+   }
+  },
+  "coffin-bay-2": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Coffin Bay Oyster Walk",
+   "icon": "🦪",
+   "category": "hike",
+   "bio": "An 8 km signposted shoreline walk from Long Beach to Snapper Point, past the boat ramp, jetty and oyster waters.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Walk along the town foreshore; only the regional tourism page describes it, no single steward site found.",
+   "notes": {
+    "pin": "Pin at midpoint of the 8 km route (OSM route Coffin Bay Oyster Walk, Long Beach to Snapper Point). Optional loop via Kellidie Bay Conservation Park lookout.",
+    "cost": "No fee mentioned on the regional tourism page; open foreshore track."
+   }
+  },
+  "coffin-bay-3": {
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coffin-bay-national-park",
+   "name": "Yangie Bay",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A bay at the south end of Coffin Bay National Park, reached by 2WD, for canoeing, picnics and a coastal bushwalk.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "wiki": "Yangie Bay",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Yangie Bay day-use / picnic area and boat launch car park (OSM), inside the park on the bay shore.",
+    "cost": "Park vehicle entry $14.40 per vehicle.",
+    "wiki": "Check a Yangie Bay Wikipedia article exists; draft carries wiki Yangie Bay, drop if it redirects or is absent."
+   }
+  },
+  "coffin-bay-4": {
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coffin-bay-national-park",
+   "name": "Almonta Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach on the Coffin Bay National Park coast, partly reached by 4WD, with fishing along the sand.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "wiki": "Almonta Beach",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Almonta Beach access / car park or beach feature (OSM natural=beach) on the park coast; NPWS lists fishing on Gunya and Almonta Beach.",
+    "cost": "Park vehicle entry $14.40 per vehicle.",
+    "wiki": "Check a Wikipedia article exists; drop wiki if not."
+   }
+  },
+  "streaky-bay-1": {
+   "free": true,
+   "costBasis": "donation",
+   "name": "Murphy's Haystacks",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Pink granite inselbergs rising from farmland near Streaky Bay, with a picnic area, toilets and a campground.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -33.01519444,
+    "longitude": 134.48879722
+   },
+   "wiki": "Murphy's Haystacks",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Privately owned farm site; no official website found on the regional tourism page.",
+   "notes": {
+    "pin": "Wikipedia point (-33.015194, 134.4887972) names the formation; confirm against the site entrance/car park.",
+    "cost": "Entry is on private property and a donation is appreciated for the picnic area and toilets (regional tourism page)."
+   }
+  },
+  "streaky-bay-2": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Cape Bauer Loop",
+   "icon": "🚗",
+   "category": "nature",
+   "bio": "A coastal drive to Cape Bauer on the Great Australian Bight, with Hallys Beach lookout, blowholes and views of Olive Island.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Public road; no single steward site.",
+   "notes": {
+    "pin": "Loop of Cape Bauer Road / Stanley Williams Road; pin at the Cape Bauer Lookout or the loop midpoint, not the same as Whistling Rocks.",
+    "cost": "Public road, no fee."
+   }
+  },
+  "streaky-bay-3": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Whistling Rocks and the Blowholes",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Whistling rocks and blowholes on Cape Bauer, reached by a 360 m boardwalk to cliff platforms, best at high tide.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Public site on the Cape Bauer Loop; no single steward site.",
+   "notes": {
+    "pin": "End of the 360 m boardwalk / viewing platforms on Cape Bauer Loop; at least 25 m from the Cape Bauer Loop pin.",
+    "cost": "No fee mentioned."
+   }
+  },
+  "streaky-bay-4": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Westall Way Loop",
+   "icon": "🚗",
+   "category": "nature",
+   "bio": "A 32 km unsealed scenic loop passing Smooth Pool, High Cliffs, The Granites and Cape Bauer Lookout.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Public road; no single steward site.",
+   "notes": {
+    "pin": "Loop begins from Sceale Bay Road; pin at the loop midpoint (e.g. High Cliffs or The Granites), not at Cape Bauer Lookout used by the Cape Bauer Loop.",
+    "cost": "Public road, no fee."
+   }
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "coffin-bay",
+    "name": "Coffin Bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -34.624406,
+     "longitude": 135.469651
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 50,
+    "rank": 4,
+    "icon": "🦪",
+    "tagline": "An oyster-farming village on a calm bay, beside a wild coastal national park.",
+    "description": "Coffin Bay is a small village on the western side of the Eyre Peninsula, about 40 minutes' drive from Port Lincoln. Matthew Flinders named the bay after his friend Sir Isaac Coffin, and the town is known for its oysters. Coffin Bay National Park to the west has windswept cliffs, dunes, surf beaches and sheltered bays, and Kellidie Bay Conservation Park lies to the east. An 8 km foreshore trail follows the shore past the jetty and the oyster-growing waters.",
+    "whyVisit": [
+     "Taste oysters fresh from the bay",
+     "Explore a wild coastal national park",
+     "Paddle calm, sheltered waters"
+    ],
+    "highlights": [
+     "Fresh oysters",
+     "Coastal national park",
+     "Sheltered bays"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚙",
+      "title": "Know your 4WD access",
+      "detail": "The park's northern beaches need a high-clearance 4WD, while Yangie Bay and Point Avoid can be reached in a 2WD."
+     },
+     {
+      "icon": "🎟️",
+      "title": "Pay park entry first",
+      "detail": "Vehicle entry to Coffin Bay National Park is $14.40 and must be paid before you go in."
+     }
+    ],
+    "bestMonths": [
+     11,
+     12,
+     1,
+     2,
+     3
+    ],
+    "bestTimeBlurb": "{months} are the warm months for swimming, boating and fishing on the bay, and the village is busiest then."
+   },
+   "spots": [
+    "coffin-bay-1",
+    "coffin-bay-2",
+    "coffin-bay-3",
+    "coffin-bay-4"
+   ],
+   "notes": [
+    "Draft spot list included 'coffin-bay' (the town itself); dropped as the town is the destination (Atlas note). ",
+    "Destination coordinates kept as drafted (Wikipedia town point; Wikivoyage geo -34.616667,135.466667 is an alternative) for the serial pin pass.",
+    "Spots lie within ~25 km of the centre, inside 75% of 50 km (37.5 km); Almonta Beach pin pending, widen if the pass puts it beyond that."
+   ]
+  },
+  {
+   "destination": {
+    "id": "streaky-bay",
+    "name": "Streaky Bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -32.799041,
+     "longitude": 134.204814
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 100,
+    "rank": 4,
+    "icon": "🌊",
+    "tagline": "A west-coast fishing town with blowholes, sea cliffs and granite haystacks nearby.",
+    "description": "Streaky Bay is a fishing and farming town on the west side of the Eyre Peninsula, 303 km north-west of Port Lincoln. Matthew Flinders named the bay in 1802 for the streaks of discoloured water he saw. A 350 m jetty runs out from the town centre and oysters and abalone are farmed in the bay. Coastal loops lead to blowholes and cliffs at Cape Bauer, and Murphy's Haystacks stand on farmland to the south-east.",
+    "whyVisit": [
+     "Watch waves roar through blowholes",
+     "Stand among pink granite inselbergs",
+     "Taste oysters from the bay"
+    ],
+    "highlights": [
+     "Cape Bauer blowholes",
+     "Granite inselbergs",
+     "Local oysters"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🌊",
+      "title": "Time the blowholes",
+      "detail": "Whistling Rocks and the Blowholes are most active at high tide with a big swell."
+     },
+     {
+      "icon": "🚗",
+      "title": "Unsealed loop roads",
+      "detail": "The Westall Way Loop is unsealed and has rough sections, so drive with care."
+     }
+    ],
+    "bestMonths": [
+     12,
+     1,
+     2,
+     3
+    ],
+    "bestTimeBlurb": "{months} suit swimming off the jetty and long drives along the coastal loops."
+   },
+   "spots": [
+    "streaky-bay-1",
+    "streaky-bay-2",
+    "streaky-bay-3",
+    "streaky-bay-4",
+    "streaky-bay-5",
+    "streaky-bay-6",
+    "streaky-bay-7",
+    "streaky-bay-8",
+    "streaky-bay-9",
+    "streaky-bay-10",
+    "streaky-bay-11",
+    "streaky-bay-12",
+    "streaky-bay-13",
+    "streaky-bay-14",
+    "streaky-bay-15",
+    "streaky-bay-16",
+    "streaky-bay-17",
+    "streaky-bay-18"
+   ],
+   "notes": [
+    "Draft spot list included 'streaky-bay' (the town); dropped, the town is the destination. Only streaky-bay-1..4 are in this shard; 5-18 are in other shards, order kept as drafted.",
+    "Coordinates kept as drafted (Wikipedia town point) for the serial pin pass. Murphy's Haystacks is ~30 km from the centre, inside 75% of 100 km."
+   ]
+  }
+ ],
+ "unverified": [
+  "Cape Donington: public access and whether the lighthouse headland is reached through the park or Memory Cove (booked key access) is not confirmed; fee assumed to be Lincoln NP vehicle entry $14.40.",
+  "Cape Donington bio 'lighthouse' rests on Wikipedia's Cape Donington Lighthouse article, not the NPWS page.",
+  "Spots inside paid NPWS parks (Sleaford Bay, Cape Donington, Yangie Bay, Almonta Beach) carry the park's $14.40 vehicle fee as costBasis park; reconcile if the owner prefers free/open for in-park spots.",
+  "Wikipedia articles for Yangie Bay and Almonta Beach not confirmed (draft wiki kept; views 0).",
+  "Murphy's Haystacks has no official website found; donation basis from the regional tourism page.",
+  "Entry-fee amounts as of the cached parks.sa.gov.au fetch."
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Lincoln National Park (id lincoln-national-park, category null) is the destination itself per Atlas note, so no spot entry was written; its destination draft is in another shard. Park fee $14.40 per vehicle, Memory Cove needs booking and a key.",
+  "Removed 'coffin-bay' town from spots (destination itself)."
+ ]
+}
