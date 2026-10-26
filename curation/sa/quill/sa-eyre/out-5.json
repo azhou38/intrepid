@@ -1,0 +1,315 @@
+{
+ "spots": {
+  "whyalla-1": {
+   "name": "Whyalla Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Whyalla's naval museum, home to HMAS Whyalla, the first modern warship built in South Australia.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Lincoln Highway, entry via Whyalla Visitor Centre; HMAS Whyalla on dry land beside it",
+    "cost": "Adult $19 (concession $16, child $13) from eyrepeninsula.com listing; admission includes guided HMAS Whyalla tour"
+   },
+   "wiki": "Whyalla Maritime Museum",
+   "costMin": 19,
+   "costMax": 19,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://whyalla.com/maritime-museum"
+  },
+  "whyalla-2": {
+   "name": "Point Lowly Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "The 1883 lighthouse on Point Lowly, built after reports of shipping dangers, overlooks the cuttlefish waters.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -32.99975,
+    "longitude": 137.78563889
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "42 Lighthouse Drive, Point Lowly; Wikipedia coords provisional (-32.99975,137.78563889)"
+   },
+   "wiki": "Point Lowly Lighthouse",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward site found; Whyalla council tourism page only (whyalla.com), not a page for the lighthouse"
+  },
+  "whyalla-3": {
+   "name": "Giant Australian Cuttlefish Aggregation",
+   "icon": "🦑",
+   "category": "nature",
+   "bio": "Giant Australian cuttlefish gather in their tens of thousands to spawn off Whyalla each May to August.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Viewing/snorkel sites are in False Bay and Point Lowly waters; use the Point Lowly/Stony Point shore access, not the lighthouse pin",
+    "cost": "Free to snorkel or dive with own gear; guided tours and gear hire are paid and vary by operator, so no price stored"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://whyalla.com/cuttlefish"
+  },
+  "whyalla-4": {
+   "name": "Hummock Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A lookout over Whyalla and Spencer Gulf built into old World War Two gun emplacements.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Queen Elizabeth II Drive; pin on the hill's lookout, not the beach below"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open lookout, no single official page verified"
+  },
+  "whyalla-5": {
+   "name": "Whyalla Jetty",
+   "icon": "🌅",
+   "category": "landmark",
+   "bio": "A 315 m circular jetty on the Whyalla foreshore for walking and fishing, lit all night.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "20 Buttlingarra Way, Whyalla foreshore"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open public structure; no dedicated official page verified"
+  },
+  "whyalla-6": {
+   "name": "Whyalla Foreshore",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Whyalla's Spencer Gulf foreshore and marina, with a beach and dolphins often seen in the bay.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "1 Buttlingarra Way; beach/marina foreshore, keep 25 m+ from Whyalla Jetty pin (whyalla-5)"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open public foreshore with no single steward page"
+  },
+  "whyalla-7": {
+   "name": "Whyalla Conservation Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Wild Dog Hill rises from the plains north of Whyalla, with kangaroos and euros in the park.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.95305556,
+    "longitude": 137.5425
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia point provisional; use the park's Wild Dog Hill picnic/access point off the Lincoln Highway, not the centroid",
+    "cost": "NPWS page: free entry"
+   },
+   "wiki": "Whyalla Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/whyalla-conservation-park"
+  },
+  "whyalla-8": {
+   "name": "Mount Laura Homestead Museum",
+   "icon": "🏠",
+   "category": "museum",
+   "bio": "National Trust museum in a 1914 homestead, with a steam locomotive and over 60 stationary engines.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "11 Ekblom Street, Whyalla Norrie",
+    "cost": "Adult $10 (concession/under 16 $5); closed Saturdays and public holidays, open Sunday afternoon only (13:00-15:00)"
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/mount-laura-homestead/"
+  },
+  "whyalla-9": {
+   "name": "Freycinet Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 12 km coastal route along Fitzgerald Bay to Point Lowly with a 4 km walking section.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Midpoint of the route along Fitzgerald Bay Road (hiking/cycling/driving trail, northern end of Fitzgerald Bay to Point Lowly); 4 km hiking section only is walkable"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council trail; no verified dedicated page"
+  },
+  "whyalla-10": {
+   "name": "Gulf and Ranges Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 4 km hiking and cycling loop at Crag Point with geology signs and views of the gulf and ranges.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Loop at Crag Point, Douglas Point; midpoint of the loop (halfway point may be off path, use trailhead if so)"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council trail; no verified dedicated page"
+  },
+  "whyalla-11": {
+   "name": "Iron Knob Visitor Centre and Museum",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Volunteer-run mining museum in the iron ore town of Iron Knob, on the Eyre Highway west of Port Augusta.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Iron Knob township (Wikivoyage -32.72,137.15 is the town); use the visitor centre building",
+    "cost": "Museum admission free, donations asked (town site); separate paid mine tours not included",
+    "span": "About 55 km from Whyalla, outside 75% of the 70 km span: destination span widened to 90 km"
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://ironknob.org/visitor-centre-museum"
+  },
+  "whyalla": {
+   "name": "Whyalla",
+   "icon": "🏭",
+   "category": "landmark",
+   "bio": "Steel city on the upper Spencer Gulf, the base for the cuttlefish, the museum and the foreshore.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "drop": "Duplicate: the town is the destination itself, not a spot of itself (COVERAGE.md near-duplicates). Do not add."
+   },
+   "free": true,
+   "costBasis": "open"
+  },
+  "ceduna": {
+   "name": "Ceduna",
+   "icon": "🦪",
+   "category": "landmark",
+   "bio": "Last major town before the Nullarbor, on the Eyre Highway, known for its oysters.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -32.11666667,
+    "longitude": 133.66666667
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "drop": "Town is the destination itself, not also a spot (draft note). Do not add as a spot; Ceduna destination is in another shard."
+   },
+   "free": true,
+   "costBasis": "open"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "whyalla",
+    "name": "Whyalla",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -33.03333333,
+     "longitude": 137.56666667
+    },
+    "coordinates_source": "pending serial pin pass",
+    "category": "city",
+    "defaultZoomSpanKm": 90,
+    "rank": 4,
+    "icon": "🏭",
+    "tagline": "Steel city on Spencer Gulf, with a warship on land and winter cuttlefish",
+    "description": "Whyalla is South Australia's steel city on the upper Spencer Gulf, built around the iron ore from nearby Iron Knob. Its maritime museum holds HMAS Whyalla, a corvette launched in 1941 that now sits two kilometres from the sea. Every winter tens of thousands of giant Australian cuttlefish gather to spawn off Point Lowly. The foreshore has a circular jetty, a marina and a beach.",
+    "whyVisit": [
+     "Dive with spawning cuttlefish in winter",
+     "Tour a World War II warship",
+     "Walk Spencer Gulf's coastal trails"
+    ],
+    "highlights": [
+     "Cuttlefish spawning",
+     "Warship museum",
+     "Coastal trails"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🤿",
+      "title": "Bring or hire dive gear",
+      "detail": "Cuttlefish are viewed by snorkel or dive from May to August. Bring a wetsuit or hire gear, and go with a buddy or a guided group."
+     },
+     {
+      "icon": "🚢",
+      "title": "Ship tours only",
+      "detail": "HMAS Whyalla can be entered only on a guided tour, included in museum admission. Wear closed-in footwear."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "bestTimeBlurb": "Winter is the time to come, when giant cuttlefish spawn off Point Lowly and the days stay mild ({months}).",
+    "name_evidence": {
+     "source": "Wikivoyage Whyalla page",
+     "wording": "steel city on Upper Spencer Gulf, giant cuttlefish, HMAS Whyalla"
+    }
+   },
+   "spots": [
+    "whyalla-1",
+    "whyalla-3",
+    "whyalla-2",
+    "whyalla-7",
+    "whyalla-5",
+    "whyalla-4",
+    "whyalla-6",
+    "whyalla-9",
+    "whyalla-10",
+    "whyalla-8",
+    "whyalla-11"
+   ],
+   "notes": [
+    "Reordered: museum, cuttlefish, lighthouse, park first. 'whyalla' self-spot removed from list (duplicate). Span widened 70->90 km for Iron Knob (~55 km).",
+    "All pins/coordinates provisional; pending serial pin pass."
+   ]
+  }
+ ],
+ "unverified": [
+  "whyalla-3 guided cuttlefish tour prices (operator-dependent, not stored)",
+  "whyalla-1 museum price from regional tourism listing, not the museum's own page",
+  "whyalla-11 mine tour price (~$5, outdated listing, not stored)"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "ceduna and whyalla spot entries are not to be added (town = destination).",
+  "whyalla-11 Iron Knob is outside the original 70 km span; widened to 90."
+ ]
+}

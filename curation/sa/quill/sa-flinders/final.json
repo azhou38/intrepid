@@ -1,0 +1,1658 @@
+{
+ "spots": {
+  "ikara-flinders-ranges-1": {
+   "name": "Wilpena Pound",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A natural amphitheatre of mountains, called Ikara by the Adnyamathanha, at the heart of the national park.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -31.526456,
+    "longitude": 138.606148
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm place=hamlet (nominatim) \"Wilpena Pound\"",
+   "notes": [
+    "Inside Ikara-Flinders Ranges NP: parkPass 'ikara-flinders' (vehicle entry $14.40, parks.sa.gov.au, read 2026-10-25); the pass must be added to src/data/parkPasses.ts.",
+    {
+     "pin": "Draft 3-decimal point is a memory pin, dropped. Pound is an area: use a visitor point (Wangara Lookout -31.542369,138.586662 per Wikivoyage, or the Wilpena trailhead) NOT the Wilpena Visitor Centre (-31.527039,138.606487), which is the destination's hub. Wikipedia article 'Wilpena Pound' is this place."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-2": {
+   "name": "St Mary Peak",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "At 1,171 m the highest peak in the Flinders Ranges, climbed on a steep full-day walk from Wilpena.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "coordinates": {
+    "latitude": -31.503591,
+    "longitude": 138.552069
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=peak (nominatim) \"Saint Mary Peak\"",
+   "notes": [
+    "Wikivoyage notes the Adnyamathanha consider the peak sacred and ask that it not be climbed; not in the bio (single source, wording is the Wikivoyage editor's). Height 1,171 m from Wikipedia (Wikivoyage says 1,189 m).",
+    {
+     "pin": "Peak summit is the draft point; for a hike the rule says route midpoint, but this spot is the peak itself: summit unless the pin pass prefers the OSM route midpoint (route runs from the Wilpena trailhead; Wikivoyage: along the NE edge outside the Pound or through it)."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-3": {
+   "name": "Brachina Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A 20 km self-drive geological trail through 130 million years of earth history, with rock-wallabies in the gorge.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.332166,
+    "longitude": 138.59031
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 925557559 tourism=viewpoint 'Brachina Gorge Geology Trail'; Brachina East Camp Ground n775893672 at -31.3337,138.5794  \"\"",
+   "notes": [
+    "Trail best travelled east to west from the Brachina Gorge/Blinman Road junction (flindersandoutback listing). Yellow-footed rock-wallabies seen at the Scree Slope in late afternoon (NPWS ranger tip).",
+    "CLOSURE at read time (NPWS alert, 2026-10-25): Brachina Gorge Road open to 4WD vehicles only after heavy rain.",
+    {
+     "pin": "Pin at the midpoint of the 20 km trail along Brachina Gorge Road (OSM way). Wikivoyage Brachina Lookout, a stop on the trail, is -31.343442,138.555188."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-4": {
+   "name": "Bunyeroo Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A gum-lined gorge with a scenic drive, a 7.5 km return walk and the Razorback lookout over Wilpena Pound.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.413642,
+    "longitude": 138.542503
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 79365535 'Bunyeroo Gorge Walking Track' (gorge track; Bunyeroo Gorge Car Park way 118710739 at -31.416716,138.557971)  \"\"",
+   "notes": [
+    "Visit range widened from the draft (1-2 h) to 1-3 h to cover the 3.5 h return gorge hike.",
+    "CLOSURE at read time (NPWS alert, 2026-10-25): Bunyeroo Gorge on Bunyeroo Gorge Road remains closed pending repair works after heavy rain.",
+    {
+     "pin": "Bunyeroo car park is 18 km north of Wilpena on Bunyeroo Gorge Road (NPWS walks list). Razorback Lookout, on Bunyeroo Rd, per Wikivoyage -31.4108,138.5834 (4 dp): the lookout may be a separate spot in another shard; keep this pin on the gorge itself."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-5": {
+   "name": "Ediacaran Golden Spike",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "A plaque marking the global start of the Ediacaran Period, a short walk from Trezona campground.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -31.331553,
+    "longitude": 138.63341
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 8756762329 \"Golden Spike\" at the end of OSM path way 79234928 (Trezona Hike) in Brachina Gorge area Trezona loop; Wikivoyage Trezona Loop geotag -31.33147,138.635291 is 180 m east  \"\"",
+   "notes": [
+    "Draft 'wiki: Ediacaran' dropped: that article is the geological period, not this place (a Commons/photo lookup on it would show fossils).",
+    "NPWS (Trezona campground page): the campground is a short walk from the internationally significant Ediacaran Golden Spike. The marker is a plaque in the rock, not a spike (secondary web source).",
+    {
+     "pin": "Wikivoyage geotag is specific to the listing; Trezona Campground is ~40 km north of Wilpena on Brachina Gorge Road. Cross-check against OSM."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-6": {
+   "name": "Arkaroo Rock",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Adnyamathanha ochre and charcoal paintings telling the creation story of Wilpena Pound, on a 3 km return walk.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -31.60192,
+    "longitude": 138.627566
+   },
+   "coordinates_source": "resolve-pin HIGH: osm historic=archaeological_site (nominatim) \"Arkaroo Rock Aboriginal paintings\"",
+   "notes": [
+    "NPWS: Arkaroo Rock Hike 2 hrs return, 3 km, car park 17 km south of Wilpena on the Hawker-Blinman road; paintings best seen in morning light. Site is Akurra Adnya, a significant Adnyamathanha site. Wikivoyage's 'about 6,000 years old' (carbon dated) is dropped from the bio for want of a second source.",
+    {
+     "pin": "Geotag may be the rock art site; the car park is the trailhead. A walk's rule says route midpoint: the Arkaroo Rock Hike is the route, the rock art its end. Pin pass to decide."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-7": {
+   "name": "Sacred Canyon",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Adnyamathanha rock engravings in a canyon, seen on a guided cultural walk that needs a 4WD to follow.",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "coordinates": {
+    "latitude": -31.60058,
+    "longitude": 138.6997211
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 6043953647 historic=archaeological_site (the engravings), 220 m WSW of the Wikivoyage geotag (-31.5989,138.7018) where two OSM car parks (-31.5993,138.7018) sit  \"\"",
+   "notes": [
+    "Access is restricted: NPWS lists Yura Mulka (Sacred Canyon) as restricted access, visited on an Adnyamathanha-guided tour through a commercial operator (Wilpena Pound Resort, and Wadna which closes over summer).",
+    "Prices read 2026-10-25: Wilpena Pound Resort tour from AUD 130 adult (wilpenapound.rezdy.com, ~3 hours incl. two 30-minute drives and a 2 km walk, 4x4 tag-along required); Wadna tour AUD 120 adult (wadna.com.au/sacred-canyon-tour, 4WD tag-along). Range 120-130 stored.",
+    "Tour price is the guide; the park vehicle entry fee ($14.40) is separate and is not stored on the spot.",
+    {
+     "pin": "Canyon is 13.5 km off Flinders Ranges Way along Sacred Canyon Rd (Wikivoyage); geotag is the listing's own."
+    }
+   ],
+   "costBasis": "tour",
+   "costMin": 120,
+   "costMax": 130,
+   "currency": "AUD",
+   "ticket_note": "Two independent operators sell the guided tour (Wilpena Pound Resort and Wadna); no single official site, so no ticketUrl."
+  },
+  "ikara-flinders-ranges-8": {
+   "name": "Rawnsley Bluff",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "A steep climb to the 950 m southern bluff of Wilpena Pound, starting inside Rawnsley Park Station.",
+   "visitHoursMin": 4.5,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -31.622816,
+    "longitude": 138.612696
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=peak (nominatim) \"Rawnsley Bluff\"",
+   "notes": [
+    "Not a NPWS-managed walk: the trail starts from the car park inside Rawnsley Park Station (private land adjoining the park), 11.3 km return, about 5 hours return to the bluff, with Wilpena Pound Lookout on a left fork 600 m before it (walkingsa.org.au). Bluff height 950 m (Wikipedia).",
+    "UNVERIFIED whether the station charges self-guided walkers; it sells guided walks from AUD 125 pp (rawnsleypark.com.au). Stored as free/open with no park pass because the trailhead is on station land; confirm access terms.",
+    {
+     "pin": "Draft 6 dp point is Wikipedia's coordinate for the bluff (a summit): fine as a summit pin. Trail start is the Rawnsley Park Station car park."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.rawnsleypark.com.au/experiences/bushwalking-trails/"
+  },
+  "ikara-flinders-ranges-9": {
+   "name": "Old Wilpena Station",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Restored 1851 pastoral station with a self-guided interpretive trail, open daily from 8am to 5pm.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -31.5144889,
+    "longitude": 138.6128751
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 772439524 tourism=attraction 'Wilpena Homestead' (old station homestead); Wilpena Station Woolshed node 772439525 is 290 m SE, quill point 215 m NE  \"\"",
+   "notes": [
+    "Draft 'wiki: Wilpena Station' dropped: that title redirects to an unrelated biography (Henry Strong Price). Hills Homestead is the Hills Homestead Walk (ikara-flinders-ranges-10), a separate spot.",
+    "NPWS: station established 1851, worked 135 years, retired 1985; open 8am-5pm daily; Old Wilpena Woolshed hireable ($149 first day) is not a visitor cost."
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-10": {
+   "name": "Hills Homestead Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 6.6 km return walk inside Wilpena Pound to the preserved pioneer sites at Hills Homestead.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.535884,
+    "longitude": 138.593819
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Length midpoint of the chained OSM paths Pound Gap Track (way 37192770, 28727636) + Wilpena Pound Hiking Track (ways 120134700, 120134696, 28727424) from Wilpena visitor centre to Hills Homestead ruins n696606489 (-31.5467,138.5889)  \"\"",
+   "notes": [
+    "NPWS: easy walk, 2 hrs return, 6.6 km, 'pioneering heritage inside Wilpena Pound'; the Wangara Lookout hike branches from it (lookout at 7.2 km return, Wikivoyage listing geotag for Wangara Lookout -31.542369,138.586662).",
+    {
+     "pin": "Pin at the midpoint of the OSM route from the Wilpena trailhead to Hills Homestead; the trail starts near the Wilpena Visitor Centre complex (-31.527039,138.606487) which is the destination hub, not this spot's pin."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-11": {
+   "name": "Hucks Lookout",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Roadside lookout over rocks laid down as sediments a billion to 500 million years ago, with a picnic area.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.471836,
+    "longitude": 138.697204
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint (nominatim) \"Hucks Lookout\"",
+   "notes": [
+    "Single counted source (Wikivoyage). On the Flinders Ranges Way east of the Pound; car park and picnic area per Wikivoyage."
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-12": {
+   "name": "Stokes Hill Lookout",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Lookout east over the ranges, with signs on Adnyamathanha art sites and how people used the land.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.458494,
+    "longitude": 138.736138
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint (nominatim) \"Stokes Hill Lookout\"",
+   "notes": [
+    "Lookout road leaves the Flinders Ranges Way near Willow Springs on the park's eastern edge; confirm it lies inside the park boundary (if outside, the park pass does not apply: the pin pass can check against the park polygon). Draft bio said 'near Wilpena' with views of the Pound; Wikivoyage gives an easterly view and Adnyamathanha interpretive signs, so the bio follows that."
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-13": {
+   "name": "Rawnsley Park Station",
+   "icon": "🏕️",
+   "category": "entertainment",
+   "bio": "Station near Wilpena Pound with the Woolshed Restaurant, scenic and helicopter flights, and walking trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.644438,
+    "longitude": 138.579624
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.rawnsleypark.com.au/",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3069589536 place=locality 'Rawnsley Park Station' (kiosk node 431409993 at -31.645062,138.579803; chalet node 1316140815 -31.649772,138.593118)  \"\"",
+   "notes": {
+    "pin": "Station entrance off Flinders Ranges Way south of Wilpena; use the homestead/Woolshed Restaurant point.",
+    "other": "Scenic flights from AUD 220 pp (20 min) on the station site; no gate fee stated, so recorded as free entry (restaurant/flights are paid extras)."
+   }
+  },
+  "ikara-flinders-ranges-14": {
+   "name": "Trezona Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "An 8 km, four-hour hike through the Heysen Range past the Ediacaran Trezona formation.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -31.333447,
+    "longitude": 138.649737
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: Midpoint along chained OSM ways named \"Trezona Hike\" (w119031467 etc, ~5.8 km loop from Trezona Campground -31.3310,138.6277); way vertex  \"\"",
+   "notes": {
+    "pin": "Route midpoint of the Trezona loop. Wikivoyage geotags: Trezona Loop Walk -31.33147,138.635291; Trezona Campground (trailhead) -31.33198,138.62494.",
+    "other": "Inside Ikara-Flinders Ranges NP: park vehicle entry AUD 14.40 per vehicle (park page). Ediacaran Golden Spike nearby is separate."
+   },
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders"
+  },
+  "ikara-flinders-ranges-15": {
+   "name": "Skytrek 4WD Track",
+   "icon": "🚙",
+   "category": "entertainment",
+   "bio": "An 80 km, seven-hour self-drive 4WD track across Willow Springs Station with Upalinna Lookout views of Wilpena Pound.",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -31.4366024,
+    "longitude": 138.9013051
+   },
+   "free": false,
+   "costMin": 90,
+   "costMax": 90,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "costPer": "Per Vehicle",
+   "ticketUrl": "https://www.skytrekwillowsprings.com.au/self-drive-4wd-tours.html",
+   "coordinates_source": "resolve-pin MEDIUM: Halfway point (38 km) round the closed loop of four OSM ways named \"Skytrek\" (76 km total), measured from the vertex nearest Willow Springs Station camp_site node 1811204993  \"\"",
+   "notes": {
+    "pin": "Willow Springs Station Caretaker's Office (track start), 16430 Flinders Ranges Way; or middle of the 80 km loop at Upalinna Lookout if findable.",
+    "other": "AUD 90 per vehicle (up to 6 persons); AUD 60 listed for a lower rate (likely station guests); must start by 10am; AUD 85 club outing. Renamed from SkyTrek Willow Springs Station (the place is the track; station is the operator)."
+   }
+  },
+  "ikara-flinders-ranges-16": {
+   "name": "Jarvis Hill Lookout",
+   "icon": "🥾",
+   "category": "viewpoint",
+   "bio": "Lookout about 7 km west of Hawker with views of the town, Wilpena Pound and the Elder Range.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -31.904882,
+    "longitude": 138.364587
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open lookout on a council road; the tourism listing links the Flinders Ranges Council tourism page (frc.sa.gov.au/tourism), which blocks scripts, so no single steward page verified.",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint (nominatim) \"Jarvis Hill Lookout\"",
+   "notes": {
+    "pin": "Car park at the top of Jarvis Hill, ~6 km along the signposted road off Quorn/Leigh Road ~200 m from Wilpena Road turn; pin on the hill, not Hawker.",
+    "other": "Dirt clay road, not for use when wet. Renamed from Jarvis Hill Lookout and Walking Trail (category viewpoint)."
+   }
+  },
+  "ikara-flinders-ranges-17": {
+   "name": "Castle Rock",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Castle-shaped rock 2 km east of Hawker, reached by a short walking track and best in early or late light.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -31.891288,
+    "longitude": 138.443521
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open walk with no single steward page.",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=peak (nominatim) \"Castle Rock\"",
+   "notes": {
+    "pin": "Gate and walking track at the top of the Desalination Plant road off Wilpena Road ~1 km from Hawker; track midpoint toward Castle Rock.",
+    "other": "Renamed from Castle Rock Walk and Lookout. Avoid Yednalue Drive when wet."
+   }
+  },
+  "ikara-flinders-ranges-18": {
+   "name": "Camel Hump Lookout",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy short climb 2 km south of Hawker on Quorn Road to a lookout over the town and the ranges.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -31.900702,
+    "longitude": 138.434644
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open walk with no single steward page.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 8211873217 tourism=viewpoint 'Camels hump lookout' (Hawker)  \"\"",
+   "notes": {
+    "pin": "Track start on Quorn Road ~2 km south of Hawker; lookout on the hump itself.",
+    "other": "Renamed from Camel Hump Lookout Walk."
+   }
+  },
+  "ikara-flinders-ranges-20": {
+   "name": "Hawker Mural Trail",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Self-guided mural walk through Hawker telling Adnyamathanha Dreaming stories, with English and Adnyamathanha labels.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -31.887617,
+    "longitude": 138.422713
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Self-guided town trail with no single steward page.",
+   "coordinates_source": "resolve-pin LOW: OSM node 2300348834 place=town 'Hawker' (town centre; individual murals are not mapped)  (provisional)",
+   "notes": {
+    "pin": "Middle of the mural route in Hawker town centre.",
+    "other": "Listing address says Quorn (Railway Terrace) but the text places the trail in Hawker; murals by Juanella McKenzie. Renamed from Adnyamathanha Dreaming Hawker Mural Walking Trail."
+   }
+  },
+  "ikara-flinders-ranges-22": {
+   "name": "Blinman Heritage Mine",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Guided tour through tunnels worked by Cornish miners from 1862, with a self-guided walk above ground.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -31.088041,
+    "longitude": 138.674632
+   },
+   "free": false,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.heritageblinmanmine.com.au/",
+   "coordinates_source": "resolve-pin MEDIUM: osm historic=ruins (nominatim) \"Blinman Mine\"",
+   "notes": {
+    "pin": "Mine Road, Blinman (mine entrance).",
+    "other": "Operator site: adult AUD 40 (the tourism listing's older AUD 35 is superseded). Tours hourly, about one hour."
+   }
+  },
+  "ikara-flinders-ranges-23": {
+   "name": "Prairie Hotel",
+   "icon": "🍺",
+   "category": "historic",
+   "bio": "Parachilna pub known for a menu of native and feral foods such as emu and goat.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -31.1322353,
+    "longitude": 138.3953753
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.prairiehotel.com.au/",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1243289827 amenity=pub \"Prairie Hotel\"  \"\"",
+   "notes": {
+    "pin": "Hotel at Parachilna, corner of Flinders Ranges Way.",
+    "other": "Free to enter; meals are paid extras. Keep as landmark pub (judge kept it)."
+   }
+  },
+  "ikara-flinders-ranges-24": {
+   "name": "Parachilna Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Scenic gorge drive between Blinman and Parachilna with free camping.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -31.130614,
+    "longitude": 138.513801
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Public gorge road with no single steward page.",
+   "coordinates_source": "resolve-pin MEDIUM: Wikipedia 'Parachilna Gorge' article point (the gorge itself); Parachilna Gorge Road way 1568750988 runs through it  \"\"",
+   "notes": {
+    "pin": "Gorge road mid-point between Blinman and Parachilna; Wikipedia coordinates are the gorge's own.",
+    "other": "Wikipedia article is the gorge itself."
+   }
+  },
+  "ikara-flinders-ranges-25": {
+   "name": "Blinman Pools",
+   "icon": "🏊",
+   "category": "hike",
+   "bio": "Walk of about 12 km return from Angorichina Village in Parachilna Gorge to two natural rock pools.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -31.126915,
+    "longitude": 138.57981
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "no single steward page verified; the walk is in Ikara-Flinders Ranges National Park (parks.sa.gov.au page has no Blinman Pools sub-page, 404)",
+   "coordinates_source": "resolve-pin MEDIUM: Length midpoint of chained OSM ways 311504885 + 1568750987 'Blinman Pools Walking Trail' (5.8 km, Angorichina Village n1811159319 to the pools way 815702565)  \"\"",
+   "notes": {
+    "pin": "Linear route: pin at middle of the Blinman Pools Walking Trail (OSM hiking route); trailhead at Angorichina Village on Parachilna Gorge Road; about 12 km return, pools at ~5-6 km. Draft says hike starts at Parachilna; guides (Prairie Hotel, trailhiking) start at Angorichina.",
+    "cost": "Unverified whether the Ikara-Flinders Ranges NP vehicle fee ($14.40 per vehicle, parks.sa.gov.au) applies on this northern section; set free pending check.",
+    "sources": "flindersandoutback.com.au unique-nature-experiences blog; trailhiking.com.au/hikes/blinman-pools-walk (third-party, distance/time only)"
+   },
+   "wiki": null
+  },
+  "quorn-1": {
+   "name": "Pichi Richi Railway",
+   "icon": "🚂",
+   "category": "entertainment",
+   "bio": "South Australia's oldest operating heritage railway, running steam trains between Quorn and Port Augusta.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -32.345021,
+    "longitude": 138.040659
+   },
+   "costMin": 126,
+   "costMax": 126,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://www.pichirichirailway.org.au/",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=attraction (nominatim) \"Pichi Richi Railway\"",
+   "notes": {
+    "pin": "Quorn railway station (Railway Terrace), the Quorn terminus; draft point is the Wikipedia point, confirm it is on the station.",
+    "cost": "Afghan Express adult return $126 (pichirichirailway.org.au/train-services/timetable); adult one-way $97. Tourism listings show older $122. Runs on selected Saturdays only, check the timetable; Coffee Pot rail experience is a separate higher-priced product."
+   },
+   "wiki": null
+  },
+  "quorn-2": {
+   "name": "Warren Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Rocky gorge 21 km north of Quorn with a 5 km creek walk and yellow-footed rock-wallabies at dawn and dusk.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.177646,
+    "longitude": 138.009811
+   },
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": null,
+   "ticket_note": "steward is the Flinders Ranges Council (frc.sa.gov.au) which blocks scripts; needs browser check",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 1000271570 highway=path 'Warren Gorge Loop Trail' (north of the Warren Gorge campground node 1811203220 at -32.182621,138.007467)  \"\"",
+   "notes": {
+    "pin": "Gorge itself is just beyond the entrance campground on Arden Vale Road, 21 km N of Quorn; the 5.2 km creek walk starts at the campground (pin mid-gorge or at the entrance campground).",
+    "cost": "Day entry $5 per vehicle, self-registration at the gorge or at Quorn visitor centre (flindersandoutback.com.au listing, council-run)."
+   },
+   "wiki": null
+  },
+  "quorn-3": {
+   "name": "Dutchmans Stern Conservation Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "wiki": "The Dutchmans Stern Conservation Park",
+   "bio": "Bluff 10 km north-east of Quorn with a summit trail and views over Spencer Gulf and the Willochra Plain.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -32.307784,
+    "longitude": 137.969078
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dutchmans-stern-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=peak (nominatim) \"Dutchmans Stern\"",
+   "notes": {
+    "pin": "Wikipedia point is the bluff; use the park's trailhead/car park (trailhead altitude 440 m, ridgetop walk 4.1 km one way, loop 10.5 km) as the visitor point.",
+    "cost": "Parks SA page: free entry.",
+    "alert": "Parks SA alerts at fetch: entrance road 4WD/AWD only after storm damage; park closed 6pm 31 Oct to 6pm 6 Nov 2026 for pest control."
+   }
+  },
+  "quorn-4": {
+   "name": "Mount Brown Conservation Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Conservation park around a 964 m peak, with a lookout and a 15 km loop walk.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -32.50625,
+    "longitude": 138.00807
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-brown-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=peak (nominatim) \"Mount Brown\"",
+   "notes": {
+    "pin": "Wikipedia point is the park/peak; use the lookout or the loop-walk trailhead car park from Parks SA/OSM.",
+    "cost": "Parks SA page: free entry.",
+    "alert": "Closed 31 Oct to 6 Nov 2026 for pest control (Parks SA alert)."
+   },
+   "wiki": null
+  },
+  "quorn-5": {
+   "name": "Kanyaka Station Ruins",
+   "icon": "🏚️",
+   "category": "historic",
+   "wiki": "Kanyaka Station",
+   "bio": "Stone ruins of a cattle and sheep station from the 1850s, with a woolshed, homestead and Death Rock waterhole nearby.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.072561,
+    "longitude": 138.299654
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "no single official site; listing is by tourism board only",
+   "coordinates_source": "resolve-pin HIGH: OSM node 3324941769 Kanyaka Station (historic=ruins, tourism=attraction) + Wikipedia-based draft -32.07257,138.29965 within 2 m  \"\"",
+   "notes": {
+    "pin": "Draft is the Wikipedia point; the ruins' car park off Quorn-Hawker Road. Death Rock and Kanyaka Waterhole are a separate stop ~10 min walk, off the road just past Wirreanda Creek Bridge, 33 km N of Quorn: must not share a pin.",
+    "cost": "No fee shown on the tourism listings (free assumed from listing facilities: carpark, picnic area); no managing-agency page found.",
+    "sources": "Wikipedia Kanyaka Station (established February 1852, abandoned after droughts)"
+   }
+  },
+  "port-augusta-1": {
+   "name": "Wadlata Outback Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Interpretive centre whose Tunnel of Time walks through Aboriginal and European outback history, in Port Augusta.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.492246,
+    "longitude": 137.7655984
+   },
+   "costMin": 29,
+   "costMax": 29,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "http://www.wadlata.sa.gov.au/",
+   "coordinates_source": "resolve-pin HIGH: OSM way 315303740 \"Wadlata Outback Centre\" (tourism=information, building) centre; hint point (-32.4925,137.76583) within 30 m  \"\"",
+   "notes": {
+    "pin": "41 Flinders Terrace, Port Augusta (building itself).",
+    "cost": "Adult $29.00 for the Tunnel of Time, 1 Jul 2026 to 30 Jun 2027 (wadlata.sa.gov.au costs page). Older sources show $18.50-$19.50. Centre also houses the visitor information centre."
+   },
+   "wiki": null
+  },
+  "port-augusta-2": {
+   "name": "Australian Arid Lands Botanic Garden",
+   "icon": "🌵",
+   "category": "nature",
+   "bio": "Arid-zone botanic garden on Stuart Highway with interpretive walks through desert plants on red sand.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.461717,
+    "longitude": 137.74356
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://www.aalbg.org/",
+   "coordinates_source": "resolve-pin HIGH: OSM way 119997344 'Australian Arid Lands Botanical Gardens Visitor Centre' (tourism=attraction); quill/Wikivoyage -32.4616,137.7432 within 40 m  \"\"",
+   "notes": {
+    "pin": "144 Stuart Highway, Port Augusta West; use the visitor centre/main car park (Wikivoyage point -32.4656,137.7399 differs by ~600 m from draft).",
+    "cost": "Free entry with donation boxes (flindersandoutback.com.au listing); gates open daily 7:30am to sunset (not stored)."
+   },
+   "wiki": null
+  },
+  "port-augusta-3": {
+   "name": "Port Augusta Water Tower Lookout",
+   "icon": "🗼",
+   "category": "viewpoint",
+   "bio": "The 1882 Westside water tower, with a balcony view over the town, Spencer Gulf and the Flinders Ranges.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -32.485155,
+    "longitude": 137.752788
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "council-run; port augusta council site blocks scripts",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint (nominatim) \"Water Tower Lookout\"",
+   "notes": {
+    "pin": "Wikivoyage lists Mitchell Terrace / Gold Street, Port Augusta West at -32.485152,137.752534 (the tower itself; the Wikivoyage listing coordinates are specific to it). Four flights of steps.",
+    "cost": "No fee mentioned in either source; unverified (assumed free)."
+   },
+   "wiki": null
+  },
+  "port-augusta-4": {
+   "name": "Port Augusta Foreshore",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sandy foreshore beach at high tide, with a short jetty into deep water, cold showers and change rooms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.488093,
+    "longitude": 137.763479
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "open beach, no single steward",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=playground (nominatim) \"East Side Foreshore\"",
+   "notes": {
+    "pin": "OSM natural=beach/jetty on the Port Augusta foreshore at the jetty.",
+    "cost": "Open access; Wikivoyage warns of a tide current in deeper water."
+   },
+   "wiki": null
+  },
+  "port-augusta-5": {
+   "name": "Blanche Harbor",
+   "icon": "🦜",
+   "category": "nature",
+   "bio": "Rehabilitated shore at the end of Shack Road, 23 km from town, for picnics and watching mulga parrots and emus.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.6525173,
+    "longitude": 137.7523018
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "no official page found",
+   "coordinates_source": "resolve-pin LOW: South end of OSM way 102603568 'Shack Road' (the road Blanche Harbor lies at the end of)  (provisional)",
+   "notes": {
+    "pin": "End of Shack Road, about 23 km from the Port Augusta centre (Wikivoyage); look for an OSM picnic/place point named Blanche Harbor.",
+    "cost": "Open access."
+   },
+   "wiki": null
+  },
+  "port-pirie-1": {
+   "name": "Port Pirie Heritage Trail",
+   "icon": "🚶",
+   "category": "historic",
+   "bio": "Self-guided trail past more than 30 sites, including the smelter, grand hotels and civic buildings, by foot or car.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.181055,
+    "longitude": 138.011416
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "council pages (pirie.sa.gov.au) blocked to scripts",
+   "coordinates_source": "resolve-pin LOW: OSM node 738227219 'Port Pirie Regional Tourism and Arts Centre', where the council story map starts  (provisional)",
+   "notes": {
+    "pin": "A linear walk: take the midpoint of the route. Third-party listing (walkingsa.org.au) calls it a 3.5 km circuit, 1-2 hr; the council story map starts at the Port Pirie Regional Tourism & Arts Centre. Must not share a pin with the mural trail or the museum.",
+    "cost": "Maps free from the visitor centre and online."
+   },
+   "wiki": null
+  },
+  "port-pirie-2": {
+   "name": "Port Pirie Mural Trail",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A two-kilometre, map-guided walk past large murals in Port Pirie's centre, starting at the visitor centre.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.180735,
+    "longitude": 138.011416
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 738227219 Port Pirie Regional Tourism and Arts Centre (tourism=information), the trail start on Mary Elie Street  (provisional)",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Start: Port Pirie Visitor Information Centre, Mary Elie Street; trail runs through the CBD (a route, pin at its middle).",
+    "source": "flindersandoutback.com.au/listings/attraction/port-pirie-mural-trail/ (launched 2017, council-run, 2 km, map from visitor centre)",
+    "pin_moved": "pin moved 35 m north so it does not sit on port-pirie-1"
+   },
+   "free": true,
+   "ticket_note": "Only the Port Pirie Regional Council page (pirie.sa.gov.au/about-council) is linked and it is behind a Cloudflare wall; not verified"
+  },
+  "port-pirie-3": {
+   "name": "Port Pirie National Trust Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Three heritage buildings, including the 1902 railway station, with a steam shunting engine and Diprotodon bones.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.1758919,
+    "longitude": 138.0103794
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1456474142 tourism=museum \"Port Pirie Railway Station Museum\"  \"\"",
+   "costBasis": "donation",
+   "notes": {
+    "pin": "Museum at 73-77 Ellen Street, Port Pirie (National Trust: 73 Ellen Street; SAcommunity: 77 Ellen St); pin at the railway-station building, not the town centre.",
+    "cost": "National Trust page: museum 'donations welcome'; the Immersive Sound and Light Show in the Customs House is a separate ticket (adult $11, concession $8, child $5, family $25). Open Tue-Sat 10am-4pm (not in bio)."
+   },
+   "free": true,
+   "ticketUrl": "https://www.nationaltrust.org.au/places/port-pirie-railway-station/"
+  },
+  "port-pirie-4": {
+   "name": "Solomontown Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A pier and man-made beach on the Port Pirie river with swimming, showers and change rooms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.182542,
+    "longitude": 138.020917
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=beach (nominatim) \"Solomontown Beach\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM natural=beach / pier at Solomontown (Port Pirie south); take the beach feature, not the suburb point.",
+    "source": "Wikivoyage Port Pirie: 'a nice pier, man-made beach and swimming spot... showers and change rooms'; caution about strong tides"
+   },
+   "free": true,
+   "ticket_note": "No single steward page found; omitted"
+  },
+  "port-pirie-5": {
+   "name": "Port Germein Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "At about 1.5 km, Port Germein's wooden jetty is the longest in South Australia and a favourite for crabbing.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.029603,
+    "longitude": 137.995686
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 55482729 man_made=pier 'Port Germein Jetty' (way centre, mid-length of the 1.5 km pier)  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Pin the jetty's shore end / mid-length (OSM man_made=pier, Port Germein); The Bluff Lookout gives a distant view.",
+    "source": "Wikipedia Port Germein: opened 1881, extended 1883, now 1532 m after storm repairs, longest jetty in SA; Wikivoyage Port Germein: crabbing is the largest tourist activity"
+   },
+   "free": true,
+   "ticket_note": "Council-managed, no verified official page (pirie.sa.gov.au is script-blocked)"
+  },
+  "port-pirie-6": {
+   "name": "Telowie Gorge Conservation Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A conservation park where Telowie Creek has cut a gorge through the range, with bushwalking and wildlife watching.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.018704,
+    "longitude": 138.112821
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm place=locality (nominatim) \"Telowie Gorge\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Draft point is Wikipedia's park point (-33.039, 138.1248); look up the park's visitor access/car park on the NPWS map, not the centroid.",
+    "cost": "NPWS page: 'Free entry', open daily; closed on Catastrophic Fire Danger days; pest-control closure 23-27 Nov 2026 listed for Wapma Thura-Southern Flinders Ranges NP (not Telowie specifically)."
+   },
+   "wiki": "Telowie Gorge Conservation Park",
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/telowie-gorge-conservation-park"
+  },
+  "port-pirie-7": {
+   "name": "Beetaloo Reservoir",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A reservoir precinct open for birdwatching, picnics and barbecues, with fishing by permit from May to November.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.1912147,
+    "longitude": 138.2146853
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 7896026877 amenity=parking beside Beetaloo Reservoir (way 207534444 natural=water centre -33.182,138.2136); draft point -33.189669,138.214939 is ~170 m away  \"\"",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Draft point (-33.189669, 138.214939) is provisional; pin the reservoir's public picnic area / gate.",
+    "source": "flindersandoutback.com.au Beetaloo listing: managed by Department for Environment and Water, open 24 h 1 May-1 Nov, closed otherwise and on Total Fire Ban days; fishing needs an approved permit; no dogs"
+   },
+   "free": true,
+   "ticket_note": "Steward is DEW; no verified page found"
+  },
+  "mount-remarkable-1": {
+   "name": "Alligator Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A gorge in Mount Remarkable National Park, reached by walking tracks through ancient rock formations near Wilmington.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -32.675181,
+    "longitude": 138.095409
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm landuse=cemetery (nominatim) \"Alligator Gorge Cemetery\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Alligator Gorge car park / trailhead at the end of the Alligator Gorge road (drive starts 1 km south of Wilmington on Main North Road); not the park centroid.",
+    "cost": "NPWS page: vehicle entry $14.40 per vehicle, pay before arrival. Alligator Gorge Hike 4 hrs/8.5 km return; Narrows Hike 2 hrs/2 km return.",
+    "closure": "NPWS and tourism pages: the Alligator Gorge section (lodge, The Narrows hike, backpack campsites) remains closed after the Feb 2025 Wilmington fire. Kept: judged on the permanent place; flag for owner."
+   },
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-remarkable-national-park",
+   "free": true,
+   "needs": "park-pass",
+   "parkPass": "mount-remarkable"
+  },
+  "mount-remarkable-2": {
+   "name": "Mount Remarkable",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A 960 m summit hike in Mount Remarkable National Park with views over the Willochra Plain.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -32.805868,
+    "longitude": 138.164829
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=peak (nominatim) \"Mount Remarkable\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Hike: pin at the middle of the Mount Remarkable Summit Hike (13 km return, from Mambray Creek). Draft point (-32.80611, 138.16472) is Wikipedia's summit.",
+    "cost": "NPWS page: park vehicle entry $14.40; Summit Hike 4 hrs/13 km return (hours range 3-5 hr is my reading of that)."
+   },
+   "wiki": "Mount Remarkable",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-remarkable-national-park",
+   "free": true,
+   "needs": "park-pass",
+   "parkPass": "mount-remarkable"
+  },
+  "mount-remarkable-3": {
+   "name": "Melrose",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "The oldest town in the Flinders Ranges, founded in the 1840s at the foot of Mount Remarkable, with a heritage walk.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.82659,
+    "longitude": 138.187568
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Melrose\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM place=town Melrose; not the museum's point.",
+    "source": "flindersandoutback.com.au/towns/melrose/: established in the 1840s, oldest town in the Flinders Ranges, Melrose Heritage Walk; cycling hub"
+   },
+   "wiki": "Melrose, South Australia",
+   "free": true,
+   "ticket_note": "Open town, no single steward"
+  },
+  "mount-remarkable-4": {
+   "name": "Melrose Courthouse Heritage and Interpretive Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Five buildings on the old courthouse site, with displays on 1848 settlement, Goyder's Line and the Nukunu people.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.82627,
+    "longitude": 138.187568
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 2272268803 place=town 'Melrose' (courthouse building on Nelson Street not mapped as a feature)  (provisional)",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Museum on the old courthouse site in Melrose (Nelson Street); building point, not the town centre.",
+    "cost": "Tourism listing: adult $12, seniors/pensioners/veterans $10, students $5, family $30. Site title: 'Melrose Courthouse Museum' (name kept as the tourism board writes it).",
+    "pin_moved": "pin moved 35 m north so it does not sit on mount-remarkable-3"
+   },
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.melrosemuseum.com/"
+  },
+  "mount-remarkable-5": {
+   "name": "Horrocks Pass",
+   "icon": "🌄",
+   "category": "viewpoint",
+   "bio": "A scenic road west of Wilmington climbing the range to Hancocks Lookout, with views across to Spencer Gulf on clear days.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -32.6351,
+    "longitude": 138.03399
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=saddle (nominatim) \"Horrocks Pass\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Pin Hancocks Lookout (OSM tourism=viewpoint) on Horrocks Pass Road, not the draft round point (-32.6403, 138.0375).",
+    "source": "flindersandoutback.com.au/towns/wilmington/: drive Horrocks Pass Road just west of Wilmington to Hancocks Lookout, views of Spencer Gulf and regional cities on clear days. Horrocks monument and Heysen Trail link are from the draft's Wikivoyage/aussietowns note, not re-checked."
+   },
+   "free": true,
+   "ticket_note": "Open roadside lookout"
+  },
+  "southern-flinders-ranges-2": {
+   "name": "Jamestown",
+   "icon": "🤠",
+   "category": "historic",
+   "bio": "Southern Flinders town where R.M. Williams was born, with a display of his story in Robinson Park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.205102,
+    "longitude": 138.60534
+   },
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Jamestown\"",
+   "wiki": "Jamestown, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward; the town has no official site worth linking",
+   "notes": {
+    "pin": "R.M. Williams Story display, Robinson Park, R.M. Williams Way (Vohr Street); use that or the town centre (place=town)",
+    "cost": "Display in a public park; free (source: flindersandoutback listing gives no charge)",
+    "pin_moved": "pin moved 35 m north so it does not sit on jamestown-mural-walk-and-outdoor-gallery"
+   }
+  },
+  "southern-flinders-ranges-3": {
+   "name": "Laura",
+   "icon": "🍺",
+   "category": "historic",
+   "bio": "Southern Flinders town with a copper statue of poet C.J. Dennis, a craft brewery and a gallery and museum.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.184703,
+    "longitude": 138.299909
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Laura\"",
+   "wiki": "Laura, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town with several operators (Little Blessings Brewery, Laura Emporium); no single official site",
+   "notes": {
+    "pin": "Town centre / C.J. Dennis statue in the main street",
+    "cost": "Statue and streets free; brewery and Emporium are separate businesses"
+   }
+  },
+  "southern-flinders-ranges-4": {
+   "name": "Booleroo Centre",
+   "icon": "🚜",
+   "category": "museum",
+   "bio": "Volunteer-run collection of historic working farm machinery, shown by appointment in Booleroo Centre.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.879367,
+    "longitude": 138.351045
+   },
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Booleroo Centre\"",
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "Society's own site not found; searching was blocked in this run",
+   "notes": {
+    "pin": "Booleroo Steam and Traction Preservation Society museum site, not the town centre; find its address",
+    "cost": "No price found; viewings are by appointment (source: flindersandoutback 4-day itinerary)"
+   }
+  },
+  "southern-flinders-ranges-5": {
+   "name": "Wirrabara Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Silo mural by the artist Smug beside the road at Wirrabara, in the Southern Flinders Ranges.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -33.0353,
+    "longitude": 138.26606
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Centre of the cluster of 8 OSM man_made=silo buildings (way ids 423397659-709) at Wirrabara, ~700 m SW of the village node  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Roadside public art; no steward site",
+   "notes": {
+    "pin": "Wirrabara silos (artist Smug, Sam Bates); town point is about -33.0344, 138.2706, silos are a short way away, find the silo feature (man_made=silo) near Wirrabara"
+   }
+  },
+  "leigh-creek-2": {
+   "name": "Beltana",
+   "icon": "🐪",
+   "category": "historic",
+   "bio": "State heritage-listed stone town on Warioota Creek, with interpretive signs and a free picnic area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -30.831311,
+    "longitude": 138.411241
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Beltana\"",
+   "wiki": "Beltana, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Community-run town; the only page found is a tourism-board listing, not an official site",
+   "notes": {
+    "pin": "Town centre/community park by the creek (place=village)",
+    "cost": "Free to walk; buildings are private homes. Camel treks in the draft bio are unsourced and left out"
+   }
+  },
+  "leigh-creek-3": {
+   "name": "Talc Alf Art Works",
+   "icon": "🗿",
+   "category": "landmark",
+   "bio": "Sculptures by Talc Alf at Lyndhurst, where the Strzelecki and Oodnadatta Tracks begin.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -30.280043,
+    "longitude": 138.361996
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM node 784016799 tourism=attraction 'Talc Alf Carvings'; Wikivoyage listing geotag -30.279791,138.362799 (80 m)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site found",
+   "notes": {
+    "pin": "Wikivoyage geotag for the listing itself: 4 Talc Town Road, Lyndhurst (-30.279791, 138.362799), phone +61 458444685",
+    "cost": "No charge stated anywhere; assumed open, unverified"
+   }
+  },
+  "leigh-creek-4": {
+   "name": "Ochre Pits",
+   "icon": "🟠",
+   "category": "nature",
+   "bio": "Aboriginal ochre pits of dreaming significance on Farina Road, 2 km north of Lyndhurst.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -30.239871,
+    "longitude": 138.342359
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=attraction (nominatim) \"Ochre Pits\"",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Roadside site, no steward site",
+   "notes": {
+    "pin": "Wikivoyage geotag for the Ochre Pits listing (-30.239807, 138.342611)",
+    "cost": "Roadside, no charge stated; unverified"
+   }
+  },
+  "leigh-creek-5": {
+   "name": "Nilpena Ediacara National Park",
+   "icon": "🦴",
+   "category": "nature",
+   "bio": "Guide-led tours of a fossil field holding some of the earliest traces of animal life, over 550 million years old.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -30.935885,
+    "longitude": 138.33431
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 12879944847 amenity=parking 'Nilpena Ediacara National Park Entrance Gateway'  \"\"",
+   "costMin": 88,
+   "costMax": 88,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/nilpena-ediacara-national-park",
+   "notes": {
+    "pin": "Park entrance / visitor precinct (tours leave from the entrance); draft point is a 4-decimal Wikipedia point",
+    "cost": "Adult $88 for the 2-hour Ediacara Experience Tour, $176 for the 3-hour Fossil Field Exploration Tour (parks.sa.gov.au Fees tab). No independent access: tours only, booking well ahead recommended"
+   }
+  },
+  "vulkathunha-gammon-ranges-1": {
+   "name": "Arkaroola Wilderness Sanctuary",
+   "icon": "🌌",
+   "category": "nature",
+   "bio": "Wilderness sanctuary of 610 square kilometres with 4WD ridgetop tours, stargazing and a village.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -30.311839,
+    "longitude": 139.335349
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM node 432871170 place=village 'Arkaroola Village' + Wikipedia Arkaroola point -30.311667,139.336111 (~70 m); resort nodes within 50 m  \"\"",
+   "wiki": "Arkaroola",
+   "costMin": 195,
+   "costMax": 195,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.arkaroola.com.au/",
+   "notes": {
+    "pin": "Arkaroola Village (2948 Arkaroola Rd), not the sanctuary centroid",
+    "cost": "Ridgetop Tour adult $195, child $70 (arkaroola.com.au/ridgetop-tour). Sanctuary entry charge not stated on the pages read",
+    "fact": "610 sq km, founded 1968 by the Sprigg family (operator site)"
+   }
+  },
+  "vulkathunha-gammon-ranges-2": {
+   "name": "Arkaroola Observatories",
+   "icon": "🔭",
+   "category": "entertainment",
+   "bio": "Three astronomical observatories with guided night-sky tours in an International Dark Sky Sanctuary.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -30.31191,
+    "longitude": 139.333638
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1324600877 Dodwell Observatory (man_made=telescope, tourism=attraction), 250 m west of Arkaroola Village; Oliphant Observatory node 1324601155 is 600 m NE  \"\"",
+   "costMin": 80,
+   "costMax": 80,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.arkaroola.com.au/observatory-tour/",
+   "notes": {
+    "pin": "Two observatories sit above Arkaroola Village and one at reception; pin at the main one near Arkaroola Village (find via operator map/OSM), but it must differ from the Sanctuary pin by 25 m or more",
+    "cost": "Observatory Tour $80 per person (operator page); Dark Sky Sanctuary certified July 2023"
+   }
+  },
+  "vulkathunha-gammon-ranges-3": {
+   "name": "Italowie Gorge",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Gorge walk past Mount McKinlay Spring in Vulkathunha-Gammon Ranges National Park.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -30.5140541,
+    "longitude": 139.162885
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 1074986026 waterway=stream \"Italowie Creek\" (centre), the creek the gorge walk follows; Nominatim stream point (-30.5124,139.1715) agrees within 700 m  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/vulkathunha-gammon-ranges-national-park",
+   "notes": {
+    "pin": "Route is 15.8 km one way, 8 hrs (park page): pin the midpoint of the OSM hiking route, else Italowie Gorge campground; not the park pin",
+    "cost": "Park fees: free entry (parks.sa.gov.au). Park alert: closed 9pm 31 Oct to 9pm 12 Nov 2026 for pest control"
+   }
+  },
+  "vulkathunha-gammon-ranges-4": {
+   "name": "Weetootla Gorge",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Walk Weetootla Gorge from the campground trailhead, 7 km from Balcanoona in Vulkathunha-Gammon Ranges.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/vulkathunha-gammon-ranges-national-park",
+   "notes": {
+    "pin": "Trailhead is 7.1 km from Balcanoona (turn off Arkaroola Road 1.9 km from Balcanoona signpost); pin the hike at midpoint of the Weetootla Gorge route, not the campground.",
+    "other": "Park page: free entry. Park alert: closed 9pm 31 Oct to 9pm 12 Nov 2026 for pest control. Camping needs booking and fees (not a cost of the walk)."
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 5130122607 amenity=parking 'Weetootla Trailhead car park' (Weetootla Network paths start here: w527687793 'Balcanoona Creek', w527687788, w527687795)  (provisional)",
+   "coordinates": {
+    "latitude": -30.49514,
+    "longitude": 139.2542394
+   }
+  },
+  "giant-gum-tree": {
+   "name": "Giant Gum Tree",
+   "icon": "🌳",
+   "category": "landmark",
+   "bio": "River red gum over 500 years old in an Orroroo park with picnic tables and an electric barbecue.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward found; tourism listing only (council park).",
+   "notes": {
+    "pin": "In a park in Orroroo town; use the tree itself (OSM natural=tree or Wikivoyage/tourism geotag).",
+    "other": "Listing: trunk circumference over 10 m; signage tells its story."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 2321821734 tourism=viewpoint 'Giant Redgum, circa 1500 AD', Orroroo  \"\"",
+   "coordinates": {
+    "latitude": -32.727679,
+    "longitude": 138.608152
+   }
+  },
+  "magnetic-hill": {
+   "name": "Magnetic Hill",
+   "icon": "🚗",
+   "category": "landmark",
+   "bio": "Roadside illusion on Pekina-Blackrock Road where cars seem to roll uphill, on a 44 km loop from Orroroo.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Roadside site with no steward site.",
+   "notes": {
+    "pin": "Pekina-Blackrock Road, about 3 km past Pekina and 7 km from Black Rock; the large magnet symbol marks the spot.",
+    "other": "Optical illusion per listing."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1330880854 tourism=attraction 'Magnetic Hill'  \"\"",
+   "coordinates": {
+    "latitude": -32.865477,
+    "longitude": 138.625204
+   }
+  },
+  "pekina-creek-rock-carvings": {
+   "name": "Pekina Creek Rock Carvings",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Aboriginal rock carvings along a short creek walk from the main street of Orroroo.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official page found (tourism listing URL 404s).",
+   "notes": {
+    "pin": "Short creek walk from Orroroo main street; pin on the carvings if OSM/tourism mapped, else mid-walk.",
+    "other": "Draft source list was empty; the tourism listing page now 404s, so existence and access are unconfirmed this run.",
+    "hold": "Weakly sourced; consider review before adding."
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 1213754228 Pekina Creek, mid-way along the creek walk between Orroroo main street and the Giant Redgum (-32.7277,138.6082)  (provisional)",
+   "coordinates": {
+    "latitude": -32.730472,
+    "longitude": 138.606694
+   }
+  },
+  "carrieton": {
+   "name": "Carrieton",
+   "icon": "🎨",
+   "category": "historic",
+   "wiki": "Carrieton, South Australia",
+   "bio": "Small town with a 12 m tile mosaic mural of its history and a painted landscape mural at the pool.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town; no single steward.",
+   "coordinates": {
+    "latitude": -32.423397,
+    "longitude": 138.530968
+   },
+   "notes": {
+    "pin": "Draft is Wikipedia town point; mural is at the town restroom/pool, pin town centre or mural.",
+    "other": "Mural over 900 tiles, 1 tonne per listing. Carrieton Rodeo is an event, left out of bio.",
+    "dup_check": "Town is a draw via its murals; keep."
+   },
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Carrieton\""
+  },
+  "chambers-gorge": {
+   "name": "Chambers Gorge",
+   "icon": "🪨",
+   "category": "historic",
+   "wiki": "Mount Chambers Gorge",
+   "bio": "Gorge in the northern Flinders with Aboriginal rock engravings and a bush campground.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Tourism listing URL 404s; no steward page confirmed.",
+   "coordinates": {
+    "latitude": -30.9523438,
+    "longitude": 139.2249874
+   },
+   "notes": {
+    "pin": "Draft is Wikipedia point; use the engravings site or main gorge car park.",
+    "other": "Entry fee/camping fee not verified; gorge is on a station/Aboriginal land, check access."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 432871169 amenity=parking \"Chambers Gorge\" (campground node 1458502967 at -30.9546,139.2163)  \"\""
+  },
+  "heysen-trail": {
+   "name": "Heysen Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Long-distance walking trail of about 1,200 km from Cape Jervis to Parachilna Gorge.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 720,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.heysentrail.asn.au/",
+   "notes": {
+    "pin": "Long trail: pin in the Flinders end (Parachilna Gorge / Wilpena section) midpoint of the Flinders sections visitors use, or whole-route centre per rule; this spot sits in the Flinders region.",
+    "other": "Friends of the Heysen Trail site loaded (title checked). Fire-danger season closes the trail north of Tanunda. Hours 24-720 from draft.",
+    "unverified_note": "Ticket link is the volunteer Friends group, which maintains the trail with the SA Government."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm trail midpoint (1.0 km, nominatim) \"Heysen Trail\"",
+   "coordinates": {
+    "latitude": -31.522424,
+    "longitude": 138.601901
+   }
+  },
+  "mawson-trail": {
+   "name": "Mawson Trail",
+   "icon": "🚴",
+   "category": "hike",
+   "bio": "Mountain-bike trail of about 900 km from the Adelaide Hills north to Blinman in the Flinders Ranges.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 480,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Official government page orsr.sa.gov.au/get-active/recreation-and-trails/mawson-trail is bot-blocked; needs browser check.",
+   "notes": {
+    "pin": "Long trail; pin in Flinders end near Blinman or whole-route centre per rule.",
+    "other": "Official page found via search (Office for Recreation, Sport and Racing); not loaded."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM relation 153983 (route=mtb 'Mawson Trail', 887 km of mapped way): the point on the route where cumulative length, taken south to north, reaches half (segment midpoint)  \"\"",
+   "coordinates": {
+    "latitude": -33.235379,
+    "longitude": 138.573209
+   }
+  },
+  "southern-flinders-rail-trail": {
+   "name": "Southern Flinders Rail Trail",
+   "icon": "🚴",
+   "category": "hike",
+   "bio": "Cycling trail on a disused railway line through Southern Flinders Ranges farmland and towns.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official page confirmed (tourism listing URL guess 404s).",
+   "notes": {
+    "pin": "Midpoint of the trail route (OSM cycleway/rail trail); course and length not confirmed.",
+    "other": "Only the regional tourism page names it as a cycling highlight; length unverified.",
+    "hold": "Thin sourcing; review."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm trail midpoint (2.8 km, nominatim) \"Southern Flinders Rail Trail\"",
+   "coordinates": {
+    "latitude": -33.206718,
+    "longitude": 138.304015
+   }
+  },
+  "mount-ellen-lookout": {
+   "name": "Mount Ellen Lookout",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Lookout over the Southern Flinders Ranges that is popular with photographers.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Lookout with no steward page.",
+   "notes": {
+    "pin": "Needs OSM tourism=viewpoint/peak 'Mount Ellen' or the Hancock's neighbour; location not confirmed (near Wirrabara/Melrose area?).",
+    "other": "Only one regional page names it, grouped with Hancock's Lookout; no detail on location or access.",
+    "hold": "Thin; review. Hancock's Lookout may be same area."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3008902602 natural=peak 'Mount Ellen' (only match; no tourism=viewpoint named Mount Ellen found)  \"\"",
+   "coordinates": {
+    "latitude": -33.03407,
+    "longitude": 138.19384
+   }
+  },
+  "steamtown-heritage-rail-centre": {
+   "name": "Steamtown Heritage Rail Centre",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Peterborough's heritage roundhouse and rail sheds hold steam locomotives and carriages from the town's narrow-gauge junction days.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -32.974759,
+    "longitude": 138.827523
+   },
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.steamtown.com.au/",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=attraction (nominatim) \"Steamtown Heritage Rail Centre\"",
+   "notes": {
+    "pin": "Wikivoyage listing geotag -32.9751 138.826 for the centre itself (1 Telford Avenue); draft hint matches.",
+    "cost": "$15/person guided tour per Wikivoyage, undated; not confirmed on the official site.",
+    "status": "Official site (title checked: Steamtown Heritage Railway - Peterborough) says the centre and the Peterborough Visitor Information Centre are temporarily closed under Peterborough council while a new operating model is developed, aiming to reopen for the 2026 tourist season. Still add (a permanent venue) but confirm reopening before shipping."
+   }
+  },
+  "ikara-flinders-ranges-26": {
+   "name": "Aroona Ruins",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Ruins beside Aroona Dam near Leigh Creek, where visitors can kayak and fish.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -30.584818,
+    "longitude": 138.35819
+   },
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No steward site found for the ruins",
+   "notes": {
+    "pin": "Coordinates are Aroona Dam's (Wikipedia, 6 decimals); the ruins themselves are separate, find them (OSM ruins) or the Akurra Trail/ruins car park",
+    "cost": "Free access; dam stocked with Murray cod and golden perch in 2018 for recreation",
+    "unverified": "Draft called them homestead ruins; the source only says scenic ruins, so the bio does not say homestead"
+   },
+   "moved_from": "leigh-creek-1"
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "ikara-flinders-ranges-19",
+   "name": "Ferguson Gorge",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Ferguson Gorge",
+    "icon": "🪨",
+    "category": "nature",
+    "bio": "Drive through Hannigans Gap on Moolooloo Station, then walk 1.6 km to a gorge of rock pools and yellow-footed rock-wallabies.",
+    "visitHoursMin": 4,
+    "visitHoursMax": 5,
+    "coordinates": null,
+    "free": false,
+    "costMin": 40,
+    "costMax": 40,
+    "currency": "AUD",
+    "costBasis": "ticket",
+    "costPer": "Per Vehicle",
+    "ticketUrl": "https://www.moolooloo.com.au/",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Gorge end of the 1.6 km walk (or the walk's car park); station is 19 km from Blinman on Glass Gorge Road, homestead at 636 Moolooloo Road.",
+     "other": "Private station land; AUD 40 per vehicle, pay and collect key/map at homestead; high-clearance 4WD required. Renamed from Ferguson Gorge Scenic Drive and Bush Walk."
+    }
+   }
+  },
+  {
+   "id": "ikara-flinders-ranges-21",
+   "name": "Fred Teague's Museum",
+   "reason": "No cost found (and not known to be free); unblocks on a price or a source saying it is free.",
+   "entry": {
+    "name": "Fred Teague's Museum",
+    "icon": "💎",
+    "category": "museum",
+    "bio": "Compact museum at Hawker Motors with gemstones, minerals, fossils and relics from early settlers.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "ticketUrl": "https://hawkermotors.com.au/museum",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Hawker Motors, corner of Wilpena and Cradock Roads, Hawker.",
+     "other": "Admission not stated on the listing or the Hawker Motors museum page; cost left unset (see unverified)."
+    }
+   }
+  },
+  {
+   "id": "southern-flinders-ranges-1",
+   "name": "Gladstone Gaol",
+   "reason": "Gladstone Gaol: closed since June 2022, reopening announced for late 2026; no cost. Unblocks on reopening and a price.",
+   "entry": {
+    "name": "Gladstone Gaol",
+    "icon": "⛓️",
+    "category": "historic",
+    "bio": "A heritage-listed prison built in 1879-81, later an internment camp, in Gladstone.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "coordinates": {
+     "latitude": -33.26666667,
+     "longitude": 138.35
+    },
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Gaol building in Gladstone; draft point (-33.26667, 138.35) is the town's round point, so pin the gaol itself.",
+     "status": "Wikipedia: opened to tourists 1978, CLOSED since June 2022 for repairs; reopening as an attraction announced June 2026 for late 2026, operated by Lantern Ghost Tours. Fails 'open to the public' today: recommend holding it until it reopens.",
+     "cost": "No price found (unverified)."
+    },
+    "wiki": "Gladstone Gaol",
+    "costMin": null,
+    "costMax": null,
+    "currency": "AUD",
+    "ticket_note": "Closed; operator's page not found"
+   }
+  },
+  {
+   "id": "yunta",
+   "name": "Yunta",
+   "reason": "Yunta: its only draw is the annual Picnic Races, an event. Unblocks on a source naming a permanent sight.",
+   "entry": {
+    "name": "Yunta",
+    "icon": "🛣️",
+    "category": "historic",
+    "wiki": "Yunta, South Australia",
+    "bio": "Barrier Highway town between Peterborough and Broken Hill, home of the Yunta Picnic Races.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75,
+    "free": true,
+    "costBasis": "open",
+    "ticket_note": "Town; no single steward.",
+    "coordinates": {
+     "latitude": -32.581868,
+     "longitude": 139.561263
+    },
+    "notes": {
+     "pin": "Draft is Wikipedia point for the town.",
+     "other": "Races are an annual event (not a permanent draw). Only one counted source, which names the races; Wikivoyage has no Yunta page. Marginal.",
+     "hold": "Marginal: a roadside hamlet whose named draw is an annual event; suggest review."
+    },
+    "coordinates_source": "pending serial pin pass"
+   }
+  },
+  {
+   "id": "caernarvon-track",
+   "name": "Caernarvon Track",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Caernarvon Track",
+    "icon": "🚙",
+    "category": "hike",
+    "bio": "Self-drive 4WD climb to the 921 m summit of Mount Caernarvon with 360 degree views of the ranges.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "free": false,
+    "costMin": 60,
+    "costMax": 60,
+    "currency": "AUD",
+    "costBasis": "ticket",
+    "costPer": "Per Vehicle",
+    "needs": "booking",
+    "ticketUrl": "https://www.caernarvontrack.com/",
+    "notes": {
+     "pin": "Midpoint of the track between the reserve entry and Mount Caernarvon summit (The Bunkers Conservation Reserve, northeast of Ikara-Flinders Ranges NP).",
+     "other": "Search result summary: $60 per vehicle (an older listing said $70); bookings essential, cash only; camping $20 per vehicle; open 1 Apr-30 Oct per one listing, ExplorOz says all year. Official site loaded but fee not read from it. Experienced 4WD only."
+    },
+    "coordinates_source": "pending serial pin pass",
+    "coordinates": null
+   }
+  },
+  {
+   "id": "town-carriage-museum",
+   "name": "Town Carriage Museum",
+   "reason": "No cost found (and not known to be free); unblocks on a price or a source saying it is free.",
+   "entry": {
+    "name": "Town Carriage Museum",
+    "icon": "🚃",
+    "category": "museum",
+    "bio": "Museum in railway carriages at Peterborough, a former rail junction town, with displays on its railway history.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": {
+     "latitude": -32.9736,
+     "longitude": 138.8392
+    },
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Wikivoyage listing geotag -32.9736 138.8392 for the museum itself (Main Street area; council notice puts a carriage at 122 Main Street by the playground); verify on the serial pass.",
+     "cost": "No price or free status found in any fetched source.",
+     "status": "Wikivoyage entry dated Jul 2021 with no detail; may be tied to the council's temporary closure notice. Verify it is open to the public before shipping; if not it fails the access test."
+    }
+   }
+  },
+  {
+   "id": "peterborough-historic-letterpress-print-shop",
+   "name": "Peterborough Historic Letterpress Print Shop",
+   "reason": "No cost found (and not known to be free); unblocks on a price or a source saying it is free.",
+   "entry": {
+    "name": "Peterborough Historic Letterpress Print Shop",
+    "icon": "🖨️",
+    "category": "museum",
+    "bio": "Volunteers run tours of a working letterpress print shop at Peterborough, with three presses including an 1910 Wharfedale.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Address 7-9 Jervois Street, Peterborough SA 5422 (tourism board listing); no geotag found.",
+     "cost": "Tour price not stated on the listing; hands-on print-making is pre-booked.",
+     "bookings": "Pre-book (phone 0408 220 248 per listing)."
+    },
+    "ticket_note": "Only the regional tourism board listing was found; the shop's own site could not be located, so no ticketUrl."
+   }
+  }
+ ],
+ "notes": []
+}

@@ -1,0 +1,67 @@
+{
+ "destination": {
+  "id": "copper-coast",
+  "name": "Copper Coast",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -33.964784,
+   "longitude": 137.715897
+  },
+  "category": "beach",
+  "defaultZoomSpanKm": 45,
+  "rank": 4,
+  "icon": "⛏️",
+  "tagline": "Cornish copper towns and jetty beaches on the northern Yorke Peninsula coast.",
+  "description": "The Copper Coast is the northern Yorke Peninsula around Kadina, Wallaroo and Moonta, where Cornish miners worked copper from the 1860s. Moonta Mines is a state heritage area with a museum, tourist railway and walking trails, and Kadina's Farm Shed Museum holds the stump-jump plough. Wallaroo has a heritage and nautical museum and North Beach, while Moonta Bay and Port Hughes add jetties and swimming beaches. A sealed rail trail links Kadina, Wallaroo and Moonta.",
+  "whyVisit": [
+   "Explore Cornish copper-mining heritage",
+   "Swim and fish off jetty beaches",
+   "Cycle the sealed coastal rail trail"
+  ],
+  "highlights": [
+   "Mining heritage",
+   "Jetty beaches",
+   "Rail trail"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🕒",
+    "title": "Check museum hours",
+    "detail": "Wallaroo's museum is shut most Mondays and Moonta's has set afternoon hours, so check times before you drive."
+   },
+   {
+    "icon": "🚴",
+    "title": "Cycle in sections",
+    "detail": "The sealed 25 km rail trail runs Kadina to Moonta via Wallaroo, so ride one stretch and drive back."
+   }
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "bestTimeBlurb": "{months} are the warm months for beach days and jetty swims at Moonta Bay and Wallaroo."
+ },
+ "spots": [
+  "copper-coast-1",
+  "copper-coast-2",
+  "copper-coast-3",
+  "copper-coast-4",
+  "copper-coast-5",
+  "copper-coast-7",
+  "copper-coast-8",
+  "copper-coast-9"
+ ],
+ "notes": [
+  "Pin: OSM place=town node 'Kadina town' (33119329); nearest spot Farm Shed Museum 1.2 km. Span cut from 60 to 45: all spots are within 20 km, 75% of 45 = 34 km.",
+  "Category set to beach (draft said city) because the destination is a coast of several towns, not one town.",
+  "Order kept as drafted. Moonta Mines/Wheal Hughes need a review of Wheal Hughes access (see its notes)."
+ ]
+}

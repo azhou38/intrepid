@@ -1,0 +1,266 @@
+{
+ "spots": {
+  "mighty-mulloway": {
+   "name": "Mighty Mulloway Sculpture",
+   "icon": "🐟",
+   "category": "landmark",
+   "bio": "Bronze mulloway sculpture by Ken Martin, unveiled in 2026 at the Y-Stop roadhouse in Yalata on the Eyre Highway.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://yalata.com.au/mulloway-ken-martin-bronze-sculpture/",
+   "notes": {
+    "pin": "Y-Stop Yalata Roadhouse, Eyre Highway, Yalata (OSM roadhouse node); sculpture stands at the roadhouse.",
+    "other": "Unveiled 16 July 2026 per Yalata community page; very new."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "neptune-islands": {
+   "name": "Neptune Islands",
+   "icon": "🦈",
+   "category": "nature",
+   "bio": "Remote islands off Port Lincoln, reached by boat, where operators run great white shark cage dives.",
+   "wiki": "Neptune Islands",
+   "visitHoursMin": 10,
+   "visitHoursMax": 12,
+   "coordinates": {
+    "latitude": -35.23893,
+    "longitude": 136.0697
+   },
+   "free": false,
+   "costMin": 562,
+   "costMax": 630,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticket_note": "Sold by several operators (Calypso Star Charters, Rodney Fox Shark Expeditions), so no single official site.",
+   "notes": {
+    "pin": "Wikipedia coordinates for the island group; boat-only, no visitor point on land.",
+    "other": "One-day cage-dive trip from Port Lincoln about 12 h with ~3 h each way; a Visitor Use Fee (~$45) for the marine park is added by operators. Draft hours 4-8 changed to the day-trip length."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "greenly-beach": {
+   "name": "Greenly Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf and swimming beach at Coulta, an hour from Port Lincoln, with bluffs, reef and tall dunes behind.",
+   "wiki": "Greenly Beach",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward; free open beach.",
+   "notes": {
+    "pin": "Greenly Beach Road, Coulta (end of access road at the southern end of the beach); OSM natural=beach or Wikipedia article Greenly Beach.",
+    "other": "Address Coulta 5607, Lower Eyre Peninsula council area; re-home if the pin falls inside Port Lincoln or Coffin Bay span."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "googs-track": {
+   "name": "Googs Track",
+   "icon": "🚙",
+   "category": "hike",
+   "bio": "A 4WD track through Yumbarra and Yellabinna, crossing the dingo fence and dunes to Goog's Lake north of Ceduna.",
+   "wiki": "Googs Track",
+   "visitHoursMin": 6,
+   "visitHoursMax": 24,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/yumbarra-conservation-park",
+   "notes": {
+    "pin": "Midpoint of the whole track (OSM route); Goog's Lake at the northern end, track starts about 30 km north of Ceduna.",
+    "other": "Track and campsites closed 1 Dec 2026 to 28 Feb 2027 (annual summer closure, reopens 1 Mar 2027). Park page lists only camping fee ($15.40/night); no entry fee or permit shown. 4WD; travel south to north recommended."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "fowlers-bay": {
+   "name": "Fowlers Bay Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Giant sand dunes beside Fowlers Bay, with sea lions, wombats and seabirds, and fishing for salmon and mulloway.",
+   "wiki": "Fowlers Bay Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -31.94805556,
+    "longitude": 132.39472222
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/fowlers-bay-conservation-park",
+   "notes": {
+    "pin": "Wikipedia park coordinates (centroid); use the dunes access or Fowlers Bay jetty/village point instead.",
+    "other": "Park page lists only a camping fee ($15.40/night); no entry fee. Dogs not permitted. Bio omits Scotts Beach/Mexican Hat (draft source, not rechecked)."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "head-of-bight": {
+   "name": "Head of Bight",
+   "icon": "🐋",
+   "category": "nature",
+   "bio": "Clifftop boardwalks at Head of Bight where southern right whales calve in the water below, from about June to October.",
+   "wiki": "Head of Bight",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.49358383,
+    "longitude": 131.15857183
+   },
+   "free": false,
+   "costMin": 10,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://headofbight.com.au/",
+   "notes": {
+    "pin": "Head of Bight Whale Watching Centre / lookout carpark, Yalata (Wikipedia point is the bight).",
+    "other": "Adult $20 whale season, $10 off season (centre price list). Centre open all week; seasonal hours. Run by Yalata community (Aboriginal Lands Trust land)."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "bunda-cliffs": {
+   "name": "Bunda Cliffs",
+   "icon": "🌊",
+   "category": "viewpoint",
+   "bio": "Sea cliffs up to 120 m high running more than 200 km along the Nullarbor coast, with three signposted lookouts.",
+   "wiki": "Bunda Cliffs",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -31.47382985,
+    "longitude": 131.11890657
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Free roadside lookouts inside Nullarbor National Park; no separate steward page.",
+   "notes": {
+    "pin": "One of the three official Bunda Cliffs lookouts off the Eyre Highway (OSM tourism=viewpoint); Wikipedia point is the cliff line.",
+    "other": "Camping along the cliffs not permitted (unstable edge)."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "nullarbor-national-park": {
+   "name": "Nullarbor National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Flat karst plain where sinkholes open into caves, with sea cliffs on the coast and wombats among its wildlife.",
+   "wiki": "Nullarbor National Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.39861111,
+    "longitude": 130.13777778
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/nullarbor-national-park",
+   "notes": {
+    "pin": "Wikipedia centroid; use a visitor point such as the Murrawijinnie Caves or Koonalda Homestead access, not the centroid, and not Bunda Cliffs or Head of Bight pins.",
+    "other": "Page title \"Nullarbor...\" (covers national park, wilderness protection area, regional reserve); fees only for camping ($15.40/night). Murrawijinnie Caves are the only caves open to the public. Park is about 300 km west of Ceduna."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "eyre-highway": {
+   "name": "Eyre Highway",
+   "icon": "🛣️",
+   "category": "landmark",
+   "bio": "The road across the Nullarbor from Ceduna to the Western Australian border, with lookouts and roadhouses along the way.",
+   "wiki": "Eyre Highway",
+   "visitHoursMin": 4,
+   "visitHoursMax": 12,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Public road with no single steward.",
+   "notes": {
+    "pin": "Midpoint of the SA stretch (Ceduna to the border, ~480 km): near Nullarbor Roadhouse area; take from OSM route relation."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "big-galah": {
+   "name": "Big Galah",
+   "icon": "🦜",
+   "category": "landmark",
+   "bio": "A large pink galah sculpture at Kimba, beside the sign marking the halfway point across Australia.",
+   "wiki": "Big Galah",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Roadside sculpture with no official site beyond the council tourist page (blocked to scripts).",
+   "notes": {
+    "pin": "Eyre Highway, Kimba (OSM tourism=artwork or attraction \"Big Galah\"); Wikipedia article Big Galah."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "kimba-museum": {
+   "name": "Kimba Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum with a 1908 Pioneer House, one-teacher school, pioneer store and tractor collection, open mid-week.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "free": false,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticket_note": "Official site is the Kimba council tourist page (403 to scripts), see needs_browser; no URL linked until verified.",
+   "notes": {
+    "pin": "15307 Eyre Highway, Kimba, opposite the grain silos (OSM museum node).",
+    "other": "Listing says Wednesdays and Thursdays (hours Wed-Fri 9-2) or by appointment; \"from $5\" is the lowest listed price, adult price not confirmed."
+   },
+   "coordinates_source": "pending serial pin pass"
+  },
+  "lake-gilles": {
+   "name": "Lake Gilles Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Saline lake with gypsum dunes and mallee scrub, crossed by the Eyre Highway, with birdlife to watch.",
+   "wiki": "Lake Gilles Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.9731,
+    "longitude": 136.74309722
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lake-gilles-conservation-park",
+   "notes": {
+    "pin": "Wikipedia centroid; use the lake access off Eyre Highway (2WD) instead.",
+    "other": "Free entry per park page. Closed on days of Catastrophic Fire Danger. Northern area near the lake is 4WD only. Draft said \"walking trails\": not on park page, dropped."
+   },
+   "coordinates_source": "pending serial pin pass"
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "neptune-islands price (AUD 562-630 from conflicting Rezdy listings; operator sites did not show a price)",
+  "kimba-museum adult price (listing says from $5)",
+  "big-galah halfway sign (Wikivoyage only)",
+  "fowlers-bay Scotts Beach / Mexican Hat not rechecked"
+ ],
+ "needs_browser": [
+  {
+   "id": "kimba-museum",
+   "url": "https://www.kimba.sa.gov.au/tourist-information",
+   "why": "403 bot wall; confirm official site, adult price and opening days"
+  },
+  {
+   "id": "big-galah",
+   "url": "https://www.kimba.sa.gov.au/tourist-information",
+   "why": "403 bot wall; confirm Big Galah and halfway sign"
+  }
+ ],
+ "notes": [
+  "Mighty Mulloway unveiled July 2026; Googs Track closed 1 Dec 2026 to 28 Feb 2027.",
+  "Pins all pending serial pass; no LOW pins resolved by me."
+ ]
+}

@@ -1,0 +1,401 @@
+{
+ "adelaide-2": {
+  "lat": -34.92951,
+  "lon": 138.597812,
+  "confidence": "HIGH",
+  "source": "OSM way 27932512 amenity=marketplace 'Adelaide Central Markets'; Wikipedia -34.92972,138.5975 (~30 m)",
+  "note": ""
+ },
+ "adelaide-11": {
+  "lat": -34.94135,
+  "lon": 138.608453,
+  "confidence": "HIGH",
+  "source": "OSM node 260147280 shop=confectionery \"Haigh's Chocolate Factory\"; Wikivoyage geotag -34.9412,138.60834 (~25 m)",
+  "note": ""
+ },
+ "adelaide-28": {
+  "lat": -34.936856,
+  "lon": 138.597899,
+  "confidence": "HIGH",
+  "source": "OSM node 244443014 leisure=garden Veale Gardens; Wikipedia -34.9368,138.5971 (~65 m)",
+  "note": ""
+ },
+ "adelaide-34": {
+  "lat": -35.149091,
+  "lon": 138.466108,
+  "confidence": "MEDIUM",
+  "source": "OSM way 29222325 man_made=pier Port Noarlunga Jetty (centre of the pier)",
+  "note": "No natural=beach way in OSM; snorkelling is off the jetty and reef (OSM n11107002352 reef -35.149343,138.464138). Commons geotag -35.14667,138.46694 is ~290 m north on the foreshore."
+ },
+ "adelaide-51": {
+  "lat": -34.928283,
+  "lon": 138.602806,
+  "confidence": "HIGH",
+  "source": "Wikipedia article coords -34.9288,138.602 and listing geotag -34.928283,138.602806 (~75 m apart)",
+  "note": "No OSM feature for the museum found; kept the 6-decimal listing point."
+ },
+ "adelaide-63": {
+  "lat": -34.726295,
+  "lon": 138.62913,
+  "confidence": "MEDIUM",
+  "source": "OSM node 13114049475 tourism=museum 'National Military Vehicle Museum' (address 10 Sturton Rd not in Nominatim)",
+  "note": ""
+ },
+ "adelaide-hills-10": {
+  "lat": -35.04483,
+  "lon": 138.83362,
+  "confidence": "LOW",
+  "source": "Wikivoyage geotag (single source); no OSM feature 'Hahndorf Farm Barn'",
+  "note": "Hahndorf street-level point; unverified against building."
+ },
+ "clare-valley-3": {
+  "lat": -33.937821,
+  "lon": 138.729379,
+  "confidence": "HIGH",
+  "source": "OSM way 220684351 Martindale Hall (historic building); Wikipedia -33.9378,138.7294",
+  "note": ""
+ },
+ "port-lincoln-1": {
+  "lat": -34.935175,
+  "lon": 135.6487105,
+  "confidence": "LOW",
+  "source": "OSM n5481504120 unnamed tourism=viewpoint, near the middle of the Whalers Way lookouts (Matthew Flinders Lookout 135.623 to Ski Jump Lookout 135.682)",
+  "note": "Drive midpoint estimated from the lookouts; no named road in OSM. Red Banks Beach way 456983537 at -34.92134,135.618407 (west end), Cape Wiles n5461045713 at -34.946113,135.68427."
+ },
+ "lincoln-national-park-2": {
+  "lat": -34.776306,
+  "lon": 135.935159,
+  "confidence": "MEDIUM",
+  "source": "OSM node 5917891486 natural=hill 'Stamford Hill'",
+  "note": "No Wikipedia coordinates for the article; hike path way 24710444 'Stamford Hill Hike' nearby."
+ },
+ "streaky-bay-3": {
+  "lat": -32.739867,
+  "lon": 134.074153,
+  "confidence": "MEDIUM",
+  "source": "OSM way 71376050 tourism=viewpoint 'Whistling Rocks' (with 'Blowholes' viewpoints ways 71376038/71376053 within 80 m)",
+  "note": "Pin on the Whistling Rocks viewpoint; Cape Bauer camp site node is 2 km NNW."
+ },
+ "streaky-bay-8": {
+  "lat": -32.900111,
+  "lon": 134.1682562,
+  "confidence": "MEDIUM",
+  "source": "OSM node 5521426795 amenity=parking at the end of way 575393635 'Yanerbie Sand Dunes' (access car park)",
+  "note": "Dune way centre -32.8991,134.16695."
+ },
+ "ceduna-2": {
+  "lat": -32.1446699,
+  "lon": 133.6439158,
+  "confidence": "LOW",
+  "source": "Nominatim/OSM way 80676966 'Pinky Point' (highway=service, Thevenard)",
+  "note": "No lookout feature in OSM; point is the named Pinky Point road at the Thevenard end of the Encounter Coastal Trail."
+ },
+ "whyalla-8": {
+  "lat": -33.029616,
+  "lon": 137.533884,
+  "confidence": "HIGH",
+  "source": "OSM node 2158530082 tourism=museum 'Mount Laura Station-National Trust'; Ekblom Street ways (-33.027..-33.033,137.5345) match the 11 Ekblom St address",
+  "note": ""
+ },
+ "gawler-ranges-national-park-1": {
+  "lat": -32.5412608,
+  "lon": 135.2981496,
+  "confidence": "MEDIUM",
+  "source": "OSM way 216411860 'Organ Pipes Trail' (62 pts, middle vertex); trail ends at car park n2257624072 (-32.5439,135.29954) and viewpoint n12978945643 (-32.5391,135.29648)",
+  "note": ""
+ },
+ "gawler-ranges-national-park-8": {
+  "lat": -32.848724,
+  "lon": 135.198075,
+  "confidence": "MEDIUM",
+  "source": "OSM way 1054351062 tourism=attraction 'Tcharkuldu Rock' (centre); Tcharkuldu Hill peak n3008903601 at -32.848111,135.197694",
+  "note": "Name spelled Tcharkuldu in OSM (draft 'Tcharkulda' belongs to the separate Little Tcharkulda scrub 2 km west)."
+ },
+ "observation-hill-lookout": {
+  "lat": -33.6969549,
+  "lon": 136.4965498,
+  "confidence": "MEDIUM",
+  "source": "OSM node 9676347525 tourism=attraction 'Observation Hill', Mitchell Street, Cleve (via Nominatim)",
+  "note": "Not tagged viewpoint; sits on Mitchell St hilltop."
+ },
+ "giant-gum-tree": {
+  "lat": -32.727679,
+  "lon": 138.608152,
+  "confidence": "MEDIUM",
+  "source": "OSM node 2321821734 tourism=viewpoint 'Giant Redgum, circa 1500 AD', Orroroo",
+  "note": ""
+ },
+ "black-stump": {
+  "lat": -33.68416,
+  "lon": 136.92578,
+  "confidence": "LOW",
+  "source": "Midpoint of OSM ways 266073422 Franklin Harbour Hotel (-33.68475,136.92657) and 266074338 Commercial Hotel (-33.68356,136.92499), Main Street Cowell",
+  "note": "The stump has no OSM feature; brief places it at 6 Main St between the two hotels."
+ },
+ "talia-caves": {
+  "lat": -33.32061,
+  "lon": 134.788165,
+  "confidence": "MEDIUM",
+  "source": "Midpoint of OSM n3279602029 'Woolshed Cave' (-33.316817,134.784879) and n3279602028 'The Tub' (-33.324408,134.791451), cave entrances; Talia Caves camp site n1811197136 at -33.31667,134.78583",
+  "note": "Pin sits between the two features as the brief asks."
+ },
+ "nullarbor-national-park": {
+  "lat": -31.4563297,
+  "lon": 129.8565355,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1811181489 tourism=camp_site 'Koonalda Homestead' (Koonalda Cave entrance n1967797431 is 5 km north)",
+  "note": "Visitor point; not the Wikipedia centroid (-31.3986,130.1378), not Bunda Cliffs."
+ },
+ "mclaren-vale-5": {
+  "lat": -35.234031,
+  "lon": 138.471522,
+  "confidence": "MEDIUM",
+  "source": "OSM way 43152689 amenity=parking 'Maslin Beach North Carpark' (main access to the beach; beach way 296585849 natural=beach is long)",
+  "note": "Suburb point (-35.2288,138.4779) sits inland; this is the beach access car park."
+ },
+ "mclaren-vale-11": {
+  "lat": -35.3137718,
+  "lon": 138.4477202,
+  "confidence": "LOW",
+  "source": "OSM way 298727633 natural=beach (unnamed) at the Silver Sands Creek mouth, Silver Sands/Aldinga Beach",
+  "note": "No named 'Silver Sands' beach in OSM; draft point (-35.295,138.457) was inland. Beach choice is by Silver Sands Creek (way 136390417, -35.3154,138.4765) leading to the coast."
+ },
+ "mclaren-vale-16": {
+  "lat": -35.4710597,
+  "lon": 138.5808124,
+  "confidence": "LOW",
+  "source": "OSM way 1210651629 Sawpit Road, Hindmarsh Valley (road point only)",
+  "note": "594 Sawpit Rd is not in OSM or Nominatim; farm not located. Pin is on Sawpit Road, Hindmarsh Valley, not the farm. Misplaced under McLaren Vale per the brief."
+ },
+ "victor-harbor-5": {
+  "lat": -35.5329,
+  "lon": 138.685478,
+  "confidence": "MEDIUM",
+  "source": "OSM node 634784797 natural=beach 'Horseshoe Bay'; board listing point -35.532894,138.684265 (~110 m)",
+  "note": ""
+ },
+ "victor-harbor-14": {
+  "lat": -35.5325567,
+  "lon": 138.6236723,
+  "confidence": "LOW",
+  "source": "Middle vertex of OSM way 174948750 'Hindmarsh River' (river the trail follows); no trail route in OSM",
+  "note": "Trail route not mapped; point is on the river about 2 km upstream of Bridge Terrace."
+ },
+ "goolwa-7": {
+  "lat": -35.370761,
+  "lon": 139.14954483,
+  "confidence": "LOW",
+  "source": "Two listing points ~110 m apart (-35.370202,139.150541 and this one); OSM relation 3341581 reserve centroid -35.371248,139.148473; camp site n1811197936 at -35.37528,139.14861",
+  "note": "No OSM visitor point in the reserve."
+ },
+ "yankalilla-1": {
+  "lat": -35.606843,
+  "lon": 138.238895,
+  "confidence": "MEDIUM",
+  "source": "OSM node 316602158 tourism=camp_site 'Stringybark Campground - Deep Creek Conservation Park'",
+  "note": "Main visitor point; unnamed info boards at -35.6044,138.2352 and -35.6039,138.2333 are nearby."
+ },
+ "yankalilla-6": {
+  "lat": -35.424473,
+  "lon": 138.321092,
+  "confidence": "MEDIUM",
+  "source": "OSM way 224350178 natural=beach 'Carrickalinga Beach' (centre); suburb node -35.424036,138.324403",
+  "note": ""
+ },
+ "ikara-flinders-ranges-3": {
+  "lat": -31.332166,
+  "lon": 138.59031,
+  "confidence": "MEDIUM",
+  "source": "OSM node 925557559 tourism=viewpoint 'Brachina Gorge Geology Trail'; Brachina East Camp Ground n775893672 at -31.3337,138.5794",
+  "note": "Draft hint was Wilpena Pound's town point."
+ },
+ "ikara-flinders-ranges-10": {
+  "lat": -31.535884,
+  "lon": 138.593819,
+  "confidence": "MEDIUM",
+  "source": "Length midpoint of the chained OSM paths Pound Gap Track (way 37192770, 28727636) + Wilpena Pound Hiking Track (ways 120134700, 120134696, 28727424) from Wilpena visitor centre to Hills Homestead ruins n696606489 (-31.5467,138.5889)",
+  "note": "Mapped chain is 2.8 km one way; route to the ruins."
+ },
+ "ikara-flinders-ranges-19": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "source": "",
+  "note": "Ferguson Gorge is not in OSM, Nominatim, Wikipedia or Wikivoyage; only a Blinman town-level hint. Station on Glass Gorge Road (OSM way 24675950/30084115) could not be tied to the gorge."
+ },
+ "ikara-flinders-ranges-25": {
+  "lat": -31.126915,
+  "lon": 138.57981,
+  "confidence": "MEDIUM",
+  "source": "Length midpoint of chained OSM ways 311504885 + 1568750987 'Blinman Pools Walking Trail' (5.8 km, Angorichina Village n1811159319 to the pools way 815702565)",
+  "note": ""
+ },
+ "port-augusta-5": {
+  "lat": -32.6525173,
+  "lon": 137.7523018,
+  "confidence": "LOW",
+  "source": "South end of OSM way 102603568 'Shack Road' (the road Blanche Harbor lies at the end of)",
+  "note": "No feature named Blanche Harbor in OSM; point is the road's end, ~18 km from the centre (brief says ~23 km)."
+ },
+ "port-pirie-7": {
+  "lat": -33.1912147,
+  "lon": 138.2146853,
+  "confidence": "MEDIUM",
+  "source": "OSM node 7896026877 amenity=parking beside Beetaloo Reservoir (way 207534444 natural=water centre -33.182,138.2136); draft point -33.189669,138.214939 is ~170 m away",
+  "note": "Reservoir public access car park."
+ },
+ "leigh-creek-5": {
+  "lat": -30.935885,
+  "lon": 138.33431,
+  "confidence": "MEDIUM",
+  "source": "OSM node 12879944847 amenity=parking 'Nilpena Ediacara National Park Entrance Gateway'",
+  "note": "Entrance where tours start; park relation centroid (-30.9642,138.1077) and the Wikipedia 4-decimal point (-30.8057,138.1348, Ediacara locality) are not visitor points."
+ },
+ "kangaroo-island-23": {
+  "lat": -35.661054,
+  "lon": 137.630087,
+  "confidence": "LOW",
+  "source": "OSM way 650010166 natural=beach (unnamed) on the north coast, nearest beach to the tourism hint (-35.653,137.634)",
+  "note": "No feature named Red Banks Beach in OSM or Nominatim; unnamed beach chosen by distance to the hint (~1 km), may be wrong."
+ },
+ "kangaroo-island-39": {
+  "lat": -35.98706,
+  "lon": 137.61328,
+  "confidence": "LOW",
+  "source": "southaustralia.com listing geotag (trailhead by the threshing floor off D'Estrees Bay Road); OSM has no Tadpole feature (nearby: Wreckers Beach way 374639075 -35.984248,137.615233; viewpoint n3780361357 -35.9798,137.6173)",
+  "note": "Trailhead point, not the route midpoint; no route in OSM."
+ },
+ "beachport-6": {
+  "lat": -37.569219,
+  "lon": 140.123068,
+  "confidence": "LOW",
+  "source": "OSM way 194558387 'Southend Foreshore Campground' on the Rivoli Bay foreshore, Southend",
+  "note": "No natural=beach way or node mapped at Southend; foreshore point beside the beach and Southend Pier (way 109227807)."
+ },
+ "caernarvon-track": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "source": "",
+  "note": "Mount Caernarvon / The Bunkers Conservation Reserve not found in OSM peaks, tourism or name search, or Nominatim; the only hint is Yunta's town point (-32.58,139.564), 50+ km away."
+ },
+ "ngaut-ngaut-conservation-park": {
+  "lat": -34.688898,
+  "lon": 139.60812,
+  "confidence": "LOW",
+  "source": "OSM way 56018601 'Ngaut Ngaut Conservation Park' (centre of the small park polygon on the Murray's west bank)",
+  "note": "Small park polygon, so its centre is near the Devon Downs shelter; no OSM shelter or meeting-point feature."
+ },
+ "swan-reach-observatory": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "source": "",
+  "note": "Observatory (opened Nov 2025) is not in OSM or Nominatim; Murraylands Road runs for 15+ km near Swan Reach and the street number is unknown."
+ },
+ "riverland-22": {
+  "lat": -34.15206,
+  "lon": 140.339896,
+  "confidence": "MEDIUM",
+  "source": "OSM way 78393585 amenity=pub 'Overland Corner Hotel', 205 Old Coach Road (Nominatim agrees)",
+  "note": "Wikivoyage hint (-35.152,140.34) has the latitude off by one degree; the real hotel is at -34.152."
+ },
+ "murray-bridge-2": {
+  "lat": -35.225059,
+  "lon": 139.421337,
+  "confidence": "MEDIUM",
+  "source": "OSM way 147494581 tourism=attraction 'Old Tailem Town' (centre)",
+  "note": "Princes Highway, Tailem Bend."
+ },
+ "murray-bridge-11": {
+  "lat": -35.248095,
+  "lon": 139.145868,
+  "confidence": "MEDIUM",
+  "source": "OSM node 10294493709 tourism=attraction 'Ferries McDonald Loop Trail Parking' (park relation 571940 centroid -35.2224,139.1328 not used)",
+  "note": ""
+ },
+ "mannum-2": {
+  "lat": -34.92768,
+  "lon": 139.215906,
+  "confidence": "MEDIUM",
+  "source": "OSM node 360124295 waterway=waterfall 'Mannum Falls'; lower car park n1974620846 -34.931933,139.224511, upper car park n3076433327 -34.926641,139.217848",
+  "note": "Waterfall node is 150 m from the upper car park/ viewpoint area."
+ },
+ "coorong-national-park-3": {
+  "lat": -36.03574,
+  "lon": 139.568092,
+  "confidence": "MEDIUM",
+  "source": "OSM node 4563413196 tourism=attraction 'Jacks Point Pelicans Observatory' (Pelican Islands info nodes within 150 m)",
+  "note": "Walk is 1.2 km return to the observatory; point is the observatory end, route not in OSM."
+ },
+ "coorong-national-park-8": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "source": "",
+  "note": "Lakes Nature Walk (Loop Road, Coorong NP) is not in OSM or Nominatim; only Loop Road (way 24790556) and Salt Creek features found, nothing tied to the trail."
+ },
+ "coorong-national-park-14": {
+  "lat": -35.685067,
+  "lon": 139.33857,
+  "confidence": "MEDIUM",
+  "source": "OSM way 1042086969 man_made=pier on the Meningie foreshore of Lake Albert (second pier way 438738724 at -35.6805,139.3406)",
+  "note": "Foreshore access point, not the lake centroid (-35.633,139.283, Wikipedia, in water)."
+ },
+ "riverland-1": {
+  "lat": -34.449608,
+  "lon": 140.565376,
+  "confidence": "MEDIUM",
+  "source": "OSM way 264983234 tourism=attraction 'Loxton Historical Village' (centre of the site)",
+  "note": ""
+ },
+ "riverland-7": {
+  "lat": -34.246442,
+  "lon": 140.620666,
+  "confidence": "MEDIUM",
+  "source": "OSM way 663121055 tourism=attraction 'The Big Orange', Berri",
+  "note": ""
+ },
+ "riverland-12": {
+  "lat": -34.1798663,
+  "lon": 139.9892618,
+  "confidence": "MEDIUM",
+  "source": "OSM ways 1450977907 + 1163130458 'Clifftop walk', Waikerie (ferry n316758309 -34.1756,139.9864 at the west end; silo art -34.182,139.991); halfway of the mapped clifftop route",
+  "note": "Art Trail section not separately mapped."
+ },
+ "riverland-17": {
+  "lat": -34.146396,
+  "lon": 140.708764,
+  "confidence": "HIGH",
+  "source": "OSM node 6447466376 'Renmark Lookout' (man_made=tower, tourism=viewpoint); Wikivoyage listing geo -34.1463,140.7087 (~10 m)",
+  "note": ""
+ },
+ "riverland-28": {
+  "lat": -34.176804,
+  "lon": 140.780481,
+  "confidence": "LOW",
+  "source": "OSM node 604277926 tourism=viewpoint (unnamed) near Paringa, beside Bert Dix Memorial Park n316601777",
+  "note": "No feature named Headings Cliff in OSM; unnamed lookout on the cliff-top at Paringa, may be it."
+ },
+ "karoonda-pioneer-park": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "source": "",
+  "note": "Pioneer Park is not in OSM or Nominatim (only Karoonda Lions Park camp site -35.095,139.89611 and an untagged way 308865135), and the town point must not be used for the attraction."
+ },
+ "ngarkat-conservation-park": {
+  "lat": -35.743948,
+  "lon": 140.801453,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1811167074 tourism=camp_site 'Comet Bore Campground' beside the Ngarkat Highway (Ngarkat locality n2755261112 -35.7667,140.7983)",
+  "note": "Visitor point; relation 540754 centroid not used. Box Flat Campground n6389895636 (-35.6098,140.3959) is the west-side alternative."
+ },
+ "innes-national-park-6": {
+  "lat": -35.245782,
+  "lon": 136.825915,
+  "confidence": "LOW",
+  "source": "Middle vertex of OSM way 515739273 (unnamed path, 52 pts) beside West Cape lookout n5036064854 (-35.246705,136.827771) and lighthouse n5036063607 (-35.244469,136.824015)",
+  "note": "Loop route not tagged by name; draft point (-35.246353,136.822319) is ~330 m west."
+ }
+}

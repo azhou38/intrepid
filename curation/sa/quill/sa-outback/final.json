@@ -1,0 +1,729 @@
+{
+ "spots": {
+  "coober-pedy-1": {
+   "name": "Old Timers Mine",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Self-guided tour of a mine dug in 1916, with underground homes, an opal noodling pit and a museum.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.008924,
+    "longitude": 134.759636
+   },
+   "free": false,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://oldtimersmine.com.au",
+   "coordinates_source": "osm tourism=attraction 'Old Timers Mine & Museum' (-29.008924,134.759636) + Wikivoyage listing (-29.00901,134.75974), 13 m apart: HIGH",
+   "notes": [
+    "Adult $15 / concession $12.50 from the southaustralia.com listing; oldtimersmine.com.au (title 'Home | Old Timers Mine') shows no price."
+   ]
+  },
+  "coober-pedy-2": {
+   "name": "Umoona Opal Mine and Museum",
+   "icon": "💎",
+   "category": "museum",
+   "bio": "Underground opal mine with a free museum and daily guided tours of 1920s workings in Coober Pedy.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.009584,
+    "longitude": 134.754423
+   },
+   "free": false,
+   "costMin": 15.5,
+   "costMax": 15.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://umoonaopalmine.com.au",
+   "coordinates_source": "osm tourism=museum 'Umoona Opal Mine & Museum' (nominatim): MEDIUM",
+   "notes": [
+    "Museum is free; the price is the adult mine tour ($15.50 on the official booking page, $16 on its virtual-tour page, tours 10am/2pm/4pm, about 45 min)."
+   ]
+  },
+  "coober-pedy-3": {
+   "name": "Tom's Working Opal Mine",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Working opal mine on the Stuart Highway where visitors walk the underground seams and see opal in the walls.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.023761,
+    "longitude": 134.740903
+   },
+   "free": false,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "coordinates_source": "osm tourism=attraction 'Tom's Working Opal Mine' (nominatim): MEDIUM",
+   "ticket_note": "No official site found by search or by guessed domain; operator unconfirmed.",
+   "notes": [
+    "Price is an adult self-guided figure from a guidebook listing, unverified; guided tours cost more."
+   ]
+  },
+  "coober-pedy-4": {
+   "name": "Kanku-Breakaways Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Eroded arid hills about 30 km north of Coober Pedy, in a park co-managed with its Aboriginal owners.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -28.872974,
+    "longitude": 134.737584
+   },
+   "free": false,
+   "costMin": 13.5,
+   "costMax": 13.5,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kanku-breakaways-conservation-park",
+   "wiki": "Kanku-Breakaways Conservation Park",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Kanku-Breakaways Conservation Park\"",
+   "notes": [
+    "pin: LOW",
+    "Vehicle entry $13.50 ($11.20 concession), bought from Coober Pedy Visitor Information Centre or online (parks.sa.gov.au page). Distance: Wikipedia says 33 km, council 25 km north of town.",
+    "Dog Fence / lookouts are from third-party pages only; not used."
+   ]
+  },
+  "coober-pedy-5": {
+   "name": "Saint Elijah the Prophet Serbian Orthodox Church",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Serbian Orthodox church bored into a hillside in Coober Pedy, with a richly ornamented interior open to visitors.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -29.012718,
+    "longitude": 134.773402
+   },
+   "free": true,
+   "costBasis": "donation",
+   "wiki": "Saint Elijah the Prophet Serbian Orthodox Church, Coober Pedy",
+   "coordinates_source": "osm amenity=place_of_worship 'Saint Elijah Church' (-29.012718,134.773402) + Wikipedia article (-29.012838,134.773298), 17 m apart: HIGH",
+   "ticket_note": "Parish church with no operator site found.",
+   "notes": [
+    "Donation entry (about $5, honour box) is from visitor reviews, not an official source; interior named by Wikivoyage."
+   ]
+  },
+  "coober-pedy-6": {
+   "name": "Faye's Underground Home",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "Tour of an underground home dug by hand by women opal miners, with living rooms cut into the rock of Coober Pedy.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -29.010877,
+    "longitude": 134.763161
+   },
+   "free": false,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "coordinates_source": "osm tourism=museum (nominatim) + Wikivoyage listing (-29.011308,134.763984), ~90 m apart: MEDIUM",
+   "ticket_note": "No official site found.",
+   "notes": [
+    "Big4 notes bus tours do not run mid-Oct to late March.",
+    "Bio 'women opal miners' follows Wikivoyage (carved by several women) and a newspaper/SCMP mention of Faye Naylor, one of the first female opal miners."
+   ]
+  },
+  "coober-pedy-8": {
+   "name": "Big Winch",
+   "icon": "⛏️",
+   "category": "landmark",
+   "bio": "Hilltop lookout and giant winch in the middle of Coober Pedy, with views over the opal fields and the town.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -29.008703,
+    "longitude": 134.758022
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "osm tourism=viewpoint 'The Big Winch' (-29.008703,134.758022) + Wikivoyage (-29.008827,134.758128), 14 m: HIGH",
+   "ticket_note": "Open lookout; no single steward site verified.",
+   "notes": [
+    "Free per southaustralia.com listing (Big Winch 360 Lookout)."
+   ]
+  },
+  "coober-pedy-9": {
+   "name": "Coober Pedy Golf Club",
+   "icon": "⛳",
+   "category": "entertainment",
+   "bio": "Grassless desert golf course where players carry a piece of turf to tee off, a few kilometres from town.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -29.007245,
+    "longitude": 134.730675
+   },
+   "free": false,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "wiki": "Coober Pedy Golf Club",
+   "coordinates_source": "osm leisure=golf_course 'Coober Pedy Opal Fields Golf Club' (nominatim): MEDIUM",
+   "ticket_note": "Club site (cooberpedygolfclub.com.au) not loaded or verified.",
+   "notes": [
+    "$10 green fee from a caravan-park listing, unverified (another source says more); visitors may need to arrange play via the club sponsor. OSM name is 'Coober Pedy Opal Fields Golf Club'."
+   ]
+  },
+  "innamincka-1": {
+   "name": "Innamincka Regional Reserve",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Reserve of over 1.3 million hectares along Cooper Creek, with waterholes for fishing and canoeing and Burke and Wills sites.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -27.7454,
+    "longitude": 140.7541
+   },
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/innamincka-regional-reserve",
+   "wiki": "Innamincka Regional Reserve",
+   "coordinates_source": "LOW: Commons geotagged median (-27.7454,140.7541); Wikipedia -27.541,140.596 is a centroid 27 km away. Visitor point is the national parks visitor centre in the former AIM building in Innamincka town (not located on a map).",
+   "notes": [
+    "pin: LOW",
+    "Vehicle entry $14.40 (parks page, Fees must be paid before entry); the page's alert says Malkumba Coongie Lakes NP and significant parts of the reserve are closed until further notice due to flooding (seen Oct 2026).",
+    "Desert Parks Pass: not stated on the page for this reserve; not recorded."
+   ]
+  },
+  "innamincka-2": {
+   "name": "Cullyamurra Waterhole",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Cooper Creek waterhole described as Australia's largest billabong, with canoeing and riverside camping.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -27.706547,
+    "longitude": 140.881642
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=water (nominatim) \"Cullyamurra Waterhole\"",
+   "notes": [
+    "pin: LOW",
+    "Inside Innamincka Regional Reserve, so its vehicle entry fee applies; campground fees separate. Canoeing limited to Cullyamurra-Wills site and needs a permit (DEW fact sheet). 7 km length from a hotel page, unverified."
+   ]
+  },
+  "innamincka-3": {
+   "name": "Malkumba–Coongie Lakes National Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Ramsar-listed arid wetland of channels, lakes and floodplains north-west of Innamincka, for canoeing and birds.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -27.242395,
+    "longitude": 140.139117
+   },
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/malkumba-coongie-lakes-national-park",
+   "wiki": "Malkumba–Coongie Lakes National Park",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Malkumba-Coongie Lakes National Park\"",
+   "notes": [
+    "pin: LOW",
+    "Vehicle entry $14.40. Closed until further notice due to flooding (parks page alert, Oct 2026); 4WD via Strzelecki Track, about 100 km north-west of Innamincka."
+   ]
+  },
+  "innamincka-4": {
+   "name": "Elizabeth Symon Nursing Home",
+   "icon": "🏥",
+   "category": "historic",
+   "bio": "Heritage-listed former Inland Mission nursing home, now Innamincka's park headquarters, with Burke and Wills displays.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -27.746965,
+    "longitude": 140.736515
+   },
+   "coordinates_source": "OSM historic=memorial \"Historic Elizabeth Symon Nursing Home\" (nominatim), MEDIUM, 148 m from the Innamincka centre",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/innamincka-regional-reserve",
+   "notes": [
+    "Parks SA Innamincka page: interpretation centre open daily, in the town centre in the former Australian Inland Mission building; opened as nursing home 1928, reopened 1994 as park HQ. Admission free (town-centre building); the reserve itself charges $14.40 per vehicle, not this stop."
+   ]
+  },
+  "oodnadatta-track": {
+   "name": "Oodnadatta Track",
+   "icon": "🛣️",
+   "category": "landmark",
+   "bio": "Gravel outback track from Marree to Marla along the old Ghan railway line, past sidings, mound springs and Lake Eyre South.",
+   "visitHoursMin": 8,
+   "visitHoursMax": 48,
+   "coordinates": {
+    "latitude": -28.225829,
+    "longitude": 135.833185
+   },
+   "coordinates_source": "Midpoint along the 614 km route line published on Wikivoyage \"Oodnadatta Track\" (289-vertex LineString, computed halfway); OSM route relation not reachable (Overpass down)",
+   "wiki": "Oodnadatta Track",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Pin is computed from Wikivoyage route geometry, MEDIUM. No ticketUrl: no single steward. Wikivoyage: no permits needed; fuel at Marree, William Creek, Oodnadatta, Marla."
+   ],
+   "ticket_note": "public road with no single steward"
+  },
+  "birdsville-track": {
+   "name": "Birdsville Track",
+   "icon": "🛣️",
+   "category": "landmark",
+   "bio": "Outback track from Marree to Birdsville across the Tirari Desert, with a pub stop at Mungerannie on the way.",
+   "visitHoursMin": 8,
+   "visitHoursMax": 24,
+   "coordinates": {
+    "latitude": -27.5647075,
+    "longitude": 138.7099904
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Measured midpoint (257 km) of the three chained OSM ways named \"Birdsville Track\" (514 km, Marree -29.6514,138.0715 to -25.9187,139.3787)  \"\"",
+   "wiki": "Birdsville Track",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Pin LOW-MEDIUM: on the named OSM road near the estimated midpoint, not a measured midpoint. Wikivoyage: only 4WDs make it across the harsh sections. Draft said Mungerannie is halfway; it is not (about 204 km of 517 km), so bio does not say so."
+   ],
+   "ticket_note": "public road with no single steward"
+  },
+  "kati-thanda-lake-eyre-national-park": {
+   "name": "Kati Thanda–Lake Eyre National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Park around Australia's largest salt lake, with 4WD camping at Halligan Bay Point and lake views from the Oodnadatta Track.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -28.57862,
+    "longitude": 136.93572
+   },
+   "coordinates_source": "OSM natural=bay \"Halligan Bay\" (nominatim), the park page names Halligan Bay Point as the camping and sightseeing spot; MEDIUM",
+   "wiki": "Kati Thanda–Lake Eyre National Park",
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kati-thanda-lake-eyre-national-park",
+   "notes": [
+    "Parks SA: vehicle entry $14.40 per vehicle, camping $23.10 per night, booked and paid online before entry; Desert Parks Pass also covers it. Access 4WD only via public access routes; William Creek route closed 1 Dec-15 Mar; best April-October. Halligan Bay reopened to 4WD per the page alert."
+   ]
+  },
+  "munga-thirri-simpson-desert-national-park": {
+   "name": "Munga-Thirri–Simpson Desert National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Australia's largest national park, a 4WD desert of parallel red dunes entered only with a Desert Parks Pass.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "coordinates": {
+    "latitude": -25.996877,
+    "longitude": 137.999076
+   },
+   "coordinates_source": "OSM locality \"Poeppel Corner\" (nominatim), the park page names the Poeppel Corner entry; MEDIUM (a visitor entry point, not the park centroid)",
+   "wiki": "Munga-Thirri–Simpson Desert National Park",
+   "free": true,
+   "costBasis": "open",
+   "needs": "permit",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/munga-thirri-simpson-desert-national-park",
+   "notes": [
+    "Desert Parks Pass (12-month vehicle entry and camping) is mandatory; single-day entry not available (parks.sa.gov.au/book-and-pay/desert-parks-pass and the park page). Price not on the pages: UNVERIFIED, so no price written. Closed 1 Dec-15 Mar every year; park also closed at fetch time after rain (park alert). Park page: 3.6 million hectares, largest national park in Australia.",
+    "Poeppel Corner pin shared with nothing else in shard."
+   ]
+  },
+  "witjira-national-park": {
+   "name": "Witjira National Park",
+   "icon": "⛺",
+   "category": "nature",
+   "bio": "Remote desert park with more than 120 mound springs, Dalhousie Springs and camping at Mount Dare and Purni Bore.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 24,
+   "coordinates": {
+    "latitude": -26.06985,
+    "longitude": 135.247981
+   },
+   "coordinates_source": "OSM place=hamlet \"Mount Dare\" (nominatim), the park gateway with hotel, camping and fuel; MEDIUM (not the park centroid)",
+   "wiki": "Witjira National Park",
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/witjira-national-park",
+   "notes": [
+    "Parks SA: vehicle entry $14.40 per vehicle, camping from $23.10 per night. A Desert Parks Pass is mandatory only for travel east of Dalhousie Springs or camping at Purni Bore. Mount Dare camping is private (fee at the hotel). Park closed at fetch time after rain (park alert)."
+   ]
+  },
+  "dalhousie-springs": {
+   "name": "Dalhousie Springs",
+   "icon": "♨️",
+   "category": "nature",
+   "bio": "National Heritage-listed artesian springs in Witjira National Park where visitors can swim in the main spring's warm water.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -26.42118,
+    "longitude": 135.50273
+   },
+   "coordinates_source": "OSM water \"Dalhousie Hot Springs Swimming Hole\" (nominatim), 4.4 km from the Wikipedia point for the whole spring complex; MEDIUM, pin is where visitors swim",
+   "wiki": "Dalhousie Springs",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Inside Witjira National Park: the park charges $14.40 per vehicle (on the Witjira spot, not repeated here). Two easy walks (main springs, Kingfisher Springs) per park page. 37C figure in the draft bio is unsourced on the park page, so not used. Park closed at fetch time after rain."
+   ],
+   "ticket_note": "part of Witjira National Park; the park page is on the Witjira spot"
+  },
+  "the-bubbler-and-blanche-cup": {
+   "name": "The Bubbler and Blanche Cup",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Two natural artesian mound springs beside the Oodnadatta Track, their pools ringed by green sedges.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -29.446557,
+    "longitude": 136.857963
+   },
+   "coordinates_source": "OSM tourism=attraction \"The Bubbler - Mound Spring\" (nominatim) with Commons median within ~800 m; HIGH for The Bubbler; Blanche Cup is about 800 m south-east so the pin is The Bubbler",
+   "wiki": "Wabma Kadarbu Mound Springs Conservation Park",
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/wabma-kadarbu-mound-springs-conservation-park",
+   "notes": [
+    "Parks SA: vehicle entry $14.40 per vehicle, book and pay online before arrival; camping not permitted (Coward Springs is private); swimming not allowed. Spot is effectively the conservation park (wiki is the park article). Blanche Cup OSM point (-29.452816,136.858756) was MEDIUM but is a separate feature."
+   ]
+  },
+  "coward-springs": {
+   "name": "Coward Springs",
+   "icon": "🌴",
+   "category": "historic",
+   "bio": "Heritage-listed Ghan railway siding on the Oodnadatta Track with a date farm, natural spa, self-guided walk and campground.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -29.400411,
+    "longitude": 136.814702
+   },
+   "coordinates_source": "OSM place=locality \"Coward Springs\" (nominatim), 289 m from the Wikipedia point; MEDIUM",
+   "wiki": "Coward Springs",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://cowardsprings.com.au/",
+   "notes": [
+    "Operator site loaded, title names Coward Springs. Info page: built 1888, on the SA Heritage Register since 1998, coffee shop and date products, spa needs no booking. Camping $18 per adult. Day-visit or spa fee is not published: UNVERIFIED, so shown free. Camel safari from the draft bio is not on the operator site, dropped from the bio. Sits inside Wabma Kadarbu Mound Springs Conservation Park per the operator."
+   ]
+  },
+  "curdimurka-siding": {
+   "name": "Curdimurka Siding",
+   "icon": "🚂",
+   "category": "historic",
+   "bio": "Preserved Ghan railway siding on the Oodnadatta Track showing how the families who maintained the line lived.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -29.476846,
+    "longitude": 137.082041
+   },
+   "coordinates_source": "OSM place=locality \"Curdimurka\" (nominatim), 102 km from Marree per Wikivoyage; MEDIUM",
+   "wiki": "Curdimurka",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Wikivoyage: preserved by the Ghan Railway Preservation Society; outback ball held every two years. No official visitor page found, so no ticketUrl."
+   ],
+   "ticket_note": "no single official visitor page found"
+  },
+  "algebuckina-bridge": {
+   "name": "Algebuckina Bridge",
+   "icon": "🌉",
+   "category": "historic",
+   "bio": "Historic Ghan railway bridge on the Oodnadatta Track, the longest bridge in South Australia.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -27.899413,
+    "longitude": 135.807467
+   },
+   "coordinates_source": "OSM tourism=attraction \"Algebuckina Bridge\" (nominatim), 13 m from the Wikipedia point; MEDIUM-HIGH",
+   "wiki": "Algebuckina Bridge",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Wikivoyage Oodnadatta Track: longest bridge in South Australia and part of the old Ghan railway; river name not stated in fetched sources so not used."
+   ],
+   "ticket_note": "roadside heritage structure, no steward page"
+  },
+  "william-creek": {
+   "name": "William Creek",
+   "icon": "🍺",
+   "category": "historic",
+   "bio": "Tiny Oodnadatta Track settlement with a remote outback pub and scenic flights over Lake Eyre.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -28.9093,
+    "longitude": 136.340759
+   },
+   "coordinates_source": "Wikipedia article \"William Creek, South Australia\" coordinates (4 m from the hint; OSM point is an administrative centroid, Commons median 300 m away); MEDIUM",
+   "wiki": "William Creek, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.williamcreekhotel.com/",
+   "notes": [
+    "Operator site loaded: William Creek Hotel offers accommodation, camping, scenic flights and Lake Eyre trips. Wikivoyage: one of the smallest settlements in Australia, steep fuel prices. Pin is 4 dp from Wikipedia (6 dp stored form is the draft value); only one precise source."
+   ]
+  },
+  "pink-roadhouse-oodnadatta": {
+   "name": "Pink Roadhouse",
+   "icon": "🩷",
+   "category": "landmark",
+   "bio": "Pink roadhouse in Oodnadatta, the Oodnadatta Track's fuel stop, post office and information hub.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -27.5489639,
+    "longitude": 135.447967
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://pinkroadhouse.com.au/",
+   "coordinates_source": "OSM shop=convenience 'Pink Roadhouse' via Nominatim (MEDIUM)",
+   "notes": [
+    "Free to stop; meals and fuel are paid extras. Site pinkroadhouse.com.au title 'The Pink Roadhouse - On the Oonadatta Track' (sic)."
+   ]
+  },
+  "railway-tjukurpa-museum": {
+   "name": "Railway Tjukurpa Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Museum in Oodnadatta's old Ghan railway station; the key is collected from the Pink Roadhouse.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -27.5459801,
+    "longitude": 135.4476922
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "No official site found; run by the community, key held at the Pink Roadhouse.",
+   "coordinates_source": "OSM tourism=museum 'Oodnadatta Railway Station Museum' (Nominatim); Wikivoyage listing -27.546114,135.447715 is 18 m away (HIGH)",
+   "notes": [
+    "No fee found in any source; marked free but unverified. Key from Pink Roadhouse or Transcontinental Hotel."
+   ]
+  },
+  "marree": {
+   "name": "Marree",
+   "icon": "🚂",
+   "category": "historic",
+   "bio": "Outback railway town at the start of the Birdsville and Oodnadatta Tracks, with the historic Marree Hotel.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.64747,
+    "longitude": 138.06356
+   },
+   "wiki": "Marree, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town with no single steward.",
+   "coordinates_source": "OSM boundary=administrative centre via resolve-pin (MEDIUM); Commons main-street photos at -29.64703,138.0631",
+   "notes": [
+    "Town as a draw per Wikivoyage and Flinders & Outback."
+   ]
+  },
+  "marree-mosque": {
+   "name": "Marree Mosque",
+   "icon": "🕌",
+   "category": "religious",
+   "bio": "A 2003 recreation of Australia's first mosque, a mud-brick building raised by Afghan cameleers around 1882.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -29.6456535,
+    "longitude": 138.0633097
+   },
+   "wiki": "Marree Mosque",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No steward site.",
+   "coordinates_source": "OSM building=ruins 'Marree Mosque' (Nominatim); Commons photo of the 1884 mosque at -29.6455,138.063 agrees (HIGH). Wikipedia's -29.651346 is 650 m south and was not used",
+   "notes": [
+    "OSM tags the site as ruins and Wikipedia calls it a former mosque; Wikivoyage says a recreation used by the local Afghan community. Visitors see it from outside. Worth confirming access."
+   ]
+  },
+  "mungerannie-hotel": {
+   "name": "Mungerannie Hotel",
+   "icon": "🍺",
+   "category": "landmark",
+   "bio": "Outback pub on the Birdsville Track, its bar ceiling covered in stockmen's hats and other memorabilia.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -28.0186168,
+    "longitude": 138.6632836
+   },
+   "wiki": "Mungeranie, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Official domain mungeranniehotel.com.au is unconfirmed (new owners; site may have changed); see needs_browser.",
+   "coordinates_source": "OSM amenity=pub 'Mungerannie Hotel' (Nominatim) (MEDIUM)",
+   "notes": [
+    "Renamed from 'Mungerannie' (draft) to the pub it is; icon changed. Free to stop; drinks, meals, camping are paid extras."
+   ]
+  },
+  "andamooka": {
+   "name": "Andamooka",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Opal-mining village near Roxby Downs where visitors can noodle for opal on the old mullock heaps.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -30.450923,
+    "longitude": 137.164445
+   },
+   "wiki": "Andamooka, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town with no single steward.",
+   "coordinates_source": "OSM place=village via resolve-pin (MEDIUM)",
+   "notes": [
+    "Fossicking: never on registered claims. Andamooka Observatory runs paid noodling tours (not priced here)."
+   ]
+  },
+  "arid-recovery-reserve": {
+   "name": "Arid Recovery Reserve",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Fenced desert reserve north of Roxby Downs where rare native species are seen on sunset tours.",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -30.4778,
+    "longitude": 136.8931
+   },
+   "free": false,
+   "costMin": 100,
+   "costMax": 100,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://aridrecovery.org.au/visit/tours",
+   "coordinates_source": "LOW: approximate point on Borefield Road at Olympic Dam (OSM highway); the tour gate is 12 km along Borefield Road from Olympic Way per Roxby Downs Council, no gate coordinates found",
+   "notes": [
+    "pin: LOW. Adult (16+) $100 plus booking fees, child $50, from aridrecovery.org.au/visit/tours; 2.5 h, Fridays April-October (extra Wednesdays in school holidays). Booked through Roxby Downs Visitor Information Centre."
+   ]
+  },
+  "woomera-missile-park": {
+   "name": "Woomera Missile Park",
+   "icon": "🚀",
+   "category": "museum",
+   "bio": "Open-air display of missiles and rockets developed at the Woomera range, in a park in the town centre.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.198311,
+    "longitude": 136.825112
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town-run open park, no official page.",
+   "coordinates_source": "Median of 5 geotagged Commons 'Woomera Missile Park' files (spread ~40 m); Wikivoyage places it at Banool and Dewrang Avenues (MEDIUM)",
+   "notes": [
+    "Single-source point; no OSM feature found."
+   ]
+  },
+  "woomera-heritage-centre": {
+   "name": "Woomera Heritage Centre",
+   "icon": "🛰️",
+   "category": "museum",
+   "bio": "Museum in Woomera's heritage and visitor centre on the history of the Rocket Range.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -31.1998425,
+    "longitude": 136.8261022
+   },
+   "free": false,
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticket_note": "woomera.com.au answers 200 on every path with a splash page, so unconfirmed; needs browser.",
+   "coordinates_source": "OSM tourism=information 'Woomera Heritage and Visitor Information Centre', Dewrang Avenue (Photon) (MEDIUM)",
+   "notes": [
+    "Price conflicts: Wikivoyage $6, an older listing $3 adult. $6 used; unverified."
+   ]
+  },
+  "lake-hart": {
+   "name": "Lake Hart",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "Salt lake beside the Stuart Highway, seen pink from the roadside Lake Hart Lookout.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.2335747,
+    "longitude": 136.4051521
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No steward page.",
+   "coordinates_source": "OSM 'Lake Hart Lookout' (tourism=camp_site / amenity=shelter) on the Stuart Highway (Nominatim) (MEDIUM); the lake itself is at -31.144,136.385",
+   "notes": [
+    "Lake lies within the Woomera Test Range; only the highway lookout is a public stop. Wikipedia title 'Lake Hart (South Australia)' does not exist (redlink), so wiki omitted. 'Pink' per southaustralia.com; colour varies with season."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "coober-pedy-7",
+   "name": "Moon Plain",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Moon Plain",
+    "icon": "🌙",
+    "category": "nature",
+    "bio": "Barren, pale plain near Coober Pedy where scenes of Mad Max Beyond Thunderdome and Priscilla were filmed.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.5,
+    "coordinates": null,
+    "free": true,
+    "costBasis": "open",
+    "coordinates_source": "none found: no OSM feature and no Wikipedia article (the 'Moon Plain (South Australia)' title 404s); sources give only 'near Coober Pedy'",
+    "notes": [
+     "pin: LOW",
+     "Needs the pin from a map source (Oodnadatta Track / William Creek Road stopping point) by the owner. Drop wiki: article does not exist."
+    ]
+   }
+  }
+ ],
+ "notes": []
+}

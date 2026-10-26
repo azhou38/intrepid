@@ -9,6 +9,7 @@ only = a[a.index('--region') + 1] if '--region' in a else None
 limit = int(a[a.index('--limit') + 1]) if '--limit' in a else 10**9
 OUT = 'curation/sa/pins.json'
 pins = json.load(open(OUT)) if os.path.exists(OUT) else {}
+HINTS = json.load(open('curation/sa/hints.json')) if os.path.exists('curation/sa/hints.json') else {}
 plans = {r: json.load(open(f'curation/sa/plan/{r}.json')) for r in [os.path.basename(f)[:-5] for f in glob.glob('curation/sa/plan/*.json')]}
 dest_xy = {d['id']: d['coordinates'] for p in plans.values() for d in p['destinations'] if d.get('coordinates')}
 CATMAP = {'museum': 'museum', 'landmark': 'landmark', 'monument': 'monument', 'religious': 'religious', 'nature': 'nature', 'viewpoint': 'viewpoint',
@@ -26,7 +27,7 @@ for f in sorted(glob.glob('curation/sa/quill/sa-*/out-*.json')):
         pending = not c.get('latitude') or 'pending' in src.lower() or 'LOW' in src
         if sid in pins and not ('--retry-low' in a and pins[sid].get('confidence') == 'LOW'): continue
         if not pending: continue
-        hint = c if c.get('latitude') else (pspot.get(sid, {}).get('coordinates') or dest_xy.get(pspot.get(sid, {}).get('destination')) or None)
+        hint = c if c.get('latitude') else (pspot.get(sid, {}).get('coordinates') or dest_xy.get(pspot.get(sid, {}).get('destination')) or HINTS.get(sid) or None)
         todo.append((region, sid, s, hint))
 print(len(todo), 'spots to pin'); n = 0
 for region, sid, s, hint in todo[:limit]:

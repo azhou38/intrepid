@@ -1,0 +1,1786 @@
+{
+ "spots": {
+  "adelaide-1": {
+   "name": "Adelaide Botanic Garden",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Free garden at the east end of North Terrace, open daily, with large lawns and a museum of economic botany.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.917972,
+    "longitude": 138.611704
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.botanicgardens.sa.gov.au",
+   "coordinates_source": "resolve-pin HIGH: Wikivoyage listing geotag + OSM way 14306406 leisure=garden 'Adelaide Botanic Gardens' centre (-34.918406,138.611363), 55 m apart  \"\"",
+   "notes": "Free entry per Wikivoyage and the Botanic Gardens site; Bicentennial Conservatory is a separate spot (adelaide-21)."
+  },
+  "adelaide-2": {
+   "name": "Adelaide Central Market",
+   "icon": "🥬",
+   "category": "market",
+   "bio": "Covered food market in the city centre with over 70 traders, open Tuesday to Saturday.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.92951,
+    "longitude": 138.597812
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://adelaidecentralmarket.com.au",
+   "coordinates_source": "resolve-pin HIGH: OSM way 27932512 amenity=marketplace 'Adelaide Central Markets'; Wikipedia -34.92972,138.5975 (~30 m)  \"\"",
+   "notes": "Trading hours on the market site: Tue, Wed, Thu, Fri, Sat. Pin is Wikipedia only; re-check against OSM."
+  },
+  "adelaide-3": {
+   "name": "Art Gallery of South Australia",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Free state art gallery on North Terrace, with Australian, Aboriginal and European collections.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.920372,
+    "longitude": 138.603825
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.agsa.sa.gov.au",
+   "coordinates_source": "resolve-pin HIGH: OSM way 205173204 tourism=gallery (centre) + Wikipedia article point -34.920556,138.603889 (~20 m)  \"\"",
+   "notes": "agsa.sa.gov.au/visit: general entry is free, charges may apply for some exhibitions. About 80 m from the South Australian Museum pin."
+  },
+  "adelaide-4": {
+   "name": "South Australian Museum",
+   "icon": "🦖",
+   "category": "museum",
+   "bio": "Free state museum on North Terrace, with natural history galleries and an Aboriginal cultural collection.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.920783,
+    "longitude": 138.603017
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.samuseum.sa.gov.au",
+   "coordinates_source": "Wikipedia article coordinates, within 12 m of the Wikivoyage listing point and 41 m of the Commons photo median (two sources agree)",
+   "notes": "Free per southaustralia.com listing and Wikivoyage; open daily 10am-5pm per the museum site."
+  },
+  "adelaide-5": {
+   "name": "Glenelg",
+   "icon": "🏖️",
+   "category": "beach",
+   "wiki": "Glenelg, South Australia",
+   "bio": "Beachside suburb reached by tram from the city, with a long jetty, Moseley Square and a sandy beach.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.98043,
+    "longitude": 138.51053
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 552942634 Glenelg Jetty footway, landward end; Wikipedia/Commons points are within ~160 m  \"\"",
+   "notes": "Tram from the city confirmed on Wikivoyage. No ticketUrl: no single steward."
+  },
+  "adelaide-6": {
+   "name": "Adelaide Oval",
+   "icon": "🏟️",
+   "category": "landmark",
+   "bio": "Cricket and AFL ground by the River Torrens, with stadium tours and a RoofClimb over the stands.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.915595,
+    "longitude": 138.596156
+   },
+   "costMin": 28,
+   "costMax": 28,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.adelaideoval.com.au/tours/",
+   "coordinates_source": "OSM leisure=stadium via Nominatim (MEDIUM)",
+   "unverified_cost": true,
+   "notes": "Stadium Tour adult $28 is from the southaustralia.com listing; the Oval's own tours page loaded but shows no standard-tour price in text (scoreboard tour $295 pp). RoofClimb priced separately; Bradman Collection guided sessions free."
+  },
+  "adelaide-7": {
+   "name": "Adelaide Zoo",
+   "icon": "🐼",
+   "category": "entertainment",
+   "bio": "City zoo beside the River Torrens, home to giant pandas, with free keeper talks.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.9133996,
+    "longitude": 138.6073551
+   },
+   "costMin": 49.5,
+   "costMax": 49.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.zoossa.com.au/adelaide-zoo/",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 50550960 tourism=zoo \"Adelaide Zoo\" (centre)  \"\"",
+   "notes": "Adult $49.50 from zoossa.com.au; keeper talks free. Giant pandas per the zoo's own and SATC listings."
+  },
+  "adelaide-8": {
+   "name": "Port Adelaide",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Historic port district north-west of the city, with heritage streets, museums and dolphin sanctuary cruises.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.834275,
+    "longitude": 138.512355
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM boundary=administrative 'Port Adelaide' via Nominatim (MEDIUM); a district centroid, not a place=suburb node",
+   "notes": "Museums within it are separate spots (adelaide-39..42). No ticketUrl: a district."
+  },
+  "adelaide-9": {
+   "name": "Morialta Conservation Park",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Gorge park in the foothills with three waterfalls, cliffs and walking trails, free to enter.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.90303,
+    "longitude": 138.7019715
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/morialta-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 984181800 amenity=parking at the end of Morialta Falls Road (Morialta Falls main car park; road way 77257723 ends beside it)  \"\"",
+   "notes": "parks.sa.gov.au: 'Come and enjoy this park for free'; vehicle gates open daily (unstaffed), closed Christmas Day. Needs a visitor-point pin (Morialta Falls car park) from OSM. Draft Waterfall Gully pin wrongly sat here (see adelaide-10)."
+  },
+  "adelaide-10": {
+   "name": "Waterfall Gully",
+   "icon": "💦",
+   "category": "nature",
+   "wiki": "Waterfall Gully, South Australia",
+   "bio": "Gully with First Falls, a short walk and a cafe, at the foot of the Mount Lofty climb.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.961792,
+    "longitude": 138.674302
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/waterfall-gully",
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Waterfall Gully\"",
+   "notes": "DRAFT ERROR: the draft's wiki 'First Falls (Adelaide Hills, South Australia)' and pin (-34.90638889,138.70805556) are Morialta Conservation Park's First Falls on Fourth Creek, not Waterfall Gully's. Wiki changed to the suburb article; pin is the suburb point and needs the gully's falls/car park point from OSM. parks.sa.gov.au/parks/waterfall-gully loaded: 'Free entry'."
+  },
+  "adelaide-11": {
+   "name": "Haigh's Chocolate Factory",
+   "icon": "🍫",
+   "category": "entertainment",
+   "wiki": "Haigh's Chocolates",
+   "bio": "Chocolate factory visitor centre in Parkside, with a free guided experience of how Haigh's makes its chocolate.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.94135,
+    "longitude": 138.608453
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.haighschocolates.com.au",
+   "coordinates_source": "resolve-pin HIGH: OSM node 260147280 shop=confectionery \"Haigh's Chocolate Factory\"; Wikivoyage geotag -34.9412,138.60834 (~25 m)  \"\"",
+   "notes": "southaustralia.com listing: free guided chocolate experience. Homepage loaded with Haigh's title; no deep link verified (visit-us and visitor-centre-tours returned 404)."
+  },
+  "adelaide-12": {
+   "name": "Adelaide Gaol",
+   "icon": "⛓️",
+   "category": "historic",
+   "bio": "Colonial jail from the 1840s, with daytime history tours and ghost tours after dark.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.917942,
+    "longitude": 138.584849
+   },
+   "costMin": 17,
+   "costMax": 17,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://adelaidegaol.com.au",
+   "coordinates_source": "OSM tourism=attraction via Nominatim (MEDIUM)",
+   "unverified_cost": true,
+   "notes": "Adult $17 from southaustralia.com listing; operator's site (Adelaide Gaol Preservation Society) loaded but shows no price in text. parks.sa.gov.au/parks/adelaide-gaol page is generic, not used as the link."
+  },
+  "adelaide-13": {
+   "name": "Semaphore",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside suburb on Adelaide's western coast with a long jetty, a patrolled beach and a strip of cafes on Semaphore Road.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.838919,
+    "longitude": 138.483978
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Semaphore\"",
+   "notes": "pin LOW: single Commons median, no OSM beach feature returned",
+   "wiki": "Semaphore, South Australia",
+   "ticket_note": "suburb and public beach with no single steward"
+  },
+  "adelaide-14": {
+   "name": "Henley Square and Jetty",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beachfront square of cafes and restaurants at the foot of Henley Beach's jetty on Adelaide's western coast.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.919531,
+    "longitude": 138.493736
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: OSM way 26725425 place=square 'Henley Square' centre; Commons median -34.919833,138.494 and Wikipedia -34.92,138.494 within ~45 m  \"\"",
+   "notes": "two sources agree within 25 m (Wikipedia rounded)",
+   "wiki": "Henley Beach, South Australia",
+   "ticket_note": "public square and jetty run by the council; no ticketed site"
+  },
+  "adelaide-17": {
+   "name": "Adelaide Park Lands",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Ring of parkland around the city centre and North Adelaide, open for walking, cycling, picnics and sport.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.9237,
+    "longitude": 138.6137
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "Rymill Park (Wikipedia -34.9236,138.6141 and Commons median -34.9239,138.6133 agree within 50 m): a main Park Lands visitor point, not a centroid",
+   "notes": "pin LOW-ish: a representative visitor point (Rymill Park lake) because the ring has no single point",
+   "ticket_note": "the Park Lands are many council parks with no single official visitor site"
+  },
+  "adelaide-18": {
+   "name": "Montefiore Hill",
+   "icon": "🌆",
+   "category": "viewpoint",
+   "bio": "North Adelaide lookout with the Light's Vision statue and a view over the city centre, best at night.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.912802,
+    "longitude": 138.594019
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM natural=peak Montefiore Hill (HIGH), 5 m from Wikivoyage geotag",
+   "notes": "",
+   "ticket_note": "public lookout with no steward site"
+  },
+  "adelaide-19": {
+   "name": "St Peter's Cathedral",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Anglican cathedral on King William Road in North Adelaide, free to enter and often seen on postcards of the city.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.912878,
+    "longitude": 138.598226
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM amenity=place_of_worship St Peter's Cathedral (HIGH), 14 m from Wikipedia point",
+   "notes": "free per Wikivoyage; judged as a visitor attraction (a guide singles it out, postcards and city tours)",
+   "wiki": "St Peter's Cathedral, Adelaide",
+   "ticketUrl": "https://www.stpeters-cathedral.org.au/"
+  },
+  "adelaide-20": {
+   "name": "National Wine Centre",
+   "icon": "🍷",
+   "category": "museum",
+   "bio": "University of Adelaide wine centre beside the Botanic Garden, with tastings, tours and a wine bar.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.919427,
+    "longitude": 138.613712
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=attraction (nominatim) \"National Wine Centre of Australia\"",
+   "notes": "general entry assumed free; tours, tastings and sommelier experiences are paid; fee unverified",
+   "wiki": "National Wine Centre of Australia",
+   "ticketUrl": "https://www.nationalwinecentre.com.au/"
+  },
+  "adelaide-21": {
+   "name": "Bicentennial Conservatory",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Glasshouse in the Botanic Garden that recreates a tropical lowland rainforest, with mist falling from the roof.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.916942,
+    "longitude": 138.612313
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM tourism=attraction Bicentennial Conservatory (MEDIUM), 0 m from Wikivoyage geotag",
+   "notes": "free entry per Wikivoyage (updated Dec 2022); the Botanic Gardens deep link 404s so the homepage is used",
+   "ticketUrl": "https://www.botanicgardens.sa.gov.au/"
+  },
+  "adelaide-22": {
+   "name": "MOD.",
+   "icon": "🔬",
+   "category": "museum",
+   "bio": "Free science and design museum run by the University of South Australia, on North Terrace beside the Morphett Street Bridge.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.921646,
+    "longitude": 138.592893
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"MOD.\"",
+   "notes": "pin LOW (single source). Official site: Tue-Sat, free entry",
+   "wiki": "MOD. (museum)",
+   "ticketUrl": "https://mod.org.au/"
+  },
+  "adelaide-23": {
+   "name": "Australian Space Discovery Centre",
+   "icon": "🚀",
+   "category": "museum",
+   "bio": "Free space gallery at Lot Fourteen on North Terrace, run by the Australian Space Agency, with hands-on exhibits.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.920473,
+    "longitude": 138.608737
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "resolve-pin HIGH: OSM way 153518090 McEwin Building (Lot Fourteen) centre + Wikivoyage listing geotag -34.9204,138.6087 (within 10 m)  \"\"",
+   "notes": "pin LOW. Free per the draft and SATC listing; not re-verified on the official site",
+   "ticket_note": "official site spacediscovery.gov.au could not be loaded by script; needs a browser check"
+  },
+  "adelaide-24": {
+   "name": "Parliament House",
+   "icon": "🏛️",
+   "category": "landmark",
+   "bio": "Home of the state's parliament, with free public tours on non-sitting days through the 1850s chambers.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.921111,
+    "longitude": 138.598889
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "Wikipedia article point (2 m from hint) and Commons median (-34.92047,138.598672) agree within 80 m",
+   "notes": "free tours twice daily on non-sitting days per the managing agency (Atlas note); times not re-verified on the visit page",
+   "wiki": "Parliament House, Adelaide",
+   "ticketUrl": "https://www.parliament.sa.gov.au/en/Visit"
+  },
+  "adelaide-25": {
+   "name": "Rundle Mall",
+   "icon": "🛍️",
+   "category": "landmark",
+   "bio": "Pedestrian shopping street in the city centre, home to the Mall's Balls sculpture.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.9228346,
+    "longitude": 138.6025992
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.rundlemall.com/",
+   "coordinates_source": "resolve-pin HIGH: OSM way 225562373 highway=pedestrian \"Rundle Mall\" centre; Wikipedia article point (-34.92290,138.60188) is 65 m away  \"\"",
+   "notes": [
+    "pin: LOW-ish, single source (Wikipedia article of the mall itself, 8 decimals); not cross-checked against OSM"
+   ]
+  },
+  "adelaide-26": {
+   "name": "Elder Park",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "Riverbank park on the Torrens with an 1882 rotunda, lake walking tracks and paddleboat hire.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.918428,
+    "longitude": 138.598381
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open park; no single official page found",
+   "coordinates_source": "resolve-pin HIGH: Wikipedia 'Elder Park' article point; OSM way 71093853 'Elder Park Rotunda' (-34.917968,138.598354) 51 m away  \"\"",
+   "notes": [
+    "Renamed from \"Torrens Lake and Elder Park\" to \"Elder Park\" (the lake is the setting; name = article title, so no wiki field). Popeye cruises are the operator, not the spot.",
+    "pin: no OSM feature returned (resolve-pin LOW, since Overpass was down); two independent sources within 100 m"
+   ]
+  },
+  "adelaide-27": {
+   "name": "Adelaide Himeji Garden",
+   "icon": "🌸",
+   "category": "nature",
+   "bio": "Free Japanese garden in the south Park Lands with a teahouse, lake garden and stepping stones.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.935797,
+    "longitude": 138.60981
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run garden; experienceadelaide page URL guessed 404, no verified official page",
+   "coordinates_source": "osm leisure=garden \"Adelaide Himeji Japanese Garden\" (resolve-pin HIGH)",
+   "notes": [
+    "Free; case against is size (~30 min), kept per judge."
+   ]
+  },
+  "adelaide-28": {
+   "name": "Veale Gardens",
+   "icon": "🌹",
+   "category": "nature",
+   "bio": "Formal south Park Lands garden with a serpentine canal and statues, beside the Adelaide-Qingdao Rose Garden.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.936856,
+    "longitude": 138.597899
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open garden; no verified official page",
+   "coordinates_source": "resolve-pin HIGH: OSM node 244443014 leisure=garden Veale Gardens; Wikipedia -34.9368,138.5971 (~65 m)  \"\"",
+   "notes": [
+    "pin: LOW - resolve-pin found only Wikipedia coordinates (4 decimals, equals the draft hint). Raise to owner / check against OSM when Overpass is up."
+   ]
+  },
+  "adelaide-29": {
+   "name": "Tennyson Dunes",
+   "icon": "🏖️",
+   "category": "nature",
+   "bio": "Coastal reserve protecting the state's most accessible intact dune system, with a 1.5 km discovery trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.87624,
+    "longitude": 138.484185
+   },
+   "wiki": "Wara Wayingga-Tennyson Dunes Conservation Reserve",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/wara-wayingga-tennyson-dunes-conservation-reserve",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 230636595 amenity=parking 'Tennyson Car Park North' beside way 657988072 Tennyson Dunes Conservation Reserve  \"\"",
+   "notes": [
+    "pin: LOW - Wikivoyage listing point only (5 decimals), not a car park or trailhead; raise to owner.",
+    "NPWS page: Free entry.",
+    "Park title Wara Wayingga-Tennyson Dunes Conservation Reserve; name kept as Tennyson Dunes per draft; wiki is the full article title."
+   ]
+  },
+  "adelaide-30": {
+   "name": "Largs Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach suburb north of Semaphore with an 1882 jetty, kiosk, playground and foreshore walking paths.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.82553,
+    "longitude": 138.48417
+   },
+   "wiki": "Largs Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach/foreshore; council page blocked to scripts, no single steward site",
+   "coordinates_source": "resolve-pin MEDIUM: Commons geotag of Largs Bay beach on sand, ~110 m from OSM way 29222198 Largs Bay Jetty  \"\"",
+   "notes": [
+    "pin: LOW-ish - Commons geotag on the beach, no OSM natural=beach feature available."
+   ]
+  },
+  "adelaide-31": {
+   "name": "Brighton",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Southern beach suburb with a jetty, esplanade and the Brighton Jetty Sculptures.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.017222,
+    "longitude": 138.514167
+   },
+   "wiki": "Brighton, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach/foreshore; no single steward site",
+   "coordinates_source": "resolve-pin HIGH: Median of 14 geotagged Commons files at Brighton foreshore; OSM way 29222096 Brighton Jetty (man_made=pier, -35.01746,138.51318) within 90 m  \"\"",
+   "notes": [
+    "pin: LOW-ish - Commons median, no OSM beach feature; verify when Overpass is up."
+   ]
+  },
+  "adelaide-32": {
+   "name": "West Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach on Adelaide's western coast, between Henley Beach and Glenelg, for family walks and swimming.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.9421473,
+    "longitude": 138.498826
+   },
+   "wiki": "West Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach; no single steward site",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 83436716 natural=beach (West Beach foreshore, unnamed way, centre)  \"\"",
+   "notes": [
+    "pin: LOW-ish - Commons geotag cluster on the sand; Wikivoyage listing -34.94633,138.50096 is 0.9 km away and inland."
+   ]
+  },
+  "adelaide-33": {
+   "name": "Hallett Cove Conservation Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Coastal park with Permian glacial pavements, a walking trail and a swimming beach.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.073346,
+    "longitude": 138.498745
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/hallett-cove-conservation-park",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Hallett Cove Conservation Park\"",
+   "notes": [
+    "pin: LOW - no OSM feature; Commons median used, to be checked against NPWS car park.",
+    "NPWS page: Free entry; closed on Catastrophic Fire Danger days."
+   ]
+  },
+  "adelaide-34": {
+   "name": "Port Noarlunga",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside suburb with a long jetty and a reef sanctuary with an 800 m snorkelling trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.149091,
+    "longitude": 138.466108
+   },
+   "wiki": "Port Noarlunga, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach, jetty and aquatic trail; no single steward site (SATC product URL guessed 404)",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 29222325 man_made=pier Port Noarlunga Jetty (centre of the pier)  \"\"",
+   "notes": [
+    "pin: LOW-ish - Commons geotag at the jetty; no OSM feature available.",
+    "Snorkelling uses own gear; no operator cost counted."
+   ]
+  },
+  "adelaide-35": {
+   "name": "Witton Bluff Base Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Free, accessible 1.1 km coastal boardwalk under the Witton Bluff cliffs, linking Port Noarlunga and Christies Beach.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.142059,
+    "longitude": 138.468586
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Listed on fleurieupeninsula.com.au attractions list only; no single official trail page verified",
+   "coordinates_source": "resolve-pin MEDIUM: osm trail midpoint (0.6 km, nominatim) \"Witton Bluff Base Trail\"",
+   "notes": [
+    "pin: LOW - not the route midpoint; an approximate point near the trail on the shore. Raise to owner.",
+    "Listed by the Fleurieu tourism attractions page; opened 2025."
+   ]
+  },
+  "adelaide-36": {
+   "name": "Marino Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Clifftop coastal park with the last coastal heath on the Adelaide coast and views to Marino Rocks Lighthouse.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.052631,
+    "longitude": 138.511715
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/marino-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Marino Conservation Park\"",
+   "notes": [
+    "pin: LOW - Wikipedia point only; not confirmed as the car park/trail.",
+    "NPWS page: Free entry."
+   ]
+  },
+  "adelaide-37": {
+   "name": "Kingston Park Coastal Reserve",
+   "icon": "🌅",
+   "category": "nature",
+   "bio": "Clifftop reserve at Kingston Park with Holdfast Bay views, the Tjilbruke Spring and a rock sculpture of its Dreaming story.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.039239,
+    "longitude": 138.515847
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1623622816 tourism=viewpoint inside Kingston Park Coastal Reserve (way 149371338, centre -35.039484,138.514925); second viewpoint node 1416074562 at -35.038943,138.516427; Nominatim Strickland Road -35.03973,138.51689  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed open reserve with no single steward site verified (City of Holdfast Bay page returned a bot-wall status 202).",
+   "notes": {
+    "text": "Free (SATC listing). Cliff-top lookout over Holdfast Bay, Tjilbruke Spring and the John Dowie rock sculpture, 76 indigenous plant species; picnic area, barbecues, toilets.",
+    "pin": "Lookout and John Dowie rock sculpture on the clifftop off Strickland Road, Kingston Park (SATC address); Tjilbruke Spring is below the cliff."
+   }
+  },
+  "adelaide-38": {
+   "name": "Adelaide Dolphin Sanctuary",
+   "icon": "🐬",
+   "category": "nature",
+   "bio": "Marine park in the Port River and Barker Inlet, home to about 20 resident bottlenose dolphins that visitors see on cruises.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.749688,
+    "longitude": 138.493933
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Adelaide Dolphin Sanctuary\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/adelaide-dolphin-sanctuary",
+   "notes": {
+    "text": "Parks page: free entry, about 20 resident bottlenose dolphins plus around 400 transient visitors, 10,000-year-old mangrove forest. Dolphin cruises are separate operators, not priced here.",
+    "pin": "Pin is a Wikivoyage geotag on the water; keep in the Port River near Port Adelaide (Dolphin Sanctuary is a water body; a visitor point such as the Port Adelaide waterfront or Garden Island boat launch is the alternative)."
+   }
+  },
+  "adelaide-39": {
+   "name": "National Railway Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Australia's largest railway museum, in the former Port Dock goods terminal, with locomotives, carriages and a small train ride.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.846062,
+    "longitude": 138.508911
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM relation 18112159 National Rail Museum (tourism=museum) centre + Wikipedia-derived draft -34.84588,138.50879 within 25 m  \"\"",
+   "wiki": "National Railway Museum, Port Adelaide",
+   "costMin": 19,
+   "costMax": 19,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://nrm.org.au/",
+   "notes": {
+    "text": "Adult $19, concession $12, child 5-15 $7, family $44 (nrm.org.au Plan your visit). Open daily 10am-4:30pm. Wikivoyage's older prices are out of date. Train ride included in admission.",
+    "pin": "76 Lipson Street, Port Adelaide; draft is the Wikivoyage geotag."
+   }
+  },
+  "adelaide-40": {
+   "name": "South Australian Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Maritime history museum at Port Adelaide, with a climbable lighthouse and the historic waterfront outside.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.843148,
+    "longitude": 138.506254
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"South Australian Maritime Museum\"",
+   "costMin": 23.5,
+   "costMax": 23.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://maritime.history.sa.gov.au/",
+   "notes": {
+    "text": "Adult $23.50, concession $18.50, child $9.50 (museum site). Free guided tours weekends 11am and 2pm. Lighthouse climb and MV Archie Badenoch Port River tours are booked separately.",
+    "pin": "126 Lipson Street, Port Adelaide."
+   }
+  },
+  "adelaide-41": {
+   "name": "South Australian Aviation Museum",
+   "icon": "✈️",
+   "category": "museum",
+   "bio": "Port Adelaide museum in two hangars of historic aircraft, jet fighters and Woomera rockets, with cockpits visitors can climb into.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.848244,
+    "longitude": 138.511746
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"South Australian Aviation Museum\"",
+   "costMin": 17,
+   "costMax": 17,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://saam.org.au/",
+   "notes": {
+    "text": "Adult $17 (first listed price on saam.org.au Visit page, followed by $8.50 ADF/veterans, $12 concession, $7.50 child, $41.50 family, then free). Open 10am-4pm daily except Christmas Day.",
+    "pin": "16 Bedford Street, Port Adelaide."
+   }
+  },
+  "adelaide-42": {
+   "name": "Port Adelaide Historical Society Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Small volunteer-run museum at Port Adelaide with a maritime collection, ship models and audio-visual displays.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.832468,
+    "longitude": 138.496529
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticket_note": "Operator site not found: guessed domains (phsa.org.au, portadelaidehistoricalsociety.org/.com.au/.org.au) did not load; the SATC page exposes no website link in the fetched text.",
+   "notes": {
+    "text": "Admission $5 per SATC listing only; not confirmed on an operator page. Marginal: volunteer-run, one counted source (as the draft note says). Keep, but opening days not verified.",
+    "pin": "Draft coordinates -34.832468,138.496529 are provisional; confirm against the museum's address on the serial pass."
+   }
+  },
+  "adelaide-43": {
+   "name": "Fort Glanville Conservation Park",
+   "icon": "🏰",
+   "category": "historic",
+   "bio": "Fort at Semaphore Park, built in 1880, with guided tours and costumed drills and cannon firing on open Sundays.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.851043,
+    "longitude": 138.477559
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm historic=fort (nominatim) \"Fort Glanville\"",
+   "costMin": 10,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "costPer": "Adult",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/fort-glanville-conservation-park",
+   "notes": {
+    "text": "Parks page: open days with re-enactments third Sunday of the month Sep-May 1-4:30pm, adult $20, child $10, family $40, entry includes guided tour. Tuesday tours 9:30-11am $10 per person, bookings preferred. Price range 10-20 reflects Tuesday vs open-day adult. Draft said 1878; the park page says built in 1880.",
+    "pin": "Draft coordinates provisional (Wikivoyage); fort entrance off Military Road, Semaphore Park."
+   }
+  },
+  "adelaide-44": {
+   "name": "Coopers Brewery",
+   "icon": "🍺",
+   "category": "entertainment",
+   "bio": "Family-owned brewery at Regency Park with a visitor centre, a free self-guided history walk and guided tours with tastings.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.87337,
+    "longitude": 138.573209
+   },
+   "coordinates_source": "resolve-pin HIGH: osm landuse=industrial (nominatim) \"Coopers Brewery\"",
+   "costMin": 35,
+   "costMax": 50,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://coopers.com.au/visit-us",
+   "notes": {
+    "text": "Visitor Centre Tour $35pp (Tue-Fri 4pm, 60 min); Brewery Tour $50pp ($55 from 1 July 2026; Tue-Sat 9:30am/10:30am/12:30pm, 90 min); VIP $350pp by appointment. The History Walk is free and self-guided. Tours bookable only.",
+    "pin": "Coopers Brewery, 461 South Road, Regency Park (provisional draft pin from Wikivoyage)."
+   }
+  },
+  "adelaide-45": {
+   "name": "Carrick Hill",
+   "icon": "🏡",
+   "category": "historic",
+   "bio": "1930s house museum set in 100 acres of gardens and bushland at Springfield, in the Adelaide foothills.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.979248,
+    "longitude": 138.631971
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"Carrick Hill\"",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.carrickhill.sa.gov.au/",
+   "notes": {
+    "text": "House Museum entry with audio tour: adult $20, concession $18, children under 15 free (SATC). Gardens and grounds are free. House Museum is closed in July each year; grounds open Wednesday to Sunday, 10am-4:30pm (SATC). Official site title is 'Carrick Hill'. The steward's own admission page could not be loaded, so the price rests on the SATC listing.",
+    "pin": "46 Carrick Hill Drive, Springfield (SATC address); use the house or main visitor entrance, not the estate centroid."
+   }
+  },
+  "adelaide-46": {
+   "name": "Warriparinga",
+   "icon": "🪃",
+   "category": "historic",
+   "bio": "Kaurna cultural site on the Sturt River in Bedford Park, with a cultural centre, a guided walk and the start of the Tjilbruke Trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.020137,
+    "longitude": 138.561358
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=park (nominatim) \"Warriparinga\"",
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "Council site (marion.sa.gov.au) blocked to scripts; needs a browser check before a link is added.",
+   "notes": {
+    "text": "Cost and hours not verified: marion.sa.gov.au returns an async 202 to scripts. Centre believed free to enter with the guided walk charged; recorded as free pending a browser check. Wikipedia: 3.5 ha reserve, Living Kaurna Cultural Centre, heritage-listed farmhouse, start of the Tjilbruke Trail.",
+    "pin": "Draft -35.020696,138.562991 provisional; Wikipedia says the reserve is bordered by Marion, Sturt and South Roads; use the cultural centre."
+   }
+  },
+  "adelaide-47": {
+   "name": "Adelaide Arcade",
+   "icon": "🛍️",
+   "category": "historic",
+   "bio": "Heritage-listed Victorian shopping arcade off Rundle Mall, opened in 1885, with a free self-guided history tour and a museum.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.923522,
+    "longitude": 138.603827
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM way 183931658 shop=mall 'Adelaide Arcade' (Photon); quill point -34.9235,138.6038 agrees  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://adelaidearcade.com.au/",
+   "notes": {
+    "text": "Opened December 1885; free self-guided history tour and Adelaide Arcade Museum (arcade site). Free to walk through."
+   }
+  },
+  "adelaide-48": {
+   "name": "Victoria Square",
+   "icon": "⛲",
+   "category": "landmark",
+   "bio": "Central city square known as Tarntanyangga, with the Three Rivers fountain and a place in Kaurna and Aboriginal flag history.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.928949,
+    "longitude": 138.599923
+   },
+   "coordinates_source": "resolve-pin HIGH: osm place=square (nominatim) \"Victoria Square/Tartanyangga\"",
+   "wiki": "Victoria Square, Adelaide",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open council square: no single operator site.",
+   "notes": {
+    "text": "Free open square (City of Adelaide visitor site per draft). Name Tarntanyangga is its Kaurna name. Bio claims rest on the draft's source note (fountain, Kaurna significance, Aboriginal flag first flown) and were not re-fetched; city visitor page URLs tried returned 404.",
+    "pin": "Keep the draft square centre; Three Rivers fountain is at the centre of the square."
+   }
+  },
+  "adelaide-49": {
+   "name": "JamFactory",
+   "icon": "🏺",
+   "category": "museum",
+   "bio": "Craft and design studios in the West End, with free glass-blowing demonstrations, exhibitions and a shop.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.922812,
+    "longitude": 138.593026
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm amenity=arts_centre (nominatim) \"JamFactory\"",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.jamfactory.com.au/adelaide",
+   "notes": {
+    "text": "Official page: free admission, open daily 10am-5pm, glass-blowing viewing platform free with no bookings, galleries and shop. 19 Morphett St.",
+    "pin": "Draft coordinates from SATC product geotag; 19 Morphett Street, Adelaide."
+   }
+  },
+  "adelaide-50": {
+   "name": "West Terrace Cemetery",
+   "icon": "🪦",
+   "category": "historic",
+   "bio": "Heritage-listed cemetery in the city's west with self-guided trails through 180 years of South Australian history.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.934696,
+    "longitude": 138.584994
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm landuse=cemetery (nominatim) \"West Terrace Cemetery\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.tours.aca.sa.gov.au/",
+   "notes": {
+    "text": "Self-guided trails are free, 7 days within cemetery opening hours, at least an hour; guided day tours return around the SA History Festival in May; night tours return Feb 2027 (ticketed, not priced here). Run by Adelaide Cemeteries Authority (aca.sa.gov.au).",
+    "pin": "Main entrance on West Terrace (QR code for the trail guide is just inside the entrance); no coordinates in draft."
+   }
+  },
+  "adelaide-54": {
+   "name": "The Beachouse",
+   "icon": "🎠",
+   "category": "entertainment",
+   "bio": "Seafront amusement centre at Glenelg with a carousel, dodgem cars, bumper boats, mini-golf and waterslides, with no entry fee.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.979202,
+    "longitude": 138.511389
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=theme_park (nominatim) \"The Beachouse\"",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://thebeachouse.com.au/",
+   "notes": {
+    "text": "Official site: no entry fee, rides and attractions priced individually; open Fri-Mon only at the time of reading (Tue-Thu closed), slides limited to weekends. Free-entry basis used; ride prices not recorded.",
+    "pin": "Colley Terrace, Glenelg (agency address); draft point from Wikivoyage geotag."
+   }
+  },
+  "adelaide-56": {
+   "name": "Belair National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "South Australia's first national park, with walking trails, an old government house and picnic areas in the hills.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.999383,
+    "longitude": 138.625499
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Belair\"",
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/belair-national-park",
+   "notes": {
+    "text": "Park page: vehicle entry $14.40 per vehicle, to be paid before entry. 11 km from Adelaide. Check whether the Multiple Entry Parks Pass applies (not changed here).",
+    "pin": "Main entrance and visitor point off Upper Sturt Road, Belair (draft point provisional)."
+   }
+  },
+  "adelaide-57": {
+   "name": "Glenthorne National Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Adelaide's newest national park at O'Halloran Hill, with walking trails across former farmland.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.06142,
+    "longitude": 138.553334
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 12328424913 tourism=viewpoint inside the Glenthorne National Park reserve (way 261067574), off Majors Road  \"\"",
+   "wiki": "Glenthorne National Park–Ityamaiitpinna Yarta",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/glenthorne-national-park-ityamaiitpinna-yarta",
+   "notes": {
+    "text": "Park page: free entry, 17.3 km from Adelaide.",
+    "pin": "Park entrance/visitor point at O'Halloran Hill (Majors Road); no coordinates in draft."
+   }
+  },
+  "adelaide-58": {
+   "name": "Sturt Gorge Recreation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Gorge park with the Sturt tillite glacial rocks, grey box woodland and walking and mountain-bike trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.042183,
+    "longitude": 138.597884
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Sturt Gorge Recreation Park\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/sturt-gorge-recreation-park",
+   "notes": {
+    "text": "Park page: free entry, 15.4 km from Adelaide.",
+    "pin": "Draft point is OSM-derived; visitor use is from the Craigburn Farm trailheads and Sturt Gorge entry points; confirm in pin pass."
+   }
+  },
+  "adelaide-59": {
+   "name": "Anstey Hill Recreation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Hills-edge park above the northeastern suburbs with walking and mountain-biking trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.832415,
+    "longitude": 138.737661
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Anstey Hill Recreation Park\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/anstey-hill-recreation-park",
+   "notes": {
+    "text": "Park page: free entry, 18 km from Adelaide.",
+    "pin": "Draft point is OSM-derived; use the main car park/visitor point off Lower North East Road in the pin pass."
+   }
+  },
+  "adelaide-60": {
+   "name": "Waterfall Gully to Mount Lofty Summit Track",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "Steep climb past First and Second Falls from Waterfall Gully to the Mount Lofty summit.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.9712,
+    "longitude": 138.69401
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Midpoint along chained OSM footways named \"Waterfall Gully Trail\" from Waterfall Gully Carpark (-34.9688,138.6799) to Mount Lofty Summit (-34.9740,138.7088); about 3.8 km total  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cleland-national-park",
+   "notes": {
+    "text": "Within Cleland National Park, whose fee page lists only accommodation (no entry fee); free. 3-4 hours is the draft's range (unverified against a walking guide). Cleland has 2026/27 closures for pest-control programs, check alerts.",
+    "pin": "Midpoint of the track between the Waterfall Gully car park and the Mount Lofty summit (OSM route/way); do not use the Waterfall Gully or summit spots' pins."
+   }
+  },
+  "adelaide-61": {
+   "name": "Happy Valley Reservoir Reserve",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "SA Water reserve with an 11 km Shoreline Loop and a lookout over the reservoir and dam wall.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.06772,
+    "longitude": 138.573124
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Happy Valley Reservoir\"",
+   "wiki": "Happy Valley Reservoir",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "SA Water page (sawater.com.au) blocked by bot wall; reserve is open public land, link to be checked in browser",
+   "notes": {
+    "pin": "Draft pin from Wikipedia 'Happy Valley Dam' is the dam; visitors use the reserve car park / Shoreline Loop start (SA Water), re-pin to the loop midpoint."
+   }
+  },
+  "adelaide-63": {
+   "name": "National Military Vehicle Museum",
+   "icon": "🪖",
+   "category": "museum",
+   "bio": "Military vehicle museum at Edinburgh Parks in the Defence precinct, open Sundays with vehicles on display.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.726295,
+    "longitude": 138.62913
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 13114049475 tourism=museum 'National Military Vehicle Museum' (address 10 Sturton Rd not in Nominatim)  \"\"",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.military-vehicle-museum.org.au/",
+   "notes": {
+    "pin": "10 Sturton Rd, Edinburgh Parks SA 5111 (museum address); geocode this address.",
+    "hours": "Open Sundays 10am-4pm; hot weather policy above 38C; adult $10, $15 special events (museum site)."
+   }
+  },
+  "adelaide-64": {
+   "name": "Tramway Museum",
+   "icon": "🚋",
+   "category": "museum",
+   "bio": "Volunteer museum of more than 20 trams, with unlimited rides on a 1.6 km line to the St Kilda playground.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.734617,
+    "longitude": 138.548582
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 868229719 tourism=museum 'Adelaide Tramway Museum' (centre); Wikipedia article point -34.736,138.548 is ~160 m off (rounded)  \"\"",
+   "wiki": "Tramway Museum, St Kilda",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://adelaidetrammuseum.org.au/",
+   "notes": {
+    "pin": "300-360 St Kilda Road, St Kilda SA; geocode this address (museum depot).",
+    "hours": "Sundays and public holidays 12-5pm. Adult $10 from state history network listing (admission includes unlimited rides); not re-confirmed on the museum site.",
+    "rename": "Draft name 'Tramway Museum, St Kilda' carries the town qualifier, so shown as 'Tramway Museum'; Wikipedia article is 'Tramway Museum, St Kilda'."
+   }
+  },
+  "adelaide-hills-1": {
+   "name": "Hahndorf",
+   "icon": "🥨",
+   "category": "historic",
+   "bio": "Australia's oldest surviving German settlement, with a main street of galleries, bakeries and shops.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.028846,
+    "longitude": 138.809672
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Hahndorf\"",
+   "wiki": "Hahndorf, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open town with no single steward",
+   "notes": {
+    "pin": "Town centre from Wikivoyage geotag; use OSM place=village/town point for Hahndorf."
+   }
+  },
+  "adelaide-hills-2": {
+   "name": "Mount Lofty Summit",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Summit lookout at 710 m with views over Adelaide's skyline to the coast, plus a visitor centre and cafe.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.974147,
+    "longitude": 138.709044
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=peak (nominatim) \"Mount Lofty\"",
+   "wiki": "Mount Lofty",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-lofty-summit",
+   "notes": {
+    "pin": "Wikivoyage geotag; use OSM tourism=viewpoint / summit obelisk node.",
+    "fee": "Free entry per NPWS SA page."
+   }
+  },
+  "adelaide-hills-3": {
+   "name": "Cleland Wildlife Park",
+   "icon": "🐨",
+   "category": "entertainment",
+   "bio": "Walk-through wildlife park at Crafers where visitors can feed kangaroos and meet koalas.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.967496,
+    "longitude": 138.696361
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Cleland Wildlife Park\"",
+   "costMin": 35.8,
+   "costMax": 35.8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.clelandwildlifepark.sa.gov.au/",
+   "notes": {
+    "fee": "Adult general entry $35.80 per park fees page (WebFetch summary); verify on the live page."
+   }
+  },
+  "adelaide-hills-4": {
+   "name": "Cleland National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Bushland park of walking and cycling trails with Adelaide Hills views, around Mount Lofty.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.968287,
+    "longitude": 138.695751
+   },
+   "coordinates_source": "resolve-pin HIGH: osm place=locality (nominatim) \"Cleland\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cleland-national-park",
+   "notes": {
+    "pin": "Park visitor point, not the centroid: Waterfall Gully car park / Mount Lofty trail hubs (parks.sa.gov.au maps); must differ from Mount Lofty Summit and Cleland Wildlife Park pins.",
+    "fee": "Park page lists only accommodation ($192/night) as a fee; no entry fee.",
+    "alert": "Closed at various times through 2026/27 for pest animal control (park alert)."
+   }
+  },
+  "adelaide-hills-5": {
+   "name": "Beerenberg Family Farm",
+   "icon": "🍓",
+   "category": "entertainment",
+   "bio": "Farm near Hahndorf with seasonal pick-your-own strawberries and a jam shop.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.038082,
+    "longitude": 138.817783
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM way 185439379 Beerenberg Farm (retail building) + Quill draft -35.03765,138.81761 within 55 m  \"\"",
+   "wiki": "Beerenberg Farm",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://beerenberg.com.au/",
+   "notes": {
+    "fee": "Patch entry $5 per person, 12 and under free, berries extra by weight (secondary reports dated Dec 2025, not confirmed on farm page).",
+    "season": "Strawberry patch open roughly Nov-Apr and closes when picked out."
+   }
+  },
+  "adelaide-hills-6": {
+   "name": "Warrawong Wildlife Sanctuary",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Mylor sanctuary of native wildlife with a lake, self-guided walks and guided dusk tours.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.037559,
+    "longitude": 138.734477
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=zoo (nominatim) \"Warrawong Wildlife Sanctuary\"",
+   "wiki": "Warrawong Sanctuary",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.warrawongws.com.au/",
+   "notes": {
+    "fee": "$25 adult from a reopening-event article (year unstated); not on the sanctuary site; verify.",
+    "bio": "Draft bio claimed a platypus; sources conflict, so left out.",
+    "pin": "47 Stock Road, Mylor; geocode the entrance."
+   }
+  },
+  "adelaide-hills-7": {
+   "name": "Mount Lofty Botanic Garden",
+   "icon": "🌺",
+   "category": "nature",
+   "bio": "Hillside botanic garden at Crafers with cool-climate plantings, lakes and walks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.986691,
+    "longitude": 138.716328
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=garden (nominatim) \"Mount Lofty Botanic Garden\"",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.botanicgardens.sa.gov.au/visit/mount-lofty-botanic-garden",
+   "notes": {
+    "fee": "Entry free; car park $2.50/hour or $6.50 day (not counted).",
+    "pin": "Garden entrance on Piccadilly Road car park."
+   }
+  },
+  "adelaide-hills-8": {
+   "name": "The Cedars",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Home, studio and garden of painter Hans Heysen near Hahndorf, open Tuesday to Sunday.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.012751,
+    "longitude": 138.805646
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Quill provisional (Wikipedia article point for The Cedars); OSM node 1303294975 tourism=artwork \"Hans Heysen\" at (-35.01286,138.80534), 30 m away  \"\"",
+   "wiki": "The Cedars (Hahndorf)",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.heysen.org.au/",
+   "notes": {
+    "fee": "Adult $25 self-guided (concession $22); guided tours priced separately at heysen.org.au/tours.",
+    "hours": "Tue-Sun 10-4:30pm and public holiday Mondays."
+   }
+  },
+  "adelaide-hills-9": {
+   "name": "Hahndorf Academy",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Gallery and museum on Main Street with German settler and Peramangk history and Heysen drawings.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.029064,
+    "longitude": 138.80995
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3780653001 shop=art 'Hahndorf Academy' (68 Main St)  \"\"",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://hahndorfacademy.org.au/",
+   "notes": {
+    "pin": "68 Main St, Hahndorf (museum address).",
+    "cost": "Museum and gallery free per draft; site lists a shop and paid workshops only (not confirmed free on the site itself)."
+   }
+  },
+  "adelaide-hills-10": {
+   "name": "Hahndorf Farm Barn",
+   "icon": "🐐",
+   "category": "entertainment",
+   "bio": "Farm animal park at Hahndorf where visitors feed lambs, milk cows and watch daily shows.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.04483,
+    "longitude": 138.83362
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 15.5,
+   "costMax": 15.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.farmbarn.com.au/",
+   "notes": {
+    "pin": "Wikivoyage geotag; site address Hahndorf, check in serial pass.",
+    "cost": "Site shows \"From $15.50 child admission\" only; adult price not found (older listings $15-17.50 adult). 15.5 is a floor, verify adult.",
+    "status": "Operating: official site open daily 10am-4pm, shows 11am and 2:30pm. Earlier sale report not borne out."
+   }
+  },
+  "adelaide-hills-11": {
+   "name": "Stirling",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Hills village of laneways, shops and cafes, with a laneways market on the fourth Sunday of most months.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.021429,
+    "longitude": 138.751622
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm landuse=cemetery (nominatim) \"Stirling District Cemetery\"",
+   "wiki": "Stirling, South Australia",
+   "costBasis": "open",
+   "free": true,
+   "ticketUrl": "https://www.stirlingadelaidehills.com.au/",
+   "notes": {
+    "pin": "place=village centre, Mt Barker Rd/Druids Ave; no coordinate in draft."
+   }
+  },
+  "adelaide-hills-12": {
+   "name": "The Big Rocking Horse",
+   "icon": "🐴",
+   "category": "landmark",
+   "bio": "An 18 m rocking horse at Gumeracha that visitors can climb, beside an animal park and minigolf.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.821075,
+    "longitude": 138.891801
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=attraction (nominatim) \"Big Rocking Horse\"",
+   "wiki": "Big Rocking Horse",
+   "costMin": 2,
+   "costMax": 7,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://www.thebigrockinghorse.com.au/",
+   "notes": {
+    "cost": "Climb $2; animal park entry $7 (site). Looking at the horse and shop is free.",
+    "pin": "Torrens Valley Rd, Gumeracha."
+   }
+  },
+  "adelaide-hills-13": {
+   "name": "National Motor Museum",
+   "icon": "🏎️",
+   "category": "museum",
+   "bio": "Birdwood museum of cars and motorcycles from all eras, with the Bay to Birdwood festival finish held here.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.819705,
+    "longitude": 138.95401
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"National Motor Museum\"",
+   "wiki": "National Motor Museum, Birdwood",
+   "costMin": 22.5,
+   "costMax": 22.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://motor.history.sa.gov.au/",
+   "notes": {
+    "cost": "Adult $22.50 per search snippet of the museum site and tourism listings; fetch of the page failed, verify.",
+    "pin": "Shannon St, Birdwood."
+   }
+  },
+  "adelaide-hills-14": {
+   "name": "Gorge Wildlife Park",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Cudlee Creek wildlife park where visitors walk among kangaroos and can cuddle a koala at set times.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.841881,
+    "longitude": 138.814027
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=zoo (nominatim) \"Gorge Wildlife Park\"",
+   "costMin": 26,
+   "costMax": 26,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://gorgewildlifepark.com.au/",
+   "notes": {
+    "cost": "Adult $26, concession $23, child $15 (site). Koala cuddles extra.",
+    "pin": "Cudlee Creek Rd; draft pin to 8 decimals from tourism listing."
+   }
+  },
+  "adelaide-hills-15": {
+   "name": "Mount Barker Summit",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A 513 m summit reached by a 500 m walk from the car park, with Peramangk interpretive signs and wide views.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.025735,
+    "longitude": 138.868609
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Mount Barker Junction\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Mount Barker Summit Reserve car park, Bald Hills exit; summit is a natpeak in OSM; reserve gates 8am-6pm (to 8pm in summer)."
+   },
+   "ticket_note": "Council/reserve page not confirmed; tourism listing is not official."
+  },
+  "adelaide-hills-16": {
+   "name": "Kuitpo Forest",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Forest near Meadows with walking trails of 1 to 4 hours, mountain-bike tracks and camping.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.205664,
+    "longitude": 138.713457
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=attraction (nominatim) \"TreeClimb Kuitpo Forest\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.forestrysa.com.au/visit-our-forests/kuitpo-forest/",
+   "notes": {
+    "pin": "Information centre / Rocky Creek Hut or Chookarloo campground; trailheads: Eucalypts at Rocky Creek Hut (Razorback Rd), Chookarloo Walk at Chookarloo Campground.",
+    "cost": "Walking, hiking, cycling and picnicking free per ForestrySA 2024 fee schedule; vehicle access permit ($29/vehicle/day, May-Oct) may apply, unverified for Kuitpo.",
+    "closures": "Some areas close for forestry operations."
+   }
+  },
+  "adelaide-hills-17": {
+   "name": "Mount Bold Reservoir Reserve",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "SA Water reserve with 13 km of trails, including a short lookout walk to a viewing platform.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.105863,
+    "longitude": 138.71595
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=water (nominatim) \"Mount Bold Reservoir\"",
+   "wiki": "Mount Bold Reservoir",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "SA Water page blocked by bot wall.",
+   "notes": {
+    "pin": "Reserve car park / lookout trail start at the dam wall; lookout trail 1.4 km return.",
+    "hours": "Dam-wall lookout 9am-4pm, no dogs (draft)."
+   }
+  },
+  "adelaide-hills-18": {
+   "name": "Lobethal Bushland Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Two reservoirs in stringybark forest north of Lobethal, with walking circuits and a regenerating post-fire landscape.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.890831,
+    "longitude": 138.878443
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 299790958 amenity=parking adjacent to way 179300620 'Lobethal Bushland Park' (nature_reserve centre -34.884483,138.880503)  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Run by Adelaide Hills Council; council page not verified.",
+   "notes": {
+    "pin": "Trailhead car park near the building and picnic area, north of Lobethal."
+   }
+  },
+  "adelaide-hills-19": {
+   "name": "Yurrebilla Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 54 km trail from Belair to Ambers Gully through Hills parks, walked in sections or over several days.",
+   "visitHoursMin": 8,
+   "visitHoursMax": 24,
+   "coordinates": {
+    "latitude": -34.940607,
+    "longitude": 138.710181
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 24431537 named Yurrebilla Trail, chosen as the way nearest the latitude midpoint (-34.935) of the named trail ways from Belair (-35.006) to the Torrens Gorge (-34.864)  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "yurrebilla.com.au and parks.sa.gov.au pages returned no readable title or content; not verified.",
+   "notes": {
+    "name_fix": "Draft said Chain of Ponds and 56 km; sources give the southern end at Belair railway station and the northern end at the River Torrens at Ambers Gully, 54 km (56 km is a race listing).",
+    "pin": "Midpoint of the route (OSM route=hiking relation); long trail, centre of whole length.",
+    "hours": "visit range is hours for a whole walk; confirm field convention in the pin/apply pass."
+   }
+  },
+  "adelaide-hills-21": {
+   "name": "Kyeema Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Stringybark woodland park south of Adelaide with walking trails and more than 80 recorded bird species.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.2479623,
+    "longitude": 138.684881
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kyeema-conservation-park",
+   "coordinates_source": "resolve-pin LOW: OSM way 340755742 amenity=parking inside/at Kyeema Conservation Park (park relation 7235169 centroid is -35.2656,138.6821)  (provisional)",
+   "notes": {
+    "pin": "No coordinate in draft; take the park's visitor/car park point from NPWS maps or OSM, not the centroid.",
+    "cost": "parks.sa.gov.au: Free entry; open daily; closed on Catastrophic Fire Danger days. Page says it is on the Fleurieu Peninsula, 60.9 km from Adelaide; destination tag adelaide-hills is Atlas's, check span and placement.",
+    "other": "Former prison camp history in draft bio not on the park page, so left out of the bio."
+   }
+  },
+  "para-wirra-conservation-park": {
+   "name": "Para Wirra Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Northern Adelaide Hills park with walks, a campground, grazing kangaroos and the Barossa Goldfields mining ruins.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.681814,
+    "longitude": 138.83113
+   },
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/para-wirra-conservation-park",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Para Wirra Conservation Park\"",
+   "notes": {
+    "pin": "Draft point is the Wikipedia centroid; use the western vehicle entry gate off Para Wirra Road or the main picnic ground car park.",
+    "cost": "parks.sa.gov.au: vehicle entry $14.40 per vehicle, must be paid before entry; camping from $27.50/night. Western gate open sunrise to sunset except Christmas Day. Park closed 6pm-midnight Wednesdays 1/9/2026-31/8/2027 for pest control (irrelevant to day visits).",
+    "other": "Mack Creek Hike and Lake Discovery Walk named on the agency's Adelaide Hills page, not the park page."
+   }
+  },
+  "adelaide-international-bird-sanctuary-national-park": {
+   "name": "Adelaide International Bird Sanctuary National Park",
+   "icon": "🦅",
+   "category": "nature",
+   "bio": "Coastal national park north of Adelaide on a migratory flyway, protecting resident and visiting shorebirds.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.549439,
+    "longitude": 138.326117
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/adelaide-international-bird-sanctuary-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Adelaide International Bird Sanctuary National Park-Winaityinaityi Pangkara National Park\"",
+   "notes": {
+    "pin": "Draft is the park centroid. The park is split into units along 60 km of coast; pick the main visitor point (e.g. the Parham or Thompson Beach birdwatching area) but not Thompson Beach's own pin (thompson-beach is a separate spot).",
+    "cost": "parks.sa.gov.au: Free entry, 28.25 km from Adelaide. Alert: Buckland Park area closed on selected days 11 May 2026-10 May 2027 for pest control.",
+    "other": "Official name carries 'Winaityinaityi Pangkara'; kept out of name per naming rule."
+   }
+  },
+  "thompson-beach": {
+   "name": "Thompson Beach",
+   "icon": "🦅",
+   "category": "beach",
+   "bio": "Samphire coast beach town on the Adelaide International Bird Sanctuary, known for migratory shorebirds from October to April.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.484266,
+    "longitude": 138.277124
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Thompson Beach\"",
+   "notes": {
+    "pin": "Draft has 6 decimals; confirm against OSM natural=beach or the birdwatching car park at the beach.",
+    "cost": "Open access coastal settlement and beach; no agency page of its own.",
+    "ticket": "No single official site (open beach and shack settlement)."
+   },
+   "ticket_note": "Open beach with no single steward; Wikivoyage sanctuary page and NPWS name it, neither is an official site for the beach."
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "adelaide-15",
+   "name": "Migration Museum",
+   "reason": "Migration Museum: closed from 1 July 2026 for 18-24 months. Unblocks on reopening.",
+   "entry": {
+    "name": "Migration Museum",
+    "icon": "🧳",
+    "category": "museum",
+    "bio": "Museum of South Australia's immigrant stories in the former Destitute Asylum, closed for conservation from July 2026.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "coordinates": {
+     "latitude": -34.919704,
+     "longitude": 138.602067
+    },
+    "free": true,
+    "costBasis": "entry",
+    "coordinates_source": "OSM Nominatim (Migration Museum, 82 Kintore Avenue) 11 m from Commons photo median",
+    "notes": "free entry per Wikivoyage; CLOSED from 1 July 2026 for 18-24 months of conservation works (Wikipedia citing InDaily 1 May 2026; Wikivoyage Oct 2026 says until mid-2028). Judged: should not be added until it reopens, or added with the closure noted",
+    "wiki": "Migration Museum, Adelaide",
+    "ticketUrl": "https://www.history.sa.gov.au/migration-museum/"
+   }
+  },
+  {
+   "id": "adelaide-16",
+   "name": "Tandanya National Aboriginal Cultural Institute",
+   "reason": "Tandanya: closed, relaunch planned for 2027. Unblocks on reopening.",
+   "entry": {
+    "name": "Tandanya National Aboriginal Cultural Institute",
+    "icon": "🎨",
+    "category": "museum",
+    "bio": "Aboriginal-owned arts centre on Grenfell Street, founded in 1989, closed for refurbishment until a 2027 relaunch.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "coordinates": {
+     "latitude": -34.92407,
+     "longitude": 138.61031
+    },
+    "free": true,
+    "costBasis": "entry",
+    "coordinates_source": "Wikivoyage listing geotag (the institute own listing); resolve-pin found no feature; LOW",
+    "notes": "pin LOW. Official site says its relaunched program will be unveiled in 2027; building closed since 2023 for repairs. Not currently a visitable gallery: judged should not be added until it reopens. Entry fee unverified (set free as placeholder)",
+    "ticketUrl": "https://tandanya.com.au/"
+   }
+  },
+  {
+   "id": "adelaide-51",
+   "name": "Adelaide Holocaust Museum",
+   "reason": "Adelaide Holocaust Museum: closed for re-curation until December 2026. Unblocks on reopening.",
+   "entry": {
+    "name": "Adelaide Holocaust Museum",
+    "icon": "🕊️",
+    "category": "museum",
+    "bio": "Small museum on the Holocaust and the survivors who settled in South Australia, closed for re-curation until December 2026.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "coordinates": {
+     "latitude": -34.928283,
+     "longitude": 138.602806
+    },
+    "coordinates_source": "pending serial pin pass",
+    "wiki": "Adelaide Holocaust Museum and Andrew Steiner Education Centre",
+    "costMin": 10,
+    "costMax": 10,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://ahmsec.org.au/",
+    "notes": {
+     "text": "Official site: closed to the public for re-curation; first gallery reopens December 2026 (education programs continue). Price $10 and hours (Sun, Tue-Thu, booking Tue-Thu) are from Wikivoyage 2023; recheck at reopening. Consider holding until it reopens.",
+     "pin": "33 Wakefield Street, Adelaide (Wikivoyage geotag)."
+    }
+   }
+  },
+  {
+   "id": "adelaide-52",
+   "name": "Army Museum of South Australia",
+   "reason": "Army Museum of South Australia: to be relocated to a venue not yet chosen. Unblocks when a source says where and when it opens.",
+   "entry": {
+    "name": "Army Museum of South Australia",
+    "icon": "🎖️",
+    "category": "museum",
+    "bio": "Volunteer-run museum at Keswick Barracks covering colonial wars through Vietnam, open Sundays and Wednesdays.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "coordinates": {
+     "latitude": -34.9464,
+     "longitude": 138.5804
+    },
+    "coordinates_source": "pending serial pin pass",
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://amosa.org.au/",
+    "notes": {
+     "text": "Official site: adults $5; open Sun 11-3 (last entry 2.30) and Wed 11-2 (last entry 1.30), Mondays by appointment from 1 Oct 2026, closed public holidays. Museum is to be relocated from Keswick Barracks to an unfinalised venue, so the pin and bio may need to change.",
+     "pin": "Keswick Army Barracks, Gate 4, Anzac Highway (agency address); draft point from Wikivoyage geotag."
+    }
+   }
+  },
+  {
+   "id": "adelaide-53",
+   "name": "Bay Discovery Centre",
+   "reason": "Bay Discovery Centre: no cost found (council page behind a bot wall). Unblocks on a browser check of its price.",
+   "entry": {
+    "name": "Bay Discovery Centre",
+    "icon": "🏛️",
+    "category": "museum",
+    "bio": "Local history museum of Holdfast Bay, housed in the historic Glenelg Town Hall on Moseley Square.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "coordinates": {
+     "latitude": -34.98007,
+     "longitude": 138.51133
+    },
+    "coordinates_source": "pending serial pin pass",
+    "ticketUrl": "https://www.holdfast.sa.gov.au/discover-our-place/history-culture/bay-discovery-centre",
+    "free": null,
+    "costBasis": null,
+    "notes": {
+     "text": "Entry cost not verified: the council page returns a bot-wall (202) and the old bay-discovery.com site is empty. Cost fields left null.",
+     "pin": "Glenelg Town Hall, Moseley Square (Wikivoyage geotag)."
+    }
+   }
+  },
+  {
+   "id": "adelaide-55",
+   "name": "Kaurna Trail",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Kaurna Trail",
+    "icon": "🚶",
+    "category": "hike",
+    "bio": "Self-guided 10.7 km walk through the city to sites of Kaurna significance, told through art and story.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://www.experienceadelaide.com.au/visit/things-to-do/heritage/adelaide-kaurna-trail/",
+    "notes": {
+     "text": "City of Adelaide page: easy, 10.7 km, bitumen and pavement, allow 2-3 hours; produced by the Graham F Smith Peace Foundation. Free, nothing to pass through.",
+     "pin": "A city loop of 10.7 km: pin at the midpoint of the route using the trail map (view the walking trail map on the page); not resolved here."
+    }
+   }
+  },
+  {
+   "id": "adelaide-62",
+   "name": "Classic Jets Fighter Museum",
+   "reason": "Classic Jets Fighter Museum: possibly closed, no price, no working site. Unblocks on a source confirming it is open and its price.",
+   "entry": {
+    "name": "Classic Jets Fighter Museum",
+    "icon": "✈️",
+    "category": "museum",
+    "bio": "Volunteer-run aviation museum at Parafield Airport where visitors can sit in fighter-jet cockpits.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "coordinates": {
+     "latitude": -34.788675,
+     "longitude": 138.637647
+    },
+    "coordinates_source": "pending serial pin pass",
+    "wiki": "Parafield Airport",
+    "ticket_note": "no confirmed official site (classicjets.com.au does not load)",
+    "notes": {
+     "flag": "Possible closure: a 2016 trade-magazine item said the museum would close and sell its assets; a community directory updated 2026 still lists it operating with club and group tours. No current price or official site found. Recommend holding until confirmed by phone (08 8258 2277).",
+     "pin": "Wikivoyage listing geotag; Hangar 107 Anderson Drive (directory) vs Hangar 52 (other) conflict."
+    }
+   }
+  }
+ ],
+ "notes": []
+}

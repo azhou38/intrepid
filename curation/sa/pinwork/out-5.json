@@ -1,0 +1,399 @@
+{
+ "adelaide-7": {
+  "lat": -34.9133996,
+  "lon": 138.6073551,
+  "confidence": "MEDIUM",
+  "source": "OSM way 50550960 tourism=zoo \"Adelaide Zoo\" (centre)",
+  "note": "Wikipedia article point is 160 m SW (-34.914167,138.605833)."
+ },
+ "adelaide-25": {
+  "lat": -34.9228346,
+  "lon": 138.6025992,
+  "confidence": "HIGH",
+  "source": "OSM way 225562373 highway=pedestrian \"Rundle Mall\" centre; Wikipedia article point (-34.92290,138.60188) is 65 m away",
+  "note": "Centre of the pedestrian mall."
+ },
+ "adelaide-31": {
+  "lat": -35.017222,
+  "lon": 138.514167,
+  "confidence": "HIGH",
+  "source": "Median of 14 geotagged Commons files at Brighton foreshore; OSM way 29222096 Brighton Jetty (man_made=pier, -35.01746,138.51318) within 90 m",
+  "note": "Foreshore at the jetty root, on the sand side not the pier mid-point."
+ },
+ "adelaide-42": {
+  "lat": -34.832468,
+  "lon": 138.496529,
+  "confidence": "LOW",
+  "source": "Quill provisional; OSM, Nominatim and Commons returned no museum feature for it (Overpass flaky)",
+  "note": "Address not resolved (hint: 73 Ellen St per National Trust vs 77 per SAcommunity). Point is Peterhead, 70 m from the Wikipedia Peterhead centre; verify by hand."
+ },
+ "adelaide-60": {
+  "lat": -34.9712,
+  "lon": 138.694,
+  "confidence": "MEDIUM",
+  "source": "Midpoint along chained OSM footways named \"Waterfall Gully Trail\" from Waterfall Gully Carpark (-34.9688,138.6799) to Mount Lofty Summit (-34.9740,138.7088); about 3.8 km total",
+  "note": "Hand-chained from way lengths (junction of ways 875350021/875350020); not the Waterfall Gully or summit spot pins."
+ },
+ "adelaide-hills-8": {
+  "lat": -35.012751,
+  "lon": 138.805646,
+  "confidence": "MEDIUM",
+  "source": "Quill provisional (Wikipedia article point for The Cedars); OSM node 1303294975 tourism=artwork \"Hans Heysen\" at (-35.01286,138.80534), 30 m away",
+  "note": "Second point is a statue of the artist, not independent of the site; kept as MEDIUM."
+ },
+ "adelaide-hills-21": {
+  "lat": -35.2479623,
+  "lon": 138.684881,
+  "confidence": "LOW",
+  "source": "OSM way 340755742 amenity=parking inside/at Kyeema Conservation Park (park relation 7235169 centroid is -35.2656,138.6821)",
+  "note": "Car park nearest the park centroid on its main access; no named visitor point (picnic/trailhead) found in OSM. Another car park at -35.2336,138.6820 (node 293073612). Verify against the NPWS map."
+ },
+ "jamestown-mural-walk-and-outdoor-gallery": {
+  "lat": -33.20545,
+  "lon": 138.6052,
+  "confidence": "LOW",
+  "source": "Middle of the east section of Ayr Street, Jamestown (OSM street geometry, ways 787528736/787531712), near Jamestown Magic Cave attraction node",
+  "note": "No OSM feature for the murals or the Outdoor Gallery; Ayr St runs east to -33.2057,138.6071 where the gallery is. Mid-walk point."
+ },
+ "port-lincoln-8": {
+  "lat": -34.9116149,
+  "lon": 135.6832223,
+  "confidence": "MEDIUM",
+  "source": "OSM way 550988822 natural=beach at Fishery Bay (centre); car parks at -34.9111,135.6893 and -34.9111,135.6788",
+  "note": "OSM \"Fishery Bay\" natural=bay node (-34.91473,135.68589) is in the water; beach way chosen. Commons median (2 files) -34.9049,135.6916."
+ },
+ "coffin-bay-4": {
+  "lat": -34.6815427,
+  "lon": 135.3444322,
+  "confidence": "MEDIUM",
+  "source": "OSM node 3439003836 natural=beach \"Almonta Beach\"; Commons panoramio median (-34.67986,135.34184) 190 m away",
+  "note": "Nearest car parks are 1.2 km SW (-34.6875,135.3311)."
+ },
+ "streaky-bay-6": {
+  "lat": -32.9237673,
+  "lon": 134.0789479,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1188830015 amenity=parking at Smooth Pool on Westall Way; OSM natural=bay node \"Smooth Pool\" (-32.92574,134.07883) 220 m south; Commons median (-32.9226,134.0780)",
+  "note": "Access car park beside the pool (bay node is the water centroid)."
+ },
+ "streaky-bay-13": {
+  "lat": -32.7955336,
+  "lon": 134.2139902,
+  "confidence": "LOW",
+  "source": "Nominatim geocode of the listing address 13 Alfred Terrace, Streaky Bay (building point 13-15 Alfred Terrace)",
+  "note": "No OSM feature for the replica; address point is on the foreshore road, within about 30 m of the sculpture."
+ },
+ "whyalla-3": {
+  "lat": -32.9869897,
+  "lon": 137.7741018,
+  "confidence": "MEDIUM",
+  "source": "OSM way 598946461 \"Stony Point\" (centre), the shore access for the cuttlefish snorkel/dive site north of Point Lowly",
+  "note": "Not the lighthouse (-32.9998,137.7856, 1.7 km SE). Camp site way 998627289 and car parks at -32.994,137.782 are the Point Lowly side."
+ },
+ "whyalla-11": {
+  "lat": -32.7398031,
+  "lon": 137.149674,
+  "confidence": "MEDIUM",
+  "source": "OSM node 10213482851 tourism=museum \"Iron Knob Tourist Centre and Museum\" (twin information node 1585377006)",
+  "note": "Town place node is -32.7332,137.1510."
+ },
+ "gawler-ranges-national-park-4": {
+  "lat": -32.6564181,
+  "lon": 135.6273461,
+  "confidence": "MEDIUM",
+  "source": "OSM node 6335247848 \"Paney Homestead and Park Office\" (place=isolated_dwelling)",
+  "note": "Paney Shearing Shed (tourism=attraction, way 1165288075) is 1.9 km NE at -32.6490,135.6430; \"Old Paney\" farm node (-32.587,135.430) is a different place."
+ },
+ "gawler-ranges-national-park-12": {
+  "lat": -33.0508444,
+  "lon": 135.4620717,
+  "confidence": "HIGH",
+  "source": "OSM node 4457330120 tourism=artwork \"Australian Farmer\"; median of Commons files at (-33.05096,135.46200)",
+  "note": "Wikivoyage listing geotag (-33.0470,135.4604) is 420 m north, near the silos, and was not used."
+ },
+ "redbanks-beach": {
+  "lat": -33.8934329,
+  "lon": 136.6144096,
+  "confidence": "MEDIUM",
+  "source": "OSM node 3213932363 tourism=camp_site \"Redbanks\" with a car park (way 189791371) 25 m away",
+  "note": "Beach access north of Arno Bay (Arno Bay town is -33.915,136.575); no OSM natural=beach found at the site, so the access/campsite point is used."
+ },
+ "cummins-mosaic-trail": {
+  "lat": -34.2681249,
+  "lon": 135.7263804,
+  "confidence": "LOW",
+  "source": "Nominatim: Railway Terrace, Cummins (street point near the listing address 46 Railway Terrace)",
+  "note": "No OSM feature for the mosaic trail; the Cummins town node is -34.2644,135.7263. Street point only; verify."
+ },
+ "googs-track": {
+  "lat": -31.2884744,
+  "lon": 133.9654764,
+  "confidence": "MEDIUM",
+  "source": "Midpoint along OSM ways 48675235 (118 km) and 35969057 (33 km), both highway=unclassified name=\"Googs Track\"",
+  "note": "Total mapped length 152 km including a 4 km gap between the two ways; Googs Lake (-31.56,134.12) is the nearby named feature, not the pin."
+ },
+ "mclaren-vale-2": {
+  "lat": -35.1702678,
+  "lon": 138.5522399,
+  "confidence": "LOW",
+  "source": "OSM way 233308493 amenity=parking beside picnic_site node 2402989723 (-35.1699,138.5523) inside relation 552045 Onkaparinga River National Park",
+  "note": "Unnamed visitor car park and picnic area inside the park (probably the Gate 25 area; name not confirmed). Not Punchbowl Lookout (node 5108709201, -35.1587,138.5638) and not the centroid (-35.1591,138.5552)."
+ },
+ "mclaren-vale-9": {
+  "lat": -35.27506,
+  "lon": 138.56083,
+  "confidence": "MEDIUM",
+  "source": "Midpoint of OSM nodes 4740878012 \"Willunga Courthouse National Trust Museum\" (-35.27499,138.56063) and 4740887585 \"Willunga Slate National Trust Museum\" (-35.27514,138.56104), 40 m apart; Nominatim agrees with the courthouse node (61 High Street)",
+  "note": "Quill point (-35.2742,138.5587) was the Old Bush Inn photo median 170 m west, not the museums."
+ },
+ "mclaren-vale-14": {
+  "lat": -35.1576374,
+  "lon": 138.4989327,
+  "confidence": "LOW",
+  "source": "OSM node 1524239176 tourism=picnic_site inside relation 552044 Onkaparinga River Recreation Park (centroid -35.1658,138.4882)",
+  "note": "Unnamed picnic site; a visitor point rather than the centroid. Viewpoints at -35.1655,138.4696 are at the park west end. Verify the main entrance by hand."
+ },
+ "victor-harbor-3": {
+  "lat": -35.5914084,
+  "lon": 138.603784,
+  "confidence": "HIGH",
+  "source": "OSM node 4375060501 natural=peak (Rosetta Head); Wikipedia Rosetta Head article point (-35.59139,138.60389) 10 m away; OSM viewpoint node 6191289985 within 20 m",
+  "note": "On the summit, not the car parks at -35.5918,138.5998."
+ },
+ "victor-harbor-8": {
+  "lat": -35.5986163,
+  "lon": 138.5844037,
+  "confidence": "MEDIUM",
+  "source": "OSM node 9456850917 tourism=viewpoint \"Whale Lookout\" at Waitpinga",
+  "note": "Tourism-board listing point (-35.59672,138.58437) is 210 m north; the OSM node name is generic, so MEDIUM."
+ },
+ "goolwa-5": {
+  "lat": -35.5117086,
+  "lon": 138.810252,
+  "confidence": "LOW",
+  "source": "Tourism-board destination point for Hindmarsh Island (island village near the bridge)",
+  "note": "OSM island relation centroid is -35.5217,138.8701 and Wikipedia centre -35.5167,138.8667 (not used). No single visitor feature; the Murray Mouth lookout is not pinned."
+ },
+ "goolwa-10": {
+  "lat": -35.5033,
+  "lon": 138.7731,
+  "confidence": "LOW",
+  "source": "Wikivoyage Goolwa listing geotag (4 decimals)",
+  "note": "No OSM, Nominatim or Commons feature for the museum, which may be closed (see the researcher note); verify by hand. Not within 25 m of any other pin known here."
+ },
+ "yankalilla-4": {
+  "lat": -35.5113068,
+  "lon": 138.218238,
+  "confidence": "HIGH",
+  "source": "OSM way 293136236 natural=beach at Second Valley (centre); tourism-board listing point (-35.511256,138.217501) 67 m away",
+  "note": "Car park at -35.5119,138.2174 beside it."
+ },
+ "yankalilla-12": {
+  "lat": -35.6391239,
+  "lon": 138.3267534,
+  "confidence": "MEDIUM",
+  "source": "OSM way 269742186 natural=beach \"Tunkalilla Beach\" (centre); Nominatim returns the same feature at (-35.63914,138.33241)",
+  "note": "Search hint (-35.45,138.35) was Normanville-area and wrong. Wikipedia \"Tunkalilla\" (-35.616,138.339) is the locality, not the beach: drop the wiki field. Car park way 585547773 at -35.6339,138.3148."
+ },
+ "ikara-flinders-ranges-7": {
+  "lat": -31.60058,
+  "lon": 138.6997211,
+  "confidence": "MEDIUM",
+  "source": "OSM node 6043953647 historic=archaeological_site (the engravings), 220 m WSW of the Wikivoyage geotag (-31.5989,138.7018) where two OSM car parks (-31.5993,138.7018) sit",
+  "note": "Access is restricted (guided tour only); pin is the engravings site, car park is 220 m ENE."
+ },
+ "ikara-flinders-ranges-15": {
+  "lat": -31.4366024,
+  "lon": 138.9013051,
+  "confidence": "MEDIUM",
+  "source": "Halfway point (38 km) round the closed loop of four OSM ways named \"Skytrek\" (76 km total), measured from the vertex nearest Willow Springs Station camp_site node 1811204993",
+  "note": "Track-start (station, -31.4489,138.7589) is not used; this is the middle of the loop, on the track."
+ },
+ "ikara-flinders-ranges-23": {
+  "lat": -31.1322353,
+  "lon": 138.3953753,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1243289827 amenity=pub \"Prairie Hotel\"",
+  "note": "Parachilna village; the search hint (-31.1443,138.3902) was the village point."
+ },
+ "port-augusta-1": {
+  "lat": -32.492246,
+  "lon": 137.7655984,
+  "confidence": "HIGH",
+  "source": "OSM way 315303740 \"Wadlata Outback Centre\" (tourism=information, building) centre; hint point (-32.4925,137.76583) within 30 m",
+  "note": "Building at 41 Flinders Terrace."
+ },
+ "port-pirie-3": {
+  "lat": -33.1758919,
+  "lon": 138.0103794,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1456474142 tourism=museum \"Port Pirie Railway Station Museum\"",
+  "note": "Matches the researcher note (museum in the railway-station building). Not the Regional Tourism and Arts Centre (node 738227219, -33.1811,138.0114)."
+ },
+ "leigh-creek-1": {
+  "lat": -31.2766578,
+  "lon": 138.5777981,
+  "confidence": "MEDIUM",
+  "source": "OSM node 432482312 historic=ruins \"Aroona Ruins\" (the only OSM feature of that name); Nominatim agrees (\"Aroona Ruins, Yuluna Hike\")",
+  "note": "CHECK PLACEMENT: this is in Flinders Ranges NP (Aroona Valley), about 75 km south of Leigh Creek and of the Aroona Dam point (-30.585,138.359) the draft used. The spot id is leigh-creek-1; owner should confirm the ruins meant are these, or that the destination is right."
+ },
+ "vulkathunha-gammon-ranges-3": {
+  "lat": -30.5140541,
+  "lon": 139.162885,
+  "confidence": "LOW",
+  "source": "OSM way 1074986026 waterway=stream \"Italowie Creek\" (centre), the creek the gorge walk follows; Nominatim stream point (-30.5124,139.1715) agrees within 700 m",
+  "note": "The search hint (-30.3117,139.3361) was the Arkaroola campsite, wrong. No OSM route for the 15.8 km Italowie Gorge walk; OSM has only Italowie Gap Hiking Trail (way 359904642, -30.4784,139.1860) and Italowie Gap Campground (-30.5563,139.1703). Verify against the NPWS route map."
+ },
+ "chambers-gorge": {
+  "lat": -30.9523438,
+  "lon": 139.2249874,
+  "confidence": "MEDIUM",
+  "source": "OSM node 432871169 amenity=parking \"Chambers Gorge\" (campground node 1458502967 at -30.9546,139.2163)",
+  "note": "Gorge car park about 6 km west of the Wikipedia \"Mount Chambers Gorge\" point (-30.9712,139.2807), which is the peak/range, not the visitor point."
+ },
+ "kangaroo-island-11": {
+  "lat": -36.0323793,
+  "lon": 136.7474656,
+  "confidence": "MEDIUM",
+  "source": "Midpoint along chained ways of OSM relation 7700629 route=hiking \"Kangaroo Island Wilderness Trail\"",
+  "note": "Relation exists (the Quill note was wrong): 42 km mapped in 16 ways, 34 km chained from the west end (-35.9594,136.6553); midpoint of the chain, on the trail. Official length is longer, so the true midpoint may be a few km away."
+ },
+ "kangaroo-island-37": {
+  "lat": -35.90196,
+  "lon": 137.44793,
+  "confidence": "LOW",
+  "source": "Quill provisional: southaustralia.com listing geotag (Seagers Road)",
+  "note": "No OSM route or trailhead named Timber Creek Walk; Timber Creek is a stream (way 317733960 at -35.8952,137.4563). Murray Lagoon Campground node is at -35.9044,137.4535. Listing point kept."
+ },
+ "beachport-1": {
+  "lat": -37.4842,
+  "lon": 140.0181,
+  "confidence": "MEDIUM",
+  "source": "Middle of OSM way 96054901 man_made=pier \"Beachport Jetty\" (792 m, root -37.48169,140.01503, end -37.48681,140.02126)",
+  "note": "Midpoint is approximate (mean of the end points of the slightly curved way), on the jetty. The tourism listing point (-37.4819,140.0148) is at the root."
+ },
+ "naracoorte-5": {
+  "lat": -37.379236,
+  "lon": 140.839559,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia article of the Mary MacKillop Interpretive Centre itself (coordinates)",
+  "note": "National Trust cottage nodes (Davidson, Wilson, Gammon, Sharam) sit 40-130 m east at -37.3789,140.8402-140.8412 on Petticoat Lane; not independent enough for HIGH."
+ },
+ "murray-bridge-9": {
+  "lat": -35.119818,
+  "lon": 139.2834391,
+  "confidence": "LOW",
+  "source": "OSM node 316601696 tourism=picnic_site \"Sturt Reserve\" (start of the circuit)",
+  "note": "The 2.3 km Discovery Trail is not in OSM; this is the trail start on the riverfront, not the midpoint. Verify against the council trail map."
+ },
+ "murray-bridge-15": {
+  "lat": -35.2971725,
+  "lon": 139.425068,
+  "confidence": "LOW",
+  "source": "Midpoint along the OSM Murray River way (waterway=river, name \"Murray River\") between vertices nearest the Tailem Bend (node 1890289527) and Wellington (node 1843852082) town nodes",
+  "note": "The canoe trail is not in OSM. The measured river path between the towns is 11.8 km against the quoted 21 km, so the true halfway point may differ."
+ },
+ "coorong-national-park-1": {
+  "lat": -36.2876692,
+  "lon": 139.7117812,
+  "confidence": "MEDIUM",
+  "source": "Nominatim/OSM camp_site \"42 Mile Crossing Campground - Coorong NP\"",
+  "note": "Campground at the start of the 1.3 km dune walk. The search hint (-36.049,139.554) was a generic Coorong point, 30 km away."
+ },
+ "coorong-national-park-6": {
+  "lat": -35.8967285,
+  "lon": 139.4013762,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1811191383 tourism=camp_site \"Parnka Point\" (locality node 268437093 at -35.90097,139.39818 is 500 m SW)",
+  "note": "No OSM car park, toilets or boat ramp feature found; the campground node is at the point. The search hint (-36.049,139.554) was generic."
+ },
+ "coorong-national-park-12": {
+  "lat": -35.5091004,
+  "lon": 139.1909351,
+  "confidence": "HIGH",
+  "source": "OSM node 427966551 man_made=lighthouse; Wikipedia \"Point Malcolm Lighthouse\" article point (-35.5089,139.1909) 25 m away",
+  "note": "Cliff above the Narrung ferry landing."
+ },
+ "coorong-national-park-17": {
+  "lat": -35.6844068,
+  "lon": 139.3538497,
+  "confidence": "MEDIUM",
+  "source": "OSM node 4407585103 tourism=viewpoint, 40 m from node 1811186651 named \"Meningie Lookout\" (tagged camp_site)",
+  "note": "Lookout above Meningie town (town node -35.69,139.34). The OSM peak \"Meningie Hill\" (node 3008902509, -35.6771,139.4014) is 4.5 km east and was not used."
+ },
+ "riverland-5": {
+  "lat": -33.9733581,
+  "lon": 140.9577229,
+  "confidence": "LOW",
+  "source": "OSM node 316601847 tourism=camp_site \"Customs House Campground\" inside the Chowilla Game Reserve area, next to Border Cliffs Campground (node 1811163200)",
+  "note": "A campsite at the reserve edge on the Murray, not named as the visitor point; the Wikipedia centroid (-33.9408,140.9114) was not used. Verify the main access (Monoman Creek area near Renmark) on the NPWS map."
+ },
+ "riverland-10": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "note": "No OSM feature, Nominatim hit, Commons geotag or Wikipedia point for Rocky's Hall of Fame and Pioneers Museum (Barmera); the Barmera town point is about -34.2565,140.4687. Needs the street address from the council listing."
+ },
+ "riverland-15": {
+  "lat": -33.4927621,
+  "lon": 140.7155398,
+  "confidence": "LOW",
+  "source": "OSM node 4317786827 tourism=camp_site \"Camp 4\" (NPWS Danggali campsites Camp 1-5 cluster at -33.48..-33.50,140.70..140.72)",
+  "note": "Thurk's Well / Old Hut are not in OSM; the NPWS campsite cluster is the nearest visitor facility inside the park. Park relation centroid is -33.5153,140.7995 (not used)."
+ },
+ "riverland-20": {
+  "lat": -34.1035552,
+  "lon": 140.731902,
+  "confidence": "LOW",
+  "source": "Nominatim/OSM water feature \"Bulyong Island Basin\" (Renmark North)",
+  "note": "No OSM node for the island or its campsite. Murtho Forest Landing camp_site (node 1811189662, -34.0656,140.7803) is the water access point 6 km NE. Verify the NPWS Bulyong Island map."
+ },
+ "riverland-26": {
+  "lat": -34.1704747,
+  "lon": 139.9731241,
+  "confidence": "LOW",
+  "source": "Centre of OSM way 688519490 highway=path (1.6 km) 800 m east of Hart Lagoon (water way 190213111, -34.1688,139.9643)",
+  "note": "No named trail in OSM; the path is the nearest walking route along the lagoon. Verify."
+ },
+ "riverland-31": {
+  "lat": -34.252697,
+  "lon": 140.6216814,
+  "confidence": "MEDIUM",
+  "source": "OSM node 2130282491 tourism=museum \"Wilabalangaloo Reserve-National Trust\"",
+  "note": "National Trust node for the reserve (Berri outskirts); not a measured trail midpoint."
+ },
+ "big-bend-walker-flat": {
+  "lat": -34.6326262,
+  "lon": 139.6658526,
+  "confidence": "MEDIUM",
+  "source": "OSM node 316602064 tourism=viewpoint \"Big Bend Lookout\" (twin camp_site node 1811162407 5 m away)",
+  "note": "The cliff lookout, not the Walker Flat ferry landing (search hint -34.5673,139.5973)."
+ },
+ "karoonda-art-sculpture-trail": {
+  "lat": -35.0945472,
+  "lon": 139.8963523,
+  "confidence": "LOW",
+  "source": "Nominatim: Railway Terrace, Karoonda (street point)",
+  "note": "No OSM artwork or trail feature for the sculptures; the silos (silo art) are at -35.0937,139.9080, 1 km east. Street point only; verify."
+ },
+ "mount-boothby-conservation-park": {
+  "lat": -35.85698,
+  "lon": 139.76896,
+  "confidence": "LOW",
+  "source": "OSM node 3008902548 natural=peak \"Mount Boothby\", 2 km SW of the park relation 6708930 centroid (-35.8408,139.7838)",
+  "note": "No OSM car park or picnic site found inside the park. The researcher hint pointed to Tolmer Rocks/Boothby Rocks near Culburra (picnic node 6755960878 at -35.8795,140.0499), which is 28 km east and a different reserve; not used."
+ },
+ "birdsville-track": {
+  "lat": -27.5647075,
+  "lon": 138.7099904,
+  "confidence": "MEDIUM",
+  "source": "Measured midpoint (257 km) of the three chained OSM ways named \"Birdsville Track\" (514 km, Marree -29.6514,138.0715 to -25.9187,139.3787)",
+  "note": "Quill estimate (-27.5833,138.7150) is 2 km away."
+ },
+ "investigator-strait-shipwreck-trail": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "note": "A dive trail of about 10 wreck sites spread along the coast between Yorke Peninsula and Kangaroo Island; there is no single place or route to pin and nothing in OSM or Nominatim. Owner may drop it or pin it at the Yorke Peninsula visitor point."
+ }
+}

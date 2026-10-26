@@ -1,0 +1,382 @@
+{
+ "spots": {
+  "mount-gambier-13": {
+   "name": "Port MacDonnell Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Volunteer-run museum in Port MacDonnell on the more than 30 ships wrecked along the local coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -38.052387,
+    "longitude": 140.699018
+   },
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.dcgrant.sa.gov.au/community/pmcc/museum",
+   "coordinates_source": "South Australian Tourism listing's map point for 7 Charles St (address geocode, not an OSM feature; resolve-pin gave only a Commons photo median 3 km off)",
+   "notes": [
+    "Adult $6, child $2.50, family $15 (council and tourism listings; museum moved to Charles St in 2011). Hours unconfirmed after a 2022 COVID closure note.",
+    "pin: LOW"
+   ]
+  },
+  "robe-1": {
+   "name": "Robe Customs House Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "An 1863 limestone customs house in Robe, now a volunteer-run National Trust maritime museum.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.162463,
+    "longitude": 139.752588
+   },
+   "wiki": "Robe Customs House",
+   "costMin": 3,
+   "costMax": 3,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/robe-customs-house/",
+   "coordinates_source": "osm tourism=museum (Robe Customs House - National Trust) + Commons photo median, HIGH",
+   "notes": [
+    "Adult $3, children free (National Trust page); Wikivoyage lists gold-coin donation. Hours depend on volunteers; check Robe visitor centre."
+   ]
+  },
+  "robe-2": {
+   "name": "Cape Dombey Obelisk",
+   "icon": "🗼",
+   "category": "historic",
+   "bio": "A red-and-white striped limestone obelisk on the Cape Dombey cliff, built in 1855 to guide ships into Guichen Bay.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -37.156479,
+    "longitude": 139.743626
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council/heritage landmark with no single operator site.",
+   "coordinates_source": "osm tourism=attraction node 'Obelisk' (MEDIUM; Commons photos of it 150-350 m away)",
+   "notes": [
+    "Final approach to the cliff-edge obelisk is fenced off because of erosion (tourism listings). Heritage document says completed 1855, stripes added about seven years later; Wikipedia says built 1852."
+   ]
+  },
+  "robe-3": {
+   "name": "Robe Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "The jetty and small harbour at Robe on Guichen Bay, open to walk out on at any hour.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -37.157603,
+    "longitude": 139.749993
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single operator.",
+   "coordinates_source": "osm man_made=pier 'Robe Pier' way centre + Commons photo 'Robe Jetty' 75 m away, HIGH",
+   "notes": [
+    "Open 24/7 per Wikivoyage."
+   ]
+  },
+  "robe-4": {
+   "name": "Long Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long ocean beach south-east of Robe, used for surfing and swimming, with cars allowed on the firm sand.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -37.202311,
+    "longitude": 139.763398
+   },
+   "wiki": "Long Beach (South Australia)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach, no steward.",
+   "coordinates_source": "osm natural=beach way (unnamed) centre on Long Beach south-east of Robe via Stony Rise Track; MEDIUM",
+   "notes": [
+    "OSM beach way is unnamed; identified by position on the Long Beach shoreline. Wikipedia: cars allowed on firm sand in summer, summer surf school; Koning Willem II wrecked here 1857."
+   ]
+  },
+  "robe-5": {
+   "name": "Little Dip Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "A conservation park south of Robe of dunes, lakes and coastal mallee, crossed by 4WD tracks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -37.255012,
+    "longitude": 139.800696
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/little-dip-conservation-park",
+   "coordinates_source": "osm camp_site way 'Little Dip Conservation Park - Long Gully' (park visitor point inside the park; reserve centroid -37.2310,139.7960 rejected); MEDIUM",
+   "notes": [
+    "Vehicle entry free; campsites from $19.80/night, booked before arrival, up to 12 months ahead (NPWS page, loaded and title checked)."
+   ]
+  },
+  "robe-6": {
+   "name": "Nora Creina Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A white-sand semicircular bay between Robe and Beachport, backed by 20 m headlands.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.327064,
+    "longitude": 139.850928
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach.",
+   "coordinates_source": "Wikipedia coordinates, within 125 m of the Nora Creina Road end at the beach (OSM way); MEDIUM",
+   "notes": [
+    "OSM natural=bay node (-37.32526,139.84665) is a centroid in the water, not used."
+   ]
+  },
+  "beachport-1": {
+   "name": "Beachport Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "The second-longest jetty in South Australia at 772 m, for fishing and walking out over Rivoli Bay.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.481913,
+    "longitude": 140.014848
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single operator.",
+   "coordinates_source": "South Australian Tourism listing map point (Beach Road); not an OSM feature, Overpass was unreachable",
+   "notes": [
+    "Length and ranking from Wikipedia.",
+    "pin: LOW"
+   ]
+  },
+  "beachport-2": {
+   "name": "Pool of Siloam",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A salt lake on the edge of Beachport, said to be seven times saltier than the sea, where visitors float.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.482461,
+    "longitude": 140.006297
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run free site.",
+   "coordinates_source": "South Australian Tourism listing map point (McCourt Road geocode, about 250 m from town centre); LOW",
+   "notes": [
+    "Free; picnic tables, change rooms and a summer shower per tourism listing. Exact pool position needs an OSM check.",
+    "pin: LOW"
+   ]
+  },
+  "beachport-3": {
+   "name": "Old Wool and Grain Store Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "An 1879 wool and grain store run by the National Trust as a museum, with a whaling display.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/beachport-old-wool-grain-store-museum",
+   "coordinates_source": "none: 5 Railway Terrace, Beachport; no feature found (resolve-pin LOW, Overpass unreachable)",
+   "notes": [
+    "Renamed from 'Beachport Woolstores Museum' to the museum's own name; id unchanged. Adult $6, concession $5, child $3 (National Trust page, title checked).",
+    "pin: LOW"
+   ]
+  },
+  "beachport-4": {
+   "name": "Beachport Conservation Park",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A coastal conservation park of limestone cliffs and middens, with a walking trail around Woolley Lake.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/beachport-conservation-park",
+   "coordinates_source": "none: resolve-pin returned only the reserve centroid (-37.4459,139.9691), which is not allowed; no visitor point found",
+   "notes": [
+    "Vehicle entry free; campsites from $19.80/night, booked ahead (NPWS page, loaded).",
+    "pin: LOW"
+   ]
+  },
+  "beachport-5": {
+   "name": "Canunda National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "A coastal national park of cliffs, surf beaches and dunes on the Southern Ocean with walking tracks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/canunda-national-park",
+   "coordinates_source": "none: resolve-pin returned only the Wikipedia centroid; visitor point (Southend, Carpenter Rocks or Cape Banks) not resolved",
+   "notes": [
+    "Vehicle entry free; campsites from $19.80/night, booked ahead (NPWS page). Access via Millicent, Southend or Carpenter Rocks.",
+    "pin: LOW"
+   ]
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "robe",
+    "name": "Robe",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -37.164057,
+     "longitude": 139.754134
+    },
+    "category": "beach",
+    "defaultZoomSpanKm": 40,
+    "rank": 4,
+    "icon": "🏖️",
+    "tagline": "A historic port town on Guichen Bay with long beaches, dunes and lakes nearby",
+    "description": "Robe is a coastal town on Guichen Bay on the Limestone Coast, about 340 km from Adelaide. Founded in 1846, it became South Australia's second-busiest port in the 1850s, and more than 16,000 Chinese gold seekers landed here and walked about 320 km to the Victorian goldfields. That past survives in its 1863 customs house and the cliff-top obelisk, while Long Beach and Little Dip Conservation Park cover surf, dunes and lakes to the south. Rock lobster is a mainstay of the local fishing industry.",
+    "whyVisit": [
+     "Explore a 19th-century port town",
+     "Swim and surf long ocean beaches",
+     "Wander coastal dunes and lakes"
+    ],
+    "highlights": [
+     "Historic port town",
+     "Ocean beaches",
+     "Dunes and lakes"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🏕️",
+      "title": "Book campsites ahead",
+      "detail": "Little Dip's campsites must be booked before arrival, up to 12 months ahead. Vehicle entry to the park is free."
+     },
+     {
+      "icon": "🚙",
+      "title": "Check beach driving",
+      "detail": "Cars are allowed on Long Beach's firm sand, mainly in summer. Check tide and sand conditions before driving on."
+     }
+    ],
+    "bestMonths": [
+     12,
+     1,
+     2,
+     3
+    ],
+    "bestTimeBlurb": "Summer, {months}, brings mild days of about 22°C for swimming, surfing and driving Long Beach."
+   },
+   "spots": [
+    "robe-4",
+    "robe-5",
+    "robe-2",
+    "robe-3",
+    "robe-1",
+    "robe-6"
+   ],
+   "notes": [
+    "Spot order changed to importance: Long Beach, Little Dip, Obelisk, Jetty, Customs House, Nora Creina Bay.",
+    "Destination point is the OSM place point from the draft; no spot pin within 25 m of it.",
+    "Rank-4 tip count is 2; Customs House opening depends on volunteers, so no hours given.",
+    "Not source-checked: 'rock lobster is a mainstay' (Wikipedia, local economy)."
+   ]
+  },
+  {
+   "destination": {
+    "id": "beachport",
+    "name": "Beachport",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -37.48355,
+     "longitude": 140.008423
+    },
+    "category": "beach",
+    "defaultZoomSpanKm": 60,
+    "rank": 4,
+    "icon": "🎣",
+    "tagline": "A Rivoli Bay town with a long jetty, a floating salt lake and wild coastal parks",
+    "description": "Beachport is a small town on Rivoli Bay on the Limestone Coast, about 385 km from Adelaide. An 1879 wool and grain store beside the old railway line is now a National Trust museum, and a long jetty reaches out over the bay. Around the town, a salt lake for floating, limestone cliffs in Beachport Conservation Park and the surf beaches and dunes of Canunda National Park fill a day or two.",
+    "whyVisit": [
+     "Float in a salt lake",
+     "Walk limestone cliffs and coastal trails",
+     "Stroll out on a historic jetty"
+    ],
+    "highlights": [
+     "Salt lake float",
+     "Coastal walks",
+     "Historic jetty"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🏕️",
+      "title": "Book park campsites",
+      "detail": "Campsites in the nearby parks must be booked before arrival, from $19.80 a night. Vehicle entry to each is free."
+     },
+     {
+      "icon": "🏊",
+      "title": "Swim at the pool",
+      "detail": "The Pool of Siloam is free, with picnic tables, change rooms and a summer shower beside it."
+     }
+    ],
+    "bestMonths": [
+     12,
+     1,
+     2,
+     3
+    ],
+    "bestTimeBlurb": "Calm, warm days from {months} suit a float in the Pool of Siloam and walks along the clifftops."
+   },
+   "spots": [
+    "beachport-2",
+    "beachport-1",
+    "beachport-3",
+    "beachport-5",
+    "beachport-4"
+   ],
+   "notes": [
+    "Order: Pool of Siloam, Jetty, Museum, Canunda, Beachport Conservation Park.",
+    "Four spots (beachport-3, -4, -5 and the pin of -1/-2) lack a firm OSM pin; see spots' notes. Canunda (about 20 km away) is inside 75% of the 60 km span.",
+    "Name evidence: southaustralia.com Beachport page lists Pool of Siloam, conservation park and jetty."
+   ]
+  }
+ ],
+ "unverified": [
+  "Beachport Jetty, Pool of Siloam and Port MacDonnell Maritime Museum pins are tourism-listing address geocodes, not OSM features (Overpass/Nominatim unreachable, resolve-pin LOW)",
+  "Old Wool and Grain Store Museum, Beachport Conservation Park and Canunda National Park have no pin (coordinates null)",
+  "Little Dip pin is a campsite inside the park, not a visitor centre; Long Beach pin is an unnamed OSM beach way",
+  "Port MacDonnell museum current hours/prices (2022 closure note; $6 adult from council and tourism listings)",
+  "Obelisk build date (1852 vs 1855 sources)",
+  "Robe Customs House fee ($3 National Trust vs gold-coin donation on Wikivoyage)"
+ ],
+ "needs_browser": [
+  {
+   "id": "mount-gambier-13",
+   "url": "https://www.dcgrant.sa.gov.au/community/pmcc/museum",
+   "why": "403 to scripts; confirm it is the museum's official page (tourism listing names it as official website)"
+  }
+ ],
+ "notes": [
+  "Nothing judged unfit to add.",
+  "resolve-pin had to be run after heavy contention; Overpass was unreachable for the Beachport and Port MacDonnell spots so those pins are flagged LOW."
+ ]
+}

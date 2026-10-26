@@ -1,0 +1,82 @@
+{
+ "spots": {
+  "steamtown-heritage-rail-centre": {
+   "name": "Steamtown Heritage Rail Centre",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Peterborough's heritage roundhouse and rail sheds hold steam locomotives and carriages from the town's narrow-gauge junction days.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -32.9751,
+    "longitude": 138.826
+   },
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.steamtown.com.au/",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikivoyage listing geotag -32.9751 138.826 for the centre itself (1 Telford Avenue); draft hint matches.",
+    "cost": "$15/person guided tour per Wikivoyage, undated; not confirmed on the official site.",
+    "status": "Official site (title checked: Steamtown Heritage Railway - Peterborough) says the centre and the Peterborough Visitor Information Centre are temporarily closed under Peterborough council while a new operating model is developed, aiming to reopen for the 2026 tourist season. Still add (a permanent venue) but confirm reopening before shipping."
+   }
+  },
+  "town-carriage-museum": {
+   "name": "Town Carriage Museum",
+   "icon": "🚃",
+   "category": "museum",
+   "bio": "Museum in railway carriages at Peterborough, a former rail junction town, with displays on its railway history.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -32.9736,
+    "longitude": 138.8392
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikivoyage listing geotag -32.9736 138.8392 for the museum itself (Main Street area; council notice puts a carriage at 122 Main Street by the playground); verify on the serial pass.",
+    "cost": "No price or free status found in any fetched source.",
+    "status": "Wikivoyage entry dated Jul 2021 with no detail; may be tied to the council's temporary closure notice. Verify it is open to the public before shipping; if not it fails the access test."
+   }
+  },
+  "peterborough-historic-letterpress-print-shop": {
+   "name": "Peterborough Historic Letterpress Print Shop",
+   "icon": "🖨️",
+   "category": "museum",
+   "bio": "Volunteers run tours of a working letterpress print shop at Peterborough, with three presses including an 1910 Wharfedale.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Address 7-9 Jervois Street, Peterborough SA 5422 (tourism board listing); no geotag found.",
+    "cost": "Tour price not stated on the listing; hands-on print-making is pre-booked.",
+    "bookings": "Pre-book (phone 0408 220 248 per listing)."
+   },
+   "ticket_note": "Only the regional tourism board listing was found; the shop's own site could not be located, so no ticketUrl."
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "steamtown-heritage-rail-centre cost $15 (Wikivoyage only, undated) and reopening",
+  "town-carriage-museum cost/free and open status",
+  "peterborough-historic-letterpress-print-shop cost and own ticketUrl"
+ ],
+ "needs_browser": [
+  {
+   "id": "steamtown-heritage-rail-centre",
+   "url": "https://www.maketrackstopeterborough.com.au/",
+   "why": "403 bot wall; may list current prices, carriage museum and print shop details, reopening"
+  },
+  {
+   "id": "town-carriage-museum",
+   "url": "https://www.peterborough.sa.gov.au/",
+   "why": "403 bot wall; council page may give status/price"
+  }
+ ],
+ "notes": [
+  "Cost fields for town-carriage-museum and the print shop left unset: unsourced."
+ ]
+}

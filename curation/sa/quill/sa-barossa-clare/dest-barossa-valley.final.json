@@ -1,0 +1,81 @@
+{
+ "destination": {
+  "id": "barossa-valley",
+  "name": "Barossa Valley",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -34.5217025,
+   "longitude": 138.9603091
+  },
+  "category": "nature",
+  "defaultZoomSpanKm": 45,
+  "rank": 2,
+  "icon": "🍷",
+  "tagline": "A wine region an hour from Adelaide, with German-heritage towns and old cellar doors.",
+  "description": "The Barossa Valley is a wine region about an hour's drive north of Adelaide, with Tanunda, Nuriootpa and Angaston as its main towns. German settlers shaped its villages, bakeries and restaurants, and large cellar doors such as Penfolds and Seppeltsfield stand alongside small family wineries. Lookouts on the ranges above the valley floor give views across the vineyards, and the old copper town of Kapunda marks its western edge.",
+  "whyVisit": [
+   "Taste Shiraz at historic cellar doors",
+   "Wander German-heritage villages and bakeries",
+   "Look over vineyards from hilltop lookouts",
+   "Hear a whisper carry along a dam wall"
+  ],
+  "highlights": [
+   "Cellar doors",
+   "German heritage",
+   "Valley views",
+   "Whispering Wall"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🚗",
+    "title": "A car or bike helps",
+    "detail": "Public transport within the valley is limited, so hire a car or bike, or join a tour from Adelaide."
+   },
+   {
+    "icon": "🍷",
+    "title": "Nominate a driver",
+    "detail": "Police watch for drink-driving here, and the roads wind between large gum trees, so book a tour or appoint a driver."
+   },
+   {
+    "icon": "📅",
+    "title": "Book guided experiences",
+    "detail": "Blending sessions and cellar tours at the big estates are booked ahead, and guests must be 18 or over."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "{months} bring harvest and mild days. The Vintage Festival starts on Easter Monday in odd years."
+ },
+ "spots": [
+  "barossa-valley-1",
+  "barossa-valley-2",
+  "barossa-valley-3",
+  "barossa-valley-4",
+  "barossa-valley-5",
+  "barossa-valley-6",
+  "barossa-valley-7",
+  "barossa-valley-8",
+  "barossa-valley-9",
+  "barossa-valley-10",
+  "barossa-valley-11",
+  "barossa-valley-12",
+  "barossa-valley-13",
+  "barossa-valley-14",
+  "barossa-valley-15"
+ ],
+ "notes": [
+  "Coordinates: OSM place=town node 193757622 \"Tanunda\" (overpass.openstreetmap.fr); nearest spot pin is Barossa Museum, 600 m away. The draft's Wikipedia point (-34.5333,138.95) was a rounded valley centroid and was replaced.",
+  "Span kept at 45 km: the furthest shard-1 spots are Springton (~24 km from Tanunda) and Kapunda (~20 km); Gawler (barossa-valley-14, ~21 km) and the rest are inside 75% of 45 = 33.75 km.",
+  "Spot order: Penfolds, Seppeltsfield, Whispering Wall, Menglers Hill, Barossa Museum as drafted; ids 13-15 (Map the Miner, Gawler, Warren Conservation Park) are in shard 2, not reviewed here. Kapunda (12) and Gawler (14) look closer to a town-centre tier than to the later positions and could move up in the merge.",
+  "Sources: Wikivoyage Barossa Valley (hour's drive, towns, limited public transport, drink-driving and road warning, Vintage Festival on Easter Monday in odd years, German-heritage food); Penfolds booking and age rule from Rezdy/Time Out listings. Vintage Festival date and 'best months' are guidebook-style consensus, not a single source.",
+  "Tagline and blurb pass tagline-fit and blurb-fit."
+ ]
+}

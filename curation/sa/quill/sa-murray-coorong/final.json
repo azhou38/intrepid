@@ -1,0 +1,1820 @@
+{
+ "spots": {
+  "murray-bridge-1": {
+   "name": "Monarto Safari Park",
+   "icon": "🦒",
+   "category": "entertainment",
+   "bio": "Open-range safari park near Murray Bridge with lions, giraffes, rhinos and elephants, plus a bus loop through the grounds.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -35.099419,
+    "longitude": 139.169441
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=zoo (nominatim) \"Monarto Safari Park\"",
+   "costMin": 57,
+   "costMax": 57,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.monartosafari.com.au/",
+   "notes": {
+    "cost": "Adult $57 (child $32, concession $42), from park site; non-members must book a date-specific ticket. Open 9:30am-5pm daily.",
+    "pin": "Visitor centre/entrance off Murray Bridge Rd near Monarto South; draft point is a Wikipedia community point."
+   }
+  },
+  "murray-bridge-2": {
+   "name": "Old Tailem Town",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Pioneer village of more than 100 furnished period buildings near Tailem Bend, set out as a town from 1860 to 1960.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.225059,
+    "longitude": 139.421337
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 147494581 tourism=attraction 'Old Tailem Town' (centre)  \"\"",
+   "costMin": 28,
+   "costMax": 28,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://oldtailemtown.com.au/",
+   "notes": {
+    "cost": "Adult $28 (pensioner/student $26, child 4-16 $11), from the village site; open 9am-4pm daily except Christmas Day.",
+    "pin": "Princes Highway, Tailem Bend (about 3 km south of the town); resolve from OSM tourism=attraction/museum or Wikipedia."
+   }
+  },
+  "murray-bridge-3": {
+   "name": "Murray Bridge Regional Gallery",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Public art gallery with three exhibition spaces behind the Murray Bridge town hall, showing South Australian artists.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.11816,
+    "longitude": 139.2763
+   },
+   "coordinates_source": "resolve-pin LOW: Nominatim street point for Sixth Street, Murray Bridge (-35.118159,139.276303), behind OSM way 69548922 Murray Bridge Town Hall (-35.118042,139.276501)  (provisional)",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.murraybridgegallery.com.au/",
+   "notes": {
+    "cost": "Free entry per gallery programme page and SATC listing. Open Tue-Sat 10-4, Sun 11-4, closed Mon and public holidays.",
+    "pin": "27 Sixth Street, behind the Town Hall (Murray Bridge town centre)."
+   }
+  },
+  "murray-bridge-4": {
+   "name": "Bertha the Bunyip",
+   "icon": "🐉",
+   "category": "landmark",
+   "bio": "Animatronic bunyip at Sturt Reserve on the riverfront that rises from her cave and roars when you press the button.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.120995,
+    "longitude": 139.284761
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 513239260 \"Bunyip\" tourism=attraction at Sturt Reserve, Murray Bridge  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run roadside attraction with no dedicated site; council pages are bot-blocked.",
+   "notes": {
+    "cost": "Free to view (coin-operated historically, now free per council news).",
+    "status": "Council reported a mechanical fault in 2023 with an augmented-reality version at her cave meanwhile; current working state unconfirmed.",
+    "pin": "At Sturt Reserve, Murray Bridge riverfront, at the bunyip's cave."
+   }
+  },
+  "murray-bridge-5": {
+   "name": "Swanport Wetlands",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Nineteen-hectare River Murray wetland with a boardwalk, bird hide and 1.2 km trail, reached via the Frank Jackman Lookout.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.149245,
+    "longitude": 139.313905
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=wetland (nominatim) \"Swanport Wetlands\"",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council reserve with no dedicated site; council page is bot-blocked.",
+   "notes": {
+    "pin": "Access from the Frank Jackman Memorial Lookout off the South Eastern Freeway east of Swanport Bridge; use the lookout car park / wetland trailhead."
+   }
+  },
+  "murray-bridge-6": {
+   "name": "Rocky Gully Wetlands",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Loop walk through wetlands off Mannum Road with more than 90 bird species, on the Lavender Federation Trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.110801,
+    "longitude": 139.262058
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=wetland (nominatim) \"Rocky Gully Wetlands\"",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council reserve with no dedicated site.",
+   "notes": {
+    "pin": "Wetlands off Mannum Road; a circuit of about 1.8 km. Pin the loop midpoint, or the car park on Mannum Road.",
+    "status": "The Lavender Federation Trail site listed Rocky Gully closed due to flooding (undated); check before visiting."
+   }
+  },
+  "murray-bridge-7": {
+   "name": "The Round House",
+   "icon": "🏠",
+   "category": "museum",
+   "bio": "Hexagonal 1876 house beside the Murray bridges, once a school and post office, with guided tours included in entry.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.116468,
+    "longitude": 139.278239
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=attraction (nominatim) \"The Round House\"",
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/the-round-house",
+   "notes": {
+    "cost": "Adult $8, concession $5, child $3, family $15 (council page via search; history network listing agrees). Hours conflict between sources (weekends and holidays 11-3 vs Wed-Sun), so none written.",
+    "pin": "146 Railway Terrace, Murray Bridge, beside the road and rail bridges.",
+    "name": "Renamed from 'The Round House (Murray Bridge)' (no qualifier)."
+   }
+  },
+  "murray-bridge-8": {
+   "name": "Captain's Cottage Museum",
+   "icon": "🏚️",
+   "category": "museum",
+   "bio": "Local history museum in an 1890s cottage on Thomas Street, open weekends and public holidays.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.1254,
+    "longitude": 139.265028
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"Captain's Cottage Museum\"",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/captains-cottage",
+   "notes": {
+    "cost": "Adult $5 per the council page and SATC listing; the draft's $1 is the child/older price. Child $3, family $10 per council. Closed on forecast 38C+ days.",
+    "pin": "12 Thomas Street, Murray Bridge; Wikivoyage geotag for the listing gives about -35.1254, 139.265."
+   }
+  },
+  "murray-bridge-9": {
+   "name": "Murray Bridge Discovery Trail",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "Signed 2.3 km town walk with an interpretive sign at each stop along the way.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.119818,
+    "longitude": 139.2834391
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 316601696 tourism=picnic_site \"Sturt Reserve\" (start of the circuit)  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council trail with no dedicated site; council page is bot-blocked.",
+   "notes": {
+    "pin": "Midpoint of the 2.3 km town circuit; start near the Sturt Reserve riverfront. Not the same route as the 10.3 km Water Discovery Trail (Avoca Dell to Swanport).",
+    "cost": "Free (SATC listing)."
+   }
+  },
+  "murray-bridge-11": {
+   "name": "Ferries-McDonald Conservation Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Mallee park of 880 hectares with spring orchids, more than 80 bird species and the endangered malleefowl.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.248095,
+    "longitude": 139.145868
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 10294493709 tourism=attraction 'Ferries McDonald Loop Trail Parking' (park relation 571940 centroid -35.2224,139.1328 not used)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ferries-mcdonald-conservation-park",
+   "notes": {
+    "cost": "Free entry per NPWS SA page (title loaded).",
+    "pin": "Use an NPWS car park or track entry, not the centroid."
+   }
+  },
+  "murray-bridge-12": {
+   "name": "Kinchina Conservation Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Granite outcrops and spring orchids along the Lavender Federation Trail, with rare birds such as the diamond firetail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.125504,
+    "longitude": 139.2238
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=scrub (nominatim) \"Kinchina Conservation Park\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kinchina-conservation-park",
+   "notes": {
+    "cost": "Free entry per NPWS SA page (title loaded). Closed on Catastrophic fire danger days.",
+    "pin": "Parking bay off Maurice Road (draft note) near the Jailhouse Rocks loop of about 1.8 km."
+   }
+  },
+  "murray-bridge-13": {
+   "name": "Tailem Bend Info Station and Rail Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Volunteer-run 1913 railway station at Tailem Bend with a signal box, rail museum and local history room.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.254927,
+    "longitude": 139.456026
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 1168491838 'Tailem Bend' (station area) and Wikipedia 'Tailem Bend railway station' -35.255,139.456389 (~35 m)  \"\"",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Tailem Bend railway station (Railway Terrace area); use OSM museum/station node",
+    "cost": "free per southaustralia.com listing",
+    "hours": "volunteer run, hours vary"
+   },
+   "free": true,
+   "ticket_note": "No official site found; volunteer-run, listed only on tourism pages"
+  },
+  "murray-bridge-14": {
+   "name": "Tailem Bend Historic Rail Trail",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "Free marked heritage walk through Tailem Bend, with interpretive signs at the railway cottages and institute.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.252933,
+    "longitude": 139.453378
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 1890289527 Tailem Bend (place=town) as the middle of the town heritage walk  (provisional)",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the marked route; route map from the tourism board / council, not yet located"
+   },
+   "free": true,
+   "ticket_note": "Council-run trail, no single official page verified"
+  },
+  "murray-bridge-15": {
+   "name": "Lower Murray Canoe Trail",
+   "icon": "🛶",
+   "category": "hike",
+   "bio": "A paddling route of about 21 km from Tailem Bend to Wellington, in four sections with interpretive signs.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -35.2971725,
+    "longitude": 139.425068
+   },
+   "coordinates_source": "resolve-pin LOW: Midpoint along the OSM Murray River way (waterway=river, name \"Murray River\") between vertices nearest the Tailem Bend (node 1890289527) and Wellington (node 1843852082) town nodes  (provisional)",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Centre of the route (Tailem Bend to Wellington, about 21 km); Tailem Bend is the start"
+   },
+   "free": true,
+   "ticket_note": "No official page verified; listed on tourism pages as a free trail"
+  },
+  "mannum-1": {
+   "name": "Mannum Dock Discovery Centre",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "River history museum at Mannum Dock, where the 1897 paddle steamer PS Marion can be boarded.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.910836,
+    "longitude": 139.315553
+   },
+   "coordinates_source": "resolve-pin LOW: commons photo median (provisional)",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Mannum Dock on the riverfront, OSM museum node",
+    "cost": "$7.50 from southaustralia.com listing; adult basis not stated"
+   },
+   "costMin": 7.5,
+   "costMax": 7.5,
+   "currency": "AUD",
+   "ticket_note": "Run by Mid Murray Council; council site blocks scripts, exact page needs a browser"
+  },
+  "mannum-2": {
+   "name": "Mannum Waterfalls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Small seasonal waterfall just outside Mannum, with a car park, picnic area and public toilets.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.92768,
+    "longitude": 139.215906
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 360124295 waterway=waterfall 'Mannum Falls'; lower car park n1974620846 -34.931933,139.224511, upper car park n3076433327 -34.926641,139.217848  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM waterfall node or car park at the falls"
+   },
+   "free": true,
+   "ticket_note": "Open-access site with no steward page"
+  },
+  "mannum-4": {
+   "name": "Mary Ann Reserve",
+   "icon": "🛠️",
+   "category": "monument",
+   "bio": "Mannum reserve with a replica boiler and pumping engine marking Mary Ann, the first Murray paddle steamer.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.914845,
+    "longitude": 139.312286
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=park (nominatim) \"Mary Ann Reserve\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Reserve on Mannum riverfront (OSM park/memorial node)"
+   },
+   "free": true,
+   "ticket_note": "Open reserve"
+  },
+  "mannum-6": {
+   "name": "Lenger Reserve",
+   "icon": "🌱",
+   "category": "nature",
+   "bio": "A 95 ha National Trust bird sanctuary near Mannum with 208 native plant species and a pug-and-pine cottage.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.815247,
+    "longitude": 139.366971
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 7828681804 car park inside Lenger Reserve (way 659425040) next to the pug-and-pine cottage buildings (-34.8160,139.3677)  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Entrance at 884 Springs Road (Purnong Road), signposted from Punthari; reserve centroid is not the visitor point",
+    "cost": "open daily, no camping (National Trust page)"
+   },
+   "free": true,
+   "ticketUrl": "https://www.nationaltrust.org.au/places/lenger-reserve/"
+  },
+  "coorong-national-park-1": {
+   "name": "42 Mile Crossing",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Campground and dune walk to the Coorong's Ocean Beach, a separate access point on the Younghusband Peninsula.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -36.2876692,
+    "longitude": 139.7117812
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Nominatim/OSM camp_site \"42 Mile Crossing Campground - Coorong NP\"  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "42 Mile Crossing campground (agency); dune walk of 1.3 km to the beach",
+    "cost": "no park entry fee listed; campsites from $12.30 per night is accommodation, not a cost; 4WD-only campground, mainland access only in summer"
+   },
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-2": {
+   "name": "Ninety Mile Beach",
+   "icon": "🌊",
+   "category": "beach",
+   "bio": "The 4WD-only ocean beach of the Younghusband Peninsula, a filming location for Storm Boy.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -36.287349,
+    "longitude": 139.711781
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 316601543 tourism=camp_site '42 Mile Crossing Campground - Coorong NP' (42 Mile Crossing tracks W218584507/W24696016 lead from here to the ocean beach)  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Ocean Beach access via 42 Mile Crossing or Tea Tree Crossing; not the NZ Ninety Mile Beach",
+    "dup": "Same stretch as the agency's Ocean Beach; confirm 42 Mile Crossing (campground and dune walk) stays a distinct spot",
+    "cost": "no entry fee listed; beach conditions alert (erosion, dune collapse)",
+    "pin_moved": "pin moved 35 m north so it does not sit on coorong-national-park-1"
+   },
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-3": {
+   "name": "Jack Point Pelican Observatory Walk",
+   "icon": "🦩",
+   "category": "nature",
+   "bio": "A 1.2 km, 20-minute walk to a viewing area over the largest Australian pelican breeding colony.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -36.03574,
+    "longitude": 139.568092
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 4563413196 tourism=attraction 'Jacks Point Pelicans Observatory' (Pelican Islands info nodes within 150 m)  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the 1.2 km return walk, or Jack Point car park (agency map)"
+   },
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-4": {
+   "name": "Nukan Kungun Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Two-day, 25 km walk from Salt Creek to 42 Mile Crossing that links the park's best-known trails.",
+   "visitHoursMin": 10,
+   "visitHoursMax": 20,
+   "coordinates": {
+    "latitude": -36.21201,
+    "longitude": 139.675325
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin LOW: Midpoint between OSM node 9576962460 'Salt Creek Lookout' (-36.136346,139.638861) and node 316601543 '42 Mile Crossing Campground' (-36.287669,139.711781), the walk's two ends (~25 km)  (provisional)",
+   "notes": {
+    "pin": "Route midpoint, Salt Creek to 42 Mile Crossing Campground (about 25 km); not in the draft with coordinates. Use OSM hiking route if present, else the NPWS trail map. Camping at 42 Mile Crossing is charged separately (from $12.30 per night per park page); the walk itself has no fee."
+   },
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-5": {
+   "name": "Godfrey's Landing",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Storm Boy filming location on the Younghusband Peninsula, reached by boat, with a 3 km dune walk to the ocean beach.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.5710375,
+    "longitude": 138.9241871
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: Start vertex of OSM way 247967590 \"Godfrey's Landing Walk\" (DENR ref), with a toilets node 25 m away; the end nearer the lagoon  \"\"",
+   "notes": {
+    "pin": "Landing and jetty on the Coorong lagoon edge at the start of the 3 km Godfrey's Landing Walk; boat/kayak access only, from Goolwa or Hindmarsh Island. Pin the landing, not the ocean beach."
+   },
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-6": {
+   "name": "Parnka Point",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "The narrowest point between the Coorong's two lagoons, known as Hells Gate, with lagoon views and wading birds.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.8967285,
+    "longitude": 139.4013762
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1811191383 tourism=camp_site \"Parnka Point\" (locality node 268437093 at -35.90097,139.39818 is 500 m SW)  \"\"",
+   "notes": {
+    "pin": "Parnka Point car park, toilets and boat ramp (NPWS accessible car park listed). Parnka Ngoppun Trail (5 km loop) starts here."
+   },
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-7": {
+   "name": "Chinaman's Well Historic Site",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Stone well and old quarries from the gold-rush era, seen on the one-hour, 1.3 km Journey to Gold Walk.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.258638,
+    "longitude": 139.707405
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 268439617 tourism=attraction \"Chinaman's Well\" (Salt Creek); excavation-cover site node 9593195241 is 800 m SE  \"\"",
+   "notes": {
+    "pin": "Chinaman's Well car park / trailhead; the walk is a 1.3 km return so the well itself is within about 650 m of it."
+   },
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+  },
+  "coorong-national-park-11": {
+   "name": "Raukkan",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Ngarrindjeri community on the shore of Lake Alexandrina with a museum and the church on the $50 note.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.507718,
+    "longitude": 139.132835
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: osm place=hamlet (nominatim) \"Raukkan\"",
+   "notes": {
+    "pin": "Draft pin (-35.506, 139.135) is three decimals, so a memory-grade pin; redo from the OSM place point for Raukkan (about 4.5 km west of Narrung). Must sit 25 m+ from the church pin."
+   },
+   "wiki": "Raukkan, South Australia",
+   "ticket_note": "Raukkan community site (raukkan.com) failed to load; verify the official visitor page in a browser."
+  },
+  "coorong-national-park-12": {
+   "name": "Point Malcolm Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "Australia's only inland lighthouse, built in 1878 above the narrows between Lake Albert and Lake Alexandrina.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.5091004,
+    "longitude": 139.1909351
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: OSM node 427966551 man_made=lighthouse; Wikipedia \"Point Malcolm Lighthouse\" article point (-35.5089,139.1909) 25 m away  \"\"",
+   "notes": {
+    "pin": "Lighthouse on the cliff on the east side of the narrows, north of Poltalloch Rd, just above the Narrung ferry landing (Wikipedia/OSM man_made=lighthouse)."
+   },
+   "ticket_note": "Council-owned roadside landmark; no official visitor page found."
+  },
+  "coorong-national-park-13": {
+   "name": "Pink Lake",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "Pink-tinged salt lake near Meningie, a photo stop on the Narrung and Lake Albert scenic loop.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.585516,
+    "longitude": 139.3727305
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 4563408795 tourism=attraction 'Pink Lake Lookout' beside the Princes Highway north of Meningie  \"\"",
+   "notes": {
+    "pin": "Pink Lake beside the Princes Highway near Meningie (OSM natural=water named Pink Lake); the lake has no Wikipedia article of its own, so no wiki field. Draft name 'Pink Lake (Meningie)' renamed per no-qualifier rule."
+   },
+   "ticket_note": "Roadside lake with no steward; no official site."
+  },
+  "coorong-national-park-14": {
+   "name": "Lake Albert",
+   "icon": "🌅",
+   "category": "nature",
+   "bio": "Shallow lake beside Meningie where visitors swim, fish and watch the sunset.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.685067,
+    "longitude": 139.33857
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 1042086969 man_made=pier on the Meningie foreshore of Lake Albert (second pier way 438738724 at -35.6805,139.3406)  \"\"",
+   "notes": {
+    "pin": "Meningie lakefront / jetty on Lake Albert (town foreshore), not the lake centroid (it is in water). Pin at the public foreshore access point."
+   },
+   "wiki": "Lake Albert (South Australia)",
+   "ticket_note": "Open lake with no single steward."
+  },
+  "coorong-national-park-15": {
+   "name": "Bushranger Birdman of the Coorong",
+   "icon": "🦤",
+   "category": "landmark",
+   "bio": "Life-size saddled ostrich statue on the Meningie lake shore that tells the Peggotty legend.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.684998,
+    "longitude": 139.339244
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 9593189204 tourism=artwork sculpture 'Birdman of the Coorong'  \"\"",
+   "notes": {
+    "pin": "Statue on the Meningie foreshore of Lake Albert; take the point from OSM tourism=artwork or the SATC attraction geotag."
+   },
+   "ticket_note": "Council foreshore sculpture; no official site."
+  },
+  "coorong-national-park-16": {
+   "name": "Meningie Cheese Factory Museum",
+   "icon": "🧀",
+   "category": "museum",
+   "bio": "Volunteer-run museum of Meningie's district history, set in the town's old cheese factory beside the Princes Highway.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.690998,
+    "longitude": 139.327466
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 438743372 \"Cheese Factory Museum\" (tourism=museum building), Meningie  \"\"",
+   "costBasis": "donation",
+   "notes": {
+    "pin": "3 Fiebig Rd (Princes Highway), Meningie",
+    "cost": "Travel guide reports an honesty-box donation of about $5; unverified"
+   },
+   "wiki": "Meningie Cheese Factory Museum",
+   "free": true,
+   "ticket_note": "No official website found; volunteer group with a phone listing only"
+  },
+  "coorong-national-park-17": {
+   "name": "Meningie Hill Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Lookout over Meningie and Lake Albert, open at any hour.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.6844068,
+    "longitude": 139.3538497
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 4407585103 tourism=viewpoint, 40 m from node 1811186651 named \"Meningie Lookout\" (tagged camp_site)  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Meningie Hill; take OSM tourism=viewpoint on the hill, not the town (Wikivoyage Meningie lists it with no own geotag)"
+   },
+   "free": true,
+   "ticket_note": "Open lookout, no steward site"
+  },
+  "coorong-national-park-18": {
+   "name": "Meningie Walking and Cycling Trails",
+   "icon": "🚴",
+   "category": "hike",
+   "bio": "Lakeside walking and cycling trails with lookouts around Meningie, including the Lions Walking Trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.684532,
+    "longitude": 139.3391575
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 1811186650 'Meningie Lions Jubilee Park' (lakeside park on Lake Albert at Meningie, where the Lions Walking Trail runs); no OSM route found for the trail  (provisional)",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the Lions Walking Trail / lakeside trail along Lake Albert at Meningie (OSM route)",
+    "merge": "Lions Walking Trail and Walking and Cycling Trails listings merged as one",
+    "pin_moved": "pin moved 35 m north so it does not sit on coorong-national-park-15"
+   },
+   "free": true,
+   "ticket_note": "Council/community trails, no single steward page found"
+  },
+  "riverland-1": {
+   "name": "Loxton Historical Village",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Open-air village of more than 45 buildings from the 1890s to 1950s, with audio guides, a steam train and a fire-fighting collection.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.449608,
+    "longitude": 140.565376
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 264983234 tourism=attraction 'Loxton Historical Village' (centre of the site)  \"\"",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Allen Hosking Drive, Loxton",
+    "cost": "Adult $15 (child $8, pensioner $12, family $35) per southaustralia.com listing; other listings say $12, unverified"
+   },
+   "wiki": "Loxton Historical Village",
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "http://www.thevillageloxton.com.au"
+  },
+  "riverland-2": {
+   "name": "Murray River National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Floodplain park of Murray wetlands, with walking trails, canoe creeks, bird watching and bush camping.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.342222,
+    "longitude": 140.577368
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 2710315955 waterway=lock_gate 'Lock 4' (locality node 2712307084 at -34.342548,140.577768), the Lock 4 entrance via Draper Road  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Park visitor point: Lock 4 entrance via Draper Road from Berri (not Katarapko's spot pin)",
+    "cost": "Agency page: vehicle entry to the park is free, camping from $15.40 per night"
+   },
+   "wiki": "Murray River National Park",
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/murray-river-national-park"
+  },
+  "riverland-3": {
+   "name": "Banrock Station Wine and Wetland Centre",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Restored wetlands with self-guided walking trails, a boardwalk and bird hides beside a Murray River winery.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.197788,
+    "longitude": 140.330503
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 6257233298 Banrock Wine and Wetland Centre (cafe node 6257233298/5648633580 at same building, Holmes Rd)  \"\"",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Banrock Station Wine and Wetland Centre, Holmes Rd near Kingston-on-Murray, Hawks Nest; cellar door / car park",
+    "cost": "Self-guided walks reported free (Australian Geographic); a self-guided option with tasting listed from $15 and guided tours $60+; unverified"
+   },
+   "wiki": "Banrock Station",
+   "free": true,
+   "ticket_note": "Wetland-centre page not verified; banrockstation.com.au is the wine brand"
+  },
+  "riverland-4": {
+   "name": "Lake Bonney (Riverland)",
+   "icon": "🏊",
+   "category": "beach",
+   "bio": "Large lake at Barmera with a lakeside beach, swimming areas and watersports.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.221934,
+    "longitude": 140.452247
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=water (nominatim) \"Lake Bonney Riverland\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Lake Bonney foreshore beach at Barmera (OSM natural=beach), not lake centroid",
+    "note": "Past blue-green algae swimming warnings; check SA Health"
+   },
+   "wiki": "Lake Bonney (South Australia)",
+   "free": true,
+   "ticket_note": "Open lakeshore, no steward page"
+  },
+  "riverland-5": {
+   "name": "Chowilla Game Reserve",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Remote river red gum and black box floodplain reserve with canoe creeks, birdlife and bush camping.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -33.9733581,
+    "longitude": 140.9577229
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 316601847 tourism=camp_site \"Customs House Campground\" inside the Chowilla Game Reserve area, next to Border Cliffs Campground (node 1811163200)  (provisional)",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Visitor point on the reserve's main access (Chowilla/Monoman Creek area near Renmark); not centroid",
+    "cost": "Agency page: vehicle entry free, camping $15.40 per night",
+    "closures": "Parts closed 18 May-30 Nov 2026 for constraints project (campsites 14-32, Foleys Campground)"
+   },
+   "wiki": "Chowilla Game Reserve",
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/chowilla-game-reserve"
+  },
+  "riverland-7": {
+   "name": "The Big Orange",
+   "icon": "🍊",
+   "category": "landmark",
+   "bio": "Giant roadside orange beside the Sturt Highway at Berri.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -34.246442,
+    "longitude": 140.620666
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 663121055 tourism=attraction 'The Big Orange', Berri  \"\"",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Big Orange, Sturt Highway, Berri (OSM/Wikipedia)"
+   },
+   "wiki": "Big Orange",
+   "free": true,
+   "ticket_note": "Roadside icon; no steward page"
+  },
+  "riverland-8": {
+   "name": "PS Industry",
+   "icon": "🚢",
+   "category": "historic",
+   "bio": "Restored 1911 paddle steamer moored on Renmark's riverfront, with 60-minute cruises on set dates.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.175027,
+    "longitude": 140.751686
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 244238035 tourism=information 'Renmark Paringa Visitor Information Centre' (84 Murray Ave; Nominatim Murray Ave -34.17524,140.75155 agrees within 30 m)  \"\"",
+   "costBasis": "tour",
+   "notes": {
+    "pin": "Moored at Renmark riverfront by the Visitor Information Centre, 84 Murray Ave (Wikivoyage geotag -34.1751 140.7516 is the centre)",
+    "cost": "Adult $35 cruise per southaustralia.com listing; the official page lists the cruise dates and a $3 booking fee but no price; unverified. Boarding outside cruises is in visitor centre hours"
+   },
+   "wiki": "PS Industry",
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "AUD",
+   "ticketUrl": "https://www.discoverrenmark.com.au/ps-industry"
+  },
+  "riverland-9": {
+   "name": "Olivewood Historic Homestead and Museum",
+   "icon": "🏡",
+   "category": "historic",
+   "bio": "Home of Charles Chaffey, founder of the Renmark irrigation colony, with the original orange trees in its orchard.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.180882,
+    "longitude": 140.735075
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM node 2160417228 Olivewood-National Trust (tourism=museum) + Wikivoyage listing geotag -34.1808,140.7357 within 60 m  \"\"",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Wikivoyage listing own geotag -34.1808 140.7357 (205 Twentyfirst St)",
+    "cost": "Adult $10, concession $5, family $20 (National Trust page); open Thu-Mon 10am-4pm"
+   },
+   "wiki": "Olivewood Homestead",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nationaltrust.org.au/olivewood"
+  },
+  "riverland-11": {
+   "name": "Waikerie Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Double silo mural by two artists on a clifftop at Waikerie, almost 30 m tall.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -34.18209,
+    "longitude": 139.991248
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single official site; SATC listing only.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 6283681785 tourism=artwork 'Waikerie South Australia silo art: Parrot' (viewpoint node 6283681786 10 m away)  \"\"",
+   "notes": {
+    "pin": "Silos on the clifftop in Waikerie, viewable from the adjacent car park; Australian Silo Art Trail location."
+   }
+  },
+  "riverland-12": {
+   "name": "Waikerie Rotary Cliff Top Walk and Art Trail",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "A 2 km clifftop walk from the ferry to lookouts over the Murray floodplain, past murals and sculptures.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.1798663,
+    "longitude": 139.9892618
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official page found; SATC listing only.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM ways 1450977907 + 1163130458 'Clifftop walk', Waikerie (ferry n316758309 -34.1756,139.9864 at the west end; silo art -34.182,139.991); halfway of the mapped clifftop route  \"\"",
+   "notes": {
+    "pin": "Linear walk (about 2 km) from the Waikerie ferry along the clifftop: pin the route midpoint (OSM way if present, else council trail map)."
+   }
+  },
+  "riverland-13": {
+   "name": "Gluepot Reserve",
+   "icon": "🐦",
+   "category": "nature",
+   "bio": "Volunteer-run mallee reserve with a visitor centre, 14 walking trails and bird hides, home to the black-eared miner.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -33.761603,
+    "longitude": 140.1247
+   },
+   "wiki": "Gluepot Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://gluepot.org/visit-us/",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 37101889 'Gluepot Homestead' (Education Centre way 37101879 at -33.762966,140.123798 within 160 m)  \"\"",
+   "notes": {
+    "pin": "Visitor Centre at the homestead area (not the reserve centroid); self-registration there.",
+    "fee": "Day visitors $10 per vehicle per day, camping $20 per vehicle per night (gluepot.org/visit-us). Reserve was closed for track drying at fetch time."
+   }
+  },
+  "riverland-14": {
+   "name": "Loch Luna and Moorook Game Reserves",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Floodplain wetlands near Kingston-on-Murray with canoe trails, birdlife and camping beside the Murray.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -34.221939,
+    "longitude": 140.3949
+   },
+   "wiki": "Loch Luna Game Reserve",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/loch-luna-moorook-game-reserves",
+   "coordinates_source": "resolve-pin LOW: OSM node 316601981 \"Campground 10 - Loch Luna Game Reserve\" (tourism=camp_site), inside the game reserve  (provisional)",
+   "notes": {
+    "pin": "Visitor point: Loch Luna boat ramp/canoe launch or main campground off Kingston Bridge (NPWS map); not the reserve centroid.",
+    "cost": "Park page lists only accommodation ($15.40/night); no entry fee."
+   }
+  },
+  "riverland-15": {
+   "name": "Danggali Conservation Park",
+   "icon": "🦎",
+   "category": "nature",
+   "bio": "Remote mallee wilderness north of Renmark, home to malleefowl, with pastoral-relic walking trails.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -33.4927621,
+    "longitude": 140.7155398
+   },
+   "wiki": "Danggali Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/danggali-conservation-park-and-wilderness-protection-area",
+   "coordinates_source": "resolve-pin LOW: OSM node 4317786827 tourism=camp_site \"Camp 4\" (NPWS Danggali campsites Camp 1-5 cluster at -33.48..-33.50,140.70..140.72)  (provisional)",
+   "notes": {
+    "pin": "Remote park: use the main visitor point (Thurk's Well/Old Hut area or park entry per NPWS map), not the centroid.",
+    "cost": "Free entry per park page. Park alert at fetch time: closed until further notice after heavy rain; closed on catastrophic fire days."
+   }
+  },
+  "riverland-16": {
+   "name": "Possum Parade",
+   "icon": "🦝",
+   "category": "nature",
+   "bio": "Brushtail possums come down the palm trunks at dusk on the Renmark riverfront to eat food left by visitors.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.174708,
+    "longitude": 140.751687
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No operator; run informally on the riverfront (SATC listing, free, year-round).",
+   "coordinates_source": "resolve-pin LOW: OSM way 244238035 'Renmark Paringa Visitor Information Centre' (information=office)  (provisional)",
+   "notes": {
+    "pin": "Riverfront palms near the Renmark Visitor Information Centre, Murray Avenue (some possums also at Jarrett Memorial Gardens, James Avenue).",
+    "pin_moved": "pin moved 35 m north so it does not sit on riverland-8"
+   }
+  },
+  "riverland-17": {
+   "name": "Renmark Rotary Lookout Tower",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Lookout tower in Renmark West with 360-degree views over farmland and the town, open day and night.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.146396,
+    "longitude": 140.708764
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run lookout with no dedicated page found.",
+   "coordinates_source": "resolve-pin HIGH: OSM node 6447466376 'Renmark Lookout' (man_made=tower, tourism=viewpoint); Wikivoyage listing geo -34.1463,140.7087 (~10 m)  \"\"",
+   "notes": {
+    "pin": "Wikivoyage listing's own geo about -34.1463, 140.7087 (144 Chino St, Renmark West); confirm against OSM tower.",
+    "pin_hint": "-34.1463 140.7087 (Wikivoyage listing)"
+   }
+  },
+  "riverland-18": {
+   "name": "Renmark Paringa Community Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Local history museum in Paringa with mostly agricultural and riverside displays of Renmark and Paringa.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.18056,
+    "longitude": 140.778622
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticket_note": "No official site verified; SATC and BIG4 listings only.",
+   "coordinates_source": "resolve-pin HIGH: OSM way 686281464 tourism=museum 'Renmark Paringa Community Museum' + Wikivoyage listing -34.1808,140.7796 (~90 m)  \"\"",
+   "notes": {
+    "pin": "12 Sturt Hwy, Paringa; Wikivoyage listing geo about -34.1808, 140.7796.",
+    "cost": "Listed as free with a donation appreciated; open Mon, Wed, Fri 10am-3pm.",
+    "pin_hint": "-34.1808 140.7796 (Wikivoyage listing)"
+   }
+  },
+  "riverland-19": {
+   "name": "Loxton Tree Sculptures",
+   "icon": "🪵",
+   "category": "landmark",
+   "bio": "Sixteen chainsaw-carved tree sculptures along an easy walking trail in Loxton's conservation and heritage park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.449288,
+    "longitude": 140.565376
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run; no dedicated page verified (SATC listing, free).",
+   "coordinates_source": "resolve-pin LOW: OSM way 264983234 Loxton Historical Village (tourism=attraction) centre; the tree-sculpture walk is in the adjoining heritage/conservation park  (provisional)",
+   "notes": {
+    "pin": "Walking trail inside Loxton's conservation and heritage park (near the Historic Village): pin the trail midpoint or main car park.",
+    "pin_moved": "pin moved 35 m north so it does not sit on riverland-1"
+   }
+  },
+  "riverland-20": {
+   "name": "Bulyong Island",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Boat-access island section of Murray River National Park north of Paringa for paddling, wildlife and bush camping.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -34.1035552,
+    "longitude": 140.731902
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/murray-river-national-park",
+   "coordinates_source": "resolve-pin LOW: Nominatim/OSM water feature \"Bulyong Island Basin\" (Renmark North)  (provisional)",
+   "notes": {
+    "pin": "Access by water only from Murtho Forest Landing/Murtho Landing; pin the island's main camping/landing area per NPWS Bulyong Island map.",
+    "cost": "Murray River NP page lists only accommodation from $15.40/night, no entry fee.",
+    "alerts": "Parts of Murray River NP closed for environmental watering to Nov 2026 (Lock 4 section, not Bulyong specifically)."
+   }
+  },
+  "riverland-21": {
+   "name": "Border Cliffs",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Chowilla campground and the 3.4 km Customs House Wetland Walk beside the Murray at the Victorian border.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.972392,
+    "longitude": 140.957375
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/chowilla-game-reserve",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1811163200 tourism=camp_site 'Border Cliffs Campground' (Murtho); Border Cliffs Custom House Wetland Walk footway way 1022449305 starts about 700 m north  \"\"",
+   "notes": {
+    "pin": "Border Cliffs campground (Chowilla Game Reserve); walk is a loop, so pin campground/trailhead per NPWS map.",
+    "cost": "Chowilla page lists only accommodation $15.40/night, no entry fee.",
+    "alerts": "Parts of Chowilla closed to 30 Nov 2026 (campsites 14-32 etc.) and Danggali/Chowilla Regional Reserve closure alert at fetch time."
+   }
+  },
+  "riverland-22": {
+   "name": "Overland Corner",
+   "icon": "🍺",
+   "category": "historic",
+   "bio": "National Trust's 1860 hotel and post office on the Murray, with displays, bush trails and fossils in the river cliffs.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.15206,
+    "longitude": 140.339896
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 78393585 amenity=pub 'Overland Corner Hotel', 205 Old Coach Road (Nominatim agrees)  \"\"",
+   "free": true,
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Hotel at Old Coach Road, Overland Corner; Wikivoyage lists geo about -35.152, 140.34 (rounded, a hint only). Pin on the hotel itself, not the reserves.",
+    "general": "Free to enter the hotel and displays; meals and drinks are paid. Trading days vary (Tue-Sun per National Trust), so check before going. Draft said 'heritage museum': source says artefacts displayed throughout the hotel and Old Post Office."
+   },
+   "wiki": "Overland Corner",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/overland-corner-hotel/"
+  },
+  "riverland-23": {
+   "name": "Morgan",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Historic river port at the Murray's great bend, with the Landseer Museum, a railway museum and a heritage town walk.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.034056,
+    "longitude": 139.667962
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Morgan\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Town centre (place=town) near the Landseer Building on Railway Terrace by the river; draft point is a rounded Wikipedia point, replace.",
+    "general": "Town is open access. Morgan Landseer Museum entry about $5 (SATC listing; an older local page said $4), weekdays, weekends by appointment: unverified current. Draft's 'restored paddle steamer' dropped: SATC only says a paddle steamer is slowly coming back to life, no name or access."
+   },
+   "wiki": "Morgan, South Australia",
+   "ticketUrl": "https://visitmorgan.com.au/"
+  },
+  "riverland-24": {
+   "name": "Morgan Conservation Park",
+   "icon": "🐦",
+   "category": "nature",
+   "bio": "Riverside wetlands for birdwatching, fishing and picnics on the Murray near Morgan.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.038096,
+    "longitude": 139.672679
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 6501880165 leisure=slipway 'Morgan Boat Ramp'; park relation 570777 centroid -34.034353,139.686733 (not used)  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Park visitor/day-use point near the Murray wetlands (use a day-use area or boat ramp from OSM), not the park centroid.",
+    "general": "No day entry fee shown on the NPWS page (only camping, $15.40 per night). NPWS alert: park partially closed 18 May to 30 December 2026 for regulator construction works. Draft bio 'near Morgan' kept. Weak but named by the agency list."
+   },
+   "wiki": "Morgan Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/morgan-conservation-park"
+  },
+  "riverland-25": {
+   "name": "Maize Island Lagoon Conservation Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Murray riverbank park with birdlife, western grey kangaroos, camping, fishing and the Peter Jacobs Trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.1611058,
+    "longitude": 140.0214381
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Middle vertex of OSM way 1019612079 \"Peter Jacobs Trail\" (2.0 km of the ~2.5 km out-and-back with way 1019612081) in Maize Island Lagoon Conservation Park (relation 570775)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Peter Jacobs Trail midpoint if in OSM, else the main river-track/campground access; not the park centroid.",
+    "general": "NPWS page: 'Free entry'. Peter Jacobs Trail and interpretive signs come from the SATC list via draft; NPWS page text does not mention the trail name (unverified)."
+   },
+   "wiki": "Maize Island Lagoon Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/maize-island-lagoon-conservation-park"
+  },
+  "riverland-26": {
+   "name": "Hart Lagoon Walking Trail",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "Lagoon walking trail near Waikerie on the Murray, with birdlife and a camping area beside it.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.1704747,
+    "longitude": 139.9731241
+   },
+   "coordinates_source": "resolve-pin LOW: Centre of OSM way 688519490 highway=path (1.6 km) 800 m east of Hart Lagoon (water way 190213111, -34.1688,139.9643)  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the trail around Hart Lagoon (OSM way/route), halfway along its length.",
+    "general": "Listed on SATC Waikerie page with no price; treated as free open trail (council reserve). Bio keeps it generic: no source detail beyond 'lagoon walking trail'. Birdlife/camping claim: camping sites listed on same page; birdlife unverified."
+   },
+   "ticket_note": "No single official page found; council reserve trail."
+  },
+  "riverland-27": {
+   "name": "Holder Bend Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Free clifftop lookout over a bend of the Murray near Waikerie, popular with photographers.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.187331,
+    "longitude": 140.011911
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 316601953 tourism=viewpoint 'Holder Bend Lookout', Waikerie  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM tourism=viewpoint named Holder Bend, or the lookout car park on the cliff top.",
+    "general": "SATC lists it Free, with car park."
+   },
+   "ticket_note": "Open lookout, no steward page."
+  },
+  "riverland-28": {
+   "name": "Headings Cliff Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Lookout near Paringa over 70 m of gold and ochre Murray cliffs, one of the Riverland's most photographed views.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.176804,
+    "longitude": 140.780481
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 604277926 tourism=viewpoint (unnamed) near Paringa, beside Bert Dix Memorial Park n316601777  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM tourism=viewpoint Headings Cliff (near Paringa) or its car park on the cliff top.",
+    "general": "SATC lists it Free with car park and coach parking; '70 metres' and 'most photographed' are from SATC text."
+   },
+   "ticket_note": "Open lookout, no steward page."
+  },
+  "riverland-29": {
+   "name": "Heaven Clifftop Viewpoint",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Free clifftop viewpoint above Habel's Bend, with a cliff walking trail and Murray views towards Katarapko.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.454008,
+    "longitude": 140.546682
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 2706609758 tourism=viewpoint 'Habels Bend Cliff Lookout' (Habels Bend locality -34.452945,140.547956)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Viewpoint at the cliff top above Habel's Bend (OSM tourism=viewpoint if named Heaven). Not on a Wikipedia page.",
+    "general": "SATC lists it Free. 'Cliff walking trail' and 'Katarapko' are from the Atlas draft note (the SATC listing page is thin): unverified. Official name has quotes ('Heaven'); shown name without."
+   },
+   "ticket_note": "Open lookout, no steward page."
+  },
+  "riverland-30": {
+   "name": "Martin Bend Wetland and Walking Trail",
+   "icon": "🦆",
+   "category": "hike",
+   "bio": "Wetland walking trail on the Murray at Berri, with a car park and toilets at the trailhead.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.290127,
+    "longitude": 140.622934
+   },
+   "coordinates_source": "resolve-pin LOW: Middle vertex of the longest unnamed OSM path (way 232095784, 1.1 km) inside Martin Bend Reserve (way 306841551); Martin Bend trail itself is not named in OSM  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the Martin Bend wetland trail (OSM way/route in Martin Bend Reserve); trailhead car park as fallback.",
+    "general": "SATC lists Free, car park and public toilets. Trail length not sourced."
+   },
+   "ticket_note": "Council reserve; SATC listing only."
+  },
+  "riverland-31": {
+   "name": "Wilabalangaloo Reserve",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "National Trust nature reserve at Berri with a nature trail, a cliff-top viewing platform and 30 m ochre sandstone cliffs.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.252697,
+    "longitude": 140.6216814
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 2130282491 tourism=museum \"Wilabalangaloo Reserve-National Trust\"  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Reserve car park/trail start on the Murray side; midpoint of the nature trail is a pin option, not the reserve centroid.",
+    "general": "SATC Free. National Trust: 92 ha reserve on the Murray's western bank on Berri's outskirts, 1 km of about 30 m sandstone cliffs, cliff-top viewing platform. Trail length (about 2.5 km) from draft, not on the Trust page."
+   },
+   "ticketUrl": "https://www.nationaltrust.org.au/places/wilabalangaloo-reserve/"
+  },
+  "riverland-32": {
+   "name": "Monash Adventure Park",
+   "icon": "🛝",
+   "category": "entertainment",
+   "bio": "Free adventure playground at Monash with a rope bridge, wooden maze, flying fox and a creek through the grounds.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.235459,
+    "longitude": 140.559431
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 6207364682 tourism=attraction 'Monash Adventure Park' (playground way 218062649 34 m away)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "20 Madison Road, Monash: the park itself (OSM leisure=playground / park), not the Monash town point.",
+    "general": "Free entry (gold-coin donations welcomed, per a guide); address 20 Madison Road, Monash. Draft 'wiki: Monash Playground' dropped: no such article (the town article is Monash, South Australia); omitted. Barmera Visitor Centre page loaded."
+   },
+   "ticketUrl": "https://www.barmeratourism.com.au/places/monash-playground/"
+  },
+  "milang": {
+   "name": "Milang",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Lakeside township on Lake Alexandrina with a heritage jetty, the Port Milang railway museum and a historical walk.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.405339,
+    "longitude": 138.971327
+   },
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Milang\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Town centre place=town/village, not the jetty or museum; draft point to be checked.",
+    "general": "Town open access. Railway museum is free (weekends, hours unverified). State-heritage jetty is 217 m with a hand crane. Standalone spot (no destination)."
+   },
+   "wiki": "Milang, South Australia",
+   "ticket_note": "Town with many stewards; no single official site verified."
+  },
+  "swan-reach-observatory": {
+   "name": "Swan Reach Observatory",
+   "icon": "🔭",
+   "category": "entertainment",
+   "bio": "Research-grade 70 cm telescope near Swan Reach, open to the public on pre-booked stargazing sessions.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.569069,
+    "longitude": 139.598311
+   },
+   "costMin": 85,
+   "costMax": 85,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.swanreachobservatory.com.au",
+   "coordinates_source": "resolve-pin LOW: commons photo median (provisional)",
+   "notes": {
+    "pin": "Observatory on Murraylands Rd, Swan Reach SA 5354 (operator's address); pin the building, near the Swan Reach ferry side.",
+    "cost": "From $85 per SATC attraction listing; operator site gives no price. Entry strictly by pre-booking, opened 13 Nov 2025."
+   }
+  },
+  "swan-reach-district-museum": {
+   "name": "Swan Reach and District Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Local history museum in a 1917 school building at Swan Reach, with the Mid Murray Classic Car Gallery of 16+ vehicles.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.570059,
+    "longitude": 139.598335
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "No official site found; SATC listing only.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1101478607 (way w1101478607) tourism=museum 'Swan Reach Museum'  \"\"",
+   "notes": {
+    "pin": "Former school building in Swan Reach township; pin the museum entrance.",
+    "cost": "No price found; assumed free/donation for a small volunteer museum, unverified."
+   }
+  },
+  "river-murray-dark-sky-reserve": {
+   "name": "River Murray International Dark Sky Reserve",
+   "icon": "🌌",
+   "category": "nature",
+   "bio": "Australia's first International Dark Sky Reserve, 3,200 sq km along the Murray where the Milky Way shows clearly.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.7106587,
+    "longitude": 139.5157897
+   },
+   "wiki": "River Murray International Dark Sky Reserve",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward; SATC and park pages only.",
+   "coordinates_source": "resolve-pin LOW: OSM node 1482227616 Shell Hill Lookout (tourism=viewpoint), a public stargazing site in the reserve; the 4WD-only core site in Swan Reach Conservation Park is not used  (provisional)",
+   "notes": {
+    "pin": "Reserve core site is in Swan Reach Conservation Park (4WD only); visitors use public stargazing sites such as Shell Hill Reserve and the observatory. Pin a public-access viewing point, not the centroid, away from the observatory and Shell Hill pins.",
+    "cost": "Free to be in; guided tours priced separately by operators."
+   }
+  },
+  "big-bend-walker-flat": {
+   "name": "Big Bend (Walker Flat)",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Tallest cliffs on the Murray at its longest bend, with a lookout near Nildottie and a free ferry at Walker Flat.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.6326262,
+    "longitude": 139.6658526
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council/regional tourism pages only; no single steward.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 316602064 tourism=viewpoint \"Big Bend Lookout\" (twin camp_site node 1811162407 5 m away)  \"\"",
+   "notes": {
+    "pin": "Pin the cliff lookout near Nildottie / Big Bend lookout, not the Walker Flat ferry landing.",
+    "cost": "Ferry is free; Big Bend by Night is a separate private farm tour, not priced here."
+   }
+  },
+  "shell-hill-reserve": {
+   "name": "Shell Hill Reserve",
+   "icon": "🦪",
+   "category": "nature",
+   "bio": "Five-million-year-old oyster-shell deposit near Swan Reach that doubles as a Dark Sky viewing site.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.710339,
+    "longitude": 139.5157897
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site; SATC listing only.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1482227616 tourism=viewpoint 'Shell Hill Lookout' (Black Hill area); the only OSM feature named Shell Hill within 40 km of the hint  \"\"",
+   "notes": {
+    "pin": "Reserve with car park on SATC listing; use the reserve's car park point (OSM/SATC).",
+    "pin_moved": "pin moved 35 m north so it does not sit on river-murray-dark-sky-reserve"
+   }
+  },
+  "ngaut-ngaut-conservation-park": {
+   "name": "Ngaut Ngaut Conservation Park",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Aboriginal heritage site at the Devon Downs rock shelter, visited only on guided tours led by Nganguraku guides.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.688898,
+    "longitude": 139.60812
+   },
+   "wiki": "Ngaut Ngaut Conservation Park",
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ngaut-ngaut-conservation-park",
+   "coordinates_source": "resolve-pin LOW: OSM way 56018601 'Ngaut Ngaut Conservation Park' (centre of the small park polygon on the Murray's west bank)  (provisional)",
+   "notes": {
+    "pin": "Park is on the west bank of the Murray ~12 km south of Swan Reach near Nildottie; tours meet at a point given on booking. Pin the park's rock-shelter / Devon Downs access, or the tour meeting place if published.",
+    "cost": "$15 adult from a 2021 secondary source (concession $12.50, child $9); parks page says 'fees apply for tours' with no figure."
+   }
+  },
+  "hunter-road-lookout": {
+   "name": "Hunter Road Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Free clifftop lookout over the Murray, Blanchetown and Paisley Wetlands, 2.3 km off the Sturt Highway.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.361602,
+    "longitude": 139.630999
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward; SATC listing only.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1506329419 tourism=viewpoint 'Paisley Lookout' (parking node 10703670091 at -34.361426,139.631049)  \"\"",
+   "notes": {
+    "pin": "Lookout at the end of Hunter Road, Paisley, 2.3 km off the Sturt Highway; pin on the lookout platform."
+   }
+  },
+  "brookfield-conservation-park": {
+   "name": "Brookfield Conservation Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Park near Blanchetown known for southern hairy-nosed wombats and the Three Habitat Walk, with periodic closures for pest control.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.34149,
+    "longitude": 139.490521
+   },
+   "wiki": "Brookfield Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/brookfield-conservation-park",
+   "coordinates_source": "resolve-pin LOW: OSM node 4044892677 toilets ~1.4 km N of the Brookfield Conservation Park centroid (relation 570782, -34.3545,139.4895); public-section visitor point not confirmed  (provisional)",
+   "notes": {
+    "pin": "Public section car park / Three Habitat Walk start near Blanchetown (parks.sa.gov.au); visitors use the Three Habitat Walk area.",
+    "cost": "Free entry per parks page; open 7am to sunset, closed on set dates through to Dec 2026 for pest control."
+   }
+  },
+  "karoonda-art-sculpture-trail": {
+   "name": "Karoonda Art and Sculpture Trail",
+   "icon": "🗿",
+   "category": "landmark",
+   "bio": "Walkable trail of sculptures along Karoonda's main street, including the Geofacts and the Karoonda Shuffle Screens.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.0945472,
+    "longitude": 139.8963523
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No dedicated site found; regional tourism pages only.",
+   "coordinates_source": "resolve-pin LOW: Nominatim: Railway Terrace, Karoonda (street point)  (provisional)",
+   "notes": {
+    "pin": "Main street (Railway Tce / Cleve-Karoonda area) in Karoonda; pin midway along the sculpture line, distinct from the silo art pin."
+   }
+  },
+  "karoonda-silo-art": {
+   "name": "Karoonda Day and Night Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Painted silos by Heesco showing country life and a steam train, with changing artwork projected on them after dark.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.0938,
+    "longitude": 139.9083
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site; regional tourism pages only.",
+   "coordinates_source": "resolve-pin MEDIUM: Centroid of eight OSM man_made=silo ways (w566541042..w566541058) at the Karoonda railway siding  \"\"",
+   "notes": {
+    "pin": "Silos at Karoonda railway siding; pin the silos."
+   }
+  },
+  "lameroo-silo-art": {
+   "name": "Lameroo Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Two painted grain silos by Smug, a 2024 and 2025 diptych, with a park beside them.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.329308,
+    "longitude": 140.518282
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official site; SATC and regional tourism pages only.",
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=attraction (nominatim) \"Silo art\"",
+   "notes": {
+    "pin": "Grain silos at Lameroo with the adjoining park; pin the silos."
+   }
+  },
+  "mallee-tourist-heritage-centre": {
+   "name": "Mallee Tourist and Heritage Centre",
+   "icon": "🚜",
+   "category": "museum",
+   "bio": "Pinnaroo museum of restored engines, farm memorabilia, a grain collection and working letterpress printing presses.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.260466,
+    "longitude": 140.906844
+   },
+   "costMin": 7,
+   "costMax": 7,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.southernmallee.com.au/post/mallee-tourist-heritage-centre",
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=museum (nominatim) \"Mallee Tourist Heritage Centre\"",
+   "notes": {
+    "pin": "Railway Terrace South, Pinnaroo (address from Southern Mallee listing); pin the centre building.",
+    "cost": "Adult $7, concession $6 per History SA Network listing. Volunteer-run; Southern Mallee page says open about 10am-1pm Mon-Fri, so a visit window matters (not in bio, no room).",
+    "ticket": "Southern Mallee tourism page titled Mallee Tourist & Heritage Centre loads; the council page (southernmallee.sa.gov.au) is Cloudflare-blocked."
+   }
+  },
+  "coonalpyn-silo-art": {
+   "name": "Coonalpyn Downs Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Guido van Helten's 2017 mural of five local children on working grain silos beside the Dukes Highway.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.695526,
+    "longitude": 139.856212
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single official site; council page (coorong.sa.gov.au Creating Coonalpyn) is Cloudflare-blocked, so no verified link.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 4774407070 tourism=artwork 'Guido van Helten: Silo Mural'  \"\"",
+   "notes": {
+    "pin": "Coonalpyn silos beside the Dukes Highway; large parking area adjacent (Atlas Obscura); use the silo group, not town centre.",
+    "bio": "Dropped draft 'picnic area' claim: no source describes one at the silos. Silos are still operational with heavy truck traffic at times."
+   }
+  },
+  "mount-boothby-conservation-park": {
+   "name": "Mount Boothby Conservation Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Park named for a 129 m granite and limestone outcrop, with wild orchids in spring and a picnic area at Boothby Rocks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.85698,
+    "longitude": 139.76896
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No page found on parks.sa.gov.au (slugs mount-boothby-conservation-park, mount-boothby, boothby all 404).",
+   "coordinates_source": "resolve-pin LOW: OSM node 3008902548 natural=peak \"Mount Boothby\", 2 km SW of the park relation 6708930 centroid (-35.8408,139.7838)  (provisional)",
+   "notes": {
+    "pin": "Tolmer Rocks outcrop (Tolmer Rocks Road, ~20 km from Tintinara) is the 129 m feature and the same listing; Boothby Rocks Reserve picnic area off Boothby Road, Culburra is an alternative visitor point. Wikipedia park coord 35.8405 S 139.7770 E is a centroid-type point.",
+    "cost": "SATC lists both Mount Boothby and Tolmer Rocks as Free. parks.sa.gov.au has no page for this park at tested slugs, so no entry-fee confirmation from the agency.",
+    "merge": "Tolmer Rocks is covered by this entry, not a separate spot."
+   }
+  },
+  "karte-conservation-park": {
+   "name": "Karte Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Sand-dune scrub with a 1.5 km interpretive walk and picnic area, in habitat used by threatened malleefowl.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.07499,
+    "longitude": 140.68472
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/karte-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1811180136 tourism=camp_site 'Karte Conservation Park' (park campground, near picnic area and trail start); park relation 570776 centroid is -35.0863,140.7120  \"\"",
+   "notes": {
+    "pin": "Walking trail (1.5 km) starts near picnic area and campsites; pin midpoint of trail (OSM) or trailhead/picnic area.",
+    "cost": "parks.sa.gov.au lists only accommodation fee ($15.40 per night); no vehicle entry fee, no staffed gate. Page title checked: Karte Conservation Park."
+   }
+  },
+  "ngarkat-conservation-park": {
+   "name": "Ngarkat Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Remote 4WD-only mallee heath wilderness with 11 campgrounds and 10 walking trails across 271,000 hectares.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -35.743948,
+    "longitude": 140.801453
+   },
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ngarkat-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1811167074 tourism=camp_site 'Comet Bore Campground' beside the Ngarkat Highway (Ngarkat locality n2755261112 -35.7667,140.7983)  \"\"",
+   "notes": {
+    "pin": "Park is 271,000 ha; centroid is wrong. Use a main visitor point on the Ngarkat Highway side (e.g. a campground or the Box Flat ruins / Gosse Hill walk start from the park's map).",
+    "cost": "parks.sa.gov.au: vehicle entry $14.40 per vehicle, camping from $23.10 per night; 4WD only; fees paid before entry. Border Track one-way section closed 1 Nov-31 Mar; closed on Catastrophic fire danger days. Page title checked."
+   }
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "murray-bridge-10",
+   "name": "Monarto Conservation Park",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Monarto Conservation Park",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "Semi-arid mallee park an hour from Adelaide, good for spotting southern scrub-robin, heathwren and malleefowl.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://www.parks.sa.gov.au/parks/monarto-conservation-park",
+    "notes": {
+     "cost": "Free entry per NPWS SA page (title loaded: Monarto Conservation Park).",
+     "pin": "Use NPWS visitor access/car park, not the park centroid."
+    }
+   }
+  },
+  {
+   "id": "mannum-3",
+   "name": "River Rides Motorcycle Museum",
+   "reason": "No cost found (and not known to be free); unblocks on a price or a source saying it is free.",
+   "entry": {
+    "name": "River Rides Motorcycle Museum",
+    "icon": "🏍️",
+    "category": "museum",
+    "bio": "Mannum museum of historic motorbikes and racing memorabilia, with about 52 bikes on display.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "costBasis": "entry",
+    "notes": {
+     "pin": "Mannum township; OSM museum node if present",
+     "cost": "entry price not found"
+    },
+    "ticket_note": "Only a Facebook page found (facebook.com/people/River-Rides-Motorcycle-Museum/61571508965595), not an official site",
+    "free": null
+   }
+  },
+  {
+   "id": "mannum-5",
+   "name": "Hermann Gass Bird Sanctuary",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Hermann Gass Bird Sanctuary",
+    "icon": "🐦",
+    "category": "nature",
+    "bio": "Bird sanctuary and picnic area on the Murray at Mannum, reached by kayak past river red gums.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "costBasis": "open",
+    "notes": {
+     "pin": "Sanctuary car park near Mannum on the river; OSM nature reserve node is a centroid, use car park"
+    },
+    "free": true,
+    "ticket_note": "Open sanctuary, no steward page"
+   }
+  },
+  {
+   "id": "coorong-national-park-8",
+   "name": "Lakes Nature Walk",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Lakes Nature Walk",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "Easy 3 km loop of about an hour past ephemeral lakes and mallee scrub.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "coordinates": null,
+    "free": true,
+    "costBasis": "open",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Loop Road (Lakes Nature Trail car park) per NPWS accessibility list. Loop: pin at the loop's middle or car park if the route is not in OSM."
+    },
+    "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+   }
+  },
+  {
+   "id": "coorong-national-park-9",
+   "name": "Ngrugie Ngoppun Walk",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Ngrugie Ngoppun Walk",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "Easy 2.5 km loop of about an hour and a quarter, with wildlife viewing and local history.",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5,
+    "coordinates": null,
+    "free": true,
+    "costBasis": "open",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Trailhead per NPWS trail map; loop of 2.5 km (1 hr 15 min). Check it is not the same trailhead as Parnka Ngoppun Trail or Lakes Nature Walk."
+    },
+    "ticketUrl": "https://www.parks.sa.gov.au/parks/coorong-national-park"
+   }
+  },
+  {
+   "id": "riverland-10",
+   "name": "Rocky's Hall of Fame and Pioneers Museum",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Rocky's Hall of Fame and Pioneers Museum",
+    "icon": "🎸",
+    "category": "museum",
+    "bio": "Barmera museum with a 35 m guitar-shaped garden of handprints from over 190 country musicians.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "costMin": 2,
+    "costMax": 2,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.berribarmera.sa.gov.au/our-community/venues/points-of-interest/attractions/rockys-hall-of-fame-and-pioneers-museum",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Museum and guitar garden in Barmera; pin the museum entrance (council listing/Wikivoyage Barmera).",
+     "cost": "Council page and Weekend Notes say $2 per person; History SA lists a gold coin donation. Volunteer-run, irregular hours."
+    }
+   }
+  },
+  {
+   "id": "karoonda-pioneer-park",
+   "name": "Pioneer Park (Karoonda)",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Pioneer Park (Karoonda)",
+    "icon": "🚂",
+    "category": "historic",
+    "bio": "Pioneer buildings, machinery, carriages and rolling stock, with a 1 km nature trail in the mallee, open to walk through.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "free": true,
+    "costBasis": "open",
+    "ticket_note": "No official site found; regional tourism pages only.",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Pioneer Park, Karoonda (SATC lists a car park); pin park entrance."
+    }
+   }
+  },
+  {
+   "id": "tauragat-hill",
+   "name": "Tauragat Hill",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Tauragat Hill",
+    "icon": "⛰️",
+    "category": "viewpoint",
+    "bio": "Gentle, unmarked bush trails climb to a survey marker with views over Coonalpyn and the surrounding farmland.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "free": true,
+    "costBasis": "open",
+    "ticket_note": "No official steward site; SATC listing only.",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Summit survey marker; hill lies a short drive east of Tauragat Well along Tauragat Well Road, Coonalpyn. Pin on summit (OSM natural=peak/viewpoint if named)."
+    }
+   }
+  }
+ ],
+ "notes": []
+}

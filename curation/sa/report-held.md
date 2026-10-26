@@ -1,0 +1,34 @@
+- Migration Museum (`adelaide-15`): Migration Museum: closed from 1 July 2026 for 18-24 months. Unblocks on reopening.
+- Tandanya National Aboriginal Cultural Institute (`adelaide-16`): Tandanya: closed, relaunch planned for 2027. Unblocks on reopening.
+- Adelaide Holocaust Museum (`adelaide-51`): Adelaide Holocaust Museum: closed for re-curation until December 2026. Unblocks on reopening.
+- Army Museum of South Australia (`adelaide-52`): Army Museum of South Australia: to be relocated to a venue not yet chosen. Unblocks when a source says where and when it opens.
+- Bay Discovery Centre (`adelaide-53`): Bay Discovery Centre: no cost found (council page behind a bot wall). Unblocks on a browser check of its price.
+- Kaurna Trail (`adelaide-55`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Classic Jets Fighter Museum (`adelaide-62`): Classic Jets Fighter Museum: possibly closed, no price, no working site. Unblocks on a source confirming it is open and its price.
+- Jamestown Railway Station Museum (`jamestown-railway-station-museum`): Jamestown Railway Station Museum: no cost or official site found. Unblocks on a price or source.
+- High Cliff (`streaky-bay-7`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Streaky Bay Museum (`streaky-bay-12`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- South Head Walking Trail (`streaky-bay-18`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Goolwa Motor Museum (`goolwa-10`): Goolwa Motor Museum: listed permanently closed, no official site. Unblocks on a browser check that it is open.
+- Talisker Conservation Park (`yankalilla-8`): Talisker Conservation Park: closed until further notice after a fire. Unblocks on reopening.
+- Ferguson Gorge (`ikara-flinders-ranges-19`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Fred Teague's Museum (`ikara-flinders-ranges-21`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Gladstone Gaol (`southern-flinders-ranges-1`): Gladstone Gaol: closed since June 2022, reopening announced for late 2026; no cost. Unblocks on reopening and a price.
+- Yunta (`yunta`): Yunta: its only draw is the annual Picnic Races, an event. Unblocks on a source naming a permanent sight.
+- Caernarvon Track (`caernarvon-track`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Town Carriage Museum (`town-carriage-museum`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Peterborough Historic Letterpress Print Shop (`peterborough-historic-letterpress-print-shop`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Kingscote Pelican Feeding (`kangaroo-island-18`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Parndana Soldier Settlement Museum (`kangaroo-island-42`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Kilsby Sinkhole (`mount-gambier-9`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Monarto Conservation Park (`murray-bridge-10`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- River Rides Motorcycle Museum (`mannum-3`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Hermann Gass Bird Sanctuary (`mannum-5`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Lakes Nature Walk (`coorong-national-park-8`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Ngrugie Ngoppun Walk (`coorong-national-park-9`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Rocky's Hall of Fame and Pioneers Museum (`riverland-10`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Pioneer Park (Karoonda) (`karoonda-pioneer-park`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Tauragat Hill (`tauragat-hill`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Moon Plain (`coober-pedy-7`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Wheal Hughes Copper Mine (`copper-coast-6`): Wheal Hughes Copper Mine: tourists can no longer go underground. Unblocks on a source confirming public access.
+- Investigator Strait Shipwreck Trail (`investigator-strait-shipwreck-trail`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.

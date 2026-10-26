@@ -1,0 +1,1133 @@
+{
+ "spots": {
+  "kangaroo-island-1": {
+   "name": "Flinders Chase National Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Kangaroo Island's western national park of coast, bush and rivers, home to Remarkable Rocks, Admirals Arch and a fur seal colony.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -35.97536,
+    "longitude": 136.722779
+   },
+   "costMin": 14.9,
+   "costMax": 14.9,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Adult/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Flinders Chase National Park\"",
+   "notes": [
+    "NPWS: one-day adult entry $14.90, two-day $22.40 (page headline shows the two-day $22.40); fees payable online or at the visitor centre.",
+    "pin: LOW"
+   ]
+  },
+  "kangaroo-island-2": {
+   "name": "Remarkable Rocks",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "Wind-shaped granite boulders on a dome above the Southern Ocean, reached by an accessible boardwalk from the car park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -36.048187,
+    "longitude": 136.75716
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "OSM natural=rock 'Remarkable Rocks' (nominatim); Wikivoyage -36.0491,136.7564 within 100 m (HIGH)",
+   "notes": [
+    "Inside Flinders Chase: needs parkPass 'flinders-chase' (adult one-day $14.90, two-day $22.40); pass entry must be added to src/data/parkPasses.ts. May close in severe weather per NPWS."
+   ]
+  },
+  "kangaroo-island-3": {
+   "name": "Admirals Arch",
+   "icon": "🦭",
+   "category": "landmark",
+   "bio": "A rock arch at Cape du Couedic where a colony of long-nosed fur seals plays below a steep boardwalk and viewing platforms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -36.063208,
+    "longitude": 136.704739
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "OSM natural=bare_rock 'Admirals Arch' (nominatim); Wikivoyage -36.0632,136.70474 identical (HIGH)",
+   "notes": [
+    "Inside Flinders Chase: parkPass 'flinders-chase'. Boardwalk is steep with steps; may close in severe weather."
+   ]
+  },
+  "kangaroo-island-4": {
+   "name": "Seal Bay Conservation Park",
+   "icon": "🦭",
+   "category": "nature",
+   "bio": "Boardwalk and guided beach tours through the dunes to watch an endangered Australian sea lion colony on Seal Bay's sand.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.9923796,
+    "longitude": 137.3190723
+   },
+   "costMin": 20.7,
+   "costMax": 44,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.sa.gov.au/experiences/seal-bay",
+   "coordinates_source": "OSM tourism=information office 'Seal Bay Visitor Information Centre' (nominatim; visitor point, not the park centroid)",
+   "notes": [
+    "NPWS fees (valid to 30 Jun 2027): self-guided boardwalk $20.70 adult, guided beach tour $44.00 adult; open 9am-5pm daily, last entry 4pm. NPWS alert: beach access temporarily paused, boardwalk with roaming guide open; the draft hint (-35.9986,137.3625) was not used."
+   ]
+  },
+  "kangaroo-island-5": {
+   "name": "Kelly Hill Caves",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "A cave visited only on guided audio-visual tours, with stalactites, helictites and columns beneath Kelly Hill's old dunes.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.980099,
+    "longitude": 136.905898
+   },
+   "costMin": 31,
+   "costMax": 31,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kelly-hill-conservation-park",
+   "coordinates_source": "OSM natural=cave_entrance 'Kelly Hill Caves' (nominatim); OSM tourism=attraction -35.97903,136.90574 and Wikivoyage -35.9805,136.9062 within 120 m (HIGH)",
+   "notes": [
+    "NPWS: cave only by booked guided tour, $31 adult; open daily 9am-5pm except 25 Dec. Tour duration not stated by source; visit range is an estimate."
+   ]
+  },
+  "kangaroo-island-6": {
+   "name": "Vivonne Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long white beach and jetty on the south coast, with calm water on the Harriet River nearby for swimming and kayaking.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.979568,
+    "longitude": 137.186256
+   },
+   "wiki": "Vivonne Bay, South Australia (locality)",
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM natural=beach 'Vivonne Bay Beach' (nominatim); Commons geotag median -35.9822,137.1845 within ~300 m",
+   "notes": [
+    "Beach with no single steward, so no ticketUrl."
+   ]
+  },
+  "kangaroo-island-7": {
+   "name": "Little Sahara",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Two square kilometres of towering dunes on the South Coast Road, where you hire a board or toboggan to slide down.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.954207,
+    "longitude": 137.247816
+   },
+   "wiki": "Little Sahara (Kangaroo Island)",
+   "costMin": 37,
+   "costMax": 37,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "costPer": "Board Hire (1 hr)",
+   "ticketUrl": "https://littlesahara.com.au/",
+   "coordinates_source": "OSM natural=sand 'Little Sahara' (nominatim); OSM viewpoint -35.95204,137.24741 and Commons median -35.9514,137.2460 within 300 m",
+   "notes": [
+    "Price is the Little Sahara Adventure Centre board/toboggan hire: $37 for 1 hour with the second hour free ($47 annual pass). Dunes are on the operator's land."
+   ]
+  },
+  "kangaroo-island-8": {
+   "name": "Cape du Couedic Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "A lighthouse on Cape du Couedic's cliffs, a short walk from Admirals Arch, with storeroom remains and a flying fox nearby.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -36.057971,
+    "longitude": 136.705145
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "OSM man_made=lighthouse 'Cape du Couedic Lighthouse' (nominatim); Atlas hint -36.0595,136.7040 within 200 m (HIGH)",
+   "notes": [
+    "Inside Flinders Chase: parkPass 'flinders-chase'. Exterior only. About 600 m from the Admirals Arch pin."
+   ]
+  },
+  "kangaroo-island-9": {
+   "name": "Cape Borda Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "A square stone lighthouse built in 1858 on the northwest cliffs, with a self-guided tour of the keepers' settlement.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.752788,
+    "longitude": 136.593356
+   },
+   "wiki": "Cape Borda Lightstation",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-borda-lightstation",
+   "coordinates_source": "OSM man_made=lighthouse 'Cape Borda Lighthouse' (nominatim) plus a second OSM node 2 m away; Atlas hint within 20 m (HIGH)",
+   "notes": [
+    "NPWS lightstation page says 'Free entry'; the Tour Pass comparison page says the self-guided tour is 'included in Flinders Chase National Park entry fees'. Conflict recorded as unverified."
+   ]
+  },
+  "kangaroo-island-10": {
+   "name": "Kangaroo Island Wildlife Park",
+   "icon": "🐨",
+   "category": "entertainment",
+   "bio": "A walk-through wildlife park on the South Coast Road where you hand-feed kangaroos and cuddle koalas among native animals.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.9234035,
+    "longitude": 137.3047832
+   },
+   "costMin": 37,
+   "costMax": 37,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://kangarooislandwildlifepark.com/",
+   "coordinates_source": "OSM tourism=zoo 'Kangaroo Island Wildlife Park' (nominatim), South Coast Road",
+   "notes": [
+    "Official site gives 3115 South Coast Road, Seal Bay (adult $37, concession $32, child $22), not 'near Parndana' as an older Wikivoyage listing says (4068 Playford Hwy); the OSM point is on the South Coast Road, so the draft's placement note is outdated."
+   ]
+  },
+  "kangaroo-island-11": {
+   "name": "Kangaroo Island Wilderness Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 66 km, five-day walk through southwest Kangaroo Island's botanically unique bush to its remote Southern Ocean coast.",
+   "visitHoursMin": 40,
+   "visitHoursMax": 50,
+   "coordinates": {
+    "latitude": -36.0323793,
+    "longitude": 136.7474656
+   },
+   "needs": "booking",
+   "ticketUrl": "https://www.parks.sa.gov.au/experiences/kiwt",
+   "coordinates_source": "resolve-pin MEDIUM: Midpoint along chained ways of OSM relation 7700629 route=hiking \"Kangaroo Island Wilderness Trail\"  \"\"",
+   "notes": [
+    "pin: LOW. Midpoint of the whole route needed from the NPWS trail map (starts at the Flinders Chase visitor centre). Visit hours are walking hours over five days (estimate). Fee not on the NPWS page (forum quotes of $161 independent are from 2016, unverified)."
+   ],
+   "free": false,
+   "costMin": 212,
+   "costMax": 212,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Per Walker"
+  },
+  "kangaroo-island-12": {
+   "name": "Stokes Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach reached through a boulder-lined cave tunnel, opening onto white sand and rock pools on the north coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.621278,
+    "longitude": 137.209484
+   },
+   "wiki": "Stokes Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM natural=beach 'Stokes Bay Beach' (nominatim); Commons geotag median -35.6215,137.2088 within 60 m (HIGH)",
+   "notes": [
+    "Open beach; no single steward."
+   ]
+  },
+  "kangaroo-island-13": {
+   "name": "Pennington Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A white-sand surf beach on the south coast, with a lookout over the bay.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.85628,
+    "longitude": 137.74128
+   },
+   "coordinates_source": "OSM natural=bay (Nominatim) 'Pennington Bay'; resolve-pin HIGH but a bay centroid (no natural=beach feature in OSM), may sit at the shoreline",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Wikivoyage says 'don't miss Pennington Bay' under Prospect Hill; pin 1.5 km SSE of Prospect Hill"
+   ],
+   "wiki": "Pennington Bay, South Australia",
+   "ticket_note": "Open beach, no single steward"
+  },
+  "kangaroo-island-14": {
+   "name": "Prospect Hill",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "About 500 steps climb Prospect Hill to a 360-degree view, as Matthew Flinders did in 1802.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.842988,
+    "longitude": 137.745109
+   },
+   "coordinates_source": "OSM natural=peak + tourism=viewpoint 'Prospect Hill', 65 m; Commons photo median within 10 m (resolve-pin HIGH)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "Prospect Hill (South Australia)",
+   "ticket_note": "Open lookout climb, no operator page; Wikivoyage also names it Mt Thisby"
+  },
+  "kangaroo-island-15": {
+   "name": "Emu Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A 4 km white-sand swimming beach with a 100-year-old jetty and boat ramp, on the island's north coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.594181,
+    "longitude": 137.508616
+   },
+   "coordinates_source": "OSM natural=beach 'Emu Bay Beach' (Nominatim); resolve-pin returned the bay centroid, the beach feature used instead (MEDIUM)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "Emu Bay, South Australia",
+   "ticket_note": "Open beach, no single steward"
+  },
+  "kangaroo-island-16": {
+   "name": "Kingscote",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "The island's largest town, with a harbour and the site of South Australia's first European settlement.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.652485,
+    "longitude": 137.636752
+   },
+   "coordinates_source": "OSM place=town 'Kingscote' (Photon/Nominatim); Wikipedia article point 255 m away",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Destination draft centre (-35.65305556,137.63416667) is ~220 m from this pin: fine, but the destination hub must not reuse the Kingscote spot's exact point"
+   ],
+   "wiki": "Kingscote, South Australia",
+   "ticket_note": "Town, no single steward"
+  },
+  "kangaroo-island-17": {
+   "name": "Reeves Point",
+   "icon": "📜",
+   "category": "historic",
+   "bio": "The site of South Australia's first settlement, with a lookout, the Mulberry Tree and interpretive signs.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.644255,
+    "longitude": 137.637777
+   },
+   "coordinates_source": "OSM landuse=grass 'Reeves Point Historic Site' (Nominatim); Wikivoyage Reeves Point listing -35.6442,137.6383 agrees within 50 m (HIGH)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Mulberry tree/lookout; the Reeves Jetty ruin (-35.64133,137.6412) is ~400 m east, not used as the pin"
+   ],
+   "ticket_note": "Open historic site, no official page verified"
+  },
+  "kangaroo-island-19": {
+   "name": "Kingscote Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A 25 m silo mural of a kangaroo and a glossy black cockatoo at Kingscote.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.650765,
+    "longitude": 137.628611
+   },
+   "coordinates_source": "OSM tourism=artwork 'Kingscote Silo Art' (resolve-pin MEDIUM)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "ticket_note": "Public artwork, no steward"
+  },
+  "kangaroo-island-20": {
+   "name": "Kingscote Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "A jetty used for fishing and sunsets, with leafy sea dragons around the pylons for snorkellers.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.64133,
+    "longitude": 137.6412
+   },
+   "coordinates_source": "resolve-pin HIGH: osm historic=memorial (nominatim) \"Reeves Point Jetty\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW",
+    "pin: LOW. Nominatim 'Kingscote Jetty' only returns Reeves Point Jetty (ruin, already Reeves Point's area), not the main town jetty"
+   ],
+   "ticket_note": "Public jetty, no steward"
+  },
+  "kangaroo-island-21": {
+   "name": "Hope Cottage National Trust Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A National Trust museum in an 1850s cottage, holding the island's settler-era heritage collection.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.646343,
+    "longitude": 137.634438
+   },
+   "coordinates_source": "OSM tourism=attraction 'Hope Cottage Museum'; second OSM tourism=museum node within 20 m (resolve-pin HIGH)",
+   "costBasis": "entry",
+   "notes": [
+    "National Trust page checked (title 'Hope Cottage'): adult $10, child $3, concession $6; open daily 1-4 pm, closed August (not in copy). Cottage built c.1857, so bio says 1850s not 1856"
+   ],
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/hope-cottage/"
+  },
+  "kangaroo-island-22": {
+   "name": "American River",
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "A fishing village on Pelican Lagoon with a wharf, walks, wildlife and local oysters.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.786017,
+    "longitude": 137.769892
+   },
+   "coordinates_source": "OSM place=village 'American River' (Photon); Wikipedia point 1 km north was the lagoon-side town hint only",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "American River, South Australia",
+   "ticket_note": "Village, no single steward"
+  },
+  "kangaroo-island-23": {
+   "name": "Red Banks Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Red-orange cliffs about 15 minutes north of American River, best at sunset.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.661054,
+    "longitude": 137.630087
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 650010166 natural=beach (unnamed) on the north coast, nearest beach to the tourism hint (-35.653,137.634)  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW",
+    "Tourism board page gives no coordinates and OSM has no Red Banks Beach on Kangaroo Island: pin LOW, raise to owner (about 15 min north of American River)"
+   ],
+   "ticket_note": "Open beach/cliffs, no steward"
+  },
+  "kangaroo-island-24": {
+   "name": "Penneshaw",
+   "icon": "⛴️",
+   "category": "landmark",
+   "bio": "The ferry arrival village on the Dudley Peninsula, with the Gateway visitor centre.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.7176662,
+    "longitude": 137.9395439
+   },
+   "coordinates_source": "OSM place=village 'Penneshaw' (Nominatim/Photon)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "Penneshaw, South Australia",
+   "ticket_note": "Town; Gateway Visitor Information Centre page not verified"
+  },
+  "kangaroo-island-25": {
+   "name": "Penneshaw Penguin Centre",
+   "icon": "🐧",
+   "category": "nature",
+   "bio": "A small colony of little penguins is seen on 60-minute guided evening walks from Penneshaw; bookings are essential.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.718194,
+    "longitude": 137.940904
+   },
+   "costMin": 31,
+   "costMax": 31,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "needs": "booking",
+   "ticketUrl": "https://penneshawpenguincentre.com/",
+   "coordinates_source": "HIGH: OSM tourism=attraction 'Penneshaw Penguin Centre' (Nominatim) + Commons photo median 795 m (hint only)",
+   "notes": [
+    "Adult tour $31 (child $19, under 5 free, family $89) read from the operator's page; the centre is generally closed by day and used for the night tours. Site title 'Penneshaw Little Penguin Wildlife Tours' loaded 200."
+   ]
+  },
+  "kangaroo-island-26": {
+   "name": "Cape Willoughby Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "South Australia's oldest operational lighthouse (1852), with guided tours to the top and a visitor centre.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.842821,
+    "longitude": 138.1329
+   },
+   "costMin": 6.4,
+   "costMax": 6.4,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-willoughby-conservation-park",
+   "coordinates_source": "MEDIUM: OSM man_made=lighthouse 'Cape Willoughby Lighthouse' (Nominatim)",
+   "notes": [
+    "Site entry fee $6.40 per adult, paid at the visitor centre (park page, read today). Guided tours (10am, 1pm, 3pm, min two people, shortened or cancelled in summer heat) cost extra; price not published on the page, so the tour price is not in the cost. Park is closed on Catastrophic Fire Danger days. The Kangaroo Island Tour Pass (NPWS) may cover the entry; not checked."
+   ]
+  },
+  "kangaroo-island-27": {
+   "name": "Penneshaw Maritime and Folk Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A National Trust museum in the former Hog Bay school, with school, sealing and whaling displays across three rooms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.719662,
+    "longitude": 137.932035
+   },
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/penneshaw-maritime-and-folk-museum/",
+   "coordinates_source": "HIGH: OSM tourism=museum 'Penneshaw Maritime And Folk National Trust Museum' (Nominatim) + Commons median 783 m (hint only)",
+   "notes": [
+    "National Trust page: open Thursdays to Sundays 2-4pm; adults $5, child $3, family $15. Opening times are not in the bio per the no-hours rule; flag in the destination's tips if wanted. The pin is 135 m from the Gateway Visitor Centre (-35.72005, 137.93358), which is the Fireball Bates trailhead."
+   ]
+  },
+  "kangaroo-island-28": {
+   "name": "Hog Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Penneshaw's swimming and fishing beach, opposite the Kangaroo Island Sculpture Trail and close to the ferry terminal.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.718676,
+    "longitude": 137.9439
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "coordinates_source": "HIGH: OSM tourism=attraction 'Hog Bay' (Nominatim) + Commons median 580 m (hint only); about 250 m from the SeaLink terminal (-35.7171, 137.9421)",
+   "ticket_note": "Open public beach with no single steward.",
+   "notes": [
+    "The draft's '600 m' beach length and 'monument to the French explorers' were not in any source read, so they were cut; Frenchmans Rock is its own spot. OSM type is tourism=attraction rather than natural=beach: pin is on the bay's shore at Penneshaw, not verified against a natural=beach polygon."
+   ]
+  },
+  "kangaroo-island-29": {
+   "name": "Frenchmans Rock",
+   "icon": "🗿",
+   "category": "monument",
+   "bio": "A rock inscribed by the crew of Nicolas Baudin's Le Géographe in 1803, preserved at Penneshaw.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.72155,
+    "longitude": 137.94621
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "coordinates_source": "HIGH: OSM historic=memorial 'The Frenchmans Rock' (Nominatim)",
+   "ticket_note": "Open roadside memorial with no steward site.",
+   "notes": [
+    "Tourism board says the rock was inscribed by Baudin's crew on Le Géographe in 1803 and that they stayed three weeks, mapping the island. Whether the rock on view is the original is not stated in the source read."
+   ]
+  },
+  "kangaroo-island-30": {
+   "name": "Fireball Bates Walking Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "An easy 3 km interpretive loop from the Penneshaw visitor centre towards the ferry, telling settler George Bates's story.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.7200517,
+    "longitude": 137.9335798
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "coordinates_source": "LOW: route not in OSM or Photon. Used the trailhead, OSM tourism=information 'Kangaroo Island Gateway Visitor Centre' (Photon), where the tourism board says the trail begins. Not the halfway point.",
+   "ticket_note": "Public council/tourism walk with no steward site found.",
+   "notes": [
+    "pin: LOW. The route is a loop of about 3 km (visitor centre, down to near the ferry and back); the owner or a later run should take the midpoint from an agency route map. Pin is 135 m from the Penneshaw Maritime and Folk Museum pin (> 25 m)."
+   ]
+  },
+  "kangaroo-island-31": {
+   "name": "Kangaroo Island Sculpture Trail",
+   "icon": "🗿",
+   "category": "hike",
+   "bio": "A free, volunteer-run 1.5 km sculpture trail through native bush in Penneshaw, opposite Hog Bay Beach.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.721959,
+    "longitude": 137.940177
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "donation",
+   "ticketUrl": "https://www.kangarooislandsculpturetrail.com/",
+   "coordinates_source": "MEDIUM: OSM trail midpoint (0.6 km OSM way, Nominatim) named 'Kangaroo Island Sculpture Trail'; the tourism page gives 1.5 km, so the OSM way may be only part of the trail",
+   "notes": [
+    "Tourism page: fun, free and family-friendly, donations welcome, 1.5 km, some steps, not suitable for wheelchairs, a few minutes' walk from Penneshaw Jetty. Operator site loaded 200 titled 'Sculpture Trail | Kangaroo Island Sculpture Trail | Penneshaw'. Reported by one source as newly developed."
+   ]
+  },
+  "kangaroo-island-32": {
+   "name": "Ironstone Hill Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A coastal hike in Baudin Conservation Park to the ruins of the Bates family cottage, with whales in season.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.721517,
+    "longitude": 137.961749
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/baudin-conservation-park",
+   "coordinates_source": "MEDIUM: OSM trail midpoint (2.0 km, Nominatim) matching 'Ironstone Hill Hike'; inside Baudin Conservation Park (centroid -35.7293, 137.9657)",
+   "notes": [
+    "Parks page: Baudin Conservation Park, 'Free entry', open daily; the hike follows part of the old bullock track to Cape Willoughby and ends at the Bates cottage ruins and stone threshing floor on Ironstone Hill; tammar wallabies, wedge-tailed eagles, glossy black cockatoos, and dolphins and whales offshore in Backstairs Passage. Page title 'Baudin... - National Parks and Wildlife Service South Australia'."
+   ]
+  },
+  "kangaroo-island-33": {
+   "name": "Lashmar Conservation Park",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A park beside the Chapman River mouth at Antechamber Bay, with canoeing, swimming, fishing and a campground.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.7875693,
+    "longitude": 138.0658375
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lashmar-conservation-park",
+   "coordinates_source": "MEDIUM: OSM tourism=camp_site 'Chapman River Campground' (Photon), the park's visitor point, not the reserve centroid (-35.7737, 138.0610) nor Lashmar Lagoon (-35.8074, 138.0645) that resolve-pin returned",
+   "notes": [
+    "Parks page lists no day-entry fee, only camping from $19.80 per night (fees paid before entry); treated as free. Page title 'Lashmar... - National Parks and Wildlife Service South Australia'."
+   ]
+  },
+  "kangaroo-island-34": {
+   "name": "Cape Gantheaume Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "A large coastal wilderness park on the south coast, with Murray Lagoon, D'Estrees Bay and walking trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.9662006,
+    "longitude": 137.6055648
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-gantheaume-conservation-park-and-wilderness-protection-area",
+   "coordinates_source": "MEDIUM: OSM tourism=camp_site 'D'estrees Bay Camp Ground' (Photon), the park's D'Estrees Bay visitor point; the reserve centroids (-35.918, 137.415 and -36.009, 137.483) were rejected",
+   "notes": [
+    "Parks page lists no day-entry fee, only camping from $19.80 per night; treated as free. The page covers the Conservation Park and Wilderness Protection Area. Page URL 'cape-gantheaume-conservation-park' (without the suffix) is a 404; the suffixed URL is the right one. The campground is the nearest visitor-facility point I could source; the park is large and has no visitor centre. The pin is 2.6 km from the Murray Lagoon pin, which is a different part of the park."
+   ]
+  },
+  "kangaroo-island-35": {
+   "name": "Murray Lagoon",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "The island's largest lagoon, a wetland in Cape Gantheaume Conservation Park known for its birdlife, with short walks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.91147,
+    "longitude": 137.420007
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: Quill draft: OSM water=lake \"Murray Lagoon\" (relation 3419309, centroid -35.9115,137.4114) and Wikivoyage listing geotag -35.9108,137.4185, point chosen on the eastern shore ~140 m from the listing  \"\"",
+   "ticket_note": "Part of Cape Gantheaume Conservation Park; no separate steward page.",
+   "notes": [
+    "pin: LOW per resolve-pin (kept because the lake feature and the Wikivoyage listing agree within 155 m). The park page says the Murray Lagoon trails may flood in winter. Walks to Bald Hill and Timber Creek (half an hour to an hour) start at the lagoon."
+   ]
+  },
+  "kangaroo-island-36": {
+   "name": "Bald Hill Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A short walk to Bald Hill, with views over Murray Lagoon and a chance to watch wetland birds.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.9006535,
+    "longitude": 137.4327701
+   },
+   "free": true,
+   "currency": "AUD",
+   "costBasis": "open",
+   "coordinates_source": "MEDIUM: OSM tourism=viewpoint 'Bald Hill' (Photon), 150 m from a Commons file geotagged 'Murray Lagoon from Bald Hill trail' (-35.9003, 137.4348). Pinned on the viewpoint, not the route midpoint; the OSM 'Bald Hill Track' footway is at -35.8992, 137.4366.",
+   "ticket_note": "Part of Cape Gantheaume Conservation Park; no separate steward page.",
+   "notes": [
+    "Renamed from 'Bald Hill Walk (Cape Gantheaume)': the park qualifier is dropped per the naming rule. The walk's length is not given in any source read, so the visit range follows the draft (30 min to 1 hr)."
+   ]
+  },
+  "kangaroo-island-37": {
+   "name": "Timber Creek Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A short walk beside Murray Lagoon's tea-tree swamp, where ducks, swans and waders gather.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.90196,
+    "longitude": 137.44793
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "southaustralia.com listing geotag (Timber Creek Walk, Seagers Road); LOW: not an OSM feature, trailhead-type point 500 m west of Murray Lagoon campground, not the route midpoint",
+   "notes": [
+    "pin LOW: no OSM route found (Overpass was down); listing point used. Trail floods in winter. NPWS: vehicle entry to Cape Gantheaume is free. Price 'Free' on southaustralia.com listing."
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-gantheaume-conservation-park-and-wilderness-protection-area"
+  },
+  "kangaroo-island-38": {
+   "name": "Curley Creek Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A hike along an old fire track at the edge of Murray Lagoon, with waders and varied vegetation.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.897667,
+    "longitude": 137.414399
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 501109417 highway=footway 'Curley Creek Track' (way centre)  \"\"",
+   "notes": [
+    "pin LOW: trailhead point; no OSM route found. Winter flooding. Entry to the park is free (NPWS)."
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-gantheaume-conservation-park-and-wilderness-protection-area"
+  },
+  "kangaroo-island-39": {
+   "name": "Tadpole Cove Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A walk from an old grain threshing floor past settler cottage ruins to a lookout above Tadpole Cove.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.98706,
+    "longitude": 137.61328
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "southaustralia.com listing geotag (Tadpole Cove Walk); LOW: start/car park by the threshing floor off D'Estrees Bay Road, not the route midpoint",
+   "notes": [
+    "pin LOW: trailhead point; no OSM route found. Entry free (NPWS). Bio omits ospreys (draft claim not sourced on NPWS page; NPWS mentions osprey markers on the D'Estrees Bay Road drive)."
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-gantheaume-conservation-park-and-wilderness-protection-area"
+  },
+  "kangaroo-island-40": {
+   "name": "D'Estrees Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A south coast bay of surf and fishing beaches, with a link to the island's early whaling industry.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.983623,
+    "longitude": 137.615304
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap natural=beach 'Wreckers Beach' on D'Estrees Bay (photon); bay centroid (-35.9179,137.6478) is in the water, so the beach access is used",
+   "notes": [
+    "MEDIUM pin: one OSM beach feature at the southern end of the bay (Wreckers Beach), 450 m from Tadpole Cove Walk's start. Park entry free (NPWS). Wikipedia article 'D'Estrees Bay' matches the name, so no wiki field."
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-gantheaume-conservation-park-and-wilderness-protection-area"
+  },
+  "kangaroo-island-41": {
+   "name": "Duck Lagoon",
+   "icon": "🐨",
+   "category": "nature",
+   "bio": "A lagoon near Cygnet River with koalas, a bird hide and a trail to old eucalyptus distillery ruins.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.706257,
+    "longitude": 137.493263
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap tourism=camp_site 'Duck Lagoon' (photon), the lagoon's access/picnic point; lake centroid -35.7073,137.4957 is 250 m away",
+   "notes": [
+    "MEDIUM pin: visitor access point beside the lake. No fee stated by tourism board; treated as free/open - confirm. Bird hide and distillery ruins per Wikivoyage/tourism board."
+   ],
+   "ticket_note": "No single steward site found"
+  },
+  "kangaroo-island-43": {
+   "name": "Harriet River",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A calm river at Vivonne Bay for swimming and kayaking, with koalas and echidnas to spot.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.971588,
+    "longitude": 137.161522
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap waterway=river 'Harriet River' (nominatim) point on the lower river near Vivonne Bay; MEDIUM",
+   "notes": [
+    "MEDIUM pin: a point on the river line, not a surveyed launch point. No fee stated. Wikipedia 'Harriet River' only redirects to Vivonne Bay section: no wiki field; photo needs a manual pick."
+   ],
+   "ticket_note": "Open river, no steward site"
+  },
+  "kangaroo-island-44": {
+   "name": "Point Ellen",
+   "icon": "🌊",
+   "category": "viewpoint",
+   "bio": "A headland west of Vivonne Bay with Southern Ocean surf and turquoise rock pools to swim in.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.996892,
+    "longitude": 137.188548
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap tourism=viewpoint 'Point Ellen' (photon) within 33 m of southaustralia.com listing geotag (HIGH)",
+   "notes": [
+    "Tourism board warns of swell; take care near the water. No fee stated."
+   ],
+   "ticket_note": "Open headland, no steward site"
+  },
+  "kangaroo-island-45": {
+   "name": "Hanson Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A south-west coast beach where the Southern Ocean rolls in, with dunes to walk to three beaches.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -36.016304,
+    "longitude": 136.855279
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap natural=beach 'Hanson Bay Beach' (photon); MEDIUM. Not the NZ Hanson Bay the candidate coordinates pointed to",
+   "notes": [
+    "Wikipedia 'Hanson Bay' is the New Zealand place: leave wiki unset and set a photo override by hand (NO_PHOTO if none). No fee stated."
+   ],
+   "ticket_note": "Open beach, no steward site"
+  },
+  "kangaroo-island-46": {
+   "name": "West Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "The island's westernmost inlet at the Rocky River mouth, with sea views and wildlife.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.885556,
+    "longitude": 136.55095
+   },
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap natural=beach 'West Bay' (photon); MEDIUM",
+   "notes": [
+    "West Bay lies inside Flinders Chase National Park (NPWS lists West Bay Campground, 4WD only), so the park's site entry $22.40 per person applies (parks.sa.gov.au, read 2026-10-25). Daily validity not stated on the page, hence costPer 'Per Person'. The Kangaroo Island Tour Pass also covers park entry (not in parkPasses.ts). Check 4WD-only access before sending visitors."
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "free": true,
+   "needs": "park-pass",
+   "parkPass": "flinders-chase"
+  },
+  "kangaroo-island-47": {
+   "name": "Western River Cove",
+   "icon": "⛺",
+   "category": "beach",
+   "bio": "A beach and campground beneath cliffs at the Western River mouth, home to glossy black cockatoos.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.67612,
+    "longitude": 136.971789
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap natural=beach 'Western River Cove' (photon); MEDIUM; campsite 220 m away at -35.6778,136.9717",
+   "notes": [
+    "No wiki field: Wikipedia 'Western River' is the river, not the cove. No day-use fee stated; campsite fees apply for camping. Access by unsealed road; verify with NPWS."
+   ],
+   "ticket_note": "No steward page loaded; not verified"
+  },
+  "kangaroo-island-48": {
+   "name": "Ravine des Casoars",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A wilderness protection area by Cape Borda, with a hiking trail down the Valley of the Cassowaries.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -35.79716,
+    "longitude": 136.598591
+   },
+   "costBasis": "open",
+   "coordinates_source": "OpenStreetMap highway=path 'Ravine Des Casoars Hike' (photon); a point on the route (midpoint not confirmed); MEDIUM",
+   "notes": [
+    "NPWS fee panel covers 'Flinders Chase National Park and Ravine Des Casoars Wilderness Protection Area': site entry $22.40 per person. Wikipedia 'Ravine des Casoars' matches the name; draft wiki (WPA title) dropped. Trail is long (hours) - visit range kept from draft."
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "free": true,
+   "needs": "park-pass",
+   "parkPass": "flinders-chase"
+  },
+  "kangaroo-island-49": {
+   "name": "Waterfall Creek Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A trail from the Western River car park down to a creek, stepping stones and a lookout over a seasonal waterfall.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.702942,
+    "longitude": 136.911407
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Walk is in Western River Wilderness Protection Area, which has no NPWS park page (parks.sa.gov.au slug 404s); the tourism listing points to the Flinders Chase page, which does not cover this area. Left out.",
+   "coordinates_source": "Midpoint by length of the Walking SA GPX track for Waterfall Creek Hike (6.3 km, walkingsa.org.au/walk/find-a-place-to-walk/waterfall-creek-hike/); OSM has no route for it",
+   "notes": [
+    "Name drops the draft's '(Flinders Chase)': the walk is in Western River WPA, off Colmans Road, not in the national park. Pin is the midpoint of an out-and-back GPX, so it sits near the lookout end.",
+    "No entry fee found for Western River WPA; treated as free."
+   ]
+  },
+  "kangaroo-island-50": {
+   "name": "Return Road Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "The lightkeepers' old cart track from Harveys Return to Cape Borda, through sugar gum woodland past their cemetery.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.74997,
+    "longitude": 136.621965
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: midpoint of OSM way 'Return Road Hike' (2.0 km segment of the three-way route; route midpoint is within ~200 m)",
+   "notes": [
+    "Inside Flinders Chase National Park; the NPWS page lists it as Return Road Hike (3 hrs, 9 km).",
+    "Needs a park pass entry 'flinders-chase' in parkPasses.ts: NPWS lists site entry $22.40 per person in the page header, but the page's Fees tab lists Adult $13.00 (conflict, see unverified). A Kangaroo Island Tour Pass (adult $58.50) also covers entry."
+   ]
+  },
+  "kangaroo-island-51": {
+   "name": "Harveys Return Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A short, steep hike from Harveys Return campground down the lightkeepers' old route to the bay, with ocean views.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.750404,
+    "longitude": 136.640142
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "Midpoint by length of the Walking SA GPX track for Harveys Return Hike (0.48 km, walkingsa.org.au/walk/find-a-place-to-walk/harveys-return-hike/); trailhead is the carpark at Harveys Return campground (OSM node -35.75127,136.63802)",
+   "notes": [
+    "Draft bio was wrong: this is not a walk toward Cape Borda. Walking SA describes a short hike down to Harveys Return (the bay) on the lightkeepers' original route; the old trackway continues steeply with a rock scramble to the bay. The Return Road Hike is the one that runs to Cape Borda.",
+    "Not a duplicate of Return Road Hike (pins ~1.8 km apart), though both start at Harveys Return.",
+    "Inside Flinders Chase National Park; same pass note as Return Road Hike."
+   ]
+  },
+  "kangaroo-island-52": {
+   "name": "Snellings Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach at the mouth of Middle River, good for swimming, surfing and river or rock fishing.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.667257,
+    "longitude": 137.073017
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach with no single steward.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Snelling Beach' (way 265310276)",
+   "notes": [
+    "OSM and holiday-house names spell it Snelling Beach; the tourism board spells it Snellings. Kept the draft name."
+   ]
+  },
+  "kangaroo-island-53": {
+   "name": "King George Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A pebbly cove beach on the north coast, known for its colour at sunset.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.651505,
+    "longitude": 137.122513
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach with no single steward.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'King George Beach' (way 339931928)",
+   "notes": [
+    "Tourism board page exists (experiences/king-george-beach); one counted source, marginal as flagged by Atlas."
+   ]
+  },
+  "kangaroo-island-54": {
+   "name": "Brown Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered, easily reached beach on Dudley Peninsula for swimming, snorkelling and shell fossicking, beside a camping ground.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.791044,
+    "longitude": 137.858118
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach with no single steward.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Brown Beach' (way 1019411602, beside the campground and viewpoint nodes); a second OSM 'Brown Beach' beach 0.8 km SW was not used",
+   "notes": [
+    "Campground has a fee for camping only; not a visit cost."
+   ]
+  },
+  "kangaroo-island-55": {
+   "name": "Bales Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A surf and walking beach beside Seal Bay, within an aquatic reserve that protects the sea lion breeding colony.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.995474,
+    "longitude": 137.358143
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach; not part of the paid Seal Bay Conservation Park visitor area.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Bales Beach' (way 1091855624)",
+   "notes": [
+    "Tourism board: about 1 km off Seal Bay road via Bales Bay Road, small car park, no facilities, fishing not permitted (aquatic reserve). Beach is ~3.4 km east of Seal Bay's visitor centre, so no pin clash."
+   ]
+  },
+  "kangaroo-island-56": {
+   "name": "Beyeria Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A short interpretive walk with twenty signs through narrow-leaved mallee in Beyeria Conservation Park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.780671,
+    "longitude": 137.595391
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No NPWS page for Beyeria Conservation Park loaded (parks.sa.gov.au slug 404); not guessing a link.",
+   "coordinates_source": "Midpoint by length of the Walking SA GPX circuit (walkingsa.org.au/walk/find-a-place-to-walk/beyeria-walk/); trailhead carpark off Willsons Road is at -35.7798,137.5911",
+   "notes": [
+    "Length conflict: tourism board says 1.5 km, Walking SA says a 1.1 km circuit (30 min); bio omits the distance."
+   ]
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "kangaroo-island-18",
+   "name": "Kingscote Pelican Feeding",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "Kingscote Pelican Feeding",
+    "icon": "🦩",
+    "category": "entertainment",
+    "bio": "Pelicans are fed daily at 5 pm behind the Kangaroo Island Marine Centre, free with donations welcome.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "coordinates_source": "LOW: no OSM feature found for this place (Nominatim/Photon/resolve-pin); not guessed",
+    "free": true,
+    "costBasis": "donation",
+    "notes": [
+     "pin: LOW",
+     "pin: LOW. KI Marine Centre not found in OSM/Photon; Kingscote waterfront, needs agency/operator point"
+    ],
+    "ticket_note": "Run behind the Kangaroo Island Marine Centre; its own site not verified, so no link. Free, donations appreciated (Wikivoyage); 5 pm daily"
+   }
+  },
+  {
+   "id": "kangaroo-island-42",
+   "name": "Parndana Soldier Settlement Museum",
+   "reason": "No cost found (and not known to be free); unblocks on a price or a source saying it is free.",
+   "entry": {
+    "name": "Parndana Soldier Settlement Museum",
+    "icon": "🏛️",
+    "category": "museum",
+    "bio": "A small museum in Parndana's old RSL hall on the soldier settlement scheme of the early 1950s.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": {
+     "latitude": -35.791823,
+     "longitude": 137.263688
+    },
+    "costBasis": "entry",
+    "coordinates_source": "OpenStreetMap tourism=museum (photon) -35.791823,137.263688, matches southaustralia.com listing geotag within 30 m (HIGH)",
+    "notes": [
+     "Entry fee is described as 'nominal' with no amount found: cost left empty (unverified). Community directory lists limited weekday/Sunday opening; address Wedgwood Road, Parndana. Size: small, one-source museum; keep per judge."
+    ],
+    "ticket_note": "No museum website found (only email on listing)"
+   }
+  }
+ ],
+ "notes": []
+}
