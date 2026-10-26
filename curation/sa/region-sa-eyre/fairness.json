@@ -1,0 +1,579 @@
+{
+ "region": "sa-eyre",
+ "inside_destinations": 88,
+ "standalone": 13,
+ "new_destinations": [
+  {
+   "id": "port-lincoln",
+   "name": "Port Lincoln",
+   "rank": 3,
+   "spots": 9,
+   "name_evidence": {
+    "source": "Wikivoyage \"Port Lincoln\" page and the Eyre Peninsula region page",
+    "wording": "Port Lincoln is a Wikivoyage city of the Eyre Peninsula; tourism: seafood capital and great white shark cage diving base"
+   }
+  },
+  {
+   "id": "lincoln-national-park",
+   "name": "Lincoln National Park",
+   "rank": 4,
+   "spots": 4,
+   "name_evidence": {
+    "source": "parks.sa.gov.au Lincoln National Park page and Wikivoyage Port Lincoln",
+    "wording": "national park south of Port Lincoln with 4 kept spots (Memory Cove, Stamford Hill, Cape Donington, Sleaford Bay)"
+   }
+  },
+  {
+   "id": "coffin-bay",
+   "name": "Coffin Bay",
+   "rank": 4,
+   "spots": 4,
+   "name_evidence": {
+    "source": "Wikivoyage \"Coffin Bay\" page",
+    "wording": "oyster village beside Coffin Bay National Park; the NP has only 2 further kept spots so it is a spot of this destination, not a park destination"
+   }
+  },
+  {
+   "id": "streaky-bay",
+   "name": "Streaky Bay",
+   "rank": 4,
+   "spots": 18,
+   "name_evidence": {
+    "source": "Wikivoyage \"Streaky Bay\" page",
+    "wording": "west coast fishing town, base for Murphy's Haystacks, Cape Bauer and Point Labatt"
+   }
+  },
+  {
+   "id": "ceduna",
+   "name": "Ceduna",
+   "rank": 4,
+   "spots": 9,
+   "name_evidence": {
+    "source": "Wikivoyage \"Ceduna\" page",
+    "wording": "last major town before the Nullarbor, oysters, Eyre Highway"
+   }
+  },
+  {
+   "id": "whyalla",
+   "name": "Whyalla",
+   "rank": 4,
+   "spots": 11,
+   "name_evidence": {
+    "source": "Wikivoyage \"Whyalla\" page",
+    "wording": "steel city on Upper Spencer Gulf, giant cuttlefish, HMAS Whyalla"
+   }
+  },
+  {
+   "id": "gawler-ranges-national-park",
+   "name": "Gawler Ranges National Park",
+   "rank": 4,
+   "spots": 4,
+   "name_evidence": {
+    "source": "parks.sa.gov.au Gawler Ranges National Park page and Wikivoyage Eyre Peninsula",
+    "wording": "national park with Organ Pipes, Yandinga Falls, Kolay Mirica Falls and Paney Homestead"
+   }
+  },
+  {
+   "id": "wudinna",
+   "name": "Wudinna",
+   "rank": 5,
+   "spots": 8,
+   "name_evidence": {
+    "source": "Wikivoyage \"Wudinna\" page",
+    "wording": "centre of Granite Country, granite trail, gateway to the Gawler Ranges"
+   }
+  },
+  {
+   "id": "cowell",
+   "name": "Cowell",
+   "rank": 5,
+   "spots": 7,
+   "name_evidence": {
+    "source": "Wikivoyage \"Cowell\" page",
+    "wording": "oyster and jade town on Franklin Harbor, silo art"
+   }
+  },
+  {
+   "id": "cleve",
+   "name": "Cleve",
+   "rank": 5,
+   "spots": 6,
+   "name_evidence": {
+    "source": "Wikivoyage Eyre Peninsula region page and eyrepeninsula.com Cleve Hills Scenic Drive and Lookout",
+    "wording": "farming town with hills lookouts and scenic drive"
+   }
+  },
+  {
+   "id": "tumby-bay",
+   "name": "Tumby Bay",
+   "rank": 5,
+   "spots": 4,
+   "name_evidence": {
+    "source": "Wikivoyage \"Tumby Bay\" page",
+    "wording": "seaside town, gateway to the Sir Joseph Banks Group, street art"
+   }
+  },
+  {
+   "id": "elliston",
+   "name": "Elliston",
+   "rank": 5,
+   "spots": 4,
+   "name_evidence": {
+    "source": "eyrepeninsula.com Elliston Coastal Trail page; Wikivoyage Eyre Peninsula lists Elliston and Talia Caves",
+    "wording": "west coast village on the Cliffs of Elliston coastal trail"
+   }
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Almonta Beach",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Arno Bay Estuary Boardwalk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Axel Stenross Maritime Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Big Galah",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cape Bauer",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cape Bauer Loop Coastal Scenic Drive",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cleve Hills Scenic Drive and Lookout",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Coffin Bay Oyster Walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Colour Tumby Bay Street Art",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cowell Silo Art",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cummins Mosaic Trail",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Elliston Coastal Trail",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "lowest_kept_note": "The lowest kept have 0 views and 1 counted source (no Wikipedia article). Every left-out candidate with views above 0 or 2+ counted sources is listed in stronger_left_out with its judged reason.",
+ "stronger_left_out": [
+  {
+   "name": "Nullarbor Plain",
+   "views": 88149,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A region crossed by highway, not a single place; real stops (Bunda Cliffs, Head of Bight, roadhouses) are separate spots. Wikivoyage Eyre Peninsula names it only as an area."
+  },
+  {
+   "name": "Nullarbor Links",
+   "views": 15506,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A 1,365 km route of golf holes across two states, not one place; single source."
+  },
+  {
+   "name": "Nullarbor Roadhouse",
+   "views": 8072,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A roadhouse is a business; searched southaustralia.com and Wikivoyage Nullarbor, which treat it only as a fuel stop and no counted source names a sight (the plain sign is a photo stop)."
+  },
+  {
+   "name": "Border Village",
+   "views": 7824,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: roadside icon (Big Kangaroo) at the WA border, a classic photo stop. Against: Wikivoyage Nullarbor says Border Village is a roadhouse with little to offer, and I found no counted source naming the Big Kangaroo; it is a business and a short stop."
+  },
+  {
+   "name": "Yalata",
+   "views": 5839,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Aboriginal community on the Eyre Highway; the only source is a roadhouse animal-crossing sign. Access to community land is restricted, no visitor sight named."
+  },
+  {
+   "name": "HMAS Whyalla",
+   "views": 5063,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "duplicate of Whyalla Maritime Museum (the ship is displayed inside its grounds; one place)"
+  },
+  {
+   "name": "Conical Hill",
+   "views": 4592,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Not named on the Gawler Ranges park page or any counted source; a hill inside a larger park (rule 3)."
+  },
+  {
+   "name": "Eyre Peninsula Railway",
+   "views": 3486,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: SATC lists the Port Lincoln Railway Museum in the heritage station, from $6. Against: open Wednesday afternoons only (about 3 h a week), one source, not there whenever a visitor arrives; the name 'Eyre Peninsula Railway' is a line, not a place."
+  },
+  {
+   "name": "Venus Bay",
+   "views": 3161,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Town wrapper: the draw is Venus Bay Conservation Park, listed separately; no counted source names the village itself as a stop."
+  },
+  {
+   "name": "Thevenard",
+   "views": 2963,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Port suburb of Ceduna with grain and gypsum port; no visitor source names a sight (rules 1-2)."
+  },
+  {
+   "name": "Koonalda Cave",
+   "views": 2942,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Aboriginal heritage cave with restricted access (rule 2); no counted visitor source found."
+  },
+  {
+   "name": "Minnipa",
+   "views": 1794,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage only lists it in the town bullets, no sight named; Pildappa Rock is the draw and is a separate candidate (rule 1/2)."
+  },
+  {
+   "name": "Port Kenny",
+   "views": 1746,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Tiny fishing village; the only source is the Streaky Bay jetty page and names no sight at Port Kenny (rule 1)."
+  },
+  {
+   "name": "Middleback Range",
+   "views": 1736,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source names it as a place to go (searched SATC, Wikivoyage); working iron-ore hills."
+  },
+  {
+   "name": "Nundroo",
+   "views": 1214,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Roadhouse locality; no visitor source names anything to see (rules 1-2)."
+  },
+  {
+   "name": "Spilsby Island",
+   "views": 1136,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "duplicate of Sir Joseph Banks Group Conservation Park (an island inside it)"
+  },
+  {
+   "name": "Louth Bay",
+   "views": 1007,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Only source is an operator experience (Louth Island tour); no place to see on its own (a tour is not a spot)."
+  },
+  {
+   "name": "Port Gibbon",
+   "views": 936,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "The source is a playground page; a coastal camp settlement with no named sight."
+  },
+  {
+   "name": "Mamungari Conservation Park",
+   "views": 872,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Remote desert park on Maralinga Tjarutja country; listings give no walk, lookout or visitor facilities a traveller can do in half an hour, and access is permit/4WD-expedition only."
+  },
+  {
+   "name": "Anxious Bay",
+   "views": 819,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A bay label: searched Wikivoyage, tourism board and parks pages; no counted source names it as somewhere to go."
+  },
+  {
+   "name": "Black Springs",
+   "views": 592,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A campground named in Coffin Bay NP's page (rule 2/3: a camp site, part of the park); the candidate's coordinates are in the Mid North, not Eyre."
+  },
+  {
+   "name": "Sleaford Mere",
+   "views": 568,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Searched parks.sa.gov.au and Wikivoyage: no counted source names the saline lake as a place to visit."
+  },
+  {
+   "name": "Reevesby Island",
+   "views": 557,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "duplicate of Sir Joseph Banks Group Conservation Park (an island inside it)"
+  },
+  {
+   "name": "Corunna Station",
+   "views": 521,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source; a working pastoral station without public visitor access."
+  },
+  {
+   "name": "Yumbarra Conservation Park",
+   "views": 500,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Remote park with no named facility, duplicate of the Googs Track area (it lies on the track); counted sources are generic."
+  },
+  {
+   "name": "Mount Millar Wind Farm",
+   "views": 459,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: working wind farm, infrastructure with no visitor facility or access named"
+  },
+  {
+   "name": "Koppio",
+   "views": 458,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Town wrapper: the draw is Koppio Smithy Museum (National Trust, 2.5 acre site), which should be judged under its own name; the locality alone has no counted source."
+  },
+  {
+   "name": "Yellabinna Regional Reserve",
+   "views": 451,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 1/2: single listing on the parks overview; wilderness protection area of remote dunes with no named visitor site or facility"
+  },
+  {
+   "name": "Nuyts Archipelago Conservation Park",
+   "views": 406,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: islands and sea lion/bird tours are a real draw named by the tourism board and Wikipedia confirms the park. Against: boat-only, reached via operators, Franklin Islands prohibited, one counted source."
+  },
+  {
+   "name": "Pinkawillinie Conservation Park",
+   "views": 396,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 1: single listing for a large inland mallee park with no named visitor feature; remote"
+  },
+  {
+   "name": "Great Australian Bight Marine Park",
+   "views": 359,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A marine park along the Nullarbor coast with no single visitor point; whale viewing is at Head of Bight, which is a place to judge separately."
+  },
+  {
+   "name": "Chadinga Conservation Park",
+   "views": 343,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 1: single listing for a minor park near Ceduna with no named visitor feature"
+  },
+  {
+   "name": "Sibsey Island",
+   "views": 314,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "duplicate of Sir Joseph Banks Group Conservation Park (an island inside it)"
+  },
+  {
+   "name": "Calpatanna Waterhole Conservation Park",
+   "views": 265,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Single SATC page; a roadside park on the highway with no named walk, lookout or feature beyond a waterhole; generic bushwalking and camping. Searched SATC only."
+  },
+  {
+   "name": "Cape Wiles",
+   "views": 264,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Headland on the Whalers Way coast with no counted source naming it; covered by Whalers Way."
+  },
+  {
+   "name": "Fishery Bay Whaling Station",
+   "views": 261,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "duplicate of Fishery Bay: the remains lie on the same beach and share the same source."
+  },
+  {
+   "name": "Lake Greenly",
+   "views": 239,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "No counted source names it; salt lake with nothing for visitors to do."
+  },
+  {
+   "name": "Wahgunyah Conservation Park",
+   "views": 226,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 1: single listing, minor far-west park with no named visitor feature"
+  },
+  {
+   "name": "Heritage Trail",
+   "views": 199,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "An urban creek-side shared path in Port Lincoln ending at a playground; not a visitor draw."
+  },
+  {
+   "name": "Tod River Reservoir",
+   "views": 183,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a local reservoir and reserve near Port Lincoln; single SATC listing with no distinct visitor attraction"
+  },
+  {
+   "name": "Davenport Creek",
+   "views": 139,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Candidate coordinates are in Utah, USA, and no evidence a creek reserve is a visitor stop."
+  },
+  {
+   "name": "Great White Shark Cage Diving",
+   "views": 0,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "Operator tours, not a place; the place is the Neptune Islands."
+  },
+  {
+   "name": "Coffin Bay Oyster Farm Tours",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator tours, not a place (spot is a place, not a business); the Coffin Bay town/oyster walk covers the place."
+  },
+  {
+   "name": "Baird Bay Ocean Eco Experience",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator (swim with sea lions tour); the place is Baird Bay itself, which should be judged as a place, not this business."
+  },
+  {
+   "name": "Ceduna Museum",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "For: two counted sources list the National Trust museum. Against: very limited opening hours (10am to noon), small local museum."
+  },
+  {
+   "name": "Whyalla Steelworks Tours",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "operator bus tour of an industrial site (an operator, not a place); no confirmation it is currently running"
+  },
+  {
+   "name": "Wild Dog Hill",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "duplicate of Whyalla Conservation Park (the hill is its headline feature)"
+  },
+  {
+   "name": "Gawler Ranges Wilderness Safaris",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Operator of 4WD tours, not a place (COVERAGE: a spot is a place)."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Eyre Highway",
+   "views": 36574,
+   "counted_sources": 1,
+   "id": "eyre-highway"
+  },
+  {
+   "name": "Bunda Cliffs",
+   "views": 7173,
+   "counted_sources": 2,
+   "id": "bunda-cliffs"
+  },
+  {
+   "name": "Neptune Islands",
+   "views": 6755,
+   "counted_sources": 2,
+   "id": "neptune-islands"
+  },
+  {
+   "name": "Head of Bight",
+   "views": 1352,
+   "counted_sources": 2,
+   "id": "head-of-bight"
+  },
+  {
+   "name": "Nullarbor National Park",
+   "views": 1151,
+   "counted_sources": 2,
+   "id": "nullarbor-national-park"
+  },
+  {
+   "name": "Lake Gairdner National Park",
+   "views": 1015,
+   "counted_sources": 1,
+   "id": "lake-gairdner"
+  },
+  {
+   "name": "Lake Gilles Conservation Park",
+   "views": 447,
+   "counted_sources": 2,
+   "id": "lake-gilles"
+  },
+  {
+   "name": "Fowlers Bay Conservation Park",
+   "views": 240,
+   "counted_sources": 2,
+   "id": "fowlers-bay"
+  }
+ ],
+ "benchmark": "Eyre has no named benchmark places. Linear features (Googs Track, Eyre Highway) are standalone, not under a destination; operators and tours (shark cage diving, oyster tours, Baird Bay Ocean Eco) were rejected and their places (Neptune Islands, Baird Bay) placed; no civic building or minor memorial was kept."
+}

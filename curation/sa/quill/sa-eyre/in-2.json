@@ -1,0 +1,469 @@
+{
+ "destinations": [
+  {
+   "id": "coffin-bay",
+   "name": "Coffin Bay",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -34.624406,
+    "longitude": 135.469651
+   },
+   "coordinates_source": "wikipedia:Coffin Bay (town point, used as centre only)",
+   "defaultZoomSpanKm": 50,
+   "name_evidence": {
+    "source": "Wikivoyage \"Coffin Bay\" page",
+    "wording": "oyster village beside Coffin Bay National Park; the NP has only 2 further kept spots so it is a spot of this destination, not a park destination"
+   },
+   "spots": [
+    "coffin-bay-1",
+    "coffin-bay-2",
+    "coffin-bay-3",
+    "coffin-bay-4",
+    "coffin-bay"
+   ]
+  },
+  {
+   "id": "streaky-bay",
+   "name": "Streaky Bay",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -32.799041,
+    "longitude": 134.204814
+   },
+   "coordinates_source": "wikipedia:Streaky Bay, South Australia (town point, used as centre only)",
+   "defaultZoomSpanKm": 100,
+   "name_evidence": {
+    "source": "Wikivoyage \"Streaky Bay\" page",
+    "wording": "west coast fishing town, base for Murphy's Haystacks, Cape Bauer and Point Labatt"
+   },
+   "spots": [
+    "streaky-bay-1",
+    "streaky-bay-2",
+    "streaky-bay-3",
+    "streaky-bay-4",
+    "streaky-bay-5",
+    "streaky-bay-6",
+    "streaky-bay-7",
+    "streaky-bay-8",
+    "streaky-bay-9",
+    "streaky-bay-10",
+    "streaky-bay-11",
+    "streaky-bay-12",
+    "streaky-bay-13",
+    "streaky-bay-14",
+    "streaky-bay-15",
+    "streaky-bay-16",
+    "streaky-bay-17",
+    "streaky-bay-18",
+    "streaky-bay"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "viewpoint",
+   "icon": "🌅",
+   "bio": "A headland in Lincoln National Park with a lighthouse, wildlife and views to Donington Island.",
+   "wiki": "Cape Donington",
+   "coordinates_source": "wikipedia:Cape Donington (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 290,
+   "counted_sources": 1,
+   "id": "lincoln-national-park-3",
+   "name": "Cape Donington",
+   "destination": "lincoln-national-park",
+   "coordinates": {
+    "latitude": -34.73333333,
+    "longitude": 136
+   },
+   "note": "Inside Lincoln National Park's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Lincoln"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A surf beach in Lincoln National Park, with clifftop lookouts used for southern right whale watching.",
+   "wiki": "Sleaford Bay",
+   "coordinates_source": "wikipedia:Sleaford Bay (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 416,
+   "counted_sources": 1,
+   "id": "lincoln-national-park-4",
+   "name": "Sleaford Bay",
+   "destination": "lincoln-national-park",
+   "coordinates": {
+    "latitude": -34.898337,
+    "longitude": 135.76709
+   },
+   "note": "Inside Lincoln National Park's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/lincoln-national-park"
+   ]
+  },
+  {
+   "category": null,
+   "icon": null,
+   "bio": null,
+   "wiki": null,
+   "coordinates_source": "wikipedia:Lincoln National Park (centroid; main visitor point to be resolved)",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "views": 1566,
+   "counted_sources": 3,
+   "id": "lincoln-national-park",
+   "name": "Lincoln National Park",
+   "destination": "lincoln-national-park",
+   "coordinates": {
+    "latitude": -34.8657,
+    "longitude": 135.8716
+   },
+   "note": "Kept national park with four kept spots, so a park destination: national park south of Port Lincoln with 4 kept spots (Memory Cove, Stamford Hill, Cape Donington, Sleaford Bay)",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/lincoln-national-park",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula",
+    "https://en.wikivoyage.org/wiki/Port_Lincoln"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏞️",
+   "bio": "National park of beaches, dunes and bays west of Coffin Bay.",
+   "wiki": "Coffin Bay National Park",
+   "coordinates_source": "wikipedia:Coffin Bay National Park (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1178,
+   "counted_sources": 4,
+   "id": "coffin-bay-1",
+   "name": "Coffin Bay National Park",
+   "destination": "coffin-bay",
+   "coordinates": {
+    "latitude": -34.6737,
+    "longitude": 135.4301
+   },
+   "note": "Inside Coffin Bay's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/coffin-bay-national-park",
+    "https://en.wikivoyage.org/wiki/Coffin_Bay",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/coffin-bay-national-park"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🦪",
+   "bio": "An 8 km signposted shoreline walk between Long Beach and Snapper Point past the oyster farms.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "coffin-bay-2",
+   "name": "Coffin Bay Oyster Walk",
+   "destination": "coffin-bay",
+   "coordinates": null,
+   "note": "Inside Coffin Bay's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/coffin-bay-oyster-walk"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "A 2WD-accessible bay in Coffin Bay National Park for canoeing, picnics and a coastal bushwalk.",
+   "wiki": "Yangie Bay",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "coffin-bay-3",
+   "name": "Yangie Bay",
+   "destination": "coffin-bay",
+   "coordinates": null,
+   "note": "Inside Coffin Bay's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/coffin-bay-national-park"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "A surf beach in Coffin Bay National Park, partly reached by 4WD.",
+   "wiki": "Almonta Beach",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "coffin-bay-4",
+   "name": "Almonta Beach",
+   "destination": "coffin-bay",
+   "coordinates": null,
+   "note": "Inside Coffin Bay's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/coffin-bay-national-park"
+   ]
+  },
+  {
+   "category": null,
+   "icon": null,
+   "bio": null,
+   "wiki": null,
+   "coordinates_source": "wikipedia:Coffin Bay (town point, used as centre only)",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 10701,
+   "counted_sources": 2,
+   "id": "coffin-bay",
+   "name": "Coffin Bay",
+   "destination": "coffin-bay",
+   "coordinates": {
+    "latitude": -34.624406,
+    "longitude": 135.469651
+   },
+   "note": "Kept town is the destination itself, not also a spot: oyster village beside Coffin Bay National Park; the NP has only 2 further kept spots so it is a spot of this destination, not a park destination",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Coffin_Bay",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "⛰️",
+   "bio": "Pink granite inselbergs on farmland near Streaky Bay, shaped by weathering over about 1,500 million years.",
+   "wiki": "Murphy's Haystacks",
+   "coordinates_source": "wikipedia:Murphy's Haystacks (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2951,
+   "counted_sources": 2,
+   "id": "streaky-bay-1",
+   "name": "Murphy's Haystacks",
+   "destination": "streaky-bay",
+   "coordinates": {
+    "latitude": -33.01519444,
+    "longitude": 134.48879722
+   },
+   "note": "Inside Streaky Bay's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Streaky_Bay",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/murphys-haystacks"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🚗",
+   "bio": "A scenic loop to Cape Bauer's cliffs on the Great Australian Bight, with the Hallys Beach lookout and Olive Island views.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "streaky-bay-2",
+   "name": "Cape Bauer Loop",
+   "destination": "streaky-bay",
+   "coordinates": null,
+   "note": "Inside Streaky Bay's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/cape-bauer-loop-coastal-scenic-drive"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "Whistling rocks and blowholes on Cape Bauer, reached by a 360 m boardwalk to cliff platforms, best at high tide.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "streaky-bay-3",
+   "name": "Whistling Rocks and the Blowholes",
+   "destination": "streaky-bay",
+   "coordinates": null,
+   "note": "Inside Streaky Bay's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/whistling-rocks-and-the-blowholes"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🚗",
+   "bio": "A 32 km unsealed scenic loop passing Smooth Pool, High Cliffs, The Granites and Cape Bauer Lookout.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "streaky-bay-4",
+   "name": "Westall Way Loop",
+   "destination": "streaky-bay",
+   "coordinates": null,
+   "note": "Inside Streaky Bay's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/westall-way-loop-coastal-scenic-drive"
+   ]
+  }
+ ]
+}
