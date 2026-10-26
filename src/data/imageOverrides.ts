@@ -2323,6 +2323,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Coffin Bay": "Coffin Bay oyster beds, 2017 (03).jpg",
   "Beachport": "BeachportJetty.JPG",
   "Mount Remarkable National Park": "27 Mt Remarkable CP 08.JPG",
+  "Lincoln National Park": "Memory Cove with Sailing Yacht Arriba at anchor.jpg",
 };
 
 /**

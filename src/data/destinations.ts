@@ -1357,6 +1357,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring cool days that suit the summit hike and the gorge walks.",
   },
   {
+    id: 'lincoln-national-park', name: "Lincoln National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -34.8657, longitude: 135.8716 },
+    category: 'park', icon: "🏞️", rank: 4,
+    tagline: "Granite headlands, quiet bays and big dunes south of Port Lincoln",
+    description: "Lincoln National Park overlooks Boston Bay on the southern Eyre Peninsula, with granite headlands, sheltered bays and offshore islands. On its southern side the Sleaford-Wanna dunes meet the surf of the Southern Ocean. Visitors walk cliff-top and beach trails, camp by the water and watch for whales in winter, and the secluded Memory Cove is reached by booking a gate key.",
+    whyVisit: ["Walk clifftops and quiet beaches", "Camp beside the bay", "Watch whales in winter"],
+    whyVisitPhotos: ["Costal track, Lincoln National Park, South Australia.JPG", "", ""],
+    highlights: ["Coastal walks", "Beach camping", "Whale watching"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Pay entry before you go", detail: "Vehicle entry is charged per vehicle and must be paid before entering the park." },
+      { icon: "🔑", title: "Memory Cove is by booking", detail: "Book vehicle entry for Memory Cove and collect the gate key, as access is limited each day." },
+    ],
+    bestMonths: [9, 10, 11, 3, 4],
+    bestTimeBlurb: "{months} suit walking, when late winter and spring bring wildflowers and birdlife.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
