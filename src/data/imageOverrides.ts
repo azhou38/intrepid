@@ -2288,6 +2288,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Mount Gambier": "(AUS-South Australia) Blue Lake, Mount Gambier 2025-12-11 - 1.jpg",
   "Port Lincoln": "Port Lincoln.jpg",
   "Coober Pedy": "Coober Pedy - panoramio (1).jpg",
+  "Dhilba Guuranda-Innes National Park": "Pondalowie Bay, Dhilba Guuranda-Innes NP 20230209 1.jpg",
 };
 
 /**

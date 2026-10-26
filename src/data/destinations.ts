@@ -1064,6 +1064,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring milder days for mine tours and desert drives. Summer heat on the surface is extreme.",
   },
   {
+    id: 'innes-national-park', name: "Dhilba Guuranda-Innes National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -35.273596, longitude: 136.941616 },
+    category: 'park', icon: "🏞️", rank: 3,
+    tagline: "Wreck, lighthouses and surf beaches at the south-western tip of Yorke Peninsula.",
+    description: "Dhilba Guuranda-Innes National Park covers the south-western tip of Yorke Peninsula, about 300 km by road from Adelaide, and is managed jointly with the Narungga traditional owners. The Ethel ran aground here in 1904, and its remains still lie on the beach beside the lighthouse at Cape Spencer. Trails run from 30-minute strolls to four-hour hikes, through heath and mallee to the cliff tops. The park's beaches draw campers, anglers and surfers, and its abandoned gypsum township of Inneston has walking trails and restored cottages.",
+    whyVisit: ["Walk clifftop trails above the sea", "See the wreck of the Ethel", "Spot wallabies, ospreys and whales"],
+    whyVisitPhotos: ["View towards The Gap from Cape Spencer, Dhilba Guuranda-Innes NP 20230208 1.jpg", "Wreck, Ethel Beach, Dhilba Guuranda–Innes NP 20230209.jpg", "Western Grey Kangaroo, Dhilba Guuranda–Innes NP 20230208.jpg"],
+    highlights: ["Coastal walks", "Shipwreck history", "Park wildlife"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Pay entry before you go", detail: "Vehicle entry is $14.40 per vehicle and must be paid before entering the park. Campsites are booked separately, with fees per night." },
+      { icon: "🐕", title: "No dogs allowed", detail: "Dogs are not permitted in the park, apart from assistance dogs. The whole park is reachable in a 2WD vehicle." },
+      { icon: "🔥", title: "Closed on fire days", detail: "The park closes on days of Catastrophic Fire Danger and may close on Extreme days. Check the CFS fire rating before you set out." },
+    ],
+    bestMonths: [4, 5, 9, 10, 11],
+    bestTimeBlurb: "{months} are mild for bushwalking, and spring brings wildflowers to the park.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
