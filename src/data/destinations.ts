@@ -1197,6 +1197,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are mild enough for jetty walks and long coastal drives.",
   },
   {
+    id: 'copper-coast', name: "Copper Coast", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -33.964784, longitude: 137.715897 },
+    category: 'beach', icon: "⛏️", rank: 4,
+    tagline: "Cornish copper towns and jetty beaches on the northern Yorke Peninsula coast.",
+    description: "The Copper Coast is the northern Yorke Peninsula around Kadina, Wallaroo and Moonta, where Cornish miners worked copper from the 1860s. Moonta Mines is a state heritage area with a museum, tourist railway and walking trails, and Kadina's Farm Shed Museum holds the stump-jump plough. Wallaroo has a heritage and nautical museum and North Beach, while Moonta Bay and Port Hughes add jetties and swimming beaches. A sealed rail trail links Kadina, Wallaroo and Moonta.",
+    whyVisit: ["Explore Cornish copper-mining heritage", "Swim and fish off jetty beaches", "Cycle the sealed coastal rail trail"],
+    whyVisitPhotos: ["Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg", "Nikon 003.jpg", ""],
+    highlights: ["Mining heritage", "Jetty beaches", "Rail trail"],
+    goodToKnow: [
+      { icon: "🕒", title: "Check museum hours", detail: "Wallaroo's museum is shut most Mondays and Moonta's has set afternoon hours, so check times before you drive." },
+      { icon: "🚴", title: "Cycle in sections", detail: "The sealed 25 km rail trail runs Kadina to Moonta via Wallaroo, so ride one stretch and drive back." },
+    ],
+    bestMonths: [10, 11, 12, 1, 2, 3, 4],
+    bestTimeBlurb: "{months} are the warm months for beach days and jetty swims at Moonta Bay and Wallaroo.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

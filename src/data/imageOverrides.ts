@@ -700,6 +700,9 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:PS Industry, Renmark 01.jpg": { x: 0.4, y: 0.5 },
   "Yorke Peninsula": { x: 0.25, y: 0.55, zoom: 1.5 },
   "File:Cape Spencer lighthouse.JPG": { x: 0.65, y: 0.35, zoom: 1.3 },
+  "Copper Coast": { x: 0.45, y: 0.5 },
+  "File:Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg": { x: 0.35, y: 0.5 },
+  "File:Nikon 003.jpg": { x: 0.35, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2300,6 +2303,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Vulkathunha-Gammon Ranges National Park": "Gammon DSC03103 SA (37606902494).jpg",
   "Riverland": "Riverboat 02, Renmark, South Australia.JPG",
   "Yorke Peninsula": "Corny point rainbow.jpg",
+  "Copper Coast": "South Beach Port Hughes.jpg",
 };
 
 /**
