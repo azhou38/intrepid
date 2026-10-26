@@ -357,3 +357,219 @@ Also dropped as not spots: Whyalla (town duplicates its destination), Gumeracha 
 - yorke-peninsula-17 (Stansbury Museum)
 - yorke-peninsula-18 (Edithburgh Museum)
 - yorke-peninsula-19 (Bublacowie Military Museum)
+## Pre-filter failures among the new SA photos (these need a replacement photo; the image judges have not run on spots)
+
+- Beachport (header): BeachportJetty.JPG: also used for robe
+- Innamincka (header): Innamincka aerial.jpg: 500px wide, minimum 1500 for a header
+- Leigh Creek (header): Hills north of Leigh Creek (heading south on B83).jpg: aspect 2.29 outside 0.6–2
+- Naracoorte (header): South Australian Railways V class locomotive no 9 displayed at Naracoorte.jpg: also used for lincoln-national-park
+- Port Augusta (header): Jacaranda Time Port Augusta.jpg: 1000px wide, minimum 1500 for a header
+- Port Pirie (header): Grain silos, smelter and smoke stack from across the river, Port Pirie, South Australia.jpg: 633px wide, minimum 1500 for a header
+- Adelaide Dolphin Sanctuary (spot): Tursiops aduncus, Port River, Adelaide, Australia - 2003.jpg: 931px wide, minimum 960 for a spot
+- Adelaide Zoo (spot): Sumatran tiger.JPG: 752px wide, minimum 960 for a spot
+- Admirals Arch (spot): Dewey Arch, New York.jpg: dated 1900; category: Black and white photographs of Manhattan, New York City; Images from the Library of Congress
+- Alligator Gorge (spot): 1900sc Postcard-Alligator 01.jpg: dated 1900; category: Postcards of Florida; Postcards of alligators; 541px wide, minimum 960 for a spot
+- Andamooka, South Australia (spot): View of the Andamooka town centre in South Australia, seen from One Tree Hill.jpg: also used for coober-pedy
+- Animal Farm (spot): Animal Farm - 1st edition.jpg: dated 1945; 543px wide, minimum 960 for a spot
+- Anstey Hill Recreation Park (spot): Tea Tree Gully Quarry - Anstey Hill Recreation Park.jpg: also used for kangaroo-island
+- Ardrossan Heritage Museum (spot): Ardrossan.jpg: 800px wide, minimum 960 for a spot
+- Ardrossan Red Cliffs (spot): Ardrossan.jpg: 800px wide, minimum 960 for a spot
+- Arkaroola (spot): ArkaroolaAir.jpg: 845px wide, minimum 960 for a spot
+- Arkaroola Observatories (spot): ArkaroolaAir.jpg: 845px wide, minimum 960 for a spot
+- Auburn, South Australia (spot): Post Office, Auburn.JPG: 448px wide, minimum 960 for a spot
+- Bald Hill Walk (spot): Telescope hill fire tower 4-3-1918-1(nys archives).jpg: 675px wide, minimum 960 for a spot
+- Beetaloo Reservoir (spot): Beetaloo Reservoir(GN04464).jpg: dated 1924
+- Beltana, South Australia (spot): Beltana Population Decline.JPG: 718px wide, minimum 960 for a spot
+- Bertha the Bunyip (spot): Job Harris 1840-1882.jpg: 954px wide, minimum 960 for a spot
+- Beyeria Walk (spot): Tea Tree Gully Quarry - Anstey Hill Recreation Park.jpg: also used for adelaide
+- Big Galah (spot): Big Things Postcard.jpg: also used for coober-pedy, kangaroo-island, riverland, coorong-national-park, ceduna
+- Big Winch (spot): Big Things Postcard.jpg: also used for big-galah, kangaroo-island, riverland, coorong-national-park, ceduna
+- Blanche Harbor (spot): Rose Blanche-Harbor Le Cou 960701 04 3558 2351.jpg: dated 1996
+- Bon Accord Mine Complex (spot): Duran Duran 1983.jpg: dated 1983; category: Black and white group photographs of musicians
+- Border Cliffs (spot): Bunda Cliffs, 2017 (01).jpg: also used for bunda-cliffs
+- Bordertown Wildlife Park (spot): Macropus rufogriseus rufogriseus Juvenile 2.jpg: also used for adelaide
+- Bowman Park (spot): BowmanPark1.jpg: 490px wide, minimum 960 for a spot
+- Brachina Gorge (spot): Flinders Ranges SA 5434, Australia - panoramio (21).jpg: also used for southern-flinders-rail-trail
+- Brookfield Conservation Park (spot): Brookfield-zoo.jpg: 890px wide, minimum 960 for a spot
+- Brown Beach (spot): LIBBIE BEACH HOEL.jpg: 752px wide, minimum 960 for a spot
+- Bunda Cliffs (spot): Bunda Cliffs, 2017 (01).jpg: also used for riverland
+- Bungaree Station (spot): Sheep Station at Bungaree(GN07992).jpg: dated 1925
+- Burra railway station (spot): Burra station with Peterborough-bound Bluebird railcar (103 & 260) 4 Jun 1969 (NRM 97-1262-g028-0890).jpg: dated 1969
+- Cactus Beach (spot): White shark.jpg: also used for innes-national-park
+- Cape Borda Lightstation (spot): Cape Borda Lighthouse.jpg: 640px wide, minimum 960 for a spot
+- Cape Gantheaume Conservation Park (spot): Murray Lagoon.jpg: 640px wide, minimum 960 for a spot
+- Cape Northumberland Lighthouse (spot): Grant LGA.png: category: Maps of local government areas in South Australia; 400px wide, minimum 960 for a spot
+- Carappee Hill Conservation Park (spot): Stalactite in Kelly Hill.JPG: also used for kangaroo-island
+- Cleland National Park (spot): Cleland-conservation-park.svg: category: Maps of Adelaide; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 834px wide, minimum 960 for a spot
+- Cleland Wildlife Park (spot): Cleland-conservation-park.svg: category: Maps of Adelaide; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 834px wide, minimum 960 for a spot
+- Colour Tumby Bay Street Art (spot): Flag of South Australia.svg: dated 1993; category: Blue, orange, red, white flags of Australia; SVG flags of South Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml)
+- Coonalpyn Downs Silo Art (spot): Coonalpyn aerial.jpg: 450px wide, minimum 960 for a spot
+- Coopers Brewery (spot): Coopers Brewery logo.svg: no metadata from Commons (file renamed or deleted?)
+- Corny Point Lighthouse (spot): Corny Point Lighthouse.JPG: 660px wide, minimum 960 for a spot
+- Coward Springs (spot): Coward Springs(GN05680).jpg: dated 1935
+- Cummins Mosaic Trail (spot): Lululemon Athletica logo.svg: category: SVG logos of fashion companies in Canada; SVG logos of sporting goods manufacturers; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 33px wide, minimum 960 for a spot
+- Curdimurka (spot): Curdimurka sign, Central Australia Railway.jpg: 800px wide, minimum 960 for a spot
+- Curley Creek Hike (spot): Four Commedia dell’Arte Figures claude-gillot.jpg: 640px wide, minimum 960 for a spot
+- Dalhousie Springs (spot): Dalhousie Springs in Witjira National Park - steps into the warm water.JPG: also used for witjira-national-park
+- Darke Peak (spot): Eucalyptus cretata buds.jpg: 768px wide, minimum 960 for a spot
+- Deep Creek National Park (spot): DCL-May2008.jpg: 800px wide, minimum 960 for a spot
+- Eden Valley (spot): East of Eden (1952 1st ed dust jacket).jpg: dated 1952
+- Ediacaran Golden Spike (spot): Mollweide Paleographic Map of Earth, 600 Ma (Ediacaran Period).png: category: Paleogeographic maps of the world with Mollweide projection; file name suggests a map, drawing, logo or similar
+- Elizabeth Symon Nursing Home (spot): Innamincka aerial.jpg: 500px wide, minimum 960 for a spot
+- Ethel Wreck (spot): White shark.jpg: also used for ceduna
+- Ewens Ponds (spot): South East Drainage, Ewen Ponds showing row boat with two men(GN11011).jpg: dated 1945
+- Faye's Underground Home (spot): Vanilla Ice 2010 (cropped).jpg: 517px wide, minimum 960 for a spot
+- Ferries-McDonald Conservation Park (spot): Peninsula Blvd in Hempstead Lake State Park.jpg: 869px wide, minimum 960 for a spot
+- Fishery Bay (spot): Sleaford Bay(GN05637).jpg: dated 1935; also used for lincoln-national-park
+- Fishery Beach (spot): Whaling-dangers of the whale fishery.jpeg: dated 1820
+- Frenchmans Rock (spot): Frenchmans Cap.JPG: also used for franklin-gordon-wild-rivers
+- Freycinet Trail (spot): Rose Marie Pinon de Freycinet.jpg: dated 1812
+- Gawler, South Australia (spot): Gawler primary school.jpg: 900px wide, minimum 960 for a spot
+- Giant Australian Cuttlefish Aggregation (spot): Sepia apama 2.jpg: category: Sepia apama; 568px wide, minimum 960 for a spot
+- Glacier Rock (spot): Glacierrock1.gif: not a photograph file (image/gif); 500px wide, minimum 960 for a spot
+- Glenthorne National Park–Ityamaiitpinna Yarta (spot): Macropus rufogriseus rufogriseus Juvenile 2.jpg: also used for bordertown-wildlife-park
+- Godfrey's Landing (spot): Sedd-el-Bahr from River Clyde.jpg: dated 1915; category: Black and white photographs
+- Goolwa Barrage (spot): Map -- location of barrages at the mouth of the River Murray.tif: category: Maps of South Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Gorge Wildlife Park (spot): Geikie Gorge.JPG: 540px wide, minimum 960 for a spot
+- Hahndorf Academy (spot): T. W. Boehm.jpeg: dated 1860; 675px wide, minimum 960 for a spot
+- Harry Butler (aviator) (spot): Harry Butler RFC.jpg: dated 1918; 300px wide, minimum 960 for a spot
+- Hawker Mural Trail (spot): Upper class Burmese couple in the 1890s.jpg: dated 1890; 929px wide, minimum 960 for a spot
+- Headings Cliff Lookout (spot): Pearl Hogg at the wheel of P.S. Kookaburra.jpg: dated 1950
+- Heaven Clifftop Viewpoint (spot): Map of the Murray River, south-eastern Australia.tif: category: Maps of rivers of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Heysen Trail (spot): Parachilna Gorge, Flinders Ranges - South Australia.jpg: also used for ikara-flinders-ranges
+- Hindmarsh Falls (spot): John Hindmarsh 2.jpeg: dated 1856; 704px wide, minimum 960 for a spot
+- Hindmarsh River Walking Trail (spot): Encounter bay pt elliot.jpg: 600px wide, minimum 960 for a spot
+- Hope Cottage National Trust Museum (spot): Robert Burns Birthplace Museum - geograph.org.uk - 4561998.jpg: 640px wide, minimum 960 for a spot
+- Inman River Trail (spot): Map of Santa Fe Trail-NPS.jpg: category: Illustrations by Robert McGinnis; Maps of the Santa Fe Trail; file name suggests a map, drawing, logo or similar
+- Innamincka Regional Reserve (spot): Innamincka aerial.jpg: 500px wide, minimum 960 for a spot
+- Jack Point Pelican Observatory Walk (spot): View of downtown San Antonio, Texas, from the Tower of the Americas LCCN2014633530.tif: category: Images from the Library of Congress; Library of Congress-no known copyright restrictions; not a photograph file (image/tiff)
+- Jamestown, South Australia (spot): Kanangra winter wonderland.jpg: 
+- JamFactory (spot): Jam factory.jpg: 640px wide, minimum 960 for a spot
+- Kanku-Breakaways Conservation Park (spot): Serpentine Lakes.JPG: also used for yeldulknie-conservation-park
+- Kapunda (spot): Kapunda street view.JPG: 640px wide, minimum 960 for a spot
+- Karoonda Art and Sculpture Trail (spot): Karoonda mainstreet.jpg: also used for karoonda-silo-art
+- Karoonda Day and Night Silo Art (spot): Karoonda mainstreet.jpg: also used for karoonda-art-sculpture-trail
+- Karte Conservation Park (spot): PinnarooSA.JPG: also used for mallee-tourist-heritage-centre
+- Kati Thanda–Lake Eyre National Park (spot): NEO lake eyre big.jpg: dated 1999; 772px wide, minimum 960 for a spot
+- Kelly Hill Caves (spot): Stalactite in Kelly Hill.JPG: also used for carappee-hill-conservation-park
+- Kimba Museum (spot): Osamu Tezuka 1951 Scan10008-2.JPG: dated 1951; 595px wide, minimum 960 for a spot
+- Kinchina Conservation Park (spot): Kaiserstuhl South Australia.JPG: also used for wittelbee-conservation-park
+- King George Beach (spot): Map of King George Sound drawn using Paint.jpg: category: Maps of parts of Western Australia; file name suggests a map, drawing, logo or similar; 882px wide, minimum 960 for a spot
+- Kingscote Silo Art (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, riverland, coorong-national-park, ceduna
+- Kingston Park Coastal Reserve (spot): Año Nuevo State Reserve.JPG: 800px wide, minimum 960 for a spot
+- Lake Bumbunga (spot): Lake Bumbunga satellite view in summer.jpg: file name suggests a map, drawing, logo or similar
+- Lake Gilles Conservation Park (spot): 01 Lake Gilles 03.JPG: also used for lake-newland-conservation-park
+- Lake Hart (spot): Hart Lake (Lake County, Oregon scenic images) (lakDA0132).jpg: 488px wide, minimum 960 for a spot
+- Lake MacDonnell (spot): Sir R. G. MacDonnell (Cropped).png: dated 1871; 165px wide, minimum 960 for a spot
+- Lake Newland Conservation Park (spot): 01 Lake Gilles 03.JPG: also used for lake-gilles
+- Langhorne Creek, South Australia (spot): Flooded vineyards, Langhorne Creek.JPG: 640px wide, minimum 960 for a spot
+- Lashmar Conservation Park (spot): Thylacoleo skeleton in Naracoorte Caves.jpg: also used for naracoorte
+- Little Blue Lake (spot): Little Blue Run Dam.jpg: 540px wide, minimum 960 for a spot
+- Little Sahara (Kangaroo Island) (spot): Little Sahara, Kangaroo Island.jpg: 640px wide, minimum 960 for a spot
+- Locks Well Walk (spot): Panama Canal Map EN.svg: category: Maps of Isthmus of Panama; Maps of the Panama Canal; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 400px wide, minimum 960 for a spot
+- Loxton Tree Sculptures (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, kangaroo-island, coorong-national-park, ceduna
+- Maize Island Lagoon Conservation Park (spot): Map of the Murray River, south-eastern Australia.tif: category: Maps of rivers of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Makybe Diva Statue (spot): Makybe Diva - trackwork 02.jpg: 768px wide, minimum 960 for a spot
+- Mallee Tourist and Heritage Centre (spot): PinnarooSA.JPG: also used for karte-conservation-park
+- Mannum Dock Discovery Centre (spot): Adelaide skyline, December 2022 b.jpg: also used for kangaroo-island, adelaide
+- Map the Miner (spot): Map the Miner at Kapunda South Australia.jpg: file name suggests a map, drawing, logo or similar; 469px wide, minimum 960 for a spot
+- Marree Mosque (spot): The mosque at Marree SLSA B-15341.jpeg: dated 1884; category: Files from the State Library of South Australia
+- Martin Bend Wetland and Walking Trail (spot): AmDiscoveryMap.jpg: category: Locator maps of Kentucky; Maps of Colorado; 300px wide, minimum 960 for a spot
+- Mary Ann Reserve (spot): Mary Moorman.jpg: dated 1963; 471px wide, minimum 960 for a spot
+- Maslin Beach, South Australia (spot): Maslin-Beach-1264.jpg: also used for copper-coast
+- Mawson Trail (spot): Douglas Mawson 1914 1.jpeg: dated 1914; 415px wide, minimum 960 for a spot
+- Melrose Courthouse Heritage and Interpretive Centre (spot): Alfred the Great, silver penny; struck 875–880 (obverse).png: 410px wide, minimum 960 for a spot
+- Meningie Hill Lookout (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, kangaroo-island, riverland, ceduna
+- Meningie Walking and Cycling Trails (spot): Map of the Murraylands region of South Australia.png: category: OpenStreetMap maps of South Australia; file name suggests a map, drawing, logo or similar
+- Miners Dugouts (spot): Dugout home2.jpg: dated 1940; category: Images from the Library of Congress
+- MOD. (museum) (spot): Old Mods photo.jpg: 354px wide, minimum 960 for a spot
+- Monarto Safari Park (spot): Giraffa camelopardalis -Safaripark Beekse Bergen-11July2009.jpg: 955px wide, minimum 960 for a spot
+- Moonta Mines, South Australia (spot): Map of Moonta Mines pre-1923 (SA Dept of Mines and Energy).tif: dated 1975; category: 20th-century maps of South Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Mount Chambers Gorge (spot): In Mount Chambers Chasm.jpg: no metadata from Commons (file renamed or deleted?)
+- Mount Lofty (spot): Mount lofty from south.jpg: 451px wide, minimum 960 for a spot
+- Mount Lofty Botanic Garden (spot): Mt Lofty Bot Garden 033.jpg: 640px wide, minimum 960 for a spot
+- Mount Schank (spot): Mtschank.jpg: 575px wide, minimum 960 for a spot
+- Myponga Beach, South Australia (spot): Myponga Beach area.JPG: 640px wide, minimum 960 for a spot
+- Naracoorte Caves National Park (spot): Thylacoleo skeleton in Naracoorte Caves.jpg: also used for kangaroo-island
+- National Motor Museum, Birdwood (spot): National Motor Museum, Birdwood, logo, 2026.svg: category: Logos of South Australia; Logos of museums of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 35px wide, minimum 960 for a spot
+- Neagles Rock Short Walk (spot): Gerry Marsden 1964.JPG: dated 1964; category: Black and white group photographs of musicians; 233px wide, minimum 960 for a spot
+- Neptune Islands (spot): Dive sites of the Neptune Islands.png: category: Dive site maps of South Australia
+- Ngarkat Conservation Park (spot): Ngarkat Conservation Park Tyms Lookout.jpg: no metadata from Commons (file renamed or deleted?)
+- Nora Creina Bay (spot): BeachportJetty.JPG: also used for beachport
+- North Beach, South Australia (spot): Maslin-Beach-1264.jpg: also used for mclaren-vale
+- Nullarbor National Park (spot): Nullarbor National Park.jpg: 800px wide, minimum 960 for a spot
+- Old Timers Mine (spot): Mina morska typu M 1908-39.jpg: 800px wide, minimum 960 for a spot
+- Oodnadatta Track (spot): Oodnadatta Track 0316.svg: category: Road maps of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 793px wide, minimum 960 for a spot
+- Organ Pipes (spot): StRaphaelsDubOrganSmall.jpg: 425px wide, minimum 960 for a spot
+- Overland Corner (spot): Map of the Murray River, south-eastern Australia.tif: category: Maps of rivers of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Parachilna Gorge (spot): Parachilna Gorge, Flinders Ranges - South Australia.jpg: also used for heysen-trail
+- Parnka Point (spot): Map of the Murraylands region of South Australia.png: category: OpenStreetMap maps of South Australia; file name suggests a map, drawing, logo or similar
+- Parnkalla Trail (spot): Dutchmans Stern Park.JPG: also used for quorn
+- Pennington Bay, South Australia (spot): Adelaide skyline, December 2022 b.jpg: also used for mannum, adelaide
+- Penong Windmill Museum (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, kangaroo-island, riverland, coorong-national-park
+- Pichi Richi Railway (spot): NM25 w22 quorn.jpg: 772px wide, minimum 960 for a spot
+- Pinky Point Lookout (spot): RichardOKane.jpg: dated 1946; 595px wide, minimum 960 for a spot
+- Point Bell Conservation Park (spot): 10 Point Labatt CP 04.JPG: also used for streaky-bay
+- Point Labatt Conservation Park (spot): 10 Point Labatt CP 04.JPG: also used for ceduna
+- Point Malcolm Lighthouse (spot): Malcom Point lighthouse, Lake Alexandrina.JPG: 640px wide, minimum 960 for a spot
+- Pool of Siloam (spot): Pool of Siloam and Lower (Old) Pool in the Ordnance Survey of Jerusalem.png: dated 1865; category: 1860s maps of Jerusalem; Details of old maps of Jerusalem; 847px wide, minimum 960 for a spot
+- Port Adelaide (spot): Port Adelaide montage 2.jpg: 800px wide, minimum 960 for a spot
+- Port Broughton Heritage Centre and Museum (spot): Elizabeth Isabella Broughton.jpg: dated 1814; 908px wide, minimum 960 for a spot
+- Port MacDonnell Maritime Museum (spot): Grant LGA.png: category: Maps of local government areas in South Australia; 400px wide, minimum 960 for a spot
+- Port Pirie Heritage Trail (spot): CrystalBrookSilos.jpg: 439px wide, minimum 960 for a spot
+- Port Pirie National Trust Museum (spot): Grain silos, smelter and smoke stack from across the river, Port Pirie, South Australia.jpg: 633px wide, minimum 960 for a spot
+- PS Industry (spot): IBM PS-2 wordmark.svg: dated 1990; category: SVG logos of IBM; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml)
+- Rapid Bay, South Australia (spot): R.Bay.jpg: also used for kangaroo-island
+- Rattler Trail (spot): Auburn - Northern entrance to Rattler Rail Trail.JPG: 448px wide, minimum 960 for a spot
+- Rawnsley Bluff (spot): Wilpenapoundfromspacewithnotes.jpg: 720px wide, minimum 960 for a spot
+- Redbanks Beach (spot): 2026 United States Senate elections retirements map.svg: category: 2026 United States Senate election maps; Nationwide maps of United States Senate elections retirements; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 959px wide, minimum 960 for a spot
+- Riesling Trail (spot): Riesling Trail, looking north near Leasingham.JPG: 448px wide, minimum 960 for a spot
+- River Murray International Dark Sky Reserve (spot): Swan Reach Museum was the Primary School. Swan Reach is on the Murray River South Australia. (7524881046).jpg: also used for swan-reach-observatory
+- Rosetta Head (spot): Victor Harbor Bluff.JPG: 640px wide, minimum 960 for a spot
+- Sacred Canyon (spot): Kings Canyon NT view.jpg: also used for watarrka-national-park
+- Saint Elijah the Prophet Serbian Orthodox Church, Coober Pedy (spot): Baptistry soc australia.jpg: 800px wide, minimum 960 for a spot
+- Second Valley, South Australia (spot): Second Valley.jpg: 900px wide, minimum 960 for a spot
+- Shell Hill Reserve (spot): Shell Cove Aerial.jpg: 611px wide, minimum 960 for a spot
+- Sleaford Bay (spot): Sleaford Bay(GN05637).jpg: dated 1935; also used for port-lincoln
+- Smoky Bay, South Australia (spot): Smoky Bay Jetty, 2017 (01).jpg: also used for streaky-bay
+- Smooth Pool (spot): VermiculiteUSGOV.jpg: 360px wide, minimum 960 for a spot
+- Snellings Beach (spot): Snellsbeach4wikipedia.JPG: 304px wide, minimum 960 for a spot
+- Solomontown Beach (spot): Grain silos, smelter and smoke stack from across the river, Port Pirie, South Australia.jpg: 633px wide, minimum 960 for a spot
+- South Australian Whale Centre (spot): Humpback Whale fg1 cropped.JPG: 449px wide, minimum 960 for a spot
+- Southern Flinders Rail Trail (spot): Flinders Ranges SA 5434, Australia - panoramio (21).jpg: also used for ikara-flinders-ranges
+- St Mary Peak (spot): St Mary Peak2.jpg: 819px wide, minimum 960 for a spot
+- Stamford Hill (South Australia) (spot): South Australian Railways V class locomotive no 9 displayed at Naracoorte.jpg: also used for naracoorte
+- Steamtown Heritage Rail Centre (spot): Carriage on turntable at steamtown Heritage Rail Centre, Peterborough, South Australia.jpg: 819px wide, minimum 960 for a spot
+- Stenhouse Bay Lookout Walk (spot): Endurance under full sail Frank Hurley State Library NSW a090012h.jpg: dated 1915; category: Images from the State Library of NSW
+- Streaky Bay Back Beach (spot): Smoky Bay Jetty, 2017 (01).jpg: also used for ceduna
+- Streaky Bay Powerhouse Museum (spot): Pittsburgh Steelers logo.svg: category: SVG American football logos of the United States; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 196px wide, minimum 960 for a spot
+- Sturt Gorge Recreation Park (spot): Charles Sturt by John Michael Crossland lowres color.jpg: dated 1853; 390px wide, minimum 960 for a spot
+- Swan Reach Observatory (spot): Swan Reach Museum was the Primary School. Swan Reach is on the Murray River South Australia. (7524881046).jpg: also used for river-murray-dark-sky-reserve
+- Tadpole Cove Walk (spot): Murray Lagoon.jpg: 640px wide, minimum 960 for a spot
+- Talc Alf Art Works (spot): Australian Aboriginal Flag.svg: dated 1971; category: SVG flags of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 512px wide, minimum 960 for a spot
+- Talia Caves (spot): Venus Bay General Store, 2017 (01).jpg: also used for streaky-bay
+- Telowie Gorge Conservation Park (spot): Telowie Gorge(GN14652).jpg: 
+- The Beachouse (spot): MagicMountain.jpg: 640px wide, minimum 960 for a spot
+- The Dutchmans Stern Conservation Park (spot): Dutchmans Stern Park.JPG: also used for port-lincoln
+- The Granites (spot): Bianco Sardo Granit mit polierter Oberfläche.jpg: 
+- The Sheeps Back Museum (spot): South Australian Railways V class locomotive no 9 displayed at Naracoorte.jpg: also used for lincoln-national-park
+- Tolderol Game Reserve (spot): Lower Lakes 2025.png: 933px wide, minimum 960 for a spot
+- Tom's Working Opal Mine (spot): View of the Andamooka town centre in South Australia, seen from One Tree Hill.jpg: also used for andamooka
+- Tramway Museum, St Kilda (spot): Location map -- Tramway Museum, St Kilda, South Australia.png: category: Maps of Adelaide; OpenStreetMap maps of South Australia; file name suggests a map, drawing, logo or similar; 925px wide, minimum 960 for a spot
+- Tunkalilla (spot): Waitpinga-beach2.jpg: 425px wide, minimum 960 for a spot
+- Umpherston Sinkhole (spot): Main Corner Mount Gambier.jpg: no metadata from Commons (file renamed or deleted?)
+- Venus Bay Conservation Park (spot): Venus Bay General Store, 2017 (01).jpg: also used for talia-caves
+- Vivonne Bay, South Australia (locality) (spot): R.Bay.jpg: also used for yankalilla
+- Wabma Kadarbu Mound Springs Conservation Park (spot): Moundspring.jpg: 600px wide, minimum 960 for a spot
+- Wara Wayingga-Tennyson Dunes Conservation Reserve (spot): Adelaide skyline, December 2022 b.jpg: also used for mannum, kangaroo-island
+- Weetootla Gorge (spot): Mount McKinlay Bluff and summit.jpg: 799px wide, minimum 960 for a spot
+- West Bay (spot): The harbour at West Bay - geograph.org.uk - 1257239.jpg: 640px wide, minimum 960 for a spot
+- West Cape (South Australia) (spot): Cape Jaffa (6).JPG: 640px wide, minimum 960 for a spot
+- Westall Way Loop (spot): Map of proposed Suburban Rail Loop.png: category: Public transport maps of Melbourne; file name suggests a map, drawing, logo or similar
+- Whalers Way (spot): Hartford Whalers 1992.svg: category: SVG ice hockey logos of the United States; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 800px wide, minimum 960 for a spot
+- Witjira National Park (spot): Dalhousie Springs in Witjira National Park - steps into the warm water.JPG: also used for dalhousie-springs
+- Wittelbee Conservation Park (spot): Kaiserstuhl South Australia.JPG: also used for murray-bridge
+- Woomera Heritage Centre (spot): Woomera.jpg: also used for woomera-missile-park
+- Woomera Missile Park (spot): Woomera.jpg: also used for woomera-heritage-centre
+- Yeldulknie Conservation Park (spot): Serpentine Lakes.JPG: also used for coober-pedy
+- Yurrebilla Trail (spot): Yurrebilla.jpg: 391px wide, minimum 960 for a spot
