@@ -1098,6 +1098,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Summer and autumn ({months}) are warm and dry, with easy road access and good camping.",
   },
   {
+    id: 'vulkathunha-gammon-ranges', name: "Vulkathunha-Gammon Ranges National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 90,
+    continent: 'Oceania', coordinates: { latitude: -30.3117, longitude: 139.3361 },
+    category: 'park', icon: "⛰️", rank: 3,
+    tagline: "Rugged gorges and ranges, with ridgetop 4WD tours and a dark sky sanctuary",
+    description: "Vulkathunha-Gammon Ranges National Park was proclaimed in 1970 on the traditional country of the Adnyamathanha people. Its gorge hikes and 4WD tracks cross rugged ranges, reaching the edge of Lake Frome, an ephemeral salt lake about 100 km long. Arkaroola Wilderness Sanctuary, a 610 sq km private reserve beside the park, is the main visitor base. In 2023 it was certified as South Australia's first International Dark Sky Sanctuary.",
+    whyVisit: ["Hike through rugged gorges", "Stargaze under dark outback skies", "Ride 4WD tracks along ridgetops"],
+    whyVisitPhotos: ["", "", "Gammon DSC03093 SA (38290980482).jpg"],
+    highlights: ["Gorge hikes", "Dark sky stargazing", "Ridgetop 4WD"],
+    goodToKnow: [
+      { icon: "🚙", title: "Check which tracks need 4WD", detail: "Most park tracks suit 2WD, but the Wortupa Loop Track and the track to Lake Frome need a 4WD." },
+      { icon: "⚠️", title: "Check park alerts", detail: "The park can close at short notice, for fire or pest control. Look at the park alerts before you drive in." },
+      { icon: "💧", title: "Bring water and supplies", detail: "Facilities are basic: pit toilets at some campgrounds, and showers only at Balcanoona. The park is about 625 km from Adelaide." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Visit in {months} for mild days and comfortable gorge walks, as summer heat is extreme.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,

@@ -2292,6 +2292,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Coober Pedy": "Coober Pedy - panoramio (1).jpg",
   "Dhilba Guuranda-Innes National Park": "Pondalowie Bay, Dhilba Guuranda-Innes NP 20230209 1.jpg",
   "Coorong National Park": "The Coorong.JPG",
+  "Vulkathunha-Gammon Ranges National Park": "Gammon DSC03103 SA (37606902494).jpg",
 };
 
 /**
