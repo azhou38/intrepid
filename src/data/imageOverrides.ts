@@ -685,6 +685,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Remarkable Rocks on Kangaroo Island, South Australia.jpg": { x: 0.5, y: 0.35, zoom: 1.3 },
   "File:Australia kangaroo island litte sahara.jpg": { x: 0.5, y: 0.6, zoom: 1.3 },
   "Barossa Valley": { x: 0.5, y: 0.5 },
+  "File:WilPnd1.JPG": { x: 0.65, y: 0.5 },
+  "File:Pair of Yellow-Footed Rock Wallabies in Ikara-Flinders Ranges National Park.jpg": { x: 0.28, y: 0.45, zoom: 1.6 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2272,6 +2274,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Adelaide": "Adelaide CBD skyline across the River Torrens, July 2026 (028A8459).jpg",
   "Kangaroo Island": "Flinders Chase National Park 01.jpg",
   "Barossa Valley": "View of Barossa Valley from Mengler Hill 20230207-2.jpg",
+  "Ikara-Flinders Ranges National Park": "Bunyeroo Valley Lookout, Ikara-Flinders Ranges National Park.jpg",
 };
 
 /**

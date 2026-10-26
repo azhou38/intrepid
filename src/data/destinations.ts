@@ -928,6 +928,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring harvest and mild days. The Vintage Festival starts on Easter Monday in odd years.",
   },
   {
+    id: 'ikara-flinders-ranges', name: "Ikara-Flinders Ranges National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 144,
+    continent: 'Oceania', coordinates: { latitude: -31.527039, longitude: 138.606487 },
+    category: 'park', icon: "⛰️", rank: 2,
+    tagline: "Wilpena Pound's mountain amphitheatre, ancient gorges and long outback walking trails",
+    description: "Ikara-Flinders Ranges National Park covers about 95,000 hectares of folded ranges in South Australia's semi-arid north, roughly 450 km from Adelaide. Its centrepiece is Wilpena Pound, the amphitheatre of mountains the Adnyamathanha call Ikara, meaning meeting place. The Brachina and Bunyeroo gorges cut through the Heysen Range, and ancient rock paintings and engravings survive at Arkaroo Rock and Sacred Canyon. The park is co-managed by the Adnyamathanha and the state, and the resort at Wilpena is the only accommodation inside it.",
+    whyVisit: ["Hike inside Wilpena Pound's mountain amphitheatre", "Drive gorges lined with ancient rock layers", "See Adnyamathanha rock art and engravings", "Spot yellow-footed rock-wallabies in the gorges"],
+    whyVisitPhotos: ["WilPnd1.JPG", "Brachina Gorge Rd, Ikara-Flinders Ranges NP 20230212 1.jpg", "Arkaroo Rock 8 (18669729126).jpg", "Pair of Yellow-Footed Rock Wallabies in Ikara-Flinders Ranges National Park.jpg"],
+    highlights: ["Wilpena Pound walks", "Geological gorge drives", "Rock art", "Rock-wallabies"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Pay entry before you arrive", detail: "Vehicle entry is $14.40 and must be paid before you enter. Book online or at a listed booking office, as mobile coverage in the park is patchy." },
+      { icon: "🔥", title: "Summer and fire closures", detail: "Many walking trails close in summer and on catastrophic fire danger days. Check the park page for closures before you set out." },
+      { icon: "🚙", title: "Gravel roads close after rain", detail: "Gorge roads are unsealed and can close after heavy rain; Brachina is currently 4WD only and Bunyeroo is shut for repairs. Check road conditions first." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Walk in the cooler {months}, when spring brings wildflowers. Summers reach 45 degrees.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
