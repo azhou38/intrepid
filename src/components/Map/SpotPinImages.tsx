@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Svg, { Circle, Defs, Ellipse, Path, RadialGradient, Stop } from 'react-native-svg';
+import Svg, { Circle, Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
 
 // The collapsed form of a spot pin: the photo pin's exact teardrop (SpotMarker in MapScreen) made small and
@@ -10,15 +10,14 @@ import MapboxGL from '@rnmapbox/maps';
 
 export const SPOT_MINI_PIN_UNVISITED = 'spotmini:0';
 export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
-// The selected spot's shadow: it makes the pin look lifted off the map. Two parts, drawn under the pin itself: a soft
-// elliptical CONTACT shadow on the ground at its tip, and the pin's teardrop silhouette CAST down and to the right (light
-// from the upper left) as a blurred dark shape, built from many thin translucent strokes so it falls off smoothly.
-// The image's bottom edge hangs GLOW_MARGIN below the pin's own bottom edge (its tip is 2pt above that, padding), so the
-// layer shifts the image down by it (iconOffset) to put the shadow's tip on the pin's tip.
+// The selected spot's glow: the photo pin's own teardrop outline (SpotPhotoImages: a 28pt bubble, 10pt tail, 2pt padding)
+// traced in soft white strokes, wider and fainter outward, so the shading runs evenly round the whole pin, tail included,
+// rather than a disc behind the bubble. GLOW_MARGIN is how far it reaches past the pin; the layer shifts the image down by
+// it so its tip sits on the pin's tip (iconOffset).
 export const SPOT_SELECTED_GLOW = 'spotselglow';
-// The same shadow, stronger, for the satellite map, where a faint shadow is lost on dark imagery.
+// The same glow in black, for the satellite map, where white would be lost on bright imagery and black reads better.
 export const SPOT_SELECTED_GLOW_DARK = 'spotselglow:dark';
-export const GLOW_MARGIN = 6;
+export const GLOW_MARGIN = 7;
 
 // A little over a third of the photo pin's size (SpotMarker: a 28pt bubble, 10pt tail), same geometry, white
 // (solid green once visited): the tail's two edges are
@@ -66,50 +65,34 @@ const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited
   );
 });
 
-// The photo pin's teardrop (SpotPhotoImages: a 28pt bubble, 10pt tail), centred in a canvas with room for the shadow.
-const G_R = 14, G_TIP_D = G_R + 10;
+const G_R = 14, G_TIP_D = G_R + 10, G_PAD = 2;
 const G_TAN_Y = (G_R * G_R) / G_TIP_D;
 const G_TAN_X = G_R * Math.sqrt(1 - (G_R * G_R) / (G_TIP_D * G_TIP_D));
-const G_W = 64, G_H = 56, G_CX = 32, G_CY = 24, G_TIPY = G_CY + G_TIP_D;   // the tip is 8pt above the image's bottom
-const CAST_DX = 3.5, CAST_DY = 4.5;       // how far the cast shadow falls (right, down)
-const teardrop = (dx: number, dy: number) =>
-  `M ${G_CX + dx - G_TAN_X} ${G_CY + dy + G_TAN_Y} L ${G_CX + dx} ${G_CY + dy + G_TIP_D} L ${G_CX + dx + G_TAN_X} ${G_CY + dy + G_TAN_Y} `
-  + `A ${G_R} ${G_R} 0 1 0 ${G_CX + dx - G_TAN_X} ${G_CY + dy + G_TAN_Y} Z`;
-// Outermost first; fourteen thin strokes, each centred on the outline, so the edge fades like a blur rather than in bands.
-const CAST_STEPS = 14;
-const CAST_STROKES = Array.from({ length: CAST_STEPS }, (_, i) => ({ w: (10 * 1.6 * (CAST_STEPS - i)) / CAST_STEPS }));
+const G_W = G_R * 2 + G_PAD * 2 + GLOW_MARGIN * 2, G_H = G_R * 2 + 10 + G_PAD * 2 + GLOW_MARGIN * 2;
+const G_CX = GLOW_MARGIN + G_PAD + G_R, G_CY = GLOW_MARGIN + G_PAD + G_R;
+const GLOW_PATH = `M ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} L ${G_CX} ${G_CY + G_TIP_D} L ${G_CX + G_TAN_X} ${G_CY + G_TAN_Y} `
+  + `A ${G_R} ${G_R} 0 1 0 ${G_CX - G_TAN_X} ${G_CY + G_TAN_Y} Z`;
+// Outermost first; each stroke is centred on the outline, so it reaches half its width past the pin.
+// Nine thin steps rather than a few wide ones, so the falloff reads as a soft blur, not bands; together they reach about the
+// old disc glow's 0.6 next to the pin.
+// Widths up to twice the margin, so the outermost reaches the image's edge.
+const GLOW_STROKES = [9, 8, 7, 6, 5, 4, 3, 2, 1].map(k => ({ w: (GLOW_MARGIN * 2 * k) / 9, o: 0.15 }));
 
-const SelectedShadow = memo(function SelectedShadow({ name, strength }: { name: string; strength: number }) {
+const SelectedGlow = memo(function SelectedGlow({ name, color }: { name: string; color: string }) {
   const imageRef = useRef<{ refresh: () => void } | null>(null);
   useEffect(() => {
     const t1 = setTimeout(() => imageRef.current?.refresh(), 60);
     const t2 = setTimeout(() => imageRef.current?.refresh(), 500);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
-  const o = 0.026 * strength;
   return (
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={{ width: G_W, height: G_H }}>
         <Svg width={G_W} height={G_H}>
-          <Defs>
-            <RadialGradient id={`${name}-wide`}>
-              <Stop offset="0" stopColor="#000" stopOpacity={0.34 * strength} />
-              <Stop offset="1" stopColor="#000" stopOpacity={0} />
-            </RadialGradient>
-            <RadialGradient id={`${name}-core`}>
-              <Stop offset="0" stopColor="#000" stopOpacity={0.55 * strength} />
-              <Stop offset="1" stopColor="#000" stopOpacity={0} />
-            </RadialGradient>
-          </Defs>
-          {/* Contact shadow on the ground: a wide faint ellipse and a tight dark one at the tip. */}
-          <Ellipse cx={G_CX + 2} cy={G_TIPY + 1} rx={19} ry={6.5} fill={`url(#${name}-wide)`} />
-          <Ellipse cx={G_CX + 1} cy={G_TIPY + 0.5} rx={9} ry={3} fill={`url(#${name}-core)`} />
-          {/* Cast shadow of the teardrop, offset down and to the right. */}
-          {CAST_STROKES.map(({ w }) => (
-            <Path key={w} d={teardrop(CAST_DX, CAST_DY)} fill="#000" fillOpacity={o} stroke="#000" strokeOpacity={o}
+          {GLOW_STROKES.map(({ w, o }) => (
+            <Path key={w} d={GLOW_PATH} fill={color} fillOpacity={o} stroke={color} strokeOpacity={o}
               strokeWidth={w} strokeLinejoin="round" />
           ))}
-          <Path d={teardrop(CAST_DX - 0.5, CAST_DY - 0.5)} fill="#000" fillOpacity={0.16 * strength} />
         </Svg>
       </View>
     </MapboxGL.Image>
@@ -121,8 +104,8 @@ export default memo(function SpotPinImages() {
     <MapboxGL.Images>
       <MiniPin name={SPOT_MINI_PIN_UNVISITED} visited={false} />
       <MiniPin name={SPOT_MINI_PIN_VISITED} visited />
-      <SelectedShadow name={SPOT_SELECTED_GLOW} strength={1} />
-      <SelectedShadow name={SPOT_SELECTED_GLOW_DARK} strength={1.5} />
+      <SelectedGlow name={SPOT_SELECTED_GLOW} color="#FFFFFF" />
+      <SelectedGlow name={SPOT_SELECTED_GLOW_DARK} color="#000000" />
     </MapboxGL.Images>
   );
 });

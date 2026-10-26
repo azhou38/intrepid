@@ -5613,10 +5613,9 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* The selected spot's shadow, under every pin: a soft contact shadow at its tip and the teardrop cast down and to
-              the right (SpotPinImages' SPOT_SELECTED_GLOW; stronger on the satellite map), so the pin looks lifted off the
-              map. Its image hangs GLOW_MARGIN below the pin's bottom edge, so it is shifted down by that much to put its tip
-              on the pin's.
+          {/* The selected spot's glow, under every pin: the pin's own teardrop outline in soft white (black on the satellite
+              map; SpotPinImages' SPOT_SELECTED_GLOW), so the shading runs evenly round the bubble and the tail. Its image
+              reaches GLOW_MARGIN past the pin, so it is shifted down by that much to put its tip on the pin's.
               Every photo pin carries one, invisible, and the selected spot's is turned up (iconOpacity, which switches
               without a transition): a glow symbol that only appeared on selection was new to Mapbox's placement and faded in
               over ~0.3 s after the pin, whereas one that is already placed shows at once. Only on photo pins (img set): it
