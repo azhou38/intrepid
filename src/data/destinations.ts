@@ -2871,6 +2871,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [4, 5, 6, 7, 8, 9, 10],
     bestTimeBlurb: "Visit in {months} for cooler days that suit the heritage train and the walks. Summers are hot.",
   },
+  {
+    id: 'port-pirie', name: "Port Pirie", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -33.18583333, longitude: 138.01694444 },
+    category: 'city', icon: "⚓", rank: 5,
+    tagline: "Spencer Gulf port city with a big smelter, murals and heritage trails",
+    description: "Port Pirie is a port city on Spencer Gulf, home to the Nyrstar smelter, whose chimney is visible from miles around. A self-guided heritage trail links more than 30 sites, and a mural trail and the National Trust museum add more of the city's story. The long wooden Port Germein Jetty, Telowie Gorge and Beetaloo Reservoir all lie within a short drive.",
+    whyVisit: ["Follow the city's heritage trail", "Stroll a long wooden jetty"],
+    whyVisitPhotos: ["Port Pirie Railway Station Museum, West view 20230210 1.jpg", ""],
+    highlights: ["Heritage trail", "Long jetty"],
+    goodToKnow: [
+      { icon: "🏭", title: "See the smelter across the river", detail: "The best view is from the far side of the Port Pirie River, over the bridge off the main street." },
+      { icon: "🗺️", title: "Pick up a trail map", detail: "Heritage trail maps are free from the visitor information centre and online." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Visit in {months} for mild weather that suits walking the heritage and mural trails.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
