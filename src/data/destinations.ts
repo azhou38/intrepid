@@ -1341,6 +1341,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Calm, warm days from {months} suit a float in the Pool of Siloam and walks along the clifftops.",
   },
   {
+    id: 'mount-remarkable', name: "Mount Remarkable National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 55,
+    continent: 'Oceania', coordinates: { latitude: -32.65039, longitude: 138.09936 },
+    category: 'park', icon: "⛰️", rank: 4,
+    tagline: "A 960 m summit, rocky gorges and bike trails at the Flinders Ranges' southern end.",
+    description: "Mount Remarkable National Park rises above the Willochra Plain at the southern end of the Flinders Ranges, 45 km north of Port Pirie. Walking tracks lead to a 960 m summit and through gorges cut into ancient rock, and valley trails are home to echidnas and lace monitors. The Willowie trails and the Remarkable Epic trail draw mountain bikers, and Melrose, the oldest town in the Flinders Ranges, sits at the foot of the mountain.",
+    whyVisit: ["Climb to a 960 m summit", "Ride single-track below the range", "Spot echidnas and lace monitors"],
+    whyVisitPhotos: ["27 Mt Remarkable CP 47.JPG", "", ""],
+    highlights: ["Summit views", "Mountain biking", "Native wildlife"],
+    goodToKnow: [
+      { icon: "🚗", title: "Pay entry before you arrive", detail: "Vehicle entry is $14.40 and must be paid in advance, online or through a booking agent. Camping fees are also paid before arrival." },
+      { icon: "🚧", title: "Check closures first", detail: "Fire danger and pest-control programs close the park, and part of Alligator Gorge is shut after the 2025 Wilmington fire." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} bring cool days that suit the summit hike and the gorge walks.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

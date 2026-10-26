@@ -2322,6 +2322,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Murray Bridge": "Murray Bridge road and rail bridges.JPG",
   "Coffin Bay": "Coffin Bay oyster beds, 2017 (03).jpg",
   "Beachport": "BeachportJetty.JPG",
+  "Mount Remarkable National Park": "27 Mt Remarkable CP 08.JPG",
 };
 
 /**
