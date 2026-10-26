@@ -701,9 +701,9 @@ function wordMatch(text: string, q: string) {
   return !q || (' ' + text.toLowerCase()).includes(' ' + q);
 }
 
-// An Explored list as a grid of rounded photo tiles, four across: the name in white at the bottom left over a dark
+// An Explored list as a grid of rounded photo tiles, three across: the name in white at the bottom left over a dark
 // scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
-const TILE_COLS = 4;
+const TILE_COLS = 3;
 const TILE_GAP = 3;
 // A tile's side: the screen width, less the side room and the gaps.
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
@@ -725,7 +725,7 @@ function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?
           <View style={styles.tileText} pointerEvents="none">
             <Text style={styles.tileName} numberOfLines={1}>{t.name}</Text>
             <View style={styles.tileSubRow}>
-              {!!t.countryCode && <CircleFlag countryCode={t.countryCode} size={9} />}
+              {!!t.countryCode && <CircleFlag countryCode={t.countryCode} size={11} />}
               {!!t.sub && <Text style={styles.tileSub} numberOfLines={1}>{t.sub}</Text>}
             </View>
           </View>
@@ -949,13 +949,13 @@ const styles = StyleSheet.create({
   filterTxt:    { fontSize: 12, fontWeight: '600', color: '#374151' },
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
-  // The Explored photo grid: square tiles, four across.
+  // The Explored photo grid: square tiles, three across.
   tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
-  tileText: { position: 'absolute', left: 5, right: 5, bottom: 5 },
-  tileName: { fontSize: 11, fontWeight: '700', color: 'white' },
+  tileText: { position: 'absolute', left: 8, right: 8, bottom: 8 },
+  tileName: { fontSize: 13, fontWeight: '700', color: 'white' },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
-  tileSub:  { flexShrink: 1, fontSize: 9, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
+  tileSub:  { flexShrink: 1, fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
   // Destinations Explored's rows: photo, name, country and spots visited; about five rows, then the list scrolls.
   destRowsScroll: { maxHeight: 300 },
   destRow:        { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8 },
