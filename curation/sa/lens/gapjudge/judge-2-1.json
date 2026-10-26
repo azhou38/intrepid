@@ -1,0 +1,218 @@
+{
+ "dest:burra:why2": {
+  "candidates": [
+   {
+    "local": "dest_burra_why2-1.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Engine house at dusk, dull sky; shows no locked site or key"
+   },
+   {
+    "local": "dest_burra_why2-2.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Gaol exterior framed by trunks, flat; no key or lock"
+   },
+   {
+    "local": "dest_burra_why2-3.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Scenic mine ruin, but shows the mine, not the locked-sites-with-a-key reason; fallback only if owner accepts a generic heritage photo"
+   }
+  ],
+  "choice": "none: no candidate shows the key/locked heritage sites reason (burra_why2-3 is the best generic fallback)",
+  "hero_crop": "n/a"
+ },
+ "dest:coorong-national-park:why2": {
+  "candidates": [
+   {
+    "local": "dest_coorong-national-park_why2-1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Ocean beach with 4WD tracks and camper at sunset, official SATC; aerial but tracks are the point, no overlay"
+   }
+  ],
+  "choice": "dest_coorong-national-park_why2-1.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:gawler-ranges-national-park:why1": {
+  "candidates": [
+   {
+    "local": "dest_gawler-ranges-national-park_why1-1.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Waterhole with dam wall, not volcanic formations; 2.7:1 banner, visitors small"
+   }
+  ],
+  "choice": "none: only a waterhole banner, wrong subject and too wide",
+  "hero_crop": "fail: 2.7:1 panorama sliver"
+ },
+ "dest:innamincka:why1": {
+  "candidates": [
+   {
+    "local": "dest_innamincka_why1-1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Two canoeists on Cooper Creek waterhole under river red gums, Innamincka Regional Reserve; paddlers small, place is focus"
+   }
+  ],
+  "choice": "dest_innamincka_why1-1.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:mount-gambier:why3": {
+  "candidates": [
+   {
+    "local": "dest_mount-gambier_why3-1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Mount Schank crater with the walking path up the flank, clear and wide; aerial but path shows the walk"
+   },
+   {
+    "local": "dest_mount-gambier_why3-2.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Fisheye distortion, weaker"
+   }
+  ],
+  "choice": "dest_mount-gambier_why3-1.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:naracoorte:why2": {
+  "candidates": [
+   {
+    "local": "dest_naracoorte_why2-1.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Coonawarra cellar door and vines, but soil is green grass; no red soil"
+   },
+   {
+    "local": "dest_naracoorte_why2-2.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Leconfield Coonawarra vine rows over reddish-brown soil beside winery building"
+   },
+   {
+    "local": "dest_naracoorte_why2-3.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Aerial, flat dusk light, 'red' is autumn foliage; weaker"
+   }
+  ],
+  "choice": "dest_naracoorte_why2-2.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:port-lincoln:why1": {
+  "candidates": [
+   {
+    "local": "dest_port-lincoln_why1-1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Great white beside dive cage, strong; no banner/text visible in image"
+   },
+   {
+    "local": "dest_port-lincoln_why1-2.jpg",
+    "right_place": false,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Port Lincoln location not stated; 2.4:1"
+   }
+  ],
+  "choice": "dest_port-lincoln_why1-1.jpg",
+  "hero_crop": {
+   "x": 0.62,
+   "y": 0.5
+  }
+ },
+ "dest:port-pirie:header": {
+  "candidates": [
+   {
+    "local": "dest_port-pirie_header-1.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Single railway station building; header must be the town in its setting"
+   }
+  ],
+  "choice": "none: only a single building",
+  "hero_crop": "n/a"
+ },
+ "dest:riverland:why1": {
+  "candidates": [
+   {
+    "local": "dest_riverland_why1-1.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Dull creek, no paddlers, 2.7:1"
+   },
+   {
+    "local": "dest_riverland_why1-2.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Open Murray at Renmark, not a red gum creek; paddlers' backs are the focus"
+   }
+  ],
+  "choice": "none: no paddling through red gum creeks",
+  "hero_crop": "n/a"
+ },
+ "dest:vulkathunha-gammon-ranges:why2": {
+  "candidates": [
+   {
+    "local": "dest_vulkathunha-gammon-ranges_why2-1.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Arkaroola dome, not Gammon Ranges: stand-in; people and dome the focus"
+   }
+  ],
+  "choice": "none: Arkaroola stand-in",
+  "hero_crop": "n/a"
+ }
+}

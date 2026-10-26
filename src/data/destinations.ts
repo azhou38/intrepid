@@ -1019,7 +1019,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Crater lakes, sinkhole gardens and spring-fed ponds around a dormant volcano.",
     description: "Mount Gambier is the second most populated city in South Australia, built on the slopes of a dormant volcano about 450 km south-east of Adelaide and 17 km from the Victorian border. The Blue Lake and Valley Lake fill volcanic craters on its southern edge, while sinkholes open inside the city at the Cave Garden and Umpherston Sinkhole. Beyond town, Mount Schank's crater rim, the spring-fed ponds at Ewens and Piccaninnie, and the show cave at Tantanoola are day trips. Port MacDonnell, on the coast to the south, has the Cape Northumberland headland.",
     whyVisit: ["See crater lakes and sinkholes", "Snorkel spring-fed limestone ponds", "Walk up an extinct volcano"],
-    whyVisitPhotos: ["(AUS-South Australia) Umpherston Sinkhole 2025-12-11.jpg", "Ewens Ponds.jpg", ""],
+    whyVisitPhotos: ["(AUS-South Australia) Umpherston Sinkhole 2025-12-11.jpg", "Ewens Ponds.jpg", "ext-mount-gambier-why3.jpg"],
     highlights: ["Crater lakes", "Spring-fed ponds", "Volcano walks"],
     goodToKnow: [
       { icon: "🤿", title: "Book Ewens snorkel permits", detail: "Every snorkel or dive at Ewens Ponds needs a permit booked before you arrive, and the ponds close to swimmers from 1 September to 30 November." },
@@ -1036,7 +1036,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Seafood capital on Boston Bay, with shark cage diving and wild coast",
     description: "Port Lincoln sits on Boston Bay at the southern tip of the Eyre Peninsula and is known as Australia's seafood capital. Tuna and other seafood come off the working harbour, and boats leave from here for great white shark cage diving. Lookouts, a murals trail and a maritime museum fill a day in town, and Lincoln National Park and Whalers Way lie a short drive south.",
     whyVisit: ["Dive with great white sharks", "Eat fresh local seafood", "Drive wild coast and cliffs"],
-    whyVisitPhotos: ["", "", "Seaside Garden - Curtar Rocks Port Lincoln National Park - South Australia.jpg"],
+    whyVisitPhotos: ["ext-port-lincoln-why1.jpg", "", "Seaside Garden - Curtar Rocks Port Lincoln National Park - South Australia.jpg"],
     highlights: ["Shark cage diving", "Seafood capital", "Coastal drives"],
     goodToKnow: [
       { icon: "🔑", title: "Whalers Way needs a permit", detail: "Whalers Way is private land. Buy a permit before you enter, from the visitor centre or online, and expect unsealed roads." },
@@ -1087,7 +1087,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Lagoons, dunes and pelicans in a wetland of international importance",
     description: "Coorong National Park runs along a chain of salty lagoons behind the Younghusband Peninsula, about 200 km south-east of Adelaide. The wetland is of international importance and is known for pelicans and migratory waders. Visitors bird-watch, walk, fish, kayak, camp and drive 4WD tracks, and Ngarrindjeri and European history runs through the park. Access is via Meningie or Kingston off the Princes Highway.",
     whyVisit: ["Watch pelicans and migratory waders", "Drive the ocean beach by 4WD", "Paddle the quiet lagoon by kayak"],
-    whyVisitPhotos: ["Banded Stilts at the Coorong.JPG", "", ""],
+    whyVisitPhotos: ["Banded Stilts at the Coorong.JPG", "ext-coorong-national-park-why2.jpg", ""],
     highlights: ["Pelican colonies", "4WD ocean beach", "Lagoon kayaking"],
     goodToKnow: [
       { icon: "🚙", title: "Ocean Beach is 4WD only", detail: "Beach conditions change with erosion and dune collapses. Check the park alert and drive only with sand-driving experience." },
@@ -1252,7 +1252,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A river-port town where the Murray meets the sea, with a barrage and a wharf precinct.",
     description: "Goolwa sits on the lower Murray where the river meets Lake Alexandrina, a few kilometres from the Southern Ocean. A series of barrages holds back the sea, and you can walk halfway across the Goolwa Barrage. The wharf precinct has an interpretive centre on the Murray Mouth, and a bridge leads to Hindmarsh Island and its waterbirds. A surf beach runs south-east of town, and Strathalbyn and Langhorne Creek are an easy drive inland.",
     whyVisit: ["Walk out across the Murray barrage", "Watch waterbirds near the Murray Mouth", "Walk Goolwa's open surf beach"],
-    whyVisitPhotos: ["Goolwa Barrage, South Australia.jpg", "", "Goolwa beach 2009.jpg"],
+    whyVisitPhotos: ["Goolwa Barrage, South Australia.jpg", "ext-goolwa-why2.jpg", "Goolwa beach 2009.jpg"],
     highlights: ["Barrage walk", "River-mouth birds", "Surf beach"],
     goodToKnow: [
       { icon: "🚗", title: "Barrage access is from Goolwa", detail: "Reach the barrage by Barrage Road from the Goolwa side. There is no way onto it from Hindmarsh Island." },
@@ -1284,7 +1284,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Steel city on Spencer Gulf, with a warship on land and winter cuttlefish",
     description: "Whyalla is South Australia's steel city on the upper Spencer Gulf, built around the iron ore from nearby Iron Knob. Its maritime museum holds HMAS Whyalla, a corvette launched in 1941 that now sits two kilometres from the sea. Every winter tens of thousands of giant Australian cuttlefish gather to spawn off Point Lowly. The foreshore has a circular jetty, a marina and a beach.",
     whyVisit: ["Dive with spawning cuttlefish in winter", "Tour a World War II warship", "Walk Spencer Gulf's coastal trails"],
-    whyVisitPhotos: ["", "HMAS Whyalla (J153), 2017 (01).jpg", ""],
+    whyVisitPhotos: ["", "HMAS Whyalla (J153), 2017 (01).jpg", "ext-whyalla-why3.jpg"],
     highlights: ["Cuttlefish spawning", "Warship museum", "Coastal trails"],
     goodToKnow: [
       { icon: "🤿", title: "Bring or hire dive gear", detail: "Cuttlefish are viewed by snorkel or dive from May to August. Bring a wetsuit or hire gear, and go with a buddy or a guided group." },
@@ -1300,7 +1300,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Oyster farms and surf breaks at the last big town before the Nullarbor.",
     description: "Ceduna sits on Murat Bay on the Eyre Highway, the last major town before the Nullarbor. A 380 m jetty runs out from its foreshore, and the oyster farms of Smoky Bay lie 45 km along the coast. To the west, Penong has a roadside windmill museum, and the road south leads to the surf breaks of Cactus Beach and the salt lakes beside it. Conservation parks with mangroves and shorebird feeding grounds line the coast either side of town.",
     whyVisit: ["Eat fresh oysters from the farms", "Surf remote Cactus Beach", "Watch shorebirds on mangrove coasts"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-ceduna-why1.jpg", "", ""],
     highlights: ["Smoky Bay oysters", "Cactus Beach surf", "Mangrove shorebirds"],
     goodToKnow: [
       { icon: "🔥", title: "Check the fire danger", detail: "Conservation parks here close on days of Catastrophic fire danger and may close on Extreme days, so check the CFS rating before you go." },
@@ -1428,7 +1428,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Remote Cooper Creek outpost of waterholes, wetlands and Burke and Wills history.",
     description: "Innamincka is a small township on Cooper Creek in South Australia's far north-east, home to about 15 permanent residents. The former Australian Inland Mission building is now the national parks visitor centre, with displays on the Yandruwandha and Yawarrawarrka Traditional Owners, pastoral settlement and the Burke and Wills expedition. Innamincka Regional Reserve covers more than 1.3 million hectares of creek waterholes and arid country. Malkumba-Coongie Lakes National Park, about 100 km north-west, is a Ramsar-listed wetland.",
     whyVisit: ["Paddle the waterholes of Cooper Creek", "Camp and fish in the outback", "Follow the Burke and Wills story"],
-    whyVisitPhotos: ["", "", "Robert O'Hara Burke death site 2.JPG"],
+    whyVisitPhotos: ["ext-innamincka-why1.jpg", "ext-innamincka-why2.jpg", "Robert O'Hara Burke death site 2.JPG"],
     highlights: ["Cooper Creek", "Outback camping", "Explorer history"],
     goodToKnow: [
       { icon: "🛣️", title: "Check road conditions first", detail: "Access is by the Strzelecki Track via Leigh Creek, so read the latest Desert Parks Bulletin before setting out." },
@@ -2862,7 +2862,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Heritage railway town at the southern end of the Flinders Ranges",
     description: "Quorn is a railway town at the southern end of the Flinders Ranges. The Pichi Richi Railway has run heritage steam and diesel trains from its station to Port Augusta since 1973, on the original Ghan route that reached Quorn in 1879. Walking tracks, including the Heysen Trail, climb the ranges around the town, and the stone ruins of Kanyaka Station lie about 33 km north.",
     whyVisit: ["Ride a heritage steam train", "Walk ridges and rocky gorges"],
-    whyVisitPhotos: ["W22 + Pichi Richi Explorer Woolshed Flat, 2017 (05).jpg", ""],
+    whyVisitPhotos: ["W22 + Pichi Richi Explorer Woolshed Flat, 2017 (05).jpg", "ext-quorn-why2.jpg"],
     highlights: ["Heritage steam", "Ranges and gorges"],
     goodToKnow: [
       { icon: "🚂", title: "Check train running days", detail: "The Afghan Express runs on selected Saturdays only, so check the timetable and book ahead." },

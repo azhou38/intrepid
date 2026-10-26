@@ -718,6 +718,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Southern Flinders Ranges": { x: 0.5, y: 0.55 },
   "File:Robert O'Hara Burke death site 2.JPG": { x: 0.55, y: 0.55 },
   "File:W22 + Pichi Richi Explorer Woolshed Flat, 2017 (05).jpg": { x: 0.65 },
+  "File:ext-port-lincoln-why1.jpg": { x: 0.62, y: 0.5 },
+  "Gawler Ranges National Park": { x: 0.5, y: 0.6, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
