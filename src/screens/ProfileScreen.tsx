@@ -525,7 +525,7 @@ export default function ProfileScreen() {
                 <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
               </View>
               <Text style={styles.countryCount}>
-                {count} {topRank === 'destinations' ? (count === 1 ? 'dest' : 'dests') : (count === 1 ? 'spot' : 'spots')}
+                {count}
               </Text>
             </View>
           ))}
@@ -615,7 +615,7 @@ export default function ProfileScreen() {
                   <View style={styles.countryBarTrack}>
                     <View style={[styles.countryBarFill, { width: `${(count / maxDestCount) * 100}%` }]} />
                   </View>
-                  <Text style={styles.countryCount}>{count} {count === 1 ? 'spot' : 'spots'}</Text>
+                  <Text style={styles.countryCount}>{count}</Text>
                 </View>
               ))}
             </ScrollView>
@@ -958,7 +958,7 @@ const styles = StyleSheet.create({
   countryName:     { fontSize: 13, fontWeight: '600', color: '#374151', width: 90 },
   countryBarTrack: { flex: 1, height: 6, backgroundColor: '#F3F4F6', borderRadius: 3, overflow: 'hidden' },
   countryBarFill:  { height: '100%', backgroundColor: '#10B981', borderRadius: 3 },
-  countryCount:    { fontSize: 11, color: '#9CA3AF', width: 44, textAlign: 'right' },
+  countryCount:    { fontSize: 11, color: '#9CA3AF', width: 26, textAlign: 'right' },
 
   // Progress bar
 
