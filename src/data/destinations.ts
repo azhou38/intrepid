@@ -1406,6 +1406,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are mild for walking between sites, while hot summer days close some.",
   },
   {
+    id: 'gawler-ranges-national-park', name: "Gawler Ranges National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 140,
+    continent: 'Oceania', coordinates: { latitude: -32.5539, longitude: 135.4639 },
+    category: 'park', icon: "🪨", rank: 4,
+    tagline: "Volcanic rock columns and granite domes in a remote range north of the Eyre Highway.",
+    description: "Gawler Ranges National Park lies about 40 km north of the Eyre Highway, with road access from Iron Knob, Kimba, Wudinna or Minnipa. It was proclaimed in 2002 on the former Paney Station and protects crimson mallee and the yellow-footed rock-wallaby. The Organ Pipes, formed by volcanic eruptions about 1,500 million years ago, are its best-known sight, with rocky falls at Yandinga and Kolay Mirica. South of the ranges, the Wudinna area is granite country of domes such as Mount Wudinna and Pildappa Rock.",
+    whyVisit: ["Walk among ancient volcanic rock formations", "Climb granite domes for wide views", "See wildflowers across outback plains"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Volcanic rock", "Granite domes", "Spring wildflowers"],
+    goodToKnow: [
+      { icon: "🚙", title: "Check track conditions", detail: "A 4WD is recommended for the park's highlights, and wet weather can waterlog tracks and close them to vehicles." },
+      { icon: "🎟️", title: "Pay before you enter", detail: "Vehicle entry is $14.40 and must be paid before entering the park. Dogs are not permitted." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are cool and green, with wildflowers from late winter into spring. Summer can be very hot.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

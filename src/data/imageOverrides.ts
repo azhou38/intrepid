@@ -2550,4 +2550,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "File:",
   "Settlers Track",
   "Naracoorte",
+  "Gawler Ranges National Park",
 ]);
