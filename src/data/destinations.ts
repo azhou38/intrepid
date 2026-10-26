@@ -877,6 +877,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Come in {months}, when the days are cool enough for the cliff walks and the autumn colour is out at Mount Wilson and Blackheath.",
   },
   {
+    id: 'adelaide', name: "Adelaide", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -34.92615, longitude: 138.600623 },
+    category: 'city', icon: "🌆", rank: 2,
+    tagline: "A park-ringed capital with free museums, a tram to the beach and wine close by.",
+    description: "Adelaide is the capital of South Australia, set on a plain between the Adelaide Hills and Gulf St Vincent. Colonel William Light laid it out as a grid of wide streets surrounded by parklands, and the plan largely survives. North Terrace holds the state museum, art gallery and botanic garden, while the Central Market and Rundle Mall sit a few blocks south. Famous wine regions, including the Barossa, McLaren Vale and the Adelaide Hills, border the city.",
+    whyVisit: ["Visit free museums and galleries", "Ride the tram to the beach", "Walk foothill gorges and waterfalls", "Taste wine from nearby regions"],
+    whyVisitPhotos: ["Art Gallery of South Australia, North Terrace, Adelaide, South Australia (5104237590).jpg", "Adelaide Metro Glenelg Tram (Flexity Classic).JPG", "Panorama, Morialta Conservation Park..jpg", "Penfolds Magill Estate, 2014(20).JPG"],
+    highlights: ["North Terrace culture", "Tram to Glenelg", "Foothill waterfalls", "Wine on the doorstep"],
+    goodToKnow: [
+      { icon: "🚋", title: "Free central trams", detail: "Tram travel between the Entertainment Centre, Botanic Garden and South Terrace is free, and so are the City Connector buses." },
+      { icon: "🔥", title: "Summer heat waves", detail: "Several heat waves a year push temperatures above 40 °C, so keep walks and zoo visits to the morning." },
+      { icon: "🎭", title: "Festival season rush", detail: "Arts, music and sport festivals fill mid-February to late March, so book beds and tickets early." },
+    ],
+    bestMonths: [3, 4, 9, 10, 11],
+    bestTimeBlurb: "{months} are mild, and March brings the Fringe and Festival season.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
