@@ -581,7 +581,7 @@ export default function ProfileScreen() {
             <PhotoGrid tiles={shownDests.map(d => {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
-                key: d.id, name: d.name, countryCode: d.countryCode, sub: n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : d.country,
+                key: d.id, name: d.name, countryCode: d.countryCode, sub: n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '',
                 photo: (
                   // The same small-photo key as the country sheet's destination pickers, so either can reuse it.
                   <EntityPhoto
@@ -726,7 +726,7 @@ function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?
             <Text style={styles.tileName} numberOfLines={1}>{t.name}</Text>
             <View style={styles.tileSubRow}>
               {!!t.countryCode && <CircleFlag countryCode={t.countryCode} size={9} />}
-              <Text style={styles.tileSub} numberOfLines={1}>{t.sub}</Text>
+              {!!t.sub && <Text style={styles.tileSub} numberOfLines={1}>{t.sub}</Text>}
             </View>
           </View>
         </View>
