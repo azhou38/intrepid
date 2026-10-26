@@ -715,6 +715,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Beachport": { x: 0.5, y: 0.6, zoom: 1.5 },
   "Burra": { x: 0.5, y: 0.6, zoom: 1.3 },
   "Mannum": { x: 0.45, y: 0.7, zoom: 1.6 },
+  "Southern Flinders Ranges": { x: 0.5, y: 0.55 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2329,6 +2330,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Burra": "Burra - South Australia - panoramio.jpg",
   "Mannum": "MannumFromLookout.JPG",
   "Yankalilla": "Deep Creek Conservation Park 2.jpg",
+  "Southern Flinders Ranges": "Melrose - panoramio.jpg",
 };
 
 /**

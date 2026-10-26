@@ -2774,6 +2774,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 5, 9, 10, 11],
     bestTimeBlurb: "{months} suit coastal walks in mild weather, and whales pass the coast from June to October.",
   },
+  {
+    id: 'southern-flinders-ranges', name: "Southern Flinders Ranges", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -33.1865, longitude: 138.3003 },
+    category: 'nature', icon: "🌾", rank: 5,
+    tagline: "Country towns, heritage buildings and trails about two hours north of Adelaide.",
+    description: "The Southern Flinders Ranges is the southernmost tourism region of the Flinders and Outback, running from Spalding and Yacka in the south to Orroroo and Carrieton in the north. Port Pirie and Port Germein mark its western edge and Peterborough its eastern. Its small towns hold heritage museums, art galleries, craft breweries and bakeries, with the Heysen and Mawson trails and the Southern Flinders Rail Trail running through.",
+    whyVisit: ["Wander historic country towns", "Cycle rail and long-distance trails"],
+    whyVisitPhotos: ["Quorn hotels.JPG", ""],
+    highlights: ["Country towns", "Cycling trails"],
+    goodToKnow: [
+      { icon: "🚗", title: "Two hours from Adelaide", detail: "The region is about a two-hour drive from Adelaide, easy for a weekend away, though there is enough to fill weeks." },
+      { icon: "ℹ️", title: "Ask at visitor centres", detail: "Staff at the region's visitor information centres can advise on permits and passes as well as local recommendations." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are the cooler months for walking and cycling between the towns.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
