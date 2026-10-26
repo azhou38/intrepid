@@ -9,3 +9,10 @@
 - Wheal Hughes Copper Mine (Yorke, copper-coast-6): Wikipedia says tourists can no longer go underground, one source says closed 2008. Confirm public access before applying; if closed, drop it.
 - mungeranniehotel.com.au (domain unconfirmed) and woomera.com.au (deep links answer 200 for any path): browser check before any ticketUrl ships.
 - Kingscote Pelican Feeding, Kingscote Jetty, Red Banks Beach (KI): LOW pins, coordinates null.
+
+## Parks that charge entry: passes (one per park, as Tidbinbilla), applied at merge
+A spot inside a park that charges entry and has no fee of its own is `free: true`, `needs: 'park-pass'`, `parkPass: '<pass id>'`; the park's own spot (the park itself) is costBasis 'park' with the price and costPer. Passes to define in parkPasses.ts (each with its source, never guessed):
+- `innes` — Dhilba Guuranda-Innes National Park, AUD 14.40 per private vehicle per day (Parks SA; per vehicle, like Tidbinbilla).
+- `flinders-chase` — AUD 14.90 per adult (see above).
+- `lake-eyre`, `witjira`, `wabma-kadarbu` (The Bubbler / Blanche Cup) — AUD 14.40 per vehicle each (Parks SA park pages, read by the Outback Quill agent).
+- Any other park whose Quill entry names a fee: add its pass the same way at merge.

@@ -1,0 +1,310 @@
+{
+ "spots": {
+  "yorke-peninsula-16": {
+   "name": "Ardrossan Heritage Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum in the old Smith stump-jump plough factory, with a display on the wreck of the Zanoni.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.25,
+   "coordinates": {
+    "latitude": -34.424154,
+    "longitude": 137.917956
+   },
+   "coordinates_source": "OSM tourism=museum \"Ardrossan Museum\" via Photon (MEDIUM)",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/ardrossan-museum/",
+   "notes": "Adult $5 per National Trust listing, Ardrossan town site and History SA directory; one directory (aumuseums) says $1.50, judged outdated. Open daily 10-4 per regional tourism page. No Wikipedia article, wiki omitted."
+  },
+  "yorke-peninsula-17": {
+   "name": "Stansbury Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "1878 schoolroom museum with local history, farm and industry displays, open Wednesday and Sunday afternoons.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.907304,
+    "longitude": 137.794288
+   },
+   "coordinates_source": "Wikivoyage Stansbury listing's own geo tag for the museum (single source; MEDIUM)",
+   "costMin": 3,
+   "costMax": 3,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "notes": "Adult $3 from the regional tourism listing (older listing $2, others conflict); approximate. Open Wed and Sun 2-4pm, daily in January. No Wikipedia article."
+  },
+  "yorke-peninsula-18": {
+   "name": "Edithburgh Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Community museum in a former produce store tracing the salt industry and local shipwrecks, open weekend afternoons.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.085114,
+    "longitude": 137.746623
+   },
+   "coordinates_source": "OSM tourism=museum \"Edithburgh Museum\" + Wikivoyage listing -35.085,137.7466 (HIGH)",
+   "costMin": 3,
+   "costMax": 3,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "notes": "Adults $3 per Wikivoyage; open Sat and Sun 2-4pm or by appointment. No Wikipedia article."
+  },
+  "yorke-peninsula-19": {
+   "name": "Bublacowie Military Museum",
+   "icon": "🎖️",
+   "category": "museum",
+   "bio": "Private museum and memorial gardens in a former schoolground, with medals, uniforms and military relics.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.922,
+    "longitude": 137.6106
+   },
+   "coordinates_source": "Wikipedia/Wikivoyage article coordinates for the museum itself (4 dp, MEDIUM; no OSM feature found)",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "notes": "Adult $10 per History SA directory (date unknown). Open Sun-Tue 10-4 or by appointment, closed 1 Jul-1 Aug. Private; kept per brief."
+  },
+  "innes-national-park-1": {
+   "name": "Cape Spencer Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "Lighthouse on Cape Spencer, also a clifftop spot for watching southern right whales in winter.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.299154,
+    "longitude": 136.882515
+   },
+   "coordinates_source": "OSM man_made=lighthouse + Wikipedia -35.298944,136.882528 within 25 m (HIGH)",
+   "wiki": "Cape Spencer Lighthouse (South Australia)",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  },
+  "innes-national-park-2": {
+   "name": "Pondalowie Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf beach and campground at the western end of the park, popular for surfing and fishing.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.237707,
+    "longitude": 136.838221
+   },
+   "coordinates_source": "OSM tourism=camp_site \"Pondalowie Campground\" at the bay (MEDIUM; Wikipedia bay point -35.2361,136.8369 is ~210 m away in the bay)",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  },
+  "innes-national-park-3": {
+   "name": "Ethel Wreck",
+   "icon": "🚢",
+   "category": "historic",
+   "bio": "Rusting remains of the 1904 shipwreck of the Ethel, lying on Ethel Beach in the park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.268855,
+    "longitude": 136.84505
+   },
+   "coordinates_source": "OSM historic=wreck \"SS Ethel\" + tourism=viewpoint \"Ethel Shipwreck\" -35.268514,136.845405 within 50 m (HIGH)",
+   "notes": "wiki omitted: no Wikipedia article titled Ethel (ship).",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  },
+  "innes-national-park-4": {
+   "name": "Royston Head",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Headland lookout reached by a 4 km return walk of about two hours, with views of the rugged coast.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.190278,
+    "longitude": 136.845833
+   },
+   "coordinates_source": "Wikipedia article coordinates of the headland (single source; MEDIUM). Commons photo median is 1.7 km away so not used",
+   "wiki": "Royston Head",
+   "notes": "Hike is pinned at the headland (the lookout feature) not the route midpoint; route not resolved.",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  },
+  "innes-national-park-5": {
+   "name": "Stenhouse Bay",
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "Village in the park with the visitor centre, jetty and campground, and winter whale-watching cliffs.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.271268,
+    "longitude": 136.94341
+   },
+   "coordinates_source": "OSM place=locality \"Stenhouse Bay\" via Photon (MEDIUM); draft hint -35.2833,136.9333 was Wikipedia's rounded point ~1.5 km off",
+   "wiki": "Stenhouse Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  },
+  "innes-national-park-6": {
+   "name": "West Cape Headland Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Short loop walk to the West Cape lookout, with 360 degree views of the coastline.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.246353,
+    "longitude": 136.822319
+   },
+   "coordinates_source": "Wikipedia West Cape (South Australia) headland point (LOW: Commons median -35.244899,136.824455 is ~250 m away; route not in resolved OSM)",
+   "wiki": "West Cape (South Australia)",
+   "notes": {
+    "pin": "LOW",
+    "detail": "headland point, not the route midpoint of the ~1 km loop"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  },
+  "innes-national-park-7": {
+   "name": "Inneston",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Abandoned gypsum-mining township with ruins, interpretive signs and restored heritage cottages.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.274394,
+    "longitude": 136.89018
+   },
+   "coordinates_source": "Wikipedia Inneston point; Commons median -35.273713,136.891603 (~125 m) and OSM Inneston Historic Walk path -35.27364,136.890877 agree (MEDIUM/HIGH)",
+   "wiki": "Inneston, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  },
+  "innes-national-park-8": {
+   "name": "Stenhouse Bay Lookout Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "2 km clifftop loop from the jetty car park, with views over Investigator Strait and the offshore islands.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.27954,
+    "longitude": 136.943274
+   },
+   "coordinates_source": "OSM man_made=pier \"Stenhouse Bay Jetty\" as proxy for the Stenhouse Jetty car park trailhead named by the park page (LOW; loop route not found)",
+   "notes": {
+    "pin": "LOW",
+    "detail": "trailhead proxy, not the route midpoint"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "innes-national-park",
+    "name": "Dhilba Guuranda-Innes National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.273596,
+     "longitude": 136.941616
+    },
+    "category": "park",
+    "defaultZoomSpanKm": 40,
+    "rank": 3,
+    "icon": "🏞️",
+    "tagline": "Wreck, lighthouses and surf beaches at the south-western tip of Yorke Peninsula.",
+    "description": "Dhilba Guuranda-Innes National Park covers the south-western tip of Yorke Peninsula, about 300 km by road from Adelaide, and is managed jointly with the Narungga traditional owners. The Ethel ran aground here in 1904, and its remains still lie on the beach beside the lighthouse at Cape Spencer. Trails run from 30-minute strolls to four-hour hikes, through heath and mallee to the cliff tops. The park's beaches draw campers, anglers and surfers, and its abandoned gypsum township of Inneston has walking trails and restored cottages.",
+    "whyVisit": [
+     "Walk clifftop trails above the sea",
+     "See the wreck of the Ethel",
+     "Spot wallabies, ospreys and whales"
+    ],
+    "highlights": [
+     "Coastal walks",
+     "Shipwreck history",
+     "Park wildlife"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Pay entry before you go",
+      "detail": "Vehicle entry is $14.40 per vehicle and must be paid before entering the park. Campsites are booked separately, with fees per night."
+     },
+     {
+      "icon": "🐕",
+      "title": "No dogs allowed",
+      "detail": "Dogs are not permitted in the park, apart from assistance dogs. The whole park is reachable in a 2WD vehicle."
+     },
+     {
+      "icon": "🔥",
+      "title": "Closed on fire days",
+      "detail": "The park closes on days of Catastrophic Fire Danger and may close on Extreme days. Check the CFS fire rating before you set out."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "{months} are mild for bushwalking, and spring brings wildflowers to the park."
+   },
+   "spots": [
+    "innes-national-park-3",
+    "innes-national-park-1",
+    "innes-national-park-2",
+    "innes-national-park-7",
+    "innes-national-park-4",
+    "innes-national-park-6",
+    "innes-national-park-5",
+    "innes-national-park-8",
+    "innes-national-park-9",
+    "innes-national-park-10",
+    "innes-national-park-11",
+    "innes-national-park-12"
+   ],
+   "notes": [
+    "Coordinates: OSM tourism=camp_site Stenhouse Bay Campground (the Stenhouse Bay visitor hub; the visitor centre itself was not found in OSM/Photon). 200 m from the Stenhouse Bay spot pin. Draft centroid -35.2278,136.8947 not used.",
+    "defaultZoomSpanKm cut 50 to 40: farthest drafted spot is Royston Head (~14 km), 75% of 40 is 30 km. Shard-4 spots (Dolphin Beach, Marion Bay, Gym Beach, Plaster Trail) not pinned here; Marion Bay hint is ~4.5 km east.",
+    "Order changed: Ethel Wreck first (the park's named headline), then Cape Spencer, Pondalowie, Inneston, Royston Head, West Cape, Stenhouse Bay, Stenhouse Lookout Walk, then ids 9-12 as in draft.",
+    "Fee $14.40 per vehicle (parks.sa.gov.au); no SA park pass exists in src/data/parkPasses.ts, so inside-park spots are free/open and the fee is in goodToKnow. Orchestrator may want a parkPasses entry.",
+    "Facts: renamed 2020 with Narungga co-management, Ethel 1904, ~300 km from Adelaide, trails 30 min to 4 h, tammar wallabies reintroduced 2004 and winter southern right whales (all parks page), no dogs, 2WD, fire closures."
+   ]
+  }
+ ],
+ "unverified": [
+  "Stansbury Museum adult $3 (listings conflict: $2 older, $3 current, $5-10 range)",
+  "Bublacowie Military Museum $10 (undated History SA listing); no official site found",
+  "Stansbury, Edithburgh and Bublacowie museums have no verified official ticketUrl",
+  "Ethel Wreck has no Wikipedia article, wiki omitted",
+  "Stansbury Museum pin from a single Wikivoyage geo tag; Royston Head from Wikipedia alone"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "LOW pins: innes-national-park-6 (West Cape Headland Hike), innes-national-park-8 (Stenhouse Bay Lookout Walk). Photon/Nominatim/Overpass were rate limited, so resolve-pin was only partly usable.",
+  "Nothing judged should-not-be-added; Bublacowie (private, limited days) and the three volunteer museums are marginal but kept as instructed."
+ ]
+}
