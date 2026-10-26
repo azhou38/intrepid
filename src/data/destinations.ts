@@ -1373,6 +1373,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} suit walking, when late winter and spring bring wildflowers and birdlife.",
   },
   {
+    id: 'burra', name: "Burra", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 20,
+    continent: 'Oceania', coordinates: { latitude: -33.671363, longitude: 138.930073 },
+    category: 'city', icon: "⛏️", rank: 4,
+    tagline: "A Cornish copper-mining town opened up with a key to its heritage sites.",
+    description: "Burra grew around the Monster Mine, a copper mine worked from the 1840s, and it is one of the Australian sites in a World Heritage bid for Cornish copper mining. The mine site, the Redruth Gaol and the creek-bank dugouts where early miners lived all lie within a few kilometres of Market Square. The Burra Heritage Passport, running since 1979, lends a key to 11 locked National Heritage sites. Museums and a restored railway station fill out the town.",
+    whyVisit: ["Explore a Cornish copper-mining town", "Unlock locked heritage sites with a key", "See how early miners lived"],
+    whyVisitPhotos: ["Burra mine and morphetts buildings.JPG", "", "Burra dugouts - exterior.JPG"],
+    highlights: ["Copper-mining history", "Heritage passport key", "Miners' dugouts"],
+    goodToKnow: [
+      { icon: "🔑", title: "Collect the key first", detail: "Buy the Heritage Passport at the Visitor Information Centre in Market Square. A $50 deposit is refunded when the key is returned." },
+      { icon: "🌡️", title: "Hot-day closures", detail: "The railway station closes at 35 °C and the Bon Accord museum above 38 °C or on severe fire-danger days, so check ahead in summer." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10],
+    bestTimeBlurb: "{months} are mild for walking between sites, while hot summer days close some.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

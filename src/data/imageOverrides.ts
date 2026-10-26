@@ -713,6 +713,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Murray Bridge": { x: 0.5, y: 0.55, zoom: 1.3 },
   "Coffin Bay": { x: 0.5, y: 0.42, zoom: 1.4 },
   "Beachport": { x: 0.5, y: 0.6, zoom: 1.5 },
+  "Burra": { x: 0.5, y: 0.6, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2324,6 +2325,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Beachport": "BeachportJetty.JPG",
   "Mount Remarkable National Park": "27 Mt Remarkable CP 08.JPG",
   "Lincoln National Park": "Memory Cove with Sailing Yacht Arriba at anchor.jpg",
+  "Burra": "Burra - South Australia - panoramio.jpg",
 };
 
 /**
