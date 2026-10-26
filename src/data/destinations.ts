@@ -899,7 +899,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'island', icon: "🦘", rank: 2,
     tagline: "Australia's third-largest island, with sea lions, fur seals and a wild granite coast",
     description: "Kangaroo Island lies off South Australia's Fleurieu Peninsula, with Kingscote as its main town and the ferry reaching Penneshaw. Flinders Chase National Park fills the wild west, while the south coast has sea lion beaches, caves and dunes and the north coast has sheltered bays. Wildlife is the draw, from Australian sea lions and long-nosed fur seals to kangaroos and koalas. Distances are long, so most visitors base in Kingscote, Penneshaw or American River and drive out.",
-    whyVisit: ["Watch sea lions and fur seals", "See Remarkable Rocks above the ocean", "Walk remote coast and bush", "Slide down towering sand dunes"],
+    whyVisit: ["Watch sea lions and fur seals", "See Remarkable Rocks above the ocean", "Walk remote coast and bush", "Climb towering sand dunes"],
     whyVisitPhotos: ["Sea lion and pup in Seal Bay - Kangaroo Island.jpg", "Remarkable Rocks on Kangaroo Island, South Australia.jpg", "Cape de Couedic.jpg", "Australia kangaroo island litte sahara.jpg"],
     highlights: ["Seals and sea lions", "Remarkable Rocks", "Coastal bushwalks", "Sand dune sliding"],
     goodToKnow: [
@@ -1018,7 +1018,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🌋", rank: 3,
     tagline: "Crater lakes, sinkhole gardens and spring-fed ponds around a dormant volcano.",
     description: "Mount Gambier is the second most populated city in South Australia, built on the slopes of a dormant volcano about 450 km south-east of Adelaide and 17 km from the Victorian border. The Blue Lake and Valley Lake fill volcanic craters on its southern edge, while sinkholes open inside the city at the Cave Garden and Umpherston Sinkhole. Beyond town, Mount Schank's crater rim, the spring-fed ponds at Ewens and Piccaninnie, and the show cave at Tantanoola are day trips. Port MacDonnell, on the coast to the south, has the Cape Northumberland headland.",
-    whyVisit: ["Peer into crater lakes and sinkholes", "Snorkel spring-fed limestone ponds", "Walk up an extinct volcano"],
+    whyVisit: ["See crater lakes and sinkholes", "Snorkel spring-fed limestone ponds", "Walk up an extinct volcano"],
     whyVisitPhotos: ["(AUS-South Australia) Umpherston Sinkhole 2025-12-11.jpg", "Ewens Ponds.jpg", ""],
     highlights: ["Crater lakes", "Spring-fed ponds", "Volcano walks"],
     goodToKnow: [
@@ -1395,7 +1395,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "⛏️", rank: 4,
     tagline: "A Cornish copper-mining town opened up with a key to its heritage sites.",
     description: "Burra grew around the Monster Mine, a copper mine worked from the 1840s, and it is one of the Australian sites in a World Heritage bid for Cornish copper mining. The mine site, the Redruth Gaol and the creek-bank dugouts where early miners lived all lie within a few kilometres of Market Square. The Burra Heritage Passport, running since 1979, lends a key to 11 locked National Heritage sites. Museums and a restored railway station fill out the town.",
-    whyVisit: ["Explore a Cornish copper-mining town", "Unlock locked heritage sites with a key", "See how early miners lived"],
+    whyVisit: ["Explore a Cornish copper-mining town", "Explore heritage sites with a key", "See how early miners lived"],
     whyVisitPhotos: ["Burra mine and morphetts buildings.JPG", "", "Burra dugouts - exterior.JPG"],
     highlights: ["Copper-mining history", "Heritage passport key", "Miners' dugouts"],
     goodToKnow: [
