@@ -958,7 +958,7 @@ const styles = StyleSheet.create({
   countryName:     { fontSize: 13, fontWeight: '600', color: '#374151', width: 90 },
   countryBarTrack: { flex: 1, height: 6, backgroundColor: '#F3F4F6', borderRadius: 3, overflow: 'hidden' },
   countryBarFill:  { height: '100%', backgroundColor: '#10B981', borderRadius: 3 },
-  countryCount:    { fontSize: 14, fontWeight: '800', color: '#111827', width: 30, textAlign: 'right' },
+  countryCount:    { fontSize: 14, fontWeight: '700', color: '#111827', width: 30, textAlign: 'right' },
 
   // Progress bar
 
