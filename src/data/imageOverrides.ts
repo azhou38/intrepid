@@ -708,6 +708,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Goolwa beach 2009.jpg": { x: 0.5, y: 0.6, zoom: 1.4 },
   "Streaky Bay": { x: 0.45, y: 0.4 },
   "File:Murphy's Haystacks June 2008.jpg": { x: 0.5, y: 0.55 },
+  "Whyalla": { x: 0.4, y: 0.5, zoom: 1.5 },
+  "File:HMAS Whyalla (J153), 2017 (01).jpg": { x: 0.5, y: 0.45 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2312,6 +2314,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Robe": "View of Robe coastline and Obelisk 20230214 2.jpg",
   "Goolwa": "Goolwa beach 2009.jpg",
   "Streaky Bay": "Streaky Bay Jetty, 2017 (04).jpg",
+  "Whyalla": "View from Hummock Hill, Whyalla, 2017 (01).jpg",
 };
 
 /**

@@ -1261,6 +1261,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} suit swimming off the jetty and long drives along the coastal loops.",
   },
   {
+    id: 'whyalla', name: "Whyalla", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 90,
+    continent: 'Oceania', coordinates: { latitude: -33.03333333, longitude: 137.56666667 },
+    category: 'city', icon: "🏭", rank: 4,
+    tagline: "Steel city on Spencer Gulf, with a warship on land and winter cuttlefish",
+    description: "Whyalla is South Australia's steel city on the upper Spencer Gulf, built around the iron ore from nearby Iron Knob. Its maritime museum holds HMAS Whyalla, a corvette launched in 1941 that now sits two kilometres from the sea. Every winter tens of thousands of giant Australian cuttlefish gather to spawn off Point Lowly. The foreshore has a circular jetty, a marina and a beach.",
+    whyVisit: ["Dive with spawning cuttlefish in winter", "Tour a World War II warship", "Walk Spencer Gulf's coastal trails"],
+    whyVisitPhotos: ["", "HMAS Whyalla (J153), 2017 (01).jpg", ""],
+    highlights: ["Cuttlefish spawning", "Warship museum", "Coastal trails"],
+    goodToKnow: [
+      { icon: "🤿", title: "Bring or hire dive gear", detail: "Cuttlefish are viewed by snorkel or dive from May to August. Bring a wetsuit or hire gear, and go with a buddy or a guided group." },
+      { icon: "🚢", title: "Ship tours only", detail: "HMAS Whyalla can be entered only on a guided tour, included in museum admission. Wear closed-in footwear." },
+    ],
+    bestMonths: [5, 6, 7, 8],
+    bestTimeBlurb: "Winter is the time to come, when giant cuttlefish spawn off Point Lowly and the days stay mild ({months}).",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
