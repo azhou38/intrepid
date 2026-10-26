@@ -18,18 +18,12 @@ costMin/costMax/currency 'AUD', costBasis, costPer?, needs?, ticketUrl (or omit 
 coordinates_source, notes }`. Spots carry NO opening hours (no hours, closedDays or specialClosures): never research or
 write them; a fact that truly matters (a tour only on weekends, a seasonal closure) goes in the bio if it fits, or notes.
 
-1. PIN: `python3 scripts/curation/resolve-pin.py --name "<spot>" --category <category> --lat <hint> --lon <hint> [--wiki "<title>"]`.
-   Never run more than two resolve-pin calls at once in your shard (Nominatim and Overpass rate-limit). Use a HIGH or
-   MEDIUM point only. Rules (COVERAGE.md): a park at its visitor point (visitor centre, day-use area, main lookout or car
-   park; NEVER the reserve centroid that leisure=nature_reserve or boundary=protected_area returns; never a point shared
-   with another spot); a town at its OSM place=town/village centre; a walk/track at the midpoint of the whole route
-   (resolve-pin reports "trail midpoint"); a summit or lookout on the feature; a beach on its natural=beach feature; a
-   cave, sinkhole, gorge or falls at the feature or its car park. When the hint is null, take a hint from the place's
-   Wikipedia/NPWS/South Australian Tourism page (that hint is only for the search). Every spot must be >= 25 m from every
-   other spot's pin and its destination's pin (check against src/data/spots.ts, src/data/destinations.ts and the rest of
-   your shard). Never memory, never 3 decimals or fewer, never a town page's point for an attraction. On LOW: take the
-   managing agency's car park/trailhead point from a source and say so in coordinates_source, or set `"pin": "LOW"` in
-   notes so it is raised to the owner.
+1. PIN: DO NOT run resolve-pin.py (it shares one rate-limited lookup service across every agent, and parallel runs queued for over an hour).
+   Pins are resolved afterwards in one serial pass. Keep the coordinates the draft gives (they are provisional) or leave
+   `coordinates: null`, and set `coordinates_source` to "pending serial pin pass". Do record anything that helps that pass in
+   `notes.pin`: the managing agency's car park, trailhead, visitor point or a Wikivoyage/tourism geotag for the place itself, and for a
+   long trail or park say which point visitors use. A destination's `coordinates` likewise stay as drafted (or null) for the pass.
+   The shared rule still holds for what you write: no coordinate from memory, never rounded to three decimals or fewer.
 2. FACTS: cost and what it is for (WRITING.md "What the cost is for"): `free: true` with costBasis 'open' (nothing to pass
    through: a town, beach, lookout, open trail) or 'entry' ("No Entry Fee": a museum, garden or fenced site that is free);
    an adult price with costBasis 'entry', 'tour' or 'ticket'; a South Australian park's own vehicle entry fee as
