@@ -691,6 +691,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Cellar door, Coriole Vineyard, McLaren Vale South Australia (6177501530).jpg": { x: 0.45, y: 0.4 },
   "File:Horse Drawn Tram - Victor Harbor.jpg": { x: 0.55, y: 0.35 },
   "Clare Valley": { x: 0.5, y: 0.75, zoom: 1.5 },
+  "Port Lincoln": { x: 0.42, y: 0.6, zoom: 1.2 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2284,6 +2285,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Adelaide Hills": "Piccadilly Valley.JPG",
   "Clare Valley": "Vines in Clare Valley.jpg",
   "Mount Gambier": "(AUS-South Australia) Blue Lake, Mount Gambier 2025-12-11 - 1.jpg",
+  "Port Lincoln": "Port Lincoln.jpg",
 };
 
 /**

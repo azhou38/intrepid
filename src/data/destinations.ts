@@ -1030,6 +1030,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring a deep turquoise Blue Lake and open snorkelling at Ewens Ponds.",
   },
   {
+    id: 'port-lincoln', name: "Port Lincoln", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -34.73222222, longitude: 135.85861111 },
+    category: 'city', icon: "🦈", rank: 3,
+    tagline: "Seafood capital on Boston Bay, with shark cage diving and wild coast",
+    description: "Port Lincoln sits on Boston Bay at the southern tip of the Eyre Peninsula and is known as Australia's seafood capital. Tuna and other seafood come off the working harbour, and boats leave from here for great white shark cage diving. Lookouts, a murals trail and a maritime museum fill a day in town, and Lincoln National Park and Whalers Way lie a short drive south.",
+    whyVisit: ["Dive with great white sharks", "Eat fresh local seafood", "Drive wild coast and cliffs"],
+    whyVisitPhotos: ["", "", "Seaside Garden - Curtar Rocks Port Lincoln National Park - South Australia.jpg"],
+    highlights: ["Shark cage diving", "Seafood capital", "Coastal drives"],
+    goodToKnow: [
+      { icon: "🔑", title: "Whalers Way needs a permit", detail: "Whalers Way is private land. Buy a permit before you enter, from the visitor centre or online, and expect unsealed roads." },
+      { icon: "🦈", title: "Book shark dives ahead", detail: "Cage diving trips leave from the town harbour and sell out in peak season, so book before you arrive." },
+      { icon: "🚗", title: "Distances are long", detail: "Adelaide is about 650 km away, so plan a fly-in or an overnight stop on the drive." },
+    ],
+    bestMonths: [3, 4, 5, 10, 11],
+    bestTimeBlurb: "{months} bring mild weather for coastal walks and drives, while summer is hot and busy.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
