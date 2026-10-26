@@ -39,6 +39,8 @@ const WORLD_VH = MILLER_TOP - miller(-58);
 const WORLD_Y0 = 0, WORLD_Y1 = WORLD_VH;
 const WORLD_W = Dimensions.get('window').width - 32;
 const SCREEN_W = Dimensions.get('window').width;
+// The side room the Explored sections keep from the screen edge.
+const EXPLORED_PAD = 12;
 const WORLD_H = Math.round((WORLD_W * WORLD_VH) / 360);
 const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP - miller(lat) });
 // A spot pin on the card's map, in its map units: the app's teardrop (a round head, the tail's edges tangent to it) with
@@ -334,7 +336,7 @@ export default function ProfileScreen() {
   // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
   const worldMapAt = (w: number) => (
     <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
-    <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }]}>
+    <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }, w !== WORLD_W && { borderRadius: 12, overflow: 'hidden' }]}>
       <Svg width={w} height={Math.round((w * WORLD_VH) / 360)} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
         <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
         {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
@@ -359,7 +361,7 @@ export default function ProfileScreen() {
     </View>
     </Pressable>
   );
-  const worldMap = worldMapAt(worldMode === 'countries' ? WORLD_W : SCREEN_W);
+  const worldMap = worldMapAt(worldMode === 'countries' ? WORLD_W : SCREEN_W - 2 * EXPLORED_PAD);
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
     {/* ── Profile header ──────────────────────────────────────────── */}
@@ -553,7 +555,7 @@ export default function ProfileScreen() {
                 onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
             </View>
           )}
-          <View>
+          <View style={styles.exploredPad}>
             {worldMap}
             {destSearchable && !destSearchOpen && (
               <View style={styles.exploredSearchBtn}>
@@ -627,7 +629,7 @@ export default function ProfileScreen() {
                 onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
             </View>
           )}
-          <View>
+          <View style={styles.exploredPad}>
             {worldMap}
             {spotSearchable && !spotSearchOpen && (
               <View style={styles.exploredSearchBtn}>
@@ -703,8 +705,8 @@ function wordMatch(text: string, q: string) {
 // scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
 const TILE_COLS = 4;
 const TILE_GAP = 3;
-// A tile's side: the full screen width, less the gaps.
-const TILE = Math.floor((SCREEN_W - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
+// A tile's side: the screen width, less the side room and the gaps.
+const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
 function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[] }) {
   return (
     <View style={styles.tileGrid}>
@@ -895,8 +897,8 @@ const styles = StyleSheet.create({
   // The map inside an Explored card: full width of the card, rounded, with room around it.
   // The Explored sections have no card: the map, pills and photo grid run the full screen width.
   exploredSection: { marginBottom: 12 },
-  exploredPad: { paddingHorizontal: 16 },
-  exploredSearchBtn: { position: 'absolute', top: 10, right: 12 },
+  exploredPad: { paddingHorizontal: EXPLORED_PAD },
+  exploredSearchBtn: { position: 'absolute', top: 10, right: EXPLORED_PAD + 10 },
   mapCard: {
     marginHorizontal: 16, marginBottom: 12, overflow: 'hidden', backgroundColor: 'white',
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
@@ -940,7 +942,7 @@ const styles = StyleSheet.create({
   searchInput:  { flex: 1, fontSize: 14, color: '#111827', paddingVertical: 0 },
   // The Explored lists' country filter: a sideways row of chips; the chosen one is green.
   filterScroll: { marginTop: 12, marginBottom: 10, flexGrow: 0 },
-  filterRow:    { paddingHorizontal: 16, gap: 6 },
+  filterRow:    { paddingHorizontal: EXPLORED_PAD, gap: 6 },
   filterChip:   { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 10, paddingVertical: 6,
                   borderRadius: 14, borderWidth: 1, borderColor: '#E5E7EB', backgroundColor: 'white' },
   filterChipOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
@@ -948,7 +950,7 @@ const styles = StyleSheet.create({
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, four across.
-  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
+  tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   tileText: { position: 'absolute', left: 5, right: 5, bottom: 5 },
   tileName: { fontSize: 11, fontWeight: '700', color: 'white' },
