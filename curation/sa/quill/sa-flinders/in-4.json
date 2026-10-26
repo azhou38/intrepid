@@ -1,0 +1,454 @@
+{
+ "destinations": [
+  {
+   "id": "mount-remarkable",
+   "name": "Mount Remarkable National Park",
+   "category": "park",
+   "rank": 4,
+   "coordinates": null,
+   "coordinates_source": "visitor point to be pinned (candidate point is the park centroid and shared with Alligator Gorge)",
+   "defaultZoomSpanKm": 55,
+   "name_evidence": {
+    "source": "parks.sa.gov.au and flindersandoutback.com.au",
+    "wording": "Mount Remarkable National Park: summit, Alligator Gorge, Mambray Creek, trails and mountain biking"
+   },
+   "spots": [
+    "mount-remarkable-1",
+    "mount-remarkable-2",
+    "mount-remarkable-3",
+    "mount-remarkable-4",
+    "mount-remarkable-5"
+   ]
+  },
+  {
+   "id": "southern-flinders-ranges",
+   "name": "Southern Flinders Ranges",
+   "category": "nature",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -33.1865,
+    "longitude": 138.3003
+   },
+   "coordinates_source": "candidate: Wikipedia point for Laura (town)",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "flindersandoutback.com.au/regions/southern-flinders-ranges",
+    "wording": "Southern Flinders Ranges: regional tourism brand covering Laura, Gladstone, Jamestown and Booleroo Centre"
+   },
+   "spots": [
+    "southern-flinders-ranges-1",
+    "southern-flinders-ranges-2",
+    "southern-flinders-ranges-3",
+    "southern-flinders-ranges-4",
+    "southern-flinders-ranges-5"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "historic",
+   "icon": "🎨",
+   "bio": "A 2 km map-guided mural walk through the centre of Port Pirie.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-pirie-2",
+   "name": "Port Pirie Mural Trail",
+   "destination": "port-pirie",
+   "coordinates": null,
+   "note": "Tourism board lists a 2 km, map-guided mural walk through Port Pirie's centre (30+ min to a couple of hours), permanent and open.",
+   "sources": [
+    "https://flindersandoutback.com.au/listings/attraction/port-pirie-mural-trail/"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "National Trust museum among the Southern Flinders heritage highlights.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-pirie-3",
+   "name": "Port Pirie National Trust Museum",
+   "destination": "port-pirie",
+   "coordinates": null,
+   "note": "Tourism board names it among the Southern Flinders heritage highlights; a public museum.",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Pier and man-made beach with swimming, showers and change rooms.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-pirie-4",
+   "name": "Solomontown Beach",
+   "destination": "port-pirie",
+   "coordinates": null,
+   "note": "Wikivoyage: a pier, man-made beach and swimming spot with showers and change rooms; second-tier beach stop.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Pirie"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🎣",
+   "bio": "The 1.6 km wooden jetty at Port Germein, the longest wooden jetty in South Australia.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "port-pirie-5",
+   "name": "Port Germein Jetty",
+   "destination": "port-pirie",
+   "coordinates": null,
+   "note": "Wikivoyage Port Germein and the Southern Flinders regional page name the 1.6 km jetty, the longest wooden jetty in SA; a walk, crabbing and fishing.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Germein",
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Gorge with walks and wildlife near Port Pirie, with a creek that flows in winter.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Telowie Gorge Conservation Park (re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 333,
+   "counted_sources": 2,
+   "id": "port-pirie-6",
+   "name": "Telowie Gorge Conservation Park",
+   "destination": "port-pirie",
+   "coordinates": {
+    "latitude": -33.039,
+    "longitude": 138.12479722
+   },
+   "note": "Parks SA and Flinders and Outback tourism both name the gorge (part of Wapma Thura-Southern Flinders Ranges NP): walks, wildlife, creek flows in winter.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/telowie-gorge-conservation-park",
+    "https://flindersandoutback.com.au/listings/attraction/telowie-gorge-conservation-park/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🎣",
+   "bio": "Reservoir precinct for birdwatching, picnics, barbecues and permit fishing.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Beetaloo Dam (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 259,
+   "counted_sources": 2,
+   "id": "port-pirie-7",
+   "name": "Beetaloo Reservoir",
+   "destination": "port-pirie",
+   "coordinates": {
+    "latitude": -33.189669,
+    "longitude": 138.214939
+   },
+   "note": "Rule 1-3: reservoir precinct near Port Pirie, two counted sources (flindersandoutback region page and listing, opened): open to the public for birdwatching, picnics, barbecues, fishing with permit.",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/beetaloo-reservoir/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Gorge walk through the Narrows in Mount Remarkable National Park.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 4,
+   "id": "mount-remarkable-1",
+   "name": "Alligator Gorge",
+   "destination": "mount-remarkable",
+   "coordinates": null,
+   "note": "4 counted sources, 0 page views",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/mount-remarkable-national-park",
+    "https://flindersandoutback.com.au/blog/4-day-itinerary-southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/alligator-gorge/"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 960 m summit hike above Melrose.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Mount Remarkable (re-pin with resolve-pin.py)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3269,
+   "counted_sources": 2,
+   "id": "mount-remarkable-2",
+   "name": "Mount Remarkable",
+   "destination": "mount-remarkable",
+   "coordinates": {
+    "latitude": -32.80611111,
+    "longitude": 138.16472222
+   },
+   "note": "2 counted sources, 3269 page views",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/mount-remarkable-national-park",
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🚴",
+   "bio": "The oldest town in the Flinders Ranges and a cycling hub at the foot of Mount Remarkable.",
+   "wiki": "Melrose, South Australia",
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "mount-remarkable-3",
+   "name": "Melrose",
+   "destination": "mount-remarkable",
+   "coordinates": null,
+   "note": "3 counted sources, 0 page views",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/blog/4-day-itinerary-southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/blog/cycling-and-hiking-trails-in-the-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Heritage museum of five buildings with audio-visual displays on the 1848 settlement of Melrose.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "mount-remarkable-4",
+   "name": "Melrose Courthouse Heritage and Interpretive Centre",
+   "destination": "mount-remarkable",
+   "coordinates": null,
+   "note": "Tourism listing: Melrose Heritage Museum with five buildings, audio-visual displays on 1848 settlement, Goyder's Line and the Nukunu people; regional page highlights it.",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/melrose-heritage-museum/"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🏞️",
+   "bio": "Scenic pass near Wilmington with a summit lookout, the Horrocks monument and Hancocks Lookout views to Spencer Gulf.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Horrocks Pass (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 946,
+   "counted_sources": 0,
+   "id": "mount-remarkable-5",
+   "name": "Horrocks Pass",
+   "destination": "mount-remarkable",
+   "coordinates": {
+    "latitude": -32.6403,
+    "longitude": 138.0375
+   },
+   "note": "Wilmington town page and aussietowns name Horrocks Pass with its summit lookout and Horrocks monument, plus Hancocks Lookout views to Spencer Gulf; Heysen Trail passes the monument. Marginal short stop but a guide names it.",
+   "sources": []
+  },
+  {
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "Heritage-listed gaol that served as an internment camp, open for tours beside the Southern Flinders Discovery Centre.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Gladstone, South Australia (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3142,
+   "counted_sources": 1,
+   "id": "southern-flinders-ranges-1",
+   "name": "Gladstone Gaol",
+   "destination": "southern-flinders-ranges",
+   "coordinates": {
+    "latitude": -33.26666667,
+    "longitude": 138.35
+   },
+   "note": "Flindersandoutback town page names the heritage-listed Gladstone Gaol (internment camp, tour) and the Southern Flinders Discovery Centre: a half-hour-plus visit (rule 2).",
+   "sources": []
+  }
+ ]
+}

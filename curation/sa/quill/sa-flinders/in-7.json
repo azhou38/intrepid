@@ -1,0 +1,105 @@
+{
+ "destinations": [],
+ "spots": [
+  {
+   "category": "museum",
+   "icon": "🚂",
+   "bio": "Heritage railway centre at Peterborough.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Steamtown Heritage Rail Centre (re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1421,
+   "counted_sources": 3,
+   "id": "steamtown-heritage-rail-centre",
+   "name": "Steamtown Heritage Rail Centre",
+   "destination": null,
+   "coordinates": {
+    "latitude": -32.9751,
+    "longitude": 138.8261
+   },
+   "note": "3 counted sources, 1421 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Peterborough_(South_Australia)",
+    "https://flindersandoutback.com.au/blog/4-day-itinerary-southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚃",
+   "bio": "Railway carriage museum at Peterborough.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "town-carriage-museum",
+   "name": "Town Carriage Museum",
+   "destination": null,
+   "coordinates": null,
+   "note": "Two counted sources: Wikivoyage Peterborough See listing and the 4-day Southern Flinders itinerary; open railway carriage museum.",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "🖨️",
+   "bio": "Volunteer-run tours of a working historic letterpress print shop at Peterborough.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "peterborough-historic-letterpress-print-shop",
+   "name": "Peterborough Historic Letterpress Print Shop",
+   "destination": null,
+   "coordinates": null,
+   "note": "Tourism listing: volunteer-run tours of a working historic print shop; the itinerary names it (Peterborough Printing Works).",
+   "sources": [
+    "https://flindersandoutback.com.au/blog/4-day-itinerary-southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/the-peterborough-historic-letterpress-print-shop/"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,490 @@
+{
+ "destinations": [
+  {
+   "id": "quorn",
+   "name": "Quorn",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -32.349535,
+    "longitude": 138.040632
+   },
+   "coordinates_source": "candidate: Wikipedia town point",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "Wikivoyage Quorn and flindersandoutback.com.au",
+    "wording": "Quorn: heritage town, Pichi Richi Railway base, Heysen and Mawson trail stop"
+   },
+   "spots": [
+    "quorn-1",
+    "quorn-2",
+    "quorn-3",
+    "quorn-4",
+    "quorn-5"
+   ]
+  },
+  {
+   "id": "port-augusta",
+   "name": "Port Augusta",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -32.4925,
+    "longitude": 137.76583333
+   },
+   "coordinates_source": "candidate: Wikipedia town point",
+   "defaultZoomSpanKm": 25,
+   "name_evidence": {
+    "source": "Wikivoyage Port Augusta and flindersandoutback.com.au",
+    "wording": "Port Augusta: Spencer Gulf gateway city at the head of the gulf"
+   },
+   "spots": [
+    "port-augusta-1",
+    "port-augusta-2",
+    "port-augusta-3",
+    "port-augusta-4",
+    "port-augusta-5"
+   ]
+  },
+  {
+   "id": "port-pirie",
+   "name": "Port Pirie",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -33.18583333,
+    "longitude": 138.01694444
+   },
+   "coordinates_source": "candidate: Wikipedia town point",
+   "defaultZoomSpanKm": 45,
+   "name_evidence": {
+    "source": "Wikivoyage Port Pirie and flindersandoutback.com.au",
+    "wording": "Port Pirie: Spencer Gulf port city, smelter, museum, mural trail"
+   },
+   "spots": [
+    "port-pirie-1",
+    "port-pirie-2",
+    "port-pirie-3",
+    "port-pirie-4",
+    "port-pirie-5",
+    "port-pirie-6",
+    "port-pirie-7"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "hike",
+   "icon": "🏊",
+   "bio": "Hike from Parachilna past old ruins to the Blinman Pools.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "ikara-flinders-ranges-25",
+   "name": "Blinman Pools",
+   "destination": "ikara-flinders-ranges",
+   "coordinates": null,
+   "note": "Tourism board names the hike from Parachilna past scenic ruins to the Blinman Pools; a named walk and swimming oasis.",
+   "sources": [
+    "https://flindersandoutback.com.au/blog/unique-nature-experiences-flinders-ranges-outback/"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🚂",
+   "bio": "Heritage steam and diesel railway running between Quorn and Port Augusta.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Pichi Richi Railway (re-pin with resolve-pin.py)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8046,
+   "counted_sources": 4,
+   "id": "quorn-1",
+   "name": "Pichi Richi Railway",
+   "destination": "quorn",
+   "coordinates": {
+    "latitude": -32.34512,
+    "longitude": 138.04114
+   },
+   "note": "4 counted sources, 8046 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Quorn",
+    "https://southaustralia.com/destinations/flinders-ranges-and-outback",
+    "https://flindersandoutback.com.au/blog/5-day-itinerary-northern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/pichi-richi-railway/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Gorge of rock walls and rock wallabies near Quorn.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "quorn-2",
+   "name": "Warren Gorge",
+   "destination": "quorn",
+   "coordinates": null,
+   "note": "3 counted sources, 0 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Quorn",
+    "https://flindersandoutback.com.au/blog/5-day-itinerary-northern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/warren-gorge-2/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "⛰️",
+   "bio": "Conservation park north of Quorn with a summit walk, the Heysen Trail and views to Spencer Gulf.",
+   "wiki": "The Dutchmans Stern Conservation Park",
+   "coordinates_source": "wikipedia:The Dutchmans Stern Conservation Park (re-pin with resolve-pin.py)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 370,
+   "counted_sources": 3,
+   "id": "quorn-3",
+   "name": "Dutchmans Stern Conservation Park",
+   "destination": "quorn",
+   "coordinates": {
+    "latitude": -32.32099722,
+    "longitude": 137.9462
+   },
+   "note": "3 counted sources, 370 page views",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dutchmans-stern-conservation-park",
+    "https://flindersandoutback.com.au/blog/5-day-itinerary-northern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/dutchman-stern-conservation-park-trail/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "⛰️",
+   "bio": "Conservation park around a 964 m peak, with a lookout and a 15 km loop walk.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Mount Brown Conservation Park (re-pin with resolve-pin.py)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 284,
+   "counted_sources": 1,
+   "id": "quorn-4",
+   "name": "Mount Brown Conservation Park",
+   "destination": "quorn",
+   "coordinates": {
+    "latitude": -32.49011111,
+    "longitude": 138.033
+   },
+   "note": "Parks SA page: 964 m peak with lookout and loop walk, one of the highest Southern Flinders peaks; keep as the park (Mount Brown is the same place).",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/mount-brown-conservation-park"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Ruins of an abandoned pastoral station with Death Rock and a waterhole.",
+   "wiki": "Kanyaka Station",
+   "coordinates_source": "wikipedia:Kanyaka Station (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2272,
+   "counted_sources": 3,
+   "id": "quorn-5",
+   "name": "Kanyaka Station Ruins",
+   "destination": "quorn",
+   "coordinates": {
+    "latitude": -32.07257,
+    "longitude": 138.29965
+   },
+   "note": "3 counted sources, 2272 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Quorn",
+    "https://flindersandoutback.com.au/listings/attraction/kanyaka-ruins-station/",
+    "https://flindersandoutback.com.au/listings/attraction/death-rock-and-kanyaka-waterhole/"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Interpretive centre telling the story of the outback, in Port Augusta.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "port-augusta-1",
+   "name": "Wadlata Outback Centre",
+   "destination": "port-augusta",
+   "coordinates": null,
+   "note": "3 counted sources, 0 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Augusta",
+    "https://flindersandoutback.com.au/regions/flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/wadlata-outback-centre/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌵",
+   "bio": "Arid-zone botanic garden at Port Augusta.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Australian Arid Lands Botanic Garden (re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 707,
+   "counted_sources": 3,
+   "id": "port-augusta-2",
+   "name": "Australian Arid Lands Botanic Garden",
+   "destination": "port-augusta",
+   "coordinates": {
+    "latitude": -32.4616,
+    "longitude": 137.7432
+   },
+   "note": "3 counted sources, 707 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Augusta",
+    "https://southaustralia.com/destinations/flinders-ranges-and-outback",
+    "https://flindersandoutback.com.au/listings/attraction/australian-arid-lands-botanic-garden/"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🗼",
+   "bio": "The 1882 Westside water tower, with a balcony view over Spencer Gulf.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "port-augusta-3",
+   "name": "Port Augusta Water Tower Lookout",
+   "destination": "port-augusta",
+   "coordinates": null,
+   "note": "Wikivoyage and the Flinders and Outback listing both name the 1882 tower with a balcony view over Spencer Gulf and the Flinders; two counted sources.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Augusta",
+    "https://flindersandoutback.com.au/listings/attraction/water-tower-lookout/"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Foreshore beach with a jetty into deep water, showers and change rooms for swimming.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-augusta-4",
+   "name": "Port Augusta Foreshore",
+   "destination": "port-augusta",
+   "coordinates": null,
+   "note": "Wikivoyage names the foreshore beach with a jetty into deep water, showers and change rooms for swimming; a named beach/jetty stop.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Augusta"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦜",
+   "bio": "Rehabilitated coastal picnic and birdwatching spot, with mulga parrots and emus.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 221,
+   "counted_sources": 1,
+   "id": "port-augusta-5",
+   "name": "Blanche Harbor",
+   "destination": "port-augusta",
+   "coordinates": null,
+   "note": "Wikivoyage names Blanche Harbor as a rehabilitated coastal picnic and birdwatching spot (mulga parrots, emus); second-tier natural stop, open access.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Augusta"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🚶",
+   "bio": "Self-guided heritage trail of more than 30 sites including the Smelter, by car or on foot.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-pirie-1",
+   "name": "Port Pirie Heritage Trail",
+   "destination": "port-pirie",
+   "coordinates": null,
+   "note": "Tourism board lists a self-guided heritage trail of 30+ sites including the Smelter, a named guide walking route; cars or foot.",
+   "sources": [
+    "https://flindersandoutback.com.au/listings/attraction/port-pirie-heritage-trail/"
+   ]
+  }
+ ]
+}
