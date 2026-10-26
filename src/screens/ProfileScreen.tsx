@@ -5,7 +5,7 @@ import {
 import { Search, X, Pencil } from 'lucide-react-native';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
-import Svg, { Path, Circle, Rect, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
+import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 // Top Countries' tab swipe, and the chips' sideways scroller (gesture-handler's, so the two cooperate).
 import { Gesture, GestureDetector, ScrollView as GHScrollView } from 'react-native-gesture-handler';
@@ -41,6 +41,8 @@ const WORLD_W = Dimensions.get('window').width - 32;
 const SCREEN_W = Dimensions.get('window').width;
 // The side room the Explored sections keep from the screen edge.
 const EXPLORED_PAD = 12;
+// The highlight for a picked tile and its dot on the map.
+const PICK_COLOR = '#F97316';
 const WORLD_H = Math.round((WORLD_W * WORLD_VH) / 360);
 const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP - miller(lat) });
 // A spot pin on the card's map, in its map units: the app's teardrop (a round head, the tail's edges tangent to it) with
@@ -296,13 +298,18 @@ export default function ProfileScreen() {
   const visitedCountrySet = visitIndex.visitedCountryCodes;
   const worldDots = useMemo(
     () => (worldMode === 'spots' ? visitedSpots : worldMode === 'destinations' ? visitedDests : [])
-      .map(p => worldPoint(p.coordinates.longitude, p.coordinates.latitude)),
+      .map(p => ({ id: p.id, ...worldPoint(p.coordinates.longitude, p.coordinates.latitude) })),
     [worldMode, visitedSpots, visitedDests]);
 
 
 
+  // The Explored tile tapped: its dot on the world map is highlighted. Tapping it again clears it.
+  const [pickedId, setPickedId] = useState<string | null>(null);
+  const pickTile = (id: string) => { Haptics.selectionAsync(); setPickedId(cur => (cur === id ? null : id)); };
+
   const selectMode = (mode: WorldMode) => {
     if (mode === worldMode) return;
+    setPickedId(null);
     Haptics.selectionAsync();
     // The sections below swap with an animation, so the change is seen to follow the selection.
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -346,15 +353,19 @@ export default function ProfileScreen() {
         ))}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
             read differently from destinations, as on the full-screen map. */}
-        {worldMode === 'destinations' && worldDots.map((p, k) => (
-          <Circle key={k} cx={p.x} cy={p.y} r={2} fill="#10B981" stroke="white" strokeWidth={0.5} />
+        {/* The picked tile's place is drawn last (on top), in orange and a little larger. */}
+        {worldMode === 'destinations' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => (
+          <Circle key={p.id} cx={p.x} cy={p.y} r={p.id === pickedId ? 3.2 : 2} fill={p.id === pickedId ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.5} />
         ))}
-        {worldMode === 'spots' && worldDots.map((p, k) => (
-          <React.Fragment key={k}>
-            <Path d={pinPath(p.x, p.y)} fill="#10B981" stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
-            <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
-          </React.Fragment>
-        ))}
+        {worldMode === 'spots' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => {
+          const on = p.id === pickedId;
+          return (
+            <G key={p.id} transform={on ? `translate(${p.x} ${p.y}) scale(1.6) translate(${-p.x} ${-p.y})` : undefined}>
+              <Path d={pinPath(p.x, p.y)} fill={on ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
+              <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
+            </G>
+          );
+        })}
       </Svg>
       {/* A hint that the map opens. */}
       <View style={styles.mapHint}><Text style={styles.mapHintTxt}>Tap to explore</Text></View>
@@ -578,7 +589,7 @@ export default function ProfileScreen() {
               </Text>
             )}
             {/* A photo grid: one tile per destination, its name and its visited spots over its photo. */}
-            <PhotoGrid tiles={shownDests.map(d => {
+            <PhotoGrid pickedId={pickedId} onPick={pickTile} tiles={shownDests.map(d => {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode, sub: n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '',
@@ -651,7 +662,7 @@ export default function ProfileScreen() {
               </Text>
             )}
             {/* The same photo grid for spots: the spot's country under its name. */}
-            <PhotoGrid tiles={shownSpots.map(sp => ({
+            <PhotoGrid pickedId={pickedId} onPick={pickTile} tiles={shownSpots.map(sp => ({
               key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotCountry(sp) ?? '',
               photo: NO_PHOTO.has(spotPhotoTitle(sp))
                 ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />
@@ -707,16 +718,20 @@ const TILE_COLS = 3;
 const TILE_GAP = 3;
 // A tile's side: the screen width, less the side room and the gaps.
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
-function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[] }) {
+function PhotoGrid({ tiles, pickedId, onPick }: {
+  tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[];
+  pickedId: string | null; onPick: (id: string) => void;
+}) {
   return (
     <View style={styles.tileGrid}>
       {tiles.map(t => (
-        <View key={t.key} style={styles.tile}>
+        <Pressable key={t.key} style={styles.tile} onPress={() => onPick(t.key)}>
           {t.photo}
           {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
               spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
           <TileFooter name={t.name} countryCode={t.countryCode} sub={t.sub} />
-        </View>
+          {pickedId === t.key && <View style={styles.tileRing} pointerEvents="none" />}
+        </Pressable>
       ))}
     </View>
   );
@@ -968,6 +983,8 @@ const styles = StyleSheet.create({
   // The Explored photo grid: square tiles, three across.
   tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
+  tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 6, borderWidth: 3, borderColor: PICK_COLOR },
   tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: 28, paddingHorizontal: 8, paddingBottom: 8 },
   tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
