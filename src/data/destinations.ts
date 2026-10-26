@@ -894,6 +894,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are mild, and March brings the Fringe and Festival season.",
   },
   {
+    id: 'kangaroo-island', name: "Kangaroo Island", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 160,
+    continent: 'Oceania', coordinates: { latitude: -35.655159, longitude: 137.633344 },
+    category: 'island', icon: "🦘", rank: 2,
+    tagline: "Australia's third-largest island, with sea lions, fur seals and a wild granite coast",
+    description: "Kangaroo Island lies off South Australia's Fleurieu Peninsula, with Kingscote as its main town and the ferry reaching Penneshaw. Flinders Chase National Park fills the wild west, while the south coast has sea lion beaches, caves and dunes and the north coast has sheltered bays. Wildlife is the draw, from Australian sea lions and long-nosed fur seals to kangaroos and koalas. Distances are long, so most visitors base in Kingscote, Penneshaw or American River and drive out.",
+    whyVisit: ["Watch sea lions and fur seals", "See Remarkable Rocks above the ocean", "Walk remote coast and bush", "Slide down towering sand dunes"],
+    whyVisitPhotos: ["Sea lion and pup in Seal Bay - Kangaroo Island.jpg", "Remarkable Rocks on Kangaroo Island, South Australia.jpg", "Cape de Couedic.jpg", "Australia kangaroo island litte sahara.jpg"],
+    highlights: ["Seals and sea lions", "Remarkable Rocks", "Coastal bushwalks", "Sand dune sliding"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Kangaroo Island Tour Pass", detail: "The $95 adult pass gives 12 months of Flinders Chase entry plus Seal Bay, Cape Borda, Cape Willoughby and Kelly Hill. Buy it in person only." },
+      { icon: "🚗", title: "Drive carefully at dusk", detail: "Wildlife crosses the roads at dawn and dusk, so slow down and carry water and snacks for the long drives to the west." },
+      { icon: "🕳️", title: "Book the cave tour", detail: "Kelly Hill Caves can only be entered on a guided tour, and spaces are limited, so book ahead online." },
+    ],
+    bestMonths: [9, 10, 11, 3, 4, 5],
+    bestTimeBlurb: "Spring wildflowers and mild autumn days suit walking from {months}, and winter fills the creeks.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
