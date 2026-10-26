@@ -1213,6 +1213,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are the warm months for beach days and jetty swims at Moonta Bay and Wallaroo.",
   },
   {
+    id: 'robe', name: "Robe", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -37.164057, longitude: 139.754134 },
+    category: 'beach', icon: "🏖️", rank: 4,
+    tagline: "A historic port town on Guichen Bay with long beaches, dunes and lakes nearby",
+    description: "Robe is a coastal town on Guichen Bay on the Limestone Coast, about 340 km from Adelaide. Founded in 1846, it became South Australia's second-busiest port in the 1850s, and more than 16,000 Chinese gold seekers landed here and walked about 320 km to the Victorian goldfields. That past survives in its 1863 customs house and the cliff-top obelisk, while Long Beach and Little Dip Conservation Park cover surf, dunes and lakes to the south. Rock lobster is a mainstay of the local fishing industry.",
+    whyVisit: ["Explore a 19th-century port town", "Swim and surf long ocean beaches", "Wander coastal dunes and lakes"],
+    whyVisitPhotos: ["Robe Customs House, West view 20230214 1.jpg", "Town Beach, Robe 20230214 1.jpg", ""],
+    highlights: ["Historic port town", "Ocean beaches", "Dunes and lakes"],
+    goodToKnow: [
+      { icon: "🏕️", title: "Book campsites ahead", detail: "Little Dip's campsites must be booked before arrival, up to 12 months ahead. Vehicle entry to the park is free." },
+      { icon: "🚙", title: "Check beach driving", detail: "Cars are allowed on Long Beach's firm sand, mainly in summer. Check tide and sand conditions before driving on." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Summer, {months}, brings mild days of about 22°C for swimming, surfing and driving Long Beach.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

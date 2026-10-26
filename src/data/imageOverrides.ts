@@ -703,6 +703,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Copper Coast": { x: 0.45, y: 0.5 },
   "File:Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg": { x: 0.35, y: 0.5 },
   "File:Nikon 003.jpg": { x: 0.35, y: 0.5 },
+  "Robe": { x: 0.35, y: 0.4, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2304,6 +2305,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Riverland": "Riverboat 02, Renmark, South Australia.JPG",
   "Yorke Peninsula": "Corny point rainbow.jpg",
   "Copper Coast": "South Beach Port Hughes.jpg",
+  "Robe": "View of Robe coastline and Obelisk 20230214 2.jpg",
 };
 
 /**
