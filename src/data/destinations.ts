@@ -2742,6 +2742,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [5, 6, 7, 8, 9],
     bestTimeBlurb: "Visit {months} for drier, milder days and the Staircase to the Moon; turtles nest in summer.",
   },
+  {
+    id: 'mannum', name: "Mannum", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -34.915143, longitude: 139.304393 },
+    category: 'city', icon: "🚤", rank: 5,
+    tagline: "Murray River town where the paddle steamers began, with riverside pubs and a dock museum",
+    description: "Mannum sits on the Murray River just over an hour from Adelaide. It is known as the birthplace of the Murray paddle steamers, and the dock museum and Mary Ann Reserve tell that story. Riverbank pubs overlook the water, and kayakers head downstream to a bird sanctuary lined with river red gums. Mannum Waterfalls and the Palmer granite outcrops sit a short drive inland.",
+    whyVisit: ["Cruise the Murray by paddle steamer", "Spot birds from the river"],
+    whyVisitPhotos: ["Proud Mary. Murray River. (9498561163).jpg", ""],
+    highlights: ["Paddle steamers", "River birdlife"],
+    goodToKnow: [
+      { icon: "💧", title: "Falls flow seasonally", detail: "Mannum Waterfalls flow seasonally, so expect only a trickle in the drier months." },
+      { icon: "☀️", title: "Lenger Reserve timing", detail: "Lenger Reserve is signposted from Punthari and allows no camping. Visit outside the hottest summer months." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Mild weather in {months} suits river cruises and walks along the Murray.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
