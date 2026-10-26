@@ -911,6 +911,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Spring wildflowers and mild autumn days suit walking from {months}, and winter fills the creeks.",
   },
   {
+    id: 'barossa-valley', name: "Barossa Valley", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -34.5217025, longitude: 138.9603091 },
+    category: 'nature', icon: "🍷", rank: 2,
+    tagline: "A wine region an hour from Adelaide, with German-heritage towns and old cellar doors.",
+    description: "The Barossa Valley is a wine region about an hour's drive north of Adelaide, with Tanunda, Nuriootpa and Angaston as its main towns. German settlers shaped its villages, bakeries and restaurants, and large cellar doors such as Penfolds and Seppeltsfield stand alongside small family wineries. Lookouts on the ranges above the valley floor give views across the vineyards, and the old copper town of Kapunda marks its western edge.",
+    whyVisit: ["Taste Shiraz at historic cellar doors", "Wander German-heritage villages and bakeries", "Look over vineyards from hilltop lookouts", "Hear a whisper carry along a dam wall"],
+    whyVisitPhotos: ["Cellar door, Penfold's Wines, Barossa Valley, South Australia (6177509592).jpg", "", "View of Barossa Valley from Mengler Hill 20230207.jpg", "ADB Williamstown Barossa Res whispering wall 1.jpg"],
+    highlights: ["Cellar doors", "German heritage", "Valley views", "Whispering Wall"],
+    goodToKnow: [
+      { icon: "🚗", title: "A car or bike helps", detail: "Public transport within the valley is limited, so hire a car or bike, or join a tour from Adelaide." },
+      { icon: "🍷", title: "Nominate a driver", detail: "Police watch for drink-driving here, and the roads wind between large gum trees, so book a tour or appoint a driver." },
+      { icon: "📅", title: "Book guided experiences", detail: "Blending sessions and cellar tours at the big estates are booked ahead, and guests must be 18 or over." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10],
+    bestTimeBlurb: "{months} bring harvest and mild days. The Vintage Festival starts on Easter Monday in odd years.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
