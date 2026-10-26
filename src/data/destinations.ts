@@ -2855,6 +2855,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [4, 5, 6, 7, 8, 9, 10],
     bestTimeBlurb: "{months} brings cool, clear days for exploring the outback, while summers are very hot.",
   },
+  {
+    id: 'quorn', name: "Quorn", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -32.349535, longitude: 138.040632 },
+    category: 'city', icon: "🚂", rank: 5,
+    tagline: "Heritage railway town at the southern end of the Flinders Ranges",
+    description: "Quorn is a railway town at the southern end of the Flinders Ranges. The Pichi Richi Railway has run heritage steam and diesel trains from its station to Port Augusta since 1973, on the original Ghan route that reached Quorn in 1879. Walking tracks, including the Heysen Trail, climb the ranges around the town, and the stone ruins of Kanyaka Station lie about 33 km north.",
+    whyVisit: ["Ride a heritage steam train", "Walk ridges and rocky gorges"],
+    whyVisitPhotos: ["W22 + Pichi Richi Explorer Woolshed Flat, 2017 (05).jpg", ""],
+    highlights: ["Heritage steam", "Ranges and gorges"],
+    goodToKnow: [
+      { icon: "🚂", title: "Check train running days", detail: "The Afghan Express runs on selected Saturdays only, so check the timetable and book ahead." },
+      { icon: "🔥", title: "Fire danger closures", detail: "The parks around Quorn close on days of Catastrophic fire danger, so check the CFS rating first." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Visit in {months} for cooler days that suit the heritage train and the walks. Summers are hot.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
