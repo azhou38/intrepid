@@ -945,6 +945,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Walk in the cooler {months}, when spring brings wildflowers. Summers reach 45 degrees.",
   },
   {
+    id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
+    category: 'nature', icon: "🍷", rank: 3,
+    tagline: "Cellar doors, ochre cliffs and sandy beaches just south of Adelaide.",
+    description: "McLaren Vale is a wine region about 40 minutes south of Adelaide, with around 80 cellar doors spread over hills and vineyards. Its coast runs for 31 km along Gulf St Vincent, from the cliffs of Maslin Beach to the wide sands at Aldinga and Sellicks. Willunga, the region's slate-built township, has galleries and a courthouse museum, while the d'Arenberg Cube sits on a hilltop among the vines.",
+    whyVisit: ["Taste Shiraz at hilltop cellar doors", "Walk cliff-backed beaches on the gulf", "Explore the slate-built streets of Willunga"],
+    whyVisitPhotos: ["Cellar door, Coriole Vineyard, McLaren Vale South Australia (6177501530).jpg", "Maslin-Beach-1283.jpg", "Willunga, February 2023 05.jpg"],
+    highlights: ["Cellar doors", "Gulf beaches", "Slate heritage"],
+    goodToKnow: [
+      { icon: "📞", title: "Book smaller cellar doors", detail: "About 80 wineries are open to the public, but many smaller ones take visitors by appointment only, so ring ahead." },
+      { icon: "🍷", title: "Tastings carry a fee", detail: "Tastings usually cost $15-20 a person, and some wineries credit it against a purchase, so check the small print." },
+      { icon: "🏖️", title: "Clothing-optional beach", detail: "The southern end of Maslin Beach is clothing-optional. The northern end is for clothed swimmers." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "{months} are mild for cellar doors and beach walks, while summer days can run hot.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,

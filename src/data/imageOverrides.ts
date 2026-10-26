@@ -687,6 +687,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Barossa Valley": { x: 0.5, y: 0.5 },
   "File:WilPnd1.JPG": { x: 0.65, y: 0.5 },
   "File:Pair of Yellow-Footed Rock Wallabies in Ikara-Flinders Ranges National Park.jpg": { x: 0.28, y: 0.45, zoom: 1.6 },
+  "McLaren Vale": { x: 0.5, y: 0.62, zoom: 1.4 },
+  "File:Cellar door, Coriole Vineyard, McLaren Vale South Australia (6177501530).jpg": { x: 0.45, y: 0.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2275,6 +2277,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Kangaroo Island": "Flinders Chase National Park 01.jpg",
   "Barossa Valley": "View of Barossa Valley from Mengler Hill 20230207-2.jpg",
   "Ikara-Flinders Ranges National Park": "Bunyeroo Valley Lookout, Ikara-Flinders Ranges National Park.jpg",
+  "McLaren Vale": "McLaren Vale wine region - panoramio.jpg",
 };
 
 /**
