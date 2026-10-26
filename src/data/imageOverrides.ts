@@ -2315,6 +2315,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Goolwa": "Goolwa beach 2009.jpg",
   "Streaky Bay": "Streaky Bay Jetty, 2017 (04).jpg",
   "Whyalla": "View from Hummock Hill, Whyalla, 2017 (01).jpg",
+  "Ceduna": "Ceduna Jetty, Ceduna, 2017 (05).jpg",
 };
 
 /**

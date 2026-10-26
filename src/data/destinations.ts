@@ -1277,6 +1277,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Winter is the time to come, when giant cuttlefish spawn off Point Lowly and the days stay mild ({months}).",
   },
   {
+    id: 'ceduna', name: "Ceduna", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 130,
+    continent: 'Oceania', coordinates: { latitude: -32.11666667, longitude: 133.66666667 },
+    category: 'city', icon: "🦪", rank: 4,
+    tagline: "Oyster farms and surf breaks at the last big town before the Nullarbor.",
+    description: "Ceduna sits on Murat Bay on the Eyre Highway, the last major town before the Nullarbor. A 380 m jetty runs out from its foreshore, and the oyster farms of Smoky Bay lie 45 km along the coast. To the west, Penong has a roadside windmill museum, and the road south leads to the surf breaks of Cactus Beach and the salt lakes beside it. Conservation parks with mangroves and shorebird feeding grounds line the coast either side of town.",
+    whyVisit: ["Eat fresh oysters from the farms", "Surf remote Cactus Beach", "Watch shorebirds on mangrove coasts"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Smoky Bay oysters", "Cactus Beach surf", "Mangrove shorebirds"],
+    goodToKnow: [
+      { icon: "🔥", title: "Check the fire danger", detail: "Conservation parks here close on days of Catastrophic fire danger and may close on Extreme days, so check the CFS rating before you go." },
+      { icon: "🚙", title: "4WD for Point Bell", detail: "Point Bell is reachable by four-wheel drive only, and west coast beach driving can be treacherous. Lower tyre pressures on sand." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "{months} are mild enough for coastal walks and the long Eyre Highway drive.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
