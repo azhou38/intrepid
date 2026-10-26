@@ -1,0 +1,272 @@
+{
+ "spots": {
+  "adelaide-hills-9": {
+   "name": "Hahndorf Academy",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Gallery and museum on Main Street with German settler and Peramangk history and Heysen drawings.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.029064,
+    "longitude": 138.80995
+   },
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://hahndorfacademy.org.au/",
+   "notes": {
+    "pin": "68 Main St, Hahndorf (museum address).",
+    "cost": "Museum and gallery free per draft; site lists a shop and paid workshops only (not confirmed free on the site itself)."
+   }
+  },
+  "adelaide-hills-10": {
+   "name": "Hahndorf Farm Barn",
+   "icon": "🐐",
+   "category": "entertainment",
+   "bio": "Farm animal park at Hahndorf where visitors feed lambs, milk cows and watch daily shows.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.04483,
+    "longitude": 138.83362
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 15.5,
+   "costMax": 15.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.farmbarn.com.au/",
+   "notes": {
+    "pin": "Wikivoyage geotag; site address Hahndorf, check in serial pass.",
+    "cost": "Site shows \"From $15.50 child admission\" only; adult price not found (older listings $15-17.50 adult). 15.5 is a floor, verify adult.",
+    "status": "Operating: official site open daily 10am-4pm, shows 11am and 2:30pm. Earlier sale report not borne out."
+   }
+  },
+  "adelaide-hills-11": {
+   "name": "Stirling",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Hills village of laneways, shops and cafes, with a laneways market on the fourth Sunday of most months.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Stirling, South Australia",
+   "costBasis": "open",
+   "free": true,
+   "ticketUrl": "https://www.stirlingadelaidehills.com.au/",
+   "notes": {
+    "pin": "place=village centre, Mt Barker Rd/Druids Ave; no coordinate in draft."
+   }
+  },
+  "adelaide-hills-12": {
+   "name": "The Big Rocking Horse",
+   "icon": "🐴",
+   "category": "landmark",
+   "bio": "An 18 m rocking horse at Gumeracha that visitors can climb, beside an animal park and minigolf.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.8211,
+    "longitude": 138.8918
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Big Rocking Horse",
+   "costMin": 2,
+   "costMax": 7,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://www.thebigrockinghorse.com.au/",
+   "notes": {
+    "cost": "Climb $2; animal park entry $7 (site). Looking at the horse and shop is free.",
+    "pin": "Torrens Valley Rd, Gumeracha."
+   }
+  },
+  "adelaide-hills-13": {
+   "name": "National Motor Museum",
+   "icon": "🏎️",
+   "category": "museum",
+   "bio": "Birdwood museum of cars and motorcycles from all eras, with the Bay to Birdwood festival finish held here.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.8197,
+    "longitude": 138.9549
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "National Motor Museum, Birdwood",
+   "costMin": 22.5,
+   "costMax": 22.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://motor.history.sa.gov.au/",
+   "notes": {
+    "cost": "Adult $22.50 per search snippet of the museum site and tourism listings; fetch of the page failed, verify.",
+    "pin": "Shannon St, Birdwood."
+   }
+  },
+  "adelaide-hills-14": {
+   "name": "Gorge Wildlife Park",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Cudlee Creek wildlife park where visitors walk among kangaroos and can cuddle a koala at set times.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.84193611,
+    "longitude": 138.81433056
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 26,
+   "costMax": 26,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://gorgewildlifepark.com.au/",
+   "notes": {
+    "cost": "Adult $26, concession $23, child $15 (site). Koala cuddles extra.",
+    "pin": "Cudlee Creek Rd; draft pin to 8 decimals from tourism listing."
+   }
+  },
+  "adelaide-hills-15": {
+   "name": "Mount Barker Summit",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A 513 m summit reached by a 500 m walk from the car park, with Peramangk interpretive signs and wide views.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Mount Barker Summit Reserve car park, Bald Hills exit; summit is a natpeak in OSM; reserve gates 8am-6pm (to 8pm in summer)."
+   },
+   "ticket_note": "Council/reserve page not confirmed; tourism listing is not official."
+  },
+  "adelaide-hills-16": {
+   "name": "Kuitpo Forest",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Forest near Meadows with walking trails of 1 to 4 hours, mountain-bike tracks and camping.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.21795833,
+    "longitude": 138.70032778
+   },
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.forestrysa.com.au/visit-our-forests/kuitpo-forest/",
+   "notes": {
+    "pin": "Information centre / Rocky Creek Hut or Chookarloo campground; trailheads: Eucalypts at Rocky Creek Hut (Razorback Rd), Chookarloo Walk at Chookarloo Campground.",
+    "cost": "Walking, hiking, cycling and picnicking free per ForestrySA 2024 fee schedule; vehicle access permit ($29/vehicle/day, May-Oct) may apply, unverified for Kuitpo.",
+    "closures": "Some areas close for forestry operations."
+   }
+  },
+  "adelaide-hills-17": {
+   "name": "Mount Bold Reservoir Reserve",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "SA Water reserve with 13 km of trails, including a short lookout walk to a viewing platform.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.123713,
+    "longitude": 138.68381
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Mount Bold Reservoir",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "SA Water page blocked by bot wall.",
+   "notes": {
+    "pin": "Reserve car park / lookout trail start at the dam wall; lookout trail 1.4 km return.",
+    "hours": "Dam-wall lookout 9am-4pm, no dogs (draft)."
+   }
+  },
+  "adelaide-hills-18": {
+   "name": "Lobethal Bushland Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Two reservoirs in stringybark forest north of Lobethal, with walking circuits and a regenerating post-fire landscape.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Run by Adelaide Hills Council; council page not verified.",
+   "notes": {
+    "pin": "Trailhead car park near the building and picnic area, north of Lobethal."
+   }
+  },
+  "adelaide-hills-19": {
+   "name": "Yurrebilla Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 54 km trail from Belair to Ambers Gully through Hills parks, walked in sections or over several days.",
+   "visitHoursMin": 8,
+   "visitHoursMax": 24,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "yurrebilla.com.au and parks.sa.gov.au pages returned no readable title or content; not verified.",
+   "notes": {
+    "name_fix": "Draft said Chain of Ponds and 56 km; sources give the southern end at Belair railway station and the northern end at the River Torrens at Ambers Gully, 54 km (56 km is a race listing).",
+    "pin": "Midpoint of the route (OSM route=hiking relation); long trail, centre of whole length.",
+    "hours": "visit range is hours for a whole walk; confirm field convention in the pin/apply pass."
+   }
+  },
+  "adelaide-hills-20": {
+   "name": "Gumeracha",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small Torrens Valley town in the Adelaide Hills, about 40 minutes from Adelaide.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.827059,
+    "longitude": 138.88324
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Gumeracha, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "place=town centre (draft coordinate may be it).",
+    "flag": "Thin as a spot: draws are the Big Rocking Horse and nearby sights, which are spots of their own; consider merging or dropping."
+   }
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "adelaide-hills-10 adult price (only child from $15.50 found)",
+  "adelaide-hills-13 adult $22.50 from search snippet, page fetch failed",
+  "adelaide-hills-16 whether ForestrySA vehicle access permit applies at Kuitpo",
+  "adelaide-hills-9 free entry not confirmed on site",
+  "adelaide-hills-19 ticketUrl and 54 km length rely on Wikipedia/search only"
+ ],
+ "needs_browser": [
+  {
+   "id": "adelaide-hills-17",
+   "url": "https://www.sawater.com.au/community-and-environment/recreation/mount-bold-reservoir",
+   "why": "403 bot wall"
+  },
+  {
+   "id": "adelaide-hills-19",
+   "url": "https://www.yurrebilla.com.au/",
+   "why": "blank to script"
+  },
+  {
+   "id": "adelaide-hills-13",
+   "url": "https://motor.history.sa.gov.au/",
+   "why": "confirm admission price"
+  }
+ ],
+ "notes": [
+  "Yurrebilla range 24 hr used as whole-walk; adjust if convention differs."
+ ]
+}

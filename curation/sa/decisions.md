@@ -37,3 +37,5 @@ A spot inside a park that charges entry and has no fee of its own is `free: true
 - Yunta (flinders): its only draw is the annual Picnic Races (an event); held unless a source names a permanent sight.
 - Thin evidence, kept (listing only, no page loads): Pekina Creek Rock Carvings, Southern Flinders Rail Trail, Mount Ellen Lookout.
 - Jamestown Railway Station Museum (barossa-clare): no cost or official site found; unfinished: held until a price or source turns up.
+- Gumeracha (adelaide-hills): a town wrapper (its draws are other spots, e.g. the Big Rocking Horse): fold into its attractions, mention the town in the Adelaide Hills description.
+- Kuitpo Forest: a ForestrySA vehicle permit ($29, May-Oct) may apply; check at apply and record as a permit if so.
