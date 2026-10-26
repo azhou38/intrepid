@@ -1181,6 +1181,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Mild days in {months} suit river walks and canoeing before summer heat sets in.",
   },
   {
+    id: 'yorke-peninsula', name: "Yorke Peninsula", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 100,
+    continent: 'Oceania', coordinates: { latitude: -34.771223, longitude: 137.595587 },
+    category: 'nature', icon: "⚓", rank: 4,
+    tagline: "Long jetties, red clay cliffs and lighthouses around a farming peninsula west of Adelaide.",
+    description: "Yorke Peninsula is a farming peninsula between Gulf St Vincent and Spencer Gulf, ringed by small coastal towns with long jetties. Ardrossan sits on top of red clay cliffs, Edithburgh has a tidal swimming pool and Wool Bay a jetty and lime kilns, and Port Victoria keeps a maritime museum. Corny Point Lighthouse looks over the far southwest, and an 1855 lighthouse stands on Troubridge Island offshore from Edithburgh.",
+    whyVisit: ["Walk out along historic jetties", "See lighthouses on far capes", "Swim in tidal pools and bays"],
+    whyVisitPhotos: ["Stenhouse Bay Jetty, Northwest view 20230208 2.jpg", "Cape Spencer lighthouse.JPG", ""],
+    highlights: ["Historic jetties", "Cape lighthouses", "Tidal pool swims"],
+    goodToKnow: [
+      { icon: "🌅", title: "Catch the cliffs at sunrise", detail: "Walk out on Ardrossan's jetty at sunrise to see the red clay cliffs lit up by the morning light." },
+      { icon: "🎫", title: "Troubridge Island needs a permit", detail: "The island is boat-only and needs a permit from the operator at Edithburgh, so arrange it well ahead." },
+    ],
+    bestMonths: [3, 4, 10, 11],
+    bestTimeBlurb: "{months} are mild enough for jetty walks and long coastal drives.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

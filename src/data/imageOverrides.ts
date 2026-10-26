@@ -698,6 +698,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Riverland": { x: 0.3, y: 0.45 },
   "File:Two pelicans rest on dead trees at Lake Bonney Riverland.jpg": { x: 0.5, y: 0.5 },
   "File:PS Industry, Renmark 01.jpg": { x: 0.4, y: 0.5 },
+  "Yorke Peninsula": { x: 0.25, y: 0.55, zoom: 1.5 },
+  "File:Cape Spencer lighthouse.JPG": { x: 0.65, y: 0.35, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2297,6 +2299,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Coorong National Park": "The Coorong.JPG",
   "Vulkathunha-Gammon Ranges National Park": "Gammon DSC03103 SA (37606902494).jpg",
   "Riverland": "Riverboat 02, Renmark, South Australia.JPG",
+  "Yorke Peninsula": "Corny point rainbow.jpg",
 };
 
 /**
