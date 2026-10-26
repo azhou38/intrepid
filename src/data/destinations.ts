@@ -1325,6 +1325,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are the warm months for swimming, boating and fishing on the bay, and the village is busiest then.",
   },
   {
+    id: 'beachport', name: "Beachport", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -37.48355, longitude: 140.008423 },
+    category: 'beach', icon: "🎣", rank: 4,
+    tagline: "A Rivoli Bay town with a long jetty, a floating salt lake and wild coastal parks",
+    description: "Beachport is a small town on Rivoli Bay on the Limestone Coast, about 385 km from Adelaide. An 1879 wool and grain store beside the old railway line is now a National Trust museum, and a long jetty reaches out over the bay. Around the town, a salt lake for floating, limestone cliffs in Beachport Conservation Park and the surf beaches and dunes of Canunda National Park fill a day or two.",
+    whyVisit: ["Float in a salt lake", "Walk limestone cliffs and coastal trails", "Stroll out on a historic jetty"],
+    whyVisitPhotos: ["", "", "Beachport pier.JPG"],
+    highlights: ["Salt lake float", "Coastal walks", "Historic jetty"],
+    goodToKnow: [
+      { icon: "🏕️", title: "Book park campsites", detail: "Campsites in the nearby parks must be booked before arrival, from $19.80 a night. Vehicle entry to each is free." },
+      { icon: "🏊", title: "Swim at the pool", detail: "The Pool of Siloam is free, with picnic tables, change rooms and a summer shower beside it." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Calm, warm days from {months} suit a float in the Pool of Siloam and walks along the clifftops.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

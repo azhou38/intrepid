@@ -712,6 +712,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:HMAS Whyalla (J153), 2017 (01).jpg": { x: 0.5, y: 0.45 },
   "Murray Bridge": { x: 0.5, y: 0.55, zoom: 1.3 },
   "Coffin Bay": { x: 0.5, y: 0.42, zoom: 1.4 },
+  "Beachport": { x: 0.5, y: 0.6, zoom: 1.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2320,6 +2321,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Ceduna": "Ceduna Jetty, Ceduna, 2017 (05).jpg",
   "Murray Bridge": "Murray Bridge road and rail bridges.JPG",
   "Coffin Bay": "Coffin Bay oyster beds, 2017 (03).jpg",
+  "Beachport": "BeachportJetty.JPG",
 };
 
 /**
