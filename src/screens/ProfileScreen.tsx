@@ -120,6 +120,11 @@ export default function ProfileScreen() {
     const t = r * r * (3 - 2 * r), h = cardHSV.value;
     return { opacity: 1 - t, transform: [{ translateY: -6 * t }, { scale: 1 - 0.06 * t }] };
   });
+  // The divider under the card shows only while the card does: it fades out as the bar pins.
+  const dividerStyle = useAnimatedStyle(() => {
+    const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
+    return { opacity: 1 - r * r * (3 - 2 * r) };
+  });
   const tabsStyle = useAnimatedStyle(() => {
     const r = Math.min(1, Math.max(0, (scrollSV.value - stickyYSV.value + FADE) / FADE));
     const t = r * r * (3 - 2 * r);
@@ -403,6 +408,7 @@ export default function ProfileScreen() {
             );
           })}
         </Animated.View>
+        <Animated.View pointerEvents="none" style={[styles.selectorDivider, dividerStyle]} />
         {/* The pinned bar's tab headings, in place of the card. */}
         <Animated.View
           pointerEvents={pinned ? 'auto' : 'none'}
@@ -852,6 +858,8 @@ const styles = StyleSheet.create({
   // count sits on a dark pill.
   // Its top strip (room for the small avatar and name; the sticky View's negative margin) overlaps the bottom of the
   // full header until it pins, so the page keeps its old spacing; the background fills in only once pinned (stuckStyle).
+  // A full-width gray line under the card, shown only when the selector is not pinned.
+  selectorDivider: { height: 1, marginHorizontal: -16, backgroundColor: '#E5E7EB' },
   selectorSticky: { paddingTop: COMPACT_H, paddingHorizontal: 16 },
   // The pinned bar's tab headings: plain text on the bar, the number and the level's name, with an underline.
   // Spans the bar edge to edge less the page margins, whichever box absolute offsets count from: left and right are equal.
