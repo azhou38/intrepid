@@ -713,11 +713,15 @@ function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?
       {tiles.map(t => (
         <View key={t.key} style={styles.tile}>
           {t.photo}
-          <Svg style={StyleSheet.absoluteFill} pointerEvents="none">
+          {/* The scrim sits only behind the text (the bottom half) and eases in over several stops, so there is no visible edge. */}
+          <Svg style={styles.tileScrim} pointerEvents="none">
             <Defs>
               <SvgLinearGradient id="tileScrim" x1="0" y1="0" x2="0" y2="1">
-                <Stop offset="0.35" stopColor="#000" stopOpacity={0} />
-                <Stop offset="1" stopColor="#000" stopOpacity={0.72} />
+                <Stop offset="0" stopColor="#000" stopOpacity={0} />
+                <Stop offset="0.3" stopColor="#000" stopOpacity={0.05} />
+                <Stop offset="0.6" stopColor="#000" stopOpacity={0.22} />
+                <Stop offset="0.85" stopColor="#000" stopOpacity={0.45} />
+                <Stop offset="1" stopColor="#000" stopOpacity={0.58} />
               </SvgLinearGradient>
             </Defs>
             <Rect width="100%" height="100%" fill="url(#tileScrim)" />
@@ -952,8 +956,9 @@ const styles = StyleSheet.create({
   // The Explored photo grid: square tiles, three across.
   tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  tileScrim: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '55%' },
   tileText: { position: 'absolute', left: 8, right: 8, bottom: 8 },
-  tileName: { fontSize: 13, fontWeight: '700', color: 'white' },
+  tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
   tileSub:  { flexShrink: 1, fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
   // Destinations Explored's rows: photo, name, country and spots visited; about five rows, then the list scrolls.
