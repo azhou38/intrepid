@@ -11,7 +11,8 @@ import type { AvatarCrop } from '../types';
 // The profile's avatar: its photo when one is set (placed by its crop when it has one, else centred, filling the
 // circle), else its first initial on the app's indigo.
 export function ProfileAvatar({ uri, name, size, crop }: { uri: string | null; name: string; size: number; crop?: AvatarCrop | null }) {
-  const box = { width: size, height: size, borderRadius: size / 2 };
+  // A faint thin gray border all round, on the photo and the initial alike.
+  const box = { width: size, height: size, borderRadius: size / 2, borderWidth: 1, borderColor: '#D1D5DB' };
   if (uri && crop) {
     return (
       <View style={[box, st.avatarBg, { overflow: 'hidden' }]}>
