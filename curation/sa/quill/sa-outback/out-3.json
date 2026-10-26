@@ -1,0 +1,227 @@
+{
+ "spots": {
+  "pink-roadhouse-oodnadatta": {
+   "name": "Pink Roadhouse",
+   "icon": "🩷",
+   "category": "landmark",
+   "bio": "Pink roadhouse in Oodnadatta, the Oodnadatta Track's fuel stop, post office and information hub.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -27.5489639,
+    "longitude": 135.447967
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://pinkroadhouse.com.au/",
+   "coordinates_source": "OSM shop=convenience 'Pink Roadhouse' via Nominatim (MEDIUM)",
+   "notes": [
+    "Free to stop; meals and fuel are paid extras. Site pinkroadhouse.com.au title 'The Pink Roadhouse - On the Oonadatta Track' (sic)."
+   ]
+  },
+  "railway-tjukurpa-museum": {
+   "name": "Railway Tjukurpa Museum",
+   "icon": "🚂",
+   "category": "museum",
+   "bio": "Museum in Oodnadatta's old Ghan railway station; the key is collected from the Pink Roadhouse.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -27.5459801,
+    "longitude": 135.4476922
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "No official site found; run by the community, key held at the Pink Roadhouse.",
+   "coordinates_source": "OSM tourism=museum 'Oodnadatta Railway Station Museum' (Nominatim); Wikivoyage listing -27.546114,135.447715 is 18 m away (HIGH)",
+   "notes": [
+    "No fee found in any source; marked free but unverified. Key from Pink Roadhouse or Transcontinental Hotel."
+   ]
+  },
+  "marree": {
+   "name": "Marree",
+   "icon": "🚂",
+   "category": "historic",
+   "bio": "Outback railway town at the start of the Birdsville and Oodnadatta Tracks, with the historic Marree Hotel.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.64747,
+    "longitude": 138.06356
+   },
+   "wiki": "Marree, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town with no single steward.",
+   "coordinates_source": "OSM boundary=administrative centre via resolve-pin (MEDIUM); Commons main-street photos at -29.64703,138.0631",
+   "notes": [
+    "Town as a draw per Wikivoyage and Flinders & Outback."
+   ]
+  },
+  "marree-mosque": {
+   "name": "Marree Mosque",
+   "icon": "🕌",
+   "category": "religious",
+   "bio": "A 2003 recreation of Australia's first mosque, a mud-brick building raised by Afghan cameleers around 1882.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -29.6456535,
+    "longitude": 138.0633097
+   },
+   "wiki": "Marree Mosque",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No steward site.",
+   "coordinates_source": "OSM building=ruins 'Marree Mosque' (Nominatim); Commons photo of the 1884 mosque at -29.6455,138.063 agrees (HIGH). Wikipedia's -29.651346 is 650 m south and was not used",
+   "notes": [
+    "OSM tags the site as ruins and Wikipedia calls it a former mosque; Wikivoyage says a recreation used by the local Afghan community. Visitors see it from outside. Worth confirming access."
+   ]
+  },
+  "mungerannie-hotel": {
+   "name": "Mungerannie Hotel",
+   "icon": "🍺",
+   "category": "landmark",
+   "bio": "Outback pub on the Birdsville Track, its bar ceiling covered in stockmen's hats and other memorabilia.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -28.0186168,
+    "longitude": 138.6632836
+   },
+   "wiki": "Mungeranie, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Official domain mungeranniehotel.com.au is unconfirmed (new owners; site may have changed); see needs_browser.",
+   "coordinates_source": "OSM amenity=pub 'Mungerannie Hotel' (Nominatim) (MEDIUM)",
+   "notes": [
+    "Renamed from 'Mungerannie' (draft) to the pub it is; icon changed. Free to stop; drinks, meals, camping are paid extras."
+   ]
+  },
+  "andamooka": {
+   "name": "Andamooka",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Opal-mining village near Roxby Downs where visitors can noodle for opal on the old mullock heaps.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -30.450923,
+    "longitude": 137.164445
+   },
+   "wiki": "Andamooka, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town with no single steward.",
+   "coordinates_source": "OSM place=village via resolve-pin (MEDIUM)",
+   "notes": [
+    "Fossicking: never on registered claims. Andamooka Observatory runs paid noodling tours (not priced here)."
+   ]
+  },
+  "arid-recovery-reserve": {
+   "name": "Arid Recovery Reserve",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Fenced desert reserve north of Roxby Downs where rare native species are seen on sunset tours.",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -30.4778,
+    "longitude": 136.8931
+   },
+   "free": false,
+   "costMin": 100,
+   "costMax": 100,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://aridrecovery.org.au/visit/tours",
+   "coordinates_source": "LOW: approximate point on Borefield Road at Olympic Dam (OSM highway); the tour gate is 12 km along Borefield Road from Olympic Way per Roxby Downs Council, no gate coordinates found",
+   "notes": [
+    "pin: LOW. Adult (16+) $100 plus booking fees, child $50, from aridrecovery.org.au/visit/tours; 2.5 h, Fridays April-October (extra Wednesdays in school holidays). Booked through Roxby Downs Visitor Information Centre."
+   ]
+  },
+  "woomera-missile-park": {
+   "name": "Woomera Missile Park",
+   "icon": "🚀",
+   "category": "museum",
+   "bio": "Open-air display of missiles and rockets developed at the Woomera range, in a park in the town centre.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.198311,
+    "longitude": 136.825112
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Town-run open park, no official page.",
+   "coordinates_source": "Median of 5 geotagged Commons 'Woomera Missile Park' files (spread ~40 m); Wikivoyage places it at Banool and Dewrang Avenues (MEDIUM)",
+   "notes": [
+    "Single-source point; no OSM feature found."
+   ]
+  },
+  "woomera-heritage-centre": {
+   "name": "Woomera Heritage Centre",
+   "icon": "🛰️",
+   "category": "museum",
+   "bio": "Museum in Woomera's heritage and visitor centre on the history of the Rocket Range.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -31.1998425,
+    "longitude": 136.8261022
+   },
+   "free": false,
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticket_note": "woomera.com.au answers 200 on every path with a splash page, so unconfirmed; needs browser.",
+   "coordinates_source": "OSM tourism=information 'Woomera Heritage and Visitor Information Centre', Dewrang Avenue (Photon) (MEDIUM)",
+   "notes": [
+    "Price conflicts: Wikivoyage $6, an older listing $3 adult. $6 used; unverified."
+   ]
+  },
+  "lake-hart": {
+   "name": "Lake Hart",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "Salt lake beside the Stuart Highway, seen pink from the roadside Lake Hart Lookout.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.2335747,
+    "longitude": 136.4051521
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No steward page.",
+   "coordinates_source": "OSM 'Lake Hart Lookout' (tourism=camp_site / amenity=shelter) on the Stuart Highway (Nominatim) (MEDIUM); the lake itself is at -31.144,136.385",
+   "notes": [
+    "Lake lies within the Woomera Test Range; only the highway lookout is a public stop. Wikipedia title 'Lake Hart (South Australia)' does not exist (redlink), so wiki omitted. 'Pink' per southaustralia.com; colour varies with season."
+   ]
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "railway-tjukurpa-museum: cost (no fee found, marked free)",
+  "woomera-heritage-centre: adult price $6 vs $3 in older listing",
+  "marree-mosque: public access (OSM ruins vs Wikivoyage recreation)",
+  "lake-hart: pink colour is seasonal/sourced from tourism page only"
+ ],
+ "needs_browser": [
+  {
+   "id": "mungerannie-hotel",
+   "url": "https://www.mungeranniehotel.com.au",
+   "why": "domain unconfirmed; fetch failed"
+  },
+  {
+   "id": "woomera-heritage-centre",
+   "url": "https://www.woomera.com.au/",
+   "why": "splash page, deep links return 200 for any path; find the Heritage Centre page and price"
+  }
+ ],
+ "notes": [
+  "Pin LOW: arid-recovery-reserve (gate not found; placeholder on Borefield Road)",
+  "Nominatim rate-limited mid-run; Photon and Commons geotags used as second sources."
+ ]
+}

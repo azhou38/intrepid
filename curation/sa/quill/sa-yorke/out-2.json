@@ -1,0 +1,225 @@
+{
+ "spots": {
+  "yorke-peninsula-4": {
+   "name": "Edithburgh Jetty",
+   "icon": "🤿",
+   "category": "landmark",
+   "bio": "Jetty where divers and snorkellers find seahorses, Port Jackson sharks and leafy sea dragons.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.084796,
+    "longitude": 137.749608
+   },
+   "coordinates_source": "OSM man_made=pier \"Edithburgh Jetty\" (MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Edithburgh Jetty",
+   "ticket_note": "open public jetty, no single steward site"
+  },
+  "yorke-peninsula-5": {
+   "name": "Corny Point Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "1882 lighthouse reserve at the peninsula's south-western corner, reached by Lighthouse Road.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.896623,
+    "longitude": 137.010552
+   },
+   "coordinates_source": "OSM man_made=lighthouse + Wikipedia coordinates within 5 m (HIGH)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Corny Point Lighthouse",
+   "ticket_note": "no verified official page; free self-guided reserve"
+  },
+  "yorke-peninsula-6": {
+   "name": "Yorketown Pink Lakes",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "Salt lakes on the Yorke Peninsula Salt Lake Trail, with a viewing platform at Pink Lake and a boardwalk at Par Lake.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.041694,
+    "longitude": 137.585241
+   },
+   "coordinates_source": "OSM tourism=viewpoint \"Pink Lake Viewing Area\" (MEDIUM; Pink Lake water body -35.041919,137.590479 agrees within 500 m)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Yorketown, South Australia",
+   "ticket_note": "no single steward; lakes are open roadside",
+   "notes": "Wiki title is the town article (not this place); consider omitting wiki so photo lookup uses name. Par Lake boardwalk not separately pinned."
+  },
+  "yorke-peninsula-7": {
+   "name": "Wool Bay Jetty and Lime Kilns",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Old port jetty and cliff-top lime kilns with a lookout on the coast road.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.994426,
+    "longitude": 137.75885
+   },
+   "coordinates_source": "OSM man_made=pier \"Jetty\" at Wool Bay (HIGH per resolve-pin; generic name, locality place node -34.98900,137.75371 is ~700 m away)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Wool Bay, South Australia",
+   "ticket_note": "open heritage stop, no steward site",
+   "notes": "Pin is the jetty; lime kilns sit on the cliff top nearby, not separately resolved in OSM."
+  },
+  "yorke-peninsula-8": {
+   "name": "Port Victoria",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Western-coast town, the last windjammer grain port, with an 1878 jetty, a maritime museum and a coastal geology trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.497284,
+    "longitude": 137.484763
+   },
+   "coordinates_source": "OSM place=village \"Port Victoria\" (Nominatim+Photon, MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Port Victoria, South Australia",
+   "ticket_note": "town; no single steward"
+  },
+  "yorke-peninsula-9": {
+   "name": "Port Victoria Maritime Museum",
+   "icon": "🚢",
+   "category": "museum",
+   "bio": "1877 cargo shed by the jetty telling the story of the windjammer grain races.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.496072,
+    "longitude": 137.482386
+   },
+   "coordinates_source": "OSM tourism=museum + Wikipedia coordinates (HIGH, ~210 m from the Port Victoria town pin)",
+   "costBasis": "entry",
+   "wiki": "Port Victoria Maritime Museum",
+   "costMin": 2,
+   "costMax": 2,
+   "currency": "AUD",
+   "ticket_note": "no official museum website found; only the History Trust SA community-history listing",
+   "notes": "$2.00 per person, family $5.00, child $0.50 from History Trust SA listing (may be dated). National Trust museum; open weekends afternoons per Atlas note."
+  },
+  "yorke-peninsula-10": {
+   "name": "Minlaton Harry Butler Red Devil Memorial",
+   "icon": "✈️",
+   "category": "monument",
+   "bio": "Free display of the Red Devil monoplane that made the first airmail flight over the sea.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.7678129,
+    "longitude": 137.5977364
+   },
+   "coordinates_source": "OSM (Nominatim) \"Harry Butler Red Devil Memorial\" building, Maitland Road Minlaton (MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Harry Butler (aviator)",
+   "ticket_note": "roadside memorial; no steward site"
+  },
+  "yorke-peninsula-11": {
+   "name": "Port Vincent",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside town on the east coast of the Yorke Peninsula with a beach and jetty.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.777253,
+    "longitude": 137.861292
+   },
+   "coordinates_source": "OSM place=town \"Port Vincent\" (Nominatim+Photon, MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Port Vincent, South Australia",
+   "ticket_note": "town; no single steward"
+  },
+  "yorke-peninsula-12": {
+   "name": "Point Turton",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "1876 jetty still used by fishers and white beaches on Hardwicke Bay, with boating and diving.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.94217,
+    "longitude": 137.3495887
+   },
+   "coordinates_source": "OSM place=town \"Point Turton\" (Nominatim+Photon, MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Point Turton, South Australia",
+   "ticket_note": "town; no single steward"
+  },
+  "yorke-peninsula-13": {
+   "name": "Corny Point",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf breaks and three swimming beaches, with a coastal drive from Corny Point to Berry Bay.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.9115273,
+    "longitude": 137.0141425
+   },
+   "coordinates_source": "OSM natural=beach \"Berry Bay\" (Nominatim, MEDIUM); town node -34.92633,137.08476 not used so the pin sits on the coast, 1.7 km from the lighthouse",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Corny Point, South Australia",
+   "ticket_note": "coast and town; no single steward"
+  },
+  "yorke-peninsula-14": {
+   "name": "Black Point",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Safe white-sand beach with no rips, good for crabbing and swimming, beside Pine Point.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.614722,
+    "longitude": 137.897501
+   },
+   "coordinates_source": "OSM place=village \"Black Point\" (Nominatim+Photon, MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Black Point, South Australia",
+   "ticket_note": "village beach; no single steward"
+  },
+  "yorke-peninsula-15": {
+   "name": "Sultana Point",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "White-sand swimming beach south of Edithburgh, at the end of the mosaic walking trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.113401,
+    "longitude": 137.756331
+   },
+   "coordinates_source": "OSM boundary=administrative \"Sultana Point\" locality point (Nominatim, MEDIUM; Wikipedia coords -35.11389,137.75944 within 300 m)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Sultana Point",
+   "ticket_note": "open beach; no single steward",
+   "notes": "Locality point, not a surveyed beach feature; verify on map."
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "yorke-peninsula-9 museum fee $2 from History Trust SA listing, not an operator page; opening times not confirmed",
+  "Bios of yorke-peninsula-12 (1876 jetty), -13, -7 rest on tourism-board text read in the Atlas notes, not re-fetched"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Overpass was down; pins from Nominatim/Photon OSM features",
+  "Yorketown Pink Lakes: Par Lake boardwalk not separately pinned",
+  "No park pass or park fees apply to any spot in this shard"
+ ]
+}

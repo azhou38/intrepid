@@ -1,0 +1,235 @@
+{
+ "spots": {
+  "kangaroo-island-13": {
+   "name": "Pennington Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A white-sand surf beach on the south coast, with a lookout over the bay.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.85628,
+    "longitude": 137.74128
+   },
+   "coordinates_source": "OSM natural=bay (Nominatim) 'Pennington Bay'; resolve-pin HIGH but a bay centroid (no natural=beach feature in OSM), may sit at the shoreline",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Wikivoyage says 'don't miss Pennington Bay' under Prospect Hill; pin 1.5 km SSE of Prospect Hill"
+   ],
+   "wiki": "Pennington Bay, South Australia",
+   "ticket_note": "Open beach, no single steward"
+  },
+  "kangaroo-island-14": {
+   "name": "Prospect Hill",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "About 500 steps climb Prospect Hill to a 360-degree view, as Matthew Flinders did in 1802.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.842988,
+    "longitude": 137.745109
+   },
+   "coordinates_source": "OSM natural=peak + tourism=viewpoint 'Prospect Hill', 65 m; Commons photo median within 10 m (resolve-pin HIGH)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "Prospect Hill (South Australia)",
+   "ticket_note": "Open lookout climb, no operator page; Wikivoyage also names it Mt Thisby"
+  },
+  "kangaroo-island-15": {
+   "name": "Emu Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A 4 km white-sand swimming beach with a 100-year-old jetty and boat ramp, on the island's north coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.594181,
+    "longitude": 137.508616
+   },
+   "coordinates_source": "OSM natural=beach 'Emu Bay Beach' (Nominatim); resolve-pin returned the bay centroid, the beach feature used instead (MEDIUM)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "Emu Bay, South Australia",
+   "ticket_note": "Open beach, no single steward"
+  },
+  "kangaroo-island-16": {
+   "name": "Kingscote",
+   "icon": "🏘️",
+   "category": "landmark",
+   "bio": "The island's largest town, with a harbour and the site of South Australia's first European settlement.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.652485,
+    "longitude": 137.636752
+   },
+   "coordinates_source": "OSM place=town 'Kingscote' (Photon/Nominatim); Wikipedia article point 255 m away",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Destination draft centre (-35.65305556,137.63416667) is ~220 m from this pin: fine, but the destination hub must not reuse the Kingscote spot's exact point"
+   ],
+   "wiki": "Kingscote, South Australia",
+   "ticket_note": "Town, no single steward"
+  },
+  "kangaroo-island-17": {
+   "name": "Reeves Point",
+   "icon": "📜",
+   "category": "historic",
+   "bio": "The site of South Australia's first settlement, with a lookout, the Mulberry Tree and interpretive signs.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.644255,
+    "longitude": 137.637777
+   },
+   "coordinates_source": "OSM landuse=grass 'Reeves Point Historic Site' (Nominatim); Wikivoyage Reeves Point listing -35.6442,137.6383 agrees within 50 m (HIGH)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "Mulberry tree/lookout; the Reeves Jetty ruin (-35.64133,137.6412) is ~400 m east, not used as the pin"
+   ],
+   "ticket_note": "Open historic site, no official page verified"
+  },
+  "kangaroo-island-18": {
+   "name": "Kingscote Pelican Feeding",
+   "icon": "🦩",
+   "category": "entertainment",
+   "bio": "Pelicans are fed daily at 5 pm behind the Kangaroo Island Marine Centre, free with donations welcome.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "LOW: no OSM feature found for this place (Nominatim/Photon/resolve-pin); not guessed",
+   "free": true,
+   "costBasis": "donation",
+   "notes": [
+    "pin: LOW",
+    "pin: LOW. KI Marine Centre not found in OSM/Photon; Kingscote waterfront, needs agency/operator point"
+   ],
+   "ticket_note": "Run behind the Kangaroo Island Marine Centre; its own site not verified, so no link. Free, donations appreciated (Wikivoyage); 5 pm daily"
+  },
+  "kangaroo-island-19": {
+   "name": "Kingscote Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A 25 m silo mural of a kangaroo and a glossy black cockatoo at Kingscote.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -35.650765,
+    "longitude": 137.628611
+   },
+   "coordinates_source": "OSM tourism=artwork 'Kingscote Silo Art' (resolve-pin MEDIUM)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "ticket_note": "Public artwork, no steward"
+  },
+  "kangaroo-island-20": {
+   "name": "Kingscote Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "A jetty used for fishing and sunsets, with leafy sea dragons around the pylons for snorkellers.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "LOW: no OSM feature found for this place (Nominatim/Photon/resolve-pin); not guessed",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW",
+    "pin: LOW. Nominatim 'Kingscote Jetty' only returns Reeves Point Jetty (ruin, already Reeves Point's area), not the main town jetty"
+   ],
+   "ticket_note": "Public jetty, no steward"
+  },
+  "kangaroo-island-21": {
+   "name": "Hope Cottage National Trust Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A National Trust museum in an 1850s cottage, holding the island's settler-era heritage collection.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.646343,
+    "longitude": 137.634438
+   },
+   "coordinates_source": "OSM tourism=attraction 'Hope Cottage Museum'; second OSM tourism=museum node within 20 m (resolve-pin HIGH)",
+   "costBasis": "entry",
+   "notes": [
+    "National Trust page checked (title 'Hope Cottage'): adult $10, child $3, concession $6; open daily 1-4 pm, closed August (not in copy). Cottage built c.1857, so bio says 1850s not 1856"
+   ],
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/hope-cottage/"
+  },
+  "kangaroo-island-22": {
+   "name": "American River",
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "A fishing village on Pelican Lagoon with a wharf, walks, wildlife and local oysters.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.786017,
+    "longitude": 137.769892
+   },
+   "coordinates_source": "OSM place=village 'American River' (Photon); Wikipedia point 1 km north was the lagoon-side town hint only",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "American River, South Australia",
+   "ticket_note": "Village, no single steward"
+  },
+  "kangaroo-island-23": {
+   "name": "Red Banks Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Red-orange cliffs about 15 minutes north of American River, best at sunset.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "LOW: no OSM feature found for this place (Nominatim/Photon/resolve-pin); not guessed",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW",
+    "Tourism board page gives no coordinates and OSM has no Red Banks Beach on Kangaroo Island: pin LOW, raise to owner (about 15 min north of American River)"
+   ],
+   "ticket_note": "Open beach/cliffs, no steward"
+  },
+  "kangaroo-island-24": {
+   "name": "Penneshaw",
+   "icon": "⛴️",
+   "category": "landmark",
+   "bio": "The ferry arrival village on the Dudley Peninsula, with the Gateway visitor centre.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.7176662,
+    "longitude": 137.9395439
+   },
+   "coordinates_source": "OSM place=village 'Penneshaw' (Nominatim/Photon)",
+   "free": true,
+   "costBasis": "open",
+   "notes": [],
+   "wiki": "Penneshaw, South Australia",
+   "ticket_note": "Town; Gateway Visitor Information Centre page not verified"
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "kangaroo-island-18 Kingscote Pelican Feeding: 5 pm daily and free-with-donation from Wikivoyage only; no operator page",
+  "kangaroo-island-13/15/23 free open-access status assumed from beach/lookout nature, no agency page checked",
+  "kangaroo-island-17 Reeves Point: no heritage-site page fetched for access/cost"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "LOW pins (coordinates null): kangaroo-island-18, -20, -23",
+  "No spot judged not-to-add"
+ ]
+}

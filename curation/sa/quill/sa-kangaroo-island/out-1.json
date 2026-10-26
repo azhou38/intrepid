@@ -1,0 +1,386 @@
+{
+ "spots": {
+  "kangaroo-island-1": {
+   "name": "Flinders Chase National Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Kangaroo Island's western national park of coast, bush and rivers, home to Remarkable Rocks, Admirals Arch and a fur seal colony.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -35.95225,
+    "longitude": 136.736955
+   },
+   "costMin": 14.9,
+   "costMax": 14.9,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Adult/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "Commons geotagged files median at the Flinders Chase visitor centre / Rocky River area (LOW: single source; matches NPWS address 8125 South Coast Road; not the reserve centroid)",
+   "notes": [
+    "NPWS: one-day adult entry $14.90, two-day $22.40 (page headline shows the two-day $22.40); fees payable online or at the visitor centre.",
+    "pin: LOW"
+   ]
+  },
+  "kangaroo-island-2": {
+   "name": "Remarkable Rocks",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "Wind-shaped granite boulders on a dome above the Southern Ocean, reached by an accessible boardwalk from the car park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -36.048187,
+    "longitude": 136.75716
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "OSM natural=rock 'Remarkable Rocks' (nominatim); Wikivoyage -36.0491,136.7564 within 100 m (HIGH)",
+   "notes": [
+    "Inside Flinders Chase: needs parkPass 'flinders-chase' (adult one-day $14.90, two-day $22.40); pass entry must be added to src/data/parkPasses.ts. May close in severe weather per NPWS."
+   ]
+  },
+  "kangaroo-island-3": {
+   "name": "Admirals Arch",
+   "icon": "🦭",
+   "category": "landmark",
+   "bio": "A rock arch at Cape du Couedic where a colony of long-nosed fur seals plays below a steep boardwalk and viewing platforms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -36.063208,
+    "longitude": 136.704739
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "OSM natural=bare_rock 'Admirals Arch' (nominatim); Wikivoyage -36.0632,136.70474 identical (HIGH)",
+   "notes": [
+    "Inside Flinders Chase: parkPass 'flinders-chase'. Boardwalk is steep with steps; may close in severe weather."
+   ]
+  },
+  "kangaroo-island-4": {
+   "name": "Seal Bay Conservation Park",
+   "icon": "🦭",
+   "category": "nature",
+   "bio": "Boardwalk and guided beach tours through the dunes to watch an endangered Australian sea lion colony on Seal Bay's sand.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.9923796,
+    "longitude": 137.3190723
+   },
+   "costMin": 20.7,
+   "costMax": 44,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.sa.gov.au/experiences/seal-bay",
+   "coordinates_source": "OSM tourism=information office 'Seal Bay Visitor Information Centre' (nominatim; visitor point, not the park centroid)",
+   "notes": [
+    "NPWS fees (valid to 30 Jun 2027): self-guided boardwalk $20.70 adult, guided beach tour $44.00 adult; open 9am-5pm daily, last entry 4pm. NPWS alert: beach access temporarily paused, boardwalk with roaming guide open; the draft hint (-35.9986,137.3625) was not used."
+   ]
+  },
+  "kangaroo-island-5": {
+   "name": "Kelly Hill Caves",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "A cave visited only on guided audio-visual tours, with stalactites, helictites and columns beneath Kelly Hill's old dunes.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.980099,
+    "longitude": 136.905898
+   },
+   "costMin": 31,
+   "costMax": 31,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kelly-hill-conservation-park",
+   "coordinates_source": "OSM natural=cave_entrance 'Kelly Hill Caves' (nominatim); OSM tourism=attraction -35.97903,136.90574 and Wikivoyage -35.9805,136.9062 within 120 m (HIGH)",
+   "notes": [
+    "NPWS: cave only by booked guided tour, $31 adult; open daily 9am-5pm except 25 Dec. Tour duration not stated by source; visit range is an estimate."
+   ]
+  },
+  "kangaroo-island-6": {
+   "name": "Vivonne Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long white beach and jetty on the south coast, with calm water on the Harriet River nearby for swimming and kayaking.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.979568,
+    "longitude": 137.186256
+   },
+   "wiki": "Vivonne Bay, South Australia (locality)",
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM natural=beach 'Vivonne Bay Beach' (nominatim); Commons geotag median -35.9822,137.1845 within ~300 m",
+   "notes": [
+    "Beach with no single steward, so no ticketUrl."
+   ]
+  },
+  "kangaroo-island-7": {
+   "name": "Little Sahara",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Two square kilometres of towering dunes on the South Coast Road, where you hire a board or toboggan to slide down.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.954207,
+    "longitude": 137.247816
+   },
+   "wiki": "Little Sahara (Kangaroo Island)",
+   "costMin": 37,
+   "costMax": 37,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "costPer": "Board Hire (1 hr)",
+   "ticketUrl": "https://littlesahara.com.au/",
+   "coordinates_source": "OSM natural=sand 'Little Sahara' (nominatim); OSM viewpoint -35.95204,137.24741 and Commons median -35.9514,137.2460 within 300 m",
+   "notes": [
+    "Price is the Little Sahara Adventure Centre board/toboggan hire: $37 for 1 hour with the second hour free ($47 annual pass). Dunes are on the operator's land."
+   ]
+  },
+  "kangaroo-island-8": {
+   "name": "Cape du Couedic Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "A lighthouse on Cape du Couedic's cliffs, a short walk from Admirals Arch, with storeroom remains and a flying fox nearby.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -36.057971,
+    "longitude": 136.705145
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "OSM man_made=lighthouse 'Cape du Couedic Lighthouse' (nominatim); Atlas hint -36.0595,136.7040 within 200 m (HIGH)",
+   "notes": [
+    "Inside Flinders Chase: parkPass 'flinders-chase'. Exterior only. About 600 m from the Admirals Arch pin."
+   ]
+  },
+  "kangaroo-island-9": {
+   "name": "Cape Borda Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "A square stone lighthouse built in 1858 on the northwest cliffs, with a self-guided tour of the keepers' settlement.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.752788,
+    "longitude": 136.593356
+   },
+   "wiki": "Cape Borda Lightstation",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cape-borda-lightstation",
+   "coordinates_source": "OSM man_made=lighthouse 'Cape Borda Lighthouse' (nominatim) plus a second OSM node 2 m away; Atlas hint within 20 m (HIGH)",
+   "notes": [
+    "NPWS lightstation page says 'Free entry'; the Tour Pass comparison page says the self-guided tour is 'included in Flinders Chase National Park entry fees'. Conflict recorded as unverified."
+   ]
+  },
+  "kangaroo-island-10": {
+   "name": "Kangaroo Island Wildlife Park",
+   "icon": "🐨",
+   "category": "entertainment",
+   "bio": "A walk-through wildlife park on the South Coast Road where you hand-feed kangaroos and cuddle koalas among native animals.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.9234035,
+    "longitude": 137.3047832
+   },
+   "costMin": 37,
+   "costMax": 37,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://kangarooislandwildlifepark.com/",
+   "coordinates_source": "OSM tourism=zoo 'Kangaroo Island Wildlife Park' (nominatim), South Coast Road",
+   "notes": [
+    "Official site gives 3115 South Coast Road, Seal Bay (adult $37, concession $32, child $22), not 'near Parndana' as an older Wikivoyage listing says (4068 Playford Hwy); the OSM point is on the South Coast Road, so the draft's placement note is outdated."
+   ]
+  },
+  "kangaroo-island-11": {
+   "name": "Kangaroo Island Wilderness Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 66 km, five-day walk through southwest Kangaroo Island's botanically unique bush to its remote Southern Ocean coast.",
+   "visitHoursMin": 40,
+   "visitHoursMax": 50,
+   "coordinates": null,
+   "needs": "booking",
+   "ticketUrl": "https://www.parks.sa.gov.au/experiences/kiwt",
+   "coordinates_source": "No route in OpenStreetMap and no halfway point found; LOW, left for the owner",
+   "notes": [
+    "pin: LOW. Midpoint of the whole route needed from the NPWS trail map (starts at the Flinders Chase visitor centre). Visit hours are walking hours over five days (estimate). Fee not on the NPWS page (forum quotes of $161 independent are from 2016, unverified)."
+   ],
+   "pin": "LOW"
+  },
+  "kangaroo-island-12": {
+   "name": "Stokes Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach reached through a boulder-lined cave tunnel, opening onto white sand and rock pools on the north coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.621278,
+    "longitude": 137.209484
+   },
+   "wiki": "Stokes Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM natural=beach 'Stokes Bay Beach' (nominatim); Commons geotag median -35.6215,137.2088 within 60 m (HIGH)",
+   "notes": [
+    "Open beach; no single steward."
+   ]
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "kangaroo-island",
+    "name": "Kangaroo Island",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.655159,
+     "longitude": 137.633344
+    },
+    "coordinates_source": "OSM landuse=residential 'Kingscote' (nominatim), 250 m from Wikipedia's Kingscote point; town centre, not any spot's pin (MEDIUM; no place=town node reachable)",
+    "category": "island",
+    "defaultZoomSpanKm": 160,
+    "rank": 2,
+    "icon": "🦘",
+    "tagline": "Australia's third-largest island, with sea lions, fur seals and a wild granite coast",
+    "description": "Kangaroo Island lies off South Australia's Fleurieu Peninsula, with Kingscote as its main town and the ferry reaching Penneshaw. Flinders Chase National Park fills the wild west, while the south coast has sea lion beaches, caves and dunes and the north coast has sheltered bays. Wildlife is the draw, from Australian sea lions and long-nosed fur seals to kangaroos and koalas. Distances are long, so most visitors base in Kingscote, Penneshaw or American River and drive out.",
+    "whyVisit": [
+     "Watch sea lions and fur seals",
+     "See Remarkable Rocks above the ocean",
+     "Walk remote coast and bush",
+     "Slide down towering sand dunes"
+    ],
+    "highlights": [
+     "Seals and sea lions",
+     "Remarkable Rocks",
+     "Coastal bushwalks",
+     "Sand dune sliding"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Kangaroo Island Tour Pass",
+      "detail": "The $95 adult pass gives 12 months of Flinders Chase entry plus Seal Bay, Cape Borda, Cape Willoughby and Kelly Hill. Buy it in person only."
+     },
+     {
+      "icon": "🚗",
+      "title": "Drive carefully at dusk",
+      "detail": "Wildlife crosses the roads at dawn and dusk, so slow down and carry water and snacks for the long drives to the west."
+     },
+     {
+      "icon": "🕳️",
+      "title": "Book the cave tour",
+      "detail": "Kelly Hill Caves can only be entered on a guided tour, and spaces are limited, so book ahead online."
+     }
+    ],
+    "bestMonths": [
+     9,
+     10,
+     11,
+     3,
+     4,
+     5
+    ],
+    "bestTimeBlurb": "Spring wildflowers and mild autumn days suit walking from {months}, and winter fills the creeks."
+   },
+   "spots": [
+    "kangaroo-island-1",
+    "kangaroo-island-2",
+    "kangaroo-island-3",
+    "kangaroo-island-4",
+    "kangaroo-island-5",
+    "kangaroo-island-6",
+    "kangaroo-island-7",
+    "kangaroo-island-8",
+    "kangaroo-island-9",
+    "kangaroo-island-10",
+    "kangaroo-island-11",
+    "kangaroo-island-12",
+    "kangaroo-island-13",
+    "kangaroo-island-14",
+    "kangaroo-island-15",
+    "kangaroo-island-16",
+    "kangaroo-island-17",
+    "kangaroo-island-18",
+    "kangaroo-island-19",
+    "kangaroo-island-20",
+    "kangaroo-island-21",
+    "kangaroo-island-22",
+    "kangaroo-island-23",
+    "kangaroo-island-24",
+    "kangaroo-island-25",
+    "kangaroo-island-26",
+    "kangaroo-island-27",
+    "kangaroo-island-28",
+    "kangaroo-island-29",
+    "kangaroo-island-30",
+    "kangaroo-island-31",
+    "kangaroo-island-32",
+    "kangaroo-island-33",
+    "kangaroo-island-34",
+    "kangaroo-island-35",
+    "kangaroo-island-36",
+    "kangaroo-island-37",
+    "kangaroo-island-38",
+    "kangaroo-island-39",
+    "kangaroo-island-40",
+    "kangaroo-island-41",
+    "kangaroo-island-42",
+    "kangaroo-island-43",
+    "kangaroo-island-44",
+    "kangaroo-island-45",
+    "kangaroo-island-46",
+    "kangaroo-island-47",
+    "kangaroo-island-48",
+    "kangaroo-island-49",
+    "kangaroo-island-50",
+    "kangaroo-island-51",
+    "kangaroo-island-52",
+    "kangaroo-island-53",
+    "kangaroo-island-54",
+    "kangaroo-island-55",
+    "kangaroo-island-56"
+   ],
+   "notes": [
+    "Draft spot order kept; the other 44 spots are in other shards.",
+    "Span 160 km: Cape Borda (~94 km W) and Cape du Couedic (~85 km SW) lie inside 120 km.",
+    "Kingscote pin MEDIUM from a landuse polygon; Overpass was unreachable for a place=town node."
+   ]
+  }
+ ],
+ "unverified": [
+  "Kangaroo Island Wilderness Trail: fee and current independent-walker access not on the NPWS page",
+  "Cape Borda Lighthouse: 'Free entry' (park page) vs 'included in Flinders Chase entry' (pass page)",
+  "Kelly Hill Caves tour duration and other visit lengths are estimates",
+  "Kangaroo Island Tour Pass $95 was a promotional reduced price until 6 April 2026 per NPWS",
+  "Destination bestMonths (Sep-Nov, Mar-May) rest on NPWS season text, not a ranked guide"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Add pass 'flinders-chase' ({name:'Flinders Chase', costMin:14.9, note: NPWS adult one-day; two-day $22.40}) to src/data/parkPasses.ts before apply; it covers Remarkable Rocks, Admirals Arch, Cape du Couedic Lighthouse.",
+  "LOW pins: Flinders Chase National Park (Commons median at visitor area), Kangaroo Island Wilderness Trail (no coordinates)."
+ ]
+}
