@@ -5,7 +5,7 @@ import {
 import { Search, X, Pencil } from 'lucide-react-native';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
-import Svg, { Path, Circle, Rect } from 'react-native-svg';
+import Svg, { Path, Circle, Rect, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 // Top Countries' tab swipe, and the chips' sideways scroller (gesture-handler's, so the two cooperate).
 import { Gesture, GestureDetector, ScrollView as GHScrollView } from 'react-native-gesture-handler';
@@ -571,39 +571,23 @@ export default function ProfileScreen() {
                 {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Tap a country above to filter by it.' : 'No destinations match.'}
               </Text>
             )}
-            {/* One row per destination: its photo, its name, and its country with how many of its spots are visited. */}
-            <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownDests.length > 5}>
-              {shownDests.map((d, k) => {
-                const n = spotsByDest.get(d.id) ?? 0;
-                return (
-                  <View key={d.id} style={[styles.destRow, k > 0 && styles.destRowBorder]}>
-                    <View style={styles.destThumb}>
-                      {/* The same small-photo key as the country sheet's destination pickers, so either can reuse it. */}
-                      <EntityPhoto
-                        cacheKey={`pick_${d.id}`}
-                        cache={thumbCache}
-                        load={() => getOrFetchWikiThumbnail(`pick_${d.id}`, thumbCache, d.name, 300)}
-                        subject={photoSubject(d.name)}
-                        placeholderColor="#E5E7EB"
-                      />
-                    </View>
-                    <View style={{ flex: 1 }}>
-                      <Text style={styles.destRowName} numberOfLines={1}>{d.name}</Text>
-                      <View style={styles.destRowSubRow}>
-                        <CircleFlag countryCode={d.countryCode} size={12} />
-                        <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{d.country}</Text>
-                        {n > 0 && <View style={styles.subDivider} />}
-                        {n > 0 && (
-                          <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>
-                            {n} spot{n === 1 ? '' : 's'} visited
-                          </Text>
-                        )}
-                      </View>
-                    </View>
-                  </View>
-                );
-              })}
-            </ScrollView>
+            {/* A photo grid: one tile per destination, its name and its visited spots over its photo. */}
+            <PhotoGrid tiles={shownDests.map(d => {
+              const n = spotsByDest.get(d.id) ?? 0;
+              return {
+                key: d.id, name: d.name, countryCode: d.countryCode, sub: `${n} spot${n === 1 ? '' : 's'}`,
+                photo: (
+                  // The same small-photo key as the country sheet's destination pickers, so either can reuse it.
+                  <EntityPhoto
+                    cacheKey={`pick_${d.id}`}
+                    cache={thumbCache}
+                    load={() => getOrFetchWikiThumbnail(`pick_${d.id}`, thumbCache, d.name, 300)}
+                    subject={photoSubject(d.name)}
+                    placeholderColor="#E5E7EB"
+                  />
+                ),
+              };
+            })} />
             </>
           )}
         </View>
@@ -657,42 +641,21 @@ export default function ProfileScreen() {
                 {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Tap a country above to filter by it.' : 'No spots match.'}
               </Text>
             )}
-            {/* One row per spot, as for destinations: its photo, its name, and under it its country with a tiny flag on the
-                left, then a vertical divider and its destination (none for a standalone spot). */}
-            <ScrollView style={styles.destRowsScroll} nestedScrollEnabled keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={shownSpots.length > 5}>
-              {shownSpots.map((sp, k) => {
-                const dest = spotDestination(sp);
-                const code = spotCountryCode(sp);
-                return (
-                  <View key={sp.id} style={[styles.destRow, k > 0 && styles.destRowBorder]}>
-                    <View style={styles.destThumb}>
-                      {/* The same small-photo key as the destination sheet's spot pickers, so either can reuse it. */}
-                      {NO_PHOTO.has(spotPhotoTitle(sp))
-                        ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={46} />
-                        : <EntityPhoto
-                            cacheKey={`pick_spot_${sp.id}`}
-                            cache={thumbCache}
-                            load={() => getOrFetchWikiThumbnail(`pick_spot_${sp.id}`, thumbCache, spotPhotoTitle(sp), 300)}
-                            subject={photoSubject(spotPhotoTitle(sp))}
-                            placeholderColor="#E5E7EB"
-                            fallback={<PhotoPlaceholder icon={sp.icon} category={sp.category} size={46} />}
-                          />}
-                    </View>
-                    <View style={{ flex: 1 }}>
-                      <Text style={styles.destRowName} numberOfLines={1}>{sp.name}</Text>
-                      <View style={styles.destRowSubRow}>
-                        {!!code && <CircleFlag countryCode={code} size={12} />}
-                        <Text style={[styles.destRowSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{spotCountry(sp)}</Text>
-                        {!!dest && <View style={styles.subDivider} />}
-                        {!!dest && (
-                          <Text style={[styles.destRowSub, styles.spotRowDest]} numberOfLines={1}>{dest.name}</Text>
-                        )}
-                      </View>
-                    </View>
-                  </View>
-                );
-              })}
-            </ScrollView>
+            {/* The same photo grid for spots: the spot's country under its name. */}
+            <PhotoGrid tiles={shownSpots.map(sp => ({
+              key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotCountry(sp) ?? '',
+              photo: NO_PHOTO.has(spotPhotoTitle(sp))
+                ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />
+                : // The same small-photo key as the destination sheet's spot pickers, so either can reuse it.
+                  <EntityPhoto
+                    cacheKey={`pick_spot_${sp.id}`}
+                    cache={thumbCache}
+                    load={() => getOrFetchWikiThumbnail(`pick_spot_${sp.id}`, thumbCache, spotPhotoTitle(sp), 300)}
+                    subject={photoSubject(spotPhotoTitle(sp))}
+                    placeholderColor="#E5E7EB"
+                    fallback={<PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />}
+                  />,
+            }))} />
             </>
           )}
         </View>
@@ -727,6 +690,40 @@ export default function ProfileScreen() {
 // Whether `text` has a word starting with `q` ("kak" finds Kakadu, "new z" New Zealand); an empty query matches all.
 function wordMatch(text: string, q: string) {
   return !q || (' ' + text.toLowerCase()).includes(' ' + q);
+}
+
+// An Explored list as a grid of rounded photo tiles, four across: the name in white at the bottom left over a dark
+// scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
+const TILE_COLS = 4;
+const TILE_GAP = 6;
+// A tile's side: the screen less the card's margins (16 each side), padding (16) and border (1).
+const TILE = Math.floor((Dimensions.get('window').width - 2 * (16 + 16 + 1) - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
+function PhotoGrid({ tiles }: { tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[] }) {
+  return (
+    <View style={styles.tileGrid}>
+      {tiles.map(t => (
+        <View key={t.key} style={styles.tile}>
+          {t.photo}
+          <Svg style={StyleSheet.absoluteFill} pointerEvents="none">
+            <Defs>
+              <SvgLinearGradient id="tileScrim" x1="0" y1="0" x2="0" y2="1">
+                <Stop offset="0.35" stopColor="#000" stopOpacity={0} />
+                <Stop offset="1" stopColor="#000" stopOpacity={0.72} />
+              </SvgLinearGradient>
+            </Defs>
+            <Rect width="100%" height="100%" fill="url(#tileScrim)" />
+          </Svg>
+          <View style={styles.tileText} pointerEvents="none">
+            <Text style={styles.tileName} numberOfLines={1}>{t.name}</Text>
+            <View style={styles.tileSubRow}>
+              {!!t.countryCode && <CircleFlag countryCode={t.countryCode} size={9} />}
+              <Text style={styles.tileSub} numberOfLines={1}>{t.sub}</Text>
+            </View>
+          </View>
+        </View>
+      ))}
+    </View>
+  );
 }
 
 // An Explored list's country chips: All, then each country (flag, name, count), a selected one first. While the search has text, only the
@@ -938,6 +935,13 @@ const styles = StyleSheet.create({
   filterTxt:    { fontSize: 12, fontWeight: '600', color: '#374151' },
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
+  // The Explored photo grid: square tiles, four across.
+  tileGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
+  tile:     { width: TILE, height: TILE, borderRadius: 10, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  tileText: { position: 'absolute', left: 5, right: 5, bottom: 5 },
+  tileName: { fontSize: 11, fontWeight: '700', color: 'white' },
+  tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
+  tileSub:  { flexShrink: 1, fontSize: 9, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
   // Destinations Explored's rows: photo, name, country and spots visited; about five rows, then the list scrolls.
   destRowsScroll: { maxHeight: 300 },
   destRow:        { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8 },
