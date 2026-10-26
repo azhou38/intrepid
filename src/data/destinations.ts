@@ -2758,6 +2758,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 5, 9, 10, 11],
     bestTimeBlurb: "Mild weather in {months} suits river cruises and walks along the Murray.",
   },
+  {
+    id: 'yankalilla', name: "Yankalilla", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -35.457579, longitude: 138.350517 },
+    category: 'nature', icon: "🌾", rank: 5,
+    tagline: "Rolling farmland, quiet beaches and bush walks along the southern Fleurieu coast.",
+    description: "Yankalilla is a farming town about 73 km south of Adelaide, set among rolling hills with the Bungala River running through it. The district reaches west to the beaches of Normanville and Carrickalinga and south to the bush and cliffs of Deep Creek National Park. Cape Jervis, at the peninsula's western tip, is the Kangaroo Island ferry gateway. The 85 km Hills and Seascapes Discovery Drive links many of the district's landscapes.",
+    whyVisit: ["Walk bush and clifftop coast trails", "Swim and snorkel at sheltered coves"],
+    whyVisitPhotos: ["", "Blowhole Beach looking North East.JPG"],
+    highlights: ["Coastal trails", "Sheltered coves"],
+    goodToKnow: [
+      { icon: "🔥", title: "Check park closures first", detail: "Talisker Conservation Park and parts of Deep Creek National Park are closed after fire. Parks also close on Catastrophic fire danger days." },
+      { icon: "🚗", title: "Pay Deep Creek entry", detail: "Deep Creek National Park charges per vehicle and the fee must be paid before you enter. Campsites are booked and paid separately." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "{months} suit coastal walks in mild weather, and whales pass the coast from June to October.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

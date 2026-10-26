@@ -2328,6 +2328,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Lincoln National Park": "Memory Cove with Sailing Yacht Arriba at anchor.jpg",
   "Burra": "Burra - South Australia - panoramio.jpg",
   "Mannum": "MannumFromLookout.JPG",
+  "Yankalilla": "Deep Creek Conservation Park 2.jpg",
 };
 
 /**
