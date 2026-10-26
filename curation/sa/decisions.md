@@ -39,3 +39,5 @@ A spot inside a park that charges entry and has no fee of its own is `free: true
 - Jamestown Railway Station Museum (barossa-clare): no cost or official site found; unfinished: held until a price or source turns up.
 - Gumeracha (adelaide-hills): a town wrapper (its draws are other spots, e.g. the Big Rocking Horse): fold into its attractions, mention the town in the Adelaide Hills description.
 - Kuitpo Forest: a ForestrySA vehicle permit ($29, May-Oct) may apply; check at apply and record as a permit if so.
+- Coffin Bay NP and Lincoln NP (eyre): add passes `coffin-bay` and `lincoln` (AUD 14.40 per vehicle, Parks SA); the in-park spots (Sleaford Bay, Cape Donington, Yangie Bay, Almonta Beach and others) are free with needs 'park-pass', not their own 'park' price.
+- Eyre plan: destination-self entries (port-lincoln, lincoln-national-park, coffin-bay, streaky-bay, ceduna, whyalla, gawler-ranges-national-park, wudinna, cowell, cleve, tumby-bay, elliston) are NOT spots; towns folded or standalone as decided above.
