@@ -996,6 +996,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring mild days, autumn colour in the gardens and green spring hillsides.",
   },
   {
+    id: 'clare-valley', name: "Clare Valley", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -33.833391, longitude: 138.612004 },
+    category: 'nature', icon: "🍇", rank: 3,
+    tagline: "Riesling country on an old railway line, with Jesuit cellars and a Georgian mansion.",
+    description: "The Clare Valley is a wine region in South Australia's Mid North, about two hours' drive north of Adelaide. The Riesling Trail follows a former railway line past cellar doors between Auburn and Barinia, and Sevenhill Cellars, founded by Jesuits, is the valley's first winery. Mintaro's slate-and-stone streets and Martindale Hall recall the pastoral wealth of the 1800s, while Spring Gully and Neagles Rock add waterfall and lookout walks.",
+    whyVisit: ["Taste Riesling at historic cellar doors", "Ride the old railway past vineyards", "Explore heritage villages and homesteads"],
+    whyVisitPhotos: ["", "", "Martindale Hall.JPG"],
+    highlights: ["Riesling wine", "Rail trail", "Heritage villages"],
+    goodToKnow: [
+      { icon: "🚲", title: "Hire bikes in Clare or Auburn", detail: "The Riesling Trail suits walkers, cyclists and wheelchairs, and bikes can be hired in Clare and Auburn." },
+      { icon: "🏛️", title: "Martindale Hall closes Tuesdays", detail: "The hall is open 10am to 4pm, Wednesday to Monday, and daily in school holidays. Plan Mintaro around those days." },
+      { icon: "🔥", title: "Parks close on fire-ban days", detail: "Conservation parks such as Spring Gully close on Catastrophic Fire Danger days and may close on Extreme days. Check the CFS first." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Mild days in {months} suit the trail and cellar doors, and spring brings wildflowers.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
