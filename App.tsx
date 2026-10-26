@@ -166,8 +166,8 @@ export default function App() {
 const styles = StyleSheet.create({
   tabBar: {
     // Gray, so the bar reads as its own strip under both the white Explore sheet and the Profile's pale page.
-    backgroundColor: '#E5E7EB',
-    borderTopColor: '#D1D5DB',
+    backgroundColor: '#EEF0F3',
+    borderTopColor: '#DDE0E5',
     borderTopWidth: 1,
     height: Platform.OS === 'ios' ? 88 : 64,
     paddingTop: 8,
