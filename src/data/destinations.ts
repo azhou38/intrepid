@@ -1165,6 +1165,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Walk the tracks in {months}, when days are mild. Winter brings cold and snowplay.",
   },
   {
+    id: 'riverland', name: "Riverland", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 120,
+    continent: 'Oceania', coordinates: { latitude: -34.25, longitude: 140.467 },
+    category: 'nature', icon: "🍊", rank: 4,
+    tagline: "Murray River wetlands, red gum forests and orchard towns in South Australia's food bowl",
+    description: "The Riverland is the stretch of the Murray River from Loxton and Waikerie to the Victorian border, lined with citrus groves, vineyards and irrigated orchards. Renmark, Berri, Barmera and Loxton make good bases, each with its own museum, lake or riverfront. Between them lie floodplain parks, wetlands and red gum forests that are best explored by canoe. Paddle steamers and houseboats still work the river, and roadside giants like the Big Orange mark the fruit-growing towns.",
+    whyVisit: ["Paddle through red gum creeks", "Watch waterbirds in river wetlands", "Explore historic Murray River towns"],
+    whyVisitPhotos: ["", "Two pelicans rest on dead trees at Lake Bonney Riverland.jpg", "PS Industry, Renmark 01.jpg"],
+    highlights: ["Canoe creeks", "Wetland birdlife", "River heritage"],
+    goodToKnow: [
+      { icon: "🍎", title: "Fruit fly checkpoints", detail: "The Riverland is a pest-free area. Do not bring fresh fruit or vegetables in, and eat or bin them before the checkpoints." },
+      { icon: "🌊", title: "Park closures after floods", detail: "Floodplain tracks and campsites close when wet or during environmental watering. Check the park alerts before you drive in." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Mild days in {months} suit river walks and canoeing before summer heat sets in.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

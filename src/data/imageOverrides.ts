@@ -695,6 +695,9 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Sunset at Breakaways.jpg": { x: 0.35, y: 0.6 },
   "Coorong National Park": { x: 0.5, y: 0.55, zoom: 1.5 },
   "File:Banded Stilts at the Coorong.JPG": { x: 0.5, y: 0.55, zoom: 1.4 },
+  "Riverland": { x: 0.3, y: 0.45 },
+  "File:Two pelicans rest on dead trees at Lake Bonney Riverland.jpg": { x: 0.5, y: 0.5 },
+  "File:PS Industry, Renmark 01.jpg": { x: 0.4, y: 0.5 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2293,6 +2296,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Dhilba Guuranda-Innes National Park": "Pondalowie Bay, Dhilba Guuranda-Innes NP 20230209 1.jpg",
   "Coorong National Park": "The Coorong.JPG",
   "Vulkathunha-Gammon Ranges National Park": "Gammon DSC03103 SA (37606902494).jpg",
+  "Riverland": "Riverboat 02, Renmark, South Australia.JPG",
 };
 
 /**
