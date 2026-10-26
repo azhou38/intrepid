@@ -1013,6 +1013,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Mild days in {months} suit the trail and cellar doors, and spring brings wildflowers.",
   },
   {
+    id: 'mount-gambier', name: "Mount Gambier", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 55,
+    continent: 'Oceania', coordinates: { latitude: -37.829444, longitude: 140.782778 },
+    category: 'city', icon: "🌋", rank: 3,
+    tagline: "Crater lakes, sinkhole gardens and spring-fed ponds around a dormant volcano.",
+    description: "Mount Gambier is the second most populated city in South Australia, built on the slopes of a dormant volcano about 450 km south-east of Adelaide and 17 km from the Victorian border. The Blue Lake and Valley Lake fill volcanic craters on its southern edge, while sinkholes open inside the city at the Cave Garden and Umpherston Sinkhole. Beyond town, Mount Schank's crater rim, the spring-fed ponds at Ewens and Piccaninnie, and the show cave at Tantanoola are day trips. Port MacDonnell, on the coast to the south, has the Cape Northumberland headland.",
+    whyVisit: ["Peer into crater lakes and sinkholes", "Snorkel spring-fed limestone ponds", "Walk up an extinct volcano"],
+    whyVisitPhotos: ["(AUS-South Australia) Umpherston Sinkhole 2025-12-11.jpg", "Ewens Ponds.jpg", ""],
+    highlights: ["Crater lakes", "Spring-fed ponds", "Volcano walks"],
+    goodToKnow: [
+      { icon: "🤿", title: "Book Ewens snorkel permits", detail: "Every snorkel or dive at Ewens Ponds needs a permit booked before you arrive, and the ponds close to swimmers from 1 September to 30 November." },
+      { icon: "🐑", title: "Kilsby needs a booking", detail: "Kilsby Sinkhole is on a private working sheep farm, so you can enter only with a pre-booked tour, snorkel or dive." },
+      { icon: "🎟️", title: "Tantanoola cave tickets", detail: "Park entry is free, but the cave tour is ticketed and can be booked online until midnight the day before. The cave is open daily 10 am to 3 pm." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "{months} bring a deep turquoise Blue Lake and open snorkelling at Ewens Ponds.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,

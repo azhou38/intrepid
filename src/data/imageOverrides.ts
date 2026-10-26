@@ -2283,6 +2283,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Victor Harbor": "VictorHarborFromGranite Island.jpg",
   "Adelaide Hills": "Piccadilly Valley.JPG",
   "Clare Valley": "Vines in Clare Valley.jpg",
+  "Mount Gambier": "(AUS-South Australia) Blue Lake, Mount Gambier 2025-12-11 - 1.jpg",
 };
 
 /**
