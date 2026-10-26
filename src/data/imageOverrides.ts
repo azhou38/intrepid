@@ -706,6 +706,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Robe": { x: 0.35, y: 0.4, zoom: 1.3 },
   "Goolwa": { x: 0.5, y: 0.6, zoom: 1.4 },
   "File:Goolwa beach 2009.jpg": { x: 0.5, y: 0.6, zoom: 1.4 },
+  "Streaky Bay": { x: 0.45, y: 0.4 },
+  "File:Murphy's Haystacks June 2008.jpg": { x: 0.5, y: 0.55 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2309,6 +2311,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Copper Coast": "South Beach Port Hughes.jpg",
   "Robe": "View of Robe coastline and Obelisk 20230214 2.jpg",
   "Goolwa": "Goolwa beach 2009.jpg",
+  "Streaky Bay": "Streaky Bay Jetty, 2017 (04).jpg",
 };
 
 /**

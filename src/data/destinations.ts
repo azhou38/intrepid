@@ -1245,6 +1245,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit in {months} for mild days on the river and beach. Summer is hotter and winter is wetter.",
   },
   {
+    id: 'streaky-bay', name: "Streaky Bay", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 100,
+    continent: 'Oceania', coordinates: { latitude: -32.799041, longitude: 134.204814 },
+    category: 'city', icon: "🌊", rank: 4,
+    tagline: "A west-coast fishing town with blowholes, sea cliffs and granite haystacks nearby.",
+    description: "Streaky Bay is a fishing and farming town on the west side of the Eyre Peninsula, 303 km north-west of Port Lincoln. Matthew Flinders named the bay in 1802 for the streaks of discoloured water he saw. A 350 m jetty runs out from the town centre and oysters and abalone are farmed in the bay. Coastal loops lead to blowholes and cliffs at Cape Bauer, and Murphy's Haystacks stand on farmland to the south-east.",
+    whyVisit: ["Watch waves roar through blowholes", "Stand among pink granite inselbergs", "Taste oysters from the bay"],
+    whyVisitPhotos: ["Whistling rocks - panoramio.jpg", "Murphy's Haystacks June 2008.jpg", ""],
+    highlights: ["Cape Bauer blowholes", "Granite inselbergs", "Local oysters"],
+    goodToKnow: [
+      { icon: "🌊", title: "Time the blowholes", detail: "Whistling Rocks and the Blowholes are most active at high tide with a big swell." },
+      { icon: "🚗", title: "Unsealed loop roads", detail: "The Westall Way Loop is unsealed and has rough sections, so drive with care." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "{months} suit swimming off the jetty and long drives along the coastal loops.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
