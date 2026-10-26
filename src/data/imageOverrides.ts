@@ -710,6 +710,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "File:Murphy's Haystacks June 2008.jpg": { x: 0.5, y: 0.55 },
   "Whyalla": { x: 0.4, y: 0.5, zoom: 1.5 },
   "File:HMAS Whyalla (J153), 2017 (01).jpg": { x: 0.5, y: 0.45 },
+  "Murray Bridge": { x: 0.5, y: 0.55, zoom: 1.3 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2316,6 +2317,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Streaky Bay": "Streaky Bay Jetty, 2017 (04).jpg",
   "Whyalla": "View from Hummock Hill, Whyalla, 2017 (01).jpg",
   "Ceduna": "Ceduna Jetty, Ceduna, 2017 (05).jpg",
+  "Murray Bridge": "Murray Bridge road and rail bridges.JPG",
 };
 
 /**

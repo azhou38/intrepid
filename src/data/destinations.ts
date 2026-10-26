@@ -1293,6 +1293,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are mild enough for coastal walks and the long Eyre Highway drive.",
   },
   {
+    id: 'murray-bridge', name: "Murray Bridge", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 70,
+    continent: 'Oceania', coordinates: { latitude: -35.117, longitude: 139.267 },
+    category: 'city', icon: "🌉", rank: 4,
+    tagline: "Houseboats, river walks and an open-range safari an hour from Adelaide",
+    description: "Murray Bridge is a city of about 17,500 on the River Murray, 76 km south-east of Adelaide, named for the road bridge opened here in 1879. The river brings houseboats, wakeboarding, fishing and walks along its banks and wetlands. Monarto Safari Park, on the plains west of town, keeps lions, giraffes, rhinos and elephants. Low rainfall and little light pollution on the outskirts also make it good for stargazing.",
+    whyVisit: ["See lions and giraffes on safari", "Cruise the Murray by houseboat", "Walk wetlands for birdlife"],
+    whyVisitPhotos: ["African plains view - Monarto.JPG", "Houseboat passing by on Murray River-2 (14987013793).jpg", ""],
+    highlights: ["Open-range safari", "River time", "Wetland birdlife"],
+    goodToKnow: [
+      { icon: "🎟️", title: "Book Monarto ahead", detail: "Non-members need a date-specific ticket for Monarto Safari Park, so book before you drive out." },
+      { icon: "🌊", title: "Check flood closures", detail: "High river flows can close riverside trails and wetlands such as Rocky Gully. Check with the council before you walk." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Mild days in {months} suit river walks and the safari park, with spring wildflowers in the mallee.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
