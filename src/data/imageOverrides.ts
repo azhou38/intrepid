@@ -716,6 +716,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Burra": { x: 0.5, y: 0.6, zoom: 1.3 },
   "Mannum": { x: 0.45, y: 0.7, zoom: 1.6 },
   "Southern Flinders Ranges": { x: 0.5, y: 0.55 },
+  "File:Robert O'Hara Burke death site 2.JPG": { x: 0.55, y: 0.55 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2551,4 +2552,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Settlers Track",
   "Naracoorte",
   "Gawler Ranges National Park",
+  "Innamincka",
 ]);
