@@ -858,8 +858,8 @@ const styles = StyleSheet.create({
   // count sits on a dark pill.
   // Its top strip (room for the small avatar and name; the sticky View's negative margin) overlaps the bottom of the
   // full header until it pins, so the page keeps its old spacing; the background fills in only once pinned (stuckStyle).
-  // A full-width gray line under the card, shown only when the selector is not pinned.
-  selectorDivider: { height: 1, marginHorizontal: -16, backgroundColor: '#E5E7EB' },
+  // A gray line under the card, as wide as the cards below, with room before the map; shown only when the selector is not pinned.
+  selectorDivider: { height: 1, marginBottom: 16, backgroundColor: '#E5E7EB' },
   selectorSticky: { paddingTop: COMPACT_H, paddingHorizontal: 16 },
   // The pinned bar's tab headings: plain text on the bar, the number and the level's name, with an underline.
   // Spans the bar edge to edge less the page margins, whichever box absolute offsets count from: left and right are equal.
