@@ -985,7 +985,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Wineries, bushland and a German-settled village a short drive east of Adelaide",
     description: "The Adelaide Hills are the wooded ranges east of Adelaide, reached in about half an hour. Hahndorf, founded by German settlers, anchors the region with its main street of galleries and bakeries. Around it are cool-climate vineyards, farms and national park bushland with lookouts over the city and plains. Mount Lofty, at 710 m, is the high point of the ranges.",
     whyVisit: ["Wander a historic German village", "Walk bushland trails above the city", "Meet native animals up close"],
-    whyVisitPhotos: ["German Arms Hotel, Hahndorf, South Australia.jpg", "", "Red kangaroo at Cleland Wildlife Park.jpg"],
+    whyVisitPhotos: ["ext-adelaide-hills-why1.jpg", "", "Red kangaroo at Cleland Wildlife Park.jpg"],
     highlights: ["German village", "Bushland walks", "Native wildlife"],
     goodToKnow: [
       { icon: "🚗", title: "Drive, don't wait", detail: "Public transport reaches only parts of the Hills, so a car makes the villages, farms and lookouts easy to link." },
