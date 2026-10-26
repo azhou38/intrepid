@@ -63,21 +63,23 @@
   "name": "Penola",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Coonawarra gateway and Mary MacKillop heritage; no Wikivoyage page and region page only names Coonawarra, the town's own sights (interpretive centre) unverified by a counted source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Heritage town with Mary MacKillop Penola Centre, Petticoat Lane and John Riddoch Centre named as things to do; well over half an hour.",
+  "decided_by": "resolver",
   "views": 11284,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.mountgambierpoint.com.au/attractions/penola/"
  },
  {
   "name": "Millicent",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Regional hub with the National Trust museum, which southaustralia.com lists (millicent-national-trust-museum); town itself has no guide section.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Millicent National Trust Museum (southaustralia.com, adult $14, daily) is a sizeable accredited museum with gallery and carriages; the town draw is the museum (name the spot for it if it is also a candidate, to avoid a town wrapper).",
+  "decided_by": "resolver",
   "views": 10311,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/limestone-coast/attraction/millicent-national-trust-museum"
  },
  {
   "name": "Port MacDonnell",
@@ -103,11 +105,12 @@
   "name": "Bordertown",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Dukes Highway stopover; southaustralia.com lists Bordertown Wildlife Park (white kangaroos) and Recreation Lake; the town itself has no own guide section.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Southaustralia.com lists Bordertown Wildlife Park (free, white kangaroos, drive or walk round) and RAA guide adds Poocher Swamp and the Bob Hawke Gallery; a named stopover. If Bordertown Wildlife Park is a separate candidate, treat as that one (duplicate).",
+  "decided_by": "resolver",
   "views": 18626,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/limestone-coast/attraction/bordertown-wildlife-park"
  },
  {
   "name": "Tantanoola",
@@ -124,50 +127,55 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Dukes Highway village with no counted source naming anything to see.",
-  "decided_by": "judge",
+  "reason": "No counted source found naming anything to see (searched Wikivoyage Limestone Coast, southaustralia.com).",
+  "decided_by": "resolver",
   "views": 2573,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Lucindale",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Farming village; no counted source names a draw (Big Heath is a separate park).",
-  "decided_by": "judge",
+  "reason": "Wikivoyage Lucindale page has no See entries; no counted source found; Big Heath is separate.",
+  "decided_by": "resolver",
   "views": 5292,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Lucindale"
  },
  {
   "name": "Padthaway",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Wine locality: no counted source; cellar doors and an estate operator are not spots (brief: hold the winery line).",
-  "decided_by": "judge",
+  "reason": "Wine locality; draws are cellar doors and an estate, which are businesses not spots; no counted source naming a place to visit.",
+  "decided_by": "resolver",
   "views": 3048,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Carpenter Rocks",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Fishing village with no counted source; Cape Banks lighthouse not verified; Canunda covers the coast.",
-  "decided_by": "judge",
+  "reason": "Fishing village; no counted source found naming a visit (searched southaustralia.com, Wikivoyage).",
+  "decided_by": "resolver",
   "views": 2359,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Nora Creina",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "Bay and cliffs between Robe and Beachport but no counted source found naming it as a visit; search only found general beach articles.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Regional guide describes a white-sand semicircular bay with 20 m headlands, the safest swimming beach between Robe and Beachport; second-tier beach worth a stop.",
+  "decided_by": "resolver",
   "views": 844,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.mountgambierpoint.com.au/towns/nora-creina-travel-guide/"
  },
  {
   "name": "Cape Jaffa",
@@ -184,10 +192,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Forestry village; the museum has no counted source.",
-  "decided_by": "judge",
+  "reason": "Forestry village; no counted source found for the museum (searched Wikivoyage, southaustralia.com).",
+  "decided_by": "resolver",
   "views": 850,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Blue Lake / Warwar",
@@ -243,11 +252,12 @@
   "name": "Kilsby Sinkhole",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Southaustralia.com ($15) and visitmountgambier.com.au page: a dive/snorkel site with above-water tours with a certified guide; entry is operator-managed.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Southaustralia.com: 1-hour sinkhole tour ($15) and 2-hour guided snorkel in crystal-clear sinkhole 15 min from Mount Gambier; open to the public by booking; a distinct draw. Operator-run but the place is the draw.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/limestone-coast/attraction/kilsby-sinkhole"
  },
  {
   "name": "Valley Lake / Ketla Malpi",
@@ -284,10 +294,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source; a Naracoorte-area cave not offered on the Naracoorte Caves tour list.",
-  "decided_by": "judge",
+  "reason": "No counted source found (searched Naracoorte Caves site, Wikivoyage Naracoorte); not on the Naracoorte Caves tour list; likely duplicate of Victoria Fossil Cave / Naracoorte Caves.",
+  "decided_by": "resolver",
   "views": 2173,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.naracoortecaves.sa.gov.au/"
  },
  {
   "name": "Mount Gambier Lady Nelson Visitor Centre",
@@ -304,20 +315,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage lists it under Sleep (accommodation in the old gaol); historic gaol tours are offered but I found no See entry.",
-  "decided_by": "judge",
+  "reason": "For: 1866-1995 gaol, self-guided and guided tours of crimes and cell life, Wikivoyage lists it (under Sleep) and it hosts gigs. Against: operates chiefly as accommodation/function venue; no See entry in a counted source (southaustralia.com and discovermountgambier URLs 404/unfound).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Mount_Gambier"
  },
  {
   "name": "Riddoch Arts and Cultural Centre",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Gallery and civic cultural centre; no counted source.",
-  "decided_by": "judge",
+  "reason": "Civic gallery/cultural centre; no counted source naming it (searched Wikivoyage Mount Gambier).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Mount_Gambier"
  },
  {
   "name": "Mount Gambier Volcano Movie (Kings Theatre)",
@@ -334,30 +347,33 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Low-profile scrub park with no counted source.",
-  "decided_by": "judge",
+  "reason": "Low-profile scrub park; no counted source or named walk found.",
+  "decided_by": "resolver",
   "views": 249,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Mount Burr",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Forest area village, no counted source.",
-  "decided_by": "judge",
+  "reason": "Forest-area village; no counted source found.",
+  "decided_by": "resolver",
   "views": 1868,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Mount Muirhead",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Hill with no counted source.",
-  "decided_by": "judge",
+  "reason": "Hill; no counted source found.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Ewens Ponds",
@@ -373,11 +389,12 @@
   "name": "Piccaninnie Ponds",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks SA: immersive water activities closed until further notice; the park remains open for a walk along the beach to see springs and boardwalks.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks SA: water activities closed but park open; beach walk to freshwater springs, boardwalk trail and wetland lookout; Ramsar-listed, distinct draw.",
+  "decided_by": "resolver",
   "views": 3167,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.parks.sa.gov.au/parks/piccaninnie-ponds-conservation-park"
  },
  {
   "name": "Tantanoola Caves",
@@ -434,10 +451,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Naracoorte Caves site names it as a tour cave (the main World Heritage tour); but it is inside Naracoorte Caves National Park.",
-  "decided_by": "judge",
+  "reason": "For: the headline Naracoorte tour cave, World Heritage fossil site with its own ticketed tour (naracoortecaves.sa.gov.au). Against: part of Naracoorte Caves National Park, so a near-duplicate of the park spot if that is listed.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.naracoortecaves.sa.gov.au/"
  },
  {
   "name": "Alexandra Cave",
@@ -503,21 +521,23 @@
   "name": "Sheep's Back Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage See entry: local history and woolgrowing museum and visitor centre, $8 entry; open daily.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Naracoorte See entry: National Trust woolgrowing and local history museum with visitor centre, $8, open daily; roughly an hour.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Naracoorte"
  },
  {
   "name": "Naracoorte Regional Art Gallery",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Wikivoyage describes it as 'just another art gallery'; local gallery, one source.",
-  "decided_by": "judge",
+  "reason": "Wikivoyage calls it just another art gallery; local gallery.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Naracoorte"
  },
  {
   "name": "Bool Lagoon",
@@ -554,30 +574,33 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Protected woodland, no counted source.",
-  "decided_by": "judge",
+  "reason": "Protected woodland; no counted source found.",
+  "decided_by": "resolver",
   "views": 962,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Naracoorte"
  },
  {
   "name": "Mount Monster Conservation Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks SA page and Wikivoyage Keith: unusual granite outcrop 12 km south of Keith, picnics, hikes, wildflowers.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks SA page and Wikivoyage Keith: unusual granite outcrop 12 km south of Keith with walking and picnicking.",
+  "decided_by": "resolver",
   "views": 375,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://www.parks.sa.gov.au/parks/mount-monster-conservation-park"
  },
  {
   "name": "Penola Conservation Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Low-profile park with no counted source.",
-  "decided_by": "judge",
+  "reason": "Low-profile park; no counted source naming a walk or lookout.",
+  "decided_by": "resolver",
   "views": 268,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Coorong National Park (South East end)",
@@ -594,10 +617,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "outside the region: belongs to the Murray Mallee region; no counted source here.",
-  "decided_by": "judge",
+  "reason": "Outside the region: belongs to the Murray Mallee / Murray River Lakes and Coorong region.",
+  "decided_by": "resolver",
   "views": 572,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Penguin Island (Robe)",
@@ -624,40 +648,44 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source; lake and wind farm only.",
-  "decided_by": "judge",
+  "reason": "No counted source found; lake and wind farm only.",
+  "decided_by": "resolver",
   "views": 1222,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Lake George (South Australia)",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source.",
-  "decided_by": "judge",
+  "reason": "No counted source found.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Lake Frome (south east)",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source.",
-  "decided_by": "judge",
+  "reason": "No counted source found.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Robe Lighthouse",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage Robe lists it (a 1972 concrete lighthouse, 'not historic') alongside the Cape Dombey Obelisk (1855); coast viewpoint at Robe.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage Robe lists it but itself calls it a not-historic 1972 concrete structure with nothing to do; the Obelisk is the named landmark.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Robe"
  },
  {
   "name": "Robe Customs House Maritime Museum",
@@ -714,10 +742,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Lake inside Little Dip Conservation Park, no counted source naming it separately; part of a larger spot (rule 3).",
-  "decided_by": "judge",
+  "reason": "Lake within Little Dip Conservation Park (named by Wikivoyage Robe as the park); part of a larger spot.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Robe"
  },
  {
   "name": "Guichen Bay",
@@ -763,11 +792,12 @@
   "name": "Kingston National Trust Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage Kingston SE lists the pioneer/shipwreck museum, but open Sun 2-4pm by appointment only; the case for: a museum with a counted source; against: one source and very limited access, so 'there whenever you arrive' is weak.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage lists it but open Sun 2-4pm by appointment only; not reliably there whenever a visitor arrives.",
+  "decided_by": "resolver",
   "views": 11309,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Kingston_SE"
  },
  {
   "name": "Lacepede Bay",
@@ -873,11 +903,12 @@
   "name": "Brown Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "southaustralia.com lists Brown Beach (free, picnic and barbecue area). For: second-tier beach; against: a single source with a short visit and nothing distinctive beyond Southend.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "The southaustralia.com Brown Beach listing found is on Kangaroo Island (Dudley Peninsula), not Southend; no counted source for a Limestone Coast Brown Beach.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/kangaroo-island/attraction/brown-beach"
  },
  {
   "name": "Rivoli Bay",
@@ -913,11 +944,12 @@
   "name": "Port MacDonnell Maritime Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Traveller's Port MacDonnell guide describes the museum (open since 1990, volunteer-staffed). For: a museum with a counted source; against: one source, small and with unclear hours.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Southaustralia.com lists the volunteer-run museum on the area's shipwrecks (30+ ships); small museum a guide names.",
+  "decided_by": "resolver",
   "views": 7186,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/limestone-coast/attraction/port-macdonnell-maritime-museum"
  },
  {
   "name": "Port MacDonnell Jetty",
@@ -934,10 +966,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source; a remote lighthouse near Carpenter Rocks with no stated thing to do.",
-  "decided_by": "judge",
+  "reason": "No counted source found; remote lighthouse with no stated thing to do.",
+  "decided_by": "resolver",
   "views": 411,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Carpenter Rocks Beach",
@@ -974,10 +1007,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source and unclear access.",
-  "decided_by": "judge",
+  "reason": "No counted source found; access unclear.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Limestone Coast wine: Coonawarra",
@@ -1003,11 +1037,12 @@
   "name": "Wynns Coonawarra Estate",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage Limestone Coast names it as the Coonawarra cellar door and for Michael Shiraz; historic 1896 estate and the region's flagship. For: arguably a landmark estate a guide names; against: it is one cellar door of the region's dozens, and the brief says hold the line.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "A cellar door/winery business, not a place spot; Wikivoyage names it only as a winery and wine reference (Coonawarra covered separately).",
+  "decided_by": "resolver",
   "views": 1547,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Hollick Wines",
@@ -1044,10 +1079,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Cellar door with no counted source; a business, not a place to go (rule 2/3: operators, tours and shops are not spots)",
-  "decided_by": "judge",
+  "reason": "Cellar door business; no counted source.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Mount Benson wine region",
@@ -1144,20 +1180,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source found; heritage line that is not a regular attraction, and a ride rather than a place.",
-  "decided_by": "judge",
+  "reason": "Heritage rail ride, not a place; no counted source found.",
+  "decided_by": "resolver",
   "views": 707,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Dingley Dell Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Traveller's Port MacDonnell guide: the cottage where poet Adam Lindsay Gordon lived 1864-67, open daily only in school holidays 10-4. For: a heritage cottage with a counted source; against: one source, open only in school holidays, a short visit.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Adam Lindsay Gordon cottage: a 2020 Border Watch report said it closed to the public with the state exploring reopening; opening unreliable and no current counted source confirms access.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.mountgambierpoint.com.au/attractions/dingley-dell"
  },
  {
   "name": "Mount Gambier Railway Station",
@@ -1174,10 +1212,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Hill with no counted source naming it.",
-  "decided_by": "judge",
+  "reason": "Hill; no counted source found.",
+  "decided_by": "resolver",
   "views": 304,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Tilley Swamp",
@@ -1234,10 +1273,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source; a memorial/small display (rule 3: minor memorial).",
-  "decided_by": "judge",
+  "reason": "Small memorial/gallery display; minor and part of the Tatiara Civic Centre gallery, no counted source for a stand-alone visit.",
+  "decided_by": "resolver",
   "views": 18626,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  },
  {
   "name": "Wolseley",
@@ -1264,9 +1304,10 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Winery with no counted source; a business, not a place to go (rule 2/3: operators, tours and shops are not spots)",
-  "decided_by": "judge",
+  "reason": "Winery business; no counted source.",
+  "decided_by": "resolver",
   "views": 557,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Limestone_Coast"
  }
 ]

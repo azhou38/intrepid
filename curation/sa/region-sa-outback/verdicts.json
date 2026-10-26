@@ -63,11 +63,12 @@
   "name": "Marla",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Roadhouse settlement with Wikivoyage and town page, but a tiny stop with little to see; guide gives it a section as end of the Oodnadatta Track",
-  "decided_by": "audit override (audited.json)",
+  "verdict": "reject",
+  "reason": "Roadhouse settlement; Wikivoyage Marla and the Flinders & Outback town page list only fuel, accommodation and Indulkana art centre (a separate place 40+ km away) - nothing to see or do in Marla itself for half an hour (rule 2).",
+  "decided_by": "resolver",
   "views": 9815,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://flindersandoutback.com.au/towns/marla/"
  },
  {
   "name": "Andamooka",
@@ -83,11 +84,12 @@
   "name": "Roxby Downs",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Mining town with visitor centre; sources name no attraction to see (Olympic Dam tours are an operator).",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "Mining town; the Flinders & Outback page lists the Roxbylink complex (visitor centre, library, pool) and a 3 km emu trail, i.e. civic facilities and tours. The distinct draw (Arid Recovery) is judged separately; the town itself is a service stop (rule 2).",
+  "decided_by": "resolver",
   "views": 18012,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://flindersandoutback.com.au/towns/roxby-downs/"
  },
  {
   "name": "Glendambo",
@@ -133,21 +135,23 @@
   "name": "Mungerannie",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Outback pub and roadhouse on the Birdsville Track known for its memorabilia, a quirky roadside icon; only one counted source (flindersandoutback region page)",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Mungerannie Hotel is named by Flinders & Outback as acclaimed for its outback memorabilia (hats, locks of hair), a quirky roadside icon halfway along the Birdsville Track; second-tier quirky stop the bar keeps.",
+  "decided_by": "resolver",
   "views": 1758,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://flindersandoutback.com.au/regions/outback/"
  },
  {
   "name": "Lyndhurst",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists it only as the Strzelecki Track start and a fuel stop; nothing distinct to see in the cited sources.",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "keep",
+  "reason": "Flinders & Outback town page names Talc Alf's talc sculptures and the ochre cliffs 5 km north (traded by Aboriginal people), plus Farina nearby; a gateway town with things to see, and the Strzelecki Track start per Wikivoyage.",
+  "decided_by": "resolver",
   "views": 3222,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://flindersandoutback.com.au/towns/lyndhurst/"
  },
  {
   "name": "Birdsville Track",
@@ -173,11 +177,12 @@
   "name": "Strzelecki Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage has its own article for the track, a remote route to Innamincka; one counted source and a drive, not a place to stop (rule 1,3)",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "A 475 km route, not a place: Wikivoyage describes the drive; its stops (Lyndhurst, Innamincka) are separate candidates. A road/vehicle route is not a spot (rule 3). Objection: Wikivoyage gives it its own article, but nothing to see or do at a single place.",
+  "decided_by": "resolver",
   "views": 8077,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Strzelecki_Track"
  },
  {
   "name": "Anne Beadell Highway",
@@ -194,10 +199,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage Stuart Highway names the Painted Desert reached by AWD track from Cadney; coloured hills visitors go to, one source (rule 1)",
-  "decided_by": "judge",
+  "reason": "For: Wikivoyage names it, SA Heritage lists the Arckaringa Hills state heritage area, and Arckaringa Station offers a walk (~1.5 km) and lookout at sunset; distinct natural sight. Against: only one counted source (Wikivoyage Stuart Highway, 'all-wheel track'), sits on a private pastoral lease with restricted, fragile access, 120-150 km from Coober Pedy; no tourism-board page found.",
+  "decided_by": "resolver",
   "views": 1418,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Stuart_Highway"
  },
  {
   "name": "Faye's Underground Home",
@@ -223,11 +229,12 @@
   "name": "Tom's Working Opal Mine",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage calls it the pick of the working mines on Stuart Highway, but it is a tour operator; near-duplicate of the other mine visits",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Coober Pedy calls it 'the pick of the working mines' and Lonely Planet lists it as an attraction (display mine with opal seams, guided or self-guided tours); a place to go underground for an hour, not merely an operator. Objection: one of several Coober Pedy mine visits.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Coober_Pedy"
  },
  {
   "name": "Big Winch",
@@ -264,10 +271,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage names the Catholic church as a significant site but less intricate than the Serbian one; one source (church rule)",
-  "decided_by": "judge",
+  "reason": "For: Wikivoyage Coober Pedy calls the underground Catholic church 'a significant site' and Coober Pedy's carved-rock churches are a signature visit. Against: Wikivoyage ranks it less intricate than the Serbian Orthodox church; one counted source; the candidate's wiki title (Catacomb Church) is actually the Anglican church, so name and article conflict and the Catholic church's identity needs checking.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Coober_Pedy"
  },
  {
   "name": "Kanku-Breakaways Conservation Park",
@@ -283,21 +291,23 @@
   "name": "Dingo Fence at Coober Pedy",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage Stuart Highway suggests a dirt-road trip 10 km to the Dingo Fence; landmark, one source",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "A roadside look at a fence (Wikivoyage Stuart Highway: 10 km on a dirt road; travel blogs say it is passed on the Breakaways road): a short roadside stop with one counted source, not a distinct place for half an hour (rule 3).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Stuart_Highway"
  },
  {
   "name": "Coober Pedy Golf Club",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage Stuart Highway names the grassless desert course as a thing to do, but one source, a club venue; quirky icon, arguable.",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "keep",
+  "reason": "Wikivoyage names the grassless desert course (players carry a piece of turf to tee off) as a quirky thing to do 3 km from Coober Pedy; an open public course visitors play, a recognised quirky icon.",
+  "decided_by": "resolver",
   "views": 3772,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Stuart_Highway"
  },
  {
   "name": "Coober Pedy Mail Run",
@@ -313,11 +323,12 @@
   "name": "Moon Plain",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "southaustralia.com region page names the lunar-like plain and film location south of Coober Pedy; one counted source and a roadside look",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Lonely Planet lists Moon Plain and southaustralia.com's region page names the lunar-like plain and film location (Mad Max Beyond Thunderdome, Priscilla) 15 km from Coober Pedy; a driving/walking sight on the Breakaways loop. Two counted sources.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/destinations/flinders-ranges-and-outback"
  },
  {
   "name": "Coober Pedy opal noodling fields",
@@ -423,21 +434,23 @@
   "name": "Roxby Downs Arid Recovery Reserve",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Fenced conservation reserve near Roxby Downs listed by flindersandoutback region page; open via tours, one source",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Flinders & Outback names Arid Recovery in both the region page and the Roxby Downs town page (sunset tag-along tours, spotlight walks, Roxby Discovery Tour) to see rare arid-zone species in a fenced reserve; visits are by tour only. Objection: access only via tours.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://flindersandoutback.com.au/towns/roxby-downs/"
  },
  {
   "name": "Lake Torrens National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Listed on flindersandoutback national parks page; huge salt lake park with no facilities and difficult access, one source",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Flinders & Outback page only describes a dry salt lake 200 km long; no visitor facilities, viewpoint, walk or access point is named by any source I found, and access is difficult, so there is nothing a visitor is directed to do or see (rule 2). Searched the Flinders & Outback page and web.",
+  "decided_by": "resolver",
   "views": 861,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://flindersandoutback.com.au/national-parks/lake-torrens/"
  },
  {
   "name": "Lake Gairdner National Park",
@@ -464,10 +477,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage names it a sight worth seeing, but only by charter flight; no ground visit, one view-from-air experience.",
-  "decided_by": "audit override (audited-full.json)",
+  "reason": "For: Wikivoyage Marree See entry and Flinders & Outback both name it; a famous 4.2 km geoglyph. Against: it cannot be seen from the ground and the experience is a charter flight from Marree (an operator), so a visitor 'goes' to nothing; only the flight reaches it.",
+  "decided_by": "resolver",
   "views": 74471,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Marree"
  },
  {
   "name": "Marree Hotel",
@@ -523,11 +537,12 @@
   "name": "Lake Eyre South",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage Oodnadatta Track side trip (3 km return) to Lake Eyre South; near-duplicate of Kati Thanda-Lake Eyre National Park (rule 3)",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage's 3 km side trip shows a salt expanse that is an extension of Lake Eyre, part of Kati Thanda-Lake Eyre National Park, which the app lists; an outlook within a larger spot with one counted source (rule 3).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Oodnadatta_Track"
  },
  {
   "name": "Anna Creek Painted Hills",
@@ -583,11 +598,12 @@
   "name": "William Creek Hotel",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: two counted sources (Flinders & Outback, Wikivoyage William Creek) call it one of the most remote pubs in the world; the pub is the landmark of William Creek, but it is a business (rule 2).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Flinders & Outback and Wikivoyage William Creek both single out the pub (one of the most remote in the world; the town's whole sight, with its own radio station); a quirky outback icon in the same class as Mungerannie. Objection: it is a business and William Creek the town may be listed separately.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://en.wikivoyage.org/wiki/William_Creek"
  },
  {
   "name": "Lake Eyre scenic flights from William Creek",
@@ -753,11 +769,12 @@
   "name": "Innamincka Regional Reserve",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 3: a protected area around Innamincka (Cooper Creek, Cullyamurra, Burke and Wills sites) named on the Flinders & Outback page (opened); an area rather than a sight, overlapping Cullyamurra and Cooper Creek.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "parks.sa.gov.au visitor page: 1.3 million ha reserve with Cooper Creek waterholes for fishing and canoeing, Cullyamurra Waterhole, the visitor centre and Burke and Wills sites; Flinders & Outback also names it. Objection: parts closed in floods and it overlaps Cullyamurra.",
+  "decided_by": "resolver",
   "views": 397,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://parks.sa.gov.au/parks/innamincka-regional-reserve"
  },
  {
   "name": "Cullyamurra Waterhole",
@@ -783,11 +800,12 @@
   "name": "Innamincka Town Sunset Lookout",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage Innamincka See lists a sunset lookout 1 km NE of town; no description beyond its location.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage Innamincka lists it with only a location (1 km NE of town) and no description; no other counted source; a minor lookout and short stop (rule 3).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Innamincka"
  },
  {
   "name": "Burke and Wills Memorial at Innamincka",
@@ -884,10 +902,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: the cited Wikivoyage National Route 83 page (re-read) does not mention it; no counted source names it.",
-  "decided_by": "judge",
+  "reason": "No counted source names it: Wikivoyage National Route 83, Innamincka and Marree pages and the Flinders & Outback outback page all lack it (grepped). Searched those pages.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/National_Route_83"
  },
  {
   "name": "Tirari Desert",
@@ -903,61 +922,67 @@
   "name": "Cooper Creek Crossing",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage Innamincka Do lists the causeway, with pelicans at the culverts in the evening; short stop in town.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "One counted source (Wikivoyage Innamincka: a causeway where pelicans feed in the evening); a short stop in town, and the creek itself is covered by Innamincka Regional Reserve (rule 3).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Innamincka"
  },
  {
   "name": "Mulka Ruins",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: the cited Wikivoyage National Route 83 page (re-read) does not mention Mulka; no counted source names it.",
-  "decided_by": "judge",
+  "reason": "No counted source names it: Wikivoyage National Route 83 and the Flinders & Outback outback page do not mention Mulka (grepped).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/National_Route_83"
  },
  {
   "name": "Witchelina Nature Reserve",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1/2: no counted source found; visits since 2026 are Nature Foundation members only, with bookings and fees (re-searched).",
-  "decided_by": "judge",
+  "reason": "Nature Foundation reserve with no counted source and access limited to members with bookings and fees; not open to the public (rule 2).",
+  "decided_by": "resolver",
   "views": 370,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": ""
  },
  {
   "name": "Kalamurina Sanctuary",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 1/2: AWC's own visiting page (opened) allows pre-booked tours (Outback Spirit) and booked self-drive visits, up to five vehicles, April-October; no tourism-board source.",
-  "decided_by": "judge",
+  "reason": "For: AWC (the manager) describes a 679,000 ha wildlife sanctuary on the Warburton River with an interpretive walk on Outback Spirit pre-booked tours (April-October). Against: no tourism-board or guide source; third-party listings say camping is closed and entry is tours only, and AWC's own page allows booked self-drive at $40 per vehicle, so access sources conflict.",
+  "decided_by": "resolver",
   "views": 716,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://australianwildlife.org/where-we-work/kalamurina/visiting-kalamurina-wildlife-sanctuary"
  },
  {
   "name": "Lake Frome National Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Outside the region: belongs to sa-flinders (reached from Balcanoona in Vulkathunha-Gammon Ranges); also no counted source found in this pass.",
-  "decided_by": "judge",
+  "reason": "Wrong region, not this region's: belongs to sa-flinders (reached from Balcanoona); also no counted source found in this pass.",
+  "decided_by": "resolver",
   "views": 541,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": ""
  },
  {
   "name": "Elizabeth Symon Nursing Home",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: Wikivoyage Innamincka See lists the heritage-listed former nursing home, once a park interpretive centre, now Parks HQ; unclear whether it is open to visitors.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Innamincka See lists it, and the parks.sa.gov.au page says the heritage-listed park headquarters and interpretation centre (the former Australian Inland Mission building, i.e. the nursing home) is always open in the town centre, with natural history and Burke and Wills displays. Objection: more an information centre than a sight.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://parks.sa.gov.au/parks/innamincka-regional-reserve"
  },
  {
   "name": "Starlight Cinema Innamincka",

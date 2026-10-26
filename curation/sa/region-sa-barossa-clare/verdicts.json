@@ -43,11 +43,12 @@
   "name": "Greenock",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage numbers it as a Barossa town but names nothing to see there in the page; thin",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "keep",
+  "reason": "barossa.com Barossa Towns page and itinerary \"Explore Greenock\" name the heritage village; Historical Walk of Greenock lists 27 sites, plus the Heysen-side aviation museum. A village a guide recommends as a stop.",
+  "decided_by": "resolver",
   "views": 1504,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://www.barossa.com/visit/towns/greenock/"
  },
  {
   "name": "Freeling",
@@ -73,21 +74,23 @@
   "name": "Springton",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "barossa.com names Springton as a Barossa town (Herbig Tree, historic village per Wikipedia only); one source",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "barossa.com town page and southaustralia.com list the Herbig Family Tree (free, ~500-year-old hollow red gum where the settler family lived) and Friedensberg school museum. Village draw is the tree; bio should say so.",
+  "decided_by": "resolver",
   "views": 1615,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/barossa/attraction/the-herbig-family-tree"
  },
  {
   "name": "Eden Valley",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "southaustralia.com and barossa.com list Eden Valley as its own wine sub-region; two counted sources but they name the region, no specific place to visit",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "barossa.com itinerary \"Explore Eden Valley\" names Eden Valley Scenic Lookout (Burke's Hill), main-street silhouettes and the high-country village. Against: much of the draw is cellar doors. Second-tier village stop.",
+  "decided_by": "resolver",
   "views": 2822,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://www.barossa.com/see/itineraries/explore-eden-valley"
  },
  {
   "name": "Mount Pleasant",
@@ -133,11 +136,12 @@
   "name": "Mallala",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists it as a town marker only; one tourism page; nothing specific named. Thin",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "Searched Wikivoyage, SA tourism, council: only the Mallala Motor Sport Park (event-day circuit), a war memorial and an equestrian centre. No permanent visitor draw; not a spot.",
+  "decided_by": "resolver",
   "views": 4249,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Barossa_Valley"
  },
  {
   "name": "Wasleys",
@@ -213,21 +217,23 @@
   "name": "Watervale",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wine village listed on two tourism pages; nothing specific named to see. Thin",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "Searched clarevalley.com.au and southaustralia.com: only the village, National Trust buildings seen from outside, cellar doors and the Riesling Trail (listed separately). Nothing to do for half an hour.",
+  "decided_by": "resolver",
   "views": 1506,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://southaustralia.com/travel-blog/the-ultimate-clare-valley-itinerary"
  },
  {
   "name": "Penwortham",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Small village; only John Horrocks Cottage named. Against: cottage visit is short",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "southaustralia.com/clarevalley.com.au list John Horrocks Cottage, open only the first Sunday of the month or by appointment, plus a village walk and cellar doors; not there whenever a visitor arrives.",
+  "decided_by": "resolver",
   "views": 1157,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://www.clarevalley.com.au/directory/john-horrocks-cottage"
  },
  {
   "name": "Mintaro",
@@ -273,41 +279,45 @@
   "name": "Saddleworth",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Small town listed only on the Clare Valley towns page; nothing specific named",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "southaustralia.com destination page only; a 3 km heritage walk, a small museum and a hotel. No distinct named draw found.",
+  "decided_by": "resolver",
   "views": 2293,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://southaustralia.com/products/clare-valley/destination-information/saddleworth"
  },
  {
   "name": "Balaklava",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Listed as a town by one tourism page; only a courthouse gallery named. For: town section, Wikipedia views. Against: thin",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "Town listing only (southaustralia.com, clarevalley.com.au). Draws are part-time museum (2nd/4th Sunday), Rocks Reserve and Devils Gardens, none named as a stop by a guide; the town is not itself a draw.",
+  "decided_by": "resolver",
   "views": 6420,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://clarevalley.com.au/explore/regions-towns/balaklava"
  },
  {
   "name": "Snowtown",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Single tourism-page town listing; nothing named to see. Views are from the crime, not visitors",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "southaustralia.com page names the wind farm viewed from the highway and the Big Blade on display (a 10-minute look); Lake Bumbunga is listed separately. Town not a draw.",
+  "decided_by": "resolver",
   "views": 21019,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/clare-valley/destination-information/snowtown"
  },
  {
   "name": "Blyth",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Clare Valley Tourism lists Blyth Mosaic, Brooks Lookout, Dean Nicolle Eucalypt Walk, Lomandra trail; small town with several short stops, one source",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "southaustralia.com lists three permanent stops in Blyth: the Blyth Mosaic, the 4.4 km Dean Nicolle Eucalypt Walk (~300 eucalypt species) and nearby Brooks Lookout (90 km view to Yorke Peninsula). Small, but enough to fill 30+ min.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/clare-valley/attraction/dean-nicolle-eucalypt-walk"
  },
  {
   "name": "Eudunda",
@@ -413,21 +423,23 @@
   "name": "Farrell Flat",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Clare Valley Tourism lists Farrell Flat Silo Art (a roadside-icon silo mural); one counted source, short visit; the place is the silo art, not the town",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Duplicate of Farrell Flat Silo Art; the town wrapper adds nothing a guide names.",
+  "decided_by": "resolver",
   "views": 1229,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.clarevalley.com.au/directory/farrell-flat-silo-art"
  },
  {
   "name": "Jamestown",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "town in the region but no counted source found naming a sight (Wikivoyage Yorke/Clare page does not mention it)",
-  "decided_by": "judge",
+  "reason": "southaustralia.com lists Jamestown under Flinders Ranges and Outback: Memorial Park (Krupp cannon), Diggers Walk, RM Williams Story, railway museum; nothing a guide singles out as a stop and no Clare-region source. Searched southaustralia.com, Apollo guide.",
+  "decided_by": "resolver",
   "views": 8978,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/flinders-ranges-and-outback/attraction/jamestown-memorial-park"
  },
  {
   "name": "Spalding",
@@ -483,11 +495,12 @@
   "name": "Barossa Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists a local-history museum in Tanunda (one line); no price/opening detail",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage See and barossa.com list the local-history museum in the Old Telegraph Station, Tanunda, a stop on the Tanunda Heritage Trail. Against: hours are limited (opening days conflict between listings).",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://barossa.com/listing/barossa-museum"
  },
  {
   "name": "Maggie Beer Farm Shop",
@@ -534,20 +547,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source naming it found (Wikipedia category only); linear trail with no distinct point",
-  "decided_by": "judge",
+  "reason": "Searched barossa.com and southaustralia.com; only the Barossa by Bike map and unnamed cycle routes. No distinct named trail with a counted source.",
+  "decided_by": "resolver",
   "views": 525,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.barossa.com/"
  },
  {
   "name": "Lyndoch Recreation Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Wikipedia category only, no counted source; local conservation park",
-  "decided_by": "judge",
+  "reason": "Searched web, parks.sa.gov.au, barossa.com: nothing found naming it as somewhere to go; local reserve.",
+  "decided_by": "resolver",
   "views": 4473,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.barossa.com/"
  },
  {
   "name": "Angaston Power Station",
@@ -594,20 +609,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage lists the 1890 chateau cellar door (daily); landmark building but a winery; one source",
-  "decided_by": "judge",
+  "reason": "For: grand 1890 chateau open daily with 40-min cellar tours and croquet lawn; Wikivoyage and southaustralia.com list it. Against: both list it as a winery/cellar door, which the rules exclude unless a recognised attraction.",
+  "decided_by": "resolver",
   "views": 1677,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.southaustralia.com/products/barossa/food-and-drink/chateau-tanunda"
  },
  {
   "name": "Jacob's Creek Visitor Centre",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage lists Jacob's Creek (daily); famous brand with visitor centre and creek walk; one source",
-  "decided_by": "judge",
+  "reason": "For: barossa.com and Wikivoyage list it; self-guided Trail of Discovery creek walk and demonstration vineyard make a 30+ min stop at a famous brand. Against: it is a cellar door/visitor centre of a winery.",
+  "decided_by": "resolver",
   "views": 4093,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://barossa.com/listing/jacobs-creek"
  },
  {
   "name": "Penfolds Barossa Valley",
@@ -633,11 +650,12 @@
   "name": "Yalumba",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists Yalumba, Angaston, Australia's oldest family-owned winery with a historic estate; one source",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Cellar door of a winery (Wikivoyage Drink listing); tours conflict across sources. Not a distinct visitor place under the winery exclusion. Searched Time Out, Expedia.",
+  "decided_by": "resolver",
   "views": 2594,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.timeout.com/adelaide/attractions/yalumba"
  },
  {
   "name": "Peter Lehmann Wines",
@@ -693,11 +711,12 @@
   "name": "Henschke",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists Henschke, Keyneton, home of Hill of Grace; one source (opened Barossa Valley page)",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage lists it under Wineries; a cellar door. Hill of Grace is a private vineyard. Business, not a spot.",
+  "decided_by": "resolver",
   "views": 2105,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Barossa_Valley"
  },
  {
   "name": "Rockford Wines",
@@ -884,10 +903,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Landform with no visitor source naming anything to see or do (no counted source).",
-  "decided_by": "judge",
+  "reason": "Landform; searched barossa.com and southaustralia.com, no visitor source names anything to do there (Menglers Hill Lookout is the named stop).",
+  "decided_by": "resolver",
   "views": 707,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Barossa_Valley"
  },
  {
   "name": "Barossa Bike Hire",
@@ -974,10 +994,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Short walk linking cellar doors in a village; minor, one source.",
-  "decided_by": "judge",
+  "reason": "Searched clarevalley.com.au and southaustralia.com: no counted source found; cellar-door walk.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.clarevalley.com.au/explore/short-walks"
  },
  {
   "name": "Brooks Lookout",
@@ -1123,11 +1144,12 @@
   "name": "Neagles Rock Short Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Short walk to a rock lookout near Clare listed by Clare Valley Tourism; plausible half-hour stop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "1 km, 45-minute loop to a 455 m lookout with rare remnant woodland; named on clarevalley.com.au Short Walks, southaustralia.com and Walking SA.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.clarevalley.com.au/directory/neagles-rock-short-walk"
  },
  {
   "name": "Riverton to Rhynie Short Walk",
@@ -1183,11 +1205,12 @@
   "name": "Rattler Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Riverton to Auburn rail trail promoted by Clare Valley Tourism; a walkable/cyclable route, has a Wikipedia article.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "19 km walking/cycling rail trail Riverton to Auburn (joins the Riesling Trail); southaustralia.com attraction page plus Walking SA.",
+  "decided_by": "resolver",
   "views": 290,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/clare-valley/attraction/rattler-trail"
  },
  {
   "name": "Shamus Liptrot Cycling Trail",
@@ -1244,40 +1267,44 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source; Wikipedia category only; a rarely visited park",
-  "decided_by": "judge",
+  "reason": "Searched parks.sa.gov.au, web: only a Wikipedia article (14 sq km park near Burra); no visitor facilities or walks named.",
+  "decided_by": "resolver",
   "views": 408,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Mimbara_Conservation_Park"
  },
  {
   "name": "Bowman Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "Rule 1: no counted source; a local park near Crystal Brook (also on the edge of the region)",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "flindersandoutback.com.au (regional tourism board) names Bowman Recreational Park near Crystal Brook: walking trails, 1850s homestead ruins and infirmary, Heysen Trail, kangaroos. Note: sits at region edge (Crystal Brook); proposer to confirm region.",
+  "decided_by": "resolver",
   "views": 563,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://flindersandoutback.com.au/towns/crystal-brook"
  },
  {
   "name": "Para Wirra Conservation Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: SA parks page (counted) for a recreation park with walks and picnic areas; boundary with sa-adelaide unclear (include, proposer resolves)",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "parks.sa.gov.au names walks (Hissey Loop 1 hr, Lake Discovery Walk 30 min, Mack Creek Hike 4 hr). Note: Gawler/Adelaide fringe, proposer to resolve region.",
+  "decided_by": "resolver",
   "views": 777,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.parks.sa.gov.au/insider-tips/para-wirra-walking-trail"
  },
  {
   "name": "Lake Bumbunga",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/3: Clare Valley Tourism lists it; pink salt lake and 5k page views, a roadside stop photographers use",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wakefield Regional Council \"10 things to see and do\" and Clare Valley Tourism list the pink salt lake beside the highway at Lochiel, with a lookout and Loch-Eel sculpture. Roadside icon guides name; colour varies.",
+  "decided_by": "resolver",
   "views": 5191,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.wrc.sa.gov.au/see-and-do/10-things-to-see-and-do/lake-bumbunga-lochiels-pink-lake"
  },
  {
   "name": "Hampton Township Ruins",
@@ -1293,21 +1320,23 @@
   "name": "Redruth Gaol",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 2: historic gaol in Burra open to visitors (Burra heritage trail stop); one source",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "National Trust site in Burra open to visitors through the Burra Heritage Passport (exercise yards, cells; Breaker Morant filmed here); listed by clarevalley.com.au and southaustralia.com.",
+  "decided_by": "resolver",
   "views": 864,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.nationaltrust.org.au/?p=711"
  },
  {
   "name": "Hats Auburn Courthouse Cultural Centre",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "one counted source; small gallery in historic courthouse, short visit",
-  "decided_by": "audit override (audited.json)",
+  "verdict": "reject",
+  "reason": "HATS runs it as a performance venue with 25-30 events a year; visit depends on events, not a standing attraction (the CJ Dennis museum on site is a separate place). Searched clarevalley.com.au, artshub.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://clarevalley.com.au/directory/hats-auburn-courthouse-cultural-centre"
  },
  {
   "name": "Henry Wylie Heritage Garden",
@@ -1353,21 +1382,23 @@
   "name": "Farrell Flat Silo Art",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 3: silo art is a roadside icon travellers stop for; one directory source, short stop",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Silo mural of the last train through town (2020), first of the Clare Valley Silo Art Trail; clarevalley.com.au and southaustralia.com list it. Roadside icon, short stop.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.clarevalley.com.au/directory/farrell-flat-silo-art"
  },
  {
   "name": "Eudunda Silo Art",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 3: silo art roadside icon, Eudunda; one directory source, short stop",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Silo mural honouring local authors incl. Colin Thiele; on the Clare Valley Tourism Silo Art Trail page and clarevalley.com.au. Roadside icon, short stop.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://clarevalley.com.au/news/clare-valley-silo-art-trail"
  },
  {
   "name": "Eudunda Centenary Gardens",
@@ -1423,11 +1454,12 @@
   "name": "Miners Dugouts",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 2/3: Burra's creek-bank dugouts are a heritage-trail sight; one directory source, exterior-style viewing",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Burra Heritage Passport key opens restored creek-bank dugouts; southaustralia.com and clarevalley.com.au passport pages name it as part of Burra's heritage trail. Short stop, second-tier.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/clare-valley/attraction/burra-heritage-passport"
  },
  {
   "name": "Peacocks Chimney Stack",
@@ -1453,11 +1485,12 @@
   "name": "Polish Hill River Church Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 2 (church): museum of Polish settlement in a historic church near Sevenhill; the directory lists it as a museum but no visitor source describes the interior",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "clarevalley.com.au directory lists it, but the museum opens only 11am-4pm on the first Sunday of each month or by appointment (phrcm.org.au); not there whenever a visitor arrives.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://clarevalley.com.au/directory/polish-hill-river-church-museum"
  },
  {
   "name": "Powder Magazine",
@@ -1513,21 +1546,23 @@
   "name": "Burra Railway Station",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: two counted sources (Wikivoyage lists it with a museum of the town and railway); modest draw",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Burra See listing: former station with a museum of the town and its railway; free entry via Burra Passport. Modest second-tier stop.",
+  "decided_by": "resolver",
   "views": 631,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Burra_(South_Australia)"
  },
  {
   "name": "Bon Accord Mine Complex",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 2: mine complex museum in Burra (a separate site from the Burra Mine), one directory source",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "National Trust museum on West and Linkson Streets, Burra, an interpretive centre on 1850s mining with relics and ore samples; part of Burra Passport. Distinct from Burra Mine.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.nationaltrust.org.au/places/bon-accord-mine-complex/"
  },
  {
   "name": "Burra Regional Art Gallery",
@@ -1624,10 +1659,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1/4: no counted source; racecourse hosts events only",
-  "decided_by": "judge",
+  "reason": "Racecourse used on event days only; searched clarevalley.com.au, no visitor listing.",
+  "decided_by": "resolver",
   "views": 308,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.clarevalley.com.au/"
  },
  {
   "name": "Anlaby Station",
@@ -1644,20 +1680,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1/2: working pastoral station, no counted source or public access",
-  "decided_by": "judge",
+  "reason": "Working pastoral station; searched southaustralia.com and clarevalley.com.au, no public visit offered.",
+  "decided_by": "resolver",
   "views": 910,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.clarevalley.com.au/"
  },
  {
   "name": "Hummock Range",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source; a range with no named visitor feature",
-  "decided_by": "judge",
+  "reason": "Range containing wind-farm land; no visitor source names a feature to visit (Snowtown page mentions it only as the wind farm site).",
+  "decided_by": "resolver",
   "views": 568,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/clare-valley/destination-information/snowtown"
  },
  {
   "name": "Goyder South Wind Farm",
@@ -1674,10 +1712,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 2: big battery; no counted source and not a visitor attraction (though well known)",
-  "decided_by": "judge",
+  "reason": "Operating battery with no visitor access or counted visitor source; searched southaustralia.com.",
+  "decided_by": "resolver",
   "views": 14913,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/"
  },
  {
   "name": "Mid North",
@@ -1694,20 +1733,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 3: Australia's long-distance trail (1,200 km) crossing the region; a linear feature belonging to where visitors reach it; no counted source in the list, parks/SATC would count",
-  "decided_by": "judge",
+  "reason": "For: 1,200 km flagship walking trail with an official site (heysentrail.asn.au) and sections named in Barossa/Clare/Bowman Park pages. Against: a linear feature spanning many regions with no single access point or midpoint inside this region; placement problem, not a visitor-spot problem.",
+  "decided_by": "resolver",
   "views": 5138,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://heysentrail.asn.au/"
  },
  {
   "name": "Mawson Trail",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 3: long-distance cycling trail (900 km) through the region; same linear-feature issue; no counted source in the list",
-  "decided_by": "judge",
+  "reason": "For: ~900 km cycling trail Adelaide Hills to Blinman, promoted by tourism boards, passes the Rattler loop. Against: long linear route spanning regions; no single place in this region; I opened no agency page for it (searches returned only guides and Wikipedia).",
+  "decided_by": "resolver",
   "views": 1138,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Mawson_Trail"
  },
  {
   "name": "Gawler & Barossa Jockey Club",
@@ -1723,10 +1764,11 @@
   "name": "Gawler National Trust Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: Wikivoyage Gawler lists it (a dead link flagged), small heritage museum; opening unverified",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage lists only a dead link; open Tue-Fri 1-4pm normally but a July 2026 Bunyip Press report says it is closed after structural damage with no reopening date.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://explore.history.sa.gov.au/?p=307"
  }
 ]

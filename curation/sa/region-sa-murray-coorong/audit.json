@@ -23,87 +23,111 @@
   }
  },
  {
-  "name": "Coorong Wildside Tours",
+  "name": "Coorong National Park",
+  "wiki": "Coorong National Park",
+  "views": 5942,
+  "counted_sources": 5,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Coorong National Park",
+   "wiki": "Coorong National Park",
+   "coordinates": {
+    "lat": -36.04916667,
+    "lng": 139.55361111
+   },
+   "coordinates_source": "wikipedia:Coorong National Park",
+   "views": 5942,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/coorong-national-park",
+    "https://en.wikivoyage.org/wiki/The_Coorong",
+    "https://en.wikivoyage.org/wiki/Murray_and_Mallee_Riverland",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Coorong_National_Park"
+   ],
+   "note": "National park: 140 km saline lagoons and Ocean Beach dunes, Ramsar wetland, Storm Boy country"
+  }
+ },
+ {
+  "name": "Karoonda Day and Night Silo Art",
   "wiki": null,
   "views": 0,
   "counted_sources": 3,
   "script_verdict": "keep",
   "rule": "auto-keep",
   "candidate": {
-   "name": "Coorong Wildside Tours",
+   "name": "Karoonda Day and Night Silo Art",
    "wiki": null,
    "coordinates": null,
    "coordinates_source": null,
    "views": 0,
    "counted_sources": [
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do",
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/tours",
-    "https://www.themurrayriver.com/destinations/coorong-district-council/"
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong",
+    "https://www.themurrayriver.com/three-of-the-best-discover-karoonda-pinnaroo-and-lameroo/"
    ],
    "other_sources": [],
-   "note": "Operator: small boat tours of the Coorong lagoon"
+   "note": "Silo art: day-and-night painted silos"
   }
  },
  {
-  "name": "Lake Bonney (Riverland)",
-  "wiki": "Lake Bonney (South Australia)",
-  "views": 324,
-  "counted_sources": 3,
-  "script_verdict": "keep",
-  "rule": "auto-keep",
-  "candidate": {
-   "name": "Lake Bonney (Riverland)",
-   "wiki": "Lake Bonney (South Australia)",
-   "coordinates": null,
-   "coordinates_source": null,
-   "views": 324,
-   "counted_sources": [
-    "https://en.wikivoyage.org/wiki/Barmera",
-    "https://southaustralia.com/destinations/riverland/places/barmera",
-    "https://southaustralia.com/destinations/riverland"
-   ],
-   "other_sources": [
-    "https://en.wikipedia.org/wiki/Lake_Bonney_(South_Australia)"
-   ],
-   "note": "Lake: large lake at Barmera with beach and watersports",
-   "redirect_to": "Lake Bonney",
-   "disambiguation": true
-  }
- },
- {
-  "name": "Mannum Waterfalls",
-  "wiki": "Mannum Waterfalls",
-  "views": 0,
-  "counted_sources": 4,
-  "script_verdict": "keep",
-  "rule": "auto-keep",
-  "candidate": {
-   "name": "Mannum Waterfalls",
-   "wiki": "Mannum Waterfalls",
-   "coordinates": null,
-   "coordinates_source": null,
-   "views": 0,
-   "counted_sources": [
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/places/mannum",
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do",
-    "https://www.themurrayriver.com/destinations/the-murray-river/"
-   ],
-   "other_sources": [
-    "https://en.wikipedia.org/wiki/Mannum_Waterfalls"
-   ],
-   "note": "Natural attraction: small seasonal waterfall near Mannum"
-  }
- },
- {
-  "name": "Murray Bridge Discovery Trail",
+  "name": "Mallee Estate Winery",
   "wiki": null,
   "views": 0,
   "counted_sources": 3,
   "script_verdict": "keep",
   "rule": "auto-keep",
   "candidate": {
-   "name": "Murray Bridge Discovery Trail",
+   "name": "Mallee Estate Winery",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://southaustralia.com/destinations/riverland",
+    "https://southaustralia.com/destinations/riverland/places/renmark",
+    "https://southaustralia.com/destinations/riverland/things-to-do"
+   ],
+   "other_sources": [],
+   "note": "Winery experiences at Renmark"
+  }
+ },
+ {
+  "name": "Mighty Murray Way",
+  "wiki": "Mighty Murray Way",
+  "views": 0,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Mighty Murray Way",
+   "wiki": "Mighty Murray Way",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong",
+    "https://southaustralia.com/destinations/riverland",
+    "https://www.themurrayriver.com/destinations/the-murray-river/"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Mighty_Murray_Way"
+   ],
+   "note": "Road trip route from Riverland to the Murray Mouth"
+  }
+ },
+ {
+  "name": "Murray Bridge Swimming Centre and Water Park",
+  "wiki": null,
+  "views": 0,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Murray Bridge Swimming Centre and Water Park",
    "wiki": null,
    "coordinates": null,
    "coordinates_source": null,
@@ -114,31 +138,31 @@
     "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do"
    ],
    "other_sources": [],
-   "note": "Walking/cycling trail along the river at Murray Bridge"
+   "note": "Public pool and water park"
   }
  },
  {
-  "name": "Old Tailem Town",
-  "wiki": "Old Tailem Town",
+  "name": "Olivewood Historic Homestead and Museum",
+  "wiki": "Olivewood Homestead",
   "views": 0,
   "counted_sources": 3,
   "script_verdict": "keep",
   "rule": "auto-keep",
   "candidate": {
-   "name": "Old Tailem Town",
-   "wiki": "Old Tailem Town",
+   "name": "Olivewood Historic Homestead and Museum",
+   "wiki": "Olivewood Homestead",
    "coordinates": null,
    "coordinates_source": null,
    "views": 0,
    "counted_sources": [
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do",
-    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/places/tailem-bend"
+    "https://southaustralia.com/destinations/riverland/things-to-do/attractions",
+    "https://en.wikivoyage.org/wiki/Renmark",
+    "https://southaustralia.com/destinations/riverland/places/renmark"
    ],
    "other_sources": [
-    "https://en.wikipedia.org/wiki/Old_Tailem_Town"
+    "https://en.wikipedia.org/wiki/Olivewood_Homestead"
    ],
-   "note": "Heritage village: Australia's largest pioneer village museum with ghost tours"
+   "note": "Historic homestead museum (Charles Chaffey's house, National Trust)"
   }
  },
  {

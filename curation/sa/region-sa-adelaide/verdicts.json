@@ -13,11 +13,12 @@
   "name": "North Adelaide",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage district with dining and heritage streets, but its sights (Montefiore Hill, St Peter's) are separate candidates; a suburb needs its own named sight.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Suburb wrapper: Wikivoyage's North Adelaide entries are dining streets and separate sights (St Peter's, Montefiore Hill); no distinct thing to see under this name. Searched Wikivoyage and SATC.",
+  "decided_by": "resolver",
   "views": 7243,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
  },
  {
   "name": "Adelaide Park Lands",
@@ -93,11 +94,12 @@
   "name": "North Terrace",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Boulevard of museums; two counted sources, but the institutions are individual spots and the street adds a walk only.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "A boulevard that wraps its own institutions (Art Gallery, SA Museum, Migration Museum, Botanic Garden), each a spot; SATC and Wikivoyage describe it only by listing them. Part of larger spots.",
+  "decided_by": "resolver",
   "views": 178,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/north-terrace"
  },
  {
   "name": "Art Gallery of South Australia",
@@ -154,10 +156,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Two tourism-board sources name it (heritage Mortlock reading room, free), but a library is a civic building by the rule.",
-  "decided_by": "judge",
+  "reason": "For: two SATC pages name it, free, heritage Mortlock Chamber and Treasures Wall exhibitions open daily. Against: a library is a civic building by the rules (Turanga benchmark); the draw is a reading room and a small display, ~30 min.",
+  "decided_by": "resolver",
   "views": 6377,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/state-library-of-south-australia"
  },
  {
   "name": "Adelaide Oval",
@@ -214,30 +217,33 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage lists it open daily, but the extract only says it is smaller than St Peter's; no named art or architecture to see.",
-  "decided_by": "judge",
+  "reason": "For: Wikivoyage lists it open daily 7-7, free, 'rather impressive ... particularly on the inside'. Against: single source, no named art or architecture beyond that; a city-centre church by Victoria Square. Searched for a second counted source, found none.",
+  "decided_by": "resolver",
   "views": 4047,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
  },
  {
   "name": "Australian Space Discovery Centre",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists a public space exhibit at Lot Fourteen; one source, short visit.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Free public Space Gallery at Lot Fourteen with hands-on exhibits; named by Wikivoyage, SATC and Experience Adelaide (three counted sources). Permanent museum-style exhibit, 30-60 min.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/australian-space-discovery-centre"
  },
  {
   "name": "Adelaide Holocaust Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists it, but it opens only Sun and Tue-Thu, bookings required, small.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage lists it with hours (Sun, Tue-Thu; booking on Tue-Thu), $10; a permanent small museum open to the public. Second-tier museum a guide names. Case against: limited days, bookings, single source.",
+  "decided_by": "resolver",
   "views": 1412,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
  },
  {
   "name": "Haigh's Chocolate Factory",
@@ -314,30 +320,33 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "civic building; one counted source (SATC) offers tours of hall and organ; tour-only visit, arguable",
-  "decided_by": "audit override (audited-full.json)",
+  "reason": "For: SATC lists volunteer public tours of the heritage hall and organ, 'one of Adelaide's icons'. Against: a civic building visited only by scheduled tour, and the SATC page gives no schedule; one counted source.",
+  "decided_by": "resolver",
   "views": 3098,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide/tour/adelaide-town-hall-tour"
  },
  {
   "name": "Old Parliament House",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Museum of democracy, but no counted source found (southaustralia.com slug 404); Wikipedia only.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Duplicate of Parliament House: the free public tours of Parliament House on North Terrace cover the original 1850s chamber in the old building. No separate counted visitor listing found (searched SATC, Wikivoyage, parliament.sa.gov.au).",
+  "decided_by": "resolver",
   "views": 588,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://education.parliament.sa.gov.au/book/general-public/"
  },
  {
   "name": "Parliament House",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Tours offered but no counted source found; civic building.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "The Parliament of South Australia (managing agency) runs free public tours, no booking, twice daily on non-sitting days, covering the 1850s chamber, House of Assembly and Legislative Council; open to the public inside. Case against: civic building, tour-only; no SATC listing found.",
+  "decided_by": "resolver",
   "views": 7922,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://education.parliament.sa.gov.au/book/general-public/"
  },
  {
   "name": "General Post Office, Adelaide",
@@ -353,31 +362,34 @@
   "name": "Victoria Square",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Central square with the Three Rivers fountain; Wikivoyage mentions it only in history/transport, no See listing.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "City of Adelaide's visitor site (Experience Adelaide) features Victoria Square / Tarntanyangga as the central square: Three Rivers fountain, Kaurna significance, birthplace of the Aboriginal flag. Permanent, free. Case against: a square, ~20 min.",
+  "decided_by": "resolver",
   "views": 5891,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.experienceadelaide.com.au/public-art/art-in-adelaide/the-three-rivers/"
  },
  {
   "name": "Chinatown, Adelaide",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists Chinatown as a pedestrian area (Moonta St) by the Central Market; a food strip, no thing to see.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage lists only a pedestrian strip (Moonta St) beside Central Market; a dining strip with nothing to see or do of its own. Searched Wikivoyage and Experience Adelaide.",
+  "decided_by": "resolver",
   "views": 2286,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
  },
  {
   "name": "Ayers House",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Historic mansion museum (National Trust) open to the public; no counted source found.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Closed: the National Trust museum closed on 26 Sept 2021 after eviction; no counted source found listing it as open (searched SATC and web).",
+  "decided_by": "resolver",
   "views": 1859,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://playandgo.com.au/ayers-house-museum/"
  },
  {
   "name": "Adelaide Festival Centre",
@@ -393,11 +405,12 @@
   "name": "Torrens Lake and Elder Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Riverbank park beside the Festival Centre; Wikivoyage mentions the Torrens only in passing; Popeye boats are an operator.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Experience Adelaide (City of Adelaide visitor site) names Elder Park with the 1882 rotunda, lake walking tracks and paddleboat hire; SATC lists the riverbank and Popeye landing. Permanent, free. Popeye cruises are the operator, not the spot.",
+  "decided_by": "resolver",
   "views": 1054,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.experienceadelaide.com.au/business-listings/elder-park/"
  },
  {
   "name": "Popeye river cruises",
@@ -413,41 +426,45 @@
   "name": "Adelaide Himeji Garden",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "No counted source found; small garden in Park Lands (covered by the Park Lands).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Experience Adelaide features the free Japanese garden (rock-and-sand and lake gardens, teahouse, stepping stones) in the south Park Lands, open daily. Case against: small, ~30 min.",
+  "decided_by": "resolver",
   "views": 1689,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.experienceadelaide.com.au/blog/secrets-of-adelaide-himeji-garden-ma/"
  },
  {
   "name": "Veale Gardens",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "No counted source; ordinary Park Lands garden.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Experience Adelaide lists Veale Gardens: formal serpentine canal, statues and the adjacent Adelaide-Qingdao Rose Garden, with guided walks on SATC. Permanent, free. Case against: ordinary Park Lands garden.",
+  "decided_by": "resolver",
   "views": 753,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.experienceadelaide.com.au/notable-locations/veale-gardens-a-vision-from-an-international-study-tour/"
  },
  {
   "name": "Botanic Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source; Park Lands green beside the Zoo, weekly speakers' corner.",
-  "decided_by": "judge",
+  "reason": "No dedicated visitor listing found (searched Experience Adelaide, SATC, Wikivoyage); only mentioned within a guided walk with the Botanic Garden; Sunday speakers' corner is a weekly event; adjoins the Zoo and Botanic Garden.",
+  "decided_by": "resolver",
   "views": 805,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.experienceadelaide.com.au/explore-the-city/"
  },
  {
   "name": "Rymill Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source; ordinary Park Lands park.",
-  "decided_by": "judge",
+  "reason": "Experience Adelaide lists a duck lake and playground, and it hosts the Fringe; an ordinary Park Lands park with nothing distinct to see (ordinary-park benchmark).",
+  "decided_by": "resolver",
   "views": 1822,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.experienceadelaide.com.au/business-listings/rymill-park-murlawirrapurka/"
  },
  {
   "name": "Adelaide railway station",
@@ -463,11 +480,12 @@
   "name": "West Terrace Cemetery",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "No counted source found; cemetery visited by guided tour only.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC lists Adelaide Cemetery Tours of this State heritage cemetery; the Adelaide Cemeteries Authority offers 7-day self-guided interpretive trails (about an hour) plus guided tours. Case against: cemetery; some visit by tour.",
+  "decided_by": "resolver",
   "views": 2677,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/adelaide/tour/adelaide-cemetery-tours"
  },
  {
   "name": "Lot Fourteen",
@@ -483,11 +501,12 @@
   "name": "JamFactory",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One tourism-board source (studio tours and gallery); it is a craft studio and shop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC lists JamFactory's studios and galleries (ceramics, glass, furniture, jewellery) with workshop tours; visitors can see makers at work and free gallery shows. Case against: part shop and a not-for-profit studio.",
+  "decided_by": "resolver",
   "views": 1042,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide/tour/jamfactory-workshops-and-tours"
  },
  {
   "name": "Carrick Hill",
@@ -504,30 +523,33 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source found; occasional events venue.",
-  "decided_by": "judge",
+  "reason": "Rule 4: National Trust house open only on one Sunday afternoon a month (tours 2-4.30pm) or by arrangement; the SATC listing is an event ('open days').",
+  "decided_by": "resolver",
   "views": 1587,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/adelaide/event/open-days-at-beaumont-house"
  },
  {
   "name": "Penfolds Magill Estate",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Tourism board source for the original Penfolds winery with city views, but it is a cellar door; brief holds the line unless a guide singles it out as a landmark estate.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "The SATC listing is for the Magill Estate Restaurant (dinner Wed-Sat, lunch weekends, 54 seats); a restaurant and cellar door, not a visitor place. No guide singles out the estate as an attraction.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide/food-and-drink/penfolds-magill-estate-restaurant"
  },
  {
   "name": "Coopers Brewery",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage names the brewery visitor centre; a single famous brewery, but a business.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names the brewery tour and SATC lists the tours; Coopers runs a Visitor Centre tour and 90-min Brew Tour Tue-Sat. A famous brewery tour, the case COVERAGE allows. Against: a business, tours must be booked.",
+  "decided_by": "resolver",
   "views": 19703,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://coopers.com.au/pages/visit-coopers-brewery"
  },
  {
   "name": "Burnside Village",
@@ -603,21 +625,23 @@
   "name": "The Old Gum Tree",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "Rule 3: minor memorial site (a plaque and stump area), no counted source.",
-  "decided_by": "judge",
+  "verdict": "review",
+  "reason": "For: SATC lists Old Gum Tree Reserve and the council describes it as where South Australia's colony was proclaimed on 28 Dec 1836. Against: a small reserve with a tree and plaques, a ten-minute look; close to the minor-memorial rule.",
+  "decided_by": "resolver",
   "views": 4085,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/old-gum-tree-reserve"
  },
  {
   "name": "Army Museum of South Australia",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists a military museum with limited hours (Sun, Mon, Wed); one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage lists the volunteer-run military museum (guns, artillery, WWI/WWII/Korea/Vietnam), $5; permanent museum a guide names. Case against: limited hours (Sun, Mon, Wed), one source.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/South_and_East"
  },
  {
   "name": "Adelaide Fringe",
@@ -713,11 +737,12 @@
   "name": "Port Adelaide Lighthouse",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage entry: 25 m 1869 lighthouse relocated to the waterfront, an exhibit of the Maritime Museum.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Part of the South Australian Maritime Museum precinct (an exhibit of the museum) and seen from outside; 10-minute look. Wikivoyage is the only counted source; SATC only has it inside a museum tour.",
+  "decided_by": "resolver",
   "views": 826,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
  },
  {
   "name": "National Railway Museum",
@@ -763,11 +788,12 @@
   "name": "Port Adelaide Historical Society Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One tourism board listing for a volunteer local history museum.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC lists the local community museum with maritime collection (Keith Leleu), models and audio-visual displays; permanent small museum a tourism board names. Case against: volunteer-run, one source.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/port-adelaide-historical-society-museum"
  },
  {
   "name": "Adelaide Dolphin Sanctuary",
@@ -804,10 +830,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 4: a Sunday-only weekly market; no counted source.",
-  "decided_by": "judge",
+  "reason": "Rule 4: a Sunday-only weekly market; searched SATC, Experience Adelaide and Wikivoyage, none lists it as an attraction.",
+  "decided_by": "resolver",
   "views": 688,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/adelaide/accommodation/quest-port-adelaide"
  },
  {
   "name": "Semaphore",
@@ -843,11 +870,12 @@
   "name": "Largs Bay",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "No counted source (rule 1); a beach suburb jetty adjacent to Semaphore.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "City of Port Adelaide Enfield's visitor pages list the Largs Bay foreshore: 1882 jetty, kiosk, playground, walking paths, Largs Pier Hotel. A named beach and historic jetty. Council page was blocked to scripts (403); details from search. Against: no SATC listing.",
+  "decided_by": "resolver",
   "views": 2684,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.cityofpae.sa.gov.au/visit/playgrounds-parks-gardens/largs-bay-foreshore"
  },
  {
   "name": "Tennyson Dunes",
@@ -873,11 +901,12 @@
   "name": "Thompson Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage entry names it as a birdwatching spot of the Bird Sanctuary park.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "NPWS SA (parks.sa.gov.au) names Thompson Beach among the top spots to birdwatch in the Adelaide International Bird Sanctuary (migratory shorebirds Oct-Apr); Wikivoyage lists it too.",
+  "decided_by": "resolver",
   "views": 1528,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.parks.sa.gov.au/insider-tips/bird-watching-spots"
  },
  {
   "name": "Torrens Island Conservation Park",
@@ -923,11 +952,12 @@
   "name": "Glenelg Jetty",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Two counted sources (tourism board and Wikivoyage's Adelaide guide) but it is the beach's own jetty.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Duplicate of Glenelg Beach: SATC's jetty page is a history blurb and Wikivoyage lists the jetty as part of Glenelg Beach, so it is the beach's own jetty.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/glenelg-jetty"
  },
  {
   "name": "Marina Pier Glenelg",
@@ -953,31 +983,34 @@
   "name": "Bay Discovery Centre",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage names this local museum in Glenelg Town Hall.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names the local-history museum in Glenelg Town Hall on Moseley Square. Permanent small museum a guide names. Case against: one source.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
  },
  {
   "name": "The Beachouse",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists this seafront amusement park (mini-golf, rides, carousel).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage lists this permanent seafront amusement park (mini-golf, carousel, bumper cars, mini train, slides); open daily. Against: a ticketed business.",
+  "decided_by": "resolver",
   "views": 7929,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
  },
  {
   "name": "Luna Park Glenelg",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 2: the candidate is a former park, closed; no counted source.",
-  "decided_by": "judge",
+  "reason": "Closed: a former amusement park (the Beachouse now occupies the site); no counted source lists it as open.",
+  "decided_by": "resolver",
   "views": 9390,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
  },
  {
   "name": "West Beach",
@@ -1013,11 +1046,12 @@
   "name": "Brighton",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage names Brighton as a beach reached by the Seaford line; jetty and beach.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC's Adelaide beaches guide features Brighton: jetty, esplanade, Brighton Jetty Sculptures; Wikivoyage names the beach via the Seaford line. A second-tier beach.",
+  "decided_by": "resolver",
   "views": 4504,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/guides/best-beaches-in-adelaide"
  },
  {
   "name": "Brighton Jetty",
@@ -1034,30 +1068,33 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source (rule 1); a suburban beach.",
-  "decided_by": "judge",
+  "reason": "Only mentions found are accommodation listings (surf club, beach hotel) and the coastal trail; no counted source names the beach as a place to go (searched SATC, Wikivoyage, Experience Adelaide).",
+  "decided_by": "resolver",
   "views": 2009,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/guides/best-beaches-in-adelaide"
  },
  {
   "name": "Marino Rocks Lighthouse",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source (rule 1); the lighthouse is a short clifftop look from the Marino path.",
-  "decided_by": "judge",
+  "reason": "Duplicate of Marino Conservation Park: the lighthouse is seen from the park's 1.2 km Botanical Trail; no counted source treats it as a separate visit.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.parks.sa.gov.au/parks/marino-conservation-park"
  },
  {
   "name": "Marino Conservation Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks agency page lists it in Adelaide parks.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "NPWS SA and SATC list the park: walking trail with views over Brighton, Glenelg and Marino Rocks Lighthouse, the last coastal heath on the Adelaide coast (Botanical Trail ~1.2 km).",
+  "decided_by": "resolver",
   "views": 421,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.parks.sa.gov.au/parks/marino-conservation-park"
  },
  {
   "name": "Hallett Cove Conservation Park",
@@ -1073,31 +1110,34 @@
   "name": "Hallett Cove Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage mentions Hallett Cove beaches via the Seaford line.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names the beaches at Hallett Cove and SATC's Hallett Cove Conservation Park page says the park's beach is popular for swimming; the Adelaide Coast Park Trail starts there. Note: shares the cove with Hallett Cove Conservation Park; merge if that is a spot.",
+  "decided_by": "resolver",
   "views": 6297,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/hallett-cove-conservation-park"
  },
  {
   "name": "Kingston Park Coastal Reserve",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "No counted source (rule 1); a local beach reserve.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC lists 'Kingston Park Coastal Reserve, Lookout and Aboriginal Tjilbruke Trail': cliff-top views over Holdfast Bay, Tjilbruke Spring, 76 indigenous plant species.",
+  "decided_by": "resolver",
   "views": 461,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/kingston-park-coastal-reserve-lookout-and-aboriginal-tjilbruke-trail"
  },
  {
   "name": "Port Noarlunga",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage mentions the Port Noarlunga line only; known for its jetty and reef snorkelling, but I found no visitor listing in the shard sources.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC lists Port Noarlunga Beach, Jetty, Reef and Aquatic Trail and its beaches guide singles out the reef as some of the best snorkelling in SA; jetty with stairs to the reef.",
+  "decided_by": "resolver",
   "views": 5671,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/fleurieu-peninsula/attraction/port-noarlunga-beach-jetty-reef-and-aquatic-trail"
  },
  {
   "name": "Port Noarlunga Reef Aquatic Reserve",
@@ -1114,10 +1154,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source (rule 1); a suburban beach.",
-  "decided_by": "judge",
+  "reason": "Only a grouped mention in SATC's beaches guide ('Port Noarlunga, Christies Beach and Moana ... explore the boardwalk'); no listing or feature of its own found (searched SATC, Wikivoyage).",
+  "decided_by": "resolver",
   "views": 4959,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/guides/best-beaches-in-adelaide"
  },
  {
   "name": "Moana Sands Conservation Park",
@@ -1153,11 +1194,12 @@
   "name": "Sturt Gorge Recreation Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks agency page for the park, gorge walking trails.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "NPWS SA lists the park: Sturt tillite glacial rocks, grey box woodland, new mountain-bike and hiking trails on the Craigburn Farm addition, waterholes along the Sturt River.",
+  "decided_by": "resolver",
   "views": 610,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://www.parks.sa.gov.au/parks/sturt-gorge-recreation-park"
  },
  {
   "name": "Shepherds Hill Recreation Park",
@@ -1183,11 +1225,12 @@
   "name": "Warriparinga",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source in the shard; Kaurna cultural centre and Living Kaurna Cultural Centre on the Sturt River.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Living Kaurna Cultural Centre: SATC lists it, Marion council visitor page; guided one-hour cultural walk and heritage display on the Sturt wetlands.",
+  "decided_by": "resolver",
   "views": 784,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://southaustralia.com/products/adelaide/attraction/living-kaurna-cultural-centre-at-warriparinga"
  },
  {
   "name": "Anstey Hill Recreation Park",
@@ -1223,21 +1266,23 @@
   "name": "Para Wirra Conservation Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks agency page: trails and picnic areas in the northern hills.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Agency page names marked walks (Mack Creek Hike, Lake Discovery Walk), campground and wildlife.",
+  "decided_by": "resolver",
   "views": 777,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.parks.sa.gov.au/insider-tips/para-wirra-walking-trail"
  },
  {
   "name": "Classic Jets Fighter Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists this aviation museum at Parafield with fighter jets.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage See listing with description; aviation museum with cockpits to sit in, open most days; small museum, one counted source plus museum guides.",
+  "decided_by": "resolver",
   "views": 7302,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
  },
  {
   "name": "Salisbury Waterwheel Museum",
@@ -1263,11 +1308,12 @@
   "name": "National Military Vehicle Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists it with no description.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Museum with running vehicles, open Sundays 10-4; named by Wikivoyage and History SA's Explore listing (counted heritage/visitor guide). Note: unconfirmed lease risk.",
+  "decided_by": "resolver",
   "views": 1040,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://explore.history.sa.gov.au/?p=402"
  },
  {
   "name": "Adelaide Motorsport Park",
@@ -1283,21 +1329,23 @@
   "name": "Tramway Museum, St Kilda",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source in the shard; tram museum with rides at St Kilda, known locally.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Volunteer museum of 20+ trams with unlimited rides on a 1.6 km line to the St Kilda playground; History SA Explore and Salisbury council visitor listing. Open Sundays and holidays only (permanent venue, limited days).",
+  "decided_by": "resolver",
   "views": 1440,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://explore.history.sa.gov.au/?p=490"
  },
  {
   "name": "St Kilda Mangrove Trail",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "No counted source in the shard; a mangrove boardwalk and playground.",
-  "decided_by": "judge",
+  "reason": "Case for: mangrove boardwalk long promoted by Salisbury council and DEW as a visit; birds and tidal wetlands, free. Case against: sources say the boardwalk is closed for maintenance until further notice after 2020 mangrove dieback (about 450 m open per a 2024 review) and needs a gate key; closed places fail.",
+  "decided_by": "resolver",
   "views": 2555,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.environment.sa.gov.au/topics/coasts/st-kilda-mangroves"
  },
  {
   "name": "Barker Inlet-St Kilda Aquatic Reserve",
@@ -1314,20 +1362,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "A commercial indoor amusement business, no counted source.",
-  "decided_by": "judge",
+  "reason": "Closed indoor amusement park (Myer Centre) that shut in 1998; no longer exists.",
+  "decided_by": "resolver",
   "views": 9524,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Dazzeland"
  },
  {
   "name": "Greenhills Adventure Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "outside the region: belongs to sa-fleurieu (Victor Harbor area, -35.53); also a commercial adventure park with no counted source",
-  "decided_by": "judge",
+  "reason": "Commercial adventure-park business; no counted source found by search; first pass also noted it lies in sa-fleurieu.",
+  "decided_by": "resolver",
   "views": 2760,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.google.com/search?q=Greenhills+Adventure+Park"
  },
  {
   "name": "Gorge Wildlife Park",
@@ -1383,11 +1433,12 @@
   "name": "Waterfall Gully to Mount Lofty Summit Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one counted source (parks.sa.gov.au lists Waterfall Gully and Mount Lofty Summit but not the track itself); a well-known steep 2-3 hr climb",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Distinct, popular 3-4 hr climb past First and Second Falls to the summit; agency Cleland National Park page names the walk, plus walking guides. Part-of-larger risk is small: Mount Lofty Summit and Waterfall Gully are separate spots, the track is its own walk.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://environment.sa.gov.au/parks/Find_a_Park/Browse_by_region/Adelaide_Hills/cleland-conservation-park"
  },
  {
   "name": "Mount Lofty Summit",
@@ -1414,10 +1465,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "duplicate/part of Mount Lofty Summit (the tower is on the summit); no counted source",
-  "decided_by": "judge",
+  "reason": "Part of Mount Lofty Summit (tower stands on the summit); searched, no separate counted source.",
+  "decided_by": "resolver",
   "views": 828,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide_Hills"
  },
  {
   "name": "Mount Lofty Adventure Hub",
@@ -1464,10 +1516,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 1-2: Wikivoyage names it with a tour/entry; open only 1st and 3rd Sundays 1-4pm gold-coin donation",
-  "decided_by": "judge",
+  "reason": "Case for: Wikivoyage names it in Belair NP, SA's first vice-regal summer residence, gold-coin entry, guided. Case against: open only the 1st and 3rd Sundays 1-4pm, so not there whenever a visitor arrives.",
+  "decided_by": "resolver",
   "views": 1386,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide/Belair_National_Park"
  },
  {
   "name": "Belair Lower Waterfall Lookout",
@@ -1613,41 +1666,45 @@
   "name": "Kuitpo Forest",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1-2: SATC lists Kuitpo walking trails (several marked walks, 1-2 hr, a favourite with walkers); one counted source",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Two counted sources: SATC Kuitpo walking trails page and ForestrySA walking page (Eucalypts Trail 1 hr, Tinjella, Chookarloo Walk). Some trails close for forestry operations.",
+  "decided_by": "resolver",
   "views": 1740,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.forestrysa.com.au/walking-and-hiking/"
  },
  {
   "name": "Kenneth Stirling Conservation Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source found; local Hills conservation park",
-  "decided_by": "judge",
+  "reason": "Searched parks.sa.gov.au and tourism sources: only walking blogs (weekendnotes, trailhiking) name its Filsell Hill and Wottons Scrub circuits; no counted source.",
+  "decided_by": "resolver",
   "views": 307,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.weekendnotes.com/kenneth-stirling-conservation-park/"
  },
  {
   "name": "The Knoll Conservation Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source found; local Hills conservation park",
-  "decided_by": "judge",
+  "reason": "Searched agency and tourism sources: no counted source found for a visitor draw.",
+  "decided_by": "resolver",
   "views": 277,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.google.com/search?q=The+Knoll+Conservation+Park"
  },
  {
   "name": "Cudlee Creek Conservation Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source found; local Hills conservation park",
-  "decided_by": "judge",
+  "reason": "49 ha park, no visitor facilities, only Wikipedia and walker blogs; no counted source.",
+  "decided_by": "resolver",
   "views": 334,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Cudlee_Creek_Conservation_Park"
  },
  {
   "name": "Mount Barker Summit",
@@ -1663,51 +1720,56 @@
   "name": "Yurrebilla Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "long trail (56 km) with no counted source found; its first section is within Belair NP and already part of other candidates; a trail visitors do in sections",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Regional tourism board walks page names the 54-56 km, three-day Belair-to-Chain-of-Ponds trail; SATC describes it too. Distinct named long walk (placement of a linear feature is decided later).",
+  "decided_by": "resolver",
   "views": 808,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://visitadelaidehills.com.au/walks-and-hikes"
  },
  {
   "name": "Heysen Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "1,200 km trail that runs through several regions; no counted source in this list and not a place pinned to the Hills (belongs to the Fleurieu/Flinders end-points)",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC page for the 1,200 km Cape Jervis to Parachilna trail, suggesting sections near Adelaide for day walks; iconic. Linear feature, so place it at its main visitor access point.",
+  "decided_by": "resolver",
   "views": 5138,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://trade.southaustralia.com/products/fleurieu-peninsula/attraction/heysen-trail"
  },
  {
   "name": "Mawson Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "cycling route from Adelaide to the Flinders, spans regions; no counted source here",
-  "decided_by": "judge",
+  "verdict": "review",
+  "reason": "Case for: 900 km Adelaide-Blinman off-road cycle route, listed as a Tour Down Under Grand Tour and by Bike SA, famous with cyclists. Case against: I found no SATC or agency page; it is a cycling route spanning regions that starts at Athelstone, and a rider does not visit it for half an hour.",
+  "decided_by": "resolver",
   "views": 1138,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://tourdownunder.com.au/plan-a-trip/atlas/grand-tours/mawson-trail"
  },
  {
   "name": "Lavender Federation Trail",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "long trail running from Gawler into the Barossa; no counted source; not distinct to this region",
-  "decided_by": "judge",
+  "reason": "Long trail from Gawler to the Hills; searched, no counted source found.",
+  "decided_by": "resolver",
   "views": 382,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.google.com/search?q=Lavender+Federation+Trail"
  },
  {
   "name": "Torrens Linear Park",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "suburban river path with no counted source; an ordinary urban park trail",
-  "decided_by": "judge",
+  "reason": "Suburban river path; no counted source found as a visitor draw.",
+  "decided_by": "resolver",
   "views": 2431,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.google.com/search?q=Torrens+Linear+Park"
  },
  {
   "name": "Amy Gillett Bikeway",
@@ -1743,11 +1805,12 @@
   "name": "Beerenberg Family Farm",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "named by Wikivoyage and SATC (PYO strawberries, jams) but a farm business; seasonal",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "keep",
+  "reason": "Wikivoyage See listing (entry fee, pick-your-own strawberries Nov-Apr) plus SATC page; two counted sources; seasonal venue is allowed.",
+  "decided_by": "resolver",
   "views": 5249,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Hahndorf"
  },
  {
   "name": "The Cedars (Hans Heysen)",
@@ -1773,21 +1836,23 @@
   "name": "Hahndorf Farm Barn",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one counted source (Wikivoyage) names the petting zoo with daily activities; family stop of 1-2 hr",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names the petting zoo with daily milking and animal handling, a 1-2 hr family stop; one counted source for an established attraction. Reported to have been listed for sale, so recheck it is operating.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Hahndorf"
  },
  {
   "name": "Hahndorf Academy",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "gallery/heritage centre in a town already covered; one source and no detail on what a visitor sees",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Free gallery and museum on Main Street (Peramangk, German settlers, 1900s classroom, Heysen sketches), open daily; Lonely Planet, SATC and History SA all name it.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.lonelyplanet.com/points-of-interest/hahndorf-academy/1170190"
  },
  {
   "name": "Hahndorf Hill Winery",
@@ -1804,20 +1869,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "small kids' attraction, one source, a minor stop within Hahndorf",
-  "decided_by": "judge",
+  "reason": "Small children's garden, one SATC source, minor stop of under 30 minutes.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide-hills/attraction/the-fairy-garden-hahndorf"
  },
  {
   "name": "Hahndorf Lavender Estate",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "working lavender farm with shop; one source; minor commercial stop",
-  "decided_by": "judge",
+  "reason": "Working lavender farm and shop; one source, a commercial stop.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide-hills/attraction/hahndorf-lavender-estate-farm"
  },
  {
   "name": "The German Village Shop",
@@ -1864,80 +1931,88 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source names anything to see; a Hills village (town with nothing named)",
-  "decided_by": "judge",
+  "reason": "Village; only Wikivoyage mentions the Crafers Hotel under Sleep; no sight named.",
+  "decided_by": "resolver",
   "views": 2673,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide_Hills"
  },
  {
   "name": "Aldgate",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source names anything to see; Hills village",
-  "decided_by": "judge",
+  "reason": "Village; Wikivoyage names only accommodation; no sight for a visitor.",
+  "decided_by": "resolver",
   "views": 3030,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide_Hills"
  },
  {
   "name": "Bridgewater",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source names anything to see; Hills village",
-  "decided_by": "judge",
+  "reason": "Village; no counted source names a thing to see.",
+  "decided_by": "resolver",
   "views": 3292,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide_Hills"
  },
  {
   "name": "Stangate House and Garden",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "no counted source found; Aldgate garden (private/limited access)",
-  "decided_by": "judge",
+  "reason": "Private/limited-access garden; no counted source found.",
+  "decided_by": "resolver",
   "views": 292,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://www.google.com/search?q=Stangate+House+Aldgate"
  },
  {
   "name": "Mount Barker",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "largest Hills town, hub, but only a parks page names it and no sight is named",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "Service town; Wikivoyage names it only as a larger town. Its draws are a Saturday farmers market (event rule), wineries and Laratinga Wetlands, not named by a counted source.",
+  "decided_by": "resolver",
   "views": 20489,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide_Hills"
  },
  {
   "name": "Lobethal",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: counted source is only the parks.sa.gov.au regional list mentioning Lobethal; Wikivoyage covers it for the Lights of Lobethal (an event); town with German heritage",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage names only the Lights of Lobethal (annual event); no permanent sight named. Its bushland park is judged separately.",
+  "decided_by": "resolver",
   "views": 4545,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://en.wikivoyage.org/wiki/Adelaide_Hills"
  },
  {
   "name": "Lobethal Bushland Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "SATC page: two reservoirs in stringybark forest with hiking circuits and regenerated trail infrastructure after the 2019 fire; visit of an hour or more.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "SATC page: reservoirs in stringybark forest with walking circuits, an hour or more.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide-hills/attraction/lobethal-bushland-park"
  },
  {
   "name": "Lobethal Archives and Historical Museum",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Small local-history museum with only Wikipedia; no counted source (re-looked: none found).",
-  "decided_by": "judge",
+  "reason": "Small local-history museum; only Wikipedia found, no counted source.",
+  "decided_by": "resolver",
   "views": 272,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Lobethal"
  },
  {
   "name": "Lobethal Fodder Store",
@@ -1994,40 +2069,44 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Seasonal commercial PYO farm; business, one source.",
-  "decided_by": "judge",
+  "reason": "Seasonal commercial PYO farm; business.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide-hills/attraction/harben-vale-pick-your-own-cherries"
  },
  {
   "name": "Lenswood",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "orchard village with PYO apples (SATC); seasonal, little to see beyond orchards",
-  "decided_by": "audit override (audited-full.json)",
+  "verdict": "reject",
+  "reason": "Orchard village; SATC lists only a PYO apples business; no distinct permanent place to see.",
+  "decided_by": "resolver",
   "views": 1383,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://southaustralia.com/products/adelaide-hills/attraction/lenswood-pick-your-own-apples"
  },
  {
   "name": "Jurlique Farm",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "SATC lists the farm and its tours and experiences (two SATC pages); biodynamic rose and lavender farm with tours.",
-  "decided_by": "judge",
+  "reason": "Case for: SATC lists the biodynamic rose and lavender farm and its tours; a recognised Hills visit. Case against: access appears to be paid guided tours only (about $280 with lunch), closed Sundays, so it is an operator experience rather than a place you can drop into.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "resolver_source": "https://southaustralia.com/products/adelaide-hills/attraction/jurlique-farm"
  },
  {
   "name": "Brayfield Park Lavender Farm",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Commercial lavender farm/shop; one source, business rather than a distinct place.",
-  "decided_by": "judge",
+  "reason": "Commercial lavender farm and shop; one source.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://southaustralia.com/products/adelaide-hills/attraction/brayfield-park-lavender-farm"
  },
  {
   "name": "Adelaide Hills Truffle Company",
@@ -2144,10 +2223,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Village with a pub and lookout; no counted source naming it, Wikipedia only.",
-  "decided_by": "judge",
+  "reason": "Village with pub and lookout; searched, only Wikipedia; no counted source.",
+  "decided_by": "resolver",
   "views": 1725,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Norton_Summit,_South_Australia"
  },
  {
   "name": "Mylor",
@@ -2204,10 +2284,11 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Former mining town; no counted source and no public sight named.",
-  "decided_by": "judge",
+  "reason": "Former mining town; no counted source naming a public sight.",
+  "decided_by": "resolver",
   "views": 2437,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Kanmantoo,_South_Australia"
  },
  {
   "name": "Marble Hill",
@@ -2334,20 +2415,22 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Roadside hotel landmark; Wikipedia only, no counted source.",
-  "decided_by": "judge",
+  "reason": "Roadside hotel; Wikipedia only, no counted source.",
+  "decided_by": "resolver",
   "views": 1934,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "resolver_source": "https://en.wikipedia.org/wiki/Eagle_on_the_Hill"
  },
  {
   "name": "Kaurna Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Experience Adelaide describes a self-guided walking trail to places of significance to Kaurna culture and heritage, with art and stories; a guide-promoted walking route.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Experience Adelaide (city tourism) lists the self-guided Kaurna heritage walk with art and stories; a permanent named route.",
+  "decided_by": "resolver",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "resolver_source": "https://www.experienceadelaide.com.au/visit/things-to-do/heritage/adelaide-kaurna-trail"
  },
  {
   "name": "Yuki Bark Canoe Experience",
