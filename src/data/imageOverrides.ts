@@ -2557,4 +2557,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Leigh Creek",
   "Quorn",
   "Port Pirie",
+  "Port Augusta",
 ]);

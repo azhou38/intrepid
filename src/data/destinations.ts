@@ -2887,6 +2887,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 5, 9, 10, 11],
     bestTimeBlurb: "Visit in {months} for mild weather that suits walking the heritage and mural trails.",
   },
+  {
+    id: 'port-augusta', name: "Port Augusta", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -32.4925, longitude: 137.76583333 },
+    category: 'city', icon: "🌵", rank: 5,
+    tagline: "Gateway city at the head of Spencer Gulf, where the outback begins",
+    description: "Port Augusta sits at the head of Spencer Gulf, where the roads to the Flinders Ranges and the outback meet. The Wadlata Outback Centre covers the Aboriginal and European history of the outback, and the Australian Arid Lands Botanic Garden shows desert plants across red sands on the city's edge. A restored 1882 water tower gives views over the town, the gulf and the ranges.",
+    whyVisit: ["Learn outback history and culture", "Walk through arid-zone gardens"],
+    whyVisitPhotos: ["Wadlata Outback Centre, 2017 (02).jpg", "Arid Gardens.jpg"],
+    highlights: ["Outback stories", "Desert plants"],
+    goodToKnow: [
+      { icon: "🌊", title: "Mind the foreshore current", detail: "The tide drives a current in the deeper water off the foreshore beach, so swim close to the jetty." },
+      { icon: "🚗", title: "Blanche Harbor is remote", detail: "It lies about 23 km from the centre along Shack Road, so allow time for the drive." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Come in {months} for milder weather, when sightseeing and garden walks are comfortable. Summers are hot.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
