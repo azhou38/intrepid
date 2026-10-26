@@ -64,8 +64,8 @@ export default function EditProfileSheet({ visible, onClose }: { visible: boolea
   const pickPhoto = async () => {
     const r = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ['images'], quality: 0.85 });
     const a = !r.canceled ? r.assets[0] : null;
-    // After the picker has finished closing, so the cropper is not presented over a dismissing screen.
-    if (a) setTimeout(() => setCropping({ uri: a.uri, w: a.width, h: a.height }), 400);
+    // The cropper is drawn inside this sheet, so it shows at once without waiting for the picker to finish closing.
+    if (a) setCropping({ uri: a.uri, w: a.width, h: a.height });
   };
   const adjustPhoto = () => {
     if (!avatar) return;
@@ -161,8 +161,8 @@ export default function EditProfileSheet({ visible, onClose }: { visible: boolea
           </View>
           <Text style={st.hint}>Letters, numbers, dots and underscores.</Text>
         </View>
-      </View>
       <CircleCropper
+        inline
         uri={cropping?.uri ?? null}
         width={cropping?.w ?? 1}
         height={cropping?.h ?? 1}
@@ -170,6 +170,7 @@ export default function EditProfileSheet({ visible, onClose }: { visible: boolea
         onCancel={() => setCropping(null)}
         onDone={c => { setAvatar(cropping!.uri); setCrop(c); setCropping(null); }}
       />
+      </View>
     </Modal>
   );
 }

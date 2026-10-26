@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Image, Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Gesture, GestureDetector, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
@@ -20,12 +20,17 @@ const MAX_ZOOM = 5;
 
 // The circular cropper: the photo behind a dark veil with a round window. Drag to move it, pinch to zoom; it always
 // fills the circle. Choose returns the crop; Cancel returns nothing.
-export default function CircleCropper({ uri, width, height, initial, onDone, onCancel }: {
-  uri: string | null; width: number; height: number; initial?: AvatarCrop | null;
+// `inline` draws it over the screen it sits in instead of presenting a modal, so it can appear at once, even while the
+// system photo picker is still closing (a modal cannot be presented over a dismissing screen).
+export default function CircleCropper({ uri, width, height, initial, inline, onDone, onCancel }: {
+  uri: string | null; width: number; height: number; initial?: AvatarCrop | null; inline?: boolean;
   onDone: (crop: AvatarCrop) => void; onCancel: () => void;
 }) {
-  const { width: screenW, height: screenH } = useWindowDimensions();
-  const insets = useSafeAreaInsets();
+  const win = useWindowDimensions();
+  const [box, setBox] = useState<{ w: number; h: number } | null>(null);
+  const screenW = inline && box ? box.w : win.width, screenH = inline && box ? box.h : win.height;
+  const insets = { ...useSafeAreaInsets() };
+  if (inline) insets.top = 0;
   const D = screenW - 48;                         // the circle's diameter
   const cx = screenW / 2, cy = screenH / 2;       // its centre, mid-screen
   const base = D / Math.max(1, Math.min(width, height));
@@ -80,9 +85,9 @@ export default function CircleCropper({ uri, width, height, initial, onDone, onC
   // The veil: the whole screen less the circle (even-odd fill).
   const veil = `M0 0H${screenW}V${screenH}H0Z M${cx - D / 2} ${cy} a${D / 2} ${D / 2} 0 1 0 ${D} 0 a${D / 2} ${D / 2} 0 1 0 ${-D} 0Z`;
 
-  return (
-    <Modal visible={!!uri} animationType="fade" presentationStyle="fullScreen" onRequestClose={onCancel}>
-      <GestureHandlerRootView style={st.root}>
+  const body = (
+      <GestureHandlerRootView style={[st.root, inline && StyleSheet.absoluteFill]}
+        onLayout={inline ? e => setBox({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height }) : undefined}>
         <GestureDetector gesture={gesture}>
           <View style={StyleSheet.absoluteFill} collapsable={false}>
             {!!uri && <Animated.Image source={{ uri }} style={[st.img, imgStyle]} />}
@@ -99,6 +104,11 @@ export default function CircleCropper({ uri, width, height, initial, onDone, onC
           <Pressable onPress={choose} hitSlop={10}><Text style={[st.btn, st.btnBold]}>Choose</Text></Pressable>
         </View>
       </GestureHandlerRootView>
+  );
+  if (inline) return uri ? body : null;
+  return (
+    <Modal visible={!!uri} animationType="fade" presentationStyle="fullScreen" onRequestClose={onCancel}>
+      {body}
     </Modal>
   );
 }
