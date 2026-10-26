@@ -34,3 +34,6 @@ A spot inside a park that charges entry and has no fee of its own is `free: true
 - Bay Discovery Centre (adelaide-53): no cost (council page behind a bot wall): browser check; unfinished until it has a cost.
 - Deep Creek NP (fleurieu): add pass `deep-creek` (AUD 14.40 per vehicle, Deep Creek NP page). Blowhole Beach (yankalilla-?) is inside it: free, needs 'park-pass', parkPass 'deep-creek' (not its own 'park' price).
 - Talisker Conservation Park (fleurieu): closed until further notice after a fire (NPWS alert); its NPWS page 404s. Re-check at apply; hold if still closed.
+- Yunta (flinders): its only draw is the annual Picnic Races (an event); held unless a source names a permanent sight.
+- Thin evidence, kept (listing only, no page loads): Pekina Creek Rock Carvings, Southern Flinders Rail Trail, Mount Ellen Lookout.
+- Jamestown Railway Station Museum (barossa-clare): no cost or official site found; unfinished: held until a price or source turns up.
