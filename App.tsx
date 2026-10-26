@@ -132,7 +132,7 @@ export default function App() {
                 headerShown: false,
                 tabBarStyle: styles.tabBar,
                 tabBarActiveTintColor: '#111827',
-                tabBarInactiveTintColor: '#9CA3AF',
+                tabBarInactiveTintColor: '#6B7280',
                 tabBarLabelStyle: styles.tabLabel,
                 tabBarButton: (props) => <AnimatedTabButton {...props} />,
               }}
@@ -165,8 +165,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: 'white',
-    borderTopColor: '#F3F4F6',
+    // Gray, so the bar reads as its own strip under both the white Explore sheet and the Profile's pale page.
+    backgroundColor: '#E5E7EB',
+    borderTopColor: '#D1D5DB',
     borderTopWidth: 1,
     height: Platform.OS === 'ios' ? 88 : 64,
     paddingTop: 8,
