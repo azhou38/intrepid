@@ -693,6 +693,8 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Clare Valley": { x: 0.5, y: 0.75, zoom: 1.5 },
   "Port Lincoln": { x: 0.42, y: 0.6, zoom: 1.2 },
   "File:Sunset at Breakaways.jpg": { x: 0.35, y: 0.6 },
+  "Coorong National Park": { x: 0.5, y: 0.55, zoom: 1.5 },
+  "File:Banded Stilts at the Coorong.JPG": { x: 0.5, y: 0.55, zoom: 1.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2289,6 +2291,7 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Port Lincoln": "Port Lincoln.jpg",
   "Coober Pedy": "Coober Pedy - panoramio (1).jpg",
   "Dhilba Guuranda-Innes National Park": "Pondalowie Bay, Dhilba Guuranda-Innes NP 20230209 1.jpg",
+  "Coorong National Park": "The Coorong.JPG",
 };
 
 /**

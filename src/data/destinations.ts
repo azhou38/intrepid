@@ -1081,6 +1081,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are mild for bushwalking, and spring brings wildflowers to the park.",
   },
   {
+    id: 'coorong-national-park', name: "Coorong National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 110,
+    continent: 'Oceania', coordinates: { latitude: -36.049, longitude: 139.554 },
+    category: 'park', icon: "🦩", rank: 3,
+    tagline: "Lagoons, dunes and pelicans in a wetland of international importance",
+    description: "Coorong National Park runs along a chain of salty lagoons behind the Younghusband Peninsula, about 200 km south-east of Adelaide. The wetland is of international importance and is known for pelicans and migratory waders. Visitors bird-watch, walk, fish, kayak, camp and drive 4WD tracks, and Ngarrindjeri and European history runs through the park. Access is via Meningie or Kingston off the Princes Highway.",
+    whyVisit: ["Watch pelicans and migratory waders", "Drive the ocean beach by 4WD", "Paddle the quiet lagoon by kayak"],
+    whyVisitPhotos: ["Banded Stilts at the Coorong.JPG", "", ""],
+    highlights: ["Pelican colonies", "4WD ocean beach", "Lagoon kayaking"],
+    goodToKnow: [
+      { icon: "🚙", title: "Ocean Beach is 4WD only", detail: "Beach conditions change with erosion and dune collapses. Check the park alert and drive only with sand-driving experience." },
+      { icon: "🔥", title: "Fire closures", detail: "The park closes on days of Catastrophic Fire Danger and may close on Extreme days. Check the CFS before you set out." },
+      { icon: "⛺", title: "Pay before you enter", detail: "Campsite fees must be paid before entry and sites are not powered. 42 Mile Crossing is 4WD-only and reachable from the mainland only in summer." },
+    ],
+    bestMonths: [12, 1, 2, 3, 4, 5],
+    bestTimeBlurb: "Summer and autumn ({months}) are warm and dry, with easy road access and good camping.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
