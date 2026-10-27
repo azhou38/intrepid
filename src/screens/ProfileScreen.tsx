@@ -614,6 +614,7 @@ export default function ProfileScreen() {
             <CountryChips countries={destCountries} total={exploredDests.length} selected={destCountry} query={q}
               onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
           )}
+          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} />}
           <View style={styles.exploredPad}>
             {worldMap}
             {destSearchable && !destSearchOpen && (
@@ -626,7 +627,6 @@ export default function ProfileScreen() {
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
           ) : (
             <>
-            <SortRow sort={exploredSort} onSort={setExploredSort} />
             {shownDests.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
                 {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Tap a country above to filter by it.' : 'No destinations match.'}
@@ -688,6 +688,7 @@ export default function ProfileScreen() {
             <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
               onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
           )}
+          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} />}
           <View style={styles.exploredPad}>
             {worldMap}
             {spotSearchable && !spotSearchOpen && (
@@ -700,7 +701,6 @@ export default function ProfileScreen() {
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
           ) : (
             <>
-            <SortRow sort={exploredSort} onSort={setExploredSort} />
             {shownSpots.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
                 {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Tap a country above to filter by it.' : 'No spots match.'}
@@ -1071,7 +1071,7 @@ const styles = StyleSheet.create({
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, three across.
-  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 12 },
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 10 },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: 2 },
   sortPill:  { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 12, backgroundColor: '#F3F4F6' },
   sortPillOn: { backgroundColor: '#111827' },
