@@ -718,12 +718,14 @@ const TILE_COLS = 3;
 const TILE_GAP = 3;
 // A tile's side: the screen width, less the side room and the gaps.
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
+// The grid shows three and a half rows, then scrolls: the half row hints there is more.
+const GRID_MAX_H = Math.round(TILE * 3.5 + TILE_GAP * 3 + 4);
 function PhotoGrid({ tiles, pickedId, onPick }: {
   tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[];
   pickedId: string | null; onPick: (id: string) => void;
 }) {
   return (
-    <View style={styles.tileGrid}>
+    <ScrollView style={styles.tileScroll} contentContainerStyle={styles.tileGrid} nestedScrollEnabled showsVerticalScrollIndicator={tiles.length > TILE_COLS * 3}>
       {tiles.map(t => (
         <Pressable key={t.key} style={styles.tile} onPress={() => onPick(t.key)}>
           {t.photo}
@@ -733,7 +735,7 @@ function PhotoGrid({ tiles, pickedId, onPick }: {
           {pickedId === t.key && <View style={styles.tileRing} pointerEvents="none" />}
         </Pressable>
       ))}
-    </View>
+    </ScrollView>
   );
 }
 
@@ -981,6 +983,7 @@ const styles = StyleSheet.create({
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, three across.
+  tileScroll: { maxHeight: GRID_MAX_H },
   tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
