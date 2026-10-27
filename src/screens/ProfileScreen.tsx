@@ -820,6 +820,10 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
           <View style={styles.pageDots}>
             {pages.map((_, i) => <View key={i} style={[styles.pageDot, i === page && styles.pageDotOn]} />)}
           </View>
+          {/* Which tiles this page shows, out of all of them: "10–18 of 25" ("1 of 1" for one tile). */}
+          <Text style={styles.pageRange}>
+            {tiles.length === 1 ? '1 of 1' : `${page * PAGE_SIZE + 1}–${Math.min((page + 1) * PAGE_SIZE, tiles.length)} of ${tiles.length}`}
+          </Text>
         </View>
       )}
     </View>
@@ -1112,9 +1116,10 @@ const styles = StyleSheet.create({
   sortTxtOn: { color: '#111827' },
   tileScroll: { marginTop: 8, flexGrow: 0 },
   tilePage: { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD, paddingVertical: SHADOW_ROOM, alignContent: 'flex-start', flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
-  // The page dots at the bottom right of the carousel (shown for any number of tiles, even one page).
+  // The page dots and the range at the bottom right of the carousel (shown for any number of tiles, even one page).
   pageBar:  { marginTop: 4, height: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: 10, paddingHorizontal: EXPLORED_PAD + 2 },
   pageDots: { flexDirection: 'row', gap: 5 },
+  pageRange: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#D1D5DB' },
   pageDotOn: { backgroundColor: '#111827' },
   // A tile is a shadow-casting shell around a clipped inner box (a view that clips cannot also cast a shadow).
