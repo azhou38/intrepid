@@ -1070,7 +1070,7 @@ const styles = StyleSheet.create({
   sortPillOn: { backgroundColor: '#111827' },
   sortTxt:   { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   sortTxtOn: { color: 'white' },
-  tileScroll: { marginTop: 4, flexGrow: 0 },
+  tileScroll: { marginTop: 14, flexGrow: 0 },
   tilePage: { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
   pageDots: { flexDirection: 'row', justifyContent: 'center', gap: 5, marginTop: 10 },
   pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#D1D5DB' },
