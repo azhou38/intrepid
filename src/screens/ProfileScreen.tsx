@@ -57,6 +57,9 @@ const pinPath = (x: number, y: number) => {
   return `M ${x - PIN_TX} ${cy + PIN_TY} L ${x} ${y} L ${x + PIN_TX} ${cy + PIN_TY} A ${PIN_R} ${PIN_R} 0 1 0 ${x - PIN_TX} ${cy + PIN_TY} Z`;
 };
 
+// The Spots destination filter's choice for a country's spots that belong to no destination.
+const SPOT_NO_DEST = '__none';
+
 type WorldMode = 'countries' | 'destinations' | 'spots';
 const WORLD_MODES: { mode: WorldMode; label: string }[] = [
   { mode: 'countries', label: 'Countries' },
@@ -279,12 +282,28 @@ export default function ProfileScreen() {
     }
     return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
   }, [visitedSpots]);
+  // With a country chosen, Spots can narrow further to one of its destinations (or to its standalone spots, SPOT_NO_DEST).
+  const [spotDestF, setSpotDestF] = useState<string | null>(null);
+  useEffect(() => { setSpotDestF(null); }, [spotCountryF]);
+  const spotDests = useMemo(() => {
+    if (!spotCountryF) return [];
+    const m = new Map<string, { code: string; name: string; count: number }>();
+    for (const sp of visitedSpots) {
+      if (spotCountryCode(sp) !== spotCountryF) continue;
+      const d = spotDestination(sp);
+      const id = d?.id ?? SPOT_NO_DEST;
+      const r = m.get(id) ?? { code: id, name: d?.name ?? 'Other spots', count: 0 };
+      r.count += 1; m.set(id, r);
+    }
+    return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
+  }, [visitedSpots, spotCountryF]);
   const [spotQuery, setSpotQuery] = useState('');
   const sq = spotQuery.trim().toLowerCase();
   const shownSpots = useMemo(() => exploredSpots.filter(sp =>
     (!spotCountryF || spotCountryCode(sp) === spotCountryF) &&
+    (!spotDestF || (spotDestination(sp)?.id ?? SPOT_NO_DEST) === spotDestF) &&
     (wordMatch(sp.name, sq) || wordMatch(spotDestination(sp)?.name ?? '', sq))),
-  [exploredSpots, spotCountryF, sq]);
+  [exploredSpots, spotCountryF, spotDestF, sq]);
   // Each Explored search is folded behind a magnifier in its header until wanted (FoldingSearch).
   const destSearchable = exploredDests.length > 8 || destCountries.length > 3;
   const spotSearchable = exploredSpots.length > 8;
@@ -701,7 +720,7 @@ export default function ProfileScreen() {
                 onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
             </View>
           )}
-          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} />}
+          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} />}
           <View>
             {worldMap}
             {spotSearchable && !spotSearchOpen && (
@@ -873,20 +892,26 @@ const SORTS: { key: ExploredSort; label: string }[] = [
 type SortCountry = { code: string; name: string; count: number };
 // The row above the Explored map: two dropdown chips side by side, the country filter ("All countries" or the chosen one, with
 // its flag) and the sort order. Each opens a small menu under its chip.
-function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry }: {
+function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry, dests, dest, onDest }: {
   sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean;
   countries: SortCountry[]; total: number; country: string | null; onCountry: (code: string | null) => void;
+  // Spots only, once a country is chosen: that country's destinations (code = destination id) to narrow to.
+  dests?: SortCountry[]; dest?: string | null; onDest?: (id: string | null) => void;
 }) {
   const countryRef = useRef<View>(null);
   const sortRef = useRef<View>(null);
-  const [menu, setMenu] = useState<{ kind: 'country' | 'sort'; x: number; y: number } | null>(null);
-  const openMenu = (kind: 'country' | 'sort') => {
+  const destRef = useRef<View>(null);
+  type MenuKind = 'country' | 'sort' | 'dest';
+  const [menu, setMenu] = useState<{ kind: MenuKind; x: number; y: number } | null>(null);
+  const openMenu = (kind: MenuKind) => {
     Haptics.selectionAsync();
-    (kind === 'country' ? countryRef : sortRef).current?.measureInWindow((x, y, _w, h) => setMenu({ kind, x, y: y + h + 6 }));
+    ({ country: countryRef, sort: sortRef, dest: destRef })[kind].current?.measureInWindow((x, y, _w, h) => setMenu({ kind, x, y: y + h + 6 }));
   };
   const chosen = countries.find(c => c.code === country);
+  const showDest = !!country && !!dests && dests.length > 1;
+  const chosenDest = dests?.find(d => d.code === dest);
   const sorts = SORTS.filter(o => withSpots || o.key !== 'spots');
-  const menuW = menu?.kind === 'sort' ? 180 : 220;
+  const menuW = menu?.kind === 'sort' ? 180 : 240;
   return (
     <>
       <View style={styles.sortRow}>
@@ -895,6 +920,12 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
             {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
             <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All countries'}</Text>
             <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
+          </Pressable>
+        )}
+        {showDest && (
+          <Pressable ref={destRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosenDest && styles.countryDropOn]} onPress={() => openMenu('dest')}>
+            <Text style={[styles.countryDropTxt, !!chosenDest && styles.filterTxtOn]} numberOfLines={1}>{chosenDest ? chosenDest.name : 'All destinations'}</Text>
+            <ChevronDown size={13} color={chosenDest ? '#047857' : '#6B7280'} strokeWidth={2.4} />
           </Pressable>
         )}
         <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={styles.countryDrop} onPress={() => openMenu('sort')}>
@@ -915,6 +946,17 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
                       <View style={styles.dropCheck}>{sort === o.key && <Check size={14} color="#047857" strokeWidth={3} />}</View>
                     </Pressable>
                   ))
+                : menu.kind === 'dest'
+                ? [{ code: null as string | null, name: 'All destinations', count: dests!.reduce((n, d) => n + d.count, 0) }, ...dests!].map(d => {
+                    const on = (dest ?? null) === d.code;
+                    return (
+                      <Pressable key={d.code ?? 'all'} style={styles.dropRow} onPress={() => { Haptics.selectionAsync(); onDest?.(d.code); setMenu(null); }}>
+                        <Text style={[styles.dropName, on && styles.dropNameOn]} numberOfLines={1}>{d.name}</Text>
+                        <Text style={styles.dropCount}>{d.count}</Text>
+                        <View style={styles.dropCheck}>{on && <Check size={14} color="#047857" strokeWidth={3} />}</View>
+                      </Pressable>
+                    );
+                  })
                 : [{ code: null as string | null, name: 'All countries', count: total }, ...countries].map(c => {
                     const on = (country ?? null) === c.code;
                     return (
@@ -1112,7 +1154,7 @@ const styles = StyleSheet.create({
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, three across.
   // The sort is plain text with an underline on the chosen one, so it reads as a lighter tier than the country pills above.
-  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginBottom: 10 },
+  sortRow:   { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginBottom: 10 },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
