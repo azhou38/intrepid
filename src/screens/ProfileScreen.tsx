@@ -411,6 +411,7 @@ export default function ProfileScreen() {
           );
         })}
       </Svg>
+      {w !== WORLD_W && <View style={styles.mapBorder} pointerEvents="none" />}
       {/* A hint that the map opens. */}
       <View style={styles.mapHint}><Text style={styles.mapHintTxt}>Tap to explore</Text></View>
     </View>
@@ -1047,6 +1048,8 @@ const styles = StyleSheet.create({
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
   // A quiet hint that the map opens: a translucent white pill with grey text, not a dark badge.
+  // The Explored map's outline, drawn over its edge so the map keeps its size.
+  mapBorder:     { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 12, borderWidth: 1.5, borderColor: '#CBD5E1' },
   mapHint:       { position: 'absolute', left: 8, bottom: 8, backgroundColor: 'rgba(255,255,255,0.75)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
   mapHintTxt:    { fontSize: 11, fontWeight: '500', color: '#6B7280' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
