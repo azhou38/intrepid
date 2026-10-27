@@ -405,12 +405,24 @@ export default function ProfileScreen() {
   }, [worldMode, destCountry, spotCountryF, worldDots]);
   // Dots and pins keep a readable size on screen as the map zooms in (they are drawn in map units).
   const dotScale = Math.min(1, (mapView.w / 360) * 2.5);
+  // The world outlines are coarse (one decimal of a degree), which shows once a country fills the map: when zoomed in, draw the
+  // finer set instead (scripts/build-world-detail.py), loaded on first use because it is large.
+  const zoomed = mapView.w < 200;
+  const detailInView = useMemo(() => {
+    if (!zoomed) return [];
+    const all = require('../data/worldCountriesDetail.json') as { c: string; b: number[]; d: string }[];
+    const pad = mapView.w * 0.05;
+    return all.filter(e => e.b[2] >= mapView.x - pad && e.b[0] <= mapView.x + mapView.w + pad && e.b[3] >= mapView.y - pad && e.b[1] <= mapView.y + mapView.h + pad);
+  }, [zoomed, mapView]);
   const worldMapAt = (w: number) => (
     <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
     <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }]}>
       <Svg width={w} height={Math.round((w * WORLD_VH) / 360)} viewBox={`${mapView.x} ${mapView.y} ${mapView.w} ${mapView.h}`}>
         <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
-        {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
+        {zoomed ? detailInView.map(({ c, d }) => (
+          // Zoomed in: the 1:10m outlines, only those in view, with a border about a point wide however far in it is.
+          <Path key={c} d={d} fill="#D9DEE5" stroke="white" strokeWidth={(0.9 * mapView.w) / w} strokeLinejoin="round" />
+        )) : (WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
           <Path key={k} d={d}
             fill={worldMode === 'countries' && c === flagTip ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
             stroke="white" strokeWidth={0.15} />
