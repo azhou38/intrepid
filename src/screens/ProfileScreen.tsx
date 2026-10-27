@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput, Modal,
+  View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, Modal,
 } from 'react-native';
-import { Search, X, Pencil, ChevronDown, Check } from 'lucide-react-native';
+import { Pencil, ChevronDown, Check } from 'lucide-react-native';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
@@ -263,13 +263,9 @@ export default function ProfileScreen() {
     }
     return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
   }, [visitedDests]);
-  // A search over them, by destination name only. A country is a filter, not text: typing narrows the country chips to
-  // the countries it could be (suggestions to tap), and typing a whole country name applies it (searchOrCountry).
-  const [destQuery, setDestQuery] = useState('');
-  const q = destQuery.trim().toLowerCase();
   const shownDests = useMemo(
-    () => exploredDests.filter(d => (!destCountry || d.countryCode === destCountry) && wordMatch(d.name, q)),
-    [exploredDests, destCountry, q]);
+    () => exploredDests.filter(d => !destCountry || d.countryCode === destCountry),
+    [exploredDests, destCountry]);
   const exploredSpots = useMemo(
     () => sortBy(visitedSpots, id => sortKeys.spotDate.get(id) ?? '', id => savedSpots[id]?.rating ?? 0),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -301,33 +297,10 @@ export default function ProfileScreen() {
     }
     return [...m.values()].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
   }, [visitedSpots, spotCountryF]);
-  const [spotQuery, setSpotQuery] = useState('');
-  const sq = spotQuery.trim().toLowerCase();
   const shownSpots = useMemo(() => exploredSpots.filter(sp =>
     (!spotCountryF || spotCountryCode(sp) === spotCountryF) &&
-    (!spotDestF || (spotDestination(sp)?.id ?? SPOT_NO_DEST) === spotDestF) &&
-    (wordMatch(sp.name, sq) || wordMatch(spotDestination(sp)?.name ?? '', sq))),
-  [exploredSpots, spotCountryF, spotDestF, sq]);
-  // Each Explored search is folded behind a magnifier in its header until wanted (FoldingSearch).
-  const destSearchable = exploredDests.length > 8 || destCountries.length > 3;
-  const spotSearchable = exploredSpots.length > 8;
-  const [destSearchOpen, setDestSearchOpen] = useState(false);
-  const [spotSearchOpen, setSpotSearchOpen] = useState(false);
-  const toggleSearch = (open: boolean, setOpen: (v: boolean) => void, setQuery: (t: string) => void) => {
-    Haptics.selectionAsync();
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    if (open) setQuery('');
-    setOpen(!open);
-  };
-  // Typing a whole country name (one of the chips) applies it as the filter and clears the text.
-  const searchOrCountry = (text: string, countries: { code: string; name: string }[], setText: (t: string) => void, setCountry: (c: string | null) => void) => {
-    const hit = countries.find(c => c.name.toLowerCase() === text.trim().toLowerCase());
-    if (hit) {
-      Haptics.selectionAsync();
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-      setCountry(hit.code); setText('');
-    } else setText(text);
-  };
+    (!spotDestF || (spotDestination(sp)?.id ?? SPOT_NO_DEST) === spotDestF)),
+  [exploredSpots, spotCountryF, spotDestF]);
   const maxCountryCount = topCountries[0]?.count ?? 1;
 
   // The map opens full screen to explore (WorldMapModal), on the same level; its tap card counts per country.
@@ -678,21 +651,9 @@ export default function ProfileScreen() {
       {/* ── Destinations: Destinations Explored, Top Destinations (by visited spots) ── */}
       {worldMode === 'destinations' && (<>
         <View style={styles.exploredSection}>
-          {destSearchOpen && (
-            <View style={[styles.cardHeaderRow, styles.exploredPad]}>
-              <FoldingSearch value={destQuery} placeholder="Search destinations or countries"
-                onChangeText={t => searchOrCountry(t, destCountries, setDestQuery, setDestCountry)}
-                onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
-            </View>
-          )}
           {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} />}
           <View style={styles.exploredPad}>
             {worldMap}
-            {destSearchable && !destSearchOpen && (
-              <View style={styles.exploredSearchBtn}>
-                <SearchToggle onPress={() => toggleSearch(false, setDestSearchOpen, setDestQuery)} />
-              </View>
-            )}
           </View>
           {exploredDests.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
@@ -700,7 +661,7 @@ export default function ProfileScreen() {
             <>
             {shownDests.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
-                {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Pick the country from the Country dropdown to filter by it.' : 'No destinations match.'}
+                No destinations match.
               </Text>
             )}
             {/* A photo grid: one tile per destination, its name and its visited spots over its photo. */}
@@ -730,21 +691,9 @@ export default function ProfileScreen() {
       {/* ── Spots: Spots Explored ── */}
       {worldMode === 'spots' && (
         <View style={styles.exploredSection}>
-          {spotSearchOpen && (
-            <View style={[styles.cardHeaderRow, styles.exploredPad]}>
-              <FoldingSearch value={spotQuery} placeholder="Search spots, destinations or countries"
-                onChangeText={t => searchOrCountry(t, spotCountries, setSpotQuery, setSpotCountryF)}
-                onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
-            </View>
-          )}
           {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} />}
           <View style={styles.exploredPad}>
             {worldMap}
-            {spotSearchable && !spotSearchOpen && (
-              <View style={styles.exploredSearchBtn}>
-                <SearchToggle onPress={() => toggleSearch(false, setSpotSearchOpen, setSpotQuery)} />
-              </View>
-            )}
           </View>
           {exploredSpots.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
@@ -752,7 +701,7 @@ export default function ProfileScreen() {
             <>
             {shownSpots.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
-                {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Pick the country from the Country dropdown to filter by it.' : 'No spots match.'}
+                No spots match.
               </Text>
             )}
             {/* The same photo grid for spots: the spot's country under its name. */}
@@ -803,11 +752,6 @@ export default function ProfileScreen() {
 }
 
 // A selector item's text, fading between its selected and unselected colours as the pill slides to or from it.
-// Whether `text` has a word starting with `q` ("kak" finds Kakadu, "new z" New Zealand); an empty query matches all.
-function wordMatch(text: string, q: string) {
-  return !q || (' ' + text.toLowerCase()).includes(' ' + q);
-}
-
 // An Explored list as a grid of rounded photo tiles, three across: the name in white at the bottom left over a dark
 // scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
 const TILE_COLS = 3;
@@ -995,43 +939,6 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
   );
 }
 
-// The magnifier in an Explored section's header that opens its search.
-function SearchToggle({ onPress }: { onPress: () => void }) {
-  return (
-    <Pressable onPress={onPress} hitSlop={10} style={styles.searchToggle} accessibilityLabel="Search">
-      <Search size={15} color="#6B7280" strokeWidth={2.3} />
-    </Pressable>
-  );
-}
-
-// An Explored section's search box, in its header line in place of the title while open: it opens with the keyboard
-// up, its close mark clears it and folds it away, and leaving it empty folds it away too.
-function FoldingSearch({ value, placeholder, onChangeText, onClose, onBlurEmpty }: {
-  value: string; placeholder: string; onChangeText: (t: string) => void; onClose: () => void; onBlurEmpty: () => void;
-}) {
-  return (
-    <View style={[styles.searchBox, styles.searchInHeader]}>
-      <Search size={14} color="#9CA3AF" />
-      <TextInput
-        style={styles.searchInput}
-        value={value}
-        onChangeText={onChangeText}
-        placeholder={placeholder}
-        placeholderTextColor="#9CA3AF"
-        autoFocus
-        autoCorrect={false}
-        autoCapitalize="none"
-        returnKeyType="search"
-        clearButtonMode="never"
-        onBlur={() => { if (!value.trim()) { LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); onBlurEmpty(); } }}
-      />
-      <Pressable onPress={() => { LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); onClose(); }} hitSlop={8} accessibilityLabel="Close search">
-        <X size={14} color="#9CA3AF" strokeWidth={2.5} />
-      </Pressable>
-    </View>
-  );
-}
-
 function StatText({ index, level, style, on, off, children }: { index: number; level: SharedValue<number>; style: any; on: string; off: string; children: React.ReactNode }) {
   const a = useAnimatedStyle(() => ({
     color: interpolateColor(Math.min(1, Math.abs(level.value - index)), [0, 1], [on, off]),
@@ -1118,7 +1025,6 @@ const styles = StyleSheet.create({
   // The Explored sections have no card: the map, pills and photo grid run the full screen width.
   exploredSection: { marginBottom: 12 },
   exploredPad: { paddingHorizontal: EXPLORED_PAD },
-  exploredSearchBtn: { position: 'absolute', top: 10, right: EXPLORED_PAD + 10 },
   mapCard: {
     marginHorizontal: 16, marginBottom: 12, overflow: 'hidden', backgroundColor: 'white',
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
@@ -1140,8 +1046,6 @@ const styles = StyleSheet.create({
   cardTitle:  { fontSize: 15, fontWeight: '700', color: '#111827', marginBottom: 12 },
   cardBadge:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
   titleWithCount: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
-  searchInHeader: { flex: 1, marginBottom: 0, height: 34 },
-  searchToggle: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: '#F3F4F6' },
 
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
@@ -1159,9 +1063,6 @@ const styles = StyleSheet.create({
   topToggleTxt:    { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   topToggleTxtOn:  { color: '#111827' },
   // Destinations Explored's search box.
-  searchBox:    { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10, paddingHorizontal: 12, height: 38,
-                  borderRadius: 12, backgroundColor: '#F3F4F6' },
-  searchInput:  { flex: 1, fontSize: 14, color: '#111827', paddingVertical: 0 },
   // The Explored lists' country filter: a sideways row of chips; the chosen one is green.
   filterScroll: { marginBottom: 10, flexGrow: 0 },
   filterRow:    { paddingHorizontal: EXPLORED_PAD, gap: 6 },
