@@ -761,7 +761,7 @@ function wordMatch(text: string, q: string) {
 // An Explored list as a grid of rounded photo tiles, three across: the name in white at the bottom left over a dark
 // scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
 const TILE_COLS = 3;
-const TILE_GAP = 3;
+const TILE_GAP = 6;
 // A tile's side: the screen width, less the side room and the gaps.
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
 // Nine to a page, three rows of three; a page is the screen wide and as tall as its rows.
@@ -1085,9 +1085,9 @@ const styles = StyleSheet.create({
   pageDots: { flexDirection: 'row', justifyContent: 'center', gap: 5, marginTop: 10 },
   pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#D1D5DB' },
   pageDotOn: { backgroundColor: '#111827' },
-  tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  tile:     { width: TILE, height: TILE, borderRadius: 10, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
-  tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 6, borderWidth: 3, borderColor: PICK_COLOR },
+  tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 10, borderWidth: 3, borderColor: PICK_COLOR },
   tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: 28, paddingHorizontal: 8, paddingBottom: 8 },
   tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
