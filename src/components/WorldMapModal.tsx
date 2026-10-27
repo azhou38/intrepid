@@ -185,8 +185,10 @@ export default function WorldMapModal({
               <MapboxGL.CircleLayer
                 id="wmDots"
                 style={{
-                  circleRadius: ['case', ['==', ['get', 'id'], pickedId ?? ''],
-                    ['interpolate', ['linear'], ['zoom'], 0, 6.5, 8, 14], ['interpolate', ['linear'], ['zoom'], 0, 4, 8, 9]] as any,
+                  // "zoom" may only be the input of a top-level interpolate, so the picked case sits inside its stops.
+                  circleRadius: ['interpolate', ['linear'], ['zoom'],
+                    0, ['case', ['==', ['get', 'id'], pickedId ?? ''], 6.5, 4],
+                    8, ['case', ['==', ['get', 'id'], pickedId ?? ''], 14, 9]] as any,
                   circleColor: ['case', ['==', ['get', 'id'], pickedId ?? ''], '#F97316', '#10B981'] as any,
                   circleSortKey: ['case', ['==', ['get', 'id'], pickedId ?? ''], 1, 0] as any,
                   circleStrokeColor: 'white', circleStrokeWidth: 1.5,
