@@ -844,7 +844,7 @@ function SortRow({ sort, onSort, withSpots }: { sort: ExploredSort; onSort: (s: 
   return (
     <GHScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.sortScroll} contentContainerStyle={styles.sortRow}
       keyboardShouldPersistTaps="handled">
-      <Text style={styles.sortLabel}>Sort</Text>
+      <Text style={styles.sortLabel}>Sort by</Text>
       {SORTS.filter(o => withSpots || o.key !== 'spots').map(o => (
         <Pressable key={o.key} hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
           onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
@@ -1073,12 +1073,13 @@ const styles = StyleSheet.create({
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, three across.
   sortScroll: { flexGrow: 0, marginBottom: 10 },
-  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: EXPLORED_PAD },
-  sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: 2 },
-  sortPill:  { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 12, backgroundColor: '#F3F4F6' },
-  sortPillOn: { backgroundColor: '#111827' },
+  // The sort is plain text with an underline on the chosen one, so it reads as a lighter tier than the country pills above.
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: EXPLORED_PAD + 2 },
+  sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: -6 },
+  sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
+  sortPillOn: { borderBottomColor: '#111827' },
   sortTxt:   { fontSize: 12, fontWeight: '600', color: '#6B7280' },
-  sortTxtOn: { color: 'white' },
+  sortTxtOn: { color: '#111827' },
   tileScroll: { marginTop: 8, flexGrow: 0 },
   tilePage: { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD, paddingVertical: SHADOW_ROOM, alignContent: 'flex-start', flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
   pageDots: { flexDirection: 'row', justifyContent: 'center', gap: 5, marginTop: 4 },
