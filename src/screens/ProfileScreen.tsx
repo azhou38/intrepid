@@ -388,7 +388,7 @@ export default function ProfileScreen() {
   // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
   const worldMapAt = (w: number) => (
     <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
-    <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }, w !== WORLD_W && { borderRadius: 12, overflow: 'hidden' }]}>
+    <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }]}>
       <Svg width={w} height={Math.round((w * WORLD_VH) / 360)} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
         <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
         {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
@@ -418,7 +418,7 @@ export default function ProfileScreen() {
     </View>
     </Pressable>
   );
-  const worldMap = worldMapAt(worldMode === 'countries' ? WORLD_W : SCREEN_W - 2 * EXPLORED_PAD);
+  const worldMap = worldMapAt(worldMode === 'countries' ? WORLD_W : SCREEN_W);
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
     {/* ── Profile header ──────────────────────────────────────────── */}
@@ -617,7 +617,7 @@ export default function ProfileScreen() {
               onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
           )}
           {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots />}
-          <View style={styles.exploredPad}>
+          <View>
             {worldMap}
             {destSearchable && !destSearchOpen && (
               <View style={styles.exploredSearchBtn}>
@@ -673,7 +673,7 @@ export default function ProfileScreen() {
               onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
           )}
           {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} />}
-          <View style={styles.exploredPad}>
+          <View>
             {worldMap}
             {spotSearchable && !spotSearchOpen && (
               <View style={styles.exploredSearchBtn}>
@@ -1010,7 +1010,7 @@ const styles = StyleSheet.create({
   // The Explored sections have no card: the map, pills and photo grid run the full screen width.
   exploredSection: { marginBottom: 12 },
   exploredPad: { paddingHorizontal: EXPLORED_PAD },
-  exploredSearchBtn: { position: 'absolute', top: 10, right: EXPLORED_PAD + 10 },
+  exploredSearchBtn: { position: 'absolute', top: 10, right: 12 },
   mapCard: {
     marginHorizontal: 16, marginBottom: 12, overflow: 'hidden', backgroundColor: 'white',
     borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
@@ -1038,8 +1038,8 @@ const styles = StyleSheet.create({
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
   // A quiet hint that the map opens: a translucent white pill with grey text, not a dark badge.
-  // The Explored map's outline, drawn over its edge so the map keeps its size.
-  mapBorder:     { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 12, borderWidth: 1.5, borderColor: '#CBD5E1' },
+  // The Explored map runs the full screen width, with a line along its top and bottom edges (drawn over them, so it keeps its size).
+  mapBorder:     { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderTopWidth: 1.5, borderBottomWidth: 1.5, borderColor: '#CBD5E1' },
   mapHint:       { position: 'absolute', left: 8, bottom: 8, backgroundColor: 'rgba(255,255,255,0.75)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
   mapHintTxt:    { fontSize: 11, fontWeight: '500', color: '#6B7280' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
