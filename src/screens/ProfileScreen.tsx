@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput,
+  View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, TextInput, Modal,
 } from 'react-native';
-import { Search, X, Pencil } from 'lucide-react-native';
+import { Search, X, Pencil, ChevronDown, Check } from 'lucide-react-native';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
@@ -617,7 +617,7 @@ export default function ProfileScreen() {
             <CountryChips countries={destCountries} total={exploredDests.length} selected={destCountry} query={q}
               onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
           )}
-          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots />}
+          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} />}
           <View>
             {worldMap}
             {destSearchable && !destSearchOpen && (
@@ -673,7 +673,7 @@ export default function ProfileScreen() {
             <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
               onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
           )}
-          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} />}
+          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} />}
           <View>
             {worldMap}
             {spotSearchable && !spotSearchOpen && (
@@ -844,18 +844,63 @@ const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'country', label: 'Country' },
 ];
 // The sort choice above an Explored grid: small segmented pills, the chosen one dark.
-function SortRow({ sort, onSort, withSpots }: { sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean }) {
+type SortCountry = { code: string; name: string; count: number };
+function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry }: {
+  sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean;
+  countries: SortCountry[]; total: number; country: string | null; onCountry: (code: string | null) => void;
+}) {
+  // A dropdown beside the Country option: the chip shows the chosen country ("All" for none) and opens a menu of them, the
+  // same filter as the pills above.
+  const chipRef = useRef<View>(null);
+  const [menu, setMenu] = useState<{ x: number; y: number } | null>(null);
+  const openMenu = () => {
+    Haptics.selectionAsync();
+    chipRef.current?.measureInWindow((x, y, _w, h) => setMenu({ x, y: y + h + 6 }));
+  };
+  const pick = (code: string | null) => { Haptics.selectionAsync(); onCountry(code); setMenu(null); };
+  const chosen = countries.find(c => c.code === country);
   return (
-    <GHScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.sortScroll} contentContainerStyle={styles.sortRow}
-      keyboardShouldPersistTaps="handled">
-      <Text style={styles.sortLabel}>Sort by</Text>
-      {SORTS.filter(o => withSpots || o.key !== 'spots').map(o => (
-        <Pressable key={o.key} hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
-          onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
-          <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
-        </Pressable>
-      ))}
-    </GHScrollView>
+    <>
+      <GHScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.sortScroll} contentContainerStyle={styles.sortRow}
+        keyboardShouldPersistTaps="handled">
+        <Text style={styles.sortLabel}>Sort by</Text>
+        {SORTS.filter(o => withSpots || o.key !== 'spots').map(o => (
+          <React.Fragment key={o.key}>
+            <Pressable hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
+              onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
+              <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
+            </Pressable>
+            {o.key === 'country' && countries.length > 1 && (
+              <Pressable ref={chipRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={openMenu}>
+                {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
+                <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All'}</Text>
+                <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
+              </Pressable>
+            )}
+          </React.Fragment>
+        ))}
+      </GHScrollView>
+      <Modal visible={!!menu} transparent animationType="fade" onRequestClose={() => setMenu(null)}>
+        <Pressable style={StyleSheet.absoluteFill} onPress={() => setMenu(null)} />
+        {!!menu && (
+          <View style={[styles.dropMenu, { top: menu.y, left: Math.max(12, Math.min(menu.x, SCREEN_W - 232)) }]}>
+            <ScrollView style={{ maxHeight: 300 }} bounces={false}>
+              {[{ code: null as string | null, name: 'All countries', count: total }, ...countries].map(c => {
+                const on = (country ?? null) === c.code;
+                return (
+                  <Pressable key={c.code ?? 'all'} style={styles.dropRow} onPress={() => pick(c.code)}>
+                    <View style={styles.dropFlag}>{!!c.code && <CircleFlag countryCode={c.code} size={18} />}</View>
+                    <Text style={[styles.dropName, on && styles.dropNameOn]} numberOfLines={1}>{c.name}</Text>
+                    <Text style={styles.dropCount}>{c.count}</Text>
+                    <View style={styles.dropCheck}>{on && <Check size={14} color="#047857" strokeWidth={3} />}</View>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+          </View>
+        )}
+      </Modal>
+    </>
   );
 }
 
@@ -1082,6 +1127,18 @@ const styles = StyleSheet.create({
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: -6 },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
+  countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, marginLeft: -8, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
+                 borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 140 },
+  countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
+  countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
+  dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
+              shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 }, elevation: 8 },
+  dropRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, paddingVertical: 9 },
+  dropFlag: { width: 18 },
+  dropName: { flex: 1, fontSize: 14, fontWeight: '500', color: '#111827' },
+  dropNameOn: { color: '#047857', fontWeight: '700' },
+  dropCount: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
+  dropCheck: { width: 16, alignItems: 'center' },
   sortTxt:   { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   sortTxtOn: { color: '#111827' },
   tileScroll: { marginTop: 8, flexGrow: 0 },
