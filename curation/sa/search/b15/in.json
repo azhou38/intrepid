@@ -1,0 +1,86 @@
+[
+ {
+  "slot": "spot:whyalla-4",
+  "id": "whyalla-4",
+  "name": "Hummock Hill Lookout",
+  "wiki": null,
+  "destination": "whyalla",
+  "category": "viewpoint",
+  "coordinates": {
+   "latitude": -33.03751,
+   "longitude": 137.59082
+  },
+  "bio": "A lookout over Whyalla and Spencer Gulf built into old World War Two gun emplacements.",
+  "failed": "none: Bargara from the Hummock is Bargara, Queensland: wrong place. Same-destination option: View from Hummock Hill, Whyalla, 2017 (01).jpg (view from Hummock Hill, also the header)"
+ },
+ {
+  "slot": "spot:whyalla-5",
+  "id": "whyalla-5",
+  "name": "Whyalla Jetty",
+  "wiki": null,
+  "destination": "whyalla",
+  "category": "landmark",
+  "coordinates": {
+   "latitude": -33.039327,
+   "longitude": 137.588813
+  },
+  "bio": "A 315 m circular jetty on the Whyalla foreshore for walking and fishing, lit all night.",
+  "failed": "none: current shows the town from Hummock Hill, no jetty visible; script proof was too lenient (geotag 276 m but not the subject)"
+ },
+ {
+  "slot": "spot:yankalilla-3",
+  "id": "yankalilla-3",
+  "name": "Wild South Coast Way",
+  "wiki": null,
+  "destination": "yankalilla",
+  "category": "hike",
+  "coordinates": {
+   "latitude": -35.638685,
+   "longitude": 138.307346
+  },
+  "bio": "A 74 km coastal walk from Cape Jervis to Victor Harbor on the Heysen Trail, done in sections or over five days.",
+  "failed": "none: current is Irish Wild Atlantic Way signs (wrong country, fails check 1)"
+ },
+ {
+  "slot": "spot:yorke-peninsula-1",
+  "id": "yorke-peninsula-1",
+  "name": "Ardrossan Red Cliffs",
+  "wiki": null,
+  "destination": "yorke-peninsula",
+  "category": "viewpoint",
+  "coordinates": {
+   "latitude": -34.42262,
+   "longitude": 137.92217
+  },
+  "bio": "Red clay cliffs above the shore at Ardrossan, best seen from the jetty at sunrise.",
+  "failed": "none: only candidate is a blue swimmer crab close-up (stand-in); current Ardrossan.jpg 800px and a town street. Lead image search hit HTTP 429 (unresolved)"
+ },
+ {
+  "slot": "spot:yorke-peninsula-3",
+  "id": "yorke-peninsula-3",
+  "name": "Edithburgh Tidal Pool",
+  "wiki": null,
+  "destination": "yorke-peninsula",
+  "category": "beach",
+  "coordinates": {
+   "latitude": -35.081891,
+   "longitude": 137.747999
+  },
+  "bio": "Tidal sea-water swimming pool set into the cliff at Edithburgh, with change rooms.",
+  "failed": "none: check 2: Edithburgh street scene, not the tidal pool"
+ },
+ {
+  "slot": "spot:yorke-peninsula-4",
+  "id": "yorke-peninsula-4",
+  "name": "Edithburgh Jetty",
+  "wiki": "Edithburgh Jetty",
+  "destination": "yorke-peninsula",
+  "category": "landmark",
+  "coordinates": {
+   "latitude": -35.084796,
+   "longitude": 137.749608
+  },
+  "bio": "Jetty where divers and snorkellers find seahorses, Port Jackson sharks and leafy sea dragons.",
+  "failed": "none: check 2: Edithburgh street scene, not the jetty (also shared file with -3)"
+ }
+]
