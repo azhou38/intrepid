@@ -234,16 +234,15 @@ export default function ProfileScreen() {
     const destSpots = (id: string) => sum.get(id)?.c ?? 0;
     return { spotDate, destDate, destRating, destSpots };
   }, [savedSpots, savedDests, visitedSpots]);
-  const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, country: (item: T) => string, spots?: (id: string) => number) =>
+  const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, spots?: (id: string) => number) =>
     [...list].sort((x, y) => {
       if (exploredSort === 'date') { const c = date(y.id).localeCompare(date(x.id)); if (c) return c; }
-      else if (exploredSort === 'country') { const c = country(x).localeCompare(country(y)); if (c) return c; }
       else if (exploredSort === 'spots' && spots) { const c = spots(y.id) - spots(x.id); if (c) return c; }
       else if (exploredSort === 'rating') { const c = rating(y.id) - rating(x.id); if (c) return c; }
       return x.name.localeCompare(y.name);
     });
   const exploredDests = useMemo(
-    () => sortBy(visitedDests, id => sortKeys.destDate.get(id) ?? '', sortKeys.destRating, d => d.country, sortKeys.destSpots),
+    () => sortBy(visitedDests, id => sortKeys.destDate.get(id) ?? '', sortKeys.destRating, sortKeys.destSpots),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [visitedDests, sortKeys, exploredSort]);
   // Destinations Explored can be filtered to one country: the countries with visited destinations, most first.
@@ -264,7 +263,7 @@ export default function ProfileScreen() {
     () => exploredDests.filter(d => (!destCountry || d.countryCode === destCountry) && wordMatch(d.name, q)),
     [exploredDests, destCountry, q]);
   const exploredSpots = useMemo(
-    () => sortBy(visitedSpots, id => sortKeys.spotDate.get(id) ?? '', id => savedSpots[id]?.rating ?? 0, sp => spotCountry(sp) ?? ''),
+    () => sortBy(visitedSpots, id => sortKeys.spotDate.get(id) ?? '', id => savedSpots[id]?.rating ?? 0),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [visitedSpots, sortKeys, savedSpots, exploredSort]);
   // Spots Explored works the same way: search by a spot's name or its destination's, filter by country with chips.
@@ -825,15 +824,13 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
   );
 }
 
-type ExploredSort = 'name' | 'date' | 'rating' | 'spots' | 'country';
+type ExploredSort = 'name' | 'date' | 'rating' | 'spots';
 const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'name', label: 'A–Z' },
   { key: 'date', label: 'Recent' },
   { key: 'rating', label: 'Rating' },
   // Destinations only: the most visited spots first (the first three tiles wear a rank badge).
   { key: 'spots', label: 'Most spots' },
-  // Grouped by country (A–Z), then by name.
-  { key: 'country', label: 'Country' },
 ];
 // The sort choice above an Explored grid: small segmented pills, the chosen one dark.
 type SortCountry = { code: string; name: string; count: number };
@@ -841,7 +838,7 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
   sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean;
   countries: SortCountry[]; total: number; country: string | null; onCountry: (code: string | null) => void;
 }) {
-  // A dropdown beside the Country option: the chip shows the chosen country ("All" for none) and opens a menu of them, the
+  // A country dropdown at the end of the sort row: the chip shows the chosen country ("All" for none) and opens a menu of them, the
   // same filter as the pills above.
   const chipRef = useRef<View>(null);
   const [menu, setMenu] = useState<{ x: number; y: number } | null>(null);
@@ -857,20 +854,18 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
         keyboardShouldPersistTaps="handled">
         <Text style={styles.sortLabel}>Sort by</Text>
         {SORTS.filter(o => withSpots || o.key !== 'spots').map(o => (
-          <React.Fragment key={o.key}>
-            <Pressable hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
-              onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
-              <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
-            </Pressable>
-            {o.key === 'country' && countries.length > 1 && (
-              <Pressable ref={chipRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={openMenu}>
-                {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
-                <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All'}</Text>
-                <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
-              </Pressable>
-            )}
-          </React.Fragment>
+          <Pressable key={o.key} hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
+            onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
+            <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
+          </Pressable>
         ))}
+        {countries.length > 1 && (
+          <Pressable ref={chipRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={openMenu}>
+            {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
+            <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All countries'}</Text>
+            <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
+          </Pressable>
+        )}
       </GHScrollView>
       <Modal visible={!!menu} transparent animationType="fade" onRequestClose={() => setMenu(null)}>
         <Pressable style={StyleSheet.absoluteFill} onPress={() => setMenu(null)} />
@@ -1079,8 +1074,8 @@ const styles = StyleSheet.create({
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: -6 },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
-  countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, marginLeft: -8, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
-                 borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 140 },
+  countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, marginLeft: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
+                 borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
   countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
   dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
