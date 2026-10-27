@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
 import * as Haptics from 'expo-haptics';
@@ -73,6 +73,21 @@ export default function WorldMapModal({
         : [],
   }), [level, dests, spots, spotsByDest]);
 
+  // The card for a destination or spot feature: its photo, name, and country (with how many spots are visited, for a destination).
+  const placeCard = (pr: Record<string, any>): Picked => {
+    const n = Number(pr.spots ?? 0);
+    const sub = n > 0 ? `${pr.sub} · ${n} spot${n === 1 ? '' : 's'} visited` : pr.sub;
+    return { kind: 'place', id: pr.id, name: pr.name, sub, code: pr.code || undefined,
+      photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category };
+  };
+  // Opening the map with a place already picked in the Profile's grid: its card is up at the bottom from the start.
+  useEffect(() => {
+    if (!visible || !pickedId) return;
+    const f = points.features.find(x => x.properties?.id === pickedId);
+    if (f?.properties) setPicked(placeCard(f.properties));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible, pickedId, level]);
+
   // A tap: whatever highlighted feature is under the finger (a dot first, then a visited country), else nothing.
   const onMapPress = async (e: any) => {
     const x = e?.properties?.screenPointX, y = e?.properties?.screenPointY;
@@ -83,11 +98,7 @@ export default function WorldMapModal({
         const f = hit?.features?.[0];
         if (f) {
           Haptics.selectionAsync();
-          const n = Number(f.properties?.spots ?? 0);
-          const sub = n > 0 ? `${f.properties?.sub} · ${n} spot${n === 1 ? '' : 's'} visited` : f.properties?.sub;
-          const pr = f.properties ?? {};
-          setPicked({ kind: 'place', id: pr.id, name: pr.name, sub, code: pr.code || undefined,
-            photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category });
+          setPicked(placeCard(f.properties ?? {}));
           return;
         }
       } else {
