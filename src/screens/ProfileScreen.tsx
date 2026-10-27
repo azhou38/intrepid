@@ -204,7 +204,48 @@ export default function ProfileScreen() {
   }, [visitedSpots]);
   const maxDestCount = topDestinations[0]?.count ?? 1;
   // The Explored lists for destinations and spots, alphabetical.
-  const exploredDests = useMemo(() => [...visitedDests].sort((x, y) => x.name.localeCompare(y.name)), [visitedDests]);
+  // How the Explored grids are ordered: A–Z, most recently visited first, or best rated first. A spot's rating is its own;
+  // a destination has none of its own, so it takes the average of its visited spots' ratings. Places with no date or rating
+  // come last.
+  const [exploredSort, setExploredSort] = useState<ExploredSort>('name');
+  const savedSpots = useStore(s => s.savedSpots);
+  const savedDests = useStore(s => s.savedDestinations);
+  const sortKeys = useMemo(() => {
+    const spotDate = new Map<string, string>();
+    const destDate = new Map<string, string>();
+    const bump = (m: Map<string, string>, id: string, d?: string) => { if (d && d > (m.get(id) ?? '')) m.set(id, d); };
+    for (const [id, dv] of Object.entries(savedDests)) {
+      bump(destDate, id, dv.visitDate);
+      for (const v of dv.visits ?? []) {
+        const d = v.endDate && v.endDate > v.startDate ? v.endDate : v.startDate;
+        bump(destDate, id, d);
+        for (const sid of v.spotIds ?? []) bump(spotDate, sid, d);
+      }
+    }
+    for (const [id, sv] of Object.entries(savedSpots)) {
+      bump(spotDate, id, sv.visitDate);
+      for (const v of sv.visits ?? []) bump(spotDate, id, v.endDate && v.endDate > v.startDate ? v.endDate : v.startDate);
+    }
+    const sum = new Map<string, { t: number; n: number }>();
+    for (const sp of visitedSpots) {
+      const r = savedSpots[sp.id]?.rating;
+      if (!r || !sp.destinationId) continue;
+      const a = sum.get(sp.destinationId) ?? { t: 0, n: 0 };
+      a.t += r; a.n += 1; sum.set(sp.destinationId, a);
+    }
+    const destRating = (id: string) => { const a = sum.get(id); return a ? a.t / a.n : 0; };
+    return { spotDate, destDate, destRating };
+  }, [savedSpots, savedDests, visitedSpots]);
+  const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number) =>
+    [...list].sort((x, y) => {
+      if (exploredSort === 'date') { const c = date(y.id).localeCompare(date(x.id)); if (c) return c; }
+      else if (exploredSort === 'rating') { const c = rating(y.id) - rating(x.id); if (c) return c; }
+      return x.name.localeCompare(y.name);
+    });
+  const exploredDests = useMemo(
+    () => sortBy(visitedDests, id => sortKeys.destDate.get(id) ?? '', sortKeys.destRating),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [visitedDests, sortKeys, exploredSort]);
   // Destinations Explored can be filtered to one country: the countries with visited destinations, most first.
   const [destCountry, setDestCountry] = useState<string | null>(null);
   const destCountries = useMemo(() => {
@@ -222,7 +263,10 @@ export default function ProfileScreen() {
   const shownDests = useMemo(
     () => exploredDests.filter(d => (!destCountry || d.countryCode === destCountry) && wordMatch(d.name, q)),
     [exploredDests, destCountry, q]);
-  const exploredSpots = useMemo(() => [...visitedSpots].sort((x, y) => x.name.localeCompare(y.name)), [visitedSpots]);
+  const exploredSpots = useMemo(
+    () => sortBy(visitedSpots, id => sortKeys.spotDate.get(id) ?? '', id => savedSpots[id]?.rating ?? 0),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [visitedSpots, sortKeys, savedSpots, exploredSort]);
   // Spots Explored works the same way: search by a spot's name or its destination's, filter by country with chips.
   const [spotCountryF, setSpotCountryF] = useState<string | null>(null);
   const spotCountries = useMemo(() => {
@@ -566,6 +610,10 @@ export default function ProfileScreen() {
                 onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
             </View>
           )}
+          {exploredDests.length > 0 && destCountries.length > 1 && (
+            <CountryChips countries={destCountries} total={exploredDests.length} selected={destCountry} query={q}
+              onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
+          )}
           <View style={styles.exploredPad}>
             {worldMap}
             {destSearchable && !destSearchOpen && (
@@ -578,11 +626,7 @@ export default function ProfileScreen() {
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
           ) : (
             <>
-            {/* Filter by country: All, then each country with visited destinations (flag, name, count). */}
-            {destCountries.length > 1 && (
-              <CountryChips countries={destCountries} total={exploredDests.length} selected={destCountry} query={q}
-                onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
-            )}
+            <SortRow sort={exploredSort} onSort={setExploredSort} />
             {shownDests.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
                 {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Tap a country above to filter by it.' : 'No destinations match.'}
@@ -640,6 +684,10 @@ export default function ProfileScreen() {
                 onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
             </View>
           )}
+          {exploredSpots.length > 0 && spotCountries.length > 1 && (
+            <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
+              onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
+          )}
           <View style={styles.exploredPad}>
             {worldMap}
             {spotSearchable && !spotSearchOpen && (
@@ -652,10 +700,7 @@ export default function ProfileScreen() {
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
           ) : (
             <>
-            {spotCountries.length > 1 && (
-              <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
-                onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
-            )}
+            <SortRow sort={exploredSort} onSort={setExploredSort} />
             {shownSpots.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
                 {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Tap a country above to filter by it.' : 'No spots match.'}
@@ -764,6 +809,27 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
         {!!countryCode && <CircleFlag countryCode={countryCode} size={11} ring ringWidth={1} />}
         {!!sub && <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>}
       </View>
+    </View>
+  );
+}
+
+type ExploredSort = 'name' | 'date' | 'rating';
+const SORTS: { key: ExploredSort; label: string }[] = [
+  { key: 'name', label: 'A–Z' },
+  { key: 'date', label: 'Recent' },
+  { key: 'rating', label: 'Rating' },
+];
+// The sort choice above an Explored grid: small segmented pills, the chosen one dark.
+function SortRow({ sort, onSort }: { sort: ExploredSort; onSort: (s: ExploredSort) => void }) {
+  return (
+    <View style={[styles.sortRow, styles.exploredPad]}>
+      <Text style={styles.sortLabel}>Sort</Text>
+      {SORTS.map(o => (
+        <Pressable key={o.key} hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
+          onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
+          <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
+        </Pressable>
+      ))}
     </View>
   );
 }
@@ -974,7 +1040,7 @@ const styles = StyleSheet.create({
                   borderRadius: 12, backgroundColor: '#F3F4F6' },
   searchInput:  { flex: 1, fontSize: 14, color: '#111827', paddingVertical: 0 },
   // The Explored lists' country filter: a sideways row of chips; the chosen one is green.
-  filterScroll: { marginTop: 12, marginBottom: 10, flexGrow: 0 },
+  filterScroll: { marginBottom: 10, flexGrow: 0 },
   filterRow:    { paddingHorizontal: EXPLORED_PAD, gap: 6 },
   filterChip:   { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 10, paddingVertical: 6,
                   borderRadius: 14, borderWidth: 1, borderColor: '#E5E7EB', backgroundColor: 'white' },
@@ -983,6 +1049,12 @@ const styles = StyleSheet.create({
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, three across.
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 12 },
+  sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: 2 },
+  sortPill:  { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 12, backgroundColor: '#F3F4F6' },
+  sortPillOn: { backgroundColor: '#111827' },
+  sortTxt:   { fontSize: 12, fontWeight: '600', color: '#6B7280' },
+  sortTxtOn: { color: 'white' },
   tileScroll: { maxHeight: GRID_MAX_H },
   tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
