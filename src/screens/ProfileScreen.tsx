@@ -394,7 +394,7 @@ export default function ProfileScreen() {
         <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
         {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
           <Path key={k} d={d}
-            fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : c === pickedCountry ? '#6EE7B7' : '#D9DEE5'}
+            fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : c === pickedCountry ? '#A7F3D0' : '#D9DEE5'}
             stroke="white" strokeWidth={0.15} />
         ))}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
