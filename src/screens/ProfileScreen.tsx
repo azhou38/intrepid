@@ -663,6 +663,8 @@ export default function ProfileScreen() {
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
           ) : (
             <>
+            {/* How many match the filters, up front: "6 destinations in Japan". */}
+            <ResultCount n={shownDests.length} noun="destination" where={destCountries.find(c => c.code === destCountry)?.name} />
             {shownDests.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
                 No destinations match.
@@ -703,6 +705,8 @@ export default function ProfileScreen() {
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
           ) : (
             <>
+            <ResultCount n={shownSpots.length} noun="spot"
+              where={spotDests.find(d => d.code === spotDestF)?.name ?? spotCountries.find(c => c.code === spotCountryF)?.name} />
             {shownSpots.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
                 No spots match.
@@ -756,6 +760,15 @@ export default function ProfileScreen() {
 }
 
 // A selector item's text, fading between its selected and unselected colours as the pill slides to or from it.
+// The count of what the filters leave, as a heading above the grid: a bold number, its noun, and where ("in Japan").
+function ResultCount({ n, noun, where }: { n: number; noun: string; where?: string }) {
+  return (
+    <Text style={[styles.resultCount, styles.exploredPad]}>
+      <Text style={styles.resultNum}>{n}</Text> {noun}{n === 1 ? '' : 's'}{where ? ` in ${where}` : ''}
+    </Text>
+  );
+}
+
 // An Explored list as a grid of rounded photo tiles, three across: the name in white at the bottom left over a dark
 // scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
 const TILE_COLS = 3;
@@ -1103,6 +1116,8 @@ const styles = StyleSheet.create({
   sortTxtOn: { color: '#111827' },
   tileScroll: { marginTop: 8, flexGrow: 0 },
   tilePage: { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD, paddingVertical: SHADOW_ROOM, alignContent: 'flex-start', flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
+  resultCount: { marginTop: 16, fontSize: 15, fontWeight: '600', color: '#6B7280' },
+  resultNum: { fontSize: 22, fontWeight: '800', color: '#111827' },
   // Dots, then the range, both at the bottom right of the carousel (shown for any number of tiles, even one page).
   pageBar:  { marginTop: 4, height: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: 10, paddingHorizontal: EXPLORED_PAD + 2 },
   pageDots: { flexDirection: 'row', gap: 5 },
