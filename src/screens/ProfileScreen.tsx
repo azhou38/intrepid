@@ -170,6 +170,7 @@ export default function ProfileScreen() {
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
   const [pageH, setPageH] = useState(0);
+  const [selectorH, setSelectorH] = useState(0);
   // The Edit Profile button is drawn in the fixed header (it holds still and fades with it), which sits behind the page
   // and so takes no taps: a clear target over it, above the page, takes them while the page is at its top (editTap).
   // editFrame is where the button sits in the header.
@@ -518,7 +519,14 @@ export default function ProfileScreen() {
       {/* The sticky child stays a plain View: the ScrollView's sticky wrapper attaches its own ref to it, which an animated
           component would freeze ("set the key `current` … frozen"). The fading line and shadow are on the view inside. */}
       <View style={{ marginTop: -COMPACT_H }} pointerEvents="box-none">
-      <View style={styles.selectorSticky} pointerEvents="box-none">
+      {/* Once pinned, this box shrinks to just the visible bar and a spacer below it holds the rest of its height: the page below
+          keeps its place, but the invisible part of the pinned box (which would swallow taps meant for what scrolls under it, such
+          as the filter chips) is gone. */}
+      <View
+        style={[styles.selectorSticky, pinned && selectorH > 0 && { height: COMPACT_H + TABS_H }]}
+        pointerEvents="box-none"
+        onLayout={e => { if (!pinned) setSelectorH(e.nativeEvent.layout.height); }}
+      >
         {/* The pinned bar's background, hairline and shadow, behind the strip and the card. */}
         <Animated.View pointerEvents="none" style={[styles.stuckBg, stuckStyle]} />
         {/* The small centred avatar and name, shown only while the bar is pinned. */}
@@ -580,6 +588,7 @@ export default function ProfileScreen() {
         </Animated.View>
       </View>
       </View>
+      <View style={{ height: pinned && selectorH > 0 ? Math.max(0, selectorH - (COMPACT_H + TABS_H)) : 0 }} pointerEvents="none" />
 
       {/* ── The map, its own card under the selector ── */}
       {worldMode === 'countries' && <View style={styles.mapCard}>{worldMap}</View>}
