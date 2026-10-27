@@ -340,10 +340,12 @@ export default function ProfileScreen() {
   }, [flagTip]);
 
   const visitedCountrySet = visitIndex.visitedCountryCodes;
-  const worldDots = useMemo(
-    () => (worldMode === 'spots' ? visitedSpots : worldMode === 'destinations' ? visitedDests : [])
-      .map(p => ({ id: p.id, ...worldPoint(p.coordinates.longitude, p.coordinates.latitude) })),
-    [worldMode, visitedSpots, visitedDests]);
+  const worldDots = useMemo(() => {
+    const dot = (id: string, code: string, c: { longitude: number; latitude: number }) => ({ id, code, ...worldPoint(c.longitude, c.latitude) });
+    if (worldMode === 'spots') return visitedSpots.map(sp => dot(sp.id, spotCountryCode(sp) ?? '', sp.coordinates));
+    if (worldMode === 'destinations') return visitedDests.map(d => dot(d.id, d.countryCode, d.coordinates));
+    return [];
+  }, [worldMode, visitedSpots, visitedDests]);
 
 
 
@@ -386,10 +388,27 @@ export default function ProfileScreen() {
   const topSwipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: topSwipeXSV.value }] }));
 
   // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
+  // With a country picked in the Explored dropdown, the map frames that country: the box around the places visited there,
+  // padded, kept in the map's own shape and never tighter than about 25 degrees across (so one place is not a pixel of land).
+  const mapView = useMemo(() => {
+    const full = { x: 0, y: WORLD_Y0, w: 360, h: WORLD_Y1 - WORLD_Y0 };
+    const code = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
+    const pts = code ? worldDots.filter(d => d.code === code) : [];
+    if (!pts.length) return full;
+    const x0 = Math.min(...pts.map(p => p.x)), x1 = Math.max(...pts.map(p => p.x));
+    const y0 = Math.min(...pts.map(p => p.y)), y1 = Math.max(...pts.map(p => p.y));
+    const shape = WORLD_VH / 360;
+    const w = Math.min(360, Math.max(25, (x1 - x0) * 1.5, ((y1 - y0) * 1.5) / shape));
+    const h = w * shape;
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    return { x: Math.max(0, Math.min(360 - w, cx - w / 2)), y: Math.max(0, Math.min(WORLD_VH - h, cy - h / 2)), w, h };
+  }, [worldMode, destCountry, spotCountryF, worldDots]);
+  // Dots and pins keep a readable size on screen as the map zooms in (they are drawn in map units).
+  const dotScale = Math.min(1, (mapView.w / 360) * 2.5);
   const worldMapAt = (w: number) => (
     <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
     <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }]}>
-      <Svg width={w} height={Math.round((w * WORLD_VH) / 360)} viewBox={`0 ${WORLD_Y0} 360 ${WORLD_Y1 - WORLD_Y0}`}>
+      <Svg width={w} height={Math.round((w * WORLD_VH) / 360)} viewBox={`${mapView.x} ${mapView.y} ${mapView.w} ${mapView.h}`}>
         <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
         {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
           <Path key={k} d={d}
@@ -400,12 +419,12 @@ export default function ProfileScreen() {
             read differently from destinations, as on the full-screen map. */}
         {/* The picked tile's place is drawn last (on top), in orange and a little larger. */}
         {worldMode === 'destinations' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => (
-          <Circle key={p.id} cx={p.x} cy={p.y} r={p.id === pickedId ? 3.2 : 2} fill={p.id === pickedId ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.5} />
+          <Circle key={p.id} cx={p.x} cy={p.y} r={(p.id === pickedId ? 3.2 : 2) * dotScale} fill={p.id === pickedId ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.5 * dotScale} />
         ))}
         {worldMode === 'spots' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => {
           const on = p.id === pickedId;
           return (
-            <G key={p.id} transform={on ? `translate(${p.x} ${p.y}) scale(1.6) translate(${-p.x} ${-p.y})` : undefined}>
+            <G key={p.id} transform={`translate(${p.x} ${p.y}) scale(${dotScale * (on ? 1.6 : 1)}) translate(${-p.x} ${-p.y})`}>
               <Path d={pinPath(p.x, p.y)} fill={on ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
               <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
             </G>
