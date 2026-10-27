@@ -749,6 +749,8 @@ const TILE_GAP = 6;
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
 // Nine to a page, three rows of three; a page is the screen wide and as tall as its rows.
 const PAGE_SIZE = TILE_COLS * 3;
+// Room above and below each page for the tiles' shadows (the scroller clips anything outside it).
+const SHADOW_ROOM = 6;
 const gridHeight = (n: number) => { const rows = Math.max(1, Math.ceil(n / TILE_COLS)); return TILE * rows + TILE_GAP * (rows - 1); };
 function PhotoGrid({ tiles, pickedId, onPick }: {
   tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode; rank?: number }[];
@@ -768,9 +770,10 @@ function PhotoGrid({ tiles, pickedId, onPick }: {
         style={styles.tileScroll} decelerationRate="fast"
         onMomentumScrollEnd={e => setPage(Math.round(e.nativeEvent.contentOffset.x / SCREEN_W))}>
         {pages.map((pg, i) => (
-          <View key={i} style={[styles.tilePage, { height: gridHeight(pg.length) }]}>
+          <View key={i} style={[styles.tilePage, { height: gridHeight(pg.length) + 2 * SHADOW_ROOM }]}>
             {pg.map(t => (
               <Pressable key={t.key} style={styles.tile} onPress={() => onPick(t.key)}>
+                <View style={styles.tileClip}>
                 {t.photo}
                 {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
                     spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
@@ -781,6 +784,7 @@ function PhotoGrid({ tiles, pickedId, onPick }: {
                   </View>
                 )}
                 {pickedId === t.key && <View style={styles.tileRing} pointerEvents="none" />}
+                </View>
               </Pressable>
             ))}
           </View>
@@ -1070,12 +1074,15 @@ const styles = StyleSheet.create({
   sortPillOn: { backgroundColor: '#111827' },
   sortTxt:   { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   sortTxtOn: { color: 'white' },
-  tileScroll: { marginTop: 14, flexGrow: 0 },
-  tilePage: { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
-  pageDots: { flexDirection: 'row', justifyContent: 'center', gap: 5, marginTop: 10 },
+  tileScroll: { marginTop: 8, flexGrow: 0 },
+  tilePage: { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD, paddingVertical: SHADOW_ROOM, alignContent: 'flex-start', flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
+  pageDots: { flexDirection: 'row', justifyContent: 'center', gap: 5, marginTop: 4 },
   pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#D1D5DB' },
   pageDotOn: { backgroundColor: '#111827' },
-  tile:     { width: TILE, height: TILE, borderRadius: 10, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  // A tile is a shadow-casting shell around a clipped inner box (a view that clips cannot also cast a shadow).
+  tile:     { width: TILE, height: TILE, borderRadius: 10, backgroundColor: '#E5E7EB',
+              shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 5, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
+  tileClip: { flex: 1, borderRadius: 10, overflow: 'hidden' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
   rankBadge: { position: 'absolute', top: 6, left: 6, width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: 'white' },
   rankTxt:   { fontSize: 11, fontWeight: '800', color: 'white' },
