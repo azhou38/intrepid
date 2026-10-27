@@ -11,7 +11,8 @@ import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
 import { NO_PHOTO } from '../data/imageOverrides';
 import { spotPhotoTitle } from '../data/spots';
-import SpotPinImages, { SPOT_MINI_PIN_VISITED } from './Map/SpotPinImages';
+import SpotPinImages, { SPOT_MINI_PIN_VISITED, SPOT_MINI_PIN_PICKED } from './Map/SpotPinImages';
+import { getCountryBounds } from '../utils/countryBounds';
 import type { Destination } from '../types';
 import type { Spot } from '../data/spots';
 
@@ -33,6 +34,7 @@ type Picked =
 
 export default function WorldMapModal({
   visible, onClose, level, onLevelChange, visitedCountryCodes, countryName, dests, spots, countsByCountry, spotsByDest,
+  focusCountry, pickedId,
 }: {
   visible: boolean;
   onClose: () => void;
@@ -45,6 +47,10 @@ export default function WorldMapModal({
   countsByCountry: Map<string, { dests: number; spots: number }>;
   // Visited spots per destination id: a destination's card says how many, when any are logged.
   spotsByDest: Map<string, number>;
+  // Opens framed on this country (the Profile's chosen one) instead of the whole world.
+  focusCountry?: string | null;
+  // The destination or spot picked in the Profile's Explored grid: drawn in orange, and a little larger.
+  pickedId?: string | null;
 }) {
   const insets = useSafeAreaInsets();
   const mapRef = useRef<MapboxGL.MapView>(null);
@@ -55,13 +61,13 @@ export default function WorldMapModal({
     features: level === 'destinations'
       ? dests.map(d => ({
         type: 'Feature', geometry: { type: 'Point', coordinates: [d.coordinates.longitude, d.coordinates.latitude] },
-        properties: { name: d.name, sub: d.country, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
+        properties: { id: d.id, name: d.name, sub: d.country, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
           photoKey: `pick_${d.id}`, photoTitle: d.name, icon: d.icon, category: d.category },
       }))
       : level === 'spots'
         ? spots.map(({ spot, country, countryCode }) => ({
           type: 'Feature', geometry: { type: 'Point', coordinates: [spot.coordinates.longitude, spot.coordinates.latitude] },
-          properties: { name: spot.name, sub: country, code: countryCode ?? '',
+          properties: { id: spot.id, name: spot.name, sub: country, code: countryCode ?? '',
             photoKey: `pick_spot_${spot.id}`, photoTitle: spotPhotoTitle(spot), icon: spot.icon, category: spot.category },
         }))
         : [],
@@ -98,6 +104,29 @@ export default function WorldMapModal({
     setPicked(null);
   };
 
+  const pickedShape = useMemo((): GeoJSON.FeatureCollection => ({
+    type: 'FeatureCollection', features: points.features.filter(f => f.properties?.id === pickedId),
+  }), [points, pickedId]);
+
+  // Where the map opens: the Profile's chosen country (its box, with the places visited there), else the whole world.
+  const startView = useMemo(() => {
+    const world = { centerCoordinate: [10, 25] as [number, number], zoomLevel: 0.4 };
+    if (!focusCountry) return world;
+    const lons: number[] = [], lats: number[] = [];
+    const cb = getCountryBounds(focusCountry);
+    if (cb) { lons.push(cb.sw.longitude, cb.ne.longitude); lats.push(cb.sw.latitude, cb.ne.latitude); }
+    for (const d of dests) if (d.countryCode === focusCountry) { lons.push(d.coordinates.longitude); lats.push(d.coordinates.latitude); }
+    for (const { spot, countryCode } of spots) if (countryCode === focusCountry) { lons.push(spot.coordinates.longitude); lats.push(spot.coordinates.latitude); }
+    if (!lons.length) return world;
+    const pad = 0.05;
+    return {
+      bounds: {
+        ne: [Math.max(...lons) + pad, Math.max(...lats) + pad], sw: [Math.min(...lons) - pad, Math.min(...lats) - pad],
+        paddingTop: 120, paddingBottom: 120, paddingLeft: 40, paddingRight: 40,
+      },
+    };
+  }, [focusCountry, dests, spots]);
+
   const close = () => { setPicked(null); onClose(); };
 
   return (
@@ -119,7 +148,7 @@ export default function WorldMapModal({
           gestureSettings={{ doubleTapToZoomInEnabled: false, doubleTouchToZoomOutEnabled: false }}
           onPress={onMapPress}
         >
-          <MapboxGL.Camera defaultSettings={{ centerCoordinate: [10, 25], zoomLevel: 0.4 }} minZoomLevel={0} maxZoomLevel={9} animationDuration={0} />
+          <MapboxGL.Camera defaultSettings={startView} minZoomLevel={0} maxZoomLevel={9} animationDuration={0} />
           {level === 'countries' && visitedCountryCodes.length > 0 && (
             <MapboxGL.VectorSource id="wmCountries" url="mapbox://mapbox.country-boundaries-v1">
               <MapboxGL.FillLayer
@@ -156,8 +185,11 @@ export default function WorldMapModal({
               <MapboxGL.CircleLayer
                 id="wmDots"
                 style={{
-                  circleRadius: ['interpolate', ['linear'], ['zoom'], 0, 4, 8, 9] as any,
-                  circleColor: '#10B981', circleStrokeColor: 'white', circleStrokeWidth: 1.5,
+                  circleRadius: ['case', ['==', ['get', 'id'], pickedId ?? ''],
+                    ['interpolate', ['linear'], ['zoom'], 0, 6.5, 8, 14], ['interpolate', ['linear'], ['zoom'], 0, 4, 8, 9]] as any,
+                  circleColor: ['case', ['==', ['get', 'id'], pickedId ?? ''], '#F97316', '#10B981'] as any,
+                  circleSortKey: ['case', ['==', ['get', 'id'], pickedId ?? ''], 1, 0] as any,
+                  circleStrokeColor: 'white', circleStrokeWidth: 1.5,
                 }}
               />
             </MapboxGL.ShapeSource>
@@ -170,6 +202,21 @@ export default function WorldMapModal({
                   iconImage: SPOT_MINI_PIN_VISITED,
                   iconAnchor: 'bottom',
                   iconSize: ['interpolate', ['linear'], ['zoom'], 0, 0.7, 8, 1.25] as any,
+                  iconAllowOverlap: true,
+                  iconIgnorePlacement: true,
+                }}
+              />
+            </MapboxGL.ShapeSource>
+          )}
+          {/* The picked spot's pin again on top, orange and larger, so it stays visible among the rest. */}
+          {level === 'spots' && !!pickedId && (
+            <MapboxGL.ShapeSource id="wmPickedSpot" shape={pickedShape}>
+              <MapboxGL.SymbolLayer
+                id="wmPickedPin"
+                style={{
+                  iconImage: SPOT_MINI_PIN_PICKED,
+                  iconAnchor: 'bottom',
+                  iconSize: ['interpolate', ['linear'], ['zoom'], 0, 1.2, 8, 2] as any,
                   iconAllowOverlap: true,
                   iconIgnorePlacement: true,
                 }}

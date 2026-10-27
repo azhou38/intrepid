@@ -10,6 +10,8 @@ import MapboxGL from '@rnmapbox/maps';
 
 export const SPOT_MINI_PIN_UNVISITED = 'spotmini:0';
 export const SPOT_MINI_PIN_VISITED = 'spotmini:1';
+// The pin of a spot picked in the Profile's Explored grid, shown on the world map in orange.
+export const SPOT_MINI_PIN_PICKED = 'spotmini:picked';
 // The selected spot's glow: the photo pin's own teardrop outline (SpotPhotoImages: a 28pt bubble, 10pt tail, 2pt padding)
 // traced in soft white strokes, wider and fainter outward, so the shading runs evenly round the whole pin, tail included,
 // rather than a disc behind the bubble. GLOW_MARGIN is how far it reaches past the pin; the layer shifts the image down by
@@ -35,8 +37,9 @@ const OUTLINE = 'rgba(0,0,0,0.35)';
 const DOT_R = 2;                 // the black dot at the bubble's centre
 const DOT = '#111111';
 const VISITED_COLOR = '#10B981';
+const PICKED_COLOR = '#F97316';
 
-const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited: boolean }) {
+const MiniPin = memo(function MiniPin({ name, visited, picked }: { name: string; visited: boolean; picked?: boolean }) {
   const imageRef = useRef<{ refresh: () => void } | null>(null);
   // The snapshot is taken from the view as drawn; re-take it shortly after mount in case the first ran just too early.
   useEffect(() => {
@@ -53,7 +56,7 @@ const MiniPin = memo(function MiniPin({ name, visited }: { name: string; visited
           <Path
             d={`M ${P + R - TAN_X} ${P + R + TAN_Y} L ${P + R} ${P + R + TIP_D} L ${P + R + TAN_X} ${P + R + TAN_Y} `
               + `A ${R} ${R} 0 1 0 ${P + R - TAN_X} ${P + R + TAN_Y} Z`}
-            fill={visited ? VISITED_COLOR : BODY}
+            fill={picked ? PICKED_COLOR : visited ? VISITED_COLOR : BODY}
             stroke={OUTLINE}
             strokeWidth={BORDER}
             strokeLinejoin="round"
@@ -104,6 +107,7 @@ export default memo(function SpotPinImages() {
     <MapboxGL.Images>
       <MiniPin name={SPOT_MINI_PIN_UNVISITED} visited={false} />
       <MiniPin name={SPOT_MINI_PIN_VISITED} visited />
+      <MiniPin name={SPOT_MINI_PIN_PICKED} visited picked />
       <SelectedGlow name={SPOT_SELECTED_GLOW} color="#FFFFFF" />
       <SelectedGlow name={SPOT_SELECTED_GLOW_DARK} color="#000000" />
     </MapboxGL.Images>

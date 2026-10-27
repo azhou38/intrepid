@@ -410,9 +410,10 @@ export default function ProfileScreen() {
   // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
   // With a country picked in the Explored dropdown, the map frames that country: the country's box (and the places visited
   // there), padded, kept in the map's own shape and never tighter than about 25 degrees across (so one place is not a pixel of land).
+  const pickedCountry = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
   const mapView = useMemo(() => {
     const full = { x: 0, y: WORLD_Y0, w: 360, h: WORLD_Y1 - WORLD_Y0 };
-    const code = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
+    const code = pickedCountry;
     const pts = code ? worldDots.filter(d => d.code === code) : [];
     if (!pts.length) return full;
     // The whole country, not only the places visited in it (Japan is more than Kyoto and Tokyo): its box, where we have one.
@@ -426,8 +427,8 @@ export default function ProfileScreen() {
     const w = Math.min(360, Math.max(25, (x1 - x0) * 1.2, ((y1 - y0) * 1.2) / shape));
     const h = w * shape;
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
-    return { x: Math.max(0, Math.min(360 - w, cx - w / 2)), y: Math.max(0, Math.min(WORLD_VH - h, cy - h / 2)), w, h };
-  }, [worldMode, destCountry, spotCountryF, worldDots]);
+    return { x: cx - w / 2, y: Math.max(0, Math.min(WORLD_VH - h, cy - h / 2)), w, h };
+  }, [pickedCountry, worldDots]);
   // Dots and pins keep a readable size on screen as the map zooms in (they are drawn in map units).
   const dotScale = Math.min(1, (mapView.w / 360) * 2.5);
   // The world outlines are coarse (one decimal of a degree), which shows once a country fills the map: when zoomed in, draw the
@@ -443,7 +444,7 @@ export default function ProfileScreen() {
     <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
     <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }]}>
       <Svg width={w} height={Math.round((w * WORLD_VH) / 360)} viewBox={`${mapView.x} ${mapView.y} ${mapView.w} ${mapView.h}`}>
-        <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
+        <Rect x={-360} y={WORLD_Y0} width={1080} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
         {zoomed ? detailInView.map(({ c, d }) => (
           // Zoomed in: the 1:10m outlines, only those in view, with a border about a point wide however far in it is.
           <Path key={c} d={d} fill="#D9DEE5" stroke="white" strokeWidth={(0.9 * mapView.w) / w} strokeLinejoin="round" />
@@ -778,6 +779,8 @@ export default function ProfileScreen() {
       spots={modalSpots}
       countsByCountry={countsByCountry}
       spotsByDest={spotsByDest}
+      focusCountry={pickedCountry}
+      pickedId={pickedId}
     />
     </View>
   );
