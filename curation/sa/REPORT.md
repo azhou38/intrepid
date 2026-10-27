@@ -593,3 +593,7 @@ Also dropped as not spots: Whyalla (town duplicates its destination), Gumeracha 
 
 ## Owner decision (2026-10-27)
 - All 13 official photos from the external search approved for use (credits now read "used with owner permission").
+
+## Coordinate audit (audit-spot-coordinates.ts, AU)
+- 234 of 584 SA spots flagged; nearly all are centroid references (a town, park, trail or bay's centre vs the visitor point), left as is. Fixed three real errors from precise OpenStreetMap features: Kimba Museum (was 22 km west of Kimba town), Aroona Ruins (80 km off) and Sacred Canyon (11.8 km off).
+- Not checked in detail: Coorong Pink Lake (OSM's pink lake is 32 km from our pin; the right lake is unconfirmed), Robe Jetty, Cape Jaffa Lighthouse (moved to Kingston), Long Beach (matched a road). The full flag list is in `/tmp/audit.txt` of the run (rerun the audit to regenerate).
