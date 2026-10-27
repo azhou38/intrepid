@@ -169,6 +169,7 @@ export default function ProfileScreen() {
   });
   // The full header (fixed behind the page) fades as the selector slides up over it, gone before the bar fills in.
   const [headerH, setHeaderH] = useState(150);
+  const [pageH, setPageH] = useState(0);
   // The Edit Profile button is drawn in the fixed header (it holds still and fades with it), which sits behind the page
   // and so takes no taps: a clear target over it, above the page, takes them while the page is at its top (editTap).
   // editFrame is where the button sits in the header.
@@ -495,12 +496,15 @@ export default function ProfileScreen() {
       style={{ flex: 1 }}
       onTouchEnd={onScreenTouchEnd}
       onScrollBeginDrag={() => setFlagTip(null)}
+      onLayout={e => setPageH(e.nativeEvent.layout.height)}
       onScroll={onPageScroll}
       scrollEventThrottle={16}
       stickyHeaderIndices={[1]}
       keyboardDismissMode="on-drag"
       keyboardShouldPersistTaps="handled"
-      contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100 }}
+      // Always tall enough to scroll the bar all the way to its pinned point, however little is below it (a country with a
+      // couple of tiles): a short page would otherwise clamp the scroll part-way, leaving the header half faded.
+      contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100, minHeight: pageH + 16 + headerH + 16 - COMPACT_H }}
       showsVerticalScrollIndicator={false}
     >
       {/* Room for the profile header, which sits fixed behind the page (above the ScrollView). */}
