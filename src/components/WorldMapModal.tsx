@@ -30,7 +30,7 @@ const LEVELS: { level: WorldLevel; label: string }[] = [
 type Picked =
   | { kind: 'country'; code: string; name: string; dests: number; spots: number }
   // A destination or spot: its photo (the same small-photo key as the Profile's Explored rows), name, country and flag.
-  | { kind: 'place'; name: string; sub: string; code?: string; photoKey: string; photoTitle: string; icon?: string; category?: string };
+  | { kind: 'place'; id: string; name: string; sub: string; code?: string; photoKey: string; photoTitle: string; icon?: string; category?: string };
 
 export default function WorldMapModal({
   visible, onClose, level, onLevelChange, visitedCountryCodes, countryName, dests, spots, countsByCountry, spotsByDest,
@@ -49,7 +49,7 @@ export default function WorldMapModal({
   spotsByDest: Map<string, number>;
   // Opens framed on this country (the Profile's chosen one) instead of the whole world.
   focusCountry?: string | null;
-  // The destination or spot picked in the Profile's Explored grid: drawn in orange, and a little larger.
+  // The destination or spot picked in the Profile's Explored grid: drawn in orange, and a little larger (as is any tapped here).
   pickedId?: string | null;
 }) {
   const insets = useSafeAreaInsets();
@@ -86,7 +86,7 @@ export default function WorldMapModal({
           const n = Number(f.properties?.spots ?? 0);
           const sub = n > 0 ? `${f.properties?.sub} · ${n} spot${n === 1 ? '' : 's'} visited` : f.properties?.sub;
           const pr = f.properties ?? {};
-          setPicked({ kind: 'place', name: pr.name, sub, code: pr.code || undefined,
+          setPicked({ kind: 'place', id: pr.id, name: pr.name, sub, code: pr.code || undefined,
             photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category });
           return;
         }
@@ -104,9 +104,11 @@ export default function WorldMapModal({
     setPicked(null);
   };
 
+  // The place drawn orange: the one tapped here (its card is open), else the one picked in the Profile's grid.
+  const hlId = picked?.kind === 'place' ? picked.id : pickedId ?? null;
   const pickedShape = useMemo((): GeoJSON.FeatureCollection => ({
-    type: 'FeatureCollection', features: points.features.filter(f => f.properties?.id === pickedId),
-  }), [points, pickedId]);
+    type: 'FeatureCollection', features: points.features.filter(f => f.properties?.id === hlId),
+  }), [points, hlId]);
 
   // Where the map opens: the Profile's chosen country (its box, with the places visited there), else the whole world.
   const startView = useMemo(() => {
@@ -187,10 +189,10 @@ export default function WorldMapModal({
                 style={{
                   // "zoom" may only be the input of a top-level interpolate, so the picked case sits inside its stops.
                   circleRadius: ['interpolate', ['linear'], ['zoom'],
-                    0, ['case', ['==', ['get', 'id'], pickedId ?? ''], 6.5, 4],
-                    8, ['case', ['==', ['get', 'id'], pickedId ?? ''], 14, 9]] as any,
-                  circleColor: ['case', ['==', ['get', 'id'], pickedId ?? ''], '#F97316', '#10B981'] as any,
-                  circleSortKey: ['case', ['==', ['get', 'id'], pickedId ?? ''], 1, 0] as any,
+                    0, ['case', ['==', ['get', 'id'], hlId ?? ''], 6.5, 4],
+                    8, ['case', ['==', ['get', 'id'], hlId ?? ''], 14, 9]] as any,
+                  circleColor: ['case', ['==', ['get', 'id'], hlId ?? ''], '#F97316', '#10B981'] as any,
+                  circleSortKey: ['case', ['==', ['get', 'id'], hlId ?? ''], 1, 0] as any,
                   circleStrokeColor: 'white', circleStrokeWidth: 1.5,
                 }}
               />
@@ -211,7 +213,7 @@ export default function WorldMapModal({
             </MapboxGL.ShapeSource>
           )}
           {/* The picked spot's pin again on top, orange and larger, so it stays visible among the rest. */}
-          {level === 'spots' && !!pickedId && (
+          {level === 'spots' && !!hlId && (
             <MapboxGL.ShapeSource id="wmPickedSpot" shape={pickedShape}>
               <MapboxGL.SymbolLayer
                 id="wmPickedPin"
