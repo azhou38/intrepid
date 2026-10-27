@@ -40,6 +40,10 @@ const WORLD_VH = MILLER_TOP - miller(-58);
 const WORLD_Y0 = 0, WORLD_Y1 = WORLD_VH;
 const WORLD_W = Dimensions.get('window').width - 32;
 const SCREEN_W = Dimensions.get('window').width;
+// The world view starts a little east of the date line's west edge, so Russia's far east (which crosses 180°) shows at the
+// right edge of the map rather than as a sliver at the left. The countries that cross the line are drawn again 360 units over.
+const WORLD_X0 = 10;
+const WRAP_COUNTRIES = new Set(['RU', 'US', 'FJ', 'KI', 'NZ']);
 // The side room the Explored sections keep from the screen edge.
 const EXPLORED_PAD = 12;
 // The highlight for a picked tile and its dot on the map.
@@ -361,7 +365,10 @@ export default function ProfileScreen() {
 
   const visitedCountrySet = visitIndex.visitedCountryCodes;
   const worldDots = useMemo(() => {
-    const dot = (id: string, code: string, c: { longitude: number; latitude: number }) => ({ id, code, ...worldPoint(c.longitude, c.latitude) });
+    const dot = (id: string, code: string, c: { longitude: number; latitude: number }) => {
+      const pt = worldPoint(c.longitude, c.latitude);
+      return { id, code, x: pt.x < WORLD_X0 ? pt.x + 360 : pt.x, y: pt.y };
+    };
     if (worldMode === 'spots') return visitedSpots.map(sp => dot(sp.id, spotCountryCode(sp) ?? '', sp.coordinates));
     if (worldMode === 'destinations') return visitedDests.map(d => dot(d.id, d.countryCode, d.coordinates));
     return [];
@@ -412,7 +419,7 @@ export default function ProfileScreen() {
   // there), padded, kept in the map's own shape and never tighter than about 25 degrees across (so one place is not a pixel of land).
   const pickedCountry = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
   const mapView = useMemo(() => {
-    const full = { x: 0, y: WORLD_Y0, w: 360, h: WORLD_Y1 - WORLD_Y0 };
+    const full = { x: WORLD_X0, y: WORLD_Y0, w: 360, h: WORLD_Y1 - WORLD_Y0 };
     const code = pickedCountry;
     const pts = code ? worldDots.filter(d => d.code === code) : [];
     if (!pts.length) return full;
@@ -453,6 +460,15 @@ export default function ProfileScreen() {
             fill={worldMode === 'countries' && c === flagTip ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
             stroke="white" strokeWidth={0.15} />
         ))}
+        {!zoomed && (
+          <G transform="translate(360 0)">
+            {(WORLD_COUNTRIES as { c: string; d: string }[]).filter(e => WRAP_COUNTRIES.has(e.c)).map(({ c, d }, k) => (
+              <Path key={k} d={d}
+                fill={worldMode === 'countries' && c === flagTip ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
+                stroke="white" strokeWidth={0.15} />
+            ))}
+          </G>
+        )}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
             read differently from destinations, as on the full-screen map. */}
         {/* The picked tile's place is drawn last (on top), in orange and a little larger. */}
