@@ -325,7 +325,8 @@ export default function ProfileScreen() {
     () => visitedSpots.map(sp => ({ spot: sp, country: spotCountry(sp) ?? '', countryCode: spotCountryCode(sp) })),
     [visitedSpots]);
 
-  // Countries Explored: tapping a flag shows its country's name in a small bubble above it for a moment.
+  // Countries Explored: tapping a flag shows its country's name in a small bubble above it for a moment, and fills that country
+  // orange on the world map for as long.
   const [flagTip, setFlagTip] = useState<string | null>(null);
   // A tap anywhere else on the screen (or a scroll) closes the bubble; a tap on a flag is that flag's own (see onPress).
   const flagTapRef = useRef(false);
@@ -392,7 +393,7 @@ export default function ProfileScreen() {
         <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
         {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
           <Path key={k} d={d}
-            fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
+            fill={worldMode === 'countries' && c === flagTip ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
             stroke="white" strokeWidth={0.15} />
         ))}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
