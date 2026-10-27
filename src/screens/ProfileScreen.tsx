@@ -761,7 +761,7 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
       )}
       <Text style={styles.tileName} numberOfLines={3}>{name}</Text>
       <View style={styles.tileSubRow}>
-        {!!countryCode && <CircleFlag countryCode={countryCode} size={11} />}
+        {!!countryCode && <CircleFlag countryCode={countryCode} size={11} ring ringWidth={1} />}
         {!!sub && <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>}
       </View>
     </View>
