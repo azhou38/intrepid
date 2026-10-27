@@ -1,0 +1,1650 @@
+{
+ "region": "sa-yorke",
+ "destinations": [
+  {
+   "id": "copper-coast",
+   "name": "Copper Coast",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -33.9625,
+    "longitude": 137.7125
+   },
+   "coordinates_source": "candidate: Kadina (Wikipedia town point); recentre in pin step",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "yorkepeninsula.com.au and Wikivoyage Yorke Peninsula",
+    "wording": "The Copper Coast: Kadina, Wallaroo and Moonta (Moonta/Moonta Bay/Port Hughes was SA Top Tourism Town 2021); Wikivoyage covers Moonta and Wallaroo See listings"
+   },
+   "spots": [
+    "copper-coast-1",
+    "copper-coast-2",
+    "copper-coast-3",
+    "copper-coast-4",
+    "copper-coast-5",
+    "copper-coast-6",
+    "copper-coast-7",
+    "copper-coast-8",
+    "copper-coast-9"
+   ]
+  },
+  {
+   "id": "yorke-peninsula",
+   "name": "Yorke Peninsula",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -34.772545,
+    "longitude": 137.594126
+   },
+   "coordinates_source": "candidate: Minlaton (Wikipedia town point)",
+   "defaultZoomSpanKm": 100,
+   "name_evidence": {
+    "source": "Wikivoyage \"Yorke Peninsula and Clare Valley\"; yorkepeninsula.com.au; visityorkepeninsula.com.au",
+    "wording": "Yorke Peninsula, the peninsula-wide tourism name; this destination holds the east, centre and south coast outside the Copper Coast and Innes National Park"
+   },
+   "spots": [
+    "yorke-peninsula-1",
+    "yorke-peninsula-2",
+    "yorke-peninsula-3",
+    "yorke-peninsula-4",
+    "yorke-peninsula-5",
+    "yorke-peninsula-6",
+    "yorke-peninsula-7",
+    "yorke-peninsula-8",
+    "yorke-peninsula-9",
+    "yorke-peninsula-10",
+    "yorke-peninsula-11",
+    "yorke-peninsula-12",
+    "yorke-peninsula-13",
+    "yorke-peninsula-14",
+    "yorke-peninsula-15",
+    "yorke-peninsula-16",
+    "yorke-peninsula-17",
+    "yorke-peninsula-18",
+    "yorke-peninsula-19"
+   ]
+  },
+  {
+   "id": "innes-national-park",
+   "name": "Dhilba Guuranda-Innes National Park",
+   "category": "park",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -35.2278,
+    "longitude": 136.8947
+   },
+   "coordinates_source": "candidate: Wikipedia area point (park centroid); needs the visitor point (visitor centre / campground)",
+   "defaultZoomSpanKm": 50,
+   "name_evidence": {
+    "source": "parks.sa.gov.au and yorkepeninsula.com.au",
+    "wording": "Dhilba Guuranda-Innes National Park, the headline Yorke attraction (Ethel wreck, lighthouses, surf, walks)"
+   },
+   "spots": [
+    "innes-national-park-1",
+    "innes-national-park-2",
+    "innes-national-park-3",
+    "innes-national-park-4",
+    "innes-national-park-5",
+    "innes-national-park-6",
+    "innes-national-park-7",
+    "innes-national-park-8",
+    "innes-national-park-9",
+    "innes-national-park-10",
+    "innes-national-park-11",
+    "innes-national-park-12"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Cornish copper-mining site with the Hughes Pump House, Miners Cottage and a museum, where Australia's \"Little Cornwall\" began.",
+   "wiki": "Moonta Mines, South Australia",
+   "coordinates_source": "candidate: wikipedia:Moonta Mines, South Australia",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1729,
+   "counted_sources": 3,
+   "id": "copper-coast-1",
+   "name": "Moonta Mines State Heritage Area",
+   "destination": "copper-coast",
+   "coordinates": {
+    "latitude": -34.07581,
+    "longitude": 137.60115
+   },
+   "note": "3 counted sources, 1729 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Moonta",
+    "https://www.yorkepeninsula.com.au",
+    "https://southaustralia.com/destinations/yorke-peninsula"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Sandy coves, beaches, a jetty and foreshore at the Moonta township, with Rossiters Point Lookout nearby.",
+   "wiki": "Moonta Bay, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3914,
+   "counted_sources": 1,
+   "id": "copper-coast-2",
+   "name": "Moonta Bay",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Tourism board township page names sandy coves, beaches, jetty, foreshore and Rossiters Point Lookout (Moonta/Moonta Bay/Port Hughes was SA Top Tourism Town 2021); Wikivoyage Moonta covers the same coast. A beach-and-jetty stop of half an hour or more.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚜",
+   "bio": "National Trust museum in Kadina with the stump-jump plough, Matta House and a miniature train.",
+   "wiki": "Farm Shed Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "copper-coast-3",
+   "name": "The Farm Shed Museum and Tourism Centre",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: Wikivoyage region page and yorkepeninsula.com.au (entry about $12) name this National Trust museum in Kadina with the stump-jump plough, Matta House and a miniature train; allow an hour or more.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "Museum on Wallaroo's maritime and mining past, also running ghost tours.",
+   "wiki": "Wallaroo Heritage and Nautical Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "copper-coast-4",
+   "name": "Wallaroo Heritage and Nautical Museum",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: Wikivoyage Wallaroo See entry and yorkepeninsula.com.au; a museum open daily 10-4 with ghost tours.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Wallaroo",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Long swimming beach on the northern edge of Wallaroo, named by tourism sources.",
+   "wiki": "North Beach, South Australia",
+   "coordinates_source": "candidate: wikipedia:North Beach, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 769,
+   "counted_sources": 1,
+   "id": "copper-coast-5",
+   "name": "North Beach, Wallaroo",
+   "destination": "copper-coast",
+   "coordinates": {
+    "latitude": -33.90113,
+    "longitude": 137.6295
+   },
+   "note": "Rule 1-2: both southaustralia.com and yorkepeninsula.com.au name North Beach; a long swimming beach with a Wikipedia article.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Historic copper mine at Moonta with bookable underground tours through a 55 m tunnel.",
+   "wiki": "Wheal Hughes",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 328,
+   "counted_sources": 1,
+   "id": "copper-coast-6",
+   "name": "Wheal Hughes Copper Mine",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: Wikivoyage Moonta and the YP region page both name the underground mine tour (55 m tunnel); a bookable, open visit of an hour or more.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Moonta"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "💦",
+   "bio": "Free water park at Moonta Bay, a permanent family venue worth an hour or two.",
+   "wiki": "Splash Town, Moonta Bay",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "copper-coast-7",
+   "name": "Splash Town",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: southaustralia.com and yorkepeninsula.com.au both name this free water park at Moonta Bay, a permanent family venue worth an hour.",
+   "sources": [
+    "https://southaustralia.com/destinations/yorke-peninsula",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Seaside township and beach on the Copper Coast just south of Moonta Bay.",
+   "wiki": "Port Hughes, South Australia",
+   "coordinates_source": "candidate: wikipedia:Port Hughes, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3446,
+   "counted_sources": 2,
+   "id": "copper-coast-8",
+   "name": "Port Hughes",
+   "destination": "copper-coast",
+   "coordinates": {
+    "latitude": -34.077408,
+    "longitude": 137.550746
+   },
+   "note": "2 counted sources, 3446 page views",
+   "sources": [
+    "https://www.yorkepeninsula.com.au",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🚴",
+   "bio": "Sealed 25 km walking and cycling path along the old railway linking Kadina, Wallaroo and Moonta.",
+   "wiki": "Copper Rail Trail",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "copper-coast-9",
+   "name": "Copper Rail Trail",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "25 km sealed walking and cycling path between Kadina, Wallaroo and Moonta, named by southaustralia.com and yorkepeninsula.com.au attraction pages (rules 1, 2).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🏞️",
+   "bio": "Red clay cliffs along the shore beside Ardrossan's historic jetty.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5802,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-1",
+   "name": "Ardrossan Red Cliffs",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "2 counted sources, 5802 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "Conservation park island with an 1855 cast-iron lighthouse and keeper's cottage, visited by boat from Edithburgh.",
+   "wiki": "Troubridge Island",
+   "coordinates_source": "candidate: wikipedia:Troubridge Island",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1022,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-2",
+   "name": "Troubridge Island",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -35.11766,
+    "longitude": 137.82733
+   },
+   "note": "Rule 1/2: three counted sources including parks.sa.gov.au (Troubridge Island Conservation Park) and Wikivoyage Edithburgh: the 1855 cast-iron lighthouse and keepers cottage, visited by boat from Edithburgh (island is the spot, not the boat).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Edithburgh",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏊",
+   "bio": "Tidal sea-water swimming pool set into the cliff at Edithburgh, with change rooms.",
+   "wiki": "Edithburgh Tidal Pool",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-3",
+   "name": "Edithburgh Tidal Pool",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Rule 1/2: two counted sources (Wikivoyage Edithburgh Do and yorkepeninsula.com.au); a tidal sea-water swimming pool set into the cliff, with change rooms, free and always open.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Edithburgh",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🤿",
+   "bio": "Jetty known for diving and snorkelling among seahorses, Port Jackson sharks and leafy sea dragons.",
+   "wiki": "Edithburgh Jetty",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-4",
+   "name": "Edithburgh Jetty",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Wikivoyage lists it as its own destination (dive site), and the tourism board says it is renowned for diving and snorkelling with seahorses, Port Jackson sharks and leafy sea dragons; a jetty walk and shore dive a visitor goes for.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "1882 lighthouse reserve at the peninsula's south-western corner, reached by Lighthouse Road.",
+   "wiki": "Corny Point Lighthouse",
+   "coordinates_source": "candidate: wikipedia:Corny Point Lighthouse",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 222,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-5",
+   "name": "Corny Point Lighthouse",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -34.89658333,
+    "longitude": 137.01061111
+   },
+   "note": "Listed as an attraction by yorkepeninsula.com.au and southaustralia.com; an 1882 lighthouse reserve reached by Lighthouse Road with a picnic area and coast to linger on; Wikivoyage names it too. Free, self-guided.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🩷",
+   "bio": "Salt lakes on the Yorke Peninsula Salt Lake Trail, with a viewing platform at Pink Lake and a boardwalk at Par Lake.",
+   "wiki": "Yorketown, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3202,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-6",
+   "name": "Yorketown Pink Lakes",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Tourism board and southaustralia.com name the Yorke Peninsula Salt Lake Trail (self-drive routes, boardwalk at Par Lake, Pink Lake viewing platform, 15 to 90 min). Objection: lake colour varies by season, and it could duplicate a Salt Lake Trail candidate.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Old port jetty and cliff-top lime kilns with a lookout on the coast road.",
+   "wiki": "Wool Bay, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1460,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-7",
+   "name": "Wool Bay Jetty and Lime Kilns",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Tourism board page names the uniquely designed lime kilns on the cliff top and the old port jetty, with a lookout; a free heritage stop on the coast road. Objection: a short stop, one source.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⚓",
+   "bio": "Western-coast town with an 1878 jetty, a maritime museum and a geology trail.",
+   "wiki": "Port Victoria, South Australia",
+   "coordinates_source": "candidate: wikipedia:Port Victoria, South Australia",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 10387,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-8",
+   "name": "Port Victoria",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -34.49666667,
+    "longitude": 137.48333333
+   },
+   "note": "Town with a historic 1878 jetty, Port Victoria Maritime Museum and geology trail; named by yorkepeninsula.com.au and southaustralia.com (rules 1, 2).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "1877 cargo shed by the jetty telling the story of the windjammer grain races.",
+   "wiki": "Port Victoria Maritime Museum",
+   "coordinates_source": "candidate: wikipedia:Port Victoria Maritime Museum",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 486,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-9",
+   "name": "Port Victoria Maritime Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -34.496041,
+    "longitude": 137.482357
+   },
+   "note": "Two sources: yorkepeninsula.com.au Port Victoria page and visityorkepeninsula.com.au museums page (1877 cargo shed by the jetty telling the windjammer grain-race story). Objection: open weekends 2-4 pm only.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "✈️",
+   "bio": "Free display of the Red Devil monoplane that made the first airmail flight over the sea.",
+   "wiki": "Harry Butler (aviator)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1415,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-10",
+   "name": "Minlaton Harry Butler Red Devil Memorial",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two counted sources: Wikivoyage Minlaton and the yorkepeninsula.com.au Minlaton page (the only genuine Red Devil monoplane, first airmail over the sea, free display on the edge of town).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Minlaton"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Seaside town on the east coast of the Yorke Peninsula with a beach and jetty.",
+   "wiki": "Port Vincent, South Australia",
+   "coordinates_source": "candidate: wikipedia:Port Vincent, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2594,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-11",
+   "name": "Port Vincent",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -34.76666667,
+    "longitude": 137.85
+   },
+   "note": "2 counted sources, 2594 page views",
+   "sources": [
+    "https://www.yorkepeninsula.com.au",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "1876 jetty still used by fishers and white beaches on Hardwicke Bay, with boating and diving.",
+   "wiki": "Point Turton, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2459,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-12",
+   "name": "Point Turton",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Tourism board page: 1876 jetty (still used by fishers), white beaches on Hardwicke Bay, boating and diving; a second-tier seaside stop. Beach and jetty are one place (Point Turton Beach is a duplicate).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "Surf breaks and three swimming beaches, with a coastal drive from Corny Point to Berry Bay.",
+   "wiki": "Corny Point, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1596,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-13",
+   "name": "Corny Point",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Tourism board page names surf breaks (Rock Pool, Salmon Hole, Daly Head, Berry Bay), three swimming beaches and the Corny Point to Berry Bay coastal drive; visitors beaches stop. Lighthouse is a separate candidate.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Safe white-sand beach with no rips, good for crabbing and swimming, beside Pine Point.",
+   "wiki": "Black Point, South Australia",
+   "coordinates_source": "candidate: wikipedia:Black Point, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1265,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-14",
+   "name": "Black Point",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -34.613549,
+    "longitude": 137.890092
+   },
+   "note": "Two counted sources: Wikivoyage (own section with Pine Point, \"one of the most gorgeous stretches of coastline\") and the tourism board page (safe white-sand beach with no rips, crabbing, swimming).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "White-sand swimming beach south of Edithburgh, at the end of the mosaic walking trail.",
+   "wiki": "Sultana Point",
+   "coordinates_source": "candidate: wikipedia:Sultana Point",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 242,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-15",
+   "name": "Sultana Point",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -35.11388889,
+    "longitude": 137.75944444
+   },
+   "note": "Rule 1: Wikivoyage Edithburgh Do names it as the swimming beach south of town with white sand and the end of the mosaic walking trail; a second-tier beach stop (COVERAGE.md).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Edithburgh"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum in the old Smith stump-jump plough factory, with a Zanoni shipwreck display.",
+   "wiki": "Ardrossan Heritage Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-16",
+   "name": "Ardrossan Heritage Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two sources: yorkepeninsula.com.au and visityorkepeninsula.com.au museums page (in the old Smith stump-jump plough factory, shipwreck Zanoni display, open seven days 10-4).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "1878 schoolroom in Stansbury holding farm and industry displays, open only some afternoons.",
+   "wiki": "Stansbury Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-17",
+   "name": "Stansbury Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two counted sources (Wikivoyage Stansbury See; visityorkepeninsula.com.au museums page): 1878 schoolroom with farm and industry displays. Objection: volunteer-run, open Wed and Sun afternoons.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Stansbury",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Museum in a former produce store covering the salt industry and shipwrecks, open at weekends.",
+   "wiki": "Edithburgh Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "yorke-peninsula-18",
+   "name": "Edithburgh Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two counted sources: Wikivoyage Edithburgh See (adults $3) and the visityorkepeninsula.com.au museums page (salt industry, shipwrecks, produce-store building). Objection: weekend afternoons only.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Edithburgh"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🎖️",
+   "bio": "Private museum with a large WWI, WWII and Vietnam collection and memorial gardens.",
+   "wiki": "Bublacowie Military Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 376,
+   "counted_sources": 0,
+   "id": "yorke-peninsula-19",
+   "name": "Bublacowie Military Museum",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Two sources: visityorkepeninsula.com.au museums page (extensive WWI/WWII/Vietnam collection, memorial gardens, tours) and History SA; guided visits last an hour or two. Objection: private museum, open Sun to Tue or by appointment.",
+   "sources": []
+  },
+  {
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "Lighthouse and lookout on Cape Spencer, also the park's whale-watching cliff.",
+   "wiki": "Cape Spencer Lighthouse (South Australia)",
+   "coordinates_source": "candidate: wikipedia:Cape Spencer Lighthouse (South Australia)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 347,
+   "counted_sources": 2,
+   "id": "innes-national-park-1",
+   "name": "Cape Spencer Lighthouse",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.29894444,
+    "longitude": 136.88252778
+   },
+   "note": "Lighthouse and lookout on Cape Spencer in Innes National Park, named by parks.sa.gov.au and yorkepeninsula.com.au (Cape Spencer Lookout); also the park's whale-watching cliff. One spot with Cape Spencer (duplicate).",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "Surf beach and campground at the western end of the park.",
+   "wiki": "Pondalowie Bay",
+   "coordinates_source": "candidate: wikipedia:Pondalowie Bay",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 829,
+   "counted_sources": 2,
+   "id": "innes-national-park-2",
+   "name": "Pondalowie Bay",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.23611111,
+    "longitude": 136.83694444
+   },
+   "note": "Surf beach and campground in the park, named by parks.sa.gov.au and yorkepeninsula.com.au; a beach (and Yorke's best-known surf break) is a standard second-tier keep.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🚢",
+   "bio": "Remains of the 1904 wreck of the Ethel on Ethel Beach.",
+   "wiki": "Ethel (ship)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "innes-national-park-3",
+   "name": "Ethel Wreck",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "Remains of the Ethel (1904) on Ethel Beach in the park, named by parks.sa.gov.au ('Visit... the shipwreck of the Ethel') and yorkepeninsula.com.au (rules 1, 2). Ethel Beach is a duplicate of this.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Headland lookout reached by a 4 km return walk with views of the rugged coast.",
+   "wiki": "Royston Head",
+   "coordinates_source": "candidate: wikipedia:Royston Head",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 237,
+   "counted_sources": 1,
+   "id": "innes-national-park-4",
+   "name": "Royston Head",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.19027778,
+    "longitude": 136.84583333
+   },
+   "note": "Headland lookout, 2-hour 4 km return hike with 'amazing views of the rugged peninsula coast' (parks.sa.gov.au); a headland a guide singles out, second tier but real.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "⚓",
+   "bio": "Village in the park with the visitor centre, jetty and campground.",
+   "wiki": "Stenhouse Bay, South Australia",
+   "coordinates_source": "candidate: wikipedia:Stenhouse Bay, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 864,
+   "counted_sources": 1,
+   "id": "innes-national-park-5",
+   "name": "Stenhouse Bay",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.28333333,
+    "longitude": 136.93333333
+   },
+   "note": "Village in Dhilba Guuranda-Innes National Park with the visitor centre, jetty, campground and whale-watching cliffs; named by yorkepeninsula.com.au and the parks page (rules 1, 2). Stands in for Stenhouse Bay Jetty (duplicate).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "1 km loop to West Cape lighthouse with 360 degree views.",
+   "wiki": "West Cape (South Australia)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 376,
+   "counted_sources": 1,
+   "id": "innes-national-park-6",
+   "name": "West Cape Headland Hike",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "30-minute 1 km loop to West Cape lighthouse with 360 degree views, named on parks.sa.gov.au and highlighted by rangers (rules 1, 2).",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Abandoned gypsum township with ruins, interpretive signs and heritage cottages.",
+   "wiki": "Inneston, South Australia",
+   "coordinates_source": "candidate: wikipedia:Inneston, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1080,
+   "counted_sources": 1,
+   "id": "innes-national-park-7",
+   "name": "Inneston",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.274394,
+    "longitude": 136.89018
+   },
+   "note": "Abandoned gypsum township in the park, a named see on the parks.sa.gov.au page (ruins, interpretive signs, heritage cottages); one spot with Inneston Historic Walk (duplicate of this).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "2 km cliff-top loop with views over Investigator Strait.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "innes-national-park-8",
+   "name": "Stenhouse Bay Lookout Walk",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "parks.sa.gov.au lists it as an easy 1 hour, 2 km cliff-top loop with views over Investigator Strait \"among the best in the park\"; a distinct walk from the jetty car park.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Beach in Innes National Park on the road to Royston Head, named as one to visit in the park.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "innes-national-park-9",
+   "name": "Dolphin Beach",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "Named as a beach to visit in Innes National Park by the Tourism Australia G'day Parks guide (and photographed by southaustralia.com); sits on the Royston Head road. Objection: parks.sa.gov.au gives it only a passing mention, so a single guide source.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Seaside village at the entrance to Innes National Park, with a beach and the park gate.",
+   "wiki": "Marion Bay, South Australia",
+   "coordinates_source": "candidate: wikipedia:Marion Bay, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3151,
+   "counted_sources": 2,
+   "id": "innes-national-park-10",
+   "name": "Marion Bay",
+   "destination": "innes-national-park",
+   "coordinates": {
+    "latitude": -35.241867,
+    "longitude": 136.978179
+   },
+   "note": "2 counted sources, 3151 page views",
+   "sources": [
+    "https://www.yorkepeninsula.com.au",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "9.8 km hike through dunes and mallee between Browns Beach and Gym Beach, the longest trail in the park.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 4.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "innes-national-park-11",
+   "name": "Gym Beach Hike",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "Agency-listed 4 hour, 9.8 km hike through dunes and mallee between Browns Beach and Gym Beach; Wikivoyage calls it the longest trail in the park.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "7.6 km hike along the old railway from Inneston to Stenhouse Bay, with interpretive signs.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "innes-national-park-12",
+   "name": "Thomson-Pfitzner Plaster Trail",
+   "destination": "innes-national-park",
+   "coordinates": null,
+   "note": "Agency-listed 3 hour, 7.6 km hike along the old railway from Inneston to Stenhouse Bay with interpretive signs; Wikivoyage lists it too (though calls it the least interesting trail). Objection: overlaps the Inneston ruins, a plain track.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "⚓",
+   "bio": "Northern Yorke Peninsula town with a jetty and a shoreline on the Spencer Gulf estuary.",
+   "wiki": "Port Broughton, South Australia",
+   "coordinates_source": "candidate: wikipedia:Port Broughton, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 6461,
+   "counted_sources": 2,
+   "id": "port-broughton",
+   "name": "Port Broughton",
+   "destination": null,
+   "coordinates": {
+    "latitude": -33.58333333,
+    "longitude": 137.93555556
+   },
+   "note": "2 counted sources, 6461 page views",
+   "sources": [
+    "https://www.yorkepeninsula.com.au",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Local heritage museum in Port Broughton, open only on Tuesday and Thursday afternoons.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "port-broughton-heritage-centre",
+   "name": "Port Broughton Heritage Centre and Museum",
+   "destination": null,
+   "coordinates": null,
+   "note": "Two counted sources (Wikivoyage Port Broughton, $7 entry; yorkepeninsula.com.au Port Broughton page); a permanent venue, small hours do not make it an event. Objection: open only Tue and Thu 1-3 pm.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Broughton",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🚗",
+   "bio": "Gateway town where the road onto the Yorke Peninsula leaves the Adelaide Plains.",
+   "wiki": "Port Wakefield, South Australia",
+   "coordinates_source": "candidate: wikipedia:Port Wakefield, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 6009,
+   "counted_sources": 2,
+   "id": "port-wakefield",
+   "name": "Port Wakefield",
+   "destination": null,
+   "coordinates": {
+    "latitude": -34.18819,
+    "longitude": 138.148325
+   },
+   "note": "2 counted sources, 6009 page views",
+   "sources": [
+    "https://www.yorkepeninsula.com.au",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "About 500 km of coastal walking trail around the Yorke Peninsula, in sections.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 8,
+   "visitHoursMax": 200,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "walk-the-yorke",
+   "name": "Walk the Yorke",
+   "destination": null,
+   "coordinates": null,
+   "note": "3 counted sources, 0 page views",
+   "sources": [
+    "https://www.yorkepeninsula.com.au",
+    "https://southaustralia.com/destinations/yorke-peninsula",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🚢",
+   "bio": "Heritage trail of interpretive signs at wreck sites around the southern coast from Edithburgh to Innes.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "investigator-strait-shipwreck-trail",
+   "name": "Investigator Strait Shipwreck Trail",
+   "destination": null,
+   "coordinates": null,
+   "note": "Heritage trail named by the SA government, southaustralia.com and yorkepeninsula.com.au (interpretive signs around the southern coast from Edithburgh to Innes, including the Ethel wreck). Objection: mainly a dive trail, spread over many sites.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/dhilba-guuranda-innes-national-park"
+   ]
+  }
+ ],
+ "review": [
+  {
+   "name": "Kernewek Lowender",
+   "reason": "3 counted sources and 1794 views but a biennial Cornish festival is an event, not a permanent place (COVERAGE.md rule 4); mention in the Copper Coast description and best-time text, no spot",
+   "objection": "event, not a place"
+  }
+ ],
+ "merged": [
+  {
+   "name": "Kadina",
+   "into": "The Farm Shed Museum and Tourism Centre",
+   "reason": "town is a wrapper for its attraction; mention in Copper Coast description"
+  },
+  {
+   "name": "Moonta",
+   "into": "Moonta Mines State Heritage Area",
+   "reason": "town wrapper for its mines heritage area"
+  },
+  {
+   "name": "Wallaroo",
+   "into": "Wallaroo Heritage and Nautical Museum / North Beach, Wallaroo",
+   "reason": "town wrapper for its museum and beach"
+  },
+  {
+   "name": "Moonta Bay Beach",
+   "into": "Moonta Bay",
+   "reason": "same beach and foreshore; judge notes both cover the Moonta Bay coast"
+  },
+  {
+   "name": "Ardrossan",
+   "into": "Ardrossan Red Cliffs",
+   "reason": "same point and same cliffs and jetty; town wrapper"
+  },
+  {
+   "name": "Stansbury",
+   "into": "Stansbury Museum",
+   "reason": "town wrapper for its museum; mention in description"
+  },
+  {
+   "name": "Edithburgh",
+   "into": "Edithburgh Tidal Pool / Edithburgh Jetty / Sultana Point / Edithburgh Museum",
+   "reason": "town wrapper beside four of its own attractions"
+  },
+  {
+   "name": "Minlaton",
+   "into": "Minlaton Harry Butler Red Devil Memorial",
+   "reason": "town wrapper for its memorial"
+  },
+  {
+   "name": "Dhilba Guuranda-Innes National Park",
+   "into": "destination innes-national-park",
+   "reason": "the park is the destination, not a spot of itself"
+  }
+ ],
+ "duplicates_elsewhere": []
+}

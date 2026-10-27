@@ -1,0 +1,100 @@
+{
+ "region": "sa-fleurieu",
+ "inside_destinations": 57,
+ "standalone": 0,
+ "new_destinations": [
+  "McLaren Vale",
+  "Victor Harbor",
+  "Goolwa",
+  "Yankalilla"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Animal Farm",
+   "views": 0
+  },
+  {
+   "name": "Blowhole Beach",
+   "views": 0
+  },
+  {
+   "name": "Fishery Beach",
+   "views": 0
+  },
+  {
+   "name": "Gilbert's Motor Museum",
+   "views": 0
+  },
+  {
+   "name": "Glacier Rock",
+   "views": 0
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Fleurieu Peninsula",
+   "views": 9748,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "The region itself, not a spot; the Wikivoyage page is a region page."
+  },
+  {
+   "name": "Sellicks Beach (beach)",
+   "views": 7379,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "duplicate of Sellicks Beach"
+  },
+  {
+   "name": "Murray Mouth",
+   "views": 5545,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikivoyage only says the mouth is seen from Hindmarsh Island in Coorong National Park; no visitor page names a viewing place or something to do, and it is not a distinct visitable spot (Signal Point covers the interpretation)."
+  },
+  {
+   "name": "Christies Beach",
+   "views": 4959,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "outside the region: belongs to sa-adelaide (Adelaide southern coast suburb, no named sight)."
+  },
+  {
+   "name": "The Cockle Train",
+   "views": 4441,
+   "counted_sources": 3,
+   "verdict": "reject",
+   "reason": "heritage train is the way to reach Goolwa and Victor Harbor, both places in their own right; a ride/operator"
+  },
+  {
+   "name": "Granite Island Causeway",
+   "views": 4078,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Granite Island (Granite Island Recreation Park)."
+  },
+  {
+   "name": "Backstairs Passage",
+   "views": 3968,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "A strait, not a place to visit (the ferry crossing is a vehicle)."
+  },
+  {
+   "name": "Mount Compass",
+   "views": 3172,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Farming town; the board lists strawberries, a golf course and a produce trail, nothing distinct to see or do for half an hour (rule 3)."
+  },
+  {
+   "name": "Encounter Bay",
+   "views": 3044,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Searched Wikivoyage and board: Wikivoyage folds it into Victor Harbor; no separate named sight. Near-duplicate of Victor Harbor / The Bluff / Nakurami Kondoli Whale Lookout."
+  }
+ ],
+ "strongest_outsiders": [],
+ "benchmark": "Region has none of the named benchmarks except the rules: tour operators, markets, wineries and the Cockle Train / PS Oscar W (vehicles) are rejected; nothing strong is outside a destination span because all kept spots were placed inside the four proposed spans."
+}

@@ -1,0 +1,2153 @@
+{
+ "spots": {
+  "port-lincoln-1": {
+   "name": "Whalers Way",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A 15 km drive on private land south of Port Lincoln past cliffs, blowholes, caves and beaches; a permit is needed to enter.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.935175,
+    "longitude": 135.6487105
+   },
+   "coordinates_source": "resolve-pin LOW: OSM n5481504120 unnamed tourism=viewpoint, near the middle of the Whalers Way lookouts (Matthew Flinders Lookout 135.623 to Ski Jump Lookout 135.682)  (provisional)",
+   "costBasis": "entry",
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "costPer": "Per Vehicle",
+   "needs": "permit",
+   "ticketUrl": "https://portlincoln.com.au/what-to-do-port-lincoln/whalers-way/",
+   "notes": {
+    "pin": "Wikivoyage: drive starts 20 km south of Port Lincoln; gate/permit point and Red Banks beach are visitor points. Use the drive midpoint.",
+    "cost": "Permit $40 per car, date-limited, includes 1 night free camping (portlincoln.com.au, sold by Port Lincoln Visitor Information Centre). Red Banks road 4WD only at time of reading. No Wikipedia article titled Whalers Way, so wiki omitted."
+   }
+  },
+  "port-lincoln-2": {
+   "name": "Axel Stenross Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Boatbuilding museum on Port Lincoln's foreshore with a Finnish carpenter's original workshops and a working slipway.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.704544,
+    "longitude": 135.854466
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"Axel Stenross Maritime Museum\"",
+   "costBasis": "entry",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://www.axelstenross.com.au",
+   "notes": {
+    "pin": "97 Lincoln Highway, Port Lincoln.",
+    "cost": "Adult $10, seniors $8 (eyrepeninsula.com listing). Open Tue, Thu, Sun 9.30-4.30, Sat and public holidays 1-4.30 (not stored)."
+   }
+  },
+  "port-lincoln-3": {
+   "name": "Winter Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A lookout above Port Lincoln with views over Boston Bay, Lincoln National Park and Spencer Gulf.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.700476,
+    "longitude": 135.828503
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint (nominatim) \"Winter Hill Lookout\"",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Council-run open lookout; no single operator site.",
+   "notes": {
+    "pin": "Winter Hill Drive, Port Lincoln: lookout/car park on the hill (OSM tourism=viewpoint)."
+   }
+  },
+  "port-lincoln-4": {
+   "name": "Port Lincoln Old Mill",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "The 1846 Old Mill, Port Lincoln's oldest standing structure, now a lookout tower over Boston Bay with a rose garden.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.715876,
+    "longitude": 135.851333
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=viewpoint (nominatim) \"Old Mill Lookout\"",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Open reserve; no operator site found.",
+   "notes": {
+    "pin": "Dorset Place, Port Lincoln.",
+    "cost": "Free per listing; steep steps to the top."
+   }
+  },
+  "port-lincoln-5": {
+   "name": "Makybe Diva Statue",
+   "icon": "🐎",
+   "category": "monument",
+   "bio": "Bronze statue of Makybe Diva, the first horse to win three consecutive Melbourne Cups, on Port Lincoln's foreshore.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -34.720337,
+    "longitude": 135.858391
+   },
+   "coordinates_source": "resolve-pin LOW: Single geotagged Commons file 'Dad's Old Office With a New Friend' (Makybe Diva statue photo), 0.1 km from OSM Port Lincoln Tourist Information Centre (-34.720688,135.858179); no OSM statue node found  (provisional)",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Public monument; no operator site.",
+   "notes": {
+    "pin": "Tasman Terrace, Port Lincoln foreshore.",
+    "cost": "Free per listing."
+   }
+  },
+  "port-lincoln-6": {
+   "name": "Port Lincoln Street Art Trail",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A self-guided walk past murals of marine life and local history in Port Lincoln's streets and laneways.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.7197,
+    "longitude": 135.857398
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 11056032961 Port Lincoln Visitor Information Centre, Tasman Terrace (trail start; murals are dispersed through the CBD, no mapped route)  (provisional)",
+   "costBasis": "open",
+   "free": true,
+   "ticketUrl": "https://portlincoln.com.au/what-to-do-port-lincoln/street-art-trail/",
+   "notes": {
+    "pin": "Walk route in the town centre; use the trail page's mural map midpoint, not a single mural.",
+    "cost": "Free self-guided; page title checked."
+   }
+  },
+  "port-lincoln-7": {
+   "name": "Parnkalla Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A coastal walking and cycling trail from Port Lincoln along Boston Bay towards Lincoln National Park.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.721829,
+    "longitude": 135.86555
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm trail midpoint (0.9 km, nominatim) \"Parnkalla Walking Trail\"",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Council trail; no operator site verified.",
+   "notes": {
+    "pin": "Linear route: midpoint of the OSM route; trail starts in Port Lincoln.",
+    "cost": "Free per listing."
+   }
+  },
+  "port-lincoln-8": {
+   "name": "Fishery Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach and surfing reserve on Right Whale Road, with remains of an old whaling station nearby.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.9116149,
+    "longitude": 135.6832223
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 550988822 natural=beach at Fishery Bay (centre); car parks at -34.9111,135.6893 and -34.9111,135.6788  \"\"",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Open beach; no single steward site verified.",
+   "notes": {
+    "pin": "Fishery Bay Surfing Reserve, Right Whale Road, Sleaford; use the car park/lookout.",
+    "wiki": "Wikipedia title Fishery Bay redirects to Sleaford Bay, a broader article, so wiki omitted (draft wiki dropped). Wikipedia has Fishery Bay Surfing Reserve (title unconfirmed as this place).",
+    "cost": "Free per listing; whaling station remains per draft source, not re-verified."
+   }
+  },
+  "port-lincoln-9": {
+   "name": "Mikkira Station",
+   "icon": "🐨",
+   "category": "nature",
+   "bio": "A working sheep station west of Port Lincoln with a sanctuary for wild koalas, visited on guided koala safaris.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.826749,
+    "longitude": 135.686224
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 1191570792 tourism=camp_site 'Mikkira Station Campground'  \"\"",
+   "costBasis": "tour",
+   "costMin": 159,
+   "costMax": 159,
+   "currency": "AUD",
+   "ticketUrl": "https://www.toursouth.com.au",
+   "notes": {
+    "pin": "Provisional point is the Wikipedia locality Mikkira; station visitor point to be checked.",
+    "cost": "Tour South koala safari \"from $159\" (eyrepeninsula.com listing); price not confirmed on operator site. Draft claim of permit and gate key not found in sources, removed."
+   }
+  },
+  "lincoln-national-park-1": {
+   "name": "Memory Cove",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A secluded white-sand bay inside Lincoln National Park, reached by booking a vehicle entry and collecting a gate key.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.959713,
+    "longitude": 135.991912
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=bay (nominatim) \"Memory Cove\"",
+   "costBasis": "open",
+   "wiki": "Memory Cove",
+   "needs": "park-pass",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/memory-cove-wilderness-protection-area",
+   "notes": {
+    "pin": "Wikipedia point provisional; use the lookout/beach car park inside the Wilderness Protection Area.",
+    "cost": "Vehicle entry $14.40 per vehicle (parks.sa.gov.au Memory Cove page); access limited to 15 vehicles a day (eyrepeninsula.com). Wiki title Memory Cove not confirmed."
+   },
+   "free": true,
+   "parkPass": "lincoln"
+  },
+  "lincoln-national-park-2": {
+   "name": "Stamford Hill",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A 1.6 km return walk up to the Flinders monument, with views over Port Lincoln and its beaches.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.776306,
+    "longitude": 135.935159
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 5917891486 natural=hill 'Stamford Hill'  \"\"",
+   "costBasis": "open",
+   "wiki": "Stamford Hill (South Australia)",
+   "free": true,
+   "ticket_note": "Open walk; no operator site.",
+   "notes": {
+    "pin": "Summit monument (OSM historic=memorial / peak); trailhead car park at foot.",
+    "cost": "Free assumed: the NPWS Lincoln page does not list it, Wikivoyage lists it as a walk. Unverified whether it is inside the park entry fee area."
+   }
+  },
+  "lake-gairdner": {
+   "name": "Lake Gairdner National Park",
+   "icon": "🧂",
+   "category": "nature",
+   "bio": "Salt lake with over 200 islands north of the Gawler Ranges, reached by a 34 km station track from Mount Ive.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -32.120443,
+    "longitude": 135.893134
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lake-gairdner-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 291719848 tourism=camp_site 'Waltumba Campground' (Lake Gairdner NP, western side per park page)  \"\"",
+   "notes": {
+    "pin": "Wikipedia park point is provisional (lake centroid). Park page: main route via Mount Ive station, 34 km track; Waltumba Tank campground on the western side (Stringer Hwy towards Glendambo). Use a visitor point, not the centroid.",
+    "cost": "Park page: Free entry, open daily. Mount Ive station charges a fee for the gate key (private, not a park fee); mention not in bio. Not a Desert Parks Pass park per page.",
+    "other": "Wiki title Lake Gairdner National Park equals name, so wiki omitted."
+   }
+  },
+  "lincoln-national-park-3": {
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lincoln-national-park",
+   "name": "Cape Donington",
+   "icon": "🌅",
+   "category": "viewpoint",
+   "bio": "A headland on the south-east coast of Lincoln National Park with a lighthouse and views to Donington Island.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.725527,
+    "longitude": 135.995299
+   },
+   "wiki": "Cape Donington",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=cape (nominatim) \"Cape Donington\"",
+   "notes": {
+    "pin": "Wikipedia point (34.733,136.0) is a rounded region point, not the headland: pin the Cape Donington Lighthouse / lookout feature (OSM man_made=lighthouse) instead. Not named on the NPWS park page.",
+    "cost": "Lincoln NP vehicle entry $14.40 per vehicle (parks.sa.gov.au/parks/lincoln-national-park, fees box); applies if reached through the park."
+   },
+   "needs": "park-pass",
+   "parkPass": "lincoln"
+  },
+  "lincoln-national-park-4": {
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lincoln-national-park",
+   "name": "Sleaford Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach in Lincoln National Park, with lookouts for southern right whales between May and October.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.89741,
+    "longitude": 135.78474
+   },
+   "wiki": "Sleaford Bay",
+   "coordinates_source": "resolve-pin HIGH: osm natural=bay (nominatim) \"Sleaford Bay\"",
+   "notes": {
+    "pin": "Wikipedia point is the bay centroid (likely in water). Use the Wanna Lookout / Lone Pine Lookout (NPWS: most accessible whale spotting) or the beach access car park.",
+    "cost": "Lincoln NP vehicle entry $14.40 per vehicle, same park fee."
+   },
+   "needs": "park-pass",
+   "parkPass": "lincoln"
+  },
+  "coffin-bay-1": {
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coffin-bay-national-park",
+   "name": "Coffin Bay National Park",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Coastal park of high cliffs, big dunes, surf beaches and sheltered bays west of Coffin Bay, with 4WD tracks north.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -34.625605,
+    "longitude": 135.464667
+   },
+   "wiki": "Coffin Bay National Park",
+   "coordinates_source": "resolve-pin MEDIUM: osm landuse=industrial (nominatim) \"Coffin Bay Waste Transfert Station\"",
+   "notes": {
+    "pin": "Wikipedia point is a park centroid. Use a visitor point: the park entrance/information bay off Coffin Bay town road, or Yangie Bay / Point Avoid car park (different from Yangie Bay spot pin).",
+    "cost": "Vehicle entry $14.40 per vehicle (parks.sa.gov.au coffin-bay-national-park, fees box)."
+   }
+  },
+  "coffin-bay-2": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Coffin Bay Oyster Walk",
+   "icon": "🦪",
+   "category": "hike",
+   "bio": "An 8 km signposted shoreline walk from Long Beach to Snapper Point, past the boat ramp, jetty and oyster waters.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.621797,
+    "longitude": 135.476354
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm trail midpoint (1.6 km, nominatim) \"Oyster Walk\"",
+   "ticket_note": "Walk along the town foreshore; only the regional tourism page describes it, no single steward site found.",
+   "notes": {
+    "pin": "Pin at midpoint of the 8 km route (OSM route Coffin Bay Oyster Walk, Long Beach to Snapper Point). Optional loop via Kellidie Bay Conservation Park lookout.",
+    "cost": "No fee mentioned on the regional tourism page; open foreshore track."
+   }
+  },
+  "coffin-bay-3": {
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coffin-bay-national-park",
+   "name": "Yangie Bay",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A bay at the south end of Coffin Bay National Park, reached by 2WD, for canoeing, picnics and a coastal bushwalk.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.640076,
+    "longitude": 135.362068
+   },
+   "wiki": "Yangie Bay",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 1190577847 \"Yangie Bay Day Use\" parking (Coffin Bay NP), bay node 3020494598 1.6 km east  \"\"",
+   "notes": {
+    "pin": "Yangie Bay day-use / picnic area and boat launch car park (OSM), inside the park on the bay shore.",
+    "cost": "Park vehicle entry $14.40 per vehicle.",
+    "wiki": "Check a Yangie Bay Wikipedia article exists; draft carries wiki Yangie Bay, drop if it redirects or is absent."
+   },
+   "needs": "park-pass",
+   "parkPass": "coffin-bay"
+  },
+  "coffin-bay-4": {
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/coffin-bay-national-park",
+   "name": "Almonta Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach on the Coffin Bay National Park coast, partly reached by 4WD, with fishing along the sand.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.6815427,
+    "longitude": 135.3444322
+   },
+   "wiki": "Almonta Beach",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3439003836 natural=beach \"Almonta Beach\"; Commons panoramio median (-34.67986,135.34184) 190 m away  \"\"",
+   "notes": {
+    "pin": "Almonta Beach access / car park or beach feature (OSM natural=beach) on the park coast; NPWS lists fishing on Gunya and Almonta Beach.",
+    "cost": "Park vehicle entry $14.40 per vehicle.",
+    "wiki": "Check a Wikipedia article exists; drop wiki if not."
+   },
+   "needs": "park-pass",
+   "parkPass": "coffin-bay"
+  },
+  "streaky-bay-1": {
+   "free": true,
+   "costBasis": "donation",
+   "name": "Murphy's Haystacks",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Pink granite inselbergs rising from farmland near Streaky Bay, with a picnic area, toilets and a campground.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -33.015274,
+    "longitude": 134.491326
+   },
+   "wiki": "Murphy's Haystacks",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=attraction (nominatim) \"Murphy's Haystacks\"",
+   "ticket_note": "Privately owned farm site; no official website found on the regional tourism page.",
+   "notes": {
+    "pin": "Wikipedia point (-33.015194, 134.4887972) names the formation; confirm against the site entrance/car park.",
+    "cost": "Entry is on private property and a donation is appreciated for the picnic area and toilets (regional tourism page)."
+   }
+  },
+  "streaky-bay-2": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Cape Bauer Loop",
+   "icon": "🚗",
+   "category": "nature",
+   "bio": "A coastal drive to Cape Bauer on the Great Australian Bight, with Hallys Beach lookout, blowholes and views of Olive Island.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -32.72222,
+    "longitude": 134.06139
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1811163883 'Cape Bauer' (camp_site at the cape, end of Cape Bauer Road); Whistling Rocks viewpoint way 71376050 is 2.1 km SE  \"\"",
+   "ticket_note": "Public road; no single steward site.",
+   "notes": {
+    "pin": "Loop of Cape Bauer Road / Stanley Williams Road; pin at the Cape Bauer Lookout or the loop midpoint, not the same as Whistling Rocks.",
+    "cost": "Public road, no fee."
+   }
+  },
+  "streaky-bay-3": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Whistling Rocks and the Blowholes",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Whistling rocks and blowholes on Cape Bauer, reached by a 360 m boardwalk to cliff platforms, best at high tide.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -32.739867,
+    "longitude": 134.074153
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 71376050 tourism=viewpoint 'Whistling Rocks' (with 'Blowholes' viewpoints ways 71376038/71376053 within 80 m)  \"\"",
+   "ticket_note": "Public site on the Cape Bauer Loop; no single steward site.",
+   "notes": {
+    "pin": "End of the 360 m boardwalk / viewing platforms on Cape Bauer Loop; at least 25 m from the Cape Bauer Loop pin.",
+    "cost": "No fee mentioned."
+   }
+  },
+  "streaky-bay-4": {
+   "free": true,
+   "costBasis": "open",
+   "name": "Westall Way Loop",
+   "icon": "🚗",
+   "category": "nature",
+   "bio": "A 32 km unsealed scenic loop passing Smooth Pool, High Cliffs, The Granites and Cape Bauer Lookout.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -32.895202,
+    "longitude": 134.13385
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 102940195 highway=unclassified 'Westall Way Loop' (middle of the three ways of the loop, ordered along it)  \"\"",
+   "ticket_note": "Public road; no single steward site.",
+   "notes": {
+    "pin": "Loop begins from Sceale Bay Road; pin at the loop midpoint (e.g. High Cliffs or The Granites), not at Cape Bauer Lookout used by the Cape Bauer Loop.",
+    "cost": "Public road, no fee."
+   }
+  },
+  "streaky-bay-5": {
+   "name": "The Granites",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Granite outcrops, a sandy lagoon and rock pools below a 110-step staircase from the clifftop car park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -32.894134,
+    "longitude": 134.081143
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 14229845302 \"The Granites\" tourism=viewpoint, Westall Way  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Staircase car park on Westall Way (Granites beach, ~110 steps down)",
+    "source": [
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/the-granites-streaky-bay"
+    ]
+   },
+   "ticket_note": "Open place with no single steward; no official page to link."
+  },
+  "streaky-bay-6": {
+   "name": "Smooth Pool",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "A flat granite shelf holding calm rock-lined pools for swimming, snorkelling and exploring at low tide.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.9237673,
+    "longitude": 134.0789479
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1188830015 amenity=parking at Smooth Pool on Westall Way; OSM natural=bay node \"Smooth Pool\" (-32.92574,134.07883) 220 m south; Commons median (-32.9226,134.0780)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Smooth Pool access on Westall Way Loop",
+    "source": [
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/smooth-pool-streaky-bay"
+    ]
+   },
+   "ticket_note": "Open place with no single steward; no official page to link."
+  },
+  "streaky-bay-8": {
+   "name": "Yanerbie Sandhills",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Endless white sandhills on Westall Way to climb, with sandboarding and a safe swimming beach beside them.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.900111,
+    "longitude": 134.1682562
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 5521426795 amenity=parking at the end of way 575393635 'Yanerbie Sand Dunes' (access car park)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Yanerbie Road car park at the dunes, Westall Way",
+    "source": [
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/yanerbie-sandhills",
+     "https://southaustralia.com/destinations/eyre-peninsula"
+    ],
+    "fact": "Regional tourism page: free; Westall Way Loop."
+   },
+   "ticket_note": "Open place with no single steward; no official page to link."
+  },
+  "streaky-bay-9": {
+   "name": "Streaky Bay Back Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A sealed 8 km drive from town to a reef-break surf beach with rock pools to explore at low tide.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.796126,
+    "longitude": 134.127804
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 71376049 amenity=parking at the western end of Back Beach Road (service way 707000205), ~8 km from Streaky Bay  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Back Beach car park, Back Beach Road, 8 km from town",
+    "source": [
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/streaky-bay-back-beach"
+    ],
+    "fact": "Surf beach with rock pools at low tide; 8 km sealed road from town."
+   },
+   "ticket_note": "Open place with no single steward; no official page to link."
+  },
+  "streaky-bay-10": {
+   "name": "Streaky Bay Jetty",
+   "icon": "🌅",
+   "category": "landmark",
+   "bio": "A 350 m jetty on the town foreshore for fishing, walking and bay views, with a shark-proof swimming area.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -32.795153,
+    "longitude": 134.211085
+   },
+   "coordinates_source": "resolve-pin HIGH: osm amenity=shelter (nominatim) \"Streaky Bay Jetty Gathering Place\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Jetty root at foreshore, Bay Road / Alfred Terrace",
+    "source": [
+     "https://en.wikivoyage.org/wiki/Streaky_Bay",
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/streaky-bay-jetty"
+    ]
+   },
+   "ticket_note": "Open place with no single steward; no official page to link."
+  },
+  "streaky-bay-11": {
+   "name": "Streaky Bay Powerhouse Museum",
+   "icon": "⚙️",
+   "category": "museum",
+   "bio": "Over 400 restored working engines, from industrial machines to miniatures, run for visitors in the old power house.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.795106,
+    "longitude": 134.213591
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 14225737901 \"Power House Museum\" tourism=museum, Alfred Terrace, Streaky Bay  \"\"",
+   "free": true,
+   "costBasis": "donation",
+   "ticket_note": "No official site of its own found; only the regional tourism listing (Tue and Fri 2-5pm). Not linked.",
+   "notes": {
+    "pin": "20 Alfred Terrace, Streaky Bay",
+    "source": [
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/streaky-bay-powerhouse-museum"
+    ],
+    "fact": "Entry by donation; open Tue and Fri 2-5pm per regional tourism listing."
+   }
+  },
+  "streaky-bay-13": {
+   "name": "Streaky Bay Great White Shark Replica",
+   "icon": "🦈",
+   "category": "landmark",
+   "bio": "A 5 m fibreglass model of a great white caught off Streaky Bay in 1990, the town's most photographed stop.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -32.7955336,
+    "longitude": 134.2139902
+   },
+   "coordinates_source": "resolve-pin LOW: Nominatim geocode of the listing address 13 Alfred Terrace, Streaky Bay (building point 13-15 Alfred Terrace)  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "13 Alfred Terrace, Streaky Bay foreshore",
+    "source": [
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/streaky-bay-great-white-shark-replica"
+    ]
+   },
+   "ticket_note": "Open place with no single steward; no official page to link."
+  },
+  "streaky-bay-14": {
+   "name": "Point Labatt Conservation Park",
+   "icon": "🦭",
+   "category": "nature",
+   "bio": "The mainland's only permanent colony of endangered Australian sea lions, watched from a clifftop platform.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.150728,
+    "longitude": 134.263165
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Point Labatt Conservation Park\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/point-labatt-conservation-park",
+   "notes": {
+    "pin": "Clifftop viewing platform, Point Labatt Conservation Park (draft coordinates kept)",
+    "source": [
+     "https://www.parks.sa.gov.au/parks/point-labatt-conservation-park",
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/point-labatt-sealion-colony"
+    ],
+    "fact": "NPWS SA page: Free entry, open daily; closed on catastrophic fire danger days. Platform is 50 m above the beach."
+   }
+  },
+  "streaky-bay-15": {
+   "name": "Baird Bay",
+   "icon": "🐬",
+   "category": "nature",
+   "bio": "A small bay where operators take guests snorkelling with wild sea lions and dolphins around Jones Island.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.148292,
+    "longitude": 134.363173
+   },
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Baird Bay\"",
+   "costMin": 300,
+   "costMax": 300,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://bairdbay.com/",
+   "notes": {
+    "pin": "Baird Bay settlement / Baird Bay Experience base (draft coordinates kept)",
+    "source": [
+     "https://www.eyrepeninsula.com/products/eyre-peninsula/tour/baird-bay-ocean-eco-experience"
+    ],
+    "fact": "Sea Lion & Dolphin Swim from $300 per adult (operator site); runs Thu-Mon 1 Oct to 30 Apr, weather permitting. Regional listing showed older $160."
+   }
+  },
+  "streaky-bay-16": {
+   "name": "Sceale Bay",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A small village on a bay south of Streaky Bay, close to Surfers Beach for surfing and swimming.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.017157,
+    "longitude": 134.187899
+   },
+   "coordinates_source": "resolve-pin HIGH: osm place=hamlet (nominatim) \"Sceale Bay\"",
+   "wiki": "Sceale Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Place with no single steward; no ticketUrl.",
+   "notes": {
+    "pin": "Sceale Bay village / Surfers Beach car park ~28 km south of Streaky Bay (draft coordinates kept)",
+    "source": [
+     "https://www.parks.sa.gov.au/parks/point-labatt-conservation-park"
+    ]
+   }
+  },
+  "streaky-bay-17": {
+   "name": "Venus Bay Conservation Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Cliffs, mangrove flats and beaches on the Weyland Peninsula, with an island tombolo and over 100 bird species.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.169447,
+    "longitude": 134.527696
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Venus Bay Conservation Park\"",
+   "notes": {
+    "pin": "Draft is Wikipedia's park point; park is large (Weyland Peninsula plus bay shore): pick a beach or day-use access near Venus Bay township.",
+    "cost": "Free entry per the park's own Fees page; camping fees only."
+   },
+   "wiki": "Venus Bay Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/venus-bay-conservation-park"
+  },
+  "ceduna-1": {
+   "name": "Ceduna Jetty",
+   "icon": "🌉",
+   "category": "landmark",
+   "bio": "A 380 m jetty on the Murat Bay foreshore with a swimming enclosure, whiting fishing and sunset views.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -32.125709,
+    "longitude": 133.669015
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=bathing_place (nominatim) \"Town Jetty Swimming Enclosure\"",
+   "notes": {
+    "pin": "Jetty on Ceduna foreshore at Murat Bay, a short walk from the main street; use the jetty's mid-length point or its base."
+   },
+   "ticket_note": "No single steward page found (council-run); regional tourism board page only."
+  },
+  "ceduna-2": {
+   "name": "Pinky Point Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A lookout at Thevenard with a telescope and signs, over the wharf, the channel and the Eleni K wreck offshore.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -32.1446699,
+    "longitude": 133.6439158
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin LOW: Nominatim/OSM way 80676966 'Pinky Point' (highway=service, Thevenard)  (provisional)",
+   "notes": {
+    "pin": "Thevenard end of the Encounter Walking Trail, Pinky Point; use the lookout platform."
+   },
+   "ticket_note": "Listed only on the regional tourism board page."
+  },
+  "ceduna-3": {
+   "name": "Laura Bay Conservation Park",
+   "icon": "🦀",
+   "category": "nature",
+   "bio": "A sheltered bay of mangroves and samphire flats where shorebirds feed, with a lookout and a 1911 grain landing.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.244562,
+    "longitude": 133.831128
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Laura Bay Conservation Park\"",
+   "notes": {
+    "pin": "Draft is Wikipedia's park point; use the park's lookout or the headland landing site.",
+    "cost": "Vehicle entry free; fees apply only for camping."
+   },
+   "wiki": "Laura Bay Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/laura-bay-conservation-park"
+  },
+  "ceduna-4": {
+   "name": "Acraman Creek Conservation Park",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Mangroves and dunes by the Great Australian Bight, for canoeing, fishing and watching migratory waders.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -32.442587,
+    "longitude": 134.037849
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Acraman Creek Conservation Park\"",
+   "notes": {
+    "pin": "Draft is Wikipedia's park point; no designated visitor point found: use Port Lindsay or the creek launch if located.",
+    "cost": "Entry free; fees for camping only; camp sites must be booked."
+   },
+   "wiki": "Acraman Creek Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/acraman-creek-conservation-park"
+  },
+  "ceduna-5": {
+   "name": "Smoky Bay",
+   "icon": "🦪",
+   "category": "landmark",
+   "bio": "An oyster-farming village on Smoky Bay with a swimming-enclosure jetty and oyster farm tours.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.373515,
+    "longitude": 133.935271
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Smoky Bay\"",
+   "notes": {
+    "pin": "Draft is Wikipedia's town point; the jetty near the boat ramp is the visitor point.",
+    "cost": "Village and jetty free. Oyster Deck Experience tours (Sandy Creek Drive, ph 04 2825 7177) are a separate paid operator; no price found, so not applied to this spot."
+   },
+   "wiki": "Smoky Bay, South Australia",
+   "ticket_note": "Village with no single steward; the oyster tour operator's site oysterdeckexperience.com.au could not be reached by script."
+  },
+  "ceduna-6": {
+   "name": "Point Bell Conservation Park",
+   "icon": "🚙",
+   "category": "nature",
+   "bio": "A rocky point of granite boulders, long beaches and dunes for fishing, swimming and camping, reached by 4WD only.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -32.186675,
+    "longitude": 133.139362
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Point Bell Conservation Park\"",
+   "notes": {
+    "pin": "Draft is Wikipedia's park point; 8 unallocated 4WD-only campsites, no designated trails; use the headland/beach access.",
+    "cost": "Entry free; fees for camping only."
+   },
+   "wiki": "Point Bell Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/point-bell-conservation-park"
+  },
+  "ceduna-7": {
+   "name": "Penong Windmill Museum",
+   "icon": "💨",
+   "category": "museum",
+   "bio": "An outdoor museum of about 20 restored windmills, including Bruce, the largest in Australia, beside the highway.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -31.926029,
+    "longitude": 133.009483
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 8989147841 tourism=museum 'Penong Windmill Museum'  \"\"",
+   "notes": {
+    "pin": "Beside Highway 1 at Penong, 71 km west of Ceduna; point to be found by the pin pass."
+   },
+   "ticket_note": "Only the regional tourism board page found; the museum's own site was unreachable by script."
+  },
+  "ceduna-8": {
+   "name": "Cactus Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A remote surf beach 21 km south of Penong with two left-hand and one right-hand break.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.086313,
+    "longitude": 132.980412
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: Wikipedia article coordinates for Cactus Beach (Quill draft); OSM camp_site node 1811163680 is 350 m SE  \"\"",
+   "notes": {
+    "pin": "Draft is Wikipedia's coordinates for the beach itself; surf breaks sit on the west side of Point Sinclair.",
+    "note": "Tourism board URL in the draft returned 404; surf-break facts from Wikipedia. Camping at Point Sinclair is not verified."
+   },
+   "wiki": "Cactus Beach",
+   "ticket_note": "No steward page found; tourism board URL for it returns 404."
+  },
+  "ceduna-9": {
+   "name": "Lake MacDonnell",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "A pink salt lake off Point Sinclair Road south of Penong, coloured by salt-loving algae, with green and blue lakes beside it.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -32.039545,
+    "longitude": 133.012895
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm natural=water (nominatim) \"Lake MacDonnell\"",
+   "notes": {
+    "pin": "Wikipedia's lake point (centroid); visitor stop is the causeway on Point Sinclair Road about 15 km south of Penong.",
+    "rename": "Draft 'Lake Macdonnell' renamed to Wikipedia's spelling 'Lake MacDonnell', which therefore needs no wiki field.",
+    "note": "Colour varies with water levels."
+   },
+   "ticket_note": "No steward; regional tourism board page only."
+  },
+  "whyalla-1": {
+   "name": "Whyalla Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Whyalla's naval museum, home to HMAS Whyalla, the first modern warship built in South Australia.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.018812,
+    "longitude": 137.5758
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=park (nominatim) \"Maritime Museum Park Lands\"",
+   "notes": {
+    "pin": "Lincoln Highway, entry via Whyalla Visitor Centre; HMAS Whyalla on dry land beside it",
+    "cost": "Adult $19 (concession $16, child $13) from eyrepeninsula.com listing; admission includes guided HMAS Whyalla tour"
+   },
+   "wiki": "Whyalla Maritime Museum",
+   "costMin": 19,
+   "costMax": 19,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://whyalla.com/maritime-museum"
+  },
+  "whyalla-2": {
+   "name": "Point Lowly Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "The 1883 lighthouse on Point Lowly, built after reports of shipping dangers, overlooks the cuttlefish waters.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -32.999779,
+    "longitude": 137.78562
+   },
+   "coordinates_source": "resolve-pin HIGH: osm man_made=lighthouse (nominatim) \"Point Lowly Lighthouse\"",
+   "notes": {
+    "pin": "42 Lighthouse Drive, Point Lowly; Wikipedia coords provisional (-32.99975,137.78563889)"
+   },
+   "wiki": "Point Lowly Lighthouse",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward site found; Whyalla council tourism page only (whyalla.com), not a page for the lighthouse"
+  },
+  "whyalla-3": {
+   "name": "Giant Australian Cuttlefish Aggregation",
+   "icon": "🦑",
+   "category": "nature",
+   "bio": "Giant Australian cuttlefish gather in their tens of thousands to spawn off Whyalla each May to August.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -32.9869897,
+    "longitude": 137.7741018
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 598946461 \"Stony Point\" (centre), the shore access for the cuttlefish snorkel/dive site north of Point Lowly  \"\"",
+   "notes": {
+    "pin": "Viewing/snorkel sites are in False Bay and Point Lowly waters; use the Point Lowly/Stony Point shore access, not the lighthouse pin",
+    "cost": "Free to snorkel or dive with own gear; guided tours and gear hire are paid and vary by operator, so no price stored"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://whyalla.com/cuttlefish"
+  },
+  "whyalla-4": {
+   "name": "Hummock Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A lookout over Whyalla and Spencer Gulf built into old World War Two gun emplacements.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -33.03751,
+    "longitude": 137.59082
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=peak (nominatim) \"Hummock Hill\"",
+   "notes": {
+    "pin": "Queen Elizabeth II Drive; pin on the hill's lookout, not the beach below"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open lookout, no single official page verified"
+  },
+  "whyalla-5": {
+   "name": "Whyalla Jetty",
+   "icon": "🌅",
+   "category": "landmark",
+   "bio": "A 315 m circular jetty on the Whyalla foreshore for walking and fishing, lit all night.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.039327,
+    "longitude": 137.588813
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 547979942 'Buttlinggarra Way' (foreshore road named in the listing address); OSM marks only unnamed marina/steelworks piers nearby (w103203830 -33.0397,137.5926)  (provisional)",
+   "notes": {
+    "pin": "20 Buttlingarra Way, Whyalla foreshore"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open public structure; no dedicated official page verified"
+  },
+  "whyalla-6": {
+   "name": "Whyalla Foreshore",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Whyalla's Spencer Gulf foreshore and marina, with a beach and dolphins often seen in the bay.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.040672,
+    "longitude": 137.585093
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=park (nominatim) \"Foreshore Park Lands\"",
+   "notes": {
+    "pin": "1 Buttlingarra Way; beach/marina foreshore, keep 25 m+ from Whyalla Jetty pin (whyalla-5)"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open public foreshore with no single steward page"
+  },
+  "whyalla-7": {
+   "name": "Whyalla Conservation Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "Wild Dog Hill rises from the plains north of Whyalla, with kangaroos and euros in the park.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.953204,
+    "longitude": 137.542631
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Whyalla Conservation Park\"",
+   "notes": {
+    "pin": "Wikipedia point provisional; use the park's Wild Dog Hill picnic/access point off the Lincoln Highway, not the centroid",
+    "cost": "NPWS page: free entry"
+   },
+   "wiki": "Whyalla Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/whyalla-conservation-park"
+  },
+  "whyalla-8": {
+   "name": "Mount Laura Homestead Museum",
+   "icon": "🏠",
+   "category": "museum",
+   "bio": "National Trust museum in a 1914 homestead, with a steam locomotive and over 60 stationary engines.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.029616,
+    "longitude": 137.533884
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM node 2158530082 tourism=museum 'Mount Laura Station-National Trust'; Ekblom Street ways (-33.027..-33.033,137.5345) match the 11 Ekblom St address  \"\"",
+   "notes": {
+    "pin": "11 Ekblom Street, Whyalla Norrie",
+    "cost": "Adult $10 (concession/under 16 $5); closed Saturdays and public holidays, open Sunday afternoon only (13:00-15:00)"
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/mount-laura-homestead/"
+  },
+  "whyalla-9": {
+   "name": "Freycinet Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 12 km coastal route along Fitzgerald Bay to Point Lowly with a 4 km walking section.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.945696,
+    "longitude": 137.743532
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 232093736 'Fitzgerald Bay Vista' (middle vertex), between Fitzgerald Bay (-32.9149,137.7596) and Point Lowly (-32.9994,137.7853)  (provisional)",
+   "notes": {
+    "pin": "Midpoint of the route along Fitzgerald Bay Road (hiking/cycling/driving trail, northern end of Fitzgerald Bay to Point Lowly); 4 km hiking section only is walkable"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council trail; no verified dedicated page"
+  },
+  "whyalla-10": {
+   "name": "Gulf and Ranges Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 4 km hiking and cycling loop at Crag Point with geology signs and views of the gulf and ranges.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.889685,
+    "longitude": 137.798045
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 13586141037 Crag Point (natural=cape); the loop is not mapped in OSM  (provisional)",
+   "notes": {
+    "pin": "Loop at Crag Point, Douglas Point; midpoint of the loop (halfway point may be off path, use trailhead if so)"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council trail; no verified dedicated page"
+  },
+  "whyalla-11": {
+   "name": "Iron Knob Visitor Centre and Museum",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Volunteer-run mining museum in the iron ore town of Iron Knob, on the Eyre Highway west of Port Augusta.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.7398031,
+    "longitude": 137.149674
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 10213482851 tourism=museum \"Iron Knob Tourist Centre and Museum\" (twin information node 1585377006)  \"\"",
+   "notes": {
+    "pin": "Iron Knob township (Wikivoyage -32.72,137.15 is the town); use the visitor centre building",
+    "cost": "Museum admission free, donations asked (town site); separate paid mine tours not included",
+    "span": "About 55 km from Whyalla, outside 75% of the 70 km span: destination span widened to 90 km"
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://ironknob.org/visitor-centre-museum"
+  },
+  "ceduna": {
+   "name": "Ceduna",
+   "icon": "🦪",
+   "category": "landmark",
+   "bio": "Last major town before the Nullarbor, on the Eyre Highway, known for its oysters.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -32.126358,
+    "longitude": 133.674219
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Ceduna\"",
+   "notes": {
+    "drop": "Town is the destination itself, not also a spot (draft note). Do not add as a spot; Ceduna destination is in another shard."
+   },
+   "free": true,
+   "costBasis": "open"
+  },
+  "gawler-ranges-national-park-1": {
+   "name": "Organ Pipes",
+   "icon": "🪨",
+   "category": "hike",
+   "bio": "Basalt columns formed by volcanic eruptions about 1,500 million years ago, reached on a short walk in the park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.5412608,
+    "longitude": 135.2981496
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "gawler-ranges",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 216411860 'Organ Pipes Trail' (62 pts, middle vertex); trail ends at car park n2257624072 (-32.5439,135.29954) and viewpoint n12978945643 (-32.5391,135.29648)  \"\"",
+   "notes": {
+    "pin": "Walk start/car park inside Gawler Ranges NP; not the park centroid. Resolve from OSM/Commons (Organ Pipes walk); NPWS maps tab on the park page.",
+    "cost": "Park vehicle entry $14.40 per vehicle (parks.sa.gov.au, read 2026-10-25) covers it; modelled as park-pass 'gawler-ranges'."
+   }
+  },
+  "gawler-ranges-national-park-2": {
+   "name": "Yandinga Falls",
+   "icon": "💧",
+   "category": "hike",
+   "bio": "A rocky waterfall and gorge in the Gawler Ranges, reached on the Yandinga Five Falls walk and best after rain.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -32.555572,
+    "longitude": 135.322198
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "gawler-ranges",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 703326102 'Five Falls Trail' (middle section of the Yandinga Five Falls walk; Yandinga Falls attraction node 10838941993 at -32.557433,135.319833)  \"\"",
+   "notes": {
+    "pin": "Midpoint of the Yandinga Five Falls walk (OSM route) or its trailhead from NPWS maps.",
+    "cost": "Covered by park entry fee."
+   }
+  },
+  "gawler-ranges-national-park-3": {
+   "name": "Kolay Mirica Falls",
+   "icon": "💧",
+   "category": "hike",
+   "bio": "A rocky waterfall in the Gawler Ranges, reached on the Mirica Falls walk and running best after rain.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.563625,
+    "longitude": 135.576021
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "gawler-ranges",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 6335247843 \"Kolah Mirica Falls\"; OSM way 706313911 Kolay Mirca Falls Track 400 m away  \"\"",
+   "notes": {
+    "pin": "Falls/trailhead from NPWS maps; Wikipedia names it as a scenic site.",
+    "cost": "Covered by park entry fee."
+   }
+  },
+  "gawler-ranges-national-park-4": {
+   "name": "Paney Homestead",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "The old station homestead of the former Paney pastoral lease, now a heritage stop on the Old Paney trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.6564181,
+    "longitude": 135.6273461
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "gawler-ranges",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 6335247848 \"Paney Homestead and Park Office\" (place=isolated_dwelling)  \"\"",
+   "notes": {
+    "pin": "Old Paney Homestead precinct (OSM historic/building node) in the park's south.",
+    "cost": "Covered by park entry fee.",
+    "check": "Park may also offer heritage accommodation; the bio only states the homestead and trail."
+   }
+  },
+  "gawler-ranges-national-park-6": {
+   "name": "Mount Wudinna",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A 261 m granite monolith, one of Australia's largest, with an interpretive trail and a short climb to the top.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -32.987583,
+    "longitude": 135.549556
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/mount-wudinna",
+   "coordinates_source": "resolve-pin HIGH: osm natural=peak (nominatim) \"Mount Wudinna\"",
+   "notes": {
+    "pin": "Wikivoyage listing's own geotag -32.98777, 135.54964 (11 km from Wudinna); check against OSM natural=peak.",
+    "ticket": "Council page https://www.wudinna.sa.gov.au/our-services/council-facilities/park-search/mount-wudinna-recreation-reserve is linked from the regional tourism listing but blocked to scripts; ticketUrl uses the regional tourism listing (title checked: Mount Wudinna)."
+   }
+  },
+  "gawler-ranges-national-park-7": {
+   "name": "Polda Rock",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A granite rock that once supplied Wudinna's water, with a 2 km walking trail, picnic area and birdlife.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.0186,
+    "longitude": 135.53049
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/polda-rock-reserve",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3008903063 natural=peak 'Polda Rock' (Wudinna); ~7.5 km ENE of Wudinna, consistent with the Wikivoyage 'Standley Road, 7 km east' note  \"\"",
+   "notes": {
+    "pin": "Reserve picnic area on Standley Road, 7 km east of Wudinna (Wikivoyage); use OSM, not the Wudinna point.",
+    "ticket": "Council site www.wudinna.sa.gov.au blocked to scripts; regional tourism listing used (title checked)."
+   }
+  },
+  "gawler-ranges-national-park-8": {
+   "name": "Tcharkuldu Rock",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A granite outcrop near Minnipa with large tafoni and boulders, and a gutter network that once supplied the town's water.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.848724,
+    "longitude": 135.198075
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/tcharkuldu-rock-recreation-reserve",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 1054351062 tourism=attraction 'Tcharkuldu Rock' (centre); Tcharkuldu Hill peak n3008903601 at -32.848111,135.197694  \"\"",
+   "notes": {
+    "pin": "Reserve on Bockleberg Road, 4 km from Minnipa (Wikivoyage); take the picnic area/rock from OSM.",
+    "rename": "Draft 'Tcharkulda Rock' is Wikivoyage's spelling; the regional tourism listing and council use 'Tcharkuldu Rock', adopted here.",
+    "ticket": "Council page https://www.wudinna.sa.gov.au/our-services/council-facilities/park-search/tcharkuldu-rock-recreation-reserve blocked to scripts; tourism listing used."
+   }
+  },
+  "gawler-ranges-national-park-9": {
+   "name": "Ucontitchie Hill",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A 37 m domed granite hill with wave structures and tafoni boulders at its base, 32 km south-west of Wudinna.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.19947,
+    "longitude": 135.22703
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/ucontitchie-hill",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3008903658 natural=peak 'Ucontitchie Hill'  \"\"",
+   "notes": {
+    "pin": "Car park at the base of the hill (honesty box there); OSM natural=peak/rock.",
+    "cost": "Gold-coin donation in an honesty box at the base (regional tourism listing).",
+    "ticket": "Council site blocked to scripts; tourism listing used."
+   }
+  },
+  "gawler-ranges-national-park-10": {
+   "name": "Pildappa Rock",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A granite outcrop 15 km off the Eyre Highway near Minnipa, with long wave formations, gnamma holes and a climb.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.7511492,
+    "longitude": 135.2303986
+   },
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Per Car",
+   "ticketUrl": "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/pildappa-rock",
+   "coordinates_source": "resolve-pin MEDIUM: OSM/Nominatim bare_rock \"Pildappa Rock\" at -32.75115,135.23040; attraction node 14 m east and camp_site node 80 m west agree  \"\"",
+   "notes": {
+    "pin": "Picnic/car park on Pildappa Road, 15 km from Minnipa; OSM rock/peak.",
+    "cost": "Regional tourism listing: car entry $10 per car (max 6 people), bus $20. Not seen on the council page (blocked); verify.",
+    "ticket": "Council site www.wudinna.sa.gov.au blocked to scripts; tourism listing used."
+   }
+  },
+  "gawler-ranges-national-park-11": {
+   "name": "Corrobinnie Hill Conservation Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A granite outcrop east of Wudinna for boulder climbing and views of the Gawler Ranges, reached by 4WD only.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.98424,
+    "longitude": 135.73879
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm natural=peak (nominatim) \"Corrobinnie Hill\"",
+   "notes": {
+    "pin": "Draft hint -32.9848, 135.7387 kept; resolve against OSM (listing says about 20 km east of Wudinna, so the hint looks further east than stated).",
+    "cost": "Regional tourism listing: no facilities, access free.",
+    "ticket": "parks.sa.gov.au/parks/corrobinnie-hill-conservation-park returns 404; no verified official page."
+   },
+   "ticket_note": "No NPWS page found (404); tourism listing has no official site."
+  },
+  "gawler-ranges-national-park-12": {
+   "name": "Australian Farmer Granite Sculpture",
+   "icon": "🗿",
+   "category": "monument",
+   "bio": "A large granite farmer sculpted from two pieces of local pink granite beside the Wudinna Telecentre on the Eyre Highway.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -33.0508444,
+    "longitude": 135.4620717
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM node 4457330120 tourism=artwork \"Australian Farmer\"; median of Commons files at (-33.05096,135.46200)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Wikivoyage Wudinna listing geotag -33.047014,135.460447; 44 Eyre Highway next to the Telecentre"
+   },
+   "wiki": "The Australian Farmer Granite Sculpture",
+   "ticketUrl": "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/the-australian-farmer-granite-sculpture"
+  },
+  "gawler-ranges-national-park-13": {
+   "name": "Wudinna Granite Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 9 km walking and cycling trail from Wudinna to Little Mount Wudinna, best through the Polda Rock recreation reserve's mallee.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.0287,
+    "longitude": 135.4977
+   },
+   "coordinates_source": "resolve-pin LOW: Midpoint of OSM node 10218697977 'Granite Sculpture Parking' (-33.050837,135.461669, Wudinna) and OSM node 3008902480 'Little Wudinna Rock' peak (-33.00663,135.53373), the two ends of the route via Standley Road and Polda Rock  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Route runs from Wudinna township along Standley Road to Little Mount Wudinna via Polda Rock Recreation Reserve; pin at route midpoint (OSM route if present)"
+   },
+   "ticket_note": "No single official page found; the council page is blocked to scripts"
+  },
+  "cowell-silo-art": {
+   "name": "Cowell Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A three-silo mural at the corner of North Terrace and the Lincoln Highway, part of the Australian Silo Art Trail.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -33.680269,
+    "longitude": 136.922949
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=artwork (nominatim) \"Cowell Silo Art\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Wikivoyage Cowell listing geotag -33.680295,136.922623; 31 North Terrace"
+   },
+   "ticket_note": "Silos are public structures with no single steward; Silo Art Trail site not verified"
+  },
+  "franklin-harbor-historical-museum": {
+   "name": "Franklin Harbor Historical Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A volunteer-run museum of Cowell's local history, with displays and records, next to the council chambers on Main Street.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.684272,
+    "longitude": 136.926514
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"Franklin Harbour Historical Museum\"",
+   "free": false,
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Wikivoyage Cowell listing geotag -33.684222,136.926675; 4 Main Street"
+   },
+   "ticketUrl": "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/franklin-harbour-historical-museum",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD"
+  },
+  "franklin-harbor-conservation-park": {
+   "name": "Franklin Harbor Conservation Park",
+   "icon": "🦀",
+   "category": "nature",
+   "bio": "Mangroves and samphire flats that draw sea birds, 5 km from Cowell and reachable only by car.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.73589,
+    "longitude": 136.943727
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Franklin Harbor Conservation Park\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Wikivoyage Cowell listing geotag -33.7442,136.938; find the park's visitor access point on the Cowell-Lucky Bay road side"
+   },
+   "wiki": "Franklin Harbor Conservation Park",
+   "ticket_note": "NPWS slug not found (parks.sa.gov.au guessed slugs 404); eyrepeninsula.com page also 404"
+  },
+  "black-stump": {
+   "name": "Black Stump",
+   "icon": "🪵",
+   "category": "landmark",
+   "bio": "A 2,060 kg stump between Cowell's two hotels, placed after a 1972 New Year's prank and rebuilt after fires.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -33.68416,
+    "longitude": 136.92578
+   },
+   "coordinates_source": "resolve-pin LOW: Midpoint of OSM ways 266073422 Franklin Harbour Hotel (-33.68475,136.92657) and 266074338 Commercial Hotel (-33.68356,136.92499), Main Street Cowell  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "6 Main Street, Cowell, between the two hotels; town-centre point is acceptable if no OSM feature"
+   },
+   "ticket_note": "Roadside icon between two hotels with no steward site"
+  },
+  "wittelbee-conservation-park": {
+   "name": "Wittelbee Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "A low rocky headland among mallee and high dunes with bushwalking tracks, shorebirds and samphire flats.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.201099,
+    "longitude": 133.744535
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1811205085 tourism=camp_site 'Wittelbee Conservation Park' in relation 12913225 (centre -32.200054,133.742803; Nominatim nature_reserve -32.1999,133.7428), near Decres Bay Road  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Wittelbee Point via Decres Bay Road; use the park access/camp area, not a centroid"
+   },
+   "wiki": "Wittelbee Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/wittelbee-conservation-park"
+  },
+  "arno-bay-estuary-boardwalk": {
+   "name": "Arno Bay Estuary Boardwalk",
+   "icon": "🌿",
+   "category": "hike",
+   "bio": "A boardwalk through mangroves, mudflats and samphire beside the Arno Bay estuary, with a branch leading to the beach.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.923175,
+    "longitude": 136.566505
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 448574275 \"Creek Mouth Boardwalk\" (footway, middle vertex region), Boardwalk Carpark way 205044724 150 m away  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Car park on Creek Road, Arno Bay; pin at the middle of the boardwalk loop"
+   },
+   "ticket_note": "Run by Cleve council, whose site is blocked to scripts"
+  },
+  "redbanks-beach": {
+   "name": "Redbanks Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach north of Arno Bay named for its red cliffs, used for swimming, surfing and walks, with dolphins sometimes seen.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.8934329,
+    "longitude": 136.6144096
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3213932363 tourism=camp_site \"Redbanks\" with a car park (way 189791371) 25 m away  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Red Banks Road beach access north of Arno Bay"
+   },
+   "wiki": "Redbanks Beach",
+   "ticketUrl": "https://www.cleve.sa.gov.au/tourism/things-to-see-and-do/redbanks-beach"
+  },
+  "cleve-hills-scenic-drive-and-lookout": {
+   "name": "Cleve Hills Scenic Drive and Lookout",
+   "icon": "🚗",
+   "category": "viewpoint",
+   "bio": "A scenic drive through farmland around Yeldulknie Conservation Park with a lookout over the Cleve district; dry weather only.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.6468,
+    "longitude": 136.6151
+   },
+   "coordinates_source": "resolve-pin LOW: Midpoint of OSM 'Scenic Road' ways w113047747 (-33.6643,136.6287) and w113048010 (-33.6292,136.6015), Cleve Hills  (provisional)",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "426 Scenic Road, Cleve; pin at the lookout, not the town"
+   },
+   "ticket_note": "Council page blocked to scripts; tourism landing not confirmed"
+  },
+  "observation-hill-lookout": {
+   "name": "Observation Hill Lookout",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Locally called Ticklebelly Hill, a patch of native bush with a walking trail, a lookout over Cleve and protected Silver Daisy.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.6969549,
+    "longitude": 136.4965498
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 9676347525 tourism=attraction 'Observation Hill', Mitchell Street, Cleve (via Nominatim)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": {
+    "pin": "Mitchell Street, Cleve; pin on the hill's lookout (OSM tourism=viewpoint/peak)"
+   },
+   "ticket_note": "Council page blocked to scripts; tourism landing not confirmed"
+  },
+  "federation-hill-lookout": {
+   "name": "Federation Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A short 260 m uphill walk from the car park to a 360-degree lookout over the Darke Peak Ranges.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -33.518521,
+    "longitude": 136.168849
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 12747158140 tourism=viewpoint 'Federation Hill' (parking node 12747158141 and attraction node 12747158147 within 10 m)  \"\"",
+   "ticket_note": "Council page (cleve.sa.gov.au/tourism) is bot-blocked; no verified official site yet.",
+   "notes": {
+    "pin": "Dog Fence Road, Kielpa SA 5642; lookout is up a 260 m walk from the car park; reached through private property. Use OSM tourism=viewpoint named Federation Hill.",
+    "other": "Opened 2001 by the Darke Peak Kielpa History Book Committee; sits on the Darke Peak scenic drive, so overlaps in route with darke-peak but is a distinct stop."
+   }
+  },
+  "darke-peak": {
+   "name": "Darke Peak",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A hill in the Darke Peak Ranges, circled by a scenic drive that passes Federation Hill Lookout and Darkes Grave.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.468156,
+    "longitude": 136.200351
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm landuse=residential (nominatim) \"Darke Peak\"",
+   "ticket_note": "Only the council page (cleve.sa.gov.au/tourism, bot-blocked) is official.",
+   "notes": {
+    "pin": "Provisional Wikipedia point is the peak; for the scenic-drive stop prefer OSM natural=peak Darke Peak or the Darkes Grave marker.",
+    "other": "Draft bio mentioned a 'Darke monument'; sources name Darkes Grave, used instead. Scenic drive is suitable for most vehicles."
+   }
+  },
+  "yeldulknie-conservation-park": {
+   "name": "Yeldulknie Conservation Park",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A mallee conservation park near Cleve with the roughly 4 km return 'Waterfall Walk', which flows after good rain.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.64258,
+    "longitude": 136.566694
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Yeldulknie Conservation Park\"",
+   "ticket_note": "No parks.sa.gov.au page found (slug 404); no other official site verified.",
+   "notes": {
+    "pin": "Trail car park on Mangalo Road; trail is a ~4 km return, pin at midpoint of the walk once route is resolved (OSM).",
+    "other": "Proclaimed 21 Sept 1989, ~3283 ha mallee woodland protecting Senna Wattle. Free per tourism listing."
+   }
+  },
+  "carappee-hill-conservation-park": {
+   "name": "Carappee Hill Conservation Park",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 489 m hill, the highest point on the Eyre Peninsula, reached by a hike of about two hours return.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -33.415202,
+    "longitude": 136.263947
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Carappee Hill Conservation Park\"",
+   "ticket_note": "No parks.sa.gov.au page found (slug 404); no other official site verified.",
+   "notes": {
+    "pin": "Trail starts on Carappee Hill Road near Darke Peak; pin at route midpoint or summit once resolved.",
+    "other": "850 ha, conservation park since 1973; visitors book at the top. Free per tourism listing. Visit range widened to 1.5-2.5 hr to match the ~2 hr return."
+   }
+  },
+  "sir-joseph-banks-group-conservation-park": {
+   "name": "Sir Joseph Banks Group Conservation Park",
+   "icon": "🦭",
+   "category": "nature",
+   "bio": "Limestone-capped islands in Spencer Gulf reached by boat from Tumby Bay or Port Lincoln, home to seabirds and seals.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -34.584915,
+    "longitude": 136.283261
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Sir Joseph Banks Group Conservation Park\"",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/sir-joseph-banks-group-conservation-park",
+   "notes": {
+    "pin": "Island group centre is the Wikipedia point; no land visitor point. Boat departs Tumby Bay jetty/marina.",
+    "other": "NPWS lists free entry; boat trip costs not sourced (no operator verified). Access to some islands, e.g. Dangerous Reef, is prohibited (seal and seabird breeding). Sea lion viewing is from the draft's tour source, not from NPWS text: bio kept to seabirds/seals per NPWS text."
+   }
+  },
+  "colour-tumby-bay-street-art": {
+   "name": "Colour Tumby Bay Street Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Large murals by well-known street artists on walls around Tumby Bay, viewable all year and free to see.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.376296,
+    "longitude": 136.103445
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin LOW: OSM node 252990288 Tumby Bay (place=town) as the middle of the dispersed mural trail  (provisional)",
+   "ticket_note": "colourtumby.com returns a Wix domain error (404); no verified official site.",
+   "notes": {
+    "pin": "Tumby Bay town centre/Tumby Terrace area (listing address 27 Tumby Terrace); trail is dispersed murals, pin in the middle of the town centre.",
+    "other": "Murals come from the festival, established 2018, now biannual; murals stay up year round."
+   }
+  },
+  "port-neill": {
+   "name": "Port Neill",
+   "icon": "🏖️",
+   "category": "landmark",
+   "bio": "A seaside town with a 1912 jetty once the peninsula's largest, a sheltered swimming beach and the Lady Kinnaird anchor.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.119562,
+    "longitude": 136.350693
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: osm place=village (nominatim) \"Port Neill\"",
+   "wiki": "Port Neill, South Australia",
+   "notes": {
+    "pin": "Town centre/jetty at Mottled Cove (OSM place=village); not the Wikipedia rounded point.",
+    "other": "Draft's '1 km main beach' and '4.5 km Lady Kinnaird trail' not confirmed in fetched sources, so dropped from bio; jetty claim: 'noted at the time of construction as the largest on the Eyre Peninsula'."
+   }
+  },
+  "cummins-mosaic-trail": {
+   "name": "Cummins Mosaic Trail",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A free self-guided trail of colourful mosaic artworks by local artists and community members around Cummins.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.2681249,
+    "longitude": 135.7263804
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin LOW: Nominatim: Railway Terrace, Cummins (street point near the listing address 46 Railway Terrace)  (provisional)",
+   "ticketUrl": "https://explorecummins.com.au/explore/cummins-mosaic-trail/",
+   "notes": {
+    "pin": "Listing address 46 Railway Terrace, Cummins; pin in the middle of the town trail.",
+    "other": "Page title 'Cummins Mosaic Trail – Explore Cummins' verified."
+   }
+  },
+  "elliston-coastal-trail": {
+   "name": "Elliston Coastal Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 13.6 km clifftop walking and driving trail from Little Bay to Cape Finniss, with shorter loops and coastal sculptures.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -33.6377135,
+    "longitude": 134.8544638
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin LOW: OSM node 8826406118 tourism=artwork 'Elliston Mara Sculpture on the Cliffs' (a stop on the coastal trail), about midway by straight line between Little Bay (-33.6495,134.8877) and Cape Finnis (-33.6234,134.8301); no OSM route relation found  (provisional)",
+   "ticketUrl": "https://ellistoncoastaltrail.com.au/",
+   "notes": {
+    "pin": "Midpoint of the 13.6 km route between Little Bay Surf Break and Cape Finniss (OSM route if present, else agency map).",
+    "other": "Shorter options: Little Bay Trail, Cliff Top Trail, Beach Loop. Site title 'Elliston Coastal Trail' verified."
+   }
+  },
+  "talia-caves": {
+   "name": "Talia Caves",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "Coastal granite cavern The Woolshed, reached by walkway and steps, and The Tub, a sea crater with a tunnel to the ocean.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.32061,
+    "longitude": 134.788165
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: Midpoint of OSM n3279602029 'Woolshed Cave' (-33.316817,134.784879) and n3279602028 'The Tub' (-33.324408,134.791451), cave entrances; Talia Caves camp site n1811197136 at -33.31667,134.78583  \"\"",
+   "ticket_note": "Only the council site (elliston.sa.gov.au) is official and it is bot-blocked.",
+   "notes": {
+    "pin": "Between The Woolshed and The Tub, ~40 km north-west of Elliston on the Talia coast; use OSM entries for each and the carpark.",
+    "other": "The Tub is 10-30 m deep and 50 m across; climbing into it is for adventurous visitors. Wikipedia title 'Talia Caves' unverified, wiki field omitted."
+   }
+  },
+  "locks-well-walk": {
+   "name": "Locks Well Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 283-step wooden staircase down to a west coast beach, with a clifftop lookout and good sunset views.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.74288,
+    "longitude": 135.02551
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin MEDIUM: Midpoint between OSM way 215665875 amenity=parking 'Locks Well' (-33.742637,135.026275) and way 215665877 natural=beach 'Locks Well Beach' (-33.74312,135.024744)  \"\"",
+   "ticket_note": "Only the council site (elliston.sa.gov.au) is official and it is bot-blocked.",
+   "notes": {
+    "pin": "Locks Well Road, Bramfield: upper car park to beach; pin at the staircase/lower lookout. Short route so midpoint is the staircase.",
+    "other": "Beach known for salmon fishing."
+   }
+  },
+  "lake-newland-conservation-park": {
+   "name": "Lake Newland Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "The Eyre Peninsula's most extensive wetland, saline lakes and springs behind coastal dunes, reached by 4WD only.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.437737,
+    "longitude": 134.868249
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Lake Newland Conservation Park\"",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lake-newland-conservation-park",
+   "notes": {
+    "pin": "Wikipedia point is a park centroid: use the lake-side access via Lake Newland Rd or the main beach-access track.",
+    "other": "NPWS: free entry, 4WD only. Parts closed to public access 5pm-8am daily (lake-side access via Lake Newland Rd). Lakes extend 20 km."
+   }
+  },
+  "mighty-mulloway": {
+   "name": "Mighty Mulloway Sculpture",
+   "icon": "🐟",
+   "category": "landmark",
+   "bio": "Bronze mulloway sculpture by Ken Martin, unveiled in 2026 at the Y-Stop roadhouse in Yalata on the Eyre Highway.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -31.495646,
+    "longitude": 131.811675
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://yalata.com.au/mulloway-ken-martin-bronze-sculpture/",
+   "notes": {
+    "pin": "Y-Stop Yalata Roadhouse, Eyre Highway, Yalata (OSM roadhouse node); sculpture stands at the roadhouse.",
+    "other": "Unveiled 16 July 2026 per Yalata community page; very new."
+   },
+   "coordinates_source": "resolve-pin LOW: OSM node 10227691573 (Yalata Anangu Aboriginal Corporation, amenity=fuel) = the Y-Stop Yalata roadhouse on the Eyre Highway  (provisional)"
+  },
+  "neptune-islands": {
+   "name": "Neptune Islands",
+   "icon": "🦈",
+   "category": "nature",
+   "bio": "Remote islands off Port Lincoln, reached by boat, where operators run great white shark cage dives.",
+   "wiki": "Neptune Islands",
+   "visitHoursMin": 10,
+   "visitHoursMax": 12,
+   "coordinates": {
+    "latitude": -35.233602,
+    "longitude": 136.072065
+   },
+   "free": false,
+   "costMin": 562,
+   "costMax": 630,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticket_note": "Sold by several operators (Calypso Star Charters, Rodney Fox Shark Expeditions), so no single official site.",
+   "notes": {
+    "pin": "Wikipedia coordinates for the island group; boat-only, no visitor point on land.",
+    "other": "One-day cage-dive trip from Port Lincoln about 12 h with ~3 h each way; a Visitor Use Fee (~$45) for the marine park is added by operators. Draft hours 4-8 changed to the day-trip length."
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Neptune Islands Conservation Park\""
+  },
+  "greenly-beach": {
+   "name": "Greenly Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf and swimming beach at Coulta, an hour from Port Lincoln, with bluffs, reef and tall dunes behind.",
+   "wiki": "Greenly Beach",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.339323,
+    "longitude": 135.418698
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward; free open beach.",
+   "notes": {
+    "pin": "Greenly Beach Road, Coulta (end of access road at the southern end of the beach); OSM natural=beach or Wikipedia article Greenly Beach.",
+    "other": "Address Coulta 5607, Lower Eyre Peninsula council area; re-home if the pin falls inside Port Lincoln or Coffin Bay span."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=water (nominatim) \"Lake Greenly\""
+  },
+  "googs-track": {
+   "name": "Googs Track",
+   "icon": "🚙",
+   "category": "hike",
+   "bio": "A 4WD track through Yumbarra and Yellabinna, crossing the dingo fence and dunes to Goog's Lake north of Ceduna.",
+   "wiki": "Googs Track",
+   "visitHoursMin": 6,
+   "visitHoursMax": 24,
+   "coordinates": {
+    "latitude": -31.2884744,
+    "longitude": 133.9654764
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/yumbarra-conservation-park",
+   "notes": {
+    "pin": "Midpoint of the whole track (OSM route); Goog's Lake at the northern end, track starts about 30 km north of Ceduna.",
+    "other": "Track and campsites closed 1 Dec 2026 to 28 Feb 2027 (annual summer closure, reopens 1 Mar 2027). Park page lists only camping fee ($15.40/night); no entry fee or permit shown. 4WD; travel south to north recommended."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Midpoint along OSM ways 48675235 (118 km) and 35969057 (33 km), both highway=unclassified name=\"Googs Track\"  \"\""
+  },
+  "fowlers-bay": {
+   "name": "Fowlers Bay Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Giant sand dunes beside Fowlers Bay, with sea lions, wombats and seabirds, and fishing for salmon and mulloway.",
+   "wiki": "Fowlers Bay Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -31.98949,
+    "longitude": 132.380835
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/fowlers-bay-conservation-park",
+   "notes": {
+    "pin": "Wikipedia park coordinates (centroid); use the dunes access or Fowlers Bay jetty/village point instead.",
+    "other": "Park page lists only a camping fee ($15.40/night); no entry fee. Dogs not permitted. Bio omits Scotts Beach/Mexican Hat (draft source, not rechecked)."
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=nature_reserve (nominatim) \"Fowlers Bay Conservation Park\""
+  },
+  "head-of-bight": {
+   "name": "Head of Bight",
+   "icon": "🐋",
+   "category": "nature",
+   "bio": "Clifftop boardwalks at Head of Bight where southern right whales calve in the water below, from about June to October.",
+   "wiki": "Head of Bight",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.474509,
+    "longitude": 131.113679
+   },
+   "free": false,
+   "costMin": 10,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://headofbight.com.au/",
+   "notes": {
+    "pin": "Head of Bight Whale Watching Centre / lookout carpark, Yalata (Wikipedia point is the bight).",
+    "other": "Adult $20 whale season, $10 off season (centre price list). Centre open all week; seasonal hours. Run by Yalata community (Aboriginal Lands Trust land)."
+   },
+   "coordinates_source": "resolve-pin HIGH: osm place=locality (nominatim) \"Head of Bight\""
+  },
+  "bunda-cliffs": {
+   "name": "Bunda Cliffs",
+   "icon": "🌊",
+   "category": "viewpoint",
+   "bio": "Sea cliffs up to 120 m high running more than 200 km along the Nullarbor coast, with three signposted lookouts.",
+   "wiki": "Bunda Cliffs",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -31.608015,
+    "longitude": 129.776958
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Free roadside lookouts inside Nullarbor National Park; no separate steward page.",
+   "notes": {
+    "pin": "One of the three official Bunda Cliffs lookouts off the Eyre Highway (OSM tourism=viewpoint); Wikipedia point is the cliff line.",
+    "other": "Camping along the cliffs not permitted (unstable edge)."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1973968140 tourism=viewpoint 'Scenic Lookout Number 2' (also tagged 'Bunda Cliffs Rest Area' on way 26149982/camp_site node 316602906); Numbers 1 and 3 are n1973968475 (-31.578768,130.144548) and n2003868778 (-31.659492,129.167748)  \"\""
+  },
+  "nullarbor-national-park": {
+   "name": "Nullarbor National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Flat karst plain where sinkholes open into caves, with sea cliffs on the coast and wombats among its wildlife.",
+   "wiki": "Nullarbor National Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -31.4563297,
+    "longitude": 129.8565355
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/nullarbor-national-park",
+   "notes": {
+    "pin": "Wikipedia centroid; use a visitor point such as the Murrawijinnie Caves or Koonalda Homestead access, not the centroid, and not Bunda Cliffs or Head of Bight pins.",
+    "other": "Page title \"Nullarbor...\" (covers national park, wilderness protection area, regional reserve); fees only for camping ($15.40/night). Murrawijinnie Caves are the only caves open to the public. Park is about 300 km west of Ceduna."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1811181489 tourism=camp_site 'Koonalda Homestead' (Koonalda Cave entrance n1967797431 is 5 km north)  \"\""
+  },
+  "eyre-highway": {
+   "name": "Eyre Highway",
+   "icon": "🛣️",
+   "category": "landmark",
+   "bio": "The road across the Nullarbor from Ceduna to the Western Australian border, with lookouts and roadhouses along the way.",
+   "wiki": "Eyre Highway",
+   "visitHoursMin": 4,
+   "visitHoursMax": 12,
+   "coordinates": {
+    "latitude": -31.440833,
+    "longitude": 131.089168
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Public road with no single steward.",
+   "notes": {
+    "pin": "Midpoint of the SA stretch (Ceduna to the border, ~480 km): near Nullarbor Roadhouse area; take from OSM route relation."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 143555600 highway=trunk 'Eyre Highway' near the Nullarbor Roadhouse area, about the midpoint of the ~480 km South Australian stretch (Ceduna 133.67E to the border 129.0E)  \"\""
+  },
+  "big-galah": {
+   "name": "Big Galah",
+   "icon": "🦜",
+   "category": "landmark",
+   "bio": "A large pink galah sculpture at Kimba, beside the sign marking the halfway point across Australia.",
+   "wiki": "Big Galah",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -33.141548,
+    "longitude": 136.42214
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Roadside sculpture with no official site beyond the council tourist page (blocked to scripts).",
+   "notes": {
+    "pin": "Eyre Highway, Kimba (OSM tourism=artwork or attraction \"Big Galah\"); Wikipedia article Big Galah."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 7092653230 Big Galah tourism=attraction, Kimba, Eyre Highway (cafe nodes alongside)  \"\""
+  },
+  "kimba-museum": {
+   "name": "Kimba Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum with a 1908 Pioneer House, one-teacher school, pioneer store and tractor collection, open mid-week.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.049327,
+    "longitude": 136.21212
+   },
+   "free": false,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticket_note": "Official site is the Kimba council tourist page (403 to scripts), see needs_browser; no URL linked until verified.",
+   "notes": {
+    "pin": "15307 Eyre Highway, Kimba, opposite the grain silos (OSM museum node).",
+    "other": "Listing says Wednesdays and Thursdays (hours Wed-Fri 9-2) or by appointment; \"from $5\" is the lowest listed price, adult price not confirmed."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"The District Council of Kimba\""
+  },
+  "lake-gilles": {
+   "name": "Lake Gilles Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Saline lake with gypsum dunes and mallee scrub, crossed by the Eyre Highway, with birdlife to watch.",
+   "wiki": "Lake Gilles Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.895698,
+    "longitude": 136.746431
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lake-gilles-conservation-park",
+   "notes": {
+    "pin": "Wikipedia centroid; use the lake access off Eyre Highway (2WD) instead.",
+    "other": "Free entry per park page. Closed on days of Catastrophic Fire Danger. Northern area near the lake is 4WD only. Draft said \"walking trails\": not on park page, dropped."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm boundary=administrative (nominatim) \"Lake Gilles\""
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "streaky-bay-7",
+   "name": "High Cliff",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "High Cliff",
+    "icon": "🔭",
+    "category": "viewpoint",
+    "bio": "A clifftop lookout on Westall Way over the rugged cliffs and turquoise water of the Southern Ocean.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "free": true,
+    "costBasis": "open",
+    "notes": {
+     "pin": "High Cliff Lookout on Westall Way Loop, ~20 km from town",
+     "source": [
+      "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/high-cliff-streaky-bay"
+     ]
+    },
+    "ticket_note": "Open place with no single steward; no official page to link."
+   }
+  },
+  {
+   "id": "streaky-bay-12",
+   "name": "Streaky Bay Museum",
+   "reason": "No cost found (and not known to be free); unblocks on a price or a source saying it is free.",
+   "entry": {
+    "name": "Streaky Bay Museum",
+    "icon": "🏛️",
+    "category": "museum",
+    "bio": "A National Trust museum of local history and historic vehicles on Montgomerie Terrace.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "ticket_note": "National Trust SA page for it returned 404; no verified official site.",
+    "notes": {
+     "pin": "42 Montgomerie Terrace, Streaky Bay",
+     "source": [
+      "https://en.wikivoyage.org/wiki/Streaky_Bay"
+     ],
+     "fact": "Town tourism site lists Tue and Fri 9am-2pm, Wed 10am-2pm at 42 Montgomerie Terrace."
+    }
+   }
+  },
+  {
+   "id": "streaky-bay-18",
+   "name": "South Head Walking Trail",
+   "reason": "No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.",
+   "entry": {
+    "name": "South Head Walking Trail",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "A Venus Bay clifftop walk with the Needle Eye lookout, and dolphins, sea lions and, May to October, southern right whales.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "coordinates": null,
+    "free": true,
+    "costBasis": "open",
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "Not yet located: midpoint of the trail at South Head, Venus Bay (start near Venus Bay township); tourism board lists it under Elliston office 21 Beach Terrace, Elliston."
+    },
+    "ticket_note": "Walk is listed only on the regional tourism board page; no steward page found (council trail)."
+   }
+  }
+ ],
+ "notes": []
+}

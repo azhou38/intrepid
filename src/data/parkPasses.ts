@@ -25,6 +25,38 @@ export const PARK_PASSES = {
     name: 'Tidbinbilla Pass', costMin: 16.09, currency: 'AUD',
     note: 'Tidbinbilla Nature Reserve day pass, per private vehicle (tidbinbilla.act.gov.au/visit, read 2026-10-24).',
   },
+  'flinders-chase': {
+    name: 'Flinders Chase Pass', costMin: 14.9, costMax: 22.4, currency: 'AUD',
+    note: 'Flinders Chase National Park entry, adult 1-day $14.90 (Parks SA park page, read 2026-10-25; the page header shows site entry $22.40 per person for two days).',
+  },
+  innes: {
+    name: 'Innes Park Pass', costMin: 14.4, currency: 'AUD',
+    note: 'Dhilba Guuranda-Innes National Park, per private vehicle per day (Parks SA).',
+  },
+  'ikara-flinders': {
+    name: 'Ikara-Flinders Pass', costMin: 14.4, currency: 'AUD',
+    note: 'Ikara-Flinders Ranges National Park, per vehicle per day (Parks SA).',
+  },
+  'gawler-ranges': {
+    name: 'Gawler Ranges Pass', costMin: 14.4, currency: 'AUD',
+    note: 'Gawler Ranges National Park, per vehicle per day (parks.sa.gov.au).',
+  },
+  'deep-creek': {
+    name: 'Deep Creek Pass', costMin: 14.4, currency: 'AUD',
+    note: 'Deep Creek National Park, per vehicle per day (Parks SA).',
+  },
+  'coffin-bay': {
+    name: 'Coffin Bay Pass', costMin: 14.4, currency: 'AUD',
+    note: 'Coffin Bay National Park, per vehicle per day (Parks SA).',
+  },
+  lincoln: {
+    name: 'Lincoln Park Pass', costMin: 14.4, currency: 'AUD',
+    note: 'Lincoln National Park, per vehicle per day (Parks SA).',
+  },
+  'mount-remarkable': {
+    name: 'Mt Remarkable Pass', costMin: 14.4, currency: 'AUD',
+    note: 'Mount Remarkable National Park, per vehicle per day (Parks SA).',
+  },
 } satisfies Record<string, ParkPass>;
 
 export type ParkPassId = keyof typeof PARK_PASSES;

@@ -1,0 +1,471 @@
+{
+ "destinations": [
+  {
+   "id": "copper-coast",
+   "name": "Copper Coast",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -33.9625,
+    "longitude": 137.7125
+   },
+   "coordinates_source": "candidate: Kadina (Wikipedia town point); recentre in pin step",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "yorkepeninsula.com.au and Wikivoyage Yorke Peninsula",
+    "wording": "The Copper Coast: Kadina, Wallaroo and Moonta (Moonta/Moonta Bay/Port Hughes was SA Top Tourism Town 2021); Wikivoyage covers Moonta and Wallaroo See listings"
+   },
+   "spots": [
+    "copper-coast-1",
+    "copper-coast-2",
+    "copper-coast-3",
+    "copper-coast-4",
+    "copper-coast-5",
+    "copper-coast-6",
+    "copper-coast-7",
+    "copper-coast-8",
+    "copper-coast-9"
+   ]
+  },
+  {
+   "id": "yorke-peninsula",
+   "name": "Yorke Peninsula",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -34.772545,
+    "longitude": 137.594126
+   },
+   "coordinates_source": "candidate: Minlaton (Wikipedia town point)",
+   "defaultZoomSpanKm": 100,
+   "name_evidence": {
+    "source": "Wikivoyage \"Yorke Peninsula and Clare Valley\"; yorkepeninsula.com.au; visityorkepeninsula.com.au",
+    "wording": "Yorke Peninsula, the peninsula-wide tourism name; this destination holds the east, centre and south coast outside the Copper Coast and Innes National Park"
+   },
+   "spots": [
+    "yorke-peninsula-1",
+    "yorke-peninsula-2",
+    "yorke-peninsula-3",
+    "yorke-peninsula-4",
+    "yorke-peninsula-5",
+    "yorke-peninsula-6",
+    "yorke-peninsula-7",
+    "yorke-peninsula-8",
+    "yorke-peninsula-9",
+    "yorke-peninsula-10",
+    "yorke-peninsula-11",
+    "yorke-peninsula-12",
+    "yorke-peninsula-13",
+    "yorke-peninsula-14",
+    "yorke-peninsula-15",
+    "yorke-peninsula-16",
+    "yorke-peninsula-17",
+    "yorke-peninsula-18",
+    "yorke-peninsula-19"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Cornish copper-mining site with the Hughes Pump House, Miners Cottage and a museum, where Australia's \"Little Cornwall\" began.",
+   "wiki": "Moonta Mines, South Australia",
+   "coordinates_source": "candidate: wikipedia:Moonta Mines, South Australia",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1729,
+   "counted_sources": 3,
+   "id": "copper-coast-1",
+   "name": "Moonta Mines State Heritage Area",
+   "destination": "copper-coast",
+   "coordinates": {
+    "latitude": -34.07581,
+    "longitude": 137.60115
+   },
+   "note": "3 counted sources, 1729 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Moonta",
+    "https://www.yorkepeninsula.com.au",
+    "https://southaustralia.com/destinations/yorke-peninsula"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Sandy coves, beaches, a jetty and foreshore at the Moonta township, with Rossiters Point Lookout nearby.",
+   "wiki": "Moonta Bay, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3914,
+   "counted_sources": 1,
+   "id": "copper-coast-2",
+   "name": "Moonta Bay",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Tourism board township page names sandy coves, beaches, jetty, foreshore and Rossiters Point Lookout (Moonta/Moonta Bay/Port Hughes was SA Top Tourism Town 2021); Wikivoyage Moonta covers the same coast. A beach-and-jetty stop of half an hour or more.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚜",
+   "bio": "National Trust museum in Kadina with the stump-jump plough, Matta House and a miniature train.",
+   "wiki": "Farm Shed Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "copper-coast-3",
+   "name": "The Farm Shed Museum and Tourism Centre",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: Wikivoyage region page and yorkepeninsula.com.au (entry about $12) name this National Trust museum in Kadina with the stump-jump plough, Matta House and a miniature train; allow an hour or more.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "Museum on Wallaroo's maritime and mining past, also running ghost tours.",
+   "wiki": "Wallaroo Heritage and Nautical Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "copper-coast-4",
+   "name": "Wallaroo Heritage and Nautical Museum",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: Wikivoyage Wallaroo See entry and yorkepeninsula.com.au; a museum open daily 10-4 with ghost tours.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Wallaroo",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Long swimming beach on the northern edge of Wallaroo, named by tourism sources.",
+   "wiki": "North Beach, South Australia",
+   "coordinates_source": "candidate: wikipedia:North Beach, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 769,
+   "counted_sources": 1,
+   "id": "copper-coast-5",
+   "name": "North Beach, Wallaroo",
+   "destination": "copper-coast",
+   "coordinates": {
+    "latitude": -33.90113,
+    "longitude": 137.6295
+   },
+   "note": "Rule 1-2: both southaustralia.com and yorkepeninsula.com.au name North Beach; a long swimming beach with a Wikipedia article.",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⛏️",
+   "bio": "Historic copper mine at Moonta with bookable underground tours through a 55 m tunnel.",
+   "wiki": "Wheal Hughes",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 328,
+   "counted_sources": 1,
+   "id": "copper-coast-6",
+   "name": "Wheal Hughes Copper Mine",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: Wikivoyage Moonta and the YP region page both name the underground mine tour (55 m tunnel); a bookable, open visit of an hour or more.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Moonta"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "💦",
+   "bio": "Free water park at Moonta Bay, a permanent family venue worth an hour or two.",
+   "wiki": "Splash Town, Moonta Bay",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "copper-coast-7",
+   "name": "Splash Town",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "Rule 1-2: southaustralia.com and yorkepeninsula.com.au both name this free water park at Moonta Bay, a permanent family venue worth an hour.",
+   "sources": [
+    "https://southaustralia.com/destinations/yorke-peninsula",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Seaside township and beach on the Copper Coast just south of Moonta Bay.",
+   "wiki": "Port Hughes, South Australia",
+   "coordinates_source": "candidate: wikipedia:Port Hughes, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3446,
+   "counted_sources": 2,
+   "id": "copper-coast-8",
+   "name": "Port Hughes",
+   "destination": "copper-coast",
+   "coordinates": {
+    "latitude": -34.077408,
+    "longitude": 137.550746
+   },
+   "note": "2 counted sources, 3446 page views",
+   "sources": [
+    "https://www.yorkepeninsula.com.au",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🚴",
+   "bio": "Sealed 25 km walking and cycling path along the old railway linking Kadina, Wallaroo and Moonta.",
+   "wiki": "Copper Rail Trail",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "copper-coast-9",
+   "name": "Copper Rail Trail",
+   "destination": "copper-coast",
+   "coordinates": null,
+   "note": "25 km sealed walking and cycling path between Kadina, Wallaroo and Moonta, named by southaustralia.com and yorkepeninsula.com.au attraction pages (rules 1, 2).",
+   "sources": [
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🏞️",
+   "bio": "Red clay cliffs along the shore beside Ardrossan's historic jetty.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5802,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-1",
+   "name": "Ardrossan Red Cliffs",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "2 counted sources, 5802 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "Conservation park island with an 1855 cast-iron lighthouse and keeper's cottage, visited by boat from Edithburgh.",
+   "wiki": "Troubridge Island",
+   "coordinates_source": "candidate: wikipedia:Troubridge Island",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1022,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-2",
+   "name": "Troubridge Island",
+   "destination": "yorke-peninsula",
+   "coordinates": {
+    "latitude": -35.11766,
+    "longitude": 137.82733
+   },
+   "note": "Rule 1/2: three counted sources including parks.sa.gov.au (Troubridge Island Conservation Park) and Wikivoyage Edithburgh: the 1855 cast-iron lighthouse and keepers cottage, visited by boat from Edithburgh (island is the spot, not the boat).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Edithburgh",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏊",
+   "bio": "Tidal sea-water swimming pool set into the cliff at Edithburgh, with change rooms.",
+   "wiki": "Edithburgh Tidal Pool",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "yorke-peninsula-3",
+   "name": "Edithburgh Tidal Pool",
+   "destination": "yorke-peninsula",
+   "coordinates": null,
+   "note": "Rule 1/2: two counted sources (Wikivoyage Edithburgh Do and yorkepeninsula.com.au); a tidal sea-water swimming pool set into the cliff, with change rooms, free and always open.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Edithburgh",
+    "https://www.yorkepeninsula.com.au"
+   ]
+  }
+ ]
+}

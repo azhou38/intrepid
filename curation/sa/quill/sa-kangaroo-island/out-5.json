@@ -1,0 +1,181 @@
+{
+ "spots": {
+  "kangaroo-island-49": {
+   "name": "Waterfall Creek Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A trail from the Western River car park down to a creek, stepping stones and a lookout over a seasonal waterfall.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.702942,
+    "longitude": 136.911407
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Walk is in Western River Wilderness Protection Area, which has no NPWS park page (parks.sa.gov.au slug 404s); the tourism listing points to the Flinders Chase page, which does not cover this area. Left out.",
+   "coordinates_source": "Midpoint by length of the Walking SA GPX track for Waterfall Creek Hike (6.3 km, walkingsa.org.au/walk/find-a-place-to-walk/waterfall-creek-hike/); OSM has no route for it",
+   "notes": [
+    "Name drops the draft's '(Flinders Chase)': the walk is in Western River WPA, off Colmans Road, not in the national park. Pin is the midpoint of an out-and-back GPX, so it sits near the lookout end.",
+    "No entry fee found for Western River WPA; treated as free."
+   ]
+  },
+  "kangaroo-island-50": {
+   "name": "Return Road Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "The lightkeepers' old cart track from Harveys Return to Cape Borda, through sugar gum woodland past their cemetery.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.74997,
+    "longitude": 136.621965
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: midpoint of OSM way 'Return Road Hike' (2.0 km segment of the three-way route; route midpoint is within ~200 m)",
+   "notes": [
+    "Inside Flinders Chase National Park; the NPWS page lists it as Return Road Hike (3 hrs, 9 km).",
+    "Needs a park pass entry 'flinders-chase' in parkPasses.ts: NPWS lists site entry $22.40 per person in the page header, but the page's Fees tab lists Adult $13.00 (conflict, see unverified). A Kangaroo Island Tour Pass (adult $58.50) also covers entry."
+   ]
+  },
+  "kangaroo-island-51": {
+   "name": "Harveys Return Hike",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A short, steep hike from Harveys Return campground down the lightkeepers' old route to the bay, with ocean views.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.750404,
+    "longitude": 136.640142
+   },
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "flinders-chase",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "coordinates_source": "Midpoint by length of the Walking SA GPX track for Harveys Return Hike (0.48 km, walkingsa.org.au/walk/find-a-place-to-walk/harveys-return-hike/); trailhead is the carpark at Harveys Return campground (OSM node -35.75127,136.63802)",
+   "notes": [
+    "Draft bio was wrong: this is not a walk toward Cape Borda. Walking SA describes a short hike down to Harveys Return (the bay) on the lightkeepers' original route; the old trackway continues steeply with a rock scramble to the bay. The Return Road Hike is the one that runs to Cape Borda.",
+    "Not a duplicate of Return Road Hike (pins ~1.8 km apart), though both start at Harveys Return.",
+    "Inside Flinders Chase National Park; same pass note as Return Road Hike."
+   ]
+  },
+  "kangaroo-island-52": {
+   "name": "Snellings Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach at the mouth of Middle River, good for swimming, surfing and river or rock fishing.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.667257,
+    "longitude": 137.073017
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach with no single steward.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Snelling Beach' (way 265310276)",
+   "notes": [
+    "OSM and holiday-house names spell it Snelling Beach; the tourism board spells it Snellings. Kept the draft name."
+   ]
+  },
+  "kangaroo-island-53": {
+   "name": "King George Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A pebbly cove beach on the north coast, known for its colour at sunset.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.651505,
+    "longitude": 137.122513
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach with no single steward.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'King George Beach' (way 339931928)",
+   "notes": [
+    "Tourism board page exists (experiences/king-george-beach); one counted source, marginal as flagged by Atlas."
+   ]
+  },
+  "kangaroo-island-54": {
+   "name": "Brown Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered, easily reached beach on Dudley Peninsula for swimming, snorkelling and shell fossicking, beside a camping ground.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.791044,
+    "longitude": 137.858118
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach with no single steward.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Brown Beach' (way 1019411602, beside the campground and viewpoint nodes); a second OSM 'Brown Beach' beach 0.8 km SW was not used",
+   "notes": [
+    "Campground has a fee for camping only; not a visit cost."
+   ]
+  },
+  "kangaroo-island-55": {
+   "name": "Bales Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A surf and walking beach beside Seal Bay, within an aquatic reserve that protects the sea lion breeding colony.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.995474,
+    "longitude": 137.358143
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach; not part of the paid Seal Bay Conservation Park visitor area.",
+   "coordinates_source": "resolve-pin HIGH: OSM natural=beach 'Bales Beach' (way 1091855624)",
+   "notes": [
+    "Tourism board: about 1 km off Seal Bay road via Bales Bay Road, small car park, no facilities, fishing not permitted (aquatic reserve). Beach is ~3.4 km east of Seal Bay's visitor centre, so no pin clash."
+   ]
+  },
+  "kangaroo-island-56": {
+   "name": "Beyeria Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A short interpretive walk with twenty signs through narrow-leaved mallee in Beyeria Conservation Park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.780671,
+    "longitude": 137.595391
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No NPWS page for Beyeria Conservation Park loaded (parks.sa.gov.au slug 404); not guessing a link.",
+   "coordinates_source": "Midpoint by length of the Walking SA GPX circuit (walkingsa.org.au/walk/find-a-place-to-walk/beyeria-walk/); trailhead carpark off Willsons Road is at -35.7798,137.5911",
+   "notes": [
+    "Length conflict: tourism board says 1.5 km, Walking SA says a 1.1 km circuit (30 min); bio omits the distance."
+   ]
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "Flinders Chase NP entry price: NPWS page header says site entry $22.40 per person but its Fees tab lists Adult $13.00 / Concession $10.50 (likely stale); a 'flinders-chase' pass is needed in parkPasses.ts and the price must be confirmed in a browser (kangaroo-island-50, kangaroo-island-51)",
+  "Waterfall Creek Hike: no fee found for Western River WPA, assumed free (kangaroo-island-49)",
+  "Visit hour ranges are estimates from route lengths"
+ ],
+ "needs_browser": [
+  {
+   "id": "kangaroo-island-50",
+   "url": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+   "why": "confirm current Flinders Chase site entry price ($22.40 header vs $13 Fees tab) and confirm Harveys Return Hike is inside the fee area"
+  }
+ ],
+ "notes": [
+  "Overpass was unreachable during this run, so trail midpoints for 49, 51 and 56 come from Walking SA GPX files (official route data) rather than OSM; 50 uses resolve-pin.",
+  "No LOW pins left; none judged not to be added."
+ ]
+}

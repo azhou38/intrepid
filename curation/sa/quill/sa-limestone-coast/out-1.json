@@ -1,0 +1,372 @@
+{
+ "spots": {
+  "mount-gambier-1": {
+   "name": "Blue Lake",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A crater lake beside Mount Gambier that turns deep turquoise each November, with a road and walking track around its rim.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.847169,
+    "longitude": 140.777702
+   },
+   "wiki": "Blue Lake / Warwar",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed lake with no single official visitor page that loaded (mountgambier.sa.gov.au blocks scripts); tours are sold by several operators.",
+   "coordinates_source": "HIGH: OSM natural=water \"Blue Lake\" (photon) 63 m from Wikipedia \"Blue Lake / Warwar\" (-37.846667,140.778056); lake pin, in water by design",
+   "notes": [
+    "Lookouts around the rim are separate OSM viewpoints (Apex Lookout 334 m north); pin kept on the lake."
+   ]
+  },
+  "mount-gambier-2": {
+   "name": "Umpherston Sinkhole",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A sunken garden in a collapsed cave on Mount Gambier's east side, down a steep staircase, with possums in the evening.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.838798,
+    "longitude": 140.808517
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed sinkhole garden, no single official site that loaded.",
+   "coordinates_source": "HIGH: OSM tourism=attraction \"Umpherston Sinkhole\" (photon) 10 m from Commons geotagged-photo median (-37.838775,140.808578)",
+   "notes": [
+    "Draft wiki \"Umpherston Sinkhole / Balumbul\" is not a Wikipedia title (Umpherston Sinkhole redirects to the Mount Gambier article), so wiki is omitted and the photo needs an override.",
+    "Draft hint (-37.8346,140.7786) was null and wrong by 2.7 km; the pin is 2.7 km east of the city centre.",
+    "Possums in the evening: Wikivoyage."
+   ]
+  },
+  "mount-gambier-3": {
+   "name": "Cave Garden",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A sinkhole in the middle of Mount Gambier beside the Riddoch Arts and Cultural Centre, seen from a platform or walked down into.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -37.829336,
+    "longitude": 140.780956
+   },
+   "wiki": "Cave Garden / Thugi",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed city sinkhole, no single official site that loaded.",
+   "coordinates_source": "HIGH: OSM leisure=park \"Cave Garden\" (Nominatim) 40 m from Wikipedia \"Cave Garden / Thugi\" (-37.829167,140.780556)",
+   "notes": [
+    "Waterfall after heavy rain: visitmountgambier.com.au."
+   ]
+  },
+  "mount-gambier-4": {
+   "name": "Engelbrecht Cave",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "A 30-minute guided tour through the dry caves under Mount Gambier's streets, which also hold two cave diving sites.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.820628,
+    "longitude": 140.772405
+   },
+   "wiki": "Engelbrecht Cave",
+   "costMin": 12.5,
+   "costMax": 12.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticket_note": "Official site not confirmed: engelbrechtcave.com.au did not load for scripts and the Visit Mount Gambier page links to it behind a button; check in a browser.",
+   "coordinates_source": "HIGH: OSM natural=cave_entrance \"Engelbrecht Cave\" (Nominatim, 26 Chute St) 15 m from Wikipedia/Wikidata (-37.8205,140.7723)",
+   "notes": [
+    "Tours are paid and bookings are essential (Visit Mount Gambier).",
+    "Adult $12.50 is the Wikivoyage figure last updated Feb 2017 and is stale; marked unverified."
+   ]
+  },
+  "mount-gambier-5": {
+   "name": "Mount Schank",
+   "icon": "🌋",
+   "category": "hike",
+   "bio": "A 100 m extinct volcano south of Mount Gambier with a signposted 900 m walk to the crater rim and views to the coast.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.940186,
+    "longitude": 140.735033
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "State heritage area with no single steward page that loaded; Visit Mount Gambier lists it without a site.",
+   "coordinates_source": "MEDIUM: OSM natural=peak \"Mount Schank\" (Nominatim) 218 m from Wikipedia (-37.94,140.7375)",
+   "notes": [
+    "Pinned on the summit/crater rim peak node, not the route midpoint (the 900 m walk is a short climb to the rim; the 2 km rim walk loops the crater). A 2 km walk around the rim: Visit Mount Gambier."
+   ]
+  },
+  "mount-gambier-6": {
+   "name": "Ewens Ponds",
+   "icon": "🤿",
+   "category": "nature",
+   "bio": "Three spring-fed limestone ponds linked by shallow channels, open to permit-holding snorkellers and divers except in spring.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -38.025738,
+    "longitude": 140.790606
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ewens-ponds-conservation-park",
+   "coordinates_source": "MEDIUM: OSM tourism=attraction \"Ewens Ponds\" (Nominatim) 107 m from Wikipedia (-38.026667,140.790556)",
+   "notes": [
+    "Park entry is free; a permit (fee not stated on the page) is required to snorkel or dive, booked before arrival, in one-hour slots; closed to snorkelling and diving 1 Sep to 30 Nov (NPWS). Permit price not captured, so left off the spot.",
+    "Spot stays free/open since the permit is optional for a walk-only visit."
+   ]
+  },
+  "mount-gambier-7": {
+   "name": "Piccaninnie Ponds",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Spring-fed wetland ponds near the coast, with a beach walk, boardwalks and a reed lookout; the water is closed to swimmers.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -38.04772,
+    "longitude": 140.944172
+   },
+   "wiki": "Piccaninnie Ponds Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/piccaninnie-ponds-conservation-park",
+   "coordinates_source": "MEDIUM: OSM amenity=parking \"Piccaninni Ponds\" on Piccaninnie Ponds Road (Nominatim), the visitor car park; the reserve centroid (-38.047257,140.919955) and Wikipedia point (-38.0508,140.9364, 800 m west) not used",
+   "notes": [
+    "NPWS park alert: closed to snorkelling and diving until further notice after a filamentous algae outbreak; the park stays open. The bio says the water is closed; revisit if the alert is lifted.",
+    "Wikipedia article title is \"Piccaninnie Ponds Conservation Park\" (Piccaninnie Ponds redirects to it), so wiki is set.",
+    "Ramsar-listed wetland of international importance per NPWS page."
+   ]
+  },
+  "mount-gambier-8": {
+   "name": "Little Blue Lake",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "A water-filled sinkhole south of Mount Gambier where visitors swim from a pontoon at the foot of a short staircase.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.927962,
+    "longitude": 140.679932
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Managed by the District Council of Grant (dcgrant.sa.gov.au blocks scripts); no fee seen on Visit Mount Gambier.",
+   "coordinates_source": "MEDIUM: OSM tourism=viewpoint \"Little Blue Lake\" (Nominatim) 120 m from Wikipedia (-37.9292,140.678297)",
+   "notes": [
+    "Entry fee not confirmed; Visit Mount Gambier lists no charge. Camping in the car park and cliff jumping are not permitted."
+   ]
+  },
+  "mount-gambier-9": {
+   "name": "Kilsby Sinkhole",
+   "icon": "🤿",
+   "category": "nature",
+   "bio": "A clear-water sinkhole on a private sheep farm near Mount Gambier, entered on a pre-booked guided snorkel, dive or tour.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -37.89238,
+    "longitude": 140.67627
+   },
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "needs": "booking",
+   "ticketUrl": "https://kilsbysinkhole.com/",
+   "coordinates_source": "LOW: single source, Wikidata Q107672954 \"Kilsby sinkhole\" (-37.89238,140.67627); not in OSM search, no Wikipedia article",
+   "notes": [
+    "pin: LOW",
+    "Access is only with a pre-booked activity on a private working farm; walk-up viewing is not allowed (official FAQ). Sinkhole tour is 50 minutes, under-10s free (official page); snorkel tours supply gear.",
+    "Prices sit in a booking widget not readable by script; cost left empty and raised under needs_browser.",
+    "ticketUrl is the operator homepage; title \"Kilsby Sinkhole | Accommodation, Diving Near Mount Gambier\"."
+   ]
+  },
+  "mount-gambier-10": {
+   "name": "Valley Lake",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "A crater lake on Mount Gambier's southern edge, in a conservation park with boardwalks and wheelchair-accessible paths.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.839877,
+    "longitude": 140.767165
+   },
+   "wiki": "Valley Lake / Ketla Malpi",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed conservation park; the NPWS parks.sa.gov.au/valley-lake-conservation-park slug returns 404, so no official page was confirmed.",
+   "coordinates_source": "HIGH: OSM natural=water \"Valley Lake\" (Nominatim) 48 m from Wikipedia (-37.840278,140.766944); lake pin",
+   "notes": [
+    "Wikivoyage notes the Lakes area gates are locked at 8 PM nightly; dogs prohibited; stay on paths (Visit Mount Gambier)."
+   ]
+  },
+  "mount-gambier-11": {
+   "name": "Tantanoola Caves",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "A cliff-face show cave of pink and brown cave decorations near Tantanoola, with a guided introduction and a free clifftop walk.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.714985,
+    "longitude": 140.501626
+   },
+   "wiki": "Tantanoola Caves Conservation Park",
+   "costMin": 17.5,
+   "costMax": 17.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/tantanoola-caves-conservation-park",
+   "coordinates_source": "LOW: OSM leisure=nature_reserve \"Tantanoola Caves Conservation Park\" centroid (Nominatim); the cave entrance was not found because OSM lookups were rate-limited",
+   "notes": [
+    "pin: LOW",
+    "Park entry is free; cave tour adult $17.50 (fees current to 30 June 2027), concession $14.50, child $10 (NPWS). Tickets bookable online until midnight the day before.",
+    "Open daily 10 am to 3 pm, closed Christmas Day (NPWS); omitted from the spot per the no-hours rule, included in the destination tip."
+   ]
+  },
+  "mount-gambier-12": {
+   "name": "Cape Northumberland Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "A lighthouse on the Cape Northumberland headland south of Port MacDonnell, on the state heritage register since 1980.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -38.05635,
+    "longitude": 140.6674
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official visitor page found; portmacdonnell.com and the council site block scripts.",
+   "coordinates_source": "MEDIUM: Wikidata Q30183718 (-38.05635,140.6674) and Q38164440 (-38.056365,140.66739), Wikipedia heritage list (38°03'23\"S 140°40'03\"E = -38.056389,140.6675); all within 10 m, likely one lineage",
+   "notes": [
+    "Draft said 1882 with no source; Australian Heritage Database wording (via Wikipedia) says built 1881, so the bio gives the 1980 register date instead.",
+    "Public access and any fee are unverified: free/open is assumed.",
+    "wiki omitted: the Wikipedia title redirects to a list article."
+   ]
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "mount-gambier",
+    "name": "Mount Gambier",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -37.829444,
+     "longitude": 140.782778
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 55,
+    "rank": 3,
+    "icon": "🌋",
+    "tagline": "Crater lakes, sinkhole gardens and spring-fed ponds around a dormant volcano.",
+    "description": "Mount Gambier is the second most populated city in South Australia, built on the slopes of a dormant volcano about 450 km south-east of Adelaide and 17 km from the Victorian border. The Blue Lake and Valley Lake fill volcanic craters on its southern edge, while sinkholes open inside the city at the Cave Garden and Umpherston Sinkhole. Beyond town, Mount Schank's crater rim, the spring-fed ponds at Ewens and Piccaninnie, and the show cave at Tantanoola are day trips. Port MacDonnell, on the coast to the south, has the Cape Northumberland headland.",
+    "whyVisit": [
+     "Peer into crater lakes and sinkholes",
+     "Snorkel spring-fed limestone ponds",
+     "Walk up an extinct volcano"
+    ],
+    "highlights": [
+     "Crater lakes",
+     "Spring-fed ponds",
+     "Volcano walks"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🤿",
+      "title": "Book Ewens snorkel permits",
+      "detail": "Every snorkel or dive at Ewens Ponds needs a permit booked before you arrive, and the ponds close to swimmers from 1 September to 30 November."
+     },
+     {
+      "icon": "🐑",
+      "title": "Kilsby needs a booking",
+      "detail": "Kilsby Sinkhole is on a private working sheep farm, so you can enter only with a pre-booked tour, snorkel or dive."
+     },
+     {
+      "icon": "🎟️",
+      "title": "Tantanoola cave tickets",
+      "detail": "Park entry is free, but the cave tour is ticketed and can be booked online until midnight the day before. The cave is open daily 10 am to 3 pm."
+     }
+    ],
+    "bestMonths": [
+     12,
+     1,
+     2,
+     3
+    ],
+    "bestTimeBlurb": "{months} bring a deep turquoise Blue Lake and open snorkelling at Ewens Ponds."
+   },
+   "spots": [
+    "mount-gambier-1",
+    "mount-gambier-2",
+    "mount-gambier-3",
+    "mount-gambier-4",
+    "mount-gambier-5",
+    "mount-gambier-6",
+    "mount-gambier-7",
+    "mount-gambier-8",
+    "mount-gambier-9",
+    "mount-gambier-10",
+    "mount-gambier-11",
+    "mount-gambier-12",
+    "mount-gambier-13"
+   ],
+   "notes": [
+    "Coordinates: Wikipedia town point (-37.829444,140.782778) as in the draft, 5 m from Wikivoyage; OSM place=city node could not be fetched (Nominatim/Overpass rate-limited). No spot within 25 m (Cave Garden pin ~160 m east-west).",
+    "Span kept at 55 km: farthest spots (Tantanoola ~28 km, Piccaninnie car park ~28 km, Cape Northumberland ~27 km) are inside 75% of 55 = 41 km. mount-gambier-13 (Port MacDonnell Maritime Museum) is in another shard.",
+    "Order: Blue Lake, Umpherston, Cave Garden, Engelbrecht, Mount Schank, Ewens, Piccaninnie, Little Blue Lake, Kilsby, Valley Lake, Tantanoola, Cape Northumberland, Port MacDonnell Maritime Museum kept as drafted.",
+    "Facts: second most populated city, 450 km from Adelaide, 17 km from Victoria (Wikipedia Mount Gambier); Blue Lake turquoise from November fading late Feb to March (Wikipedia Blue Lake / Warwar); Ewens closure 1 Sep to 30 Nov and permits (NPWS); Kilsby farm access (operator FAQ); Tantanoola hours and ticketing (NPWS).",
+    "Best months Dec-Mar picks the Blue Lake colour season and an open Ewens Ponds (closed Sep-Nov). Reasons: Piccaninnie water is closed until further notice so the snorkelling reason rests on Ewens and Kilsby."
+   ]
+  }
+ ],
+ "unverified": [
+  "Engelbrecht Cave adult tour price $12.50 (Wikivoyage, 2017, stale); no official site or current price loaded",
+  "Kilsby Sinkhole tour/snorkel prices (booking widget); cost left empty",
+  "Ewens Ponds snorkel/dive permit fee not captured (NPWS page names the permit, not the price)",
+  "Little Blue Lake: free entry assumed, no fee statement found",
+  "Cape Northumberland Lighthouse: public access and no fee assumed, no visitor source found",
+  "Valley Lake: no official NPWS/council page confirmed"
+ ],
+ "needs_browser": [
+  {
+   "id": "mount-gambier-4",
+   "url": "https://visitmountgambier.com.au/travel/engelbrecht-cave-2/ (follow \"Visit website\") and https://www.mountgambier.sa.gov.au",
+   "why": "official site and current tour price; engelbrechtcave.com.au failed for scripts and the council site returns a 202 challenge"
+  },
+  {
+   "id": "mount-gambier-9",
+   "url": "https://kilsbysinkhole.com/sinkhole-tours/",
+   "why": "tour and snorkel prices are in a booking widget"
+  },
+  {
+   "id": "mount-gambier-8",
+   "url": "https://www.dcgrant.sa.gov.au",
+   "why": "steward page and any fee for Little Blue Lake (site blocks scripts)"
+  },
+  {
+   "id": "mount-gambier-12",
+   "url": "https://www.portmacdonnell.com",
+   "why": "lighthouse access and steward page (Cloudflare wall)"
+  }
+ ],
+ "notes": [
+  "pin LOW: mount-gambier-9 Kilsby Sinkhole (single Wikidata source), mount-gambier-11 Tantanoola Caves (reserve centroid, cave entrance not found)",
+  "Pins HIGH/MEDIUM from resolve-pin plus Nominatim lookups; Overpass and later Nominatim calls were rate-limited by parallel shards. Piccaninnie pinned at the OSM car park.",
+  "Nothing judged unfit to add. Piccaninnie Ponds water is closed until further notice, so the bio describes the walk and lookout only.",
+  "Draft Umpherston wiki title does not exist; wiki omitted for Umpherston and Cape Northumberland Lighthouse."
+ ]
+}

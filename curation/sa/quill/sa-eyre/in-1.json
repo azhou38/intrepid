@@ -1,0 +1,450 @@
+{
+ "destinations": [
+  {
+   "id": "port-lincoln",
+   "name": "Port Lincoln",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -34.73222222,
+    "longitude": 135.85861111
+   },
+   "coordinates_source": "wikipedia:Port Lincoln (town point, used as centre only)",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "Wikivoyage \"Port Lincoln\" page and the Eyre Peninsula region page",
+    "wording": "Port Lincoln is a Wikivoyage city of the Eyre Peninsula; tourism: seafood capital and great white shark cage diving base"
+   },
+   "spots": [
+    "port-lincoln-1",
+    "port-lincoln-2",
+    "port-lincoln-3",
+    "port-lincoln-4",
+    "port-lincoln-5",
+    "port-lincoln-6",
+    "port-lincoln-7",
+    "port-lincoln-8",
+    "port-lincoln-9",
+    "port-lincoln"
+   ]
+  },
+  {
+   "id": "lincoln-national-park",
+   "name": "Lincoln National Park",
+   "category": "park",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -34.8657,
+    "longitude": 135.8716
+   },
+   "coordinates_source": "wikipedia:Lincoln National Park (centroid; main visitor point to be resolved)",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": {
+    "source": "parks.sa.gov.au Lincoln National Park page and Wikivoyage Port Lincoln",
+    "wording": "national park south of Port Lincoln with 4 kept spots (Memory Cove, Stamford Hill, Cape Donington, Sleaford Bay)"
+   },
+   "spots": [
+    "lincoln-national-park-1",
+    "lincoln-national-park-2",
+    "lincoln-national-park-3",
+    "lincoln-national-park-4",
+    "lincoln-national-park"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A 15 km coastal drive on private land south of Port Lincoln, with cliffs, blowholes, seals and sea lions; entry needs a permit.",
+   "wiki": "Whalers Way",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "port-lincoln-1",
+   "name": "Whalers Way",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Lincoln",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/tour/australian-coastal-safaris/whalers-way-safari-12day"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "Heritage boatbuilding museum with the original workshops and a working slipway at Port Lincoln.",
+   "wiki": "Axel Stenross Maritime Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-lincoln-2",
+   "name": "Axel Stenross Maritime Museum",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/axel-stenross-maritime-museum-inc"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A panoramic lookout over Boston Bay, Lincoln National Park and Spencer Gulf.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-lincoln-3",
+   "name": "Winter Hill Lookout",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/winter-hill-lookout"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "The 1846 Old Mill, Port Lincoln's oldest structure, with a lookout tower over Boston Bay and a rose garden.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-lincoln-4",
+   "name": "Port Lincoln Old Mill",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/port-lincolns-old-mill"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "🐎",
+   "bio": "Bronze statue of Makybe Diva, three-time Melbourne Cup winner, on the Port Lincoln foreshore.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 77861,
+   "counted_sources": 1,
+   "id": "port-lincoln-5",
+   "name": "Makybe Diva Statue",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/makybe-diva-statue"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🎨",
+   "bio": "A self-guided walking trail of murals through Port Lincoln.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-lincoln-6",
+   "name": "Port Lincoln Street Art Trail",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/street-art-trail-port-lincoln"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A coastal walking and cycling trail from Port Lincoln along Boston Bay to Lincoln National Park.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-lincoln-7",
+   "name": "Parnkalla Trail",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/parnkalla-trail"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "Surf beach and surf reserve west of Port Lincoln, with the remains of an old whaling station.",
+   "wiki": "Fishery Bay",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "port-lincoln-8",
+   "name": "Fishery Bay",
+   "destination": "port-lincoln",
+   "coordinates": null,
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/fishery-bay-surf-reserve"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🐨",
+   "bio": "A farm west of Port Lincoln with a sanctuary for wild koalas; access is by permit and gate key.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Mikkira (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 259,
+   "counted_sources": 1,
+   "id": "port-lincoln-9",
+   "name": "Mikkira Station",
+   "destination": "port-lincoln",
+   "coordinates": {
+    "latitude": -34.838,
+    "longitude": 135.681
+   },
+   "note": "Inside Port Lincoln's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/tour/tour-south/port-lincoln-mikkira-station-wild-koala-safari-tour"
+   ]
+  },
+  {
+   "category": null,
+   "icon": null,
+   "bio": null,
+   "wiki": null,
+   "coordinates_source": "wikipedia:Port Lincoln (town point, used as centre only)",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 57252,
+   "counted_sources": 2,
+   "id": "port-lincoln",
+   "name": "Port Lincoln",
+   "destination": "port-lincoln",
+   "coordinates": {
+    "latitude": -34.73222222,
+    "longitude": 135.85861111
+   },
+   "note": "Kept town is the destination itself, not also a spot: Port Lincoln is a Wikivoyage city of the Eyre Peninsula; tourism: seafood capital and great white shark cage diving base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Port_Lincoln",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A secluded white-sand bay with lookouts in Lincoln National Park, open by booking to about 15 vehicles a day.",
+   "wiki": "Memory Cove",
+   "coordinates_source": "wikipedia:Memory Cove (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 512,
+   "counted_sources": 2,
+   "id": "lincoln-national-park-1",
+   "name": "Memory Cove",
+   "destination": "lincoln-national-park",
+   "coordinates": {
+    "latitude": -34.96027778,
+    "longitude": 135.99138889
+   },
+   "note": "Inside Lincoln National Park's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/lincoln-national-park",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/memory-cove-wilderness-protection-area"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A 1.6 km return walk to the Flinders monument, with views over Port Lincoln and its beaches.",
+   "wiki": "Stamford Hill (South Australia)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "lincoln-national-park-2",
+   "name": "Stamford Hill",
+   "destination": "lincoln-national-park",
+   "coordinates": null,
+   "note": "Inside Lincoln National Park's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/lincoln-national-park",
+    "https://en.wikivoyage.org/wiki/Port_Lincoln"
+   ]
+  }
+ ]
+}

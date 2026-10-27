@@ -1,0 +1,1295 @@
+[
+ {
+  "name": "Tasting Australia",
+  "wiki": "Tasting Australia",
+  "views": 902,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 902 page views",
+  "candidate": {
+   "name": "Tasting Australia",
+   "wiki": "Tasting Australia",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 902,
+   "counted_sources": [
+    "https://southaustralia.com/destinations/adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Tasting_Australia"
+   ],
+   "note": "Event: food festival."
+  }
+ },
+ {
+  "name": "Port Adelaide",
+  "wiki": "Port Adelaide",
+  "views": 11663,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 11663 page views",
+  "candidate": {
+   "name": "Port Adelaide",
+   "wiki": "Port Adelaide",
+   "coordinates": {
+    "lat": -34.834275,
+    "lng": 138.512355
+   },
+   "coordinates_source": "OSM Nominatim: Port Adelaide, Adelaide, South Australia, 5015, Australia",
+   "views": 11663,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Port_Adelaide"
+   ],
+   "note": "Historic port district: maritime heritage, museums, dolphin cruises."
+  }
+ },
+ {
+  "name": "Port Adelaide Lighthouse",
+  "wiki": "Port Adelaide Lighthouse",
+  "views": 826,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 826 page views",
+  "candidate": {
+   "name": "Port Adelaide Lighthouse",
+   "wiki": "Port Adelaide Lighthouse",
+   "coordinates": {
+    "lat": -34.842475,
+    "lng": 138.504208
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 826,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Lighthouses_in_South_Australia",
+    "https://en.wikipedia.org/wiki/Port_Adelaide_Lighthouse"
+   ],
+   "note": "Lighthouse: 1869 lighthouse relocated to Port Adelaide."
+  }
+ },
+ {
+  "name": "South Australian Aviation Museum",
+  "wiki": "South Australian Aviation Museum",
+  "views": 1536,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 1536 page views",
+  "candidate": {
+   "name": "South Australian Aviation Museum",
+   "wiki": "South Australian Aviation Museum",
+   "coordinates": {
+    "lat": -34.84823,
+    "lng": 138.51133
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 1536,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/South_Australian_Aviation_Museum"
+   ],
+   "note": "Museum: aircraft and engines in two hangars."
+  }
+ },
+ {
+  "name": "Hart's Mill Complex",
+  "wiki": "Hart's Mill",
+  "views": 1053,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 1053 page views",
+  "candidate": {
+   "name": "Hart's Mill Complex",
+   "wiki": "Hart's Mill",
+   "coordinates": {
+    "lat": -34.844051,
+    "lng": 138.49904
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 1053,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hart's_Mill"
+   ],
+   "note": "Heritage site: historic waterfront mill buildings."
+  }
+ },
+ {
+  "name": "Port Adelaide Historical Society Museum",
+  "wiki": "Port Adelaide Historical Society",
+  "views": 0,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Port Adelaide Historical Society Museum",
+   "wiki": "Port Adelaide Historical Society",
+   "coordinates": {
+    "lat": -34.832468,
+    "lng": 138.496529
+   },
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/attraction/port-adelaide-historical-society-museum",
+   "views": 0,
+   "counted_sources": [
+    "https://southaustralia.com/products/adelaide/attraction/port-adelaide-historical-society-museum"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Port_Adelaide_Historical_Society"
+   ],
+   "note": "Museum: local history museum."
+  }
+ },
+ {
+  "name": "Port River Cruises",
+  "wiki": "Port River Cruises",
+  "views": 0,
+  "counted_sources": 2,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "reject-signal-with-sources",
+  "reason": "a vehicle or operator, not a place, but 2 counted sources name it",
+  "candidate": {
+   "name": "Port River Cruises",
+   "wiki": "Port River Cruises",
+   "coordinates": {
+    "lat": -34.842383,
+    "lng": 138.504145
+   },
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/tour/port-river-cruises",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor",
+    "https://southaustralia.com/products/adelaide/tour/port-river-cruises"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Port_River_Cruises"
+   ],
+   "note": "Operator: dolphin and ship-graveyard cruises (a vehicle; the place is the sanctuary). [no article of its own: views 0]"
+  }
+ },
+ {
+  "name": "Fishermen's Wharf Market",
+  "wiki": "Fishermen's Wharf Market",
+  "views": 688,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (688 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Fishermen's Wharf Market",
+   "wiki": "Fishermen's Wharf Market",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 688,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Fishermen's_Wharf_Market"
+   ],
+   "note": "Weekly market: Sunday market at Port Adelaide."
+  }
+ },
+ {
+  "name": "Semaphore Beach",
+  "wiki": "Semaphore, South Australia",
+  "views": 0,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Semaphore Beach",
+   "wiki": "Semaphore, South Australia",
+   "coordinates": {
+    "lat": -34.838889,
+    "lng": 138.483889
+   },
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/attraction/semaphore-beach",
+   "views": 0,
+   "counted_sources": [
+    "https://southaustralia.com/products/adelaide/attraction/semaphore-beach"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Semaphore,_South_Australia"
+   ],
+   "note": "Beach: beach and jetty at Semaphore. [no article of its own: views 0]"
+  }
+ },
+ {
+  "name": "Largs Bay",
+  "wiki": "Largs Bay, South Australia",
+  "views": 2684,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (2684 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Largs Bay",
+   "wiki": "Largs Bay, South Australia",
+   "coordinates": {
+    "lat": -34.824355,
+    "lng": 138.483953
+   },
+   "coordinates_source": "OSM Nominatim: Largs Bay Jetty, Coast Track, Largs Bay, Adelaide, South Australia, 5019, Austra",
+   "views": 2684,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Largs_Bay,_South_Australia"
+   ],
+   "note": "Beach suburb: jetty and beach north of Semaphore."
+  }
+ },
+ {
+  "name": "Tennyson Dunes",
+  "wiki": "Wara Wayingga-Tennyson Dunes Conservation Reserve",
+  "views": 0,
+  "counted_sources": 2,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "2 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Tennyson Dunes",
+   "wiki": "Wara Wayingga-Tennyson Dunes Conservation Reserve",
+   "coordinates": {
+    "lat": -34.87945,
+    "lng": 138.48261
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide",
+    "https://www.parks.sa.gov.au/parks/wara-wayingga-tennyson-dunes-conservation-reserve"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Wara_Wayingga-Tennyson_Dunes_Conservation_Reserve"
+   ],
+   "note": "Conservation reserve: most accessible dunes in the state."
+  }
+ },
+ {
+  "name": "Thompson Beach",
+  "wiki": "Thompson Beach, South Australia",
+  "views": 1528,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 1528 page views",
+  "candidate": {
+   "name": "Thompson Beach",
+   "wiki": "Thompson Beach, South Australia",
+   "coordinates": {
+    "lat": -34.493687,
+    "lng": 138.2931
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 1528,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Adelaide_International_Bird_Sanctuary_National_Park—Winaityinaityi_Pangkara"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Thompson_Beach,_South_Australia"
+   ],
+   "note": "Beach and birding spot: samphire coast, dolphin sightings."
+  }
+ },
+ {
+  "name": "Garden Island Ships' Graveyard",
+  "wiki": "Garden Island (South Australia)",
+  "views": 1910,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 1910 page views",
+  "candidate": {
+   "name": "Garden Island Ships' Graveyard",
+   "wiki": "Garden Island (South Australia)",
+   "coordinates": {
+    "lat": -34.80717,
+    "lng": 138.53445
+   },
+   "coordinates_source": "wikipedia:Garden Island (South Australia)",
+   "views": 1910,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Geography_of_Adelaide",
+    "https://en.wikipedia.org/wiki/Garden_Island_(South_Australia)"
+   ],
+   "note": "Ship graveyard: derelict vessels, seen from cruises."
+  }
+ },
+ {
+  "name": "Glenelg Jetty",
+  "wiki": "Glenelg, South Australia",
+  "views": 0,
+  "counted_sources": 2,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "2 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Glenelg Jetty",
+   "wiki": "Glenelg, South Australia",
+   "coordinates": {
+    "lat": -34.980224,
+    "lng": 138.51243
+   },
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/attraction/glenelg-jetty",
+   "views": 0,
+   "counted_sources": [
+    "https://southaustralia.com/products/adelaide/attraction/glenelg-jetty",
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Glenelg,_South_Australia"
+   ],
+   "note": "Jetty: Glenelg jetty. [no article of its own: views 0]"
+  }
+ },
+ {
+  "name": "Marina Pier Glenelg",
+  "wiki": "Holdfast Shores",
+  "views": 0,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Marina Pier Glenelg",
+   "wiki": "Holdfast Shores",
+   "coordinates": {
+    "lat": -34.976974,
+    "lng": 138.511153
+   },
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/attraction/marina-pier-glenelg",
+   "views": 0,
+   "counted_sources": [
+    "https://southaustralia.com/products/adelaide/attraction/marina-pier-glenelg"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Holdfast_Shores"
+   ],
+   "note": "Marina and pier: Holdfast Shores marina. [no article of its own: views 0]"
+  }
+ },
+ {
+  "name": "Bay Discovery Centre",
+  "wiki": "Bay Discovery Centre",
+  "views": 0,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Bay Discovery Centre",
+   "wiki": "Bay Discovery Centre",
+   "coordinates": {
+    "lat": -34.98007,
+    "lng": 138.51133
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Bay_Discovery_Centre"
+   ],
+   "note": "Museum: local history of Holdfast Bay in Glenelg Town Hall."
+  }
+ },
+ {
+  "name": "The Beachouse",
+  "wiki": "The Beachouse",
+  "views": 7929,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 7929 page views",
+  "candidate": {
+   "name": "The Beachouse",
+   "wiki": "The Beachouse",
+   "coordinates": {
+    "lat": -34.9792,
+    "lng": 138.5115
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 7929,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Amusement_parks_in_South_Australia",
+    "https://en.wikipedia.org/wiki/The_Beachouse"
+   ],
+   "note": "Amusement park: seafront rides and attractions at Glenelg."
+  }
+ },
+ {
+  "name": "Luna Park Glenelg",
+  "wiki": "Luna Park Glenelg",
+  "views": 9390,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (9390 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Luna Park Glenelg",
+   "wiki": "Luna Park Glenelg",
+   "coordinates": {
+    "lat": -34.9792,
+    "lng": 138.511
+   },
+   "coordinates_source": "wikipedia:Luna Park Glenelg",
+   "views": 9390,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Amusement_parks_in_South_Australia",
+    "https://en.wikipedia.org/wiki/Luna_Park_Glenelg"
+   ],
+   "note": "Amusement park: former park (closed)."
+  }
+ },
+ {
+  "name": "Grange",
+  "wiki": "Grange, South Australia",
+  "views": 3409,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 3409 page views",
+  "candidate": {
+   "name": "Grange",
+   "wiki": "Grange, South Australia",
+   "coordinates": {
+    "lat": -34.902204,
+    "lng": 138.495824
+   },
+   "coordinates_source": "wikipedia:Grange, South Australia",
+   "views": 3409,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Grange,_South_Australia"
+   ],
+   "note": "Beach suburb: Grange jetty and beach."
+  }
+ },
+ {
+  "name": "Brighton",
+  "wiki": "Brighton, South Australia",
+  "views": 4504,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 4504 page views",
+  "candidate": {
+   "name": "Brighton",
+   "wiki": "Brighton, South Australia",
+   "coordinates": {
+    "lat": -35.019,
+    "lng": 138.52
+   },
+   "coordinates_source": "wikipedia:Brighton, South Australia",
+   "views": 4504,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Brighton,_South_Australia"
+   ],
+   "note": "Beach suburb: Brighton jetty and beach."
+  }
+ },
+ {
+  "name": "Brighton Jetty",
+  "wiki": "Brighton, South Australia",
+  "views": 0,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Brighton Jetty",
+   "wiki": "Brighton, South Australia",
+   "coordinates": {
+    "lat": -35.017455,
+    "lng": 138.512613
+   },
+   "coordinates_source": "OSM Nominatim: Brighton Jetty, Esplanade, Brighton, Adelaide, South Australia, 5048, Australia",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Brighton,_South_Australia"
+   ],
+   "note": "Jetty: Brighton jetty. [no article of its own: views 0]"
+  }
+ },
+ {
+  "name": "Seacliff",
+  "wiki": "Seacliff, South Australia",
+  "views": 2009,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (2009 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Seacliff",
+   "wiki": "Seacliff, South Australia",
+   "coordinates": {
+    "lat": -35.033494,
+    "lng": 138.519522
+   },
+   "coordinates_source": "wikipedia:Seacliff, South Australia",
+   "views": 2009,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Seacliff,_South_Australia"
+   ],
+   "note": "Beach suburb: Seacliff beach."
+  }
+ },
+ {
+  "name": "Marino Rocks Lighthouse",
+  "wiki": "Marino Rocks Lighthouse",
+  "views": 0,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (0 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Marino Rocks Lighthouse",
+   "wiki": "Marino Rocks Lighthouse",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Lighthouses_in_South_Australia",
+    "https://en.wikipedia.org/wiki/Marino_Rocks_Lighthouse"
+   ],
+   "note": "Lighthouse: clifftop lighthouse at Marino. [no article of its own: views 0]",
+   "redirect_to": "Marino Conservation Park"
+  }
+ },
+ {
+  "name": "Marino Conservation Park",
+  "wiki": "Marino Conservation Park",
+  "views": 421,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 421 page views",
+  "candidate": {
+   "name": "Marino Conservation Park",
+   "wiki": "Marino Conservation Park",
+   "coordinates": {
+    "lat": -35.05265,
+    "lng": 138.5088
+   },
+   "coordinates_source": "wikipedia:Marino Conservation Park",
+   "views": 421,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Marino_Conservation_Park"
+   ],
+   "note": "Conservation park: coastal clifftop park, Marino."
+  }
+ },
+ {
+  "name": "Hallett Cove Beach",
+  "wiki": "Hallett Cove, South Australia",
+  "views": 6297,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 6297 page views",
+  "candidate": {
+   "name": "Hallett Cove Beach",
+   "wiki": "Hallett Cove, South Australia",
+   "coordinates": {
+    "lat": -35.077,
+    "lng": 138.502
+   },
+   "coordinates_source": "wikipedia:Hallett Cove, South Australia",
+   "views": 6297,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Hallett_Cove,_South_Australia"
+   ],
+   "note": "Beach: beach at Hallett Cove."
+  }
+ },
+ {
+  "name": "Kingston Park Coastal Reserve",
+  "wiki": "Kingston House, Kingston Park",
+  "views": 461,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (461 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Kingston Park Coastal Reserve",
+   "wiki": "Kingston House, Kingston Park",
+   "coordinates": {
+    "lat": -35.040724,
+    "lng": 138.516172
+   },
+   "coordinates_source": "wikipedia:Kingston House, Kingston Park",
+   "views": 461,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_South_Australia",
+    "https://en.wikipedia.org/wiki/Kingston_House,_Kingston_Park"
+   ],
+   "note": "Coastal reserve: beach and reserve at Kingston Park (Kingston House)."
+  }
+ },
+ {
+  "name": "Port Noarlunga",
+  "wiki": "Port Noarlunga, South Australia",
+  "views": 5671,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 5671 page views",
+  "candidate": {
+   "name": "Port Noarlunga",
+   "wiki": "Port Noarlunga, South Australia",
+   "coordinates": {
+    "lat": -35.149003,
+    "lng": 138.4752
+   },
+   "coordinates_source": "wikipedia:Port Noarlunga, South Australia",
+   "views": 5671,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Port_Noarlunga,_South_Australia"
+   ],
+   "note": "Seaside suburb: jetty and snorkel reef."
+  }
+ },
+ {
+  "name": "Port Noarlunga Reef Aquatic Reserve",
+  "wiki": "Port Noarlunga Reef Aquatic Reserve",
+  "views": 789,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (789 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Port Noarlunga Reef Aquatic Reserve",
+   "wiki": "Port Noarlunga Reef Aquatic Reserve",
+   "coordinates": {
+    "lat": -35.2702,
+    "lng": 138.4619
+   },
+   "coordinates_source": "wikipedia:Port Noarlunga Reef Aquatic Reserve",
+   "views": 789,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Port_Noarlunga_Reef_Aquatic_Reserve"
+   ],
+   "note": "Marine reserve: snorkelling and diving off the jetty."
+  }
+ },
+ {
+  "name": "Christies Beach",
+  "wiki": "Christies Beach, South Australia",
+  "views": 4959,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (4959 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Christies Beach",
+   "wiki": "Christies Beach, South Australia",
+   "coordinates": {
+    "lat": -35.13494,
+    "lng": 138.47696
+   },
+   "coordinates_source": "wikipedia:Christies Beach, South Australia",
+   "views": 4959,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_South_Australia",
+    "https://en.wikipedia.org/wiki/Christies_Beach,_South_Australia"
+   ],
+   "note": "Beach suburb: Christies Beach."
+  }
+ },
+ {
+  "name": "Moana Sands Conservation Park",
+  "wiki": "Moana Sands Conservation Park",
+  "views": 250,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 250 page views",
+  "candidate": {
+   "name": "Moana Sands Conservation Park",
+   "wiki": "Moana Sands Conservation Park",
+   "coordinates": {
+    "lat": -35.2025,
+    "lng": 138.47277778
+   },
+   "coordinates_source": "wikipedia:Moana Sands Conservation Park",
+   "views": 250,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Moana_Sands_Conservation_Park"
+   ],
+   "note": "Conservation park: dune park at Moana."
+  }
+ },
+ {
+  "name": "Onkaparinga River National Park",
+  "wiki": "Onkaparinga River National Park",
+  "views": 1030,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 1030 page views",
+  "candidate": {
+   "name": "Onkaparinga River National Park",
+   "wiki": "Onkaparinga River National Park",
+   "coordinates": {
+    "lat": -35.16055556,
+    "lng": 138.55388889
+   },
+   "coordinates_source": "wikipedia:Onkaparinga River National Park",
+   "views": 1030,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Onkaparinga_River_National_Park"
+   ],
+   "note": "National park: gorge walks (region file puts it in Fleurieu)."
+  }
+ },
+ {
+  "name": "Brown Hill Creek Recreation Park",
+  "wiki": "Brownhill Creek Recreation Park",
+  "views": 333,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 333 page views",
+  "candidate": {
+   "name": "Brown Hill Creek Recreation Park",
+   "wiki": "Brownhill Creek Recreation Park",
+   "coordinates": {
+    "lat": -34.9896,
+    "lng": 138.6372
+   },
+   "coordinates_source": "wikipedia:Brownhill Creek Recreation Park",
+   "views": 333,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Brownhill_Creek_Recreation_Park"
+   ],
+   "note": "Recreation park: creek park, Mitcham."
+  }
+ },
+ {
+  "name": "Sturt Gorge Recreation Park",
+  "wiki": "Sturt Gorge Recreation Park",
+  "views": 610,
+  "counted_sources": 2,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "2 counted source(s), 610 page views",
+  "candidate": {
+   "name": "Sturt Gorge Recreation Park",
+   "wiki": "Sturt Gorge Recreation Park",
+   "coordinates": {
+    "lat": -35.04176964,
+    "lng": 138.57642755
+   },
+   "coordinates_source": "wikipedia:Sturt Gorge Recreation Park",
+   "views": 610,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide",
+    "https://www.parks.sa.gov.au/parks/sturt-gorge-recreation-park"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sturt_Gorge_Recreation_Park"
+   ],
+   "note": "Recreation park: gorge walking trails."
+  }
+ },
+ {
+  "name": "Shepherds Hill Recreation Park",
+  "wiki": "Shepherds Hill Recreation Park",
+  "views": 267,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 267 page views",
+  "candidate": {
+   "name": "Shepherds Hill Recreation Park",
+   "wiki": "Shepherds Hill Recreation Park",
+   "coordinates": {
+    "lat": -35.01559722,
+    "lng": 138.5868
+   },
+   "coordinates_source": "wikipedia:Shepherds Hill Recreation Park",
+   "views": 267,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Shepherds_Hill_Recreation_Park"
+   ],
+   "note": "Recreation park: hills park at Eden Hills."
+  }
+ },
+ {
+  "name": "Glenthorne National Park",
+  "wiki": "Glenthorne National Park–Ityamaiitpinna Yarta",
+  "views": 552,
+  "counted_sources": 2,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "2 counted source(s), 552 page views",
+  "candidate": {
+   "name": "Glenthorne National Park",
+   "wiki": "Glenthorne National Park–Ityamaiitpinna Yarta",
+   "coordinates": {
+    "lat": -35.05305556,
+    "lng": 138.545
+   },
+   "coordinates_source": "wikipedia:Glenthorne National Park–Ityamaiitpinna Yarta",
+   "views": 552,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide",
+    "https://www.parks.sa.gov.au/parks/glenthorne-national-park-ityamaiitpinna-yarta"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Glenthorne_National_Park%E2%80%93Ityamaiitpinna_Yarta"
+   ],
+   "note": "National park: newest national park, O'Halloran Hill."
+  }
+ },
+ {
+  "name": "Warriparinga",
+  "wiki": "Warriparinga",
+  "views": 784,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (784 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Warriparinga",
+   "wiki": "Warriparinga",
+   "coordinates": {
+    "lat": -35.020696,
+    "lng": 138.562991
+   },
+   "coordinates_source": "OSM Nominatim: Living Kaurna Cultural Centre, Warriparinga Way, Bedford Park, Adelaide, South A",
+   "views": 784,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Parks_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Warriparinga"
+   ],
+   "note": "Cultural site: Kaurna Living Kaurna Cultural Centre on Sturt River."
+  }
+ },
+ {
+  "name": "Cobbler Creek Recreation Park",
+  "wiki": "Cobbler Creek Recreation Park",
+  "views": 980,
+  "counted_sources": 2,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "2 counted source(s), 980 page views",
+  "candidate": {
+   "name": "Cobbler Creek Recreation Park",
+   "wiki": "Cobbler Creek Recreation Park",
+   "coordinates": {
+    "lat": -34.775,
+    "lng": 138.69
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 980,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully",
+    "https://www.parks.sa.gov.au/parks/adelaide"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Cobbler_Creek_Recreation_Park"
+   ],
+   "note": "Recreation park: trails and dams (WV: not a major draw)."
+  }
+ },
+ {
+  "name": "Angove Conservation Park",
+  "wiki": "Angove Conservation Park",
+  "views": 268,
+  "counted_sources": 2,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "2 counted source(s), 268 page views",
+  "candidate": {
+   "name": "Angove Conservation Park",
+   "wiki": "Angove Conservation Park",
+   "coordinates": {
+    "lat": -34.8244,
+    "lng": 138.723
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 268,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Angove_Conservation_Park"
+   ],
+   "note": "Conservation park: local reserve."
+  }
+ },
+ {
+  "name": "Para Wirra Conservation Park",
+  "wiki": "Para Wirra Conservation Park",
+  "views": 777,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 777 page views",
+  "candidate": {
+   "name": "Para Wirra Conservation Park",
+   "wiki": "Para Wirra Conservation Park",
+   "coordinates": {
+    "lat": -34.68067182,
+    "lng": 138.83008091
+   },
+   "coordinates_source": "wikipedia:Para Wirra Conservation Park",
+   "views": 777,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Para_Wirra_Conservation_Park"
+   ],
+   "note": "Conservation park: northern Adelaide hills park with trails."
+  }
+ },
+ {
+  "name": "Classic Jets Fighter Museum",
+  "wiki": "Parafield Airport",
+  "views": 7302,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 7302 page views",
+  "candidate": {
+   "name": "Classic Jets Fighter Museum",
+   "wiki": "Parafield Airport",
+   "coordinates": {
+    "lat": -34.788675,
+    "lng": 138.637647
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 7302,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Parafield_Airport"
+   ],
+   "note": "Museum: fighter jets at Parafield."
+  }
+ },
+ {
+  "name": "Salisbury Waterwheel Museum",
+  "wiki": "Salisbury Waterwheel Museum",
+  "views": 0,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 0 page views",
+  "candidate": {
+   "name": "Salisbury Waterwheel Museum",
+   "wiki": "Salisbury Waterwheel Museum",
+   "coordinates": {
+    "lat": -34.759476,
+    "lng": 138.648595
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Salisbury_Waterwheel_Museum"
+   ],
+   "note": "Museum: restored waterwheel (WV: just a museum)."
+  }
+ },
+ {
+  "name": "Tea Tree Gully Heritage Museum",
+  "wiki": "Tea Tree Gully Heritage Museum",
+  "views": 290,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 290 page views",
+  "candidate": {
+   "name": "Tea Tree Gully Heritage Museum",
+   "wiki": "Tea Tree Gully Heritage Museum",
+   "coordinates": {
+    "lat": -34.822101,
+    "lng": 138.730579
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 290,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Tea_Tree_Gully_Heritage_Museum"
+   ],
+   "note": "Museum: local heritage museum."
+  }
+ },
+ {
+  "name": "National Military Vehicle Museum",
+  "wiki": "National Military Vehicle Museum",
+  "views": 1040,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "weak-score",
+  "reason": "1 counted source(s), 1040 page views",
+  "candidate": {
+   "name": "National Military Vehicle Museum",
+   "wiki": "National Military Vehicle Museum",
+   "coordinates": {
+    "lat": -34.7261,
+    "lng": 138.629
+   },
+   "coordinates_source": "Wikivoyage listing geotag",
+   "views": 1040,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Adelaide",
+    "https://en.wikipedia.org/wiki/National_Military_Vehicle_Museum"
+   ],
+   "note": "Museum: military vehicles, Edinburgh Parks."
+  }
+ },
+ {
+  "name": "Adelaide Motorsport Park",
+  "wiki": "The Bend Motorsport Park",
+  "views": 35310,
+  "counted_sources": 1,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "feature-or-area",
+  "reason": "a feature or area, not obviously a place to go",
+  "candidate": {
+   "name": "Adelaide Motorsport Park",
+   "wiki": "The Bend Motorsport Park",
+   "coordinates": {
+    "lat": -35.30833333,
+    "lng": 139.51666667
+   },
+   "coordinates_source": "wikipedia:The Bend Motorsport Park",
+   "views": 35310,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/The_Bend_Motorsport_Park"
+   ],
+   "note": "Motorsport venue: racetrack at Tailem Bend? (WV lists under Salisbury; may be Tailem Bend)."
+  }
+ },
+ {
+  "name": "Tramway Museum, St Kilda",
+  "wiki": "Tramway Museum, St Kilda",
+  "views": 1440,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (1440 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Tramway Museum, St Kilda",
+   "wiki": "Tramway Museum, St Kilda",
+   "coordinates": {
+    "lat": -34.736,
+    "lng": 138.548
+   },
+   "coordinates_source": "wikipedia:Tramway Museum, St Kilda",
+   "views": 1440,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Museums_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Tramway_Museum,_St_Kilda"
+   ],
+   "note": "Museum: tram museum with rides at St Kilda."
+  }
+ },
+ {
+  "name": "St Kilda Mangrove Trail",
+  "wiki": "St Kilda, South Australia",
+  "views": 2555,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (2555 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "St Kilda Mangrove Trail",
+   "wiki": "St Kilda, South Australia",
+   "coordinates": {
+    "lat": -34.73861111,
+    "lng": 138.53472222
+   },
+   "coordinates_source": "wikipedia:St Kilda, South Australia",
+   "views": 2555,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Beaches_of_South_Australia",
+    "https://en.wikipedia.org/wiki/St_Kilda,_South_Australia"
+   ],
+   "note": "Boardwalk: mangrove boardwalk and playground at St Kilda."
+  }
+ },
+ {
+  "name": "Barker Inlet-St Kilda Aquatic Reserve",
+  "wiki": "Barker Inlet – St Kilda Aquatic Reserve",
+  "views": 380,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (380 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Barker Inlet-St Kilda Aquatic Reserve",
+   "wiki": "Barker Inlet – St Kilda Aquatic Reserve",
+   "coordinates": {
+    "lat": -34.7836,
+    "lng": 138.5454
+   },
+   "coordinates_source": "wikipedia:Barker Inlet – St Kilda Aquatic Reserve",
+   "views": 380,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Protected_areas_in_Adelaide",
+    "https://en.wikipedia.org/wiki/Barker_Inlet_%E2%80%93_St_Kilda_Aquatic_Reserve"
+   ],
+   "note": "Aquatic reserve: mangroves and tidal flats."
+  }
+ },
+ {
+  "name": "Dazzeland",
+  "wiki": "Dazzeland",
+  "views": 9524,
+  "counted_sources": 0,
+  "existing_spot": null,
+  "verdict": "marginal",
+  "rule": "no-counted-source",
+  "reason": "no counted source in the list (9524 page views): the judge re-looks for one before rejecting",
+  "candidate": {
+   "name": "Dazzeland",
+   "wiki": "Dazzeland",
+   "coordinates": {
+    "lat": -34.92222222,
+    "lng": 138.60055556
+   },
+   "coordinates_source": "wikipedia:Dazzeland",
+   "views": 9524,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Amusement_parks_in_South_Australia",
+    "https://en.wikipedia.org/wiki/Dazzeland"
+   ],
+   "note": "Amusement park: indoor amusements."
+  }
+ }
+]

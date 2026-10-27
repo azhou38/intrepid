@@ -1,0 +1,304 @@
+{
+ "dest:riverland:header": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.4
+  },
+  "reason": "Murray River NP cliffs and reflection 15 km N of Renmark (file page: Renmark category); wide, real, 3072 px"
+ },
+ "dest:riverland:why1": {
+  "decision": "none",
+  "choice": "none: reason 'Paddle through red gum creeks'; no candidate shows paddling or a red gum creek (Pike River sunset boat on trailer and cliff mirror-pool are not paddling)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no passing photo; grey card stays"
+ },
+ "dest:riverland:why2": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "pelicans on dead trees at Lake Bonney, 6000 px, real; wetland birds"
+ },
+ "dest:riverland:why3": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "PS Industry paddle steamer at Renmark wharf, 2500 px, shows river heritage"
+ },
+ "spot:riverland-1": {
+  "decision": "reject",
+  "choice": "none: no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is LoxtonMainStreet (a street, not the Historical Village): fails check 2; sent to search (the two Loxton Historical Village geo files on the riverland-19 sheet, Bakelite radios and Charming Fake Village, were not for this slot and are interiors/facade, unreviewed here)"
+ },
+ "spot:riverland-2": {
+  "decision": "reject",
+  "choice": "none: no candidates; riverland-8..: Pike River sunset (Murray River NP, Riverland, file page confirmed, 3840x2160 CC BY-SA 4.0, on the why1 sheet #6) is a usable replacement",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current \"Murray River redgums at Echuca\" is Victoria: fails check 1",
+  "recommend": "Pike River Murray River National Park Riverland South Australia.jpg (why1 sheet #6); 16:9 so needs hero_crop check (x~0.5,y~0.55)"
+ },
+ "spot:riverland-3": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is a parrot at Wyperfeld NP (Victoria), not Banrock Station: fails check 1/2"
+ },
+ "spot:riverland-4": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Lake Bonney at Barmera (file page: Lake Bonney (Riverland) category); plain but shows the lake. why1 sheet #3/#5 (dead trees in the lake) are more striking if the owner wants better"
+ },
+ "spot:riverland-5": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Chowilla floodplain from Headings Cliffs, named in file; wide real photo"
+ },
+ "spot:riverland-7": {
+  "decision": "reject",
+  "choice": "none (confirm slot): replace with the Big Orange candidates on the riverland-31 sheet",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is the Gibeau Orange Julep in Montreal: fails check 1",
+  "recommend": "Big Orange.jpg (1965 px, CC BY-SA 3.0, page: The Big Orange, Berri, geo 34.246S 140.621E; crop ok full width) or That's a big orange - panoramio.jpg"
+ },
+ "spot:riverland-8": {
+  "decision": "choice",
+  "choice": "2",
+  "candidates": [
+   {
+    "file": "PS Industry, Renmark 02.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "paddle steamer Industry on Renmark wharf"
+   },
+   {
+    "file": "PS Industry, Renmark 20250717-110030.jpg",
+    "verdict": "reject",
+    "reason": "deck benches, not the vessel"
+   },
+   {
+    "file": "PS Industry, Renmark 03.jpg",
+    "verdict": "reject",
+    "reason": "close-up of engine telegraph"
+   },
+   {
+    "file": "PS Industry, Renmark 01.jpg",
+    "verdict": "alt",
+    "reason": "clear but already why3"
+   },
+   {
+    "file": "240328 Caird's 1828 Industry engine.jpg",
+    "verdict": "reject",
+    "reason": "museum engine, not the boat"
+   },
+   {
+    "file": "Renmark Hotel 20250717-132342.jpg",
+    "verdict": "reject",
+    "reason": "dessert, wrong subject"
+   },
+   {
+    "file": "Nanya at Renmark Hotel 20250717-120803.jpg",
+    "verdict": "reject",
+    "reason": "hotel foyer"
+   }
+  ],
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  },
+  "reason": "PS Industry, Renmark 02: steamer at the wharf, 2500 px CC BY 2.0, whole vessel visible; #1 is a deck bench close-up, #3 a gauge, #4 is already the why3 file (sharing allowed, but #2 gives a distinct shot). Current is an IBM logo SVG."
+ },
+ "spot:riverland-9": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is National Trust Centre, Sydney (file page): fails check 1"
+ },
+ "spot:riverland-11": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Waikerie main street, not the silo art: fails check 2"
+ },
+ "spot:riverland-12": {
+  "decision": "none",
+  "choice": "none: only candidates are Waikerie Hotel Motel (a building); no photo of the cliff-top walk",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "stand-in/wrong subject"
+ },
+ "spot:riverland-13": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Gluepot mallee scrub, file named for the reserve; plain but recognisable"
+ },
+ "spot:riverland-14": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Paringa Bridge at Renmark, not Loch Luna reserves: fails check 2"
+ },
+ "spot:riverland-15": {
+  "decision": "none",
+  "choice": "none: candidates are a lizard and an ant (stand-ins, 14 km away)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no photo of the park"
+ },
+ "spot:riverland-16": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is a portrait of a man (MikeyDay): fails check 2/4"
+ },
+ "spot:riverland-17": {
+  "decision": "none",
+  "choice": "none: no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "none found"
+ },
+ "spot:riverland-18": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Paringa Bridge, not the museum; also same file as riverland-14: fails check 2"
+ },
+ "spot:riverland-19": {
+  "decision": "none",
+  "choice": "none: both candidates are Loxton Historical Village interiors/facade, not the tree sculptures; current is a Big Things postcard (shared by 6 spots, prefilter)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no photo of the sculptures"
+ },
+ "spot:riverland-20": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Renmark Hotel, not Bulyong Island: fails check 2"
+ },
+ "spot:riverland-21": {
+  "decision": "none",
+  "choice": "none: no candidates; current Bunda Cliffs is the Nullarbor, wrong place",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no photo"
+ },
+ "spot:riverland-22": {
+  "decision": "choice",
+  "choice": "1",
+  "candidates": [
+   {
+    "file": "flickr 35225712055",
+    "verdict": "accept",
+    "reason": "Overland Corner Hotel, named in title"
+   },
+   {
+    "file": "flickr 37857828822",
+    "verdict": "reject",
+    "reason": "Cobdogla station sign, other place"
+   },
+   {
+    "file": "flickr 37200828064",
+    "verdict": "reject",
+    "reason": "vines at Cobdogla"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Overland Corner Hotel photo from Flickr (openverse, CC BY-ND 2.0, denisbin, 1024x768): stone hotel, the spot itself; note ND licence and 1024 px. Other candidates are Cobdogla, the current is a map (tif)."
+ },
+ "spot:riverland-23": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Morgan town on the Murray bluff, file named for Morgan; ok"
+ },
+ "spot:riverland-24": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current Judge Branch is Frozen Head State Park, Tennessee (file page): fails check 1"
+ },
+ "spot:riverland-25": {
+  "decision": "none",
+  "choice": "none: candidates are two birds (spotted crake, mistletoebird) at 800 m, stand-ins; current is a map",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no photo"
+ },
+ "spot:riverland-26": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Sterling State Park, Michigan: fails check 1"
+ },
+ "spot:riverland-27": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is FBISD Austin High School (Texas): fails check 1"
+ },
+ "spot:riverland-28": {
+  "decision": "none",
+  "choice": "none: no candidates; current is a 1950 B&W scan",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no photo"
+ },
+ "spot:riverland-29": {
+  "decision": "none",
+  "choice": "none: candidates are ultra-wide panoramas from river level (aspect ~2.5-3), not the clifftop view; a square crop is a sliver",
+  "candidates": [],
+  "hero_crop": "fail: >2.5:1 panorama from water level, not the clifftop viewpoint",
+  "reason": "crop fail"
+ },
+ "spot:riverland-30": {
+  "decision": "none",
+  "choice": "none: candidates are roads at 1.2 km; current is a Kentucky/Colorado map",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no photo"
+ },
+ "spot:riverland-31": {
+  "decision": "none",
+  "choice": "none: the two candidates on this sheet are the Berri Big Orange (not Wilabalangaloo); recommended for riverland-7 instead",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no photo of the reserve"
+ },
+ "spot:riverland-32": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Monash Anglican Church, not the adventure park: fails check 2"
+ }
+}

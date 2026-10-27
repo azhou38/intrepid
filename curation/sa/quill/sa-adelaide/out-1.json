@@ -1,0 +1,365 @@
+{
+ "spots": {
+  "adelaide-1": {
+   "name": "Adelaide Botanic Garden",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Free garden at the east end of North Terrace, open daily, with large lawns and a museum of economic botany.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.917972,
+    "longitude": 138.611704
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.botanicgardens.sa.gov.au",
+   "coordinates_source": "Wikivoyage listing's own geotag; within 75 m of the Wikipedia article point and the Commons photo median (resolve-pin returned LOW because OSM was rate-limited)",
+   "notes": "Free entry per Wikivoyage and the Botanic Gardens site; Bicentennial Conservatory is a separate spot (adelaide-21)."
+  },
+  "adelaide-2": {
+   "name": "Adelaide Central Market",
+   "icon": "🥬",
+   "category": "market",
+   "bio": "Covered food market in the city centre with over 70 traders, open Tuesday to Saturday.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.92972222,
+    "longitude": 138.5975
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://adelaidecentralmarket.com.au",
+   "coordinates_source": "Wikipedia article coordinates (single source; resolve-pin LOW, OSM rate-limited)",
+   "pin": "LOW",
+   "notes": "Trading hours on the market site: Tue, Wed, Thu, Fri, Sat. Pin is Wikipedia only; re-check against OSM."
+  },
+  "adelaide-3": {
+   "name": "Art Gallery of South Australia",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Free state art gallery on North Terrace, with Australian, Aboriginal and European collections.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.920556,
+    "longitude": 138.603889
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.agsa.sa.gov.au",
+   "coordinates_source": "Wikipedia article coordinates (single source; resolve-pin LOW, OSM rate-limited)",
+   "pin": "LOW",
+   "notes": "agsa.sa.gov.au/visit: general entry is free, charges may apply for some exhibitions. About 80 m from the South Australian Museum pin."
+  },
+  "adelaide-4": {
+   "name": "South Australian Museum",
+   "icon": "🦖",
+   "category": "museum",
+   "bio": "Free state museum on North Terrace, with natural history galleries and an Aboriginal cultural collection.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.920783,
+    "longitude": 138.603017
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.samuseum.sa.gov.au",
+   "coordinates_source": "Wikipedia article coordinates, within 12 m of the Wikivoyage listing point and 41 m of the Commons photo median (two sources agree)",
+   "notes": "Free per southaustralia.com listing and Wikivoyage; open daily 10am-5pm per the museum site."
+  },
+  "adelaide-5": {
+   "name": "Glenelg",
+   "icon": "🏖️",
+   "category": "beach",
+   "wiki": "Glenelg, South Australia",
+   "bio": "Beachside suburb reached by tram from the city, with a long jetty, Moseley Square and a sandy beach.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.980551,
+    "longitude": 138.513928
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "Wikipedia article coordinates (Moseley Square/jetty end); Commons photo median is 160 m west on the sand (resolve-pin LOW)",
+   "pin": "LOW",
+   "notes": "Tram from the city confirmed on Wikivoyage. No ticketUrl: no single steward."
+  },
+  "adelaide-6": {
+   "name": "Adelaide Oval",
+   "icon": "🏟️",
+   "category": "landmark",
+   "bio": "Cricket and AFL ground by the River Torrens, with stadium tours and a RoofClimb over the stands.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.915595,
+    "longitude": 138.596156
+   },
+   "costMin": 28,
+   "costMax": 28,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.adelaideoval.com.au/tours/",
+   "coordinates_source": "OSM leisure=stadium via Nominatim (MEDIUM)",
+   "unverified_cost": true,
+   "notes": "Stadium Tour adult $28 is from the southaustralia.com listing; the Oval's own tours page loaded but shows no standard-tour price in text (scoreboard tour $295 pp). RoofClimb priced separately; Bradman Collection guided sessions free."
+  },
+  "adelaide-7": {
+   "name": "Adelaide Zoo",
+   "icon": "🐼",
+   "category": "entertainment",
+   "bio": "City zoo beside the River Torrens, home to giant pandas, with free keeper talks.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.914167,
+    "longitude": 138.605833
+   },
+   "costMin": 49.5,
+   "costMax": 49.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.zoossa.com.au/adelaide-zoo/",
+   "coordinates_source": "Wikipedia article coordinates (entrance area); Wikivoyage geotag is 150 m north, Commons median 220 m east (resolve-pin LOW)",
+   "pin": "LOW",
+   "notes": "Adult $49.50 from zoossa.com.au; keeper talks free. Giant pandas per the zoo's own and SATC listings."
+  },
+  "adelaide-8": {
+   "name": "Port Adelaide",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Historic port district north-west of the city, with heritage streets, museums and dolphin sanctuary cruises.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.834275,
+    "longitude": 138.512355
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM boundary=administrative 'Port Adelaide' via Nominatim (MEDIUM); a district centroid, not a place=suburb node",
+   "notes": "Museums within it are separate spots (adelaide-39..42). No ticketUrl: a district."
+  },
+  "adelaide-9": {
+   "name": "Morialta Conservation Park",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Gorge park in the foothills with three waterfalls, cliffs and walking trails, free to enter.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.90465,
+    "longitude": 138.708336
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/morialta-conservation-park",
+   "coordinates_source": "Median of 14 geotagged Commons files (the falls area); Wikipedia point (park centroid) is 850 m away. resolve-pin LOW, OSM rate-limited",
+   "pin": "LOW",
+   "notes": "parks.sa.gov.au: 'Come and enjoy this park for free'; vehicle gates open daily (unstaffed), closed Christmas Day. Needs a visitor-point pin (Morialta Falls car park) from OSM. Draft Waterfall Gully pin wrongly sat here (see adelaide-10)."
+  },
+  "adelaide-10": {
+   "name": "Waterfall Gully",
+   "icon": "💦",
+   "category": "nature",
+   "wiki": "Waterfall Gully, South Australia",
+   "bio": "Gully with First Falls, a short walk and a cafe, at the foot of the Mount Lofty climb.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.964056,
+    "longitude": 138.674045
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/waterfall-gully",
+   "coordinates_source": "Wikipedia 'Waterfall Gully, South Australia' suburb point, provisional only",
+   "pin": "LOW",
+   "notes": "DRAFT ERROR: the draft's wiki 'First Falls (Adelaide Hills, South Australia)' and pin (-34.90638889,138.70805556) are Morialta Conservation Park's First Falls on Fourth Creek, not Waterfall Gully's. Wiki changed to the suburb article; pin is the suburb point and needs the gully's falls/car park point from OSM. parks.sa.gov.au/parks/waterfall-gully loaded: 'Free entry'."
+  },
+  "adelaide-11": {
+   "name": "Haigh's Chocolate Factory",
+   "icon": "🍫",
+   "category": "entertainment",
+   "wiki": "Haigh's Chocolates",
+   "bio": "Chocolate factory visitor centre in Parkside, with a free guided experience of how Haigh's makes its chocolate.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.9412,
+    "longitude": 138.60834
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.haighschocolates.com.au",
+   "coordinates_source": "Wikivoyage listing geotag (single source; resolve-pin found no OSM feature, rate-limited)",
+   "pin": "LOW",
+   "notes": "southaustralia.com listing: free guided chocolate experience. Homepage loaded with Haigh's title; no deep link verified (visit-us and visitor-centre-tours returned 404)."
+  },
+  "adelaide-12": {
+   "name": "Adelaide Gaol",
+   "icon": "⛓️",
+   "category": "historic",
+   "bio": "Colonial jail from the 1840s, with daytime history tours and ghost tours after dark.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.917942,
+    "longitude": 138.584849
+   },
+   "costMin": 17,
+   "costMax": 17,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://adelaidegaol.com.au",
+   "coordinates_source": "OSM tourism=attraction via Nominatim (MEDIUM)",
+   "unverified_cost": true,
+   "notes": "Adult $17 from southaustralia.com listing; operator's site (Adelaide Gaol Preservation Society) loaded but shows no price in text. parks.sa.gov.au/parks/adelaide-gaol page is generic, not used as the link."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "adelaide",
+    "name": "Adelaide",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -34.92615,
+     "longitude": 138.600623
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 40,
+    "rank": 2,
+    "icon": "🌆",
+    "tagline": "A park-ringed capital with free museums, a tram to the beach and wine close by.",
+    "description": "Adelaide is the capital of South Australia, set on a plain between the Adelaide Hills and Gulf St Vincent. Colonel William Light laid it out as a grid of wide streets surrounded by parklands, and the plan largely survives. North Terrace holds the state museum, art gallery and botanic garden, while the Central Market and Rundle Mall sit a few blocks south. Famous wine regions, including the Barossa, McLaren Vale and the Adelaide Hills, border the city.",
+    "whyVisit": [
+     "Visit free museums and galleries",
+     "Ride the tram to the beach",
+     "Walk foothill gorges and waterfalls",
+     "Taste wine from nearby regions"
+    ],
+    "highlights": [
+     "North Terrace culture",
+     "Tram to Glenelg",
+     "Foothill waterfalls",
+     "Wine on the doorstep"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚋",
+      "title": "Free central trams",
+      "detail": "Tram travel between the Entertainment Centre, Botanic Garden and South Terrace is free, and so are the City Connector buses."
+     },
+     {
+      "icon": "🔥",
+      "title": "Summer heat waves",
+      "detail": "Several heat waves a year push temperatures above 40 °C, so keep walks and zoo visits to the morning."
+     },
+     {
+      "icon": "🎭",
+      "title": "Festival season rush",
+      "detail": "Arts, music and sport festivals fill mid-February to late March, so book beds and tickets early."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "{months} are mild, and March brings the Fringe and Festival season."
+   },
+   "spots": [
+    "adelaide-1",
+    "adelaide-2",
+    "adelaide-3",
+    "adelaide-4",
+    "adelaide-5",
+    "adelaide-6",
+    "adelaide-7",
+    "adelaide-8",
+    "adelaide-9",
+    "adelaide-10",
+    "adelaide-11",
+    "adelaide-12",
+    "adelaide-13",
+    "adelaide-14",
+    "adelaide-15",
+    "adelaide-16",
+    "adelaide-17",
+    "adelaide-18",
+    "adelaide-19",
+    "adelaide-20",
+    "adelaide-21",
+    "adelaide-22",
+    "adelaide-23",
+    "adelaide-24",
+    "adelaide-25",
+    "adelaide-26",
+    "adelaide-27",
+    "adelaide-28",
+    "adelaide-29",
+    "adelaide-30",
+    "adelaide-31",
+    "adelaide-32",
+    "adelaide-33",
+    "adelaide-34",
+    "adelaide-35",
+    "adelaide-36",
+    "adelaide-37",
+    "adelaide-38",
+    "adelaide-39",
+    "adelaide-40",
+    "adelaide-41",
+    "adelaide-42",
+    "adelaide-43",
+    "adelaide-44",
+    "adelaide-45",
+    "adelaide-46",
+    "adelaide-47",
+    "adelaide-48",
+    "adelaide-49",
+    "adelaide-50",
+    "adelaide-51",
+    "adelaide-52",
+    "adelaide-53",
+    "adelaide-54",
+    "adelaide-55",
+    "adelaide-56",
+    "adelaide-57",
+    "adelaide-58",
+    "adelaide-59",
+    "adelaide-60",
+    "adelaide-61",
+    "adelaide-62",
+    "adelaide-63",
+    "adelaide-64"
+   ],
+   "notes": [
+    "Coordinates: OSM boundary=administrative 'Adelaide' (Nominatim) -34.92615,138.600623, 230 m from the draft's Victoria Square pin; the OSM place=city node (-34.928181,138.599931) is only ~21 m from Victoria Square (adelaide-48, -34.928,138.6) so it was not used.",
+    "defaultZoomSpanKm cut from 45 to 40: every Adelaide spot in shards 1-6 (farthest Classic Jets, Hallett Cove, Warriparinga, Port Adelaide) is within about 20 km, well inside 75% of 40 = 30 km.",
+    "Spot order kept as drafted (importance order); the adelaide-hills-N ids in shard 6 belong to the Adelaide Hills destination and are not in this list.",
+    "Facts from Wikivoyage Adelaide: Light's grid and parklands, hills/gulf setting, bordering wine regions, free trams/City Connector, 40 C heat waves, Mad March festivals, spring flowers."
+   ]
+  }
+ ],
+ "unverified": [
+  "Adelaide Oval stadium tour adult $28 (southaustralia.com only; official page shows no standard price)",
+  "Adelaide Gaol adult $17 (southaustralia.com only; operator page shows no price)"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Overpass/Nominatim were rate-limited by parallel shards, so resolve-pin returned LOW for several spots; points used are Wikipedia, Wikivoyage listing or Commons-median values and each carries its source. Re-run resolve-pin for those marked pin LOW.",
+  "Waterfall Gully draft was wrong (pin and wiki were Morialta's First Falls); corrected wiki, provisional suburb pin.",
+  "Central Market is open Tuesday to Saturday (confirmed on the market's site)."
+ ]
+}

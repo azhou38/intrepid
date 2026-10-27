@@ -1,0 +1,1206 @@
+{
+ "spots": {
+  "mclaren-vale-1": {
+   "name": "d'Arenberg Cube",
+   "icon": "🍷",
+   "category": "landmark",
+   "bio": "A five-level cube-shaped building at d'Arenberg winery with a tasting room, an art museum and a Dalí exhibition.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.19808333,
+    "longitude": 138.54752778
+   },
+   "coordinates_source": "Wikipedia article D'Arenberg (building-level coordinate; a Wikivoyage point 350 m away at -35.1972,138.5511 was not used)",
+   "notes": [
+    "Cube entry about $20 including a wine tasting (Wikivoyage); Dali exhibition about $10 extra. Not confirmed on the winery's own site (deep page 404s).",
+    "pin MEDIUM: single Wikipedia point, no OSM confirmation"
+   ],
+   "wiki": "D'Arenberg",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.darenberg.com.au/"
+  },
+  "mclaren-vale-2": {
+   "name": "Onkaparinga River National Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Gorge, river and Old Noarlunga walks in a national park 28 km south of Adelaide, with free vehicle entry.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.16055556,
+    "longitude": 138.55388889
+   },
+   "coordinates_source": "Wikipedia article (park point, not a verified visitor point)",
+   "notes": [
+    "pin LOW: park point from Wikipedia; Punchbowl lookout / Gate 25 picnic area visitor point not resolved",
+    "NPWS SA Fees tab: vehicle entry free, camping $39.80/night"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/onkaparinga-river-national-park"
+  },
+  "mclaren-vale-3": {
+   "name": "Willunga",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A slate-built heritage township with galleries, a courthouse museum and the Willunga Slate Trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.274023,
+    "longitude": 138.553529
+   },
+   "coordinates_source": "Wikipedia article Willunga, South Australia (town point)",
+   "notes": [
+    "Slate Trail begins at the Slate Museum (National Trust)",
+    "pin MEDIUM: Wikipedia town point"
+   ],
+   "wiki": "Willunga, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open town, no single steward"
+  },
+  "mclaren-vale-4": {
+   "name": "Port Willunga",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach under tall cliffs with the ruins of an old jetty and caves, and the Star of Greece wreck site offshore.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.261805,
+    "longitude": 138.459388
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM node 1957725021 historic=ruins 'Port Willunga Pier' (on the beach); quill photo median -35.261797,138.46 within 60 m  \"\"",
+   "notes": [
+    "pin LOW: photo median, no OSM natural=beach feature"
+   ],
+   "wiki": "Port Willunga, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-5": {
+   "name": "Maslin Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A cliff-backed beach beside Blanche Point, where the southern end became Australia's first legal nude beach in 1975.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.234031,
+    "longitude": 138.471522
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 43152689 amenity=parking 'Maslin Beach North Carpark' (main access to the beach; beach way 296585849 natural=beach is long)  \"\"",
+   "notes": [
+    "pin LOW: suburb point from Wikipedia likely sits inland of the beach; needs an OSM natural=beach point",
+    "Southern end clothing-optional since 1975 (SA Memory, Lonely Planet)"
+   ],
+   "wiki": "Maslin Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-6": {
+   "name": "Aldinga Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A wide, flat beach with drive-on access south of Port Willunga, backed by the Aldinga township.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.279293,
+    "longitude": 138.460403
+   },
+   "coordinates_source": "OSM Nominatim place point for Aldinga Beach (administrative boundary label node, township beside the beach)",
+   "notes": [
+    "pin LOW: township point beside the beach, not natural=beach; draft hint -35.295131,138.457387 was identical to Silver Sands' and was not used"
+   ],
+   "wiki": "Aldinga Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-7": {
+   "name": "Red Poles",
+   "icon": "🎨",
+   "category": "entertainment",
+   "bio": "A gallery of Indigenous and South Australian artists, with a restaurant and bed and breakfast, free to browse.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.229819,
+    "longitude": 138.57124
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 347398216 \"Red Poles\" (cafe/guest house building)  \"\"",
+   "notes": [
+    "pin LOW: unresolved",
+    "Operator domain redpoles.com.au currently shows a parked-domain page (NebTech); a Fringe venue listing and tourism-board pages still list it open. Verify it is still trading before applying (possible closure).",
+    "Free to browse not confirmed on an operator page"
+   ],
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "official domain redpoles.com.au is parked; no verified operator page"
+  },
+  "mclaren-vale-8": {
+   "name": "Coast to Vines Rail Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "A 37 km rail trail from Marino Rocks to Willunga, passing McLaren Vale cellar doors on its Shiraz Trail section.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -35.160233,
+    "longitude": 138.517774
+   },
+   "coordinates_source": "OSM relation segment via resolve-pin (trail midpoint of a 1.0 km matched segment; the whole route is longer)",
+   "notes": [
+    "pin MEDIUM: midpoint of one OSM segment, not the whole 37 km route; the route starts in sa-adelaide (Marino Rocks)",
+    "Length 37 km per City of Marion and Onkaparinga; Wikipedia says 34 km",
+    "ticketUrl is the regional board page (loaded, title checked); councils (Onkaparinga, Marion) manage the trail"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.mclarenvaleandfleurieucoast.com.au/coast-to-vines-rail-trail"
+  },
+  "mclaren-vale-9": {
+   "name": "Willunga Courthouse and Slate Museums",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A heritage-listed 1855 courthouse and a slate museum, open only on the first Saturday and third Sunday monthly.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.27506,
+    "longitude": 138.56083
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Midpoint of OSM nodes 4740878012 \"Willunga Courthouse National Trust Museum\" (-35.27499,138.56063) and 4740887585 \"Willunga Slate National Trust Museum\" (-35.27514,138.56104), 40 m apart; Nominatim agrees with the courthouse node (61 High Street)  \"\"",
+   "notes": [
+    "pin LOW: photo median, 470 m from the town point",
+    "Free admission; open first Saturday and third Sunday of the month 1-4 pm (National Trust). Marginal: very limited opening, consider review."
+   ],
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://willungantsa.au/"
+  },
+  "mclaren-vale-10": {
+   "name": "Sellicks Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long beach on the southern coast of the peninsula, with a small town behind it.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.3292764,
+    "longitude": 138.4482527
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 141732987 amenity=parking at the seaward end of Sellicks Beach Road (beach car park); no natural=beach way carries the name  \"\"",
+   "notes": [
+    "pin LOW: unconfirmed feature type"
+   ],
+   "wiki": "Sellicks Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-11": {
+   "name": "Silver Sands",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A drive-on beach near Aldinga used for swimming and surfing.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.295131,
+    "longitude": 138.457387
+   },
+   "coordinates_source": "Atlas draft hint (Wikipedia-derived), unverified",
+   "notes": [
+    "pin LOW: unresolved; point is the draft hint, 1.8 km from Aldinga Beach's pin and not confirmed as Silver Sands' beach"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-12": {
+   "name": "Moana Sands Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Coastal dunes with Kaurna heritage and hooded plover habitat, with lookouts and walking trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.2025,
+    "longitude": 138.47277778
+   },
+   "coordinates_source": "Wikipedia article Moana Sands Conservation Park (park point)",
+   "notes": [
+    "pin LOW: park point, not a visitor point/lookout",
+    "NPWS SA: free entry"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/moana-sands-conservation-park"
+  },
+  "mclaren-vale-13": {
+   "name": "Wangkuntila-Aldinga Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A coastal conservation park near Aldinga Beach with sand blows, the Aldinga Washpool lagoon and walking trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.292287,
+    "longitude": 138.45803
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; resolve-pin gave only a LOW photo median 2.3 km away",
+   "notes": [
+    "pin: LOW (board listing point, not a verified entrance)",
+    "Parks SA fees tab: 'Come and enjoy this park for free'; no other fees or permits"
+   ],
+   "wiki": "Aldinga Scrub Conservation Park",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/wangkuntila-aldinga-conservation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "mclaren-vale-14": {
+   "name": "Onkaparinga River Recreation Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Estuary wetlands on the Onkaparinga River near Noarlunga with boardwalks, kayaking, fishing and shared trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.160828,
+    "longitude": 138.497558
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; OSM reserve centroid (-35.165247,138.497593) rejected as a centroid",
+   "notes": [
+    "pin: LOW (board listing point; visitor point not verified)",
+    "Parks SA: free entry"
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/onkaparinga-river-recreation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "mclaren-vale-15": {
+   "name": "Cox Scrub Conservation Park",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A conservation park near Ashbourne with three loop walks: Quarry (3.5 km), Stringybark (4 km) and Emu Wren (8.5 km).",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.301033,
+    "longitude": 138.754739
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; the draft Wikipedia point (-35.3355,138.7294) is 5 km away and was not used",
+   "notes": [
+    "pin: LOW (board listing point; walk midpoint not available; the two sources disagree by 5 km, owner to check)",
+    "Parks SA: free entry"
+   ],
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cox-scrub-conservation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "victor-harbor-1": {
+   "name": "Granite Island Recreation Park",
+   "icon": "🐧",
+   "category": "nature",
+   "bio": "A small island linked to Victor Harbor by a causeway, with little penguins, a coastal walk and a horse-drawn tram.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.563789,
+    "longitude": 138.634951
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 183818072 'Granite Island Recreation Park Cafe' with Granite Island Horse Drawn Tram Stop node 13207902343 (-35.563857,138.634364) and footway 1324252963, the island's visitor hub; park relation 7246519 centre -35.564369,138.63071  \"\"",
+   "notes": [
+    "pin: LOW (board point at the causeway end vs Wikipedia point on the island)",
+    "Parks SA: free entry (park fees tab); tram rides and tours are separate operators, not priced here"
+   ],
+   "wiki": "Granite Island (South Australia)",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/granite-island-recreation-park",
+   "free": true,
+   "costBasis": "open"
+  },
+  "victor-harbor-2": {
+   "name": "South Australian Whale Centre",
+   "icon": "🐋",
+   "category": "museum",
+   "bio": "A museum and visitor centre in a railway goods shed with a 3D theatrette and whale-sighting information.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.555748,
+    "longitude": 138.624268
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM way 439836115 South Australian Whale Centre building; Quill board listing point -35.555424,138.624542 within 40 m  \"\"",
+   "notes": [
+    "pin: LOW (board listing point)",
+    "Centre's own site: adult $5, child/concession $4, family $15, open 7 days 10:00-16:00. A renovation closure was reported in 2021; site is live now"
+   ],
+   "free": false,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://sawhalecentre.com.au/"
+  },
+  "victor-harbor-3": {
+   "name": "The Bluff",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A headland above Encounter Bay, also known as Rosetta Head, with views along the Fleurieu coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.5914084,
+    "longitude": 138.603784
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM node 4375060501 natural=peak (Rosetta Head); Wikipedia Rosetta Head article point (-35.59139,138.60389) 10 m away; OSM viewpoint node 6191289985 within 20 m  \"\"",
+   "notes": [
+    "pin: LOW (Wikipedia point, not checked against an OSM summit or lookout)"
+   ],
+   "wiki": "Rosetta Head",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open headland, no single steward site verified"
+  },
+  "victor-harbor-4": {
+   "name": "Port Elliot",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A historic seaside village on the coast east of Victor Harbor, with a sheltered bay.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.5309995,
+    "longitude": 138.6806344
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 249072885 place=suburb 'Port Elliot' (town centre); Port Elliot Railway Station museum node 4740906393 220 m away  \"\"",
+   "notes": [
+    "pin: LOW (town point from Wikipedia, not checked against OSM place=town)"
+   ],
+   "wiki": "Port Elliot, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "town, no single steward"
+  },
+  "victor-harbor-5": {
+   "name": "Horseshoe Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A small, sheltered sandy bay beside the historic village of Port Elliot on the Fleurieu coast.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.5329,
+    "longitude": 138.685478
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 634784797 natural=beach 'Horseshoe Bay'; board listing point -35.532894,138.684265 (~110 m)  \"\"",
+   "notes": [
+    "pin: LOW (board listing point for the beach, 0.57 km from the Port Elliot point; not checked against OSM natural=beach)"
+   ],
+   "wiki": "Horseshoe Bay, Port Elliot",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no steward"
+  },
+  "victor-harbor-6": {
+   "name": "Urimbirra Wildlife Experience",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "An open-range wildlife park at Hindmarsh Valley with kangaroo feeding, koala patting and over 70 species of Australian animals.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.517027,
+    "longitude": 138.631126
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM relation 1953589 leisure=nature_reserve 'Urimbirra Fauna Park' (centre); tourism-board listing point -35.519276,138.632693 is ~250 m SE (10 Welch Road)  \"\"",
+   "notes": [
+    "pin: LOW (board listing point; address 10 Welch Road, Hindmarsh Valley)",
+    "Board listing prices: adult $16, child 4-14 $8, senior/student $12; operator's own site open daily 10-4 but shows no price"
+   ],
+   "free": false,
+   "costMin": 16,
+   "costMax": 16,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.urimbirra.com.au/"
+  },
+  "victor-harbor-7": {
+   "name": "Hindmarsh Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A 20 m waterfall best seen in winter and spring, reached by a short walk to a viewing platform.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.443371,
+    "longitude": 138.583655
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 1722834719 \"Hindmarsh Falls\"; picnic_site node 1722813555 340 m north  \"\"",
+   "notes": [
+    "pin: LOW (board listing point; falls ~13 km from Victor Harbor)",
+    "No fee mentioned by the Visit Victor Harbor page; treated as free open access"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "no single steward site; the Visit Victor Harbor page is a tourism listing"
+  },
+  "victor-harbor-8": {
+   "name": "Nakurami Kondoli Whale Lookout",
+   "icon": "🐋",
+   "category": "viewpoint",
+   "bio": "A free whale-watching platform at Kings Beach on the Heysen Trail, near Waitpinga.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.5986163,
+    "longitude": 138.5844037
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 9456850917 tourism=viewpoint \"Whale Lookout\" at Waitpinga  \"\"",
+   "notes": [
+    "pin: LOW (board listing point at Waitpinga)"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open lookout, no steward site verified"
+  },
+  "victor-harbor-9": {
+   "name": "Kleinigs Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Lookout on Hindmarsh Road over Victor Harbor and Granite Island, with a telescope and a mosaic whale called Kondoli.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.540054,
+    "longitude": 138.636806
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open lookout with no operator site (council page is bot-blocked).",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 574172067 tourism=viewpoint \"Kleinig's Lookout\"  \"\"",
+   "notes": [
+    "pin LOW: single tourism-board geotag; Commons photo median is 1 km NE; verify on a map",
+    "Free per City of Victor Harbor via search summary; council page bot-blocked"
+   ]
+  },
+  "victor-harbor-10": {
+   "name": "Newland Head Conservation Park",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Conservation park on the Fleurieu's south coast with Waitpinga and Parsons beaches, cliff walks and views to Kangaroo Island.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.6279988,
+    "longitude": 138.5001354
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/newland-head-conservation-park",
+   "coordinates_source": "NPWS SA park page: Waitpinga campground point (park's main visitor point), agrees with Commons photo at -35.62772,138.50065 (80 m); not the OSM reserve centroid",
+   "notes": [
+    "NPWS page lists fees as accommodation only (campsites from $13.30 per night); no vehicle entry fee shown, so free/open. Beaches not suitable for swimming.",
+    "Closed on days of Catastrophic Fire Danger."
+   ]
+  },
+  "victor-harbor-11": {
+   "name": "Middleton",
+   "icon": "🏄",
+   "category": "beach",
+   "wiki": "Middleton, South Australia",
+   "bio": "A coastal village east of Port Elliot with a surf beach and a rocky point on the Fleurieu coast.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.511059,
+    "longitude": 138.715954
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open village and beach with no single steward.",
+   "coordinates_source": "OSM place=village node (Nominatim) 'Middleton'",
+   "notes": [
+    "Draft bio's 'old winery' dropped: only a farm-stay listing named The Old Middleton Winery found, no public cellar door.",
+    "Southern right whales reported off Middleton Point June to October (one travel site only), left out of bio."
+   ]
+  },
+  "victor-harbor-12": {
+   "name": "Victor Harbor National Trust Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Heritage museum in an 1866 house at Victor Harbor, with period rooms and displays on the town's colonial history.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.55629,
+    "longitude": 138.624694
+   },
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://victorharbornattrust.org.au/",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"National Trust Museum and Gift Shop\"",
+   "notes": [
+    "pin LOW: single tourism-board geotag, OSM unavailable",
+    "Adult $6 (concession $5, child $4, family $16, National Trust members free) from the museum's own site. Volunteer-run, open about 11am-3pm Wednesday to Monday, daily in school and public holidays."
+   ]
+  },
+  "victor-harbor-13": {
+   "name": "Glacier Rock",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Permian glacial pavement in the Inman River bed, with ice-scratched bedrock first recorded by a geologist in 1859.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -35.4967691,
+    "longitude": 138.5128017
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open natural site; no operator site.",
+   "coordinates_source": "southaustralia.com listing geotag for Glacier Rock, agrees within ~50 m with the Wikipedia coordinates for Selwyn's Rock (-35.4965, 138.5124) as quoted by a search summary",
+   "notes": [
+    "The draft hint (-35.49526,138.454944) is the Inman Valley locality centroid, 5 km west of the rock; not used.",
+    "wiki omitted: 'Selwyn's Rock' only redirects to the Inman Valley locality article.",
+    "Site is in the river bed below a cafe on Inman Valley Road (address given as 1 Mount Alma Road)."
+   ]
+  },
+  "victor-harbor-14": {
+   "name": "Hindmarsh River Walking Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Easy river walk near Victor Harbor through paperbark woodland and past a lagoon, with birdlife along the way.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.545019,
+    "longitude": 138.628804
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed open trail; the visitor-board page is not an operator site.",
+   "coordinates_source": "southaustralia.com listing geotag (trail start area near Bridge Terrace), NOT the route midpoint",
+   "notes": [
+    "pin LOW: trailhead-area point, route midpoint not resolved (OSM unavailable); raise to owner to midpoint the route",
+    "Length reported as 4, 7 or 8 km depending on source; start at end of Bridge Terrace or McCracken Picnic Area; five stages 30 min to 3 hours."
+   ]
+  },
+  "victor-harbor-15": {
+   "name": "Inman River Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Flat riverside walk from Muwerang (Kent Reserve) with a bird hide, ending at Victor Harbor Cemetery.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.5622726,
+    "longitude": 138.6104043
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed open trail; no operator site.",
+   "coordinates_source": "southaustralia.com listing geotag for the Inman River Trail, NOT the route midpoint",
+   "notes": [
+    "pin LOW: single tourism-board geotag, route midpoint not resolved (OSM unavailable); raise to owner",
+    "About 8 km, flat; Clydesdales of the Horse Drawn Tram can be seen near the route."
+   ]
+  },
+  "goolwa-1": {
+   "name": "Strathalbyn",
+   "icon": "🏘️",
+   "category": "historic",
+   "wiki": "Strathalbyn, South Australia",
+   "bio": "Scottish-founded town on the Angas River with heritage streets and St Andrew's Church, inland from Goolwa.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.2597434,
+    "longitude": 138.8943459
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open town with no single steward.",
+   "coordinates_source": "southaustralia.com Strathalbyn destination point (town centre), within 250 m of the OSM boundary node -35.2576,138.8957",
+   "notes": [
+    "Antiques-shops claim in the draft bio is from a generic listing only, dropped.",
+    "Founded 1839 by Scottish settlers (dates vary by source)."
+   ]
+  },
+  "goolwa-2": {
+   "name": "Goolwa Barrage",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "Walk halfway across the barrage that holds back the sea from the Murray, with a picnic area and signs.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -35.527558,
+    "longitude": 138.808388
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Government-managed open structure; no operator site.",
+   "coordinates_source": "OSM waterway=dam 'Goolwa Barrage' (Nominatim)",
+   "notes": [
+    "Entry free; board listing gives hours 8.30-12.30 and 1.30-4.30 daily, another source 8-5.30: not stored. Reached from the Goolwa side by Barrage Road, no access from Hindmarsh Island.",
+    "Seals and pelicans are often seen."
+   ]
+  },
+  "goolwa-3": {
+   "name": "Signal Point Experience Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Wharf-side gallery and interpretive centre in Goolwa on Indigenous and colonial heritage and the Murray Mouth.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.5034056,
+    "longitude": 138.7854932
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "Steward is Alexandrina Council; its page returned a bot wall, see needs_browser. visitalexandrina.com is the tourism site, not used.",
+   "coordinates_source": "southaustralia.com listing geotag (1 Laurie Lane), matches the median of geotagged Commons files at the wharf (-35.50338,138.78555)",
+   "notes": [
+    "Free entry per the tourism-board listing; gallery open Wednesday to Sunday 10am-4pm per Visit Alexandrina (not stored)."
+   ]
+  },
+  "goolwa-4": {
+   "name": "Goolwa Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Surf beach east of Goolwa with a car park, kiosk and surf club, and a vehicle track to the Murray Mouth.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.522316,
+    "longitude": 138.773096
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach; council-managed.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 29492954 \"Goolwa Beach\" car park beside Goolwa Surf Lifesaving Club; Quill draft within 50 m  \"\"",
+   "notes": [
+    "pin LOW-ish: one geotag plus Wikipedia disagreeing by 1 km; chose the car park/entrance where visitors stand",
+    "Vehicles not allowed on the beach west of the access track; 40 km/h limit; sand dunes off limits; 4WD rules may change."
+   ]
+  },
+  "goolwa-5": {
+   "name": "Hindmarsh Island",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Island across the bridge from Goolwa, with a lookout over the Murray Mouth where waders and pelicans gather.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.5117086,
+    "longitude": 138.810252
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Island with many operators; no single official site.",
+   "coordinates_source": "southaustralia.com Hindmarsh Island destination point (island village); Wikipedia's -35.5167,138.8667 is the island's centre and was not used",
+   "notes": [
+    "pin LOW: single tourism-board point; the Murray Mouth lookout (the main draw) is further SE and not pinned.",
+    "Bridge opened 2001."
+   ]
+  },
+  "goolwa-6": {
+   "name": "Langhorne Creek",
+   "icon": "🍷",
+   "category": "landmark",
+   "bio": "A wine and farming district on the plains where rivers and creeks run into Lake Alexandrina, with cellar doors in the village.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.295938,
+    "longitude": 139.036445
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM relation 7243064 place=village 'Langhorne Creek'  \"\"",
+   "wiki": "Langhorne Creek, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://langhornecreek.com/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); village point from two sources 270 m apart, not an OSM feature",
+    "Official site of Langhorne Creek Grape & Wine Inc (title 'Home - Langhorne Creek') loaded; individual cellar doors deliberately not listed"
+   ]
+  },
+  "goolwa-7": {
+   "name": "Tolderol Game Reserve",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "A wetland of shallow basins on Lake Alexandrina where migratory waders feed, with a lookout and picnic area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.370202,
+    "longitude": 139.150541
+   },
+   "coordinates_source": "southaustralia.com listing coordinates; Wikipedia 'Tolderol Game Reserve' (-35.370761,139.149545) is ~110 m away",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/tolderol-game-reserve",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); two sources ~110 m apart (just outside the 100 m HIGH bar), neither an OSM visitor-point feature",
+    "Parks SA page loaded: park fees list only accommodation ($15.40 per night), no entry fee; open daily; closed on Catastrophic fire danger days; short duck-hunting season in a designated area; Parks SA text does not mention a lookout or picnic area (that is from the draft/board source), keep unless the owner objects"
+   ]
+  },
+  "goolwa-8": {
+   "name": "Animal Farm",
+   "icon": "🐑",
+   "category": "entertainment",
+   "bio": "A family animal park near Goolwa Airport with animal feeding, trailer rides, crazy golf and a snake demonstration.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.469075,
+    "longitude": 138.752928
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (85 Airport Road, next to Goolwa Airport per the farm's location page)",
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.goolwaanimalfarm.com.au/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point, not an OSM feature",
+    "Adult $15 (children to 18 $9, seniors $12, feed $1; admission includes trailer ride, crazy golf, snake demonstration) from the southaustralia.com listing; other listings give older prices ($11, $13). The farm's own prices page is script-rendered and could not be read",
+    "Official name is Goolwa Animal Farm (site title 'Home | Goolwa Animal Farm'); draft name 'Animal Farm' kept per the shard but the owner may prefer 'Goolwa Animal Farm'"
+   ]
+  },
+  "goolwa-9": {
+   "name": "Gilbert's Motor Museum",
+   "icon": "🚗",
+   "category": "museum",
+   "bio": "A century-old family garage turned museum in 2019, with Buicks, Holdens and motorbikes, in Strathalbyn.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.25557,
+    "longitude": 138.893602
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM way 1017077358 Gilbert's Motor Museum (tourism=museum building) + Quill listing point -35.255507,138.893724 within 15 m  \"\"",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://strathalbynmotormuseum.com.au/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point, not an OSM feature",
+    "Official site (title names Gilbert's Motor Museum - Strathalbyn): entry $10, concession $8, under 16 with an adult free; open Wed-Sun 10am-4pm, closed Good Friday, Christmas Day, Boxing Day",
+    "The museum is in Strathalbyn (goolwa-1), 25 km north of Goolwa, not in Goolwa; it was already a Goolwa-destination spot in the draft, so Strathalbyn must lie inside the destination's span"
+   ]
+  },
+  "goolwa-11": {
+   "name": "Strathalbyn Heritage Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A museum in the former police station and courthouse, with Victorian rooms, cells and war displays; open weekends.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.259959,
+    "longitude": 138.893083
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 4740951745 tourism=museum 'Strathalbyn Police Station and Courthouse Museum - National Trust' (the heritage centre building); within 5 m of the listing point  \"\"",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.strathmuseum.org.au/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point, not an OSM feature",
+    "Official site (title 'Strathalbyn Heritage Museum'): adult $10, concession $6, children 6-15 $3; open Sat and Sun 10:30am-3pm, closed weekdays. The museum now trades as Strathalbyn Heritage Museum; the board still lists the draft name. Owner may want to rename to 'Strathalbyn Heritage Museum' (the old name is also what the board and SA History Hub use)",
+    "Opens weekends only, so the bio says so"
+   ]
+  },
+  "yankalilla-1": {
+   "name": "Deep Creek National Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "The largest remnant of native bush on the peninsula, with 15 walks, kangaroos, whales in winter and the Heysen Trail start.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -35.606843,
+    "longitude": 138.238895
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 316602158 tourism=camp_site 'Stringybark Campground - Deep Creek Conservation Park'  \"\"",
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/deep-creek-national-park",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point near the park's headquarters area, not an OSM-verified visitor point",
+    "Parks SA page loaded (title 'Deep Creek... National Parks and Wildlife Service South Australia'): vehicle entry $14.40 per vehicle, campsites from $27.50 per night, fees paid before entry; alert: parts of the park remain closed after bushfire, and Talisker CP (yankalilla-8) is closed until further notice",
+    "Cost shown as a per-vehicle gate fee; the page says 'per vehicle', not per day, but 'Per Vehicle/Day' is the house label for SA parks"
+   ]
+  },
+  "yankalilla-2": {
+   "name": "Cape Jervis",
+   "icon": "⛴️",
+   "category": "landmark",
+   "bio": "The Kangaroo Island ferry gateway at the western tip of the peninsula, where the Heysen Trail begins.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.606169,
+    "longitude": 138.105349
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 2286688206 place=village 'Cape Jervis'; Wikipedia article point -35.6,138.1 (rounded)  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); town point from the tourism board, not an OSM place node",
+    "Heysen Trail ends at Cape Jervis (Wikipedia 'Heysen Trail'); the ferry is an operator service, so no ticketUrl (a town)"
+   ],
+   "ticket_note": "a town; the ferry is a separate operator"
+  },
+  "yankalilla-3": {
+   "name": "Wild South Coast Way",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 74 km coastal walk from Cape Jervis to Victor Harbor on the Heysen Trail, done in sections or over five days.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 40,
+   "coordinates": {
+    "latitude": -35.638685,
+    "longitude": 138.307346
+   },
+   "coordinates_source": "resolve-pin MEDIUM: Length-weighted midpoint of OSM ways named \"Heysen Trail\"/\"Wild South Coast Way\" between Cape Jervis and Victor Harbor (way 270541114, ~65 km mapped of 74), ordered west to east  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/experiences/wscw",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); not a route midpoint; the whole route (74 km, Cape Jervis to Victor Harbor, via Deep Creek NP, Ballaparudda Creek Recreation Park and Newland Head CP) should be pinned halfway along its length from the OSM route relation",
+    "Parks SA page (title 'Wild South... National Parks and Wildlife Service South Australia'): 74 km, five days four nights, four walk-in and four drive-in campgrounds; the trail itself has no fee. Deep Creek entry ($14.40/vehicle) and campsite fees apply where they are used",
+    "Walking time 24-40 hr is for the full five-day walk"
+   ]
+  },
+  "yankalilla-4": {
+   "name": "Second Valley",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered cove split by a jetty into a sandy swimming beach and a boulder beach, popular for snorkelling and diving.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.5113068,
+    "longitude": 138.218238
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM way 293136236 natural=beach at Second Valley (centre); tourism-board listing point (-35.511256,138.217501) 67 m away  \"\"",
+   "wiki": "Second Valley, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); beach listing point, not an OSM natural=beach feature",
+    "Draft bio's leafy sea dragons were not found in a source I could read, so cut; the tourism listing says free, with toilets and a car park",
+    "No ticketUrl: an open beach with no single steward"
+   ],
+   "ticket_note": "open beach"
+  },
+  "yankalilla-5": {
+   "name": "Normanville",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "The peninsula's largest coastal settlement, centred on a 7.3 km beach with a picnic area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.446012,
+    "longitude": 138.307331
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 224350180 natural=beach 'Normanville Beach' (centre), 90 m from the listing point  \"\"",
+   "wiki": "Normanville, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); beach listing point, not an OSM natural=beach feature",
+    "Bio fact: 'largest coastal settlement on the southern Fleurieu', 7.3 km beach (listing); 'picnic area' is from the draft/board"
+   ],
+   "ticket_note": "open beach"
+  },
+  "yankalilla-6": {
+   "name": "Carrickalinga",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A small beach town with white sand and rock pools, in an International Dark Sky Community.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.424473,
+    "longitude": 138.321092
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 224350178 natural=beach 'Carrickalinga Beach' (centre); suburb node -35.424036,138.324403  \"\"",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); Wikipedia point is a minute-rounded reference; the beach was not located on a map",
+    "Dark Sky Community claim from the draft/board; not re-verified on a Dark Sky list",
+    "No ticketUrl: an open beach town"
+   ],
+   "ticket_note": "open beach town"
+  },
+  "yankalilla-7": {
+   "name": "Rapid Bay",
+   "icon": "🎣",
+   "category": "beach",
+   "bio": "A long jetty and sheltered bay on the Fleurieu's western coast, used for fishing, diving and snorkelling.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.527316,
+    "longitude": 138.190955
+   },
+   "coordinates_source": "resolve-pin HIGH: osm place=hamlet (nominatim) \"Rapid Bay\"",
+   "notes": {
+    "pin": "draft pin from Wikipedia article; check against jetty/beach"
+   },
+   "wiki": "Rapid Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-9": {
+   "name": "Ingalalla Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A two-tier waterfall and rock pool at the end of an easy 700 m return walk through Second Valley Forest.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.531078,
+    "longitude": 138.34283
+   },
+   "coordinates_source": "resolve-pin HIGH: osm waterway=waterfall (nominatim) \"Ingalalla Waterfall\"",
+   "notes": {
+    "pin": "draft from Wikipedia; walk is ~700 m return so the waterfall point is the right pin; confirm with OSM waterfall node"
+   },
+   "wiki": "Ingalalla Waterfalls",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "forest reserve walk; no official site verified"
+  },
+  "yankalilla-10": {
+   "name": "Blowhole Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A remote Southern Ocean beach in Deep Creek National Park, reached by a walking track.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.654252,
+    "longitude": 138.155141
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 269000628 natural=beach 'Blowhole Beach' (Blowhole Creek Road/Blowhole Beach Road lead to it, Deep Creek NP)  \"\"",
+   "notes": {
+    "pin": "Blowhole Creek carpark/trailhead in Deep Creek NP, then the beach end of the track; use OSM natural=beach",
+    "cost": "NPWS SA Deep Creek NP page: vehicle entry $14.40 per vehicle",
+    "closure": "Parts of Deep Creek NP remain closed after bushfire; check the park alerts for the Blowhole Creek area"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/deep-creek-national-park",
+   "needs": "park-pass",
+   "parkPass": "deep-creek"
+  },
+  "yankalilla-11": {
+   "name": "Morgans Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "An 800 m sandy cove beneath 50 m glacial cliffs at Cape Jervis, with a clifftop lookout and reef to explore.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.594177,
+    "longitude": 138.105735
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 436845642 \"Morgan's Beach\" natural=beach, Cape Jervis  \"\"",
+   "notes": {
+    "pin": "OSM natural=beach near Cape Jervis"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-12": {
+   "name": "Tunkalilla Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A remote Southern Ocean beach reached on foot, where seals and dolphins are often seen offshore.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.6391239,
+    "longitude": 138.3267534
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 269742186 natural=beach \"Tunkalilla Beach\" (centre); Nominatim returns the same feature at (-35.63914,138.33241)  \"\"",
+   "notes": {
+    "pin": "beach end of Tunkalilla Beach walk; Wikipedia article 'Tunkalilla' is the locality (check article is the beach; drop wiki if it is only the locality)",
+    "cost": "assumed free; not confirmed from an official page"
+   },
+   "wiki": "Tunkalilla",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-13": {
+   "name": "Fishery Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach close to Cape Jervis, at the western tip of the Fleurieu Peninsula.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.6326265,
+    "longitude": 138.1144284
+   },
+   "coordinates_source": "resolve-pin HIGH: OSM way 282809142 natural=beach (unnamed) 15 m from OSM node 529388202 place=locality 'Fishery Beach' (-35.632514,138.11449), Cape Jervis  \"\"",
+   "notes": {
+    "pin": "OSM natural=beach named Fishery Beach near Cape Jervis"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-14": {
+   "name": "Myponga Reservoir Reserve",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A reservoir reserve open for walking, fishing and kayaking, with kangaroos and a view from the dam wall.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.412619,
+    "longitude": 138.436477
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=water (nominatim) \"Myponga Reservoir\"",
+   "notes": {
+    "pin": "draft is the Wikipedia dam point; use the reserve's visitor car park / dam wall lookout",
+    "cost": "assumed free; SA Water recreation page not verified"
+   },
+   "wiki": "Myponga Reservoir",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "SA Water page not verified"
+  },
+  "yankalilla-15": {
+   "name": "Myponga Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach on the western Fleurieu coast, with a car park and toilets right at the sand.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.373009,
+    "longitude": 138.385138
+   },
+   "coordinates_source": "resolve-pin HIGH: osm boundary=administrative (nominatim) \"Myponga Beach\"",
+   "notes": {
+    "pin": "Wikipedia article coordinates / OSM natural=beach"
+   },
+   "wiki": "Myponga Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "victor-harbor-16": {
+   "name": "Softfoot Alpaca Farm",
+   "icon": "🦙",
+   "category": "entertainment",
+   "bio": "A Hindmarsh Valley alpaca farm with guided buggy tours, alpaca feeding and a nocturnal marsupial safari.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.482891,
+    "longitude": 138.562733
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited",
+   "notes": [
+    "pin: LOW (board listing point; operator address 594 Sawpit Road, Hindmarsh Valley)",
+    "PLACEMENT: this farm is in Hindmarsh Valley, about 8 km from Victor Harbor and ~30 km from McLaren Vale; it belongs under victor-harbor (or standalone), not mclaren-vale. Moving it is for the placement owner; id stays mclaren-vale-16",
+    "$250 is the tour price on the board listing and resale sites; whether it is per person or per group of up to 5 is unconfirmed"
+   ],
+   "free": false,
+   "costMin": 250,
+   "costMax": 250,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "costPer": "Per Tour",
+   "ticketUrl": "https://www.theswagman.rest/",
+   "moved_from": "mclaren-vale-16"
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "goolwa-10",
+   "name": "Goolwa Motor Museum",
+   "reason": "Goolwa Motor Museum: listed permanently closed, no official site. Unblocks on a browser check that it is open.",
+   "entry": {
+    "name": "Goolwa Motor Museum",
+    "icon": "🚗",
+    "category": "museum",
+    "bio": "A small museum at 45 Gardiner Street of cars from when they were made in South Australia.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "coordinates": {
+     "latitude": -35.5033,
+     "longitude": 138.7731
+    },
+    "coordinates_source": "Wikivoyage 'Goolwa' See listing's own geo tag for the museum (4 decimals, a memory-grade pin)",
+    "costMin": 8,
+    "costMax": 8,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "notes": [
+     "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); 4-decimal Wikivoyage listing point (lint 'pin' will flag it)",
+     "SHOULD NOT BE ADDED: Tripadvisor and Wanderlog both list the museum as permanently closed; Wikivoyage's entry was last updated Jul 2022; no official site or other source shows it open. Adult $8 is from an old listing (Automotive Museum Guide, under 'Closed Museums'). Verify by phone (08) 8555 3338 or drop it",
+     "No ticketUrl: no official site found"
+    ],
+    "ticket_note": "no official site found and the museum appears closed"
+   }
+  },
+  {
+   "id": "yankalilla-8",
+   "name": "Talisker Conservation Park",
+   "reason": "Talisker Conservation Park: closed until further notice after a fire. Unblocks on reopening.",
+   "entry": {
+    "name": "Talisker Conservation Park",
+    "icon": "⛏️",
+    "category": "historic",
+    "bio": "Ruins of an 1860s silver-lead mine on a 1.4 km interpretive circuit with a lookout towards Kangaroo Island.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "coordinates": {
+     "latitude": -35.62222222,
+     "longitude": 138.15222222
+    },
+    "coordinates_source": "pending serial pin pass",
+    "notes": {
+     "pin": "draft is a rounded Wikipedia point; use mine-ruins car park / circuit midpoint",
+     "closure": "NPWS SA alert (deep-creek page): Talisker Conservation Park is closed until further notice for public safety after an active fire. Keep as spot (permanent place) but flag; consider re-check before release."
+    },
+    "free": true,
+    "costBasis": "open",
+    "ticket_note": "NPWS page parks.sa.gov.au/parks/talisker-conservation-park returns 404; park has no fee page found"
+   }
+  }
+ ],
+ "notes": []
+}

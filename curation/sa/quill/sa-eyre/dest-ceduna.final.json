@@ -1,0 +1,69 @@
+{
+ "destination": {
+  "id": "ceduna",
+  "name": "Ceduna",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -32.11666667,
+   "longitude": 133.66666667
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 130,
+  "rank": 4,
+  "icon": "🦪",
+  "tagline": "Oyster farms and surf breaks at the last big town before the Nullarbor.",
+  "description": "Ceduna sits on Murat Bay on the Eyre Highway, the last major town before the Nullarbor. A 380 m jetty runs out from its foreshore, and the oyster farms of Smoky Bay lie 45 km along the coast. To the west, Penong has a roadside windmill museum, and the road south leads to the surf breaks of Cactus Beach and the salt lakes beside it. Conservation parks with mangroves and shorebird feeding grounds line the coast either side of town.",
+  "whyVisit": [
+   "Eat fresh oysters from the farms",
+   "Surf remote Cactus Beach",
+   "Watch shorebirds on mangrove coasts"
+  ],
+  "highlights": [
+   "Smoky Bay oysters",
+   "Cactus Beach surf",
+   "Mangrove shorebirds"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🔥",
+    "title": "Check the fire danger",
+    "detail": "Conservation parks here close on days of Catastrophic fire danger and may close on Extreme days, so check the CFS rating before you go."
+   },
+   {
+    "icon": "🚙",
+    "title": "4WD for Point Bell",
+    "detail": "Point Bell is reachable by four-wheel drive only, and west coast beach driving can be treacherous. Lower tyre pressures on sand."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "{months} are mild enough for coastal walks and the long Eyre Highway drive."
+ },
+ "spots": [
+  "ceduna-1",
+  "ceduna-8",
+  "ceduna-5",
+  "ceduna-7",
+  "ceduna-9",
+  "ceduna-2",
+  "ceduna-3",
+  "ceduna-4",
+  "ceduna-6"
+ ],
+ "notes": [
+  "Draft spot id 'ceduna' (the town) is omitted from the order: the destination is not a spot of itself (COVERAGE: no near-duplicates); the other shard holding it should drop or keep it as it decides.",
+  "Order: jetty (the town's own sight), then the west-coast draws (Cactus Beach, Smoky Bay oysters, Penong windmills, Lake MacDonnell), then Pinky Point and the conservation parks.",
+  "Span 130 km kept: farthest spot Cactus Beach is ~64 km from centre, under 75% (97 km).",
+  "Coordinates kept from draft (Wikipedia town point) for the serial pin pass; best months and mild-season claim are judgement (no source gave a month list); Oysterfest (late Sept per Wikivoyage 2015, dead link) deliberately not used.",
+  "Facts: last major town before Nullarbor, Smoky Bay 45 km, Penong 71 km (Wikivoyage); 380 m jetty (tourism board)."
+ ]
+}

@@ -1,0 +1,999 @@
+[
+ {
+  "id": "adelaide-3",
+  "name": "Art Gallery of South Australia",
+  "category": "museum",
+  "bio": "Free state art gallery on North Terrace, with Australian, Aboriginal and European collections.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -34.920556,
+   "longitude": 138.603889
+  },
+  "quill_source": "Wikipedia article coordinates (single source; resolve-pin LOW, OSM rate-limited)",
+  "pin_hint_notes": "agsa.sa.gov.au/visit: general entry is free, charges may apply for some exhibitions. About 80 m from the South Australian Museum pin.",
+  "search_hint": {
+   "latitude": -34.920556,
+   "longitude": 138.603889
+  }
+ },
+ {
+  "id": "adelaide-14",
+  "name": "Henley Square and Jetty",
+  "category": "beach",
+  "bio": "Beachfront square of cafes and restaurants at the foot of Henley Beach's jetty on Adelaide's western coast.",
+  "wiki": "Henley Beach, South Australia",
+  "quill_provisional": {
+   "latitude": -34.919833,
+   "longitude": 138.494
+  },
+  "quill_source": "Commons geotagged-photo median (23 files) 20 m from Wikipedia Henley Beach article point; resolve-pin LOW (no OSM feature)",
+  "pin_hint_notes": "two sources agree within 25 m (Wikipedia rounded)",
+  "search_hint": {
+   "latitude": -34.919833,
+   "longitude": 138.494
+  }
+ },
+ {
+  "id": "adelaide-29",
+  "name": "Tennyson Dunes",
+  "category": "nature",
+  "bio": "Coastal reserve protecting the state's most accessible intact dune system, with a 1.5 km discovery trail.",
+  "wiki": "Wara Wayingga-Tennyson Dunes Conservation Reserve",
+  "quill_provisional": {
+   "latitude": -34.87945,
+   "longitude": 138.48261
+  },
+  "quill_source": "wikivoyage listing geotag for Tennyson Dunes Conservation Reserve (resolve-pin: no feature found)",
+  "pin_hint_notes": [
+   "pin: LOW - Wikivoyage listing point only (5 decimals), not a car park or trailhead; raise to owner.",
+   "NPWS page: Free entry.",
+   "Park title Wara Wayingga-Tennyson Dunes Conservation Reserve; name kept as Tennyson Dunes per draft; wiki is the full article title."
+  ],
+  "search_hint": {
+   "latitude": -34.87945,
+   "longitude": 138.48261
+  }
+ },
+ {
+  "id": "adelaide-37",
+  "name": "Kingston Park Coastal Reserve",
+  "category": "nature",
+  "bio": "Clifftop reserve at Kingston Park with Holdfast Bay views, the Tjilbruke Spring and a rock sculpture of its Dreaming story.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "text": "Free (SATC listing). Cliff-top lookout over Holdfast Bay, Tjilbruke Spring and the John Dowie rock sculpture, 76 indigenous plant species; picnic area, barbecues, toilets.",
+   "pin": "Lookout and John Dowie rock sculpture on the clifftop off Strickland Road, Kingston Park (SATC address); Tjilbruke Spring is below the cliff."
+  },
+  "search_hint": {
+   "latitude": -34.9275,
+   "longitude": 138.6
+  }
+ },
+ {
+  "id": "adelaide-55",
+  "name": "Kaurna Trail",
+  "category": "hike",
+  "bio": "Self-guided 10.7 km walk through the city to sites of Kaurna significance, told through art and story.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "text": "City of Adelaide page: easy, 10.7 km, bitumen and pavement, allow 2-3 hours; produced by the Graham F Smith Peace Foundation. Free, nothing to pass through.",
+   "pin": "A city loop of 10.7 km: pin at the midpoint of the route using the trail map (view the walking trail map on the page); not resolved here."
+  },
+  "search_hint": {
+   "latitude": -34.9275,
+   "longitude": 138.6
+  }
+ },
+ {
+  "id": "adelaide-64",
+  "name": "Tramway Museum",
+  "category": "museum",
+  "bio": "Volunteer museum of more than 20 trams, with unlimited rides on a 1.6 km line to the St Kilda playground.",
+  "wiki": "Tramway Museum, St Kilda",
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "300-360 St Kilda Road, St Kilda SA; geocode this address (museum depot).",
+   "hours": "Sundays and public holidays 12-5pm. Adult $10 from state history network listing (admission includes unlimited rides); not re-confirmed on the museum site.",
+   "rename": "Draft name 'Tramway Museum, St Kilda' carries the town qualifier, so shown as 'Tramway Museum'; Wikipedia article is 'Tramway Museum, St Kilda'."
+  },
+  "search_hint": {
+   "latitude": -34.9275,
+   "longitude": 138.6
+  }
+ },
+ {
+  "id": "adelaide-hills-18",
+  "name": "Lobethal Bushland Park",
+  "category": "nature",
+  "bio": "Two reservoirs in stringybark forest north of Lobethal, with walking circuits and a regenerating post-fire landscape.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Trailhead car park near the building and picnic area, north of Lobethal."
+  },
+  "search_hint": {
+   "latitude": -35.0295,
+   "longitude": 138.81
+  }
+ },
+ {
+  "id": "bundaleer-forest",
+  "name": "Bundaleer Reservoir Reserve",
+  "category": "nature",
+  "bio": "SA Water reservoir reserve near Jamestown with loop trails, kayaking, fishing (permit needed) and picnic areas.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -33.276205,
+   "longitude": 138.555265
+  },
+  "quill_source": "LOW-MEDIUM: OSM node 2321806062 'Bundaleer Arboretum Picnic Area' (start of the forest walk, 600 m east of the reservoir's water polygon); no OSM or Wikipedia point for the reserve entrance",
+  "pin_hint_notes": "pin: LOW. Renamed from 'Bundaleer Forest' (id kept): the listing the draft cites is Bundaleer Reservoir Reserve. Open sunrise to sunset, free parking and toilets, closed on Total Fire Ban days; SA Water lists a 4.5 km Reservoir Loop, 7 km Boundary Loop and 6 km Woods Loop; fishing permit needed; no dogs; kayaks and canoes only. The Bundaleer Forest campground and picnic ground (-33.278,138.571) is a different part of the forest 1.5 km east.",
+  "search_hint": {
+   "latitude": -33.276205,
+   "longitude": 138.555265
+  }
+ },
+ {
+  "id": "port-lincoln-5",
+  "name": "Makybe Diva Statue",
+  "category": "monument",
+  "bio": "Bronze statue of Makybe Diva, the first horse to win three consecutive Melbourne Cups, on Port Lincoln's foreshore.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Tasman Terrace, Port Lincoln foreshore.",
+   "cost": "Free per listing."
+  },
+  "search_hint": {
+   "latitude": -34.73222222,
+   "longitude": 135.85861111
+  }
+ },
+ {
+  "id": "lake-gairdner",
+  "name": "Lake Gairdner National Park",
+  "category": "nature",
+  "bio": "Salt lake with over 200 islands north of the Gawler Ranges, reached by a 34 km station track from Mount Ive.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -31.69722222,
+   "longitude": 135.85361111
+  },
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Wikipedia park point is provisional (lake centroid). Park page: main route via Mount Ive station, 34 km track; Waltumba Tank campground on the western side (Stringer Hwy towards Glendambo). Use a visitor point, not the centroid.",
+   "cost": "Park page: Free entry, open daily. Mount Ive station charges a fee for the gate key (private, not a park fee); mention not in bio. Not a Desert Parks Pass park per page.",
+   "other": "Wiki title Lake Gairdner National Park equals name, so wiki omitted."
+  },
+  "search_hint": {
+   "latitude": -31.69722222,
+   "longitude": 135.85361111
+  }
+ },
+ {
+  "id": "streaky-bay-4",
+  "name": "Westall Way Loop",
+  "category": "nature",
+  "bio": "A 32 km unsealed scenic loop passing Smooth Pool, High Cliffs, The Granites and Cape Bauer Lookout.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Loop begins from Sceale Bay Road; pin at the loop midpoint (e.g. High Cliffs or The Granites), not at Cape Bauer Lookout used by the Cape Bauer Loop.",
+   "cost": "Public road, no fee."
+  },
+  "search_hint": {
+   "latitude": -32.799041,
+   "longitude": 134.204814
+  }
+ },
+ {
+  "id": "streaky-bay-9",
+  "name": "Streaky Bay Back Beach",
+  "category": "beach",
+  "bio": "A sealed 8 km drive from town to a reef-break surf beach with rock pools to explore at low tide.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Back Beach car park, Back Beach Road, 8 km from town",
+   "source": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/streaky-bay-back-beach"
+   ],
+   "fact": "Surf beach with rock pools at low tide; 8 km sealed road from town."
+  },
+  "search_hint": {
+   "latitude": -32.799041,
+   "longitude": 134.204814
+  }
+ },
+ {
+  "id": "ceduna-7",
+  "name": "Penong Windmill Museum",
+  "category": "museum",
+  "bio": "An outdoor museum of about 20 restored windmills, including Bruce, the largest in Australia, beside the highway.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Beside Highway 1 at Penong, 71 km west of Ceduna; point to be found by the pin pass."
+  },
+  "search_hint": {
+   "latitude": -32.11666667,
+   "longitude": 133.66666667
+  }
+ },
+ {
+  "id": "whyalla-9",
+  "name": "Freycinet Trail",
+  "category": "hike",
+  "bio": "A 12 km coastal route along Fitzgerald Bay to Point Lowly with a 4 km walking section.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Midpoint of the route along Fitzgerald Bay Road (hiking/cycling/driving trail, northern end of Fitzgerald Bay to Point Lowly); 4 km hiking section only is walkable"
+  },
+  "search_hint": {
+   "latitude": -33.03333333,
+   "longitude": 137.56666667
+  }
+ },
+ {
+  "id": "gawler-ranges-national-park-2",
+  "name": "Yandinga Falls",
+  "category": "hike",
+  "bio": "A rocky waterfall and gorge in the Gawler Ranges, reached on the Yandinga Five Falls walk and best after rain.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Midpoint of the Yandinga Five Falls walk (OSM route) or its trailhead from NPWS maps.",
+   "cost": "Covered by park entry fee."
+  },
+  "search_hint": {
+   "latitude": -32.5539,
+   "longitude": 135.4639
+  }
+ },
+ {
+  "id": "gawler-ranges-national-park-9",
+  "name": "Ucontitchie Hill",
+  "category": "nature",
+  "bio": "A 37 m domed granite hill with wave structures and tafoni boulders at its base, 32 km south-west of Wudinna.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Car park at the base of the hill (honesty box there); OSM natural=peak/rock.",
+   "cost": "Gold-coin donation in an honesty box at the base (regional tourism listing).",
+   "ticket": "Council site blocked to scripts; tourism listing used."
+  },
+  "search_hint": {
+   "latitude": -32.5539,
+   "longitude": 135.4639
+  }
+ },
+ {
+  "id": "wittelbee-conservation-park",
+  "name": "Wittelbee Conservation Park",
+  "category": "nature",
+  "bio": "A low rocky headland among mallee and high dunes with bushwalking tracks, shorebirds and samphire flats.",
+  "wiki": "Wittelbee Conservation Park",
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Wittelbee Point via Decres Bay Road; use the park access/camp area, not a centroid"
+  },
+  "search_hint": {
+   "latitude": -34.197277,
+   "longitude": 136.0387859
+  }
+ },
+ {
+  "id": "federation-hill-lookout",
+  "name": "Federation Hill Lookout",
+  "category": "viewpoint",
+  "bio": "A short 260 m uphill walk from the car park to a 360-degree lookout over the Darke Peak Ranges.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Dog Fence Road, Kielpa SA 5642; lookout is up a 260 m walk from the car park; reached through private property. Use OSM tourism=viewpoint named Federation Hill.",
+   "other": "Opened 2001 by the Darke Peak Kielpa History Book Committee; sits on the Darke Peak scenic drive, so overlaps in route with darke-peak but is a distinct stop."
+  },
+  "search_hint": {
+   "latitude": -33.6607199,
+   "longitude": 136.2890703
+  }
+ },
+ {
+  "id": "locks-well-walk",
+  "name": "Locks Well Walk",
+  "category": "hike",
+  "bio": "A 283-step wooden staircase down to a west coast beach, with a clifftop lookout and good sunset views.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Locks Well Road, Bramfield: upper car park to beach; pin at the staircase/lower lookout. Short route so midpoint is the staircase.",
+   "other": "Beach known for salmon fishing."
+  },
+  "search_hint": {
+   "latitude": -33.5402435,
+   "longitude": 135.3849446
+  }
+ },
+ {
+  "id": "eyre-highway",
+  "name": "Eyre Highway",
+  "category": "landmark",
+  "bio": "The road across the Nullarbor from Ceduna to the Western Australian border, with lookouts and roadhouses along the way.",
+  "wiki": "Eyre Highway",
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Midpoint of the SA stretch (Ceduna to the border, ~480 km): near Nullarbor Roadhouse area; take from OSM route relation."
+  },
+  "search_hint": {
+   "latitude": -31.450454,
+   "longitude": 130.8962837
+  }
+ },
+ {
+  "id": "mclaren-vale-6",
+  "name": "Aldinga Beach",
+  "category": "beach",
+  "bio": "A wide, flat beach with drive-on access south of Port Willunga, backed by the Aldinga township.",
+  "wiki": "Aldinga Beach, South Australia",
+  "quill_provisional": {
+   "latitude": -35.279293,
+   "longitude": 138.460403
+  },
+  "quill_source": "OSM Nominatim place point for Aldinga Beach (administrative boundary label node, township beside the beach)",
+  "pin_hint_notes": [
+   "pin LOW: township point beside the beach, not natural=beach; draft hint -35.295131,138.457387 was identical to Silver Sands' and was not used"
+  ],
+  "search_hint": {
+   "latitude": -35.295131,
+   "longitude": 138.457387
+  }
+ },
+ {
+  "id": "mclaren-vale-12",
+  "name": "Moana Sands Conservation Park",
+  "category": "nature",
+  "bio": "Coastal dunes with Kaurna heritage and hooded plover habitat, with lookouts and walking trails.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -35.2025,
+   "longitude": 138.47277778
+  },
+  "quill_source": "Wikipedia article Moana Sands Conservation Park (park point)",
+  "pin_hint_notes": [
+   "pin LOW: park point, not a visitor point/lookout",
+   "NPWS SA: free entry"
+  ],
+  "search_hint": null
+ },
+ {
+  "id": "victor-harbor-1",
+  "name": "Granite Island Recreation Park",
+  "category": "nature",
+  "bio": "A small island linked to Victor Harbor by a causeway, with little penguins, a coastal walk and a horse-drawn tram.",
+  "wiki": "Granite Island (South Australia)",
+  "quill_provisional": {
+   "latitude": -35.55973,
+   "longitude": 138.627207
+  },
+  "quill_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited; Wikipedia (Granite Island Recreation Park) -35.5641,138.6302 is 0.5 km away",
+  "pin_hint_notes": [
+   "pin: LOW (board point at the causeway end vs Wikipedia point on the island)",
+   "Parks SA: free entry (park fees tab); tram rides and tours are separate operators, not priced here"
+  ],
+  "search_hint": null
+ },
+ {
+  "id": "victor-harbor-6",
+  "name": "Urimbirra Wildlife Experience",
+  "category": "entertainment",
+  "bio": "An open-range wildlife park at Hindmarsh Valley with kangaroo feeding, koala patting and over 70 species of Australian animals.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -35.519276,
+   "longitude": 138.632693
+  },
+  "quill_source": "southaustralia.com listing coordinates (tourism board point for the attraction); resolve-pin.py could not run: Overpass unreachable and Nominatim/Wikipedia rate-limited",
+  "pin_hint_notes": [
+   "pin: LOW (board listing point; address 10 Welch Road, Hindmarsh Valley)",
+   "Board listing prices: adult $16, child 4-14 $8, senior/student $12; operator's own site open daily 10-4 but shows no price"
+  ],
+  "search_hint": null
+ },
+ {
+  "id": "victor-harbor-15",
+  "name": "Inman River Trail",
+  "category": "hike",
+  "bio": "Flat riverside walk from Muwerang (Kent Reserve) with a bird hide, ending at Victor Harbor Cemetery.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -35.5622726,
+   "longitude": 138.6104043
+  },
+  "quill_source": "southaustralia.com listing geotag for the Inman River Trail, NOT the route midpoint",
+  "pin_hint_notes": [
+   "pin LOW: single tourism-board geotag, route midpoint not resolved (OSM unavailable); raise to owner",
+   "About 8 km, flat; Clydesdales of the Horse Drawn Tram can be seen near the route."
+  ],
+  "search_hint": null
+ },
+ {
+  "id": "goolwa-8",
+  "name": "Animal Farm",
+  "category": "entertainment",
+  "bio": "A family animal park near Goolwa Airport with animal feeding, trailer rides, crazy golf and a snake demonstration.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -35.469075,
+   "longitude": 138.752928
+  },
+  "quill_source": "southaustralia.com listing coordinates (85 Airport Road, next to Goolwa Airport per the farm's location page)",
+  "pin_hint_notes": [
+   "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point, not an OSM feature",
+   "Adult $15 (children to 18 $9, seniors $12, feed $1; admission includes trailer ride, crazy golf, snake demonstration) from the southaustralia.com listing; other listings give older prices ($11, $13). The farm's own prices page is script-rendered and could not be read",
+   "Official name is Goolwa Animal Farm (site title 'Home | Goolwa Animal Farm'); draft name 'Animal Farm' kept per the shard but the owner may prefer 'Goolwa Animal Farm'"
+  ],
+  "search_hint": null
+ },
+ {
+  "id": "yankalilla-2",
+  "name": "Cape Jervis",
+  "category": "landmark",
+  "bio": "The Kangaroo Island ferry gateway at the western tip of the peninsula, where the Heysen Trail begins.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -35.603937,
+   "longitude": 138.108236
+  },
+  "quill_source": "southaustralia.com destination-information point for Cape Jervis (town); Wikipedia/Wikivoyage give a rounded -35.6,138.1",
+  "pin_hint_notes": [
+   "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); town point from the tourism board, not an OSM place node",
+   "Heysen Trail ends at Cape Jervis (Wikipedia 'Heysen Trail'); the ferry is an operator service, so no ticketUrl (a town)"
+  ],
+  "search_hint": null
+ },
+ {
+  "id": "yankalilla-10",
+  "name": "Blowhole Beach",
+  "category": "beach",
+  "bio": "A remote Southern Ocean beach in Deep Creek National Park, reached by a walking track.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Blowhole Creek carpark/trailhead in Deep Creek NP, then the beach end of the track; use OSM natural=beach",
+   "cost": "NPWS SA Deep Creek NP page: vehicle entry $14.40 per vehicle",
+   "closure": "Parts of Deep Creek NP remain closed after bushfire; check the park alerts for the Blowhole Creek area"
+  },
+  "search_hint": {
+   "latitude": -35.45,
+   "longitude": 138.35
+  }
+ },
+ {
+  "id": "ikara-flinders-ranges-4",
+  "name": "Bunyeroo Gorge",
+  "category": "nature",
+  "bio": "A gum-lined gorge with a scenic drive, a 7.5 km return walk and the Razorback lookout over Wilpena Pound.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": [
+   "Visit range widened from the draft (1-2 h) to 1-3 h to cover the 3.5 h return gorge hike.",
+   "CLOSURE at read time (NPWS alert, 2026-10-25): Bunyeroo Gorge on Bunyeroo Gorge Road remains closed pending repair works after heavy rain.",
+   {
+    "pin": "Bunyeroo car park is 18 km north of Wilpena on Bunyeroo Gorge Road (NPWS walks list). Razorback Lookout, on Bunyeroo Rd, per Wikivoyage -31.4108,138.5834 (4 dp): the lookout may be a separate spot in another shard; keep this pin on the gorge itself."
+   }
+  ],
+  "search_hint": {
+   "latitude": -31.5264564,
+   "longitude": 138.606148
+  }
+ },
+ {
+  "id": "ikara-flinders-ranges-13",
+  "name": "Rawnsley Park Station",
+  "category": "entertainment",
+  "bio": "Station near Wilpena Pound with the Woolshed Restaurant, scenic and helicopter flights, and walking trails.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Station entrance off Flinders Ranges Way south of Wilpena; use the homestead/Woolshed Restaurant point.",
+   "other": "Scenic flights from AUD 220 pp (20 min) on the station site; no gate fee stated, so recorded as free entry (restaurant/flights are paid extras)."
+  },
+  "search_hint": {
+   "latitude": -31.5264564,
+   "longitude": 138.606148
+  }
+ },
+ {
+  "id": "ikara-flinders-ranges-20",
+  "name": "Hawker Mural Trail",
+  "category": "historic",
+  "bio": "Self-guided mural walk through Hawker telling Adnyamathanha Dreaming stories, with English and Adnyamathanha labels.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Middle of the mural route in Hawker town centre.",
+   "other": "Listing address says Quorn (Railway Terrace) but the text places the trail in Hawker; murals by Juanella McKenzie. Renamed from Adnyamathanha Dreaming Hawker Mural Walking Trail."
+  },
+  "search_hint": {
+   "latitude": -31.8876169,
+   "longitude": 138.4227131
+  }
+ },
+ {
+  "id": "quorn-2",
+  "name": "Warren Gorge",
+  "category": "nature",
+  "bio": "Rocky gorge 21 km north of Quorn with a 5 km creek walk and yellow-footed rock-wallabies at dawn and dusk.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Gorge itself is just beyond the entrance campground on Arden Vale Road, 21 km N of Quorn; the 5.2 km creek walk starts at the campground (pin mid-gorge or at the entrance campground).",
+   "cost": "Day entry $5 per vehicle, self-registration at the gorge or at Quorn visitor centre (flindersandoutback.com.au listing, council-run)."
+  },
+  "search_hint": {
+   "latitude": -32.349535,
+   "longitude": 138.040632
+  }
+ },
+ {
+  "id": "port-pirie-1",
+  "name": "Port Pirie Heritage Trail",
+  "category": "historic",
+  "bio": "Self-guided trail past more than 30 sites, including the smelter, grand hotels and civic buildings, by foot or car.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "A linear walk: take the midpoint of the route. Third-party listing (walkingsa.org.au) calls it a 3.5 km circuit, 1-2 hr; the council story map starts at the Port Pirie Regional Tourism & Arts Centre. Must not share a pin with the mural trail or the museum.",
+   "cost": "Maps free from the visitor centre and online."
+  },
+  "search_hint": {
+   "latitude": -33.18583333,
+   "longitude": 138.01694444
+  }
+ },
+ {
+  "id": "mount-remarkable-4",
+  "name": "Melrose Courthouse Heritage and Interpretive Centre",
+  "category": "museum",
+  "bio": "Five buildings on the old courthouse site, with displays on 1848 settlement, Goyder's Line and the Nukunu people.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Museum on the old courthouse site in Melrose (Nelson Street); building point, not the town centre.",
+   "cost": "Tourism listing: adult $12, seniors/pensioners/veterans $10, students $5, family $30. Site title: 'Melrose Courthouse Museum' (name kept as the tourism board writes it)."
+  },
+  "search_hint": {
+   "latitude": -32.8265904,
+   "longitude": 138.1875684
+  }
+ },
+ {
+  "id": "vulkathunha-gammon-ranges-1",
+  "name": "Arkaroola Wilderness Sanctuary",
+  "category": "nature",
+  "bio": "Wilderness sanctuary of 610 square kilometres with 4WD ridgetop tours, stargazing and a village.",
+  "wiki": "Arkaroola",
+  "quill_provisional": {
+   "latitude": -30.31166667,
+   "longitude": 139.33611111
+  },
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Arkaroola Village (2948 Arkaroola Rd), not the sanctuary centroid",
+   "cost": "Ridgetop Tour adult $195, child $70 (arkaroola.com.au/ridgetop-tour). Sanctuary entry charge not stated on the pages read",
+   "fact": "610 sq km, founded 1968 by the Sprigg family (operator site)"
+  },
+  "search_hint": {
+   "latitude": -30.31166667,
+   "longitude": 139.33611111
+  }
+ },
+ {
+  "id": "magnetic-hill",
+  "name": "Magnetic Hill",
+  "category": "landmark",
+  "bio": "Roadside illusion on Pekina-Blackrock Road where cars seem to roll uphill, on a 44 km loop from Orroroo.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Pekina-Blackrock Road, about 3 km past Pekina and 7 km from Black Rock; the large magnet symbol marks the spot.",
+   "other": "Optical illusion per listing."
+  },
+  "search_hint": {
+   "latitude": -32.7329771,
+   "longitude": 138.6135557
+  }
+ },
+ {
+  "id": "mount-ellen-lookout",
+  "name": "Mount Ellen Lookout",
+  "category": "viewpoint",
+  "bio": "Lookout over the Southern Flinders Ranges that is popular with photographers.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Needs OSM tourism=viewpoint/peak 'Mount Ellen' or the Hancock's neighbour; location not confirmed (near Wirrabara/Melrose area?).",
+   "other": "Only one regional page names it, grouped with Hancock's Lookout; no detail on location or access.",
+   "hold": "Thin; review. Hancock's Lookout may be same area."
+  },
+  "search_hint": {
+   "latitude": -32.8265904,
+   "longitude": 138.1875684
+  }
+ },
+ {
+  "id": "kangaroo-island-30",
+  "name": "Fireball Bates Walking Trail",
+  "category": "hike",
+  "bio": "An easy 3 km interpretive loop from the Penneshaw visitor centre towards the ferry, telling settler George Bates's story.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -35.7200517,
+   "longitude": 137.9335798
+  },
+  "quill_source": "LOW: route not in OSM or Photon. Used the trailhead, OSM tourism=information 'Kangaroo Island Gateway Visitor Centre' (Photon), where the tourism board says the trail begins. Not the halfway point.",
+  "pin_hint_notes": [
+   "pin: LOW. The route is a loop of about 3 km (visitor centre, down to near the ferry and back); the owner or a later run should take the midpoint from an agency route map. Pin is 135 m from the Penneshaw Maritime and Folk Museum pin (> 25 m)."
+  ],
+  "search_hint": {
+   "latitude": -35.7200517,
+   "longitude": 137.9335798
+  }
+ },
+ {
+  "id": "mount-gambier-9",
+  "name": "Kilsby Sinkhole",
+  "category": "nature",
+  "bio": "A clear-water sinkhole on a private sheep farm near Mount Gambier, entered on a pre-booked guided snorkel, dive or tour.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -37.89238,
+   "longitude": 140.67627
+  },
+  "quill_source": "LOW: single source, Wikidata Q107672954 \"Kilsby sinkhole\" (-37.89238,140.67627); not in OSM search, no Wikipedia article",
+  "pin_hint_notes": [
+   "pin: LOW",
+   "Access is only with a pre-booked activity on a private working farm; walk-up viewing is not allowed (official FAQ). Sinkhole tour is 50 minutes, under-10s free (official page); snorkel tours supply gear.",
+   "Prices sit in a booking widget not readable by script; cost left empty and raised under needs_browser.",
+   "ticketUrl is the operator homepage; title \"Kilsby Sinkhole | Accommodation, Diving Near Mount Gambier\"."
+  ],
+  "search_hint": {
+   "latitude": -37.89238,
+   "longitude": 140.67627
+  }
+ },
+ {
+  "id": "beachport-7",
+  "name": "Millicent Museum",
+  "category": "museum",
+  "bio": "A National Trust museum in an 1873 school building with a shipwreck room and a large horse-drawn vehicle collection.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "1 Mount Gambier Road, Millicent (NT page address); it shares the Visitor Information Centre complex.",
+   "text": "Renamed from Millicent National Trust Museum: the Trust now titles it 'Millicent Museum'. Adult $14, concession $10, children 5-15 $2 per the NT page (may be dated). Open Mon-Fri 9-5, Sat-Sun and public holidays 10-4. The 'gallery' of the draft is not sourced; the shipwreck room and carriages are.",
+   "review": "Millicent is about 35 km from Beachport; kept in beachport per draft."
+  },
+  "search_hint": {
+   "latitude": -37.48355,
+   "longitude": 140.008423
+  }
+ },
+ {
+  "id": "murray-bridge-3",
+  "name": "Murray Bridge Regional Gallery",
+  "category": "museum",
+  "bio": "Public art gallery with three exhibition spaces behind the Murray Bridge town hall, showing South Australian artists.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "cost": "Free entry per gallery programme page and SATC listing. Open Tue-Sat 10-4, Sun 11-4, closed Mon and public holidays.",
+   "pin": "27 Sixth Street, behind the Town Hall (Murray Bridge town centre)."
+  },
+  "search_hint": {
+   "latitude": -35.117,
+   "longitude": 139.267
+  }
+ },
+ {
+  "id": "murray-bridge-13",
+  "name": "Tailem Bend Info Station and Rail Museum",
+  "category": "museum",
+  "bio": "Volunteer-run 1913 railway station at Tailem Bend with a signal box, rail museum and local history room.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Tailem Bend railway station (Railway Terrace area); use OSM museum/station node",
+   "cost": "free per southaustralia.com listing",
+   "hours": "volunteer run, hours vary"
+  },
+  "search_hint": {
+   "latitude": -35.117,
+   "longitude": 139.267
+  }
+ },
+ {
+  "id": "mannum-5",
+  "name": "Hermann Gass Bird Sanctuary",
+  "category": "nature",
+  "bio": "Bird sanctuary and picnic area on the Murray at Mannum, reached by kayak past river red gums.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Sanctuary car park near Mannum on the river; OSM nature reserve node is a centroid, use car park"
+  },
+  "search_hint": {
+   "latitude": -34.915143,
+   "longitude": 139.304393
+  }
+ },
+ {
+  "id": "coorong-national-park-4",
+  "name": "Nukan Kungun Hike",
+  "category": "hike",
+  "bio": "Two-day, 25 km walk from Salt Creek to 42 Mile Crossing that links the park's best-known trails.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Route midpoint, Salt Creek to 42 Mile Crossing Campground (about 25 km); not in the draft with coordinates. Use OSM hiking route if present, else the NPWS trail map. Camping at 42 Mile Crossing is charged separately (from $12.30 per night per park page); the walk itself has no fee."
+  },
+  "search_hint": {
+   "latitude": -36.049,
+   "longitude": 139.554
+  }
+ },
+ {
+  "id": "coorong-national-park-9",
+  "name": "Ngrugie Ngoppun Walk",
+  "category": "hike",
+  "bio": "Easy 2.5 km loop of about an hour and a quarter, with wildlife viewing and local history.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Trailhead per NPWS trail map; loop of 2.5 km (1 hr 15 min). Check it is not the same trailhead as Parnka Ngoppun Trail or Lakes Nature Walk."
+  },
+  "search_hint": {
+   "latitude": -36.049,
+   "longitude": 139.554
+  }
+ },
+ {
+  "id": "coorong-national-park-15",
+  "name": "Bushranger Birdman of the Coorong",
+  "category": "landmark",
+  "bio": "Life-size saddled ostrich statue on the Meningie lake shore that tells the Peggotty legend.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Statue on the Meningie foreshore of Lake Albert; take the point from OSM tourism=artwork or the SATC attraction geotag."
+  },
+  "search_hint": {
+   "latitude": -36.049,
+   "longitude": 139.554
+  }
+ },
+ {
+  "id": "riverland-2",
+  "name": "Murray River National Park",
+  "category": "nature",
+  "bio": "Floodplain park of Murray wetlands, with walking trails, canoe creeks, bird watching and bush camping.",
+  "wiki": "Murray River National Park",
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Park visitor point: Lock 4 entrance via Draper Road from Berri (not Katarapko's spot pin)",
+   "cost": "Agency page: vehicle entry to the park is free, camping from $15.40 per night"
+  },
+  "search_hint": {
+   "latitude": -34.25,
+   "longitude": 140.467
+  }
+ },
+ {
+  "id": "riverland-8",
+  "name": "PS Industry",
+  "category": "historic",
+  "bio": "Restored 1911 paddle steamer moored on Renmark's riverfront, with 60-minute cruises on set dates.",
+  "wiki": "PS Industry",
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Moored at Renmark riverfront by the Visitor Information Centre, 84 Murray Ave (Wikivoyage geotag -34.1751 140.7516 is the centre)",
+   "cost": "Adult $35 cruise per southaustralia.com listing; the official page lists the cruise dates and a $3 booking fee but no price; unverified. Boarding outside cruises is in visitor centre hours"
+  },
+  "search_hint": {
+   "latitude": -34.25,
+   "longitude": 140.467
+  }
+ },
+ {
+  "id": "riverland-13",
+  "name": "Gluepot Reserve",
+  "category": "nature",
+  "bio": "Volunteer-run mallee reserve with a visitor centre, 14 walking trails and bird hides, home to the black-eared miner.",
+  "wiki": "Gluepot Reserve",
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Visitor Centre at the homestead area (not the reserve centroid); self-registration there.",
+   "fee": "Day visitors $10 per vehicle per day, camping $20 per vehicle per night (gluepot.org/visit-us). Reserve was closed for track drying at fetch time."
+  },
+  "search_hint": {
+   "latitude": -34.25,
+   "longitude": 140.467
+  }
+ },
+ {
+  "id": "riverland-18",
+  "name": "Renmark Paringa Community Museum",
+  "category": "museum",
+  "bio": "Local history museum in Paringa with mostly agricultural and riverside displays of Renmark and Paringa.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "12 Sturt Hwy, Paringa; Wikivoyage listing geo about -34.1808, 140.7796.",
+   "cost": "Listed as free with a donation appreciated; open Mon, Wed, Fri 10am-3pm.",
+   "pin_hint": "-34.1808 140.7796 (Wikivoyage listing)"
+  },
+  "search_hint": {
+   "latitude": -34.25,
+   "longitude": 140.467
+  }
+ },
+ {
+  "id": "riverland-24",
+  "name": "Morgan Conservation Park",
+  "category": "nature",
+  "bio": "Riverside wetlands for birdwatching, fishing and picnics on the Murray near Morgan.",
+  "wiki": "Morgan Conservation Park",
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Park visitor/day-use point near the Murray wetlands (use a day-use area or boat ramp from OSM), not the park centroid.",
+   "general": "No day entry fee shown on the NPWS page (only camping, $15.40 per night). NPWS alert: park partially closed 18 May to 30 December 2026 for regulator construction works. Draft bio 'near Morgan' kept. Weak but named by the agency list."
+  },
+  "search_hint": {
+   "latitude": -34.25,
+   "longitude": 140.467
+  }
+ },
+ {
+  "id": "riverland-29",
+  "name": "Heaven Clifftop Viewpoint",
+  "category": "viewpoint",
+  "bio": "Free clifftop viewpoint above Habel's Bend, with a cliff walking trail and Murray views towards Katarapko.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Viewpoint at the cliff top above Habel's Bend (OSM tourism=viewpoint if named Heaven). Not on a Wikipedia page.",
+   "general": "SATC lists it Free. 'Cliff walking trail' and 'Katarapko' are from the Atlas draft note (the SATC listing page is thin): unverified. Official name has quotes ('Heaven'); shown name without."
+  },
+  "search_hint": {
+   "latitude": -34.25,
+   "longitude": 140.467
+  }
+ },
+ {
+  "id": "swan-reach-district-museum",
+  "name": "Swan Reach and District Museum",
+  "category": "museum",
+  "bio": "Local history museum in a 1917 school building at Swan Reach, with the Mid Murray Classic Car Gallery of 16+ vehicles.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Former school building in Swan Reach township; pin the museum entrance.",
+   "cost": "No price found; assumed free/donation for a small volunteer museum, unverified."
+  },
+  "search_hint": {
+   "latitude": -34.567348,
+   "longitude": 139.5973284
+  }
+ },
+ {
+  "id": "hunter-road-lookout",
+  "name": "Hunter Road Lookout",
+  "category": "viewpoint",
+  "bio": "Free clifftop lookout over the Murray, Blanchetown and Paisley Wetlands, 2.3 km off the Sturt Highway.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Lookout at the end of Hunter Road, Paisley, 2.3 km off the Sturt Highway; pin on the lookout platform."
+  },
+  "search_hint": {
+   "latitude": -34.3976876,
+   "longitude": 139.6664995
+  }
+ },
+ {
+  "id": "coonalpyn-silo-art",
+  "name": "Coonalpyn Downs Silo Art",
+  "category": "landmark",
+  "bio": "Guido van Helten's 2017 mural of five local children on working grain silos beside the Dukes Highway.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "pending serial pin pass",
+  "pin_hint_notes": {
+   "pin": "Coonalpyn silos beside the Dukes Highway; large parking area adjacent (Atlas Obscura); use the silo group, not town centre.",
+   "bio": "Dropped draft 'picnic area' claim: no source describes one at the silos. Silos are still operational with heavy truck traffic at times."
+  },
+  "search_hint": {
+   "latitude": -35.6969373,
+   "longitude": 139.8587643
+  }
+ },
+ {
+  "id": "coober-pedy-7",
+  "name": "Moon Plain",
+  "category": "nature",
+  "bio": "Barren, pale plain near Coober Pedy where scenes of Mad Max Beyond Thunderdome and Priscilla were filmed.",
+  "wiki": null,
+  "quill_provisional": null,
+  "quill_source": "none found: no OSM feature and no Wikipedia article (the 'Moon Plain (South Australia)' title 404s); sources give only 'near Coober Pedy'",
+  "pin_hint_notes": [
+   "pin: LOW",
+   "Needs the pin from a map source (Oodnadatta Track / William Creek Road stopping point) by the owner. Drop wiki: article does not exist."
+  ],
+  "search_hint": {
+   "latitude": -29.01111111,
+   "longitude": 134.75555556
+  }
+ },
+ {
+  "id": "innes-national-park-8",
+  "name": "Stenhouse Bay Lookout Walk",
+  "category": "hike",
+  "bio": "2 km clifftop loop from the jetty car park, with views over Investigator Strait and the offshore islands.",
+  "wiki": null,
+  "quill_provisional": {
+   "latitude": -35.27954,
+   "longitude": 136.943274
+  },
+  "quill_source": "OSM man_made=pier \"Stenhouse Bay Jetty\" as proxy for the Stenhouse Jetty car park trailhead named by the park page (LOW; loop route not found)",
+  "pin_hint_notes": {
+   "pin": "LOW",
+   "detail": "trailhead proxy, not the route midpoint"
+  },
+  "search_hint": {
+   "latitude": -35.27954,
+   "longitude": 136.943274
+  }
+ }
+]

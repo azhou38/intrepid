@@ -1,0 +1,435 @@
+{
+ "destinations": [
+  {
+   "id": "gawler-ranges-national-park",
+   "name": "Gawler Ranges National Park",
+   "category": "park",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -32.5539,
+    "longitude": 135.4639
+   },
+   "coordinates_source": "wikipedia:Gawler Ranges National Park (centroid; visitor point to be resolved)",
+   "defaultZoomSpanKm": 120,
+   "name_evidence": {
+    "source": "parks.sa.gov.au Gawler Ranges National Park page and Wikivoyage Eyre Peninsula",
+    "wording": "national park with Organ Pipes, Yandinga Falls, Kolay Mirica Falls and Paney Homestead"
+   },
+   "spots": [
+    "gawler-ranges-national-park-1",
+    "gawler-ranges-national-park-2",
+    "gawler-ranges-national-park-3",
+    "gawler-ranges-national-park-4",
+    "gawler-ranges-national-park-5",
+    "gawler-ranges-national-park-6",
+    "gawler-ranges-national-park-7",
+    "gawler-ranges-national-park-8",
+    "gawler-ranges-national-park-9",
+    "gawler-ranges-national-park-10",
+    "gawler-ranges-national-park-11",
+    "gawler-ranges-national-park-12",
+    "gawler-ranges-national-park-13",
+    "gawler-ranges-national-park-14"
+   ],
+   "note_merge": "Wudinna (the park's gateway town) folded in: its spots are spots of the park destination."
+  }
+ ],
+ "spots": [
+  {
+   "category": null,
+   "icon": null,
+   "bio": null,
+   "wiki": null,
+   "coordinates_source": "wikipedia:Whyalla (town point, used as centre only)",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 31260,
+   "counted_sources": 2,
+   "id": "whyalla",
+   "name": "Whyalla",
+   "destination": "whyalla",
+   "coordinates": {
+    "latitude": -33.03333333,
+    "longitude": 137.56666667
+   },
+   "note": "Kept town is the destination itself, not also a spot: steel city on Upper Spencer Gulf, giant cuttlefish, HMAS Whyalla",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Whyalla",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🪨",
+   "bio": "Volcanic basalt columns about 1,500 million years old, reached by a short walk in the park.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "gawler-ranges-national-park-1",
+   "name": "Organ Pipes",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Gawler Ranges National Park's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "💧",
+   "bio": "A waterfall in Gawler Ranges National Park, reached by the Yandinga Five Falls walk.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "gawler-ranges-national-park-2",
+   "name": "Yandinga Falls",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Gawler Ranges National Park's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "💧",
+   "bio": "A waterfall in Gawler Ranges National Park, with a Mirica Falls walk.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "gawler-ranges-national-park-3",
+   "name": "Kolay Mirica Falls",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Gawler Ranges National Park's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "A historic station homestead in the park, with the Old Paney Heritage trail.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "gawler-ranges-national-park-4",
+   "name": "Paney Homestead",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Gawler Ranges National Park's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park"
+   ]
+  },
+  {
+   "category": null,
+   "icon": null,
+   "bio": null,
+   "wiki": null,
+   "coordinates_source": "wikipedia:Gawler Ranges National Park (centroid; visitor point to be resolved)",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates"
+   ],
+   "views": 979,
+   "counted_sources": 4,
+   "id": "gawler-ranges-national-park-5",
+   "name": "Gawler Ranges National Park",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": {
+    "latitude": -32.5539,
+    "longitude": 135.4639
+   },
+   "note": "Kept national park with four kept spots, so a park destination: national park with Organ Pipes, Yandinga Falls, Kolay Mirica Falls and Paney Homestead",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/gawler-ranges-national-park",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula",
+    "https://en.wikivoyage.org/wiki/Wudinna",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/gawler-ranges-national-park"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "⛰️",
+   "bio": "A granite monolith, the second largest in Australia, that can be climbed.",
+   "wiki": "Mount Wudinna",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1071,
+   "counted_sources": 2,
+   "id": "gawler-ranges-national-park-6",
+   "name": "Mount Wudinna",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Wudinna's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Wudinna",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/mount-wudinna"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "A granite rock and dam reserve with a picnic area, bird life and a walk around the base.",
+   "wiki": "Polda Rock",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "gawler-ranges-national-park-7",
+   "name": "Polda Rock",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Wudinna's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Wudinna",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/polda-rock-reserve"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "A granite rock reserve with boulders, trails and facilities.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "gawler-ranges-national-park-8",
+   "name": "Tcharkulda Rock",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Wudinna's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Wudinna",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/tcharkuldu-rock-recreation-reserve"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "A climbable domed granite inselberg with wave structures at its base.",
+   "wiki": "Ucontitchie Hill",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "gawler-ranges-national-park-9",
+   "name": "Ucontitchie Hill",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Wudinna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/ucontitchie-hill"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A granite inselberg shaped like a wave wall, climbed for views, near Minnipa.",
+   "wiki": "Pildappa Rock",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "gawler-ranges-national-park-10",
+   "name": "Pildappa Rock",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": null,
+   "note": "Inside Wudinna's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Wudinna",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/pildappa-rock"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "A large granite outcrop with views to the Gawler Ranges, popular for picnics and boulder climbing; 4WD only.",
+   "wiki": "Corrobinnie Hill Conservation Park",
+   "coordinates_source": "wikipedia:Corrobinnie Hill Conservation Park (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 305,
+   "counted_sources": 1,
+   "id": "gawler-ranges-national-park-11",
+   "name": "Corrobinnie Hill Conservation Park",
+   "destination": "gawler-ranges-national-park",
+   "coordinates": {
+    "latitude": -32.9848,
+    "longitude": 135.7387
+   },
+   "note": "Inside Wudinna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/corrobinnie-hill-conservation-park"
+   ]
+  }
+ ]
+}

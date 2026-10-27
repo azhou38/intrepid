@@ -1,0 +1,1864 @@
+{
+ "adelaide": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "Adelaide Oval stadium tour adult $28 (southaustralia.com only; official page shows no standard price)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Adelaide Gaol adult $17 (southaustralia.com only; operator page shows no price)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "adelaide-15 Migration Museum: free entry per Wikivoyage only"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "adelaide-16 Tandanya: entry fee and reopening date"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "adelaide-20 National Wine Centre: free general entry"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "adelaide-23 Space Discovery Centre: free entry"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "adelaide-24 Parliament House: tour times and freeness (agency page not re-read)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "adelaide-21 Bicentennial Conservatory: free entry (Wikivoyage only)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Rundle Mall/Elder Park/Largs Bay/Brighton/West Beach/Port Noarlunga pins from single Wikipedia or Commons sources (Overpass and Nominatim unreachable)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Port Noarlunga snorkel trail length 800 m (draft bio, not re-fetched)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Witton Bluff Base Trail length and 2025 opening (Fleurieu listing only)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "adelaide-46 Warriparinga: cost (free assumed), hours, guided-walk price"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "adelaide-42 Port Adelaide Historical Society Museum: $5 entry from SATC only, no operator site found"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "adelaide-45 Carrick Hill: price from SATC listing; steward admission page not loaded"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "adelaide-48 Victoria Square: bio facts (flag, Kaurna significance) from draft note, not re-fetched"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "adelaide-43 Fort Glanville: price is adult range across Tuesday tour and open-day entry"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "adelaide-53 Bay Discovery Centre: entry cost not verified (council page bot-walled)"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "adelaide-60 visit range 3-4 hr and Cleland no-entry-fee inferred from the fees tab listing accommodation only"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "adelaide-51 price $10 is from Wikivoyage 2023"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "adelaide-62 Classic Jets: operating status, price, official site"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "adelaide-hills-3 Cleland adult $35.80 not read from page directly"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "adelaide-hills-5 Beerenberg $5 patch entry from secondary reports"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "adelaide-hills-6 Warrawong $25 adult price (undated)"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "adelaide-64 Tramway adult $10 (state history listing only)"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "adelaide-hills-8 The Cedars: price from site summary"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "adelaide-hills-10 adult price (only child from $15.50 found)"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "adelaide-hills-13 adult $22.50 from search snippet, page fetch failed"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "adelaide-hills-16 whether ForestrySA vehicle access permit applies at Kuitpo"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "adelaide-hills-9 free entry not confirmed on site"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "adelaide-hills-19 ticketUrl and 54 km length rely on Wikipedia/search only"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Kyeema: former prison camp claim from draft not on park page; park page places it on the Fleurieu Peninsula while tagged adelaide-hills"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Thompson Beach: no price source needed (open beach); dolphin sightings from draft not verified, omitted"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "adelaide-23",
+    "url": "https://spacediscovery.gov.au/",
+    "why": "fetch failed (status 0); confirm official site and free entry"
+   },
+   {
+    "id": "adelaide-15",
+    "url": "https://www.migrationmuseum.sa.gov.au/",
+    "why": "fetch failed; confirm closure dates on the History Trust page"
+   },
+   {
+    "id": "adelaide-30",
+    "url": "City of Port Adelaide Enfield Largs Bay foreshore page",
+    "why": "blocked (403) per draft; only used for facts already in the draft"
+   },
+   {
+    "id": "adelaide-46",
+    "url": "https://www.marion.sa.gov.au/warriparinga",
+    "why": "HTTP 202 to scripts; need cost, opening and an official link"
+   },
+   {
+    "id": "adelaide-37",
+    "url": "https://www.holdfast.sa.gov.au/explore/kingston-park-coastal-reserve",
+    "why": "HTTP 202 to scripts; council page for a possible link (URL guessed, find it from the council site)"
+   },
+   {
+    "id": "adelaide-45",
+    "url": "https://www.carrickhill.sa.gov.au/",
+    "why": "admission page path unknown; confirm the House Museum price"
+   },
+   {
+    "id": "adelaide-53",
+    "url": "https://www.holdfast.sa.gov.au/discover-our-place/history-culture/bay-discovery-centre",
+    "why": "returns status 202 bot-wall; need entry cost"
+   },
+   {
+    "id": "adelaide-61",
+    "url": "https://www.sawater.com.au/community-and-education/our-reservoirs/happy-valley-reservoir",
+    "why": "403 bot wall; cost/link and reserve status unchecked"
+   },
+   {
+    "id": "adelaide-hills-17",
+    "url": "https://www.sawater.com.au/community-and-environment/recreation/mount-bold-reservoir",
+    "why": "403 bot wall"
+   },
+   {
+    "id": "adelaide-hills-19",
+    "url": "https://www.yurrebilla.com.au/",
+    "why": "blank to script"
+   },
+   {
+    "id": "adelaide-hills-13",
+    "url": "https://motor.history.sa.gov.au/",
+    "why": "confirm admission price"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "Overpass/Nominatim were rate-limited by parallel shards, so resolve-pin returned LOW for several spots; points used are Wikipedia, Wikivoyage listing or Commons-median values and each carries its source. Re-run resolve-pin for those marked pin LOW."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Waterfall Gully draft was wrong (pin and wiki were Morialta's First Falls); corrected wiki, provisional suburb pin."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Central Market is open Tuesday to Saturday (confirmed on the market's site)."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "LOW pins: adelaide-13 Semaphore, adelaide-16 Tandanya, adelaide-17 Park Lands (Rymill Park representative point), adelaide-22 MOD., adelaide-23 Space Discovery Centre"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Should not be added now: Migration Museum (closed from 1 July 2026 for 18-24 months) and Tandanya (closed, relaunch 2027); bios state the closure"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Pins checked >=25 m from existing spots/destinations in src/data"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "All 12 spots kept; none should be dropped. Pin lookups ran under heavy Nominatim contention and Overpass was down, so most pins are Wikipedia/Commons-based and flagged."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "No pins mutually closer than 25 m (checked by eye: all distinct places); not checked against src/data/spots.ts for same-point reuse."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "No pins resolved (serial pass). Kingston Park (adelaide-37) and Carrick Hill (adelaide-45) have no draft coordinates."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Nothing recommended for removal; Port Adelaide Historical Society Museum is the marginal one."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "No destinations in this shard; no pins resolved (serial pass)."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "adelaide-51 is closed until Dec 2026 and adelaide-52 is to be relocated: still written, flag for the owner."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "adelaide-62 should be held until confirmed open (cost unknown; no cost means not added)."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Pins deferred to the serial pass for all spots."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Yurrebilla range 24 hr used as whole-walk; adjust if convention differs."
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Nothing judged unfit to add. Kyeema and Para Wirra pages loaded and titles checked."
+   }
+  ]
+ },
+ "barossa-clare": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "barossa-valley-1 Penfolds price (Time Out $95/$100, not official)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "barossa-valley-2 Seppeltsfield price (A$180 from a third-party listing; official page gives none)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "barossa-valley-5 Barossa Museum $5 adult (visitor centre factsheet) and opening days"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "barossa-valley-10 Greenock 27-site walk and aviation museum (Atlas draft)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "goodToKnow booking/age tip from Rezdy/Time Out Penfolds listings"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Riesling Trail and Rattler Trail pins are OSM segments near the route middle, not the whole-route midpoint (Overpass route query timed out)."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Sevenhill Cellars: whether the St Aloysius Church interior is open to visitors was not confirmed; cellar door entry is free (tastings optional)."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Bundaleer Reservoir Reserve pin (LOW) and SA Water page title (blocked)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Diggers Walk route/midpoint (LOW)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Burra Heritage Passport price: $35 adult per visitburra.com.au; other listings differ"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Eudunda silo art: which silo carries the mural"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Terowie museum opening arrangements"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "jamestown-railway-station-museum: entry cost and official site"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "bowman-park: free status (Wikipedia silent on fees), managing body, 1850s homestead ruins"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "barossa-valley-1",
+    "url": "https://www.penfolds.com/en-au/",
+    "why": "deep links return 410 and the homepage title does not name the place; confirm the cellar door page and price in a browser"
+   },
+   {
+    "id": "barossa-valley-5",
+    "url": "https://www.barossamuseum.org.au",
+    "why": "site did not load by script; barossa.com listing returned 403; find the official site and hours"
+   },
+   {
+    "id": "clare-valley-3",
+    "url": "https://martindalehall.com.au/",
+    "why": "Fetched fine; listed only to double-check the $20 adult fee and opening days in a browser."
+   },
+   {
+    "id": "bundaleer-forest",
+    "url": "https://www.sawater.com.au/reservoir-reserves/reservoir-reserves/bundaleer",
+    "why": "Cloudflare 'Just a moment'; check title and entrance/car park location"
+   },
+   {
+    "id": "bowman-park",
+    "url": "https://www.pirie.sa.gov.au/bowman-park",
+    "why": "403 bot wall; check managing body, fee, ticketUrl"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "Overpass main instances, Nominatim and Photon were down/rate-limited; resolve-pin returned LOW with no feature, so all pins come from OSM features read through overpass.openstreetmap.fr (same data), cross-checked with Wikipedia where it has precise coordinates. Whispering Wall pin uses Wikipedia's 6-dp point (OSM node is 110 m away, 4 dp)."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "No LOW pins. Nothing judged unfit to add."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "resolve-pin.py ran with Overpass down and Nominatim/Photon/Wikipedia rate-limited by the shared IP, so several pins were taken from the kumi/overpass-api Overpass mirrors directly; each coordinates_source says which feature."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "LOW pin: Warren Conservation Park (barossa-valley-15), provisional point on the mapped Warren Tower Hike; needs the park's car park from the NPWS map."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Gawler (barossa-valley-14) is marginal: no See entries on its Wikivoyage page; kept per the judge, flagged for owner review."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "All spots >= 25 m apart within the shard; not compared with src/data (no Clare Valley or Gawler entries exist there yet)."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Overpass main instances, Nominatim and Photon were down or rate-limited; OSM read through overpass.openstreetmap.fr with a Referer header; resolve-pin.py produced only LOW for Blyth and Farrell Flat from Commons."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Renamed bundaleer-forest to Bundaleer Reservoir Reserve (id kept). Blyth: draft's Brooks Lookout dropped (unsourced)."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "No LOW-confidence spots dropped; nothing judged unfit to add. LOW pins: bundaleer-forest, diggers-walk-belalie-creek."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Cost basis for the railway museum left unset until its fee is confirmed."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Jamestown cluster is about 70+ km from Clare; both Jamestown spots standalone."
+   }
+  ]
+ },
+ "eyre": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "Mikkira Station: $159 safari price is from the tourism listing, not the operator; bio claim of permit/gate key removed"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Stamford Hill: free/open and park-fee status assumed"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Fishery Bay: whaling station remains and free access from tourism listing only; wiki dropped (redirects to Sleaford Bay)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Memory Cove ticketUrl and $14.40 from NPWS Memory Cove page"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Axel Stenross, Old Mill, Makybe Diva, Parnkalla: costs from tourism listing"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Whalers Way: free-camping inclusion in permit from visitor centre page"
+   },
+   {
+    "shard": "out-10.json",
+    "text": "Mount Ive gate-key fee amount not stated on park page"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Cape Donington: public access and whether the lighthouse headland is reached through the park or Memory Cove (booked key access) is not confirmed; fee assumed to be Lincoln NP vehicle entry $14.40."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Cape Donington bio 'lighthouse' rests on Wikipedia's Cape Donington Lighthouse article, not the NPWS page."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Spots inside paid NPWS parks (Sleaford Bay, Cape Donington, Yangie Bay, Almonta Beach) carry the park's $14.40 vehicle fee as costBasis park; reconcile if the owner prefers free/open for in-park spots."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Wikipedia articles for Yangie Bay and Almonta Beach not confirmed (draft wiki kept; views 0)."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Murphy's Haystacks has no official website found; donation basis from the regional tourism page."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Entry-fee amounts as of the cached parks.sa.gov.au fetch."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "streaky-bay-12 Streaky Bay Museum: admission cost not found on any source (no cost set; needs researcher)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Cactus Beach: no steward/tourism page loaded; only Wikipedia's break description"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Smoky Bay oyster tour price"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Best months for Ceduna (judgement)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Spot visit durations are estimates"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "whyalla-3 guided cuttlefish tour prices (operator-dependent, not stored)"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "whyalla-1 museum price from regional tourism listing, not the museum's own page"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "whyalla-11 mine tour price (~$5, outdated listing, not stored)"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Pildappa Rock $10/car fee comes only from the regional tourism listing"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Corrobinnie Hill pin hint may be too far east and no official page exists"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Yandinga Falls / Kolay Mirica Falls / Paney Homestead details rest on the NPWS summary and Wikipedia only (park Fees/See and do tabs not in fetched text)"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Franklin Harbor Historical Museum price ($5 'from', eyrepeninsula.com; Wikivoyage says $2, older); hours vary (volunteer-run)"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Franklin Harbor Conservation Park: no NPWS page found, so no fee or ticketUrl verified; treated as free/open"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Wittelbee: NPWS page lists only camping $15.40/night, no entry fee; treated as free/open"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Cleve Hills Scenic Drive, Observation Hill, Arno Bay Boardwalk, Wudinna Granite Trail: costs from eyrepeninsula.com (free/none listed), no official page loaded"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Wittelbee eyrepeninsula page lists Ceduna but address (Decres Bay Road) is Cowell side; assumed Cowell area per draft"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Boat trip prices/operators for Sir Joseph Banks Group not sourced; entry free only"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Parks yeldulknie/carappee: free per tourism listing only, no NPWS page found"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Port Neill beach length and Lady Kinnaird trail length (draft) not confirmed"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Talia Caves/Locks Well Walk/Federation Hill free per tourism listing only"
+   },
+   {
+    "shard": "out-9.json",
+    "text": "neptune-islands price (AUD 562-630 from conflicting Rezdy listings; operator sites did not show a price)"
+   },
+   {
+    "shard": "out-9.json",
+    "text": "kimba-museum adult price (listing says from $5)"
+   },
+   {
+    "shard": "out-9.json",
+    "text": "big-galah halfway sign (Wikivoyage only)"
+   },
+   {
+    "shard": "out-9.json",
+    "text": "fowlers-bay Scotts Beach / Mexican Hat not rechecked"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "port-lincoln-4",
+    "url": "https://www.portlincoln.sa.gov.au",
+    "why": "council site blocked (Cloudflare); may be the official page for Old Mill, Makybe Diva, Parnkalla Trail"
+   },
+   {
+    "id": "ceduna-5",
+    "url": "https://oysterdeckexperience.com.au",
+    "why": "unreachable by script (fetch failed); operator price and site"
+   },
+   {
+    "id": "ceduna-7",
+    "url": "https://www.penongwindmill.com",
+    "why": "guessed domain, fetch failed; find the museum's real site"
+   },
+   {
+    "id": "gawler-ranges-national-park-6",
+    "url": "https://www.wudinna.sa.gov.au/our-services/council-facilities/park-search/mount-wudinna-recreation-reserve",
+    "why": "403 bot wall; confirm council page and find pages for Polda, Pildappa, Ucontitchie, Corrobinnie"
+   },
+   {
+    "id": "gawler-ranges-national-park-8",
+    "url": "https://www.wudinna.sa.gov.au/our-services/council-facilities/park-search/tcharkuldu-rock-recreation-reserve",
+    "why": "403 bot wall"
+   },
+   {
+    "id": "redbanks-beach",
+    "url": "https://www.cleve.sa.gov.au/tourism/things-to-see-and-do/redbanks-beach",
+    "why": "403 bot wall; ticketUrl taken from eyrepeninsula.com listing, title not checked"
+   },
+   {
+    "id": "gawler-ranges-national-park-13",
+    "url": "https://www.wudinna.sa.gov.au/touristinformation/attractions/other-attractions",
+    "why": "403; may give a trail page for ticketUrl"
+   },
+   {
+    "id": "cleve-hills-scenic-drive-and-lookout",
+    "url": "https://www.cleve.sa.gov.au/tourism",
+    "why": "403; find scenic drive page"
+   },
+   {
+    "id": "observation-hill-lookout",
+    "url": "https://www.cleve.sa.gov.au/tourism",
+    "why": "403; find Observation Hill page"
+   },
+   {
+    "id": "arno-bay-estuary-boardwalk",
+    "url": "https://www.cleve.sa.gov.au/tourism",
+    "why": "403; find boardwalk page"
+   },
+   {
+    "id": "franklin-harbor-conservation-park",
+    "url": "https://www.franklinharbour.sa.gov.au",
+    "why": "403; council may link the park page"
+   },
+   {
+    "id": "federation-hill-lookout",
+    "url": "https://www.cleve.sa.gov.au/tourism/things-to-see-and-do/federation-lookout",
+    "why": "403 bot wall; candidate ticketUrl, also for darke-peak"
+   },
+   {
+    "id": "talia-caves",
+    "url": "https://www.elliston.sa.gov.au",
+    "why": "403 bot wall; candidate ticketUrl for talia-caves and locks-well-walk"
+   },
+   {
+    "id": "kimba-museum",
+    "url": "https://www.kimba.sa.gov.au/tourist-information",
+    "why": "403 bot wall; confirm official site, adult price and opening days"
+   },
+   {
+    "id": "big-galah",
+    "url": "https://www.kimba.sa.gov.au/tourist-information",
+    "why": "403 bot wall; confirm Big Galah and halfway sign"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "Pins pending serial pass; no resolve-pin run."
+   },
+   {
+    "shard": "out-10.json",
+    "text": "Cowell, Tumby Bay, Cleve, Elliston are destinations themselves (no spot entries; note says so), so nothing written for them in this shard."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Lincoln National Park (id lincoln-national-park, category null) is the destination itself per Atlas note, so no spot entry was written; its destination draft is in another shard. Park fee $14.40 per vehicle, Memory Cove needs booking and a key."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Removed 'coffin-bay' town from spots (destination itself)."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Powerhouse Museum is entry by donation (costBasis donation, free true)."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Sceale Bay bio kept modest: only Surfers Beach (28 km south, sealed road) is sourced; the draft's lookouts and surf lessons were not confirmed so were cut."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Pins all pending serial pass; Point Labatt, Baird Bay and Sceale Bay keep draft coordinates (provisional)."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "streaky-bay (destination town point) was in the shard's spots but has no spot fields; it is the destination itself, not a spot, and is left out of the spots map."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "No LOW pins: all pins deferred to serial pass; 4 spots have coordinates null (South Head Walking Trail, Ceduna Jetty, Pinky Point Lookout, Penong Windmill Museum)."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "ceduna and whyalla spot entries are not to be added (town = destination)."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "whyalla-11 Iron Knob is outside the original 70 km span; widened to 90."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "No spot judged unfit. No LOW pins assessed (pins deferred); all coordinates pending serial pass."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "gawler-ranges-national-park-14 (Wudinna) is the destination town itself per Atlas note, not a spot: omitted from spots."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Pins: all pending serial pass; Wikivoyage listing geotags kept for sculpture, silo art, museum, Franklin Harbor CP."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Wittelbee costBasis open (no gate fee found); Wudinna sculpture listed free."
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Pins all pending the serial pass; round coordinates kept only as provisional."
+   },
+   {
+    "shard": "out-9.json",
+    "text": "Mighty Mulloway unveiled July 2026; Googs Track closed 1 Dec 2026 to 28 Feb 2027."
+   },
+   {
+    "shard": "out-9.json",
+    "text": "Pins all pending serial pass; no LOW pins resolved by me."
+   }
+  ]
+ },
+ "fleurieu": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "mclaren-vale-1: Cube price $20 (incl. tasting) from Wikivoyage only; winery deep page 404"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "mclaren-vale-7 Red Poles: free to browse and still trading unconfirmed; operator domain parked"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "mclaren-vale-16 Softfoot: $10 wildlife-park adult entry from operator site text; location misplaced"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "mclaren-vale-9: free admission per National Trust page; opening only first Sat/third Sun monthly"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Softfoot tour $250: per person or per group of up to 5 not confirmed from the operator's own page"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Urimbirra $16 adult from the board listing only; the operator's site shows no price"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Hindmarsh Falls and Nakurami Kondoli have no fee mentioned; assumed free"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Whale Centre 2021 renovation closure: site is live and lists 7 days 10-4 but current status unconfirmed"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Kleinigs Hill Lookout: free entry stated by a search summary of the council page, council page bot-blocked"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Middleton: southern right whales off Middleton Point June to October (single travel-site source), omitted from bio"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Goolwa Barrage opening hours conflict between sources (not stored)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Hindmarsh River Walking Trail length (4, 7 or 8 km by source)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Goolwa Beach: vehicle access rules may be tightened (reported talk of closing to 4WDs)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "goolwa-8 Animal Farm adult price $15 (southaustralia.com listing; the farm's own prices page is script-rendered; older listings give $11-13)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "goolwa-10 Goolwa Motor Museum: open status and the $8 price (old listing)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "yankalilla-3 Wild South Coast Way: walking time 24-40 hr is an estimate from the five-day itinerary"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "yankalilla-6 Carrickalinga: International Dark Sky Community claim not re-checked"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "goolwa-7 Tolderol: lookout and picnic area not in the Parks SA text"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Tunkalilla Beach: free assumed"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Myponga Reservoir Reserve: free assumed, SA Water page not checked"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Ingalalla Falls: free assumed, no official site"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Talisker: no NPWS page (404)"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "goolwa-3",
+    "url": "https://www.alexandrina.sa.gov.au/discover/visit/signal-point-gallery",
+    "why": "council page behind bot wall; confirm title and use as ticketUrl if it names Signal Point"
+   },
+   {
+    "id": "victor-harbor-9",
+    "url": "https://www.victor.sa.gov.au/community-information/community-facilities/parks-gardens-reserves/kleinigs-hill-lookout",
+    "why": "council page behind bot wall; confirm free entry and pin"
+   },
+   {
+    "id": "goolwa-8",
+    "url": "https://www.goolwaanimalfarm.com.au/",
+    "why": "Prices tab is script-rendered; read the current adult price"
+   },
+   {
+    "id": "goolwa-10",
+    "url": "https://escapegvh.com.au/things-to-do/goolwa-motor-museum/",
+    "why": "Cloudflare bot wall (403); would show whether the museum is open"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "Overpass was down and Nominatim returned 429 for most of the run: resolve-pin returned only LOW/Wikipedia/Commons results for most spots, so many pins are LOW and need a re-run when OSM is reachable."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "LOW pins: mclaren-vale-2,4,5,6,7,9,10,11,12,13,14,15,16 (7 and 16 have no coordinates)."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "mclaren-vale-16 Softfoot belongs near Victor Harbor (Hindmarsh Valley), not McLaren Vale: re-home."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "mclaren-vale-7 Red Poles and mclaren-vale-9 Willunga Courthouse (open ~2 days a month) are marginal; Red Poles' website is a parked domain."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "resolve-pin.py hung for 1h+ (Overpass unreachable, Nominatim and Wikipedia API returning 429/blocked from many parallel agents), so NO spot has a HIGH/MEDIUM pin. Coordinates are the southaustralia.com tourism-board listing points (Wikipedia for The Bluff and Port Elliot); every spot is pin LOW and should be re-run through resolve-pin when the services recover."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "No spot is a duplicate or should be dropped. Softfoot Alpaca Farm is misplaced under mclaren-vale (it is in Hindmarsh Valley near Victor Harbor)."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Parks SA fee pages (Granite Island, Wangkuntila-Aldinga, Onkaparinga River, Cox Scrub) all state free entry."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Overpass was down and Nominatim returned 429 under load from parallel shards, so resolve-pin gave HIGH only for Newland Head's reserve centroid (rejected as a park pin) and MEDIUM for Middleton, Strathalbyn and the barrage; other pins come from southaustralia.com listing geotags and the NPWS Waitpinga campground point, all stated per spot."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "LOW pins to re-check: victor-harbor-9, victor-harbor-12, victor-harbor-14 and victor-harbor-15 (trailhead area, not route midpoint), goolwa-4, goolwa-5."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Nothing judged should not be added. Goolwa-9 (Gilbert's) and goolwa-10 may overlap names with goolwa-1's area but are different places."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "resolve-pin.py was run once per spot for the first three (and left running for the rest) and returned nothing within 60 s every time; Overpass, Nominatim (HTTP error), Photon and the Wikipedia API were also failing from here, so EVERY pin in this shard is LOW and comes from the southaustralia.com listing coordinates or Wikipedia. All need a re-run of resolve-pin when the services recover."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Pins checked against the shard and the other shards' known points: all >= 25 m apart (goolwa-9 and goolwa-11 are ~600 m apart in Strathalbyn; Strathalbyn goolwa-1 has no pin yet)."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Gilbert's Motor Museum and the Strathalbyn museum are both in Strathalbyn, ~25 km from Goolwa: check they lie within 75% of the Goolwa span or give them to Strathalbyn."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Langhorne Creek is ~25 km from Goolwa as well; same span check."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Talisker Conservation Park is closed until further notice after fire (NPWS alert on the Deep Creek page); kept as drafted, flagged"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Blowhole Beach fee $14.40/vehicle from Deep Creek NP page; parts of that park also closed after fire"
+   }
+  ]
+ },
+ "flinders": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "Rawnsley Bluff: whether Rawnsley Park Station charges self-guided walkers on its trail (stored free)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Stokes Hill Lookout: whether it lies inside the national park boundary (park pass applied)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Bunyeroo Gorge and Brachina Gorge current road closures may be lifted by apply time"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "St Mary Peak: Adnyamathanha request not to climb (Wikivoyage only), kept out of copy"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "ikara-flinders-ranges-21 Fred Teague's Museum: admission cost not published (listing and hawkermotors.com.au/museum); cost left unset"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "ikara-flinders-ranges-13 Rawnsley Park Station: no gate fee stated, free entry assumed (flights AUD 220+ pp are paid extras)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "ikara-flinders-ranges-15 Skytrek: AUD 90 per vehicle read from the operator page; the AUD 60 rate's eligibility not confirmed"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Trezona Hike park fee AUD 14.40/vehicle read from the Ikara-Flinders Ranges NP page; walk-specific booking not checked"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "port-augusta-3 Water Tower Lookout: no entry fee stated in either source (assumed free)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "ikara-flinders-ranges-25 Blinman Pools: whether Ikara-Flinders Ranges NP vehicle fee ($14.40) applies on the walk"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "quorn-5 Kanyaka Station Ruins: free assumed, no agency page found"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Pichi Richi Railway adult return $126 is the Afghan Express fare on the timetable page; tourism listings show $122"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Quorn destination: 'since 1973' from tourism listing only"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "southern-flinders-ranges-1 Gladstone Gaol: entry price and operator site (closed; reopening announced for late 2026)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "mount-remarkable-5 Horrocks monument/Heysen Trail claims not re-checked (left out of the bio)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Visit-hour ranges are estimates apart from the NPWS hike times"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "booleroo-centre (southern-flinders-ranges-4): no price, no site, opening is by appointment only"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Talc Alf Art Works and Ochre Pits: no charge stated, assumed free"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Aroona Ruins: nature of ruins (homestead?) and exact location"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Arkaroola sanctuary entry charge, if any"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Leigh Creek 540 km from Adelaide"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Caernarvon Track fee ($60/vehicle) from search summary, not read from the operator page"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Heysen/Mawson hours ranges are draft values"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Pekina Creek Rock Carvings, Chambers Gorge, Southern Flinders Rail Trail, Mount Ellen Lookout: no loaded page confirms access, fees or location"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Chambers Gorge camping/entry fees"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "steamtown-heritage-rail-centre cost $15 (Wikivoyage only, undated) and reopening"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "town-carriage-museum cost/free and open status"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "peterborough-historic-letterpress-print-shop cost and own ticketUrl"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "ikara-flinders-ranges-16",
+    "url": "https://www.frc.sa.gov.au/tourism",
+    "why": "Flinders Ranges Council tourism page answers Just a moment; only needed if a ticketUrl is wanted for Jarvis Hill"
+   },
+   {
+    "id": "quorn-2",
+    "url": "https://www.frc.sa.gov.au/",
+    "why": "Flinders Ranges Council, Warren Gorge steward page; 403 bot wall"
+   },
+   {
+    "id": "port-pirie-1",
+    "url": "https://www.pirie.sa.gov.au/tourism/attractionsexperiences/walking-and-cycling",
+    "why": "Port Pirie Regional Council heritage trail page; 403 bot wall"
+   },
+   {
+    "id": "port-augusta-3",
+    "url": "https://www.portaugusta.sa.gov.au/",
+    "why": "council water tower page; 403 bot wall"
+   },
+   {
+    "id": "port-pirie-2",
+    "url": "https://www.pirie.sa.gov.au/about-council",
+    "why": "Council site behind Cloudflare; find the mural trail page for ticketUrl (or confirm there is none)"
+   },
+   {
+    "id": "port-pirie-5",
+    "url": "https://www.pirie.sa.gov.au/tourism/visitor-information/attractions",
+    "why": "Council attractions pages blocked; look for official Port Germein Jetty and Solomontown Beach pages"
+   },
+   {
+    "id": "mawson-trail",
+    "url": "https://orsr.sa.gov.au/get-active/recreation-and-trails/mawson-trail",
+    "why": "bot wall (Just a moment)"
+   },
+   {
+    "id": "steamtown-heritage-rail-centre",
+    "url": "https://www.maketrackstopeterborough.com.au/",
+    "why": "403 bot wall; may list current prices, carriage museum and print shop details, reopening"
+   },
+   {
+    "id": "town-carriage-museum",
+    "url": "https://www.peterborough.sa.gov.au/",
+    "why": "403 bot wall; council page may give status/price"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "No resolve-pin run (per brief); all pins provisional. Pins left null: Wilpena Pound, Brachina Gorge, Bunyeroo Gorge, Hills Homestead Walk. Others carry Wikivoyage listing geotags (5-6 dp) as provisional values."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "No spot should be dropped. Hucks Lookout is single-source and Stokes Hill is 3-source but low importance; both kept as judged."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "No pins resolved (pending serial pass); only Parachilna Gorge carries its Wikipedia coordinates."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Blinman wiki field dropped (draft 'Blinman Mine' not confirmed as this tour)."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "All pins pending the serial pass; Blinman Pools sits in sa-flinders ikara destination (spot ids ikara-flinders-ranges-25)."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Blinman Pools: draft said hike from Parachilna; guides start at Angorichina Village."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Port Augusta Foreshore pin must not share Blanche Harbor/Water Tower points."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "No coordinates run through resolve-pin; all pins pending the serial pass (hints in each notes.pin)."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Should-not-add-yet: Gladstone Gaol (closed to visitors until its reopening). Alligator Gorge kept although part of it is closed after the 2025 fire (permanent place)."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Park fee: Mount Remarkable NP vehicle entry $14.40 is the park's own fee (costBasis park); check whether the SA Multiple Entry Parks Pass should be a parkPass entry instead."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Search engines blocked scripts, so Booleroo society, Beltana and Talc Alf sites were not found; ticketUrl omitted with ticket_note"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "No coordinates run through resolve-pin (per brief); nulls for Wirrabara Silo Art, Arkaroola Observatories, Italowie Gorge"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "No Chambers Gorge, Mount Ellen, rail trail listing pages load; flagged for review."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Mount Ellen Lookout, Southern Flinders Rail Trail, Pekina Creek Rock Carvings, Yunta suggested for owner review as marginal."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Cost fields for town-carriage-museum and the print shop left unset: unsourced."
+   }
+  ]
+ },
+ "kangaroo-island": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "Kangaroo Island Wilderness Trail: fee and current independent-walker access not on the NPWS page"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Cape Borda Lighthouse: 'Free entry' (park page) vs 'included in Flinders Chase entry' (pass page)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Kelly Hill Caves tour duration and other visit lengths are estimates"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Kangaroo Island Tour Pass $95 was a promotional reduced price until 6 April 2026 per NPWS"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Destination bestMonths (Sep-Nov, Mar-May) rest on NPWS season text, not a ranked guide"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "kangaroo-island-18 Kingscote Pelican Feeding: 5 pm daily and free-with-donation from Wikivoyage only; no operator page"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "kangaroo-island-13/15/23 free open-access status assumed from beach/lookout nature, no agency page checked"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "kangaroo-island-17 Reeves Point: no heritage-site page fetched for access/cost"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Cape Willoughby Lighthouse: guided-tour price not published on the park page (only the $6.40 adult site entry); whether the Kangaroo Island Tour Pass covers entry not checked."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Hog Bay: 600 m beach length and the French monument claim from the draft are unsourced and were cut."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Frenchmans Rock: whether the displayed rock is the original is not stated."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Lashmar and Cape Gantheaume Conservation Parks: no day-entry fee listed on the parks pages; treated as free."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "kangaroo-island-42 entry fee amount (described only as 'nominal')"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "kangaroo-island-41/43/44/45/47 no fee stated by sources (treated free)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "kangaroo-island-46/48 fee period (per day) not stated; $22.40 per person from NPWS Flinders Chase page"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Flinders Chase NP entry price: NPWS page header says site entry $22.40 per person but its Fees tab lists Adult $13.00 / Concession $10.50 (likely stale); a 'flinders-chase' pass is needed in parkPasses.ts and the price must be confirmed in a browser (kangaroo-island-50, kangaroo-island-51)"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Waterfall Creek Hike: no fee found for Western River WPA, assumed free (kangaroo-island-49)"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Visit hour ranges are estimates from route lengths"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "kangaroo-island-50",
+    "url": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park",
+    "why": "confirm current Flinders Chase site entry price ($22.40 header vs $13 Fees tab) and confirm Harveys Return Hike is inside the fee area"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "Add pass 'flinders-chase' ({name:'Flinders Chase', costMin:14.9, note: NPWS adult one-day; two-day $22.40}) to src/data/parkPasses.ts before apply; it covers Remarkable Rocks, Admirals Arch, Cape du Couedic Lighthouse."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "LOW pins: Flinders Chase National Park (Commons median at visitor area), Kangaroo Island Wilderness Trail (no coordinates)."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "LOW pins (coordinates null): kangaroo-island-18, -20, -23"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "No spot judged not-to-add"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Pins: kangaroo-island-30 (Fireball Bates trail) is LOW, pinned at the visitor-centre trailhead because the route is not in OpenStreetMap. kangaroo-island-35 (Murray Lagoon) came back LOW from resolve-pin but two sources agree within 155 m. Cape Gantheaume (34), Lashmar (33) and Bald Hill (36) use OSM visitor-point features found through Photon, because Nominatim was rate-limited (429) for most of the run and Overpass was refusing connections."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "All 12 spots are kept; none judged unfit to add."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Pin separation: no two pins in this shard, and none against src/data/spots.ts, are within 30 m of each other (checked by script). Not checked against the Kangaroo Island destination pin or other shards' drafts."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "LOW pins (listing geotag/trailhead, not route midpoint): kangaroo-island-37, 38, 39"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Overpass was down; pins from Photon/OSM and southaustralia.com listing geotags"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Hanson Bay and Harriet River have wrong/redirect Wikipedia titles: photos need manual picks"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Kangaroo Island Tour Pass not in parkPasses.ts; flagged"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "Overpass was unreachable during this run, so trail midpoints for 49, 51 and 56 come from Walking SA GPX files (official route data) rather than OSM; 50 uses resolve-pin."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "No LOW pins left; none judged not to be added."
+   }
+  ]
+ },
+ "limestone-coast": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "Engelbrecht Cave adult tour price $12.50 (Wikivoyage, 2017, stale); no official site or current price loaded"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Kilsby Sinkhole tour/snorkel prices (booking widget); cost left empty"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Ewens Ponds snorkel/dive permit fee not captured (NPWS page names the permit, not the price)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Little Blue Lake: free entry assumed, no fee statement found"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Cape Northumberland Lighthouse: public access and no fee assumed, no visitor source found"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Valley Lake: no official NPWS/council page confirmed"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Beachport Jetty, Pool of Siloam and Port MacDonnell Maritime Museum pins are tourism-listing address geocodes, not OSM features (Overpass/Nominatim unreachable, resolve-pin LOW)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Old Wool and Grain Store Museum, Beachport Conservation Park and Canunda National Park have no pin (coordinates null)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Little Dip pin is a campsite inside the park, not a visitor centre; Long Beach pin is an unnamed OSM beach way"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Port MacDonnell museum current hours/prices (2022 closure note; $6 adult from council and tourism listings)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Obelisk build date (1852 vs 1855 sources)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Robe Customs House fee ($3 National Trust vs gold-coin donation on Wikivoyage)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Bat Centre seasonal availability at Naracoorte"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Wikipedia titles for 'The Sheeps Back Museum' wiki field"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Wetland water-level seasonality at Bool Lagoon"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Mary MacKillop 'first saint' wording"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "mount-gambier-4",
+    "url": "https://visitmountgambier.com.au/travel/engelbrecht-cave-2/ (follow \"Visit website\") and https://www.mountgambier.sa.gov.au",
+    "why": "official site and current tour price; engelbrechtcave.com.au failed for scripts and the council site returns a 202 challenge"
+   },
+   {
+    "id": "mount-gambier-9",
+    "url": "https://kilsbysinkhole.com/sinkhole-tours/",
+    "why": "tour and snorkel prices are in a booking widget"
+   },
+   {
+    "id": "mount-gambier-8",
+    "url": "https://www.dcgrant.sa.gov.au",
+    "why": "steward page and any fee for Little Blue Lake (site blocks scripts)"
+   },
+   {
+    "id": "mount-gambier-12",
+    "url": "https://www.portmacdonnell.com",
+    "why": "lighthouse access and steward page (Cloudflare wall)"
+   },
+   {
+    "id": "mount-gambier-13",
+    "url": "https://www.dcgrant.sa.gov.au/community/pmcc/museum",
+    "why": "403 to scripts; confirm it is the museum's official page (tourism listing names it as official website)"
+   },
+   {
+    "id": "bordertown-wildlife-park",
+    "url": "https://www.tatiara.sa.gov.au/council-services/parks-and-gardens/bordertown-wildlife-park",
+    "why": "Tatiara council site returns Cloudflare 403"
+   },
+   {
+    "id": "kingston-big-lobster",
+    "url": "https://www.kingstondc.sa.gov.au/discover/things-to-see-and-do/the-big-lobster",
+    "why": "Kingston council site returns Cloudflare 403; could serve as ticketUrl"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "pin LOW: mount-gambier-9 Kilsby Sinkhole (single Wikidata source), mount-gambier-11 Tantanoola Caves (reserve centroid, cave entrance not found)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Pins HIGH/MEDIUM from resolve-pin plus Nominatim lookups; Overpass and later Nominatim calls were rate-limited by parallel shards. Piccaninnie pinned at the OSM car park."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Nothing judged unfit to add. Piccaninnie Ponds water is closed until further notice, so the bio describes the walk and lookout only."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Draft Umpherston wiki title does not exist; wiki omitted for Umpherston and Cape Northumberland Lighthouse."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Nothing judged unfit to add."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "resolve-pin had to be run after heavy contention; Overpass was unreachable for the Beachport and Port MacDonnell spots so those pins are flagged LOW."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "No resolve-pin run; all pins pending the serial pass."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Millicent Museum renamed from Millicent National Trust Museum."
+   }
+  ]
+ },
+ "murray-coorong": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "Bertha the Bunyip: working state in 2026 (mechanical fault reported 2023)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Round House opening days (sources conflict)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Captain's Cottage and Round House prices from council page via search, not loaded (bot wall)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Old Tailem Town: no Wikipedia article confirmed, wiki omitted"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "River Rides Motorcycle Museum: entry price and any official site not found (cost left null; only a Facebook page)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Mannum Dock Discovery Centre: $7.50 from the tourism listing, adult basis not confirmed"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Mannum Waterfalls: seasonal flow stated by the draft/tourism note only"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "coorong-national-park-10/11: Raukkan museum or church entry fee and opening not confirmed (raukkan.com unreachable); free assumed"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "coorong-national-park-4: no entry fee shown for the park, camping from $12.30 per night at campgrounds only"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "coorong-national-park-13: 'pink-tinged' colour assumed from the source naming it 'striking Pink Lake'; colour varies with season"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Loxton Historical Village adult $15 (other listings $12)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "PS Industry adult $35 (cruise price per SATC; official page shows no price)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Banrock Station walks cost (reported free; wetland page unverified)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Meningie Cheese Factory Museum donation (~$5 honesty box)"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Murray River NP / Chowilla camping fee $15.40/night noted only; entry free per agency"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "riverland-10 fee ($2 vs gold coin conflict)"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "riverland-12 and riverland-19 distances/trail details rest on SATC listing only"
+   },
+   {
+    "shard": "out-5.json",
+    "text": "riverland-21 Border Cliffs 3.4 km walk length from earlier draft; page text fetched did not show it"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "riverland-22 Overland Corner: current opening days (National Trust says Tue-Sun; Wikivoyage differs)"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "riverland-23 Morgan Landseer Museum fee (SATC $5, older local page $4) and hours"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "riverland-25 Peter Jacobs Trail at Maize Island Lagoon: not on NPWS page"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "riverland-26 Hart Lagoon Walking Trail: no price/detail on source; assumed free"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "riverland-29 Heaven Clifftop Viewpoint: cliff trail and Katarapko view not seen on source"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "riverland-31 Wilabalangaloo trail length (~2.5 km) not on National Trust page (bio omits it)"
+   },
+   {
+    "shard": "out-6.json",
+    "text": "milang: museum hours and whether an official council visitor page exists"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "swan-reach-district-museum: entry cost not found (set free, unverified)"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "ngaut-ngaut-conservation-park: $15 adult tour price from a 2021 secondary source; parks page gives no figure"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "swan-reach-observatory: $85 only from SATC listing, operator site has no price"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "lameroo-silo-art: Smug 2024/2025 diptych from the draft note, not re-checked"
+   },
+   {
+    "shard": "out-7.json",
+    "text": "river-murray-dark-sky-reserve: 'first International Dark Sky Reserve in Australia' from the observatory's site (2019 accreditation)"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Mallee Tourist and Heritage Centre hours conflict between sources (10am-1pm Mon-Fri vs longer); adult $7 from History SA listing, not the centre itself"
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Mount Boothby entry free per SATC only; no parks.sa.gov.au page found"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "murray-bridge-7",
+    "url": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/the-round-house",
+    "why": "council site bot wall; confirm ticketUrl and price"
+   },
+   {
+    "id": "murray-bridge-8",
+    "url": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/captains-cottage",
+    "why": "council site bot wall; confirm ticketUrl and $5"
+   },
+   {
+    "id": "murray-bridge-5",
+    "url": "https://www.murraybridge.sa.gov.au/services/your-community/facilities-for-the-community/parks-reserves-and-ovals/points-of-interest/swanport-wetlands",
+    "why": "possible ticketUrl for Swanport Wetlands (council page)"
+   },
+   {
+    "id": "mannum-1",
+    "url": "https://www.mid-murray.sa.gov.au",
+    "why": "Council site (Cloudflare wall) likely hosts the Mannum Dock page; find exact URL for ticketUrl"
+   },
+   {
+    "id": "murray-bridge-13",
+    "url": "https://www.murraybridge.sa.gov.au",
+    "why": "Council site blocked; check for a Tailem Bend rail museum / trail page"
+   },
+   {
+    "id": "coorong-national-park-11",
+    "url": "https://www.raukkan.com",
+    "why": "fetch failed; check official visitor page, museum entry and hours"
+   },
+   {
+    "id": "riverland-1",
+    "url": "http://www.thevillageloxton.com.au",
+    "why": "site unreachable by script (SSL/fetch failed); verify title and price"
+   },
+   {
+    "id": "riverland-3",
+    "url": "https://banrockstation.com.au",
+    "why": "wetland centre page/price and ticketUrl not found by script"
+   },
+   {
+    "id": "riverland-10",
+    "url": "https://www.berribarmera.sa.gov.au/our-community/venues/points-of-interest/attractions/rockys-hall-of-fame-and-pioneers-museum",
+    "why": "403 to scripts; confirm title and fee"
+   },
+   {
+    "id": "mallee-tourist-heritage-centre",
+    "url": "https://www.southernmallee.sa.gov.au/tourism/attractions/museums/mallee-tourist-and-heritage-centre",
+    "why": "Cloudflare block; confirm price/official link"
+   },
+   {
+    "id": "coonalpyn-silo-art",
+    "url": "https://www.coorong.sa.gov.au/community/arts-and-cultural/creatingcoonalpyn",
+    "why": "Cloudflare block; possible official page"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "Pins all pending; no resolve-pin run."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Bertha the Bunyip and Rocky Gully kept but flagged for status (fault; flood closure)."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Pins left pending; hints in each notes.pin."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Ninety Mile Beach and 42 Mile Crossing are close (same Ocean Beach); kept as drafted."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Lenger Reserve (mannum-6) and Hermann Gass (mannum-5) are distinct places; no spot should be dropped."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Park page lists fees only for accommodation (from $12.30/night); no vehicle entry fee, so all park spots are free, costBasis 'open'."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Raukkan (11) and Raukkan Church (10) are one place visitors treat as one stop; kept both as drafted, judge may merge. Pink Lake and Lake Albert are Meningie-area lakes, outside the park proper."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "No coordinates written except draft Raukkan (null for others) pending serial pin pass."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "No spot should be dropped. Possible duplicate: Katarapko vs Murray River National Park (a section of it)."
+   },
+   {
+    "shard": "out-5.json",
+    "text": "No pins resolved (serial pass). Gluepot, Danggali, Chowilla currently closed per alerts: transient."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "No resolve-pin run; all pins pending serial pass."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Morgan Conservation Park partially closed 18 May to 30 Dec 2026 (NPWS alert): spot kept, but check at apply time."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Hart Lagoon, Holder Bend, Headings Cliff, Heaven, Martin Bend: no official steward pages, ticketUrl omitted by design."
+   },
+   {
+    "shard": "out-6.json",
+    "text": "Atlas draft 'wiki' for Morgan Conservation Park, Maize Island kept; Overland Corner wiki kept (article exists per draft)."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Observatory is by pre-booking only and opened Nov 2025; tours/sessions SATC-priced."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Hunter Road Lookout is Riverland-sourced but lies in this region."
+   },
+   {
+    "shard": "out-7.json",
+    "text": "Swan Reach Conservation Park (core site, 4WD only) not in this shard."
+   },
+   {
+    "shard": "out-8.json",
+    "text": "Tolmer Rocks merged into Mount Boothby entry per draft. Draft Coonalpyn bio 'picnic area' removed (unsourced). No spot judged not to be added."
+   }
+  ]
+ },
+ "outback": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "Tom's Working Opal Mine: $15 adult and operator site unconfirmed"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Faye's Underground Home: $5 (2015) and opening days"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Coober Pedy Golf Club: $10 green fee, club site"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Saint Elijah church: donation amount ~$5 from reviews"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Old Timers Mine: $15 not on its own site (southaustralia.com listing)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Umoona: $15.50 vs $16 on its two pages"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Cullyamurra: 7 km length and canoe permit detail"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Kanku-Breakaways: 25 vs 33 km from town (bio says about 30 km)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Desert Parks Pass price (Munga-Thirri-Simpson Desert National Park): not on any fetched Parks SA page, no price written"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Coward Springs: day-visit/spa fee not published (camping $18/adult); shown free"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Birdsville Track pin is on the named OSM road near the estimated midpoint, not a measured route midpoint (Overpass down)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Oodnadatta Track pin is the midpoint of Wikivoyage's route line, not OSM's route relation (Overpass down)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "William Creek pin has a single precise source (Wikipedia coordinates)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "railway-tjukurpa-museum: cost (no fee found, marked free)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "woomera-heritage-centre: adult price $6 vs $3 in older listing"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "marree-mosque: public access (OSM ruins vs Wikivoyage recreation)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "lake-hart: pink colour is seasonal/sourced from tourism page only"
+   }
+  ],
+  "needs_browser": [
+   {
+    "id": "coober-pedy-3",
+    "url": "toms opal mine official site",
+    "why": "no official site found by script/search"
+   },
+   {
+    "id": "coober-pedy-6",
+    "url": "Faye's Underground Home official site",
+    "why": "no site found"
+   },
+   {
+    "id": "mungerannie-hotel",
+    "url": "https://www.mungeranniehotel.com.au",
+    "why": "domain unconfirmed; fetch failed"
+   },
+   {
+    "id": "woomera-heritage-centre",
+    "url": "https://www.woomera.com.au/",
+    "why": "splash page, deep links return 200 for any path; find the Heritage Centre page and price"
+   }
+  ],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "LOW pins: coober-pedy-4 Kanku-Breakaways, coober-pedy-7 Moon Plain (no point at all), innamincka-1 reserve, innamincka-2 Cullyamurra, innamincka-3 Coongie park."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Overpass and Nominatim were rate-limited/unreachable for part of the run."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "Nothing judged not-to-add. Wikipedia title 'Moon Plain (South Australia)' does not exist: wiki dropped."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Overpass was unreachable during this shard, so resolve-pin could not return OSM features for Dalhousie, Curdimurka, parks or tracks; points above come from Nominatim OSM features and Wikivoyage geometry."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Witjira, Munga-Thirri and Dalhousie: park alert at fetch time said all closed after rain until further notice (not in copy)."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Nothing judged should-not-be-added; Elizabeth Symon Nursing Home is more an information centre than a sight (draft objection), but it is open daily with displays so kept."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Pin LOW: arid-recovery-reserve (gate not found; placeholder on Borefield Road)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Nominatim rate-limited mid-run; Photon and Commons geotags used as second sources."
+   }
+  ]
+ },
+ "yorke": {
+  "unverified": [
+   {
+    "shard": "out-1.json",
+    "text": "copper-coast-4 Wallaroo museum adult $7 (tourism listing only; NT page gives none)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "yorke-peninsula-2 Troubridge Island operator permit/boat fee not found"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "copper-coast-6 Wheal Hughes: whether the public can visit at all"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "copper-coast-7 Splash Town free (from tourism listings, no official page loaded)"
+   },
+   {
+    "shard": "out-1.json",
+    "text": "copper-coast-9 trail midpoint hand-computed from OSM ways (Overpass down)"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "yorke-peninsula-9 museum fee $2 from History Trust SA listing, not an operator page; opening times not confirmed"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Bios of yorke-peninsula-12 (1876 jetty), -13, -7 rest on tourism-board text read in the Atlas notes, not re-fetched"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Stansbury Museum adult $3 (listings conflict: $2 older, $3 current, $5-10 range)"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Bublacowie Military Museum $10 (undated History SA listing); no official site found"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Stansbury, Edithburgh and Bublacowie museums have no verified official ticketUrl"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Ethel Wreck has no Wikipedia article, wiki omitted"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Stansbury Museum pin from a single Wikivoyage geo tag; Royston Head from Wikipedia alone"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Port Broughton Heritage Centre hours and adult price ($7) from directory listings only"
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Dolphin Beach location (unnamed in OSM)"
+   }
+  ],
+  "needs_browser": [],
+  "notes": [
+   {
+    "shard": "out-1.json",
+    "text": "Overpass was down; pins used OSM API map data and Nominatim/Photon."
+   },
+   {
+    "shard": "out-1.json",
+    "text": "No pin is LOW."
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Overpass was down; pins from Nominatim/Photon OSM features"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "Yorketown Pink Lakes: Par Lake boardwalk not separately pinned"
+   },
+   {
+    "shard": "out-2.json",
+    "text": "No park pass or park fees apply to any spot in this shard"
+   },
+   {
+    "shard": "out-3.json",
+    "text": "LOW pins: innes-national-park-6 (West Cape Headland Hike), innes-national-park-8 (Stenhouse Bay Lookout Walk). Photon/Nominatim/Overpass were rate limited, so resolve-pin was only partly usable."
+   },
+   {
+    "shard": "out-3.json",
+    "text": "Nothing judged should-not-be-added; Bublacowie (private, limited days) and the three volunteer museums are marginal but kept as instructed."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "Innes spots carry needs park-pass / parkPass 'innes' per decisions.md; park fee AUD 14.40 per vehicle read from the park page."
+   },
+   {
+    "shard": "out-4.json",
+    "text": "OSM Overpass via maps.mail.ru mirror; resolve-pin timed out (rate limits)."
+   }
+  ]
+ }
+}

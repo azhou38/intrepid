@@ -1,0 +1,241 @@
+{
+ "spots": {
+  "adelaide-13": {
+   "name": "Semaphore",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside suburb on Adelaide's western coast with a long jetty, a patrolled beach and a strip of cafes on Semaphore Road.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.838386,
+    "longitude": 138.480928
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "Commons geotagged-photo median (27 files) via resolve-pin; LOW, beach/jetty area",
+   "notes": "pin LOW: single Commons median, no OSM beach feature returned",
+   "wiki": "Semaphore, South Australia",
+   "ticket_note": "suburb and public beach with no single steward"
+  },
+  "adelaide-14": {
+   "name": "Henley Square and Jetty",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beachfront square of cafes and restaurants at the foot of Henley Beach's jetty on Adelaide's western coast.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.919833,
+    "longitude": 138.494
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "Commons geotagged-photo median (23 files) 20 m from Wikipedia Henley Beach article point; resolve-pin LOW (no OSM feature)",
+   "notes": "two sources agree within 25 m (Wikipedia rounded)",
+   "wiki": "Henley Beach, South Australia",
+   "ticket_note": "public square and jetty run by the council; no ticketed site"
+  },
+  "adelaide-15": {
+   "name": "Migration Museum",
+   "icon": "🧳",
+   "category": "museum",
+   "bio": "Museum of South Australia's immigrant stories in the former Destitute Asylum, closed for conservation from July 2026.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.919704,
+    "longitude": 138.602067
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM Nominatim (Migration Museum, 82 Kintore Avenue) 11 m from Commons photo median",
+   "notes": "free entry per Wikivoyage; CLOSED from 1 July 2026 for 18-24 months of conservation works (Wikipedia citing InDaily 1 May 2026; Wikivoyage Oct 2026 says until mid-2028). Judged: should not be added until it reopens, or added with the closure noted",
+   "wiki": "Migration Museum, Adelaide",
+   "ticketUrl": "https://www.history.sa.gov.au/migration-museum/"
+  },
+  "adelaide-16": {
+   "name": "Tandanya National Aboriginal Cultural Institute",
+   "icon": "🎨",
+   "category": "museum",
+   "bio": "Aboriginal-owned arts centre on Grenfell Street, founded in 1989, closed for refurbishment until a 2027 relaunch.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.92407,
+    "longitude": 138.61031
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "Wikivoyage listing geotag (the institute own listing); resolve-pin found no feature; LOW",
+   "notes": "pin LOW. Official site says its relaunched program will be unveiled in 2027; building closed since 2023 for repairs. Not currently a visitable gallery: judged should not be added until it reopens. Entry fee unverified (set free as placeholder)",
+   "ticketUrl": "https://tandanya.com.au/"
+  },
+  "adelaide-17": {
+   "name": "Adelaide Park Lands",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Ring of parkland around the city centre and North Adelaide, open for walking, cycling, picnics and sport.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.9237,
+    "longitude": 138.6137
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "Rymill Park (Wikipedia -34.9236,138.6141 and Commons median -34.9239,138.6133 agree within 50 m): a main Park Lands visitor point, not a centroid",
+   "notes": "pin LOW-ish: a representative visitor point (Rymill Park lake) because the ring has no single point",
+   "ticket_note": "the Park Lands are many council parks with no single official visitor site"
+  },
+  "adelaide-18": {
+   "name": "Montefiore Hill",
+   "icon": "🌆",
+   "category": "viewpoint",
+   "bio": "North Adelaide lookout with the Light's Vision statue and a view over the city centre, best at night.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -34.912802,
+    "longitude": 138.594019
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "OSM natural=peak Montefiore Hill (HIGH), 5 m from Wikivoyage geotag",
+   "notes": "",
+   "ticket_note": "public lookout with no steward site"
+  },
+  "adelaide-19": {
+   "name": "St Peter's Cathedral",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Anglican cathedral on King William Road in North Adelaide, free to enter and often seen on postcards of the city.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.912878,
+    "longitude": 138.598226
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM amenity=place_of_worship St Peter's Cathedral (HIGH), 14 m from Wikipedia point",
+   "notes": "free per Wikivoyage; judged as a visitor attraction (a guide singles it out, postcards and city tours)",
+   "wiki": "St Peter's Cathedral, Adelaide",
+   "ticketUrl": "https://www.stpeters-cathedral.org.au/"
+  },
+  "adelaide-20": {
+   "name": "National Wine Centre",
+   "icon": "🍷",
+   "category": "museum",
+   "bio": "University of Adelaide wine centre beside the Botanic Garden, with tastings, tours and a wine bar.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.919444,
+    "longitude": 138.614167
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "Wikipedia article point and Commons median (-34.91966,138.614131) agree within 25 m; resolve-pin printed LOW (1 file) but two sources agree",
+   "notes": "general entry assumed free; tours, tastings and sommelier experiences are paid; fee unverified",
+   "wiki": "National Wine Centre of Australia",
+   "ticketUrl": "https://www.nationalwinecentre.com.au/"
+  },
+  "adelaide-21": {
+   "name": "Bicentennial Conservatory",
+   "icon": "🌴",
+   "category": "nature",
+   "bio": "Glasshouse in the Botanic Garden that recreates a tropical lowland rainforest, with mist falling from the roof.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.916942,
+    "longitude": 138.612313
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "OSM tourism=attraction Bicentennial Conservatory (MEDIUM), 0 m from Wikivoyage geotag",
+   "notes": "free entry per Wikivoyage (updated Dec 2022); the Botanic Gardens deep link 404s so the homepage is used",
+   "ticketUrl": "https://www.botanicgardens.sa.gov.au/"
+  },
+  "adelaide-22": {
+   "name": "MOD.",
+   "icon": "🔬",
+   "category": "museum",
+   "bio": "Free science and design museum run by the University of South Australia, on North Terrace beside the Morphett Street Bridge.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.921508,
+    "longitude": 138.593045
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "South Australian Tourism product page geotag; resolve-pin found no OSM feature; LOW",
+   "notes": "pin LOW (single source). Official site: Tue-Sat, free entry",
+   "wiki": "MOD. (museum)",
+   "ticketUrl": "https://mod.org.au/"
+  },
+  "adelaide-23": {
+   "name": "Australian Space Discovery Centre",
+   "icon": "🚀",
+   "category": "museum",
+   "bio": "Free space gallery at Lot Fourteen on North Terrace, run by the Australian Space Agency, with hands-on exhibits.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.9204,
+    "longitude": 138.6087
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "Wikivoyage listing geotag (own listing, McEwin Building, Lot Fourteen); Commons median rounded; LOW",
+   "notes": "pin LOW. Free per the draft and SATC listing; not re-verified on the official site",
+   "ticket_note": "official site spacediscovery.gov.au could not be loaded by script; needs a browser check"
+  },
+  "adelaide-24": {
+   "name": "Parliament House",
+   "icon": "🏛️",
+   "category": "landmark",
+   "bio": "Home of the state's parliament, with free public tours on non-sitting days through the 1850s chambers.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.921111,
+    "longitude": 138.598889
+   },
+   "free": true,
+   "costBasis": "entry",
+   "coordinates_source": "Wikipedia article point (2 m from hint) and Commons median (-34.92047,138.598672) agree within 80 m",
+   "notes": "free tours twice daily on non-sitting days per the managing agency (Atlas note); times not re-verified on the visit page",
+   "wiki": "Parliament House, Adelaide",
+   "ticketUrl": "https://www.parliament.sa.gov.au/en/Visit"
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "adelaide-15 Migration Museum: free entry per Wikivoyage only",
+  "adelaide-16 Tandanya: entry fee and reopening date",
+  "adelaide-20 National Wine Centre: free general entry",
+  "adelaide-23 Space Discovery Centre: free entry",
+  "adelaide-24 Parliament House: tour times and freeness (agency page not re-read)",
+  "adelaide-21 Bicentennial Conservatory: free entry (Wikivoyage only)"
+ ],
+ "needs_browser": [
+  {
+   "id": "adelaide-23",
+   "url": "https://spacediscovery.gov.au/",
+   "why": "fetch failed (status 0); confirm official site and free entry"
+  },
+  {
+   "id": "adelaide-15",
+   "url": "https://www.migrationmuseum.sa.gov.au/",
+   "why": "fetch failed; confirm closure dates on the History Trust page"
+  }
+ ],
+ "notes": [
+  "LOW pins: adelaide-13 Semaphore, adelaide-16 Tandanya, adelaide-17 Park Lands (Rymill Park representative point), adelaide-22 MOD., adelaide-23 Space Discovery Centre",
+  "Should not be added now: Migration Museum (closed from 1 July 2026 for 18-24 months) and Tandanya (closed, relaunch 2027); bios state the closure",
+  "Pins checked >=25 m from existing spots/destinations in src/data"
+ ]
+}

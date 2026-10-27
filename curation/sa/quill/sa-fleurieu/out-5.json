@@ -1,0 +1,186 @@
+{
+ "spots": {
+  "yankalilla-7": {
+   "name": "Rapid Bay",
+   "icon": "🎣",
+   "category": "beach",
+   "bio": "A long jetty and sheltered bay on the Fleurieu's western coast, used for fishing, diving and snorkelling.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.527537,
+    "longitude": 138.18951
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "draft pin from Wikipedia article; check against jetty/beach"
+   },
+   "wiki": "Rapid Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-8": {
+   "name": "Talisker Conservation Park",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Ruins of an 1860s silver-lead mine on a 1.4 km interpretive circuit with a lookout towards Kangaroo Island.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.62222222,
+    "longitude": 138.15222222
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "draft is a rounded Wikipedia point; use mine-ruins car park / circuit midpoint",
+    "closure": "NPWS SA alert (deep-creek page): Talisker Conservation Park is closed until further notice for public safety after an active fire. Keep as spot (permanent place) but flag; consider re-check before release."
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "NPWS page parks.sa.gov.au/parks/talisker-conservation-park returns 404; park has no fee page found"
+  },
+  "yankalilla-9": {
+   "name": "Ingalalla Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A two-tier waterfall and rock pool at the end of an easy 700 m return walk through Second Valley Forest.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.53114,
+    "longitude": 138.34272
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "draft from Wikipedia; walk is ~700 m return so the waterfall point is the right pin; confirm with OSM waterfall node"
+   },
+   "wiki": "Ingalalla Waterfalls",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "forest reserve walk; no official site verified"
+  },
+  "yankalilla-10": {
+   "name": "Blowhole Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A remote Southern Ocean beach in Deep Creek National Park, reached by a walking track.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Blowhole Creek carpark/trailhead in Deep Creek NP, then the beach end of the track; use OSM natural=beach",
+    "cost": "NPWS SA Deep Creek NP page: vehicle entry $14.40 per vehicle",
+    "closure": "Parts of Deep Creek NP remain closed after bushfire; check the park alerts for the Blowhole Creek area"
+   },
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/deep-creek-national-park"
+  },
+  "yankalilla-11": {
+   "name": "Morgans Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "An 800 m sandy cove beneath 50 m glacial cliffs at Cape Jervis, with a clifftop lookout and reef to explore.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "OSM natural=beach near Cape Jervis"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-12": {
+   "name": "Tunkalilla Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A remote Southern Ocean beach reached on foot, where seals and dolphins are often seen offshore.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "beach end of Tunkalilla Beach walk; Wikipedia article 'Tunkalilla' is the locality (check article is the beach; drop wiki if it is only the locality)",
+    "cost": "assumed free; not confirmed from an official page"
+   },
+   "wiki": "Tunkalilla",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-13": {
+   "name": "Fishery Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach close to Cape Jervis, at the western tip of the Fleurieu Peninsula.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "OSM natural=beach named Fishery Beach near Cape Jervis"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  },
+  "yankalilla-14": {
+   "name": "Myponga Reservoir Reserve",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A reservoir reserve open for walking, fishing and kayaking, with kangaroos and a view from the dam wall.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.40035,
+    "longitude": 138.420224
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "draft is the Wikipedia dam point; use the reserve's visitor car park / dam wall lookout",
+    "cost": "assumed free; SA Water recreation page not verified"
+   },
+   "wiki": "Myponga Reservoir",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "SA Water page not verified"
+  },
+  "yankalilla-15": {
+   "name": "Myponga Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "A surf beach on the western Fleurieu coast, with a car park and toilets right at the sand.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia article coordinates / OSM natural=beach"
+   },
+   "wiki": "Myponga Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach, no single steward"
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "Tunkalilla Beach: free assumed",
+  "Myponga Reservoir Reserve: free assumed, SA Water page not checked",
+  "Ingalalla Falls: free assumed, no official site",
+  "Talisker: no NPWS page (404)"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Talisker Conservation Park is closed until further notice after fire (NPWS alert on the Deep Creek page); kept as drafted, flagged",
+  "Blowhole Beach fee $14.40/vehicle from Deep Creek NP page; parts of that park also closed after fire"
+ ]
+}

@@ -1,0 +1,261 @@
+{
+ "spots": {
+  "adelaide-25": {
+   "name": "Rundle Mall",
+   "icon": "🛍️",
+   "category": "landmark",
+   "bio": "Pedestrian shopping street in the city centre, home to the Mall's Balls sculpture.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.92290278,
+    "longitude": 138.601875
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.rundlemall.com/",
+   "coordinates_source": "wikipedia:Rundle Mall article coordinates (single source; Overpass/Nominatim unavailable)",
+   "notes": [
+    "pin: LOW-ish, single source (Wikipedia article of the mall itself, 8 decimals); not cross-checked against OSM"
+   ]
+  },
+  "adelaide-26": {
+   "name": "Elder Park",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "Riverbank park on the Torrens with an 1882 rotunda, lake walking tracks and paddleboat hire.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.918428,
+    "longitude": 138.598381
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open park; no single official page found",
+   "coordinates_source": "wikipedia:Elder Park article (-34.918428,138.598381) agrees within 41 m with the median of 2 geotagged Commons files",
+   "notes": [
+    "Renamed from \"Torrens Lake and Elder Park\" to \"Elder Park\" (the lake is the setting; name = article title, so no wiki field). Popeye cruises are the operator, not the spot.",
+    "pin: no OSM feature returned (resolve-pin LOW, since Overpass was down); two independent sources within 100 m"
+   ]
+  },
+  "adelaide-27": {
+   "name": "Adelaide Himeji Garden",
+   "icon": "🌸",
+   "category": "nature",
+   "bio": "Free Japanese garden in the south Park Lands with a teahouse, lake garden and stepping stones.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.935797,
+    "longitude": 138.60981
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run garden; experienceadelaide page URL guessed 404, no verified official page",
+   "coordinates_source": "osm leisure=garden \"Adelaide Himeji Japanese Garden\" (resolve-pin HIGH)",
+   "notes": [
+    "Free; case against is size (~30 min), kept per judge."
+   ]
+  },
+  "adelaide-28": {
+   "name": "Veale Gardens",
+   "icon": "🌹",
+   "category": "nature",
+   "bio": "Formal south Park Lands garden with a serpentine canal and statues, beside the Adelaide-Qingdao Rose Garden.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -34.9368,
+    "longitude": 138.5971
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run open garden; no verified official page",
+   "coordinates_source": "wikipedia:Veale Gardens (equals the draft hint; no OSM feature found)",
+   "notes": [
+    "pin: LOW - resolve-pin found only Wikipedia coordinates (4 decimals, equals the draft hint). Raise to owner / check against OSM when Overpass is up."
+   ]
+  },
+  "adelaide-29": {
+   "name": "Tennyson Dunes",
+   "icon": "🏖️",
+   "category": "nature",
+   "bio": "Coastal reserve protecting the state's most accessible intact dune system, with a 1.5 km discovery trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.87945,
+    "longitude": 138.48261
+   },
+   "wiki": "Wara Wayingga-Tennyson Dunes Conservation Reserve",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/wara-wayingga-tennyson-dunes-conservation-reserve",
+   "coordinates_source": "wikivoyage listing geotag for Tennyson Dunes Conservation Reserve (resolve-pin: no feature found)",
+   "notes": [
+    "pin: LOW - Wikivoyage listing point only (5 decimals), not a car park or trailhead; raise to owner.",
+    "NPWS page: Free entry.",
+    "Park title Wara Wayingga-Tennyson Dunes Conservation Reserve; name kept as Tennyson Dunes per draft; wiki is the full article title."
+   ]
+  },
+  "adelaide-30": {
+   "name": "Largs Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach suburb north of Semaphore with an 1882 jetty, kiosk, playground and foreshore walking paths.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.82553,
+    "longitude": 138.48417
+   },
+   "wiki": "Largs Bay, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach/foreshore; council page blocked to scripts, no single steward site",
+   "coordinates_source": "commons geotag of File:Largs Bay Beach (foreshore, 2 files); OSM only returned the suburb centroid, 1.2 km inland, so it was rejected",
+   "notes": [
+    "pin: LOW-ish - Commons geotag on the beach, no OSM natural=beach feature available."
+   ]
+  },
+  "adelaide-31": {
+   "name": "Brighton",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Southern beach suburb with a jetty, esplanade and the Brighton Jetty Sculptures.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.017222,
+    "longitude": 138.514167
+   },
+   "wiki": "Brighton, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach/foreshore; no single steward site",
+   "coordinates_source": "median of 14 geotagged Commons files at the Brighton foreshore/jetty; OSM only returned the suburb centroid",
+   "notes": [
+    "pin: LOW-ish - Commons median, no OSM beach feature; verify when Overpass is up."
+   ]
+  },
+  "adelaide-32": {
+   "name": "West Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach on Adelaide's western coast, between Henley Beach and Glenelg, for family walks and swimming.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.93911,
+    "longitude": 138.49823
+   },
+   "wiki": "West Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach; no single steward site",
+   "coordinates_source": "Commons geotag of File:West beach.jpg in a cluster of beach files on the shore; OSM returned only the suburb centroid (inland)",
+   "notes": [
+    "pin: LOW-ish - Commons geotag cluster on the sand; Wikivoyage listing -34.94633,138.50096 is 0.9 km away and inland."
+   ]
+  },
+  "adelaide-33": {
+   "name": "Hallett Cove Conservation Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Coastal park with Permian glacial pavements, a walking trail and a swimming beach.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.073278,
+    "longitude": 138.502031
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/hallett-cove-conservation-park",
+   "coordinates_source": "median of 7 geotagged Commons files in the park (resolve-pin LOW); Wikipedia article -35.073611,138.499167 is 280 m away",
+   "notes": [
+    "pin: LOW - no OSM feature; Commons median used, to be checked against NPWS car park.",
+    "NPWS page: Free entry; closed on Catastrophic Fire Danger days."
+   ]
+  },
+  "adelaide-34": {
+   "name": "Port Noarlunga",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside suburb with a long jetty and a reef sanctuary with an 800 m snorkelling trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.14667,
+    "longitude": 138.46694
+   },
+   "wiki": "Port Noarlunga, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Beach, jetty and aquatic trail; no single steward site (SATC product URL guessed 404)",
+   "coordinates_source": "Commons geotag of File:Port Noarlunga Jetty (a cluster of jetty/beach files at this point); Wikipedia suburb point -35.149003,138.4752 is the suburb, not the jetty",
+   "notes": [
+    "pin: LOW-ish - Commons geotag at the jetty; no OSM feature available.",
+    "Snorkelling uses own gear; no operator cost counted."
+   ]
+  },
+  "adelaide-35": {
+   "name": "Witton Bluff Base Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Free, accessible 1.1 km coastal boardwalk under the Witton Bluff cliffs, linking Port Noarlunga and Christies Beach.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.14056,
+    "longitude": 138.46944
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Listed on fleurieupeninsula.com.au attractions list only; no single official trail page verified",
+   "coordinates_source": "Commons geotag of Christies Beach files at the foot of the bluff; route is not in the searches (resolve-pin LOW, its only hit was 3 km inland and rejected)",
+   "notes": [
+    "pin: LOW - not the route midpoint; an approximate point near the trail on the shore. Raise to owner.",
+    "Listed by the Fleurieu tourism attractions page; opened 2025."
+   ]
+  },
+  "adelaide-36": {
+   "name": "Marino Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Clifftop coastal park with the last coastal heath on the Adelaide coast and views to Marino Rocks Lighthouse.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.05265,
+    "longitude": 138.5088
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/marino-conservation-park",
+   "coordinates_source": "wikipedia:Marino Conservation Park article (resolve-pin LOW; Commons median 773 m away is at the lighthouse)",
+   "notes": [
+    "pin: LOW - Wikipedia point only; not confirmed as the car park/trail.",
+    "NPWS page: Free entry."
+   ]
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "Rundle Mall/Elder Park/Largs Bay/Brighton/West Beach/Port Noarlunga pins from single Wikipedia or Commons sources (Overpass and Nominatim unreachable)",
+  "Port Noarlunga snorkel trail length 800 m (draft bio, not re-fetched)",
+  "Witton Bluff Base Trail length and 2025 opening (Fleurieu listing only)"
+ ],
+ "needs_browser": [
+  {
+   "id": "adelaide-30",
+   "url": "City of Port Adelaide Enfield Largs Bay foreshore page",
+   "why": "blocked (403) per draft; only used for facts already in the draft"
+  }
+ ],
+ "notes": [
+  "All 12 spots kept; none should be dropped. Pin lookups ran under heavy Nominatim contention and Overpass was down, so most pins are Wikipedia/Commons-based and flagged.",
+  "No pins mutually closer than 25 m (checked by eye: all distinct places); not checked against src/data/spots.ts for same-point reuse."
+ ]
+}

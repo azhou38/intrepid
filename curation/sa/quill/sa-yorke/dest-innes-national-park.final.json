@@ -1,0 +1,76 @@
+{
+ "destination": {
+  "id": "innes-national-park",
+  "name": "Dhilba Guuranda-Innes National Park",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -35.273596,
+   "longitude": 136.941616
+  },
+  "category": "park",
+  "defaultZoomSpanKm": 40,
+  "rank": 3,
+  "icon": "🏞️",
+  "tagline": "Wreck, lighthouses and surf beaches at the south-western tip of Yorke Peninsula.",
+  "description": "Dhilba Guuranda-Innes National Park covers the south-western tip of Yorke Peninsula, about 300 km by road from Adelaide, and is managed jointly with the Narungga traditional owners. The Ethel ran aground here in 1904, and its remains still lie on the beach beside the lighthouse at Cape Spencer. Trails run from 30-minute strolls to four-hour hikes, through heath and mallee to the cliff tops. The park's beaches draw campers, anglers and surfers, and its abandoned gypsum township of Inneston has walking trails and restored cottages.",
+  "whyVisit": [
+   "Walk clifftop trails above the sea",
+   "See the wreck of the Ethel",
+   "Spot wallabies, ospreys and whales"
+  ],
+  "highlights": [
+   "Coastal walks",
+   "Shipwreck history",
+   "Park wildlife"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🎟️",
+    "title": "Pay entry before you go",
+    "detail": "Vehicle entry is $14.40 per vehicle and must be paid before entering the park. Campsites are booked separately, with fees per night."
+   },
+   {
+    "icon": "🐕",
+    "title": "No dogs allowed",
+    "detail": "Dogs are not permitted in the park, apart from assistance dogs. The whole park is reachable in a 2WD vehicle."
+   },
+   {
+    "icon": "🔥",
+    "title": "Closed on fire days",
+    "detail": "The park closes on days of Catastrophic Fire Danger and may close on Extreme days. Check the CFS fire rating before you set out."
+   }
+  ],
+  "bestMonths": [
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "{months} are mild for bushwalking, and spring brings wildflowers to the park."
+ },
+ "spots": [
+  "innes-national-park-3",
+  "innes-national-park-1",
+  "innes-national-park-2",
+  "innes-national-park-7",
+  "innes-national-park-4",
+  "innes-national-park-6",
+  "innes-national-park-5",
+  "innes-national-park-8",
+  "innes-national-park-9",
+  "innes-national-park-10",
+  "innes-national-park-11",
+  "innes-national-park-12"
+ ],
+ "notes": [
+  "Coordinates: OSM tourism=camp_site Stenhouse Bay Campground (the Stenhouse Bay visitor hub; the visitor centre itself was not found in OSM/Photon). 200 m from the Stenhouse Bay spot pin. Draft centroid -35.2278,136.8947 not used.",
+  "defaultZoomSpanKm cut 50 to 40: farthest drafted spot is Royston Head (~14 km), 75% of 40 is 30 km. Shard-4 spots (Dolphin Beach, Marion Bay, Gym Beach, Plaster Trail) not pinned here; Marion Bay hint is ~4.5 km east.",
+  "Order changed: Ethel Wreck first (the park's named headline), then Cape Spencer, Pondalowie, Inneston, Royston Head, West Cape, Stenhouse Bay, Stenhouse Lookout Walk, then ids 9-12 as in draft.",
+  "Fee $14.40 per vehicle (parks.sa.gov.au); no SA park pass exists in src/data/parkPasses.ts, so inside-park spots are free/open and the fee is in goodToKnow. Orchestrator may want a parkPasses entry.",
+  "Facts: renamed 2020 with Narungga co-management, Ethel 1904, ~300 km from Adelaide, trails 30 min to 4 h, tammar wallabies reintroduced 2004 and winter southern right whales (all parks page), no dogs, 2WD, fire closures."
+ ]
+}

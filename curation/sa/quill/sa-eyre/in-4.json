@@ -1,0 +1,441 @@
+{
+ "destinations": [
+  {
+   "id": "ceduna",
+   "name": "Ceduna",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -32.11666667,
+    "longitude": 133.66666667
+   },
+   "coordinates_source": "wikipedia:Ceduna, South Australia (town point, used as centre only)",
+   "defaultZoomSpanKm": 130,
+   "name_evidence": {
+    "source": "Wikivoyage \"Ceduna\" page",
+    "wording": "last major town before the Nullarbor, oysters, Eyre Highway"
+   },
+   "spots": [
+    "ceduna-1",
+    "ceduna-2",
+    "ceduna-3",
+    "ceduna-4",
+    "ceduna-5",
+    "ceduna-6",
+    "ceduna-7",
+    "ceduna-8",
+    "ceduna-9",
+    "ceduna"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "nature",
+   "icon": "🦆",
+   "bio": "Weyland Peninsula beaches, a tombolo, bird life and fishing in a conservation park.",
+   "wiki": "Venus Bay Conservation Park",
+   "coordinates_source": "wikipedia:Venus Bay Conservation Park (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 348,
+   "counted_sources": 2,
+   "id": "streaky-bay-17",
+   "name": "Venus Bay Conservation Park",
+   "destination": "streaky-bay",
+   "coordinates": {
+    "latitude": -33.15138889,
+    "longitude": 134.56916667
+   },
+   "note": "Inside Streaky Bay's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/venus-bay-conservation-park",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/venus-bay-conservation-park"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A Venus Bay walk where dolphins, sea lions, sea eagles and, May to October, southern right whales can be seen.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "streaky-bay-18",
+   "name": "South Head Walking Trail",
+   "destination": "streaky-bay",
+   "coordinates": null,
+   "note": "Inside Streaky Bay's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/south-head-walking-trail"
+   ]
+  },
+  {
+   "category": null,
+   "icon": null,
+   "bio": null,
+   "wiki": null,
+   "coordinates_source": "wikipedia:Streaky Bay, South Australia (town point, used as centre only)",
+   "visitHoursMin": null,
+   "visitHoursMax": null,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [],
+   "views": 14730,
+   "counted_sources": 2,
+   "id": "streaky-bay",
+   "name": "Streaky Bay",
+   "destination": "streaky-bay",
+   "coordinates": {
+    "latitude": -32.799041,
+    "longitude": 134.204814
+   },
+   "note": "Kept town is the destination itself, not also a spot: west coast fishing town, base for Murphy's Haystacks, Cape Bauer and Point Labatt",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Streaky_Bay",
+    "https://en.wikivoyage.org/wiki/Eyre_Peninsula"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🌅",
+   "bio": "The long Ceduna jetty, a harbour stop with ocean views.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "ceduna-1",
+   "name": "Ceduna Jetty",
+   "destination": "ceduna",
+   "coordinates": null,
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Ceduna",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/ceduna-jetty"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🔭",
+   "bio": "A lookout over the wharf, islands and channel at the end of the Encounter walking trail.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "ceduna-2",
+   "name": "Pinky Point Lookout",
+   "destination": "ceduna",
+   "coordinates": null,
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/pinky-point-lookout"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦆",
+   "bio": "A sheltered bay with mangroves, samphire flats, bird feeding grounds, a lookout and a 1911 landmark.",
+   "wiki": "Laura Bay Conservation Park",
+   "coordinates_source": "wikipedia:Laura Bay Conservation Park (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 212,
+   "counted_sources": 1,
+   "id": "ceduna-3",
+   "name": "Laura Bay Conservation Park",
+   "destination": "ceduna",
+   "coordinates": {
+    "latitude": -32.2425,
+    "longitude": 133.83194444
+   },
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/laura-bay-conservation-park"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "Coastal mangroves and dunes west of Ceduna, used for canoeing, fishing and watching shorebirds.",
+   "wiki": "Acraman Creek Conservation Park",
+   "coordinates_source": "wikipedia:Acraman Creek Conservation Park (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 389,
+   "counted_sources": 2,
+   "id": "ceduna-4",
+   "name": "Acraman Creek Conservation Park",
+   "destination": "ceduna",
+   "coordinates": {
+    "latitude": -32.45158108,
+    "longitude": 134.06701155
+   },
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/eyre-peninsula",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/acraman-creek-conservation-park"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🦪",
+   "bio": "An oyster-farming village on Smoky Bay west of Ceduna with a jetty.",
+   "wiki": "Smoky Bay, South Australia",
+   "coordinates_source": "wikipedia:Smoky Bay, South Australia (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3909,
+   "counted_sources": 2,
+   "id": "ceduna-5",
+   "name": "Smoky Bay",
+   "destination": "ceduna",
+   "coordinates": {
+    "latitude": -32.376536,
+    "longitude": 133.936627
+   },
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/smoky-bay-jetty",
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/tour/smoky-bay-oyster-farm-tours"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏖️",
+   "bio": "A rocky point with granite boulders and long beaches for swimming, fishing and camping; reached by 4WD only.",
+   "wiki": "Point Bell Conservation Park",
+   "coordinates_source": "wikipedia:Point Bell Conservation Park (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 347,
+   "counted_sources": 1,
+   "id": "ceduna-6",
+   "name": "Point Bell Conservation Park",
+   "destination": "ceduna",
+   "coordinates": {
+    "latitude": -32.1904,
+    "longitude": 133.1378
+   },
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/point-bell-conservation-park"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🌬️",
+   "bio": "A free outdoor museum of about 20 restored windmills, including Australia's largest, beside the Penong road.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "ceduna-7",
+   "name": "Penong Windmill Museum",
+   "destination": "ceduna",
+   "coordinates": null,
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/penong-windmill-museum"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏄",
+   "bio": "Remote surf beach near Penong with left- and right-hand breaks.",
+   "wiki": "Cactus Beach",
+   "coordinates_source": "wikipedia:Cactus Beach (provisional; re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1072,
+   "counted_sources": 2,
+   "id": "ceduna-8",
+   "name": "Cactus Beach",
+   "destination": "ceduna",
+   "coordinates": {
+    "latitude": -32.086313,
+    "longitude": 132.980412
+   },
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/cactus-beach",
+    "https://southaustralia.com/destinations/eyre-peninsula"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🩷",
+   "bio": "A pink salt lake on Point Sinclair Road near Penong, a roadside stop.",
+   "wiki": "Lake Macdonnell",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "ceduna-9",
+   "name": "Lake Macdonnell",
+   "destination": "ceduna",
+   "coordinates": null,
+   "note": "Inside Ceduna's span and visited from that base.",
+   "sources": [
+    "https://www.eyrepeninsula.com/products/eyre-peninsula/attraction/lake-macdonnell"
+   ]
+  }
+ ]
+}

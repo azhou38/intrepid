@@ -1,0 +1,78 @@
+{
+ "spots": {
+  "jamestown-mural-walk-and-outdoor-gallery": {
+   "name": "Jamestown Mural Walk and Outdoor Gallery",
+   "icon": "🎨",
+   "category": "entertainment",
+   "bio": "Self-guided walk past heritage-building murals on Jamestown's main streets, ending at an outdoor gallery on Ayr Street.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Outdoor Gallery at the east end of Ayr Street, Jamestown; walk starts at the visitor outlet on Ayr Street. Pin the gallery or the middle of the Ayr Street murals.",
+    "cost": "Free, outdoor street walk (no price stated on the listing).",
+    "source": "https://flindersandoutback.com.au/listings/attraction/jamestown-mural-walk-and-outdoor-gallery/"
+   },
+   "ticket_note": "No single steward site verified; the listing is a tourism-board page, not an operator site."
+  },
+  "jamestown-railway-station-museum": {
+   "name": "Jamestown Railway Station Museum",
+   "icon": "🚉",
+   "category": "museum",
+   "bio": "Local-history museum in Jamestown's 1885 railway station, with an 1870s carriage and displays on R.M. Williams.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Historic Jamestown railway station (built 1885), Jamestown town.",
+    "cost": "Entry fee and any official site not stated on the listing; unverified.",
+    "source": "https://flindersandoutback.com.au/listings/attraction/jamestown-railway-station-museum/"
+   },
+   "ticket_note": "No official site found."
+  },
+  "bowman-park": {
+   "name": "Bowman Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Public park near Crystal Brook with river red gums, a spring-fed brook, a nature playground and a Heysen Trail section.",
+   "wiki": "Bowman Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -33.316667,
+    "longitude": 138.233333
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Draft point is Wikipedia's rounded article coordinate (park centroid); re-pin to the park's car park or day-use area about 5 km NE of Crystal Brook.",
+    "cost": "Public park open sunrise to sunset; Wikipedia states no fee; not on parks.sa.gov.au (404), so council-run; treated as free.",
+    "region": "Near Crystal Brook, about 60 km from Clare; Wikipedia places it in the Mid North; Flinders/Yorke region call is the owner's.",
+    "dropped_from_bio": "1850s homestead ruins not confirmed in a fetched source, so left out."
+   },
+   "ticket_note": "Not an NPWS park (parks.sa.gov.au 404); council page pirie.sa.gov.au/bowman-park blocked by bot wall."
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "jamestown-railway-station-museum: entry cost and official site",
+  "bowman-park: free status (Wikipedia silent on fees), managing body, 1850s homestead ruins"
+ ],
+ "needs_browser": [
+  {
+   "id": "bowman-park",
+   "url": "https://www.pirie.sa.gov.au/bowman-park",
+   "why": "403 bot wall; check managing body, fee, ticketUrl"
+  }
+ ],
+ "notes": [
+  "Cost basis for the railway museum left unset until its fee is confirmed.",
+  "Jamestown cluster is about 70+ km from Clare; both Jamestown spots standalone."
+ ]
+}

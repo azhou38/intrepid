@@ -1,0 +1,1030 @@
+{
+ "region": "sa-outback",
+ "new_destinations": [
+  {
+   "id": "coober-pedy",
+   "name": "Coober Pedy",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -29.01111111,
+    "longitude": 134.75555556
+   },
+   "coordinates_source": "wikipedia:Coober Pedy (town point; re-pin to centre in pin stage)",
+   "defaultZoomSpanKm": 60,
+   "spots": [
+    "coober-pedy-1",
+    "coober-pedy-2",
+    "coober-pedy-3",
+    "coober-pedy-4",
+    "coober-pedy-5",
+    "coober-pedy-6",
+    "coober-pedy-7",
+    "coober-pedy-8",
+    "coober-pedy-9"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage Coober Pedy; flindersandoutback.com.au/towns/coober-pedy; southaustralia.com Flinders Ranges and Outback",
+    "wording": "opal-mining town with underground dugouts, the outback's main tourist stop on the Stuart Highway"
+   },
+   "note": "The town is the destination, not a spot of itself. Moon Plain (~15 km per source) and Breakaways (~33 km north) sit inside 75% of span. Needs checking: Moon Plain point."
+  },
+  {
+   "id": "innamincka",
+   "name": "Innamincka",
+   "action": "new-destination",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -27.746651,
+    "longitude": 140.738019
+   },
+   "coordinates_source": "wikipedia:Innamincka, South Australia (town)",
+   "defaultZoomSpanKm": 110,
+   "spots": [
+    "innamincka-1",
+    "innamincka-2",
+    "innamincka-3",
+    "innamincka-4"
+   ],
+   "name_evidence": {
+    "source": "Wikivoyage Innamincka; flindersandoutback.com.au/towns/innamincka; parks.sa.gov.au",
+    "wording": "remote Cooper Creek township, Burke and Wills country, gateway to Innamincka Regional Reserve and Coongie Lakes"
+   },
+   "note": "Exactly four spots; Coongie Lakes is the farthest, span set from it after the pin stage (shrink to 60 if it lands inside 45 km of centre; if Coongie fails the 75% test it goes standalone and Innamincka reverts to standalone town + spots)."
+  }
+ ],
+ "places": [
+  {
+   "name": "Old Timers Mine",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-1",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "museum",
+   "icon": "⛏️",
+   "bio": "Self-guided tour of a mine dug in 1916, with underground homes, in the opal-mining town of Coober Pedy.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage See listing: self-guided tour of a 1916 mine and underground homes, a signature Coober Pedy visit (rule 2)"
+  },
+  {
+   "name": "Umoona Opal Mine and Museum",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-2",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "museum",
+   "icon": "💎",
+   "bio": "Underground opal mine, museum and dugout home showing how Coober Pedy's miners lived and worked.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "southaustralia.com region page names it; underground mine, museum and dugout, a main Coober Pedy attraction (rule 2)"
+  },
+  {
+   "name": "Tom's Working Opal Mine",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-3",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "museum",
+   "icon": "⛏️",
+   "bio": "Working opal mine with display seams that visitors tour underground, guided or self-guided.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage Coober Pedy calls it 'the pick of the working mines' and Lonely Planet lists it as an attraction (display mine with opal seams, guided or self-guided tours); a place to go underground for an hour, not merely an operator. Objection: one of several Coober Pedy mine visits."
+  },
+  {
+   "name": "Kanku-Breakaways Conservation Park",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-4",
+   "wiki": "Kanku-Breakaways Conservation Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Colourful eroded desert hills called the Breakaways, about 33 km north of Coober Pedy.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "2 counted sources, 1091 page views"
+  },
+  {
+   "name": "Saint Elijah the Prophet Serbian Orthodox Church",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-5",
+   "wiki": "Saint Elijah the Prophet Serbian Orthodox Church, Coober Pedy",
+   "coordinates": {
+    "latitude": -29.012838,
+    "longitude": 134.773298
+   },
+   "coordinates_source": "wikipedia:Saint Elijah the Prophet Serbian Orthodox Church, Coober Pedy",
+   "category": "religious",
+   "icon": "⛪",
+   "bio": "Church bored out of solid rock, with a richly ornamented interior.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage: church bored out of solid rock with a beautifully ornamented interior, a must see (church rule: interior named)"
+  },
+  {
+   "name": "Faye's Underground Home",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-6",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "historic",
+   "icon": "🏠",
+   "bio": "Tour of a hand-dug underground home in Coober Pedy.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage Coober Pedy See listing: tour of a hand-dug underground home, open daily except Sunday, $5 (rule 2)"
+  },
+  {
+   "name": "Moon Plain",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-7",
+   "wiki": "Moon Plain (South Australia)",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🌑",
+   "bio": "Lunar-like desert plain south of Coober Pedy, used as a film location for Mad Max Beyond Thunderdome and Priscilla.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Lonely Planet lists Moon Plain and southaustralia.com's region page names the lunar-like plain and film location (Mad Max Beyond Thunderdome, Priscilla) 15 km from Coober Pedy; a driving/walking sight on the Breakaways loop. Two counted sources."
+  },
+  {
+   "name": "Big Winch",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-8",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "landmark",
+   "icon": "🏗️",
+   "bio": "Giant winch that doubles as a lookout over the Coober Pedy opal fields.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage See listing: lookout in the middle of Coober Pedy over the opal fields; a landmark Big Thing (rule 2,3)"
+  },
+  {
+   "name": "Coober Pedy Golf Club",
+   "action": "spot",
+   "destination": "coober-pedy",
+   "id": "coober-pedy-9",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "entertainment",
+   "icon": "⛳",
+   "bio": "Grassless desert golf course 3 km from Coober Pedy, where players carry a piece of turf to tee off.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage names the grassless desert course (players carry a piece of turf to tee off) as a quirky thing to do 3 km from Coober Pedy; an open public course visitors play, a recognised quirky icon."
+  },
+  {
+   "name": "Innamincka Regional Reserve",
+   "action": "spot",
+   "destination": "innamincka",
+   "id": "innamincka-1",
+   "wiki": "Innamincka Regional Reserve",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "Reserve of 1.3 million hectares along Cooper Creek, with waterholes for fishing and canoeing.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "parks.sa.gov.au visitor page: 1.3 million ha reserve with Cooper Creek waterholes for fishing and canoeing, Cullyamurra Waterhole, the visitor centre and Burke and Wills sites; Flinders & Outback also names it. Objection: parts closed in floods and it overlaps Cullyamurra.",
+   "coordinates_note": "visitor point (not Wikipedia centroid) to resolve in pin stage"
+  },
+  {
+   "name": "Cullyamurra Waterhole",
+   "action": "spot",
+   "destination": "innamincka",
+   "id": "innamincka-2",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "Australia's largest billabong on Cooper Creek, a canoeing and paddling spot significant to the Traditional Owners.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Rule 1+2: Flinders & Outback (opened) names Australia's largest billabong as a canoe/paddle destination on Cooper Creek, significant to the Traditional Owners."
+  },
+  {
+   "name": "Malkumba–Coongie Lakes National Park",
+   "action": "spot",
+   "destination": "innamincka",
+   "id": "innamincka-3",
+   "wiki": "Malkumba–Coongie Lakes National Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🦆",
+   "bio": "Arid-zone wetland of lakes and channels, reached by 4WD, for birdlife and canoeing.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Rule 1+2: Flinders & Outback park page (opened) calls it one of SA's most spectacular natural attractions: arid wetland, birds, canoeing; 4WD access. Keeps the Coongie Lakes duplicate as this one.",
+   "coordinates_note": "visitor point (not Wikipedia centroid) to resolve in pin stage"
+  },
+  {
+   "name": "Elizabeth Symon Nursing Home",
+   "action": "spot",
+   "destination": "innamincka",
+   "id": "innamincka-4",
+   "wiki": null,
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "historic",
+   "icon": "🏥",
+   "bio": "Heritage-listed former Inland Mission building, now Innamincka's park headquarters with Burke and Wills displays.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage Innamincka See lists it, and the parks.sa.gov.au page says the heritage-listed park headquarters and interpretation centre (the former Australian Inland Mission building, i.e. the nursing home) is always open in the town centre, with natural history and Burke and Wills displays. Objection: more an information centre than a sight."
+  },
+  {
+   "name": "Oodnadatta Track",
+   "action": "standalone",
+   "destination": null,
+   "id": "oodnadatta-track",
+   "wiki": "Oodnadatta Track",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "landmark",
+   "icon": "🛣️",
+   "bio": "617 km outback track from Marree to Marla, past old railway sidings, mound springs and Lake Eyre South.",
+   "visitHoursMin": 8,
+   "visitHoursMax": 48,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage itinerary page gives the 617 km track its own article with sidings, mound springs and Lake Eyre South; an obvious outback draw (rule 1)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide",
+   "coordinates_note": "midpoint of whole route; resolve in pin stage"
+  },
+  {
+   "name": "Birdsville Track",
+   "action": "standalone",
+   "destination": null,
+   "id": "birdsville-track",
+   "wiki": "Birdsville Track",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "landmark",
+   "icon": "🛣️",
+   "bio": "Long outback track from Marree to Birdsville across the Tirari Desert, with the Mungerannie Hotel halfway.",
+   "visitHoursMin": 8,
+   "visitHoursMax": 24,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "2 counted sources, 9529 page views",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide",
+   "coordinates_note": "midpoint of whole route; resolve in pin stage"
+  },
+  {
+   "name": "Kati Thanda–Lake Eyre National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "kati-thanda-lake-eyre-national-park",
+   "wiki": "Kati Thanda–Lake Eyre National Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Australia's largest salt lake and the national park around it.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "2 counted sources, 2021 page views",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide",
+   "coordinates_note": "visitor point (not Wikipedia centroid) to resolve in pin stage"
+  },
+  {
+   "name": "Munga-Thirri–Simpson Desert National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "munga-thirri-simpson-desert-national-park",
+   "wiki": "Munga-Thirri–Simpson Desert National Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Australia's largest national park, a 4WD desert of red dunes that needs a Desert Parks Pass.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Rule 1+2: Flinders & Outback national-parks page (opened) presents the Simpson Desert dunes as a headline 4WD destination; Desert Parks Pass, closed 1 Dec-15 Mar (note season).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide",
+   "coordinates_note": "visitor point (not Wikipedia centroid) to resolve in pin stage"
+  },
+  {
+   "name": "Witjira National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "witjira-national-park",
+   "wiki": "Witjira National Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "⛺",
+   "bio": "Remote north-western park with Dalhousie Springs and camping at Mount Dare.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 24,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Rule 1+2: Flinders & Outback outback page (opened) features Dalhousie Springs (swim in 37C artesian springs) and Mount Dare camping in Witjira.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide",
+   "coordinates_note": "visitor point (not Wikipedia centroid) to resolve in pin stage"
+  },
+  {
+   "name": "Dalhousie Springs",
+   "action": "standalone",
+   "destination": null,
+   "id": "dalhousie-springs",
+   "wiki": "Dalhousie Springs",
+   "coordinates": {
+    "latitude": -26.4555,
+    "longitude": 135.482481
+   },
+   "coordinates_source": "wikipedia:Dalhousie Springs",
+   "category": "nature",
+   "icon": "♨️",
+   "bio": "Largest artesian spring complex in the area, with 37C water to swim in, inside Witjira National Park.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "2 counted sources, 3117 page views",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "The Bubbler and Blanche Cup",
+   "action": "standalone",
+   "destination": null,
+   "id": "the-bubbler-and-blanche-cup",
+   "wiki": "Wabma Kadarbu Mound Springs Conservation Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "💧",
+   "bio": "The two best-known mound springs on the Oodnadatta Track, near Coward Springs.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage Oodnadatta Track: the two best-known mound springs, a worthwhile diversion (rule 1,2)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Coward Springs",
+   "action": "standalone",
+   "destination": null,
+   "id": "coward-springs",
+   "wiki": "Coward Springs",
+   "coordinates": {
+    "latitude": -29.401087,
+    "longitude": 136.811805
+   },
+   "coordinates_source": "wikipedia:Coward Springs",
+   "category": "historic",
+   "icon": "🌴",
+   "bio": "Historic railway siding on the Oodnadatta Track with a date-palm spa, a self-guided walk and camel safaris.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Rule 1+2: Wikivoyage (Oodnadatta Track) names the spa, historic rail siding, self-guided walk and camel safari; a second-tier Oodnadatta Track stop with things to do (opened).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Curdimurka Siding",
+   "action": "standalone",
+   "destination": null,
+   "id": "curdimurka-siding",
+   "wiki": "Curdimurka",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "historic",
+   "icon": "🚂",
+   "bio": "Preserved Ghan railway siding on the Oodnadatta Track that shows how railway settlers lived.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage: preserved Ghan siding showing how settlers lived, one of the interesting sidings on the track (rule 2)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Algebuckina Bridge",
+   "action": "standalone",
+   "destination": null,
+   "id": "algebuckina-bridge",
+   "wiki": "Algebuckina Bridge",
+   "coordinates": {
+    "latitude": -27.8993,
+    "longitude": 135.8075
+   },
+   "coordinates_source": "wikipedia:Algebuckina Bridge",
+   "category": "historic",
+   "icon": "🌉",
+   "bio": "Historic railway bridge on the Oodnadatta Track, the longest bridge in South Australia.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Rule 1+3: Wikivoyage Oodnadatta Track singles out the longest bridge in South Australia as a sight (opened); a named heritage roadside stop.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "William Creek",
+   "action": "standalone",
+   "destination": null,
+   "id": "william-creek",
+   "wiki": "William Creek, South Australia",
+   "coordinates": {
+    "latitude": -28.9093,
+    "longitude": 136.340759
+   },
+   "coordinates_source": "wikipedia:William Creek, South Australia",
+   "category": "historic",
+   "icon": "🍺",
+   "bio": "Tiny Oodnadatta Track settlement with a famously remote pub, the base for Lake Eyre scenic flights.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Town with its own Wikivoyage page and flindersandoutback.com.au town page; the William Creek Hotel pub is a named stop on the Oodnadatta Track (rule 1, 2)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Pink Roadhouse",
+   "action": "standalone",
+   "destination": null,
+   "id": "pink-roadhouse-oodnadatta",
+   "wiki": "Oodnadatta",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "landmark",
+   "icon": "🩷",
+   "bio": "Pink roadhouse at Oodnadatta, the Oodnadatta Track's information hub.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Rule 3 'quirky roadside icon': Wikivoyage Oodnadatta and Flinders & Outback both name the pink roadhouse as a feature of the town and the track's information hub (opened).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Railway Tjukurpa Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "railway-tjukurpa-museum",
+   "wiki": "Oodnadatta",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "museum",
+   "icon": "🚂",
+   "bio": "Museum in Oodnadatta's preserved old Ghan railway station.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Rule 1+2: Wikivoyage Oodnadatta lists the preserved Ghan station museum, open daily 9-5 (opened).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Marree",
+   "action": "standalone",
+   "destination": null,
+   "id": "marree",
+   "wiki": "Marree, South Australia",
+   "coordinates": {
+    "latitude": -29.649176,
+    "longitude": 138.063556
+   },
+   "coordinates_source": "wikipedia:Marree, South Australia",
+   "category": "historic",
+   "icon": "🚂",
+   "bio": "Outback railway town at the start of the Birdsville and Oodnadatta Tracks.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "2 counted sources, 14608 page views",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Marree Mosque",
+   "action": "standalone",
+   "destination": null,
+   "id": "marree-mosque",
+   "wiki": "Marree Mosque",
+   "coordinates": {
+    "latitude": -29.651346,
+    "longitude": 138.063082
+   },
+   "coordinates_source": "wikipedia:Marree Mosque",
+   "category": "religious",
+   "icon": "🕌",
+   "bio": "Recreation of Australia's first mosque, built by Afghan cameleers.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage See listing: recreation of Australia's first mosque built by Afghan cameleers (rule 2)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Mungerannie",
+   "action": "standalone",
+   "destination": null,
+   "id": "mungerannie-hotel",
+   "wiki": "Mungeranie, South Australia",
+   "coordinates": {
+    "latitude": -28.01868889,
+    "longitude": 138.66333889
+   },
+   "coordinates_source": "wikipedia:Mungeranie, South Australia",
+   "category": "landmark",
+   "icon": "🍺",
+   "bio": "Outback pub and roadhouse halfway along the Birdsville Track, known for its memorabilia.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Mungerannie Hotel is named by Flinders & Outback as acclaimed for its outback memorabilia (hats, locks of hair), a quirky roadside icon halfway along the Birdsville Track; second-tier quirky stop the bar keeps.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Andamooka",
+   "action": "standalone",
+   "destination": null,
+   "id": "andamooka",
+   "wiki": "Andamooka, South Australia",
+   "coordinates": {
+    "latitude": -30.448524,
+    "longitude": 137.165126
+   },
+   "coordinates_source": "wikipedia:Andamooka, South Australia",
+   "category": "historic",
+   "icon": "💎",
+   "bio": "Opal-mining village near Roxby Downs where visitors can noodle for opal.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "2 counted sources, 14497 page views",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Roxby Downs Arid Recovery Reserve",
+   "action": "standalone",
+   "destination": null,
+   "id": "arid-recovery-reserve",
+   "wiki": "Arid Recovery",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🦘",
+   "bio": "Fenced arid-zone reserve near Roxby Downs where rare desert species are seen on tours.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Flinders & Outback names Arid Recovery in both the region page and the Roxby Downs town page (sunset tag-along tours, spotlight walks, Roxby Discovery Tour) to see rare arid-zone species in a fenced reserve; visits are by tour only. Objection: access only via tours.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide",
+   "coordinates_note": "visitor point (not Wikipedia centroid) to resolve in pin stage"
+  },
+  {
+   "name": "Woomera Missile Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "woomera-missile-park",
+   "wiki": "Woomera, South Australia",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "museum",
+   "icon": "🚀",
+   "bio": "Free open-air display of missiles, rockets and aircraft in the centre of Woomera.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage See listing: free open-air display of missiles and rockets in the town centre, with the Heritage Centre beside it (rule 2)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Woomera Heritage Centre",
+   "action": "standalone",
+   "destination": null,
+   "id": "woomera-heritage-centre",
+   "wiki": "Woomera, South Australia",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "museum",
+   "icon": "🚀",
+   "bio": "Rocket Range museum in the Woomera visitor centre.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "Wikivoyage lists the Rocket Range Museum in the visitors' centre, about an hour, $6 (rule 2)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  },
+  {
+   "name": "Lake Hart",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-hart",
+   "wiki": "Lake Hart (South Australia)",
+   "coordinates": null,
+   "coordinates_source": null,
+   "category": "nature",
+   "icon": "🩷",
+   "bio": "Pink salt lake beside the Stuart Highway south of Glendambo.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "reason": "southaustralia.com region page names the pink salt lake beside the Stuart Highway; a roadside stop travellers photograph",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Adelaide"
+  }
+ ],
+ "merged": [
+  {
+   "name": "Coober Pedy",
+   "into": "destination coober-pedy",
+   "why": "the town is the destination"
+  },
+  {
+   "name": "Innamincka",
+   "into": "destination innamincka",
+   "why": "the town is the destination"
+  },
+  {
+   "name": "Woomera",
+   "into": "woomera-missile-park / woomera-heritage-centre",
+   "why": "town is a wrapper for its two attractions; Woomera is described by them"
+  },
+  {
+   "name": "Oodnadatta",
+   "into": "pink-roadhouse-oodnadatta / railway-tjukurpa-museum",
+   "why": "town is a wrapper for its two attractions"
+  },
+  {
+   "name": "William Creek Hotel",
+   "into": "william-creek",
+   "why": "the pub is the town's whole sight; one spot"
+  },
+  {
+   "name": "Wabma Kadarbu Mound Springs Conservation Park",
+   "into": "the-bubbler-and-blanche-cup",
+   "why": "judge: duplicate"
+  }
+ ],
+ "duplicates_elsewhere": [
+  {
+   "name": "Lyndhurst",
+   "home": "flinders",
+   "why": "homes.json"
+  },
+  {
+   "name": "Lake Gairdner National Park",
+   "home": "eyre",
+   "why": "homes.json"
+  }
+ ],
+ "review": [
+  {
+   "name": "Painted Desert (South Australia)",
+   "reason": "For: Wikivoyage names it, SA Heritage lists the Arckaringa Hills state heritage area, and Arckaringa Station offers a walk (~1.5 km) and lookout at sunset; distinct natural sight. Against: only one counted source (Wikivoyage Stuart Highway, 'all-wheel track'), sits on a private pastoral lease with restricted, fragile access, 120-150 km from Coober Pedy; no tourism-board page found.",
+   "verdict": "review"
+  },
+  {
+   "name": "Catholic Catacomb Church",
+   "reason": "For: Wikivoyage Coober Pedy calls the underground Catholic church 'a significant site' and Coober Pedy's carved-rock churches are a signature visit. Against: Wikivoyage ranks it less intricate than the Serbian Orthodox church; one counted source; the candidate's wiki title (Catacomb Church) is actually the Anglican church, so name and article conflict and the Catholic church's identity needs checking.",
+   "verdict": "review"
+  },
+  {
+   "name": "Marree Man",
+   "reason": "For: Wikivoyage Marree See entry and Flinders & Outback both name it; a famous 4.2 km geoglyph. Against: it cannot be seen from the ground and the experience is a charter flight from Marree (an operator), so a visitor 'goes' to nothing; only the flight reaches it.",
+   "verdict": "review"
+  },
+  {
+   "name": "Kalamurina Sanctuary",
+   "reason": "For: AWC (the manager) describes a 679,000 ha wildlife sanctuary on the Warburton River with an interpretive walk on Outback Spirit pre-booked tours (April-October). Against: no tourism-board or guide source; third-party listings say camping is closed and entry is tours only, and AWC's own page allows booked self-drive at $40 per vehicle, so access sources conflict.",
+   "verdict": "review"
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_near_destination_40km": "none: every kept place within 40 km of Coober Pedy (Breakaways, Moon Plain, Big Winch, golf) is a spot of it; nothing within 40 km of Innamincka outside it.",
+ "why_not_destinations": {
+  "Oodnadatta Track": "a 617 km linear route named by Wikivoyage; its stops are 100-300 km apart with no common base, so standalone spots, with the track pinned at its route midpoint",
+  "Woomera / Roxby Downs / Andamooka": "two or three spots each, 90+ km apart: standalone",
+  "Witjira National Park": "park with only Dalhousie Springs beside it: two spots, below the four-spot bar and not rank 1-2; standalone (Dalhousie sits inside the park, kept as its own place per the judge)",
+  "Kati Thanda-Lake Eyre / Munga-Thirri-Simpson Desert": "single-park places with no kept walks or villages; below the four-spot bar; standalone"
+ },
+ "notes": [
+  "Birdsville and Oodnadatta Tracks placed here per run-wide decision; coordinates null until the route midpoint is resolved.",
+  "Marree town kept beside Marree Mosque: the town is the hub for two tracks and has the Marree Man access (review), not just the mosque; flag for owner."
+ ]
+}

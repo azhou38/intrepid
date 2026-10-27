@@ -1,0 +1,464 @@
+{
+ "destinations": [
+  {
+   "id": "leigh-creek",
+   "name": "Leigh Creek",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -30.5833,
+    "longitude": 138.4
+   },
+   "coordinates_source": "candidate: Wikipedia town point",
+   "defaultZoomSpanKm": 75,
+   "name_evidence": {
+    "source": "Wikivoyage Leigh Creek and flindersandoutback.com.au",
+    "wording": "Leigh Creek: gateway to the northern Flinders (town page, three counted sources)"
+   },
+   "spots": [
+    "leigh-creek-1",
+    "leigh-creek-2",
+    "leigh-creek-3",
+    "leigh-creek-4",
+    "leigh-creek-5"
+   ]
+  },
+  {
+   "id": "vulkathunha-gammon-ranges",
+   "name": "Vulkathunha-Gammon Ranges National Park",
+   "category": "park",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -30.3117,
+    "longitude": 139.3361
+   },
+   "coordinates_source": "candidate: Wikipedia point for Arkaroola (visitor hub)",
+   "defaultZoomSpanKm": 90,
+   "name_evidence": {
+    "source": "parks.sa.gov.au and flindersandoutback.com.au",
+    "wording": "Vulkathunha-Gammon Ranges National Park: rugged ranges, gorges, Lake Frome edge; Arkaroola Wilderness Sanctuary is its main visitor hub"
+   },
+   "spots": [
+    "vulkathunha-gammon-ranges-1",
+    "vulkathunha-gammon-ranges-2",
+    "vulkathunha-gammon-ranges-3",
+    "vulkathunha-gammon-ranges-4"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "historic",
+   "icon": "🎨",
+   "bio": "Southern Flinders town with the R.M. Williams story and a mural walk.",
+   "wiki": "Jamestown, South Australia",
+   "coordinates_source": "wikipedia:Jamestown, South Australia (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8978,
+   "counted_sources": 2,
+   "id": "southern-flinders-ranges-2",
+   "name": "Jamestown",
+   "destination": "southern-flinders-ranges",
+   "coordinates": {
+    "latitude": -33.20527778,
+    "longitude": 138.60194444
+   },
+   "note": "2 counted sources, 8978 page views",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/listings/attraction/r-m-williams-story-jamestown/"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🍺",
+   "bio": "Small town with a C.J. Dennis statue, a brewery and a museum.",
+   "wiki": "Laura, South Australia",
+   "coordinates_source": "wikipedia:Laura, South Australia (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3799,
+   "counted_sources": 2,
+   "id": "southern-flinders-ranges-3",
+   "name": "Laura",
+   "destination": "southern-flinders-ranges",
+   "coordinates": {
+    "latitude": -33.18655,
+    "longitude": 138.300276
+   },
+   "note": "2 counted sources, 3799 page views",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/blog/4-day-itinerary-southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚜",
+   "bio": "Village with the Steam and Traction Preservation Society collection.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Booleroo Centre (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4065,
+   "counted_sources": 2,
+   "id": "southern-flinders-ranges-4",
+   "name": "Booleroo Centre",
+   "destination": "southern-flinders-ranges",
+   "coordinates": {
+    "latitude": -32.88083333,
+    "longitude": 138.35055556
+   },
+   "note": "2 counted sources, 4065 page views",
+   "sources": [
+    "https://flindersandoutback.com.au/regions/southern-flinders-ranges/",
+    "https://flindersandoutback.com.au/blog/4-day-itinerary-southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🎨",
+   "bio": "Roadside silo art that travellers stop to photograph.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "southern-flinders-ranges-5",
+   "name": "Wirrabara Silo Art",
+   "destination": "southern-flinders-ranges",
+   "coordinates": null,
+   "note": "Itinerary names the Wirrabara silo art as a roadside art icon people stop to photograph; permanent, open. Short stop but a quirky icon.",
+   "sources": [
+    "https://flindersandoutback.com.au/blog/4-day-itinerary-southern-flinders-ranges/"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏚️",
+   "bio": "Ruins of the Aroona homestead beside Aroona Dam, with kayaking, fishing and the Akurra Trail.",
+   "wiki": "Aroona Dam",
+   "coordinates_source": "wikipedia:Aroona Dam (re-pin with resolve-pin.py)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1167,
+   "counted_sources": 1,
+   "id": "leigh-creek-1",
+   "name": "Aroona Ruins",
+   "destination": "leigh-creek",
+   "coordinates": {
+    "latitude": -30.584818,
+    "longitude": 138.35819
+   },
+   "note": "flindersandoutback names the scenic Aroona ruins and Aroona Dam kayaking near Leigh Creek as a nature experience; heritage ruins freely visited.",
+   "sources": [
+    "https://flindersandoutback.com.au/blog/unique-nature-experiences-flinders-ranges-outback/"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🐪",
+   "bio": "Restored historic township and Beltana Station, with an Afghan camel handlers' water tank and camel treks.",
+   "wiki": "Beltana, South Australia",
+   "coordinates_source": "wikipedia:Beltana (re-pin with resolve-pin.py)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3147,
+   "counted_sources": 3,
+   "id": "leigh-creek-2",
+   "name": "Beltana",
+   "destination": "leigh-creek",
+   "coordinates": {
+    "latitude": -30.813843,
+    "longitude": 138.415408
+   },
+   "note": "3 counted sources, 3147 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Ikara-Flinders_Ranges_National_Park",
+    "https://en.wikivoyage.org/wiki/Lyndhurst_(South_Australia)",
+    "https://flindersandoutback.com.au/listings/attraction/beltana-historic-town/"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🗿",
+   "bio": "Sculptures by Talc Alf at Lyndhurst, at the Strzelecki and Oodnadatta Tracks junction.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "leigh-creek-3",
+   "name": "Talc Alf Art Works",
+   "destination": "leigh-creek",
+   "coordinates": null,
+   "note": "Wikivoyage lists the Talc Alf sculpture site in Lyndhurst as its first See item; a quirky outback roadside attraction.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lyndhurst_(South_Australia)"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🟠",
+   "bio": "Aboriginal ochre pits with dreaming significance on Farina Road, 2 km north of Lyndhurst.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "leigh-creek-4",
+   "name": "Ochre Pits",
+   "destination": "leigh-creek",
+   "coordinates": null,
+   "note": "Wikivoyage: Ochre Pits on Farina Road 2 km north of Lyndhurst, Aboriginal dreaming significance, with directions; a guide-named roadside stop.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🦴",
+   "bio": "National park with guided tours of an Ediacaran fossil field.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Nilpena Ediacara National Park (re-pin with resolve-pin.py)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3645,
+   "counted_sources": 2,
+   "id": "leigh-creek-5",
+   "name": "Nilpena Ediacara National Park",
+   "destination": "leigh-creek",
+   "coordinates": {
+    "latitude": -30.8057,
+    "longitude": 138.1348
+   },
+   "note": "2 counted sources, 3645 page views",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/nilpena-ediacara-national-park",
+    "https://flindersandoutback.com.au/blog/unique-nature-experiences-flinders-ranges-outback/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌌",
+   "bio": "Wilderness sanctuary with ridgetop 4WD tours, astronomy and a village resort and caravan park.",
+   "wiki": "Arkaroola",
+   "coordinates_source": "wikipedia:Arkaroola (re-pin with resolve-pin.py)",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4851,
+   "counted_sources": 4,
+   "id": "vulkathunha-gammon-ranges-1",
+   "name": "Arkaroola Wilderness Sanctuary",
+   "destination": "vulkathunha-gammon-ranges",
+   "coordinates": {
+    "latitude": -30.31166667,
+    "longitude": 139.33611111
+   },
+   "note": "4 counted sources, 4851 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Arkaroola",
+    "https://southaustralia.com/destinations/flinders-ranges-and-outback",
+    "https://flindersandoutback.com.au/activities/signature-experiences/",
+    "https://flindersandoutback.com.au/listings/attraction/arkaroola-wilderness-sanctuary/"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🔭",
+   "bio": "Three public observatories in an International Dark Sky Sanctuary.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "vulkathunha-gammon-ranges-2",
+   "name": "Arkaroola Observatories",
+   "destination": "vulkathunha-gammon-ranges",
+   "coordinates": null,
+   "note": "Two counted sources (flindersandoutback) name the public observatories in an International Dark Sky Sanctuary; Wikivoyage mentions the astronomy tours (rule 1-2).",
+   "sources": [
+    "https://flindersandoutback.com.au/activities/signature-experiences/",
+    "https://flindersandoutback.com.au/listings/attraction/arkaroola-international-dark-sky-sanctuary/"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Gorge hike past Mount McKinlay Spring in Vulkathunha-Gammon Ranges National Park.",
+   "wiki": null,
+   "coordinates_source": "none usable in candidate; re-pin with resolve-pin.py",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "vulkathunha-gammon-ranges-3",
+   "name": "Italowie Gorge",
+   "destination": "vulkathunha-gammon-ranges",
+   "coordinates": null,
+   "note": "The parks.sa.gov.au Vulkathunha-Gammon Ranges page names the Italowie Gorge hike past Mount McKinlay Spring with a campground (rule 1, managing agency).",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/vulkathunha-gammon-ranges-national-park"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,244 @@
+{
+ "dest:mount-gambier:header": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Blue Lake wide, 4030px, real photo, lake near centre"
+ },
+ "dest:mount-gambier:why1": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Umpherston Sinkhole garden, clear and recognisable"
+ },
+ "dest:mount-gambier:why2": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Underwater Ewens Ponds, fits snorkel reason, 2160px"
+ },
+ "dest:mount-gambier:why3": {
+  "decision": "choice",
+  "choice": "Great Ocean Road (2051638241).jpg",
+  "candidates": [
+   {
+    "file": "Mount Gambier (AU), Blue Lake -- 2019 -- 0707.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Blue Lake, already header; does not show a volcano walk"
+   },
+   {
+    "file": "Mount Gambier (AU), View from Mount Gambier -- 2019 -- 0717.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "farmland, no volcano"
+   },
+   {
+    "file": "Great Ocean Road (2051638241).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Mount Schank crater rim path (Commons category Mount Schank, 2004, 2048px). Not among why3 candidates: sibling file from spot mount-gambier-5 candidates, same destination, sharing allowed"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "no why3 candidate shows an extinct-volcano walk; recommend Mount Schank rim photo (2048x1536, aspect 1.33) from the same destination"
+ },
+ "spot:mount-gambier-1": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.6
+  },
+  "reason": "Blue Lake from rim, real photo"
+ },
+ "spot:mount-gambier-2": {
+  "decision": "choice",
+  "choice": "(AUS-South Australia) Umpherston Sinkhole 2025-12-11.jpg",
+  "candidates": [
+   {
+    "file": "(AUS-South Australia) Umpherston Sinkhole 2025-12-11.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "geotag 5 m from pin, 3781px; same file as why1 (same destination, allowed)"
+   },
+   {
+    "file": "Umpherston Sinkhole, Mount Gambier, November 2018.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok alternative",
+    "reason": "also good"
+   },
+   {
+    "file": "Portrait of a Naughty Possum.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "animal close-up"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "current is Main Corner street, wrong subject; sinkhole garden photo"
+ },
+ "spot:mount-gambier-3": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Cave Garden sinkhole with lookout, 960px minimum, recognisable enough"
+ },
+ "spot:mount-gambier-4": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Engelbrecht Cave underwater view, 4032px"
+ },
+ "spot:mount-gambier-5": {
+  "decision": "choice",
+  "choice": "Great Ocean Road (2051638033).jpg",
+  "candidates": [
+   {
+    "file": "Great Ocean Road (2051638033).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Mount Schank crater from the rim (category Mount Schank), 2048px, crop 14-86% width fills with crater"
+   },
+   {
+    "file": "Great Ocean Road (2051638241).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok alternative",
+    "reason": "rim ridge; used for why3"
+   },
+   {
+    "file": "Mt Schank panorama.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "stitched panorama with black borders"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "current 575px"
+ },
+ "spot:mount-gambier-6": {
+  "decision": "choice",
+  "choice": "Ewens Ponds.jpg",
+  "candidates": [
+   {
+    "file": "Ewens Ponds.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "underwater spring pond, 2160px; same file as why2 (allowed)"
+   },
+   {
+    "file": "Ewan\u2019s Pond.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "dull, jetty rail dominates, 960px"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "current is 1945 B&W"
+ },
+ "spot:mount-gambier-7": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Divers in Piccaninnie Ponds, place visible around them, 1600px"
+ },
+ "spot:mount-gambier-8": {
+  "decision": "none",
+  "choice": "none: only candidate Mt Ruth from above is a snowy mountain in another country",
+  "candidates": [
+   {
+    "file": "Mt. Ruth from above.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "alpine Mt Ruth, wrong place"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "current 540px"
+ },
+ "spot:mount-gambier-10": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": {
+   "x": 0.56,
+   "y": 0.6,
+   "zoom": 1.5
+  },
+  "reason": "Valley Lakes panorama, lake small in 2.7:1 frame at 1136px; zoomed crop needed"
+ },
+ "spot:mount-gambier-11": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Tantanoola cave interior, 3028px, cave is the attraction"
+ },
+ "spot:mount-gambier-12": {
+  "decision": "none",
+  "choice": "none: no candidates; current is a LGA map",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "current is a map"
+ },
+ "spot:mount-gambier-13": {
+  "decision": "none",
+  "choice": "none: only candidate is a Port MacDonnell street with water tower, not the museum",
+  "candidates": [
+   {
+    "file": "Port MacDonnell - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "street corner, museum not identifiable; current is LGA map"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "stand-in only"
+ }
+}

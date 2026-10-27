@@ -1,0 +1,758 @@
+{
+ "group": "kangaroo-island",
+ "generated": "2026-10-26T15:54:45.411Z",
+ "slots": [
+  {
+   "slot": "dest:kangaroo-island:header",
+   "key": "Kangaroo Island",
+   "current": {
+    "file": "Flinders Chase National Park 01.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:kangaroo-island:why1",
+   "key": "File:Sea lion and pup in Seal Bay - Kangaroo Island.jpg",
+   "current": {
+    "file": "Sea lion and pup in Seal Bay - Kangaroo Island.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:kangaroo-island:why2",
+   "key": "File:Remarkable Rocks on Kangaroo Island, South Australia.jpg",
+   "current": {
+    "file": "Remarkable Rocks on Kangaroo Island, South Australia.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:kangaroo-island:why3",
+   "key": "File:Cape de Couedic.jpg",
+   "current": {
+    "file": "Cape de Couedic.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:kangaroo-island:why4",
+   "key": "File:Australia kangaroo island litte sahara.jpg",
+   "current": {
+    "file": "Australia kangaroo island litte sahara.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:kangaroo-island-1",
+   "key": "Flinders Chase National Park",
+   "current": {
+    "file": "Remarkable Rocks 02.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 8658 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-2",
+   "key": "Remarkable Rocks",
+   "current": {
+    "file": "Remarkable Rocks 02.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 12 m from the pin; a name word is in the title, description or categories; 5144 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-3",
+   "key": "Admirals Arch",
+   "current": {
+    "file": "Dewey Arch, New York.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1900",
+    "pre-filter: category: Black and white photographs of Manhattan, New York City; Images from the Library of Congress",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-4",
+   "key": "Seal Bay Conservation Park",
+   "current": {
+    "file": "Sea lion and pup in Seal Bay - Kangaroo Island.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-5",
+   "key": "Kelly Hill Caves",
+   "current": {
+    "file": "Stalactite in Kelly Hill.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island",
+    "pre-filter: also used for carappee-hill-conservation-park"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-6",
+   "key": "Vivonne Bay, South Australia (locality)",
+   "current": {
+    "file": "R.Bay.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island",
+    "pre-filter: also used for yankalilla"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-7",
+   "key": "Little Sahara (Kangaroo Island)",
+   "current": {
+    "file": "Little Sahara, Kangaroo Island.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-8",
+   "key": "Cape du Couedic Lighthouse",
+   "current": {
+    "file": "Phare de Cap Couedic.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-9",
+   "key": "Cape Borda Lightstation",
+   "current": {
+    "file": "Cape Borda Lighthouse.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-10",
+   "key": "Kangaroo Island Wildlife Park",
+   "current": {
+    "file": "Flinders Chase National Park 01.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 51219 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-11",
+   "key": "Kangaroo Island Wilderness Trail",
+   "current": {
+    "file": "Flinders Chase National Park 01.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 1915 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-12",
+   "key": "Stokes Bay, South Australia",
+   "current": {
+    "file": "Vivonne Bay, Kangaroo Island.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-13",
+   "key": "Pennington Bay, South Australia",
+   "current": {
+    "file": "Adelaide skyline, December 2022 b.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island, adelaide",
+    "pre-filter: also used for mannum, adelaide",
+    "pre-filter: also used for mannum, kangaroo-island"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-14",
+   "key": "Prospect Hill (South Australia)",
+   "current": {
+    "file": "W prospect.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-15",
+   "key": "Emu Bay, South Australia",
+   "current": {
+    "file": "Emu bay 02.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-16",
+   "key": "Kingscote, South Australia",
+   "current": {
+    "file": "Dauncey St Kingscote.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-17",
+   "key": "Reeves Point",
+   "current": {
+    "file": "Keanu Reeves at TIFF 2025 02 (Cropped).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-19",
+   "key": "Kingscote Silo Art",
+   "current": {
+    "file": "Big Things Postcard.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for coober-pedy, kangaroo-island, riverland, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, kangaroo-island, riverland, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, riverland, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, kangaroo-island, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, kangaroo-island, riverland, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, kangaroo-island, riverland, coorong-national-park"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-20",
+   "key": "Kingscote Jetty",
+   "current": {
+    "file": "Dauncey St Kingscote.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-21",
+   "key": "Hope Cottage National Trust Museum",
+   "current": {
+    "file": "Robert Burns Birthplace Museum - geograph.org.uk - 4561998.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-22",
+   "key": "American River, South Australia",
+   "current": {
+    "file": "Sealers memorial at American River.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-23",
+   "key": "Red Banks Beach",
+   "current": {
+    "file": "Aerial view of Red Bank.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: excluded category or title (map/drawing/historical/...)"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-24",
+   "key": "Penneshaw, South Australia",
+   "current": {
+    "file": "Penneshaw harbour.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-25",
+   "key": "Penneshaw Penguin Centre",
+   "current": {
+    "file": "Penneshaw harbour.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-26",
+   "key": "Cape Willoughby Lighthouse",
+   "current": {
+    "file": "Australia kangaroo island cape willoughby.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-27",
+   "key": "Penneshaw Maritime and Folk Museum",
+   "current": {
+    "file": "Penneshaw harbour.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-28",
+   "key": "Hog Bay",
+   "current": {
+    "file": "Penneshaw harbour.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-29",
+   "key": "Frenchmans Rock",
+   "current": {
+    "file": "Frenchmans Cap.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island",
+    "pre-filter: also used for franklin-gordon-wild-rivers"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-30",
+   "key": "Fireball Bates Walking Trail",
+   "current": {
+    "file": "Dodgers at Nationals (53677192000) (cropped).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-31",
+   "key": "Kangaroo Island Sculpture Trail",
+   "current": {
+    "file": "Story Bridge Side.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-32",
+   "key": "Ironstone Hill Hike",
+   "current": {
+    "file": "Castle combe cotswolds.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 16422657 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-33",
+   "key": "Lashmar Conservation Park",
+   "current": {
+    "file": "Thylacoleo skeleton in Naracoorte Caves.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for naracoorte",
+    "pre-filter: also used for kangaroo-island"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-34",
+   "key": "Cape Gantheaume Conservation Park",
+   "current": {
+    "file": "Murray Lagoon.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot",
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-35",
+   "key": "Murray Lagoon",
+   "current": {
+    "file": "BalosLagoonCreta.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-36",
+   "key": "Bald Hill Walk",
+   "current": {
+    "file": "Telescope hill fire tower 4-3-1918-1(nys archives).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 675px wide, minimum 960 for a spot",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-37",
+   "key": "Timber Creek Walk",
+   "current": {
+    "file": "Litchfield2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-38",
+   "key": "Curley Creek Hike",
+   "current": {
+    "file": "Four Commedia dell’Arte Figures claude-gillot.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-39",
+   "key": "Tadpole Cove Walk",
+   "current": {
+    "file": "Murray Lagoon.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot",
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-40",
+   "key": "D'Estrees Bay",
+   "current": {
+    "file": "D'Estrees Bay beach - panoramio.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 1696 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-41",
+   "key": "Duck Lagoon",
+   "current": {
+    "file": "Bbrng15123logo.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-43",
+   "key": "Harriet River",
+   "current": {
+    "file": "Vivonne Bay, Kangaroo Island.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-44",
+   "key": "Point Ellen",
+   "current": {
+    "file": "Ellen DeGeneres 2011.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-45",
+   "key": "Hanson Bay",
+   "current": {
+    "file": "Hanson Bay and Lakes Kairae, Makuku, Kaingarahu and Whanga Lagoon.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 4024022 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-46",
+   "key": "West Bay",
+   "current": {
+    "file": "The harbour at West Bay - geograph.org.uk - 1257239.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-47",
+   "key": "Western River Cove",
+   "current": {
+    "file": "15 Lane Cove River 4a.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-48",
+   "key": "Ravine des Casoars",
+   "current": {
+    "file": "Ravine Des Casoars - panoramio.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-49",
+   "key": "Waterfall Creek Hike",
+   "current": {
+    "file": "Piney Creek Falls.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 16226109 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-50",
+   "key": "Return Road Hike",
+   "current": {
+    "file": "Hiking to the Ice Lakes. San Juan National Forest, Colorado.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-51",
+   "key": "Harveys Return Hike",
+   "current": {
+    "file": "Harvey 2017-08-25 2337Z.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "proof: excluded category or title (map/drawing/historical/...)"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-52",
+   "key": "Snellings Beach",
+   "current": {
+    "file": "Snellsbeach4wikipedia.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 304px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-53",
+   "key": "King George Beach",
+   "current": {
+    "file": "Map of King George Sound drawn using Paint.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: category: Maps of parts of Western Australia",
+    "pre-filter: file name suggests a map, drawing, logo or similar",
+    "pre-filter: 882px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-54",
+   "key": "Brown Beach",
+   "current": {
+    "file": "LIBBIE BEACH HOEL.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 752px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-55",
+   "key": "Bales Beach",
+   "current": {
+    "file": "Sea lion and pup in Seal Bay - Kangaroo Island.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:kangaroo-island-56",
+   "key": "Beyeria Walk",
+   "current": {
+    "file": "Tea Tree Gully Quarry - Anstey Hill Recreation Park.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island",
+    "pre-filter: also used for adelaide"
+   ]
+  }
+ ]
+}

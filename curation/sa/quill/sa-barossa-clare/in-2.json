@@ -1,0 +1,444 @@
+{
+ "destinations": [
+  {
+   "id": "clare-valley",
+   "name": "Clare Valley",
+   "category": "nature",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -33.83361111,
+    "longitude": 138.61
+   },
+   "coordinates_source": "Wikipedia: Clare Valley (region point; re-pin to Clare centre)",
+   "defaultZoomSpanKm": 50,
+   "name_evidence": {
+    "source": "southaustralia.com/destinations/clare-valley; clarevalley.com.au (Clare Valley Tourism); Wikivoyage \"Yorke Peninsula and Clare Valley\"",
+    "wording": "Clare Valley is a named region with its own tourism board and destination page"
+   },
+   "spots": [
+    "clare-valley-1",
+    "clare-valley-2",
+    "clare-valley-3",
+    "clare-valley-4",
+    "clare-valley-5",
+    "clare-valley-6",
+    "clare-valley-7",
+    "clare-valley-8",
+    "clare-valley-9",
+    "clare-valley-10",
+    "clare-valley-11"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "monument",
+   "icon": "🗿",
+   "bio": "A 7 m bronze Cornish miner statue on the Thiele Highway at Kapunda, with a picnic area and lookout.",
+   "wiki": "Map the Miner",
+   "coordinates_source": "candidate (wikipedia:Map the Miner); re-pin with resolve-pin.py",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1531,
+   "counted_sources": [],
+   "id": "barossa-valley-13",
+   "name": "Map the Miner",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.3521,
+    "longitude": 138.9067
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": []
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Historic town at the Barossa's southern edge with a Wikivoyage page of its own.",
+   "wiki": "Gawler, South Australia",
+   "coordinates_source": "candidate (wikipedia:Gawler); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 18118,
+   "counted_sources": 2,
+   "id": "barossa-valley-14",
+   "name": "Gawler",
+   "destination": "barossa-valley",
+   "coordinates": {
+    "latitude": -34.59805556,
+    "longitude": 138.745
+   },
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gawler",
+    "https://en.wikivoyage.org/wiki/Barossa_Valley"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Free conservation park with three walking trails, including a Heysen Trail section through stringybark woodland.",
+   "wiki": "Warren Conservation Park",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 267,
+   "counted_sources": [
+    "https://www.parks.sa.gov.au/parks/warren-conservation-park",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ],
+   "id": "barossa-valley-15",
+   "name": "Warren Conservation Park",
+   "destination": "barossa-valley",
+   "coordinates": null,
+   "note": "inside barossa-valley span and reached from its base",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/warren-conservation-park",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "religious",
+   "icon": "🍷",
+   "bio": "Jesuit winery founded in 1851 with St Aloysius Church and cellars open to visitors.",
+   "wiki": "Sevenhill Cellars",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-1",
+   "name": "Sevenhill Cellars",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "Rail trail for walkers and cyclists running through the Clare Valley wine country between Clare and Auburn.",
+   "wiki": "Riesling Trail",
+   "coordinates_source": "route midpoint to be taken from the whole OSM route",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1339,
+   "counted_sources": 3,
+   "id": "clare-valley-2",
+   "name": "Riesling Trail",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://southaustralia.com/destinations/clare-valley",
+    "https://en.wikivoyage.org/wiki/Yorke_Peninsula_and_Clare_Valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏛️",
+   "bio": "Georgian-style 1879 mansion near Mintaro open to visitors, known as a film location.",
+   "wiki": "Martindale Hall",
+   "coordinates_source": "candidate (wikipedia:Martindale Hall); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4918,
+   "counted_sources": 3,
+   "id": "clare-valley-3",
+   "name": "Martindale Hall",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.9378,
+    "longitude": 138.7294
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://www.clarevalley.com.au/explore/history-heritage",
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Heritage village of slate and stone buildings, listed by Clare Valley Tourism and SA Tourism.",
+   "wiki": "Mintaro, South Australia",
+   "coordinates_source": "candidate (wikipedia:Mintaro, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3268,
+   "counted_sources": 3,
+   "id": "clare-valley-4",
+   "name": "Mintaro",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.91694444,
+    "longitude": 138.72083333
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/regions-towns",
+    "https://www.clarevalley.com.au/explore/history-heritage",
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "Free conservation park near Clare with a waterfall and the Cascades walk.",
+   "wiki": "Spring Gully Conservation Park",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 430,
+   "counted_sources": 2,
+   "id": "clare-valley-5",
+   "name": "Spring Gully Conservation Park",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://www.parks.sa.gov.au/parks/spring-gully-conservation-park"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "A 1 km loop of about 45 minutes to a 455 m lookout through remnant woodland.",
+   "wiki": "Neagles Rock Short Walk",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "clare-valley-6",
+   "name": "Neagles Rock Short Walk",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Heritage village at the southern end of the Clare Valley where the Riesling and Rattler Trails meet.",
+   "wiki": "Auburn, South Australia",
+   "coordinates_source": "candidate (wikipedia:Auburn, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3280,
+   "counted_sources": 3,
+   "id": "clare-valley-7",
+   "name": "Auburn",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -34.02722222,
+    "longitude": 138.68555556
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/regions-towns",
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://southaustralia.com/destinations/clare-valley"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🐑",
+   "bio": "Historic pastoral station near Clare offering farm tours.",
+   "wiki": "Bungaree Station",
+   "coordinates_source": "candidate (wikipedia:Bungaree, South Australia); re-pin with resolve-pin.py",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "clare-valley-8",
+   "name": "Bungaree Station",
+   "destination": "clare-valley",
+   "coordinates": {
+    "latitude": -33.74416667,
+    "longitude": 138.56083333
+   },
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions",
+    "https://www.clarevalley.com.au/explore/history-heritage"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "A 19 km walking and cycling rail trail from Riverton to Auburn that joins the Riesling Trail.",
+   "wiki": "Rattler Trail",
+   "coordinates_source": "route midpoint to be taken from the whole OSM route",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 290,
+   "counted_sources": 1,
+   "id": "clare-valley-9",
+   "name": "Rattler Trail",
+   "destination": "clare-valley",
+   "coordinates": null,
+   "note": "inside clare-valley span and reached from its base",
+   "sources": [
+    "https://www.clarevalley.com.au/explore/tourist-attractions"
+   ]
+  }
+ ]
+}

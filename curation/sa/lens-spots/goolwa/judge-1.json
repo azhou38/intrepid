@@ -1,0 +1,100 @@
+{
+ "dest:goolwa:header": {
+  "decision": "keep-current",
+  "choice": "Goolwa beach 2009.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Wide real photo of Goolwa's surf beach, 3072px; named beach (a town header would ideally show town, but it is the draw)"
+ },
+ "dest:goolwa:why1": {
+  "decision": "keep-current",
+  "choice": "Goolwa Barrage, South Australia.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Barrage walkway, wide, shows the reason; crop 23-77% keeps the walkway centred"
+ },
+ "dest:goolwa:why2": {
+  "decision": "none",
+  "choice": "none: no candidate shows waterbirds at the Murray Mouth (picnic lawn, Mannum, Murray Bridge, plaques)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no passing photo"
+ },
+ "dest:goolwa:why3": {
+  "decision": "keep-current",
+  "choice": "Goolwa beach 2009.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Surf beach photo matches reason; shared with header (allowed)"
+ },
+ "spot:goolwa-1": {
+  "decision": "keep-current",
+  "choice": "Strathalbyn memorial gardens.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Angas River gardens and bridge in Strathalbyn; real photo, recognisable town scene (modest)"
+ },
+ "spot:goolwa-2": {
+  "decision": "choice",
+  "choice": "Goolwa Barrage, South Australia.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Candidate 1: the barrage walkway itself, replaces map; same file as why1 (allowed)"
+ },
+ "spot:goolwa-3": {
+  "decision": "reject",
+  "choice": "none: current is a Belgian monument (wrong place); no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "fails check 1"
+ },
+ "spot:goolwa-4": {
+  "decision": "reject",
+  "choice": "none: current is a close-up of pippi clams, not the beach; header/why3 beach photo is a sharing option",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "fails check 2; recommend sharing Goolwa beach 2009.jpg (same destination header/why3), but it is not the spot's own pick if judge-2 prefers it"
+ },
+ "spot:goolwa-5": {
+  "decision": "reject",
+  "choice": "none: current shows the Hindmarsh Island bridge/causeway seen from Goolwa wharf, not the island or Murray Mouth lookout",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "fails check 2 (bridge, not the island)"
+ },
+ "spot:goolwa-6": {
+  "decision": "none",
+  "choice": "none: only buses, roads, Milang buildings, a paddock panorama; no vineyard or Langhorne Creek cellar-door photo",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no passing photo"
+ },
+ "spot:goolwa-7": {
+  "decision": "choice",
+  "choice": "Lake Tolderol Game Reserve.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Candidate 1: wetland shore of the reserve, 3764px CC BY-SA; wide (2.6:1) so crop is a 36% slice, lake and reeds still read"
+ },
+ "spot:goolwa-8": {
+  "decision": "none",
+  "choice": "none: only Orwell novel/murals/archive scans; no photo of Goolwa's Animal Farm park",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "no passing photo"
+ },
+ "spot:goolwa-9": {
+  "decision": "reject",
+  "choice": "none: current is Strathalbyn memorial gardens, not the motor museum, and duplicates goolwa-1's file",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "fails check 2 and repeat"
+ },
+ "spot:goolwa-11": {
+  "decision": "reject",
+  "choice": "none: current is Strathalbyn memorial gardens, not the heritage museum, and duplicates goolwa-1's file",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "fails check 2 and repeat"
+ }
+}

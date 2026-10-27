@@ -1,0 +1,157 @@
+{
+ "dest:mclaren-vale:header": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "vineyard with ranges, McLaren Vale wine region"
+ },
+ "dest:mclaren-vale:why1": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Coriole cellar door building with garden; shows cellar-door reason"
+ },
+ "dest:mclaren-vale:why2": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Maslin Beach cliffs and sand"
+ },
+ "dest:mclaren-vale:why3": {
+  "decision": "reject",
+  "choice": "none: Willunga Hotel street corner, fails check 3",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Willunga Hotel street corner, fails check 3"
+ },
+ "spot:mclaren-vale-1": {
+  "decision": "reject",
+  "choice": "none: wine bottle product shot, stand-in not d'Arenberg",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "wine bottle product shot, stand-in not d'Arenberg"
+ },
+ "spot:mclaren-vale-2": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "gorge lookout in Onkaparinga NP"
+ },
+ "spot:mclaren-vale-3": {
+  "decision": "reject",
+  "choice": "none: file shows Port Willunga beach, not Willunga town; duplicates mclaren-vale-4",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "file shows Port Willunga beach, not Willunga town; duplicates mclaren-vale-4"
+ },
+ "spot:mclaren-vale-4": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Port Willunga cliffs and beach"
+ },
+ "spot:mclaren-vale-5": {
+  "decision": "choice",
+  "choice": "2592px CC BY-SA panoramio Maslin beach cliffs (candidate 8, 512m)",
+  "candidates": [
+   {
+    "n": 1,
+    "verdict": "reject",
+    "reason": "already used for copper-coast"
+   },
+   {
+    "n": 8,
+    "verdict": "accept",
+    "reason": "Maslin Beach bay and cliffs, geotagged 512m, real photo"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "current lead reused by another destination; candidate 8 clear"
+ },
+ "spot:mclaren-vale-6": {
+  "decision": "reject",
+  "choice": "none: cormorant close-up, stand-in",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "cormorant close-up, stand-in"
+ },
+ "spot:mclaren-vale-7": {
+  "decision": "reject",
+  "choice": "none: barber pole, wrong subject",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "barber pole, wrong subject"
+ },
+ "spot:mclaren-vale-8": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "rail trail path"
+ },
+ "spot:mclaren-vale-9": {
+  "decision": "none",
+  "choice": "none: candidates are a cycling crowd with person in focus and a roadside paddock; neither shows the museums",
+  "candidates": [
+   {
+    "n": 1,
+    "verdict": "reject",
+    "reason": "people main focus, not museums"
+   },
+   {
+    "n": 2,
+    "verdict": "reject",
+    "reason": "paddock, not the place"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "no photo"
+ },
+ "spot:mclaren-vale-10": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Sellicks Beach"
+ },
+ "spot:mclaren-vale-11": {
+  "decision": "reject",
+  "choice": "none: CharlesIsland.jpg appears an island at tidal flat, place unproven for Silver Sands",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "CharlesIsland.jpg appears an island at tidal flat, place unproven for Silver Sands"
+ },
+ "spot:mclaren-vale-12": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Ochre Point coast in Moana"
+ },
+ "spot:mclaren-vale-13": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "scrub park landscape"
+ },
+ "spot:mclaren-vale-14": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Onkaparinga estuary, distinct from NP"
+ },
+ "spot:mclaren-vale-15": {
+  "decision": "reject",
+  "choice": "none: same file as Aldinga Scrub (repeat); nothing distinct for Cox Scrub",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "same file as Aldinga Scrub (repeat); nothing distinct for Cox Scrub"
+ }
+}

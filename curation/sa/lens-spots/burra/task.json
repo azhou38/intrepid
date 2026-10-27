@@ -1,0 +1,110 @@
+{
+ "group": "burra",
+ "generated": "2026-10-26T15:54:43.371Z",
+ "slots": [
+  {
+   "slot": "dest:burra:header",
+   "key": "Burra",
+   "current": {
+    "file": "Burra - South Australia - panoramio.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:burra:why1",
+   "key": "File:Burra mine and morphetts buildings.JPG",
+   "current": {
+    "file": "Burra mine and morphetts buildings.JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:burra:why2",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "dest:burra:why3",
+   "key": "File:Burra dugouts - exterior.JPG",
+   "current": {
+    "file": "Burra dugouts - exterior.JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:burra-1",
+   "key": "Burra Mine Site",
+   "current": {
+    "file": "Ducktown-mine-collapse-tn1.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:burra-2",
+   "key": "Redruth Gaol",
+   "current": {
+    "file": "Redruth Gaol front.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:burra-3",
+   "key": "Miners Dugouts",
+   "current": {
+    "file": "Dugout home2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1940",
+    "pre-filter: category: Images from the Library of Congress"
+   ]
+  },
+  {
+   "slot": "spot:burra-4",
+   "key": "Burra railway station",
+   "current": {
+    "file": "Burra station with Peterborough-bound Bluebird railcar (103 & 260) 4 Jun 1969 (NRM 97-1262-g028-0890).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1969",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:burra-5",
+   "key": "Bon Accord Mine Complex",
+   "current": {
+    "file": "Duran Duran 1983.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1983",
+    "pre-filter: category: Black and white group photographs of musicians"
+   ]
+  }
+ ]
+}

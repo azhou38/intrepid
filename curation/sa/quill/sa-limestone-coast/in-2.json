@@ -1,0 +1,440 @@
+{
+ "destinations": [
+  {
+   "id": "robe",
+   "name": "Robe",
+   "category": "beach",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -37.164057,
+    "longitude": 139.754134
+   },
+   "coordinates_source": "candidate (Robe town point, OSM place)",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": {
+    "source": "en.wikivoyage.org/wiki/Robe_(South_Australia); southaustralia.com Limestone Coast",
+    "wording": "Robe: coastal town on Guichen Bay with lighthouse, jetty and beaches"
+   },
+   "spots": [
+    "robe-1",
+    "robe-2",
+    "robe-3",
+    "robe-4",
+    "robe-5",
+    "robe-6"
+   ]
+  },
+  {
+   "id": "beachport",
+   "name": "Beachport",
+   "category": "beach",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -37.48355,
+    "longitude": 140.008423
+   },
+   "coordinates_source": "candidate (Beachport town point)",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "southaustralia.com Beachport page; Wikivoyage Limestone Coast",
+    "wording": "Beachport named as a base listing the Pool of Siloam, Beachport Conservation Park and the jetty"
+   },
+   "spots": [
+    "beachport-1",
+    "beachport-2",
+    "beachport-3",
+    "beachport-4",
+    "beachport-5",
+    "beachport-6",
+    "beachport-7"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "A volunteer-run museum in Port MacDonnell on the shipwrecks of the coast.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7186,
+   "counted_sources": 0,
+   "id": "mount-gambier-13",
+   "name": "Port MacDonnell Maritime Museum",
+   "destination": "mount-gambier",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "An 1863 Customs House in Robe that now serves as a National Trust maritime museum.",
+   "wiki": "Robe Customs House",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "robe-1",
+   "name": "Robe Customs House Maritime Museum",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Robe"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🗼",
+   "bio": "An 1855 red-and-white navigation obelisk on the cliff above Robe.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "id": "robe-2",
+   "name": "Cape Dombey Obelisk",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "landmark",
+   "icon": "🎣",
+   "bio": "The jetty and small harbour at Robe on Guichen Bay.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 24711,
+   "counted_sources": 1,
+   "id": "robe-3",
+   "name": "Robe Jetty",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Robe"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long beach at Robe used for swimming and 4WD driving.",
+   "wiki": "Long Beach (South Australia)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "robe-4",
+   "name": "Long Beach",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "A conservation park south of Robe of dunes, lakes and coastal mallee with 4WD tracks.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Little Dip Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 351,
+   "counted_sources": 2,
+   "id": "robe-5",
+   "name": "Little Dip Conservation Park",
+   "destination": "robe",
+   "coordinates": {
+    "latitude": -37.23527778,
+    "longitude": 139.79333333
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/little-dip-conservation-park",
+    "https://en.wikivoyage.org/wiki/Robe"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A white-sand semicircular bay between Robe and Beachport, backed by 20 m headlands and good for swimming.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Nora Creina",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 844,
+   "counted_sources": 0,
+   "id": "robe-6",
+   "name": "Nora Creina Bay",
+   "destination": "robe",
+   "coordinates": {
+    "latitude": -37.327064,
+    "longitude": 139.850928
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "landmark",
+   "icon": "🎣",
+   "bio": "The second-longest jetty in South Australia, used for fishing and walking out over Rivoli Bay.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 6878,
+   "counted_sources": 0,
+   "id": "beachport-1",
+   "name": "Beachport Jetty",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A hypersaline lake near Beachport in which visitors can float.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 51707,
+   "counted_sources": 1,
+   "id": "beachport-2",
+   "name": "Pool of Siloam",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "An 1879-80 wool and grain store run by the National Trust as a museum, with whaling history.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 6878,
+   "counted_sources": 0,
+   "id": "beachport-3",
+   "name": "Beachport Woolstores Museum",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A coastal conservation park of limestone cliffs, middens and the Woolley Lake walking trail with ocean views.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Beachport Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 320,
+   "counted_sources": 2,
+   "id": "beachport-4",
+   "name": "Beachport Conservation Park",
+   "destination": "beachport",
+   "coordinates": {
+    "latitude": -37.45333333,
+    "longitude": 139.97666667
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/beachport-conservation-park",
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "A coastal national park of cliffs, surf beaches and dunes on the Southern Ocean with walking tracks.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Canunda National Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 754,
+   "counted_sources": 2,
+   "id": "beachport-5",
+   "name": "Canunda National Park",
+   "destination": "beachport",
+   "coordinates": {
+    "latitude": -37.59786546,
+    "longitude": 140.17517997
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/canunda-national-park",
+    "https://en.wikivoyage.org/wiki/Limestone_Coast"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,231 @@
+{
+ "spots": {
+  "riverland-10": {
+   "name": "Rocky's Hall of Fame and Pioneers Museum",
+   "icon": "🎸",
+   "category": "museum",
+   "bio": "Barmera museum with a 35 m guitar-shaped garden of handprints from over 190 country musicians.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "costMin": 2,
+   "costMax": 2,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.berribarmera.sa.gov.au/our-community/venues/points-of-interest/attractions/rockys-hall-of-fame-and-pioneers-museum",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Museum and guitar garden in Barmera; pin the museum entrance (council listing/Wikivoyage Barmera).",
+    "cost": "Council page and Weekend Notes say $2 per person; History SA lists a gold coin donation. Volunteer-run, irregular hours."
+   }
+  },
+  "riverland-11": {
+   "name": "Waikerie Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Double silo mural by two artists on a clifftop at Waikerie, almost 30 m tall.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single official site; SATC listing only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Silos on the clifftop in Waikerie, viewable from the adjacent car park; Australian Silo Art Trail location."
+   }
+  },
+  "riverland-12": {
+   "name": "Waikerie Rotary Cliff Top Walk and Art Trail",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "A 2 km clifftop walk from the ferry to lookouts over the Murray floodplain, past murals and sculptures.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official page found; SATC listing only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Linear walk (about 2 km) from the Waikerie ferry along the clifftop: pin the route midpoint (OSM way if present, else council trail map)."
+   }
+  },
+  "riverland-13": {
+   "name": "Gluepot Reserve",
+   "icon": "🐦",
+   "category": "nature",
+   "bio": "Volunteer-run mallee reserve with a visitor centre, 14 walking trails and bird hides, home to the black-eared miner.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": null,
+   "wiki": "Gluepot Reserve",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://gluepot.org/visit-us/",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Visitor Centre at the homestead area (not the reserve centroid); self-registration there.",
+    "fee": "Day visitors $10 per vehicle per day, camping $20 per vehicle per night (gluepot.org/visit-us). Reserve was closed for track drying at fetch time."
+   }
+  },
+  "riverland-14": {
+   "name": "Loch Luna and Moorook Game Reserves",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Floodplain wetlands near Kingston-on-Murray with canoe trails, birdlife and camping beside the Murray.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": null,
+   "wiki": "Loch Luna Game Reserve",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/loch-luna-moorook-game-reserves",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Visitor point: Loch Luna boat ramp/canoe launch or main campground off Kingston Bridge (NPWS map); not the reserve centroid.",
+    "cost": "Park page lists only accommodation ($15.40/night); no entry fee."
+   }
+  },
+  "riverland-15": {
+   "name": "Danggali Conservation Park",
+   "icon": "🦎",
+   "category": "nature",
+   "bio": "Remote mallee wilderness north of Renmark, home to malleefowl, with pastoral-relic walking trails.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "coordinates": null,
+   "wiki": "Danggali Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/danggali-conservation-park-and-wilderness-protection-area",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Remote park: use the main visitor point (Thurk's Well/Old Hut area or park entry per NPWS map), not the centroid.",
+    "cost": "Free entry per park page. Park alert at fetch time: closed until further notice after heavy rain; closed on catastrophic fire days."
+   }
+  },
+  "riverland-16": {
+   "name": "Possum Parade",
+   "icon": "🦝",
+   "category": "nature",
+   "bio": "Brushtail possums come down the palm trunks at dusk on the Renmark riverfront to eat food left by visitors.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No operator; run informally on the riverfront (SATC listing, free, year-round).",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Riverfront palms near the Renmark Visitor Information Centre, Murray Avenue (some possums also at Jarrett Memorial Gardens, James Avenue)."
+   }
+  },
+  "riverland-17": {
+   "name": "Renmark Rotary Lookout Tower",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Lookout tower in Renmark West with 360-degree views over farmland and the town, open day and night.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run lookout with no dedicated page found.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikivoyage listing's own geo about -34.1463, 140.7087 (144 Chino St, Renmark West); confirm against OSM tower.",
+    "pin_hint": "-34.1463 140.7087 (Wikivoyage listing)"
+   }
+  },
+  "riverland-18": {
+   "name": "Renmark Paringa Community Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Local history museum in Paringa with mostly agricultural and riverside displays of Renmark and Paringa.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "donation",
+   "ticket_note": "No official site verified; SATC and BIG4 listings only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "12 Sturt Hwy, Paringa; Wikivoyage listing geo about -34.1808, 140.7796.",
+    "cost": "Listed as free with a donation appreciated; open Mon, Wed, Fri 10am-3pm.",
+    "pin_hint": "-34.1808 140.7796 (Wikivoyage listing)"
+   }
+  },
+  "riverland-19": {
+   "name": "Loxton Tree Sculptures",
+   "icon": "🪵",
+   "category": "landmark",
+   "bio": "Sixteen chainsaw-carved tree sculptures along an easy walking trail in Loxton's conservation and heritage park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run; no dedicated page verified (SATC listing, free).",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Walking trail inside Loxton's conservation and heritage park (near the Historic Village): pin the trail midpoint or main car park."
+   }
+  },
+  "riverland-20": {
+   "name": "Bulyong Island",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Boat-access island section of Murray River National Park north of Paringa for paddling, wildlife and bush camping.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/murray-river-national-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Access by water only from Murtho Forest Landing/Murtho Landing; pin the island's main camping/landing area per NPWS Bulyong Island map.",
+    "cost": "Murray River NP page lists only accommodation from $15.40/night, no entry fee.",
+    "alerts": "Parts of Murray River NP closed for environmental watering to Nov 2026 (Lock 4 section, not Bulyong specifically)."
+   }
+  },
+  "riverland-21": {
+   "name": "Border Cliffs",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Chowilla campground and the 3.4 km Customs House Wetland Walk beside the Murray at the Victorian border.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/chowilla-game-reserve",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Border Cliffs campground (Chowilla Game Reserve); walk is a loop, so pin campground/trailhead per NPWS map.",
+    "cost": "Chowilla page lists only accommodation $15.40/night, no entry fee.",
+    "alerts": "Parts of Chowilla closed to 30 Nov 2026 (campsites 14-32 etc.) and Danggali/Chowilla Regional Reserve closure alert at fetch time."
+   }
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "riverland-10 fee ($2 vs gold coin conflict)",
+  "riverland-12 and riverland-19 distances/trail details rest on SATC listing only",
+  "riverland-21 Border Cliffs 3.4 km walk length from earlier draft; page text fetched did not show it"
+ ],
+ "needs_browser": [
+  {
+   "id": "riverland-10",
+   "url": "https://www.berribarmera.sa.gov.au/our-community/venues/points-of-interest/attractions/rockys-hall-of-fame-and-pioneers-museum",
+   "why": "403 to scripts; confirm title and fee"
+  }
+ ],
+ "notes": [
+  "No pins resolved (serial pass). Gluepot, Danggali, Chowilla currently closed per alerts: transient."
+ ]
+}

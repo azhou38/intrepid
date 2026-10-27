@@ -1,0 +1,189 @@
+{
+ "group": "whyalla",
+ "generated": "2026-10-26T15:54:43.867Z",
+ "slots": [
+  {
+   "slot": "dest:whyalla:header",
+   "key": "Whyalla",
+   "current": {
+    "file": "View from Hummock Hill, Whyalla, 2017 (01).jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:whyalla:why1",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "dest:whyalla:why2",
+   "key": "File:HMAS Whyalla (J153), 2017 (01).jpg",
+   "current": {
+    "file": "HMAS Whyalla (J153), 2017 (01).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:whyalla:why3",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-1",
+   "key": "Whyalla Maritime Museum",
+   "current": {
+    "file": "View from Hummock Hill, Whyalla, 2017 (02).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 2478 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-2",
+   "key": "Point Lowly Lighthouse",
+   "current": {
+    "file": "Point Lowly Lighthouse.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 35 m from the pin; a name word is in the title, description or categories; 1740 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-3",
+   "key": "Giant Australian Cuttlefish Aggregation",
+   "current": {
+    "file": "Sepia apama 2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: category: Sepia apama",
+    "pre-filter: 568px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-4",
+   "key": "Hummock Hill Lookout",
+   "current": {
+    "file": "Bargara from the Hummock.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-5",
+   "key": "Whyalla Jetty",
+   "current": {
+    "file": "View from Hummock Hill, Whyalla, 2017 (02).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 276 m from the pin; a name word is in the title, description or categories; 4928 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-6",
+   "key": "Whyalla Foreshore",
+   "current": {
+    "file": "View from Hummock Hill, Whyalla, 2017 (02).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 632 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-7",
+   "key": "Whyalla Conservation Park",
+   "current": {
+    "file": "View from Hummock Hill, Whyalla, 2017 (02).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 10368 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-8",
+   "key": "Mount Laura Homestead Museum",
+   "current": {
+    "file": "Staying Still 78 - Threshold.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 180948 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-9",
+   "key": "Freycinet Trail",
+   "current": {
+    "file": "Rose Marie Pinon de Freycinet.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1812",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-10",
+   "key": "Gulf and Ranges Trail",
+   "current": {
+    "file": "New Houlka Tanglefoot Trail.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 15708577 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:whyalla-11",
+   "key": "Iron Knob Visitor Centre and Museum",
+   "current": {
+    "file": "Kentuck Knob 20190516 (24) - \"Courtyard-Carport\".jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 16659868 m from the pin: a judge must look"
+   ]
+  }
+ ]
+}

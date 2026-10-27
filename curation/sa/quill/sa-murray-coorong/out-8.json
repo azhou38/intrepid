@@ -1,0 +1,132 @@
+{
+ "spots": {
+  "mallee-tourist-heritage-centre": {
+   "name": "Mallee Tourist and Heritage Centre",
+   "icon": "🚜",
+   "category": "museum",
+   "bio": "Pinnaroo museum of restored engines, farm memorabilia, a grain collection and working letterpress printing presses.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "costMin": 7,
+   "costMax": 7,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.southernmallee.com.au/post/mallee-tourist-heritage-centre",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Railway Terrace South, Pinnaroo (address from Southern Mallee listing); pin the centre building.",
+    "cost": "Adult $7, concession $6 per History SA Network listing. Volunteer-run; Southern Mallee page says open about 10am-1pm Mon-Fri, so a visit window matters (not in bio, no room).",
+    "ticket": "Southern Mallee tourism page titled Mallee Tourist & Heritage Centre loads; the council page (southernmallee.sa.gov.au) is Cloudflare-blocked."
+   }
+  },
+  "coonalpyn-silo-art": {
+   "name": "Coonalpyn Downs Silo Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Guido van Helten's 2017 mural of five local children on working grain silos beside the Dukes Highway.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single official site; council page (coorong.sa.gov.au Creating Coonalpyn) is Cloudflare-blocked, so no verified link.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Coonalpyn silos beside the Dukes Highway; large parking area adjacent (Atlas Obscura); use the silo group, not town centre.",
+    "bio": "Dropped draft 'picnic area' claim: no source describes one at the silos. Silos are still operational with heavy truck traffic at times."
+   }
+  },
+  "tauragat-hill": {
+   "name": "Tauragat Hill",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Gentle, unmarked bush trails climb to a survey marker with views over Coonalpyn and the surrounding farmland.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official steward site; SATC listing only.",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Summit survey marker; hill lies a short drive east of Tauragat Well along Tauragat Well Road, Coonalpyn. Pin on summit (OSM natural=peak/viewpoint if named)."
+   }
+  },
+  "mount-boothby-conservation-park": {
+   "name": "Mount Boothby Conservation Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Park named for a 129 m granite and limestone outcrop, with wild orchids in spring and a picnic area at Boothby Rocks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No page found on parks.sa.gov.au (slugs mount-boothby-conservation-park, mount-boothby, boothby all 404).",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Tolmer Rocks outcrop (Tolmer Rocks Road, ~20 km from Tintinara) is the 129 m feature and the same listing; Boothby Rocks Reserve picnic area off Boothby Road, Culburra is an alternative visitor point. Wikipedia park coord 35.8405 S 139.7770 E is a centroid-type point.",
+    "cost": "SATC lists both Mount Boothby and Tolmer Rocks as Free. parks.sa.gov.au has no page for this park at tested slugs, so no entry-fee confirmation from the agency.",
+    "merge": "Tolmer Rocks is covered by this entry, not a separate spot."
+   }
+  },
+  "karte-conservation-park": {
+   "name": "Karte Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Sand-dune scrub with a 1.5 km interpretive walk and picnic area, in habitat used by threatened malleefowl.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/karte-conservation-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Walking trail (1.5 km) starts near picnic area and campsites; pin midpoint of trail (OSM) or trailhead/picnic area.",
+    "cost": "parks.sa.gov.au lists only accommodation fee ($15.40 per night); no vehicle entry fee, no staffed gate. Page title checked: Karte Conservation Park."
+   }
+  },
+  "ngarkat-conservation-park": {
+   "name": "Ngarkat Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Remote 4WD-only mallee heath wilderness with 11 campgrounds and 10 walking trails across 271,000 hectares.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 8,
+   "coordinates": null,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ngarkat-conservation-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Park is 271,000 ha; centroid is wrong. Use a main visitor point on the Ngarkat Highway side (e.g. a campground or the Box Flat ruins / Gosse Hill walk start from the park's map).",
+    "cost": "parks.sa.gov.au: vehicle entry $14.40 per vehicle, camping from $23.10 per night; 4WD only; fees paid before entry. Border Track one-way section closed 1 Nov-31 Mar; closed on Catastrophic fire danger days. Page title checked."
+   }
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "Mallee Tourist and Heritage Centre hours conflict between sources (10am-1pm Mon-Fri vs longer); adult $7 from History SA listing, not the centre itself",
+  "Mount Boothby entry free per SATC only; no parks.sa.gov.au page found"
+ ],
+ "needs_browser": [
+  {
+   "id": "mallee-tourist-heritage-centre",
+   "url": "https://www.southernmallee.sa.gov.au/tourism/attractions/museums/mallee-tourist-and-heritage-centre",
+   "why": "Cloudflare block; confirm price/official link"
+  },
+  {
+   "id": "coonalpyn-silo-art",
+   "url": "https://www.coorong.sa.gov.au/community/arts-and-cultural/creatingcoonalpyn",
+   "why": "Cloudflare block; possible official page"
+  }
+ ],
+ "notes": [
+  "Tolmer Rocks merged into Mount Boothby entry per draft. Draft Coonalpyn bio 'picnic area' removed (unsourced). No spot judged not to be added."
+ ]
+}

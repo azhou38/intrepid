@@ -1,0 +1,752 @@
+{
+ "spots": {
+  "mount-gambier-1": {
+   "name": "Blue Lake",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A crater lake beside Mount Gambier that turns deep turquoise each November, with a road and walking track around its rim.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.847169,
+    "longitude": 140.777702
+   },
+   "wiki": "Blue Lake / Warwar",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed lake with no single official visitor page that loaded (mountgambier.sa.gov.au blocks scripts); tours are sold by several operators.",
+   "coordinates_source": "HIGH: OSM natural=water \"Blue Lake\" (photon) 63 m from Wikipedia \"Blue Lake / Warwar\" (-37.846667,140.778056); lake pin, in water by design",
+   "notes": [
+    "Lookouts around the rim are separate OSM viewpoints (Apex Lookout 334 m north); pin kept on the lake."
+   ]
+  },
+  "mount-gambier-2": {
+   "name": "Umpherston Sinkhole",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A sunken garden in a collapsed cave on Mount Gambier's east side, down a steep staircase, with possums in the evening.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.838798,
+    "longitude": 140.808517
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed sinkhole garden, no single official site that loaded.",
+   "coordinates_source": "HIGH: OSM tourism=attraction \"Umpherston Sinkhole\" (photon) 10 m from Commons geotagged-photo median (-37.838775,140.808578)",
+   "notes": [
+    "Draft wiki \"Umpherston Sinkhole / Balumbul\" is not a Wikipedia title (Umpherston Sinkhole redirects to the Mount Gambier article), so wiki is omitted and the photo needs an override.",
+    "Draft hint (-37.8346,140.7786) was null and wrong by 2.7 km; the pin is 2.7 km east of the city centre.",
+    "Possums in the evening: Wikivoyage."
+   ]
+  },
+  "mount-gambier-3": {
+   "name": "Cave Garden",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A sinkhole in the middle of Mount Gambier beside the Riddoch Arts and Cultural Centre, seen from a platform or walked down into.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -37.829336,
+    "longitude": 140.780956
+   },
+   "wiki": "Cave Garden / Thugi",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed city sinkhole, no single official site that loaded.",
+   "coordinates_source": "HIGH: OSM leisure=park \"Cave Garden\" (Nominatim) 40 m from Wikipedia \"Cave Garden / Thugi\" (-37.829167,140.780556)",
+   "notes": [
+    "Waterfall after heavy rain: visitmountgambier.com.au."
+   ]
+  },
+  "mount-gambier-4": {
+   "name": "Engelbrecht Cave",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "A 30-minute guided tour through the dry caves under Mount Gambier's streets, which also hold two cave diving sites.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.820628,
+    "longitude": 140.772405
+   },
+   "wiki": "Engelbrecht Cave",
+   "costMin": 12.5,
+   "costMax": 12.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticket_note": "Official site not confirmed: engelbrechtcave.com.au did not load for scripts and the Visit Mount Gambier page links to it behind a button; check in a browser.",
+   "coordinates_source": "HIGH: OSM natural=cave_entrance \"Engelbrecht Cave\" (Nominatim, 26 Chute St) 15 m from Wikipedia/Wikidata (-37.8205,140.7723)",
+   "notes": [
+    "Tours are paid and bookings are essential (Visit Mount Gambier).",
+    "Adult $12.50 is the Wikivoyage figure last updated Feb 2017 and is stale; marked unverified."
+   ]
+  },
+  "mount-gambier-5": {
+   "name": "Mount Schank",
+   "icon": "🌋",
+   "category": "hike",
+   "bio": "A 100 m extinct volcano south of Mount Gambier with a signposted 900 m walk to the crater rim and views to the coast.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.940186,
+    "longitude": 140.735033
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "State heritage area with no single steward page that loaded; Visit Mount Gambier lists it without a site.",
+   "coordinates_source": "MEDIUM: OSM natural=peak \"Mount Schank\" (Nominatim) 218 m from Wikipedia (-37.94,140.7375)",
+   "notes": [
+    "Pinned on the summit/crater rim peak node, not the route midpoint (the 900 m walk is a short climb to the rim; the 2 km rim walk loops the crater). A 2 km walk around the rim: Visit Mount Gambier."
+   ]
+  },
+  "mount-gambier-6": {
+   "name": "Ewens Ponds",
+   "icon": "🤿",
+   "category": "nature",
+   "bio": "Three spring-fed limestone ponds linked by shallow channels, open to permit-holding snorkellers and divers except in spring.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -38.025738,
+    "longitude": 140.790606
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ewens-ponds-conservation-park",
+   "coordinates_source": "MEDIUM: OSM tourism=attraction \"Ewens Ponds\" (Nominatim) 107 m from Wikipedia (-38.026667,140.790556)",
+   "notes": [
+    "Park entry is free; a permit (fee not stated on the page) is required to snorkel or dive, booked before arrival, in one-hour slots; closed to snorkelling and diving 1 Sep to 30 Nov (NPWS). Permit price not captured, so left off the spot.",
+    "Spot stays free/open since the permit is optional for a walk-only visit."
+   ]
+  },
+  "mount-gambier-7": {
+   "name": "Piccaninnie Ponds",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Spring-fed wetland ponds near the coast, with a beach walk, boardwalks and a reed lookout; the water is closed to swimmers.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -38.04772,
+    "longitude": 140.944172
+   },
+   "wiki": "Piccaninnie Ponds Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/piccaninnie-ponds-conservation-park",
+   "coordinates_source": "MEDIUM: OSM amenity=parking \"Piccaninni Ponds\" on Piccaninnie Ponds Road (Nominatim), the visitor car park; the reserve centroid (-38.047257,140.919955) and Wikipedia point (-38.0508,140.9364, 800 m west) not used",
+   "notes": [
+    "NPWS park alert: closed to snorkelling and diving until further notice after a filamentous algae outbreak; the park stays open. The bio says the water is closed; revisit if the alert is lifted.",
+    "Wikipedia article title is \"Piccaninnie Ponds Conservation Park\" (Piccaninnie Ponds redirects to it), so wiki is set.",
+    "Ramsar-listed wetland of international importance per NPWS page."
+   ]
+  },
+  "mount-gambier-8": {
+   "name": "Little Blue Lake",
+   "icon": "🏊",
+   "category": "nature",
+   "bio": "A water-filled sinkhole south of Mount Gambier where visitors swim from a pontoon at the foot of a short staircase.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.927962,
+    "longitude": 140.679932
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Managed by the District Council of Grant (dcgrant.sa.gov.au blocks scripts); no fee seen on Visit Mount Gambier.",
+   "coordinates_source": "MEDIUM: OSM tourism=viewpoint \"Little Blue Lake\" (Nominatim) 120 m from Wikipedia (-37.9292,140.678297)",
+   "notes": [
+    "Entry fee not confirmed; Visit Mount Gambier lists no charge. Camping in the car park and cliff jumping are not permitted."
+   ]
+  },
+  "mount-gambier-10": {
+   "name": "Valley Lake",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "A crater lake on Mount Gambier's southern edge, in a conservation park with boardwalks and wheelchair-accessible paths.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.839877,
+    "longitude": 140.767165
+   },
+   "wiki": "Valley Lake / Ketla Malpi",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed conservation park; the NPWS parks.sa.gov.au/valley-lake-conservation-park slug returns 404, so no official page was confirmed.",
+   "coordinates_source": "HIGH: OSM natural=water \"Valley Lake\" (Nominatim) 48 m from Wikipedia (-37.840278,140.766944); lake pin",
+   "notes": [
+    "Wikivoyage notes the Lakes area gates are locked at 8 PM nightly; dogs prohibited; stay on paths (Visit Mount Gambier)."
+   ]
+  },
+  "mount-gambier-11": {
+   "name": "Tantanoola Caves",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "A cliff-face show cave of pink and brown cave decorations near Tantanoola, with a guided introduction and a free clifftop walk.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.714985,
+    "longitude": 140.501626
+   },
+   "wiki": "Tantanoola Caves Conservation Park",
+   "costMin": 17.5,
+   "costMax": 17.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/tantanoola-caves-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Tantanoola Caves Conservation Park\"",
+   "notes": [
+    "pin: LOW",
+    "Park entry is free; cave tour adult $17.50 (fees current to 30 June 2027), concession $14.50, child $10 (NPWS). Tickets bookable online until midnight the day before.",
+    "Open daily 10 am to 3 pm, closed Christmas Day (NPWS); omitted from the spot per the no-hours rule, included in the destination tip."
+   ]
+  },
+  "mount-gambier-12": {
+   "name": "Cape Northumberland Lighthouse",
+   "icon": "🗼",
+   "category": "landmark",
+   "bio": "A lighthouse on the Cape Northumberland headland south of Port MacDonnell, on the state heritage register since 1980.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -38.05635,
+    "longitude": 140.6674
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No official visitor page found; portmacdonnell.com and the council site block scripts.",
+   "coordinates_source": "MEDIUM: Wikidata Q30183718 (-38.05635,140.6674) and Q38164440 (-38.056365,140.66739), Wikipedia heritage list (38°03'23\"S 140°40'03\"E = -38.056389,140.6675); all within 10 m, likely one lineage",
+   "notes": [
+    "Draft said 1882 with no source; Australian Heritage Database wording (via Wikipedia) says built 1881, so the bio gives the 1980 register date instead.",
+    "Public access and any fee are unverified: free/open is assumed.",
+    "wiki omitted: the Wikipedia title redirects to a list article."
+   ]
+  },
+  "mount-gambier-13": {
+   "name": "Port MacDonnell Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Volunteer-run museum in Port MacDonnell on the more than 30 ships wrecked along the local coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -38.053267,
+    "longitude": 140.699587
+   },
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.dcgrant.sa.gov.au/community/pmcc/museum",
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 3536171609 tourism=museum (unnamed) in Port MacDonnell centre near Charles St; tourism listing geocode -38.052387,140.699018 is 110 m away  \"\"",
+   "notes": [
+    "Adult $6, child $2.50, family $15 (council and tourism listings; museum moved to Charles St in 2011). Hours unconfirmed after a 2022 COVID closure note.",
+    "pin: LOW"
+   ]
+  },
+  "robe-1": {
+   "name": "Robe Customs House Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "An 1863 limestone customs house in Robe, now a volunteer-run National Trust maritime museum.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.162463,
+    "longitude": 139.752588
+   },
+   "wiki": "Robe Customs House",
+   "costMin": 3,
+   "costMax": 3,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/robe-customs-house/",
+   "coordinates_source": "osm tourism=museum (Robe Customs House - National Trust) + Commons photo median, HIGH",
+   "notes": [
+    "Adult $3, children free (National Trust page); Wikivoyage lists gold-coin donation. Hours depend on volunteers; check Robe visitor centre."
+   ]
+  },
+  "robe-2": {
+   "name": "Cape Dombey Obelisk",
+   "icon": "🗼",
+   "category": "historic",
+   "bio": "A red-and-white striped limestone obelisk on the Cape Dombey cliff, built in 1855 to guide ships into Guichen Bay.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -37.156479,
+    "longitude": 139.743626
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council/heritage landmark with no single operator site.",
+   "coordinates_source": "osm tourism=attraction node 'Obelisk' (MEDIUM; Commons photos of it 150-350 m away)",
+   "notes": [
+    "Final approach to the cliff-edge obelisk is fenced off because of erosion (tourism listings). Heritage document says completed 1855, stripes added about seven years later; Wikipedia says built 1852."
+   ]
+  },
+  "robe-3": {
+   "name": "Robe Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "The jetty and small harbour at Robe on Guichen Bay, open to walk out on at any hour.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -37.157603,
+    "longitude": 139.749993
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single operator.",
+   "coordinates_source": "osm man_made=pier 'Robe Pier' way centre + Commons photo 'Robe Jetty' 75 m away, HIGH",
+   "notes": [
+    "Open 24/7 per Wikivoyage."
+   ]
+  },
+  "robe-4": {
+   "name": "Long Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long ocean beach south-east of Robe, used for surfing and swimming, with cars allowed on the firm sand.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -37.202311,
+    "longitude": 139.763398
+   },
+   "wiki": "Long Beach (South Australia)",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach, no steward.",
+   "coordinates_source": "osm natural=beach way (unnamed) centre on Long Beach south-east of Robe via Stony Rise Track; MEDIUM",
+   "notes": [
+    "OSM beach way is unnamed; identified by position on the Long Beach shoreline. Wikipedia: cars allowed on firm sand in summer, summer surf school; Koning Willem II wrecked here 1857."
+   ]
+  },
+  "robe-5": {
+   "name": "Little Dip Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "A conservation park south of Robe of dunes, lakes and coastal mallee, crossed by 4WD tracks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -37.255012,
+    "longitude": 139.800696
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/little-dip-conservation-park",
+   "coordinates_source": "osm camp_site way 'Little Dip Conservation Park - Long Gully' (park visitor point inside the park; reserve centroid -37.2310,139.7960 rejected); MEDIUM",
+   "notes": [
+    "Vehicle entry free; campsites from $19.80/night, booked before arrival, up to 12 months ahead (NPWS page, loaded and title checked)."
+   ]
+  },
+  "robe-6": {
+   "name": "Nora Creina Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A white-sand semicircular bay between Robe and Beachport, backed by 20 m headlands.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.327064,
+    "longitude": 139.850928
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach.",
+   "coordinates_source": "Wikipedia coordinates, within 125 m of the Nora Creina Road end at the beach (OSM way); MEDIUM",
+   "notes": [
+    "OSM natural=bay node (-37.32526,139.84665) is a centroid in the water, not used."
+   ]
+  },
+  "beachport-1": {
+   "name": "Beachport Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "The second-longest jetty in South Australia at 772 m, for fishing and walking out over Rivoli Bay.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -37.4842,
+    "longitude": 140.0181
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single operator.",
+   "coordinates_source": "resolve-pin MEDIUM: Middle of OSM way 96054901 man_made=pier \"Beachport Jetty\" (792 m, root -37.48169,140.01503, end -37.48681,140.02126)  \"\"",
+   "notes": [
+    "Length and ranking from Wikipedia.",
+    "pin: LOW"
+   ]
+  },
+  "beachport-2": {
+   "name": "Pool of Siloam",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A salt lake on the edge of Beachport, said to be seven times saltier than the sea, where visitors float.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.482831,
+    "longitude": 140.000031
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run free site.",
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 94358423 leisure=swimming_area/water=lake 'Pool of Siloam' (centre)  \"\"",
+   "notes": [
+    "Free; picnic tables, change rooms and a summer shower per tourism listing. Exact pool position needs an OSM check.",
+    "pin: LOW"
+   ]
+  },
+  "beachport-3": {
+   "name": "Old Wool and Grain Store Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "An 1879 wool and grain store run by the National Trust as a museum, with a whaling display.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.48187,
+    "longitude": 140.013759
+   },
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/beachport-old-wool-grain-store-museum",
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=museum (nominatim) \"Beachport Old Wool and Grain Store National Trust Museum\"",
+   "notes": [
+    "Renamed from 'Beachport Woolstores Museum' to the museum's own name; id unchanged. Adult $6, concession $5, child $3 (National Trust page, title checked).",
+    "pin: LOW"
+   ]
+  },
+  "beachport-4": {
+   "name": "Beachport Conservation Park",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A coastal conservation park of limestone cliffs and middens, with a walking trail around Woolley Lake.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -37.445932,
+    "longitude": 139.969059
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/beachport-conservation-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Beachport Conservation Park\"",
+   "notes": [
+    "Vehicle entry free; campsites from $19.80/night, booked ahead (NPWS page, loaded).",
+    "pin: LOW"
+   ]
+  },
+  "beachport-5": {
+   "name": "Canunda National Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "A coastal national park of cliffs, surf beaches and dunes on the Southern Ocean with walking tracks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -37.611491,
+    "longitude": 140.169354
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/canunda-national-park",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=bare_rock (nominatim) \"Canunda Rock\"",
+   "notes": [
+    "Vehicle entry free; campsites from $19.80/night, booked ahead (NPWS page). Access via Millicent, Southend or Carpenter Rocks.",
+    "pin: LOW"
+   ]
+  },
+  "beachport-6": {
+   "name": "Southend Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered Rivoli Bay beach beside the village of Southend, used for swimming, sailing and boating.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.569219,
+    "longitude": 140.123068
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Open beach and village with no single steward; no official site",
+   "notes": {
+    "pin": "Pin the beach itself (OSM natural=beach on Rivoli Bay at Southend), not the village centre. Parking is free.",
+    "text": "Draft said beach, boating and a cafe; the cafe is unsourced so dropped. Sailing is from the Rivoli Bay Sailing Club off the beach (southaustralia.com)."
+   },
+   "coordinates_source": "resolve-pin LOW: OSM way 194558387 'Southend Foreshore Campground' on the Rivoli Bay foreshore, Southend  (provisional)"
+  },
+  "beachport-7": {
+   "name": "Millicent Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A National Trust museum in an 1873 school building with a shipwreck room and a large horse-drawn vehicle collection.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -37.597166,
+    "longitude": 140.357324
+   },
+   "free": false,
+   "costMin": 14,
+   "costMax": 14,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/millicent-museum/",
+   "notes": {
+    "pin": "1 Mount Gambier Road, Millicent (NT page address); it shares the Visitor Information Centre complex.",
+    "text": "Renamed from Millicent National Trust Museum: the Trust now titles it 'Millicent Museum'. Adult $14, concession $10, children 5-15 $2 per the NT page (may be dated). Open Mon-Fri 9-5, Sat-Sun and public holidays 10-4. The 'gallery' of the draft is not sourced; the shipwreck room and carriages are.",
+    "review": "Millicent is about 35 km from Beachport; kept in beachport per draft."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM way 97530651 tourism=museum 'Millicent National Trust Museum' (Nominatim/OSM POI at 1 Princes Highway; same building as Millicent Museum)  \"\""
+  },
+  "naracoorte-1": {
+   "name": "Naracoorte Caves National Park",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "South Australia's World Heritage fossil caves, with guided tours, a fossil centre and a bat observation centre.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -37.05987,
+    "longitude": 140.809189
+   },
+   "free": false,
+   "costMin": 13.5,
+   "costMax": 40.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.naracoortecaves.sa.gov.au/",
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve (nominatim) \"Naracoorte Caves National Park\"",
+   "notes": {
+    "pin": "Wikivoyage geotag -37.035658,140.796569 and Caves Cafe -37.036163,140.7966 mark the Wonambi visitor centre area; use that visitor point.",
+    "text": "Park entry is free; tours are paid. Adult tours: Stick-Tomato Cave self-guided $13.50 (includes Wonambi Fossil Centre), Wonambi alone $8.50, Alexandra Cave $28.50 (30 min), Bat Tour $33 (1 hr), Victoria Fossil Cave $40.50 (1 hr), 90-minute adventure/World Heritage tours up to $79.50. Range is the main guided/self-guided cave tours. Open 9am-5pm. Bat tours depend on season (bats away in colder months): not verified."
+   }
+  },
+  "naracoorte-4": {
+   "name": "Coonawarra",
+   "icon": "🍷",
+   "category": "nature",
+   "bio": "A wine region of red terra rossa soil near Penola, known for Cabernet Sauvignon, with more than 20 cellar doors.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -37.290911,
+    "longitude": 140.834663
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://coonawarra.org/",
+   "notes": {
+    "pin": "Pin on the cellar-door strip along the Riddoch Highway at Coonawarra locality (e.g. OSM place=locality/hamlet Coonawarra), not Penola town.",
+    "text": "Category left as drafted ('nature') since the schema has no wine category; consider 'historic'/'nature' at review. Free as a region; cellar-door tastings are individually priced (not stored)."
+   },
+   "coordinates_source": "resolve-pin MEDIUM: OSM node 512100028 Coonawarra (place=town/locality) on the Riddoch Highway; cellar-door strip lies along it (Zema Estate -37.2959,140.8365, Coonawarra Store -37.2916,140.8359)  \"\""
+  },
+  "naracoorte-3": {
+   "name": "Bool Lagoon",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "A Ramsar-listed wetland south-west of Naracoorte with a 500 m boardwalk over the water and birdwatching.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -37.114028,
+    "longitude": 140.710545
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "parks.sa.gov.au page for Bool Lagoon Game Reserve not found at guessed slugs (404); not linked rather than guessed",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=wetland (nominatim) \"Bool Lagoon\"",
+   "notes": {
+    "pin": "The 500 m boardwalk is at the Bool Lagoon main visitor area (Little Bool Lagoon side); Gahnia Walk (430 m return) starts at the main entrance car park. Use the boardwalk/entrance car park, not the reserve centroid.",
+    "text": "Official listing says vehicle entry is free (campsite fees apply). Lagoon can dry out in summer. About 150 bird species noted by southaustralia.com; Ramsar from draft/Wikipedia."
+   }
+  },
+  "naracoorte-5": {
+   "name": "Mary MacKillop Penola Centre",
+   "icon": "⛪",
+   "category": "museum",
+   "bio": "A gallery and the 1867 schoolhouse in Penola telling the story of Mary MacKillop, Australia's first saint.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -37.379236,
+    "longitude": 140.839559
+   },
+   "free": false,
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.mackilloppenola.org.au/",
+   "wiki": "Mary MacKillop Interpretive Centre",
+   "coordinates_source": "resolve-pin MEDIUM: Wikipedia article of the Mary MacKillop Interpretive Centre itself (coordinates)  \"\"",
+   "notes": {
+    "pin": "Penola, Petticoat Lane area; Wikipedia article is of the interpretive centre itself.",
+    "text": "General admission $8, open 7 days 10am-4pm, closed Good Friday and Christmas Day (centre's Plan Your Visit page). Mary MacKillop canonised 2010 (public fact); bio uses 'first saint' - verify wording at review."
+   }
+  },
+  "naracoorte-2": {
+   "name": "Sheep's Back Museum",
+   "icon": "🐑",
+   "category": "museum",
+   "bio": "A National Trust museum in an 1870s flour mill on Naracoorte's wool industry, with a robotic shearer.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.95538,
+    "longitude": 140.735379
+   },
+   "free": false,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/the-sheeps-back-museum",
+   "wiki": "The Sheeps Back Museum",
+   "coordinates_source": "resolve-pin HIGH: OSM node 4739385521 tourism=museum 'The Sheeps Back National Trust Museum'; Wikivoyage listing geotag -36.955159,140.7353 (25 m)  \"\"",
+   "notes": {
+    "pin": "36 Macdonnell St, Naracoorte; Wikivoyage listing geotag is for the museum itself. Note it is about 600 m from the destination point.",
+    "text": "Adult $10 (NT page; Wikivoyage's older $8). Houses the Visitor Information Centre. Wikipedia article title for wiki unverified, so wiki field should be dropped if no such article exists.",
+    "wiki_unverified": true
+   }
+  },
+  "kingston-big-lobster": {
+   "name": "Larry the Lobster",
+   "icon": "🦞",
+   "category": "landmark",
+   "bio": "A 17 m fibreglass lobster built in 1979 at the entrance to Kingston SE and a classic roadside photo stop.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -36.823732,
+    "longitude": 139.863127
+   },
+   "free": true,
+   "costBasis": "open",
+   "wiki": "Big Lobster",
+   "ticket_note": "Council page (kingstondc.sa.gov.au) is a stewardship page, blocked to scripts; the lobster is privately owned with a shop attached",
+   "notes": {
+    "pin": "Princes Highway entrance to Kingston SE; Wikipedia 'Big Lobster' or OSM tourism=attraction node.",
+    "text": "17 m, 1979 per Wikipedia/Australian Geographic. Renamed none. Standalone."
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=attraction (nominatim) \"The Big Lobster\""
+  },
+  "kingston-cape-jaffa-lighthouse": {
+   "name": "Cape Jaffa Lighthouse",
+   "icon": "🏛️",
+   "category": "landmark",
+   "bio": "A lighthouse opened in 1872 on Margaret Brock Reef, now a National Trust museum at Kingston SE with guided tours.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.836007,
+    "longitude": 139.846208
+   },
+   "free": false,
+   "costMin": 17,
+   "costMax": 17,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/cape-jaffa-lighthouse/",
+   "wiki": "Cape Jaffa Lighthouse",
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum (nominatim) \"Cape Jaffa Lighthouse - National Trust\"",
+   "notes": {
+    "pin": "Draft point (-36.8359,139.8463) is Wikipedia's; confirm it sits at the Kingston SE foreshore/jetty site and not at the original reef site.",
+    "text": "Adult $17, child $8 (NT page, 2026); an older booking page showed $15. Tours on the hour 10am-3pm daily in SA school holidays only, 45 min; outside holidays phone 0427 854 175 (Kingston National Trust)."
+   }
+  },
+  "mount-monster-conservation-park": {
+   "name": "Mount Monster Conservation Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A conservation park 12 km south of Keith with a rare granite outcrop and a short hike to the summit.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -36.203701,
+    "longitude": 140.322158
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-monster-conservation-park",
+   "wiki": "Mount Monster Conservation Park",
+   "coordinates_source": "resolve-pin MEDIUM: osm natural=peak (nominatim) \"Mount Monster\"",
+   "notes": {
+    "pin": "Wikipedia point is the park centroid; use the summit-walk start or the park's car park / OSM peak Mount Monster.",
+    "text": "Park page loaded and titled; 'Free entry' under Park fees. Granite outcrop found in only one other SA location; walk to summit gives views."
+   }
+  },
+  "bordertown-wildlife-park": {
+   "name": "Bordertown Wildlife Park",
+   "icon": "🦘",
+   "category": "nature",
+   "bio": "A free 4.5 ha wildlife park at Bordertown's eastern entrance, home to a mob of white kangaroos.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -36.309669,
+    "longitude": 140.780208
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.tatiara.sa.gov.au/council-services/parks-and-gardens/bordertown-wildlife-park",
+   "notes": {
+    "pin": "Eastern entrance of Bordertown at the Dukes Highway turn-off; OSM leisure=wildlife_hide/zoo or the council page.",
+    "text": "Free. Entry into the enclosure is not permitted and feeding is not allowed; visitors drive or walk around the fence (council page via search). Roughly 10 animals per council (2015 figure ~17); bio avoids a count. Tatiara council page URL came from search results, not loaded."
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=park (nominatim) \"Wildlife Park Bordertown\"",
+   "ticket_note": "council URL from search, site blocks scripts; verify in browser"
+  }
+ },
+ "existing_fixes": [],
+ "held": [
+  {
+   "id": "mount-gambier-9",
+   "name": "Kilsby Sinkhole",
+   "reason": "No cost found (and not known to be free); unblocks on a price or a source saying it is free.",
+   "entry": {
+    "name": "Kilsby Sinkhole",
+    "icon": "🤿",
+    "category": "nature",
+    "bio": "A clear-water sinkhole on a private sheep farm near Mount Gambier, entered on a pre-booked guided snorkel, dive or tour.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "coordinates": {
+     "latitude": -37.89238,
+     "longitude": 140.67627
+    },
+    "costMin": null,
+    "costMax": null,
+    "currency": "AUD",
+    "costBasis": "tour",
+    "needs": "booking",
+    "ticketUrl": "https://kilsbysinkhole.com/",
+    "coordinates_source": "LOW: single source, Wikidata Q107672954 \"Kilsby sinkhole\" (-37.89238,140.67627); not in OSM search, no Wikipedia article",
+    "notes": [
+     "pin: LOW",
+     "Access is only with a pre-booked activity on a private working farm; walk-up viewing is not allowed (official FAQ). Sinkhole tour is 50 minutes, under-10s free (official page); snorkel tours supply gear.",
+     "Prices sit in a booking widget not readable by script; cost left empty and raised under needs_browser.",
+     "ticketUrl is the operator homepage; title \"Kilsby Sinkhole | Accommodation, Diving Near Mount Gambier\"."
+    ]
+   }
+  }
+ ],
+ "notes": []
+}

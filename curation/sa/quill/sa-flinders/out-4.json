@@ -1,0 +1,388 @@
+{
+ "spots": {
+  "port-pirie-2": {
+   "name": "Port Pirie Mural Trail",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A two-kilometre, map-guided walk past large murals in Port Pirie's centre, starting at the visitor centre.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Start: Port Pirie Visitor Information Centre, Mary Elie Street; trail runs through the CBD (a route, pin at its middle).",
+    "source": "flindersandoutback.com.au/listings/attraction/port-pirie-mural-trail/ (launched 2017, council-run, 2 km, map from visitor centre)"
+   },
+   "free": true,
+   "ticket_note": "Only the Port Pirie Regional Council page (pirie.sa.gov.au/about-council) is linked and it is behind a Cloudflare wall; not verified"
+  },
+  "port-pirie-3": {
+   "name": "Port Pirie National Trust Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Three heritage buildings, including the 1902 railway station, with a steam shunting engine and Diprotodon bones.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "donation",
+   "notes": {
+    "pin": "Museum at 73-77 Ellen Street, Port Pirie (National Trust: 73 Ellen Street; SAcommunity: 77 Ellen St); pin at the railway-station building, not the town centre.",
+    "cost": "National Trust page: museum 'donations welcome'; the Immersive Sound and Light Show in the Customs House is a separate ticket (adult $11, concession $8, child $5, family $25). Open Tue-Sat 10am-4pm (not in bio)."
+   },
+   "free": true,
+   "ticketUrl": "https://www.nationaltrust.org.au/places/port-pirie-railway-station/"
+  },
+  "port-pirie-4": {
+   "name": "Solomontown Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A pier and man-made beach on the Port Pirie river with swimming, showers and change rooms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM natural=beach / pier at Solomontown (Port Pirie south); take the beach feature, not the suburb point.",
+    "source": "Wikivoyage Port Pirie: 'a nice pier, man-made beach and swimming spot... showers and change rooms'; caution about strong tides"
+   },
+   "free": true,
+   "ticket_note": "No single steward page found; omitted"
+  },
+  "port-pirie-5": {
+   "name": "Port Germein Jetty",
+   "icon": "🎣",
+   "category": "landmark",
+   "bio": "At about 1.5 km, Port Germein's wooden jetty is the longest in South Australia and a favourite for crabbing.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Pin the jetty's shore end / mid-length (OSM man_made=pier, Port Germein); The Bluff Lookout gives a distant view.",
+    "source": "Wikipedia Port Germein: opened 1881, extended 1883, now 1532 m after storm repairs, longest jetty in SA; Wikivoyage Port Germein: crabbing is the largest tourist activity"
+   },
+   "free": true,
+   "ticket_note": "Council-managed, no verified official page (pirie.sa.gov.au is script-blocked)"
+  },
+  "port-pirie-6": {
+   "name": "Telowie Gorge Conservation Park",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A conservation park where Telowie Creek has cut a gorge through the range, with bushwalking and wildlife watching.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.039,
+    "longitude": 138.12479722
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Draft point is Wikipedia's park point (-33.039, 138.1248); look up the park's visitor access/car park on the NPWS map, not the centroid.",
+    "cost": "NPWS page: 'Free entry', open daily; closed on Catastrophic Fire Danger days; pest-control closure 23-27 Nov 2026 listed for Wapma Thura-Southern Flinders Ranges NP (not Telowie specifically)."
+   },
+   "wiki": "Telowie Gorge Conservation Park",
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/telowie-gorge-conservation-park"
+  },
+  "port-pirie-7": {
+   "name": "Beetaloo Reservoir",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "A reservoir precinct open for birdwatching, picnics and barbecues, with fishing by permit from May to November.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.189669,
+    "longitude": 138.214939
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Draft point (-33.189669, 138.214939) is provisional; pin the reservoir's public picnic area / gate.",
+    "source": "flindersandoutback.com.au Beetaloo listing: managed by Department for Environment and Water, open 24 h 1 May-1 Nov, closed otherwise and on Total Fire Ban days; fishing needs an approved permit; no dogs"
+   },
+   "free": true,
+   "ticket_note": "Steward is DEW; no verified page found"
+  },
+  "mount-remarkable-1": {
+   "name": "Alligator Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A gorge in Mount Remarkable National Park, reached by walking tracks through ancient rock formations near Wilmington.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "park",
+   "notes": {
+    "pin": "Alligator Gorge car park / trailhead at the end of the Alligator Gorge road (drive starts 1 km south of Wilmington on Main North Road); not the park centroid.",
+    "cost": "NPWS page: vehicle entry $14.40 per vehicle, pay before arrival. Alligator Gorge Hike 4 hrs/8.5 km return; Narrows Hike 2 hrs/2 km return.",
+    "closure": "NPWS and tourism pages: the Alligator Gorge section (lodge, The Narrows hike, backpack campsites) remains closed after the Feb 2025 Wilmington fire. Kept: judged on the permanent place; flag for owner."
+   },
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-remarkable-national-park",
+   "costPer": "Per Vehicle/Day"
+  },
+  "mount-remarkable-2": {
+   "name": "Mount Remarkable",
+   "icon": "⛰️",
+   "category": "hike",
+   "bio": "A 960 m summit hike in Mount Remarkable National Park with views over the Willochra Plain.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -32.80611111,
+    "longitude": 138.16472222
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "park",
+   "notes": {
+    "pin": "Hike: pin at the middle of the Mount Remarkable Summit Hike (13 km return, from Mambray Creek). Draft point (-32.80611, 138.16472) is Wikipedia's summit.",
+    "cost": "NPWS page: park vehicle entry $14.40; Summit Hike 4 hrs/13 km return (hours range 3-5 hr is my reading of that)."
+   },
+   "wiki": "Mount Remarkable",
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-remarkable-national-park",
+   "costPer": "Per Vehicle/Day"
+  },
+  "mount-remarkable-3": {
+   "name": "Melrose",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "The oldest town in the Flinders Ranges, founded in the 1840s at the foot of Mount Remarkable, with a heritage walk.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "OSM place=town Melrose; not the museum's point.",
+    "source": "flindersandoutback.com.au/towns/melrose/: established in the 1840s, oldest town in the Flinders Ranges, Melrose Heritage Walk; cycling hub"
+   },
+   "wiki": "Melrose, South Australia",
+   "free": true,
+   "ticket_note": "Open town, no single steward"
+  },
+  "mount-remarkable-4": {
+   "name": "Melrose Courthouse Heritage and Interpretive Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Five buildings on the old courthouse site, with displays on 1848 settlement, Goyder's Line and the Nukunu people.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Museum on the old courthouse site in Melrose (Nelson Street); building point, not the town centre.",
+    "cost": "Tourism listing: adult $12, seniors/pensioners/veterans $10, students $5, family $30. Site title: 'Melrose Courthouse Museum' (name kept as the tourism board writes it)."
+   },
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.melrosemuseum.com/"
+  },
+  "mount-remarkable-5": {
+   "name": "Horrocks Pass",
+   "icon": "🌄",
+   "category": "viewpoint",
+   "bio": "A scenic road west of Wilmington climbing the range to Hancocks Lookout, with views across to Spencer Gulf on clear days.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -32.6403,
+    "longitude": 138.0375
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Pin Hancocks Lookout (OSM tourism=viewpoint) on Horrocks Pass Road, not the draft round point (-32.6403, 138.0375).",
+    "source": "flindersandoutback.com.au/towns/wilmington/: drive Horrocks Pass Road just west of Wilmington to Hancocks Lookout, views of Spencer Gulf and regional cities on clear days. Horrocks monument and Heysen Trail link are from the draft's Wikivoyage/aussietowns note, not re-checked."
+   },
+   "free": true,
+   "ticket_note": "Open roadside lookout"
+  },
+  "southern-flinders-ranges-1": {
+   "name": "Gladstone Gaol",
+   "icon": "⛓️",
+   "category": "historic",
+   "bio": "A heritage-listed prison built in 1879-81, later an internment camp, in Gladstone.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.26666667,
+    "longitude": 138.35
+   },
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Gaol building in Gladstone; draft point (-33.26667, 138.35) is the town's round point, so pin the gaol itself.",
+    "status": "Wikipedia: opened to tourists 1978, CLOSED since June 2022 for repairs; reopening as an attraction announced June 2026 for late 2026, operated by Lantern Ghost Tours. Fails 'open to the public' today: recommend holding it until it reopens.",
+    "cost": "No price found (unverified)."
+   },
+   "wiki": "Gladstone Gaol",
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "ticket_note": "Closed; operator's page not found"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "mount-remarkable",
+    "name": "Mount Remarkable National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass",
+    "category": "park",
+    "defaultZoomSpanKm": 55,
+    "rank": 4,
+    "icon": "⛰️",
+    "tagline": "A 960 m summit, rocky gorges and bike trails at the Flinders Ranges' southern end.",
+    "description": "Mount Remarkable National Park rises above the Willochra Plain at the southern end of the Flinders Ranges, 45 km north of Port Pirie. Walking tracks lead to a 960 m summit and through gorges cut into ancient rock, and valley trails are home to echidnas and lace monitors. The Willowie trails and the Remarkable Epic trail draw mountain bikers, and Melrose, the oldest town in the Flinders Ranges, sits at the foot of the mountain.",
+    "whyVisit": [
+     "Climb to a 960 m summit",
+     "Ride single-track below the range",
+     "Spot echidnas and lace monitors"
+    ],
+    "highlights": [
+     "Summit views",
+     "Mountain biking",
+     "Native wildlife"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚗",
+      "title": "Pay entry before you arrive",
+      "detail": "Vehicle entry is $14.40 and must be paid in advance, online or through a booking agent. Camping fees are also paid before arrival."
+     },
+     {
+      "icon": "🚧",
+      "title": "Check closures first",
+      "detail": "Fire danger and pest-control programs close the park, and part of Alligator Gorge is shut after the 2025 Wilmington fire."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "{months} bring cool days that suit the summit hike and the gorge walks."
+   },
+   "spots": [
+    "mount-remarkable-1",
+    "mount-remarkable-2",
+    "mount-remarkable-3",
+    "mount-remarkable-4",
+    "mount-remarkable-5"
+   ],
+   "notes": [
+    "Coordinates left null for the pin pass: use a visitor point (Mambray Creek camp/visitor area on the west side or the Alligator Gorge car park), not the park centroid and not Alligator Gorge's or the summit's pin; Melrose is the gateway town.",
+    "Span 55 km kept: Horrocks Pass (about 20 km from the park's middle) and Melrose are inside 75% (41 km).",
+    "Source of facts: parks.sa.gov.au Mount Remarkable page (960 m summit, Willochra Plain, Willowie trails, Remarkable Epic, fees, closures, 45 km north of Port Pirie), flindersandoutback.com.au Melrose page (oldest town in the Flinders Ranges)."
+   ]
+  },
+  {
+   "destination": {
+    "id": "southern-flinders-ranges",
+    "name": "Southern Flinders Ranges",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -33.1865,
+     "longitude": 138.3003
+    },
+    "coordinates_source": "pending serial pin pass (draft: Wikipedia point for Laura; re-pin at the town centre / a visitor point)",
+    "category": "nature",
+    "defaultZoomSpanKm": 60,
+    "rank": 5,
+    "icon": "🌾",
+    "tagline": "Country towns, heritage buildings and trails about two hours north of Adelaide.",
+    "description": "The Southern Flinders Ranges is the southernmost tourism region of the Flinders and Outback, running from Spalding and Yacka in the south to Orroroo and Carrieton in the north. Port Pirie and Port Germein mark its western edge and Peterborough its eastern. Its small towns hold heritage museums, art galleries, craft breweries and bakeries, with the Heysen and Mawson trails and the Southern Flinders Rail Trail running through.",
+    "whyVisit": [
+     "Wander historic country towns",
+     "Cycle rail and long-distance trails"
+    ],
+    "highlights": [
+     "Country towns",
+     "Cycling trails"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚗",
+      "title": "Two hours from Adelaide",
+      "detail": "The region is about a two-hour drive from Adelaide, easy for a weekend away, though there is enough to fill weeks."
+     },
+     {
+      "icon": "ℹ️",
+      "title": "Ask at visitor centres",
+      "detail": "Staff at the region's visitor information centres can advise on permits and passes as well as local recommendations."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "{months} are the cooler months for walking and cycling between the towns."
+   },
+   "spots": [
+    "southern-flinders-ranges-2",
+    "southern-flinders-ranges-3",
+    "southern-flinders-ranges-5",
+    "southern-flinders-ranges-4",
+    "southern-flinders-ranges-1"
+   ],
+   "notes": [
+    "Reordered: Gladstone Gaol (-1) moved last because it has been closed since June 2022 (reopening announced for late 2026); order assumes Jamestown, Laura, Wirrabara Silo Art, Booleroo Centre as in shard 5, which I did not research.",
+    "Coordinates: draft is Wikipedia's Laura point and is a town point; the pin pass should confirm a hub point and must not equal the Laura spot's pin (southern-flinders-ranges-3).",
+    "Span 60 km: Jamestown (about 28 km east of Laura) and Booleroo Centre (about 35 km) lie within 75% (45 km); Gladstone about 10 km.",
+    "Facts from flindersandoutback.com.au Southern Flinders Ranges region page: extent of the region, two-hour drive, visitor centres advise on permits and passes, Heysen/Mawson/Rail Trail."
+   ]
+  }
+ ],
+ "unverified": [
+  "southern-flinders-ranges-1 Gladstone Gaol: entry price and operator site (closed; reopening announced for late 2026)",
+  "mount-remarkable-5 Horrocks monument/Heysen Trail claims not re-checked (left out of the bio)",
+  "Visit-hour ranges are estimates apart from the NPWS hike times"
+ ],
+ "needs_browser": [
+  {
+   "id": "port-pirie-2",
+   "url": "https://www.pirie.sa.gov.au/about-council",
+   "why": "Council site behind Cloudflare; find the mural trail page for ticketUrl (or confirm there is none)"
+  },
+  {
+   "id": "port-pirie-5",
+   "url": "https://www.pirie.sa.gov.au/tourism/visitor-information/attractions",
+   "why": "Council attractions pages blocked; look for official Port Germein Jetty and Solomontown Beach pages"
+  }
+ ],
+ "notes": [
+  "No coordinates run through resolve-pin; all pins pending the serial pass (hints in each notes.pin).",
+  "Should-not-add-yet: Gladstone Gaol (closed to visitors until its reopening). Alligator Gorge kept although part of it is closed after the 2025 fire (permanent place).",
+  "Park fee: Mount Remarkable NP vehicle entry $14.40 is the park's own fee (costBasis park); check whether the SA Multiple Entry Parks Pass should be a parkPass entry instead."
+ ]
+}

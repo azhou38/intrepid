@@ -1,0 +1,131 @@
+{
+ "dest:port-pirie:header": {
+  "decision": "choice",
+  "choice": "Pt-pirie-ships.jpg",
+  "candidates": [
+   {
+    "file": "Pt-pirie-ships.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": "moderate: port, ships, smelter stack across water",
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Only wide port-in-setting photo; 5966px; Commons page not fetched (rate-limited), name and content show Port Pirie wharf and stack"
+   },
+   {
+    "file": "Port Pirie railway station (now museum), Ellen Street, Port Pirie, South Australia 27 July 2019.jpg",
+    "verdict": "reject",
+    "reason": "single building, not header"
+   },
+   {
+    "file": "others",
+    "verdict": "reject",
+    "reason": "train yard, Coonamia sign, Jamestown bank, Weeroona signpost: not the city"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Port Pirie waterfront with smelter stack and ships; current lead is 633px"
+ },
+ "dest:port-pirie:why1": {
+  "decision": "keep-current",
+  "choice": "current",
+  "hero_crop": "ok",
+  "reason": "Railway Station Museum, real colour photo, 7038px, a stop on the heritage trail"
+ },
+ "dest:port-pirie:why2": {
+  "decision": "choice",
+  "choice": "Port Germein jetty, Dec 2008.JPG",
+  "candidates": [
+   {
+    "file": "Port Germein jetty, Dec 2008.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Long wooden jetty is exactly the reason; shared with spot port-pirie-5 (allowed), 1280px"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Reason 'Stroll a long wooden jetty'; none of the search candidates show it, reuse the destination's spot photo"
+ },
+ "spot:port-pirie-1": {
+  "decision": "none",
+  "choice": "none: current is Crystal Brook silos (wrong place, 439px); candidates are a library platform and a restaurant (Barnacle Bill) that do not show the trail",
+  "hero_crop": "n/a",
+  "reason": "no photo of the trail itself"
+ },
+ "spot:port-pirie-2": {
+  "decision": "reject",
+  "choice": "current",
+  "hero_crop": "n/a",
+  "reason": "Argent Street, Broken Hill, 351 km away: wrong place (check 1). No search candidates offered"
+ },
+ "spot:port-pirie-3": {
+  "decision": "choice",
+  "choice": "Port Pirie railway station (now museum), Ellen Street, Port Pirie, South Australia 27 July 2019.jpg",
+  "candidates": [
+   {
+    "file": "Port Pirie railway station (now museum), Ellen Street, Port Pirie, South Australia 27 July 2019.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "National Trust Museum is in the railway station building; 56 m from pin; 3403px; shared with why1 file's subject"
+   },
+   {
+    "file": "Barnacle Bill",
+    "verdict": "reject",
+    "reason": "restaurant"
+   },
+   {
+    "file": "Port Pirie Library.jpg",
+    "verdict": "reject",
+    "reason": "platform, not museum"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Station museum frontage, centred"
+ },
+ "spot:port-pirie-4": {
+  "decision": "none",
+  "choice": "none: no beach photo; candidates are a truck museum, grain silos and the platform",
+  "hero_crop": "n/a",
+  "reason": "stand-ins only"
+ },
+ "spot:port-pirie-5": {
+  "decision": "keep-current",
+  "choice": "current",
+  "hero_crop": "ok",
+  "reason": "Long jetty over tidal flats, recognisable, 1280px; no geotag but name and subject match Port Germein"
+ },
+ "spot:port-pirie-6": {
+  "decision": "none",
+  "choice": "none: candidates are close-up geckos (stand-in); current is a B&W archive scan",
+  "hero_crop": "n/a",
+  "reason": "no photo of the gorge"
+ },
+ "spot:port-pirie-7": {
+  "decision": "choice",
+  "choice": "3 (flickr 29302927464, denisbin, CC BY-ND 2.0, openverse)",
+  "candidates": [
+   {
+    "file": "29302927464",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": "fine for a spot",
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Reservoir water and dam wall, titled Beetaloo Reservoir; 1024px; BY-ND licence flagged"
+   },
+   {
+    "file": "others",
+    "verdict": "reject",
+    "reason": "creek, flats, spillway detail, Baroota (different reservoir) and ruins"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Shows the reservoir itself; current is B&W 1924 scan"
+ }
+}

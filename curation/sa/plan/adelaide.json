@@ -1,0 +1,3148 @@
+{
+ "region": "sa-adelaide",
+ "destinations": [
+  {
+   "id": "adelaide",
+   "name": "Adelaide",
+   "category": "city",
+   "rank": 2,
+   "coordinates": {
+    "latitude": -34.9275,
+    "longitude": 138.6
+   },
+   "coordinates_source": "wikipedia:Adelaide (city centre; re-pin at the resolver stage)",
+   "defaultZoomSpanKm": 45,
+   "name_evidence": {
+    "source": "Wikivoyage Adelaide; southaustralia.com/destinations/adelaide",
+    "wording": "State capital, listed as its own destination page by both"
+   },
+   "spots": [
+    "adelaide-1",
+    "adelaide-2",
+    "adelaide-3",
+    "adelaide-4",
+    "adelaide-5",
+    "adelaide-6",
+    "adelaide-7",
+    "adelaide-8",
+    "adelaide-9",
+    "adelaide-10",
+    "adelaide-11",
+    "adelaide-12",
+    "adelaide-13",
+    "adelaide-14",
+    "adelaide-15",
+    "adelaide-16",
+    "adelaide-17",
+    "adelaide-18",
+    "adelaide-19",
+    "adelaide-20",
+    "adelaide-21",
+    "adelaide-22",
+    "adelaide-23",
+    "adelaide-24",
+    "adelaide-25",
+    "adelaide-26",
+    "adelaide-27",
+    "adelaide-28",
+    "adelaide-29",
+    "adelaide-30",
+    "adelaide-31",
+    "adelaide-32",
+    "adelaide-33",
+    "adelaide-34",
+    "adelaide-35",
+    "adelaide-36",
+    "adelaide-37",
+    "adelaide-38",
+    "adelaide-39",
+    "adelaide-40",
+    "adelaide-41",
+    "adelaide-42",
+    "adelaide-43",
+    "adelaide-44",
+    "adelaide-45",
+    "adelaide-46",
+    "adelaide-47",
+    "adelaide-48",
+    "adelaide-49",
+    "adelaide-50",
+    "adelaide-51",
+    "adelaide-52",
+    "adelaide-53",
+    "adelaide-54",
+    "adelaide-55",
+    "adelaide-56",
+    "adelaide-57",
+    "adelaide-58",
+    "adelaide-59",
+    "adelaide-60",
+    "adelaide-61",
+    "adelaide-62",
+    "adelaide-63",
+    "adelaide-64"
+   ]
+  },
+  {
+   "id": "adelaide-hills",
+   "name": "Adelaide Hills",
+   "category": "nature",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -35.0295,
+    "longitude": 138.81
+   },
+   "coordinates_source": "Wikivoyage Hahndorf listing geotag (Hahndorf as the Hills' hub; re-pin)",
+   "defaultZoomSpanKm": 50,
+   "name_evidence": {
+    "source": "Wikivoyage Adelaide Hills; South Australian Tourism Commission region 'Adelaide Hills'; visitadelaidehills.com.au",
+    "wording": "Named tourism region and Wikivoyage region page"
+   },
+   "spots": [
+    "adelaide-hills-1",
+    "adelaide-hills-2",
+    "adelaide-hills-3",
+    "adelaide-hills-4",
+    "adelaide-hills-5",
+    "adelaide-hills-6",
+    "adelaide-hills-7",
+    "adelaide-hills-8",
+    "adelaide-hills-9",
+    "adelaide-hills-10",
+    "adelaide-hills-11",
+    "adelaide-hills-12",
+    "adelaide-hills-13",
+    "adelaide-hills-14",
+    "adelaide-hills-15",
+    "adelaide-hills-16",
+    "adelaide-hills-17",
+    "adelaide-hills-18",
+    "adelaide-hills-19",
+    "adelaide-hills-20",
+    "adelaide-hills-21"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "Free botanic garden at the east end of North Terrace, with historic glasshouses and themed gardens.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7840,
+   "counted_sources": 3,
+   "id": "adelaide-1",
+   "name": "Adelaide Botanic Garden",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.917972,
+    "longitude": 138.611704
+   },
+   "note": "3 counted sources, 7840 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/adelaide-botanic-garden",
+    "https://southaustralia.com/destinations/adelaide"
+   ]
+  },
+  {
+   "category": "market",
+   "icon": "🥬",
+   "bio": "Covered food market in the city centre, trading Tuesday to Saturday, with produce, cheese and cafes.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Adelaide Central Market",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3899,
+   "counted_sources": 3,
+   "id": "adelaide-2",
+   "name": "Adelaide Central Market",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.92972222,
+    "longitude": 138.5975
+   },
+   "note": "3 counted sources, 3899 page views",
+   "sources": [
+    "https://southaustralia.com/products/adelaide/attraction/adelaide-central-market",
+    "https://southaustralia.com/destinations/adelaide",
+    "https://www.experienceadelaide.com.au/visit/things-to-do/shopping/adelaide-central-market"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "The state art gallery on North Terrace, with Australian, Aboriginal and European collections.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8197,
+   "counted_sources": 3,
+   "id": "adelaide-3",
+   "name": "Art Gallery of South Australia",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "3 counted sources, 8197 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/art-gallery-of-south-australia",
+    "https://southaustralia.com/destinations/adelaide"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🦖",
+   "bio": "Free state museum on North Terrace holding natural history and Aboriginal cultural collections.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5348,
+   "counted_sources": 3,
+   "id": "adelaide-4",
+   "name": "South Australian Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9207,
+    "longitude": 138.6031
+   },
+   "note": "3 counted sources, 5348 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/south-australian-museum",
+    "https://southaustralia.com/destinations/adelaide"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Adelaide's main beach resort, reached by tram from the city, with a jetty and Moseley Square.",
+   "wiki": "Glenelg, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 17609,
+   "counted_sources": 2,
+   "id": "adelaide-5",
+   "name": "Glenelg",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "2 counted sources, 17609 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide",
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🏟️",
+   "bio": "Cricket and AFL ground by the River Torrens, with stadium tours and a rooftop climb.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 90548,
+   "counted_sources": 3,
+   "id": "adelaide-6",
+   "name": "Adelaide Oval",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.91547,
+    "longitude": 138.59662
+   },
+   "note": "3 counted sources, 90548 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/adelaide-oval",
+    "https://southaustralia.com/products/adelaide/tour/adelaide-oval-tours"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🐼",
+   "bio": "City zoo on the Torrens, home to giant pandas among its Australian and Asian animals.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 12551,
+   "counted_sources": 3,
+   "id": "adelaide-7",
+   "name": "Adelaide Zoo",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.912784,
+    "longitude": 138.60624
+   },
+   "note": "3 counted sources, 12551 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/adelaide-zoo",
+    "https://southaustralia.com/destinations/adelaide"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⚓",
+   "bio": "Historic port district with maritime and railway museums, a lighthouse and a waterfront.",
+   "wiki": null,
+   "coordinates_source": "OSM Nominatim: Port Adelaide, Adelaide, South Australia, 5015, Australia",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 11663,
+   "counted_sources": 1,
+   "id": "adelaide-8",
+   "name": "Port Adelaide",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.834275,
+    "longitude": 138.512355
+   },
+   "note": "Wikivoyage gives the historic port district its own page: maritime and railway museums, lighthouse, waterfront and dolphin sanctuary cruises; a district visitors base a half day in (rule 1, 2).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "💧",
+   "bio": "Gorge park in the foothills with three waterfalls, cliffs and walking trails.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1983,
+   "counted_sources": 4,
+   "id": "adelaide-9",
+   "name": "Morialta Conservation Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9028,
+    "longitude": 138.7017
+   },
+   "note": "4 counted sources, 1983 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/South_and_East",
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills",
+    "https://southaustralia.com/products/adelaide/attraction/morialta-conservation-park",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "💦",
+   "bio": "Gully with First Falls, a short walk and a cafe, at the foot of the Mount Lofty climb.",
+   "wiki": "First Falls (Adelaide Hills, South Australia)",
+   "coordinates_source": "wikipedia:First Falls (Adelaide Hills, South Australia)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 365,
+   "counted_sources": 2,
+   "id": "adelaide-10",
+   "name": "Waterfall Gully",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.90638889,
+    "longitude": 138.70805556
+   },
+   "note": "Rule 1-3: two counted sources (SATC, parks.sa.gov.au names it among the Hills' most visited sites); First Falls, gully walk and cafe, 30+ min",
+   "sources": [
+    "https://southaustralia.com/products/adelaide-hills/attraction/waterfall-gully",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🍫",
+   "bio": "Chocolate factory visitor centre at Parkside, with viewing of production and tastings.",
+   "wiki": "Haigh's Chocolates",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 11522,
+   "counted_sources": 3,
+   "id": "adelaide-11",
+   "name": "Haigh's Chocolate Factory",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9412,
+    "longitude": 138.60834
+   },
+   "note": "3 counted sources, 11522 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://en.wikivoyage.org/wiki/Adelaide/South_and_East",
+    "https://southaustralia.com/products/adelaide/attraction/haighs-chocolates-visitor-centre"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "⛓️",
+   "bio": "Colonial-era jail from the 1840s, open for daytime tours and ghost tours.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4704,
+   "counted_sources": 4,
+   "id": "adelaide-12",
+   "name": "Adelaide Gaol",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.917779,
+    "longitude": 138.5848
+   },
+   "note": "4 counted sources, 4704 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/adelaide-gaol",
+    "https://southaustralia.com/destinations/adelaide",
+    "https://www.parks.sa.gov.au/parks/adelaide-gaol"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Seaside suburb with a jetty, beach, heritage buildings and a strip of shops on Semaphore Road.",
+   "wiki": "Semaphore, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5059,
+   "counted_sources": 2,
+   "id": "adelaide-13",
+   "name": "Semaphore",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "2 counted sources, 5059 page views",
+   "sources": [
+    "https://southaustralia.com/products/adelaide/attraction/semaphore-beach",
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Beachfront square of cafes beside Henley Beach's jetty on Adelaide's western coast.",
+   "wiki": "Henley Beach, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4144,
+   "counted_sources": 3,
+   "id": "adelaide-14",
+   "name": "Henley Square and Jetty",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "3 counted sources, 4144 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/henley-square-and-jetty",
+    "https://southaustralia.com/destinations/adelaide"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🧳",
+   "bio": "Museum of the stories of immigrants to South Australia, in the former Destitute Asylum.",
+   "wiki": "Migration Museum, Adelaide",
+   "coordinates_source": "OSM Nominatim: Migration Museum South Australia, 82, Kintore Avenue, Adelaide, South Australia,",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 954,
+   "counted_sources": 1,
+   "id": "adelaide-15",
+   "name": "Migration Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.919704,
+    "longitude": 138.602067
+   },
+   "note": "Rule 1+2: Wikivoyage See listing; a public museum with exhibits.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🎨",
+   "bio": "Aboriginal-owned art gallery and cultural institute with changing exhibitions and performances.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1641,
+   "counted_sources": 1,
+   "id": "adelaide-16",
+   "name": "Tandanya National Aboriginal Cultural Institute",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.92407,
+    "longitude": 138.61031
+   },
+   "note": "Rule 1+2: Wikivoyage See listing; public Aboriginal art gallery.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "The green belt ringing the city centre and North Adelaide, open for walking and cycling.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 11226,
+   "counted_sources": 1,
+   "id": "adelaide-17",
+   "name": "Adelaide Park Lands",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "Rule 1: experienceadelaide and Wikivoyage describe the Park Lands ring as a city feature; open park, walkable.",
+   "sources": [
+    "https://www.experienceadelaide.com.au/visit/things-to-do/parks-recreation/adelaide-park-lands"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "🌆",
+   "bio": "North Adelaide lookout with Light's Vision statue and a classic view over the city.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1169,
+   "counted_sources": 1,
+   "id": "adelaide-18",
+   "name": "Montefiore Hill",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.91277,
+    "longitude": 138.59405
+   },
+   "note": "Rule 1+3: Wikivoyage names it, the classic city lookout with Light's Vision statue.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
+   ]
+  },
+  {
+   "category": "religious",
+   "icon": "⛪",
+   "bio": "Anglican cathedral in North Adelaide, free to enter and a postcard image of the city.",
+   "wiki": "St Peter's Cathedral, Adelaide",
+   "coordinates_source": "wikipedia:St Peter's Cathedral, Adelaide",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 9823,
+   "counted_sources": 1,
+   "id": "adelaide-19",
+   "name": "St Peter's Cathedral",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.91277778,
+    "longitude": 138.59805556
+   },
+   "note": "Rule 2: Wikivoyage calls it one of Australia's most iconic churches, on postcards, free to enter, popular on city tours.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🍷",
+   "bio": "Wine education and tasting centre in the Botanic Garden grounds.",
+   "wiki": "National Wine Centre of Australia",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1933,
+   "counted_sources": 3,
+   "id": "adelaide-20",
+   "name": "National Wine Centre",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.919444,
+    "longitude": 138.614167
+   },
+   "note": "3 counted sources, 1933 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://southaustralia.com/products/adelaide/attraction/national-wine-centre",
+    "https://southaustralia.com/destinations/adelaide"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌴",
+   "bio": "Glasshouse in the Botanic Garden that recreates a tropical rainforest, open daily.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-21",
+   "name": "Bicentennial Conservatory",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.91694,
+    "longitude": 138.61231
+   },
+   "note": "Rule 1+2: Wikivoyage names it as 'a worthwhile place to visit' (tropical rainforest glasshouse, daily). Distinct attraction.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🔬",
+   "bio": "Futuristic science and design museum run by the University of South Australia.",
+   "wiki": "MOD. (museum)",
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/attraction/mod",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "adelaide-22",
+   "name": "MOD.",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.921508,
+    "longitude": 138.593045
+   },
+   "note": "3 counted sources, 0 page views",
+   "sources": [
+    "https://southaustralia.com/products/adelaide/attraction/mod",
+    "https://southaustralia.com/destinations/adelaide",
+    "https://southaustralia.com/itineraries/adelaide-itinerary"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚀",
+   "bio": "Free public gallery at Lot Fourteen with hands-on space exhibits.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-23",
+   "name": "Australian Space Discovery Centre",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9204,
+    "longitude": 138.6087
+   },
+   "note": "Free public Space Gallery at Lot Fourteen with hands-on exhibits; named by Wikivoyage, SATC and Experience Adelaide (three counted sources). Permanent museum-style exhibit, 30-60 min.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🏛️",
+   "bio": "The Parliament of South Australia, with free public tours on non-sitting days.",
+   "wiki": "Parliament House, Adelaide",
+   "coordinates_source": "wikipedia:Parliament House, Adelaide",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7922,
+   "counted_sources": 0,
+   "id": "adelaide-24",
+   "name": "Parliament House",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.92111111,
+    "longitude": 138.59888889
+   },
+   "note": "The Parliament of South Australia (managing agency) runs free public tours, no booking, twice daily on non-sitting days, covering the 1850s chamber, House of Assembly and Legislative Council; open to the public inside. Case against: civic building, tour-only; no SATC listing found.",
+   "sources": []
+  },
+  {
+   "category": "landmark",
+   "icon": "🛍️",
+   "bio": "Pedestrian shopping mall in the city centre, with the Mall's Balls sculpture.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Rundle Mall",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8435,
+   "counted_sources": 3,
+   "id": "adelaide-25",
+   "name": "Rundle Mall",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.92290278,
+    "longitude": 138.601875
+   },
+   "note": "3 counted sources, 8435 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide",
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide",
+    "https://www.experienceadelaide.com.au/visit/things-to-do/shopping/rundle-mall-adelaide"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦢",
+   "bio": "Riverbank park with an 1882 rotunda, lake walking tracks and paddleboat hire.",
+   "wiki": "Elder Park",
+   "coordinates_source": "wikipedia:Elder Park",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1054,
+   "counted_sources": 0,
+   "id": "adelaide-26",
+   "name": "Torrens Lake and Elder Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.91842778,
+    "longitude": 138.59838056
+   },
+   "note": "Experience Adelaide (City of Adelaide visitor site) names Elder Park with the 1882 rotunda, lake walking tracks and paddleboat hire; SATC lists the riverbank and Popeye landing. Permanent, free. Popeye cruises are the operator, not the spot.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🎋",
+   "bio": "Free Japanese garden in the south Park Lands, with a teahouse and stepping stones.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Adelaide Himeji Garden",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1689,
+   "counted_sources": 0,
+   "id": "adelaide-27",
+   "name": "Adelaide Himeji Garden",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.935721,
+    "longitude": 138.609762
+   },
+   "note": "Experience Adelaide features the free Japanese garden (rock-and-sand and lake gardens, teahouse, stepping stones) in the south Park Lands, open daily. Case against: small, ~30 min.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🌷",
+   "bio": "Formal garden in the south Park Lands with a serpentine canal and statues.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Veale Gardens",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 753,
+   "counted_sources": 0,
+   "id": "adelaide-28",
+   "name": "Veale Gardens",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9368,
+    "longitude": 138.5971
+   },
+   "note": "Experience Adelaide lists Veale Gardens: formal serpentine canal, statues and the adjacent Adelaide-Qingdao Rose Garden, with guided walks on SATC. Permanent, free. Case against: ordinary Park Lands garden.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "Conservation reserve protecting an intact dune system on the Adelaide coast, with a walk.",
+   "wiki": "Wara Wayingga-Tennyson Dunes Conservation Reserve",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "adelaide-29",
+   "name": "Tennyson Dunes",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.87945,
+    "longitude": 138.48261
+   },
+   "note": "Wikivoyage and the parks agency name it as the state's most accessible intact dune system, with a walk to do (rule 1, 2).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide",
+    "https://www.parks.sa.gov.au/parks/wara-wayingga-tennyson-dunes-conservation-reserve"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Beach suburb north of Semaphore with an 1882 jetty, kiosk, playground and foreshore walk.",
+   "wiki": "Largs Bay, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2684,
+   "counted_sources": 0,
+   "id": "adelaide-30",
+   "name": "Largs Bay",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "City of Port Adelaide Enfield's visitor pages list the Largs Bay foreshore: 1882 jetty, kiosk, playground, walking paths, Largs Pier Hotel. A named beach and historic jetty. Council page was blocked to scripts (403); details from search. Against: no SATC listing.",
+   "sources": []
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Southern beach suburb with a jetty, esplanade and the Brighton Jetty Sculptures.",
+   "wiki": "Brighton, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4504,
+   "counted_sources": 1,
+   "id": "adelaide-31",
+   "name": "Brighton",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "SATC's Adelaide beaches guide features Brighton: jetty, esplanade, Brighton Jetty Sculptures; Wikivoyage names the beach via the Seaford line. A second-tier beach.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Family beach near the airport on Adelaide's western coast, with sand and calm water.",
+   "wiki": "West Beach, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3584,
+   "counted_sources": 2,
+   "id": "adelaide-32",
+   "name": "West Beach",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "2 counted sources, 3584 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide",
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🪨",
+   "bio": "Coastal park with a glacial pavement, the Sugarloaf and a boardwalk, beside a swimming beach.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Hallett Cove Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3386,
+   "counted_sources": 2,
+   "id": "adelaide-33",
+   "name": "Hallett Cove Conservation Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -35.07361111,
+    "longitude": 138.49916667
+   },
+   "note": "2 counted sources, 3386 page views",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide",
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🤿",
+   "bio": "Seaside suburb with a long jetty and a reef sanctuary with an 800 m underwater snorkel trail.",
+   "wiki": "Port Noarlunga, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5671,
+   "counted_sources": 1,
+   "id": "adelaide-34",
+   "name": "Port Noarlunga",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "SATC lists Port Noarlunga Beach, Jetty, Reef and Aquatic Trail and its beaches guide singles out the reef as some of the best snorkelling in SA; jetty with stairs to the reef.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Free, accessible 1.1 km coastal boardwalk under the Witton Bluff cliffs.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-35",
+   "name": "Witton Bluff Base Trail",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "southaustralia.com attraction page and Fleurieu tourism listing: 1.1 km free, accessible coastal boardwalk under Witton Bluff linking Port Noarlunga and Christies Beach (about 30 min one way), opened 2025. Objection: short, new; reached from the Port Noarlunga jetty area.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/attractions"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "Clifftop coastal park with walking trails and views over Brighton, Glenelg and Marino Rocks Lighthouse.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Marino Conservation Park",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 421,
+   "counted_sources": 1,
+   "id": "adelaide-36",
+   "name": "Marino Conservation Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -35.05265,
+    "longitude": 138.5088
+   },
+   "note": "NPWS SA and SATC list the park: walking trail with views over Brighton, Glenelg and Marino Rocks Lighthouse, the last coastal heath on the Adelaide coast (Botanical Trail ~1.2 km).",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌅",
+   "bio": "Clifftop reserve with views over Holdfast Bay, Tjilbruke Spring and indigenous plantings.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 461,
+   "counted_sources": 0,
+   "id": "adelaide-37",
+   "name": "Kingston Park Coastal Reserve",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "SATC lists 'Kingston Park Coastal Reserve, Lookout and Aboriginal Tjilbruke Trail': cliff-top views over Holdfast Bay, Tjilbruke Spring, 76 indigenous plant species.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🐬",
+   "bio": "Protected Port River and Barker Inlet waters where dolphins live, seen on cruises from Port Adelaide.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1266,
+   "counted_sources": 2,
+   "id": "adelaide-38",
+   "name": "Adelaide Dolphin Sanctuary",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.743097,
+    "longitude": 138.4899
+   },
+   "note": "2 counted sources, 1266 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor",
+    "https://www.parks.sa.gov.au/parks/adelaide-dolphin-sanctuary"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚂",
+   "bio": "Large railway museum at Port Adelaide with locomotives and rolling stock.",
+   "wiki": "National Railway Museum, Port Adelaide",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4952,
+   "counted_sources": 2,
+   "id": "adelaide-39",
+   "name": "National Railway Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.84588,
+    "longitude": 138.50879
+   },
+   "note": "2 counted sources, 4952 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor",
+    "https://southaustralia.com/products/adelaide/attraction/national-railway-museum-port-adelaide"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "Maritime history museum at Port Adelaide, with a lighthouse and the waterfront outside.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:South Australian Maritime Museum",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1044,
+   "counted_sources": 2,
+   "id": "adelaide-40",
+   "name": "South Australian Maritime Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.8431,
+    "longitude": 138.5063
+   },
+   "note": "2 counted sources, 1044 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor",
+    "https://southaustralia.com/products/adelaide/attraction/south-australian-maritime-museum"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "✈️",
+   "bio": "Two hangars of aircraft and engines at Port Adelaide, with guided tours.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1536,
+   "counted_sources": 1,
+   "id": "adelaide-41",
+   "name": "South Australian Aviation Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.84823,
+    "longitude": 138.51133
+   },
+   "note": "Wikivoyage lists two hangars of aircraft with guided tours, daily opening, paid entry: a visit well over half an hour (rule 2).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Local history museum with a maritime collection, ship models and audio-visual displays.",
+   "wiki": "Port Adelaide Historical Society",
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/attraction/port-adelaide-historical-society-museum",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-42",
+   "name": "Port Adelaide Historical Society Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.832468,
+    "longitude": 138.496529
+   },
+   "note": "SATC lists the local community museum with maritime collection (Keith Leleu), models and audio-visual displays; permanent small museum a tourism board names. Case against: volunteer-run, one source.",
+   "sources": [
+    "https://southaustralia.com/products/adelaide/attraction/port-adelaide-historical-society-museum"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏰",
+   "bio": "An 1878 fort at Semaphore Park, with tours and parkland.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1769,
+   "counted_sources": 2,
+   "id": "adelaide-43",
+   "name": "Fort Glanville Conservation Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.850981,
+    "longitude": 138.477187
+   },
+   "note": "2 counted sources, 1769 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor",
+    "https://www.parks.sa.gov.au/parks/fort-glanville-conservation-park"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🍺",
+   "bio": "Family-owned brewery at Regency Park with a visitor centre and brewery tours.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 19703,
+   "counted_sources": 1,
+   "id": "adelaide-44",
+   "name": "Coopers Brewery",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.87257,
+    "longitude": 138.57294
+   },
+   "note": "Wikivoyage names the brewery tour and SATC lists the tours; Coopers runs a Visitor Centre tour and 90-min Brew Tour Tue-Sat. A famous brewery tour, the case COVERAGE allows. Against: a business, tours must be booked.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Port_Adelaide,_Enfield,_Prospect_and_Outer_Harbor"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏡",
+   "bio": "1930s house and gardens at Springfield, open to the public.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8353,
+   "counted_sources": 0,
+   "id": "adelaide-45",
+   "name": "Carrick Hill",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "Rule 1+2: southaustralia.com attraction page; 1930s house and gardens open to the public.",
+   "sources": []
+  },
+  {
+   "category": "historic",
+   "icon": "🪃",
+   "bio": "Living Kaurna Cultural Centre on the Sturt River, with a guided cultural walk.",
+   "wiki": null,
+   "coordinates_source": "OSM Nominatim: Living Kaurna Cultural Centre, Warriparinga Way, Bedford Park, Adelaide, South A",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 784,
+   "counted_sources": 0,
+   "id": "adelaide-46",
+   "name": "Warriparinga",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -35.020696,
+    "longitude": 138.562991
+   },
+   "note": "Living Kaurna Cultural Centre: SATC lists it, Marion council visitor page; guided one-hour cultural walk and heritage display on the Sturt wetlands.",
+   "sources": []
+  },
+  {
+   "category": "historic",
+   "icon": "🏬",
+   "bio": "Victorian shopping arcade off Rundle Mall, with heritage shopfronts and a mosaic floor.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Adelaide Arcade",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2994,
+   "counted_sources": 2,
+   "id": "adelaide-47",
+   "name": "Adelaide Arcade",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9235,
+    "longitude": 138.6038
+   },
+   "note": "2 counted sources, 2994 page views",
+   "sources": [
+    "https://southaustralia.com/products/adelaide/attraction/adelaide-arcade",
+    "https://en.wikivoyage.org/wiki/Adelaide"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "⛲",
+   "bio": "Central city square with the Three Rivers fountain, known as Tarntanyangga.",
+   "wiki": "Victoria Square, Adelaide",
+   "coordinates_source": "wikipedia:Victoria Square, Adelaide",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5891,
+   "counted_sources": 0,
+   "id": "adelaide-48",
+   "name": "Victoria Square",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9281,
+    "longitude": 138.5999
+   },
+   "note": "City of Adelaide's visitor site (Experience Adelaide) features Victoria Square / Tarntanyangga as the central square: Three Rivers fountain, Kaurna significance, birthplace of the Aboriginal flag. Permanent, free. Case against: a square, ~20 min.",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "🏺",
+   "bio": "Craft and design studios and galleries for glass, ceramics, furniture and jewellery, with tours.",
+   "wiki": null,
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide/tour/jamfactory-workshops-and-tours",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1042,
+   "counted_sources": 1,
+   "id": "adelaide-49",
+   "name": "JamFactory",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.923221,
+    "longitude": 138.593353
+   },
+   "note": "SATC lists JamFactory's studios and galleries (ceramics, glass, furniture, jewellery) with workshop tours; visitors can see makers at work and free gallery shows. Case against: part shop and a not-for-profit studio.",
+   "sources": [
+    "https://southaustralia.com/products/adelaide/tour/jamfactory-workshops-and-tours"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🪦",
+   "bio": "State heritage cemetery in the city's west Park Lands, visited on guided heritage tours.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2677,
+   "counted_sources": 0,
+   "id": "adelaide-50",
+   "name": "West Terrace Cemetery",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "SATC lists Adelaide Cemetery Tours of this State heritage cemetery; the Adelaide Cemeteries Authority offers 7-day self-guided interpretive trails (about an hour) plus guided tours. Case against: cemetery; some visit by tour.",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "🕊️",
+   "bio": "Small permanent museum with exhibits and education centre, booking needed on some days.",
+   "wiki": "Adelaide Holocaust Museum and Andrew Steiner Education Centre",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1412,
+   "counted_sources": 1,
+   "id": "adelaide-51",
+   "name": "Adelaide Holocaust Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.928283,
+    "longitude": 138.602806
+   },
+   "note": "Wikivoyage lists it with hours (Sun, Tue-Thu; booking on Tue-Thu), $10; a permanent small museum open to the public. Second-tier museum a guide names. Case against: limited days, bookings, single source.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/City_and_North_Adelaide"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🎖️",
+   "bio": "Volunteer-run military museum at Keswick Barracks with guns, artillery and wartime displays.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-52",
+   "name": "Army Museum of South Australia",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9464,
+    "longitude": 138.5804
+   },
+   "note": "Wikivoyage lists the volunteer-run military museum (guns, artillery, WWI/WWII/Korea/Vietnam), $5; permanent museum a guide names. Case against: limited hours (Sun, Mon, Wed), one source.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/South_and_East"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Local history museum of Holdfast Bay in Glenelg Town Hall on Moseley Square.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-53",
+   "name": "Bay Discovery Centre",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.98007,
+    "longitude": 138.51133
+   },
+   "note": "Wikivoyage names the local-history museum in Glenelg Town Hall on Moseley Square. Permanent small museum a guide names. Case against: one source.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🎠",
+   "bio": "Seafront amusement park at Glenelg with a carousel, bumper cars, mini-golf and a mini train.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7929,
+   "counted_sources": 1,
+   "id": "adelaide-54",
+   "name": "The Beachouse",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.9792,
+    "longitude": 138.5115
+   },
+   "note": "Wikivoyage lists this permanent seafront amusement park (mini-golf, carousel, bumper cars, mini train, slides); open daily. Against: a ticketed business.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/West_Adelaide"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Self-guided Kaurna heritage walk through the city with art and stories.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-55",
+   "name": "Kaurna Trail",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "Experience Adelaide (city tourism) lists the self-guided Kaurna heritage walk with art and stories; a permanent named route.",
+   "sources": [
+    "https://www.experienceadelaide.com.au/visit/things-to-do/heritage/adelaide-kaurna-trail"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "South Australia's first national park, with trails, an old government house and picnic areas.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2085,
+   "counted_sources": 5,
+   "id": "adelaide-56",
+   "name": "Belair National Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -35.0072,
+    "longitude": 138.6428
+   },
+   "note": "5 counted sources, 2085 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide",
+    "https://en.wikivoyage.org/wiki/Adelaide/Belair_National_Park",
+    "https://en.wikivoyage.org/wiki/Adelaide/South_and_East",
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills",
+    "https://www.parks.sa.gov.au/parks/belair-national-park"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Adelaide's newest national park at O'Halloran Hill, with trails over former farmland.",
+   "wiki": "Glenthorne National Park–Ityamaiitpinna Yarta",
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 552,
+   "counted_sources": 2,
+   "id": "adelaide-57",
+   "name": "Glenthorne National Park",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "Wikivoyage names it as Adelaide's third national park and the parks agency has a page; a national park with walking trails and a visitor offer.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide",
+    "https://www.parks.sa.gov.au/parks/glenthorne-national-park-ityamaiitpinna-yarta"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Gorge park with the Sturt tillite glacial rocks, grey box woodland and walking and bike trails.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Sturt Gorge Recreation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 610,
+   "counted_sources": 2,
+   "id": "adelaide-58",
+   "name": "Sturt Gorge Recreation Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -35.04176964,
+    "longitude": 138.57642755
+   },
+   "note": "NPWS SA lists the park: Sturt tillite glacial rocks, grey box woodland, new mountain-bike and hiking trails on the Craigburn Farm addition, waterholes along the Sturt River.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide",
+    "https://www.parks.sa.gov.au/parks/sturt-gorge-recreation-park"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Hills-edge park north-east of the city with walking and mountain-biking trails through bushland.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Anstey Hill Recreation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1639,
+   "counted_sources": 2,
+   "id": "adelaide-59",
+   "name": "Anstey Hill Recreation Park",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.83066111,
+    "longitude": 138.737625
+   },
+   "note": "2 counted sources, 1639 page views",
+   "sources": [
+    "https://southaustralia.com/products/adelaide/attraction/anstey-hill-recreation-park",
+    "https://www.parks.sa.gov.au/parks/adelaide"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Steep 3-4 hour climb past First and Second Falls to the Mount Lofty summit.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-60",
+   "name": "Waterfall Gully to Mount Lofty Summit Track",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "Distinct, popular 3-4 hr climb past First and Second Falls to the summit; agency Cleland National Park page names the walk, plus walking guides. Part-of-larger risk is small: Mount Lofty Summit and Waterfall Gully are separate spots, the track is its own walk.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "💧",
+   "bio": "SA Water reserve with an 11 km Shoreline Loop and a lookout over the reservoir and dam wall.",
+   "wiki": "Happy Valley Reservoir",
+   "coordinates_source": "wikipedia:Happy Valley Dam",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 870,
+   "counted_sources": 1,
+   "id": "adelaide-61",
+   "name": "Happy Valley Reservoir Reserve",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -35.07493,
+    "longitude": 138.564055
+   },
+   "note": "SA Water reserve with an 11 km Shoreline Loop (about 2.5 hr) and a lookout over the reservoir and dam wall; listed in Fleurieu tourism nature-and-outdoor guide. Public access, walk worth over half an hour. Objection: suburban reserve used mainly by locals.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "✈️",
+   "bio": "Aviation museum at Parafield where visitors can sit in fighter-jet cockpits.",
+   "wiki": "Parafield Airport",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7302,
+   "counted_sources": 1,
+   "id": "adelaide-62",
+   "name": "Classic Jets Fighter Museum",
+   "destination": "adelaide",
+   "coordinates": {
+    "latitude": -34.788675,
+    "longitude": 138.637647
+   },
+   "note": "Wikivoyage See listing with description; aviation museum with cockpits to sit in, open most days; small museum, one counted source plus museum guides.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🪖",
+   "bio": "Military vehicle museum at Edinburgh Parks, with running vehicles on its Sunday opening.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1040,
+   "counted_sources": 1,
+   "id": "adelaide-63",
+   "name": "National Military Vehicle Museum",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "Museum with running vehicles, open Sundays 10-4; named by Wikivoyage and History SA's Explore listing (counted heritage/visitor guide). Note: unconfirmed lease risk.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Salisbury,_Playford_and_Tea_Tree_Gully"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚋",
+   "bio": "Volunteer museum of 20-plus trams with unlimited rides on a 1.6 km line to St Kilda playground.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1440,
+   "counted_sources": 0,
+   "id": "adelaide-64",
+   "name": "Tramway Museum, St Kilda",
+   "destination": "adelaide",
+   "coordinates": null,
+   "note": "Volunteer museum of 20+ trams with unlimited rides on a 1.6 km line to the St Kilda playground; History SA Explore and Salisbury council visitor listing. Open Sundays and holidays only (permanent venue, limited days).",
+   "sources": []
+  },
+  {
+   "category": "historic",
+   "icon": "🥨",
+   "bio": "Australia's oldest surviving German settlement, with a main street of galleries, bakeries and shops.",
+   "wiki": "Hahndorf, South Australia",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 26985,
+   "counted_sources": 4,
+   "id": "adelaide-hills-1",
+   "name": "Hahndorf",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.02949,
+    "longitude": 138.80999
+   },
+   "note": "4 counted sources, 26985 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills",
+    "https://en.wikivoyage.org/wiki/Hahndorf",
+    "https://southaustralia.com/destinations/adelaide-hills",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "Summit lookout with views over Adelaide and the plains, plus a cafe.",
+   "wiki": "Mount Lofty",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 10777,
+   "counted_sources": 4,
+   "id": "adelaide-hills-2",
+   "name": "Mount Lofty Summit",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.97415,
+    "longitude": 138.70906
+   },
+   "note": "4 counted sources, 10777 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills",
+    "https://www.parks.sa.gov.au/parks/mount-lofty-summit",
+    "https://southaustralia.com/destinations/adelaide-hills"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🐨",
+   "bio": "Walk-through wildlife park at Crafers where visitors can feed kangaroos and meet koalas.",
+   "wiki": null,
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide-hills/attraction/cleland-wildlife-park",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "adelaide-hills-3",
+   "name": "Cleland Wildlife Park",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.971756,
+    "longitude": 138.711412
+   },
+   "note": "3 counted sources, 0 page views",
+   "sources": [
+    "https://southaustralia.com/products/adelaide-hills/attraction/cleland-wildlife-park",
+    "https://southaustralia.com/destinations/adelaide",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Park of trails and views over the Hills and city, around Mount Lofty.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2019,
+   "counted_sources": 3,
+   "id": "adelaide-hills-4",
+   "name": "Cleland National Park",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.9666,
+    "longitude": 138.6968
+   },
+   "note": "3 counted sources, 2019 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills",
+    "https://en.wikivoyage.org/wiki/Adelaide/South_and_East",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🍓",
+   "bio": "Farm near Hahndorf with seasonal pick-your-own strawberries and its jam shop.",
+   "wiki": "Beerenberg Farm",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5249,
+   "counted_sources": 2,
+   "id": "adelaide-hills-5",
+   "name": "Beerenberg Family Farm",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.03765,
+    "longitude": 138.81761
+   },
+   "note": "Wikivoyage See listing (entry fee, pick-your-own strawberries Nov-Apr) plus SATC page; two counted sources; seasonal venue is allowed.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Hahndorf",
+    "https://southaustralia.com/products/adelaide-hills/attraction/the-beerenberg-family-farm"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦆",
+   "bio": "Sandy Creek wildlife reserve with a platypus and native animals, on guided and self-guided walks.",
+   "wiki": "Warrawong Sanctuary",
+   "coordinates_source": "wikipedia:Warrawong Wildlife Sanctuary",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1547,
+   "counted_sources": 3,
+   "id": "adelaide-hills-6",
+   "name": "Warrawong Wildlife Sanctuary",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.037596,
+    "longitude": 138.734885
+   },
+   "note": "3 counted sources, 1547 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills",
+    "https://southaustralia.com/products/adelaide-hills/attraction/warrawong-wildlife-sanctuary",
+    "https://southaustralia.com/destinations/adelaide-hills"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌺",
+   "bio": "Free hillside botanic garden with cool-climate plantings and walks at Crafers.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 925,
+   "counted_sources": 3,
+   "id": "adelaide-hills-7",
+   "name": "Mount Lofty Botanic Garden",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.9867,
+    "longitude": 138.7137
+   },
+   "note": "3 counted sources, 925 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills",
+    "https://southaustralia.com/products/adelaide-hills/attraction/mount-lofty-botanic-garden",
+    "https://southaustralia.com/destinations/adelaide-hills"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🎨",
+   "bio": "Home and studio of painter Hans Heysen near Hahndorf, with guided tours.",
+   "wiki": "The Cedars (Hahndorf)",
+   "coordinates_source": "SATC product page geotag: https://southaustralia.com/products/adelaide-hills/attraction/heysen-the-cedars",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "adelaide-hills-8",
+   "name": "The Cedars",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.012751,
+    "longitude": 138.805646
+   },
+   "note": "3 counted sources, 0 page views",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "Free gallery and museum on Main Street covering Peramangk and German settler history and Heysen sketches.",
+   "wiki": null,
+   "coordinates_source": "OSM Nominatim: Hahndorf Academy, Main Street, Hahndorf, South Australia, 5245, Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-hills-9",
+   "name": "Hahndorf Academy",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.029064,
+    "longitude": 138.80995
+   },
+   "note": "Free gallery and museum on Main Street (Peramangk, German settlers, 1900s classroom, Heysen sketches), open daily; Lonely Planet, SATC and History SA all name it.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🐐",
+   "bio": "Petting zoo with daily milking and animal handling, a family stop at Hahndorf.",
+   "wiki": null,
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-hills-10",
+   "name": "Hahndorf Farm Barn",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.04483,
+    "longitude": 138.83362
+   },
+   "note": "Wikivoyage names the petting zoo with daily milking and animal handling, a 1-2 hr family stop; one counted source for an established attraction. Reported to have been listed for sale, so recheck it is operating.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Hahndorf"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Hills garden village in the Mount Lofty Ranges with laneways of shops and cafes.",
+   "wiki": "Stirling, South Australia",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7673,
+   "counted_sources": 2,
+   "id": "adelaide-hills-11",
+   "name": "Stirling",
+   "destination": "adelaide-hills",
+   "coordinates": null,
+   "note": "2 counted sources, 7673 page views",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide-hills",
+    "https://southaustralia.com/products/adelaide-hills/attraction/stirling-laneways"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🐴",
+   "bio": "Giant rocking horse and toy factory beside the main road at Gumeracha in the Torrens valley.",
+   "wiki": "Big Rocking Horse",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2926,
+   "counted_sources": 2,
+   "id": "adelaide-hills-12",
+   "name": "The Big Rocking Horse",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.8211,
+    "longitude": 138.8918
+   },
+   "note": "2 counted sources, 2926 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gumeracha",
+    "https://southaustralia.com/products/adelaide-hills/attraction/the-big-rocking-horse-gumeracha"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🚗",
+   "bio": "Museum of cars and motorcycles from all eras at Birdwood.",
+   "wiki": "National Motor Museum, Birdwood",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2994,
+   "counted_sources": 1,
+   "id": "adelaide-hills-13",
+   "name": "National Motor Museum",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.8197,
+    "longitude": 138.9549
+   },
+   "note": "Wikivoyage Adelaide Hills See #5: cars and motorcycles from all eras, open daily 10-5; a museum open to the public (rule 2).",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide_Hills"
+   ]
+  },
+  {
+   "category": "entertainment",
+   "icon": "🦘",
+   "bio": "Wildlife park at Cudlee Creek with Australian animals such as kangaroos and koalas.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Gorge Wildlife Park",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1321,
+   "counted_sources": 0,
+   "id": "adelaide-hills-14",
+   "name": "Gorge Wildlife Park",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.84193611,
+    "longitude": 138.81433056
+   },
+   "note": "Rule 1-2: SATC attraction page lists it; open wildlife park (Cudlee Creek) a visitor spends a couple of hours at",
+   "sources": []
+  },
+  {
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "Roughly one-hour walk to the 513 m summit with panoramic views and Peramangk interpretive signs.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 956,
+   "counted_sources": 1,
+   "id": "adelaide-hills-15",
+   "name": "Mount Barker Summit",
+   "destination": "adelaide-hills",
+   "coordinates": null,
+   "note": "Rule 1-3: SATC page names the 513 m summit, panoramic views and Peramangk interpretive signage; a walk of ~1 hr",
+   "sources": [
+    "https://southaustralia.com/products/adelaide-hills/attraction/mount-barker-summit"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Forest reserve in the southern Hills with walking and mountain-bike trails and camping.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Kuitpo Forest",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1740,
+   "counted_sources": 1,
+   "id": "adelaide-hills-16",
+   "name": "Kuitpo Forest",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.21795833,
+    "longitude": 138.70032778
+   },
+   "note": "Two counted sources: SATC Kuitpo walking trails page and ForestrySA walking page (Eucalypts Trail 1 hr, Tinjella, Chookarloo Walk). Some trails close for forestry operations.",
+   "sources": [
+    "https://southaustralia.com/products/adelaide-hills/attraction/kuitpo-walking-trails"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "💧",
+   "bio": "SA Water reserve with 13 km of trails, including a short lookout walk to a viewing platform.",
+   "wiki": "Mount Bold Reservoir",
+   "coordinates_source": "wikipedia:Mount Bold Dam",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 892,
+   "counted_sources": 1,
+   "id": "adelaide-hills-17",
+   "name": "Mount Bold Reservoir Reserve",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -35.123713,
+    "longitude": 138.68381
+   },
+   "note": "SA Water reserve with 13 km of trails (1.4 km return lookout trail to viewing platform, 5 km Forest Loop, 9 km Wedgetail Trail linking Heysen) and a dam-wall lookout; also listed by Fleurieu tourism. Open to public (dam-wall lookout 9am-4pm, no dogs). Objection: reservoir reserve, mostly local recreation.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "Bushland park of reservoirs in stringybark forest, with walking circuits of an hour or more.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "adelaide-hills-18",
+   "name": "Lobethal Bushland Park",
+   "destination": "adelaide-hills",
+   "coordinates": null,
+   "note": "SATC page: reservoirs in stringybark forest with walking circuits, an hour or more.",
+   "sources": [
+    "https://southaustralia.com/products/adelaide-hills/attraction/lobethal-bushland-park"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "56 km, three-day trail along the Hills from Belair to Chain of Ponds.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 808,
+   "counted_sources": 0,
+   "id": "adelaide-hills-19",
+   "name": "Yurrebilla Trail",
+   "destination": "adelaide-hills",
+   "coordinates": null,
+   "note": "Regional tourism board walks page names the 54-56 km, three-day Belair-to-Chain-of-Ponds trail; SATC describes it too. Distinct named long walk (placement of a linear feature is decided later).",
+   "sources": []
+  },
+  {
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Small Torrens valley town in the Adelaide Hills, home of the Big Rocking Horse.",
+   "wiki": "Gumeracha, South Australia",
+   "coordinates_source": "wikipedia:Gumeracha, South Australia",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3013,
+   "counted_sources": 2,
+   "id": "adelaide-hills-20",
+   "name": "Gumeracha",
+   "destination": "adelaide-hills",
+   "coordinates": {
+    "latitude": -34.827059,
+    "longitude": 138.88324
+   },
+   "note": "2 counted sources, 3013 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Gumeracha",
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Stringybark woodland park with walking trails, 80-plus bird species and a former prison camp site.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 273,
+   "counted_sources": 2,
+   "id": "adelaide-hills-21",
+   "name": "Kyeema Conservation Park",
+   "destination": "adelaide-hills",
+   "coordinates": null,
+   "note": "NPWS SA visitor page (free entry, walking trails through regenerating stringybark woodland, 80+ bird species, former prison camp site) plus Fleurieu tourism listing in attractions and nature lists. A 347 ha park with walking trails is a half-hour-plus visit; modest second-tier stop. Objection: no single named walk or lookout, mostly bushwalkers and birders.",
+   "sources": [
+    "https://www.fleurieupeninsula.com.au/things-to-do/attractions",
+    "https://www.fleurieupeninsula.com.au/things-to-do/nature-and-outdoor"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Northern Adelaide Hills park with marked walks such as the Mack Creek Hike, a campground and wildlife.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Para Wirra Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 777,
+   "counted_sources": 1,
+   "id": "para-wirra-conservation-park",
+   "name": "Para Wirra Conservation Park",
+   "destination": null,
+   "coordinates": {
+    "latitude": -34.68067182,
+    "longitude": 138.83008091
+   },
+   "note": "Agency page names marked walks (Mack Creek Hike, Lake Discovery Walk), campground and wildlife.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/adelaide-hills"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦅",
+   "bio": "Coastal wetlands north of Adelaide protecting shorebirds, with birdwatching sites along the coast.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Adelaide International Bird Sanctuary National Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 723,
+   "counted_sources": 3,
+   "id": "adelaide-international-bird-sanctuary-national-park",
+   "name": "Adelaide International Bird Sanctuary National Park",
+   "destination": null,
+   "coordinates": {
+    "latitude": -34.59444444,
+    "longitude": 138.39833333
+   },
+   "note": "3 counted sources, 723 page views",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide",
+    "https://en.wikivoyage.org/wiki/Adelaide/Adelaide_International_Bird_Sanctuary_National_Park—Winaityinaityi_Pangkara",
+    "https://www.parks.sa.gov.au/parks/adelaide-international-bird-sanctuary-national-park"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🦆",
+   "bio": "Samphire coast beach and birding spot on the Adelaide International Bird Sanctuary, with dolphin sightings.",
+   "wiki": "Thompson Beach, South Australia",
+   "coordinates_source": "Wikivoyage listing geotag",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1528,
+   "counted_sources": 1,
+   "id": "thompson-beach",
+   "name": "Thompson Beach",
+   "destination": null,
+   "coordinates": {
+    "latitude": -34.493687,
+    "longitude": 138.2931
+   },
+   "note": "NPWS SA (parks.sa.gov.au) names Thompson Beach among the top spots to birdwatch in the Adelaide International Bird Sanctuary (migratory shorebirds Oct-Apr); Wikivoyage lists it too.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Adelaide/Adelaide_International_Bird_Sanctuary_National_Park—Winaityinaityi_Pangkara"
+   ]
+  }
+ ],
+ "review": [],
+ "merged": [
+  {
+   "name": "Semaphore Beach",
+   "into": "Semaphore",
+   "why": "same suburb, jetty and beach; the suburb entry covers them"
+  },
+  {
+   "name": "Glenelg Beach",
+   "into": "Glenelg",
+   "why": "same resort; Moseley Square, Beachouse and Bay Discovery Centre are their own spots"
+  },
+  {
+   "name": "Hallett Cove Beach",
+   "into": "Hallett Cove Conservation Park",
+   "why": "shares the cove with the park (resolver note: merge)"
+  },
+  {
+   "name": "Port Noarlunga Jetty and Aquatic Trail",
+   "into": "Port Noarlunga",
+   "why": "same SATC listing: Port Noarlunga Beach, Jetty, Reef and Aquatic Trail (resolver note: merge)"
+  },
+  {
+   "name": "Hans Heysen Art Studio",
+   "into": "The Cedars",
+   "why": "one place under either name (resolver note)"
+  }
+ ],
+ "duplicates_elsewhere": [
+  {
+   "name": "Heysen Trail",
+   "home": "flinders",
+   "why": "homes.json; placed once at the route midpoint"
+  }
+ ]
+}

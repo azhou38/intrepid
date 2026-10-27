@@ -1,0 +1,1337 @@
+{
+ "region": "sa-limestone-coast",
+ "destinations": [
+  {
+   "id": "mount-gambier",
+   "name": "Mount Gambier",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -37.82944444,
+    "longitude": 140.78277778
+   },
+   "coordinates_source": "wikipedia:Mount Gambier (centre of town; candidate point)",
+   "defaultZoomSpanKm": 55,
+   "name_evidence": {
+    "source": "en.wikivoyage.org/wiki/Mount_Gambier; southaustralia.com Limestone Coast; visitmountgambier.com.au",
+    "wording": "Mount Gambier: the region city with its crater lakes and sinkholes; Wikivoyage lists Ewens/Piccaninnie Ponds and Port MacDonnell around it"
+   },
+   "spots": [
+    "mount-gambier-1",
+    "mount-gambier-2",
+    "mount-gambier-3",
+    "mount-gambier-4",
+    "mount-gambier-5",
+    "mount-gambier-6",
+    "mount-gambier-7",
+    "mount-gambier-8",
+    "mount-gambier-9",
+    "mount-gambier-10",
+    "mount-gambier-11",
+    "mount-gambier-12",
+    "mount-gambier-13"
+   ]
+  },
+  {
+   "id": "robe",
+   "name": "Robe",
+   "category": "beach",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -37.164057,
+    "longitude": 139.754134
+   },
+   "coordinates_source": "candidate (Robe town point, OSM place)",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": {
+    "source": "en.wikivoyage.org/wiki/Robe_(South_Australia); southaustralia.com Limestone Coast",
+    "wording": "Robe: coastal town on Guichen Bay with lighthouse, jetty and beaches"
+   },
+   "spots": [
+    "robe-1",
+    "robe-2",
+    "robe-3",
+    "robe-4",
+    "robe-5",
+    "robe-6"
+   ]
+  },
+  {
+   "id": "beachport",
+   "name": "Beachport",
+   "category": "beach",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -37.48355,
+    "longitude": 140.008423
+   },
+   "coordinates_source": "candidate (Beachport town point)",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": {
+    "source": "southaustralia.com Beachport page; Wikivoyage Limestone Coast",
+    "wording": "Beachport named as a base listing the Pool of Siloam, Beachport Conservation Park and the jetty"
+   },
+   "spots": [
+    "beachport-1",
+    "beachport-2",
+    "beachport-3",
+    "beachport-4",
+    "beachport-5",
+    "beachport-6",
+    "beachport-7"
+   ]
+  },
+  {
+   "id": "naracoorte",
+   "name": "Naracoorte",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -36.955,
+    "longitude": 140.74285
+   },
+   "coordinates_source": "candidate (Naracoorte town point)",
+   "defaultZoomSpanKm": 85,
+   "name_evidence": {
+    "source": "en.wikivoyage.org/wiki/Naracoorte; Wikivoyage Limestone Coast region page",
+    "wording": "Naracoorte: town with its own page, base for Naracoorte Caves (UNESCO World Heritage)"
+   },
+   "spots": [
+    "naracoorte-1",
+    "naracoorte-2",
+    "naracoorte-3",
+    "naracoorte-4",
+    "naracoorte-5"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "category": "landmark",
+   "icon": "🦞",
+   "bio": "A 17 m giant lobster at the entrance to Kingston SE and a classic roadside photo stop.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 8389,
+   "counted_sources": 1,
+   "id": "kingston-big-lobster",
+   "name": "Larry the Lobster",
+   "destination": null,
+   "coordinates": null,
+   "note": "Kingston SE is 37 km north of Robe, beyond its 30 km reach, and has its own Princes Highway base; only 2 kept spots so not a destination",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Limestone_Coast"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "A restored lighthouse moved to Kingston SE jetty, with tours.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Cape Jaffa Lighthouse",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 761,
+   "counted_sources": 1,
+   "id": "kingston-cape-jaffa-lighthouse",
+   "name": "Cape Jaffa Lighthouse",
+   "destination": null,
+   "coordinates": {
+    "latitude": -36.835941,
+    "longitude": 139.846272
+   },
+   "note": "as Larry the Lobster: Kingston SE, 2 kept spots",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Kingston_SE"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "⛰️",
+   "bio": "An unusual granite outcrop south of Keith in a conservation park with walking and picnicking.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Mount Monster Conservation Park",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 375,
+   "counted_sources": 2,
+   "id": "mount-monster-conservation-park",
+   "name": "Mount Monster Conservation Park",
+   "destination": null,
+   "coordinates": {
+    "latitude": -36.19997899,
+    "longitude": 140.31865533
+   },
+   "note": "Keith: over 100 km from any proposed destination",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/mount-monster-conservation-park",
+    "https://en.wikivoyage.org/wiki/Keith"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦘",
+   "bio": "A free wildlife park at Bordertown with white kangaroos, which visitors can drive or walk around.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 18626,
+   "counted_sources": 1,
+   "id": "bordertown-wildlife-park",
+   "name": "Bordertown Wildlife Park",
+   "destination": null,
+   "coordinates": null,
+   "note": "Kept town stands for its named attraction (wildlife park); Dukes Highway stopover, no destination within 100 km.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Limestone_Coast"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A volcanic crater lake in Mount Gambier that turns a vivid blue each summer, with a lookout and a walking track around the rim.",
+   "wiki": "Blue Lake / Warwar",
+   "coordinates_source": "wikipedia:Blue Lake / Warwar",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 14698,
+   "counted_sources": 3,
+   "id": "mount-gambier-1",
+   "name": "Blue Lake",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -37.84666667,
+    "longitude": 140.77805556
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Gambier",
+    "https://southaustralia.com/destinations/limestone-coast",
+    "https://visitmountgambier.com.au/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "A collapsed cave in Mount Gambier planted as a terraced sunken garden, open to walk down into.",
+   "wiki": "Umpherston Sinkhole / Balumbul",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "mount-gambier-2",
+   "name": "Umpherston Sinkhole",
+   "destination": "mount-gambier",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Gambier",
+    "https://southaustralia.com/destinations/limestone-coast",
+    "https://visitmountgambier.com.au/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "A sinkhole in the city centre of Mount Gambier that visitors can look into from a platform or walk down into.",
+   "wiki": "Cave Garden / Thugi",
+   "coordinates_source": "wikipedia:Cave Garden / Thugi",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1160,
+   "counted_sources": 1,
+   "id": "mount-gambier-3",
+   "name": "Cave Garden",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -37.82916667,
+    "longitude": 140.78055556
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://visitmountgambier.com.au/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🕳️",
+   "bio": "A limestone cave beneath Mount Gambier that is toured on foot and is also a site for cave diving.",
+   "wiki": "Engelbrecht Cave",
+   "coordinates_source": "wikipedia:Engelbrecht Cave",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2736,
+   "counted_sources": 3,
+   "id": "mount-gambier-4",
+   "name": "Engelbrecht Cave",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -37.8205,
+    "longitude": 140.7723
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Gambier",
+    "https://southaustralia.com/destinations/limestone-coast",
+    "https://visitmountgambier.com.au/"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🌋",
+   "bio": "An extinct volcano south of Mount Gambier with a short signposted walk up to the crater rim and wide views.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Mount Schank",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4387,
+   "counted_sources": 1,
+   "id": "mount-gambier-5",
+   "name": "Mount Schank",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -37.94,
+    "longitude": 140.7375
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Gambier"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🤿",
+   "bio": "Spring-fed limestone ponds in a conservation park, with walking trails and, outside the closed season, snorkelling and diving.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Ewens Ponds",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3109,
+   "counted_sources": 1,
+   "id": "mount-gambier-6",
+   "name": "Ewens Ponds",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -38.02666667,
+    "longitude": 140.79055556
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/ewens-ponds-conservation-park"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "💦",
+   "bio": "A Ramsar-listed spring-fed pond system reached by a beach walk and boardwalk, with a wetland lookout.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Piccaninnie Ponds Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3167,
+   "counted_sources": 1,
+   "id": "mount-gambier-7",
+   "name": "Piccaninnie Ponds",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -38.05083333,
+    "longitude": 140.93638889
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/piccaninnie-ponds-conservation-park"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏊",
+   "bio": "A sinkhole lake near Mount Gambier that visitors swim in from a pontoon.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Little Blue Lake",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4173,
+   "counted_sources": 1,
+   "id": "mount-gambier-8",
+   "name": "Little Blue Lake",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -37.9292,
+    "longitude": 140.678297
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🤿",
+   "bio": "A clear-water sinkhole near Mount Gambier that can be toured or snorkelled with a guide by booking.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "mount-gambier-9",
+   "name": "Kilsby Sinkhole",
+   "destination": "mount-gambier",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "A second crater lake in Mount Gambier with grassed picnic areas and walking trails in the surrounding conservation park.",
+   "wiki": "Valley Lake / Ketla Malpi",
+   "coordinates_source": "wikipedia:Valley Lake / Ketla Malpi",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 759,
+   "counted_sources": 1,
+   "id": "mount-gambier-10",
+   "name": "Valley Lake",
+   "destination": "mount-gambier",
+   "coordinates": {
+    "latitude": -37.84027778,
+    "longitude": 140.76694444
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://visitmountgambier.com.au/"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🕳️",
+   "bio": "A show cave in a conservation park north-west of Mount Gambier, with free park entry and paid cave tours.",
+   "wiki": "Tantanoola Caves Conservation Park",
+   "coordinates_source": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 962,
+   "counted_sources": 1,
+   "id": "mount-gambier-11",
+   "name": "Tantanoola Caves",
+   "destination": "mount-gambier",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/tantanoola-caves-conservation-park"
+   ]
+  },
+  {
+   "category": "landmark",
+   "icon": "🗼",
+   "bio": "An 1882 lighthouse on the headland south of Port MacDonnell, with coastal outcrops around it.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "id": "mount-gambier-12",
+   "name": "Cape Northumberland Lighthouse",
+   "destination": "mount-gambier",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "A volunteer-run museum in Port MacDonnell on the shipwrecks of the coast.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 7186,
+   "counted_sources": 0,
+   "id": "mount-gambier-13",
+   "name": "Port MacDonnell Maritime Museum",
+   "destination": "mount-gambier",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "An 1863 Customs House in Robe that now serves as a National Trust maritime museum.",
+   "wiki": "Robe Customs House",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "robe-1",
+   "name": "Robe Customs House Maritime Museum",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Robe"
+   ]
+  },
+  {
+   "category": "historic",
+   "icon": "🗼",
+   "bio": "An 1855 red-and-white navigation obelisk on the cliff above Robe.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "id": "robe-2",
+   "name": "Cape Dombey Obelisk",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "landmark",
+   "icon": "🎣",
+   "bio": "The jetty and small harbour at Robe on Guichen Bay.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 24711,
+   "counted_sources": 1,
+   "id": "robe-3",
+   "name": "Robe Jetty",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Robe"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A long beach at Robe used for swimming and 4WD driving.",
+   "wiki": "Long Beach (South Australia)",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "robe-4",
+   "name": "Long Beach",
+   "destination": "robe",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "A conservation park south of Robe of dunes, lakes and coastal mallee with 4WD tracks.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Little Dip Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 351,
+   "counted_sources": 2,
+   "id": "robe-5",
+   "name": "Little Dip Conservation Park",
+   "destination": "robe",
+   "coordinates": {
+    "latitude": -37.23527778,
+    "longitude": 139.79333333
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/little-dip-conservation-park",
+    "https://en.wikivoyage.org/wiki/Robe"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A white-sand semicircular bay between Robe and Beachport, backed by 20 m headlands and good for swimming.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Nora Creina",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 844,
+   "counted_sources": 0,
+   "id": "robe-6",
+   "name": "Nora Creina Bay",
+   "destination": "robe",
+   "coordinates": {
+    "latitude": -37.327064,
+    "longitude": 139.850928
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "landmark",
+   "icon": "🎣",
+   "bio": "The second-longest jetty in South Australia, used for fishing and walking out over Rivoli Bay.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 6878,
+   "counted_sources": 0,
+   "id": "beachport-1",
+   "name": "Beachport Jetty",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A hypersaline lake near Beachport in which visitors can float.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 51707,
+   "counted_sources": 1,
+   "id": "beachport-2",
+   "name": "Pool of Siloam",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "An 1879-80 wool and grain store run by the National Trust as a museum, with whaling history.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 6878,
+   "counted_sources": 0,
+   "id": "beachport-3",
+   "name": "Beachport Woolstores Museum",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A coastal conservation park of limestone cliffs, middens and the Woolley Lake walking trail with ocean views.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Beachport Conservation Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 320,
+   "counted_sources": 2,
+   "id": "beachport-4",
+   "name": "Beachport Conservation Park",
+   "destination": "beachport",
+   "coordinates": {
+    "latitude": -37.45333333,
+    "longitude": 139.97666667
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/beachport-conservation-park",
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🏜️",
+   "bio": "A coastal national park of cliffs, surf beaches and dunes on the Southern Ocean with walking tracks.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Canunda National Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 754,
+   "counted_sources": 2,
+   "id": "beachport-5",
+   "name": "Canunda National Park",
+   "destination": "beachport",
+   "coordinates": {
+    "latitude": -37.59786546,
+    "longitude": 140.17517997
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/canunda-national-park",
+    "https://en.wikivoyage.org/wiki/Limestone_Coast"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A beach village on Rivoli Bay with a beach, boating and a cafe.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2084,
+   "counted_sources": 1,
+   "id": "beachport-6",
+   "name": "Southend Beach",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "A large National Trust museum in Millicent with a gallery and a collection of carriages.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 10311,
+   "counted_sources": 0,
+   "id": "beachport-7",
+   "name": "Millicent National Trust Museum",
+   "destination": "beachport",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🦇",
+   "bio": "A World Heritage fossil cave park near Naracoorte with guided cave tours and a bat centre.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Naracoorte Caves National Park",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 6187,
+   "counted_sources": 3,
+   "id": "naracoorte-1",
+   "name": "Naracoorte Caves National Park",
+   "destination": "naracoorte",
+   "coordinates": {
+    "latitude": -37.03611111,
+    "longitude": 140.79763889
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://www.naracoortecaves.sa.gov.au/",
+    "https://en.wikivoyage.org/wiki/Naracoorte",
+    "https://en.wikivoyage.org/wiki/Limestone_Coast"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "A National Trust woolgrowing and local history museum with a visitor centre in Naracoorte.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "naracoorte-2",
+   "name": "Sheep's Back Museum",
+   "destination": "naracoorte",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Naracoorte"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦆",
+   "bio": "A Ramsar-listed wetland near Naracoorte with a 500 m boardwalk and birdwatching.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Bool Lagoon Game Reserve",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 485,
+   "counted_sources": 0,
+   "id": "naracoorte-3",
+   "name": "Bool Lagoon",
+   "destination": "naracoorte",
+   "coordinates": {
+    "latitude": -37.11666667,
+    "longitude": 140.68333333
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  },
+  {
+   "category": "nature",
+   "icon": "🍷",
+   "bio": "A wine region of red soil south of Penola known for Cabernet Sauvignon, with cellar doors to visit.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 4843,
+   "counted_sources": 2,
+   "id": "naracoorte-4",
+   "name": "Coonawarra",
+   "destination": "naracoorte",
+   "coordinates": null,
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Limestone_Coast",
+    "https://southaustralia.com/destinations/limestone-coast"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "A self-guided gallery and the 1867 schoolhouse in Penola on the life of Mary MacKillop.",
+   "wiki": null,
+   "coordinates_source": "wikipedia:Mary MacKillop Interpretive Centre",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.25,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 273,
+   "counted_sources": 0,
+   "id": "naracoorte-5",
+   "name": "Mary MacKillop Penola Centre",
+   "destination": "naracoorte",
+   "coordinates": {
+    "latitude": -37.379236,
+    "longitude": 140.839559
+   },
+   "note": "Kept; inside the destination span and reached from its base.",
+   "sources": []
+  }
+ ],
+ "review": [
+  {
+   "name": "Old Mount Gambier Gaol",
+   "reason": "For: 1866-1995 gaol, self-guided and guided tours of crimes and cell life, Wikivoyage lists it (under Sleep) and it hosts gigs. Against: operates chiefly as accommodation/function venue; no See entry in a counted source (southaustralia.com and discovermountgambier URLs 404/unfound)."
+  },
+  {
+   "name": "Victoria Fossil Cave",
+   "reason": "For: the headline Naracoorte tour cave, World Heritage fossil site with its own ticketed tour (naracoortecaves.sa.gov.au). Against: part of Naracoorte Caves National Park, so a near-duplicate of the park spot if that is listed."
+  }
+ ],
+ "merged": [
+  {
+   "name": "Mount Schank Scenic Walk",
+   "into": "Mount Schank",
+   "why": "same place (judge: walk is the crater climb)"
+  },
+  {
+   "name": "Coonawarra (wine region entry)",
+   "into": "Coonawarra",
+   "why": "two kept entries for the same place"
+  },
+  {
+   "name": "Southend",
+   "into": "Southend Beach",
+   "why": "town is a wrapper for the beach"
+  },
+  {
+   "name": "Mount Gambier",
+   "into": "destination Mount Gambier",
+   "why": "town candidate is the destination itself"
+  },
+  {
+   "name": "Robe",
+   "into": "destination Robe / Robe Jetty",
+   "why": "town point reused by candidate Robe Jetty; town folded into destination"
+  },
+  {
+   "name": "Beachport",
+   "into": "destination Beachport",
+   "why": "town is the destination base"
+  },
+  {
+   "name": "Naracoorte",
+   "into": "destination Naracoorte",
+   "why": "town is the destination base"
+  },
+  {
+   "name": "Penola",
+   "into": "Mary MacKillop Penola Centre",
+   "why": "town is a wrapper for its attraction"
+  },
+  {
+   "name": "Millicent",
+   "into": "Millicent National Trust Museum",
+   "why": "town is a wrapper for its museum"
+  },
+  {
+   "name": "Port MacDonnell",
+   "into": "Cape Northumberland Lighthouse / Port MacDonnell Maritime Museum",
+   "why": "town is a wrapper for its attractions"
+  },
+  {
+   "name": "Kingston SE",
+   "into": "Larry the Lobster / Cape Jaffa Lighthouse",
+   "why": "town is a wrapper for its attractions"
+  },
+  {
+   "name": "Keith",
+   "into": "Mount Monster Conservation Park",
+   "why": "town kept only as stopover for Mount Monster; mentioned, not a spot"
+  },
+  {
+   "name": "Bordertown",
+   "into": "Bordertown Wildlife Park",
+   "why": "town is a wrapper for its attraction"
+  }
+ ],
+ "duplicates_elsewhere": []
+}

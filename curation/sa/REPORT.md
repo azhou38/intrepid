@@ -1,0 +1,599 @@
+# South Australia run: final report
+
+Branch `curation/sa` (not merged, nothing published). 38 destinations and 584 spots added (a spot is "added" once it has a pin and a cost); 34 held.
+
+## Destinations added (rank, span, evidence for the name) — review and change any
+
+- Adelaide (`adelaide`): rank 2, span 40 km, 57 spots. Name evidence: Wikivoyage Adelaide; southaustralia.com/destinations/adelaide: State capital, listed as its own destination page by both
+- Barossa Valley (`barossa-valley`): rank 2, span 45 km, 15 spots. Name evidence: Wikivoyage "Barossa Valley"; southaustralia.com/destinations/barossa; barossa.com: Barossa Valley / the Barossa is the named wine region and destination page; Tanunda is its base
+- Ikara-Flinders Ranges National Park (`ikara-flinders-ranges`): rank 2, span 144 km, 24 spots. Name evidence: parks.sa.gov.au, Wikivoyage and flindersandoutback.com.au: Ikara-Flinders Ranges National Park: the flagship Flinders Ranges park (5 counted sources, flagship)
+- Kangaroo Island (`kangaroo-island`): rank 2, span 160 km, 54 spots. Name evidence: Wikivoyage 'Kangaroo Island' page and the Tourism Kangaroo Island board (tourkangarooisland.com.au): Wikivoyage has a Kangaroo Island destination page covering Penneshaw, Kingscote, American River and Parndana; the board organises destinatio
+- Adelaide Hills (`adelaide-hills`): rank 3, span 50 km, 20 spots. Name evidence: Wikivoyage Adelaide Hills; South Australian Tourism Commission region 'Adelaide Hills'; visitadelaidehills.com.au: Named tourism region and Wikivoyage region page
+- Clare Valley (`clare-valley`): rank 3, span 50 km, 11 spots. Name evidence: southaustralia.com/destinations/clare-valley; clarevalley.com.au (Clare Valley Tourism); Wikivoyage "Yorke Peninsula and Clare Valley": Clare Valley is a named region with its own tourism board and destination page
+- Coober Pedy (`coober-pedy`): rank 3, span 60 km, 8 spots. Name evidence: Wikivoyage Coober Pedy; flindersandoutback.com.au/towns/coober-pedy; southaustralia.com Flinders Ranges and Outback: opal-mining town with underground dugouts, the outback's main tourist stop on the Stuart Highway
+- Coorong National Park (`coorong-national-park`): rank 3, span 110 km, 15 spots. Name evidence: parks.sa.gov.au Coorong National Park; Wikivoyage; southaustralia.com: Flagship park named by the agency page, Wikivoyage (Coorong) and southaustralia.com
+- Dhilba Guuranda-Innes National Park (`innes-national-park`): rank 3, span 40 km, 12 spots. Name evidence: parks.sa.gov.au and yorkepeninsula.com.au: Dhilba Guuranda-Innes National Park, the headline Yorke attraction (Ethel wreck, lighthouses, surf, walks)
+- McLaren Vale (`mclaren-vale`): rank 3, span 45 km, 15 spots. Name evidence: Wikivoyage 'Fleurieu Peninsula' (wine region listing); mclarenvaleandfleurieucoast.com.au regional tourism brand; Wikipedia 'McLaren Vale, South Australia' (9149 views, 3 counted sources): McLaren Vale named as the peninsula's main wine region and base, tourism brand 'McLaren Vale and Fleurieu Coast'
+- Mount Gambier (`mount-gambier`): rank 3, span 55 km, 12 spots. Name evidence: en.wikivoyage.org/wiki/Mount_Gambier; southaustralia.com Limestone Coast; visitmountgambier.com.au: Mount Gambier: the region city with its crater lakes and sinkholes; Wikivoyage lists Ewens/Piccaninnie Ponds and Port MacDonnell around it
+- Naracoorte (`naracoorte`): rank 3, span 85 km, 5 spots. Name evidence: en.wikivoyage.org/wiki/Naracoorte; Wikivoyage Limestone Coast region page: Naracoorte: town with its own page, base for Naracoorte Caves (UNESCO World Heritage)
+- Port Lincoln (`port-lincoln`): rank 3, span 60 km, 9 spots. Name evidence: Wikivoyage "Port Lincoln" page and the Eyre Peninsula region page: Port Lincoln is a Wikivoyage city of the Eyre Peninsula; tourism: seafood capital and great white shark cage diving base
+- Victor Harbor (`victor-harbor`): rank 3, span 40 km, 16 spots. Name evidence: Wikivoyage 'Victor Harbor' article and its own chapter on the Fleurieu board (fleurieupeninsula.com.au): Victor Harbor has its own Wikivoyage article and a chapter on the regional board: Granite Island causeway, foreshore, heritage railway, whal
+- Vulkathunha-Gammon Ranges National Park (`vulkathunha-gammon-ranges`): rank 3, span 90 km, 4 spots. Name evidence: parks.sa.gov.au and flindersandoutback.com.au: Vulkathunha-Gammon Ranges National Park: rugged ranges, gorges, Lake Frome edge; Arkaroola Wilderness Sanctuary is its main visitor hub
+- Beachport (`beachport`): rank 4, span 60 km, 7 spots. Name evidence: southaustralia.com Beachport page; Wikivoyage Limestone Coast: Beachport named as a base listing the Pool of Siloam, Beachport Conservation Park and the jetty
+- Burra (`burra`): rank 4, span 20 km, 5 spots. Name evidence: Wikivoyage "Burra (South Australia)"; Burra Heritage Passport on clarevalley.com.au and southaustralia.com: Wikivoyage has its own Burra page; the Burra Heritage Passport unites its mine, gaol, dugouts and station
+- Ceduna (`ceduna`): rank 4, span 130 km, 9 spots. Name evidence: Wikivoyage "Ceduna" page: last major town before the Nullarbor, oysters, Eyre Highway
+- Coffin Bay (`coffin-bay`): rank 4, span 50 km, 4 spots. Name evidence: Wikivoyage "Coffin Bay" page: oyster village beside Coffin Bay National Park; the NP has only 2 further kept spots so it is a spot of this destination, not a park destina
+- Copper Coast (`copper-coast`): rank 4, span 45 km, 8 spots. Name evidence: yorkepeninsula.com.au and Wikivoyage Yorke Peninsula: The Copper Coast: Kadina, Wallaroo and Moonta (Moonta/Moonta Bay/Port Hughes was SA Top Tourism Town 2021); Wikivoyage covers Moonta and Wal
+- Gawler Ranges National Park (`gawler-ranges-national-park`): rank 4, span 140 km, 12 spots. Name evidence: parks.sa.gov.au Gawler Ranges National Park page and Wikivoyage Eyre Peninsula: national park with Organ Pipes, Yandinga Falls, Kolay Mirica Falls and Paney Homestead
+- Goolwa (`goolwa`): rank 4, span 60 km, 10 spots. Name evidence: Wikivoyage 'Goolwa' article (See: Barrage, motor museum, Signal Point); fleurieupeninsula.com.au: Goolwa: town on the Murray Mouth with Wikivoyage See listings (barrage walk, motor museum, wharf precinct); Hindmarsh Island is reached from
+- Innamincka (`innamincka`): rank 4, span 120 km, 4 spots. Name evidence: Wikivoyage Innamincka; flindersandoutback.com.au/towns/innamincka; parks.sa.gov.au: remote Cooper Creek township, Burke and Wills country, gateway to Innamincka Regional Reserve and Coongie Lakes
+- Lincoln National Park (`lincoln-national-park`): rank 4, span 40 km, 4 spots. Name evidence: parks.sa.gov.au Lincoln National Park page and Wikivoyage Port Lincoln: national park south of Port Lincoln with 4 kept spots (Memory Cove, Stamford Hill, Cape Donington, Sleaford Bay)
+- Mount Remarkable National Park (`mount-remarkable`): rank 4, span 55 km, 5 spots. Name evidence: parks.sa.gov.au and flindersandoutback.com.au: Mount Remarkable National Park: summit, Alligator Gorge, Mambray Creek, trails and mountain biking
+- Murray Bridge (`murray-bridge`): rank 4, span 70 km, 14 spots. Name evidence: Wikivoyage Murray Bridge page; southaustralia.com Murray Bridge place page: Wikivoyage gives Murray Bridge its own city page with See/Do listings; SATC place page lists river activities, gallery and sights
+- Riverland (`riverland`): rank 4, span 120 km, 30 spots. Name evidence: Wikivoyage Murray and Mallee Riverland; southaustralia.com Riverland; Wikivoyage Renmark and Barmera: Riverland is the regional tourism brand on southaustralia.com (Riverland things to do) with Wikivoyage articles for Renmark, Barmera, Berri 
+- Robe (`robe`): rank 4, span 40 km, 6 spots. Name evidence: en.wikivoyage.org/wiki/Robe_(South_Australia); southaustralia.com Limestone Coast: Robe: coastal town on Guichen Bay with lighthouse, jetty and beaches
+- Streaky Bay (`streaky-bay`): rank 4, span 100 km, 15 spots. Name evidence: Wikivoyage "Streaky Bay" page: west coast fishing town, base for Murphy's Haystacks, Cape Bauer and Point Labatt
+- Whyalla (`whyalla`): rank 4, span 90 km, 11 spots. Name evidence: Wikivoyage "Whyalla" page: steel city on Upper Spencer Gulf, giant cuttlefish, HMAS Whyalla
+- Yorke Peninsula (`yorke-peninsula`): rank 4, span 100 km, 19 spots. Name evidence: Wikivoyage "Yorke Peninsula and Clare Valley"; yorkepeninsula.com.au; visityorkepeninsula.com.au: Yorke Peninsula, the peninsula-wide tourism name; this destination holds the east, centre and south coast outside the Copper Coast and Innes
+- Leigh Creek (`leigh-creek`): rank 5, span 75 km, 4 spots. Name evidence: Wikivoyage Leigh Creek and flindersandoutback.com.au: Leigh Creek: gateway to the northern Flinders (town page, three counted sources)
+- Mannum (`mannum`): rank 5, span 40 km, 4 spots. Name evidence: southaustralia.com Mannum place page; Wikipedia: SATC place page: birthplace of the Murray paddlesteamers, paddle steamers, riverbank pubs, dock museum, waterfall
+- Port Augusta (`port-augusta`): rank 5, span 40 km, 5 spots. Name evidence: Wikivoyage Port Augusta and flindersandoutback.com.au: Port Augusta: Spencer Gulf gateway city at the head of the gulf
+- Port Pirie (`port-pirie`): rank 5, span 45 km, 7 spots. Name evidence: Wikivoyage Port Pirie and flindersandoutback.com.au: Port Pirie: Spencer Gulf port city, smelter, museum, mural trail
+- Quorn (`quorn`): rank 5, span 60 km, 5 spots. Name evidence: Wikivoyage Quorn and flindersandoutback.com.au: Quorn: heritage town, Pichi Richi Railway base, Heysen and Mawson trail stop
+- Southern Flinders Ranges (`southern-flinders-ranges`): rank 5, span 60 km, 4 spots. Name evidence: flindersandoutback.com.au/regions/southern-flinders-ranges: Southern Flinders Ranges: regional tourism brand covering Laura, Gladstone, Jamestown and Booleroo Centre
+- Yankalilla (`yankalilla`): rank 5, span 60 km, 14 spots. Name evidence: southaustralia.com/products/fleurieu-peninsula/destination-information/yankalilla destination page; the Normanville-Carrickalinga-Second Valley-Rapid Bay coast (Yankalilla district): Yankalilla destination page names the Yankalilla District Historical Museum, Christ Church (1857, Shrine of Our Lady of Yankalilla) and a he
+
+## Held, not added (what unblocks each)
+
+- Migration Museum (`adelaide-15`): Migration Museum: closed from 1 July 2026 for 18-24 months. Unblocks on reopening.
+- Tandanya National Aboriginal Cultural Institute (`adelaide-16`): Tandanya: closed, relaunch planned for 2027. Unblocks on reopening.
+- Adelaide Holocaust Museum (`adelaide-51`): Adelaide Holocaust Museum: closed for re-curation until December 2026. Unblocks on reopening.
+- Army Museum of South Australia (`adelaide-52`): Army Museum of South Australia: to be relocated to a venue not yet chosen. Unblocks when a source says where and when it opens.
+- Bay Discovery Centre (`adelaide-53`): Bay Discovery Centre: no cost found (council page behind a bot wall). Unblocks on a browser check of its price.
+- Kaurna Trail (`adelaide-55`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Classic Jets Fighter Museum (`adelaide-62`): Classic Jets Fighter Museum: possibly closed, no price, no working site. Unblocks on a source confirming it is open and its price.
+- Jamestown Railway Station Museum (`jamestown-railway-station-museum`): Jamestown Railway Station Museum: no cost or official site found. Unblocks on a price or source.
+- High Cliff (`streaky-bay-7`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Streaky Bay Museum (`streaky-bay-12`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- South Head Walking Trail (`streaky-bay-18`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Goolwa Motor Museum (`goolwa-10`): Goolwa Motor Museum: listed permanently closed, no official site. Unblocks on a browser check that it is open.
+- Talisker Conservation Park (`yankalilla-8`): Talisker Conservation Park: closed until further notice after a fire. Unblocks on reopening.
+- Ferguson Gorge (`ikara-flinders-ranges-19`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Fred Teague's Museum (`ikara-flinders-ranges-21`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Gladstone Gaol (`southern-flinders-ranges-1`): Gladstone Gaol: closed since June 2022, reopening announced for late 2026; no cost. Unblocks on reopening and a price.
+- Yunta (`yunta`): Yunta: its only draw is the annual Picnic Races, an event. Unblocks on a source naming a permanent sight.
+- Caernarvon Track (`caernarvon-track`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Town Carriage Museum (`town-carriage-museum`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Peterborough Historic Letterpress Print Shop (`peterborough-historic-letterpress-print-shop`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Kingscote Pelican Feeding (`kangaroo-island-18`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Parndana Soldier Settlement Museum (`kangaroo-island-42`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Kilsby Sinkhole (`mount-gambier-9`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Monarto Conservation Park (`murray-bridge-10`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- River Rides Motorcycle Museum (`mannum-3`): No cost found (and not known to be free); unblocks on a price or a source saying it is free.
+- Hermann Gass Bird Sanctuary (`mannum-5`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Lakes Nature Walk (`coorong-national-park-8`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Ngrugie Ngoppun Walk (`coorong-national-park-9`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Rocky's Hall of Fame and Pioneers Museum (`riverland-10`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Pioneer Park (Karoonda) (`karoonda-pioneer-park`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Tauragat Hill (`tauragat-hill`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Moon Plain (`coober-pedy-7`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+- Wheal Hughes Copper Mine (`copper-coast-6`): Wheal Hughes Copper Mine: tourists can no longer go underground. Unblocks on a source confirming public access.
+- Investigator Strait Shipwreck Trail (`investigator-strait-shipwreck-trail`): No pin found in OpenStreetMap, Wikipedia or Commons; unblocks on the managing body's map or street address.
+
+Also dropped as not spots: Whyalla (town duplicates its destination), Gumeracha (town wrapper, folded into Adelaide Hills), Katarapko (merged into Murray River National Park), Raukkan Church (merged into Raukkan).
+
+## Review list (marginal places, not added; owner decides)
+
+- Château Tanunda (barossa-clare): For: grand 1890 chateau open daily with 40-min cellar tours and croquet lawn; Wikivoyage and southaustralia.com list it. Against: both list it as a winery/cella
+- Jacob's Creek Visitor Centre (barossa-clare): For: barossa.com and Wikivoyage list it; self-guided Trail of Discovery creek walk and demonstration vineyard make a 30+ min stop at a famous brand. Against: it
+- Louden Brae School (barossa-clare): For: tourism-board listing of a restored 1905 one-teacher schoolhouse, famed as R.M. Williams' school. Against: single source, a stone building with a short vis
+- R.M. Williams Story (Jamestown) (barossa-clare): For: tourism-board listing of an outdoor interpretive display on the R.M. Williams brand founder, born near Jamestown, in Robinson Park (free, always accessible
+- Border Village (eyre): For: roadside icon (Big Kangaroo) at the WA border, a classic photo stop. Against: Wikivoyage Nullarbor says Border Village is a roadhouse with little to offer,
+- Mount Dutton Bay Woolshed Museum (eyre): For: State Heritage-listed 1875 woolshed with restored stone buildings and museum, listed by the tourism board, $10. Against: private property, tours by phone b
+- Nuyts Archipelago Conservation Park (eyre): For: islands and sea lion/bird tours are a real draw named by the tourism board and Wikipedia confirms the park. Against: boat-only, reached via operators, Fran
+- Ceduna Museum (eyre): For: two counted sources list the National Trust museum. Against: very limited opening hours (10am to noon), small local museum.
+- Ceduna Aboriginal Arts and Culture Centre (eyre): For: Wikivoyage lists Tjutjuna/Arts Ceduna Aboriginal art display. Against: single source, link dead, mostly a gallery shop and listing may be stale.
+- OTC Satellite Earth Station (eyre): For: tourism board names the 1969 satellite earth station, a distinctive history stop 34 km from Ceduna. Against: unmanned, perimeter-fence view only, one count
+- Tumby Bay National Trust Museum (eyre): For: Wikivoyage See lists the National Trust museum. Against: small branch museum, one source, unclear hours.
+- Cowell Agriculture Museum (eyre): For: tourism board lists the agriculture museum. Against: small local museum, single source, no detail on opening.
+- Elvis Presley Museum Whyalla (eyre): For: SATC lists a 50-year private Elvis collection filling a home, a quirky stop, free. Against: a private home visited by phone booking with the owner, one sou
+- Eyre Peninsula Railway (eyre): For: SATC lists the Port Lincoln Railway Museum in the heritage station, from $6. Against: open Wednesday afternoons only (about 3 h a week), one source, not th
+- Nautilus Arts Centre (eyre): For: SATC lists a 100-year-old foreshore building with two free galleries and a theatre. Against: mainly a performance venue and community arts centre, one sour
+- Magpie Springs (fleurieu): For: Wikivoyage See, board arts page and southaustralia.com name the free art gallery (Avril Thomas) among vineyard gardens with wildlife. Against: weekends-onl
+- Bleasdale Vineyards (fleurieu): Case for: 1850 estate, SA's oldest family winery in Langhorne Creek, with old machinery and a historic site a visitor can wander (only Wikivoyage regional menti
+- Platypus Walk (Rocky River) (kangaroo-island): For: Wikivoyage names a platypus viewing walk of about an hour from the Flinders Chase visitor centre, a real wildlife activity. Against: single counted source,
+- Pelican Lagoon (kangaroo-island): For: board names the marine sanctuary for non-motorised paddling and sunrise/sunset. Against: single counted source, essentially the backdrop of American River 
+- Independence replica and Rebuild Independence Project (kangaroo-island): Tourism board American River page names the Independence replica at the town turnoff and the shed on the wharf where volunteers rebuild the ship. For: named her
+- Clifford's Honey Farm (kangaroo-island): For: Wikivoyage names it with a hive and film viewing and honey tasting, a long-standing roadside stop on the way to the south coast. Against: listed under Buy,
+- Emu Ridge Eucalyptus Distillery (kangaroo-island): For: Wikivoyage and tourism both name it; shop with distillery and live wallaby/kangaroo. Against: essentially a shop and cafe.
+- Old Wisanger School (kangaroo-island): For: tourism board lists the 1884 school as a heritage site visitors can walk through. Against: tiny, one source, access times not stated.
+- Penneshaw Lookout (kangaroo-island): For: Wikivoyage lists it (24/7, free, rolling plains by the ocean). Against: a roadside lookout with a short stop, single source.
+- Kangaroo Island Shipwreck Trail (kangaroo-island): Case for: agency (DEW) Shipwreck Trails page and the tourism board name a signed island-wide heritage trail with interpretive signs at wreck sites, free to visi
+- Western River Wilderness Protection Area (kangaroo-island): For: the tourism board names a track in it to Billy Goat Falls (winter falls) and Western River Cove camp ground with a beach. Against: remote, single counted s
+- St Albans Church (kangaroo-island): Tourism board page names the oldest public building in Kingscote (1884 chancel) and two stained-glass windows incl. one depicting island elements. For: named in
+- The Cairn (kangaroo-island): Tourism page: cairn marking the first Post Office site on Governor Wallen Drive, early settler remains and a walk up Flagstaff Hill with views over Backstairs P
+- Old Cemetery Kingscote (kangaroo-island): Tourism page: South Australia's oldest cemetery, preserved, holding 1836 South Australia Company settlers. For: genuine heritage site, free and open. Against: s
+- Old Mount Gambier Gaol (limestone-coast): For: 1866-1995 gaol, self-guided and guided tours of crimes and cell life, Wikivoyage lists it (under Sleep) and it hosts gigs. Against: operates chiefly as acc
+- Victoria Fossil Cave (limestone-coast): For: the headline Naracoorte tour cave, World Heritage fossil site with its own ticketed tour (naracoortecaves.sa.gov.au). Against: part of Naracoorte Caves Nat
+- Blanchetown (murray-coorong): For: southaustralia.com Riverland pages name Hunter Road Lookout over Lock 1 and the township, and the lock/old bridge with pelicans is a recommended photo stop
+- Cobdogla (murray-coorong): For: southaustralia.com names the Cobdogla Irrigation and Steam Museum (world-famous Humphrey pump, steam train ride, accredited railway). Against: volunteer-ru
+- Long Point (Coorong) (murray-coorong): For: Coorong NP page lists Long Point under Attractions (jetty, sunset fishing over the lagoon). Against: essentially a campground and boat ramp with a jetty; l
+- Narrung and Lake Albert Scenic Loop Drive (murray-coorong): For: SATC attraction page with carpark, picnic area, toilets, free; loop includes ferry and Raukkan. Against: a drive, not a single place, and its stops are Rau
+- Sturt Reserve (murray-coorong): For: southaustralia.com lists it among Murray Bridge attractions: riverfront with cafe, barbecues, Bertha the Bunyip, playground. Against: an ordinary riverside
+- Lavender Federation Trail (murray-coorong): For: southaustralia.com has a journey page for the 325 km Murray Bridge to Clare walking trail, and it is a named long trail. Against: runs mostly through Adela
+- The Bend Motorsport Park (murray-coorong): two judges split: reject (A motorsport circuit sold as paid driver experiences, karting and ticketed race events (Wikipedia-high views come from e) vs keep (The
+- Swan Reach Conservation Park (murray-coorong): Case for: parks.sa.gov.au and SATC name it; it holds the Dark Sky Reserve core, camping and the wildlife. Case against: trails unmarked, core site 4WD only, no 
+- Dickson Reserve (murray-coorong): Case for: themurrayriver and SATC; State-heritage 1924 ferry landing remains, start of the Lower Murray Canoe Trail, riverside at Tailem Bend. Case against: mos
+- Calperum Station (murray-coorong): For: SATC lists it with a 3-hour guided walk and 3-hour driving tour of floodplain and lakes in the biosphere reserve. Against: access is by booked tour only (l
+- Morgan Landseer Museum (murray-coorong): For: SATC names this local museum (river trade, railway, wharf display, 'Windows in Time' mural), a small museum a guide names. Against: open subject to volunte
+- Lock 1 Blanchetown (murray-coorong): For: first of the Murray's 13 locks (1922), still busy, listed on SATC Riverland attractions and overlooked by Hunter Road Lookout. Against: SATC listing is a b
+- Paringa Bridge (murray-coorong): For: Wikivoyage See entry, 1927 heritage bridge with a shared walk/cycle path over the Murray. Against: single source, a walk across is short and Wikivoyage its
+- Ral Ral Loop (murray-coorong): For: Wikivoyage Do entry, 2-day paddle loop from Murtho Forest Landing through Murray River National Park creeks. Against: no agency page names it as 'Ral Ral L
+- Berri Lookout Tower (murray-coorong): For: SATC attraction page, converted water tower with 15.8 m climb and views of Berri and the river, open daily, free. Against: single source and a 15-minute st
+- Loveday Internment Collection (murray-coorong): For: SATC Barmera page names it; WWII camp for up to 5,380 internees, display plus arranged tours of camp ruins. Against: it is a display inside the Barmera Vis
+- Camp Coorong (murray-coorong): For: the Murray River tourism history page names Camp Coorong for immersive Ngarrindjeri cultural experiences, and it has a museum (baskets, boomerangs, photos)
+- Painted Desert (South Australia) (outback): For: Wikivoyage names it, SA Heritage lists the Arckaringa Hills state heritage area, and Arckaringa Station offers a walk (~1.5 km) and lookout at sunset; dist
+- Catholic Catacomb Church (outback): For: Wikivoyage Coober Pedy calls the underground Catholic church 'a significant site' and Coober Pedy's carved-rock churches are a signature visit. Against: Wi
+- Marree Man (outback): For: Wikivoyage Marree See entry and Flinders & Outback both name it; a famous 4.2 km geoglyph. Against: it cannot be seen from the ground and the experience is
+- Kalamurina Sanctuary (outback): For: AWC (the manager) describes a 679,000 ha wildlife sanctuary on the Warburton River with an interpretive walk on Outback Spirit pre-booked tours (April-Octo
+- Kernewek Lowender (yorke): 3 counted sources and 1794 views but a biennial Cornish festival is an event, not a permanent place (COVERAGE.md rule 4); mention in the Copper Coast descriptio
+
+## Added but weak: provisional or approximate pins
+
+- Port Adelaide Historical Society Museum (`adelaide-42`): provisional pin kept: pending serial pin pass
+- Hahndorf Farm Barn (`adelaide-hills-10`): provisional pin kept: pending serial pin pass
+- Lobethal Bushland Park (`adelaide-hills-18`): LOW pin from the serial pin pass
+- Yurrebilla Trail (`adelaide-hills-19`): LOW pin from the serial pin pass
+- Kyeema Conservation Park (`adelaide-hills-21`): LOW pin from the serial pin pass
+- Diggers Walk Belalie Creek (`diggers-walk-belalie-creek`): provisional pin kept: LOW: the route is not in OSM or Wikipedia; point is the creek-side swing bridge/park in 
+- Jamestown Mural Walk and Outdoor Gallery (`jamestown-mural-walk-and-outdoor-gallery`): LOW pin from the serial pin pass
+- Whalers Way (`port-lincoln-1`): LOW pin from the serial pin pass
+- Makybe Diva Statue (`port-lincoln-5`): LOW pin from the serial pin pass
+- Port Lincoln Street Art Trail (`port-lincoln-6`): LOW pin from the serial pin pass
+- Streaky Bay Great White Shark Replica (`streaky-bay-13`): LOW pin from the serial pin pass
+- Pinky Point Lookout (`ceduna-2`): LOW pin from the serial pin pass
+- Whyalla Jetty (`whyalla-5`): LOW pin from the serial pin pass
+- Freycinet Trail (`whyalla-9`): LOW pin from the serial pin pass
+- Gulf and Ranges Trail (`whyalla-10`): LOW pin from the serial pin pass
+- Wudinna Granite Trail (`gawler-ranges-national-park-13`): LOW pin from the serial pin pass
+- Black Stump (`black-stump`): LOW pin from the serial pin pass
+- Cleve Hills Scenic Drive and Lookout (`cleve-hills-scenic-drive-and-lookout`): LOW pin from the serial pin pass
+- Colour Tumby Bay Street Art (`colour-tumby-bay-street-art`): LOW pin from the serial pin pass
+- Cummins Mosaic Trail (`cummins-mosaic-trail`): LOW pin from the serial pin pass
+- Elliston Coastal Trail (`elliston-coastal-trail`): LOW pin from the serial pin pass
+- Mighty Mulloway Sculpture (`mighty-mulloway`): LOW pin from the serial pin pass
+- Onkaparinga River National Park (`mclaren-vale-2`): provisional pin kept: Wikipedia article (park point, not a verified visitor point)
+- Aldinga Beach (`mclaren-vale-6`): provisional pin kept: OSM Nominatim place point for Aldinga Beach (administrative boundary label node, townshi
+- Silver Sands (`mclaren-vale-11`): provisional pin kept: Atlas draft hint (Wikipedia-derived), unverified
+- Moana Sands Conservation Park (`mclaren-vale-12`): provisional pin kept: Wikipedia article Moana Sands Conservation Park (park point)
+- Wangkuntila-Aldinga Conservation Park (`mclaren-vale-13`): provisional pin kept: southaustralia.com listing coordinates (tourism board point for the attraction); resolve
+- Onkaparinga River Recreation Park (`mclaren-vale-14`): provisional pin kept: southaustralia.com listing coordinates (tourism board point for the attraction); resolve
+- Cox Scrub Conservation Park (`mclaren-vale-15`): provisional pin kept: southaustralia.com listing coordinates (tourism board point for the attraction); resolve
+- Hindmarsh River Walking Trail (`victor-harbor-14`): provisional pin kept: southaustralia.com listing geotag (trail start area near Bridge Terrace), NOT the route 
+- Inman River Trail (`victor-harbor-15`): provisional pin kept: southaustralia.com listing geotag for the Inman River Trail, NOT the route midpoint
+- Hindmarsh Island (`goolwa-5`): provisional pin kept: southaustralia.com Hindmarsh Island destination point (island village); Wikipedia's -35.
+- Tolderol Game Reserve (`goolwa-7`): provisional pin kept: southaustralia.com listing coordinates; Wikipedia 'Tolderol Game Reserve' (-35.370761,13
+- Animal Farm (`goolwa-8`): provisional pin kept: southaustralia.com listing coordinates (85 Airport Road, next to Goolwa Airport per the 
+- Softfoot Alpaca Farm (`victor-harbor-16`): provisional pin kept: southaustralia.com listing coordinates (tourism board point for the attraction); resolve
+- Hawker Mural Trail (`ikara-flinders-ranges-20`): LOW pin from the serial pin pass
+- Blanche Harbor (`port-augusta-5`): LOW pin from the serial pin pass
+- Port Pirie Heritage Trail (`port-pirie-1`): LOW pin from the serial pin pass
+- Port Pirie Mural Trail (`port-pirie-2`): LOW pin from the serial pin pass
+- Melrose Courthouse Heritage and Interpretive Centre (`mount-remarkable-4`): LOW pin from the serial pin pass
+- Italowie Gorge (`vulkathunha-gammon-ranges-3`): LOW pin from the serial pin pass
+- Weetootla Gorge (`vulkathunha-gammon-ranges-4`): LOW pin from the serial pin pass
+- Pekina Creek Rock Carvings (`pekina-creek-rock-carvings`): LOW pin from the serial pin pass
+- Aroona Ruins (`ikara-flinders-ranges-26`): provisional pin kept: pending serial pin pass
+- Red Banks Beach (`kangaroo-island-23`): LOW pin from the serial pin pass
+- Fireball Bates Walking Trail (`kangaroo-island-30`): provisional pin kept: LOW: route not in OSM or Photon. Used the trailhead, OSM tourism=information 'Kangaroo I
+- Timber Creek Walk (`kangaroo-island-37`): provisional pin kept: southaustralia.com listing geotag (Timber Creek Walk, Seagers Road); LOW: not an OSM fea
+- Tadpole Cove Walk (`kangaroo-island-39`): provisional pin kept: southaustralia.com listing geotag (Tadpole Cove Walk); LOW: start/car park by the thresh
+- Southend Beach (`beachport-6`): LOW pin from the serial pin pass
+- Murray Bridge Regional Gallery (`murray-bridge-3`): LOW pin from the serial pin pass
+- Murray Bridge Discovery Trail (`murray-bridge-9`): LOW pin from the serial pin pass
+- Tailem Bend Historic Rail Trail (`murray-bridge-14`): LOW pin from the serial pin pass
+- Lower Murray Canoe Trail (`murray-bridge-15`): LOW pin from the serial pin pass
+- Mannum Dock Discovery Centre (`mannum-1`): LOW pin from the serial pin pass
+- Nukan Kungun Hike (`coorong-national-park-4`): LOW pin from the serial pin pass
+- Meningie Walking and Cycling Trails (`coorong-national-park-18`): LOW pin from the serial pin pass
+- Chowilla Game Reserve (`riverland-5`): LOW pin from the serial pin pass
+- Loch Luna and Moorook Game Reserves (`riverland-14`): LOW pin from the serial pin pass
+- Danggali Conservation Park (`riverland-15`): LOW pin from the serial pin pass
+- Possum Parade (`riverland-16`): LOW pin from the serial pin pass
+- Loxton Tree Sculptures (`riverland-19`): LOW pin from the serial pin pass
+- Bulyong Island (`riverland-20`): LOW pin from the serial pin pass
+- Morgan Conservation Park (`riverland-24`): LOW pin from the serial pin pass
+- Hart Lagoon Walking Trail (`riverland-26`): LOW pin from the serial pin pass
+- Headings Cliff Lookout (`riverland-28`): LOW pin from the serial pin pass
+- Martin Bend Wetland and Walking Trail (`riverland-30`): LOW pin from the serial pin pass
+- Swan Reach Observatory (`swan-reach-observatory`): LOW pin from the serial pin pass
+- River Murray International Dark Sky Reserve (`river-murray-dark-sky-reserve`): LOW pin from the serial pin pass
+- Ngaut Ngaut Conservation Park (`ngaut-ngaut-conservation-park`): LOW pin from the serial pin pass
+- Brookfield Conservation Park (`brookfield-conservation-park`): LOW pin from the serial pin pass
+- Karoonda Art and Sculpture Trail (`karoonda-art-sculpture-trail`): LOW pin from the serial pin pass
+- Mount Boothby Conservation Park (`mount-boothby-conservation-park`): LOW pin from the serial pin pass
+- Innamincka Regional Reserve (`innamincka-1`): provisional pin kept: LOW: Commons geotagged median (-27.7454,140.7541); Wikipedia -27.541,140.596 is a centro
+- Arid Recovery Reserve (`arid-recovery-reserve`): provisional pin kept: LOW: approximate point on Borefield Road at Olympic Dam (OSM highway); the tour gate is 
+- West Cape Headland Hike (`innes-national-park-6`): provisional pin kept: Wikipedia West Cape (South Australia) headland point (LOW: Commons median -35.244899,136
+- Stenhouse Bay Lookout Walk (`innes-national-park-8`): provisional pin kept: OSM man_made=pier "Stenhouse Bay Jetty" as proxy for the Stenhouse Jetty car park trailh
+
+## Not verified / needs a browser
+
+- {"id": "adelaide-23", "url": "https://spacediscovery.gov.au/", "why": "fetch failed (status 0); confirm official site and free entry"}
+- {"id": "adelaide-15", "url": "https://www.migrationmuseum.sa.gov.au/", "why": "fetch failed; confirm closure dates on the History Trust page"}
+- {"id": "adelaide-30", "url": "City of Port Adelaide Enfield Largs Bay foreshore page", "why": "blocked (403) per draft; only used for facts already in the draft"}
+- {"id": "adelaide-46", "url": "https://www.marion.sa.gov.au/warriparinga", "why": "HTTP 202 to scripts; need cost, opening and an official link"}
+- {"id": "adelaide-37", "url": "https://www.holdfast.sa.gov.au/explore/kingston-park-coastal-reserve", "why": "HTTP 202 to scripts; council page for a possible link (URL guessed, find it from the counci
+- {"id": "adelaide-45", "url": "https://www.carrickhill.sa.gov.au/", "why": "admission page path unknown; confirm the House Museum price"}
+- {"id": "adelaide-53", "url": "https://www.holdfast.sa.gov.au/discover-our-place/history-culture/bay-discovery-centre", "why": "returns status 202 bot-wall; need entry cost"}
+- {"id": "adelaide-61", "url": "https://www.sawater.com.au/community-and-education/our-reservoirs/happy-valley-reservoir", "why": "403 bot wall; cost/link and reserve status unchecked"}
+- {"id": "adelaide-hills-17", "url": "https://www.sawater.com.au/community-and-environment/recreation/mount-bold-reservoir", "why": "403 bot wall"}
+- {"id": "adelaide-hills-19", "url": "https://www.yurrebilla.com.au/", "why": "blank to script"}
+- {"id": "adelaide-hills-13", "url": "https://motor.history.sa.gov.au/", "why": "confirm admission price"}
+- {"id": "barossa-valley-1", "url": "https://www.penfolds.com/en-au/", "why": "deep links return 410 and the homepage title does not name the place; confirm the cellar door page and price in a browser"}
+- {"id": "barossa-valley-5", "url": "https://www.barossamuseum.org.au", "why": "site did not load by script; barossa.com listing returned 403; find the official site and hours"}
+- {"id": "clare-valley-3", "url": "https://martindalehall.com.au/", "why": "Fetched fine; listed only to double-check the $20 adult fee and opening days in a browser."}
+- {"id": "bundaleer-forest", "url": "https://www.sawater.com.au/reservoir-reserves/reservoir-reserves/bundaleer", "why": "Cloudflare 'Just a moment'; check title and entrance/car park location"}
+- {"id": "bowman-park", "url": "https://www.pirie.sa.gov.au/bowman-park", "why": "403 bot wall; check managing body, fee, ticketUrl"}
+- {"id": "port-lincoln-4", "url": "https://www.portlincoln.sa.gov.au", "why": "council site blocked (Cloudflare); may be the official page for Old Mill, Makybe Diva, Parnkalla Trail"}
+- {"id": "ceduna-5", "url": "https://oysterdeckexperience.com.au", "why": "unreachable by script (fetch failed); operator price and site"}
+- {"id": "ceduna-7", "url": "https://www.penongwindmill.com", "why": "guessed domain, fetch failed; find the museum's real site"}
+- {"id": "gawler-ranges-national-park-6", "url": "https://www.wudinna.sa.gov.au/our-services/council-facilities/park-search/mount-wudinna-recreation-reserve", "why": "403 bot wall; confirm council page 
+- {"id": "gawler-ranges-national-park-8", "url": "https://www.wudinna.sa.gov.au/our-services/council-facilities/park-search/tcharkuldu-rock-recreation-reserve", "why": "403 bot wall"}
+- {"id": "redbanks-beach", "url": "https://www.cleve.sa.gov.au/tourism/things-to-see-and-do/redbanks-beach", "why": "403 bot wall; ticketUrl taken from eyrepeninsula.com listing, title not checked"}
+- {"id": "gawler-ranges-national-park-13", "url": "https://www.wudinna.sa.gov.au/touristinformation/attractions/other-attractions", "why": "403; may give a trail page for ticketUrl"}
+- {"id": "cleve-hills-scenic-drive-and-lookout", "url": "https://www.cleve.sa.gov.au/tourism", "why": "403; find scenic drive page"}
+- {"id": "observation-hill-lookout", "url": "https://www.cleve.sa.gov.au/tourism", "why": "403; find Observation Hill page"}
+- {"id": "arno-bay-estuary-boardwalk", "url": "https://www.cleve.sa.gov.au/tourism", "why": "403; find boardwalk page"}
+- {"id": "franklin-harbor-conservation-park", "url": "https://www.franklinharbour.sa.gov.au", "why": "403; council may link the park page"}
+- {"id": "federation-hill-lookout", "url": "https://www.cleve.sa.gov.au/tourism/things-to-see-and-do/federation-lookout", "why": "403 bot wall; candidate ticketUrl, also for darke-peak"}
+- {"id": "talia-caves", "url": "https://www.elliston.sa.gov.au", "why": "403 bot wall; candidate ticketUrl for talia-caves and locks-well-walk"}
+- {"id": "kimba-museum", "url": "https://www.kimba.sa.gov.au/tourist-information", "why": "403 bot wall; confirm official site, adult price and opening days"}
+- {"id": "big-galah", "url": "https://www.kimba.sa.gov.au/tourist-information", "why": "403 bot wall; confirm Big Galah and halfway sign"}
+- {"id": "goolwa-3", "url": "https://www.alexandrina.sa.gov.au/discover/visit/signal-point-gallery", "why": "council page behind bot wall; confirm title and use as ticketUrl if it names Signal Point"}
+- {"id": "victor-harbor-9", "url": "https://www.victor.sa.gov.au/community-information/community-facilities/parks-gardens-reserves/kleinigs-hill-lookout", "why": "council page behind bot wall; confirm f
+- {"id": "goolwa-8", "url": "https://www.goolwaanimalfarm.com.au/", "why": "Prices tab is script-rendered; read the current adult price"}
+- {"id": "goolwa-10", "url": "https://escapegvh.com.au/things-to-do/goolwa-motor-museum/", "why": "Cloudflare bot wall (403); would show whether the museum is open"}
+- {"id": "ikara-flinders-ranges-16", "url": "https://www.frc.sa.gov.au/tourism", "why": "Flinders Ranges Council tourism page answers Just a moment; only needed if a ticketUrl is wanted for Jarvis Hill"
+- {"id": "quorn-2", "url": "https://www.frc.sa.gov.au/", "why": "Flinders Ranges Council, Warren Gorge steward page; 403 bot wall"}
+- {"id": "port-pirie-1", "url": "https://www.pirie.sa.gov.au/tourism/attractionsexperiences/walking-and-cycling", "why": "Port Pirie Regional Council heritage trail page; 403 bot wall"}
+- {"id": "port-augusta-3", "url": "https://www.portaugusta.sa.gov.au/", "why": "council water tower page; 403 bot wall"}
+- {"id": "port-pirie-2", "url": "https://www.pirie.sa.gov.au/about-council", "why": "Council site behind Cloudflare; find the mural trail page for ticketUrl (or confirm there is none)"}
+- {"id": "port-pirie-5", "url": "https://www.pirie.sa.gov.au/tourism/visitor-information/attractions", "why": "Council attractions pages blocked; look for official Port Germein Jetty and Solomontown Bea
+- {"id": "mawson-trail", "url": "https://orsr.sa.gov.au/get-active/recreation-and-trails/mawson-trail", "why": "bot wall (Just a moment)"}
+- {"id": "steamtown-heritage-rail-centre", "url": "https://www.maketrackstopeterborough.com.au/", "why": "403 bot wall; may list current prices, carriage museum and print shop details, reopening"}
+- {"id": "town-carriage-museum", "url": "https://www.peterborough.sa.gov.au/", "why": "403 bot wall; council page may give status/price"}
+- {"id": "kangaroo-island-50", "url": "https://www.parks.sa.gov.au/parks/flinders-chase-national-park", "why": "confirm current Flinders Chase site entry price ($22.40 header vs $13 Fees tab) and confir
+- {"id": "mount-gambier-4", "url": "https://visitmountgambier.com.au/travel/engelbrecht-cave-2/ (follow \"Visit website\") and https://www.mountgambier.sa.gov.au", "why": "official site and current tour
+- {"id": "mount-gambier-9", "url": "https://kilsbysinkhole.com/sinkhole-tours/", "why": "tour and snorkel prices are in a booking widget"}
+- {"id": "mount-gambier-8", "url": "https://www.dcgrant.sa.gov.au", "why": "steward page and any fee for Little Blue Lake (site blocks scripts)"}
+- {"id": "mount-gambier-12", "url": "https://www.portmacdonnell.com", "why": "lighthouse access and steward page (Cloudflare wall)"}
+- {"id": "mount-gambier-13", "url": "https://www.dcgrant.sa.gov.au/community/pmcc/museum", "why": "403 to scripts; confirm it is the museum's official page (tourism listing names it as official website)
+- {"id": "bordertown-wildlife-park", "url": "https://www.tatiara.sa.gov.au/council-services/parks-and-gardens/bordertown-wildlife-park", "why": "Tatiara council site returns Cloudflare 403"}
+- {"id": "kingston-big-lobster", "url": "https://www.kingstondc.sa.gov.au/discover/things-to-see-and-do/the-big-lobster", "why": "Kingston council site returns Cloudflare 403; could serve as ticketUrl"}
+- {"id": "murray-bridge-7", "url": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/the-round-house", "why": "council site bot wall; confirm ticketUrl and price"}
+- {"id": "murray-bridge-8", "url": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/captains-cottage", "why": "council site bot wall; confirm ticketUrl and $5"}
+- {"id": "murray-bridge-5", "url": "https://www.murraybridge.sa.gov.au/services/your-community/facilities-for-the-community/parks-reserves-and-ovals/points-of-interest/swanport-wetlands", "why": "possib
+- {"id": "mannum-1", "url": "https://www.mid-murray.sa.gov.au", "why": "Council site (Cloudflare wall) likely hosts the Mannum Dock page; find exact URL for ticketUrl"}
+- {"id": "murray-bridge-13", "url": "https://www.murraybridge.sa.gov.au", "why": "Council site blocked; check for a Tailem Bend rail museum / trail page"}
+- {"id": "coorong-national-park-11", "url": "https://www.raukkan.com", "why": "fetch failed; check official visitor page, museum entry and hours"}
+- {"id": "riverland-1", "url": "http://www.thevillageloxton.com.au", "why": "site unreachable by script (SSL/fetch failed); verify title and price"}
+- {"id": "riverland-3", "url": "https://banrockstation.com.au", "why": "wetland centre page/price and ticketUrl not found by script"}
+- {"id": "riverland-10", "url": "https://www.berribarmera.sa.gov.au/our-community/venues/points-of-interest/attractions/rockys-hall-of-fame-and-pioneers-museum", "why": "403 to scripts; confirm title an
+- {"id": "mallee-tourist-heritage-centre", "url": "https://www.southernmallee.sa.gov.au/tourism/attractions/museums/mallee-tourist-and-heritage-centre", "why": "Cloudflare block; confirm price/official 
+- {"id": "coonalpyn-silo-art", "url": "https://www.coorong.sa.gov.au/community/arts-and-cultural/creatingcoonalpyn", "why": "Cloudflare block; possible official page"}
+- {"id": "coober-pedy-3", "url": "toms opal mine official site", "why": "no official site found by script/search"}
+- {"id": "coober-pedy-6", "url": "Faye's Underground Home official site", "why": "no site found"}
+- {"id": "mungerannie-hotel", "url": "https://www.mungeranniehotel.com.au", "why": "domain unconfirmed; fetch failed"}
+- {"id": "woomera-heritage-centre", "url": "https://www.woomera.com.au/", "why": "splash page, deep links return 200 for any path; find the Heritage Centre page and price"}
+## Photos still missing (please supply, or approve the official candidates)
+
+**Why-visit slots with no photo (grey cards), first because they show on the destination sheet:**
+
+- Adelaide Hills reason 2: "Walk bushland trails above the city"
+- Barossa Valley reason 2: "Wander German-heritage villages and bakeries"
+- Burra reason 2: "Unlock locked heritage sites with a key"
+- Clare Valley reason 1: "Taste Riesling at historic cellar doors"
+- Clare Valley reason 2: "Ride the old railway past vineyards"
+- Ceduna reason 1: "Eat fresh oysters from the farms"
+- Ceduna reason 2: "Surf remote Cactus Beach"
+- Ceduna reason 3: "Watch shorebirds on mangrove coasts"
+- Gawler Ranges National Park reason 1: "Walk among ancient volcanic rock formations"
+- Gawler Ranges National Park reason 2: "Climb granite domes for wide views"
+- Gawler Ranges National Park reason 3: "See wildflowers across outback plains"
+- Lincoln National Park reason 2: "Camp beside the bay"
+- Lincoln National Park reason 3: "Watch whales in winter"
+- Port Lincoln reason 1: "Dive with great white sharks"
+- Port Lincoln reason 2: "Eat fresh local seafood"
+- Streaky Bay reason 3: "Taste oysters from the bay"
+- Whyalla reason 1: "Dive with spawning cuttlefish in winter"
+- Whyalla reason 3: "Walk Spencer Gulf's coastal trails"
+- Goolwa reason 2: "Watch waterbirds near the Murray Mouth"
+- Victor Harbor reason 1: "Watch southern right whales from shore"
+- Yankalilla reason 1: "Walk bush and clifftop coast trails"
+- Mount Remarkable National Park reason 2: "Ride single-track below the range"
+- Mount Remarkable National Park reason 3: "Spot echidnas and lace monitors"
+- Port Pirie reason 2: "Stroll a long wooden jetty"
+- Quorn reason 2: "Walk ridges and rocky gorges"
+- Southern Flinders Ranges reason 2: "Cycle rail and long-distance trails"
+- Vulkathunha-Gammon Ranges National Park reason 1: "Hike through rugged gorges"
+- Vulkathunha-Gammon Ranges National Park reason 2: "Stargaze under dark outback skies"
+- Beachport reason 1: "Float in a salt lake"
+- Beachport reason 2: "Walk limestone cliffs and coastal trails"
+- Mount Gambier reason 3: "Walk up an extinct volcano"
+- Naracoorte reason 3: "Watch waterbirds on the wetlands"
+- Robe reason 3: "Wander coastal dunes and lakes"
+- Coorong National Park reason 2: "Drive the ocean beach by 4WD"
+- Coorong National Park reason 3: "Paddle the quiet lagoon by kayak"
+- Mannum reason 2: "Spot birds from the river"
+- Murray Bridge reason 3: "Walk wetlands for birdlife"
+- Riverland reason 1: "Paddle through red gum creeks"
+- Innamincka reason 1: "Paddle the waterholes of Cooper Creek"
+- Innamincka reason 2: "Camp and fish in the outback"
+- Copper Coast reason 3: "Cycle the sealed coastal rail trail"
+- Yorke Peninsula reason 3: "Swim in tidal pools and bays"
+
+**Destinations with no header (placeholder):** Gawler Ranges National Park, Leigh Creek, Port Augusta, Port Pirie, Quorn, Naracoorte, Innamincka
+
+**20 of these slots have an official (tourism-board / operator) photo candidate** in `curation/sa/lens/gaps/out-*.json` (images in `gaps/img/`); they are not openly licensed and permission is not confirmed, so none is applied. Approve and I will apply them after the blind judges look at them: dest:burra:why2, dest:ceduna:why1, dest:coorong-national-park:why2, dest:gawler-ranges-national-park:header, dest:gawler-ranges-national-park:why1, dest:goolwa:why2, dest:innamincka:why1, dest:innamincka:why2, dest:mount-gambier:why3, dest:naracoorte:why1, dest:naracoorte:why2, dest:port-augusta:why1, dest:port-lincoln:why1, dest:port-lincoln:why2, dest:port-pirie:header, dest:quorn:why2, dest:riverland:why1, dest:streaky-bay:why3, dest:vulkathunha-gammon-ranges:why2, dest:whyalla:why3
+
+**Spots with no photo (27):** mclaren-vale-9, victor-harbor-6, victor-harbor-8, victor-harbor-16, port-lincoln-2, streaky-bay-8, streaky-bay-13, gawler-ranges-national-park-8, gawler-ranges-national-park-9, cleve-hills-scenic-drive-and-lookout, mighty-mulloway, railway-tjukurpa-museum, ikara-flinders-ranges-15, southern-flinders-ranges-5, pekina-creek-rock-carvings, adelaide-hills-21, thompson-beach, murray-bridge-13, coorong-national-park-4, riverland-12, riverland-15, riverland-17, riverland-31, lameroo-silo-art, bundaleer-forest, diggers-walk-belalie-creek, yorke-peninsula-15
+
+**All other new spots use the Wikipedia lead image of their article (default). Those 557 photos have had only the automatic pre-filter, not a visual image-judge pass; the Lens spot pass still has to run.**
+
+
+## Spots charging with no ticket link (13), see lint
+
+- adelaide-42 (Port Adelaide Historical Society Museum)
+- barossa-valley-5 (Barossa Museum)
+- ikara-flinders-ranges-7 (Sacred Canyon)
+- quorn-2 (Warren Gorge)
+- mount-gambier-4 (Engelbrecht Cave)
+- mannum-1 (Mannum Dock Discovery Centre)
+- coober-pedy-3 (Tom's Working Opal Mine)
+- coober-pedy-6 (Faye's Underground Home)
+- coober-pedy-9 (Coober Pedy Golf Club)
+- yorke-peninsula-9 (Port Victoria Maritime Museum)
+- yorke-peninsula-17 (Stansbury Museum)
+- yorke-peninsula-18 (Edithburgh Museum)
+- yorke-peninsula-19 (Bublacowie Military Museum)
+## Pre-filter failures among the new SA photos (these need a replacement photo; the image judges have not run on spots)
+
+- Beachport (header): BeachportJetty.JPG: also used for robe
+- Innamincka (header): Innamincka aerial.jpg: 500px wide, minimum 1500 for a header
+- Leigh Creek (header): Hills north of Leigh Creek (heading south on B83).jpg: aspect 2.29 outside 0.6–2
+- Naracoorte (header): South Australian Railways V class locomotive no 9 displayed at Naracoorte.jpg: also used for lincoln-national-park
+- Port Augusta (header): Jacaranda Time Port Augusta.jpg: 1000px wide, minimum 1500 for a header
+- Port Pirie (header): Grain silos, smelter and smoke stack from across the river, Port Pirie, South Australia.jpg: 633px wide, minimum 1500 for a header
+- Adelaide Dolphin Sanctuary (spot): Tursiops aduncus, Port River, Adelaide, Australia - 2003.jpg: 931px wide, minimum 960 for a spot
+- Adelaide Zoo (spot): Sumatran tiger.JPG: 752px wide, minimum 960 for a spot
+- Admirals Arch (spot): Dewey Arch, New York.jpg: dated 1900; category: Black and white photographs of Manhattan, New York City; Images from the Library of Congress
+- Alligator Gorge (spot): 1900sc Postcard-Alligator 01.jpg: dated 1900; category: Postcards of Florida; Postcards of alligators; 541px wide, minimum 960 for a spot
+- Andamooka, South Australia (spot): View of the Andamooka town centre in South Australia, seen from One Tree Hill.jpg: also used for coober-pedy
+- Animal Farm (spot): Animal Farm - 1st edition.jpg: dated 1945; 543px wide, minimum 960 for a spot
+- Anstey Hill Recreation Park (spot): Tea Tree Gully Quarry - Anstey Hill Recreation Park.jpg: also used for kangaroo-island
+- Ardrossan Heritage Museum (spot): Ardrossan.jpg: 800px wide, minimum 960 for a spot
+- Ardrossan Red Cliffs (spot): Ardrossan.jpg: 800px wide, minimum 960 for a spot
+- Arkaroola (spot): ArkaroolaAir.jpg: 845px wide, minimum 960 for a spot
+- Arkaroola Observatories (spot): ArkaroolaAir.jpg: 845px wide, minimum 960 for a spot
+- Auburn, South Australia (spot): Post Office, Auburn.JPG: 448px wide, minimum 960 for a spot
+- Bald Hill Walk (spot): Telescope hill fire tower 4-3-1918-1(nys archives).jpg: 675px wide, minimum 960 for a spot
+- Beetaloo Reservoir (spot): Beetaloo Reservoir(GN04464).jpg: dated 1924
+- Beltana, South Australia (spot): Beltana Population Decline.JPG: 718px wide, minimum 960 for a spot
+- Bertha the Bunyip (spot): Job Harris 1840-1882.jpg: 954px wide, minimum 960 for a spot
+- Beyeria Walk (spot): Tea Tree Gully Quarry - Anstey Hill Recreation Park.jpg: also used for adelaide
+- Big Galah (spot): Big Things Postcard.jpg: also used for coober-pedy, kangaroo-island, riverland, coorong-national-park, ceduna
+- Big Winch (spot): Big Things Postcard.jpg: also used for big-galah, kangaroo-island, riverland, coorong-national-park, ceduna
+- Blanche Harbor (spot): Rose Blanche-Harbor Le Cou 960701 04 3558 2351.jpg: dated 1996
+- Bon Accord Mine Complex (spot): Duran Duran 1983.jpg: dated 1983; category: Black and white group photographs of musicians
+- Border Cliffs (spot): Bunda Cliffs, 2017 (01).jpg: also used for bunda-cliffs
+- Bordertown Wildlife Park (spot): Macropus rufogriseus rufogriseus Juvenile 2.jpg: also used for adelaide
+- Bowman Park (spot): BowmanPark1.jpg: 490px wide, minimum 960 for a spot
+- Brachina Gorge (spot): Flinders Ranges SA 5434, Australia - panoramio (21).jpg: also used for southern-flinders-rail-trail
+- Brookfield Conservation Park (spot): Brookfield-zoo.jpg: 890px wide, minimum 960 for a spot
+- Brown Beach (spot): LIBBIE BEACH HOEL.jpg: 752px wide, minimum 960 for a spot
+- Bunda Cliffs (spot): Bunda Cliffs, 2017 (01).jpg: also used for riverland
+- Bungaree Station (spot): Sheep Station at Bungaree(GN07992).jpg: dated 1925
+- Burra railway station (spot): Burra station with Peterborough-bound Bluebird railcar (103 & 260) 4 Jun 1969 (NRM 97-1262-g028-0890).jpg: dated 1969
+- Cactus Beach (spot): White shark.jpg: also used for innes-national-park
+- Cape Borda Lightstation (spot): Cape Borda Lighthouse.jpg: 640px wide, minimum 960 for a spot
+- Cape Gantheaume Conservation Park (spot): Murray Lagoon.jpg: 640px wide, minimum 960 for a spot
+- Cape Northumberland Lighthouse (spot): Grant LGA.png: category: Maps of local government areas in South Australia; 400px wide, minimum 960 for a spot
+- Carappee Hill Conservation Park (spot): Stalactite in Kelly Hill.JPG: also used for kangaroo-island
+- Cleland National Park (spot): Cleland-conservation-park.svg: category: Maps of Adelaide; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 834px wide, minimum 960 for a spot
+- Cleland Wildlife Park (spot): Cleland-conservation-park.svg: category: Maps of Adelaide; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 834px wide, minimum 960 for a spot
+- Colour Tumby Bay Street Art (spot): Flag of South Australia.svg: dated 1993; category: Blue, orange, red, white flags of Australia; SVG flags of South Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml)
+- Coonalpyn Downs Silo Art (spot): Coonalpyn aerial.jpg: 450px wide, minimum 960 for a spot
+- Coopers Brewery (spot): Coopers Brewery logo.svg: no metadata from Commons (file renamed or deleted?)
+- Corny Point Lighthouse (spot): Corny Point Lighthouse.JPG: 660px wide, minimum 960 for a spot
+- Coward Springs (spot): Coward Springs(GN05680).jpg: dated 1935
+- Cummins Mosaic Trail (spot): Lululemon Athletica logo.svg: category: SVG logos of fashion companies in Canada; SVG logos of sporting goods manufacturers; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 33px wide, minimum 960 for a spot
+- Curdimurka (spot): Curdimurka sign, Central Australia Railway.jpg: 800px wide, minimum 960 for a spot
+- Curley Creek Hike (spot): Four Commedia dell’Arte Figures claude-gillot.jpg: 640px wide, minimum 960 for a spot
+- Dalhousie Springs (spot): Dalhousie Springs in Witjira National Park - steps into the warm water.JPG: also used for witjira-national-park
+- Darke Peak (spot): Eucalyptus cretata buds.jpg: 768px wide, minimum 960 for a spot
+- Deep Creek National Park (spot): DCL-May2008.jpg: 800px wide, minimum 960 for a spot
+- Eden Valley (spot): East of Eden (1952 1st ed dust jacket).jpg: dated 1952
+- Ediacaran Golden Spike (spot): Mollweide Paleographic Map of Earth, 600 Ma (Ediacaran Period).png: category: Paleogeographic maps of the world with Mollweide projection; file name suggests a map, drawing, logo or similar
+- Elizabeth Symon Nursing Home (spot): Innamincka aerial.jpg: 500px wide, minimum 960 for a spot
+- Ethel Wreck (spot): White shark.jpg: also used for ceduna
+- Ewens Ponds (spot): South East Drainage, Ewen Ponds showing row boat with two men(GN11011).jpg: dated 1945
+- Faye's Underground Home (spot): Vanilla Ice 2010 (cropped).jpg: 517px wide, minimum 960 for a spot
+- Ferries-McDonald Conservation Park (spot): Peninsula Blvd in Hempstead Lake State Park.jpg: 869px wide, minimum 960 for a spot
+- Fishery Bay (spot): Sleaford Bay(GN05637).jpg: dated 1935; also used for lincoln-national-park
+- Fishery Beach (spot): Whaling-dangers of the whale fishery.jpeg: dated 1820
+- Frenchmans Rock (spot): Frenchmans Cap.JPG: also used for franklin-gordon-wild-rivers
+- Freycinet Trail (spot): Rose Marie Pinon de Freycinet.jpg: dated 1812
+- Gawler, South Australia (spot): Gawler primary school.jpg: 900px wide, minimum 960 for a spot
+- Giant Australian Cuttlefish Aggregation (spot): Sepia apama 2.jpg: category: Sepia apama; 568px wide, minimum 960 for a spot
+- Glacier Rock (spot): Glacierrock1.gif: not a photograph file (image/gif); 500px wide, minimum 960 for a spot
+- Glenthorne National Park–Ityamaiitpinna Yarta (spot): Macropus rufogriseus rufogriseus Juvenile 2.jpg: also used for bordertown-wildlife-park
+- Godfrey's Landing (spot): Sedd-el-Bahr from River Clyde.jpg: dated 1915; category: Black and white photographs
+- Goolwa Barrage (spot): Map -- location of barrages at the mouth of the River Murray.tif: category: Maps of South Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Gorge Wildlife Park (spot): Geikie Gorge.JPG: 540px wide, minimum 960 for a spot
+- Hahndorf Academy (spot): T. W. Boehm.jpeg: dated 1860; 675px wide, minimum 960 for a spot
+- Harry Butler (aviator) (spot): Harry Butler RFC.jpg: dated 1918; 300px wide, minimum 960 for a spot
+- Hawker Mural Trail (spot): Upper class Burmese couple in the 1890s.jpg: dated 1890; 929px wide, minimum 960 for a spot
+- Headings Cliff Lookout (spot): Pearl Hogg at the wheel of P.S. Kookaburra.jpg: dated 1950
+- Heaven Clifftop Viewpoint (spot): Map of the Murray River, south-eastern Australia.tif: category: Maps of rivers of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Heysen Trail (spot): Parachilna Gorge, Flinders Ranges - South Australia.jpg: also used for ikara-flinders-ranges
+- Hindmarsh Falls (spot): John Hindmarsh 2.jpeg: dated 1856; 704px wide, minimum 960 for a spot
+- Hindmarsh River Walking Trail (spot): Encounter bay pt elliot.jpg: 600px wide, minimum 960 for a spot
+- Hope Cottage National Trust Museum (spot): Robert Burns Birthplace Museum - geograph.org.uk - 4561998.jpg: 640px wide, minimum 960 for a spot
+- Inman River Trail (spot): Map of Santa Fe Trail-NPS.jpg: category: Illustrations by Robert McGinnis; Maps of the Santa Fe Trail; file name suggests a map, drawing, logo or similar
+- Innamincka Regional Reserve (spot): Innamincka aerial.jpg: 500px wide, minimum 960 for a spot
+- Jack Point Pelican Observatory Walk (spot): View of downtown San Antonio, Texas, from the Tower of the Americas LCCN2014633530.tif: category: Images from the Library of Congress; Library of Congress-no known copyright restrictions; not a photograph file (image/tiff)
+- Jamestown, South Australia (spot): Kanangra winter wonderland.jpg: 
+- JamFactory (spot): Jam factory.jpg: 640px wide, minimum 960 for a spot
+- Kanku-Breakaways Conservation Park (spot): Serpentine Lakes.JPG: also used for yeldulknie-conservation-park
+- Kapunda (spot): Kapunda street view.JPG: 640px wide, minimum 960 for a spot
+- Karoonda Art and Sculpture Trail (spot): Karoonda mainstreet.jpg: also used for karoonda-silo-art
+- Karoonda Day and Night Silo Art (spot): Karoonda mainstreet.jpg: also used for karoonda-art-sculpture-trail
+- Karte Conservation Park (spot): PinnarooSA.JPG: also used for mallee-tourist-heritage-centre
+- Kati Thanda–Lake Eyre National Park (spot): NEO lake eyre big.jpg: dated 1999; 772px wide, minimum 960 for a spot
+- Kelly Hill Caves (spot): Stalactite in Kelly Hill.JPG: also used for carappee-hill-conservation-park
+- Kimba Museum (spot): Osamu Tezuka 1951 Scan10008-2.JPG: dated 1951; 595px wide, minimum 960 for a spot
+- Kinchina Conservation Park (spot): Kaiserstuhl South Australia.JPG: also used for wittelbee-conservation-park
+- King George Beach (spot): Map of King George Sound drawn using Paint.jpg: category: Maps of parts of Western Australia; file name suggests a map, drawing, logo or similar; 882px wide, minimum 960 for a spot
+- Kingscote Silo Art (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, riverland, coorong-national-park, ceduna
+- Kingston Park Coastal Reserve (spot): Año Nuevo State Reserve.JPG: 800px wide, minimum 960 for a spot
+- Lake Bumbunga (spot): Lake Bumbunga satellite view in summer.jpg: file name suggests a map, drawing, logo or similar
+- Lake Gilles Conservation Park (spot): 01 Lake Gilles 03.JPG: also used for lake-newland-conservation-park
+- Lake Hart (spot): Hart Lake (Lake County, Oregon scenic images) (lakDA0132).jpg: 488px wide, minimum 960 for a spot
+- Lake MacDonnell (spot): Sir R. G. MacDonnell (Cropped).png: dated 1871; 165px wide, minimum 960 for a spot
+- Lake Newland Conservation Park (spot): 01 Lake Gilles 03.JPG: also used for lake-gilles
+- Langhorne Creek, South Australia (spot): Flooded vineyards, Langhorne Creek.JPG: 640px wide, minimum 960 for a spot
+- Lashmar Conservation Park (spot): Thylacoleo skeleton in Naracoorte Caves.jpg: also used for naracoorte
+- Little Blue Lake (spot): Little Blue Run Dam.jpg: 540px wide, minimum 960 for a spot
+- Little Sahara (Kangaroo Island) (spot): Little Sahara, Kangaroo Island.jpg: 640px wide, minimum 960 for a spot
+- Locks Well Walk (spot): Panama Canal Map EN.svg: category: Maps of Isthmus of Panama; Maps of the Panama Canal; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 400px wide, minimum 960 for a spot
+- Loxton Tree Sculptures (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, kangaroo-island, coorong-national-park, ceduna
+- Maize Island Lagoon Conservation Park (spot): Map of the Murray River, south-eastern Australia.tif: category: Maps of rivers of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Makybe Diva Statue (spot): Makybe Diva - trackwork 02.jpg: 768px wide, minimum 960 for a spot
+- Mallee Tourist and Heritage Centre (spot): PinnarooSA.JPG: also used for karte-conservation-park
+- Mannum Dock Discovery Centre (spot): Adelaide skyline, December 2022 b.jpg: also used for kangaroo-island, adelaide
+- Map the Miner (spot): Map the Miner at Kapunda South Australia.jpg: file name suggests a map, drawing, logo or similar; 469px wide, minimum 960 for a spot
+- Marree Mosque (spot): The mosque at Marree SLSA B-15341.jpeg: dated 1884; category: Files from the State Library of South Australia
+- Martin Bend Wetland and Walking Trail (spot): AmDiscoveryMap.jpg: category: Locator maps of Kentucky; Maps of Colorado; 300px wide, minimum 960 for a spot
+- Mary Ann Reserve (spot): Mary Moorman.jpg: dated 1963; 471px wide, minimum 960 for a spot
+- Maslin Beach, South Australia (spot): Maslin-Beach-1264.jpg: also used for copper-coast
+- Mawson Trail (spot): Douglas Mawson 1914 1.jpeg: dated 1914; 415px wide, minimum 960 for a spot
+- Melrose Courthouse Heritage and Interpretive Centre (spot): Alfred the Great, silver penny; struck 875–880 (obverse).png: 410px wide, minimum 960 for a spot
+- Meningie Hill Lookout (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, kangaroo-island, riverland, ceduna
+- Meningie Walking and Cycling Trails (spot): Map of the Murraylands region of South Australia.png: category: OpenStreetMap maps of South Australia; file name suggests a map, drawing, logo or similar
+- Miners Dugouts (spot): Dugout home2.jpg: dated 1940; category: Images from the Library of Congress
+- MOD. (museum) (spot): Old Mods photo.jpg: 354px wide, minimum 960 for a spot
+- Monarto Safari Park (spot): Giraffa camelopardalis -Safaripark Beekse Bergen-11July2009.jpg: 955px wide, minimum 960 for a spot
+- Moonta Mines, South Australia (spot): Map of Moonta Mines pre-1923 (SA Dept of Mines and Energy).tif: dated 1975; category: 20th-century maps of South Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Mount Chambers Gorge (spot): In Mount Chambers Chasm.jpg: no metadata from Commons (file renamed or deleted?)
+- Mount Lofty (spot): Mount lofty from south.jpg: 451px wide, minimum 960 for a spot
+- Mount Lofty Botanic Garden (spot): Mt Lofty Bot Garden 033.jpg: 640px wide, minimum 960 for a spot
+- Mount Schank (spot): Mtschank.jpg: 575px wide, minimum 960 for a spot
+- Myponga Beach, South Australia (spot): Myponga Beach area.JPG: 640px wide, minimum 960 for a spot
+- Naracoorte Caves National Park (spot): Thylacoleo skeleton in Naracoorte Caves.jpg: also used for kangaroo-island
+- National Motor Museum, Birdwood (spot): National Motor Museum, Birdwood, logo, 2026.svg: category: Logos of South Australia; Logos of museums of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 35px wide, minimum 960 for a spot
+- Neagles Rock Short Walk (spot): Gerry Marsden 1964.JPG: dated 1964; category: Black and white group photographs of musicians; 233px wide, minimum 960 for a spot
+- Neptune Islands (spot): Dive sites of the Neptune Islands.png: category: Dive site maps of South Australia
+- Ngarkat Conservation Park (spot): Ngarkat Conservation Park Tyms Lookout.jpg: no metadata from Commons (file renamed or deleted?)
+- Nora Creina Bay (spot): BeachportJetty.JPG: also used for beachport
+- North Beach, South Australia (spot): Maslin-Beach-1264.jpg: also used for mclaren-vale
+- Nullarbor National Park (spot): Nullarbor National Park.jpg: 800px wide, minimum 960 for a spot
+- Old Timers Mine (spot): Mina morska typu M 1908-39.jpg: 800px wide, minimum 960 for a spot
+- Oodnadatta Track (spot): Oodnadatta Track 0316.svg: category: Road maps of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 793px wide, minimum 960 for a spot
+- Organ Pipes (spot): StRaphaelsDubOrganSmall.jpg: 425px wide, minimum 960 for a spot
+- Overland Corner (spot): Map of the Murray River, south-eastern Australia.tif: category: Maps of rivers of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/tiff)
+- Parachilna Gorge (spot): Parachilna Gorge, Flinders Ranges - South Australia.jpg: also used for heysen-trail
+- Parnka Point (spot): Map of the Murraylands region of South Australia.png: category: OpenStreetMap maps of South Australia; file name suggests a map, drawing, logo or similar
+- Parnkalla Trail (spot): Dutchmans Stern Park.JPG: also used for quorn
+- Pennington Bay, South Australia (spot): Adelaide skyline, December 2022 b.jpg: also used for mannum, adelaide
+- Penong Windmill Museum (spot): Big Things Postcard.jpg: also used for big-galah, coober-pedy, kangaroo-island, riverland, coorong-national-park
+- Pichi Richi Railway (spot): NM25 w22 quorn.jpg: 772px wide, minimum 960 for a spot
+- Pinky Point Lookout (spot): RichardOKane.jpg: dated 1946; 595px wide, minimum 960 for a spot
+- Point Bell Conservation Park (spot): 10 Point Labatt CP 04.JPG: also used for streaky-bay
+- Point Labatt Conservation Park (spot): 10 Point Labatt CP 04.JPG: also used for ceduna
+- Point Malcolm Lighthouse (spot): Malcom Point lighthouse, Lake Alexandrina.JPG: 640px wide, minimum 960 for a spot
+- Pool of Siloam (spot): Pool of Siloam and Lower (Old) Pool in the Ordnance Survey of Jerusalem.png: dated 1865; category: 1860s maps of Jerusalem; Details of old maps of Jerusalem; 847px wide, minimum 960 for a spot
+- Port Adelaide (spot): Port Adelaide montage 2.jpg: 800px wide, minimum 960 for a spot
+- Port Broughton Heritage Centre and Museum (spot): Elizabeth Isabella Broughton.jpg: dated 1814; 908px wide, minimum 960 for a spot
+- Port MacDonnell Maritime Museum (spot): Grant LGA.png: category: Maps of local government areas in South Australia; 400px wide, minimum 960 for a spot
+- Port Pirie Heritage Trail (spot): CrystalBrookSilos.jpg: 439px wide, minimum 960 for a spot
+- Port Pirie National Trust Museum (spot): Grain silos, smelter and smoke stack from across the river, Port Pirie, South Australia.jpg: 633px wide, minimum 960 for a spot
+- PS Industry (spot): IBM PS-2 wordmark.svg: dated 1990; category: SVG logos of IBM; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml)
+- Rapid Bay, South Australia (spot): R.Bay.jpg: also used for kangaroo-island
+- Rattler Trail (spot): Auburn - Northern entrance to Rattler Rail Trail.JPG: 448px wide, minimum 960 for a spot
+- Rawnsley Bluff (spot): Wilpenapoundfromspacewithnotes.jpg: 720px wide, minimum 960 for a spot
+- Redbanks Beach (spot): 2026 United States Senate elections retirements map.svg: category: 2026 United States Senate election maps; Nationwide maps of United States Senate elections retirements; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 959px wide, minimum 960 for a spot
+- Riesling Trail (spot): Riesling Trail, looking north near Leasingham.JPG: 448px wide, minimum 960 for a spot
+- River Murray International Dark Sky Reserve (spot): Swan Reach Museum was the Primary School. Swan Reach is on the Murray River South Australia. (7524881046).jpg: also used for swan-reach-observatory
+- Rosetta Head (spot): Victor Harbor Bluff.JPG: 640px wide, minimum 960 for a spot
+- Sacred Canyon (spot): Kings Canyon NT view.jpg: also used for watarrka-national-park
+- Saint Elijah the Prophet Serbian Orthodox Church, Coober Pedy (spot): Baptistry soc australia.jpg: 800px wide, minimum 960 for a spot
+- Second Valley, South Australia (spot): Second Valley.jpg: 900px wide, minimum 960 for a spot
+- Shell Hill Reserve (spot): Shell Cove Aerial.jpg: 611px wide, minimum 960 for a spot
+- Sleaford Bay (spot): Sleaford Bay(GN05637).jpg: dated 1935; also used for port-lincoln
+- Smoky Bay, South Australia (spot): Smoky Bay Jetty, 2017 (01).jpg: also used for streaky-bay
+- Smooth Pool (spot): VermiculiteUSGOV.jpg: 360px wide, minimum 960 for a spot
+- Snellings Beach (spot): Snellsbeach4wikipedia.JPG: 304px wide, minimum 960 for a spot
+- Solomontown Beach (spot): Grain silos, smelter and smoke stack from across the river, Port Pirie, South Australia.jpg: 633px wide, minimum 960 for a spot
+- South Australian Whale Centre (spot): Humpback Whale fg1 cropped.JPG: 449px wide, minimum 960 for a spot
+- Southern Flinders Rail Trail (spot): Flinders Ranges SA 5434, Australia - panoramio (21).jpg: also used for ikara-flinders-ranges
+- St Mary Peak (spot): St Mary Peak2.jpg: 819px wide, minimum 960 for a spot
+- Stamford Hill (South Australia) (spot): South Australian Railways V class locomotive no 9 displayed at Naracoorte.jpg: also used for naracoorte
+- Steamtown Heritage Rail Centre (spot): Carriage on turntable at steamtown Heritage Rail Centre, Peterborough, South Australia.jpg: 819px wide, minimum 960 for a spot
+- Stenhouse Bay Lookout Walk (spot): Endurance under full sail Frank Hurley State Library NSW a090012h.jpg: dated 1915; category: Images from the State Library of NSW
+- Streaky Bay Back Beach (spot): Smoky Bay Jetty, 2017 (01).jpg: also used for ceduna
+- Streaky Bay Powerhouse Museum (spot): Pittsburgh Steelers logo.svg: category: SVG American football logos of the United States; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 196px wide, minimum 960 for a spot
+- Sturt Gorge Recreation Park (spot): Charles Sturt by John Michael Crossland lowres color.jpg: dated 1853; 390px wide, minimum 960 for a spot
+- Swan Reach Observatory (spot): Swan Reach Museum was the Primary School. Swan Reach is on the Murray River South Australia. (7524881046).jpg: also used for river-murray-dark-sky-reserve
+- Tadpole Cove Walk (spot): Murray Lagoon.jpg: 640px wide, minimum 960 for a spot
+- Talc Alf Art Works (spot): Australian Aboriginal Flag.svg: dated 1971; category: SVG flags of Australia; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 512px wide, minimum 960 for a spot
+- Talia Caves (spot): Venus Bay General Store, 2017 (01).jpg: also used for streaky-bay
+- Telowie Gorge Conservation Park (spot): Telowie Gorge(GN14652).jpg: 
+- The Beachouse (spot): MagicMountain.jpg: 640px wide, minimum 960 for a spot
+- The Dutchmans Stern Conservation Park (spot): Dutchmans Stern Park.JPG: also used for port-lincoln
+- The Granites (spot): Bianco Sardo Granit mit polierter Oberfläche.jpg: 
+- The Sheeps Back Museum (spot): South Australian Railways V class locomotive no 9 displayed at Naracoorte.jpg: also used for lincoln-national-park
+- Tolderol Game Reserve (spot): Lower Lakes 2025.png: 933px wide, minimum 960 for a spot
+- Tom's Working Opal Mine (spot): View of the Andamooka town centre in South Australia, seen from One Tree Hill.jpg: also used for andamooka
+- Tramway Museum, St Kilda (spot): Location map -- Tramway Museum, St Kilda, South Australia.png: category: Maps of Adelaide; OpenStreetMap maps of South Australia; file name suggests a map, drawing, logo or similar; 925px wide, minimum 960 for a spot
+- Tunkalilla (spot): Waitpinga-beach2.jpg: 425px wide, minimum 960 for a spot
+- Umpherston Sinkhole (spot): Main Corner Mount Gambier.jpg: no metadata from Commons (file renamed or deleted?)
+- Venus Bay Conservation Park (spot): Venus Bay General Store, 2017 (01).jpg: also used for talia-caves
+- Vivonne Bay, South Australia (locality) (spot): R.Bay.jpg: also used for yankalilla
+- Wabma Kadarbu Mound Springs Conservation Park (spot): Moundspring.jpg: 600px wide, minimum 960 for a spot
+- Wara Wayingga-Tennyson Dunes Conservation Reserve (spot): Adelaide skyline, December 2022 b.jpg: also used for mannum, kangaroo-island
+- Weetootla Gorge (spot): Mount McKinlay Bluff and summit.jpg: 799px wide, minimum 960 for a spot
+- West Bay (spot): The harbour at West Bay - geograph.org.uk - 1257239.jpg: 640px wide, minimum 960 for a spot
+- West Cape (South Australia) (spot): Cape Jaffa (6).JPG: 640px wide, minimum 960 for a spot
+- Westall Way Loop (spot): Map of proposed Suburban Rail Loop.png: category: Public transport maps of Melbourne; file name suggests a map, drawing, logo or similar
+- Whalers Way (spot): Hartford Whalers 1992.svg: category: SVG ice hockey logos of the United States; file name suggests a map, drawing, logo or similar; not a photograph file (image/svg+xml); 800px wide, minimum 960 for a spot
+- Witjira National Park (spot): Dalhousie Springs in Witjira National Park - steps into the warm water.JPG: also used for dalhousie-springs
+- Wittelbee Conservation Park (spot): Kaiserstuhl South Australia.JPG: also used for murray-bridge
+- Woomera Heritage Centre (spot): Woomera.jpg: also used for woomera-missile-park
+- Woomera Missile Park (spot): Woomera.jpg: also used for woomera-heritage-centre
+- Yeldulknie Conservation Park (spot): Serpentine Lakes.JPG: also used for coober-pedy
+- Yurrebilla Trail (spot): Yurrebilla.jpg: 391px wide, minimum 960 for a spot
+## Owner decisions
+- All 38 added destinations approved as applied (rank, name and span unchanged).
+- Official (non-Commons) photos: owner allowed use of all 10 (credits now read "used with owner permission"). Further candidates in lens/gaps/out-*.json are still unapplied.
+
+## Lens: spot photos (final state)
+- Every SA spot photo was judged by a first judge and a blind second judge. 65 Commons replacements applied, 42 more from the external search round (Flickr CC, official pages). Commits `ef11664`, `26c90b9`, `1c49131` on `curation/sa`.
+- **272 of 584 SA spots show the placeholder** (wrong place, stand-in, too small, duplicate or nothing found). Full list by destination: `curation/sa/photos-missing.md`. Please supply a photo for each you care about.
+- The external round covered only the first five spots of each destination plus standalone spots (104 slots): 42 filled, the rest found nothing usable. The other ~190 placeholder spots were not searched outside Commons.
+- **Official photos, permission NOT confirmed (13 spots; copyright risk, ask each owner):** Beerenberg Farm, Seppeltsfield, Whispering Wall, Barossa Museum, Signal Point Experience Centre, Innamincka Regional Reserve, Old Tailem Town, Axel Stenross Maritime Museum, Mount Brown Conservation Park, Murray River National Park, South Australian Whale Centre, Arkaroola Observatories, Giant Australian Cuttlefish Aggregation.
+- **Held, non-free licence (ND/NC), placeholder until you decide:** Bungaree Station, Sleaford Bay, Beetaloo Reservoir, Overland Corner, Wirrabara Silo Art, plus Tom's Opal Mine, Yankalilla's Wild South Coast Way and Edithburgh Tidal Pool candidates.
+- **Applied but weak:** Menglers Hill Lookout (dark hazy sunset), Yangie Bay (mostly fog), Wallaroo Heritage and Nautical Museum (interior, visitor in frame), Mount Brown (hazy), Hummock Hill Lookout (fence in foreground), Ardrossan Red Cliffs (soft 1024 px), Robe Customs House (tight crop), Penfolds (caption-only place check), Old Timers Mine / Yangie Bay / Almonta Beach (Flickr titles not page-checked).
+- **Placeholder by choice (unproven or shared):** Organ Pipes, Cape Bauer Loop, Ochre Pits (same file as the NT's), Lake Newland, Lake Gilles, Witjira, Woomera Heritage Centre, Karte CP, Mallee Tourist and Heritage Centre, both Karoonda spots, River Murray Dark Sky Reserve. Kingston's Big Lobster shares its photo with a WA spot (Dongara): one of the two is wrong; the WA one was not touched.
+- **Needs a browser (blocked to scripts), unsearched:** portaugusta.sa.gov.au, pirie.sa.gov.au, murraybridge.sa.gov.au, alexandrina.sa.gov.au, wattlerange.sa.gov.au (Beachport), whyalla.sa.gov.au, banrockstation.com.au, visitgoolwa.com, mid-murray.sa.gov.au, kimba.sa.gov.au, frc.sa.gov.au (Warren Gorge), visitmountgambier.com.au (Engelbrecht Cave); Openverse timed out for the Whyalla/Victor Harbor/Gammon Ranges batch.
+- **Why-visit photos:** the grey cards you asked to leave stay grey.
+
+## Quill follow-ups
+- Official links added for 5 paid spots (Port Adelaide Museum, Edithburgh Museum, Sacred Canyon, Tom's Opal Mine, Coober Pedy Golf Club); prices updated for Tom's ($40) and Edithburgh Museum ($5). Still no `ticketUrl` for 11 paid spots: Barossa Museum, Port Victoria Maritime Museum, Stansbury Museum, Bublacowie Military Museum, Port Broughton Heritage Centre, Faye's Underground Home, Neptune Islands (many operators), and four needing a browser (Mannum Dock Discovery Centre, Kimba Museum, Warren Gorge, Engelbrecht Cave). Engelbrecht Cave's listing shows $14.50 (spot $12.50), unverified.
+
+## Owner decision (2026-10-27)
+- All 13 official photos from the external search approved for use (credits now read "used with owner permission").
+
+## Coordinate audit (audit-spot-coordinates.ts, AU)
+- 234 of 584 SA spots flagged; nearly all are centroid references (a town, park, trail or bay's centre vs the visitor point), left as is. Fixed three real errors from precise OpenStreetMap features: Kimba Museum (was 22 km west of Kimba town), Aroona Ruins (80 km off) and Sacred Canyon (11.8 km off).
+- Not checked in detail: Coorong Pink Lake (OSM's pink lake is 32 km from our pin; the right lake is unconfirmed), Robe Jetty, Cape Jaffa Lighthouse (moved to Kingston), Long Beach (matched a road). The full flag list is in `/tmp/audit.txt` of the run (rerun the audit to regenerate).

@@ -1,0 +1,385 @@
+{
+ "spots": {
+  "copper-coast-1": {
+   "name": "Moonta Mines State Heritage Area",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Cornish copper-mining site at Moonta with the Hughes Enginehouse, a museum and a tourist railway.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.075926,
+    "longitude": 137.60644
+   },
+   "coordinates_source": "OSM tourism=museum node 2158528226 (Moonta Mines Model School Museum, the heritage area's visitor hub); Commons geotag median within 100 m",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Moonta Mines, South Australia",
+   "notes": [
+    "Area is open to walk; the museum (about $10 adult) and tourist railway ($12 adult) are National Trust attractions inside it, not priced on the spot."
+   ],
+   "ticket_note": "No single official page for the heritage area; National Trust museum/railway pages cover only parts of it."
+  },
+  "copper-coast-2": {
+   "name": "Moonta Bay",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Beach, jetty and foreshore at Moonta Bay, with the Rossiters Point lookout nearby.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.054479,
+    "longitude": 137.561151
+   },
+   "coordinates_source": "OSM way 67291089 man_made=pier Moonta Bay Jetty, landward (foreshore) end; no natural=beach feature in OSM",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Moonta Bay, South Australia",
+   "ticket_note": "Open foreshore, no single steward.",
+   "notes": [
+    "Rossiters Point lookout is OSM node 12164832289 at -34.058268,137.5596485 if a lookout spot is wanted."
+   ]
+  },
+  "copper-coast-3": {
+   "name": "The Farm Shed Museum and Tourism Centre",
+   "icon": "🚜",
+   "category": "museum",
+   "bio": "National Trust museum in Kadina with the stump-jump plough, Matta House and a miniature train.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.973683,
+    "longitude": 137.70696
+   },
+   "coordinates_source": "OSM tourism=museum node 2158526679 The Farm Shed National Trust Museum (HIGH, Photon/Nominatim agree)",
+   "costBasis": "entry",
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/the-farm-shed-museum/",
+   "notes": [
+    "Adult $12 (child $3, family $30) per the National Trust page; hours Mon-Fri 9-5, weekends 10-4 per that page."
+   ]
+  },
+  "copper-coast-4": {
+   "name": "Wallaroo Heritage and Nautical Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "National Trust museum in Wallaroo's 1865 former post office, covering copper smelting, shipping and local history.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.929781,
+    "longitude": 137.626416
+   },
+   "coordinates_source": "OSM tourism=museum node 450518484 Wallaroo Heritage and Nautical National Trust Museum (HIGH)",
+   "costBasis": "entry",
+   "costMin": 7,
+   "costMax": 7,
+   "currency": "AUD",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/wallaroo-heritage-and-nautical-museum/",
+   "notes": [
+    "Adult $7 from the Yorke Peninsula tourism listing; the National Trust page gives no price (an older directory lists $2.50)."
+   ]
+  },
+  "copper-coast-5": {
+   "name": "North Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Swimming beach on the northern edge of Wallaroo, on the Copper Coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.901313,
+    "longitude": 137.628483
+   },
+   "coordinates_source": "OSM way 1491149371 natural=beach North Beach; Wikipedia coordinates within about 100 m (HIGH)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "North Beach, South Australia",
+   "ticket_note": "Open beach, no single steward."
+  },
+  "copper-coast-6": {
+   "name": "Wheal Hughes Copper Mine",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Former copper mine near Moonta, reopened as a tourist site in 1998 and named for Walter Watson Hughes.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.056219,
+    "longitude": 137.614216
+   },
+   "coordinates_source": "OSM tourism=attraction node 685207720 Wheal Hughes Copper Mine (MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Wheal Hughes",
+   "ticket_note": "No verified current official page.",
+   "notes": [
+    "REVIEW: the draft's bookable 55 m underground tour is not confirmed. Wikipedia says tourists can no longer go underground and a 2008 listing says it closed after a rock fall; other pages still describe tours. Bio written without the tour; confirm public access before adding. Cost recorded as free/open only as a placeholder."
+   ]
+  },
+  "copper-coast-7": {
+   "name": "Splash Town",
+   "icon": "💦",
+   "category": "entertainment",
+   "bio": "Free water park on the Moonta Bay foreshore, a permanent family stop beside the jetty.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.054519,
+    "longitude": 137.562111
+   },
+   "coordinates_source": "OSM leisure=water_park node Splash Town (MEDIUM); 88 m from Moonta Bay pin",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Council-run foreshore facility; no verified official page."
+  },
+  "copper-coast-8": {
+   "name": "Port Hughes",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside township and beach on the Copper Coast just south of Moonta Bay.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.073941,
+    "longitude": 137.551915
+   },
+   "coordinates_source": "OSM place=suburb node 33119333 Port Hughes (township point; Wikipedia point is 440 m SSW)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Port Hughes, South Australia",
+   "ticket_note": "Open township and beach."
+  },
+  "copper-coast-9": {
+   "name": "Copper Coast Rail Trail",
+   "icon": "🚴",
+   "category": "hike",
+   "bio": "Sealed 25 km walking and cycling path along the old railway from Kadina through Wallaroo to Moonta.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.969171,
+    "longitude": 137.619668
+   },
+   "coordinates_source": "Midpoint of the route: OSM ways 620994975/1459184170/1051796546 (Kadina to Wallaroo) and 1350389220 Wallaroo - Moonta Trail, 12.5 km along; computed by hand because Overpass was down (MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Open trail, no single steward.",
+   "notes": [
+    "Renamed from draft 'Copper Rail Trail': Wikipedia and OSM call it Copper Coast Rail Trail."
+   ]
+  },
+  "yorke-peninsula-1": {
+   "name": "Ardrossan Red Cliffs",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Red clay cliffs above the shore at Ardrossan, best seen from the jetty at sunrise.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -34.42262,
+    "longitude": 137.92217
+   },
+   "coordinates_source": "OSM way 773025548 natural=cliff at the root of Ardrossan Jetty (MEDIUM)",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Open cliffs and foreshore."
+  },
+  "yorke-peninsula-2": {
+   "name": "Troubridge Island",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "Conservation park island with an 1855 cast-iron lighthouse and keeper's cottage, reached by boat from Edithburgh.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.117001,
+    "longitude": 137.827633
+   },
+   "coordinates_source": "OSM man_made=lighthouse Troubridge Island Lighthouse; Wikipedia point 84 m away (HIGH)",
+   "costBasis": "open",
+   "free": true,
+   "wiki": "Troubridge Island",
+   "needs": "permit",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/troubridge-island-conservation-park",
+   "notes": [
+    "Park entry is free per parks.sa.gov.au; the island is boat-only and needs a permit from Troubridge Island Escape (08 8889 2002). Operator's boat/permit fee not found."
+   ]
+  },
+  "yorke-peninsula-3": {
+   "name": "Edithburgh Tidal Pool",
+   "icon": "🏊",
+   "category": "beach",
+   "bio": "Tidal sea-water swimming pool set into the cliff at Edithburgh, with change rooms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.081891,
+    "longitude": 137.747999
+   },
+   "coordinates_source": "OSM way 1061044346 leisure=swimming_pool Edithburgh Tidal Pool; Photon point within 20 m (HIGH)",
+   "costBasis": "open",
+   "free": true,
+   "ticket_note": "Open council pool, no verified official page."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "copper-coast",
+    "name": "Copper Coast",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -33.964784,
+     "longitude": 137.715897
+    },
+    "category": "beach",
+    "defaultZoomSpanKm": 45,
+    "rank": 4,
+    "icon": "⛏️",
+    "tagline": "Cornish copper towns and jetty beaches on the northern Yorke Peninsula coast.",
+    "description": "The Copper Coast is the northern Yorke Peninsula around Kadina, Wallaroo and Moonta, where Cornish miners worked copper from the 1860s. Moonta Mines is a state heritage area with a museum, tourist railway and walking trails, and Kadina's Farm Shed Museum holds the stump-jump plough. Wallaroo has a heritage and nautical museum and North Beach, while Moonta Bay and Port Hughes add jetties and swimming beaches. A sealed rail trail links Kadina, Wallaroo and Moonta.",
+    "whyVisit": [
+     "Explore Cornish copper-mining heritage",
+     "Swim and fish off jetty beaches",
+     "Cycle the sealed coastal rail trail"
+    ],
+    "highlights": [
+     "Mining heritage",
+     "Jetty beaches",
+     "Rail trail"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🕒",
+      "title": "Check museum hours",
+      "detail": "Wallaroo's museum is shut most Mondays and Moonta's has set afternoon hours, so check times before you drive."
+     },
+     {
+      "icon": "🚴",
+      "title": "Cycle in sections",
+      "detail": "The sealed 25 km rail trail runs Kadina to Moonta via Wallaroo, so ride one stretch and drive back."
+     }
+    ],
+    "bestMonths": [
+     10,
+     11,
+     12,
+     1,
+     2,
+     3,
+     4
+    ],
+    "bestTimeBlurb": "{months} are the warm months for beach days and jetty swims at Moonta Bay and Wallaroo."
+   },
+   "spots": [
+    "copper-coast-1",
+    "copper-coast-2",
+    "copper-coast-3",
+    "copper-coast-4",
+    "copper-coast-5",
+    "copper-coast-6",
+    "copper-coast-7",
+    "copper-coast-8",
+    "copper-coast-9"
+   ],
+   "notes": [
+    "Pin: OSM place=town node 'Kadina town' (33119329); nearest spot Farm Shed Museum 1.2 km. Span cut from 60 to 45: all spots are within 20 km, 75% of 45 = 34 km.",
+    "Category set to beach (draft said city) because the destination is a coast of several towns, not one town.",
+    "Order kept as drafted. Moonta Mines/Wheal Hughes need a review of Wheal Hughes access (see its notes)."
+   ]
+  },
+  {
+   "destination": {
+    "id": "yorke-peninsula",
+    "name": "Yorke Peninsula",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -34.771223,
+     "longitude": 137.595587
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 100,
+    "rank": 4,
+    "icon": "⚓",
+    "tagline": "Long jetties, red clay cliffs and lighthouses around a farming peninsula west of Adelaide.",
+    "description": "Yorke Peninsula is a farming peninsula between Gulf St Vincent and Spencer Gulf, ringed by small coastal towns with long jetties. Ardrossan sits on top of red clay cliffs, Edithburgh has a tidal swimming pool and Wool Bay a jetty and lime kilns, and Port Victoria keeps a maritime museum. Corny Point Lighthouse looks over the far southwest, and an 1855 lighthouse stands on Troubridge Island offshore from Edithburgh.",
+    "whyVisit": [
+     "Walk out along historic jetties",
+     "See lighthouses on far capes",
+     "Swim in tidal pools and bays"
+    ],
+    "highlights": [
+     "Historic jetties",
+     "Cape lighthouses",
+     "Tidal pool swims"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🌅",
+      "title": "Catch the cliffs at sunrise",
+      "detail": "Walk out on Ardrossan's jetty at sunrise to see the red clay cliffs lit up by the morning light."
+     },
+     {
+      "icon": "🎫",
+      "title": "Troubridge Island needs a permit",
+      "detail": "The island is boat-only and needs a permit from the operator at Edithburgh, so arrange it well ahead."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "{months} are mild enough for jetty walks and long coastal drives."
+   },
+   "spots": [
+    "yorke-peninsula-1",
+    "yorke-peninsula-2",
+    "yorke-peninsula-3",
+    "yorke-peninsula-4",
+    "yorke-peninsula-5",
+    "yorke-peninsula-6",
+    "yorke-peninsula-7",
+    "yorke-peninsula-8",
+    "yorke-peninsula-9",
+    "yorke-peninsula-10",
+    "yorke-peninsula-11",
+    "yorke-peninsula-12",
+    "yorke-peninsula-13",
+    "yorke-peninsula-14",
+    "yorke-peninsula-15",
+    "yorke-peninsula-16",
+    "yorke-peninsula-17",
+    "yorke-peninsula-18",
+    "yorke-peninsula-19"
+   ],
+   "notes": [
+    "Pin: OSM place=town node 1104609657 Minlaton; Harry Butler Red Devil Memorial (yorke-peninsula-10) is OSM way 940210061 at -34.76788,137.59763, about 400 m away, so no clash.",
+    "Span 100 kept: farthest spots (Corny Point ~55 km, Ardrossan ~48 km) are inside 75 km.",
+    "Spot order kept as drafted (other shards hold 4-19)."
+   ]
+  }
+ ],
+ "unverified": [
+  "copper-coast-4 Wallaroo museum adult $7 (tourism listing only; NT page gives none)",
+  "yorke-peninsula-2 Troubridge Island operator permit/boat fee not found",
+  "copper-coast-6 Wheal Hughes: whether the public can visit at all",
+  "copper-coast-7 Splash Town free (from tourism listings, no official page loaded)",
+  "copper-coast-9 trail midpoint hand-computed from OSM ways (Overpass down)"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Overpass was down; pins used OSM API map data and Nominatim/Photon.",
+  "No pin is LOW."
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "group": "lincoln-national-park",
+ "generated": "2026-10-26T15:54:43.867Z",
+ "slots": [
+  {
+   "slot": "dest:lincoln-national-park:header",
+   "key": "Lincoln National Park",
+   "current": {
+    "file": "Memory Cove with Sailing Yacht Arriba at anchor.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:lincoln-national-park:why1",
+   "key": "File:Costal track, Lincoln National Park, South Australia.JPG",
+   "current": {
+    "file": "Costal track, Lincoln National Park, South Australia.JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:lincoln-national-park:why2",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "dest:lincoln-national-park:why3",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:lincoln-national-park-1",
+   "key": "Memory Cove",
+   "current": {
+    "file": "Memory Cove with Sailing Yacht Arriba at anchor.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 260 m from the pin; a name word is in the title, description or categories; 4032 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:lincoln-national-park-2",
+   "key": "Stamford Hill (South Australia)",
+   "current": {
+    "file": "South Australian Railways V class locomotive no 9 displayed at Naracoorte.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for lincoln-national-park",
+    "pre-filter: also used for naracoorte",
+    "pre-filter: also used for lincoln-national-park"
+   ]
+  },
+  {
+   "slot": "spot:lincoln-national-park-3",
+   "key": "Cape Donington",
+   "current": {
+    "file": "Lincoln NP Wanna.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:lincoln-national-park-4",
+   "key": "Sleaford Bay",
+   "current": {
+    "file": "Sleaford Bay(GN05637).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1935",
+    "pre-filter: also used for lincoln-national-park",
+    "pre-filter review: black-and-white? (saturation 0.00)",
+    "pre-filter: dated 1935",
+    "pre-filter: also used for port-lincoln",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  }
+ ]
+}

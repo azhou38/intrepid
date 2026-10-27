@@ -1,0 +1,99 @@
+{
+ "group": "quorn",
+ "generated": "2026-10-26T15:54:44.930Z",
+ "slots": [
+  {
+   "slot": "dest:quorn:header",
+   "key": "Quorn",
+   "current": {
+    "file": "Cordon bleu Quorn 02.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:quorn:why1",
+   "key": "File:W22 + Pichi Richi Explorer Woolshed Flat, 2017 (05).jpg",
+   "current": {
+    "file": "W22 + Pichi Richi Explorer Woolshed Flat, 2017 (05).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:quorn:why2",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:quorn-1",
+   "key": "Pichi Richi Railway",
+   "current": {
+    "file": "NM25 w22 quorn.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 772px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:quorn-2",
+   "key": "Warren Gorge",
+   "current": {
+    "file": "Cheddar Gorge, Somerset, UK - Diliff.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 16195466 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:quorn-3",
+   "key": "The Dutchmans Stern Conservation Park",
+   "current": {
+    "file": "Dutchmans Stern Park.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for quorn",
+    "pre-filter: also used for port-lincoln"
+   ]
+  },
+  {
+   "slot": "spot:quorn-4",
+   "key": "Mount Brown Conservation Park",
+   "current": {
+    "file": "Pichi Richi Railway carriages at Saltia.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:quorn-5",
+   "key": "Kanyaka Station",
+   "current": {
+    "file": "Kanyaka-Station.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  }
+ ]
+}

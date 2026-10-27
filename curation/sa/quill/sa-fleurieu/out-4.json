@@ -1,0 +1,366 @@
+{
+ "spots": {
+  "goolwa-6": {
+   "name": "Langhorne Creek",
+   "icon": "🍷",
+   "category": "landmark",
+   "bio": "A wine and farming district on the plains where rivers and creeks run into Lake Alexandrina, with cellar doors in the village.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.297418,
+    "longitude": 139.034544
+   },
+   "coordinates_source": "Wikipedia 'Langhorne Creek, South Australia' (6-decimal village point); tourism board's own village point (-35.29621,139.03700) is 270 m away",
+   "wiki": "Langhorne Creek, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://langhornecreek.com/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); village point from two sources 270 m apart, not an OSM feature",
+    "Official site of Langhorne Creek Grape & Wine Inc (title 'Home - Langhorne Creek') loaded; individual cellar doors deliberately not listed"
+   ]
+  },
+  "goolwa-7": {
+   "name": "Tolderol Game Reserve",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "A wetland of shallow basins on Lake Alexandrina where migratory waders feed, with a lookout and picnic area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.370202,
+    "longitude": 139.150541
+   },
+   "coordinates_source": "southaustralia.com listing coordinates; Wikipedia 'Tolderol Game Reserve' (-35.370761,139.149545) is ~110 m away",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/tolderol-game-reserve",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); two sources ~110 m apart (just outside the 100 m HIGH bar), neither an OSM visitor-point feature",
+    "Parks SA page loaded: park fees list only accommodation ($15.40 per night), no entry fee; open daily; closed on Catastrophic fire danger days; short duck-hunting season in a designated area; Parks SA text does not mention a lookout or picnic area (that is from the draft/board source), keep unless the owner objects"
+   ]
+  },
+  "goolwa-8": {
+   "name": "Animal Farm",
+   "icon": "🐑",
+   "category": "entertainment",
+   "bio": "A family animal park near Goolwa Airport with animal feeding, trailer rides, crazy golf and a snake demonstration.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.469075,
+    "longitude": 138.752928
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (85 Airport Road, next to Goolwa Airport per the farm's location page)",
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.goolwaanimalfarm.com.au/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point, not an OSM feature",
+    "Adult $15 (children to 18 $9, seniors $12, feed $1; admission includes trailer ride, crazy golf, snake demonstration) from the southaustralia.com listing; other listings give older prices ($11, $13). The farm's own prices page is script-rendered and could not be read",
+    "Official name is Goolwa Animal Farm (site title 'Home | Goolwa Animal Farm'); draft name 'Animal Farm' kept per the shard but the owner may prefer 'Goolwa Animal Farm'"
+   ]
+  },
+  "goolwa-9": {
+   "name": "Gilbert's Motor Museum",
+   "icon": "🚗",
+   "category": "museum",
+   "bio": "A century-old family garage turned museum in 2019, with Buicks, Holdens and motorbikes, in Strathalbyn.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.255507,
+    "longitude": 138.893724
+   },
+   "coordinates_source": "fleurieupeninsula.com.au / southaustralia.com listing coordinates (34 High Street, Strathalbyn)",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://strathalbynmotormuseum.com.au/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point, not an OSM feature",
+    "Official site (title names Gilbert's Motor Museum - Strathalbyn): entry $10, concession $8, under 16 with an adult free; open Wed-Sun 10am-4pm, closed Good Friday, Christmas Day, Boxing Day",
+    "The museum is in Strathalbyn (goolwa-1), 25 km north of Goolwa, not in Goolwa; it was already a Goolwa-destination spot in the draft, so Strathalbyn must lie inside the destination's span"
+   ]
+  },
+  "goolwa-10": {
+   "name": "Goolwa Motor Museum",
+   "icon": "🚗",
+   "category": "museum",
+   "bio": "A small museum at 45 Gardiner Street of cars from when they were made in South Australia.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.5033,
+    "longitude": 138.7731
+   },
+   "coordinates_source": "Wikivoyage 'Goolwa' See listing's own geo tag for the museum (4 decimals, a memory-grade pin)",
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); 4-decimal Wikivoyage listing point (lint 'pin' will flag it)",
+    "SHOULD NOT BE ADDED: Tripadvisor and Wanderlog both list the museum as permanently closed; Wikivoyage's entry was last updated Jul 2022; no official site or other source shows it open. Adult $8 is from an old listing (Automotive Museum Guide, under 'Closed Museums'). Verify by phone (08) 8555 3338 or drop it",
+    "No ticketUrl: no official site found"
+   ],
+   "ticket_note": "no official site found and the museum appears closed"
+  },
+  "goolwa-11": {
+   "name": "Strathalbyn Districts Museum and Heritage Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A museum in the former police station and courthouse, with Victorian rooms, cells and war displays; open weekends.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.259992,
+    "longitude": 138.893114
+   },
+   "coordinates_source": "southaustralia.com listing coordinates (1 Rankine Street, Strathalbyn)",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.strathmuseum.org.au/",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point, not an OSM feature",
+    "Official site (title 'Strathalbyn Heritage Museum'): adult $10, concession $6, children 6-15 $3; open Sat and Sun 10:30am-3pm, closed weekdays. The museum now trades as Strathalbyn Heritage Museum; the board still lists the draft name. Owner may want to rename to 'Strathalbyn Heritage Museum' (the old name is also what the board and SA History Hub use)",
+    "Opens weekends only, so the bio says so"
+   ]
+  },
+  "yankalilla-1": {
+   "name": "Deep Creek National Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "The largest remnant of native bush on the peninsula, with 15 walks, kangaroos, whales in winter and the Heysen Trail start.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -35.603802,
+    "longitude": 138.242094
+   },
+   "coordinates_source": "southaustralia.com listing coordinates for the park (a visitor point, not the Wikipedia/Wikivoyage centroid -35.6278,138.2219)",
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/deep-creek-national-park",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); listing point near the park's headquarters area, not an OSM-verified visitor point",
+    "Parks SA page loaded (title 'Deep Creek... National Parks and Wildlife Service South Australia'): vehicle entry $14.40 per vehicle, campsites from $27.50 per night, fees paid before entry; alert: parts of the park remain closed after bushfire, and Talisker CP (yankalilla-8) is closed until further notice",
+    "Cost shown as a per-vehicle gate fee; the page says 'per vehicle', not per day, but 'Per Vehicle/Day' is the house label for SA parks"
+   ]
+  },
+  "yankalilla-2": {
+   "name": "Cape Jervis",
+   "icon": "⛴️",
+   "category": "landmark",
+   "bio": "The Kangaroo Island ferry gateway at the western tip of the peninsula, where the Heysen Trail begins.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.603937,
+    "longitude": 138.108236
+   },
+   "coordinates_source": "southaustralia.com destination-information point for Cape Jervis (town); Wikipedia/Wikivoyage give a rounded -35.6,138.1",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); town point from the tourism board, not an OSM place node",
+    "Heysen Trail ends at Cape Jervis (Wikipedia 'Heysen Trail'); the ferry is an operator service, so no ticketUrl (a town)"
+   ],
+   "ticket_note": "a town; the ferry is a separate operator"
+  },
+  "yankalilla-3": {
+   "name": "Wild South Coast Way",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 74 km coastal walk from Cape Jervis to Victor Harbor on the Heysen Trail, done in sections or over five days.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 40,
+   "coordinates": {
+    "latitude": -35.624487,
+    "longitude": 138.198939
+   },
+   "coordinates_source": "southaustralia.com listing coordinates for the walk (Deep Creek), NOT the route midpoint: the route is not in a source I could read",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/experiences/wscw",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); not a route midpoint; the whole route (74 km, Cape Jervis to Victor Harbor, via Deep Creek NP, Ballaparudda Creek Recreation Park and Newland Head CP) should be pinned halfway along its length from the OSM route relation",
+    "Parks SA page (title 'Wild South... National Parks and Wildlife Service South Australia'): 74 km, five days four nights, four walk-in and four drive-in campgrounds; the trail itself has no fee. Deep Creek entry ($14.40/vehicle) and campsite fees apply where they are used",
+    "Walking time 24-40 hr is for the full five-day walk"
+   ]
+  },
+  "yankalilla-4": {
+   "name": "Second Valley",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A sheltered cove split by a jetty into a sandy swimming beach and a boulder beach, popular for snorkelling and diving.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.511256,
+    "longitude": 138.217501
+   },
+   "coordinates_source": "southaustralia.com listing coordinates for Second Valley Beach (Finnis Vale Drive); the board's town point is 2 km away and was not used",
+   "wiki": "Second Valley, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); beach listing point, not an OSM natural=beach feature",
+    "Draft bio's leafy sea dragons were not found in a source I could read, so cut; the tourism listing says free, with toilets and a car park",
+    "No ticketUrl: an open beach with no single steward"
+   ],
+   "ticket_note": "open beach"
+  },
+  "yankalilla-5": {
+   "name": "Normanville",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "The peninsula's largest coastal settlement, centred on a 7.3 km beach with a picnic area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.445479,
+    "longitude": 138.308107
+   },
+   "coordinates_source": "southaustralia.com listing coordinates for Normanville Beach",
+   "wiki": "Normanville, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); beach listing point, not an OSM natural=beach feature",
+    "Bio fact: 'largest coastal settlement on the southern Fleurieu', 7.3 km beach (listing); 'picnic area' is from the draft/board"
+   ],
+   "ticket_note": "open beach"
+  },
+  "yankalilla-6": {
+   "name": "Carrickalinga",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A small beach town with white sand and rock pools, in an International Dark Sky Community.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.433333,
+    "longitude": 138.316667
+   },
+   "coordinates_source": "Wikipedia 'Carrickalinga' coordinates (-35.43333333,138.31666667, rounded to the nearest minute, so a town reference not a beach pin); the board's town point (-35.42616,138.32643) is 1.1 km inland",
+   "free": true,
+   "costBasis": "open",
+   "notes": [
+    "pin: LOW (resolve-pin.py timed out at 60 s on every lookup: Overpass, Nominatim and Photon were all unreachable); Wikipedia point is a minute-rounded reference; the beach was not located on a map",
+    "Dark Sky Community claim from the draft/board; not re-verified on a Dark Sky list",
+    "No ticketUrl: an open beach town"
+   ],
+   "ticket_note": "open beach town"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "yankalilla",
+    "name": "Yankalilla",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.457579,
+     "longitude": 138.350517
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 60,
+    "rank": 5,
+    "icon": "🌾",
+    "tagline": "Rolling farmland, quiet beaches and bush walks along the southern Fleurieu coast.",
+    "description": "Yankalilla is a farming town about 73 km south of Adelaide, set among rolling hills with the Bungala River running through it. The district reaches west to the beaches of Normanville and Carrickalinga and south to the bush and cliffs of Deep Creek National Park. Cape Jervis, at the peninsula's western tip, is the Kangaroo Island ferry gateway. The 85 km Hills and Seascapes Discovery Drive links many of the district's landscapes.",
+    "whyVisit": [
+     "Walk bush and clifftop coast trails",
+     "Swim and snorkel at sheltered coves"
+    ],
+    "highlights": [
+     "Coastal trails",
+     "Sheltered coves"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🔥",
+      "title": "Check park closures first",
+      "detail": "Talisker Conservation Park and parts of Deep Creek National Park are closed after fire. Parks also close on Catastrophic fire danger days."
+     },
+     {
+      "icon": "🚗",
+      "title": "Pay Deep Creek entry",
+      "detail": "Deep Creek National Park charges per vehicle and the fee must be paid before you enter. Campsites are booked and paid separately."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "{months} suit coastal walks in mild weather, and whales pass the coast from June to October."
+   },
+   "spots": [
+    "yankalilla-1",
+    "yankalilla-2",
+    "yankalilla-3",
+    "yankalilla-4",
+    "yankalilla-5",
+    "yankalilla-6",
+    "yankalilla-7",
+    "yankalilla-8",
+    "yankalilla-9",
+    "yankalilla-10",
+    "yankalilla-11",
+    "yankalilla-12",
+    "yankalilla-13",
+    "yankalilla-14",
+    "yankalilla-15"
+   ],
+   "notes": [
+    "Pin: Yankalilla town point from the southaustralia.com destination page (-35.4575794,138.3505172), rounded to 6 decimals; resolve-pin.py could not run (all lookup services unreachable), so LOW; not within 25 m of any spot's pin in this shard (nearest Normanville ~4 km).",
+    "Span 60 km kept: Cape Jervis is ~27 km and Talisker ~26 km from the centre, inside 75% of 60 (45 km). Spot order kept as drafted (Deep Creek, Cape Jervis, Wild South Coast Way, Second Valley, Normanville, Carrickalinga, then the shard-5 spots).",
+    "Rank 5, two reasons and two tips per the popularity rule. Name evidence: Wikivoyage 'Fleurieu Peninsula' lists Yankalilla as a destination ('home to some of the most beautiful hills in the region'); southaustralia.com has a Yankalilla destination page; Wikivoyage has no Yankalilla page of its own (weakest of the four, as the draft says). Facts: 73 km from Adelaide, Bungala River, 85 km Hills and Seascapes Discovery Drive, Christ Church 1857 and the district museum from the southaustralia.com page (kept out of the copy so spots are not repeated); whale season June-October from the Parks SA Deep Creek page.",
+    "Bush/clifftop reason is general (Deep Creek and Wild South Coast Way are its spots); no whyVisitPhotos written here (reconciler).",
+    "Tips lean on the Parks SA closure alerts, which may change; owner may refresh them at apply time."
+   ]
+  }
+ ],
+ "unverified": [
+  "goolwa-8 Animal Farm adult price $15 (southaustralia.com listing; the farm's own prices page is script-rendered; older listings give $11-13)",
+  "goolwa-10 Goolwa Motor Museum: open status and the $8 price (old listing)",
+  "yankalilla-3 Wild South Coast Way: walking time 24-40 hr is an estimate from the five-day itinerary",
+  "yankalilla-6 Carrickalinga: International Dark Sky Community claim not re-checked",
+  "goolwa-7 Tolderol: lookout and picnic area not in the Parks SA text"
+ ],
+ "needs_browser": [
+  {
+   "id": "goolwa-8",
+   "url": "https://www.goolwaanimalfarm.com.au/",
+   "why": "Prices tab is script-rendered; read the current adult price"
+  },
+  {
+   "id": "goolwa-10",
+   "url": "https://escapegvh.com.au/things-to-do/goolwa-motor-museum/",
+   "why": "Cloudflare bot wall (403); would show whether the museum is open"
+  }
+ ],
+ "notes": [
+  "resolve-pin.py was run once per spot for the first three (and left running for the rest) and returned nothing within 60 s every time; Overpass, Nominatim (HTTP error), Photon and the Wikipedia API were also failing from here, so EVERY pin in this shard is LOW and comes from the southaustralia.com listing coordinates or Wikipedia. All need a re-run of resolve-pin when the services recover.",
+  "Pins checked against the shard and the other shards' known points: all >= 25 m apart (goolwa-9 and goolwa-11 are ~600 m apart in Strathalbyn; Strathalbyn goolwa-1 has no pin yet).",
+  "Gilbert's Motor Museum and the Strathalbyn museum are both in Strathalbyn, ~25 km from Goolwa: check they lie within 75% of the Goolwa span or give them to Strathalbyn.",
+  "Langhorne Creek is ~25 km from Goolwa as well; same span check."
+ ]
+}

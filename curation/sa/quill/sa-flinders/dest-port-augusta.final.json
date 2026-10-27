@@ -1,0 +1,62 @@
+{
+ "destination": {
+  "id": "port-augusta",
+  "name": "Port Augusta",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -32.4925,
+   "longitude": 137.76583333
+  },
+  "coordinates_source": "pending serial pin pass",
+  "category": "city",
+  "defaultZoomSpanKm": 40,
+  "rank": 5,
+  "icon": "🌵",
+  "tagline": "Gateway city at the head of Spencer Gulf, where the outback begins",
+  "description": "Port Augusta sits at the head of Spencer Gulf, where the roads to the Flinders Ranges and the outback meet. The Wadlata Outback Centre covers the Aboriginal and European history of the outback, and the Australian Arid Lands Botanic Garden shows desert plants across red sands on the city's edge. A restored 1882 water tower gives views over the town, the gulf and the ranges.",
+  "whyVisit": [
+   "Learn outback history and culture",
+   "Walk through arid-zone gardens"
+  ],
+  "highlights": [
+   "Outback stories",
+   "Desert plants"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🌊",
+    "title": "Mind the foreshore current",
+    "detail": "The tide drives a current in the deeper water off the foreshore beach, so swim close to the jetty."
+   },
+   {
+    "icon": "🚗",
+    "title": "Blanche Harbor is remote",
+    "detail": "It lies about 23 km from the centre along Shack Road, so allow time for the drive."
+   }
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Come in {months} for milder weather, when sightseeing and garden walks are comfortable. Summers are hot."
+ },
+ "spots": [
+  "port-augusta-1",
+  "port-augusta-2",
+  "port-augusta-3",
+  "port-augusta-4",
+  "port-augusta-5"
+ ],
+ "notes": [
+  "Span widened from 25 to 40 km: Blanche Harbor is ~23 km from the centre (needs <= 75% of span = 30 km).",
+  "Centre: draft is Wikipedia town point; confirm in the serial pin pass (OSM place=city centre)."
+ ]
+}

@@ -1,0 +1,422 @@
+{
+ "spots": {
+  "mclaren-vale-1": {
+   "name": "d'Arenberg Cube",
+   "icon": "🍷",
+   "category": "landmark",
+   "bio": "A five-level cube-shaped building at d'Arenberg winery with a tasting room, an art museum and a Dalí exhibition.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.19808333,
+    "longitude": 138.54752778
+   },
+   "coordinates_source": "Wikipedia article D'Arenberg (building-level coordinate; a Wikivoyage point 350 m away at -35.1972,138.5511 was not used)",
+   "notes": [
+    "Cube entry about $20 including a wine tasting (Wikivoyage); Dali exhibition about $10 extra. Not confirmed on the winery's own site (deep page 404s).",
+    "pin MEDIUM: single Wikipedia point, no OSM confirmation"
+   ],
+   "wiki": "D'Arenberg",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.darenberg.com.au/"
+  },
+  "mclaren-vale-2": {
+   "name": "Onkaparinga River National Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Gorge, river and Old Noarlunga walks in a national park 28 km south of Adelaide, with free vehicle entry.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.16055556,
+    "longitude": 138.55388889
+   },
+   "coordinates_source": "Wikipedia article (park point, not a verified visitor point)",
+   "notes": [
+    "pin LOW: park point from Wikipedia; Punchbowl lookout / Gate 25 picnic area visitor point not resolved",
+    "NPWS SA Fees tab: vehicle entry free, camping $39.80/night"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/onkaparinga-river-national-park"
+  },
+  "mclaren-vale-3": {
+   "name": "Willunga",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "A slate-built heritage township with galleries, a courthouse museum and the Willunga Slate Trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.274023,
+    "longitude": 138.553529
+   },
+   "coordinates_source": "Wikipedia article Willunga, South Australia (town point)",
+   "notes": [
+    "Slate Trail begins at the Slate Museum (National Trust)",
+    "pin MEDIUM: Wikipedia town point"
+   ],
+   "wiki": "Willunga, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open town, no single steward"
+  },
+  "mclaren-vale-4": {
+   "name": "Port Willunga",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A beach under tall cliffs with the ruins of an old jetty and caves, and the Star of Greece wreck site offshore.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.261797,
+    "longitude": 138.46
+   },
+   "coordinates_source": "Commons geotagged-photo median (14 files); the Wikipedia point is 1 km inland-north",
+   "notes": [
+    "pin LOW: photo median, no OSM natural=beach feature"
+   ],
+   "wiki": "Port Willunga, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-5": {
+   "name": "Maslin Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A cliff-backed beach beside Blanche Point, where the southern end became Australia's first legal nude beach in 1975.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.223,
+    "longitude": 138.48
+   },
+   "coordinates_source": "Wikipedia article Maslin Beach, South Australia (suburb point, probably inland of the sand)",
+   "notes": [
+    "pin LOW: suburb point from Wikipedia likely sits inland of the beach; needs an OSM natural=beach point",
+    "Southern end clothing-optional since 1975 (SA Memory, Lonely Planet)"
+   ],
+   "wiki": "Maslin Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-6": {
+   "name": "Aldinga Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A wide, flat beach with drive-on access south of Port Willunga, backed by the Aldinga township.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.279293,
+    "longitude": 138.460403
+   },
+   "coordinates_source": "OSM Nominatim place point for Aldinga Beach (administrative boundary label node, township beside the beach)",
+   "notes": [
+    "pin LOW: township point beside the beach, not natural=beach; draft hint -35.295131,138.457387 was identical to Silver Sands' and was not used"
+   ],
+   "wiki": "Aldinga Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-7": {
+   "name": "Red Poles",
+   "icon": "🎨",
+   "category": "entertainment",
+   "bio": "A gallery of Indigenous and South Australian artists, with a restaurant and bed and breakfast, free to browse.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "unresolved: 190 McMurtrie Road, McLaren Vale, about 2 km off Main Road; no feature found",
+   "notes": [
+    "pin LOW: unresolved",
+    "Operator domain redpoles.com.au currently shows a parked-domain page (NebTech); a Fringe venue listing and tourism-board pages still list it open. Verify it is still trading before applying (possible closure).",
+    "Free to browse not confirmed on an operator page"
+   ],
+   "free": true,
+   "costBasis": "entry",
+   "ticket_note": "official domain redpoles.com.au is parked; no verified operator page"
+  },
+  "mclaren-vale-8": {
+   "name": "Coast to Vines Rail Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "A 37 km rail trail from Marino Rocks to Willunga, passing McLaren Vale cellar doors on its Shiraz Trail section.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -35.160233,
+    "longitude": 138.517774
+   },
+   "coordinates_source": "OSM relation segment via resolve-pin (trail midpoint of a 1.0 km matched segment; the whole route is longer)",
+   "notes": [
+    "pin MEDIUM: midpoint of one OSM segment, not the whole 37 km route; the route starts in sa-adelaide (Marino Rocks)",
+    "Length 37 km per City of Marion and Onkaparinga; Wikipedia says 34 km",
+    "ticketUrl is the regional board page (loaded, title checked); councils (Onkaparinga, Marion) manage the trail"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.mclarenvaleandfleurieucoast.com.au/coast-to-vines-rail-trail"
+  },
+  "mclaren-vale-9": {
+   "name": "Willunga Courthouse and Slate Museums",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "A heritage-listed 1855 courthouse and a slate museum, open only on the first Saturday and third Sunday monthly.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -35.274189,
+    "longitude": 138.558686
+   },
+   "coordinates_source": "Commons geotagged-photo median (13 files)",
+   "notes": [
+    "pin LOW: photo median, 470 m from the town point",
+    "Free admission; open first Saturday and third Sunday of the month 1-4 pm (National Trust). Marginal: very limited opening, consider review."
+   ],
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://willungantsa.au/"
+  },
+  "mclaren-vale-10": {
+   "name": "Sellicks Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long beach on the southern coast of the peninsula, with a small town behind it.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.32937143,
+    "longitude": 138.45862937
+   },
+   "coordinates_source": "Wikipedia article Sellicks Beach, South Australia (OSM-derived 8dp point, unverified feature)",
+   "notes": [
+    "pin LOW: unconfirmed feature type"
+   ],
+   "wiki": "Sellicks Beach, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-11": {
+   "name": "Silver Sands",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A drive-on beach near Aldinga used for swimming and surfing.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.295131,
+    "longitude": 138.457387
+   },
+   "coordinates_source": "Atlas draft hint (Wikipedia-derived), unverified",
+   "notes": [
+    "pin LOW: unresolved; point is the draft hint, 1.8 km from Aldinga Beach's pin and not confirmed as Silver Sands' beach"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open beach"
+  },
+  "mclaren-vale-12": {
+   "name": "Moana Sands Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Coastal dunes with Kaurna heritage and hooded plover habitat, with lookouts and walking trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.2025,
+    "longitude": 138.47277778
+   },
+   "coordinates_source": "Wikipedia article Moana Sands Conservation Park (park point)",
+   "notes": [
+    "pin LOW: park point, not a visitor point/lookout",
+    "NPWS SA: free entry"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/moana-sands-conservation-park"
+  },
+  "mclaren-vale-13": {
+   "name": "Wangkuntila-Aldinga Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Sand blows, the Aldinga Washpool lagoon and walking trails in a coastal conservation park.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.295381,
+    "longitude": 138.454367
+   },
+   "coordinates_source": "Wikipedia article Aldinga Scrub Conservation Park (park point)",
+   "notes": [
+    "pin LOW: park point, not a visitor point; 280 m from Silver Sands' unresolved pin",
+    "NPWS SA: free entry; wiki title is the former name of the same park (article is this place)"
+   ],
+   "wiki": "Aldinga Scrub Conservation Park",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/wangkuntila-aldinga-conservation-park"
+  },
+  "mclaren-vale-14": {
+   "name": "Onkaparinga River Recreation Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Estuary wetlands on the Onkaparinga River with boardwalks, kayaking, fishing and shared trails.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.16438889,
+    "longitude": 138.49072222
+   },
+   "coordinates_source": "Wikipedia article (park point)",
+   "notes": [
+    "pin LOW: park point, not a visitor point",
+    "NPWS SA: free entry"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/onkaparinga-river-recreation-park"
+  },
+  "mclaren-vale-15": {
+   "name": "Cox Scrub Conservation Park",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A conservation park with three loop walks through woodland and shrubland, from 3.5 km to 8.5 km.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.3355451,
+    "longitude": 138.72942244
+   },
+   "coordinates_source": "Wikipedia article (park point)",
+   "notes": [
+    "pin LOW: park point; Coles Crossing trail start not resolved",
+    "NPWS SA: free entry; about 21 km from McLaren Vale"
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cox-scrub-conservation-park"
+  },
+  "mclaren-vale-16": {
+   "name": "Softfoot Alpaca Farm",
+   "icon": "🦙",
+   "category": "entertainment",
+   "bio": "An alpaca farm and small wildlife park at Hindmarsh Valley, with alpaca safari tours across the property.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "unresolved: 594 Sawpit Road, Hindmarsh Valley",
+   "notes": [
+    "pin LOW: unresolved",
+    "MISPLACED: the farm is at 594 Sawpit Road, Hindmarsh Valley, by Victor Harbor, about 35 km from McLaren Vale; move to victor-harbor (id stays) or make standalone",
+    "Wildlife park adults $10, children free, Thursday to Sunday; alpaca tours are separate (about $225-250 per person via resellers, not stored). Site softfoot.com.au redirects to theswagman.rest"
+   ],
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.softfoot.com.au"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "mclaren-vale",
+    "name": "McLaren Vale",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.219773,
+     "longitude": 138.541119
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 45,
+    "rank": 3,
+    "icon": "🍷",
+    "tagline": "Cellar doors, ochre cliffs and sandy beaches just south of Adelaide.",
+    "description": "McLaren Vale is a wine region about 40 minutes south of Adelaide, with around 80 cellar doors spread over hills and vineyards. Its coast runs for 31 km along Gulf St Vincent, from the cliffs of Maslin Beach to the wide sands at Aldinga and Sellicks. Willunga, the region's slate-built township, has galleries and a courthouse museum, while the d'Arenberg Cube sits on a hilltop among the vines.",
+    "whyVisit": [
+     "Taste Shiraz at hilltop cellar doors",
+     "Walk cliff-backed beaches on the gulf",
+     "Explore the slate-built streets of Willunga"
+    ],
+    "highlights": [
+     "Cellar doors",
+     "Gulf beaches",
+     "Slate heritage"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "📞",
+      "title": "Book smaller cellar doors",
+      "detail": "About 80 wineries are open to the public, but many smaller ones take visitors by appointment only, so ring ahead."
+     },
+     {
+      "icon": "🍷",
+      "title": "Tastings carry a fee",
+      "detail": "Tastings usually cost $15-20 a person, and some wineries credit it against a purchase, so check the small print."
+     },
+     {
+      "icon": "🏖️",
+      "title": "Clothing-optional beach",
+      "detail": "The southern end of Maslin Beach is clothing-optional. The northern end is for clothed swimmers."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "{months} are mild for cellar doors and beach walks, while summer days can run hot."
+   },
+   "spots": [
+    "mclaren-vale-1",
+    "mclaren-vale-2",
+    "mclaren-vale-3",
+    "mclaren-vale-4",
+    "mclaren-vale-5",
+    "mclaren-vale-6",
+    "mclaren-vale-7",
+    "mclaren-vale-8",
+    "mclaren-vale-9",
+    "mclaren-vale-10",
+    "mclaren-vale-11",
+    "mclaren-vale-12",
+    "mclaren-vale-13",
+    "mclaren-vale-14",
+    "mclaren-vale-15",
+    "mclaren-vale-16"
+   ],
+   "notes": [
+    "Coordinates: Wikipedia town point for McLaren Vale, South Australia (unchanged from draft; OSM unavailable); 750 m from the d'Arenberg Cube is not an issue, no spot within 25 m.",
+    "defaultZoomSpanKm kept at 45 (75% = 33.75 km): farthest spot is Cox Scrub at about 21 km. If Softfoot (Hindmarsh Valley, ~35 km) stays, the span would need 50+; recommend moving it to victor-harbor instead.",
+    "Order kept as drafted. Rank 3: 3 reasons, 3 tips."
+   ]
+  }
+ ],
+ "unverified": [
+  "mclaren-vale-1: Cube price $20 (incl. tasting) from Wikivoyage only; winery deep page 404",
+  "mclaren-vale-7 Red Poles: free to browse and still trading unconfirmed; operator domain parked",
+  "mclaren-vale-16 Softfoot: $10 wildlife-park adult entry from operator site text; location misplaced",
+  "mclaren-vale-9: free admission per National Trust page; opening only first Sat/third Sun monthly"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "Overpass was down and Nominatim returned 429 for most of the run: resolve-pin returned only LOW/Wikipedia/Commons results for most spots, so many pins are LOW and need a re-run when OSM is reachable.",
+  "LOW pins: mclaren-vale-2,4,5,6,7,9,10,11,12,13,14,15,16 (7 and 16 have no coordinates).",
+  "mclaren-vale-16 Softfoot belongs near Victor Harbor (Hindmarsh Valley), not McLaren Vale: re-home.",
+  "mclaren-vale-7 Red Poles and mclaren-vale-9 Willunga Courthouse (open ~2 days a month) are marginal; Red Poles' website is a parked domain."
+ ]
+}

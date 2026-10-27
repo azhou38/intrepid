@@ -1,0 +1,74 @@
+{
+ "destination": {
+  "id": "clare-valley",
+  "name": "Clare Valley",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -33.833391,
+   "longitude": 138.612004
+  },
+  "category": "nature",
+  "defaultZoomSpanKm": 50,
+  "rank": 3,
+  "icon": "🍇",
+  "tagline": "Riesling country on an old railway line, with Jesuit cellars and a Georgian mansion.",
+  "description": "The Clare Valley is a wine region in South Australia's Mid North, about two hours' drive north of Adelaide. The Riesling Trail follows a former railway line past cellar doors between Auburn and Barinia, and Sevenhill Cellars, founded by Jesuits, is the valley's first winery. Mintaro's slate-and-stone streets and Martindale Hall recall the pastoral wealth of the 1800s, while Spring Gully and Neagles Rock add waterfall and lookout walks.",
+  "whyVisit": [
+   "Taste Riesling at historic cellar doors",
+   "Ride the old railway past vineyards",
+   "Explore heritage villages and homesteads"
+  ],
+  "highlights": [
+   "Riesling wine",
+   "Rail trail",
+   "Heritage villages"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🚲",
+    "title": "Hire bikes in Clare or Auburn",
+    "detail": "The Riesling Trail suits walkers, cyclists and wheelchairs, and bikes can be hired in Clare and Auburn."
+   },
+   {
+    "icon": "🏛️",
+    "title": "Martindale Hall closes Tuesdays",
+    "detail": "The hall is open 10am to 4pm, Wednesday to Monday, and daily in school holidays. Plan Mintaro around those days."
+   },
+   {
+    "icon": "🔥",
+    "title": "Parks close on fire-ban days",
+    "detail": "Conservation parks such as Spring Gully close on Catastrophic Fire Danger days and may close on Extreme days. Check the CFS first."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "Mild days in {months} suit the trail and cellar doors, and spring brings wildflowers."
+ },
+ "spots": [
+  "clare-valley-2",
+  "clare-valley-1",
+  "clare-valley-3",
+  "clare-valley-4",
+  "clare-valley-7",
+  "clare-valley-5",
+  "clare-valley-8",
+  "clare-valley-6",
+  "clare-valley-9",
+  "clare-valley-10",
+  "clare-valley-11"
+ ],
+ "notes": [
+  "Clare pin is Nominatim's place centre for Clare (-33.8334,138.6120); span 50 km holds every spot in this shard within 75% (furthest: Rattler Trail ~30 km, Auburn ~22 km).",
+  "Order changed from the draft: Riesling Trail first (the region's signature), Sevenhill second, then Martindale, Mintaro, Auburn, the parks, Bungaree, Neagles, Rattler; clare-valley-10 and -11 (Blyth, Farrell Flat Silo Art) are in another shard and stay last.",
+  "Description, reasons and tips avoid naming Burra-side neighbours; whyVisit photos and header are for the photo pipeline."
+ ]
+}

@@ -1,0 +1,433 @@
+{
+ "spots": {
+  "coober-pedy-1": {
+   "name": "Old Timers Mine",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Self-guided tour of a mine dug in 1916, with underground homes, an opal noodling pit and a museum.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.008924,
+    "longitude": 134.759636
+   },
+   "free": false,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://oldtimersmine.com.au",
+   "coordinates_source": "osm tourism=attraction 'Old Timers Mine & Museum' (-29.008924,134.759636) + Wikivoyage listing (-29.00901,134.75974), 13 m apart: HIGH",
+   "notes": [
+    "Adult $15 / concession $12.50 from the southaustralia.com listing; oldtimersmine.com.au (title 'Home | Old Timers Mine') shows no price."
+   ]
+  },
+  "coober-pedy-2": {
+   "name": "Umoona Opal Mine and Museum",
+   "icon": "💎",
+   "category": "museum",
+   "bio": "Underground opal mine with a free museum and daily guided tours of 1920s workings in Coober Pedy.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.009584,
+    "longitude": 134.754423
+   },
+   "free": false,
+   "costMin": 15.5,
+   "costMax": 15.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://umoonaopalmine.com.au",
+   "coordinates_source": "osm tourism=museum 'Umoona Opal Mine & Museum' (nominatim): MEDIUM",
+   "notes": [
+    "Museum is free; the price is the adult mine tour ($15.50 on the official booking page, $16 on its virtual-tour page, tours 10am/2pm/4pm, about 45 min)."
+   ]
+  },
+  "coober-pedy-3": {
+   "name": "Tom's Working Opal Mine",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "Working opal mine on the Stuart Highway where visitors walk the underground seams and see opal in the walls.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -29.023761,
+    "longitude": 134.740903
+   },
+   "free": false,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "coordinates_source": "osm tourism=attraction 'Tom's Working Opal Mine' (nominatim): MEDIUM",
+   "ticket_note": "No official site found by search or by guessed domain; operator unconfirmed.",
+   "notes": [
+    "Price is an adult self-guided figure from a guidebook listing, unverified; guided tours cost more."
+   ]
+  },
+  "coober-pedy-4": {
+   "name": "Kanku-Breakaways Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "Eroded arid hills about 30 km north of Coober Pedy, in a park co-managed with its Aboriginal owners.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -28.856438,
+    "longitude": 134.770592
+   },
+   "free": false,
+   "costMin": 13.5,
+   "costMax": 13.5,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kanku-breakaways-conservation-park",
+   "wiki": "Kanku-Breakaways Conservation Park",
+   "coordinates_source": "LOW: OSM 'Kanku Breakaways' unclassified way (nominatim); Wikipedia -28.8486,134.7278 is the park centroid. Visitor point needs the council's access-road/lookout car park.",
+   "notes": [
+    "pin: LOW",
+    "Vehicle entry $13.50 ($11.20 concession), bought from Coober Pedy Visitor Information Centre or online (parks.sa.gov.au page). Distance: Wikipedia says 33 km, council 25 km north of town.",
+    "Dog Fence / lookouts are from third-party pages only; not used."
+   ]
+  },
+  "coober-pedy-5": {
+   "name": "Saint Elijah the Prophet Serbian Orthodox Church",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Serbian Orthodox church bored into a hillside in Coober Pedy, with a richly ornamented interior open to visitors.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -29.012718,
+    "longitude": 134.773402
+   },
+   "free": true,
+   "costBasis": "donation",
+   "wiki": "Saint Elijah the Prophet Serbian Orthodox Church, Coober Pedy",
+   "coordinates_source": "osm amenity=place_of_worship 'Saint Elijah Church' (-29.012718,134.773402) + Wikipedia article (-29.012838,134.773298), 17 m apart: HIGH",
+   "ticket_note": "Parish church with no operator site found.",
+   "notes": [
+    "Donation entry (about $5, honour box) is from visitor reviews, not an official source; interior named by Wikivoyage."
+   ]
+  },
+  "coober-pedy-6": {
+   "name": "Faye's Underground Home",
+   "icon": "🏠",
+   "category": "historic",
+   "bio": "Tour of an underground home dug by hand by women opal miners, with living rooms cut into the rock of Coober Pedy.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -29.010877,
+    "longitude": 134.763161
+   },
+   "free": false,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "coordinates_source": "osm tourism=museum (nominatim) + Wikivoyage listing (-29.011308,134.763984), ~90 m apart: MEDIUM",
+   "ticket_note": "No official site found.",
+   "notes": [
+    "Big4 notes bus tours do not run mid-Oct to late March.",
+    "Bio 'women opal miners' follows Wikivoyage (carved by several women) and a newspaper/SCMP mention of Faye Naylor, one of the first female opal miners."
+   ]
+  },
+  "coober-pedy-7": {
+   "name": "Moon Plain",
+   "icon": "🌙",
+   "category": "nature",
+   "bio": "Barren, pale plain near Coober Pedy where scenes of Mad Max Beyond Thunderdome and Priscilla were filmed.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "none found: no OSM feature and no Wikipedia article (the 'Moon Plain (South Australia)' title 404s); sources give only 'near Coober Pedy'",
+   "notes": [
+    "pin: LOW",
+    "Needs the pin from a map source (Oodnadatta Track / William Creek Road stopping point) by the owner. Drop wiki: article does not exist."
+   ]
+  },
+  "coober-pedy-8": {
+   "name": "Big Winch",
+   "icon": "⛏️",
+   "category": "landmark",
+   "bio": "Hilltop lookout and giant winch in the middle of Coober Pedy, with views over the opal fields and the town.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -29.008703,
+    "longitude": 134.758022
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "osm tourism=viewpoint 'The Big Winch' (-29.008703,134.758022) + Wikivoyage (-29.008827,134.758128), 14 m: HIGH",
+   "ticket_note": "Open lookout; no single steward site verified.",
+   "notes": [
+    "Free per southaustralia.com listing (Big Winch 360 Lookout)."
+   ]
+  },
+  "coober-pedy-9": {
+   "name": "Coober Pedy Golf Club",
+   "icon": "⛳",
+   "category": "entertainment",
+   "bio": "Grassless desert golf course where players carry a piece of turf to tee off, a few kilometres from town.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -29.007245,
+    "longitude": 134.730675
+   },
+   "free": false,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "wiki": "Coober Pedy Golf Club",
+   "coordinates_source": "osm leisure=golf_course 'Coober Pedy Opal Fields Golf Club' (nominatim): MEDIUM",
+   "ticket_note": "Club site (cooberpedygolfclub.com.au) not loaded or verified.",
+   "notes": [
+    "$10 green fee from a caravan-park listing, unverified (another source says more); visitors may need to arrange play via the club sponsor. OSM name is 'Coober Pedy Opal Fields Golf Club'."
+   ]
+  },
+  "innamincka-1": {
+   "name": "Innamincka Regional Reserve",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Reserve of over 1.3 million hectares along Cooper Creek, with waterholes for fishing and canoeing and Burke and Wills sites.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -27.7454,
+    "longitude": 140.7541
+   },
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/innamincka-regional-reserve",
+   "wiki": "Innamincka Regional Reserve",
+   "coordinates_source": "LOW: Commons geotagged median (-27.7454,140.7541); Wikipedia -27.541,140.596 is a centroid 27 km away. Visitor point is the national parks visitor centre in the former AIM building in Innamincka town (not located on a map).",
+   "notes": [
+    "pin: LOW",
+    "Vehicle entry $14.40 (parks page, Fees must be paid before entry); the page's alert says Malkumba Coongie Lakes NP and significant parts of the reserve are closed until further notice due to flooding (seen Oct 2026).",
+    "Desert Parks Pass: not stated on the page for this reserve; not recorded."
+   ]
+  },
+  "innamincka-2": {
+   "name": "Cullyamurra Waterhole",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Cooper Creek waterhole described as Australia's largest billabong, with canoeing and riverside camping.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -27.709465,
+    "longitude": 140.886764
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "LOW: single source, ExplorOz place 72241 (-27.709465,140.886764); no OSM match. Park page says the campground is 16 km north-east of Innamincka.",
+   "notes": [
+    "pin: LOW",
+    "Inside Innamincka Regional Reserve, so its vehicle entry fee applies; campground fees separate. Canoeing limited to Cullyamurra-Wills site and needs a permit (DEW fact sheet). 7 km length from a hotel page, unverified."
+   ]
+  },
+  "innamincka-3": {
+   "name": "Malkumba–Coongie Lakes National Park",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Ramsar-listed arid wetland of channels, lakes and floodplains north-west of Innamincka, for canoeing and birds.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -27.26139,
+    "longitude": 140.15694
+   },
+   "free": false,
+   "costMin": 14.4,
+   "costMax": 14.4,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/malkumba-coongie-lakes-national-park",
+   "wiki": "Malkumba–Coongie Lakes National Park",
+   "coordinates_source": "LOW: Wikipedia 'Coongie Lakes' lake-system point (-27.26139,140.15694); park visitor point not found; Wikipedia has no coordinates for the park title.",
+   "notes": [
+    "pin: LOW",
+    "Vehicle entry $14.40. Closed until further notice due to flooding (parks page alert, Oct 2026); 4WD via Strzelecki Track, about 100 km north-west of Innamincka."
+   ]
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "coober-pedy",
+    "name": "Coober Pedy",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -29.011111,
+     "longitude": 134.755556
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 60,
+    "rank": 3,
+    "icon": "💎",
+    "tagline": "Opal-mining town of underground homes, churches and desert landscapes in the outback.",
+    "description": "Coober Pedy is an opal-mining town on the Stuart Highway in outback South Australia, where homes and churches are dug into the hillsides. Visitors tour old mines and underground dwellings, and the Serbian Orthodox church is bored out of solid rock. Outside town, the Kanku-Breakaways' eroded hills and the pale Moon Plain have both served as film locations. About 20 km out there is no electric light, so the night sky is easy to see.",
+    "whyVisit": [
+     "Tour underground opal mines",
+     "Visit homes and churches dug into rock",
+     "Explore eroded desert hills and plains"
+    ],
+    "highlights": [
+     "Opal mines",
+     "Underground living",
+     "Desert landscapes"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Buy a Breakaways permit",
+      "detail": "Entry to Kanku-Breakaways is $13.50 per vehicle, bought online or at the Coober Pedy Visitor Information Centre."
+     },
+     {
+      "icon": "⚠️",
+      "title": "Stay off the diggings",
+      "detail": "Old opal shafts are deep and easy to fall into, so see a worked-out mine on a tour rather than wandering the mine fields."
+     },
+     {
+      "icon": "🌡️",
+      "title": "Underground stays cool",
+      "detail": "Underground workings hold about 22-24 °C all year, so a mine tour is a cool break from the surface heat."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "{months} bring milder days for mine tours and desert drives. Summer heat on the surface is extreme."
+   },
+   "spots": [
+    "coober-pedy-1",
+    "coober-pedy-2",
+    "coober-pedy-5",
+    "coober-pedy-4",
+    "coober-pedy-3",
+    "coober-pedy-8",
+    "coober-pedy-6",
+    "coober-pedy-7",
+    "coober-pedy-9"
+   ],
+   "notes": [
+    "Order changed: Serbian church and Kanku-Breakaways moved ahead of Tom's Mine as bigger draws; ids unchanged.",
+    "Pin: town point is Wikipedia -29.011111,134.755556; Commons median 187 m away agrees on the town (resolve-pin said LOW because it only found the article and a photo median). Not any spot's pin (nearest, Umoona, ~145 m).",
+    "name_evidence: Wikivoyage Coober Pedy; flindersandoutback.com.au/towns/coober-pedy.",
+    "Span 60 km: Kanku-Breakaways ~30 km north is inside 75% (45 km)."
+   ]
+  },
+  {
+   "destination": {
+    "id": "innamincka",
+    "name": "Innamincka",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -27.746651,
+     "longitude": 140.738019
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 120,
+    "rank": 4,
+    "icon": "🛶",
+    "tagline": "Remote Cooper Creek outpost of waterholes, wetlands and Burke and Wills history.",
+    "description": "Innamincka is a small township on Cooper Creek in South Australia's far north-east, home to about 15 permanent residents. The former Australian Inland Mission building is now the national parks visitor centre, with displays on the Yandruwandha and Yawarrawarrka Traditional Owners, pastoral settlement and the Burke and Wills expedition. Innamincka Regional Reserve covers more than 1.3 million hectares of creek waterholes and arid country. Malkumba-Coongie Lakes National Park, about 100 km north-west, is a Ramsar-listed wetland.",
+    "whyVisit": [
+     "Paddle the waterholes of Cooper Creek",
+     "Camp and fish in the outback",
+     "Follow the Burke and Wills story"
+    ],
+    "highlights": [
+     "Cooper Creek",
+     "Outback camping",
+     "Explorer history"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🛣️",
+      "title": "Check road conditions first",
+      "detail": "Access is by the Strzelecki Track via Leigh Creek, so read the latest Desert Parks Bulletin before setting out."
+     },
+     {
+      "icon": "🌊",
+      "title": "Floods close the parks",
+      "detail": "Flooding has closed Malkumba-Coongie Lakes and parts of the reserve, so check park alerts before you go."
+     }
+    ],
+    "bestMonths": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "{months} are the most comfortable. Summer is very hot and dry, and good rain brings wildflowers."
+   },
+   "spots": [
+    "innamincka-1",
+    "innamincka-2",
+    "innamincka-3",
+    "innamincka-4"
+   ],
+   "notes": [
+    "Draft lists innamincka-4 but this shard holds only innamincka-1..3; innamincka-4 is in another shard.",
+    "Town point is Wikipedia -27.746651,140.738019 (6 decimals); resolve-pin LOW (single article). Wikivoyage's header coordinates are not used.",
+    "Span 120 km: Coongie Lakes is ~79 km from the town, inside 75% (90 km).",
+    "name_evidence: Wikivoyage Innamincka; flindersandoutback.com.au/towns/innamincka; parks.sa.gov.au."
+   ]
+  }
+ ],
+ "unverified": [
+  "Tom's Working Opal Mine: $15 adult and operator site unconfirmed",
+  "Faye's Underground Home: $5 (2015) and opening days",
+  "Coober Pedy Golf Club: $10 green fee, club site",
+  "Saint Elijah church: donation amount ~$5 from reviews",
+  "Old Timers Mine: $15 not on its own site (southaustralia.com listing)",
+  "Umoona: $15.50 vs $16 on its two pages",
+  "Cullyamurra: 7 km length and canoe permit detail",
+  "Kanku-Breakaways: 25 vs 33 km from town (bio says about 30 km)"
+ ],
+ "needs_browser": [
+  {
+   "id": "coober-pedy-3",
+   "url": "toms opal mine official site",
+   "why": "no official site found by script/search"
+  },
+  {
+   "id": "coober-pedy-6",
+   "url": "Faye's Underground Home official site",
+   "why": "no site found"
+  }
+ ],
+ "notes": [
+  "LOW pins: coober-pedy-4 Kanku-Breakaways, coober-pedy-7 Moon Plain (no point at all), innamincka-1 reserve, innamincka-2 Cullyamurra, innamincka-3 Coongie park.",
+  "Overpass and Nominatim were rate-limited/unreachable for part of the run.",
+  "Nothing judged not-to-add. Wikipedia title 'Moon Plain (South Australia)' does not exist: wiki dropped."
+ ]
+}

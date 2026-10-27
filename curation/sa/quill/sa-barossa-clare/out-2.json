@@ -1,0 +1,329 @@
+{
+ "spots": {
+  "barossa-valley-13": {
+   "name": "Map the Miner",
+   "icon": "🗿",
+   "category": "monument",
+   "bio": "A 7 m bronze statue of a Cornish miner at Kapunda's southern entrance, honouring the town's copper-mining history.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -34.352115,
+    "longitude": 138.906849
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Roadside statue with no single operator or official page.",
+   "coordinates_source": "OSM tourism=artwork 'Map the Miner' (Nominatim), 14 m from the Wikipedia point: HIGH",
+   "notes": []
+  },
+  "barossa-valley-14": {
+   "name": "Gawler",
+   "wiki": "Gawler, South Australia",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Town 40 km north of Adelaide, once a resting stop on the road to the Kapunda and Burra copper mines.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.597331,
+    "longitude": 138.744893
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "A town with no single steward.",
+   "coordinates_source": "Nominatim place centre for Gawler (admin boundary linked to the town node), 70 m from the Wikipedia point; HIGH",
+   "notes": [
+    "Marginal as a visitor stop: Wikivoyage's Gawler page lists only the National Trust Museum (dead link) and a jockey club under Do, and no See entries; kept because the coverage judge kept it. Owner may want to review it (low visit value, a gateway town)."
+   ]
+  },
+  "barossa-valley-15": {
+   "name": "Warren Conservation Park",
+   "icon": "🥾",
+   "category": "nature",
+   "bio": "Conservation park of stringybark and box woodland with three steep walking trails, one a section of the Heysen Trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -34.727789,
+    "longitude": 138.911999
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/warren-conservation-park",
+   "coordinates_source": "LOW: OSM 'Warren Tower Hike' footway inside the park (way centre); no car park, trailhead or visitor point is mapped in the park and the OSM relation centroid (-34.7181,138.9082) is not used",
+   "notes": [
+    "pin: LOW (provisional point on the mapped Warren Tower Hike inside the park; the entrance car park should be taken from the NPWS park map)",
+    "NPWS page: free entry, open daily, closed on Catastrophic Fire Danger days; tracks steep, for experienced walkers."
+   ]
+  },
+  "clare-valley-1": {
+   "name": "Sevenhill Cellars",
+   "icon": "🍷",
+   "category": "religious",
+   "bio": "The Clare Valley's first winery, built by Jesuits in 1851, with a cellar door and the landmark St Aloysius Church.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.881944,
+    "longitude": 138.63844
+   },
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://sevenhill.com.au/",
+   "coordinates_source": "OSM tourism=winery node 'Sevenhill Winery' (Overpass); the Commons photo median is 1.1 km away at the village green: MEDIUM",
+   "notes": [
+    "No Wikipedia article for Sevenhill Cellars (the draft's wiki title is a red link), so no wiki field.",
+    "Cellar door open daily 10am-5pm; entry is free, tasting fees ($10 Inigo range, $30 premium range) are waived on a wine purchase and are an optional extra, so not recorded as the cost.",
+    "Church interior access not separately confirmed on the cellar door page; the church is the landmark on the village green."
+   ]
+  },
+  "clare-valley-2": {
+   "name": "Riesling Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "A 35 km walking and cycling trail along a former railway line from Auburn to Barinia, passing cellar doors.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -33.938452,
+    "longitude": 138.637514
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://rieslingtrail.com.au/",
+   "coordinates_source": "OSM trail midpoint (4.9 km, 'Mawson Trail Network: Riesling Trail' segment, Nominatim) about 2 km from the middle of the 35 km route; the whole route was not retrievable (Overpass overloaded): MEDIUM",
+   "notes": [
+    "Length and Auburn-Barinia extent from the Clare Valley Tourism directory; trail site title confirmed: 'Walk, run or ride the Riesling Trail from Auburn to Barinia'."
+   ]
+  },
+  "clare-valley-3": {
+   "name": "Martindale Hall",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Georgian-style mansion of 32 rooms built in 1879 near Mintaro, open for self-guided tours and seen in Picnic at Hanging Rock.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.937821,
+    "longitude": 138.729379
+   },
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://martindalehall.com.au/",
+   "coordinates_source": "OSM historic building way 'Martindale Hall' (Overpass), within 5 m of the Wikipedia point: HIGH",
+   "notes": [
+    "Adult admission $20 (children $10) from the hall's own site; the surrounding conservation park is free entry (NPWS). Open 10am-4pm Wednesday to Monday, closed Tuesdays, daily in school holidays (NPWS) - covered in the Clare Valley tips.",
+    "resolve-pin.py itself returned LOW (Nominatim rate-limited, Overpass down); point taken from Overpass mirror plus Wikipedia."
+   ]
+  },
+  "clare-valley-4": {
+   "name": "Mintaro",
+   "wiki": "Mintaro, South Australia",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Heritage village of slate and stone buildings, founded in 1849 as a rest stop for bullock teams hauling copper from Burra.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.919503,
+    "longitude": 138.723829
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "A village with no single steward.",
+   "coordinates_source": "resolve-pin.py MEDIUM: Nominatim place centre for Mintaro (admin boundary), 250 m from the Commons photo median and 380 m from the Wikipedia point",
+   "notes": []
+  },
+  "clare-valley-5": {
+   "name": "Spring Gully Conservation Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Conservation park near Clare where a walk from Blue Gum Lookout leads to an 18 m waterfall that runs after rain.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.905649,
+    "longitude": 138.587532
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/spring-gully-conservation-park",
+   "coordinates_source": "OSM tourism=viewpoint node 'Blue Gum Lookout' (Overpass), the park's main lookout, 1 km from the park centroid: MEDIUM",
+   "notes": [
+    "NPWS: free entry, open daily, closed on Catastrophic Fire Danger days; waterfall is seasonal."
+   ]
+  },
+  "clare-valley-6": {
+   "name": "Neagles Rock Short Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 1 km loop of about 45 minutes through grassy hillsides and red rock outcrops to a lookout over the Clare Valley.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.849448,
+    "longitude": 138.607084
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council walking trail; Clare Valley Tourism's directory page is a regional listing, not the steward, so no ticketUrl.",
+   "coordinates_source": "OSM highway=path 'Neagles Rock Short Walk' (way centre, Overpass); the lookout node is 70 m away at -33.849094,138.607756: MEDIUM",
+   "notes": [
+    "The walk is a 1 km loop, so the pin is the centre of one of its two mapped path segments, which lies on the path."
+   ]
+  },
+  "clare-valley-7": {
+   "name": "Auburn",
+   "wiki": "Auburn, South Australia",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small heritage town on the Wakefield River at the southern end of the Clare Valley, where the Riesling and Rattler Trails meet.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.026398,
+    "longitude": 138.685917
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "A town with no single steward.",
+   "coordinates_source": "Nominatim place centre for Auburn, 48 m from the Wikipedia point: HIGH",
+   "notes": []
+  },
+  "clare-valley-8": {
+   "name": "Bungaree Station",
+   "icon": "🐑",
+   "category": "historic",
+   "bio": "Sheep station founded in 1841 near Clare, with a self-guided tour of the village-like historic complex and its woolshed.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.744394,
+    "longitude": 138.563644
+   },
+   "costMin": 17.5,
+   "costMax": 17.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://bungareestation.com.au/tours/",
+   "coordinates_source": "OSM node 'Bungaree Station' (Overpass), same point as resolve-pin.py MEDIUM",
+   "notes": [
+    "Self-guided tour $17.50 per adult for day visitors (under 12 free with an adult), daily 10am-4pm except private functions; guided tours need 20+ people.",
+    "The OSM node is a named locality node for the station, not the homestead; within a few hundred metres of the tour buildings (Bungaree Road, Clare)."
+   ]
+  },
+  "clare-valley-9": {
+   "name": "Rattler Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "A 19 km walking and cycling trail from Riverton to Auburn, passing vineyards and farms, that joins the Riesling Trail.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.102924,
+    "longitude": 138.697004
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-managed trail; no single official page found, and Clare Valley Tourism's directory page is a regional listing.",
+   "coordinates_source": "OSM trail midpoint (6.9 km 'Rattler Trail' segment, Nominatim), the longest segment and near the middle of the 19 km route: MEDIUM",
+   "notes": []
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "clare-valley",
+    "name": "Clare Valley",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -33.833391,
+     "longitude": 138.612004
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 50,
+    "rank": 3,
+    "icon": "🍇",
+    "tagline": "Riesling country on an old railway line, with Jesuit cellars and a Georgian mansion.",
+    "description": "The Clare Valley is a wine region in South Australia's Mid North, about two hours' drive north of Adelaide. The Riesling Trail follows a former railway line past cellar doors between Auburn and Barinia, and Sevenhill Cellars, founded by Jesuits, is the valley's first winery. Mintaro's slate-and-stone streets and Martindale Hall recall the pastoral wealth of the 1800s, while Spring Gully and Neagles Rock add waterfall and lookout walks.",
+    "whyVisit": [
+     "Taste Riesling at historic cellar doors",
+     "Ride the old railway past vineyards",
+     "Explore heritage villages and homesteads"
+    ],
+    "highlights": [
+     "Riesling wine",
+     "Rail trail",
+     "Heritage villages"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚲",
+      "title": "Hire bikes in Clare or Auburn",
+      "detail": "The Riesling Trail suits walkers, cyclists and wheelchairs, and bikes can be hired in Clare and Auburn."
+     },
+     {
+      "icon": "🏛️",
+      "title": "Martindale Hall closes Tuesdays",
+      "detail": "The hall is open 10am to 4pm, Wednesday to Monday, and daily in school holidays. Plan Mintaro around those days."
+     },
+     {
+      "icon": "🔥",
+      "title": "Parks close on fire-ban days",
+      "detail": "Conservation parks such as Spring Gully close on Catastrophic Fire Danger days and may close on Extreme days. Check the CFS first."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "Mild days in {months} suit the trail and cellar doors, and spring brings wildflowers."
+   },
+   "spots": [
+    "clare-valley-2",
+    "clare-valley-1",
+    "clare-valley-3",
+    "clare-valley-4",
+    "clare-valley-7",
+    "clare-valley-5",
+    "clare-valley-8",
+    "clare-valley-6",
+    "clare-valley-9",
+    "clare-valley-10",
+    "clare-valley-11"
+   ],
+   "notes": [
+    "Clare pin is Nominatim's place centre for Clare (-33.8334,138.6120); span 50 km holds every spot in this shard within 75% (furthest: Rattler Trail ~30 km, Auburn ~22 km).",
+    "Order changed from the draft: Riesling Trail first (the region's signature), Sevenhill second, then Martindale, Mintaro, Auburn, the parks, Bungaree, Neagles, Rattler; clare-valley-10 and -11 (Blyth, Farrell Flat Silo Art) are in another shard and stay last.",
+    "Description, reasons and tips avoid naming Burra-side neighbours; whyVisit photos and header are for the photo pipeline."
+   ]
+  }
+ ],
+ "unverified": [
+  "Riesling Trail and Rattler Trail pins are OSM segments near the route middle, not the whole-route midpoint (Overpass route query timed out).",
+  "Sevenhill Cellars: whether the St Aloysius Church interior is open to visitors was not confirmed; cellar door entry is free (tastings optional)."
+ ],
+ "needs_browser": [
+  {
+   "id": "clare-valley-3",
+   "url": "https://martindalehall.com.au/",
+   "why": "Fetched fine; listed only to double-check the $20 adult fee and opening days in a browser."
+  }
+ ],
+ "notes": [
+  "resolve-pin.py ran with Overpass down and Nominatim/Photon/Wikipedia rate-limited by the shared IP, so several pins were taken from the kumi/overpass-api Overpass mirrors directly; each coordinates_source says which feature.",
+  "LOW pin: Warren Conservation Park (barossa-valley-15), provisional point on the mapped Warren Tower Hike; needs the park's car park from the NPWS map.",
+  "Gawler (barossa-valley-14) is marginal: no See entries on its Wikivoyage page; kept per the judge, flagged for owner review.",
+  "All spots >= 25 m apart within the shard; not compared with src/data (no Clare Valley or Gawler entries exist there yet)."
+ ]
+}

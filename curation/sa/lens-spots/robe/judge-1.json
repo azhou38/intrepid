@@ -1,0 +1,113 @@
+{
+ "dest:robe:header": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": {
+   "x": 0.37,
+   "y": 0.5,
+   "zoom": 1.3
+  },
+  "reason": "Obelisk and cliffs on the Robe coast, real photo, 8043px; obelisk sits left of centre so zoom/x needed (checked)"
+ },
+ "dest:robe:why1": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Robe Customs House, historic port town, real photo, centred"
+ },
+ "dest:robe:why2": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Town Beach Robe, real photo, ocean beach, 8096px; beach is wide and visible"
+ },
+ "dest:robe:why3": {
+  "decision": "choice",
+  "choice": "Sunset over Lake Charro, Robe, South Australia. 2002. Peter Neaum. - panoramio.jpg",
+  "candidates": [
+   {
+    "file": "Sunset over Lake Charro, Robe, South Australia. 2002. Peter Neaum. - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": "lake (not dunes)",
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept (weak)",
+    "reason": "Lake at Robe at sunset, 1806px; shows the lakes half of the reason, no dunes; dusk on purpose"
+   },
+   {
+    "file": "Old customs house, Robe, South Australia, 2023.jpg",
+    "verdict": "reject",
+    "reason": "same subject as why1, not dunes/lakes"
+   },
+   {
+    "file": "(AUS-South Australia) Victoria Street, Robe 2025-12-12.jpg",
+    "verdict": "reject",
+    "reason": "street"
+   },
+   {
+    "file": "View of Robe coastline and Obelisk 20230214 1.jpg",
+    "verdict": "reject",
+    "reason": "coastline panorama 11067x3905 (2.8:1), not dunes/lakes, repeats header"
+   },
+   {
+    "file": "Waves crashing Below Robe Obelisk, South Australia.jpg",
+    "verdict": "reject",
+    "reason": "obelisk and sea, not dunes/lakes"
+   },
+   {
+    "file": "AUS Perth, Vincent, Oxford Street 017.jpg",
+    "verdict": "reject",
+    "reason": "Perth, wrong place"
+   },
+   {
+    "file": "Royal Western Australia Regiment second pattern.png",
+    "verdict": "reject",
+    "reason": "badge, wrong"
+   }
+  ],
+  "hero_crop": "ok",
+  "dark": false,
+  "reason": "Only lake photo; no dunes shown, so a weak match for 'Wander coastal dunes and lakes'"
+ },
+ "spot:robe-1": {
+  "decision": "reject",
+  "choice": "File:Robe Customs House, West view 20230214 1.jpg",
+  "hero_crop": "ok",
+  "reason": "RobeSAaerial2.jpg is an aerial of the town, not the named thing; recommend the destination's why1 photo (Customs House, shared within destination)"
+ },
+ "spot:robe-2": {
+  "decision": "reject",
+  "choice": "View of Robe coastline and Obelisk 20230214 2.jpg",
+  "hero_crop": {
+   "x": 0.37,
+   "y": 0.5,
+   "zoom": 1.3
+  },
+  "reason": "RobeSAaerial2.jpg is an aerial of the town, not the named thing; recommend the destination header (obelisk, shared within destination) with the zoom crop"
+ },
+ "spot:robe-3": {
+  "decision": "reject",
+  "choice": "none: no Robe Jetty photo offered",
+  "hero_crop": "n/a",
+  "reason": "current is a Perth railway line (wrong place, check 1)"
+ },
+ "spot:robe-4": {
+  "decision": "reject",
+  "choice": "none: no Long Beach photo offered",
+  "hero_crop": "n/a",
+  "reason": "RobeSAaerial2.jpg is an aerial of the town, not the named thing (Long Beach not identifiable)"
+ },
+ "spot:robe-5": {
+  "decision": "reject",
+  "choice": "none: no Little Dip photo offered",
+  "hero_crop": "n/a",
+  "reason": "RobeSAaerial2.jpg is an aerial of the town, not the named thing (park not shown)"
+ },
+ "spot:robe-6": {
+  "decision": "none",
+  "choice": "none: no candidates (list empty); current BeachportJetty.JPG is a different place and shared",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Nora Creina Bay has no passing photo"
+ }
+}

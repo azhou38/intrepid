@@ -1,0 +1,361 @@
+{
+ "spots": {
+  "adelaide-61": {
+   "name": "Happy Valley Reservoir Reserve",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "SA Water reserve with an 11 km Shoreline Loop and a lookout over the reservoir and dam wall.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -35.07493,
+    "longitude": 138.564055
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Happy Valley Reservoir",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "SA Water page (sawater.com.au) blocked by bot wall; reserve is open public land, link to be checked in browser",
+   "notes": {
+    "pin": "Draft pin from Wikipedia 'Happy Valley Dam' is the dam; visitors use the reserve car park / Shoreline Loop start (SA Water), re-pin to the loop midpoint."
+   }
+  },
+  "adelaide-62": {
+   "name": "Classic Jets Fighter Museum",
+   "icon": "✈️",
+   "category": "museum",
+   "bio": "Volunteer-run aviation museum at Parafield Airport where visitors can sit in fighter-jet cockpits.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.788675,
+    "longitude": 138.637647
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Parafield Airport",
+   "ticket_note": "no confirmed official site (classicjets.com.au does not load)",
+   "notes": {
+    "flag": "Possible closure: a 2016 trade-magazine item said the museum would close and sell its assets; a community directory updated 2026 still lists it operating with club and group tours. No current price or official site found. Recommend holding until confirmed by phone (08 8258 2277).",
+    "pin": "Wikivoyage listing geotag; Hangar 107 Anderson Drive (directory) vs Hangar 52 (other) conflict."
+   }
+  },
+  "adelaide-63": {
+   "name": "National Military Vehicle Museum",
+   "icon": "🪖",
+   "category": "museum",
+   "bio": "Military vehicle museum at Edinburgh Parks in the Defence precinct, open Sundays with vehicles on display.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.military-vehicle-museum.org.au/",
+   "notes": {
+    "pin": "10 Sturton Rd, Edinburgh Parks SA 5111 (museum address); geocode this address.",
+    "hours": "Open Sundays 10am-4pm; hot weather policy above 38C; adult $10, $15 special events (museum site)."
+   }
+  },
+  "adelaide-64": {
+   "name": "Tramway Museum",
+   "icon": "🚋",
+   "category": "museum",
+   "bio": "Volunteer museum of more than 20 trams, with unlimited rides on a 1.6 km line to the St Kilda playground.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Tramway Museum, St Kilda",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://adelaidetrammuseum.org.au/",
+   "notes": {
+    "pin": "300-360 St Kilda Road, St Kilda SA; geocode this address (museum depot).",
+    "hours": "Sundays and public holidays 12-5pm. Adult $10 from state history network listing (admission includes unlimited rides); not re-confirmed on the museum site.",
+    "rename": "Draft name 'Tramway Museum, St Kilda' carries the town qualifier, so shown as 'Tramway Museum'; Wikipedia article is 'Tramway Museum, St Kilda'."
+   }
+  },
+  "adelaide-hills-1": {
+   "name": "Hahndorf",
+   "icon": "🥨",
+   "category": "historic",
+   "bio": "Australia's oldest surviving German settlement, with a main street of galleries, bakeries and shops.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -35.02949,
+    "longitude": 138.80999
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Hahndorf, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "open town with no single steward",
+   "notes": {
+    "pin": "Town centre from Wikivoyage geotag; use OSM place=village/town point for Hahndorf."
+   }
+  },
+  "adelaide-hills-2": {
+   "name": "Mount Lofty Summit",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Summit lookout at 710 m with views over Adelaide's skyline to the coast, plus a visitor centre and cafe.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.97415,
+    "longitude": 138.70906
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Mount Lofty",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-lofty-summit",
+   "notes": {
+    "pin": "Wikivoyage geotag; use OSM tourism=viewpoint / summit obelisk node.",
+    "fee": "Free entry per NPWS SA page."
+   }
+  },
+  "adelaide-hills-3": {
+   "name": "Cleland Wildlife Park",
+   "icon": "🐨",
+   "category": "entertainment",
+   "bio": "Walk-through wildlife park at Crafers where visitors can feed kangaroos and meet koalas.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -34.971756,
+    "longitude": 138.711412
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 35.8,
+   "costMax": 35.8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.clelandwildlifepark.sa.gov.au/",
+   "notes": {
+    "fee": "Adult general entry $35.80 per park fees page (WebFetch summary); verify on the live page."
+   }
+  },
+  "adelaide-hills-4": {
+   "name": "Cleland National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Bushland park of walking and cycling trails with Adelaide Hills views, around Mount Lofty.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -34.9666,
+    "longitude": 138.6968
+   },
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/cleland-national-park",
+   "notes": {
+    "pin": "Park visitor point, not the centroid: Waterfall Gully car park / Mount Lofty trail hubs (parks.sa.gov.au maps); must differ from Mount Lofty Summit and Cleland Wildlife Park pins.",
+    "fee": "Park page lists only accommodation ($192/night) as a fee; no entry fee.",
+    "alert": "Closed at various times through 2026/27 for pest animal control (park alert)."
+   }
+  },
+  "adelaide-hills-5": {
+   "name": "Beerenberg Family Farm",
+   "icon": "🍓",
+   "category": "entertainment",
+   "bio": "Farm near Hahndorf with seasonal pick-your-own strawberries and a jam shop.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -35.03765,
+    "longitude": 138.81761
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Beerenberg Farm",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://beerenberg.com.au/",
+   "notes": {
+    "fee": "Patch entry $5 per person, 12 and under free, berries extra by weight (secondary reports dated Dec 2025, not confirmed on farm page).",
+    "season": "Strawberry patch open roughly Nov-Apr and closes when picked out."
+   }
+  },
+  "adelaide-hills-6": {
+   "name": "Warrawong Wildlife Sanctuary",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Mylor sanctuary of native wildlife with a lake, self-guided walks and guided dusk tours.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -35.037596,
+    "longitude": 138.734885
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Warrawong Sanctuary",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.warrawongws.com.au/",
+   "notes": {
+    "fee": "$25 adult from a reopening-event article (year unstated); not on the sanctuary site; verify.",
+    "bio": "Draft bio claimed a platypus; sources conflict, so left out.",
+    "pin": "47 Stock Road, Mylor; geocode the entrance."
+   }
+  },
+  "adelaide-hills-7": {
+   "name": "Mount Lofty Botanic Garden",
+   "icon": "🌺",
+   "category": "nature",
+   "bio": "Hillside botanic garden at Crafers with cool-climate plantings, lakes and walks.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -34.9867,
+    "longitude": 138.7137
+   },
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.botanicgardens.sa.gov.au/visit/mount-lofty-botanic-garden",
+   "notes": {
+    "fee": "Entry free; car park $2.50/hour or $6.50 day (not counted).",
+    "pin": "Garden entrance on Piccadilly Road car park."
+   }
+  },
+  "adelaide-hills-8": {
+   "name": "The Cedars",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Home, studio and garden of painter Hans Heysen near Hahndorf, open Tuesday to Sunday.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -35.012751,
+    "longitude": 138.805646
+   },
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "The Cedars (Hahndorf)",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.heysen.org.au/",
+   "notes": {
+    "fee": "Adult $25 self-guided (concession $22); guided tours priced separately at heysen.org.au/tours.",
+    "hours": "Tue-Sun 10-4:30pm and public holiday Mondays."
+   }
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "adelaide-hills",
+    "name": "Adelaide Hills",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.0295,
+     "longitude": 138.81
+    },
+    "category": "nature",
+    "defaultZoomSpanKm": 50,
+    "rank": 3,
+    "icon": "🍇",
+    "tagline": "Wineries, bushland and a German-settled village a short drive east of Adelaide",
+    "description": "The Adelaide Hills are the wooded ranges east of Adelaide, reached in about half an hour. Hahndorf, founded by German settlers, anchors the region with its main street of galleries and bakeries. Around it are cool-climate vineyards, farms and national park bushland with lookouts over the city and plains. Mount Lofty, at 710 m, is the high point of the ranges.",
+    "whyVisit": [
+     "Wander a historic German village",
+     "Walk bushland trails above the city",
+     "Meet native animals up close"
+    ],
+    "highlights": [
+     "German village",
+     "Bushland walks",
+     "Native wildlife"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚗",
+      "title": "Drive, don't wait",
+      "detail": "Public transport reaches only parts of the Hills, so a car makes the villages, farms and lookouts easy to link."
+     },
+     {
+      "icon": "🔥",
+      "title": "Check fire danger days",
+      "detail": "Parks can close on high fire danger days in summer. Check the NPWS SA closures page before heading out."
+     },
+     {
+      "icon": "🅿️",
+      "title": "Weekends in Hahndorf are busy",
+      "detail": "Hahndorf's main street crowds on weekends. Arrive early or visit midweek for easier parking."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "{months} bring mild days, autumn colour in the gardens and green spring hillsides."
+   },
+   "spots": [
+    "adelaide-hills-1",
+    "adelaide-hills-2",
+    "adelaide-hills-3",
+    "adelaide-hills-4",
+    "adelaide-hills-5",
+    "adelaide-hills-6",
+    "adelaide-hills-7",
+    "adelaide-hills-8",
+    "adelaide-hills-9",
+    "adelaide-hills-10",
+    "adelaide-hills-11",
+    "adelaide-hills-12",
+    "adelaide-hills-13",
+    "adelaide-hills-14",
+    "adelaide-hills-15",
+    "adelaide-hills-16",
+    "adelaide-hills-17",
+    "adelaide-hills-18",
+    "adelaide-hills-19",
+    "adelaide-hills-20",
+    "adelaide-hills-21"
+   ],
+   "notes": [
+    "Destination coordinates are Hahndorf's point (same as spot adelaide-hills-1): re-pin to a hub that differs from any spot.",
+    "Span 50 km: 13 other Hills spots are in other shards; check them against 75% (37.5 km) of span.",
+    "Spot order for this shard's ids kept as drafted."
+   ]
+  }
+ ],
+ "unverified": [
+  "adelaide-62 Classic Jets: operating status, price, official site",
+  "adelaide-hills-3 Cleland adult $35.80 not read from page directly",
+  "adelaide-hills-5 Beerenberg $5 patch entry from secondary reports",
+  "adelaide-hills-6 Warrawong $25 adult price (undated)",
+  "adelaide-64 Tramway adult $10 (state history listing only)",
+  "adelaide-hills-8 The Cedars: price from site summary"
+ ],
+ "needs_browser": [
+  {
+   "id": "adelaide-61",
+   "url": "https://www.sawater.com.au/community-and-education/our-reservoirs/happy-valley-reservoir",
+   "why": "403 bot wall; cost/link and reserve status unchecked"
+  }
+ ],
+ "notes": [
+  "adelaide-62 should be held until confirmed open (cost unknown; no cost means not added).",
+  "Pins deferred to the serial pass for all spots."
+ ]
+}

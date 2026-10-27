@@ -1,0 +1,382 @@
+{
+ "spots": {
+  "ikara-flinders-ranges-1": {
+   "name": "Wilpena Pound",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A natural amphitheatre of mountains, called Ikara by the Adnyamathanha, at the heart of the national park.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": [
+    "Inside Ikara-Flinders Ranges NP: parkPass 'ikara-flinders' (vehicle entry $14.40, parks.sa.gov.au, read 2026-10-25); the pass must be added to src/data/parkPasses.ts.",
+    {
+     "pin": "Draft 3-decimal point is a memory pin, dropped. Pound is an area: use a visitor point (Wangara Lookout -31.542369,138.586662 per Wikivoyage, or the Wilpena trailhead) NOT the Wilpena Visitor Centre (-31.527039,138.606487), which is the destination's hub. Wikipedia article 'Wilpena Pound' is this place."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-2": {
+   "name": "St Mary Peak",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "At 1,171 m the highest peak in the Flinders Ranges, climbed on a steep full-day walk from Wilpena.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "coordinates": {
+    "latitude": -31.503889,
+    "longitude": 138.551111
+   },
+   "coordinates_source": "Wikivoyage listing geotag for St Mary Peak (Ngarri Mudlanha), provisional; pending serial pin pass",
+   "notes": [
+    "Wikivoyage notes the Adnyamathanha consider the peak sacred and ask that it not be climbed; not in the bio (single source, wording is the Wikivoyage editor's). Height 1,171 m from Wikipedia (Wikivoyage says 1,189 m).",
+    {
+     "pin": "Peak summit is the draft point; for a hike the rule says route midpoint, but this spot is the peak itself: summit unless the pin pass prefers the OSM route midpoint (route runs from the Wilpena trailhead; Wikivoyage: along the NE edge outside the Pound or through it)."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-3": {
+   "name": "Brachina Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A 20 km self-drive geological trail through 130 million years of earth history, with rock-wallabies in the gorge.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": [
+    "Trail best travelled east to west from the Brachina Gorge/Blinman Road junction (flindersandoutback listing). Yellow-footed rock-wallabies seen at the Scree Slope in late afternoon (NPWS ranger tip).",
+    "CLOSURE at read time (NPWS alert, 2026-10-25): Brachina Gorge Road open to 4WD vehicles only after heavy rain.",
+    {
+     "pin": "Pin at the midpoint of the 20 km trail along Brachina Gorge Road (OSM way). Wikivoyage Brachina Lookout, a stop on the trail, is -31.343442,138.555188."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-4": {
+   "name": "Bunyeroo Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "A gum-lined gorge with a scenic drive, a 7.5 km return walk and the Razorback lookout over Wilpena Pound.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": [
+    "Visit range widened from the draft (1-2 h) to 1-3 h to cover the 3.5 h return gorge hike.",
+    "CLOSURE at read time (NPWS alert, 2026-10-25): Bunyeroo Gorge on Bunyeroo Gorge Road remains closed pending repair works after heavy rain.",
+    {
+     "pin": "Bunyeroo car park is 18 km north of Wilpena on Bunyeroo Gorge Road (NPWS walks list). Razorback Lookout, on Bunyeroo Rd, per Wikivoyage -31.4108,138.5834 (4 dp): the lookout may be a separate spot in another shard; keep this pin on the gorge itself."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-5": {
+   "name": "Ediacaran Golden Spike",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "A plaque marking the global start of the Ediacaran Period, a short walk from Trezona campground.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -31.33147,
+    "longitude": 138.635291
+   },
+   "coordinates_source": "Wikivoyage listing geotag for the Golden Spike, Trezona Loop Walk; pending serial pin pass",
+   "notes": [
+    "Draft 'wiki: Ediacaran' dropped: that article is the geological period, not this place (a Commons/photo lookup on it would show fossils).",
+    "NPWS (Trezona campground page): the campground is a short walk from the internationally significant Ediacaran Golden Spike. The marker is a plaque in the rock, not a spike (secondary web source).",
+    {
+     "pin": "Wikivoyage geotag is specific to the listing; Trezona Campground is ~40 km north of Wilpena on Brachina Gorge Road. Cross-check against OSM."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-6": {
+   "name": "Arkaroo Rock",
+   "icon": "🎨",
+   "category": "historic",
+   "bio": "Adnyamathanha ochre and charcoal paintings telling the creation story of Wilpena Pound, on a 3 km return walk.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -31.601872,
+    "longitude": 138.627938
+   },
+   "coordinates_source": "Wikivoyage listing geotag for Arkaroo Rock; pending serial pin pass",
+   "notes": [
+    "NPWS: Arkaroo Rock Hike 2 hrs return, 3 km, car park 17 km south of Wilpena on the Hawker-Blinman road; paintings best seen in morning light. Site is Akurra Adnya, a significant Adnyamathanha site. Wikivoyage's 'about 6,000 years old' (carbon dated) is dropped from the bio for want of a second source.",
+    {
+     "pin": "Geotag may be the rock art site; the car park is the trailhead. A walk's rule says route midpoint: the Arkaroo Rock Hike is the route, the rock art its end. Pin pass to decide."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-7": {
+   "name": "Sacred Canyon",
+   "icon": "🪨",
+   "category": "historic",
+   "bio": "Adnyamathanha rock engravings in a canyon, seen on a guided cultural walk that needs a 4WD to follow.",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5,
+   "coordinates": {
+    "latitude": -31.598916,
+    "longitude": 138.701833
+   },
+   "coordinates_source": "Wikivoyage listing geotag for Sacred Canyon (Yura Mulka); pending serial pin pass",
+   "notes": [
+    "Access is restricted: NPWS lists Yura Mulka (Sacred Canyon) as restricted access, visited on an Adnyamathanha-guided tour through a commercial operator (Wilpena Pound Resort, and Wadna which closes over summer).",
+    "Prices read 2026-10-25: Wilpena Pound Resort tour from AUD 130 adult (wilpenapound.rezdy.com, ~3 hours incl. two 30-minute drives and a 2 km walk, 4x4 tag-along required); Wadna tour AUD 120 adult (wadna.com.au/sacred-canyon-tour, 4WD tag-along). Range 120-130 stored.",
+    "Tour price is the guide; the park vehicle entry fee ($14.40) is separate and is not stored on the spot.",
+    {
+     "pin": "Canyon is 13.5 km off Flinders Ranges Way along Sacred Canyon Rd (Wikivoyage); geotag is the listing's own."
+    }
+   ],
+   "costBasis": "tour",
+   "costMin": 120,
+   "costMax": 130,
+   "currency": "AUD",
+   "ticket_note": "Two independent operators sell the guided tour (Wilpena Pound Resort and Wadna); no single official site, so no ticketUrl."
+  },
+  "ikara-flinders-ranges-8": {
+   "name": "Rawnsley Bluff",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "A steep climb to the 950 m southern bluff of Wilpena Pound, starting inside Rawnsley Park Station.",
+   "visitHoursMin": 4.5,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -31.623423,
+    "longitude": 138.610336
+   },
+   "coordinates_source": "draft point (6 dp, Wikipedia article coordinates for Rawnsley Bluff); pending serial pin pass",
+   "notes": [
+    "Not a NPWS-managed walk: the trail starts from the car park inside Rawnsley Park Station (private land adjoining the park), 11.3 km return, about 5 hours return to the bluff, with Wilpena Pound Lookout on a left fork 600 m before it (walkingsa.org.au). Bluff height 950 m (Wikipedia).",
+    "UNVERIFIED whether the station charges self-guided walkers; it sells guided walks from AUD 125 pp (rawnsleypark.com.au). Stored as free/open with no park pass because the trailhead is on station land; confirm access terms.",
+    {
+     "pin": "Draft 6 dp point is Wikipedia's coordinate for the bluff (a summit): fine as a summit pin. Trail start is the Rawnsley Park Station car park."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.rawnsleypark.com.au/experiences/bushwalking-trails/"
+  },
+  "ikara-flinders-ranges-9": {
+   "name": "Old Wilpena Station",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Restored 1851 pastoral station with a self-guided interpretive trail, open daily from 8am to 5pm.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -31.512955,
+    "longitude": 138.614945
+   },
+   "coordinates_source": "Wikivoyage listing geotag for Old Wilpena Station Precinct, Wilcolo Track; pending serial pin pass",
+   "notes": [
+    "Draft 'wiki: Wilpena Station' dropped: that title redirects to an unrelated biography (Henry Strong Price). Hills Homestead is the Hills Homestead Walk (ikara-flinders-ranges-10), a separate spot.",
+    "NPWS: station established 1851, worked 135 years, retired 1985; open 8am-5pm daily; Old Wilpena Woolshed hireable ($149 first day) is not a visitor cost."
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-10": {
+   "name": "Hills Homestead Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 6.6 km return walk inside Wilpena Pound to the preserved pioneer sites at Hills Homestead.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "notes": [
+    "NPWS: easy walk, 2 hrs return, 6.6 km, 'pioneering heritage inside Wilpena Pound'; the Wangara Lookout hike branches from it (lookout at 7.2 km return, Wikivoyage listing geotag for Wangara Lookout -31.542369,138.586662).",
+    {
+     "pin": "Pin at the midpoint of the OSM route from the Wilpena trailhead to Hills Homestead; the trail starts near the Wilpena Visitor Centre complex (-31.527039,138.606487) which is the destination hub, not this spot's pin."
+    }
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-11": {
+   "name": "Hucks Lookout",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Roadside lookout over rocks laid down as sediments a billion to 500 million years ago, with a picnic area.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.471818,
+    "longitude": 138.697318
+   },
+   "coordinates_source": "Wikivoyage listing geotag for Hucks Lookout, Flinders Ranges Way; pending serial pin pass",
+   "notes": [
+    "Single counted source (Wikivoyage). On the Flinders Ranges Way east of the Pound; car park and picnic area per Wikivoyage."
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  },
+  "ikara-flinders-ranges-12": {
+   "name": "Stokes Hill Lookout",
+   "icon": "🏞️",
+   "category": "viewpoint",
+   "bio": "Lookout east over the ranges, with signs on Adnyamathanha art sites and how people used the land.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "latitude": -31.458308,
+    "longitude": 138.735836
+   },
+   "coordinates_source": "Wikivoyage listing geotag for Stokes Hill Lookout, Stokes Hill Lookout Rd; pending serial pin pass",
+   "notes": [
+    "Lookout road leaves the Flinders Ranges Way near Willow Springs on the park's eastern edge; confirm it lies inside the park boundary (if outside, the park pass does not apply: the pin pass can check against the park polygon). Draft bio said 'near Wilpena' with views of the Pound; Wikivoyage gives an easterly view and Adnyamathanha interpretive signs, so the bio follows that."
+   ],
+   "free": true,
+   "costBasis": "open",
+   "needs": "park-pass",
+   "parkPass": "ikara-flinders",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ikara-flinders-ranges-national-park"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "ikara-flinders-ranges",
+    "name": "Ikara-Flinders Ranges National Park",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -31.527039,
+     "longitude": 138.606487
+    },
+    "category": "park",
+    "defaultZoomSpanKm": 140,
+    "rank": 2,
+    "icon": "⛰️",
+    "tagline": "Wilpena Pound's mountain amphitheatre, ancient gorges and long outback walking trails",
+    "description": "Ikara-Flinders Ranges National Park covers about 95,000 hectares of folded ranges in South Australia's semi-arid north, roughly 450 km from Adelaide. Its centrepiece is Wilpena Pound, the amphitheatre of mountains the Adnyamathanha call Ikara, meaning meeting place. The Brachina and Bunyeroo gorges cut through the Heysen Range, and ancient rock paintings and engravings survive at Arkaroo Rock and Sacred Canyon. The park is co-managed by the Adnyamathanha and the state, and the resort at Wilpena is the only accommodation inside it.",
+    "whyVisit": [
+     "Hike inside Wilpena Pound's mountain amphitheatre",
+     "Drive gorges lined with ancient rock layers",
+     "See Adnyamathanha rock art and engravings",
+     "Spot yellow-footed rock-wallabies in the gorges"
+    ],
+    "highlights": [
+     "Wilpena Pound walks",
+     "Geological gorge drives",
+     "Rock art",
+     "Rock-wallabies"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Pay entry before you arrive",
+      "detail": "Vehicle entry is $14.40 and must be paid before you enter. Book online or at a listed booking office, as mobile coverage in the park is patchy."
+     },
+     {
+      "icon": "🔥",
+      "title": "Summer and fire closures",
+      "detail": "Many walking trails close in summer and on catastrophic fire danger days. Check the park page for closures before you set out."
+     },
+     {
+      "icon": "🚙",
+      "title": "Gravel roads close after rain",
+      "detail": "Gorge roads are unsealed and can close after heavy rain; Brachina is currently 4WD only and Bunyeroo is shut for repairs. Check road conditions first."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "Walk in the cooler {months}, when spring brings wildflowers. Summers reach 45 degrees."
+   },
+   "spots": [
+    "ikara-flinders-ranges-1",
+    "ikara-flinders-ranges-2",
+    "ikara-flinders-ranges-3",
+    "ikara-flinders-ranges-4",
+    "ikara-flinders-ranges-5",
+    "ikara-flinders-ranges-6",
+    "ikara-flinders-ranges-7",
+    "ikara-flinders-ranges-8",
+    "ikara-flinders-ranges-9",
+    "ikara-flinders-ranges-10",
+    "ikara-flinders-ranges-11",
+    "ikara-flinders-ranges-12",
+    "ikara-flinders-ranges-13",
+    "ikara-flinders-ranges-14",
+    "ikara-flinders-ranges-15",
+    "ikara-flinders-ranges-16",
+    "ikara-flinders-ranges-17",
+    "ikara-flinders-ranges-18",
+    "ikara-flinders-ranges-19",
+    "ikara-flinders-ranges-20",
+    "ikara-flinders-ranges-21",
+    "ikara-flinders-ranges-22",
+    "ikara-flinders-ranges-23",
+    "ikara-flinders-ranges-24",
+    "ikara-flinders-ranges-25"
+   ],
+   "notes": [
+    "Coordinates: Wilpena Pound Visitor Centre geotag from Wikivoyage listing (-31.527039,138.606487), the park's single visitor centre; provisional for the serial pin pass. Do not reuse as any spot's pin.",
+    "Span 140 km kept from the draft; this shard's 12 spots lie within ~25 km of the hub, the other 13 spots are in other shards (Hawker and Blinman are further).",
+    "Spot order unchanged from the draft: Wilpena Pound, St Mary Peak, the two gorges, then the heritage and lookout stops. The Ediacaran Golden Spike could rank above Arkaroo Rock for visitors, but sources are thin; leave.",
+    "Park pass 'ikara-flinders': vehicle entry $14.40 per vehicle (parks.sa.gov.au/parks/ikara-flinders-ranges-national-park, read 2026-10-25; Wikivoyage's $12 is a 2022 figure). Add to parkPasses.ts. The two goodToKnow tips on current road closures reflect NPWS alerts at read time; the road tip mentions them and should be reworded if they are lifted at apply time.",
+    "NPWS alerts at read time: whole park closed 9pm 6 Nov to 9pm 9 Nov 2026 for pest control; some walking trails closed nightly until 31 Oct 2026."
+   ]
+  }
+ ],
+ "unverified": [
+  "Rawnsley Bluff: whether Rawnsley Park Station charges self-guided walkers on its trail (stored free)",
+  "Stokes Hill Lookout: whether it lies inside the national park boundary (park pass applied)",
+  "Bunyeroo Gorge and Brachina Gorge current road closures may be lifted by apply time",
+  "St Mary Peak: Adnyamathanha request not to climb (Wikivoyage only), kept out of copy"
+ ],
+ "needs_browser": [],
+ "notes": [
+  "No resolve-pin run (per brief); all pins provisional. Pins left null: Wilpena Pound, Brachina Gorge, Bunyeroo Gorge, Hills Homestead Walk. Others carry Wikivoyage listing geotags (5-6 dp) as provisional values.",
+  "No spot should be dropped. Hucks Lookout is single-source and Stokes Hill is 3-source but low importance; both kept as judged."
+ ]
+}

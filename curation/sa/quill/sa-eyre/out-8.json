@@ -1,0 +1,248 @@
+{
+ "spots": {
+  "federation-hill-lookout": {
+   "name": "Federation Hill Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "A short 260 m uphill walk from the car park to a 360-degree lookout over the Darke Peak Ranges.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Council page (cleve.sa.gov.au/tourism) is bot-blocked; no verified official site yet.",
+   "notes": {
+    "pin": "Dog Fence Road, Kielpa SA 5642; lookout is up a 260 m walk from the car park; reached through private property. Use OSM tourism=viewpoint named Federation Hill.",
+    "other": "Opened 2001 by the Darke Peak Kielpa History Book Committee; sits on the Darke Peak scenic drive, so overlaps in route with darke-peak but is a distinct stop."
+   }
+  },
+  "darke-peak": {
+   "name": "Darke Peak",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "A hill in the Darke Peak Ranges, circled by a scenic drive that passes Federation Hill Lookout and Darkes Grave.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -33.46841,
+    "longitude": 136.20059
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Only the council page (cleve.sa.gov.au/tourism, bot-blocked) is official.",
+   "notes": {
+    "pin": "Provisional Wikipedia point is the peak; for the scenic-drive stop prefer OSM natural=peak Darke Peak or the Darkes Grave marker.",
+    "other": "Draft bio mentioned a 'Darke monument'; sources name Darkes Grave, used instead. Scenic drive is suitable for most vehicles."
+   }
+  },
+  "yeldulknie-conservation-park": {
+   "name": "Yeldulknie Conservation Park",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A mallee conservation park near Cleve with the roughly 4 km return 'Waterfall Walk', which flows after good rain.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.6434,
+    "longitude": 136.5683
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "No parks.sa.gov.au page found (slug 404); no other official site verified.",
+   "notes": {
+    "pin": "Trail car park on Mangalo Road; trail is a ~4 km return, pin at midpoint of the walk once route is resolved (OSM).",
+    "other": "Proclaimed 21 Sept 1989, ~3283 ha mallee woodland protecting Senna Wattle. Free per tourism listing."
+   }
+  },
+  "carappee-hill-conservation-park": {
+   "name": "Carappee Hill Conservation Park",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 489 m hill, the highest point on the Eyre Peninsula, reached by a hike of about two hours return.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -33.417,
+    "longitude": 136.2628
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "No parks.sa.gov.au page found (slug 404); no other official site verified.",
+   "notes": {
+    "pin": "Trail starts on Carappee Hill Road near Darke Peak; pin at route midpoint or summit once resolved.",
+    "other": "850 ha, conservation park since 1973; visitors book at the top. Free per tourism listing. Visit range widened to 1.5-2.5 hr to match the ~2 hr return."
+   }
+  },
+  "sir-joseph-banks-group-conservation-park": {
+   "name": "Sir Joseph Banks Group Conservation Park",
+   "icon": "🦭",
+   "category": "nature",
+   "bio": "Limestone-capped islands in Spencer Gulf reached by boat from Tumby Bay or Port Lincoln, home to seabirds and seals.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "latitude": -34.58305556,
+    "longitude": 136.27388889
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/sir-joseph-banks-group-conservation-park",
+   "notes": {
+    "pin": "Island group centre is the Wikipedia point; no land visitor point. Boat departs Tumby Bay jetty/marina.",
+    "other": "NPWS lists free entry; boat trip costs not sourced (no operator verified). Access to some islands, e.g. Dangerous Reef, is prohibited (seal and seabird breeding). Sea lion viewing is from the draft's tour source, not from NPWS text: bio kept to seabirds/seals per NPWS text."
+   }
+  },
+  "colour-tumby-bay-street-art": {
+   "name": "Colour Tumby Bay Street Art",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "Large murals by well-known street artists on walls around Tumby Bay, viewable all year and free to see.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "colourtumby.com returns a Wix domain error (404); no verified official site.",
+   "notes": {
+    "pin": "Tumby Bay town centre/Tumby Terrace area (listing address 27 Tumby Terrace); trail is dispersed murals, pin in the middle of the town centre.",
+    "other": "Murals come from the festival, established 2018, now biannual; murals stay up year round."
+   }
+  },
+  "port-neill": {
+   "name": "Port Neill",
+   "icon": "🏖️",
+   "category": "landmark",
+   "bio": "A seaside town with a 1912 jetty once the peninsula's largest, a sheltered swimming beach and the Lady Kinnaird anchor.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -34.11666667,
+    "longitude": 136.35
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "wiki": "Port Neill, South Australia",
+   "notes": {
+    "pin": "Town centre/jetty at Mottled Cove (OSM place=village); not the Wikipedia rounded point.",
+    "other": "Draft's '1 km main beach' and '4.5 km Lady Kinnaird trail' not confirmed in fetched sources, so dropped from bio; jetty claim: 'noted at the time of construction as the largest on the Eyre Peninsula'."
+   }
+  },
+  "cummins-mosaic-trail": {
+   "name": "Cummins Mosaic Trail",
+   "icon": "🎨",
+   "category": "landmark",
+   "bio": "A free self-guided trail of colourful mosaic artworks by local artists and community members around Cummins.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticketUrl": "https://explorecummins.com.au/explore/cummins-mosaic-trail/",
+   "notes": {
+    "pin": "Listing address 46 Railway Terrace, Cummins; pin in the middle of the town trail.",
+    "other": "Page title 'Cummins Mosaic Trail – Explore Cummins' verified."
+   }
+  },
+  "elliston-coastal-trail": {
+   "name": "Elliston Coastal Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 13.6 km clifftop walking and driving trail from Little Bay to Cape Finniss, with shorter loops and coastal sculptures.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticketUrl": "https://ellistoncoastaltrail.com.au/",
+   "notes": {
+    "pin": "Midpoint of the 13.6 km route between Little Bay Surf Break and Cape Finniss (OSM route if present, else agency map).",
+    "other": "Shorter options: Little Bay Trail, Cliff Top Trail, Beach Loop. Site title 'Elliston Coastal Trail' verified."
+   }
+  },
+  "talia-caves": {
+   "name": "Talia Caves",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "Coastal granite cavern The Woolshed, reached by walkway and steps, and The Tub, a sea crater with a tunnel to the ocean.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Only the council site (elliston.sa.gov.au) is official and it is bot-blocked.",
+   "notes": {
+    "pin": "Between The Woolshed and The Tub, ~40 km north-west of Elliston on the Talia coast; use OSM entries for each and the carpark.",
+    "other": "The Tub is 10-30 m deep and 50 m across; climbing into it is for adventurous visitors. Wikipedia title 'Talia Caves' unverified, wiki field omitted."
+   }
+  },
+  "locks-well-walk": {
+   "name": "Locks Well Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 283-step wooden staircase down to a west coast beach, with a clifftop lookout and good sunset views.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticket_note": "Only the council site (elliston.sa.gov.au) is official and it is bot-blocked.",
+   "notes": {
+    "pin": "Locks Well Road, Bramfield: upper car park to beach; pin at the staircase/lower lookout. Short route so midpoint is the staircase.",
+    "other": "Beach known for salmon fishing."
+   }
+  },
+  "lake-newland-conservation-park": {
+   "name": "Lake Newland Conservation Park",
+   "icon": "🏜️",
+   "category": "nature",
+   "bio": "The Eyre Peninsula's most extensive wetland, saline lakes and springs behind coastal dunes, reached by 4WD only.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "latitude": -33.405,
+    "longitude": 134.85444444
+   },
+   "free": true,
+   "costBasis": "open",
+   "coordinates_source": "pending serial pin pass",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/lake-newland-conservation-park",
+   "notes": {
+    "pin": "Wikipedia point is a park centroid: use the lake-side access via Lake Newland Rd or the main beach-access track.",
+    "other": "NPWS: free entry, 4WD only. Parts closed to public access 5pm-8am daily (lake-side access via Lake Newland Rd). Lakes extend 20 km."
+   }
+  }
+ },
+ "destinations": [],
+ "unverified": [
+  "Boat trip prices/operators for Sir Joseph Banks Group not sourced; entry free only",
+  "Parks yeldulknie/carappee: free per tourism listing only, no NPWS page found",
+  "Port Neill beach length and Lady Kinnaird trail length (draft) not confirmed",
+  "Talia Caves/Locks Well Walk/Federation Hill free per tourism listing only"
+ ],
+ "needs_browser": [
+  {
+   "id": "federation-hill-lookout",
+   "url": "https://www.cleve.sa.gov.au/tourism/things-to-see-and-do/federation-lookout",
+   "why": "403 bot wall; candidate ticketUrl, also for darke-peak"
+  },
+  {
+   "id": "talia-caves",
+   "url": "https://www.elliston.sa.gov.au",
+   "why": "403 bot wall; candidate ticketUrl for talia-caves and locks-well-walk"
+  }
+ ],
+ "notes": [
+  "Pins all pending the serial pass; round coordinates kept only as provisional."
+ ]
+}

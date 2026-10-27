@@ -1,0 +1,72 @@
+{
+ "destination": {
+  "id": "yankalilla",
+  "name": "Yankalilla",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -35.457579,
+   "longitude": 138.350517
+  },
+  "category": "nature",
+  "defaultZoomSpanKm": 60,
+  "rank": 5,
+  "icon": "🌾",
+  "tagline": "Rolling farmland, quiet beaches and bush walks along the southern Fleurieu coast.",
+  "description": "Yankalilla is a farming town about 73 km south of Adelaide, set among rolling hills with the Bungala River running through it. The district reaches west to the beaches of Normanville and Carrickalinga and south to the bush and cliffs of Deep Creek National Park. Cape Jervis, at the peninsula's western tip, is the Kangaroo Island ferry gateway. The 85 km Hills and Seascapes Discovery Drive links many of the district's landscapes.",
+  "whyVisit": [
+   "Walk bush and clifftop coast trails",
+   "Swim and snorkel at sheltered coves"
+  ],
+  "highlights": [
+   "Coastal trails",
+   "Sheltered coves"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🔥",
+    "title": "Check park closures first",
+    "detail": "Talisker Conservation Park and parts of Deep Creek National Park are closed after fire. Parks also close on Catastrophic fire danger days."
+   },
+   {
+    "icon": "🚗",
+    "title": "Pay Deep Creek entry",
+    "detail": "Deep Creek National Park charges per vehicle and the fee must be paid before you enter. Campsites are booked and paid separately."
+   }
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   9,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "{months} suit coastal walks in mild weather, and whales pass the coast from June to October."
+ },
+ "spots": [
+  "yankalilla-1",
+  "yankalilla-2",
+  "yankalilla-3",
+  "yankalilla-4",
+  "yankalilla-5",
+  "yankalilla-6",
+  "yankalilla-7",
+  "yankalilla-9",
+  "yankalilla-10",
+  "yankalilla-11",
+  "yankalilla-12",
+  "yankalilla-13",
+  "yankalilla-14",
+  "yankalilla-15"
+ ],
+ "notes": [
+  "Pin: Yankalilla town point from the southaustralia.com destination page (-35.4575794,138.3505172), rounded to 6 decimals; resolve-pin.py could not run (all lookup services unreachable), so LOW; not within 25 m of any spot's pin in this shard (nearest Normanville ~4 km).",
+  "Span 60 km kept: Cape Jervis is ~27 km and Talisker ~26 km from the centre, inside 75% of 60 (45 km). Spot order kept as drafted (Deep Creek, Cape Jervis, Wild South Coast Way, Second Valley, Normanville, Carrickalinga, then the shard-5 spots).",
+  "Rank 5, two reasons and two tips per the popularity rule. Name evidence: Wikivoyage 'Fleurieu Peninsula' lists Yankalilla as a destination ('home to some of the most beautiful hills in the region'); southaustralia.com has a Yankalilla destination page; Wikivoyage has no Yankalilla page of its own (weakest of the four, as the draft says). Facts: 73 km from Adelaide, Bungala River, 85 km Hills and Seascapes Discovery Drive, Christ Church 1857 and the district museum from the southaustralia.com page (kept out of the copy so spots are not repeated); whale season June-October from the Parks SA Deep Creek page.",
+  "Bush/clifftop reason is general (Deep Creek and Wild South Coast Way are its spots); no whyVisitPhotos written here (reconciler).",
+  "Tips lean on the Parks SA closure alerts, which may change; owner may refresh them at apply time."
+ ]
+}

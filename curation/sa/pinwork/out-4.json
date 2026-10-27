@@ -1,0 +1,401 @@
+{
+ "adelaide-5": {
+  "lat": -34.98043,
+  "lon": 138.51053,
+  "confidence": "MEDIUM",
+  "source": "OSM way 552942634 Glenelg Jetty footway, landward end; Wikipedia/Commons points are within ~160 m",
+  "note": "Beach/jetty root at Moseley Square end; beach way is a long unnamed centroid so not used"
+ },
+ "adelaide-23": {
+  "lat": -34.920473,
+  "lon": 138.608737,
+  "confidence": "HIGH",
+  "source": "OSM way 153518090 McEwin Building (Lot Fourteen) centre + Wikivoyage listing geotag -34.9204,138.6087 (within 10 m)",
+  "note": ""
+ },
+ "adelaide-30": {
+  "lat": -34.82553,
+  "lon": 138.48417,
+  "confidence": "MEDIUM",
+  "source": "Commons geotag of Largs Bay beach on sand, ~110 m from OSM way 29222198 Largs Bay Jetty",
+  "note": "OSM natural=beach ways are long unnamed centroids; suburb centroid rejected"
+ },
+ "adelaide-39": {
+  "lat": -34.846062,
+  "lon": 138.508911,
+  "confidence": "HIGH",
+  "source": "OSM relation 18112159 National Rail Museum (tourism=museum) centre + Wikipedia-derived draft -34.84588,138.50879 within 25 m",
+  "note": ""
+ },
+ "adelaide-57": {
+  "lat": -35.06142,
+  "lon": 138.553334,
+  "confidence": "MEDIUM",
+  "source": "OSM node 12328424913 tourism=viewpoint inside the Glenthorne National Park reserve (way 261067574), off Majors Road",
+  "note": "Visitor point, not the reserve centroid (-35.0641,138.5522)"
+ },
+ "adelaide-hills-5": {
+  "lat": -35.038082,
+  "lon": 138.817783,
+  "confidence": "HIGH",
+  "source": "OSM way 185439379 Beerenberg Farm (retail building) + Quill draft -35.03765,138.81761 within 55 m",
+  "note": ""
+ },
+ "adelaide-hills-19": {
+  "lat": -34.940607,
+  "lon": 138.710181,
+  "confidence": "LOW",
+  "source": "OSM way 24431537 named Yurrebilla Trail, chosen as the way nearest the latitude midpoint (-34.935) of the named trail ways from Belair (-35.006) to the Torrens Gorge (-34.864)",
+  "note": "No route relation in OSM; only ~20 of ~56 km mapped as named ways, so midpoint is approximate"
+ },
+ "diggers-walk-belalie-creek": {
+  "lat": -33.201996,
+  "lon": 138.610173,
+  "confidence": "LOW",
+  "source": "OSM way 350987991 Belalie Creek (waterway) through Jamestown, the walk follows the creek",
+  "note": "Route not mapped in OSM; Quill draft was Belalie Art Gallery, a different place; owner/local map should supply the midpoint"
+ },
+ "port-lincoln-6": {
+  "lat": -34.7197,
+  "lon": 135.857398,
+  "confidence": "LOW",
+  "source": "OSM node 11056032961 Port Lincoln Visitor Information Centre, Tasman Terrace (trail start; murals are dispersed through the CBD, no mapped route)",
+  "note": "Not a route midpoint; no murals mapped as tourism=artwork in OSM"
+ },
+ "coffin-bay-3": {
+  "lat": -34.640076,
+  "lon": 135.362068,
+  "confidence": "MEDIUM",
+  "source": "OSM way 1190577847 \"Yangie Bay Day Use\" parking (Coffin Bay NP), bay node 3020494598 1.6 km east",
+  "note": "search_hint -34.6244,135.4697 was the Coffin Bay town area, not Yangie Bay"
+ },
+ "streaky-bay-5": {
+  "lat": -32.894134,
+  "lon": 134.081143,
+  "confidence": "MEDIUM",
+  "source": "OSM node 14229845302 \"The Granites\" tourism=viewpoint, Westall Way",
+  "note": "search_hint -32.799,134.2048 was Streaky Bay town (~20 km east), not The Granites"
+ },
+ "streaky-bay-11": {
+  "lat": -32.795106,
+  "lon": 134.213591,
+  "confidence": "MEDIUM",
+  "source": "OSM node 14225737901 \"Power House Museum\" tourism=museum, Alfred Terrace, Streaky Bay",
+  "note": "Not the same point as the Streaky Bay National Trust Museum node (-32.7980,134.2130, 330 m away)"
+ },
+ "ceduna-8": {
+  "lat": -32.086313,
+  "lon": 132.980412,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia article coordinates for Cactus Beach (Quill draft); OSM camp_site node 1811163680 is 350 m SE",
+  "note": "OSM has no named natural=beach feature; surf breaks lie on the west side of Point Sinclair"
+ },
+ "whyalla-10": {
+  "lat": -32.889685,
+  "lon": 137.798045,
+  "confidence": "LOW",
+  "source": "OSM node 13586141037 Crag Point (natural=cape); the loop is not mapped in OSM",
+  "note": "search_hint -33.033,137.567 was off: Crag Point lies ~18 km NE of Whyalla at -32.89,137.80; owner or agency route map should supply the loop midpoint"
+ },
+ "gawler-ranges-national-park-3": {
+  "lat": -32.563625,
+  "lon": 135.576021,
+  "confidence": "MEDIUM",
+  "source": "OSM node 6335247843 \"Kolah Mirica Falls\"; OSM way 706313911 Kolay Mirca Falls Track 400 m away",
+  "note": "search_hint -32.5539,135.4639 was the Pildappa/park point reused; this is the falls themselves"
+ },
+ "gawler-ranges-national-park-10": {
+  "lat": -32.7511492,
+  "lon": 135.2303986,
+  "confidence": "MEDIUM",
+  "source": "OSM/Nominatim bare_rock \"Pildappa Rock\" at -32.75115,135.23040; attraction node 14 m east and camp_site node 80 m west agree",
+  "note": "search_hint (-32.5539,135.4639) was the park point reused; Pildappa Rock is ~25 km SW near Minnipa"
+ },
+ "arno-bay-estuary-boardwalk": {
+  "lat": -33.923175,
+  "lon": 136.566505,
+  "confidence": "MEDIUM",
+  "source": "OSM way 448574275 \"Creek Mouth Boardwalk\" (footway, middle vertex region), Boardwalk Carpark way 205044724 150 m away",
+  "note": "search_hint was the town centre"
+ },
+ "big-galah": {
+  "lat": -33.141548,
+  "lon": 136.42214,
+  "confidence": "MEDIUM",
+  "source": "OSM node 7092653230 Big Galah tourism=attraction, Kimba, Eyre Highway (cafe nodes alongside)",
+  "note": "search_hint -33.049,136.212 was off by ~20 km; Kimba is at -33.14,136.42"
+ },
+ "mighty-mulloway": {
+  "lat": -31.495646,
+  "lon": 131.811675,
+  "confidence": "LOW",
+  "source": "OSM node 10227691573 (Yalata Anangu Aboriginal Corporation, amenity=fuel) = the Y-Stop Yalata roadhouse on the Eyre Highway",
+  "note": "Sculpture unveiled July 2026 so not in OSM; its position at the roadhouse is from the draft notes. Quill hint was Yalata town node (-31.4804,131.8426), 3 km away, not used"
+ },
+ "colour-tumby-bay-street-art": {
+  "lat": -34.376296,
+  "lon": 136.103445,
+  "confidence": "LOW",
+  "source": "OSM node 252990288 Tumby Bay (place=town) as the middle of the dispersed mural trail",
+  "note": "search_hint -34.1973,136.0388 was ~20 km off; trail is not mapped; murals not tourism=artwork except the Tumby silo (-34.3695,136.0745, a separate spot)"
+ },
+ "mclaren-vale-7": {
+  "lat": -35.229819,
+  "lon": 138.57124,
+  "confidence": "MEDIUM",
+  "source": "OSM way 347398216 \"Red Poles\" (cafe/guest house building)",
+  "note": "search_hint -35.2198,138.5411 was ~3 km west; operator domain parked, so no second source"
+ },
+ "mclaren-vale-13": {
+  "lat": -35.290789,
+  "lon": 138.450896,
+  "confidence": "LOW",
+  "source": "OSM way 297137330 car park inside the bbox of OSM relation 16111599 Aldinga Conservation Park (-35.321..-35.286, 138.446..138.466)",
+  "note": "Park visitor point not confirmed by a named entrance; kept off the Silver Sands coastal pin (-35.292,138.458)"
+ },
+ "victor-harbor-2": {
+  "lat": -35.555748,
+  "lon": 138.624268,
+  "confidence": "HIGH",
+  "source": "OSM way 439836115 South Australian Whale Centre building; Quill board listing point -35.555424,138.624542 within 40 m",
+  "note": ""
+ },
+ "victor-harbor-7": {
+  "lat": -35.443371,
+  "lon": 138.583655,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1722834719 \"Hindmarsh Falls\"; picnic_site node 1722813555 340 m north",
+  "note": "Falls are ~13 km from Victor Harbor"
+ },
+ "goolwa-4": {
+  "lat": -35.522316,
+  "lon": 138.773096,
+  "confidence": "MEDIUM",
+  "source": "OSM way 29492954 \"Goolwa Beach\" car park beside Goolwa Surf Lifesaving Club; Quill draft within 50 m",
+  "note": "OSM natural=beach way 120287154 centroid is 1.3 km west on a long beach, not used"
+ },
+ "goolwa-9": {
+  "lat": -35.25557,
+  "lon": 138.893602,
+  "confidence": "HIGH",
+  "source": "OSM way 1017077358 Gilbert's Motor Museum (tourism=museum building) + Quill listing point -35.255507,138.893724 within 15 m",
+  "note": ""
+ },
+ "ikara-flinders-ranges-5": {
+  "lat": -31.331553,
+  "lon": 138.63341,
+  "confidence": "MEDIUM",
+  "source": "OSM node 8756762329 \"Golden Spike\" at the end of OSM path way 79234928 (Trezona Hike) in Brachina Gorge area Trezona loop; Wikivoyage Trezona Loop geotag -31.33147,138.635291 is 180 m east",
+  "note": ""
+ },
+ "ikara-flinders-ranges-14": {
+  "lat": -31.333447,
+  "lon": 138.649737,
+  "confidence": "MEDIUM",
+  "source": "Midpoint along chained OSM ways named \"Trezona Hike\" (w119031467 etc, ~5.8 km loop from Trezona Campground -31.3310,138.6277); way vertex",
+  "note": "Quill draft -31.5265,138.6061 was ~22 km off; chain had two small gaps so midpoint is approximate (+/-300 m); shares no point with Golden Spike (1.4 km apart)"
+ },
+ "yankalilla-11": {
+  "lat": -35.594177,
+  "lon": 138.105735,
+  "confidence": "MEDIUM",
+  "source": "OSM way 436845642 \"Morgan's Beach\" natural=beach, Cape Jervis",
+  "note": "search_hint -35.45,138.35 was in the gulf; Cape Jervis is at -35.6,138.1"
+ },
+ "ikara-flinders-ranges-21": {
+  "lat": -31.88747,
+  "lon": 138.423074,
+  "confidence": "LOW",
+  "source": "OSM node 1837680769 \"Hawker tourist information\" (fuel + information), taken to be Hawker Motors at Wilpena/Cradock roads; 30 m from the Hawker town node (-31.8876,138.4227) that the search hint was",
+  "note": "Museum not mapped in OSM; identity of Hawker Motors with this node inferred from address"
+ },
+ "yankalilla-3": {
+  "lat": -35.638685,
+  "lon": 138.307346,
+  "confidence": "MEDIUM",
+  "source": "Length-weighted midpoint of OSM ways named \"Heysen Trail\"/\"Wild South Coast Way\" between Cape Jervis and Victor Harbor (way 270541114, ~65 km mapped of 74), ordered west to east",
+  "note": "Approximate: ordering by longitude, +/- a few km along the trail; not a single route relation"
+ },
+ "quorn-5": {
+  "lat": -32.072561,
+  "lon": 138.299654,
+  "confidence": "HIGH",
+  "source": "OSM node 3324941769 Kanyaka Station (historic=ruins, tourism=attraction) + Wikipedia-based draft -32.07257,138.29965 within 2 m",
+  "note": "Death Rock/Kanyaka Waterhole is a separate stop 1.6 km south, not used"
+ },
+ "southern-flinders-ranges-5": {
+  "lat": -33.0353,
+  "lon": 138.26606,
+  "confidence": "MEDIUM",
+  "source": "Centre of the cluster of 8 OSM man_made=silo buildings (way ids 423397659-709) at Wirrabara, ~700 m SW of the village node",
+  "note": "search_hint -33.1865,138.3003 was ~17 km off; the specific painted silo is not distinguished in OSM"
+ },
+ "port-pirie-2": {
+  "lat": -33.181055,
+  "lon": 138.011416,
+  "confidence": "LOW",
+  "source": "OSM node 738227219 Port Pirie Regional Tourism and Arts Centre (tourism=information), the trail start on Mary Elie Street",
+  "note": "Mural trail route/murals not mapped in OSM; not a route midpoint"
+ },
+ "vulkathunha-gammon-ranges-2": {
+  "lat": -30.31191,
+  "lon": 139.333638,
+  "confidence": "MEDIUM",
+  "source": "OSM node 1324600877 Dodwell Observatory (man_made=telescope, tourism=attraction), 250 m west of Arkaroola Village; Oliphant Observatory node 1324601155 is 600 m NE",
+  "note": "Quill draft -30.3117,139.3361 was the village/resort point"
+ },
+ "pekina-creek-rock-carvings": {
+  "lat": -32.730472,
+  "lon": 138.606694,
+  "confidence": "LOW",
+  "source": "OSM way 1213754228 Pekina Creek, mid-way along the creek walk between Orroroo main street and the Giant Redgum (-32.7277,138.6082)",
+  "note": "Carvings are not mapped in OSM; draft point was the Orroroo Hotel/town centre; owner/local map should supply the carvings"
+ },
+ "peterborough-historic-letterpress-print-shop": {
+  "lat": -32.972535,
+  "lon": 138.837933,
+  "confidence": "LOW",
+  "source": "OSM node 14196112602 'Times printing office, 1887' (heritage trail viewpoint) on Jervois Street, assumed to be the 7-9 Jervois St print shop",
+  "note": "Identity inferred from street and name; draft point -32.9744,138.8355 was the town centre"
+ },
+ "kangaroo-island-35": {
+  "lat": -35.91147,
+  "lon": 137.420007,
+  "confidence": "MEDIUM",
+  "source": "Quill draft: OSM water=lake \"Murray Lagoon\" (relation 3419309, centroid -35.9115,137.4114) and Wikivoyage listing geotag -35.9108,137.4185, point chosen on the eastern shore ~140 m from the listing",
+  "note": "Lagoon centroid is in the water; trails (Bald Hill, Timber Creek) start at the lagoon; Murray Lagoon Campground node 11782332018 is 3.5 km east"
+ },
+ "mount-gambier-13": {
+  "lat": -38.053267,
+  "lon": 140.699587,
+  "confidence": "MEDIUM",
+  "source": "OSM node 3536171609 tourism=museum (unnamed) in Port MacDonnell centre near Charles St; tourism listing geocode -38.052387,140.699018 is 110 m away",
+  "note": "Not a named OSM feature; address geocode agrees to ~110 m"
+ },
+ "naracoorte-4": {
+  "lat": -37.290911,
+  "lon": 140.834663,
+  "confidence": "MEDIUM",
+  "source": "OSM node 512100028 Coonawarra (place=town/locality) on the Riddoch Highway; cellar-door strip lies along it (Zema Estate -37.2959,140.8365, Coonawarra Store -37.2916,140.8359)",
+  "note": "search_hint -36.955,140.74285 was wrong (~40 km north); Penola town not used"
+ },
+ "murray-bridge-4": {
+  "lat": -35.120995,
+  "lon": 139.284761,
+  "confidence": "MEDIUM",
+  "source": "OSM node 513239260 \"Bunyip\" tourism=attraction at Sturt Reserve, Murray Bridge",
+  "note": "search_hint was the town centre"
+ },
+ "murray-bridge-14": {
+  "lat": -35.252933,
+  "lon": 139.453378,
+  "confidence": "LOW",
+  "source": "OSM node 1890289527 Tailem Bend (place=town) as the middle of the town heritage walk",
+  "note": "Walk route not mapped in OSM; search_hint (-35.117,139.267) was Murray Bridge, 15 km away; owner/council route map should supply the midpoint"
+ },
+ "coorong-national-park-10": {
+  "lat": -35.507682,
+  "lon": 139.132516,
+  "confidence": "MEDIUM",
+  "source": "OSM way 1472484357 \"Raukkan Church\" (place_of_worship), moved 15 m west along the road of its true centre (-35.507682,139.132681)",
+  "note": "The Raukkan hamlet node (-35.507718,139.132835) is 13 m from the church; shifted so the pin stays 25 m+ from a community pin per the pin-shared rule"
+ },
+ "coorong-national-park-16": {
+  "lat": -35.690998,
+  "lon": 139.327466,
+  "confidence": "MEDIUM",
+  "source": "OSM way 438743372 \"Cheese Factory Museum\" (tourism=museum building), Meningie",
+  "note": ""
+ },
+ "mannum-6": {
+  "lat": -34.815247,
+  "lon": 139.366971,
+  "confidence": "MEDIUM",
+  "source": "OSM node 7828681804 car park inside Lenger Reserve (way 659425040) next to the pug-and-pine cottage buildings (-34.8160,139.3677)",
+  "note": "Reserve centroid (-34.8170,139.3673) not used; search_hint -34.915,139.304 was ~12 km off"
+ },
+ "coorong-national-park-5": {
+  "lat": -35.5710375,
+  "lon": 138.9241871,
+  "confidence": "MEDIUM",
+  "source": "Start vertex of OSM way 247967590 \"Godfrey's Landing Walk\" (DENR ref), with a toilets node 25 m away; the end nearer the lagoon",
+  "note": "search_hint -36.049,139.554 was a generic Coorong point ~65 km off; landing, not ocean-beach end (-35.5764,138.9186)"
+ },
+ "riverland-3": {
+  "lat": -34.197788,
+  "lon": 140.330503,
+  "confidence": "MEDIUM",
+  "source": "OSM node 6257233298 Banrock Wine and Wetland Centre (cafe node 6257233298/5648633580 at same building, Holmes Rd)",
+  "note": "search_hint -34.25,140.467 was a generic Riverland point ~13 km off"
+ },
+ "riverland-9": {
+  "lat": -34.180882,
+  "lon": 140.735075,
+  "confidence": "HIGH",
+  "source": "OSM node 2160417228 Olivewood-National Trust (tourism=museum) + Wikivoyage listing geotag -34.1808,140.7357 within 60 m",
+  "note": ""
+ },
+ "riverland-14": {
+  "lat": -34.221939,
+  "lon": 140.3949,
+  "confidence": "LOW",
+  "source": "OSM node 316601981 \"Campground 10 - Loch Luna Game Reserve\" (tourism=camp_site), inside the game reserve",
+  "note": "Kingston Bridge boat ramp/canoe launch not identified in OSM; Loch Luna Game Reserve and Moorook Game Reserve (way 56018611, -34.2512,140.3740) are separate polygons; reserve centroid not used"
+ },
+ "riverland-19": {
+  "lat": -34.449608,
+  "lon": 140.565376,
+  "confidence": "LOW",
+  "source": "OSM way 264983234 Loxton Historical Village (tourism=attraction) centre; the tree-sculpture walk is in the adjoining heritage/conservation park",
+  "note": "Sculpture trail not mapped in OSM; search_hint -34.25,140.467 was ~25 km off; check not to share the pin if Loxton Historical Village is a spot"
+ },
+ "riverland-25": {
+  "lat": -34.1611058,
+  "lon": 140.0214381,
+  "confidence": "MEDIUM",
+  "source": "Middle vertex of OSM way 1019612079 \"Peter Jacobs Trail\" (2.0 km of the ~2.5 km out-and-back with way 1019612081) in Maize Island Lagoon Conservation Park (relation 570775)",
+  "note": "search_hint -34.25,140.467 was ~45 km off; park campground node 1811184870 is at -34.16611,140.01167"
+ },
+ "riverland-30": {
+  "lat": -34.290127,
+  "lon": 140.622934,
+  "confidence": "LOW",
+  "source": "Middle vertex of the longest unnamed OSM path (way 232095784, 1.1 km) inside Martin Bend Reserve (way 306841551); Martin Bend trail itself is not named in OSM",
+  "note": "Trail identity inferred; reserve centroid -34.2870,140.6215 is ~400 m away"
+ },
+ "river-murray-dark-sky-reserve": {
+  "lat": -34.7106587,
+  "lon": 139.5157897,
+  "confidence": "LOW",
+  "source": "OSM node 1482227616 Shell Hill Lookout (tourism=viewpoint), a public stargazing site in the reserve; the 4WD-only core site in Swan Reach Conservation Park is not used",
+  "note": "Reserve is a large area, so any pin is a visitor point; Quill draft was the Swan Reach town node (-34.5673,139.5973)"
+ },
+ "brookfield-conservation-park": {
+  "lat": -34.34149,
+  "lon": 139.490521,
+  "confidence": "LOW",
+  "source": "OSM node 4044892677 toilets ~1.4 km N of the Brookfield Conservation Park centroid (relation 570782, -34.3545,139.4895); public-section visitor point not confirmed",
+  "note": "search_hint -34.3517,139.6117 was Blanchetown, 12 km east; Three Habitat Walk not mapped"
+ },
+ "tauragat-hill": {
+  "lat": null,
+  "lon": null,
+  "confidence": "NONE",
+  "source": "",
+  "note": "Not in OSM, Wikipedia/Wikivoyage or Commons by name; only Tauragat Well (Wikipedia -35.61563,139.9682, disused well on Coonalpyn-Lameroo Road) is known and the hill is only described as east of it. Town search_hint is Coonalpyn, not the hill; needs the agency/council map or a summit survey mark"
+ },
+ "innamincka-1": {
+  "lat": -27.746948,
+  "lon": 140.736504,
+  "confidence": "LOW",
+  "source": "OSM node 2017638324 Historic Elizabeth Symon Nursing Home (tourism=information) in Innamincka township, the reserve's heritage/visitor information point",
+  "note": "Reserve is ~13,000 km2; Nominatim centroid -27.6327,140.5746 not used; Quill draft -27.7454,140.7541 was 1.6 km east of the township"
+ },
+ "innes-national-park-9": {
+  "lat": -35.19414,
+  "lon": 136.862779,
+  "confidence": "MEDIUM",
+  "source": "Median of 3 geotagged Commons photos of Dolphin Beach (File:Dolphin Beach, Dhilba Guuranda-Innes NP 20230209 1-3.jpg) at -35.19401..-35.19422,136.86277; nearest OSM car park n10945729449 is 450 m SE",
+  "note": "No named natural=beach in OSM; Royston Head hike starts nearby (-35.197,136.864)"
+ }
+}

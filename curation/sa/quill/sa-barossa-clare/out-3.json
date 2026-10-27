@@ -1,0 +1,306 @@
+{
+ "spots": {
+  "clare-valley-10": {
+   "name": "Blyth",
+   "icon": "🎨",
+   "category": "nature",
+   "bio": "Mid North town with a community mosaic on a cafe wall and the 4.4 km Dean Nicolle Eucalypt Walk on the old rail corridor.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -33.845099,
+    "longitude": 138.489462
+   },
+   "coordinates_source": "MEDIUM: OSM node 2128342271 place=village \"Blyth\" (wikipedia en:Blyth, South Australia); Wikipedia's own point is a rounded 8-dp town point 1.5 km away. Mosaic is on Blyth Cafe's north wall (~200 m south), not pinned.",
+   "wiki": "Blyth, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "notes": "Draft bio named Brooks Lookout; no source found for it, so it is left out. Mosaic (8 Harley Street, Mike Tye design, 30+ volunteers) from clarevalley.com.au/directory/the-blyth-mosaic; walk from Wikipedia and clarevalley listing, opened Aug 2025, starts at the northern edge beside Rail Corridor Road. Town is judged a stop on the mosaic and the walk."
+  },
+  "clare-valley-11": {
+   "name": "Farrell Flat Silo Art",
+   "icon": "🎨",
+   "category": "monument",
+   "bio": "Silo mural of the last train through town, painted in 2020 by Jarrod Soden and Matthew Knights, on Patterson Terrace.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -33.831242,
+    "longitude": 138.795224
+   },
+   "coordinates_source": "HIGH: OSM way 603212964 man_made=silo (middle of three silos) and Commons photo 'Painted Silos viewed from the Pub at Farrell Flat' 80 m away",
+   "free": true,
+   "costBasis": "open",
+   "notes": "Source: clarevalley.com.au/directory/farrell-flat-silo-art (completed Nov 2020, 30 m tall). Draft's 'first of the Clare Valley Silo Art Trail' dropped: source says first painted in the region. No Wikipedia article (wiki omitted)."
+  },
+  "burra-1": {
+   "name": "Burra Mine Site",
+   "icon": "⛏️",
+   "category": "historic",
+   "bio": "Open-air Monster Mine copper-mining site with Morphett's Engine House, a powder magazine, lookouts and Peacock's Chimney.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -33.680043,
+    "longitude": 138.927297
+   },
+   "coordinates_source": "MEDIUM: OSM node 2130285523 'Burra Mine Site - National Trust' (tourism=museum); Morphett's Engine House node is 130 m away",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/burra-mine-site/",
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Passport (Adult)",
+   "notes": "Entered with the Burra Heritage Passport key (adult $35, $50 refundable key deposit, valid two days; visitburra.com.au/?p=1481 -> visitburra.com.au/burra-heritage-pass/). The passport's price is shown on each of its sites; National Trust page says admission is as part of the passport."
+  },
+  "burra-2": {
+   "name": "Redruth Gaol",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "National Trust gaol on Tregony Street with cells and exercise yards, entered with the Burra Heritage Passport key.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.664494,
+    "longitude": 138.933011
+   },
+   "coordinates_source": "HIGH: OSM way 223968806 'Redruth Gaol' and Wikipedia -33.6645,138.933",
+   "wiki": "Redruth Gaol",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/redruth-gaol/",
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Passport (Adult)",
+   "notes": "Entered with the Burra Heritage Passport key (adult $35, $50 refundable key deposit, valid two days; visitburra.com.au/?p=1481 -> visitburra.com.au/burra-heritage-pass/). The passport's price is shown on each of its sites; National Trust page says admission is as part of the passport."
+  },
+  "burra-3": {
+   "name": "Miners Dugouts",
+   "icon": "🏚️",
+   "category": "historic",
+   "bio": "Creek-bank dugouts on Burra Creek where early miners lived, dug in the 1840s and opened with the passport key.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -33.68265,
+    "longitude": 138.943327
+   },
+   "coordinates_source": "MEDIUM: OSM node 2158526850 \"Miner's Dugouts-National Trust\" (tourism=museum)",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/burra-miners-dugouts/",
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Passport (Adult)",
+   "notes": "Entered with the Burra Heritage Passport key (adult $35, $50 refundable key deposit, valid two days; visitburra.com.au/?p=1481 -> visitburra.com.au/burra-heritage-pass/). The passport's price is shown on each of its sites; National Trust page says admission is as part of the passport. National Trust: around 600 dugouts were excavated along Burra Creek between 1846 and 1851. No Wikipedia article (wiki omitted)."
+  },
+  "burra-4": {
+   "name": "Burra Railway Station",
+   "icon": "🚉",
+   "category": "museum",
+   "bio": "Restored 1870 station run by volunteers, with railway displays, the 1917 dining carriage Edie and guided tours.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -33.674167,
+    "longitude": 138.919568
+   },
+   "coordinates_source": "HIGH: OSM node 4923247862 'Burra Railway Station' and Wikipedia -33.6742,138.9196",
+   "wiki": "Burra railway station",
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://www.burrastation.com/",
+   "notes": "Draft said free via the Burra Passport; the visitburra.com.au/burra-railway-station/ page says it is volunteer-run, entry by donation, open daily 11:00-13:00 and closed at 35 C or above, so it is not part of the passport price. ticketUrl title 'Home | Burrarailwaystation' (Friends of the Burra Railway Station)."
+  },
+  "burra-5": {
+   "name": "Bon Accord Mine Complex",
+   "icon": "⛏️",
+   "category": "museum",
+   "bio": "National Trust museum on the Bon Accord mine site, with mining relics, a Monster Mine model and a working blacksmith shop.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.672766,
+    "longitude": 138.922742
+   },
+   "coordinates_source": "MEDIUM: OSM node 2130283553 'Bon Accord Cottage - National Trust' (tourism=museum), the Bon Accord Mining Museum site",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/bon-accord-mine-complex/",
+   "notes": "Adult $5, concession $4, under 16 and NTSA members free, passport key holders $2 (National Trust page, title 'Bon Accord Mine Museum - National Trust'). Closes above 38 C or on severe fire-danger days. No Wikipedia article (wiki omitted)."
+  },
+  "lake-bumbunga": {
+   "name": "Lake Bumbunga",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "Salt lake beside Highway 1 at Lochiel whose colour shifts from pink to white, with a lookout and the Loch-Eel sculpture.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "latitude": -33.927367,
+    "longitude": 138.163512
+   },
+   "coordinates_source": "MEDIUM: OSM node 9753934217 tourism=viewpoint on the Lochiel shore; Loch-Eel sculpture node is 230 m east. Wikipedia's point is the lake centroid, 3 km away",
+   "wiki": "Lake Bumbunga",
+   "free": true,
+   "costBasis": "open",
+   "notes": "Colour varies with salinity and season (clarevalley.com.au/directory/lake-bumbunga; Wikipedia: pinker in spring than winter). Salt is mined there, so not all of it is open access."
+  },
+  "eudunda-silo-art": {
+   "name": "Eudunda Silo Art",
+   "icon": "🎨",
+   "category": "monument",
+   "bio": "30 m silo mural from 2021 by Sam Brooks, drawn from Colin Thiele's novel The Sun on the Stubble and a Ngadjuri storybook.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": {
+    "latitude": -34.175671,
+    "longitude": 139.086478
+   },
+   "coordinates_source": "MEDIUM: OSM way 535062782 man_made=silo in the Eudunda silo group (railway side), consistent with Commons photo 70 m away",
+   "free": true,
+   "costBasis": "open",
+   "notes": "Source: clarevalley.com.au/directory/eudunda-silo-art (parking on Railway Parade). Which silo carries the mural is not given; pin is the middle of the group. No Wikipedia article (wiki omitted)."
+  },
+  "terowie": {
+   "name": "Terowie",
+   "icon": "🚉",
+   "category": "historic",
+   "bio": "Historic railway town on the Barrier Highway where General MacArthur stopped in 1942, with a Historic Walk of 35 buildings.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -33.151441,
+    "longitude": 138.918296
+   },
+   "coordinates_source": "MEDIUM: OSM node 2316964266 place=village 'Terowie' (wikipedia en:Terowie, South Australia); Wikipedia's own point is 500 m south",
+   "wiki": "Terowie, South Australia",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "No single steward: an open town; the volunteer visitor centre opens the museum buildings on request.",
+   "notes": "Building count 35 from several guides (one says 39); MacArthur layover 20 March 1942 per guides. Railway station node is 330 m east."
+  },
+  "bundaleer-forest": {
+   "name": "Bundaleer Reservoir Reserve",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "SA Water reservoir reserve near Jamestown with loop trails, kayaking, fishing (permit needed) and picnic areas.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "coordinates": {
+    "latitude": -33.276205,
+    "longitude": 138.555265
+   },
+   "coordinates_source": "LOW-MEDIUM: OSM node 2321806062 'Bundaleer Arboretum Picnic Area' (start of the forest walk, 600 m east of the reservoir's water polygon); no OSM or Wikipedia point for the reserve entrance",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.sawater.com.au/reservoir-reserves/reservoir-reserves/bundaleer",
+   "ticket_note": "SA Water page blocks scripts (Cloudflare); URL taken from search results, title unchecked.",
+   "notes": "pin: LOW. Renamed from 'Bundaleer Forest' (id kept): the listing the draft cites is Bundaleer Reservoir Reserve. Open sunrise to sunset, free parking and toilets, closed on Total Fire Ban days; SA Water lists a 4.5 km Reservoir Loop, 7 km Boundary Loop and 6 km Woods Loop; fishing permit needed; no dogs; kayaks and canoes only. The Bundaleer Forest campground and picnic ground (-33.278,138.571) is a different part of the forest 1.5 km east."
+  },
+  "diggers-walk-belalie-creek": {
+   "name": "Diggers Walk Belalie Creek",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Creek-side heritage trail in Jamestown built by returned WWI servicemen, with interpretive displays and picnic spots.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "latitude": -33.203531,
+    "longitude": 138.604458
+   },
+   "coordinates_source": "LOW: the route is not in OSM or Wikipedia; point is the creek-side swing bridge/park in central Jamestown from a Commons geotagged photo, not the route midpoint",
+   "free": true,
+   "costBasis": "open",
+   "notes": "pin: LOW. Owner or a local map should supply the walk's route/midpoint. Source: flindersandoutback.com.au listing (built by returned servicemen after WWI, restored with interpretive displays, Sir Hubert Wilkins story; picnic and barbecue).",
+   "ticket_note": "Council-managed open trail with no single operator page found."
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "burra",
+    "name": "Burra",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -33.671363,
+     "longitude": 138.930073
+    },
+    "category": "city",
+    "defaultZoomSpanKm": 20,
+    "rank": 4,
+    "icon": "⛏️",
+    "tagline": "A Cornish copper-mining town opened up with a key to its heritage sites.",
+    "description": "Burra grew around the Monster Mine, a copper mine worked from the 1840s, and it is one of the Australian sites in a World Heritage bid for Cornish copper mining. The mine site, the Redruth Gaol and the creek-bank dugouts where early miners lived all lie within a few kilometres of Market Square. The Burra Heritage Passport, running since 1979, lends a key to 11 locked National Heritage sites. Museums and a restored railway station fill out the town.",
+    "whyVisit": [
+     "Explore a Cornish copper-mining town",
+     "Unlock locked heritage sites with a key",
+     "See how early miners lived"
+    ],
+    "highlights": [
+     "Copper-mining history",
+     "Heritage passport key",
+     "Miners' dugouts"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🔑",
+      "title": "Collect the key first",
+      "detail": "Buy the Heritage Passport at the Visitor Information Centre in Market Square. A $50 deposit is refunded when the key is returned."
+     },
+     {
+      "icon": "🌡️",
+      "title": "Hot-day closures",
+      "detail": "The railway station closes at 35 °C and the Bon Accord museum above 38 °C or on severe fire-danger days, so check ahead in summer."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "{months} are mild for walking between sites, while hot summer days close some."
+   },
+   "spots": [
+    "burra-1",
+    "burra-2",
+    "burra-3",
+    "burra-5",
+    "burra-4"
+   ],
+   "notes": [
+    "Coordinates: OSM place=town node 249338858 'Burra'; Wikipedia's town point (-33.6667,138.9333) is rounded and 500 m north. No spot within 25 m (nearest Burra Police Station, not a spot).",
+    "defaultZoomSpanKm cut from 25 to 20: every spot lies within 3 km of the centre (75% of 20 = 15 km).",
+    "Spot order: mine site, gaol and dugouts (the passport core), then Bon Accord and the railway station (burra-5 before burra-4).",
+    "Facts: Heritage Passport since 1979, 11 locked sites, two-day key, $50 deposit (visitburra.com.au/?p=1481); World Heritage bid for Burra and Moonta (visitburra.com.au); closures (visitburra / National Trust pages). Mining from 1845 per the Bon Accord museum page.",
+    "Burra Heritage Passport adult price differs across sites ($35 on visitburra and Flinders and Outback, $30 on one listing); official $35 used."
+   ]
+  }
+ ],
+ "unverified": [
+  "Bundaleer Reservoir Reserve pin (LOW) and SA Water page title (blocked)",
+  "Diggers Walk route/midpoint (LOW)",
+  "Burra Heritage Passport price: $35 adult per visitburra.com.au; other listings differ",
+  "Eudunda silo art: which silo carries the mural",
+  "Terowie museum opening arrangements"
+ ],
+ "needs_browser": [
+  {
+   "id": "bundaleer-forest",
+   "url": "https://www.sawater.com.au/reservoir-reserves/reservoir-reserves/bundaleer",
+   "why": "Cloudflare 'Just a moment'; check title and entrance/car park location"
+  }
+ ],
+ "notes": [
+  "Overpass main instances, Nominatim and Photon were down or rate-limited; OSM read through overpass.openstreetmap.fr with a Referer header; resolve-pin.py produced only LOW for Blyth and Farrell Flat from Commons.",
+  "Renamed bundaleer-forest to Bundaleer Reservoir Reserve (id kept). Blyth: draft's Brooks Lookout dropped (unsourced).",
+  "No LOW-confidence spots dropped; nothing judged unfit to add. LOW pins: bundaleer-forest, diggers-walk-belalie-creek."
+ ]
+}

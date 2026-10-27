@@ -1,0 +1,151 @@
+{
+ "group": "coober-pedy",
+ "generated": "2026-10-26T15:54:47.055Z",
+ "slots": [
+  {
+   "slot": "dest:coober-pedy:header",
+   "key": "Coober Pedy",
+   "current": {
+    "file": "Coober Pedy - panoramio (1).jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:coober-pedy:why1",
+   "key": "File:Outback Trip - Coober Pedy Opal Mine (4157698270).jpg",
+   "current": {
+    "file": "Outback Trip - Coober Pedy Opal Mine (4157698270).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:coober-pedy:why2",
+   "key": "File:Coober Pedy - Underground house.jpg",
+   "current": {
+    "file": "Coober Pedy - Underground house.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:coober-pedy:why3",
+   "key": "File:Sunset at Breakaways.jpg",
+   "current": {
+    "file": "Sunset at Breakaways.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:coober-pedy-1",
+   "key": "Old Timers Mine",
+   "current": {
+    "file": "Mina morska typu M 1908-39.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:coober-pedy-2",
+   "key": "Umoona Opal Mine and Museum",
+   "current": {
+    "file": "Coober Pedy - panoramio (4).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:coober-pedy-3",
+   "key": "Tom's Working Opal Mine",
+   "current": {
+    "file": "View of the Andamooka town centre in South Australia, seen from One Tree Hill.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for coober-pedy",
+    "pre-filter: also used for andamooka"
+   ]
+  },
+  {
+   "slot": "spot:coober-pedy-4",
+   "key": "Kanku-Breakaways Conservation Park",
+   "current": {
+    "file": "Serpentine Lakes.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for yeldulknie-conservation-park",
+    "pre-filter: also used for coober-pedy"
+   ]
+  },
+  {
+   "slot": "spot:coober-pedy-5",
+   "key": "Saint Elijah the Prophet Serbian Orthodox Church, Coober Pedy",
+   "current": {
+    "file": "Baptistry soc australia.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:coober-pedy-6",
+   "key": "Faye's Underground Home",
+   "current": {
+    "file": "Vanilla Ice 2010 (cropped).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 517px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:coober-pedy-8",
+   "key": "Big Winch",
+   "current": {
+    "file": "Big Things Postcard.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for coober-pedy, kangaroo-island, riverland, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, kangaroo-island, riverland, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, riverland, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, kangaroo-island, coorong-national-park, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, kangaroo-island, riverland, ceduna",
+    "pre-filter: also used for big-galah, coober-pedy, kangaroo-island, riverland, coorong-national-park"
+   ]
+  },
+  {
+   "slot": "spot:coober-pedy-9",
+   "key": "Coober Pedy Golf Club",
+   "current": {
+    "file": "Coober Pedy - panoramio (4).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 2338 m from the pin: a judge must look"
+   ]
+  }
+ ]
+}

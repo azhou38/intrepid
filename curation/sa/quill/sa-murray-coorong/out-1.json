@@ -1,0 +1,323 @@
+{
+ "spots": {
+  "murray-bridge-1": {
+   "name": "Monarto Safari Park",
+   "icon": "🦒",
+   "category": "entertainment",
+   "bio": "Open-range safari park near Murray Bridge with lions, giraffes, rhinos and elephants, plus a bus loop through the grounds.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -35.1021,
+    "longitude": 139.1424
+   },
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 57,
+   "costMax": 57,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.monartosafari.com.au/",
+   "notes": {
+    "cost": "Adult $57 (child $32, concession $42), from park site; non-members must book a date-specific ticket. Open 9:30am-5pm daily.",
+    "pin": "Visitor centre/entrance off Murray Bridge Rd near Monarto South; draft point is a Wikipedia community point."
+   }
+  },
+  "murray-bridge-2": {
+   "name": "Old Tailem Town",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Pioneer village of more than 100 furnished period buildings near Tailem Bend, set out as a town from 1860 to 1960.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 28,
+   "costMax": 28,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://oldtailemtown.com.au/",
+   "notes": {
+    "cost": "Adult $28 (pensioner/student $26, child 4-16 $11), from the village site; open 9am-4pm daily except Christmas Day.",
+    "pin": "Princes Highway, Tailem Bend (about 3 km south of the town); resolve from OSM tourism=attraction/museum or Wikipedia."
+   }
+  },
+  "murray-bridge-3": {
+   "name": "Murray Bridge Regional Gallery",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Public art gallery with three exhibition spaces behind the Murray Bridge town hall, showing South Australian artists.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.murraybridgegallery.com.au/",
+   "notes": {
+    "cost": "Free entry per gallery programme page and SATC listing. Open Tue-Sat 10-4, Sun 11-4, closed Mon and public holidays.",
+    "pin": "27 Sixth Street, behind the Town Hall (Murray Bridge town centre)."
+   }
+  },
+  "murray-bridge-4": {
+   "name": "Bertha the Bunyip",
+   "icon": "🐉",
+   "category": "landmark",
+   "bio": "Animatronic bunyip at Sturt Reserve on the riverfront that rises from her cave and roars when you press the button.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council-run roadside attraction with no dedicated site; council pages are bot-blocked.",
+   "notes": {
+    "cost": "Free to view (coin-operated historically, now free per council news).",
+    "status": "Council reported a mechanical fault in 2023 with an augmented-reality version at her cave meanwhile; current working state unconfirmed.",
+    "pin": "At Sturt Reserve, Murray Bridge riverfront, at the bunyip's cave."
+   }
+  },
+  "murray-bridge-5": {
+   "name": "Swanport Wetlands",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Nineteen-hectare River Murray wetland with a boardwalk, bird hide and 1.2 km trail, reached via the Frank Jackman Lookout.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council reserve with no dedicated site; council page is bot-blocked.",
+   "notes": {
+    "pin": "Access from the Frank Jackman Memorial Lookout off the South Eastern Freeway east of Swanport Bridge; use the lookout car park / wetland trailhead."
+   }
+  },
+  "murray-bridge-6": {
+   "name": "Rocky Gully Wetlands",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Loop walk through wetlands off Mannum Road with more than 90 bird species, on the Lavender Federation Trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council reserve with no dedicated site.",
+   "notes": {
+    "pin": "Wetlands off Mannum Road; a circuit of about 1.8 km. Pin the loop midpoint, or the car park on Mannum Road.",
+    "status": "The Lavender Federation Trail site listed Rocky Gully closed due to flooding (undated); check before visiting."
+   }
+  },
+  "murray-bridge-7": {
+   "name": "The Round House",
+   "icon": "🏠",
+   "category": "museum",
+   "bio": "Hexagonal 1876 house beside the Murray bridges, once a school and post office, with guided tours included in entry.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/the-round-house",
+   "notes": {
+    "cost": "Adult $8, concession $5, child $3, family $15 (council page via search; history network listing agrees). Hours conflict between sources (weekends and holidays 11-3 vs Wed-Sun), so none written.",
+    "pin": "146 Railway Terrace, Murray Bridge, beside the road and rail bridges.",
+    "name": "Renamed from 'The Round House (Murray Bridge)' (no qualifier)."
+   }
+  },
+  "murray-bridge-8": {
+   "name": "Captain's Cottage Museum",
+   "icon": "🏚️",
+   "category": "museum",
+   "bio": "Local history museum in an 1890s cottage on Thomas Street, open weekends and public holidays.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/captains-cottage",
+   "notes": {
+    "cost": "Adult $5 per the council page and SATC listing; the draft's $1 is the child/older price. Child $3, family $10 per council. Closed on forecast 38C+ days.",
+    "pin": "12 Thomas Street, Murray Bridge; Wikivoyage geotag for the listing gives about -35.1254, 139.265."
+   }
+  },
+  "murray-bridge-9": {
+   "name": "Murray Bridge Discovery Trail",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "Signed 2.3 km town walk with an interpretive sign at each stop along the way.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticket_note": "Council trail with no dedicated site; council page is bot-blocked.",
+   "notes": {
+    "pin": "Midpoint of the 2.3 km town circuit; start near the Sturt Reserve riverfront. Not the same route as the 10.3 km Water Discovery Trail (Avoca Dell to Swanport).",
+    "cost": "Free (SATC listing)."
+   }
+  },
+  "murray-bridge-10": {
+   "name": "Monarto Conservation Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Semi-arid mallee park an hour from Adelaide, good for spotting southern scrub-robin, heathwren and malleefowl.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/monarto-conservation-park",
+   "notes": {
+    "cost": "Free entry per NPWS SA page (title loaded: Monarto Conservation Park).",
+    "pin": "Use NPWS visitor access/car park, not the park centroid."
+   }
+  },
+  "murray-bridge-11": {
+   "name": "Ferries-McDonald Conservation Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Mallee park of 880 hectares with spring orchids, more than 80 bird species and the endangered malleefowl.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/ferries-mcdonald-conservation-park",
+   "notes": {
+    "cost": "Free entry per NPWS SA page (title loaded).",
+    "pin": "Use an NPWS car park or track entry, not the centroid."
+   }
+  },
+  "murray-bridge-12": {
+   "name": "Kinchina Conservation Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Granite outcrops and spring orchids along the Lavender Federation Trail, with rare birds such as the diamond firetail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/kinchina-conservation-park",
+   "notes": {
+    "cost": "Free entry per NPWS SA page (title loaded). Closed on Catastrophic fire danger days.",
+    "pin": "Parking bay off Maurice Road (draft note) near the Jailhouse Rocks loop of about 1.8 km."
+   }
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "murray-bridge",
+    "name": "Murray Bridge",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -35.117,
+     "longitude": 139.267
+    },
+    "coordinates_source": "pending serial pin pass",
+    "category": "city",
+    "defaultZoomSpanKm": 70,
+    "rank": 4,
+    "icon": "🌉",
+    "tagline": "Houseboats, river walks and an open-range safari an hour from Adelaide",
+    "description": "Murray Bridge is a city of about 17,500 on the River Murray, 76 km south-east of Adelaide, named for the road bridge opened here in 1879. The river brings houseboats, wakeboarding, fishing and walks along its banks and wetlands. Monarto Safari Park, on the plains west of town, keeps lions, giraffes, rhinos and elephants. Low rainfall and little light pollution on the outskirts also make it good for stargazing.",
+    "whyVisit": [
+     "See lions and giraffes on safari",
+     "Cruise the Murray by houseboat",
+     "Walk wetlands for birdlife"
+    ],
+    "highlights": [
+     "Open-range safari",
+     "River time",
+     "Wetland birdlife"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🎟️",
+      "title": "Book Monarto ahead",
+      "detail": "Non-members need a date-specific ticket for Monarto Safari Park, so book before you drive out."
+     },
+     {
+      "icon": "🌊",
+      "title": "Check flood closures",
+      "detail": "High river flows can close riverside trails and wetlands such as Rocky Gully. Check with the council before you walk."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "Mild days in {months} suit river walks and the safari park, with spring wildflowers in the mallee."
+   },
+   "spots": [
+    "murray-bridge-1",
+    "murray-bridge-2",
+    "murray-bridge-4",
+    "murray-bridge-5",
+    "murray-bridge-7",
+    "murray-bridge-9",
+    "murray-bridge-3",
+    "murray-bridge-8",
+    "murray-bridge-6",
+    "murray-bridge-10",
+    "murray-bridge-11",
+    "murray-bridge-12",
+    "murray-bridge-13",
+    "murray-bridge-14",
+    "murray-bridge-15"
+   ],
+   "notes": [
+    "Shard holds spots 1-12; 13-15 are in another shard and were left at the end of the order. Check their placement against this order.",
+    "Span 70 km kept: Old Tailem Town (about 28 km) and the conservation parks lie inside 75% (52 km) per drafts; re-check after the pin pass.",
+    "Destination pin stays at the Wikivoyage town point; pin pass should confirm a town-centre point."
+   ]
+  }
+ ],
+ "unverified": [
+  "Bertha the Bunyip: working state in 2026 (mechanical fault reported 2023)",
+  "Round House opening days (sources conflict)",
+  "Captain's Cottage and Round House prices from council page via search, not loaded (bot wall)",
+  "Old Tailem Town: no Wikipedia article confirmed, wiki omitted"
+ ],
+ "needs_browser": [
+  {
+   "id": "murray-bridge-7",
+   "url": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/the-round-house",
+   "why": "council site bot wall; confirm ticketUrl and price"
+  },
+  {
+   "id": "murray-bridge-8",
+   "url": "https://www.murraybridge.sa.gov.au/tourism/things-to-see-and-do/history-and-heritage/captains-cottage",
+   "why": "council site bot wall; confirm ticketUrl and $5"
+  },
+  {
+   "id": "murray-bridge-5",
+   "url": "https://www.murraybridge.sa.gov.au/services/your-community/facilities-for-the-community/parks-reserves-and-ovals/points-of-interest/swanport-wetlands",
+   "why": "possible ticketUrl for Swanport Wetlands (council page)"
+  }
+ ],
+ "notes": [
+  "Pins all pending; no resolve-pin run.",
+  "Bertha the Bunyip and Rocky Gully kept but flagged for status (fault; flood closure)."
+ ]
+}

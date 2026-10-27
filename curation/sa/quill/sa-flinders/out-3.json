@@ -1,0 +1,471 @@
+{
+ "spots": {
+  "ikara-flinders-ranges-25": {
+   "name": "Blinman Pools",
+   "icon": "🏊",
+   "category": "hike",
+   "bio": "Walk of about 12 km return from Angorichina Village in Parachilna Gorge to two natural rock pools.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "no single steward page verified; the walk is in Ikara-Flinders Ranges National Park (parks.sa.gov.au page has no Blinman Pools sub-page, 404)",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Linear route: pin at middle of the Blinman Pools Walking Trail (OSM hiking route); trailhead at Angorichina Village on Parachilna Gorge Road; about 12 km return, pools at ~5-6 km. Draft says hike starts at Parachilna; guides (Prairie Hotel, trailhiking) start at Angorichina.",
+    "cost": "Unverified whether the Ikara-Flinders Ranges NP vehicle fee ($14.40 per vehicle, parks.sa.gov.au) applies on this northern section; set free pending check.",
+    "sources": "flindersandoutback.com.au unique-nature-experiences blog; trailhiking.com.au/hikes/blinman-pools-walk (third-party, distance/time only)"
+   },
+   "wiki": null
+  },
+  "quorn-1": {
+   "name": "Pichi Richi Railway",
+   "icon": "🚂",
+   "category": "entertainment",
+   "bio": "South Australia's oldest operating heritage railway, running steam trains between Quorn and Port Augusta.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "coordinates": {
+    "latitude": -32.34512,
+    "longitude": 138.04114
+   },
+   "costMin": 126,
+   "costMax": 126,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://www.pichirichirailway.org.au/",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Quorn railway station (Railway Terrace), the Quorn terminus; draft point is the Wikipedia point, confirm it is on the station.",
+    "cost": "Afghan Express adult return $126 (pichirichirailway.org.au/train-services/timetable); adult one-way $97. Tourism listings show older $122. Runs on selected Saturdays only, check the timetable; Coffee Pot rail experience is a separate higher-priced product."
+   },
+   "wiki": null
+  },
+  "quorn-2": {
+   "name": "Warren Gorge",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Rocky gorge 21 km north of Quorn with a 5 km creek walk and yellow-footed rock-wallabies at dawn and dusk.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Per Vehicle/Day",
+   "ticketUrl": null,
+   "ticket_note": "steward is the Flinders Ranges Council (frc.sa.gov.au) which blocks scripts; needs browser check",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Gorge itself is just beyond the entrance campground on Arden Vale Road, 21 km N of Quorn; the 5.2 km creek walk starts at the campground (pin mid-gorge or at the entrance campground).",
+    "cost": "Day entry $5 per vehicle, self-registration at the gorge or at Quorn visitor centre (flindersandoutback.com.au listing, council-run)."
+   },
+   "wiki": null
+  },
+  "quorn-3": {
+   "name": "Dutchmans Stern Conservation Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "wiki": "The Dutchmans Stern Conservation Park",
+   "bio": "Bluff 10 km north-east of Quorn with a summit trail and views over Spencer Gulf and the Willochra Plain.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "latitude": -32.32099722,
+    "longitude": 137.9462
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/dutchmans-stern-conservation-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia point is the bluff; use the park's trailhead/car park (trailhead altitude 440 m, ridgetop walk 4.1 km one way, loop 10.5 km) as the visitor point.",
+    "cost": "Parks SA page: free entry.",
+    "alert": "Parks SA alerts at fetch: entrance road 4WD/AWD only after storm damage; park closed 6pm 31 Oct to 6pm 6 Nov 2026 for pest control."
+   }
+  },
+  "quorn-4": {
+   "name": "Mount Brown Conservation Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Conservation park around a 964 m peak, with a lookout and a 15 km loop walk.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "latitude": -32.49011111,
+    "longitude": 138.033
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/mount-brown-conservation-park",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikipedia point is the park/peak; use the lookout or the loop-walk trailhead car park from Parks SA/OSM.",
+    "cost": "Parks SA page: free entry.",
+    "alert": "Closed 31 Oct to 6 Nov 2026 for pest control (Parks SA alert)."
+   },
+   "wiki": null
+  },
+  "quorn-5": {
+   "name": "Kanyaka Station Ruins",
+   "icon": "🏚️",
+   "category": "historic",
+   "wiki": "Kanyaka Station",
+   "bio": "Stone ruins of a cattle and sheep station from the 1850s, with a woolshed, homestead and Death Rock waterhole nearby.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "latitude": -32.07257,
+    "longitude": 138.29965
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "no single official site; listing is by tourism board only",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Draft is the Wikipedia point; the ruins' car park off Quorn-Hawker Road. Death Rock and Kanyaka Waterhole are a separate stop ~10 min walk, off the road just past Wirreanda Creek Bridge, 33 km N of Quorn: must not share a pin.",
+    "cost": "No fee shown on the tourism listings (free assumed from listing facilities: carpark, picnic area); no managing-agency page found.",
+    "sources": "Wikipedia Kanyaka Station (established February 1852, abandoned after droughts)"
+   }
+  },
+  "port-augusta-1": {
+   "name": "Wadlata Outback Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Interpretive centre whose Tunnel of Time walks through Aboriginal and European outback history, in Port Augusta.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "costMin": 29,
+   "costMax": 29,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "http://www.wadlata.sa.gov.au/",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "41 Flinders Terrace, Port Augusta (building itself).",
+    "cost": "Adult $29.00 for the Tunnel of Time, 1 Jul 2026 to 30 Jun 2027 (wadlata.sa.gov.au costs page). Older sources show $18.50-$19.50. Centre also houses the visitor information centre."
+   },
+   "wiki": null
+  },
+  "port-augusta-2": {
+   "name": "Australian Arid Lands Botanic Garden",
+   "icon": "🌵",
+   "category": "nature",
+   "bio": "Arid-zone botanic garden on Stuart Highway with interpretive walks through desert plants on red sand.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "latitude": -32.4616,
+    "longitude": 137.7432
+   },
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://www.aalbg.org/",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "144 Stuart Highway, Port Augusta West; use the visitor centre/main car park (Wikivoyage point -32.4656,137.7399 differs by ~600 m from draft).",
+    "cost": "Free entry with donation boxes (flindersandoutback.com.au listing); gates open daily 7:30am to sunset (not stored)."
+   },
+   "wiki": null
+  },
+  "port-augusta-3": {
+   "name": "Port Augusta Water Tower Lookout",
+   "icon": "🗼",
+   "category": "viewpoint",
+   "bio": "The 1882 Westside water tower, with a balcony view over the town, Spencer Gulf and the Flinders Ranges.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "council-run; port augusta council site blocks scripts",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "Wikivoyage lists Mitchell Terrace / Gold Street, Port Augusta West at -32.485152,137.752534 (the tower itself; the Wikivoyage listing coordinates are specific to it). Four flights of steps.",
+    "cost": "No fee mentioned in either source; unverified (assumed free)."
+   },
+   "wiki": null
+  },
+  "port-augusta-4": {
+   "name": "Port Augusta Foreshore",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sandy foreshore beach at high tide, with a short jetty into deep water, cold showers and change rooms.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "open beach, no single steward",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "OSM natural=beach/jetty on the Port Augusta foreshore at the jetty.",
+    "cost": "Open access; Wikivoyage warns of a tide current in deeper water."
+   },
+   "wiki": null
+  },
+  "port-augusta-5": {
+   "name": "Blanche Harbor",
+   "icon": "🦜",
+   "category": "nature",
+   "bio": "Rehabilitated shore at the end of Shack Road, 23 km from town, for picnics and watching mulga parrots and emus.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "no official page found",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "End of Shack Road, about 23 km from the Port Augusta centre (Wikivoyage); look for an OSM picnic/place point named Blanche Harbor.",
+    "cost": "Open access."
+   },
+   "wiki": null
+  },
+  "port-pirie-1": {
+   "name": "Port Pirie Heritage Trail",
+   "icon": "🚶",
+   "category": "historic",
+   "bio": "Self-guided trail past more than 30 sites, including the smelter, grand hotels and civic buildings, by foot or car.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticket_note": "council pages (pirie.sa.gov.au) blocked to scripts",
+   "coordinates_source": "pending serial pin pass",
+   "notes": {
+    "pin": "A linear walk: take the midpoint of the route. Third-party listing (walkingsa.org.au) calls it a 3.5 km circuit, 1-2 hr; the council story map starts at the Port Pirie Regional Tourism & Arts Centre. Must not share a pin with the mural trail or the museum.",
+    "cost": "Maps free from the visitor centre and online."
+   },
+   "wiki": null
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "quorn",
+    "name": "Quorn",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -32.349535,
+     "longitude": 138.040632
+    },
+    "coordinates_source": "pending serial pin pass",
+    "category": "city",
+    "defaultZoomSpanKm": 60,
+    "rank": 5,
+    "icon": "🚂",
+    "tagline": "Heritage railway town at the southern end of the Flinders Ranges",
+    "description": "Quorn is a railway town at the southern end of the Flinders Ranges. The Pichi Richi Railway has run heritage steam and diesel trains from its station to Port Augusta since 1973, on the original Ghan route that reached Quorn in 1879. Walking tracks, including the Heysen Trail, climb the ranges around the town, and the stone ruins of Kanyaka Station lie about 33 km north.",
+    "whyVisit": [
+     "Ride a heritage steam train",
+     "Walk ridges and rocky gorges"
+    ],
+    "highlights": [
+     "Heritage steam",
+     "Ranges and gorges"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🚂",
+      "title": "Check train running days",
+      "detail": "The Afghan Express runs on selected Saturdays only, so check the timetable and book ahead."
+     },
+     {
+      "icon": "🔥",
+      "title": "Fire danger closures",
+      "detail": "The parks around Quorn close on days of Catastrophic fire danger, so check the CFS rating first."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "Visit in {months} for cooler days that suit the heritage train and the walks. Summers are hot."
+   },
+   "spots": [
+    "quorn-1",
+    "quorn-2",
+    "quorn-3",
+    "quorn-4",
+    "quorn-5"
+   ],
+   "notes": [
+    "Pin: Wikivoyage geo -32.3333,138.0330 differs from draft by ~2 km; use OSM place=town centre / Railway Terrace station. Span 60: Kanyaka is ~41 km from the centre, within 45.",
+    "Name evidence kept as drafted."
+   ]
+  },
+  {
+   "destination": {
+    "id": "port-augusta",
+    "name": "Port Augusta",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -32.4925,
+     "longitude": 137.76583333
+    },
+    "coordinates_source": "pending serial pin pass",
+    "category": "city",
+    "defaultZoomSpanKm": 40,
+    "rank": 5,
+    "icon": "🌵",
+    "tagline": "Gateway city at the head of Spencer Gulf, where the outback begins",
+    "description": "Port Augusta sits at the head of Spencer Gulf, where the roads to the Flinders Ranges and the outback meet. The Wadlata Outback Centre covers the Aboriginal and European history of the outback, and the Australian Arid Lands Botanic Garden shows desert plants across red sands on the city's edge. A restored 1882 water tower gives views over the town, the gulf and the ranges.",
+    "whyVisit": [
+     "Learn outback history and culture",
+     "Walk through arid-zone gardens"
+    ],
+    "highlights": [
+     "Outback stories",
+     "Desert plants"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🌊",
+      "title": "Mind the foreshore current",
+      "detail": "The tide drives a current in the deeper water off the foreshore beach, so swim close to the jetty."
+     },
+     {
+      "icon": "🚗",
+      "title": "Blanche Harbor is remote",
+      "detail": "It lies about 23 km from the centre along Shack Road, so allow time for the drive."
+     }
+    ],
+    "bestMonths": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "bestTimeBlurb": "Come in {months} for milder weather, when sightseeing and the garden walks are comfortable. Summers are hot."
+   },
+   "spots": [
+    "port-augusta-1",
+    "port-augusta-2",
+    "port-augusta-3",
+    "port-augusta-4",
+    "port-augusta-5"
+   ],
+   "notes": [
+    "Span widened from 25 to 40 km: Blanche Harbor is ~23 km from the centre (needs <= 75% of span = 30 km).",
+    "Centre: draft is Wikipedia town point; confirm in the serial pin pass (OSM place=city centre)."
+   ]
+  },
+  {
+   "destination": {
+    "id": "port-pirie",
+    "name": "Port Pirie",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": {
+     "latitude": -33.18583333,
+     "longitude": 138.01694444
+    },
+    "coordinates_source": "pending serial pin pass",
+    "category": "city",
+    "defaultZoomSpanKm": 45,
+    "rank": 5,
+    "icon": "⚓",
+    "tagline": "Spencer Gulf port city with a big smelter, murals and heritage trails",
+    "description": "Port Pirie is a port city on Spencer Gulf, home to the Nyrstar smelter, whose chimney is visible from miles around. A self-guided heritage trail links more than 30 sites, and a mural trail and the National Trust museum add more of the city's story. The long wooden Port Germein Jetty, Telowie Gorge and Beetaloo Reservoir all lie within a short drive.",
+    "whyVisit": [
+     "Follow the city's heritage trail",
+     "Stroll a long wooden jetty"
+    ],
+    "highlights": [
+     "Heritage trail",
+     "Long jetty"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🏭",
+      "title": "See the smelter across the river",
+      "detail": "The best view is from the far side of the Port Pirie River, over the bridge off the main street."
+     },
+     {
+      "icon": "🗺️",
+      "title": "Pick up a trail map",
+      "detail": "Heritage trail maps are free from the visitor information centre and online."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "Visit in {months} for mild weather that suits walking the heritage and mural trails."
+   },
+   "spots": [
+    "port-pirie-1",
+    "port-pirie-2",
+    "port-pirie-3",
+    "port-pirie-4",
+    "port-pirie-5",
+    "port-pirie-6",
+    "port-pirie-7"
+   ],
+   "notes": [
+    "Wikivoyage geo matches the draft (-33.185833,138.016944).",
+    "Spots 2-7 are in shard 4; order kept as drafted. Descriptions rely on those drafts' bios (Port Germein Jetty, mural trail, museum), re-check against shard 4's output. Span 45: Port Germein is ~17-18 km, Telowie ~20 km, Beetaloo ~15 km, all within 34 km."
+   ]
+  }
+ ],
+ "unverified": [
+  "port-augusta-3 Water Tower Lookout: no entry fee stated in either source (assumed free)",
+  "ikara-flinders-ranges-25 Blinman Pools: whether Ikara-Flinders Ranges NP vehicle fee ($14.40) applies on the walk",
+  "quorn-5 Kanyaka Station Ruins: free assumed, no agency page found",
+  "Pichi Richi Railway adult return $126 is the Afghan Express fare on the timetable page; tourism listings show $122",
+  "Quorn destination: 'since 1973' from tourism listing only"
+ ],
+ "needs_browser": [
+  {
+   "id": "quorn-2",
+   "url": "https://www.frc.sa.gov.au/",
+   "why": "Flinders Ranges Council, Warren Gorge steward page; 403 bot wall"
+  },
+  {
+   "id": "port-pirie-1",
+   "url": "https://www.pirie.sa.gov.au/tourism/attractionsexperiences/walking-and-cycling",
+   "why": "Port Pirie Regional Council heritage trail page; 403 bot wall"
+  },
+  {
+   "id": "port-augusta-3",
+   "url": "https://www.portaugusta.sa.gov.au/",
+   "why": "council water tower page; 403 bot wall"
+  }
+ ],
+ "notes": [
+  "All pins pending the serial pass; Blinman Pools sits in sa-flinders ikara destination (spot ids ikara-flinders-ranges-25).",
+  "Blinman Pools: draft said hike from Parachilna; guides start at Angorichina Village.",
+  "Port Augusta Foreshore pin must not share Blanche Harbor/Water Tower points."
+ ]
+}

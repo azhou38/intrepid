@@ -1,0 +1,73 @@
+{
+ "destination": {
+  "id": "gawler-ranges-national-park",
+  "name": "Gawler Ranges National Park",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Adelaide",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -32.5539,
+   "longitude": 135.4639
+  },
+  "category": "park",
+  "defaultZoomSpanKm": 140,
+  "rank": 4,
+  "icon": "🪨",
+  "tagline": "Volcanic rock columns and granite domes in a remote range north of the Eyre Highway.",
+  "description": "Gawler Ranges National Park lies about 40 km north of the Eyre Highway, with road access from Iron Knob, Kimba, Wudinna or Minnipa. It was proclaimed in 2002 on the former Paney Station and protects crimson mallee and the yellow-footed rock-wallaby. The Organ Pipes, formed by volcanic eruptions about 1,500 million years ago, are its best-known sight, with rocky falls at Yandinga and Kolay Mirica. South of the ranges, the Wudinna area is granite country of domes such as Mount Wudinna and Pildappa Rock.",
+  "whyVisit": [
+   "Walk among ancient volcanic rock formations",
+   "Climb granite domes for wide views",
+   "See wildflowers across outback plains"
+  ],
+  "highlights": [
+   "Volcanic rock",
+   "Granite domes",
+   "Spring wildflowers"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🚙",
+    "title": "Check track conditions",
+    "detail": "A 4WD is recommended for the park's highlights, and wet weather can waterlog tracks and close them to vehicles."
+   },
+   {
+    "icon": "🎟️",
+    "title": "Pay before you enter",
+    "detail": "Vehicle entry is $14.40 and must be paid before entering the park. Dogs are not permitted."
+   }
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "{months} are cool and green, with wildflowers from late winter into spring. Summer can be very hot."
+ },
+ "spots": [
+  "gawler-ranges-national-park-1",
+  "gawler-ranges-national-park-2",
+  "gawler-ranges-national-park-3",
+  "gawler-ranges-national-park-4",
+  "gawler-ranges-national-park-6",
+  "gawler-ranges-national-park-10",
+  "gawler-ranges-national-park-8",
+  "gawler-ranges-national-park-9",
+  "gawler-ranges-national-park-7",
+  "gawler-ranges-national-park-11",
+  "gawler-ranges-national-park-12",
+  "gawler-ranges-national-park-13"
+ ],
+ "notes": [
+  "Draft spot gawler-ranges-national-park-5 (Gawler Ranges National Park) is the destination itself, so it is dropped from the spot list; Whyalla spot record in this shard is likewise the whyalla destination, not a spot (no spot written).",
+  "Spots -12, -13 and -14 (sculpture, Wudinna Granite Trail, Wudinna) are written in shard 7; listed here after the Wudinna-area rocks. Span widened 120 to 140 km so Ucontitchie Hill (about 75+ km from the drafted centre) stays inside 75%.",
+  "Destination coordinates are the park centroid (Wikivoyage geotag); needs a visitor point (e.g. Wudinna Telecentre is the booking agent; Paney area visitor point) in the serial pin pass.",
+  "Add pass 'gawler-ranges' ({name:'Gawler Ranges', costMin:14.4, currency:'AUD', note:'Gawler Ranges NP vehicle entry $14.40 per vehicle, parks.sa.gov.au read 2026-10-25'}) to src/data/parkPasses.ts before apply.",
+  "Park currently has partial closures for pest control (23 Oct-1 Nov 2026 and 27 Jan-5 Feb 2027) and some tracks closed by wet weather; not stored in copy."
+ ]
+}

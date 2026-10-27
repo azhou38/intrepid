@@ -1,0 +1,162 @@
+{
+ "group": "port-lincoln",
+ "generated": "2026-10-26T15:54:43.866Z",
+ "slots": [
+  {
+   "slot": "dest:port-lincoln:header",
+   "key": "Port Lincoln",
+   "current": {
+    "file": "Port Lincoln.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:port-lincoln:why1",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "dest:port-lincoln:why2",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "dest:port-lincoln:why3",
+   "key": "File:Seaside Garden - Curtar Rocks Port Lincoln National Park - South Australia.jpg",
+   "current": {
+    "file": "Seaside Garden - Curtar Rocks Port Lincoln National Park - South Australia.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:port-lincoln-1",
+   "key": "Whalers Way",
+   "current": {
+    "file": "Hartford Whalers 1992.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: category: SVG ice hockey logos of the United States",
+    "pre-filter: file name suggests a map, drawing, logo or similar",
+    "pre-filter: not a photograph file (image/svg+xml)",
+    "pre-filter: 800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-2",
+   "key": "Axel Stenross Maritime Museum",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-3",
+   "key": "Winter Hill Lookout",
+   "current": {
+    "file": "LookoutMountain 2020.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 16288940 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-4",
+   "key": "Port Lincoln Old Mill",
+   "current": {
+    "file": "Port Lincoln.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 643 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-5",
+   "key": "Makybe Diva Statue",
+   "current": {
+    "file": "Makybe Diva - trackwork 02.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 768px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-6",
+   "key": "Port Lincoln Street Art Trail",
+   "current": {
+    "file": "Port Authority Bus Terminal (48295955196).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-7",
+   "key": "Parnkalla Trail",
+   "current": {
+    "file": "Dutchmans Stern Park.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for quorn",
+    "pre-filter: also used for port-lincoln"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-8",
+   "key": "Fishery Bay",
+   "current": {
+    "file": "Sleaford Bay(GN05637).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1935",
+    "pre-filter: also used for lincoln-national-park",
+    "pre-filter review: black-and-white? (saturation 0.00)",
+    "pre-filter: dated 1935",
+    "pre-filter: also used for port-lincoln",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:port-lincoln-9",
+   "key": "Mikkira Station",
+   "current": {
+    "file": "Dalhousie Ruins - palms and old buildings in Witjira.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  }
+ ]
+}

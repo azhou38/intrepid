@@ -1,0 +1,464 @@
+{
+ "destinations": [
+  {
+   "id": "mannum",
+   "name": "Mannum",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -34.915143,
+    "longitude": 139.304393
+   },
+   "coordinates_source": "candidate: wikipedia:Mannum (town point)",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": {
+    "source": "southaustralia.com Mannum place page; Wikipedia",
+    "wording": "SATC place page: birthplace of the Murray paddlesteamers, paddle steamers, riverbank pubs, dock museum, waterfall"
+   },
+   "spots": [
+    "mannum-1",
+    "mannum-2",
+    "mannum-3",
+    "mannum-4",
+    "mannum-5",
+    "mannum-6"
+   ]
+  },
+  {
+   "id": "coorong-national-park",
+   "name": "Coorong National Park",
+   "category": "park",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -36.049,
+    "longitude": 139.554
+   },
+   "coordinates_source": "candidate: wikipedia:Coorong National Park (park centroid; replace with a visitor point at the resolve stage)",
+   "defaultZoomSpanKm": 110,
+   "name_evidence": {
+    "source": "parks.sa.gov.au Coorong National Park; Wikivoyage; southaustralia.com",
+    "wording": "Flagship park named by the agency page, Wikivoyage (Coorong) and southaustralia.com"
+   },
+   "spots": [
+    "coorong-national-park-1",
+    "coorong-national-park-2",
+    "coorong-national-park-3",
+    "coorong-national-park-4",
+    "coorong-national-park-5",
+    "coorong-national-park-6",
+    "coorong-national-park-7",
+    "coorong-national-park-8",
+    "coorong-national-park-9",
+    "coorong-national-park-10",
+    "coorong-national-park-11",
+    "coorong-national-park-12",
+    "coorong-national-park-13",
+    "coorong-national-park-14",
+    "coorong-national-park-15",
+    "coorong-national-park-16",
+    "coorong-national-park-17",
+    "coorong-national-park-18"
+   ],
+   "note_merge": "Meningie (the park's gateway town) folded in: its spots are spots of the park destination (COVERAGE.md: a park's gateway villages are its spots)."
+  }
+ ],
+ "spots": [
+  {
+   "category": "museum",
+   "icon": "🚂",
+   "bio": "Volunteer-run 1913 railway station with a signal box, rail museum and history room.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "murray-bridge-13",
+   "name": "Tailem Bend Info Station and Rail Museum",
+   "destination": "murray-bridge",
+   "coordinates": null,
+   "note": "SATC attraction list and themurrayriver listing: 1913 railway station with signal box, rail museum and history room, volunteer run (hours vary). Small museum a guide names.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🚶",
+   "bio": "Free marked heritage walk through Tailem Bend with interpretive signs at railway cottages and the institute.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "murray-bridge-14",
+   "name": "Tailem Bend Historic Rail Trail",
+   "destination": "murray-bridge",
+   "coordinates": null,
+   "note": "southaustralia.com and themurrayriver.com: free marked heritage walk/drive with interpretive signs (railway cottages, institute); a guide's walking route. Short.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do"
+   ]
+  },
+  {
+   "category": "hike",
+   "icon": "🛶",
+   "bio": "About 21 km paddling route from Tailem Bend to Wellington in four sections, with interpretive signs.",
+   "wiki": "Lower Murray Canoe Trail",
+   "coordinates_source": null,
+   "visitHoursMin": 3.0,
+   "visitHoursMax": 6.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "murray-bridge-15",
+   "name": "Lower Murray Canoe Trail",
+   "destination": "murray-bridge",
+   "coordinates": null,
+   "note": "southaustralia.com free trail: about 21 km paddling route Tailem Bend to Wellington in four sections with interpretive signs; a promoted water trail. Marginal as no single point, so placement at Tailem Bend start.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "⚓",
+   "bio": "Museum of River History at Mannum Dock where the 1897 paddle steamer PS Marion can be boarded.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 2.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "mannum-1",
+   "name": "Mannum Dock Discovery Centre",
+   "destination": "mannum",
+   "coordinates": null,
+   "note": "SATC attraction (museum and PS Marion, interactive centre), free; a museum visit of 30+ min.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/places/mannum",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "💧",
+   "bio": "Small waterfall with car park and picnic area outside Mannum, flowing seasonally.",
+   "wiki": "Mannum Waterfalls",
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 4,
+   "id": "mannum-2",
+   "name": "Mannum Waterfalls",
+   "destination": "mannum",
+   "coordinates": null,
+   "note": "SATC attraction with carpark, picnic area, free; second-tier stop. Objection: small seasonal flow, short visit.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/places/mannum",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do",
+    "https://www.themurrayriver.com/destinations/the-murray-river/"
+   ]
+  },
+  {
+   "category": "museum",
+   "icon": "🏍️",
+   "bio": "Mannum collection of historic motorbikes and memorabilia, about 52 bikes on display.",
+   "wiki": "River Rides Motorcycle Museum",
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "mannum-3",
+   "name": "River Rides Motorcycle Museum",
+   "destination": "mannum",
+   "coordinates": null,
+   "note": "Tourism board's 777 Motor Museum Trail calls it an extensive collection of historic motorbikes and memorabilia; about 52 bikes on display, open most days 9am-4pm in Mannum. A small museum a guide names.",
+   "sources": [
+    "https://www.themurrayriver.com/seven-stops-one-epic-ride-the-777-motor-museum-trail/"
+   ]
+  },
+  {
+   "category": "monument",
+   "icon": "🛠️",
+   "bio": "Mannum reserve with a replica boiler and pumping engine marking the first Murray paddle steamer, PS Mary Ann.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "id": "mannum-4",
+   "name": "Mary Ann Reserve",
+   "destination": "mannum",
+   "coordinates": null,
+   "note": "SATC attraction and Traveller guide: Mannum reserve with the PS Mary Ann boiler replica and pumping engine, an Engineers Australia national heritage marker for the first Murray paddle steamer. Short stop.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🐦",
+   "bio": "Bird sanctuary and picnic area at Mannum on the Murray.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 3,
+   "id": "mannum-5",
+   "name": "Hermann Gass Bird Sanctuary",
+   "destination": "mannum",
+   "coordinates": null,
+   "note": "Named on southaustralia.com attractions; bird sanctuary and picnic area at Mannum.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/places/mannum",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🌱",
+   "bio": "A 95 ha National Trust bird sanctuary near Mannum with 208 native plant species and a c.1900 pug-and-pine cottage.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "mannum-6",
+   "name": "Lenger Reserve",
+   "destination": "mannum",
+   "coordinates": null,
+   "note": "SATC and themurrayriver: 95 ha National Trust bird sanctuary near Mannum with 208 native plant species and a c.1900 pug-and-pine cottage. Case against: remote, little infrastructure.",
+   "sources": [
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "Campground and dune walk to the Coorong's Ocean Beach, a distinct access point on the Younghusband Peninsula.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 4,
+   "id": "coorong-national-park-1",
+   "name": "42 Mile Crossing",
+   "destination": "coorong-national-park",
+   "coordinates": null,
+   "note": "Named on southaustralia.com attractions and Coorong NP page: campground and dune walk to Ocean Beach; distinct access point.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/coorong-national-park",
+    "https://en.wikivoyage.org/wiki/The_Coorong",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do",
+    "https://southaustralia.com/destinations/murray-river-lakes-and-coorong/things-to-do/attractions"
+   ]
+  },
+  {
+   "category": "beach",
+   "icon": "🌊",
+   "bio": "The 4WD-only ocean beach of the Younghusband Peninsula, a filming location for Storm Boy.",
+   "wiki": "Ninety Mile Beach",
+   "coordinates_source": null,
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 494,
+   "counted_sources": 1,
+   "id": "coorong-national-park-2",
+   "name": "Ninety Mile Beach (Coorong)",
+   "destination": "coorong-national-park",
+   "coordinates": null,
+   "note": "Agency names Ninety Mile Beach (4WD only) as a Storm Boy filming location on the Younghusband Peninsula ocean beach; Wikivoyage's Coorong Beach is the same stretch. If a separate Coorong ocean-beach candidate exists, treat as duplicate. Needs coordinates on the SA side.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/coorong-national-park"
+   ]
+  },
+  {
+   "category": "nature",
+   "icon": "🦩",
+   "bio": "A 1.2 km, 20-minute walk to a viewing area over Australia's largest Australian pelican breeding colony.",
+   "wiki": null,
+   "coordinates_source": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "costPer": null,
+   "needs": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "id": "coorong-national-park-3",
+   "name": "Jack Point Pelican Observatory Walk",
+   "destination": "coorong-national-park",
+   "coordinates": null,
+   "note": "Agency lists Jack Point as home of the largest Australian pelican breeding colony; 20-minute 1.2 km walk to a viewing area.",
+   "sources": [
+    "https://www.parks.sa.gov.au/parks/coorong-national-park"
+   ]
+  }
+ ]
+}

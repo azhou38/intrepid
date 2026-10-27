@@ -1,0 +1,334 @@
+{
+ "spots": {
+  "coorong-national-park-16": {
+   "name": "Meningie Cheese Factory Museum",
+   "icon": "🧀",
+   "category": "museum",
+   "bio": "Volunteer-run museum of Meningie's district history, set in the town's old cheese factory beside the Princes Highway.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "donation",
+   "notes": {
+    "pin": "3 Fiebig Rd (Princes Highway), Meningie",
+    "cost": "Travel guide reports an honesty-box donation of about $5; unverified"
+   },
+   "wiki": "Meningie Cheese Factory Museum",
+   "free": true,
+   "ticket_note": "No official website found; volunteer group with a phone listing only"
+  },
+  "coorong-national-park-17": {
+   "name": "Meningie Hill Lookout",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Lookout over Meningie and Lake Albert, open at any hour.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Meningie Hill; take OSM tourism=viewpoint on the hill, not the town (Wikivoyage Meningie lists it with no own geotag)"
+   },
+   "free": true,
+   "ticket_note": "Open lookout, no steward site"
+  },
+  "coorong-national-park-18": {
+   "name": "Meningie Walking and Cycling Trails",
+   "icon": "🚴",
+   "category": "hike",
+   "bio": "Lakeside walking and cycling trails with lookouts around Meningie, including the Lions Walking Trail.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Midpoint of the Lions Walking Trail / lakeside trail along Lake Albert at Meningie (OSM route)",
+    "merge": "Lions Walking Trail and Walking and Cycling Trails listings merged as one"
+   },
+   "free": true,
+   "ticket_note": "Council/community trails, no single steward page found"
+  },
+  "riverland-1": {
+   "name": "Loxton Historical Village",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Open-air village of more than 45 buildings from the 1890s to 1950s, with audio guides, a steam train and a fire-fighting collection.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Allen Hosking Drive, Loxton",
+    "cost": "Adult $15 (child $8, pensioner $12, family $35) per southaustralia.com listing; other listings say $12, unverified"
+   },
+   "wiki": "Loxton Historical Village",
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "ticketUrl": "http://www.thevillageloxton.com.au"
+  },
+  "riverland-2": {
+   "name": "Murray River National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Floodplain park of Murray wetlands, with walking trails, canoe creeks, bird watching and bush camping.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Park visitor point: Lock 4 entrance via Draper Road from Berri (not Katarapko's spot pin)",
+    "cost": "Agency page: vehicle entry to the park is free, camping from $15.40 per night"
+   },
+   "wiki": "Murray River National Park",
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/murray-river-national-park"
+  },
+  "riverland-3": {
+   "name": "Banrock Station Wine and Wetland Centre",
+   "icon": "🦆",
+   "category": "nature",
+   "bio": "Restored wetlands with self-guided walking trails, a boardwalk and bird hides beside a Murray River winery.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Banrock Station Wine and Wetland Centre, Holmes Rd near Kingston-on-Murray, Hawks Nest; cellar door / car park",
+    "cost": "Self-guided walks reported free (Australian Geographic); a self-guided option with tasting listed from $15 and guided tours $60+; unverified"
+   },
+   "wiki": "Banrock Station",
+   "free": true,
+   "ticket_note": "Wetland-centre page not verified; banrockstation.com.au is the wine brand"
+  },
+  "riverland-4": {
+   "name": "Lake Bonney (Riverland)",
+   "icon": "🏊",
+   "category": "beach",
+   "bio": "Large lake at Barmera with a lakeside beach, swimming areas and watersports.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Lake Bonney foreshore beach at Barmera (OSM natural=beach), not lake centroid",
+    "note": "Past blue-green algae swimming warnings; check SA Health"
+   },
+   "wiki": "Lake Bonney (South Australia)",
+   "free": true,
+   "ticket_note": "Open lakeshore, no steward page"
+  },
+  "riverland-5": {
+   "name": "Chowilla Game Reserve",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "Remote river red gum and black box floodplain reserve with canoe creeks, birdlife and bush camping.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Visitor point on the reserve's main access (Chowilla/Monoman Creek area near Renmark); not centroid",
+    "cost": "Agency page: vehicle entry free, camping $15.40 per night",
+    "closures": "Parts closed 18 May-30 Nov 2026 for constraints project (campsites 14-32, Foleys Campground)"
+   },
+   "wiki": "Chowilla Game Reserve",
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/chowilla-game-reserve"
+  },
+  "riverland-6": {
+   "name": "Katarapko",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "The 9,500 ha floodplain section of Murray River National Park, with canoe creeks and the Ngak Indau Wetland Trail.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Ngak Indau car park just off Lock 4 Road, or Katarapko entrance on Katarapko Crescent via Winkie Road; keep apart from riverland-2's pin",
+    "cost": "Part of Murray River National Park: vehicle entry free",
+    "closures": "Lock 4 Road / Ngak Indau area closed until 6 Nov 2026 for environmental watering"
+   },
+   "free": true,
+   "ticketUrl": "https://www.parks.sa.gov.au/parks/murray-river-national-park"
+  },
+  "riverland-7": {
+   "name": "The Big Orange",
+   "icon": "🍊",
+   "category": "landmark",
+   "bio": "Giant roadside orange beside the Sturt Highway at Berri.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "open",
+   "notes": {
+    "pin": "Big Orange, Sturt Highway, Berri (OSM/Wikipedia)"
+   },
+   "wiki": "Big Orange",
+   "free": true,
+   "ticket_note": "Roadside icon; no steward page"
+  },
+  "riverland-8": {
+   "name": "PS Industry",
+   "icon": "🚢",
+   "category": "historic",
+   "bio": "Restored 1911 paddle steamer moored on Renmark's riverfront, with 60-minute cruises on set dates.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "tour",
+   "notes": {
+    "pin": "Moored at Renmark riverfront by the Visitor Information Centre, 84 Murray Ave (Wikivoyage geotag -34.1751 140.7516 is the centre)",
+    "cost": "Adult $35 cruise per southaustralia.com listing; the official page lists the cruise dates and a $3 booking fee but no price; unverified. Boarding outside cruises is in visitor centre hours"
+   },
+   "wiki": "PS Industry",
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "AUD",
+   "ticketUrl": "https://www.discoverrenmark.com.au/ps-industry"
+  },
+  "riverland-9": {
+   "name": "Olivewood Historic Homestead and Museum",
+   "icon": "🏡",
+   "category": "historic",
+   "bio": "Home of Charles Chaffey, founder of the Renmark irrigation colony, with the original orange trees in its orchard.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": null,
+   "coordinates_source": "pending serial pin pass",
+   "costBasis": "entry",
+   "notes": {
+    "pin": "Wikivoyage listing own geotag -34.1808 140.7357 (205 Twentyfirst St)",
+    "cost": "Adult $10, concession $5, family $20 (National Trust page); open Thu-Mon 10am-4pm"
+   },
+   "wiki": "Olivewood Homestead",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "ticketUrl": "https://nationaltrust.org.au/olivewood"
+  }
+ },
+ "destinations": [
+  {
+   "destination": {
+    "id": "riverland",
+    "name": "Riverland",
+    "country": "Australia",
+    "countryCode": "AU",
+    "timezone": "Australia/Adelaide",
+    "continent": "Oceania",
+    "coordinates": null,
+    "coordinates_source": "pending serial pin pass (draft: Barmera town point -34.25, 140.467; recentre on visitor hub)",
+    "category": "nature",
+    "defaultZoomSpanKm": 120,
+    "rank": 4,
+    "icon": "🍊",
+    "tagline": "Murray River wetlands, red gum forests and orchard towns in South Australia's food bowl",
+    "description": "The Riverland is the stretch of the Murray River from Loxton and Waikerie to the Victorian border, lined with citrus groves, vineyards and irrigated orchards. Renmark, Berri, Barmera and Loxton make good bases, each with its own museum, lake or riverfront. Between them lie floodplain parks, wetlands and red gum forests that are best explored by canoe. Paddle steamers and houseboats still work the river, and roadside giants like the Big Orange mark the fruit-growing towns.",
+    "whyVisit": [
+     "Paddle through red gum creeks",
+     "Watch waterbirds in river wetlands",
+     "Explore historic Murray River towns"
+    ],
+    "highlights": [
+     "Canoe creeks",
+     "Wetland birdlife",
+     "River heritage"
+    ],
+    "goodToKnow": [
+     {
+      "icon": "🍎",
+      "title": "Fruit fly checkpoints",
+      "detail": "The Riverland is a pest-free area. Do not bring fresh fruit or vegetables in, and eat or bin them before the checkpoints."
+     },
+     {
+      "icon": "🌊",
+      "title": "Park closures after floods",
+      "detail": "Floodplain tracks and campsites close when wet or during environmental watering. Check the park alerts before you drive in."
+     }
+    ],
+    "bestMonths": [
+     3,
+     4,
+     5,
+     9,
+     10,
+     11
+    ],
+    "bestTimeBlurb": "Mild days in {months} suit river walks and canoeing before summer heat sets in."
+   },
+   "spots": [
+    "riverland-1",
+    "riverland-2",
+    "riverland-3",
+    "riverland-4",
+    "riverland-5",
+    "riverland-6",
+    "riverland-7",
+    "riverland-8",
+    "riverland-9",
+    "riverland-10",
+    "riverland-11",
+    "riverland-12",
+    "riverland-13",
+    "riverland-14",
+    "riverland-15",
+    "riverland-16",
+    "riverland-17",
+    "riverland-18",
+    "riverland-19",
+    "riverland-20",
+    "riverland-21",
+    "riverland-22",
+    "riverland-23",
+    "riverland-24",
+    "riverland-25",
+    "riverland-26",
+    "riverland-27",
+    "riverland-28",
+    "riverland-29",
+    "riverland-30",
+    "riverland-31",
+    "riverland-32"
+   ],
+   "notes": [
+    "Draft order kept; spots riverland-10..32 are in other shards. Katarapko (riverland-6) is a section of Murray River National Park (riverland-2): kept as separate spots per draft but pins must differ; consider whether Katarapko should merge.",
+    "Span 120 km assumed to cover Chowilla/Renmark to Loxton; verify after serial pin pass."
+   ]
+  }
+ ],
+ "unverified": [
+  "Loxton Historical Village adult $15 (other listings $12)",
+  "PS Industry adult $35 (cruise price per SATC; official page shows no price)",
+  "Banrock Station walks cost (reported free; wetland page unverified)",
+  "Meningie Cheese Factory Museum donation (~$5 honesty box)",
+  "Murray River NP / Chowilla camping fee $15.40/night noted only; entry free per agency"
+ ],
+ "needs_browser": [
+  {
+   "id": "riverland-1",
+   "url": "http://www.thevillageloxton.com.au",
+   "why": "site unreachable by script (SSL/fetch failed); verify title and price"
+  },
+  {
+   "id": "riverland-3",
+   "url": "https://banrockstation.com.au",
+   "why": "wetland centre page/price and ticketUrl not found by script"
+  }
+ ],
+ "notes": [
+  "No spot should be dropped. Possible duplicate: Katarapko vs Murray River National Park (a section of it)."
+ ]
+}

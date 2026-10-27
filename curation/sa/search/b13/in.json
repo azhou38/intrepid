@@ -1,0 +1,100 @@
+[
+ {
+  "slot": "spot:port-broughton-heritage-centre",
+  "id": "port-broughton-heritage-centre",
+  "name": "Port Broughton Heritage Centre and Museum",
+  "wiki": null,
+  "destination": "standalone",
+  "category": "museum",
+  "coordinates": {
+   "latitude": -33.6017036,
+   "longitude": 137.9314447
+  },
+  "bio": "Local history museum in the town's first school building from 1882, with limited afternoon opening.",
+  "failed": "none: current is a 1814 portrait (wrong subject, archive, 908px); candidates are a street and a pub dining room, neither shows the museum"
+ },
+ {
+  "slot": "spot:port-wakefield",
+  "id": "port-wakefield",
+  "name": "Port Wakefield",
+  "wiki": "Port Wakefield, South Australia",
+  "destination": "standalone",
+  "category": "landmark",
+  "coordinates": {
+   "latitude": -34.1853492,
+   "longitude": 138.1553794
+  },
+  "bio": "Gateway town at the head of Gulf St Vincent, with a timber wharf and old sandstone buildings.",
+  "failed": "none"
+ },
+ {
+  "slot": "spot:walk-the-yorke",
+  "id": "walk-the-yorke",
+  "name": "Walk the Yorke",
+  "wiki": null,
+  "destination": "standalone",
+  "category": "hike",
+  "coordinates": {
+   "latitude": -35.09883,
+   "longitude": 136.953162
+  },
+  "bio": "About 500 km of coastal trail around the Yorke Peninsula, from short strolls to long hikes.",
+  "failed": "none"
+ },
+ {
+  "slot": "spot:streaky-bay-2",
+  "id": "streaky-bay-2",
+  "name": "Cape Bauer Loop",
+  "wiki": null,
+  "destination": "streaky-bay",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -32.72222,
+   "longitude": 134.06139
+  },
+  "bio": "A coastal drive to Cape Bauer on the Great Australian Bight, with Hallys Beach lookout, blowholes and views of Olive Island.",
+  "failed": "none: fails check 2/4: a Ford Expedition car, not Cape Bauer; no candidates offered, goes to search"
+ },
+ {
+  "slot": "spot:streaky-bay-3",
+  "id": "streaky-bay-3",
+  "name": "Whistling Rocks and the Blowholes",
+  "wiki": null,
+  "destination": "streaky-bay",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -32.739867,
+   "longitude": 134.074153
+  },
+  "bio": "Whistling rocks and blowholes on Cape Bauer, reached by a 360 m boardwalk to cliff platforms, best at high tide.",
+  "failed": "none: fails check 2: a dolphin stand-in, not the blowholes; goes to search (why1 file shows the blowhole and could be shared within this destination, but it is a 13.9 km-away panoramio shot at unproven spot)"
+ },
+ {
+  "slot": "spot:streaky-bay-4",
+  "id": "streaky-bay-4",
+  "name": "Westall Way Loop",
+  "wiki": null,
+  "destination": "streaky-bay",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -32.895202,
+   "longitude": 134.13385
+  },
+  "bio": "A 32 km unsealed scenic loop passing Smooth Pool, High Cliffs, The Granites and Cape Bauer Lookout.",
+  "failed": "none: no candidates; current is a Melbourne rail map"
+ },
+ {
+  "slot": "spot:streaky-bay-5",
+  "id": "streaky-bay-5",
+  "name": "The Granites",
+  "wiki": null,
+  "destination": "streaky-bay",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -32.894134,
+   "longitude": 134.081143
+  },
+  "bio": "Granite outcrops, a sandy lagoon and rock pools below a 110-step staircase from the clifftop car park.",
+  "failed": "none: candidates are Yosemite granite and flowers, wrong place; current is a stone sample"
+ }
+]
