@@ -669,7 +669,7 @@ export default function ProfileScreen() {
               </Text>
             )}
             {/* A photo grid: one tile per destination, its name and its visited spots over its photo. */}
-            <PhotoGrid pickedId={pickedId} onPick={pickTile} tiles={shownDests.map((d, k) => {
+            <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownDests.map((d, k) => {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode, sub: n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '',
@@ -709,7 +709,7 @@ export default function ProfileScreen() {
               </Text>
             )}
             {/* The same photo grid for spots: the spot's country under its name. */}
-            <PhotoGrid pickedId={pickedId} onPick={pickTile} tiles={shownSpots.map(sp => ({
+            <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownSpots.map(sp => ({
               key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotCountry(sp) ?? '',
               photo: NO_PHOTO.has(spotPhotoTitle(sp))
                 ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />
@@ -767,9 +767,11 @@ const PAGE_SIZE = TILE_COLS * 3;
 // Room above and below each page for the tiles' shadows (the scroller clips anything outside it).
 const SHADOW_ROOM = 6;
 const gridHeight = (n: number) => { const rows = Math.max(1, Math.ceil(n / TILE_COLS)); return TILE * rows + TILE_GAP * (rows - 1); };
-function PhotoGrid({ tiles, pickedId, onPick }: {
+function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
   tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode; rank?: number }[];
   pickedId: string | null; onPick: (id: string) => void;
+  // A pick only lasts while its tile is on the page showing: this drops it once the page changes (or the list does) and it is gone.
+  onClearPick: () => void;
 }) {
   // Pages of nine (three by three): swiping snaps to a whole page, like a carousel, with a dot for each page below.
   const pages: typeof tiles[] = [];
@@ -778,12 +780,20 @@ function PhotoGrid({ tiles, pickedId, onPick }: {
   const ref = useRef<ScrollView>(null);
   // A new list (another sort, country or search) starts again from its first page.
   const firstKey = tiles[0]?.key;
-  useEffect(() => { ref.current?.scrollTo({ x: 0, animated: false }); setPage(0); }, [firstKey, pages.length]);
+  useEffect(() => {
+    ref.current?.scrollTo({ x: 0, animated: false }); setPage(0);
+    if (pickedId && !pages[0]?.some(t => t.key === pickedId)) onClearPick();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstKey, pages.length]);
   return (
     <View>
       <ScrollView ref={ref} horizontal pagingEnabled nestedScrollEnabled showsHorizontalScrollIndicator={false}
         style={styles.tileScroll} decelerationRate="fast"
-        onMomentumScrollEnd={e => setPage(Math.round(e.nativeEvent.contentOffset.x / SCREEN_W))}>
+        onMomentumScrollEnd={e => {
+          const pg = Math.round(e.nativeEvent.contentOffset.x / SCREEN_W);
+          setPage(pg);
+          if (pickedId && !pages[pg]?.some(t => t.key === pickedId)) onClearPick();
+        }}>
         {pages.map((pg, i) => (
           <View key={i} style={[styles.tilePage, { height: gridHeight(pg.length) + 2 * SHADOW_ROOM }]}>
             {pg.map(t => (
