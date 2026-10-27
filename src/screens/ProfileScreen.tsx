@@ -23,6 +23,7 @@ import EditProfileSheet, { ProfileAvatar } from '../components/EditProfileSheet'
 import EntityPhoto from '../components/Map/EntityPhoto';
 import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
+import { getCountryBounds } from '../utils/countryBounds';
 import { ALL_COUNTRIES } from '../data/countries';
 
 const COUNTRY_NAME = new Map(ALL_COUNTRIES.map(c => [c.code, c.name]));
@@ -388,17 +389,22 @@ export default function ProfileScreen() {
   const topSwipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: topSwipeXSV.value }] }));
 
   // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
-  // With a country picked in the Explored dropdown, the map frames that country: the box around the places visited there,
-  // padded, kept in the map's own shape and never tighter than about 25 degrees across (so one place is not a pixel of land).
+  // With a country picked in the Explored dropdown, the map frames that country: the country's box (and the places visited
+  // there), padded, kept in the map's own shape and never tighter than about 25 degrees across (so one place is not a pixel of land).
   const mapView = useMemo(() => {
     const full = { x: 0, y: WORLD_Y0, w: 360, h: WORLD_Y1 - WORLD_Y0 };
     const code = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
     const pts = code ? worldDots.filter(d => d.code === code) : [];
     if (!pts.length) return full;
+    // The whole country, not only the places visited in it (Japan is more than Kyoto and Tokyo): its box, where we have one.
+    const cb = getCountryBounds(code!);
+    if (cb) pts.push(
+      { id: '', code: code!, ...worldPoint(cb.sw.longitude, cb.ne.latitude) },
+      { id: '', code: code!, ...worldPoint(cb.ne.longitude, cb.sw.latitude) });
     const x0 = Math.min(...pts.map(p => p.x)), x1 = Math.max(...pts.map(p => p.x));
     const y0 = Math.min(...pts.map(p => p.y)), y1 = Math.max(...pts.map(p => p.y));
     const shape = WORLD_VH / 360;
-    const w = Math.min(360, Math.max(25, (x1 - x0) * 1.5, ((y1 - y0) * 1.5) / shape));
+    const w = Math.min(360, Math.max(25, (x1 - x0) * 1.2, ((y1 - y0) * 1.2) / shape));
     const h = w * shape;
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
     return { x: Math.max(0, Math.min(360 - w, cx - w / 2)), y: Math.max(0, Math.min(WORLD_VH - h, cy - h / 2)), w, h };
