@@ -590,3 +590,6 @@ Also dropped as not spots: Whyalla (town duplicates its destination), Gumeracha 
 
 ## Quill follow-ups
 - Official links added for 5 paid spots (Port Adelaide Museum, Edithburgh Museum, Sacred Canyon, Tom's Opal Mine, Coober Pedy Golf Club); prices updated for Tom's ($40) and Edithburgh Museum ($5). Still no `ticketUrl` for 11 paid spots: Barossa Museum, Port Victoria Maritime Museum, Stansbury Museum, Bublacowie Military Museum, Port Broughton Heritage Centre, Faye's Underground Home, Neptune Islands (many operators), and four needing a browser (Mannum Dock Discovery Centre, Kimba Museum, Warren Gorge, Engelbrecht Cave). Engelbrecht Cave's listing shows $14.50 (spot $12.50), unverified.
+
+## Owner decision (2026-10-27)
+- All 13 official photos from the external search approved for use (credits now read "used with owner permission").
