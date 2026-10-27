@@ -718,8 +718,8 @@ const TILE_COLS = 3;
 const TILE_GAP = 3;
 // A tile's side: the screen width, less the side room and the gaps.
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
-// The grid shows three and a half rows, then scrolls: the half row hints there is more.
-const GRID_MAX_H = Math.round(TILE * 3.5 + TILE_GAP * 3 + 4);
+// The grid shows three rows, then scrolls (the 4 is the grid's top margin).
+const GRID_MAX_H = TILE * 3 + TILE_GAP * 2 + 4;
 function PhotoGrid({ tiles, pickedId, onPick }: {
   tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[];
   pickedId: string | null; onPick: (id: string) => void;
