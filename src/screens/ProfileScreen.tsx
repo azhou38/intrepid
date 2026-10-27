@@ -234,15 +234,16 @@ export default function ProfileScreen() {
     const destSpots = (id: string) => sum.get(id)?.c ?? 0;
     return { spotDate, destDate, destRating, destSpots };
   }, [savedSpots, savedDests, visitedSpots]);
-  const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, spots?: (id: string) => number) =>
+  const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, country: (item: T) => string, spots?: (id: string) => number) =>
     [...list].sort((x, y) => {
       if (exploredSort === 'date') { const c = date(y.id).localeCompare(date(x.id)); if (c) return c; }
+      else if (exploredSort === 'country') { const c = country(x).localeCompare(country(y)); if (c) return c; }
       else if (exploredSort === 'spots' && spots) { const c = spots(y.id) - spots(x.id); if (c) return c; }
       else if (exploredSort === 'rating') { const c = rating(y.id) - rating(x.id); if (c) return c; }
       return x.name.localeCompare(y.name);
     });
   const exploredDests = useMemo(
-    () => sortBy(visitedDests, id => sortKeys.destDate.get(id) ?? '', sortKeys.destRating, sortKeys.destSpots),
+    () => sortBy(visitedDests, id => sortKeys.destDate.get(id) ?? '', sortKeys.destRating, d => d.country, sortKeys.destSpots),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [visitedDests, sortKeys, exploredSort]);
   // Destinations Explored can be filtered to one country: the countries with visited destinations, most first.
@@ -263,7 +264,7 @@ export default function ProfileScreen() {
     () => exploredDests.filter(d => (!destCountry || d.countryCode === destCountry) && wordMatch(d.name, q)),
     [exploredDests, destCountry, q]);
   const exploredSpots = useMemo(
-    () => sortBy(visitedSpots, id => sortKeys.spotDate.get(id) ?? '', id => savedSpots[id]?.rating ?? 0),
+    () => sortBy(visitedSpots, id => sortKeys.spotDate.get(id) ?? '', id => savedSpots[id]?.rating ?? 0, sp => spotCountry(sp) ?? ''),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [visitedSpots, sortKeys, savedSpots, exploredSort]);
   // Spots Explored works the same way: search by a spot's name or its destination's, filter by country with chips.
@@ -828,18 +829,21 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
   );
 }
 
-type ExploredSort = 'name' | 'date' | 'rating' | 'spots';
+type ExploredSort = 'name' | 'date' | 'rating' | 'spots' | 'country';
 const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'name', label: 'A–Z' },
   { key: 'date', label: 'Recent' },
   { key: 'rating', label: 'Rating' },
   // Destinations only: the most visited spots first (the first three tiles wear a rank badge).
   { key: 'spots', label: 'Most spots' },
+  // Grouped by country (A–Z), then by name.
+  { key: 'country', label: 'Country' },
 ];
 // The sort choice above an Explored grid: small segmented pills, the chosen one dark.
 function SortRow({ sort, onSort, withSpots }: { sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean }) {
   return (
-    <View style={[styles.sortRow, styles.exploredPad]}>
+    <GHScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.sortScroll} contentContainerStyle={styles.sortRow}
+      keyboardShouldPersistTaps="handled">
       <Text style={styles.sortLabel}>Sort</Text>
       {SORTS.filter(o => withSpots || o.key !== 'spots').map(o => (
         <Pressable key={o.key} hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
@@ -847,7 +851,7 @@ function SortRow({ sort, onSort, withSpots }: { sort: ExploredSort; onSort: (s: 
           <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
         </Pressable>
       ))}
-    </View>
+    </GHScrollView>
   );
 }
 
@@ -1068,7 +1072,8 @@ const styles = StyleSheet.create({
   filterTxtOn:  { color: '#047857' },
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, three across.
-  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 10 },
+  sortScroll: { flexGrow: 0, marginBottom: 10 },
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: EXPLORED_PAD },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: 2 },
   sortPill:  { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 12, backgroundColor: '#F3F4F6' },
   sortPillOn: { backgroundColor: '#111827' },
