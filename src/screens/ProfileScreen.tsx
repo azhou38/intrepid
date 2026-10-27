@@ -838,7 +838,7 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
   sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean;
   countries: SortCountry[]; total: number; country: string | null; onCountry: (code: string | null) => void;
 }) {
-  // A country dropdown at the end of the sort row: the chip shows the chosen country ("All" for none) and opens a menu of them, the
+  // A country dropdown at the start of the sort row: the chip shows the chosen country ("All" for none) and opens a menu of them, the
   // same filter as the pills above.
   const chipRef = useRef<View>(null);
   const [menu, setMenu] = useState<{ x: number; y: number } | null>(null);
@@ -852,13 +852,6 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
     <>
       <GHScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.sortScroll} contentContainerStyle={styles.sortRow}
         keyboardShouldPersistTaps="handled">
-        <Text style={styles.sortLabel}>Sort by</Text>
-        {SORTS.filter(o => withSpots || o.key !== 'spots').map(o => (
-          <Pressable key={o.key} hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
-            onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
-            <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
-          </Pressable>
-        ))}
         {countries.length > 1 && (
           <Pressable ref={chipRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={openMenu}>
             {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
@@ -866,6 +859,13 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
             <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
           </Pressable>
         )}
+        <Text style={styles.sortLabel}>Sort by</Text>
+        {SORTS.filter(o => withSpots || o.key !== 'spots').map(o => (
+          <Pressable key={o.key} hitSlop={6} style={[styles.sortPill, sort === o.key && styles.sortPillOn]}
+            onPress={() => { Haptics.selectionAsync(); onSort(o.key); }}>
+            <Text style={[styles.sortTxt, sort === o.key && styles.sortTxtOn]}>{o.label}</Text>
+          </Pressable>
+        ))}
       </GHScrollView>
       <Modal visible={!!menu} transparent animationType="fade" onRequestClose={() => setMenu(null)}>
         <Pressable style={StyleSheet.absoluteFill} onPress={() => setMenu(null)} />
@@ -1070,11 +1070,11 @@ const styles = StyleSheet.create({
   // The Explored photo grid: square tiles, three across.
   sortScroll: { flexGrow: 0, marginBottom: 10 },
   // The sort is plain text with an underline on the chosen one, so it reads as a lighter tier than the country pills above.
-  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: EXPLORED_PAD + 2 },
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 16, paddingHorizontal: EXPLORED_PAD },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF', marginRight: -6 },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
-  countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, marginLeft: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
+  countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, marginRight: 6, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
                  borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
   countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
