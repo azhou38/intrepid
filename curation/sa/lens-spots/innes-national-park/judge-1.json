@@ -1,0 +1,251 @@
+{
+ "dest:innes-national-park:header": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Pondalowie Bay beach, wide, colour, real."
+ },
+ "dest:innes-national-park:why1": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Cape Spencer coast at sunset towards The Gap; real, wide.",
+  "dark": false
+ },
+ "dest:innes-national-park:why2": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Ethel wreck on the beach, wide and clear."
+ },
+ "dest:innes-national-park:why3": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Western grey kangaroo in the park; fits an wildlife reason."
+ },
+ "spot:innes-national-park-1": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Cape Spencer Lighthouse, centred portrait, recognisable."
+ },
+ "spot:innes-national-park-2": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Pondalowie Bay shore; weak but shows the bay itself, differs from header file."
+ },
+ "spot:innes-national-park-4": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Royston Head coast with islet, centred."
+ },
+ "spot:innes-national-park-5": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.55
+  },
+  "reason": "Stenhouse Bay jetty walkway; real, recognisable."
+ },
+ "spot:innes-national-park-7": {
+  "decision": "reject",
+  "choice": "none: current is Innes Lake wide strip, not the abandoned Inneston townsite (stand-in); no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Innes Lake wide strip, not the abandoned Inneston townsite (stand-in); no candidates"
+ },
+ "spot:innes-national-park-9": {
+  "decision": "reject",
+  "choice": "none: current is Kehena Beach, Hawaii: wrong place; no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is Kehena Beach, Hawaii: wrong place; no candidates"
+ },
+ "spot:innes-national-park-10": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "candidates": [],
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6,
+   "zoom": 1.4
+  },
+  "reason": "Marion Bay jetty, real and recognisable; sky heavy so zoom."
+ },
+ "spot:innes-national-park-11": {
+  "decision": "reject",
+  "choice": "none: current is a Swedish outdoor gym: wrong place; no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is a Swedish outdoor gym: wrong place; no candidates"
+ },
+ "spot:innes-national-park-12": {
+  "decision": "reject",
+  "choice": "none: current is a road view toward Cape Spencer, not the trail; no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current is a road view toward Cape Spencer, not the trail; no candidates"
+ },
+ "spot:innes-national-park-3": {
+  "decision": "choice",
+  "choice": "Wreck, Ethel Beach, Dhilba Guuranda\u2013Innes NP 20230209.jpg",
+  "candidates": [
+   {
+    "file": "Wreck, Ethel Beach, Dhilba Guuranda\u2013Innes NP 20230209.jpg",
+    "right_place": 1,
+    "shows_named_thing": 1,
+    "spectacular_wide": 1,
+    "real_photograph": 1,
+    "verdict": "accept",
+    "reason": "wreck on Ethel Beach, 17 m from pin, 7717 px"
+   },
+   {
+    "file": "Ethel Wreck-Innes National Park.jpg",
+    "right_place": 1,
+    "shows_named_thing": 1,
+    "spectacular_wide": 0,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "tight detail, portrait"
+   },
+   {
+    "file": "Ethel wreck panaorama.jpg",
+    "right_place": 1,
+    "shows_named_thing": 1,
+    "spectacular_wide": 0,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "small, wide strip"
+   },
+   {
+    "file": "Ethel Beach, Dhilba Guuranda\u2013Innes NP 20230209 3.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 1,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "beach, no wreck"
+   },
+   {
+    "file": "Ethel Beach, Dhilba Guuranda\u2013Innes NP 20230209.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 1,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "cliff, no wreck"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Wreck on beach; same file as why2 (sharing allowed in destination). Current White shark is a stand-in."
+ },
+ "spot:innes-national-park-6": {
+  "decision": "choice",
+  "choice": "Coastline near West Cape, Dhilba Guuranda-Innes NP 20230209 1.jpg",
+  "candidates": [
+   {
+    "file": "West Cape Lighthouse, Dhilba Guuranda-Innes NP 20230209 1.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 0,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "lighthouse close portrait; spot is the cape"
+   },
+   {
+    "file": "Coastline near West Cape, Dhilba Guuranda-Innes NP 20230209 1.jpg",
+    "right_place": 1,
+    "shows_named_thing": 1,
+    "spectacular_wide": 1,
+    "real_photograph": 1,
+    "verdict": "accept",
+    "reason": "coast at West Cape, 239 m, 7894 px"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Cape coast; current is Cape Jaffa, wrong place and 640 px."
+ },
+ "spot:innes-national-park-8": {
+  "decision": "none",
+  "choice": "none: no photo of the lookout walk itself; only the jetty (spot 5's subject) and stand-ins",
+  "candidates": [
+   {
+    "file": "Stenhouse Bay Jetty, West view 20230208.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 1,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "jetty duplicates neighbour innes-national-park-5"
+   },
+   {
+    "file": "Rhino Head, Dhilba Guuranda-Innes NP, Southwest view 20230208.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 0,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "Rhino Head, a different feature"
+   },
+   {
+    "file": "Stenhouse Bay Jetty, Northwest view 20230208.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 1,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "jetty duplicates spot 5"
+   },
+   {
+    "file": "Stenhouse Bay Jetty, Northwest view 20230208 2.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 1,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "jetty duplicates spot 5"
+   },
+   {
+    "file": "Stenhouse Bay.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 0,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "3:1 strip showing bay and jetty (spot 5's subject)"
+   },
+   {
+    "file": "Western Grey Kangaroo, Dhilba Guuranda\u2013Innes NP 20230208.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 0,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "animal stand-in"
+   },
+   {
+    "file": "Western Grey Kangaroo, Dhilba Guuranda\u2013Innes NP 20230208-2.jpg",
+    "right_place": 1,
+    "shows_named_thing": 0,
+    "spectacular_wide": 0,
+    "real_photograph": 1,
+    "verdict": "reject",
+    "reason": "animal stand-in"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "Current is Endurance 1915 archive."
+ }
+}

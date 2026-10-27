@@ -1,0 +1,201 @@
+{
+ "dest:copper-coast:header": {
+  "decision": "keep-current",
+  "choice": "South Beach Port Hughes.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Real colour wide view of the Port Hughes beach and bay, 4288px; modest but right place and unspoiled (file page not opened: Commons API rate-limited)."
+ },
+ "dest:copper-coast:why1": {
+  "decision": "keep-current",
+  "choice": "Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Cornish enginehouse and chimney at Moonta Mines, clear and central; matches mining-heritage reason."
+ },
+ "dest:copper-coast:why2": {
+  "decision": "keep-current",
+  "choice": "Nikon 003.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Long jetty over rocks and shallows, matches jetty-beach reason; file page not opened (rate-limited), jetty identity looks like Copper Coast but unproven."
+ },
+ "dest:copper-coast:why3": {
+  "decision": "none",
+  "choice": "none: no candidate shows the rail trail; Copper Coast candidates are County Waterford, Ireland, the rest are Wallaroo street scenes and an aerial",
+  "candidates": [
+   {
+    "n": 1,
+    "verdict": "reject",
+    "reason": "aerial"
+   },
+   {
+    "n": 2,
+    "verdict": "reject",
+    "reason": "street"
+   },
+   {
+    "n": 3,
+    "verdict": "reject",
+    "reason": "street"
+   },
+   {
+    "n": 4,
+    "verdict": "reject",
+    "reason": "cafe tables"
+   },
+   {
+    "n": 5,
+    "verdict": "reject",
+    "reason": "Ireland"
+   },
+   {
+    "n": 6,
+    "verdict": "reject",
+    "reason": "Ireland"
+   },
+   {
+    "n": 7,
+    "verdict": "reject",
+    "reason": "Ireland"
+   },
+   {
+    "n": 8,
+    "verdict": "reject",
+    "reason": "Ireland"
+   },
+   {
+    "n": 9,
+    "verdict": "reject",
+    "reason": "Ireland"
+   },
+   {
+    "n": 10,
+    "verdict": "reject",
+    "reason": "Ireland church"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "Grey card; spot copper-coast-9 photo (overgrown rails) is too weak for a why-visit card."
+ },
+ "spot:copper-coast-1": {
+  "decision": "choice",
+  "choice": "Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg",
+  "candidates": [
+   {
+    "n": 1,
+    "file": "Moonta Mines School 1 (22048407549).jpg",
+    "verdict": "reject",
+    "reason": "the former school/museum building, not the mines; wide and car-park heavy"
+   },
+   {
+    "n": 2,
+    "file": "Moonta Mines Museum (former Moonta Mines School) at Moonta, South Australia.jpg",
+    "verdict": "reject",
+    "reason": "same school building, 2.3:1 panorama"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Current lead is a map (fails). Recommend sharing the destination's why1 enginehouse photo: the mines' own landmark, central in crop."
+ },
+ "spot:copper-coast-2": {
+  "decision": "keep-current",
+  "choice": "MoontaBayJetty.JPG",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Jetty over rocky shore at Moonta Bay, recognisable; page not opened (rate-limited). Note it may be the same jetty as why2 (sharing allowed)."
+ },
+ "spot:copper-coast-3": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Check 1: red Beamish arch is Beamish Museum, England, not the Farm Shed Museum at Kadina."
+ },
+ "spot:copper-coast-4": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Check 1/2: HMAS Whyalla is at Whyalla, a different town and museum; stand-in."
+ },
+ "spot:copper-coast-5": {
+  "decision": "none",
+  "choice": "none: candidates are North Beach WA, Glenelg North and Perth streets; current Maslin Beach is Adelaide's and shared with mclaren-vale",
+  "candidates": [
+   {
+    "n": 1,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 2,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 3,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 4,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 5,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 6,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 7,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 8,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 9,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   },
+   {
+    "n": 10,
+    "verdict": "reject",
+    "reason": "wrong place (WA or Glenelg)"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "No photo of North Beach, Wallaroo; current is another beach."
+ },
+ "spot:copper-coast-7": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Check 1: Globe Life Park, Arlington Texas, 15,000 km away."
+ },
+ "spot:copper-coast-8": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Check 2/3: a shopfront and car park, not Port Hughes as a place; no better candidate offered."
+ },
+ "spot:copper-coast-9": {
+  "decision": "keep-current",
+  "choice": "Wallaroo-overgrown-rail-tracks-0835.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Rails in a Wallaroo rail corridor; dull but shows the old railway the trail follows; weak, replace if better found."
+ }
+}

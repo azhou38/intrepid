@@ -1,0 +1,133 @@
+{
+ "dest:ceduna:header": {
+  "decision": "keep-current",
+  "choice": "current",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  },
+  "reason": "Ceduna Jetty on Murat Bay, real 2017 colour photo, 4926px, file page confirms Ceduna; waterfront though not a skyline, acceptable."
+ },
+ "dest:ceduna:why1": {
+  "decision": "none",
+  "choice": "none: all 10 candidates are Ceduna town/jetty/street shots, none shows oysters. NOTE: why1 already has ext-ceduna-why1.jpg (aerial oyster leases, ok) in destinations.ts, so the 'no photo' flag on slot 1 is stale; keep it.",
+  "candidates": [],
+  "reason": "No candidate shows the reason (street corners, motel, sailing club, shoreline)."
+ },
+ "dest:ceduna:why2": {
+  "decision": "none",
+  "choice": "none: all 10 candidates are Ceduna town/jetty/street shots, none shows Cactus Beach surf. NOTE: why1 already has ext-ceduna-why1.jpg (aerial oyster leases, ok) in destinations.ts, so the 'no photo' flag on slot 1 is stale; keep it.",
+  "candidates": [],
+  "reason": "No candidate shows the reason (street corners, motel, sailing club, shoreline)."
+ },
+ "dest:ceduna:why3": {
+  "decision": "none",
+  "choice": "none: all 10 candidates are Ceduna town/jetty/street shots, none shows shorebirds on mangrove coasts. NOTE: why1 already has ext-ceduna-why1.jpg (aerial oyster leases, ok) in destinations.ts, so the 'no photo' flag on slot 1 is stale; keep it.",
+  "candidates": [],
+  "reason": "No candidate shows the reason (street corners, motel, sailing club, shoreline)."
+ },
+ "spot:ceduna-1": {
+  "decision": "reject",
+  "choice": "none: current is Poynton Street shopfront, not the jetty (check 2). Recommend reuse of the destination header file 'Ceduna Jetty, Ceduna, 2017 (05).jpg' (shows the jetty itself, same destination).",
+  "hero_crop": "n/a",
+  "reason": "Poynton Street is a street scene, fails check 2; header photo of the jetty beats it."
+ },
+ "spot:ceduna-2": {
+  "decision": "choice",
+  "choice": "Lighthouse memorial, Thevenard, 2017 (02).jpg",
+  "candidates": [
+   {
+    "file": "Lighthouse memorial, Thevenard, 2017 (02).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Memorial at the Thevenard lookout, 46 m from pin, with wharf and channel in view; page confirms Thevenard."
+   },
+   {
+    "file": "Lighthouse memorial, Thevenard, 2017 (01).jpg",
+    "verdict": "alt",
+    "reason": "same memorial, no wharf view"
+   }
+  ],
+  "hero_crop": {
+   "x": 0.3,
+   "y": 0.45
+  },
+  "reason": "Current is a 1946 595px portrait: rejected. Candidate 2 shows the lookout point and harbour."
+ },
+ "spot:ceduna-3": {
+  "decision": "reject",
+  "choice": "none: current 'Laura S Walker State Park' is in Georgia, USA (check 1).",
+  "reason": "Wrong country; no search candidates, so NO_PHOTO."
+ },
+ "spot:ceduna-4": {
+  "decision": "keep-current",
+  "choice": "current",
+  "hero_crop": "ok",
+  "reason": "Commons category Acraman Creek Conservation Park; scrub and creek with water in the distance, real colour photo, 1600px; plain but the right place. Weak but passes."
+ },
+ "spot:ceduna-5": {
+  "decision": "choice",
+  "choice": "Smoky Bay Jetty, 2017 (02).jpg",
+  "candidates": [
+   {
+    "file": "Smoky Bay Jetty, 2017 (02).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Candidate 9; jetty and swimming enclosure, page confirms Smoky Bay; not shared with streaky-bay."
+   },
+   {
+    "file": "Smoky Bay Jetty, 2017 (01).jpg",
+    "verdict": "reject",
+    "reason": "current lead, already used for streaky-bay and ceduna (repeat)"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Different file from the shared lead image; shows the jetty clearly."
+ },
+ "spot:ceduna-6": {
+  "decision": "none",
+  "choice": "none: current '10 Point Labatt CP 04' is Point Labatt (sea lions), a different park and shared with streaky-bay; no candidates.",
+  "reason": "Stand-in for another place."
+ },
+ "spot:ceduna-7": {
+  "decision": "choice",
+  "choice": "Penong Windmill Museum, South Australia 1.jpg",
+  "candidates": [
+   {
+    "file": "Penong Windmill Museum, South Australia 1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Candidate 2; 4032px, museum windmill field, geotagged 40 m from pin, category Penong Windmill Museum."
+   },
+   {
+    "file": "Penong Windmill Museum, South Australia 2.jpg",
+    "verdict": "alt",
+    "reason": "similar"
+   }
+  ],
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.5
+  },
+  "reason": "Current is a shared Big Things postcard (stand-in, used by 6 slots)."
+ },
+ "spot:ceduna-8": {
+  "decision": "none",
+  "choice": "none: current is a White shark photo (stand-in, shared with innes-national-park); no candidates.",
+  "reason": "No Cactus Beach photo offered."
+ },
+ "spot:ceduna-9": {
+  "decision": "none",
+  "choice": "none: current is a 1871 portrait of Sir R. G. MacDonnell, 165px; candidates are a gypsum hopper wagon, an excavator at Kevin mine and a train, not the pink lake (stand-ins, 7 km away).",
+  "reason": "No photo of the pink lake itself."
+ }
+}

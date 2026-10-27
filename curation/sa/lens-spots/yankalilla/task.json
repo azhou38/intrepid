@@ -1,0 +1,215 @@
+{
+ "group": "yankalilla",
+ "generated": "2026-10-26T15:54:44.453Z",
+ "slots": [
+  {
+   "slot": "dest:yankalilla:header",
+   "key": "Yankalilla",
+   "current": {
+    "file": "Deep Creek Conservation Park 2.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:yankalilla:why1",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "dest:yankalilla:why2",
+   "key": "File:Blowhole Beach looking North East.JPG",
+   "current": {
+    "file": "Blowhole Beach looking North East.JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:yankalilla-1",
+   "key": "Deep Creek National Park",
+   "current": {
+    "file": "DCL-May2008.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-2",
+   "key": "Cape Jervis",
+   "current": {
+    "file": "Sealink Port, Cape Jervis.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-3",
+   "key": "Wild South Coast Way",
+   "current": {
+    "file": "Wild Atlantic Way signs.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-4",
+   "key": "Second Valley, South Australia",
+   "current": {
+    "file": "Second Valley.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 900px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-5",
+   "key": "Normanville, South Australia",
+   "current": {
+    "file": "Normanville, SA.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 91 m from the pin; a name word is in the title, description or categories; 1600 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-6",
+   "key": "Carrickalinga",
+   "current": {
+    "file": "P4240008.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-7",
+   "key": "Rapid Bay, South Australia",
+   "current": {
+    "file": "R.Bay.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island",
+    "pre-filter: also used for yankalilla"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-9",
+   "key": "Ingalalla Waterfalls",
+   "current": {
+    "file": "Ingalalla Waterfalls.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-10",
+   "key": "Blowhole Beach",
+   "current": {
+    "file": "Halona Blowhole a0002860.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 9251843 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-11",
+   "key": "Morgans Beach",
+   "current": {
+    "file": "Morgan & Morgan, Tallahassee, Florida Tennessee Street side.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 16052408 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-12",
+   "key": "Tunkalilla",
+   "current": {
+    "file": "Waitpinga-beach2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 425px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-13",
+   "key": "Fishery Beach",
+   "current": {
+    "file": "Whaling-dangers of the whale fishery.jpeg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1820",
+    "pre-filter review: sepia? (94% one warm hue, no vivid colour)"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-14",
+   "key": "Myponga Reservoir",
+   "current": {
+    "file": "Myponga panorama 2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:yankalilla-15",
+   "key": "Myponga Beach, South Australia",
+   "current": {
+    "file": "Myponga Beach area.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  }
+ ]
+}

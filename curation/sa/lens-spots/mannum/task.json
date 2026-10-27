@@ -1,0 +1,89 @@
+{
+ "group": "mannum",
+ "generated": "2026-10-26T15:54:46.509Z",
+ "slots": [
+  {
+   "slot": "dest:mannum:header",
+   "key": "Mannum",
+   "current": {
+    "file": "MannumFromLookout.JPG",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:mannum:why1",
+   "key": "File:Proud Mary. Murray River. (9498561163).jpg",
+   "current": {
+    "file": "Proud Mary. Murray River. (9498561163).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:mannum:why2",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:mannum-1",
+   "key": "Mannum Dock Discovery Centre",
+   "current": {
+    "file": "Adelaide skyline, December 2022 b.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island, adelaide",
+    "pre-filter: also used for mannum, adelaide",
+    "pre-filter: also used for mannum, kangaroo-island"
+   ]
+  },
+  {
+   "slot": "spot:mannum-2",
+   "key": "Mannum Waterfalls",
+   "current": {
+    "file": "Hopetoun falls.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 568332 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:mannum-4",
+   "key": "Mary Ann Reserve",
+   "current": {
+    "file": "Mary Moorman.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1963",
+    "pre-filter: 471px wide, minimum 960 for a spot",
+    "pre-filter review: black-and-white? (saturation 0.00)"
+   ]
+  },
+  {
+   "slot": "spot:mannum-6",
+   "key": "Lenger Reserve",
+   "current": {
+    "file": "Karla Marksa, Kazakhstan - panoramio.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 11085078 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  }
+ ]
+}

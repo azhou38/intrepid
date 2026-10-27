@@ -1,0 +1,234 @@
+{
+ "group": "streaky-bay",
+ "generated": "2026-10-26T15:54:43.867Z",
+ "slots": [
+  {
+   "slot": "dest:streaky-bay:header",
+   "key": "Streaky Bay",
+   "current": {
+    "file": "Streaky Bay Jetty, 2017 (04).jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:streaky-bay:why1",
+   "key": "File:Whistling rocks - panoramio.jpg",
+   "current": {
+    "file": "Whistling rocks - panoramio.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:streaky-bay:why2",
+   "key": "File:Murphy's Haystacks June 2008.jpg",
+   "current": {
+    "file": "Murphy's Haystacks June 2008.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:streaky-bay:why3",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-1",
+   "key": "Murphy's Haystacks",
+   "current": {
+    "file": "Murphys Haystacks DSC04622.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-2",
+   "key": "Cape Bauer Loop",
+   "current": {
+    "file": "2022 Ford Expedition Platinum unmarked unit, front 4.14.23.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-3",
+   "key": "Whistling Rocks and the Blowholes",
+   "current": {
+    "file": "Tursiops truncatus 01.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-4",
+   "key": "Westall Way Loop",
+   "current": {
+    "file": "Map of proposed Suburban Rail Loop.png",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: category: Public transport maps of Melbourne",
+    "pre-filter: file name suggests a map, drawing, logo or similar"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-5",
+   "key": "The Granites",
+   "current": {
+    "file": "Bianco Sardo Granit mit polierter Oberfläche.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter review: black-and-white? (saturation 0.05)"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-6",
+   "key": "Smooth Pool",
+   "current": {
+    "file": "VermiculiteUSGOV.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 360px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-8",
+   "key": "Yanerbie Sandhills",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-9",
+   "key": "Streaky Bay Back Beach",
+   "current": {
+    "file": "Smoky Bay Jetty, 2017 (01).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for streaky-bay",
+    "pre-filter: also used for ceduna"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-10",
+   "key": "Streaky Bay Jetty",
+   "current": {
+    "file": "Streaky Bay Jetty, 2017 (03).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 62 m from the pin; a name word is in the title, description or categories; 4928 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-11",
+   "key": "Streaky Bay Powerhouse Museum",
+   "current": {
+    "file": "Pittsburgh Steelers logo.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: category: SVG American football logos of the United States",
+    "pre-filter: file name suggests a map, drawing, logo or similar",
+    "pre-filter: not a photograph file (image/svg+xml)",
+    "pre-filter: 196px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-13",
+   "key": "Streaky Bay Great White Shark Replica",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-14",
+   "key": "Point Labatt Conservation Park",
+   "current": {
+    "file": "10 Point Labatt CP 04.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for streaky-bay",
+    "pre-filter: also used for ceduna"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-15",
+   "key": "Baird Bay",
+   "current": {
+    "file": "09 Baird Bay 06.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-16",
+   "key": "Sceale Bay, South Australia",
+   "current": {
+    "file": "08 Sceale Bay 06.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:streaky-bay-17",
+   "key": "Venus Bay Conservation Park",
+   "current": {
+    "file": "Venus Bay General Store, 2017 (01).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for streaky-bay",
+    "pre-filter: also used for talia-caves"
+   ]
+  }
+ ]
+}

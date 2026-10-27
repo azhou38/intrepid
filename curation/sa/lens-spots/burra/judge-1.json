@@ -1,0 +1,142 @@
+{
+ "dest:burra:header": {
+  "decision": "keep-current",
+  "choice": "Burra - South Australia - panoramio.jpg",
+  "hero_crop": "ok",
+  "reason": "Burra town in its wide landscape, real colour photo, 2048px; town sits centre-left and stays in a square crop."
+ },
+ "dest:burra:why1": {
+  "decision": "keep-current",
+  "choice": "Burra mine and morphetts buildings.JPG",
+  "hero_crop": "ok",
+  "reason": "Morphett's Engine House and mine buildings at Burra, clear colour photo."
+ },
+ "dest:burra:why2": {
+  "decision": "none",
+  "choice": "none: reason 'heritage sites with a key' has no honest photo; candidates are a hotel, street corners, a meal, a plaque sign (grey card)",
+  "candidates": [
+   {
+    "file": "Royal Exchange Hotel (1-3)",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "pub interior/meal, not heritage sites"
+   },
+   {
+    "file": "Burra Railway Station 20211204-112157.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "tracks and sign; not a heritage passport site and weak; station is a spot already"
+   },
+   {
+    "file": "Burra Historic Area ... 02.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "interpretive sign"
+   }
+  ]
+ },
+ "dest:burra:why3": {
+  "decision": "keep-current",
+  "choice": "Burra dugouts - exterior.JPG",
+  "hero_crop": "ok",
+  "reason": "Creek-bank dugout doorways, recognisable, shows how miners lived."
+ },
+ "spot:burra-1": {
+  "decision": "reject",
+  "choice": "recommend sharing the destination's why1 file: Burra mine and morphetts buildings.JPG",
+  "hero_crop": "ok",
+  "reason": "Current Ducktown-mine-collapse is the Tennessee Ducktown, wrong place (check 1). Same-destination why1 photo shows Morphett's Engine House at the Burra Mine Site and beats it."
+ },
+ "spot:burra-2": {
+  "decision": "keep-current",
+  "choice": "Redruth Gaol front.JPG",
+  "hero_crop": "ok",
+  "reason": "Gaol front, recognisable colour photo (Wikipedia lead image of Redruth Gaol, Burra); filename and building match; wiki title is the Burra gaol."
+ },
+ "spot:burra-3": {
+  "decision": "none",
+  "choice": "recommend same-destination file Burra dugouts - exterior.JPG (the why3 photo)",
+  "candidates": [
+   {
+    "file": "383 - Head of central bearded dragon",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "lizard"
+   },
+   {
+    "file": "Market Square, Burra 20220505-111550.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "street, not dugouts"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "No search candidate shows dugouts; current is a 1940 LoC archive photo. The why3 dugouts exterior in the same destination passes and should be used."
+ },
+ "spot:burra-4": {
+  "decision": "choice",
+  "choice": "Burra railway station and tracks.jpg",
+  "candidates": [
+   {
+    "file": "Burra railway station and tracks.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "whole station frontage with platform, 3880px, geotag 3 m"
+   },
+   {
+    "file": "Burra railway station - oblique.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "alt",
+    "reason": "also good, cloudy, wires pole in the middle"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Current is a 1969 B&W-like archive photo; candidate 3 shows the station itself in colour and holds in a square crop."
+ },
+ "spot:burra-5": {
+  "decision": "none",
+  "choice": "none: current is Duran Duran (wrong subject); candidates show the railway station and Monster Mine, not Bon Accord Mine Complex",
+  "candidates": [
+   {
+    "file": "Burra railway station, Burra.JPG",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "station, a different spot (burra-4)"
+   },
+   {
+    "file": "Burra railway station - oblique.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "station"
+   }
+  ],
+  "reason": "No photo of Bon Accord itself. Monster Mine (cand 7 of slot 4) is burra-1's subject."
+ }
+}

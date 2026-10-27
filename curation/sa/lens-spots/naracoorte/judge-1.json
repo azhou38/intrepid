@@ -1,0 +1,91 @@
+{
+ "dest:naracoorte:header": {
+  "decision": "none",
+  "choice": "none: no wide town-in-landscape photo among candidates (hotel lobby, road, sculptures, loco); current locomotive is a railway exhibit",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "cityscape needed; none pass"
+ },
+ "dest:naracoorte:why1": {
+  "decision": "keep-current",
+  "choice": "57. Skeleton shadow, Victoria Fossil Cave, Naracoorte.jpg",
+  "hero_crop": "ok",
+  "reason": "Thylacoleo skeleton in Naracoorte fossil cave; dark on purpose (cave)",
+  "dark": true
+ },
+ "dest:naracoorte:why2": {
+  "decision": "keep-current",
+  "choice": "Wynns Coonawarra - Grapevines.jpg",
+  "hero_crop": "ok",
+  "reason": "Coonawarra vines on red soil, matches reason"
+ },
+ "dest:naracoorte:why3": {
+  "decision": "none",
+  "choice": "none: no waterbird/wetland photo among candidates; Bool Lagoon 2 (naracoorte-3 current, 2032 px) is the only same-destination fallback but shows no birds",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "grey card"
+ },
+ "spot:naracoorte-1": {
+  "decision": "choice",
+  "choice": "Naracoorte Caves National Park 1.jpg",
+  "candidates": [
+   {
+    "file": "Naracoorte Caves National Park 1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "cave interior with tree ferns, categorised Naracoorte Caves National Park, 2009 CC BY 2.0, 3968 px"
+   },
+   {
+    "file": "Thylacoleo skeleton in Naracoorte Caves.jpg",
+    "verdict": "reject",
+    "reason": "also used by kangaroo-island (cross-destination repeat)"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "distinct from the why1 skeleton shot; crop checked"
+ },
+ "spot:naracoorte-2": {
+  "decision": "none",
+  "choice": "none: current is a railway locomotive display, not the museum; candidates are Limbert's Store shopfront and a banner strip",
+  "candidates": [
+   {
+    "file": "LimbertsStore.jpg",
+    "verdict": "reject",
+    "reason": "a different building"
+   },
+   {
+    "file": "Naracoorte banner.jpg",
+    "verdict": "reject",
+    "reason": "sliver banner of sculptures"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "stand-in only"
+ },
+ "spot:naracoorte-3": {
+  "decision": "keep-current",
+  "choice": "Bool Lagoon 2.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.45,
+   "zoom": 1.3
+  },
+  "reason": "wetland view with lagoon; ground-heavy but recognisable"
+ },
+ "spot:naracoorte-4": {
+  "decision": "keep-current",
+  "choice": "Wynns Coonawarra - Grapevines.jpg",
+  "hero_crop": "ok",
+  "reason": "Coonawarra vineyard rows; shared with why2 in same destination"
+ },
+ "spot:naracoorte-5": {
+  "decision": "reject",
+  "choice": "none: current is a window with Mary MacKillop lettering (a sign), no recognisable centre",
+  "hero_crop": "n/a",
+  "reason": "fails check 2/3: sign through glass"
+ }
+}

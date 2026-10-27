@@ -1,0 +1,81 @@
+{
+ "dest:vulkathunha-gammon-ranges:header": {
+  "decision": "reject",
+  "choice": "none: current fails check 3 (dirt road and scrub hills, ordinary); best alternative in candidates is Vulkathuna-Gammon Ranges National Park.jpg (rainbow over ranges, 4618px) but verify header size/crop",
+  "hero_crop": "n/a",
+  "reason": "Flat roadside view, not spectacular."
+ },
+ "dest:vulkathunha-gammon-ranges:why1": {
+  "decision": "choice",
+  "choice": "Typical waterhole at Arkaroola.jpg",
+  "candidates": [
+   {
+    "file": "Typical waterhole at Arkaroola.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Rocky gorge waterhole at Arkaroola (geotag -30.3152,139.3341, Arkaroola category), fits 'Hike through rugged gorges'; 2736px; file page checked. Not in why1 candidate list: shared with spot 1."
+   },
+   {
+    "file": "Vulkathuna-Gammon Ranges National Park.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject for why1",
+    "reason": "Range view with rainbow, not a gorge hike"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Gorge waterhole matches the reason; other candidates are aerials, a 4WD, a banner."
+ },
+ "dest:vulkathunha-gammon-ranges:why2": {
+  "decision": "none",
+  "choice": "none: no stargazing or dark-sky photo among candidates (aerials, panoramas, ranges)",
+  "hero_crop": "n/a",
+  "reason": "No photo shows the reason; grey card."
+ },
+ "dest:vulkathunha-gammon-ranges:why3": {
+  "decision": "reject",
+  "choice": "none: no ridgetop 4WD track visible",
+  "hero_crop": "n/a",
+  "reason": "Scree hillside shows no 4WD track or ridge; does not show its reason."
+ },
+ "spot:vulkathunha-gammon-ranges-1": {
+  "decision": "choice",
+  "choice": "Typical waterhole at Arkaroola.jpg",
+  "candidates": [
+   {
+    "file": "Typical waterhole at Arkaroola.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Arkaroola waterhole, 397 m from pin, Arkaroola category, 2736px"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Only candidate showing Arkaroola's landscape; others are wallaby, mineral, flower. Shared with why1."
+ },
+ "spot:vulkathunha-gammon-ranges-2": {
+  "decision": "none",
+  "choice": "none: no photo of the observatories (flower, waterhole only); current ArkaroolaAir.jpg is 845px aerial",
+  "hero_crop": "n/a",
+  "reason": "No observatory photo."
+ },
+ "spot:vulkathunha-gammon-ranges-3": {
+  "decision": "reject",
+  "choice": "none: current is an R.M. Williams shop in Canberra (wrong place)",
+  "hero_crop": "n/a",
+  "reason": "Fails check 1; no candidates supplied, goes to search."
+ },
+ "spot:vulkathunha-gammon-ranges-4": {
+  "decision": "none",
+  "choice": "none: no candidates; current Mount McKinlay Bluff is 799px and not the gorge",
+  "hero_crop": "n/a",
+  "reason": "Nothing to pick."
+ }
+}

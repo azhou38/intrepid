@@ -1,0 +1,107 @@
+{
+ "dest:port-augusta:header": {
+  "decision": "none",
+  "choice": "none: header candidates are a satellite map, signs, a rail stop, a train; no wide Port Augusta townscape",
+  "candidates": [
+   {
+    "file": "Route of the Whyalla\u2013Port Augusta railway line.jpg",
+    "verdict": "reject",
+    "reason": "map/satellite"
+   },
+   {
+    "file": "Australia sa port augusta watertower.jpg",
+    "verdict": "reject",
+    "reason": "single tower, not a wide header"
+   },
+   {
+    "file": "Station Sign Port Augusta.jpg",
+    "verdict": "reject",
+    "reason": "sign"
+   },
+   {
+    "file": "Aurizon Iron Ore.jpg",
+    "verdict": "reject",
+    "reason": "train, not the town"
+   },
+   {
+    "file": "others",
+    "verdict": "reject",
+    "reason": "other places (Coonamia, Norman, Virginia)"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "No passing header; current is 1000px."
+ },
+ "dest:port-augusta:why1": {
+  "decision": "keep-current",
+  "choice": "Wadlata Outback Centre, 2017 (02).jpg",
+  "hero_crop": "ok",
+  "reason": "Wadlata centre building, real photo, 4616px, matches reason."
+ },
+ "dest:port-augusta:why2": {
+  "decision": "keep-current",
+  "choice": "Arid Gardens.jpg",
+  "hero_crop": "ok",
+  "reason": "Arid-zone garden scene with Flinders ranges; real photo, acceptable though file page not opened (no geotag)."
+ },
+ "spot:port-augusta-1": {
+  "decision": "choice",
+  "choice": "Wadlata Outback Centre, 2017 (02).jpg",
+  "candidates": [
+   {
+    "file": "#2 (02)",
+    "verdict": "accept",
+    "reason": "building clear, geotagged, shared with why1"
+   },
+   {
+    "file": "#1 (04)",
+    "verdict": "reject",
+    "reason": "foliage, small"
+   },
+   {
+    "file": "#5/#6",
+    "verdict": "reject",
+    "reason": "railway station"
+   }
+  ],
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  },
+  "reason": "Current is a jacaranda street photo, 1000px; (02) shows the centre."
+ },
+ "spot:port-augusta-2": {
+  "decision": "keep-current",
+  "choice": "Arid Gardens.jpg",
+  "hero_crop": "ok",
+  "reason": "Wikipedia lead of the botanic garden; arid vegetation, real photo. Tree is central. Owns the photo within the destination."
+ },
+ "spot:port-augusta-3": {
+  "decision": "reject",
+  "choice": "Australia sa port augusta watertower.jpg (from header candidates; file page confirms Port Augusta Watertower Lookout, PD, 1944x2592)",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.35
+  },
+  "reason": "Fail check 2/no repeats: current is the botanic garden photo shared with port-augusta-2. Recommend the water tower file."
+ },
+ "spot:port-augusta-4": {
+  "decision": "reject",
+  "choice": "none: no foreshore candidate offered",
+  "hero_crop": "n/a",
+  "reason": "Fail check 2/no repeats: shows the botanic garden, not the foreshore; send to search."
+ },
+ "spot:port-augusta-5": {
+  "decision": "none",
+  "choice": "none: only candidate is a map of Treasury Island, Rose Blanche (wrong country); current is Newfoundland Rose Blanche harbour, wrong place",
+  "candidates": [
+   {
+    "file": "Treasury Island.png",
+    "verdict": "reject",
+    "reason": "map, wrong place"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "No photo of Blanche Harbor, SA."
+ }
+}

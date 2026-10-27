@@ -1,0 +1,793 @@
+{
+ "group": "adelaide",
+ "generated": "2026-10-26T15:54:42.873Z",
+ "slots": [
+  {
+   "slot": "dest:adelaide:header",
+   "key": "Adelaide",
+   "current": {
+    "file": "Adelaide CBD skyline across the River Torrens, July 2026 (028A8459).jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:adelaide:why1",
+   "key": "File:Art Gallery of South Australia, North Terrace, Adelaide, South Australia (5104237590).jpg",
+   "current": {
+    "file": "Art Gallery of South Australia, North Terrace, Adelaide, South Australia (5104237590).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:adelaide:why2",
+   "key": "File:Adelaide Metro Glenelg Tram (Flexity Classic).JPG",
+   "current": {
+    "file": "Adelaide Metro Glenelg Tram (Flexity Classic).JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:adelaide:why3",
+   "key": "File:Panorama, Morialta Conservation Park..jpg",
+   "current": {
+    "file": "Panorama, Morialta Conservation Park..jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:adelaide:why4",
+   "key": "File:Penfolds Magill Estate, 2014(20).JPG",
+   "current": {
+    "file": "Penfolds Magill Estate, 2014(20).JPG",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:adelaide-1",
+   "key": "Adelaide Botanic Garden",
+   "current": {
+    "file": "Palm House, Adelaide Botanic Gardens.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [
+    "audit sample: the script proved this one; judge it blind"
+   ],
+   "proof": [
+    "geotag 235 m from the pin; a name word is in the title, description or categories; 3167 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-2",
+   "key": "Adelaide Central Market",
+   "current": {
+    "file": "Adelaide Central Market building in Adelaide, July 2026 (028A8380).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-3",
+   "key": "Art Gallery of South Australia",
+   "current": {
+    "file": "Art Gallery of South Australia exterior, January 2026.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 75 m from the pin; a name word is in the title, description or categories; 4032 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-4",
+   "key": "South Australian Museum",
+   "current": {
+    "file": "South Australian Museum on 27 February 2025.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-5",
+   "key": "Glenelg, South Australia",
+   "current": {
+    "file": "Glenelg Town Hall 2015.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-6",
+   "key": "Adelaide Oval",
+   "current": {
+    "file": "Adelaide city centre view crop.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-7",
+   "key": "Adelaide Zoo",
+   "current": {
+    "file": "Sumatran tiger.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 752px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-8",
+   "key": "Port Adelaide",
+   "current": {
+    "file": "Port Adelaide montage 2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-9",
+   "key": "Morialta Conservation Park",
+   "current": {
+    "file": "Panorama, Morialta Conservation Park..jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-10",
+   "key": "Waterfall Gully, South Australia",
+   "current": {
+    "file": "Waterfall Gully (2nd Falls), Mt Lofty, South Australia (50304172717).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-11",
+   "key": "Haigh's Chocolates",
+   "current": {
+    "file": "Haighs Easter Bilby Nicole Kearney.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-12",
+   "key": "Adelaide Gaol",
+   "current": {
+    "file": "Adelaide Gaol main door.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-13",
+   "key": "Semaphore, South Australia",
+   "current": {
+    "file": "Semaphore Foreshore In 2020.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 292 m from the pin; a name word is in the title, description or categories; 2519 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-14",
+   "key": "Henley Beach, South Australia",
+   "current": {
+    "file": "Henlye-Beach-pier-2108.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-17",
+   "key": "Adelaide Park Lands",
+   "current": {
+    "file": "South Parklands - Adelaide (15100808089).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 1320 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-18",
+   "key": "Montefiore Hill",
+   "current": {
+    "file": "Light's Vision.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-19",
+   "key": "St Peter's Cathedral, Adelaide",
+   "current": {
+    "file": "Adelaide Cathedral. SA.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 56 m from the pin; a name word is in the title, description or categories; 2272 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-20",
+   "key": "National Wine Centre of Australia",
+   "current": {
+    "file": "Adelaide 2009 201.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-21",
+   "key": "Bicentennial Conservatory",
+   "current": {
+    "file": "Palm House, Adelaide Botanic Gardens.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 326 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-22",
+   "key": "MOD. (museum)",
+   "current": {
+    "file": "Old Mods photo.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 354px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-23",
+   "key": "Australian Space Discovery Centre",
+   "current": {
+    "file": "McEwin Building 2022.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-24",
+   "key": "Parliament House, Adelaide",
+   "current": {
+    "file": "Parliament House in Adelaide, September 2026 (028A0835).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-25",
+   "key": "Rundle Mall",
+   "current": {
+    "file": "Rundle Mall in Adelaide, July 2026 (028A9198).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-26",
+   "key": "Elder Park",
+   "current": {
+    "file": "Elder Park Rotunda Adelaide.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-27",
+   "key": "Adelaide Himeji Garden",
+   "current": {
+    "file": "Adelaide Himeji Garden, August 2026 (028A9284).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-28",
+   "key": "Veale Gardens",
+   "current": {
+    "file": "Veale Gardens.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-29",
+   "key": "Wara Wayingga-Tennyson Dunes Conservation Reserve",
+   "current": {
+    "file": "Adelaide skyline, December 2022 b.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island, adelaide",
+    "pre-filter: also used for mannum, adelaide",
+    "pre-filter: also used for mannum, kangaroo-island"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-30",
+   "key": "Largs Bay, South Australia",
+   "current": {
+    "file": "Largs bay jetty.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-31",
+   "key": "Brighton, South Australia",
+   "current": {
+    "file": "Brighton Jetty.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-32",
+   "key": "West Beach, South Australia",
+   "current": {
+    "file": "Henlye-Beach-pier-2108.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-33",
+   "key": "Hallett Cove Conservation Park",
+   "current": {
+    "file": "Hallett Cove P1000736.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-34",
+   "key": "Port Noarlunga, South Australia",
+   "current": {
+    "file": "Port Noarlunga - South Australia (15324590967).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-35",
+   "key": "Witton Bluff Base Trail",
+   "current": {
+    "file": "Christies Beach Coastline.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-36",
+   "key": "Marino Conservation Park",
+   "current": {
+    "file": "Marino CP Lighthouse.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 131 m from the pin; a name word is in the title, description or categories; 3545 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-37",
+   "key": "Kingston Park Coastal Reserve",
+   "current": {
+    "file": "Año Nuevo State Reserve.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 800px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-38",
+   "key": "Adelaide Dolphin Sanctuary",
+   "current": {
+    "file": "Tursiops aduncus, Port River, Adelaide, Australia - 2003.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 931px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-39",
+   "key": "National Railway Museum, Port Adelaide",
+   "current": {
+    "file": "Ron Fitch Pavilion at National Railway Museum, Port Adelaide, 2014.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 111 m from the pin; a name word is in the title, description or categories; 3717 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-40",
+   "key": "South Australian Maritime Museum",
+   "current": {
+    "file": "South Australian Maritime Museum building in South Australia, June 2026 (028A6607).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-41",
+   "key": "South Australian Aviation Museum",
+   "current": {
+    "file": "Australian aviation museum - panoramio.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 1148349 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-42",
+   "key": "Port Adelaide Historical Society Museum",
+   "current": {
+    "file": "Ron Fitch Pavilion at National Railway Museum, Port Adelaide, 2014.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 1780 m from the pin: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-43",
+   "key": "Fort Glanville Conservation Park",
+   "current": {
+    "file": "64 pounder gun firing - fort glanville.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 51 m from the pin; a name word is in the title, description or categories; 3065 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-44",
+   "key": "Coopers Brewery",
+   "current": {
+    "file": "Coopers Brewery logo.svg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: no metadata from Commons (file renamed or deleted?)"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-45",
+   "key": "Carrick Hill",
+   "current": {
+    "file": "Carrick Hill - oblique.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-46",
+   "key": "Warriparinga",
+   "current": {
+    "file": "Sturt River, Adelaide.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-47",
+   "key": "Adelaide Arcade",
+   "current": {
+    "file": "Adelaide Arcade in South Australia, August 2026 (028A0685).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-48",
+   "key": "Victoria Square, Adelaide",
+   "current": {
+    "file": "Transformers - Victoria Square Adelaide SA - panoramio.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "proven",
+   "flags": [],
+   "proof": [
+    "geotag 4 m from the pin; a name word is in the title, description or categories; 1915 px; colour ok"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-49",
+   "key": "JamFactory",
+   "current": {
+    "file": "Jam factory.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-50",
+   "key": "West Terrace Cemetery",
+   "current": {
+    "file": "West Terrace Cemetery aerial.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-54",
+   "key": "The Beachouse",
+   "current": {
+    "file": "MagicMountain.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 640px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-56",
+   "key": "Belair National Park",
+   "current": {
+    "file": "Landscape - belair national park.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "spot or file not found: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-57",
+   "key": "Glenthorne National Park–Ityamaiitpinna Yarta",
+   "current": {
+    "file": "Macropus rufogriseus rufogriseus Juvenile 2.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for adelaide",
+    "pre-filter: also used for bordertown-wildlife-park"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-58",
+   "key": "Sturt Gorge Recreation Park",
+   "current": {
+    "file": "Charles Sturt by John Michael Crossland lowres color.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1853",
+    "pre-filter: 390px wide, minimum 960 for a spot"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-59",
+   "key": "Anstey Hill Recreation Park",
+   "current": {
+    "file": "Tea Tree Gully Quarry - Anstey Hill Recreation Park.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for kangaroo-island",
+    "pre-filter: also used for adelaide"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-60",
+   "key": "Waterfall Gully to Mount Lofty Summit Track",
+   "current": {
+    "file": "Waterfall Gully (2nd Falls), Mt Lofty, South Australia (50304172717).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-61",
+   "key": "Happy Valley Reservoir",
+   "current": {
+    "file": "Happy Valley Reservoir 20070223.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-63",
+   "key": "National Military Vehicle Museum",
+   "current": {
+    "file": "The National Museum of Military Vehicles.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:adelaide-64",
+   "key": "Tramway Museum, St Kilda",
+   "current": {
+    "file": "Location map -- Tramway Museum, St Kilda, South Australia.png",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: category: Maps of Adelaide; OpenStreetMap maps of South Australia",
+    "pre-filter: file name suggests a map, drawing, logo or similar",
+    "pre-filter: 925px wide, minimum 960 for a spot"
+   ]
+  }
+ ]
+}

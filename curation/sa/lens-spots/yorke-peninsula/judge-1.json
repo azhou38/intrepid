@@ -1,0 +1,214 @@
+{
+ "dest:yorke-peninsula:header": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Coastal rainbow over Corny Point; real wide landscape, 5665px; lighthouse tiny but region header",
+  "candidates": []
+ },
+ "dest:yorke-peninsula:why1": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Stenhouse Bay jetty, real wide coastal photo, matches 'historic jetties'",
+  "candidates": []
+ },
+ "dest:yorke-peninsula:why2": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Cape Spencer lighthouse on dune above sea, matches reason; lighthouse small but readable at card size",
+  "candidates": []
+ },
+ "dest:yorke-peninsula:why3": {
+  "decision": "none",
+  "choice": "none: 'Swim in tidal pools and bays': candidates are a general store, calcrete rock close-ups, Royston Head rocks; none shows swimming/bays (commons search was 429-limited, unresolved). Grey card",
+  "hero_crop": "n/a",
+  "reason": "'Swim in tidal pools and bays': candidates are a general store, calcrete rock close-ups, Royston Head rocks; none shows swimming/bays (commons search was 429-limited, unresolved). Grey card",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-1": {
+  "decision": "none",
+  "choice": "none: only candidate is a blue swimmer crab close-up (stand-in); current Ardrossan.jpg 800px and a town street. Lead image search hit HTTP 429 (unresolved)",
+  "hero_crop": "n/a",
+  "reason": "only candidate is a blue swimmer crab close-up (stand-in); current Ardrossan.jpg 800px and a town street. Lead image search hit HTTP 429 (unresolved)",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-2": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Troubridge Island lighthouse, real photo 2065px, lighthouse and keeper buildings",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-3": {
+  "decision": "reject",
+  "choice": "none: check 2: Edithburgh street scene, not the tidal pool",
+  "hero_crop": "n/a",
+  "reason": "check 2: Edithburgh street scene, not the tidal pool",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-4": {
+  "decision": "reject",
+  "choice": "none: check 2: Edithburgh street scene, not the jetty (also shared file with -3)",
+  "hero_crop": "n/a",
+  "reason": "check 2: Edithburgh street scene, not the jetty (also shared file with -3)",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-5": {
+  "decision": "choice",
+  "choice": "2",
+  "candidates": [
+   {
+    "file": "Corny Point South Australia.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "lighthouse on headland, 2400px, CC BY-SA 3.0"
+   },
+   {
+    "file": "Corny point rainbow.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "lighthouse tiny; this is the destination header"
+   },
+   {
+    "file": "Corny Point Panorama.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "thin panorama strip, lighthouse a speck"
+   }
+  ],
+  "hero_crop": {
+   "x": 0.53,
+   "y": 0.3,
+   "zoom": 1.5
+  },
+  "reason": "Current is 660px; candidate 2 shows the lighthouse, checked crop with zoom 1.5"
+ },
+ "spot:yorke-peninsula-6": {
+  "decision": "reject",
+  "choice": "none: check 2: shows Yorketown hotel street, not the Pink Lakes",
+  "hero_crop": "n/a",
+  "reason": "check 2: shows Yorketown hotel street, not the Pink Lakes",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-7": {
+  "decision": "reject",
+  "choice": "none: check 2: beach seen from cliff, jetty a speck and lime kilns not identifiable, only 960px",
+  "hero_crop": "n/a",
+  "reason": "check 2: beach seen from cliff, jetty a speck and lime kilns not identifiable, only 960px",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-8": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Port Victoria main street with Norfolk pine; town spot, plain but the town itself (weak; no better offered)",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-9": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Maritime museum shed and jetty, recognisable, 998px",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-10": {
+  "decision": "choice",
+  "choice": "1",
+  "candidates": [
+   {
+    "file": "flickr 23601774741 Red Devil",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Red Devil monoplane in its display hangar, 1024px, CC BY-ND 2.0 (openverse:flickr); no derivative edits besides crop, flag ND"
+   },
+   {
+    "file": "flickr Harry Butler visitor centre",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Harvest Corner visitor centre building, not the memorial"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Current is a 1918 300px archive photo (fails); candidate 1 is the plane itself. ND licence is a risk for cropping/brightening"
+ },
+ "spot:yorke-peninsula-11": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Port Vincent shoreline and town from the water, real photo",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-12": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Point Turton bay and coast, real photo",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-13": {
+  "decision": "reject",
+  "choice": "none: check 2: general store/petrol station, not the surf beaches that are the draw",
+  "hero_crop": "n/a",
+  "reason": "check 2: general store/petrol station, not the surf beaches that are the draw",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-14": {
+  "decision": "reject",
+  "choice": "none: check 1/dup: same file as Point Turton (-12), a different place",
+  "hero_crop": "n/a",
+  "reason": "check 1/dup: same file as Point Turton (-12), a different place",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-15": {
+  "decision": "none",
+  "choice": "none: only candidate is a snake/hand close-up (stand-in); wiki lead image lookup 429, unresolved",
+  "hero_crop": "n/a",
+  "reason": "only candidate is a snake/hand close-up (stand-in); wiki lead image lookup 429, unresolved",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-16": {
+  "decision": "none",
+  "choice": "none: current is Ardrossan street at 800px, not the museum; no candidates (lead image lookup 429, unresolved)",
+  "hero_crop": "n/a",
+  "reason": "current is Ardrossan street at 800px, not the museum; no candidates (lead image lookup 429, unresolved)",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-17": {
+  "decision": "reject",
+  "choice": "none: check 1: portrait of US congresswoman Melanie Stansbury, wrong subject",
+  "hero_crop": "n/a",
+  "reason": "check 1: portrait of US congresswoman Melanie Stansbury, wrong subject",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-18": {
+  "decision": "reject",
+  "choice": "none: check 2: Edithburgh street scene, not the museum",
+  "hero_crop": "n/a",
+  "reason": "check 2: Edithburgh street scene, not the museum",
+  "candidates": []
+ },
+ "spot:yorke-peninsula-19": {
+  "decision": "keep-current",
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "reason": "Camp Bublacowie entrance with signage at the museum site, 1600px; weak but the place itself",
+  "candidates": []
+ }
+}

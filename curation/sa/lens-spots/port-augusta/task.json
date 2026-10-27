@@ -1,0 +1,101 @@
+{
+ "group": "port-augusta",
+ "generated": "2026-10-26T15:54:44.930Z",
+ "slots": [
+  {
+   "slot": "dest:port-augusta:header",
+   "key": "Port Augusta",
+   "current": {
+    "file": "Jacaranda Time Port Augusta.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 1000px wide, minimum 1500 for a header"
+   ]
+  },
+  {
+   "slot": "dest:port-augusta:why1",
+   "key": "File:Wadlata Outback Centre, 2017 (02).jpg",
+   "current": {
+    "file": "Wadlata Outback Centre, 2017 (02).jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:port-augusta:why2",
+   "key": "File:Arid Gardens.jpg",
+   "current": {
+    "file": "Arid Gardens.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "spot:port-augusta-1",
+   "key": "Wadlata Outback Centre",
+   "current": {
+    "file": "Jacaranda Time Port Augusta.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: 1000px wide, minimum 1500 for a header"
+   ]
+  },
+  {
+   "slot": "spot:port-augusta-2",
+   "key": "Australian Arid Lands Botanic Garden",
+   "current": {
+    "file": "Arid Gardens.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:port-augusta-3",
+   "key": "Port Augusta Water Tower Lookout",
+   "current": {
+    "file": "Arid Gardens.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:port-augusta-4",
+   "key": "Port Augusta Foreshore",
+   "current": {
+    "file": "Arid Gardens.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:port-augusta-5",
+   "key": "Blanche Harbor",
+   "current": {
+    "file": "Rose Blanche-Harbor Le Cou 960701 04 3558 2351.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1996"
+   ]
+  }
+ ]
+}

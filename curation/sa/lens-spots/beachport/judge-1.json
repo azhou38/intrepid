@@ -1,0 +1,108 @@
+{
+ "dest:beachport:header": {
+  "decision": "none",
+  "choice": "none: candidates are streets, small buildings or a low-tide rock shelf (Penguin Island, not spectacular); current BeachportJetty.JPG (wide jetty over Rivoli Bay) stays unless a better one exists",
+  "candidates": [
+   {
+    "file": "Penguin Island, Beachport South Australia.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "low rock shelf, small island, flat grey sky; not the town"
+   },
+   {
+    "file": "BeachportMainStreet.JPG",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "street corner with a tanker truck"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "no candidate passes check 3; note current jetty header is shared with robe/beachport per pre-filter (flag for owner)"
+ },
+ "dest:beachport:why1": {
+  "decision": "none",
+  "choice": "none: no candidate shows a salt lake float",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "candidates are town buildings/street or a rock shelf; grey card"
+ },
+ "dest:beachport:why2": {
+  "decision": "none",
+  "choice": "none: no candidate shows limestone cliffs/coastal trail (Penguin Island shelf is not that)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "candidates are town buildings/street or a rock shelf; grey card"
+ },
+ "dest:beachport:why3": {
+  "decision": "keep-current",
+  "choice": "Beachport pier.JPG",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "jetty at dusk, wide, real photo, subject central (dark on purpose: dusk)"
+ },
+ "spot:beachport-1": {
+  "decision": "reject",
+  "choice": "none: current is main street; no candidates listed",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "check 2: main street with tanker, not the jetty; BeachportJetty.JPG or Beachport pier.JPG (same destination, why3) would fit: recommend sharing Beachport pier.JPG"
+ },
+ "spot:beachport-2": {
+  "decision": "none",
+  "choice": "none: all candidates are Pool of Siloam in Jerusalem",
+  "candidates": [
+   {
+    "file": "Isaiah's Tree.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Jerusalem"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "check 1: Jerusalem, not the Beachport salt lake; the search matched the wrong place (spot should be searched as Beachport salt lake / Lake George-style local name)"
+ },
+ "spot:beachport-3": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "check 1: Old Sturbridge Village, Massachusetts. BeachportMuseum.JPG appears in header candidates (likely the museum; the 1879 wool store is not confirmed) so research it"
+ },
+ "spot:beachport-4": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "check 2: Beachport main street, not the conservation park; also duplicates beachport-1 current file"
+ },
+ "spot:beachport-5": {
+  "decision": "keep-current",
+  "choice": "Mounce & Battye Rocks. Canunda National Park. South Australia.JPG",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "coastal rocks at Canunda, clear, rocks near centre of 3:2 crop"
+ },
+ "spot:beachport-6": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "check 1: Southend Pier in Essex, England, not Southend SA"
+ },
+ "spot:beachport-7": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "check 1/2: Navajo blanket, not Millicent Museum"
+ }
+}

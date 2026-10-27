@@ -1,0 +1,114 @@
+{
+ "dest:whyalla:header": {
+  "decision": "keep-current",
+  "choice": "View from Hummock Hill, Whyalla, 2017 (01).jpg",
+  "candidates": [],
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5,
+   "zoom": 1.5
+  },
+  "reason": "Real colour view from Hummock Hill over the gulf beach and town; existing PHOTO_SUBJECT zoom kept (unchecked visually in crop)"
+ },
+ "dest:whyalla:why1": {
+  "decision": "none",
+  "choice": "none: no cuttlefish photo among candidates (trains, EV chargers, town views, a map); keep grey card",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "No candidate shows spawning cuttlefish"
+ },
+ "dest:whyalla:why2": {
+  "decision": "keep-current",
+  "choice": "HMAS Whyalla (J153), 2017 (01).jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Clear photo of HMAS Whyalla on land at the maritime museum; existing subject point x0.5 y0.45"
+ },
+ "dest:whyalla:why3": {
+  "decision": "none",
+  "choice": "none: no coastal-trail photo among candidates (current ext-whyalla-why3.jpg is registered in destinations.ts but task shows none)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Candidates are town/rail/EV images, none shows a coastal trail"
+ },
+ "spot:whyalla-1": {
+  "decision": "reject",
+  "choice": "none: shows a town view from Hummock Hill, not the museum; better: HMAS Whyalla (J153), 2017 (01).jpg, the museum's headline exhibit, already the destination's why2",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "shows a town view from Hummock Hill, not the museum; better: HMAS Whyalla (J153), 2017 (01).jpg, the museum's headline exhibit, already the destination's why2",
+  "recommend_same_destination": "HMAS Whyalla (J153), 2017 (01).jpg"
+ },
+ "spot:whyalla-2": {
+  "decision": "keep-current",
+  "choice": "Point Lowly Lighthouse.jpg",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Lighthouse at dusk, central and recognisable, real colour photo (portrait ~0.75 aspect)"
+ },
+ "spot:whyalla-3": {
+  "decision": "none",
+  "choice": "none: current is 568px cuttlefish close-up (stand-in, too small); no candidates supplied",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "No usable photo of the aggregation site"
+ },
+ "spot:whyalla-4": {
+  "decision": "reject",
+  "choice": "none: Bargara from the Hummock is Bargara, Queensland: wrong place. Same-destination option: View from Hummock Hill, Whyalla, 2017 (01).jpg (view from Hummock Hill, also the header)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Bargara from the Hummock is Bargara, Queensland: wrong place. Same-destination option: View from Hummock Hill, Whyalla, 2017 (01).jpg (view from Hummock Hill, also the header)",
+  "recommend_same_destination": "View from Hummock Hill, Whyalla, 2017 (01).jpg"
+ },
+ "spot:whyalla-5": {
+  "decision": "reject",
+  "choice": "none: current shows the town from Hummock Hill, no jetty visible; script proof was too lenient (geotag 276 m but not the subject)",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "current shows the town from Hummock Hill, no jetty visible; script proof was too lenient (geotag 276 m but not the subject)"
+ },
+ "spot:whyalla-6": {
+  "decision": "reject",
+  "choice": "none: town rooftops from the hill, foreshore not the subject; same-destination option: header file View from Hummock Hill, Whyalla, 2017 (01).jpg shows the beach and gulf",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "town rooftops from the hill, foreshore not the subject; same-destination option: header file View from Hummock Hill, Whyalla, 2017 (01).jpg shows the beach and gulf",
+  "recommend_same_destination": "View from Hummock Hill, Whyalla, 2017 (01).jpg"
+ },
+ "spot:whyalla-7": {
+  "decision": "reject",
+  "choice": "none: town view, not the conservation park (10 km away); duplicate of other spots' file",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "town view, not the conservation park (10 km away); duplicate of other spots' file"
+ },
+ "spot:whyalla-8": {
+  "decision": "reject",
+  "choice": "none: 'Staying Still 78 - Threshold' is a coastal-path photo of an unrelated place, 180 km away",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "'Staying Still 78 - Threshold' is a coastal-path photo of an unrelated place, 180 km away"
+ },
+ "spot:whyalla-9": {
+  "decision": "none",
+  "choice": "none: current is a 1812 portrait of Rose de Freycinet; no candidates",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Archive portrait, stand-in"
+ },
+ "spot:whyalla-10": {
+  "decision": "reject",
+  "choice": "none: Houlka Tanglefoot Trail is in Mississippi, USA: wrong place",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Houlka Tanglefoot Trail is in Mississippi, USA: wrong place"
+ },
+ "spot:whyalla-11": {
+  "decision": "reject",
+  "choice": "none: Kentuck Knob is a Frank Lloyd Wright house in Pennsylvania: wrong place",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Kentuck Knob is a Frank Lloyd Wright house in Pennsylvania: wrong place"
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "group": "copper-coast",
+ "generated": "2026-10-26T15:54:47.553Z",
+ "slots": [
+  {
+   "slot": "dest:copper-coast:header",
+   "key": "Copper Coast",
+   "current": {
+    "file": "South Beach Port Hughes.jpg",
+    "source": "imageOverrides.ts"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:copper-coast:why1",
+   "key": "File:Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg",
+   "current": {
+    "file": "Hughes Enginehouse, Moonta Mines, North view 20230210 1.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:copper-coast:why2",
+   "key": "File:Nikon 003.jpg",
+   "current": {
+    "file": "Nikon 003.jpg",
+    "source": "destinations.ts whyVisitPhotos"
+   },
+   "status": "confirm",
+   "flags": []
+  },
+  {
+   "slot": "dest:copper-coast:why3",
+   "key": "File:",
+   "current": null,
+   "status": "search",
+   "flags": [
+    "no photo"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-1",
+   "key": "Moonta Mines, South Australia",
+   "current": {
+    "file": "Map of Moonta Mines pre-1923 (SA Dept of Mines and Energy).tif",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: dated 1975",
+    "pre-filter: category: 20th-century maps of South Australia",
+    "pre-filter: file name suggests a map, drawing, logo or similar",
+    "pre-filter: not a photograph file (image/tiff)"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-2",
+   "key": "Moonta Bay, South Australia",
+   "current": {
+    "file": "MoontaBayJetty.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-3",
+   "key": "The Farm Shed Museum and Tourism Centre",
+   "current": {
+    "file": "BeamishEntrance (cropped).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-4",
+   "key": "Wallaroo Heritage and Nautical Museum",
+   "current": {
+    "file": "HMAS Whyalla J153 2005.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-5",
+   "key": "North Beach, South Australia",
+   "current": {
+    "file": "Maslin-Beach-1264.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "search",
+   "flags": [
+    "pre-filter: also used for copper-coast",
+    "pre-filter: also used for mclaren-vale"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-7",
+   "key": "Splash Town",
+   "current": {
+    "file": "Globe Life Park Final Game, Arlington, Texas (48823570771).jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "geotag 15002753 m from the pin; the spot name is not in the file text: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-8",
+   "key": "Port Hughes, South Australia",
+   "current": {
+    "file": "PortHughesShops.JPG",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  },
+  {
+   "slot": "spot:copper-coast-9",
+   "key": "Copper Coast Rail Trail",
+   "current": {
+    "file": "Wallaroo-overgrown-rail-tracks-0835.jpg",
+    "source": "Wikipedia lead image"
+   },
+   "status": "confirm",
+   "flags": [],
+   "proof": [
+    "no geotag: a judge must look"
+   ]
+  }
+ ]
+}

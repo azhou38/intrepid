@@ -1,0 +1,139 @@
+{
+ "dest:innamincka:header": {
+  "decision": "none",
+  "choice": "none: only a budgerigar close-up, a trading-post building and thin banner crops; no wide landscape or town-in-setting",
+  "candidates": [
+   {
+    "file": "Budgerigar...121274817.jpg",
+    "verdict": "reject",
+    "reason": "animal close-up"
+   },
+   {
+    "file": "Innamincka trading post.jpg",
+    "verdict": "reject",
+    "reason": "single building, not spectacular"
+   },
+   {
+    "file": "Innamincka trading post pagebanner.jpg",
+    "verdict": "reject",
+    "reason": "aspect 7:1"
+   },
+   {
+    "file": "Innamincka trading post (cropped).jpg",
+    "verdict": "reject",
+    "reason": "aspect 3:1, building"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "No candidate passes check 3."
+ },
+ "dest:innamincka:why1": {
+  "decision": "none",
+  "choice": "none: no photo of paddling Cooper Creek waterholes among candidates",
+  "candidates": [
+   {
+    "file": "Budgerigar...jpg",
+    "verdict": "reject",
+    "reason": "bird, not paddling"
+   },
+   {
+    "file": "trading post / nursing home files",
+    "verdict": "reject",
+    "reason": "buildings"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "Reason not shown by any candidate."
+ },
+ "dest:innamincka:why2": {
+  "decision": "none",
+  "choice": "none: no photo of camping/fishing in the outback among candidates",
+  "candidates": [
+   {
+    "file": "Budgerigar...jpg",
+    "verdict": "reject",
+    "reason": "bird, not camping/fishing"
+   },
+   {
+    "file": "trading post / nursing home files",
+    "verdict": "reject",
+    "reason": "buildings"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "Reason not shown by any candidate."
+ },
+ "dest:innamincka:why3": {
+  "decision": "keep-current",
+  "choice": "Robert O'Hara Burke death site 2.JPG",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Real colour photo of Burke's death site memorial on Cooper Creek, shows the Burke and Wills story; 1280 px."
+ },
+ "spot:innamincka-1": {
+  "decision": "none",
+  "choice": "none: only a NASA orbital image of the reserve (satellite fails check 4); current lead is a 500px aerial",
+  "candidates": [
+   {
+    "file": "openverse NASA Johnson flickr 41737756044",
+    "verdict": "reject",
+    "reason": "satellite image, CC BY-NC-ND"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "No passing photo."
+ },
+ "spot:innamincka-2": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [
+   {
+    "file": "Burke and Wills dig tree 2.JPG",
+    "verdict": "reject",
+    "reason": "Dig tree is a different site, geotag 21 km from the waterhole (check 1/2)"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "Photo shows the Dig Tree, not Cullyamurra Waterhole; goes to search."
+ },
+ "spot:innamincka-3": {
+  "decision": "reject",
+  "choice": "none",
+  "candidates": [
+   {
+    "file": "AustralianPelicansMcArthurRiverMouth.jpg",
+    "verdict": "reject",
+    "reason": "McArthur River mouth is in the Northern Territory; pelicans close-up (check 1)"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "Wrong place and animal-focused; goes to search."
+ },
+ "spot:innamincka-4": {
+  "decision": "choice",
+  "choice": "Elizabeth Symon Nursing Home Innamincka.JPG",
+  "candidates": [
+   {
+    "file": "Elizabeth Symon Nursing Home Innamincka.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "The building itself, 1280 px, 2008"
+   },
+   {
+    "file": "Pub, petrol station and general store...jpg",
+    "verdict": "reject",
+    "reason": "other buildings"
+   },
+   {
+    "file": "XingCooperCreek.jpg",
+    "verdict": "reject",
+    "reason": "creek crossing"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Building centred in square crop (checked)."
+ }
+}

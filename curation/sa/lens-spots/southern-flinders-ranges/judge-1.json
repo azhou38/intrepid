@@ -1,0 +1,91 @@
+{
+ "dest:southern-flinders-ranges:header": {
+  "decision": "keep-current",
+  "choice": "Melrose - panoramio.jpg",
+  "hero_crop": "ok",
+  "reason": "Melrose town in green valley under the ranges; hazy and modest but real, wide and the right place",
+  "dark": true
+ },
+ "dest:southern-flinders-ranges:why1": {
+  "decision": "reject",
+  "choice": "none: current fails check 3",
+  "hero_crop": "n/a",
+  "reason": "Quorn street with the Criterion Hotel is a street scene, not spectacular, and does not show country-town wandering at wide scale; Quorn is a separate destination"
+ },
+ "dest:southern-flinders-ranges:why2": {
+  "decision": "none",
+  "choice": "none: no candidate shows cycling rail or long-distance trails",
+  "candidates": [
+   {
+    "file": "GWA wagon testing at Port Pirie",
+    "verdict": "reject",
+    "reason": "Port Pirie freight wagons, wrong subject"
+   },
+   {
+    "file": "Endless Stations 181 - Hill Flow.jpg",
+    "verdict": "reject",
+    "reason": "portrait hills, no trail or cycling"
+   },
+   {
+    "file": "Savings Bank of South Australia - Old Quorn branch.jpg",
+    "verdict": "reject",
+    "reason": "single building"
+   },
+   {
+    "file": "CSIRO Belton ghost town",
+    "verdict": "reject",
+    "reason": "dirt road and ruin, not cycling or trail; not clearly a trail"
+   }
+  ],
+  "reason": "none fit the Cycle rail and long-distance trails reason"
+ },
+ "spot:southern-flinders-ranges-2": {
+  "decision": "choice",
+  "choice": "Hotel and Main Street, Jamestown (20646391434).jpg",
+  "candidates": [
+   {
+    "n": 9,
+    "file": "Hotel and Main Street, Jamestown (20646391434).jpg",
+    "verdict": "accept",
+    "reason": "Jamestown main street with hotel, 85-233 m from pin; n10 is a duplicate"
+   },
+   {
+    "n": 1,
+    "verdict": "reject",
+    "reason": "single bank building"
+   },
+   {
+    "n": 4,
+    "verdict": "reject",
+    "reason": "statue"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "best view of the town itself; current Kanangra file is wrong place"
+ },
+ "spot:southern-flinders-ranges-3": {
+  "decision": "reject",
+  "choice": "none: shopfront",
+  "hero_crop": "n/a",
+  "reason": "ServWel store shopfront with a car, not the town (check 2/3)"
+ },
+ "spot:southern-flinders-ranges-4": {
+  "decision": "reject",
+  "choice": "none: takeaway shopfront",
+  "hero_crop": "n/a",
+  "reason": "Dodge Shop takeaway with a car, not recognisably Booleroo Centre (check 2)"
+ },
+ "spot:southern-flinders-ranges-5": {
+  "decision": "choice",
+  "choice": "1",
+  "candidates": [
+   {
+    "n": 1,
+    "verdict": "accept",
+    "reason": "silo mural of forester and scarlet robin (Wirrabara); Flickr via Openverse, CC BY-NC-ND (non-free licence, flag for owner), 1024 px"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "the silo art itself, centred and clear"
+ }
+}

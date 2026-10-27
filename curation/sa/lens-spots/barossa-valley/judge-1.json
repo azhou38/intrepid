@@ -1,0 +1,238 @@
+{
+ "dest:barossa-valley:header": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Vineyards and dams seen from Mengler Hill, wide real photo, 7588px"
+ },
+ "dest:barossa-valley:why1": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Penfolds cellar door in the Barossa, matches cellar-door reason"
+ },
+ "dest:barossa-valley:why2": {
+  "decision": "choice",
+  "choice": "Saint John's Lutheran Church, Tanunda, West view 20230207.jpg",
+  "candidates": [
+   {
+    "file": "Tanunda.jpg",
+    "verdict": "reject",
+    "reason": "2005, flat view, town barely readable"
+   },
+   {
+    "file": "Saint John's Lutheran Church, Tanunda, West view 20230207.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Geotagged Tanunda, Lutheran church shows German heritage; 5736px; centred (crop ok)"
+   },
+   {
+    "file": "others",
+    "verdict": "reject",
+    "reason": "views already used, wineries, plant close-up"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "German-heritage Lutheran church in Tanunda fits the villages reason"
+ },
+ "dest:barossa-valley:why3": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Mengler Hill view over the valley, tree in foreground but valley visible"
+ },
+ "dest:barossa-valley:why4": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Barossa Reservoir wall (Whispering Wall), real photo"
+ },
+ "spot:barossa-valley-1": {
+  "decision": "reject",
+  "choice": "none: Current is Penfolds Magill Estate in Adelaide, wrong place. Sharing the destination's why1 Penfolds Barossa cellar door photo is recommended; otherwise none",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current is Penfolds Magill Estate in Adelaide, wrong place. Sharing the destination's why1 Penfolds Barossa cellar door photo is recommended; otherwise none"
+ },
+ "spot:barossa-valley-2": {
+  "decision": "reject",
+  "choice": "none: Generic Barossa aerial, not Seppeltsfield itself (stand-in); no candidates searched",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Generic Barossa aerial, not Seppeltsfield itself (stand-in); no candidates searched"
+ },
+ "spot:barossa-valley-3": {
+  "decision": "reject",
+  "choice": "none: Current is St Paul's Cathedral Whispering Gallery (London), wrong place. Reuse destination why4 file: ADB Williamstown Barossa Res whispering wall 1.jpg",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current is St Paul's Cathedral Whispering Gallery (London), wrong place. Reuse destination why4 file: ADB Williamstown Barossa Res whispering wall 1.jpg"
+ },
+ "spot:barossa-valley-4": {
+  "decision": "reject",
+  "choice": "none: Current shows mostly a car park, not the view. Reuse destination why3 file (view from Mengler Hill): View of Barossa Valley from Mengler Hill 20230207.jpg",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current shows mostly a car park, not the view. Reuse destination why3 file (view from Mengler Hill): View of Barossa Valley from Mengler Hill 20230207.jpg"
+ },
+ "spot:barossa-valley-5": {
+  "decision": "reject",
+  "choice": "none: Current is a SAR railcar at the NRM, not the Barossa Museum",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current is a SAR railcar at the NRM, not the Barossa Museum"
+ },
+ "spot:barossa-valley-6": {
+  "decision": "reject",
+  "choice": "none: Current is Springton Peak plaque, Prince Edward Island Canada, wrong place",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current is Springton Peak plaque, Prince Edward Island Canada, wrong place"
+ },
+ "spot:barossa-valley-7": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Angaston Murray Street heritage main street, recognisable town view"
+ },
+ "spot:barossa-valley-8": {
+  "decision": "choice",
+  "choice": "Eden Valley, South Australia.jpg",
+  "candidates": [
+   {
+    "file": "Eden Valley, South Australia.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Vineyards from a lookout in Eden Valley, category Eden Valley SA, 5184px, CC BY-SA 4.0"
+   },
+   {
+    "file": "Eden Valley Lookout.jpg",
+    "verdict": "reject",
+    "reason": "dull dry paddock, 2008 Flickr; second choice"
+   },
+   {
+    "file": "others",
+    "verdict": "reject",
+    "reason": "street/road shots, glass of wine, CSIRO machinery/people"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Lookout view over Eden Valley vineyards matches bio; current is a 1952 Steinbeck book jacket"
+ },
+ "spot:barossa-valley-9": {
+  "decision": "reject",
+  "choice": "none: Current is Latchford Bridge, Ontario, wrong place; no candidates searched",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current is Latchford Bridge, Ontario, wrong place; no candidates searched"
+ },
+ "spot:barossa-valley-10": {
+  "decision": "reject",
+  "choice": "none: Current is Greenock, Inverclyde, Scotland, wrong country",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current is Greenock, Inverclyde, Scotland, wrong country"
+ },
+ "spot:barossa-valley-11": {
+  "decision": "keep-current",
+  "choice": "current",
+  "candidates": [],
+  "hero_crop": "ok",
+  "reason": "Nuriootpa Memorial Hall and main street, SA town, acceptable"
+ },
+ "spot:barossa-valley-12": {
+  "decision": "choice",
+  "choice": "KapundaMuseum.jpg",
+  "candidates": [
+   {
+    "file": "KapundaMuseum.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Kapunda Museum building (geo 145m, category Kapunda SA), portrait 1536x2048, mentioned in bio"
+   },
+   {
+    "file": "Crase Street, Kapunda",
+    "verdict": "reject",
+    "reason": "street corner, weak"
+   },
+   {
+    "file": "others",
+    "verdict": "reject",
+    "reason": "horse sculpture, paddock, food, interiors, Stockport"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Landmark museum building in Kapunda; best of weak set"
+ },
+ "spot:barossa-valley-13": {
+  "decision": "none",
+  "choice": "none: only Clyde Sculpture (a metal horse) and a pool table; the Map the Miner statue is not pictured",
+  "candidates": [
+   {
+    "file": "Clyde Sculpture.jpg",
+    "verdict": "reject",
+    "reason": "stand-in: a different Kapunda sculpture"
+   },
+   {
+    "file": "Clare Castle Hotel, Kapunda 20250102-123729.jpg",
+    "verdict": "reject",
+    "reason": "pool table in a pub"
+   }
+  ],
+  "hero_crop": "n/a",
+  "reason": "No photo of the 7 m miner statue; current is 469px"
+ },
+ "spot:barossa-valley-14": {
+  "decision": "choice",
+  "choice": "GawlerStationAdelaide.jpg",
+  "candidates": [
+   {
+    "file": "GawlerStationAdelaide.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Gawler railway station heritage building, 1600x1200, PD, 2007 photo; recognisable landmark, a stand-in for the town but best available"
+   },
+   {
+    "file": "Julian Terrace, Gawler 20250710-134633.jpg",
+    "verdict": "reject",
+    "reason": "plain street, second choice"
+   },
+   {
+    "file": "The Bunyip.jpg",
+    "verdict": "reject",
+    "reason": "close-up of a facade sign"
+   },
+   {
+    "file": "others",
+    "verdict": "reject",
+    "reason": "suburban roads, dessert, parks"
+   }
+  ],
+  "hero_crop": "ok",
+  "reason": "Heritage station building in Gawler; weak but best"
+ },
+ "spot:barossa-valley-15": {
+  "decision": "reject",
+  "choice": "none: Current Warren Dunes is Michigan lakeshore dunes, wrong place",
+  "candidates": [],
+  "hero_crop": "n/a",
+  "reason": "Current Warren Dunes is Michigan lakeshore dunes, wrong place"
+ }
+}
