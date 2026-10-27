@@ -385,6 +385,8 @@ export default function ProfileScreen() {
   const topSwipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: topSwipeXSV.value }] }));
 
   // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
+  // The country picked in the Explored pills is filled on the map (light green, under the dots).
+  const pickedCountry = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
   const worldMapAt = (w: number) => (
     <Pressable onPress={() => { Haptics.selectionAsync(); setMapOpen(true); }} accessibilityLabel="Open the map">
     <View pointerEvents="none" style={[styles.mapWrap, { height: Math.round((w * WORLD_VH) / 360) }, w !== WORLD_W && { borderRadius: 12, overflow: 'hidden' }]}>
@@ -392,7 +394,7 @@ export default function ProfileScreen() {
         <Rect x={0} y={WORLD_Y0} width={360} height={WORLD_Y1 - WORLD_Y0} fill="#EEF2F6" />
         {(WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
           <Path key={k} d={d}
-            fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
+            fill={worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : c === pickedCountry ? '#A7F3D0' : '#D9DEE5'}
             stroke="white" strokeWidth={0.15} />
         ))}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
