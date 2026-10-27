@@ -864,10 +864,10 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
 type ExploredSort = 'name' | 'date' | 'rating' | 'spots';
 const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'name', label: 'A–Z' },
-  { key: 'date', label: 'Recent' },
+  { key: 'date', label: 'Date Visited' },
   { key: 'rating', label: 'Rating' },
   // Destinations only: the most visited spots first (the first three tiles wear a rank badge).
-  { key: 'spots', label: 'Most spots' },
+  { key: 'spots', label: 'Spots Visited' },
 ];
 // The sort choice above an Explored grid: small segmented pills, the chosen one dark.
 type SortCountry = { code: string; name: string; count: number };
