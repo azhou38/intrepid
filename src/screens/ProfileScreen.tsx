@@ -763,24 +763,46 @@ const TILE_COLS = 3;
 const TILE_GAP = 3;
 // A tile's side: the screen width, less the side room and the gaps.
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
-// The grid is three rows high and scrolls sideways: tiles fill each column top to bottom, then the next column.
-const gridHeight = (n: number) => { const rows = Math.max(1, Math.min(3, n)); return TILE * rows + TILE_GAP * (rows - 1); };
+// Nine to a page, three rows of three; a page is the screen wide and as tall as its rows.
+const PAGE_SIZE = TILE_COLS * 3;
+const gridHeight = (n: number) => { const rows = Math.max(1, Math.ceil(n / TILE_COLS)); return TILE * rows + TILE_GAP * (rows - 1); };
 function PhotoGrid({ tiles, pickedId, onPick }: {
   tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[];
   pickedId: string | null; onPick: (id: string) => void;
 }) {
+  // Pages of nine (three by three): swiping snaps to a whole page, like a carousel, with a dot for each page below.
+  const pages: typeof tiles[] = [];
+  for (let i = 0; i < tiles.length; i += PAGE_SIZE) pages.push(tiles.slice(i, i + PAGE_SIZE));
+  const [page, setPage] = useState(0);
+  const ref = useRef<ScrollView>(null);
+  // A new list (another sort, country or search) starts again from its first page.
+  const firstKey = tiles[0]?.key;
+  useEffect(() => { ref.current?.scrollTo({ x: 0, animated: false }); setPage(0); }, [firstKey, pages.length]);
   return (
-    <ScrollView horizontal style={styles.tileScroll} contentContainerStyle={[styles.tileGrid, { height: gridHeight(tiles.length) }]} nestedScrollEnabled showsHorizontalScrollIndicator={false}>
-      {tiles.map(t => (
-        <Pressable key={t.key} style={styles.tile} onPress={() => onPick(t.key)}>
-          {t.photo}
-          {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
-              spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
-          <TileFooter name={t.name} countryCode={t.countryCode} sub={t.sub} />
-          {pickedId === t.key && <View style={styles.tileRing} pointerEvents="none" />}
-        </Pressable>
-      ))}
-    </ScrollView>
+    <View>
+      <ScrollView ref={ref} horizontal pagingEnabled nestedScrollEnabled showsHorizontalScrollIndicator={false}
+        style={styles.tileScroll} decelerationRate="fast"
+        onMomentumScrollEnd={e => setPage(Math.round(e.nativeEvent.contentOffset.x / SCREEN_W))}>
+        {pages.map((pg, i) => (
+          <View key={i} style={[styles.tilePage, { height: gridHeight(pg.length) }]}>
+            {pg.map(t => (
+              <Pressable key={t.key} style={styles.tile} onPress={() => onPick(t.key)}>
+                {t.photo}
+                {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
+                    spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
+                <TileFooter name={t.name} countryCode={t.countryCode} sub={t.sub} />
+                {pickedId === t.key && <View style={styles.tileRing} pointerEvents="none" />}
+              </Pressable>
+            ))}
+          </View>
+        ))}
+      </ScrollView>
+      {pages.length > 1 && (
+        <View style={styles.pageDots}>
+          {pages.map((_, i) => <View key={i} style={[styles.pageDot, i === page && styles.pageDotOn]} />)}
+        </View>
+      )}
+    </View>
   );
 }
 
@@ -1056,7 +1078,10 @@ const styles = StyleSheet.create({
   sortTxt:   { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   sortTxtOn: { color: 'white' },
   tileScroll: { marginTop: 4, flexGrow: 0 },
-  tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'column', flexWrap: 'wrap', gap: TILE_GAP },
+  tilePage: { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP },
+  pageDots: { flexDirection: 'row', justifyContent: 'center', gap: 5, marginTop: 10 },
+  pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#D1D5DB' },
+  pageDotOn: { backgroundColor: '#111827' },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
   tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 6, borderWidth: 3, borderColor: PICK_COLOR },
