@@ -613,10 +613,6 @@ export default function ProfileScreen() {
                 onClose={() => { setDestQuery(''); setDestSearchOpen(false); }} onBlurEmpty={() => setDestSearchOpen(false)} />
             </View>
           )}
-          {exploredDests.length > 0 && destCountries.length > 1 && (
-            <CountryChips countries={destCountries} total={exploredDests.length} selected={destCountry} query={q}
-              onSelect={setDestCountry} onClearQuery={() => setDestQuery('')} />
-          )}
           {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} />}
           <View>
             {worldMap}
@@ -632,7 +628,7 @@ export default function ProfileScreen() {
             <>
             {shownDests.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
-                {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Tap a country above to filter by it.' : 'No destinations match.'}
+                {q && destCountries.some(c => wordMatch(c.name, q)) ? 'No destination names match. Pick the country from the Country dropdown to filter by it.' : 'No destinations match.'}
               </Text>
             )}
             {/* A photo grid: one tile per destination, its name and its visited spots over its photo. */}
@@ -669,10 +665,6 @@ export default function ProfileScreen() {
                 onClose={() => { setSpotQuery(''); setSpotSearchOpen(false); }} onBlurEmpty={() => setSpotSearchOpen(false)} />
             </View>
           )}
-          {exploredSpots.length > 0 && spotCountries.length > 1 && (
-            <CountryChips countries={spotCountries} total={exploredSpots.length} selected={spotCountryF} query={sq}
-              onSelect={setSpotCountryF} onClearQuery={() => setSpotQuery('')} />
-          )}
           {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} />}
           <View>
             {worldMap}
@@ -688,7 +680,7 @@ export default function ProfileScreen() {
             <>
             {shownSpots.length === 0 && (
               <Text style={[styles.topEmpty, styles.exploredPad]}>
-                {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Tap a country above to filter by it.' : 'No spots match.'}
+                {sq && spotCountries.some(c => wordMatch(c.name, sq)) ? 'No spot names match. Pick the country from the Country dropdown to filter by it.' : 'No spots match.'}
               </Text>
             )}
             {/* The same photo grid for spots: the spot's country under its name. */}
@@ -901,46 +893,6 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
         )}
       </Modal>
     </>
-  );
-}
-
-// An Explored list's country chips: All, then each country (flag, name, count), a selected one first. While the search has text, only the
-// countries whose name it could be are shown, as suggestions (all of them when it fits none); tapping one filters by it
-// and, when the text was that country's name, clears the text. The selected country always stays in the row.
-function CountryChips({ countries, total, selected, query, onSelect, onClearQuery }: {
-  countries: { code: string; name: string; count: number }[]; total: number; selected: string | null; query: string;
-  onSelect: (code: string | null) => void; onClearQuery: () => void;
-}) {
-  const fits = query ? countries.filter(c => wordMatch(c.name, query)) : [];
-  const shown = fits.length ? countries.filter(c => fits.includes(c) || c.code === selected) : countries;
-  // The selected country leads the row (before All), and the row scrolls back to its start when the choice changes,
-  // so the chosen chip is always in view.
-  const sel = shown.find(c => c.code === selected);
-  const all = { code: null as string | null, name: 'All', count: total };
-  const chips = sel ? [sel, all, ...shown.filter(c => c !== sel)] : [all, ...shown];
-  const rowRef = useRef<GHScrollView>(null);
-  useEffect(() => { rowRef.current?.scrollTo({ x: 0, animated: true }); }, [selected]);
-  return (
-    <GHScrollView ref={rowRef} horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll} contentContainerStyle={styles.filterRow}
-      keyboardShouldPersistTaps="handled">
-      {chips.map(c => {
-        const on = selected === c.code;
-        const suggested = !!c.code && fits.some(f => f.code === c.code);
-        return (
-          <Pressable key={c.code ?? 'all'} style={[styles.filterChip, on && styles.filterChipOn]} hitSlop={4}
-            onPress={() => {
-              Haptics.selectionAsync();
-              LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-              onSelect(on && c.code ? null : c.code);
-              if (suggested && !on) onClearQuery();
-            }}>
-            {!!c.code && <CircleFlag countryCode={c.code} size={14} />}
-            <Text style={[styles.filterTxt, on && styles.filterTxtOn]} numberOfLines={1}>{c.name}</Text>
-            <Text style={[styles.filterCount, on && styles.filterTxtOn]}>{c.count}</Text>
-          </Pressable>
-        );
-      })}
-    </GHScrollView>
   );
 }
 
