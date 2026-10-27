@@ -763,14 +763,14 @@ const TILE_COLS = 3;
 const TILE_GAP = 3;
 // A tile's side: the screen width, less the side room and the gaps.
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
-// The grid shows three rows, then scrolls (the 4 is the grid's top margin).
-const GRID_MAX_H = TILE * 3 + TILE_GAP * 2 + 4;
+// The grid is three rows high and scrolls sideways: tiles fill each column top to bottom, then the next column.
+const gridHeight = (n: number) => { const rows = Math.max(1, Math.min(3, n)); return TILE * rows + TILE_GAP * (rows - 1); };
 function PhotoGrid({ tiles, pickedId, onPick }: {
   tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[];
   pickedId: string | null; onPick: (id: string) => void;
 }) {
   return (
-    <ScrollView style={styles.tileScroll} contentContainerStyle={styles.tileGrid} nestedScrollEnabled showsVerticalScrollIndicator={tiles.length > TILE_COLS * 3}>
+    <ScrollView horizontal style={styles.tileScroll} contentContainerStyle={[styles.tileGrid, { height: gridHeight(tiles.length) }]} nestedScrollEnabled showsHorizontalScrollIndicator={false}>
       {tiles.map(t => (
         <Pressable key={t.key} style={styles.tile} onPress={() => onPick(t.key)}>
           {t.photo}
@@ -1055,8 +1055,8 @@ const styles = StyleSheet.create({
   sortPillOn: { backgroundColor: '#111827' },
   sortTxt:   { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   sortTxtOn: { color: 'white' },
-  tileScroll: { maxHeight: GRID_MAX_H },
-  tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 4 },
+  tileScroll: { marginTop: 4, flexGrow: 0 },
+  tileGrid: { paddingHorizontal: EXPLORED_PAD, flexDirection: 'column', flexWrap: 'wrap', gap: TILE_GAP },
   tile:     { width: TILE, height: TILE, borderRadius: 6, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
   tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 6, borderWidth: 3, borderColor: PICK_COLOR },
