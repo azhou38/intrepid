@@ -653,7 +653,7 @@ export default function ProfileScreen() {
         <View style={styles.exploredSection}>
           {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} />}
           <View style={styles.exploredPad}>
-            {worldMap}
+            <View style={styles.mapShadow}>{worldMap}</View>
           </View>
           {exploredDests.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
@@ -693,7 +693,7 @@ export default function ProfileScreen() {
         <View style={styles.exploredSection}>
           {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} />}
           <View style={styles.exploredPad}>
-            {worldMap}
+            <View style={styles.mapShadow}>{worldMap}</View>
           </View>
           {exploredSpots.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
@@ -1050,6 +1050,9 @@ const styles = StyleSheet.create({
   // My World
   mapWrap:       { height: WORLD_H, backgroundColor: '#EEF2F6' },
   // A quiet hint that the map opens: a translucent white pill with grey text, not a dark badge.
+  // The Explored map's shadow, on a shell around it (the map itself clips its corners, which would clip a shadow too).
+  mapShadow: { borderRadius: 12, backgroundColor: '#EEF2F6',
+               shadowColor: '#000', shadowOpacity: 0.14, shadowRadius: 5, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
   // The Explored map's outline, drawn over its edge so the map keeps its size.
   mapBorder:     { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 12, borderWidth: 1, borderColor: '#CBD5E1' },
   mapHint:       { position: 'absolute', left: 8, bottom: 8, backgroundColor: 'rgba(255,255,255,0.75)', borderRadius: 10, paddingHorizontal: 8, paddingVertical: 3 },
