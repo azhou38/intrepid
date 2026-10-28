@@ -11,6 +11,7 @@ import { useFonts, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-d
 import * as Haptics from 'expo-haptics';
 
 import MapScreen     from './src/screens/MapScreen';
+import { ShadowSync, syncAfterTouch } from './src/utils/shadowSync';
 import ProfileScreen from './src/screens/ProfileScreen';
 
 class ErrorBoundary extends React.Component<
@@ -123,6 +124,8 @@ export default function App() {
   return (
     <ErrorBoundary>
       <GestureHandlerRootView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }} onTouchEndCapture={syncAfterTouch} onTouchCancel={syncAfterTouch}>
+        <ShadowSync />
         <SafeAreaProvider>
           <StatusBar style="dark" />
           {fontGateOpen && (
@@ -158,6 +161,7 @@ export default function App() {
             />
           )}
         </SafeAreaProvider>
+      </View>
       </GestureHandlerRootView>
     </ErrorBoundary>
   );

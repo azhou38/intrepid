@@ -48,7 +48,8 @@
   "private": true,
   "reanimated": {
     "staticFeatureFlags": {
-      "FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS": false
+      "FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS": false,
+      "IOS_SYNCHRONOUSLY_UPDATE_UI_PROPS": true
     }
   }
 }

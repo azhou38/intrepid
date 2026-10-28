@@ -40,6 +40,7 @@ import { photoCache, thumbCache, getOrFetchWikiThumbnail, fetchCommonsPhoto, HEA
 import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import { withSheetSettle } from './sheetSettle';
+import { requestShadowSync } from '../../utils/shadowSync';
 import { CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
 import EntityPhoto from './EntityPhoto';
 import PhotoPlaceholder from './PhotoPlaceholder';
@@ -1007,6 +1008,7 @@ function DestinationSheet({
     const report = pendingReportRef.current;
     pendingReportRef.current = null;
     report?.();
+    requestShadowSync();   // the settle skipped the shadow tree: see shadowSync.tsx
   }, []);
   const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y);
@@ -1595,15 +1597,14 @@ function DestinationSheet({
         <Pressable style={StyleSheet.absoluteFill} onPress={() => snapToCollapsedRef.current()} />
       </Animated.View>
 
-      {/* Shadow-only backdrop — sibling behind sheet so overflow:hidden doesn't clip the shadow.
-          Positioned via transform (not top) so dragging only recomposites instead of forcing a
-          native layout pass on every touch-move frame — top is a layout property and was part
-          of the drag jank. The gesture itself (`pan` above) is the bigger fix: a Reanimated /
-          Gesture-Handler worklet running on the UI thread with no per-frame JS-thread hop. */}
-      <Reanimated.View pointerEvents="none" style={[st.sheetShadow, sheetAnimStyle]} />
-
+      {/* The sheet moves as one plain, unstyled view (transform only); its shadow and its rounded, clipped body sit
+          still inside it. A view with only its top corners rounded is drawn by React Native as a bitmap, and moving
+          such a view itself redrew that bitmap on the CPU every frame of a drag (two of them: the sheet and its
+          shadow). The shadow is a sibling behind the body so overflow:hidden doesn't clip it. */}
       <GestureDetector gesture={pan}>
-      <Reanimated.View style={[st.sheet, sheetAnimStyle]}>
+      <Reanimated.View style={[st.sheetMover, sheetAnimStyle]}>
+      <View pointerEvents="none" style={st.sheetShadow} />
+      <View style={st.sheet}>
 
         {/* ── FULL CONTENT — fills entire sheet, hero starts at y=0 ──────── */}
         <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
@@ -1883,13 +1884,17 @@ function DestinationSheet({
         {/* ── PEEK STRIP — a thin sliver of the hero image with the destination's name,
             shown only once the sheet has been dropped down past collapsed (via peekSignal,
             fired when the user pans/zooms the map). Tapping it returns to collapsed. ── */}
+        {/* The fade is on a plain outer view: on the rounded one itself it redrew its corner bitmap every frame. */}
         <Reanimated.View
           pointerEvents="box-none"
-          style={[{
-            position: 'absolute', left: 0, right: 0, top: 0, height: PEEK_STRIP_H, overflow: 'hidden',
-            backgroundColor: '#111827',
+          style={[{ position: 'absolute', left: 0, right: 0, top: 0, height: PEEK_STRIP_H }, peekAnimStyle]}
+        >
+        <View
+          pointerEvents="box-none"
+          style={{
+            flex: 1, overflow: 'hidden', backgroundColor: '#111827',
             borderTopLeftRadius: 28, borderTopRightRadius: 28,
-          }, peekAnimStyle]}
+          }}
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
             <EntityPhoto
@@ -1925,8 +1930,10 @@ function DestinationSheet({
               </View>
             </View>
           </Pressable>
+        </View>
         </Reanimated.View>
 
+      </View>
       </Reanimated.View>
       </GestureDetector>
 
@@ -1972,6 +1979,7 @@ const st = StyleSheet.create({
     position:'absolute', left:0, right:0, top:0, height:H, overflow:'hidden',
     borderTopLeftRadius:28, borderTopRightRadius:28, backgroundColor:'#F9FAFB',
   },
+  sheetMover: { position:'absolute', left:0, right:0, top:0, height:H },
   sheetShadow: {
     position:'absolute', left:0, right:0, top:0, height:H,
     borderTopLeftRadius:28, borderTopRightRadius:28,
