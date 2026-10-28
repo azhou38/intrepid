@@ -1,0 +1,36 @@
+{
+  "searched": "2026-10-27, via Reduck browser: Commons API, Flickr CC search, Google search, official/tourism pages",
+  "slots": {
+    "spot:The Cedars (Hahndorf)": {
+      "verdict": "hold (licence)",
+      "pick": {"url": "https://live.staticflickr.com/3689/11937946576_98c0280286_o.jpg", "w": 4896, "page": "https://www.flickr.com/photos/82134796@N03/11937946576/", "by": "denisbin", "license": "CC BY-ND 2.0"},
+      "alt": {"url": "https://live.staticflickr.com/5471/13684796874_786571e31f_o.jpg", "w": 4896, "page": "https://www.flickr.com/photos/82134796@N03/13684796874/", "by": "denisbin", "license": "CC BY-ND 2.0", "note": "Heysen's studio exterior"},
+      "note": "House in its garden among the cedars; good photo, but ND licence is held for the owner"
+    },
+    "spot:Mount Barker Summit": {
+      "verdict": "pass",
+      "pick": {"url": "https://live.staticflickr.com/65535/50876057482_876777c1e4_o.jpg", "w": 2592, "page": "https://www.flickr.com/photos/mikecogh/50876057482/", "by": "Michael Coghlan", "license": "CC BY-SA 2.0"},
+      "note": "Granite boulders and wildflowers on the summit with the view beyond"
+    },
+    "spot:Kyeema Conservation Park": {
+      "verdict": "pass (official)",
+      "pick": {"url": "https://assets.atdw-online.com.au/images/ad7d82d81b23f2579cc4beb80495ee53.jpeg?w=1920", "w": 1920, "page": "https://southaustralia.com/products/fleurieu-peninsula/attraction/kyeema-conservation-park", "by": "Australian Tourism Data Warehouse / SATC", "license": "official photo, permission not confirmed"},
+      "note": "Stringybark woodland in the park"
+    },
+    "spot:Lobethal Bushland Park": {
+      "verdict": "weak pass (official)",
+      "pick": {"url": "https://www.walkingsa.org.au/wp-content/uploads/2017/01/4-hikes-in-lobethal-bushland-park_feature_landscape-3.jpg", "w": 4032, "page": "https://www.walkingsa.org.au/walk/find-a-place-to-walk/4-hikes-in-lobethal-bushland-park/", "by": "Walking SA", "license": "official photo, permission not confirmed"},
+      "note": "Stringybark and fern forest from the park's walk page; reservoirs not shown. The ATDW photo is the entrance sign (fails)."
+    },
+    "spot:Yurrebilla Trail": {
+      "verdict": "weak (location unproven)",
+      "pick": {"url": "https://media.trailhiking.com.au/wp-content/uploads/2023/04/Yurrebilla-Trail-Hero-image.jpg", "w": 1600, "page": "https://www.trailhiking.com.au/hikes/yurrebilla-trail/", "by": "Trail Hiking Australia", "license": "blog photo, permission not confirmed"},
+      "note": "Forested gorge, presumably from the trail; no caption says where. All Flickr CC results are trail signs (fail)."
+    },
+    "spot:Hahndorf Farm Barn": {
+      "verdict": "fail",
+      "candidates": ["https://www.farmbarn.com.au/hero-image.webp (child and goats fill the frame)", "https://www.farmbarn.com.au/family-animals.webp (person milking a cow, person is the focus)"],
+      "note": "No Commons or Flickr CC photos; operator photos are of people and animals, not the place"
+    }
+  }
+}
