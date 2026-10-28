@@ -1315,8 +1315,6 @@ function isSpotRevealed(sp: Spot, zoom: number): boolean {
 const spotPhotoZoom = (id: string, planZoom: number) => Math.max(planZoom, (SPOT_PHOTO_ZOOM_BY_ID[id] ?? -Infinity) - ZOOM_EPSILON);
 // The quarter-level band at or below a zoom (with the plan's own slack), the min zoom of the layer that draws it.
 const spotBand = (z: number) => Math.floor((z - ZOOM_EPSILON) * 4) / 4;
-// How many zoom levels below its band a small spot pin takes to fade out (spotMini-<band>).
-const SPOT_MINI_FADE_ZOOM = 0.3;
 // Every spot's reveal band, ascending: one small-pin layer each (spotMini-<band>).
 const SPOT_REVEAL_BANDS = [...new Set(Object.values(SPOT_REVEAL_ZOOM_BY_ID).map(spotBand))].sort((a, b) => a - b);
 // The area a standalone spot is framed by (it has no destination to supply one).
@@ -3248,17 +3246,10 @@ const destItems = useMemo((): DestItem[] =>
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const layers: React.ReactElement[] = [];
-    // A small pin fades out over the SPOT_MINI_FADE_ZOOM levels below its band rather than vanishing at it: its opacity
-    // follows the zoom, so a zoom-out fades it as fast as the camera moves. (A camera that stops inside that range leaves
-    // no half-faded pin: the plan drops the spot there, being below its reveal zoom.)
-    for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) {
-      const gated = !spotGateOff && k !== 'a', b = Number(k);
-      layers.push(
-        <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-          filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={gated ? b - SPOT_MINI_FADE_ZOOM : 0}
-          style={(gated ? { ...miniStyle, iconOpacity: ['interpolate', ['linear'], ['zoom'], b - SPOT_MINI_FADE_ZOOM, 0, b, 1] } : miniStyle) as any} />,
-      );
-    }
+    for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
+      <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+    );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
         filter={[...base, ['==', ['get', 'pb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={photoStyle as any} />,
