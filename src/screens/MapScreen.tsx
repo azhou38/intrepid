@@ -2259,7 +2259,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Set by a back tap ("← Destination", "← Country"; see beginBackPlan): its target is kept although the parent is
   // selected, so the pins plan at the parent's view from the tap exactly as for an X close.
   const planWithSelRef = useRef(false);
-  if ((selectedCountry || selectedDest) && !planWithSelRef.current) planZoomTargetRef.current = null;
+  // Set by every close plan, an X close (beginClosePlan) as much as a back tap (beginBackPlan): the pins plan at the
+  // target from the first frame to the map idle, whatever the camera does on the way. An X close used to follow the live
+  // zoom for its destination photo tiers and to drop its plan once the camera started climbing back in, which its fly-to
+  // does after arcing out past the target: the pins switched tier by tier and the spot pins clumped all the way out,
+  // where the back tap's held plan switched once and stayed put.
+  const planHoldRef = useRef(false);
+  if ((selectedCountry || selectedDest) && !planWithSelRef.current) { planZoomTargetRef.current = null; planHoldRef.current = false; }
   let planZoomTarget = planZoomTargetRef.current;
   // The same look-ahead for closing a spot back INTO its destination (the "‹ Destination" back), which keeps the
   // destination selected and so can't use planZoomTarget (cleared above while one is selected). Spot pins, dots and names
@@ -2283,7 +2289,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // A back tap's plan (planWithSelRef) is not ended here: its fly-to can pass the target and come back in, and the
     // country target is an estimate the camera may not reach exactly, either of which ended it mid-flight and let the
     // destination photo pins bunch up on the way out. It ends at the map idle instead (see releaseSpotCloseTarget).
-    if (!planWithSelRef.current && arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; }
+    if (!planHoldRef.current && arrived(planZoomTargetRef.current)) { planZoomTargetRef.current = null; planZoomTarget = null; }
   }
   const closeTarget = planZoomTargetRef.current ?? spotCloseTargetRef.current;
   // Pin planning runs ahead of the (heavy, laggy) per-frame renders.
@@ -2303,7 +2309,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // A back tap's plan (planWithSelRef) holds the target outright, even where its fly-to arcs out past the target and back
   // in (Wellington → New Zealand dips to zoom 2 before landing at 3.9): following the live zoom there switched every photo
   // pin off for the dip and back on as the camera climbed in, a burst of pins on landing.
-  const backPlan = planWithSelRef.current && closeTarget !== null;
+  const backPlan = planHoldRef.current && planZoomTargetRef.current !== null;
   const handoffZoom = backPlan ? closeTarget! : closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
   // The zoom the destination photo tiers switch at: on a fast zoom-out, a little ahead of the camera (the predicted outward
   // travel over the render lag, a share of it and capped: see DEST_GATE_LOOKAHEAD), so pins start fading as their gate approaches instead
@@ -2469,6 +2475,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     if (!heldSelRef.current.country && !heldSelRef.current.dest && !hadTarget) return;
     if (selectedCountryRef.current || selectedDestRef.current) return;
     planZoomTargetRef.current = null;
+    planHoldRef.current = false;
     if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
     heldSelRef.current = { country: null, dest: null };
     setHeldSelTick(t => t + 1);
@@ -2477,6 +2484,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
     if (planWithSelRef.current) {   // a back tap's plan (see beginBackPlan) ends with the move too
       planWithSelRef.current = false;
+      planHoldRef.current = false;
       planZoomTargetRef.current = null;
       if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
       setHeldSelTick(t => t + 1);
@@ -2492,6 +2500,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const beginClosePlan = useCallback((targetZoom: number, durationMs: number) => {
     if (targetZoom >= camZoomRef.current - ZOOM_EPSILON) return;
     planZoomTargetRef.current = targetZoom;
+    planHoldRef.current = true;
     heldSelRef.current = { country: null, dest: null };
     if (planZoomTimerRef.current) clearTimeout(planZoomTimerRef.current);
     // Safety net if no idle ever arrives (the move was cancelled or replaced).
@@ -2499,6 +2508,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       planZoomTimerRef.current = null;
       if (planZoomTargetRef.current === null) return;
       planZoomTargetRef.current = null;
+      planHoldRef.current = false;
       setHeldSelTick(t => t + 1);
     }, durationMs + 800);
     setHeldSelTick(t => t + 1);
@@ -2510,11 +2520,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     if (targetZoom >= camZoomRef.current - ZOOM_EPSILON) return;
     planZoomTargetRef.current = targetZoom;
     planWithSelRef.current = true;
+    planHoldRef.current = true;
     if (planZoomTimerRef.current) clearTimeout(planZoomTimerRef.current);
     planZoomTimerRef.current = setTimeout(() => {
       planZoomTimerRef.current = null;
       if (!planWithSelRef.current) return;
       planWithSelRef.current = false;
+      planHoldRef.current = false;
       planZoomTargetRef.current = null;
       setHeldSelTick(t => t + 1);
     }, durationMs + 2500);   // generous: the swap's render can hold the camera's start back by a second or more
@@ -4065,15 +4077,19 @@ const destItems = useMemo((): DestItem[] =>
     // Target: the destination's default view — unless already zoomed out past it (see
     // isZoomedOutBeyond).
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
-      beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500);   // see planZoomTarget (a no-op unless this zooms out)
+      beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500 + BACK_CAMERA_DELAY_MS);   // see planZoomTarget (a no-op unless this zooms out)
+      cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;   // see handleCloseDestinationToCountryView
       fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     } else if (standalone) {
       const cam = destDefaultCamera(standaloneSpotArea(standalone), 'topHalf');
       if (!isZoomedOutBeyond(cam.zoom)) {
-        beginClosePlan(cam.zoom, 500);
-        beginProgrammaticCameraMove(500);
-        cameraRef.current?.setCamera({
-          centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo',
+        beginClosePlan(cam.zoom, 500 + BACK_CAMERA_DELAY_MS);
+        cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;   // see handleCloseDestinationToCountryView
+        afterSheetSlideIn(() => {
+          beginProgrammaticCameraMove(500);
+          cameraRef.current?.setCamera({
+            centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo',
+          });
         });
       } else {
         releaseHeldSelection();
@@ -4081,7 +4097,7 @@ const destItems = useMemo((): DestItem[] =>
     } else {
       releaseHeldSelection();
     }
-  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, beginProgrammaticCameraMove, holdSheetUntilCamera]);
+  }, [showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, beginProgrammaticCameraMove, holdSheetUntilCamera, afterSheetSlideIn]);
 
   // Closing the spot sheet INTO its parent destination sheet (still selected), re-centering
   // the camera on the destination's default zoomed-in view. `toCollapsed` (set when this
@@ -4240,7 +4256,11 @@ const destItems = useMemo((): DestItem[] =>
     }
     // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
     // planZoomTarget) rather than after it settles.
-    beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
+    beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600 + BACK_CAMERA_DELAY_MS);
+    // The camera waits for the close to render, as for a back tap (BACK_CAMERA_DELAY_MS): the pins are then already planned
+    // at the target view when the zoom-out starts. Started with the tap, it zoomed out over the old view's pins (spot pins
+    // piled up, destination pins flashed in and out) while the close was still rendering.
+    cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
     fitDestinationDefaultView(dest, 'flyTo', 'full', 600, 0.5);
   }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, holdSheetUntilCamera]);
 
@@ -4385,19 +4405,22 @@ const destItems = useMemo((): DestItem[] =>
       releaseHeldSelection();
       return;
     }
-    beginClosePlan(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA), 600);   // see planZoomTarget
+    beginClosePlan(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA), 600 + BACK_CAMERA_DELAY_MS);   // see planZoomTarget
+    cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;   // see handleCloseDestinationToCountryView
     if (hasCached) {
-      beginProgrammaticCameraMove(600);
-      cameraRef.current?.setCamera({
-        centerCoordinate: [cached.lng, cached.lat],
-        zoomLevel: cached.zoom / 2,
-        animationDuration: 600,
-        animationMode: 'easeTo',
+      afterSheetSlideIn(() => {
+        beginProgrammaticCameraMove(600);
+        cameraRef.current?.setCamera({
+          centerCoordinate: [cached.lng, cached.lat],
+          zoomLevel: cached.zoom / 2,
+          animationDuration: 600,
+          animationMode: 'easeTo',
+        });
       });
       return;
     }
     animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
-  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, holdSheetUntilCamera]);
+  }, [showBreadcrumb, animateCamera, beginProgrammaticCameraMove, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, holdSheetUntilCamera, afterSheetSlideIn]);
 
   // `openPeeked` is for returning UP to a country from a destination via the breadcrumb: the
   // sheet opens in bottom-screen/peek instead of half-screen, and the map is framed for the
