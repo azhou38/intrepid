@@ -6,7 +6,6 @@ import {
   Animated, Dimensions, Modal, TextInput, Platform,
   KeyboardAvoidingView,
 } from 'react-native';
-import type { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
 // LinearGradient aliased to avoid colliding with Reanimated/core Animated naming below, and
 // because `Stop`/`Defs`/`Rect` read fine unqualified. Powers the hero's legibility scrim —
 // see GRADIENT_STOPS for why this replaced a stack of flat strips.
@@ -19,7 +18,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay
+  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay, useAnimatedScrollHandler
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
@@ -27,6 +26,10 @@ import type { SharedValue } from 'react-native-reanimated';
 // plain core ScrollView's native pan silently claims every touch first regardless of that
 // call, which is what was still blocking the full-screen swipe-down.
 import { Gesture, GestureDetector, ScrollView } from 'react-native-gesture-handler';
+// Animated so its scroll offset (scrollYSV) is written on the UI thread, where the sheet's drag gate reads it. Written
+// from a JS onScroll it lagged whenever the JS thread was busy (more so the more pins the map has): after a scroll, a
+// drag down from full-screen saw a stale offset, held the sheet still, then jumped it to the finger once JS caught up.
+const SheetScrollView = Reanimated.createAnimatedComponent(ScrollView);
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Calendar, MapPin, Camera, Pencil, Plus, ChevronRight, ChevronDown, Map } from 'lucide-react-native';
 import { useStore, useVisitIndex } from '../../store';
@@ -1015,8 +1018,6 @@ function DestinationSheet({
   // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only
   // let a downward drag pull the sheet once its inner ScrollView is already at top).
   const scrollYSV    = useSharedValue(0);
-  // Drives the overlay tab bar below.
-  const scrollYAnim  = useRef(new Animated.Value(0)).current;
   // The vertical scroll offset at which the inline tab bar's top edge reaches the very top
   // of the sheet — i.e. exactly where it should hand off to the pinned overlay copy. Measured
   // via onLayout (below) rather than computed from HERO_H/insets, since the tab bar's own
@@ -1201,6 +1202,7 @@ function DestinationSheet({
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
   const scrollAnimRef = useAnimatedRef<any>();
+  const onScrollUI = useAnimatedScrollHandler(e => { scrollYSV.value = e.contentOffset.y; });
   const scrollResetSV = useSharedValue(-1);   // -1: idle
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
   const resetScrollToTop = () => {
@@ -1466,7 +1468,9 @@ function DestinationSheet({
       // shouldn't be read as "start collapsing the sheet," since that also drags the
       // back-navigation pill (the down arrow) along with it, making it look like it moves
       // during ordinary scrolling.
-      if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 24)) return;
+      // Once the sheet has started following the finger it keeps following it for the rest of the drag: re-checking the
+      // gate each frame froze the sheet mid-drag whenever the scroll offset read above 1 for a moment.
+      if (snapStateSV.value === 'full' && !dragEngagedSV.value && !(scrollYSV.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
@@ -1659,7 +1663,7 @@ function DestinationSheet({
           <Reanimated.View style={[StyleSheet.absoluteFill, st.heroDim, heroDimStyle]} />
         </Reanimated.View>
         <Reanimated.View style={[{ flex: 1 }, heroShiftStyle]}>
-        <ScrollView
+        <SheetScrollView
           ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
           style={{ flex: 1 }}
           // Only scrollable at full-screen — while collapsed/peeking there's nothing to
@@ -1676,11 +1680,7 @@ function DestinationSheet({
           stickyHeaderIndices={[1]}
           bounces={false}
           showsVerticalScrollIndicator={false}
-          onScroll={(e: NativeSyntheticEvent<NativeScrollEvent>) => {
-            const y = e.nativeEvent.contentOffset.y;
-            scrollYSV.value = y;
-            scrollYAnim.setValue(y);
-          }}
+          onScroll={onScrollUI}
           scrollEventThrottle={16}
           // White (not the sheet's own light-gray #F9FAFB) — this bottom padding is the
           // scroll content's own trailing space, past the white "content" card, and shows
@@ -1868,7 +1868,7 @@ function DestinationSheet({
           </View>
         </View>
         </GestureDetector>{/* end tab-swipe gesture wrapper */}
-        </ScrollView>
+        </SheetScrollView>
         </Reanimated.View>
         </View>
         </KeyboardAvoidingView>

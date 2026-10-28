@@ -1787,6 +1787,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const [zoomedIntoDestination, setZoomedIntoDestination] = useState(false);
   const zoomTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastCameraTimeRef = useRef(0);
+  // While the camera follows a sheet snap (handleSheetSnapStateChange's moveBy), camera frames don't update the region
+  // state: each update re-rendered the whole screen and rebuilt every spot pin's map data, and those renders, one per
+  // frame for the length of the move, are what made the sheet stutter between half-screen and peek, worse the more pins
+  // the destination has. The move is a short pan at the same zoom, so the pins don't need re-planning on the way; the
+  // map idle at its end sets the region, as does the fallback below if no idle comes.
+  const regionHoldUntilRef = useRef(0);
+  const regionHoldFlushRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   // Guards the south-limit glide-back (see handleCameraChanged) so the correction's own
   // animation frames — which briefly still report an out-of-bounds south edge while
   // easing back — don't retrigger/restart themselves mid-flight.
@@ -3917,6 +3924,7 @@ const destItems = useMemo((): DestItem[] =>
     }, SHEET_SETTLE_MS);
     destFlightInterruptedRef.current = false;
 
+    regionHoldUntilRef.current = Date.now() + SHEET_SNAP_MS + 50;
     cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: SHEET_SNAP_MS });
   }, [setSheetSnapState, setDestHomeToDefault]);
 
@@ -4780,6 +4788,18 @@ const destItems = useMemo((): DestItem[] =>
     // if this ever shows up as jank on lower-end devices, that batching is the first place to
     // look before backing the number off again.
     const now = Date.now();
+    if (!isGestureActive && now < regionHoldUntilRef.current) {
+      if (regionHoldFlushRef.current) clearTimeout(regionHoldFlushRef.current);
+      regionHoldFlushRef.current = setTimeout(() => {
+        regionHoldFlushRef.current = null;
+        unstable_batchedUpdates(() => {
+          setRegion({ latitude: lat, longitude: lng, latitudeDelta: latDelta, longitudeDelta: lngDelta });
+          setCamZoom(state.properties.zoom);
+        });
+      }, regionHoldUntilRef.current - now + 80);
+      camZoomRef.current = state.properties.zoom;
+      return;
+    }
     if (now - lastCameraTimeRef.current < 3) return;
     lastCameraTimeRef.current = now;
 
@@ -4818,6 +4838,7 @@ const destItems = useMemo((): DestItem[] =>
     // and the *next* pan's true would never register as a fresh rising edge (only the very
     // first pan of the whole session ever would). Reset it here so every pan is detected.
     wasMapGestureActiveRef.current = false;
+    if (regionHoldFlushRef.current) { clearTimeout(regionHoldFlushRef.current); regionHoldFlushRef.current = null; }
     releaseSheetsAfterCamera();
     releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
     releaseSpotCloseTarget();
