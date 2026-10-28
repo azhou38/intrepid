@@ -1315,6 +1315,8 @@ function isSpotRevealed(sp: Spot, zoom: number): boolean {
 const spotPhotoZoom = (id: string, planZoom: number) => Math.max(planZoom, (SPOT_PHOTO_ZOOM_BY_ID[id] ?? -Infinity) - ZOOM_EPSILON);
 // The quarter-level band at or below a zoom (with the plan's own slack), the min zoom of the layer that draws it.
 const spotBand = (z: number) => Math.floor((z - ZOOM_EPSILON) * 4) / 4;
+// Every spot's reveal band, ascending: one small-pin layer each (spotMini-<band>).
+const SPOT_REVEAL_BANDS = [...new Set(Object.values(SPOT_REVEAL_ZOOM_BY_ID).map(spotBand))].sort((a, b) => a - b);
 // The area a standalone spot is framed by (it has no destination to supply one).
 const standaloneSpotArea = (s: Spot) => ({ coordinates: s.coordinates, defaultZoomSpanKm: STANDALONE_SPOT_SPAN_KM });
 
@@ -3118,6 +3120,7 @@ const destItems = useMemo((): DestItem[] =>
           sort: rank(sp),
           // Zoom bands (spotBands); a near carousel's pinned spots, which always show their photo, are never gated ('a').
           pb: must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
+          rb: must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
           nb: must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
         },
       });
@@ -3192,12 +3195,17 @@ const destItems = useMemo((): DestItem[] =>
   // matter, so the projection needs no camera centre.
   const prevSpotLabelPlanRef = useRef<Map<string, 'left' | 'right' | 'none'>>(new Map());
   const spotLabelHitRef = useRef<{ pxPerDegLng: number; rects: { id: string; rect: { l: number; r: number; t: number; b: number } }[] }>({ pxPerDegLng: 1, rects: [] });
-  // The spot photo pins and their names, one layer per zoom band (spotBands), drawn below the destination dots:
-  //  - spotPhotoMini-<band>: a photo pin's small pin, shown below its band (max zoom), so a zoom-out swaps the photo for the
-  //    small pin on the frame it passes the band rather than leaving a gap until the plan catches up;
+  // The spot pins and their names, one layer per zoom band, drawn below the destination dots. Each layer's min zoom is its
+  // band, so Mapbox hides it on the frame a zoom-out passes it, where the JS plan learned the zoom a render or more late:
+  //  - spotMini-<band>: every spot's small pin, from its reveal zoom (SPOT_REVEAL_BANDS). Placed after the photo pins and not
+  //    allowed to overlap them, so a spot showing its photo pin never also shows its small pin, and one whose photo layer
+  //    has just been passed shows its small pin in that frame. Small pins never block anything, each other included
+  //    (iconIgnorePlacement). Gated natively, a far spot the plan adds from a viewport it has widened ahead of the zoom
+  //    (it used to flash in and out on a fast zoom-out) is not drawn either;
   //  - spotPhoto-<band>: the photo pins, from their band up ('a': never gated), the widest-zoom bands on top;
   //  - spotName-<band>: the names, above every pin (as when they shared the photo layer, which drew every icon before any
-  //    name), each band hidden below the later of its name's and its pin's zoom.
+  //    name), each band hidden below the later of its name's and its pin's zoom. Always drawn, and they block nothing
+  //    (textIgnorePlacement), so a small pin under a neighbour's name stays.
   // During a close or back plan (closeTarget) the bands are off: its fly-to can dip below the target's zooms on the way.
   // Keyed on the band set, so they are added again in this order whenever it changes. A plain array, not a fragment:
   // ShapeSource hands its source id only to its direct children, and a fragment's layers were never made.
@@ -3216,6 +3224,7 @@ const destItems = useMemo((): DestItem[] =>
       textTranslate: [0, -23],
       textOptional: true,
       textAllowOverlap: true,
+      textIgnorePlacement: true,
       textPadding: 2,
       textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
       textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
@@ -3232,14 +3241,14 @@ const destItems = useMemo((): DestItem[] =>
       // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
       symbolZOrder: 'source',
     };
-    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
+    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: false, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const layers: React.ReactElement[] = [];
-    for (const b of spotBands.photo) layers.push(
-      <MapboxGL.SymbolLayer key={`${sig}m${b}`} id={`spotPhotoMini-${b}`} belowLayerID="destStampCircles"
-        filter={[...base, ['==', ['get', 'pb'], String(b)]] as any} maxZoomLevel={spotGateOff ? 0 : b} style={miniStyle as any} />,
+    for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
+      <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
@@ -5801,29 +5810,6 @@ const destItems = useMemo((): DestItem[] =>
               iconPitchAlignment: 'viewport',
               iconOpacity: ['case', ['==', ['get', 'sel'], 1], 1, 0] as any,
               iconOpacityTransition: { duration: 0, delay: 0 },
-            }}
-          />
-          {/* The small pin under every revealed spot that has no photo pin placed: the photo pin's teardrop with the photo
-              collapsed to a core. It yields to the photo pin in Mapbox's own collision pass (see its style), so the two
-              never show together. */}
-          <MapboxGL.SymbolLayer
-            id="spotMiniPins"
-            belowLayerID="destStampCircles"
-            filter={['all', ['==', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]] as any}
-            style={{
-              iconImage: ['get', 'mini'] as any,
-              iconAnchor: 'bottom',
-              // Placed AFTER the photo layer (it sits beneath it, and Mapbox places the top layer first) and WITHOUT overlap, so a
-              // spot that has its photo pin never also draws the small pin behind it (the mini pin's bubble used to show beside
-              // the photo pin's narrow tail). Where the photo pin does not fit, the mini pin takes its place; the photo pin
-              // fading in or out cross-fades with it through the same collision pass.
-              // iconIgnorePlacement: small pins never block anything, each other included, so they show at the same zooms as
-              // before (zoomed into a destination, where spots are dense, they used to hide one another).
-              // A spot without a photo pin (see the plan in nativeSpotPins) always shows its small pin, as before.
-              iconAllowOverlap: true,
-              iconIgnorePlacement: true,
-              iconPadding: 0,
-              symbolSortKey: ['get', 'sort'] as any,
             }}
           />
           {spotBandLayers as any /* an array of layers: ShapeSource flattens it (see spotBandLayers) */}
