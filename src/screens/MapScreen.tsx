@@ -131,11 +131,6 @@ const EXPLORE_COLOR  = '#6366F1';
 // Pin-plan look-ahead while the camera zooms out (see planZoom / zoomOutLead).
 const PLAN_LAG_SEC = 0.6;         // assumed delay between a camera frame and the render that reacts to it
 const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
-// The destination photo tiers look less far ahead (see destGateZoom): this share of that predicted travel, at most this
-// many levels. The full prediction (0.6 s of travel, up to 0.75 levels) overshot as a fast zoom-out slowed down, so pins
-// faded out early and straight back in when the camera stopped.
-const DEST_GATE_LOOKAHEAD_SHARE = 0.4;
-const DEST_GATE_LOOKAHEAD = 0.3;
 // A destination within this many zoom levels of its own default view is drawn on its own handoff layer (see handoffDests),
 // at most HANDOFF_MAX at once.
 const HANDOFF_BAND = 1.0;
@@ -2315,32 +2310,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // pin off for the dip and back on as the camera climbed in, a burst of pins on landing.
   const backPlan = planHoldRef.current && planZoomTargetRef.current !== null;
   const handoffZoom = backPlan ? closeTarget! : closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
-  // The zoom the destination photo tiers switch at: on a fast zoom-out, a little ahead of the camera (the predicted outward
-  // travel over the render lag, a share of it and capped: see DEST_GATE_LOOKAHEAD), so pins start fading as their gate approaches instead
-  // of a render or more after the camera has passed it, which left them clumped together on the way out.
-  // A close flies to a known zoom (closeTarget): never look past it.
-  // A back tap ("← Country", "← Destination"; planWithSelRef) switches the tiers at its target at once: its zoom-out
-  // passes many tiers' gates (a destination out to its whole country), and each tier's pins lingered until the camera
-  // reached its gate, clumping on the way out.
-  const destGateZoom = backPlan
-    ? closeTarget!
-    : Math.max(camZoom - Math.min(zoomOutLead * DEST_GATE_LOOKAHEAD_SHARE, DEST_GATE_LOOKAHEAD), Math.min(camZoom, closeTarget ?? -Infinity));
-  // Each photo tier's on/off, with a hold: a tier switched off on the way out (by the look-ahead above) stays off until the
-  // camera next zooms IN, rather than coming back the moment the camera stops just above its gate. A pin whose gate sat
-  // just under where a fast zoom-out stopped (Newcastle, Kiama) otherwise faded out and straight back in. Zooming in, a
-  // tier switches on exactly at its gate as before; nothing here depends on where the camera is.
+  // Each photo tier's on/off: on at and past its gate. Zooming out, Mapbox hides a tier itself the frame the camera passes
+  // its gate (the layer's minZoomLevel), so this needs no look-ahead: it used to switch tiers off ahead of the camera to
+  // make up for the render lag, which on a fast pinch blanked pins that were still above their gates for a frame or two.
+  // What this decides is the fade back in, zooming in. A close or back tap (backPlan) switches the tiers at its target at
+  // once, whatever its fly-to does on the way: its zoom-out passes many tiers' gates, and each tier's pins lingered until
+  // the camera reached its gate, clumping on the way out.
   const destTierOnRef = useRef<Map<string, boolean>>(new Map());
-  const destGatePrevZoomRef = useRef(camZoom);
-  const destZoomingIn = camZoom > destGatePrevZoomRef.current + 0.001;
-  destGatePrevZoomRef.current = camZoom;
   const destTierOn = (tier: string): boolean => {
-    const was = destTierOnRef.current.get(tier);
-    let on: boolean;
-    if (backPlan) on = destGateOn(tier, closeTarget!);          // a back tap: the target's tiers, whatever the arc (see backPlan)
-    else if (!destGateOn(tier, camZoom)) on = false;            // below its gate: off
-    else if (was === undefined) on = destGateOn(tier, destGateZoom);
-    else if (was) on = destGateOn(tier, destGateZoom);          // on: switches off once the look-ahead passes its gate
-    else on = destZoomingIn;                                    // off but at/above its gate: back on when zooming in
+    const on = destGateOn(tier, backPlan ? closeTarget! : camZoom);
     destTierOnRef.current.set(tier, on);
     return on;
   };
@@ -5671,6 +5649,12 @@ const destItems = useMemo((): DestItem[] =>
                 id={`destPhotoSymbols-${tier || 'ungated'}`}
                 aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
                 filter={['all', ['==', ['get', 'tier'], tier], ['!=', ['get', 'ho'], 1]] as any}
+                // The tier's gate as the layer's min zoom: Mapbox hides it the frame the camera zooms out past the gate,
+                // where destTierOn only learns of the zoom a render later (half a second and more behind a fast pinch,
+                // in which the pins of the tiers the camera had already left stayed up and piled together). The fade
+                // back in on the way in is still destTierOn's. Not during a close or back plan (backPlan), whose fly-to
+                // can dip below the target's gates on its way out: the plan holds its tiers there instead.
+                minZoomLevel={tier && !backPlan ? destGateZooms()[tier] ?? 0 : 0}
                 style={destTierStyle(tier, destTierOn(tier))}
               />
             )),
