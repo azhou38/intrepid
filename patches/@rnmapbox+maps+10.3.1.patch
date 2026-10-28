@@ -147,6 +147,21 @@ index 797cf3e..6d1989b 100644
    }
  
    @objc public func removeImageView(_ image: RNMBXImage) {
+diff --git a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift
+index 62861b5..be67cdb 100644
+--- a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift
++++ b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift
+@@ -1192,6 +1192,10 @@ extension RNMBXMapView {
+     })
+ 
+     self.onEvery(event: .styleLoaded, handler: { (self, event) in
++      // intrepid: symbols fade in and out over 0.1 s rather than Mapbox's default 0.3 s. The fade of a symbol shown or
++      // hidden by collision (a spot's small pin behind its photo pin) takes the style's transition duration, which a style
++      // load resets, so it is set again on every load.
++      self.mapboxMap.styleTransition = TransitionOptions(duration: 0.1, delay: 0, enablePlacementTransitions: true)
+       self.addFeaturesToMap(style: self.mapboxMap.style)
+ 
+       if !self.styleLoadWaiters.hasInited(), let mapboxMap = self.mapboxMap {
 diff --git a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js b/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
 index da6b273..6f11a9f 100644
 --- a/node_modules/@rnmapbox/maps/lib/module/components/Camera.js
