@@ -148,17 +148,18 @@ index 797cf3e..6d1989b 100644
  
    @objc public func removeImageView(_ image: RNMBXImage) {
 diff --git a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift
-index 62861b5..be67cdb 100644
+index 62861b5..2372271 100644
 --- a/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift
 +++ b/node_modules/@rnmapbox/maps/ios/RNMBX/RNMBXMapView.swift
-@@ -1192,6 +1192,10 @@ extension RNMBXMapView {
+@@ -1192,6 +1192,11 @@ extension RNMBXMapView {
      })
  
      self.onEvery(event: .styleLoaded, handler: { (self, event) in
-+      // intrepid: symbols fade in and out over 0.1 s rather than Mapbox's default 0.3 s. The fade of a symbol shown or
-+      // hidden by collision (a spot's small pin behind its photo pin) takes the style's transition duration, which a style
-+      // load resets, so it is set again on every load.
-+      self.mapboxMap.styleTransition = TransitionOptions(duration: 0.1, delay: 0, enablePlacementTransitions: true)
++      // intrepid: symbols shown or hidden by collision (a spot's small pin behind its photo pin) fade over 0.05 s rather
++      // than Mapbox's default 0.3 s. That fade takes the style's transition duration, and so does the wait before Mapbox
++      // re-checks collisions (once the last fade is done), so a small pin took about twice this to appear: 0.05 s gives
++      // about 0.1 s in all. A style load resets it, so it is set again on every load.
++      self.mapboxMap.styleTransition = TransitionOptions(duration: 0.05, delay: 0, enablePlacementTransitions: true)
        self.addFeaturesToMap(style: self.mapboxMap.style)
  
        if !self.styleLoadWaiters.hasInited(), let mapboxMap = self.mapboxMap {
