@@ -748,6 +748,9 @@ const PEEK_STRIP_H = 90;
 // — the sheet reports its new snap on the same tick it starts its own timing, so matching the
 // duration is what makes the map track the sheet rather than trail it.
 const SHEET_SNAP_MS = 280;
+// How long after a sheet starts settling from a drag its React-side bookkeeping here waits (see handleSheetSnapStateChange):
+// a MapScreen re-render committed while the sheet is still moving costs the sheet a frame.
+const SHEET_SETTLE_MS = 400;
 // Slack added on top of a programmatic camera animation's own duration before it's considered
 // finished (see beginProgrammaticCameraMove), so its last camera-changed events still count as ours.
 const PROGRAMMATIC_CAMERA_BUFFER_MS = 100;
@@ -1698,7 +1701,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // 0 while a destination sheet is held back until the camera lands (destAfterCamera): the back pill then leaves with the
   // sheet that is sliding away instead of lingering as a bare X over the empty map, and returns with the destination sheet.
   const pillShownSV = useSharedValue(1);
-  const upPillWrapStyle = useAnimatedStyle(() => ({ bottom: upPillBottomSV.value, opacity: pillShownSV.value }));
+  // Its height above the bottom as a transform from bottom: 0 (a `bottom` animated every frame of a sheet drag is a layout
+  // change, which re-lays-out the screen on the UI thread each frame).
+  const upPillWrapStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -upPillBottomSV.value }], opacity: pillShownSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
   // Cleared again immediately after — DestinationSheet only reads these in its initial
@@ -2006,10 +2011,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // never desync from the sheet.
   // The ref is set both reactively (onSnapStateChange) and synchronously at each site that
   // mounts/resets a sheet, and missing any one of those would strand the breadcrumb.
-  const setSheetSnapState = useCallback((state: 'peek' | 'collapsed' | 'full') => {
+  // deferReact: the React state (a MapScreen re-render) follows once the sheet has settled; see SHEET_SETTLE_MS.
+  const setSheetSnapState = useCallback((state: 'peek' | 'collapsed' | 'full', deferReact = false) => {
     sheetSnapStateRef.current = state;
     const peeking = state === 'peek';
-    setSheetPeeking(peeking);
+    if (deferReact) setTimeout(() => setSheetPeeking(sheetSnapStateRef.current === 'peek'), SHEET_SETTLE_MS);
+    else setSheetPeeking(peeking);
     pillPeekSV.value = withTiming(peeking ? 1 : 0, {
       duration: peeking ? 220 : 160,
       easing: Easing.out(Easing.quad),
@@ -3681,7 +3688,7 @@ const destItems = useMemo((): DestItem[] =>
   // deep in mercator, so the span follows exactly from the zoom, the map view's size and the
   // centre latitude (including mercator's latitude dependence, which an earlier synthesized
   // guess ignored).
-  const setDestHomeToDefault = useCallback((dest: Destination, framing: 'topHalf' | 'full') => {
+  const setDestHomeToDefault = useCallback((dest: Destination, framing: 'topHalf' | 'full', deferReact = false) => {
     const cam = destDefaultCamera(dest, framing);
     const worldSize = 512 * Math.pow(2, cam.zoom);
     const halfH = (mapViewHRef.current || (H - BOTTOM_TAB_H)) / 2 / worldSize;
@@ -3693,7 +3700,7 @@ const destItems = useMemo((): DestItem[] =>
     };
     destHomeRegionRef.current = home;
     destHomeZoomRef.current = cam.zoom;
-    setDestHomeRegion(home);
+    if (!deferReact) setDestHomeRegion(home);   // deferred: the caller syncs the state from the ref
   }, [destDefaultCamera]);
 
   // Spot equivalent of fitDestinationDefaultView — same closed-form point-centring math, but
@@ -3862,9 +3869,11 @@ const destItems = useMemo((): DestItem[] =>
   // (mapViewH − PEEK_STRIP_H) at bottom-screen. moveBy takes raw screen pixels (it's a
   // synthetic drag internally), which is exactly the right primitive for a pixel delta that
   // has no geographic meaning of its own.
+  // The refs, shared values and camera move here take effect at once; the React state (setSheetPeeking and the home
+  // regions) follows once the sheet has settled, since the re-render it costs committed mid-slide and dropped a frame.
   const handleSheetSnapStateChange = useCallback((state: 'peek' | 'collapsed' | 'full') => {
     const prev = sheetSnapStateRef.current;
-    setSheetSnapState(state);
+    setSheetSnapState(state, true);
 
     // prev === state: sheets report their snap on mount too, and a fresh selection's initial
     // report always matches what was just set synchronously — without this guard, every new
@@ -3900,9 +3909,12 @@ const destItems = useMemo((): DestItem[] =>
     // reasoning. A destination's home is instead moved straight to its default view for the new
     // window (see setDestHomeToDefault), so a pan before this shift settles can't become home.
     countryHomeRegionRef.current = null;
-    setCountryHomeRegion(null);
-    if (selectedDestRef.current) setDestHomeToDefault(selectedDestRef.current, state === 'peek' ? 'full' : 'topHalf');
-    else { destHomeRegionRef.current = null; setDestHomeRegion(null); }
+    if (selectedDestRef.current) setDestHomeToDefault(selectedDestRef.current, state === 'peek' ? 'full' : 'topHalf', true);
+    else destHomeRegionRef.current = null;
+    setTimeout(() => {
+      setCountryHomeRegion(countryHomeRegionRef.current);
+      setDestHomeRegion(destHomeRegionRef.current);
+    }, SHEET_SETTLE_MS);
     destFlightInterruptedRef.current = false;
 
     cameraRef.current?.moveBy({ x: 0, y: dy, animationMode: 'easeTo', animationDuration: SHEET_SNAP_MS });
@@ -6464,7 +6476,7 @@ const styles = StyleSheet.create({
   // Back pill
   // zIndex must clear the sheets' backdrop/shadow layers (up to 210) or the pill renders
   // dimmed underneath the sheet's drop shadow instead of cleanly above it.
-  upPillWrap: { position: 'absolute', left: 12, zIndex: 220, elevation: 220 },
+  upPillWrap: { position: 'absolute', left: 12, bottom: 0, zIndex: 220, elevation: 220 },
   upPill: {
     flexDirection: 'row', alignItems: 'center', gap: 4,
     backgroundColor: 'rgba(255,255,255,0.97)', borderRadius: 22,

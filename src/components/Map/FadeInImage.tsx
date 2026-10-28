@@ -31,19 +31,30 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
   const sx = subject?.x ?? 0.5, sy = subject?.y ?? 0.5, zoom = subject?.zoom ?? 1;
   const show = () => { opacity.value = instant ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) }); };
   useEffect(() => { const t = setTimeout(show, 1500); return () => clearTimeout(t); }, []);   // failsafe, as in BoxImage
+  // Laid out once at the full-height framing; the move toward the shortest framing is a transform (both framings cover
+  // the box at the photo's own aspect, so one is the other scaled and moved). Animating left/top/width/height instead
+  // re-laid-out the screen on every frame of a sheet drag.
+  const layoutStyle = useAnimatedStyle(() => {
+    const nw = naturalW.value, nh = naturalH.value;
+    if (!nw || !nh) return { position: 'absolute', left: 0, top: 0, width: frame.width, height: frame.fullH };
+    const a = subjectCoverRectUI(frame.width, frame.fullH, nw, nh, sx, sy, zoom);
+    return { position: 'absolute', left: a.left, top: a.top, width: a.width, height: a.height };
+  });
   const animStyle = useAnimatedStyle(() => {
     const nw = naturalW.value, nh = naturalH.value;
-    if (!nw || !nh) return { position: 'absolute', left: 0, top: 0, width: frame.width, height: frame.fullH, opacity: opacity.value };
+    if (!nw || !nh) return { opacity: opacity.value, transform: [{ translateX: 0 }, { translateY: 0 }, { scale: 1 }] };
     const minH = Math.min(frame.minH.value, frame.fullH);
     const a = subjectCoverRectUI(frame.width, frame.fullH, nw, nh, sx, sy, zoom);
     const b = subjectCoverRectUI(frame.width, minH, nw, nh, sx, sy, zoom);
     const span = frame.fullH - minH;
     const p = span > 0 ? Math.max(0, Math.min(1, (frame.fullH - frame.height.value) / span)) : 0;
+    // The framing for this height, as a scale about the full framing's centre and a move of that centre.
+    const w = a.width + (b.width - a.width) * p;
+    const cx = (a.left + (b.left - a.left) * p) + w / 2;
+    const cy = (a.top + (b.top - a.top) * p) + (a.height + (b.height - a.height) * p) / 2;
     return {
-      position: 'absolute',
-      left: a.left + (b.left - a.left) * p, top: a.top + (b.top - a.top) * p,
-      width: a.width + (b.width - a.width) * p, height: a.height + (b.height - a.height) * p,
       opacity: opacity.value,
+      transform: [{ translateX: cx - (a.left + a.width / 2) }, { translateY: cy - (a.top + a.height / 2) }, { scale: w / a.width }],
     };
   });
   return (
@@ -51,7 +62,7 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
       <Reanimated.Image
         {...rest}
         resizeMode="cover"
-        style={animStyle}
+        style={[layoutStyle, animStyle]}
         onLoad={e => {
           const src = e.nativeEvent?.source;
           if (src?.width && src?.height) { naturalW.value = src.width; naturalH.value = src.height; }
