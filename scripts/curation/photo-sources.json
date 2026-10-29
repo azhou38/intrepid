@@ -1,0 +1,28 @@
+{
+ "_about": "Sources for the Google Images step of gather-photo-candidates.py (IMAGES.md → 'When Commons has no suitable photo'). official_with_permission: tourism boards and parks agencies (and trail bodies such as Walking SA), whose photos the owner may use: 'official photo, used with permission'. Add a region's own tourism and parks sites before its run. excluded: hosts whose images are never usable (stock, social, booking, aggregators); matched as substrings of the page's host.",
+ "official_with_permission": [
+  "tongatourism.travel",
+  "southaustralia.com",
+  "fleurieupeninsula.com.au",
+  "visitvictorharbor.com",
+  "parks.sa.gov.au",
+  "environment.sa.gov.au",
+  "walkingsa.org.au",
+  "doc.govt.nz",
+  "newzealand.com",
+  "australia.com",
+  "parksaustralia.gov.au",
+  "nationalparks.nsw.gov.au",
+  "visitnsw.com",
+  "parks.vic.gov.au",
+  "parks.tas.gov.au",
+  "discovertasmania.com.au",
+  "northernterritory.com"
+ ],
+ "excluded": [
+  "facebook.", "instagram.", "tiktok.", "youtube.", "pinterest.", "x.com", "twitter.", "reddit.", "redd.it",
+  "alamy.", "shutterstock.", "gettyimages", "istockphoto", "dreamstime", "123rf", "depositphotos", "stock.adobe",
+  "tripadvisor.", "expedia.", "booking.", "agoda.", "trip.com", "airbnb.", "hotels.com",
+  "britannica.", "mindtrip.", "mapcarta.", "researchgate.", "planet.com", "abposters", "evendo."
+ ]
+}

@@ -177,6 +177,8 @@ Every photo must show something the others and the spot's own photo do not. Reje
 
 **Default to non-Commons imagery whenever Commons cannot give a spot or destination enough good photos.** "Enough" means the spot has a photo, or a destination has a header and a why-visit photo for each of its reasons (two to four) or a spot photo, and for a gallery at least two photos that pass every rule below. A spot with no good Commons photo is never dropped, left with a wrong or archive photo, or left without a gallery for want of a Commons file. Use these in order:
 
+The gather script searches Google Images alongside Commons for every slot (PIPELINES.md → Pipeline B step 2); its hits are sorted into these tiers by their source page, and the licence is never assumed from Google.
+
 1. **Openly licensed** (CC0, public domain, CC BY, CC BY-SA, CC BY-ND): DOC images that DOC labels "Creative Commons", Unsplash, Pexels. Keep the credit.
 2. **Official photos from tourism and parks organisations.** The owner has permission to use them. These are national, state and regional tourism boards and their listings (Tourism Australia, the state tourism commissions, regional tourism brands, the Australian Tourism Data Warehouse photos on their sites) and parks agencies (DOC, Parks Australia, the state national-parks services, and park and trail bodies such as Walking SA). Record the owner and source page in the credit, with the licence "official photo, used with permission". A photo from **any other** official source (an operator, a council, a business's own site) keeps the licence "official photo, permission not confirmed" and is flagged in the pull request, as before.
 3. Blogs, travel sites and stock agencies last, and only when nothing better exists.

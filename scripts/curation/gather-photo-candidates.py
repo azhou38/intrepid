@@ -8,10 +8,19 @@ choose. The image-searcher agent is left only the slots this finds nothing for, 
 Reads <group-dir>/task.json (lens-triage.ts). Per `search` slot, in order:
   1. the Wikipedia article's lead image (a spot's default photo is always offered: image-searcher checklist),
   2. Commons: a geosearch round the pin (spots) and name searches qualified by destination and country,
-Only licences IMAGES.md accepts: CC0, public domain, CC BY, CC BY-SA, CC BY-ND (no NC).
+  3. Google Images through Apify (the johnvc/google-images-api actor, 50 results per slot, about $0.005 a slot), when
+     APIFY_TOKEN is set (in the environment or .env.local): one call per group for every slot not already cached. A hit
+     that is a Commons file joins step 2 (its licence then comes from Commons); the rest are kept only from hosts not in
+     the `excluded` list of scripts/curation/photo-sources.json and wide enough, at most 8 per slot, labelled "official
+     photo, used with permission" for the tourism and parks sites listed there and "web photo, permission not confirmed"
+     otherwise (IMAGES.md tiers).
+Only Commons licences IMAGES.md accepts: CC0, public domain, CC BY, CC BY-SA, CC BY-ND (no NC).
 Then the IMAGES.md pre-filter in code: minimum width for the slot type, JPEG/PNG only, no map/drawing/flag/logo titles or
 categories, nothing dated before 2000, no near-grey scans, nothing geotagged more than 25 km from a spot's pin (150 km for a
-destination); duplicates dropped; ranked lead image first, then photos that name the place, nearest first.
+destination); duplicates dropped. Ranked by source, then by name: the lead image, Commons photos that name the place
+(nearest first), Google hits from official tourism and parks sites, Commons photos found only by their geotag (at most
+four), then other Google hits, so one sheet per slot shows both searches with the cleanest licences first. --max caps
+the Commons photos; the Google hits (at most 8) come on top, so a slot Commons fills with near-misses still shows them.
 Thumbnails (480 px) are cached in .cache/curation/thumbs/ and reused across runs.
 
 Writes <group-dir>/candidates.json ({slot: [{n, file|url, page, width, height, licence, by, date, dist_m, source, thumb}]},
@@ -126,7 +135,58 @@ def name_words(name):
     base = re.findall(r"[a-z']+", re.sub(r'\([^)]*\)', '', name.lower()))
     return [w for w in base if len(w) > 3 and w not in STOP] or [w for w in base if len(w) > 3]
 
-def gather(sl, ctx, maxn, unresolved):
+SOURCES = json.load(open(os.path.join(os.path.dirname(__file__), 'photo-sources.json')))
+GCACHE = os.path.join(CACHE, 'google'); os.makedirs(GCACHE, exist_ok=True)
+
+def apify_token():
+    if os.environ.get('APIFY_TOKEN'): return os.environ['APIFY_TOKEN']
+    if os.path.exists('.env.local'):
+        m = re.search(r'^APIFY_TOKEN=(.+)$', open('.env.local').read(), re.M)
+        if m and 'paste-your-token' not in m.group(1): return m.group(1).strip()
+    return None
+
+def google_query(ctx):
+    where = ' '.join(q for q in ctx['quals'] if q and q.lower() not in ctx['name'].lower())
+    what = f"{ctx['reason']} {ctx['name']}" if ctx['reason'] else ctx['name']
+    return f'{what} {where}'.strip()
+
+def google_results(queries, unresolved):
+    """{query: [result]} from the cache (30 days), with one Apify call for the queries not cached. Billed per image."""
+    out, todo = {}, []
+    for q in queries:
+        f = os.path.join(GCACHE, hashlib.sha1(q.encode()).hexdigest() + '.json')
+        if os.path.exists(f) and time.time() - os.path.getmtime(f) < 30 * 86400: out[q] = json.load(open(f))
+        else: todo.append(q)
+    if not todo: return out
+    token = apify_token()
+    if not token:
+        for q in todo: unresolved.setdefault(q, []).append('google images: no APIFY_TOKEN set')
+        return out
+    body = json.dumps({'queries': todo, 'maxResultsPerQuery': 50, 'gl': 'us', 'hl': 'en'}).encode()
+    req = urllib.request.Request('https://api.apify.com/v2/acts/johnvc~google-images-api/run-sync-get-dataset-items?timeout=290',
+                                 data=body, headers={'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'})
+    try:
+        items = json.loads(urllib.request.urlopen(req, timeout=320).read())
+    except Exception as e:
+        for q in todo: unresolved.setdefault(q, []).append(f'google images: {e}')
+        return out
+    notice = next((x.get('message') for x in items if x.get('notice')), None)
+    got = {}
+    for x in items:
+        if x.get('query'): got.setdefault(x['query'], []).append(x)
+    for q in todo:
+        if q in got:
+            out[q] = got[q]
+            json.dump(got[q], open(os.path.join(GCACHE, hashlib.sha1(q.encode()).hexdigest() + '.json'), 'w'))
+        else:
+            unresolved.setdefault(q, []).append('google images: ' + (notice or 'no results returned'))
+    return out
+
+def host(url):
+    m = re.match(r'https?://([^/]+)', url or '')
+    return (m.group(1).lower() if m else '').removeprefix('www.')
+
+def gather(sl, ctx, maxn, unresolved, google=None):
     titles, origin = [], {}
     def add(t, src):
         if t not in origin: titles.append(t); origin[t] = src
@@ -149,6 +209,21 @@ def gather(sl, ctx, maxn, unresolved):
         st, d = commons({'action': 'query', 'list': 'search', 'srsearch': q + ' filetype:bitmap', 'srnamespace': 6, 'srlimit': 20})
         if d is None: unresolved.append(f'commons search "{q}": HTTP {st}'); continue
         for r in d.get('query', {}).get('search', []): add(r['title'][5:], 'commons-search')
+    web = []
+    for r in google or []:
+        img, page = r.get('imageUrl') or '', r.get('link') or ''
+        m = re.search(r'upload\.wikimedia\.org/wikipedia/commons/(?:thumb/)?[0-9a-f]/[0-9a-f]{2}/([^/?]+)', img) or re.search(r'commons\.wikimedia\.org/wiki/File:([^?#]+)', page)
+        if m: add(urllib.parse.unquote(m.group(1)).replace('_', ' '), 'google-commons'); continue
+        h = host(page)
+        if not h or any(x in h for x in SOURCES['excluded']) or 'wikipedia.org' in h or 'wikimedia.org' in h: continue
+        if (r.get('imageWidth') or 0) < MIN_W[ctx['type']] or BAD.search(img.rsplit('/', 1)[-1]): continue
+        official = any(h == d or h.endswith('.' + d) for d in SOURCES['official_with_permission'])
+        web.append({'url': img, 'page': page, 'width': r.get('imageWidth'), 'height': r.get('imageHeight'),
+                    'licence': 'official photo, used with permission' if official else 'web photo, permission not confirmed',
+                    'by': h, 'title': r.get('title'), 'date': '', 'dist_m': None, 'source': 'google-official' if official else 'google',
+                    'named': all(w in (r.get('title') or '').lower() for w in name_words(ctx['name'])),
+                    'thumb_url': r.get('thumbnailUrl') or img})
+    web = sorted(web, key=lambda c: c['source'] != 'google-official')[:8]   # keeps Google's order within each group
     info = fileinfo(titles)
     cands, minw = [], MIN_W[ctx['type']]
     for t in titles:
@@ -171,17 +246,23 @@ def gather(sl, ctx, maxn, unresolved):
         cands.append({'file': t, 'page': ii.get('descriptionurl'), 'width': ii['width'], 'height': ii['height'],
                       'licence': re.sub('<[^>]+>', '', md.get('LicenseShortName', {}).get('value', '')),
                       'by': re.sub('<[^>]+>', '', md.get('Artist', {}).get('value', ''))[:80], 'date': (yr.group(1) if yr else ''),
-                      'dist_m': dist, 'source': origin[t], 'named': named, 'thumb_url': ii.get('thumburl')})
+                      'dist_m': dist, 'source': origin[t], 'named': named or origin[t] == 'google-commons', 'thumb_url': ii.get('thumburl')})
+    cands += web
     # Ranked: the lead image, then photos that NAME the place (title, categories or description), nearest geotag first, then
     # at most four unnamed photos found only by their geotag (a geosearch also returns the cars, schools and offices nearby).
-    seen, out, unnamed = set(), [], 0
-    rank = lambda c: (0 if c['source'] == 'wikipedia-lead' else 1 if c['named'] else 2, c['dist_m'] if c['dist_m'] is not None else 10 ** 7)
-    cands.sort(key=rank)
+    seen, out, unnamed, n_commons = set(), [], 0, 0
+    def rank(c):
+        s = c['source']
+        g = (0 if s == 'wikipedia-lead' else 2 if s == 'google-official' else 4 if s == 'google' else 1 if c['named'] else 3)
+        return (g, c['dist_m'] if c['dist_m'] is not None else 10 ** 7)
+    cands.sort(key=rank)   # a stable sort, so Google hits keep Google's order within their group
     for c in cands:
         k = c.get('file') or c.get('url')
         if k in seen: continue
         seen.add(k)
-        if c['source'] != 'wikipedia-lead' and not c['named']:
+        is_web = c['source'] in ('google', 'google-official')
+        if not is_web and n_commons >= maxn: continue   # Commons keeps its own --max; Google's (at most 8) come on top
+        if c['source'] in ('commons-geo', 'commons-search') and not c['named']:
             if unnamed >= 4: continue
             unnamed += 1
         st, raw = get(c['thumb_url'], binary=True)
@@ -195,7 +276,7 @@ def gather(sl, ctx, maxn, unresolved):
         c['thumb'] = os.path.join(CACHE, 'thumbs', hashlib.sha1(c['thumb_url'].encode()).hexdigest() + '.jpg')
         del c['thumb_url']
         out.append(c)
-        if len(out) >= maxn: break
+        n_commons += 0 if is_web else 1
     for i, c in enumerate(out, 1): c['n'] = i
     return out
 
@@ -229,19 +310,26 @@ def main():
     os.makedirs(os.path.join(gdir, 'sheets'), exist_ok=True)
     unresolved_all = cands.get('_unresolved', {})
     n_slots = n_c = n_empty = 0
+    todo = [sl for sl in task['slots'] if sl['status'] == 'search' and not (only and sl['slot'] not in only)
+            and (sl['slot'] not in cands or force or sl['slot'] in unresolved_all)]
+    ctxs = {sl['slot']: slot_context(sl) for sl in todo}
+    gun = {}
+    gres = google_results(sorted({google_query(c) for c in ctxs.values() if c}), gun)
     for sl in task['slots']:
         if sl['status'] != 'search' or (only and sl['slot'] not in only): continue
         if sl['slot'] in cands and not force and sl['slot'] not in unresolved_all: continue
-        ctx = slot_context(sl)
+        ctx = ctxs.get(sl['slot']) or slot_context(sl)
         if not ctx: unresolved_all[sl['slot']] = ['place not found in src/data']; continue
-        un = []
-        items = gather(sl, ctx, maxn, un)
+        q = google_query(ctx)
+        un = list(gun.get(q, []))
+        items = gather(sl, ctx, maxn, un, gres.get(q))
         cands[sl['slot']] = items
         if un: unresolved_all[sl['slot']] = un
         else: unresolved_all.pop(sl['slot'], None)
         safe = re.sub(r'[^a-z0-9]+', '-', sl['slot'].lower())
         sheet(items, os.path.join(gdir, 'sheets', safe + '.jpg'),
-              lambda it: f"{it['width']}px {it['licence'][:12]} {(str(it['dist_m']) + 'm') if it['dist_m'] is not None else ''} {it['source'][:14]}")
+              lambda it: f"{it['width']}px {it['by'][:22]} {it['source']}" if it['source'].startswith('google') and it['source'] != 'google-commons'
+                         else f"{it['width']}px {it['licence'][:12]} {(str(it['dist_m']) + 'm') if it['dist_m'] is not None else ''} {it['source'][:14]}")
         n_slots += 1; n_c += len(items); n_empty += 0 if items else 1
     # The current photos of the confirm slots, on one sheet for the first judge.
     conf = []
