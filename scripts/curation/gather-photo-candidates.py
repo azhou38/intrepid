@@ -8,8 +8,6 @@ choose. The image-searcher agent is left only the slots this finds nothing for, 
 Reads <group-dir>/task.json (lens-triage.ts). Per `search` slot, in order:
   1. the Wikipedia article's lead image (a spot's default photo is always offered: image-searcher checklist),
   2. Commons: a geosearch round the pin (spots) and name searches qualified by destination and country,
-  3. Openverse (Flickr and others; Flickr originals need a Referer, which this sends), every slot,
-  4. Flickr's own search round the pin and by name, when FLICKR_API_KEY is set (a free key: flickr.com/services/apps/create).
 Only licences IMAGES.md accepts: CC0, public domain, CC BY, CC BY-SA, CC BY-ND (no NC).
 Then the IMAGES.md pre-filter in code: minimum width for the slot type, JPEG/PNG only, no map/drawing/flag/logo titles or
 categories, nothing dated before 2000, no near-grey scans, nothing geotagged more than 25 km from a spot's pin (150 km for a
@@ -128,38 +126,6 @@ def name_words(name):
     base = re.findall(r"[a-z']+", re.sub(r'\([^)]*\)', '', name.lower()))
     return [w for w in base if len(w) > 3 and w not in STOP] or [w for w in base if len(w) > 3]
 
-FLICKR_KEY = os.environ.get('FLICKR_API_KEY', '')
-# Flickr licence ids that IMAGES.md accepts: 4 CC BY, 5 CC BY-SA, 6 CC BY-ND, 9 CC0, 10 public domain mark (no NC).
-FLICKR_LICENCES = {'4': 'CC BY 2.0', '5': 'CC BY-SA 2.0', '6': 'CC BY-ND 2.0', '9': 'CC0 1.0', '10': 'Public Domain Mark'}
-
-def flickr(ctx, minw, unresolved):
-    """Flickr photos.search twice: round the pin (spots: 1.5 km; others: 10 km), then the name within 30 km of it."""
-    out = []
-    base = {'method': 'flickr.photos.search', 'api_key': FLICKR_KEY, 'format': 'json', 'nojsoncallback': 1, 'license': ','.join(FLICKR_LICENCES),
-            'content_type': 1, 'media': 'photos', 'sort': 'relevance', 'per_page': 30, 'min_taken_date': '2000-01-01',
-            'extras': 'url_o,url_k,url_h,url_c,owner_name,license,date_taken,geo,description,tags'}
-    searches = []
-    if ctx['coords']:
-        lat, lon = ctx['coords']
-        searches.append(dict(base, lat=lat, lon=lon, radius=1.5 if ctx['type'] == 'spot' else 10, radius_units='km'))
-        searches.append(dict(base, text=ctx['name'], lat=lat, lon=lon, radius=30, radius_units='km'))
-    else:
-        searches.append(dict(base, text=f'{ctx["name"]} {ctx["quals"][0] if ctx["quals"] else ""}'.strip()))
-    for p in searches:
-        st, d = api_json('https://api.flickr.com/services/rest/?' + urllib.parse.urlencode(p))
-        if d is None or d.get('stat') != 'ok':
-            unresolved.append(f'flickr search: HTTP {st} {(d or {}).get("message", "")}'.strip()); continue
-        for r in d.get('photos', {}).get('photo', []):
-            size = next((s for s in ('o', 'k', 'h') if r.get(f'url_{s}')), None)
-            if not size or int(r.get(f'width_{size}') or 0) < minw or BAD.search(r.get('title') or ''): continue
-            text = ' '.join([r.get('title') or '', (r.get('description') or {}).get('_content', ''), r.get('tags') or '']).lower()
-            dist = int(hav(ctx['coords'], (float(r['latitude']), float(r['longitude'])))) if ctx['coords'] and float(r.get('latitude') or 0) else None
-            out.append({'url': r[f'url_{size}'], 'page': f"https://www.flickr.com/photos/{r['owner']}/{r['id']}/", 'width': int(r[f'width_{size}']),
-                        'height': int(r[f'height_{size}']), 'licence': FLICKR_LICENCES.get(str(r.get('license')), ''), 'by': (r.get('ownername') or '')[:80],
-                        'title': r.get('title'), 'date': (r.get('datetaken') or '')[:4], 'dist_m': dist, 'source': 'flickr',
-                        'named': all(w in text for w in name_words(ctx['name'])), 'thumb_url': r.get('url_c') or r[f'url_{size}']})
-    return out
-
 def gather(sl, ctx, maxn, unresolved):
     titles, origin = [], {}
     def add(t, src):
@@ -206,22 +172,6 @@ def gather(sl, ctx, maxn, unresolved):
                       'licence': re.sub('<[^>]+>', '', md.get('LicenseShortName', {}).get('value', '')),
                       'by': re.sub('<[^>]+>', '', md.get('Artist', {}).get('value', ''))[:80], 'date': (yr.group(1) if yr else ''),
                       'dist_m': dist, 'source': origin[t], 'named': named, 'thumb_url': ii.get('thumburl')})
-    # 3. Openverse, every slot (free to run; the judges see only what survives the filter). Usable licences only (IMAGES.md):
-    # ND is fine, since the app's crop and brightening are display; NC is not.
-    q = f'{ctx["name"]} {ctx["quals"][0] if ctx["quals"] else ""}'.strip()
-    st, d = api_json('https://api.openverse.org/v1/images/?' + urllib.parse.urlencode({'q': q, 'page_size': 12, 'license': 'cc0,pdm,by,by-sa,by-nd'}))
-    if d is None: unresolved.append(f'openverse "{q}": HTTP {st} (Cloudflare challenges scripts; retry, or search in a browser)')
-    else:
-        for r in d.get('results', []):
-            if (r.get('width') or 0) < minw or BAD.search(r.get('title') or ''): continue
-            if r.get('source') in ('wikimedia', 'wikimedia_commons'): continue   # Commons is searched directly above
-            cands.append({'url': r.get('url'), 'page': r.get('foreign_landing_url'), 'width': r.get('width'), 'height': r.get('height'),
-                          'licence': f"CC {(r.get('license') or '').upper()} {r.get('license_version') or ''}".strip(), 'by': (r.get('creator') or '')[:80],
-                          'title': r.get('title'), 'date': '', 'dist_m': None, 'source': 'openverse:' + (r.get('provider') or ''),
-                          'named': all(w in (r.get('title') or '').lower() for w in name_words(ctx['name'])), 'thumb_url': r.get('url')})
-    # 4. Flickr, by location (round the pin) and by name, usable licences only, when FLICKR_API_KEY is set.
-    if FLICKR_KEY:
-        cands += flickr(ctx, minw, unresolved)
     # Ranked: the lead image, then photos that NAME the place (title, categories or description), nearest geotag first, then
     # at most four unnamed photos found only by their geotag (a geosearch also returns the cars, schools and offices nearby).
     seen, out, unnamed = set(), [], 0
@@ -234,7 +184,7 @@ def gather(sl, ctx, maxn, unresolved):
         if c['source'] != 'wikipedia-lead' and not c['named']:
             if unnamed >= 4: continue
             unnamed += 1
-        st, raw = get(c['thumb_url'], referer='https://www.flickr.com/' if 'flickr' in (c['thumb_url'] or '') else None, binary=True)
+        st, raw = get(c['thumb_url'], binary=True)
         if raw is None: unresolved.append(f'thumbnail {k}: HTTP {st}'); continue
         try:
             im = Image.open(io.BytesIO(raw)).convert('RGB')
