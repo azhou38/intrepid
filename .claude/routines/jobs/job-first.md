@@ -1,5 +1,5 @@
-# Job: Pipeline B, first pass for ONE group (gaps search + first judge)
-Repo: the repository root you were started in (edit nothing except candidates.json and judge-1.json in your group folder). Roles: .claude/agents/image-searcher.md and image-judge.md; their checklists carry the photo rules, so open IMAGES.md only for a case they don't settle. Input: the group folder, already prepared by the orchestrator with `lens-triage.ts`, `photo-prove.py` and `gather-photo-candidates.py`: `task.json`, `candidates.json` (with `_unresolved`), `sheets/<slot>.jpg` per search slot and `sheets/confirm.jpg`.
+# Job: Pipeline B, first judge for ONE group
+Repo: the repository root you were started in (edit nothing except judge-1.json, or judge-1-search.json when you judge the searchers' finds in candidates-search.json). Role: .claude/agents/image-judge.md; their checklists carry the photo rules, so open IMAGES.md only for a case they don't settle. Input: the group folder, already prepared by the orchestrator with `lens-triage.ts`, `photo-prove.py` and `gather-photo-candidates.py`: `task.json`, `candidates.json` (with `_unresolved`), `sheets/<slot>.jpg` per search slot and `sheets/confirm.jpg`.
 
 Each slot in task.json has a status:
 - `skip` or `proven`: done. Do nothing.
