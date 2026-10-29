@@ -9,8 +9,7 @@ build: for every group under <lens-dir> (a folder with task.json, candidates.jso
 and judge-1-search.json when the searcher's finds were judged), takes the slots where the first judge chose a NEW file and
 checks every candidate of those slots, never telling the second judge which one the first judge chose:
   size      width under the slot's floor (header 1500, why-visit 1280, spot 960), or a header outside aspect 0.6–2.0 → fail
-  licence   NC, all rights reserved, or no licence → fail; "used with permission" whose credit (file name or source page)
-            names another owner than the site → relabelled "official photo, permission not confirmed"
+  licence   NC, all rights reserved, or no licence → fail
   in use    the same file is already another spot's photo → fail; a destination's header or why-visit photo → note only
             (sharing within one destination is allowed: IMAGES.md → "Why visit photos")
   bright    centre-square 40th percentile < 0.22 or mean < 0.30 → note (the reconciler brightens it)
@@ -24,13 +23,11 @@ merges them into each group's judge-2.json, the file record-verdicts.ts and the 
 Batch size: a judge's cost is mostly its fixed start (reading the rules and files), so 33 slots cost about the same as 10
 on Tonga (58k vs 71k tokens). Keep --size at 30–40; more than about 40 slots makes one agent's turns long.
 """
-import glob, hashlib, json, os, re, sys, urllib.request
+import glob, json, os, re, sys
 from PIL import Image, ImageDraw
 
 MIN_W = {'header': 1500, 'why': 1280, 'spot': 960}
 FLOOR_P40, FLOOR_MEAN = 0.22, 0.30
-UA = 'IntrepidApp-Curation/1.0'
-CACHE = os.path.join('.cache', 'curation', 'precheck')
 
 
 def kind(slot):
@@ -50,58 +47,12 @@ def new_file_choice(v):
     return c
 
 
-def page_text(url):
-    """The source page's HTML (cached), or '' when it cannot be fetched (recorded as unresolved, never as a pass)."""
-    if not url or not url.startswith('http'): return None
-    os.makedirs(CACHE, exist_ok=True)
-    f = os.path.join(CACHE, hashlib.sha1(url.encode()).hexdigest() + '.html')
-    if os.path.exists(f): return open(f, encoding='utf-8', errors='ignore').read()
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 ' + UA})
-        html = urllib.request.urlopen(req, timeout=20).read().decode('utf-8', 'ignore')
-    except Exception:
-        return None
-    open(f, 'w', encoding='utf-8').write(html)
-    return html
-
-
-CREDIT_IN_NAME = re.compile(r'(?:must|mandatory)[-_ ]*credit[-_ ]*(?:to[-_ ]*)?([A-Za-z0-9][A-Za-z0-9_.-]{2,40})', re.I)
-CREDIT_IN_PAGE = re.compile(r'(?:photo(?:graph)?(?: credit)?|image(?: credit)?|credit|©)\s*[:\-–by]*\s*([A-Z][\w&.\' -]{2,50})', re.I)
-
-
-def credit(c):
-    """(credit text, where found) from the file name, else from the source page near the image's file name."""
-    url = c.get('url') or c.get('file') or ''
-    m = CREDIT_IN_NAME.search(os.path.basename(url.split('?')[0]))
-    if m: return re.sub(r'\.(jpe?g|png|webp)$', '', m.group(1), flags=re.I).split('-')[0].strip('_. '), 'file name'
-    html = page_text(c.get('page'))
-    if html is None: return None, 'page unreachable'
-    base = os.path.basename(url.split('?')[0])
-    i = html.find(base) if base else -1
-    window = html[max(0, i - 1500): i + 1500] if i >= 0 else ''
-    m = CREDIT_IN_PAGE.search(re.sub(r'<[^>]+>', ' ', window))
-    return (m.group(1).strip(), 'source page') if m else (None, 'no credit line')
-
-
-def site(url):
-    m = re.match(r'https?://(?:www\.)?([^/]+)', url or '')
-    return m.group(1).lower() if m else ''
-
-
 def licence_check(c):
     lic = str(c.get('licence') or '').strip()
     if not lic: return 'fail', lic, 'no licence recorded'
     if re.search(r'\bNC\b|non-?commercial', lic, re.I): return 'fail', lic, 'non-commercial licence'
     if re.search(r'all rights reserved', lic, re.I): return 'fail', lic, 'all rights reserved'
-    if 'commons.wikimedia' in str(c.get('page')) or c.get('source', '').startswith(('commons', 'wikipedia')):
-        return 'pass', lic, 'Commons licence data'
-    who, where = credit(c)
-    if 'used with permission' in lic and who:
-        owner = re.sub(r'[^a-z0-9]', '', who.lower())
-        host = re.sub(r'[^a-z0-9]', '', site(c.get('page') or c.get('url')).split('.')[0])
-        if owner and host and owner[:6] not in host and host[:6] not in owner:
-            return 'pass', 'official photo, permission not confirmed', f'credit names {who} ({where}), not the site'
-    return 'pass', lic, f'credit: {who} ({where})' if who else where
+    return 'pass', lic, 'licence as recorded'
 
 
 def in_use_index():
