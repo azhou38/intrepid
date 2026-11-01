@@ -1708,6 +1708,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
       * (spotBackPeekSV.value ? pillPeekSV.value : 1),
   }));
+  // The full-screen down arrow and the half-screen X share one button and crossfade with the sheet's position as it is
+  // dragged, instead of swapping when the snap settles (mapState flips only after the sheet comes to rest).
+  const upPillArrowStyle = useAnimatedStyle(() => ({ opacity: rInterpolate(upPillFullSV.value, [0.35, 0.65], [0, 1], RExtrapolation.CLAMP) }));
+  const upPillXStyle = useAnimatedStyle(() => ({ opacity: rInterpolate(upPillFullSV.value, [0.35, 0.65], [1, 0], RExtrapolation.CLAMP) }));
+  const upPillChromeStyle = useAnimatedStyle(() => ({
+    shadowOpacity: rInterpolate(upPillFullSV.value, [0.35, 0.65], [0.14, 0], RExtrapolation.CLAMP),
+  }));
   const [sheetPeeking, setSheetPeeking] = useState(false);
   // 1 whenever the open sheet — country, destination or spot — is sitting at half-screen
   // ('collapsed'): forces the breadcrumb bar (Country | Destination) to hide there regardless of
@@ -6445,6 +6452,7 @@ const destItems = useMemo((): DestItem[] =>
           pillNextOwnerSV={pillNextOwnerSV}
           pillHandoverSV={pillHandoverSV}
           pillOwnerId={PILL_OWNER.country}
+          pillFullSV={upPillFullSV}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
@@ -6635,15 +6643,20 @@ const destItems = useMemo((): DestItem[] =>
               const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
-                  {full ? (
-                    <Pressable style={styles.upPillBare} onPress={handlePillCollapse} hitSlop={6}>
-                      <ChevronDown size={24} color="#374151" strokeWidth={2.5} />
-                    </Pressable>
-                  ) : (
-                    <Pressable style={[styles.upPill, styles.upPillFixed, styles.upPillRound]} onPress={handleCloseToMap} hitSlop={6}>
-                      <X size={15} color="#374151" strokeWidth={2.5} />
-                    </Pressable>
-                  )}
+                  <Pressable
+                    // Decided at the tap from where the sheet actually is, so a tap mid-drag matches the icon showing.
+                    onPress={() => (upPillFullSV.value >= 0.5 ? handlePillCollapse() : handleCloseToMap())}
+                    hitSlop={6}
+                  >
+                    <Reanimated.View style={[styles.upPill, styles.upPillFixed, styles.upPillRound, upPillChromeStyle]}>
+                      <Reanimated.View style={[styles.upPillIcon, upPillXStyle]}>
+                        <X size={15} color="#374151" strokeWidth={2.5} />
+                      </Reanimated.View>
+                      <Reanimated.View style={[styles.upPillIcon, upPillArrowStyle]}>
+                        <ChevronDown size={24} color="#374151" strokeWidth={2.5} />
+                      </Reanimated.View>
+                    </Reanimated.View>
+                  </Pressable>
                   {!!backName && (
                     <Reanimated.View
                       style={upPillBackPeekStyle}
@@ -6928,15 +6941,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 }, elevation: 6,
   },
   // Full-screen's collapse arrow — a solid white circle behind the icon (no shadow, unlike the regular pill).
-  upPillBare: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    width: 36, height: 36, borderRadius: 18,
-    backgroundColor: '#FFFFFF',
-  },
   // The back pill and the X side by side at half-screen and peek, both 36 pt tall.
   upPillRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   upPillFixed: { height: 36, paddingVertical: 0 },
   upPillRound: { width: 36, paddingHorizontal: 0, justifyContent: 'center' },
+  upPillIcon: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
   upPillArrow: { fontSize: 13, color: '#374151', fontWeight: '700' },
   upPillTxt:   { fontSize: 13, fontWeight: '600', color: '#111827' },
 

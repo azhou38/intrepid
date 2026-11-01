@@ -57,6 +57,8 @@ interface Props {
   // The handover runs on the UI thread in this sheet's slide-finished callback, on the frame it ends.
   pillNextOwnerSV?: SharedValue<number>;
   pillHandoverSV?: SharedValue<number>;
+  // How far the sheet is toward full screen (0 at half-screen or below, 1 at full), for MapScreen's down-arrow / X crossfade.
+  pillFullSV?: SharedValue<number>;
   // While true, some other UI owns the pill's position instead — this sheet's writes to
   // pillOffsetSV are suppressed so the two don't fight.
   pillOffsetLockedSV?: SharedValue<boolean>;
@@ -219,7 +221,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -516,19 +518,19 @@ function CountrySheet({
     const fade = interpolate(scrollY.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
-  // The bar is fixed at the top (COMPACT TITLE BAR) and fades in around the moment the tab bar arrives under it and
-  // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
+  // The title bar is the top of the sticky header, so it rides up with the tab bar natively and pins with it: only its
+  // opacity follows the scroll. Its white fades in over the tab bar's last 70pt to the top, fully opaque as it pins, and
+  // its title fades in over the last 40pt as the header's own name fades out (see DestinationSheet's compactBarStyle).
   const compactBarStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollY.value, [at - 40, at + 10], [0, 1], Extrapolation.CLAMP);
+    const on = interpolate(scrollY.value, [at - 70, at], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
   });
-  // The fade now starts up to 40px before the tab bar reaches the bar, so for that stretch the bar's white grows down to meet the
-  // tab bar's top edge: no strip of the hero photo shows between them while it fades in.
-  const compactBarGrowStyle = useAnimatedStyle(() => {
+  const compactTitleStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    return { height: COMPACT_BAR_H + Math.min(40, Math.max(0, at - scrollY.value)) };
+    const on = interpolate(scrollY.value, [at - 40, at], [0, 1], Extrapolation.CLAMP);
+    return { opacity: on, transform: [{ translateY: (1 - on) * 6 }] };
   });
 
   const headerAnimStyle = useAnimatedStyle(() => {
@@ -585,6 +587,7 @@ function CountrySheet({
     () => [slideAnim.value, scrollY.value, pillOwnerSV?.value ?? 0] as const,
     ([value, scrollYVal]) => {
       if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
+      if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, collapsedYAnim.value], [1, 0], Extrapolation.CLAMP);
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
       const PILL_H = 36;
       const SCREEN_H = H - BOTTOM_TAB_H;
@@ -1122,8 +1125,10 @@ function CountrySheet({
                 height so the tab bar still tucks over the header's bottom edge; the bar part stays transparent (and
                 untouchable) until it fades in just before pinning. */}
             <View pointerEvents="box-none" style={{ marginTop: -(COMPACT_BAR_H + TAB_BAR_TUCK), zIndex: 2 }}>
-              {/* Room the title bar (fixed at the top — see COMPACT TITLE BAR) pins over; transparent here. */}
-              <View pointerEvents="none" style={{ height: COMPACT_BAR_H }} />
+              {/* ── COMPACT TITLE BAR — transparent until the tab bar nears the top, then fades in and pins with it. */}
+              <Animated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
+                <Animated.Text style={[st.compactBarTitle, compactTitleStyle]} numberOfLines={1}>{cluster.country}</Animated.Text>
+              </Animated.View>
               {/* White behind the tab bar's rounded top corners once pinned under the bar. */}
               <Animated.View pointerEvents="none" style={[st.tabCornerFill, { top: COMPACT_BAR_H }, compactBarStyle]} />
               {/* ── TAB BAR ──────────────────────────────────────────────── */}
@@ -1244,11 +1249,6 @@ function CountrySheet({
             )}
             </View>
           </ScrollView>
-          {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
-              header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
-          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle, compactBarGrowStyle]}>
-            <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
-          </Animated.View>
 
 
 
@@ -1344,7 +1344,6 @@ const st = StyleSheet.create({
     backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 60,
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
-  compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
     position: 'absolute', left: 0, right: 0, zIndex: 2,
