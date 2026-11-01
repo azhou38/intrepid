@@ -3086,6 +3086,8 @@ const destItems = useMemo((): DestItem[] =>
   }, [selectionKey]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
+  // A close is planning at its target (closeTarget): see the band properties below.
+  const spotGatesOff = closeTarget !== null;
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.nearest.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
@@ -3169,9 +3171,14 @@ const destItems = useMemo((): DestItem[] =>
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
           // Zoom bands (spotBands); a near carousel's pinned spots, which always show their photo, are never gated ('a').
-          pb: must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
-          rb: must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
-          nb: must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
+          // During a close (spotGatesOff) every pin is drawn by the ungated 'a' layers: the plan already holds only the pins
+          // of the close's target view, and its fly-to can dip below their bands' zooms on the way. That used to be done by
+          // setting every band layer's min zoom to 0 for the close and back afterwards, and each of those layer changes is
+          // a full Mapbox updateLayer on the main thread: with dozens of band layers, ~300 ms frozen at the tap and again
+          // as the close ended. Moving the pins in the data costs nothing extra (the data changes at those moments anyway).
+          pb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
+          rb: spotGatesOff || must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
+          nb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
         },
       });
     }
@@ -3220,7 +3227,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff]);
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
@@ -3259,7 +3266,6 @@ const destItems = useMemo((): DestItem[] =>
   // During a close or back plan (closeTarget) the bands are off: its fly-to can dip below the target's zooms on the way.
   // Keyed on the band set, so they are added again in this order whenever it changes. A plain array, not a fragment:
   // ShapeSource hands its source id only to its direct children, and a fragment's layers were never made.
-  const spotGateOff = closeTarget !== null;
   const spotBandLayers = useMemo(() => {
     const text = {
       textField: ['get', 'label'] as any,
@@ -3298,18 +3304,18 @@ const destItems = useMemo((): DestItem[] =>
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
-        filter={[...base, ['==', ['get', 'pb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={photoStyle as any} />,
+        filter={[...base, ['==', ['get', 'pb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={photoStyle as any} />,
     );
     for (const k of [...spotBands.name.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}n${k}`} id={`spotName-${k}`} belowLayerID="destStampCircles"
-        filter={[...base, ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={text as any} />,
+        filter={[...base, ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={text as any} />,
     );
     return layers;
-  }, [spotBands, spotGateOff, mapType]);
+  }, [spotBands, mapType]);
 
   const spotLabelPlan = useMemo(() => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
@@ -5494,6 +5500,12 @@ const destItems = useMemo((): DestItem[] =>
   const destPhotoSinceRef = useRef<{ seq: number; since: Map<string, number> }>({ seq: 0, since: new Map() });
   const nativeDestPins = useMemo(() => {
     if (!NATIVE_DEST_PINS) return null;
+    // During a back or close plan (backPlan) a pin whose tier shows at the target is drawn by the ungated '' layer, so the
+    // fly-to dipping below the tier's gate on its way out does not hide it. That used to be every tier layer's min zoom
+    // switched to 0 for the plan and back afterwards: one main-thread Mapbox updateLayer per tier layer at both ends of
+    // every close (see spotGatesOff for the same on the spot layers). A tier that is off at the target stays in its layer,
+    // whose style hides it.
+    const planTier = (tier: string) => (backPlan && tier && destGateOn(tier, closeTarget!) ? '' : tier);
     const book = destPhotoSinceRef.current;
     const live = new Set(promotedDests.map(d => d.id));
     for (const id of [...book.since.keys()]) if (!live.has(id)) book.since.delete(id);
@@ -5519,12 +5531,12 @@ const destItems = useMemo((): DestItem[] =>
       const coordinates = [dest.coordinates.longitude, dest.coordinates.latitude];
       features.push({
         type: 'Feature', id: dest.id, geometry: { type: 'Point', coordinates },
-        properties: { id: dest.id, img, label: '', sort: destSortKey(dest.id), tier: destPhotoPlan.fadeTier.get(dest.id) ?? '', ho, hos },
+        properties: { id: dest.id, img, label: '', sort: destSortKey(dest.id), tier: planTier(destPhotoPlan.fadeTier.get(dest.id) ?? ''), ho, hos },
       });
       const nameTier = destPhotoPlan.nameTier.get(dest.id);
       if (nameTier !== undefined) features.push({
         type: 'Feature', id: `${dest.id}:name`, geometry: { type: 'Point', coordinates },
-        properties: { id: dest.id, img: '', label: dest.name, sort: destSortKey(dest.id), tier: nameTier, ho, hos },
+        properties: { id: dest.id, img: '', label: dest.name, sort: destSortKey(dest.id), tier: planTier(nameTier), ho, hos },
       });
     }
     // Register the pin image of every planned destination, hidden ones included (zoomed into, its spots showing): one that
@@ -5538,7 +5550,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
@@ -5941,7 +5953,7 @@ const destItems = useMemo((): DestItem[] =>
                 // in which the pins of the tiers the camera had already left stayed up and piled together). The fade
                 // back in on the way in is still destTierOn's. Not during a close or back plan (backPlan), whose fly-to
                 // can dip below the target's gates on its way out: the plan holds its tiers there instead.
-                minZoomLevel={tier && !backPlan ? destGateZooms()[tier] ?? 0 : 0}
+                minZoomLevel={tier ? destGateZooms()[tier] ?? 0 : 0}
                 style={destTierStyle(tier, destTierOn(tier))}
               />
             )),
