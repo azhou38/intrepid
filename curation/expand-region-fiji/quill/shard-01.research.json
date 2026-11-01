@@ -1,0 +1,136 @@
+{
+  "spots": [
+    {
+      "id": "nadi-7",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "municipal market, no single operator site found",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1,
+      "bio": "Fruit and vegetable market on Hospital Road in Nadi, selling cheap seasonal produce.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Nadi",
+        "cost": "https://www.thelostpassport.com/things-to-do-in-nadi-fiji/"
+      },
+      "notes": "Wikivoyage lists Nadi Produce Markets, Hospital Rd. A travel blog says open to the public along the street with no entry fee. Sources disagree on address (Market Road behind the bus station per fijipocketguide.com) and hours (hours not recorded).",
+      "unverified": [
+        "exact street address (Hospital Road vs Market Road)",
+        "no-fee claim is from a single blog"
+      ]
+    },
+    {
+      "id": "nadi-8",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "region of villages, no single steward",
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "bio": "Dry-zone mountain rainforest in Viti Levu's interior, with villages such as Navala and views, and a window onto Fijian culture.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Nausori_Highlands",
+        "bio2": "https://en.wikivoyage.org/wiki/Nadi"
+      },
+      "notes": "Wikipedia: interior of Viti Levu, Navala one of the most picturesque villages, dry-zone mountain rainforest. Wikivoyage Nadi: sparsely populated, traditional village life and views. No sourced village entry fee; any sevusevu/visit fee is paid to a village and is unverified.",
+      "unverified": [
+        "village visit / sevusevu fee amount",
+        "how visitors access it (tours vs self-drive) not read from a source"
+      ]
+    },
+    {
+      "id": "nadi-9",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "municipal market, no official site found",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1,
+      "bio": "Large covered market beside Lautoka's bus station selling fruit, vegetables, spices and kava, with cooked-food stalls outside.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Lautoka",
+        "cost": "https://en.wikivoyage.org/wiki/Lautoka"
+      },
+      "notes": "Wikivoyage Lautoka listing (Naviti St, right beside the bus station). Wikivoyage Nadi notes a $2 local bus from Nadi terminates at the market (transport, not a price). Entry fee not stated by any source; open-access market assumed free.",
+      "unverified": [
+        "no-fee status not explicitly stated by a source"
+      ]
+    },
+    {
+      "id": "mamanuca-islands-1",
+      "costMin": 160,
+      "costMax": 160,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": null,
+      "ticket_reason": "sold by many operators; uninhabited island visited by boat tours",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Small uninhabited island where Cast Away was filmed, with white sand beaches and a pine forest, reached by boat.",
+      "wiki": "Monuriki",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Mamanuca_Islands",
+        "bio2": "https://en.wikipedia.org/api/rest_v1/page/summary/Monuriki",
+        "cost": "https://www.bookme.co.nz/things-to-do/fiji-islands-viti-levu-mamanucas/activity/hidden-gem-fiji-monuriki-mana-sandbar-half-day-island-hopping-snorkeling-trip/5609"
+      },
+      "notes": "Wikivoyage: uninhabited, very much off the beaten track, Cast Away shot there. Wikipedia: part of the Mamanucas group, off Viti Levu. 'White beaches and pine forest' came from the draft bio and was not re-confirmed in sources read. No operator price sourced (multi-island cruises only), so cost left empty. Cost: about 160 per adult for the Hidden Gem Fiji half-day Monuriki and Mana Sandbar trip (4 hrs, via reseller Bookme; currency not stated on listing, assumed FJD as other Bookme Fiji listings). Full-day operator cruises (South Sea Cruises Adult FJD 224) not confirmed to stop at Monuriki. Reseller only; unverified.",
+      "unverified": [
+        "adult tour price",
+        "white beaches and pine forest detail",
+        "whether landing is permitted/ landowner access",
+        "tour price not sourced; cost left empty"
+      ],
+      "free": false
+    },
+    {
+      "id": "mamanuca-islands-2",
+      "costMin": 209,
+      "costMax": 209,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": "BLOCKED:https://www.manafiji.com/",
+      "visitHoursMin": 3,
+      "visitHoursMax": 8,
+      "bio": "Resort island with three beach areas, lagoon snorkelling and water sports, and the setting of the Survivor TV series.",
+      "wiki": "Mana Island (Fiji)",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Mamanuca_Islands",
+        "bio2": "https://en.wikipedia.org/api/rest_v1/page/summary/Mana_Island_(Fiji)",
+        "cost": "https://golocalfijitransfers.rezdy.com/290777/mana-island-resort-half-day-trip-with-lunch-snorkelling",
+        "ticketUrl": "https://www.manafiji.com/"
+      },
+      "notes": "Price is a reseller's half-day trip with lunch and snorkelling from Nadi (FJD 209), not an operator page; Wikivoyage's backpacker rates are overnight. manafiji.com loads (title 'Mana Island Resort', copyright Mana Island Resort & Spa) but the fetched page contains injected casino spam links, so it may be compromised: orchestrator should check it in a real browser before using it as ticketUrl. Costs are day-trip transfers+lunch, not entry.",
+      "unverified": [
+        "price from reseller not operator",
+        "manafiji.com integrity (spam injection)",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "mamanuca-islands-3",
+      "costMin": 195,
+      "costMax": 195,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": "https://beachcomberfiji.com/",
+      "visitHoursMin": 3,
+      "visitHoursMax": 8,
+      "bio": "Small island resort known as the party island, with snorkelling, a glass-bottom boat and a nightly Bula Dance.",
+      "wiki": "Beachcomber Island",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Mamanuca_Islands",
+        "cost": "https://golocalfijitransfers.rezdy.com/291081/beachcomber-island-half-day-trip-incl-bbq-lunch",
+        "ticketUrl": "https://beachcomberfiji.com/"
+      },
+      "notes": "Official site loaded; title 'Beachcomber Island Resort'. It lists its guests' day trips elsewhere but no price for visiting Beachcomber itself. Price FJD 195 is a reseller's half-day trip incl. buffet lunch (snorkel gear extra); a fuel levy of ~FJD 20 per person reported by a search snippet is not included. Wikivoyage's 'party island', Bula Dance, glass-bottom boat and dive shop are used.",
+      "unverified": [
+        "price from reseller not operator",
+        "fuel levy amount",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    }
+  ]
+}

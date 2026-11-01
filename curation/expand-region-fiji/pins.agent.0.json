@@ -1,0 +1,137 @@
+[
+ {
+  "id": "nadi-3",
+  "lat": -17.71836,
+  "lng": 177.48404,
+  "confidence": "HIGH",
+  "source": "OSM leisure=sports_centre 'Sabeto Hot Spring and Mud Pool' (way 1192604003) + Commons geotagged files at -17.71794,177.48441 (~55 m)",
+  "feature_type": "osm:sports_centre",
+  "note": "Wikivoyage geo (-17.7141,177.464) was 2 km west, a different spot."
+ },
+ {
+  "id": "nadi-8",
+  "lat": -17.80315,
+  "lng": 177.58794,
+  "confidence": "MEDIUM",
+  "source": "Wikidata Q6981434 Nausori Highlands (rural area) own P625; same as Wikivoyage listing",
+  "feature_type": "wikidata:area centroid",
+  "note": "Region point, inland Viti Levu. Visitor access point is Navala village (OSM place=village -17.65945,177.81280 looks off; Commons Navala photos at -17.64451,177.67141) if owner prefers a village pin."
+ },
+ {
+  "id": "mamanuca-islands-6",
+  "lat": -17.67305919,
+  "lng": 177.3083884,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia 'Kadavulailai' (island hosting Bounty Island Resort) own coordinates; Commons 'Beachcomber Party Island' photo at -17.67303,177.30603 is on the same small island (~250 m)",
+  "feature_type": "wikipedia:island",
+  "note": "Island point, small island so any point is within ~300 m of resort."
+ },
+ {
+  "id": "yasawa-islands-2",
+  "lat": -16.94536,
+  "lng": 177.36921,
+  "confidence": "MEDIUM",
+  "source": "OSM node tourism=attraction 'Blue Lagoon Beach' (Nanuya Lailai); OSM natural=bay 'Blue Lagoon' at -16.94335,177.36810 and Wikipedia Nanuya Lailai (-16.94595,177.36868) agree within ~250 m",
+  "feature_type": "osm:tourism attraction (beach)",
+  "note": "Real Blue Lagoon beach on Nanuya Lailai."
+ },
+ {
+  "id": "coral-coast-6",
+  "lat": -18.18007,
+  "lng": 177.73817,
+  "confidence": "MEDIUM",
+  "source": "Wikidata Q111449074 'Biausevu Waterfall' own P625",
+  "feature_type": "wikidata:waterfall",
+  "note": "Wikivoyage geo (-18.193,177.733) and OSM village Biausevu (-18.19417,177.73298) are the village, ~1.4 km south; waterfall is inland of village. No OSM waterfall node found to confirm."
+ },
+ {
+  "id": "rakiraki-3",
+  "lat": -17.37398,
+  "lng": 178.1417,
+  "confidence": "HIGH",
+  "source": "OSM node historic=tomb 'Udre-Udre Tomb' (13290160001) + Wikivoyage listing for the tomb lat -17.37389 long 178.14167 (~10 m)",
+  "feature_type": "osm:historic tomb",
+  "note": "Next to Navatu Rock area on Kings Road."
+ },
+ {
+  "id": "levuka-1",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "Tried Wikivoyage Levuka raw (no geo for Mission Hill listing), Photon/OSM, Wikidata, Commons geosearch (nothing). Only Niukaube Hill War Memorial (-17.67826,178.83456) found, not the steps.",
+  "feature_type": "",
+  "note": "Unresolved; steps start behind Levuka's Church St and climb to Mission Hill, needs a map/route source. Route rule: midpoint of the steps."
+ },
+ {
+  "id": "taveuni-1",
+  "lat": -16.82734,
+  "lng": -179.87891,
+  "confidence": "MEDIUM",
+  "source": "OSM node waterway=waterfall 'Tavoro Lower Waterfall' (5998676216) and Wikidata Q111449070 Tavoro Waterfalls -16.82631,-179.8785 (~120 m apart)",
+  "feature_type": "osm:waterfall",
+  "note": "Series of 3 falls; middle -16.82859,-179.88446, upper -16.83000,-179.88967. Lower fall = main visitor stop. Longitude is east of 180 (negative)."
+ },
+ {
+  "id": "taveuni-4",
+  "lat": -16.777,
+  "lng": 179.9322,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia 'Rainbow Reef' own coordinates (own_point); no OSM feature found to confirm",
+  "feature_type": "wikipedia:reef",
+  "note": "Reef feature point in Somosomo Strait (offshore). Precision only 4 dp; dive moorings (Great White Wall etc.) not in OSM."
+ },
+ {
+  "id": "taveuni-7",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "Searched Photon/OSM, Wikidata, Wikivoyage Taveuni raw, Commons: no 'Beverley Beach' (also spelt Beverly) found.",
+  "feature_type": "",
+  "note": "Unresolved; ask agency/owner or hotel/resort source."
+ },
+ {
+  "id": "vanua-levu-2",
+  "lat": -16.63681,
+  "lng": 179.21221,
+  "confidence": "MEDIUM",
+  "source": "OSM node tourism=attraction 'Waisali rainforest reserve' (6592988785); Waisali Village FEO tent -16.64656,179.23666 is ~2.6 km away (village, not used)",
+  "feature_type": "osm:attraction",
+  "note": "Reserve entrance/visitor point off the Labasa-Savusavu Hibiscus Hwy."
+ },
+ {
+  "id": "kadavu-island",
+  "lat": -19.047994,
+  "lng": 178.3629377,
+  "confidence": "MEDIUM",
+  "source": "OSM relation 1137357 place=island Kadavu label point; Wikipedia gives -19.05,178.25 (lat agrees)",
+  "feature_type": "osm:place island",
+  "note": "Eastern lobe of the island; Wikipedia point is 12 km west. Vunisea (island admin centre) is -19.0578,178.1570 (airport). Verify on-land in audit."
+ },
+ {
+  "id": "nabukelevu",
+  "lat": -19.117647,
+  "lng": 177.982267,
+  "confidence": "MEDIUM",
+  "source": "OSM node natural=peak 'Buke Levu' (2517075824); Wikipedia Nabukelevu -19.12,177.98 (~300 m, rounded)",
+  "feature_type": "osm:peak",
+  "note": "Summit of Mount Washington volcano."
+ },
+ {
+  "id": "vanua-balavu",
+  "lat": -17.23333333,
+  "lng": -178.95,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia 'Vanua Balavu' own coordinates; OSM airport -17.24447,-178.95973 and Lomaloma village -17.29022,-178.98728 on same island",
+  "feature_type": "wikipedia:island",
+  "note": "Island point, east of 180 (negative longitude). Rounded source but corroborated by airport 1.3 km away."
+ },
+ {
+  "id": "vaioa-beach",
+  "lat": -12.49492,
+  "lng": 177.02245,
+  "confidence": "LOW",
+  "source": "Wikidata Q24566453 'Vaioa Beach' P625 (no description); near Itu'muta district on Rotuma west coast (Wikipedia Itu'muta -12.50358,177.0203)",
+  "feature_type": "wikidata:beach",
+  "note": "Single sparse Wikidata item; Photon/OSM and Commons had nothing. Verify it is Rotuma's Vai'oa Beach and not on water."
+ }
+]

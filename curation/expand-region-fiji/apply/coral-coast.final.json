@@ -1,0 +1,132 @@
+{
+ "destination": {
+  "id": "coral-coast",
+  "name": "Coral Coast",
+  "country": "Fiji",
+  "countryCode": "FJ",
+  "timezone": "Pacific/Fiji",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -18.2,
+   "longitude": 177.78
+  },
+  "category": "beach",
+  "defaultZoomSpanKm": 110,
+  "rank": 3,
+  "icon": "🏖️",
+  "tagline": "Dunes, white beaches, shark dives and river gorges on Viti Levu's south coast",
+  "description": "The Coral Coast is the stretch of Viti Levu's south coast between Sigatoka and Suva, a popular backpacking route. Sigatoka Sand Dunes, Fiji's first national park, rise 20 to 60 m at the river mouth, and Natadola Beach is a white-sand beach west of Sigatoka with horse riding. Pacific Harbour is the base for shark dives in Beqa Lagoon, and Beqa Island lies 10 km offshore. Inland, the Upper Navua Gorge offers whitewater rafting, and Tavuni Hill Fort is a semi-restored hill fort built by a Tongan chief.",
+  "whyVisit": [
+   "Swim off white-sand beaches",
+   "Dive with sharks in Beqa Lagoon",
+   "Raft a waterfall-lined gorge"
+  ],
+  "highlights": [
+   "Sandy beaches",
+   "Shark dives",
+   "Gorge rafting"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "💧",
+    "title": "Pay at Biausevu village",
+    "detail": "Biausevu Waterfalls are about a 30-minute walk from the village, with nine stream crossings. The entry and guide fee is paid in the village first."
+   },
+   {
+    "icon": "🦈",
+    "title": "Base at Pacific Harbour",
+    "detail": "Beqa Lagoon shark dives leave from Pacific Harbour, so stay there if the dive is your reason for coming."
+   },
+   {
+    "icon": "🚣",
+    "title": "Rafting takes a full day",
+    "detail": "The Upper Navua Gorge is run on Class II-III rafting day trips of about eight hours, so keep the whole day free."
+   }
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Come in {months}, Fiji's cooler months, for beach days and reef dives. Cyclones can occur Nov to Apr."
+ },
+ "spots": {
+  "coral-coast-1": {
+   "bio": "Fiji's first national park, with 20-60 m dunes at the Sigatoka River mouth, two walking trails and Lapita archaeology.",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "FJD",
+   "costBasis": "park",
+   "costPer": "Adult",
+   "ticketUrl": "https://nationaltrust.org.fj/ssd/",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "coral-coast-2": {
+   "bio": "White-sand beach on the Coral Coast with shade trees, considered one of Fiji's best and good for horse riding.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "coral-coast-3": {
+   "bio": "Island 10 km south of Viti Levu with nine villages, five noted for fire-walking, and a few resorts.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "wiki": "Beqa"
+  },
+  "coral-coast-5": {
+   "bio": "The Upper Navua is a gorge of black volcanic walls and waterfalls, run on Class II-III rafting day trips.",
+   "costMin": 439,
+   "costMax": 439,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://riversfiji.com/rafting-upper-navua/",
+   "visitHoursMin": 6,
+   "visitHoursMax": 9
+  },
+  "coral-coast-6": {
+   "bio": "A rainforest waterfall on the Coral Coast, reached on foot from Biausevu village.",
+   "free": false,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3
+  },
+  "coral-coast-7": {
+   "bio": "A semi-restored hill fort built by a Tongan chief above the Sigatoka valley, shown on tours led by Naroro villagers.",
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5
+  },
+  "coral-coast-8": {
+   "bio": "Wildlife park on the Coral Coast with forest boardwalks, a reef display, and captive breeding of Fiji's crested iguana.",
+   "free": false,
+   "costMin": 70,
+   "costMax": 70,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://fijiwild.com/",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "wiki": "Kula WILD Adventure Park"
+  }
+ },
+ "notes": "Fiji run"
+}

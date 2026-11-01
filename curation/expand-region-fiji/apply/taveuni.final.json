@@ -1,0 +1,138 @@
+{
+ "destination": {
+  "id": "taveuni",
+  "name": "Taveuni",
+  "country": "Fiji",
+  "countryCode": "FJ",
+  "timezone": "Pacific/Fiji",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -16.83,
+   "longitude": 179.99
+  },
+  "category": "island",
+  "defaultZoomSpanKm": 70,
+  "rank": 3,
+  "icon": "🌺",
+  "tagline": "Fiji's garden island, with rainforest waterfalls and the 180th meridian",
+  "description": "Taveuni is a rainforest island known as Fiji's garden island, crossed by the 180th meridian. Trails lead to the Bouma waterfalls, whose lower fall is over 30 m high, along the Lavena Coastal Walk, and up 1,195 m Des Voeux Peak. Lake Tagimaucia, a crater lake at about 830 m, is where the tagimaucia, Fiji's national flower, grows, and it grows only on Taveuni. Offshore, Rainbow Reef in the Somosomo Strait is a 32 km soft-coral reef with over 30 dive sites.",
+  "whyVisit": [
+   "Hike to rainforest waterfalls and pools",
+   "Dive soft-coral reefs",
+   "Climb to crater lakes and peaks"
+  ],
+  "highlights": [
+   "Waterfall walks",
+   "Soft-coral diving",
+   "Peaks and lakes"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "💵",
+    "title": "Carry cash for park fees",
+    "detail": "Bouma costs about FJD 50 and the Lavena Coastal Walk about FJD 35, both cash only. Fees have changed over the years, so confirm locally."
+   },
+   {
+    "icon": "🌺",
+    "title": "Lake Tagimaucia is a long hike",
+    "detail": "The guided hike takes about eight hours return, and the tagimaucia flowers from October to December."
+   },
+   {
+    "icon": "🐠",
+    "title": "Book Waitabu ahead",
+    "detail": "Waitabu Marine Park is visited on guided tours that must be arranged in advance, from about FJD 20 to 40 a person."
+   }
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "{months} suit waterfall hikes and diving the Somosomo Strait. Cyclones can occur Nov to Apr."
+ },
+ "spots": {
+  "taveuni-1": {
+   "bio": "Three waterfalls with swimming pools in Bouma National Heritage Park, the lowest a short, flat walk from the visitor centre.",
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3
+  },
+  "taveuni-2": {
+   "bio": "Coastal track from Lavena village past white and black sand beaches to a waterfall, about 5 km each way.",
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5
+  },
+  "taveuni-3": {
+   "bio": "Lookout peak at about 1,195 m with views to Lake Tagimoucia and the Lau Group, reached on foot or by 4WD, with good birdwatching.",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "currency": "FJD"
+  },
+  "taveuni-4": {
+   "bio": "A 32 km soft-coral reef in the Somosomo Strait with over 30 dive sites, including the Great White Wall.",
+   "free": false,
+   "costMin": 462,
+   "costMax": 462,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "wiki": "Rainbow Reef"
+  },
+  "taveuni-5": {
+   "bio": "Community-run no-take reef protected since 1998, visited on guided snorkelling and cultural tours arranged in advance.",
+   "costMin": 70,
+   "costMax": 100,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.waitabu.org/",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3
+  },
+  "taveuni-6": {
+   "bio": "Crater lake at about 830 m above Somosomo, reached by a long guided hike, where Fiji's national flower grows.",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8
+  },
+  "taveuni-9": {
+   "bio": "Natural rock slide on a Taveuni stream where visitors swim in cool water and slide down the smooth rock.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5
+  },
+  "taveuni-10": {
+   "bio": "Colonial Romanesque Catholic church on a hill at Wairiki, overlooking the beach of a famed canoe battle against Tongan invaders.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5
+  }
+ },
+ "notes": "Fiji run"
+}

@@ -1,0 +1,133 @@
+{
+  "spots": [
+    {
+      "id": "nabukelevu",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "bio": "Nabukelevu, also called Mount Washington, is an 805 m lava dome volcano on Kadavu's southwest, last erupted around 1660.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Nabukelevu",
+        "free": "unverified"
+      },
+      "notes": "Wikipedia only. No visitor source read for the climb; any village permission or guide fee not sourced.",
+      "unverified": [
+        "whether the summit is climbable and access/guide/village fee",
+        "visitor source",
+        "Wikipedia only; climb access unconfirmed - consider review"
+      ],
+      "ticket_reason": "No single official site; open land/island with no steward (fiji.travel is 403-blocked to scripts, not needed)."
+    },
+    {
+      "id": "navala-village",
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Navala is a Ba Highlands village of over 200 thatched bures, one of the few in Fiji still fully traditional in architecture.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Navala",
+        "cost": "https://www.fijipocketguide.com/5-best-things-to-do-in-ba/"
+      },
+      "notes": "Wikipedia says a small charge is required for photography and entering the village; no amount sourced. Cost left null: needs the real adult fee. Bus link from Ba per Wikipedia. fiji.travel Navala page cited by Wikipedia ('Navala's Tribute to Tradition') not readable (403). Cost: about FJD 30 per person to enter and hire a guide (Fiji Pocket Guide); another guide says FJD 40 paid in cash on arrival. Plus a sevusevu gift; no entry on Sundays per a tour listing. Approximate.",
+      "unverified": [
+        "entry/photography fee amount (costMin/costMax null)",
+        "official site",
+        "fiji.travel page BLOCKED: https://www.fiji.travel/",
+        "FLAG: cost null - Wikipedia says only 'small charge' for entry/photography; no amount sourced. Not applyable until a fee is found or free decided"
+      ],
+      "ticket_reason": "fiji.travel homepage does not name the village; village has no own site found",
+      "wiki": "Navala",
+      "costMin": 30,
+      "costMax": 40,
+      "free": false
+    },
+    {
+      "id": "mount-tomanivi",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 4,
+      "visitHoursMax": 8,
+      "bio": "Mount Tomanivi, formerly Mount Victoria, is Fiji's highest peak at 1,324 m, reached by a trail from Navai village.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Mount_Tomanivi"
+      },
+      "notes": "Wikipedia only; trail from Navai village. No visitor source read; village permission/guide fee unsourced. Hike: pin at route midpoint if route found (resolve-pin not run in this shard).",
+      "unverified": [
+        "village/guide fee or permission at Navai",
+        "visitor source",
+        "route midpoint coordinates",
+        "Wikipedia only; guide/village fee unsourced"
+      ],
+      "ticket_reason": "No single official site; open land/island with no steward (fiji.travel is 403-blocked to scripts, not needed)."
+    },
+    {
+      "id": "vanua-balavu",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 3,
+      "visitHoursMax": 24,
+      "bio": "Vanua Balavu is the main island of the Northern Lau Group, with hot springs, a reef system and Lomaloma as its main village.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Vanua_Balavu"
+      },
+      "notes": "Wikipedia: 53 sq km, airstrip, hot springs, extensive reef, Lomaloma copra port. Homestay/guesthouse and flight details in draft not confirmed by a source I read.",
+      "unverified": [
+        "visitor accommodation, flights and charter access",
+        "visitor source",
+        "no visitor source"
+      ],
+      "ticket_reason": "Island, no single steward"
+    },
+    {
+      "id": "bay-of-islands-vanua-balavu",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 2,
+      "visitHoursMax": 4,
+      "bio": "Qilaqila, the Bay of Islands, is a reef of islets off Vanua Balavu; visitors must do sevusevu and get village permission.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Vanua_Balavu"
+      },
+      "notes": "From Wikipedia Vanua Balavu: Qilaqila also known as Bay of Islands; owners are the mataqalis of Mavana Village; all visitors must do sevusevu and have permission from Daliconi Village elders. No fee sourced. Limestone cathedral cave and marine reserve in draft unsourced.",
+      "unverified": [
+        "cave and snorkelling",
+        "marine reserve status",
+        "any fee",
+        "visitor source",
+        "bio relies on Wikipedia statement of sevusevu/permission; no visitor source"
+      ],
+      "ticket_reason": "No official site; permission via villages"
+    },
+    {
+      "id": "lakeba",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 3,
+      "visitHoursMax": 24,
+      "bio": "Lakeba is the Lau Group's provincial capital island and home of the chiefly Vuanirewa clan, with Tongan-influenced culture.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Lakeba"
+      },
+      "notes": "Wikipedia: tourism is of lesser importance; served by Lakeba Airport; Tubou is capital village. Caves, hillforts and homestays in draft not sourced.",
+      "unverified": [
+        "caves, hillforts, homestays",
+        "visitor source",
+        "tourism of lesser importance (Wikipedia); no visitor source - consider review"
+      ],
+      "ticket_reason": "Island, no single steward"
+    }
+  ]
+}

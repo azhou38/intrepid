@@ -1,0 +1,128 @@
+[
+ {
+  "id": "nadi-7",
+  "lat": -17.80302,
+  "lng": 177.416,
+  "confidence": "HIGH",
+  "source": "wikivoyage Nadi 'Nadi Produce Markets' listing (-17.803,177.4164) + median of 93 Commons geotagged files (-17.80302,177.41576), ~45 m apart",
+  "feature_type": "market (wikivoyage listing + photo median)",
+  "note": "Hospital Rd; midpoint of the two"
+ },
+ {
+  "id": "suva-3",
+  "lat": -18.136354,
+  "lng": 178.42504,
+  "confidence": "HIGH",
+  "source": "wikivoyage Suva 'Suva Municipal Market' own listing (Harris Rd) + Commons 'Main Market Suva' photo geotagged 7 m away",
+  "feature_type": "market",
+  "note": "Harris Rd, south of bus station"
+ },
+ {
+  "id": "mamanuca-islands-5",
+  "lat": -17.636497,
+  "lng": 177.18161,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia 'South Sea Island' article coordinates (6 dp)",
+  "feature_type": "island (wikipedia)",
+  "note": "Single source; no Commons/OSM feature found nearby. Photon 'South Sea Island' hits (-17.693,177.313) are a Nadi-area office/hotel, not the island."
+ },
+ {
+  "id": "yasawa-islands-1",
+  "lat": -16.8503506,
+  "lng": 177.4667286,
+  "confidence": "MEDIUM",
+  "source": "OSM node 'Sawa-i-Lau Caves' via Nominatim (cave_entrance); Commons photo inside cave at -16.85153,177.46655 (131 m); Wikidata island centre -16.8514,177.4697",
+  "feature_type": "natural=cave_entrance",
+  "note": "Cave entrance on the island's north-west side"
+ },
+ {
+  "id": "taveuni-9",
+  "lat": -16.79588,
+  "lng": -179.99092,
+  "confidence": "HIGH",
+  "source": "Wikidata Q111449073 'Waitavala Water Slide' (-16.79588,-179.99092) + OSM waterway=stream 'Waitavala Water Slides' via Photon (-16.795864,-179.990691), ~25 m apart",
+  "feature_type": "waterway (OSM stream / Wikidata waterfall)",
+  "note": "Parking node at -16.79455,-179.99069"
+ },
+ {
+  "id": "mount-tomanivi",
+  "lat": -17.614807,
+  "lng": 178.0184986,
+  "confidence": "MEDIUM",
+  "source": "OSM natural=peak 'Tomanivi' via Photon (ele check 1303 m vs 1324 m published)",
+  "feature_type": "natural=peak",
+  "note": "Wikipedia coordinate (-17.63306,178.01667) rejected: 2 km south, Open-Meteo elevation there 919 m, so it is off the summit"
+ },
+ {
+  "id": "coral-coast-4",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "Beqa Shark Reef: Beqa Lagoon dive site, no OSM/Wikidata/Commons point found (Wikipedia has no article; Photon/Nominatim nothing). Photon only gives Beqa Island centre (-18.3912,178.1227) and Beqa Lagoon Resort (-18.3809,178.1042), neither the reef."
+ },
+ {
+  "id": "rakiraki-2",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "One Bay Beach: on Nananu-i-Ra (island centre -18.2928? Photon -17.29277,178.21888); no beach feature or geotag found; Wikivoyage Rakiraki lists no coordinates."
+ },
+ {
+  "id": "levuka-3",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "Ovalau Peak (Mt Korolevu/'The Peak'): no OSM peak, Wikidata or geotag found; Wikivoyage Levuka gives no coords."
+ },
+ {
+  "id": "taveuni-3",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "Des Voeux Peak: no Wikipedia/Wikidata/Photon/Commons point found (OSM not reachable: Nominatim 429/blocked, Overpass unreachable)."
+ },
+ {
+  "id": "taveuni-6",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "Lake Tagimaucia: no point found in Wikidata/Photon/Commons."
+ },
+ {
+  "id": "vanua-levu-5",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "Lesiaceva Point: only Leisiaceva Road nodes near Savusavu (-16.795,179.307 and -16.814,179.287) found; no point/park feature."
+ },
+ {
+  "id": "kavala-bay-waterfall",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "Kavala Bay Waterfall: Wikidata Kavala Bay (-18.96667,178.43333, bay centroid) and Kavala village (-18.96983,178.41331) only; no waterfall feature found."
+ },
+ {
+  "id": "losa-beach",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "none trustworthy",
+  "feature_type": null,
+  "note": "Losa Beach (Rotuma): no OSM/Wikidata/Commons point found; Wikivoyage Rotuma names it (west of Solroroa Bluff) with no coords. Rotuma island point -12.5021,177.0936 is not usable."
+ }
+]

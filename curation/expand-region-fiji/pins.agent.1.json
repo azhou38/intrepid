@@ -1,0 +1,128 @@
+[
+ {
+  "id": "nadi-5",
+  "lat": -17.68789,
+  "lng": 177.40991,
+  "confidence": "MEDIUM",
+  "source": "OSM node 6687457288 'Vuda village' tourism=attraction; Wikipedia Viseisei article -17.68561,177.40742 (~300 m); OSM bus stop/school/health centre agree",
+  "feature_type": "attraction/village",
+  "note": "Old own_point (Wikivoyage/Wikidata -17.6832,177.3832) is ~2.5 km west at Vuda Point marina: wrong"
+ },
+ {
+  "id": "mamanuca-islands-4",
+  "lat": -17.65403,
+  "lng": 177.26399,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia 'Treasure Island (Fiji)' coordinates; Wikivoyage listing -17.6551,177.2671 (~330 m, island is small)",
+  "feature_type": "island",
+  "note": "island point"
+ },
+ {
+  "id": "mamanuca-islands-7",
+  "lat": -17.88672,
+  "lng": 177.1865,
+  "confidence": "MEDIUM",
+  "source": "Two Commons files 'Cloudbreak - panoramio' geotags (-17.88658,177.18673 and -17.88686,177.18626); consistent with Tavarua article (break ~1 mile off Tavarua, SW of Namotu)",
+  "feature_type": "surf break/reef",
+  "note": "Same photographer family, so not fully independent; no OSM/Wikipedia point for the break"
+ },
+ {
+  "id": "yasawa-islands-3",
+  "lat": -16.94595,
+  "lng": 177.36868,
+  "confidence": "MEDIUM",
+  "source": "Wikipedia/Wikidata 'Nanuya Lailai' island point; Wikivoyage -16.95,177.367 agrees (~500 m)",
+  "feature_type": "island",
+  "note": "island centre"
+ },
+ {
+  "id": "coral-coast-8",
+  "lat": -18.17547,
+  "lng": 177.55554,
+  "confidence": "HIGH",
+  "source": "OSM node 4881280921 'KULA Wild Adventure Park' attraction (-18.17547,177.55554) + Commons Kula-bred bird files geotagged -18.17528,177.55556 (~25 m); Wikivoyage: across from the Outrigger (-18.1788,177.5527)",
+  "feature_type": "attraction/zoo",
+  "note": "Do NOT use OSM node 2312784537 'Kula Eco Park' at -18.1198,177.4118 (Cuvu Top, 15 km west) nor Wikidata -18.2,177.68: both wrong"
+ },
+ {
+  "id": "rakiraki-4",
+  "lat": -17.3719,
+  "lng": 178.11,
+  "confidence": "LOW",
+  "source": "Wikivoyage Rakiraki listing geo tag (separate from Vitawa village OSM node -17.3717,178.1118, 170 m east); no OSM/Commons point for the rock itself",
+  "feature_type": "landmark",
+  "note": "Single source; plausible (on Kings Road at Vitawa) but unconfirmed"
+ },
+ {
+  "id": "levuka-2",
+  "lat": -17.68453,
+  "lng": 178.83565,
+  "confidence": "MEDIUM",
+  "source": "OSM way 400849005 building named 'Library/Museum' in Levuka (centroid); Wikivoyage says Levuka Community Centre has the small museum",
+  "feature_type": "building/museum",
+  "note": "Not independently confirmed as the Community Centre"
+ },
+ {
+  "id": "taveuni-2",
+  "lat": -16.87134,
+  "lng": -179.89651,
+  "confidence": "MEDIUM",
+  "source": "Midpoint along OSM way chain (636059881-887, Lavena Coastal Walk path, 3.74 km) from Lavena entrance to Wainibau/Lavena waterfall; Wikivoyage confirms walk from Lavena village to waterfalls",
+  "feature_type": "hiking route",
+  "note": "Midpoint computed from OSM geometry"
+ },
+ {
+  "id": "taveuni-5",
+  "lat": -16.81487,
+  "lng": -179.85876,
+  "confidence": "MEDIUM",
+  "source": "OSM node 6699771889 'Waitabu Marine Park' tourism=attraction; Waitabu village OSM -16.8135,-179.8594 agrees (~100 m)",
+  "feature_type": "attraction",
+  "note": "entrance/village point"
+ },
+ {
+  "id": "taveuni-8",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "Wikivoyage: full-day 7 km hike from Vidawa ending at lower Tavoro waterfall (OSM -16.8273,-179.8789; Tavoro Waterfall Walks path way 636069641 is a different walk). Vidawa village/trail not in OSM or Commons geo (only bird recordings at -16.8404,-179.8846)",
+  "feature_type": "hiking route",
+  "note": "Tried Photon, OSM API bbox, Commons geosearch/search, Wikivoyage"
+ },
+ {
+  "id": "vanua-levu-4",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "No OSM named hills/lookouts/paths around Savusavu (bbox 179.28-179.40, -16.82..-16.74); Wikivoyage Savusavu redirects to Vanua Levu with no listing; Savusavu town ~ -16.7808,179.3331",
+  "feature_type": "hiking route",
+  "note": "Nothing trustworthy"
+ },
+ {
+  "id": "great-astrolabe-reef",
+  "lat": -18.86195,
+  "lng": 178.49844,
+  "confidence": "MEDIUM",
+  "source": "Wikidata Q5598668 own P625 (precision 0.001); no OSM single-point feature (OSM only has 'North Astrolabe Reef' way centroid -18.6426,178.5533)",
+  "feature_type": "reef",
+  "note": "Reef spans ~100 km around Kadavu; single source"
+ },
+ {
+  "id": "navala-village",
+  "lat": -17.65945,
+  "lng": 177.8128,
+  "confidence": "MEDIUM",
+  "source": "OSM place=village node 4432444476 'Navala'",
+  "feature_type": "village",
+  "note": "Commons file 'Navala Village - Nausori Highlands' geotag -17.6445,177.6714 is ~14 km west (generic highlands tag), not used"
+ },
+ {
+  "id": "bay-of-islands-vanua-balavu",
+  "lat": null,
+  "lng": null,
+  "confidence": "LOW",
+  "source": "Wikipedia Vanua Balavu: Bay of Islands = Qilaqila islets (visit permission from Daliconi village, OSM -17.2221,-178.9629; Mavana village -17.2126,-178.9322); no OSM/Wikipedia/Commons point for the islets themselves",
+  "feature_type": "island group",
+  "note": "Not resolved"
+ }
+]

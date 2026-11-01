@@ -1,0 +1,64 @@
+{
+  "spots": [
+    {
+      "id": "losa-beach",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Losa Beach is one of Rotuma's best beaches, with the 25 m deep Manfiri volcanic vent between it and Solroroa Bluff.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Rotuma"
+      },
+      "notes": "Wikivoyage Rotuma: best beaches are Oinafa, Losa and Vai'oa, west of Solroroa Bluff; Manfiri vent lies between Losa beach and Solroroa Bluff. No Wikipedia article for the beach. Free by place type, no fee source.",
+      "unverified": [
+        "fee/access (community land)",
+        "'best beaches' claim from Wikivoyage only"
+      ],
+      "ticket_reason": "Open beach"
+    },
+    {
+      "id": "vaioa-beach",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Vai'oa Beach is one of Rotuma's best beaches, on the island's west side near Solroroa Bluff.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Rotuma"
+      },
+      "notes": "Wikivoyage Rotuma only. No Wikipedia article. Free by place type.",
+      "unverified": [
+        "fee/access",
+        "precise location",
+        "'listed' cut (source reference); west side per Wikivoyage"
+      ],
+      "ticket_reason": "Open beach"
+    },
+    {
+      "id": "oinafa-beach",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Oinafa is one of Rotuma's finest beaches, on the island's west side near Solroroa Bluff.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Rotuma",
+        "district": "https://en.wikipedia.org/wiki/Oinafa"
+      },
+      "notes": "Wikivoyage Rotuma names Oinafa among the best beaches; Wikipedia 'Oinafa' is the district article (one of seven districts), not the beach, so no wiki field. Note: Wikivoyage says Oinafa, Losa and Vai'oa are 'west of Solroroa Bluff', conflicting with 'east' in the draft; location unverified.",
+      "unverified": [
+        "east vs west location",
+        "fee/access",
+        "'named in the guide' cut (source named in text); west side per Wikivoyage"
+      ],
+      "ticket_reason": "Open beach"
+    }
+  ]
+}

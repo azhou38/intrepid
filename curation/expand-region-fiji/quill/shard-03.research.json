@@ -1,0 +1,132 @@
+{
+  "spots": [
+    {
+      "id": "yasawa-islands-3",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "No single steward; island with several resorts.",
+      "visitHoursMin": 2,
+      "visitHoursMax": 4,
+      "bio": "Yasawa island beside the Blue Lagoon, with a walk over the island, snorkelling in a fish sanctuary and a dive shop.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Nanuya_Lailai",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nanuya_Lailai",
+        "cost": "https://en.wikivoyage.org/wiki/Nanuya_Lailai"
+      },
+      "notes": "Island itself has no gate; no fee found. Resorts/dive shop charge separately.",
+      "unverified": [
+        "any village or reef/sanctuary fee",
+        "dive shop still operating"
+      ]
+    },
+    {
+      "id": "yasawa-islands-4",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "No official site for the island; only a resort listed.",
+      "visitHoursMin": 2,
+      "visitHoursMax": 4,
+      "bio": "Small Yasawa island where a climb to the top gives sunrise views and a walk crosses a spit to Waya.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Yasawa_Islands",
+        "island": "https://en.wikivoyage.org/wiki/Waya_Lailai",
+        "cost": "https://en.wikivoyage.org/wiki/Waya_Lailai"
+      },
+      "notes": "Wikivoyage calls the island Wayalailai in the Yasawa guide; no Wikipedia article (Waya_Lailai and Wayasewa both missing). Draft's 'three-hour walk to Naboro' not found in sources, dropped. Guides available per Wikivoyage; no price.",
+      "unverified": [
+        "guide or village fee",
+        "walk length",
+        "three-hour Naboro walk"
+      ]
+    },
+    {
+      "id": "coral-coast-1",
+      "costMin": 10,
+      "costMax": 10,
+      "currency": "FJD",
+      "costBasis": "park",
+      "costPer": "Adult",
+      "ticketUrl": "https://nationaltrust.org.fj/ssd/",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "bio": "Fiji's first national park, with 20-60 m dunes at the Sigatoka River mouth, two walking trails and Lapita archaeology.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Sigatoka_Sand_Dunes",
+        "trails": "https://nationaltrust.org.fj/ssd/",
+        "cost": "https://nationaltrust.org.fj/ssd/",
+        "ticketUrl": "https://nationaltrust.org.fj/ssd/"
+      },
+      "notes": "Adults $10 (intl students $7, local students 6-17 $5) on the National Trust of Fiji page (title 'Sigatoka Sand Dunes | National Trust of Fiji'). Own gate fee, not a pass; no Fiji park pass known. fiji.travel page BLOCKED (403).",
+      "unverified": [
+        "currency symbol assumed FJD",
+        "fiji.travel page BLOCKED: https://www.fiji.travel/places-to-go/coral-coast/locations/coral-coast-sand-dunes"
+      ]
+    },
+    {
+      "id": "coral-coast-2",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "Public beach, no steward found (resort area).",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "White-sand beach on the Coral Coast with shade trees, considered one of Fiji's best and good for horse riding.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Sigatoka",
+        "cost": "https://en.wikivoyage.org/wiki/Sigatoka"
+      },
+      "notes": "No Wikipedia article. Wikivoyage lists no fee; access fee on the beach unverified.",
+      "unverified": [
+        "any beach access fee"
+      ]
+    },
+    {
+      "id": "coral-coast-3",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "Island with several resorts and villages; no single steward.",
+      "visitHoursMin": 4,
+      "visitHoursMax": 8,
+      "wiki": "Beqa",
+      "bio": "Island 10 km south of Viti Levu with nine villages, five noted for fire-walking, and a few resorts.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Beqa",
+        "wiki": "https://en.wikipedia.org/wiki/Beqa"
+      },
+      "notes": "Wikipedia names five fire-walking villages (Dakuibeqa, Dakuni, Soliyaga, Naceva, Rukua) and four resorts. Boat access from Pacific Harbour not in fetched sources.",
+      "unverified": [
+        "village sevusevu/fire-walking fees",
+        "boat access from Pacific Harbour",
+        "firewalking shows currently offered"
+      ]
+    },
+    {
+      "id": "coral-coast-4",
+      "costMin": 500,
+      "costMax": 500,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": null,
+      "ticket_reason": "Place dived by operators; spot is the reef, not one operator (Beqa Adventure Divers is the original: https://www.fijisharkdive.com/).",
+      "visitHoursMin": 3,
+      "visitHoursMax": 4,
+      "bio": "Marine reserve off Beqa where divers meet up to eight shark species, including bull sharks, on a two-tank dive.",
+      "sources": {
+        "bio": "https://www.fijisharkdive.com/the-fiji-shark-dive/",
+        "cost": "https://www.fijisharkdive.com/daily-dive-rates/",
+        "reserve": "https://www.fijisharkdive.com/shark-reef-marine-reserve/"
+      },
+      "notes": "FJ$500 = two-tank Shark Dive, plus FJ$25/day reserve levy and FJ$20 fuel surcharge (rates 1 Apr 2026-31 Mar 2027, one operator's price; levy not added). Snorkel FJ$100. Operator departs Pacific Harbour (Pacific Harbour Wikivoyage listing).",
+      "unverified": [
+        "other operators' prices"
+      ]
+    }
+  ]
+}

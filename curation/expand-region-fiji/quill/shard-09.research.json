@@ -1,0 +1,132 @@
+{
+  "spots": [
+    {
+      "id": "vanua-levu-3",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "town with no single steward",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Vanua Levu's largest town, set on a river delta, with a farmers' market and a main street of Indo-Fijian shops and curry houses.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Labasa",
+        "cost": "https://en.wikipedia.org/wiki/Labasa"
+      },
+      "notes": "Market and main street per Wikipedia; no fee for a town.",
+      "unverified": [
+        "whether the market trades daily"
+      ]
+    },
+    {
+      "id": "vanua-levu-4",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "no steward found",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 3,
+      "bio": "Ridge walk in the hills above Savusavu, a red-soil track with views across the bay towards the Pacific.",
+      "sources": {
+        "bio": "https://blog.mailasail.com/zoonie/posts/2018/7/17/638-a-sunday-in-savusavu"
+      },
+      "notes": "No source names a trail called 'Savusavu Hills'; only a 2018 yachtie blog describes a ridge track with lookout. Candidate for review/removal; nearest sourced alternatives: Waisali Rainforest Reserve (afar.com), Urata Lookout, Muanivatu Trails (approx FJ$25 per fijipocketguide, Vuadomo Village).",
+      "unverified": [
+        "that a named, publicly walkable route exists",
+        "access/fee",
+        "route length and coordinates (no OSM/agency route)",
+        "dropped: no source names a trail called Savusavu Hills"
+      ],
+      "drop": true
+    },
+    {
+      "id": "vanua-levu-5",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "open shoreline, no steward",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 2,
+      "bio": "Shoreline on Lesiaceva Road about 6 km west of Savusavu, with free snorkelling at Split Rock marked by a white buoy.",
+      "sources": {
+        "bio": "https://fijipocketguide.com/10-free-cheap-things-to-do-on-vanua-levu/",
+        "cost": "https://fijipocketguide.com/10-free-cheap-things-to-do-on-vanua-levu/"
+      },
+      "notes": "Split Rock snorkel is free, Lesiaceva Road opposite post 63, about 6 km west of Savusavu (guide). Area also has private resorts; public beach status of the point itself is not confirmed.",
+      "unverified": [
+        "public access to Lesiaceva Point beach itself",
+        "distance (5 km vs 6 km across sources)",
+        "'headland and sandy beach' cut: only Split Rock snorkelling and location sourced; public access to the point unconfirmed"
+      ]
+    },
+    {
+      "id": "kadavu-island",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "island; fiji.travel page BLOCKED (403): https://fiji.travel/places-to-go/kadavu-island/places/hiking",
+      "visitHoursMin": 24,
+      "visitHoursMax": 72,
+      "bio": "Fiji's fourth-largest island, ringed by reef, with rainforest, waterfalls and coastal villages that visitors reach through resorts.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Kadavu_Island, https://en.wikivoyage.org/wiki/Kadavu",
+        "cost": "https://en.wikivoyage.org/wiki/Kadavu"
+      },
+      "notes": "Island is a destination-scale place (Wikipedia: 411 sq km, pop 10,167 in 2007); recommend promoting/merging to a destination rather than a spot. Visits are arranged via resorts; no entry fee sourced.",
+      "unverified": [
+        "spot vs destination status",
+        "any island or village fees",
+        "destination-scale place; owner may promote to destination",
+        "'reached mostly by boat' reworded to resorts (Wikivoyage)"
+      ],
+      "wiki": "Kadavu Island"
+    },
+    {
+      "id": "great-astrolabe-reef",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "sold by many dive operators and resorts",
+      "visitHoursMin": 2,
+      "visitHoursMax": 8,
+      "bio": "Barrier reef along Kadavu's southern coast with more than 60 recognised dive sites and manta ray snorkelling at Buliya.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Kadavu, https://en.wikipedia.org/wiki/Great_Astrolabe_Reef",
+        "cost": "https://en.wikipedia.org/wiki/Great_Astrolabe_Reef"
+      },
+      "notes": "Wikipedia: parts such as Naiqoro Passage are protected and require entry fees (amount not sourced). Dive trip prices not sourced; recorded free/open as the reef itself is not ticketed.",
+      "unverified": [
+        "Naiqoro Passage fee amount",
+        "dive/snorkel trip prices",
+        "Naiqoro Passage entry fee exists (Wikipedia), amount unsourced; spot recorded free/open"
+      ]
+    },
+    {
+      "id": "kavala-bay-waterfall",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "ticket_reason": "no official site; reached via resorts (Tiliva, Kokomo, Oneta) and village",
+      "visitHoursMin": 2,
+      "visitHoursMax": 4,
+      "bio": "A 45-minute moderate climb to a high waterfall with a swimming hole, reached by boat through mangroves at high tide.",
+      "sources": {
+        "bio": "https://fijipocketguide.com/8-best-walks-on-kadavu/",
+        "cost": "https://fijipocketguide.com/8-best-walks-on-kadavu/"
+      },
+      "notes": "No fee found; a village entry/sevusevu fee is likely but unsourced. Resorts Tiliva, Kokomo Island and Oneta offer transport. Waterfall pool: swimming hole at base.",
+      "unverified": [
+        "village entry fee",
+        "guide requirement",
+        "coordinates (no OSM feature checked; resolve-pin not run)",
+        "village fee unsourced"
+      ]
+    }
+  ]
+}

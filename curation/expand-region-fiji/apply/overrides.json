@@ -1,0 +1,566 @@
+{
+ "spots": {
+  "nadi-1": {
+   "bio": "Orchid garden begun by actor Raymond Burr, with jungle walkways and lily ponds at the foot of the Sabeto Range.",
+   "costMin": 18,
+   "costMax": 18,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://gosg.com.fj/",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "nadi-2": {
+   "bio": "Large Dravidian-style Hindu temple at the southern end of Nadi, open to visitors who cover knees and shoulders.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1
+  },
+  "nadi-3": {
+   "bio": "Mud bath followed by a circuit of three pools in the Sabeto valley, with massages available.",
+   "costMin": 30,
+   "costMax": 30,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "nadi-4": {
+   "bio": "Heritage park in the Mount Evans range behind Lautoka and Nadi, with guided hikes and waterfalls reached from Abaca village.",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "FJD",
+   "costBasis": "park",
+   "costPer": "Per Person",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8
+  },
+  "nadi-5": {
+   "bio": "Chiefly village near Lautoka, said to be Fiji's oldest settlement, founded where the first Melanesian canoes beached at Vuda Point.",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "wiki": "Viseisei"
+  },
+  "nadi-6": {
+   "bio": "A 3 km beach north of Nadi town, lined with resorts and beach clubs.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5
+  },
+  "nadi-7": {
+   "bio": "Fruit and vegetable market on Hospital Road in Nadi, selling cheap seasonal produce.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1
+  },
+  "nadi-8": {
+   "bio": "Dry-zone mountain rainforest in Viti Levu's interior, with villages such as Navala and views, and a window onto Fijian culture.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 6
+  },
+  "nadi-9": {
+   "bio": "Large covered market beside Lautoka's bus station selling fruit, vegetables, spices and kava, with cooked-food stalls outside.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1
+  },
+  "mamanuca-islands-1": {
+   "bio": "Small uninhabited island where Cast Away was filmed, with white sand beaches and a pine forest, reached by boat.",
+   "free": false,
+   "costMin": 160,
+   "costMax": 160,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "wiki": "Monuriki"
+  },
+  "mamanuca-islands-2": {
+   "bio": "Resort island with three beach areas, lagoon snorkelling and water sports, and the setting of the Survivor TV series.",
+   "costMin": 209,
+   "costMax": 209,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "wiki": "Mana Island (Fiji)"
+  },
+  "mamanuca-islands-3": {
+   "bio": "Small island resort known as the party island, with snorkelling, a glass-bottom boat and a nightly Bula Dance.",
+   "costMin": 195,
+   "costMax": 195,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://beachcomberfiji.com/",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "wiki": "Beachcomber Island"
+  },
+  "mamanuca-islands-4": {
+   "bio": "A marine-reserve island resort off Nadi with a pool, tennis courts, snorkelling and a turtle restoration programme.",
+   "costMin": 240,
+   "costMax": 240,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "wiki": "Treasure Island (Fiji)"
+  },
+  "mamanuca-islands-5": {
+   "bio": "A tiny island a short catamaran ride from Port Denarau with a saltwater pool, free snorkel gear and a coral viewer submarine.",
+   "costMin": 245,
+   "costMax": 285,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://southseacruisesfiji.com/day-trips/south-sea-island/",
+   "visitHoursMin": 3,
+   "visitHoursMax": 7
+  },
+  "mamanuca-islands-6": {
+   "bio": "A private island 30 minutes from Denarau with white sandy beaches, a small resort and snorkelling in a marine reserve.",
+   "costMin": 205,
+   "costMax": 205,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 6,
+   "wiki": "Kadavulailai"
+  },
+  "mamanuca-islands-7": {
+   "bio": "A reef wave off Tavarua, one of Fiji's best-known surf breaks, reached by boat from nearby island resorts.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "yasawa-islands-1": {
+   "bio": "Limestone sea caves on Sawa-i-Lau island, with a skylit first cavern and a second reached by an underwater passage.",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "yasawa-islands-2": {
+   "bio": "Lagoon in the Yasawa Islands ringed by soft rolling peaks and white sand beaches, with coral reefs to snorkel.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "yasawa-islands-3": {
+   "bio": "Yasawa island beside the Blue Lagoon, with a walk over the island, snorkelling in a fish sanctuary and a dive shop.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4
+  },
+  "yasawa-islands-4": {
+   "bio": "Small Yasawa island where a climb to the top gives sunrise views and a walk crosses a spit to Waya.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4
+  },
+  "coral-coast-1": {
+   "bio": "Fiji's first national park, with 20-60 m dunes at the Sigatoka River mouth, two walking trails and Lapita archaeology.",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "FJD",
+   "costBasis": "park",
+   "costPer": "Adult",
+   "ticketUrl": "https://nationaltrust.org.fj/ssd/",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "coral-coast-2": {
+   "bio": "White-sand beach on the Coral Coast with shade trees, considered one of Fiji's best and good for horse riding.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "coral-coast-3": {
+   "bio": "Island 10 km south of Viti Levu with nine villages, five noted for fire-walking, and a few resorts.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "wiki": "Beqa"
+  },
+  "coral-coast-5": {
+   "bio": "The Upper Navua is a gorge of black volcanic walls and waterfalls, run on Class II-III rafting day trips.",
+   "costMin": 439,
+   "costMax": 439,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://riversfiji.com/rafting-upper-navua/",
+   "visitHoursMin": 6,
+   "visitHoursMax": 9
+  },
+  "coral-coast-6": {
+   "bio": "A rainforest waterfall on the Coral Coast, reached on foot from Biausevu village.",
+   "free": false,
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3
+  },
+  "coral-coast-7": {
+   "bio": "A semi-restored hill fort built by a Tongan chief above the Sigatoka valley, shown on tours led by Naroro villagers.",
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5
+  },
+  "coral-coast-8": {
+   "bio": "Wildlife park on the Coral Coast with forest boardwalks, a reef display, and captive breeding of Fiji's crested iguana.",
+   "free": false,
+   "costMin": 70,
+   "costMax": 70,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://fijiwild.com/",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "wiki": "Kula WILD Adventure Park"
+  },
+  "rakiraki-1": {
+   "bio": "A small island off the Rakiraki coast, reached by chartered boat from the mainland and known for diving and kayaking.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 8
+  },
+  "rakiraki-3": {
+   "bio": "Tomb of the 19th-century chief Ratu Udre Udre, listed by Guinness as the most prolific cannibal, near Rakiraki.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "wiki": "Ratu Udre Udre"
+  },
+  "rakiraki-4": {
+   "bio": "Sacred rock by Kings Road at Vitawa village that looks like a man or woman from different angles.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25
+  },
+  "suva-1": {
+   "bio": "National museum in Thurston Gardens holding Fijian artefacts up to 3,700 years old, including the canoe Ratu Finau.",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://fijimuseum.org.fj/",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "suva-2": {
+   "bio": "Rainforest park near Suva with about 4.5 km of trails, natural swimming pools along Waisila Creek and good birdwatching.",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "FJD",
+   "costBasis": "park",
+   "costPer": "Adult/Day",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "wiki": "Colo-i-Suva Forest Reserve"
+  },
+  "suva-3": {
+   "bio": "Fruit and vegetable market on Harris Road, south of the bus station, selling Fiji's tropical produce.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1
+  },
+  "suva-4": {
+   "bio": "Steep 400 m hill walk from Lami with 360-degree views of Suva, Beqa Island and the highlands.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5
+  },
+  "levuka-1": {
+   "bio": "Hike up the 199 steps to Mission Hill for old mission houses and a view over the offshore islands and reef.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1
+  },
+  "levuka-4": {
+   "bio": "Village in the middle of Ovalau's volcanic crater, visited on a guided hike with a village tour and a Fijian lunch.",
+   "costMin": 120,
+   "costMax": 120,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "costPer": "Per Person",
+   "ticketUrl": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 6
+  },
+  "levuka-5": {
+   "bio": "Small coral cay about 45 minutes by boat from Levuka, with a beach, snorkelling off the shore and day trips.",
+   "costMin": 180,
+   "costMax": 180,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.leleuvia.com/en/",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6
+  },
+  "taveuni-1": {
+   "bio": "Three waterfalls with swimming pools in Bouma National Heritage Park, the lowest a short, flat walk from the visitor centre.",
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3
+  },
+  "taveuni-2": {
+   "bio": "Coastal track from Lavena village past white and black sand beaches to a waterfall, about 5 km each way.",
+   "costMin": 35,
+   "costMax": 35,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5
+  },
+  "taveuni-3": {
+   "bio": "Lookout peak at about 1,195 m with views to Lake Tagimoucia and the Lau Group, reached on foot or by 4WD, with good birdwatching.",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "currency": "FJD"
+  },
+  "taveuni-4": {
+   "bio": "A 32 km soft-coral reef in the Somosomo Strait with over 30 dive sites, including the Great White Wall.",
+   "free": false,
+   "costMin": 462,
+   "costMax": 462,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "wiki": "Rainbow Reef"
+  },
+  "taveuni-5": {
+   "bio": "Community-run no-take reef protected since 1998, visited on guided snorkelling and cultural tours arranged in advance.",
+   "costMin": 70,
+   "costMax": 100,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.waitabu.org/",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3
+  },
+  "taveuni-6": {
+   "bio": "Crater lake at about 830 m above Somosomo, reached by a long guided hike, where Fiji's national flower grows.",
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "FJD",
+   "costBasis": "tour",
+   "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/",
+   "visitHoursMin": 6,
+   "visitHoursMax": 8
+  },
+  "taveuni-9": {
+   "bio": "Natural rock slide on a Taveuni stream where visitors swim in cool water and slide down the smooth rock.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5
+  },
+  "taveuni-10": {
+   "bio": "Colonial Romanesque Catholic church on a hill at Wairiki, overlooking the beach of a famed canoe battle against Tongan invaders.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5
+  },
+  "vanua-levu-1": {
+   "bio": "Town on Vanua Levu's south coast with a yacht club at the old Copra Shed, diving and geothermal hot springs.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "vanua-levu-2": {
+   "bio": "Rainforest reserve northwest of Savusavu, co-managed by its community, with walking trails, rare birds and endemic frogs.",
+   "costMin": 3,
+   "costMax": 3,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://nationaltrust.org.fj/waisali/",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5
+  },
+  "vanua-levu-3": {
+   "bio": "Vanua Levu's largest town, set on a river delta, with a farmers' market and a main street of Indo-Fijian shops and curry houses.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "kadavu-island": {
+   "bio": "Fiji's fourth-largest island, ringed by reef, with rainforest, waterfalls and coastal villages that visitors reach through resorts.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "wiki": "Kadavu Island"
+  },
+  "great-astrolabe-reef": {
+   "bio": "Barrier reef along Kadavu's southern coast with more than 60 recognised dive sites and manta ray snorkelling at Buliya.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 8
+  },
+  "nabukelevu": {
+   "bio": "Nabukelevu, also called Mount Washington, is an 805 m lava dome volcano on Kadavu's southwest, last erupted around 1660.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 6
+  },
+  "navala-village": {
+   "bio": "Navala is a Ba Highlands village of over 200 thatched bures, one of the few in Fiji still fully traditional in architecture.",
+   "free": false,
+   "costMin": 30,
+   "costMax": 40,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "wiki": "Navala"
+  },
+  "mount-tomanivi": {
+   "bio": "Mount Tomanivi, formerly Mount Victoria, is Fiji's highest peak at 1,324 m, reached by a trail from Navai village.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 4,
+   "visitHoursMax": 8
+  },
+  "vanua-balavu": {
+   "bio": "Vanua Balavu is the main island of the Northern Lau Group, with hot springs, a reef system and Lomaloma as its main village.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 24
+  },
+  "lakeba": {
+   "bio": "Lakeba is the Lau Group's provincial capital island and home of the chiefly Vuanirewa clan, with Tongan-influenced culture.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 3,
+   "visitHoursMax": 24
+  },
+  "vaioa-beach": {
+   "bio": "Vai'oa Beach is one of Rotuma's best beaches, on the island's west side near Solroroa Bluff.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "oinafa-beach": {
+   "bio": "Oinafa is one of Rotuma's finest beaches, on the island's west side near Solroroa Bluff.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  }
+ }
+}

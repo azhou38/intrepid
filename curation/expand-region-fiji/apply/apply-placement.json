@@ -1,0 +1,1193 @@
+{
+ "placements": [
+  {
+   "id": "nadi-1",
+   "name": "Garden of the Sleeping Giant",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.711619,
+    "longitude": 177.469215
+   },
+   "spot": {
+    "name": "Garden of the Sleeping Giant",
+    "icon": "🌺",
+    "category": "nature",
+    "bio": "Orchid garden begun by actor Raymond Burr, with jungle walkways and lily ponds at the foot of the Sabeto Range.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2
+   },
+   "photoless": true,
+   "coordinates_source": "osm:leisure=park (nominatim) Garden of the Sleeping Giant; HIGH"
+  },
+  {
+   "id": "nadi-2",
+   "name": "Sri Siva Subramaniya Temple",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.807254,
+    "longitude": 177.415068
+   },
+   "spot": {
+    "name": "Sri Siva Subramaniya Temple",
+    "icon": "🛕",
+    "category": "religious",
+    "bio": "Large Dravidian-style Hindu temple at the southern end of Nadi, open to visitors who cover knees and shoulders.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "osm:amenity=place_of_worship (nominatim) Sri Siva Subramaniya Swami Temple; HIGH"
+  },
+  {
+   "id": "nadi-3",
+   "name": "Sabeto Hot Springs and Mud Pool",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.71836,
+    "longitude": 177.48404
+   },
+   "spot": {
+    "name": "Sabeto Hot Springs and Mud Pool",
+    "icon": "♨️",
+    "category": "nature",
+    "bio": "Mud bath followed by a circuit of three pools in the Sabeto valley, with massages available.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2
+   },
+   "photoless": true,
+   "coordinates_source": "OSM leisure=sports_centre 'Sabeto Hot Spring and Mud Pool' (way 1192604003) + Commons geotagged files at -17.71794,177.48441 (~55 m) osm:sports_centre; HIGH"
+  },
+  {
+   "id": "nadi-4",
+   "name": "Koroyanitu National Heritage Park",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.667626,
+    "longitude": 177.57363
+   },
+   "spot": {
+    "name": "Koroyanitu National Heritage Park",
+    "icon": "🥾",
+    "category": "nature",
+    "bio": "Heritage park in the Mount Evans range behind Lautoka and Nadi, with guided hikes and waterfalls reached from Abaca village.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 8
+   },
+   "photoless": true,
+   "coordinates_source": "osm:natural=peak (nominatim) Koroyanitu; HIGH"
+  },
+  {
+   "id": "nadi-5",
+   "name": "Viseisei Village",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.68789,
+    "longitude": 177.40991
+   },
+   "spot": {
+    "name": "Viseisei Village",
+    "icon": "🛖",
+    "category": "historic",
+    "bio": "Chiefly village near Lautoka, said to be Fiji's oldest settlement, founded where the first Melanesian canoes beached at Vuda Point.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "wiki": "Viseisei"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 6687457288 'Vuda village' tourism=attraction; Wikipedia Viseisei article -17.68561,177.40742 (~300 m); OSM bus stop/school/health centre agree attraction/village; MEDIUM"
+  },
+  {
+   "id": "nadi-6",
+   "name": "Wailoaloa Beach",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.764133,
+    "longitude": 177.427718
+   },
+   "spot": {
+    "name": "Wailoaloa Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A 3 km beach north of Nadi town, lined with resorts and beach clubs.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5
+   },
+   "photoless": true,
+   "coordinates_source": "osm:natural=beach (nominatim) Wailoaloa Beach; HIGH"
+  },
+  {
+   "id": "nadi-7",
+   "name": "Nadi Produce Market",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.80302,
+    "longitude": 177.416
+   },
+   "spot": {
+    "name": "Nadi Produce Market",
+    "icon": "🥭",
+    "category": "market",
+    "bio": "Fruit and vegetable market on Hospital Road in Nadi, selling cheap seasonal produce.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "wikivoyage Nadi 'Nadi Produce Markets' listing (-17.803,177.4164) + median of 93 Commons geotagged files (-17.80302,177.41576), ~45 m apart market (wikivoyage listing + photo median); HIGH"
+  },
+  {
+   "id": "nadi-8",
+   "name": "Nausori Highlands",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.80315,
+    "longitude": 177.58794
+   },
+   "spot": {
+    "name": "Nausori Highlands",
+    "icon": "⛰️",
+    "category": "nature",
+    "bio": "Dry-zone mountain rainforest in Viti Levu's interior, with villages such as Navala and views, and a window onto Fijian culture.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6
+   },
+   "photoless": true,
+   "coordinates_source": "Wikidata Q6981434 Nausori Highlands (rural area) own P625; same as Wikivoyage listing wikidata:area centroid; MEDIUM"
+  },
+  {
+   "id": "nadi-9",
+   "name": "Lautoka Market",
+   "action": "spot",
+   "destination": "nadi",
+   "coordinates": {
+    "latitude": -17.604259,
+    "longitude": 177.454189
+   },
+   "spot": {
+    "name": "Lautoka Market",
+    "icon": "🥭",
+    "category": "market",
+    "bio": "Large covered market beside Lautoka's bus station selling fruit, vegetables, spices and kava, with cooked-food stalls outside.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "osm:amenity=marketplace (nominatim) Lautoka Market; MEDIUM"
+  },
+  {
+   "id": "mamanuca-islands-1",
+   "name": "Monuriki",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "coordinates": {
+    "latitude": -17.609386,
+    "longitude": 177.035149
+   },
+   "spot": {
+    "name": "Monuriki",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "Small uninhabited island where Cast Away was filmed, with white sand beaches and a pine forest, reached by boat.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "wiki": "Monuriki"
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=island (nominatim) Monuriki; MEDIUM"
+  },
+  {
+   "id": "mamanuca-islands-2",
+   "name": "Mana Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "coordinates": {
+    "latitude": -17.676105,
+    "longitude": 177.111985
+   },
+   "spot": {
+    "name": "Mana Island",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "Resort island with three beach areas, lagoon snorkelling and water sports, and the setting of the Survivor TV series.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 8,
+    "wiki": "Mana Island (Fiji)"
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=island (nominatim) Mana Island; HIGH"
+  },
+  {
+   "id": "mamanuca-islands-3",
+   "name": "Beachcomber Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "coordinates": {
+    "latitude": -17.654268,
+    "longitude": 177.25574
+   },
+   "spot": {
+    "name": "Beachcomber Island",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "Small island resort known as the party island, with snorkelling, a glass-bottom boat and a nightly Bula Dance.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 8,
+    "wiki": "Beachcomber Island"
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=island (nominatim) Beachcomber Island; HIGH"
+  },
+  {
+   "id": "mamanuca-islands-4",
+   "name": "Treasure Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "coordinates": {
+    "latitude": -17.65403,
+    "longitude": 177.26399
+   },
+   "spot": {
+    "name": "Treasure Island",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "A marine-reserve island resort off Nadi with a pool, tennis courts, snorkelling and a turtle restoration programme.",
+    "visitHoursMin": 4,
+    "visitHoursMax": 7,
+    "wiki": "Treasure Island (Fiji)"
+   },
+   "photoless": true,
+   "coordinates_source": "Wikipedia 'Treasure Island (Fiji)' coordinates; Wikivoyage listing -17.6551,177.2671 (~330 m, island is small) island; MEDIUM"
+  },
+  {
+   "id": "mamanuca-islands-5",
+   "name": "South Sea Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "coordinates": {
+    "latitude": -17.636497,
+    "longitude": 177.18161
+   },
+   "spot": {
+    "name": "South Sea Island",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "A tiny island a short catamaran ride from Port Denarau with a saltwater pool, free snorkel gear and a coral viewer submarine.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 7
+   },
+   "photoless": true,
+   "coordinates_source": "Wikipedia 'South Sea Island' article coordinates (6 dp) island (wikipedia); MEDIUM"
+  },
+  {
+   "id": "mamanuca-islands-6",
+   "name": "Bounty Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "coordinates": {
+    "latitude": -17.67305919,
+    "longitude": 177.3083884
+   },
+   "spot": {
+    "name": "Bounty Island",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "A private island 30 minutes from Denarau with white sandy beaches, a small resort and snorkelling in a marine reserve.",
+    "visitHoursMin": 4,
+    "visitHoursMax": 6,
+    "wiki": "Kadavulailai"
+   },
+   "photoless": true,
+   "coordinates_source": "Wikipedia 'Kadavulailai' (island hosting Bounty Island Resort) own coordinates; Commons 'Beachcomber Party Island' photo at -17.67303,177.30603 is on the same small island (~250 m) wikipedia:island; MEDIUM"
+  },
+  {
+   "id": "mamanuca-islands-7",
+   "name": "Cloudbreak",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "coordinates": {
+    "latitude": -17.88672,
+    "longitude": 177.1865
+   },
+   "spot": {
+    "name": "Cloudbreak",
+    "icon": "🌊",
+    "category": "nature",
+    "bio": "A reef wave off Tavarua, one of Fiji's best-known surf breaks, reached by boat from nearby island resorts.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "Two Commons files 'Cloudbreak - panoramio' geotags (-17.88658,177.18673 and -17.88686,177.18626); consistent with Tavarua article (break ~1 mile off Tavarua, SW of Namotu) surf break/reef; MEDIUM"
+  },
+  {
+   "id": "yasawa-islands-1",
+   "name": "Sawa-i-Lau Caves",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "coordinates": {
+    "latitude": -16.8503506,
+    "longitude": 177.4667286
+   },
+   "spot": {
+    "name": "Sawa-i-Lau Caves",
+    "icon": "🦇",
+    "category": "nature",
+    "bio": "Limestone sea caves on Sawa-i-Lau island, with a skylit first cavern and a second reached by an underwater passage.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 'Sawa-i-Lau Caves' via Nominatim (cave_entrance); Commons photo inside cave at -16.85153,177.46655 (131 m); Wikidata island centre -16.8514,177.4697 natural=cave_entrance; MEDIUM"
+  },
+  {
+   "id": "yasawa-islands-2",
+   "name": "Blue Lagoon",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "coordinates": {
+    "latitude": -16.94536,
+    "longitude": 177.36921
+   },
+   "spot": {
+    "name": "Blue Lagoon",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "Lagoon in the Yasawa Islands ringed by soft rolling peaks and white sand beaches, with coral reefs to snorkel.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node tourism=attraction 'Blue Lagoon Beach' (Nanuya Lailai); OSM natural=bay 'Blue Lagoon' at -16.94335,177.36810 and Wikipedia Nanuya Lailai (-16.94595,177.36868) agree within ~250 m osm:tourism attraction (beach); MEDIUM"
+  },
+  {
+   "id": "yasawa-islands-3",
+   "name": "Nanuya Lailai",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "coordinates": {
+    "latitude": -16.94595,
+    "longitude": 177.36868
+   },
+   "spot": {
+    "name": "Nanuya Lailai",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "Yasawa island beside the Blue Lagoon, with a walk over the island, snorkelling in a fish sanctuary and a dive shop.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4
+   },
+   "photoless": true,
+   "coordinates_source": "Wikipedia/Wikidata 'Nanuya Lailai' island point; Wikivoyage -16.95,177.367 agrees (~500 m) island; MEDIUM"
+  },
+  {
+   "id": "yasawa-islands-4",
+   "name": "Waya Lailai",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "coordinates": {
+    "latitude": -17.33978,
+    "longitude": 177.138818
+   },
+   "spot": {
+    "name": "Waya Lailai",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "Small Yasawa island where a climb to the top gives sunrise views and a walk crosses a spit to Waya.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=island (nominatim) Wayalailai; MEDIUM"
+  },
+  {
+   "id": "coral-coast-1",
+   "name": "Sigatoka Sand Dunes National Park",
+   "action": "spot",
+   "destination": "coral-coast",
+   "coordinates": {
+    "latitude": -18.167694,
+    "longitude": 177.488097
+   },
+   "spot": {
+    "name": "Sigatoka Sand Dunes National Park",
+    "icon": "🏜️",
+    "category": "nature",
+    "bio": "Fiji's first national park, with 20-60 m dunes at the Sigatoka River mouth, two walking trails and Lapita archaeology.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2
+   },
+   "photoless": true,
+   "coordinates_source": "osm:boundary=national_park (nominatim) Sigatoka Sand Dunes National Park; HIGH"
+  },
+  {
+   "id": "coral-coast-2",
+   "name": "Natadola Beach",
+   "action": "spot",
+   "destination": "coral-coast",
+   "coordinates": {
+    "latitude": -18.103634,
+    "longitude": 177.320596
+   },
+   "spot": {
+    "name": "Natadola Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "White-sand beach on the Coral Coast with shade trees, considered one of Fiji's best and good for horse riding.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "osm:natural=beach (nominatim) Natadola Beach; HIGH"
+  },
+  {
+   "id": "coral-coast-3",
+   "name": "Beqa Island",
+   "action": "spot",
+   "destination": "coral-coast",
+   "coordinates": {
+    "latitude": -18.391187,
+    "longitude": 178.122767
+   },
+   "spot": {
+    "name": "Beqa Island",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "Island 10 km south of Viti Levu with nine villages, five noted for fire-walking, and a few resorts.",
+    "visitHoursMin": 4,
+    "visitHoursMax": 8,
+    "wiki": "Beqa"
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=island (nominatim) Beqa; HIGH"
+  },
+  {
+   "id": "coral-coast-5",
+   "name": "Navua River",
+   "action": "spot",
+   "destination": "coral-coast",
+   "coordinates": {
+    "latitude": -18.226581,
+    "longitude": 178.164407
+   },
+   "spot": {
+    "name": "Navua River",
+    "icon": "🚣",
+    "category": "nature",
+    "bio": "The Upper Navua is a gorge of black volcanic walls and waterfalls, run on Class II-III rafting day trips.",
+    "visitHoursMin": 6,
+    "visitHoursMax": 9
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=town (nominatim) Navua; MEDIUM"
+  },
+  {
+   "id": "coral-coast-6",
+   "name": "Biausevu Waterfalls",
+   "action": "spot",
+   "destination": "coral-coast",
+   "coordinates": {
+    "latitude": -18.18007,
+    "longitude": 177.73817
+   },
+   "spot": {
+    "name": "Biausevu Waterfalls",
+    "icon": "💧",
+    "category": "nature",
+    "bio": "A rainforest waterfall on the Coral Coast, reached on foot from Biausevu village.",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "Wikidata Q111449074 'Biausevu Waterfall' own P625 wikidata:waterfall; MEDIUM"
+  },
+  {
+   "id": "coral-coast-7",
+   "name": "Tavuni Hill Fort",
+   "action": "spot",
+   "destination": "coral-coast",
+   "coordinates": {
+    "latitude": -18.130218,
+    "longitude": 177.541066
+   },
+   "spot": {
+    "name": "Tavuni Hill Fort",
+    "icon": "🏰",
+    "category": "historic",
+    "bio": "A semi-restored hill fort built by a Tongan chief above the Sigatoka valley, shown on tours led by Naroro villagers.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5
+   },
+   "photoless": true,
+   "coordinates_source": "osm:tourism=attraction (nominatim) Tavuni Hill Fort; HIGH"
+  },
+  {
+   "id": "coral-coast-8",
+   "name": "Kula Eco Park",
+   "action": "spot",
+   "destination": "coral-coast",
+   "coordinates": {
+    "latitude": -18.17547,
+    "longitude": 177.55554
+   },
+   "spot": {
+    "name": "Kula Eco Park",
+    "icon": "🦜",
+    "category": "entertainment",
+    "bio": "Wildlife park on the Coral Coast with forest boardwalks, a reef display, and captive breeding of Fiji's crested iguana.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3,
+    "wiki": "Kula WILD Adventure Park"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 4881280921 'KULA Wild Adventure Park' attraction (-18.17547,177.55554) + Commons Kula-bred bird files geotagged -18.17528,177.55556 (~25 m); Wikivoyage: across from the Outrigger (-18.1788,177.5527) attraction/zoo; HIGH"
+  },
+  {
+   "id": "rakiraki-1",
+   "name": "Nananu-i-Ra",
+   "action": "spot",
+   "destination": "rakiraki",
+   "coordinates": {
+    "latitude": -17.292769,
+    "longitude": 178.218884
+   },
+   "spot": {
+    "name": "Nananu-i-Ra",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "A small island off the Rakiraki coast, reached by chartered boat from the mainland and known for diving and kayaking.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 8
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=island (nominatim) Nananu i Ra; HIGH"
+  },
+  {
+   "id": "rakiraki-3",
+   "name": "Ratu Udre Udre Tomb",
+   "action": "spot",
+   "destination": "rakiraki",
+   "coordinates": {
+    "latitude": -17.37398,
+    "longitude": 178.1417
+   },
+   "spot": {
+    "name": "Ratu Udre Udre Tomb",
+    "icon": "🪦",
+    "category": "historic",
+    "bio": "Tomb of the 19th-century chief Ratu Udre Udre, listed by Guinness as the most prolific cannibal, near Rakiraki.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "wiki": "Ratu Udre Udre"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node historic=tomb 'Udre-Udre Tomb' (13290160001) + Wikivoyage listing for the tomb lat -17.37389 long 178.14167 (~10 m) osm:historic tomb; HIGH"
+  },
+  {
+   "id": "rakiraki-4",
+   "name": "Navatu Rock",
+   "action": "spot",
+   "destination": "rakiraki",
+   "coordinates": {
+    "latitude": -17.3719,
+    "longitude": 178.11
+   },
+   "spot": {
+    "name": "Navatu Rock",
+    "icon": "🪨",
+    "category": "landmark",
+    "bio": "Sacred rock by Kings Road at Vitawa village that looks like a man or woman from different angles.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.25
+   },
+   "photoless": true,
+   "coordinates_source": "Wikivoyage Rakiraki listing geo tag (separate from Vitawa village OSM node -17.3717,178.1118, 170 m east); no OSM/Commons point for the rock itself landmark; LOW"
+  },
+  {
+   "id": "suva-1",
+   "name": "Fiji Museum",
+   "action": "spot",
+   "destination": "suva",
+   "coordinates": {
+    "latitude": -18.149702,
+    "longitude": 178.425605
+   },
+   "spot": {
+    "name": "Fiji Museum",
+    "icon": "🏛️",
+    "category": "museum",
+    "bio": "National museum in Thurston Gardens holding Fijian artefacts up to 3,700 years old, including the canoe Ratu Finau.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2
+   },
+   "photoless": true,
+   "coordinates_source": "osm:tourism=museum (nominatim) Fiji Museum; MEDIUM"
+  },
+  {
+   "id": "suva-2",
+   "name": "Colo-i-Suva Forest Reserve",
+   "action": "spot",
+   "destination": "suva",
+   "coordinates": {
+    "latitude": -18.057049,
+    "longitude": 178.385208
+   },
+   "spot": {
+    "name": "Colo-i-Suva Forest Reserve",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "Rainforest park near Suva with about 4.5 km of trails, natural swimming pools along Waisila Creek and good birdwatching.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "wiki": "Colo-i-Suva Forest Reserve"
+   },
+   "photoless": true,
+   "coordinates_source": "osm:landuse=forest (nominatim) Colo-I-Suva Forest Reserve; HIGH"
+  },
+  {
+   "id": "suva-3",
+   "name": "Suva Municipal Market",
+   "action": "spot",
+   "destination": "suva",
+   "coordinates": {
+    "latitude": -18.136354,
+    "longitude": 178.42504
+   },
+   "spot": {
+    "name": "Suva Municipal Market",
+    "icon": "🥭",
+    "category": "market",
+    "bio": "Fruit and vegetable market on Harris Road, south of the bus station, selling Fiji's tropical produce.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "wikivoyage Suva 'Suva Municipal Market' own listing (Harris Rd) + Commons 'Main Market Suva' photo geotagged 7 m away market; HIGH"
+  },
+  {
+   "id": "suva-4",
+   "name": "Mount Korobaba",
+   "action": "spot",
+   "destination": "suva",
+   "coordinates": {
+    "latitude": -18.08575,
+    "longitude": 178.382025
+   },
+   "spot": {
+    "name": "Mount Korobaba",
+    "icon": "⛰️",
+    "category": "viewpoint",
+    "bio": "Steep 400 m hill walk from Lami with 360-degree views of Suva, Beqa Island and the highlands.",
+    "visitHoursMin": 2.5,
+    "visitHoursMax": 3.5
+   },
+   "photoless": true,
+   "coordinates_source": "osm:natural=peak (nominatim) Mount Korobaba; HIGH"
+  },
+  {
+   "id": "levuka-1",
+   "name": "199 Steps (Mission Hill)",
+   "action": "spot",
+   "destination": "levuka",
+   "coordinates": {
+    "latitude": -17.6791435,
+    "longitude": 178.833312
+   },
+   "spot": {
+    "name": "199 Steps (Mission Hill)",
+    "icon": "🪜",
+    "category": "hike",
+    "bio": "Hike up the 199 steps to Mission Hill for old mission houses and a view over the offshore islands and reef.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "Google Maps place pin \"199 Steps Mission Hill\" (in-app browser) place; MEDIUM"
+  },
+  {
+   "id": "levuka-4",
+   "name": "Lovoni",
+   "action": "spot",
+   "destination": "levuka",
+   "coordinates": {
+    "latitude": -17.68913,
+    "longitude": 178.791875
+   },
+   "spot": {
+    "name": "Lovoni",
+    "icon": "🛖",
+    "category": "historic",
+    "bio": "Village in the middle of Ovalau's volcanic crater, visited on a guided hike with a village tour and a Fijian lunch.",
+    "visitHoursMin": 4,
+    "visitHoursMax": 6
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=town (nominatim) Lovoni; MEDIUM"
+  },
+  {
+   "id": "levuka-5",
+   "name": "Leleuvia",
+   "action": "spot",
+   "destination": "levuka",
+   "coordinates": {
+    "latitude": -17.808232,
+    "longitude": 178.721734
+   },
+   "spot": {
+    "name": "Leleuvia",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "Small coral cay about 45 minutes by boat from Levuka, with a beach, snorkelling off the shore and day trips.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=islet (nominatim) Leleuvia; MEDIUM"
+  },
+  {
+   "id": "taveuni-1",
+   "name": "Tavoro Waterfalls",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.82734,
+    "longitude": -179.87891
+   },
+   "spot": {
+    "name": "Tavoro Waterfalls",
+    "icon": "💧",
+    "category": "nature",
+    "bio": "Three waterfalls with swimming pools in Bouma National Heritage Park, the lowest a short, flat walk from the visitor centre.",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node waterway=waterfall 'Tavoro Lower Waterfall' (5998676216) and Wikidata Q111449070 Tavoro Waterfalls -16.82631,-179.8785 (~120 m apart) osm:waterfall; MEDIUM"
+  },
+  {
+   "id": "taveuni-2",
+   "name": "Lavena Coastal Walk",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.87134,
+    "longitude": -179.89651
+   },
+   "spot": {
+    "name": "Lavena Coastal Walk",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "Coastal track from Lavena village past white and black sand beaches to a waterfall, about 5 km each way.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 5
+   },
+   "photoless": true,
+   "coordinates_source": "Midpoint along OSM way chain (636059881-887, Lavena Coastal Walk path, 3.74 km) from Lavena entrance to Wainibau/Lavena waterfall; Wikivoyage confirms walk from Lavena village to waterfalls hiking route; MEDIUM"
+  },
+  {
+   "id": "taveuni-3",
+   "name": "Des Voeux Peak",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.8431863,
+    "longitude": -179.9657036
+   },
+   "spot": {
+    "name": "Des Voeux Peak",
+    "icon": "⛰️",
+    "category": "viewpoint",
+    "bio": "Lookout peak at about 1,195 m with views to Lake Tagimoucia and the Lau Group, reached on foot or by 4WD, with good birdwatching.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6
+   },
+   "photoless": true,
+   "coordinates_source": "Google Maps place pin \"Des Voeux Peak\" (in-app browser) place; MEDIUM"
+  },
+  {
+   "id": "taveuni-4",
+   "name": "Rainbow Reef",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.777,
+    "longitude": 179.9322
+   },
+   "spot": {
+    "name": "Rainbow Reef",
+    "icon": "🤿",
+    "category": "nature",
+    "bio": "A 32 km soft-coral reef in the Somosomo Strait with over 30 dive sites, including the Great White Wall.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "wiki": "Rainbow Reef"
+   },
+   "photoless": true,
+   "coordinates_source": "Wikipedia 'Rainbow Reef' own coordinates (own_point); no OSM feature found to confirm wikipedia:reef; MEDIUM"
+  },
+  {
+   "id": "taveuni-5",
+   "name": "Waitabu Marine Park",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.81487,
+    "longitude": -179.85876
+   },
+   "spot": {
+    "name": "Waitabu Marine Park",
+    "icon": "🐠",
+    "category": "nature",
+    "bio": "Community-run no-take reef protected since 1998, visited on guided snorkelling and cultural tours arranged in advance.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 6699771889 'Waitabu Marine Park' tourism=attraction; Waitabu village OSM -16.8135,-179.8594 agrees (~100 m) attraction; MEDIUM"
+  },
+  {
+   "id": "taveuni-6",
+   "name": "Lake Tagimaucia",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.8217877,
+    "longitude": -179.9548728
+   },
+   "spot": {
+    "name": "Lake Tagimaucia",
+    "icon": "🌺",
+    "category": "nature",
+    "bio": "Crater lake at about 830 m above Somosomo, reached by a long guided hike, where Fiji's national flower grows.",
+    "visitHoursMin": 6,
+    "visitHoursMax": 8
+   },
+   "photoless": true,
+   "coordinates_source": "Google Maps place pin \"Tagimoucia Lake\" (in-app browser) place; MEDIUM"
+  },
+  {
+   "id": "taveuni-9",
+   "name": "Waitavala Waterslide",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.79588,
+    "longitude": -179.99092
+   },
+   "spot": {
+    "name": "Waitavala Waterslide",
+    "icon": "💦",
+    "category": "nature",
+    "bio": "Natural rock slide on a Taveuni stream where visitors swim in cool water and slide down the smooth rock.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5
+   },
+   "photoless": true,
+   "coordinates_source": "Wikidata Q111449073 'Waitavala Water Slide' (-16.79588,-179.99092) + OSM waterway=stream 'Waitavala Water Slides' via Photon (-16.795864,-179.990691), ~25 m apart waterway (OSM stream / Wikidata waterfall); HIGH"
+  },
+  {
+   "id": "taveuni-10",
+   "name": "Wairiki Mission Church",
+   "action": "spot",
+   "destination": "taveuni",
+   "coordinates": {
+    "latitude": -16.806613,
+    "longitude": 179.991006
+   },
+   "spot": {
+    "name": "Wairiki Mission Church",
+    "icon": "⛪",
+    "category": "religious",
+    "bio": "Colonial Romanesque Catholic church on a hill at Wairiki, overlooking the beach of a famed canoe battle against Tongan invaders.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.5
+   },
+   "photoless": true,
+   "coordinates_source": "osm:amenity=place_of_worship (nominatim) Holy Cross (Wairiki Mission); MEDIUM"
+  },
+  {
+   "id": "vanua-levu-1",
+   "name": "Savusavu",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "coordinates": {
+    "latitude": -16.780218,
+    "longitude": 179.332896
+   },
+   "spot": {
+    "name": "Savusavu",
+    "icon": "🌴",
+    "category": "nature",
+    "bio": "Town on Vanua Levu's south coast with a yacht club at the old Copra Shed, diving and geothermal hot springs.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=town (nominatim) Savusavu; HIGH"
+  },
+  {
+   "id": "vanua-levu-2",
+   "name": "Waisali Rainforest Reserve",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "coordinates": {
+    "latitude": -16.63681,
+    "longitude": 179.21221
+   },
+   "spot": {
+    "name": "Waisali Rainforest Reserve",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "Rainforest reserve northwest of Savusavu, co-managed by its community, with walking trails, rare birds and endemic frogs.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2.5
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node tourism=attraction 'Waisali rainforest reserve' (6592988785); Waisali Village FEO tent -16.64656,179.23666 is ~2.6 km away (village, not used) osm:attraction; MEDIUM"
+  },
+  {
+   "id": "vanua-levu-3",
+   "name": "Labasa",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "coordinates": {
+    "latitude": -16.433275,
+    "longitude": 179.366485
+   },
+   "spot": {
+    "name": "Labasa",
+    "icon": "🏙️",
+    "category": "nature",
+    "bio": "Vanua Levu's largest town, set on a river delta, with a farmers' market and a main street of Indo-Fijian shops and curry houses.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=town (nominatim) Labasa; MEDIUM"
+  },
+  {
+   "id": "kadavu-island",
+   "name": "Kadavu Island",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -19.047994,
+    "longitude": 178.3629377
+   },
+   "spot": {
+    "name": "Kadavu Island",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "Fiji's fourth-largest island, ringed by reef, with rainforest, waterfalls and coastal villages that visitors reach through resorts.",
+    "visitHoursMin": 24,
+    "visitHoursMax": 72,
+    "wiki": "Kadavu Island",
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM relation 1137357 place=island Kadavu label point; Wikipedia gives -19.05,178.25 (lat agrees) osm:place island; MEDIUM"
+  },
+  {
+   "id": "great-astrolabe-reef",
+   "name": "Great Astrolabe Reef",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -18.86195,
+    "longitude": 178.49844
+   },
+   "spot": {
+    "name": "Great Astrolabe Reef",
+    "icon": "🤿",
+    "category": "nature",
+    "bio": "Barrier reef along Kadavu's southern coast with more than 60 recognised dive sites and manta ray snorkelling at Buliya.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 8,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "Wikidata Q5598668 own P625 (precision 0.001); no OSM single-point feature (OSM only has 'North Astrolabe Reef' way centroid -18.6426,178.5533) reef; MEDIUM"
+  },
+  {
+   "id": "nabukelevu",
+   "name": "Nabukelevu",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -19.117647,
+    "longitude": 177.982267
+   },
+   "spot": {
+    "name": "Nabukelevu",
+    "icon": "🌋",
+    "category": "hike",
+    "bio": "Nabukelevu, also called Mount Washington, is an 805 m lava dome volcano on Kadavu's southwest, last erupted around 1660.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node natural=peak 'Buke Levu' (2517075824); Wikipedia Nabukelevu -19.12,177.98 (~300 m, rounded) osm:peak; MEDIUM"
+  },
+  {
+   "id": "navala-village",
+   "name": "Navala Village",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -17.65945,
+    "longitude": 177.8128
+   },
+   "spot": {
+    "name": "Navala Village",
+    "icon": "🛖",
+    "category": "historic",
+    "bio": "Navala is a Ba Highlands village of over 200 thatched bures, one of the few in Fiji still fully traditional in architecture.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "wiki": "Navala",
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM place=village node 4432444476 'Navala' village; MEDIUM"
+  },
+  {
+   "id": "mount-tomanivi",
+   "name": "Mount Tomanivi",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -17.614807,
+    "longitude": 178.0184986
+   },
+   "spot": {
+    "name": "Mount Tomanivi",
+    "icon": "⛰️",
+    "category": "hike",
+    "bio": "Mount Tomanivi, formerly Mount Victoria, is Fiji's highest peak at 1,324 m, reached by a trail from Navai village.",
+    "visitHoursMin": 4,
+    "visitHoursMax": 8,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM natural=peak 'Tomanivi' via Photon (ele check 1303 m vs 1324 m published) natural=peak; MEDIUM"
+  },
+  {
+   "id": "vanua-balavu",
+   "name": "Vanua Balavu",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -17.23333333,
+    "longitude": -178.95
+   },
+   "spot": {
+    "name": "Vanua Balavu",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "Vanua Balavu is the main island of the Northern Lau Group, with hot springs, a reef system and Lomaloma as its main village.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 24,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "Wikipedia 'Vanua Balavu' own coordinates; OSM airport -17.24447,-178.95973 and Lomaloma village -17.29022,-178.98728 on same island wikipedia:island; MEDIUM"
+  },
+  {
+   "id": "lakeba",
+   "name": "Lakeba",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -18.216856,
+    "longitude": -178.793272
+   },
+   "spot": {
+    "name": "Lakeba",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "Lakeba is the Lau Group's provincial capital island and home of the chiefly Vuanirewa clan, with Tongan-influenced culture.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 24,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=island (nominatim) Lakeba Island; MEDIUM"
+  },
+  {
+   "id": "vaioa-beach",
+   "name": "Vai'oa Beach",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -12.49492,
+    "longitude": 177.02245
+   },
+   "spot": {
+    "name": "Vai'oa Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Vai'oa Beach is one of Rotuma's best beaches, on the island's west side near Solroroa Bluff.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "Wikidata Q24566453 'Vaioa Beach' P625 (no description); near Itu'muta district on Rotuma west coast (Wikipedia Itu'muta -12.50358,177.0203) wikidata:beach; LOW"
+  },
+  {
+   "id": "oinafa-beach",
+   "name": "Oinafa Beach",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -12.488959,
+    "longitude": 177.124017
+   },
+   "spot": {
+    "name": "Oinafa Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "Oinafa is one of Rotuma's finest beaches, on the island's west side near Solroroa Bluff.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "continent": "Oceania",
+    "timezone": "Pacific/Fiji"
+   },
+   "photoless": true,
+   "coordinates_source": "osm:place=village (nominatim) Oinafa; MEDIUM"
+  }
+ ]
+}

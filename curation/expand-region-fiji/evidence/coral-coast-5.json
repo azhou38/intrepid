@@ -1,0 +1,26 @@
+{
+ "id": "coral-coast-5",
+ "name": "Navua River",
+ "built": "2026-11-01",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Navua_River",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Navua River",
+   "excerpt": ""
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "destination": {
+  "id": "suva",
+  "name": "Suva",
+  "country": "Fiji",
+  "countryCode": "FJ",
+  "timezone": "Pacific/Fiji",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -18.1416,
+   "longitude": 178.4419
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 50,
+  "rank": 3,
+  "icon": "🏛️",
+  "tagline": "Fiji's capital, with a national museum, a daily market and rainforest pools nearby",
+  "description": "Suva is Fiji's national capital and largest city, on Viti Levu. The Fiji Museum in Thurston Gardens holds artefacts about 3,700 years old. The municipal market on Harris Road sells fruit and vegetables from Monday to Saturday. Just north of the centre, Colo-i-Suva Forest Reserve has trails, swimming pools, Waisila Falls and birdlife, and a hill walk above Lami climbs to city and harbour views.",
+  "whyVisit": [
+   "Explore Fiji's history at its national museum",
+   "Walk rainforest trails to swimming pools",
+   "Browse the daily produce market"
+  ],
+  "highlights": [
+   "Fiji's past",
+   "Rainforest swims",
+   "Market produce"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🥭",
+    "title": "Market closed Sundays",
+    "detail": "The produce market on Harris Road runs Monday to Saturday, so plan Sunday for something else."
+   },
+   {
+    "icon": "🌳",
+    "title": "Rainforest is close",
+    "detail": "Colo-i-Suva Forest Reserve lies just north of central Suva, so it fits easily into a half day."
+   },
+   {
+    "icon": "🏛️",
+    "title": "Museum charges entry",
+    "detail": "The Fiji Museum in Thurston Gardens has paid entry and suits one to two hours."
+   }
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Come in {months}, Suva's driest stretch, for easier walks and waterfall swims. Rain falls all year."
+ },
+ "spots": {
+  "suva-1": {
+   "bio": "National museum in Thurston Gardens holding Fijian artefacts up to 3,700 years old, including the canoe Ratu Finau.",
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": "https://fijimuseum.org.fj/",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "suva-2": {
+   "bio": "Rainforest park near Suva with about 4.5 km of trails, natural swimming pools along Waisila Creek and good birdwatching.",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "FJD",
+   "costBasis": "park",
+   "costPer": "Adult/Day",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "wiki": "Colo-i-Suva Forest Reserve"
+  },
+  "suva-3": {
+   "bio": "Fruit and vegetable market on Harris Road, south of the bus station, selling Fiji's tropical produce.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1
+  },
+  "suva-4": {
+   "bio": "Steep 400 m hill walk from Lami with 360-degree views of Suva, Beqa Island and the highlands.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 3.5
+  }
+ },
+ "notes": "Fiji run"
+}

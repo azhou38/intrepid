@@ -1,0 +1,127 @@
+{
+  "spots": [
+    {
+      "id": "taveuni-7",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "open beach, no single steward",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 2,
+      "bio": "Tree-draped beach south of Taveuni's airstrip, good for both snorkelling and swimming.",
+      "sources": {
+        "bio": "https://www.frommers.com/destinations/taveuni/active-pursuits/"
+      },
+      "notes": "Frommer's (spelled Beverly) lists it with Prince Charles and Valaca beaches as snorkelling and swimming spots south of the airstrip. No Wikipedia article; Rough Guides not read. Free/open is inferred for a public beach.",
+      "unverified": [
+        "no fee or access arrangement sourced (customary landowner access possible)",
+        "Rough Guides mention not confirmed",
+        "'near Matei' cut: Frommers says south of the airstrip; free/open inferred"
+      ]
+    },
+    {
+      "id": "taveuni-8",
+      "costMin": 40,
+      "costMax": 40,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": null,
+      "ticket_reason": "no official operator site found (village-run, booked in advance)",
+      "visitHoursMin": 5,
+      "visitHoursMax": 8,
+      "bio": "Guided 7 km full-day hike through Taveuni's rainforest to archaeological sites and viewpoints, ending at Tavoro waterfall.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Taveuni",
+        "cost": "https://en.wikivoyage.org/wiki/Taveuni"
+      },
+      "notes": "Wikivoyage: $40 with guide, booking in advance necessary, full day 7 km. Currency assumed FJD (Fiji dollars) as Wikivoyage writes $.",
+      "unverified": [
+        "price date unknown",
+        "no official site found",
+        "currency symbol assumed FJD"
+      ]
+    },
+    {
+      "id": "taveuni-9",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "natural rock slide, no steward",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1.5,
+      "bio": "Natural rock slide on a Taveuni stream where visitors swim in cool water and slide down the smooth rock.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Taveuni",
+        "cost": "https://www.frommers.com/destinations/taveuni/active-pursuits/"
+      },
+      "notes": "Wikivoyage advises waiting for locals to show where to start and check there is enough water. No fee mentioned.",
+      "unverified": [
+        "no fee sourced; a local or landowner charge is possible",
+        "Frommers: admission free (Waitavaia Sliding Rocks near Waiyevo)"
+      ]
+    },
+    {
+      "id": "taveuni-10",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "ticket_reason": "parish church, no visitor site",
+      "visitHoursMin": 0.25,
+      "visitHoursMax": 0.5,
+      "bio": "Colonial Romanesque Catholic church on a hill at Wairiki, overlooking the beach of a famed canoe battle against Tongan invaders.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Taveuni"
+      },
+      "notes": "Wikivoyage calls it the most architecturally interesting building on Taveuni, also known as the Taveuni Catholic Church.",
+      "unverified": [
+        "whether visitors can go inside",
+        "no fee sourced",
+        "interior access unverified"
+      ]
+    },
+    {
+      "id": "vanua-levu-1",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "town, no single steward",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Town on Vanua Levu's south coast with a yacht club at the old Copra Shed, diving and geothermal hot springs.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Savusavu",
+        "bio2": "https://en.wikivoyage.org/wiki/Vanua_Levu"
+      },
+      "notes": "Wikipedia: hot springs (Nakama, made a tourist attraction in 2022), Copra Shed Marina and yacht club, diving and yachting. Wikivoyage: popular for diving and yachting. Pin: use town centre place=town, not Wikivoyage district point.",
+      "unverified": [
+        "Nakama springs fee not sourced"
+      ]
+    },
+    {
+      "id": "vanua-levu-2",
+      "costMin": 3,
+      "costMax": 3,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": "https://nationaltrust.org.fj/waisali/",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2.5,
+      "bio": "Rainforest reserve northwest of Savusavu, co-managed by its community, with walking trails, rare birds and endemic frogs.",
+      "sources": {
+        "bio": "https://nationaltrust.org.fj/waisali/",
+        "cost": "https://nationaltrust.org.fj/waisali/",
+        "ticketUrl": "https://nationaltrust.org.fj/waisali/"
+      },
+      "notes": "National Trust of Fiji page (title 'Waisali Rainforest | National Trust of Fiji'): adult FJ$3.00, child 12 and under $1.00, 5 and under free; 30 min drive NW of Savusavu; birds and frogs. Size: 120 ha per BirdLife and the Trust, 130 ha in one travel site; omitted from bio. Waterfall not confirmed on the Trust page; bio mention comes from the draft only. Not covered by any park pass.",
+      "unverified": [
+        "waterfall not confirmed from fetched page",
+        "fee date unknown",
+        "FLAG: National Trust page says 'CURRENTLY CLOSED UNTIL FURTHER NOTICE' (page (c) 2020, may be stale); fee F$3 adult supported"
+      ]
+    }
+  ]
+}

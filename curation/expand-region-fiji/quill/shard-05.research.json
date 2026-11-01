@@ -1,0 +1,127 @@
+{
+  "spots": [
+    {
+      "id": "rakiraki-3",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "no official site; tomb site near Vaileka, best visited with a driver",
+      "visitHoursMin": 0,
+      "visitHoursMax": 0.5,
+      "bio": "Tomb of the 19th-century chief Ratu Udre Udre, listed by Guinness as the most prolific cannibal, near Rakiraki.",
+      "wiki": "Ratu Udre Udre",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Rakiraki",
+        "wiki": "https://en.wikipedia.org/api/rest_v1/page/summary/Ratu_Udre_Udre"
+      },
+      "notes": "Wikivoyage: tomb hard to find and not well maintained; no fee stated. Wikipedia summary title is 'Udre Udre' (redirect from Ratu_Udre_Udre); wiki field set to Ratu Udre Udre only if that redirect counts as own article, otherwise drop (article title is Udre Udre, about the person).",
+      "unverified": [
+        "entry fee/access conditions",
+        "open to visitors (site is poorly maintained)",
+        "wiki: article is about the chief, titled Udre Udre",
+        "free access not stated by source (tomb hard to find, not well maintained)"
+      ]
+    },
+    {
+      "id": "rakiraki-4",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "no steward site; rock is sacred to Vitawa villagers",
+      "visitHoursMin": 0,
+      "visitHoursMax": 0.25,
+      "bio": "Sacred rock by Kings Road at Vitawa village that looks like a man or woman from different angles.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Rakiraki"
+      },
+      "notes": "Wikivoyage: easily seen from Kings Road; one of the oldest settlements, pottery dated to 1000 BC. No Wikipedia article. No fee found.",
+      "unverified": [
+        "village visit fee or sevusevu",
+        "whether visitors may approach the rock"
+      ]
+    },
+    {
+      "id": "suva-1",
+      "costMin": 20,
+      "costMax": 20,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": "https://fijimuseum.org.fj/",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "bio": "National museum in Thurston Gardens holding Fijian artefacts up to 3,700 years old, including the canoe Ratu Finau.",
+      "sources": {
+        "price": "https://fijimuseum.org.fj/",
+        "ticketUrl": "https://fijimuseum.org.fj/",
+        "bio": "https://en.wikipedia.org/wiki/Fiji_Museum"
+      },
+      "notes": "Official site loaded, title 'Fiji Museum - 200 years of culture'. Overseas adult (16+) FJ$20 (local $10); entry plus guided tour overseas adult $30 (not used). Wikivoyage's $7 (2019) is outdated.",
+      "unverified": []
+    },
+    {
+      "id": "suva-2",
+      "costMin": 5,
+      "costMax": 5,
+      "currency": "FJD",
+      "costBasis": "park",
+      "costPer": "Adult/Day",
+      "ticketUrl": "BLOCKED:https://www.fiji.travel/things-to-do/hikes-walks/how-to-hike-colo-i-suva-forest-park",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Rainforest park near Suva with about 4.5 km of trails, natural swimming pools along Waisila Creek and good birdwatching.",
+      "wiki": "Colo-i-Suva Forest Reserve",
+      "sources": {
+        "price": "https://www.fiji.travel/things-to-do/hikes-walks/how-to-hike-colo-i-suva-forest-park (via search snippet; page 403 to scripts)",
+        "bio": "https://en.wikipedia.org/wiki/Colo-i-Suva_Forest_Reserve",
+        "ticketUrl": "https://www.fiji.travel/things-to-do/hikes-walks/how-to-hike-colo-i-suva-forest-park"
+      },
+      "notes": "Fiji Tourism page (403) reportedly lists adult FJ$5, child $2. A 2021 Fiji Sun piece gave $5 for non-citizens, $1 locals. Not a state-pass park (NT pass irrelevant). No dedicated official park site found; the tourism page is the BLOCKED candidate for the orchestrator to check. Wikipedia names the park 'Forest Park' and 'Forest Reserve'; wiki field equals name so omit if desired.",
+      "unverified": [
+        "fee confirmed only via search snippet of blocked page",
+        "official park site",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "suva-3",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "municipal market, no dedicated official site found",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1,
+      "bio": "Fruit and vegetable market on Harris Road, south of the bus station, selling Fiji's tropical produce.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Suva"
+      },
+      "notes": "Wikivoyage listing, updated Jan 2020. Free to wander; no entry fee found. Basis 'open' is a judgement for a public market.",
+      "unverified": [
+        "official operator site (Suva City Council)",
+        "entry basis"
+      ]
+    },
+    {
+      "id": "suva-4",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "open hill walk, no steward",
+      "visitHoursMin": 2.5,
+      "visitHoursMax": 3.5,
+      "bio": "Steep 400 m hill walk from Lami with 360-degree views of Suva, Beqa Island and the highlands.",
+      "sources": {
+        "bio": "https://fijitraveller.com/explore/mt-korobaba-a-view-worth-the-climb/",
+        "time": "search summaries of fijitraveller.com/livingdreams.tv (about 3 hours return)"
+      },
+      "notes": "Fiji Traveller: summit 400 m, steep, toughest near peak; trailhead behind cement works (search snippet). Rock pools and waterfalls off the track near base. No fee found.",
+      "unverified": [
+        "any landowner/village fee",
+        "visit duration (approx 3 h return from search snippets)"
+      ]
+    }
+  ]
+}

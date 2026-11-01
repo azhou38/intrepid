@@ -1,0 +1,145 @@
+{
+  "spots": [
+    {
+      "id": "levuka-1",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "open public steps, no single steward",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1,
+      "bio": "Hike up the 199 steps to Mission Hill for old mission houses and a view over the offshore islands and reef.",
+      "sources": {
+        "bio": "https://fijiguide.com/destination-fiji/levuka/levuka-activities-attractions/",
+        "bio2": "https://en.wikivoyage.org/wiki/Levuka",
+        "cost": "https://en.wikivoyage.org/wiki/Levuka"
+      },
+      "notes": "Steps begin at the historic Methodist church; top has Methodist mission homes and Delana Methodist School. No fee mentioned in any source; open-access is an inference.",
+      "unverified": [
+        "no fee stated explicitly (free inferred)",
+        "visit time estimated",
+        "Mission Hill steps free: inferred, no fee in sources"
+      ]
+    },
+    {
+      "id": "levuka-2",
+      "costMin": null,
+      "costMax": null,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1,
+      "bio": "Restored 1878 Morris Hedstrom storehouse that now holds a branch of the Fiji Museum, a public library and a crafts centre.",
+      "sources": {
+        "bio": "https://fijiguide.com/destination-fiji/levuka/levuka-activities-attractions/",
+        "bio2": "https://fijitraveller.com/culture/levuka-community-centre-a-tale-of-old-times/",
+        "ticketUrl": "https://fiji.travel/places-to-go/outer-islandslomaiviti-lau/places/levuka-museum"
+      },
+      "notes": "Managed by the National Trust of Fiji; museum is a partitioned section inside a community centre with library and tourist information booth. fiji.travel page returned 403 (tourism board page, not the operator's own site; orchestrator to check in browser and confirm a National Trust of Fiji site). Cost: no admission price found (Fiji Traveller, fiji.travel, Lonely Planet checked); one article says the museum was closed for renovation, date unclear.",
+      "unverified": [
+        "entry fee (no adult price found)",
+        "official operator site not found",
+        "open to visitors currently (fiji.travel says open six days a week, unread)",
+        "entry fee not found; costMin/costMax null - needs a price before applying",
+        "ticketUrl removed (tourism board listing, not steward)"
+      ],
+      "ticket_reason": "fiji.travel page is a tourism board listing (403 to scripts), not the steward; National Trust of Fiji manages it, no dedicated page found",
+      "cost_unresolved": true
+    },
+    {
+      "id": "levuka-3",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "no steward site; hike usually done with local guide/taxi",
+      "visitHoursMin": 3,
+      "visitHoursMax": 5,
+      "bio": "Hike to the mountain peak above Levuka for views over the reefs and the Koro Sea.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Levuka"
+      },
+      "notes": "Wikivoyage only: 'Hike up to the mountain peak overlooking the reefs and the Koro Sea' and tours include hikes to The Peak. No route length, fee or guide requirement sourced; peak coordinates unresolved (see placement).",
+      "unverified": [
+        "hike duration (estimated)",
+        "any village/guide fee or access rule",
+        "free status inferred",
+        "peak coordinates",
+        "hike length/guide rules unsourced"
+      ]
+    },
+    {
+      "id": "levuka-4",
+      "costMin": 120,
+      "costMax": 120,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "costPer": "Per Person",
+      "ticketUrl": null,
+      "ticket_reason": "no official site found; visits are run by Epi's Tours (email contact only, per Fiji Guide)",
+      "visitHoursMin": 4,
+      "visitHoursMax": 6,
+      "bio": "Village in the middle of Ovalau's volcanic crater, visited on a guided hike with a village tour and a Fijian lunch.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Ovalau",
+        "cost": "https://fijiguide.com/destination-fiji/levuka/levuka-activities-attractions/"
+      },
+      "notes": "F$120 per person for two guests, cheaper for larger groups (Epi's Tours via Fiji Guide, undated). Includes rainforest hike, stream dip, village visit and cooked lunch. Tour price, not a village entry fee; sevusevu/village fee not sourced.",
+      "unverified": [
+        "current price",
+        "village entry or sevusevu fee",
+        "duration (estimated)",
+        "F$120 pp for 2 guests is Epi's Tours via a 2022-era guide, undated; village fee unsourced"
+      ]
+    },
+    {
+      "id": "levuka-5",
+      "costMin": 180,
+      "costMax": 180,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": "https://www.leleuvia.com/en/",
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "bio": "Small coral cay about 45 minutes by boat from Levuka, with a beach, snorkelling off the shore and day trips.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Ovalau",
+        "bio2": "https://en.wikipedia.org/wiki/Leleuvia",
+        "ticketUrl": "https://www.leleuvia.com/en/",
+        "cost": "https://www.leleuvia.com/en/day-trips"
+      },
+      "notes": "Site loads (title 'Leleuvia Island Resort - Lomaviti Group') with a Day Trips menu item, but the day-trip page did not yield a price. Wikipedia: snorkelling directly off the beach, popular with beachcombers and kite surfers. Transport to the island is not the price.",
+      "unverified": [
+        "day trip adult price",
+        "visit duration (estimated)",
+        "day trip F$180 per adult includes boat transfers, lunch, tea/coffee and bar prices; price date unknown (site (c) 2020)"
+      ]
+    },
+    {
+      "id": "levuka-6",
+      "costMin": null,
+      "costMax": null,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "ticket_reason": "only official-looking page is owlfiji.com/?p=869 (Caqalai Island), which says the resort is closed until further notice",
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "bio": "Coral island owned by the Methodist Church with white sand all round and good snorkelling a few metres offshore.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Levuka",
+        "status": "https://owlfiji.com/?p=869"
+      },
+      "notes": "The island's backpacker resort page states it is closed until further notice and cannot welcome guests; boat fare F$30 per person each way (transport, not the price). Recommend review/hold: cannot confirm it is open to visitors.",
+      "unverified": [
+        "open to visitors (resort closed per owlfiji.com)",
+        "any day visit price",
+        "visit duration",
+        "FLAG: resort page (owlfiji.com/caqalai) says closed until further notice; cannot confirm open to visitors - hold for review",
+        "no visit price"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "spots": [
+    {
+      "id": "nadi-1",
+      "costMin": 18,
+      "costMax": 18,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": "https://gosg.com.fj/",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "bio": "Orchid garden begun by actor Raymond Burr, with jungle walkways and lily ponds at the foot of the Sabeto Range.",
+      "sources": {
+        "ticketUrl": "https://gosg.com.fj/ (title: Home - Garden of the Sleeping Giant)",
+        "bio": "https://gosg.com.fj/",
+        "cost": "https://fhta.com.fj/business/garden-of-the-sleeping-giant/ and https://en.wikivoyage.org/wiki/Nadi (both $18 adult)"
+      },
+      "notes": "Official homepage loads and names the place; its Rates page URL not found (/rates/ is 404), so homepage used. Price FJD 18 adult from industry association and Wikivoyage (2019); resellers quote 20-30.",
+      "unverified": [
+        "current adult price (18 vs 20 vs 30 across sources; official rates page not read)",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "nadi-2",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "ticket_reason": "no official site found (Wikivoyage lists only an email, naditemplesangam@connect.com.fj); fetch of guessed domain failed, not used",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1,
+      "bio": "Large Dravidian-style Hindu temple at the southern end of Nadi, open to visitors who cover knees and shoulders.",
+      "wiki": null,
+      "sources": {
+        "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Sri_Siva_Subramaniya_Temple and https://en.wikivoyage.org/wiki/Nadi",
+        "cost": "https://en.wikivoyage.org/wiki/Nadi (free to enter, donations welcome)"
+      },
+      "notes": "Wikipedia: largest Hindu temple in the Southern Hemisphere. Sarong and shawl are lent to visitors in shorts.",
+      "unverified": [
+        "official website",
+        "\"donations welcome\" not in source; shown as no entry fee"
+      ]
+    },
+    {
+      "id": "nadi-3",
+      "costMin": 30,
+      "costMax": 30,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "ticket_reason": "no official site verified; sabetohotspringandmudpool.com appeared in a search but could not be confirmed as the operator, and the site is a landowner-run venture",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "bio": "Mud bath followed by a circuit of three pools in the Sabeto valley, with massages available.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Nadi and https://www.hotspringsguides.com/hot-springs/sabeto-hot-springs-and-mud-pool-fiji",
+        "cost": "https://en.wikivoyage.org/wiki/Nadi (mud bath $30, updated 2017)"
+      },
+      "notes": "Price is the 2017 Wikivoyage figure; a search snippet from an unconfirmed site gave FJD 25; resellers vary.",
+      "unverified": [
+        "current price (30 vs 25)",
+        "official website",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "nadi-4",
+      "costMin": 20,
+      "costMax": 20,
+      "currency": "FJD",
+      "costBasis": "park",
+      "costPer": "Per Person",
+      "ticketUrl": "BLOCKED:https://fiji.travel/things-to-do/hikes-walks/how-to-hike-koroyanitu-heritage-park",
+      "visitHoursMin": 3,
+      "visitHoursMax": 8,
+      "bio": "Heritage park in the Mount Evans range behind Lautoka and Nadi, with guided hikes and waterfalls reached from Abaca village.",
+      "sources": {
+        "bio": "https://fijiguide.com/fiji-activities/trekking-visits-to-national-heritage-parks/ and https://en.wikipedia.org/api/rest_v1/page/summary/Mount_Koroyanitu",
+        "cost": "https://fijiguide.com/fiji-activities/trekking-visits-to-national-heritage-parks/ (park entry $20; guided Batilamu hike $40pp, Savuioni falls $35pp, Tunutunu falls $25pp)"
+      },
+      "notes": "Park is village-owned (not a state pass park); entry fee is the park's own. Official tourism page returned 403 to scripts: needs a real browser. Wikipedia article is Mount Koroyanitu (redirect), so no wiki field set. Lonely Planet advises not going alone; 4WD needed.",
+      "unverified": [
+        "current entry fee (fijiguide, undated)",
+        "official park site",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "nadi-5",
+      "costMin": 10,
+      "costMax": 10,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "ticket_reason": "village visit; no official site",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "bio": "Chiefly village near Lautoka, said to be Fiji's oldest settlement, founded where the first Melanesian canoes beached at Vuda Point.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Viti_Levu and https://www.fbcnews.com.fj/news/viseisei-village-generates-10000-monthly-from-tourism/",
+        "cost": "https://www.fbcnews.com.fj/news/viseisei-village-generates-10000-monthly-from-tourism/ (FJD 10 per tourist, July 2024)"
+      },
+      "wiki": "Viseisei",
+      "notes": "Guides are village-selected. A tour operator notes the village does not operate Sundays (not recorded as hours in the bio).",
+      "unverified": [
+        "fee still current",
+        "Sunday availability",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "nadi-6",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "open beach, no single steward",
+      "visitHoursMin": 0.5,
+      "visitHoursMax": 1.5,
+      "bio": "A 3 km beach north of Nadi town, lined with resorts and beach clubs.",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Nadi"
+      },
+      "notes": "Only Wikivoyage as source (Wikipedia has no article). Bio is short of 10 words by design? No: 14 words.",
+      "unverified": [
+        "public access and swimming conditions",
+        "sunset claim from draft not sourced, dropped"
+      ]
+    }
+  ]
+}

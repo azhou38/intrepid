@@ -2969,4 +2969,13 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Niuafoʻou",
   "Vai Lahi",
   "Niuatoputapu",
+  "Nadi",
+  "Mamanuca Islands",
+  "Coral Coast",
+  "Taveuni",
+  "Yasawa Islands",
+  "Suva",
+  "Levuka",
+  "Vanua Levu",
+  "Rakiraki",
 ]);

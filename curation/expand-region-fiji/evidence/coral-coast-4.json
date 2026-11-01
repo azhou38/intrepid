@@ -1,0 +1,24 @@
+{
+ "id": "coral-coast-4",
+ "name": "Beqa Shark Reef",
+ "built": "2026-11-01",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Beqa_Shark_Reef",
+   "status": "missing",
+   "http": 404,
+   "retrieved": "2026-11-01"
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

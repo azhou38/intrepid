@@ -1,0 +1,26 @@
+{
+ "id": "coral-coast-3",
+ "name": "Beqa Island",
+ "built": "2026-11-01",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Beqa",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Beqa",
+   "excerpt": "Beqa is an island in Fiji, an outlier to the main island of Viti Levu, 10 kilometres to the south. The island has a land area of 36.3 square kilometres and reaches a maximum elevation of 440 metres. Beqa has 9 villages divided between 2 tikinas (districts): Sawau and Raviravi. To the west is the island of Yanuca."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

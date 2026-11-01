@@ -1,0 +1,139 @@
+{
+  "spots": [
+    {
+      "id": "mamanuca-islands-4",
+      "costMin": 240,
+      "costMax": 240,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": null,
+      "ticket_reason": "Official resort site not found: treasureisland-fiji.com is an unrelated casino-spam page, other guesses unreachable. Day trips sold by South Sea Cruises/others; none verified.",
+      "visitHoursMin": 4,
+      "visitHoursMax": 7,
+      "bio": "A marine-reserve island resort off Nadi with a pool, tennis courts, snorkelling and a turtle restoration programme.",
+      "wiki": "Treasure Island (Fiji)",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Mamanuca_Islands",
+        "wiki": "https://en.wikipedia.org/wiki/Treasure_Island_%28Fiji%29",
+        "cost": "https://www.bookme.co.nz/things-to-do/fiji-islands-viti-levu-mamanucas/activity/south-sea-cruises-treasure-island-resort-full-day-inactive/3010"
+      },
+      "notes": "Cost is the full-day South Sea Cruises Treasure Island adult fare FJD 240 on a reseller (BookMe), listing marked INACTIVE; cost is for a day trip (transport+day), basis tour. Resort Nakelo Treasure Island is on Eluvuka Island.",
+      "unverified": [
+        "current day-trip price and whether day visitors accepted",
+        "official ticketUrl",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "mamanuca-islands-5",
+      "costMin": 245,
+      "costMax": 285,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": "https://southseacruisesfiji.com/day-trips/south-sea-island/",
+      "visitHoursMin": 3,
+      "visitHoursMax": 7,
+      "bio": "A tiny island a short catamaran ride from Port Denarau with a saltwater pool, free snorkel gear and a coral viewer submarine.",
+      "sources": {
+        "bio": "https://southseacruisesfiji.com/day-trips/south-sea-island/",
+        "cost": "https://southseacruisesfiji.com/",
+        "ticketUrl": "https://southseacruisesfiji.com/day-trips/south-sea-island/"
+      },
+      "notes": "Operator page loaded, title/heading names South Sea Island. Home page: South Sea Island day trip 'from FJ$245' (full and half day); day-trip page lists $285 full day, $149 half day (no currency symbol, FJD presumed). Price covers boat trip, lunch, drinks and gear. No own article beyond 'South Sea Island' (Wikipedia title matches name).",
+      "unverified": [
+        "exact full-day adult price (245 vs 285)",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "mamanuca-islands-6",
+      "costMin": 205,
+      "costMax": 205,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": null,
+      "ticket_reason": "No official Bounty Island site found (bountyisland.com unreachable); visited by several operators' day trips.",
+      "visitHoursMin": 4,
+      "visitHoursMax": 6,
+      "bio": "A private island 30 minutes from Denarau with white sandy beaches, a small resort and snorkelling in a marine reserve.",
+      "wiki": "Kadavulailai",
+      "sources": {
+        "bio": "https://en.wikivoyage.org/wiki/Mamanuca_Islands",
+        "wiki": "https://en.wikipedia.org/wiki/Kadavulailai",
+        "cost": "https://www.bookme.co.nz/things-to-do/fiji-islands-viti-levu-mamanucas/activity/jolly-bula-pirate-boat-day-sailing-trip-to-bounty-island/3572",
+        "turtles": "https://fiji-budget-vacations.com/bounty-island.html"
+      },
+      "notes": "Cost is Jolly Bula Pirate Boat day trip adult $205 on BookMe (reseller; currency not stated, FJD presumed). Wikipedia article is Kadavulailai.",
+      "unverified": [
+        "currency and current price",
+        "official ticketUrl",
+        "whether the turtle programme is still running",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "mamanuca-islands-7",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "Open reef break with no steward; reached by many boat operators and resorts.",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "A reef wave off Tavarua, one of Fiji's best-known surf breaks, reached by boat from nearby island resorts.",
+      "sources": {
+        "bio": "https://en.wikipedia.org/wiki/Tavarua",
+        "access": "https://jamieobrien.com/articles/history-of-cloudbreak"
+      },
+      "notes": "No own Wikipedia article (redirects to Tavarua), so no wiki field. Surfing access was opened to all in 2010 per surf press; boat charter costs are transport, not the price. Search-summary only for access; not read in full.",
+      "unverified": [
+        "current access rules and boat charter costs",
+        "that the break suits non-surfers as a visitor stop"
+      ]
+    },
+    {
+      "id": "yasawa-islands-1",
+      "costMin": 10,
+      "costMax": 10,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": null,
+      "ticket_reason": "Visited via many cruise and tour operators; no single steward (Blue Lagoon Cruises is one operator).",
+      "visitHoursMin": 1,
+      "visitHoursMax": 2,
+      "bio": "Limestone sea caves on Sawa-i-Lau island, with a skylit first cavern and a second reached by an underwater passage.",
+      "sources": {
+        "bio": "https://www.bluelagooncruises.com/activities/sawa-i-lau-caves",
+        "cost": "https://showcaves.com/english/other/caves/Sawa-i-Lau.html"
+      },
+      "notes": "No Wikipedia article. Cave fee FJ$10 adult from showcaves.com marked 2009 (stale); tours bundle it (e.g. FJ$89 inc. entry on Wanderlog). Boat transport excluded. Operator page read in part only; underwater-passage detail comes from the earlier brief and the truncated page.",
+      "unverified": [
+        "current cave entry fee",
+        "underwater passage detail not fully read",
+        "tourism board page fiji.travel not fetched (blocked)",
+        "price from a dated/third-party source; official page does not list it"
+      ]
+    },
+    {
+      "id": "yasawa-islands-2",
+      "free": true,
+      "currency": "FJD",
+      "costBasis": "open",
+      "ticketUrl": null,
+      "ticket_reason": "Beach is reached by several operators; Blue Lagoon Cruises owns land there but is a cruise seller.",
+      "visitHoursMin": 1,
+      "visitHoursMax": 3,
+      "bio": "Lagoon in the Yasawa Islands ringed by soft rolling peaks and white sand beaches, with coral reefs to snorkel.",
+      "sources": {
+        "bio": "https://www.bluelagooncruises.com/about/fiji-islands-people/blue-lagoon"
+      },
+      "notes": "Operator page says the 1980 remake was filmed in the area and that Nanuya Lailai has white beaches and coral reefs; filming specifically on Nanuya Lailai is not stated (it says Nanuya Levu served as a location), so bio says 'where... filmed' loosely - writer may reword to 'near where'. Title 'Blue Lagoon' is a disambiguation page; no own article, no wiki field. Village/landowner access fees not sourced.",
+      "unverified": [
+        "village or landowner beach fee",
+        "film location exact island",
+        "wiki article",
+        "film location is Nanuya Levu, not this beach; film claim cut"
+      ]
+    }
+  ]
+}

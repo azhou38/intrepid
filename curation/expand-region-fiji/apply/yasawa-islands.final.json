@@ -1,0 +1,96 @@
+{
+ "destination": {
+  "id": "yasawa-islands",
+  "name": "Yasawa Islands",
+  "country": "Fiji",
+  "countryCode": "FJ",
+  "timezone": "Pacific/Fiji",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -17.1,
+   "longitude": 177.35
+  },
+  "category": "island",
+  "defaultZoomSpanKm": 100,
+  "rank": 3,
+  "icon": "🏝️",
+  "tagline": "Island chain north of the Mamanucas with limestone sea caves and a coral lagoon",
+  "description": "The Yasawas are an island chain north of the Mamanuca Islands. Sawa-i-Lau has limestone sea caves that visitors swim into, one reached through an underwater passage. Nanuya Lailai has a coral beach known as the Blue Lagoon, near where the 1980 film The Blue Lagoon was shot, and a fish sanctuary to snorkel. Waya Lailai has a peak that visitors climb for sunrise.",
+  "whyVisit": [
+   "Swim into limestone sea caves",
+   "Snorkel a coral fish sanctuary",
+   "Climb a volcanic peak for sunrise"
+  ],
+  "highlights": [
+   "Sea caves",
+   "Fish sanctuary",
+   "Sunrise climb"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🦇",
+    "title": "Caves are a boat trip",
+    "detail": "Sawa-i-Lau's caves are reached by boat and swum into, one through an underwater passage."
+   },
+   {
+    "icon": "🏖️",
+    "title": "Blue Lagoon is a day-trip beach",
+    "detail": "Day trips visit the Blue Lagoon beach on Nanuya Lailai. The original lagoon from the film is privately owned."
+   },
+   {
+    "icon": "🥾",
+    "title": "Climb Waya Lailai at sunrise",
+    "detail": "Guides are available, or you can go alone. The walk can continue along the island and across the spit to Waya."
+   }
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Visit in {months}, the cooler months, for sea caves, snorkelling and island walks. Cyclones can occur Nov to Apr."
+ },
+ "spots": {
+  "yasawa-islands-1": {
+   "bio": "Limestone sea caves on Sawa-i-Lau island, with a skylit first cavern and a second reached by an underwater passage.",
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "FJD",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2
+  },
+  "yasawa-islands-2": {
+   "bio": "Lagoon in the Yasawa Islands ringed by soft rolling peaks and white sand beaches, with coral reefs to snorkel.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  "yasawa-islands-3": {
+   "bio": "Yasawa island beside the Blue Lagoon, with a walk over the island, snorkelling in a fish sanctuary and a dive shop.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4
+  },
+  "yasawa-islands-4": {
+   "bio": "Small Yasawa island where a climb to the top gives sunrise views and a walk crosses a spit to Waya.",
+   "free": true,
+   "currency": "FJD",
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 2,
+   "visitHoursMax": 4
+  }
+ },
+ "notes": "Fiji run"
+}

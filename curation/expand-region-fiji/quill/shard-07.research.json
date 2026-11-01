@@ -1,0 +1,133 @@
+{
+  "spots": [
+    {
+      "id": "taveuni-1",
+      "costMin": 50,
+      "costMax": 50,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/",
+      "visitHoursMin": 1.5,
+      "visitHoursMax": 3,
+      "bio": "Three waterfalls with swimming pools in Bouma National Heritage Park, the lowest a short, flat walk from the visitor centre.",
+      "sources": {
+        "cost": "https://ilovetaveuni.com/explore/tours/bouma/",
+        "bio": "https://en.wikivoyage.org/wiki/Taveuni",
+        "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/"
+      },
+      "notes": "Fee FJD 50 per person, cash only, from Taveuni Tourism Association page (2026); Lonely Planet/MileHacker quote older 25-36. Guide FJD 30 optional (24h notice) not the price. Bouma park fee is its own, not a pass; no state park pass applies in Fiji. Wikivoyage: lower fall 15 min, middle 45 min, upper another hour; over 30 m high lower fall.",
+      "unverified": [
+        "fee may have changed; sources conflict historically (12-50 FJD)",
+        "lower fall walk time conflicts: 10 min (ilovetaveuni) vs 15 min (Wikivoyage); bio says 'short, flat walk'"
+      ]
+    },
+    {
+      "id": "taveuni-2",
+      "costMin": 35,
+      "costMax": 35,
+      "currency": "FJD",
+      "costBasis": "entry",
+      "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/",
+      "visitHoursMin": 3,
+      "visitHoursMax": 5,
+      "bio": "Coastal track from Lavena village past white and black sand beaches to a waterfall, about 5 km each way.",
+      "sources": {
+        "cost": "https://ilovetaveuni.com/explore/tours/bouma/",
+        "bio": "https://en.wikivoyage.org/wiki/Taveuni",
+        "ticketUrl": "https://ilovetaveuni.com/explore/tours/bouma/"
+      },
+      "notes": "Fee FJD 35 cash only per Taveuni Tourism Association (2026); Matangi Island says FJD 40; Wikivoyage says $15 (older). Guide FJD 20 optional. Route km: 5 km each way per association, 10 km round trip per Matangi; four hours return per Wikivoyage. Pin: midpoint of route still to be resolved by resolve-pin.",
+      "unverified": [
+        "fee differs between sources (15/35/40)",
+        "coordinates not done in this shard",
+        "fee conflict 15/35/40 across sources; 35 from Taveuni Tourism Association 2026",
+        "4 hours return dropped from bio (only Wikivoyage); 5 km each way per tourism association/Frommers"
+      ]
+    },
+    {
+      "id": "taveuni-3",
+      "free": true,
+      "costBasis": "open",
+      "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/",
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "bio": "Lookout peak at about 1,195 m with views to Lake Tagimoucia and the Lau Group, reached on foot or by 4WD, with good birdwatching.",
+      "sources": {
+        "bio": "https://ilovetaveuni.com/explore/tours/tagimoucia/ ; https://en.wikivoyage.org/wiki/Taveuni",
+        "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/"
+      },
+      "notes": "No entry fee found in sources; hike 6 km up (3-4 h) per association, guide optional and village guide recommended. fiji.travel page https://www.fiji.travel/places-to-go/taveuni-island/places/des-voeux-peak-tagimoucia returned 403: BLOCKED, check in browser. Height 1,196 m (Wikivoyage) vs 1195 m (association). Wikivoyage names it 'Des Veaux Peak'.",
+      "unverified": [
+        "whether a village/custom fee applies",
+        "fiji.travel BLOCKED:https://www.fiji.travel/places-to-go/taveuni-island/places/des-voeux-peak-tagimoucia",
+        "'second-highest' cut: Taveuni Tourism Association says Uluigalua is second highest; height 1,195 (assoc.) vs 1,196 (Wikivoyage)"
+      ]
+    },
+    {
+      "id": "taveuni-4",
+      "costMin": 462,
+      "costMax": 462,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": null,
+      "ticket_reason": "dive trips sold by many Taveuni operators",
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "wiki": "Rainbow Reef",
+      "bio": "A 32 km soft-coral reef in the Somosomo Strait with over 30 dive sites, including the Great White Wall.",
+      "sources": {
+        "bio": "https://ilovetaveuni.com/dive/ ; https://en.wikipedia.org/wiki/Rainbow_Reef",
+        "cost": "https://remote-concierge-fiji.squarespace.com/dive-rainbow-reef"
+      },
+      "notes": "No operator price confirmed. Matangi's day trip adds FJD 367 fuel surcharge on top of its dive rate (certified divers only) https://matangiisland.com/compendium/somosomo-strait-day-dive-trip/. Cost left unresolved; suggest orchestrator pick a sourced two-tank rate or mark tour with no price. Great White Wall depends on tides (not in bio). Cost: FJD 462 per person for a 2-tank Rainbow Reef dive day (1-tank FJD 294) from The Remote Resort, Vanua Levu, a luxury resort rate card; Taveuni operators publish no price I could load. Likely high end; approximate.",
+      "unverified": [
+        "adult dive price (no operator rate read)",
+        "FLAG: cost null - no operator price read; needs price or manual decision"
+      ],
+      "free": false
+    },
+    {
+      "id": "taveuni-5",
+      "costMin": 70,
+      "costMax": 100,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": "https://www.waitabu.org/",
+      "visitHoursMin": 2,
+      "visitHoursMax": 3,
+      "bio": "Community-run no-take reef protected since 1998, visited on guided snorkelling and cultural tours arranged in advance.",
+      "sources": {
+        "cost": "https://www.waitabu.org/park-management/admission-rules/",
+        "bio": "https://en.wikivoyage.org/wiki/Taveuni ; https://www.waitabu.org/park-management/admission-rules/",
+        "ticketUrl": "https://www.waitabu.org/"
+      },
+      "notes": "FJD 40 Cultural Experience Tour, FJD 20 Backpackers Tour, FJD 5 off per person for groups of 4+; must be arranged in advance (tel 888-0451). Site title 'Waitabu Marine Park' verified. Wikivoyage: established 1998, 1 km fringing reef, over 7 communities.",
+      "unverified": [
+        "what each tour includes",
+        "FLAG: waitabu.org admission page lists two price sets: F$40 Cultural/F$20 Backpackers and F$100 Cultural/F$70 Snorkelling. Recorded 70-100 (newer block); confirm"
+      ]
+    },
+    {
+      "id": "taveuni-6",
+      "costMin": 25,
+      "costMax": 25,
+      "currency": "FJD",
+      "costBasis": "tour",
+      "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/",
+      "visitHoursMin": 6,
+      "visitHoursMax": 8,
+      "bio": "Crater lake at about 830 m above Somosomo, reached by a long guided hike, where Fiji's national flower grows.",
+      "sources": {
+        "cost": "https://www.frommers.com/destinations/taveuni/active-pursuits/",
+        "bio": "https://ilovetaveuni.com/explore/tours/tagimoucia/ ; https://en.wikivoyage.org/wiki/Taveuni",
+        "ticketUrl": "https://ilovetaveuni.com/explore/tours/tagimoucia/"
+      },
+      "notes": "F$25 custom fee including guide per Frommers (undated, read only via search snippet). Lake height 832 m (Wikivoyage). Tagimaucia flowers Oct-Jan on the shore per association; flower only on Taveuni. About 8 h round trip per Frommers.",
+      "unverified": [
+        "current fee/guide price",
+        "Frommers page not fetched directly",
+        "F$25 custom fee incl. guide from Frommers (undated)"
+      ]
+    }
+  ]
+}

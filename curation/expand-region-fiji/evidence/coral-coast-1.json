@@ -1,0 +1,26 @@
+{
+ "id": "coral-coast-1",
+ "name": "Sigatoka Sand Dunes National Park",
+ "built": "2026-11-01",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Sigatoka_Sand_Dunes",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Sigatoka Sand Dunes",
+   "excerpt": "The Sigatoka Sand Dunes National Park is located at the mouth of the Sigatoka River on the island of Viti Levu in Fiji. They are located approximately 3 km west of the town of Sigatoka."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}
