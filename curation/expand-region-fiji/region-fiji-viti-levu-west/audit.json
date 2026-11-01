@@ -1,0 +1,127 @@
+[
+ {
+  "name": "Lautoka",
+  "wiki": "Lautoka",
+  "views": 24015,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Lautoka",
+   "wiki": "Lautoka",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lautoka"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lautoka"
+   ],
+   "note": "City: Fiji's second city and the sugar city on the west coast, with a market and botanical gardens.",
+   "views": 24015,
+   "coordinates": {
+    "lat": -17.62416667,
+    "lng": 177.45277778
+   },
+   "coordinates_source": "wikipedia:Lautoka"
+  }
+ },
+ {
+  "name": "Nadi",
+  "wiki": "Nadi",
+  "views": 47660,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Nadi",
+   "wiki": "Nadi",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nadi"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nadi"
+   ],
+   "note": "Town: the main gateway city of Fiji beside the international airport, base for Denarau, the Coral Coast and day tours.",
+   "views": 47660,
+   "coordinates": {
+    "lat": -17.8,
+    "lng": 177.41666667
+   },
+   "coordinates_source": "wikipedia:Nadi"
+  }
+ },
+ {
+  "name": "Nananu-i-Ra",
+  "wiki": "Nananu-i-Ra",
+  "views": 1678,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Nananu-i-Ra",
+   "wiki": "Nananu-i-Ra",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nananu-i-Ra",
+    "https://en.wikivoyage.org/wiki/Viti_Levu"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nananu-i-Ra"
+   ],
+   "note": "Island: small island off Rakiraki reached by boat from Ellington Wharf, with resorts, the One Bay beach and famous dive sites.",
+   "views": 1678,
+   "coordinates": {
+    "lat": -17.3,
+    "lng": 178.21666667
+   },
+   "coordinates_source": "wikipedia:Nananu-i-Ra"
+  }
+ },
+ {
+  "name": "Nausori Highlands",
+  "wiki": "Nausori Highlands",
+  "views": 1309,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Nausori Highlands",
+   "wiki": "Nausori Highlands",
+   "coordinates": {
+    "lat": -17.80315,
+    "lng": 177.58794
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nausori_Highlands",
+    "https://en.wikivoyage.org/wiki/Viti_Levu"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nausori_Highlands"
+   ],
+   "note": "Highlands: dry-zone mountain rainforest behind Nadi offering nature walks, hikes and off-road tours.",
+   "views": 1309
+  }
+ },
+ {
+  "name": "Pacific Island Air Scenic Flights",
+  "wiki": "Pacific Island Air",
+  "views": 2171,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Pacific Island Air Scenic Flights",
+   "wiki": "Pacific Island Air",
+   "coordinates": {
+    "lat": -17.75787,
+    "lng": 177.44766
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nadi"
+   ],
+   "other_sources": [],
+   "note": "Operator: helicopter and seaplane scenic flights from Nadi airport over the Nadi basin, Koroyanitu and the islands.",
+   "views": 2171
+  }
+ }
+]

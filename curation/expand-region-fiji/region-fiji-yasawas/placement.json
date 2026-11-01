@@ -1,0 +1,165 @@
+{
+ "region": "fiji-yasawas",
+ "new_destinations": [
+  {
+   "id": "yasawa-islands",
+   "name": "Yasawa Islands",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 3,
+   "defaultZoomSpanKm": 100,
+   "coordinates": {
+    "lat": -17.1,
+    "lng": 177.35
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "island",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Yasawa_Islands",
+    "wording": "Wikivoyage page \"Yasawa Islands\" (island chain north of the Mamanucas; Blue Lagoon, Sawa-i-Lau)."
+   },
+   "region_dir": "region-fiji-yasawas",
+   "spots": [
+    "yasawa-islands-1",
+    "yasawa-islands-2",
+    "yasawa-islands-3",
+    "yasawa-islands-4"
+   ],
+   "spot_count": 4
+  }
+ ],
+ "spots": [
+  {
+   "name": "Sawa-i-Lau Caves",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "id": "yasawa-islands-1",
+   "source_region": "yasawas",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🦇",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Cave: limestone sea caves on Sawa-i-Lau islet off the southern tip of Yasawa Island, swum into by boat trip (one reached by an underwater passage, daylight in the largest cave); the cave trip Wikivoyage lists under Do. Tourism board page seen in search only (fetch blocked).",
+   "views": 0,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Yasawa Islands and reached from that base.",
+   "region_dir": "region-fiji-yasawas"
+  },
+  {
+   "name": "Blue Lagoon",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "id": "yasawa-islands-2",
+   "source_region": "yasawas",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Beach and snorkel lagoon on the west side of Nanuya Lailai, the film location of The Blue Lagoon (1980); a fish sanctuary with coral, reached on Blue Lagoon Cruises day trips. Wikivoyage: the real Blue Lagoon is privately owned, this is the day-trip beach. No article under this name (the title is a disambiguation page), so views are 0 and a disambiguated wiki title is still needed.",
+   "views": 0,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Yasawa Islands and reached from that base.",
+   "region_dir": "region-fiji-yasawas"
+  },
+  {
+   "name": "Nanuya Lailai",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "id": "yasawa-islands-3",
+   "source_region": "yasawas",
+   "coordinates": {
+    "lat": -16.9459487,
+    "lng": 177.3686806
+   },
+   "coordinates_source": "wikipedia:Nanuya Lailai (infobox; island centre)",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Island: next to the Blue Lagoon and Turtle Island; Wikivoyage lists a walk over the island with views, the Blue Lagoon snorkel and diving from its dive shop.",
+   "views": 1118,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Yasawa Islands and reached from that base.",
+   "region_dir": "region-fiji-yasawas"
+  },
+  {
+   "name": "Waya Lailai",
+   "action": "spot",
+   "destination": "yasawa-islands",
+   "id": "yasawa-islands-4",
+   "source_region": "yasawas",
+   "coordinates": {
+    "lat": -17.339,
+    "lng": 177.138
+   },
+   "coordinates_source": "wikivoyage:Yasawa_Islands map (island point)",
+   "needs_pin": false,
+   "category": "hike",
+   "icon": "🥾",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Island: also called Wayasewa, with a rocky volcanic peak at its centre; Wikivoyage recommends the climb to the top for sunrise, and a three-hour walk across the island to Naboro village.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Yasawa Islands and reached from that base.",
+   "region_dir": "region-fiji-yasawas"
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [],
+ "review_list_not_placed": [
+  {
+   "region": "yasawas",
+   "name": "Manta Ray Snorkel Passage",
+   "objection": "A passage between islands, not a place with access; Rule 4 timing (May-Oct) and depends on resort alarm",
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}

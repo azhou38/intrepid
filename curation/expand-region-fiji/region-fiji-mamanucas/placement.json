@@ -1,0 +1,287 @@
+{
+ "region": "fiji-mamanucas",
+ "new_destinations": [
+  {
+   "id": "mamanuca-islands",
+   "name": "Mamanuca Islands",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 2,
+   "defaultZoomSpanKm": 60,
+   "coordinates": {
+    "lat": -17.68,
+    "lng": 177.15
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "island",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Mamanuca_Islands",
+    "wording": "Wikivoyage page \"Mamanuca Islands\" (region of resort and day-trip islands off Denarau)."
+   },
+   "region_dir": "region-fiji-mamanucas",
+   "spots": [
+    "mamanuca-islands-1",
+    "mamanuca-islands-2",
+    "mamanuca-islands-3",
+    "mamanuca-islands-4",
+    "mamanuca-islands-5",
+    "mamanuca-islands-6",
+    "mamanuca-islands-7"
+   ],
+   "spot_count": 7
+  }
+ ],
+ "spots": [
+  {
+   "name": "Monuriki",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "id": "mamanuca-islands-1",
+   "source_region": "mamanucas",
+   "coordinates": {
+    "lat": -17.6097059,
+    "lng": 177.0322925
+   },
+   "coordinates_source": "wikipedia:Monuriki",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Uninhabited island: the Cast Away filming island (2000 film), with white beaches and a pine forest; Wikivoyage calls it very much off the beaten track.",
+   "views": 64536,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Mamanuca Islands and reached from that base.",
+   "region_dir": "region-fiji-mamanucas"
+  },
+  {
+   "name": "Mana Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "id": "mamanuca-islands-2",
+   "source_region": "mamanucas",
+   "wiki": "Mana Island (Fiji)",
+   "coordinates": {
+    "lat": -17.676105,
+    "lng": 177.111985
+   },
+   "coordinates_source": "osm:place=island Mana Island (Nominatim)",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Island resort: three beach areas, lagoon snorkelling and water sports; a Survivor filming location.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Mamanuca Islands and reached from that base.",
+   "region_dir": "region-fiji-mamanucas"
+  },
+  {
+   "name": "Beachcomber Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "id": "mamanuca-islands-3",
+   "source_region": "mamanucas",
+   "coordinates": {
+    "lat": -17.654259,
+    "lng": 177.254851
+   },
+   "coordinates_source": "wikipedia:Beachcomber Island",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Island resort: a private island with a backpacker resort, snorkelling, dive shop and the nightly Bula Dance; reached from Denarau by catamaran.",
+   "views": 2352,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Mamanuca Islands and reached from that base.",
+   "region_dir": "region-fiji-mamanucas"
+  },
+  {
+   "name": "Treasure Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "id": "mamanuca-islands-4",
+   "source_region": "mamanucas",
+   "wiki": "Treasure Island (Fiji)",
+   "coordinates": {
+    "lat": -17.6540329,
+    "lng": 177.2639903
+   },
+   "coordinates_source": "wikipedia:Treasure Island (Fiji)",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Island resort: a marine reserve island with palm beaches, snorkelling, a turtle restoration programme and family facilities.",
+   "views": 1255,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Mamanuca Islands and reached from that base.",
+   "region_dir": "region-fiji-mamanucas"
+  },
+  {
+   "name": "South Sea Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "id": "mamanuca-islands-5",
+   "source_region": "mamanucas",
+   "coordinates": {
+    "lat": -17.636497,
+    "lng": 177.18161
+   },
+   "coordinates_source": "wikipedia:South Sea Island",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Island resort: a 30-minute day trip from Denarau with a pool, snorkel gear, kayaks and a semi-submersible coral viewer.",
+   "views": 995,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Mamanuca Islands and reached from that base.",
+   "region_dir": "region-fiji-mamanucas"
+  },
+  {
+   "name": "Bounty Island",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "id": "mamanuca-islands-6",
+   "source_region": "mamanucas",
+   "wiki": "Kadavulailai",
+   "coordinates": {
+    "lat": -17.67305919,
+    "lng": 177.3083884
+   },
+   "coordinates_source": "wikipedia:Kadavulailai",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Island: a marine-reserve island (Bounty Island, Kadavulailai) with white beaches, a small resort and snorkelling.",
+   "views": 1342,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Mamanuca Islands and reached from that base.",
+   "region_dir": "region-fiji-mamanucas"
+  },
+  {
+   "name": "Cloudbreak",
+   "action": "spot",
+   "destination": "mamanuca-islands",
+   "id": "mamanuca-islands-7",
+   "source_region": "mamanucas",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🌊",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Surf break: the headline reef wave off Tavarua, a world-class right in the southern Mamanucas (no article of its own; Wikipedia Cloudbreak redirects to Tavarua).",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Mamanuca Islands and reached from that base.",
+   "region_dir": "region-fiji-mamanucas"
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [],
+ "review_list_not_placed": [
+  {
+   "region": "mamanucas",
+   "name": "Yanuya",
+   "objection": "Village visit depends on an operator's cruise and the village's permission; single source.",
+   "views": 1426
+  },
+  {
+   "region": "mamanucas",
+   "name": "The Supermarket",
+   "objection": "Single mention; diver-only, requires an operator; no coordinates.",
+   "views": 0
+  },
+  {
+   "region": "mamanucas",
+   "name": "Namotu Island",
+   "objection": "Break is reached through the private resort; counted source could not be opened.",
+   "views": 1277
+  },
+  {
+   "region": "mamanucas",
+   "name": "Wilkes Passage",
+   "objection": "Advanced surfers only; sources were blocked, nothing for non-surfers.",
+   "views": 0
+  },
+  {
+   "region": "mamanucas",
+   "name": "Restaurants (surf break)",
+   "objection": "Single non-counted guide; advanced surfers only; near-duplicate area to Cloudbreak.",
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}

@@ -1,0 +1,257 @@
+{
+ "region": "fiji-lomaiviti",
+ "new_destinations": [
+  {
+   "id": "levuka",
+   "name": "Levuka",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 3,
+   "defaultZoomSpanKm": 50,
+   "coordinates": {
+    "lat": -17.684,
+    "lng": 178.84
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "city",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Levuka",
+    "wording": "Wikivoyage pages \"Levuka\" and \"Ovalau\"; UNESCO World Heritage colonial port town, Fiji's first capital. Ovalau (island) is folded into it."
+   },
+   "region_dir": "region-fiji-lomaiviti",
+   "spots": [
+    "levuka-1",
+    "levuka-2",
+    "levuka-3",
+    "levuka-4",
+    "levuka-5",
+    "levuka-6"
+   ],
+   "spot_count": 6
+  }
+ ],
+ "spots": [
+  {
+   "name": "199 Steps (Mission Hill)",
+   "action": "spot",
+   "destination": "levuka",
+   "id": "levuka-1",
+   "source_region": "lomaiviti",
+   "wiki": "Levuka",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "hike",
+   "icon": "🪜",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "bio_draft": "walk: about 199 steps up Mission Hill above Levuka to old Methodist mission buildings and a panorama over the offshore islands and Lekaleka Reef (Wikivoyage Levuka: walk up the 199 steps).",
+   "views": 16206,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Levuka and reached from that base.",
+   "region_dir": "region-fiji-lomaiviti"
+  },
+  {
+   "name": "Levuka Community Centre and Museum",
+   "action": "spot",
+   "destination": "levuka",
+   "id": "levuka-2",
+   "source_region": "lomaiviti",
+   "wiki": "Levuka Community Centre",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "museum",
+   "icon": "🏛️",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "bio_draft": "museum: restored 1878 Morris Hedstrom trading store housing a branch of the Fiji Museum, a library and the Levuka town museum; walking tours start here (Wikipedia Levuka; Wikivoyage Levuka suggests the town museum).",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Levuka and reached from that base.",
+   "region_dir": "region-fiji-lomaiviti"
+  },
+  {
+   "name": "Ovalau Peak",
+   "action": "spot",
+   "destination": "levuka",
+   "id": "levuka-3",
+   "source_region": "lomaiviti",
+   "wiki": "Ovalau",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "pin_note": "candidate point was the Ovalau island centroid; pin the peak/trailhead via resolve-pin.py",
+   "category": "hike",
+   "icon": "⛰️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "viewpoint: hike to the mountain peak above Levuka, overlooking the reefs and the Koro Sea (Wikivoyage Levuka 'See' lists the hike). Coordinates unresolved: no OSM natural=peak found; the Ovalau article point is the island centre, not the peak.",
+   "views": 2015,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Levuka and reached from that base.",
+   "region_dir": "region-fiji-lomaiviti"
+  },
+  {
+   "name": "Lovoni",
+   "action": "spot",
+   "destination": "levuka",
+   "id": "levuka-4",
+   "source_region": "lomaiviti",
+   "coordinates": {
+    "lat": -17.7,
+    "lng": 178.8
+   },
+   "coordinates_source": "wikipedia:Lovoni (rounded: needs OSM pin)",
+   "needs_pin": false,
+   "category": "historic",
+   "icon": "🛖",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "village: traditional village in the fertile crater of Ovalau, reached by guided tour on foot and by truck; visitors take a village tour and lunch (Wikivoyage Ovalau, Levuka).",
+   "views": 973,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Levuka and reached from that base.",
+   "region_dir": "region-fiji-lomaiviti"
+  },
+  {
+   "name": "Leleuvia",
+   "action": "spot",
+   "destination": "levuka",
+   "id": "levuka-5",
+   "source_region": "lomaiviti",
+   "coordinates": {
+    "lat": -17.8083073,
+    "lng": 178.7191782
+   },
+   "coordinates_source": "wikipedia:Leleuvia",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "island: coral cay about 45 minutes by boat from Levuka with day trips and simple overnight bures (Wikivoyage Ovalau, Levuka).",
+   "views": 628,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Levuka and reached from that base.",
+   "region_dir": "region-fiji-lomaiviti"
+  },
+  {
+   "name": "Caqalai",
+   "action": "spot",
+   "destination": "levuka",
+   "id": "levuka-6",
+   "source_region": "lomaiviti",
+   "wiki": "Caqalai Island",
+   "coordinates": {
+    "lat": -17.7880449,
+    "lng": 178.7303787
+   },
+   "coordinates_source": "osm:place=islet \"Caqalai Island\" (Nominatim, MEDIUM)",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "island: coral island run by the Methodist Church with simple bures, white sand beaches and snorkelling; day trips from Levuka (Wikivoyage Levuka).",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Levuka and reached from that base.",
+   "region_dir": "region-fiji-lomaiviti"
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [
+  {
+   "name": "Ovalau",
+   "reason": "Island folded into destination Levuka (region-level keep, same place travellers name)."
+  },
+  {
+   "name": "Levuka",
+   "reason": "Becomes the destination Levuka."
+  }
+ ],
+ "review_list_not_placed": [
+  {
+   "region": "lomaiviti",
+   "name": "Beach Street, Levuka",
+   "objection": "Part of the Levuka town spot already kept (rule 3); Wikivoyage only mentions shops.",
+   "views": 16206
+  },
+  {
+   "region": "lomaiviti",
+   "name": "Cession Stone, Nasova",
+   "objection": "Minor memorial stones, a ten-minute look (rule 3).",
+   "views": 0
+  },
+  {
+   "region": "lomaiviti",
+   "name": "Arovudi",
+   "objection": "One source, a remote village, and no specific sight named.",
+   "views": 0
+  },
+  {
+   "region": "lomaiviti",
+   "name": "Lost Island",
+   "objection": "One source, off the tourist track, reached only by arranged boat.",
+   "views": 395
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}

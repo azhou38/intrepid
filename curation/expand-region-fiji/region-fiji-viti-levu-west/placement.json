@@ -1,0 +1,820 @@
+{
+ "region": "fiji-viti-levu-west",
+ "new_destinations": [
+  {
+   "id": "nadi",
+   "name": "Nadi",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 2,
+   "defaultZoomSpanKm": 70,
+   "coordinates": {
+    "lat": -17.8,
+    "lng": 177.417
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "city",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Nadi",
+    "wording": "Wikivoyage page \"Nadi\" (Viti Levu city; base for Denarau, Sabeto and the Mamanucas/Yasawas ferries); Lautoka (30 km) and Viseisei lie inside the span."
+   },
+   "region_dir": "region-fiji-viti-levu-west",
+   "spots": [
+    "nadi-1",
+    "nadi-2",
+    "nadi-3",
+    "nadi-4",
+    "nadi-5",
+    "nadi-6",
+    "nadi-7",
+    "nadi-8",
+    "nadi-9"
+   ],
+   "spot_count": 9
+  },
+  {
+   "id": "coral-coast",
+   "name": "Coral Coast",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 3,
+   "defaultZoomSpanKm": 110,
+   "coordinates": {
+    "lat": -18.2,
+    "lng": 177.78
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "beach",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Coral_Coast",
+    "wording": "Wikivoyage page \"Coral Coast\": \"a popular backpacking destination between Sigatoka and Suva\"; its Pacific Harbour page sits \"on the Coral Coast of Viti Levu\"; also a tourism brand. Covers Sigatoka, Pacific Harbour, Beqa Lagoon."
+   },
+   "region_dir": "region-fiji-viti-levu-west",
+   "spots": [
+    "coral-coast-1",
+    "coral-coast-2",
+    "coral-coast-3",
+    "coral-coast-4",
+    "coral-coast-5",
+    "coral-coast-6",
+    "coral-coast-7",
+    "coral-coast-8"
+   ],
+   "spot_count": 8
+  },
+  {
+   "id": "rakiraki",
+   "name": "Rakiraki",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 5,
+   "defaultZoomSpanKm": 40,
+   "coordinates": {
+    "lat": -17.36,
+    "lng": 178.17
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "beach",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Rakiraki",
+    "wording": "Wikivoyage page \"Rakiraki\": \"on the north coast of Viti Levu, on a beautiful strip of land known as the Suncoast\"; Nananu-i-Ra is reached from here."
+   },
+   "region_dir": "region-fiji-viti-levu-west",
+   "spots": [
+    "rakiraki-1",
+    "rakiraki-2",
+    "rakiraki-3",
+    "rakiraki-4"
+   ],
+   "spot_count": 4,
+   "rank_note": "hand check: 4 spots, local base -> rank 5"
+  }
+ ],
+ "spots": [
+  {
+   "name": "Garden of the Sleeping Giant",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-1",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -17.7131,
+    "lng": 177.4693
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🌺",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Garden: former private orchid nursery of Raymond Burr with hilly walking paths and tropical plantings; entry charged.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Nadi and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Sri Siva Subramaniya Temple",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-2",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -17.8074,
+    "lng": 177.4151
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "religious",
+   "icon": "🛕",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "bio_draft": "Religious site: large Dravidian-style Hindu temple at the southern end of Nadi; visitors cover up and enter the interior, free to enter.",
+   "views": 10247,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Nadi and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Sabeto Hot Springs and Mud Pool",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-3",
+   "source_region": "viti-levu-west",
+   "wiki": "Sabeto Mud Pool",
+   "coordinates": {
+    "lat": -17.7141,
+    "lng": 177.464
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "♨️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Natural attraction: mud bath and three hot-spring pools in the Sabeto valley near Nadi; mud treatments and massages offered.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Nadi and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Koroyanitu National Heritage Park",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-4",
+   "source_region": "viti-levu-west",
+   "wiki": "Mount Koroyanitu",
+   "coordinates": {
+    "lat": -17.66758,
+    "lng": 177.57339
+   },
+   "coordinates_source": "wikipedia:Mount Koroyanitu",
+   "needs_pin": true,
+   "pin_note": "source point is a centroid; resolve-pin.py must find the visitor point (OSM feature) before apply",
+   "category": "nature",
+   "icon": "🥾",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Park: 35 km2 heritage park around Mount Koroyanitu behind Lautoka and Nadi, with walking trails from Abaca village.",
+   "views": 820,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Nadi and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Viseisei Village",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-5",
+   "source_region": "viti-levu-west",
+   "wiki": "Viseisei",
+   "coordinates": {
+    "lat": -17.683167,
+    "lng": 177.383167
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "historic",
+   "icon": "🛖",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "bio_draft": "Village: the oldest settlement in Fiji, said to be where the first Melanesian canoes beached at nearby Vuda Point; a $5 entry fee applies.",
+   "views": 3988,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Nadi and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Wailoaloa Beach",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-6",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -17.7655,
+    "lng": 177.4262
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏖️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Beach: 3 km sand beach north of Nadi town, lined with resorts and beach clubs; a swimming and sunset spot.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Nadi and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Nadi Produce Market",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-7",
+   "source_region": "viti-levu-west",
+   "wiki": "Nadi Market",
+   "coordinates": {
+    "lat": -17.803,
+    "lng": 177.4164
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "market",
+   "icon": "🥭",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "bio_draft": "Market: daily fresh produce market on Hospital Road, Nadi, open Monday to Saturday.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Nadi and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Nausori Highlands",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-8",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -17.80315,
+    "lng": 177.58794
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": true,
+   "pin_note": "source point is a centroid; resolve-pin.py must find the visitor point (OSM feature) before apply",
+   "category": "nature",
+   "icon": "⛰️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Highlands: dry-zone mountain rainforest behind Nadi offering nature walks, hikes and off-road tours.",
+   "views": 1309,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept in west region, also a review in central: one spot only.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Lautoka Market",
+   "action": "spot",
+   "destination": "nadi",
+   "id": "nadi-9",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -17.604223,
+    "lng": 177.454279
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "market",
+   "icon": "🥭",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "bio_draft": "Market: large covered produce, spice and kava market beside the Lautoka bus station.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Represents Lautoka (kept as a town: folded into this market spot and the Nadi description, not listed beside its own market).",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Sigatoka Sand Dunes National Park",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-1",
+   "source_region": "viti-levu-west",
+   "wiki": "Sigatoka Sand Dunes",
+   "coordinates": {
+    "lat": -18.1657,
+    "lng": 177.4866
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": true,
+   "pin_note": "source point is a centroid; resolve-pin.py must find the visitor point (OSM feature) before apply",
+   "category": "nature",
+   "icon": "🏜️",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "bio_draft": "National park: Fiji's first national park, 20–60 m parabolic dunes at the Sigatoka River mouth with archaeological sites.",
+   "views": 2240,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Coral Coast and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Natadola Beach",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-2",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -18.1009,
+    "lng": 177.3185
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "beach",
+   "icon": "🏖️",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Beach: white-sand beach west of Sigatoka, considered one of the best in Fiji, with shade trees and horse riding.",
+   "views": 0,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Coral Coast and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Biausevu Waterfalls",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-6",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -18.193,
+    "lng": 177.733
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "💧",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Waterfall: 20 m tiered waterfall reached by a 20-minute rainforest walk near Biausevu, best just after the wet season.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Coral Coast and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Tavuni Hill Fort",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-7",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -18.1316,
+    "lng": 177.5401
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "historic",
+   "icon": "🏰",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Historic site: semi-restored 18th-century hill fort near Naroro village, with guides on precolonial history.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Coral Coast and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Kula Eco Park",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-8",
+   "source_region": "viti-levu-west",
+   "wiki": "Kula WILD Adventure Park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "entertainment",
+   "icon": "🦜",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "bio_draft": "Wildlife park: captive breeding of endangered species and environmental education, Pacific Harbour side; paid entry (east of Sigatoka, check central region).",
+   "views": 724,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Merged with the central-region entry \"Kula WILD Adventure Park\" (same place, Sigatoka).",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Nananu-i-Ra",
+   "action": "spot",
+   "destination": "rakiraki",
+   "id": "rakiraki-1",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -17.3,
+    "lng": 178.21666667
+   },
+   "coordinates_source": "wikipedia:Nananu-i-Ra",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Island: small island off Rakiraki reached by boat from Ellington Wharf, with resorts, the One Bay beach and famous dive sites.",
+   "views": 1678,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Rakiraki and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "One Bay Beach",
+   "action": "spot",
+   "destination": "rakiraki",
+   "id": "rakiraki-2",
+   "source_region": "viti-levu-west",
+   "wiki": "One Bay",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Beach: white sand beach on Nananu-i-Ra with a rainforest behind and an ancient village; a sunset and swimming beach.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Rakiraki and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Ratu Udre Udre Tomb",
+   "action": "spot",
+   "destination": "rakiraki",
+   "id": "rakiraki-3",
+   "source_region": "viti-levu-west",
+   "wiki": "Ratu Udre Udre",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "historic",
+   "icon": "🪦",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "bio_draft": "Historic site: tomb of 19th-century chief Udre Udre, said to have eaten hundreds of people, near Vaileka.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Rakiraki and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Navatu Rock",
+   "action": "spot",
+   "destination": "rakiraki",
+   "id": "rakiraki-4",
+   "source_region": "viti-levu-west",
+   "coordinates": {
+    "lat": -17.3719,
+    "lng": 178.11
+   },
+   "coordinates_source": "wikivoyage listing geo tag",
+   "needs_pin": false,
+   "category": "landmark",
+   "icon": "🪨",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "bio_draft": "Landmark: rock beside Kings Road in Vitawa village that looks like a man or a woman depending on the angle; one of Fiji's oldest settlement sites.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Rakiraki and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Navala Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "navala-village",
+   "source_region": "viti-levu-west",
+   "wiki": "Navala",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "historic",
+   "icon": "🛖",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Village: traditional bure village inland from Ba, where visitors stay in basic homestays; the source is Wikipedia only, a tourism source still needed.",
+   "views": 2212,
+   "counted_sources": 0,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Traditional bure village inland from Ba; reached by the Nadi-Ba-Navala road/day tours, outside the Nadi span (about 55 km) and over 40 km from Rakiraki.",
+   "region_dir": "region-fiji-viti-levu-west"
+  },
+  {
+   "name": "Beqa Island",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-3",
+   "source_region": "kadavu",
+   "wiki": "Beqa",
+   "coordinates": {
+    "lat": -18.4,
+    "lng": 178.13333333
+   },
+   "coordinates_source": "wikipedia:Beqa",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "island: lagoon island 10 km off Viti Levu, base for shark dives and firewalking villages, reached by boat from Pacific Harbour",
+   "views": 3177,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Coral Coast and reached from that base. (spot comes from region fiji-kadavu)",
+   "region_dir": "region-fiji-kadavu"
+  },
+  {
+   "name": "Beqa Shark Reef",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-4",
+   "source_region": "viti-levu-central",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🦈",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "bio_draft": "Dive site: Shark Reef marine park in the Beqa lagoon, dived from Pacific Harbour with shark-dive operators; the place, not an operator.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Merged with kadavu-region \"Shark Reef (Beqa Lagoon)\" (same dive site; run from Pacific Harbour). (spot comes from region fiji-viti-levu-central)",
+   "region_dir": "region-fiji-viti-levu-central"
+  },
+  {
+   "name": "Navua River",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-5",
+   "source_region": "viti-levu-central",
+   "coordinates": {
+    "lat": -18.25945529,
+    "lng": 178.1530899
+   },
+   "coordinates_source": "wikipedia:Navua River",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🚣",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "River: Upper Navua Gorge whitewater rafting through black volcanic canyon and waterfalls, reached by road from Navua.",
+   "views": 1003,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Coral Coast and reached from that base. (spot comes from region fiji-viti-levu-central)",
+   "region_dir": "region-fiji-viti-levu-central"
+  }
+ ],
+ "spots_from_other_regions": [
+  "coral-coast-3",
+  "coral-coast-4",
+  "coral-coast-5"
+ ],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [
+  {
+   "name": "Nadi",
+   "reason": "Becomes the destination Nadi (region-level keep)."
+  },
+  {
+   "name": "Lautoka",
+   "reason": "Kept town folded: Lautoka Market is the spot (wrapper rule); Lautoka described in Nadi."
+  }
+ ],
+ "review_list_not_placed": [
+  {
+   "region": "viti-levu-west",
+   "name": "Big Bula Waterpark",
+   "objection": "Kids' commercial attraction, one source, not a travel-out-of-your-way draw",
+   "views": 0
+  },
+  {
+   "region": "viti-levu-west",
+   "name": "Lautoka Botanical Gardens",
+   "objection": "One source, modest gardens",
+   "views": 0
+  },
+  {
+   "region": "viti-levu-west",
+   "name": "Hot Glass Fiji",
+   "objection": "Workshop-shop; one source",
+   "views": 0
+  },
+  {
+   "region": "viti-levu-west",
+   "name": "Sigatoka Municipal Market",
+   "objection": "Local produce market, one source",
+   "views": 0
+  },
+  {
+   "region": "viti-levu-west",
+   "name": "Lawai Pottery Village",
+   "objection": "One source; may need arranged visit",
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}

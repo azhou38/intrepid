@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Grand Pacific Hotel",
+  "wiki": "Grand Pacific Hotel (Fiji)",
+  "views": 2705,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Grand Pacific Hotel",
+   "wiki": "Grand Pacific Hotel (Fiji)",
+   "coordinates": {
+    "lat": -18.1469,
+    "lng": 178.4225
+   },
+   "coordinates_source": "wikipedia:Grand Pacific Hotel (Fiji)",
+   "views": 2705,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Suva"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Grand_Pacific_Hotel_(Fiji)"
+   ],
+   "note": "Heritage hotel: 1914 landmark on Victoria Parade, Suva, restored after decades closed; a hotel, judged on public access."
+  }
+ },
+ {
+  "name": "Suva",
+  "wiki": "Suva",
+  "views": 133335,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Suva",
+   "wiki": "Suva",
+   "coordinates": {
+    "lat": -18.1416,
+    "lng": 178.4419
+   },
+   "coordinates_source": "wikipedia:Suva",
+   "views": 133335,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Suva"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Suva"
+   ],
+   "note": "City: Fiji's capital and largest city on the southeast coast of Viti Levu; the base for the Suva sights below."
+  }
+ }
+]

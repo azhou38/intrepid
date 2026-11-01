@@ -1,0 +1,131 @@
+{
+ "region": "fiji-lau",
+ "new_destinations": [],
+ "spots": [
+  {
+   "name": "Vanua Balavu",
+   "action": "standalone",
+   "destination": null,
+   "id": "vanua-balavu",
+   "source_region": "lau",
+   "coordinates": {
+    "lat": -17.23333333,
+    "lng": -178.95
+   },
+   "coordinates_source": "wikipedia:Vanua Balavu",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "visitHoursMin": 24,
+   "visitHoursMax": 48,
+   "bio_draft": "Island in the northern Lau Group, one of the two main visitor islands with homestays, a guesthouse, Lomaloma port and the Bay of Islands; reached by domestic flight or charter.",
+   "views": 3397,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Northern Lau island, homestay-based; Lau has no other destination (remote, flights/ferries).",
+   "region_dir": "region-fiji-lau"
+  },
+  {
+   "name": "Bay of Islands, Vanua Balavu",
+   "action": "standalone",
+   "destination": null,
+   "id": "bay-of-islands-vanua-balavu",
+   "source_region": "lau",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🛶",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Natural bay of islets and a limestone cathedral cave with snorkelling, on the northern tip of Vanua Balavu; Wikipedia's Vanua Balavu article gives its other name as Qilaqila, a marine reserve (permission to anchor needed). Reached by yacht, seaplane or charter.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Limestone islets and Cathedral Cave on Vanua Balavu; pinned apart from the island. Lau stays standalone (three kept places on different islands).",
+   "region_dir": "region-fiji-lau"
+  },
+  {
+   "name": "Lakeba",
+   "action": "standalone",
+   "destination": null,
+   "id": "lakeba",
+   "source_region": "lau",
+   "coordinates": {
+    "lat": -18.21666667,
+    "lng": -178.78333333
+   },
+   "coordinates_source": "wikipedia:Lakeba",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "visitHoursMin": 24,
+   "visitHoursMax": 48,
+   "bio_draft": "Island in the southern Lau Group, the administrative and population centre with a weekly flight, homestays and caves, hillforts and Tongan-influenced villages; reached by air or boat.",
+   "views": 3229,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Southern Lau island; no destination within reach.",
+   "region_dir": "region-fiji-lau"
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [],
+ "review_list_not_placed": [
+  {
+   "region": "lau",
+   "name": "Tubou",
+   "objection": "For: guide singles it out, village visits are the Lau experience. Against: village needs host arrangement, one source, short visit.",
+   "views": 889
+  },
+  {
+   "region": "lau",
+   "name": "Nasaqalau",
+   "objection": "For: stalactite caves are a named Lakeba draw. Against: counted source does not name the place; village-guided access only.",
+   "views": 665
+  },
+  {
+   "region": "lau",
+   "name": "Ketekete Peak Hillfort",
+   "objection": "For: named archaeological summit walk. Against: one source, guide-dependent, access arrangements unclear.",
+   "views": 0
+  },
+  {
+   "region": "lau",
+   "name": "Cicia",
+   "objection": "For: named with specific activities. Against: whole island, one source, hard access, tours not verified.",
+   "views": 1176
+  },
+  {
+   "region": "lau",
+   "name": "Fulaga",
+   "objection": "For: iconic lagoon scenery named by guide. Against: effectively inaccessible to ordinary visitors, one source.",
+   "views": 1792
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}

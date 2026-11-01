@@ -1,0 +1,152 @@
+{
+ "region": "fiji-rotuma",
+ "new_destinations": [],
+ "spots": [
+  {
+   "name": "Losa Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "losa-beach",
+   "source_region": "rotuma",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Beach: one of the best beaches on Rotuma, west of Solroroa Bluff (Wikivoyage Do). Village of Losa is in Ituʻtiʻu district.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Rotuma beach; three kept places (below the four-spot bar), Rotuma is remote.",
+   "region_dir": "region-fiji-rotuma"
+  },
+  {
+   "name": "Vai'oa Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "vaioa-beach",
+   "source_region": "rotuma",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Beach: one of the best beaches on Rotuma, west of Solroroa Bluff (Wikivoyage Do). No article.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Rotuma beach, as above.",
+   "region_dir": "region-fiji-rotuma"
+  },
+  {
+   "name": "Oinafa Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "oinafa-beach",
+   "source_region": "rotuma",
+   "wiki": "Oinafa",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Beach: one of the best beaches on Rotuma, in the Oinafa district on the east (Wikivoyage Do). Wiki title is the district article, so views are 0. No beach point found: the district article point is not used.",
+   "views": 222,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Rotuma beach, as above.",
+   "region_dir": "region-fiji-rotuma"
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [],
+ "review_list_not_placed": [
+  {
+   "region": "rotuma",
+   "name": "Graveyard of Kings",
+   "objection": "Single source, an archaeological site of tombs that may be tapu family land; visit may be short.",
+   "views": 0
+  },
+  {
+   "region": "rotuma",
+   "name": "Solroroa Bluff",
+   "objection": "One source, no access detail, island has no organised tourism (homestay only).",
+   "views": 0
+  },
+  {
+   "region": "rotuma",
+   "name": "Mount Suelhof",
+   "objection": "One source; may overlap Solroroa as the same hiking offer; no route info.",
+   "views": 0
+  },
+  {
+   "region": "rotuma",
+   "name": "Joro Beach",
+   "objection": "Lesser-tier mention, one source, no detail; near-duplicate of the best beaches.",
+   "views": 0
+  },
+  {
+   "region": "rotuma",
+   "name": "Lulu Beach",
+   "objection": "Lesser-tier mention, one source, no detail.",
+   "views": 0
+  },
+  {
+   "region": "rotuma",
+   "name": "'Ana-te-Fapufa Cave",
+   "objection": "One source, no detail on access or what is inside.",
+   "views": 0
+  },
+  {
+   "region": "rotuma",
+   "name": "Agaha Islet",
+   "objection": "Needs a boat, one source; a picnic spot only.",
+   "views": 0
+  },
+  {
+   "region": "rotuma",
+   "name": "Solkope",
+   "objection": "One source; a tiny islet with little to do.",
+   "views": 548
+  },
+  {
+   "region": "rotuma",
+   "name": "Stonebridge (Rotuma)",
+   "objection": "Newspaper article is not clearly a visitor guide; one source; unverified.",
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}

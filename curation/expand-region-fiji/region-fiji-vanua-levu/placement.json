@@ -1,0 +1,594 @@
+{
+ "region": "fiji-vanua-levu",
+ "new_destinations": [
+  {
+   "id": "taveuni",
+   "name": "Taveuni",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 3,
+   "defaultZoomSpanKm": 70,
+   "coordinates": {
+    "lat": -16.83,
+    "lng": 179.99
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "island",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Taveuni",
+    "wording": "Wikivoyage page \"Taveuni\" (garden island, 180th meridian); Rainbow Reef lies off its coast."
+   },
+   "region_dir": "region-fiji-vanua-levu",
+   "spots": [
+    "taveuni-1",
+    "taveuni-2",
+    "taveuni-3",
+    "taveuni-4",
+    "taveuni-5",
+    "taveuni-6",
+    "taveuni-7",
+    "taveuni-8",
+    "taveuni-9",
+    "taveuni-10"
+   ],
+   "spot_count": 10
+  },
+  {
+   "id": "vanua-levu",
+   "name": "Vanua Levu",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 4,
+   "defaultZoomSpanKm": 100,
+   "coordinates": {
+    "lat": -16.6,
+    "lng": 179.35
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "island",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Vanua_Levu",
+    "wording": "Wikivoyage page \"Vanua Levu\" (Savusavu redirects to it; covers Savusavu and Labasa). Region used because Savusavu has only three own kept spots."
+   },
+   "region_dir": "region-fiji-vanua-levu",
+   "spots": [
+    "vanua-levu-1",
+    "vanua-levu-2",
+    "vanua-levu-3",
+    "vanua-levu-4",
+    "vanua-levu-5"
+   ],
+   "spot_count": 5
+  }
+ ],
+ "spots": [
+  {
+   "name": "Tavoro Waterfalls",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-1",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "💧",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Waterfalls (nature): three falls in Bouma park, the most accessible on Taveuni, 15 minutes to an hour's walk.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Lavena Coastal Walk",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-2",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "hike",
+   "icon": "🥾",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "bio_draft": "Walk (coastal track): about four hours return from Lavena village to a swimming hole and waterfalls, with a small fee.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Des Voeux Peak",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-3",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Peak (mountain): Fiji's second-highest peak at 1,196 m, reached by hike or 4WD, with birdlife.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Rainbow Reef",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-4",
+   "source_region": "vanua-levu",
+   "coordinates": {
+    "lat": -16.777,
+    "lng": 179.9322
+   },
+   "coordinates_source": "wikipedia:Rainbow Reef",
+   "needs_pin": true,
+   "pin_note": "source point is a centroid; resolve-pin.py must find the visitor point (OSM feature) before apply",
+   "category": "nature",
+   "icon": "🤿",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "bio_draft": "Reef (dive area): patch reef in the Somosomo Strait between Taveuni and Vanua Levu, one of the South Pacific's best-known dive sites.",
+   "views": 1323,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Waitabu Marine Park",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-5",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🐠",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Marine park (community reef): 1 km of fringing reef protected by seven communities, with snorkelling.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Lake Tagimaucia",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-6",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🌺",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Lake (crater lake): volcanic crater lake at about 800 m, habitat of the tagimaucia flower, reached by guided hike.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Beverley Beach",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-7",
+   "source_region": "added by caller (Rough Guides names Beverley Beach, Matei, for snorkelling)",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "White-sand beach at Matei on Taveuni, named by Rough Guides for snorkelling.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Vidawa Rainforest Hike",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-8",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "hike",
+   "icon": "🥾",
+   "visitHoursMin": 5,
+   "visitHoursMax": 8,
+   "bio_draft": "Walk (guided rainforest hike): full-day guided hike to archaeological sites and viewpoints, ending at the lower Tavoro falls.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Waitavala Waterslide",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-9",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "💦",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "bio_draft": "Waterslide (natural rock slide): cool natural rock slide and swimming hole on a stream.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Wairiki Mission Church",
+   "action": "spot",
+   "destination": "taveuni",
+   "id": "taveuni-10",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "religious",
+   "icon": "⛪",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "bio_draft": "Religious building (mission church): Taveuni Catholic church on a hill above a coconut plantation, with views of the historic battle beach.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Taveuni and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Savusavu",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "id": "vanua-levu-1",
+   "source_region": "vanua-levu",
+   "coordinates": {
+    "lat": -16.78083333,
+    "lng": 179.33305556
+   },
+   "coordinates_source": "wikipedia:Savusavu",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🌴",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Town on Vanua Levu's south coast: yachting anchorage, diving base and hot springs, the island's main tourist centre.",
+   "views": 7813,
+   "counted_sources": 3,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Town with hot springs, anchorage and diving base; has draws no other spot covers.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Waisali Rainforest Reserve",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "id": "vanua-levu-2",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🌳",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Protected rainforest reserve (nature park) just outside Savusavu, about 130 ha, with birds, frogs and a waterfall walk; run with the National Trust of Fiji.",
+   "views": 0,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Vanua Levu and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Labasa",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "id": "vanua-levu-3",
+   "source_region": "vanua-levu",
+   "coordinates": {
+    "lat": -16.43111111,
+    "lng": 179.37027778
+   },
+   "coordinates_source": "wikipedia:Labasa",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🏙️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "bio_draft": "Town: largest town on Vanua Levu and its administrative and sugar centre, with a bus hub and Indo-Fijian market life.",
+   "views": 8967,
+   "counted_sources": 3,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Largest Vanua Levu town and bus hub; its market and temple are only review candidates, so the town itself is the spot.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Savusavu Hills",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "id": "vanua-levu-4",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "hike",
+   "icon": "🥾",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 3,
+   "bio_draft": "Walk (hike): hill ridge above Savusavu with bay views, 30 minutes to a few hours by route.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Vanua Levu and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  },
+  {
+   "name": "Lesiaceva Point",
+   "action": "spot",
+   "destination": "vanua-levu",
+   "id": "vanua-levu-5",
+   "source_region": "vanua-levu",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "viewpoint",
+   "icon": "🌊",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Headland (viewpoint and beach): south coast point near Savusavu, with a public snorkelling beach at Split Rock.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Vanua Levu and reached from that base.",
+   "region_dir": "region-fiji-vanua-levu"
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [
+  {
+   "name": "Taveuni",
+   "reason": "Becomes the destination Taveuni."
+  },
+  {
+   "name": "Vanua Levu",
+   "reason": "Becomes the destination Vanua Levu."
+  }
+ ],
+ "review_list_not_placed": [
+  {
+   "region": "vanua-levu",
+   "name": "Hibiscus Highway",
+   "objection": "Road trip is the draw on a rough road; one source only.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Vuadomo Waterfall",
+   "objection": "Reached by village visit, access possibly by arrangement.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Savusavu Hot Springs",
+   "objection": "Source is a yachting guide; baths are medical-centre run",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "J.Hunter Pearl Showroom",
+   "objection": "Mainly a shop.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Dakuniba Petroglyphs",
+   "objection": "Access by village arrangement.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Labasa Snake Temple",
+   "objection": "Short stop, shrine details unclear.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Labasa Market",
+   "objection": "If not daily, fails rule 4.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Rabi Island",
+   "objection": "Hard to reach, community access, not an open attraction.",
+   "views": 8509
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Great Sea Reef",
+   "objection": "Remote area rather than a place; for: third-longest barrier reef",
+   "views": 1009
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Great White Wall",
+   "objection": "Part of the larger Rainbow Reef spot (rule 3); for: it is the name divers search for",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Warrior Burial Cave",
+   "objection": "Remote, may need guide.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "180th Meridian Marker",
+   "objection": "Just a sign, minor.",
+   "views": 0
+  },
+  {
+   "region": "vanua-levu",
+   "name": "Qeleni Village",
+   "objection": "Arranged visit.",
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}

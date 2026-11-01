@@ -1,0 +1,293 @@
+{
+ "region": "fiji-viti-levu-central",
+ "new_destinations": [
+  {
+   "id": "suva",
+   "name": "Suva",
+   "action": "new-destination",
+   "country": "Fiji",
+   "countryCode": "FJ",
+   "timezone": "Pacific/Fiji",
+   "continent": "Oceania",
+   "rank": 3,
+   "defaultZoomSpanKm": 50,
+   "coordinates": {
+    "lat": -18.1416,
+    "lng": 178.4419
+   },
+   "coordinates_source": "centre of the named place/region (town centre or middle of its spots); to be confirmed with resolve-pin.py",
+   "category": "city",
+   "name_evidence": {
+    "source": "https://en.wikivoyage.org/wiki/Suva",
+    "wording": "Wikivoyage page \"Suva\" (national capital and Fiji's largest city)."
+   },
+   "region_dir": "region-fiji-viti-levu-central",
+   "spots": [
+    "suva-1",
+    "suva-2",
+    "suva-3",
+    "suva-4"
+   ],
+   "spot_count": 4
+  }
+ ],
+ "spots": [
+  {
+   "name": "Beqa Shark Reef",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-4",
+   "source_region": "viti-levu-central",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "nature",
+   "icon": "🦈",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "bio_draft": "Dive site: Shark Reef marine park in the Beqa lagoon, dived from Pacific Harbour with shark-dive operators; the place, not an operator.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Merged with kadavu-region \"Shark Reef (Beqa Lagoon)\" (same dive site; run from Pacific Harbour). (spot comes from region fiji-viti-levu-central)",
+   "region_dir": "region-fiji-viti-levu-central"
+  },
+  {
+   "name": "Navua River",
+   "action": "spot",
+   "destination": "coral-coast",
+   "id": "coral-coast-5",
+   "source_region": "viti-levu-central",
+   "coordinates": {
+    "lat": -18.25945529,
+    "lng": 178.1530899
+   },
+   "coordinates_source": "wikipedia:Navua River",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🚣",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "River: Upper Navua Gorge whitewater rafting through black volcanic canyon and waterfalls, reached by road from Navua.",
+   "views": 1003,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Coral Coast and reached from that base. (spot comes from region fiji-viti-levu-central)",
+   "region_dir": "region-fiji-viti-levu-central"
+  },
+  {
+   "name": "Fiji Museum",
+   "action": "spot",
+   "destination": "suva",
+   "id": "suva-1",
+   "source_region": "viti-levu-central",
+   "coordinates": {
+    "lat": -18.1495,
+    "lng": 178.4258
+   },
+   "coordinates_source": "wikipedia:Fiji Museum",
+   "needs_pin": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Museum: national museum of Fiji's history and archaeology (artefacts about 3,700 years old), in Thurston Gardens, Suva; paid entry.",
+   "views": 2229,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Suva and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-central"
+  },
+  {
+   "name": "Colo-i-Suva Forest Reserve",
+   "action": "spot",
+   "destination": "suva",
+   "id": "suva-2",
+   "source_region": "viti-levu-central",
+   "coordinates": {
+    "lat": -18.07,
+    "lng": 178.36
+   },
+   "coordinates_source": "wikipedia:Colo-i-Suva Forest Reserve",
+   "needs_pin": true,
+   "pin_note": "source point is a centroid; resolve-pin.py must find the visitor point (OSM feature) before apply",
+   "category": "nature",
+   "icon": "🌳",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Nature park: rainforest reserve about 10 minutes from central Suva, with Waisila Falls, swimming pools, trails and birdlife.",
+   "views": 1680,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Suva and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-central"
+  },
+  {
+   "name": "Suva Municipal Market",
+   "action": "spot",
+   "destination": "suva",
+   "id": "suva-3",
+   "source_region": "viti-levu-central",
+   "coordinates": {
+    "lat": -18.136354,
+    "lng": 178.42504
+   },
+   "coordinates_source": "wikivoyage listing geo: Suva",
+   "needs_pin": false,
+   "category": "market",
+   "icon": "🥭",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "bio_draft": "Market: daily fruit and vegetable market on Harris Road, Suva (Mon-Sat), south of the bus station.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the span of Suva and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-central"
+  },
+  {
+   "name": "Mount Korobaba",
+   "action": "spot",
+   "destination": "suva",
+   "id": "suva-4",
+   "source_region": "viti-levu-central",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "bio_draft": "Viewpoint: hill walk above Lami with city and harbour views; the walk starts behind the cement works in Lami.",
+   "views": 0,
+   "counted_sources": 0,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Inside the span of Suva and reached from that base.",
+   "region_dir": "region-fiji-viti-levu-central"
+  },
+  {
+   "name": "Mount Tomanivi",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-tomanivi",
+   "source_region": "viti-levu-central",
+   "coordinates": {
+    "lat": -17.63305556,
+    "lng": 178.01666667
+   },
+   "coordinates_source": "wikipedia:Mount Tomanivi",
+   "needs_pin": false,
+   "category": "hike",
+   "icon": "⛰️",
+   "visitHoursMin": 6,
+   "visitHoursMax": 9,
+   "bio_draft": "Peak: Fiji's highest point (1,324 m) in the interior of Viti Levu; a climb rather than a managed attraction, no visitor source checked yet. Coordinates lie in the north-west highlands; check which region judges it.",
+   "views": 8032,
+   "counted_sources": 0,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Fiji highest peak, interior Viti Levu, climbed from Nadarivatu/Navala side. About 34 km from Rakiraki centre but outside its 30 km reach (span 40) and not reached from the Suncoast base.",
+   "region_dir": "region-fiji-viti-levu-central"
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [
+  "coral-coast-4",
+  "coral-coast-5"
+ ],
+ "folded_or_merged": [
+  {
+   "name": "Suva",
+   "reason": "Becomes the destination Suva."
+  },
+  {
+   "name": "Kula WILD Adventure Park",
+   "reason": "Merged into Kula Eco Park (coral-coast)."
+  }
+ ],
+ "review_list_not_placed": [
+  {
+   "region": "viti-levu-central",
+   "name": "Thurston Gardens",
+   "objection": "For: Fiji's botanical garden, free, next to the museum. Against: one passing mention, no listing of its own.",
+   "views": 1118
+  },
+  {
+   "region": "viti-levu-central",
+   "name": "Suva Fish Market",
+   "objection": "For: daily market, colourful. Against: near-duplicate of the municipal market cluster, short visit.",
+   "views": 0
+  },
+  {
+   "region": "viti-levu-central",
+   "name": "Hot Glass Fiji",
+   "objection": "For: a hands-on activity. Against: small business, one source, set days.",
+   "views": 0
+  },
+  {
+   "region": "viti-levu-central",
+   "name": "Arts Village",
+   "objection": "For: two counted sources, hours to browse. Against: mainly a shopping/eating village and shows are scheduled.",
+   "views": 0
+  },
+  {
+   "region": "viti-levu-central",
+   "name": "Nausori Highlands",
+   "objection": "For: cultural highlands with its own page. Against: a region, outline article, no single stop (Navala would be the spot).",
+   "views": 1309
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together for all Fiji (no existing Fiji destinations). Spots listed here under spots_in_other_destinations_dirs belong to a destination proposed in another region dir; their entries are in that dir (or placement.all.json)."
+}
