@@ -53,3 +53,11 @@ export function navTargetStatus(from: NavSel, to: NavSel, now: NavSel): 'pending
   if (sameNavSel(now, from)) return 'pending';
   return 'interrupted';
 }
+
+// The copy of longitude `lng` (shifted by whole turns) nearest `fromLng`, i.e. the end of the short way round. Mapbox's
+// easeTo animates the centre's longitude in a straight line and only wraps it per frame, so from 170 to -175 it swept
+// 345 degrees west round the globe instead of 15 east across the date line; aimed at 185 instead, it goes the short way.
+export function nearestLng(lng: number, fromLng: number): number {
+  'worklet';
+  return lng + 360 * Math.round((fromLng - lng) / 360);
+}
