@@ -361,6 +361,10 @@ interface Props {
   // pillOwnerSV holds its pillOwnerId, so an incoming and an outgoing sheet never fight over them during a swap.
   pillOwnerSV?: SharedValue<number>;
   pillOwnerId?: number;
+  // Set during a swap: the sheet that takes the pills over once this (outgoing) one has slid off, and the pills' fade-in.
+  // The handover runs on the UI thread in this sheet's slide-finished callback, on the frame it ends.
+  pillNextOwnerSV?: SharedValue<number>;
+  pillHandoverSV?: SharedValue<number>;
   // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Destination" pill's fade.
   pillFullSV?: SharedValue<number>;
   // Fires on every snap transition — lets the caller know when this sheet is peeking (e.g.
@@ -409,7 +413,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, pillOwnerSV, pillOwnerId, pillFullSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, onTitlePress, collapseSignal,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, onTitlePress, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -808,6 +812,15 @@ function SpotSheet({
     },
     [insets.bottom, insets.top],
   );
+  // The outgoing sheet's slide has finished: if it still holds the pills, pass them to the sheet now resting in its place
+  // (pillNextOwnerSV) and fade them in there. On the UI thread, so the pills reappear the frame the slide ends rather than
+  // after the next React render.
+  const handOverPills = () => {
+    'worklet';
+    if (!pillOwnerSV || !pillNextOwnerSV || pillOwnerSV.value !== pillOwnerId || !pillNextOwnerSV.value) return;
+    pillOwnerSV.value = pillNextOwnerSV.value;
+    if (pillHandoverSV) { pillHandoverSV.value = 0; pillHandoverSV.value = withTiming(1, { duration: 160 }); }
+  };
 
   // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
   // Same design as DestinationSheet (see the long comment there): snapStateRef / snapStateSV hold the snap this
@@ -945,7 +958,7 @@ function SpotSheet({
     if (leaving) {
       closingRef.current = true;
       hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-        if (finished && onExited) runOnJS(onExited)();
+        if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
       });
       return;
     }
@@ -960,7 +973,7 @@ function SpotSheet({
     if (!leaveNow) return;
     closingRef.current = true;
     hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-      if (finished && onExited) runOnJS(onExited)();
+      if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [leaveNow]);

@@ -53,6 +53,10 @@ interface Props {
   // pillOwnerSV holds its pillOwnerId, so an incoming and an outgoing sheet never fight over them during a swap.
   pillOwnerSV?: SharedValue<number>;
   pillOwnerId?: number;
+  // Set during a swap: the sheet that takes the pills over once this (outgoing) one has slid off, and the pills' fade-in.
+  // The handover runs on the UI thread in this sheet's slide-finished callback, on the frame it ends.
+  pillNextOwnerSV?: SharedValue<number>;
+  pillHandoverSV?: SharedValue<number>;
   // While true, some other UI owns the pill's position instead — this sheet's writes to
   // pillOffsetSV are suppressed so the two don't fight.
   pillOffsetLockedSV?: SharedValue<boolean>;
@@ -214,7 +218,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOwnerSV, pillOwnerId, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -609,6 +613,15 @@ function CountrySheet({
     },
     [insets.bottom, insets.top],
   );
+  // The outgoing sheet's slide has finished: if it still holds the pills, pass them to the sheet now resting in its place
+  // (pillNextOwnerSV) and fade them in there. On the UI thread, so the pills reappear the frame the slide ends rather than
+  // after the next React render.
+  const handOverPills = () => {
+    'worklet';
+    if (!pillOwnerSV || !pillNextOwnerSV || pillOwnerSV.value !== pillOwnerId || !pillNextOwnerSV.value) return;
+    pillOwnerSV.value = pillNextOwnerSV.value;
+    if (pillHandoverSV) { pillHandoverSV.value = 0; pillHandoverSV.value = withTiming(1, { duration: 160 }); }
+  };
 
   // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
   // Same design as DestinationSheet (see the long comment there): snapStateRef / snapStateSV hold the snap this
@@ -666,7 +679,7 @@ function CountrySheet({
     if (leaving) {
       closingRef.current = true;
       slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-        if (finished && onExited) runOnJS(onExited)();
+        if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
       });
       return;
     }

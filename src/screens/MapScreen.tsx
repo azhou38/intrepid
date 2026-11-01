@@ -1731,6 +1731,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // when it has gone, ownership passes to the new sheet and the pills fade in at its position (pillHandoverSV).
   const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
   const pillHandoverSV = useSharedValue(1);
+  // During a swap: the live sheet that takes the pills over when the outgoing one finishes its slide (see handOverPills).
+  const pillNextOwnerSV = useSharedValue<number>(PILL_OWNER.none);
   const upPillWrapStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -upPillBottomSV.value }], opacity: pillShownSV.value * pillHandoverSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
@@ -2562,6 +2564,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, []);
 
   const lastPillsRef = useRef<{ sig: string; value: CountryCluster[] } | null>(null);
+  // The span the country pills plan at: the live one, except during a back or close plan (backPlan), where it is the
+  // target view's, as for the destination and spot pins. The pills then come into view as the camera pulls back to the
+  // country (they are anchored to the map, and the ones the target view adds lie off-screen at the start) instead of
+  // appearing a beat after the camera lands, once the throttled zoom updates, the arrival and their fade-in had run.
+  const pillTargetLngDelta = backPlan ? SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, closeTarget!)) : pillVisibleLngDelta;
   const countryPills = useMemo(() => {
     // "visitedCount" is the country's visited destinations (see visitIndex) — the number on its
     // pill's badge.
@@ -2592,10 +2599,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // getCountryPillCutoffLngDelta). Smaller neighbouring countries keep their pills a
       // while longer (their own default views sit deeper), which preserves useful edge
       // context when zoomed into a larger neighbour. Compared against the calibrated
-      // pillVisibleLngDelta (true on-screen span), not planLngDelta — the planning scale
+      // pillTargetLngDelta (true on-screen span), not planLngDelta — the planning scale
       // runs ~2× deep, which hid pills long before their default view was reached.
       const cutoff = getCountryPillCutoffLngDelta(g.countryCode);
-      if (pillVisibleLngDelta < (isSelectedCountry ? cutoff * 1.1 : cutoff)) continue;
+      if (pillTargetLngDelta < (isSelectedCountry ? cutoff * 1.1 : cutoff)) continue;
       candidates.push(toCluster(g));
     }
 
@@ -2616,7 +2623,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // while panning.
     // True on-screen scale (see destPinPlan): pills the plan lets through here must not overlap in reality, or Mapbox
     // hides one natively, instantly, instead of it fading out.
-    const pxPerDegLng = Dimensions.get('window').width / pillVisibleLngDelta;
+    const pxPerDegLng = Dimensions.get('window').width / pillTargetLngDelta;
     // A pill is a WIDE, SHORT shape (flag circle + name card, ~110×26pt), so collision is a
     // rectangle test on the center deltas, not a circular radius. The old 70px circular
     // radius treated two pills stacked ~60px apart VERTICALLY as colliding even though they
@@ -2653,10 +2660,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     if (lastPillsRef.current && lastPillsRef.current.sig === sig) return lastPillsRef.current.value;
     lastPillsRef.current = { sig, value: pills };
     return pills;
-    // Depends on planLngDelta/pillVisibleLngDelta only (pan-invariant zoom) — NOT
+    // Depends on planLngDelta/pillTargetLngDelta only (pan-invariant zoom) — NOT
     // latitudeDelta, which drifts on pan and would otherwise recompute this and re-resolve
     // pill collisions mid-pan.
-  }, [savedDestinations, visitIndex, planCountry, planDest, selectedSpot, planLngDelta, pillVisibleLngDelta]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, selectedSpot, planLngDelta, pillTargetLngDelta]);
 
   // Render set = the pan-invariant eligible set (see note above; ~45 pins max, Mapbox clips
   // off-screen). Stable while panning, so the pin/stamp lists never churn on pan.
@@ -5642,10 +5649,13 @@ const destItems = useMemo((): DestItem[] =>
     const prev = pillOwnerPrevRef.current;
     if (prev.owner === pillOwner && prev.leaving === leavingNow) return;
     pillOwnerPrevRef.current = { owner: pillOwner, leaving: leavingNow };
+    // The live sheet that will take the pills over when a swap's outgoing sheet finishes (handOverPills, on the UI thread).
+    pillNextOwnerSV.value = leavingNow && sheetKind ? PILL_OWNER[sheetKind] : PILL_OWNER.none;
+    // The outgoing sheet normally hands the pills over itself, the frame its slide ends; this catches the cases where it
+    // did not (it unmounted or was replaced before finishing). Either way the pills fade in on the sheet now in place.
+    const handedOver = prev.leaving && !leavingNow && pillOwnerSV.value === pillOwner;
     pillOwnerSV.value = pillOwner;
-    // The swap's outgoing sheet has gone (it took the pills down with it): the pills reappear on the sheet now resting in
-    // its place, fading in, rather than jumping up from below the screen.
-    if (prev.leaving && !leavingNow && pillOwner !== PILL_OWNER.none) {
+    if (prev.leaving && !leavingNow && !handedOver && pillOwner !== PILL_OWNER.none) {
       pillHandoverSV.value = 0;
       pillHandoverSV.value = withTiming(1, { duration: 160 });
     }
@@ -6339,6 +6349,8 @@ const destItems = useMemo((): DestItem[] =>
           onCollapse={handleCloseSheet}
           pillOffsetSV={upPillBottomSV}
           pillOwnerSV={pillOwnerSV}
+          pillNextOwnerSV={pillNextOwnerSV}
+          pillHandoverSV={pillHandoverSV}
           pillOwnerId={PILL_OWNER.country}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
@@ -6379,6 +6391,8 @@ const destItems = useMemo((): DestItem[] =>
           onCollapsedTopChange={setDestCardTop}
           pillOffsetSV={upPillBottomSV}
           pillOwnerSV={pillOwnerSV}
+          pillNextOwnerSV={pillNextOwnerSV}
+          pillHandoverSV={pillHandoverSV}
           pillOwnerId={PILL_OWNER.dest}
           pillFullSV={upPillFullSV}
           pillOffsetLockedSV={spotOwnsPillSV}
@@ -6415,6 +6429,8 @@ const destItems = useMemo((): DestItem[] =>
           onActiveSpotChange={handleActiveSpotChange}
           pillOffsetSV={upPillBottomSV}
           pillOwnerSV={pillOwnerSV}
+          pillNextOwnerSV={pillNextOwnerSV}
+          pillHandoverSV={pillHandoverSV}
           pillOwnerId={PILL_OWNER.spot}
           pillFullSV={upPillFullSV}
           peekSignal={peekSheetSignal}
@@ -6442,6 +6458,8 @@ const destItems = useMemo((): DestItem[] =>
               key={`leaving-country-${leavingSheetRef.current.seq}`}
               pillOffsetSV={upPillBottomSV}
               pillOwnerSV={pillOwnerSV}
+              pillNextOwnerSV={pillNextOwnerSV}
+              pillHandoverSV={pillHandoverSV}
               pillOwnerId={PILL_OWNER.leavingCopy}
               cluster={leavingSheetRef.current.cluster}
               onClose={noop}
@@ -6457,6 +6475,8 @@ const destItems = useMemo((): DestItem[] =>
               pillOffsetSV={upPillBottomSV}
               pillFullSV={upPillFullSV}
               pillOwnerSV={pillOwnerSV}
+              pillNextOwnerSV={pillNextOwnerSV}
+              pillHandoverSV={pillHandoverSV}
               pillOwnerId={PILL_OWNER.leavingCopy}
               spots={leavingSheetRef.current.spots}
               focusSpotId={leavingSheetRef.current.focusId}
@@ -6473,6 +6493,8 @@ const destItems = useMemo((): DestItem[] =>
               pillOffsetSV={upPillBottomSV}
               pillFullSV={upPillFullSV}
               pillOwnerSV={pillOwnerSV}
+              pillNextOwnerSV={pillNextOwnerSV}
+              pillHandoverSV={pillHandoverSV}
               pillOwnerId={PILL_OWNER.leavingCopy}
               destination={leavingSheetRef.current.dest}
               onClose={noop}

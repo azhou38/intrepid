@@ -613,6 +613,10 @@ interface Props {
   // pillOwnerSV holds its pillOwnerId, so an incoming and an outgoing sheet never fight over them during a swap.
   pillOwnerSV?: SharedValue<number>;
   pillOwnerId?: number;
+  // Set during a swap: the sheet that takes the pills over once this (outgoing) one has slid off, and the pills' fade-in.
+  // The handover runs on the UI thread in this sheet's slide-finished callback, on the frame it ends.
+  pillNextOwnerSV?: SharedValue<number>;
+  pillHandoverSV?: SharedValue<number>;
   // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Country" pill's fade.
   pillFullSV?: SharedValue<number>;
   // While true, some other UI (the spot carousel) owns the pill's position instead — this
@@ -662,7 +666,7 @@ interface Props {
 
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
-  onSnapStateChange, pillOffsetSV, pillOwnerSV, pillOwnerId, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
+  onSnapStateChange, pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
   collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited,
 }: Props) {
   const insets            = useSafeAreaInsets();
@@ -1112,6 +1116,15 @@ function DestinationSheet({
     },
     [insets.bottom, insets.top],
   );
+  // The outgoing sheet's slide has finished: if it still holds the pills, pass them to the sheet now resting in its place
+  // (pillNextOwnerSV) and fade them in there. On the UI thread, so the pills reappear the frame the slide ends rather than
+  // after the next React render.
+  const handOverPills = () => {
+    'worklet';
+    if (!pillOwnerSV || !pillNextOwnerSV || pillOwnerSV.value !== pillOwnerId || !pillNextOwnerSV.value) return;
+    pillOwnerSV.value = pillNextOwnerSV.value;
+    if (pillHandoverSV) { pillHandoverSV.value = 0; pillHandoverSV.value = withTiming(1, { duration: 160 }); }
+  };
 
   // Backdrop: dark when full-screen, fading out to clear as the sheet approaches collapsed.
   // The sheet's drop-shadow (sheetShadow below) is the same view/style at every snap point,
@@ -1267,7 +1280,7 @@ function DestinationSheet({
     if (leaving) {
       closingRef.current = true;
       hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-        if (finished && onExited) runOnJS(onExited)();
+        if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
       });
       return;
     }
@@ -1281,7 +1294,7 @@ function DestinationSheet({
     if (!leaveNow) return;
     closingRef.current = true;
     hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-      if (finished && onExited) runOnJS(onExited)();
+      if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [leaveNow]);
