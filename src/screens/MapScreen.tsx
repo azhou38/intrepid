@@ -4472,13 +4472,15 @@ const destItems = useMemo((): DestItem[] =>
     // animateCamera's own comment on the equivalent zoom-IN case). Always lands on the
     // country's default view, however far out the user has zoomed — this is deliberate upward
     // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
-    // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan): the camera only starts once
-    // the country sheet has slid in, so the destination's spot pins and photo pins used to wait for it before fading.
+    // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan).
     const target = countryTargetZoom(cluster);
     if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
-    // The camera waits for the swap, as for the X close and "← Destination": started with it, it zoomed out while the new
-    // selection was still rendering, over pins planned for the old one (they piled up, then a crowd flashed in).
-    cameraAfterCommitRef.current = true;   // the camera starts the frame after the swap commits (see afterSheetSlideIn)
+    // The camera starts now, with the sheet's slide (leaveEarlySV above), as an X close's does (startXCloseCamera), not
+    // once the swap's render commits: that render (the country sheet mounting) took ~0.4 s on the device, a still map
+    // between the sheet leaving and the zoom. While it renders the camera zooms out over the old plan's pins, which every
+    // pin layer gates natively by zoom (constant min zooms, see spotGatesOff / planTier), so they leave as the zoom passes
+    // their gates; the country's plan lands with the render. (It used to wait for the swap because the pins were on-screen
+    // markers, which piled up under a camera that moved before they were re-planned.)
     handleCountryPress(cluster, 'flyTo');
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting]);
 
