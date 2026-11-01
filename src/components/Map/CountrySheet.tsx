@@ -13,6 +13,7 @@ import Animated, {
   interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
+import { pillBottomForSheet } from '../../utils/navTransitions';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
 // plain core ScrollView's native pan silently claims every touch first regardless of that
@@ -48,6 +49,10 @@ interface Props {
   // the UI thread with zero JS-thread hop, letting the pill track the sheet's top edge in
   // true lockstep while dragging.
   pillOffsetSV?: SharedValue<number>;
+  // Which mounted sheet positions the back/X pills (navTransitions → pillOwnerFor): this sheet writes them only while
+  // pillOwnerSV holds its pillOwnerId, so an incoming and an outgoing sheet never fight over them during a swap.
+  pillOwnerSV?: SharedValue<number>;
+  pillOwnerId?: number;
   // While true, some other UI owns the pill's position instead — this sheet's writes to
   // pillOffsetSV are suppressed so the two don't fight.
   pillOffsetLockedSV?: SharedValue<boolean>;
@@ -166,8 +171,17 @@ const COUNTRY_FACTS: Record<string, { population: string; languages: string[]; c
 type CountryTab = 'visit' | 'about' | 'destinations';
 type CountrySnapState = 'peek' | 'collapsed' | 'full';
 
-// ── Destinations panel — grid of the country's destinations, identical pattern to
-// DestinationSheet's own SpotsPanel.
+// ── Destinations panel — grid of the country's destinations, identical pattern to DestinationSheet's own SpotsPanel,
+// including its frame-by-frame mount: all of a large country's cards at once (Australia's 144) was one long block of JS
+// work landing in the back tap's swap; the first cards mount at once and the rest follow a dozen per frame.
+const DEST_GRID_FIRST = 12;
+const DEST_GRID_STEP = 12;
+const GridDestinationCard = React.memo(function GridDestinationCard({ dest, isVisited, onSelectDestination }: {
+  dest: Destination; isVisited: boolean; onSelectDestination: (dest: Destination) => void;
+}) {
+  const onPress = useCallback(() => onSelectDestination(dest), [onSelectDestination, dest]);
+  return <DestinationCard dest={dest} isVisited={isVisited} width={GRID_CARD_W} showCountry={false} showHighlights={false} onPress={onPress} />;
+});
 function DestinationsPanel({
   dests, isDestVisited, onSelectDestination,
 }: {
@@ -175,24 +189,20 @@ function DestinationsPanel({
   isDestVisited: (id: string) => boolean;
   onSelectDestination: (dest: Destination) => void;
 }) {
+  const [shown, setShown] = useState(Math.min(dests.length, DEST_GRID_FIRST));
+  useEffect(() => { setShown(Math.min(dests.length, DEST_GRID_FIRST)); }, [dests]);
+  useEffect(() => {
+    if (shown >= dests.length) return;
+    const id = requestAnimationFrame(() => setShown(n => Math.min(dests.length, n + DEST_GRID_STEP)));
+    return () => cancelAnimationFrame(id);
+  }, [shown, dests.length]);
   return (
     <View style={{ gap: 16 }}>
       {dests.length > 0 ? (
         <View style={st.destGrid}>
-          {dests.map(dest => {
-            const isVisited  = isDestVisited(dest.id);
-            return (
-              <DestinationCard
-                key={dest.id}
-                dest={dest}
-                isVisited={isVisited}
-                width={GRID_CARD_W}
-                showCountry={false}
-                showHighlights={false}
-                onPress={() => onSelectDestination(dest)}
-              />
-            );
-          })}
+          {dests.slice(0, shown).map(dest => (
+            <GridDestinationCard key={dest.id} dest={dest} isVisited={isDestVisited(dest.id)} onSelectDestination={onSelectDestination} />
+          ))}
         </View>
       ) : (
         <Text style={st.gridEmptyTxt}>No destinations yet.</Text>
@@ -204,7 +214,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -567,8 +577,9 @@ function CountrySheet({
   // App.tsx's tab bar reserves its own layout space rather than floating over the content).
   // The collapsed leg is untouched — same tuned resting target as before.
   useAnimatedReaction(
-    () => [slideAnim.value, scrollY.value] as const,
+    () => [slideAnim.value, scrollY.value, pillOwnerSV?.value ?? 0] as const,
     ([value, scrollYVal]) => {
+      if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
       const PILL_H = 36;
       const SCREEN_H = H - BOTTOM_TAB_H;
@@ -590,11 +601,10 @@ function CountrySheet({
       // (fixed) top instead of the collapsed header's measured one.
       const PEEK_TOP_ABS = PEEK_Y - COLLAPSED_PILL_GAP - PILL_H;
       const PEEK_TARGET = SCREEN_H - PEEK_TOP_ABS - PILL_H;
-      pillOffsetSV.value = interpolate(
+      pillOffsetSV.value = pillBottomForSheet(
         value,
-        [FULL_POS, collapsedYAnim.value, PEEK_Y],
-        [FULL_TARGET, COLLAPSED_TARGET, PEEK_TARGET],
-        Extrapolation.CLAMP,
+        { fullY: FULL_POS, collapsedY: collapsedYAnim.value, peekY: PEEK_Y, closeY: CLOSE_POS },
+        { full: FULL_TARGET, collapsed: COLLAPSED_TARGET, peek: PEEK_TARGET },
       );
     },
     [insets.bottom, insets.top],

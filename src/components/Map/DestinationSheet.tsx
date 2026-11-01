@@ -21,6 +21,7 @@ import Reanimated, {
   interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay, useAnimatedScrollHandler
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
+import { pillBottomForSheet } from '../../utils/navTransitions';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
 // plain core ScrollView's native pan silently claims every touch first regardless of that
@@ -608,6 +609,10 @@ interface Props {
   // the pill track the sheet's top edge in true lockstep while dragging, instead of lagging
   // behind it.
   pillOffsetSV?: SharedValue<number>;
+  // Which mounted sheet positions the back/X pills (navTransitions → pillOwnerFor): this sheet writes them only while
+  // pillOwnerSV holds its pillOwnerId, so an incoming and an outgoing sheet never fight over them during a swap.
+  pillOwnerSV?: SharedValue<number>;
+  pillOwnerId?: number;
   // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Country" pill's fade.
   pillFullSV?: SharedValue<number>;
   // While true, some other UI (the spot carousel) owns the pill's position instead — this
@@ -657,7 +662,7 @@ interface Props {
 
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
-  onSnapStateChange, pillOffsetSV, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
+  onSnapStateChange, pillOffsetSV, pillOwnerSV, pillOwnerId, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
   collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited,
 }: Props) {
   const insets            = useSafeAreaInsets();
@@ -1055,8 +1060,9 @@ function DestinationSheet({
   // its existing look — with a single 2-point interpolation giving one smooth, continuous
   // glide between the two states.
   useAnimatedReaction(
-    () => [slideAnim.value, scrollYSV.value] as const,
+    () => [slideAnim.value, scrollYSV.value, pillOwnerSV?.value ?? 0] as const,
     ([value, scrollY]) => {
+      if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
       // The "← Country" pill fades out over the first part of the slide up to full screen (MapScreen's upPillBackStyle).
       if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, collapsedYAnim.value], [1, 0], Extrapolation.CLAMP);
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
@@ -1098,11 +1104,10 @@ function DestinationSheet({
       // (fixed) top instead of the collapsed card's measured one.
       const PEEK_TOP_ABS = PEEK_Y - COLLAPSED_PILL_GAP - PILL_H;
       const PEEK_TARGET = SCREEN_H - PEEK_TOP_ABS - PILL_H;
-      pillOffsetSV.value = interpolate(
+      pillOffsetSV.value = pillBottomForSheet(
         value,
-        [FULL_POS, collapsedYAnim.value, PEEK_Y],
-        [FULL_TARGET, COLLAPSED_TARGET, PEEK_TARGET],
-        Extrapolation.CLAMP,
+        { fullY: FULL_POS, collapsedY: collapsedYAnim.value, peekY: PEEK_Y, closeY: CLOSE_POS },
+        { full: FULL_TARGET, collapsed: COLLAPSED_TARGET, peek: PEEK_TARGET },
       );
     },
     [insets.bottom, insets.top],
