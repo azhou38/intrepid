@@ -5094,15 +5094,18 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     // A planned zoom-out (a back or X close: planZoomTargetRef holds its target, and every pin is already planned for it)
-    // has ARRIVED once the camera sits at the target and no camera event has come for 150 ms. Release the plan then, as
-    // onMapIdle does, instead of waiting for idle, which only fires once every new tile has loaded, often a second or
-    // more after the camera stopped: that wait was the pins' visible second settling after the back tap.
+    // has ARRIVED once no camera event has come for 150 ms (a native camera animation reports every frame until it ends,
+    // fly-to arcs included). Release the plan then, as onMapIdle does, instead of waiting for idle, which only fires once
+    // every new tile has loaded, often a second or more after the camera stopped. Not conditioned on reaching the planned
+    // zoom: the first back to a country plans at an estimate (no cached camera for it yet; at country scale the globe
+    // projection fits differently from the flat-map estimate), so the camera lands off it and the release then waited for
+    // idle, the photo pins switching to small pins a second after the zoom-out ended.
     if (!isGestureActive && planZoomTargetRef.current !== null) {
       const target = planZoomTargetRef.current;
       if (cameraArriveTimerRef.current) clearTimeout(cameraArriveTimerRef.current);
       cameraArriveTimerRef.current = setTimeout(() => {
         cameraArriveTimerRef.current = null;
-        if (planZoomTargetRef.current === target && Math.abs(camZoomRef.current - target) < 0.1) { releaseHeldSelection(); releaseSpotCloseTarget(); }
+        if (planZoomTargetRef.current === target) { releaseHeldSelection(); releaseSpotCloseTarget(); }
       }, 150);
     }
     // During that planned zoom-out the per-frame region update re-renders the whole screen without changing the pin
