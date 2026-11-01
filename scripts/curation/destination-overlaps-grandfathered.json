@@ -1,0 +1,12 @@
+{
+ "_note": "Destination pairs that overlapped when the overlap rule was adopted (COVERAGE.md → \"No overlapping destinations\"). The rule applies to new destinations only, so these stay as they are and are never flagged by destination-prescreen.ts. Each pair is [the one that would merge, the one it sits inside]. Remove a pair once the owner has merged or confirmed it.",
+ "adopted": "2026-10-31",
+ "pairs": [
+  ["goolwa", "victor-harbor"],
+  ["lincoln-national-park", "port-lincoln"],
+  ["torndirrup-national-park", "albany"],
+  ["perth-hills", "perth"],
+  ["mannum", "murray-bridge"],
+  ["golden-bay", "abel-tasman"]
+ ]
+}
