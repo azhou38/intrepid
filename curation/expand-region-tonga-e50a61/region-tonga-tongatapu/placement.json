@@ -1,0 +1,365 @@
+{
+ "region": "region-tonga-tongatapu",
+ "new_destinations": [
+  {
+   "id": "tongatapu",
+   "name": "Tongatapu",
+   "action": "new-destination",
+   "country": "Tonga",
+   "countryCode": "TO",
+   "continent": "Oceania",
+   "timezone": "Pacific/Tongatapu",
+   "category": "island",
+   "coordinates": {
+    "lat": -21.17,
+    "lng": -175.18
+   },
+   "coordinates_source": "approx. middle of the island's kept spots; pending resolve-pin.py / OSM place=island",
+   "defaultZoomSpanKm": 50,
+   "rank": 3,
+   "spots": [
+    "tongatapu-21",
+    "tongatapu-22",
+    "tongatapu-23",
+    "tongatapu-24",
+    "tongatapu-25",
+    "tongatapu-26",
+    "tongatapu-27",
+    "tongatapu-28",
+    "tongatapu-29",
+    "tongatapu-30"
+   ],
+   "name_evidence": [
+    {
+     "source": "https://en.wikivoyage.org/wiki/Tongatapu",
+     "wording": "Wikivoyage has a Tongatapu page with Understand/See/Do listings covering Nukuʻalofa and the whole island"
+    },
+    {
+     "source": "https://www.tongatourism.travel/our-islands/tongatapu",
+     "wording": "Tonga's tourism board lists Tongatapu as one of its islands"
+    }
+   ],
+   "reason": "Ten kept places on one island (spot bar of four cleared); Tongatapu is the named region, Nukuʻalofa is the capital base and a spot of it (COVERAGE.md: prefer the region travellers name). Not filed under a bigger city. Writing (description, reasons, tips, header) done by the run.",
+   "needs_research": [
+    "description",
+    "whyVisit",
+    "goodToKnow",
+    "bestMonths",
+    "header"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Ha'amonga 'a Maui",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-21",
+   "wiki": "Haʻamonga ʻa Maui",
+   "icon": "🗿",
+   "category": "landmark",
+   "bio": "A coral-limestone trilithon near Niutoua in the north-east, Tonga's best-known ancient monument.",
+   "coordinates": {
+    "lat": -21.13666667,
+    "lng": -175.04805556
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikipedia:Haʻamonga ʻa Maui",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Main archaeological landmark; 2 counted sources, 11083 views.",
+   "counted_sources": 2,
+   "views": 11083
+  },
+  {
+   "name": "Ancient Royal Tombs of Lapaha",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-22",
+   "wiki": "Lapaha",
+   "icon": "⚱️",
+   "category": "historic",
+   "bio": "Terraced langi tombs of the Tuʻi Tonga kings near Muʻa, with information signs at the site.",
+   "coordinates": {
+    "lat": -21.174838,
+    "lng": -175.116695
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikivoyage listing geo tag (Tongatapu page)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "The langi are the attraction; the Muʻa village entry is dropped as a near-duplicate wrapper (owner brief).",
+   "counted_sources": 2,
+   "views": 0
+  },
+  {
+   "name": "Nukuʻalofa",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-23",
+   "icon": "🏙️",
+   "category": "landmark",
+   "bio": "Tonga's capital on the north coast, with its waterfront, churches, markets and most of the island's accommodation.",
+   "coordinates": {
+    "lat": -21.13333333,
+    "lng": -175.2
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikipedia:Nukuʻalofa",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Town with its own draws (waterfront, royal sights from outside, markets); the island's base.",
+   "counted_sources": 2,
+   "views": 92892
+  },
+  {
+   "name": "Hufangalupe",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-24",
+   "icon": "🌉",
+   "category": "nature",
+   "bio": "A limestone land bridge over a sinkhole on the south-east coast, with viewpoints around the crater.",
+   "coordinates": {
+    "lat": -21.2326,
+    "lng": -175.1907
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikipedia:Hufangalupe",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Natural sight on the south-east coast.",
+   "counted_sources": 2,
+   "views": 735
+  },
+  {
+   "name": "Mapu 'a Vaea",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-25",
+   "wiki": "Mapu ʻa Vaea",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Coral-reef blowholes near Houma on the south-west coast, best viewed at high tide.",
+   "coordinates": {
+    "lat": -21.174208,
+    "lng": -175.308462
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikivoyage listing geo tag (Tongatapu page)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Natural sight on the west-coast route.",
+   "counted_sources": 2,
+   "views": 0
+  },
+  {
+   "name": "Anahulu Caves",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-26",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "Partly flooded limestone caves with freshwater pools, visited on guided tours with an optional swim.",
+   "coordinates": {
+    "lat": -21.208239,
+    "lng": -175.104309
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikivoyage listing geo tag (Tongatapu page)",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Guided cave swim; Matatahi 'Anahulu Beach rejected as its near-duplicate.",
+   "counted_sources": 1,
+   "views": 0
+  },
+  {
+   "name": "Talamahu Market",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-27",
+   "icon": "🧺",
+   "category": "market",
+   "bio": "Nukuʻalofa's main daily produce market, with carvings, tapa and jewellery in the handicraft hall upstairs.",
+   "coordinates": {
+    "lat": -21.134329,
+    "lng": -175.198167
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikivoyage listing geo tag (Tongatapu page)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Daily market hall (not a weekly market).",
+   "counted_sources": 2,
+   "views": 0
+  },
+  {
+   "name": "Pangaimotu Island",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-28",
+   "wiki": "Pangaimotu (Tongatapu)",
+   "icon": "🏝️",
+   "category": "nature",
+   "bio": "A small island off Nukuʻalofa with a wreck to snorkel, a restaurant and gear hire, reached by boat.",
+   "coordinates": {
+    "lat": -21.124183,
+    "lng": -175.158855
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikipedia:Pangaimotu (Tongatapu)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Island day trip from Nukuʻalofa; the island is the spot, the boat is the way there.",
+   "counted_sources": 2,
+   "views": 1175
+  },
+  {
+   "name": "Flying Fox Reserve",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-29",
+   "wiki": "Kolovai",
+   "icon": "🦇",
+   "category": "nature",
+   "bio": "A colony of flying foxes (fruit bats) roosting in the trees at Kolovai village on the western side of the island.",
+   "coordinates": null,
+   "coordinates_source": "pending resolve-pin.py (no point found; OSM/agency point needed)",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Roadside wildlife stop (Lonely Planet, Tonga Pocket Guide).",
+   "counted_sources": 1,
+   "views": 939
+  },
+  {
+   "name": "Haʻatafu Beach",
+   "action": "spot",
+   "destination": "tongatapu",
+   "id": "tongatapu-30",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "A long white-sand beach with palms and coral on the north-western peninsula, good for snorkelling and sunsets.",
+   "coordinates": {
+    "lat": -21.071836,
+    "lng": -175.336626
+   },
+   "coordinates_source": "pending resolve-pin.py; provisional from wikivoyage listing geo tag (Tongatapu page)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "TOP",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Second-tier beach stop; needs transport.",
+   "counted_sources": 2,
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_near_destination": [],
+ "not_placed_review": [
+  "Tonga National Museum",
+  "Captain Cook Landing Site",
+  "Abel Tasman Landing Site",
+  "Fafa Island",
+  "ʻAtata Island",
+  "Malaʻe Kula",
+  "Basilica of St Anthony of Padua",
+  "Oholei Beach Dinner and Show"
+ ],
+ "dropped_kept": [
+  {
+   "name": "Mu'a",
+   "reason": "Town wrapper beside its own attraction (Ancient Royal Tombs of Lapaha); only the tombs kept, per owner brief and blind-audit review."
+  }
+ ],
+ "notes": "No existing Tonga destinations or spots. Ids: destination id 'tongatapu' and 'tongatapu-1..14' appeared on the unmerged tonga-test history, so new spot ids start at tongatapu-21. No standalone spots in this region file: every kept place lies within 37 km of the centre and is reached from Nukuʻalofa. All coordinates and costs go to resolve-pin.py / Pipeline C; Flying Fox Reserve has no point yet."
+}

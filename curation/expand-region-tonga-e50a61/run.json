@@ -1,0 +1,24 @@
+{
+ "stages": {
+  "enumerate": {
+   "status": "done",
+   "updated": "2026-10-31T21:00:43",
+   "summary": "5 regions: 130 candidates; ~11 auto-keep, 2 auto-reject, rest marginal"
+  },
+  "judge": {
+   "status": "done",
+   "updated": "2026-10-31T21:02:07",
+   "summary": "34 keep, 29 review, 67 reject over 130; every script decision was blind re-judged"
+  },
+  "place": {
+   "status": "done",
+   "updated": "2026-10-31T21:03:48",
+   "summary": "5 placements: 3 new destinations (Tongatapu r3, Vavau r2, Eua r4), standalone: Tofua, Uoleva + 4 Niuas"
+  },
+  "destcheck": {
+   "status": "done",
+   "updated": "2026-10-31T21:04:02",
+   "summary": "overlap check clean on 3 new destinations; skeptic not run (prescreen reads applied data only), orchestrator checked bar/name/rank by hand"
+  }
+ }
+}

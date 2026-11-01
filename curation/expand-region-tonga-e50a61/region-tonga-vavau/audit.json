@@ -1,0 +1,44 @@
+[
+ {
+  "name": "Blue Lagoon Resort",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Blue Lagoon Resort",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u"
+   ],
+   "other_sources": [],
+   "note": "Eco-friendly beach fale resort on Foiata Island, listed under Wikivoyage Splurge; accommodation.",
+   "views": 0
+  }
+ },
+ {
+  "name": "Neiafu",
+  "wiki": "Neiafu (Vavaʻu)",
+  "views": 5425,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Neiafu",
+   "wiki": "Neiafu (Vavaʻu)",
+   "coordinates": {
+    "lat": -18.6515538,
+    "lng": -173.9833124
+   },
+   "coordinates_source": "OpenStreetMap town node",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u",
+    "https://www.tongatourism.travel/our-islands/vavau"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Neiafu"
+   ],
+   "note": "Town and capital of Vava'u on Utu Vava'u's southern point, the base for tours, yachts and the harbour; the second-largest town in Tonga.",
+   "views": 5425
+  }
+ }
+]

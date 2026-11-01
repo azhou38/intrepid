@@ -1,0 +1,135 @@
+{
+ "region": "region-tonga-niuas",
+ "new_destinations": [],
+ "spots": [
+  {
+   "name": "Niuafoʻou",
+   "id": "niuafoou",
+   "wiki": "Niuafoʻou",
+   "category": "nature",
+   "icon": "🌋",
+   "coordinates": null,
+   "coordinates_hint": {
+    "lat": -15.6,
+    "lng": -175.63
+   },
+   "coordinates_source": "pending resolve-pin.py (candidate hint from Wikipedia, rounded, not a pin)",
+   "bio": "Tonga's northernmost island is a volcanic rim around a crater lake, reached by air and walked with local guides.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "reason": "Remote island 240+ km from Vavaʻu, outside any destination span; no destination exists, fewer than four kept places.",
+   "country": "Tonga",
+   "countryCode": "TO",
+   "continent": "Oceania",
+   "timezone": "Pacific/Tongatapu",
+   "action": "standalone",
+   "destination": null,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Vai Lahi",
+   "id": "vai-lahi",
+   "wiki": "Vai Lahi",
+   "category": "nature",
+   "icon": "💧",
+   "coordinates": null,
+   "coordinates_hint": {
+    "lat": -15.605,
+    "lng": -175.64
+   },
+   "coordinates_source": "pending resolve-pin.py (candidate hint from Wikipedia, rounded, not a pin)",
+   "bio": "A freshwater crater lake 4 km wide and 84 m deep in the Niuafoʻou caldera, dotted with four islands.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "reason": "Distinct lake draw within Niuafoʻou's caldera; kept separately because sources list it as its own stop; standalone.",
+   "country": "Tonga",
+   "countryCode": "TO",
+   "continent": "Oceania",
+   "timezone": "Pacific/Tongatapu",
+   "action": "standalone",
+   "destination": null,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Niuatoputapu",
+   "id": "niuatoputapu",
+   "wiki": "Niuatoputapu",
+   "category": "nature",
+   "icon": "🏝️",
+   "coordinates": null,
+   "coordinates_hint": {
+    "lat": -15.95,
+    "lng": -173.75
+   },
+   "coordinates_source": "pending resolve-pin.py (candidate hint from Wikipedia, rounded, not a pin)",
+   "bio": "A volcanic island in the far north of Tonga with white-sand beaches, reef and village life, reached by flight from Vavaʻu.",
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "reason": "Remote island group stop; no destination in reach; standalone.",
+   "country": "Tonga",
+   "countryCode": "TO",
+   "continent": "Oceania",
+   "timezone": "Pacific/Tongatapu",
+   "action": "standalone",
+   "destination": null,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tafahi",
+   "id": "tafahi",
+   "wiki": "Tafahi",
+   "category": "hike",
+   "icon": "⛰️",
+   "coordinates": null,
+   "coordinates_hint": {
+    "lat": -15.85,
+    "lng": -173.7167
+   },
+   "coordinates_source": "pending resolve-pin.py (candidate hint from Wikipedia, rounded, not a pin)",
+   "bio": "A small volcanic island 9 km off Niuatoputapu, climbed with a local guide for views toward Samoa, reached by boat from Falehau.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "reason": "Separate island reached by boat from Niuatoputapu; own journey; standalone.",
+   "country": "Tonga",
+   "countryCode": "TO",
+   "continent": "Oceania",
+   "timezone": "Pacific/Tongatapu",
+   "action": "standalone",
+   "destination": null,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "note": "trail-like climb: pin summit/route midpoint at resolve-pin stage"
+  }
+ ],
+ "existing_fixes": [],
+ "not_placed_review": [
+  "Hihifo Spring",
+  "Niuatoputapu Highest Point",
+  "Niuatoputapu White Sand Beaches (skeptic.json says keep, brief says review; not placed, owner to decide)"
+ ],
+ "near_destination_standalones": [],
+ "notes": "No Tonga destinations exist. Kept places form two island pairs (Niuafoʻou+Vai Lahi, Niuatoputapu+Tafahi), 2 each, under the four-spot bar and 240 km apart: no destination proposed. All standalone; coordinates pending resolve-pin. Each needs a spot district via build-spot-districts.py."
+}

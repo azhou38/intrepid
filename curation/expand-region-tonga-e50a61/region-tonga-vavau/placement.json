@@ -1,0 +1,295 @@
+{
+ "region": "tonga-vavau",
+ "new_destinations": [
+  {
+   "id": "vavau",
+   "name": "Vavaʻu",
+   "rank": 2,
+   "category": "island",
+   "country": "Tonga",
+   "countryCode": "TO",
+   "timezone": "Pacific/Tongatapu",
+   "continent": "Oceania",
+   "coordinates": {
+    "lat": -18.665,
+    "lng": -174.0
+   },
+   "coordinates_source": "centre of the kept spots (Neiafu to Hunga Island to ʻEneʻio); final centre to confirm at the pin stage",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": "Wikivoyage has a page 'Vava'u' (https://en.wikivoyage.org/wiki/Vava'u) and Tonga Tourism lists it as 'Our Islands: Vava'u' (https://www.tongatourism.travel/our-islands/vavau); it is Tonga's whale-watching and sailing region, one of its five tourist regions.",
+   "reason": "Seven kept places cluster round Neiafu, the region visitors name; the region (not the town Neiafu) is the destination and Neiafu is its first spot.",
+   "spots": [
+    "vavau-1",
+    "vavau-2",
+    "vavau-3",
+    "vavau-4",
+    "vavau-5",
+    "vavau-6",
+    "vavau-7"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Neiafu",
+   "action": "spot",
+   "destination": "vavau",
+   "id": "vavau-1",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Vavaʻu's main town on a sheltered harbour, the base for yachts, whale-watching and island day tours.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": -18.6515538,
+    "lng": -173.9833124
+   },
+   "coordinates_source": "OpenStreetMap place=town node",
+   "reason": "Kept by skeptic; reached by boat or road from Neiafu, inside the Vavaʻu group.",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 5425,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u",
+    "https://www.tongatourism.travel/our-islands/vavau"
+   ],
+   "wiki": "Neiafu (Vavaʻu)"
+  },
+  {
+   "name": "Mariners Cave",
+   "action": "spot",
+   "destination": "vavau",
+   "id": "vavau-2",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "A sea cave on Nuapapu island entered by an underwater tunnel, visited on boat tours from Neiafu.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "lat": -18.6908547,
+    "lng": -174.0746526
+   },
+   "coordinates_source": "OpenStreetMap cave_entrance",
+   "reason": "Kept by skeptic; reached by boat or road from Neiafu, inside the Vavaʻu group.",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u",
+    "https://www.tongatourism.travel/our-islands/vavau"
+   ]
+  },
+  {
+   "name": "Swallows Cave",
+   "action": "spot",
+   "destination": "vavau",
+   "id": "vavau-3",
+   "icon": "🐠",
+   "category": "nature",
+   "bio": "A sea cave on Kapa island that boat tours stop at for swimming and snorkelling in clear blue water.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "coordinates": {
+    "lat": -18.6840767,
+    "lng": -174.047134
+   },
+   "coordinates_source": "OpenStreetMap cave_entrance",
+   "reason": "Kept by skeptic; reached by boat or road from Neiafu, inside the Vavaʻu group.",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u",
+    "https://www.tongatourism.travel/our-islands/vavau"
+   ]
+  },
+  {
+   "name": "Hunga Island",
+   "action": "spot",
+   "destination": "vavau",
+   "id": "vavau-4",
+   "icon": "🐋",
+   "category": "nature",
+   "bio": "An island 35 minutes by boat from Neiafu whose sheltered bays are where humpback whales rest with their calves in season.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "lat": -18.6881436,
+    "lng": -174.1084115
+   },
+   "coordinates_source": "OpenStreetMap island relation (centroid)",
+   "reason": "Kept by skeptic; reached by boat or road from Neiafu, inside the Vavaʻu group.",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u"
+   ],
+   "pin_status": "pending resolve-pin.py: candidate point is an island/park centroid or listing geo; needs visitor point"
+  },
+  {
+   "name": "Pangaimotu",
+   "action": "spot",
+   "destination": "vavau",
+   "id": "vavau-5",
+   "icon": "🏝️",
+   "category": "beach",
+   "bio": "The group's second-largest island, joined to Utu Vavaʻu by a land bridge, with beaches, coves and snorkelling.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": -18.6824374,
+    "lng": -174.0008383
+   },
+   "coordinates_source": "OpenStreetMap island relation (centroid)",
+   "reason": "Kept by skeptic; reached by boat or road from Neiafu, inside the Vavaʻu group.",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 356,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u"
+   ],
+   "wiki": "Pangaimotu (Vavaʻu)",
+   "pin_status": "pending resolve-pin.py: candidate point is an island/park centroid or listing geo; needs visitor point"
+  },
+  {
+   "name": "Mt Talau National Park",
+   "action": "spot",
+   "destination": "vavau",
+   "id": "vavau-6",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A small national park protecting native forest, with a short walk to a lookout over Neiafu harbour.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "lat": -18.649051,
+    "lng": -173.999082
+   },
+   "coordinates_source": "Wikivoyage See listing geo (park point)",
+   "reason": "Kept by skeptic; reached by boat or road from Neiafu, inside the Vavaʻu group.",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u"
+   ],
+   "pin_status": "pending resolve-pin.py: candidate point is an island/park centroid or listing geo; needs visitor point"
+  },
+  {
+   "name": "'Ene'io Botanical Garden",
+   "action": "spot",
+   "destination": "vavau",
+   "id": "vavau-7",
+   "icon": "🌺",
+   "category": "nature",
+   "bio": "Tonga's only botanical garden, on Vavaʻu's east coast, with a visitors' centre and tapa and kava demonstrations.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": -18.636785,
+    "lng": -173.9143235
+   },
+   "coordinates_source": "OpenStreetMap garden",
+   "reason": "Kept by skeptic; reached by boat or road from Neiafu, inside the Vavaʻu group.",
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 690,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Vava'u",
+    "https://www.tongatourism.travel/our-islands/vavau"
+   ]
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_within_40km": "None: no standalone spots in this region; all seven kept places are within 15 km of the Vavaʻu centre.",
+ "review_not_placed": [
+  {
+   "name": "Utakalongalu Market",
+   "views": 233,
+   "reason": "Neiafu market with fruit and fish on Wikivoyage Buy list; days not stated, so cannot confirm daily trade (rule 4). Case for: town market is a cultural stop. Against: one source, may be weekly/daily-morning only.",
+   "objection": "Only one source; could be a plain produce market."
+  },
+  {
+   "name": "Utula'aina Point Lookout",
+   "views": 0,
+   "reason": "Wikivoyage names the walk past Holonga to the lookout and down to Secret Beach; one source, half-day walk. Case for: a coastal walk with views. Against: minimal info, part of one walk with Secret Beach.",
+   "objection": "Single source, no verified track, near-duplicate with Secret Beach."
+  },
+  {
+   "name": "Toafa Church",
+   "views": 0,
+   "reason": "Wikivoyage names it as a viewing point over Hunga cliffs; church judged for view only. Case for: guide singles out the view. Against: local church, one source, view only.",
+   "objection": "Looks like a parish church on a point."
+  },
+  {
+   "name": "Vava'u Pearl Centre",
+   "views": 0,
+   "reason": "Two Tonga Tourism pages name it as the place to learn about mabe pearls; Case for: displays and a visitor draw. Against: basically a shop, 0 views.",
+   "objection": "Likely a retail shop with a display."
+  },
+  {
+   "name": "Ava Pulepulekai",
+   "views": 0,
+   "reason": "Tonga Tourism highlight: 11 km fjord-like channel; visited by boat. Case for: official highlight, distinct scenery. Against: one source, a waterway rather than a stop, no coordinates.",
+   "objection": "Feature or area, not a point to visit."
+  }
+ ],
+ "notes": "Tonga has no existing destinations or spots. Mt Talau National Park has fewer than four spots so is a spot, not a destination. Pin stage: Hunga Island, Pangaimotu and Mt Talau coordinates are centroids or listing geo and need visitor points."
+}

@@ -1,0 +1,114 @@
+{
+  "region": "tonga-haapai",
+  "spots": [
+    {
+      "country": "Tonga",
+      "countryCode": "TO",
+      "continent": "Oceania",
+      "timezone": "Pacific/Tongatapu",
+      "destination": null,
+      "action": "standalone",
+      "name": "Tofua",
+      "id": "tofua",
+      "wiki": "Tofua",
+      "icon": "🌋",
+      "category": "nature",
+      "coordinates": {
+        "lat": -19.75,
+        "lng": -175.075
+      },
+      "coordinates_source": "pending resolve-pin.py (Wikipedia:Tofua gives a rounded island point; need crater-rim or landing-beach feature)",
+      "bio": "Active volcanic island in western Haʻapai with a crater lake, reached by boat and a steep climb to the rim.",
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "free": null,
+      "costMin": null,
+      "costMax": null,
+      "currency": null,
+      "costBasis": null,
+      "ticketUrl": null,
+      "needs_research": [
+        "cost",
+        "ticketUrl"
+      ],
+      "reason": "Kept (2 counted sources, 30154 views). Nearest destination: none proposed; Haʻapai has only 3 kept spots, below the four-spot bar. Reached by chartered boat from Pangai, ~80 km west, so standalone."
+    },
+    {
+      "country": "Tonga",
+      "countryCode": "TO",
+      "continent": "Oceania",
+      "timezone": "Pacific/Tongatapu",
+      "destination": null,
+      "action": "standalone",
+      "name": "Uoleva",
+      "id": "uoleva",
+      "wiki": "Uoleva",
+      "icon": "🏝️",
+      "category": "beach",
+      "coordinates": {
+        "lat": -19.8469,
+        "lng": -174.4071
+      },
+      "coordinates_source": "pending resolve-pin.py (OSM island centroid only; need beach/natural=beach node)",
+      "bio": "Secluded island south of Pangai with long white beaches and swimming, reached on foot at low tide or by boat.",
+      "visitHoursMin": 3,
+      "visitHoursMax": 6,
+      "free": null,
+      "costMin": null,
+      "costMax": null,
+      "currency": null,
+      "costBasis": null,
+      "ticketUrl": null,
+      "needs_research": [
+        "cost",
+        "ticketUrl"
+      ],
+      "reason": "Kept (2 counted sources, 813 views). Standalone: no Haʻapai destination (only 3 kept spots)."
+    }
+  ],
+  "new_destinations": [],
+  "new_destination_note": "Haʻapai (Wikivoyage region page, tongatourism.travel) passes the name test but only 3 kept places (Tofua, Uoleva, Shirley Baker Grave): below the four-spot bar and rank 3+ so no exemption. All standalone. If the owner approves review items (Pangai, Kao, ʻUiha, Luahoko, Poseidon's Gate, Foa Petroglyphs, Lotofoa Church) the count would reach 4+ and Haʻapai (centre ~Pangai -19.80,-174.35, span ~90 km incl. Tofua/Kao) could be proposed then.",
+  "standalone_near_destination_check": "No proposed destination, so no 40 km check applies. No existing Tonga destinations in the app.",
+  "existing_fixes": [],
+  "review_not_placed": [
+    {
+      "name": "Pangai",
+      "views": 2200,
+      "why": "service village, 1 counted source"
+    },
+    {
+      "name": "Lotofoa Methodist Church",
+      "views": 0,
+      "why": "carved coconut-wood ceiling, 1 source, access unknown"
+    },
+    {
+      "name": "Poseidon's Gate",
+      "views": 0,
+      "why": "rock terraces, 1 source, little detail"
+    },
+    {
+      "name": "Foa Petroglyphs",
+      "views": 0,
+      "why": "1 source, access unclear"
+    },
+    {
+      "name": "ʻUiha",
+      "views": 814,
+      "why": "royal burial ground, 1 source, visitor welcome unclear"
+    },
+    {
+      "name": "Kao",
+      "views": 0,
+      "why": "2 counted sources; script views 0 wrongly, article is 'Kao (island)'; view from boat only, nothing to do"
+    },
+    {
+      "name": "Luahoko Island",
+      "views": 244,
+      "why": "1 source, no facilities"
+    },
+    {
+      "name": "Shirley Baker Grave",
+      "reason": "Script kept it (2 counted sources), blind judge: a grave and monument is a minor memorial with a short visit. Moved from placed to review by the orchestrator (blind-audit disagreements go to the owner)."
+    }
+  ]
+}

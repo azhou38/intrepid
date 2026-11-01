@@ -1,0 +1,74 @@
+{
+ "inside_destinations": 10,
+ "standalone": 0,
+ "new_destinations": [
+  "tongatapu"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Anahulu Caves",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Royal Palace",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 2: grounds closed, exterior only (Wikivoyage: no admission)."
+  },
+  {
+   "name": "Tonga National Museum",
+   "views": 689,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Rule 2 pass (open Mon-Fri, collection incl. Tuʻi Malila tortoise) but one counted source and a small museum."
+  },
+  {
+   "name": "Hule Fortress",
+   "views": 920,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no visitor source found."
+  },
+  {
+   "name": "Nukuleka",
+   "views": 704,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no visitor source found."
+  },
+  {
+   "name": "Nukuʻalofa Cathedral",
+   "views": 5709,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: ruin, entry not permitted."
+  },
+  {
+   "name": "St Mary's Cathedral",
+   "views": 819,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Church test: only generic architecture remark, one source, no interior or tour."
+  },
+  {
+   "name": "Ancient Tonga",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 4: a Friday buffet and show, an event/operator rather than a place."
+  },
+  {
+   "name": "Oholei Beach Dinner and Show",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Rule 4 tension: a dinner show in Hina cave, booked ahead; the cave venue is permanent but visits are the show; no coordinates."
+  }
+ ],
+ "strongest_outsiders": "None: nothing lies outside Tongatapu's span; the strongest left-out items are listed in stronger_left_out.",
+ "benchmark": "Tonga has no named benchmarks; Mu'a/Lapaha handled per brief (tombs kept, village dropped)."
+}
