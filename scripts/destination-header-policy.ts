@@ -12,6 +12,7 @@
 // The header is cropped to roughly a square on a phone, so the file should be roughly 3:2, 4:3 or
 // portrait, with the subject near the centre — a very wide panorama strip loses most of its view.
 
+import EXTERNAL_PHOTOS from '../src/data/externalPhotos.json';
 import { DESTINATIONS } from '../src/data/destinations';
 import { NO_PHOTO, WIKI_IMAGE_OVERRIDES } from '../src/data/imageOverrides';
 
@@ -36,9 +37,10 @@ export function checkCuratedHeaders(): { errors: string[]; warnings: string[] } 
   const errors: string[] = [];
   const warnings: string[] = [];
   const overrides = WIKI_IMAGE_OVERRIDES as Record<string, string>;
+  const external = EXTERNAL_PHOTOS as Record<string, unknown>;   // a header that is not on Commons lives in externalPhotos.json
   const ids = new Set(DESTINATIONS.map(d => d.id));
   for (const d of DESTINATIONS) {
-    const curated = !!overrides[d.name] || NO_PHOTO.has(d.name);   // NO_PHOTO: no passing header exists; the owner is asked for one (IMAGES.md)
+    const curated = !!overrides[d.name] || !!external[d.name] || NO_PHOTO.has(d.name);   // NO_PHOTO: no passing header exists; the owner is asked for one (IMAGES.md)
     if (!curated && !HEADER_REVIEW_BACKLOG.has(d.id)) {
       errors.push(`${d.name} (${d.id}) has no hand-picked header image — add one to WIKI_IMAGE_OVERRIDES in `
         + `src/data/imageOverrides.ts (see IMAGES.md, "Headers").`);
