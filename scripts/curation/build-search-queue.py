@@ -9,8 +9,9 @@ wrote but held for lack of a photo (`held` in quill/<region>/final.json,
 with their placement entry for name/destination/reason). Each queue entry: { slot, kind: "reject"|"held", name, region,
 destination, what_to_show, current_file, failed_check, why, where: manifest key / override key, leads }.
 
-Run it after the first judge, so the queue is only what the gather script (Commons and Google Images together) and that
-judge left empty. Each entry carries `leads`, a starting list so the searcher checks pages instead of hunting:
+Run it after the first judge, so the queue is only what the gather script (Commons, then Google Images where Commons
+proved nothing) and that judge left empty. A rejected slot whose Google search was skipped is not queued: it is listed
+with the command that gives it the Google search first (a searcher agent costs far more than that search). Each entry carries `leads`, a starting list so the searcher checks pages instead of hunting:
   google_pages   the pages Google Images found for the slot (the gather script's cached results), official tourism and
                  parks sites first, excluded hosts dropped (scripts/curation/photo-sources.json), at most 10
   sitemap_pages  pages on the official sites seen in this queue's Google results whose address holds the place's whole
@@ -54,11 +55,15 @@ out = args[0]
 regions = [a for i, a in enumerate(args[1:], 1) if not a.startswith('--') and args[i - 1] not in ('--branch', '--country', '--groups', '--shard')]
 regdef = {x['id']: x for x in json.load(open('scripts/coverage-regions.json'))[COUNTRY]}
 queue = []
+regather = {}   # group -> slots whose Google search was skipped (a proven Commons photo) and whose photo the judge rejected
 for r in regions:
     for g in regdef[r]['destinations'] + (['standalone'] if regdef[r].get('standalone') else []):
         cf = f'curation/{BRANCH}/lens/{g}/candidates.json'
+        skipped = {}
         if os.path.exists(cf):   # nothing found by the script: no judge, straight to the searcher
-            for slot, v in json.load(open(cf)).items():
+            cd = json.load(open(cf))
+            skipped = cd.get('_google_skipped') or {}
+            for slot, v in cd.items():
                 if not slot.startswith('_') and v == []:
                     queue.append({'slot': slot, 'kind': 'empty', 'region': r, 'destination': g, 'why': 'gather script found no candidates'})
         f = f'curation/{BRANCH}/lens/{g}/judge-1.json'
@@ -67,6 +72,8 @@ for r in regions:
         j = json.load(open(f))
         for slot, v in j.get('slots', j).items():
             if isinstance(v, dict) and (v.get('decision') == 'reject' or str(v.get('choice') or '').startswith('none')) and not any(q['slot'] == slot for q in queue):
+                # Commons first: this slot never had its Google search, so it gets that (cheap) before a searcher agent.
+                if slot in skipped: regather.setdefault(g, []).append(slot); continue
                 queue.append({'slot': slot, 'kind': 'reject', 'region': r, 'destination': g, 'failed_check': v.get('failed_check'),
                               'why': (v.get('candidates') or [{}])[0].get('reason') if v.get('candidates') else None})
     fin = f'curation/{BRANCH}/quill/{r}/final.json'
@@ -160,3 +167,6 @@ for i, s in enumerate(shards, 1):
     json.dump(s, open(f'{stem}-{i:02d}.json', 'w'), indent=1, ensure_ascii=False)
 n_lead = sum(1 for q in queue if q.get('leads', {}).get('google_pages') or q.get('leads', {}).get('sitemap_pages'))
 print(f'{len(queue)} slots -> {out} ({len(shards)} shards of up to {size}); {n_lead} with leads; sitemaps read: {", ".join(f"{h} ({len(u)})" for h, u in maps.items()) or "none"}')
+for g, slots in regather.items():
+    print(f'NOT QUEUED, Google search first: {len(slots)} rejected slot(s) in {g} were proven on Commons, so their Google search was skipped: '
+          f'python3 scripts/curation/gather-photo-candidates.py curation/{BRANCH}/lens/{g} --slots {",".join(slots)} --force --google-all, then the first judge, then rerun this')

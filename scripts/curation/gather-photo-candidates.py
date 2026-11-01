@@ -3,12 +3,16 @@
 candidates for a group's `search` slots, and draws one numbered contact sheet per slot, so the judges only look and
 choose. The image-searcher agent is left only the slots this finds nothing for, and the sources it could not reach.
 
-  python3 scripts/curation/gather-photo-candidates.py <group-dir> [--max 10] [--slots spot:a,spot:b] [--force]
+  python3 scripts/curation/gather-photo-candidates.py <group-dir> [--max 10] [--slots spot:a,spot:b] [--force] [--google-all]
 
 Reads <group-dir>/task.json (lens-triage.ts). Per `search` slot, in order:
   1. the Wikipedia article's lead image (a spot's default photo is always offered: image-searcher checklist),
   2. Commons: a geosearch round the pin (spots) and name searches qualified by destination and country,
-  3. Google Images through Apify (the johnvc/google-images-api actor, 50 results per slot, about $0.005 a slot), when
+  3. Google Images through Apify (the johnvc/google-images-api actor, 50 results per slot, about $0.005 a slot), ONLY for
+     slots where steps 1-2 found no proven photo (commons_proven: a spot's Commons photo whose file title starts with the
+     place's name and that is geotagged within 300 m of the pin); proven slots are listed under `_google_skipped` with the
+     file that proved them. --google-all searches Google for every slot (use it to re-gather a skipped slot the first judge
+     rejected: --slots <ids> --force --google-all). Google runs when
      APIFY_TOKEN is set (in the environment or .env.local): one call per group for every slot not already cached. A hit
      that is a Commons file joins step 2 (its licence then comes from Commons); the rest are kept only from hosts not in
      the `excluded` list of scripts/curation/photo-sources.json and wide enough, at most 8 per slot, labelled "official
@@ -29,7 +33,7 @@ photos on <group-dir>/sheets/confirm.jpg for the first judge. A source that fail
 `_unresolved` in candidates.json: an open error to retry, never a finding that the place has no photo.
 Prints one summary line.
 """
-import hashlib, io, json, math, os, re, sys, time, urllib.parse, urllib.request
+import hashlib, io, json, math, os, re, sys, time, unicodedata, urllib.parse, urllib.request
 from PIL import Image, ImageDraw, ImageFont
 
 UA = 'IntrepidApp-Curation/1.0'
@@ -186,6 +190,25 @@ def host(url):
     m = re.match(r'https?://([^/]+)', url or '')
     return (m.group(1).lower() if m else '').removeprefix('www.')
 
+def commons_proven(items, ctx):
+    """A Commons photo that proves the place by the same test as photo-prove.py, so the slot needs no Google search: a spot's
+    photo from the Wikipedia lead image or Commons whose file title starts with the place's name and that is geotagged within
+    300 m of the pin (stricter than photo-prove.py's test, since here it decides whether a slot is shown any other options). gather() has already required the rest of the proof: JPEG or PNG, at least the slot's minimum
+    width, no excluded title or category, not dated before 2000, not grey. Headers and why-visit photos have no pin to prove
+    against, so they always get the Google search. Returns the file, or None."""
+    if ctx['type'] != 'spot': return None
+    def flat(t): return re.sub(r'[^a-z0-9]+', ' ', unicodedata.normalize('NFKD', t or '').encode('ascii', 'ignore').decode().lower()).strip()
+    name = flat(ctx['name'])
+    for c in items:
+        # The file title must START with the place's name ("Hagley Park New Zealand", "Christchurch Botanic Gardens 16"): a
+        # title that only contains it is usually something else there or seen from it ("Totem Maori en Te Papa", "View from
+        # the Sky Tower", "Devil's Home at Wai-O-Tapu"), and a geotag or category alone also covers a museum's exhibits.
+        title = flat(re.sub(r'\.(jpe?g|png)$', '', c.get('file') or '', flags=re.I))
+        if c['source'] in ('wikipedia-lead', 'commons-geo', 'commons-search') and c.get('dist_m') is not None and c['dist_m'] <= 300 \
+                and name and title.startswith(name):
+            return c['file']
+    return None
+
 def gather(sl, ctx, maxn, unresolved, google=None):
     titles, origin = [], {}
     def add(t, src):
@@ -310,19 +333,38 @@ def main():
     os.makedirs(os.path.join(gdir, 'sheets'), exist_ok=True)
     unresolved_all = cands.get('_unresolved', {})
     n_slots = n_c = n_empty = 0
+    google_all = '--google-all' in a
+    skipped_all = cands.get('_google_skipped', {})
     todo = [sl for sl in task['slots'] if sl['status'] == 'search' and not (only and sl['slot'] not in only)
             and (sl['slot'] not in cands or force or sl['slot'] in unresolved_all)]
     ctxs = {sl['slot']: slot_context(sl) for sl in todo}
+    # Commons first: the Wikipedia lead image and Commons for every slot, and Google Images (billed per image) only for the
+    # slots where Commons has no proven photo of the place (commons_proven). The second gather below re-reads Commons from the
+    # on-disk cache, so it costs no extra requests.
+    first, skip = {}, {}
+    for sl in todo:
+        ctx = ctxs.get(sl['slot'])
+        if not ctx: continue
+        un = []
+        items = gather(sl, ctx, maxn, un, None)
+        first[sl['slot']] = (items, un)
+        proof = None if google_all else commons_proven(items, ctx)
+        if proof: skip[sl['slot']] = proof
     gun = {}
-    gres = google_results(sorted({google_query(c) for c in ctxs.values() if c}), gun)
+    gres = google_results(sorted({google_query(c) for s, c in ctxs.items() if c and s not in skip}), gun)
     for sl in task['slots']:
         if sl['status'] != 'search' or (only and sl['slot'] not in only): continue
         if sl['slot'] in cands and not force and sl['slot'] not in unresolved_all: continue
         ctx = ctxs.get(sl['slot']) or slot_context(sl)
         if not ctx: unresolved_all[sl['slot']] = ['place not found in src/data']; continue
-        q = google_query(ctx)
-        un = list(gun.get(q, []))
-        items = gather(sl, ctx, maxn, un, gres.get(q))
+        if sl['slot'] in skip:
+            items, un = first[sl['slot']]
+            skipped_all[sl['slot']] = {'proven_by': skip[sl['slot']], 'on': time.strftime('%Y-%m-%d')}
+        else:
+            q = google_query(ctx)
+            un = list(gun.get(q, []))
+            items = gather(sl, ctx, maxn, un, gres.get(q))
+            skipped_all.pop(sl['slot'], None)
         cands[sl['slot']] = items
         if un: unresolved_all[sl['slot']] = un
         else: unresolved_all.pop(sl['slot'], None)
@@ -345,8 +387,9 @@ def main():
     sheet(conf, os.path.join(gdir, 'sheets', 'confirm.jpg'), lambda it: f"{it['slot'][5:]} {it['width']}px")
     if conf: cands['_confirm_sheet'] = [{'n': c['n'], 'slot': c['slot']} for c in conf]
     cands['_unresolved'] = unresolved_all
+    cands['_google_skipped'] = skipped_all
     json.dump(cands, open(cpath, 'w'), indent=1, ensure_ascii=False)
-    print(f'{gdir}: {n_slots} search slots, {n_c} candidates, {n_empty} with none, {len(unresolved_all)} with unresolved sources, {len(conf)} confirm photos on sheets/confirm.jpg')
+    print(f'{gdir}: {n_slots} search slots, {n_c} candidates, {n_empty} with none, {len(skip)} proven on Commons (no Google search), {len(unresolved_all)} with unresolved sources, {len(conf)} confirm photos on sheets/confirm.jpg')
 
 if __name__ == '__main__':
     main()
