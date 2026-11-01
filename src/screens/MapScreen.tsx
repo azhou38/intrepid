@@ -827,6 +827,8 @@ const destGateOn = (tier: string, z: number) => {
 // a data-driven or zoom-interpolated one, which left pins resting half-faded between zooms.) Ordered for collisions:
 // Mapbox places the TOP layer's symbols first, so tiers that switch on at wider zooms sit above later ones and a pin
 // that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
+// A destination pin tier that no layer draws: where a back or close plan puts the pins its target view does not show.
+const DEST_TIER_UNDRAWN = 'undrawn';
 // The selected country's border highlight fading out when its X is tapped (see highlightClosingFor).
 const HL_FADE = { duration: 200, delay: 0 };
 const DEST_GATE_FADE_MS = 250;
@@ -2365,8 +2367,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // once, whatever its fly-to does on the way: its zoom-out passes many tiers' gates, and each tier's pins lingered until
   // the camera reached its gate, clumping on the way out.
   const destTierOnRef = useRef<Map<string, boolean>>(new Map());
+  // The tier layers' own on/off always follows the live zoom, also during a back or close plan: that plan routes its pins
+  // through the data instead (planTier in nativeDestPins), so the layers' styles change a few at a time as the camera
+  // passes their gates rather than ~30 at once at the tap, each a main-thread Mapbox updateLayer (a profiled ~60 ms of
+  // the back tap's commit).
   const destTierOn = (tier: string): boolean => {
-    const on = destGateOn(tier, backPlan ? closeTarget! : camZoom);
+    const on = destGateOn(tier, camZoom);
     destTierOnRef.current.set(tier, on);
     return on;
   };
@@ -5593,7 +5599,10 @@ const destItems = useMemo((): DestItem[] =>
     // switched to 0 for the plan and back afterwards: one main-thread Mapbox updateLayer per tier layer at both ends of
     // every close (see spotGatesOff for the same on the spot layers). A tier that is off at the target stays in its layer,
     // whose style hides it.
-    const planTier = (tier: string) => (backPlan && tier && destGateOn(tier, closeTarget!) ? '' : tier);
+    // During the plan its pins don't depend on the tier layers at all: a pin that shows at the target is drawn by the
+    // always-on '' layer, one that doesn't is given a tier no layer draws (DEST_TIER_UNDRAWN). So the pins are in their
+    // final state from the plan's first render, and no layer style has to change for it.
+    const planTier = (tier: string) => (!backPlan || !tier ? tier : destGateOn(tier, closeTarget!) ? '' : DEST_TIER_UNDRAWN);
     const book = destPhotoSinceRef.current;
     const live = new Set(promotedDests.map(d => d.id));
     for (const id of [...book.since.keys()]) if (!live.has(id)) book.since.delete(id);
@@ -6063,7 +6072,7 @@ const destItems = useMemo((): DestItem[] =>
                   aboveLayerID={k === 0 ? `destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}` : `destHandoff-${k - 1}`}
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
                   // Its destination's tier gate as min zoom, as for the tier layers above.
-                  minZoomLevel={l.h && l.tier && !backPlan ? destGateZooms()[l.tier] ?? 0 : 0}
+                  minZoomLevel={l.h && l.tier ? destGateZooms()[l.tier] ?? 0 : 0}
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
                   style={destTierStyle(l.tier, l.on, l.snap)}
                 />
