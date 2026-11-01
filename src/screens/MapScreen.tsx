@@ -2510,6 +2510,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // the sheets read it in place of the selection (effCountry and friends below); cleared in the same render the selection
   // lands in, which then reads the same, so the sheet is neither remounted nor moved.
   const [sheetOverride, setSheetOverride] = useState<{ cluster: CountryCluster } | null>(null);
+  // The selection as the SHEETS see it: the back tap's country sheet (sheetOverride) until its selection change lands.
+  const effCountry = sheetOverride ? sheetOverride.cluster : selectedCountry;
+  const effDest = sheetOverride ? null : selectedDest;
+  const effSpot = sheetOverride ? null : selectedSpot;
+  // The country border highlight: shown for the country the sheets show (effCountry, so a back tap's country highlights
+  // with its sheet, at the tap) while no destination is, and faded out from a country X's tap (highlightClosingFor). Its
+  // source and layers stay mounted once used: showing, hiding or switching country only changes their filter and opacity
+  // (faded natively), instead of adding a vector source and five layers to the map mid-flight, as the back tap's selection
+  // change used to do while the camera zoomed out. Hidden, it keeps the last country's outline so its fade can finish.
+  const hlTarget = effCountry && !effDest ? effCountry : null;
+  const hlLastRef = useRef<CountryCluster | null>(null);
+  if (hlTarget) hlLastRef.current = hlTarget;
+  const hlCountry = hlLastRef.current;
+  const hlShown = !!hlTarget && highlightClosingFor !== hlTarget;
   const navTargetRef = useRef<{ from: NavSel; to: NavSel; country: CountryCluster | null; dest: Destination | null } | null>(null);
   if (navTargetRef.current) {
     const now: NavSel = { country: selectedCountry?.countryCode ?? null, dest: selectedDest?.id ?? null, spot: selectedSpot?.id ?? null };
@@ -5330,7 +5344,7 @@ const destItems = useMemo((): DestItem[] =>
 
   const countryPillMarkers = useMemo(() => renderedCountryPills.map(({ item: cluster, exiting }) => {
     // Not once its country's X has been tapped (highlightClosingFor): the glow goes with the tap, like the border highlight.
-    const isSelectedPill = cluster.countryCode === selectedCountry?.countryCode && highlightClosingFor !== selectedCountry;
+    const isSelectedPill = cluster.countryCode === effCountry?.countryCode && highlightClosingFor !== effCountry;
     // Plain border (no glow/shadow) on every OTHER visited country's pill, always — the
     // selected country keeps the full glow treatment instead, handled separately below so
     // the two states never compete on the same element. Checked against
@@ -5420,7 +5434,7 @@ const destItems = useMemo((): DestItem[] =>
         </FadePin>
       </MapboxGL.MarkerView>
     );
-  }), [renderedCountryPills, selectedCountry, handleCountryPress, handleResetToCountry, visitedCountryCodeSet, highlightClosingFor]);
+  }), [renderedCountryPills, selectedCountry, effCountry, handleCountryPress, handleResetToCountry, visitedCountryCodeSet, highlightClosingFor]);
 
   // Promoted photo destinations, excluding any destination the camera is currently inside
   // of at spot zoom (its spot pins represent it instead; zoomedIntoDestIds) — selected or
@@ -5630,10 +5644,6 @@ const destItems = useMemo((): DestItem[] =>
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
   // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
   // render that mounts the new sheet.
-  // The selection as the SHEETS see it: the back tap's country sheet (sheetOverride) until its selection change lands.
-  const effCountry = sheetOverride ? sheetOverride.cluster : selectedCountry;
-  const effDest = sheetOverride ? null : selectedDest;
-  const effSpot = sheetOverride ? null : selectedSpot;
   const sheetKind: 'country' | 'dest' | 'spot' | null =
     effSpot && spotFocusId ? 'spot'
     : mapState !== 'world' && effDest && !effSpot ? 'dest'
@@ -5917,8 +5927,8 @@ const destItems = useMemo((): DestItem[] =>
             against satellite imagery) — only the unvisited gray border switches to white in
             satellite view, where the dark imagery leaves gray hard to see; standard map view
             keeps the existing gray border unchanged either way. */}
-        {selectedCountry && !selectedDest && (() => {
-          const selectedIsVisited = visitedCountryCodeSet.has(selectedCountry.countryCode);
+        {hlCountry && (() => {
+          const selectedIsVisited = visitedCountryCodeSet.has(hlCountry.countryCode);
           const fillColor = selectedIsVisited ? '#22C55E' : '#FFFFFF';
           const lineColor = selectedIsVisited
             ? '#16A34A'
@@ -5934,7 +5944,7 @@ const destItems = useMemo((): DestItem[] =>
           const glowColor = grayCenterOutline ? '#FFFFFF' : lineColor;
           // 0 once an X close has been tapped on this country (highlightClosingFor): the highlight fades out with the tap,
           // natively, instead of staying up until the close lands at the end of its slide.
-          const hl = highlightClosingFor === selectedCountry ? 0 : 1;
+          const hl = hlShown ? 1 : 0;
           return (
             <MapboxGL.VectorSource
               id="countryBoundaries"
@@ -5943,35 +5953,35 @@ const destItems = useMemo((): DestItem[] =>
               <MapboxGL.FillLayer
                 id="countryFill"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
                 style={{ fillColor, fillOpacity: fillOpacity * hl, fillOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowOuter"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
                 style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 14 : 12, lineOpacity: (grayCenterOutline ? 0.22 : 0.08) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowInner"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
                 style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 7 : 6, lineOpacity: (grayCenterOutline ? 0.45 : 0.18) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryOutlineCasing"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
                 style={{ lineColor: '#FFFFFF', lineWidth: 3, lineOpacity: (grayCenterOutline ? 1 : 0) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryOutline"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
                 style={{ lineColor: outlineColor, lineWidth: grayCenterOutline ? 1.2 : 2, lineOpacity: (grayCenterOutline ? 1 : 0.7) * hl, lineOpacityTransition: HL_FADE }}
               />
