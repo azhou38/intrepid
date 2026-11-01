@@ -25,9 +25,20 @@ export default function FadeInImage({ instant, onLoad, style, subject, frame, ..
   return <BoxImage instant={instant} onLoad={onLoad} style={style} subject={subject} {...rest} />;
 }
 
+// Each photo's pixel size, once it has loaded: a photo shown again (a sheet remounted for the same place, as going back
+// from a spot to its destination does) is laid out at its framing from its first frame. Learned only from onLoad, the
+// photo's box (a layout change, applied a frame or two late) still had the old size while the framing scale (a transform,
+// applied at once) already assumed the new one, so the photo showed narrower than the header, dark backdrop either side.
+const naturalSizes = new Map<string, { w: number; h: number }>();
+
 function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageProps & { instant?: boolean; subject?: Subject; frame: AnimatedFrame }) {
   const opacity = useSharedValue(0);
-  const naturalW = useSharedValue(0), naturalH = useSharedValue(0);
+  const uri = (rest.source as { uri?: string } | undefined)?.uri;
+  const known = uri ? naturalSizes.get(uri) : undefined;
+  const naturalW = useSharedValue(known?.w ?? 0), naturalH = useSharedValue(known?.h ?? 0);
+  // The photo's laid-out width (onLayout). The framing transform below assumes the photo's box already has its framing
+  // size; until the layout has caught up it is left off, and the box (the header's full size, 'cover') fills the header.
+  const laidW = useSharedValue(known ? -1 : 0);
   const sx = subject?.x ?? 0.5, sy = subject?.y ?? 0.5, zoom = subject?.zoom ?? 1;
   const show = () => { opacity.value = instant ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) }); };
   useEffect(() => { const t = setTimeout(show, 1500); return () => clearTimeout(t); }, []);   // failsafe, as in BoxImage
@@ -45,6 +56,8 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
     if (!nw || !nh) return { opacity: opacity.value, transform: [{ translateX: 0 }, { translateY: 0 }, { scale: 1 }] };
     const minH = Math.min(frame.minH.value, frame.fullH);
     const a = subjectCoverRectUI(frame.width, frame.fullH, nw, nh, sx, sy, zoom);
+    // laidW -1: the size was known at mount, so the first layout already had the framing size.
+    if (laidW.value !== -1 && Math.abs(laidW.value - a.width) > 1) return { opacity: opacity.value, transform: [{ translateX: 0 }, { translateY: 0 }, { scale: 1 }] };
     const b = subjectCoverRectUI(frame.width, minH, nw, nh, sx, sy, zoom);
     const span = frame.fullH - minH;
     const p = span > 0 ? Math.max(0, Math.min(1, (frame.fullH - frame.height.value) / span)) : 0;
@@ -63,9 +76,13 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
         {...rest}
         resizeMode="cover"
         style={[layoutStyle, animStyle]}
+        onLayout={e => { if (laidW.value !== -1) laidW.value = e.nativeEvent.layout.width; }}
         onLoad={e => {
           const src = e.nativeEvent?.source;
-          if (src?.width && src?.height) { naturalW.value = src.width; naturalH.value = src.height; }
+          if (src?.width && src?.height) {
+            naturalW.value = src.width; naturalH.value = src.height;
+            if (uri) naturalSizes.set(uri, { w: src.width, h: src.height });
+          }
           show();
           onLoad?.(e);
         }}
