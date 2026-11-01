@@ -1731,6 +1731,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Which mounted sheet writes upPillBottomSV / upPillFullSV (navTransitions → pillOwnerFor; set below, next to the sheet
   // swap). During a swap that is the sheet sliding off, so the pills ride down with the sheet the user is looking at;
   // when it has gone, ownership passes to the new sheet and the pills fade in at its position (pillHandoverSV).
+  // Bumped by "← Country" to start the destination sheet's slide off at the tap (DestinationSheet's leaveEarlySV).
+  const destLeaveEarlySV = useSharedValue(0);
   const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
   const pillHandoverSV = useSharedValue(1);
   // During a swap: the live sheet that takes the pills over when the outgoing one finishes its slide (see handOverPills).
@@ -4444,6 +4446,11 @@ const destItems = useMemo((): DestItem[] =>
   // navigation — the provenance router below decides whether "close" means this.
   const handleCloseDestinationSheetToCountry = useCallback((toCollapsed?: boolean) => {
     if (!selectedDest) return;
+    // Start the destination sheet's slide off now, on the UI thread, as an X does, rather than when the swap's render
+    // commits: that render (the country sheet mounting) held the slide, and with it the whole response to the tap, back.
+    // Only where the swap will animate (the same test as the swap itself: a resting sheet, the map not being dragged), so
+    // the sheet never slides away without the country sheet taking its place.
+    if (sheetSnapStateRef.current !== 'full' && sheetPose.get() !== null && !isMapInteracting()) destLeaveEarlySV.value = destLeaveEarlySV.value + 1;
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     if (toCollapsed) setCountryInitialSnap('collapsed');
 
@@ -4473,7 +4480,7 @@ const destItems = useMemo((): DestItem[] =>
     // selection was still rendering, over pins planned for the old one (they piled up, then a crowd flashed in).
     cameraAfterCommitRef.current = true;   // the camera starts the frame after the swap commits (see afterSheetSlideIn)
     handleCountryPress(cluster, 'flyTo');
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan]);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
@@ -6406,6 +6413,7 @@ const destItems = useMemo((): DestItem[] =>
           pillNextOwnerSV={pillNextOwnerSV}
           pillHandoverSV={pillHandoverSV}
           pillOwnerId={PILL_OWNER.dest}
+          leaveEarlySV={destLeaveEarlySV}
           pillFullSV={upPillFullSV}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
