@@ -2946,4 +2946,7 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Karoonda Day and Night Silo Art",
   "River Murray International Dark Sky Reserve",
   "Ochre Pits",
+  "Vavaʻu",
+  "Tongatapu",
+  "ʻEua",
 ]);

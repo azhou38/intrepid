@@ -1226,32 +1226,46 @@
     {
       "id": "tonga-tongatapu",
       "name": "Tongatapu (Tonga)",
-      "destinations": [],
+      "destinations": [
+        "tongatapu"
+      ],
       "standalone": []
     },
     {
       "id": "tonga-eua",
       "name": "ʻEua (Tonga)",
-      "destinations": [],
+      "destinations": [
+        "eua-island"
+      ],
       "standalone": []
     },
     {
       "id": "tonga-haapai",
       "name": "Haʻapai (Tonga)",
       "destinations": [],
-      "standalone": []
+      "standalone": [
+        "tofua",
+        "uoleva"
+      ]
     },
     {
       "id": "tonga-vavau",
       "name": "Vavaʻu (Tonga)",
-      "destinations": [],
+      "destinations": [
+        "vavau"
+      ],
       "standalone": []
     },
     {
       "id": "tonga-niuas",
       "name": "The Niuas (Tonga)",
       "destinations": [],
-      "standalone": []
+      "standalone": [
+        "niuafoou",
+        "vai-lahi",
+        "niuatoputapu",
+        "tafahi"
+      ]
     }
   ]
 }

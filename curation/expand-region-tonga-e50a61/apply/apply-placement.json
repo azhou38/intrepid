@@ -1,0 +1,612 @@
+{
+ "placements": [
+  {
+   "id": "tongatapu-21",
+   "name": "Haʻamonga ʻa Maui",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.136589,
+    "longitude": -175.04808
+   },
+   "spot": {
+    "name": "Haʻamonga ʻa Maui",
+    "icon": "🗿",
+    "category": "landmark",
+    "bio": "A coral-limestone trilithon near Niutoua in the north-east, Tonga's best-known ancient monument.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "osm + wiki+commons (historic=archaeological_site); HIGH"
+  },
+  {
+   "id": "tongatapu-22",
+   "name": "Ancient Royal Tombs of Lapaha",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.1748796,
+    "longitude": -175.1164186
+   },
+   "spot": {
+    "name": "Ancient Royal Tombs of Lapaha",
+    "icon": "⚱️",
+    "category": "historic",
+    "bio": "Terraced langi tombs of the Tuʻi Tonga kings near Muʻa, with information signs at the site.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "wiki": "Lapaha"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 6441922319 + Wikivoyage listing geo (-21.174838,-175.116695, ~29 m) (tourism=attraction \"Terraced Tombs\"); HIGH"
+  },
+  {
+   "id": "tongatapu-23",
+   "name": "Nukuʻalofa",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.13434,
+    "longitude": -175.201808
+   },
+   "spot": {
+    "name": "Nukuʻalofa",
+    "icon": "🏙️",
+    "category": "landmark",
+    "bio": "Tonga's capital on the north coast, with its waterfront, churches, markets and most of the island's accommodation.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "osm + osm (place=city); HIGH"
+  },
+  {
+   "id": "tongatapu-24",
+   "name": "Hufangalupe",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.2325334,
+    "longitude": -175.1904006
+   },
+   "spot": {
+    "name": "Hufangalupe",
+    "icon": "🌉",
+    "category": "nature",
+    "bio": "A limestone land bridge over a sinkhole on the south-east coast, with viewpoints around the crater.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 1964421826 + Wikipedia Hufangalupe (-21.2326,-175.1907, ~30 m) (tourism=attraction \"Hufangalupe Natural Land Bridge\"); HIGH"
+  },
+  {
+   "id": "tongatapu-25",
+   "name": "Mapu ʻa Vaea",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.174208,
+    "longitude": -175.308462
+   },
+   "spot": {
+    "name": "Mapu ʻa Vaea",
+    "icon": "🌊",
+    "category": "nature",
+    "bio": "Coral-reef blowholes near Houma on the south-west coast, best viewed at high tide.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75
+   },
+   "photoless": true,
+   "coordinates_source": "Wikivoyage listing geo + geotagged Commons \"Blow holes\" (-21.173847,-175.308752, ~50 m) (blowholes (no OSM feature)); HIGH"
+  },
+  {
+   "id": "tongatapu-26",
+   "name": "Anahulu Caves",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.208196,
+    "longitude": -175.103624
+   },
+   "spot": {
+    "name": "Anahulu Caves",
+    "icon": "🕳️",
+    "category": "nature",
+    "bio": "Partly flooded limestone caves with freshwater pools, visited on guided tours with an optional swim.",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5
+   },
+   "photoless": true,
+   "coordinates_source": "osm + osm (natural=cave_entrance); HIGH"
+  },
+  {
+   "id": "tongatapu-27",
+   "name": "Talamahu Market",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.1341631,
+    "longitude": -175.1983466
+   },
+   "spot": {
+    "name": "Talamahu Market",
+    "icon": "🧺",
+    "category": "market",
+    "bio": "Nukuʻalofa's main daily produce market, with carvings, tapa and jewellery in the handicraft hall upstairs.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "OSM way 107370951 centre + Wikivoyage listing geo (-21.134329,-175.198167, ~25 m) (amenity=marketplace \"Maketi Talamahu\"); HIGH"
+  },
+  {
+   "id": "tongatapu-28",
+   "name": "Pangaimotu Island",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.1265391,
+    "longitude": -175.1596152
+   },
+   "spot": {
+    "name": "Pangaimotu Island",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "A small island off Nukuʻalofa with a wreck to snorkel, a restaurant and gear hire, reached by boat.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 5,
+    "wiki": "Pangaimotu (Tongatapu)"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 3184336700 (resort/landing, ferry terminal ~30 m) (tourism=hotel \"Pangaimotu Island Resort\"); MEDIUM"
+  },
+  {
+   "id": "tongatapu-29",
+   "name": "Flying Fox Reserve",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.1009776,
+    "longitude": -175.3394494
+   },
+   "spot": {
+    "name": "Flying Fox Reserve",
+    "icon": "🦇",
+    "category": "nature",
+    "bio": "A colony of flying foxes (fruit bats) roosting in the trees at Kolovai village on the western side of the island.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 5740043021 (tourism=attraction \"Flying Foxes\"); MEDIUM"
+  },
+  {
+   "id": "tongatapu-30",
+   "name": "Haʻatafu Beach",
+   "action": "spot",
+   "destination": "tongatapu",
+   "coordinates": {
+    "latitude": -21.071836,
+    "longitude": -175.336626
+   },
+   "spot": {
+    "name": "Haʻatafu Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A long white-sand beach with palms and coral on the north-western peninsula, good for snorkelling and sunsets.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3
+   },
+   "photoless": true,
+   "coordinates_source": "Wikivoyage listing geo + OSM beach relation 7858077 (-21.0714189,-175.336235, ~40 m) (natural=beach (unnamed segment of Ha'atafu beach; relation 7858076 is named Matatahi ko Ha'atafu)); HIGH"
+  },
+  {
+   "id": "eua-island-1",
+   "name": "ʻEua National Park",
+   "action": "spot",
+   "destination": "eua-island",
+   "coordinates": {
+    "latitude": -21.3844469,
+    "longitude": -174.9117687
+   },
+   "spot": {
+    "name": "ʻEua National Park",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "Tonga's only forest national park, a rainforest band above the east-coast sea cliffs with caves, chasms and walking tracks.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 5758050521 (tourism=viewpoint \"Lokupo Lookout\"); MEDIUM"
+  },
+  {
+   "id": "eua-island-2",
+   "name": "Rock Gardens",
+   "action": "spot",
+   "destination": "eua-island",
+   "coordinates": {
+    "latitude": -21.454192,
+    "longitude": -174.90743
+   },
+   "spot": {
+    "name": "Rock Gardens",
+    "icon": "🪨",
+    "category": "nature",
+    "bio": "Clifftop rock outcrops on ʻEua's south coast, about 30 minutes to explore beside Lakufaʻanga Cliffs.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5
+   },
+   "photoless": true,
+   "coordinates_source": "Tonga Pocket Guide listing geo; OSM natural=rock node 4357763484 ~30 m (guidebook geo + natural=rock); MEDIUM"
+  },
+  {
+   "id": "eua-island-3",
+   "name": "Lakufaʻanga Cliffs",
+   "action": "spot",
+   "destination": "eua-island",
+   "coordinates": {
+    "latitude": -21.453071,
+    "longitude": -174.90525
+   },
+   "spot": {
+    "name": "Lakufaʻanga Cliffs",
+    "icon": "🌊",
+    "category": "viewpoint",
+    "bio": "Sea cliffs at the southern tip of ʻEua with seabirds, an interpretation panel and views along the coast.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "Tonga Pocket Guide listing geo; OSM natural=cliff way 438006355 ~40 m (guidebook geo + natural=cliff (sea cliffs)); MEDIUM"
+  },
+  {
+   "id": "eua-island-4",
+   "name": "Big Ovava Tree",
+   "action": "spot",
+   "destination": "eua-island",
+   "coordinates": {
+    "latitude": -21.3911086,
+    "longitude": -174.9337991
+   },
+   "spot": {
+    "name": "Big Ovava Tree",
+    "icon": "🌳",
+    "category": "nature",
+    "bio": "A banyan-type tree said to be over 800 years old, the main attraction inside ʻEua National Park.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 4357735345 (tourism=viewpoint \"Giant Ovava Tree\"); MEDIUM"
+  },
+  {
+   "id": "eua-island-5",
+   "name": "Liʻangahuo ʻa Maui",
+   "action": "spot",
+   "destination": "eua-island",
+   "coordinates": {
+    "latitude": -21.4499675,
+    "longitude": -174.9039648
+   },
+   "spot": {
+    "name": "Liʻangahuo ʻa Maui",
+    "icon": "🌉",
+    "category": "nature",
+    "bio": "A natural stone land-bridge in ʻEua's southern cliffs, reached by a short walk east from the Rock Gardens.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 12464909371 (tourism=viewpoint \"Li'anga Huo A Maui (Natural Archway)\"); MEDIUM"
+  },
+  {
+   "id": "eua-island-6",
+   "name": "Haʻaluma Beach",
+   "action": "spot",
+   "destination": "eua-island",
+   "coordinates": {
+    "latitude": -21.42842,
+    "longitude": -174.94612
+   },
+   "spot": {
+    "name": "Haʻaluma Beach",
+    "icon": "🏖️",
+    "category": "beach",
+    "bio": "A small south-coast beach with large tidal pools for snorkelling, reached by a steep sandy road.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2
+   },
+   "photoless": true,
+   "coordinates_source": "Tonga Pocket Guide listing geo only (guidebook geo); LOW"
+  },
+  {
+   "id": "tofua",
+   "name": "Tofua",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -19.7245234,
+    "longitude": -175.0649037
+   },
+   "spot": {
+    "name": "Tofua",
+    "icon": "🌋",
+    "category": "nature",
+    "bio": "Active volcanic island in western Haʻapai with a crater lake, reached by boat and a steep climb to the rim.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "country": "Tonga",
+    "countryCode": "TO",
+    "continent": "Oceania",
+    "timezone": "Pacific/Tongatapu"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 11043213506 (tourism=viewpoint \"Caldera lookout\"); MEDIUM"
+  },
+  {
+   "id": "uoleva",
+   "name": "Uoleva",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -19.8444716,
+    "longitude": -174.4091351
+   },
+   "spot": {
+    "name": "Uoleva",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "Secluded island south of Pangai with long white beaches and swimming, reached on foot at low tide or by boat.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "country": "Tonga",
+    "countryCode": "TO",
+    "continent": "Oceania",
+    "timezone": "Pacific/Tongatapu"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 5808262354 (Taiana's Resort on the west beach) (tourism=wilderness_hut); MEDIUM"
+  },
+  {
+   "id": "vavau-1",
+   "name": "Neiafu",
+   "action": "spot",
+   "destination": "vavau",
+   "coordinates": {
+    "latitude": -18.651554,
+    "longitude": -173.983312
+   },
+   "spot": {
+    "name": "Neiafu",
+    "icon": "⚓",
+    "category": "historic",
+    "bio": "Vavaʻu's main town on a sheltered harbour, the base for yachts, whale-watching and island day tours.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 2,
+    "wiki": "Neiafu (Vavaʻu)"
+   },
+   "photoless": true,
+   "coordinates_source": "osm + wiki (place=town); HIGH"
+  },
+  {
+   "id": "vavau-2",
+   "name": "Mariners Cave",
+   "action": "spot",
+   "destination": "vavau",
+   "coordinates": {
+    "latitude": -18.690855,
+    "longitude": -174.074653
+   },
+   "spot": {
+    "name": "Mariners Cave",
+    "icon": "🌊",
+    "category": "nature",
+    "bio": "A sea cave on Nuapapu island entered by an underwater tunnel, visited on boat tours from Neiafu.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75
+   },
+   "photoless": true,
+   "coordinates_source": "osm + osm (natural=cave_entrance); HIGH"
+  },
+  {
+   "id": "vavau-3",
+   "name": "Swallows Cave",
+   "action": "spot",
+   "destination": "vavau",
+   "coordinates": {
+    "latitude": -18.684077,
+    "longitude": -174.047134
+   },
+   "spot": {
+    "name": "Swallows Cave",
+    "icon": "🐠",
+    "category": "nature",
+    "bio": "A sea cave on Kapa island that boat tours stop at for swimming and snorkelling in clear blue water.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75
+   },
+   "photoless": true,
+   "coordinates_source": "osm + osm (natural=cave_entrance); HIGH"
+  },
+  {
+   "id": "vavau-4",
+   "name": "Hunga Island",
+   "action": "spot",
+   "destination": "vavau",
+   "coordinates": {
+    "latitude": -18.6866736,
+    "longitude": -174.1196061
+   },
+   "spot": {
+    "name": "Hunga Island",
+    "icon": "🐋",
+    "category": "nature",
+    "bio": "An island 35 minutes by boat from Neiafu whose sheltered bays are where humpback whales rest with their calves in season.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 5
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 3165944355 (place=hamlet \"Hunga\" (island village/landing)); LOW"
+  },
+  {
+   "id": "vavau-5",
+   "name": "Pangaimotu",
+   "action": "spot",
+   "destination": "vavau",
+   "coordinates": {
+    "latitude": -18.6851405,
+    "longitude": -173.995968
+   },
+   "spot": {
+    "name": "Pangaimotu",
+    "icon": "🏝️",
+    "category": "beach",
+    "bio": "The group's second-largest island, joined to Utu Vavaʻu by a land bridge, with beaches, coves and snorkelling.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 4,
+    "wiki": "Pangaimotu (Vavaʻu)"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 2611079209 (place=village \"Pangaimotu\"); LOW"
+  },
+  {
+   "id": "vavau-6",
+   "name": "Mt Talau National Park",
+   "action": "spot",
+   "destination": "vavau",
+   "coordinates": {
+    "latitude": -18.6479058,
+    "longitude": -173.9996615
+   },
+   "spot": {
+    "name": "Mt Talau National Park",
+    "icon": "🥾",
+    "category": "hike",
+    "bio": "A small national park protecting native forest, with a short walk to a lookout over Neiafu harbour.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 3404836581 peak + Mt. Talau Lookout node 4326312792 (~9 m) (natural=peak \"Talau\"); MEDIUM"
+  },
+  {
+   "id": "vavau-7",
+   "name": "ʻEneʻio Botanical Garden",
+   "action": "spot",
+   "destination": "vavau",
+   "coordinates": {
+    "latitude": -18.636785,
+    "longitude": -173.9143235
+   },
+   "spot": {
+    "name": "ʻEneʻio Botanical Garden",
+    "icon": "🌺",
+    "category": "nature",
+    "bio": "Tonga's only botanical garden, on Vavaʻu's east coast, with a visitors' centre and tapa and kava demonstrations.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 11735386839; Wikipedia article at -18.6414,-173.9137 (~500 m, rounded) (leisure=garden \"Jardin Botanico 'Ene'io\"); MEDIUM"
+  },
+  {
+   "id": "niuafoou",
+   "name": "Niuafoʻou",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -15.603247,
+    "longitude": -175.640517
+   },
+   "spot": {
+    "name": "Niuafoʻou",
+    "icon": "🌋",
+    "category": "nature",
+    "bio": "Tonga's northernmost island is a volcanic rim around a crater lake, reached by air and walked with local guides.",
+    "visitHoursMin": 24,
+    "visitHoursMax": 72,
+    "country": "Tonga",
+    "countryCode": "TO",
+    "continent": "Oceania",
+    "timezone": "Pacific/Tongatapu"
+   },
+   "photoless": true,
+   "coordinates_source": "osm + osm (place=island); HIGH"
+  },
+  {
+   "id": "vai-lahi",
+   "name": "Vai Lahi",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -15.6022273,
+    "longitude": -175.6486618
+   },
+   "spot": {
+    "name": "Vai Lahi",
+    "icon": "💧",
+    "category": "nature",
+    "bio": "A freshwater crater lake 4 km wide and 84 m deep in the Niuafoʻou caldera, dotted with four islands.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 5,
+    "country": "Tonga",
+    "countryCode": "TO",
+    "continent": "Oceania",
+    "timezone": "Pacific/Tongatapu"
+   },
+   "photoless": true,
+   "coordinates_source": "Nominatim/OSM natural=water \"Vai Lahi\" centroid (natural=water); MEDIUM"
+  },
+  {
+   "id": "niuatoputapu",
+   "name": "Niuatoputapu",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -15.9743026,
+    "longitude": -173.7741191
+   },
+   "spot": {
+    "name": "Niuatoputapu",
+    "icon": "🏝️",
+    "category": "nature",
+    "bio": "A volcanic island in the far north of Tonga with white-sand beaches, reef and village life, reached by flight from Vavaʻu.",
+    "visitHoursMin": 24,
+    "visitHoursMax": 72,
+    "country": "Tonga",
+    "countryCode": "TO",
+    "continent": "Oceania",
+    "timezone": "Pacific/Tongatapu"
+   },
+   "photoless": true,
+   "coordinates_source": "Nominatim/OSM \"Toma Beach\" (natural=beach); MEDIUM"
+  },
+  {
+   "id": "tafahi",
+   "name": "Tafahi",
+   "action": "standalone",
+   "destination": null,
+   "coordinates": {
+    "latitude": -15.8534976,
+    "longitude": -173.7463324
+   },
+   "spot": {
+    "name": "Tafahi",
+    "icon": "⛰️",
+    "category": "hike",
+    "bio": "A small volcanic island 9 km off Niuatoputapu, climbed with a local guide for views toward Samoa, reached by boat from Falehau.",
+    "visitHoursMin": 4,
+    "visitHoursMax": 8,
+    "country": "Tonga",
+    "countryCode": "TO",
+    "continent": "Oceania",
+    "timezone": "Pacific/Tongatapu"
+   },
+   "photoless": true,
+   "coordinates_source": "OSM node 3076323213 (natural=peak \"Piu 'o Tafahi\" (560 m)); MEDIUM"
+  }
+ ]
+}

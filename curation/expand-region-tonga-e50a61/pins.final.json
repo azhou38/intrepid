@@ -1,0 +1,250 @@
+{
+ "tongatapu-21": {
+  "lat": -21.136589,
+  "lng": -175.04808,
+  "source": "osm + wiki+commons",
+  "feature_type": "historic=archaeological_site",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "tongatapu-23": {
+  "lat": -21.13434,
+  "lng": -175.201808,
+  "source": "osm + osm",
+  "feature_type": "place=city",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "tongatapu-26": {
+  "lat": -21.208196,
+  "lng": -175.103624,
+  "source": "osm + osm",
+  "feature_type": "natural=cave_entrance",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "tongatapu-28": {
+  "lat": -21.1265391,
+  "lng": -175.1596152,
+  "source": "OSM node 3184336700 (resort/landing, ferry terminal ~30 m)",
+  "feature_type": "tourism=hotel \"Pangaimotu Island Resort\"",
+  "confidence": "MEDIUM",
+  "note": "landing and resort beach, not the islet centroid (wreck \"Marmer\" ~70 m S)"
+ },
+ "eua-island-8": {
+  "lat": -21.285722,
+  "lng": -174.913961,
+  "source": "osm + osm",
+  "feature_type": "natural=cave_entrance",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "vavau-1": {
+  "lat": -18.651554,
+  "lng": -173.983312,
+  "source": "osm + wiki",
+  "feature_type": "place=town",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "vavau-2": {
+  "lat": -18.690855,
+  "lng": -174.074653,
+  "source": "osm + osm",
+  "feature_type": "natural=cave_entrance",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "vavau-3": {
+  "lat": -18.684077,
+  "lng": -174.047134,
+  "source": "osm + osm",
+  "feature_type": "natural=cave_entrance",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "niuafoou": {
+  "lat": -15.603247,
+  "lng": -175.640517,
+  "source": "osm + osm",
+  "feature_type": "place=island",
+  "confidence": "HIGH",
+  "note": "resolve-pin.py"
+ },
+ "tongatapu-22": {
+  "lat": -21.1748796,
+  "lng": -175.1164186,
+  "source": "OSM node 6441922319 + Wikivoyage listing geo (-21.174838,-175.116695, ~29 m)",
+  "feature_type": "tourism=attraction \"Terraced Tombs\"",
+  "confidence": "HIGH",
+  "note": "Wikipedia article is Lapaha (town), not used"
+ },
+ "tongatapu-24": {
+  "lat": -21.2325334,
+  "lng": -175.1904006,
+  "source": "OSM node 1964421826 + Wikipedia Hufangalupe (-21.2326,-175.1907, ~30 m)",
+  "feature_type": "tourism=attraction \"Hufangalupe Natural Land Bridge\"",
+  "confidence": "HIGH",
+  "note": "the arch itself; place=locality is the village"
+ },
+ "tongatapu-25": {
+  "lat": -21.174208,
+  "lng": -175.308462,
+  "source": "Wikivoyage listing geo + geotagged Commons \"Blow holes\" (-21.173847,-175.308752, ~50 m)",
+  "feature_type": "blowholes (no OSM feature)",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ "tongatapu-27": {
+  "lat": -21.1341631,
+  "lng": -175.1983466,
+  "source": "OSM way 107370951 centre + Wikivoyage listing geo (-21.134329,-175.198167, ~25 m)",
+  "feature_type": "amenity=marketplace \"Maketi Talamahu\"",
+  "confidence": "HIGH",
+  "note": "a second unrelated marketplace way 323956968 is 2.5 km away, ignored"
+ },
+ "tongatapu-29": {
+  "lat": -21.1009776,
+  "lng": -175.3394494,
+  "source": "OSM node 5740043021",
+  "feature_type": "tourism=attraction \"Flying Foxes\"",
+  "confidence": "MEDIUM",
+  "note": "Kolovai sacred bat trees; another OSM node \"Flying Foxes Tree\" at -21.1064182,-175.3394451 is 600 m south"
+ },
+ "tongatapu-30": {
+  "lat": -21.071836,
+  "lng": -175.336626,
+  "source": "Wikivoyage listing geo + OSM beach relation 7858077 (-21.0714189,-175.336235, ~40 m)",
+  "feature_type": "natural=beach (unnamed segment of Ha'atafu beach; relation 7858076 is named Matatahi ko Ha'atafu)",
+  "confidence": "HIGH",
+  "note": "replaces historic=ruins resort point"
+ },
+ "eua-island-1": {
+  "lat": -21.3844469,
+  "lng": -174.9117687,
+  "source": "OSM node 5758050521",
+  "feature_type": "tourism=viewpoint \"Lokupo Lookout\"",
+  "confidence": "MEDIUM",
+  "note": "park main clifftop lookout used as visitor point; Big Ovava Tree is its own spot"
+ },
+ "eua-island-2": {
+  "lat": -21.454192,
+  "lng": -174.90743,
+  "source": "Tonga Pocket Guide listing geo; OSM natural=rock node 4357763484 ~30 m",
+  "feature_type": "guidebook geo + natural=rock",
+  "confidence": "MEDIUM",
+  "note": "no named OSM feature"
+ },
+ "eua-island-3": {
+  "lat": -21.453071,
+  "lng": -174.90525,
+  "source": "Tonga Pocket Guide listing geo; OSM natural=cliff way 438006355 ~40 m",
+  "feature_type": "guidebook geo + natural=cliff (sea cliffs)",
+  "confidence": "MEDIUM",
+  "note": "~200 m from Rock Gardens"
+ },
+ "eua-island-4": {
+  "lat": -21.3911086,
+  "lng": -174.9337991,
+  "source": "OSM node 4357735345",
+  "feature_type": "tourism=viewpoint \"Giant Ovava Tree\"",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "eua-island-5": {
+  "lat": -21.4499675,
+  "lng": -174.9039648,
+  "source": "OSM node 12464909371",
+  "feature_type": "tourism=viewpoint \"Li'anga Huo A Maui (Natural Archway)\"",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "eua-island-6": {
+  "lat": -21.42842,
+  "lng": -174.94612,
+  "source": "Tonga Pocket Guide listing geo only",
+  "feature_type": "guidebook geo",
+  "confidence": "LOW",
+  "note": "no OSM beach or Commons file nearby; single guidebook point, owner may verify"
+ },
+ "eua-island-7": {
+  "lat": null,
+  "lng": null,
+  "source": "none",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "no OSM/Wikipedia/Commons feature for the tidal pools; only approximate shore between Ohonua and Tufuvai (Tufuvai Beach node -21.361098,-174.9690217 is the nearest mapped beach). Left null"
+ },
+ "tofua": {
+  "lat": -19.7245234,
+  "lng": -175.0649037,
+  "source": "OSM node 11043213506",
+  "feature_type": "tourism=viewpoint \"Caldera lookout\"",
+  "confidence": "MEDIUM",
+  "note": "crater rim; landing site node 11047308105 at -19.7123923,-175.0599643 and summit track start also mapped"
+ },
+ "uoleva": {
+  "lat": -19.8444716,
+  "lng": -174.4091351,
+  "source": "OSM node 5808262354 (Taiana's Resort on the west beach)",
+  "feature_type": "tourism=wilderness_hut",
+  "confidence": "MEDIUM",
+  "note": "no natural=beach in OSM; resort at the beach, not the island centroid"
+ },
+ "vavau-4": {
+  "lat": -18.6866736,
+  "lng": -174.1196061,
+  "source": "OSM node 3165944355",
+  "feature_type": "place=hamlet \"Hunga\" (island village/landing)",
+  "confidence": "LOW",
+  "note": "OSM maps no whale bay, lagoon or landing; village point is the nearest visitor-relevant feature"
+ },
+ "vavau-5": {
+  "lat": -18.6851405,
+  "lng": -173.995968,
+  "source": "OSM node 2611079209",
+  "feature_type": "place=village \"Pangaimotu\"",
+  "confidence": "LOW",
+  "note": "OSM maps no beach on the island; village point instead of island centroid"
+ },
+ "vavau-6": {
+  "lat": -18.6479058,
+  "lng": -173.9996615,
+  "source": "OSM node 3404836581 peak + Mt. Talau Lookout node 4326312792 (~9 m)",
+  "feature_type": "natural=peak \"Talau\"",
+  "confidence": "MEDIUM",
+  "note": "summit; replaces Wikivoyage park point"
+ },
+ "vavau-7": {
+  "lat": -18.636785,
+  "lng": -173.9143235,
+  "source": "OSM node 11735386839; Wikipedia article at -18.6414,-173.9137 (~500 m, rounded)",
+  "feature_type": "leisure=garden \"Jardin Botanico 'Ene'io\"",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "vai-lahi": {
+  "lat": -15.6022273,
+  "lng": -175.6486618,
+  "source": "Nominatim/OSM natural=water \"Vai Lahi\" centroid",
+  "feature_type": "natural=water",
+  "confidence": "MEDIUM",
+  "note": "crater lake centroid (in water, correct for a lake); Wikipedia point -15.605,-175.64 is ~0.9 km east, rounded"
+ },
+ "niuatoputapu": {
+  "lat": -15.9743026,
+  "lng": -173.7741191,
+  "source": "Nominatim/OSM \"Toma Beach\"",
+  "feature_type": "natural=beach",
+  "confidence": "MEDIUM",
+  "note": "beach rather than island centroid"
+ },
+ "tafahi": {
+  "lat": -15.8534976,
+  "lng": -173.7463324,
+  "source": "OSM node 3076323213",
+  "feature_type": "natural=peak \"Piu 'o Tafahi\" (560 m)",
+  "confidence": "MEDIUM",
+  "note": "summit of the guided climb"
+ }
+}
