@@ -10,7 +10,7 @@ import {
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef,
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
@@ -537,18 +537,30 @@ function CountrySheet({
     return { transform: [{ translateY: gap - COMPACT_FADE_PT }] };
   });
 
-  const headerAnimStyle = useAnimatedStyle(() => {
+  // Nothing in the header changes size while the sheet moves (DestinationSheet's heroCut, same reasoning): an animated
+  // height or top is a layout change, applied through a full commit that can land a frame or more after the sheet's own
+  // transform, so the tab bar under the header lurched back and overshot during a half ↔ full drag or settle. The header
+  // keeps its full height (headerFixedHStyle, which only changes when it is measured) and `headerCut`, how much shorter
+  // than full it is showing, is applied with transforms:
+  // - the photo layer moves up by headerCut, so its bottom edge, which clips the photo, sits on the header's bottom; the
+  //   photo inside moves back down by half of it, so it stays centred in what shows, as the old cover-fit crop did;
+  // - the scroll view moves up by headerCut, so the header text and the tab bar follow the header's bottom edge; the top
+  //   row and the drag handle move back down (headerTopRowStyle, dragPillStyle).
+  const headerCut = useDerivedValue(() => {
     const collapsedHeaderH = COMPACT_H - Math.max(0, tabBarHAnim.value - TAB_BAR_TUCK);
-    return {
-      height: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [headerFullHAnim.value, collapsedHeaderH], Extrapolation.CLAMP),
-    };
+    const h = interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [headerFullHAnim.value, collapsedHeaderH], Extrapolation.CLAMP);
+    return headerFullHAnim.value - h;
   });
+  const headerFixedHStyle = useAnimatedStyle(() => ({ height: headerFullHAnim.value }));
+  const headerClipStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -headerCut.value }] }));
+  const headerPhotoUnshiftStyle = useAnimatedStyle(() => ({ transform: [{ translateY: headerCut.value / 2 }] }));
+  const headerShiftStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -headerCut.value }] }));
 
   // Top offset animates continuously with the drag — same reasoning as DestinationSheet's
   // own heroTopRowStyle: at full-screen the row needs to clear the status bar, but at
   // collapsed the sheet's own top edge already sits well below it.
   const headerTopRowStyle = useAnimatedStyle(() => ({
-    top: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [insets.top + 12, 20], Extrapolation.CLAMP),
+    transform: [{ translateY: headerCut.value + interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [0, 20 - (insets.top + 12)], Extrapolation.CLAMP) }],
   }));
   // Nudges the flag/name/continent/stats stack down as the sheet approaches half-screen, and
   // only there — at full-screen the offset is 0, so that view is untouched. The content wrap
@@ -567,6 +579,7 @@ function CountrySheet({
   // mirrors DestinationSheet's own dragPillStyle.
   const dragPillStyle = useAnimatedStyle(() => ({
     opacity: interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [0, 1], Extrapolation.CLAMP),
+    transform: [{ translateY: headerCut.value }],
   }));
   // Peek strip: fades in only once the sheet drops past collapsed toward peek — mirrors
   // DestinationSheet's own peekAnimStyle.
@@ -1024,18 +1037,21 @@ function CountrySheet({
               text and then the content over it while the photo stays put, dimming as it is covered. Same animated
               height as the header in the ScrollView, so every snap state crops it as before. The dark scrim for text
               legibility is part of EntityPhoto, drawn only while there's a photo. */}
-          <Animated.View pointerEvents="none" style={[st.headerBackdrop, headerAnimStyle]}>
-            <EntityPhoto
-                cacheKey={countryPhotoKey}
-                cache={photoCache}
-                load={loadCountryPhoto}
-                scrim="rgba(0,0,0,0.45)"
-                style={StyleSheet.absoluteFill as any}
-              />
+          <Animated.View pointerEvents="none" style={[st.headerBackdrop, headerFixedHStyle, headerClipStyle]}>
+            <Animated.View style={[StyleSheet.absoluteFill, headerPhotoUnshiftStyle]}>
+              <EntityPhoto
+                  cacheKey={countryPhotoKey}
+                  cache={photoCache}
+                  load={loadCountryPhoto}
+                  scrim="rgba(0,0,0,0.45)"
+                  style={StyleSheet.absoluteFill as any}
+                />
+            </Animated.View>
             <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: '#000' }, headerDimStyle]} />
           </Animated.View>
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
+          <Animated.View style={[{ flex: 1 }, headerShiftStyle]}>
           <ScrollView
             ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
             style={{ flex: 1 }}
@@ -1064,7 +1080,7 @@ function CountrySheet({
                 continuously, exactly like DestinationSheet's own hero) — tapping the
                 background (not the buttons) expands to full-screen while collapsed/peeking. */}
             <Pressable onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}>
-            <Animated.View style={[st.header, headerAnimStyle]}>
+            <Animated.View style={[st.header, headerFixedHStyle]}>
               {/* The country photo is a fixed layer behind this ScrollView (see HEADER PHOTO below). */}
 
               {/* Drag-handle pill — visible while collapsed/peeking, fades out approaching
@@ -1076,7 +1092,7 @@ function CountrySheet({
               {/* Close button removed — the back-navigation pill (rendered by the map
                   screen, not this sheet) now glides to sit in that same top-left spot
                   instead, identical to DestinationSheet's own hero top row. */}
-              <Animated.View style={[st.headerTopRow, headerTopRowStyle, { justifyContent: 'flex-end' }]}>
+              <Animated.View style={[st.headerTopRow, { top: insets.top + 12, justifyContent: 'flex-end' }, headerTopRowStyle]}>
                 <View style={st.headerActionsRight}>
                   <Pressable
                     style={[st.headerVisitPill, isCountryVisited && st.headerVisitPillActive]}
@@ -1090,7 +1106,7 @@ function CountrySheet({
                 </View>
               </Animated.View>
 
-              {/* Measured via onLayout (natural, unclipped size) to drive headerAnimStyle's
+              {/* Measured via onLayout (natural, unclipped size) to drive the header's
                   "full" anchor — this wrapper's own padding accounts for the whole header's
                   total natural height, so no extra math is needed at the measurement site. */}
               <Animated.View
@@ -1256,6 +1272,7 @@ function CountrySheet({
             )}
             </View>
           </ScrollView>
+          </Animated.View>
           {/* ── COMPACT TITLE BAR — fixed at the very top and only fades in place (no movement): in as the tab bar arrives
               under it and pins, out again as it scrolls back down. */}
           <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
@@ -1367,10 +1384,8 @@ const st = StyleSheet.create({
   },
   header: {
     overflow: 'hidden',
-    // Bottom-anchors headerContentWrap (which stays its own natural/full height
-    // regardless of this outer box's animated crop) so that as the header shrinks toward
-    // collapsed/peek, the crop eats into the wrap's TOP — keeping the name/stats row (the
-    // wrap's last line) visible instead of it sliding out the bottom uncropped.
+    // Always its full measured height (headerFixedHStyle); the half-screen crop is the scroll view moving up by
+    // headerCut, which takes space off the TOP and keeps the name/stats row (the wrap's last line) visible.
     justifyContent: 'flex-end',
   },
   // Holds the actual flow content (flag/name/continent/stats) — its own natural height
