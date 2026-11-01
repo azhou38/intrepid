@@ -1,0 +1,141 @@
+{
+ "spots": [
+  {
+   "id": "eua-island-1",
+   "currency": "TOP",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "Managed by Ministry of Environment and Climate Change (Forestry Division); no official page found",
+   "sources": {
+    "free": [
+     "https://tongapocketguide.com/10-free-cheap-things-to-do-in-eua",
+     "https://en.wikipedia.org/wiki/%CA%BBEua_National_Park"
+    ],
+    "managing_body": [
+     "https://en.wikipedia.org/wiki/%CA%BBEua_National_Park"
+    ]
+   },
+   "notes": "No entry fee found in any source (Wikivoyage price blank; Pocket Guide lists the park's sights as free). Not verified with the Forestry Division. No park-pass system exists for Tonga."
+  },
+  {
+   "id": "eua-island-2",
+   "currency": "TOP",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "sources": {
+    "free": [
+     "https://tongapocketguide.com/10-free-cheap-things-to-do-in-eua"
+    ],
+    "desc": [
+     "https://www.eua-island-tonga.com/Euaislandsouthernrockgarden.html"
+    ]
+   },
+   "notes": "Open clifftop; no gate found."
+  },
+  {
+   "id": "eua-island-3",
+   "currency": "TOP",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "sources": {
+    "tier": [
+     "tiers.json simple default"
+    ]
+   }
+  },
+  {
+   "id": "eua-island-4",
+   "currency": "TOP",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "sources": {
+    "free": [
+     "https://book.tongapocketguide.com/free/big-ovava-tree-2/embed-tta",
+     "https://book.tongapocketguide.com/free/big-ovava-tree-1-walk/embed-tta"
+    ],
+    "age": [
+     "https://en.wikivoyage.org/wiki/%CA%BBEua"
+    ]
+   },
+   "notes": "Pocket Guide lists the trees as free. Tree #1 trail starts at Hafu Pool via a 1.8 km dirt road, high-clearance vehicle advised."
+  },
+  {
+   "id": "eua-island-5",
+   "currency": "TOP",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "sources": {
+    "free": [
+     "https://tongapocketguide.com/10-free-cheap-things-to-do-in-eua",
+     "https://www.tongatourism.travel/our-islands/eua"
+    ]
+   },
+   "notes": "Natural rock arch listed by Tonga Tourism; no fee found."
+  },
+  {
+   "id": "eua-island-6",
+   "currency": "TOP",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "sources": {
+    "tier": [
+     "tiers.json simple default"
+    ],
+    "desc": [
+     "https://www.tongatourism.travel/our-islands/eua"
+    ]
+   }
+  },
+  {
+   "id": "eua-island-7",
+   "currency": "TOP",
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "sources": {
+    "desc": [
+     "https://www.tongatourism.travel/our-islands/eua"
+    ]
+   },
+   "notes": "Reef shore; no gate found. Not independently verified."
+  },
+  {
+   "id": "eua-island-8",
+   "currency": "TOP",
+   "free": false,
+   "costBasis": "tour",
+   "costMin": null,
+   "costMax": null,
+   "ticketUrl": null,
+   "unverified": [
+    "price"
+   ],
+   "ticketUrl_note": "Guided dives sold by dive operators (Deep Blue Tonga reported as the 'Eua operator; AX-Factor Dive also); no single official site, so none recorded",
+   "sources": {
+    "desc": [
+     "https://www.eua-island-tonga.com/euascubadivingeua.html",
+     "https://tongapocketguide.com/?p=26673"
+    ],
+    "price_hints": [
+     "https://book.tongapocketguide.com/ax-factor-dive/2-day-5-dive-package-dema-special"
+    ]
+   },
+   "notes": "No published single-dive price for the cave found. Indicative only: AX-Factor 2-day 5-dive package about TOP 737 (NZ 515), roughly TOP 147 per dive; an unattributed guide lists a two-tank dive at TOP 275. Orchestrator should decide whether to record a range or leave cost unverified."
+  }
+ ],
+ "pass_gaps": [],
+ "unresolved": [
+  "eua-island-8 price unverified",
+  "'Eua National Park fee: none found, Forestry Division not reachable"
+ ]
+}

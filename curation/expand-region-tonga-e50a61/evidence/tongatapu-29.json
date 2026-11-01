@@ -1,0 +1,44 @@
+{
+ "id": "tongatapu-29",
+ "name": "Flying Fox Reserve",
+ "built": "2026-11-01",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Kolovai",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Kolovai",
+   "excerpt": "Kolovai is a village on the Tongan island of Tongatapu. Its 2006 population was 4,098."
+  },
+  {
+   "kind": "visitor-source",
+   "url": "https://www.tongatourism.travel/our-islands/tongatapu",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Our Islands | Tongatapu | Tonga Tourism",
+   "excerpt": "Island Resorts – Jump on a ferry to Pangaimotu, Fafa or ‘Atata Islands for the day or stay overnight\nFlying Fox Reserve – located in Kolovai in the western district\nHa’amonga ‘a Maui – Trilithon"
+  },
+  {
+   "kind": "visitor-source",
+   "url": "https://en.wikipedia.org/wiki/Kolovai",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Kolovai - Wikipedia",
+   "excerpt": "Kolovai is a village on the Tongan island of Tongatapu . Its 2006 population was 4,098. [ 1 ]\nThe village is notable for its lakalaka , the national dance of Tonga. [ 2 ] A national monument has been proposed to preserve the site of the koka tree where members of the Tu'i Kanokupolu dynasty received investiture . [ 3 ] It is home to a large colony of Pacific Flying Foxes , a species of fruit bat . [ 4 ]\nReferences"
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

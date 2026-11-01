@@ -1,0 +1,41 @@
+{
+ "id": "tongatapu-25",
+ "name": "Mapu ʻa Vaea",
+ "built": "2026-11-01",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Mapu_%CA%BBa_Vaea",
+   "status": "missing",
+   "http": 404,
+   "retrieved": "2026-11-01"
+  },
+  {
+   "kind": "wikivoyage",
+   "url": "https://en.wikivoyage.org/wiki/Tongatapu#See",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "excerpt": "<ul id=\"mwhA\"><li id=\"mwhQ\"><link rel=\"mw-deduplicated-inline-style\" href=\"mw-data:TemplateStyles:r5180145\" about=\"#mwt77\" typeof=\"mw:Extension/templatestyles mw:Transclusion\" id=\"mwhg\" data-mw='{\"name\":\"templatestyles\",\"attrs\":{\"src\":\"Listing/styles.css\"},\"body\":{\"extsrc\":\"\"},\"parts\":[{\"template\":{\"target\":{\"wt\":\"see\\n\",\"href\":\"./Template:See\"},\"params\":{\"name\":{\"wt\":\"Mapu a Vaea\"},\"alt\":{\"wt\":\"Whistle of the Noble\"},\"url\":{\"wt\":\"\"},\"email\":{\"wt\":\"\"},\"address\":{\"wt\":\"Houma\"},\"lat\":{\"wt\":\"-21.174208\"},\"long\":{\"wt\":\"-175.308462\"},\"directions\":{\"wt\":\"\"},\"phone\":{\"wt\":\"\"},\"tollfree\":{\"wt\":\"\"},\"ho\n<script>(RLQ=window.RLQ||[]).push(function(){mw.log.warn(\"This page is using the deprecated ResourceLoader module \\\"mediawiki.skinning.content.parsoid\\\".\\n[1.47] Skins already provide these styles. Do not add this module.\");mw.config.set({\"wgHostname\":\"mw-web.codfw.main-7c8b67c8f5-lfzlx\",\"wgBackendResponseTime\":175,\"wgKartographerLiveData\":{\"listing\":[{\"type\":\"Feature\",\"geometry\":{\"coordinates\":[-175.199895,-21.133729],\"type\":\"Point\"},\"properties\":{\"marker-size\":\"medium\",\"title\":\"Friends Cafe \\u0026amp; Tourist Center\",\"marker-symbol\":\"1\",\"marker-color\":\"218721\"}}],\"go\":[{\"type\":\"Feature\",\"geo"
+  },
+  {
+   "kind": "visitor-source",
+   "url": "https://www.tongatourism.travel/our-islands/tongatapu",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Our Islands | Tongatapu | Tonga Tourism",
+   "excerpt": "Nuku’alofa’s Talamahu market is a proudly local affair, selling fresh tropical produce and authentic Tongan arts and crafts. On Sundays, the churches of Tongatapu glow with soaring harmonies and a warm welcome to visitors.\nAncient Tongan history includes the fascinating 11th century AD Ha’amonga ‘a Maui trilithon and the ancient Langi (terraced tombs) of the Tongan kings. More recent are the Tongatapu landing sites of Abel Tasman and Captain James Cook and on Nuku’alofa’s waterfront you’ll find the elegant Royal Palace. Offshore island resorts effortlessly combine the rustic with the romantic. The ‘Anahulu Caves and…\nDownload Tongatapu Highlights Map\nDrop in for lunch at one of the resorts on the Western side of the Island\nMapu ‘a Vaea – Blowholes in the coral reef on the South-western side of the Islands\nHufangalupe – Natural land bridge on the South-eastern side of the Island"
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "checks": {
+  "tagline_fit": "all 9 variants fit two lines (375-440 pt)",
+  "blurb_fit": "all 6 blurbs fit (2-3 lines or 3-3); tongatapu 'Jun-Oct', vavau 'Jul-Oct'",
+  "goodToKnow_max_chars": 141,
+  "whyVisit": "all start with action verbs; none promises a passing state (whale and wreck items are seasonal or permanent)"
+ },
+ "tongatapu": [
+  {
+   "text": "Main island, ~260 km2, capital Nukuʻalofa, ~70% of population; monarchy never colonised",
+   "source": "https://www.tongatourism.travel/our-islands/tongatapu; wikipedia Tongatapu",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Haʻamonga ʻa Maui c.1200 AD; Muʻa langi tombs of Tuʻi Tonga",
+   "source": "https://en.wikivoyage.org/wiki/Tongatapu",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "South coast blowholes (Mapuʻa ʻa Vaea) and Hufangalupe land bridge",
+   "source": "https://en.wikivoyage.org/wiki/Tongatapu",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Description v2: 'a daily market'",
+   "source": "https://www.tongatourism.travel/our-islands/tongatapu",
+   "status": "unsupported",
+   "fix": "Talamahu Market is described only as the main market, not daily. Drop 'daily' ('a central market')."
+  },
+  {
+   "text": "Feast and dance shows, Sunday church singing, island-resort ferries and Pangaimotu wreck snorkel",
+   "source": "https://www.tongatourism.travel/our-islands/tongatapu",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Tip: Sunday rest day; driving permit from Police HQ/rental agencies, drive left, 50 km/h; cash/ATMs in Nukuʻalofa",
+   "source": "https://www.tongatourism.travel/plan/helpful-info",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Tip: buses from seafront, no timetable, unreliable after ~15:30, flag down",
+   "source": "https://en.wikivoyage.org/wiki/Tongatapu",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Tip: 'Cover up away from the resort beaches. Visitors have been arrested for walking around topless.'",
+   "source": "https://en.wikivoyage.org/wiki/Tonga",
+   "status": "unsupported",
+   "fix": "Source says only 'dress modestly... some people (usually from cruise liners) have been arrested for walking around topless'; 'away from the resort beaches' is added. Use: 'Dress modestly in towns and villages. Some cruise visitors have been arrested for walking around topless.' Source is Wikivoyage (single source); tourism board backs 'modest dress appreciated, especially in villages'."
+  },
+  {
+   "text": "bestMonths 6-10; humpbacks offshore from July",
+   "source": "https://www.tongatourism.travel/plan/helpful-info; swim-with-whales (Jul-Oct)",
+   "status": "supported",
+   "fix": "Whale season is July-Oct (tourism board) or Jun-Nov (Wikivoyage); 'from July' is safe."
+  }
+ ],
+ "vavau": [
+  {
+   "text": ">50 islands ~250 km north of Tongatapu, Neiafu on ʻUtu Vavaʻu",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Over 500 yachts each winter season",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "supported",
+   "fix": "Wikivoyage Tonga page says 'about 500'; if unsure write 'about 500'."
+  },
+  {
+   "text": "Whales give birth in sheltered waters; swim with them; licensed operators only; Jul-Oct",
+   "source": "https://www.tongatourism.travel/see-and-do/swim-with-whales",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Vanilla major producer; Mt Talau trail; Swallows/Mariner's caves; marlin/sailfish game fishing",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Tip: Lulutai Airlines flies Tongatapu to Vavaʻu, only domestic airline, ferry also runs",
+   "source": "https://www.tongatourism.travel/plan/helpful-info; https://en.wikivoyage.org/wiki/Vava'u (MV ʻOtuangaʻafa ferry); https://en.wikivoyage.org/wiki/%CA%BBEua ('Vava'u ... Flights are from Tongatapu')",
+   "status": "supported",
+   "fix": "Tourism board names Lulutai as sole domestic carrier linking Tongatapu with outer islands; the Vavaʻu route itself is from Wikivoyage. No schedule or frequency claimed: fine."
+  },
+  {
+   "text": "Tip: Sunday closures, modest dress, cash on outer islands; 'cards not widely taken'",
+   "source": "https://www.tongatourism.travel/plan/helpful-info",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bestMonths 7-10",
+   "source": "https://www.tongatourism.travel/see-and-do/swim-with-whales",
+   "status": "supported",
+   "fix": "Wikivoyage widens to Jun-Nov; Jul-Oct is the stricter supported range."
+  }
+ ],
+ "eua-island": [
+  {
+   "text": "87 km2, non-volcanic, oldest island, 312 m high, cliffs/caves/sinkholes/rainforest",
+   "source": "https://www.tongatourism.travel/our-islands/eua; wikipedia ʻEua",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Tonga's only forest national park; Big Ovava Tree 800+ years; red shining parrot; stargazing",
+   "source": "https://en.wikivoyage.org/wiki/%CA%BBEua; https://www.tongatourism.travel/our-islands/eua",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Seven-minute flight; ferry 2.5-3 hours",
+   "source": "https://www.tongatourism.travel/our-islands/eua; https://en.wikivoyage.org/wiki/%CA%BBEua",
+   "status": "supported",
+   "fix": "Wikivoyage Tongatapu says 'eight-minute' and ferry can take far longer in bad weather; 'check the schedule' covers it."
+  },
+  {
+   "text": "Tip: 'Trails run past cliffs and sinkholes, so keep to well-marked paths'",
+   "source": "https://www.tongatourism.travel/our-islands/eua",
+   "status": "unverifiable",
+   "fix": "Tourism board says trails are 'well-marked' but gives no hazard advice; researcher flagged it unverified. Acceptable only as plain advice; better replace with the sourced 'rent a car, taxi or bus; cash essential'."
+  },
+  {
+   "text": "Tip: car/taxi/local buses on Tongatapu and ʻEua; cash; Sunday closures",
+   "source": "https://www.tongatourism.travel/plan/getting-around; plan/helpful-info",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bestMonths 6-10; humpbacks pass close to shore",
+   "source": "https://www.tongatourism.travel/our-islands/eua (Jun-Nov and Jul-Oct on same page)",
+   "status": "supported",
+   "fix": ""
+  }
+ ]
+}

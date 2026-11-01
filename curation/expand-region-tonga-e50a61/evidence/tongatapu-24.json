@@ -1,0 +1,43 @@
+{
+ "id": "tongatapu-24",
+ "name": "Hufangalupe",
+ "built": "2026-11-01",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hufangalupe",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Hufangalupe",
+   "excerpt": "Hufangalupe is a natural land bridge on Tonga’s main island of Tongatapu."
+  },
+  {
+   "kind": "wikivoyage",
+   "url": "https://en.wikivoyage.org/wiki/Tongatapu#See",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "excerpt": "<li id=\"mwiQ\"><link rel=\"mw-deduplicated-inline-style\" href=\"mw-data:TemplateStyles:r5180145\" about=\"#mwt81\" typeof=\"mw:Extension/templatestyles mw:Transclusion\" id=\"mwig\" data-mw='{\"name\":\"templatestyles\",\"attrs\":{\"src\":\"Listing/styles.css\"},\"body\":{\"extsrc\":\"\"},\"parts\":[{\"template\":{\"target\":{\"wt\":\"see\\n\",\"href\":\"./Template:See\"},\"params\":{\"name\":{\"wt\":\"Hufangalupe Natural Land Bridge\"},\"alt\":{\"wt\":\"\"},\"url\":{\"wt\":\"\"},\"email\":{\"wt\":\"\"},\"address\":{\"wt\":\"\"},\"lat\":{\"wt\":\"-21.232533\"},\"long\":{\"wt\":\"-175.190401\"},\"directions\":{\"wt\":\"\"},\"phone\":{\"wt\":\"\"},\"tollfree\":{\"wt\":\"\"},\"hours\":{\"wt\":\"24/7\"},\n<script>(RLQ=window.RLQ||[]).push(function(){mw.log.warn(\"This page is using the deprecated ResourceLoader module \\\"mediawiki.skinning.content.parsoid\\\".\\n[1.47] Skins already provide these styles. Do not add this module.\");mw.config.set({\"wgHostname\":\"mw-web.codfw.main-7c8b67c8f5-lfzlx\",\"wgBackendResponseTime\":175,\"wgKartographerLiveData\":{\"listing\":[{\"type\":\"Feature\",\"geometry\":{\"coordinates\":[-175.199895,-21.133729],\"type\":\"Point\"},\"properties\":{\"marker-size\":\"medium\",\"title\":\"Friends Cafe \\u0026amp; Tourist Center\",\"marker-symbol\":\"1\",\"marker-color\":\"218721\"}}],\"go\":[{\"type\":\"Feature\",\"geo"
+  },
+  {
+   "kind": "visitor-source",
+   "url": "https://www.tongatourism.travel/our-islands/tongatapu",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-01",
+   "title": "Our Islands | Tongatapu | Tonga Tourism",
+   "excerpt": "Mapu ‘a Vaea – Blowholes in the coral reef on the South-western side of the Islands\nHufangalupe – Natural land bridge on the South-eastern side of the Island\nNuku’alofa – Capital of Tonga"
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

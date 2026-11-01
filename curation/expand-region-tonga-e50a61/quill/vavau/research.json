@@ -1,0 +1,115 @@
+[
+ {
+  "id": "vavau-1",
+  "name": "Neiafu",
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "TOP",
+  "costBasis": "open",
+  "needs": null,
+  "ticketUrl": null,
+  "sources": {
+   "cost": "https://en.wikipedia.org/wiki/Neiafu",
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Neiafu_(Vava%CA%BBu)"
+  },
+  "notes": "Town, second largest in Tonga (pop 3,845, 2021) on the Port of Refuge harbour; open access, no single steward so no ticketUrl."
+ },
+ {
+  "id": "vavau-2",
+  "name": "Mariners Cave",
+  "free": false,
+  "costMin": 50,
+  "costMax": 50,
+  "currency": "TOP",
+  "costBasis": "tour",
+  "needs": null,
+  "ticketUrl": null,
+  "sources": {
+   "cost": "https://en.wikivoyage.org/wiki/Vava'u",
+   "ticketUrl": "https://en.wikivoyage.org/wiki/Vava'u"
+  },
+  "notes": "Wikivoyage: day boat trips 'from several companies for about $50 per person' (island currency, TOP) visiting Mariners Cave, Swallows Cave and beaches; sold by many operators so no ticketUrl. Cave entered through an underwater tunnel (Wikivoyage)."
+ },
+ {
+  "id": "vavau-3",
+  "name": "Swallows Cave",
+  "free": false,
+  "costMin": 50,
+  "costMax": 50,
+  "currency": "TOP",
+  "costBasis": "tour",
+  "needs": null,
+  "ticketUrl": null,
+  "sources": {
+   "cost": "https://en.wikivoyage.org/wiki/Vava'u",
+   "ticketUrl": "https://en.wikivoyage.org/wiki/Vava'u"
+  },
+  "notes": "Wikivoyage: day boat trips 'from several companies for about $50 per person' (island currency, TOP) visiting Mariners Cave, Swallows Cave and beaches; sold by many operators so no ticketUrl. Described as excellent for snorkelling (Wikivoyage)."
+ },
+ {
+  "id": "vavau-4",
+  "name": "Hunga Island",
+  "free": null,
+  "costMin": 50,
+  "costMax": 50,
+  "currency": "TOP",
+  "costBasis": "tour",
+  "needs": null,
+  "ticketUrl": null,
+  "sources": {
+   "bio": "https://en.wikivoyage.org/wiki/Vava'u",
+   "cost": "https://en.wikivoyage.org/wiki/Vava'u"
+  },
+  "notes": "Wikivoyage: 35 min from Neiafu Harbour, main concentration of humpback whales, sheltered bays for cows with calves. Island has no entry fee; reached only on operator trips (many operators). Cost 50 TOP is the generic day-trip price quoted by Wikivoyage, not a Hunga-specific price: low confidence; alternative is free/open. No ticketUrl."
+ },
+ {
+  "id": "vavau-5",
+  "name": "Pangaimotu",
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "TOP",
+  "costBasis": "open",
+  "needs": null,
+  "ticketUrl": null,
+  "sources": {
+   "bio": "https://en.wikivoyage.org/wiki/Vava'u",
+   "cost": "default (no fee in evidence)"
+  },
+  "notes": "Wikivoyage: second largest island in the group, joined by land bridge at the southern tip of 'Utu Vava'u, good beaches and snorkelling; Wikipedia: 5-minute boat trip from Neiafu. No fee in evidence; default open."
+ },
+ {
+  "id": "vavau-6",
+  "name": "Mt Talau National Park",
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "TOP",
+  "costBasis": "open",
+  "needs": null,
+  "ticketUrl": null,
+  "sources": {
+   "cost": "https://book.tongapocketguide.com/free/mt-talau",
+   "bio": "https://en.wikivoyage.org/wiki/Vava'u"
+  },
+  "notes": "Established 1995 (Wikivoyage); entrance ~2 km from Neiafu centre, trail ~1 km, steep 10-20 min climb to lookout. Tonga Pocket Guide lists it as a free activity; Lonely Planet reportedly conflicts (via search summary, unverified). No official agency site found. No parkPass applies (nt.gov.au is irrelevant to Tonga)."
+ },
+ {
+  "id": "vavau-7",
+  "name": "ʻEneʻio Botanical Garden",
+  "free": false,
+  "costMin": 35,
+  "costMax": 55,
+  "currency": "TOP",
+  "costBasis": "tour",
+  "needs": "booking",
+  "ticketUrl": null,
+  "sources": {
+   "cost": "https://book.tongapocketguide.com/eneio-botanical-garden/a-walk-among-the-natives-tour",
+   "bio": "https://en.wikivoyage.org/wiki/Vava'u",
+   "contact": "https://en.wikivoyage.org/wiki/Vava'u"
+  },
+  "notes": "Wikivoyage: Tu'anekivale village, east coast, tel +676 71 048, eneiobotanicalgarden@gmail.com, no price listed. Access is by guided tour: walk tours quoted T$35 (Lonely Planet, per search summary, unverified) to T$55 (Tonga Pocket Guide quotes NZ$110 on its own booking page, a third-party booker). LOW confidence price. No official site found (only an email); no ticketUrl; booker pages are aggregators, not recorded."
+ }
+]

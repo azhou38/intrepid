@@ -1,0 +1,136 @@
+{
+ "spots": [
+  {
+   "id": "tongatapu-21",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "cost": "https://en.wikivoyage.org/wiki/Tongatapu#See",
+    "presence": "https://www.tongatourism.travel/our-islands/tongatapu"
+   },
+   "notes": "Simple tier default. Wikivoyage lists hours but no price; no gate or fee found. Trilithon stands in open ground; not verified on site.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25
+  },
+  {
+   "id": "tongatapu-22",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "cost": "https://en.wikivoyage.org/wiki/Tongatapu#See (listing price: Free)"
+   },
+   "notes": "Wikivoyage lists price Free. Bio 'information signs' from placement unverified here."
+  },
+  {
+   "id": "tongatapu-23",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "presence": "https://www.tongatourism.travel/our-islands/tongatapu"
+   },
+   "notes": "Simple tier default (town). Category historic per tiers.json.",
+   "category": "historic",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  },
+  {
+   "id": "tongatapu-24",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "cost": "https://en.wikivoyage.org/wiki/Tongatapu#See (listing price: Free)",
+    "presence": "https://www.tongatourism.travel/our-islands/tongatapu"
+   },
+   "notes": ""
+  },
+  {
+   "id": "tongatapu-25",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "cost": "https://en.wikivoyage.org/wiki/Tongatapu#See (listing price: Free)",
+    "presence": "https://www.tongatourism.travel/our-islands/tongatapu"
+   },
+   "notes": "Wikivoyage names it 'Mapu a Vaea' (Whistle of the Noble), Houma. Not in any pass list; nt.gov.au pass list is irrelevant to Tonga. 'best at high tide' unverified."
+  },
+  {
+   "id": "tongatapu-26",
+   "free": false,
+   "costBasis": "entry",
+   "currency": "TOP",
+   "ticketUrl": "https://www.anahulucave.to/",
+   "sources": {
+    "cost": "https://en.wikivoyage.org/wiki/Tongatapu#Do (listing price: T$20 per person)",
+    "ticketUrl": "https://www.anahulucave.to/ (title 'ʻAnahulu cave'; operator ʻAnahulucave Sightseeing Tours and Travel Ltd; linked from Wikivoyage listing)",
+    "description": "https://www.anahulucave.to/tour.html"
+   },
+   "notes": "T$20 per person from Wikivoyage, matched by an Expedia listing 'pay 20 TOP cash per person when entering'. The operator's own pages give no price. Operator also sells tours (TT3 east coast, TT4 cultural tour) that bundle entry; those prices are not the entry fee. Site: cave ~400 m long with freshwater pools up to 8 m deep; beach 50 m from the entrance. Bio 'guided tours' is only partly supported: operator sells tours but a per-person entry is also taken.",
+   "costMin": 20,
+   "costMax": 20
+  },
+  {
+   "id": "tongatapu-27",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "presence": "https://en.wikivoyage.org/wiki/Tongatapu#Buy",
+    "bio": "https://en.wikivoyage.org/wiki/Tongatapu#Buy"
+   },
+   "notes": "Daily produce market per Wikivoyage ground floor, handicrafts upstairs. No entry fee found. No hours stored. Official site: none found (council market)."
+  },
+  {
+   "id": "tongatapu-28",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "transport": "https://en.wikivoyage.org/wiki/Tongatapu#Do",
+    "bio": "https://en.wikipedia.org/wiki/Pangaimotu_(Tongatapu)"
+   },
+   "notes": "UNVERIFIED island day-access fee: none found. Boat from Nukuʻalofa about T$20 return (Wikivoyage; World Nomads says about US$20 with a meal); transport is not the price. No official site found for the island resort/restaurant; ticketUrl left null."
+  },
+  {
+   "id": "tongatapu-29",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "presence": "https://www.tongatourism.travel/our-islands/tongatapu",
+    "bio": "https://en.wikipedia.org/wiki/Kolovai"
+   },
+   "notes": "Colony in Kolovai village per Wikipedia; Tonga Tourism lists 'Flying Fox Reserve - Kolovai'. No fee found; operator site TT2 tour page says bats hang along the village road, so no gate. Coordinates null in placement: pin worker owns."
+  },
+  {
+   "id": "tongatapu-30",
+   "free": true,
+   "costBasis": "open",
+   "currency": "TOP",
+   "ticketUrl": null,
+   "sources": {
+    "cost": "https://en.wikivoyage.org/wiki/Tongatapu#See (listing price: Free)",
+    "presence": "https://www.tongatourism.travel/our-islands/tongatapu"
+   },
+   "notes": "Simple tier default; Wikivoyage price Free. Tonga Tourism: known for coral formations, snorkelling and sunsets.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3
+  }
+ ],
+ "unresolved": [
+  "tongatapu-24/25/26/28/29 nt.gov.au pass list unreadable; irrelevant to Tonga, no Tongan park pass exists in parkPasses",
+  "Pangaimotu island day-access fee unverified"
+ ]
+}

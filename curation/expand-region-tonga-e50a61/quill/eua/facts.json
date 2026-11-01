@@ -1,0 +1,47 @@
+{
+ "eua-island-1": {"claims": [
+  {"text":"Tonga's only national forest park / only forest national park","source":"Wikipedia ʻEua National Park; Wikivoyage ʻEua","status":"supported","fix":null},
+  {"text":"4.5 km² (4.51 km²) rainforest park on the east side, band bordered by sea cliffs, caves, chasms","source":"Wikipedia ʻEua National Park","status":"supported","fix":null},
+  {"text":"Home to the Big Ovava Tree; trails above sea cliffs / hiking trails","source":"Wikivoyage; Tonga Tourism (well-marked trails in the park)","status":"supported","fix":null},
+  {"text":"Cost: free, costBasis open, no ticketUrl","source":"No page states a fee. Wikivoyage price blank; Pocket Guide lists only Hafu Pool and the ovava trees as free","status":"unverifiable","fix":"Keep free:true/open as the best reading but record in notes that no managing-agency (Forestry Division) page was found to confirm. No park pass exists for Tonga. ticketUrl stays omitted."}
+ ]},
+ "eua-island-2": {"claims": [
+  {"text":"Stonehenge-like rock shapes on 200 m cliffs; wild (semi-wild) horses between the formations","source":"eua-island-tonga.com southern rock garden page (re-read)","status":"supported","fix":null},
+  {"text":"Brown boobies and frigatebirds glide past / nesting seabirds curious about visitors","source":"eua-island-tonga.com (brown booby, frigate birds, white terns, tropicbird)","status":"supported","fix":null},
+  {"text":"Cost: free, open","source":"Pocket Guide 10 Free & Cheap Things (item 2, FREE); route passes a farm gate to open and close, no fee","status":"supported","fix":null}
+ ]},
+ "eua-island-3": {"claims": [
+  {"text":"Variant 1: 'A cliff-edge lookout over the open ocean'","source":"none; sources describe cliffs with nesting seabirds and a walk, not a lookout","status":"unsupported","fix":"Drop 'lookout'. Use variant 3, or: 'Dramatic southern cliffs, steeped in legend and home to nesting seabirds, past Haʻaluma Beach.'"},
+  {"text":"Variant 2: 'a short viewpoint stop on the road out to Haʻaluma Beach'","source":"Pocket Guide says the cliffs are an easy walk beyond Haʻaluma, at the southern tip; not a viewpoint stop","status":"unsupported","fix":"Cliffs lie beyond Haʻaluma Beach and the Rock Gardens, not on the way to the beach. Use variant 3's wording."},
+  {"text":"Variant 3: far south, reached past Haʻaluma Beach en route to the clifftop rocks","source":"Pocket Guide beaches page (Haʻaluma is on the way to the Rock Gardens and Lakufaʻanga Cliffs); free-things page (southern tip, easy walk)","status":"supported","fix":"Add one thing the sources back: cliffs are steeped in legend with nesting seabirds."},
+  {"text":"Visit time 0-0.5 h","source":"tiers.json default only; Pocket Guide calls it an easy walk","status":"unverifiable","fix":"Keep range but evidence is a default, not a source; consider 0.5-1.5 given the walk."},
+  {"text":"Cost: free, open","source":"Pocket Guide (FREE)","status":"supported","fix":null},
+  {"text":"Distinct draw","source":"Same Pocket Guide item and same walk as Rock Gardens (eua-island-2); Tonga Tourism lists 'Lakufaʻanga Cliff' only as a name","status":"unverifiable","fix":"Evidence is thin and overlaps Rock Gardens; consider review or merging into eua-island-2."}
+ ]},
+ "eua-island-4": {"claims": [
+  {"text":"Giant ovava (banyan) said to be over 800 years old; main attraction of the park","source":"Wikivoyage ʻEua (re-read)","status":"supported","fix":null},
+  {"text":"Trail starts near Hafu Pool; short walk","source":"Pocket Guide: cross the dam at Hafu Pool, 5-10 min trail; 1.8 km dirt road, high-clearance advised","status":"supported","fix":null},
+  {"text":"Cost: free, open","source":"Pocket Guide (tree #1 listed FREE)","status":"supported","fix":null}
+ ]},
+ "eua-island-5": {"claims": [
+  {"text":"Large/tremendous natural stone bridge (arch) by the sea; one of the island's highlights","source":"Tonga Tourism ʻEua page (re-read)","status":"supported","fix":null},
+  {"text":"Named for the demigod / in Tongan legend for Maui","source":"Name 'a Maui; Tonga Tourism says 'legendary Maui' for the nearby pothole only","status":"unverifiable","fix":"Say 'named for the legendary Maui' (drop 'demigod'); or just omit the legend."},
+  {"text":"Cost: free, open; short 5-10 min walk with wooden lookout platform","source":"Pocket Guide (FREE); eua-island-tonga.com (six-person lookout)","status":"supported","fix":null}
+ ]},
+ "eua-island-6": {"claims": [
+  {"text":"Long white sandy beach backed by vegetation; excellent snorkelling in larger tidal pools; swimming generally safe, mind tide and currents","source":"Pocket Guide 5 best beaches (re-read); Tonga Tourism ('great for a swim')","status":"supported","fix":null},
+  {"text":"Access road best walked (park at top)","source":"Pocket Guide","status":"supported","fix":null},
+  {"text":"Cost: free, open; visit 1-3 h","source":"Pocket Guide; hours are a tier default","status":"supported","fix":"Visit hours not sourced; keep as estimate."}
+ ]},
+ "eua-island-7": {"claims": [
+  {"text":"Near-sea-level coral reef shore between ʻOhonua and Tufuvai with many small ʻotumatafena tidal pools","source":"Wikipedia ʻEua; Tonga Tourism","status":"supported","fix":null},
+  {"text":"'a feature unique to ʻEua' (variant 3)","source":"Wikipedia says 'a unique feature' of the island's shore, not the pools","status":"supported","fix":"Fine, but prefer variants 1 or 2."},
+  {"text":"Cost: free, open","source":"No gate found; not independently confirmed","status":"unverifiable","fix":"Reasonable (public shore) but unsourced; note it."}
+ ]},
+ "eua-island-8": {"claims": [
+  {"text":"Cavern about 100 m long, 50 m wide, 30 m deep; entered at 28 m; three holes in roof letting light in; found about 2001","source":"eua-island-tonga.com scuba page (re-read)","status":"supported","fix":"Variant 2 omits width; variant 2 says '30 m deep' (source: 30 m deep) fine."},
+  {"text":"Passes sharks, groupers on the way out (variant 3); 'huge sea cave beside ʻEua's cliff'","source":"eua-island-tonga.com","status":"supported","fix":"Say 'guided dive' only if an operator is confirmed to run it (see price)."},
+  {"text":"Price (costBasis tour, costMin/costMax null)","source":"Re-read deepbluediving.to /general.html: price list (AUD, July 2026) shows only Tongatapu whale swim AU$380, whale watch AU$220, charters POA; no ʻEua dive or cave price. AX-Factor package (TripCarver, NZ$515) is a Tongatapu 5-dive package (Clan McWilliam wreck), nothing to do with the ʻEua cave; axfactor.com unreachable. The TOP 275/dive figure is unattributed.","status":"unverifiable","fix":"No published price for a Cathedral Cave dive exists. Do not invent or derive a range from the AX-Factor package. Recommend dropping the spot (a scuba-only dive site, cost unknown, operator and booking unconfirmed, fails the 'cost or free' rule), or if the owner keeps it, hold it until an operator quotes a price."},
+  {"text":"ticketUrl: none","source":"Deep Blue homepage (deepbluediving.to) offers scuba but ʻEua cave dive not listed","status":"supported","fix":"Omitting is right; deepbluediving.to could be added only once it names the cave dive."}
+ ]}
+}

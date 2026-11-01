@@ -1,0 +1,118 @@
+{
+ "vavau-1": [
+  {
+   "text": "bio: second-largest town in Tonga, Port of Refuge harbour, ~3,800 residents",
+   "source": "https://en.wikipedia.org/wiki/Neiafu",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "free/open, costBasis open",
+   "source": "Neiafu",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "vavau-2": [
+  {
+   "text": "bio: sea cave reached by boat, entered via underwater tunnel",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "cost TOP 50, tour",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "unverifiable",
+   "fix": "Wikivoyage says only '$50 per person' for a shared day trip (also covers Swallows Cave and beaches), currency not stated. Pricing is for the boat trip, not the cave; keep as tour 'about 50' marked approximate, or leave unpriced."
+  }
+ ],
+ "vavau-3": [
+  {
+   "text": "bio: reached by boat, excellent snorkelling",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "cost TOP 50, tour",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "unverifiable",
+   "fix": "Same shared day-trip '$50' as Mariners Cave; currency not stated, not cave-specific."
+  }
+ ],
+ "vavau-4": [
+  {
+   "text": "bio: 35 min by boat from Neiafu, sheltered bays, humpbacks with calves",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio variant 3: whales gather each season",
+   "source": "Wikivoyage / tongatourism (Jun-Nov)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "cost TOP 50, tour",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "unsupported",
+   "fix": "Not a Hunga price: it is the generic day-trip figure; no per-visitor fee for the island is sourced. Use free: true, costBasis open (no entry fee), or leave unpriced."
+  }
+ ],
+ "vavau-5": [
+  {
+   "text": "bio: ~5 min boat from Neiafu; second-largest island of the group; land bridge to 'Utu Vava'u; beaches and snorkelling",
+   "source": "https://en.wikipedia.org/wiki/Pangaimotu_(Vava%CA%BBu) ; https://en.wikivoyage.org/wiki/Vava'u",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "free, open",
+   "source": "default",
+   "status": "unverifiable",
+   "fix": "No fee found anywhere; open access is a reasonable default but not positively sourced."
+  }
+ ],
+ "vavau-6": [
+  {
+   "text": "bio: established 1995, entrance ~2 km from Neiafu, ~1 km trail, steep 10-20 min climb to lookout",
+   "source": "https://en.wikivoyage.org/wiki/Vava'u ; https://book.tongapocketguide.com/free/mt-talau",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "free, open (Mt Talau free)",
+   "source": "https://book.tongapocketguide.com/free/mt-talau",
+   "status": "supported",
+   "fix": "Re-read fresh: page lists it as a Free Activity. No fee on Wikivoyage. Lonely Planet conflict not seen."
+  }
+ ],
+ "vavau-7": [
+  {
+   "text": "bio variant 1: 'Tonga's only botanical garden'",
+   "source": "https://en.wikipedia.org/wiki/%CA%BBEne%CA%BBio_Botanical_Garden",
+   "status": "unsupported",
+   "fix": "Sources say 'first of its kind' in Tonga, not only. Use variant 2 or 3."
+  },
+  {
+   "text": "bio: largest and most varied plant collection in Tonga; Tu'anekivale, east coast; visitors' centre with tapa and kava; guided tour",
+   "source": "Wikipedia / https://en.wikivoyage.org/wiki/Vava'u / https://book.tongapocketguide.com/eneio-botanical-garden/a-walk-among-the-natives-tour",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "cost TOP 35-55, tour, needs booking",
+   "source": "https://book.tongapocketguide.com/eneio-botanical-garden/a-walk-among-the-natives-tour",
+   "status": "unsupported",
+   "fix": "Fresh read: the operator's tour (1.5 h guided) is listed at NZ$110 per person on a third-party booker page (a 55 figure appears beside it, not labelled adult). No source gives TOP 35-55. Wikivoyage lists no price. Mark price unverified, or use NZ$110 if the owner accepts the booker as the garden's own price (then currency NZD); do not ship TOP 35-55."
+  },
+  {
+   "text": "ticketUrl null",
+   "source": "Wikivoyage lists only email/phone",
+   "status": "supported",
+   "fix": "The tour page above is a booker, not the garden's own site; none verified."
+  }
+ ]
+}
