@@ -1,0 +1,161 @@
+{
+ "dest:suva:header": {
+  "candidates": [
+   {
+    "file": "Suva, Fiji 77.jpg",
+    "verdict": "reject",
+    "reason": "single building, not a cityscape (check 3)",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true
+   },
+   {
+    "file": "https://jontynz.com/2025/09/27/the-highs-and-lows-of-life-in-suva/",
+    "verdict": "accept",
+    "reason": "Suva harbour and waterfront view; web photo, permission not confirmed; page is about Suva",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true
+   }
+  ],
+  "choice": "https://jontynz.com/2025/09/27/the-highs-and-lows-of-life-in-suva/",
+  "hero_crop": "ok"
+ },
+ "dest:suva:why1": {
+  "candidates": [
+   {
+    "file": "https://fijisun.com.fj/living/travel/unearthing-fijis-history-at-the-fiji-museum",
+    "verdict": "reject",
+    "reason": "Thurston Gardens clock tower, not the museum artefacts",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true
+   },
+   {
+    "file": "https://www.hollandamerica.com/en/us/cruise-destinations/hawaii-cruises/hawaii-tahiti-ports/suv/39516",
+    "verdict": "reject",
+    "reason": "government buildings",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true
+   }
+  ],
+  "choice": "none: no photo showing the Fiji Museum collection; museum photos only in spot-suva-1 sheet (clock tower exterior)",
+  "hero_crop": "n/a"
+ },
+ "dest:suva:why2": {
+  "candidates": [
+   {
+    "file": "https://www.fiji.travel/things-to-do/hikes-walks/the-best-walks-and-hikes-in-fiji",
+    "verdict": "reject",
+    "reason": "fiji.travel generic hikes page, not proven Colo-i-Suva",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true
+   },
+   {
+    "file": "https://www.shoreexcursionsgroup.com/tour/jungle-and-waterfall-trek/spsujngtrek?srsltid=AYCX9vLEfm-antR5MpntAEKsVbLxFsILeRBez01roHwY5t3H9O_HBcPW",
+    "verdict": "reject",
+    "reason": "tour page, location unproven",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true
+   }
+  ],
+  "choice": "none: this sheet has no proven Colo-i-Suva photo; same-destination reuse recommended: File:Colo-i-Suva rope-swing.jpg (spot-suva-2 cand 6, CC BY-SA 3.0, 1600px, Commons cat Colo-i-Suva, pool with waterfall)",
+  "hero_crop": "n/a"
+ },
+ "dest:suva:why3": {
+  "candidates": [
+   {
+    "file": "Suva, Fiji 61.jpg",
+    "verdict": "accept",
+    "reason": "Commons Suva,_Fiji_61: produce stalls at Suva market (geotag at market, cat Suva/Cuisine of Fiji), 5184px CC BY-SA 4.0",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true
+   }
+  ],
+  "choice": "Suva, Fiji 61.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:suva-1": {
+  "candidates": [
+   {
+    "file": "Fiji Museum Clock Tower Suva MatthiasSuessen-7816.jpg",
+    "verdict": "accept",
+    "reason": "Fiji Museum Clock Tower file, Commons cat Fiji Museum, Thurston Gardens building and clock tower, 4752px CC BY-SA 3.0",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true
+   }
+  ],
+  "choice": "Fiji Museum Clock Tower Suva MatthiasSuessen-7816.jpg",
+  "hero_crop": {
+   "x": 0.8,
+   "y": 0.5,
+   "zoom": 1.2
+  }
+ },
+ "spot:suva-2": {
+  "candidates": [
+   {
+    "file": "Colo-i-Suva big waterfall.jpg",
+    "verdict": "accept",
+    "reason": "Colo-i-Suva biggest waterfall, Commons cat Colo-i-Suva, 1200px portrait CC BY-SA 3.0",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true
+   }
+  ],
+  "choice": "Colo-i-Suva big waterfall.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:suva-3": {
+  "candidates": [
+   {
+    "file": "Suva, Fiji 61.jpg",
+    "verdict": "accept",
+    "reason": "Suva,_Fiji_61: produce stalls at market, 5184px CC BY-SA 4.0 (same file as why3, same-destination sharing)",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true
+   }
+  ],
+  "choice": "Suva, Fiji 61.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.3
+  }
+ },
+ "spot:suva-4": {
+  "candidates": [
+   {
+    "file": "https://www.tomvierus.com/blog/fiji/climbing-mount-korobaba-in-suva-with-map",
+    "verdict": "accept",
+    "reason": "Korobaba summit view over Suva peninsula, tomvierus blog page names Mount Korobaba; permission not confirmed, 2400px",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true
+   }
+  ],
+  "choice": "https://www.tomvierus.com/blog/fiji/climbing-mount-korobaba-in-suva-with-map",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.6,
+   "zoom": 1.5
+  }
+ }
+}

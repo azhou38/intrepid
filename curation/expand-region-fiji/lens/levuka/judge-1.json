@@ -1,0 +1,122 @@
+{
+ "dest:levuka:header": {
+  "candidates": [
+   {
+    "file": "BeachStreetLevuka.jpg",
+    "verdict": "reject",
+    "reason": "street scene, not a wide town-in-landscape"
+   },
+   {
+    "file": "https://substackcdn.com/image/fetch/$s_!J5cR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8bbcff6-3996-49a3-bd2f-2698a1c95650_3959x1782.jpeg",
+    "verdict": "reject",
+    "reason": "aspect 2.2"
+   },
+   {
+    "file": "https://explorefijionline.com/wp-content/uploads/2026/01/Levuka-EF-photo.jpeg",
+    "verdict": "accept",
+    "reason": "Levuka waterfront under its hills, 1600px; permission not confirmed"
+   },
+   {
+    "file": "https://fijicdn.azureedge.net/kenticoproductionmedia/fijiweb/media/mediaazure/operator/accommodation/yasawa-islands/barefoot-kuata-island-resort/2974/Beachfront,-Barefoot-Kuata-Island-Resort,-Yasawa-Islands,-Fiji.jpg",
+    "verdict": "reject",
+    "reason": "Kuata Island Yasawa resort photo, wrong place"
+   }
+  ],
+  "choice": "https://explorefijionline.com/wp-content/uploads/2026/01/Levuka-EF-photo.jpeg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.55,
+   "zoom": 1.5
+  }
+ },
+ "dest:levuka:why1": {
+  "candidates": [
+   {
+    "file": "BeachStreetLevuka.jpg",
+    "verdict": "accept",
+    "reason": "Beach Street colonial shopfronts, CC BY-SA 3.0, 3317px"
+   }
+  ],
+  "choice": "BeachStreetLevuka.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:levuka:why2": {
+  "candidates": [
+   {
+    "file": "https://www.fbcnews.com.fj/wp-content/uploads/2021/03/Levuka.jpg",
+    "verdict": "accept",
+    "reason": "elevated view over Levuka town and bay, 1280px; permission not confirmed"
+   }
+  ],
+  "choice": "https://www.fbcnews.com.fj/wp-content/uploads/2021/03/Levuka.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:levuka:why3": {
+  "candidates": [
+   {
+    "file": "https://fijicdn.azureedge.net/kenticoproductionmedia/fijiweb/media/mediaazure/fiji.travel%20images/rte-article-content_landscape/landscape_yasawa-islands.jpg?ext=.jpg",
+    "verdict": "reject",
+    "reason": "Yasawa landscape, wrong place"
+   },
+   {
+    "file": "2019-01-31 Coral coast, Viti Levu, Fiji 01.jpg",
+    "verdict": "reject",
+    "reason": "Coral Coast Viti Levu"
+   }
+  ],
+  "choice": "none: no snorkel/cay photo proven for Levuka (fiji.travel hit is a Yasawa file; Commons hit is Viti Levu)",
+  "hero_crop": null
+ },
+ "spot:levuka-1": {
+  "candidates": [
+   {
+    "file": "https://fijicdn.azureedge.net/kenticoproductionmedia/fijiweb/media/mediaazure/fiji.travel%20images/rte-article-content_landscape/mission-hill-(199-steps)-1.jpg?ext=.jpg",
+    "verdict": "accept",
+    "reason": "official fiji.travel Mission Hill (199 steps) page; steps central in crop"
+   },
+   {
+    "file": "https://www.fijitimes.com.fj/wp-content/uploads/2025/03/IMG_4879_97726.jpg",
+    "verdict": "reject",
+    "reason": "Fiji Times watermark/overlay"
+   }
+  ],
+  "choice": "https://fijicdn.azureedge.net/kenticoproductionmedia/fijiweb/media/mediaazure/fiji.travel%20images/rte-article-content_landscape/mission-hill-(199-steps)-1.jpg?ext=.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:levuka-4": {
+  "candidates": [
+   {
+    "file": "https://www.islands.com/img/gallery/one-of-the-most-underrated-islands-in-fiji-is-this-destination-full-of-history/l-intro-1710527670.jpg",
+    "verdict": "reject",
+    "reason": "not proven Lovoni"
+   },
+   {
+    "file": "https://fijiguide.com/wp-content/uploads/2018/07/3561831845_748dd68336_n.jpg",
+    "verdict": "reject",
+    "reason": "not proven Lovoni"
+   }
+  ],
+  "choice": "none: no candidate proven to show Lovoni (islands.com, fijiguide hits unverified; Fiji Times watermarked)",
+  "hero_crop": null
+ },
+ "spot:levuka-5": {
+  "candidates": [
+   {
+    "file": "Leleuvia Islands, Fiji.jpg",
+    "verdict": "accept",
+    "reason": "Commons file titled Leleuvia Islands, CC BY-SA 4.0, 2288px; needs zoom"
+   },
+   {
+    "file": "https://fijicdn.azureedge.net/kenticoproductionmedia/fijiweb/media/mediaazure/leleuvia-kayak.jpg",
+    "verdict": "reject",
+    "reason": "960px official but kayaker focus"
+   }
+  ],
+  "choice": "Leleuvia Islands, Fiji.jpg",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.5,
+   "zoom": 2
+  }
+ }
+}

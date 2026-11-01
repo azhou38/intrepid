@@ -1,0 +1,114 @@
+{
+ "dest:vanua-levu:header": {
+  "candidates": [
+   {
+    "file": "https://res.cloudinary.com/pleasant-holidays/image/upload/ar_16:9,c_fill,g_auto:subject,w_auto/e_blur:1000/q_auto:low/f_auto/dpr_1/d_no-image-placeholder.jpg/v1/Destinations/Fiji/Vanua%20Levu/fjd-vanua-levu-as.jpg",
+    "verdict": "accept",
+    "reason": "Savusavu Bay and islet from lookout, 4608px; permission not confirmed"
+   },
+   {
+    "file": "https://www.travelonline.com/fiji/vanua-levu/resort-aerial-118668-banner.jpg",
+    "verdict": "reject",
+    "reason": "resort aerial"
+   }
+  ],
+  "choice": "https://res.cloudinary.com/pleasant-holidays/image/upload/ar_16:9,c_fill,g_auto:subject,w_auto/e_blur:1000/q_auto:low/f_auto/dpr_1/d_no-image-placeholder.jpg/v1/Destinations/Fiji/Vanua%20Levu/fjd-vanua-levu-as.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:vanua-levu:why1": {
+  "candidates": [
+   {
+    "file": "https://oysteryachts.com/assets/bulkUpload/56__Resampled.-Yachts-moored-on-the-south-coast-of-Vanua-Levu-Island.jpg",
+    "verdict": "accept",
+    "reason": "yachts moored at Savusavu, 5760px; page is Oyster Savusavu"
+   },
+   {
+    "file": "https://cruiseweb.com/api/media/file/ports-of-call-savusavu-vanua-levu.jpg",
+    "verdict": "alt",
+    "reason": "Savusavu bay cruiseweb"
+   }
+  ],
+  "choice": "https://oysteryachts.com/assets/bulkUpload/56__Resampled.-Yachts-moored-on-the-south-coast-of-Vanua-Levu-Island.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:vanua-levu:why2": {
+  "candidates": [
+   {
+    "file": "https://fijicdn.azureedge.net/kenticoproductionmedia/fijiweb/media/mediaazure/fiji.travel%20images/rte-article-content_landscape/content-page-header-image_track-rare-birds.jpg?ext=.jpg",
+    "verdict": "reject",
+    "reason": "Kadavu page"
+   },
+   {
+    "file": "https://res.cloudinary.com/dfbg5qksd/image/upload/w_2560,h_1536,c_scale/v1792416749/shutterstock_1498475369?_i=AA",
+    "verdict": "reject",
+    "reason": "not proven place"
+   }
+  ],
+  "choice": "none: bird photos not proven Vanua Levu rainforest (fiji.travel hit is a Kadavu page)",
+  "hero_crop": null
+ },
+ "dest:vanua-levu:why3": {
+  "candidates": [
+   {
+    "file": "https://cdn.prod.website-files.com/693463c175528fc7a62fef30/69a71f1cc65e760c0f8420da_69a71f150f58a26252e07a5d_Savusavu%2520Foreshore%2520Hot%2520Springs%252C%2520Fiji%25201.jpeg",
+    "verdict": "accept",
+    "reason": "Nakama hot springs steaming rocks, Savusavu, 1600px; permission not confirmed"
+   },
+   {
+    "file": "https://fiji-savusavu.com/wp-content/uploads/2022/10/Hot-spring-at-Nakama-Savusavu.jpg",
+    "verdict": "alt",
+    "reason": "Nakama pit"
+   }
+  ],
+  "choice": "https://cdn.prod.website-files.com/693463c175528fc7a62fef30/69a71f1cc65e760c0f8420da_69a71f150f58a26252e07a5d_Savusavu%2520Foreshore%2520Hot%2520Springs%252C%2520Fiji%25201.jpeg",
+  "hero_crop": "ok"
+ },
+ "spot:vanua-levu-1": {
+  "candidates": [
+   {
+    "file": "View from Urata Lookout Point, Savusavu, Vanua Levu, Fiji.jpg",
+    "verdict": "accept",
+    "reason": "View from Urata Lookout, Savusavu, CC BY 4.0, 4000px; bay view"
+   },
+   {
+    "file": "Savusavu, Fiji - panoramio.jpg",
+    "verdict": "reject",
+    "reason": "date-stamp overlay"
+   }
+  ],
+  "choice": "View from Urata Lookout Point, Savusavu, Vanua Levu, Fiji.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:vanua-levu-2": {
+  "candidates": [
+   {
+    "file": "https://fiji-savusavu.com/wp-content/uploads/2019/11/Waisali-Rainforest-Reserve.jpg",
+    "verdict": "accept",
+    "reason": "Waisali reserve trail, fiji-savusavu.com, 1024px; permission not confirmed"
+   },
+   {
+    "file": "https://fiji-savusavu.com/wp-content/uploads/2019/11/Nadamole-hike.jpg",
+    "verdict": "reject",
+    "reason": "Nadamole hike, other place"
+   }
+  ],
+  "choice": "https://fiji-savusavu.com/wp-content/uploads/2019/11/Waisali-Rainforest-Reserve.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:vanua-levu-3": {
+  "candidates": [
+   {
+    "file": "USP Labasa.jpg",
+    "verdict": "reject",
+    "reason": "USP Labasa campus building, not the town"
+   },
+   {
+    "file": "https://media.pagesuite.com/psapps/images/16b70de1-5645-4901-9b0c-a225ba38d027/d7d2f15b-c5cd-4dbd-a63f-b4dc81676991.jpg",
+    "verdict": "reject",
+    "reason": "unproven Labasa street"
+   }
+  ],
+  "choice": "none: Wikipedia lead is USP campus building, no photo of Labasa town proven",
+  "hero_crop": null
+ }
+}

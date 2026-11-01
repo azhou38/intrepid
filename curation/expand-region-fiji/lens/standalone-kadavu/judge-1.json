@@ -1,0 +1,51 @@
+{
+ "spot:kadavu-island": {
+  "candidates": [
+   {
+    "file": "YaweBeach.jpg",
+    "verdict": "pass",
+    "reason": "Beaches of Kadavu, CC BY-SA 4.0, 2048px"
+   }
+  ],
+  "choice": "YaweBeach.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:great-astrolabe-reef": {
+  "candidates": [
+   {
+    "file": "fiji.travel #2",
+    "verdict": "pass",
+    "reason": "official page on Great Astrolabe Reef, coral; wide 2.4 banner, dark"
+   },
+   {
+    "file": "Kadavu and Great Astrolabe Reef.jpg",
+    "verdict": "reject",
+    "reason": "islet view, not the reef"
+   }
+  ],
+  "choice": "https://fijicdn.azureedge.net/kenticoproductionmedia/fijiweb/media/mediaazure/fiji.travel%20images/rte-article-content_landscape/content-page-header-image_dive-snorkel-the-great-astrolabe-reef-1.jpg?ext=.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:nabukelevu": {
+  "candidates": [
+   {
+    "file": "Uluinabukelevu.jpg",
+    "verdict": "pass",
+    "reason": "Mount Washington (Nabukelevu) volcano, CC BY-SA 4.0"
+   },
+   {
+    "file": "Poecilomyrma ant",
+    "verdict": "reject",
+    "reason": "ant"
+   }
+  ],
+  "choice": "Uluinabukelevu.jpg",
+  "hero_crop": {
+   "x": 0.57,
+   "y": 0.5
+  }
+ }
+}

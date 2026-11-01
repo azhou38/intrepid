@@ -4435,7 +4435,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A Viti Levu base for temples, markets, mud pools and island ferries",
     description: "Nadi is the Viti Levu city that serves as the base for Denarau and the ferries to the Mamanuca and Yasawa islands. At its southern end the Sri Siva Subramaniya Temple is a large Dravidian-style Hindu temple that visitors can enter. The Sabeto valley has a mud bath and three hot-spring pools, and Viseisei is said to be the oldest settlement in Fiji. Behind the city, Koroyanitu National Heritage Park and the Nausori Highlands offer rainforest walks, and Lautoka, the next city north, has a large covered market.",
     whyVisit: ["Soak in hot springs and mud pools", "Step inside a Dravidian-style Hindu temple", "Browse spice and kava markets", "Hike highland rainforest trails"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["", "Sri Siva Subramaniya Temple 2, Nadi.jpg", "", "ext-dest-nadi-why4.jpg"],
     highlights: ["Mud and springs", "Hindu temple", "Spice and kava", "Rainforest walks"],
     goodToKnow: [
       { icon: "👘", title: "Cover up at the temple", detail: "Visitors cover up to enter the Sri Siva Subramaniya Temple, so wear clothes that cover shoulders and knees." },
@@ -4452,7 +4452,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Resort and day-trip islands off Denarau with lagoon snorkelling and reef surf",
     description: "The Mamanucas are a group of resort and day-trip islands off Denarau. South Sea Island is a 30-minute day trip from Denarau, and Beachcomber Island is reached by catamaran. Mana Island has three beach areas and lagoon snorkelling, while Treasure Island and Bounty Island are marine-reserve islands. Monuriki, an uninhabited island, is where the film Cast Away was shot, and Cloudbreak off Tavarua is a well-known reef surf break.",
     whyVisit: ["Snorkel lagoons and marine reserves", "Relax on white-sand island beaches", "Surf reef breaks off Tavarua", "Spend a day on a resort island"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["ext-dest-mamanuca-islands-why1.jpg", "ext-dest-mamanuca-islands-why2.jpg", "ext-dest-mamanuca-islands-why3.jpg", "ext-dest-mamanuca-islands-why4.jpg"],
     highlights: ["Lagoon snorkelling", "Island beaches", "Reef surfing", "Day trips"],
     goodToKnow: [
       { icon: "⛴️", title: "Day trips leave Denarau", detail: "Beachcomber Island is reached by catamaran from Denarau, and South Sea Island is a 30-minute trip." },
@@ -4469,7 +4469,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Dunes, white beaches, shark dives and river gorges on Viti Levu's south coast",
     description: "The Coral Coast is the stretch of Viti Levu's south coast between Sigatoka and Suva, a popular backpacking route. Sigatoka Sand Dunes, Fiji's first national park, rise 20 to 60 m at the river mouth, and Natadola Beach is a white-sand beach west of Sigatoka with horse riding. Pacific Harbour is the base for shark dives in Beqa Lagoon, and Beqa Island lies 10 km offshore. Inland, the Upper Navua Gorge offers whitewater rafting, and Tavuni Hill Fort is a semi-restored hill fort built by a Tongan chief.",
     whyVisit: ["Swim off white-sand beaches", "Dive with sharks in Beqa Lagoon", "Raft a waterfall-lined gorge"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "ext-dest-coral-coast-why2.jpg", "ext-dest-coral-coast-why3.jpg"],
     highlights: ["Sandy beaches", "Shark dives", "Gorge rafting"],
     goodToKnow: [
       { icon: "💧", title: "Pay at Biausevu village", detail: "Biausevu Waterfalls are about a 30-minute walk from the village, with nine stream crossings. The entry and guide fee is paid in the village first." },
@@ -4486,7 +4486,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Fiji's garden island, with rainforest waterfalls and the 180th meridian",
     description: "Taveuni is a rainforest island known as Fiji's garden island, crossed by the 180th meridian. Trails lead to the Bouma waterfalls, whose lower fall is over 30 m high, along the Lavena Coastal Walk, and up 1,195 m Des Voeux Peak. Lake Tagimaucia, a crater lake at about 830 m, is where the tagimaucia, Fiji's national flower, grows, and it grows only on Taveuni. Offshore, Rainbow Reef in the Somosomo Strait is a 32 km soft-coral reef with over 30 dive sites.",
     whyVisit: ["Hike to rainforest waterfalls and pools", "Dive soft-coral reefs", "Climb to crater lakes and peaks"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-taveuni-why1.jpg", "ext-dest-taveuni-why2.jpg", "ext-dest-taveuni-why3.jpg"],
     highlights: ["Waterfall walks", "Soft-coral diving", "Peaks and lakes"],
     goodToKnow: [
       { icon: "💵", title: "Carry cash for park fees", detail: "Bouma costs about FJD 50 and the Lavena Coastal Walk about FJD 35, both cash only. Fees have changed over the years, so confirm locally." },
@@ -4503,7 +4503,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Island chain north of the Mamanucas with limestone sea caves and a coral lagoon",
     description: "The Yasawas are an island chain north of the Mamanuca Islands. Sawa-i-Lau has limestone sea caves that visitors swim into, one reached through an underwater passage. Nanuya Lailai has a coral beach known as the Blue Lagoon, near where the 1980 film The Blue Lagoon was shot, and a fish sanctuary to snorkel. Waya Lailai has a peak that visitors climb for sunrise.",
     whyVisit: ["Swim into limestone sea caves", "Snorkel a coral fish sanctuary", "Climb a volcanic peak for sunrise"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-yasawa-islands-why1.jpg", "ext-dest-yasawa-islands-why2.jpg", "ext-dest-yasawa-islands-why3.jpg"],
     highlights: ["Sea caves", "Fish sanctuary", "Sunrise climb"],
     goodToKnow: [
       { icon: "🦇", title: "Caves are a boat trip", detail: "Sawa-i-Lau's caves are reached by boat and swum into, one through an underwater passage." },
@@ -4520,7 +4520,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Fiji's capital, with a national museum, a daily market and rainforest pools nearby",
     description: "Suva is Fiji's national capital and largest city, on Viti Levu. The Fiji Museum in Thurston Gardens holds artefacts about 3,700 years old. The municipal market on Harris Road sells fruit and vegetables from Monday to Saturday. Just north of the centre, Colo-i-Suva Forest Reserve has trails, swimming pools, Waisila Falls and birdlife, and a hill walk above Lami climbs to city and harbour views.",
     whyVisit: ["Explore Fiji's history at its national museum", "Walk rainforest trails to swimming pools", "Browse the daily produce market"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "", "Suva, Fiji 61.jpg"],
     highlights: ["Fiji's past", "Rainforest swims", "Market produce"],
     goodToKnow: [
       { icon: "🥭", title: "Market closed Sundays", detail: "The produce market on Harris Road runs Monday to Saturday, so plan Sunday for something else." },
@@ -4537,7 +4537,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Fiji's first capital, a World Heritage colonial port town on Ovalau island",
     description: "Levuka is a colonial port town on the east coast of Ovalau, Fiji's first capital and a UNESCO World Heritage site. Visitors climb 199 steps from the Methodist church to Mission Hill's old mission houses for a view over the reef and offshore islands, or hike to the peak above town for the outlook across the Koro Sea. The Levuka Community Centre, a restored 1878 trading store, holds a branch of the Fiji Museum and the town museum. Coral cays such as Leleuvia lie about 45 minutes away by boat, and a guided hike reaches Lovoni village inside Ovalau's volcanic crater.",
     whyVisit: ["Explore Fiji's first colonial capital", "Climb above town for reef views", "Snorkel off coral cay beaches"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["BeachStreetLevuka.jpg", "ext-dest-levuka-why2.jpg", "ext-dest-levuka-why3.jpg"],
     highlights: ["World Heritage port", "Reef-view climbs", "Coral cays"],
     goodToKnow: [
       { icon: "🛖", title: "Lovoni is a guided visit", detail: "Lovoni village is reached on a guided hike with a village tour and a Fijian lunch, from about FJD 120 a person for two guests." },
@@ -4554,7 +4554,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Fiji's northern island of yacht anchorages, hot springs and rainforest walks",
     description: "Vanua Levu is a large island in Fiji's north. Savusavu, on its south coast, is the main tourist base, with a yacht club, diving and geothermal hot springs. Waisali Rainforest Reserve, a community-run reserve a 30-minute drive northwest of Savusavu, has walking trails, rare birds and endemic frogs. Labasa, the island's largest town, sits on a river delta in the north and has a large Indo-Fijian community.",
     whyVisit: ["Sail and dive from a harbour town", "Spot rare birds in rainforest", "Soak in geothermal hot springs"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-vanua-levu-why1.jpg", "", "ext-dest-vanua-levu-why3.jpg"],
     highlights: ["Sailing and diving", "Rainforest birds", "Hot springs"],
     goodToKnow: [
       { icon: "🌳", title: "Waisali entry is cheap", detail: "Waisali Rainforest Reserve charges about FJD 3 for adults and FJD 1 for children, and is a 30-minute drive northwest of Savusavu." },
@@ -4570,7 +4570,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Viti Levu's Suncoast, with island diving, sunset beaches and early settlement sites",
     description: "Rakiraki sits on the north coast of Viti Levu, on a strip of land known as the Suncoast. Nananu-i-Ra, a small island reached by boat from Ellington Wharf, has resorts, the One Bay beach and well-known dive sites. On the mainland, the tomb of the 19th-century chief Ratu Udre Udre lies near Vaileka. Navatu Rock stands beside Kings Road in Vitawa village, one of Fiji's oldest settlement sites.",
     whyVisit: ["Dive reefs off a small island", "Relax on rainforest-backed beaches"],
-    whyVisitPhotos: ["", ""],
+    whyVisitPhotos: ["ext-dest-rakiraki-why1.jpg", ""],
     highlights: ["Island diving", "Sunset beaches"],
     goodToKnow: [
       { icon: "⛵", title: "Boat to Nananu-i-Ra", detail: "The island is reached by boat from Ellington Wharf, so plan your transfers around the crossing." },
