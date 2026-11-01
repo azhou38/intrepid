@@ -67,6 +67,14 @@ def set_in(block_name, key, line_val):
     ov = ov[:a] + blk + ov[b:]
 
 
+def drop_no_photo(key):
+    # A place added photoless (apply-destination --allow-no-header, apply-region) is in NO_PHOTO, which the app checks
+    # before any photo: left there, the photo applied here would never show.
+    global ov
+    a = ov.index('export const NO_PHOTO'); b = ov.index(']);', a)
+    ov = ov[:a] + re.sub(r'^  ' + re.escape(jq(key)) + r',\n', '', ov[a:b], flags=re.M) + ov[b:]
+
+
 pending, report = [], {'copyright_risk': [], 'unresolved': [], 'applied': 0}
 for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/judge-2-C*.json'))):   # JUDGE_GLOB limits a run to one region's verdicts
     for r in json.load(open(f)):
@@ -113,6 +121,7 @@ for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/ju
                 new = 'whyVisitPhotos: [' + ', '.join(jq(a) for a in arr) + ']'
                 dest = dest[:m.start()] + re.sub(r'whyVisitPhotos: \[.*?\]', lambda _: new, dest[m.start():m.end()], 1, flags=re.S) + dest[m.end():]
             ext.pop(k, None)   # the new external entry is written by `link`
+            if key: drop_no_photo(k)
             if key and isinstance(hc, dict): set_in('PHOTO_SUBJECT', k, '{ ' + ', '.join(f'{a}: {hc[a]}' for a in ('x', 'y', 'zoom') if hc.get(a) is not None) + ' }')
             if key: ov = re.sub(r'^  ' + re.escape(jq(k)) + r': "[^"]*",\n', '', ov, flags=re.M) if False else ov
         else:
@@ -125,6 +134,7 @@ for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/ju
             else:
                 set_in('WIKI_IMAGE_OVERRIDES', key, jq(fn))
                 ext.pop(key, None)
+                drop_no_photo(key)
                 if isinstance(hc, dict): set_in('PHOTO_SUBJECT', key, '{ ' + ', '.join(f'{a}: {hc[a]}' for a in ('x', 'y', 'zoom') if hc.get(a) is not None) + ' }')
             if r.get('needs_brighten'): report.setdefault('brighten_commons', []).append(key or fn)
         if r.get('copyright_risk'): report['copyright_risk'].append((slot, r.get('page')))
