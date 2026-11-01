@@ -827,6 +827,8 @@ const destGateOn = (tier: string, z: number) => {
 // a data-driven or zoom-interpolated one, which left pins resting half-faded between zooms.) Ordered for collisions:
 // Mapbox places the TOP layer's symbols first, so tiers that switch on at wider zooms sit above later ones and a pin
 // that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
+// The selected country's border highlight fading out when its X is tapped (see highlightClosingFor).
+const HL_FADE = { duration: 200, delay: 0 };
 const DEST_GATE_FADE_MS = 250;
 const DEST_GATE_FADE_OUT_MS = 140;
 // One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
@@ -2489,6 +2491,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // close landed; planning against the target makes the pins reach their final state during the transition. It ends
   // the moment the selection lands on the target or changes to anything else (navTargetStatus), so it can never outlive
   // its close or restore an old selection.
+  // The selected country whose X close was tapped: its border highlight fades out from the tap. Tied to that selection
+  // object, so selecting a country again (a new cluster) shows its highlight normally; no reset needed.
+  const [highlightClosingFor, setHighlightClosingFor] = useState<CountryCluster | null>(null);
   const navTargetRef = useRef<{ from: NavSel; to: NavSel; country: CountryCluster | null; dest: Destination | null } | null>(null);
   if (navTargetRef.current) {
     const now: NavSel = { country: selectedCountry?.countryCode ?? null, dest: selectedDest?.id ?? null, spot: selectedSpot?.id ?? null };
@@ -4756,6 +4761,7 @@ const destItems = useMemo((): DestItem[] =>
     // when the close lands.
     const from: NavSel = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
     navTargetRef.current = { from, to: { country: null, dest: null, spot: null }, country: null, dest: null };
+    if (!selectedSpot && !selectedDest) setHighlightClosingFor(selectedCountryRef.current);
     // The close runs when the sheet's slide has finished (its animation callback, not a timer). Should anything else have
     // been selected meanwhile, it is a stale close: it must not close the new selection.
     const stillFrom = () => sameNavSel(from, {
@@ -5861,6 +5867,9 @@ const destItems = useMemo((): DestItem[] =>
           const grayCenterOutline = !selectedIsVisited && mapType !== 'satellite';
           const outlineColor = grayCenterOutline ? '#6B7280' : lineColor;
           const glowColor = grayCenterOutline ? '#FFFFFF' : lineColor;
+          // 0 once an X close has been tapped on this country (highlightClosingFor): the highlight fades out with the tap,
+          // natively, instead of staying up until the close lands at the end of its slide.
+          const hl = highlightClosingFor === selectedCountry ? 0 : 1;
           return (
             <MapboxGL.VectorSource
               id="countryBoundaries"
@@ -5871,35 +5880,35 @@ const destItems = useMemo((): DestItem[] =>
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ fillColor, fillOpacity }}
+                style={{ fillColor, fillOpacity: fillOpacity * hl, fillOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowOuter"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 14 : 12, lineOpacity: grayCenterOutline ? 0.22 : 0.08 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 14 : 12, lineOpacity: (grayCenterOutline ? 0.22 : 0.08) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowInner"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 7 : 6, lineOpacity: grayCenterOutline ? 0.45 : 0.18 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 7 : 6, lineOpacity: (grayCenterOutline ? 0.45 : 0.18) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryOutlineCasing"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: '#FFFFFF', lineWidth: 3, lineOpacity: grayCenterOutline ? 1 : 0 }}
+                style={{ lineColor: '#FFFFFF', lineWidth: 3, lineOpacity: (grayCenterOutline ? 1 : 0) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryOutline"
                 sourceLayerID="country_boundaries"
                 filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: outlineColor, lineWidth: grayCenterOutline ? 1.2 : 2, lineOpacity: grayCenterOutline ? 1 : 0.7 }}
+                style={{ lineColor: outlineColor, lineWidth: grayCenterOutline ? 1.2 : 2, lineOpacity: (grayCenterOutline ? 1 : 0.7) * hl, lineOpacityTransition: HL_FADE }}
               />
             </MapboxGL.VectorSource>
           );
