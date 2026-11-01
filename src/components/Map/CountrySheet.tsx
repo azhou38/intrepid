@@ -518,19 +518,14 @@ function CountrySheet({
     const fade = interpolate(scrollY.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
-  // The title bar is the top of the sticky header, so it rides up with the tab bar natively and pins with it: only its
-  // opacity follows the scroll. Its white fades in over the tab bar's last 70pt to the top, fully opaque as it pins, and
-  // its title fades in over the last 40pt as the header's own name fades out (see DestinationSheet's compactBarStyle).
+  // The title bar is fixed at the top (COMPACT TITLE BAR) and only fades, in place: opacity alone (no animated height or
+  // position, which update a few frames behind a fast scroll) over the tab bar's last 70pt to the top, fully opaque the
+  // moment it pins under the bar, as the header's own name fades out beneath it.
   const compactBarStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
     const on = interpolate(scrollY.value, [at - 70, at], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
-  });
-  const compactTitleStyle = useAnimatedStyle(() => {
-    const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollY.value, [at - 40, at], [0, 1], Extrapolation.CLAMP);
-    return { opacity: on, transform: [{ translateY: (1 - on) * 6 }] };
   });
 
   const headerAnimStyle = useAnimatedStyle(() => {
@@ -1125,10 +1120,8 @@ function CountrySheet({
                 height so the tab bar still tucks over the header's bottom edge; the bar part stays transparent (and
                 untouchable) until it fades in just before pinning. */}
             <View pointerEvents="box-none" style={{ marginTop: -(COMPACT_BAR_H + TAB_BAR_TUCK), zIndex: 2 }}>
-              {/* ── COMPACT TITLE BAR — transparent until the tab bar nears the top, then fades in and pins with it. */}
-              <Animated.View pointerEvents="none" style={[st.compactBar, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
-                <Animated.Text style={[st.compactBarTitle, compactTitleStyle]} numberOfLines={1}>{cluster.country}</Animated.Text>
-              </Animated.View>
+              {/* Room the title bar (fixed at the top — see COMPACT TITLE BAR) pins over; transparent here. */}
+              <View pointerEvents="none" style={{ height: COMPACT_BAR_H }} />
               {/* White behind the tab bar's rounded top corners once pinned under the bar. */}
               <Animated.View pointerEvents="none" style={[st.tabCornerFill, { top: COMPACT_BAR_H }, compactBarStyle]} />
               {/* ── TAB BAR ──────────────────────────────────────────────── */}
@@ -1249,6 +1242,11 @@ function CountrySheet({
             )}
             </View>
           </ScrollView>
+          {/* ── COMPACT TITLE BAR — fixed at the very top and only fades in place (no movement): in as the tab bar arrives
+              under it and pins, out again as it scrolls back down. */}
+          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
+            <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
+          </Animated.View>
 
 
 
@@ -1344,6 +1342,7 @@ const st = StyleSheet.create({
     backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 60,
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
+  compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
     position: 'absolute', left: 0, right: 0, zIndex: 2,
