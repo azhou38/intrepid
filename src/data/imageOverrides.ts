@@ -780,6 +780,14 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Hummock Hill Lookout": { x: 0.55, y: 0.5, zoom: 1.3 },
   "Ardrossan Red Cliffs": { x: 0.15, y: 0.4, zoom: 1.3 },
   "Edithburgh Jetty": { x: 0.6, y: 0.5 },
+  "ʻEua": { x: 0.8, y: 0.6 },
+  "Haʻaluma Beach": { x: 0.5, y: 0.6, zoom: 1.3 },
+  "Tafahi": { x: 0.5, y: 0.5 },
+  "Tofua": { x: 0.5, y: 0.62, zoom: 1.6 },
+  "Pangaimotu (Tongatapu)": { x: 0.45, y: 0.6, zoom: 1.3 },
+  "Vavaʻu": { x: 0.4, y: 0.5 },
+  "Swallows Cave": { x: 0.4, y: 0.4 },
+  "Mt Talau National Park": { x: 0.5, y: 0.6, zoom: 1.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2466,6 +2474,16 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Second Valley, South Australia": "Second Valley Beach (50074386452).jpg",
   "Myponga Beach, South Australia": "Myponga Beach (50150716207).jpg",
   "Corny Point Lighthouse": "Corny point rainbow.jpg",
+  "ʻEua National Park": "Eua National Park, Tonga.jpg",
+  "Uoleva": "Uoleva island (Tonga).jpg",
+  "Haʻamonga ʻa Maui": "Haʻamonga.jpg",
+  "Hufangalupe": "Hufangalupe TongaTonga.jpg",
+  "Mapu ʻa Vaea": "Blow holes - panoramio.jpg",
+  "Talamahu Market": "Talamahu Market.jpg",
+  "Pangaimotu (Tongatapu)": "Pangaimotu Island, Tonga.jpg",
+  "Neiafu (Vavaʻu)": "Neiafu.jpg",
+  "Swallows Cave": "Swallows Cave on Kapa Island, Vava'u Tonga - panoramio (4).jpg",
+  "Mt Talau National Park": "View back to Neiafu from the top of the hill - panoramio.jpg",
 };
 
 /**
@@ -2949,4 +2967,9 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Vavaʻu",
   "Tongatapu",
   "ʻEua",
+  "Hunga Island",
+  "Pangaimotu (Vavaʻu)",
+  "Niuafoʻou",
+  "Vai Lahi",
+  "Niuatoputapu",
 ]);

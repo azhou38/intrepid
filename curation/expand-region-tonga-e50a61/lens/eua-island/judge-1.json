@@ -1,0 +1,187 @@
+{
+ "dest:eua-island:header": {
+  "candidates": [
+   {
+    "file": "Eua National Park.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Wide ʻEua National Park forest ridge to sea, 3456 px, CC BY-SA 3.0, category ʻEua"
+   },
+   {
+    "file": "ʻEuaFromTheISS(Cropped).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "satellite image"
+   }
+  ],
+  "choice": "Eua National Park.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:eua-island:why1": {
+  "candidates": [
+   {
+    "file": "Eua National Park.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Same file as header: rainforest ridge and sea cliffs, 3456 px CC BY-SA 3.0"
+   }
+  ],
+  "choice": "Eua National Park.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:eua-island:why2": {
+  "candidates": [
+   {
+    "file": "Hufangalupe TongaTonga.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Hufangalupe natural arch on ʻEua (file page: Natural arches, Geography of Tonga), 5184 px CC BY-SA 4.0"
+   },
+   {
+    "file": "Стенд возле пещеры крысиная.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "sign board, not the place"
+   }
+  ],
+  "choice": "none: Hufangalupe is a Tongatapu land bridge, not on ʻEua (orchestrator override); needs a photo of ʻEua itself",
+  "hero_crop": "ok"
+ },
+ "spot:eua-island-1": {
+  "candidates": [
+   {
+    "file": "Eua National Park, Tonga.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "ʻEua National Park view, 1024 px CC BY-SA 2.0, coords in park; header-file alternative"
+   }
+  ],
+  "choice": "Eua National Park, Tonga.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:eua-island-2": {
+  "candidates": [
+   {
+    "file": "https://d2iwhohslm84tu.cloudfront.net/free_activity_images/Rock-Garden-Eua-Lakufaanga-MUST-CREDIT-tongapocketguide.com-.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Official Tonga Tourism Rock Gardens page: limestone pinnacles on clifftop with sea; distinct from Lakufaʻanga cliff photo"
+   },
+   {
+    "file": "https://d2iwhohslm84tu.cloudfront.net/product_images/product_images/Lakufaanga_Rock_Garden_Landscape_Eua_MUST_CREDIT_tong_OUwlUrB.com_.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "web photo, permission unconfirmed; lower on sheet than official"
+   }
+  ],
+  "choice": "https://d2iwhohslm84tu.cloudfront.net/free_activity_images/Rock-Garden-Eua-Lakufaanga-MUST-CREDIT-tongapocketguide.com-.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:eua-island-3": {
+  "candidates": [
+   {
+    "file": "https://d2iwhohslm84tu.cloudfront.net/free_activity_images/Eua-Landscape-Lakufaanga-Cliffs-Bikini-MUST-CREDIT-tongapocketguide.com-1-1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Official Tonga Tourism \"Bowl of Cliffs Lookout\" (Lakufaʻanga) sea cliffs; not the Rock Gardens photo; verify page name equals Lakufaʻanga locally"
+   }
+  ],
+  "choice": "https://d2iwhohslm84tu.cloudfront.net/free_activity_images/Eua-Landscape-Lakufaanga-Cliffs-Bikini-MUST-CREDIT-tongapocketguide.com-1-1.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:eua-island-4": {
+  "candidates": [
+   {
+    "file": "https://geographic.media/wp-content/uploads/to0382-scaled.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Page \"Ovava Giant Fig Tree on Eua Island\": the banyan itself; web photo, permission not confirmed (flag)"
+   },
+   {
+    "file": "https://d2iwhohslm84tu.cloudfront.net/free_activity_images/Big-Ovava-Tree-1-Cave-Tour-Eua-Sitita-MUST-CREDIT-tongapocketguide.com-.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "dark cave with roots, tree not clear"
+   }
+  ],
+  "choice": "https://geographic.media/wp-content/uploads/to0382-scaled.jpg",
+  "hero_crop": "ok",
+  "dark": false
+ },
+ "spot:eua-island-5": {
+  "candidates": [
+   {
+    "file": "Hufangalupe TongaTonga.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Hufangalupe arch, taken as the Liʻangahuo ʻa Maui natural stone bridge (same site, -21.45,-174.90); shared with why2 inside destination; file from why2 candidates. Unconfirmed that names match; official page photo (#2 of slot 5) shows a person in foreground"
+   }
+  ],
+  "choice": "none: Hufangalupe is a Tongatapu land bridge, not on ʻEua (orchestrator override); needs a photo of ʻEua itself",
+  "hero_crop": "ok"
+ },
+ "spot:eua-island-6": {
+  "candidates": [
+   {
+    "file": "https://geographic.media/wp-content/uploads/to0448-1-scaled.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Page \"Haʻaluma Beach on Eua Island\": white beach; web photo, permission not confirmed (flag); sky-heavy crop, acceptable"
+   },
+   {
+    "file": "https://www.tongatourism.travel/library/images/ActivityOperators/TripCarver/Nukunuku-beach-island-Mandatory-credit-to-TongaPocketGuide_com-Feature.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Nuku Island, other place"
+   }
+  ],
+  "choice": "https://geographic.media/wp-content/uploads/to0448-1-scaled.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6,
+   "zoom": 1.3
+  }
+ }
+}

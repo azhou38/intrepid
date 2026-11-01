@@ -1,0 +1,123 @@
+{
+ "spot:niuafoou": {
+  "candidates": [
+   {
+    "file": "https://volcano.si.edu/gallery/photos/GVP-10800.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "same crater-lake view is given to Vai Lahi (neighbour, the lake is the subject); island itself not shown"
+   },
+   {
+    "file": "Tincanmail.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": false,
+    "verdict": "reject",
+    "reason": "postal cover scan, not a photograph"
+   },
+   {
+    "file": "https://www.tongatourism.travel/library/images/OurIslands/Niuas/IMG_3981.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "conical island is Tafahi, not Niuafoʻou"
+   }
+  ],
+  "choice": "none: only usable photo (GVP crater lake) goes to Vai Lahi; others are stamps, maps, Tafahi cone",
+  "hero_crop": null
+ },
+ "spot:vai-lahi": {
+  "candidates": [
+   {
+    "file": "https://volcano.si.edu/gallery/photos/GVP-10800.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "GVP page for Niuafoʻou volcano; shows crater lake in caldera; 1024px, soft but the lake reads"
+   }
+  ],
+  "choice": "https://volcano.si.edu/gallery/photos/GVP-10800.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6,
+   "zoom": 1.3
+  }
+ },
+ "spot:niuatoputapu": {
+  "candidates": [
+   {
+    "file": "https://www.tongatourism.travel/library/images/OurIslands/Niuas/IMG_3971.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "jetty road, not identified as Niuatoputapu; weak subject"
+   },
+   {
+    "file": "ISS007-E-14931 - View of Tonga.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": false,
+    "verdict": "reject",
+    "reason": "satellite/orbital"
+   },
+   {
+    "file": "https://www.noxoma.com/wp-content/uploads/2025/09/335313e3-b9a0-4394-9ea1-a791679d1cfd-1024x768.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Tafahi cone seen from sea, not the island itself"
+   }
+  ],
+  "choice": "none: only orbital images, Tafahi views or ambiguous jetty/people shots; searcher to try beach/lagoon scenes",
+  "hero_crop": null
+ },
+ "spot:tafahi": {
+  "candidates": [
+   {
+    "file": "https://volcano.si.edu/gallery/photos/GVP-10796.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "GVP page for Tafahi volcano; conical island centred, 1024px, colour photo"
+   },
+   {
+    "file": "https://live.staticflickr.com/183/381963388_f5dbed2faf_b.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass-lower",
+    "reason": "titled Tafahi but licence unknown, equal tier"
+   },
+   {
+    "file": "https://national-parks.org/wp-content/uploads/2026/06/Kao-National-Park-.png",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Kao, another island"
+   }
+  ],
+  "choice": "https://volcano.si.edu/gallery/photos/GVP-10796.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ }
+}

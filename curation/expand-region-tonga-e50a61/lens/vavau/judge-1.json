@@ -1,0 +1,263 @@
+{
+ "dest:vavau:header": {
+  "candidates": [
+   {
+    "file": "Leaving Vava'u airport, flying down east side of Vava'u, Tonga - panoramio (8).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aerial; under 2000px"
+   },
+   {
+    "file": "https://www.tongatourism.travel/our-islands/vavau",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official Tonga Tourism Vavau page: wooded limestone island with sea cave over deep blue water, catamaran beside; 1920px passes 1500 floor"
+   }
+  ],
+  "choice": "https://www.tongatourism.travel/our-islands/vavau",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "dest:vavau:why1": {
+  "candidates": [
+   {
+    "file": "https://humpbackswims.com/",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "humpback mother and calf with swimmer, 2560px, operator site (permission not confirmed)"
+   },
+   {
+    "file": "https://www.blueseafaris.com/adventures/humpbacks-in-tonga",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "also fine but one whale only"
+   }
+  ],
+  "choice": "https://humpbackswims.com/",
+  "hero_crop": "ok"
+ },
+ "dest:vavau:why2": {
+  "candidates": [
+   {
+    "file": "https://www.fit2sail.com/countdown-to-cruising/2026/9/21/vavau-group-tonga",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "yacht at anchor off a wooded Vavau island at sunset, 2500px (fit2sail Vavau Group page)"
+   },
+   {
+    "file": "https://www.tongatourism.travel/tonga-stories/post/the-return-of-the-vavau-sailing-festival-back-on-the-horizon-for-2026",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": false,
+    "verdict": "reject",
+    "reason": "festival logo overlay"
+   }
+  ],
+  "choice": "https://www.fit2sail.com/countdown-to-cruising/2026/9/21/vavau-group-tonga",
+  "hero_crop": "ok",
+  "dark": false
+ },
+ "dest:vavau:why3": {
+  "candidates": [
+   {
+    "file": "https://www.tongatourism.travel/our-islands/vavau",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official Tonga Tourism Vavau page: snorkeller in a sea cave, 1619px; dark by nature"
+   },
+   {
+    "file": "https://www.tongatourism.travel/see-and-do/diving-and-snorkelling",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "official but page is Tonga-wide diving"
+   }
+  ],
+  "choice": "https://www.tongatourism.travel/our-islands/vavau",
+  "hero_crop": "ok",
+  "dark": true
+ },
+ "dest:vavau:why4": {
+  "candidates": [
+   {
+    "file": "https://www.kiwimagictonga.com/",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "marlin beside Kiwi Magic charter boat (Vavau operator), 3168px; fish is the subject of the reason"
+   }
+  ],
+  "choice": "https://www.kiwimagictonga.com/",
+  "hero_crop": "ok"
+ },
+ "spot:vavau-1": {
+  "candidates": [
+   {
+    "file": "Neiafu.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Neiafu town and harbour from the lookout, Wikipedia lead, CC BY-SA 3.0"
+   }
+  ],
+  "choice": "Neiafu.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:vavau-2": {
+  "candidates": [
+   {
+    "file": "https://www.tongatourism.travel/see-and-do/mariners-cave",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official Tonga Tourism Mariners Cave page: swimmer in the cave opening, 990px"
+   },
+   {
+    "file": "https://www.bumfuzzle.com/mariners-cave/",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "2200px but web photo"
+   }
+  ],
+  "choice": "https://www.tongatourism.travel/see-and-do/mariners-cave",
+  "hero_crop": "ok",
+  "dark": false
+ },
+ "spot:vavau-3": {
+  "candidates": [],
+  "choice": "skip: proven by script",
+  "hero_crop": null
+ },
+ "spot:vavau-4": {
+  "candidates": [
+   {
+    "file": "https://www.bbc.com/news/world-asia-47153797",
+    "right_place": false,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Hunga Tonga volcano, a different place"
+   }
+  ],
+  "choice": "none: candidates are real-estate ads, Hunga Tonga volcano or a person; no clear Hunga Island (Vavau) photo",
+  "hero_crop": null
+ },
+ "spot:vavau-5": {
+  "candidates": [
+   {
+    "file": "Pangaimotu Island, Tonga.jpg",
+    "right_place": false,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Pangaimotu off Tongatapu, not Vavau"
+   },
+   {
+    "file": "https://tongapocketguide.com/the-adult-only-guide-to-vavau",
+    "right_place": false,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "unproven location"
+   }
+  ],
+  "choice": "none: Commons Pangaimotu files are the Tongatapu island; no proven Vavau Pangaimotu photo",
+  "hero_crop": null
+ },
+ "spot:vavau-6": {
+  "candidates": [
+   {
+    "file": "View back to Neiafu from the top of the hill - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "view over Neiafu and Vaipua harbour from the top of Mt Talau (geo 45 m), overcast, CC BY 3.0"
+   },
+   {
+    "file": "https://www.tongatourism.travel/see-and-do/mt-talau",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "official but a woman is the focus"
+   }
+  ],
+  "choice": "View back to Neiafu from the top of the hill - panoramio.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6,
+   "zoom": 1.4
+  }
+ },
+ "spot:vavau-7": {
+  "candidates": [
+   {
+    "file": "https://book.tongapocketguide.com/eneio-botanical-garden",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "visitors on a path in Eneio Botanical Garden (tongapocketguide booking page), 1200px, permission not confirmed"
+   },
+   {
+    "file": "Eneio Beach.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Eneio Beach, not the garden"
+   },
+   {
+    "file": "Allerton Garden, Kauai, Hawaii - view into valley.JPG",
+    "right_place": false,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Kauai garden"
+   }
+  ],
+  "choice": "https://book.tongapocketguide.com/eneio-botanical-garden",
+  "hero_crop": "ok"
+ }
+}

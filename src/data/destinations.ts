@@ -4385,7 +4385,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "More than 50 islands of calm anchorages, coral gardens and humpback calves",
     description: "Vavaʻu is a raised-limestone and coral archipelago about 250 km north of Tongatapu, with the harbour town of Neiafu on ʻUtu Vavaʻu. A string of islands and reefs along the eastern edge protects the waters, and humpback whales give birth here. About 500 yachts visit each winter sailing season, drawn by hidden coves and beaches. Swallows Cave and Mariner's Cave suit snorkellers and divers, Mt Talau has a short trail with harbour views, and the group is a major producer of high-quality vanilla.",
     whyVisit: ["Swim with humpback mothers and calves", "Sail between sheltered island anchorages", "Snorkel coral gardens and sea caves", "Fish for marlin and sailfish"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["ext-dest-vavau-why1.jpg", "ext-dest-vavau-why2.jpg", "ext-dest-vavau-why3.jpg", "ext-dest-vavau-why4.jpg"],
     highlights: ["Whale swims", "Island sailing", "Coral and caves", "Game fishing"],
     goodToKnow: [
       { icon: "🐋", title: "Book licensed whale operators", detail: "Use only licensed operators. July to October is busiest, so book tours and rooms well ahead." },
@@ -4402,7 +4402,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Nukuʻalofa, royal tombs and a rugged south coast on Tonga's main island",
     description: "The main island of Tonga, Tongatapu is a low coral-limestone island of about 260 km2 with the capital, Nukuʻalofa, on its north shore. Visitors come for the ancient royal sites: the Haʻamonga ʻa Maui trilithon and the langi tombs of the Tuʻi Tonga kings at Muʻa. The rugged south coast adds the Mapu ʻa Vaea blowholes and the Hufangalupe land bridge. A central market and Sunday church singing show everyday Tongan culture.",
     whyVisit: ["Explore ancient royal tombs and monuments", "Watch blowholes spout along the south coast", "Explore sea arches and cave pools"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Haʻamonga.jpg", "ext-dest-tongatapu-why2.jpg", "Hufangalupe TongaTonga.jpg"],
     highlights: ["Royal heritage", "Coastal blowholes", "Arches and caves"],
     goodToKnow: [
       { icon: "⛪", title: "Sunday is a rest day", detail: "Almost all shops and services close on Sunday, so book Sunday food with your hotel, especially if you arrive on Saturday." },
@@ -4419,7 +4419,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Cliffs, caves and rainforest trails on Tonga's oldest island, south of Tongatapu",
     description: "ʻEua is a hilly, non-volcanic island of 87 km2, Tonga's oldest geologically, rising to 312 m. ʻEua National Park, Tonga's only forest national park, has marked trails and the Big Ovava Tree, said to be over 800 years old. Lookouts such as Lakufaʻanga Cliff and the Liʻangahuo ʻa Maui stone bridge sit along the coast, and birdwatchers look for the rare red shining parrot. The seven-minute flight from Tongatapu is one of the world's shortest commercial flights.",
     whyVisit: ["Hike rainforest trails and sea cliffs", "Explore caves and natural stone bridges"],
-    whyVisitPhotos: ["", ""],
+    whyVisitPhotos: ["ext-dest-eua-island-why1.jpg", "ext-dest-eua-island-why2.jpg"],
     highlights: ["Rainforest hiking", "Caves and cliffs"],
     goodToKnow: [
       { icon: "✈️", title: "Flight or ferry", detail: "The short Lulutai flight from Tongatapu takes about seven minutes. The ferry from Nukuʻalofa takes 2.5 to 3 hours, so check the schedule." },
