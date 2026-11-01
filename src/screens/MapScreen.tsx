@@ -2496,6 +2496,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // The selected country whose X close was tapped: its border highlight fades out from the tap. Tied to that selection
   // object, so selecting a country again (a new cluster) shows its highlight normally; no reset needed.
   const [highlightClosingFor, setHighlightClosingFor] = useState<CountryCluster | null>(null);
+  // "← Country": the country sheet the back tap shows at once, in a light render of its own, before the selection change
+  // (a heavy render: every selection-dependent plan, pill and layer) lands a moment later with the same country. While set,
+  // the sheets read it in place of the selection (effCountry and friends below); cleared in the same render the selection
+  // lands in, which then reads the same, so the sheet is neither remounted nor moved.
+  const [sheetOverride, setSheetOverride] = useState<{ cluster: CountryCluster } | null>(null);
   const navTargetRef = useRef<{ from: NavSel; to: NavSel; country: CountryCluster | null; dest: Destination | null } | null>(null);
   if (navTargetRef.current) {
     const now: NavSel = { country: selectedCountry?.countryCode ?? null, dest: selectedDest?.id ?? null, spot: selectedSpot?.id ?? null };
@@ -4481,8 +4486,25 @@ const destItems = useMemo((): DestItem[] =>
     // pin layer gates natively by zoom (constant min zooms, see spotGatesOff / planTier), so they leave as the zoom passes
     // their gates; the country's plan lands with the render. (It used to wait for the swap because the pins were on-screen
     // markers, which piled up under a camera that moved before they were re-planned.)
-    handleCountryPress(cluster, 'flyTo');
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting]);
+    //
+    // Two renders. This tap's (light): the country sheet mounts (sheetOverride), the pins plan for the country at its view
+    // (navTarget with the same cluster, and the target zoom above), and the camera starts. The selection change (heavy)
+    // follows in the next task: it lands with the sheet already up and the pins already in their final plan, and its plan
+    // inputs are identical (the same cluster object), so nothing re-plans. In one render, the sheet appeared ~0.4 s after
+    // the old one had slid away (a blank gap), and the zoom ran over the old plan's pins, which left by their gates and
+    // came back when the plan landed.
+    const from: NavSel = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
+    navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
+    setSheetOverride({ cluster });
+    fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
+    setTimeout(() => {
+      setSheetOverride(null);
+      // Only if nothing else was selected in between (a stale back must not undo a newer selection).
+      if (sameNavSel(from, { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null })) {
+        handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
+      }
+    }, 0);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
@@ -4614,6 +4636,7 @@ const destItems = useMemo((): DestItem[] =>
     cluster: CountryCluster,
     cameraMode: 'easeTo' | 'flyTo' = 'easeTo',
     openPeeked = false,
+    opts?: { cameraStarted?: boolean },   // "← Country" started this move at the tap (see handleCloseDestinationSheetToCountry)
   ) => {
     lastCountryPressRef.current = Date.now();
     selectedCountryRef.current = cluster;
@@ -4635,7 +4658,7 @@ const destItems = useMemo((): DestItem[] =>
     setCountryInitialSnap(openPeeked ? 'peek' : undefined);
     setSheetSnapState(openPeeked || isFingerDraggingMap() ? 'peek' : 'collapsed');
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
+    if (!opts?.cameraStarted) fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for CountrySheet to mount and run its own
     // effect a render cycle later — same top-destination lookup CountrySheet uses for its
@@ -5581,10 +5604,14 @@ const destItems = useMemo((): DestItem[] =>
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
   // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
   // render that mounts the new sheet.
+  // The selection as the SHEETS see it: the back tap's country sheet (sheetOverride) until its selection change lands.
+  const effCountry = sheetOverride ? sheetOverride.cluster : selectedCountry;
+  const effDest = sheetOverride ? null : selectedDest;
+  const effSpot = sheetOverride ? null : selectedSpot;
   const sheetKind: 'country' | 'dest' | 'spot' | null =
-    selectedSpot && spotFocusId ? 'spot'
-    : mapState !== 'world' && selectedDest && !selectedSpot ? 'dest'
-    : selectedCountry && !selectedDest && !selectedSpot ? 'country'
+    effSpot && spotFocusId ? 'spot'
+    : mapState !== 'world' && effDest && !effSpot ? 'dest'
+    : effCountry && !effDest && !effSpot ? 'country'
     : null;
   sheetKindRef.current = sheetKind;
   // ── Sheet swaps ──────────────────────────────────────────────────────────────────────────────────────────
@@ -5596,7 +5623,7 @@ const destItems = useMemo((): DestItem[] =>
   // Not animated — the sheets just swap in place, as before — when the old sheet had no resting pose (full screen, or
   // already exiting) or the user is mid map gesture (the sheets stay peeked out of the way then).
   type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null; liveKey?: number; nearLabel?: string; nearEyebrow?: 'SPOTS' | 'NEAR' };
-  const sheetIdentity = sheetKind === 'country' ? `country:${selectedCountry?.countryCode}`
+  const sheetIdentity = sheetKind === 'country' ? `country:${effCountry?.countryCode}`
     : sheetKind === 'dest' ? `dest:${selectedDest?.id}`
     : sheetKind === 'spot' ? `spot:${nearCtx ? nearCtx.anchor.id : selectedSpot?.destinationId ?? selectedSpot?.id}` : null;
   const shownSnapRef = useRef<SheetSnap | null>(null);
@@ -5618,7 +5645,7 @@ const destItems = useMemo((): DestItem[] =>
   }
   if (sheetKind && sheetIdentity) {
     shownSnapRef.current = {
-      identity: sheetIdentity, kind: sheetKind, cluster: selectedCountry,
+      identity: sheetIdentity, kind: sheetKind, cluster: effCountry,
       // A spot sheet's destination is the SPOT's own (none when standalone), not whatever happens to be selected.
       dest: sheetKind === 'spot' && selectedSpot ? (nearCtx ? null : spotDestination(selectedSpot) ?? null) : selectedDest,
       spots: sheetKind === 'spot' ? carouselSpots : [], focusId: spotFocusId,
@@ -5639,7 +5666,7 @@ const destItems = useMemo((): DestItem[] =>
   // replaced by a spot's or a country's (no destination sheet takes its place), the mounted sheet slides itself off
   // instead of being dropped and re-mounted as an outgoing copy (a second destination sheet mount, ~100 ms, in the
   // busiest commit of the swap). Same element position and key, so React keeps the instance.
-  const liveDestSheet = mapState !== 'world' && !!selectedDest && !selectedSpot && !destAfterCamera;
+  const liveDestSheet = mapState !== 'world' && !!effDest && !effSpot && !destAfterCamera;
   // One-shot: clear the destination sheet's mount hints (see their declaration) once it has mounted with them, so a later,
   // unrelated mount doesn't inherit them. NOT right after they are set: when the camera has to zoom out first the sheet is
   // held back (destAfterCamera), and clearing them at once had it mount later with no hint, opening to half-screen instead
@@ -6360,10 +6387,10 @@ const destItems = useMemo((): DestItem[] =>
       )}
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
-      {selectedCountry && !selectedDest && !selectedSpot && (
+      {effCountry && !effDest && !effSpot && (
         <CountrySheet
           key={`country-${sheetSwapKey}`}
-          cluster={selectedCountry}
+          cluster={effCountry}
           onClose={handleCloseCountry}
           onSelectDestination={handleMarkerPress}
           onExpand={handleSheetExpand}
