@@ -14,6 +14,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
+import { withSheetSettle } from './sheetSettle';
+import { requestShadowSync } from '../../utils/shadowSync';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
 // plain core ScrollView's native pan silently claims every touch first regardless of that
@@ -458,6 +460,14 @@ function CountrySheet({
     setSnapStateReact(state);
     onSnapStateChange?.(state);
   }, [onSnapStateChange]);
+  // A drag's snap, reported to React once the sheet has landed — see transitionTo.
+  const pendingReportRef = useRef<(() => void) | null>(null);
+  const flushSnapReport = useCallback(() => {
+    const report = pendingReportRef.current;
+    pendingReportRef.current = null;
+    report?.();
+    requestShadowSync();   // the settle skipped the shadow tree: see shadowSync.tsx
+  }, []);
   const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(
     resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y,
@@ -687,14 +697,24 @@ function CountrySheet({
     if (next === 'full') revealPanels();
     snapStateSV.value = next;
     lastPos.value = target;
-    // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
-    if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.();
     sheetPose.set(next === 'full' ? null : target);
+    // The React side of a snap (this sheet's re-render, and MapScreen's for its map state) commits on the UI thread, and
+    // one landing in the middle of the settle froze it for a few frames (DestinationSheet's transitionTo, same fix).
+    // After a drag ('userUI') it waits for the sheet to land (flushSnapReport, from the settle's end), except MapScreen's
+    // half-screen <-> peek report, which starts the map's recentring shift alongside the sheet and stays immediate.
+    pendingReportRef.current = null;
+    // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
+    const reportParent = () => { if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.(); };
+    if (reason !== 'userUI') { reportParent(); reportSnapState(next); }
+    else if (prev === 'full' || next === 'full') pendingReportRef.current = () => { reportParent(); reportSnapState(next); };
+    else {
+      onSnapStateChange?.(next);
+      pendingReportRef.current = () => { setSnapStateReact(next); reportParent(); };
+    }
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
     if (reason === 'mount') {
       slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) runOnJS(revealPanels)(); });
     } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
-    reportSnapState(next);
   };
 
   // Slide in on mount — collapsed (half-screen) by default whenever a country is selected, unless initialSnap
@@ -835,6 +855,22 @@ function CountrySheet({
   // for that scroll gesture purely off its raw translation/velocity (identical reasoning,
   // and identical fix, to DestinationSheet's).
   const dragEngagedSV = useSharedValue(false);
+  // The sheet's own recent positions while dragged ([time, y, ...], newest last), for the speed it is let go at.
+  const dragTrailSV = useSharedValue<number[]>([]);
+  // How fast the sheet itself was moving over the last ~50 ms of the drag, in pt/s (DestinationSheet's releaseVelocity:
+  // the gesture's own velocityY overstates it, a finger slows before it lifts).
+  const releaseVelocity = () => {
+    'worklet';
+    const a = dragTrailSV.value;
+    const n = a.length / 2;
+    if (n < 2) return 0;
+    const t1 = a[(n - 1) * 2], y1 = a[(n - 1) * 2 + 1];
+    if (Date.now() - t1 > 60) return 0;   // held still before letting go
+    let i = n - 2;
+    while (i > 0 && t1 - a[i * 2] < 50) i--;
+    const dt = t1 - a[i * 2];
+    return dt > 0 ? ((y1 - a[i * 2 + 1]) / dt) * 1000 : 0;
+  };
 
   // Runs entirely on the UI thread — onUpdate fires every touch-move frame with zero
   // JS-thread/bridge round trip, which is what actually eliminates the drag jank (merely
@@ -844,12 +880,14 @@ function CountrySheet({
   // Starts the snap animation inside the gesture worklet, on the UI thread, the same frame the finger lifts; the JS
   // bookkeeping (transitionTo, reason 'userUI') follows through runOnJS but no longer gates the motion. Waiting on the
   // JS thread here was the pause after release: while one of these sheets is open the JS thread is busy with the map.
-  const snapUI = (next: CountrySnapState) => {
+  // The settle carries on at the speed the sheet was moving when let go (releaseVelocity), as DestinationSheet's does:
+  // a timing curve restarted from rest at release read as a hitch, then a lurch.
+  const snapUI = (next: CountrySnapState, velocity = 0) => {
     'worklet';
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYAnim.value;
     snapStateSV.value = next;
     lastPos.value = target;
-    slideAnim.value = withTiming(target, SNAP_CONFIG);
+    slideAnim.value = withSheetSettle(target, velocity, finished => { if (finished) runOnJS(flushSnapReport)(); });
   };
   // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
   const peekFromMapGesture = useCallback(() => {
@@ -877,6 +915,7 @@ function CountrySheet({
     .failOffsetX([-10, 10])
     .onStart(() => {
       dragEngagedSV.value = false;
+      dragTrailSV.value = [];
       lastPos.value = slideAnim.value;
     })
     .onUpdate(e => {
@@ -906,27 +945,35 @@ function CountrySheet({
       } else {
         slideAnim.value = Math.max(FULL_POS, Math.min(collapsedYAnim.value, raw));
       }
+      const now = Date.now(), y = slideAnim.value;
+      dragTrailSV.modify(a => {
+        'worklet';
+        a.push(now, y);
+        if (a.length > 24) a.splice(0, a.length - 24);
+        return a;
+      });
     })
     .onEnd(e => {
       if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) { runOnJS(callSnapBack)(); return; }
       const pos = lastPos.value + e.translationY;
+      const v = releaseVelocity();
       const cy  = collapsedYAnim.value;
 
       if (snapStateSV.value === 'peek') {
         // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
         // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
-        if (pos <= cy) { (snapUI('full'), runOnJS(callSnapToFullUI)()); return; }
-        if (e.velocityY < -500 || pos < PEEK_Y - 60) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
-        else (snapUI('peek'), runOnJS(callSnapToPeekUI)());
+        if (pos <= cy) { (snapUI('full', v), runOnJS(callSnapToFullUI)()); return; }
+        if (e.velocityY < -500 || pos < PEEK_Y - 60) (snapUI('collapsed', v), runOnJS(callSnapToCollapsedUI)());
+        else (snapUI('peek', v), runOnJS(callSnapToPeekUI)());
         return;
       }
 
       if (snapStateSV.value === 'collapsed') {
         // Swiping up from collapsed goes straight to full-screen; swiping down now drops to
         // peek instead of dismissing; anything smaller settles back at collapsed.
-        if (e.velocityY < -500 || pos < cy - 60) (snapUI('full'), runOnJS(callSnapToFullUI)());
-        else if (e.velocityY > 500 || pos > cy + 40) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
-        else (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
+        if (e.velocityY < -500 || pos < cy - 60) (snapUI('full', v), runOnJS(callSnapToFullUI)());
+        else if (e.velocityY > 500 || pos > cy + 40) (snapUI('peek', v), runOnJS(callSnapToPeekUI)());
+        else (snapUI('collapsed', v), runOnJS(callSnapToCollapsedUI)());
         return;
       }
 
@@ -934,9 +981,9 @@ function CountrySheet({
       // shouldn't change the sheet's snap state at all — leave it exactly at full.
       if (!dragEngagedSV.value) return;
       // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
-      if (pos >= cy) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
-      else if (e.velocityY > 500 || pos > H * 0.25) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
-      else (snapUI('full'), runOnJS(callSnapToFullUI)());
+      if (pos >= cy) (snapUI('peek', v), runOnJS(callSnapToPeekUI)());
+      else if (e.velocityY > 500 || pos > H * 0.25) (snapUI('collapsed', v), runOnJS(callSnapToCollapsedUI)());
+      else (snapUI('full', v), runOnJS(callSnapToFullUI)());
     })
     // Without this, the inner ScrollView's own native pan claims the touch outright while
     // full-screen, so our gesture never even starts recognizing — letting both recognize
