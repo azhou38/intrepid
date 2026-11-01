@@ -506,6 +506,7 @@ function CountrySheet({
   // Spotify-style header (see the fixed HEADER PHOTO layer): the photo dims as content covers it, the header text fades
   // as it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
   const COMPACT_BAR_H = insets.top + 48;
+  const COMPACT_FADE_PT = 70;   // how far below its pinned spot the tab bar is when the title bar starts fading in
   const headerNameYSV = useSharedValue(insets.top + 80);
   const headerDimStyle = useAnimatedStyle(() => ({
     opacity: interpolate(scrollY.value, [0, fullHeaderH * 0.85], [0, 0.55], Extrapolation.CLAMP),
@@ -523,9 +524,17 @@ function CountrySheet({
   // moment it pins under the bar, as the header's own name fades out beneath it.
   const compactBarStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollY.value, [at - 70, at], [0, 1], Extrapolation.CLAMP);
+    const on = interpolate(scrollY.value, [at - COMPACT_FADE_PT, at], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
+  });
+  // The bar's white reaches down to the tab bar's top edge the whole time it is fading in, so no photo shows between them:
+  // a backing COMPACT_FADE_PT taller than the bar, slid up by a transform (not a height, which lags a fast scroll) so its
+  // bottom edge stays on the tab bar until the bar pins.
+  const compactBarBackingStyle = useAnimatedStyle(() => {
+    const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
+    const gap = Math.min(COMPACT_FADE_PT, Math.max(0, at - scrollY.value));
+    return { transform: [{ translateY: gap - COMPACT_FADE_PT }] };
   });
 
   const headerAnimStyle = useAnimatedStyle(() => {
@@ -1245,6 +1254,7 @@ function CountrySheet({
           {/* ── COMPACT TITLE BAR — fixed at the very top and only fades in place (no movement): in as the tab bar arrives
               under it and pins, out again as it scrolls back down. */}
           <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
+            <Animated.View style={[st.compactBarBacking, { height: COMPACT_BAR_H + COMPACT_FADE_PT }, compactBarBackingStyle]} />
             <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
           </Animated.View>
 
@@ -1339,9 +1349,10 @@ const st = StyleSheet.create({
   // ── Header ──────────────────────────────────────────────────────────────────
   headerBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, height: HEADER_H, overflow: 'hidden', backgroundColor: '#111827' },
   compactBar: {
-    backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 60,
+    alignItems: 'center', paddingHorizontal: 60,
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
+  compactBarBacking: { position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: 'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
