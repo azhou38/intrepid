@@ -50,6 +50,7 @@ COUNTRY_DEFAULTS = {
     'NZ': {'country': 'New Zealand', 'countryCode': 'NZ', 'continent': 'Oceania', 'timezone': 'Pacific/Auckland', 'currency': 'NZD'},
     'AU': {'country': 'Australia', 'countryCode': 'AU', 'continent': 'Oceania', 'timezone': 'Australia/Sydney', 'currency': 'AUD'},
     'PG': {'country': 'Papua New Guinea', 'countryCode': 'PG', 'continent': 'Oceania', 'timezone': 'Pacific/Port_Moresby', 'currency': 'PGK'},
+    'TO': {'country': 'Tonga', 'countryCode': 'TO', 'continent': 'Oceania', 'timezone': 'Pacific/Tongatapu', 'currency': 'TOP'},
 }
 if region_cc not in COUNTRY_DEFAULTS:
     sys.exit(f'no COUNTRY_DEFAULTS for {region_cc}: add its country, continent, timezone and currency to apply-region.py')
