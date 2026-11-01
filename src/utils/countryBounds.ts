@@ -10,6 +10,7 @@ const BOUNDS: Record<string, [number, number, number, number]> = {
   DK: [ 54.5,  57.8,   8.0,  15.2],
   ES: [ 35.2,  43.8,  -9.3,   4.3],
   FI: [ 59.8,  70.1,  19.1,  31.6],
+  FJ: [-21.1, -12.4, 176.8, 180.0], // main islands west of the antimeridian; Lau and eastern Taveuni lie beyond it
   FR: [ 41.3,  51.1,  -5.1,   9.6],
   GB: [ 49.9,  61.1,  -8.6,   1.8],
   GR: [ 34.8,  41.8,  19.3,  29.6],
@@ -33,7 +34,7 @@ const BOUNDS: Record<string, [number, number, number, number]> = {
 // ranking, just a reasonable approximation of global tourist-arrival prominence.
 const POPULARITY: Record<string, number> = {
   FR: 1, ES: 2, IT: 3, US: 4, GB: 5, DE: 6, JP: 7, GR: 8, AT: 9, NL: 10,
-  PT: 11, CH: 12, CZ: 13, IE: 14, IS: 15, AU: 16, BE: 17, DK: 18, SE: 19, NO: 20, FI: 21, NZ: 22, PG: 23, TO: 24,
+  PT: 11, CH: 12, CZ: 13, IE: 14, IS: 15, AU: 16, BE: 17, DK: 18, SE: 19, NO: 20, FI: 21, NZ: 22, PG: 23, TO: 24, FJ: 25,
 };
 
 /** Lower = more famous/higher display priority. Unknown countries sort last. */
@@ -55,6 +56,7 @@ export interface CountryRegion {
 // central England reads better). Countries not listed have well-behaved box centres.
 const LABEL_POINTS: Record<string, [number, number]> = {
   DK: [56.0, 9.3],    // central Jutland
+  FJ: [-17.8, 178.0], // between Viti Levu and Vanua Levu (the box centre falls in open sea)
   GB: [52.9, -1.5],   // English midlands
   GR: [39.4, 22.0],   // Thessaly (mainland)
   JP: [36.4, 138.5],  // central Honshu

@@ -175,6 +175,7 @@ const COUNTRY_FACTS: Record<string, { population: string; languages: string[]; c
   NZ: { population: '5.3 million',  languages: ['English', 'Māori', 'NZ Sign Language'],         currency: 'New Zealand Dollar', area: '268,021 km²',   capital: 'Wellington' },
   PG: { population: '10.3 million', languages: ['English', 'Tok Pisin', 'Hiri Motu'],            currency: 'Papua New Guinean Kina', area: '462,840 km²', capital: 'Port Moresby' },
   TO: { population: '100 thousand', languages: ['Tongan', 'English'],                          currency: 'Tongan Paʻanga',     area: '747 km²',       capital: 'Nukuʻalofa' },
+  FJ: { population: '930 thousand', languages: ['English', 'Fijian', 'Fiji Hindi'],        currency: 'Fijian Dollar',      area: '18,274 km²',    capital: 'Suva' },
 };
 
 type CountryTab = 'visit' | 'about' | 'destinations';
