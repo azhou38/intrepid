@@ -4,6 +4,7 @@ import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions,
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, interpolate as rInterpolate, Extrapolation as RExtrapolation } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
+import { PILL_OWNER, pillOwnerFor, navTargetStatus, sameNavSel, type NavSel } from '../utils/navTransitions';
 import MapboxGL from '@rnmapbox/maps';
 
 // Public (pk.) token — Mapbox's own public tokens are designed to ship in client bundles
@@ -826,6 +827,10 @@ const destGateOn = (tier: string, z: number) => {
 // a data-driven or zoom-interpolated one, which left pins resting half-faded between zooms.) Ordered for collisions:
 // Mapbox places the TOP layer's symbols first, so tiers that switch on at wider zooms sit above later ones and a pin
 // that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
+// A destination pin tier that no layer draws: where a back or close plan puts the pins its target view does not show.
+const DEST_TIER_UNDRAWN = 'undrawn';
+// The selected country's border highlight fading out when its X is tapped (see highlightClosingFor).
+const HL_FADE = { duration: 200, delay: 0 };
 const DEST_GATE_FADE_MS = 250;
 const DEST_GATE_FADE_OUT_MS = 140;
 // One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
@@ -1343,6 +1348,26 @@ function useStableList<T>(next: T[], key: (t: T) => string): T[] {
   return ref.current.list;
 }
 
+// planDestPhotos results by selection context (country, destination, spot). The plan is a pure function of those and the
+// visits, and costs tens of milliseconds on the JS thread with a few hundred destinations. A back or X close lands on a
+// context planned before (the world view's is the base plan, always cached) or prewarmed while its sheet was open (see
+// the prewarm in MapScreen), so the close's render looks its plan up instead of computing it while the camera moves.
+// Cleared whenever the visits change, since the plan reads them.
+const DEST_PLAN_CACHE = new Map<string, ReturnType<typeof planDestPhotos>>();
+let destPlanCacheVisits: unknown = null;
+function cachedDestPlan(planCountry: { countryCode: string } | null, planDest: Destination | null, planSpot: Spot | null,
+                        visits: { isDestVisited: (id: string) => boolean }) {
+  if (destPlanCacheVisits !== visits) { DEST_PLAN_CACHE.clear(); destPlanCacheVisits = visits; }
+  const key = `${planCountry?.countryCode ?? ''}|${planDest?.id ?? ''}|${planSpot?.id ?? ''}`;
+  let plan = DEST_PLAN_CACHE.get(key);
+  if (!plan) {
+    plan = planDestPhotos(planCountry, planDest, planSpot, id => visits.isDestVisited(id));
+    DEST_PLAN_CACHE.set(key, plan);
+    if (DEST_PLAN_CACHE.size > 16) DEST_PLAN_CACHE.delete(DEST_PLAN_CACHE.keys().next().value!);
+  }
+  return plan;
+}
+
 // The destination photo plan (see destPhotoPlan in MapScreen): a pure function of the selection context and visits.
 function planDestPhotos(planCountry: { countryCode: string } | null, planDest: Destination | null, selectedSpot: Spot | null, isDestVisited: (id: string) => boolean) {
   const ladder = destLadder();
@@ -1705,7 +1730,16 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const pillShownSV = useSharedValue(1);
   // Its height above the bottom as a transform from bottom: 0 (a `bottom` animated every frame of a sheet drag is a layout
   // change, which re-lays-out the screen on the UI thread each frame).
-  const upPillWrapStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -upPillBottomSV.value }], opacity: pillShownSV.value }));
+  // Which mounted sheet writes upPillBottomSV / upPillFullSV (navTransitions → pillOwnerFor; set below, next to the sheet
+  // swap). During a swap that is the sheet sliding off, so the pills ride down with the sheet the user is looking at;
+  // when it has gone, ownership passes to the new sheet and the pills fade in at its position (pillHandoverSV).
+  // Bumped by "← Country" to start the destination sheet's slide off at the tap (DestinationSheet's leaveEarlySV).
+  const destLeaveEarlySV = useSharedValue(0);
+  const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
+  const pillHandoverSV = useSharedValue(1);
+  // During a swap: the live sheet that takes the pills over when the outgoing one finishes its slide (see handOverPills).
+  const pillNextOwnerSV = useSharedValue<number>(PILL_OWNER.none);
+  const upPillWrapStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -upPillBottomSV.value }], opacity: pillShownSV.value * pillHandoverSV.value }));
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
   // Cleared again immediately after — DestinationSheet only reads these in its initial
@@ -2271,6 +2305,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // idle must not end the plan the close is about to take over (Auckland's spot pins came back, bunched, for the first
   // frames of the zoom-out).
   const xClosePendingRef = useRef(false);
+  // See releaseHeldSelection.
+  const planLandedRef = useRef<NavSel | null>(null);
+  // A landed plan (planLandedRef) ends with the next selection change.
+  if (planLandedRef.current && !sameNavSel(planLandedRef.current, { country: selectedCountry?.countryCode ?? null, dest: selectedDest?.id ?? null, spot: selectedSpot?.id ?? null })) {
+    planLandedRef.current = null;
+    planWithSelRef.current = false;
+    planHoldRef.current = false;
+    planZoomTargetRef.current = null;
+  }
   if ((selectedCountry || selectedDest) && !planWithSelRef.current) { planZoomTargetRef.current = null; planHoldRef.current = false; }
   let planZoomTarget = planZoomTargetRef.current;
   // The same look-ahead for closing a spot back INTO its destination (the "‹ Destination" back), which keeps the
@@ -2324,8 +2367,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // once, whatever its fly-to does on the way: its zoom-out passes many tiers' gates, and each tier's pins lingered until
   // the camera reached its gate, clumping on the way out.
   const destTierOnRef = useRef<Map<string, boolean>>(new Map());
+  // The tier layers' own on/off always follows the live zoom, also during a back or close plan: that plan routes its pins
+  // through the data instead (planTier in nativeDestPins), so the layers' styles change a few at a time as the camera
+  // passes their gates rather than ~30 at once at the tap, each a main-thread Mapbox updateLayer (a profiled ~60 ms of
+  // the back tap's commit).
   const destTierOn = (tier: string): boolean => {
-    const on = destGateOn(tier, backPlan ? closeTarget! : camZoom);
+    const on = destGateOn(tier, camZoom);
     destTierOnRef.current.set(tier, on);
     return on;
   };
@@ -2456,10 +2503,49 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const heldSelRef = useRef<{ country: CountryCluster | null; dest: Destination | null }>({ country: null, dest: null });
   const [, setHeldSelTick] = useState(0);
   if (selectedCountry || selectedDest) heldSelRef.current = { country: selectedCountry, dest: selectedDest };
-  const planCountry = selectedCountry ?? heldSelRef.current.country;
-  const planDest = selectedDest ?? heldSelRef.current.dest;
+  // The selection an X close is heading to, from the tap (setNavTarget in handleCloseToMap). The X keeps the old
+  // selection while its sheet slides off, so planning against the selection re-planned every pin a second time when the
+  // close landed; planning against the target makes the pins reach their final state during the transition. It ends
+  // the moment the selection lands on the target or changes to anything else (navTargetStatus), so it can never outlive
+  // its close or restore an old selection.
+  // The selected country whose X close was tapped: its border highlight fades out from the tap. Tied to that selection
+  // object, so selecting a country again (a new cluster) shows its highlight normally; no reset needed.
+  const [highlightClosingFor, setHighlightClosingFor] = useState<CountryCluster | null>(null);
+  // "← Country": the country sheet the back tap shows at once, in a light render of its own, before the selection change
+  // (a heavy render: every selection-dependent plan, pill and layer) lands a moment later with the same country. While set,
+  // the sheets read it in place of the selection (effCountry and friends below); cleared in the same render the selection
+  // lands in, which then reads the same, so the sheet is neither remounted nor moved.
+  const [sheetOverride, setSheetOverride] = useState<{ cluster: CountryCluster } | null>(null);
+  // The selection as the SHEETS see it: the back tap's country sheet (sheetOverride) until its selection change lands.
+  const effCountry = sheetOverride ? sheetOverride.cluster : selectedCountry;
+  const effDest = sheetOverride ? null : selectedDest;
+  const effSpot = sheetOverride ? null : selectedSpot;
+  // The country border highlight: shown for the country the sheets show (effCountry, so a back tap's country highlights
+  // with its sheet, at the tap) while no destination is, and faded out from a country X's tap (highlightClosingFor). Its
+  // source and layers stay mounted once used: showing, hiding or switching country only changes their filter and opacity
+  // (faded natively), instead of adding a vector source and five layers to the map mid-flight, as the back tap's selection
+  // change used to do while the camera zoomed out. Hidden, it keeps the last country's outline so its fade can finish.
+  const hlTarget = effCountry && !effDest ? effCountry : null;
+  const hlLastRef = useRef<CountryCluster | null>(null);
+  if (hlTarget) hlLastRef.current = hlTarget;
+  const hlCountry = hlLastRef.current;
+  const hlShown = !!hlTarget && highlightClosingFor !== hlTarget;
+  const navTargetRef = useRef<{ from: NavSel; to: NavSel; country: CountryCluster | null; dest: Destination | null } | null>(null);
+  if (navTargetRef.current) {
+    const now: NavSel = { country: selectedCountry?.countryCode ?? null, dest: selectedDest?.id ?? null, spot: selectedSpot?.id ?? null };
+    if (navTargetStatus(navTargetRef.current.from, navTargetRef.current.to, now) !== 'pending') navTargetRef.current = null;
+  }
+  const navTarget = navTargetRef.current;
+  const planCountry = navTarget ? navTarget.country : selectedCountry ?? heldSelRef.current.country;
+  const planDest = navTarget ? navTarget.dest : selectedDest ?? heldSelRef.current.dest;
   const planZoomTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // A planned back or X zoom-out that has landed (its camera stopped): its pin plan is KEPT as it stands, so the pins'
+  // state at landing is their final state. It ends at the user's next map gesture (handleCameraChanged), the next
+  // selection change (checked below, in render) or the next navigation's plan; not at the map idle, the plan's safety
+  // timer or the camera settling. Re-planning there (the first back to a country lands off its estimated zoom: no camera
+  // cached for it yet) switched some destination pins between photo and small pins after the zoom had ended.
   const releaseHeldSelection = useCallback(() => {
+    planLandedRef.current = null;
     const hadTarget = planZoomTargetRef.current !== null;
     if (!heldSelRef.current.country && !heldSelRef.current.dest && !hadTarget) return;
     if (selectedCountryRef.current || selectedDestRef.current) return;
@@ -2471,6 +2557,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, []);
   const releaseSpotCloseTarget = useCallback(() => {
     if (xClosePendingRef.current) return;
+    planLandedRef.current = null;
     if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
     if (planWithSelRef.current) {   // a back tap's plan (see beginBackPlan) ends with the move too
       planWithSelRef.current = false;
@@ -2525,6 +2612,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, []);
 
   const lastPillsRef = useRef<{ sig: string; value: CountryCluster[] } | null>(null);
+  // The span the country pills plan at: the live one, except during a back or close plan (backPlan), where it is the
+  // target view's, as for the destination and spot pins. The pills then come into view as the camera pulls back to the
+  // country (they are anchored to the map, and the ones the target view adds lie off-screen at the start) instead of
+  // appearing a beat after the camera lands, once the throttled zoom updates, the arrival and their fade-in had run.
+  const pillTargetLngDelta = backPlan ? SCREEN_W_GLOBAL * 360 / (256 * Math.pow(2, closeTarget!)) : pillVisibleLngDelta;
   const countryPills = useMemo(() => {
     // "visitedCount" is the country's visited destinations (see visitIndex) — the number on its
     // pill's badge.
@@ -2555,10 +2647,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
       // getCountryPillCutoffLngDelta). Smaller neighbouring countries keep their pills a
       // while longer (their own default views sit deeper), which preserves useful edge
       // context when zoomed into a larger neighbour. Compared against the calibrated
-      // pillVisibleLngDelta (true on-screen span), not planLngDelta — the planning scale
+      // pillTargetLngDelta (true on-screen span), not planLngDelta — the planning scale
       // runs ~2× deep, which hid pills long before their default view was reached.
       const cutoff = getCountryPillCutoffLngDelta(g.countryCode);
-      if (pillVisibleLngDelta < (isSelectedCountry ? cutoff * 1.1 : cutoff)) continue;
+      if (pillTargetLngDelta < (isSelectedCountry ? cutoff * 1.1 : cutoff)) continue;
       candidates.push(toCluster(g));
     }
 
@@ -2579,7 +2671,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // while panning.
     // True on-screen scale (see destPinPlan): pills the plan lets through here must not overlap in reality, or Mapbox
     // hides one natively, instantly, instead of it fading out.
-    const pxPerDegLng = Dimensions.get('window').width / pillVisibleLngDelta;
+    const pxPerDegLng = Dimensions.get('window').width / pillTargetLngDelta;
     // A pill is a WIDE, SHORT shape (flag circle + name card, ~110×26pt), so collision is a
     // rectangle test on the center deltas, not a circular radius. The old 70px circular
     // radius treated two pills stacked ~60px apart VERTICALLY as colliding even though they
@@ -2616,10 +2708,10 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     if (lastPillsRef.current && lastPillsRef.current.sig === sig) return lastPillsRef.current.value;
     lastPillsRef.current = { sig, value: pills };
     return pills;
-    // Depends on planLngDelta/pillVisibleLngDelta only (pan-invariant zoom) — NOT
+    // Depends on planLngDelta/pillTargetLngDelta only (pan-invariant zoom) — NOT
     // latitudeDelta, which drifts on pan and would otherwise recompute this and re-resolve
     // pill collisions mid-pan.
-  }, [savedDestinations, visitIndex, planCountry, planDest, selectedSpot, planLngDelta, pillVisibleLngDelta]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, selectedSpot, planLngDelta, pillTargetLngDelta]);
 
   // Render set = the pan-invariant eligible set (see note above; ~45 pins max, Mapbox clips
   // off-screen). Stable while panning, so the pin/stamp lists never churn on pan.
@@ -2664,10 +2756,23 @@ const destItems = useMemo((): DestItem[] =>
     const t = setTimeout(() => setPlanSpot(selectedSpot), PLAN_SPOT_DELAY_MS);
     return () => clearTimeout(t);
   }, [selectedSpot]);
-  const destPhotoPlan = useMemo(() => planDestPhotos(planCountry, planDest, planSpot, id => visitIndex.isDestVisited(id)),
-    [planCountry, planDest, planSpot, visitIndex]);
+  const destPhotoPlan = useMemo(() => cachedDestPlan(planCountry, planDest, navTarget ? null : planSpot, visitIndex),
+    [planCountry, planDest, planSpot, navTarget, visitIndex]);
   // The same plan with nothing selected: what the spot plan keeps clear of, so selecting or closing never re-plans spots.
-  const baseDestPhotoPlan = useMemo(() => planDestPhotos(null, null, null, id => visitIndex.isDestVisited(id)), [visitIndex]);
+  const baseDestPhotoPlan = useMemo(() => cachedDestPlan(null, null, null, visitIndex), [visitIndex]);
+  // Prewarm: once a destination or spot sheet has settled, plan the context its back pill lands on (the destination's
+  // country; a spot's destination, with and without its country, as either can be selected) off the transition, so the
+  // swap's render finds it in the cache. A plain timer: the map always has an animation registered, so
+  // InteractionManager's "after interactions" never comes.
+  useEffect(() => {
+    const targets: [{ countryCode: string } | null, Destination | null][] =
+      selectedSpot && selectedDest ? [[{ countryCode: selectedDest.countryCode }, selectedDest], [null, selectedDest]]
+      : selectedDest ? [[{ countryCode: selectedDest.countryCode }, null]]
+      : [];
+    if (!targets.length) return;
+    const t = setTimeout(() => { for (const [c, d] of targets) cachedDestPlan(c, d, null, visitIndex); }, 700);
+    return () => clearTimeout(t);
+  }, [selectedSpot, selectedDest, visitIndex]);
   // The plan at the current zoom: photoIds show now (spot planning keeps clear of them). dataIds, the pin layers' data, is
   // every planned pin whatever the zoom (each waits, transparent, in its tier's layer), so zooming never changes the data:
   // reloading the layers' data as pins joined it ahead of their gates made every pin flash.
@@ -3036,6 +3141,8 @@ const destItems = useMemo((): DestItem[] =>
   }, [selectionKey]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
+  // A close is planning at its target (closeTarget): see the band properties below.
+  const spotGatesOff = closeTarget !== null;
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.nearest.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
@@ -3119,9 +3226,14 @@ const destItems = useMemo((): DestItem[] =>
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
           // Zoom bands (spotBands); a near carousel's pinned spots, which always show their photo, are never gated ('a').
-          pb: must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
-          rb: must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
-          nb: must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
+          // During a close (spotGatesOff) every pin is drawn by the ungated 'a' layers: the plan already holds only the pins
+          // of the close's target view, and its fly-to can dip below their bands' zooms on the way. That used to be done by
+          // setting every band layer's min zoom to 0 for the close and back afterwards, and each of those layer changes is
+          // a full Mapbox updateLayer on the main thread: with dozens of band layers, ~300 ms frozen at the tap and again
+          // as the close ended. Moving the pins in the data costs nothing extra (the data changes at those moments anyway).
+          pb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
+          rb: spotGatesOff || must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
+          nb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
         },
       });
     }
@@ -3170,7 +3282,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff]);
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
@@ -3209,7 +3321,6 @@ const destItems = useMemo((): DestItem[] =>
   // During a close or back plan (closeTarget) the bands are off: its fly-to can dip below the target's zooms on the way.
   // Keyed on the band set, so they are added again in this order whenever it changes. A plain array, not a fragment:
   // ShapeSource hands its source id only to its direct children, and a fragment's layers were never made.
-  const spotGateOff = closeTarget !== null;
   const spotBandLayers = useMemo(() => {
     const text = {
       textField: ['get', 'label'] as any,
@@ -3248,18 +3359,18 @@ const destItems = useMemo((): DestItem[] =>
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
-        filter={[...base, ['==', ['get', 'pb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={photoStyle as any} />,
+        filter={[...base, ['==', ['get', 'pb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={photoStyle as any} />,
     );
     for (const k of [...spotBands.name.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}n${k}`} id={`spotName-${k}`} belowLayerID="destStampCircles"
-        filter={[...base, ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], k]] as any} minZoomLevel={spotGateOff || k === 'a' ? 0 : Number(k)} style={text as any} />,
+        filter={[...base, ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={text as any} />,
     );
     return layers;
-  }, [spotBands, spotGateOff, mapType]);
+  }, [spotBands, mapType]);
 
   const spotLabelPlan = useMemo(() => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
@@ -3490,11 +3601,30 @@ const destItems = useMemo((): DestItem[] =>
   const cameraHoldUntilRef = useRef(0);
   // Runs once, right after the next commit (see handleCloseToMap: an X close from full-screen waits for its pin plan).
   const afterCommitRef = useRef<(() => void) | null>(null);
+  // A back tap ("← Country", "← Destination") swaps sheets in one heavy commit; its camera move waits for that commit and
+  // starts on the next frame (cameraAfterCommitRef, run by the effect below), so the zoom-out neither starts under the
+  // swap's main-thread work nor waits a fixed time that is too short on a slow render and wasted on a quick one.
+  const cameraAfterCommitRef = useRef(false);
+  const pendingCameraMoveRef = useRef<(() => void) | null>(null);
   const afterSheetSlideIn = useCallback((move: () => void) => {
+    if (cameraAfterCommitRef.current) {
+      cameraAfterCommitRef.current = false;
+      pendingCameraMoveRef.current = move;   // a newer back tap's move replaces an older one that has not started
+      return;
+    }
     const wait = cameraHoldUntilRef.current - Date.now();
     cameraHoldUntilRef.current = 0;
     if (wait > 0) setTimeout(move, wait); else move();
   }, []);
+  useEffect(() => {
+    // The tap that set cameraAfterCommitRef registers its move in the same handler, before this commit; a flag still set
+    // here had no move (the camera stays put) and must not hold back a later, unrelated one.
+    cameraAfterCommitRef.current = false;
+    const move = pendingCameraMoveRef.current;
+    if (!move) return;
+    pendingCameraMoveRef.current = null;
+    requestAnimationFrame(move);
+  });
   useEffect(() => {
     const run = afterCommitRef.current;
     if (!run) return;
@@ -4140,7 +4270,10 @@ const destItems = useMemo((): DestItem[] =>
   // destination's own default view rather than the pre-jump camera — "step back one level",
   // matching the drilled-down (‹ Name) case's zoom target even though no sheet reopens here.
   // The Explore sheet remounts (slide-up entrance) once the deferred clear below lands.
-  const handleCloseSpotToDestinationView = useCallback(() => {
+  // opts.cameraStarted: an X close started this close's camera move at the tap (see startXCloseCamera), so only the
+  // selection and the pin plan change here; a second camera command mid-flight would restart the fly-to.
+  const handleCloseSpotToDestinationView = useCallback((opts?: { cameraStarted?: boolean }) => {
+    const cameraStarted = (opts as { cameraStarted?: boolean } | undefined)?.cameraStarted === true;
     // In a near context, close to the ANCHOR's area, not that of whichever neighbour's card is showing.
     const spot = nearCtxRef.current?.anchor ?? selectedSpotRef.current;
     // A standalone spot closes to ITS OWN area, never to whichever unrelated destination happens to be selected.
@@ -4166,12 +4299,12 @@ const destItems = useMemo((): DestItem[] =>
     // isZoomedOutBeyond).
     if (dest && !isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) {
       beginClosePlan(destDefaultCamera(dest, 'topHalf').zoom, 500);   // see planZoomTarget (a no-op unless this zooms out)
-      fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
+      if (!cameraStarted) fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     } else if (standalone) {
       const cam = destDefaultCamera(standaloneSpotArea(standalone), 'topHalf');
       if (!isZoomedOutBeyond(cam.zoom)) {
         beginClosePlan(cam.zoom, 500);
-        afterSheetSlideIn(() => {
+        if (!cameraStarted) afterSheetSlideIn(() => {
           beginProgrammaticCameraMove(500);
           cameraRef.current?.setCamera({
             centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo',
@@ -4236,7 +4369,7 @@ const destItems = useMemo((): DestItem[] =>
       }
       // The zoom-out starts once the spot sheet has slid away and the destination sheet has slid up: running in the same
       // frames as the two sheets made both stutter (as the camera flight did for a pin tap's slide-in).
-      cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
+      cameraAfterCommitRef.current = true;   // the camera starts the frame after the swap commits (see afterSheetSlideIn)
       fitDestinationDefaultView(selectedDest, 'flyTo', 'topHalf');
     }
   }, [spotOrigin, selectedDest, fitDestinationDefaultView, setSheetSnapState, setDestHomeToDefault, destDefaultCamera, holdSheetUntilCamera, beginBackPlan]);
@@ -4307,8 +4440,10 @@ const destItems = useMemo((): DestItem[] =>
   // zoom out to the parent country's own default view — same "step back one level" as the
   // spot equivalent above, and the same cluster-rebuilding handleCloseDestinationSheetToCountry
   // uses, just without actually selecting the country (no sheet reopens here).
-  const handleCloseDestinationToCountryView = useCallback(() => {
+  // opts.cameraStarted: see handleCloseSpotToDestinationView.
+  const handleCloseDestinationToCountryView = useCallback((opts?: { cameraStarted?: boolean }) => {
     if (!selectedDest) return;
+    const cameraStarted = (opts as { cameraStarted?: boolean } | undefined)?.cameraStarted === true;
     const dest = selectedDest;
     setMapState('world');
     setZoomedIntoDestination(false);
@@ -4343,7 +4478,7 @@ const destItems = useMemo((): DestItem[] =>
     // Plan for the zoomed-out view from the first frame, so the pins it won't have fade out DURING the zoom (see
     // planZoomTarget) rather than after it settles.
     beginClosePlan(destDefaultCamera(dest, 'full', 0.5).zoom, 600);
-    fitDestinationDefaultView(dest, 'flyTo', 'full', 600, 0.5);
+    if (!cameraStarted) fitDestinationDefaultView(dest, 'flyTo', 'full', 600, 0.5);
   }, [selectedDest, showBreadcrumb, fitDestinationDefaultView, isZoomedOutBeyond, releaseHeldSelection, beginClosePlan, destDefaultCamera, holdSheetUntilCamera]);
 
   // Closing the destination sheet INTO its country view. `toCollapsed` (set when this
@@ -4352,6 +4487,11 @@ const destItems = useMemo((): DestItem[] =>
   // navigation — the provenance router below decides whether "close" means this.
   const handleCloseDestinationSheetToCountry = useCallback((toCollapsed?: boolean) => {
     if (!selectedDest) return;
+    // Start the destination sheet's slide off now, on the UI thread, as an X does, rather than when the swap's render
+    // commits: that render (the country sheet mounting) held the slide, and with it the whole response to the tap, back.
+    // Only where the swap will animate (the same test as the swap itself: a resting sheet, the map not being dragged), so
+    // the sheet never slides away without the country sheet taking its place.
+    if (sheetSnapStateRef.current !== 'full' && sheetPose.get() !== null && !isMapInteracting()) destLeaveEarlySV.value = destLeaveEarlySV.value + 1;
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     if (toCollapsed) setCountryInitialSnap('collapsed');
 
@@ -4373,15 +4513,34 @@ const destItems = useMemo((): DestItem[] =>
     // animateCamera's own comment on the equivalent zoom-IN case). Always lands on the
     // country's default view, however far out the user has zoomed — this is deliberate upward
     // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
-    // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan): the camera only starts once
-    // the country sheet has slid in, so the destination's spot pins and photo pins used to wait for it before fading.
+    // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan).
     const target = countryTargetZoom(cluster);
     if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
-    // The camera waits for the swap, as for the X close and "← Destination": started with it, it zoomed out while the new
-    // selection was still rendering, over pins planned for the old one (they piled up, then a crowd flashed in).
-    cameraHoldUntilRef.current = Date.now() + BACK_CAMERA_DELAY_MS;
-    handleCountryPress(cluster, 'flyTo');
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan]);
+    // The camera starts now, with the sheet's slide (leaveEarlySV above), as an X close's does (startXCloseCamera), not
+    // once the swap's render commits: that render (the country sheet mounting) took ~0.4 s on the device, a still map
+    // between the sheet leaving and the zoom. While it renders the camera zooms out over the old plan's pins, which every
+    // pin layer gates natively by zoom (constant min zooms, see spotGatesOff / planTier), so they leave as the zoom passes
+    // their gates; the country's plan lands with the render. (It used to wait for the swap because the pins were on-screen
+    // markers, which piled up under a camera that moved before they were re-planned.)
+    //
+    // Two renders. This tap's (light): the country sheet mounts (sheetOverride), the pins plan for the country at its view
+    // (navTarget with the same cluster, and the target zoom above), and the camera starts. The selection change (heavy)
+    // follows in the next task: it lands with the sheet already up and the pins already in their final plan, and its plan
+    // inputs are identical (the same cluster object), so nothing re-plans. In one render, the sheet appeared ~0.4 s after
+    // the old one had slid away (a blank gap), and the zoom ran over the old plan's pins, which left by their gates and
+    // came back when the plan landed.
+    const from: NavSel = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
+    navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
+    setSheetOverride({ cluster });
+    fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
+    setTimeout(() => {
+      setSheetOverride(null);
+      // Only if nothing else was selected in between (a stale back must not undo a newer selection).
+      if (sameNavSel(from, { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null })) {
+        handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
+      }
+    }, 0);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
@@ -4447,8 +4606,10 @@ const destItems = useMemo((): DestItem[] =>
     fitDestinationDefaultView(selectedDest, 'flyTo', framing);
   }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault]);
 
-  const handleCloseCountry = useCallback(() => {
+  // opts.cameraStarted: see handleCloseSpotToDestinationView.
+  const handleCloseCountry = useCallback((opts?: { cameraStarted?: boolean }) => {
     if (!selectedCountryRef.current) return;
+    const cameraStarted = (opts as { cameraStarted?: boolean } | undefined)?.cameraStarted === true;
     const cluster = selectedCountryRef.current;
     selectedCountryRef.current = null;
     showBreadcrumb(false);
@@ -4488,6 +4649,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     beginClosePlan(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA), 600);   // see planZoomTarget
+    if (cameraStarted) return;
     if (hasCached) {
       afterSheetSlideIn(() => {
         beginProgrammaticCameraMove(600);
@@ -4510,6 +4672,7 @@ const destItems = useMemo((): DestItem[] =>
     cluster: CountryCluster,
     cameraMode: 'easeTo' | 'flyTo' = 'easeTo',
     openPeeked = false,
+    opts?: { cameraStarted?: boolean },   // "← Country" started this move at the tap (see handleCloseDestinationSheetToCountry)
   ) => {
     lastCountryPressRef.current = Date.now();
     selectedCountryRef.current = cluster;
@@ -4530,8 +4693,9 @@ const destItems = useMemo((): DestItem[] =>
     // (see its own comment) — a tap must still open collapsed even mid-momentum.
     setCountryInitialSnap(openPeeked ? 'peek' : undefined);
     setSheetSnapState(openPeeked || isFingerDraggingMap() ? 'peek' : 'collapsed');
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
+    // The back tap's follow-up (cameraStarted) is silent: the tap itself already gave the haptic.
+    if (!opts?.cameraStarted) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    if (!opts?.cameraStarted) fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for CountrySheet to mount and run its own
     // effect a render cycle later — same top-destination lookup CountrySheet uses for its
@@ -4609,6 +4773,51 @@ const destItems = useMemo((): DestItem[] =>
     const z = cached && cached.mapH === (mapViewHRef.current || (H - BOTTOM_TAB_H)) ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA);
     return isZoomedOutBeyond(z) ? null : z;
   }, [isZoomedOutBeyond, destDefaultCamera]);
+  // The X close's camera move, started at the tap together with the sheet's slide-off (both run on the UI thread), the
+  // same move each close handler makes when it runs on its own (handleCloseSpotToDestinationView,
+  // handleCloseDestinationToCountryView, handleCloseCountry: keep the three in step). Returns whether a move started.
+  const startXCloseCamera = useCallback((): boolean => {
+    const sel = selectedSpotRef.current;
+    if (sel) {
+      const spot = nearCtxRef.current?.anchor ?? sel;
+      const standalone = !spot.destinationId ? spot : null;
+      const dest = standalone ? undefined : (selectedDestRef.current ?? spotDestination(spot));
+      if (dest) {
+        if (isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)))) return false;
+        fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
+        return true;
+      }
+      if (!standalone) return false;
+      const cam = destDefaultCamera(standaloneSpotArea(standalone), 'topHalf');
+      if (isZoomedOutBeyond(cam.zoom)) return false;
+      afterSheetSlideIn(() => {
+        beginProgrammaticCameraMove(500);
+        cameraRef.current?.setCamera({ centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo' });
+      });
+      return true;
+    }
+    const dest = selectedDestRef.current;
+    if (dest) {
+      if (isZoomedOutBeyond(latDeltaToZoom(getDestZoomDelta(dest)) * 0.5)) return false;
+      fitDestinationDefaultView(dest, 'flyTo', 'full', 600, 0.5);
+      return true;
+    }
+    const cluster = selectedCountryRef.current;
+    if (!cluster) return false;
+    const mapViewH = mapViewHRef.current || (H - BOTTOM_TAB_H);
+    const cached = countryCamCacheRef.current[`${cluster.countryCode}:topHalf`];
+    const hasCached = !!cached && cached.mapH === mapViewH;
+    if (isZoomedOutBeyond(hasCached ? cached.zoom / 2 : latDeltaToZoom(WORLD_HOME_LATDELTA))) return false;
+    if (hasCached) {
+      afterSheetSlideIn(() => {
+        beginProgrammaticCameraMove(600);
+        cameraRef.current?.setCamera({ centerCoordinate: [cached.lng, cached.lat], zoomLevel: cached.zoom / 2, animationDuration: 600, animationMode: 'easeTo' });
+      });
+    } else {
+      animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
+    }
+    return true;
+  }, [isZoomedOutBeyond, fitDestinationDefaultView, destDefaultCamera, afterSheetSlideIn, beginProgrammaticCameraMove, animateCamera]);
   const handleCloseToMap = useCallback(() => {
     if (pressBlocked()) return;
     if (sheetExitingRef.current) return;
@@ -4616,19 +4825,34 @@ const destItems = useMemo((): DestItem[] =>
     const close = selectedSpot ? handleCloseSpotToDestinationView
       : selectedDest ? handleCloseDestinationToCountryView
       : handleCloseCountry;
-    // The pins switch to the target view at the tap, while the sheet slides off: planned as for a back tap, with the
-    // selection kept (beginBackPlan), in a render light enough to land at once. The close itself (the heavy render that
-    // swaps the sheets) then runs with the pins already gone, and its camera starts straight away. Planned only once the
-    // close ran, the pins sat on the still map through the slide and that render, then vanished as the zoom began.
+    // Where every X close lands: nothing selected. The pins plan for that from the tap (navTargetRef, at the target zoom
+    // below), so they reach their final state while the sheet slides off and the camera moves, and nothing re-plans
+    // when the close lands.
+    const from: NavSel = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
+    navTargetRef.current = { from, to: { country: null, dest: null, spot: null }, country: null, dest: null };
+    if (!selectedSpot && !selectedDest) setHighlightClosingFor(selectedCountryRef.current);
+    // The close runs when the sheet's slide has finished (its animation callback, not a timer). Should anything else have
+    // been selected meanwhile, it is a stale close: it must not close the new selection.
+    const stillFrom = () => sameNavSel(from, {
+      country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null,
+    });
     const target = xCloseTargetZoom();
-    if (target === null) { closeWithSheetExit(close); return; }
+    if (target === null) {
+      setHeldSelTick(t => t + 1);
+      closeWithSheetExit(() => { if (stillFrom()) close(); });
+      return;
+    }
+    // The pins switch to the target view at the tap (planned with the selection kept until the close lands; see
+    // beginBackPlan), and the camera starts now, alongside the sheet's slide, rather than after it: waiting for the slide
+    // and then for the close's render held the zoom-out back by 180 ms plus that render.
     beginBackPlan(target, SHEET_EXIT_MS + 1500);
     xClosePendingRef.current = true;
     setTimeout(() => { xClosePendingRef.current = false; }, SHEET_EXIT_MS + 1500);   // safety net, should the close never run
-    const run = () => { xClosePendingRef.current = false; close(); };
-    // From full-screen there is no slide: the close waits for the plan's own render instead.
+    const cameraStarted = startXCloseCamera();
+    const run = () => { xClosePendingRef.current = false; if (stillFrom()) close({ cameraStarted }); };
+    // From full-screen there is no slide: the close runs after the plan's own render.
     closeWithSheetExit(sheetSnapStateRef.current === 'full' ? () => { afterCommitRef.current = run; } : run);
-  }, [selectedSpot, selectedDest, handleCloseSpotToDestinationView, handleCloseDestinationToCountryView, handleCloseCountry, closeWithSheetExit, xCloseTargetZoom, beginBackPlan]);
+  }, [selectedSpot, selectedDest, handleCloseSpotToDestinationView, handleCloseDestinationToCountryView, handleCloseCountry, closeWithSheetExit, xCloseTargetZoom, beginBackPlan, startXCloseCamera]);
 
   // Back pill, while the country/destination sheet is full-screen: instead of navigating up
   // a level, just collapse the currently open sheet to its bottom-screen carousel view.
@@ -4754,6 +4978,8 @@ const destItems = useMemo((): DestItem[] =>
 
   // Fires continuously while the camera moves — update region live so markers
   // appear/fade during the gesture rather than only after it settles.
+  const cameraTrailTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cameraArriveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const handleCameraChanged = useCallback((state: {
     properties: {
       center: [number, number];
@@ -4936,7 +5162,46 @@ const destItems = useMemo((): DestItem[] =>
       camZoomRef.current = state.properties.zoom;
       return;
     }
-    if (now - lastCameraTimeRef.current < 3) return;
+    // A planned zoom-out (a back or X close: planZoomTargetRef holds its target, and every pin is already planned for it)
+    // has ARRIVED once no camera event has come for 150 ms (a native camera animation reports every frame until it ends,
+    // fly-to arcs included). Release the plan then, as onMapIdle does, instead of waiting for idle, which only fires once
+    // every new tile has loaded, often a second or more after the camera stopped. Not conditioned on reaching the planned
+    // zoom: the first back to a country plans at an estimate (no cached camera for it yet; at country scale the globe
+    // projection fits differently from the flat-map estimate), so the camera lands off it and the release then waited for
+    // idle, the photo pins switching to small pins a second after the zoom-out ended.
+    if (!isGestureActive && planZoomTargetRef.current !== null) {
+      const target = planZoomTargetRef.current;
+      if (cameraArriveTimerRef.current) clearTimeout(cameraArriveTimerRef.current);
+      cameraArriveTimerRef.current = setTimeout(() => {
+        cameraArriveTimerRef.current = null;
+        if (planZoomTargetRef.current !== target) return;
+        if (!planHoldRef.current) { releaseHeldSelection(); releaseSpotCloseTarget(); return; }
+        // Landed: keep the plan (planLandedRef) and drop its safety timer, which would otherwise re-plan a few seconds later.
+        planLandedRef.current = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
+        if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
+      }, 150);
+    }
+    // During that planned zoom-out the per-frame region update re-renders the whole screen without changing the pin
+    // plan (it reads the target). With a few thousand spots each such render costs tens of milliseconds of JS work, which
+    // stuttered the X zoom-out, so it updates every 120 ms there, with a trailing update so the final position always
+    // lands. Gestures and every other camera move keep the per-frame update.
+    const gap = !isGestureActive && planZoomTargetRef.current !== null ? 120 : 3;
+    if (now - lastCameraTimeRef.current < gap) {
+      camZoomRef.current = state.properties.zoom;
+      if (gap > 3) {
+        if (cameraTrailTimerRef.current) clearTimeout(cameraTrailTimerRef.current);
+        cameraTrailTimerRef.current = setTimeout(() => {
+          cameraTrailTimerRef.current = null;
+          lastCameraTimeRef.current = Date.now();
+          unstable_batchedUpdates(() => {
+            setRegion({ latitude: lat, longitude: lng, latitudeDelta: latDelta, longitudeDelta: lngDelta });
+            setCamZoom(state.properties.zoom);
+          });
+        }, gap - (now - lastCameraTimeRef.current));
+      }
+      return;
+    }
+    if (cameraTrailTimerRef.current) { clearTimeout(cameraTrailTimerRef.current); cameraTrailTimerRef.current = null; }
     lastCameraTimeRef.current = now;
 
     // One batched update: the region and the zoom always change together, and applying them separately renders the
@@ -4959,7 +5224,7 @@ const destItems = useMemo((): DestItem[] =>
       zoomLeadTimerRef.current = setTimeout(() => { zoomLeadTimerRef.current = null; zoomSampleRef.current = null; setZoomOutLead(0); }, 120);
     });
     camZoomRef.current = state.properties.zoom;
-  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera]);
+  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera, releaseSpotCloseTarget]);
 
   const handleMapIdle = useCallback((state: {
     properties: {
@@ -4976,8 +5241,12 @@ const destItems = useMemo((): DestItem[] =>
     wasMapGestureActiveRef.current = false;
     if (regionHoldFlushRef.current) { clearTimeout(regionHoldFlushRef.current); regionHoldFlushRef.current = null; }
     releaseSheetsAfterCamera();
-    releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
-    releaseSpotCloseTarget();
+    // A close's zoom-out has settled: let the pin/pill planning drop the old selection. Not a landed plan, which stands
+    // until the user's next move (see planLandedRef).
+    if (!planLandedRef.current) {
+      releaseHeldSelection();
+      releaseSpotCloseTarget();
+    }
     setMapIdleTick(t => t + 1);   // a return arrow held back during the gesture can now open (see mapIdleTick)
     const { center, bounds } = state.properties;
     const newRegion: Region = {
@@ -5080,7 +5349,8 @@ const destItems = useMemo((): DestItem[] =>
   const renderedCountryPills = useExitingItems(stableCountryPills, c => c.country);
 
   const countryPillMarkers = useMemo(() => renderedCountryPills.map(({ item: cluster, exiting }) => {
-    const isSelectedPill = cluster.countryCode === selectedCountry?.countryCode;
+    // Not once its country's X has been tapped (highlightClosingFor): the glow goes with the tap, like the border highlight.
+    const isSelectedPill = cluster.countryCode === effCountry?.countryCode && highlightClosingFor !== effCountry;
     // Plain border (no glow/shadow) on every OTHER visited country's pill, always — the
     // selected country keeps the full glow treatment instead, handled separately below so
     // the two states never compete on the same element. Checked against
@@ -5170,7 +5440,7 @@ const destItems = useMemo((): DestItem[] =>
         </FadePin>
       </MapboxGL.MarkerView>
     );
-  }), [renderedCountryPills, selectedCountry, handleCountryPress, handleResetToCountry, visitedCountryCodeSet]);
+  }), [renderedCountryPills, selectedCountry, effCountry, handleCountryPress, handleResetToCountry, visitedCountryCodeSet, highlightClosingFor]);
 
   // Promoted photo destinations, excluding any destination the camera is currently inside
   // of at spot zoom (its spot pins represent it instead; zoomedIntoDestIds) — selected or
@@ -5324,6 +5594,15 @@ const destItems = useMemo((): DestItem[] =>
   const destPhotoSinceRef = useRef<{ seq: number; since: Map<string, number> }>({ seq: 0, since: new Map() });
   const nativeDestPins = useMemo(() => {
     if (!NATIVE_DEST_PINS) return null;
+    // During a back or close plan (backPlan) a pin whose tier shows at the target is drawn by the ungated '' layer, so the
+    // fly-to dipping below the tier's gate on its way out does not hide it. That used to be every tier layer's min zoom
+    // switched to 0 for the plan and back afterwards: one main-thread Mapbox updateLayer per tier layer at both ends of
+    // every close (see spotGatesOff for the same on the spot layers). A tier that is off at the target stays in its layer,
+    // whose style hides it.
+    // During the plan its pins don't depend on the tier layers at all: a pin that shows at the target is drawn by the
+    // always-on '' layer, one that doesn't is given a tier no layer draws (DEST_TIER_UNDRAWN). So the pins are in their
+    // final state from the plan's first render, and no layer style has to change for it.
+    const planTier = (tier: string) => (!backPlan || !tier ? tier : destGateOn(tier, closeTarget!) ? '' : DEST_TIER_UNDRAWN);
     const book = destPhotoSinceRef.current;
     const live = new Set(promotedDests.map(d => d.id));
     for (const id of [...book.since.keys()]) if (!live.has(id)) book.since.delete(id);
@@ -5349,12 +5628,12 @@ const destItems = useMemo((): DestItem[] =>
       const coordinates = [dest.coordinates.longitude, dest.coordinates.latitude];
       features.push({
         type: 'Feature', id: dest.id, geometry: { type: 'Point', coordinates },
-        properties: { id: dest.id, img, label: '', sort: destSortKey(dest.id), tier: destPhotoPlan.fadeTier.get(dest.id) ?? '', ho, hos },
+        properties: { id: dest.id, img, label: '', sort: destSortKey(dest.id), tier: planTier(destPhotoPlan.fadeTier.get(dest.id) ?? ''), ho, hos },
       });
       const nameTier = destPhotoPlan.nameTier.get(dest.id);
       if (nameTier !== undefined) features.push({
         type: 'Feature', id: `${dest.id}:name`, geometry: { type: 'Point', coordinates },
-        properties: { id: dest.id, img: '', label: dest.name, sort: destSortKey(dest.id), tier: nameTier, ho, hos },
+        properties: { id: dest.id, img: '', label: dest.name, sort: destSortKey(dest.id), tier: planTier(nameTier), ho, hos },
       });
     }
     // Register the pin image of every planned destination, hidden ones included (zoomed into, its spots showing): one that
@@ -5368,16 +5647,16 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
   // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
   // render that mounts the new sheet.
   const sheetKind: 'country' | 'dest' | 'spot' | null =
-    selectedSpot && spotFocusId ? 'spot'
-    : mapState !== 'world' && selectedDest && !selectedSpot ? 'dest'
-    : selectedCountry && !selectedDest && !selectedSpot ? 'country'
+    effSpot && spotFocusId ? 'spot'
+    : mapState !== 'world' && effDest && !effSpot ? 'dest'
+    : effCountry && !effDest && !effSpot ? 'country'
     : null;
   sheetKindRef.current = sheetKind;
   // ── Sheet swaps ──────────────────────────────────────────────────────────────────────────────────────────
@@ -5389,7 +5668,7 @@ const destItems = useMemo((): DestItem[] =>
   // Not animated — the sheets just swap in place, as before — when the old sheet had no resting pose (full screen, or
   // already exiting) or the user is mid map gesture (the sheets stay peeked out of the way then).
   type SheetSnap = { identity: string; kind: 'country' | 'dest' | 'spot'; cluster: CountryCluster | null; dest: Destination | null; spots: Spot[]; focusId: string | null; liveKey?: number; nearLabel?: string; nearEyebrow?: 'SPOTS' | 'NEAR' };
-  const sheetIdentity = sheetKind === 'country' ? `country:${selectedCountry?.countryCode}`
+  const sheetIdentity = sheetKind === 'country' ? `country:${effCountry?.countryCode}`
     : sheetKind === 'dest' ? `dest:${selectedDest?.id}`
     : sheetKind === 'spot' ? `spot:${nearCtx ? nearCtx.anchor.id : selectedSpot?.destinationId ?? selectedSpot?.id}` : null;
   const shownSnapRef = useRef<SheetSnap | null>(null);
@@ -5411,7 +5690,7 @@ const destItems = useMemo((): DestItem[] =>
   }
   if (sheetKind && sheetIdentity) {
     shownSnapRef.current = {
-      identity: sheetIdentity, kind: sheetKind, cluster: selectedCountry,
+      identity: sheetIdentity, kind: sheetKind, cluster: effCountry,
       // A spot sheet's destination is the SPOT's own (none when standalone), not whatever happens to be selected.
       dest: sheetKind === 'spot' && selectedSpot ? (nearCtx ? null : spotDestination(selectedSpot) ?? null) : selectedDest,
       spots: sheetKind === 'spot' ? carouselSpots : [], focusId: spotFocusId,
@@ -5432,7 +5711,7 @@ const destItems = useMemo((): DestItem[] =>
   // replaced by a spot's or a country's (no destination sheet takes its place), the mounted sheet slides itself off
   // instead of being dropped and re-mounted as an outgoing copy (a second destination sheet mount, ~100 ms, in the
   // busiest commit of the swap). Same element position and key, so React keeps the instance.
-  const liveDestSheet = mapState !== 'world' && !!selectedDest && !selectedSpot && !destAfterCamera;
+  const liveDestSheet = mapState !== 'world' && !!effDest && !effSpot && !destAfterCamera;
   // One-shot: clear the destination sheet's mount hints (see their declaration) once it has mounted with them, so a later,
   // unrelated mount doesn't inherit them. NOT right after they are set: when the camera has to zoom out first the sheet is
   // held back (destAfterCamera), and clearing them at once had it mount later with no hint, opening to half-screen instead
@@ -5447,6 +5726,30 @@ const destItems = useMemo((): DestItem[] =>
   // The same for the spot sheet, when a spot's sheet gives way to a destination's or a country's (back to the destination).
   const liveSpotSheet = !!selectedSpot && !!spotFocusId;
   const spotLeavesInPlace = !liveSpotSheet && leavingSheetRef.current?.kind === 'spot' && !!leavingSheetRef.current.focusId && leavingSheetRef.current.liveKey !== undefined;
+  // The pills' owner for this commit: the sheet sliding off while a swap animates, the live sheet otherwise. Applied before
+  // the frame is drawn, in the same commit that mounts the outgoing copy and starts its slide, so the incoming sheet
+  // mounting underneath never gets to move the pills.
+  const pillOwner = pillOwnerFor({
+    liveKind: sheetKind,
+    leaving: !leavingSheetRef.current ? null : destLeavesInPlace ? 'dest-in-place' : spotLeavesInPlace ? 'spot-in-place' : 'copy',
+  });
+  const leavingNow = !!leavingSheetRef.current;
+  const pillOwnerPrevRef = useRef({ owner: PILL_OWNER.none as number, leaving: false });
+  useLayoutEffect(() => {
+    const prev = pillOwnerPrevRef.current;
+    if (prev.owner === pillOwner && prev.leaving === leavingNow) return;
+    pillOwnerPrevRef.current = { owner: pillOwner, leaving: leavingNow };
+    // The live sheet that will take the pills over when a swap's outgoing sheet finishes (handOverPills, on the UI thread).
+    pillNextOwnerSV.value = leavingNow && sheetKind ? PILL_OWNER[sheetKind] : PILL_OWNER.none;
+    // The outgoing sheet normally hands the pills over itself, the frame its slide ends; this catches the cases where it
+    // did not (it unmounted or was replaced before finishing). Either way the pills fade in on the sheet now in place.
+    const handedOver = prev.leaving && !leavingNow && pillOwnerSV.value === pillOwner;
+    pillOwnerSV.value = pillOwner;
+    if (prev.leaving && !leavingNow && !handedOver && pillOwner !== PILL_OWNER.none) {
+      pillHandoverSV.value = 0;
+      pillHandoverSV.value = withTiming(1, { duration: 160 });
+    }
+  }, [pillOwner, leavingNow]);
   const leavingSpot = spotLeavesInPlace ? leavingSheetRef.current! : null;
 
 
@@ -5633,8 +5936,8 @@ const destItems = useMemo((): DestItem[] =>
             against satellite imagery) — only the unvisited gray border switches to white in
             satellite view, where the dark imagery leaves gray hard to see; standard map view
             keeps the existing gray border unchanged either way. */}
-        {selectedCountry && !selectedDest && (() => {
-          const selectedIsVisited = visitedCountryCodeSet.has(selectedCountry.countryCode);
+        {hlCountry && (() => {
+          const selectedIsVisited = visitedCountryCodeSet.has(hlCountry.countryCode);
           const fillColor = selectedIsVisited ? '#22C55E' : '#FFFFFF';
           const lineColor = selectedIsVisited
             ? '#16A34A'
@@ -5648,6 +5951,9 @@ const destItems = useMemo((): DestItem[] =>
           const grayCenterOutline = !selectedIsVisited && mapType !== 'satellite';
           const outlineColor = grayCenterOutline ? '#6B7280' : lineColor;
           const glowColor = grayCenterOutline ? '#FFFFFF' : lineColor;
+          // 0 once an X close has been tapped on this country (highlightClosingFor): the highlight fades out with the tap,
+          // natively, instead of staying up until the close lands at the end of its slide.
+          const hl = hlShown ? 1 : 0;
           return (
             <MapboxGL.VectorSource
               id="countryBoundaries"
@@ -5656,37 +5962,37 @@ const destItems = useMemo((): DestItem[] =>
               <MapboxGL.FillLayer
                 id="countryFill"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ fillColor, fillOpacity }}
+                style={{ fillColor, fillOpacity: fillOpacity * hl, fillOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowOuter"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 14 : 12, lineOpacity: grayCenterOutline ? 0.22 : 0.08 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 14 : 12, lineOpacity: (grayCenterOutline ? 0.22 : 0.08) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryGlowInner"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 7 : 6, lineOpacity: grayCenterOutline ? 0.45 : 0.18 }}
+                style={{ lineColor: glowColor, lineWidth: grayCenterOutline ? 7 : 6, lineOpacity: (grayCenterOutline ? 0.45 : 0.18) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryOutlineCasing"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: '#FFFFFF', lineWidth: 3, lineOpacity: grayCenterOutline ? 1 : 0 }}
+                style={{ lineColor: '#FFFFFF', lineWidth: 3, lineOpacity: (grayCenterOutline ? 1 : 0) * hl, lineOpacityTransition: HL_FADE }}
               />
               <MapboxGL.LineLayer
                 id="countryOutline"
                 sourceLayerID="country_boundaries"
-                filter={['==', ['get', 'iso_3166_1'], selectedCountry.countryCode]}
+                filter={['==', ['get', 'iso_3166_1'], hlCountry.countryCode]}
                 belowLayerID="destStampCircles"
-                style={{ lineColor: outlineColor, lineWidth: grayCenterOutline ? 1.2 : 2, lineOpacity: grayCenterOutline ? 1 : 0.7 }}
+                style={{ lineColor: outlineColor, lineWidth: grayCenterOutline ? 1.2 : 2, lineOpacity: (grayCenterOutline ? 1 : 0.7) * hl, lineOpacityTransition: HL_FADE }}
               />
             </MapboxGL.VectorSource>
           );
@@ -5750,7 +6056,7 @@ const destItems = useMemo((): DestItem[] =>
                 // in which the pins of the tiers the camera had already left stayed up and piled together). The fade
                 // back in on the way in is still destTierOn's. Not during a close or back plan (backPlan), whose fly-to
                 // can dip below the target's gates on its way out: the plan holds its tiers there instead.
-                minZoomLevel={tier && !backPlan ? destGateZooms()[tier] ?? 0 : 0}
+                minZoomLevel={tier ? destGateZooms()[tier] ?? 0 : 0}
                 style={destTierStyle(tier, destTierOn(tier))}
               />
             )),
@@ -5766,7 +6072,7 @@ const destItems = useMemo((): DestItem[] =>
                   aboveLayerID={k === 0 ? `destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}` : `destHandoff-${k - 1}`}
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
                   // Its destination's tier gate as min zoom, as for the tier layers above.
-                  minZoomLevel={l.h && l.tier && !backPlan ? destGateZooms()[l.tier] ?? 0 : 0}
+                  minZoomLevel={l.h && l.tier ? destGateZooms()[l.tier] ?? 0 : 0}
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
                   style={destTierStyle(l.tier, l.on, l.snap)}
                 />
@@ -6126,15 +6432,19 @@ const destItems = useMemo((): DestItem[] =>
       )}
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
-      {selectedCountry && !selectedDest && !selectedSpot && (
+      {effCountry && !effDest && !effSpot && (
         <CountrySheet
           key={`country-${sheetSwapKey}`}
-          cluster={selectedCountry}
+          cluster={effCountry}
           onClose={handleCloseCountry}
           onSelectDestination={handleMarkerPress}
           onExpand={handleSheetExpand}
           onCollapse={handleCloseSheet}
           pillOffsetSV={upPillBottomSV}
+          pillOwnerSV={pillOwnerSV}
+          pillNextOwnerSV={pillNextOwnerSV}
+          pillHandoverSV={pillHandoverSV}
+          pillOwnerId={PILL_OWNER.country}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
@@ -6173,6 +6483,11 @@ const destItems = useMemo((): DestItem[] =>
           onSelectSpot={destSheetOnSelectSpot}
           onCollapsedTopChange={setDestCardTop}
           pillOffsetSV={upPillBottomSV}
+          pillOwnerSV={pillOwnerSV}
+          pillNextOwnerSV={pillNextOwnerSV}
+          pillHandoverSV={pillHandoverSV}
+          pillOwnerId={PILL_OWNER.dest}
+          leaveEarlySV={destLeaveEarlySV}
           pillFullSV={upPillFullSV}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
@@ -6207,6 +6522,10 @@ const destItems = useMemo((): DestItem[] =>
           onCollapse={handleCloseSheet}
           onActiveSpotChange={handleActiveSpotChange}
           pillOffsetSV={upPillBottomSV}
+          pillOwnerSV={pillOwnerSV}
+          pillNextOwnerSV={pillNextOwnerSV}
+          pillHandoverSV={pillHandoverSV}
+          pillOwnerId={PILL_OWNER.spot}
           pillFullSV={upPillFullSV}
           peekSignal={peekSheetSignal}
           peekSV={peekSheetSV}
@@ -6231,6 +6550,11 @@ const destItems = useMemo((): DestItem[] =>
           {leavingSheetRef.current.kind === 'country' && leavingSheetRef.current.cluster && (
             <CountrySheet
               key={`leaving-country-${leavingSheetRef.current.seq}`}
+              pillOffsetSV={upPillBottomSV}
+              pillOwnerSV={pillOwnerSV}
+              pillNextOwnerSV={pillNextOwnerSV}
+              pillHandoverSV={pillHandoverSV}
+              pillOwnerId={PILL_OWNER.leavingCopy}
               cluster={leavingSheetRef.current.cluster}
               onClose={noop}
               onSelectDestination={noop}
@@ -6242,6 +6566,12 @@ const destItems = useMemo((): DestItem[] =>
           {leavingSheetRef.current.kind === 'spot' && leavingSheetRef.current.focusId && !spotLeavesInPlace && (
             <SpotSheet
               key={`leaving-spot-${leavingSheetRef.current.seq}`}
+              pillOffsetSV={upPillBottomSV}
+              pillFullSV={upPillFullSV}
+              pillOwnerSV={pillOwnerSV}
+              pillNextOwnerSV={pillNextOwnerSV}
+              pillHandoverSV={pillHandoverSV}
+              pillOwnerId={PILL_OWNER.leavingCopy}
               spots={leavingSheetRef.current.spots}
               focusSpotId={leavingSheetRef.current.focusId}
               destination={leavingSheetRef.current.dest}
@@ -6254,6 +6584,12 @@ const destItems = useMemo((): DestItem[] =>
           {leavingSheetRef.current.kind === 'dest' && leavingSheetRef.current.dest && !destLeavesInPlace && (
             <DestinationSheet
               key={`leaving-dest-${leavingSheetRef.current.seq}`}
+              pillOffsetSV={upPillBottomSV}
+              pillFullSV={upPillFullSV}
+              pillOwnerSV={pillOwnerSV}
+              pillNextOwnerSV={pillNextOwnerSV}
+              pillHandoverSV={pillHandoverSV}
+              pillOwnerId={PILL_OWNER.leavingCopy}
               destination={leavingSheetRef.current.dest}
               onClose={noop}
               onSelectSpot={noop}

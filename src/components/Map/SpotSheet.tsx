@@ -18,6 +18,7 @@ import Reanimated, {
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
+import { pillBottomForSheet } from '../../utils/navTransitions';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import { Check, Clock, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, LayoutGrid, Plus,
          ExternalLink, Ticket, Globe, Image as ImageIcon } from 'lucide-react-native';
@@ -356,6 +357,14 @@ interface Props {
   // Replaces the old settle-only onCollapsedTopChange-driven retarget, which visibly lagged
   // behind the sheet's own drag.
   pillOffsetSV?: SharedValue<number>;
+  // Which mounted sheet positions the back/X pills (navTransitions → pillOwnerFor): this sheet writes them only while
+  // pillOwnerSV holds its pillOwnerId, so an incoming and an outgoing sheet never fight over them during a swap.
+  pillOwnerSV?: SharedValue<number>;
+  pillOwnerId?: number;
+  // Set during a swap: the sheet that takes the pills over once this (outgoing) one has slid off, and the pills' fade-in.
+  // The handover runs on the UI thread in this sheet's slide-finished callback, on the frame it ends.
+  pillNextOwnerSV?: SharedValue<number>;
+  pillHandoverSV?: SharedValue<number>;
   // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Destination" pill's fade.
   pillFullSV?: SharedValue<number>;
   // Fires on every snap transition — lets the caller know when this sheet is peeking (e.g.
@@ -404,7 +413,7 @@ interface Props {
 
 function SpotSheet({
   spots, focusSpotId, destination, nearLabel, nearEyebrow, onClose, onExpand, onCollapse, onActiveSpotChange, onCollapsedTopChange,
-  pillOffsetSV, pillFullSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, onTitlePress, collapseSignal,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, onSnapStateChange, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited, onGoToList, onTitlePress, collapseSignal,
 }: Props) {
   const insets       = useSafeAreaInsets();
   const saveSpotVisited = useStore(s => s.saveSpotVisited);
@@ -774,8 +783,9 @@ function SpotSheet({
   // at all, since both this sheet and the pill are UI-thread Reanimated values now, which is
   // what keeps the pill's glide exactly as smooth as the sheet's own.
   useAnimatedReaction(
-    () => [slideAnim.value, scrollYSV.value] as const,
+    () => [slideAnim.value, scrollYSV.value, pillOwnerSV?.value ?? 0] as const,
     ([value, scrollY]) => {
+      if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
       // The "← Destination" pill fades out over the first part of the slide up to full screen (MapScreen's upPillBackStyle).
       if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, COLLAPSED_Y], [1, 0], Extrapolation.CLAMP);
       if (!pillOffsetSV) return;
@@ -794,15 +804,23 @@ function SpotSheet({
       const COLLAPSED_TARGET = SCREEN_H - COLLAPSED_TOP_ABS - PILL_H;
       const PEEK_TOP_ABS = PEEK_Y - COLLAPSED_PILL_GAP - PILL_H;
       const PEEK_TARGET = SCREEN_H - PEEK_TOP_ABS - PILL_H;
-      pillOffsetSV.value = interpolate(
+      pillOffsetSV.value = pillBottomForSheet(
         value,
-        [FULL_POS, COLLAPSED_Y, PEEK_Y],
-        [FULL_TARGET, COLLAPSED_TARGET, PEEK_TARGET],
-        Extrapolation.CLAMP,
+        { fullY: FULL_POS, collapsedY: COLLAPSED_Y, peekY: PEEK_Y, closeY: CLOSE_POS },
+        { full: FULL_TARGET, collapsed: COLLAPSED_TARGET, peek: PEEK_TARGET },
       );
     },
     [insets.bottom, insets.top],
   );
+  // The outgoing sheet's slide has finished: if it still holds the pills, pass them to the sheet now resting in its place
+  // (pillNextOwnerSV) and fade them in there. On the UI thread, so the pills reappear the frame the slide ends rather than
+  // after the next React render.
+  const handOverPills = () => {
+    'worklet';
+    if (!pillOwnerSV || !pillNextOwnerSV || pillOwnerSV.value !== pillOwnerId || !pillNextOwnerSV.value) return;
+    pillOwnerSV.value = pillNextOwnerSV.value;
+    if (pillHandoverSV) { pillHandoverSV.value = 0; pillHandoverSV.value = withTiming(1, { duration: 160 }); }
+  };
 
   // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
   // Same design as DestinationSheet (see the long comment there): snapStateRef / snapStateSV hold the snap this
@@ -940,7 +958,7 @@ function SpotSheet({
     if (leaving) {
       closingRef.current = true;
       hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-        if (finished && onExited) runOnJS(onExited)();
+        if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
       });
       return;
     }
@@ -955,7 +973,7 @@ function SpotSheet({
     if (!leaveNow) return;
     closingRef.current = true;
     hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-      if (finished && onExited) runOnJS(onExited)();
+      if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [leaveNow]);

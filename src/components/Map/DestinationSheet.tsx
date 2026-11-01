@@ -17,10 +17,11 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 // `Animated` import) since the rest of this file — the tab swipe, small modals below, the
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
-  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
+  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, runOnUI,
   interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay, useAnimatedScrollHandler
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
+import { pillBottomForSheet } from '../../utils/navTransitions';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
 // plain core ScrollView's native pan silently claims every touch first regardless of that
@@ -608,6 +609,14 @@ interface Props {
   // the pill track the sheet's top edge in true lockstep while dragging, instead of lagging
   // behind it.
   pillOffsetSV?: SharedValue<number>;
+  // Which mounted sheet positions the back/X pills (navTransitions → pillOwnerFor): this sheet writes them only while
+  // pillOwnerSV holds its pillOwnerId, so an incoming and an outgoing sheet never fight over them during a swap.
+  pillOwnerSV?: SharedValue<number>;
+  pillOwnerId?: number;
+  // Set during a swap: the sheet that takes the pills over once this (outgoing) one has slid off, and the pills' fade-in.
+  // The handover runs on the UI thread in this sheet's slide-finished callback, on the frame it ends.
+  pillNextOwnerSV?: SharedValue<number>;
+  pillHandoverSV?: SharedValue<number>;
   // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Country" pill's fade.
   pillFullSV?: SharedValue<number>;
   // While true, some other UI (the spot carousel) owns the pill's position instead — this
@@ -643,6 +652,9 @@ interface Props {
   // The live sheet itself becomes the outgoing sheet (MapScreen "Sheet swaps"): it slides off the bottom and calls
   // onExited, instead of a fresh outgoing copy being mounted to do it.
   leaveNow?: boolean;
+  // Bumped by a back tap that is about to replace this sheet ("← Country"): the sheet starts its slide off at once, on the
+  // UI thread, instead of when the swap's render commits and sets leaveNow; leaveNow then just waits for that slide.
+  leaveEarlySV?: SharedValue<number>;
   onExited?: () => void;
   enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
@@ -657,8 +669,8 @@ interface Props {
 
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
-  onSnapStateChange, pillOffsetSV, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
-  collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, onExited,
+  onSnapStateChange, pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
+  collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, leaveEarlySV, onExited,
 }: Props) {
   const insets            = useSafeAreaInsets();
   const savedDestinations = useStore(s => s.savedDestinations);
@@ -1055,8 +1067,9 @@ function DestinationSheet({
   // its existing look — with a single 2-point interpolation giving one smooth, continuous
   // glide between the two states.
   useAnimatedReaction(
-    () => [slideAnim.value, scrollYSV.value] as const,
+    () => [slideAnim.value, scrollYSV.value, pillOwnerSV?.value ?? 0] as const,
     ([value, scrollY]) => {
+      if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
       // The "← Country" pill fades out over the first part of the slide up to full screen (MapScreen's upPillBackStyle).
       if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, collapsedYAnim.value], [1, 0], Extrapolation.CLAMP);
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
@@ -1098,15 +1111,23 @@ function DestinationSheet({
       // (fixed) top instead of the collapsed card's measured one.
       const PEEK_TOP_ABS = PEEK_Y - COLLAPSED_PILL_GAP - PILL_H;
       const PEEK_TARGET = SCREEN_H - PEEK_TOP_ABS - PILL_H;
-      pillOffsetSV.value = interpolate(
+      pillOffsetSV.value = pillBottomForSheet(
         value,
-        [FULL_POS, collapsedYAnim.value, PEEK_Y],
-        [FULL_TARGET, COLLAPSED_TARGET, PEEK_TARGET],
-        Extrapolation.CLAMP,
+        { fullY: FULL_POS, collapsedY: collapsedYAnim.value, peekY: PEEK_Y, closeY: CLOSE_POS },
+        { full: FULL_TARGET, collapsed: COLLAPSED_TARGET, peek: PEEK_TARGET },
       );
     },
     [insets.bottom, insets.top],
   );
+  // The outgoing sheet's slide has finished: if it still holds the pills, pass them to the sheet now resting in its place
+  // (pillNextOwnerSV) and fade them in there. On the UI thread, so the pills reappear the frame the slide ends rather than
+  // after the next React render.
+  const handOverPills = () => {
+    'worklet';
+    if (!pillOwnerSV || !pillNextOwnerSV || pillOwnerSV.value !== pillOwnerId || !pillNextOwnerSV.value) return;
+    pillOwnerSV.value = pillNextOwnerSV.value;
+    if (pillHandoverSV) { pillHandoverSV.value = 0; pillHandoverSV.value = withTiming(1, { duration: 160 }); }
+  };
 
   // Backdrop: dark when full-screen, fading out to clear as the sheet approaches collapsed.
   // The sheet's drop-shadow (sheetShadow below) is the same view/style at every snap point,
@@ -1262,7 +1283,7 @@ function DestinationSheet({
     if (leaving) {
       closingRef.current = true;
       hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-        if (finished && onExited) runOnJS(onExited)();
+        if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
       });
       return;
     }
@@ -1271,12 +1292,43 @@ function DestinationSheet({
     transitionToRef.current(mountSnap, 'mount');
   }, []);
 
-  // Turned into the outgoing sheet while mounted: the same slide off the bottom an outgoing copy does on mount.
+  // The slide off can start before this sheet is told it is leaving (leaveEarlySV, at a back tap), so whichever of the
+  // slide's end and leaveNow comes second reports the exit, exactly once: earlySlideSV is 1 while the early slide runs and
+  // 2 once it has ended, exitWantedSV is 1 once leaveNow has arrived.
+  const onExitedRef = useRef(onExited);
+  onExitedRef.current = onExited;
+  const exitReportedRef = useRef(false);
+  const reportExited = useCallback(() => {
+    if (exitReportedRef.current) return;
+    exitReportedRef.current = true;
+    onExitedRef.current?.();
+  }, []);
+  const earlySlideSV = useSharedValue(0);
+  const exitWantedSV = useSharedValue(0);
+  useAnimatedReaction(
+    () => leaveEarlySV?.value ?? 0,
+    (v, prev) => {
+      if (prev === null || v === prev || !v) return;
+      earlySlideSV.value = 1;
+      hidePeekSV.value = 1;
+      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+        if (!finished) return;
+        earlySlideSV.value = 2;
+        if (exitWantedSV.value) { handOverPills(); runOnJS(reportExited)(); }
+      });
+    },
+  );
+
+  // Turned into the outgoing sheet while mounted: the same slide off the bottom an outgoing copy does on mount, unless a
+  // back tap already started it (see above), in which case only the exit is reported when that slide ends.
   useEffect(() => {
     if (!leaveNow) return;
     closingRef.current = true;
+    exitWantedSV.value = 1;
+    if (earlySlideSV.value === 2) { runOnUI(handOverPills)(); reportExited(); return; }
+    if (earlySlideSV.value === 1) return;   // the early slide reports it when it ends
     hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-      if (finished && onExited) runOnJS(onExited)();
+      if (finished) { handOverPills(); runOnJS(reportExited)(); }
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [leaveNow]);
