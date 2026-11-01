@@ -10,10 +10,12 @@ import {
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
-  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef,
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
+import { withSheetSettle } from './sheetSettle';
+import { requestShadowSync } from '../../utils/shadowSync';
 // ScrollView specifically comes from gesture-handler (not core RN) — only a gesture-handler-
 // aware component can actually participate in `simultaneousWithExternalGesture` below; a
 // plain core ScrollView's native pan silently claims every touch first regardless of that
@@ -57,6 +59,8 @@ interface Props {
   // The handover runs on the UI thread in this sheet's slide-finished callback, on the frame it ends.
   pillNextOwnerSV?: SharedValue<number>;
   pillHandoverSV?: SharedValue<number>;
+  // How far the sheet is toward full screen (0 at half-screen or below, 1 at full), for MapScreen's down-arrow / X crossfade.
+  pillFullSV?: SharedValue<number>;
   // While true, some other UI owns the pill's position instead — this sheet's writes to
   // pillOffsetSV are suppressed so the two don't fight.
   pillOffsetLockedSV?: SharedValue<boolean>;
@@ -219,7 +223,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -456,6 +460,14 @@ function CountrySheet({
     setSnapStateReact(state);
     onSnapStateChange?.(state);
   }, [onSnapStateChange]);
+  // A drag's snap, reported to React once the sheet has landed — see transitionTo.
+  const pendingReportRef = useRef<(() => void) | null>(null);
+  const flushSnapReport = useCallback(() => {
+    const report = pendingReportRef.current;
+    pendingReportRef.current = null;
+    report?.();
+    requestShadowSync();   // the settle skipped the shadow tree: see shadowSync.tsx
+  }, []);
   const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(
     resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y,
@@ -504,6 +516,7 @@ function CountrySheet({
   // Spotify-style header (see the fixed HEADER PHOTO layer): the photo dims as content covers it, the header text fades
   // as it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
   const COMPACT_BAR_H = insets.top + 48;
+  const COMPACT_FADE_PT = 70;   // how far below its pinned spot the tab bar is when the title bar starts fading in
   const headerNameYSV = useSharedValue(insets.top + 80);
   const headerDimStyle = useAnimatedStyle(() => ({
     opacity: interpolate(scrollY.value, [0, fullHeaderH * 0.85], [0, 0.55], Extrapolation.CLAMP),
@@ -516,33 +529,48 @@ function CountrySheet({
     const fade = interpolate(scrollY.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
-  // The bar is fixed at the top (COMPACT TITLE BAR) and fades in around the moment the tab bar arrives under it and
-  // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
+  // The title bar is fixed at the top (COMPACT TITLE BAR) and only fades, in place: opacity alone (no animated height or
+  // position, which update a few frames behind a fast scroll) over the tab bar's last 70pt to the top, fully opaque the
+  // moment it pins under the bar, as the header's own name fades out beneath it.
   const compactBarStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollY.value, [at - 40, at + 10], [0, 1], Extrapolation.CLAMP);
+    const on = interpolate(scrollY.value, [at - COMPACT_FADE_PT, at], [0, 1], Extrapolation.CLAMP);
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
   });
-  // The fade now starts up to 40px before the tab bar reaches the bar, so for that stretch the bar's white grows down to meet the
-  // tab bar's top edge: no strip of the hero photo shows between them while it fades in.
-  const compactBarGrowStyle = useAnimatedStyle(() => {
+  // The bar's white reaches down to the tab bar's top edge the whole time it is fading in, so no photo shows between them:
+  // a backing COMPACT_FADE_PT taller than the bar, slid up by a transform (not a height, which lags a fast scroll) so its
+  // bottom edge stays on the tab bar until the bar pins.
+  const compactBarBackingStyle = useAnimatedStyle(() => {
     const at = headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H;
-    return { height: COMPACT_BAR_H + Math.min(40, Math.max(0, at - scrollY.value)) };
+    const gap = Math.min(COMPACT_FADE_PT, Math.max(0, at - scrollY.value));
+    return { transform: [{ translateY: gap - COMPACT_FADE_PT }] };
   });
 
-  const headerAnimStyle = useAnimatedStyle(() => {
+  // Nothing in the header changes size while the sheet moves (DestinationSheet's heroCut, same reasoning): an animated
+  // height or top is a layout change, applied through a full commit that can land a frame or more after the sheet's own
+  // transform, so the tab bar under the header lurched back and overshot during a half ↔ full drag or settle. The header
+  // keeps its full height (headerFixedHStyle, which only changes when it is measured) and `headerCut`, how much shorter
+  // than full it is showing, is applied with transforms:
+  // - the photo layer moves up by headerCut, so its bottom edge, which clips the photo, sits on the header's bottom; the
+  //   photo inside moves back down by half of it, so it stays centred in what shows, as the old cover-fit crop did;
+  // - the scroll view moves up by headerCut, so the header text and the tab bar follow the header's bottom edge; the top
+  //   row and the drag handle move back down (headerTopRowStyle, dragPillStyle).
+  const headerCut = useDerivedValue(() => {
     const collapsedHeaderH = COMPACT_H - Math.max(0, tabBarHAnim.value - TAB_BAR_TUCK);
-    return {
-      height: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [headerFullHAnim.value, collapsedHeaderH], Extrapolation.CLAMP),
-    };
+    const h = interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [headerFullHAnim.value, collapsedHeaderH], Extrapolation.CLAMP);
+    return headerFullHAnim.value - h;
   });
+  const headerFixedHStyle = useAnimatedStyle(() => ({ height: headerFullHAnim.value }));
+  const headerClipStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -headerCut.value }] }));
+  const headerPhotoUnshiftStyle = useAnimatedStyle(() => ({ transform: [{ translateY: headerCut.value / 2 }] }));
+  const headerShiftStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -headerCut.value }] }));
 
   // Top offset animates continuously with the drag — same reasoning as DestinationSheet's
   // own heroTopRowStyle: at full-screen the row needs to clear the status bar, but at
   // collapsed the sheet's own top edge already sits well below it.
   const headerTopRowStyle = useAnimatedStyle(() => ({
-    top: interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [insets.top + 12, 20], Extrapolation.CLAMP),
+    transform: [{ translateY: headerCut.value + interpolate(slideAnim.value, [FULL_POS, COLLAPSED_Y], [0, 20 - (insets.top + 12)], Extrapolation.CLAMP) }],
   }));
   // Nudges the flag/name/continent/stats stack down as the sheet approaches half-screen, and
   // only there — at full-screen the offset is 0, so that view is untouched. The content wrap
@@ -561,6 +589,7 @@ function CountrySheet({
   // mirrors DestinationSheet's own dragPillStyle.
   const dragPillStyle = useAnimatedStyle(() => ({
     opacity: interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [0, 1], Extrapolation.CLAMP),
+    transform: [{ translateY: headerCut.value }],
   }));
   // Peek strip: fades in only once the sheet drops past collapsed toward peek — mirrors
   // DestinationSheet's own peekAnimStyle.
@@ -585,6 +614,7 @@ function CountrySheet({
     () => [slideAnim.value, scrollY.value, pillOwnerSV?.value ?? 0] as const,
     ([value, scrollYVal]) => {
       if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
+      if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, collapsedYAnim.value], [1, 0], Extrapolation.CLAMP);
       if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
       const PILL_H = 36;
       const SCREEN_H = H - BOTTOM_TAB_H;
@@ -634,7 +664,10 @@ function CountrySheet({
   const transitionToRef = useRef<(next: CountrySnapState, reason: string) => void>(() => {});
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
-  const [panelsReady, revealPanels] = useDeferredMount();
+  // Revealed when the mount slide-in finishes (transitionTo), so their mount never lands on its frames: on the first open
+  // after a reload, when everything is cold, a fixed timer fired mid-slide. The timer stays as a fallback for a slide
+  // that is interrupted and so never reports finishing.
+  const [panelsReady, revealPanels] = useDeferredMount(900);
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
@@ -664,12 +697,24 @@ function CountrySheet({
     if (next === 'full') revealPanels();
     snapStateSV.value = next;
     lastPos.value = target;
-    // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
-    if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.();
     sheetPose.set(next === 'full' ? null : target);
+    // The React side of a snap (this sheet's re-render, and MapScreen's for its map state) commits on the UI thread, and
+    // one landing in the middle of the settle froze it for a few frames (DestinationSheet's transitionTo, same fix).
+    // After a drag ('userUI') it waits for the sheet to land (flushSnapReport, from the settle's end), except MapScreen's
+    // half-screen <-> peek report, which starts the map's recentring shift alongside the sheet and stays immediate.
+    pendingReportRef.current = null;
+    // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
+    const reportParent = () => { if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.(); };
+    if (reason !== 'userUI') { reportParent(); reportSnapState(next); }
+    else if (prev === 'full' || next === 'full') pendingReportRef.current = () => { reportParent(); reportSnapState(next); };
+    else {
+      onSnapStateChange?.(next);
+      pendingReportRef.current = () => { setSnapStateReact(next); reportParent(); };
+    }
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
-    if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
-    reportSnapState(next);
+    if (reason === 'mount') {
+      slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) runOnJS(revealPanels)(); });
+    } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
   // Slide in on mount — collapsed (half-screen) by default whenever a country is selected, unless initialSnap
@@ -810,6 +855,22 @@ function CountrySheet({
   // for that scroll gesture purely off its raw translation/velocity (identical reasoning,
   // and identical fix, to DestinationSheet's).
   const dragEngagedSV = useSharedValue(false);
+  // The sheet's own recent positions while dragged ([time, y, ...], newest last), for the speed it is let go at.
+  const dragTrailSV = useSharedValue<number[]>([]);
+  // How fast the sheet itself was moving over the last ~50 ms of the drag, in pt/s (DestinationSheet's releaseVelocity:
+  // the gesture's own velocityY overstates it, a finger slows before it lifts).
+  const releaseVelocity = () => {
+    'worklet';
+    const a = dragTrailSV.value;
+    const n = a.length / 2;
+    if (n < 2) return 0;
+    const t1 = a[(n - 1) * 2], y1 = a[(n - 1) * 2 + 1];
+    if (Date.now() - t1 > 60) return 0;   // held still before letting go
+    let i = n - 2;
+    while (i > 0 && t1 - a[i * 2] < 50) i--;
+    const dt = t1 - a[i * 2];
+    return dt > 0 ? ((y1 - a[i * 2 + 1]) / dt) * 1000 : 0;
+  };
 
   // Runs entirely on the UI thread — onUpdate fires every touch-move frame with zero
   // JS-thread/bridge round trip, which is what actually eliminates the drag jank (merely
@@ -819,12 +880,14 @@ function CountrySheet({
   // Starts the snap animation inside the gesture worklet, on the UI thread, the same frame the finger lifts; the JS
   // bookkeeping (transitionTo, reason 'userUI') follows through runOnJS but no longer gates the motion. Waiting on the
   // JS thread here was the pause after release: while one of these sheets is open the JS thread is busy with the map.
-  const snapUI = (next: CountrySnapState) => {
+  // The settle carries on at the speed the sheet was moving when let go (releaseVelocity), as DestinationSheet's does:
+  // a timing curve restarted from rest at release read as a hitch, then a lurch.
+  const snapUI = (next: CountrySnapState, velocity = 0) => {
     'worklet';
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYAnim.value;
     snapStateSV.value = next;
     lastPos.value = target;
-    slideAnim.value = withTiming(target, SNAP_CONFIG);
+    slideAnim.value = withSheetSettle(target, velocity, finished => { if (finished) runOnJS(flushSnapReport)(); });
   };
   // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
   const peekFromMapGesture = useCallback(() => {
@@ -852,6 +915,7 @@ function CountrySheet({
     .failOffsetX([-10, 10])
     .onStart(() => {
       dragEngagedSV.value = false;
+      dragTrailSV.value = [];
       lastPos.value = slideAnim.value;
     })
     .onUpdate(e => {
@@ -881,27 +945,35 @@ function CountrySheet({
       } else {
         slideAnim.value = Math.max(FULL_POS, Math.min(collapsedYAnim.value, raw));
       }
+      const now = Date.now(), y = slideAnim.value;
+      dragTrailSV.modify(a => {
+        'worklet';
+        a.push(now, y);
+        if (a.length > 24) a.splice(0, a.length - 24);
+        return a;
+      });
     })
     .onEnd(e => {
       if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) { runOnJS(callSnapBack)(); return; }
       const pos = lastPos.value + e.translationY;
+      const v = releaseVelocity();
       const cy  = collapsedYAnim.value;
 
       if (snapStateSV.value === 'peek') {
         // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
         // (a direct bottom -> top connection); a smaller swipe up stops at half-screen; anything less settles back.
-        if (pos <= cy) { (snapUI('full'), runOnJS(callSnapToFullUI)()); return; }
-        if (e.velocityY < -500 || pos < PEEK_Y - 60) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
-        else (snapUI('peek'), runOnJS(callSnapToPeekUI)());
+        if (pos <= cy) { (snapUI('full', v), runOnJS(callSnapToFullUI)()); return; }
+        if (e.velocityY < -500 || pos < PEEK_Y - 60) (snapUI('collapsed', v), runOnJS(callSnapToCollapsedUI)());
+        else (snapUI('peek', v), runOnJS(callSnapToPeekUI)());
         return;
       }
 
       if (snapStateSV.value === 'collapsed') {
         // Swiping up from collapsed goes straight to full-screen; swiping down now drops to
         // peek instead of dismissing; anything smaller settles back at collapsed.
-        if (e.velocityY < -500 || pos < cy - 60) (snapUI('full'), runOnJS(callSnapToFullUI)());
-        else if (e.velocityY > 500 || pos > cy + 40) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
-        else (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
+        if (e.velocityY < -500 || pos < cy - 60) (snapUI('full', v), runOnJS(callSnapToFullUI)());
+        else if (e.velocityY > 500 || pos > cy + 40) (snapUI('peek', v), runOnJS(callSnapToPeekUI)());
+        else (snapUI('collapsed', v), runOnJS(callSnapToCollapsedUI)());
         return;
       }
 
@@ -909,9 +981,9 @@ function CountrySheet({
       // shouldn't change the sheet's snap state at all — leave it exactly at full.
       if (!dragEngagedSV.value) return;
       // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
-      if (pos >= cy) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
-      else if (e.velocityY > 500 || pos > H * 0.25) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
-      else (snapUI('full'), runOnJS(callSnapToFullUI)());
+      if (pos >= cy) (snapUI('peek', v), runOnJS(callSnapToPeekUI)());
+      else if (e.velocityY > 500 || pos > H * 0.25) (snapUI('collapsed', v), runOnJS(callSnapToCollapsedUI)());
+      else (snapUI('full', v), runOnJS(callSnapToFullUI)());
     })
     // Without this, the inner ScrollView's own native pan claims the touch outright while
     // full-screen, so our gesture never even starts recognizing — letting both recognize
@@ -1012,18 +1084,21 @@ function CountrySheet({
               text and then the content over it while the photo stays put, dimming as it is covered. Same animated
               height as the header in the ScrollView, so every snap state crops it as before. The dark scrim for text
               legibility is part of EntityPhoto, drawn only while there's a photo. */}
-          <Animated.View pointerEvents="none" style={[st.headerBackdrop, headerAnimStyle]}>
-            <EntityPhoto
-                cacheKey={countryPhotoKey}
-                cache={photoCache}
-                load={loadCountryPhoto}
-                scrim="rgba(0,0,0,0.45)"
-                style={StyleSheet.absoluteFill as any}
-              />
+          <Animated.View pointerEvents="none" style={[st.headerBackdrop, headerFixedHStyle, headerClipStyle]}>
+            <Animated.View style={[StyleSheet.absoluteFill, headerPhotoUnshiftStyle]}>
+              <EntityPhoto
+                  cacheKey={countryPhotoKey}
+                  cache={photoCache}
+                  load={loadCountryPhoto}
+                  scrim="rgba(0,0,0,0.45)"
+                  style={StyleSheet.absoluteFill as any}
+                />
+            </Animated.View>
             <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: '#000' }, headerDimStyle]} />
           </Animated.View>
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
+          <Animated.View style={[{ flex: 1 }, headerShiftStyle]}>
           <ScrollView
             ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
             style={{ flex: 1 }}
@@ -1052,7 +1127,7 @@ function CountrySheet({
                 continuously, exactly like DestinationSheet's own hero) — tapping the
                 background (not the buttons) expands to full-screen while collapsed/peeking. */}
             <Pressable onPress={() => { if (snapStateRef.current !== 'full') snapToFullRef.current(); }}>
-            <Animated.View style={[st.header, headerAnimStyle]}>
+            <Animated.View style={[st.header, headerFixedHStyle]}>
               {/* The country photo is a fixed layer behind this ScrollView (see HEADER PHOTO below). */}
 
               {/* Drag-handle pill — visible while collapsed/peeking, fades out approaching
@@ -1064,7 +1139,7 @@ function CountrySheet({
               {/* Close button removed — the back-navigation pill (rendered by the map
                   screen, not this sheet) now glides to sit in that same top-left spot
                   instead, identical to DestinationSheet's own hero top row. */}
-              <Animated.View style={[st.headerTopRow, headerTopRowStyle, { justifyContent: 'flex-end' }]}>
+              <Animated.View style={[st.headerTopRow, { top: insets.top + 12, justifyContent: 'flex-end' }, headerTopRowStyle]}>
                 <View style={st.headerActionsRight}>
                   <Pressable
                     style={[st.headerVisitPill, isCountryVisited && st.headerVisitPillActive]}
@@ -1078,7 +1153,7 @@ function CountrySheet({
                 </View>
               </Animated.View>
 
-              {/* Measured via onLayout (natural, unclipped size) to drive headerAnimStyle's
+              {/* Measured via onLayout (natural, unclipped size) to drive the header's
                   "full" anchor — this wrapper's own padding accounts for the whole header's
                   total natural height, so no extra math is needed at the measurement site. */}
               <Animated.View
@@ -1244,9 +1319,11 @@ function CountrySheet({
             )}
             </View>
           </ScrollView>
-          {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
-              header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
-          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle, compactBarGrowStyle]}>
+          </Animated.View>
+          {/* ── COMPACT TITLE BAR — fixed at the very top and only fades in place (no movement): in as the tab bar arrives
+              under it and pins, out again as it scrolls back down. */}
+          <Animated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
+            <Animated.View style={[st.compactBarBacking, { height: COMPACT_BAR_H + COMPACT_FADE_PT }, compactBarBackingStyle]} />
             <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
           </Animated.View>
 
@@ -1341,9 +1418,10 @@ const st = StyleSheet.create({
   // ── Header ──────────────────────────────────────────────────────────────────
   headerBackdrop: { position: 'absolute', top: 0, left: 0, right: 0, height: HEADER_H, overflow: 'hidden', backgroundColor: '#111827' },
   compactBar: {
-    backgroundColor: 'white', alignItems: 'center', paddingHorizontal: 60,
+    alignItems: 'center', paddingHorizontal: 60,
   },
   tabCornerFill: { position: 'absolute', left: 0, right: 0, height: 24, backgroundColor: 'white' },
+  compactBarBacking: { position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: 'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   tabBarOverlay: {
@@ -1353,10 +1431,8 @@ const st = StyleSheet.create({
   },
   header: {
     overflow: 'hidden',
-    // Bottom-anchors headerContentWrap (which stays its own natural/full height
-    // regardless of this outer box's animated crop) so that as the header shrinks toward
-    // collapsed/peek, the crop eats into the wrap's TOP — keeping the name/stats row (the
-    // wrap's last line) visible instead of it sliding out the bottom uncropped.
+    // Always its full measured height (headerFixedHStyle); the half-screen crop is the scroll view moving up by
+    // headerCut, which takes space off the TOP and keeps the name/stats row (the wrap's last line) visible.
     justifyContent: 'flex-end',
   },
   // Holds the actual flow content (flag/name/continent/stats) — its own natural height

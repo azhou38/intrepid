@@ -4,7 +4,7 @@ import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions,
 import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, interpolate as rInterpolate, Extrapolation as RExtrapolation } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
-import { PILL_OWNER, pillOwnerFor, navTargetStatus, sameNavSel, type NavSel } from '../utils/navTransitions';
+import { PILL_OWNER, pillOwnerFor, navTargetStatus, sameNavSel, nearestLng, type NavSel } from '../utils/navTransitions';
 import MapboxGL from '@rnmapbox/maps';
 
 // Public (pk.) token — Mapbox's own public tokens are designed to ship in client bundles
@@ -1617,6 +1617,22 @@ const FlagWarmup = memo(function FlagWarmup() {
 export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = {}) {
   const insets = useSafeAreaInsets();
   const cameraRef = useRef<MapboxGL.Camera>(null);
+  // The camera centre's longitude as last reported by onCameraChanged (handleCameraChanged), for setCameraShortest.
+  const camCenterLngRef = useRef<number | null>(null);
+  // Every camera move goes through here so it takes the short way round the globe (nearestLng). A centre target is
+  // aimed at its copy nearest the current centre. A bounds fit's camera is worked out natively, out of reach here, so
+  // when its short way crosses the date line it flies (flyTo already takes the shortest path) instead of easing.
+  const setCameraShortest = useCallback((config: Parameters<MapboxGL.Camera['setCamera']>[0]) => {
+    const from = camCenterLngRef.current;
+    const c = config as any;
+    if (from !== null && Array.isArray(c.centerCoordinate)) {
+      c.centerCoordinate = [nearestLng(c.centerCoordinate[0], from), c.centerCoordinate[1]];
+    } else if (from !== null && c.bounds && c.animationMode !== 'flyTo') {
+      const mid = (c.bounds.ne[0] + c.bounds.sw[0]) / 2;
+      if (Math.abs(mid - from) > 180) c.animationMode = 'flyTo';
+    }
+    cameraRef.current?.setCamera(config);
+  }, []);
   // The MapView's real rendered height (shorter than the device height — App.tsx's bottom tab
   // bar reserves its own layout space below it). Measured rather than assumed so
   // fitCountryDefaultView's bottom padding is exact on every device; see its own comment.
@@ -1707,6 +1723,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const upPillBackPeekStyle = useAnimatedStyle(() => ({
     opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
       * (spotBackPeekSV.value ? pillPeekSV.value : 1),
+  }));
+  // The full-screen down arrow and the half-screen X share one button and crossfade with the sheet's position as it is
+  // dragged, instead of swapping when the snap settles (mapState flips only after the sheet comes to rest).
+  const upPillArrowStyle = useAnimatedStyle(() => ({ opacity: rInterpolate(upPillFullSV.value, [0.35, 0.65], [0, 1], RExtrapolation.CLAMP) }));
+  const upPillXStyle = useAnimatedStyle(() => ({ opacity: rInterpolate(upPillFullSV.value, [0.35, 0.65], [1, 0], RExtrapolation.CLAMP) }));
+  const upPillChromeStyle = useAnimatedStyle(() => ({
+    shadowOpacity: rInterpolate(upPillFullSV.value, [0.35, 0.65], [0.14, 0], RExtrapolation.CLAMP),
   }));
   const [sheetPeeking, setSheetPeeking] = useState(false);
   // 1 whenever the open sheet — country, destination or spot — is sitting at half-screen
@@ -2266,7 +2289,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
         if (selectedCountryRef.current) return;
         const lng = loc.coords.longitude;
         setRegion(prev => ({ ...prev, longitude: lng }));
-        cameraRef.current?.setCamera({
+        setCameraShortest({
           centerCoordinate: [lng, 20],
           zoomLevel: 1,
           animationDuration: 0,
@@ -3644,7 +3667,7 @@ const destItems = useMemo((): DestItem[] =>
     cancelCountryCapture();
     afterSheetSlideIn(() => {
       beginProgrammaticCameraMove(duration);
-      cameraRef.current?.setCamera({
+      setCameraShortest({
         centerCoordinate: [reg.longitude, reg.latitude],
         zoomLevel: latDeltaToZoom(reg.latitudeDelta),
         animationDuration: duration,
@@ -3707,7 +3730,7 @@ const destItems = useMemo((): DestItem[] =>
     const rawCenterLat = (ne.latitude  + sw.latitude)  / 2;
 
     beginProgrammaticCameraMove(duration);
-    cameraRef.current?.setCamera({
+    setCameraShortest({
       centerCoordinate: [rawCenterLng - dxPx / scale, rawCenterLat + dyPx / scale],
       zoomLevel,
       animationDuration: duration,
@@ -3794,7 +3817,7 @@ const destItems = useMemo((): DestItem[] =>
       const cached = countryCamCacheRef.current[cacheKey];
       if (cached && cached.mapH === mapViewH) {
         beginProgrammaticCameraMove(FIT_MS);
-        cameraRef.current?.setCamera({
+        setCameraShortest({
           centerCoordinate: [cached.lng, cached.lat],
           zoomLevel: cached.zoom,
           animationDuration: FIT_MS,
@@ -3816,7 +3839,7 @@ const destItems = useMemo((): DestItem[] =>
       const insetH = SCREEN_W_GLOBAL * (1 - SHRINK) / 2;
 
       beginProgrammaticCameraMove(FIT_MS);
-      cameraRef.current?.setCamera({
+      setCameraShortest({
         bounds: {
           ne: [bounds.ne.longitude, bounds.ne.latitude],
           sw: [bounds.sw.longitude, bounds.sw.latitude],
@@ -3906,7 +3929,7 @@ const destItems = useMemo((): DestItem[] =>
     const cam = destDefaultCamera(dest, framing, zoomFactor);
     afterSheetSlideIn(() => {
       beginProgrammaticCameraMove(durationMs);
-      cameraRef.current?.setCamera({
+      setCameraShortest({
         centerCoordinate: [cam.lng, cam.lat],
         zoomLevel: cam.zoom,
         animationDuration: durationMs,
@@ -3957,7 +3980,7 @@ const destItems = useMemo((): DestItem[] =>
     );
     afterSheetSlideIn(() => {
       beginProgrammaticCameraMove(durationMs);
-      cameraRef.current?.setCamera({
+      setCameraShortest({
         centerCoordinate: [spot.coordinates.longitude, centerLat],
         zoomLevel,
         animationDuration: durationMs,
@@ -4306,7 +4329,7 @@ const destItems = useMemo((): DestItem[] =>
         beginClosePlan(cam.zoom, 500);
         if (!cameraStarted) afterSheetSlideIn(() => {
           beginProgrammaticCameraMove(500);
-          cameraRef.current?.setCamera({
+          setCameraShortest({
             centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo',
           });
         });
@@ -4653,7 +4676,7 @@ const destItems = useMemo((): DestItem[] =>
     if (hasCached) {
       afterSheetSlideIn(() => {
         beginProgrammaticCameraMove(600);
-        cameraRef.current?.setCamera({
+        setCameraShortest({
           centerCoordinate: [cached.lng, cached.lat],
           zoomLevel: cached.zoom / 2,
           animationDuration: 600,
@@ -4792,7 +4815,7 @@ const destItems = useMemo((): DestItem[] =>
       if (isZoomedOutBeyond(cam.zoom)) return false;
       afterSheetSlideIn(() => {
         beginProgrammaticCameraMove(500);
-        cameraRef.current?.setCamera({ centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo' });
+        setCameraShortest({ centerCoordinate: [cam.lng, cam.lat], zoomLevel: cam.zoom, animationDuration: 500, animationMode: 'easeTo' });
       });
       return true;
     }
@@ -4811,7 +4834,7 @@ const destItems = useMemo((): DestItem[] =>
     if (hasCached) {
       afterSheetSlideIn(() => {
         beginProgrammaticCameraMove(600);
-        cameraRef.current?.setCamera({ centerCoordinate: [cached.lng, cached.lat], zoomLevel: cached.zoom / 2, animationDuration: 600, animationMode: 'easeTo' });
+        setCameraShortest({ centerCoordinate: [cached.lng, cached.lat], zoomLevel: cached.zoom / 2, animationDuration: 600, animationMode: 'easeTo' });
       });
     } else {
       animateCamera({ latitude: 20, longitude: regionRef.current.longitude, latitudeDelta: WORLD_HOME_LATDELTA, longitudeDelta: WORLD_HOME_LATDELTA }, 600);
@@ -4989,6 +5012,7 @@ const destItems = useMemo((): DestItem[] =>
     gestures?: { isGestureActive: boolean };
   }) => {
     const { center, bounds } = state.properties;
+    camCenterLngRef.current = center[0];
     const isGestureActive = state.gestures?.isGestureActive ?? false;
     // A close's zoom-out is most of the way there, or the user took over the camera: bring the held-back sheet in now. It
     // waited for the last 0.05 of the zoom, which the easing makes the slowest part: the map then sat with no sheet for
@@ -5072,7 +5096,7 @@ const destItems = useMemo((): DestItem[] =>
         && !programmaticCameraMoveRef.current && center[1] < SOUTH_LIMIT) {
       southCorrectingRef.current = true;
       const targetCenterLat = SOUTH_LIMIT;
-      cameraRef.current?.setCamera({
+      setCameraShortest({
         centerCoordinate: [center[0], targetCenterLat],
         animationDuration: 300,
         animationMode: 'easeTo',
@@ -6445,6 +6469,7 @@ const destItems = useMemo((): DestItem[] =>
           pillNextOwnerSV={pillNextOwnerSV}
           pillHandoverSV={pillHandoverSV}
           pillOwnerId={PILL_OWNER.country}
+          pillFullSV={upPillFullSV}
           pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
@@ -6635,15 +6660,20 @@ const destItems = useMemo((): DestItem[] =>
               const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
-                  {full ? (
-                    <Pressable style={styles.upPillBare} onPress={handlePillCollapse} hitSlop={6}>
-                      <ChevronDown size={24} color="#374151" strokeWidth={2.5} />
-                    </Pressable>
-                  ) : (
-                    <Pressable style={[styles.upPill, styles.upPillFixed, styles.upPillRound]} onPress={handleCloseToMap} hitSlop={6}>
-                      <X size={15} color="#374151" strokeWidth={2.5} />
-                    </Pressable>
-                  )}
+                  <Pressable
+                    // Decided at the tap from where the sheet actually is, so a tap mid-drag matches the icon showing.
+                    onPress={() => (upPillFullSV.value >= 0.5 ? handlePillCollapse() : handleCloseToMap())}
+                    hitSlop={6}
+                  >
+                    <Reanimated.View style={[styles.upPill, styles.upPillFixed, styles.upPillRound, upPillChromeStyle]}>
+                      <Reanimated.View style={[styles.upPillIcon, upPillXStyle]}>
+                        <X size={15} color="#374151" strokeWidth={2.5} />
+                      </Reanimated.View>
+                      <Reanimated.View style={[styles.upPillIcon, upPillArrowStyle]}>
+                        <ChevronDown size={24} color="#374151" strokeWidth={2.5} />
+                      </Reanimated.View>
+                    </Reanimated.View>
+                  </Pressable>
                   {!!backName && (
                     <Reanimated.View
                       style={upPillBackPeekStyle}
@@ -6928,15 +6958,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 }, elevation: 6,
   },
   // Full-screen's collapse arrow — a solid white circle behind the icon (no shadow, unlike the regular pill).
-  upPillBare: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    width: 36, height: 36, borderRadius: 18,
-    backgroundColor: '#FFFFFF',
-  },
   // The back pill and the X side by side at half-screen and peek, both 36 pt tall.
   upPillRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   upPillFixed: { height: 36, paddingVertical: 0 },
   upPillRound: { width: 36, paddingHorizontal: 0, justifyContent: 'center' },
+  upPillIcon: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
   upPillArrow: { fontSize: 13, color: '#374151', fontWeight: '700' },
   upPillTxt:   { fontSize: 13, fontWeight: '600', color: '#111827' },
 

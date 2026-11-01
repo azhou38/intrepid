@@ -1175,6 +1175,7 @@ function DestinationSheet({
 
   // The sticky header (title bar + tab bar) — see STICKY HEADER in the ScrollView.
   const COMPACT_BAR_H = insets.top + 48;
+  const COMPACT_FADE_PT = 70;   // how far below its pinned spot the tab bar is when the title bar starts fading in
   // Spotify-style header (see the fixed HERO PHOTO layer): the photo dims as content covers it, the header text fades as
   // it nears the compact bar, and the bar fades in once the name has gone under it.
   const heroTextTopSV = useSharedValue(HERO_H - insets.bottom - 160);
@@ -1189,20 +1190,23 @@ function DestinationSheet({
     const fade = interpolate(scrollYSV.value, [t + 10, t + 80], [1, 0], Extrapolation.CLAMP);
     return { opacity: 1 - full * (1 - fade) };
   });
-  // The bar is fixed at the top (COMPACT TITLE BAR) and fades in around the moment the tab bar arrives under it and
-  // pins — the sticky header (stickyHeaderIndices) leaves exactly the bar's height above the tab bar for it.
+  // The title bar is fixed at the top (COMPACT TITLE BAR) and only fades, in place: opacity alone (no animated height or
+  // position, which update a few frames behind a fast scroll) over the tab bar's last 70pt to the top, fully opaque the
+  // moment it pins under the bar, as the header's own name fades out beneath it.
   const compactBarStyle = useAnimatedStyle(() => {
-        const at = fullHeroH - TAB_BAR_TUCK - COMPACT_BAR_H;
-    const on = interpolate(scrollYSV.value, [at - 40, at + 10], [0, 1], Extrapolation.CLAMP);
+    const at = fullHeroH - TAB_BAR_TUCK - COMPACT_BAR_H;
+    const on = interpolate(scrollYSV.value, [at - COMPACT_FADE_PT, at], [0, 1], Extrapolation.CLAMP);
     // Only ever at full-screen — at half-screen and peek there is no scrolled header to stand in for.
     const full = interpolate(slideAnim.value, [FULL_POS, FULL_POS + 40], [1, 0], Extrapolation.CLAMP);
     return { opacity: on * full };
   });
-  // The fade now starts up to 40px before the tab bar reaches the bar, so for that stretch the bar's white grows down to meet the
-  // tab bar's top edge: no strip of the hero photo shows between them while it fades in.
-  const compactBarGrowStyle = useAnimatedStyle(() => {
+  // The bar's white reaches down to the tab bar's top edge the whole time it is fading in, so no photo shows between them:
+  // a backing COMPACT_FADE_PT taller than the bar, slid up by a transform (not a height, which lags a fast scroll) so its
+  // bottom edge stays on the tab bar until the bar pins.
+  const compactBarBackingStyle = useAnimatedStyle(() => {
     const at = fullHeroH - TAB_BAR_TUCK - COMPACT_BAR_H;
-    return { height: COMPACT_BAR_H + Math.min(40, Math.max(0, at - scrollYSV.value)) };
+    const gap = Math.min(COMPACT_FADE_PT, Math.max(0, at - scrollYSV.value));
+    return { transform: [{ translateY: gap - COMPACT_FADE_PT }] };
   });
 
   // ── Sheet position: one authority ─────────────────────────────────────────────────────────────────────
@@ -1924,9 +1928,11 @@ function DestinationSheet({
         </Reanimated.View>
         </View>
         </KeyboardAvoidingView>
-        {/* ── COMPACT TITLE BAR — fixed at the very top; fades in as the tab bar arrives under it and pins (the sticky
-            header leaves exactly this much room above the tab bar), and out again as it scrolls back down. */}
-        <Reanimated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle, compactBarGrowStyle]}>
+
+        {/* ── COMPACT TITLE BAR — fixed at the very top and only fades in place (no movement): in as the tab bar arrives
+            under it and pins, out again as it scrolls back down. */}
+        <Reanimated.View pointerEvents="none" style={[st.compactBar, st.compactBarFixed, { height: COMPACT_BAR_H, paddingTop: insets.top + 12 }, compactBarStyle]}>
+          <Reanimated.View style={[st.compactBarBacking, { height: COMPACT_BAR_H + COMPACT_FADE_PT }, compactBarBackingStyle]} />
           <Text style={st.compactBarTitle} numberOfLines={1}>{destination.name}</Text>
         </Reanimated.View>
 
@@ -2074,9 +2080,10 @@ const st = StyleSheet.create({
   heroBackdrop: { position:'absolute', top:0, left:0, right:0, height: HERO_H, overflow:'hidden', backgroundColor:'#111827' },
   heroDim: { backgroundColor:'#000' },
   compactBar: {
-    backgroundColor:'white', alignItems:'center', paddingHorizontal: 60,
+    alignItems:'center', paddingHorizontal: 60,
   },
   tabCornerFill: { position:'absolute', left:0, right:0, height: 24, backgroundColor:'white' },
+  compactBarBacking: { position: 'absolute', top: 0, left: 0, right: 0, backgroundColor: 'white' },
   compactBarFixed: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3 },
   compactBarTitle: { height: 36, lineHeight: 36, fontSize: 16, fontWeight: '700', color: '#111827' },
   // Behind the status bar and the top buttons only (a flat layer over the whole photo used to darken all of it).

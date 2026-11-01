@@ -1,7 +1,7 @@
 // Tests for the pure transition helpers in src/utils/navTransitions.ts.
 //   npx tsx scripts/tests/nav-transitions.test.ts
 import assert from 'node:assert/strict';
-import { navTargetStatus, PILL_OWNER, pillBottomForSheet, pillOwnerFor, sameNavSel } from '../../src/utils/navTransitions';
+import { nearestLng, navTargetStatus, PILL_OWNER, pillBottomForSheet, pillOwnerFor, sameNavSel } from '../../src/utils/navTransitions';
 
 const stops = { fullY: 60, collapsedY: 420, peekY: 700, closeY: 884 };
 const targets = { full: 700, collapsed: 340, peek: 80 };
@@ -42,5 +42,12 @@ assert.equal(navTargetStatus(sydney, nothing, { country: 'AU', dest: 'sydney', s
 // The X close's stale-close guard: only the selection it was tapped from may be closed.
 assert.equal(sameNavSel(sydney, { ...sydney }), true);
 assert.equal(sameNavSel(sydney, australia), false);
+
+// Camera targets go the short way round (see nearestLng).
+assert.equal(nearestLng(-175, 170), 185);      // NZ -> Tonga: east across the date line, not 345 degrees west
+assert.equal(nearestLng(175, -170), -185);     // and back the other way
+assert.equal(nearestLng(10, 20), 10);          // no date line in the way: unchanged
+assert.equal(nearestLng(-175, -170), -175);
+assert.equal(nearestLng(170, 540), 530);       // a far-unwrapped current centre still gets the nearest copy
 
 console.log('nav-transitions: all assertions passed');
