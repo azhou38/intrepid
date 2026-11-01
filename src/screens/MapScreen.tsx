@@ -2303,6 +2303,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // idle must not end the plan the close is about to take over (Auckland's spot pins came back, bunched, for the first
   // frames of the zoom-out).
   const xClosePendingRef = useRef(false);
+  // See releaseHeldSelection.
+  const planLandedRef = useRef<NavSel | null>(null);
+  // A landed plan (planLandedRef) ends with the next selection change.
+  if (planLandedRef.current && !sameNavSel(planLandedRef.current, { country: selectedCountry?.countryCode ?? null, dest: selectedDest?.id ?? null, spot: selectedSpot?.id ?? null })) {
+    planLandedRef.current = null;
+    planWithSelRef.current = false;
+    planHoldRef.current = false;
+    planZoomTargetRef.current = null;
+  }
   if ((selectedCountry || selectedDest) && !planWithSelRef.current) { planZoomTargetRef.current = null; planHoldRef.current = false; }
   let planZoomTarget = planZoomTargetRef.current;
   // The same look-ahead for closing a spot back INTO its destination (the "‹ Destination" back), which keeps the
@@ -2510,7 +2519,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const planCountry = navTarget ? navTarget.country : selectedCountry ?? heldSelRef.current.country;
   const planDest = navTarget ? navTarget.dest : selectedDest ?? heldSelRef.current.dest;
   const planZoomTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // A planned back or X zoom-out that has landed (its camera stopped): its pin plan is KEPT as it stands, so the pins'
+  // state at landing is their final state. It ends at the user's next map gesture (handleCameraChanged), the next
+  // selection change (checked below, in render) or the next navigation's plan; not at the map idle, the plan's safety
+  // timer or the camera settling. Re-planning there (the first back to a country lands off its estimated zoom: no camera
+  // cached for it yet) switched some destination pins between photo and small pins after the zoom had ended.
   const releaseHeldSelection = useCallback(() => {
+    planLandedRef.current = null;
     const hadTarget = planZoomTargetRef.current !== null;
     if (!heldSelRef.current.country && !heldSelRef.current.dest && !hadTarget) return;
     if (selectedCountryRef.current || selectedDestRef.current) return;
@@ -2522,6 +2537,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   }, []);
   const releaseSpotCloseTarget = useCallback(() => {
     if (xClosePendingRef.current) return;
+    planLandedRef.current = null;
     if (spotCloseTimerRef.current) { clearTimeout(spotCloseTimerRef.current); spotCloseTimerRef.current = null; }
     if (planWithSelRef.current) {   // a back tap's plan (see beginBackPlan) ends with the move too
       planWithSelRef.current = false;
@@ -4657,7 +4673,8 @@ const destItems = useMemo((): DestItem[] =>
     // (see its own comment) — a tap must still open collapsed even mid-momentum.
     setCountryInitialSnap(openPeeked ? 'peek' : undefined);
     setSheetSnapState(openPeeked || isFingerDraggingMap() ? 'peek' : 'collapsed');
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    // The back tap's follow-up (cameraStarted) is silent: the tap itself already gave the haptic.
+    if (!opts?.cameraStarted) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     if (!opts?.cameraStarted) fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for CountrySheet to mount and run its own
@@ -5137,7 +5154,11 @@ const destItems = useMemo((): DestItem[] =>
       if (cameraArriveTimerRef.current) clearTimeout(cameraArriveTimerRef.current);
       cameraArriveTimerRef.current = setTimeout(() => {
         cameraArriveTimerRef.current = null;
-        if (planZoomTargetRef.current === target) { releaseHeldSelection(); releaseSpotCloseTarget(); }
+        if (planZoomTargetRef.current !== target) return;
+        if (!planHoldRef.current) { releaseHeldSelection(); releaseSpotCloseTarget(); return; }
+        // Landed: keep the plan (planLandedRef) and drop its safety timer, which would otherwise re-plan a few seconds later.
+        planLandedRef.current = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
+        if (planZoomTimerRef.current) { clearTimeout(planZoomTimerRef.current); planZoomTimerRef.current = null; }
       }, 150);
     }
     // During that planned zoom-out the per-frame region update re-renders the whole screen without changing the pin
@@ -5200,8 +5221,12 @@ const destItems = useMemo((): DestItem[] =>
     wasMapGestureActiveRef.current = false;
     if (regionHoldFlushRef.current) { clearTimeout(regionHoldFlushRef.current); regionHoldFlushRef.current = null; }
     releaseSheetsAfterCamera();
-    releaseHeldSelection();   // a close's zoom-out has settled: let the pin/pill planning drop the old selection
-    releaseSpotCloseTarget();
+    // A close's zoom-out has settled: let the pin/pill planning drop the old selection. Not a landed plan, which stands
+    // until the user's next move (see planLandedRef).
+    if (!planLandedRef.current) {
+      releaseHeldSelection();
+      releaseSpotCloseTarget();
+    }
     setMapIdleTick(t => t + 1);   // a return arrow held back during the gesture can now open (see mapIdleTick)
     const { center, bounds } = state.properties;
     const newRegion: Region = {
@@ -5304,7 +5329,8 @@ const destItems = useMemo((): DestItem[] =>
   const renderedCountryPills = useExitingItems(stableCountryPills, c => c.country);
 
   const countryPillMarkers = useMemo(() => renderedCountryPills.map(({ item: cluster, exiting }) => {
-    const isSelectedPill = cluster.countryCode === selectedCountry?.countryCode;
+    // Not once its country's X has been tapped (highlightClosingFor): the glow goes with the tap, like the border highlight.
+    const isSelectedPill = cluster.countryCode === selectedCountry?.countryCode && highlightClosingFor !== selectedCountry;
     // Plain border (no glow/shadow) on every OTHER visited country's pill, always — the
     // selected country keeps the full glow treatment instead, handled separately below so
     // the two states never compete on the same element. Checked against
@@ -5394,7 +5420,7 @@ const destItems = useMemo((): DestItem[] =>
         </FadePin>
       </MapboxGL.MarkerView>
     );
-  }), [renderedCountryPills, selectedCountry, handleCountryPress, handleResetToCountry, visitedCountryCodeSet]);
+  }), [renderedCountryPills, selectedCountry, handleCountryPress, handleResetToCountry, visitedCountryCodeSet, highlightClosingFor]);
 
   // Promoted photo destinations, excluding any destination the camera is currently inside
   // of at spot zoom (its spot pins represent it instead; zoomedIntoDestIds) — selected or
