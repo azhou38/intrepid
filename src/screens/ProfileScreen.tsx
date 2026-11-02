@@ -680,7 +680,7 @@ export default function ProfileScreen() {
               </Text>
             )}
             {exploredView === 'list' ? (
-              <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} rows={shownDests.map(d => {
+              <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={shownDests.map(d => {
                 const n = spotsByDest.get(d.id) ?? 0;
                 return {
                   key: d.id, name: d.name, countryCode: d.countryCode, sub: d.country,
@@ -730,7 +730,7 @@ export default function ProfileScreen() {
               </Text>
             )}
             {exploredView === 'list' ? (
-              <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} rows={shownSpots.map(sp => ({
+              <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={shownSpots.map(sp => ({
                 key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotDestination(sp)?.name ?? spotCountry(sp) ?? '',
                 rating: savedSpots[sp.id]?.rating ?? 0, date: sortKeys.spotDate.get(sp.id) ?? '',
               }))} />
@@ -852,7 +852,7 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
           <View style={styles.pageDots}>
             {pages.map((_, i) => <PageDot key={i} index={i} scrollX={scrollX} />)}
           </View>
-          <PageRange scrollX={scrollX} total={tiles.length} pageCount={pages.length} />
+          <PageRange scrollX={scrollX} total={tiles.length} pageCount={pages.length} pageSize={PAGE_SIZE} />
         </View>
       )}
     </View>
@@ -870,7 +870,7 @@ function PageDot({ index, scrollX }: { index: number; scrollX: SharedValue<numbe
 
 // Which tiles the page in view shows, out of all of them: "10–18 of 25" ("1 of 1" for one tile). It switches to the next page's
 // range as soon as a swipe passes halfway, rather than once the swipe has settled; only this text re-renders.
-function PageRange({ scrollX, total, pageCount }: { scrollX: SharedValue<number>; total: number; pageCount: number }) {
+function PageRange({ scrollX, total, pageCount, pageSize }: { scrollX: SharedValue<number>; total: number; pageCount: number; pageSize: number }) {
   const [page, setPage] = useState(0);
   useAnimatedReaction(
     () => Math.max(0, Math.min(pageCount - 1, Math.round(scrollX.value / SCREEN_W))),
@@ -879,7 +879,7 @@ function PageRange({ scrollX, total, pageCount }: { scrollX: SharedValue<number>
   );
   return (
     <Text style={styles.pageRange}>
-      {total === 1 ? '1 of 1' : `${page * PAGE_SIZE + 1}–${Math.min((page + 1) * PAGE_SIZE, total)} of ${total}`}
+      {total === 1 ? '1 of 1' : `${page * pageSize + 1}–${Math.min((page + 1) * pageSize, total)} of ${total}`}
     </Text>
   );
 }
@@ -924,43 +924,78 @@ const SORTS: { key: ExploredSort; label: string }[] = [
 ];
 // An Explored list in the style of Top Countries: one row per place, in the sort's order, numbered unless it is A–Z. What a
 // row measures follows the sort: spots visited (destinations) or rating, as a bar against the top value and the number; the
-// date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. About eight rows
-// show, then the list scrolls.
+// date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. Paged sideways like
+// the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
+// the page (which scrolls up and down itself).
+const LIST_PAGE_SIZE = 8;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const shortDate = (iso: string) => {
   const [y, m, d] = iso.split('-').map(Number);
   return y && m ? `${d ? `${d} ` : ''}${MONTHS[m - 1]} ${y}` : '';
 };
-function RankList({ rows, sort, pickedId, onPick }: {
+function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   rows: { key: string; name: string; countryCode?: string | null; sub: string; spots?: number; rating: number; date: string }[];
   sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
+  // As in PhotoGrid: a pick lasts only while its row is on the page showing.
+  onClearPick: () => void;
 }) {
   const bar = sort === 'spots' || sort === 'rating';
   const valueOf = (r: typeof rows[number]) => (sort === 'spots' ? r.spots ?? 0 : r.rating);
   const max = sort === 'rating' ? 5 : Math.max(1, ...rows.map(valueOf));
+  const pages: typeof rows[] = [];
+  for (let i = 0; i < rows.length; i += LIST_PAGE_SIZE) pages.push(rows.slice(i, i + LIST_PAGE_SIZE));
+  const scrollX = useSharedValue(0);
+  const onListScroll = useAnimatedScrollHandler({ onScroll: e => { scrollX.value = e.contentOffset.x; } });
+  const ref = useRef<Animated.ScrollView>(null);
+  // A new list (another sort, country or search) starts again from its first page.
+  const firstKey = rows[0]?.key;
+  useEffect(() => {
+    ref.current?.scrollTo({ x: 0, animated: false }); scrollX.value = 0;
+    if (pickedId && !pages[0]?.some(r => r.key === pickedId)) onClearPick();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstKey, pages.length, sort]);
   return (
-    <ScrollView style={styles.rankScroll} contentContainerStyle={styles.rankScrollContent} nestedScrollEnabled showsVerticalScrollIndicator={false}>
-      {rows.map((r, i) => {
-        const v = valueOf(r);
-        return (
-          <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
-            {sort !== 'name' && <Text style={styles.rankNum}>{i + 1}</Text>}
-            {r.countryCode ? <CircleFlag countryCode={r.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} /> : <View style={{ width: 22 }} />}
-            <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
-              <Text style={styles.rankName} numberOfLines={1}>{r.name}</Text>
-              {!!r.sub && <Text style={styles.rankSub} numberOfLines={1}>{r.sub}</Text>}
-            </View>
-            {bar && (
-              <View style={styles.countryBarTrack}>
-                <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }]} />
-              </View>
-            )}
-            {bar && <Text style={styles.countryCount}>{v ? (sort === 'rating' ? v.toFixed(1).replace(/\.0$/, '') : v) : '–'}</Text>}
-            {sort === 'date' && <Text style={styles.rankDate}>{r.date ? shortDate(r.date) : '–'}</Text>}
-          </Pressable>
-        );
-      })}
-    </ScrollView>
+    <View>
+      <Animated.ScrollView ref={ref} horizontal pagingEnabled nestedScrollEnabled showsHorizontalScrollIndicator={false}
+        style={styles.tileScroll} decelerationRate="fast" onScroll={onListScroll} scrollEventThrottle={16}
+        onMomentumScrollEnd={e => {
+          const pg = Math.round(e.nativeEvent.contentOffset.x / SCREEN_W);
+          if (pickedId && !pages[pg]?.some(r => r.key === pickedId)) onClearPick();
+        }}>
+        {pages.map((pg, p) => (
+          <View key={p} style={styles.rankPage}>
+            {pg.map((r, j) => {
+              const v = valueOf(r);
+              return (
+                <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
+                  {sort !== 'name' && <Text style={styles.rankNum}>{p * LIST_PAGE_SIZE + j + 1}</Text>}
+                  {r.countryCode ? <CircleFlag countryCode={r.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} /> : <View style={{ width: 22 }} />}
+                  <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
+                    <Text style={styles.rankName} numberOfLines={1}>{r.name}</Text>
+                    {!!r.sub && <Text style={styles.rankSub} numberOfLines={1}>{r.sub}</Text>}
+                  </View>
+                  {bar && (
+                    <View style={styles.countryBarTrack}>
+                      <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }]} />
+                    </View>
+                  )}
+                  {bar && <Text style={styles.countryCount}>{v ? (sort === 'rating' ? v.toFixed(1).replace(/\.0$/, '') : v) : '–'}</Text>}
+                  {sort === 'date' && <Text style={styles.rankDate}>{r.date ? shortDate(r.date) : '–'}</Text>}
+                </Pressable>
+              );
+            })}
+          </View>
+        ))}
+      </Animated.ScrollView>
+      {rows.length > 0 && (
+        <View style={styles.pageBar}>
+          <View style={styles.pageDots}>
+            {pages.map((_, i) => <PageDot key={i} index={i} scrollX={scrollX} />)}
+          </View>
+          <PageRange scrollX={scrollX} total={rows.length} pageCount={pages.length} pageSize={LIST_PAGE_SIZE} />
+        </View>
+      )}
+    </View>
   );
 }
 
@@ -1217,9 +1252,8 @@ const styles = StyleSheet.create({
   viewToggle:      { marginLeft: 'auto', flexDirection: 'row', borderRadius: 10, borderWidth: 1, borderColor: '#E5E7EB', padding: 2, gap: 2 },
   viewToggleBtn:   { paddingHorizontal: 6, paddingVertical: 2, borderRadius: 8 },
   viewToggleBtnOn: { backgroundColor: '#F3F4F6' },
-  // The Explored list (RankList): Top Countries' rows, with a sub line and a scroll after about eight rows.
-  rankScroll:        { maxHeight: 420, marginTop: 4 },
-  rankScrollContent: { paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 4 },
+  // The Explored list (RankList): Top Countries' rows with a sub line, a page of them the screen wide.
+  rankPage:    { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 2 },
   rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
   rankRowOn:   { backgroundColor: '#FFF7ED' },
   rankNum:     { width: 18, fontSize: 13, fontWeight: '700', color: '#9CA3AF', textAlign: 'right' },
