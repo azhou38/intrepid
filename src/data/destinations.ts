@@ -1404,6 +1404,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Milder {months} suit hiking and gardens, away from the hotter summers and colder winters.",
   },
   {
+    id: 'mount-buffalo-national-park', name: "Mount Buffalo National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 30,
+    continent: 'Oceania', coordinates: { latitude: -36.7383, longitude: 146.775 },
+    category: 'park', icon: "⛰️", rank: 3,
+    tagline: "Granite tors, snow gums and sheer cliffs on a plateau that tops out at 1,723 m",
+    description: "Mount Buffalo National Park covers 31,000 ha about 350 km north-east of Melbourne, and was reserved on 4 November 1898, making it one of Australia's oldest national parks. The plateau has granite boulders and rock formations, sheer cliffs, waterfalls and snow gum woodland, and reaches 1,723 m at The Horn. The Chalet, built in 1910, overlooks sheets of granite and the Ovens and Buckland valleys. Bogong moths shelter in the rock crevices at The Horn, and birds feed on them.",
+    whyVisit: ["Walk granite tors and plateau lookouts", "See wildflowers across the plateau", "Play in the snow in winter"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Granite lookouts", "Summer wildflowers", "Winter snow play"],
+    goodToKnow: [
+      { icon: "⛓️", title: "Carry snow chains", detail: "Snow chains must be carried every day, for all vehicles including 4WDs, and fitted where road signs say so. Penalties apply." },
+      { icon: "🏨", title: "Stay in Bright or Porepunkah", detail: "There is no accommodation at the Chalet. Visitors stay in the nearby towns of Porepunkah and Bright." },
+      { icon: "⚠️", title: "Snow play and skiing risks", detail: "Dingo Dell and Cresta Valley suit beginners for tobogganing and snow play. Back-country skiing carries avalanche and weather risks." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Wildflowers bloom on the plateau's grassy plains in {months}, and winter brings snow play.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
