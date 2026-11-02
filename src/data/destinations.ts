@@ -4435,7 +4435,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A Viti Levu base for temples, markets, mud pools and island ferries",
     description: "Nadi is the Viti Levu city that serves as the base for Denarau and the ferries to the Mamanuca and Yasawa islands. At its southern end the Sri Siva Subramaniya Temple is a large Dravidian-style Hindu temple that visitors can enter. The Sabeto valley has a mud bath and three hot-spring pools, and Viseisei is said to be the oldest settlement in Fiji. Behind the city, Koroyanitu National Heritage Park and the Nausori Highlands offer rainforest walks, and Lautoka, the next city north, has a large covered market.",
     whyVisit: ["Soak in hot springs and mud pools", "Step inside a Dravidian-style Hindu temple", "Browse spice and kava markets", "Hike highland rainforest trails"],
-    whyVisitPhotos: ["", "Sri Siva Subramaniya Temple 2, Nadi.jpg", "", "ext-dest-nadi-why4.jpg"],
+    whyVisitPhotos: ["ext-dest-nadi-why1.jpg", "Sri Siva Subramaniya Temple 2, Nadi.jpg", "ext-dest-nadi-why3.jpg", "ext-dest-nadi-why4.jpg"],
     highlights: ["Mud and springs", "Hindu temple", "Spice and kava", "Rainforest walks"],
     goodToKnow: [
       { icon: "👘", title: "Cover up at the temple", detail: "Visitors cover up to enter the Sri Siva Subramaniya Temple, so wear clothes that cover shoulders and knees." },
@@ -4554,7 +4554,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Fiji's northern island of yacht anchorages, hot springs and rainforest walks",
     description: "Vanua Levu is a large island in Fiji's north. Savusavu, on its south coast, is the main tourist base, with a yacht club, diving and geothermal hot springs. Waisali Rainforest Reserve, a community-run reserve a 30-minute drive northwest of Savusavu, has walking trails, rare birds and endemic frogs. Labasa, the island's largest town, sits on a river delta in the north and has a large Indo-Fijian community.",
     whyVisit: ["Sail and dive from a harbour town", "Spot rare birds in rainforest", "Soak in geothermal hot springs"],
-    whyVisitPhotos: ["ext-dest-vanua-levu-why1.jpg", "", "ext-dest-vanua-levu-why3.jpg"],
+    whyVisitPhotos: ["ext-dest-vanua-levu-why1.jpg", "ext-dest-vanua-levu-why2.jpg", "ext-dest-vanua-levu-why3.jpg"],
     highlights: ["Sailing and diving", "Rainforest birds", "Hot springs"],
     goodToKnow: [
       { icon: "🌳", title: "Waisali entry is cheap", detail: "Waisali Rainforest Reserve charges about FJD 3 for adults and FJD 1 for children, and is a 30-minute drive northwest of Savusavu." },
@@ -4570,7 +4570,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Viti Levu's Suncoast, with island diving, sunset beaches and early settlement sites",
     description: "Rakiraki sits on the north coast of Viti Levu, on a strip of land known as the Suncoast. Nananu-i-Ra, a small island reached by boat from Ellington Wharf, has resorts, the One Bay beach and well-known dive sites. On the mainland, the tomb of the 19th-century chief Ratu Udre Udre lies near Vaileka. Navatu Rock stands beside Kings Road in Vitawa village, one of Fiji's oldest settlement sites.",
     whyVisit: ["Dive reefs off a small island", "Relax on rainforest-backed beaches"],
-    whyVisitPhotos: ["ext-dest-rakiraki-why1.jpg", ""],
+    whyVisitPhotos: ["ext-dest-rakiraki-why1.jpg", "ext-dest-rakiraki-why2.jpg"],
     highlights: ["Island diving", "Sunset beaches"],
     goodToKnow: [
       { icon: "⛵", title: "Boat to Nananu-i-Ra", detail: "The island is reached by boat from Ellington Wharf, so plan your transfers around the crossing." },
