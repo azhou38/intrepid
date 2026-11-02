@@ -1035,8 +1035,8 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
             {pg.map((r, j) => {
               const v = valueOf(r), k = p * LIST_PAGE_SIZE + j, rank = ranks[k];
               const showRank = j === 0 || rank !== ranks[k - 1];
-              // Sorted by spots visited, the top three ranks (with any spots) get the grid's gold, silver and bronze: on the
-              // rank number, as a badge, and on the bar.
+              // Sorted by spots visited, the top three ranks (with any spots) get the grid's gold, silver and bronze on their
+              // rank number, as a badge.
               const medal = sort === 'spots' && v > 0 && rank <= 3 ? RANK_COLORS[rank - 1] : undefined;
               return (
                 <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
@@ -1060,7 +1060,7 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                   </View>
                   {bar && (
                     <View style={styles.countryBarTrack}>
-                      <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }, !!medal && { backgroundColor: medal }]} />
+                      <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }]} />
                     </View>
                   )}
                   {bar && <Text style={styles.countryCount}>{v ? (sort === 'rating' ? v.toFixed(1).replace(/\.0$/, '') : v) : '–'}</Text>}
