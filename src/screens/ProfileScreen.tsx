@@ -773,6 +773,8 @@ const TILE_GAP = 6;
 const TILE = Math.floor((SCREEN_W - 2 * EXPLORED_PAD - (TILE_COLS - 1) * TILE_GAP) / TILE_COLS);
 // Nine to a page, three rows of three; a page is the screen wide and as tall as its rows.
 const PAGE_SIZE = TILE_COLS * 3;
+// The page dots' colours: the page in view, and the others.
+const PAGE_DOT_ON = '#111827', PAGE_DOT_OFF = '#D1D5DB';
 // Room above and below each page for the tiles' shadows (the scroller clips anything outside it).
 const SHADOW_ROOM = 6;
 const gridHeight = (n: number) => { const rows = Math.max(1, Math.ceil(n / TILE_COLS)); return TILE * rows + TILE_GAP * (rows - 1); };
@@ -785,22 +787,24 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
   // Pages of nine (three by three): swiping snaps to a whole page, like a carousel, with a dot for each page below.
   const pages: typeof tiles[] = [];
   for (let i = 0; i < tiles.length; i += PAGE_SIZE) pages.push(tiles.slice(i, i + PAGE_SIZE));
-  const [page, setPage] = useState(0);
-  const ref = useRef<ScrollView>(null);
+  // The scroller's offset, live on the UI thread: the dots and the range follow the swipe as it happens (see PageDot and
+  // PageRange), not only once it has settled, and without re-rendering the grid.
+  const scrollX = useSharedValue(0);
+  const onTileScroll = useAnimatedScrollHandler({ onScroll: e => { scrollX.value = e.contentOffset.x; } });
+  const ref = useRef<Animated.ScrollView>(null);
   // A new list (another sort, country or search) starts again from its first page.
   const firstKey = tiles[0]?.key;
   useEffect(() => {
-    ref.current?.scrollTo({ x: 0, animated: false }); setPage(0);
+    ref.current?.scrollTo({ x: 0, animated: false }); scrollX.value = 0;
     if (pickedId && !pages[0]?.some(t => t.key === pickedId)) onClearPick();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [firstKey, pages.length]);
   return (
     <View>
-      <ScrollView ref={ref} horizontal pagingEnabled nestedScrollEnabled showsHorizontalScrollIndicator={false}
-        style={styles.tileScroll} decelerationRate="fast"
+      <Animated.ScrollView ref={ref} horizontal pagingEnabled nestedScrollEnabled showsHorizontalScrollIndicator={false}
+        style={styles.tileScroll} decelerationRate="fast" onScroll={onTileScroll} scrollEventThrottle={16}
         onMomentumScrollEnd={e => {
           const pg = Math.round(e.nativeEvent.contentOffset.x / SCREEN_W);
-          setPage(pg);
           if (pickedId && !pages[pg]?.some(t => t.key === pickedId)) onClearPick();
         }}>
         {pages.map((pg, i) => (
@@ -823,19 +827,41 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
             ))}
           </View>
         ))}
-      </ScrollView>
+      </Animated.ScrollView>
       {tiles.length > 0 && (
         <View style={styles.pageBar}>
           <View style={styles.pageDots}>
-            {pages.map((_, i) => <View key={i} style={[styles.pageDot, i === page && styles.pageDotOn]} />)}
+            {pages.map((_, i) => <PageDot key={i} index={i} scrollX={scrollX} />)}
           </View>
-          {/* Which tiles this page shows, out of all of them: "10–18 of 25" ("1 of 1" for one tile). */}
-          <Text style={styles.pageRange}>
-            {tiles.length === 1 ? '1 of 1' : `${page * PAGE_SIZE + 1}–${Math.min((page + 1) * PAGE_SIZE, tiles.length)} of ${tiles.length}`}
-          </Text>
+          <PageRange scrollX={scrollX} total={tiles.length} pageCount={pages.length} />
         </View>
       )}
     </View>
+  );
+}
+
+// A page dot: dark for the page in view, blending to grey as the swipe moves away from it, in step with the finger.
+function PageDot({ index, scrollX }: { index: number; scrollX: SharedValue<number> }) {
+  const st = useAnimatedStyle(() => {
+    const near = Math.max(0, 1 - Math.abs(scrollX.value / SCREEN_W - index));
+    return { backgroundColor: interpolateColor(near, [0, 1], [PAGE_DOT_OFF, PAGE_DOT_ON]) };
+  });
+  return <Animated.View style={[styles.pageDot, st]} />;
+}
+
+// Which tiles the page in view shows, out of all of them: "10–18 of 25" ("1 of 1" for one tile). It switches to the next page's
+// range as soon as a swipe passes halfway, rather than once the swipe has settled; only this text re-renders.
+function PageRange({ scrollX, total, pageCount }: { scrollX: SharedValue<number>; total: number; pageCount: number }) {
+  const [page, setPage] = useState(0);
+  useAnimatedReaction(
+    () => Math.max(0, Math.min(pageCount - 1, Math.round(scrollX.value / SCREEN_W))),
+    (pg, prev) => { if (pg !== prev) runOnJS(setPage)(pg); },
+    [pageCount],
+  );
+  return (
+    <Text style={styles.pageRange}>
+      {total === 1 ? '1 of 1' : `${page * PAGE_SIZE + 1}–${Math.min((page + 1) * PAGE_SIZE, total)} of ${total}`}
+    </Text>
   );
 }
 
@@ -1129,8 +1155,7 @@ const styles = StyleSheet.create({
   pageBar:  { marginTop: 4, height: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: 10, paddingHorizontal: EXPLORED_PAD + 2 },
   pageDots: { flexDirection: 'row', gap: 5 },
   pageRange: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
-  pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#D1D5DB' },
-  pageDotOn: { backgroundColor: '#111827' },
+  pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: PAGE_DOT_OFF },
   // A tile is a shadow-casting shell around a clipped inner box (a view that clips cannot also cast a shadow).
   tile:     { width: TILE, height: TILE, borderRadius: 10, backgroundColor: '#E5E7EB',
               shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 5, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
