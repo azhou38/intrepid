@@ -3032,4 +3032,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Grampians National Park",
   "Phillip Island",
   "Wilsons Promontory National Park",
+  "Alpine National Park",
 ]);

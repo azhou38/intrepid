@@ -1030,6 +1030,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Go in {months} for warm swimming and camping. March is quieter than the Christmas and January peak.",
   },
   {
+    id: 'alpine-national-park', name: "Alpine National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -36.88, longitude: 147.2 },
+    category: 'park', icon: "🏔️", rank: 2,
+    tagline: "Victoria's largest national park, with its highest peak and the Bogong High Plains",
+    description: "Alpine National Park covers 6,474 km2 and is the Victorian continuation of Kosciuszko National Park. It holds Victoria's highest point, Mount Bogong at 1,986 m, along with Mount Feathertop (1,922 m), Mount Hotham (1,862 m) and the sub-alpine woodland and grassland of the Bogong High Plains. The 650 km Australian Alps Walking Track, from Walhalla to near Canberra, crosses it. The park protects threatened species including the spotted tree frog, smoky mouse and mountain pygmy possum.",
+    whyVisit: ["Walk to Victoria's highest peaks", "Ski the Bogong High Plains", "Hike the Australian Alps Walking Track", "See alpine waterfalls in spring"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Alpine summits", "Snow season", "Long-distance hiking", "Spring waterfalls"],
+    goodToKnow: [
+      { icon: "❄️", title: "Winter means skis", detail: "In winter much of the park is snow-covered and only accessible on skis." },
+      { icon: "🏘️", title: "No towns inside", detail: "There are no towns in the park. Stay at Mount Hotham or Falls Creek, or in the towns around it." },
+      { icon: "🚙", title: "Unsealed road to falls", detail: "The road to Paradise Falls needs 11 km of unsealed driving. Spring or early summer is the best time to see it." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Walk and ride in {months}, when the alpine air is cool. Winter snow means skis.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
