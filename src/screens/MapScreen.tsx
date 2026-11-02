@@ -140,6 +140,8 @@ const DEST_TIER_AHEAD_MIN_V = 2;
 // at most HANDOFF_MAX at once.
 const HANDOFF_BAND = 1.0;
 const HANDOFF_MAX = 6;
+// A handoff slot a destination has just left is not switched on for another one for this long (see handoffSlotFreedAtRef).
+const HANDOFF_SLOT_SETTLE_MS = 300;
 // Destination photo pins are a native Mapbox SymbolLayer (destPhotoSymbols): Mapbox resolves pin-vs-pin and name
 // collisions itself on every rendered frame and fades symbols in and out, so pins never pile up while zooming (the
 // JS plan only decides which destinations are eligible for a photo at all). false falls back to the old MarkerView pins.
@@ -5532,27 +5534,48 @@ const destItems = useMemo((): DestItem[] =>
   const handoffJoinedRef = useRef<Set<string>>(new Set());
   const [handoffTick, setHandoffTick] = useState(0);
   const handoffSig = handoffDests.map(h => `${h.dest.id}${h.past ? '-' : '+'}`).join(',');
+  // When each slot's last destination left it. Mapbox applies a layer's style on the next frame but loads a source's new
+  // data in the background, so a slot switched on just after a hidden destination left it still drew that destination for
+  // a frame, at full opacity: zooming in past Coral Coast, its pin flashed once when another destination took its slot.
+  // A slot that must change state is only handed out once its old occupant has had HANDOFF_SLOT_SETTLE_MS to leave the
+  // data; a slot already resting in the wanted state changes nothing and can be reused at once.
+  const handoffSlotFreedAtRef = useRef<number[]>(Array(HANDOFF_MAX).fill(0));
+  const [handoffRetryTick, setHandoffRetryTick] = useState(0);
+  const handoffRetryTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (handoffRetryTimerRef.current) clearTimeout(handoffRetryTimerRef.current); }, []);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const stableHandoffDests = useMemo(() => {
     const slots = handoffSlotRef.current;
+    const freedAt = handoffSlotFreedAtRef.current;
+    const now = Date.now();
     const ids = new Set(handoffDests.map(h => h.dest.id));
-    for (const id of [...slots.keys()]) if (!ids.has(id)) slots.delete(id);
+    for (const [id, k] of [...slots]) if (!ids.has(id)) { slots.delete(id); freedAt[k] = now; }
     const used = new Set(slots.values());
     const out: { dest: Destination; past: boolean; slot: number }[] = [];
+    let retryIn = 0;
     for (const h of handoffDests) {
       let k = slots.get(h.dest.id);
       if (k === undefined) {
         // Prefer a free slot already resting in this destination's state, so it can join at once.
         const want = !h.past;
         for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i) && handoffSlotOnRef.current[i] === want) { k = i; break; }
-        if (k === undefined) for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i)) { k = i; break; }
+        if (k === undefined) for (let i = 0; i < HANDOFF_MAX; i++) {
+          if (used.has(i)) continue;
+          const wait = freedAt[i] + HANDOFF_SLOT_SETTLE_MS - now;
+          if (wait <= 0) { k = i; break; }
+          retryIn = retryIn ? Math.min(retryIn, wait) : wait;
+        }
+        // No slot yet: it is drawn as usual until one is free (or not at all, if hidden).
         if (k === undefined) continue;
         slots.set(h.dest.id, k); used.add(k);
       }
       out.push({ ...h, slot: k });
     }
+    if (retryIn && !handoffRetryTimerRef.current) {
+      handoffRetryTimerRef.current = setTimeout(() => { handoffRetryTimerRef.current = null; setHandoffRetryTick(t => t + 1); }, retryIn);
+    }
     return out;
-  }, [handoffSig]);
+  }, [handoffSig, handoffRetryTick]);
   // Each slot's state this render, and which destinations are on their slot's layer (see handoffSlotOnRef).
   const handoffLayers = Array.from({ length: HANDOFF_MAX }, (_, k) => {
     const h = stableHandoffDests.find(x => x.slot === k);
