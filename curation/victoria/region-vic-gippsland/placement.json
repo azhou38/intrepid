@@ -221,7 +221,7 @@
     "longitude": 146.42425
    },
    "coordinates_source": "wikipedia:Wilsons Promontory Lighthouse",
-   "pin_status": "ok",
+   "pin_status": "unresolved",
    "category": "landmark",
    "wiki": "Wilsons Promontory Lighthouse",
    "icon": "\ud83d\uddfc",
@@ -367,11 +367,11 @@
    "destination": "croajingolong",
    "id": "croajingolong-1",
    "coordinates": {
-    "latitude": -37.55,
-    "longitude": 149.75
+    "latitude": -37.560342,
+    "longitude": 149.756923
    },
-   "coordinates_source": "wikipedia:Mallacoota (town point; to be confirmed against OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Mallacoota\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Mallacoota",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -401,7 +401,7 @@
     "longitude": 149.27552778
    },
    "coordinates_source": "wikipedia:Point Hicks Lighthouse",
-   "pin_status": "ok",
+   "pin_status": "unresolved",
    "category": "landmark",
    "wiki": "Point Hicks Lighthouse",
    "icon": "\ud83d\uddfc",
@@ -432,7 +432,7 @@
     "longitude": 149.91688889
    },
    "coordinates_source": "wikipedia:Gabo Island Lighthouse",
-   "pin_status": "ok",
+   "pin_status": "unresolved",
    "category": "landmark",
    "wiki": "Gabo Island Lighthouse",
    "icon": "\ud83d\uddfc",
@@ -492,7 +492,7 @@
     "longitude": 149.3
    },
    "coordinates_source": "area hint only (not resolved; near Thurra River mouth); confirm at pins stage",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "wiki": null,
    "icon": "\ud83c\udfdc\ufe0f",
@@ -608,11 +608,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-1",
    "coordinates": {
-    "latitude": -37.86666667,
-    "longitude": 147.98333333
+    "latitude": -37.877502,
+    "longitude": 147.98709
    },
-   "coordinates_source": "wikipedia:Lakes Entrance (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm landuse=recreation_ground (nominatim) \"Lakes Entrance Recreation Reserve\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Lakes Entrance",
    "icon": "\u26f5",
@@ -638,11 +638,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-2",
    "coordinates": {
-    "latitude": -37.885,
-    "longitude": 148.0
+    "latitude": -37.883637,
+    "longitude": 147.994458
    },
-   "coordinates_source": "area hint only (ocean-beach footbridge side of Lakes Entrance; no OSM natural=beach resolved); main access to confirm at pins stage",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Ninety Mile Beach\"",
+   "pin_status": "ok",
    "category": "beach",
    "wiki": "Ninety Mile Beach, Victoria",
    "icon": "\ud83c\udfd6\ufe0f",
@@ -668,11 +668,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-3",
    "coordinates": {
-    "latitude": -37.88333333,
-    "longitude": 147.85
+    "latitude": -37.893189,
+    "longitude": 147.85357
    },
-   "coordinates_source": "wikipedia:Metung (village point; confirm OSM place=village)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Metung\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Metung",
    "icon": "\u26f5",
@@ -726,11 +726,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-5",
    "coordinates": {
-    "latitude": -37.8275,
-    "longitude": 147.625
+    "latitude": -37.825451,
+    "longitude": 147.630475
    },
-   "coordinates_source": "wikipedia:Bairnsdale (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Bairnsdale\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Bairnsdale",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -814,11 +814,11 @@
    "destination": "south-gippsland",
    "id": "south-gippsland-3",
    "coordinates": {
-    "latitude": -38.69111111,
-    "longitude": 145.65611111
+    "latitude": -38.704196,
+    "longitude": 145.652693
    },
-   "coordinates_source": "wikipedia:Bunurong Marine National Park (park centroid; visitor access point at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Bunurong Marine National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Bunurong Marine National Park",
    "icon": "\ud83c\udf0a",
@@ -956,11 +956,11 @@
    "destination": "south-gippsland",
    "id": "south-gippsland-8",
    "coordinates": {
-    "latitude": -38.48333333,
-    "longitude": 145.95
+    "latitude": -38.476157,
+    "longitude": 145.945861
    },
-   "coordinates_source": "wikipedia:Leongatha (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Leongatha\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Leongatha",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -986,11 +986,11 @@
    "destination": null,
    "id": "sale",
    "coordinates": {
-    "latitude": -38.1,
-    "longitude": 147.06666667
+    "latitude": -38.109446,
+    "longitude": 147.065672
    },
-   "coordinates_source": "wikipedia:Sale, Victoria (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sale\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Sale, Victoria",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -1020,10 +1020,10 @@
    "destination": null,
    "id": "sale-swing-bridge",
    "coordinates": {
-    "latitude": -38.146345,
-    "longitude": 147.08686
+    "latitude": -38.146372,
+    "longitude": 147.086928
    },
-   "coordinates_source": "wikipedia:Sale Swing Bridge",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Sale Swing bridge\"",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": null,
@@ -1088,11 +1088,11 @@
    "destination": null,
    "id": "traralgon",
    "coordinates": {
-    "latitude": -38.19583333,
-    "longitude": 146.54027778
+    "latitude": -38.194664,
+    "longitude": 146.538165
    },
-   "coordinates_source": "wikipedia:Traralgon (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Traralgon\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Traralgon",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -1122,10 +1122,10 @@
    "destination": null,
    "id": "old-gippstown",
    "coordinates": {
-    "latitude": -38.1846383,
-    "longitude": 146.2344812
+    "latitude": -38.184881,
+    "longitude": 146.237297
    },
-   "coordinates_source": "wikipedia:Old Gippstown",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Old Gippstown Heritage Park\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Old Gippstown",
@@ -1154,11 +1154,11 @@
    "destination": null,
    "id": "walhalla",
    "coordinates": {
-    "latitude": -37.94361111,
-    "longitude": 146.45083333
+    "latitude": -37.942307,
+    "longitude": 146.451139
    },
-   "coordinates_source": "wikipedia:Walhalla, Victoria (town point; confirm OSM place=village)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Walhalla\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Walhalla, Victoria",
    "icon": "\u26cf\ufe0f",
@@ -1188,11 +1188,11 @@
    "destination": null,
    "id": "baw-baw-national-park",
    "coordinates": {
-    "latitude": -37.76388889,
-    "longitude": 146.22305556
+    "latitude": -37.841462,
+    "longitude": 146.258004
    },
-   "coordinates_source": "wikipedia:Baw Baw National Park (park centroid; visitor point to be found at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=hamlet (nominatim) \"Baw Baw Village\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Baw Baw National Park",
    "icon": "\ud83c\udfd4\ufe0f",
@@ -1290,11 +1290,11 @@
    "destination": null,
    "id": "tarra-bulga-national-park",
    "coordinates": {
-    "latitude": -38.44166667,
-    "longitude": 146.58
+    "latitude": -38.435867,
+    "longitude": 146.587356
    },
-   "coordinates_source": "wikipedia:Tarra-Bulga National Park (park centroid; Balook visitor centre point to be found at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Tarra-Bulga National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Tarra-Bulga National Park",
    "icon": "\ud83c\udf33",
@@ -1394,7 +1394,7 @@
     "longitude": 148.55333333
    },
    "coordinates_source": "wikipedia:Snowy River National Park (park centroid; visitor point e.g. McKillops Bridge at pins stage)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "wiki": "Snowy River National Park",
    "icon": "\ud83c\udfde\ufe0f",
@@ -1424,10 +1424,10 @@
    "destination": null,
    "id": "buchan-caves",
    "coordinates": {
-    "latitude": -37.4958,
-    "longitude": 148.1631
+    "latitude": -37.499225,
+    "longitude": 148.172089
    },
-   "coordinates_source": "wikipedia:Buchan Caves",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Buchan\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": null,
@@ -1492,11 +1492,11 @@
    "destination": null,
    "id": "cape-conran-coastal-park",
    "coordinates": {
-    "latitude": -37.76666667,
-    "longitude": 148.86666667
+    "latitude": -37.773413,
+    "longitude": 148.865342
    },
-   "coordinates_source": "wikipedia:Cape Conran Coastal Park (park centroid; visitor point at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Cape Conran Coastal Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Cape Conran Coastal Park",
    "icon": "\ud83c\udf0a",

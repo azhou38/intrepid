@@ -125,11 +125,11 @@
    "icon": "\ud83d\ude82",
    "bio": "Heritage steam railway from Belgrave through Emerald and Lakeside to Gembrook, with open carriages.",
    "coordinates": {
-    "lat": -37.9075,
-    "lng": 145.35666667
+    "latitude": -37.907108,
+    "longitude": 145.357029
    },
-   "coordinates_source": "wikipedia:Puffing Billy Railway",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Puffing Billy Railway\"",
+   "pin_status": "ok",
    "views": 30156,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
@@ -153,11 +153,11 @@
    "icon": "\ud83c\udf32",
    "bio": "National park in four parts across the ranges, with picnic grounds and walking tracks.",
    "coordinates": {
-    "lat": -37.81027778,
-    "lng": 145.38555556
+    "latitude": -37.840548,
+    "longitude": 145.384995
    },
-   "coordinates_source": "wikipedia:Dandenong Ranges National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Dandenong Ranges National Park\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -181,11 +181,11 @@
    "icon": "\ud83c\udf33",
    "bio": "Forest of tall mountain ash on the ranges' southern slopes, with walking tracks near Sherbrooke and Belgrave.",
    "coordinates": {
-    "lat": -37.89527778,
-    "lng": 145.36305556
+    "latitude": -37.888445,
+    "longitude": 145.359356
    },
-   "coordinates_source": "wikipedia:Sherbrooke Forest",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sherbrooke\"",
+   "pin_status": "ok",
    "views": 2670,
    "counted_sources": [],
    "cost": null,
@@ -206,9 +206,12 @@
    "category": "historic",
    "icon": "\ud83d\uddff",
    "bio": "Bush garden on Mount Dandenong Tourist Road with the sculptor William Ricketts' clay figures among ferns.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.832679,
+    "longitude": 145.355441
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"William Ricketts Sanctuary\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -237,7 +240,7 @@
     "lng": 145.369
    },
    "coordinates_source": "wikipedia:Dandenong Ranges Botanic Garden",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "views": 1254,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -261,11 +264,11 @@
    "icon": "\u26f0\ufe0f",
    "bio": "Summit lookout at 633 m, the highest point of the ranges, with a view across Melbourne.",
    "coordinates": {
-    "lat": -37.83611111,
-    "lng": 145.35111111
+    "latitude": -37.827104,
+    "longitude": 145.353009
    },
-   "coordinates_source": "wikipedia:Mount Dandenong",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Dandenong\"",
+   "pin_status": "ok",
    "views": 4866,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -290,11 +293,11 @@
    "bio": "Village on Mount Dandenong Tourist Road with gardens, tea rooms and views, a base for the ranges' gardens.",
    "wiki": "Olinda, Victoria",
    "coordinates": {
-    "lat": -37.85599,
-    "lng": 145.364357
+    "latitude": -37.855905,
+    "longitude": 145.364968
    },
-   "coordinates_source": "wikipedia:Olinda, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Olinda\"",
+   "pin_status": "ok",
    "views": 6414,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
@@ -319,11 +322,11 @@
    "bio": "Forest village in the ranges known for its tea rooms and bush setting.",
    "wiki": "Sassafras, Victoria",
    "coordinates": {
-    "lat": -37.87,
-    "lng": 145.35388889
+    "latitude": -37.86285,
+    "longitude": 145.353697
    },
-   "coordinates_source": "wikipedia:Sassafras, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sassafras\"",
+   "pin_status": "ok",
    "views": 5159,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -348,11 +351,11 @@
    "bio": "Town at the end of the Belgrave train line and the start of the Puffing Billy railway.",
    "wiki": "Belgrave, Victoria",
    "coordinates": {
-    "lat": -37.912067,
-    "lng": 145.3558
+    "latitude": -37.912056,
+    "longitude": 145.355226
    },
-   "coordinates_source": "wikipedia:Belgrave, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Belgrave\"",
+   "pin_status": "ok",
    "views": 8381,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -375,9 +378,12 @@
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio": "Steep 1000-step staircase with historical plaques at Upper Ferntree Gully.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.876177,
+    "longitude": 145.32039
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm historic=memorial (nominatim) \"The Kokoda Trail Walk\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
@@ -401,9 +407,12 @@
    "category": "nature",
    "icon": "\ud83c\udf37",
    "bio": "Garden of themed garden rooms at Olinda, known for its flowers.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.861035,
+    "longitude": 145.378317
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Cloudehill Gardens\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
@@ -426,9 +435,12 @@
    "category": "nature",
    "icon": "\u26f2",
    "bio": "Historic gardens of the Burnham Beeches estate near Olinda, with a lake and extensive water features.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.8741,
+    "longitude": 145.359106
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=water (nominatim) \"Alfred Nicholas Memorial Gardens Lake\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -451,9 +463,12 @@
    "category": "nature",
    "icon": "\ud83d\udef6",
    "bio": "Parkland around Lake Treganowan with walking trails, paddleboats and the Puffing Billy Lakeside station.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.885791,
+    "longitude": 145.432308
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=stream (nominatim) \"Emerald Creek\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
@@ -502,9 +517,12 @@
    "category": "nature",
    "icon": "\ud83d\udeb4",
    "bio": "Regional park around Lysterfield Lake with walking, cycling and picnic areas on Melbourne's eastern edge.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.934877,
+    "longitude": 145.301759
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Lysterfield\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Lysterfield"
@@ -528,11 +546,11 @@
    "icon": "\ud83e\udd98",
    "bio": "Zoos Victoria wildlife sanctuary with native animals and a breeding program, 4 km south of Healesville.",
    "coordinates": {
-    "lat": -37.6822,
-    "lng": 145.5316
+    "latitude": -37.684299,
+    "longitude": 145.531053
    },
-   "coordinates_source": "wikipedia:Healesville Sanctuary",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=zoo (nominatim) \"Healesville Sanctuary\"",
+   "pin_status": "ok",
    "views": 6910,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -558,11 +576,11 @@
    "bio": "Town at the eastern end of the Yarra Valley with galleries, cafes and the rail trail, near the sanctuary.",
    "wiki": "Healesville, Victoria",
    "coordinates": {
-    "lat": -37.65611111,
-    "lng": 145.51388889
+    "latitude": -37.653722,
+    "longitude": 145.516153
    },
-   "coordinates_source": "wikipedia:Healesville",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Healesville\"",
+   "pin_status": "ok",
    "views": 12058,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -636,11 +654,11 @@
    "icon": "\ud83d\uddbc\ufe0f",
    "bio": "Art museum of early Australian modernist and contemporary work, overlooking the vineyards.",
    "coordinates": {
-    "lat": -37.65963889,
-    "lng": 145.46919444
+    "latitude": -37.659633,
+    "longitude": 145.469187
    },
-   "coordinates_source": "wikipedia:TarraWarra Museum of Art",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"TarraWarra Museum of Art\"",
+   "pin_status": "ok",
    "views": 1251,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -665,11 +683,11 @@
    "bio": "Town in the heart of the Yarra Valley wine district with cafes and galleries.",
    "wiki": "Yarra Glen, Victoria",
    "coordinates": {
-    "lat": -37.64888889,
-    "lng": 145.37194444
+    "latitude": -37.657348,
+    "longitude": 145.374396
    },
-   "coordinates_source": "wikipedia:Yarra Glen",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Yarra Glen\"",
+   "pin_status": "ok",
    "views": 3686,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
@@ -776,7 +794,7 @@
     "lng": 145.4891
    },
    "coordinates_source": "wikipedia:Yarra Valley Railway",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "views": 4655,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville"
@@ -827,11 +845,11 @@
    "bio": "Reservoir park east of Healesville with a picnic area and a walk.",
    "wiki": "Maroondah Reservoir",
    "coordinates": {
-    "lat": -37.641932,
-    "lng": 145.551338
+    "latitude": -37.644217,
+    "longitude": 145.550749
    },
-   "coordinates_source": "wikipedia:Maroondah Dam",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=common (nominatim) \"Maroondah Reservoir Park\"",
+   "pin_status": "ok",
    "views": 2283,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville"
@@ -907,11 +925,11 @@
    "bio": "Town at the western gateway to the valley and the start of the Lilydale to Warburton Rail Trail.",
    "wiki": "Lilydale, Victoria",
    "coordinates": {
-    "lat": -37.758,
-    "lng": 145.35
+    "latitude": -37.757664,
+    "longitude": 145.352405
    },
-   "coordinates_source": "wikipedia:Lilydale, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Lilydale\"",
+   "pin_status": "ok",
    "views": 12823,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -935,11 +953,11 @@
    "icon": "\ud83c\udfd4\ufe0f",
    "bio": "Mountain with a 21 m lookout tower at 1,245 m, with views to the Dandenongs and Cathedral Range.",
    "coordinates": {
-    "lat": -37.70638889,
-    "lng": 145.68111111
+    "latitude": -37.706522,
+    "longitude": 145.681183
    },
-   "coordinates_source": "wikipedia:Mount Donna Buang",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Donna Buang\"",
+   "pin_status": "ok",
    "views": 9657,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park",
@@ -991,11 +1009,11 @@
    "bio": "Mountain resort above Marysville with cross-country skiing in winter and summit walks in summer.",
    "wiki": "Lake Mountain (Victoria)",
    "coordinates": {
-    "lat": -37.50444444,
-    "lng": 145.88222222
+    "latitude": -37.503875,
+    "longitude": 145.880671
    },
-   "coordinates_source": "wikipedia:Lake Mountain (Victoria)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Lake Mountain\"",
+   "pin_status": "ok",
    "views": 4813,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
@@ -1021,11 +1039,11 @@
    "bio": "Mountain town on the ranges' eastern edge, base for Steavenson Falls, Lake Mountain and Lady Talbot Drive.",
    "wiki": "Marysville, Victoria",
    "coordinates": {
-    "lat": -37.5,
-    "lng": 145.73333333
+    "latitude": -37.509766,
+    "longitude": 145.749038
    },
-   "coordinates_source": "wikipedia:Marysville, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Marysville\"",
+   "pin_status": "ok",
    "views": 14745,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking",
@@ -1049,11 +1067,11 @@
    "icon": "\ud83d\udca6",
    "bio": "One of Victoria's tallest waterfalls, reached on a walk from Marysville.",
    "coordinates": {
-    "lat": -37.5327,
-    "lng": 145.7737
+    "latitude": -37.532831,
+    "longitude": 145.773997
    },
-   "coordinates_source": "wikipedia:Steavenson Falls",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Steavenson Falls\"",
+   "pin_status": "ok",
    "views": 1615,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -1078,11 +1096,11 @@
    "bio": "Upper Yarra town and gateway to Mount Donna Buang, the rail trail and rainforest walks.",
    "wiki": "Warburton, Victoria",
    "coordinates": {
-    "lat": -37.755,
-    "lng": 145.697
+    "latitude": -37.753622,
+    "longitude": 145.688727
    },
-   "coordinates_source": "wikipedia:Warburton, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Warburton\"",
+   "pin_status": "ok",
    "views": 16691,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking",
@@ -1157,11 +1175,11 @@
    "icon": "\u26f0\ufe0f",
    "bio": "State park of jagged ridges and hiking, with the Jawbone car park as a main starting point.",
    "coordinates": {
-    "lat": -37.38027778,
-    "lng": 145.73583333
+    "latitude": -37.376098,
+    "longitude": 145.778846
    },
-   "coordinates_source": "wikipedia:Cathedral Range State Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Cathedral Range State Park\"",
+   "pin_status": "ok",
    "views": 1325,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -1288,11 +1306,11 @@
    "icon": "\ud83c\udf32",
    "bio": "National park on the Great Dividing Range slopes near Kinglake, with waterfall walks and the Andrew Hill summit.",
    "coordinates": {
-    "lat": -37.40638889,
-    "lng": 145.21083333
+    "latitude": -37.414476,
+    "longitude": 145.205746
    },
-   "coordinates_source": "wikipedia:Kinglake National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Kinglake National Park\"",
+   "pin_status": "ok",
    "views": 1606,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Kinglake",
@@ -1379,11 +1397,11 @@
    "icon": "\ud83c\udfa8",
    "bio": "Artists' colony in Eltham from the 1930s, with galleries and a hall open to visitors.",
    "coordinates": {
-    "lat": -37.728,
-    "lng": 145.1521
+    "latitude": -37.72804,
+    "longitude": 145.15258
    },
-   "coordinates_source": "wikipedia:Montsalvat",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Montsalvat\"",
+   "pin_status": "ok",
    "views": 10353,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/arts-culture"

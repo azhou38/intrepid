@@ -89,11 +89,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -38.30166667,
-    "longitude": 144.6525
+    "latitude": -38.301657,
+    "longitude": 144.652724
    },
-   "coordinates_source": "wikipedia:Point Nepean",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=cape (nominatim) \"Point Nepean\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 5660,
    "counted_sources": 3,
@@ -115,9 +115,12 @@
    "id": "mornington-peninsula-2",
    "category": "entertainment",
    "icon": "\u2668\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.407503,
+    "longitude": 144.840832
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=water_park (nominatim) \"Peninsula Hot Springs\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -141,11 +144,11 @@
    "category": "landmark",
    "icon": "\ud83d\uddfc",
    "coordinates": {
-    "latitude": -38.492687,
-    "longitude": 144.886489
+    "latitude": -38.492829,
+    "longitude": 144.886439
    },
-   "coordinates_source": "wikipedia:Cape Schanck Lighthouse",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm man_made=lighthouse (nominatim) \"Cape Schanck Lighthouse\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1610,
    "counted_sources": 2,
@@ -168,11 +171,11 @@
    "category": "viewpoint",
    "icon": "\u26f0\ufe0f",
    "coordinates": {
-    "latitude": -38.352,
-    "longitude": 144.953
+    "latitude": -38.353642,
+    "longitude": 144.950705
    },
-   "coordinates_source": "wikipedia:Arthurs Seat, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Arthurs Seat\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 11672,
    "counted_sources": 2,
@@ -195,11 +198,11 @@
    "category": "historic",
    "icon": "\ud83c\udff0",
    "coordinates": {
-    "latitude": -38.303,
-    "longitude": 144.6524
+    "latitude": -38.303357,
+    "longitude": 144.652729
    },
-   "coordinates_source": "wikipedia:Fort Nepean",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm historic=castle (nominatim) \"Fort Nepean\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 5103,
    "counted_sources": 2,
@@ -222,11 +225,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -38.50222222,
-    "longitude": 144.88833333
+    "latitude": -38.444723,
+    "longitude": 144.925927
    },
-   "coordinates_source": "wikipedia:Mornington Peninsula National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Mornington Peninsula National Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1380,
    "counted_sources": 2,
@@ -249,11 +252,11 @@
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "coordinates": {
-    "latitude": -38.33888889,
-    "longitude": 144.74083333
+    "latitude": -38.344727,
+    "longitude": 144.742094
    },
-   "coordinates_source": "wikipedia:Sorrento, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sorrento\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 13072,
    "counted_sources": 1,
@@ -276,11 +279,11 @@
    "category": "landmark",
    "icon": "\ud83c\udfd8\ufe0f",
    "coordinates": {
-    "latitude": -38.32055556,
-    "longitude": 144.71722222
+    "latitude": -38.322821,
+    "longitude": 144.700421
    },
-   "coordinates_source": "wikipedia:Portsea, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Portsea\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 10912,
    "counted_sources": 1,
@@ -303,11 +306,11 @@
    "category": "nature",
    "icon": "\ud83c\udf47",
    "coordinates": {
-    "latitude": -38.355,
-    "longitude": 145.016
+    "latitude": -38.365564,
+    "longitude": 144.995902
    },
-   "coordinates_source": "wikipedia:Red Hill, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Red Hill\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 4392,
    "counted_sources": 2,
@@ -331,7 +334,7 @@
    "icon": "\ud83e\udd7e",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 2,
@@ -356,7 +359,7 @@
    "icon": "\ud83e\udd7e",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 1,
@@ -407,11 +410,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -38.352,
-    "longitude": 144.953
+    "latitude": -38.354345,
+    "longitude": 144.953742
    },
-   "coordinates_source": "wikipedia:Arthurs Seat, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Arthurs Seat\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 11672,
    "counted_sources": 3,
@@ -489,7 +492,7 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 2,
@@ -512,9 +515,12 @@
    "id": "mornington-peninsula-17",
    "category": "beach",
    "icon": "\ud83c\udfd6\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.418555,
+    "longitude": 144.861827
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Gunnamatta Trail Rides\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 2,
@@ -538,11 +544,11 @@
    "category": "nature",
    "icon": "\ud83e\udd86",
    "coordinates": {
-    "latitude": -38.38694444,
-    "longitude": 145.13972222
+    "latitude": -38.385702,
+    "longitude": 145.142795
    },
-   "coordinates_source": "wikipedia:Coolart Wetlands and Homestead Reserve",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=park (nominatim) \"Coolart Wetlands & Homestead\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1666,
    "counted_sources": 2,
@@ -565,11 +571,11 @@
    "category": "historic",
    "icon": "\u2693",
    "coordinates": {
-    "latitude": -38.228,
-    "longitude": 145.062
+    "latitude": -38.220215,
+    "longitude": 145.041109
    },
-   "coordinates_source": "wikipedia:Mornington, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Mornington\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 14625,
    "counted_sources": 1,
@@ -592,11 +598,11 @@
    "category": "historic",
    "icon": "\ud83c\udfe1",
    "coordinates": {
-    "latitude": -38.34972222,
-    "longitude": 144.93138889
+    "latitude": -38.349701,
+    "longitude": 144.931052
    },
-   "coordinates_source": "wikipedia:McCrae Homestead",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"McCrae Homestead\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1535,
    "counted_sources": 1,
@@ -619,11 +625,11 @@
    "category": "historic",
    "icon": "\ud83c\udfe1",
    "coordinates": {
-    "latitude": -38.224469,
-    "longitude": 145.032606
+    "latitude": -38.269906,
+    "longitude": 145.044129
    },
-   "coordinates_source": "wikipedia:Mount Martha House",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"The Briars Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 131,
    "counted_sources": 2,
@@ -674,7 +680,7 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -699,7 +705,7 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 2,
@@ -724,7 +730,7 @@
    "icon": "\ud83e\udd7e",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 2,
@@ -774,9 +780,12 @@
    "id": "mornington-peninsula-27",
    "category": "entertainment",
    "icon": "\u2668\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.393175,
+    "longitude": 144.844559
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=resort (nominatim) \"Alba Thermal Springs and Spa\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -854,11 +863,11 @@
    "category": "nature",
    "icon": "\ud83d\udc28",
    "coordinates": {
-    "latitude": -38.48333333,
-    "longitude": 145.23333333
+    "latitude": -38.486271,
+    "longitude": 145.261377
    },
-   "coordinates_source": "wikipedia:Phillip Island Nature Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Bruce the Koala\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 3777,
    "counted_sources": 2,
@@ -881,11 +890,11 @@
    "category": "historic",
    "icon": "\ud83d\udc11",
    "coordinates": {
-    "latitude": -38.5,
-    "longitude": 145.33888889
+    "latitude": -38.501025,
+    "longitude": 145.338645
    },
-   "coordinates_source": "wikipedia:Churchill Island",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Churchill Island\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 4983,
    "counted_sources": 2,
@@ -908,11 +917,11 @@
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "coordinates": {
-    "latitude": -38.52777778,
-    "longitude": 145.33694444
+    "latitude": -38.531259,
+    "longitude": 145.335766
    },
-   "coordinates_source": "wikipedia:Cape Woolamai",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Cape Woolamai\"",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 3385,
    "counted_sources": 1,
@@ -962,11 +971,11 @@
    "category": "museum",
    "icon": "\ud83c\udf96\ufe0f",
    "coordinates": {
-    "latitude": -38.5207,
-    "longitude": 145.3245
+    "latitude": -38.520604,
+    "longitude": 145.324608
    },
-   "coordinates_source": "wikipedia:National Vietnam Veterans Museum",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"National Vietnam Veterans Museum\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1032,
    "counted_sources": 1,
@@ -1017,7 +1026,7 @@
    "icon": "\ud83c\udf6b",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -1099,11 +1108,11 @@
    "category": "historic",
    "icon": "\u26cf\ufe0f",
    "coordinates": {
-    "latitude": -38.6185499,
-    "longitude": 145.5951091
+    "latitude": -38.621734,
+    "longitude": 145.596837
    },
-   "coordinates_source": "wikipedia:State Coal Mine",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"State Coal Mine Heritage Area\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1455,
    "counted_sources": 1,

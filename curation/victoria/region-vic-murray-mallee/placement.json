@@ -68,8 +68,8 @@
     "latitude": -34.173331,
     "longitude": 142.163167
    },
-   "coordinates_source": "osm place=islet: Lock Island (MEDIUM)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=islet (nominatim) \"Lock Island\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -116,11 +116,11 @@
    "category": "nature",
    "icon": "\ud83c\udf3f",
    "coordinates": {
-    "latitude": -34.136,
-    "longitude": 142.139
+    "latitude": -34.137692,
+    "longitude": 142.140896
    },
-   "coordinates_source": "wikipedia:Australian Inland Botanic Gardens",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Australian Inland Botanic Gardens\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 846,
    "counted_sources": 1,
@@ -146,8 +146,8 @@
     "latitude": -34.152791,
     "longitude": 142.165686
    },
-   "coordinates_source": "osm natural=beach (nominatim): Apex Beach (MEDIUM)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=beach (nominatim) \"Apex Beach\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -194,11 +194,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -35.86666667,
-    "longitude": 145.11805556
+    "latitude": -35.833724,
+    "longitude": 145.135874
    },
-   "coordinates_source": "wikipedia:Barmah National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=river (nominatim) \"Barmah Choke\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 2118,
    "counted_sources": 2,
@@ -244,11 +244,11 @@
    "category": "entertainment",
    "icon": "\ud83e\udd98",
    "coordinates": {
-    "latitude": -36.32416667,
-    "longitude": 145.04888889
+    "latitude": -36.324476,
+    "longitude": 145.049351
    },
-   "coordinates_source": "wikipedia:Kyabram Fauna Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=zoo (nominatim) \"Kyabram Fauna Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 2154,
    "counted_sources": 0,
@@ -271,11 +271,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -36.14277778,
-    "longitude": 144.22833333
+    "latitude": -36.116591,
+    "longitude": 144.257317
    },
-   "coordinates_source": "wikipedia:Terrick Terrick National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Terrick Terrick\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 803,
    "counted_sources": 1,
@@ -302,7 +302,7 @@
     "longitude": 141.85416667
    },
    "coordinates_source": "wikipedia:Murray-Sunset National Park",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 2541,
    "counted_sources": 2,
@@ -358,11 +358,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -34.68722222,
-    "longitude": 142.38166667
+    "latitude": -34.674735,
+    "longitude": 142.366762
    },
-   "coordinates_source": "wikipedia:Hattah-Kulkyne National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Hattah - Kulkyne National Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1254,
    "counted_sources": 1,
@@ -394,7 +394,7 @@
     "longitude": 141.87694444
    },
    "coordinates_source": "wikipedia:Wyperfeld National Park",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 1273,
    "counted_sources": 1,
@@ -422,11 +422,11 @@
    "category": "nature",
    "icon": "\ud83e\uddc2",
    "coordinates": {
-    "latitude": -35.34388889,
-    "longitude": 142.83333333
+    "latitude": -35.340287,
+    "longitude": 142.832847
    },
-   "coordinates_source": "wikipedia:Lake Tyrrell",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Lake Tyrrell\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 10718,
    "counted_sources": 0,
@@ -454,11 +454,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -35.69583333,
-    "longitude": 144.19416667
+    "latitude": -35.697539,
+    "longitude": 144.194769
    },
-   "coordinates_source": "wikipedia:Gunbower National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=river (nominatim) \"Little Gunbower Creek\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 674,
    "counted_sources": 1,
@@ -486,11 +486,11 @@
    "category": "museum",
    "icon": "\ud83c\udfda\ufe0f",
    "coordinates": {
-    "latitude": -35.3472,
-    "longitude": 143.5646
+    "latitude": -35.347353,
+    "longitude": 143.564774
    },
-   "coordinates_source": "wikipedia:Pioneer Settlement",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=theme_park (nominatim) \"Swan Hill Pioneer Settlement\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 876,
    "counted_sources": 1,
@@ -521,8 +521,8 @@
     "latitude": -35.355525,
     "longitude": 143.564637
    },
-   "coordinates_source": "osm trail midpoint (1.0 km, nominatim): Swan Hill River Walk (MEDIUM)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (1.0 km, nominatim) \"Swan Hill River Walk\"",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 1,
@@ -552,8 +552,8 @@
     "latitude": -35.450896,
     "longitude": 143.627582
    },
-   "coordinates_source": "osm tourism=museum (nominatim): Lake Boga Flying Boat Museum (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Lake Boga Flying Boat Museum\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -584,8 +584,8 @@
     "latitude": -36.391276,
     "longitude": 145.396779
    },
-   "coordinates_source": "osm tourism=gallery (nominatim): Shepparton Art Museum (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=gallery (nominatim) \"Shepparton Art Museum\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 779,
    "counted_sources": 0,
@@ -616,8 +616,8 @@
     "latitude": -36.385258,
     "longitude": 145.380244
    },
-   "coordinates_source": "osm leisure=playground (nominatim): Kidstown (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=playground (nominatim) \"Kidstown\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -676,8 +676,8 @@
     "latitude": -36.007617,
     "longitude": 146.091484
    },
-   "coordinates_source": "osm natural=water (nominatim): Lake Mulwala (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=water (nominatim) \"Lake Mulwala\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 0,

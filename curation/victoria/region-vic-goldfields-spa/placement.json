@@ -69,11 +69,11 @@
    "destination": "ballarat",
    "id": "ballarat-1",
    "coordinates": {
-    "lat": -37.57511667,
-    "lng": 143.8659
+    "latitude": -37.57834,
+    "longitude": 143.86457
    },
-   "coordinates_source": "wikipedia:Sovereign Hill",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Sovereign Hill\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Sovereign Hill",
@@ -97,7 +97,7 @@
    "id": "ballarat-2",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Museum of Australian Democracy at Eureka",
@@ -120,9 +120,12 @@
    "action": "spot",
    "destination": "ballarat",
    "id": "ballarat-3",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.5651,
+    "longitude": 143.884719
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"Eureka Stockade\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Eureka Stockade",
@@ -146,11 +149,11 @@
    "destination": "ballarat",
    "id": "ballarat-4",
    "coordinates": {
-    "lat": -37.5605,
-    "lng": 143.8583
+    "latitude": -37.560452,
+    "longitude": 143.858403
    },
-   "coordinates_source": "wikipedia:Art Gallery of Ballarat",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Ballarat Fine Art Gallery\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Art Gallery of Ballarat",
@@ -173,11 +176,11 @@
    "destination": "ballarat",
    "id": "ballarat-5",
    "coordinates": {
-    "lat": -37.55055556,
-    "lng": 143.83333333
+    "latitude": -37.550226,
+    "longitude": 143.833995
    },
-   "coordinates_source": "wikipedia:Lake Wendouree",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm place=suburb (nominatim) \"Lake Wendouree\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Lake Wendouree",
@@ -200,11 +203,11 @@
    "destination": "ballarat",
    "id": "ballarat-6",
    "coordinates": {
-    "lat": -37.54666667,
-    "lng": 143.82222222
+    "latitude": -37.545736,
+    "longitude": 143.821604
    },
-   "coordinates_source": "wikipedia:Ballarat Botanical Gardens",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm landuse=plant_nursery (nominatim) \"Botanical Gardens Nursery\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Ballarat Botanical Gardens",
@@ -227,11 +230,11 @@
    "destination": "ballarat",
    "id": "ballarat-7",
    "coordinates": {
-    "lat": -37.5698,
-    "lng": 143.8926
+    "latitude": -37.568936,
+    "longitude": 143.891075
    },
-   "coordinates_source": "wikipedia:Ballarat Wildlife Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=zoo (nominatim) \"Ballarat Wildlife Park\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon_hint": null,
    "wiki": "Ballarat Wildlife Park",
@@ -254,11 +257,11 @@
    "destination": "ballarat",
    "id": "ballarat-8",
    "coordinates": {
-    "lat": -37.57194444,
-    "lng": 143.95638889
+    "latitude": -37.572083,
+    "longitude": 143.956738
    },
-   "coordinates_source": "wikipedia:Kryal Castle",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=theme_park (nominatim) \"Kryal Castle\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon_hint": null,
    "wiki": "Kryal Castle",
@@ -281,11 +284,11 @@
    "destination": "ballarat",
    "id": "ballarat-9",
    "coordinates": {
-    "lat": -37.65,
-    "lng": 143.93333333
+    "latitude": -37.655075,
+    "longitude": 143.924567
    },
-   "coordinates_source": "wikipedia:Mount Buninyong",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=volcano (nominatim) \"Mount Buninyong\"",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Mount Buninyong",
@@ -308,11 +311,11 @@
    "destination": "ballarat",
    "id": "ballarat-10",
    "coordinates": {
-    "lat": -37.5515,
-    "lng": 143.8204
+    "latitude": -37.551518,
+    "longitude": 143.820384
    },
-   "coordinates_source": "wikipedia:Ballarat Tramway Museum",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Ballarat Tramway Museum\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Ballarat Tramway Museum",
@@ -335,11 +338,11 @@
    "destination": "ballarat",
    "id": "ballarat-11",
    "coordinates": {
-    "lat": -37.3,
-    "lng": 143.78333333
+    "latitude": -37.294064,
+    "longitude": 143.78658
    },
-   "coordinates_source": "wikipedia:Clunes, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=town (nominatim) \"Clunes\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Clunes, Victoria",
@@ -362,11 +365,11 @@
    "destination": "ballarat",
    "id": "ballarat-12",
    "coordinates": {
-    "lat": -37.425,
-    "lng": 143.89166667
+    "latitude": -37.43687,
+    "longitude": 143.905459
    },
-   "coordinates_source": "wikipedia:Creswick",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=water (nominatim) \"Blue Waters\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Creswick, Victoria",
@@ -390,7 +393,7 @@
    "id": "ballarat-13",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "hike",
    "icon_hint": null,
    "wiki": "Ballarat to Skipton Rail Trail",
@@ -414,11 +417,11 @@
    "destination": "bendigo",
    "id": "bendigo-1",
    "coordinates": {
-    "lat": -36.757513,
-    "lng": 144.276967
+    "latitude": -36.757348,
+    "longitude": 144.276835
    },
-   "coordinates_source": "wikipedia:Bendigo Art Gallery",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=arts_centre (nominatim) \"Bendigo Art Gallery\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Bendigo Art Gallery",
@@ -441,11 +444,11 @@
    "destination": "bendigo",
    "id": "bendigo-2",
    "coordinates": {
-    "lat": -36.765,
-    "lng": 144.2702
+    "latitude": -36.764823,
+    "longitude": 144.270313
    },
-   "coordinates_source": "wikipedia:Central Deborah Gold Mine",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Central Deborah Gold Mine\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Central Deborah Gold Mine",
@@ -467,9 +470,12 @@
    "action": "spot",
    "destination": "bendigo",
    "id": "bendigo-3",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.754839,
+    "longitude": 144.282417
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Golden Dragon Museum\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Golden Dragon Museum",
@@ -493,11 +499,11 @@
    "destination": "bendigo",
    "id": "bendigo-4",
    "coordinates": {
-    "lat": -36.76,
-    "lng": 144.274
+    "latitude": -36.760065,
+    "longitude": 144.274033
    },
-   "coordinates_source": "wikipedia:Sacred Heart Cathedral, Bendigo",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=place_of_worship (nominatim) \"Sacred Heart Cathedral\"",
+   "pin_status": "ok",
    "category": "religious",
    "icon_hint": null,
    "wiki": "Sacred Heart Cathedral, Bendigo",
@@ -520,11 +526,11 @@
    "destination": "bendigo",
    "id": "bendigo-5",
    "coordinates": {
-    "lat": -36.757,
-    "lng": 144.279
+    "latitude": -36.757255,
+    "longitude": 144.278601
    },
-   "coordinates_source": "wikipedia:Rosalind Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"Rosalind Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Rosalind Park",
@@ -546,9 +552,12 @@
    "action": "spot",
    "destination": "bendigo",
    "id": "bendigo-6",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.770536,
+    "longitude": 144.272288
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm historic=ruins (nominatim) \"Poppet Head\"",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "",
@@ -572,11 +581,11 @@
    "destination": "bendigo",
    "id": "bendigo-7",
    "coordinates": {
-    "lat": -36.67388889,
-    "lng": 144.25472222
+    "latitude": -36.722847,
+    "longitude": 144.290407
    },
-   "coordinates_source": "wikipedia:Greater Bendigo National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"City of Greater Bendigo\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Greater Bendigo National Park",
@@ -599,11 +608,11 @@
    "destination": "daylesford",
    "id": "daylesford-1",
    "coordinates": {
-    "lat": -37.34722222,
-    "lng": 144.13777778
+    "latitude": -37.348754,
+    "longitude": 144.136123
    },
-   "coordinates_source": "wikipedia:Lake Daylesford",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=water (nominatim) \"Lake Daylesford\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Lake Daylesford",
@@ -626,11 +635,11 @@
    "destination": "daylesford",
    "id": "daylesford-2",
    "coordinates": {
-    "lat": -37.34305556,
-    "lng": 144.15055556
+    "latitude": -37.343409,
+    "longitude": 144.151116
    },
-   "coordinates_source": "wikipedia:Wombat Hill Botanic Gardens",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Wombat Hill Botanic Gardens\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Wombat Hill Botanic Gardens",
@@ -657,7 +666,7 @@
     "lng": 144.14194444
    },
    "coordinates_source": "wikipedia:Hepburn Mineral Springs Reserve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Hepburn Mineral Springs Reserve",
@@ -680,11 +689,11 @@
    "destination": "daylesford",
    "id": "daylesford-4",
    "coordinates": {
-    "lat": -37.34199722,
-    "lng": 144.14829444
+    "latitude": -37.342214,
+    "longitude": 144.148372
    },
-   "coordinates_source": "wikipedia:Convent Gallery",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Convent Gallery\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "",
@@ -706,9 +715,12 @@
    "action": "spot",
    "destination": "daylesford",
    "id": "daylesford-5",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.314484,
+    "longitude": 144.152123
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Hepburn Regional Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Hepburn Regional Park",
@@ -733,7 +745,7 @@
    "id": "daylesford-6",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "hike",
    "icon_hint": null,
    "wiki": "",
@@ -757,11 +769,11 @@
    "destination": "daylesford",
    "id": "daylesford-7",
    "coordinates": {
-    "lat": -37.31666667,
-    "lng": 144.13333333
+    "latitude": -37.3091,
+    "longitude": 144.140934
    },
-   "coordinates_source": "wikipedia:Hepburn Springs",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=hamlet (nominatim) \"Hepburn Springs\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Hepburn Springs",
@@ -784,11 +796,11 @@
    "destination": "daylesford",
    "id": "daylesford-8",
    "coordinates": {
-    "lat": -37.370029,
-    "lng": 144.324548
+    "latitude": -37.370175,
+    "longitude": 144.324597
    },
-   "coordinates_source": "wikipedia:Trentham Falls",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Trentham Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Trentham Falls",
@@ -811,11 +823,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-1",
    "coordinates": {
-    "lat": -37.330222,
-    "lng": 144.595083
+    "latitude": -37.330024,
+    "longitude": 144.595145
    },
-   "coordinates_source": "wikipedia:Hanging Rock, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Hanging Rock\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Hanging Rock, Victoria",
@@ -838,11 +850,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-2",
    "coordinates": {
-    "lat": -37.38305556,
-    "lng": 144.57638889
+    "latitude": -37.387538,
+    "longitude": 144.575783
    },
-   "coordinates_source": "wikipedia:Mount Macedon",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Mount Macedon\"",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Mount Macedon",
@@ -865,11 +877,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-3",
    "coordinates": {
-    "lat": -37.38844,
-    "lng": 144.57607
+    "latitude": -37.389522,
+    "longitude": 144.576869
    },
-   "coordinates_source": "wikipedia:Mount Macedon Memorial Cross",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm historic=memorial (nominatim) \"Mt Macedon Memorial Cross\"",
+   "pin_status": "ok",
    "category": "monument",
    "icon_hint": null,
    "wiki": "Mount Macedon Memorial Cross",
@@ -892,11 +904,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-4",
    "coordinates": {
-    "lat": -37.23333333,
-    "lng": 144.45
+    "latitude": -37.247494,
+    "longitude": 144.455217
    },
-   "coordinates_source": "wikipedia:Kyneton",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Kyneton\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Kyneton",
@@ -919,11 +931,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-5",
    "coordinates": {
-    "lat": -37.363,
-    "lng": 144.526
+    "latitude": -37.353686,
+    "longitude": 144.534138
    },
-   "coordinates_source": "wikipedia:Woodend, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Woodend\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Woodend, Victoria",
@@ -945,9 +957,12 @@
    "action": "spot",
    "destination": "macedon-ranges",
    "id": "macedon-ranges-6",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.253576,
+    "longitude": 144.449642
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Kyneton Botanic Gardens\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Kyneton Botanic Gardens",
@@ -972,7 +987,7 @@
    "id": "macedon-ranges-7",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Turpin Falls",
@@ -996,11 +1011,11 @@
    "destination": "castlemaine",
    "id": "castlemaine-1",
    "coordinates": {
-    "lat": -36.99166667,
-    "lng": 144.06666667
+    "latitude": -36.996314,
+    "longitude": 144.068946
    },
-   "coordinates_source": "wikipedia:Maldon, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Maldon\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Maldon, Victoria",
@@ -1027,7 +1042,7 @@
     "lng": 144.2165
    },
    "coordinates_source": "wikipedia:Castlemaine Diggings National Heritage Park",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Castlemaine Diggings National Heritage Park",
@@ -1050,11 +1065,11 @@
    "destination": "castlemaine",
    "id": "castlemaine-3",
    "coordinates": {
-    "lat": -37.06361111,
-    "lng": 144.21722222
+    "latitude": -37.066365,
+    "longitude": 144.219684
    },
-   "coordinates_source": "wikipedia:Castlemaine, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=theatre (nominatim) \"Theatre Royal\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon_hint": null,
    "wiki": "Theatre Royal, Castlemaine",
@@ -1078,7 +1093,7 @@
    "id": "castlemaine-4",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Mount Franklin, Victoria",
@@ -1106,7 +1121,7 @@
     "lng": 144.86633333
    },
    "coordinates_source": "wikipedia:Heathcote-Graytown National Park",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Heathcote-Graytown National Park",
@@ -1133,11 +1148,11 @@
    "destination": null,
    "id": "lake-eppalock",
    "coordinates": {
-    "lat": -36.850694,
-    "lng": 144.531841
+    "latitude": -36.854174,
+    "longitude": 144.468791
    },
-   "coordinates_source": "wikipedia:Lake Eppalock",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Eppalock\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Lake Eppalock",
@@ -1165,7 +1180,7 @@
    "id": "pink-cliffs-geological-reserve",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Pink Cliffs",
@@ -1194,7 +1209,7 @@
    "id": "o-keefe-rail-trail",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "hike",
    "icon_hint": null,
    "wiki": "O'Keefe Rail Trail",
@@ -1224,11 +1239,11 @@
    "destination": null,
    "id": "maryborough",
    "coordinates": {
-    "lat": -37.05,
-    "lng": 143.735
+    "latitude": -37.046758,
+    "longitude": 143.737572
    },
-   "coordinates_source": "wikipedia:Maryborough, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Maryborough\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Maryborough, Victoria",
@@ -1259,7 +1274,7 @@
     "lng": 143.65244444
    },
    "coordinates_source": "wikipedia:Welcome Stranger",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "monument",
    "icon_hint": null,
    "wiki": "Welcome Stranger",
@@ -1286,11 +1301,11 @@
    "destination": null,
    "id": "kooyoora-state-park",
    "coordinates": {
-    "lat": -36.60083333,
-    "lng": 143.69277778
+    "latitude": -36.594503,
+    "longitude": 143.701792
    },
-   "coordinates_source": "wikipedia:Kooyoora State Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Kooyoora State Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Kooyoora State Park",
@@ -1318,7 +1333,7 @@
    "id": "melville-caves",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Melville Caves",
@@ -1347,7 +1362,7 @@
    "id": "eucalyptus-distillery-museum",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Eucalyptus Distillery Museum",
@@ -1376,7 +1391,7 @@
    "id": "goldfields-track",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "hike",
    "icon_hint": null,
    "wiki": "Goldfields Track",

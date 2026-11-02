@@ -397,10 +397,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-11",
    "coordinates": {
-    "latitude": -37.14777778,
-    "longitude": 142.56361111
+    "latitude": -37.147795,
+    "longitude": 142.56234
    },
-   "coordinates_source": "wikipedia:Halls Gap Zoo (candidate)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=zoo (nominatim) \"Halls Gap Zoo\"",
    "pin_status": "ok",
    "category": "entertainment",
    "bio_draft": "Regional zoo at the foot of the Wonderland Range, with native and exotic animals.",
@@ -669,11 +669,11 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-21",
    "coordinates": {
-    "latitude": -37.15277778,
-    "longitude": 142.52777778
+    "latitude": -37.194111,
+    "longitude": 142.522448
    },
-   "coordinates_source": "wikipedia:Silverband Falls (candidate)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Silverband Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Falls on the Grampians road reached by a short roadside walk.",
    "views": 485,
@@ -695,10 +695,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-22",
    "coordinates": {
-    "latitude": -37.11666667,
-    "longitude": 142.55
+    "latitude": -37.141769,
+    "longitude": 142.520244
    },
-   "coordinates_source": "wikipedia:Halls Gap (town point, place=village centre)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Halls Gap\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Halls Gap, Victoria",
@@ -723,10 +723,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-23",
    "coordinates": {
-    "latitude": -37.65,
-    "longitude": 142.35
+    "latitude": -37.649447,
+    "longitude": 142.344164
    },
-   "coordinates_source": "wikipedia:Dunkeld, Victoria (town point)",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Dunkeld\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Dunkeld, Victoria",
@@ -750,10 +750,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-24",
    "coordinates": {
-    "latitude": -37.05,
-    "longitude": 142.76666667
+    "latitude": -37.058687,
+    "longitude": 142.774548
    },
-   "coordinates_source": "wikipedia:Stawell, Victoria (town point)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Stawell\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Stawell, Victoria",
@@ -781,7 +781,7 @@
     "longitude": 142.93
    },
    "coordinates_source": "wikipedia:Aradale Mental Hospital (candidate; generic, 130 m from J Ward)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "historic",
    "wiki": "Aradale",
    "bio_draft": "Former lunatic asylum at Ararat, a large Victorian-era complex now open for guided tours.",
@@ -804,11 +804,11 @@
    "destination": "ararat",
    "id": "ararat-2",
    "coordinates": {
-    "latitude": -37.2788,
-    "longitude": 142.9303
+    "latitude": -37.278606,
+    "longitude": 142.930465
    },
-   "coordinates_source": "wikipedia:J Ward (candidate; 4-decimal, 130 m from Aradale)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"J Ward\"",
+   "pin_status": "ok",
    "category": "historic",
    "bio_draft": "Ararat's old gaol for the criminally insane, open for tours and ghost walks.",
    "views": 6921,
@@ -858,10 +858,10 @@
    "destination": "ararat",
    "id": "ararat-4",
    "coordinates": {
-    "latitude": -37.28305556,
-    "longitude": 142.93222222
+    "latitude": -37.283094,
+    "longitude": 142.932197
    },
-   "coordinates_source": "wikipedia:Ararat Gallery TAMA (candidate)",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=townhall (nominatim) \"Ararat Gallery TAMA\"",
    "pin_status": "ok",
    "category": "museum",
    "bio_draft": "Textile art museum established in 1968, with a collection of contemporary fibre art.",
@@ -912,11 +912,11 @@
    "destination": "ararat",
    "id": "ararat-6",
    "coordinates": {
-    "latitude": -37.3,
-    "longitude": 143.11666667
+    "latitude": -37.303118,
+    "longitude": 143.097521
    },
-   "coordinates_source": "wikipedia:Langi Ghiran State Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Langi Ghiran State Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Forested range and walks near Ararat, with a rocky peak and views.",
    "views": 820,
@@ -938,11 +938,11 @@
    "destination": "ararat",
    "id": "ararat-7",
    "coordinates": {
-    "latitude": -37.32849,
-    "longitude": 143.2226
+    "latitude": -37.295385,
+    "longitude": 143.221146
    },
-   "coordinates_source": "wikipedia:Mount Buangor State Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Mount Buangor\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Forested range near Beaufort with walks, creeks and fern gullies.",
    "views": 504,
@@ -1016,11 +1016,11 @@
    "destination": "hamilton-victoria",
    "id": "hamilton-victoria-3",
    "coordinates": {
-    "latitude": -37.67638889,
-    "longitude": 141.84083333
+    "latitude": -37.675981,
+    "longitude": 141.840805
    },
-   "coordinates_source": "wikipedia:Wannon Falls (candidate)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Wannon Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Falls on the Wannon River south-west of the Grampians, with a viewing platform.",
    "views": 486,
@@ -1042,10 +1042,10 @@
    "destination": "hamilton-victoria",
    "id": "hamilton-victoria-4",
    "coordinates": {
-    "latitude": -37.88241667,
-    "longitude": 142.30061111
+    "latitude": -37.882605,
+    "longitude": 142.300764
    },
-   "coordinates_source": "wikipedia:Mount Rouse (candidate; summit)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Mount Rouse\"",
    "pin_status": "ok",
    "category": "hike",
    "bio_draft": "Volcanic peak near Penshurst with a summit walk and views over the volcanic plains.",
@@ -1068,11 +1068,11 @@
    "destination": "horsham",
    "id": "horsham-1",
    "coordinates": {
-    "latitude": -36.776,
-    "longitude": 141.7119
+    "latitude": -36.786558,
+    "longitude": 141.712272
    },
-   "coordinates_source": "wikipedia:Mount Arapiles-Tooan State Park (candidate; peak)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Mount Arapiles-Tooan State Park\"",
+   "pin_status": "ok",
    "category": "hike",
    "wiki": "Mount Arapiles-Tooan State Park",
    "bio_draft": "Mount Arapiles-Tooan State Park: world-class rock climbing cliffs, with walks and views over the Wimmera.",
@@ -1231,7 +1231,7 @@
     "longitude": 141.18861111
    },
    "coordinates_source": "wikipedia:Little Desert National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "bio_draft": "Large sand-dune heath wilderness south of Nhill, with walks, wildflowers and birds.",
    "views": 2340,
@@ -1257,11 +1257,11 @@
    "destination": null,
    "id": "budj-bim-national-park",
    "coordinates": {
-    "latitude": -38.08333333,
-    "longitude": 141.88333333
+    "latitude": -38.090253,
+    "longitude": 141.895271
    },
-   "coordinates_source": "wikipedia:Budj Bim National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Budj Bim National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Volcanic landscape and World Heritage Gunditjmara eel-trap aquaculture system.",
    "views": 2192,
@@ -1318,11 +1318,11 @@
    "destination": null,
    "id": "lower-glenelg-national-park",
    "coordinates": {
-    "latitude": -38.06611111,
-    "longitude": 141.28861111
+    "latitude": -38.054505,
+    "longitude": 141.271194
    },
-   "coordinates_source": "wikipedia:Lower Glenelg National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=picnic_site (nominatim) \"Moleside Creek Picnic Area - Lower Glenelg NP\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Glenelg River gorge with limestone cliffs, camping and the Great South West Walk.",
    "views": 547,
@@ -1374,11 +1374,11 @@
    "destination": null,
    "id": "tower-hill-wildlife-reserve",
    "coordinates": {
-    "latitude": -38.31755547,
-    "longitude": 142.36041538
+    "latitude": -38.317853,
+    "longitude": 142.36051
    },
-   "coordinates_source": "wikipedia:Tower Hill Wildlife Reserve (candidate; reserve centroid)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"Tower Hill Wildlife Reserve\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Volcanic crater reserve near Koroit with a wildlife enclosure, walks and native animals.",
    "views": 1712,
@@ -1402,11 +1402,11 @@
    "destination": null,
    "id": "lake-bullen-merri",
    "coordinates": {
-    "latitude": -38.25166667,
-    "longitude": 143.10416667
+    "latitude": -38.249605,
+    "longitude": 143.107164
    },
-   "coordinates_source": "wikipedia:Lake Bullen Merri (lake centroid)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=protected_area (nominatim) \"Lake Bullen Merri Lake Reserve\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Volcanic crater lake near Camperdown, with walks, swimming and water-skiing.",
    "views": 1726,
@@ -1430,11 +1430,11 @@
    "destination": null,
    "id": "lake-gnotuk",
    "coordinates": {
-    "latitude": -38.26,
-    "longitude": 143.09
+    "latitude": -38.203924,
+    "longitude": 143.075123
    },
-   "coordinates_source": "area offset from Lake Bullen Merri (candidate reused its point; pin-shared otherwise); needs the pins stage",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Gnotuk\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Smaller volcanic crater lake beside Lake Bullen Merri, with a rim walk.",
    "views": 0,
@@ -1458,10 +1458,10 @@
    "destination": null,
    "id": "colac-victoria",
    "coordinates": {
-    "latitude": -38.34027778,
-    "longitude": 143.58472222
+    "latitude": -38.339977,
+    "longitude": 143.585854
    },
-   "coordinates_source": "wikipedia:Colac, Victoria (town point)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Colac\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Colac, Victoria",
@@ -1489,11 +1489,11 @@
    "destination": null,
    "id": "kara-kara-national-park",
    "coordinates": {
-    "latitude": -36.86055556,
-    "longitude": 143.28527778
+    "latitude": -36.858525,
+    "longitude": 143.274455
    },
-   "coordinates_source": "wikipedia:Kara Kara National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Kara Kara National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Forest and hills north of Ararat, listed as a regional bushwalking and nature stop.",
    "views": 725,
@@ -1853,7 +1853,7 @@
     "longitude": 143.25
    },
    "coordinates_source": "wikipedia:St Arnaud, Victoria (town point; silo not pinned)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "historic",
    "bio_draft": "Silo mural and town murals in St Arnaud, on the Silo Art Trail.",
    "views": 0,

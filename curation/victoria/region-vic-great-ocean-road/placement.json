@@ -219,11 +219,11 @@
    "icon": "\u2693",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.1445,
-    "longitude": 144.3604
+    "latitude": -38.144094,
+    "longitude": 144.360305
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=university (nominatim) \"Deakin University (Geelong Waterfront Campus)\"",
+   "pin_status": "ok",
    "bio": "Working waterfront with cafes, a carousel, gardens and the bollard trail beside Corio Bay.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -249,11 +249,11 @@
    "icon": "\ud83e\uddf6",
    "category": "museum",
    "coordinates": {
-    "latitude": -38.1488,
-    "longitude": 144.3607
+    "latitude": -38.145359,
+    "longitude": 144.361174
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"National Wool Museum\"",
+   "pin_status": "ok",
    "bio": "Museum in a bluestone woolstore telling the story of the wool trade and the mills of Geelong.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -280,11 +280,11 @@
    "icon": "\u26f0\ufe0f",
    "category": "nature",
    "coordinates": {
-    "latitude": -37.903032,
-    "longitude": 144.431763
+    "latitude": -37.948173,
+    "longitude": 144.420011
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"You Yangs Regional Park\"",
+   "pin_status": "ok",
    "bio": "Granite ranges rising from the plain, with walks up Flinders Peak (348 m) and across Branding Yard Track.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 4,
@@ -310,11 +310,11 @@
    "icon": "\ud83c\udf33",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.15,
-    "longitude": 144.3781
+    "latitude": -38.150084,
+    "longitude": 144.377836
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Geelong Botanic Gardens\"",
+   "pin_status": "ok",
    "bio": "Free botanic gardens in East Geelong with a tea house, glasshouses and views over the city.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -341,11 +341,11 @@
    "icon": "\ud83c\udfd8\ufe0f",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.26666667,
-    "longitude": 144.65
+    "latitude": -38.267113,
+    "longitude": 144.661295
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Queenscliff\"",
+   "pin_status": "ok",
    "bio": "Historic Bellarine Peninsula town of 19th-century hotels and buildings, a maritime museum and ferries across the bay.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -371,11 +371,11 @@
    "icon": "\ud83c\udff0",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.2643,
-    "longitude": 144.6622
+    "latitude": -38.271926,
+    "longitude": 144.660356
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm landuse=military (nominatim) \"Fort Queenscliff\"",
+   "pin_status": "ok",
    "bio": "Victorian-era coastal fort with guided tours at set times and the Black Lighthouse in its grounds.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -405,7 +405,7 @@
     "longitude": 144.659729
    },
    "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "bio": "Steam heritage railway running from Queenscliff to Drysdale and back through the Bellarine countryside.",
    "visitHoursMin": 1,
    "visitHoursMax": 2.5,
@@ -432,11 +432,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.28333333,
-    "longitude": 144.5
+    "latitude": -38.274771,
+    "longitude": 144.488135
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Barwon Heads\"",
+   "pin_status": "ok",
    "bio": "Seaside town at the Barwon River mouth with a family beach, a bridge and views from the Barwon Bluff.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -463,11 +463,11 @@
    "icon": "\ud83d\udd2d",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.2725,
-    "longitude": 144.61361111
+    "latitude": -38.272507,
+    "longitude": 144.613673
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Point Lonsdale\"",
+   "pin_status": "ok",
    "bio": "Headland at the entrance to Port Phillip Bay with the Rip View lookout, pier and lighthouse walks.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -493,11 +493,11 @@
    "icon": "\ud83c\udfc4",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.3716,
-    "longitude": 144.2815
+    "latitude": -38.368985,
+    "longitude": 144.282452
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Bells Beach\"",
+   "pin_status": "ok",
    "bio": "Surf beach west of Torquay that hosts the long-running international surfing competition each Easter.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -523,11 +523,11 @@
    "icon": "\ud83c\udfc4",
    "category": "museum",
    "coordinates": {
-    "latitude": -38.3265101,
-    "longitude": 144.3160113
+    "latitude": -38.326626,
+    "longitude": 144.315962
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Australian National Surfing Museum\"",
+   "pin_status": "ok",
    "bio": "Large surfing museum in Torquay, with boards, films and a hall of fame; named a top pick by the regional tourism board.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -553,11 +553,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.46797222,
-    "longitude": 144.10447222
+    "latitude": -38.468003,
+    "longitude": 144.104468
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm man_made=lighthouse (nominatim) \"Split Point Lighthouse\"",
+   "pin_status": "ok",
    "bio": "White lighthouse at Aireys Inlet with a guided tour of the tower and balcony views along the coast.",
    "visitHoursMin": 0.75,
    "visitHoursMax": 1.5,
@@ -584,11 +584,11 @@
    "icon": "\ud83c\udfc4",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.33333333,
-    "longitude": 144.31666667
+    "latitude": -38.326655,
+    "longitude": 144.313408
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Torquay\"",
+   "pin_status": "ok",
    "bio": "Surf town at the official start of the Great Ocean Road, with beaches, surf shops and the surfing museum.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -615,11 +615,11 @@
    "icon": "\ud83e\udd98",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.40638889,
-    "longitude": 144.18694444
+    "latitude": -38.405195,
+    "longitude": 144.188958
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Anglesea\"",
+   "pin_status": "ok",
    "bio": "Seaside town where the Great Ocean Road meets the ocean, with a river beach and kangaroos on the golf course.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -645,11 +645,11 @@
    "icon": "\ud83c\udf0a",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.3953145,
-    "longitude": 144.2538895
+    "latitude": -38.395314,
+    "longitude": 144.25389
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=cape (nominatim) \"Point Addis\"",
+   "pin_status": "ok",
    "bio": "Surfing point near Anglesea with a short Aboriginal bushland walk and a lookout over the beach.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -675,11 +675,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.3427,
-    "longitude": 144.3203
+    "latitude": -38.342653,
+    "longitude": 144.319519
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Torquay Back Beach (Surf Beach)\"",
+   "pin_status": "ok",
    "bio": "Main surf beach at Torquay, used for surf lessons and swimming under the cliffs and dunes.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 2,
@@ -705,11 +705,11 @@
    "icon": "\ud83e\udeb5",
    "category": "monument",
    "coordinates": {
-    "latitude": -38.4727,
-    "longitude": 144.0352
+    "latitude": -38.47204,
+    "longitude": 144.044575
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Memorial Arch\"",
+   "pin_status": "ok",
    "bio": "Timber-log arch over the road commemorating the soldiers who built the Great Ocean Road.",
    "visitHoursMin": 0,
    "visitHoursMax": 0.25,
@@ -735,11 +735,11 @@
    "icon": "\ud83d\udd2d",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.5542391,
-    "longitude": 143.9789488
+    "latitude": -38.554239,
+    "longitude": 143.978949
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Teddy's Lookout\"",
+   "pin_status": "ok",
    "bio": "Lookout above Lorne with a view of the Great Ocean Road winding along the coastline and the Erskine River valley.",
    "visitHoursMin": 0,
    "visitHoursMax": 0.5,
@@ -765,11 +765,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.50679,
-    "longitude": 143.91353
+    "latitude": -38.506706,
+    "longitude": 143.913231
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Erskine Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall in the Otway ranges above Lorne, reached by a viewing platform and a steep stair down to its base.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -795,11 +795,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.565332,
-    "longitude": 143.96279
+    "latitude": -38.565131,
+    "longitude": 143.962772
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Sheoak Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall beside Sheoak Creek in the Great Otway National Park, reached by a short walk.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -825,11 +825,11 @@
    "icon": "\ud83d\udc28",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.6697,
-    "longitude": 143.8574
+    "latitude": -38.667696,
+    "longitude": 143.85892
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Kennett River\"",
+   "pin_status": "ok",
    "bio": "Small village where koalas can reliably be seen in the gum trees beside the road.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -855,11 +855,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.85655556,
-    "longitude": 143.51172222
+    "latitude": -38.851289,
+    "longitude": 143.514453
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=viewpoint (nominatim) \"Cape Otway Lightstation Lookout\"",
+   "pin_status": "ok",
    "bio": "Oldest surviving lighthouse on mainland Australia, on the cliffs at Cape Otway, with koalas and whale watching nearby.",
    "visitHoursMin": 1,
    "visitHoursMax": 2.5,
@@ -886,11 +886,11 @@
    "icon": "\ud83c\udf3f",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.75583333,
-    "longitude": 143.55388889
+    "latitude": -38.755599,
+    "longitude": 143.55525
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Maits Rest\"",
+   "pin_status": "ok",
    "bio": "Short rainforest boardwalk loop with tree ferns and giant myrtle beech trees in the Otway ranges.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -916,11 +916,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.66777778,
-    "longitude": 143.57027778
+    "latitude": -38.668083,
+    "longitude": 143.568693
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Hopetoun Falls\"",
+   "pin_status": "ok",
    "bio": "Well-preserved waterfall in the Great Otway National Park, with a stair down to a viewing platform at its foot.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -946,11 +946,11 @@
    "icon": "\ud83d\udca6",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.67111111,
-    "longitude": 143.49305556
+    "latitude": -38.671067,
+    "longitude": 143.493002
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=waterfall (nominatim) \"Triplet Falls\"",
+   "pin_status": "ok",
    "bio": "Rainforest walk past a three-tier waterfall in the Otway National Park.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -976,11 +976,11 @@
    "icon": "\ud83d\udca6",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.649247,
-    "longitude": 143.611703
+    "latitude": -38.649357,
+    "longitude": 143.611771
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Beauchamp Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall in the Otway National Park, reached by a walk down through tall ferns and forest.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -1010,7 +1010,7 @@
     "longitude": 143.5398
    },
    "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "pin_status": "unresolved",
    "bio": "Treetop walk and zipline through the Otway rainforest canopy near Beech Forest.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -1036,11 +1036,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.75,
-    "longitude": 143.38333333
+    "latitude": -38.756872,
+    "longitude": 143.377713
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Johanna\"",
+   "pin_status": "ok",
    "bio": "Wild surf beach in the Johanna valley, named among the most beautiful stops on the Great Ocean Road.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1069,8 +1069,8 @@
     "latitude": -38.8232,
     "longitude": 143.5886
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=bay (nominatim) \"Blanket Bay\"",
+   "pin_status": "ok",
    "bio": "Secluded sheltered bay on the Cape Otway coast with views along the shore.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1097,11 +1097,11 @@
    "icon": "\ud83e\udea8",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.6602846,
-    "longitude": 143.0933579
+    "latitude": -38.660285,
+    "longitude": 143.093358
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"The Twelve Apostles\"",
+   "pin_status": "ok",
    "bio": "Limestone stacks rising from the Southern Ocean in Port Campbell National Park, the Great Ocean Road's best-known sight.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1127,11 +1127,11 @@
    "icon": "\ud83c\udf0a",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.64658333,
-    "longitude": 143.0705
+    "latitude": -38.646407,
+    "longitude": 143.070327
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Loch Ard Gorge\"",
+   "pin_status": "ok",
    "bio": "Gorge and beach where the clipper Loch Ard was wrecked in 1878, with rock formations and caves to explore.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1157,11 +1157,11 @@
    "icon": "\ud83e\ude9c",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.6686286,
-    "longitude": 143.1121047
+    "latitude": -38.668629,
+    "longitude": 143.112105
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=viewpoint (nominatim) \"Gibson Steps\"",
+   "pin_status": "ok",
    "bio": "Steps cut into the cliff down to a beach beneath towering limestone cliffs and two sea stacks.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -1187,11 +1187,11 @@
    "icon": "\ud83c\udf09",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.6240905,
+    "latitude": -38.624091,
     "longitude": 142.930406
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=island (nominatim) \"London Arch\"",
+   "pin_status": "ok",
    "bio": "Natural limestone arch offshore from the cliffs, formerly London Bridge until its span collapsed in 1990.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -1217,11 +1217,11 @@
    "icon": "\ud83c\udf09",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.6235897,
-    "longitude": 142.9441791
+    "latitude": -38.62359,
+    "longitude": 142.944179
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=cape (nominatim) \"The Arch\"",
+   "pin_status": "ok",
    "bio": "Natural rock arch best seen in rough seas, a short walk from the road west of Port Campbell.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -1247,11 +1247,11 @@
    "icon": "\ud83d\udd73\ufe0f",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.6241,
-    "longitude": 142.9369
+    "latitude": -38.61836,
+    "longitude": 142.914602
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Grotto\"",
+   "pin_status": "ok",
    "bio": "Sinkhole inlet with rockpools full of sealife, a short walk from the road near Port Campbell.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -1277,11 +1277,11 @@
    "icon": "\ud83e\udea8",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.589,
-    "longitude": 142.865
+    "latitude": -38.585122,
+    "longitude": 142.825741
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=viewpoint (nominatim) \"Bay of Islands\"",
+   "pin_status": "ok",
    "bio": "Stretch of coast with separated rock formations and cliffs near Peterborough, best seen at sunset.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -1308,11 +1308,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.61666667,
-    "longitude": 142.98333333
+    "latitude": -38.619629,
+    "longitude": 142.995366
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Port Campbell\"",
+   "pin_status": "ok",
    "bio": "Small coastal town and base for the Twelve Apostles, with a sheltered beach, jetty and cafes.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 2,
@@ -1338,11 +1338,11 @@
    "icon": "\u2693",
    "category": "museum",
    "coordinates": {
-    "latitude": -38.38947,
-    "longitude": 142.48499
+    "latitude": -38.389725,
+    "longitude": 142.485094
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Flagstaff Hill Maritime Village\"",
+   "pin_status": "ok",
    "bio": "Replica 1870s maritime village and museum on Flagstaff Hill, with a night show about the Loch Ard wreck.",
    "visitHoursMin": 2,
    "visitHoursMax": 4,
@@ -1368,11 +1368,11 @@
    "icon": "\ud83d\udc0b",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.4039453,
-    "longitude": 142.5211338
+    "latitude": -38.403916,
+    "longitude": 142.52112
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Logans Beach Whale Watching Platform\"",
+   "pin_status": "ok",
    "bio": "Viewing platform where southern right whales can be seen close to shore, from June to September.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1402,7 +1402,7 @@
     "longitude": 142.48
    },
    "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "pin_status": "unresolved",
    "bio": "Geothermal hot springs and pools in Warrnambool, named as a top tourism pick.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -1429,11 +1429,11 @@
    "icon": "\ud83c\udf0b",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.31755547,
-    "longitude": 142.36041538
+    "latitude": -38.321294,
+    "longitude": 142.359714
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Tower Hill\"",
+   "pin_status": "ok",
    "bio": "Volcanic crater reserve near Koroit with wild koalas and emus, walking tracks and a lookout.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -1459,11 +1459,11 @@
    "icon": "\ud83c\udf0a",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.4020782,
-    "longitude": 142.5079051
+    "latitude": -38.402078,
+    "longitude": 142.507905
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Moyjil - Point Ritchie\"",
+   "pin_status": "ok",
    "bio": "Rocky headland at the Hopkins River mouth, a significant Aboriginal site and winter whale-watching point.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -1489,11 +1489,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.3333312,
+    "latitude": -38.333331,
     "longitude": 142.618965
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Hopkins Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall about 90 m wide near Warrnambool, where baby eels migrate upstream in summer.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -1519,11 +1519,11 @@
    "icon": "\ud83c\udf33",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.3909155,
+    "latitude": -38.390915,
     "longitude": 142.478615
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=water (nominatim) \"Lake Pertobe\"",
+   "pin_status": "ok",
    "bio": "Lake and foreshore reserve beside Flagstaff Hill, with playgrounds, paths and a water fountain show.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1549,11 +1549,11 @@
    "icon": "\ud83e\uddad",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.36666667,
-    "longitude": 141.4
+    "latitude": -38.395057,
+    "longitude": 141.412869
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peninsula (nominatim) \"Cape Bridgewater\"",
+   "pin_status": "ok",
    "bio": "Headland and beach west of Portland, with blowholes, a petrified forest and a seal colony.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -1579,11 +1579,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.4309876,
-    "longitude": 141.5445567
+    "latitude": -38.430988,
+    "longitude": 141.544557
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peninsula (nominatim) \"Cape Nelson\"",
+   "pin_status": "ok",
    "bio": "Headland and lighthouse near Portland, with coastal cliff walks and sea views.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1613,7 +1613,7 @@
     "longitude": 141.23333333
    },
    "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "bio": "Long coastal park of dunes, beaches and lakes between Portland and Nelson.",
    "visitHoursMin": 1,
    "visitHoursMax": 4,
@@ -1639,11 +1639,11 @@
    "icon": "\ud83e\udd7e",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.3436,
-    "longitude": 141.6038
+    "latitude": -38.333387,
+    "longitude": 141.609499
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (0.1 km, nominatim) \"Great South West Walk\"",
+   "pin_status": "ok",
    "bio": "Long loop walk from Portland through forest, coast and beach, with shorter day sections.",
    "visitHoursMin": 3,
    "visitHoursMax": 8,
@@ -1670,11 +1670,11 @@
    "icon": "\u2693",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.36666667,
-    "longitude": 142.23333333
+    "latitude": -38.385512,
+    "longitude": 142.236672
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Port Fairy\"",
+   "pin_status": "ok",
    "bio": "Historic whaling harbour town with a heritage precinct, wharves, a lighthouse and nearby beaches.",
    "visitHoursMin": 2,
    "visitHoursMax": 4,
@@ -1705,11 +1705,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.3909091,
-    "longitude": 142.2538751
+    "latitude": -38.390909,
+    "longitude": 142.253875
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Griffiths Island Lighthouse\"",
+   "pin_status": "ok",
    "bio": "Historic lighthouse on Griffiths Island at Port Fairy, linked by a causeway and walking track.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -1744,7 +1744,7 @@
     "longitude": 142.2333
    },
    "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "pin_status": "unresolved",
    "bio": "Rocky coastal viewpoint about 10 km from Port Fairy, popular for sunsets over the coast.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -1779,7 +1779,7 @@
     "longitude": 141.92555556
    },
    "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "bio": "UNESCO-listed Aboriginal aquaculture landscape of eel traps and lava flows, with Gunditjmara-guided tours.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 4,
@@ -1814,7 +1814,7 @@
     "longitude": 141.88333333
    },
    "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "bio": "Volcanic national park around Mount Eccles, with crater lake walks, lava caves and the Lake Surprise campground.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -1845,11 +1845,11 @@
    "icon": "\ud83c\udf0b",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.24555556,
-    "longitude": 143.15805556
+    "latitude": -38.244386,
+    "longitude": 143.157609
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Leura\"",
+   "pin_status": "ok",
    "bio": "Volcanic hill beside Camperdown with a lookout over green farmland and the crater lakes.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
