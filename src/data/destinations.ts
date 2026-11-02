@@ -1013,6 +1013,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Summers are mild and fairly dry, so {months} suits penguins, beaches and the coast.",
   },
   {
+    id: 'wilsons-promontory', name: "Wilsons Promontory National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -39.03, longitude: 146.33 },
+    category: 'park', icon: "🦘", rank: 2,
+    tagline: "The southernmost point of mainland Australia, with beaches, tracks and wombats",
+    description: "Wilsons Promontory, known as the Prom, is a national park of about 50,000 hectares in South Gippsland, 224 km from Melbourne. About 130 km of walking trails lead to granite headlands, bays and the southernmost lighthouse on the mainland. Tidal River is the hub, with a store, visitor centre and campsites, and its wombats, kangaroos and emus are used to people. The promontory has been a national park in one form or another since 1898, on the traditional country of the Gunaikurnai and Boon Wurrung peoples.",
+    whyVisit: ["Walk coastal tracks to the southern tip", "Watch wombats, kangaroos and emus up close", "Swim and relax on white-sand beaches", "Snorkel or dive in the marine parks"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Coastal walking", "Wildlife encounters", "White-sand beaches", "Marine parks"],
+    goodToKnow: [
+      { icon: "🏕️", title: "Book camping early", detail: "Tidal River has 480 unpowered sites. Bookings are essential for Christmas, January and popular long weekends." },
+      { icon: "🚗", title: "Drive carefully at dusk", detail: "Animals are on the road around sunset and at night, especially on the 30 km from the entrance to Tidal River." },
+      { icon: "⛽", title: "Fuel up before the park", detail: "Tidal River no longer sells fuel and its store has inflated prices. The nearest petrol station is at Yanakie." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Go in {months} for warm swimming and camping. March is quieter than the Christmas and January peak.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
