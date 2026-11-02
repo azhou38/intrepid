@@ -18,7 +18,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, runOnUI,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay, useAnimatedScrollHandler
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay, useAnimatedScrollHandler
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
@@ -867,8 +867,11 @@ function DestinationSheet({
   switchTabRef.current = (newTab: Tab) => {
     if (activeTabRef.current === newTab) return;
     activeTabRef.current = newTab;
-    setActiveTab(newTab);
-    tabSlideAnim.value = withTiming(tabSlideFor(newTab), TAB_SLIDE_CONFIG);
+    // React's tab state (which re-renders this whole sheet) follows once the slide has landed: committed at the start it
+    // dropped frames of the slide. Everything shown during it (the underline, the labels' colour) runs off tabSlideAnim.
+    tabSlideAnim.value = withTiming(tabSlideFor(newTab), TAB_SLIDE_CONFIG, finished => {
+      if (finished) runOnJS(setActiveTabJS)(newTab);
+    });
   };
 
   const snapTabToNearest = () => {
@@ -917,15 +920,16 @@ function DestinationSheet({
         const dir = e.velocityX < 0 ? 1 : -1;
         targetIdx = Math.max(0, Math.min(TAB_ORDER.length - 1, curIdx + dir));
       }
-      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_SLIDE_CONFIG);
       // Always sync JS state, rather than trying to skip a no-op update by comparing
       // against activeTabRef.current here — a plain JS ref read from inside a UI-thread
       // worklet can hold a stale snapshot (refs aren't live-synced across the JS/UI thread
-      // boundary the way a shared value is), which was silently skipping this call and
-      // leaving the previous tab's highlight in place even though the content had already
-      // slid to the new one. setActiveTabJS is a harmless no-op on the JS thread if the tab
-      // hasn't actually changed.
-      runOnJS(setActiveTabJS)(TAB_ORDER[targetIdx]);
+      // boundary the way a shared value is). setActiveTabJS is a harmless no-op on the JS
+      // thread if the tab hasn't actually changed. It runs once the slide has landed (see
+      // switchTabRef): a re-render committed mid-slide dropped frames of it.
+      const target = TAB_ORDER[targetIdx];
+      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_SLIDE_CONFIG, finished => {
+        if (finished) runOnJS(setActiveTabJS)(target);
+      });
     })
     .simultaneousWithExternalGesture(scrollRef)
     // The About tab's "Popular Spots" and "Why visit" carousels are the exception to the simultaneous
@@ -947,7 +951,6 @@ function DestinationSheet({
   // Shared tab-bar content (buttons + sliding indicator) — rendered both inline (scrolls
   // normally with the hero) and in the fixed overlay copy that takes over once scrolled
   // past it, so the two never drift out of sync.
-  const isTabSelected = (tab: Tab) => activeTab === tab;
   const renderTabBarRow = () => (
     <>
       {TAB_ORDER.map((tab, i) => (
@@ -965,9 +968,9 @@ function DestinationSheet({
         >
           {tab === 'visit' ? (
             <View style={{ flexDirection:'row', alignItems:'center', gap:6 }}>
-              <Text style={[st.tabBtnTxt, isTabSelected('visit') && st.tabBtnTxtActive]}>
+              <TabLabel index={i} slide={tabSlideAnim}>
                 {localVisits.length > 1 ? 'My Visits' : 'My Visit'}
-              </Text>
+              </TabLabel>
               {localVisits.length > 1 && (
                 <View style={st.tabVisitBadge}>
                   <Text style={st.tabVisitBadgeTxt}>{localVisits.length}</Text>
@@ -976,11 +979,11 @@ function DestinationSheet({
             </View>
           ) : tab === 'spots' ? (
             // Count as plain text after the label — "Spots (12)".
-            <Text style={[st.tabBtnTxt, isTabSelected('spots') && st.tabBtnTxtActive]}>
+            <TabLabel index={i} slide={tabSlideAnim}>
               Spots{spots.length > 0 ? ` (${spots.length})` : ''}
-            </Text>
+            </TabLabel>
           ) : (
-            <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]}>About</Text>
+            <TabLabel index={i} slide={tabSlideAnim}>About</TabLabel>
           )}
         </Pressable>
         </React.Fragment>
@@ -2149,7 +2152,6 @@ const st = StyleSheet.create({
   tabBtn:              { flex:1, paddingVertical:15, alignItems:'center' },
   tabDivider:          { width: StyleSheet.hairlineWidth, marginVertical:14, backgroundColor:'#E5E7EB' },
   tabBtnTxt:           { fontSize:15, fontWeight:'600', color:'#9CA3AF' },
-  tabBtnTxtActive:     { color:'#111827' },
   // The My Visits count — plain gray, doesn't switch color when its tab is selected.
   tabVisitBadge:       { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
                          paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
@@ -2301,3 +2303,12 @@ const st = StyleSheet.create({
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
 // commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
 export default React.memo(DestinationSheet);
+
+// A tab's label, grey to black as its panel slides into place: driven by the same slide as the underline, so the colour
+// changes with the swipe rather than when the tab state catches up after it (CountrySheet's TabLabel).
+function TabLabel({ index, slide, children }: { index: number; slide: SharedValue<number>; children: React.ReactNode }) {
+  const style = useAnimatedStyle(() => ({
+    color: interpolateColor(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], ['#9CA3AF', '#111827', '#9CA3AF']),
+  }));
+  return <Reanimated.Text style={[st.tabBtnTxt, style]}>{children}</Reanimated.Text>;
+}

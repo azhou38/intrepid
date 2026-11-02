@@ -439,14 +439,16 @@ function CountrySheet({
     }
   }, [isCountryVisited]);
 
-  const switchTab = useCallback((tab: CountryTab) => {
-    setActiveTab(tab);
-    tabSlideAnim.value = withTiming(tabSlideFor(tab), TAB_CONFIG);
-  }, [TAB_ORDER]);
-
   const setActiveTabJS = useCallback((tab: CountryTab) => {
     setActiveTab(tab);
   }, []);
+  // React's tab state (a re-render of this whole sheet) follows once the slide has landed: committed at the start it
+  // dropped frames of the slide. Everything shown during it (the underline, TabLabel's colour) runs off tabSlideAnim.
+  const switchTab = useCallback((tab: CountryTab) => {
+    tabSlideAnim.value = withTiming(tabSlideFor(tab), TAB_CONFIG, finished => {
+      if (finished) runOnJS(setActiveTabJS)(tab);
+    });
+  }, [TAB_ORDER]);
 
   // ── Sheet animation ──────────────────────────────────────────────────────────
   const snapStateRef = useRef<CountrySnapState>(resolvedInitialSnap);
@@ -1022,11 +1024,13 @@ function CountrySheet({
         const dir = e.velocityX < 0 ? 1 : -1;
         targetIdx = Math.max(0, Math.min(TAB_ORDER.length - 1, curIdx + dir));
       }
-      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_CONFIG);
       // Always sync JS state rather than trying to skip a no-op by comparing against the
       // (potentially stale, worklet-read) `activeTab` — setActiveTabJS is a harmless no-op
-      // on the JS thread if the tab hasn't actually changed.
-      runOnJS(setActiveTabJS)(TAB_ORDER[targetIdx]);
+      // on the JS thread if the tab hasn't actually changed. It runs once the slide has landed (see switchTab).
+      const target = TAB_ORDER[targetIdx];
+      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_CONFIG, finished => {
+        if (finished) runOnJS(setActiveTabJS)(target);
+      });
     })
     .simultaneousWithExternalGesture(scrollRef);
 
