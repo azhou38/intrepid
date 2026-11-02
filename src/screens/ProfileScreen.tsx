@@ -940,11 +940,11 @@ const SORTS: { key: ExploredSort; label: string }[] = [
 // the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
 // the page (which scrolls up and down itself).
 const LIST_PAGE_SIZE = 8;
-// A grid tile's line under its name, by the sort: the date visited, or the rating, when sorted by it (and the place has one);
-// otherwise its usual line (spots visited for a destination, the country for a spot).
+// A grid tile's line under its name, by the sort: the date visited, or the rating, when sorted by it ("No date" / "Not rated"
+// for a place without one, which sorts last); otherwise its usual line (spots visited for a destination, a spot's country).
 const tileSub = (sort: ExploredSort, date: string, rating: number, usual: string) =>
-  sort === 'date' && date ? shortDate(date)
-  : sort === 'rating' && rating ? `★ ${rating.toFixed(1).replace(/\.0$/, '')}`
+  sort === 'date' ? (date ? shortDate(date) : 'No date')
+  : sort === 'rating' ? (rating ? `★ ${rating.toFixed(1).replace(/\.0$/, '')}` : 'Not rated')
   : usual;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const shortDate = (iso: string) => {
