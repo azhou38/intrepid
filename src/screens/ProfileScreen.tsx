@@ -999,6 +999,31 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   );
 }
 
+// The Explored grid / list switch: Top Countries' segmented control (a grey track, the chosen side on a raised white pill),
+// with an icon and a label on each side. The pill slides across when the choice changes.
+const VIEW_SEG_W = 58;
+function ViewToggle({ view, onView }: { view: ExploredView; onView: (v: ExploredView) => void }) {
+  const idx = useSharedValue(view === 'grid' ? 0 : 1);
+  useEffect(() => { idx.value = withTiming(view === 'grid' ? 0 : 1, { duration: 220, easing: Easing.out(Easing.cubic) }); }, [view]);
+  const pillStyle = useAnimatedStyle(() => ({ transform: [{ translateX: idx.value * VIEW_SEG_W }] }));
+  return (
+    <View style={styles.viewToggle}>
+      <Animated.View pointerEvents="none" style={[styles.viewTogglePill, pillStyle]} />
+      {(['grid', 'list'] as const).map(v => {
+        const on = view === v, Icon = v === 'grid' ? LayoutGrid : ListIcon;
+        return (
+          <Pressable key={v} hitSlop={4} style={styles.viewToggleBtn} accessibilityRole="button" accessibilityState={{ selected: on }}
+            accessibilityLabel={v === 'grid' ? 'Grid view' : 'List view'}
+            onPress={() => { if (!on) { Haptics.selectionAsync(); onView(v); } }}>
+            <Icon size={13} color={on ? '#111827' : '#9CA3AF'} strokeWidth={2.5} />
+            <Text style={[styles.topToggleTxt, on && styles.topToggleTxtOn]}>{v === 'grid' ? 'Grid' : 'List'}</Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+}
+
 // The sort choice above an Explored grid: small segmented pills, the chosen one dark.
 type SortCountry = { code: string; name: string; count: number };
 // The row above the Explored map: two dropdown chips side by side, the country filter ("All countries" or the chosen one, with
@@ -1049,17 +1074,7 @@ function SortRow({ sort, onSort, view, onView, withSpots, countries, total, coun
           <ChevronDown size={13} color="#6B7280" strokeWidth={2.4} />
         </Pressable>
         {/* Grid or list, at the end of the row. */}
-        <View style={styles.viewToggle}>
-          {(['grid', 'list'] as const).map(v => {
-            const on = view === v, Icon = v === 'grid' ? LayoutGrid : ListIcon;
-            return (
-              <Pressable key={v} hitSlop={4} style={[styles.viewToggleBtn, on && styles.viewToggleBtnOn]} accessibilityLabel={v === 'grid' ? 'Grid view' : 'List view'}
-                onPress={() => { if (!on) { Haptics.selectionAsync(); onView(v); } }}>
-                <Icon size={14} color={on ? '#111827' : '#9CA3AF'} strokeWidth={2.4} />
-              </Pressable>
-            );
-          })}
-        </View>
+        <ViewToggle view={view} onView={onView} />
       </View>
       <Modal visible={!!menu} transparent animationType="fade" onRequestClose={() => setMenu(null)}>
         <Pressable style={StyleSheet.absoluteFill} onPress={() => setMenu(null)} />
@@ -1249,10 +1264,12 @@ const styles = StyleSheet.create({
   countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
                  borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
-  // The grid / list toggle at the end of the sort row: two small icons in one rounded box, the chosen one on a light fill.
-  viewToggle:      { marginLeft: 'auto', flexDirection: 'row', borderRadius: 10, borderWidth: 1, borderColor: '#E5E7EB', padding: 2, gap: 2 },
-  viewToggleBtn:   { paddingHorizontal: 6, paddingVertical: 2, borderRadius: 8 },
-  viewToggleBtnOn: { backgroundColor: '#F3F4F6' },
+  // The grid / list toggle at the end of the sort row (ViewToggle): Top Countries' track, two fixed-width sides and a white
+  // pill that slides under the chosen one.
+  viewToggle:     { marginLeft: 'auto', flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
+  viewTogglePill: { position: 'absolute', top: 2, bottom: 2, left: 2, width: VIEW_SEG_W, borderRadius: 7, backgroundColor: 'white',
+                    shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
+  viewToggleBtn:  { width: VIEW_SEG_W, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4, paddingVertical: 4 },
   // The Explored list (RankList): Top Countries' rows with a sub line, a page of them the screen wide.
   rankPage:    { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 2 },
   rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
