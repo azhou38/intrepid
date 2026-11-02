@@ -3451,6 +3451,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 5, 10, 11],
     bestTimeBlurb: "Mild {months} weather suits touring wineries and heritage sites.",
   },
+  {
+    id: 'horsham', name: "Horsham", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 90,
+    continent: 'Oceania', coordinates: { latitude: -36.71666667, longitude: 142.2 },
+    category: 'city', icon: "🧗", rank: 5,
+    tagline: "Regional Wimmera River city and gateway to the Silo Art Trail and Mount Arapiles",
+    description: "Horsham is a regional city on a bend in the Wimmera River, about 300 km north-west of Melbourne, and the most populous city in the Wimmera. It is the gateway to the Silo Art Trail and the north-western side of the Grampians National Park. Mount Arapiles, about 30 minutes' drive west, rises about 140 m above the plains and is one of Australia's premier rock-climbing sites. In town, the Regional Art Gallery, the Botanic Gardens and the riverside fill a stopover on the Western Highway.",
+    whyVisit: ["Rock climb on the Wimmera plains", "Follow the Silo Art Trail"],
+    whyVisitPhotos: ["", ""],
+    highlights: ["Rock climbing", "Silo art"],
+    goodToKnow: [
+      { icon: "💧", title: "Bring water to Arapiles", detail: "Tank water at the Mount Arapiles campground is not for drinking, so bring your own and plenty of it." },
+      { icon: "☀️", title: "Summer heat", detail: "Horsham sees about 25 extreme-heat days a year and January averages a 30.6C maximum, so plan outdoor time for cooler months." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Summers are hot with frequent extreme heat, so {months} are the mild months to visit.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

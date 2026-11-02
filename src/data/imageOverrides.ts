@@ -3060,4 +3060,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Mansfield",
   "Yarra Ranges National Park",
   "Ararat",
+  "Horsham",
 ]);
