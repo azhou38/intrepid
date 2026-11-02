@@ -1251,6 +1251,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "The peninsula is at its best and busiest in {months}, with sheltered bay beaches and surf.",
   },
   {
+    id: 'yarra-valley', name: "Yarra Valley", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 55,
+    continent: 'Oceania', coordinates: { latitude: -37.68, longitude: 145.46 },
+    category: 'nature', icon: "🍷", rank: 3,
+    tagline: "Cool-climate wine country an hour from Melbourne, with wildlife and a rail trail.",
+    description: "The Yarra Valley is a wine region about an hour's drive from Melbourne, with more than 80 wineries known for cool-climate Chardonnay, Pinot Noir and sparkling wine. The first vineyards were planted in the 1830s, making it one of Australia's oldest wine industries. Beyond the cellar doors are a wildlife sanctuary with breeding programmes for endangered species, and TarraWarra Museum of Art, with its views over the vines.",
+    whyVisit: ["Taste cool-climate wines at cellar doors", "Meet native wildlife up close", "Visit galleries among the vineyards"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Cool-climate wine", "Native wildlife", "Art among vineyards"],
+    goodToKnow: [
+      { icon: "🚌", title: "Public transport is patchy", detail: "Train to Lilydale, then bus 685 to Yarra Glen, TarraWarra and Healesville. For several cellar doors, book a driver or tour." },
+      { icon: "📅", title: "Check weekend-only railway", detail: "Yarra Valley Railway at Healesville runs only on weekends and public holidays, and Yarra Glen's market is on Sundays." },
+      { icon: "🚴", title: "Take the train, then cycle", detail: "Catch the train to Lilydale and ride the 40 km rail trail to Warburton for a car-free day in the valley." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Cool-climate cellar doors are best toured in {months}, in the autumn vintage and spring.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
