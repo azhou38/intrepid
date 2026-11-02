@@ -1,0 +1,26 @@
+{
+ "id": "apollo-bay-5",
+ "name": "Beauchamp Falls",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Beauchamp_Falls",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Beauchamp Falls",
+   "excerpt": "Beauchamp Falls is a waterfall located in the Otway Ranges, within the locality of Beech Forest, Victoria, Australia. The waterfall consists of a singular drop, and is at a total height of 18.71 metres."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

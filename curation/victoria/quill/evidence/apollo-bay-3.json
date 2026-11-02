@@ -1,0 +1,26 @@
+{
+ "id": "apollo-bay-3",
+ "name": "Hopetoun Falls",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Hopetoun_Falls",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Hopetoun Falls",
+   "excerpt": "The Hopetoun Falls is a waterfall across the Aire River that is located in the Otways region of Victoria, Australia. The waterfall consists of a single drop, with a height of 17.94 metres."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

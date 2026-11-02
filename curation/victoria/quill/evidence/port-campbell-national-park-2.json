@@ -1,0 +1,26 @@
+{
+ "id": "port-campbell-national-park-2",
+ "name": "Loch Ard Gorge",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Loch_Ard_Gorge",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Loch Ard Gorge",
+   "excerpt": "The Loch Ard Gorge is part of Port Campbell National Park, Victoria, Australia, about three minutes' drive west of The Twelve Apostles."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

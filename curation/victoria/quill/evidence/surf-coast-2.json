@@ -1,0 +1,26 @@
+{
+ "id": "surf-coast-2",
+ "name": "Australian National Surfing Museum",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Australian_National_Surfing_Museum",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Australian National Surfing Museum",
+   "excerpt": "The Australian National Surfing Museum, located in Torquay, Victoria, is widely cited as hosting the world's largest surfing and beach culture museum. It is said to be one of \"the most significant centres of world surfing heritage\" by the International Surfing Association."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "id": "apollo-bay-4",
+ "name": "Triplet Falls",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Triplet_Falls",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Triplet Falls",
+   "excerpt": "The Triplet Falls are waterfalls located in the Great Otway National Park of Victoria, in eastern Australia, 200 km from Melbourne via Colac and Gellibrand, or 70 km from Apollo Bay."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

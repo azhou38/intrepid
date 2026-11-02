@@ -1,0 +1,26 @@
+{
+ "id": "geelong-4",
+ "name": "Geelong Botanic Gardens",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Geelong_Botanic_Gardens",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Geelong Botanic Gardens",
+   "excerpt": "The Geelong Botanic Gardens is a botanical garden in the city of Geelong, Victoria, Australia. The gardens are located within Eastern Park on the eastern outskirts of the central business district. They were established in 1850 and are the fourth oldest botanic garden in Australia."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}
