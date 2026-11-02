@@ -3293,6 +3293,10 @@ const destItems = useMemo((): DestItem[] =>
           // a full Mapbox updateLayer on the main thread: with dozens of band layers, ~300 ms frozen at the tap and again
           // as the close ended. Moving the pins in the data costs nothing extra (the data changes at those moments anyway).
           pb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
+          // The band its photo pin shows from, for its small pin to hide there (see miniOpacity): -1 always (ungated), 99
+          // never (no photo pin in the data).
+          pz: !(specs.has(img) && !early && photoPlan.has(sp.id) && !pinHitsSelected(sp)) ? 99
+            : spotGatesOff || must.has(sp.id) || !spotBands.photoBy.has(sp.id) ? -1 : Number(spotBands.photoBy.get(sp.id)),
           rb: spotGatesOff || must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
           nb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
         },
@@ -3413,9 +3417,13 @@ const destItems = useMemo((): DestItem[] =>
       // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
       symbolZOrder: 'source',
     };
-    // Small pins overlap photo pins (and each other) freely. A spot's own small pin needs no hiding under its photo pin: it is
-    // the same teardrop at a third of the size, on the same tip, drawn beneath, so the photo pin covers it.
-    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
+    // Small pins overlap photo pins (and each other) freely. A spot's own small pin hides from the zoom its photo pin shows
+    // from (pz, its photo band, in the data): a step on the camera zoom at each photo band, the frame the band's photo layer
+    // comes in or goes.
+    const miniOpacity: any = spotBands.photo.length
+      ? ['step', ['zoom'], ['case', ['<', ['get', 'pz'], 0], 0, 1], ...spotBands.photo.flatMap(b => [b, ['case', ['>', ['get', 'pz'], b], 1, 0]])]
+      : ['case', ['<', ['get', 'pz'], 0], 0, 1];
+    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any, iconOpacity: miniOpacity };
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
