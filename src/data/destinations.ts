@@ -1353,6 +1353,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Beach season runs {months}, with crowds peaking at Christmas and the Rip Curl Pro at Easter.",
   },
   {
+    id: 'apollo-bay', name: "Apollo Bay", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 75,
+    continent: 'Oceania', coordinates: { latitude: -38.7576, longitude: 143.672 },
+    category: 'city', icon: "🌊", rank: 3,
+    tagline: "A Great Ocean Road coastal town beside Cape Otway and the Otway rainforest",
+    description: "Apollo Bay is a coastal town of 1,790 people on the Great Ocean Road, about 191 km from Melbourne. Cape Otway Lightstation, about 30 minutes away, has operated since 1848 and is the oldest surviving lighthouse on mainland Australia. In the hills behind, Maits Rest is a 30-minute rainforest boardwalk with glow worms at night, and the Otway Fly is a steel canopy walk 600 m long and up to 47 m high. The 104 km Great Ocean Walk passes through town on its way to the Twelve Apostles.",
+    whyVisit: ["Watch southern right whales from shore", "Walk through Otway rainforest", "Hike the Great Ocean Walk"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Whale watching", "Rainforest walks", "Coastal hiking"],
+    goodToKnow: [
+      { icon: "🚗", title: "Colac route is faster", detail: "Driving via Colac is much quicker than the Great Ocean Road, so use the coast road when you have time for the scenery." },
+      { icon: "⛺", title: "Book Great Ocean Walk camps", detail: "The walk's designated campsites have limited numbers and must be booked beforehand." },
+      { icon: "🌿", title: "Check falls track access", detail: "Parks Victoria closed the walking track to Marriner's Falls in 2011 over falling-tree risk, so check access before driving out." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Walk the coast in {months}, or come in winter and spring to see southern right whales.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
