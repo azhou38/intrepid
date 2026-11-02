@@ -1336,6 +1336,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Cooler, milder {months} weather suits walking, before summer fire restrictions and winter fog.",
   },
   {
+    id: 'surf-coast', name: "Surf Coast", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 55,
+    continent: 'Oceania', coordinates: { latitude: -38.37, longitude: 144.25 },
+    category: 'beach', icon: "🏄", rank: 3,
+    tagline: "Surf breaks and clifftop walks where the Great Ocean Road begins.",
+    description: "Torquay is the official start of the Great Ocean Road, 21 km south of Geelong, and a surfing hub where Rip Curl, Quiksilver and Billabong set up shop. It is home to the Australian National Surfing Museum, and Bells Beach hosts the Rip Curl Pro, the world's longest continuously running pro surfing competition, held at Easter since 1962. Anglesea is where the road first meets the ocean, and Aireys Inlet has a 19th-century lighthouse still in operation.",
+    whyVisit: ["Watch surfers at famous breaks", "Drive the start of the Great Ocean Road", "Spot wild kangaroos beside the fairways"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Surf culture", "Great Ocean Road", "Wild kangaroos"],
+    goodToKnow: [
+      { icon: "🏄", title: "Check surf before Bells", detail: "Bells Beach is a serious surf break, and swell and wind decide whether it works. Winki Pop nearby often works in more varied conditions." },
+      { icon: "🏖️", title: "Summer is crowded", detail: "Anglesea and the coast fill with Melbourne holidaymakers around Christmas and New Year. Book well ahead or visit outside that peak." },
+      { icon: "🚆", title: "Train to Geelong, then car", detail: "Trains run from Melbourne's Southern Cross to Geelong every 30-40 minutes. Then hire a car or take a bus to Torquay." },
+    ],
+    bestMonths: [12, 1, 2, 3, 4],
+    bestTimeBlurb: "Beach season runs {months}, with crowds peaking at Christmas and the Rip Curl Pro at Easter.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
