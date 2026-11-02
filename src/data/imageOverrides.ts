@@ -3035,4 +3035,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Alpine National Park",
   "Mornington Peninsula",
   "Yarra Valley",
+  "Ballarat",
 ]);

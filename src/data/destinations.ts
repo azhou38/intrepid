@@ -1268,6 +1268,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Cool-climate cellar doors are best toured in {months}, in the autumn vintage and spring.",
   },
   {
+    id: 'ballarat', name: "Ballarat", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -37.5622, longitude: 143.8503 },
+    category: 'city', icon: "⛏️", rank: 3,
+    tagline: "A goldfields city that holds the story of Australia's only armed rebellion",
+    description: "Ballarat is Victoria's third-largest city, about 110 km north-west of Melbourne. Gold found at Poverty Point on 18 August 1851 turned a sheep station into a major settlement within months. Sovereign Hill, a 25-hectare open-air museum, recreates the town's first ten years, and the Eureka Flag from the 1854 stockade rebellion is held in the city. The Botanical Gardens date from 1857, and Lake Wendouree hosted the 1956 Olympic rowing and kayaking.",
+    whyVisit: ["Step into a gold-rush town", "Learn the Eureka Stockade story", "Stroll the botanical gardens and lake"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Gold-rush history", "Eureka story", "Gardens and lake"],
+    goodToKnow: [
+      { icon: "🚋", title: "Trams run weekends only", detail: "The Ballarat Tramway Museum runs historic trams beside Lake Wendouree on weekends and public and school holidays, from about 12:30 to 5pm." },
+      { icon: "🚆", title: "Plan transport between sights", detail: "Ballarat is a day trip from Melbourne by train or car, but the big sights are spread out, so work out how you will get between them." },
+      { icon: "🌺", title: "Book for Begonia Festival", detail: "The Begonia Festival over the March Labour Day weekend fills Lake Wendouree and Sturt Street, so book accommodation ahead." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Come in {months} for cooler air than Melbourne, plus the Begonia Festival in March.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
