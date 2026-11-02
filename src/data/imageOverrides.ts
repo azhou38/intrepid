@@ -434,6 +434,7 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "Kokoda Track": { x: 0.8, y: 0.5 },
   "File:Ela Beach May 2015.jpg": { x: 0.6, y: 0.6 },
   "File:Rabaul from Vulcanology Observatory.jpg": { x: 0.4, y: 0.5 },
+  "File:ext-dest-coral-coast-why1.jpg": { x: 0.4, y: 0.6 },
   "File:ext-rabaul-barge-tunnel.jpg": { x: 0.55, y: 0.55 },
   "File:Mount Uluman.jpg": { x: 0.5, y: 0.6, zoom: 1.3 },
   "File:ext-madang-central-market.jpg": { x: 0.6, y: 0.55 },

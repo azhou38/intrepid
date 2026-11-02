@@ -4469,7 +4469,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Dunes, white beaches, shark dives and river gorges on Viti Levu's south coast",
     description: "The Coral Coast is the stretch of Viti Levu's south coast between Sigatoka and Suva, a popular backpacking route. Sigatoka Sand Dunes, Fiji's first national park, rise 20 to 60 m at the river mouth, and Natadola Beach is a white-sand beach west of Sigatoka with horse riding. Pacific Harbour is the base for shark dives in Beqa Lagoon, and Beqa Island lies 10 km offshore. Inland, the Upper Navua Gorge offers whitewater rafting, and Tavuni Hill Fort is a semi-restored hill fort built by a Tongan chief.",
     whyVisit: ["Swim off white-sand beaches", "Dive with sharks in Beqa Lagoon", "Raft a waterfall-lined gorge"],
-    whyVisitPhotos: ["", "ext-dest-coral-coast-why2.jpg", "ext-dest-coral-coast-why3.jpg"],
+    whyVisitPhotos: ["ext-dest-coral-coast-why1.jpg", "ext-dest-coral-coast-why2.jpg", "ext-dest-coral-coast-why3.jpg"],
     highlights: ["Sandy beaches", "Shark dives", "Gorge rafting"],
     goodToKnow: [
       { icon: "💧", title: "Pay at Biausevu village", detail: "Biausevu Waterfalls are about a 30-minute walk from the village, with nine stream crossings. The entry and guide fee is paid in the village first." },
