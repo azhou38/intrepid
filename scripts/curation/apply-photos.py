@@ -67,6 +67,19 @@ def set_in(block_name, key, line_val):
     ov = ov[:a] + blk + ov[b:]
 
 
+def add_no_photo(key):
+    # A slot whose judges accepted nothing ("none") must show the placeholder, never the article's lead image or a search hit:
+    # left out of NO_PHOTO, Viseisei shipped with a map of Viti Levu and Lake Tagimaucia with an Indonesian volcano.
+    # Skipped when the key already has a photo of its own (an override or an external photo).
+    global ov
+    if re.search(r'^  ' + re.escape(jq(key)) + r': ', ov[ov.index('export const WIKI_IMAGE_OVERRIDES'):ov.index('export const NO_PHOTO')], re.M) or key in ext:
+        return
+    a = ov.index('export const NO_PHOTO'); b = ov.index(']);', a)
+    if re.search(r'^  ' + re.escape(jq(key)) + r',$', ov[a:b], re.M): return
+    ov = ov[:b] + f'  {jq(key)},\n' + ov[b:]
+    report.setdefault('no_photo_added', []).append(key)
+
+
 def drop_no_photo(key):
     # A place added photoless (apply-destination --allow-no-header, apply-region) is in NO_PHOTO, which the app checks
     # before any photo: left there, the photo applied here would never show.
@@ -79,7 +92,14 @@ pending, report = [], {'copyright_risk': [], 'unresolved': [], 'applied': 0}
 for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/judge-2-C*.json'))):   # JUDGE_GLOB limits a run to one region's verdicts
     for r in json.load(open(f)):
         slot, acc = r['slot'], r['accept']
-        if acc == 'none': continue
+        if acc == 'none':
+            if slot.startswith('spot:'):
+                k = spot_key(slot[5:])
+                if k: add_no_photo(k)
+            elif slot.endswith(':header'):
+                m = re.search(r"id: ['\"]%s['\"], name: ['\"]([^'\"]*)['\"]" % re.escape(slot.split(':')[1]), dest)
+                if m: add_no_photo(m.group(1))
+            continue
         if slot.startswith('spot:'): key = spot_key(slot[5:])
         elif slot.endswith(':header'):
             m = re.search(r"id: ['\"]%s['\"], name: ['\"]([^'\"]*)['\"]" % re.escape(slot.split(':')[1]), dest); key = m and m.group(1)

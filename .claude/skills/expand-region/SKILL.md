@@ -113,7 +113,7 @@ One commit per destination, one for the region's standalone spots.
 
 ## 6. Verify
 
-`npx tsc --noEmit`; `npx tsx scripts/check-destination-headers.ts`; `npx tsx scripts/audit-spot-coordinates.ts --country <CC>` (decide every flag); `npx tsx scripts/photo-prefilter.ts`; `npx tsx scripts/build-image-manifest.ts`; `python3 scripts/curation/bio-fit.py`; `python3 scripts/curation/photo-brightness.py`; `npx tsx scripts/curation/lint-entries.ts --region <id> --offline` (no `pin`, `pin-shared`, `no-ticket`, `district` or shape line for anything new). Optionally `scripts/curation/spot-popularity.ts` if the destination sheet's Popular Spots row should cover the new spots. Then look at the map on the phone or simulator: pins sit where the places are, names fit, nothing overlaps.
+`npx tsc --noEmit`; `npx tsx scripts/check-destination-headers.ts`; `npx tsx scripts/audit-spot-coordinates.ts --country <CC>` (decide every flag); `npx tsx scripts/photo-prefilter.ts`; `npx tsx scripts/build-image-manifest.ts`; `python3 scripts/curation/bio-fit.py`; `python3 scripts/curation/photo-brightness.py`; `python3 scripts/curation/check-photo-decisions.py --country <CC>` (must pass: every slot has a photo, an override, or `NO_PHOTO`); `npx tsx scripts/curation/lint-entries.ts --region <id> --offline` (no `pin`, `pin-shared`, `no-ticket`, `district` or shape line for anything new). Optionally `scripts/curation/spot-popularity.ts` if the destination sheet's Popular Spots row should cover the new spots. Then look at the map on the phone or simulator: pins sit where the places are, names fit, nothing overlaps.
 
 ## End of run: the report the owner reads
 
