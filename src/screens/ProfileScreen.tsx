@@ -710,7 +710,7 @@ export default function ProfileScreen() {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode,
-                sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), sortKeys.destRating(d.id), n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
+                sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), sortKeys.destRating(d.id), exploredSort === 'spots' && n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
                 // Sorted by most spots, the top three (with any spots) wear a rank badge.
                 rank: exploredSort === 'spots' && n > 0 && k < 3 ? k + 1 : undefined,
                 photo: (
@@ -955,7 +955,8 @@ const SORTS: { key: ExploredSort; label: string }[] = [
 // the page (which scrolls up and down itself).
 const LIST_PAGE_SIZE = 8;
 // A grid tile's line under its name, by the sort: the date visited, or the rating, when sorted by it (an em dash for a place
-// without one, which sorts last); otherwise its usual line (spots visited for a destination, a spot's country).
+// without one, which sorts last); otherwise its usual line (a destination's spots visited when sorted by them, nothing when
+// sorted A–Z; a spot's country).
 const tileSub = (sort: ExploredSort, date: string, rating: number, usual: string) =>
   sort === 'date' ? (date || '—')
   : sort === 'rating' ? (rating ? `★ ${rating.toFixed(1).replace(/\.0$/, '')}` : '—')
