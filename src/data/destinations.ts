@@ -1778,6 +1778,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are the most comfortable. Summer is very hot and dry, and good rain brings wildflowers.",
   },
   {
+    id: 'croajingolong', name: "Croajingolong National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 100,
+    continent: 'Oceania', coordinates: { latitude: -37.68, longitude: 149.55 },
+    category: 'park', icon: "🏖️", rank: 4,
+    tagline: "A remote East Gippsland coast of empty beaches, dunes and lighthouses",
+    description: "Croajingolong is a linear coastal national park in East Gippsland, about 80 km long and 20 km wide, with the Tasman Sea to the south and Mallacoota at its eastern end. Rocky outcrops, long sandy beaches, coastal dunes and freshwater rivers suit hiking, swimming, snorkelling and sea kayaking. The Wilderness Coast Walk follows the shore, and Point Hicks is believed to be Captain Cook's first Australian landfall. UNESCO nominated the park a World Biosphere Reserve in 1977, and it holds almost 1,000 native plant species.",
+    whyVisit: ["Walk a wild coast of empty beaches", "Paddle coastal inlets and rivers", "Stay in historic lighthouse cottages"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Empty beaches", "Inlet paddling", "Lighthouse stays"],
+    goodToKnow: [
+      { icon: "🍽️", title: "Bring your own food", detail: "Outside Mallacoota there is nowhere to eat or buy supplies in the park, so stock up in town before heading in." },
+      { icon: "🚙", title: "Unsealed roads need 4WD", detail: "Mallacoota is the only town and the park has no other paved roads. Reaching places like Point Hicks needs a good 4WD." },
+    ],
+    bestMonths: [12, 1, 2, 3, 4],
+    bestTimeBlurb: "Warm {months} days suit beach walks, paddling and camping on this exposed coast.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

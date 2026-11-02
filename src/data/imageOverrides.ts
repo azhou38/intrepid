@@ -3047,4 +3047,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Bright",
   "Beechworth",
   "Echuca",
+  "Croajingolong National Park",
 ]);
