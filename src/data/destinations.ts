@@ -1302,6 +1302,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Mild {months} suit lake walks and garden strolls, and spa visits work all year.",
   },
   {
+    id: 'bendigo', name: "Bendigo", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -36.757, longitude: 144.279 },
+    category: 'city', icon: "⛏️", rank: 3,
+    tagline: "A gold-rush city of grand Victorian buildings, mines and Chinese heritage",
+    description: "Gold found on Bendigo Creek in 1851 turned a sheep station into one of colonial Australia's largest boomtowns, drawing migrants from Europe and China. The wealth built grand Victorian public buildings, and Sacred Heart Cathedral is the third-largest cathedral in Australia. Visitors can go underground at Central Deborah Gold Mine and see Sun Loong, the world's longest imperial dragon, at the Golden Dragon Museum. Bendigo is Victoria's fourth-largest city, about 140 km north-north-west of Melbourne.",
+    whyVisit: ["Go underground in a gold-rush mine", "Admire grand Victorian architecture", "See art at a major regional gallery"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Gold-rush mine", "Victorian architecture", "Regional art"],
+    goodToKnow: [
+      { icon: "🐉", title: "Book for Easter", detail: "The Easter Festival procession draws tens of thousands over the long weekend, so book beds well ahead." },
+      { icon: "☀️", title: "Summer gets hot", detail: "Days above 35 C are common in summer and the record is 45.4 C. Plan mine and walking visits for morning." },
+      { icon: "🚋", title: "Ride the talking tram", detail: "The tourist tram links the Central Deborah mine and the Chinese heritage sites, so it works as a loop tour." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Mild {months} days suit mine tours and walks, while summer often tops 35 C.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
