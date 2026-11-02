@@ -3413,7 +3413,9 @@ const destItems = useMemo((): DestItem[] =>
       // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
       symbolZOrder: 'source',
     };
-    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: false, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
+    // Small pins overlap photo pins (and each other) freely. A spot's own small pin needs no hiding under its photo pin: it is
+    // the same teardrop at a third of the size, on the same tip, drawn beneath, so the photo pin covers it.
+    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
