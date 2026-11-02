@@ -1,0 +1,72 @@
+{
+ "gippsland-lakes-4": {
+  "id": "gippsland-lakes-4",
+  "name": "Griffiths Sea Shell Museum and Marine Display",
+  "lat": -37.8816338,
+  "lon": 147.9777777,
+  "source": "Photon/OSM",
+  "feature_type": "tourism=museum",
+  "confidence": "MEDIUM",
+  "note": "OSM museum node named Griffiths Sea Shell Museum, Marine Pde Lakes Entrance, 1.3 km from town hint; single source."
+ },
+ "grampians-national-park-7": {
+  "id": "grampians-national-park-7",
+  "name": "Chautauqua Peak",
+  "lat": -37.1346218,
+  "lon": 142.5141045,
+  "source": "Photon/OSM (spelled Chatauqua Peak)",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": "OSM peak node above Halls Gap; a Chatauqua Peak Walk path sits ~300 m away at -37.13398,142.51032."
+ },
+ "grampians-national-park-14": {
+  "id": "grampians-national-park-14",
+  "name": "Manja Shelter",
+  "lat": -37.2768053,
+  "lon": 142.2742142,
+  "source": "Photon/OSM",
+  "feature_type": "tourism=artwork (rock art shelter)",
+  "confidence": "MEDIUM",
+  "note": "OSM Manja Shelter node with Manja Shelter Track (-37.27594,142.27464) and car park (-37.26879,142.26929) beside it; these are the same OSM source. Not Gulgurn Manja at Hollow Mountain. Old hint was ~17 km off."
+ },
+ "grampians-national-park-18": {
+  "id": "grampians-national-park-18",
+  "name": "Mount Abrupt",
+  "lat": -37.5933196,
+  "lon": 142.3563167,
+  "source": "Photon/OSM Mt Abrupt Walking Track",
+  "feature_type": "highway=path",
+  "confidence": "MEDIUM",
+  "note": "Point on the Mt Abrupt Walking Track roughly mid-route (trailhead -37.59211,142.36261; summit peak node -37.59779,142.35363). Full-way midpoint not computed (Overpass down). Old hint was 12 km off."
+ },
+ "mildura-2": {
+  "id": "mildura-2",
+  "name": "Meeting of the Waters",
+  "lat": -34.1108317,
+  "lon": 141.9097764,
+  "source": "Photon/OSM Murray-Darling River Junction",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "OSM attraction node at the Murray-Darling junction, Wentworth NSW, the Mildura-area Meeting of the Waters."
+ },
+ "pink-lakes": {
+  "id": "pink-lakes",
+  "name": "Pink Lakes",
+  "lat": -35.0558064,
+  "lon": 141.7301229,
+  "source": "Photon/OSM Lake Crosbie Campground",
+  "feature_type": "tourism=camp_site",
+  "confidence": "MEDIUM",
+  "note": "Park visitor point (campground on Lake Crosbie). Alternatives: Pink Lakes Salt Museum info node -35.0401486,141.7239665; lake centroid -35.0310458,141.7309672 (not used)."
+ },
+ "yarra-valley-9": {
+  "id": "yarra-valley-9",
+  "name": "Coombe Yarra Valley Melba's Garden Walk",
+  "lat": -37.7186874,
+  "lon": 145.380305,
+  "source": "Photon/OSM The Cottage Garden",
+  "feature_type": "leisure=garden",
+  "confidence": "MEDIUM",
+  "note": "OSM garden node at Coombe, Coldstream; Coombe Cottage building (-37.71926,145.38021) and Coombe Yarra Valley restaurant node (-37.71929,145.38110) are within 100 m, all OSM."
+ }
+}

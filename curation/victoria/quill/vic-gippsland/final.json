@@ -229,8 +229,8 @@
    "category": "hike",
    "bio": "Walk from Wingan Inlet Campground to sandy beaches and Fly Cove, where fur seals bask on rocky islets.",
    "coordinates": {
-    "latitude": -37.77,
-    "longitude": 149.5
+    "latitude": -37.7455205,
+    "longitude": 149.4975227
    },
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -286,8 +286,8 @@
    "category": "museum",
    "bio": "Private collection of over 90,000 shells and sea creatures, with a 10 m coral reef and an aquarium of Bass Strait life.",
    "coordinates": {
-    "latitude": -37.87,
-    "longitude": 147.98
+    "latitude": -37.8816338,
+    "longitude": 147.9777777
    },
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -660,22 +660,7 @@
    "costBasis": "open",
    "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/cape-conran-coastal-park"
   },
-  "den-of-nargun": {
-   "name": "Den of Nargun",
-   "icon": "🪨",
-   "category": "nature",
-   "bio": "Loop walk in Mitchell River National Park to a waterfall cave said to house the Nargun; please stay out of the cave.",
-   "coordinates": {
-    "latitude": -37.701601,
-    "longitude": 147.358334
-   },
-   "visitHoursMin": 1,
-   "visitHoursMax": 2,
-   "free": true,
-   "costBasis": "open",
-   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/den-of-nargun"
-  },
-  "mitchell-river-national-park-vic": {
+  "mitchell-river-national-park": {
    "name": "Mitchell River National Park",
    "icon": "🏞️",
    "category": "nature",
@@ -690,6 +675,21 @@
    "free": true,
    "costBasis": "entry",
    "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mitchell-river-national-park"
+  },
+  "den-of-nargun": {
+   "name": "Den of Nargun",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Loop walk in Mitchell River National Park to a waterfall cave said to house the Nargun; please stay out of the cave.",
+   "coordinates": {
+    "latitude": -37.701601,
+    "longitude": 147.358334
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/den-of-nargun"
   }
  },
  "existing_fixes": {},

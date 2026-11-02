@@ -1,0 +1,132 @@
+[
+ {
+  "id": "croajingolong-8",
+  "name": "Fly Cove Walk",
+  "lat": -37.7455205,
+  "lon": 149.4975227,
+  "source": "OSM via Photon: highway=path 'Fly Cove Walking Track'",
+  "feature_type": "highway/path",
+  "confidence": "MEDIUM",
+  "note": "A point on the OSM path, not the computed midpoint; Fly Cove itself is at -37.75127,149.50396."
+ },
+ {
+  "id": "grampians-national-park-6",
+  "name": "Reids Lookout",
+  "lat": -37.1475394,
+  "lon": 142.446548,
+  "source": "OSM via Photon: tourism=viewpoint 'Reed's Lookout' (fire tower 40 m away)",
+  "feature_type": "tourism/viewpoint",
+  "confidence": "MEDIUM",
+  "note": "Spelled Reed's in OSM; Grampians (Gariwerd)."
+ },
+ {
+  "id": "grampians-national-park-12",
+  "name": "Gulgurn Manja Aboriginal Rock Art Site",
+  "lat": -36.886927,
+  "lon": 142.387543,
+  "source": "OSM Nominatim/Photon: tourism=artwork 'Gulgurn Manja Shelter'",
+  "feature_type": "tourism/artwork",
+  "confidence": "HIGH",
+  "note": "Two independent geocoder hits (Nominatim -36.886927,142.387543 and Photon) agree; same OSM node."
+ },
+ {
+  "id": "grampians-national-park-17",
+  "name": "Hollow Mountain",
+  "lat": -36.88925,
+  "lon": 142.38265,
+  "source": "Midpoint between OSM Hollow Mountain car park (-36.885717,142.383128) and summit guidepost (-36.892795,142.382178)",
+  "feature_type": "midpoint of walk",
+  "confidence": "MEDIUM",
+  "note": "Hollow Mountain Walk path runs car park to peak (natural=peak at -36.892623,142.382666); midpoint of that line."
+ },
+ {
+  "id": "horsham-3",
+  "name": "The Stick Shed",
+  "lat": -36.6230475,
+  "lon": 142.478864,
+  "source": "OSM Nominatim: historic=industrial 'The Stick Shed - WW2 grain storage shed', Murtoa",
+  "feature_type": "historic/industrial",
+  "confidence": "MEDIUM",
+  "note": "Murtoa, ~38 km from Horsham."
+ },
+ {
+  "id": "brim-silo-art",
+  "name": "Brim Silo Art",
+  "lat": -36.0780968,
+  "lon": 142.4216685,
+  "source": "OSM: tourism=artwork 'Brim silo art' (Nominatim); Photon artwork node -36.0784389,142.4217203",
+  "feature_type": "tourism/artwork",
+  "confidence": "HIGH",
+  "note": "Two OSM nodes within 40 m."
+ },
+ {
+  "id": "patchewollock-silo-art",
+  "name": "Patchewollock Silo Art",
+  "lat": -35.384344,
+  "lon": 142.1873667,
+  "source": "OSM via Photon: tourism=artwork 'Patchewollock silo art' (+ attraction node 15 m away)",
+  "feature_type": "tourism/artwork",
+  "confidence": "MEDIUM",
+  "note": "On the silo at Patchewollock."
+ },
+ {
+  "id": "serviceton-silo-art",
+  "name": "Serviceton Silo Art",
+  "lat": null,
+  "lon": null,
+  "source": "none found in OSM",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "No silo art or silo found near Serviceton in OSM; Serviceton hamlet is at -36.37704,140.98518. Needs checking whether such art exists."
+ },
+ {
+  "id": "wangaratta-6",
+  "name": "Kellyland Glenrowan",
+  "lat": null,
+  "lon": null,
+  "source": "none found in OSM",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "Not in OSM; Ned Kelly Museum & Homestead is at -36.4638477,146.2214085 on Glenrowan's main street (neighbouring attraction, not Kellyland's own point)."
+ },
+ {
+  "id": "mornington-peninsula-11",
+  "name": "Coastal Walk (Mornington Peninsula)",
+  "lat": null,
+  "lon": null,
+  "source": "no named OSM route found",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "Only the Two Bays Walking Track (-38.4436,144.9301) was found, a different route; needs the route relation."
+ },
+ {
+  "id": "mornington-peninsula-27",
+  "name": "Alba Thermal Springs & Spa",
+  "lat": -38.3931748,
+  "lon": 144.8445592,
+  "source": "OSM via Photon: leisure=resort 'Alba Thermal Springs and Spa' (+ building 60 m, water_park node 130 m)",
+  "feature_type": "leisure/resort",
+  "confidence": "HIGH",
+  "note": "Three OSM features agree within 130 m, matching the earlier rough point."
+ },
+ {
+  "id": "echuca-3",
+  "name": "Dharnya Centre",
+  "lat": -35.9612218,
+  "lon": 144.9687194,
+  "source": "OSM via Photon: leisure=nature_reserve 'Dharnya Centre', Barmah",
+  "feature_type": "leisure/nature_reserve",
+  "confidence": "MEDIUM",
+  "note": "Named Dharnya Centre feature in Barmah National Park; area feature, point may be reserve-level."
+ },
+ {
+  "id": "dandenong-ranges-14",
+  "name": "Treetops Adventure Belgrave",
+  "lat": -37.9231201,
+  "lon": 145.3378786,
+  "source": "Birdsland Reserve park point (OSM leisure=park), believed host of Treetops Adventure Belgrave; unverified",
+  "feature_type": "leisure/park",
+  "confidence": "LOW",
+  "note": "Treetops not in OSM/Photon; location from background knowledge, not confirmed."
+ }
+]

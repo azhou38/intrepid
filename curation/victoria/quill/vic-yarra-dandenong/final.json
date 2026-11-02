@@ -76,6 +76,22 @@
    "costBasis": "entry",
    "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/dandenong-ranges-botanic-garden"
   },
+  "dandenong-ranges-6": {
+   "name": "Mount Dandenong",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "633 m summit 45 km east of Melbourne with skyline views, plus SkyHigh's gardens, hedge maze and forest walk.",
+   "coordinates": {
+    "latitude": -37.827104,
+    "longitude": 145.353009
+   },
+   "wiki": "Mount Dandenong (Victoria)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.skyhighmtdandenong.com.au/"
+  },
   "dandenong-ranges-7": {
    "name": "Olinda",
    "icon": "🏡",
@@ -342,7 +358,10 @@
    "icon": "🌹",
    "category": "nature",
    "bio": "Seven-acre gardens of Dame Nellie Melba's 1909 home, seen only on a 60-minute guided walking tour.",
-   "coordinates": null,
+   "coordinates": {
+    "latitude": -37.7186874,
+    "longitude": 145.380305
+   },
    "wiki": "Coombe Yarra Valley",
    "visitHoursMin": 1,
    "visitHoursMax": 1.5,
@@ -414,6 +433,21 @@
    "visitHoursMax": 0.75,
    "free": true,
    "costBasis": "open"
+  },
+  "yarra-ranges-national-park-1": {
+   "name": "Mount Donna Buang",
+   "icon": "🏔️",
+   "category": "viewpoint",
+   "bio": "1,250 m summit in Yarra Ranges National Park, the closest snowfield to Melbourne, with a 21 m lookout tower.",
+   "coordinates": {
+    "latitude": -37.706522,
+    "longitude": 145.681183
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/mount-donna-buang-summit"
   },
   "yarra-ranges-national-park-2": {
    "name": "Donna Buang Rainforest Gallery and Skywalk",

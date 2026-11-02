@@ -1,5 +1,19 @@
 {
  "spots": {
+  "geelong-1": {
+   "name": "Geelong Waterfront",
+   "icon": "⚓",
+   "category": "landmark",
+   "bio": "Corio Bay shoreline redeveloped from the old port, with 100-plus painted bollards and a c.1892 steam carousel.",
+   "coordinates": {
+    "latitude": -38.144094,
+    "longitude": 144.360305
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "open"
+  },
   "geelong-2": {
    "name": "National Wool Museum",
    "icon": "🧶",
@@ -99,6 +113,34 @@
    "costBasis": "ticket",
    "ticketUrl": "https://bellarinerailway.com.au/"
   },
+  "bellarine-peninsula-4": {
+   "name": "Barwon Heads",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Seaside town at the Barwon River mouth with river swimming, bridge walks and views from The Bluff over Bass Strait.",
+   "coordinates": {
+    "latitude": -38.274771,
+    "longitude": 144.488135
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "bellarine-peninsula-5": {
+   "name": "Point Lonsdale",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Headland with a 1902 lighthouse overlooking The Rip, the entrance to Port Phillip, viewed from outside.",
+   "coordinates": {
+    "latitude": -38.272507,
+    "longitude": 144.613673
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open"
+  },
   "surf-coast-1": {
    "name": "Bells Beach",
    "icon": "🏄",
@@ -164,6 +206,51 @@
    "free": true,
    "costBasis": "open"
   },
+  "surf-coast-5": {
+   "name": "Anglesea",
+   "icon": "🦘",
+   "category": "beach",
+   "bio": "Great Ocean Road town at a tidal river mouth, where eastern grey kangaroos live on the golf course.",
+   "coordinates": {
+    "latitude": -38.405195,
+    "longitude": 144.188958
+   },
+   "wiki": "Anglesea, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "surf-coast-6": {
+   "name": "Point Addis",
+   "icon": "🌊",
+   "category": "viewpoint",
+   "bio": "Great Ocean Road stop near Bells Beach, with a short boardwalk to a lookout over sandstone cliffs and beaches.",
+   "coordinates": {
+    "latitude": -38.395314,
+    "longitude": 144.25389
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/point-addis-marine-national-park"
+  },
+  "surf-coast-7": {
+   "name": "Torquay Surf Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Main surf beach of Torquay, home of Australian surfing and gateway to the Great Ocean Road, near Bells Beach.",
+   "coordinates": {
+    "latitude": -38.342653,
+    "longitude": 144.319519
+   },
+   "wiki": "Torquay, Victoria",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
   "surf-coast-8": {
    "name": "Great Ocean Road Memorial Arch",
    "icon": "🪵",
@@ -175,6 +262,20 @@
    },
    "visitHoursMin": 0,
    "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "lorne-1": {
+   "name": "Teddy's Lookout",
+   "icon": "🔭",
+   "category": "viewpoint",
+   "bio": "Viewing platform in Queens Park above Lorne, looking over the St George River estuary and the Great Ocean Road.",
+   "coordinates": {
+    "latitude": -38.554239,
+    "longitude": 143.978949
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
    "free": true,
    "costBasis": "open"
   },
@@ -318,6 +419,36 @@
    "costBasis": "entry",
    "ticketUrl": "https://otwayfly.com.au/"
   },
+  "apollo-bay-7": {
+   "name": "Johanna Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Unpatrolled 3.6 km surf beach in Great Otway National Park that hosted the 1970 World Surfing Championships.",
+   "coordinates": {
+    "latitude": -38.756872,
+    "longitude": 143.377713
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Great-Otway-National-Park/Drive-in-campgrounds/Johanna-Beach-Campground"
+  },
+  "apollo-bay-8": {
+   "name": "Blanket Bay",
+   "icon": "🌊",
+   "category": "beach",
+   "bio": "Sheltered beach on Cape Otway's east side, calmed by a reef, with a drive-in campground and Great Ocean Walk links.",
+   "coordinates": {
+    "latitude": -38.8232,
+    "longitude": 143.5886
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park"
+  },
   "port-campbell-national-park-1": {
    "name": "Twelve Apostles",
    "icon": "🪨",
@@ -348,6 +479,52 @@
    "free": true,
    "costBasis": "open",
    "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Port-Campbell-National-Park/Loch-Ard-Gorge"
+  },
+  "port-campbell-national-park-3": {
+   "name": "Gibson Steps",
+   "icon": "🪜",
+   "category": "beach",
+   "bio": "A staircase of 86 steps cut into the cliffs leads down to Gibson Beach, with the Gog and Magog stacks just offshore.",
+   "coordinates": {
+    "latitude": -38.668629,
+    "longitude": 143.112105
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Port-Campbell-National-Park/Gibson-Steps"
+  },
+  "port-campbell-national-park-4": {
+   "name": "London Arch",
+   "icon": "🌉",
+   "category": "landmark",
+   "bio": "Offshore arch near Port Campbell whose shore-side span collapsed in 1990, stranding two tourists on the remaining one.",
+   "coordinates": {
+    "latitude": -38.624091,
+    "longitude": 142.930406
+   },
+   "wiki": "London Bridge (Victoria)",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Port-Campbell-National-Park"
+  },
+  "port-campbell-national-park-5": {
+   "name": "The Arch",
+   "icon": "🌉",
+   "category": "landmark",
+   "bio": "Weathered limestone sea arch, part blowhole, 6 km west of Port Campbell, reached by a short easy walk to lookouts.",
+   "coordinates": {
+    "latitude": -38.62359,
+    "longitude": 142.944179
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Port-Campbell-National-Park"
   },
   "port-campbell-national-park-6": {
    "name": "The Grotto",
@@ -412,6 +589,21 @@
    "costBasis": "entry",
    "ticketUrl": "BLOCKED:https://www.flagstaffhill.com"
   },
+  "warrnambool-2": {
+   "name": "Logans Beach Whale Watching Platform",
+   "icon": "🐋",
+   "category": "viewpoint",
+   "bio": "Free viewing platform above Logans Beach, Warrnambool, where southern right whales calve, usually June to September.",
+   "coordinates": {
+    "latitude": -38.403916,
+    "longitude": 142.52112
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "BLOCKED:https://www.warrnambool.vic.gov.au/whale-watching"
+  },
   "warrnambool-3": {
    "name": "Deep Blue Hot Springs",
    "icon": "♨️",
@@ -443,6 +635,21 @@
    "free": true,
    "costBasis": "entry",
    "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/tower-hill-wildlife-reserve"
+  },
+  "warrnambool-5": {
+   "name": "Moyjil - Point Ritchie",
+   "icon": "🌊",
+   "category": "viewpoint",
+   "bio": "Headland at the Hopkins River mouth, Warrnambool, with lookouts over the reef and deep significance to the Peek Whurrung.",
+   "coordinates": {
+    "latitude": -38.402078,
+    "longitude": 142.507905
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "BLOCKED:https://www.moyjil.com.au/"
   },
   "warrnambool-6": {
    "name": "Hopkins Falls",
@@ -558,6 +765,20 @@
    },
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "the-crags": {
+   "name": "The Crags",
+   "icon": "🌅",
+   "category": "viewpoint",
+   "bio": "Wind-sculpted coastal rock formations 12 km west of Port Fairy, with lookouts over the Southern Ocean.",
+   "coordinates": {
+    "latitude": -38.3711867,
+    "longitude": 142.1100045
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
    "free": true,
    "costBasis": "open"
   },
