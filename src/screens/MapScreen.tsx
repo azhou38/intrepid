@@ -1497,11 +1497,13 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
 // ── Spot photo pins and names: one zoom-only plan, as for destinations (planDestPhotos) ───────────────────────────────
 // Each spot gets a PHOTO ZOOM (from which it shows its photo pin rather than its small pin) and a NAME ZOOM with a side
 // (right of the pin, else left). The plan walks the zoom from wide to close over EVERY spot, never just those on screen:
-// a spot becomes a candidate at its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID) and is retried every half level until it has
-// room, clear of the spot pins and names already placed and of the destination pins and names showing at that zoom (a
-// destination's stop once its spots take over). Placed pins and names are never displaced, and zooming in only spreads
-// them apart, so a photo pin or name that shows zoomed out persists zooming in; nothing depends on where the camera is,
-// so panning changes nothing. Priority (curated): visited spots, then the parent destination's rank, then the spot's place
+// photo pins are placed in priority order (most prominent first): a spot's photo pin shows from the first half level, at or
+// past its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID), at which it is clear of every MORE prominent spot's photo pin and of the
+// destination pins and names showing there (a destination's stop once its spots take over). Where two pins would collide
+// the more prominent one gets the photo and the other stays a small pin until the zoom has spread them apart, whichever
+// reached its own zoom first. A name waits, the same way, for room clear of every photo pin (at the zoom both show) and of
+// the names already placed. Pins and names only spread apart zooming in, so one that shows zoomed out persists zooming in;
+// nothing depends on where the camera is, so panning changes nothing. Priority (curated): visited spots, then the parent destination's rank, then the spot's place
 // in its destination's list.
 const SPOT_PLAN_REACH_PT = 340;   // the widest two footprints can reach toward each other (pins plus names)
 function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisited: (id: string) => boolean) {
@@ -1565,39 +1567,65 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
     return true;
   };
   const photoAt = new Map<string, number>(), nameAt = new Map<string, { z: number; side: 'right' | 'left' }>();
-  const tryPin = (i: number, z: number, scale: number) => {
-    if (!clear(ux[i], uy[i], scale, PL, PR, PT, PB) || !clearOfDests(i, z, scale, PL, PR, PT, PB)) return false;
-    photoAt.set(ordered[i].id, z); add(ux[i], uy[i], PL, PR, PT, PB);
+  // Each spot's photo zoom (Infinity: none), and the spots holding one sorted by unit x, for neighbour searches.
+  const pz = new Float64Array(n).fill(Infinity);
+  const byX: number[] = [];
+  // Whether a box around spot i (points, at zoom z) is clear of the photo pins of the spots `among` accepts, each tested at
+  // the later of z and that pin's own photo zoom: where both show, and from there on they only spread apart.
+  const clearOfPins = (i: number, z: number, l: number, r: number, t: number, b: number, among: (k: number) => boolean) => {
+    const reach = (Math.max(-l, r) + (PR - PL)) / (512 * Math.pow(2, z));
+    let lo = 0, hi = byX.length;
+    while (lo < hi) { const m = (lo + hi) >> 1; if (ux[byX[m]] < ux[i] - reach) lo = m + 1; else hi = m; }
+    for (let m = lo; m < byX.length && ux[byX[m]] <= ux[i] + reach; m++) {
+      const k = byX[m];
+      if (k === i || !among(k)) continue;
+      const sc = 512 * Math.pow(2, Math.max(z, pz[k]));
+      const dx = (ux[k] - ux[i]) * sc, dy = (uy[k] - uy[i]) * sc;
+      if (l < dx + PR && r > dx + PL && t < dy + PB && b > dy + PT) return false;
+    }
     return true;
   };
+  const insertX = (i: number) => {
+    let lo = 0, hi = byX.length;
+    while (lo < hi) { const m = (lo + hi) >> 1; if (ux[byX[m]] < ux[i]) lo = m + 1; else hi = m; }
+    byX.splice(lo, 0, i);
+  };
+  // Photo pins, most prominent first (`ordered` is in priority order, so every k < i is more prominent than i): from the
+  // spot's own photo zoom, then every half level, until it is clear of the destinations and of the pins placed so far.
+  for (let i = 0; i < n; i++) {
+    if (!Number.isFinite(first[i])) continue;
+    for (let z = first[i]; z <= 19 + 1e-9; z = Math.floor(z * 2 + 1e-9) / 2 + 0.5) {
+      if (!clearOfDests(i, z, 512 * Math.pow(2, z), PL, PR, PT, PB) || !clearOfPins(i, z, PL, PR, PT, PB, k => k < i)) continue;
+      pz[i] = z; photoAt.set(ordered[i].id, z); insertX(i);
+      break;
+    }
+  }
   const tryName = (i: number, z: number, scale: number) => {
     for (const side of ['right', 'left'] as const) {
       const l = side === 'right' ? 18 : -18 - nw[i], r = side === 'right' ? 18 + nw[i] : -18, t = -23 - nh[i] / 2, b = -23 + nh[i] / 2;
-      if (!clear(ux[i], uy[i], scale, l, r, t, b) || !clearOfDests(i, z, scale, l, r, t, b)) continue;
+      if (!clear(ux[i], uy[i], scale, l, r, t, b) || !clearOfDests(i, z, scale, l, r, t, b) || !clearOfPins(i, z, l, r, t, b, () => true)) continue;
       nameAt.set(ordered[i].id, { z, side }); add(ux[i], uy[i], l, r, t, b);
       return true;
     }
     return false;
   };
-  const byFirst = Array.from({ length: n }, (_, i) => i).filter(i => Number.isFinite(first[i])).sort((a, b) => first[a] - first[b] || a - b);
+  // Names, in priority order: each tried from its spot's photo zoom, then every half level until it has room.
+  const byPhoto = Array.from({ length: n }, (_, i) => i).filter(i => Number.isFinite(pz[i])).sort((a, b) => pz[a] - pz[b] || a - b);
   let next = 0;
-  let waiting: number[] = [], unnamed: number[] = [];
+  let unnamed: number[] = [];
   for (let g = 4; g <= 19; g += 0.5) {
-    // On each half level: rebuild the grid for this zoom, and retry the pins and names still waiting for room.
+    // On each half level: rebuild the grid (names placed so far) for this zoom, and retry the names still waiting.
     rebuild(g);
     const sg = 512 * Math.pow(2, g);
-    const stillWaiting: number[] = [], stillUnnamed: number[] = [];
-    for (const i of waiting) { if (tryPin(i, g, sg)) unnamed.push(i); else stillWaiting.push(i); }
+    const stillUnnamed: number[] = [];
     unnamed.sort((a, b) => a - b);
     for (const i of unnamed) if (!tryName(i, g, sg)) stillUnnamed.push(i);
-    waiting = stillWaiting; unnamed = stillUnnamed;
-    // Then the spots whose own photo zoom falls in this half level, each at that zoom.
-    while (next < byFirst.length && first[byFirst[next]] < g + 0.5 - 1e-9) {
-      const i = byFirst[next++], z = first[i], sz = 512 * Math.pow(2, z);
-      if (!tryPin(i, z, sz)) { waiting.push(i); continue; }
-      if (!tryName(i, z, sz)) unnamed.push(i);
+    unnamed = stillUnnamed;
+    // Then the names of the spots whose photo zoom falls in this half level, each at that zoom.
+    while (next < byPhoto.length && pz[byPhoto[next]] < g + 0.5 - 1e-9) {
+      const i = byPhoto[next++], z = pz[i];
+      if (!tryName(i, z, 512 * Math.pow(2, z))) unnamed.push(i);
     }
-    waiting.sort((a, b) => a - b);
   }
   if (__DEV__) console.log(`[pins] spot plan: ${photoAt.size} photo pins, ${nameAt.size} names, ${Date.now() - t0} ms`);
   return { photoAt, nameAt, sortOf };
@@ -3385,14 +3413,18 @@ const destItems = useMemo((): DestItem[] =>
       // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
       symbolZOrder: 'source',
     };
-    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: false, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
+    // Small pins overlap photo pins (and each other) freely. A spot's own small pin is left out while its photo pin is in the
+    // data (img set, see the small pin layers' filter): the data carries a photo exactly from the zoom it shows. (A step on
+    // the camera zoom reading each spot's photo band did not work: Mapbox evaluates a zoom-and-data expression at whole
+    // zoom levels, so a small pin stayed up behind its photo pin until the next whole level.)
+    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'img'], ''], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
