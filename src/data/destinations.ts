@@ -1421,6 +1421,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Wildflowers bloom on the plateau's grassy plains in {months}, and winter brings snow play.",
   },
   {
+    id: 'bright', name: "Bright", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -36.7278, longitude: 146.9611 },
+    category: 'city', icon: "🍂", rank: 3,
+    tagline: "An Ovens Valley town known for autumn colour, on the edge of the Victorian Alps.",
+    description: "Bright is a town of about 2,600 people at 319 m, at the south-eastern end of the Ovens Valley in north-eastern Victoria. Tourism is its main industry, built around the autumn colours of European trees planted in the area. It is a gateway to alpine scenery near Mount Buffalo National Park, Mount Feathertop and Mount Hotham. The old rail line is now a rail trail to Wangaratta, and many paragliding launch sites lie close by.",
+    whyVisit: ["See autumn colours along the river", "Cycle rail trails and riverside paths", "Paraglide from nearby launch sites"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Autumn colour", "Rail trails", "Paragliding"],
+    goodToKnow: [
+      { icon: "🍂", title: "Autumn is busiest", detail: "Autumn colours and the Bright Autumn Festival draw crowds, and many houses are holiday rentals. Book accommodation well ahead." },
+      { icon: "🚗", title: "Allow for the drive", detail: "It is about 3.5 hours from Melbourne by road. Public transport is limited to V/Line buses connecting at Seymour, once daily on weekends." },
+      { icon: "🏊", title: "River water is cold", detail: "Swimming in the Ovens River is popular in spring and summer, but the water is very cold, so test it before going in." },
+    ],
+    bestMonths: [12, 1, 2, 3, 4, 5],
+    bestTimeBlurb: "{months} covers autumn colour and warm summer days for swimming and rail-trail rides.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
