@@ -1,0 +1,186 @@
+[
+ {
+  "id": "melbourne-28",
+  "name": "Parliament House of Victoria",
+  "facts": [
+   {
+    "claim": "Parliament House opened in 1856, with the two chambers built first",
+    "source_url": "https://en.wikipedia.org/wiki/Parliament_House,_Melbourne"
+   },
+   {
+    "claim": "It offers a free public tour and a free architecture tour",
+    "source_url": "https://www.parliament.vic.gov.au/"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.parliament.vic.gov.au/visit/public-tour/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parliament.vic.gov.au/",
+  "ticketUrl_note": "Parliament of Victoria homepage loaded, names the place",
+  "wiki": "Parliament House, Melbourne",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "access_note": "Tours are not available when Parliament is sitting or on some days; no hours recorded",
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-29",
+  "name": "Carlton Gardens",
+  "facts": [
+   {
+    "claim": "26-hectare Victorian-era gardens around the Royal Exhibition Building and Melbourne Museum",
+    "source_url": "https://en.wikipedia.org/wiki/Carlton_Gardens"
+   },
+   {
+    "claim": "Part of the UNESCO-listed Royal Exhibition Building and Carlton Gardens World Heritage site",
+    "source_url": "https://en.wikipedia.org/wiki/Carlton_Gardens"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Carlton_Gardens",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "no single steward found; Parks Victoria page is not for this park (City of Melbourne manages; not verified)",
+  "wiki": "Carlton Gardens",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": null,
+  "unresolved": [
+   "managing agency not verified"
+  ]
+ },
+ {
+  "id": "melbourne-30",
+  "name": "Melbourne Park",
+  "facts": [
+   {
+    "claim": "Home of the Australian Open tennis since 1988, beside Jolimont Yard",
+    "source_url": "https://en.wikipedia.org/wiki/Melbourne_Park"
+   },
+   {
+    "claim": "Rod Laver Arena seats about 15,000 and hosts concerts as well as tennis",
+    "source_url": "https://en.wikipedia.org/wiki/Melbourne_Park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.melbournepark.com.au/",
+  "cost_confidence": "unverified",
+  "ticketUrl": "https://www.melbournepark.com.au/",
+  "ticketUrl_note": "Official precinct site loaded, title Melbourne Park - Where We Play",
+  "wiki": "Melbourne Park",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 1,
+  "access_note": "Venues are ticketed per event; precinct grounds access not confirmed on page",
+  "unresolved": [
+   "whether precinct is free to walk through not confirmed; events ticketed separately"
+  ]
+ },
+ {
+  "id": "melbourne-31",
+  "name": "Albert Park and Lake",
+  "facts": [
+   {
+    "claim": "225-hectare urban park around an artificial lake, 3 km south of the CBD",
+    "source_url": "https://en.wikipedia.org/wiki/Albert_Park_and_Lake"
+   },
+   {
+    "claim": "A 4.7 km walking track circles the lake, with views back to the city skyline",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/albert-park"
+   },
+   {
+    "claim": "Hosts the Albert Park Circuit of the Australian Grand Prix since 1996",
+    "source_url": "https://en.wikipedia.org/wiki/Albert_Park_and_Lake"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/albert-park",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/albert-park",
+  "ticketUrl_note": "Parks Victoria page, title Albert Park",
+  "wiki": "Albert Park and Lake",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "access_note": null,
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-32",
+  "name": "Block Arcade",
+  "facts": [
+   {
+    "claim": "Built 1891-93 to designs by Twentyman & Askew, listed on the Victorian Heritage Register",
+    "source_url": "https://en.wikipedia.org/wiki/Block_Arcade"
+   },
+   {
+    "claim": "Mosaic tiled floors, glass canopy and an octagonal rotunda link Collins and Elizabeth Streets",
+    "source_url": "https://en.wikipedia.org/wiki/Block_Arcade"
+   },
+   {
+    "claim": "Home to The Tea Rooms 1892, the original Hopetoun Tea Rooms",
+    "source_url": "https://theblock.com.au"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://theblock.com.au",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://theblock.com.au",
+  "ticketUrl_note": "Official site loaded, title The Block Arcade - Melbourne's historic shopping precinct",
+  "wiki": "Block Arcade",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": null,
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-33",
+  "name": "Royal Arcade",
+  "facts": [
+   {
+    "claim": "Opened in 1870, the oldest surviving arcade in Australia, designed by Charles Webb",
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Arcade,_Melbourne"
+   },
+   {
+    "claim": "Gog and Magog figures strike the bells of Gaunt's clock each hour",
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Arcade,_Melbourne"
+   },
+   {
+    "claim": "Links Bourke Street Mall, Little Collins Street and Elizabeth Street",
+    "source_url": "https://royalarcade.com.au/"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://royalarcade.com.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://royalarcade.com.au/",
+  "ticketUrl_note": "Official site loaded, title Royal Arcade Melbourne",
+  "wiki": "Royal Arcade, Melbourne",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "access_note": null,
+  "unresolved": []
+ }
+]

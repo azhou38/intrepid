@@ -1,0 +1,202 @@
+[
+ {
+  "id": "melbourne-4",
+  "name": "NGV International",
+  "facts": [
+   {
+    "claim": "NGV International is at 180 St Kilda Road, Melbourne",
+    "source_url": "https://www.ngv.vic.gov.au/"
+   },
+   {
+    "claim": "Its collection spans art from Europe, Asia, America and Oceania",
+    "source_url": "https://www.ngv.vic.gov.au/"
+   },
+   {
+    "claim": "General entry is free; some special exhibitions are ticketed",
+    "source_url": "https://www.ngv.vic.gov.au/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.ngv.vic.gov.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.ngv.vic.gov.au/",
+  "ticketUrl_note": null,
+  "wiki": "National Gallery of Victoria",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "access_note": null,
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-5",
+  "name": "Royal Botanic Gardens Victoria",
+  "facts": [
+   {
+    "claim": "Melbourne Gardens covers 38 hectares and was founded in 1846 on the south side of the Yarra",
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Botanic_Gardens_Victoria"
+   },
+   {
+    "claim": "The gardens slope to the river with lakes, lawns and almost 50,000 plants of 8,500 taxa",
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Botanic_Gardens_Victoria"
+   },
+   {
+    "claim": "Entry is free; guided walks and the Explorer minibus are bookable",
+    "source_url": "https://www.rbg.vic.gov.au/melbourne/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Royal_Botanic_Gardens_Victoria",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.rbg.vic.gov.au/melbourne/",
+  "ticketUrl_note": null,
+  "wiki": "Royal Botanic Gardens Victoria",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "access_note": "Gardens close at night, but spot carries no hours; free entry per Wikipedia, not stated on loaded official pages",
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-6",
+  "name": "Melbourne Cricket Ground",
+  "facts": [
+   {
+    "claim": "MCG tours run 75 minutes behind the scenes, departing from Gate 3",
+    "source_url": "https://www.mcg.org.au/australian-sports-museum-mcg-tours/tours-and-experiences/mcg-tours"
+   },
+   {
+    "claim": "The Australian Sports Museum is housed at the ground",
+    "source_url": "https://www.mcg.org.au/australian-sports-museum-mcg-tours/tours-and-experiences/mcg-tours"
+   },
+   {
+    "claim": "Tours only run on select event days; check availability",
+    "source_url": "https://www.mcg.org.au/australian-sports-museum-mcg-tours/tours-and-experiences/mcg-tours"
+   }
+  ],
+  "free": false,
+  "costMin": 38,
+  "costMax": 38,
+  "currency": "AUD",
+  "costBasis": "tour",
+  "cost_source_url": "https://australiansportsmuseum.org.au/plan-visit/tickets/",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.mcg.org.au/",
+  "ticketUrl_note": null,
+  "wiki": "Melbourne Cricket Ground",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "access_note": "Tours operate only on select event days; booking essential",
+  "unresolved": [
+   "Price column on ticket page was ambiguous: adult tour read as $38 (museum $38, combo $50); confirm"
+  ]
+ },
+ {
+  "id": "melbourne-7",
+  "name": "Royal Exhibition Building",
+  "facts": [
+   {
+    "claim": "UNESCO World Heritage site, built for the 1880 International Exhibition in Carlton Gardens",
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Exhibition_Building"
+   },
+   {
+    "claim": "The first Parliament of Australia opened here on 9 May 1901",
+    "source_url": "https://en.wikipedia.org/wiki/Royal_Exhibition_Building"
+   },
+   {
+    "claim": "The Dome Promenade reopened to public tours in October 2022; adult tour $29",
+    "source_url": "https://museumsvictoria.com.au/reb/whats-on/royal-exhibition-building-dome-promenade/"
+   }
+  ],
+  "free": false,
+  "costMin": 29,
+  "costMax": 29,
+  "currency": "AUD",
+  "costBasis": "tour",
+  "cost_source_url": "https://museumsvictoria.com.au/reb/whats-on/royal-exhibition-building-dome-promenade/",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://museumsvictoria.com.au/reb/",
+  "ticketUrl_note": "BLOCKED:https://museumsvictoria.com.au/reb/",
+  "wiki": "Royal Exhibition Building",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "Interior mainly accessible on bookable tours or event days",
+  "unresolved": [
+   "museumsvictoria.com.au 403 bot wall; price from search snippet of the official page; verify in browser"
+  ]
+ },
+ {
+  "id": "melbourne-8",
+  "name": "Melbourne Museum",
+  "facts": [
+   {
+    "claim": "Natural and cultural history museum in Carlton Gardens, opened 2000",
+    "source_url": "https://en.wikipedia.org/wiki/Melbourne_Museum"
+   },
+   {
+    "claim": "Adult general admission is $15; children under 16 and concession holders free",
+    "source_url": "https://museumsvictoria.com.au/melbournemuseum/visiting/admission-prices"
+   },
+   {
+    "claim": "Includes the Bunjilaka Aboriginal Cultural Centre and the IMAX cinema is on site",
+    "source_url": "https://en.wikipedia.org/wiki/Melbourne_Museum"
+   }
+  ],
+  "free": false,
+  "costMin": 15,
+  "costMax": 15,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://museumsvictoria.com.au/melbournemuseum/visiting/admission-prices",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://museumsvictoria.com.au/melbournemuseum/",
+  "ticketUrl_note": "BLOCKED:https://museumsvictoria.com.au/melbournemuseum/",
+  "wiki": "Melbourne Museum",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "access_note": null,
+  "unresolved": [
+   "museumsvictoria.com.au 403 bot wall; $15 from search snippet of the official admission page; verify in browser"
+  ]
+ },
+ {
+  "id": "melbourne-11",
+  "name": "Luna Park Melbourne",
+  "facts": [
+   {
+    "claim": "Seaside amusement park in St Kilda opened in 1912, with the Mr Moon face entrance",
+    "source_url": "https://en.wikipedia.org/wiki/Luna_Park,_Melbourne"
+   },
+   {
+    "claim": "The 1912 Scenic Railway is the oldest continuously operating roller coaster in the world",
+    "source_url": "https://en.wikipedia.org/wiki/Luna_Park,_Melbourne"
+   },
+   {
+    "claim": "Park entry is $30 with one ride; unlimited rides $47",
+    "source_url": "https://lunapark.com.au/tickets/"
+   }
+  ],
+  "free": false,
+  "costMin": 30,
+  "costMax": 47,
+  "currency": "AUD",
+  "costBasis": "ticket",
+  "cost_source_url": "https://lunapark.com.au/tickets/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://lunapark.com.au/",
+  "ticketUrl_note": null,
+  "wiki": "Luna Park, Melbourne",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "access_note": "Opening days vary by season",
+  "unresolved": [
+   "Ticket page price table columns unclear; $47 unlimited rides assumed weekday adult"
+  ]
+ }
+]

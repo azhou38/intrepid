@@ -1,0 +1,228 @@
+[
+ {
+  "id": "portland-1",
+  "name": "Cape Bridgewater",
+  "facts": [
+   {
+    "claim": "Cape Bridgewater is a locality about 21 km south-west of Portland, on the western shore of Bridgewater Bay.",
+    "source_url": "https://en.wikipedia.org/wiki/Cape_Bridgewater"
+   },
+   {
+    "claim": "It has 4 km of sandy beach and some of the highest coastal cliffs in Victoria, around the rim of an ancient volcanic crater.",
+    "source_url": "https://visitgreatoceanroad.org.au/iamportland/local-attractions/exploring-cape-bridgewater/"
+   },
+   {
+    "claim": "Visitors come for the Petrified Forest (rock formations like tree roots), the blowhole that throws spray skyward, and a fur seal colony viewed from a lookout.",
+    "source_url": "https://visitgreatoceanroad.org.au/iamportland/local-attractions/exploring-cape-bridgewater/"
+   },
+   {
+    "claim": "Stony Hill above the cape is the highest cliff top on the Victorian coastline, 130 m above sea level.",
+    "source_url": "https://www.visitportland.com.au/our-region/cape-bridgewater/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://visitgreatoceanroad.org.au/iamportland/local-attractions/exploring-cape-bridgewater/",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "no single steward; sits within Discovery Bay Coastal Park (Parks Victoria page for that park is the managing agency, used for portland-3)",
+  "wiki": "Cape Bridgewater",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "access_note": null,
+  "unresolved": [
+   "No official page states 'no fee' explicitly; free by absence of any gate or fee on the visitor and park pages"
+  ]
+ },
+ {
+  "id": "portland-2",
+  "name": "Cape Nelson",
+  "facts": [
+   {
+    "claim": "Cape Nelson Lighthouse, 32 m tall, was first lit on 7 July 1884 and stands at the end of a roughly 24 km round-trip scenic drive from Portland.",
+    "source_url": "https://www.visitportland.com.au/our-region/cape-nelson/"
+   },
+   {
+    "claim": "Cape Nelson State Park has a 5 km lighthouse walk, a Sea Cliff Nature Walk and part of the Great South West Walk; the park is known for rare soap mallee and whale watching in migration season.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/cape-nelson-state-park"
+   },
+   {
+    "claim": "Guided lighthouse tours run daily at 11:30am and include climbing the lighthouse for views from 32 m up.",
+    "source_url": "https://capenelsonlighthouse.com.au/"
+   },
+   {
+    "claim": "The site also has Isabella's Cafe and heritage cottages for overnight stays.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/cape-nelson-state-park"
+   }
+  ],
+  "free": false,
+  "costMin": 20,
+  "costMax": 20,
+  "currency": "AUD",
+  "costBasis": "tour",
+  "cost_source_url": "https://capenelsonlighthouse.com.au/our-tours/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://capenelsonlighthouse.com.au/",
+  "ticketUrl_note": "operator site loaded; title/tours page name Cape Nelson Lighthouse. Adult tour $20 (children $12, family $55). Grounds and state park are free to wander.",
+  "wiki": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "access_note": "Tour is the paid part; grounds and park walks are free. Parks Victoria page carries a generic 'area closed/reported issues' banner, not specific to the lighthouse.",
+  "unresolved": [
+   "Wikipedia has no article for the lighthouse; 'Cape Nelson' is a disambiguation page"
+  ]
+ },
+ {
+  "id": "portland-3",
+  "name": "Discovery Bay Coastal Park",
+  "facts": [
+   {
+    "claim": "A 10,460-hectare linear coastal park running about 50 km from Cape Nelson north-west to the South Australian border.",
+    "source_url": "https://en.wikipedia.org/wiki/Discovery_Bay_Coastal_Park"
+   },
+   {
+    "claim": "It has rugged cliffs, long beaches, mobile dune fields, wetlands and woodland.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/discovery-bay-coastal-park"
+   },
+   {
+    "claim": "Victoria's highest coastal cliffs and the Cape Bridgewater fur seal colony lie within it.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/discovery-bay-coastal-park"
+   },
+   {
+    "claim": "Campgrounds at Lake Mombeong and Swan Lake sit near vast sand dunes; part of the Great South West Walk runs along it.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/discovery-bay-coastal-park"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/discovery-bay-coastal-park",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/discovery-bay-coastal-park",
+  "ticketUrl_note": "Parks Victoria page loaded, titled Discovery Bay Coastal Park. Page lists no entry fee.",
+  "wiki": "Discovery Bay Coastal Park",
+  "visitHoursMin": 1,
+  "visitHoursMax": 4,
+  "access_note": "Page header shows generic 'additional visitor advice / reported issues / closed' banner labels; check Parks Victoria for current closures. Vehicle access limited to a few points.",
+  "unresolved": []
+ },
+ {
+  "id": "portland-4",
+  "name": "Great South West Walk",
+  "facts": [
+   {
+    "claim": "A 262 km circular walking trail in south-west Victoria that starts and ends in Portland, established in 1981.",
+    "source_url": "https://greatsouthwestwalk.com/"
+   },
+   {
+    "claim": "It crosses four environments, passing coastline, native forest in Cobboboonee and Lower Glenelg National Parks, and Discovery Bay.",
+    "source_url": "https://greatsouthwestwalk.com/trail/"
+   },
+   {
+    "claim": "It has 14 campsites that must be booked, and can be done in shorter day or overnight sections.",
+    "source_url": "https://greatsouthwestwalk.com/"
+   },
+   {
+    "claim": "Volunteers from Friends of the GSWW maintain the track under Parks Victoria.",
+    "source_url": "https://greatsouthwestwalk.com/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://greatsouthwestwalk.com/",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://greatsouthwestwalk.com/",
+  "ticketUrl_note": "Friends of the GSWW official site loaded; title names Great South West Walk.",
+  "wiki": "Great South West Walk",
+  "visitHoursMin": 2,
+  "visitHoursMax": 6,
+  "access_note": "Cut Out Camp and Ralph's Bridge (Cobboboonee) closed 5 Oct 2026 until Feb 2027 for repairs. Walking the track is free; campsite fees not checked (campsites bookable, registered hikers only).",
+  "unresolved": [
+   "Campsite fee not captured; walk itself carries no fee found"
+  ]
+ },
+ {
+  "id": "port-fairy",
+  "name": "Port Fairy",
+  "facts": [
+   {
+    "claim": "A coastal town on the Moyne River about 293 km west of Melbourne, named for the sealing cutter The Fairy in 1828.",
+    "source_url": "https://en.wikipedia.org/wiki/Port_Fairy"
+   },
+   {
+    "claim": "Whalers and sealers used the coast from the 1830s; John Griffiths set up a whaling station in 1835.",
+    "source_url": "https://en.wikipedia.org/wiki/Port_Fairy"
+   },
+   {
+    "claim": "Tourism and fishing are its main industries, and it is home port to one of Victoria's largest fishing fleets.",
+    "source_url": "https://en.wikipedia.org/wiki/Port_Fairy"
+   },
+   {
+    "claim": "Griffiths Island, joined to the town by a causeway, has a shearwater colony and a lighthouse.",
+    "source_url": "https://www.moyne.vic.gov.au/Our-community/Environment/Griffiths-Island-Port-Fairy"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Port_Fairy",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "no single steward for a town; Wikipedia's 'Visit Port Fairy' link (visitportfairy-moyneshire.com.au) now shows spam content, not used",
+  "wiki": "Port Fairy",
+  "visitHoursMin": 2,
+  "visitHoursMax": 6,
+  "access_note": null,
+  "unresolved": [
+   "Wikipedia's official tourism link looks hijacked; no verified official tourism site found"
+  ]
+ },
+ {
+  "id": "griffiths-island-lighthouse",
+  "name": "Griffiths Island Lighthouse",
+  "facts": [
+   {
+    "claim": "The Port Fairy lighthouse was built of local bluestone around 1859, still guides ships into Port Fairy and sits at the island's eastern tip.",
+    "source_url": "https://www.melbourneplaygrounds.com.au/port-fairy-griffiths-island"
+   },
+   {
+    "claim": "The island, about 1.5 km long, is a sanctuary reached over a causeway from town and listed on the Victorian Heritage Register.",
+    "source_url": "https://www.moyne.vic.gov.au/Our-community/Environment/Griffiths-Island-Port-Fairy"
+   },
+   {
+    "claim": "It hosts a breeding colony of short-tailed shearwaters (muttonbirds) from September to April.",
+    "source_url": "https://www.moyne.vic.gov.au/Our-community/Environment/Griffiths-Island-Port-Fairy"
+   },
+   {
+    "claim": "The grounds are open year round but the tower is not open to the public.",
+    "source_url": "https://www.melbourneplaygrounds.com.au/port-fairy-griffiths-island"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.melbourneplaygrounds.com.au/port-fairy-griffiths-island",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "no operator; Moyne Shire council is committee of management (island page loaded, not a ticket site)",
+  "wiki": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "Tower closed to public; tours only on rare special occasions.",
+  "unresolved": [
+   "No Wikipedia article for the lighthouse (Griffiths Island has none either)"
+  ]
+ }
+]

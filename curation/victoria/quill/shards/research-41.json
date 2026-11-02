@@ -1,0 +1,203 @@
+[
+ {
+  "id": "melbourne-22",
+  "name": "Australian Centre for the Moving Image",
+  "facts": [
+   {
+    "claim": "ACMI is Australia's national museum of screen culture, at Federation Square opposite Flinders Street Station",
+    "source_url": "https://www.acmi.net.au/"
+   },
+   {
+    "claim": "Its ongoing Story of the Moving Image exhibition on film, TV, videogames and digital culture is free",
+    "source_url": "https://www.acmi.net.au/plan-your-visit/"
+   },
+   {
+    "claim": "Temporary exhibitions and cinema screenings are ticketed separately",
+    "source_url": "https://www.acmi.net.au/plan-your-visit/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.acmi.net.au/plan-your-visit/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.acmi.net.au/",
+  "ticketUrl_note": "Homepage title 'ACMI | Your museum of screen culture'",
+  "wiki": "Australian Centre for the Moving Image",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "access_note": null,
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-23",
+  "name": "Arts Centre Melbourne",
+  "facts": [
+   {
+    "claim": "Performing arts precinct on St Kilda Road with theatres, Hamer Hall and the landmark spire",
+    "source_url": "https://en.wikipedia.org/wiki/Arts_Centre_Melbourne"
+   },
+   {
+    "claim": "Designed by Roy Grounds; the gallery opened 1968 and the theatres and concert hall followed",
+    "source_url": "https://en.wikipedia.org/wiki/Arts_Centre_Melbourne"
+   },
+   {
+    "claim": "Guided tours are listed as not currently available; a Collection Store tour is about $43 adult",
+    "source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/collection-store-tours"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.artscentremelbourne.com.au/",
+  "cost_confidence": "unverified",
+  "ticketUrl": "https://www.artscentremelbourne.com.au/",
+  "ticketUrl_note": "Homepage loaded (HTTP 200) but returned no text to the fetcher; domain is the one Wikipedia/search results give. Title not confirmed",
+  "wiki": "Arts Centre Melbourne",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "Entering the buildings and foyers is understood free; shows and tours are ticketed (not verified on official page). Guided tours reported unavailable.",
+  "unresolved": [
+   "Official site gave no readable text (script wall); free-entry claim and title unconfirmed. Check in a real browser."
+  ]
+ },
+ {
+  "id": "melbourne-24",
+  "name": "St Patrick's Cathedral",
+  "facts": [
+   {
+    "claim": "Gothic Revival cathedral designed by William Wardell, built 1858 to 1939 in bluestone",
+    "source_url": "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Melbourne"
+   },
+   {
+    "claim": "Seat of the Catholic Archbishop of Melbourne, consecrated 1897, on Gisborne Street in East Melbourne",
+    "source_url": "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Melbourne"
+   },
+   {
+    "claim": "On the Victorian Heritage Register",
+    "source_url": "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Melbourne"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Melbourne",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "Official site cam.org.au/cathedral (from Wikipedia) did not load (fetch failed); BLOCKED/unreachable, needs a browser check: https://www.cam.org.au/cathedral",
+  "wiki": "St Patrick's Cathedral, Melbourne",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": "Free entry unverified on official page; visiting hours not recorded.",
+  "unresolved": [
+   "ticketUrl https://www.cam.org.au/cathedral unreachable by script",
+   "free entry not confirmed on official page"
+  ]
+ },
+ {
+  "id": "melbourne-25",
+  "name": "St Paul's Cathedral",
+  "facts": [
+   {
+    "claim": "Anglican cathedral of Melbourne at Flinders Street opposite Federation Square",
+    "source_url": "https://cathedral.org.au/"
+   },
+   {
+    "claim": "Described as Victoria's most visited sacred place, with over 400,000 visitors a year",
+    "source_url": "https://cathedral.org.au/"
+   },
+   {
+    "claim": "Open daily with free admission",
+    "source_url": "https://cathedral.org.au/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://cathedral.org.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://cathedral.org.au/",
+  "ticketUrl_note": "Title 'St Paul's Cathedral Melbourne'",
+  "wiki": "St Paul's Cathedral, Melbourne",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": null,
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-26",
+  "name": "Fitzroy Gardens",
+  "facts": [
+   {
+    "claim": "Heritage-listed gardens set aside as a reserve in 1848 in East Melbourne, about 26 hectares",
+    "source_url": "https://en.wikipedia.org/wiki/Fitzroy_Gardens"
+   },
+   {
+    "claim": "Lawns and paths lined with mature elm trees in Victorian-era design",
+    "source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/fitzroy-gardens"
+   },
+   {
+    "claim": "Contains the Conservatory, Cooks' Cottage and a visitor centre",
+    "source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/fitzroy-gardens"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/fitzroy-gardens",
+  "cost_confidence": "official page",
+  "ticketUrl": null,
+  "ticketUrl_note": "Council page https://www.melbourne.vic.gov.au/fitzroy-gardens is BLOCKED (403 CloudFront); council What's On listing used for facts. Steward is City of Melbourne.",
+  "wiki": "Fitzroy Gardens",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": null,
+  "unresolved": [
+   "BLOCKED:https://www.melbourne.vic.gov.au/fitzroy-gardens needs browser check for ticketUrl"
+  ]
+ },
+ {
+  "id": "melbourne-27",
+  "name": "Cooks' Cottage",
+  "facts": [
+   {
+    "claim": "Cottage built in 1755 in Yorkshire by the parents of Captain James Cook",
+    "source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/cooks-cottage"
+   },
+   {
+    "claim": "Moved to Melbourne in 1934 by Sir Russell Grimwade and rebuilt in Fitzroy Gardens",
+    "source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/cooks-cottage"
+   },
+   {
+    "claim": "Surrounded by an English cottage garden; tickets sold at the Fitzroy Gardens Visitor Centre",
+    "source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/fitzroy-gardens"
+   }
+  ],
+  "free": false,
+  "costMin": 7.7,
+  "costMax": 7.7,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://whatson.melbourne.vic.gov.au/things-to-do/christmas-at-the-cottage",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://whatson.melbourne.vic.gov.au/things-to-do/cooks-cottage",
+  "ticketUrl_note": "Official City of Melbourne What's On page, title 'Cooks' Cottage - What's On Melbourne' (Wikipedia's official-site link points here); price not visible in fetched text",
+  "wiki": "Cooks' Cottage",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": null,
+  "unresolved": [
+   "adult price $7.70 comes from a search snippet of the council's event page (older council page said $7.20); not confirmed in fetched text"
+  ]
+ }
+]

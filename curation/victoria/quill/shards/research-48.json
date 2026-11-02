@@ -1,0 +1,216 @@
+[
+ {
+  "id": "mornington-peninsula-1",
+  "name": "Point Nepean National Park",
+  "facts": [
+   {
+    "claim": "Park at the very tip of the Mornington Peninsula near Portsea, with historic Quarantine Station buildings, military forts and tunnels",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park"
+   },
+   {
+    "claim": "Walking and cycling tracks with ocean and bay views; the memorial and site where Prime Minister Harold Holt went missing at Cheviot Beach",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park"
+   },
+   {
+    "claim": "Hop-on-hop-off shuttle runs between the Quarantine Station and Fort Nepean",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park"
+   },
+   {
+    "claim": "560 ha park, open daily; vehicles enter 6am-6pm",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park",
+  "ticketUrl_note": "Parks Victoria park page loaded, title names the place; page has a Fees and charges link but no entry fee stated, Victorian national parks are free to enter",
+  "wiki": "Point Nepean National Park",
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "access_note": "Parks Victoria page shows area-closed banner (generic banner); Fort Nepean Engine House and The Bend beach steps closed",
+  "unresolved": [
+   "wiki: Wikipedia title Point_Nepean_National_Park redirects to \"Point Nepean\" (article title); confirm",
+   "entry fee not stated on page; free assumed from Parks Victoria policy. costBasis open questionable: park has an entrance station (use entry with free if reviewer prefers)"
+  ]
+ },
+ {
+  "id": "mornington-peninsula-2",
+  "name": "Peninsula Hot Springs",
+  "facts": [
+   {
+    "claim": "Geothermal mineral springs and day spa at Fingal, less than 90 minutes from Melbourne",
+    "source_url": "https://www.peninsulahotsprings.com/"
+   },
+   {
+    "claim": "Over 70 bathing and wellness experiences in a natural landscape; Bath House (all ages) and adults-only Spa Dreaming Centre (16+)",
+    "source_url": "https://www.peninsulahotsprings.com/"
+   },
+   {
+    "claim": "Bath House bathing from about $60 to $90 per adult depending on session",
+    "source_url": "https://www.peninsulahotsprings.com/bathe/bath-house"
+   }
+  ],
+  "free": false,
+  "costMin": 60,
+  "costMax": 90,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.peninsulahotsprings.com/bathe/bath-house",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.peninsulahotsprings.com/",
+  "ticketUrl_note": "Official site loaded; title names Peninsula Hot Springs",
+  "wiki": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "access_note": "Coordinates verified: resolve-pin MEDIUM, OSM leisure=water_park, 0 m from placement point",
+  "unresolved": []
+ },
+ {
+  "id": "mornington-peninsula-3",
+  "name": "Cape Schanck Lighthouse",
+  "facts": [
+   {
+    "claim": "Limestone lighthouse built in 1859 at Cape Schanck, the southernmost tip of the Mornington Peninsula; 21 m tall and still active",
+    "source_url": "https://en.wikipedia.org/wiki/Cape_Schanck_Lighthouse"
+   },
+   {
+    "claim": "Retains its original 1859 Chance Brothers Fresnel lens and an early clockwork mechanism",
+    "source_url": "https://en.wikipedia.org/wiki/Cape_Schanck_Lighthouse"
+   },
+   {
+    "claim": "Guided tower climbs and a museum in the keeper's red brick house; museum entry by donation",
+    "source_url": "https://www.trybooking.com/events/landing/866207"
+   },
+   {
+    "claim": "Reserve sits within Mornington Peninsula National Park, with coastal walks",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   }
+  ],
+  "free": false,
+  "costMin": 14,
+  "costMax": 22,
+  "currency": "AUD",
+  "costBasis": "tour",
+  "cost_source_url": "https://www.trybooking.com/CPPWH",
+  "cost_confidence": "unverified",
+  "ticketUrl": null,
+  "ticketUrl_note": "capeschancklighthouse.com.au (Wikipedia official link) loaded but states it is an independent guide, not the operator or an official ticket office; tours run by a licensed Parks Victoria operator (Lady of History) on TryBooking; no official operator page loaded. Orchestrator may use Wikipedia link if accepted.",
+  "wiki": "Cape Schanck Lighthouse",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "access_note": null,
+  "unresolved": [
+   "current adult tower-tour price unverified: TryBooking listings show $14 (2024) to $22 (older/other listings), search snippet suggests current family ticket $47",
+   "no official operator page found"
+  ]
+ },
+ {
+  "id": "mornington-peninsula-5",
+  "name": "Fort Nepean",
+  "facts": [
+   {
+    "claim": "Fortification at the very end of the Mornington Peninsula that protected Port Phillip and Melbourne in WWI and WWII",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/fort-nepean"
+   },
+   {
+    "claim": "Extensive tunnel complex connecting the historic gun emplacements",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/fort-nepean"
+   },
+   {
+    "claim": "Within Point Nepean National Park; reached by the hop-on-hop-off shuttle from the Quarantine Station, by bike or on foot",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/fort-nepean",
+  "ticketUrl_note": "Parks Victoria site page loaded; title names Fort Nepean",
+  "wiki": "Fort Nepean",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "access_note": "Engine House and its walking track closed (landslip); The Bend beach steps closed; area-closed banner on page",
+  "unresolved": [
+   "no entry fee stated; free assumed (Victorian national park)"
+  ]
+ },
+ {
+  "id": "mornington-peninsula-6",
+  "name": "Mornington Peninsula National Park",
+  "facts": [
+   {
+    "claim": "Wild ocean beaches between Portsea and Flinders, plus Greens Bush, the largest remnant of native bushland on the peninsula",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   },
+   {
+    "claim": "Surf beaches at Gunnamatta, Flinders, Portsea and Rye; rockpools at Sorrento Ocean Beach",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   },
+   {
+    "claim": "The Coastal Walk is a two-day clifftop walk; the Two Bays Walking Trail is 26 km from Dromana to Cape Schanck",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   },
+   {
+    "claim": "Dogs are not permitted anywhere in the park",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park",
+  "ticketUrl_note": "Parks Victoria page loaded, title names the park",
+  "wiki": "Mornington Peninsula National Park",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "access_note": null,
+  "unresolved": [
+   "no fee stated on page; free assumed (Victorian national park)"
+  ]
+ },
+ {
+  "id": "mornington-peninsula-7",
+  "name": "Sorrento",
+  "facts": [
+   {
+    "claim": "Seaside town where the British set up a convict settlement in 1803 under David Collins, the first British settlement on mainland Australia outside the Sydney region",
+    "source_url": "https://en.wikipedia.org/wiki/Sorrento,_Victoria"
+   },
+   {
+    "claim": "Sits between ocean and bay beaches; Sorrento Ocean Beach rockpools are in Mornington Peninsula National Park",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   },
+   {
+    "claim": "Passenger and vehicle ferry runs from Sorrento to Queenscliff",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Sorrento,_Victoria",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "town with no single steward",
+  "wiki": "Sorrento, Victoria",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "access_note": null,
+  "unresolved": []
+ }
+]

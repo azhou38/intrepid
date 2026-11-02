@@ -1,0 +1,217 @@
+[
+ {
+  "id": "phillip-island-10",
+  "name": "A Maze'N Things",
+  "facts": [
+   {
+    "claim": "Family park on Phillip Island with a giant 3D maze, Puzzle Island, Magic Manor illusions, a 19-hole mini golf course and the SkyTrail high ropes course",
+    "source_url": "https://www.amazenthings.com.au"
+   },
+   {
+    "claim": "SkyTrail is a 10 m high ropes course with 30 obstacles",
+    "source_url": "https://www.amazenthings.com.au"
+   },
+   {
+    "claim": "Indoor and outdoor attractions, so it runs in any weather; children up to 3 enter free",
+    "source_url": "https://www.amazenthings.com.au"
+   }
+  ],
+  "free": false,
+  "costMin": 42,
+  "costMax": 52,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.amazenthings.com.au/pricing/",
+  "cost_confidence": "official page",
+  "cost_note": "Adult (16+) tiers on the pricing page: $42 and $52 (two ticket tiers, labels not captured by the text fetch); SkyTrail climber $25 separate",
+  "ticketUrl": "https://www.amazenthings.com.au",
+  "ticketUrl_note": "Homepage titled A Maze'n Things, loaded",
+  "wiki": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 4,
+  "access_note": null,
+  "unresolved": [
+   "which attractions the $42 vs $52 adult tiers include"
+  ]
+ },
+ {
+  "id": "french-island",
+  "name": "French Island",
+  "facts": [
+   {
+    "claim": "French Island National Park covers heathland and open woodland and holds Victoria's most significant koala population",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/french-island-national-park"
+   },
+   {
+    "claim": "More than 230 bird species recorded, plus the long-nosed potoroo and released eastern barred bandicoots",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/french-island-national-park"
+   },
+   {
+    "claim": "Reached by Western Port Ferries passenger ferry from Stony Point (10-12 minutes to Tankerton Jetty) or from Cowes",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/french-island-national-park"
+   },
+   {
+    "claim": "Fairhaven Campground is a 5 km walk or ride from Tankerton Jetty",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/french-island-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/french-island-national-park",
+  "cost_confidence": "secondary",
+  "cost_note": "Park page lists no entry fee; ferry (adult $17.10 single / $34.20 return, westernportferries.com.au/Fares) is transport, not counted",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/french-island-national-park",
+  "ticketUrl_note": "Managing agency page for the national park (loaded, titled French Island National Park); ferry operator is westernportferries.com.au",
+  "wiki": "French Island (Victoria)",
+  "visitHoursMin": 4,
+  "visitHoursMax": 8,
+  "access_note": "Ferry services can be cancelled at short notice; page shows a generic 'This area is closed' banner label, not verified as an actual closure",
+  "unresolved": [
+   "whether the Parks Victoria 'area is closed' banner is a real closure"
+  ]
+ },
+ {
+  "id": "state-coal-mine",
+  "name": "State Coal Mine",
+  "facts": [
+   {
+    "claim": "Former state-owned black coal mine at Wonthaggi, operational 1910 to 1968, now a Parks Victoria heritage attraction",
+    "source_url": "https://en.wikipedia.org/wiki/State_Coal_Mine"
+   },
+   {
+    "claim": "Guided underground tours (60-90 minutes) run daily at 11.30am and 2.00pm; children must be 5 or older",
+    "source_url": "https://bookings.parks.vic.gov.au/state-coal-mine"
+   },
+   {
+    "claim": "Entry to the aboveground attractions, visitor centre film and heritage trail is free",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/state-coal-mine-heritage-area/things-to-do/state-coal-mine"
+   },
+   {
+    "claim": "The drift car that carried visitors out of the mine has been suspended since 2020; walking tours resumed in 2024",
+    "source_url": "https://www.parks.vic.gov.au/projects/gippsland/state-coal-mine-drift-car-project"
+   }
+  ],
+  "free": false,
+  "costMin": 25.5,
+  "costMax": 25.5,
+  "currency": "AUD",
+  "costBasis": "tour",
+  "cost_source_url": "https://bookings.parks.vic.gov.au/state-coal-mine",
+  "cost_confidence": "official page",
+  "cost_note": "Underground tour adult $25.50; aboveground precinct free",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/state-coal-mine-heritage-area/things-to-do/state-coal-mine",
+  "ticketUrl_note": "Parks Victoria page titled State Coal Mine, loaded; booking at bookings.parks.vic.gov.au/state-coal-mine",
+  "wiki": "State Coal Mine",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "access_note": "Page carries a 'This area is closed' banner label and works are underway; underground walking tours reported running (booking page live). Check status.",
+  "unresolved": [
+   "banner 'This area is closed' content not read"
+  ]
+ },
+ {
+  "id": "mildura-2",
+  "name": "Meeting of the Waters",
+  "facts": [
+   {
+    "claim": "Junction Park in Wentworth, NSW, is where the Darling River meets the Murray, the two longest rivers in Australia; it includes a lookout",
+    "source_url": "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+   },
+   {
+    "claim": "Wentworth lies at the confluence of the Darling and Murray rivers, about 20 km west of Mildura",
+    "source_url": "https://en.wikivoyage.org/wiki/Mildura"
+   },
+   {
+    "claim": "The Wentworth Trail passes heritage buildings and landmarks near the park, starting at the visitor information centre",
+    "source_url": "https://mildura.com/explore/take-a-look-around/wentworth/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://mildura.com/explore/take-a-look-around/wentworth/",
+  "cost_confidence": "secondary",
+  "cost_note": "Open riverside park; no fee mentioned in sources",
+  "ticketUrl": null,
+  "ticketUrl_note": "Open council park, no single steward site",
+  "wiki": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 1,
+  "access_note": null,
+  "coordinates_candidate": {
+   "latitude": -34.111066,
+   "longitude": 141.909984,
+   "source": "Wikivoyage Junction Park listing geo tag (own listing, not the town); placement point missing, run resolve-pin"
+  },
+  "unresolved": [
+   "pin not run through resolve-pin.py"
+  ]
+ },
+ {
+  "id": "mildura-3",
+  "name": "Australian Inland Botanic Gardens",
+  "facts": [
+   {
+    "claim": "Community-created botanic garden at Buronga, NSW, billed as the Southern Hemisphere's first semi-arid botanic garden",
+    "source_url": "https://en.wikipedia.org/wiki/Australian_Inland_Botanic_Gardens"
+   },
+   {
+    "claim": "Plantings showcase Australian arid and exotic flora, including a rose garden of over 1,600 bushes",
+    "source_url": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/australian-inland-botanic-gardens"
+   },
+   {
+    "claim": "Entrance is free, gold coin donation welcome",
+    "source_url": "https://www.aibg.live"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "donation",
+  "cost_source_url": "https://www.aibg.live",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.aibg.live",
+  "ticketUrl_note": "Garden's own site, title names the gardens, loaded",
+  "wiki": "Australian Inland Botanic Gardens",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "access_note": null,
+  "unresolved": []
+ },
+ {
+  "id": "mildura-4",
+  "name": "Apex Park",
+  "facts": [
+   {
+    "claim": "Riverside park on the Murray in Mildura with a large sandbar beach good for swimming",
+    "source_url": "https://en.wikivoyage.org/wiki/Mildura"
+   },
+   {
+    "claim": "Described as possibly Victoria's largest inland beach; occasionally patrolled by lifeguards",
+    "source_url": "https://en.wikivoyage.org/wiki/Mildura"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikivoyage.org/wiki/Mildura",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "Open council riverside park, no operator site",
+  "wiki": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "access_note": null,
+  "unresolved": [
+   "lifeguard patrol seasons not verified"
+  ]
+ }
+]

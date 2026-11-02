@@ -1,0 +1,218 @@
+[
+ {
+  "id": "melbourne-64",
+  "name": "Australian National Aviation Museum",
+  "facts": [
+   {
+    "claim": "Aviation museum at Moorabbin Airport in Melbourne's south-east, founded in 1962 and run by volunteers",
+    "source_url": "https://en.wikipedia.org/wiki/Australian_National_Aviation_Museum"
+   },
+   {
+    "claim": "Known as the Australian National Aviation Museum until October 2021; now trades as the Moorabbin Air Museum",
+    "source_url": "https://en.wikipedia.org/wiki/Australian_National_Aviation_Museum"
+   },
+   {
+    "claim": "Collection includes the oldest surviving Commonwealth Aircraft Corporation aircraft, Wirraway A20-10, plus a Victa AirTourer and DAP aircraft",
+    "source_url": "https://www.aarg.com.au/"
+   },
+   {
+    "claim": "Address is 12 First Street, Moorabbin Airport",
+    "source_url": "https://www.aarg.com.au/gettinghere.html"
+   }
+  ],
+  "free": false,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.aarg.com.au/gettinghere.html",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.aarg.com.au/",
+  "ticketUrl_note": null,
+  "wiki": "Moorabbin Air Museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "access_note": "Renamed Moorabbin Air Museum in 2021; app name may want updating. Hours not recorded.",
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-65",
+  "name": "Grainger Museum",
+  "facts": [
+   {
+    "claim": "Repository on the life and music of composer and pianist Percy Grainger, University of Melbourne, Parkville",
+    "source_url": "https://en.wikipedia.org/wiki/Grainger_Museum"
+   },
+   {
+    "claim": "Opened December 1938; the only purpose-built autobiographical museum in Australia",
+    "source_url": "https://en.wikipedia.org/wiki/Grainger_Museum"
+   },
+   {
+    "claim": "Displays manuscripts, instruments, field recordings, artworks and personal items, plus Grainger's experimental 'Free music' sound devices",
+    "source_url": "https://en.wikipedia.org/wiki/Grainger_Museum"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://grainger.unimelb.edu.au/visit",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "BLOCKED:https://grainger.unimelb.edu.au/ (Cloudflare 403); site is clearly the official Grainger Museum (search results show it as the museum's own domain) but title not verified",
+  "wiki": "Grainger Museum",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "Search snippets of the official visit page showed a 'reopening' notice; current status unconfirmed.",
+  "unresolved": [
+   "ticketUrl BLOCKED: https://grainger.unimelb.edu.au/ needs a real browser to confirm title and free admission"
+  ]
+ },
+ {
+  "id": "melbourne-66",
+  "name": "Ian Potter Museum of Art",
+  "facts": [
+   {
+    "claim": "University of Melbourne art museum at the corner of Swanston Street and Masson Road, Parkville",
+    "source_url": "https://potter-museum.unimelb.edu.au/visit/plan-your-visit"
+   },
+   {
+    "claim": "Reopened in 2025 under the shorter name Potter Museum of Art after a 2018-2025 hiatus",
+    "source_url": "https://en.wikipedia.org/wiki/Ian_Potter_Museum_of_Art"
+   },
+   {
+    "claim": "Changing exhibitions, currently 'Ngarn Wa'ngal: Art of the gum tree' (to 21 Nov 2026)",
+    "source_url": "https://potter-museum.unimelb.edu.au/"
+   },
+   {
+    "claim": "Admission is free",
+    "source_url": "https://potter-museum.unimelb.edu.au/visit/plan-your-visit"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://potter-museum.unimelb.edu.au/visit/plan-your-visit",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://potter-museum.unimelb.edu.au/",
+  "ticketUrl_note": null,
+  "wiki": "Ian Potter Museum of Art",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "access_note": "Now named Potter Museum of Art; exhibitions are temporary so bio should not name one.",
+  "unresolved": []
+ },
+ {
+  "id": "melbourne-67",
+  "name": "Victoria Police Museum",
+  "facts": [
+   {
+    "claim": "Police museum run by Victoria Police, reopened in a new space on 25 September 2023",
+    "source_url": "https://en.wikipedia.org/wiki/Victoria_Police_Museum"
+   },
+   {
+    "claim": "Now at the Victoria Police Centre, 313 Spencer Street, Docklands",
+    "source_url": "https://www.policemuseum.vic.gov.au/"
+   },
+   {
+    "claim": "Holds Australia's largest collection of Kelly Gang armour",
+    "source_url": "https://www.policemuseum.vic.gov.au/"
+   },
+   {
+    "claim": "Covers notorious Melbourne crimes, police equipment and forensic evidence",
+    "source_url": "https://www.policemuseum.vic.gov.au/"
+   },
+   {
+    "claim": "Entry is free",
+    "source_url": "https://www.police.vic.gov.au/victoria-police-museum"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.police.vic.gov.au/victoria-police-museum",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.policemuseum.vic.gov.au/",
+  "ticketUrl_note": null,
+  "wiki": "Victoria Police Museum",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "access_note": "PIN AND BIO DRAFT STALE: museum is no longer on Flinders Street; it is at 313 Spencer Street, Docklands. Coordinates need re-resolving. Open only Tue-Thu (limited days), worth stating in bio.",
+  "unresolved": [
+   "coordinates in input are the old Flinders Street site; new site not pinned"
+  ]
+ },
+ {
+  "id": "royal-botanic-gardens-cranbourne",
+  "name": "Royal Botanic Gardens Cranbourne",
+  "facts": [
+   {
+    "claim": "Royal Botanic Gardens Victoria's Cranbourne site at Ballarto Road and Botanic Drive, Cranbourne",
+    "source_url": "https://www.rbg.vic.gov.au/cranbourne-gardens/"
+   },
+   {
+    "claim": "Centred on the Australian Garden, with the Red Sand Garden and a Eucalypt Walk of only Australian plants",
+    "source_url": "https://www.rbg.vic.gov.au/cranbourne-gardens/"
+   },
+   {
+    "claim": "Haven for endangered southern brown bandicoots",
+    "source_url": "https://www.rbg.vic.gov.au/cranbourne-gardens/"
+   },
+   {
+    "claim": "Open daily except Christmas Day; admission free",
+    "source_url": "https://www.rbg.vic.gov.au/cranbourne-gardens/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.rbg.vic.gov.au/cranbourne-gardens/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.rbg.vic.gov.au/cranbourne-gardens/",
+  "ticketUrl_note": null,
+  "wiki": "Royal Botanic Gardens, Cranbourne",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "access_note": "Paid extras only (Explorer bus tour); entry free.",
+  "unresolved": []
+ },
+ {
+  "id": "mcclelland-gallery-and-sculpture-park",
+  "name": "McClelland Gallery and Sculpture Park",
+  "facts": [
+   {
+    "claim": "Sculpture park and gallery at 390 McClelland Drive, Langwarrin, in bushland on Bunurong Country",
+    "source_url": "https://mcclelland.org.au/"
+   },
+   {
+    "claim": "Has a cafe and design store; open Wednesday to Sunday",
+    "source_url": "https://mcclelland.org.au/"
+   },
+   {
+    "claim": "Galleries close between exhibitions while the sculpture park stays open",
+    "source_url": "https://mcclelland.org.au/"
+   }
+  ],
+  "free": false,
+  "costMin": 15,
+  "costMax": 15,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://mcclelland.org.au/pages/booking",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://mcclelland.org.au/",
+  "ticketUrl_note": null,
+  "wiki": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "access_note": "Adult $15; Frankston City postcodes free on weekdays and $5 adult on weekends; galleries occasionally closed for changeover. No Wikipedia article found under the draft title.",
+  "unresolved": []
+ }
+]

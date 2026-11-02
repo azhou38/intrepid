@@ -1,0 +1,215 @@
+[
+ {
+  "id": "mornington-peninsula-9",
+  "name": "Red Hill",
+  "facts": [
+   {
+    "claim": "Red Hill is a rural town on the Mornington Peninsula, about 92 km from Melbourne.",
+    "source_url": "https://en.wikipedia.org/wiki/Red_Hill,_Victoria"
+   },
+   {
+    "claim": "Wineries have been established around Red Hill since the 1970s, taking advantage of microclimates suited to cool-climate grapes, especially pinot noir.",
+    "source_url": "https://en.wikipedia.org/wiki/Red_Hill,_Victoria"
+   },
+   {
+    "claim": "Strawberries, cherries and apples are grown here and sold seasonally at the farm door.",
+    "source_url": "https://en.wikipedia.org/wiki/Red_Hill,_Victoria"
+   },
+   {
+    "claim": "A monthly community market runs from September to May.",
+    "source_url": "https://en.wikipedia.org/wiki/Red_Hill,_Victoria"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Red_Hill,_Victoria",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "Area of many cellar doors and producers, no single steward; the Red Hill Community Market site shows 'Temporarily closed' so it is not linked",
+  "wiki": "Red Hill, Victoria",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 3,
+  "access_note": "Community market site (redhillcommunitymarket.com.au) shows 'Temporarily closed'; market is monthly so should not be a headline in the bio.",
+  "unresolved": []
+ },
+ {
+  "id": "mornington-peninsula-10",
+  "name": "Two Bays Walking Trail",
+  "facts": [
+   {
+    "claim": "A 26 km hike from Dromana to Cape Schanck through Arthurs Seat State Park and Mornington Peninsula National Park.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park/things-to-do/two-bays-walking-trail"
+   },
+   {
+    "claim": "Beyond Arthurs Seat the walk is relatively flat, through eucalypt forest and grassy Greens Bush to coastal cliffs near Cape Schanck.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park/things-to-do/two-bays-walking-trail"
+   },
+   {
+    "claim": "It suits a two-day hike, a long day hike or section by section, and is marked with a Blue Wren symbol.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park/things-to-do/two-bays-walking-trail"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park/things-to-do/two-bays-walking-trail",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park/things-to-do/two-bays-walking-trail",
+  "ticketUrl_note": null,
+  "wiki": null,
+  "visitHoursMin": 6,
+  "visitHoursMax": 10,
+  "access_note": null,
+  "unresolved": [
+   "Midpoint pin is judged from OSM segments, not a full route relation; check against agency route map"
+  ],
+  "coordinates": {
+   "latitude": -38.441132,
+   "longitude": 144.933078
+  },
+  "coordinates_source": "OSM way 'Two Bays Walking Track' (0.5 km segment inside Greens Bush, roughly mid-route between Dromana and Cape Schanck); resolve-pin returned only short segments (LOW for whole route), this point chosen as the on-route segment nearest the midpoint of the 26 km route; 1.4 km from placement point. Verify against the Parks Victoria route map."
+ },
+ {
+  "id": "mornington-peninsula-11",
+  "name": "Coastal Walk (Mornington Peninsula)",
+  "facts": [
+   {
+    "claim": "A two-day walk through Mornington Peninsula National Park along high clifftops, coastal vegetation and past ocean beaches.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   },
+   {
+    "claim": "The national park spans the wild ocean beaches between Portsea and Flinders.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park",
+  "ticketUrl_note": "Parks Victoria has no separate page for the walk found; park page used as the managing agency's page",
+  "wiki": null,
+  "visitHoursMin": 8,
+  "visitHoursMax": 16,
+  "access_note": null,
+  "unresolved": [
+   "Walk length and exact route (Portsea to Cape Schanck vs to Flinders) not stated on fetched page; no separate Parks Victoria walk page found",
+   "Midpoint pin from a single OSM segment"
+  ],
+  "coordinates": {
+   "latitude": -38.402415,
+   "longitude": 144.803059
+  },
+  "coordinates_source": "OSM way 'The Coastal Walk' (1.2 km segment near Gunnamatta, roughly mid-way along the Portsea to Cape Schanck route); resolve-pin MEDIUM on a short segment only; placement had no coordinates. Verify against Parks Victoria route map."
+ },
+ {
+  "id": "mornington-peninsula-12",
+  "name": "Bushrangers Bay",
+  "facts": [
+   {
+    "claim": "The Bushrangers Bay Walk starts at the eastern car park at Cape Schanck Lighthouse and drops to a sandy beach ringed by basalt cliffs, at the outlet of Main Creek.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/bushrangers-bay-walk"
+   },
+   {
+    "claim": "It is a 5.4 km return walk of about 2 hours on sandy unsealed paths with steep stairs.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/bushrangers-bay-walk"
+   },
+   {
+    "claim": "Rockpools can be explored at low tide, and the Main Creek estuary may need wading when the tide is in.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/bushrangers-bay-walk"
+   },
+   {
+    "claim": "Swimming is not recommended: the beach is unpatrolled with rips and strong currents.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/bushrangers-bay-walk"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/sites/bushrangers-bay-walk",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/bushrangers-bay-walk",
+  "ticketUrl_note": null,
+  "wiki": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5,
+  "access_note": "Bio draft's '20 minutes' and 'kangaroos' conflict with the agency: 2 hours return from Cape Schanck Lighthouse. Fix the bio.",
+  "unresolved": []
+ },
+ {
+  "id": "mornington-peninsula-13",
+  "name": "Arthurs Seat State Park",
+  "facts": [
+   {
+    "claim": "The 314 m summit gives views that on a clear day reach the Melbourne skyline, the You Yangs and Mount Macedon.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/arthurs-seat-state-park"
+   },
+   {
+    "claim": "The park has walking and mountain-bike tracks, a circuit walk to Kings Falls and Seawinds Garden with William Ricketts sculptures.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/arthurs-seat-state-park"
+   },
+   {
+    "claim": "The Arthurs Seat Eagle gondola, run separately, rises above the trees; the Two Bays Walking Trail passes through the park.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/arthurs-seat-state-park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/arthurs-seat-state-park",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/arthurs-seat-state-park",
+  "ticketUrl_note": null,
+  "wiki": "Arthurs Seat, Victoria",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "access_note": "Eagle gondola (separate operator, about $29.90 adult return per operator's ticket page) is an extra, not the spot's price. Operator site not loaded (arthursseateagle.com.au fetch failed).",
+  "unresolved": [
+   "Eagle gondola operator site could not be loaded; price not recorded as cost"
+  ]
+ },
+ {
+  "id": "mornington-peninsula-14",
+  "name": "Flinders Blowhole",
+  "facts": [
+   {
+    "claim": "The blowhole is on the Flinders coast, viewed from a small lookout high on a headland above the rock shore.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/flinders-blowhole"
+   },
+   {
+    "claim": "A short steep track with many steps leads from the car park down to the shoreline and rockpools.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/flinders-blowhole"
+   },
+   {
+    "claim": "The blowhole is best seen working at low tide; swimming is not recommended because of rips and large waves.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/sites/flinders-blowhole"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/sites/flinders-blowhole",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/flinders-blowhole",
+  "ticketUrl_note": null,
+  "wiki": null,
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "access_note": null,
+  "unresolved": []
+ }
+]

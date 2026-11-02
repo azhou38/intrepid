@@ -1,0 +1,182 @@
+[
+ {
+  "id": "melbourne-46",
+  "name": "Old Treasury Building",
+  "facts": [
+   {
+    "claim": "Museum in the 1858 Old Treasury Building at 20 Spring Street, Melbourne",
+    "source_url": "https://www.oldtreasurybuilding.org.au/"
+   },
+   {
+    "claim": "General visit is free and self-guided",
+    "source_url": "https://www.oldtreasurybuilding.org.au/"
+   },
+   {
+    "claim": "Guided tours are ticketed at $16 through Humanitix",
+    "source_url": "https://www.oldtreasurybuilding.org.au/"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.oldtreasurybuilding.org.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.oldtreasurybuilding.org.au/",
+  "ticketUrl_note": null,
+  "wiki": "Old Treasury Building, Melbourne",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "Guided tours need pre-booking; the museum's own site is oldtreasurybuilding.org.au (the .com.au domain does not load).",
+  "unresolved": [],
+  "currency": "AUD"
+ },
+ {
+  "id": "melbourne-47",
+  "name": "Polly Woodside",
+  "facts": [
+   {
+    "claim": "1885 iron-hulled barque run by the National Trust as a maritime museum at South Wharf",
+    "source_url": "https://www.nationaltrust.org.au/places/polly-woodside/"
+   },
+   {
+    "claim": "Standard open-day adult admission is $16",
+    "source_url": "https://www.nationaltrust.org.au/places/polly-woodside/"
+   }
+  ],
+  "free": false,
+  "costMin": 16,
+  "costMax": 16,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.nationaltrust.org.au/places/polly-woodside/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.nationaltrust.org.au/places/polly-woodside/",
+  "ticketUrl_note": null,
+  "wiki": "Polly Woodside",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "access_note": "Open on set open days rather than daily; check the National Trust page. Pirate Days adult $25.",
+  "unresolved": [
+   "Opening pattern (first Sunday monthly) from secondary sources only"
+  ],
+  "currency": "AUD"
+ },
+ {
+  "id": "melbourne-48",
+  "name": "Chinese Museum",
+  "facts": [
+   {
+    "claim": "Museum of Chinese Australian History in Chinatown, Melbourne",
+    "source_url": "https://www.chinesemuseum.com.au/admission"
+   },
+   {
+    "claim": "Adult admission is $17, bought at the door",
+    "source_url": "https://www.chinesemuseum.com.au/admission"
+   }
+  ],
+  "free": false,
+  "costMin": 17,
+  "costMax": 17,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.chinesemuseum.com.au/admission",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.chinesemuseum.com.au/",
+  "ticketUrl_note": "Admission page loaded (title Museum of Chinese Australian History); bare chinesemuseum.com.au gave a Cloudflare DNS error, so use www.",
+  "wiki": "Chinese Museum, Melbourne",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "access_note": null,
+  "unresolved": [],
+  "currency": "AUD"
+ },
+ {
+  "id": "melbourne-49",
+  "name": "Koorie Heritage Trust",
+  "facts": [
+   {
+    "claim": "Cultural centre for Aboriginal Victoria with entry advertised as free",
+    "source_url": "https://kht.org.au/"
+   },
+   {
+    "claim": "Runs Birrarung Wilam and Scar Tree walking tours",
+    "source_url": "https://kht.org.au/"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "costBasis": "entry",
+  "cost_source_url": "https://kht.org.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://kht.org.au/",
+  "ticketUrl_note": null,
+  "wiki": "Koorie Heritage Trust",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "access_note": "Site is kht.org.au; location on the page was not checked against Federation Square.",
+  "unresolved": [
+   "Current venue address not confirmed from fetched text"
+  ],
+  "currency": "AUD"
+ },
+ {
+  "id": "melbourne-50",
+  "name": "Como House",
+  "facts": [
+   {
+    "claim": "1847 National Trust house and garden estate in South Yarra",
+    "source_url": "https://www.nationaltrust.org.au/places/como-house-and-garden/"
+   },
+   {
+    "claim": "Gardens are free to enter; entry inside the house is by guided tour only",
+    "source_url": "https://www.nationaltrust.org.au/places/como-house-and-garden/"
+   },
+   {
+    "claim": "House tour adult price is $15",
+    "source_url": "https://www.nationaltrust.org.au/places/como-house-and-garden/"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.nationaltrust.org.au/places/como-house-and-garden/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.nationaltrust.org.au/places/como-house-and-garden/",
+  "ticketUrl_note": null,
+  "wiki": "Como House",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.75,
+  "access_note": "Garden entry free; house tour $15 adult is optional and not the spot price.",
+  "unresolved": [],
+  "currency": "AUD"
+ },
+ {
+  "id": "melbourne-51",
+  "name": "Prahran Market",
+  "facts": [
+   {
+    "claim": "Permanent food market in Prahran trading Tuesday to Saturday (some days closed)",
+    "source_url": "https://www.prahranmarket.com.au/"
+   },
+   {
+    "claim": "Describes itself as Melbourne's premier food market",
+    "source_url": "https://www.prahranmarket.com.au/"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.prahranmarket.com.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.prahranmarket.com.au/",
+  "ticketUrl_note": null,
+  "wiki": "Prahran Market",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "access_note": null,
+  "unresolved": [],
+  "currency": "AUD"
+ }
+]

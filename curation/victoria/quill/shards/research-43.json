@@ -1,0 +1,212 @@
+[
+ {
+  "currency": "AUD",
+  "needs": null,
+  "parkPass": null,
+  "costPer": null,
+  "access_note": null,
+  "unresolved": [
+   "Entry freeness inferred (open public pier); no official fee page loaded"
+  ],
+  "id": "melbourne-40",
+  "name": "St Kilda Pier",
+  "facts": [
+   {
+    "claim": "A 300 metre elevated pier joined to a 750 metre stone breakwater in Port Phillip Bay.",
+    "source_url": "https://en.wikipedia.org/wiki/St_Kilda_Pier"
+   },
+   {
+    "claim": "The historic St Kilda Pavilion kiosk stands at the end of the pier.",
+    "source_url": "https://en.wikipedia.org/wiki/St_Kilda_Pier"
+   },
+   {
+    "claim": "A colony of about 1200 little penguins breeds among the breakwater rocks, with public viewing.",
+    "source_url": "https://en.wikipedia.org/wiki/St_Kilda_Pier"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/St_Kilda_Pier",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "no single steward site found; visitvictoria page BLOCKED (https://www.visitvictoria.com/regions/melbourne/see-and-do/attractions/st-kilda-pier), stkildapenguins.com.au is a volunteer penguin group not the pier's operator",
+  "wiki": "St Kilda Pier",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "currency": "AUD",
+  "needs": null,
+  "parkPass": null,
+  "costPer": null,
+  "access_note": null,
+  "unresolved": [],
+  "id": "melbourne-41",
+  "name": "Rippon Lea Estate",
+  "facts": [
+   {
+    "claim": "A heritage-listed mansion and 14 acres of gardens in Elsternwick, cared for by the National Trust.",
+    "source_url": "https://www.ripponleaestate.com.au/"
+   },
+   {
+    "claim": "Built for businessman Sir Frederick Sargood, who bought the land in 1868; grounds include a lake, iron-framed fernery, ballroom and stables.",
+    "source_url": "https://en.wikipedia.org/wiki/Rippon_Lea_Estate"
+   },
+   {
+    "claim": "Mansion entry is by guided tour only, bought as an add-on to garden admission.",
+    "source_url": "https://www.ripponleaestate.com.au/visit-and-contact/"
+   }
+  ],
+  "free": false,
+  "costMin": 15,
+  "costMax": 15,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.ripponleaestate.com.au/visit-and-contact/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.ripponleaestate.com.au/",
+  "ticketUrl_note": "loaded; title names Rippon Lea Estate. Garden entry $15 adult; mansion tour +$10",
+  "wiki": "Rippon Lea Estate",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3
+ },
+ {
+  "currency": "AUD",
+  "needs": null,
+  "parkPass": null,
+  "costPer": null,
+  "access_note": "Parks Victoria page shows 'This area has reported issues' banners; check current status",
+  "unresolved": [],
+  "id": "melbourne-42",
+  "name": "Werribee Park",
+  "facts": [
+   {
+    "claim": "An estate built on the wealth of an Australian pastoral empire, with the heritage-listed Werribee Mansion.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/werribee-park"
+   },
+   {
+    "claim": "Formal gardens include an ornamental lake and grotto; the Victoria State Rose Garden has about 5000 roses.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/werribee-park"
+   },
+   {
+    "claim": "Entry to the gardens and rose garden is free; the mansion costs $12.50 adult.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/werribee-park"
+   }
+  ],
+  "free": false,
+  "costMin": 12.5,
+  "costMax": 12.5,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/werribee-park",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/werribee-park",
+  "ticketUrl_note": "Parks Victoria page loaded, titled Werribee Park. Price is the mansion's adult entry; gardens free (judgement call: could be free/open).",
+  "wiki": "Werribee Park",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3
+ },
+ {
+  "currency": "AUD",
+  "needs": null,
+  "parkPass": null,
+  "costPer": null,
+  "access_note": null,
+  "unresolved": [],
+  "id": "melbourne-43",
+  "name": "Melbourne Aquarium",
+  "facts": [
+   {
+    "claim": "Aquarium on the Yarra beside the Flinders Street Viaduct, with over 10,000 animals of 550+ species.",
+    "source_url": "https://en.wikipedia.org/wiki/Sea_Life_Melbourne_Aquarium"
+   },
+   {
+    "claim": "Exhibits include king and gentoo penguins, sharks, jellyfish and a saltwater crocodile.",
+    "source_url": "https://www.visitsealife.com/melbourne/"
+   },
+   {
+    "claim": "Opened 17 January 2000 as a Southern Ocean and Antarctic aquarium.",
+    "source_url": "https://en.wikipedia.org/wiki/Sea_Life_Melbourne_Aquarium"
+   }
+  ],
+  "free": false,
+  "costMin": 39,
+  "costMax": 54,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.visitsealife.com/melbourne/tickets-passes/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.visitsealife.com/melbourne/",
+  "ticketUrl_note": "melbourneaquarium.com.au redirects to this official site; title SEA LIFE Melbourne Aquarium. General admission $39 online, $54 on the day",
+  "wiki": "Sea Life Melbourne Aquarium",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3
+ },
+ {
+  "currency": "AUD",
+  "needs": null,
+  "parkPass": null,
+  "costPer": null,
+  "access_note": null,
+  "unresolved": [
+   "No entry fee stated on the site; free inferred. Spot may fail the qualifies test (venue is a casino/shops)."
+  ],
+  "id": "melbourne-44",
+  "name": "Crown Entertainment Complex",
+  "facts": [
+   {
+    "claim": "Integrated resort of casino, hotels, restaurants and shops on the south bank of the Yarra in Southbank.",
+    "source_url": "https://en.wikipedia.org/wiki/Crown_Melbourne"
+   },
+   {
+    "claim": "Opened at its permanent site on 8 May 1997.",
+    "source_url": "https://en.wikipedia.org/wiki/Crown_Melbourne"
+   },
+   {
+    "claim": "Under-18s may enter the entertainment and shopping areas but not the gaming floor.",
+    "source_url": "https://en.wikipedia.org/wiki/Crown_Melbourne"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.crownmelbourne.com.au/",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.crownmelbourne.com.au/",
+  "ticketUrl_note": "loaded; title names Crown Melbourne",
+  "wiki": "Crown Melbourne",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3
+ },
+ {
+  "currency": "AUD",
+  "needs": null,
+  "parkPass": null,
+  "costPer": null,
+  "access_note": null,
+  "unresolved": [],
+  "id": "melbourne-45",
+  "name": "Ian Potter Centre",
+  "facts": [
+   {
+    "claim": "The home of Australian art at Federation Square, presenting Indigenous and non-Indigenous historical and contemporary art and design.",
+    "source_url": "https://www.ngv.vic.gov.au/plan-your-visit/"
+   },
+   {
+    "claim": "Part of the National Gallery of Victoria; entry is free, with fees only for special exhibitions.",
+    "source_url": "https://www.ngv.vic.gov.au/plan-your-visit/"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.ngv.vic.gov.au/plan-your-visit/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.ngv.vic.gov.au/plan-your-visit/",
+  "ticketUrl_note": "NGV site loaded; page lists the Ian Potter Centre: NGV Australia",
+  "wiki": "Ian Potter Centre: NGV Australia",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ }
+]
