@@ -1285,6 +1285,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Come in {months} for cooler air than Melbourne, plus the Begonia Festival in March.",
   },
   {
+    id: 'daylesford', name: "Daylesford", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -37.3417, longitude: 144.1456 },
+    category: 'city', icon: "♨️", rank: 3,
+    tagline: "A gold-rush town turned spa retreat, set among Australia's mineral springs.",
+    description: "Daylesford is about an hour and a half north-west of Melbourne, founded in 1852 as a gold mining town. It is one of Australia's few spa towns, with the highest concentration of natural mineral springs in the country. Bathhouses, food and wine, and artists fill the town, and Hepburn Springs lies 3 km north with its Swiss-Italian heritage. The town centre is small and walkable.",
+    whyVisit: ["Soak in natural mineral springs", "Taste spring water from town taps", "Wander lakeside and garden paths"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Mineral springs", "Free spring taps", "Lake and gardens"],
+    goodToKnow: [
+      { icon: "🚗", title: "Bring a car", detail: "Only one V/Line coach stop serves town and the sights are spread out. A car or bike is needed beyond the centre, and it is steep." },
+      { icon: "💧", title: "Mineral taps are untreated", detail: "Free mineral spring taps around town are tested often, but the water is essentially untreated. Taste a little before filling a big container." },
+      { icon: "🛁", title: "Book bathhouses ahead", detail: "Spa bathhouses are the main draw and many double as accommodation. Book treatments before you arrive, especially for weekends." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Mild {months} suit lake walks and garden strolls, and spa visits work all year.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
