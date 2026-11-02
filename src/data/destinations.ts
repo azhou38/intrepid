@@ -1810,6 +1810,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Holidaymakers flock to the beaches in {months}, with summer weekends the busiest.",
   },
   {
+    id: 'gippsland-lakes', name: "Gippsland Lakes", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 70,
+    continent: 'Oceania', coordinates: { latitude: -37.9, longitude: 147.85 },
+    category: 'lake', icon: "⛵", rank: 4,
+    tagline: "A web of coastal lakes behind Ninety Mile Beach, made for boating and fishing.",
+    description: "The Gippsland Lakes are a network of coastal lakes, marshes and lagoons covering about 354 km2 in East Gippsland. Ninety Mile Beach, just over 151 km long, separates them from Bass Strait, and the lakes drain to the sea through a short man-made canal at Lakes Entrance. People cruise, hire boats and kayaks, and fish from jetties at Paynesville, Lakes Entrance and Metung. The lakes are a Ramsar-listed wetland, home to about 50 rare Burrunan dolphins.",
+    whyVisit: ["Cruise the lakes by boat", "Fish for bream and flathead", "Spot dolphins and waterbirds"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Lake cruising", "Lake fishing", "Dolphins and birds"],
+    goodToKnow: [
+      { icon: "🏖️", title: "Summer beach patrols", detail: "Eastern Beach at Lakes Entrance is patrolled between Christmas and Australia Day. Swim between the flags." },
+      { icon: "🏘️", title: "Summer crowds", detail: "The lakeside tourist towns swell in summer, so book accommodation ahead for December to February." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Boating, fishing and swimming peak in {months}, when the towns are busiest and beaches are patrolled.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
