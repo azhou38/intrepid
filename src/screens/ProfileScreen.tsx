@@ -217,20 +217,27 @@ export default function ProfileScreen() {
   const savedSpots = useStore(s => s.savedSpots);
   const savedDests = useStore(s => s.savedDestinations);
   const sortKeys = useMemo(() => {
+    // Each place's most recent visit (the one that ended last): its last day sorts the date sort (spotDate, destDate), and
+    // its start and end are what the tiles and rows show (spotVisit, destVisit; see visitLabel).
     const spotDate = new Map<string, string>();
     const destDate = new Map<string, string>();
-    const bump = (m: Map<string, string>, id: string, d?: string) => { if (d && d > (m.get(id) ?? '')) m.set(id, d); };
+    const spotVisit = new Map<string, { start: string; end: string }>();
+    const destVisit = new Map<string, { start: string; end: string }>();
+    const bump = (m: Map<string, string>, vm: Map<string, { start: string; end: string }>, id: string, start?: string, end?: string) => {
+      if (!start) return;
+      const e = end && end > start ? end : start;
+      if (e > (m.get(id) ?? '')) { m.set(id, e); vm.set(id, { start, end: e }); }
+    };
     for (const [id, dv] of Object.entries(savedDests)) {
-      bump(destDate, id, dv.visitDate);
+      bump(destDate, destVisit, id, dv.visitDate);
       for (const v of dv.visits ?? []) {
-        const d = v.endDate && v.endDate > v.startDate ? v.endDate : v.startDate;
-        bump(destDate, id, d);
-        for (const sid of v.spotIds ?? []) bump(spotDate, sid, d);
+        bump(destDate, destVisit, id, v.startDate, v.endDate);
+        for (const sid of v.spotIds ?? []) bump(spotDate, spotVisit, sid, v.startDate, v.endDate);
       }
     }
     for (const [id, sv] of Object.entries(savedSpots)) {
-      bump(spotDate, id, sv.visitDate);
-      for (const v of sv.visits ?? []) bump(spotDate, id, v.endDate && v.endDate > v.startDate ? v.endDate : v.startDate);
+      bump(spotDate, spotVisit, id, sv.visitDate);
+      for (const v of sv.visits ?? []) bump(spotDate, spotVisit, id, v.startDate, v.endDate);
     }
     // Per destination: its visited spots (c), and the sum and count of their ratings.
     const sum = new Map<string, { t: number; n: number; c: number }>();
@@ -244,7 +251,7 @@ export default function ProfileScreen() {
     }
     const destRating = (id: string) => { const a = sum.get(id); return a && a.n ? a.t / a.n : 0; };
     const destSpots = (id: string) => sum.get(id)?.c ?? 0;
-    return { spotDate, destDate, destRating, destSpots };
+    return { spotDate, destDate, spotVisit, destVisit, destRating, destSpots };
   }, [savedSpots, savedDests, visitedSpots]);
   const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, spots?: (id: string) => number) =>
     [...list].sort((x, y) => {
@@ -684,7 +691,7 @@ export default function ProfileScreen() {
                 const n = spotsByDest.get(d.id) ?? 0;
                 return {
                   key: d.id, name: d.name, countryCode: d.countryCode, sub: d.country,
-                  spots: n, rating: sortKeys.destRating(d.id), date: sortKeys.destDate.get(d.id) ?? '',
+                  spots: n, rating: sortKeys.destRating(d.id), date: visitLabel(sortKeys.destVisit.get(d.id)),
                   // The destination's own photo in place of its flag: the grid tiles' small photo (same cache key).
                   photo: (
                     <EntityPhoto
@@ -703,7 +710,7 @@ export default function ProfileScreen() {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode,
-                sub: tileSub(exploredSort, sortKeys.destDate.get(d.id) ?? '', sortKeys.destRating(d.id), n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
+                sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), sortKeys.destRating(d.id), n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
                 // Sorted by most spots, the top three (with any spots) wear a rank badge.
                 rank: exploredSort === 'spots' && n > 0 && k < 3 ? k + 1 : undefined,
                 photo: (
@@ -743,13 +750,13 @@ export default function ProfileScreen() {
             {exploredView === 'list' ? (
               <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={shownSpots.map(sp => ({
                 key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotDestination(sp)?.name ?? spotCountry(sp) ?? '',
-                rating: savedSpots[sp.id]?.rating ?? 0, date: sortKeys.spotDate.get(sp.id) ?? '',
+                rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)),
               }))} />
             ) : (
             /* The same photo grid for spots: the spot's country under its name. */
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownSpots.map(sp => ({
               key: sp.id, name: sp.name, countryCode: spotCountryCode(sp),
-              sub: tileSub(exploredSort, sortKeys.spotDate.get(sp.id) ?? '', savedSpots[sp.id]?.rating ?? 0, spotCountry(sp) ?? ''),
+              sub: tileSub(exploredSort, visitLabel(sortKeys.spotVisit.get(sp.id)), savedSpots[sp.id]?.rating ?? 0, spotCountry(sp) ?? ''),
               photo: NO_PHOTO.has(spotPhotoTitle(sp))
                 ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />
                 : // The same small-photo key as the destination sheet's spot pickers, so either can reuse it.
@@ -950,13 +957,24 @@ const LIST_PAGE_SIZE = 8;
 // A grid tile's line under its name, by the sort: the date visited, or the rating, when sorted by it (an em dash for a place
 // without one, which sorts last); otherwise its usual line (spots visited for a destination, a spot's country).
 const tileSub = (sort: ExploredSort, date: string, rating: number, usual: string) =>
-  sort === 'date' ? (date ? shortDate(date) : '—')
+  sort === 'date' ? (date || '—')
   : sort === 'rating' ? (rating ? `★ ${rating.toFixed(1).replace(/\.0$/, '')}` : '—')
   : usual;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const shortDate = (iso: string) => {
   const [y, m, d] = iso.split('-').map(Number);
   return y && m ? `${d ? `${d} ` : ''}${MONTHS[m - 1]} ${y}` : '';
+};
+// A visit's dates, as short as they read: one day ("12 Mar 2025"), or its range with what the two ends share said once
+// ("3–9 Mar 2025", "28 Feb – 4 Mar 2025", "30 Dec 2024 – 2 Jan 2025"). '' for no visit.
+const visitLabel = (v?: { start: string; end: string }) => {
+  if (!v) return '';
+  if (v.end === v.start) return shortDate(v.start);
+  const [y1, m1, d1] = v.start.split('-').map(Number), [y2, m2] = v.end.split('-').map(Number);
+  if (!y1 || !m1 || !d1 || !y2 || !m2) return shortDate(v.end);
+  if (y1 !== y2) return `${shortDate(v.start)} – ${shortDate(v.end)}`;
+  if (m1 !== m2) return `${d1} ${MONTHS[m1 - 1]} – ${shortDate(v.end)}`;
+  return `${d1}–${shortDate(v.end)}`;
 };
 function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   // `photo`: a small photo shown in place of the country flag (a destination's own photo).
@@ -1012,7 +1030,7 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                     </View>
                   )}
                   {bar && <Text style={styles.countryCount}>{v ? (sort === 'rating' ? v.toFixed(1).replace(/\.0$/, '') : v) : '–'}</Text>}
-                  {sort === 'date' && <Text style={styles.rankDate}>{r.date ? shortDate(r.date) : '–'}</Text>}
+                  {sort === 'date' && <Text style={styles.rankDate}>{r.date || '–'}</Text>}
                 </Pressable>
               );
             })}
