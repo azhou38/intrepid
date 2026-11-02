@@ -1,0 +1,211 @@
+[
+ {
+  "id": "alpine-national-park-1",
+  "name": "Bogong High Plains",
+  "lat": null,
+  "lon": null,
+  "source": "none",
+  "feature_type": "none",
+  "confidence": "LOW",
+  "moved_m": 0,
+  "note": "Wikipedia point coincides with OSM peak Mount Nelse; OSM has no visitor point (lookout, car park, centre) tagged for the plateau, and Falls Creek village is the gateway; keep current pin"
+ },
+ {
+  "id": "beechworth-7",
+  "name": "Yackandandah Gorge Scenic Walk",
+  "lat": null,
+  "lon": null,
+  "source": "none",
+  "feature_type": "none",
+  "confidence": "LOW",
+  "moved_m": 0,
+  "note": "No OSM route or feature named Yackandandah Gorge Walk found near Yackandandah (Overpass, Photon); the only Commons file is 635 m from the estimate; keep current"
+ },
+ {
+  "id": "portland-3",
+  "name": "Discovery Bay Coastal Park",
+  "lat": -38.21361,
+  "lon": 141.31111,
+  "source": "OSM node Swan Lake Campground (n1808392134)",
+  "feature_type": "tourism=camp_site",
+  "confidence": "MEDIUM",
+  "moved_m": 8570,
+  "note": "Park visitor point on Swan Lake near Nelson inside the park; replaces the park-centroid point"
+ },
+ {
+  "id": "budj-bim-cultural-landscape",
+  "name": "Budj Bim Cultural Landscape",
+  "lat": -38.061452,
+  "lon": 141.826025,
+  "source": "OSM node Tae Rak Aquaculture Centre and Cafe (n13957766395)",
+  "feature_type": "amenity=cafe (visitor centre)",
+  "confidence": "MEDIUM",
+  "moved_m": 8715,
+  "note": "Budj Bim visitor hub at Lake Condah; alternative is Budj Bim Campground (-38.05646,141.92300)"
+ },
+ {
+  "id": "croajingolong-3",
+  "name": "Gabo Island Lightstation",
+  "lat": -37.568758,
+  "lon": 149.916894,
+  "source": "OSM node man_made=lighthouse (n1818530944); within 30 m of Wikipedia point",
+  "feature_type": "man_made=lighthouse",
+  "confidence": "HIGH",
+  "moved_m": 29,
+  "note": "Lighthouse itself, Gabo Island"
+ },
+ {
+  "id": "south-gippsland-2",
+  "name": "Cape Liptrap Coastal Park",
+  "lat": -38.907196,
+  "lon": 145.92256,
+  "source": "OSM way Cape Liptrap Lighthouse (w1481295768)",
+  "feature_type": "man_made=lighthouse",
+  "confidence": "MEDIUM",
+  "moved_m": 12225,
+  "note": "Park's signature visitor point at the lighthouse; the park is otherwise a centroid; check no other spot shares it"
+ },
+ {
+  "id": "south-gippsland-7",
+  "name": "Great Southern Rail Trail",
+  "lat": -38.692376,
+  "lon": 146.122217,
+  "source": "OSM ways named Great Southern Rail Trail (71 ways, 70.0 km), midpoint along length",
+  "feature_type": "highway=cycleway",
+  "confidence": "MEDIUM",
+  "moved_m": 4793,
+  "note": "Midpoint of the whole trail by length (ways ordered west to east), not a 6 km segment"
+ },
+ {
+  "id": "corrigans-suspension-bridge",
+  "name": "Corrigan's Suspension Bridge",
+  "lat": -38.425568,
+  "lon": 146.572386,
+  "source": "OSM way Corrigan Suspension Bridge (w332222970) plus viewpoint node n7880772535 within 25 m",
+  "feature_type": "highway=footway (bridge)",
+  "confidence": "HIGH",
+  "moved_m": 1907,
+  "note": "Previous pin was 1.9 km from the bridge"
+ },
+ {
+  "id": "errinundra-national-park",
+  "name": "Errinundra National Park",
+  "lat": -37.317312,
+  "lon": 148.838735,
+  "source": "OSM node Errinundra Saddle (n1230051493)",
+  "feature_type": "tourism=picnic_site",
+  "confidence": "MEDIUM",
+  "moved_m": 7703,
+  "note": "Errinundra Saddle picnic area and rainforest walk, the park's main visitor point; replaces centroid"
+ },
+ {
+  "id": "grampians-national-park-3",
+  "name": "Grampians Peaks Trail",
+  "lat": -37.14867,
+  "lon": 142.504052,
+  "source": "OSM route relation 11370594 Grampians Peaks Trail, chained member ways, midpoint by length",
+  "feature_type": "route=hiking relation",
+  "confidence": "MEDIUM",
+  "moved_m": 8961,
+  "note": "Midpoint of the relation (225 km chained incl. variants vs 160 km official, so approximate), near Halls Gap on the trail"
+ },
+ {
+  "id": "ararat-5",
+  "name": "Seppelt Great Western",
+  "lat": -37.157389,
+  "lon": 142.854231,
+  "source": "OSM way Seppelts Great Western Winery (w112676024), Photon shop=wine agrees",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "moved_m": 2793,
+  "note": "Winery building; the old point was a Commons median 2.8 km away"
+ },
+ {
+  "id": "horsham-4",
+  "name": "Murtoa Silo Art",
+  "lat": -36.62377,
+  "lon": 142.478448,
+  "source": "OSM man_made=silo ways w686987175-178 (Murtoa grain silos), centre of the north row",
+  "feature_type": "man_made=silo",
+  "confidence": "MEDIUM",
+  "moved_m": 1171,
+  "note": "Silo art ON the silos; OSM does not say which silos carry the mural, so this is the centre of the nearest silo group beside the Stick Shed (150 m)"
+ },
+ {
+  "id": "little-desert-national-park",
+  "name": "Little Desert National Park",
+  "lat": -36.446845,
+  "lon": 141.79813,
+  "source": "OSM way Kiata Campground (w36706958)",
+  "feature_type": "tourism=camp_site",
+  "confidence": "MEDIUM",
+  "moved_m": 57289,
+  "note": "Main park campground and walks start at Kiata; replaces centroid"
+ },
+ {
+  "id": "sheep-hills-silo-art",
+  "name": "Sheep Hills Silo Art",
+  "lat": -36.348689,
+  "lon": 142.530194,
+  "source": "OSM node Sheep Hills Silo Art (n6217980250) named for the artwork",
+  "feature_type": "tourism=artwork",
+  "confidence": "HIGH",
+  "moved_m": 31843,
+  "note": "Old pin (-36.076,142.421) is actually Brim, Guido van Helten's silos 30 km north; Sheep Hills (Adnate) is here; the Yarriambiack Silo Art Trail node is within 15 m"
+ },
+ {
+  "id": "st-arnaud-silo-art-and-murals",
+  "name": "St Arnaud Silo Art and Murals",
+  "lat": -36.62148,
+  "lon": 143.25896,
+  "source": "OSM man_made=silo ways (w520755336-8, w686787568-80) beside the railway, centre of the group",
+  "feature_type": "man_made=silo",
+  "confidence": "MEDIUM",
+  "moved_m": 1119,
+  "note": "On the silos, 0.6 km south-east of the town point"
+ },
+ {
+  "id": "melbourne-36",
+  "name": "Lygon Street",
+  "lat": -37.798414,
+  "lon": 144.967387,
+  "source": "OSM ways named Lygon Street in Carlton (24 ways), midpoint",
+  "feature_type": "highway=tertiary",
+  "confidence": "MEDIUM",
+  "moved_m": 83,
+  "note": "On Lygon St in the Carlton restaurant strip; Commons median 130 m away"
+ },
+ {
+  "id": "melbourne-61",
+  "name": "Jewish Holocaust Centre",
+  "lat": -37.883404,
+  "lon": 145.00109,
+  "source": "OSM node Melbourne Holocaust Museum (n12357569031) and Commons median of 2 files within 22 m",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "moved_m": 1,
+  "note": "Museum building, Elsternwick (renamed from Jewish Holocaust Centre)"
+ },
+ {
+  "id": "murray-sunset-national-park",
+  "name": "Murray-Sunset National Park",
+  "lat": -35.055806,
+  "lon": 141.730123,
+  "source": "OSM node Lakes Crosbie Campground (n1808391953)",
+  "feature_type": "tourism=camp_site",
+  "confidence": "MEDIUM",
+  "moved_m": 33908,
+  "note": "Pink Lakes area, the park's main visitor point; replaces Wikipedia centroid"
+ },
+ {
+  "id": "wyperfeld-national-park",
+  "name": "Wyperfeld National Park",
+  "lat": -35.445712,
+  "lon": 141.995588,
+  "source": "OSM node Casuarina Campground (n1808392732)",
+  "feature_type": "tourism=camp_site",
+  "confidence": "MEDIUM",
+  "moved_m": 12455,
+  "note": "Park's main camping and walks hub; the park-office building near Wonga is at -35.58704,142.05160"
+ }
+]
