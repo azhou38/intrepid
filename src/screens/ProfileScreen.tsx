@@ -1028,7 +1028,7 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                     <Text style={styles.rankName} numberOfLines={1}>{r.name}</Text>
                     {(!!r.sub || !!r.subFlag) && (
                       <View style={styles.rankSubRow}>
-                        {!!r.subFlag && <CircleFlag countryCode={r.subFlag} size={13} ring ringWidth={1} />}
+                        {!!r.subFlag && <CircleFlag countryCode={r.subFlag} size={14} ring ringWidth={1.5} style={styles.flagRing} />}
                         {!!r.sub && <Text style={styles.rankSub} numberOfLines={1}>{r.sub}</Text>}
                       </View>
                     )}
