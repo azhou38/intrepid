@@ -692,7 +692,7 @@ export default function ProfileScreen() {
                 return {
                   // The country as its flag beside the name, not its name.
                   key: d.id, name: d.name, countryCode: d.countryCode, sub: '',
-                  spots: n, rating: sortKeys.destRating(d.id), date: visitLabel(sortKeys.destVisit.get(d.id)),
+                  spots: n, rating: sortKeys.destRating(d.id), date: visitLabel(sortKeys.destVisit.get(d.id)), dateKey: sortKeys.destDate.get(d.id) ?? '',
                   // The destination's own photo in place of its flag: the grid tiles' small photo (same cache key).
                   photo: (
                     <EntityPhoto
@@ -709,11 +709,14 @@ export default function ProfileScreen() {
             /* A photo grid: one tile per destination, its name and its visited spots over its photo. */
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownDests.map((d, k) => {
               const n = spotsByDest.get(d.id) ?? 0;
+              // Its rank by spots visited, shared with the destinations it ties with (as in the list, see RankList).
+              let rk = k + 1;
+              while (rk > 1 && (spotsByDest.get(shownDests[rk - 2].id) ?? 0) === n) rk -= 1;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode,
                 sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), sortKeys.destRating(d.id), exploredSort === 'spots' && n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
-                // Sorted by most spots, the top three (with any spots) wear a rank badge.
-                rank: exploredSort === 'spots' && n > 0 && k < 3 ? k + 1 : undefined,
+                // Sorted by most spots, the top three ranks (with any spots) wear a rank badge, every tile that ties for one.
+                rank: exploredSort === 'spots' && n > 0 && rk <= 3 ? rk : undefined,
                 photo: (
                   // The same small-photo key as the country sheet's destination pickers, so either can reuse it.
                   <EntityPhoto
@@ -752,7 +755,7 @@ export default function ProfileScreen() {
               <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={shownSpots.map(sp => ({
                 // Its photo in front, and under its name the country's flag and its destination.
                 key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), flagBelow: true, sub: spotDestination(sp)?.name ?? '',
-                rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)),
+                rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)), dateKey: sortKeys.spotDate.get(sp.id) ?? '',
                 // The grid tiles' small photo (same cache key), or the placeholder for a place with none.
                 photo: NO_PHOTO.has(spotPhotoTitle(sp))
                   ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={30} />
@@ -993,7 +996,8 @@ const visitLabel = (v?: { start: string; end: string }) => {
 function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   // `photo`: a small photo shown in place of the country flag (a destination's own photo).
   // `photo`: a small photo leading the row. The country's flag sits beside the name, or beside the line under it (flagBelow).
-  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; spots?: number; rating: number; date: string; photo?: React.ReactNode }[];
+  // `dateKey`: what the date sort orders by (the most recent visit's last day), so rows that tie on it share a rank.
+  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; spots?: number; rating: number; date: string; dateKey: string; photo?: React.ReactNode }[];
   sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
   // As in PhotoGrid: a pick lasts only while its row is on the page showing.
   onClearPick: () => void;
@@ -1003,6 +1007,11 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   const max = sort === 'rating' ? 5 : Math.max(1, ...rows.map(valueOf));
   const pages: typeof rows[] = [];
   for (let i = 0; i < rows.length; i += LIST_PAGE_SIZE) pages.push(rows.slice(i, i + LIST_PAGE_SIZE));
+  // Rows that tie on what the sort measures share a rank (1, 2, 2, 4), shown only on the first of them, or again on the
+  // first row of a page.
+  const tieOf = (r: typeof rows[number]) => (sort === 'spots' ? r.spots ?? 0 : sort === 'rating' ? r.rating : r.dateKey);
+  const ranks: number[] = [];
+  rows.forEach((r, i) => { ranks.push(i > 0 && tieOf(r) === tieOf(rows[i - 1]) ? ranks[i - 1] : i + 1); });
   const scrollX = useSharedValue(0);
   const onListScroll = useAnimatedScrollHandler({ onScroll: e => { scrollX.value = e.contentOffset.x; } });
   const ref = useRef<Animated.ScrollView>(null);
@@ -1024,15 +1033,17 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
         {pages.map((pg, p) => (
           <View key={p} style={styles.rankPage}>
             {pg.map((r, j) => {
-              const v = valueOf(r), k = p * LIST_PAGE_SIZE + j;
-              // Sorted by spots visited, the top three (with any spots) get the grid's gold, silver and bronze: on the rank
-              // number, as a badge, and on the bar.
-              const medal = sort === 'spots' && v > 0 && k < 3 ? RANK_COLORS[k] : undefined;
+              const v = valueOf(r), k = p * LIST_PAGE_SIZE + j, rank = ranks[k];
+              const showRank = j === 0 || rank !== ranks[k - 1];
+              // Sorted by spots visited, the top three ranks (with any spots) get the grid's gold, silver and bronze: on the
+              // rank number, as a badge, and on the bar.
+              const medal = sort === 'spots' && v > 0 && rank <= 3 ? RANK_COLORS[rank - 1] : undefined;
               return (
                 <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
-                  {sort !== 'name' && (medal
-                    ? <View style={styles.rankNumSlot}><View style={[styles.rankBadge, styles.rankBadgeList, { backgroundColor: medal }]}><Text style={styles.rankTxt}>{k + 1}</Text></View></View>
-                    : <Text style={styles.rankNum}>{k + 1}</Text>)}
+                  {sort !== 'name' && (!showRank ? <View style={styles.rankNumSlot} />
+                    : medal
+                    ? <View style={styles.rankNumSlot}><View style={[styles.rankBadge, styles.rankBadgeList, { backgroundColor: medal }]}><Text style={styles.rankTxt}>{rank}</Text></View></View>
+                    : <Text style={styles.rankNum}>{rank}</Text>)}
                   {!!r.photo && <View style={styles.rankThumb}>{r.photo}</View>}
                   <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
                     {/* The country's flag on the left of the name, or (flagBelow) of the line under it. */}
