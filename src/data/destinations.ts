@@ -1874,6 +1874,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Beach season peaks {months} and crowds double the population, so aim for the quieter end.",
   },
   {
+    id: 'south-gippsland', name: "South Gippsland", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 100,
+    continent: 'Oceania', coordinates: { latitude: -38.6, longitude: 145.95 },
+    category: 'nature', icon: "🌊", rank: 4,
+    tagline: "Prom Country's wild coast, Strzelecki rainforest and coal-mining heritage",
+    description: "South Gippsland, also known as Prom Country, takes in the southernmost point of the Australian mainland. Its draws range from coastal parks and beaches to mountain rainforest and maritime and coal-mining heritage. The State Coal Mine at Wonthaggi worked from 1910 to 1968 and is now a Parks Victoria heritage area with a cafe. The Prom Country Information Centre at Korumburra is about 90 minutes' drive from Melbourne.",
+    whyVisit: ["Walk wild coastal parks and beaches", "Explore coal-mining heritage", "Cycle the Great Southern Rail Trail"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Coastal parks", "Mining heritage", "Rail trail"],
+    goodToKnow: [
+      { icon: "🚗", title: "Drive, don't rely on buses", detail: "V/Line's daily bus runs only from Melbourne to Yarram, so reaching the coastal parks and towns is realistic only by car." },
+      { icon: "ℹ️", title: "Stop at the info centre", detail: "The Prom Country Information Centre on the South Gippsland Highway at Korumburra is the region's main visitor centre." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Beaches, coastal walks and rail-trail rides are at their best in {months}.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
