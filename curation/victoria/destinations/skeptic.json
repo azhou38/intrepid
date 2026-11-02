@@ -1,0 +1,85 @@
+[
+ {
+  "id": "gippsland-lakes",
+  "verdict": "rerank",
+  "rule": "Ranking; name test",
+  "reason": "Name is a real tourism brand (Visit Gippsland) and Lakes Entrance, Metung, Bairnsdale give 5 spots, so it passes the bar. Evidence is one counted source per spot and no Wikivoyage page under the name, so rank 3 is generous: 4.",
+  "new_rank": 4
+ },
+ {
+  "id": "south-gippsland",
+  "verdict": "keep",
+  "rule": "Name test; four-spot bar",
+  "reason": "Wikivoyage region (South and West Gippsland) plus Visit Prom Country brand; 8 spots across several towns."
+ },
+ {
+  "id": "castlemaine",
+  "verdict": "keep",
+  "rule": "Sizable settlements; name test",
+  "reason": "Wikivoyage page, goldfields town with Maldon, diggings and Theatre Royal gives 4 spots, and it is 31 km from Daylesford (no overlap). Mount Franklin sits nearer Daylesford; consider moving it there at placement but it is not needed to clear the bar."
+ },
+ {
+  "id": "heathcote",
+  "verdict": "demote",
+  "rule": "Name test; bar of four worthwhile spots",
+  "reason": "Single weak source, no Wikivoyage page, no spot with a counted source; the park, lake, cliffs and rail trail are local draws. Too far from Bendigo (45 km) to merge. Spots become standalone."
+ },
+ {
+  "id": "ararat",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements / hubs",
+  "reason": "Wikivoyage page; 7 spots with several counted sources (Aradale, J Ward, Gum San, Seppelt). Rank 5 is honest."
+ },
+ {
+  "id": "hamilton-victoria",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements / hubs",
+  "reason": "Western District regional hub with a Wikivoyage page; 4 spots, two with counted sources. Rank 5. Name needs a disambiguated WIKI key (NZ Hamilton exists); owner to confirm."
+ },
+ {
+  "id": "horsham",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements / hubs",
+  "reason": "Wimmera hub with Wikivoyage page and 6 spots; base for Arapiles and Little Desert. Rank 5."
+ },
+ {
+  "id": "geelong",
+  "verdict": "rerank",
+  "rule": "Ranking; sizable settlements",
+  "reason": "Victoria's second city and a guidebook chapter, so it stays a destination, but the spots are thin (best has 1,453 views) and rank 3 is inflated: 4.",
+  "new_rank": 4
+ },
+ {
+  "id": "bellarine-peninsula",
+  "verdict": "keep",
+  "rule": "Prefer the region travellers name",
+  "reason": "Bellarine is the tourism brand and holds Queenscliff, Barwon Heads and Point Lonsdale; 5 spots; centres 27 km from Geelong, no overlap. Rank 4 stands."
+ },
+ {
+  "id": "portland",
+  "verdict": "rerank",
+  "rule": "Ranking; sizable settlements",
+  "reason": "Portland is a Wikivoyage town and the hub of the far south-west coast with 4 spots, but nothing has a counted source. Keep as a base at rank 5.",
+  "new_rank": 5
+ },
+ {
+  "id": "mount-buffalo-national-park",
+  "verdict": "keep",
+  "rule": "Granularity: national park",
+  "reason": "Flagship High Country park with 6 spots; Parks Victoria page is the name evidence. Rank 3 fits."
+ },
+ {
+  "id": "wangaratta",
+  "verdict": "rerank",
+  "rule": "Ranking; overlap with Ned Kelly cluster",
+  "reason": "Wikivoyage regional hub with 7 spots, but three are Glenrowan Ned Kelly near-duplicates and the draws are Glenrowan, Milawa and King Valley. Keep as a hub at rank 5.",
+  "new_rank": 5
+ },
+ {
+  "id": "mildura",
+  "verdict": "rerank",
+  "rule": "Ranking; sizable settlements",
+  "reason": "Sunraysia regional centre with Wikivoyage page and tourism brand, 4 spots. Passes the bar but spots are modest: rank 4.",
+  "new_rank": 4
+ }
+]

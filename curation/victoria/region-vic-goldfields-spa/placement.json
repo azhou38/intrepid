@@ -60,18 +60,6 @@
    "defaultZoomSpanKm": 50,
    "rank": 4,
    "name_evidence": "Wikivoyage \"Castlemaine\" page (see/do listings include Maldon, diggings, Theatre Royal)."
-  },
-  {
-   "id": "heathcote",
-   "name": "Heathcote",
-   "category": "city",
-   "coordinates": {
-    "lat": -36.9167,
-    "lng": 144.7
-   },
-   "defaultZoomSpanKm": 45,
-   "rank": 5,
-   "name_evidence": "bendigoregion.com.au Things to do in Bendigo names Heathcote wine town; Heathcote wine region (GI) is a tourism brand. WEAK: single counted source, no Wikivoyage page; owner may demote."
   }
  ],
  "spots": [
@@ -1110,9 +1098,9 @@
   },
   {
    "name": "Heathcote-Graytown National Park",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-1",
+   "action": "standalone",
+   "destination": null,
+   "id": "heathcote-graytown-national-park",
    "coordinates": {
     "lat": -36.79633333,
     "lng": 144.86633333
@@ -1133,13 +1121,17 @@
     "cost",
     "ticketUrl"
    ],
-   "reason": "kept; inside heathcote span and reached from that base"
+   "reason": "kept; inside heathcote span and reached from that base",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
   },
   {
    "name": "Lake Eppalock",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-2",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-eppalock",
    "coordinates": {
     "lat": -36.850694,
     "lng": 144.531841
@@ -1160,13 +1152,17 @@
     "cost",
     "ticketUrl"
    ],
-   "reason": "kept; inside heathcote span and reached from that base"
+   "reason": "kept; inside heathcote span and reached from that base",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
   },
   {
    "name": "Pink Cliffs Geological Reserve",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-3",
+   "action": "standalone",
+   "destination": null,
+   "id": "pink-cliffs-geological-reserve",
    "coordinates": null,
    "coordinates_source": null,
    "pin_status": "provisional",
@@ -1185,13 +1181,17 @@
     "ticketUrl"
    ],
    "reason": "kept; inside heathcote span and reached from that base",
-   "pin_note": "Wikipedia \"Pink Cliffs\" is the Utah feature; coordinates discarded"
+   "pin_note": "Wikipedia \"Pink Cliffs\" is the Utah feature; coordinates discarded",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
   },
   {
    "name": "O'Keefe Rail Trail",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-4",
+   "action": "standalone",
+   "destination": null,
+   "id": "o-keefe-rail-trail",
    "coordinates": null,
    "coordinates_source": null,
    "pin_status": "provisional",
@@ -1210,7 +1210,11 @@
     "ticketUrl"
    ],
    "reason": "kept; inside heathcote span and reached from that base",
-   "pin_note": "no coordinates in sources; pins stage must resolve"
+   "pin_note": "no coordinates in sources; pins stage must resolve",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
   }
  ],
  "standalone_spots": [
@@ -1463,5 +1467,11 @@
   "Maldon (Wikipedia + Visit Victoria recheck) placed under Castlemaine; Maldon Vintage Machinery Museum stays rejected.",
   "No existing Victoria spots/destinations in this region; existing_fixes empty.",
   "Rail trails: Ballarat-Skipton pinned at route midpoint by pins stage; O'Keefe likewise."
+ ],
+ "crossregion_decisions": [
+  {
+   "dropped": "heathcote destination",
+   "reason": "Destination skeptic: demote (one source, 4 spots, 45 km from Bendigo); its spots are standalone."
+  }
  ]
 }

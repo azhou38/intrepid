@@ -40,7 +40,7 @@
    "timezone": "Australia/Melbourne",
    "category": "park",
    "icon": "\ud83c\udfde\ufe0f",
-   "rank": 3,
+   "rank": 4,
    "coordinates": {
     "latitude": -37.68,
     "longitude": 149.55
@@ -71,7 +71,7 @@
    "timezone": "Australia/Melbourne",
    "category": "lake",
    "icon": "\u26f5",
-   "rank": 3,
+   "rank": 4,
    "coordinates": {
     "latitude": -37.9,
     "longitude": 147.85
@@ -184,19 +184,6 @@
    "defaultZoomSpanKm": 50,
    "rank": 4,
    "name_evidence": "Wikivoyage \"Castlemaine\" page (see/do listings include Maldon, diggings, Theatre Royal).",
-   "_region": "vic-goldfields-spa"
-  },
-  {
-   "id": "heathcote",
-   "name": "Heathcote",
-   "category": "city",
-   "coordinates": {
-    "lat": -36.9167,
-    "lng": 144.7
-   },
-   "defaultZoomSpanKm": 45,
-   "rank": 5,
-   "name_evidence": "bendigoregion.com.au Things to do in Bendigo names Heathcote wine town; Heathcote wine region (GI) is a tourism brand. WEAK: single counted source, no Wikivoyage page; owner may demote.",
    "_region": "vic-goldfields-spa"
   },
   {
@@ -336,7 +323,7 @@
     "longitude": 144.3617
    },
    "defaultZoomSpanKm": 45,
-   "rank": 3,
+   "rank": 4,
    "category": "city",
    "icon": "\ud83c\udfd9\ufe0f",
    "name_evidence": "Wikivoyage has a \"Geelong\" city page whose See list names these places; Victoria's second city and regional hub.",
@@ -527,7 +514,7 @@
     "longitude": 141.6038
    },
    "defaultZoomSpanKm": 70,
-   "rank": 4,
+   "rank": 5,
    "category": "city",
    "icon": "\u2693",
    "name_evidence": "Wikivoyage has a \"Portland (Victoria)\" page; Victoria's first permanent European settlement.",
@@ -739,7 +726,7 @@
    "coordinates_source": "wikipedia:Wangaratta",
    "pin_status": "provisional",
    "defaultZoomSpanKm": 70,
-   "rank": 4,
+   "rank": 5,
    "name_evidence": "Wikivoyage page \"Wangaratta\", regional hub covering Glenrowan, Milawa and the King Valley wine country.",
    "spots": [
     "wangaratta-1",
@@ -940,7 +927,7 @@
    "continent": "Oceania",
    "timezone": "Australia/Melbourne",
    "category": "city",
-   "rank": 3,
+   "rank": 4,
    "coordinates": {
     "latitude": -34.18888889,
     "longitude": 142.15833333
@@ -3691,9 +3678,9 @@
   },
   {
    "name": "Heathcote-Graytown National Park",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-1",
+   "action": "standalone",
+   "destination": null,
+   "id": "heathcote-graytown-national-park",
    "coordinates": {
     "lat": -36.79633333,
     "lng": 144.86633333
@@ -3715,13 +3702,17 @@
     "ticketUrl"
    ],
    "reason": "kept; inside heathcote span and reached from that base",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
    "_region": "vic-goldfields-spa"
   },
   {
    "name": "Lake Eppalock",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-2",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-eppalock",
    "coordinates": {
     "lat": -36.850694,
     "lng": 144.531841
@@ -3743,13 +3734,17 @@
     "ticketUrl"
    ],
    "reason": "kept; inside heathcote span and reached from that base",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
    "_region": "vic-goldfields-spa"
   },
   {
    "name": "Pink Cliffs Geological Reserve",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-3",
+   "action": "standalone",
+   "destination": null,
+   "id": "pink-cliffs-geological-reserve",
    "coordinates": null,
    "coordinates_source": null,
    "pin_status": "provisional",
@@ -3769,13 +3764,17 @@
    ],
    "reason": "kept; inside heathcote span and reached from that base",
    "pin_note": "Wikipedia \"Pink Cliffs\" is the Utah feature; coordinates discarded",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
    "_region": "vic-goldfields-spa"
   },
   {
    "name": "O'Keefe Rail Trail",
-   "action": "spot",
-   "destination": "heathcote",
-   "id": "heathcote-4",
+   "action": "standalone",
+   "destination": null,
+   "id": "o-keefe-rail-trail",
    "coordinates": null,
    "coordinates_source": null,
    "pin_status": "provisional",
@@ -3795,6 +3794,10 @@
    ],
    "reason": "kept; inside heathcote span and reached from that base",
    "pin_note": "no coordinates in sources; pins stage must resolve",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
    "_region": "vic-goldfields-spa"
   },
   {
