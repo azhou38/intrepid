@@ -928,6 +928,9 @@ function PageRange({ scrollX, total, pageCount, pageSize }: { scrollX: SharedVal
 // A tile's footer: the name and sub line over a dark gradient that fills the footer's own box (full tile width, as tall as the
 // text plus room to fade in above it). Each footer's gradient has its own id: with one shared id, the spot grid's tiles
 // (mounted after the destination grid's had gone) drew no gradient at all.
+// The footer's top padding, which the scrim fades in over, and how dark it is from there down, behind the text.
+const SCRIM_FADE = 28;
+const SCRIM_UNDER_TEXT = 0.55;
 function TileFooter({ name, sub }: { name: string; sub: string }) {
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
   const scrimId = `tileScrim${React.useId().replace(/[^a-zA-Z0-9]/g, '')}`;
@@ -938,10 +941,12 @@ function TileFooter({ name, sub }: { name: string; sub: string }) {
         <Svg width={box.w} height={box.h} style={StyleSheet.absoluteFill}>
           <Defs>
             <SvgLinearGradient id={scrimId} x1="0" y1="0" x2="0" y2="1">
+              {/* It fades in over the footer's top padding only, so every line of the text, the first of three as much as
+                  the last, sits on shading at least as dark as SCRIM_UNDER_TEXT. */}
               <Stop offset="0" stopColor="#000" stopOpacity={0} />
-              <Stop offset="0.25" stopColor="#000" stopOpacity={0.12} />
-              <Stop offset="0.55" stopColor="#000" stopOpacity={0.4} />
-              <Stop offset="1" stopColor="#000" stopOpacity={0.78} />
+              <Stop offset={Math.min(0.5, (SCRIM_FADE * 0.5) / box.h)} stopColor="#000" stopOpacity={0.2} />
+              <Stop offset={Math.min(0.7, SCRIM_FADE / box.h)} stopColor="#000" stopOpacity={SCRIM_UNDER_TEXT} />
+              <Stop offset="1" stopColor="#000" stopOpacity={0.8} />
             </SvgLinearGradient>
           </Defs>
           <Rect x={0} y={0} width={box.w} height={box.h} fill={`url(#${scrimId})`} />
@@ -1398,8 +1403,8 @@ const styles = StyleSheet.create({
   rankBadge: { position: 'absolute', top: 6, right: 6, width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: 'white' },
   rankTxt:   { fontSize: 11, fontWeight: '800', color: 'white' },
   tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 10, borderWidth: 3, borderColor: PICK_COLOR },
-  tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: 28, paddingHorizontal: 8, paddingBottom: 8 },
-  tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
+  tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: SCRIM_FADE, paddingHorizontal: 8, paddingBottom: 8 },
+  tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 4 },
   // A tile's flag, in its top left corner (the rank badge takes the top right).
   tileFlag:   { position: 'absolute', top: 6, left: 6 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
