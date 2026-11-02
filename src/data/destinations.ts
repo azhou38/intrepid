@@ -3387,6 +3387,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [6, 7, 8, 9, 10],
     bestTimeBlurb: "Southern right whales pass the capes in {months}, the season for whale watching from the cliffs.",
   },
+  {
+    id: 'wangaratta', name: "Wangaratta", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 70,
+    continent: 'Oceania', coordinates: { latitude: -36.3583, longitude: 146.3125 },
+    category: 'city', icon: "🍷", rank: 5,
+    tagline: "A north-east Victorian city at the gateway to Ned Kelly country and wine valleys",
+    description: "Wangaratta is a city of 29,808 people at the junction of the Ovens and King rivers, 236 km from Melbourne on the Hume Freeway. Glenrowan, 14 km away, is where bushranger Ned Kelly made his last stand in 1880, and its vines were first planted in 1866. In the King Valley, Italian migrants of the 1940s and 1950s switched from tobacco to wine, and the valley is known for sangiovese, nebbiolo and barbera. The 95 km Murray to the Mountains Rail Trail starts here.",
+    whyVisit: ["Taste Italian varieties in wine valleys", "Follow the Ned Kelly story"],
+    whyVisitPhotos: ["", ""],
+    highlights: ["Wine valleys", "Ned Kelly story"],
+    goodToKnow: [
+      { icon: "☀️", title: "Warby Ranges get hot", detail: "Bushwalking in Warby-Ovens National Park can be very hot in summer, so walk in the cooler months or early in the day." },
+      { icon: "🚲", title: "Ride the rail trail", detail: "The Murray to the Mountains Rail Trail is sealed for almost its whole 95 km, so ordinary bikes cope." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Come in {months} to avoid the summer heat that makes Warby Ranges walks tough.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {

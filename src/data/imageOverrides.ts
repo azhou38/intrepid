@@ -3056,4 +3056,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "South Gippsland",
   "Castlemaine",
   "Portland",
+  "Wangaratta",
 ]);
