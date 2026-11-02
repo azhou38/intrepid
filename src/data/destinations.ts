@@ -1826,6 +1826,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Boating, fishing and swimming peak in {months}, when the towns are busiest and beaches are patrolled.",
   },
   {
+    id: 'mildura', name: "Mildura", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -34.18888889, longitude: 142.15833333 },
+    category: 'city', icon: "🚢", rank: 4,
+    tagline: "Murray River city of paddle steamers, grapes and citrus groves in the Sunraysia",
+    description: "Mildura is a regional city on the Victorian bank of the Murray River and the largest settlement in Sunraysia. George Chaffey founded the irrigation settlement in 1887, and the area now grows about 80% of Victoria's grapes and more than 70% of Australia's dried vine fruits, plus citrus, avocados and almonds. Paddle steamers pass through the lock and weir at Lock 11, and the Murray can be cruised on the Paddlesteamer Melbourne or a chartered houseboat. Mungo National Park is about two hours away for a day trip.",
+    whyVisit: ["Cruise the Murray by paddlesteamer", "Taste fresh Sunraysia produce", "Swim and walk along the river"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Paddlesteamer cruises", "Fresh produce", "River beaches"],
+    goodToKnow: [
+      { icon: "🍊", title: "Fruit fly zone", detail: "Don't bring fruit or vegetables into Mildura's fruit-fly-free zone, or take them out across the zone or interstate borders. Fines can reach $100,000." },
+      { icon: "🚗", title: "Hire a car", detail: "Most attractions need a car. Local buses run on weekdays in business hours, and rental companies operate from the airport." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Summers average 32C with some days over 40C, so {months} are milder for river walks.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
