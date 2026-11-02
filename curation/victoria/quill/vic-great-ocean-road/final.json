@@ -1,0 +1,614 @@
+{
+ "spots": {
+  "geelong-2": {
+   "name": "National Wool Museum",
+   "icon": "🧶",
+   "category": "museum",
+   "bio": "Museum of wool, fibre and textiles in the former Dennys, Lascelles woolstore, opened in 1988.",
+   "coordinates": {
+    "latitude": -38.145359,
+    "longitude": 144.361174
+   },
+   "wiki": "National Wool Museum (Geelong)",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 13,
+   "costMax": 13,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nwm.vic.gov.au/"
+  },
+  "geelong-3": {
+   "name": "You Yangs Regional Park",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Granite peaks rising from the plains, with Flinders Peak views to Melbourne and Geelong and over 50 km of trails.",
+   "coordinates": {
+    "latitude": -37.948173,
+    "longitude": 144.420011
+   },
+   "wiki": "You Yangs",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/you-yangs-regional-park"
+  },
+  "geelong-4": {
+   "name": "Geelong Botanic Gardens",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Botanic garden in Eastern Park, established in 1850 and the fourth oldest in Australia.",
+   "coordinates": {
+    "latitude": -38.150084,
+    "longitude": 144.377836
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://app.geelongcity.vic.gov.au/gbg/"
+  },
+  "bellarine-peninsula-1": {
+   "name": "Queenscliff",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Town at the Bellarine Peninsula's tip, home to Fort Queenscliff and the terminus of the Bellarine Railway.",
+   "coordinates": {
+    "latitude": -38.267113,
+    "longitude": 144.661295
+   },
+   "wiki": "Queenscliff, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "bellarine-peninsula-2": {
+   "name": "Fort Queenscliff",
+   "icon": "🏰",
+   "category": "historic",
+   "bio": "1860 fort guarding the entrance to Port Phillip, entered by weekend guided tour only; bring ID.",
+   "coordinates": {
+    "latitude": -38.271926,
+    "longitude": 144.660356
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.army.gov.au/community/engage-and-learn/army-museums/fort-queenscliff-museum"
+  },
+  "bellarine-peninsula-3": {
+   "name": "Bellarine Peninsula Railway",
+   "icon": "🚂",
+   "category": "entertainment",
+   "bio": "Volunteer-run steam railway from Queenscliff along 16 km of former branch line towards Drysdale.",
+   "coordinates": {
+    "latitude": -38.2644791,
+    "longitude": 144.6634614
+   },
+   "wiki": "Bellarine Railway",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "costMin": 18,
+   "costMax": 18,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://bellarinerailway.com.au/"
+  },
+  "surf-coast-1": {
+   "name": "Bells Beach",
+   "icon": "🏄",
+   "category": "beach",
+   "bio": "Surf beach near Torquay that has hosted the Rip Curl Pro, the world's longest-running pro surf contest, since 1962.",
+   "coordinates": {
+    "latitude": -38.368985,
+    "longitude": 144.282452
+   },
+   "wiki": "Bells Beach, Victoria",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/Coastal-Reserves/Bells-Beach"
+  },
+  "surf-coast-2": {
+   "name": "Australian National Surfing Museum",
+   "icon": "🏄",
+   "category": "museum",
+   "bio": "Torquay museum with the Australian Surfing Hall of Fame and boards from early wooden designs to modern ones.",
+   "coordinates": {
+    "latitude": -38.326626,
+    "longitude": 144.315962
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://australiannationalsurfingmuseum.com.au/"
+  },
+  "surf-coast-3": {
+   "name": "Split Point Lighthouse",
+   "icon": "🗼",
+   "category": "historic",
+   "bio": "Aireys Inlet lighthouse, the 'White Lady' of Round the Twist, with a climb to the top for 360-degree coastal views.",
+   "coordinates": {
+    "latitude": -38.468003,
+    "longitude": 144.104468
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://splitpointlighthouse.com.au/"
+  },
+  "surf-coast-4": {
+   "name": "Torquay",
+   "icon": "🏄",
+   "category": "historic",
+   "bio": "Bass Strait town 21 km south of Geelong, gateway to the Great Ocean Road and home of the national surfing museum.",
+   "coordinates": {
+    "latitude": -38.326655,
+    "longitude": 144.313408
+   },
+   "wiki": "Torquay, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "surf-coast-8": {
+   "name": "Great Ocean Road Memorial Arch",
+   "icon": "🪵",
+   "category": "monument",
+   "bio": "Timber-log arch over the Great Ocean Road at Eastern View, honouring the returned servicemen who built the road.",
+   "coordinates": {
+    "latitude": -38.47204,
+    "longitude": 144.044575
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "lorne-2": {
+   "name": "Erskine Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "A 35.5 m single-drop waterfall in the Otways 10 km inland from Lorne, with a lookout and about 240 steps to the base.",
+   "coordinates": {
+    "latitude": -38.506706,
+    "longitude": 143.913231
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park"
+  },
+  "lorne-3": {
+   "name": "Sheoak Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "A 15.8 m waterfall on Sheoak Creek beside the Great Ocean Road in Great Otway National Park, about 6 km from Lorne.",
+   "coordinates": {
+    "latitude": -38.565131,
+    "longitude": 143.962772
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park"
+  },
+  "lorne-4": {
+   "name": "Kennett River",
+   "icon": "🐨",
+   "category": "nature",
+   "bio": "Great Ocean Road settlement between Lorne and Apollo Bay, where wild koalas live in the gums along Grey River Road.",
+   "coordinates": {
+    "latitude": -38.667696,
+    "longitude": 143.85892
+   },
+   "wiki": "Kennett River, Victoria",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "apollo-bay-1": {
+   "name": "Cape Otway Lightstation",
+   "icon": "🗼",
+   "category": "historic",
+   "bio": "Victoria's oldest working lighthouse on Cape Otway, a heritage precinct with whale watching in winter and spring.",
+   "coordinates": {
+    "latitude": -38.851289,
+    "longitude": 143.514453
+   },
+   "wiki": "Cape Otway Lighthouse",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.lightstation.com/"
+  },
+  "apollo-bay-2": {
+   "name": "Maits Rest",
+   "icon": "🌿",
+   "category": "hike",
+   "bio": "An 800 m self-guided circuit walk through cool temperate rainforest in Great Otway National Park near Apollo Bay.",
+   "coordinates": {
+    "latitude": -38.755599,
+    "longitude": 143.55525
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park"
+  },
+  "apollo-bay-3": {
+   "name": "Hopetoun Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "An 18 m single-drop waterfall on the Aire River in Great Otway National Park, reached by a 1 km return walk.",
+   "coordinates": {
+    "latitude": -38.668083,
+    "longitude": 143.568693
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/hopetoun-falls-walk"
+  },
+  "apollo-bay-4": {
+   "name": "Triplet Falls",
+   "icon": "💦",
+   "category": "hike",
+   "bio": "A 1.8 km walk through ancient rainforest to a platform viewing three cascades, past an old timber mill site.",
+   "coordinates": {
+    "latitude": -38.671067,
+    "longitude": 143.493002
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/triplet-falls-walk"
+  },
+  "apollo-bay-5": {
+   "name": "Beauchamp Falls",
+   "icon": "💦",
+   "category": "hike",
+   "bio": "An 18.7 m single-drop waterfall near Beech Forest in the Otways, reached by a walk of about 3 km return.",
+   "coordinates": {
+    "latitude": -38.649357,
+    "longitude": 143.611771
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park"
+  },
+  "apollo-bay-6": {
+   "name": "Otway Fly",
+   "icon": "🌲",
+   "category": "entertainment",
+   "bio": "A 600 m steel Treetop Walk 25 to 30 m above the Otway forest floor, with a 47 m Spiral Tower and guided ziplines.",
+   "coordinates": {
+    "latitude": -38.6515965,
+    "longitude": 143.5058178
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 22.5,
+   "costMax": 27.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://otwayfly.com.au/"
+  },
+  "port-campbell-national-park-1": {
+   "name": "Twelve Apostles",
+   "icon": "🪨",
+   "category": "landmark",
+   "bio": "Limestone stacks up to 50 m high off the Great Ocean Road, six visible from the main viewpoint, glowing at sunset.",
+   "coordinates": {
+    "latitude": -38.660285,
+    "longitude": 143.093358
+   },
+   "wiki": "The Twelve Apostles (Victoria)",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Port-Campbell-National-Park/Twelve-Apostles"
+  },
+  "port-campbell-national-park-2": {
+   "name": "Loch Ard Gorge",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Limestone gorge with a sheltered beach, where two of the 54 people aboard the 1878 Loch Ard wreck survived.",
+   "coordinates": {
+    "latitude": -38.646407,
+    "longitude": 143.070327
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Port-Campbell-National-Park/Loch-Ard-Gorge"
+  },
+  "port-campbell-national-park-6": {
+   "name": "The Grotto",
+   "icon": "🕳️",
+   "category": "nature",
+   "bio": "Natural rock window framing the coastline on the Shipwreck Coast, just beyond Port Campbell near London Bridge.",
+   "coordinates": {
+    "latitude": -38.61836,
+    "longitude": 142.914602
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Port-Campbell-National-Park"
+  },
+  "port-campbell-national-park-7": {
+   "name": "Bay of Islands",
+   "icon": "🪨",
+   "category": "viewpoint",
+   "bio": "Sea cliffs and rock stacks near Peterborough, quieter than the big stops, with whales offshore May to October.",
+   "coordinates": {
+    "latitude": -38.585122,
+    "longitude": 142.825741
+   },
+   "wiki": "Bay of Islands Coastal Park",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Bay-of-Islands-Coastal-Park"
+  },
+  "port-campbell-national-park-8": {
+   "name": "Port Campbell",
+   "icon": "🏖️",
+   "category": "historic",
+   "bio": "Great Ocean Road town west of the Twelve Apostles, base for the Shipwreck Coast sights and whale spotting in season.",
+   "coordinates": {
+    "latitude": -38.619629,
+    "longitude": 142.995366
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "warrnambool-1": {
+   "name": "Flagstaff Hill Maritime Museum",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Maritime museum and village on Flagstaff Hill in Warrnambool, alongside the original lighthouses and garrison.",
+   "coordinates": {
+    "latitude": -38.389725,
+    "longitude": 142.485094
+   },
+   "wiki": "Flagstaff Hill Maritime Village",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 21.4,
+   "costMax": 21.4,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "BLOCKED:https://www.flagstaffhill.com"
+  },
+  "warrnambool-3": {
+   "name": "Deep Blue Hot Springs",
+   "icon": "♨️",
+   "category": "entertainment",
+   "bio": "Geothermal bathing sanctuary in Warrnambool with an indoor bath house, outdoor pools and two-hour sessions.",
+   "coordinates": {
+    "latitude": -38.3971726,
+    "longitude": 142.4739761
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 2.5,
+   "costMin": 33,
+   "costMax": 68,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "warrnambool-4": {
+   "name": "Tower Hill",
+   "icon": "🌋",
+   "category": "nature",
+   "bio": "Wildlife reserve in a dormant volcano crater 15 km north-west of Warrnambool, with emus, koalas and walking trails.",
+   "coordinates": {
+    "latitude": -38.321294,
+    "longitude": 142.359714
+   },
+   "wiki": "Tower Hill Wildlife Reserve",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/tower-hill-wildlife-reserve"
+  },
+  "warrnambool-6": {
+   "name": "Hopkins Falls",
+   "icon": "💦",
+   "category": "nature",
+   "bio": "Victoria's widest cascades, 90 m across the Hopkins River 15 km from Warrnambool, fullest in winter or after rain.",
+   "coordinates": {
+    "latitude": -38.333331,
+    "longitude": 142.618965
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open"
+  },
+  "warrnambool-7": {
+   "name": "Lake Pertobe",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Eight-hectare lakeside park on Warrnambool's foreshore with a giant-slide playground, trails and free barbecues.",
+   "coordinates": {
+    "latitude": -38.390915,
+    "longitude": 142.478615
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "portland-1": {
+   "name": "Cape Bridgewater",
+   "icon": "🦭",
+   "category": "nature",
+   "bio": "Cape 21 km south-west of Portland with high cliffs, a blowhole, a petrified forest and a fur seal colony lookout.",
+   "coordinates": {
+    "latitude": -38.395057,
+    "longitude": 141.412869
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "portland-2": {
+   "name": "Cape Nelson",
+   "icon": "🗼",
+   "category": "historic",
+   "bio": "A 32 m lighthouse lit in 1884 at the end of a scenic drive from Portland, with daily 11:30am tours that climb it.",
+   "coordinates": {
+    "latitude": -38.430988,
+    "longitude": 141.544557
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://capenelsonlighthouse.com.au/"
+  },
+  "portland-3": {
+   "name": "Discovery Bay Coastal Park",
+   "icon": "🏖️",
+   "category": "nature",
+   "bio": "A 50 km coastal park west of Cape Nelson to the South Australian border, with cliffs, long beaches and mobile dunes.",
+   "coordinates": {
+    "latitude": -38.16666667,
+    "longitude": 141.23333333
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/discovery-bay-coastal-park"
+  },
+  "portland-4": {
+   "name": "Great South West Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 262 km loop trail from Portland through coast, forest and Discovery Bay, walkable in day or overnight sections.",
+   "coordinates": {
+    "latitude": -38.333387,
+    "longitude": 141.609499
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://greatsouthwestwalk.com/"
+  },
+  "port-fairy": {
+   "name": "Port Fairy",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Fishing and tourist town on the Moyne River, with a causeway to Griffiths Island's lighthouse and shearwater colony.",
+   "coordinates": {
+    "latitude": -38.385512,
+    "longitude": 142.236672
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costBasis": "open"
+  },
+  "griffiths-island-lighthouse": {
+   "name": "Griffiths Island Lighthouse",
+   "icon": "🗼",
+   "category": "historic",
+   "bio": "Bluestone lighthouse from about 1859 on Griffiths Island, reached by causeway; the grounds are open but the tower is not.",
+   "coordinates": {
+    "latitude": -38.390909,
+    "longitude": 142.253875
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "budj-bim-cultural-landscape": {
+   "name": "Budj Bim Cultural Landscape",
+   "icon": "🐟",
+   "category": "historic",
+   "bio": "World Heritage landscape of Gunditjmara eel-farming channels and weirs, with guided tours from Lake Condah.",
+   "coordinates": {
+    "latitude": -38.06277778,
+    "longitude": 141.92555556
+   },
+   "wiki": "Budj Bim heritage areas",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 89,
+   "costMax": 89,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.budjbim.com.au/"
+  },
+  "mount-eccles-national-park": {
+   "name": "Budj Bim National Park",
+   "icon": "🌋",
+   "category": "nature",
+   "bio": "Volcanic national park with a crater lake, lava canals and caves, and four walks including the crater rim.",
+   "coordinates": {
+    "latitude": -38.0564641,
+    "longitude": 141.9229955
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/budj-bim-national-park"
+  },
+  "mount-leura": {
+   "name": "Mount Leura",
+   "icon": "🌋",
+   "category": "viewpoint",
+   "bio": "Extinct volcano near Camperdown with a 100 m deep crater, and a summit lookout reached by road toward the Grampians.",
+   "coordinates": {
+    "latitude": -38.244386,
+    "longitude": 143.157609
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open"
+  }
+ },
+ "existing_fixes": {},
+ "held": []
+}

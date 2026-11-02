@@ -1,0 +1,322 @@
+{
+ "spots": {
+  "mildura-1": {
+   "name": "Lock 11",
+   "icon": "🔒",
+   "category": "landmark",
+   "bio": "Murray lock and weir at Mildura with Lock Island walking tracks, sandbars and paddle steamers locking through.",
+   "coordinates": {
+    "latitude": -34.173331,
+    "longitude": 142.163167
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "mildura-2": {
+   "name": "Meeting of the Waters",
+   "icon": "🌊",
+   "category": "nature",
+   "bio": "Junction Park lookout at Wentworth, about 20 km west of Mildura, where the Darling River meets the Murray.",
+   "coordinates": null,
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open"
+  },
+  "mildura-3": {
+   "name": "Australian Inland Botanic Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Semi-arid botanic garden at Buronga with Australian arid plants and a rose garden of over 1,600 bushes, free to enter.",
+   "coordinates": {
+    "latitude": -34.137692,
+    "longitude": 142.140896
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "https://www.aibg.live"
+  },
+  "mildura-4": {
+   "name": "Apex Park",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Riverside park on the Murray at Mildura with a large sandbar beach for swimming, occasionally lifeguard-patrolled.",
+   "coordinates": {
+    "latitude": -34.152791,
+    "longitude": 142.165686
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "echuca-1": {
+   "name": "Port of Echuca",
+   "icon": "⚓",
+   "category": "historic",
+   "bio": "Historic river port with daily paddlesteamer departures, the PS Adelaide at the wharf and a Discovery Centre with a sawmill.",
+   "coordinates": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://portofechuca.com.au/"
+  },
+  "echuca-2": {
+   "name": "Barmah National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Murray floodplain park with forest trails, canoeing and Aboriginal oven mounds along the Lakes Loop Track.",
+   "coordinates": {
+    "latitude": -35.833724,
+    "longitude": 145.135874
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/barmah-national-park"
+  },
+  "echuca-3": {
+   "name": "Dharnya Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Yorta Yorta cultural hub in Barmah National Park, with a 1.2 km interpretive trail loop and Murray river cruises.",
+   "coordinates": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": 65,
+   "costMax": 65,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://dharnyacentre.com.au/"
+  },
+  "echuca-4": {
+   "name": "Kyabram Fauna Park",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Zoos Victoria wildlife park at Kyabram in the Goulburn Valley, with native animals and walking trails.",
+   "coordinates": {
+    "latitude": -36.324476,
+    "longitude": 145.049351
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 3.5,
+   "costMin": 32,
+   "costMax": 32,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.zoo.org.au/kyabram/"
+  },
+  "echuca-5": {
+   "name": "Terrick Terrick National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Park of granite outcrops, woodland and grasslands, with a short steep climb to views from Mt Terrick Terrick.",
+   "coordinates": {
+    "latitude": -36.116591,
+    "longitude": 144.257317
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/terrick-terrick-national-park"
+  },
+  "murray-sunset-national-park": {
+   "name": "Murray-Sunset National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Remote mallee park in Victoria's north-west with bush camping, birdwatching, hiking and 4WD tracks.",
+   "coordinates": {
+    "latitude": -34.76833333,
+    "longitude": 141.85416667
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 24,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/murray-sunset-national-park"
+  },
+  "pink-lakes": {
+   "name": "Pink Lakes",
+   "icon": "🩷",
+   "category": "nature",
+   "bio": "Salt lakes in Murray-Sunset National Park that turn pink in late summer, once the site of a salt industry until 1975.",
+   "coordinates": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/murray-sunset-national-park"
+  },
+  "hattah-kulkyne-national-park": {
+   "name": "Hattah-Kulkyne National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Murray River park near Mildura with a chain of lakes, the Lake Mournpall Walk and Warepil Lookout Tower.",
+   "coordinates": {
+    "latitude": -34.674735,
+    "longitude": 142.366762
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/hattah-kulkyne-national-park"
+  },
+  "wyperfeld-national-park": {
+   "name": "Wyperfeld National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Semi-arid park in the north-west with a chain of lake beds linked by Outlet Creek and a sealed road to Wonga camping.",
+   "coordinates": {
+    "latitude": -35.38916667,
+    "longitude": 141.87694444
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/wyperfeld-national-park"
+  },
+  "lake-tyrrell": {
+   "name": "Lake Tyrrell",
+   "icon": "🧂",
+   "category": "nature",
+   "bio": "Victoria's largest salt lake, 6 km north of Sea Lake, where in dry periods you can walk onto the salt crust.",
+   "coordinates": {
+    "latitude": -35.340287,
+    "longitude": 142.832847
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "gunbower-national-park": {
+   "name": "Gunbower National Park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "9,330 ha park beside the Murray between Echuca and Koondrook, with bend camping areas and four wheel driving.",
+   "coordinates": {
+    "latitude": -35.697539,
+    "longitude": 144.194769
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/gunbower-national-park"
+  },
+  "pioneer-settlement": {
+   "name": "Pioneer Settlement",
+   "icon": "🏚️",
+   "category": "museum",
+   "bio": "Open-air museum at Swan Hill, opened in 1966, with a one-hour Pyap River Cruise on the paddle steamer Gem.",
+   "coordinates": {
+    "latitude": -35.347353,
+    "longitude": 143.564774
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 32,
+   "costMax": 32,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.pioneersettlement.com.au"
+  },
+  "swan-hill-river-walk": {
+   "name": "Swan Hill River Walk",
+   "icon": "🚶",
+   "category": "hike",
+   "bio": "Easy 4.5 km walk along the Murray from the Pump Station on Milloo Street past many of Swan Hill's attractions.",
+   "coordinates": {
+    "latitude": -35.355525,
+    "longitude": 143.564637
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "lake-boga-flying-boat-museum": {
+   "name": "Lake Boga Flying Boat Museum",
+   "icon": "✈️",
+   "category": "museum",
+   "bio": "Museum on a secret wartime flying boat repair depot, with a heritage-listed Catalina and an underground bunker.",
+   "coordinates": {
+    "latitude": -35.450896,
+    "longitude": 143.627582
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 18,
+   "costMax": 18,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.flyingboat.org.au/"
+  },
+  "shepparton-art-museum": {
+   "name": "Shepparton Art Museum",
+   "icon": "🖼️",
+   "category": "museum",
+   "bio": "Shepparton art museum with over 4,000 works, a large ceramics collection and the Namatjira family; entry is free.",
+   "coordinates": {
+    "latitude": -36.391276,
+    "longitude": 145.396779
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://sheppartonartmuseum.com.au/"
+  },
+  "kidstown": {
+   "name": "KidsTown",
+   "icon": "🛝",
+   "category": "entertainment",
+   "bio": "Adventure playground on the Midland Highway at Mooroopna, with entry by gold coin donation.",
+   "coordinates": {
+    "latitude": -36.385258,
+    "longitude": 145.380244
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "donation"
+  },
+  "rutherglen-loops": {
+   "name": "Rutherglen Loops",
+   "icon": "🚴",
+   "category": "hike",
+   "bio": "48 km of walking and cycling trails linking Rutherglen with Wahgunyah, Lake Moodemere and local cellar doors.",
+   "coordinates": null,
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.indigoshire.vic.gov.au/Visiting/Visitors-to-our-Shire/Rutherglen-Loops"
+  },
+  "lake-mulwala": {
+   "name": "Lake Mulwala",
+   "icon": "⛵",
+   "category": "nature",
+   "bio": "Murray reservoir between Yarrawonga and Mulwala, formed by the 1939 weir and popular for boating, kayaking and fishing.",
+   "coordinates": {
+    "latitude": -36.007617,
+    "longitude": 146.091484
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  }
+ },
+ "existing_fixes": {},
+ "held": []
+}

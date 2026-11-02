@@ -1,0 +1,51 @@
+{
+ "destination": {
+  "id": "portland",
+  "name": "Portland",
+  "country": "Australia",
+  "countryCode": "AU",
+  "timezone": "Australia/Melbourne",
+  "continent": "Oceania",
+  "coordinates": {
+   "latitude": -38.3436,
+   "longitude": 141.6038
+  },
+  "category": "city",
+  "defaultZoomSpanKm": 70,
+  "rank": 5,
+  "icon": "🐋",
+  "tagline": "Victoria's oldest European settlement, with whaling history and seal-filled capes.",
+  "description": "Portland, on Portland Bay, is the oldest European settlement in Victoria: Edward Henty landed in November 1834 and sowed the state's first wheat crop. It has more than 200 historical buildings from the 1800s and a working waterfront where the fishing fleet lands its catch. The 251 km Great South West Walk starts and ends at the Portland Visitor Information Centre.",
+  "whyVisit": [
+   "Walk forest, gorge and clifftop tracks",
+   "See fur seals and whales from clifftops"
+  ],
+  "highlights": [
+   "Long-distance walking",
+   "Seals and whales"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🐋",
+    "title": "Whale season",
+    "detail": "Southern right whales pass Cape Bridgewater in winter and spring, and often visit Portland Bay in winter."
+   },
+   {
+    "icon": "🥾",
+    "title": "Day-walk the big track",
+    "detail": "The 251 km Great South West Walk has shorter sections, reached from roads near Portland and Nelson."
+   }
+  ],
+  "bestMonths": [
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "bestTimeBlurb": "Southern right whales pass the capes in {months}, the season for whale watching from the cliffs."
+ },
+ "spots": {},
+ "notes": "Walking has no seasonal source; months based on whales only. seasonalTags kept in the research's {tag, months} shape.",
+ "unverified": []
+}

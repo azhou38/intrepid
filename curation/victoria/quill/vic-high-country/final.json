@@ -1,0 +1,766 @@
+{
+ "spots": {
+  "mount-buffalo-national-park-1": {
+   "name": "The Horn",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "bio": "Highest point in Mount Buffalo National Park at 1,723 m, reached by a walk up from The Horn picnic area.",
+   "coordinates": {
+    "latitude": -36.776349,
+    "longitude": 146.767437
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  },
+  "mount-buffalo-national-park-2": {
+   "name": "The Gorge (Mount Buffalo)",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Viewing area over the gorge near Mount Buffalo Chalet, where visitors watch the sunrise above valley fog.",
+   "coordinates": {
+    "latitude": -36.72222,
+    "longitude": 146.819954
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  },
+  "mount-buffalo-national-park-3": {
+   "name": "The Cathedral (Mount Buffalo)",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "Granite formation in Mount Buffalo National Park, reached from Cathedral Saddle and walked on the Cathedral - Hump track.",
+   "coordinates": {
+    "latitude": -36.755119,
+    "longitude": 146.787507
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  },
+  "mount-buffalo-national-park-4": {
+   "name": "Eurobin Falls",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Waterfall in Mount Buffalo National Park on the Eurobin Falls Walk, fullest after rain and ringed by spring wildflowers.",
+   "coordinates": {
+    "latitude": -36.719353,
+    "longitude": 146.836433
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  },
+  "mount-buffalo-national-park-5": {
+   "name": "Lake Catani",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Alpine lake in Mount Buffalo National Park, dammed in 1910, with a swimming spot, shoreline campground and wombats.",
+   "coordinates": {
+    "latitude": -36.7331879,
+    "longitude": 146.8092481
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  },
+  "mount-buffalo-national-park-6": {
+   "name": "Mount Buffalo Chalet",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Heritage-listed 1910 timber chalet, the Alps' first ski resort; the exterior and terraced gardens are open to visit.",
+   "coordinates": {
+    "latitude": -36.72222,
+    "longitude": 146.819954
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/mount-buffalo-chalet"
+  },
+  "alpine-national-park-1": {
+   "name": "Bogong High Plains",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "Alpine plateau reached from Falls Creek and Hotham, used for summer bushwalking and winter cross-country skiing.",
+   "coordinates": {
+    "latitude": -36.84416667,
+    "longitude": 147.34
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park"
+  },
+  "alpine-national-park-2": {
+   "name": "Mount Bogong",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Victoria's highest mountain at 1,986 m, with an exposed summit ridge and emergency shelters on the Staircase Spur.",
+   "coordinates": {
+    "latitude": -36.732374,
+    "longitude": 147.305826
+   },
+   "visitHoursMin": 6,
+   "visitHoursMax": 10,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park"
+  },
+  "alpine-national-park-3": {
+   "name": "Mount Hotham",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "Ski resort village in the Victorian Alps with a summer tracks network, guided walks and the Razorback.",
+   "coordinates": {
+    "latitude": -36.9753,
+    "longitude": 147.128094
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.mthotham.com.au/"
+  },
+  "alpine-national-park-4": {
+   "name": "Falls Creek",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "Alpine village on the Bogong High Plains with summer mountain biking, hiking and a village museum.",
+   "coordinates": {
+    "latitude": -36.863498,
+    "longitude": 147.281587
+   },
+   "wiki": "Falls Creek, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.fallscreek.com.au/"
+  },
+  "alpine-national-park-5": {
+   "name": "Mount Feathertop",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Victoria's second-highest peak at 1,922 m, with snow in its summit gullies until late spring and exposed routes.",
+   "coordinates": {
+    "latitude": -36.894163,
+    "longitude": 147.138134
+   },
+   "visitHoursMin": 5,
+   "visitHoursMax": 8,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park"
+  },
+  "alpine-national-park-6": {
+   "name": "Falls to Hotham Alpine Crossing",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 37 km, three-day hike from Falls Creek to Mt Hotham past historic huts, with a permit needed to camp.",
+   "coordinates": {
+    "latitude": -36.92,
+    "longitude": 147.19
+   },
+   "visitHoursMin": 24,
+   "visitHoursMax": 72,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park/things-to-do/falls-to-hotham-alpine-crossing"
+  },
+  "alpine-national-park-7": {
+   "name": "The Razorback",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Exposed, relatively flat 11 km ridge from Diamantina Hut near Mt Hotham to the summit of Mount Feathertop.",
+   "coordinates": {
+    "latitude": -36.9380597,
+    "longitude": 147.1275371
+   },
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park"
+  },
+  "mansfield-1": {
+   "name": "Mount Buller",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "Alpine resort with 85 ski trails in winter and a sightseeing chairlift, hiking, biking and a via ferrata in summer.",
+   "coordinates": {
+    "latitude": -37.144632,
+    "longitude": 146.425865
+   },
+   "wiki": "Mount Buller Alpine Resort",
+   "visitHoursMin": 3,
+   "visitHoursMax": 8,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.mtbuller.com.au"
+  },
+  "mansfield-2": {
+   "name": "Mount Stirling",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "Alpine resort with about 60 km of cross-country trails, plus a summit loop walk and year-round camping.",
+   "coordinates": {
+    "latitude": -37.126508,
+    "longitude": 146.498005
+   },
+   "wiki": "Mount Stirling Alpine Resort",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.mtstirling.com.au/"
+  },
+  "mansfield-3": {
+   "name": "Lake Eildon",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Large reservoir on the Goulburn River for sailing, fishing and houseboats, with lookouts over the lake.",
+   "coordinates": {
+    "latitude": -37.222525,
+    "longitude": 145.925161
+   },
+   "wiki": "Eildon Dam",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/lake-eildon-national-park"
+  },
+  "mansfield-4": {
+   "name": "Craig's Hut Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Short walk on Mount Stirling to the 1982 hut built as the set for The Man from Snowy River.",
+   "coordinates": {
+    "latitude": -37.1051664,
+    "longitude": 146.5350629
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "mansfield-5": {
+   "name": "Mount Howitt Walking Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 14 km return walk to the 1,742 m summit through snow gum forest, passing the hut at Macalister Springs.",
+   "coordinates": {
+    "latitude": -37.173073,
+    "longitude": 146.653035
+   },
+   "wiki": "Mount Howitt",
+   "visitHoursMin": 5,
+   "visitHoursMax": 7,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park"
+  },
+  "mansfield-6": {
+   "name": "Lake Eildon National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "National park around Lake Eildon with swimming, sailing and fishing, plus Merlo Lookout and the Blowhard Summit walk.",
+   "coordinates": {
+    "latitude": -37.222525,
+    "longitude": 145.925161
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/lake-eildon-national-park"
+  },
+  "mansfield-7": {
+   "name": "Mount Samaria State Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Semi-remote state park with 360-degree summit views, Wild Dog Falls, 1920s logging kilns and free camping.",
+   "coordinates": {
+    "latitude": -36.886928,
+    "longitude": 146.081706
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mount-samaria-state-park"
+  },
+  "mansfield-8": {
+   "name": "Lake Nillahcootie",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Reservoir behind a 1967 dam, popular for water-skiing in summer, with a boat ramp and coffee van at the north end.",
+   "coordinates": {
+    "latitude": -36.889145,
+    "longitude": 146.0023877
+   },
+   "wiki": "Nillahcootie Dam",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "mansfield-9": {
+   "name": "Mansfield Zoo",
+   "icon": "🦘",
+   "category": "entertainment",
+   "bio": "Zoo on 30 acres where visitors hand-feed deer, kangaroos and emus, with white lions and meerkats.",
+   "coordinates": {
+    "latitude": -37.12663,
+    "longitude": 146.129846
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costMin": 22,
+   "costMax": 22,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://mansfieldzoo.com.au/"
+  },
+  "bright-1": {
+   "name": "Harrietville",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Village at the head of the Ovens Valley with walking tracks, including the Tronoh Dredge circuit.",
+   "coordinates": {
+    "latitude": -36.892317,
+    "longitude": 147.06387
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "bright-2": {
+   "name": "Wandiligong",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Small village about 6 km south of Bright, reached as a short side trip from the town.",
+   "coordinates": {
+    "latitude": -36.769978,
+    "longitude": 146.982868
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "bright-3": {
+   "name": "Tronoh Dredge Walking Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 1.4 km, 30-minute loop around the dredge hole left by one of the world's largest electric dredges (1942-54).",
+   "coordinates": {
+    "latitude": -36.897431,
+    "longitude": 147.069434
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open"
+  },
+  "bright-4": {
+   "name": "Mount Beauty Gorge Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 1 km walk to a swing bridge over the West Kiewa River, then a swimming hole and a 1950s hydro adit.",
+   "coordinates": {
+    "latitude": -36.747375,
+    "longitude": 147.170827
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "beechworth-1": {
+   "name": "Old Beechworth Gaol",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Granite gaol completed in 1864 that held Ned Kelly, now open for 45-minute guided tours daily.",
+   "coordinates": {
+    "latitude": -36.357686,
+    "longitude": 146.689942
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 28,
+   "costMax": 28,
+   "currency": "AUD",
+   "costBasis": "tour"
+  },
+  "beechworth-2": {
+   "name": "Yackandandah",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "National Trust-classified gold town with original shopfronts and a 37-site self-guided High Street heritage walk.",
+   "coordinates": {
+    "latitude": -36.314382,
+    "longitude": 146.839084
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "beechworth-3": {
+   "name": "Chiltern",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Gold-rush town with a preserved main street and National Trust Dow's Pharmacy, a chemist from 1859 to 1968.",
+   "coordinates": {
+    "latitude": -36.151277,
+    "longitude": 146.608544
+   },
+   "wiki": "Chiltern, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "beechworth-4": {
+   "name": "Lake Sambell",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Lake and parkland in Beechworth with a 2 km circuit and a bird hide, linked by a walk to Lake Kerferd.",
+   "coordinates": {
+    "latitude": -36.3601184,
+    "longitude": 146.6957716
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "beechworth-5": {
+   "name": "Chiltern-Mount Pilot National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Eucalypt forest park with a short walk to Mount Pilot Lookout's 360-degree views and the 8.5 km Whitebox track.",
+   "coordinates": {
+    "latitude": -36.196109,
+    "longitude": 146.638247
+   },
+   "wiki": "Chiltern-Mt Pilot National Park",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/chiltern-mt-pilot-national-park"
+  },
+  "beechworth-6": {
+   "name": "Eldorado Dredge",
+   "icon": "⚙️",
+   "category": "historic",
+   "bio": "1930s steel gold dredge with 110 buckets that dug 30 million cubic metres from the Eldorado Plain.",
+   "coordinates": {
+    "latitude": -36.313894,
+    "longitude": 146.503149
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open"
+  },
+  "beechworth-7": {
+   "name": "Yackandandah Gorge Scenic Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Walk along a gold-rush sluicing gorge beside a creek with small waterfalls, steep at the top.",
+   "coordinates": {
+    "latitude": -36.3175,
+    "longitude": 146.845
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "wangaratta-1": {
+   "name": "Glenrowan",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Town where Ned Kelly's gang made their last stand in 1880, with an animated theatre, a museum and Big Ned.",
+   "coordinates": {
+    "latitude": -36.462269,
+    "longitude": 146.225667
+   },
+   "wiki": "Glenrowan, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "wangaratta-2": {
+   "name": "Milawa",
+   "icon": "🍷",
+   "category": "market",
+   "bio": "King Valley village at the heart of Australia's first official gourmet region, with Brown Brothers and Milawa Cheese.",
+   "coordinates": {
+    "latitude": -36.449274,
+    "longitude": 146.432096
+   },
+   "wiki": "Milawa, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "wangaratta-3": {
+   "name": "King Valley",
+   "icon": "🍷",
+   "category": "nature",
+   "bio": "King River wine valley where 1940s-50s Italian migrants turned from tobacco to sangiovese, nebbiolo and barbera.",
+   "coordinates": {
+    "latitude": -36.694793,
+    "longitude": 146.408284
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "wangaratta-4": {
+   "name": "Warby-Ovens National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Park 10 km from Wangaratta with river red gum forest, the granite Warby Range, lookouts and spring wildflowers.",
+   "coordinates": {
+    "latitude": -36.2982117,
+    "longitude": 146.1692459
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/warby-ovens-national-park"
+  },
+  "wangaratta-5": {
+   "name": "The Big Ned Kelly",
+   "icon": "🗿",
+   "category": "monument",
+   "bio": "Large statue of Ned Kelly on the Glenrowan roadside, in the Wangaratta area.",
+   "coordinates": {
+    "latitude": -36.46396,
+    "longitude": 146.221071
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "wangaratta-6": {
+   "name": "Kellyland Glenrowan",
+   "icon": "🎭",
+   "category": "entertainment",
+   "bio": "Animated re-enactment of the Kelly Gang's last stand at Glenrowan, with a museum of wanted posters and Ned's death mask.",
+   "coordinates": {
+    "latitude": -36.463,
+    "longitude": 146.2215
+   },
+   "wiki": "Kellyland",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.25,
+   "costBasis": "entry"
+  },
+  "wangaratta-7": {
+   "name": "Ned Kelly Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Glenrowan museum of Kelly relics beside a homestead, set in Kate's Cottage on Gladstone Street.",
+   "coordinates": {
+    "latitude": -36.461459,
+    "longitude": 146.223542
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "tallangatta": {
+   "name": "Tallangatta",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Lake Hume town moved 8 km west in the 1950s to make way for the expanded lake, as its entry sign says.",
+   "coordinates": {
+    "latitude": -36.216617,
+    "longitude": 147.177898
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "paradise-falls-cheshunt": {
+   "name": "Paradise Falls (Cheshunt)",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "Alpine National Park waterfall about 20 minutes from Whitfield, reached by a 500 m walk and best after rain.",
+   "coordinates": {
+    "latitude": -36.868253,
+    "longitude": 146.437305
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/paradise-falls"
+  },
+  "lake-william-hovell": {
+   "name": "Lake William Hovell",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Reservoir at the top of the King River valley with a swimming area, foreshore picnics, canoeing and a shoreline walk.",
+   "coordinates": {
+    "latitude": -36.924239,
+    "longitude": 146.38923
+   },
+   "wiki": "William Hovell Dam",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.g-mwater.com.au/water-operations/storages/ovens/lakewilliamhovell"
+  },
+  "dartmouth-dam": {
+   "name": "Dartmouth Dam",
+   "icon": "🌊",
+   "category": "landmark",
+   "bio": "A 180 m dam across the Mitta Mitta River, Victoria's largest by capacity, with a picnic area, boat ramp and fishing.",
+   "coordinates": {
+    "latitude": -36.557408,
+    "longitude": 147.52271
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.g-mwater.com.au/water-operations/storages/murray/dartmouthdam"
+  },
+  "australian-alps-walking-track": {
+   "name": "Australian Alps Walking Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "About 650 km ridge and high-plains track from Walhalla to Tharwa, often walked in sections like the Bogong High Plains.",
+   "coordinates": {
+    "latitude": -36.92497,
+    "longitude": 147.243373
+   },
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.theaustralianalpsnationalparks.org/experience/aawt/"
+  },
+  "murray-to-the-mountains-rail-trail": {
+   "name": "Murray to the Mountains Rail Trail",
+   "icon": "🚲",
+   "category": "hike",
+   "bio": "Sealed off-road trail of about 95 km from Wangaratta to Bright on the old railway line, with a branch to Beechworth.",
+   "coordinates": {
+    "latitude": -36.5743397,
+    "longitude": 146.7428844
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costBasis": "open"
+  },
+  "omeo": {
+   "name": "Omeo",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Alps town on the Great Alpine Road where gold was found in 1845, with the 1893 court house and Oriental Claims diggings.",
+   "coordinates": {
+    "latitude": -37.100399,
+    "longitude": 147.592246
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://visitomeo.com.au/"
+  },
+  "omeo-mountain-bike-park": {
+   "name": "Omeo Mountain Bike Park",
+   "icon": "🚵",
+   "category": "entertainment",
+   "bio": "114 km of mountain bike trails near Omeo, from easy Livingstone Creek greens to double-black descents of up to 590 m.",
+   "coordinates": {
+    "latitude": -37.1,
+    "longitude": 147.595
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "corryong": {
+   "name": "Corryong",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Upper Murray town promoted as the setting of The Man from Snowy River, with Jack Riley's grave in its cemetery.",
+   "coordinates": {
+    "latitude": -36.197511,
+    "longitude": 147.904214
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "burrowa-pine-mountain-national-park": {
+   "name": "Burrowa-Pine Mountain National Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "National park in the upper Murray near Cudgewa and Tintaldra, managed by Parks Victoria.",
+   "coordinates": {
+    "latitude": -36.100389,
+    "longitude": 147.723099
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/burrowa-pine-mountain-national-park"
+  },
+  "mount-lawson-state-park": {
+   "name": "Mount Lawson State Park",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "State park 70 km east of Albury-Wodonga with walks to lookouts, waterfalls and rocky creeks, via an unsealed road.",
+   "coordinates": {
+    "latitude": -36.050265,
+    "longitude": 147.440977
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/mount-lawson-state-park"
+  }
+ },
+ "existing_fixes": {},
+ "held": []
+}

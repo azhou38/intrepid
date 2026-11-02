@@ -1,0 +1,233 @@
+[
+ {
+  "id": "bellarine-peninsula-5",
+  "name": "Point Lonsdale",
+  "facts": [
+   {
+    "claim": "Point Lonsdale is a headland at the eastern end of the Bellarine Peninsula that, with Point Nepean, frames The Rip, the entrance to Port Phillip.",
+    "source_url": "https://en.wikipedia.org/wiki/Point_Lonsdale"
+   },
+   {
+    "claim": "The headland is dominated by the Point Lonsdale Lighthouse, a reinforced-concrete tower completed in 1902.",
+    "source_url": "https://en.wikipedia.org/wiki/Point_Lonsdale_Lighthouse"
+   },
+   {
+    "claim": "The lighthouse overlooks The Rip, a stretch of water considered one of the more treacherous navigable passages in the world.",
+    "source_url": "https://en.wikipedia.org/wiki/Point_Lonsdale_Lighthouse"
+   },
+   {
+    "claim": "The lighthouse is operated by the Victorian Ports Corporation and its signal station is still staffed, so it is seen from outside.",
+    "source_url": "https://en.wikipedia.org/wiki/Point_Lonsdale_Lighthouse"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Point_Lonsdale",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "No single steward of the headland; lighthouse is operated by Victorian Ports Corporation (not a visitor attraction site). Visit Geelong and The Bellarine has a Queenscliff & Point Lonsdale page but it is a regional listing.",
+  "wiki": "Point Lonsdale",
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": "Lighthouse and signal station are working port infrastructure; no public interior access found.",
+  "unresolved": [
+   "Pin (-38.2725,144.6137) matches the town centre per Wikipedia, not the lighthouse (Wikipedia -38.2919,144.6139, ~2 km south) or the headland lookout; pin check needed.",
+   "No visitor-source page loaded that describes a lookout at the point itself."
+  ]
+ },
+ {
+  "id": "bendigo-6",
+  "name": "Poppet Head Lookout",
+  "facts": [
+   {
+    "claim": "Bendigo's Poppet Head Lookout is a former mine poppet head, the winding-gear frame over a shaft, converted into a viewing platform.",
+    "source_url": "https://www.goldfieldsguide.com.au/blog/181/places-to-see-poppet-heads-in-the-victorian-goldfields"
+   },
+   {
+    "claim": "At Victoria Hill Mining Reserve, Happy Valley Road, Ironbark, visitors climb steps to the top for views over the reserve and the city.",
+    "source_url": "https://www.lonelyplanet.com/points-of-interest/poppet-head-lookout/1314149"
+   },
+   {
+    "claim": "Victoria Hill was one of the richest areas of the Bendigo goldfield, and the reserve keeps relics and open-cut mines dating to the 1850s.",
+    "source_url": "https://www.bendigo.vic.gov.au/things-do/gardens-and-natural-reserves/victoria-hill-diggings"
+   },
+   {
+    "claim": "Gold was found on Victoria Hill in 1854 and 1,200,000 ounces had been taken out by 1861.",
+    "source_url": "https://www.bendigo.vic.gov.au/things-do/gardens-and-natural-reserves/victoria-hill-diggings"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.bendigo.vic.gov.au/things-do/gardens-and-natural-reserves/victoria-hill-diggings",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "Open council reserve; City of Greater Bendigo page names Victoria Hill Diggings, not the lookout. Left null (no single operator).",
+  "wiki": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": "Name is ambiguous: a second 'Poppet Head Lookout' stands on Camp Hill over Rosalind Park (poppet head from Garden Gully United mine, installed 1931).",
+  "unresolved": [
+   "Pin (-36.7705,144.2723) not confirmed against Victoria Hill vs Camp Hill (Rosalind Park lookout is ~1.5 km north); check with resolve-pin.",
+   "Goldfields Guide and Lonely Planet detail pages returned no readable text to my fetcher; facts taken from search snippets of those pages and the loaded council/Goldfields blog pages."
+  ]
+ },
+ {
+  "id": "surf-coast-6",
+  "name": "Point Addis",
+  "facts": [
+   {
+    "claim": "Point Addis is the western end of Addiscot Beach, an unpatrolled beach near Bells Beach and a popular Great Ocean Road stop.",
+    "source_url": "https://en.wikipedia.org/wiki/Addiscot_Beach"
+   },
+   {
+    "claim": "Cliffs along the beach rise from about 20 m at Point Addis to around 80 m at Jarosite Headland.",
+    "source_url": "https://en.wikipedia.org/wiki/Addiscot_Beach"
+   },
+   {
+    "claim": "The Point Addis Beach Lookout is reached by a short boardwalk from the car park and looks over sandstone cliffs and beaches.",
+    "source_url": "https://www.melbourneplaygrounds.com.au/bells-beach-point-addis-beach-lookout"
+   },
+   {
+    "claim": "It lies in Point Addis Marine National Park, between Torquay and Anglesea, with crumbling limestone cliffs and good surf conditions.",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-addis-marine-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/point-addis-marine-national-park",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/point-addis-marine-national-park",
+  "ticketUrl_note": "Parks Victoria page titled 'Point Addis Marine National Park' loaded (managing agency). Page shows no entry fee in extracted text; Victorian parks are free to enter.",
+  "wiki": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": "Parks Victoria page template shows 'This area is closed' on all pages fetched; likely site-wide banner, not verified as a real closure. Great Otway NP notes seasonal track closures from flood damage.",
+  "unresolved": [
+   "Fee confirmed only by absence on the Parks Victoria page; Great Otway NP page also lists no fee."
+  ]
+ },
+ {
+  "id": "macedon-ranges-2",
+  "name": "Mount Macedon",
+  "facts": [
+   {
+    "claim": "Mount Macedon is an extinct volcano, 1,001 m high, in the Macedon Ranges about 65 km north-west of Melbourne.",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Macedon"
+   },
+   {
+    "claim": "The view from the summit takes in Melbourne, the Dandenong Ranges and the You Yangs near Geelong.",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Macedon"
+   },
+   {
+    "claim": "The 21 m Mount Macedon Memorial Cross stands near the summit in Cross Reserve.",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Macedon"
+   },
+   {
+    "claim": "Camel's Hump, the highest peak, is a rocky outcrop popular with rock climbers.",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Macedon"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Mount_Macedon",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/macedon-regional-park",
+  "ticketUrl_note": "Macedon Regional Park (Parks Victoria) loaded and titled; managing agency for the mountain's reserves. Deep link taken from search, not site nav.",
+  "wiki": "Mount Macedon",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "Parks Victoria page shows 'This area is closed' banner (likely template-wide); not verified.",
+  "unresolved": [
+   "No fee seen on the Parks Victoria page; free assumed for a Victorian regional park.",
+   "Memorial Cross is a council/Cross Reserve site; Parks Victoria page text extracted did not mention it."
+  ]
+ },
+ {
+  "id": "dandenong-ranges-6",
+  "name": "Mount Dandenong",
+  "facts": [
+   {
+    "claim": "Mount Dandenong is 633 m high and about 45 km east of Melbourne, the highest point of the Dandenong Ranges' main lookout area.",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Dandenong_(Victoria)"
+   },
+   {
+    "claim": "On a clear day the view crosses Melbourne to the You Yangs and Mount Macedon, with the CBD and Port Phillip Bay in sight.",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Dandenong_(Victoria)"
+   },
+   {
+    "claim": "SkyHigh Mount Dandenong at the summit has gardens, a hedge maze, a forest walk and 180-degree views of the Melbourne skyline.",
+    "source_url": "https://www.skyhighmtdandenong.com.au/"
+   },
+   {
+    "claim": "The summit also carries Melbourne's television and FM transmission towers.",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Dandenong_(Victoria)"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.skyhighmtdandenong.com.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.skyhighmtdandenong.com.au/",
+  "ticketUrl_note": "SkyHigh (operator under lease from Parks Victoria) homepage loaded, title 'SkyHigh Mount Dandenong'. Parks Victoria alternative: https://www.parks.vic.gov.au/places-to-see/sites/mt-dandenong-observatory.",
+  "wiki": "Mount Dandenong (Victoria)",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "SkyHigh's only charge found is car parking ($5 Mon-Fri, $10 weekends/holidays), which is not the price; entry gate locked at 6pm. Restaurant dinner service closed. Maze/garden admission price not found (maze may be a paid extra).",
+  "unresolved": [
+   "SkyHigh gardens/maze admission not stated on pages loaded; entry treated as free because only parking fees appear."
+  ]
+ },
+ {
+  "id": "lorne-1",
+  "name": "Teddy's Lookout",
+  "facts": [
+   {
+    "claim": "Teddy's Lookout is a viewing platform on the hill behind Lorne in Queens Park, about 480 ft above sea level.",
+    "source_url": "https://www.lornehistoricalsociety.org.au/places/teddys-lookout/"
+   },
+   {
+    "claim": "It looks over the St George River estuary and the Great Ocean Road heading south-west towards Apollo Bay.",
+    "source_url": "https://www.lornehistoricalsociety.org.au/places/teddys-lookout/"
+   },
+   {
+    "claim": "The viewing platform was added in 1995, and a cast-iron compass dial was dedicated there in 1989.",
+    "source_url": "https://www.lornehistoricalsociety.org.au/places/teddys-lookout/"
+   },
+   {
+    "claim": "The lookout has carried this name since at least 1878 and was used as a lookout for enemy ships in World War II.",
+    "source_url": "https://www.lornehistoricalsociety.org.au/places/teddys-lookout/"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.lornehistoricalsociety.org.au/places/teddys-lookout/",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "Open public lookout in a council/coastal reserve; no single operator site found. Not found rather than absent.",
+  "wiki": null,
+  "visitHoursMin": 0.25,
+  "visitHoursMax": 0.75,
+  "access_note": null,
+  "unresolved": [
+   "No official site loaded; a 1.6 km Queens Park Lookout Loop (about 45 min) is described by a walking-guide site only."
+  ]
+ }
+]

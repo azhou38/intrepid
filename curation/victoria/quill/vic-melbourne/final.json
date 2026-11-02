@@ -1,0 +1,1109 @@
+{
+ "spots": {
+  "melbourne-1": {
+   "name": "Flinders Street Station",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Victoria's busiest railway station, an Edwardian Baroque building from 1909 opposite Federation Square.",
+   "coordinates": {
+    "latitude": -37.818078,
+    "longitude": 144.96681
+   },
+   "wiki": "Flinders Street railway station",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-2": {
+   "name": "Federation Square",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Melbourne's main meeting place, opposite Flinders Street Station, with cultural venues around the square.",
+   "coordinates": {
+    "latitude": -37.81774,
+    "longitude": 144.969156
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-3": {
+   "name": "Queen Victoria Market",
+   "icon": "🛍️",
+   "category": "market",
+   "bio": "Open-air market opened in 1878, covering over seven hectares and billed as the Southern Hemisphere's largest.",
+   "coordinates": {
+    "latitude": -37.806998,
+    "longitude": 144.956951
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.qvm.com.au/"
+  },
+  "melbourne-4": {
+   "name": "NGV International",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free-entry gallery at 180 St Kilda Road with art from Europe, Asia, America and Oceania.",
+   "coordinates": {
+    "latitude": -37.8229117,
+    "longitude": 144.9686548
+   },
+   "wiki": "National Gallery of Victoria",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.ngv.vic.gov.au/"
+  },
+  "melbourne-5": {
+   "name": "Royal Botanic Gardens Victoria",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "A 38-hectare garden founded in 1846 on the Yarra, with lakes, lawns and almost 50,000 plants, free to enter.",
+   "coordinates": {
+    "latitude": -37.829456,
+    "longitude": 144.981315
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.rbg.vic.gov.au/melbourne/"
+  },
+  "melbourne-6": {
+   "name": "Melbourne Cricket Ground",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "Cricket ground with 75-minute behind-the-scenes tours from Gate 3 on select event days, and a sports museum.",
+   "coordinates": {
+    "latitude": -37.819909,
+    "longitude": 144.983225
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.mcg.org.au/"
+  },
+  "melbourne-7": {
+   "name": "Royal Exhibition Building",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "UNESCO-listed hall built for the 1880 exhibition, where Australia's first Parliament opened in 1901, visited on tours.",
+   "coordinates": {
+    "latitude": -37.804667,
+    "longitude": 144.971467
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costMin": 29,
+   "costMax": 29,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://museumsvictoria.com.au/reb/"
+  },
+  "melbourne-8": {
+   "name": "Melbourne Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Natural and cultural history museum in Carlton Gardens with the Bunjilaka Aboriginal Cultural Centre and an IMAX cinema.",
+   "coordinates": {
+    "latitude": -37.80323,
+    "longitude": 144.972349
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://museumsvictoria.com.au/melbournemuseum/"
+  },
+  "melbourne-9": {
+   "name": "Hosier Lane",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "A colourful street-art lane across from Federation Square, free to walk through in Melbourne.",
+   "coordinates": {
+    "latitude": -37.816329,
+    "longitude": 144.969078
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-10": {
+   "name": "St Kilda Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Sandy bay beach on Port Phillip and a popular stop on the St Kilda foreshore.",
+   "coordinates": {
+    "latitude": -37.868107,
+    "longitude": 144.974219
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-11": {
+   "name": "Luna Park Melbourne",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "St Kilda amusement park from 1912 with the Mr Moon entrance and the world's oldest continuously operating roller coaster.",
+   "coordinates": {
+    "latitude": -37.868024,
+    "longitude": 144.976909
+   },
+   "wiki": "Luna Park, Melbourne",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 30,
+   "costMax": 47,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://lunapark.com.au/"
+  },
+  "melbourne-12": {
+   "name": "Eureka Tower",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Melbourne Skydeck, the observation deck atop Eureka Tower, has a glass cube, The Edge, that juts 3 metres out.",
+   "coordinates": {
+    "latitude": -37.8217537,
+    "longitude": 144.9646549
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 33,
+   "costMax": 43,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.melbourneskydeck.com.au/"
+  },
+  "melbourne-13": {
+   "name": "Shrine of Remembrance",
+   "icon": "🗿",
+   "category": "monument",
+   "bio": "1934 classical memorial with exhibition galleries under it, open to visitors daily in Melbourne.",
+   "coordinates": {
+    "latitude": -37.830531,
+    "longitude": 144.973447
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-14": {
+   "name": "Old Melbourne Gaol",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Victoria's oldest prison, now a museum with day and night tours and cells devoted to the gaol's women and children.",
+   "coordinates": {
+    "latitude": -37.807819,
+    "longitude": 144.965268
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.oldmelbournegaol.com.au/"
+  },
+  "melbourne-15": {
+   "name": "State Library of Victoria",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Domed reading room dating from 1854, open to the public with exhibitions and the La Trobe Reading Room.",
+   "coordinates": {
+    "latitude": -37.80977,
+    "longitude": 144.965535
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-16": {
+   "name": "Melbourne Zoo",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "Zoos Victoria's zoo in Royal Park, open daily, home to critically endangered western lowland gorillas.",
+   "coordinates": {
+    "latitude": -37.784803,
+    "longitude": 144.951537
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 58,
+   "costMax": 58,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.zoo.org.au/melbourne/"
+  },
+  "melbourne-17": {
+   "name": "Werribee Open Range Zoo",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "A wildlife safari in Melbourne's west, with a free safari bus and nine Asian elephants on the Elephant Trail.",
+   "coordinates": {
+    "latitude": -37.922793,
+    "longitude": 144.662859
+   },
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 4.5,
+   "costMin": 58,
+   "costMax": 58,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.zoo.org.au/werribee/"
+  },
+  "melbourne-18": {
+   "name": "Heide Museum of Modern Art",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Art museum and sculpture park on the Yarra in Bulleen, where the gardens and sculpture park are free to enter.",
+   "coordinates": {
+    "latitude": -37.757358,
+    "longitude": 145.08298
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 27,
+   "costMax": 27,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.heide.com.au/"
+  },
+  "melbourne-19": {
+   "name": "Brighton Beach and Bathing Boxes",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Dendy Street Beach in Brighton, lined with 96 heritage-listed bathing boxes along 500 m of sand, mostly built 1907 to 1933.",
+   "coordinates": {
+    "latitude": -37.918512,
+    "longitude": 144.987163
+   },
+   "wiki": "Brighton Bathing Boxes",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-20": {
+   "name": "Williamstown",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Bayside waterfront town with Nelson Place, beaches and the Williamstown Botanic Gardens.",
+   "coordinates": {
+    "latitude": -37.861179,
+    "longitude": 144.889857
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-21": {
+   "name": "Immigration Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum in the Old Customs House at 400 Flinders Street exploring migration to Victoria through its galleries.",
+   "coordinates": {
+    "latitude": -37.81912,
+    "longitude": 144.960398
+   },
+   "wiki": "Immigration Museum, Melbourne",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "melbourne-22": {
+   "name": "Australian Centre for the Moving Image",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Australia's national museum of screen culture at Federation Square, with a free exhibition on film, TV and games.",
+   "coordinates": {
+    "latitude": -37.8174356,
+    "longitude": 144.9690684
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.acmi.net.au/"
+  },
+  "melbourne-23": {
+   "name": "Arts Centre Melbourne",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "Performing arts precinct on St Kilda Road with Hamer Hall, theatres and the landmark spire, designed by Roy Grounds.",
+   "coordinates": {
+    "latitude": -37.820158,
+    "longitude": 144.967984
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.artscentremelbourne.com.au/"
+  },
+  "melbourne-24": {
+   "name": "St Patrick's Cathedral",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Bluestone Gothic Revival cathedral by William Wardell, built from 1858 to 1939 on Gisborne Street in East Melbourne.",
+   "coordinates": {
+    "latitude": -37.810152,
+    "longitude": 144.976404
+   },
+   "wiki": "St Patrick's Cathedral, Melbourne",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "entry"
+  },
+  "melbourne-25": {
+   "name": "St Paul's Cathedral",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Anglican cathedral on Flinders Street opposite Federation Square, open daily with free admission.",
+   "coordinates": {
+    "latitude": -37.816874,
+    "longitude": 144.96765
+   },
+   "wiki": "St Paul's Cathedral, Melbourne",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://cathedral.org.au/"
+  },
+  "melbourne-26": {
+   "name": "Fitzroy Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Heritage-listed 26-hectare gardens in East Melbourne, lined with elms and holding a conservatory and Cooks' Cottage.",
+   "coordinates": {
+    "latitude": -37.812684,
+    "longitude": 144.980505
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-27": {
+   "name": "Cooks' Cottage",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Captain Cook's parents' 1755 Yorkshire cottage, moved to Melbourne in 1934 and rebuilt in Fitzroy Gardens.",
+   "coordinates": {
+    "latitude": -37.81449,
+    "longitude": 144.97945
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "costMin": 7.7,
+   "costMax": 7.7,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://whatson.melbourne.vic.gov.au/things-to-do/cooks-cottage"
+  },
+  "melbourne-28": {
+   "name": "Parliament House of Victoria",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Parliament House, opened in 1856, offers free public and architecture tours except when Parliament is sitting.",
+   "coordinates": {
+    "latitude": -37.8110999,
+    "longitude": 144.9738657
+   },
+   "wiki": "Parliament House, Melbourne",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parliament.vic.gov.au/"
+  },
+  "melbourne-29": {
+   "name": "Carlton Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "26-hectare Victorian gardens around the Royal Exhibition Building and Melbourne Museum, part of a World Heritage site.",
+   "coordinates": {
+    "latitude": -37.806258,
+    "longitude": 144.971233
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-30": {
+   "name": "Melbourne Park",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "Home of the Australian Open since 1988, where Rod Laver Arena seats about 15,000 and also hosts concerts.",
+   "coordinates": {
+    "latitude": -37.821361,
+    "longitude": 144.979088
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.melbournepark.com.au/"
+  },
+  "melbourne-31": {
+   "name": "Albert Park and Lake",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Urban park around an artificial lake 3 km south of the CBD, with a 4.7 km walking track and skyline views.",
+   "coordinates": {
+    "latitude": -37.8473452,
+    "longitude": 144.9702251
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/albert-park"
+  },
+  "melbourne-32": {
+   "name": "Block Arcade",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Mosaic-floored 1890s arcade between Collins and Elizabeth Streets, home to the original Hopetoun Tea Rooms.",
+   "coordinates": {
+    "latitude": -37.8155831,
+    "longitude": 144.9643273
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://theblock.com.au"
+  },
+  "melbourne-33": {
+   "name": "Royal Arcade",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Australia's oldest surviving arcade, opened in 1870, where Gog and Magog strike Gaunt's clock bells each hour.",
+   "coordinates": {
+    "latitude": -37.8145635,
+    "longitude": 144.964041
+   },
+   "wiki": "Royal Arcade, Melbourne",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://royalarcade.com.au/"
+  },
+  "melbourne-34": {
+   "name": "ACDC Lane",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Alley renamed in 2004 after the rock band, with a sign that fans photograph.",
+   "coordinates": {
+    "latitude": -37.8155405,
+    "longitude": 144.9705723
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-35": {
+   "name": "Chinatown",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Little Bourke Street Chinatown with restaurants and arches in Melbourne.",
+   "coordinates": {
+    "latitude": -37.811811,
+    "longitude": 144.967629
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-36": {
+   "name": "Lygon Street",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Italian dining strip running through Carlton, a street to walk for its restaurants.",
+   "coordinates": {
+    "latitude": -37.799015,
+    "longitude": 144.96682
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-37": {
+   "name": "Brunswick Street",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Brunswick Street is a bohemian shopping and dining strip in Fitzroy, Melbourne.",
+   "coordinates": {
+    "latitude": -37.797054,
+    "longitude": 144.9786905
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-38": {
+   "name": "Chapel Street",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Shopping and nightlife strip running through Prahran and South Yarra.",
+   "coordinates": {
+    "latitude": -37.8489018,
+    "longitude": 144.9938124
+   },
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-39": {
+   "name": "Acland Street",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "St Kilda street of restaurants and European-style cake shops near the beach, long tied to Melbourne's Jewish community.",
+   "coordinates": {
+    "latitude": -37.868993,
+    "longitude": 144.980153
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-40": {
+   "name": "St Kilda Pier",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "A 300 m pier and 750 m breakwater in Port Phillip Bay, with a historic kiosk and a little penguin colony.",
+   "coordinates": {
+    "latitude": -37.864671,
+    "longitude": 144.968918
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-41": {
+   "name": "Rippon Lea Estate",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Heritage mansion and 14 acres of gardens in Elsternwick, with a lake and fernery, the house by guided tour only.",
+   "coordinates": {
+    "latitude": -37.879806,
+    "longitude": 144.998928
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.ripponleaestate.com.au/"
+  },
+  "melbourne-42": {
+   "name": "Werribee Park",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Estate with the heritage Werribee Mansion, an ornamental lake and a State Rose Garden of about 5000 roses.",
+   "coordinates": {
+    "latitude": -37.93054,
+    "longitude": 144.670275
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 12.5,
+   "costMax": 12.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/werribee-park"
+  },
+  "melbourne-43": {
+   "name": "Melbourne Aquarium",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "Yarra-side aquarium with over 10,000 animals, including king and gentoo penguins, sharks and a saltwater crocodile.",
+   "coordinates": {
+    "latitude": -37.820735,
+    "longitude": 144.958257
+   },
+   "wiki": "Sea Life Melbourne Aquarium",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 39,
+   "costMax": 54,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.visitsealife.com/melbourne/"
+  },
+  "melbourne-45": {
+   "name": "Ian Potter Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "The National Gallery of Victoria's home of Australian art at Federation Square, free apart from special exhibitions.",
+   "coordinates": {
+    "latitude": -37.81758,
+    "longitude": 144.969976
+   },
+   "wiki": "Ian Potter Centre: NGV Australia",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.ngv.vic.gov.au/plan-your-visit/"
+  },
+  "melbourne-46": {
+   "name": "Old Treasury Building",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free, self-guided museum in the 1858 Old Treasury Building on Spring Street, with ticketed guided tours.",
+   "coordinates": {
+    "latitude": -37.8131993,
+    "longitude": 144.9743546
+   },
+   "wiki": "Old Treasury Building, Melbourne",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.oldtreasurybuilding.org.au/"
+  },
+  "melbourne-47": {
+   "name": "Polly Woodside",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "An 1885 iron-hulled barque run by the National Trust as a maritime museum at South Wharf, open on set days.",
+   "coordinates": {
+    "latitude": -37.824734,
+    "longitude": 144.953493
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 16,
+   "costMax": 16,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/polly-woodside/"
+  },
+  "melbourne-48": {
+   "name": "Chinese Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum of Chinese Australian history in Chinatown, with adult tickets bought at the door.",
+   "coordinates": {
+    "latitude": -37.810737,
+    "longitude": 144.969209
+   },
+   "wiki": "Chinese Museum, Melbourne",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 17,
+   "costMax": 17,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.chinesemuseum.com.au/"
+  },
+  "melbourne-49": {
+   "name": "Koorie Heritage Trust",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Cultural centre for Aboriginal Victoria with free entry, running the Birrarung Wilam and Scar Tree walking tours.",
+   "coordinates": {
+    "latitude": -37.818157,
+    "longitude": 144.969102
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://kht.org.au/"
+  },
+  "melbourne-50": {
+   "name": "Como House",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "An 1847 National Trust house and garden estate in South Yarra, with free gardens and house entry by guided tour only.",
+   "coordinates": {
+    "latitude": -37.837701,
+    "longitude": 145.003852
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.75,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.nationaltrust.org.au/places/como-house-and-garden/"
+  },
+  "melbourne-51": {
+   "name": "Prahran Market",
+   "icon": "🛍️",
+   "category": "market",
+   "bio": "A permanent food market in Prahran that trades from Tuesday to Saturday.",
+   "coordinates": {
+    "latitude": -37.846019,
+    "longitude": 144.99259
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.prahranmarket.com.au/"
+  },
+  "melbourne-52": {
+   "name": "Footscray Market",
+   "icon": "🛍️",
+   "category": "market",
+   "bio": "Indoor market on Hopkins Street in Footscray with butchers, seafood, poultry, grocery and takeaway traders.",
+   "coordinates": {
+    "latitude": -37.8005914,
+    "longitude": 144.9020846
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.footscraymkt.com.au/"
+  },
+  "melbourne-53": {
+   "name": "Dandenong Market",
+   "icon": "🛍️",
+   "category": "market",
+   "bio": "Market in Dandenong since 1866, with over 200 traders from about 150 nationalities, open Friday to Sunday.",
+   "coordinates": {
+    "latitude": -37.9838503,
+    "longitude": 145.2155532
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://dandenongmarket.com.au/"
+  },
+  "melbourne-54": {
+   "name": "Capital City Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 29 km sealed shared path looping Melbourne's centre and inner suburbs, easy riding from Princes Bridge.",
+   "coordinates": {
+    "latitude": -37.827987,
+    "longitude": 144.984492
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-55": {
+   "name": "Yarra Bend Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Melbourne's largest natural bushland park on the Yarra, with a flying-fox viewing platform and Dights Falls.",
+   "coordinates": {
+    "latitude": -37.793753,
+    "longitude": 145.010703
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/yarra-bend-park"
+  },
+  "melbourne-56": {
+   "name": "Warrandyte State Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Yarra River state park 24 km from the city, with kangaroos often seen at Pound Bend and gold-mining relics.",
+   "coordinates": {
+    "latitude": -37.727846,
+    "longitude": 145.241361
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/warrandyte-state-park"
+  },
+  "melbourne-57": {
+   "name": "Organ Pipes National Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Basalt columns like organ pipes hang over Jacksons Creek, reached by a short, steep path from the car park.",
+   "coordinates": {
+    "latitude": -37.668182,
+    "longitude": 144.76924
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/organ-pipes-national-park"
+  },
+  "melbourne-58": {
+   "name": "Maranoa Botanic Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Council-run botanic garden in Balwyn with more than 4,000 native plants along winding paths.",
+   "coordinates": {
+    "latitude": -37.810306,
+    "longitude": 145.090509
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.boroondara.vic.gov.au/explore-boroondara/parks-and-reserves/view-all-parks/maranoa-botanic-gardens"
+  },
+  "melbourne-59": {
+   "name": "CERES Community Environment Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Free community environment park in Brunswick East with a farm, nursery and cafe, plus a Saturday market.",
+   "coordinates": {
+    "latitude": -37.7660212,
+    "longitude": 144.9839547
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://ceres.org.au/"
+  },
+  "melbourne-60": {
+   "name": "Jewish Museum of Australia",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Jewish heritage and culture museum on Alma Road in St Kilda, closed on Mondays and Saturdays.",
+   "coordinates": {
+    "latitude": -37.852908,
+    "longitude": 144.982343
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 18,
+   "costMax": 18,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.jewishmuseum.com.au/"
+  },
+  "melbourne-61": {
+   "name": "Melbourne Holocaust Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Holocaust museum and education centre in Elsternwick with the Everybody Had a Name exhibition and a VR experience.",
+   "coordinates": {
+    "latitude": -37.8834,
+    "longitude": 145.0011
+   },
+   "wiki": "Jewish Holocaust Centre",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 18,
+   "costMax": 18,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://mhm.org.au/"
+  },
+  "melbourne-62": {
+   "name": "Scienceworks",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museums Victoria science and technology museum at Spotswood on the Maribyrnong foreshore.",
+   "coordinates": {
+    "latitude": -37.831446,
+    "longitude": 144.89391
+   },
+   "wiki": "Scienceworks (Melbourne)",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://museumsvictoria.com.au/scienceworks/"
+  },
+  "melbourne-63": {
+   "name": "RAAF Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Air Force museum on RAAF Base Point Cook, where booking is essential and photo ID is required over 16.",
+   "coordinates": {
+    "latitude": -37.93038,
+    "longitude": 144.749136
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "needs": "booking",
+   "ticketUrl": "https://www.airforce.gov.au/community/visit-and-learn/raaf-museum"
+  },
+  "melbourne-64": {
+   "name": "Moorabbin Air Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Volunteer-run aviation museum at Moorabbin Airport, founded 1962, with the oldest surviving CAC Wirraway.",
+   "coordinates": {
+    "latitude": -37.976894,
+    "longitude": 145.091385
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.aarg.com.au/"
+  },
+  "melbourne-65": {
+   "name": "Grainger Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum of composer Percy Grainger's life and music at the University of Melbourne, opened in 1938.",
+   "coordinates": {
+    "latitude": -37.797292,
+    "longitude": 144.958345
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry"
+  },
+  "melbourne-66": {
+   "name": "Potter Museum of Art",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free university art museum on Swanston Street in Parkville, reopened in 2025 with changing exhibitions.",
+   "coordinates": {
+    "latitude": -37.7974889,
+    "longitude": 144.964147
+   },
+   "wiki": "Ian Potter Museum of Art",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://potter-museum.unimelb.edu.au/"
+  },
+  "melbourne-67": {
+   "name": "Victoria Police Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Free police museum in Docklands with Australia's largest Kelly Gang armour collection, open Tuesday to Thursday.",
+   "coordinates": {
+    "latitude": -37.824275,
+    "longitude": 144.971001
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.policemuseum.vic.gov.au/"
+  },
+  "melbourne-68": {
+   "name": "Altona Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Long bayside beach at Altona with a coastal park, in Melbourne.",
+   "coordinates": {
+    "latitude": -37.871299,
+    "longitude": 144.833566
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-69": {
+   "name": "Elwood Beach",
+   "icon": "🏖️",
+   "category": "beach",
+   "bio": "Bayside beach in Elwood on Port Phillip, named by a travel guide as a place to stop.",
+   "coordinates": {
+    "latitude": -37.889731,
+    "longitude": 144.984165
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "melbourne-70": {
+   "name": "Ramsay Street",
+   "icon": "📍",
+   "category": "landmark",
+   "bio": "Ramsay Street set of the television show Neighbours, visited by fans in Melbourne.",
+   "coordinates": null,
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.25,
+   "free": true,
+   "costBasis": "open"
+  },
+  "royal-botanic-gardens-cranbourne": {
+   "name": "Royal Botanic Gardens Cranbourne",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Free botanic gardens centred on the Australian Garden, with the Red Sand Garden and a Eucalypt Walk.",
+   "coordinates": {
+    "latitude": -38.128603,
+    "longitude": 145.270294
+   },
+   "wiki": "Royal Botanic Gardens, Cranbourne",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.rbg.vic.gov.au/cranbourne-gardens/"
+  },
+  "mcclelland-gallery-and-sculpture-park": {
+   "name": "McClelland Gallery and Sculpture Park",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Sculpture park and gallery in Langwarrin bushland, open Wednesday to Sunday, with a cafe and design store.",
+   "coordinates": {
+    "latitude": -38.146033,
+    "longitude": 145.176486
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://mcclelland.org.au/"
+  }
+ },
+ "existing_fixes": {},
+ "held": [
+  {
+   "id": "melbourne-44",
+   "reason": "Crown Entertainment Complex is a casino and shopping venue: fails the qualifies test"
+  }
+ ]
+}

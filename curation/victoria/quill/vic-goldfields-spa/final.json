@@ -1,0 +1,665 @@
+{
+ "spots": {
+  "ballarat-1": {
+   "name": "Sovereign Hill",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Open-air museum of 1850s Ballarat where you can pan for real gold and take an underground mine tour.",
+   "coordinates": {
+    "latitude": -37.57834,
+    "longitude": 143.86457
+   },
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "costMin": 68,
+   "costMax": 68,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.sovereignhill.com.au/"
+  },
+  "ballarat-2": {
+   "name": "Eureka Centre",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Interpretive centre in Eureka Stockade Memorial Park with an exhibition on the Eureka Rebellion and the Eureka Flag.",
+   "coordinates": {
+    "latitude": -37.5649892,
+    "longitude": 143.8837421
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 7,
+   "costMax": 7,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.eurekacentreballarat.com.au/"
+  },
+  "ballarat-4": {
+   "name": "Art Gallery of Ballarat",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Australia's oldest regional art gallery, founded 1884 and free, currently showing at Backspace Gallery, Mair Street.",
+   "coordinates": {
+    "latitude": -37.560452,
+    "longitude": 143.858403
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.artgalleryofballarat.com.au/"
+  },
+  "ballarat-5": {
+   "name": "Lake Wendouree",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Shallow artificial urban lake beside the suburb of Wendouree, with heritage trams running along its shore.",
+   "coordinates": {
+    "latitude": -37.550226,
+    "longitude": 143.833995
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "ballarat-6": {
+   "name": "Ballarat Botanical Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "40-hectare gardens on Lake Wendouree's western shore, a Victorian-style garden flanked by North and South Gardens.",
+   "coordinates": {
+    "latitude": -37.545736,
+    "longitude": 143.821604
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "ballarat-7": {
+   "name": "Ballarat Wildlife Park",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "Zoo with over 300 animals, including over 100 free-roaming kangaroos, and hand-feeding of kangaroos and koalas.",
+   "coordinates": {
+    "latitude": -37.568936,
+    "longitude": 143.891075
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 42,
+   "costMax": 42,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://wildlifepark.com.au/"
+  },
+  "ballarat-8": {
+   "name": "Kryal Castle",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "Replica medieval castle at Leigh Creek, 8 km east of Ballarat, open to visitors since 1974 with overnight stays.",
+   "coordinates": {
+    "latitude": -37.572083,
+    "longitude": 143.956738
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costMin": 31.5,
+   "costMax": 31.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://www.kryalcastle.com.au/"
+  },
+  "ballarat-10": {
+   "name": "Ballarat Tramway Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Volunteer-run museum where heritage trams run around Lake Wendouree and the Botanical Gardens on weekends.",
+   "coordinates": {
+    "latitude": -37.551518,
+    "longitude": 143.820384
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://btm.org.au/"
+  },
+  "ballarat-11": {
+   "name": "Clunes",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Gold-rush town north of Ballarat, site of Victoria's first registered gold find and home to second-hand bookshops.",
+   "coordinates": {
+    "latitude": -37.294064,
+    "longitude": 143.78658
+   },
+   "wiki": "Clunes, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "ballarat-12": {
+   "name": "Blue Waters Lake",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Former open-cut mine filled with water in Creswick Regional Park, an 800 m walk from the first car park.",
+   "coordinates": {
+    "latitude": -37.43687,
+    "longitude": 143.905459
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/blue-waters"
+  },
+  "ballarat-13": {
+   "name": "Ballarat to Skipton Rail Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 53 km rail trail along the old Skipton railway line from Ballarat through Haddon, Smythesdale and Pittong.",
+   "coordinates": {
+    "latitude": -37.7006086,
+    "longitude": 143.6538095
+   },
+   "wiki": "Ballarat–Skipton Rail Trail",
+   "visitHoursMin": 2,
+   "visitHoursMax": 6,
+   "free": true,
+   "costBasis": "open"
+  },
+  "bendigo-1": {
+   "name": "Bendigo Art Gallery",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "One of Australia's oldest regional art galleries, with 19th-century European and Australian art and free entry.",
+   "coordinates": {
+    "latitude": -36.757348,
+    "longitude": 144.276835
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": "https://www.bendigoartgallery.com.au/"
+  },
+  "bendigo-2": {
+   "name": "Central Deborah Gold Mine",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Disused gold mine with a 75-minute tour 61 m underground, plus surface heritage buildings and a museum.",
+   "coordinates": {
+    "latitude": -36.764823,
+    "longitude": 144.270313
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "ticketUrl": "https://www.central-deborah.com/"
+  },
+  "bendigo-3": {
+   "name": "Golden Dragon Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Museum of Chinese Australian history in Bendigo's Dai Gum San precinct, with Chinese gardens and a Kuan Yin temple.",
+   "coordinates": {
+    "latitude": -36.754839,
+    "longitude": 144.282417
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://goldendragonmuseum.org/"
+  },
+  "bendigo-4": {
+   "name": "Sacred Heart Cathedral, Bendigo",
+   "icon": "⛪",
+   "category": "religious",
+   "bio": "Gothic Revival cathedral with an 87 m spire, one of Australia's largest churches, completed in 1977.",
+   "coordinates": {
+    "latitude": -36.760065,
+    "longitude": 144.274033
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "entry"
+  },
+  "bendigo-5": {
+   "name": "Rosalind Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "60-acre park beside Bendigo's centre with a conservatory, fernery and the Poppet Head Lookout Tower.",
+   "coordinates": {
+    "latitude": -36.757255,
+    "longitude": 144.278601
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "bendigo-7": {
+   "name": "Greater Bendigo National Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "17,020-hectare park of Box-Ironbark forest near Bendigo, with spring wildflowers and the Old Tom Mine Walk.",
+   "coordinates": {
+    "latitude": -36.722847,
+    "longitude": 144.290407
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/greater-bendigo-national-park"
+  },
+  "daylesford-1": {
+   "name": "Lake Daylesford",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Lake in Daylesford dammed in 1929 to a Walter Burley Griffin design, and used for fishing.",
+   "coordinates": {
+    "latitude": -37.348754,
+    "longitude": 144.136123
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "daylesford-2": {
+   "name": "Wombat Hill Botanic Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Heritage-listed 19th-century botanic gardens on Wombat Hill, with a fern gully and conifers for a walk or picnic.",
+   "coordinates": {
+    "latitude": -37.343409,
+    "longitude": 144.151116
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "daylesford-3": {
+   "name": "Hepburn Mineral Springs Reserve",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Reserve of mineral springs at Hepburn Springs, used for drinking and bathing since the 1860s, with free pumps.",
+   "coordinates": {
+    "latitude": -37.3104037,
+    "longitude": 144.1402769
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/hepburn-regional-park"
+  },
+  "daylesford-4": {
+   "name": "Convent Gallery",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Former convent on Wombat Hill with seven gallery spaces, museums, a chapel and gardens over four levels.",
+   "coordinates": {
+    "latitude": -37.342214,
+    "longitude": 144.148372
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://conventgallery.com.au/"
+  },
+  "daylesford-5": {
+   "name": "Hepburn Regional Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Regional park around Daylesford with waterfalls, mineral springs, gold-rush relics and Jacksons Lookout tower.",
+   "coordinates": {
+    "latitude": -37.314484,
+    "longitude": 144.152123
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/hepburn-regional-park"
+  },
+  "daylesford-6": {
+   "name": "Mineral Springs Loop Walk",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "Loop walk in Hepburn Regional Park past mineral springs, with a view of Sailors Falls.",
+   "coordinates": null,
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "daylesford-7": {
+   "name": "Hepburn Springs",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Spa town in Australia's largest concentration of mineral springs, with free spring pumps and a bathhouse.",
+   "coordinates": {
+    "latitude": -37.3091,
+    "longitude": 144.140934
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "daylesford-8": {
+   "name": "Trentham Falls",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Waterfall dropping over 32 m down basalt, the highest single drop in Central Victoria, near Trentham.",
+   "coordinates": {
+    "latitude": -37.370175,
+    "longitude": 144.324597
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/coliban-river-scenic-reserve/attractions/trentham-falls"
+  },
+  "macedon-ranges-1": {
+   "name": "Hanging Rock",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Former volcano rising 105 m above the plain, with a sealed summit trail and the setting of Picnic at Hanging Rock.",
+   "coordinates": {
+    "latitude": -37.330024,
+    "longitude": 144.595145
+   },
+   "wiki": "Hanging Rock, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Per Car",
+   "ticketUrl": "https://www.mrsc.vic.gov.au/See-Do/Hanging-Rock"
+  },
+  "macedon-ranges-3": {
+   "name": "Mount Macedon Memorial Cross",
+   "icon": "🗿",
+   "category": "monument",
+   "bio": "21 m First World War memorial cross of terracotta tiles near the summit of Mount Macedon, visible from the plains.",
+   "coordinates": {
+    "latitude": -37.389522,
+    "longitude": 144.576869
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": true,
+   "costBasis": "open"
+  },
+  "macedon-ranges-4": {
+   "name": "Kyneton",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Town in the Macedon Ranges with Piper Street's original buildings, botanic gardens and Campaspe River walks.",
+   "coordinates": {
+    "latitude": -37.247494,
+    "longitude": 144.455217
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "macedon-ranges-5": {
+   "name": "Woodend",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Town between Melbourne and Bendigo, a gold-rush thoroughfare near Mount Macedon, Hanging Rock and waterfalls.",
+   "coordinates": {
+    "latitude": -37.353686,
+    "longitude": 144.534138
+   },
+   "wiki": "Woodend, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "open"
+  },
+  "macedon-ranges-6": {
+   "name": "Kyneton Botanic Gardens",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Botanic gardens established in 1858, with bluestone walls, a rotunda and a riverside walk on the Campaspe.",
+   "coordinates": {
+    "latitude": -37.253576,
+    "longitude": 144.449642
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "macedon-ranges-7": {
+   "name": "Turpin Falls",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "An 18 m basalt waterfall on the Campaspe River north of Kyneton, reached by a short path and staircase.",
+   "coordinates": {
+    "latitude": -37.1348176,
+    "longitude": 144.4829304
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/sites/turpins-falls-scenic-reserve"
+  },
+  "castlemaine-1": {
+   "name": "Maldon",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Gold-rush town 19 km from Castlemaine, named Australia's first notable town in 1966, with a mine open to the public.",
+   "coordinates": {
+    "latitude": -36.996314,
+    "longitude": 144.068946
+   },
+   "wiki": "Maldon, Victoria",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open"
+  },
+  "castlemaine-2": {
+   "name": "Castlemaine Diggings National Heritage Park",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Gold-rush mine relics and puddling machines in Box-Ironbark woodland, with heritage walks near Castlemaine.",
+   "coordinates": {
+    "latitude": -37.0545838,
+    "longitude": 144.236072
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/castlemaine-diggings-national-heritage-park"
+  },
+  "castlemaine-3": {
+   "name": "Castlemaine Theatre Royal",
+   "icon": "🎡",
+   "category": "entertainment",
+   "bio": "The Australian mainland's longest continuously operating theatre, now a 200-seat cinema with live music and a bar.",
+   "coordinates": {
+    "latitude": -37.066365,
+    "longitude": 144.219684
+   },
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costMin": 19,
+   "costMax": 19,
+   "currency": "AUD",
+   "costBasis": "ticket",
+   "ticketUrl": "https://theatreroyalcastlemaine.com.au/"
+  },
+  "heathcote-graytown-national-park": {
+   "name": "Heathcote-Graytown National Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "National park of 12,833 hectares by Heathcote, with Mount Ida and Viewing Rock lookouts and picnic areas.",
+   "coordinates": {
+    "latitude": -36.9194371,
+    "longitude": 144.7180759
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/heathcote-graytown-national-park"
+  },
+  "lake-eppalock": {
+   "name": "Lake Eppalock",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Campaspe River reservoir near Heathcote, ringed by Box Ironbark forest, with boat ramps and fishing.",
+   "coordinates": {
+    "latitude": -36.854174,
+    "longitude": 144.468791
+   },
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://g-mwater.com.au/water-operations/storages/campaspe/lakeeppalock"
+  },
+  "pink-cliffs-geological-reserve": {
+   "name": "Pink Cliffs Geological Reserve",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Former Heathcote gold-mining site where sluicing left a lunar-like landscape of pink and pastel clay cliffs.",
+   "coordinates": {
+    "latitude": -36.9302307,
+    "longitude": 144.7038668
+   },
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/pink-cliffs-geological-reserve"
+  },
+  "o-keefe-rail-trail": {
+   "name": "O'Keefe Rail Trail",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 49 km gravel and sealed rail trail for walking and cycling along a former railway from Bendigo to Heathcote.",
+   "coordinates": {
+    "latitude": -36.7877333,
+    "longitude": 144.5268389
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "maryborough": {
+   "name": "Maryborough",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Goldfields town north of Ballarat, known for its 1890 railway station with a bell tower that Mark Twain praised.",
+   "coordinates": {
+    "latitude": -37.046758,
+    "longitude": 143.737572
+   },
+   "wiki": "Maryborough, Victoria",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": true,
+   "costBasis": "open"
+  },
+  "kooyoora-state-park": {
+   "name": "Kooyoora State Park",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "Box-ironbark forest and granite outcrops west of Inglewood, with a 5.3 km Long Rock walk to a lookout.",
+   "coordinates": {
+    "latitude": -36.594503,
+    "longitude": 143.701792
+   },
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/kooyoora-state-park"
+  },
+  "melville-caves": {
+   "name": "Melville Caves",
+   "icon": "👀",
+   "category": "viewpoint",
+   "bio": "Granite outcrops and shelters in Kooyoora State Park, a believed bushranger hideout, with a picnic area.",
+   "coordinates": {
+    "latitude": -36.5999022,
+    "longitude": 143.6938976
+   },
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": true,
+   "costBasis": "open"
+  },
+  "eucalyptus-distillery-museum": {
+   "name": "Eucalyptus Distillery Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Volunteer-run museum at Inglewood where guided tours show a model distillery extracting oil from eucalyptus leaves.",
+   "coordinates": {
+    "latitude": -36.5686913,
+    "longitude": 143.8650055
+   },
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "ticketUrl": "https://eucymuseum.com.au"
+  },
+  "goldfields-track": {
+   "name": "Goldfields Track",
+   "icon": "🥾",
+   "category": "hike",
+   "bio": "A 210 km walking and riding track from Ballarat to Bendigo through goldfields towns and forests, doable in sections.",
+   "coordinates": {
+    "latitude": -37.3158991,
+    "longitude": 144.1185685
+   },
+   "wiki": "Great Dividing Trail",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "https://www.goldfieldstrack.com.au"
+  }
+ },
+ "existing_fixes": {},
+ "held": [
+  {
+   "id": "ballarat-3",
+   "reason": "Eureka Stockade is the same park as the Eureka Centre (ballarat-2): near-duplicate"
+  }
+ ]
+}
