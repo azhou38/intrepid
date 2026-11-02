@@ -3467,6 +3467,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 5, 9, 10, 11],
     bestTimeBlurb: "Summers are hot with frequent extreme heat, so {months} are the mild months to visit.",
   },
+  {
+    id: 'hamilton-victoria', name: "Hamilton (Victoria)", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -37.73333333, longitude: 142.01666667 },
+    category: 'city', icon: "🐑", rank: 5,
+    tagline: "A western Victoria wool town with a Guilfoyle garden and a waterfall nearby.",
+    description: "Hamilton is a town in western Victoria on the Henty Highway, and calls itself the Wool Capital of the World. The surrounding shire produces as much as 15% of Australia's wool clip. The Botanic Gardens were designed in 1881 by William Guilfoyle, and Wannon Falls drops 30 m over basalt about 19 km west. Grampians National Park is a short drive away.",
+    whyVisit: ["Learn Western District wool history", "Stroll a Guilfoyle-designed garden"],
+    whyVisitPhotos: ["", ""],
+    highlights: ["Wool heritage", "Botanic gardens"],
+    goodToKnow: [
+      { icon: "💧", title: "Falls flow in winter", detail: "Wannon Falls is best in the winter wet and can shrink to a trickle by the end of summer." },
+      { icon: "🚌", title: "Reach it by road", detail: "Hamilton is on the Henty Highway and served by V/Line coaches. Its airport takes only recreational aircraft." },
+    ],
+    bestMonths: [6, 7, 8, 9, 10],
+    bestTimeBlurb: "Visit in {months}, when Wannon Falls is at its fullest after the winter rains.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
