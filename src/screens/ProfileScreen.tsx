@@ -926,23 +926,25 @@ function PageRange({ scrollX, total, pageCount, pageSize }: { scrollX: SharedVal
 }
 
 // A tile's footer: the name and sub line over a dark gradient that fills the footer's own box (full tile width, as tall as the
-// text plus room to fade in above it).
+// text plus room to fade in above it). Each footer's gradient has its own id: with one shared id, the spot grid's tiles
+// (mounted after the destination grid's had gone) drew no gradient at all.
 function TileFooter({ name, sub }: { name: string; sub: string }) {
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
+  const scrimId = `tileScrim${React.useId().replace(/[^a-zA-Z0-9]/g, '')}`;
   return (
     <View style={styles.tileFooter} pointerEvents="none"
       onLayout={e => setBox({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
       {!!box && (
         <Svg width={box.w} height={box.h} style={StyleSheet.absoluteFill}>
           <Defs>
-            <SvgLinearGradient id="tileScrim" x1="0" y1="0" x2="0" y2="1">
+            <SvgLinearGradient id={scrimId} x1="0" y1="0" x2="0" y2="1">
               <Stop offset="0" stopColor="#000" stopOpacity={0} />
               <Stop offset="0.25" stopColor="#000" stopOpacity={0.12} />
               <Stop offset="0.55" stopColor="#000" stopOpacity={0.4} />
               <Stop offset="1" stopColor="#000" stopOpacity={0.78} />
             </SvgLinearGradient>
           </Defs>
-          <Rect x={0} y={0} width={box.w} height={box.h} fill="url(#tileScrim)" />
+          <Rect x={0} y={0} width={box.w} height={box.h} fill={`url(#${scrimId})`} />
         </Svg>
       )}
       <Text style={styles.tileName} numberOfLines={3}>{name}</Text>
