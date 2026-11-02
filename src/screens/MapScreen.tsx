@@ -1758,9 +1758,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // swapped in and out left its opacity of 0 stuck on the pill after it was removed, hiding the "← Country" pill when a
   // spot went back to its destination.
   const spotBackPeekSV = useSharedValue(0);
+  // Which mounted sheet positions the pills (see pillOwnerFor below). Declared here because upPillBackPeekStyle reads it.
+  const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
+  // A country sheet has no "← Parent", so the label is hidden the moment the pills pass to one: on "← Country" the country
+  // sheet takes them over while the destination is still selected (its selection change lands a render later), which
+  // showed a stale "← Country" over the country sheet sliding up.
   const upPillBackPeekStyle = useAnimatedStyle(() => ({
     opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
-      * (spotBackPeekSV.value ? pillPeekSV.value : 1),
+      * (spotBackPeekSV.value ? pillPeekSV.value : 1)
+      * (pillOwnerSV.value === PILL_OWNER.country ? 0 : 1),
   }));
   // The full-screen down arrow and the half-screen X share one button and crossfade with the sheet's position as it is
   // dragged, instead of swapping when the snap settles (mapState flips only after the sheet comes to rest).
@@ -1796,7 +1802,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // when it has gone, ownership passes to the new sheet and the pills fade in at its position (pillHandoverSV).
   // Bumped by "← Country" to start the destination sheet's slide off at the tap (DestinationSheet's leaveEarlySV).
   const destLeaveEarlySV = useSharedValue(0);
-  const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
   const pillHandoverSV = useSharedValue(1);
   // During a swap: the live sheet that takes the pills over when the outgoing one finishes its slide (see handOverPills).
   const pillNextOwnerSV = useSharedValue<number>(PILL_OWNER.none);
