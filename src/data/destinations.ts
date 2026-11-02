@@ -1387,6 +1387,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Mild {months} weather suits beach time, though summer is busy and March is quieter.",
   },
   {
+    id: 'macedon-ranges', name: "Macedon Ranges", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -37.33, longitude: 144.5 },
+    category: 'nature', icon: "🌲", rank: 3,
+    tagline: "Hanging Rock, Mount Macedon and village gardens between Melbourne and Bendigo",
+    description: "The Macedon Ranges is a region of native forest, villages and cool-climate gardens in Central Victoria. Hanging Rock, a 718 m volcanic mamelon formed 6.25 million years ago, was the setting of Joan Lindsay's novel Picnic at Hanging Rock. Mount Macedon's Camel's Hump reaches 1,001 m, the region's highest point, and snow falls there on 15 to 20 days a year. The region has more working artists per capita than anywhere else in Victoria.",
+    whyVisit: ["Hike volcanic rock at Hanging Rock", "Wander historic villages and markets", "Visit cool-climate gardens and lookouts"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Volcanic rock", "Village markets", "Gardens and lookouts"],
+    goodToKnow: [
+      { icon: "❄️", title: "Colder than Melbourne", detail: "Mount Macedon sits above 1,000 m and sees snow most winters. Pack a layer even when the city is mild." },
+      { icon: "🚗", title: "Drive between villages", detail: "Towns and sights are spread across about 1,750 sq km, so a car is the practical way to link villages, gardens and Hanging Rock." },
+      { icon: "🌸", title: "Check garden opening dates", detail: "Open gardens and peony picking run on set seasons and dates. Check the regional tourism site before you go." },
+    ],
+    bestMonths: [3, 4, 5, 10, 11],
+    bestTimeBlurb: "Milder {months} suit hiking and gardens, away from the hotter summers and colder winters.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
