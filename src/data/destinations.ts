@@ -979,6 +979,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit in {months} for the warmest coastal weather and a chance of penguins after sunset.",
   },
   {
+    id: 'grampians-national-park', name: "Grampians National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 100,
+    continent: 'Oceania', coordinates: { latitude: -37.18, longitude: 142.47 },
+    category: 'park', icon: "⛰️", rank: 2,
+    tagline: "Sandstone ranges of lookouts, waterfalls and rock art, 260 km west of Melbourne",
+    description: "Grampians (Gariwerd) National Park covers about 167,000 ha of uplifted sandstone ranges at the western end of the Great Dividing Range, with Mount William the highest point at 1,167 m. Halls Gap is the only town and main access point, and the Wonderland area beside it is the most popular for day walks. The park holds about 90% of Victoria's Aboriginal rock art, and Brambuk, the cultural centre at Halls Gap, is owned and managed by Jardwadjali and Djab Wurrung people. About a third of Victoria's flora grows here, including more than 75 orchid species.",
+    whyVisit: ["Walk to lookouts over the ranges", "See Aboriginal rock art in Gariwerd", "Find wildflowers and orchids in spring", "Spot kangaroos and emus at Halls Gap"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Mountain lookouts", "Aboriginal rock art", "Spring wildflowers", "Roaming wildlife"],
+    goodToKnow: [
+      { icon: "🔥", title: "Check track closures", detail: "The 2024-25 fires burned over 135,000 ha and damaged tracks and camps. Check Parks Victoria for open sites before you go." },
+      { icon: "🥾", title: "Walk in winter or spring", detail: "Summer in the ranges can be very hot and dry. Winter and spring are the best seasons for walking." },
+      { icon: "🦘", title: "Stay at Halls Gap", detail: "The only town in the park, with the supermarket, visitor centre and Wonderland walks beside it. Kangaroos graze nearby in late afternoon." },
+    ],
+    bestMonths: [9, 10, 11],
+    bestTimeBlurb: "Go in {months} for spring wildflowers and mild walking weather, before summer turns hot and dry.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
