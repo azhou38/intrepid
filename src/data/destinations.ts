@@ -1890,6 +1890,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Beaches, coastal walks and rail-trail rides are at their best in {months}.",
   },
   {
+    id: 'castlemaine', name: "Castlemaine", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 50,
+    continent: 'Oceania', coordinates: { latitude: -37.0636, longitude: 144.2172 },
+    category: 'city', icon: "🏚️", rank: 4,
+    tagline: "A gold-rush boomtown of Victorian hotels, mine diggings and a lively arts scene",
+    description: "Castlemaine is a goldfields town founded in 1851, about 123 km from Melbourne and 39 km from Bendigo. Grand gold-era buildings and Victorian hotels survive on most street corners, and mullock heaps and mine shafts mark the Castlemaine Diggings National Heritage Park. Its Theatre Royal, established in 1854, is the oldest continuously operating theatre in mainland Australia. Maldon, 19 km away, was declared Australia's first notable town in 1966 for its largely unchanged 1850s buildings.",
+    whyVisit: ["Walk the gold-rush diggings", "Wander preserved goldfields streets", "See a show in a historic theatre"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Gold diggings", "Heritage streets", "Historic theatre"],
+    goodToKnow: [
+      { icon: "🚂", title: "Steam train to Maldon", detail: "The Victorian Goldfields Railway runs from Castlemaine station to Maldon mostly Fridays to Sundays, so plan a weekend visit around it." },
+      { icon: "⚠️", title: "Stay on marked tracks", detail: "Open mine shafts and mullock heaps lie off the goldfields trails, so keep to signed paths when bushwalking." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Walk the diggings and Maldon's streets in {months}, when inland weather is mild.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
