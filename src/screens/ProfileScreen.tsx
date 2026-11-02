@@ -965,10 +965,15 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
         {pages.map((pg, p) => (
           <View key={p} style={styles.rankPage}>
             {pg.map((r, j) => {
-              const v = valueOf(r);
+              const v = valueOf(r), k = p * LIST_PAGE_SIZE + j;
+              // Sorted by spots visited, the top three (with any spots) get the grid's gold, silver and bronze: on the rank
+              // number, as a badge, and on the bar.
+              const medal = sort === 'spots' && v > 0 && k < 3 ? RANK_COLORS[k] : undefined;
               return (
                 <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
-                  {sort !== 'name' && <Text style={styles.rankNum}>{p * LIST_PAGE_SIZE + j + 1}</Text>}
+                  {sort !== 'name' && (medal
+                    ? <View style={styles.rankNumSlot}><View style={[styles.rankBadge, styles.rankBadgeList, { backgroundColor: medal }]}><Text style={styles.rankTxt}>{k + 1}</Text></View></View>
+                    : <Text style={styles.rankNum}>{k + 1}</Text>)}
                   {r.countryCode ? <CircleFlag countryCode={r.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} /> : <View style={{ width: 22 }} />}
                   <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
                     <Text style={styles.rankName} numberOfLines={1}>{r.name}</Text>
@@ -976,7 +981,7 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                   </View>
                   {bar && (
                     <View style={styles.countryBarTrack}>
-                      <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }]} />
+                      <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }, !!medal && { backgroundColor: medal }]} />
                     </View>
                   )}
                   {bar && <Text style={styles.countryCount}>{v ? (sort === 'rating' ? v.toFixed(1).replace(/\.0$/, '') : v) : '–'}</Text>}
@@ -1274,6 +1279,9 @@ const styles = StyleSheet.create({
   rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
   rankRowOn:   { backgroundColor: '#FFF7ED' },
   rankNum:     { width: 18, fontSize: 13, fontWeight: '700', color: '#9CA3AF', textAlign: 'right' },
+  // A medal rank in the list: the grid's rank badge, in the number's slot (right-aligned like the numbers).
+  rankNumSlot:   { width: 18, alignItems: 'flex-end' },
+  rankBadgeList: { position: 'relative', top: 0, left: 0, width: 18, height: 18, borderRadius: 9 },
   rankNameCol: { width: 120 },
   rankNameFlex: { flex: 1 },
   rankName:    { fontSize: 13, fontWeight: '600', color: '#374151' },
