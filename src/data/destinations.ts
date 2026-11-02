@@ -1922,6 +1922,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Winter snow and summer lakes and trails make {months} the best times to visit.",
   },
   {
+    id: 'yarra-ranges-national-park', name: "Yarra Ranges National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 80,
+    continent: 'Oceania', coordinates: { latitude: -37.64, longitude: 145.8 },
+    category: 'park', icon: "🌳", rank: 4,
+    tagline: "Mountain ash forest, scenic drives and Melbourne's nearest winter snowplay",
+    description: "Yarra Ranges National Park, created in December 1995, covers 76,003 ha of wet mountain ash forest and cool temperate rainforest in the Great Dividing Range. Mountain ash is the world's tallest flowering tree. Mount Donna Buang (1,245 m) has a 21 m lookout tower with views over Melbourne, the Yarra Valley and the Dandenong and Cathedral Ranges, and near Warburton the Rainforest Gallery is a viewing platform 15 m above the forest floor. About 84% of the park is a water supply catchment closed to the public.",
+    whyVisit: ["Walk among the world's tallest flowering trees", "Drive winding mountain ash forest roads", "See Melbourne's nearest snow in winter"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Giant ash forest", "Forest drives", "Winter snowplay"],
+    goodToKnow: [
+      { icon: "🚫", title: "Most of the park is closed", detail: "Most of the park protects Melbourne's drinking water and is closed to visitors. Stay on signed tracks and roads." },
+      { icon: "🛒", title: "No facilities in the park", detail: "There are no shops or services inside the park. Stock up in Healesville, Marysville or Warburton." },
+    ],
+    bestMonths: [11, 12, 1, 2, 3, 4],
+    bestTimeBlurb: "Warm {months} days suit forest walks and drives, and Jun–Aug brings snow to Mount Donna Buang.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
