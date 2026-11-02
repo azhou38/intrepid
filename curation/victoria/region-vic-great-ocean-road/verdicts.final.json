@@ -1,0 +1,973 @@
+[
+ {
+  "name": "Geelong Waterfront",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Geelong lists it as a working maritime area with cafes, carousel and gardens; open precinct, easily half an hour (rules 1-2).",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Geelong"
+  ]
+ },
+ {
+  "name": "Geelong Maritime Museum",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "For: Wikivoyage Geelong lists a museum you go inside. Against: listing has no description, a single source, small museum (needs two counted sources).",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Geelong"
+  ]
+ },
+ {
+  "name": "National Wool Museum",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Geelong names this museum visitors enter; a distinct city museum (rule 1,2).",
+  "decided_by": "judge",
+  "views": 1453,
+  "counted_sources": 1
+ },
+ {
+  "name": "You Yangs Regional Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Geelong names granite hills with a Flinders Peak walk; a second-tier nature stop (rule 1,3).",
+  "decided_by": "judge",
+  "views": 1244,
+  "counted_sources": 1
+ },
+ {
+  "name": "Geelong Botanic Gardens",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Geelong names the free botanical gardens (daily, tea house), a walkable half hour; second-tier city stop.",
+  "decided_by": "recheck",
+  "views": 1444,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Geelong"
+  ]
+ },
+ {
+  "name": "Geelong Library and Heritage Centre",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "a civic building seen from the pavement",
+  "decided_by": "script",
+  "views": 1234,
+  "counted_sources": 1
+ },
+ {
+  "name": "Barwon Heads",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Seaside town named by Wikivoyage with beach, bluff and Seachange fame; a harbour town a guide recommends (rule 1).",
+  "decided_by": "judge",
+  "views": 11277,
+  "counted_sources": 1
+ },
+ {
+  "name": "Barwon Bluff",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Headland is part of Barwon Heads' coast; no separate visit described (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Queenscliff",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Queenscliff: historic town with 19th-century buildings, museum, railway (rule 1,3).",
+  "decided_by": "judge",
+  "views": 12887,
+  "counted_sources": 1
+ },
+ {
+  "name": "Fort Queenscliff",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Fort with guided tours at set times, named by Wikivoyage (rule 1,2).",
+  "decided_by": "judge",
+  "views": 3786,
+  "counted_sources": 1
+ },
+ {
+  "name": "Bellarine Peninsula Railway",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Heritage steam railway where the ride is the attraction (COVERAGE: ride kept when it is the draw).",
+  "decided_by": "judge",
+  "views": 5460,
+  "counted_sources": 1
+ },
+ {
+  "name": "Point Lonsdale",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Headland at the Port Phillip entrance with pier, lighthouse and Rip lookout walks, Wikivoyage Queenscliff (rule 1,2).",
+  "decided_by": "judge",
+  "views": 6356,
+  "counted_sources": 1
+ },
+ {
+  "name": "Rip View Lookout",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Part of Point Lonsdale headland walks (rule 3).",
+  "decided_by": "judge",
+  "views": 6356,
+  "counted_sources": 1
+ },
+ {
+  "name": "Torquay",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 24056 page views",
+  "decided_by": "script",
+  "views": 24056,
+  "counted_sources": 1
+ },
+ {
+  "name": "Bells Beach",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources (Wikivoyage Great Ocean Road, Torquay); world-famous surf beach (rule 1).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Australian National Surfing Museum",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Regional tourism board top pick plus Wikivoyage Torquay; museum visitors enter (rule 1,2).",
+  "decided_by": "judge",
+  "views": 332,
+  "counted_sources": 2
+ },
+ {
+  "name": "Fisherman's Beach",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Small town beach duplicating Torquay's beaches; no distinct draw (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Torquay Surf Beach",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Back Beach is Torquay's surf beach; Wikivoyage Torquay region/Surf Coast plus greatoceanroad.com.au things-to-do and guides name it; surfing and sand walks (rule 1-2).",
+  "decided_by": "recheck",
+  "views": 1299,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Johanna",
+   "https://greatoceanroad.com.au/towns/torquay/things-to-do/"
+  ]
+ },
+ {
+  "name": "Point Impossible Beach",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Lesser beach near Torquay, clothes-optional designation only; no distinct visitor draw (rule 3).",
+  "decided_by": "judge",
+  "views": 3171,
+  "counted_sources": 1
+ },
+ {
+  "name": "Anglesea",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Great Ocean Road: town where the road meets the ocean, beach and golf-course kangaroos (rule 1).",
+  "decided_by": "judge",
+  "views": 10924,
+  "counted_sources": 1
+ },
+ {
+  "name": "Split Point Lighthouse",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; 45-minute guided tower tour (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Aireys Inlet",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Village is a wrapper for Split Point Lighthouse; keep the attraction (COVERAGE town wrapper rule).",
+  "decided_by": "judge",
+  "views": 8244,
+  "counted_sources": 1
+ },
+ {
+  "name": "Great Ocean Road Memorial Arch",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Quirky roadside icon named by Wikivoyage Great Ocean Road, a photo stop (rule 1, icon allowance).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Point Addis",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Johanna: surf beach with a 30-minute indigenous bushland walk to a lookout; named stop on the Surf Coast Walk.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Johanna"
+  ]
+ },
+ {
+  "name": "Lorne",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Lorne: major summer town with beach and pier, access to walks (rule 1).",
+  "decided_by": "judge",
+  "views": 13209,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lorne Pier",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Part of Lorne's foreshore, not a distinct draw (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Teddy's Lookout",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources (Lorne, Johanna) for the classic Great Ocean Road view (rule 1).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Erskine Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Great Otway National Park lists it with Allenvale as one of two stunning falls (rule 1).",
+  "decided_by": "judge",
+  "views": 548,
+  "counted_sources": 0
+ },
+ {
+  "name": "Angahook-Lorne State Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Now part of Great Otway National Park; Wikivoyage mention is a generic walking-area line, not a distinct place; its draws (Lorne falls, walks) are separate spots (rule 3).",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Johanna",
+   "https://en.wikivoyage.org/wiki/Lorne"
+  ]
+ },
+ {
+  "name": "Kennett River",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; reliable wild koalas (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Wye River",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Village with koalas duplicating Kennett River; no distinct draw (rule 3).",
+  "decided_by": "judge",
+  "views": 10099,
+  "counted_sources": 1
+ },
+ {
+  "name": "Apollo Bay",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Great Ocean Road: mid-point town and Otways base (rule 1).",
+  "decided_by": "judge",
+  "views": 12756,
+  "counted_sources": 1
+ },
+ {
+  "name": "Marriner's Lookout",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "For: Wikivoyage Apollo Bay lists a 30-minute return walk to a view over town and coast. Against: single source, short ordinary hill lookout above the town.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Apollo_Bay"
+  ]
+ },
+ {
+  "name": "Marriner's Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Track closed by Parks Victoria in 2011; not reliably open (rule 2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Maits Rest",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Apollo Bay, Johanna and Great Otway: 30-minute rainforest boardwalk (rule 1,2).",
+  "decided_by": "judge",
+  "views": 623,
+  "counted_sources": 2
+ },
+ {
+  "name": "Cape Otway Lightstation",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "3 counted sources, 3068 page views",
+  "decided_by": "script",
+  "views": 3068,
+  "counted_sources": 3
+ },
+ {
+  "name": "Blanket Bay",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria lists a Blanket Bay day visitor area and campground in Great Otway NP, a sheltered beach on the Great Ocean Walk; second-tier beach (rules 1-2).",
+  "decided_by": "recheck",
+  "views": 94,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.greatoceanroadauthority.vic.gov.au/Land-We-Manage/National-Parks/Great-Otway-National-Park/Drive-in-campgrounds/Blanket-Bay-Campground",
+   "https://www.parks.vic.gov.au/places-to-see/sites/blanket-bay-day-visitor-area"
+  ]
+ },
+ {
+  "name": "Hopetoun Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "2 counted sources, 2042 page views",
+  "decided_by": "script",
+  "views": 2042,
+  "counted_sources": 2
+ },
+ {
+  "name": "Triplet Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Johanna names it with the Otway falls; walk with a loop (rule 1,2).",
+  "decided_by": "judge",
+  "views": 776,
+  "counted_sources": 1
+ },
+ {
+  "name": "Beauchamp Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Johanna names it; Otway waterfall walk (rule 1,2).",
+  "decided_by": "judge",
+  "views": 375,
+  "counted_sources": 1
+ },
+ {
+  "name": "Sheoak Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria has a dedicated Sheoak Falls page near Lorne (600 m walk, with Swallow Cave option) plus Wikivoyage; waterfall walk of about an hour.",
+  "decided_by": "recheck",
+  "views": 61,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park/attractions/lorne/things-to-do/sheoak-falls"
+  ]
+ },
+ {
+  "name": "Otway Fly",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Paid treetop walk and zipline, tourism-listed (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lavers Hill",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Gateway village, not a draw itself (candidate note; rule 2).",
+  "decided_by": "judge",
+  "views": 1914,
+  "counted_sources": 1
+ },
+ {
+  "name": "Johanna Beach",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Johanna: one of the most beautiful valleys; surf beach (rule 1).",
+  "decided_by": "judge",
+  "views": 1479,
+  "counted_sources": 1
+ },
+ {
+  "name": "Cape Otway",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Duplicate of Cape Otway Lightstation, already a candidate (rule 3).",
+  "decided_by": "judge",
+  "views": 7205,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lake Colac",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "For: Wikivoyage Colac names the largest freshwater lake in Victoria, birdwatching, botanic gardens beside it. Against: one source, shallow drought-hit lake, plain town lakeshore.",
+  "decided_by": "recheck",
+  "views": 2669,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Colac"
+  ]
+ },
+ {
+  "name": "Mount Leura",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Camperdown: volcanic climb with views (rule 1,2).",
+  "decided_by": "judge",
+  "views": 1613,
+  "counted_sources": 1
+ },
+ {
+  "name": "Gnotuk Lookout",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Bare listing with no description; minor lookout (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Camperdown",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "A town whose only listed draw on Wikivoyage is Mt Leura and the lakes view, which are the attractions; a town is not a spot beside its own attractions (COVERAGE: town wrapper).",
+  "decided_by": "recheck",
+  "views": 16432,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Camperdown"
+  ]
+ },
+ {
+  "name": "Port Campbell",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "2 counted sources, 10914 page views",
+  "decided_by": "script",
+  "views": 10914,
+  "counted_sources": 2
+ },
+ {
+  "name": "Twelve Apostles",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "3 counted sources, 83872 page views",
+  "decided_by": "script",
+  "views": 83872,
+  "counted_sources": 3
+ },
+ {
+  "name": "Twelve Apostles Lookout",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Near-duplicate of the Twelve Apostles candidate (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Loch Ard Gorge",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "2 counted sources, 9060 page views",
+  "decided_by": "script",
+  "views": 9060,
+  "counted_sources": 2
+ },
+ {
+  "name": "London Arch",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; a Port Campbell coast stop (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "The Arch",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; arch best in rough seas (rule 1).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "The Grotto",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; sinkhole inlet with rockpools (rule 1).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Gibson Steps",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Port Campbell: steps to beach, view of Apostles (rule 1,2).",
+  "decided_by": "judge",
+  "views": 3205,
+  "counted_sources": 1
+ },
+ {
+  "name": "Bay of Islands",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; coast rock formations (rule 1).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Bay of Martyrs",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Wikivoyage Great Ocean Road only mentions it in passing beside Bay of Islands; a roadside viewing stop with no guide singling it out (rule 3).",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Great_Ocean_Road"
+  ]
+ },
+ {
+  "name": "Peterborough, Victoria",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Small town; draw is the nearby Bay of Islands (rule 3).",
+  "decided_by": "judge",
+  "views": 3384,
+  "counted_sources": 1
+ },
+ {
+  "name": "Port Fairy",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 24150 page views",
+  "decided_by": "script",
+  "views": 24150,
+  "counted_sources": 1
+ },
+ {
+  "name": "Griffiths Island Lighthouse",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Port Fairy: walkable island lighthouse reserve (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Southcombe Beach",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Local family beach, no distinct draw (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "The Crags",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Port Fairy lists it as a popular scenic spot and sunset viewpoint 10 km away; second-tier coastal stop.",
+  "decided_by": "recheck",
+  "views": 354,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Port_Fairy"
+  ]
+ },
+ {
+  "name": "Battery Hill",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Small cannon site, minor historic stop (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Port Fairy Museum and Archives",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Small local history museum in the old courthouse with one Wikivoyage listing; not a draw a visitor would go out of the way for (friend test).",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Port_Fairy"
+  ]
+ },
+ {
+  "name": "East Beach, Port Fairy",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "For: tourism board names it for whale watching, main town beach. Against: one source, overlaps Port Fairy's coast and Griffiths Island, no distinct activity beyond seasonal whales.",
+  "decided_by": "recheck",
+  "views": 70,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Port_Fairy"
+  ]
+ },
+ {
+  "name": "Warrnambool",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 44039 page views",
+  "decided_by": "script",
+  "views": 44039,
+  "counted_sources": 1
+ },
+ {
+  "name": "Flagstaff Hill Maritime Museum",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; replica village with night show (rule 1,2).",
+  "decided_by": "judge",
+  "views": 975,
+  "counted_sources": 2
+ },
+ {
+  "name": "Deep Blue Hot Springs",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Tourism board top pick; hot springs visitors pay for (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Warrnambool Art Gallery",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "For: Wikivoyage Warrnambool lists a free gallery of about 5000 works with rotating exhibitions. Against: single source, regional council gallery, short visit.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Warrnambool"
+  ]
+ },
+ {
+  "name": "Logans Beach Whale Watching Platform",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Two counted sources; southern right whales Jun-Sep from a platform (rule 1,2; annual pattern).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Moyjil - Point Ritchie",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Warrnambool describes the headland at the Hopkins mouth as a significant Aboriginal site with paths and southern right whale viewing in season.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Warrnambool"
+  ]
+ },
+ {
+  "name": "Hopkins Falls",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Warrnambool: 90 m wide falls 15 km out with picnic areas (eels migrate in summer); second-tier natural stop.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Warrnambool"
+  ]
+ },
+ {
+  "name": "Lake Pertobe",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Warrnambool lists the Lake Pertobe and foreshore parkland beside Flagstaff Hill; open all-day waterfront park.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Warrnambool"
+  ]
+ },
+ {
+  "name": "Warrnambool Botanic Gardens",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Ordinary city garden (negative benchmark: suburban park).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Budj Bim Cultural Landscape",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "2 counted sources, 11374 page views",
+  "decided_by": "script",
+  "views": 11374,
+  "counted_sources": 2
+ },
+ {
+  "name": "Lake Surprise",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Part of Mount Eccles National Park, a larger spot (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Mount Eccles National Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Budj Bim: volcanic crater lakes park with trails (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Natural Bridge (Budj Bim)",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Wikivoyage Budj Bim describes it as part of the Lake Surprise attraction area of the park; part of a larger spot (rule 3).",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Budj_Bim_National_Park"
+  ]
+ },
+ {
+  "name": "Tower Hill",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Warrnambool lists Tower Hill Wildlife Reserve: extinct volcano with wildlife and walks (rule 1,2).",
+  "decided_by": "judge",
+  "views": 1712,
+  "counted_sources": 0
+ },
+ {
+  "name": "Great South West Walk",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Official trail body site (greatsouthwestwalk.com) promotes it; long walk (COVERAGE long trails).",
+  "decided_by": "judge",
+  "views": 823,
+  "counted_sources": 0
+ },
+ {
+  "name": "Portland",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 31470 page views",
+  "decided_by": "script",
+  "views": 31470,
+  "counted_sources": 1
+ },
+ {
+  "name": "Portland Maritime Discovery Centre",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "For: Wikivoyage Portland lists a museum with a whale skeleton and visitor information. Against: single source, small regional museum.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Portland"
+  ]
+ },
+ {
+  "name": "Cape Bridgewater",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Regional tourism board page (visitgreatoceanroad.org.au) names blowholes, petrified forest and seal colony (rule 1,2).",
+  "decided_by": "judge",
+  "views": 2815,
+  "counted_sources": 0
+ },
+ {
+  "name": "Discovery Bay Coastal Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria park page: highest coastal cliffs in Victoria, Cape Nelson, Bridgewater seal colony walk, Lake Monibeong and beaches; a substantial park with named walks.",
+  "decided_by": "recheck",
+  "views": 570,
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/discovery-bay-coastal-park"
+  ]
+ },
+ {
+  "name": "Lady Julia Percy Island",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Reached only by charter, no regular landing (rule 2).",
+  "decided_by": "judge",
+  "views": 4622,
+  "counted_sources": 0
+ },
+ {
+  "name": "Cape Nelson",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Tourism board page on the lighthouse walk; daily 11am and 2pm tours (rule 1,2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 0
+ }
+]

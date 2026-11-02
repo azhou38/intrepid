@@ -1,0 +1,610 @@
+[
+ {
+  "name": "Mildura",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 55071 page views",
+  "decided_by": "script",
+  "views": 55071,
+  "counted_sources": 1
+ },
+ {
+  "name": "Murray River",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Long linear feature, not a place (rule 3); its places (Mildura, Echuca, Swan Hill) are judged separately.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 2
+ },
+ {
+  "name": "Lock 11",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Mildura plus exploremildura/Mildura council: the only Murray lock the public can walk across, island lookout over the weir; short but a named second-tier stop.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mildura",
+   "https://www.exploremildura.com/lock-11.html",
+   "https://walkingmaps.com.au/walk/496"
+  ]
+ },
+ {
+  "name": "Apex Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Mildura names it a large inland sandbar beach for swimming; Visit Mildura links it to the Chaffey Trail; a beach stop (rule: second-tier beaches keep). Objection: seasonal swimming only.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mildura",
+   "https://www.visitmildura.com.au/Operators/Holiday-Parks/Apex-River-Beach-Holiday-Park.aspx"
+  ]
+ },
+ {
+  "name": "Meeting of the Waters",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Lonely Planet, Visit NSW and Wikivoyage Wentworth name the Murray-Darling junction with a viewing tower and Junction Island walk; two counted sources, a named natural landmark.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.lonelyplanet.com/points-of-interest/murray-darling-river-junction/1348675",
+   "https://www.visitnsw.com/node/50241",
+   "https://en.wikivoyage.org/wiki/Wentworth_(New_South_Wales)"
+  ]
+ },
+ {
+  "name": "Woodsies Gem Shop",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Wikivoyage (opened) describes a shop with maze and display room; fails rule 2 as a commercial shop/cafe, though the maze is a minor draw.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Australian Inland Botanic Gardens",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Mildura plus Visit Mildura map list the free semi-arid botanic garden with cafe; half an hour or more to walk.",
+  "decided_by": "recheck",
+  "views": 846,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mildura",
+   "https://visitmildura.com.au/VisitMildura/media/PDF-Documents/Maps/MT_TourMap_PicnicSpots.pdf"
+  ]
+ },
+ {
+  "name": "Mildura Holden Motor Museum",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "One Wikivoyage listing, limited weekday hours, small niche museum; fails the friend test.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Trentham Estate",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Winery named only in a list; individual cellar door not a distinct draw (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Oak Valley Estate",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Winery named only in a list; individual cellar door not a distinct draw.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lindemans Mildura",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Winery named only in a list; individual cellar door not a distinct draw.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Mildura Speedway",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Recurring race meetings are events, not a permanent draw (rule 4).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Perry Sandhills",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "NSW (Wentworth), outside Victoria",
+  "decided_by": "recheck",
+  "views": 610,
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.lonelyplanet.com/points-of-interest/perry-sandhills/1348676",
+   "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/perry-sandhills"
+  ]
+ },
+ {
+  "name": "Patchewollock",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Wikivoyage Mildura (opened) lists silo mural and a Mallee bird sculpture in a 100-person town; a short roadside look, 141 km from anywhere (judged on content, not location).",
+  "decided_by": "judge",
+  "views": 2615,
+  "counted_sources": 1
+ },
+ {
+  "name": "Murray-Sunset National Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "2 counted sources, 2541 page views",
+  "decided_by": "script",
+  "views": 2541,
+  "counted_sources": 2
+ },
+ {
+  "name": "Pink Lakes",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Visitor guide names the pink salt lakes as a photography draw within Murray-Sunset; a distinct named sight that guides single out.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lindsay Island",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Picnic area with tables and toilets inside a national park; not a distinct draw (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Shearers' Quarters",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Booked accommodation in a park, not a place to drop in (rule 2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Hattah-Kulkyne National Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria page (opened) names it: lakes chain, river and bush tracks; a national park is a visit in itself and one agency source is enough for an obvious draw.",
+  "decided_by": "judge",
+  "views": 1254,
+  "counted_sources": 1
+ },
+ {
+  "name": "Wyperfeld National Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria page names Victoria's first national park with walks and camping; obvious draw for a national park.",
+  "decided_by": "judge",
+  "views": 1273,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lake Tyrrell",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Visit Grampians (opened) and Wimmera Mallee tourism pages name Victoria's largest salt lake, with viewing platform and boardwalk; 10,718 views.",
+  "decided_by": "judge",
+  "views": 10718,
+  "counted_sources": 0
+ },
+ {
+  "name": "Barmah National Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "2 counted sources, 2118 page views",
+  "decided_by": "script",
+  "views": 2118,
+  "counted_sources": 2
+ },
+ {
+  "name": "Dharnya Centre",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria and Visit Echuca Moama list the Yorta Yorta cultural centre in Barmah National Park with guided cultural experiences and walks. Objection: hours uncertain, check dharnyacentre.com.au.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/sites/dharnya-community-and-education-centre",
+   "https://www.visitechucamoama.com.au/dharnya-centre"
+  ]
+ },
+ {
+  "name": "Gunbower National Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria names the river red gum forest with bend campsites and 4WD tracks; national park.",
+  "decided_by": "judge",
+  "views": 674,
+  "counted_sources": 1
+ },
+ {
+  "name": "Terrick Terrick National Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Parks Victoria and Bendigo Region tourism list the park with walks, birdwatching (Plains-wanderer), picnic and camping; a national park, own place. Objection: remote and thin facilities.",
+  "decided_by": "recheck",
+  "views": 803,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/terrick-terrick-national-park",
+   "https://www.bendigoregion.com.au/visit-loddon-valley/terrick-terrick-national-park"
+  ]
+ },
+ {
+  "name": "Swan Hill",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 25409 page views",
+  "decided_by": "script",
+  "views": 25409,
+  "counted_sources": 1
+ },
+ {
+  "name": "Pioneer Settlement",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Swan Hill (opened) lists the 1850s living-history museum with river cruises; full visit.",
+  "decided_by": "judge",
+  "views": 876,
+  "counted_sources": 1
+ },
+ {
+  "name": "Swan Hill Regional Art Gallery",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "Wikivoyage and Visit the Murray list it (naive art collection), but Visit the Murray says it is under redevelopment with a smaller display in the library; unclear if a visitable gallery now.",
+  "decided_by": "recheck",
+  "views": 211,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Swan_Hill",
+   "https://www.visitthemurray.com.au/products/swan-hill-regional-art-gallery"
+  ]
+ },
+ {
+  "name": "Swan Hill River Walk",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Swan Hill: free 4.5 km riverside walk of about two hours passing the town's attractions; also Melbourne Playgrounds listing. Objection: overlaps Riverside Park and Pioneer Settlement.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Swan_Hill",
+   "https://www.melbourneplaygrounds.com.au/swan-hill-river-walk"
+  ]
+ },
+ {
+  "name": "Burke and Wills Fig Tree",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Single tree beside a motel, a short look only; a minor memorial-type stop (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Lake Boga Flying Boat Museum",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Swan Hill (opened) lists the restored Catalina and WWII depot, A$18, open daily; a real visit.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Swan Hill Racecourse",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Race meetings are events, not a permanent draw (rule 4).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Swan Hill Food and Wine Festival",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "an event, not a permanent place",
+  "decided_by": "script",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Echuca-Moama",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 31487 page views",
+  "decided_by": "script",
+  "views": 31487,
+  "counted_sources": 1
+ },
+ {
+  "name": "Port of Echuca",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Echuca names the historic wharf, paddle steamers and Discovery Centre; headline attraction of the region.",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Holden Motor Museum Echuca",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "National Holden Motor Museum in Echuca closed in April 2024 and moved to Coffs Harbour; rule 2 (closed).",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.justcars.com.au/news-and-reviews/national-holden-motor-museum-to-close/994500",
+   "https://speedcafe.com/bucket-list-national-holden-motor-museum-echuca-victoria/"
+  ]
+ },
+ {
+  "name": "The Great Aussie Beer Shed",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Pub/entertainment venue, not an attraction (rule 2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Shepparton",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "1 counted sources, 49641 page views",
+  "decided_by": "script",
+  "views": 49641,
+  "counted_sources": 1
+ },
+ {
+  "name": "Shepparton Art Museum",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Regional art museum with a major contemporary and ceramics collection, a new building, named by Zoos Victoria and tourism sources; Wikivoyage Shepparton was re-checked and the museum is a Shepparton headline.",
+  "decided_by": "judge",
+  "views": 779,
+  "counted_sources": 0
+ },
+ {
+  "name": "Shepparton Communication Tower",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "Wikivoyage and a Visit Shepparton listing name the free observation deck (160 steps), but a Country News report says it was closed for window repairs and listed hours conflict; open status unverified.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Shepparton",
+   "https://visitshepparton.com.au/see-and-do/family-fun/!/view/shepparton-tower-1115",
+   "https://www.countrynews.com.au/news/lions-club-disappointed-in-councils-response-to-tower-request/"
+  ]
+ },
+ {
+  "name": "KidsTown",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Shepparton and guides describe a very large free adventure playground open nearly every day (about 150,000 visitors a year); a family draw for an hour or more.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Shepparton",
+   "https://www.thecrazytourist.com/15-best-things-to-do-in-shepparton-australia/"
+  ]
+ },
+ {
+  "name": "SPC Ardmona Factory Seconds Outlet",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Plain shop (rule 2).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Kyabram Fauna Park",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Wikivoyage Shepparton (opened) says worth a visit; Zoos Victoria runs it with 600 animals on 55 ha; a full-day wildlife visit.",
+  "decided_by": "judge",
+  "views": 2154,
+  "counted_sources": 0
+ },
+ {
+  "name": "The Cube Wodonga",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Theatre venue with shows, not an open attraction (rule 2, 4).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Rutherglen Wine Region",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "A region/area, not a place (rule 3); its cellar doors are judged individually.",
+  "decided_by": "judge",
+  "views": 1120,
+  "counted_sources": 1
+ },
+ {
+  "name": "Rutherglen Loops",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Explore Rutherglen (tourism board) and Australian Traveller list the 48 km network of walking and cycling loops linking cellar doors and Lake Moodemere; a named trail.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://explorerutherglen.com.au/ride/rutherglen-loops",
+   "https://australiantraveller.com/vic/high-country/rutherglen-loops"
+  ]
+ },
+ {
+  "name": "Lake Moodemere",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Listed only as a lake near cycling trails with an estate; no distinct activity named.",
+  "decided_by": "judge",
+  "views": 290,
+  "counted_sources": 1
+ },
+ {
+  "name": "Muscat Mile De Bortoli Rutherglen Estate",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "Explore Rutherglen and RACV name the 1886 Seppelt cellar building and Muscat Mile tasting. For: heritage building, signature regional experience. Against: a single cellar door within a wine region, not a distinct draw.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://explorerutherglen.com.au/listing/de-bortoli-rutherglen-estate-rutherglen",
+   "https://racv.com.au/royalauto/lifestyle-home/food-wine/rutherglen-victoria-best-wineries-cellar-doors.html"
+  ]
+ },
+ {
+  "name": "Pfeiffer Wines",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "review",
+  "reason": "Explore Rutherglen, Visit Victoria and RACV list the cellar door, muscat blending and Muscat Mile cask tour. For: tourism-named experience. Against: an individual winery among many.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.explorerutherglen.com.au/?p=192631",
+   "https://racv.com.au/royalauto/lifestyle-home/food-wine/rutherglen-victoria-best-wineries-cellar-doors.html"
+  ]
+ },
+ {
+  "name": "Scion Wine",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Single minimalist cellar door, only a list entry (rule 3).",
+  "decided_by": "judge",
+  "views": 0,
+  "counted_sources": 1
+ },
+ {
+  "name": "Yarrawonga Weir",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "reject",
+  "reason": "Only a weir/dam wall; tourism sources describe the lake and foreshore, not the weir as a stop. Part of Lake Mulwala (rule 3).",
+  "decided_by": "recheck",
+  "views": 1198,
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.yarrawongamulwala.com.au/lake-mulwala"
+  ]
+ },
+ {
+  "name": "Lake Mulwala",
+  "existing": false,
+  "spot_id": null,
+  "verdict": "keep",
+  "reason": "Yarrawonga Mulwala tourism board has Lake Mulwala pages: cruises (PS Cumberoona, Paradise Queen), 4.2 km foreshore walk, Chinaman's Island wetlands walk, swimming and fishing. Counted source found; the lake is the place.",
+  "decided_by": "recheck",
+  "views": 0,
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.yarrawongamulwala.com.au/lake-mulwala",
+   "https://www.yarrawongamulwala.com.au/things-to-do/nature-outdoors/view/56b24aceb042386245d52ef8/lake-mulwala",
+   "https://australiasguide.com/nsw/attraction-tour/federation/mulwala/lake-mulwala"
+  ]
+ }
+]
