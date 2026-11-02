@@ -750,9 +750,20 @@ export default function ProfileScreen() {
             )}
             {exploredView === 'list' ? (
               <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={shownSpots.map(sp => ({
-                // Its destination under the name; the country is the flag beside the name, not named again.
-                key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotDestination(sp)?.name ?? '',
+                // Its photo in front, and under its name the country's flag and its destination.
+                key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), flagBelow: true, sub: spotDestination(sp)?.name ?? '',
                 rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)),
+                // The grid tiles' small photo (same cache key), or the placeholder for a place with none.
+                photo: NO_PHOTO.has(spotPhotoTitle(sp))
+                  ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={30} />
+                  : <EntityPhoto
+                      cacheKey={`pick_spot_${sp.id}`}
+                      cache={thumbCache}
+                      load={() => getOrFetchWikiThumbnail(`pick_spot_${sp.id}`, thumbCache, spotPhotoTitle(sp), 300)}
+                      subject={photoSubject(spotPhotoTitle(sp))}
+                      placeholderColor="#E5E7EB"
+                      fallback={<PhotoPlaceholder icon={sp.icon} category={sp.category} size={30} />}
+                    />,
               }))} />
             ) : (
             /* The same photo grid for spots: the spot's country under its name. */
@@ -981,8 +992,8 @@ const visitLabel = (v?: { start: string; end: string }) => {
 };
 function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   // `photo`: a small photo shown in place of the country flag (a destination's own photo).
-  // `photo`: a small photo leading the row (a destination's own); the country's flag sits beside the name either way.
-  rows: { key: string; name: string; countryCode?: string | null; sub: string; spots?: number; rating: number; date: string; photo?: React.ReactNode }[];
+  // `photo`: a small photo leading the row. The country's flag sits beside the name, or beside the line under it (flagBelow).
+  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; spots?: number; rating: number; date: string; photo?: React.ReactNode }[];
   sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
   // As in PhotoGrid: a pick lasts only while its row is on the page showing.
   onClearPick: () => void;
@@ -1024,12 +1035,17 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                     : <Text style={styles.rankNum}>{k + 1}</Text>)}
                   {!!r.photo && <View style={styles.rankThumb}>{r.photo}</View>}
                   <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
-                    {/* The country's flag on the left of the name. */}
+                    {/* The country's flag on the left of the name, or (flagBelow) of the line under it. */}
                     <View style={styles.rankNameRow}>
-                      {!!r.countryCode && <CircleFlag countryCode={r.countryCode} size={14} ring ringWidth={1.5} style={styles.flagRing} />}
+                      {!!r.countryCode && !r.flagBelow && <CircleFlag countryCode={r.countryCode} size={14} ring ringWidth={1.5} style={styles.flagRing} />}
                       <Text style={styles.rankName} numberOfLines={1}>{r.name}</Text>
                     </View>
-                    {!!r.sub && <Text style={styles.rankSub} numberOfLines={1}>{r.sub}</Text>}
+                    {(!!r.sub || (!!r.flagBelow && !!r.countryCode)) && (
+                      <View style={styles.rankSubRow}>
+                        {!!r.flagBelow && !!r.countryCode && <CircleFlag countryCode={r.countryCode} size={13} ring ringWidth={1.5} style={styles.flagRing} />}
+                        {!!r.sub && <Text style={styles.rankSub} numberOfLines={1}>{r.sub}</Text>}
+                      </View>
+                    )}
                   </View>
                   {bar && (
                     <View style={styles.countryBarTrack}>
@@ -1339,7 +1355,8 @@ const styles = StyleSheet.create({
   rankNameFlex: { flex: 1 },
   rankName:    { flexShrink: 1, fontSize: 13, fontWeight: '600', color: '#374151' },
   rankNameRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
-  rankSub:     { fontSize: 11, color: '#9CA3AF', marginTop: 1 },
+  rankSubRow:  { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
+  rankSub:     { flexShrink: 1, fontSize: 11, color: '#9CA3AF' },
   rankDate:    { marginLeft: 'auto', fontSize: 12, fontWeight: '600', color: '#6B7280' },
   countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
   dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
