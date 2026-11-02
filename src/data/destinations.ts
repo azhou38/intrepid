@@ -860,6 +860,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: '{months} bring the driest weather, calmest seas, and clearest reef visibility.',
   },
   {
+    id: 'melbourne', name: "Melbourne", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -37.8136, longitude: 144.9631 },
+    category: 'city', icon: "🚋", rank: 1,
+    tagline: "Australia's cultural capital, with Victorian architecture, galleries and trams",
+    description: "Melbourne, known as Naarm in Woiworrung, is Australia's second-biggest city, home to about 5.4 million people. It is noted for Victorian-era architecture, museums, galleries, theatres, parks and gardens, and for a strong food, wine and coffee culture and live music scene. Australian rules football was invented here, and the World Heritage-listed Royal Exhibition Building and the Melbourne Cricket Ground are landmarks. It is also the usual base for the Great Ocean Road, the Grampians and Phillip Island's penguin parade.",
+    whyVisit: ["Wander laneways for street art and coffee", "Ride trams across the city", "Visit galleries and museums", "Eat through the city's migrant cuisines"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Laneway culture", "Tram network", "Galleries and museums", "Food scene"],
+    goodToKnow: [
+      { icon: "🚋", title: "Free Tram Zone", detail: "Trams in the CBD Free Tram Zone cost nothing and need no touch-on. Touching on inside it charges a full fare." },
+      { icon: "🌦️", title: "Pack for any weather", detail: "The weather can swing through four seasons in a day, so carry a layer and a rain jacket even in summer." },
+      { icon: "💳", title: "Get a myki card", detail: "Trains, trams and buses use the myki card (adult card $6). Daily fares are capped, at $11.00 on weekdays as of Mar 2025." },
+    ],
+    bestMonths: [3, 4, 5, 10, 11],
+    bestTimeBlurb: "{months} brings mild days for exploring on foot. Summer can be hot and winters cool and damp.",
+  },
+  {
     id: 'blue-mountains', name: "Blue Mountains", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 50,
     continent: 'Oceania', coordinates: { latitude: -33.63059, longitude: 150.30665 },
     category: 'park', icon: "⛰️", rank: 2,
