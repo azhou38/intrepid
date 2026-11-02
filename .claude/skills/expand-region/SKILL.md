@@ -84,7 +84,7 @@ Ask only what you cannot derive: the country or region, and whether any areas ar
 
 A spot is applied only with a cost (`free: true`, or a price with its `costBasis`) and a `ticketUrl` decision. **No opening hours are researched or stored** (`WRITING.md` → "No opening hours").
 
-New destinations (once approved) also need: 2–4 `whyVisit` by popularity; 2–3 `goodToKnow` (3 for rank 1–3, 2 for rank 4–5), each detail at most 160 characters; best months; and a blurb with one `{months}`. A spot's `wiki` must be its own Wikipedia article. List a destination's spots in importance order (it decides which get map photos first).
+New destinations (once approved) also need: 2–4 `whyVisit` (as many as it has distinct strong draws, lean low); 2–3 `goodToKnow` (3 for rank 1–3, 2 for rank 4–5), each detail at most 160 characters; best months; and a blurb with one `{months}`. A spot's `wiki` must be its own Wikipedia article. List a destination's spots in importance order (it decides which get map photos first).
 
 ## 4. Lens — photos
 

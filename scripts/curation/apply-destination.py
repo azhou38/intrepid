@@ -32,7 +32,7 @@ no_header = '--allow-no-header' in args   # no passing header exists in any tier
 missing_why = '--allow-missing-why' in args
 n_why = len(d.get('whyVisit', []))
 if not 2 <= n_why <= 4:
-    sys.exit(f'refusing: whyVisit must have two to four reasons (4 only for a world-famous rank 1, 3 for rank 2-4, 2 for rank 5); have {n_why}')
+    sys.exit(f'refusing: whyVisit must have two to four reasons (as many as it has distinct strong draws; most have 2-3, 4 is rare); have {n_why}')
 picks['why'] = [w or '' for w in picks.get('why', [])]
 if (not picks.get('header') and not no_header) or len(picks['why']) != n_why or (not all(picks['why']) and not missing_why):
     sys.exit(f"refusing: {d['id']} needs an accepted header and one why-visit photo per reason ({n_why}) (picks.json; pass --allow-missing-why to leave a grey card); have {picks}")
