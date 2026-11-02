@@ -1,0 +1,222 @@
+[
+ {
+  "name": "Wilsons Promontory Lightstation",
+  "region": "vic-gippsland",
+  "lat": -39.1295803,
+  "lon": 146.4244615,
+  "source": "OSM man_made=lighthouse + Wikipedia -39.12961,146.42425",
+  "feature_type": "lighthouse",
+  "confidence": "HIGH",
+  "note": "two sources within 25 m"
+ },
+ {
+  "name": "Snowy River National Park",
+  "region": "vic-gippsland",
+  "lat": -37.0913024,
+  "lon": 148.412557,
+  "source": "OSM Nominatim tourism=camp_site McKillops Bridge",
+  "feature_type": "camp_site",
+  "confidence": "MEDIUM",
+  "note": "main visitor point (McKillops Bridge campground); Wikipedia point is the park centre. Bridge itself at -37.0842,148.4133 and viewpoint -37.0827,148.4122 if another spot uses them"
+ },
+ {
+  "name": "Mineral Springs Loop Walk",
+  "region": "vic-goldfields-spa",
+  "lat": -37.3114507,
+  "lon": 144.1423097,
+  "source": "OSM highway=service Mineral Springs Reserve Road (Hepburn Springs)",
+  "feature_type": "road",
+  "confidence": "LOW",
+  "note": "no OSM loop route found; point is the reserve start, not route midpoint; Hepburn Springs Spa building is at -37.3103215,144.1399993"
+ },
+ {
+  "name": "Heathcote-Graytown National Park",
+  "region": "vic-goldfields-spa",
+  "lat": -36.9194371,
+  "lon": 144.7180759,
+  "source": "OSM tourism=picnic_site Viewing Rock Picnic tables (Heathcote)",
+  "feature_type": "picnic_site",
+  "confidence": "MEDIUM",
+  "note": "visitor point in the park's western block (Viewing Rock); OSM park centroid -36.7757,144.9772 and Wikipedia -36.796,144.866 rejected as centroids. Verify park membership; Viewing Point Rock viewpoint is 10 m away"
+ },
+ {
+  "name": "Melville Caves",
+  "region": "vic-goldfields-spa",
+  "lat": -36.5999022,
+  "lon": 143.6938976,
+  "source": "OSM highway=footway Melville Caves (Brenanah)",
+  "feature_type": "footway",
+  "confidence": "MEDIUM",
+  "note": "footway at the caves; picnic area -36.6021047,143.6937524, campground -36.6010547,143.6989302"
+ },
+ {
+  "name": "Little Desert National Park",
+  "region": "vic-grampians-western",
+  "lat": -36.4468452,
+  "lon": 141.7981297,
+  "source": "OSM tourism=camp_site Kiata Campground",
+  "feature_type": "camp_site",
+  "confidence": "MEDIUM",
+  "note": "main visitor campground (Kiata); OSM park centroid -36.55,141.46 rejected"
+ },
+ {
+  "name": "Deep Blue Hot Springs",
+  "region": "vic-great-ocean-road",
+  "lat": -38.3971726,
+  "lon": 142.4739761,
+  "source": "OSM leisure=water_park Deep Blue Hot Springs Sanctuary (Warrnambool)",
+  "feature_type": "water_park",
+  "confidence": "MEDIUM",
+  "note": "also Deep Blue Hotel at -38.397076,142.4735425"
+ },
+ {
+  "name": "Mount Eccles National Park",
+  "region": "vic-great-ocean-road",
+  "lat": -38.0564641,
+  "lon": 141.9229955,
+  "source": "OSM tourism=camp_site Budj Bim Campground",
+  "feature_type": "camp_site",
+  "confidence": "MEDIUM",
+  "note": "park now Budj Bim National Park; campground is the visitor hub; Lake Surprise -38.0612781,141.9225110, Budj Bim peak -38.0627197,141.9257848 left for other spots"
+ },
+ {
+  "name": "The Razorback",
+  "region": "vic-high-country",
+  "lat": -36.9380597,
+  "lon": 147.1275371,
+  "source": "OSM highway=path Razorback Track (Hotham/Feathertop)",
+  "feature_type": "path",
+  "confidence": "MEDIUM",
+  "note": "OSM path segment named Razorback Track between Hotham and Mt Feathertop (-36.894,147.138); segment, not verified as full-route midpoint"
+ },
+ {
+  "name": "Yackandandah Gorge Scenic Walk",
+  "region": "vic-high-country",
+  "lat": null,
+  "lon": null,
+  "source": "none",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "no OSM gorge or walk feature found; only Yackandandah Creek Picnic Area -36.3404988,146.8063961 (not the gorge)"
+ },
+ {
+  "name": "Omeo Mountain Bike Park",
+  "region": "vic-high-country",
+  "lat": null,
+  "lon": null,
+  "source": "none",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "not in OSM/Photon; Omeo Recreation Reserve is at -37.0946439,147.597877 but unconfirmed as the bike park"
+ },
+ {
+  "name": "Australian Centre for the Moving Image",
+  "region": "vic-melbourne",
+  "lat": -37.8174356,
+  "lon": 144.9690684,
+  "source": "OSM tourism=museum ACMI + Wikipedia -37.8176,144.9686",
+  "feature_type": "museum",
+  "confidence": "HIGH",
+  "note": "two sources about 40 m apart"
+ },
+ {
+  "name": "Royal Arcade",
+  "region": "vic-melbourne",
+  "lat": -37.8145635,
+  "lon": 144.964041,
+  "source": "OSM building Royal Arcade Melbourne + Wikipedia -37.8145,144.9641",
+  "feature_type": "building",
+  "confidence": "HIGH",
+  "note": "two sources within 10 m"
+ },
+ {
+  "name": "Acland Street",
+  "region": "vic-melbourne",
+  "lat": -37.868993,
+  "lon": 144.980153,
+  "source": "OSM highway=pedestrian Acland Street (St Kilda)",
+  "feature_type": "pedestrian street",
+  "confidence": "MEDIUM",
+  "note": "the pedestrian strip; whole street -37.8672,144.9785 to -37.8690,144.9802"
+ },
+ {
+  "name": "CERES Community Environment Park",
+  "region": "vic-melbourne",
+  "lat": -37.7660212,
+  "lon": 144.9839547,
+  "source": "OSM leisure=park CERES Environment Park + Wikipedia -37.766,144.984",
+  "feature_type": "park",
+  "confidence": "HIGH",
+  "note": "two sources within 25 m"
+ },
+ {
+  "name": "Coastal Walk (Mornington Peninsula)",
+  "region": "vic-mornington-phillip-island",
+  "lat": -38.4692741,
+  "lon": 144.8858198,
+  "source": "OSM highway=path The Coastal Walk (Cape Schanck)",
+  "feature_type": "path",
+  "confidence": "LOW",
+  "note": "a segment at the Cape Schanck end only; full walk (Cape Schanck to Portsea) midpoint not found in OSM; Two Bays Walking Track segments differ"
+ },
+ {
+  "name": "Coppins Track",
+  "region": "vic-mornington-phillip-island",
+  "lat": -38.353555,
+  "lon": 144.7431078,
+  "source": "OSM highway=footway Coppins Track",
+  "feature_type": "footway",
+  "confidence": "MEDIUM",
+  "note": "segment near the middle of the matching ways (-38.3429,144.7233 to -38.3688,144.7619); Coppin's Lookout viewpoint at -38.3449869,144.7252775"
+ },
+ {
+  "name": "National Rhododendron Gardens",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.8476064,
+  "lon": 145.3728961,
+  "source": "OSM leisure=garden Dandenong Ranges Botanic Garden (Olinda)",
+  "feature_type": "garden",
+  "confidence": "MEDIUM",
+  "note": "renamed garden; Wikipedia point -37.8522,145.369 is about 600 m off"
+ },
+ {
+  "name": "Four Pillars Gin Distillery",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.6573641,
+  "lon": 145.5099131,
+  "source": "OSM craft=distillery Four Pillars Gin Distillery Healesville",
+  "feature_type": "distillery",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Gulf Station Historic Farm",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.6483158,
+  "lon": 145.3870183,
+  "source": "OSM tourism=attraction Gulf Station (Yarra Glen)",
+  "feature_type": "attraction",
+  "confidence": "MEDIUM",
+  "note": "protected-area polygon centroid -37.6468221,145.3846813"
+ },
+ {
+  "name": "Black Spur",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.5999943,
+  "lon": 145.6337499,
+  "source": "OSM tourism=attraction Black Spur Drive",
+  "feature_type": "attraction",
+  "confidence": "MEDIUM",
+  "note": "point on the drive between Healesville and Narbethong"
+ },
+ {
+  "name": "Ada Tree",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.8170911,
+  "lon": 145.8586073,
+  "source": "OSM natural=tree and tourism=attraction Ada Tree; viewpoint node 10 m away",
+  "feature_type": "tree",
+  "confidence": "MEDIUM",
+  "note": "several OSM nodes within 20 m, all one source"
+ }
+]

@@ -104,8 +104,8 @@
     "latitude": -37.818078,
     "longitude": 144.96681
    },
-   "coordinates_source": "wikipedia:Flinders Street railway station",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: Wikipedia article point; OSM police booth in station 45 m away (wikipedia + amenity=police). ",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Flinders Street railway station",
    "bio_draft": "historic railway station at the heart of the city, with its famous front steps and clock-face facade.",
@@ -182,11 +182,11 @@
    "destination": "melbourne",
    "id": "melbourne-4",
    "coordinates": {
-    "latitude": -37.8225,
-    "longitude": 144.96888889
+    "latitude": -37.8229117,
+    "longitude": 144.9686548
    },
-   "coordinates_source": "wikipedia:National Gallery of Victoria",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: Nominatim amenity=arts_centre National Gallery of Victoria, St Kilda Road; agrees with Wikipedia geotag -37.8225,144.96889 (~50 m) (amenity=arts_centre). ",
+   "pin_status": "ok",
    "category": "museum",
    "wiki": "National Gallery of Victoria",
    "bio_draft": "the National Gallery of Victoria's international art collection on St Kilda Road.",
@@ -398,11 +398,11 @@
    "destination": "melbourne",
    "id": "melbourne-12",
    "coordinates": {
-    "latitude": -37.82166667,
-    "longitude": 144.96444444
+    "latitude": -37.8217537,
+    "longitude": 144.9646549
    },
-   "coordinates_source": "wikipedia:Eureka Tower",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: osm building (building=yes). ",
+   "pin_status": "ok",
    "category": "viewpoint",
    "wiki": "Eureka Tower",
    "bio_draft": "Eureka Skydeck on level 88 with panoramic views over the city.",
@@ -669,11 +669,11 @@
    "destination": "melbourne",
    "id": "melbourne-22",
    "coordinates": {
-    "latitude": -37.8176241,
-    "longitude": 144.9685907
+    "latitude": -37.8174356,
+    "longitude": 144.9690684
    },
-   "coordinates_source": "wikipedia:Australian Centre for the Moving Image",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM tourism=museum ACMI + Wikipedia -37.8176,144.9686 (museum). two sources about 40 m apart",
+   "pin_status": "ok",
    "category": "museum",
    "wiki": "Australian Centre for the Moving Image",
    "bio_draft": "film, television, games and new media museum with cinemas, in Federation Square.",
@@ -831,11 +831,11 @@
    "destination": "melbourne",
    "id": "melbourne-28",
    "coordinates": {
-    "latitude": -37.811055,
-    "longitude": 144.97329
+    "latitude": -37.8110999,
+    "longitude": 144.9738657
    },
-   "coordinates_source": "wikipedia:Parliament House, Melbourne",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM office=government 'Parliament House'; Wikipedia -37.811055,144.97329 about 50 m away (office=government). ",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Parliament House, Melbourne",
    "bio_draft": "Victorian parliament house with public tours on weekdays and weekends.",
@@ -912,11 +912,11 @@
    "destination": "melbourne",
    "id": "melbourne-31",
    "coordinates": {
-    "latitude": -37.848,
-    "longitude": 144.971
+    "latitude": -37.8473452,
+    "longitude": 144.9702251
    },
-   "coordinates_source": "wikipedia:Albert Park and Lake",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: Nominatim leisure=park 'Albert Park' (lake node -37.84594,144.96949 is in water) (leisure=park). Park node is a centroid-style point; if it falls on the lake, use the lakeside e.g. near the boat sheds",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Albert Park and Lake",
    "bio_draft": "lakeside parkland south of the city, with the Grand Prix circuit around it.",
@@ -939,11 +939,11 @@
    "destination": "melbourne",
    "id": "melbourne-32",
    "coordinates": {
-    "latitude": -37.81583333,
-    "longitude": 144.96444444
+    "latitude": -37.8155831,
+    "longitude": 144.9643273
    },
-   "coordinates_source": "wikipedia:Block Arcade",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: osm shop=mall, Collins St (shop=mall). Footway 40 m away",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Block Arcade, Melbourne",
    "bio_draft": "1892 mosaic-floored shopping arcade linking Collins and Elizabeth Streets.",
@@ -966,11 +966,11 @@
    "destination": "melbourne",
    "id": "melbourne-33",
    "coordinates": {
-    "latitude": -37.8145,
-    "longitude": 144.9641
+    "latitude": -37.8145635,
+    "longitude": 144.964041
    },
-   "coordinates_source": "wikipedia:Royal Arcade, Melbourne",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM building Royal Arcade Melbourne + Wikipedia -37.8145,144.9641 (building). two sources within 10 m",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Royal Arcade, Melbourne",
    "bio_draft": "1870 Bourke Street arcade with a shop front and mosaic floor.",
@@ -993,11 +993,11 @@
    "destination": "melbourne",
    "id": "melbourne-34",
    "coordinates": {
-    "latitude": -37.815505,
-    "longitude": 144.970822
+    "latitude": -37.8155405,
+    "longitude": 144.9705723
    },
-   "coordinates_source": "wikipedia:ACDC Lane",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM amenity=parking 'ACDC Garage' in lane; Wikipedia -37.815505,144.970822 about 22 m away (amenity=parking + wikipedia). ",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "ACDC Lane",
    "bio_draft": "alley renamed in 2004 after the rock band, with a sign that fans photograph.",
@@ -1070,11 +1070,11 @@
    "destination": "melbourne",
    "id": "melbourne-37",
    "coordinates": {
-    "latitude": -37.79833333,
-    "longitude": 144.97847222
+    "latitude": -37.797054,
+    "longitude": 144.9786905
    },
-   "coordinates_source": "wikipedia:Brunswick Street, Melbourne",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: Nominatim highway=tertiary Brunswick Street, Fitzroy (way point) (highway street way). Point on the Fitzroy shopping strip, near the middle of the street's famous stretch",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Brunswick Street, Melbourne",
    "bio_draft": "bohemian shopping and dining strip in Fitzroy.",
@@ -1095,11 +1095,11 @@
    "destination": "melbourne",
    "id": "melbourne-38",
    "coordinates": {
-    "latitude": -37.834765,
-    "longitude": 144.996555
+    "latitude": -37.8489018,
+    "longitude": 144.9938124
    },
-   "coordinates_source": "wikipedia:Chapel Street, Melbourne",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: osm road, Prahran (highway=tertiary). Point on the road in Prahran; Commons photo median 1.7 km north at -37.833237,144.995483",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Chapel Street, Melbourne",
    "bio_draft": "shopping and nightlife strip through Prahran and South Yarra.",
@@ -1123,8 +1123,8 @@
     "latitude": -37.868993,
     "longitude": 144.980153
    },
-   "coordinates_source": "osm:nominatim highway/pedestrian 'Acland Street' (provisional: verify at placement)",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: OSM highway=pedestrian Acland Street (St Kilda) (pedestrian street). the pedestrian strip; whole street -37.8672,144.9785 to -37.8690,144.9802",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Acland Street",
    "bio_draft": "St Kilda shopping and cafe strip with cake shops and the Acland Street plaza.",
@@ -1310,11 +1310,11 @@
    "destination": "melbourne",
    "id": "melbourne-46",
    "coordinates": {
-    "latitude": -37.813153,
-    "longitude": 144.974121
+    "latitude": -37.8131993,
+    "longitude": 144.9743546
    },
-   "coordinates_source": "wikipedia:Old Treasury Building, Melbourne",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM tourism=museum 'Old Treasury Building Museum'; Wikipedia 20 m away (tourism=museum). ",
+   "pin_status": "ok",
    "category": "museum",
    "wiki": "Old Treasury Building, Melbourne",
    "bio_draft": "1858 Treasury Building housing the Gold Museum and gold rush history.",
@@ -1470,11 +1470,11 @@
    "destination": "melbourne",
    "id": "melbourne-52",
    "coordinates": {
-    "latitude": -37.800591,
-    "longitude": 144.902085
+    "latitude": -37.8005914,
+    "longitude": 144.9020846
    },
-   "coordinates_source": "osm:nominatim building/yes (provisional)",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: Nominatim building 'Footscray Market', 81 Hopkins Street (building). Same coordinates as the draft rough pin, so not independent confirmation",
+   "pin_status": "ok",
    "category": "market",
    "wiki": "Footscray Market",
    "bio_draft": "market in Footscray trading most days.",
@@ -1497,11 +1497,11 @@
    "destination": "melbourne",
    "id": "melbourne-53",
    "coordinates": {
-    "latitude": -37.9838,
-    "longitude": 145.2158
+    "latitude": -37.9838503,
+    "longitude": 145.2155532
    },
-   "coordinates_source": "wikipedia:Dandenong Market",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: osm shop=market, 40 Cleeland St (shop=market). ",
+   "pin_status": "ok",
    "category": "market",
    "wiki": "Dandenong Market",
    "bio_draft": "indoor market in Dandenong trading most days.",
@@ -1657,11 +1657,11 @@
    "destination": "melbourne",
    "id": "melbourne-59",
    "coordinates": {
-    "latitude": -37.766,
-    "longitude": 144.984
+    "latitude": -37.7660212,
+    "longitude": 144.9839547
    },
-   "coordinates_source": "wikipedia:CERES Community Environment Park",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM leisure=park CERES Environment Park + Wikipedia -37.766,144.984 (park). two sources within 25 m",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "CERES Community Environment Park",
    "bio_draft": "environmental education park with a farm, markets and cafes in Brunswick East.",
@@ -1846,11 +1846,11 @@
    "destination": "melbourne",
    "id": "melbourne-66",
    "coordinates": {
-    "latitude": -37.7975,
-    "longitude": 144.96411111
+    "latitude": -37.7974889,
+    "longitude": 144.964147
    },
-   "coordinates_source": "wikipedia:Ian Potter Museum of Art",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: Photon (OSM) building 'The Potter Museum of Art'; draft Wikipedia geotag -37.7975,144.96411 within 5 m (building (osm) + wikipedia). ",
+   "pin_status": "ok",
    "category": "museum",
    "wiki": "Ian Potter Museum of Art",
    "bio_draft": "university art museum at the University of Melbourne with changing exhibitions.",

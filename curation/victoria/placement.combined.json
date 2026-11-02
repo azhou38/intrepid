@@ -1189,10 +1189,10 @@
    "destination": "wilsons-promontory",
    "id": "wilsons-promontory-4",
    "coordinates": {
-    "latitude": -39.12961111,
-    "longitude": 146.42425
+    "latitude": -39.1295803,
+    "longitude": 146.4244615
    },
-   "coordinates_source": "wikipedia:Wilsons Promontory Lighthouse",
+   "coordinates_source": "pin retry HIGH: OSM man_made=lighthouse + Wikipedia -39.12961,146.42425 (lighthouse). two sources within 25 m",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "Wilsons Promontory Lighthouse",
@@ -1344,11 +1344,11 @@
    "destination": "croajingolong",
    "id": "croajingolong-1",
    "coordinates": {
-    "latitude": -37.55,
-    "longitude": 149.75
+    "latitude": -37.560342,
+    "longitude": 149.756923
    },
-   "coordinates_source": "wikipedia:Mallacoota (town point; to be confirmed against OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Mallacoota\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Mallacoota",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -1375,10 +1375,10 @@
    "destination": "croajingolong",
    "id": "croajingolong-2",
    "coordinates": {
-    "latitude": -37.80188889,
-    "longitude": 149.27552778
+    "latitude": -37.8019218,
+    "longitude": 149.2755534
    },
-   "coordinates_source": "wikipedia:Point Hicks Lighthouse",
+   "coordinates_source": "pin retry HIGH: OSM man_made=lighthouse + Wikipedia Point Hicks Lighthouse (man_made=lighthouse). ",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "Point Hicks Lighthouse",
@@ -1411,7 +1411,7 @@
     "longitude": 149.91688889
    },
    "coordinates_source": "wikipedia:Gabo Island Lighthouse",
-   "pin_status": "ok",
+   "pin_status": "unresolved",
    "category": "landmark",
    "wiki": "Gabo Island Lighthouse",
    "icon": "\ud83d\uddfc",
@@ -1473,7 +1473,7 @@
     "longitude": 149.3
    },
    "coordinates_source": "area hint only (not resolved; near Thurra River mouth); confirm at pins stage",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "wiki": null,
    "icon": "\ud83c\udfdc\ufe0f",
@@ -1593,11 +1593,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-1",
    "coordinates": {
-    "latitude": -37.86666667,
-    "longitude": 147.98333333
+    "latitude": -37.877502,
+    "longitude": 147.98709
    },
-   "coordinates_source": "wikipedia:Lakes Entrance (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm landuse=recreation_ground (nominatim) \"Lakes Entrance Recreation Reserve\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Lakes Entrance",
    "icon": "\u26f5",
@@ -1624,11 +1624,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-2",
    "coordinates": {
-    "latitude": -37.885,
-    "longitude": 148.0
+    "latitude": -37.883637,
+    "longitude": 147.994458
    },
-   "coordinates_source": "area hint only (ocean-beach footbridge side of Lakes Entrance; no OSM natural=beach resolved); main access to confirm at pins stage",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Ninety Mile Beach\"",
+   "pin_status": "ok",
    "category": "beach",
    "wiki": "Ninety Mile Beach, Victoria",
    "icon": "\ud83c\udfd6\ufe0f",
@@ -1655,11 +1655,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-3",
    "coordinates": {
-    "latitude": -37.88333333,
-    "longitude": 147.85
+    "latitude": -37.893189,
+    "longitude": 147.85357
    },
-   "coordinates_source": "wikipedia:Metung (village point; confirm OSM place=village)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Metung\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Metung",
    "icon": "\u26f5",
@@ -1715,11 +1715,11 @@
    "destination": "gippsland-lakes",
    "id": "gippsland-lakes-5",
    "coordinates": {
-    "latitude": -37.8275,
-    "longitude": 147.625
+    "latitude": -37.825451,
+    "longitude": 147.630475
    },
-   "coordinates_source": "wikipedia:Bairnsdale (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Bairnsdale\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Bairnsdale",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -1806,11 +1806,11 @@
    "destination": "south-gippsland",
    "id": "south-gippsland-3",
    "coordinates": {
-    "latitude": -38.69111111,
-    "longitude": 145.65611111
+    "latitude": -38.704196,
+    "longitude": 145.652693
    },
-   "coordinates_source": "wikipedia:Bunurong Marine National Park (park centroid; visitor access point at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Bunurong Marine National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Bunurong Marine National Park",
    "icon": "\ud83c\udf0a",
@@ -1953,11 +1953,11 @@
    "destination": "south-gippsland",
    "id": "south-gippsland-8",
    "coordinates": {
-    "latitude": -38.48333333,
-    "longitude": 145.95
+    "latitude": -38.476157,
+    "longitude": 145.945861
    },
-   "coordinates_source": "wikipedia:Leongatha (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Leongatha\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Leongatha",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -1984,11 +1984,11 @@
    "destination": null,
    "id": "sale",
    "coordinates": {
-    "latitude": -38.1,
-    "longitude": 147.06666667
+    "latitude": -38.109446,
+    "longitude": 147.065672
    },
-   "coordinates_source": "wikipedia:Sale, Victoria (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sale\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Sale, Victoria",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -2019,10 +2019,10 @@
    "destination": null,
    "id": "sale-swing-bridge",
    "coordinates": {
-    "latitude": -38.146345,
-    "longitude": 147.08686
+    "latitude": -38.146372,
+    "longitude": 147.086928
    },
-   "coordinates_source": "wikipedia:Sale Swing Bridge",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Sale Swing bridge\"",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": null,
@@ -2089,11 +2089,11 @@
    "destination": null,
    "id": "traralgon",
    "coordinates": {
-    "latitude": -38.19583333,
-    "longitude": 146.54027778
+    "latitude": -38.194664,
+    "longitude": 146.538165
    },
-   "coordinates_source": "wikipedia:Traralgon (town point; confirm OSM place=town)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Traralgon\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Traralgon",
    "icon": "\ud83c\udfd8\ufe0f",
@@ -2124,10 +2124,10 @@
    "destination": null,
    "id": "old-gippstown",
    "coordinates": {
-    "latitude": -38.1846383,
-    "longitude": 146.2344812
+    "latitude": -38.184881,
+    "longitude": 146.237297
    },
-   "coordinates_source": "wikipedia:Old Gippstown",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Old Gippstown Heritage Park\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Old Gippstown",
@@ -2157,11 +2157,11 @@
    "destination": null,
    "id": "walhalla",
    "coordinates": {
-    "latitude": -37.94361111,
-    "longitude": 146.45083333
+    "latitude": -37.942307,
+    "longitude": 146.451139
    },
-   "coordinates_source": "wikipedia:Walhalla, Victoria (town point; confirm OSM place=village)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Walhalla\"",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Walhalla, Victoria",
    "icon": "\u26cf\ufe0f",
@@ -2192,11 +2192,11 @@
    "destination": null,
    "id": "baw-baw-national-park",
    "coordinates": {
-    "latitude": -37.76388889,
-    "longitude": 146.22305556
+    "latitude": -37.841462,
+    "longitude": 146.258004
    },
-   "coordinates_source": "wikipedia:Baw Baw National Park (park centroid; visitor point to be found at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=hamlet (nominatim) \"Baw Baw Village\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Baw Baw National Park",
    "icon": "\ud83c\udfd4\ufe0f",
@@ -2297,11 +2297,11 @@
    "destination": null,
    "id": "tarra-bulga-national-park",
    "coordinates": {
-    "latitude": -38.44166667,
-    "longitude": 146.58
+    "latitude": -38.435867,
+    "longitude": 146.587356
    },
-   "coordinates_source": "wikipedia:Tarra-Bulga National Park (park centroid; Balook visitor centre point to be found at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Tarra-Bulga National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Tarra-Bulga National Park",
    "icon": "\ud83c\udf33",
@@ -2400,11 +2400,11 @@
    "destination": null,
    "id": "snowy-river-national-park",
    "coordinates": {
-    "latitude": -37.275,
-    "longitude": 148.55333333
+    "latitude": -37.0913024,
+    "longitude": 148.412557
    },
-   "coordinates_source": "wikipedia:Snowy River National Park (park centroid; visitor point e.g. McKillops Bridge at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM Nominatim tourism=camp_site McKillops Bridge (camp_site). main visitor point (McKillops Bridge campground); Wikipedia point is the park centre. Bridge itself at -37.0842,148.4133 and viewpoint -37.0827,148.4122 if another spot uses them",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Snowy River National Park",
    "icon": "\ud83c\udfde\ufe0f",
@@ -2435,10 +2435,10 @@
    "destination": null,
    "id": "buchan-caves",
    "coordinates": {
-    "latitude": -37.4958,
-    "longitude": 148.1631
+    "latitude": -37.499225,
+    "longitude": 148.172089
    },
-   "coordinates_source": "wikipedia:Buchan Caves",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Buchan\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": null,
@@ -2505,11 +2505,11 @@
    "destination": null,
    "id": "cape-conran-coastal-park",
    "coordinates": {
-    "latitude": -37.76666667,
-    "longitude": 148.86666667
+    "latitude": -37.773413,
+    "longitude": 148.865342
    },
-   "coordinates_source": "wikipedia:Cape Conran Coastal Park (park centroid; visitor point at pins stage)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Cape Conran Coastal Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Cape Conran Coastal Park",
    "icon": "\ud83c\udf0a",
@@ -2610,11 +2610,11 @@
    "destination": "ballarat",
    "id": "ballarat-1",
    "coordinates": {
-    "lat": -37.57511667,
-    "lng": 143.8659
+    "latitude": -37.57834,
+    "longitude": 143.86457
    },
-   "coordinates_source": "wikipedia:Sovereign Hill",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Sovereign Hill\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Sovereign Hill",
@@ -2637,9 +2637,12 @@
    "action": "spot",
    "destination": "ballarat",
    "id": "ballarat-2",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.5649892,
+    "longitude": 143.8837421
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM building 'Eureka Centre' (Stawell St S); Commons median 230 m away (building=yes). Eureka Centre building.",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Museum of Australian Democracy at Eureka",
@@ -2663,9 +2666,12 @@
    "action": "spot",
    "destination": "ballarat",
    "id": "ballarat-3",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.5651,
+    "longitude": 143.884719
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"Eureka Stockade\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Eureka Stockade",
@@ -2690,11 +2696,11 @@
    "destination": "ballarat",
    "id": "ballarat-4",
    "coordinates": {
-    "lat": -37.5605,
-    "lng": 143.8583
+    "latitude": -37.560452,
+    "longitude": 143.858403
    },
-   "coordinates_source": "wikipedia:Art Gallery of Ballarat",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Ballarat Fine Art Gallery\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Art Gallery of Ballarat",
@@ -2718,11 +2724,11 @@
    "destination": "ballarat",
    "id": "ballarat-5",
    "coordinates": {
-    "lat": -37.55055556,
-    "lng": 143.83333333
+    "latitude": -37.550226,
+    "longitude": 143.833995
    },
-   "coordinates_source": "wikipedia:Lake Wendouree",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm place=suburb (nominatim) \"Lake Wendouree\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Lake Wendouree",
@@ -2746,11 +2752,11 @@
    "destination": "ballarat",
    "id": "ballarat-6",
    "coordinates": {
-    "lat": -37.54666667,
-    "lng": 143.82222222
+    "latitude": -37.545736,
+    "longitude": 143.821604
    },
-   "coordinates_source": "wikipedia:Ballarat Botanical Gardens",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm landuse=plant_nursery (nominatim) \"Botanical Gardens Nursery\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Ballarat Botanical Gardens",
@@ -2774,11 +2780,11 @@
    "destination": "ballarat",
    "id": "ballarat-7",
    "coordinates": {
-    "lat": -37.5698,
-    "lng": 143.8926
+    "latitude": -37.568936,
+    "longitude": 143.891075
    },
-   "coordinates_source": "wikipedia:Ballarat Wildlife Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=zoo (nominatim) \"Ballarat Wildlife Park\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon_hint": null,
    "wiki": "Ballarat Wildlife Park",
@@ -2802,11 +2808,11 @@
    "destination": "ballarat",
    "id": "ballarat-8",
    "coordinates": {
-    "lat": -37.57194444,
-    "lng": 143.95638889
+    "latitude": -37.572083,
+    "longitude": 143.956738
    },
-   "coordinates_source": "wikipedia:Kryal Castle",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=theme_park (nominatim) \"Kryal Castle\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon_hint": null,
    "wiki": "Kryal Castle",
@@ -2830,11 +2836,11 @@
    "destination": "ballarat",
    "id": "ballarat-9",
    "coordinates": {
-    "lat": -37.65,
-    "lng": 143.93333333
+    "latitude": -37.655075,
+    "longitude": 143.924567
    },
-   "coordinates_source": "wikipedia:Mount Buninyong",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=volcano (nominatim) \"Mount Buninyong\"",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Mount Buninyong",
@@ -2858,11 +2864,11 @@
    "destination": "ballarat",
    "id": "ballarat-10",
    "coordinates": {
-    "lat": -37.5515,
-    "lng": 143.8204
+    "latitude": -37.551518,
+    "longitude": 143.820384
    },
-   "coordinates_source": "wikipedia:Ballarat Tramway Museum",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Ballarat Tramway Museum\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Ballarat Tramway Museum",
@@ -2886,11 +2892,11 @@
    "destination": "ballarat",
    "id": "ballarat-11",
    "coordinates": {
-    "lat": -37.3,
-    "lng": 143.78333333
+    "latitude": -37.294064,
+    "longitude": 143.78658
    },
-   "coordinates_source": "wikipedia:Clunes, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=town (nominatim) \"Clunes\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Clunes, Victoria",
@@ -2914,11 +2920,11 @@
    "destination": "ballarat",
    "id": "ballarat-12",
    "coordinates": {
-    "lat": -37.425,
-    "lng": 143.89166667
+    "latitude": -37.43687,
+    "longitude": 143.905459
    },
-   "coordinates_source": "wikipedia:Creswick",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=water (nominatim) \"Blue Waters\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Creswick, Victoria",
@@ -2941,9 +2947,12 @@
    "action": "spot",
    "destination": "ballarat",
    "id": "ballarat-13",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.7006086,
+    "longitude": 143.6538095
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM ways 'Ballarat - Skipton Rail Trail' (Overpass), ways ordered along the trail, halfway by length (highway=cycleway/path route midpoint). No route relation in OSM; midpoint of chained ways, may include spurs; verify on map",
+   "pin_status": "ok",
    "category": "hike",
    "icon_hint": null,
    "wiki": "Ballarat to Skipton Rail Trail",
@@ -2968,11 +2977,11 @@
    "destination": "bendigo",
    "id": "bendigo-1",
    "coordinates": {
-    "lat": -36.757513,
-    "lng": 144.276967
+    "latitude": -36.757348,
+    "longitude": 144.276835
    },
-   "coordinates_source": "wikipedia:Bendigo Art Gallery",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=arts_centre (nominatim) \"Bendigo Art Gallery\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Bendigo Art Gallery",
@@ -2996,11 +3005,11 @@
    "destination": "bendigo",
    "id": "bendigo-2",
    "coordinates": {
-    "lat": -36.765,
-    "lng": 144.2702
+    "latitude": -36.764823,
+    "longitude": 144.270313
    },
-   "coordinates_source": "wikipedia:Central Deborah Gold Mine",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Central Deborah Gold Mine\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Central Deborah Gold Mine",
@@ -3023,9 +3032,12 @@
    "action": "spot",
    "destination": "bendigo",
    "id": "bendigo-3",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.754839,
+    "longitude": 144.282417
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Golden Dragon Museum\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Golden Dragon Museum",
@@ -3050,11 +3062,11 @@
    "destination": "bendigo",
    "id": "bendigo-4",
    "coordinates": {
-    "lat": -36.76,
-    "lng": 144.274
+    "latitude": -36.760065,
+    "longitude": 144.274033
    },
-   "coordinates_source": "wikipedia:Sacred Heart Cathedral, Bendigo",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=place_of_worship (nominatim) \"Sacred Heart Cathedral\"",
+   "pin_status": "ok",
    "category": "religious",
    "icon_hint": null,
    "wiki": "Sacred Heart Cathedral, Bendigo",
@@ -3078,11 +3090,11 @@
    "destination": "bendigo",
    "id": "bendigo-5",
    "coordinates": {
-    "lat": -36.757,
-    "lng": 144.279
+    "latitude": -36.757255,
+    "longitude": 144.278601
    },
-   "coordinates_source": "wikipedia:Rosalind Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"Rosalind Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Rosalind Park",
@@ -3105,9 +3117,12 @@
    "action": "spot",
    "destination": "bendigo",
    "id": "bendigo-6",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.770536,
+    "longitude": 144.272288
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm historic=ruins (nominatim) \"Poppet Head\"",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "",
@@ -3132,11 +3147,11 @@
    "destination": "bendigo",
    "id": "bendigo-7",
    "coordinates": {
-    "lat": -36.67388889,
-    "lng": 144.25472222
+    "latitude": -36.722847,
+    "longitude": 144.290407
    },
-   "coordinates_source": "wikipedia:Greater Bendigo National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"City of Greater Bendigo\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Greater Bendigo National Park",
@@ -3160,11 +3175,11 @@
    "destination": "daylesford",
    "id": "daylesford-1",
    "coordinates": {
-    "lat": -37.34722222,
-    "lng": 144.13777778
+    "latitude": -37.348754,
+    "longitude": 144.136123
    },
-   "coordinates_source": "wikipedia:Lake Daylesford",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=water (nominatim) \"Lake Daylesford\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Lake Daylesford",
@@ -3188,11 +3203,11 @@
    "destination": "daylesford",
    "id": "daylesford-2",
    "coordinates": {
-    "lat": -37.34305556,
-    "lng": 144.15055556
+    "latitude": -37.343409,
+    "longitude": 144.151116
    },
-   "coordinates_source": "wikipedia:Wombat Hill Botanic Gardens",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Wombat Hill Botanic Gardens\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Wombat Hill Botanic Gardens",
@@ -3216,11 +3231,11 @@
    "destination": "daylesford",
    "id": "daylesford-3",
    "coordinates": {
-    "lat": -37.31166667,
-    "lng": 144.14194444
+    "latitude": -37.3104037,
+    "longitude": 144.1402769
    },
-   "coordinates_source": "wikipedia:Hepburn Mineral Springs Reserve",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: osm/nominatim: Soda Spring; Hepburn Springs Spa node 20 m away (natural=spring). Springs in the reserve's core",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Hepburn Mineral Springs Reserve",
@@ -3244,11 +3259,11 @@
    "destination": "daylesford",
    "id": "daylesford-4",
    "coordinates": {
-    "lat": -37.34199722,
-    "lng": 144.14829444
+    "latitude": -37.342214,
+    "longitude": 144.148372
    },
-   "coordinates_source": "wikipedia:Convent Gallery",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Convent Gallery\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "",
@@ -3271,9 +3286,12 @@
    "action": "spot",
    "destination": "daylesford",
    "id": "daylesford-5",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.314484,
+    "longitude": 144.152123
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Hepburn Regional Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Hepburn Regional Park",
@@ -3299,7 +3317,7 @@
    "id": "daylesford-6",
    "coordinates": null,
    "coordinates_source": null,
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "hike",
    "icon_hint": null,
    "wiki": "",
@@ -3324,11 +3342,11 @@
    "destination": "daylesford",
    "id": "daylesford-7",
    "coordinates": {
-    "lat": -37.31666667,
-    "lng": 144.13333333
+    "latitude": -37.3091,
+    "longitude": 144.140934
    },
-   "coordinates_source": "wikipedia:Hepburn Springs",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=hamlet (nominatim) \"Hepburn Springs\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Hepburn Springs",
@@ -3352,11 +3370,11 @@
    "destination": "daylesford",
    "id": "daylesford-8",
    "coordinates": {
-    "lat": -37.370029,
-    "lng": 144.324548
+    "latitude": -37.370175,
+    "longitude": 144.324597
    },
-   "coordinates_source": "wikipedia:Trentham Falls",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Trentham Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Trentham Falls",
@@ -3380,11 +3398,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-1",
    "coordinates": {
-    "lat": -37.330222,
-    "lng": 144.595083
+    "latitude": -37.330024,
+    "longitude": 144.595145
    },
-   "coordinates_source": "wikipedia:Hanging Rock, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Hanging Rock\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Hanging Rock, Victoria",
@@ -3408,11 +3426,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-2",
    "coordinates": {
-    "lat": -37.38305556,
-    "lng": 144.57638889
+    "latitude": -37.387538,
+    "longitude": 144.575783
    },
-   "coordinates_source": "wikipedia:Mount Macedon",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Mount Macedon\"",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Mount Macedon",
@@ -3436,11 +3454,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-3",
    "coordinates": {
-    "lat": -37.38844,
-    "lng": 144.57607
+    "latitude": -37.389522,
+    "longitude": 144.576869
    },
-   "coordinates_source": "wikipedia:Mount Macedon Memorial Cross",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm historic=memorial (nominatim) \"Mt Macedon Memorial Cross\"",
+   "pin_status": "ok",
    "category": "monument",
    "icon_hint": null,
    "wiki": "Mount Macedon Memorial Cross",
@@ -3464,11 +3482,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-4",
    "coordinates": {
-    "lat": -37.23333333,
-    "lng": 144.45
+    "latitude": -37.247494,
+    "longitude": 144.455217
    },
-   "coordinates_source": "wikipedia:Kyneton",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Kyneton\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Kyneton",
@@ -3492,11 +3510,11 @@
    "destination": "macedon-ranges",
    "id": "macedon-ranges-5",
    "coordinates": {
-    "lat": -37.363,
-    "lng": 144.526
+    "latitude": -37.353686,
+    "longitude": 144.534138
    },
-   "coordinates_source": "wikipedia:Woodend, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Woodend\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Woodend, Victoria",
@@ -3519,9 +3537,12 @@
    "action": "spot",
    "destination": "macedon-ranges",
    "id": "macedon-ranges-6",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.253576,
+    "longitude": 144.449642
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Kyneton Botanic Gardens\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Kyneton Botanic Gardens",
@@ -3545,9 +3566,12 @@
    "action": "spot",
    "destination": "macedon-ranges",
    "id": "macedon-ranges-7",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.1348176,
+    "longitude": 144.4829304
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM waterway=waterfall 'Turpins Falls' (OSM name has an s); swimming_area and Scenic Reserve within 150 m (waterway=waterfall). Name in OSM is Turpins Falls.",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Turpin Falls",
@@ -3572,11 +3596,11 @@
    "destination": "castlemaine",
    "id": "castlemaine-1",
    "coordinates": {
-    "lat": -36.99166667,
-    "lng": 144.06666667
+    "latitude": -36.996314,
+    "longitude": 144.068946
    },
-   "coordinates_source": "wikipedia:Maldon, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Maldon\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Maldon, Victoria",
@@ -3600,11 +3624,11 @@
    "destination": "castlemaine",
    "id": "castlemaine-2",
    "coordinates": {
-    "lat": -37.1915,
-    "lng": 144.2165
+    "latitude": -37.0545838,
+    "longitude": 144.236072
    },
-   "coordinates_source": "wikipedia:Castlemaine Diggings National Heritage Park",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: Nominatim: information board 'Castlemaine Diggings National Heritage Park', Kalimna Circuit Track (tourism=information board). Park visitor point at Kalimna/Chewton area, not the centroid; no visitor centre found in OSM",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Castlemaine Diggings National Heritage Park",
@@ -3628,11 +3652,11 @@
    "destination": "castlemaine",
    "id": "castlemaine-3",
    "coordinates": {
-    "lat": -37.06361111,
-    "lng": 144.21722222
+    "latitude": -37.066365,
+    "longitude": 144.219684
    },
-   "coordinates_source": "wikipedia:Castlemaine, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=theatre (nominatim) \"Theatre Royal\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon_hint": null,
    "wiki": "Theatre Royal, Castlemaine",
@@ -3655,9 +3679,12 @@
    "action": "spot",
    "destination": "castlemaine",
    "id": "castlemaine-4",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.2640039,
+    "longitude": 144.1501825
+   },
+   "coordinates_source": "pin retry HIGH: osm volcano node + resolve-pin (natural=volcano). Crater summit",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Mount Franklin, Victoria",
@@ -3682,11 +3709,11 @@
    "destination": null,
    "id": "heathcote-graytown-national-park",
    "coordinates": {
-    "lat": -36.79633333,
-    "lng": 144.86633333
+    "latitude": -36.9194371,
+    "longitude": 144.7180759
    },
-   "coordinates_source": "wikipedia:Heathcote-Graytown National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=picnic_site Viewing Rock Picnic tables (Heathcote) (picnic_site). visitor point in the park's western block (Viewing Rock); OSM park centroid -36.7757,144.9772 and Wikipedia -36.796,144.866 rejected as centroids. Verify park membership; Viewing Point Rock viewpoint is 1",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Heathcote-Graytown National Park",
@@ -3714,11 +3741,11 @@
    "destination": null,
    "id": "lake-eppalock",
    "coordinates": {
-    "lat": -36.850694,
-    "lng": 144.531841
+    "latitude": -36.854174,
+    "longitude": 144.468791
    },
-   "coordinates_source": "wikipedia:Lake Eppalock",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Eppalock\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Lake Eppalock",
@@ -3745,9 +3772,12 @@
    "action": "standalone",
    "destination": null,
    "id": "pink-cliffs-geological-reserve",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.9302307,
+    "longitude": 144.7038668
+   },
+   "coordinates_source": "pin retry HIGH: OSM Pink Cliffs Scenic Walk footway; Wikipedia article point 45 m away; car park at -36.9290254,144.7045847 (highway=footway + wikipedia). Visitor point at the cliffs walk, not reserve centroid (-36.9326,144.7039).",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Pink Cliffs",
@@ -3775,9 +3805,12 @@
    "action": "standalone",
    "destination": null,
    "id": "o-keefe-rail-trail",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.7877333,
+    "longitude": 144.5268389
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM route relation 964797, midpoint of chained ways (49.6 km) (route relation midpoint). Chain order of ways was approximate; midpoint lies on the trail",
+   "pin_status": "ok",
    "category": "hike",
    "icon_hint": null,
    "wiki": "O'Keefe Rail Trail",
@@ -3806,11 +3839,11 @@
    "destination": null,
    "id": "maryborough",
    "coordinates": {
-    "lat": -37.05,
-    "lng": 143.735
+    "latitude": -37.046758,
+    "longitude": 143.737572
    },
-   "coordinates_source": "wikipedia:Maryborough, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Maryborough\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Maryborough, Victoria",
@@ -3838,11 +3871,11 @@
    "destination": null,
    "id": "welcome-stranger-obelisk",
    "coordinates": {
-    "lat": -36.76138889,
-    "lng": 143.65244444
+    "latitude": -36.761402,
+    "longitude": 143.6524283
    },
-   "coordinates_source": "wikipedia:Welcome Stranger",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: osm: Welcome Stranger Monument (historic=monument). A second node 29 m away",
+   "pin_status": "ok",
    "category": "monument",
    "icon_hint": null,
    "wiki": "Welcome Stranger",
@@ -3870,11 +3903,11 @@
    "destination": null,
    "id": "kooyoora-state-park",
    "coordinates": {
-    "lat": -36.60083333,
-    "lng": 143.69277778
+    "latitude": -36.594503,
+    "longitude": 143.701792
    },
-   "coordinates_source": "wikipedia:Kooyoora State Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Kooyoora State Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Kooyoora State Park",
@@ -3901,9 +3934,12 @@
    "action": "standalone",
    "destination": null,
    "id": "melville-caves",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.5999022,
+    "longitude": 143.6938976
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM highway=footway Melville Caves (Brenanah) (footway). footway at the caves; picnic area -36.6021047,143.6937524, campground -36.6010547,143.6989302",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Melville Caves",
@@ -3931,9 +3967,12 @@
    "action": "standalone",
    "destination": null,
    "id": "eucalyptus-distillery-museum",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -36.5686913,
+    "longitude": 143.8650055
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=attraction 'Blue Eucy Distillery Park and Museum', Inglewood; leisure=park 25 m away (tourism=attraction). Located in Inglewood; both features OSM only. Name differs from draft (Blue Eucy).",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Eucalyptus Distillery Museum",
@@ -3961,9 +4000,12 @@
    "action": "standalone",
    "destination": null,
    "id": "goldfields-track",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -37.3158991,
+    "longitude": 144.1185685
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM route relation 3205828, midpoint of chained ways (route relation midpoint). Relation includes bypass/variant loops (chained length 298 km) so midpoint is approximate; verify",
+   "pin_status": "ok",
    "category": "hike",
    "icon_hint": null,
    "wiki": "Goldfields Track",
@@ -4268,10 +4310,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-11",
    "coordinates": {
-    "latitude": -37.14777778,
-    "longitude": 142.56361111
+    "latitude": -37.147795,
+    "longitude": 142.56234
    },
-   "coordinates_source": "wikipedia:Halls Gap Zoo (candidate)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=zoo (nominatim) \"Halls Gap Zoo\"",
    "pin_status": "ok",
    "category": "entertainment",
    "bio_draft": "Regional zoo at the foot of the Wonderland Range, with native and exotic animals.",
@@ -4550,11 +4592,11 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-21",
    "coordinates": {
-    "latitude": -37.15277778,
-    "longitude": 142.52777778
+    "latitude": -37.194111,
+    "longitude": 142.522448
    },
-   "coordinates_source": "wikipedia:Silverband Falls (candidate)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Silverband Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Falls on the Grampians road reached by a short roadside walk.",
    "views": 485,
@@ -4577,10 +4619,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-22",
    "coordinates": {
-    "latitude": -37.11666667,
-    "longitude": 142.55
+    "latitude": -37.141769,
+    "longitude": 142.520244
    },
-   "coordinates_source": "wikipedia:Halls Gap (town point, place=village centre)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Halls Gap\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Halls Gap, Victoria",
@@ -4606,10 +4648,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-23",
    "coordinates": {
-    "latitude": -37.65,
-    "longitude": 142.35
+    "latitude": -37.649447,
+    "longitude": 142.344164
    },
-   "coordinates_source": "wikipedia:Dunkeld, Victoria (town point)",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Dunkeld\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Dunkeld, Victoria",
@@ -4634,10 +4676,10 @@
    "destination": "grampians-national-park",
    "id": "grampians-national-park-24",
    "coordinates": {
-    "latitude": -37.05,
-    "longitude": 142.76666667
+    "latitude": -37.058687,
+    "longitude": 142.774548
    },
-   "coordinates_source": "wikipedia:Stawell, Victoria (town point)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Stawell\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Stawell, Victoria",
@@ -4662,11 +4704,11 @@
    "destination": "ararat",
    "id": "ararat-1",
    "coordinates": {
-    "latitude": -37.28,
-    "longitude": 142.93
+    "latitude": -37.2775765,
+    "longitude": 142.9581683
    },
-   "coordinates_source": "wikipedia:Aradale Mental Hospital (candidate; generic, 130 m from J Ward)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: osm: Aradale Asylum (amenity=former_hospital). ",
+   "pin_status": "ok",
    "category": "historic",
    "wiki": "Aradale",
    "bio_draft": "Former lunatic asylum at Ararat, a large Victorian-era complex now open for guided tours.",
@@ -4690,11 +4732,11 @@
    "destination": "ararat",
    "id": "ararat-2",
    "coordinates": {
-    "latitude": -37.2788,
-    "longitude": 142.9303
+    "latitude": -37.278606,
+    "longitude": 142.930465
    },
-   "coordinates_source": "wikipedia:J Ward (candidate; 4-decimal, 130 m from Aradale)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"J Ward\"",
+   "pin_status": "ok",
    "category": "historic",
    "bio_draft": "Ararat's old gaol for the criminally insane, open for tours and ghost walks.",
    "views": 6921,
@@ -4746,10 +4788,10 @@
    "destination": "ararat",
    "id": "ararat-4",
    "coordinates": {
-    "latitude": -37.28305556,
-    "longitude": 142.93222222
+    "latitude": -37.283094,
+    "longitude": 142.932197
    },
-   "coordinates_source": "wikipedia:Ararat Gallery TAMA (candidate)",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=townhall (nominatim) \"Ararat Gallery TAMA\"",
    "pin_status": "ok",
    "category": "museum",
    "bio_draft": "Textile art museum established in 1968, with a collection of contemporary fibre art.",
@@ -4802,11 +4844,11 @@
    "destination": "ararat",
    "id": "ararat-6",
    "coordinates": {
-    "latitude": -37.3,
-    "longitude": 143.11666667
+    "latitude": -37.303118,
+    "longitude": 143.097521
    },
-   "coordinates_source": "wikipedia:Langi Ghiran State Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Langi Ghiran State Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Forested range and walks near Ararat, with a rocky peak and views.",
    "views": 820,
@@ -4829,11 +4871,11 @@
    "destination": "ararat",
    "id": "ararat-7",
    "coordinates": {
-    "latitude": -37.32849,
-    "longitude": 143.2226
+    "latitude": -37.295385,
+    "longitude": 143.221146
    },
-   "coordinates_source": "wikipedia:Mount Buangor State Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Mount Buangor\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Forested range near Beaufort with walks, creeks and fern gullies.",
    "views": 504,
@@ -4910,11 +4952,11 @@
    "destination": "hamilton-victoria",
    "id": "hamilton-victoria-3",
    "coordinates": {
-    "latitude": -37.67638889,
-    "longitude": 141.84083333
+    "latitude": -37.675981,
+    "longitude": 141.840805
    },
-   "coordinates_source": "wikipedia:Wannon Falls (candidate)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Wannon Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Falls on the Wannon River south-west of the Grampians, with a viewing platform.",
    "views": 486,
@@ -4937,10 +4979,10 @@
    "destination": "hamilton-victoria",
    "id": "hamilton-victoria-4",
    "coordinates": {
-    "latitude": -37.88241667,
-    "longitude": 142.30061111
+    "latitude": -37.882605,
+    "longitude": 142.300764
    },
-   "coordinates_source": "wikipedia:Mount Rouse (candidate; summit)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Mount Rouse\"",
    "pin_status": "ok",
    "category": "hike",
    "bio_draft": "Volcanic peak near Penshurst with a summit walk and views over the volcanic plains.",
@@ -4964,11 +5006,11 @@
    "destination": "horsham",
    "id": "horsham-1",
    "coordinates": {
-    "latitude": -36.776,
-    "longitude": 141.7119
+    "latitude": -36.786558,
+    "longitude": 141.712272
    },
-   "coordinates_source": "wikipedia:Mount Arapiles-Tooan State Park (candidate; peak)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Mount Arapiles-Tooan State Park\"",
+   "pin_status": "ok",
    "category": "hike",
    "wiki": "Mount Arapiles-Tooan State Park",
    "bio_draft": "Mount Arapiles-Tooan State Park: world-class rock climbing cliffs, with walks and views over the Wimmera.",
@@ -5133,7 +5175,7 @@
     "longitude": 141.18861111
    },
    "coordinates_source": "wikipedia:Little Desert National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "bio_draft": "Large sand-dune heath wilderness south of Nhill, with walks, wildflowers and birds.",
    "views": 2340,
@@ -5160,11 +5202,11 @@
    "destination": null,
    "id": "budj-bim-national-park",
    "coordinates": {
-    "latitude": -38.08333333,
-    "longitude": 141.88333333
+    "latitude": -38.090253,
+    "longitude": 141.895271
    },
-   "coordinates_source": "wikipedia:Budj Bim National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Budj Bim National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Volcanic landscape and World Heritage Gunditjmara eel-trap aquaculture system.",
    "views": 2192,
@@ -5223,11 +5265,11 @@
    "destination": null,
    "id": "lower-glenelg-national-park",
    "coordinates": {
-    "latitude": -38.06611111,
-    "longitude": 141.28861111
+    "latitude": -38.054505,
+    "longitude": 141.271194
    },
-   "coordinates_source": "wikipedia:Lower Glenelg National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=picnic_site (nominatim) \"Moleside Creek Picnic Area - Lower Glenelg NP\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Glenelg River gorge with limestone cliffs, camping and the Great South West Walk.",
    "views": 547,
@@ -5281,11 +5323,11 @@
    "destination": null,
    "id": "tower-hill-wildlife-reserve",
    "coordinates": {
-    "latitude": -38.31755547,
-    "longitude": 142.36041538
+    "latitude": -38.317853,
+    "longitude": 142.36051
    },
-   "coordinates_source": "wikipedia:Tower Hill Wildlife Reserve (candidate; reserve centroid)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"Tower Hill Wildlife Reserve\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Volcanic crater reserve near Koroit with a wildlife enclosure, walks and native animals.",
    "views": 1712,
@@ -5310,11 +5352,11 @@
    "destination": null,
    "id": "lake-bullen-merri",
    "coordinates": {
-    "latitude": -38.25166667,
-    "longitude": 143.10416667
+    "latitude": -38.249605,
+    "longitude": 143.107164
    },
-   "coordinates_source": "wikipedia:Lake Bullen Merri (lake centroid)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=protected_area (nominatim) \"Lake Bullen Merri Lake Reserve\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Volcanic crater lake near Camperdown, with walks, swimming and water-skiing.",
    "views": 1726,
@@ -5339,11 +5381,11 @@
    "destination": null,
    "id": "lake-gnotuk",
    "coordinates": {
-    "latitude": -38.26,
-    "longitude": 143.09
+    "latitude": -38.203924,
+    "longitude": 143.075123
    },
-   "coordinates_source": "area offset from Lake Bullen Merri (candidate reused its point; pin-shared otherwise); needs the pins stage",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Gnotuk\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Smaller volcanic crater lake beside Lake Bullen Merri, with a rim walk.",
    "views": 0,
@@ -5368,10 +5410,10 @@
    "destination": null,
    "id": "colac-victoria",
    "coordinates": {
-    "latitude": -38.34027778,
-    "longitude": 143.58472222
+    "latitude": -38.339977,
+    "longitude": 143.585854
    },
-   "coordinates_source": "wikipedia:Colac, Victoria (town point)",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Colac\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Colac, Victoria",
@@ -5400,11 +5442,11 @@
    "destination": null,
    "id": "kara-kara-national-park",
    "coordinates": {
-    "latitude": -36.86055556,
-    "longitude": 143.28527778
+    "latitude": -36.858525,
+    "longitude": 143.274455
    },
-   "coordinates_source": "wikipedia:Kara Kara National Park (park centroid; needs a visitor point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Kara Kara National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "bio_draft": "Forest and hills north of Ararat, listed as a regional bushwalking and nature stop.",
    "views": 725,
@@ -5776,7 +5818,7 @@
     "longitude": 143.25
    },
    "coordinates_source": "wikipedia:St Arnaud, Victoria (town point; silo not pinned)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "historic",
    "bio_draft": "Silo mural and town murals in St Arnaud, on the Silo Art Trail.",
    "views": 0,
@@ -5806,11 +5848,11 @@
    "icon": "\u2693",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.1445,
-    "longitude": 144.3604
+    "latitude": -38.144094,
+    "longitude": 144.360305
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=university (nominatim) \"Deakin University (Geelong Waterfront Campus)\"",
+   "pin_status": "ok",
    "bio": "Working waterfront with cafes, a carousel, gardens and the bollard trail beside Corio Bay.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -5837,11 +5879,11 @@
    "icon": "\ud83e\uddf6",
    "category": "museum",
    "coordinates": {
-    "latitude": -38.1488,
-    "longitude": 144.3607
+    "latitude": -38.145359,
+    "longitude": 144.361174
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"National Wool Museum\"",
+   "pin_status": "ok",
    "bio": "Museum in a bluestone woolstore telling the story of the wool trade and the mills of Geelong.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -5869,11 +5911,11 @@
    "icon": "\u26f0\ufe0f",
    "category": "nature",
    "coordinates": {
-    "latitude": -37.903032,
-    "longitude": 144.431763
+    "latitude": -37.948173,
+    "longitude": 144.420011
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"You Yangs Regional Park\"",
+   "pin_status": "ok",
    "bio": "Granite ranges rising from the plain, with walks up Flinders Peak (348 m) and across Branding Yard Track.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 4,
@@ -5900,11 +5942,11 @@
    "icon": "\ud83c\udf33",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.15,
-    "longitude": 144.3781
+    "latitude": -38.150084,
+    "longitude": 144.377836
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Geelong Botanic Gardens\"",
+   "pin_status": "ok",
    "bio": "Free botanic gardens in East Geelong with a tea house, glasshouses and views over the city.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -5932,11 +5974,11 @@
    "icon": "\ud83c\udfd8\ufe0f",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.26666667,
-    "longitude": 144.65
+    "latitude": -38.267113,
+    "longitude": 144.661295
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Queenscliff\"",
+   "pin_status": "ok",
    "bio": "Historic Bellarine Peninsula town of 19th-century hotels and buildings, a maritime museum and ferries across the bay.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -5963,11 +6005,11 @@
    "icon": "\ud83c\udff0",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.2643,
-    "longitude": 144.6622
+    "latitude": -38.271926,
+    "longitude": 144.660356
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm landuse=military (nominatim) \"Fort Queenscliff\"",
+   "pin_status": "ok",
    "bio": "Victorian-era coastal fort with guided tours at set times and the Black Lighthouse in its grounds.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -5994,11 +6036,11 @@
    "icon": "\ud83d\ude82",
    "category": "entertainment",
    "coordinates": {
-    "latitude": -38.261772,
-    "longitude": 144.659729
+    "latitude": -38.2644791,
+    "longitude": 144.6634614
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: Nominatim: railway=narrow_gauge 'Bellarine Railway', Queenscliff (railway=narrow_gauge). Point is the Queenscliff end of the line (station area), not the route midpoint",
+   "pin_status": "ok",
    "bio": "Steam heritage railway running from Queenscliff to Drysdale and back through the Bellarine countryside.",
    "visitHoursMin": 1,
    "visitHoursMax": 2.5,
@@ -6026,11 +6068,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.28333333,
-    "longitude": 144.5
+    "latitude": -38.274771,
+    "longitude": 144.488135
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Barwon Heads\"",
+   "pin_status": "ok",
    "bio": "Seaside town at the Barwon River mouth with a family beach, a bridge and views from the Barwon Bluff.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -6058,11 +6100,11 @@
    "icon": "\ud83d\udd2d",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.2725,
-    "longitude": 144.61361111
+    "latitude": -38.272507,
+    "longitude": 144.613673
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Point Lonsdale\"",
+   "pin_status": "ok",
    "bio": "Headland at the entrance to Port Phillip Bay with the Rip View lookout, pier and lighthouse walks.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6089,11 +6131,11 @@
    "icon": "\ud83c\udfc4",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.3716,
-    "longitude": 144.2815
+    "latitude": -38.368985,
+    "longitude": 144.282452
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Bells Beach\"",
+   "pin_status": "ok",
    "bio": "Surf beach west of Torquay that hosts the long-running international surfing competition each Easter.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6120,11 +6162,11 @@
    "icon": "\ud83c\udfc4",
    "category": "museum",
    "coordinates": {
-    "latitude": -38.3265101,
-    "longitude": 144.3160113
+    "latitude": -38.326626,
+    "longitude": 144.315962
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Australian National Surfing Museum\"",
+   "pin_status": "ok",
    "bio": "Large surfing museum in Torquay, with boards, films and a hall of fame; named a top pick by the regional tourism board.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -6151,11 +6193,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.46797222,
-    "longitude": 144.10447222
+    "latitude": -38.468003,
+    "longitude": 144.104468
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm man_made=lighthouse (nominatim) \"Split Point Lighthouse\"",
+   "pin_status": "ok",
    "bio": "White lighthouse at Aireys Inlet with a guided tour of the tower and balcony views along the coast.",
    "visitHoursMin": 0.75,
    "visitHoursMax": 1.5,
@@ -6183,11 +6225,11 @@
    "icon": "\ud83c\udfc4",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.33333333,
-    "longitude": 144.31666667
+    "latitude": -38.326655,
+    "longitude": 144.313408
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Torquay\"",
+   "pin_status": "ok",
    "bio": "Surf town at the official start of the Great Ocean Road, with beaches, surf shops and the surfing museum.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -6215,11 +6257,11 @@
    "icon": "\ud83e\udd98",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.40638889,
-    "longitude": 144.18694444
+    "latitude": -38.405195,
+    "longitude": 144.188958
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Anglesea\"",
+   "pin_status": "ok",
    "bio": "Seaside town where the Great Ocean Road meets the ocean, with a river beach and kangaroos on the golf course.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -6246,11 +6288,11 @@
    "icon": "\ud83c\udf0a",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.3953145,
-    "longitude": 144.2538895
+    "latitude": -38.395314,
+    "longitude": 144.25389
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=cape (nominatim) \"Point Addis\"",
+   "pin_status": "ok",
    "bio": "Surfing point near Anglesea with a short Aboriginal bushland walk and a lookout over the beach.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6277,11 +6319,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.3427,
-    "longitude": 144.3203
+    "latitude": -38.342653,
+    "longitude": 144.319519
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Torquay Back Beach (Surf Beach)\"",
+   "pin_status": "ok",
    "bio": "Main surf beach at Torquay, used for surf lessons and swimming under the cliffs and dunes.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 2,
@@ -6308,11 +6350,11 @@
    "icon": "\ud83e\udeb5",
    "category": "monument",
    "coordinates": {
-    "latitude": -38.4727,
-    "longitude": 144.0352
+    "latitude": -38.47204,
+    "longitude": 144.044575
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Memorial Arch\"",
+   "pin_status": "ok",
    "bio": "Timber-log arch over the road commemorating the soldiers who built the Great Ocean Road.",
    "visitHoursMin": 0,
    "visitHoursMax": 0.25,
@@ -6339,11 +6381,11 @@
    "icon": "\ud83d\udd2d",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.5542391,
-    "longitude": 143.9789488
+    "latitude": -38.554239,
+    "longitude": 143.978949
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Teddy's Lookout\"",
+   "pin_status": "ok",
    "bio": "Lookout above Lorne with a view of the Great Ocean Road winding along the coastline and the Erskine River valley.",
    "visitHoursMin": 0,
    "visitHoursMax": 0.5,
@@ -6370,11 +6412,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.50679,
-    "longitude": 143.91353
+    "latitude": -38.506706,
+    "longitude": 143.913231
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Erskine Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall in the Otway ranges above Lorne, reached by a viewing platform and a steep stair down to its base.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6401,11 +6443,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.565332,
-    "longitude": 143.96279
+    "latitude": -38.565131,
+    "longitude": 143.962772
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Sheoak Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall beside Sheoak Creek in the Great Otway National Park, reached by a short walk.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6432,11 +6474,11 @@
    "icon": "\ud83d\udc28",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.6697,
-    "longitude": 143.8574
+    "latitude": -38.667696,
+    "longitude": 143.85892
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Kennett River\"",
+   "pin_status": "ok",
    "bio": "Small village where koalas can reliably be seen in the gum trees beside the road.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -6463,11 +6505,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.85655556,
-    "longitude": 143.51172222
+    "latitude": -38.851289,
+    "longitude": 143.514453
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=viewpoint (nominatim) \"Cape Otway Lightstation Lookout\"",
+   "pin_status": "ok",
    "bio": "Oldest surviving lighthouse on mainland Australia, on the cliffs at Cape Otway, with koalas and whale watching nearby.",
    "visitHoursMin": 1,
    "visitHoursMax": 2.5,
@@ -6495,11 +6537,11 @@
    "icon": "\ud83c\udf3f",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.75583333,
-    "longitude": 143.55388889
+    "latitude": -38.755599,
+    "longitude": 143.55525
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Maits Rest\"",
+   "pin_status": "ok",
    "bio": "Short rainforest boardwalk loop with tree ferns and giant myrtle beech trees in the Otway ranges.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -6526,11 +6568,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.66777778,
-    "longitude": 143.57027778
+    "latitude": -38.668083,
+    "longitude": 143.568693
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Hopetoun Falls\"",
+   "pin_status": "ok",
    "bio": "Well-preserved waterfall in the Great Otway National Park, with a stair down to a viewing platform at its foot.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6557,11 +6599,11 @@
    "icon": "\ud83d\udca6",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.67111111,
-    "longitude": 143.49305556
+    "latitude": -38.671067,
+    "longitude": 143.493002
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=waterfall (nominatim) \"Triplet Falls\"",
+   "pin_status": "ok",
    "bio": "Rainforest walk past a three-tier waterfall in the Otway National Park.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -6588,11 +6630,11 @@
    "icon": "\ud83d\udca6",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.649247,
-    "longitude": 143.611703
+    "latitude": -38.649357,
+    "longitude": 143.611771
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Beauchamp Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall in the Otway National Park, reached by a walk down through tall ferns and forest.",
    "visitHoursMin": 1,
    "visitHoursMax": 2,
@@ -6619,11 +6661,11 @@
    "icon": "\ud83c\udf32",
    "category": "entertainment",
    "coordinates": {
-    "latitude": -38.7137,
-    "longitude": 143.5398
+    "latitude": -38.6515965,
+    "longitude": 143.5058178
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "pin retry MEDIUM: osm: Otway Fly Treetop Adventures, Phillips Track (tourism=attraction). Hint pin was 13 km off",
+   "pin_status": "ok",
    "bio": "Treetop walk and zipline through the Otway rainforest canopy near Beech Forest.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -6650,11 +6692,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.75,
-    "longitude": 143.38333333
+    "latitude": -38.756872,
+    "longitude": 143.377713
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Johanna\"",
+   "pin_status": "ok",
    "bio": "Wild surf beach in the Johanna valley, named among the most beautiful stops on the Great Ocean Road.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6684,8 +6726,8 @@
     "latitude": -38.8232,
     "longitude": 143.5886
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=bay (nominatim) \"Blanket Bay\"",
+   "pin_status": "ok",
    "bio": "Secluded sheltered bay on the Cape Otway coast with views along the shore.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6713,11 +6755,11 @@
    "icon": "\ud83e\udea8",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.6602846,
-    "longitude": 143.0933579
+    "latitude": -38.660285,
+    "longitude": 143.093358
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"The Twelve Apostles\"",
+   "pin_status": "ok",
    "bio": "Limestone stacks rising from the Southern Ocean in Port Campbell National Park, the Great Ocean Road's best-known sight.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6744,11 +6786,11 @@
    "icon": "\ud83c\udf0a",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.64658333,
-    "longitude": 143.0705
+    "latitude": -38.646407,
+    "longitude": 143.070327
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=beach (nominatim) \"Loch Ard Gorge\"",
+   "pin_status": "ok",
    "bio": "Gorge and beach where the clipper Loch Ard was wrecked in 1878, with rock formations and caves to explore.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -6775,11 +6817,11 @@
    "icon": "\ud83e\ude9c",
    "category": "beach",
    "coordinates": {
-    "latitude": -38.6686286,
-    "longitude": 143.1121047
+    "latitude": -38.668629,
+    "longitude": 143.112105
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=viewpoint (nominatim) \"Gibson Steps\"",
+   "pin_status": "ok",
    "bio": "Steps cut into the cliff down to a beach beneath towering limestone cliffs and two sea stacks.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -6806,11 +6848,11 @@
    "icon": "\ud83c\udf09",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.6240905,
+    "latitude": -38.624091,
     "longitude": 142.930406
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=island (nominatim) \"London Arch\"",
+   "pin_status": "ok",
    "bio": "Natural limestone arch offshore from the cliffs, formerly London Bridge until its span collapsed in 1990.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -6837,11 +6879,11 @@
    "icon": "\ud83c\udf09",
    "category": "landmark",
    "coordinates": {
-    "latitude": -38.6235897,
-    "longitude": 142.9441791
+    "latitude": -38.62359,
+    "longitude": 142.944179
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=cape (nominatim) \"The Arch\"",
+   "pin_status": "ok",
    "bio": "Natural rock arch best seen in rough seas, a short walk from the road west of Port Campbell.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -6868,11 +6910,11 @@
    "icon": "\ud83d\udd73\ufe0f",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.6241,
-    "longitude": 142.9369
+    "latitude": -38.61836,
+    "longitude": 142.914602
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Grotto\"",
+   "pin_status": "ok",
    "bio": "Sinkhole inlet with rockpools full of sealife, a short walk from the road near Port Campbell.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -6899,11 +6941,11 @@
    "icon": "\ud83e\udea8",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.589,
-    "longitude": 142.865
+    "latitude": -38.585122,
+    "longitude": 142.825741
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=viewpoint (nominatim) \"Bay of Islands\"",
+   "pin_status": "ok",
    "bio": "Stretch of coast with separated rock formations and cliffs near Peterborough, best seen at sunset.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -6931,11 +6973,11 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.61666667,
-    "longitude": 142.98333333
+    "latitude": -38.619629,
+    "longitude": 142.995366
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Port Campbell\"",
+   "pin_status": "ok",
    "bio": "Small coastal town and base for the Twelve Apostles, with a sheltered beach, jetty and cafes.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 2,
@@ -6962,11 +7004,11 @@
    "icon": "\u2693",
    "category": "museum",
    "coordinates": {
-    "latitude": -38.38947,
-    "longitude": 142.48499
+    "latitude": -38.389725,
+    "longitude": 142.485094
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Flagstaff Hill Maritime Village\"",
+   "pin_status": "ok",
    "bio": "Replica 1870s maritime village and museum on Flagstaff Hill, with a night show about the Loch Ard wreck.",
    "visitHoursMin": 2,
    "visitHoursMax": 4,
@@ -6993,11 +7035,11 @@
    "icon": "\ud83d\udc0b",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.4039453,
-    "longitude": 142.5211338
+    "latitude": -38.403916,
+    "longitude": 142.52112
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Logans Beach Whale Watching Platform\"",
+   "pin_status": "ok",
    "bio": "Viewing platform where southern right whales can be seen close to shore, from June to September.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -7024,11 +7066,11 @@
    "icon": "\u2668\ufe0f",
    "category": "entertainment",
    "coordinates": {
-    "latitude": -38.3905,
-    "longitude": 142.48
+    "latitude": -38.3971726,
+    "longitude": 142.4739761
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "pin retry MEDIUM: OSM leisure=water_park Deep Blue Hot Springs Sanctuary (Warrnambool) (water_park). also Deep Blue Hotel at -38.397076,142.4735425",
+   "pin_status": "ok",
    "bio": "Geothermal hot springs and pools in Warrnambool, named as a top tourism pick.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -7056,11 +7098,11 @@
    "icon": "\ud83c\udf0b",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.31755547,
-    "longitude": 142.36041538
+    "latitude": -38.321294,
+    "longitude": 142.359714
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Tower Hill\"",
+   "pin_status": "ok",
    "bio": "Volcanic crater reserve near Koroit with wild koalas and emus, walking tracks and a lookout.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -7087,11 +7129,11 @@
    "icon": "\ud83c\udf0a",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.4020782,
-    "longitude": 142.5079051
+    "latitude": -38.402078,
+    "longitude": 142.507905
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Moyjil - Point Ritchie\"",
+   "pin_status": "ok",
    "bio": "Rocky headland at the Hopkins River mouth, a significant Aboriginal site and winter whale-watching point.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -7118,11 +7160,11 @@
    "icon": "\ud83d\udca6",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.3333312,
+    "latitude": -38.333331,
     "longitude": 142.618965
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Hopkins Falls\"",
+   "pin_status": "ok",
    "bio": "Waterfall about 90 m wide near Warrnambool, where baby eels migrate upstream in summer.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -7149,11 +7191,11 @@
    "icon": "\ud83c\udf33",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.3909155,
+    "latitude": -38.390915,
     "longitude": 142.478615
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=water (nominatim) \"Lake Pertobe\"",
+   "pin_status": "ok",
    "bio": "Lake and foreshore reserve beside Flagstaff Hill, with playgrounds, paths and a water fountain show.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -7180,11 +7222,11 @@
    "icon": "\ud83e\uddad",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.36666667,
-    "longitude": 141.4
+    "latitude": -38.395057,
+    "longitude": 141.412869
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peninsula (nominatim) \"Cape Bridgewater\"",
+   "pin_status": "ok",
    "bio": "Headland and beach west of Portland, with blowholes, a petrified forest and a seal colony.",
    "visitHoursMin": 1,
    "visitHoursMax": 3,
@@ -7211,11 +7253,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.4309876,
-    "longitude": 141.5445567
+    "latitude": -38.430988,
+    "longitude": 141.544557
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peninsula (nominatim) \"Cape Nelson\"",
+   "pin_status": "ok",
    "bio": "Headland and lighthouse near Portland, with coastal cliff walks and sea views.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -7246,7 +7288,7 @@
     "longitude": 141.23333333
    },
    "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "bio": "Long coastal park of dunes, beaches and lakes between Portland and Nelson.",
    "visitHoursMin": 1,
    "visitHoursMax": 4,
@@ -7273,11 +7315,11 @@
    "icon": "\ud83e\udd7e",
    "category": "hike",
    "coordinates": {
-    "latitude": -38.3436,
-    "longitude": 141.6038
+    "latitude": -38.333387,
+    "longitude": 141.609499
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (0.1 km, nominatim) \"Great South West Walk\"",
+   "pin_status": "ok",
    "bio": "Long loop walk from Portland through forest, coast and beach, with shorter day sections.",
    "visitHoursMin": 3,
    "visitHoursMax": 8,
@@ -7305,11 +7347,11 @@
    "icon": "\u2693",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.36666667,
-    "longitude": 142.23333333
+    "latitude": -38.385512,
+    "longitude": 142.236672
    },
-   "coordinates_source": "candidates.json town-centre point",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Port Fairy\"",
+   "pin_status": "ok",
    "bio": "Historic whaling harbour town with a heritage precinct, wharves, a lighthouse and nearby beaches.",
    "visitHoursMin": 2,
    "visitHoursMax": 4,
@@ -7341,11 +7383,11 @@
    "icon": "\ud83d\uddfc",
    "category": "historic",
    "coordinates": {
-    "latitude": -38.3909091,
-    "longitude": 142.2538751
+    "latitude": -38.390909,
+    "longitude": 142.253875
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"Griffiths Island Lighthouse\"",
+   "pin_status": "ok",
    "bio": "Historic lighthouse on Griffiths Island at Port Fairy, linked by a causeway and walking track.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1.5,
@@ -7377,11 +7419,11 @@
    "icon": "\ud83c\udf05",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.3667,
-    "longitude": 142.2333
+    "latitude": -38.3711867,
+    "longitude": 142.1100045
    },
-   "coordinates_source": "approximate hint, not from a named visitor point",
-   "pin_status": "pin_needed",
+   "coordinates_source": "pin retry MEDIUM: Nominatim: tourism=viewpoint 'The Crags', Crags Road, Yambuk (tourism=viewpoint). ~10 km west of the draft rough pin; The Crags viewpoint at Yambuk (Discovery Bay coast). Only OSM match in Victoria on the coast; confirm it is the intended spot",
+   "pin_status": "ok",
    "bio": "Rocky coastal viewpoint about 10 km from Port Fairy, popular for sunsets over the coast.",
    "visitHoursMin": 0.25,
    "visitHoursMax": 0.75,
@@ -7417,7 +7459,7 @@
     "longitude": 141.92555556
    },
    "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "bio": "UNESCO-listed Aboriginal aquaculture landscape of eel traps and lava flows, with Gunditjmara-guided tours.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 4,
@@ -7449,11 +7491,11 @@
    "icon": "\ud83c\udf0b",
    "category": "nature",
    "coordinates": {
-    "latitude": -38.08333333,
-    "longitude": 141.88333333
+    "latitude": -38.0564641,
+    "longitude": 141.9229955
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=camp_site Budj Bim Campground (camp_site). park now Budj Bim National Park; campground is the visitor hub; Lake Surprise -38.0612781,141.9225110, Budj Bim peak -38.0627197,141.9257848 left for other spots",
+   "pin_status": "ok",
    "bio": "Volcanic national park around Mount Eccles, with crater lake walks, lava caves and the Lake Surprise campground.",
    "visitHoursMin": 1.5,
    "visitHoursMax": 3,
@@ -7485,11 +7527,11 @@
    "icon": "\ud83c\udf0b",
    "category": "viewpoint",
    "coordinates": {
-    "latitude": -38.24555556,
-    "longitude": 143.15805556
+    "latitude": -38.244386,
+    "longitude": 143.157609
    },
-   "coordinates_source": "candidates.json coordinate (Wikivoyage/Wikipedia/OSM-derived, may be a town point)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Leura\"",
+   "pin_status": "ok",
    "bio": "Volcanic hill beside Camperdown with a lookout over green farmland and the crater lakes.",
    "visitHoursMin": 0.5,
    "visitHoursMax": 1,
@@ -7522,8 +7564,8 @@
     "latitude": -36.776349,
     "longitude": 146.767437
    },
-   "coordinates_source": "osm tourism=viewpoint \"The Horn\" (HIGH)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=viewpoint (nominatim) \"The Horn\"",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon": "\u26f0\ufe0f",
    "bio_draft": "Highest point of Mount Buffalo National Park, with a view across the plateau.",
@@ -7547,11 +7589,11 @@
    "destination": "mount-buffalo-national-park",
    "id": "mount-buffalo-national-park-2",
    "coordinates": {
-    "latitude": -36.7285,
-    "longitude": 146.787
+    "latitude": -36.72222,
+    "longitude": 146.819954
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Mount Buffalo Chalet\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udfde\ufe0f",
    "bio_draft": "Gorge on Mount Buffalo beside the Chalet, with lookouts over the cliffs.",
@@ -7578,8 +7620,8 @@
     "latitude": -36.755119,
     "longitude": 146.787507
    },
-   "coordinates_source": "osm natural=rock (HIGH)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=rock (nominatim) \"The Cathedral\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83e\udea8",
    "bio_draft": "Granite rock formation on Mount Buffalo with a walking track through it.",
@@ -7606,8 +7648,8 @@
     "latitude": -36.719353,
     "longitude": 146.836433
    },
-   "coordinates_source": "osm waterway=waterfall \"Upper Eurobin Falls\" (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=waterfall (nominatim) \"Upper Eurobin Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83d\udca7",
    "bio_draft": "Waterfall on Mount Buffalo, reached by a short walk from the plateau.",
@@ -7631,11 +7673,11 @@
    "destination": "mount-buffalo-national-park",
    "id": "mount-buffalo-national-park-5",
    "coordinates": {
-    "latitude": -36.7325,
-    "longitude": 146.81027778
+    "latitude": -36.7331879,
+    "longitude": 146.8092481
    },
-   "coordinates_source": "wikipedia:Lake Catani",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM water=reservoir 'Lake Catani'; Wikipedia -36.7325,146.81028 about 100 m away (natural=water (reservoir)). ",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udfde\ufe0f",
    "bio_draft": "Lake on Mount Buffalo beside a campground, reached by walking.",
@@ -7659,11 +7701,11 @@
    "destination": "mount-buffalo-national-park",
    "id": "mount-buffalo-national-park-6",
    "coordinates": {
-    "latitude": -36.7221,
-    "longitude": 146.8199
+    "latitude": -36.72222,
+    "longitude": 146.819954
    },
-   "coordinates_source": "wikipedia:Mount Buffalo Chalet",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Mount Buffalo Chalet\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfdb\ufe0f",
    "bio_draft": "Historic chalet on the Mount Buffalo plateau, open for a caf\u00e9 and as a heritage building.",
@@ -7691,7 +7733,7 @@
     "longitude": 147.34
    },
    "coordinates_source": "wikipedia:Bogong High Plains",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "nature",
    "icon": "\ud83c\udfd4\ufe0f",
    "bio_draft": "Alpine plateau between Falls Creek and Mount Bogong, with walks and cross-country skiing.",
@@ -7715,11 +7757,11 @@
    "destination": "alpine-national-park",
    "id": "alpine-national-park-2",
    "coordinates": {
-    "latitude": -36.7325,
-    "longitude": 147.30583333
+    "latitude": -36.732374,
+    "longitude": 147.305826
    },
-   "coordinates_source": "wikipedia:Mount Bogong",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Bogong\"",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Mountain, Victoria\u2019s highest, climbed by walkers from Falls Creek, Mount Beauty and the Staircase Spur.",
@@ -7743,11 +7785,11 @@
    "destination": "alpine-national-park",
    "id": "alpine-national-park-3",
    "coordinates": {
-    "latitude": -36.97527778,
-    "longitude": 147.13277778
+    "latitude": -36.9753,
+    "longitude": 147.128094
    },
-   "coordinates_source": "wikipedia:Mount Hotham",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Hotham\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon": "\u26f7\ufe0f",
    "bio_draft": "Ski resort village high in the Alps, with summer walks such as the Razorback.",
@@ -7771,11 +7813,11 @@
    "destination": "alpine-national-park",
    "id": "alpine-national-park-4",
    "coordinates": {
-    "latitude": -36.865,
-    "longitude": 147.273
+    "latitude": -36.863498,
+    "longitude": 147.281587
    },
-   "coordinates_source": "wikipedia:Falls Creek Alpine Resort",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Falls Creek\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon": "\u26f7\ufe0f",
    "bio_draft": "Ski resort and alpine village on the Bogong High Plains.",
@@ -7800,11 +7842,11 @@
    "destination": "alpine-national-park",
    "id": "alpine-national-park-5",
    "coordinates": {
-    "latitude": -36.89416667,
-    "longitude": 147.13833333
+    "latitude": -36.894163,
+    "longitude": 147.138134
    },
-   "coordinates_source": "wikipedia:Mount Feathertop",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Mount Feathertop\"",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Mountain, the second highest peak in Victoria, reached by the Feathertop Track from Harrietville.",
@@ -7832,7 +7874,7 @@
     "longitude": 147.19
    },
    "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Multi-day alpine walk between Falls Creek and Mount Hotham, one of the high country's long walks.",
@@ -7856,11 +7898,11 @@
    "destination": "alpine-national-park",
    "id": "alpine-national-park-7",
    "coordinates": {
-    "latitude": -36.935,
-    "longitude": 147.15
+    "latitude": -36.9380597,
+    "longitude": 147.1275371
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM highway=path Razorback Track (Hotham/Feathertop) (path). OSM path segment named Razorback Track between Hotham and Mt Feathertop (-36.894,147.138); segment, not verified as full-route midpoint",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Ridge walk above Mount Hotham with views over the Alps.",
@@ -7884,11 +7926,11 @@
    "destination": "mansfield",
    "id": "mansfield-1",
    "coordinates": {
-    "latitude": -37.13333333,
-    "longitude": 146.41666667
+    "latitude": -37.144632,
+    "longitude": 146.425865
    },
-   "coordinates_source": "wikipedia:Mount Buller, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Buller (Marnong)\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon": "\u26f7\ufe0f",
    "bio_draft": "Ski resort and alpine village on Mount Buller, with summer walking and mountain biking.",
@@ -7915,8 +7957,8 @@
     "latitude": -37.126508,
     "longitude": 146.498005
    },
-   "coordinates_source": "osm natural=peak (HIGH)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Stirling\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udfd4\ufe0f",
    "bio_draft": "Alpine resort and summit with summit loop walks and cross-country tracks.",
@@ -7941,11 +7983,11 @@
    "destination": "mansfield",
    "id": "mansfield-3",
    "coordinates": {
-    "latitude": -37.22222222,
-    "longitude": 145.92583333
+    "latitude": -37.222525,
+    "longitude": 145.925161
    },
-   "coordinates_source": "wikipedia:Eildon Dam",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=dam (nominatim) \"Eildon Dam\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udfde\ufe0f",
    "bio_draft": "Large reservoir on the Goulburn River with houseboats, fishing and boating.",
@@ -7969,11 +8011,11 @@
    "destination": "mansfield",
    "id": "mansfield-4",
    "coordinates": {
-    "latitude": -37.1165,
-    "longitude": 146.49
+    "latitude": -37.1051664,
+    "longitude": 146.5350629
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM highway=path 'Craigs Hut Walking Track' (a segment, roughly mid-route; hut at -37.1082606,146.5328346) (highway=path). Segment of the walk, hut is ~350 m away; short walk so midpoint approximate.",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Walk to a historic hut near Mount Stirling.",
@@ -7997,11 +8039,11 @@
    "destination": "mansfield",
    "id": "mansfield-5",
    "coordinates": {
-    "latitude": -37.172,
-    "longitude": 146.67
+    "latitude": -37.173073,
+    "longitude": 146.653035
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (1.1 km, nominatim) \"Australian Alps Walking Track\"",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Walking track on Mount Howitt, a high country summit walk.",
@@ -8025,11 +8067,11 @@
    "destination": "mansfield",
    "id": "mansfield-6",
    "coordinates": {
-    "latitude": -37.21666667,
-    "longitude": 145.98333333
+    "latitude": -37.222525,
+    "longitude": 145.925161
    },
-   "coordinates_source": "wikipedia:Lake Eildon National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=dam (nominatim) \"Eildon Dam\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio_draft": "National park around Lake Eildon with boating, fishing and walks.",
@@ -8053,11 +8095,11 @@
    "destination": "mansfield",
    "id": "mansfield-7",
    "coordinates": {
-    "latitude": -36.8876,
-    "longitude": 146.0657
+    "latitude": -36.886928,
+    "longitude": 146.081706
    },
-   "coordinates_source": "wikipedia:Mount Samaria State Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Mount Samaria State Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio_draft": "State park with bushwalks and lookouts on Mount Samaria near Strath Creek.",
@@ -8081,11 +8123,11 @@
    "destination": "mansfield",
    "id": "mansfield-8",
    "coordinates": {
-    "latitude": -36.87805556,
-    "longitude": 146.00277778
+    "latitude": -36.889145,
+    "longitude": 146.0023877
    },
-   "coordinates_source": "wikipedia:Nillahcootie Dam",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: Nominatim: water=reservoir 'Lake Nillahcootie' (natural=water reservoir). Water centroid, acceptable for a lake",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udfde\ufe0f",
    "bio_draft": "Reservoir near Barjarg with fishing, boating and lakeside picnic areas.",
@@ -8109,11 +8151,11 @@
    "destination": "mansfield",
    "id": "mansfield-9",
    "coordinates": {
-    "latitude": -37.127308,
-    "longitude": 146.132187
+    "latitude": -37.12663,
+    "longitude": 146.129846
    },
-   "coordinates_source": "wikipedia:Mansfield Zoo",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=zoo (nominatim) \"Mansfield Zoo\"",
+   "pin_status": "ok",
    "category": "entertainment",
    "icon": "\ud83e\udd98",
    "bio_draft": "Zoo on the Mansfield-Woods Point Road with native and exotic animals.",
@@ -8140,8 +8182,8 @@
     "latitude": -36.892317,
     "longitude": 147.06387
    },
-   "coordinates_source": "osm boundary=administrative town centre (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Harrietville\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Village above the snowline at the foot of Mount Feathertop, a base for alpine walks.",
@@ -8165,11 +8207,11 @@
    "destination": "bright",
    "id": "bright-2",
    "coordinates": {
-    "latitude": -36.76138889,
-    "longitude": 146.98416667
+    "latitude": -36.769978,
+    "longitude": 146.982868
    },
-   "coordinates_source": "wikipedia:Wandiligong",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Wandiligong\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Small heritage village near Bright with the Diggings walk through the old goldfield.",
@@ -8196,8 +8238,8 @@
     "latitude": -36.897431,
     "longitude": 147.069434
    },
-   "coordinates_source": "osm trail midpoint (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (0.4 km, nominatim) \"Tronoh Dredge Walking Track\"",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Walking track past a gold dredge at Harrietville.",
@@ -8224,8 +8266,8 @@
     "latitude": -36.747375,
     "longitude": 147.170827
    },
-   "coordinates_source": "osm trail midpoint, Gorge Walk (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (0.3 km, nominatim) \"Gorge Walk\"",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Short walk through the gorge near Mount Beauty.",
@@ -8252,8 +8294,8 @@
     "latitude": -36.357686,
     "longitude": 146.689942
    },
-   "coordinates_source": "osm tourism=museum (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=museum (nominatim) \"Old Beechworth Gaol\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfdb\ufe0f",
    "bio_draft": "Restored 1850s gaol in Beechworth, open for tours of cells and the Ned Kelly connection.",
@@ -8277,11 +8319,11 @@
    "destination": "beechworth",
    "id": "beechworth-2",
    "coordinates": {
-    "latitude": -36.31305556,
-    "longitude": 146.83916667
+    "latitude": -36.314382,
+    "longitude": 146.839084
    },
-   "coordinates_source": "wikipedia:Yackandandah",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Yackandandah\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Historic gold town with a main street of heritage buildings and walks around it.",
@@ -8308,8 +8350,8 @@
     "latitude": -36.151277,
     "longitude": 146.608544
    },
-   "coordinates_source": "osm boundary=administrative town centre (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Chiltern\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Historic gold town with a well-preserved streetscape used as a film set.",
@@ -8334,11 +8376,11 @@
    "destination": "beechworth",
    "id": "beechworth-4",
    "coordinates": {
-    "latitude": -36.3495,
-    "longitude": 146.693
+    "latitude": -36.3601184,
+    "longitude": 146.6957716
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: osm lake (natural=water). Lake centroid",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udfde\ufe0f",
    "bio_draft": "Lake and parkland in Beechworth with a walking track around it.",
@@ -8362,11 +8404,11 @@
    "destination": "beechworth",
    "id": "beechworth-5",
    "coordinates": {
-    "latitude": -36.13305556,
-    "longitude": 146.60111111
+    "latitude": -36.196109,
+    "longitude": 146.638247
    },
-   "coordinates_source": "wikipedia:Chiltern-Mt Pilot National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=stream (nominatim) \"Pilot Creek\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio_draft": "National park of box-ironbark forest with walking tracks around Chiltern.",
@@ -8390,11 +8432,11 @@
    "destination": "beechworth",
    "id": "beechworth-6",
    "coordinates": {
-    "latitude": -36.3029,
-    "longitude": 146.5195
+    "latitude": -36.313894,
+    "longitude": 146.503149
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm historic=building (nominatim) \"Cock's El Dorado Dredge\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\u2699\ufe0f",
    "bio_draft": "Restored gold dredge at Eldorado, with a walking track and a picnic area.",
@@ -8422,7 +8464,7 @@
     "longitude": 146.845
    },
    "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Scenic walk beside the gorge at Yackandandah.",
@@ -8446,11 +8488,11 @@
    "destination": "wangaratta",
    "id": "wangaratta-1",
    "coordinates": {
-    "latitude": -36.4625,
-    "longitude": 146.2225
+    "latitude": -36.462269,
+    "longitude": 146.225667
    },
-   "coordinates_source": "wikipedia:Glenrowan, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Glenrowan\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Small town where Ned Kelly was captured in 1880, with Kelly sites and a statue.",
@@ -8475,11 +8517,11 @@
    "destination": "wangaratta",
    "id": "wangaratta-2",
    "coordinates": {
-    "latitude": -36.43333333,
-    "longitude": 146.43333333
+    "latitude": -36.449274,
+    "longitude": 146.432096
    },
-   "coordinates_source": "wikipedia:Milawa",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=village (nominatim) \"Milawa\"",
+   "pin_status": "ok",
    "category": "market",
    "icon": "\ud83c\udf77",
    "bio_draft": "Small village in the King Valley with cellar doors and a gourmet food stop.",
@@ -8504,11 +8546,11 @@
    "destination": "wangaratta",
    "id": "wangaratta-3",
    "coordinates": {
-    "latitude": -36.69472222,
-    "longitude": 146.40166667
+    "latitude": -36.694793,
+    "longitude": 146.408284
    },
-   "coordinates_source": "wikipedia:King Valley",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"King Valley\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udf77",
    "bio_draft": "Wine and food valley around Whitfield, Cheshunt and Milawa, known for prosecco.",
@@ -8532,11 +8574,11 @@
    "destination": "wangaratta",
    "id": "wangaratta-4",
    "coordinates": {
-    "latitude": -36.32972222,
-    "longitude": 146.18805556
+    "latitude": -36.2982117,
+    "longitude": 146.1692459
    },
-   "coordinates_source": "wikipedia:Warby-Ovens National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=picnic_site 'Pine Gully Picnic Area' (main visitor hub) (tourism=picnic_site). Park centroid (-36.227,146.181) not used.",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio_draft": "National park of the Warby Ranges near Wangaratta, with bushwalks.",
@@ -8563,8 +8605,8 @@
     "latitude": -36.46396,
     "longitude": 146.221071
    },
-   "coordinates_source": "osm tourism=attraction Big Ned Kelly Statue (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Big Ned Kelly Statue\"",
+   "pin_status": "ok",
    "category": "monument",
    "icon": "\ud83d\uddff",
    "bio_draft": "Large statue of Ned Kelly on the Glenrowan roadside.",
@@ -8592,7 +8634,7 @@
     "longitude": 146.2215
    },
    "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "entertainment",
    "icon": "\ud83c\udfad",
    "bio_draft": "Ned Kelly re-enactment attraction in Glenrowan, showing the last stand in animated sets.",
@@ -8617,11 +8659,11 @@
    "destination": "wangaratta",
    "id": "wangaratta-7",
    "coordinates": {
-    "latitude": -36.4615,
-    "longitude": 146.2205
+    "latitude": -36.461459,
+    "longitude": 146.223542
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Ned Kelly Copse\"",
+   "pin_status": "ok",
    "category": "museum",
    "icon": "\ud83c\udfdb\ufe0f",
    "bio_draft": "Museum and homestead in Glenrowan with Ned Kelly relics.",
@@ -8645,11 +8687,11 @@
    "destination": null,
    "id": "tallangatta",
    "coordinates": {
-    "latitude": -36.21666667,
-    "longitude": 147.17777778
+    "latitude": -36.216617,
+    "longitude": 147.177898
    },
-   "coordinates_source": "wikipedia:Tallangatta",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Tallangatta\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Town on the shore of Lake Hume, with the relocated old town nearby.",
@@ -8680,8 +8722,8 @@
     "latitude": -36.868253,
     "longitude": 146.437305
    },
-   "coordinates_source": "osm waterway=waterfall (HIGH)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Paradise Falls\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83d\udca7",
    "bio_draft": "Waterfall in Alpine National Park, 31 m high and reached by a viewing platform.",
@@ -8721,11 +8763,11 @@
    "destination": null,
    "id": "lake-william-hovell",
    "coordinates": {
-    "latitude": -36.88,
-    "longitude": 146.4
+    "latitude": -36.924239,
+    "longitude": 146.38923
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=water (nominatim) \"Lake William Hovell\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udfde\ufe0f",
    "bio_draft": "Lake near Cheshunt with swimming, paddling and picnic areas.",
@@ -8768,8 +8810,8 @@
     "latitude": -36.557408,
     "longitude": 147.52271
    },
-   "coordinates_source": "osm waterway=dam (MEDIUM)",
-   "pin_status": "resolved-candidate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=dam (nominatim) \"Dartmouth Dam\"",
+   "pin_status": "ok",
    "category": "landmark",
    "icon": "\ud83c\udf0a",
    "bio_draft": "Large dam on the Mitta Mitta River with a lookout and boating.",
@@ -8800,11 +8842,11 @@
    "destination": null,
    "id": "australian-alps-walking-track",
    "coordinates": {
-    "latitude": -36.9,
-    "longitude": 147.2
+    "latitude": -36.92497,
+    "longitude": 147.243373
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (3.4 km, nominatim) \"Australian Alps Walking Track\"",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio_draft": "Long-distance walking track linking the Australian Alps, with sections through the High Country.",
@@ -8844,11 +8886,11 @@
    "destination": null,
    "id": "murray-to-the-mountains-rail-trail",
    "coordinates": {
-    "latitude": -36.37,
-    "longitude": 146.65
+    "latitude": -36.5743397,
+    "longitude": 146.7428844
    },
-   "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: osm cycleway segment at Myrtleford (highway=cycleway). Point on the trail near Myrtleford, roughly mid-route (Wangaratta to Bright); not the exact halfway of the full relation",
+   "pin_status": "ok",
    "category": "hike",
    "icon": "\ud83d\udeb2",
    "bio_draft": "Rail trail for cycling and walking from Wodonga to Bright and Wangaratta.",
@@ -8892,11 +8934,11 @@
    "destination": null,
    "id": "omeo",
    "coordinates": {
-    "latitude": -37.1,
-    "longitude": 147.6
+    "latitude": -37.100399,
+    "longitude": 147.592246
    },
-   "coordinates_source": "wikipedia:Omeo",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Omeo\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Historic high country town on the Omeo Highway, a gateway to the southern Victorian Alps.",
@@ -8931,7 +8973,7 @@
     "longitude": 147.595
    },
    "coordinates_source": "provisional estimate near the named place; no visitor-point source yet (pins stage to resolve)",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "category": "entertainment",
    "icon": "\ud83d\udeb5",
    "bio_draft": "Mountain biking park with over 114 km of trails near Omeo.",
@@ -8962,11 +9004,11 @@
    "destination": null,
    "id": "corryong",
    "coordinates": {
-    "latitude": -36.19805556,
-    "longitude": 147.89944444
+    "latitude": -36.197511,
+    "longitude": 147.904214
    },
-   "coordinates_source": "wikipedia:Corryong",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=town (nominatim) \"Corryong\"",
+   "pin_status": "ok",
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "bio_draft": "Upper Murray town on the Snowy River, the setting of Banjo Paterson's poem The Man from Snowy River.",
@@ -8997,11 +9039,11 @@
    "destination": null,
    "id": "burrowa-pine-mountain-national-park",
    "coordinates": {
-    "latitude": -36.09,
-    "longitude": 147.75805556
+    "latitude": -36.100389,
+    "longitude": 147.723099
    },
-   "coordinates_source": "wikipedia:Burrowa-Pine Mountain National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Burrowa - Pine Mountain National Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio_draft": "National park near Cudgewa and Tintaldra with bushwalks and lookouts.",
@@ -9032,11 +9074,11 @@
    "destination": null,
    "id": "mount-lawson-state-park",
    "coordinates": {
-    "latitude": -36.0922,
-    "longitude": 147.4444
+    "latitude": -36.050265,
+    "longitude": 147.440977
    },
-   "coordinates_source": "wikipedia:Mount Lawson State Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Mount Lawson State Park\"",
+   "pin_status": "ok",
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio_draft": "State park around Mount Lawson with a summit loop nature trail.",
@@ -9070,7 +9112,7 @@
     "latitude": -37.818078,
     "longitude": 144.96681
    },
-   "coordinates_source": "wikipedia:Flinders Street railway station",
+   "coordinates_source": "pin retry HIGH: Wikipedia article point; OSM police booth in station 45 m away (wikipedia + amenity=police). ",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "Flinders Street railway station",
@@ -9095,10 +9137,10 @@
    "destination": "melbourne",
    "id": "melbourne-2",
    "coordinates": {
-    "latitude": -37.817798,
-    "longitude": 144.968714
+    "latitude": -37.81774,
+    "longitude": 144.969156
    },
-   "coordinates_source": "wikipedia:Federation Square",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=square (nominatim) \"Federation Square\"",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "Federation Square",
@@ -9123,10 +9165,10 @@
    "destination": "melbourne",
    "id": "melbourne-3",
    "coordinates": {
-    "latitude": -37.807,
-    "longitude": 144.9569
+    "latitude": -37.806998,
+    "longitude": 144.956951
    },
-   "coordinates_source": "wikipedia:Queen Victoria Market",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=marketplace (nominatim) \"Queen Victoria Market\"",
    "pin_status": "ok",
    "category": "market",
    "wiki": "Queen Victoria Market",
@@ -9151,10 +9193,10 @@
    "destination": "melbourne",
    "id": "melbourne-4",
    "coordinates": {
-    "latitude": -37.8225,
-    "longitude": 144.96888889
+    "latitude": -37.8229117,
+    "longitude": 144.9686548
    },
-   "coordinates_source": "wikipedia:National Gallery of Victoria",
+   "coordinates_source": "pin retry HIGH: Nominatim amenity=arts_centre National Gallery of Victoria, St Kilda Road; agrees with Wikipedia geotag -37.8225,144.96889 (~50 m) (amenity=arts_centre). ",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "National Gallery of Victoria",
@@ -9179,10 +9221,10 @@
    "destination": "melbourne",
    "id": "melbourne-5",
    "coordinates": {
-    "latitude": -37.8334,
-    "longitude": 144.98033
+    "latitude": -37.829456,
+    "longitude": 144.981315
    },
-   "coordinates_source": "wikipedia:Royal Botanic Gardens Victoria",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Royal Botanic Gardens\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Royal Botanic Gardens Victoria",
@@ -9207,10 +9249,10 @@
    "destination": "melbourne",
    "id": "melbourne-6",
    "coordinates": {
-    "latitude": -37.82,
-    "longitude": 144.98333333
+    "latitude": -37.819909,
+    "longitude": 144.983225
    },
-   "coordinates_source": "wikipedia:Melbourne Cricket Ground",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=stadium (nominatim) \"Melbourne Cricket Ground\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Melbourne Cricket Ground",
@@ -9235,10 +9277,10 @@
    "destination": "melbourne",
    "id": "melbourne-7",
    "coordinates": {
-    "latitude": -37.80472222,
-    "longitude": 144.97138889
+    "latitude": -37.804667,
+    "longitude": 144.971467
    },
-   "coordinates_source": "wikipedia:Royal Exhibition Building",
+   "coordinates_source": "resolve-pin.py HIGH: osm historic=building (nominatim) \"Royal Exhibition Building\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Royal Exhibition Building",
@@ -9263,10 +9305,10 @@
    "destination": "melbourne",
    "id": "melbourne-8",
    "coordinates": {
-    "latitude": -37.803337,
-    "longitude": 144.971445
+    "latitude": -37.80323,
+    "longitude": 144.972349
    },
-   "coordinates_source": "wikipedia:Melbourne Museum",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=museum (nominatim) \"Melbourne Museum\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Melbourne Museum",
@@ -9319,10 +9361,10 @@
    "destination": "melbourne",
    "id": "melbourne-10",
    "coordinates": {
-    "latitude": -37.864,
-    "longitude": 144.982
+    "latitude": -37.868107,
+    "longitude": 144.974219
    },
-   "coordinates_source": "wikipedia:St Kilda Beach, Victoria",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=beach (nominatim) \"St Kilda Beach\"",
    "pin_status": "ok",
    "category": "beach",
    "wiki": "St Kilda Beach, Victoria",
@@ -9347,10 +9389,10 @@
    "destination": "melbourne",
    "id": "melbourne-11",
    "coordinates": {
-    "latitude": -37.868036,
-    "longitude": 144.976369
+    "latitude": -37.868024,
+    "longitude": 144.976909
    },
-   "coordinates_source": "wikipedia:Luna Park, Melbourne",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=theme_park (nominatim) \"Luna Park\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Luna Park, Melbourne",
@@ -9375,10 +9417,10 @@
    "destination": "melbourne",
    "id": "melbourne-12",
    "coordinates": {
-    "latitude": -37.82166667,
-    "longitude": 144.96444444
+    "latitude": -37.8217537,
+    "longitude": 144.9646549
    },
-   "coordinates_source": "wikipedia:Eureka Tower",
+   "coordinates_source": "pin retry MEDIUM: osm building (building=yes). ",
    "pin_status": "ok",
    "category": "viewpoint",
    "wiki": "Eureka Tower",
@@ -9403,10 +9445,10 @@
    "destination": "melbourne",
    "id": "melbourne-13",
    "coordinates": {
-    "latitude": -37.83055556,
-    "longitude": 144.97344444
+    "latitude": -37.830531,
+    "longitude": 144.973447
    },
-   "coordinates_source": "wikipedia:Shrine of Remembrance",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Shrine of Remembrance\"",
    "pin_status": "ok",
    "category": "monument",
    "wiki": "Shrine of Remembrance",
@@ -9431,10 +9473,10 @@
    "destination": "melbourne",
    "id": "melbourne-14",
    "coordinates": {
-    "latitude": -37.80805556,
-    "longitude": 144.96527778
+    "latitude": -37.807819,
+    "longitude": 144.965268
    },
-   "coordinates_source": "wikipedia:Old Melbourne Gaol",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Old Melbourne Gaol\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Old Melbourne Gaol",
@@ -9459,10 +9501,10 @@
    "destination": "melbourne",
    "id": "melbourne-15",
    "coordinates": {
-    "latitude": -37.809801,
-    "longitude": 144.964787
+    "latitude": -37.80977,
+    "longitude": 144.965535
    },
-   "coordinates_source": "wikipedia:State Library Victoria",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=library (nominatim) \"State Library Victoria\"",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "State Library of Victoria",
@@ -9487,10 +9529,10 @@
    "destination": "melbourne",
    "id": "melbourne-16",
    "coordinates": {
-    "latitude": -37.784762,
-    "longitude": 144.952095
+    "latitude": -37.784803,
+    "longitude": 144.951537
    },
-   "coordinates_source": "wikipedia:Melbourne Zoo",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=zoo (nominatim) \"Melbourne Zoological Gardens\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Melbourne Zoo",
@@ -9515,10 +9557,10 @@
    "destination": "melbourne",
    "id": "melbourne-17",
    "coordinates": {
-    "latitude": -37.9229,
-    "longitude": 144.6673
+    "latitude": -37.922793,
+    "longitude": 144.662859
    },
-   "coordinates_source": "wikipedia:Werribee Open Range Zoo",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=zoo (nominatim) \"Werribee Open Range Zoo\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Werribee Open Range Zoo",
@@ -9543,10 +9585,10 @@
    "destination": "melbourne",
    "id": "melbourne-18",
    "coordinates": {
-    "latitude": -37.75863,
-    "longitude": 145.08421
+    "latitude": -37.757358,
+    "longitude": 145.08298
    },
-   "coordinates_source": "wikipedia:Heide Museum of Modern Art",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=gallery (nominatim) \"Heide Museum of Modern Art\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Heide Museum of Modern Art",
@@ -9571,10 +9613,10 @@
    "destination": "melbourne",
    "id": "melbourne-19",
    "coordinates": {
-    "latitude": -37.9188,
-    "longitude": 144.9873
+    "latitude": -37.918512,
+    "longitude": 144.987163
    },
-   "coordinates_source": "wikipedia:Brighton Bathing Boxes",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Brighton Bathing Boxes\"",
    "pin_status": "ok",
    "category": "beach",
    "wiki": "Brighton Bathing Boxes",
@@ -9600,10 +9642,10 @@
    "destination": "melbourne",
    "id": "melbourne-20",
    "coordinates": {
-    "latitude": -37.861,
-    "longitude": 144.885
+    "latitude": -37.861179,
+    "longitude": 144.889857
    },
-   "coordinates_source": "wikipedia:Williamstown, Victoria",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Williamstown\"",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "Williamstown, Victoria",
@@ -9628,10 +9670,10 @@
    "destination": "melbourne",
    "id": "melbourne-21",
    "coordinates": {
-    "latitude": -37.8191,
-    "longitude": 144.9604
+    "latitude": -37.81912,
+    "longitude": 144.960398
    },
-   "coordinates_source": "wikipedia:Immigration Museum, Melbourne",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Immigration Museum\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Immigration Museum, Melbourne",
@@ -9656,10 +9698,10 @@
    "destination": "melbourne",
    "id": "melbourne-22",
    "coordinates": {
-    "latitude": -37.8176241,
-    "longitude": 144.9685907
+    "latitude": -37.8174356,
+    "longitude": 144.9690684
    },
-   "coordinates_source": "wikipedia:Australian Centre for the Moving Image",
+   "coordinates_source": "pin retry HIGH: OSM tourism=museum ACMI + Wikipedia -37.8176,144.9686 (museum). two sources about 40 m apart",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Australian Centre for the Moving Image",
@@ -9684,10 +9726,10 @@
    "destination": "melbourne",
    "id": "melbourne-23",
    "coordinates": {
-    "latitude": -37.82027778,
-    "longitude": 144.96833333
+    "latitude": -37.820158,
+    "longitude": 144.967984
    },
-   "coordinates_source": "wikipedia:Arts Centre Melbourne",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Arts Centre Melbourne\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Arts Centre Melbourne",
@@ -9712,10 +9754,10 @@
    "destination": "melbourne",
    "id": "melbourne-24",
    "coordinates": {
-    "latitude": -37.81,
-    "longitude": 144.97611111
+    "latitude": -37.810152,
+    "longitude": 144.976404
    },
-   "coordinates_source": "wikipedia:St Patrick's Cathedral, Melbourne",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=place_of_worship (nominatim) \"Saint Patrick's Cathedral\"",
    "pin_status": "ok",
    "category": "religious",
    "wiki": "St Patrick's Cathedral, Melbourne",
@@ -9740,10 +9782,10 @@
    "destination": "melbourne",
    "id": "melbourne-25",
    "coordinates": {
-    "latitude": -37.816853,
-    "longitude": 144.967384
+    "latitude": -37.816874,
+    "longitude": 144.96765
    },
-   "coordinates_source": "wikipedia:St Paul's Cathedral, Melbourne",
+   "coordinates_source": "resolve-pin.py HIGH: osm amenity=place_of_worship (nominatim) \"Saint Paul's Cathedral\"",
    "pin_status": "ok",
    "category": "religious",
    "wiki": "St Paul's Cathedral, Melbourne",
@@ -9768,10 +9810,10 @@
    "destination": "melbourne",
    "id": "melbourne-26",
    "coordinates": {
-    "latitude": -37.8125641,
-    "longitude": 144.9803925
+    "latitude": -37.812684,
+    "longitude": 144.980505
    },
-   "coordinates_source": "wikipedia:Fitzroy Gardens",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=park (nominatim) \"Fitzroy Gardens\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Fitzroy Gardens",
@@ -9796,10 +9838,10 @@
    "destination": "melbourne",
    "id": "melbourne-27",
    "coordinates": {
-    "latitude": -37.81448889,
+    "latitude": -37.81449,
     "longitude": 144.97945
    },
-   "coordinates_source": "wikipedia:Cooks' Cottage",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"Cooks' Cottage\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Cooks' Cottage",
@@ -9824,10 +9866,10 @@
    "destination": "melbourne",
    "id": "melbourne-28",
    "coordinates": {
-    "latitude": -37.811055,
-    "longitude": 144.97329
+    "latitude": -37.8110999,
+    "longitude": 144.9738657
    },
-   "coordinates_source": "wikipedia:Parliament House, Melbourne",
+   "coordinates_source": "pin retry HIGH: OSM office=government 'Parliament House'; Wikipedia -37.811055,144.97329 about 50 m away (office=government). ",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Parliament House, Melbourne",
@@ -9852,10 +9894,10 @@
    "destination": "melbourne",
    "id": "melbourne-29",
    "coordinates": {
-    "latitude": -37.80611111,
-    "longitude": 144.97027778
+    "latitude": -37.806258,
+    "longitude": 144.971233
    },
-   "coordinates_source": "wikipedia:Carlton Gardens",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"Carlton Gardens\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Carlton Gardens",
@@ -9880,10 +9922,10 @@
    "destination": "melbourne",
    "id": "melbourne-30",
    "coordinates": {
-    "latitude": -37.82267,
-    "longitude": 144.98005
+    "latitude": -37.821361,
+    "longitude": 144.979088
    },
-   "coordinates_source": "wikipedia:Melbourne Park",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=sports_centre (nominatim) \"Melbourne Park\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Melbourne Park",
@@ -9908,10 +9950,10 @@
    "destination": "melbourne",
    "id": "melbourne-31",
    "coordinates": {
-    "latitude": -37.848,
-    "longitude": 144.971
+    "latitude": -37.8473452,
+    "longitude": 144.9702251
    },
-   "coordinates_source": "wikipedia:Albert Park and Lake",
+   "coordinates_source": "pin retry MEDIUM: Nominatim leisure=park 'Albert Park' (lake node -37.84594,144.96949 is in water) (leisure=park). Park node is a centroid-style point; if it falls on the lake, use the lakeside e.g. near the boat sheds",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Albert Park and Lake",
@@ -9936,10 +9978,10 @@
    "destination": "melbourne",
    "id": "melbourne-32",
    "coordinates": {
-    "latitude": -37.81583333,
-    "longitude": 144.96444444
+    "latitude": -37.8155831,
+    "longitude": 144.9643273
    },
-   "coordinates_source": "wikipedia:Block Arcade",
+   "coordinates_source": "pin retry MEDIUM: osm shop=mall, Collins St (shop=mall). Footway 40 m away",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Block Arcade, Melbourne",
@@ -9964,10 +10006,10 @@
    "destination": "melbourne",
    "id": "melbourne-33",
    "coordinates": {
-    "latitude": -37.8145,
-    "longitude": 144.9641
+    "latitude": -37.8145635,
+    "longitude": 144.964041
    },
-   "coordinates_source": "wikipedia:Royal Arcade, Melbourne",
+   "coordinates_source": "pin retry HIGH: OSM building Royal Arcade Melbourne + Wikipedia -37.8145,144.9641 (building). two sources within 10 m",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Royal Arcade, Melbourne",
@@ -9992,10 +10034,10 @@
    "destination": "melbourne",
    "id": "melbourne-34",
    "coordinates": {
-    "latitude": -37.815505,
-    "longitude": 144.970822
+    "latitude": -37.8155405,
+    "longitude": 144.9705723
    },
-   "coordinates_source": "wikipedia:ACDC Lane",
+   "coordinates_source": "pin retry HIGH: OSM amenity=parking 'ACDC Garage' in lane; Wikipedia -37.815505,144.970822 about 22 m away (amenity=parking + wikipedia). ",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "ACDC Lane",
@@ -10023,8 +10065,8 @@
     "latitude": -37.811811,
     "longitude": 144.967629
    },
-   "coordinates_source": "osm:nominatim place/neighbourhood 'Chinatown' (provisional: verify at placement)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=neighbourhood (nominatim) \"Chinatown\"",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Chinatown, Melbourne",
    "bio_draft": "Little Bourke Street Chinatown with restaurants and arches.",
@@ -10072,10 +10114,10 @@
    "destination": "melbourne",
    "id": "melbourne-37",
    "coordinates": {
-    "latitude": -37.79833333,
-    "longitude": 144.97847222
+    "latitude": -37.797054,
+    "longitude": 144.9786905
    },
-   "coordinates_source": "wikipedia:Brunswick Street, Melbourne",
+   "coordinates_source": "pin retry MEDIUM: Nominatim highway=tertiary Brunswick Street, Fitzroy (way point) (highway street way). Point on the Fitzroy shopping strip, near the middle of the street's famous stretch",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "Brunswick Street, Melbourne",
@@ -10098,10 +10140,10 @@
    "destination": "melbourne",
    "id": "melbourne-38",
    "coordinates": {
-    "latitude": -37.834765,
-    "longitude": 144.996555
+    "latitude": -37.8489018,
+    "longitude": 144.9938124
    },
-   "coordinates_source": "wikipedia:Chapel Street, Melbourne",
+   "coordinates_source": "pin retry MEDIUM: osm road, Prahran (highway=tertiary). Point on the road in Prahran; Commons photo median 1.7 km north at -37.833237,144.995483",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "Chapel Street, Melbourne",
@@ -10127,8 +10169,8 @@
     "latitude": -37.868993,
     "longitude": 144.980153
    },
-   "coordinates_source": "osm:nominatim highway/pedestrian 'Acland Street' (provisional: verify at placement)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM highway=pedestrian Acland Street (St Kilda) (pedestrian street). the pedestrian strip; whole street -37.8672,144.9785 to -37.8690,144.9802",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Acland Street",
    "bio_draft": "St Kilda shopping and cafe strip with cake shops and the Acland Street plaza.",
@@ -10152,10 +10194,10 @@
    "destination": "melbourne",
    "id": "melbourne-40",
    "coordinates": {
-    "latitude": -37.86472222,
-    "longitude": 144.96777778
+    "latitude": -37.864671,
+    "longitude": 144.968918
    },
-   "coordinates_source": "wikipedia:St Kilda Pier",
+   "coordinates_source": "resolve-pin.py HIGH: osm man_made=pier (nominatim) \"St Kilda Pier\"",
    "pin_status": "ok",
    "category": "landmark",
    "wiki": "St Kilda Pier",
@@ -10180,10 +10222,10 @@
    "destination": "melbourne",
    "id": "melbourne-41",
    "coordinates": {
-    "latitude": -37.8792,
-    "longitude": 144.9995
+    "latitude": -37.879806,
+    "longitude": 144.998928
    },
-   "coordinates_source": "wikipedia:Rippon Lea Estate",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=garden (nominatim) \"Rippon Lea Estate\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Rippon Lea Estate",
@@ -10209,10 +10251,10 @@
    "destination": "melbourne",
    "id": "melbourne-42",
    "coordinates": {
-    "latitude": -37.9311,
-    "longitude": 144.6701
+    "latitude": -37.93054,
+    "longitude": 144.670275
    },
-   "coordinates_source": "wikipedia:Werribee Park",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=playground (nominatim) \"Werribee Park\"",
    "pin_status": "ok",
    "category": "historic",
    "wiki": "Werribee Park",
@@ -10237,10 +10279,10 @@
    "destination": "melbourne",
    "id": "melbourne-43",
    "coordinates": {
-    "latitude": -37.821044,
-    "longitude": 144.958017
+    "latitude": -37.820735,
+    "longitude": 144.958257
    },
-   "coordinates_source": "wikipedia:Sea Life Melbourne Aquarium",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=aquarium (nominatim) \"Sea Life Melbourne Aquarium\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Sea Life Melbourne Aquarium",
@@ -10265,10 +10307,10 @@
    "destination": "melbourne",
    "id": "melbourne-44",
    "coordinates": {
-    "latitude": -37.822324,
-    "longitude": 144.960099
+    "latitude": -37.825182,
+    "longitude": 144.958295
    },
-   "coordinates_source": "wikipedia:Crown Melbourne",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=casino (nominatim) \"Crown Entertainment Complex\"",
    "pin_status": "ok",
    "category": "entertainment",
    "wiki": "Crown Melbourne",
@@ -10293,10 +10335,10 @@
    "destination": "melbourne",
    "id": "melbourne-45",
    "coordinates": {
-    "latitude": -37.817798,
-    "longitude": 144.968714
+    "latitude": -37.81758,
+    "longitude": 144.969976
    },
-   "coordinates_source": "wikipedia:Ian Potter Centre: NGV Australia",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Ian Potter Centre: NGV Australia\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Ian Potter Centre: NGV Australia",
@@ -10321,10 +10363,10 @@
    "destination": "melbourne",
    "id": "melbourne-46",
    "coordinates": {
-    "latitude": -37.813153,
-    "longitude": 144.974121
+    "latitude": -37.8131993,
+    "longitude": 144.9743546
    },
-   "coordinates_source": "wikipedia:Old Treasury Building, Melbourne",
+   "coordinates_source": "pin retry HIGH: OSM tourism=museum 'Old Treasury Building Museum'; Wikipedia 20 m away (tourism=museum). ",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Old Treasury Building, Melbourne",
@@ -10349,10 +10391,10 @@
    "destination": "melbourne",
    "id": "melbourne-47",
    "coordinates": {
-    "latitude": -37.824716,
-    "longitude": 144.953356
+    "latitude": -37.824734,
+    "longitude": 144.953493
    },
-   "coordinates_source": "wikipedia:Polly Woodside",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Polly Woodside\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Polly Woodside",
@@ -10377,10 +10419,10 @@
    "destination": "melbourne",
    "id": "melbourne-48",
    "coordinates": {
-    "latitude": -37.8108,
-    "longitude": 144.969099
+    "latitude": -37.810737,
+    "longitude": 144.969209
    },
-   "coordinates_source": "wikipedia:Chinese Museum, Melbourne",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Chinese Museum\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Chinese Museum, Melbourne",
@@ -10405,10 +10447,10 @@
    "destination": "melbourne",
    "id": "melbourne-49",
    "coordinates": {
-    "latitude": -37.8183,
-    "longitude": 144.9691
+    "latitude": -37.818157,
+    "longitude": 144.969102
    },
-   "coordinates_source": "wikipedia:Koorie Heritage Trust",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Koorie Heritage Trust\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Koorie Heritage Trust",
@@ -10461,10 +10503,10 @@
    "destination": "melbourne",
    "id": "melbourne-51",
    "coordinates": {
-    "latitude": -37.846376,
-    "longitude": 144.992355
+    "latitude": -37.846019,
+    "longitude": 144.99259
    },
-   "coordinates_source": "wikipedia:Prahran Market",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=marketplace (nominatim) \"Prahran Market\"",
    "pin_status": "ok",
    "category": "market",
    "wiki": "Prahran Market",
@@ -10487,11 +10529,11 @@
    "destination": "melbourne",
    "id": "melbourne-52",
    "coordinates": {
-    "latitude": -37.800591,
-    "longitude": 144.902085
+    "latitude": -37.8005914,
+    "longitude": 144.9020846
    },
-   "coordinates_source": "osm:nominatim building/yes (provisional)",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: Nominatim building 'Footscray Market', 81 Hopkins Street (building). Same coordinates as the draft rough pin, so not independent confirmation",
+   "pin_status": "ok",
    "category": "market",
    "wiki": "Footscray Market",
    "bio_draft": "market in Footscray trading most days.",
@@ -10515,10 +10557,10 @@
    "destination": "melbourne",
    "id": "melbourne-53",
    "coordinates": {
-    "latitude": -37.9838,
-    "longitude": 145.2158
+    "latitude": -37.9838503,
+    "longitude": 145.2155532
    },
-   "coordinates_source": "wikipedia:Dandenong Market",
+   "coordinates_source": "pin retry MEDIUM: osm shop=market, 40 Cleeland St (shop=market). ",
    "pin_status": "ok",
    "category": "market",
    "wiki": "Dandenong Market",
@@ -10571,10 +10613,10 @@
    "destination": "melbourne",
    "id": "melbourne-55",
    "coordinates": {
-    "latitude": -37.795407,
-    "longitude": 145.011978
+    "latitude": -37.793753,
+    "longitude": 145.010703
    },
-   "coordinates_source": "wikipedia:Yarra Bend Park",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=park (nominatim) \"Yarra Bend Park\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Yarra Bend Park",
@@ -10599,10 +10641,10 @@
    "destination": "melbourne",
    "id": "melbourne-56",
    "coordinates": {
-    "latitude": -37.716,
-    "longitude": 145.245
+    "latitude": -37.727846,
+    "longitude": 145.241361
    },
-   "coordinates_source": "wikipedia:Warrandyte State Park",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=wood (nominatim) \"Warrandyte State Park\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Warrandyte State Park",
@@ -10627,10 +10669,10 @@
    "destination": "melbourne",
    "id": "melbourne-57",
    "coordinates": {
-    "latitude": -37.66861111,
-    "longitude": 144.76722222
+    "latitude": -37.668182,
+    "longitude": 144.76924
    },
-   "coordinates_source": "wikipedia:Organ Pipes National Park",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Organ Pipes National Park\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Organ Pipes National Park",
@@ -10653,10 +10695,10 @@
    "destination": "melbourne",
    "id": "melbourne-58",
    "coordinates": {
-    "latitude": -37.81055556,
-    "longitude": 145.09027778
+    "latitude": -37.810306,
+    "longitude": 145.090509
    },
-   "coordinates_source": "wikipedia:Maranoa Botanic Gardens",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Maranoa Botanic Gardens\"",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "Maranoa Botanic Gardens",
@@ -10681,10 +10723,10 @@
    "destination": "melbourne",
    "id": "melbourne-59",
    "coordinates": {
-    "latitude": -37.766,
-    "longitude": 144.984
+    "latitude": -37.7660212,
+    "longitude": 144.9839547
    },
-   "coordinates_source": "wikipedia:CERES Community Environment Park",
+   "coordinates_source": "pin retry HIGH: OSM leisure=park CERES Environment Park + Wikipedia -37.766,144.984 (park). two sources within 25 m",
    "pin_status": "ok",
    "category": "nature",
    "wiki": "CERES Community Environment Park",
@@ -10709,10 +10751,10 @@
    "destination": "melbourne",
    "id": "melbourne-60",
    "coordinates": {
-    "latitude": -37.8603,
-    "longitude": 144.9855
+    "latitude": -37.852908,
+    "longitude": 144.982343
    },
-   "coordinates_source": "wikipedia:Jewish Museum of Australia",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm amenity=social_centre (nominatim) \"Jewish Care Victoria\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Jewish Museum of Australia",
@@ -10741,7 +10783,7 @@
     "longitude": 145.0011
    },
    "coordinates_source": "wikipedia:Melbourne Holocaust Museum",
-   "pin_status": "ok",
+   "pin_status": "unresolved",
    "category": "museum",
    "wiki": "Jewish Holocaust Centre",
    "bio_draft": "Holocaust museum and education centre in Bentleigh East.",
@@ -10768,8 +10810,8 @@
     "latitude": -37.831446,
     "longitude": 144.89391
    },
-   "coordinates_source": "osm:nominatim tourism/museum 'Scienceworks' (provisional: verify at placement)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=museum (nominatim) \"Scienceworks\"",
+   "pin_status": "ok",
    "category": "museum",
    "wiki": "Scienceworks (Melbourne)",
    "bio_draft": "science and technology museum at Spotswood on the Maribyrnong foreshore.",
@@ -10793,10 +10835,10 @@
    "destination": "melbourne",
    "id": "melbourne-63",
    "coordinates": {
-    "latitude": -37.930464,
-    "longitude": 144.749073
+    "latitude": -37.93038,
+    "longitude": 144.749136
    },
-   "coordinates_source": "wikipedia:RAAF Museum",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"RAAF Museum\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "RAAF Museum",
@@ -10821,10 +10863,10 @@
    "destination": "melbourne",
    "id": "melbourne-64",
    "coordinates": {
-    "latitude": -37.9767,
-    "longitude": 145.091
+    "latitude": -37.976894,
+    "longitude": 145.091385
    },
-   "coordinates_source": "wikipedia:Australian National Aviation Museum",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Australian National Aviation Museum\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Australian National Aviation Museum",
@@ -10849,10 +10891,10 @@
    "destination": "melbourne",
    "id": "melbourne-65",
    "coordinates": {
-    "latitude": -37.7975,
-    "longitude": 144.95833333
+    "latitude": -37.797292,
+    "longitude": 144.958345
    },
-   "coordinates_source": "wikipedia:Grainger Museum",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Grainger Museum\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Grainger Museum",
@@ -10877,10 +10919,10 @@
    "destination": "melbourne",
    "id": "melbourne-66",
    "coordinates": {
-    "latitude": -37.7975,
-    "longitude": 144.96411111
+    "latitude": -37.7974889,
+    "longitude": 144.964147
    },
-   "coordinates_source": "wikipedia:Ian Potter Museum of Art",
+   "coordinates_source": "pin retry HIGH: Photon (OSM) building 'The Potter Museum of Art'; draft Wikipedia geotag -37.7975,144.96411 within 5 m (building (osm) + wikipedia). ",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Ian Potter Museum of Art",
@@ -10905,10 +10947,10 @@
    "destination": "melbourne",
    "id": "melbourne-67",
    "coordinates": {
-    "latitude": -37.8225,
-    "longitude": 144.95411111
+    "latitude": -37.824275,
+    "longitude": 144.971001
    },
-   "coordinates_source": "wikipedia:Victoria Police Museum",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm historic=memorial (nominatim) \"Victoria Police Memorial\"",
    "pin_status": "ok",
    "category": "museum",
    "wiki": "Victoria Police Museum",
@@ -10933,10 +10975,10 @@
    "destination": "melbourne",
    "id": "melbourne-68",
    "coordinates": {
-    "latitude": -37.87222222,
-    "longitude": 144.82083333
+    "latitude": -37.871299,
+    "longitude": 144.833566
    },
-   "coordinates_source": "wikipedia:Altona Beach",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=beach (nominatim) \"Altona Beach\"",
    "pin_status": "ok",
    "category": "beach",
    "wiki": "Altona Beach",
@@ -10964,8 +11006,8 @@
     "latitude": -37.889731,
     "longitude": 144.984165
    },
-   "coordinates_source": "osm:nominatim natural/beach 'Elwood Beach' (provisional: verify at placement)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=beach (nominatim) \"Elwood Beach\"",
+   "pin_status": "ok",
    "category": "beach",
    "wiki": "Elwood Beach",
    "bio_draft": "bayside beach in Elwood, named by a travel guide.",
@@ -11078,11 +11120,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -38.30166667,
-    "longitude": 144.6525
+    "latitude": -38.301657,
+    "longitude": 144.652724
    },
-   "coordinates_source": "wikipedia:Point Nepean",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=cape (nominatim) \"Point Nepean\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 5660,
    "counted_sources": 3,
@@ -11105,9 +11147,12 @@
    "id": "mornington-peninsula-2",
    "category": "entertainment",
    "icon": "\u2668\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.407503,
+    "longitude": 144.840832
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=water_park (nominatim) \"Peninsula Hot Springs\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -11132,11 +11177,11 @@
    "category": "landmark",
    "icon": "\ud83d\uddfc",
    "coordinates": {
-    "latitude": -38.492687,
-    "longitude": 144.886489
+    "latitude": -38.492829,
+    "longitude": 144.886439
    },
-   "coordinates_source": "wikipedia:Cape Schanck Lighthouse",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm man_made=lighthouse (nominatim) \"Cape Schanck Lighthouse\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1610,
    "counted_sources": 2,
@@ -11160,11 +11205,11 @@
    "category": "viewpoint",
    "icon": "\u26f0\ufe0f",
    "coordinates": {
-    "latitude": -38.352,
-    "longitude": 144.953
+    "latitude": -38.353642,
+    "longitude": 144.950705
    },
-   "coordinates_source": "wikipedia:Arthurs Seat, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Arthurs Seat\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 11672,
    "counted_sources": 2,
@@ -11188,11 +11233,11 @@
    "category": "historic",
    "icon": "\ud83c\udff0",
    "coordinates": {
-    "latitude": -38.303,
-    "longitude": 144.6524
+    "latitude": -38.303357,
+    "longitude": 144.652729
    },
-   "coordinates_source": "wikipedia:Fort Nepean",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm historic=castle (nominatim) \"Fort Nepean\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 5103,
    "counted_sources": 2,
@@ -11216,11 +11261,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -38.50222222,
-    "longitude": 144.88833333
+    "latitude": -38.444723,
+    "longitude": 144.925927
    },
-   "coordinates_source": "wikipedia:Mornington Peninsula National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Mornington Peninsula National Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1380,
    "counted_sources": 2,
@@ -11244,11 +11289,11 @@
    "category": "historic",
    "icon": "\ud83c\udfd8\ufe0f",
    "coordinates": {
-    "latitude": -38.33888889,
-    "longitude": 144.74083333
+    "latitude": -38.344727,
+    "longitude": 144.742094
    },
-   "coordinates_source": "wikipedia:Sorrento, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sorrento\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 13072,
    "counted_sources": 1,
@@ -11272,11 +11317,11 @@
    "category": "landmark",
    "icon": "\ud83c\udfd8\ufe0f",
    "coordinates": {
-    "latitude": -38.32055556,
-    "longitude": 144.71722222
+    "latitude": -38.322821,
+    "longitude": 144.700421
    },
-   "coordinates_source": "wikipedia:Portsea, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Portsea\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 10912,
    "counted_sources": 1,
@@ -11300,11 +11345,11 @@
    "category": "nature",
    "icon": "\ud83c\udf47",
    "coordinates": {
-    "latitude": -38.355,
-    "longitude": 145.016
+    "latitude": -38.365564,
+    "longitude": 144.995902
    },
-   "coordinates_source": "wikipedia:Red Hill, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Red Hill\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 4392,
    "counted_sources": 2,
@@ -11327,9 +11372,12 @@
    "id": "mornington-peninsula-10",
    "category": "hike",
    "icon": "\ud83e\udd7e",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.413132,
+    "longitude": 144.936189
+   },
+   "coordinates_source": "pin retry MEDIUM: osm Two Bays Walking Track way (Boneo) (highway=track). A segment near the middle of the Dromana to Cape Schanck route, not computed from the full relation",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 2,
@@ -11355,7 +11403,7 @@
    "icon": "\ud83e\udd7e",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 1,
@@ -11408,11 +11456,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -38.352,
-    "longitude": 144.953
+    "latitude": -38.354345,
+    "longitude": 144.953742
    },
-   "coordinates_source": "wikipedia:Arthurs Seat, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Arthurs Seat\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 11672,
    "counted_sources": 3,
@@ -11491,9 +11539,12 @@
    "id": "mornington-peninsula-16",
    "category": "beach",
    "icon": "\ud83c\udfd6\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.3362152,
+    "longitude": 144.7064942
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM natural=beach 'Portsea Back Beach'; surf life saving club 190 m away (natural=beach). Portsea Surf Beach = Back Beach.",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 2,
@@ -11517,9 +11568,12 @@
    "id": "mornington-peninsula-17",
    "category": "beach",
    "icon": "\ud83c\udfd6\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.418555,
+    "longitude": 144.861827
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Gunnamatta Trail Rides\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 2,
@@ -11544,11 +11598,11 @@
    "category": "nature",
    "icon": "\ud83e\udd86",
    "coordinates": {
-    "latitude": -38.38694444,
-    "longitude": 145.13972222
+    "latitude": -38.385702,
+    "longitude": 145.142795
    },
-   "coordinates_source": "wikipedia:Coolart Wetlands and Homestead Reserve",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=park (nominatim) \"Coolart Wetlands & Homestead\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1666,
    "counted_sources": 2,
@@ -11572,11 +11626,11 @@
    "category": "historic",
    "icon": "\u2693",
    "coordinates": {
-    "latitude": -38.228,
-    "longitude": 145.062
+    "latitude": -38.220215,
+    "longitude": 145.041109
    },
-   "coordinates_source": "wikipedia:Mornington, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Mornington\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 14625,
    "counted_sources": 1,
@@ -11600,11 +11654,11 @@
    "category": "historic",
    "icon": "\ud83c\udfe1",
    "coordinates": {
-    "latitude": -38.34972222,
-    "longitude": 144.93138889
+    "latitude": -38.349701,
+    "longitude": 144.931052
    },
-   "coordinates_source": "wikipedia:McCrae Homestead",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"McCrae Homestead\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1535,
    "counted_sources": 1,
@@ -11628,11 +11682,11 @@
    "category": "historic",
    "icon": "\ud83c\udfe1",
    "coordinates": {
-    "latitude": -38.224469,
-    "longitude": 145.032606
+    "latitude": -38.269906,
+    "longitude": 145.044129
    },
-   "coordinates_source": "wikipedia:Mount Martha House",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=park (nominatim) \"The Briars Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 131,
    "counted_sources": 2,
@@ -11685,7 +11739,7 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -11711,7 +11765,7 @@
    "icon": "\ud83c\udfd6\ufe0f",
    "coordinates": null,
    "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 2,
@@ -11735,9 +11789,12 @@
    "id": "mornington-peninsula-25",
    "category": "hike",
    "icon": "\ud83e\udd7e",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.353555,
+    "longitude": 144.7431078
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM highway=footway Coppins Track (footway). segment near the middle of the matching ways (-38.3429,144.7233 to -38.3688,144.7619); Coppin's Lookout viewpoint at -38.3449869,144.7252775",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 2,
@@ -11789,9 +11846,12 @@
    "id": "mornington-peninsula-27",
    "category": "entertainment",
    "icon": "\u2668\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.393175,
+    "longitude": 144.844559
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=resort (nominatim) \"Alba Thermal Springs and Spa\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -11872,11 +11932,11 @@
    "category": "nature",
    "icon": "\ud83d\udc28",
    "coordinates": {
-    "latitude": -38.48333333,
-    "longitude": 145.23333333
+    "latitude": -38.486271,
+    "longitude": 145.261377
    },
-   "coordinates_source": "wikipedia:Phillip Island Nature Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Bruce the Koala\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 3777,
    "counted_sources": 2,
@@ -11900,11 +11960,11 @@
    "category": "historic",
    "icon": "\ud83d\udc11",
    "coordinates": {
-    "latitude": -38.5,
-    "longitude": 145.33888889
+    "latitude": -38.501025,
+    "longitude": 145.338645
    },
-   "coordinates_source": "wikipedia:Churchill Island",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Churchill Island\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 4983,
    "counted_sources": 2,
@@ -11928,11 +11988,11 @@
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "coordinates": {
-    "latitude": -38.52777778,
-    "longitude": 145.33694444
+    "latitude": -38.531259,
+    "longitude": 145.335766
    },
-   "coordinates_source": "wikipedia:Cape Woolamai",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Cape Woolamai\"",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 3385,
    "counted_sources": 1,
@@ -11984,11 +12044,11 @@
    "category": "museum",
    "icon": "\ud83c\udf96\ufe0f",
    "coordinates": {
-    "latitude": -38.5207,
-    "longitude": 145.3245
+    "latitude": -38.520604,
+    "longitude": 145.324608
    },
-   "coordinates_source": "wikipedia:National Vietnam Veterans Museum",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"National Vietnam Veterans Museum\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1032,
    "counted_sources": 1,
@@ -12039,9 +12099,12 @@
    "id": "phillip-island-9",
    "category": "entertainment",
    "icon": "\ud83c\udf6b",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "provisional",
+   "coordinates": {
+    "latitude": -38.5149921,
+    "longitude": 145.3449634
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM shop=chocolate 'Phillip Island Chocolate Factory', Newhaven (shop=chocolate). ",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -12126,11 +12189,11 @@
    "category": "historic",
    "icon": "\u26cf\ufe0f",
    "coordinates": {
-    "latitude": -38.6185499,
-    "longitude": 145.5951091
+    "latitude": -38.621734,
+    "longitude": 145.596837
    },
-   "coordinates_source": "wikipedia:State Coal Mine",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=attraction (nominatim) \"State Coal Mine Heritage Area\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1455,
    "counted_sources": 1,
@@ -12161,8 +12224,8 @@
     "latitude": -34.173331,
     "longitude": 142.163167
    },
-   "coordinates_source": "osm place=islet: Lock Island (MEDIUM)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm place=islet (nominatim) \"Lock Island\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -12211,11 +12274,11 @@
    "category": "nature",
    "icon": "\ud83c\udf3f",
    "coordinates": {
-    "latitude": -34.136,
-    "longitude": 142.139
+    "latitude": -34.137692,
+    "longitude": 142.140896
    },
-   "coordinates_source": "wikipedia:Australian Inland Botanic Gardens",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Australian Inland Botanic Gardens\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 846,
    "counted_sources": 1,
@@ -12242,8 +12305,8 @@
     "latitude": -34.152791,
     "longitude": 142.165686
    },
-   "coordinates_source": "osm natural=beach (nominatim): Apex Beach (MEDIUM)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=beach (nominatim) \"Apex Beach\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -12292,11 +12355,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -35.86666667,
-    "longitude": 145.11805556
+    "latitude": -35.833724,
+    "longitude": 145.135874
    },
-   "coordinates_source": "wikipedia:Barmah National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=river (nominatim) \"Barmah Choke\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 2118,
    "counted_sources": 2,
@@ -12344,11 +12407,11 @@
    "category": "entertainment",
    "icon": "\ud83e\udd98",
    "coordinates": {
-    "latitude": -36.32416667,
-    "longitude": 145.04888889
+    "latitude": -36.324476,
+    "longitude": 145.049351
    },
-   "coordinates_source": "wikipedia:Kyabram Fauna Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=zoo (nominatim) \"Kyabram Fauna Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 2154,
    "counted_sources": 0,
@@ -12372,11 +12435,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -36.14277778,
-    "longitude": 144.22833333
+    "latitude": -36.116591,
+    "longitude": 144.257317
    },
-   "coordinates_source": "wikipedia:Terrick Terrick National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Terrick Terrick\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 803,
    "counted_sources": 1,
@@ -12404,7 +12467,7 @@
     "longitude": 141.85416667
    },
    "coordinates_source": "wikipedia:Murray-Sunset National Park",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 2541,
    "counted_sources": 2,
@@ -12462,11 +12525,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -34.68722222,
-    "longitude": 142.38166667
+    "latitude": -34.674735,
+    "longitude": 142.366762
    },
-   "coordinates_source": "wikipedia:Hattah-Kulkyne National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Hattah - Kulkyne National Park\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 1254,
    "counted_sources": 1,
@@ -12499,7 +12562,7 @@
     "longitude": 141.87694444
    },
    "coordinates_source": "wikipedia:Wyperfeld National Park",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "linear_feature": false,
    "views": 1273,
    "counted_sources": 1,
@@ -12528,11 +12591,11 @@
    "category": "nature",
    "icon": "\ud83e\uddc2",
    "coordinates": {
-    "latitude": -35.34388889,
-    "longitude": 142.83333333
+    "latitude": -35.340287,
+    "longitude": 142.832847
    },
-   "coordinates_source": "wikipedia:Lake Tyrrell",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Lake Tyrrell\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 10718,
    "counted_sources": 0,
@@ -12561,11 +12624,11 @@
    "category": "nature",
    "icon": "\ud83c\udf33",
    "coordinates": {
-    "latitude": -35.69583333,
-    "longitude": 144.19416667
+    "latitude": -35.697539,
+    "longitude": 144.194769
    },
-   "coordinates_source": "wikipedia:Gunbower National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=river (nominatim) \"Little Gunbower Creek\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 674,
    "counted_sources": 1,
@@ -12594,11 +12657,11 @@
    "category": "museum",
    "icon": "\ud83c\udfda\ufe0f",
    "coordinates": {
-    "latitude": -35.3472,
-    "longitude": 143.5646
+    "latitude": -35.347353,
+    "longitude": 143.564774
    },
-   "coordinates_source": "wikipedia:Pioneer Settlement",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=theme_park (nominatim) \"Swan Hill Pioneer Settlement\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 876,
    "counted_sources": 1,
@@ -12630,8 +12693,8 @@
     "latitude": -35.355525,
     "longitude": 143.564637
    },
-   "coordinates_source": "osm trail midpoint (1.0 km, nominatim): Swan Hill River Walk (MEDIUM)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm trail midpoint (1.0 km, nominatim) \"Swan Hill River Walk\"",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 1,
@@ -12662,8 +12725,8 @@
     "latitude": -35.450896,
     "longitude": 143.627582
    },
-   "coordinates_source": "osm tourism=museum (nominatim): Lake Boga Flying Boat Museum (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"Lake Boga Flying Boat Museum\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -12695,8 +12758,8 @@
     "latitude": -36.391276,
     "longitude": 145.396779
    },
-   "coordinates_source": "osm tourism=gallery (nominatim): Shepparton Art Museum (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=gallery (nominatim) \"Shepparton Art Museum\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 779,
    "counted_sources": 0,
@@ -12728,8 +12791,8 @@
     "latitude": -36.385258,
     "longitude": 145.380244
    },
-   "coordinates_source": "osm leisure=playground (nominatim): Kidstown (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=playground (nominatim) \"Kidstown\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
@@ -12790,8 +12853,8 @@
     "latitude": -36.007617,
     "longitude": 146.091484
    },
-   "coordinates_source": "osm natural=water (nominatim): Lake Mulwala (HIGH)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=water (nominatim) \"Lake Mulwala\"",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 0,
@@ -12821,11 +12884,11 @@
    "icon": "\ud83d\ude82",
    "bio": "Heritage steam railway from Belgrave through Emerald and Lakeside to Gembrook, with open carriages.",
    "coordinates": {
-    "lat": -37.9075,
-    "lng": 145.35666667
+    "latitude": -37.907108,
+    "longitude": 145.357029
    },
-   "coordinates_source": "wikipedia:Puffing Billy Railway",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Puffing Billy Railway\"",
+   "pin_status": "ok",
    "views": 30156,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
@@ -12850,11 +12913,11 @@
    "icon": "\ud83c\udf32",
    "bio": "National park in four parts across the ranges, with picnic grounds and walking tracks.",
    "coordinates": {
-    "lat": -37.81027778,
-    "lng": 145.38555556
+    "latitude": -37.840548,
+    "longitude": 145.384995
    },
-   "coordinates_source": "wikipedia:Dandenong Ranges National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"Dandenong Ranges National Park\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -12879,11 +12942,11 @@
    "icon": "\ud83c\udf33",
    "bio": "Forest of tall mountain ash on the ranges' southern slopes, with walking tracks near Sherbrooke and Belgrave.",
    "coordinates": {
-    "lat": -37.89527778,
-    "lng": 145.36305556
+    "latitude": -37.888445,
+    "longitude": 145.359356
    },
-   "coordinates_source": "wikipedia:Sherbrooke Forest",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sherbrooke\"",
+   "pin_status": "ok",
    "views": 2670,
    "counted_sources": [],
    "cost": null,
@@ -12905,9 +12968,12 @@
    "category": "historic",
    "icon": "\ud83d\uddff",
    "bio": "Bush garden on Mount Dandenong Tourist Road with the sculptor William Ricketts' clay figures among ferns.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.832679,
+    "longitude": 145.355441
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=nature_reserve (nominatim) \"William Ricketts Sanctuary\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -12933,11 +12999,11 @@
    "bio": "Public gardens of rhododendrons and azaleas at Olinda, open daily.",
    "wiki": "Dandenong Ranges Botanic Garden",
    "coordinates": {
-    "lat": -37.8522,
-    "lng": 145.369
+    "latitude": -37.8476064,
+    "longitude": 145.3728961
    },
-   "coordinates_source": "wikipedia:Dandenong Ranges Botanic Garden",
-   "pin_status": "provisional",
+   "coordinates_source": "pin retry MEDIUM: OSM leisure=garden Dandenong Ranges Botanic Garden (Olinda) (garden). renamed garden; Wikipedia point -37.8522,145.369 is about 600 m off",
+   "pin_status": "ok",
    "views": 1254,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -12962,11 +13028,11 @@
    "icon": "\u26f0\ufe0f",
    "bio": "Summit lookout at 633 m, the highest point of the ranges, with a view across Melbourne.",
    "coordinates": {
-    "lat": -37.83611111,
-    "lng": 145.35111111
+    "latitude": -37.827104,
+    "longitude": 145.353009
    },
-   "coordinates_source": "wikipedia:Mount Dandenong",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Dandenong\"",
+   "pin_status": "ok",
    "views": 4866,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -12992,11 +13058,11 @@
    "bio": "Village on Mount Dandenong Tourist Road with gardens, tea rooms and views, a base for the ranges' gardens.",
    "wiki": "Olinda, Victoria",
    "coordinates": {
-    "lat": -37.85599,
-    "lng": 145.364357
+    "latitude": -37.855905,
+    "longitude": 145.364968
    },
-   "coordinates_source": "wikipedia:Olinda, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Olinda\"",
+   "pin_status": "ok",
    "views": 6414,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
@@ -13022,11 +13088,11 @@
    "bio": "Forest village in the ranges known for its tea rooms and bush setting.",
    "wiki": "Sassafras, Victoria",
    "coordinates": {
-    "lat": -37.87,
-    "lng": 145.35388889
+    "latitude": -37.86285,
+    "longitude": 145.353697
    },
-   "coordinates_source": "wikipedia:Sassafras, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Sassafras\"",
+   "pin_status": "ok",
    "views": 5159,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -13052,11 +13118,11 @@
    "bio": "Town at the end of the Belgrave train line and the start of the Puffing Billy railway.",
    "wiki": "Belgrave, Victoria",
    "coordinates": {
-    "lat": -37.912067,
-    "lng": 145.3558
+    "latitude": -37.912056,
+    "longitude": 145.355226
    },
-   "coordinates_source": "wikipedia:Belgrave, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Belgrave\"",
+   "pin_status": "ok",
    "views": 8381,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -13080,9 +13146,12 @@
    "category": "hike",
    "icon": "\ud83e\udd7e",
    "bio": "Steep 1000-step staircase with historical plaques at Upper Ferntree Gully.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.876177,
+    "longitude": 145.32039
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm historic=memorial (nominatim) \"The Kokoda Trail Walk\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
@@ -13107,9 +13176,12 @@
    "category": "nature",
    "icon": "\ud83c\udf37",
    "bio": "Garden of themed garden rooms at Olinda, known for its flowers.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.861035,
+    "longitude": 145.378317
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=garden (nominatim) \"Cloudehill Gardens\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
@@ -13133,9 +13205,12 @@
    "category": "nature",
    "icon": "\u26f2",
    "bio": "Historic gardens of the Burnham Beeches estate near Olinda, with a lake and extensive water features.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.8741,
+    "longitude": 145.359106
+   },
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=water (nominatim) \"Alfred Nicholas Memorial Gardens Lake\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -13159,9 +13234,12 @@
    "category": "nature",
    "icon": "\ud83d\udef6",
    "bio": "Parkland around Lake Treganowan with walking trails, paddleboats and the Puffing Billy Lakeside station.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.885791,
+    "longitude": 145.432308
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm waterway=stream (nominatim) \"Emerald Creek\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
@@ -13212,9 +13290,12 @@
    "category": "nature",
    "icon": "\ud83d\udeb4",
    "bio": "Regional park around Lysterfield Lake with walking, cycling and picnic areas on Melbourne's eastern edge.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.934877,
+    "longitude": 145.301759
+   },
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Lysterfield\"",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Lysterfield"
@@ -13239,11 +13320,11 @@
    "icon": "\ud83e\udd98",
    "bio": "Zoos Victoria wildlife sanctuary with native animals and a breeding program, 4 km south of Healesville.",
    "coordinates": {
-    "lat": -37.6822,
-    "lng": 145.5316
+    "latitude": -37.684299,
+    "longitude": 145.531053
    },
-   "coordinates_source": "wikipedia:Healesville Sanctuary",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=zoo (nominatim) \"Healesville Sanctuary\"",
+   "pin_status": "ok",
    "views": 6910,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -13270,11 +13351,11 @@
    "bio": "Town at the eastern end of the Yarra Valley with galleries, cafes and the rail trail, near the sanctuary.",
    "wiki": "Healesville, Victoria",
    "coordinates": {
-    "lat": -37.65611111,
-    "lng": 145.51388889
+    "latitude": -37.653722,
+    "longitude": 145.516153
    },
-   "coordinates_source": "wikipedia:Healesville",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Healesville\"",
+   "pin_status": "ok",
    "views": 12058,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -13300,9 +13381,12 @@
    "icon": "\ud83e\udd42",
    "bio": "Sparkling wine producer at Coldstream with tastings and a restaurant.",
    "wiki": "Domaine Chandon Australia",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6797452,
+    "longitude": 145.4301874
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim amenity=bar 'Domaine Chandon', Maroondah Highway, Coldstream; Commons 2-photo median -37.68132,145.43096 (~190 m) (amenity=bar (cellar door)). Sources 190 m apart so not HIGH",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley"
@@ -13326,9 +13410,12 @@
    "category": "entertainment",
    "icon": "\ud83c\udf47",
    "bio": "Historic winery and cellar door near Yarra Glen, one of the oldest vineyards in the valley.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6733639,
+    "longitude": 145.3838946
+   },
+   "coordinates_source": "pin retry MEDIUM: osm building, Melba Hwy (building=yes). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [],
    "cost": null,
@@ -13351,11 +13438,11 @@
    "icon": "\ud83d\uddbc\ufe0f",
    "bio": "Art museum of early Australian modernist and contemporary work, overlooking the vineyards.",
    "coordinates": {
-    "lat": -37.65963889,
-    "lng": 145.46919444
+    "latitude": -37.659633,
+    "longitude": 145.469187
    },
-   "coordinates_source": "wikipedia:TarraWarra Museum of Art",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm tourism=museum (nominatim) \"TarraWarra Museum of Art\"",
+   "pin_status": "ok",
    "views": 1251,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -13381,11 +13468,11 @@
    "bio": "Town in the heart of the Yarra Valley wine district with cafes and galleries.",
    "wiki": "Yarra Glen, Victoria",
    "coordinates": {
-    "lat": -37.64888889,
-    "lng": 145.37194444
+    "latitude": -37.657348,
+    "longitude": 145.374396
    },
-   "coordinates_source": "wikipedia:Yarra Glen",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Yarra Glen\"",
+   "pin_status": "ok",
    "views": 3686,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
@@ -13410,9 +13497,12 @@
    "icon": "\ud83c\udf78",
    "bio": "Gin distillery in Healesville offering tastings and tours.",
    "wiki": "Four Pillars Gin",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6573641,
+    "longitude": 145.5099131
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM craft=distillery Four Pillars Gin Distillery Healesville (distillery). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville",
@@ -13437,9 +13527,12 @@
    "category": "hike",
    "icon": "\ud83d\udeb2",
    "bio": "40 km walking and cycling trail on a former railway from Lilydale through the valley to Warburton.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.7738324,
+    "longitude": 145.524616
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM highway=cycleway 'Warburton Rail Trail' segment near the route's middle (Lilydale lon 145.35 to Warburton 145.69) (highway=cycleway). A segment near the geometric middle, not a computed route midpoint.",
+   "pin_status": "ok",
    "views": 2904,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -13496,7 +13589,7 @@
     "lng": 145.4891
    },
    "coordinates_source": "wikipedia:Yarra Valley Railway",
-   "pin_status": "provisional",
+   "pin_status": "unresolved",
    "views": 4655,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville"
@@ -13521,9 +13614,12 @@
    "icon": "\ud83d\udc11",
    "bio": "Restored 19th-century working farm near Yarra Glen showing how a family lived on the land.",
    "wiki": "Gulf Station",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6483158,
+    "longitude": 145.3870183
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=attraction Gulf Station (Yarra Glen) (attraction). protected-area polygon centroid -37.6468221,145.3846813",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/arts-culture"
@@ -13549,11 +13645,11 @@
    "bio": "Reservoir park east of Healesville with a picnic area and a walk.",
    "wiki": "Maroondah Reservoir",
    "coordinates": {
-    "lat": -37.641932,
-    "lng": 145.551338
+    "latitude": -37.644217,
+    "longitude": 145.550749
    },
-   "coordinates_source": "wikipedia:Maroondah Dam",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm leisure=common (nominatim) \"Maroondah Reservoir Park\"",
+   "pin_status": "ok",
    "views": 2283,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville"
@@ -13577,9 +13673,12 @@
    "category": "nature",
    "icon": "\ud83e\udd7e",
    "bio": "Weir and walking area near Healesville with forest walks to Coranderrk and the Slip tracks.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6856161,
+    "longitude": 145.5826127
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM waterway=weir 'Badger Weir' (waterway=weir). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville",
@@ -13604,9 +13703,12 @@
    "category": "hike",
    "icon": "\ud83c\udf3f",
    "bio": "Easy circuit walk through temperate rainforest in Toolangi State Forest.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.5272283,
+    "longitude": 145.5209152
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim highway=footway 'Wirrawilla Rainforest Walk', Toolangi (second segment -37.52751,145.52159) (highway=footway). Segment of the named walk, not a computed route midpoint; walk is a short loop so within a few hundred metres of the middle",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -13632,11 +13734,11 @@
    "bio": "Town at the western gateway to the valley and the start of the Lilydale to Warburton Rail Trail.",
    "wiki": "Lilydale, Victoria",
    "coordinates": {
-    "lat": -37.758,
-    "lng": 145.35
+    "latitude": -37.757664,
+    "longitude": 145.352405
    },
-   "coordinates_source": "wikipedia:Lilydale, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Lilydale\"",
+   "pin_status": "ok",
    "views": 12823,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -13661,11 +13763,11 @@
    "icon": "\ud83c\udfd4\ufe0f",
    "bio": "Mountain with a 21 m lookout tower at 1,245 m, with views to the Dandenongs and Cathedral Range.",
    "coordinates": {
-    "lat": -37.70638889,
-    "lng": 145.68111111
+    "latitude": -37.706522,
+    "longitude": 145.681183
    },
-   "coordinates_source": "wikipedia:Mount Donna Buang",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm natural=peak (nominatim) \"Mount Donna Buang\"",
+   "pin_status": "ok",
    "views": 9657,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park",
@@ -13719,11 +13821,11 @@
    "bio": "Mountain resort above Marysville with cross-country skiing in winter and summit walks in summer.",
    "wiki": "Lake Mountain (Victoria)",
    "coordinates": {
-    "lat": -37.50444444,
-    "lng": 145.88222222
+    "latitude": -37.503875,
+    "longitude": 145.880671
    },
-   "coordinates_source": "wikipedia:Lake Mountain (Victoria)",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm natural=peak (nominatim) \"Lake Mountain\"",
+   "pin_status": "ok",
    "views": 4813,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
@@ -13750,11 +13852,11 @@
    "bio": "Mountain town on the ranges' eastern edge, base for Steavenson Falls, Lake Mountain and Lady Talbot Drive.",
    "wiki": "Marysville, Victoria",
    "coordinates": {
-    "lat": -37.5,
-    "lng": 145.73333333
+    "latitude": -37.509766,
+    "longitude": 145.749038
    },
-   "coordinates_source": "wikipedia:Marysville, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm boundary=administrative (nominatim) \"Marysville\"",
+   "pin_status": "ok",
    "views": 14745,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking",
@@ -13779,11 +13881,11 @@
    "icon": "\ud83d\udca6",
    "bio": "One of Victoria's tallest waterfalls, reached on a walk from Marysville.",
    "coordinates": {
-    "lat": -37.5327,
-    "lng": 145.7737
+    "latitude": -37.532831,
+    "longitude": 145.773997
    },
-   "coordinates_source": "wikipedia:Steavenson Falls",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm waterway=waterfall (nominatim) \"Steavenson Falls\"",
+   "pin_status": "ok",
    "views": 1615,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -13809,11 +13911,11 @@
    "bio": "Upper Yarra town and gateway to Mount Donna Buang, the rail trail and rainforest walks.",
    "wiki": "Warburton, Victoria",
    "coordinates": {
-    "lat": -37.755,
-    "lng": 145.697
+    "latitude": -37.753622,
+    "longitude": 145.688727
    },
-   "coordinates_source": "wikipedia:Warburton, Victoria",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm boundary=administrative (nominatim) \"Warburton\"",
+   "pin_status": "ok",
    "views": 16691,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking",
@@ -13837,9 +13939,12 @@
    "category": "nature",
    "icon": "\ud83d\ude97",
    "bio": "Scenic drive through tall ash forest between Healesville and Narbethong.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.5999943,
+    "longitude": 145.6337499
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=attraction Black Spur Drive (attraction). point on the drive between Healesville and Narbethong",
+   "pin_status": "ok",
    "views": 4879,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley"
@@ -13863,9 +13968,12 @@
    "category": "nature",
    "icon": "\ud83d\udca6",
    "bio": "Long cascade in the Taggerty River headwaters, reached on a walk from Lady Talbot Drive.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.498977,
+    "longitude": 145.840144
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM waterway=waterfall 'Keppel Falls'; lookout 330 m away (waterway=waterfall). Near Marysville.",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park",
@@ -13891,11 +13999,11 @@
    "icon": "\u26f0\ufe0f",
    "bio": "State park of jagged ridges and hiking, with the Jawbone car park as a main starting point.",
    "coordinates": {
-    "lat": -37.38027778,
-    "lng": 145.73583333
+    "latitude": -37.376098,
+    "longitude": 145.778846
    },
-   "coordinates_source": "wikipedia:Cathedral Range State Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Cathedral Range State Park\"",
+   "pin_status": "ok",
    "views": 1325,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -13921,9 +14029,12 @@
    "icon": "\ud83e\udd7e",
    "bio": "Summit reached on a 3.5 km return hike from the Jawbone car park in Cathedral Range State Park.",
    "wiki": "South Jawbone",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.3887121,
+    "longitude": 145.7439136
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim natural=peak 'South Jawbone Peak' (natural=peak). On the summit",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -13947,9 +14058,12 @@
    "category": "hike",
    "icon": "\ud83c\udf3f",
    "bio": "Short walk through cool temperate rainforest on Lady Talbot Drive near Marysville.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.4885056,
+    "longitude": 145.8343687
+   },
+   "coordinates_source": "pin retry MEDIUM: nominatim: The Beeches Rainforest Walk path (highway=path). A point on the path, not computed midpoint",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park"
@@ -13973,9 +14087,12 @@
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio": "Giant mountain ash over 300 years old in the Yarra State Forest, reached by a short walk.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.8170911,
+    "longitude": 145.8586073
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM natural=tree and tourism=attraction Ada Tree; viewpoint node 10 m away (tree). several OSM nodes within 20 m, all one source",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -14000,9 +14117,12 @@
    "icon": "\ud83e\udd7e",
    "bio": "30 km walking and cycling trail along the historic aqueduct above the Upper Yarra Valley.",
    "wiki": "O'Shannassy Aqueduct",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.7246009,
+    "longitude": 145.7308155
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM trail midpoint (way 5.8 km) 'O'Shannassy Aqueduct Trail' (trail midpoint). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -14027,11 +14147,11 @@
    "icon": "\ud83c\udf32",
    "bio": "National park on the Great Dividing Range slopes near Kinglake, with waterfall walks and the Andrew Hill summit.",
    "coordinates": {
-    "lat": -37.40638889,
-    "lng": 145.21083333
+    "latitude": -37.414476,
+    "longitude": 145.205746
    },
-   "coordinates_source": "wikipedia:Kinglake National Park",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py HIGH: osm leisure=nature_reserve (nominatim) \"Kinglake National Park\"",
+   "pin_status": "ok",
    "views": 1606,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Kinglake",
@@ -14060,9 +14180,12 @@
    "category": "nature",
    "icon": "\ud83d\udca6",
    "bio": "Waterfall in Kinglake National Park reached by a 700 m walk from Masons Falls Picnic Area.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.4946562,
+    "longitude": 145.2470598
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim waterway=waterfall 'Masons Falls', Kinglake (waterway=waterfall). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Kinglake"
@@ -14090,9 +14213,12 @@
    "category": "nature",
    "icon": "\ud83d\udca6",
    "bio": "Hidden waterfall just north of Kinglake, reached by a short easy walk.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.480689,
+    "longitude": 145.3470259
+   },
+   "coordinates_source": "pin retry MEDIUM: osm waterfall (waterway=waterfall). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Kinglake"
@@ -14121,11 +14247,11 @@
    "icon": "\ud83c\udfa8",
    "bio": "Artists' colony in Eltham from the 1930s, with galleries and a hall open to visitors.",
    "coordinates": {
-    "lat": -37.728,
-    "lng": 145.1521
+    "latitude": -37.72804,
+    "longitude": 145.15258
    },
-   "coordinates_source": "wikipedia:Montsalvat",
-   "pin_status": "provisional",
+   "coordinates_source": "resolve-pin.py MEDIUM: osm tourism=attraction (nominatim) \"Montsalvat\"",
+   "pin_status": "ok",
    "views": 10353,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/arts-culture"

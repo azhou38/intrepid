@@ -95,9 +95,12 @@
    "action": "spot",
    "destination": "ballarat",
    "id": "ballarat-2",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.5649892,
+    "longitude": 143.8837421
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM building 'Eureka Centre' (Stawell St S); Commons median 230 m away (building=yes). Eureka Centre building.",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Museum of Australian Democracy at Eureka",
@@ -391,9 +394,12 @@
    "action": "spot",
    "destination": "ballarat",
    "id": "ballarat-13",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.7006086,
+    "longitude": 143.6538095
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM ways 'Ballarat - Skipton Rail Trail' (Overpass), ways ordered along the trail, halfway by length (highway=cycleway/path route midpoint). No route relation in OSM; midpoint of chained ways, may include spurs; verify on map",
+   "pin_status": "ok",
    "category": "hike",
    "icon_hint": null,
    "wiki": "Ballarat to Skipton Rail Trail",
@@ -662,11 +668,11 @@
    "destination": "daylesford",
    "id": "daylesford-3",
    "coordinates": {
-    "lat": -37.31166667,
-    "lng": 144.14194444
+    "latitude": -37.3104037,
+    "longitude": 144.1402769
    },
-   "coordinates_source": "wikipedia:Hepburn Mineral Springs Reserve",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: osm/nominatim: Soda Spring; Hepburn Springs Spa node 20 m away (natural=spring). Springs in the reserve's core",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Hepburn Mineral Springs Reserve",
@@ -985,9 +991,12 @@
    "action": "spot",
    "destination": "macedon-ranges",
    "id": "macedon-ranges-7",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.1348176,
+    "longitude": 144.4829304
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM waterway=waterfall 'Turpins Falls' (OSM name has an s); swimming_area and Scenic Reserve within 150 m (waterway=waterfall). Name in OSM is Turpins Falls.",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Turpin Falls",
@@ -1038,11 +1047,11 @@
    "destination": "castlemaine",
    "id": "castlemaine-2",
    "coordinates": {
-    "lat": -37.1915,
-    "lng": 144.2165
+    "latitude": -37.0545838,
+    "longitude": 144.236072
    },
-   "coordinates_source": "wikipedia:Castlemaine Diggings National Heritage Park",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: Nominatim: information board 'Castlemaine Diggings National Heritage Park', Kalimna Circuit Track (tourism=information board). Park visitor point at Kalimna/Chewton area, not the centroid; no visitor centre found in OSM",
+   "pin_status": "ok",
    "category": "historic",
    "icon_hint": null,
    "wiki": "Castlemaine Diggings National Heritage Park",
@@ -1091,9 +1100,12 @@
    "action": "spot",
    "destination": "castlemaine",
    "id": "castlemaine-4",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.2640039,
+    "longitude": 144.1501825
+   },
+   "coordinates_source": "pin retry HIGH: osm volcano node + resolve-pin (natural=volcano). Crater summit",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Mount Franklin, Victoria",
@@ -1117,11 +1129,11 @@
    "destination": null,
    "id": "heathcote-graytown-national-park",
    "coordinates": {
-    "lat": -36.79633333,
-    "lng": 144.86633333
+    "latitude": -36.9194371,
+    "longitude": 144.7180759
    },
-   "coordinates_source": "wikipedia:Heathcote-Graytown National Park",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=picnic_site Viewing Rock Picnic tables (Heathcote) (picnic_site). visitor point in the park's western block (Viewing Rock); OSM park centroid -36.7757,144.9772 and Wikipedia -36.796,144.866 rejected as centroids. Verify park membership; Viewing Point Rock viewpoint is 1",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Heathcote-Graytown National Park",
@@ -1178,9 +1190,12 @@
    "action": "standalone",
    "destination": null,
    "id": "pink-cliffs-geological-reserve",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -36.9302307,
+    "longitude": 144.7038668
+   },
+   "coordinates_source": "pin retry HIGH: OSM Pink Cliffs Scenic Walk footway; Wikipedia article point 45 m away; car park at -36.9290254,144.7045847 (highway=footway + wikipedia). Visitor point at the cliffs walk, not reserve centroid (-36.9326,144.7039).",
+   "pin_status": "ok",
    "category": "nature",
    "icon_hint": null,
    "wiki": "Pink Cliffs",
@@ -1207,9 +1222,12 @@
    "action": "standalone",
    "destination": null,
    "id": "o-keefe-rail-trail",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -36.7877333,
+    "longitude": 144.5268389
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM route relation 964797, midpoint of chained ways (49.6 km) (route relation midpoint). Chain order of ways was approximate; midpoint lies on the trail",
+   "pin_status": "ok",
    "category": "hike",
    "icon_hint": null,
    "wiki": "O'Keefe Rail Trail",
@@ -1270,11 +1288,11 @@
    "destination": null,
    "id": "welcome-stranger-obelisk",
    "coordinates": {
-    "lat": -36.76138889,
-    "lng": 143.65244444
+    "latitude": -36.761402,
+    "longitude": 143.6524283
    },
-   "coordinates_source": "wikipedia:Welcome Stranger",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: osm: Welcome Stranger Monument (historic=monument). A second node 29 m away",
+   "pin_status": "ok",
    "category": "monument",
    "icon_hint": null,
    "wiki": "Welcome Stranger",
@@ -1331,9 +1349,12 @@
    "action": "standalone",
    "destination": null,
    "id": "melville-caves",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -36.5999022,
+    "longitude": 143.6938976
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM highway=footway Melville Caves (Brenanah) (footway). footway at the caves; picnic area -36.6021047,143.6937524, campground -36.6010547,143.6989302",
+   "pin_status": "ok",
    "category": "viewpoint",
    "icon_hint": null,
    "wiki": "Melville Caves",
@@ -1360,9 +1381,12 @@
    "action": "standalone",
    "destination": null,
    "id": "eucalyptus-distillery-museum",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -36.5686913,
+    "longitude": 143.8650055
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=attraction 'Blue Eucy Distillery Park and Museum', Inglewood; leisure=park 25 m away (tourism=attraction). Located in Inglewood; both features OSM only. Name differs from draft (Blue Eucy).",
+   "pin_status": "ok",
    "category": "museum",
    "icon_hint": null,
    "wiki": "Eucalyptus Distillery Museum",
@@ -1389,9 +1413,12 @@
    "action": "standalone",
    "destination": null,
    "id": "goldfields-track",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.3158991,
+    "longitude": 144.1185685
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM route relation 3205828, midpoint of chained ways (route relation midpoint). Relation includes bypass/variant loops (chained length 298 km) so midpoint is approximate; verify",
+   "pin_status": "ok",
    "category": "hike",
    "icon_hint": null,
    "wiki": "Goldfields Track",

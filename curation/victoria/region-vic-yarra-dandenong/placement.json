@@ -236,11 +236,11 @@
    "bio": "Public gardens of rhododendrons and azaleas at Olinda, open daily.",
    "wiki": "Dandenong Ranges Botanic Garden",
    "coordinates": {
-    "lat": -37.8522,
-    "lng": 145.369
+    "latitude": -37.8476064,
+    "longitude": 145.3728961
    },
-   "coordinates_source": "wikipedia:Dandenong Ranges Botanic Garden",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: OSM leisure=garden Dandenong Ranges Botanic Garden (Olinda) (garden). renamed garden; Wikipedia point -37.8522,145.369 is about 600 m off",
+   "pin_status": "ok",
    "views": 1254,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
@@ -605,9 +605,12 @@
    "icon": "\ud83e\udd42",
    "bio": "Sparkling wine producer at Coldstream with tastings and a restaurant.",
    "wiki": "Domaine Chandon Australia",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6797452,
+    "longitude": 145.4301874
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim amenity=bar 'Domaine Chandon', Maroondah Highway, Coldstream; Commons 2-photo median -37.68132,145.43096 (~190 m) (amenity=bar (cellar door)). Sources 190 m apart so not HIGH",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley"
@@ -630,9 +633,12 @@
    "category": "entertainment",
    "icon": "\ud83c\udf47",
    "bio": "Historic winery and cellar door near Yarra Glen, one of the oldest vineyards in the valley.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6733639,
+    "longitude": 145.3838946
+   },
+   "coordinates_source": "pin retry MEDIUM: osm building, Melba Hwy (building=yes). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [],
    "cost": null,
@@ -711,9 +717,12 @@
    "icon": "\ud83c\udf78",
    "bio": "Gin distillery in Healesville offering tastings and tours.",
    "wiki": "Four Pillars Gin",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6573641,
+    "longitude": 145.5099131
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM craft=distillery Four Pillars Gin Distillery Healesville (distillery). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville",
@@ -737,9 +746,12 @@
    "category": "hike",
    "icon": "\ud83d\udeb2",
    "bio": "40 km walking and cycling trail on a former railway from Lilydale through the valley to Warburton.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.7738324,
+    "longitude": 145.524616
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM highway=cycleway 'Warburton Rail Trail' segment near the route's middle (Lilydale lon 145.35 to Warburton 145.69) (highway=cycleway). A segment near the geometric middle, not a computed route midpoint.",
+   "pin_status": "ok",
    "views": 2904,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley",
@@ -818,9 +830,12 @@
    "icon": "\ud83d\udc11",
    "bio": "Restored 19th-century working farm near Yarra Glen showing how a family lived on the land.",
    "wiki": "Gulf Station",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6483158,
+    "longitude": 145.3870183
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=attraction Gulf Station (Yarra Glen) (attraction). protected-area polygon centroid -37.6468221,145.3846813",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/arts-culture"
@@ -872,9 +887,12 @@
    "category": "nature",
    "icon": "\ud83e\udd7e",
    "bio": "Weir and walking area near Healesville with forest walks to Coranderrk and the Slip tracks.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.6856161,
+    "longitude": 145.5826127
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM waterway=weir 'Badger Weir' (waterway=weir). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Healesville",
@@ -898,9 +916,12 @@
    "category": "hike",
    "icon": "\ud83c\udf3f",
    "bio": "Easy circuit walk through temperate rainforest in Toolangi State Forest.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.5272283,
+    "longitude": 145.5209152
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim highway=footway 'Wirrawilla Rainforest Walk', Toolangi (second segment -37.52751,145.52159) (highway=footway). Segment of the named walk, not a computed route midpoint; walk is a short loop so within a few hundred metres of the middle",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -1123,9 +1144,12 @@
    "category": "nature",
    "icon": "\ud83d\ude97",
    "bio": "Scenic drive through tall ash forest between Healesville and Narbethong.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.5999943,
+    "longitude": 145.6337499
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM tourism=attraction Black Spur Drive (attraction). point on the drive between Healesville and Narbethong",
+   "pin_status": "ok",
    "views": 4879,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Valley"
@@ -1148,9 +1172,12 @@
    "category": "nature",
    "icon": "\ud83d\udca6",
    "bio": "Long cascade in the Taggerty River headwaters, reached on a walk from Lady Talbot Drive.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.498977,
+    "longitude": 145.840144
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM waterway=waterfall 'Keppel Falls'; lookout 330 m away (waterway=waterfall). Near Marysville.",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park",
@@ -1204,9 +1231,12 @@
    "icon": "\ud83e\udd7e",
    "bio": "Summit reached on a 3.5 km return hike from the Jawbone car park in Cathedral Range State Park.",
    "wiki": "South Jawbone",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.3887121,
+    "longitude": 145.7439136
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim natural=peak 'South Jawbone Peak' (natural=peak). On the summit",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -1229,9 +1259,12 @@
    "category": "hike",
    "icon": "\ud83c\udf3f",
    "bio": "Short walk through cool temperate rainforest on Lady Talbot Drive near Marysville.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.4885056,
+    "longitude": 145.8343687
+   },
+   "coordinates_source": "pin retry MEDIUM: nominatim: The Beeches Rainforest Walk path (highway=path). A point on the path, not computed midpoint",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park"
@@ -1254,9 +1287,12 @@
    "category": "nature",
    "icon": "\ud83c\udf32",
    "bio": "Giant mountain ash over 300 years old in the Yarra State Forest, reached by a short walk.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.8170911,
+    "longitude": 145.8586073
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM natural=tree and tourism=attraction Ada Tree; viewpoint node 10 m away (tree). several OSM nodes within 20 m, all one source",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -1280,9 +1316,12 @@
    "icon": "\ud83e\udd7e",
    "bio": "30 km walking and cycling trail along the historic aqueduct above the Upper Yarra Valley.",
    "wiki": "O'Shannassy Aqueduct",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.7246009,
+    "longitude": 145.7308155
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM trail midpoint (way 5.8 km) 'O'Shannassy Aqueduct Trail' (trail midpoint). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
@@ -1338,9 +1377,12 @@
    "category": "nature",
    "icon": "\ud83d\udca6",
    "bio": "Waterfall in Kinglake National Park reached by a 700 m walk from Masons Falls Picnic Area.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.4946562,
+    "longitude": 145.2470598
+   },
+   "coordinates_source": "pin retry MEDIUM: Nominatim waterway=waterfall 'Masons Falls', Kinglake (waterway=waterfall). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Kinglake"
@@ -1367,9 +1409,12 @@
    "category": "nature",
    "icon": "\ud83d\udca6",
    "bio": "Hidden waterfall just north of Kinglake, reached by a short easy walk.",
-   "coordinates": null,
-   "coordinates_source": null,
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -37.480689,
+    "longitude": 145.3470259
+   },
+   "coordinates_source": "pin retry MEDIUM: osm waterfall (waterway=waterfall). ",
+   "pin_status": "ok",
    "views": 0,
    "counted_sources": [
     "https://en.wikivoyage.org/wiki/Kinglake"

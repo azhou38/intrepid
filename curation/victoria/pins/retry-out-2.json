@@ -1,0 +1,222 @@
+[
+ {
+  "name": "Gabo Island Lightstation",
+  "region": "vic-gippsland",
+  "lat": -37.5685,
+  "lon": 149.91688889,
+  "source": "Wikipedia Gabo Island Lighthouse geotag (Nominatim only gives the reserve centroid -37.55907,149.91003, 1.2 km away)",
+  "feature_type": "lighthouse (wikipedia)",
+  "confidence": "MEDIUM",
+  "note": "Single precise Wikipedia lighthouse geotag; OSM match was the reserve centroid, not used"
+ },
+ {
+  "name": "Ballarat to Skipton Rail Trail",
+  "region": "vic-goldfields-spa",
+  "lat": -37.7006086,
+  "lon": 143.6538095,
+  "source": "OSM ways 'Ballarat - Skipton Rail Trail' (Overpass), ways ordered along the trail, halfway by length",
+  "feature_type": "highway=cycleway/path route midpoint",
+  "confidence": "MEDIUM",
+  "note": "No route relation in OSM; midpoint of chained ways, may include spurs; verify on map"
+ },
+ {
+  "name": "Castlemaine Diggings National Heritage Park",
+  "region": "vic-goldfields-spa",
+  "lat": -37.0545838,
+  "lon": 144.236072,
+  "source": "Nominatim: information board 'Castlemaine Diggings National Heritage Park', Kalimna Circuit Track",
+  "feature_type": "tourism=information board",
+  "confidence": "MEDIUM",
+  "note": "Park visitor point at Kalimna/Chewton area, not the centroid; no visitor centre found in OSM"
+ },
+ {
+  "name": "O'Keefe Rail Trail",
+  "region": "vic-goldfields-spa",
+  "lat": -36.7877333,
+  "lon": 144.5268389,
+  "source": "OSM route relation 964797, midpoint of chained ways (49.6 km)",
+  "feature_type": "route relation midpoint",
+  "confidence": "MEDIUM",
+  "note": "Chain order of ways was approximate; midpoint lies on the trail"
+ },
+ {
+  "name": "Goldfields Track",
+  "region": "vic-goldfields-spa",
+  "lat": -37.3158991,
+  "lon": 144.1185685,
+  "source": "OSM route relation 3205828, midpoint of chained ways",
+  "feature_type": "route relation midpoint",
+  "confidence": "MEDIUM",
+  "note": "Relation includes bypass/variant loops (chained length 298 km) so midpoint is approximate; verify"
+ },
+ {
+  "name": "Bellarine Peninsula Railway",
+  "region": "vic-great-ocean-road",
+  "lat": -38.2644791,
+  "lon": 144.6634614,
+  "source": "Nominatim: railway=narrow_gauge 'Bellarine Railway', Queenscliff",
+  "feature_type": "railway=narrow_gauge",
+  "confidence": "MEDIUM",
+  "note": "Point is the Queenscliff end of the line (station area), not the route midpoint"
+ },
+ {
+  "name": "The Crags",
+  "region": "vic-great-ocean-road",
+  "lat": -38.3711867,
+  "lon": 142.1100045,
+  "source": "Nominatim: tourism=viewpoint 'The Crags', Crags Road, Yambuk",
+  "feature_type": "tourism=viewpoint",
+  "confidence": "MEDIUM",
+  "note": "~10 km west of the draft rough pin; The Crags viewpoint at Yambuk (Discovery Bay coast). Only OSM match in Victoria on the coast; confirm it is the intended spot"
+ },
+ {
+  "name": "Bogong High Plains",
+  "region": "vic-high-country",
+  "lat": -36.84416667,
+  "lon": 147.34,
+  "source": "draft rough (appears to be Wikipedia geotag); Rocky Valley Storage reservoir -36.87929,147.29850 as nearby reference",
+  "feature_type": "region centroid",
+  "confidence": "LOW",
+  "note": "Plateau region; no single visitor-point feature found; consider Falls Creek village or Bogong High Plains Road"
+ },
+ {
+  "name": "Lake Nillahcootie",
+  "region": "vic-high-country",
+  "lat": -36.889145,
+  "lon": 146.0023877,
+  "source": "Nominatim: water=reservoir 'Lake Nillahcootie'",
+  "feature_type": "natural=water reservoir",
+  "confidence": "MEDIUM",
+  "note": "Water centroid, acceptable for a lake"
+ },
+ {
+  "name": "Kellyland Glenrowan",
+  "region": "vic-high-country",
+  "lat": -36.463,
+  "lon": 146.2215,
+  "source": "draft rough only",
+  "feature_type": "none",
+  "confidence": "LOW",
+  "note": "No OSM feature found by name; point is Glenrowan town area from the draft, not verified"
+ },
+ {
+  "name": "NGV International",
+  "region": "vic-melbourne",
+  "lat": -37.8229117,
+  "lon": 144.9686548,
+  "source": "Nominatim amenity=arts_centre National Gallery of Victoria, St Kilda Road; agrees with Wikipedia geotag -37.8225,144.96889 (~50 m)",
+  "feature_type": "amenity=arts_centre",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ {
+  "name": "Albert Park and Lake",
+  "region": "vic-melbourne",
+  "lat": -37.8473452,
+  "lon": 144.9702251,
+  "source": "Nominatim leisure=park 'Albert Park' (lake node -37.84594,144.96949 is in water)",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Park node is a centroid-style point; if it falls on the lake, use the lakeside e.g. near the boat sheds"
+ },
+ {
+  "name": "Brunswick Street",
+  "region": "vic-melbourne",
+  "lat": -37.797054,
+  "lon": 144.9786905,
+  "source": "Nominatim highway=tertiary Brunswick Street, Fitzroy (way point)",
+  "feature_type": "highway street way",
+  "confidence": "MEDIUM",
+  "note": "Point on the Fitzroy shopping strip, near the middle of the street's famous stretch"
+ },
+ {
+  "name": "Footscray Market",
+  "region": "vic-melbourne",
+  "lat": -37.8005914,
+  "lon": 144.9020846,
+  "source": "Nominatim building 'Footscray Market', 81 Hopkins Street",
+  "feature_type": "building",
+  "confidence": "MEDIUM",
+  "note": "Same coordinates as the draft rough pin, so not independent confirmation"
+ },
+ {
+  "name": "Ian Potter Museum of Art",
+  "region": "vic-melbourne",
+  "lat": -37.7974889,
+  "lon": 144.964147,
+  "source": "Photon (OSM) building 'The Potter Museum of Art'; draft Wikipedia geotag -37.7975,144.96411 within 5 m",
+  "feature_type": "building (osm) + wikipedia",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ {
+  "name": "Sorrento Front Beach",
+  "region": "vic-mornington-phillip-island",
+  "lat": null,
+  "lon": null,
+  "source": "Only Sorrento Ocean/Back Beach (-38.34694,144.72844) found, which is the other side; Front Beach (Port Phillip side) not found as a feature",
+  "feature_type": "none",
+  "confidence": "LOW",
+  "note": "Nominatim/Overpass unavailable or blocked at time of run; could not source a Front Beach feature"
+ },
+ {
+  "name": "Murray-Sunset National Park",
+  "region": "vic-murray-mallee",
+  "lat": -35.0401486,
+  "lon": 141.7239665,
+  "source": "Photon/OSM tourism=information 'Pink Lakes Salt Museum', Pink Lakes area (park's main visitor hub)",
+  "feature_type": "tourism=information",
+  "confidence": "MEDIUM",
+  "note": "Pink Lakes is the park's main visitor point; centroid -34.77,141.85 not used"
+ },
+ {
+  "name": "Domaine Chandon",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.6797452,
+  "lon": 145.4301874,
+  "source": "Nominatim amenity=bar 'Domaine Chandon', Maroondah Highway, Coldstream; Commons 2-photo median -37.68132,145.43096 (~190 m)",
+  "feature_type": "amenity=bar (cellar door)",
+  "confidence": "MEDIUM",
+  "note": "Sources 190 m apart so not HIGH"
+ },
+ {
+  "name": "Coombe Yarra Valley Melba's Garden Walk",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.7192912,
+  "lon": 145.3810965,
+  "source": "Nominatim amenity=restaurant 'Coombe Yarra Valley', Old Maroondah Highway, Coldstream",
+  "feature_type": "amenity=restaurant (estate)",
+  "confidence": "LOW",
+  "note": "This is the estate point; the garden walk's own path not found in OSM"
+ },
+ {
+  "name": "Wirrawilla Rainforest Walk",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.5272283,
+  "lon": 145.5209152,
+  "source": "Nominatim highway=footway 'Wirrawilla Rainforest Walk', Toolangi (second segment -37.52751,145.52159)",
+  "feature_type": "highway=footway",
+  "confidence": "MEDIUM",
+  "note": "Segment of the named walk, not a computed route midpoint; walk is a short loop so within a few hundred metres of the middle"
+ },
+ {
+  "name": "South Jawbone Peak",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.3887121,
+  "lon": 145.7439136,
+  "source": "Nominatim natural=peak 'South Jawbone Peak'",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": "On the summit"
+ },
+ {
+  "name": "Masons Falls",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.4946562,
+  "lon": 145.2470598,
+  "source": "Nominatim waterway=waterfall 'Masons Falls', Kinglake",
+  "feature_type": "waterway=waterfall",
+  "confidence": "MEDIUM",
+  "note": ""
+ }
+]

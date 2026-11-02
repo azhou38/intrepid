@@ -1,0 +1,26 @@
+{
+ "id": "ballarat-7",
+ "name": "Ballarat Wildlife Park",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Ballarat_Wildlife_Park",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Ballarat Wildlife Park",
+   "excerpt": "The Ballarat Wildlife Park is a zoo in Ballarat, Victoria. Opened in February 1985, it is privately owned by founder Greg Parker, and Julia Leonard and managed by Jared Mulholland. The 10-hectare park holds over 300 animals, including Australian animals—there are over 100 free-roaming kangaroos—and an extensive collection of reptiles. It was once well known for housing Patrick, the common wombat who was the oldest known marsupial in captivity when he died aged around 30 years old in 2017."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

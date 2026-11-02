@@ -217,11 +217,11 @@
    "destination": "wilsons-promontory",
    "id": "wilsons-promontory-4",
    "coordinates": {
-    "latitude": -39.12961111,
-    "longitude": 146.42425
+    "latitude": -39.1295803,
+    "longitude": 146.4244615
    },
-   "coordinates_source": "wikipedia:Wilsons Promontory Lighthouse",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM man_made=lighthouse + Wikipedia -39.12961,146.42425 (lighthouse). two sources within 25 m",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Wilsons Promontory Lighthouse",
    "icon": "\ud83d\uddfc",
@@ -397,11 +397,11 @@
    "destination": "croajingolong",
    "id": "croajingolong-2",
    "coordinates": {
-    "latitude": -37.80188889,
-    "longitude": 149.27552778
+    "latitude": -37.8019218,
+    "longitude": 149.2755534
    },
-   "coordinates_source": "wikipedia:Point Hicks Lighthouse",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry HIGH: OSM man_made=lighthouse + Wikipedia Point Hicks Lighthouse (man_made=lighthouse). ",
+   "pin_status": "ok",
    "category": "landmark",
    "wiki": "Point Hicks Lighthouse",
    "icon": "\ud83d\uddfc",
@@ -1390,11 +1390,11 @@
    "destination": null,
    "id": "snowy-river-national-park",
    "coordinates": {
-    "latitude": -37.275,
-    "longitude": 148.55333333
+    "latitude": -37.0913024,
+    "longitude": 148.412557
    },
-   "coordinates_source": "wikipedia:Snowy River National Park (park centroid; visitor point e.g. McKillops Bridge at pins stage)",
-   "pin_status": "unresolved",
+   "coordinates_source": "pin retry MEDIUM: OSM Nominatim tourism=camp_site McKillops Bridge (camp_site). main visitor point (McKillops Bridge campground); Wikipedia point is the park centre. Bridge itself at -37.0842,148.4133 and viewpoint -37.0827,148.4122 if another spot uses them",
+   "pin_status": "ok",
    "category": "nature",
    "wiki": "Snowy River National Park",
    "icon": "\ud83c\udfde\ufe0f",

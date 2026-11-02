@@ -1,0 +1,222 @@
+[
+ {
+  "name": "Thurra River Sand Dunes",
+  "region": "vic-gippsland",
+  "lat": -37.7808457,
+  "lon": 149.3082563,
+  "source": "nominatim: Thurra River Campground (Dunes Walk)",
+  "feature_type": "tourism=camp_site",
+  "confidence": "LOW",
+  "note": "Dunes walk start; dunes are a short walk from this point"
+ },
+ {
+  "name": "Hepburn Mineral Springs Reserve",
+  "region": "vic-goldfields-spa",
+  "lat": -37.3104037,
+  "lon": 144.1402769,
+  "source": "osm/nominatim: Soda Spring; Hepburn Springs Spa node 20 m away",
+  "feature_type": "natural=spring",
+  "confidence": "MEDIUM",
+  "note": "Springs in the reserve's core"
+ },
+ {
+  "name": "Mount Franklin",
+  "region": "vic-goldfields-spa",
+  "lat": -37.2640039,
+  "lon": 144.1501825,
+  "source": "osm volcano node + resolve-pin",
+  "feature_type": "natural=volcano",
+  "confidence": "HIGH",
+  "note": "Crater summit"
+ },
+ {
+  "name": "Welcome Stranger Obelisk",
+  "region": "vic-goldfields-spa",
+  "lat": -36.761402,
+  "lon": 143.6524283,
+  "source": "osm: Welcome Stranger Monument",
+  "feature_type": "historic=monument",
+  "confidence": "MEDIUM",
+  "note": "A second node 29 m away"
+ },
+ {
+  "name": "Aradale Lunatic Asylum",
+  "region": "vic-grampians-western",
+  "lat": -37.2775765,
+  "lon": 142.9581683,
+  "source": "osm: Aradale Asylum",
+  "feature_type": "amenity=former_hospital",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Otway Fly",
+  "region": "vic-great-ocean-road",
+  "lat": -38.6515965,
+  "lon": 143.5058178,
+  "source": "osm: Otway Fly Treetop Adventures, Phillips Track",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "Hint pin was 13 km off"
+ },
+ {
+  "name": "Budj Bim Cultural Landscape",
+  "region": "vic-great-ocean-road",
+  "lat": -38.0627197,
+  "lon": 141.9257848,
+  "source": "osm: Budj Bim peak",
+  "feature_type": "natural=peak",
+  "confidence": "LOW",
+  "note": "Landscape is broad; this is the headline summit, not a visitor point (Tae Rak/Tyrendarra not found)"
+ },
+ {
+  "name": "Falls to Hotham Alpine Crossing",
+  "region": "vic-high-country",
+  "lat": null,
+  "lon": null,
+  "source": "none",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "No route or trailhead feature found; Overpass down, Nominatim rate-limited"
+ },
+ {
+  "name": "Lake Sambell",
+  "region": "vic-high-country",
+  "lat": -36.3601184,
+  "lon": 146.6957716,
+  "source": "osm lake",
+  "feature_type": "natural=water",
+  "confidence": "MEDIUM",
+  "note": "Lake centroid"
+ },
+ {
+  "name": "Murray to the Mountains Rail Trail",
+  "region": "vic-high-country",
+  "lat": -36.5743397,
+  "lon": 146.7428844,
+  "source": "osm cycleway segment at Myrtleford",
+  "feature_type": "highway=cycleway",
+  "confidence": "MEDIUM",
+  "note": "Point on the trail near Myrtleford, roughly mid-route (Wangaratta to Bright); not the exact halfway of the full relation"
+ },
+ {
+  "name": "Eureka Tower",
+  "region": "vic-melbourne",
+  "lat": -37.8217537,
+  "lon": 144.9646549,
+  "source": "osm building",
+  "feature_type": "building=yes",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Block Arcade",
+  "region": "vic-melbourne",
+  "lat": -37.8155831,
+  "lon": 144.9643273,
+  "source": "osm shop=mall, Collins St",
+  "feature_type": "shop=mall",
+  "confidence": "MEDIUM",
+  "note": "Footway 40 m away"
+ },
+ {
+  "name": "Chapel Street",
+  "region": "vic-melbourne",
+  "lat": -37.8489018,
+  "lon": 144.9938124,
+  "source": "osm road, Prahran",
+  "feature_type": "highway=tertiary",
+  "confidence": "MEDIUM",
+  "note": "Point on the road in Prahran; Commons photo median 1.7 km north at -37.833237,144.995483"
+ },
+ {
+  "name": "Dandenong Market",
+  "region": "vic-melbourne",
+  "lat": -37.9838503,
+  "lon": 145.2155532,
+  "source": "osm shop=market, 40 Cleeland St",
+  "feature_type": "shop=market",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Two Bays Walking Trail",
+  "region": "vic-mornington-phillip-island",
+  "lat": -38.413132,
+  "lon": 144.936189,
+  "source": "osm Two Bays Walking Track way (Boneo)",
+  "feature_type": "highway=track",
+  "confidence": "MEDIUM",
+  "note": "A segment near the middle of the Dromana to Cape Schanck route, not computed from the full relation"
+ },
+ {
+  "name": "Rye Ocean Beach",
+  "region": "vic-mornington-phillip-island",
+  "lat": -38.4178047,
+  "lon": 144.8228577,
+  "source": "nominatim: Rye Back Beach car park",
+  "feature_type": "amenity=parking",
+  "confidence": "LOW",
+  "note": "Beach feature not found; car park at Dundas St end"
+ },
+ {
+  "name": "Wyperfeld National Park",
+  "region": "vic-murray-mallee",
+  "lat": -35.5850743,
+  "lon": 142.0511738,
+  "source": "osm: Wonga Hut, Wyperfeld Entrance Rd",
+  "feature_type": "tourism=alpine_hut",
+  "confidence": "MEDIUM",
+  "note": "Main visitor hub (Wonga campground area), not the reserve centroid"
+ },
+ {
+  "name": "Yering Station",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.6733639,
+  "lon": 145.3838946,
+  "source": "osm building, Melba Hwy",
+  "feature_type": "building=yes",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Yarra Valley Railway",
+  "region": "vic-yarra-dandenong",
+  "lat": null,
+  "lon": null,
+  "source": "none",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "Only railway-construction line segments found; station point not resolved (Healesville station lookup rate-limited)"
+ },
+ {
+  "name": "Donna Buang Rainforest Gallery and Skywalk",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.7109,
+  "lon": 145.7093546,
+  "source": "nominatim: Rainforest Gallery, Cat Walk",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "Latitude as returned by Nominatim, 4 decimals"
+ },
+ {
+  "name": "Beeches Rainforest Walk",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.4885056,
+  "lon": 145.8343687,
+  "source": "nominatim: The Beeches Rainforest Walk path",
+  "feature_type": "highway=path",
+  "confidence": "MEDIUM",
+  "note": "A point on the path, not computed midpoint"
+ },
+ {
+  "name": "Wombelano Falls",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.480689,
+  "lon": 145.3470259,
+  "source": "osm waterfall",
+  "feature_type": "waterway=waterfall",
+  "confidence": "MEDIUM",
+  "note": ""
+ }
+]

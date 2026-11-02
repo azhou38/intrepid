@@ -1,0 +1,222 @@
+[
+ {
+  "name": "Point Hicks Lightstation",
+  "region": "vic-gippsland",
+  "lat": -37.8019218,
+  "lon": 149.2755534,
+  "source": "OSM man_made=lighthouse + Wikipedia Point Hicks Lighthouse",
+  "feature_type": "man_made=lighthouse",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ {
+  "name": "Museum of Australian Democracy at Eureka",
+  "region": "vic-goldfields-spa",
+  "lat": -37.5649892,
+  "lon": 143.8837421,
+  "source": "OSM building 'Eureka Centre' (Stawell St S); Commons median 230 m away",
+  "feature_type": "building=yes",
+  "confidence": "MEDIUM",
+  "note": "Eureka Centre building."
+ },
+ {
+  "name": "Turpin Falls",
+  "region": "vic-goldfields-spa",
+  "lat": -37.1348176,
+  "lon": 144.4829304,
+  "source": "OSM waterway=waterfall 'Turpins Falls' (OSM name has an s); swimming_area and Scenic Reserve within 150 m",
+  "feature_type": "waterway=waterfall",
+  "confidence": "MEDIUM",
+  "note": "Name in OSM is Turpins Falls."
+ },
+ {
+  "name": "Pink Cliffs Geological Reserve",
+  "region": "vic-goldfields-spa",
+  "lat": -36.9302307,
+  "lon": 144.7038668,
+  "source": "OSM Pink Cliffs Scenic Walk footway; Wikipedia article point 45 m away; car park at -36.9290254,144.7045847",
+  "feature_type": "highway=footway + wikipedia",
+  "confidence": "HIGH",
+  "note": "Visitor point at the cliffs walk, not reserve centroid (-36.9326,144.7039)."
+ },
+ {
+  "name": "Eucalyptus Distillery Museum",
+  "region": "vic-goldfields-spa",
+  "lat": -36.5686913,
+  "lon": 143.8650055,
+  "source": "OSM tourism=attraction 'Blue Eucy Distillery Park and Museum', Inglewood; leisure=park 25 m away",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "Located in Inglewood; both features OSM only. Name differs from draft (Blue Eucy)."
+ },
+ {
+  "name": "St Arnaud Silo Art and Murals",
+  "region": "vic-grampians-western",
+  "lat": -36.614998,
+  "lon": 143.255393,
+  "source": "OSM place=town St Arnaud",
+  "feature_type": "place=town",
+  "confidence": "LOW",
+  "note": "Silo/mural not mapped in OSM; this is the town centre, find the silo by hand."
+ },
+ {
+  "name": "Discovery Bay Coastal Park",
+  "region": "vic-great-ocean-road",
+  "lat": null,
+  "lon": null,
+  "source": "OSM park centroid only (-38.2234799,141.3159881)",
+  "feature_type": "leisure=nature_reserve",
+  "confidence": "LOW",
+  "note": "Only the reserve centroid found; no visitor point (day-use area/car park) in OSM via Photon. Left null."
+ },
+ {
+  "name": "Lake Catani",
+  "region": "vic-high-country",
+  "lat": -36.7331879,
+  "lon": 146.8092481,
+  "source": "OSM water=reservoir 'Lake Catani'; Wikipedia -36.7325,146.81028 about 100 m away",
+  "feature_type": "natural=water (reservoir)",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Craig's Hut Walk",
+  "region": "vic-high-country",
+  "lat": -37.1051664,
+  "lon": 146.5350629,
+  "source": "OSM highway=path 'Craigs Hut Walking Track' (a segment, roughly mid-route; hut at -37.1082606,146.5328346)",
+  "feature_type": "highway=path",
+  "confidence": "MEDIUM",
+  "note": "Segment of the walk, hut is ~350 m away; short walk so midpoint approximate."
+ },
+ {
+  "name": "Warby-Ovens National Park",
+  "region": "vic-high-country",
+  "lat": -36.2982117,
+  "lon": 146.1692459,
+  "source": "OSM tourism=picnic_site 'Pine Gully Picnic Area' (main visitor hub)",
+  "feature_type": "tourism=picnic_site",
+  "confidence": "MEDIUM",
+  "note": "Park centroid (-36.227,146.181) not used."
+ },
+ {
+  "name": "Flinders Street Station",
+  "region": "vic-melbourne",
+  "lat": -37.818078,
+  "lon": 144.96681,
+  "source": "Wikipedia article point; OSM police booth in station 45 m away",
+  "feature_type": "wikipedia + amenity=police",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ {
+  "name": "Parliament House of Victoria",
+  "region": "vic-melbourne",
+  "lat": -37.8110999,
+  "lon": 144.9738657,
+  "source": "OSM office=government 'Parliament House'; Wikipedia -37.811055,144.97329 about 50 m away",
+  "feature_type": "office=government",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ {
+  "name": "ACDC Lane",
+  "region": "vic-melbourne",
+  "lat": -37.8155405,
+  "lon": 144.9705723,
+  "source": "OSM amenity=parking 'ACDC Garage' in lane; Wikipedia -37.815505,144.970822 about 22 m away",
+  "feature_type": "amenity=parking + wikipedia",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ {
+  "name": "Old Treasury Building",
+  "region": "vic-melbourne",
+  "lat": -37.8131993,
+  "lon": 144.9743546,
+  "source": "OSM tourism=museum 'Old Treasury Building Museum'; Wikipedia 20 m away",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": ""
+ },
+ {
+  "name": "Jewish Holocaust Centre",
+  "region": "vic-melbourne",
+  "lat": -37.883397,
+  "lon": 145.001342,
+  "source": "Commons geotagged-file median (2 files), 40 m from OSM Selwyn Street road point",
+  "feature_type": "commons photo median",
+  "confidence": "LOW",
+  "note": "Building (13-15 Selwyn St, Elsternwick) not found in OSM; point is approximate."
+ },
+ {
+  "name": "Portsea Surf Beach",
+  "region": "vic-mornington-phillip-island",
+  "lat": -38.3362152,
+  "lon": 144.7064942,
+  "source": "OSM natural=beach 'Portsea Back Beach'; surf life saving club 190 m away",
+  "feature_type": "natural=beach",
+  "confidence": "MEDIUM",
+  "note": "Portsea Surf Beach = Back Beach."
+ },
+ {
+  "name": "Phillip Island Chocolate Factory",
+  "region": "vic-mornington-phillip-island",
+  "lat": -38.5149921,
+  "lon": 145.3449634,
+  "source": "OSM shop=chocolate 'Phillip Island Chocolate Factory', Newhaven",
+  "feature_type": "shop=chocolate",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Trees Adventure Glen Harrow Park",
+  "region": "vic-yarra-dandenong",
+  "lat": null,
+  "lon": null,
+  "source": "none",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "No named OSM feature found."
+ },
+ {
+  "name": "Lilydale to Warburton Rail Trail",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.7738324,
+  "lon": 145.524616,
+  "source": "OSM highway=cycleway 'Warburton Rail Trail' segment near the route's middle (Lilydale lon 145.35 to Warburton 145.69)",
+  "feature_type": "highway=cycleway",
+  "confidence": "MEDIUM",
+  "note": "A segment near the geometric middle, not a computed route midpoint."
+ },
+ {
+  "name": "Badger Weir",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.6856161,
+  "lon": 145.5826127,
+  "source": "OSM waterway=weir 'Badger Weir'",
+  "feature_type": "waterway=weir",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ {
+  "name": "Keppel Falls",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.498977,
+  "lon": 145.840144,
+  "source": "OSM waterway=waterfall 'Keppel Falls'; lookout 330 m away",
+  "feature_type": "waterway=waterfall",
+  "confidence": "MEDIUM",
+  "note": "Near Marysville."
+ },
+ {
+  "name": "O'Shannassy Aqueduct Trail",
+  "region": "vic-yarra-dandenong",
+  "lat": -37.7246009,
+  "lon": 145.7308155,
+  "source": "OSM trail midpoint (way 5.8 km) 'O'Shannassy Aqueduct Trail'",
+  "feature_type": "trail midpoint",
+  "confidence": "MEDIUM",
+  "note": ""
+ }
+]

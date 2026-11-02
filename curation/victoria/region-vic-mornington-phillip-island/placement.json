@@ -332,9 +332,12 @@
    "id": "mornington-peninsula-10",
    "category": "hike",
    "icon": "\ud83e\udd7e",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -38.413132,
+    "longitude": 144.936189
+   },
+   "coordinates_source": "pin retry MEDIUM: osm Two Bays Walking Track way (Boneo) (highway=track). A segment near the middle of the Dromana to Cape Schanck route, not computed from the full relation",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 2,
@@ -490,9 +493,12 @@
    "id": "mornington-peninsula-16",
    "category": "beach",
    "icon": "\ud83c\udfd6\ufe0f",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -38.3362152,
+    "longitude": 144.7064942
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM natural=beach 'Portsea Back Beach'; surf life saving club 190 m away (natural=beach). Portsea Surf Beach = Back Beach.",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 2,
@@ -728,9 +734,12 @@
    "id": "mornington-peninsula-25",
    "category": "hike",
    "icon": "\ud83e\udd7e",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -38.353555,
+    "longitude": 144.7431078
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM highway=footway Coppins Track (footway). segment near the middle of the matching ways (-38.3429,144.7233 to -38.3688,144.7619); Coppin's Lookout viewpoint at -38.3449869,144.7252775",
+   "pin_status": "ok",
    "linear_feature": true,
    "views": 0,
    "counted_sources": 2,
@@ -1024,9 +1033,12 @@
    "id": "phillip-island-9",
    "category": "entertainment",
    "icon": "\ud83c\udf6b",
-   "coordinates": null,
-   "coordinates_source": "none yet: pins stage to resolve",
-   "pin_status": "unresolved",
+   "coordinates": {
+    "latitude": -38.5149921,
+    "longitude": 145.3449634
+   },
+   "coordinates_source": "pin retry MEDIUM: OSM shop=chocolate 'Phillip Island Chocolate Factory', Newhaven (shop=chocolate). ",
+   "pin_status": "ok",
    "linear_feature": false,
    "views": 0,
    "counted_sources": 1,
