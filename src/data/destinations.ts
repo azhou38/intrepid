@@ -1906,6 +1906,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Walk the diggings and Maldon's streets in {months}, when inland weather is mild.",
   },
   {
+    id: 'mansfield', name: "Mansfield", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 80,
+    continent: 'Oceania', coordinates: { latitude: -37.05, longitude: 146.0833 },
+    category: 'city', icon: "⛷️", rank: 4,
+    tagline: "A high-country gateway to Mount Buller skiing, lakes and mountain trails",
+    description: "Mansfield is a country town about two hours' drive north-east of Melbourne and the support town for Mount Buller ski resort. Mount Buller has 22 lifts, the highest lift capacity in Victoria, while Mount Stirling is a cross-country and backcountry ski area. In summer, hiking and mountain biking are popular on both mountains, and Lake Eildon is the only inland waterway in Victoria where houseboats are permitted. Mansfield is also on the Ned Kelly Trail.",
+    whyVisit: ["Ski and snowboard in winter", "Hike and bike the high country", "Houseboat and waterski on big lakes"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Winter snow", "High-country trails", "Lake days"],
+    goodToKnow: [
+      { icon: "⛓️", title: "Carry wheel chains", detail: "Wheel chains must be carried on the road up to Mount Buller throughout the winter season." },
+      { icon: "🚗", title: "Drive up from Melbourne", detail: "Mansfield is reached by car, about two hours via the Yarra Valley. Allow extra time on winter weekends." },
+    ],
+    bestMonths: [12, 1, 2, 3, 6, 7, 8, 9],
+    bestTimeBlurb: "Winter snow and summer lakes and trails make {months} the best times to visit.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
