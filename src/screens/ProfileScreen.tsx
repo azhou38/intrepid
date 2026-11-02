@@ -685,6 +685,16 @@ export default function ProfileScreen() {
                 return {
                   key: d.id, name: d.name, countryCode: d.countryCode, sub: d.country,
                   spots: n, rating: sortKeys.destRating(d.id), date: sortKeys.destDate.get(d.id) ?? '',
+                  // The destination's own photo in place of its flag: the grid tiles' small photo (same cache key).
+                  photo: (
+                    <EntityPhoto
+                      cacheKey={`pick_${d.id}`}
+                      cache={thumbCache}
+                      load={() => getOrFetchWikiThumbnail(`pick_${d.id}`, thumbCache, d.name, 300)}
+                      subject={photoSubject(d.name)}
+                      placeholderColor="#E5E7EB"
+                    />
+                  ),
                 };
               })} />
             ) : (
@@ -934,7 +944,8 @@ const shortDate = (iso: string) => {
   return y && m ? `${d ? `${d} ` : ''}${MONTHS[m - 1]} ${y}` : '';
 };
 function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
-  rows: { key: string; name: string; countryCode?: string | null; sub: string; spots?: number; rating: number; date: string }[];
+  // `photo`: a small photo shown in place of the country flag (a destination's own photo).
+  rows: { key: string; name: string; countryCode?: string | null; sub: string; spots?: number; rating: number; date: string; photo?: React.ReactNode }[];
   sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
   // As in PhotoGrid: a pick lasts only while its row is on the page showing.
   onClearPick: () => void;
@@ -974,7 +985,8 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                   {sort !== 'name' && (medal
                     ? <View style={styles.rankNumSlot}><View style={[styles.rankBadge, styles.rankBadgeList, { backgroundColor: medal }]}><Text style={styles.rankTxt}>{k + 1}</Text></View></View>
                     : <Text style={styles.rankNum}>{k + 1}</Text>)}
-                  {r.countryCode ? <CircleFlag countryCode={r.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} /> : <View style={{ width: 22 }} />}
+                  {r.photo ? <View style={styles.rankThumb}>{r.photo}</View>
+                    : r.countryCode ? <CircleFlag countryCode={r.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} /> : <View style={{ width: 22 }} />}
                   <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
                     <Text style={styles.rankName} numberOfLines={1}>{r.name}</Text>
                     {!!r.sub && <Text style={styles.rankSub} numberOfLines={1}>{r.sub}</Text>}
@@ -1282,6 +1294,7 @@ const styles = StyleSheet.create({
   // A medal rank in the list: the grid's rank badge, in the number's slot (right-aligned like the numbers).
   rankNumSlot:   { width: 18, alignItems: 'flex-end' },
   rankBadgeList: { position: 'relative', top: 0, left: 0, width: 18, height: 18, borderRadius: 9 },
+  rankThumb:   { width: 30, height: 30, borderRadius: 8, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   rankNameCol: { width: 120 },
   rankNameFlex: { flex: 1 },
   rankName:    { fontSize: 13, fontWeight: '600', color: '#374151' },
