@@ -845,15 +845,23 @@ const DEST_GATE_FADE_OUT_MS = 140;
 const destTierOrder = (): string[] => [...destLadder().map((_, i) => `z${i}`).reverse(), ''];
 const destTierStyleCache = new Map<string, any>();
 // `snap`: the opacity changes at once, not animated (a handoff layer changing state while it holds no pin yet).
+// A tier that is on is still hidden natively below its gate: its opacity steps to 0 at the gate on the camera's own zoom,
+// evaluated every frame, so the frame a zoom-out passes the gate it is gone, without waiting for destTierOn's render.
+// That used to be the layer's min zoom, but Mapbox checks a layer's min zoom against the zoom of the TILE it draws:
+// zooming out, it fills in with lower-zoom parent tiles while the new ones are built, and every gated tier was left out
+// of those, so all their pins vanished mid-zoom (Blue Mountains, Jervis Bay, Canberra… zooming out from Sydney) and came
+// back once the tiles caught up.
 const destTierStyle = (tier: string, on: boolean, snap = false) => {
   const key = `${tier}|${on ? 1 : 0}|${snap ? 1 : 0}`;
   let st = destTierStyleCache.get(key);
   if (!st) {
     // Fading out is quicker than fading in, so pins clear out of the way on a fast zoom-out.
     const ms = snap ? 0 : on ? DEST_GATE_FADE_MS : DEST_GATE_FADE_OUT_MS;
+    const gate = tier ? destGateZooms()[tier] : undefined;
+    const shown = !on ? 0 : gate === undefined ? 1 : ['step', ['zoom'], 0, gate, 1];
     st = {
       ...DEST_SYMBOL_STYLE,
-      iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0,
+      iconOpacity: shown, textOpacity: shown,
       iconOpacityTransition: { duration: ms, delay: 0 },
       textOpacityTransition: { duration: ms, delay: 0 },
     };
@@ -6114,12 +6122,11 @@ const destItems = useMemo((): DestItem[] =>
                 id={`destPhotoSymbols-${tier || 'ungated'}`}
                 aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
                 filter={['all', ['==', ['get', 'tier'], tier], ['!=', ['get', 'ho'], 1]] as any}
-                // The tier's gate as the layer's min zoom: Mapbox hides it the frame the camera zooms out past the gate,
-                // where destTierOn only learns of the zoom a render later (half a second and more behind a fast pinch,
-                // in which the pins of the tiers the camera had already left stayed up and piled together). The fade
-                // back in on the way in is still destTierOn's. Not during a close or back plan (backPlan), whose fly-to
-                // can dip below the target's gates on its way out: the plan holds its tiers there instead.
-                minZoomLevel={tier ? destGateZooms()[tier] ?? 0 : 0}
+                // The tier's gate is in its opacity (destTierStyle): Mapbox hides it the frame the camera zooms out past
+                // the gate, where destTierOn only learns of the zoom a render later (half a second and more behind a fast
+                // pinch, in which the pins of the tiers the camera had already left stayed up and piled together). The
+                // fade back in on the way in is still destTierOn's. A close or back plan (backPlan), whose fly-to can dip
+                // below the target's gates on its way out, moves the pins it shows to the ungated '' layer instead.
                 style={destTierStyle(tier, destTierOn(tier))}
               />
             )),
@@ -6134,8 +6141,7 @@ const destItems = useMemo((): DestItem[] =>
                   id={`destHandoff-${k}`}
                   aboveLayerID={k === 0 ? `destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}` : `destHandoff-${k - 1}`}
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
-                  // Its destination's tier gate as min zoom, as for the tier layers above.
-                  minZoomLevel={l.h && l.tier ? destGateZooms()[l.tier] ?? 0 : 0}
+                  // Its destination's tier gate is in its opacity, as for the tier layers above.
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
                   style={destTierStyle(l.tier, l.on, l.snap)}
                 />
