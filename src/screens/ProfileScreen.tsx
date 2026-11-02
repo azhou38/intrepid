@@ -702,7 +702,8 @@ export default function ProfileScreen() {
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownDests.map((d, k) => {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
-                key: d.id, name: d.name, countryCode: d.countryCode, sub: n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '',
+                key: d.id, name: d.name, countryCode: d.countryCode,
+                sub: tileSub(exploredSort, sortKeys.destDate.get(d.id) ?? '', sortKeys.destRating(d.id), n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
                 // Sorted by most spots, the top three (with any spots) wear a rank badge.
                 rank: exploredSort === 'spots' && n > 0 && k < 3 ? k + 1 : undefined,
                 photo: (
@@ -747,7 +748,8 @@ export default function ProfileScreen() {
             ) : (
             /* The same photo grid for spots: the spot's country under its name. */
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownSpots.map(sp => ({
-              key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotCountry(sp) ?? '',
+              key: sp.id, name: sp.name, countryCode: spotCountryCode(sp),
+              sub: tileSub(exploredSort, sortKeys.spotDate.get(sp.id) ?? '', savedSpots[sp.id]?.rating ?? 0, spotCountry(sp) ?? ''),
               photo: NO_PHOTO.has(spotPhotoTitle(sp))
                 ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />
                 : // The same small-photo key as the destination sheet's spot pickers, so either can reuse it.
@@ -938,6 +940,12 @@ const SORTS: { key: ExploredSort; label: string }[] = [
 // the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
 // the page (which scrolls up and down itself).
 const LIST_PAGE_SIZE = 8;
+// A grid tile's line under its name, by the sort: the date visited, or the rating, when sorted by it (and the place has one);
+// otherwise its usual line (spots visited for a destination, the country for a spot).
+const tileSub = (sort: ExploredSort, date: string, rating: number, usual: string) =>
+  sort === 'date' && date ? shortDate(date)
+  : sort === 'rating' && rating ? `★ ${rating.toFixed(1).replace(/\.0$/, '')}`
+  : usual;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const shortDate = (iso: string) => {
   const [y, m, d] = iso.split('-').map(Number);
