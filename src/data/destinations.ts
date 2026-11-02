@@ -1319,6 +1319,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Mild {months} days suit mine tours and walks, while summer often tops 35 C.",
   },
   {
+    id: 'dandenong-ranges', name: "Dandenong Ranges", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 35,
+    continent: 'Oceania', coordinates: { latitude: -37.865, longitude: 145.358 },
+    category: 'nature', icon: "🚂", rank: 3,
+    tagline: "Fern gullies, hill villages and a heritage steam railway east of Melbourne",
+    description: "The Dandenong Ranges are low mountain ranges about 35 km east of Melbourne, rising to 633 m at Mount Dandenong, topped by a TV tower. Puffing Billy, a heritage steam railway, runs 24 km on its original mountain track from Belgrave to Gembrook and is the most popular attraction in the ranges. Sheltered gullies hold temperate rainforest, tree ferns and mountain ash forest, with superb lyrebirds and kookaburras. The ranges have been a day-trip and weekend retreat for Melburnians since the 1870s.",
+    whyVisit: ["Ride a steam train through the hills", "Walk fern gullies and tall forest", "Wander quiet hill villages"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Steam railway", "Fern gullies", "Hill villages"],
+    goodToKnow: [
+      { icon: "🚆", title: "Train from Melbourne", detail: "Belgrave line trains reach Belgrave in just over an hour, where Puffing Billy departs. Buses up the hills run rarely." },
+      { icon: "🌫️", title: "Dress for the hills", detail: "Daytime temperatures run 4 to 6 C cooler than Melbourne's lower suburbs, and winter fog is common." },
+      { icon: "🔥", title: "Check fire restrictions", detail: "The ranges are bushfire-prone and summer fire restrictions apply. There is no camping in the national park and no rubbish bins." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Cooler, milder {months} weather suits walking, before summer fire restrictions and winter fog.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
