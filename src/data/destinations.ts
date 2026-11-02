@@ -1455,6 +1455,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Mild {months} weather suits walking and cycling in a town that is cool for much of the year.",
   },
   {
+    id: 'echuca', name: "Echuca", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 80,
+    continent: 'Oceania', coordinates: { latitude: -36.13333333, longitude: 144.75 },
+    category: 'city', icon: "🚢", rank: 3,
+    tagline: "A Murray River port where paddle steamers still sail from the historic wharf",
+    description: "Echuca sits on the Murray River, with the New South Wales town of Moama opposite, and has 15,056 people. Its port is home to the largest paddle steamer fleet in the world, including PS Adelaide (1866), the world's oldest operating wooden-hulled paddle steamer. PS Pevensey (1911) and PS Alexander Arbuthnot (1923) sail commercially from the port daily. Echuca is about 2.5 hours' drive from Melbourne.",
+    whyVisit: ["Cruise the Murray on a paddle steamer", "Explore the historic river port", "Walk through Murray River forest"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Paddle steamers", "River port", "River forests"],
+    goodToKnow: [
+      { icon: "🚆", title: "Sit in the front carriages", detail: "On the train from Melbourne, sit in the front 3 cars, as the rear 3 decouple at Bendigo." },
+      { icon: "🚶", title: "Easy to walk around", detail: "Apart from occasional buses there is no town transport, but the town is small enough to walk." },
+      { icon: "🚤", title: "Southern 80 in February", detail: "February brings the Southern 80 waterski race and a music festival, so expect busy river banks and book ahead." },
+    ],
+    bestMonths: [10, 11, 3, 4],
+    bestTimeBlurb: "Visit in {months} for river cruises without the February Southern 80 crowds.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
