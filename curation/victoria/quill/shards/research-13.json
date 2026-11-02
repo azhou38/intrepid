@@ -1,0 +1,204 @@
+[
+ {
+  "id": "maryborough",
+  "name": "Maryborough",
+  "facts": [
+   {
+    "claim": "Goldfields town on the Pyrenees Highway, 58 km north of Ballarat",
+    "source_url": "https://en.wikipedia.org/wiki/Maryborough,_Victoria"
+   },
+   {
+    "claim": "Gold found at White Hill in 1854; population reportedly reached up to 50,000",
+    "source_url": "https://en.wikipedia.org/wiki/Maryborough,_Victoria"
+   },
+   {
+    "claim": "Maryborough railway station (1890) has a bell tower and clock; Mark Twain praised it in 1895",
+    "source_url": "https://en.wikipedia.org/wiki/Maryborough,_Victoria"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "no single steward (town); council visitor page not an attraction site",
+  "wiki": "Maryborough, Victoria",
+  "access_note": null,
+  "unresolved": [],
+  "cost_source_url": "https://en.wikipedia.org/wiki/Maryborough,_Victoria",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3
+ },
+ {
+  "id": "kooyoora-state-park",
+  "name": "Kooyoora State Park",
+  "facts": [
+   {
+    "claim": "11,350-hectare park of box-ironbark forest and granite outcrops, 12 km west of Inglewood",
+    "source_url": "https://en.wikipedia.org/wiki/Kooyoora_State_Park"
+   },
+   {
+    "claim": "Long Rock Walking Track is a 5.3 km hike from the camping area to a lookout",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/kooyoora-state-park"
+   },
+   {
+    "claim": "Jointly managed by Dja Dja Wurrung Clans Aboriginal Corporation and Parks Victoria",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/kooyoora-state-park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "park",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/kooyoora-state-park",
+  "ticketUrl_note": "Parks Victoria page loaded, title names park",
+  "wiki": "Kooyoora State Park",
+  "access_note": "Parks Victoria page shows 'area is closed' banner and closed roads in the Glenalbyn Block; check current conditions",
+  "unresolved": [
+   "no entry fee stated on page text read; Victorian state parks free to enter by default"
+  ],
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/kooyoora-state-park",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4
+ },
+ {
+  "id": "melville-caves",
+  "name": "Melville Caves",
+  "facts": [
+   {
+    "claim": "Granite outcrops and rock shelters in Kooyoora State Park",
+    "source_url": "https://en.wikipedia.org/wiki/Kooyoora_State_Park"
+   },
+   {
+    "claim": "Bushranger Captain Melville is believed to have used the area as a hideout",
+    "source_url": "https://en.wikipedia.org/wiki/Melville_Caves"
+   },
+   {
+    "claim": "Melville Caves Picnic Area has tables, shelter, toilets and wood barbecues among rock formations",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/kooyoora-state-park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_confidence": "official page",
+  "ticketUrl": null,
+  "ticketUrl_note": "no own page found (parks.vic.gov.au /sites/melville-caves 404); park page is Kooyoora's, not a distinct site",
+  "wiki": null,
+  "access_note": "inside Kooyoora State Park, whose page carries a closure banner",
+  "unresolved": [
+   "no own Wikipedia article (redirects to Kooyoora State Park)",
+   "no own Parks Victoria site page found"
+  ],
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/kooyoora-state-park",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "eucalyptus-distillery-museum",
+  "name": "Eucalyptus Distillery Museum",
+  "facts": [
+   {
+    "claim": "Museum on the site of an old eucalyptus distillery in Inglewood, about 50 km north-west of Bendigo",
+    "source_url": "https://www.inglewood.vic.au/eucy-museum/"
+   },
+   {
+    "claim": "Guided tours show a model distillery demonstrating how oil is extracted from eucalyptus leaves",
+    "source_url": "https://eucymuseum.com.au"
+   },
+   {
+    "claim": "Run by volunteers",
+    "source_url": "https://eucymuseum.com.au"
+   }
+  ],
+  "free": false,
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://eucymuseum.com.au",
+  "ticketUrl_note": "loaded, title names museum; adult entry $10 (2025) from town site, self-guided $5",
+  "wiki": null,
+  "access_note": "volunteer-run, reduced hours, closed Saturdays per museum site",
+  "unresolved": [],
+  "cost_source_url": "https://www.inglewood.vic.au/eucy-museum/",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5
+ },
+ {
+  "id": "goldfields-track",
+  "name": "Goldfields Track",
+  "facts": [
+   {
+    "claim": "210 km walking and riding track through central Victoria's historic goldfields towns and forests, Ballarat to Bendigo",
+    "source_url": "https://www.goldfieldstrack.com.au"
+   },
+   {
+    "claim": "Runs from Mount Buninyong to Bendigo through Eureka, Wallaby, Dry Diggings and Leanganook sections",
+    "source_url": "https://en.wikipedia.org/wiki/Great_Dividing_Trail"
+   },
+   {
+    "claim": "Passes through Wadawurrung and Dja Dja Wurrung Country",
+    "source_url": "https://www.goldfieldstrack.com.au"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.goldfieldstrack.com.au",
+  "ticketUrl_note": "loaded, title names Goldfields Track; $40 shown is the guidebook, not an entry fee",
+  "wiki": "Great Dividing Trail",
+  "access_note": "pin should be route midpoint; multi-day 210 km route (sections can be done as day walks)",
+  "unresolved": [],
+  "cost_source_url": "https://www.goldfieldstrack.com.au",
+  "wiki_note": "Wikipedia 'Goldfields Track' redirects to Great Dividing Trail",
+  "visitHoursMin": 4,
+  "visitHoursMax": 8
+ },
+ {
+  "id": "grampians-national-park-1",
+  "name": "MacKenzie Falls",
+  "facts": [
+   {
+    "claim": "Described as the most iconic waterfall in the Grampians; viewable from a lookout platform",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/grampians-national-park"
+   },
+   {
+    "claim": "A steep track leads to the base of the falls",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/grampians-national-park"
+   },
+   {
+    "claim": "Precinct closes on days of Extreme and Catastrophic Fire Danger",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/grampians-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/grampians-national-park",
+  "ticketUrl_note": "Parks Victoria Grampians (Gariwerd) NP page; no own site page found (guessed /sites/ URLs 404)",
+  "wiki": null,
+  "access_note": "closes on Extreme/Catastrophic fire days; park page shows closure banner",
+  "unresolved": [
+   "no Wikipedia article matched (evidence title was a wrong page)",
+   "'Victoria's largest permanent waterfall' in draft bio not confirmed by sources read",
+   "no entry fee seen on park page text; Victorian parks free by default"
+  ],
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/grampians-national-park",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5
+ }
+]

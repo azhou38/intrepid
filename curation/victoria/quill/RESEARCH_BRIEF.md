@@ -1,6 +1,6 @@
 # Spot researcher brief (Victoria, Pipeline C step 1)
 Role: .claude/agents/spot-researcher.md. Rules: WRITING.md "Writing a spot" (cost, costBasis, ticketUrl, no opening hours, wiki title), PIPELINES.md Pipeline C step 1.
-Input: a shard file of ~6 spots, each with `evidence` = its evidence bundle path (read it first; fetch only what it lacks with `npx tsx scripts/curation/fetch.ts <url>`).
+Input: a shard file of ~6 spots, each with `evidence` = its evidence bundle path, or null when none was built (then fetch the sources yourself); when present, read it first and fetch only what it lacks with `npx tsx scripts/curation/fetch.ts <url>`).
 Output: the shard's research file: a list, one object per spot:
 { id, name, facts:[{claim, source_url}] (3-5 concrete facts for a bio: what it is, where, the one thing worth a stop; no marketing),
   free: bool, costMin, costMax, currency:'AUD', costBasis:'entry'|'tour'|'ticket'|'park'|'donation'|'open', costPer?, needs?:'park-pass'|'booking'|'permit', parkPass?, cost_source_url, cost_confidence:'official page'|'secondary'|'unverified',

@@ -1,0 +1,26 @@
+{
+ "id": "portland-1",
+ "name": "Cape Bridgewater",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Cape_Bridgewater",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Cape Bridgewater",
+   "excerpt": "Cape Bridgewater is a locality in the Australian state of Victoria located on the western shore of Bridgewater Bay about 21 kilometres (13 mi) south-west of Portland and about 383 kilometres (238 mi) west of Melbourne."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

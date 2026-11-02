@@ -1,0 +1,26 @@
+{
+ "id": "port-campbell-national-park-6",
+ "name": "The Grotto",
+ "built": "2026-11-02",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/The_Grotto",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-02",
+   "title": "Grotto (disambiguation)",
+   "excerpt": "A grotto is a natural or artificial cave."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

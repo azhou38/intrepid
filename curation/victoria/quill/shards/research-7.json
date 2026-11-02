@@ -1,0 +1,192 @@
+[
+ {
+  "id": "ballarat-4",
+  "name": "Art Gallery of Ballarat",
+  "facts": [
+   {
+    "claim": "Oldest regional art gallery in Australia, founded in 1884",
+    "source_url": "https://en.wikipedia.org/wiki/Art_Gallery_of_Ballarat"
+   },
+   {
+    "claim": "Housed in an 1890 building on Lydiard Street North",
+    "source_url": "https://en.wikipedia.org/wiki/Art_Gallery_of_Ballarat"
+   },
+   {
+    "claim": "Free entry since 2008",
+    "source_url": "https://en.wikipedia.org/wiki/Art_Gallery_of_Ballarat"
+   }
+  ],
+  "currency": "AUD",
+  "ticketUrl": "https://www.artgalleryofballarat.com.au/",
+  "ticketUrl_note": null,
+  "wiki": "Art Gallery of Ballarat",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "access_note": "Main building at 40 Lydiard St Nth is closed for building upgrades; exhibitions are at Backspace Gallery, 43 Mair St (official site, 2026-11-02).",
+  "unresolved": [],
+  "free": true,
+  "costBasis": "entry",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Art_Gallery_of_Ballarat",
+  "cost_confidence": "secondary"
+ },
+ {
+  "id": "ballarat-5",
+  "name": "Lake Wendouree",
+  "facts": [
+   {
+    "claim": "Shallow artificial urban lake beside the suburb of Wendouree in Ballarat",
+    "source_url": "https://en.wikipedia.org/wiki/Lake_Wendouree"
+   },
+   {
+    "claim": "Name comes from a local Aboriginal word wendaaree, meaning 'go away'",
+    "source_url": "https://en.wikipedia.org/wiki/Lake_Wendouree"
+   },
+   {
+    "claim": "Heritage trams of the Ballarat Tramway Museum run along its shore",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Tramway_Museum"
+   }
+  ],
+  "currency": "AUD",
+  "ticketUrl": null,
+  "ticketUrl_note": "Managed by City of Ballarat (council parks page not found); no single steward site verified",
+  "wiki": "Lake Wendouree",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "access_note": null,
+  "unresolved": [],
+  "free": true,
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Lake_Wendouree",
+  "cost_confidence": "unverified"
+ },
+ {
+  "id": "ballarat-6",
+  "name": "Ballarat Botanical Gardens",
+  "facts": [
+   {
+    "claim": "40-hectare reserve on the western shore of Lake Wendouree",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Botanical_Gardens"
+   },
+   {
+    "claim": "Three zones: a central Victorian 'gardenesque' garden flanked by North and South Gardens",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Botanical_Gardens"
+   },
+   {
+    "claim": "Celebrated its 150th anniversary in 2007",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Botanical_Gardens"
+   }
+  ],
+  "currency": "AUD",
+  "ticketUrl": null,
+  "ticketUrl_note": "City of Ballarat parks page deep link not confirmed (listed in council nav under Parks and Sportsgrounds at https://www.ballarat.vic.gov.au/); not verified",
+  "wiki": "Ballarat Botanical Gardens",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": null,
+  "unresolved": [
+   "council page for the gardens not located; free entry from Wikipedia silence only, unverified"
+  ],
+  "free": true,
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Ballarat_Botanical_Gardens",
+  "cost_confidence": "unverified"
+ },
+ {
+  "id": "ballarat-7",
+  "name": "Ballarat Wildlife Park",
+  "facts": [
+   {
+    "claim": "Zoo opened in February 1985 on 10 hectares",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Wildlife_Park"
+   },
+   {
+    "claim": "Holds over 300 animals including over 100 free-roaming kangaroos",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Wildlife_Park"
+   },
+   {
+    "claim": "Large reptile collection; hand-feeding kangaroos and koalas offered",
+    "source_url": "https://wildlifepark.com.au/"
+   }
+  ],
+  "currency": "AUD",
+  "ticketUrl": "https://wildlifepark.com.au/",
+  "ticketUrl_note": null,
+  "wiki": "Ballarat Wildlife Park",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "access_note": "Adult $42 at the gate; online price lower (~$37.80).",
+  "unresolved": [],
+  "free": false,
+  "costMin": 42,
+  "costMax": 42,
+  "costBasis": "entry",
+  "cost_source_url": "https://wildlifepark.com.au/tickets/",
+  "cost_confidence": "official page"
+ },
+ {
+  "id": "ballarat-8",
+  "name": "Kryal Castle",
+  "facts": [
+   {
+    "claim": "Replica medieval castle 8 km east of Ballarat at Leigh Creek, in the foothills of Mount Warrenheip",
+    "source_url": "https://en.wikipedia.org/wiki/Kryal_Castle"
+   },
+   {
+    "claim": "Has welcomed visitors since 1974",
+    "source_url": "https://www.kryalcastle.com.au/"
+   },
+   {
+    "claim": "Offers overnight stays in castle rooms, cabins and tiny homes",
+    "source_url": "https://www.kryalcastle.com.au/"
+   }
+  ],
+  "currency": "AUD",
+  "ticketUrl": "https://www.kryalcastle.com.au/",
+  "ticketUrl_note": null,
+  "wiki": "Kryal Castle",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "access_note": null,
+  "unresolved": [
+   "homepage says \"Tickets from only $31.50\"; adult general-admission price not confirmed on a tickets page (buy-tickets URL 404)"
+  ],
+  "free": false,
+  "costMin": 31.5,
+  "costMax": 31.5,
+  "costBasis": "entry",
+  "cost_source_url": "https://www.kryalcastle.com.au/",
+  "cost_confidence": "unverified"
+ },
+ {
+  "id": "ballarat-10",
+  "name": "Ballarat Tramway Museum",
+  "facts": [
+   {
+    "claim": "Volunteer-run operating tramway museum",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Tramway_Museum"
+   },
+   {
+    "claim": "Heritage trams run on part of the original horse tramway around Lake Wendouree and the Botanical Gardens",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Tramway_Museum"
+   },
+   {
+    "claim": "Trams ran across Ballarat from 1887 until 1971; the museum holds an archive of 3,500+ items",
+    "source_url": "https://en.wikipedia.org/wiki/Ballarat_Tramway_Museum"
+   }
+  ],
+  "currency": "AUD",
+  "ticketUrl": "https://btm.org.au/",
+  "ticketUrl_note": null,
+  "wiki": "Ballarat Tramway Museum",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "access_note": "Runs on weekends and public holidays (per official site); adult $15.",
+  "unresolved": [],
+  "free": false,
+  "costMin": 15,
+  "costMax": 15,
+  "costBasis": "ticket",
+  "cost_source_url": "https://btm.org.au/visit-ballarat-tramway-museum/",
+  "cost_confidence": "official page"
+ }
+]

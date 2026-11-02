@@ -1,0 +1,206 @@
+[
+ {
+  "id": "traralgon",
+  "name": "Traralgon",
+  "facts": [
+   {
+    "claim": "Largest city in the City of Latrobe, in the east of the Latrobe Valley, Gippsland",
+    "source_url": "https://en.wikipedia.org/wiki/Traralgon"
+   },
+   {
+    "claim": "Urban population of 26,907 at the 2021 census",
+    "source_url": "https://en.wikipedia.org/wiki/Traralgon"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://en.wikipedia.org/wiki/Traralgon",
+  "cost_confidence": "secondary",
+  "ticketUrl": null,
+  "ticketUrl_note": "town, no single steward",
+  "wiki": "Traralgon",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "access_note": "Evidence shows it is a regional service town with no named visitor draw; marginal under COVERAGE (town is a spot only when a draw). Owner/judge to review.",
+  "unresolved": [
+   "visitlatrobe.com.au fetch failed; no visitor-source draw found"
+  ]
+ },
+ {
+  "id": "old-gippstown",
+  "name": "Old Gippstown",
+  "facts": [
+   {
+    "claim": "Open-air museum and reconstructed pioneer township in Moe, Victoria",
+    "source_url": "https://en.wikipedia.org/wiki/Old_Gippstown"
+   },
+   {
+    "claim": "Located at 211 Lloyd Street, Moe",
+    "source_url": "https://www.oldgippstown.com.au/"
+   },
+   {
+    "claim": "Open Wednesday to Sunday",
+    "source_url": "https://www.oldgippstown.com.au/"
+   }
+  ],
+  "free": false,
+  "costMin": 15,
+  "costMax": 15,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.oldgippstown.com.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.oldgippstown.com.au/",
+  "ticketUrl_note": "homepage title names Old Gippstown",
+  "wiki": "Old Gippstown",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "access_note": "Open Wed-Sun only; cafe temporarily closed from 24 Aug 2026",
+  "unresolved": []
+ },
+ {
+  "id": "walhalla",
+  "name": "Walhalla",
+  "facts": [
+   {
+    "claim": "Gold-mining town founded in late 1862, home to about 4,000 at its peak and about 20 permanent residents now",
+    "source_url": "https://en.wikipedia.org/wiki/Walhalla,_Victoria"
+   },
+   {
+    "claim": "Long Tunnel Extended Gold Mine runs underground tours; adult $25 (excl. GST)",
+    "source_url": "https://www.walhallaheritage.com/long-tunnel-extended-mine"
+   },
+   {
+    "claim": "Walhalla Goldfields Railway, cemetery, post office museum and ghost tours are listed attractions",
+    "source_url": "https://www.walhallaheritage.com/"
+   },
+   {
+    "claim": "Walhalla Historic Area is a Parks Victoria-managed area",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/walhalla-historic-area"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/walhalla-historic-area",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.walhallaheritage.com/",
+  "ticketUrl_note": "Walhalla Heritage board site, title 'Visit Walhalla'; redirected from walhalla.org.au",
+  "wiki": "Walhalla, Victoria",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "access_note": "Town is free to wander; mine tour (adult $25, tour basis) is an extra, not the spot price. Parks Victoria page lists no entry fee but not explicitly confirmed.",
+  "unresolved": []
+ },
+ {
+  "id": "baw-baw-national-park",
+  "name": "Baw Baw National Park",
+  "facts": [
+   {
+    "claim": "About 13,530 ha national park on the Victorian Alps/Gippsland boundary, about 120 km east of Melbourne",
+    "source_url": "https://en.wikipedia.org/wiki/Baw_Baw_National_Park"
+   },
+   {
+    "claim": "Covers much of the Baw Baw Plateau with snowgum forest and wildflowers in spring",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/baw-baw-national-park"
+   },
+   {
+    "claim": "Mushroom Rocks is a maze of giant granite tors on the Australian Alps Walking Track",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/baw-baw-national-park"
+   },
+   {
+    "claim": "Mount St Gwinear is a free-entry snow-play area in winter",
+    "source_url": "https://www.parks.vic.gov.au/places-to-see/parks/baw-baw-national-park"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.parks.vic.gov.au/places-to-see/parks/baw-baw-national-park",
+  "cost_confidence": "secondary",
+  "ticketUrl": "https://www.parks.vic.gov.au/places-to-see/parks/baw-baw-national-park",
+  "ticketUrl_note": "Parks Victoria page, title names the park",
+  "wiki": "Baw Baw National Park",
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "access_note": "Victorian national parks charge no entry; page shows no fee. Consider costBasis 'park' with free:true per owner convention.",
+  "unresolved": []
+ },
+ {
+  "id": "mount-baw-baw",
+  "name": "Mount Baw Baw",
+  "facts": [
+   {
+    "claim": "Alpine resort village at 1450 m amongst snow gum forest on the Baw Baw Plateau",
+    "source_url": "https://www.mountbawbaw.com.au/"
+   },
+   {
+    "claim": "Melbourne's closest ski and snow resort",
+    "source_url": "https://www.mountbawbaw.com.au/"
+   },
+   {
+    "claim": "Summer activities include hiking, mountain biking and walks",
+    "source_url": "https://www.mountbawbaw.com.au/"
+   },
+   {
+    "claim": "Summit on the Baw-Baw Plateau, Great Dividing Range, Gippsland",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Baw_Baw"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_source_url": "https://www.mountbawbaw.com.au/",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.mountbawbaw.com.au/",
+  "ticketUrl_note": "homepage title 'Mt Baw Baw'",
+  "wiki": "Mount Baw Baw",
+  "visitHoursMin": 1,
+  "visitHoursMax": 4,
+  "access_note": "Resort entry free in green season; a winter resort entry fee probably applies (not found on page). Facilities closed in green season.",
+  "unresolved": [
+   "winter resort entry fee not found"
+  ]
+ },
+ {
+  "id": "toorongo-falls",
+  "name": "Toorongo Falls",
+  "facts": [
+   {
+    "claim": "Reserve protects Toorongo Falls and Amphitheatre Falls, about 6 km north-east of Noojee",
+    "source_url": "https://en.wikipedia.org/wiki/Toorongo_Falls"
+   },
+   {
+    "claim": "Walk passes through tall, wet forest with several viewpoints of the falls and continues to Amphitheatre Falls",
+    "source_url": "https://www.exploreoutdoors.vic.gov.au/activities/camping/toorongo-falls"
+   },
+   {
+    "claim": "Main falls about 25 m high, with a viewing platform",
+    "source_url": "https://www.visitgippsland.com.au/products/toorongo-falls-1"
+   }
+  ],
+  "free": true,
+  "costMin": 0,
+  "costMax": 0,
+  "currency": "AUD",
+  "costBasis": "open",
+  "cost_source_url": "https://www.exploreoutdoors.vic.gov.au/activities/camping/toorongo-falls",
+  "cost_confidence": "official page",
+  "ticketUrl": "https://www.exploreoutdoors.vic.gov.au/activities/camping/toorongo-falls",
+  "ticketUrl_note": "Victorian Government forests site (managing agency), 'No fees payable'; page title Toorongo Falls",
+  "wiki": "Toorongo Falls Reserve",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "access_note": null,
+  "unresolved": []
+ }
+]
