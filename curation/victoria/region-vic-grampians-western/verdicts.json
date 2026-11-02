@@ -23,11 +23,15 @@
   "name": "Dunkeld",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One counted source; village below Mt Sturgeon/Abrupt, Royal Mail Hotel dining; sights are separate peaks.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: southern Grampians gateway village named in Wikivoyage Grampians National Park (Grampians Tourist Road to Dunkeld) and regional board; village with Mt Sturgeon walks and dining; second-tier stop. Objection: draws are separate peaks.",
+  "decided_by": "recheck",
   "views": 7732,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+  ]
  },
  {
   "name": "Horsham",
@@ -53,11 +57,16 @@
   "name": "Stawell",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One counted source; gold-rush town, Pioneer Cemetery, Stawell Gift is an event (rule 4).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1/town test: regional hub and Grampians gateway listed in Wikivoyage Wimmera and Grampians pages; gold-rush town (Big Hill, Pioneer Cemetery). Stawell Gift excluded as an event.",
+  "decided_by": "recheck",
   "views": 16239,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera",
+   "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+  ]
  },
  {
   "name": "Ararat",
@@ -73,11 +82,15 @@
   "name": "Natimuk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One counted source; arts and climbing village at Mt Arapiles foot, with silo art; Arapiles is the draw.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: the draw is Mt Arapiles beside it; town itself is a wrapper, no distinct sight a source singles out.",
+  "decided_by": "recheck",
   "views": 6982,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera"
+  ]
  },
  {
   "name": "Cavendish",
@@ -103,21 +116,27 @@
   "name": "Great Western",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One counted source; Seppelt Great Western winery and underground drives are the draw, a venue-level sight.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1/2: Seppelt Great Western winery with its historic underground drives is a visitor draw in guides; a permanent tour venue. Objection: venue-level sight.",
+  "decided_by": "recheck",
   "views": 2544,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera"
+  ]
  },
  {
   "name": "Pomonal",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One counted source; wine and gallery village; stop is mostly wineries/shops.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2: wineries, gallery and shops; no distinct sight.",
+  "decided_by": "recheck",
   "views": 1468,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Wartook Valley",
@@ -133,11 +152,15 @@
   "name": "St Arnaud",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One counted source; silo art and heritage streetscape; arguably a town stop.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: town wrapper; its silo art and murals are kept as their own entry.",
+  "decided_by": "recheck",
   "views": 13641,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera"
+  ]
  },
  {
   "name": "Edenhope",
@@ -234,10 +257,12 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no visitor-source listing found; small district town.",
-  "decided_by": "judge",
+  "reason": "Rule 1: no visitor-source listing; small district town.",
+  "decided_by": "recheck",
   "views": 6885,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": []
  },
  {
   "name": "Lake Bolac",
@@ -283,11 +308,13 @@
   "name": "Black Range State Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Two board listings but only a generic description; no named sight found; Parks Victoria page was generic.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 1/2: no named sight a visitor source singles out; generic park text.",
+  "decided_by": "recheck",
   "views": 434,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Dergholm State Park",
@@ -324,20 +351,24 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "One board source; fetched Parks Victoria text was generic; volcanic peak walks unverified.",
-  "decided_by": "judge",
+  "reason": "For: volcano with summit walk and lava features, Parks Victoria managed. Against: only one board source and generic text, little verified to do.",
+  "decided_by": "recheck",
   "views": 337,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "St Arnaud Range National Park",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "One board source; Parks Victoria URL guess 404 (unresolved); lookouts north of town.",
-  "decided_by": "judge",
+  "reason": "For: lookouts and walks above St Arnaud, national park. Against: one source, no verified named sight, Parks Victoria page unresolved.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Budj Bim National Park",
@@ -403,31 +434,39 @@
   "name": "Wannon Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board listing, text not recovered; known southern waterfall with lookout.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1/2: waterfall with lookout platform and picnic reserve 20 km from Hamilton; named by Visit Southern Grampians, Greater Hamilton and Visit Grampians. Objection: falls trickle in summer.",
+  "decided_by": "recheck",
   "views": 486,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitsoutherngrampians.com.au/wannon-falls/"
+  ]
  },
  {
   "name": "Splitters Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board source; walk from town to falls; minor.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 1/3: one board source, minor short walk, near-unknown (27 views).",
+  "decided_by": "recheck",
   "views": 27,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Fish Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board source; 60 m falls, a short walk.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: minor fall within the Grampians trail network, one source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Broken Falls",
@@ -483,11 +522,13 @@
   "name": "Lower Waterfalls of Gar",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board source; new track to falls, tied to a longer walk.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: part of a longer walk; one source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Venus Baths",
@@ -573,11 +614,13 @@
   "name": "Mount Zero",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board source; walk to Mount Zero.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: a walk within the Grampians, one source, no distinct draw.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Mount Abrupt",
@@ -613,21 +656,25 @@
   "name": "Borella Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board source; Mount Cole forest walk, outside the Grampians.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: Mount Cole forest walk, one source, minor.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Pomonal Tunnel Walking Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board source; short history walk through a tunnel.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: short history walk, one source, minor.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Grampians Peaks Trail",
@@ -713,51 +760,64 @@
   "name": "Rosehaven Farms",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Two board listings; farm animal experience; operator-style.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Operator-style farm experience; not a distinct place draw.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Brambuk",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage \"must-visit\" cultural centre, but source says closed 2022-2024 and reopening status is unverified.",
-  "decided_by": "judge",
+  "reason": "For: Wikivoyage Grampians calls it a must-visit Aboriginal cultural centre. Against: Parks Victoria says the cultural centre is closed for refurbishment (only information centre and shop open), targeting reopening mid-2026; reopening unconfirmed. Keep if the owner confirms it has reopened.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Grampians_National_Park",
+   "https://www.parks.vic.gov.au/places-to-see/sites/brambuk-the-national-park-and-cultural-centre"
+  ]
  },
  {
   "name": "Lake Wartook",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Two board pages; reservoir for canoeing/fishing.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2: reservoir for fishing/paddling; no distinct draw.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Rocklands Reservoir",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Two board pages; large reservoir for fishing/camping.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2: fishing/camping reservoir; local use.",
+  "decided_by": "recheck",
   "views": 400,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Lake Fyans",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One board source; lake for swimming and paddling, foot of the park.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: foot-of-park lake, camping and swimming; minor.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Lake Bellfield",
@@ -793,11 +853,13 @@
   "name": "Lake Albacutya",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1+2: two tourism pages name it, but it is a remote, usually dry Ramsar lake with little to do.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2: remote, usually dry lake with little to do.",
+  "decided_by": "recheck",
   "views": 971,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Lake Wallace",
@@ -813,21 +875,27 @@
   "name": "Lake Hindmarsh",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one source; Victoria's largest freshwater lake when full, with a reserve and camping, but often dry.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2: often dry, remote; little to do.",
+  "decided_by": "recheck",
   "views": 3403,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Pink Lake Dimboola",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: two visitgrampians pages name it, but a small salt lake with a lookout-style short stop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1/3: Wikivoyage Dimboola lists it first under See, plus two Visit Grampians pages; pink salt lake roadside stop on the Western Highway (quirky icon). Objection: short stop and colour varies.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Dimboola"
+  ]
  },
  {
   "name": "Lake Tyrrell",
@@ -853,41 +921,55 @@
   "name": "Lake Colac",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage Colac mentions the lake and gardens as a short walk from town; a lakeside stroll and birdwatching.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: lakeside promenade tied to Colac town and botanic gardens; one source, short stroll.",
+  "decided_by": "recheck",
   "views": 2669,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Colac"
+  ]
  },
  {
   "name": "Lake Bullen Merri",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source found in this pass (visitor sources not reached), so unresolved, not evidence against; crater lakes near Camperdown are a known scenic and swimming/rowing stop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: Wikivoyage Camperdown lists 'Visit Lake Bullen Merri' (crater lake, swimming, rowing) with a lookout.",
+  "decided_by": "recheck",
   "views": 1726,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Camperdown"
+  ]
  },
  {
   "name": "Lake Gnotuk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source found in this pass (visitor sources not reached), so unresolved, not evidence against; crater lakes near Camperdown are a known scenic and swimming/rowing stop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: Wikivoyage Camperdown lists Gnotuk Lookout and the lake; separate salt crater lake from Bullen Merri. Objection: close to Bullen Merri.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Camperdown"
+  ]
  },
  {
   "name": "Lake Corangamite",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1+2: no counted source, and a large salt lake with no visitor access or activity.",
-  "decided_by": "judge",
+  "reason": "Rule 1+2: no counted source; salt lake with no visitor access.",
+  "decided_by": "recheck",
   "views": 5965,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": []
  },
  {
   "name": "Lake Surprise",
@@ -903,11 +985,15 @@
   "name": "Natural Bridge",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1+3: Wikivoyage Budj Bim names a lava natural bridge, but a minor feature of the park walk.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: minor feature within the Lake Surprise walks at Budj Bim, which Wikivoyage lists as one attraction.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Budj_Bim_National_Park"
+  ]
  },
  {
   "name": "Budj Bim Cultural Experience",
@@ -923,61 +1009,77 @@
   "name": "Princess Margaret Rose Caves",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No visitor source reached in this pass (unresolved); a guided tourist cave in Lower Glenelg National Park, a real attraction.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1/2: Lonely Planet lists it as a top choice; guided 45-minute tours of a heavily decorated cave. Note: one listing says closed until late 2026, confirm status.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.lonelyplanet.com/points-of-interest/princess-margaret-rose-cave/1099805"
+  ]
  },
  {
   "name": "Glenelg River",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source in this pass (unresolved); river gorge with canoe and cruise base, the park's main feature.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: the river is the feature of Lower Glenelg National Park, a larger spot; its cruise is a vehicle, not a place.",
+  "decided_by": "recheck",
   "views": 3355,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Great South West Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source reached (Wikivoyage has no page); a 250 km loop walk promoted by Parks Victoria, a long multi-day track.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: 250 km loop from Portland promoted by Parks Victoria and Visit Melbourne; multi-day track (Hump Ridge precedent).",
+  "decided_by": "recheck",
   "views": 823,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://bookings.parks.vic.gov.au/great-south-west-walk"
+  ]
  },
  {
   "name": "Nelson, Victoria",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source in this pass; a river-mouth gateway village, base for Glenelg boat trips.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: river-mouth village whose draw is the Glenelg cruise; no distinct sight a source names.",
+  "decided_by": "recheck",
   "views": 4841,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Mount Rouse",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Penshurst tourism page names the volcanic summit walk and views.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: Penshurst tourism page names the volcanic summit walk and views; scenic volcano stop. Objection: one source.",
+  "decided_by": "recheck",
   "views": 895,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Penshurst Volcanoes Discovery Centre",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1+2: one tourism page names it; small volcano museum.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 1/2: one source, small local museum.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Penshurst Botanic Gardens",
@@ -1033,11 +1135,13 @@
   "name": "Dunkeld Arboretum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one tourism page; arboretum beside Dunkeld.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: local arboretum, one source, short visit.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Dunkeld Heritage Trail",
@@ -1063,11 +1167,13 @@
   "name": "Grampians Rail Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one tourism page; an 11 km trail near Stawell.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: 11 km local trail, one source.",
+  "decided_by": "recheck",
   "views": 272,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Hamilton Botanic Gardens",
@@ -1174,10 +1280,12 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 1: one tourism page names it; a quirky small museum on the Vegemite inventor.",
-  "decided_by": "judge",
+  "reason": "For: quirky museum on the Vegemite inventor, named by a tourism page. Against: one source, small, opening arrangements unverified.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "J Ward",
@@ -1213,11 +1321,13 @@
   "name": "Stawell Historical Society and Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: two sources name it; local history museum in the old courthouse.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2/3: local history museum, minor.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Stawell Gift Hall of Fame",
@@ -1263,11 +1373,13 @@
   "name": "Australian Light Horse Heritage Collection",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one source; memorabilia collection at Dunkeld.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: small memorabilia collection, one source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Woods' Heritage Museum",
@@ -1413,11 +1525,15 @@
   "name": "Arkona Silo Art",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1+3: Wimmera Mallee page names it, but it is one of the smaller, more remote silos on the trail; short roadside stop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: Wimmera Mallee Silo Art Trail stop named by tourism board; quirky roadside icon. Objection: remote, brief stop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera"
+  ]
  },
  {
   "name": "Nulawil Silo Art",
@@ -1433,21 +1549,29 @@
   "name": "Serviceton Silo Art",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1+3: Wimmera Mallee page names it, but it is one of the smaller, more remote silos on the trail; short roadside stop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: Silo Art Trail stop named by tourism board; roadside icon. Objection: remote, brief stop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera"
+  ]
  },
  {
   "name": "Woomelang Silo Art",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1+3: Wimmera Mallee page names it, but it is one of the smaller, more remote silos on the trail; short roadside stop.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: Silo Art Trail stop named by tourism board; roadside icon. Objection: remote, brief stop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera"
+  ]
  },
  {
   "name": "Sheep Hills Silo Art",
@@ -1483,11 +1607,15 @@
   "name": "St Arnaud Silo Art and Murals",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1+3: two tourism pages; silo and wall murals in town, a small trail of art.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rule 1: two tourism pages; silo art plus town murals trail.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wimmera"
+  ]
  },
  {
   "name": "St Arnaud Art Gallery - Raillery Hub",

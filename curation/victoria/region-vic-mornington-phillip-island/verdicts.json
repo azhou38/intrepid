@@ -64,10 +64,14 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1/2: single agency listing, a local garden with no visitor source describing a draw",
-  "decided_by": "judge",
+  "reason": "Rule 1: still only one agency listing and no visitor source describing a draw beyond a local council garden; short stop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+  ]
  },
  {
   "name": "Two Bays Walking Trail",
@@ -83,11 +87,16 @@
   "name": "Coastal Walk (Mornington Peninsula)",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: single Parks Victoria source for a two-day clifftop walk, a named walk like Hump Ridge",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Parks Victoria's national park page promotes it as the two-day clifftop Coastal Walk through ocean beaches; a named multi-day walk like Hump Ridge. Objection: single agency source, part of the national park; but a linear route is its own draw.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park",
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park/attractions/coastal-walk"
+  ]
  },
  {
   "name": "Cape Schanck Lighthouse",
@@ -144,10 +153,15 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 1/2: Parks Victoria names the largest native bushland with kangaroos and tracks; one source",
-  "decided_by": "judge",
+  "reason": "Rule 1/3: Parks Victoria names it as the kangaroo haven and largest native bushland on the peninsula. For: distinct wildlife and tracks, inland from coast sections. Against: a section of Mornington Peninsula National Park, one source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park",
+   "https://www.parks.vic.gov.au/places-to-see/parks/greens-bush"
+  ]
  },
  {
   "name": "Mornington Peninsula National Park",
@@ -183,11 +197,16 @@
   "name": "Mushroom Reef Marine Sanctuary",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one Parks Victoria source; snorkelling and rockpools at a marine sanctuary",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Parks Victoria lists the sanctuary at Flinders Ocean Beach for rockpooling and snorkelling; second-tier natural stop. Objection: one source, landslip advisory nearby.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park",
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park/attractions/mushroom-reef-marine-sanctuary"
+  ]
  },
  {
   "name": "Gunnamatta Beach",
@@ -223,11 +242,15 @@
   "name": "Sorrento Front Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one Wikivoyage source for a calm bay beach with pier area",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Wikivoyage singles out Sorrento's calm bay beach beside the ocean beach; second-tier beach stop. Objection: one source, ordinary bay beach.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mornington_Peninsula"
+  ]
  },
  {
   "name": "Koonya Ocean Beach",
@@ -263,11 +286,15 @@
   "name": "Fingal Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one Parks Victoria source; sheltered beach with picnic area",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: Parks Victoria mentions it only as a picnic/beach access within Mornington Peninsula National Park alongside the Fingal and Coppins tracks; ordinary beach, part of the park, no distinct draw named.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+  ]
  },
  {
   "name": "Rye Ocean Beach",
@@ -304,20 +331,29 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source found; Wikipedia only (the SS Cheviot wreck and the 1967 Harold Holt disappearance)",
-  "decided_by": "judge",
+  "reason": "Rule 3/2: Parks Victoria (Point Nepean) only has a viewing area and memorial overlooking the beach (Holt disappearance, SS Cheviot wreck) on the Cheviot Hill walk; part of Point Nepean spot and a hazardous beach not visited itself.",
+  "decided_by": "recheck",
   "views": 17068,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/point-nepean-national-park"
+  ]
  },
  {
   "name": "Portsea",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/3: Wikivoyage lists the resort village; the town is a draw only through its beach and foreshore",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Wikivoyage names Portsea's foreshore pub, sunset and back beach; Parks Victoria lists Portsea Surf Beach; harbour/beach village at the peninsula tip. Objection: one town source, overlaps Point Nepean NP.",
+  "decided_by": "recheck",
   "views": 10912,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mornington_Peninsula",
+   "https://www.parks.vic.gov.au/places-to-see/parks/mornington-peninsula-national-park"
+  ]
  },
  {
   "name": "Sorrento",
@@ -343,11 +379,16 @@
   "name": "Western Port",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/3: a large bay named by Wikivoyage; a body of water rather than one place to visit",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: a large bay, not one place to visit; its draws are listed as individual spots (Rhyll, French Island, Churchill Island).",
+  "decided_by": "recheck",
   "views": 8654,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Phillip_Island",
+   "https://www.visitphillipisland.com.au/see-do/nature-wildlife/nature-reserves"
+  ]
  },
  {
   "name": "Coolart Wetlands and Homestead",
@@ -383,11 +424,15 @@
   "name": "McCrae Homestead",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: single source (Parks Victoria listing); a small National Trust house, open limited days",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-2: National Trust page confirms a public heritage homestead with entry charge ($15 adult, last entry 3pm) and Parks Victoria/Wikivoyage listing. Objection: small house, limited open days.",
+  "decided_by": "recheck",
   "views": 1535,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.nationaltrust.org.au/places/mccrae-homestead/"
+  ]
  },
  {
   "name": "Peninsula Hot Springs",
@@ -403,21 +448,29 @@
   "name": "Alba Thermal Springs & Spa",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one tourism-board source; a day spa near Peninsula Hot Springs",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Australian Traveller and others cover a 15 ha thermal springs complex with 31 pools, a paid day-visit attraction like Peninsula Hot Springs. Objection: new commercial spa, premium price.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.australiantraveller.com/vic/mornington-peninsula/alba-thermal-springs"
+  ]
  },
  {
   "name": "Mornington",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/3: Wikivoyage describes the largest peninsula town with main street, beach and pier",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Wikivoyage calls it the peninsula's largest town with a long main street running to the beach and pier; a harbour town a guide recommends. Objection: one source, generic town.",
+  "decided_by": "recheck",
   "views": 14625,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mornington_Peninsula"
+  ]
  },
  {
   "name": "Mornington Pier",
@@ -443,11 +496,16 @@
   "name": "Mornington Railway",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 4/2: heritage steam and diesel trains on only the first three Sundays a month; ride is the attraction, no distinct destination at the end",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 4/2: heritage trains run only on the first three Sundays of each month between Moorooduc and Mornington; the ride is the attraction and operates as a scheduled occasion, not a place available whenever one arrives.",
+  "decided_by": "recheck",
   "views": 4009,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mornington_Peninsula",
+   "https://morningtonrailway.org.au/"
+  ]
  },
  {
   "name": "Dromana",
@@ -463,11 +521,15 @@
   "name": "Dromana Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one Wikivoyage source; bay beach lined with painted boat sheds",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Wikivoyage highlights the beach lined with brightly painted boat sheds; a recognisable photo stop. Objection: one source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mornington_Peninsula"
+  ]
  },
  {
   "name": "Mount Martha",
@@ -504,10 +566,14 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 1: one Wikivoyage source; rock-platform bay with rock pools at Blairgowrie",
-  "decided_by": "judge",
+  "reason": "Rule 1: Wikivoyage names Blairgowrie's Bridgewater Bay for rock pools safe for swimming at low tide. For: a named natural feature. Against: single source, tide-dependent, local beach.",
+  "decided_by": "recheck",
   "views": 1938,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mornington_Peninsula"
+  ]
  },
  {
   "name": "Rye",
@@ -573,11 +639,15 @@
   "name": "Red Hill Cheese",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 2: cellar door and tastings, open weekends and public holidays only; a producer",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2/1: a single producer's cellar door, open weekends and public holidays only; not a distinct attraction.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mornington_Peninsula"
+  ]
  },
  {
   "name": "Mornington Main Street Market",
@@ -683,31 +753,43 @@
   "name": "A Maze'N Things",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: one Wikivoyage source; family attraction (maze, mini-golf, ropes)",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Wikivoyage lists a daily family attraction (maze averaging 45 min, mini-golf, ropes course, illusions hall) with entry fee. Objection: one source, kids' commercial attraction, older listing.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Phillip_Island"
+  ]
  },
  {
   "name": "Phillip Island Chocolate Factory",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: one Wikivoyage source; free retail and cafe plus a paid interactive tour",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Wikivoyage describes a long-visit attraction with the world's largest chocolate waterfall and interactive displays, open daily. Objection: one source, part retail.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Phillip_Island"
+  ]
  },
  {
   "name": "Purple Hen Wines",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/2: one Wikivoyage source; the island's best-known winery with cellar door",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 2/3: an individual winery cellar door; Wikivoyage lists it but no distinct attraction beyond tasting.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Phillip_Island"
+  ]
  },
  {
   "name": "Rhyll",
@@ -723,11 +805,16 @@
   "name": "Rhyll Inlet and Conservation Hill",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: one Wikivoyage source; wetland with a boardwalk pathway and birdlife",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Wikivoyage and Visit Phillip Island both describe boardwalks through Ramsar-listed mangroves and a Conservation Hill observation tower with birdlife. Objection: modest birdwatching stop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Phillip_Island",
+   "https://www.visitphillipisland.com.au/see-do/nature-wildlife/nature-reserves"
+  ]
  },
  {
   "name": "Cowes",
@@ -803,31 +890,37 @@
   "name": "Fairhaven Northern Beach Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/3: one Parks Victoria source for a track on French Island; part of the larger island spot",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: a track on French Island, part of the larger island spot; single agency source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Old Coast Road Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/3: one Parks Victoria source for a track on French Island; part of the larger island spot",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: a track on French Island, part of the larger island spot; single agency source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "West Coast Wetlands Walking Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1/3: one Parks Victoria source for a track on French Island; part of the larger island spot",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Rule 3: a track on French Island, part of the larger island spot; single agency source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Tankerton Foreshore",
@@ -843,71 +936,104 @@
   "name": "Bunurong Marine National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "reject",
-  "reason": "Rule 1: no counted source found (Wikipedia mentions only); the Wikivoyage Bass Coast and Inverloch pages checked did not list it",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Parks Victoria and Visit Gippsland both promote rockpooling on intertidal platforms, snorkelling, Eagles Nest rock stack and the Bunurong Coastal Drive. Objection: tide-dependent, hazardous beaches.",
+  "decided_by": "recheck",
   "views": 923,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/bunurong-marine-national-park",
+   "https://www.visitgippsland.com.au/products/bunurong-marine-national-park",
+   "https://www.parks.vic.gov.au/places-to-see/parks/yallock-bulluk-marine-and-coastal-park/attractions/cape-paterson---inverloch"
+  ]
  },
  {
   "name": "Inverloch Surf Beach",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source found",
-  "decided_by": "judge",
+  "reason": "Rule 3: Parks Victoria names Inverloch's patrolled beach only as part of the town; near-duplicate of Inverloch.",
+  "decided_by": "recheck",
   "views": 17204,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/yallock-bulluk-marine-and-coastal-park/attractions/cape-paterson---inverloch"
+  ]
  },
  {
   "name": "Inverloch",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage has a page for the town but the checked page lists no See entries for beaches or sights",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Rules 1-3: Parks Victoria and Visit Gippsland name it as the well-serviced town with visitor centre, patrolled beach, Screw Creek walk and Townsend Bluff lookout, and base for Bunurong coast and dinosaur fossil coast. Objection: Wikivoyage page is a stub.",
+  "decided_by": "recheck",
   "views": 17204,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/yallock-bulluk-marine-and-coastal-park/attractions/cape-paterson---inverloch",
+   "https://www.visitgippsland.com.au/products/bunurong-marine-national-park"
+  ]
  },
  {
   "name": "Shack Bay",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source found (Wikipedia mentions only); the Wikivoyage Bass Coast and Inverloch pages checked did not list it",
-  "decided_by": "judge",
+  "reason": "Rule 3: a clifftop car park and beach inside Bunurong Marine National Park (Parks Victoria names it only as a snorkel/dive access point); part of the park spot.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/bunurong-marine-national-park",
+   "https://www.parks.vic.gov.au/places-to-see/parks/yallock-bulluk-marine-and-coastal-park/attractions/cape-paterson---inverloch"
+  ]
  },
  {
   "name": "Undertow Bay",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source found (Wikipedia mentions only); the Wikivoyage Bass Coast and Inverloch pages checked did not list it",
-  "decided_by": "judge",
+  "reason": "Rule 3: western end of Bunurong Marine National Park, mentioned only as a boundary point; part of the park spot.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/bunurong-marine-national-park"
+  ]
  },
  {
   "name": "Cape Paterson Surf Beach",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source found (Wikipedia mentions only); the Wikivoyage Bass Coast and Inverloch pages checked did not list it",
-  "decided_by": "judge",
+  "reason": "Rule 3: Parks Victoria mentions the patrolled beach only as the western end of the Cape Paterson-Inverloch coast; near-duplicate of the coast/Bunurong spot.",
+  "decided_by": "recheck",
   "views": 5233,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/yallock-bulluk-marine-and-coastal-park/attractions/cape-paterson---inverloch"
+  ]
  },
  {
   "name": "Cape Paterson",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1/3: no counted source found; Wikivoyage mentions it only as a beachside town near Wonthaggi",
-  "decided_by": "judge",
+  "reason": "Rule 3: Parks Victoria and Visit Gippsland name it as the coastal hamlet where the Bunurong Coastal Drive begins, with no distinct see/do of its own; Wikivoyage page is a stub.",
+  "decided_by": "recheck",
   "views": 5233,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/yallock-bulluk-marine-and-coastal-park/attractions/cape-paterson---inverloch",
+   "https://www.visitgippsland.com.au/products/bunurong-marine-national-park"
+  ]
  },
  {
   "name": "Wonthaggi",
@@ -954,9 +1080,13 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Rule 1: no counted source found (Wikipedia mentions only); the Wikivoyage Bass Coast and Inverloch pages checked did not list it",
-  "decided_by": "judge",
+  "reason": "Rule 1: Wikivoyage page is an empty stub and no tourism or Parks Victoria source found naming it as a visitor stop on a long Ninety Mile Beach stretch.",
+  "decided_by": "recheck",
   "views": 1555,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Woodside_Beach"
+  ]
  }
 ]

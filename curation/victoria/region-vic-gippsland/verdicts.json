@@ -43,21 +43,30 @@
   "name": "Picnic Bay",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic names it on the beach walk; real beach but one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "700 m walk to Whisky Bay, Picnic Point track closed; near-duplicate of Whisky Bay/Tidal River beaches (rule 3).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+  ]
  },
  {
   "name": "Whisky Bay",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic names it among secluded beaches; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names the sunset beach walk and Parks Victoria has a Whisky Bay site page: two counted sources, a beach with a short walk (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wilsons_Promontory_National_Park",
+   "https://www.parks.vic.gov.au/places-to-see/sites/whisky-bay-"
+  ]
  },
  {
   "name": "Mount Oberon",
@@ -73,31 +82,44 @@
   "name": "Mount Bishop",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic names it as alternative summit walk; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria dedicated walk page (summit views over Squeaky Beach and Whisky Bay, ~2.5 hr) plus Traveller article: a distinct named hike (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/mount-bishop",
+   "https://www.traveller.com.au/a-night-at-the-prom-1wboq"
+  ]
  },
  {
   "name": "Lilly Pilly Gully",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic walk through rainforest; family boardwalk; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria day walks list the rainforest nature walk, short and prams-friendly; a distinct easy walk (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+  ]
  },
  {
   "name": "Tongue Point",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic coastal walk destination; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria has a dedicated Darby River to Tongue Point walk page; coastal headland hike (rule 1,2). Objection: one source, long walk.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/darby-river-to-tongue-point"
+  ]
  },
  {
   "name": "Sparkes Lookout",
@@ -114,10 +136,14 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Short walk to a Parks Vic lookout; one source.",
-  "decided_by": "judge",
+  "reason": "For: Parks Vic lookout walk (6 km return, 2 hr). Against: described as a lesser-known walk, one source, a viewpoint on a track.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+  ]
  },
  {
   "name": "Wilsons Promontory Lightstation",
@@ -134,20 +160,30 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Parks Vic remote beach on Southern Circuit; one source.",
-  "decided_by": "judge",
+  "reason": "For: one of the Prom's most popular walks and a remote beach (Parks Vic, Traveller). Against: boardwalk closed after storm damage, long 20 km return.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks",
+   "https://www.traveller.com.au/a-night-at-the-prom-1wboq"
+  ]
  },
  {
   "name": "Cleft Island (Skull Rock)",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage names this rock feature reached by boat tour; one source.",
-  "decided_by": "judge",
+  "reason": "For: Wikivoyage See entry and tourist-guide listing, a 60 m cave in a granite island. Against: reached only by boat, nowhere to land; visit is a tour not a place.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Wilsons_Promontory_National_Park",
+   "https://www.aaa.com/tripcanvas/attraction/cleft-island-skull-rock-VA18993"
+  ]
  },
  {
   "name": "Fairy Cove",
@@ -164,10 +200,12 @@
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "Parks Vic Big Drift Walk is closed; no visitor source supports a stop (rule 1,2).",
-  "decided_by": "judge",
+  "reason": "Walk closed; no counted visitor source (rule 1,2).",
+  "decided_by": "recheck",
   "views": 2809,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": []
  },
  {
   "name": "Croajingolong National Park",
@@ -213,31 +251,44 @@
   "name": "Rame Head",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists headland; remote hike.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage Croajingolong only lists the name; remote multi-day hike, no visitor detail (rule 1,2).",
+  "decided_by": "recheck",
   "views": 4770,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Croajingolong_National_Park"
+  ]
  },
  {
   "name": "Mount Everard",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Short Parks Vic summit walk; one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Only a Wikivoyage Croajingolong heading, no visitor detail found (rule 1).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Croajingolong_National_Park"
+  ]
  },
  {
   "name": "Fly Cove Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic walk to seal-resting islets; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Gippsland product page (Wingan Inlet to Fly Cove boardwalk over paperbark wetlands to a beach where Bass anchored) plus Traveller Wingan guide (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitgippsland.com.au/products/wingan-inlet-to-fly-cove-walking-track",
+   "https://www.traveller.com.au/genoa--places-to-see-6bev"
+  ]
  },
  {
   "name": "Mallacoota",
@@ -253,11 +304,15 @@
   "name": "Captain Stephenson's Point",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage See lists lookout, 24/7; one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage lists a lookout in Mallacoota, a short look only; minor roadside outlook (rule 3).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mallacoota"
+  ]
  },
  {
   "name": "Bastion Point",
@@ -273,21 +328,31 @@
   "name": "Genoa Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Visit East Gippsland itinerary stop; short walk from road; one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Small 1-2 m cascades on a basalt shelf, dry much of the year, unmarked access road; not a distinct draw (rule 2,3).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://waterfallseasons.com/waterfalls-in-victoria-genoa-falls-east-gippsland.htm",
+   "https://www.visiteastgippsland.com.au/?p=10976"
+  ]
  },
  {
   "name": "Genoa Peak",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Itinerary names the climb with ladders; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit East Gippsland itinerary and Parks Vic Croajingolong name the climb with wide views over lakes and coast: a distinct hike (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visiteastgippsland.com.au/?p=10976",
+   "https://www.parks.vic.gov.au/places-to-see/parks/croajingolong-national-park/attractions/cape-howe-and-mallacoota"
+  ]
  },
  {
   "name": "Gabo Island Lightstation",
@@ -304,20 +369,29 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Visit East Gippsland recommended beach; one source.",
-  "decided_by": "judge",
+  "reason": "For: Visit East Gippsland itinerary and scenic-drives sheet name it, coastal walk to Shipwreck Beach. Against: same tourism board both times, quiet beach, thin detail.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visiteastgippsland.com.au/?p=10976",
+   "https://www.visiteastgippsland.com.au/wp-content/uploads/2025/12/Mallacoota-Scenic-drives.pdf"
+  ]
  },
  {
   "name": "Quarry Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Recommended beach with rock formations; one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Appears only in a scenic-drives list with no access or visitor detail (rule 1).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visiteastgippsland.com.au/wp-content/uploads/2025/12/Mallacoota-Scenic-drives.pdf"
+  ]
  },
  {
   "name": "WWII Bunker Museum",
@@ -353,11 +427,13 @@
   "name": "Tulloch Ard Gorge",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic describes park feature; one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Tulloch Ard Gorge is on the Great Ocean Road, not Gippsland; no Gippsland source found.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Orbost",
@@ -394,10 +470,12 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Parks Vic lists accessible boardwalk; one source.",
-  "decided_by": "judge",
+  "reason": "For: Errinundra Saddle Rainforest Walk, a 1 km boardwalk through old growth (Parks Vic). Against: one source, remote plateau road, a trail within Errinundra National Park.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Ocean View Lookout",
@@ -423,11 +501,15 @@
   "name": "Coopracambra National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic page; remote wilderness with little infrastructure.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage Gippsland mentions only a 4WD link drive; remote, little visitor infrastructure (rule 2).",
+  "decided_by": "recheck",
   "views": 506,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Gippsland"
+  ]
  },
  {
   "name": "Cape Conran Coastal Park",
@@ -453,21 +535,25 @@
   "name": "Lind National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic lists small park with coastal walk; one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Small park, no visitor detail found in any counted source (rule 1).",
+  "decided_by": "recheck",
   "views": 399,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Alfred National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic page exists (forest park, walks); no visitor detail.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Small forest park, no visitor source gives a thing to see or do (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Gippsland Lakes",
@@ -483,11 +569,15 @@
   "name": "Gippsland Lakes Coastal Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic page; wetlands and beach strip.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Broad coastal strip overlapping Ninety Mile Beach and the Gippsland Lakes; no distinct stop named (rule 3).",
+  "decided_by": "recheck",
   "views": 325,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://australiasguide.com/vic/attraction-tour/wellington/seacombe/gippsland-lakes-coastal-park"
+  ]
  },
  {
   "name": "Ninety Mile Beach",
@@ -513,41 +603,59 @@
   "name": "Griffith's Shell Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists quirky shell museum with giant octopus; one source, current opening unverified.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Lakes Entrance lists it as a kitsch roadside icon (giant octopus on the roof, large shell collection). Objection: single source, opening unverified.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Lakes_Entrance"
+  ]
  },
  {
   "name": "Lake Tyers Beach",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic Lake Tyers State Park page mentions beach; no beach-specific source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Only a general mention of cliff-top walks near Lakes Entrance; no beach-specific counted source (rule 1).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://lakesentrance.com/explore/walks"
+  ]
  },
  {
   "name": "Paynesville",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Lakeside boating village; Wikivoyage page exists but lists nothing to see.",
-  "decided_by": "judge",
+  "reason": "For: gateway to Raymond Island koala walk and lakes boating. Against: Wikivoyage lists nothing to see; the draw is Raymond Island.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Paynesville",
+   "https://www.gippslandmonitor.com.au/p/perfect-weekend-getaway-guide-gippsland-towns"
+  ]
  },
  {
   "name": "Metung",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Known lakeside village; no counted source retrieved (Wikivoyage 404).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Harbour village on the Gippsland Lakes (hot springs, back beach) named by Visit East Gippsland and regional guides: second-tier harbour town. Objection: sources thin.",
+  "decided_by": "recheck",
   "views": 6996,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.gippslandmonitor.com.au/p/perfect-weekend-getaway-guide-gippsland-towns",
+   "https://visiteastgippsland.com.au/things-to-see-a-do/family-friendly"
+  ]
  },
  {
   "name": "Bairnsdale",
@@ -603,21 +711,31 @@
   "name": "Sale Swing Bridge",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists 1883 swing bridge; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage and tourism listing: Australia's oldest surviving swing bridge, rotates 360 degrees, heritage cruise from Port of Sale (rule 1,2).",
+  "decided_by": "recheck",
   "views": 1570,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Sale_(Victoria)",
+   "https://www.spiritoftasmania.com.au/things-to-do/sale-swing-bridge"
+  ]
  },
  {
   "name": "Gippsland Art Gallery",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists free regional gallery; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage lists the free regional gallery (5,000-piece collection) and Visit Gippsland has a Sale page: open to the public (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Sale_(Victoria)",
+   "https://www.visitgippsland.com.au/destinations/central-gippsland/sale"
+  ]
  },
  {
   "name": "Traralgon Railway Reservoir Conservation Reserve",
@@ -644,10 +762,14 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage Gippsland and Parks Vic list rainforest remnant park.",
-  "decided_by": "judge",
+  "reason": "For: Wikivoyage Gippsland names it for rainforest remnants and koalas, on the Grand Strzelecki Track. Against: small park, short visit, one source.",
+  "decided_by": "recheck",
   "views": 594,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Gippsland"
+  ]
  },
  {
   "name": "Stratford Knob Reserve",
@@ -734,10 +856,12 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Parks Vic names giant tors; reached by long walk.",
-  "decided_by": "judge",
+  "reason": "For: granite tors on a half-hour track in Baw Baw National Park (Parks Vic). Against: one source, not at Wilsons Prom as the candidate implied.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Mount Baw Baw",
@@ -753,21 +877,28 @@
   "name": "Tooronga Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists waterfall near Noojee; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Gippsland product page for Toorongo Falls near Noojee (spelling Toorongo; rename): 1.5 km return walk to falls and Amphitheatre Falls, picnic area.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitgippsland.com.au/products/toorongo-falls-1",
+   "https://www.visitgippsland.com.au/news/chasing-waterfalls"
+  ]
  },
  {
   "name": "Mount Erica",
   "existing": false,
   "spot_id": null,
   "verdict": "reject",
-  "reason": "No counted source found; just a peak (rule 1).",
-  "decided_by": "judge",
+  "reason": "A peak with no counted source (rule 1).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "reject",
+  "recheck_sources": []
  },
  {
   "name": "Cape Liptrap Coastal Park",
@@ -783,11 +914,16 @@
   "name": "Inverloch",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Known surf/holiday town; no counted source retrieved (Wikivoyage 404).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Surf beach town with Foreshore Walking Track named by Visit Gippsland and regional guides; second-tier seaside town (rule 1).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitgippsland.com.au/sitemap",
+   "https://en.wikivoyage.org/wiki/Phillip_Island"
+  ]
  },
  {
   "name": "Bunurong Marine National Park",
@@ -803,11 +939,16 @@
   "name": "Port Albert",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Historic port village; no counted source retrieved.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Victoria's first port: maritime museum, 19th-century buildings and heritage walk named by Gippsland guides (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://secretmelbourne.com/port-albert-gippsland-things-to-do/",
+   "https://www.gippslandmonitor.com.au/p/perfect-weekend-getaway-guide-gippsland-towns"
+  ]
  },
  {
   "name": "Foster Dam",
@@ -873,31 +1014,45 @@
   "name": "Coal Creek Community Park and Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Known open-air heritage village at Korumburra; no counted source retrieved.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Gippsland and Visit Prom Country list this recreated coal-mining village (53 buildings, tramway) at Korumburra (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitgippsland.com.au/products/coal-creek-community-park-museum",
+   "https://www.visitpromcountry.com.au/attractions/coal-creek-community-park-and-museum"
+  ]
  },
  {
   "name": "Great Southern Rail Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Visit Gippsland sitemap lists rail trails; long trail, one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Bass Coast page for the 129 km rail trail Nyora to Alberton; pin at a midpoint access (e.g. Fish Creek).",
+  "decided_by": "recheck",
   "views": 2645,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitbasscoast.com.au/great-southern-rail-trail"
+  ]
  },
  {
   "name": "Old Gippstown",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Known heritage village at Moe; no counted source retrieved.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Gippsland lists Old Gippstown Heritage Park at Moe: relocated pioneer township with Cobb & Co. inn, open Wed-Sun (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitgippsland.com.au/products/old-gippstown-heritage-park",
+   "https://www.visitgippsland.com.au/nature-wildlife/old-gippstown---gippslands-heritage-park"
+  ]
  },
  {
   "name": "Wonthaggi State Coal Mine",
@@ -913,21 +1068,28 @@
   "name": "Agnes Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Known 59m waterfall, but candidate location is wrong; no source retrieved.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria Agnes Falls Scenic Reserve and Visit Prom Country: 59 m falls, 200 m walk to viewing platform, free. Re-pin at the reserve near Toora (candidate location was wrong).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/agnes-falls-scenic-reserve",
+   "https://visitpromcountry.com.au/attractions/agnes-falls"
+  ]
  },
  {
   "name": "Bunyip State Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic page for forest park.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "No visitor source names a distinct thing to see or do; general forest park (rule 1,2).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Nooramunga Marine and Coastal Park",
@@ -935,8 +1097,10 @@
   "spot_id": null,
   "verdict": "reject",
   "reason": "Remote marine park with no visitor stop (rule 2).",
-  "decided_by": "judge",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "reject",
+  "recheck_sources": []
  }
 ]

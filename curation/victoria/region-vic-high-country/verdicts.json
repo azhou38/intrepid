@@ -33,21 +33,30 @@
   "name": "Dinner Plain",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage/tourism name it as a walking base; no distinct sight listed.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Alpine village base; sources list walks and tours but no distinct sight, and a town is a spot only when the town itself is a draw (COVERAGE: towns).",
+  "decided_by": "recheck",
   "views": 6499,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Dinner_Plain",
+   "https://www.visitdinnerplain.com.au/best-things-to-do/"
+  ]
  },
  {
   "name": "Lake Mountain",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Seasonal alpine resort for snow play, summer walks (seasonal venue ok), one tourism source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Alpine resort with an official page for free summer access, summit walk and boardwalks; permanent seasonal venue.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://lakemountainresort.com.au/entry-tickets/summer-access/"
+  ]
  },
  {
   "name": "Mount Buffalo National Park",
@@ -63,11 +72,15 @@
   "name": "Mount Buffalo Chalet",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Historic chalet and cafe named by Parks Victoria; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria names the historic Chalet and its cafe (open weekends) as a visit area; iconic building the public can enter.",
+  "decided_by": "recheck",
   "views": 1922,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  ]
  },
  {
   "name": "The Cathedral (Mount Buffalo)",
@@ -93,11 +106,15 @@
   "name": "Lake Catani",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic names lake and campground; swimming/paddling.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria features Lake Catani for swimming and camping among wombats; distinct lake within the park.",
+  "decided_by": "recheck",
   "views": 1050,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  ]
  },
  {
   "name": "Eurobin Falls",
@@ -113,11 +130,15 @@
   "name": "The Gorge (Mount Buffalo)",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Parks Vic lookouts over cliffs by the Chalet.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria lists The Gorge Day Visitor Area with viewing area, waterfall and sunrise views; its own visitor area apart from the Chalet.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mount-buffalo-national-park"
+  ]
  },
  {
   "name": "Alpine National Park",
@@ -153,11 +174,16 @@
   "name": "Bogong High Plains",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Alpine plateau with walks, Wikivoyage Falls Creek; big draw (109k views).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Alpine plateau with Wallaces Heritage Trail and historic huts per Falls Creek resort and Wikivoyage; ~110k views, a headline High Country draw.",
+  "decided_by": "recheck",
   "views": 109302,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Falls_Creek",
+   "https://www.fallscreek.com.au/listing/historic-hut-walk/"
+  ]
  },
  {
   "name": "Falls to Hotham Alpine Crossing",
@@ -184,10 +210,14 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage Alpine NP lists it as a day walk, no description.",
-  "decided_by": "judge",
+  "reason": "Only Wikivoyage Alpine NP lists it, with no description; a recognised plateau day walk but I found no second counted source or visit detail. For: named day walk. Against: unverified, strenuous remote.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Alpine_National_Park"
+  ]
  },
  {
   "name": "Paradise Falls (Cheshunt)",
@@ -213,11 +243,15 @@
   "name": "Dartmouth Dam",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists a large dam with lookout; comparable to existing Hume Dam.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Listed first under See and do on Wikivoyage Alpine National Park; Victoria's highest dam with lookout. Comparable to Hume Dam, which is a spot.",
+  "decided_by": "recheck",
   "views": 4993,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Alpine_National_Park"
+  ]
  },
  {
   "name": "Australian Alps Walking Track",
@@ -233,11 +267,16 @@
   "name": "Mount Howitt Walking Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Summit walk named by tourism board; single source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Victoria's High Country tourism and Bushwalking Victoria describe a 14 km summit day walk along the Crosscut Saw; a named walk the board promotes.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.victoriashighcountry.com.au/?p=178220",
+   "https://bushwalkingvictoria.org.au/bwv_walk_directory/mount-howitt/"
+  ]
  },
  {
   "name": "Mount Stirling",
@@ -283,21 +322,29 @@
   "name": "Mount Samaria State Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "State park with walks and lookouts, one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria: summit 360-degree views, Wild Dog and Back Creek Falls, Rocky Point Lookout.",
+  "decided_by": "recheck",
   "views": 267,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mount-samaria-state-park"
+  ]
  },
  {
   "name": "Mount Lawson State Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "State park with summit loop trail; tourism board.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Parks Victoria: walking tracks to lookouts and waterfalls, summit picnic area; also named by tourism board.",
+  "decided_by": "recheck",
   "views": 714,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/mount-lawson-state-park"
+  ]
  },
  {
   "name": "Lake Eildon National Park",
@@ -343,11 +390,15 @@
   "name": "Burrowa-Pine Mountain National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "National park with lookouts and Pine Mountain monolith; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "National park run by Parks Victoria with Pine Mountain monolith (rock climbing, hiking, lookouts); page opened but with little detail, otherwise nationally recognised.",
+  "decided_by": "recheck",
   "views": 747,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.parks.vic.gov.au/places-to-see/parks/burrowa-pine-mountain-national-park"
+  ]
  },
  {
   "name": "Mount Mitta Mitta Regional Park",
@@ -373,11 +424,16 @@
   "name": "Lake William Hovell",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Lake with swimming and paddling, one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Goulburn-Murray Water recreation guide and Visit Wangaratta list it for swimming and paddling in a designated lakeside recreation area.",
+  "decided_by": "recheck",
   "views": 1396,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://g-mwater.com.au/recreation/recreation-guides/lake-william-hovell.html",
+   "https://visitwangaratta.com.au/See-Do/Outdoors/Lakes-Rivers"
+  ]
  },
  {
   "name": "Lake Hume",
@@ -433,11 +489,15 @@
   "name": "Milawa",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Gourmet village with cellar doors, one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Milawa Gourmet Region is a tourism brand: cellar doors, mustard, cheese and the Milawa food trail; a recognised food and wine stop.",
+  "decided_by": "recheck",
   "views": 2712,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.victoriashighcountry.com.au/"
+  ]
  },
  {
   "name": "Glenrowan",
@@ -463,21 +523,29 @@
   "name": "Ned Kelly Museum",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Museum with Kelly relics, one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Glenrowan lists the Ned Kelly Museum and Homestead (daily 9:30-4); a paid, open attraction about the Kelly siege.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Glenrowan"
+  ]
  },
  {
   "name": "Glenrowan Siege Site",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Two sources name the siege site walk.",
-  "decided_by": "judge",
+  "reason": "Wikivoyage says you can walk the siege site but little remains standing. For: the historic site of Kelly's last stand. Against: minor, short, and the museum covers the story.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Glenrowan"
+  ]
  },
  {
   "name": "The Big Ned Kelly",
@@ -533,31 +601,43 @@
   "name": "Beechworth Honey",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage names a beekeeping \"tour\"; but mainly a shop.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage's own entry calls it a retail outlet with a beekeeping tour; essentially a shop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Beechworth"
+  ]
  },
  {
   "name": "Newtown Falls",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Wikivoyage Natural entry, short walk.",
-  "decided_by": "judge",
+  "reason": "Wikivoyage Natural listing with no description; short walk at Beechworth. For: only natural sight Wikivoyage lists. Against: minor, single source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Beechworth"
+  ]
  },
  {
   "name": "Lake Sambell",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Lake with walking track, tourism board.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Two tourism sources name Beechworth's lake with walking track, linking to Lake Kerferd walk in Beechworth Historic Park.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.melbourneplaygrounds.com.au/beechworth-lake-sambell-to-lake-kerferd-walk"
+  ]
  },
  {
   "name": "Beechworth Gorge Walk",
@@ -584,10 +664,14 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Small volunteer museum listed by Wikivoyage.",
-  "decided_by": "judge",
+  "reason": "Wikivoyage lists a small museum with volunteer curators in a historic town. For: open, heritage building. Against: tiny, one source.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Chiltern"
+  ]
  },
  {
   "name": "Mansfield",
@@ -603,21 +687,29 @@
   "name": "Mansfield Zoo",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Wikivoyage lists zoo with hours; one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Mansfield lists the zoo with phone and hours; a paid animal park open daily.",
+  "decided_by": "recheck",
   "views": 908,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mansfield_(Victoria)"
+  ]
  },
  {
   "name": "The Paps Lookout",
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Lookout near Mansfield, tourism board.",
-  "decided_by": "judge",
+  "reason": "One tourism listing; I could not confirm detail beyond a short lookout. For: lookout near Mansfield. Against: short stop, unverified.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mansfield_(Victoria)"
+  ]
  },
  {
   "name": "Mansfield Botanic Park",
@@ -633,11 +725,13 @@
   "name": "Eildon",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Lakeside town, houseboat hire.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Town wrapper; the draw is Lake Eildon and houseboat hire, and no distinct sight is listed.",
+  "decided_by": "recheck",
   "views": 5366,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Eildon Pondage Walk",
@@ -653,21 +747,29 @@
   "name": "Mount Beauty",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Gateway town to Falls Creek, Wikivoyage.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage Tawonga-Mount Beauty lists services and a lookout but the model town itself has no sight; only the gorge walk and Bogong lookout are draws.",
+  "decided_by": "recheck",
   "views": 7928,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mount_Beauty"
+  ]
  },
  {
   "name": "Mount Beauty Gorge Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Short gorge walk, one source.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage describes the West Kiewa Gorge walk to a shaded pool as a few hours' mini adventure with a suspension bridge.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Mount_Beauty"
+  ]
  },
  {
   "name": "Mount Bogong Lookout",
@@ -713,21 +815,30 @@
   "name": "Mount Granya Walking Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Summit walk, one source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Part of Mount Granya State Park (Parks Victoria's summit, lookout and falls), not a separate draw; 10 km track with no distinct sight.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://visituppermurray.com.au/listing/mount-granya-walking-track-granya"
+  ]
  },
  {
   "name": "Tronoh Dredge Walking Track",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Two listings of a short dredge walk.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Two Visit Bright listings: 1.4 km, 30 minute walk to the historic dredge holes at Harrietville.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitbright.com.au/?p=57443",
+   "https://www.visitbright.com.au/listing/tronoh-dredge-hole-harrietville/"
+  ]
  },
  {
   "name": "Porepunkah",
@@ -803,11 +914,15 @@
   "name": "Banjo Paterson High Country Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Long trail linking Upper Murray towns, board source.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "A new multi-region touring trail launched April 2026, not a place with a stopping point.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://region.com.au/new-trail-traces-banjo-patersons-high-country-connections/990149/"
+  ]
  },
  {
   "name": "Bluff Creek Nature Trail",
@@ -863,11 +978,15 @@
   "name": "Yackandandah Gorge Scenic Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Gorge walk by Yackandandah, board.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Explore Yackandandah lists a 1859 gold-sluicing gorge walk (about 75 minutes, waterfalls, wildlife).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.exploreyackandandah.com.au/listing/yackandandah-gorge/"
+  ]
  },
  {
   "name": "Eldorado Dredge",
@@ -893,10 +1012,14 @@
   "name": "Wandiligong",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Heritage village with Diggings walk, board.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Bright covers the heritage village with the Diggings Walk (30 min, Chinese swing bridge) and pub.",
+  "decided_by": "recheck",
   "views": 2743,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://www.visitbright.com.au/places-to-go/towns-and-villages/wandiligong/"
+  ]
  }
 ]

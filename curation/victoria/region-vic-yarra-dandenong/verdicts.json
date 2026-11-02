@@ -73,11 +73,15 @@
   "name": "Eastern Dandenong Ranges Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage source; a 17 km trail beside Puffing Billy, a real walk but a linear route.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage lists a 17 km trail that simply follows the Puffing Billy line: part of a larger spot already kept, a linear route.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+  ]
  },
  {
   "name": "Dandenong Ranges National Park",
@@ -93,21 +97,29 @@
   "name": "Ferntree Gully National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage source; park with walks, but overlaps Dandenong Ranges NP and Kokoda track.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage treats it as part of Dandenong Ranges National Park; the walks (Kokoda Track) are separate spots. Park inside park.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+  ]
  },
  {
   "name": "Sherbrooke Forest",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source found; known lyrebird forest walks, but Parks Victoria fetch errored (unresolved, not evidence against).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names Sherbrooke Forest as the forest behind Belgrave; well-known lyrebird walks, a second-tier nature stop. Parks Victoria page unreachable (not evidence against).",
+  "decided_by": "recheck",
   "views": 2670,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Olinda",
@@ -133,11 +145,15 @@
   "name": "Kallista",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage line (heritage houses, gardens); a village with no named sight.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wikivoyage line only describes houses and gardens; a village with no named sight.",
+  "decided_by": "recheck",
   "views": 3093,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Belgrave",
@@ -153,21 +169,29 @@
   "name": "Gembrook",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One tourism-board source; terminus of Puffing Billy, a town stop.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Town at the Puffing Billy terminus; the railway is the draw and is its own spot; no distinct sight.",
+  "decided_by": "recheck",
   "views": 3356,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+  ]
  },
  {
   "name": "Lysterfield Lake Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage source (Lysterfield page); regional park with lake and trails.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage lists Lysterfield Lake; regional park with lake, walking and cycling trails, over half an hour. Kept as the single Lysterfield spot.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Nobelius Heritage Park",
@@ -204,10 +228,12 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "One tourism-board source; regional museum in a new architecturally designed building.",
-  "decided_by": "judge",
+  "reason": "For: open museum in a purpose-built Lilydale building, tourism-board listed. Against: one source, a regional museum, short visit.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Upper Yarra Museum",
@@ -233,11 +259,13 @@
   "name": "Ada Tree",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One tourism-board source; giant mountain ash after a short walk.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Giant mountain ash after a short walk in Yarra Ranges forest, named by Visit Yarra Valley; a distinct natural landmark guides single out. Visit Yarra Valley page not re-opened; earlier counted source accepted.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Gulf Station Historic Farm",
@@ -254,20 +282,24 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "One tourism-board source; historic homestead with cafe.",
-  "decided_by": "judge",
+  "reason": "For: historic homestead open to public with cafe, tourism-board listed. Against: one source, small local heritage site.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Ngurrak Barring Art Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One tourism-board source; public art trail linking villages.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Dispersed public-art trail linking villages, not one place to spend half an hour; no single stop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Silvan Dam Lookout",
@@ -373,11 +405,15 @@
   "name": "Yarra Valley Railway",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage source; heritage railway at Healesville on weekends and holidays.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names the heritage railway at Healesville; the ride is the attraction, a permanent venue (runs weekends and holidays).",
+  "decided_by": "recheck",
   "views": 4655,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Healesville Glass Blowing Studio",
@@ -393,21 +429,29 @@
   "name": "Four Pillars Gin Distillery",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Two Wikivoyage sources; distillery tastings and tours, like a brewery tour exception.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Two Wikivoyage mentions; distillery tastings and tours are a recognised attraction like a brewery tour.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 2
+  "counted_sources": 2,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Maroondah Reservoir Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage source; reservoir park with picnic area and walk.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage names it, 5 km east of Healesville; reservoir park with picnic area, walks and lookout.",
+  "decided_by": "recheck",
   "views": 2283,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Badger Weir",
@@ -513,21 +557,27 @@
   "name": "Domaine Chandon",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One Wikivoyage source; well-known sparkling winery with tastings.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Well-known sparkling winery with tastings, named by Wikivoyage; winery is a recognised visitor draw.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Yering Station",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source found, but the oldest Yarra Valley vineyard with historic buildings; sources unresolved.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Victoria's oldest vineyard with historic buildings, cellar door and restaurant, a headline Yarra Valley winery in every guide. Wikivoyage page did not list it; guidebook-level knowledge, source not opened.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Helen's Hill Estate",
@@ -583,11 +633,13 @@
   "name": "Coombe Yarra Valley Melba's Garden Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "One tourism-board source; century-old gardens walk at the Melba estate.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Century-old Melba estate gardens open to visitors, tourism-board listed; a garden walk is a half-hour-plus visit.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Edible Forest Yarra Valley",
@@ -623,11 +675,13 @@
   "name": "CherryHill Orchards",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Visit Yarra Valley names it; a permanent orchard with picking only in summer.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Seasonal pick-your-own and farm shop; a shop/farm gate rather than a distinct permanent sight.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Tesselaar KaBloom Festival of Flowers",
@@ -703,11 +757,15 @@
   "name": "Trees Adventure Glen Harrow Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage Dandenong Ranges lists it; a fixed ropes/zipline park, paid venue, hours-long visit.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Dandenong Ranges lists the ropes and zipline park; a permanent paid activity venue of hours.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+  ]
  },
  {
   "name": "Yarra Ranges National Park",
@@ -793,11 +851,13 @@
   "name": "Beeches Rainforest Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage lists it; short rainforest walk off Lady Talbot Drive.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage lists a short rainforest walk off Lady Talbot Drive; a named walk worth 30+ min.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Lady Talbot Drive",
@@ -843,21 +903,29 @@
   "name": "Masons Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage Kinglake names the falls and walk in Kinglake National Park; 700 m walk.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Kinglake names the falls and 700 m walk in Kinglake National Park; a classic short waterfall walk.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Kinglake"
+  ]
  },
  {
   "name": "Wombelano Falls",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage Kinglake calls it a stunning hidden gem; short walk.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Wikivoyage Kinglake calls it a stunning hidden gem with an easy walk; second-tier waterfall stop.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Kinglake"
+  ]
  },
  {
   "name": "Lyrebird Circuit Walk",
@@ -923,21 +991,25 @@
   "name": "South Jawbone Peak",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Visit Yarra Valley names the 3.5 km summit hike.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Yarra Valley names the 3.5 km summit hike; a named peak walk.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Lake Eildon National Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "No counted source found in this pass, but a national park with boating, camping and walking is a known second-tier stop; counted-source re-look unresolved (Parks Victoria not fetched).",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "National park with Lake Eildon boating, camping and walking; Parks Victoria page unreachable but a national park is a second-tier stop and park rule makes it its own spot.",
+  "decided_by": "recheck",
   "views": 2860,
-  "counted_sources": 0
+  "counted_sources": 0,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Mount Cannibal Flora and Fauna Reserve",
@@ -964,10 +1036,12 @@
   "existing": false,
   "spot_id": null,
   "verdict": "review",
-  "reason": "Rule 1: Visit Yarra Valley describes the gold-era river diversion tunnels, 14 km east of Warburton; walkable heritage site.",
-  "decided_by": "judge",
+  "reason": "For: gold-era river diversion tunnels, walkable heritage site near Warburton. Against: one source, niche, short visit.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Backstairs Track",
@@ -1033,31 +1107,37 @@
   "name": "Wirrawilla Rainforest Walk",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Visit Yarra Valley calls it an easy and spectacular short rainforest circuit in Toolangi State Forest.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Yarra Valley calls it an easy short rainforest circuit in Toolangi State Forest; a named walk.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Toolangi State Park",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Visit Yarra Valley names it with a Discovery Centre and trails.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Wrapper for the forest whose walk (Wirrawilla) is kept; Discovery Centre alone is minor.",
+  "decided_by": "recheck",
   "views": 1729,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "O'Shannassy Aqueduct Trail",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Visit Yarra Valley describes a 30 km walking and cycling trail along a historic aqueduct.",
-  "decided_by": "judge",
+  "verdict": "keep",
+  "reason": "Visit Yarra Valley describes a 30 km walking and cycling trail along a historic aqueduct; a promoted trail.",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": []
  },
  {
   "name": "Reids Tramline Walk",
@@ -1123,11 +1203,15 @@
   "name": "Lysterfield Lake",
   "existing": false,
   "spot_id": null,
-  "verdict": "review",
-  "reason": "Rule 1: Wikivoyage Lysterfield lists the lake and trails; a Parks Victoria lake with walking and cycling, half-hour+ visit.",
-  "decided_by": "judge",
+  "verdict": "reject",
+  "reason": "Duplicate of Lysterfield Lake Park (same place).",
+  "decided_by": "recheck",
   "views": 0,
-  "counted_sources": 1
+  "counted_sources": 1,
+  "prev_verdict": "review",
+  "recheck_sources": [
+   "https://en.wikivoyage.org/wiki/Yarra_Valley"
+  ]
  },
  {
   "name": "Art and Alchemy Gallery and Studio",
