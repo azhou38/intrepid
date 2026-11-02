@@ -1438,6 +1438,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} covers autumn colour and warm summer days for swimming and rail-trail rides.",
   },
   {
+    id: 'beechworth', name: "Beechworth", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -36.3594, longitude: 146.6869 },
+    category: 'city', icon: "🏛️", rank: 3,
+    tagline: "Gold-rush streets, Ned Kelly history and a cool-climate town on a rail trail",
+    description: "Beechworth was a gold-producing region and centre of government between 1852 and 1857, and its well-preserved historic precinct includes the Court House and Burke Museum. Ned Kelly spent time in HM Prison Beechworth, and courthouse displays tell the story. The town sits at 560 m, about 284 km from Melbourne, and is one end of the Murray to the Mountains Rail Trail. Waterfalls, Spring Creek Gorge, the Beechworth Bakery, a brewery and wineries round out a stay.",
+    whyVisit: ["Walk gold-rush streets and heritage buildings", "Follow Ned Kelly's trail", "Cycle a paved rail trail"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Gold-rush heritage", "Ned Kelly history", "Rail trail"],
+    goodToKnow: [
+      { icon: "🚗", title: "Bring your own car", detail: "There is no car hire in Beechworth, so arrive with a vehicle or plan to walk the compact historic centre." },
+      { icon: "🚲", title: "Hire bikes for the rail trail", detail: "The old railway line to Wangaratta and Bright is a paved rail trail, and bicycles can be hired in town." },
+      { icon: "🎭", title: "Festival weekend crowds", detail: "The Golden Horseshoes Festival parade at Easter and the August Ned Kelly Weekend bring crowds, so book stays early." },
+    ],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    bestTimeBlurb: "Mild {months} weather suits walking and cycling in a town that is cool for much of the year.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,

@@ -3045,4 +3045,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Macedon Ranges",
   "Mount Buffalo National Park",
   "Bright",
+  "Beechworth",
 ]);
