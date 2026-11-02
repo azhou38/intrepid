@@ -797,7 +797,7 @@ export default function ProfileScreen() {
 
 // A selector item's text, fading between its selected and unselected colours as the pill slides to or from it.
 // An Explored list as a grid of rounded photo tiles, three across: the name in white at the bottom left over a dark
-// scrim, and under it a tiny flag with a short line (spots visited, or a spot's country).
+// scrim with a short line under it (by the sort, see tileSub), and the country's flag in the top left corner.
 const TILE_COLS = 3;
 const TILE_GAP = 6;
 // A tile's side: the screen width, less the side room and the gaps.
@@ -846,7 +846,13 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
                 {t.photo}
                 {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
                     spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
-                <TileFooter name={t.name} countryCode={t.countryCode} sub={t.sub} />
+                <TileFooter name={t.name} sub={t.sub} />
+                {/* The country's flag at the top left. */}
+                {!!t.countryCode && (
+                  <View style={styles.tileFlag} pointerEvents="none">
+                    <CircleFlag countryCode={t.countryCode} size={16} ring ringWidth={1.5} style={styles.flagRing} />
+                  </View>
+                )}
                 {!!t.rank && (
                   <View style={[styles.rankBadge, { backgroundColor: RANK_COLORS[t.rank - 1] }]} pointerEvents="none">
                     <Text style={styles.rankTxt}>{t.rank}</Text>
@@ -898,7 +904,7 @@ function PageRange({ scrollX, total, pageCount, pageSize }: { scrollX: SharedVal
 
 // A tile's footer: the name and sub line over a dark gradient that fills the footer's own box (full tile width, as tall as the
 // text plus room to fade in above it).
-function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: string | null; sub: string }) {
+function TileFooter({ name, sub }: { name: string; sub: string }) {
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
   return (
     <View style={styles.tileFooter} pointerEvents="none"
@@ -917,10 +923,11 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
         </Svg>
       )}
       <Text style={styles.tileName} numberOfLines={3}>{name}</Text>
-      <View style={styles.tileSubRow}>
-        {!!countryCode && <CircleFlag countryCode={countryCode} size={11} ring ringWidth={1} />}
-        {!!sub && <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>}
-      </View>
+      {!!sub && (
+        <View style={styles.tileSubRow}>
+          <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>
+        </View>
+      )}
     </View>
   );
 }
@@ -1301,7 +1308,7 @@ const styles = StyleSheet.create({
   rankNum:     { width: 18, fontSize: 13, fontWeight: '700', color: '#9CA3AF', textAlign: 'right' },
   // A medal rank in the list: the grid's rank badge, in the number's slot (right-aligned like the numbers).
   rankNumSlot:   { width: 18, alignItems: 'flex-end' },
-  rankBadgeList: { position: 'relative', top: 0, left: 0, width: 18, height: 18, borderRadius: 9 },
+  rankBadgeList: { position: 'relative', top: 0, right: 0, width: 18, height: 18, borderRadius: 9 },
   rankThumb:   { width: 30, height: 30, borderRadius: 8, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   rankNameCol: { width: 120 },
   rankNameFlex: { flex: 1 },
@@ -1331,11 +1338,13 @@ const styles = StyleSheet.create({
               shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 5, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
   tileClip: { flex: 1, borderRadius: 10, overflow: 'hidden' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
-  rankBadge: { position: 'absolute', top: 6, left: 6, width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: 'white' },
+  rankBadge: { position: 'absolute', top: 6, right: 6, width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: 'white' },
   rankTxt:   { fontSize: 11, fontWeight: '800', color: 'white' },
   tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 10, borderWidth: 3, borderColor: PICK_COLOR },
   tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: 28, paddingHorizontal: 8, paddingBottom: 8 },
   tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
+  // A tile's flag, in its top left corner (the rank badge takes the top right).
+  tileFlag:   { position: 'absolute', top: 6, left: 6 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
   tileSub:  { flexShrink: 1, fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
   // Destinations Explored's rows: photo, name, country and spots visited; about five rows, then the list scrolls.
