@@ -3034,4 +3034,13 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Suva",
   "Levuka",
   "Rakiraki",
+  "Beqa",
+  "Lovoni",
+  "Viseisei",
+  "Waitabu Marine Park",
+  "Lake Tagimaucia",
+  "Labasa",
+  "Lakeba",
+  "Oinafa Beach",
+  "Vai'oa Beach",
 ]);
