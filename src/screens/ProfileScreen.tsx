@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, Modal,
 } from 'react-native';
-import { Pencil, ChevronDown, Check } from 'lucide-react-native';
+import { Pencil, ChevronDown, Check, LayoutGrid, List as ListIcon } from 'lucide-react-native';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
@@ -212,6 +212,8 @@ export default function ProfileScreen() {
   // a destination has none of its own, so it takes the average of its visited spots' ratings. Places with no date or rating
   // come last.
   const [exploredSort, setExploredSort] = useState<ExploredSort>('name');
+  // The Explored places as a photo grid, or as a ranked list in the order of the sort (see RankList).
+  const [exploredView, setExploredView] = useState<ExploredView>('grid');
   const savedSpots = useStore(s => s.savedSpots);
   const savedDests = useStore(s => s.savedDestinations);
   const sortKeys = useMemo(() => {
@@ -664,7 +666,7 @@ export default function ProfileScreen() {
       {/* ── Destinations: Destinations Explored, Top Destinations (by visited spots) ── */}
       {worldMode === 'destinations' && (<>
         <View style={styles.exploredSection}>
-          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} matches={shownDests.length} />}
+          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} matches={shownDests.length} />}
           <View style={styles.exploredPad}>
             <View style={styles.mapShadow}>{worldMap}</View>
           </View>
@@ -677,7 +679,16 @@ export default function ProfileScreen() {
                 No destinations match.
               </Text>
             )}
-            {/* A photo grid: one tile per destination, its name and its visited spots over its photo. */}
+            {exploredView === 'list' ? (
+              <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} rows={shownDests.map(d => {
+                const n = spotsByDest.get(d.id) ?? 0;
+                return {
+                  key: d.id, name: d.name, countryCode: d.countryCode, sub: d.country,
+                  spots: n, rating: sortKeys.destRating(d.id), date: sortKeys.destDate.get(d.id) ?? '',
+                };
+              })} />
+            ) : (
+            /* A photo grid: one tile per destination, its name and its visited spots over its photo. */
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownDests.map((d, k) => {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
@@ -696,6 +707,7 @@ export default function ProfileScreen() {
                 ),
               };
             })} />
+            )}
             </>
           )}
         </View>
@@ -704,7 +716,7 @@ export default function ProfileScreen() {
       {/* ── Spots: Spots Explored ── */}
       {worldMode === 'spots' && (
         <View style={styles.exploredSection}>
-          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} matches={shownSpots.length} />}
+          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} matches={shownSpots.length} />}
           <View style={styles.exploredPad}>
             <View style={styles.mapShadow}>{worldMap}</View>
           </View>
@@ -717,7 +729,13 @@ export default function ProfileScreen() {
                 No spots match.
               </Text>
             )}
-            {/* The same photo grid for spots: the spot's country under its name. */}
+            {exploredView === 'list' ? (
+              <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} rows={shownSpots.map(sp => ({
+                key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotDestination(sp)?.name ?? spotCountry(sp) ?? '',
+                rating: savedSpots[sp.id]?.rating ?? 0, date: sortKeys.spotDate.get(sp.id) ?? '',
+              }))} />
+            ) : (
+            /* The same photo grid for spots: the spot's country under its name. */
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownSpots.map(sp => ({
               key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), sub: spotCountry(sp) ?? '',
               photo: NO_PHOTO.has(spotPhotoTitle(sp))
@@ -732,6 +750,7 @@ export default function ProfileScreen() {
                     fallback={<PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />}
                   />,
             }))} />
+            )}
             </>
           )}
         </View>
@@ -895,6 +914,7 @@ function TileFooter({ name, countryCode, sub }: { name: string; countryCode?: st
 }
 
 type ExploredSort = 'name' | 'date' | 'rating' | 'spots';
+type ExploredView = 'grid' | 'list';
 const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'name', label: 'A–Z' },
   { key: 'date', label: 'Date Visited' },
@@ -902,12 +922,55 @@ const SORTS: { key: ExploredSort; label: string }[] = [
   // Destinations only: the most visited spots first (the first three tiles wear a rank badge).
   { key: 'spots', label: 'Spots Visited' },
 ];
+// An Explored list in the style of Top Countries: one row per place, in the sort's order, numbered unless it is A–Z. What a
+// row measures follows the sort: spots visited (destinations) or rating, as a bar against the top value and the number; the
+// date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. About eight rows
+// show, then the list scrolls.
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const shortDate = (iso: string) => {
+  const [y, m, d] = iso.split('-').map(Number);
+  return y && m ? `${d ? `${d} ` : ''}${MONTHS[m - 1]} ${y}` : '';
+};
+function RankList({ rows, sort, pickedId, onPick }: {
+  rows: { key: string; name: string; countryCode?: string | null; sub: string; spots?: number; rating: number; date: string }[];
+  sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
+}) {
+  const bar = sort === 'spots' || sort === 'rating';
+  const valueOf = (r: typeof rows[number]) => (sort === 'spots' ? r.spots ?? 0 : r.rating);
+  const max = sort === 'rating' ? 5 : Math.max(1, ...rows.map(valueOf));
+  return (
+    <ScrollView style={styles.rankScroll} contentContainerStyle={styles.rankScrollContent} nestedScrollEnabled showsVerticalScrollIndicator={false}>
+      {rows.map((r, i) => {
+        const v = valueOf(r);
+        return (
+          <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
+            {sort !== 'name' && <Text style={styles.rankNum}>{i + 1}</Text>}
+            {r.countryCode ? <CircleFlag countryCode={r.countryCode} size={22} ring ringWidth={1.5} style={styles.flagRing} /> : <View style={{ width: 22 }} />}
+            <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
+              <Text style={styles.rankName} numberOfLines={1}>{r.name}</Text>
+              {!!r.sub && <Text style={styles.rankSub} numberOfLines={1}>{r.sub}</Text>}
+            </View>
+            {bar && (
+              <View style={styles.countryBarTrack}>
+                <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }]} />
+              </View>
+            )}
+            {bar && <Text style={styles.countryCount}>{v ? (sort === 'rating' ? v.toFixed(1).replace(/\.0$/, '') : v) : '–'}</Text>}
+            {sort === 'date' && <Text style={styles.rankDate}>{r.date ? shortDate(r.date) : '–'}</Text>}
+          </Pressable>
+        );
+      })}
+    </ScrollView>
+  );
+}
+
 // The sort choice above an Explored grid: small segmented pills, the chosen one dark.
 type SortCountry = { code: string; name: string; count: number };
 // The row above the Explored map: two dropdown chips side by side, the country filter ("All countries" or the chosen one, with
 // its flag) and the sort order. Each opens a small menu under its chip.
-function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry, dests, dest, onDest, matches }: {
+function SortRow({ sort, onSort, view, onView, withSpots, countries, total, country, onCountry, dests, dest, onDest, matches }: {
   sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean;
+  view: ExploredView; onView: (v: ExploredView) => void;
   countries: SortCountry[]; total: number; country: string | null; onCountry: (code: string | null) => void;
   // Spots only, once a country is chosen: that country's destinations (code = destination id) to narrow to.
   dests?: SortCountry[]; dest?: string | null; onDest?: (id: string | null) => void;
@@ -950,6 +1013,18 @@ function SortRow({ sort, onSort, withSpots, countries, total, country, onCountry
           <Text style={styles.countryDropTxt} numberOfLines={1}>{(sorts.find(o => o.key === sort) ?? sorts[0]).label}</Text>
           <ChevronDown size={13} color="#6B7280" strokeWidth={2.4} />
         </Pressable>
+        {/* Grid or list, at the end of the row. */}
+        <View style={styles.viewToggle}>
+          {(['grid', 'list'] as const).map(v => {
+            const on = view === v, Icon = v === 'grid' ? LayoutGrid : ListIcon;
+            return (
+              <Pressable key={v} hitSlop={4} style={[styles.viewToggleBtn, on && styles.viewToggleBtnOn]} accessibilityLabel={v === 'grid' ? 'Grid view' : 'List view'}
+                onPress={() => { if (!on) { Haptics.selectionAsync(); onView(v); } }}>
+                <Icon size={14} color={on ? '#111827' : '#9CA3AF'} strokeWidth={2.4} />
+              </Pressable>
+            );
+          })}
+        </View>
       </View>
       <Modal visible={!!menu} transparent animationType="fade" onRequestClose={() => setMenu(null)}>
         <Pressable style={StyleSheet.absoluteFill} onPress={() => setMenu(null)} />
@@ -1138,6 +1213,21 @@ const styles = StyleSheet.create({
   countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
                  borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
+  // The grid / list toggle at the end of the sort row: two small icons in one rounded box, the chosen one on a light fill.
+  viewToggle:      { marginLeft: 'auto', flexDirection: 'row', borderRadius: 10, borderWidth: 1, borderColor: '#E5E7EB', padding: 2, gap: 2 },
+  viewToggleBtn:   { paddingHorizontal: 6, paddingVertical: 2, borderRadius: 8 },
+  viewToggleBtnOn: { backgroundColor: '#F3F4F6' },
+  // The Explored list (RankList): Top Countries' rows, with a sub line and a scroll after about eight rows.
+  rankScroll:        { maxHeight: 420, marginTop: 4 },
+  rankScrollContent: { paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 4 },
+  rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
+  rankRowOn:   { backgroundColor: '#FFF7ED' },
+  rankNum:     { width: 18, fontSize: 13, fontWeight: '700', color: '#9CA3AF', textAlign: 'right' },
+  rankNameCol: { width: 120 },
+  rankNameFlex: { flex: 1 },
+  rankName:    { fontSize: 13, fontWeight: '600', color: '#374151' },
+  rankSub:     { fontSize: 11, color: '#9CA3AF', marginTop: 1 },
+  rankDate:    { marginLeft: 'auto', fontSize: 12, fontWeight: '600', color: '#6B7280' },
   countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
   dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
               shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 }, elevation: 8 },
