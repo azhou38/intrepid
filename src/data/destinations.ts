@@ -3435,6 +3435,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [3, 4, 5, 9, 10, 11],
     bestTimeBlurb: "Come in {months} to avoid the summer heat that makes Warby Ranges walks tough.",
   },
+  {
+    id: 'ararat', name: "Ararat", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -37.28333333, longitude: 142.91666667 },
+    category: 'city', icon: "🍇", rank: 5,
+    tagline: "Gateway to the Grampians with gold-rush, Chinese and asylum history",
+    description: "Ararat is about 200 km north-west of Melbourne on the Western Highway and is known as the Gateway to the Grampians. Gold found in 1857 made it a boomtown, and it is the only city in Australia founded by Chinese people, a story told at the Gum San Chinese Heritage Centre. Visitors can tour J Ward, the former home of the criminally insane, and the Aradale asylum. Seppelt at Great Western, a short drive away, has 3 km of 1800s tunnels, the largest underground cellar in the Southern Hemisphere.",
+    whyVisit: ["Tour the old asylum buildings", "Taste wine at nearby cellar doors"],
+    whyVisitPhotos: ["", ""],
+    highlights: ["Asylum tours", "Wine tasting"],
+    goodToKnow: [
+      { icon: "🚆", title: "Train from Melbourne", detail: "V/Line runs trains from Southern Cross several times daily, and The Overland to Adelaide stops twice a week." },
+      { icon: "🍷", title: "Book cellar tours", detail: "Seppelt's tunnel tours run at set times, listed as 11am, 1pm and 3pm, for a fee, so check times before driving out." },
+    ],
+    bestMonths: [3, 4, 5, 10, 11],
+    bestTimeBlurb: "Mild {months} weather suits touring wineries and heritage sites.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
