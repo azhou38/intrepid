@@ -1,0 +1,1498 @@
+{
+ "region": "vic-yarra-dandenong",
+ "branch": "curation/victoria",
+ "new_destinations": [
+  {
+   "id": "dandenong-ranges",
+   "name": "Dandenong Ranges",
+   "action": "new-destination",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "nature",
+   "icon": "🌲",
+   "coordinates": {
+    "latitude": -37.865,
+    "longitude": 145.358
+   },
+   "coordinates_source": "centroid of kept spots (planning point, provisional); re-centre when spot pins are resolved",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 35,
+   "rank": 3,
+   "name_evidence": "Wikivoyage region page \"Dandenong Ranges\" (see Belgrave, Olinda, Sassafras); Visit Yarra Valley and Dandenong Ranges tourism brand; Puffing Billy headline attraction.",
+   "reason": "15 kept spots. The region is the named destination; the national park is a spot of it (the park and region are not separate pins). Melbourne region does not own these: Montsalvat/Eltham stays standalone.",
+   "spots": [
+    "dandenong-ranges-1",
+    "dandenong-ranges-2",
+    "dandenong-ranges-3",
+    "dandenong-ranges-4",
+    "dandenong-ranges-5",
+    "dandenong-ranges-6",
+    "dandenong-ranges-7",
+    "dandenong-ranges-8",
+    "dandenong-ranges-9",
+    "dandenong-ranges-10",
+    "dandenong-ranges-11",
+    "dandenong-ranges-12",
+    "dandenong-ranges-13",
+    "dandenong-ranges-14",
+    "dandenong-ranges-15"
+   ]
+  },
+  {
+   "id": "yarra-valley",
+   "name": "Yarra Valley",
+   "action": "new-destination",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "nature",
+   "icon": "🍷",
+   "coordinates": {
+    "latitude": -37.68,
+    "longitude": 145.46
+   },
+   "coordinates_source": "centroid of kept spots (planning point, provisional); re-centre when spot pins are resolved",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 55,
+   "rank": 3,
+   "name_evidence": "Wikivoyage region page \"Yarra Valley\" (with Healesville, Yarra Glen, Lilydale); Visit Yarra Valley tourism brand; wine region.",
+   "reason": "15 kept spots. Warburton and the Upper Yarra go to Yarra Ranges National Park (gateway to Donna Buang); Healesville Sanctuary and the wineries stay here.",
+   "spots": [
+    "yarra-valley-1",
+    "yarra-valley-2",
+    "yarra-valley-3",
+    "yarra-valley-4",
+    "yarra-valley-5",
+    "yarra-valley-6",
+    "yarra-valley-7",
+    "yarra-valley-8",
+    "yarra-valley-9",
+    "yarra-valley-10",
+    "yarra-valley-11",
+    "yarra-valley-12",
+    "yarra-valley-13",
+    "yarra-valley-14",
+    "yarra-valley-15"
+   ]
+  },
+  {
+   "id": "yarra-ranges-national-park",
+   "name": "Yarra Ranges National Park",
+   "action": "new-destination",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "park",
+   "icon": "🏞️",
+   "coordinates": {
+    "latitude": -37.64,
+    "longitude": 145.8
+   },
+   "coordinates_source": "centroid of kept spots (planning point, provisional); re-centre when spot pins are resolved",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 80,
+   "rank": 4,
+   "name_evidence": "Wikivoyage page \"Yarra Ranges National Park\"; Visit Yarra Valley walking pages (Donna Buang, Marysville, Lake Mountain); Parks Victoria national park.",
+   "reason": "13 kept spots. The park candidate itself is realised as this destination, not as a spot of itself. Marysville and Warburton are its gateway towns. Overlap with Yarra Valley checked with the prescreen tool.",
+   "spots": [
+    "yarra-ranges-national-park-1",
+    "yarra-ranges-national-park-2",
+    "yarra-ranges-national-park-3",
+    "yarra-ranges-national-park-4",
+    "yarra-ranges-national-park-5",
+    "yarra-ranges-national-park-6",
+    "yarra-ranges-national-park-7",
+    "yarra-ranges-national-park-8",
+    "yarra-ranges-national-park-9",
+    "yarra-ranges-national-park-10",
+    "yarra-ranges-national-park-11",
+    "yarra-ranges-national-park-12",
+    "yarra-ranges-national-park-13"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Puffing Billy Railway",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-1",
+   "category": "entertainment",
+   "icon": "🚂",
+   "bio": "Heritage steam railway from Belgrave through Emerald and Lakeside to Gembrook, with open carriages.",
+   "coordinates": {
+    "lat": -37.9075,
+    "lng": 145.35666667
+   },
+   "coordinates_source": "wikipedia:Puffing Billy Railway",
+   "pin_status": "provisional",
+   "views": 30156,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 30156 page views"
+  },
+  {
+   "name": "Dandenong Ranges National Park",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-2",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "National park in four parts across the ranges, with picnic grounds and walking tracks.",
+   "coordinates": {
+    "lat": -37.81027778,
+    "lng": 145.38555556
+   },
+   "coordinates_source": "wikipedia:Dandenong Ranges National Park",
+   "pin_status": "provisional",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: Wikivoyage Understand/See anchors the ranges around this park; picnic grounds, walking tracks.",
+   "skeptic_objection": "Fragmented park; its walks and gardens are separate candidates, so it may be a duplicate."
+  },
+  {
+   "name": "Sherbrooke Forest",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-3",
+   "category": "nature",
+   "icon": "🌳",
+   "bio": "Forest of tall mountain ash on the ranges' southern slopes, with walking tracks near Sherbrooke and Belgrave.",
+   "coordinates": {
+    "lat": -37.89527778,
+    "lng": 145.36305556
+   },
+   "coordinates_source": "wikipedia:Sherbrooke Forest",
+   "pin_status": "provisional",
+   "views": 2670,
+   "counted_sources": [],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Wikivoyage names Sherbrooke Forest as the forest behind Belgrave; well-known lyrebird walks, a second-tier nature stop. Parks Victoria page unreachable (not evidence against).",
+   "skeptic_objection": "Well known bushland in the Dandenongs; but part of the Dandenong Ranges National Park."
+  },
+  {
+   "name": "William Ricketts Sanctuary",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-4",
+   "category": "historic",
+   "icon": "🗿",
+   "bio": "Bush garden on Mount Dandenong Tourist Road with the sculptor William Ricketts' clay figures among ferns.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: Wikivoyage See listing; free sculpture sanctuary, daily, about an hour.",
+   "skeptic_objection": "One source; Wikivoyage flags a dead link and fire-ban closures."
+  },
+  {
+   "name": "National Rhododendron Gardens",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-5",
+   "category": "nature",
+   "icon": "🌺",
+   "bio": "Public gardens of rhododendrons and azaleas at Olinda, open daily.",
+   "wiki": "Dandenong Ranges Botanic Garden",
+   "coordinates": {
+    "lat": -37.8522,
+    "lng": 145.369
+   },
+   "coordinates_source": "wikipedia:Dandenong Ranges Botanic Garden",
+   "pin_status": "provisional",
+   "views": 1254,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: Wikivoyage See; public gardens open daily.",
+   "skeptic_objection": "One source, seasonal bloom peak; spring crowds are not year-round."
+  },
+  {
+   "name": "Mount Dandenong",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-6",
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio": "Summit lookout at 633 m, the highest point of the ranges, with a view across Melbourne.",
+   "coordinates": {
+    "lat": -37.83611111,
+    "lng": 145.35111111
+   },
+   "coordinates_source": "wikipedia:Mount Dandenong",
+   "pin_status": "provisional",
+   "views": 4866,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: Wikivoyage names the summit scenic lookout over Melbourne; road-accessible.",
+   "skeptic_objection": "Quick viewpoint stop, could be part of the Dandenong Ranges National Park spot."
+  },
+  {
+   "name": "Olinda",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-7",
+   "category": "historic",
+   "icon": "🏡",
+   "bio": "Village on Mount Dandenong Tourist Road with gardens, tea rooms and views, a base for the ranges' gardens.",
+   "wiki": "Olinda, Victoria",
+   "coordinates": {
+    "lat": -37.85599,
+    "lng": 145.364357
+   },
+   "coordinates_source": "wikipedia:Olinda, Victoria",
+   "pin_status": "provisional",
+   "views": 6414,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 6414 page views"
+  },
+  {
+   "name": "Sassafras",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-8",
+   "category": "historic",
+   "icon": "🏡",
+   "bio": "Forest village in the ranges known for its tea rooms and bush setting.",
+   "wiki": "Sassafras, Victoria",
+   "coordinates": {
+    "lat": -37.87,
+    "lng": 145.35388889
+   },
+   "coordinates_source": "wikipedia:Sassafras, Victoria",
+   "pin_status": "provisional",
+   "views": 5159,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 5159 page views"
+  },
+  {
+   "name": "Belgrave",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-9",
+   "category": "historic",
+   "icon": "🚉",
+   "bio": "Town at the end of the Belgrave train line and the start of the Puffing Billy railway.",
+   "wiki": "Belgrave, Victoria",
+   "coordinates": {
+    "lat": -37.912067,
+    "lng": 145.3558
+   },
+   "coordinates_source": "wikipedia:Belgrave, Victoria",
+   "pin_status": "provisional",
+   "views": 8381,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley",
+    "https://en.wikivoyage.org/wiki/Belgrave"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 8381 page views"
+  },
+  {
+   "name": "Kokoda Memorial Track",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-10",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Steep 1000-step staircase with historical plaques at Upper Ferntree Gully.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: Wikivoyage See listing plus Yarra Valley tourism; 1000-step walk with plaques, 1+ hr.",
+   "skeptic_objection": "Short urban-edge staircase; overlaps Ferntree Gully National Park walks."
+  },
+  {
+   "name": "Cloudehill Gardens",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-11",
+   "category": "nature",
+   "icon": "🌷",
+   "bio": "Garden of themed garden rooms at Olinda, known for its flowers.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: Yarra Valley tourism board names this renowned garden; a garden visit is over half an hour.",
+   "skeptic_objection": "One source, paid private garden."
+  },
+  {
+   "name": "Alfred Nicholas Memorial Gardens",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-12",
+   "category": "nature",
+   "icon": "⛲",
+   "bio": "Historic gardens of the Burnham Beeches estate near Olinda, with a lake and extensive water features.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: tourism board walking listing; historic public gardens with lake and water features.",
+   "skeptic_objection": "One source, zero page views."
+  },
+  {
+   "name": "Emerald Lake Park",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-13",
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "Parkland around Lake Treganowan with walking trails, paddleboats and the Puffing Billy Lakeside station.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: two counted sources (Wikivoyage, tourism board); lake, trails, paddleboats.",
+   "skeptic_objection": "Local recreation park beside a town."
+  },
+  {
+   "name": "Trees Adventure Glen Harrow Park",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-14",
+   "category": "entertainment",
+   "icon": "🪢",
+   "bio": "Tree-top ropes and zipline course among the trees in Belgrave.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Dandenong_Ranges"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Wikivoyage Dandenong Ranges lists the ropes and zipline park; a permanent paid activity venue of hours.",
+   "skeptic_objection": "Commercial adventure operator; one source."
+  },
+  {
+   "name": "Lysterfield Lake Park",
+   "action": "spot",
+   "destination": "dandenong-ranges",
+   "id": "dandenong-ranges-15",
+   "category": "nature",
+   "icon": "🚴",
+   "bio": "Regional park around Lysterfield Lake with walking, cycling and picnic areas on Melbourne's eastern edge.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lysterfield"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Narrow edge of the Dandenong base: Belgrave and the ranges are its nearest base, inside the 35 km span. Melbourne region only reviewed it as \"Lysterfield Park\" and did not keep it.",
+   "skeptic_objection": "Walking and cycling park for locals; may be a suburban park."
+  },
+  {
+   "name": "Healesville Sanctuary",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-1",
+   "category": "nature",
+   "icon": "🦘",
+   "bio": "Zoos Victoria wildlife sanctuary with native animals and a breeding program, 4 km south of Healesville.",
+   "coordinates": {
+    "lat": -37.6822,
+    "lng": 145.5316
+   },
+   "coordinates_source": "wikipedia:Healesville Sanctuary",
+   "pin_status": "provisional",
+   "views": 6910,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley",
+    "https://en.wikivoyage.org/wiki/Healesville",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 3 counted sources, 6910 page views"
+  },
+  {
+   "name": "Healesville",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-2",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Town at the eastern end of the Yarra Valley with galleries, cafes and the rail trail, near the sanctuary.",
+   "wiki": "Healesville, Victoria",
+   "coordinates": {
+    "lat": -37.65611111,
+    "lng": 145.51388889
+   },
+   "coordinates_source": "wikipedia:Healesville",
+   "pin_status": "provisional",
+   "views": 12058,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley",
+    "https://en.wikivoyage.org/wiki/Healesville",
+    "https://www.visityarravalley.com.au/see-and-do/arts-culture"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 3 counted sources, 12058 page views"
+  },
+  {
+   "name": "Domaine Chandon",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-3",
+   "category": "entertainment",
+   "icon": "🥂",
+   "bio": "Sparkling wine producer at Coldstream with tastings and a restaurant.",
+   "wiki": "Domaine Chandon Australia",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Well-known sparkling winery with tastings, named by Wikivoyage; winery is a recognised visitor draw.",
+   "skeptic_objection": "Famous winery visitors go to; but a venue and the wine region is the draw."
+  },
+  {
+   "name": "Yering Station",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-4",
+   "category": "entertainment",
+   "icon": "🍇",
+   "bio": "Historic winery and cellar door near Yarra Glen, one of the oldest vineyards in the valley.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Victoria's oldest vineyard with historic buildings, cellar door and restaurant, a headline Yarra Valley winery in every guide. Wikivoyage page did not list it; guidebook-level knowledge, source not opened.",
+   "skeptic_objection": "Heritage winery known to guides; but a cellar door/restaurant."
+  },
+  {
+   "name": "TarraWarra Museum of Art",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-5",
+   "category": "museum",
+   "icon": "🖼️",
+   "bio": "Art museum of early Australian modernist and contemporary work, overlooking the vineyards.",
+   "coordinates": {
+    "lat": -37.65963889,
+    "lng": 145.46919444
+   },
+   "coordinates_source": "wikipedia:TarraWarra Museum of Art",
+   "pin_status": "provisional",
+   "views": 1251,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley",
+    "https://en.wikivoyage.org/wiki/Healesville"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 1251 page views"
+  },
+  {
+   "name": "Yarra Glen",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-6",
+   "category": "historic",
+   "icon": "🍷",
+   "bio": "Town in the heart of the Yarra Valley wine district with cafes and galleries.",
+   "wiki": "Yarra Glen, Victoria",
+   "coordinates": {
+    "lat": -37.64888889,
+    "lng": 145.37194444
+   },
+   "coordinates_source": "wikipedia:Yarra Glen",
+   "pin_status": "provisional",
+   "views": 3686,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
+    "https://en.wikivoyage.org/wiki/Yarra_Valley"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 3686 page views"
+  },
+  {
+   "name": "Four Pillars Gin Distillery",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-7",
+   "category": "entertainment",
+   "icon": "🍸",
+   "bio": "Gin distillery in Healesville offering tastings and tours.",
+   "wiki": "Four Pillars Gin",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Healesville",
+    "https://en.wikivoyage.org/wiki/Yarra_Valley"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Two Wikivoyage mentions; distillery tastings and tours are a recognised attraction like a brewery tour.",
+   "skeptic_objection": "A recognised distillery draw; but a venue/shop."
+  },
+  {
+   "name": "Lilydale to Warburton Rail Trail",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-8",
+   "category": "hike",
+   "icon": "🚲",
+   "bio": "40 km walking and cycling trail on a former railway from Lilydale through the valley to Warburton.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 2904,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley",
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 3 counted sources, 2904 page views"
+  },
+  {
+   "name": "Coombe Yarra Valley Melba's Garden Walk",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-9",
+   "category": "nature",
+   "icon": "🌹",
+   "bio": "Seven acres of century-old gardens to walk through, near Dixons Creek.",
+   "wiki": "Coombe Yarra Valley",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Century-old Melba estate gardens open to visitors, tourism-board listed; a garden walk is a half-hour-plus visit.",
+   "skeptic_objection": "Garden with history; but also a winery property."
+  },
+  {
+   "name": "Yarra Valley Railway",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-10",
+   "category": "entertainment",
+   "icon": "🚂",
+   "bio": "Tourist railway running from Healesville on weekends and public holidays.",
+   "coordinates": {
+    "lat": -37.6597,
+    "lng": 145.4891
+   },
+   "coordinates_source": "wikipedia:Yarra Valley Railway",
+   "pin_status": "provisional",
+   "views": 4655,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Healesville"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Wikivoyage names the heritage railway at Healesville; the ride is the attraction, a permanent venue (runs weekends and holidays).",
+   "skeptic_objection": "Ride is the attraction with no distinct far end; but limited operating days."
+  },
+  {
+   "name": "Gulf Station Historic Farm",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-11",
+   "category": "historic",
+   "icon": "🐑",
+   "bio": "Restored 19th-century working farm near Yarra Glen showing how a family lived on the land.",
+   "wiki": "Gulf Station",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/arts-culture"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: tourism board arts-culture listing; restored working farm open to the public (National Trust).",
+   "skeptic_objection": "One source; open only on certain days."
+  },
+  {
+   "name": "Maroondah Reservoir Park",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-12",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "Reservoir park east of Healesville with a picnic area and a walk.",
+   "wiki": "Maroondah Reservoir",
+   "coordinates": {
+    "lat": -37.641932,
+    "lng": 145.551338
+   },
+   "coordinates_source": "wikipedia:Maroondah Dam",
+   "pin_status": "provisional",
+   "views": 2283,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Healesville"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Wikivoyage names it, 5 km east of Healesville; reservoir park with picnic area, walks and lookout.",
+   "skeptic_objection": "Named in Wikivoyage Do; but a plain picnic reserve."
+  },
+  {
+   "name": "Badger Weir",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-13",
+   "category": "nature",
+   "icon": "🥾",
+   "bio": "Weir and walking area near Healesville with forest walks to Coranderrk and the Slip tracks.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Healesville",
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: two counted sources; forest walk and picnic area.",
+   "skeptic_objection": "Local picnic reserve; Wikivoyage entry has no description."
+  },
+  {
+   "name": "Wirrawilla Rainforest Walk",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-14",
+   "category": "hike",
+   "icon": "🌿",
+   "bio": "Easy circuit walk through temperate rainforest in Toolangi State Forest.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Visit Yarra Valley calls it an easy short rainforest circuit in Toolangi State Forest; a named walk.",
+   "skeptic_objection": "One source, short walk, similar to other rainforest walks."
+  },
+  {
+   "name": "Lilydale",
+   "action": "spot",
+   "destination": "yarra-valley",
+   "id": "yarra-valley-15",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Town at the western gateway to the valley and the start of the Lilydale to Warburton Rail Trail.",
+   "wiki": "Lilydale, Victoria",
+   "coordinates": {
+    "lat": -37.758,
+    "lng": 145.35
+   },
+   "coordinates_source": "wikipedia:Lilydale, Victoria",
+   "pin_status": "provisional",
+   "views": 12823,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 12823 page views"
+  },
+  {
+   "name": "Mount Donna Buang",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-1",
+   "category": "viewpoint",
+   "icon": "🏔️",
+   "bio": "Mountain with a 21 m lookout tower at 1,245 m, with views to the Dandenongs and Cathedral Range.",
+   "coordinates": {
+    "lat": -37.70638889,
+    "lng": 145.68111111
+   },
+   "coordinates_source": "wikipedia:Mount Donna Buang",
+   "pin_status": "provisional",
+   "views": 9657,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park",
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 9657 page views"
+  },
+  {
+   "name": "Donna Buang Rainforest Gallery and Skywalk",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-2",
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "Boardwalk loop through cool temperate rainforest near Warburton, with a skywalk 15 m above the ground.",
+   "wiki": "Rainforest Gallery",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park",
+    "https://en.wikivoyage.org/wiki/Yarra_Valley"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1+2: two Wikivoyage pages name it; a boardwalk and platform 15 m above the rainforest, a half-hour+ visit.",
+   "skeptic_objection": "Part of Yarra Ranges National Park, which may be listed separately."
+  },
+  {
+   "name": "Lake Mountain",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-3",
+   "category": "mountain",
+   "icon": "⛷️",
+   "bio": "Mountain resort above Marysville with cross-country skiing in winter and summit walks in summer.",
+   "wiki": "Lake Mountain (Victoria)",
+   "coordinates": {
+    "lat": -37.50444444,
+    "lng": 145.88222222
+   },
+   "coordinates_source": "wikipedia:Lake Mountain (Victoria)",
+   "pin_status": "provisional",
+   "views": 4813,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure",
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "duplicate_of_region": "vic-high-country",
+   "reason": "kept; 2 counted sources, 4813 page views High Country region also lists it: dedupe at merge."
+  },
+  {
+   "name": "Marysville",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-4",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Mountain town on the ranges' eastern edge, base for Steavenson Falls, Lake Mountain and Lady Talbot Drive.",
+   "wiki": "Marysville, Victoria",
+   "coordinates": {
+    "lat": -37.5,
+    "lng": 145.73333333
+   },
+   "coordinates_source": "wikipedia:Marysville, Victoria",
+   "pin_status": "provisional",
+   "views": 14745,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 14745 page views"
+  },
+  {
+   "name": "Steavenson Falls",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-5",
+   "category": "nature",
+   "icon": "💦",
+   "bio": "One of Victoria's tallest waterfalls, reached on a walk from Marysville.",
+   "coordinates": {
+    "lat": -37.5327,
+    "lng": 145.7737
+   },
+   "coordinates_source": "wikipedia:Steavenson Falls",
+   "pin_status": "provisional",
+   "views": 1615,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1: Visit Yarra Valley calls it one of Victoria's tallest waterfalls; Marysville's headline sight, floodlit and walkable.",
+   "skeptic_objection": "Single counted source."
+  },
+  {
+   "name": "Warburton",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-6",
+   "category": "historic",
+   "icon": "🏘️",
+   "bio": "Upper Yarra town and gateway to Mount Donna Buang, the rail trail and rainforest walks.",
+   "wiki": "Warburton, Victoria",
+   "coordinates": {
+    "lat": -37.755,
+    "lng": 145.697
+   },
+   "coordinates_source": "wikipedia:Warburton, Victoria",
+   "pin_status": "provisional",
+   "views": 16691,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking",
+    "https://www.visityarravalley.com.au/see-and-do/nature-adventure"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; 2 counted sources, 16691 page views"
+  },
+  {
+   "name": "Black Spur",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-7",
+   "category": "nature",
+   "icon": "🚗",
+   "bio": "Scenic drive through tall ash forest between Healesville and Narbethong.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 4879,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Valley"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1: Wikivoyage Yarra Valley features Black Spur Forest as its banner image; scenic forest drive with tall ash trees, a known second-tier stop.",
+   "skeptic_objection": "A drive, and a roadside forest stop; not a place to linger."
+  },
+  {
+   "name": "Keppel Falls",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-8",
+   "category": "nature",
+   "icon": "💦",
+   "bio": "Long cascade in the Taggerty River headwaters, reached on a walk from Lady Talbot Drive.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park",
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Rule 1: two counted sources (Wikivoyage, Visit Yarra Valley); waterfall reached by walk from Lady Talbot Drive.",
+   "skeptic_objection": "Wikivoyage gives no description; may be part of Lady Talbot Drive."
+  },
+  {
+   "name": "Cathedral Range State Park",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-9",
+   "category": "nature",
+   "icon": "⛰️",
+   "bio": "State park of jagged ridges and hiking, with the Jawbone car park as a main starting point.",
+   "coordinates": {
+    "lat": -37.38027778,
+    "lng": 145.73583333
+   },
+   "coordinates_source": "wikipedia:Cathedral Range State Park",
+   "pin_status": "provisional",
+   "views": 1325,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "duplicate_of_region": "vic-high-country",
+   "reason": "kept; Rule 1: Visit Yarra Valley calls it some of the best hiking in the state; jagged ridges, a state park with Wikipedia article. High Country region also lists it: dedupe at merge.",
+   "skeptic_objection": "Single counted source and park is on the region's edge."
+  },
+  {
+   "name": "South Jawbone Peak",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-10",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "Summit reached on a 3.5 km return hike from the Jawbone car park in Cathedral Range State Park.",
+   "wiki": "South Jawbone",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Visit Yarra Valley names the 3.5 km summit hike; a named peak walk.",
+   "skeptic_objection": "Part of Cathedral Range State Park; one source."
+  },
+  {
+   "name": "Beeches Rainforest Walk",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-11",
+   "category": "hike",
+   "icon": "🌿",
+   "bio": "Short walk through cool temperate rainforest on Lady Talbot Drive near Marysville.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yarra_Ranges_National_Park"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Wikivoyage lists a short rainforest walk off Lady Talbot Drive; a named walk worth 30+ min.",
+   "skeptic_objection": "One source and a short walk; near-duplicate of the drive's other stops."
+  },
+  {
+   "name": "Ada Tree",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-12",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "Giant mountain ash over 300 years old in the Yarra State Forest, reached by a short walk.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Giant mountain ash after a short walk in Yarra Ranges forest, named by Visit Yarra Valley; a distinct natural landmark guides single out. Visit Yarra Valley page not re-opened; earlier counted source accepted.",
+   "skeptic_objection": "A named natural landmark; but far in State Forest, a short stop."
+  },
+  {
+   "name": "O'Shannassy Aqueduct Trail",
+   "action": "spot",
+   "destination": "yarra-ranges-national-park",
+   "id": "yarra-ranges-national-park-13",
+   "category": "hike",
+   "icon": "🥾",
+   "bio": "30 km walking and cycling trail along the historic aqueduct above the Upper Yarra Valley.",
+   "wiki": "O'Shannassy Aqueduct",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; Visit Yarra Valley describes a 30 km walking and cycling trail along a historic aqueduct; a promoted trail.",
+   "skeptic_objection": "One source; a long linear trail with no single point."
+  },
+  {
+   "name": "Kinglake National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "kinglake-national-park",
+   "category": "nature",
+   "icon": "🌲",
+   "bio": "National park on the Great Dividing Range slopes near Kinglake, with waterfall walks and the Andrew Hill summit.",
+   "coordinates": {
+    "lat": -37.40638889,
+    "lng": 145.21083333
+   },
+   "coordinates_source": "wikipedia:Kinglake National Park",
+   "pin_status": "provisional",
+   "views": 1606,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kinglake",
+    "https://en.wikivoyage.org/wiki/Kinglake_National_Park",
+    "https://www.visityarravalley.com.au/see-and-do/walking-hiking"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "reason": "Standalone: only three kept places (park, Masons Falls, Wombelano Falls), so no destination. 37 km from Yarra Valley centre, reached from the Whittlesea/Melbourne side and outside the valley span (~21 km)."
+  },
+  {
+   "name": "Masons Falls",
+   "action": "standalone",
+   "destination": null,
+   "id": "masons-falls",
+   "category": "nature",
+   "icon": "💦",
+   "bio": "Waterfall in Kinglake National Park reached by a 700 m walk from Masons Falls Picnic Area.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kinglake"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "reason": "Standalone: inside Kinglake National Park (which is itself standalone, three places). 40 km-ish from Yarra Valley, outside its span.",
+   "skeptic_objection": "Part of Kinglake NP as a larger spot; one source."
+  },
+  {
+   "name": "Wombelano Falls",
+   "action": "standalone",
+   "destination": null,
+   "id": "wombelano-falls",
+   "category": "nature",
+   "icon": "💦",
+   "bio": "Hidden waterfall just north of Kinglake, reached by a short easy walk.",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "unresolved",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Kinglake"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "reason": "Standalone: just north of Kinglake, outside every destination span; same cluster as Kinglake National Park.",
+   "skeptic_objection": "One source, small falls."
+  },
+  {
+   "name": "Lake Eildon National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-eildon-national-park",
+   "category": "nature",
+   "icon": "🛶",
+   "bio": "National park around Lake Eildon's shore with boating, camping and walking.",
+   "coordinates": {
+    "lat": -37.21666667,
+    "lng": 145.98333333
+   },
+   "coordinates_source": "wikipedia:Lake Eildon National Park",
+   "pin_status": "provisional",
+   "views": 2860,
+   "counted_sources": [],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "duplicate_of_region": "vic-high-country",
+   "reason": "Standalone: ~50 km from Yarra Ranges National Park centre, reached from Eildon/Yea. High Country region also lists it: dedupe at merge.",
+   "skeptic_objection": "Wikipedia only; park largely water-based and may be handled with Eildon."
+  },
+  {
+   "name": "Montsalvat",
+   "action": "standalone",
+   "destination": null,
+   "id": "montsalvat",
+   "category": "historic",
+   "icon": "🎨",
+   "bio": "Artists' colony in Eltham from the 1930s, with galleries and a hall open to visitors.",
+   "coordinates": {
+    "lat": -37.728,
+    "lng": 145.1521
+   },
+   "coordinates_source": "wikipedia:Montsalvat",
+   "pin_status": "provisional",
+   "views": 10353,
+   "counted_sources": [
+    "https://www.visityarravalley.com.au/see-and-do/arts-culture"
+   ],
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "reason": "Standalone: Eltham is Melbourne's north-eastern edge, 28 km from Yarra Valley centre and outside its span; 23 km from Dandenong Ranges but reached from Melbourne, not that base. A Melbourne destination, if one is created, may adopt it.",
+   "skeptic_objection": "One counted source; includes a restaurant and event venue."
+  }
+ ],
+ "existing_fixes": [],
+ "existing_fixes_note": "None: no Victoria destinations or spots exist in src/data yet.",
+ "review_list": [
+  {
+   "name": "Yarra Ranges Regional Museum",
+   "case": "For: open museum in a purpose-built Lilydale building, tourism-board listed. Against: one source, a regional museum, short visit.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mont De Lancey Historic Homestead",
+   "case": "For: historic homestead open to public with cafe, tourism-board listed. Against: one source, small local heritage site.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Peninsula Tunnels",
+   "case": "For: gold-era river diversion tunnels, walkable heritage site near Warburton. Against: one source, niche, short visit.",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "neighbour_notes": [
+  "Lake Mountain, Cathedral Range State Park and Lake Eildon National Park are also kept by region vic-high-country: placed here, merge step must dedupe (one id each).",
+  "Melbourne region owns Dandenong Market and Yarra Bend Park only; it reviewed Lysterfield Park (not kept), so Lysterfield Lake Park is placed here under Dandenong Ranges.",
+  "Montsalvat (Eltham) is left standalone; if the Melbourne run creates a Melbourne destination covering Eltham, it may become its spot.",
+  "Kept candidate \"Yarra Ranges National Park\" is the destination yarra-ranges-national-park itself, not a spot."
+ ],
+ "standalone_within_40km_of_new_destination": [
+  {
+   "spot": "Kinglake National Park",
+   "destination": "yarra-valley",
+   "km": 37,
+   "why_not_a_spot": "outside valley span (~21 km); reached from Whittlesea/Melbourne side, and only three Kinglake places"
+  },
+  {
+   "spot": "Masons Falls",
+   "destination": "yarra-valley",
+   "km": 37,
+   "why_not_a_spot": "same as Kinglake National Park"
+  },
+  {
+   "spot": "Wombelano Falls",
+   "destination": "yarra-valley",
+   "km": 37,
+   "why_not_a_spot": "same as Kinglake National Park"
+  },
+  {
+   "spot": "Montsalvat",
+   "destination": "yarra-valley",
+   "km": 28,
+   "why_not_a_spot": "Eltham is a Melbourne suburb outside the valley span; also 23 km from Dandenong Ranges, reached from Melbourne"
+  },
+  {
+   "spot": "Montsalvat",
+   "destination": "dandenong-ranges",
+   "km": 23,
+   "why_not_a_spot": "outside 75% of the 35 km span (~13 km)"
+  }
+ ],
+ "coordinate_notes": "Candidate coordinates are Wikipedia/Wikivoyage points or null. Null pins are unresolved; the pins stage runs resolve-pin.py for all."
+}

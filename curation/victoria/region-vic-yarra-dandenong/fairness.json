@@ -1,0 +1,194 @@
+{
+ "inside_destinations": 43,
+ "standalone": 5,
+ "new_destinations": [
+  "dandenong-ranges",
+  "yarra-valley",
+  "yarra-ranges-national-park"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Yering Station",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Dandenong Ranges National Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "William Ricketts Sanctuary",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Cloudehill Gardens",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Alfred Nicholas Memorial Gardens",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Trees Adventure Glen Harrow Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Lysterfield Lake Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Domaine Chandon",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Gilwell Park Adventure Centre",
+   "views": 13633,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: scout group camp, not open to general visitors."
+  },
+  {
+   "name": "Yea",
+   "views": 12688,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: small town with no named sight; source only mentions trails nearby."
+  },
+  {
+   "name": "Kinglake",
+   "views": 10933,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: gateway town; the draw is Kinglake National Park, a separate candidate."
+  },
+  {
+   "name": "Australian Bicentennial National Trail",
+   "views": 6254,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a 5,330 km trail, not a spot; the local section is a stretch of road/track."
+  },
+  {
+   "name": "Hurstbridge",
+   "views": 5708,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/4: suburban-edge town known for a seasonal festival."
+  },
+  {
+   "name": "Coldstream",
+   "views": 5003,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a small town with no sight of its own."
+  },
+  {
+   "name": "Gembrook",
+   "views": 3356,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Town at the Puffing Billy terminus; the railway is the draw and is its own spot; no distinct sight."
+  },
+  {
+   "name": "Kallista",
+   "views": 3093,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage line only describes houses and gardens; a village with no named sight."
+  },
+  {
+   "name": "Yarra Junction",
+   "views": 2226,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: small town; its museum is rejected."
+  },
+  {
+   "name": "Toolangi State Park",
+   "views": 1729,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wrapper for the forest whose walk (Wirrawilla) is kept; Discovery Centre alone is minor."
+  },
+  {
+   "name": "Silvan Dam Lookout",
+   "views": 1519,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a lookout over a reservoir, part of the dam area, short stop."
+  },
+  {
+   "name": "Sugarloaf Reservoir",
+   "views": 567,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: local picnic/BBQ reserve."
+  },
+  {
+   "name": "Lady Talbot Drive",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 3: a scenic drive whose stops (falls, walks) are separate candidates; the road is how you reach them."
+  },
+  {
+   "name": "Lyrebird Circuit Walk",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Rule 3: a 500 m accessible loop inside Kinglake National Park; part of the park spot."
+  }
+ ],
+ "review": [
+  {
+   "name": "Yarra Ranges Regional Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: open museum in a purpose-built Lilydale building, tourism-board listed. Against: one source, a regional museum, short visit."
+  },
+  {
+   "name": "Mont De Lancey Historic Homestead",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: historic homestead open to public with cafe, tourism-board listed. Against: one source, small local heritage site."
+  },
+  {
+   "name": "Peninsula Tunnels",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "For: gold-era river diversion tunnels, walkable heritage site near Warburton. Against: one source, niche, short visit."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Montsalvat",
+   "views": 10353
+  },
+  {
+   "name": "Lake Eildon National Park",
+   "views": 2860
+  },
+  {
+   "name": "Kinglake National Park",
+   "views": 1606
+  },
+  {
+   "name": "Masons Falls",
+   "views": 0
+  },
+  {
+   "name": "Wombelano Falls",
+   "views": 0
+  }
+ ],
+ "benchmark": "Region has no NZ benchmark places; negative-benchmark equivalents rejected (operators: ballooning, Warburton Adventure Company; markets: Yarra Glen Sunday, St Andrews; events: KaBloom). Standalone spots are first-class; 5 of 45 here. Lowest kept have 0 views: all keeps meet the counted-source bar. Left-out candidates scoring higher all fail a concrete What-qualifies rule (reasons listed)."
+}
