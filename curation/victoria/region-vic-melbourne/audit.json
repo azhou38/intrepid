@@ -1,0 +1,119 @@
+[
+ {
+  "name": "Box Hill Town Hall",
+  "wiki": "Whitehorse Town Hall",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Box Hill Town Hall",
+   "wiki": "Whitehorse Town Hall",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Eastern_suburbs"
+   ],
+   "other_sources": [],
+   "note": "Civic building: Box Hill town hall, an elegant civic building with a visitable interior.",
+   "views": 0,
+   "coordinates": {
+    "lat": -37.819371,
+    "lng": 145.126589
+   },
+   "coordinates_source": "osm:nominatim amenity/townhall 'Box Hill Town Hall' (provisional: verify at placement)"
+  }
+ },
+ {
+  "name": "Eureka Tower",
+  "wiki": "Eureka Tower",
+  "views": 34623,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Eureka Tower",
+   "wiki": "Eureka Tower",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "other_sources": [],
+   "note": "Observation tower: Eureka Skydeck on level 88 with panoramic views over the city.",
+   "views": 34623,
+   "coordinates": {
+    "lat": -37.82166667,
+    "lng": 144.96444444
+   },
+   "coordinates_source": "wikipedia:Eureka Tower"
+  }
+ },
+ {
+  "name": "Luna Park Melbourne",
+  "wiki": "Luna Park, Melbourne",
+  "views": 29669,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Luna Park Melbourne",
+   "wiki": "Luna Park, Melbourne",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/St_Kilda"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Category:Tourist_attractions_in_Melbourne"
+   ],
+   "note": "Amusement park: 1912 seaside amusement park with its distinctive face entrance.",
+   "views": 29669,
+   "coordinates": {
+    "lat": -37.868036,
+    "lng": 144.976369
+   },
+   "coordinates_source": "wikipedia:Luna Park, Melbourne"
+  }
+ },
+ {
+  "name": "Melbourne Town Hall",
+  "wiki": "Melbourne Town Hall",
+  "views": 8876,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Melbourne Town Hall",
+   "wiki": "Melbourne Town Hall",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "other_sources": [],
+   "note": "Civic building: 1870 town hall with a guided tour on weekdays; a visitor source names the tour.",
+   "views": 8876,
+   "coordinates": {
+    "lat": -37.815145,
+    "lng": 144.966777
+   },
+   "coordinates_source": "wikipedia:Melbourne Town Hall"
+  }
+ },
+ {
+  "name": "Old Melbourne Gaol",
+  "wiki": "Old Melbourne Gaol",
+  "views": 21956,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Old Melbourne Gaol",
+   "wiki": "Old Melbourne Gaol",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "other_sources": [],
+   "note": "Historic prison: 1850s gaol open to visitors with daytime tours and night tours.",
+   "views": 21956,
+   "coordinates": {
+    "lat": -37.80805556,
+    "lng": 144.96527778
+   },
+   "coordinates_source": "wikipedia:Old Melbourne Gaol"
+  }
+ }
+]
