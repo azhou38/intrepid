@@ -848,7 +848,8 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Berlin Wall Memorial": "East side gallery, Berlin Wall (Ank Kumar, Infosys Limited) 14.jpg",
   // The plain "Blue Lagoon" title is a disambiguation page with no image, and the search fallback finds none.
   // CC0 (Frank Denney), so it needs no attribution.
-  "Blue Lagoon": "Nanuya Lailai 1.jpg",
+  "Blue Lagoon": "Blue-lagoon-spa-spring (Unsplash).jpg",
+  "Blue Lagoon (Nanuya Lailai)": "Nanuya Lailai 1.jpg",
   // New Zealand (South Island), hand-picked per IMAGES.md. Headers (keyed by destination name):
   "Christchurch": "Christchurch City.jpg",
   "Akaroa": "Akaroa township.jpg",
