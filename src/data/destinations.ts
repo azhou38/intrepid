@@ -4520,7 +4520,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Fiji's capital, with a national museum, a daily market and rainforest pools nearby",
     description: "Suva is Fiji's national capital and largest city, on Viti Levu. The Fiji Museum in Thurston Gardens holds artefacts about 3,700 years old. The municipal market on Harris Road sells fruit and vegetables from Monday to Saturday. Just north of the centre, Colo-i-Suva Forest Reserve has trails, swimming pools, Waisila Falls and birdlife, and a hill walk above Lami climbs to city and harbour views.",
     whyVisit: ["Explore Fiji's history at its national museum", "Walk rainforest trails to swimming pools", "Browse the daily produce market"],
-    whyVisitPhotos: ["ext-dest-suva-why1.jpg", "", "Suva, Fiji 61.jpg"],
+    whyVisitPhotos: ["ext-dest-suva-why1.jpg", "ext-dest-suva-why2.jpg", "Suva, Fiji 61.jpg"],
     highlights: ["Fiji's past", "Rainforest swims", "Market produce"],
     goodToKnow: [
       { icon: "🥭", title: "Market closed Sundays", detail: "The produce market on Harris Road runs Monday to Saturday, so plan Sunday for something else." },
