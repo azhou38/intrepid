@@ -12,7 +12,7 @@ tools: Bash, Read, Write
 Limits: at most 6 pages per slot; stop a slot once you have 3 usable candidates. Download a candidate only when you propose it (`curl -s -L -A "Mozilla/5.0" -o <local> <url>`) and give its real width.
 
 What makes a candidate (IMAGES.md has the full rules; open it only for a case these don't settle):
-- The named place itself, a real current colour photograph, at least 960 px wide for a spot, 1280 for a why-visit card (which must show its reason), 1500 for a header. No maps, logos, signs, archive scans, stand-ins, or a person or animal as the main subject.
+- The named place itself, a real current colour photograph, at least 960 px wide for a spot, a why-visit card (which must show its reason) and a header. No maps, logos, signs, archive scans, stand-ins, or a person or animal as the main subject.
 - Not another spot's subject (a park is not its waterfall when the waterfall is a spot of its own).
 - Licence label: "official photo, used with permission" for a tourism board, parks agency or trail body (the sites listed in `scripts/curation/photo-sources.json`), "official photo, permission not confirmed" for a venue, operator or council, "web photo, permission not confirmed" for a guide or blog. Never an NC licence.
 - Don't rank or judge: that's the judges'.
