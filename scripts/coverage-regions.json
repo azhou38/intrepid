@@ -1099,64 +1099,197 @@
     {
       "id": "vic-melbourne",
       "name": "Melbourne (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "melbourne"
+      ],
+      "standalone": [
+        "royal-botanic-gardens-cranbourne",
+        "mcclelland-gallery-and-sculpture-park"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-yarra-dandenong",
       "name": "Yarra Valley & Dandenong Ranges (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "dandenong-ranges",
+        "yarra-valley",
+        "yarra-ranges-national-park"
+      ],
+      "standalone": [
+        "kinglake-national-park",
+        "masons-falls",
+        "wombelano-falls",
+        "montsalvat"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-mornington-phillip-island",
       "name": "Mornington Peninsula & Phillip Island (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "mornington-peninsula",
+        "phillip-island"
+      ],
+      "standalone": [
+        "french-island",
+        "state-coal-mine"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-great-ocean-road",
       "name": "Great Ocean Road & Shipwreck Coast (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "geelong",
+        "bellarine-peninsula",
+        "surf-coast",
+        "lorne",
+        "apollo-bay",
+        "port-campbell-national-park",
+        "warrnambool",
+        "portland"
+      ],
+      "standalone": [
+        "port-fairy",
+        "griffiths-island-lighthouse",
+        "the-crags",
+        "budj-bim-cultural-landscape",
+        "mount-eccles-national-park",
+        "mount-leura"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-grampians-western",
       "name": "Grampians & Western Victoria (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "grampians-national-park",
+        "ararat",
+        "hamilton-victoria",
+        "horsham"
+      ],
+      "standalone": [
+        "little-desert-national-park",
+        "budj-bim-national-park",
+        "lake-surprise",
+        "lower-glenelg-national-park",
+        "tower-hill-wildlife-reserve",
+        "lake-bullen-merri",
+        "lake-gnotuk",
+        "colac-victoria",
+        "kara-kara-national-park",
+        "brim-silo-art",
+        "rosebery-silo-art",
+        "sea-lake-silo-art",
+        "patchewollock-silo-art",
+        "lascelles-silo-art",
+        "nulawil-silo-art",
+        "sheep-hills-silo-art",
+        "st-arnaud-silo-art-and-murals"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-goldfields-spa",
       "name": "Goldfields, Daylesford & Macedon Ranges (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "ballarat",
+        "bendigo",
+        "daylesford",
+        "macedon-ranges",
+        "castlemaine"
+      ],
+      "standalone": [
+        "heathcote-graytown-national-park",
+        "lake-eppalock",
+        "pink-cliffs-geological-reserve",
+        "o-keefe-rail-trail",
+        "maryborough",
+        "welcome-stranger-obelisk",
+        "kooyoora-state-park",
+        "melville-caves",
+        "eucalyptus-distillery-museum",
+        "goldfields-track"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-murray-mallee",
       "name": "Murray River & Mallee (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "mildura",
+        "echuca"
+      ],
+      "standalone": [
+        "murray-sunset-national-park",
+        "pink-lakes",
+        "hattah-kulkyne-national-park",
+        "wyperfeld-national-park",
+        "lake-tyrrell",
+        "gunbower-national-park",
+        "pioneer-settlement",
+        "swan-hill-river-walk",
+        "lake-boga-flying-boat-museum",
+        "shepparton-art-museum",
+        "kidstown",
+        "lake-mulwala"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-high-country",
       "name": "High Country & Alpine (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "mount-buffalo-national-park",
+        "alpine-national-park",
+        "mansfield",
+        "bright",
+        "beechworth",
+        "wangaratta"
+      ],
+      "standalone": [
+        "tallangatta",
+        "paradise-falls-cheshunt",
+        "lake-william-hovell",
+        "dartmouth-dam",
+        "australian-alps-walking-track",
+        "murray-to-the-mountains-rail-trail",
+        "omeo",
+        "corryong",
+        "burrowa-pine-mountain-national-park",
+        "mount-lawson-state-park"
+      ],
       "timezone": "Australia/Melbourne"
     },
     {
       "id": "vic-gippsland",
       "name": "Gippsland & Wilsons Promontory (VIC)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "wilsons-promontory",
+        "croajingolong",
+        "gippsland-lakes",
+        "south-gippsland"
+      ],
+      "standalone": [
+        "sale",
+        "sale-swing-bridge",
+        "gippsland-art-gallery",
+        "old-gippstown",
+        "walhalla",
+        "baw-baw-national-park",
+        "mount-baw-baw",
+        "toorongo-falls",
+        "tarra-bulga-national-park",
+        "corrigans-suspension-bridge",
+        "port-albert",
+        "snowy-river-national-park",
+        "buchan-caves",
+        "errinundra-national-park",
+        "cape-conran-coastal-park",
+        "mitchell-river-national-park",
+        "den-of-nargun"
+      ],
       "timezone": "Australia/Melbourne"
     }
   ],
