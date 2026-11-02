@@ -1000,8 +1000,8 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
 }
 
 // The Explored grid / list switch: Top Countries' segmented control (a grey track, the chosen side on a raised white pill),
-// with an icon and a label on each side. The pill slides across when the choice changes.
-const VIEW_SEG_W = 58;
+// with an icon on each side. The pill slides across when the choice changes.
+const VIEW_SEG_W = 34;
 function ViewToggle({ view, onView }: { view: ExploredView; onView: (v: ExploredView) => void }) {
   const idx = useSharedValue(view === 'grid' ? 0 : 1);
   useEffect(() => { idx.value = withTiming(view === 'grid' ? 0 : 1, { duration: 220, easing: Easing.out(Easing.cubic) }); }, [view]);
@@ -1015,8 +1015,7 @@ function ViewToggle({ view, onView }: { view: ExploredView; onView: (v: Explored
           <Pressable key={v} hitSlop={4} style={styles.viewToggleBtn} accessibilityRole="button" accessibilityState={{ selected: on }}
             accessibilityLabel={v === 'grid' ? 'Grid view' : 'List view'}
             onPress={() => { if (!on) { Haptics.selectionAsync(); onView(v); } }}>
-            <Icon size={13} color={on ? '#111827' : '#9CA3AF'} strokeWidth={2.5} />
-            <Text style={[styles.topToggleTxt, on && styles.topToggleTxtOn]}>{v === 'grid' ? 'Grid' : 'List'}</Text>
+            <Icon size={15} color={on ? '#111827' : '#9CA3AF'} strokeWidth={2.5} />
           </Pressable>
         );
       })}
@@ -1269,7 +1268,7 @@ const styles = StyleSheet.create({
   viewToggle:     { marginLeft: 'auto', flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
   viewTogglePill: { position: 'absolute', top: 2, bottom: 2, left: 2, width: VIEW_SEG_W, borderRadius: 7, backgroundColor: 'white',
                     shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
-  viewToggleBtn:  { width: VIEW_SEG_W, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4, paddingVertical: 4 },
+  viewToggleBtn:  { width: VIEW_SEG_W, alignItems: 'center', justifyContent: 'center', paddingVertical: 4 },
   // The Explored list (RankList): Top Countries' rows with a sub line, a page of them the screen wide.
   rankPage:    { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 2 },
   rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
