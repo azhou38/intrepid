@@ -1234,6 +1234,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} bring mild days for cave tours, cellar doors and wetland walks.",
   },
   {
+    id: 'mornington-peninsula', name: "Mornington Peninsula", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 66,
+    continent: 'Oceania', coordinates: { latitude: -38.36, longitude: 144.9 },
+    category: 'nature', icon: "♨️", rank: 3,
+    tagline: "A bay-and-ocean peninsula south of Melbourne with hot springs and vineyards",
+    description: "The Mornington Peninsula lies south of Melbourne on the eastern side of Port Phillip Bay, about 40 km long and tapering to Point Nepean. The bay side has sheltered sandy beaches for families, while the ocean side is popular with surfers. Peninsula Hot Springs has mineral-rich thermal pools up to 50 C, and Arthurs Seat reaches 305 m with wide views from its summit road. Point Nepean has an old fort and quarantine station, and is where Prime Minister Harold Holt vanished while swimming in 1967.",
+    whyVisit: ["Soak in thermal hot springs", "Walk coastal cliffs and bay beaches", "Taste wine at cellar doors"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Hot springs", "Coastal walks", "Cellar doors"],
+    goodToKnow: [
+      { icon: "🚗", title: "Drive or ferry in", detail: "Public transport is limited beyond the main towns, so a car helps. The Sorrento-Queenscliff car ferry runs hourly, 7am-6pm." },
+      { icon: "🧥", title: "Pack a jacket in winter", detail: "Summer is busiest, but cold-season storms on the Bass Strait beaches are dramatic. Bring a jacket." },
+      { icon: "♨️", title: "Hot springs peak pricing", detail: "Peninsula Hot Springs charges peak-time prices and has had age limits, so check both before going with young children." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "The peninsula is at its best and busiest in {months}, with sheltered bay beaches and surf.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
