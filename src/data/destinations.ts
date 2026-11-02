@@ -1858,6 +1858,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Southern right whales visit Logans Beach {months}, often close enough to see without binoculars.",
   },
   {
+    id: 'bellarine-peninsula', name: "Bellarine Peninsula", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -38.27, longitude: 144.57 },
+    category: 'nature', icon: "⛱️", rank: 4,
+    tagline: "A Port Phillip peninsula of seaside towns, beaches and coastal wineries",
+    description: "The Bellarine Peninsula lies south-west of Melbourne between Port Phillip, Corio Bay and Bass Strait. It became a holiday destination in the 1870s, when Melbourne visitors came by paddle steamer to fish and swim, and is now known for beaches, seaside resorts, small towns and wineries. The Bellarine Railway runs tourist services between Drysdale and Queenscliff, with a rail trail alongside. Burrunan dolphins and Australian fur seals are among the marine life seen around the coast.",
+    whyVisit: ["Stroll historic seaside streets", "Swim and surf at beach towns", "Taste wine at coastal vineyards"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Seaside streets", "Beach towns", "Coastal wineries"],
+    goodToKnow: [
+      { icon: "⛴️", title: "Cross by ferry", detail: "The Queenscliff to Sorrento ferry takes cars to the Mornington Peninsula and saves driving round the bay." },
+      { icon: "🏖️", title: "Summer crowds", detail: "The population roughly doubles in peak summer, so book stays early and arrive at beaches before midday." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Beach season peaks {months} and crowds double the population, so aim for the quieter end.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
