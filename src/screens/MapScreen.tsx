@@ -1497,11 +1497,12 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
 // ── Spot photo pins and names: one zoom-only plan, as for destinations (planDestPhotos) ───────────────────────────────
 // Each spot gets a PHOTO ZOOM (from which it shows its photo pin rather than its small pin) and a NAME ZOOM with a side
 // (right of the pin, else left). The plan walks the zoom from wide to close over EVERY spot, never just those on screen:
-// a spot becomes a candidate at its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID) and is retried every half level until it has
-// room, clear of the spot pins and names already placed and of the destination pins and names showing at that zoom (a
-// destination's stop once its spots take over). Placed pins and names are never displaced, and zooming in only spreads
-// them apart, so a photo pin or name that shows zoomed out persists zooming in; nothing depends on where the camera is,
-// so panning changes nothing. Priority (curated): visited spots, then the parent destination's rank, then the spot's place
+// a spot's photo pin shows from its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID), whatever other spot pins are near it: spot pins
+// may overlap one another. Only the destination pins and names showing at that zoom (a destination's stop once its spots
+// take over) hold it back, retried every half level until it is clear of them. A name waits, the same way, for room clear
+// of the spot pins and names already placed and of the destinations. Placed pins and names are never displaced, and
+// zooming in only spreads them apart, so a photo pin or name that shows zoomed out persists zooming in; nothing depends on
+// where the camera is, so panning changes nothing. Priority (curated): visited spots, then the parent destination's rank, then the spot's place
 // in its destination's list.
 const SPOT_PLAN_REACH_PT = 340;   // the widest two footprints can reach toward each other (pins plus names)
 function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisited: (id: string) => boolean) {
@@ -1565,8 +1566,9 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
     return true;
   };
   const photoAt = new Map<string, number>(), nameAt = new Map<string, { z: number; side: 'right' | 'left' }>();
+  // Not tested against the spot pins and names already placed: every spot shows its photo pin from its own zoom.
   const tryPin = (i: number, z: number, scale: number) => {
-    if (!clear(ux[i], uy[i], scale, PL, PR, PT, PB) || !clearOfDests(i, z, scale, PL, PR, PT, PB)) return false;
+    if (!clearOfDests(i, z, scale, PL, PR, PT, PB)) return false;
     photoAt.set(ordered[i].id, z); add(ux[i], uy[i], PL, PR, PT, PB);
     return true;
   };
