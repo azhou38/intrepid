@@ -797,13 +797,15 @@ function DestinationSheet({
   const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
 
   // Derived indicator position for the tab bar underline — evenly spaced by tab count
+  // Moved with a transform, not `left`: a layout change every frame of the slide re-laid-out the whole sheet.
+  const tabBarWSV = useSharedValue(W);
   const tabIndicatorStyle = useAnimatedStyle(() => ({
-    left: `${interpolate(
+    transform: [{ translateX: interpolate(
       tabSlideAnim.value,
       TAB_ORDER.map((_, i) => -i * W).reverse(),
-      TAB_ORDER.map((_, i) => (i * 100) / TAB_ORDER.length).reverse(),
+      TAB_ORDER.map((_, i) => (i * tabBarWSV.value) / TAB_ORDER.length).reverse(),
       Extrapolation.CLAMP,
-    )}%` as `${number}%`,
+    ) }],
   }));
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
@@ -844,7 +846,12 @@ function DestinationSheet({
     const t  = Math.max(0, Math.min(1, progress - i0));
     const h0 = hs[i0] || 0;
     const h1 = hs[i1] || h0;
-    const h  = h0 + (h1 - h0) * t;
+    // A height is a layout change: animated every frame it re-laid-out the whole sheet each frame of the slide, and that
+    // was the stutter. At the top of the content it now holds the taller of the two panels while they slide (nothing is
+    // cut off) and changes once, when the slide lands. Scrolled down, it still follows the slide, so the shorter tab's
+    // scroll extent closes in gradually instead of the page jumping when the offset is clamped at the end.
+    const settled = t === 0 || i0 === i1;
+    const h = settled ? h0 : scrollYSV.value > 1 ? h0 + (h1 - h0) * t : Math.max(h0, h1);
     return { height: h > 0 ? h : undefined };
   });
 
@@ -994,7 +1001,7 @@ function DestinationSheet({
       <Reanimated.View
         style={[
           st.tabIndicatorTrack,
-          { width: `${100 / TAB_ORDER.length}%` },
+          { left: 0, width: `${100 / TAB_ORDER.length}%` },
           tabIndicatorStyle,
         ]}
       >
@@ -1842,7 +1849,7 @@ function DestinationSheet({
           {/* ── TAB BAR — every destination gets About + Spots; visited also gets My Visit. */}
           <View
             style={[st.tabBar, { marginTop: 0 }]}
-            onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; }}
+            onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; tabBarWSV.value = e.nativeEvent.layout.width; }}
           >
             {renderTabBarRow()}
           </View>

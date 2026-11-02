@@ -376,10 +376,9 @@ function CountrySheet({
     const n = TAB_ORDER.length, { x, w } = tabRefSV.value;
     const centers = w === 0 ? null : n === 3 ? [x / 2, x + w / 2, x + w + x / 2] : [w / 2, w + w / 2];
     const xs = TAB_ORDER.map((_, i) => -i * W).reverse();
-    if (!centers) {
-      return { left: `${interpolate(tabSlideAnim.value, xs, TAB_ORDER.map((_, i) => ((i + 0.5) * 100) / n).reverse(), Extrapolation.CLAMP)}%` as `${number}%` };
-    }
-    return { left: interpolate(tabSlideAnim.value, xs, centers.slice(0, n).reverse(), Extrapolation.CLAMP) };
+    // A transform, not `left`: a layout change every frame of the slide re-laid-out the whole sheet.
+    const cs = centers ? centers.slice(0, n) : TAB_ORDER.map((_, i) => ((i + 0.5) * W) / n);
+    return { transform: [{ translateX: interpolate(tabSlideAnim.value, xs, cs.reverse(), Extrapolation.CLAMP) }] };
   });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
@@ -420,7 +419,12 @@ function CountrySheet({
     const t  = Math.max(0, Math.min(1, progress - i0));
     const h0 = hs[i0] || 0;
     const h1 = hs[i1] || h0;
-    const h  = h0 + (h1 - h0) * t;
+    // A height is a layout change: animated every frame it re-laid-out the whole sheet each frame of the slide, and that
+    // was the stutter. At the top of the content it now holds the taller of the two panels while they slide (nothing is
+    // cut off) and changes once, when the slide lands. Scrolled down, it still follows the slide, so the shorter tab's
+    // scroll extent closes in gradually instead of the page jumping when the offset is clamped at the end.
+    const settled = t === 0 || i0 === i1;
+    const h = settled ? h0 : scrollY.value > 1 ? h0 + (h1 - h0) * t : Math.max(h0, h1);
     return { height: h > 0 ? h : undefined };
   });
 
@@ -1497,7 +1501,7 @@ const st = StyleSheet.create({
   tabBtnMiddle: { flex: 0, paddingHorizontal: 22 },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
-  tabIndicator: { position: 'absolute', bottom: 0, width: 28, marginLeft: -14, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
+  tabIndicator: { position: 'absolute', bottom: 0, left: 0, width: 28, marginLeft: -14, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
   // ── Tab content slide track ─────────────────────────────────────────────────
   slideTrack: { overflow: 'hidden', width: W },
