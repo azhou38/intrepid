@@ -3041,4 +3041,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Dandenong Ranges",
   "Surf Coast",
   "Apollo Bay",
+  "Lorne",
 ]);

@@ -1370,6 +1370,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Walk the coast in {months}, or come in winter and spring to see southern right whales.",
   },
   {
+    id: 'lorne', name: "Lorne", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -38.5333, longitude: 143.9667 },
+    category: 'city', icon: "🏖️", rank: 3,
+    tagline: "Great Ocean Road beach town with a 3 km main beach and Otway waterfalls nearby",
+    description: "Lorne is a Great Ocean Road town 138 km, about two hours, from Melbourne, which began as a logging town. Its main beach runs about 3 km for bathing and surfing, and a pier is used for fishing. Cafes and galleries line Mountjoy Parade, and the town borders Great Otway National Park. The Lorne to Apollo Bay section of the road was finished in November 1932.",
+    whyVisit: ["Swim and surf off a long beach", "Chase waterfalls through Otway fern gullies", "Drive the Great Ocean Road coast"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Beach and surf", "Otway waterfalls", "Coastal drive"],
+    goodToKnow: [
+      { icon: "🎉", title: "New Year weekend crowds", detail: "Over 20,000 people visit on the first weekend of January for the Pier to Pub swim, so book ahead and expect crowds." },
+      { icon: "⛰️", title: "Steep road to Teddy's Lookout", detail: "The road up to Teddy's Lookout at the end of George Street is steep, so drive carefully." },
+      { icon: "🏖️", title: "Summer fills the town", detail: "Holiday-makers fill Lorne every summer, so arrive early in the day or visit outside school holidays." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Mild {months} weather suits beach time, though summer is busy and March is quieter.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
