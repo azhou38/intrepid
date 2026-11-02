@@ -372,6 +372,9 @@ function CountrySheet({
   // width and the outer two are equal), so every centre follows from one measurement: the middle tab's x and width (three
   // tabs: left centre x/2, middle x + w/2, right x + w + x/2), or the first tab's width (two equal tabs).
   const tabRefSV = useSharedValue({ x: 0, w: 0 });
+  // The scroll offset. Declared above the tab-slide styles: a worklet captures its values when it is created, and one
+  // declared later was still undefined.
+  const scrollY = useSharedValue(0);
   const tabIndicatorStyle = useAnimatedStyle(() => {
     const n = TAB_ORDER.length, { x, w } = tabRefSV.value;
     const centers = w === 0 ? null : n === 3 ? [x / 2, x + w / 2, x + w + x / 2] : [w / 2, w + w / 2];
@@ -480,7 +483,6 @@ function CountrySheet({
     resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y,
   );
   const scrollRef    = useRef<ScrollView>(null);
-  const scrollY      = useSharedValue(0);
 
   // Single shared value doing double duty as both the "clamp ceiling while collapsed" bound
   // and the compact card's own resting position — replaces the old collapsedYRef (JS-only,

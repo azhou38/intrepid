@@ -796,6 +796,9 @@ function DestinationSheet({
   // settling a tab never has even a slight bounce.
   const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
 
+  // Worklet-readable scroll offset (the drag gesture's full-screen capture gate, the tab slide's height). Declared above
+  // the tab-slide styles: a worklet captures its values when it is created, and one declared later was still undefined.
+  const scrollYSV = useSharedValue(0);
   // Derived indicator position for the tab bar underline — evenly spaced by tab count
   // Moved with a transform, not `left`: a layout change every frame of the slide re-laid-out the whole sheet.
   const tabBarWSV = useSharedValue(W);
@@ -1037,9 +1040,6 @@ function DestinationSheet({
   }, []);
   const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y);
-  // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only
-  // let a downward drag pull the sheet once its inner ScrollView is already at top).
-  const scrollYSV    = useSharedValue(0);
   // The vertical scroll offset at which the inline tab bar's top edge reaches the very top
   // of the sheet — i.e. exactly where it should hand off to the pinned overlay copy. Measured
   // via onLayout (below) rather than computed from HERO_H/insets, since the tab bar's own
