@@ -1361,8 +1361,7 @@ const styles = StyleSheet.create({
   rankTxt:   { fontSize: 11, fontWeight: '800', color: 'white' },
   tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 10, borderWidth: 3, borderColor: PICK_COLOR },
   tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: 28, paddingHorizontal: 8, paddingBottom: 8 },
-  // The name in the destination and spot sheets' header font (Playfair Display bold), sized for a tile.
-  tileName: { fontSize: 15, fontFamily: 'PlayfairDisplay_700Bold', letterSpacing: -0.2, color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
+  tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.35)', textShadowRadius: 3 },
   // A tile's flag, in its top left corner (the rank badge takes the top right).
   tileFlag:   { position: 'absolute', top: 6, left: 6 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
