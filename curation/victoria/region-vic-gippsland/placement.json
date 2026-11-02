@@ -1,0 +1,1653 @@
+{
+ "region": "vic-gippsland",
+ "branch": "curation/victoria",
+ "new_destinations": [
+  {
+   "id": "wilsons-promontory",
+   "name": "Wilsons Promontory National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "park",
+   "icon": "🏞️",
+   "rank": 2,
+   "coordinates": {
+    "latitude": -39.03,
+    "longitude": 146.33
+   },
+   "coordinates_source": "Tidal River visitor hub (approx.; wikipedia point -39.033,146.383 is the park centre); confirm at pins stage",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 45,
+   "name_evidence": "Wikivoyage has a 'Wilsons Promontory National Park' page and Wikivoyage Gippsland lists it; Parks Victoria's flagship park (southernmost point of mainland Australia).",
+   "why_destination": "Flagship park, 8 kept spots.",
+   "spots": [
+    "wilsons-promontory-1",
+    "wilsons-promontory-2",
+    "wilsons-promontory-3",
+    "wilsons-promontory-4",
+    "wilsons-promontory-5",
+    "wilsons-promontory-6",
+    "wilsons-promontory-7",
+    "wilsons-promontory-8"
+   ]
+  },
+  {
+   "id": "croajingolong",
+   "name": "Croajingolong National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "park",
+   "icon": "🏞️",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -37.68,
+    "longitude": 149.55
+   },
+   "coordinates_source": "park centre between Mallacoota and Point Hicks (wikipedia centroid -37.712,149.508); confirm visitor hub at pins stage",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 100,
+   "name_evidence": "Wikivoyage page 'Croajingolong National Park' and Parks Victoria; Mallacoota is its gateway (Wikivoyage 'Mallacoota' page, Visit East Gippsland chapter). UNESCO biosphere reserve.",
+   "why_destination": "8 kept spots; the park is a national park so a destination; Mallacoota is a gateway spot.",
+   "spots": [
+    "croajingolong-1",
+    "croajingolong-2",
+    "croajingolong-3",
+    "croajingolong-4",
+    "croajingolong-5",
+    "croajingolong-6",
+    "croajingolong-7",
+    "croajingolong-8"
+   ]
+  },
+  {
+   "id": "gippsland-lakes",
+   "name": "Gippsland Lakes",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "lake",
+   "icon": "⛵",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -37.9,
+    "longitude": 147.85
+   },
+   "coordinates_source": "midway between Bairnsdale, Metung and Lakes Entrance",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 70,
+   "name_evidence": "Visit Gippsland tourism brand and Wikivoyage Gippsland name 'Gippsland Lakes' as the region's main water draw; Wikivoyage has pages for Lakes Entrance and Bairnsdale. (No Wikivoyage page titled Gippsland Lakes.)",
+   "why_destination": "5 kept spots; named region preferred over Lakes Entrance town alone.",
+   "spots": [
+    "gippsland-lakes-1",
+    "gippsland-lakes-2",
+    "gippsland-lakes-3",
+    "gippsland-lakes-4",
+    "gippsland-lakes-5"
+   ]
+  },
+  {
+   "id": "south-gippsland",
+   "name": "South Gippsland",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "nature",
+   "icon": "🌾",
+   "rank": 4,
+   "coordinates": {
+    "latitude": -38.6,
+    "longitude": 145.95
+   },
+   "coordinates_source": "between Leongatha, Inverloch and Foster",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 100,
+   "name_evidence": "Wikivoyage region page 'South and West Gippsland' (South Gippsland redirects to it) and the Visit Prom Country tourism brand.",
+   "why_destination": "8 kept spots across Leongatha, Inverloch, Wonthaggi and Cape Liptrap.",
+   "spots": [
+    "south-gippsland-1",
+    "south-gippsland-2",
+    "south-gippsland-3",
+    "south-gippsland-4",
+    "south-gippsland-5",
+    "south-gippsland-6",
+    "south-gippsland-7",
+    "south-gippsland-8"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Mount Oberon",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-1",
+   "coordinates": {
+    "latitude": -39.04031,
+    "longitude": 146.344857
+   },
+   "coordinates_source": "resolve-pin.py OSM natural=peak 'Mount Oberon'",
+   "pin_status": "ok",
+   "category": "hike",
+   "wiki": "Mount Oberon",
+   "icon": "⛰️",
+   "bio_draft": "The Prom's signature summit walk, a granite climb with 360-degree views over the peninsula and Bass Strait.",
+   "visitHoursMin": 2.5,
+   "visitHoursMax": 4.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Squeaky Beach",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-2",
+   "coordinates": {
+    "latitude": -39.024951,
+    "longitude": 146.30515
+   },
+   "coordinates_source": "resolve-pin.py OSM natural=beach 'Squeaky Beach'",
+   "pin_status": "ok",
+   "category": "beach",
+   "wiki": "Squeaky Beach",
+   "icon": "🏖️",
+   "bio_draft": "Pale quartz sand that squeaks underfoot, in a bay of granite boulders a short walk from Tidal River.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Norman Beach",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-3",
+   "coordinates": {
+    "latitude": -39.035126,
+    "longitude": 146.320378
+   },
+   "coordinates_source": "resolve-pin.py OSM natural=beach 'Norman Beach'",
+   "pin_status": "ok",
+   "category": "beach",
+   "wiki": "Norman Beach",
+   "icon": "🏖️",
+   "bio_draft": "The sheltered swimming and snorkelling beach beside the Tidal River camp and estuary.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Wilsons Promontory Lightstation",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-4",
+   "coordinates": {
+    "latitude": -39.12961111,
+    "longitude": 146.42425
+   },
+   "coordinates_source": "wikipedia:Wilsons Promontory Lighthouse",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Wilsons Promontory Lighthouse",
+   "icon": "🗼",
+   "bio_draft": "Historic granite lighthouse and keepers' cottages at South East Point, reached by a long coastal walk.",
+   "visitHoursMin": 4.0,
+   "visitHoursMax": 8.0,
+   "views": 1440,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 1440 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Whisky Bay",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-5",
+   "coordinates": {
+    "latitude": -39.012272,
+    "longitude": 146.290744
+   },
+   "coordinates_source": "resolve-pin.py OSM natural=beach 'Whisky Bay'",
+   "pin_status": "ok",
+   "category": "beach",
+   "wiki": "Whisky Bay",
+   "icon": "🏖️",
+   "bio_draft": "A sunset beach reached by a 700 m walk from Tidal River, with granite headlands at either end.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 2.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Mount Bishop",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-6",
+   "coordinates": {
+    "latitude": -39.015972,
+    "longitude": 146.320485
+   },
+   "coordinates_source": "resolve-pin.py OSM natural=peak 'Bishop Peak' (name differs; confirm it is the Mount Bishop walk summit)",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": null,
+   "icon": "⛰️",
+   "bio_draft": "A summit walk of around 2.5 hours with views over Squeaky Beach and Whisky Bay.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 3.5,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Tongue Point",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-7",
+   "coordinates": {
+    "latitude": -38.993787,
+    "longitude": 146.253433
+   },
+   "coordinates_source": "resolve-pin.py OSM tourism=attraction 'Tongue Point' (point on the headland; route midpoint to be taken from the Darby River to Tongue Point walk)",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": null,
+   "icon": "🥾",
+   "bio_draft": "A coastal headland walk from Darby River with sweeping views along the Prom's western shore.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 4.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Lilly Pilly Gully",
+   "action": "spot",
+   "destination": "wilsons-promontory",
+   "id": "wilsons-promontory-8",
+   "coordinates": {
+    "latitude": -39.017519,
+    "longitude": 146.339686
+   },
+   "coordinates_source": "resolve-pin.py OSM trail midpoint 1.0 km 'Lilly Pilly Gully'",
+   "pin_status": "ok",
+   "category": "hike",
+   "wiki": null,
+   "icon": "🌿",
+   "bio_draft": "A short rainforest nature walk of fern gullies and tall eucalypts, easy enough for prams.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/wilsons-promontory-national-park/things-to-do/day-walks"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); wilsons-promontory span, reached from that base."
+  },
+  {
+   "name": "Mallacoota",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-1",
+   "coordinates": {
+    "latitude": -37.55,
+    "longitude": 149.75
+   },
+   "coordinates_source": "wikipedia:Mallacoota (town point; to be confirmed against OSM place=town)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Mallacoota",
+   "icon": "🏘️",
+   "bio_draft": "Remote inlet town on the Victorian coast, the gateway to Croajingolong with beaches, lakes and bushwalks.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 6.0,
+   "views": 15805,
+   "counted_sources": [
+    "https://www.visiteastgippsland.com.au/our-region/coastal-wilderness/mallacoota/"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 15805 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Point Hicks Lightstation",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-2",
+   "coordinates": {
+    "latitude": -37.80188889,
+    "longitude": 149.27552778
+   },
+   "coordinates_source": "wikipedia:Point Hicks Lighthouse",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Point Hicks Lighthouse",
+   "icon": "🗼",
+   "bio_draft": "Granite lighthouse where Cook's crew first sighted Australia's east coast, with tours and keepers' cottages.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "views": 528,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Croajingolong_National_Park",
+    "https://www.parks.vic.gov.au/places-to-see/parks/croajingolong-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (2 counted sources, 528 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Gabo Island Lightstation",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-3",
+   "coordinates": {
+    "latitude": -37.5685,
+    "longitude": 149.91688889
+   },
+   "coordinates_source": "wikipedia:Gabo Island Lighthouse",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Gabo Island Lighthouse",
+   "icon": "🗼",
+   "bio_draft": "Pink-granite lighthouse on an island reached by boat or plane, beside a large little penguin colony.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 5.0,
+   "views": 697,
+   "counted_sources": [
+    "https://www.visiteastgippsland.com.au/our-region/coastal-wilderness/mallacoota/"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 697 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Wilderness Coast Walk",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-4",
+   "coordinates": {
+    "latitude": -37.77,
+    "longitude": 149.15
+   },
+   "coordinates_source": "area hint only (route not resolved; no OSM feature found by resolve-pin.py); take route midpoint at pins stage",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": null,
+   "icon": "🥾",
+   "bio_draft": "A multi-day coastal walk from Sydenham Inlet to Mallacoota through the park's remote beaches and inlets.",
+   "visitHoursMin": 72.0,
+   "visitHoursMax": 96.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/croajingolong-national-park/things-to-do/walk-the-wilderness-coast"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Thurra River Sand Dunes",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-5",
+   "coordinates": {
+    "latitude": -37.79,
+    "longitude": 149.3
+   },
+   "coordinates_source": "area hint only (not resolved; near Thurra River mouth); confirm at pins stage",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": null,
+   "icon": "🏜️",
+   "bio_draft": "Giant sand dunes at the mouth of the Thurra River, near Point Hicks, reached on foot from the campground.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 2.0,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Croajingolong_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Bastion Point",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-6",
+   "coordinates": {
+    "latitude": -37.572771,
+    "longitude": 149.764431
+   },
+   "coordinates_source": "resolve-pin.py OSM place=locality 'Bastion Point'",
+   "pin_status": "provisional",
+   "category": "beach",
+   "wiki": "Bastion Point, Victoria",
+   "icon": "🏖️",
+   "bio_draft": "Surf beach and headland lookout near Mallacoota, with views along the coast.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "views": 10599,
+   "counted_sources": [
+    "https://www.visiteastgippsland.com.au/our-region/coastal-wilderness/mallacoota/"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 10599 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Genoa Peak",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-7",
+   "coordinates": {
+    "latitude": -37.529862,
+    "longitude": 149.62708
+   },
+   "coordinates_source": "resolve-pin.py OSM natural=peak 'Genoa Peak'",
+   "pin_status": "ok",
+   "category": "viewpoint",
+   "wiki": null,
+   "icon": "🏔️",
+   "bio_draft": "A steep climb to a summit with wide views over the inlets, forests and coast of East Gippsland.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 2.5,
+   "views": 0,
+   "counted_sources": [
+    "https://www.visiteastgippsland.com.au/itinerary/mallacoota-genoa-east-gippsland-itinerary/"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Fly Cove Walk",
+   "action": "spot",
+   "destination": "croajingolong",
+   "id": "croajingolong-8",
+   "coordinates": {
+    "latitude": -37.77,
+    "longitude": 149.5
+   },
+   "coordinates_source": "area hint only (Wingan Inlet area; not resolved by resolve-pin.py); route midpoint at pins stage",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": null,
+   "icon": "🥾",
+   "bio_draft": "A boardwalk and track from Wingan Inlet to Fly Cove across paperbark wetlands, in the park's remote west.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/croajingolong-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); croajingolong span, reached from that base."
+  },
+  {
+   "name": "Lakes Entrance",
+   "action": "spot",
+   "destination": "gippsland-lakes",
+   "id": "gippsland-lakes-1",
+   "coordinates": {
+    "latitude": -37.86666667,
+    "longitude": 147.98333333
+   },
+   "coordinates_source": "wikipedia:Lakes Entrance (town point; confirm OSM place=town)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Lakes Entrance",
+   "icon": "⛵",
+   "bio_draft": "Tourist town where the lakes meet Bass Strait, with a footbridge to the ocean beach, cruises and seafood.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 5.0,
+   "views": 10124,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lakes_Entrance"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 10124 page views); gippsland-lakes span, reached from that base."
+  },
+  {
+   "name": "Ninety Mile Beach",
+   "action": "spot",
+   "destination": "gippsland-lakes",
+   "id": "gippsland-lakes-2",
+   "coordinates": {
+    "latitude": -37.885,
+    "longitude": 148.0
+   },
+   "coordinates_source": "area hint only (ocean-beach footbridge side of Lakes Entrance; no OSM natural=beach resolved); main access to confirm at pins stage",
+   "pin_status": "provisional",
+   "category": "beach",
+   "wiki": "Ninety Mile Beach, Victoria",
+   "icon": "🏖️",
+   "bio_draft": "A continuous surf beach of about 90 miles along Gippsland's coast, reached from Lakes Entrance and Gippsland Lakes Coastal Park.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/gippsland-lakes-coastal-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); gippsland-lakes span, reached from that base."
+  },
+  {
+   "name": "Metung",
+   "action": "spot",
+   "destination": "gippsland-lakes",
+   "id": "gippsland-lakes-3",
+   "coordinates": {
+    "latitude": -37.88333333,
+    "longitude": 147.85
+   },
+   "coordinates_source": "wikipedia:Metung (village point; confirm OSM place=village)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Metung",
+   "icon": "⛵",
+   "bio_draft": "Harbour village on Bancroft Bay with boating, a hot springs spa and a back beach.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4.0,
+   "views": 6996,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (0 counted sources, 6996 page views); gippsland-lakes span, reached from that base."
+  },
+  {
+   "name": "Griffith's Shell Museum",
+   "action": "spot",
+   "destination": "gippsland-lakes",
+   "id": "gippsland-lakes-4",
+   "coordinates": {
+    "latitude": -37.87,
+    "longitude": 147.98
+   },
+   "coordinates_source": "area hint only (Lakes Entrance town point; resolve-pin.py found no feature)",
+   "pin_status": "provisional",
+   "category": "museum",
+   "wiki": null,
+   "icon": "🐚",
+   "bio_draft": "A kitsch roadside museum of seashells with a giant octopus on its roof, at Lakes Entrance.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Lakes_Entrance"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); gippsland-lakes span, reached from that base."
+  },
+  {
+   "name": "Bairnsdale",
+   "action": "spot",
+   "destination": "gippsland-lakes",
+   "id": "gippsland-lakes-5",
+   "coordinates": {
+    "latitude": -37.8275,
+    "longitude": 147.625
+   },
+   "coordinates_source": "wikipedia:Bairnsdale (town point; confirm OSM place=town)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Bairnsdale",
+   "icon": "🏘️",
+   "bio_draft": "East Gippsland's service town and gateway to the lakes, and the regional hub for East Gippsland.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "views": 22305,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Bairnsdale"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 22305 page views); gippsland-lakes span, reached from that base."
+  },
+  {
+   "name": "Inverloch",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-1",
+   "coordinates": {
+    "latitude": -38.633158,
+    "longitude": 145.72795
+   },
+   "coordinates_source": "resolve-pin.py OSM boundary=administrative 'Inverloch' (town area; take place=town point and Foreshore Walking Track)",
+   "pin_status": "provisional",
+   "category": "beach",
+   "wiki": "Inverloch",
+   "icon": "🏖️",
+   "bio_draft": "Surf beach town with a foreshore walking track and the Bunurong coast's rock platforms close by.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4.0,
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (0 counted sources, 0 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Cape Liptrap Coastal Park",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-2",
+   "coordinates": {
+    "latitude": -38.820878,
+    "longitude": 146.010003
+   },
+   "coordinates_source": "resolve-pin.py OSM leisure=nature_reserve centroid 'Cape Liptrap Coastal Park'; visitor point (lighthouse or kilns) to be found at pins stage",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Cape Liptrap Coastal Park",
+   "icon": "🌊",
+   "bio_draft": "Coastal park of tilted limestone cliffs, a lighthouse, historic lime kilns and quiet beaches.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4.0,
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/cape-liptrap-coastal-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 0 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Bunurong Marine National Park",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-3",
+   "coordinates": {
+    "latitude": -38.69111111,
+    "longitude": 145.65611111
+   },
+   "coordinates_source": "wikipedia:Bunurong Marine National Park (park centroid; visitor access point at pins stage)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Bunurong Marine National Park",
+   "icon": "🌊",
+   "bio_draft": "Marine park of rock platforms and pools along the Bunurong coast, good for low-tide rock-pooling.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "views": 923,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (0 counted sources, 923 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Agnes Falls",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-4",
+   "coordinates": {
+    "latitude": -38.642743,
+    "longitude": 146.370573
+   },
+   "coordinates_source": "resolve-pin.py OSM waterway=waterfall 'Agnes Falls' (re-pin per recheck at Agnes Falls Scenic Reserve near Toora)",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": null,
+   "icon": "💧",
+   "bio_draft": "A 59 m waterfall, among the highest single-drop falls in Victoria, a short walk from the car park.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.0,
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (0 counted sources, 0 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Wonthaggi State Coal Mine",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-5",
+   "coordinates": {
+    "latitude": -38.604649,
+    "longitude": 145.590944
+   },
+   "coordinates_source": "resolve-pin.py OSM historic=monument 'Wonthaggi Coal Mine Whistle' (nearby; entrance to confirm at pins stage)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "State Coal Mine",
+   "icon": "⛏️",
+   "bio_draft": "Former state coal mine with underground tours run by Parks Victoria's guides.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 2.5,
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (0 counted sources, 0 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Coal Creek Community Park and Museum",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-6",
+   "coordinates": {
+    "latitude": -38.445201,
+    "longitude": 145.830466
+   },
+   "coordinates_source": "resolve-pin.py OSM tourism=museum 'Coal Creek Community Park & Museum'",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Coal Creek",
+   "icon": "🏘️",
+   "bio_draft": "Recreated 19th-century coal-mining village of around 50 buildings at Korumburra.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3.0,
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (0 counted sources, 0 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Great Southern Rail Trail",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-7",
+   "coordinates": {
+    "latitude": -38.670457,
+    "longitude": 146.169756
+   },
+   "coordinates_source": "resolve-pin.py OSM trail midpoint of a 6.1 km matched segment only; full route is 129 km from Nyora to Alberton",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": "Great Southern Rail Trail",
+   "icon": "🚲",
+   "bio_draft": "A 129 km rail trail from Nyora to Alberton through dairy country, with towns and cafes along the way.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 8.0,
+   "views": 2645,
+   "counted_sources": [
+    "https://www.visitgippsland.com.au/sitemap"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 2645 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Leongatha",
+   "action": "spot",
+   "destination": "south-gippsland",
+   "id": "south-gippsland-8",
+   "coordinates": {
+    "latitude": -38.48333333,
+    "longitude": 145.95
+   },
+   "coordinates_source": "wikipedia:Leongatha (town point; confirm OSM place=town)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Leongatha",
+   "icon": "🏘️",
+   "bio_draft": "South Gippsland's main service town and a base for the surrounding dairy country.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 2.5,
+   "views": 23265,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Leongatha"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 23265 page views); south-gippsland span, reached from that base."
+  },
+  {
+   "name": "Sale",
+   "action": "standalone",
+   "destination": null,
+   "id": "sale",
+   "coordinates": {
+    "latitude": -38.1,
+    "longitude": 147.06666667
+   },
+   "coordinates_source": "wikipedia:Sale, Victoria (town point; confirm OSM place=town)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Sale, Victoria",
+   "icon": "🏘️",
+   "bio_draft": "Central Gippsland's regional centre, a service town on the Thomson River.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 30861,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sale_(Victoria)"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Regional hub town 'Sale' is kept as a standalone spot; it sits beside its own kept attractions (Sale Swing Bridge, Gippsland Art Gallery), which the wrapper rule would not allow as a spot: flagged for the owner to decide whether to drop the town entry."
+  },
+  {
+   "name": "Sale Swing Bridge",
+   "action": "standalone",
+   "destination": null,
+   "id": "sale-swing-bridge",
+   "coordinates": {
+    "latitude": -38.146345,
+    "longitude": 147.08686
+   },
+   "coordinates_source": "wikipedia:Sale Swing Bridge",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": null,
+   "icon": "🌉",
+   "bio_draft": "Australia's oldest surviving swing bridge, which still rotates a full 360 degrees across the Thomson River canal.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 1570,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sale_(Victoria)"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: Sale is not a destination (two attractions, rule of four)."
+  },
+  {
+   "name": "Gippsland Art Gallery",
+   "action": "standalone",
+   "destination": null,
+   "id": "gippsland-art-gallery",
+   "coordinates": {
+    "latitude": -38.111861,
+    "longitude": 147.063479
+   },
+   "coordinates_source": "resolve-pin.py OSM tourism=gallery 'Gippsland Art Gallery'",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": null,
+   "icon": "🖼️",
+   "bio_draft": "A free regional gallery in Sale with a collection of around 5,000 works and changing exhibitions.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sale_(Victoria)"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: Sale is not a destination (two attractions, rule of four)."
+  },
+  {
+   "name": "Traralgon",
+   "action": "standalone",
+   "destination": null,
+   "id": "traralgon",
+   "coordinates": {
+    "latitude": -38.19583333,
+    "longitude": 146.54027778
+   },
+   "coordinates_source": "wikipedia:Traralgon (town point; confirm OSM place=town)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Traralgon",
+   "icon": "🏘️",
+   "bio_draft": "Regional town and service hub of Central Gippsland, in the Latrobe Valley.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 3.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 36059,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Traralgon"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: no kept cluster of four around it and 'Latrobe Valley' has no tourism-brand or Wikivoyage destination page found; nearest destination spots are 35+ km away."
+  },
+  {
+   "name": "Old Gippstown",
+   "action": "standalone",
+   "destination": null,
+   "id": "old-gippstown",
+   "coordinates": {
+    "latitude": -38.1846383,
+    "longitude": 146.2344812
+   },
+   "coordinates_source": "wikipedia:Old Gippstown",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Old Gippstown",
+   "icon": "🏘️",
+   "bio_draft": "Relocated pioneer township at Moe with historic buildings, machinery and Gippsland's settler history.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: Moe/Latrobe Valley has no destination (only this and Traralgon kept)."
+  },
+  {
+   "name": "Walhalla",
+   "action": "standalone",
+   "destination": null,
+   "id": "walhalla",
+   "coordinates": {
+    "latitude": -37.94361111,
+    "longitude": 146.45083333
+   },
+   "coordinates_source": "wikipedia:Walhalla, Victoria (town point; confirm OSM place=village)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Walhalla, Victoria",
+   "icon": "⛏️",
+   "bio_draft": "Restored gold-mining town in a steep valley, with historic buildings and a heritage railway.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 5.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 31982,
+   "counted_sources": [
+    "https://www.visitgippsland.com.au/sitemap"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: a Baw Baw National Park destination would hold only 3 spots (Walhalla, Mount Baw Baw, Toorongo Falls), below the four-spot rule, and Walhalla is not filed under another base."
+  },
+  {
+   "name": "Baw Baw National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "baw-baw-national-park",
+   "coordinates": {
+    "latitude": -37.76388889,
+    "longitude": 146.22305556
+   },
+   "coordinates_source": "wikipedia:Baw Baw National Park (park centroid; visitor point to be found at pins stage)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Baw Baw National Park",
+   "icon": "🏔️",
+   "bio_draft": "Alpine plateau park of snow gums, bogs and granite tors, with walks and a ski resort at Mount Baw Baw.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 6.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 1604,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/baw-baw-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: as a destination it would hold only 3 spots (Mount Baw Baw, Walhalla, Toorongo Falls): below four; a national park with fewer than four spots is a standalone spot."
+  },
+  {
+   "name": "Mount Baw Baw",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-baw-baw",
+   "coordinates": {
+    "latitude": -37.839535,
+    "longitude": 146.275877
+   },
+   "coordinates_source": "resolve-pin.py OSM natural=peak 'Mount Baw Baw'",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Mount Baw Baw",
+   "icon": "⛷️",
+   "bio_draft": "Victoria's closest alpine ski resort to Melbourne, also a summit base for summer walks on the Baw Baw plateau.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 6.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 7885,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/South_Gippsland"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone for the same reason as Baw Baw National Park."
+  },
+  {
+   "name": "Toorongo Falls",
+   "action": "standalone",
+   "destination": null,
+   "id": "toorongo-falls",
+   "coordinates": {
+    "latitude": -37.848129,
+    "longitude": 146.049996
+   },
+   "coordinates_source": "resolve-pin.py OSM waterway=waterfall 'Toorongo Falls' (renamed from candidate 'Tooronga Falls' per recheck)",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": null,
+   "icon": "💧",
+   "bio_draft": "A rainforest waterfall with a short walk beside the Toorongo River near Noojee, shared with the nearby Amphitheatre.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/South_Gippsland"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: no kept cluster around Noojee."
+  },
+  {
+   "name": "Tarra-Bulga National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "tarra-bulga-national-park",
+   "coordinates": {
+    "latitude": -38.44166667,
+    "longitude": 146.58
+   },
+   "coordinates_source": "wikipedia:Tarra-Bulga National Park (park centroid; Balook visitor centre point to be found at pins stage)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Tarra-Bulga National Park",
+   "icon": "🌳",
+   "bio_draft": "Cool-temperate rainforest park of mountain ash and tree ferns, with short walks from Balook.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/tarra-bulga-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: with Corrigan's Suspension Bridge only 1 spot under it; nearest destination spots (Agnes Falls, 35 km, South Gippsland) are reached from a different base."
+  },
+  {
+   "name": "Corrigan's Suspension Bridge",
+   "action": "standalone",
+   "destination": null,
+   "id": "corrigans-suspension-bridge",
+   "coordinates": {
+    "latitude": -38.4415,
+    "longitude": 146.5805
+   },
+   "coordinates_source": "area hint only (offset ~50 m from Tarra-Bulga park point; resolve-pin.py found nothing); take agency point at pins stage",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": null,
+   "icon": "🌉",
+   "bio_draft": "A suspension bridge walk through rainforest canopy and tree ferns in Tarra-Bulga National Park.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/tarra-bulga-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: only one spot in Tarra-Bulga; a national park is never a spot of another."
+  },
+  {
+   "name": "Port Albert",
+   "action": "standalone",
+   "destination": null,
+   "id": "port-albert",
+   "coordinates": {
+    "latitude": -38.671802,
+    "longitude": 146.692173
+   },
+   "coordinates_source": "resolve-pin.py OSM place=village 'Port Albert'",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Port Albert",
+   "icon": "⚓",
+   "bio_draft": "Victoria's first port, with a maritime museum, 19th-century buildings and a heritage walk.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 2.5,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: 64 km from South Gippsland's centre, outside its span, and 55 km from Wilsons Promontory; reached on its own via Tarraville."
+  },
+  {
+   "name": "Snowy River National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "snowy-river-national-park",
+   "coordinates": {
+    "latitude": -37.275,
+    "longitude": 148.55333333
+   },
+   "coordinates_source": "wikipedia:Snowy River National Park (park centroid; visitor point e.g. McKillops Bridge at pins stage)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Snowy River National Park",
+   "icon": "🏞️",
+   "bio_draft": "Remote gorge and river park with rafting, bushwalking and bush camping.",
+   "visitHoursMin": 3.0,
+   "visitHoursMax": 8.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 1547,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/snowy-river-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: no other kept spots within 40 km except Buchan Caves (42 km); too few for a destination."
+  },
+  {
+   "name": "Buchan Caves",
+   "action": "standalone",
+   "destination": null,
+   "id": "buchan-caves",
+   "coordinates": {
+    "latitude": -37.4958,
+    "longitude": 148.1631
+   },
+   "coordinates_source": "wikipedia:Buchan Caves",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": null,
+   "icon": "🦇",
+   "bio_draft": "Limestone caves with guided tours, a spring-fed swimming pool and a reserve of bushland.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 4135,
+   "counted_sources": [
+    "https://www.visitgippsland.com.au/sitemap"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: Buchan has only this and Snowy River NP (42 km) kept."
+  },
+  {
+   "name": "Errinundra National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "errinundra-national-park",
+   "coordinates": {
+    "latitude": -37.374696,
+    "longitude": 148.789915
+   },
+   "coordinates_source": "resolve-pin.py OSM leisure=nature_reserve centroid 'Errinundra National Park'; visitor point at pins stage",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Errinundra National Park",
+   "icon": "🌲",
+   "bio_draft": "Plateau park of cool-temperate rainforest and old growth, with a boardwalk and lookout.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/errinundra-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: no kept cluster; the Errinundra Saddle Rainforest Walk is held for review."
+  },
+  {
+   "name": "Cape Conran Coastal Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "cape-conran-coastal-park",
+   "coordinates": {
+    "latitude": -37.76666667,
+    "longitude": 148.86666667
+   },
+   "coordinates_source": "wikipedia:Cape Conran Coastal Park (park centroid; visitor point at pins stage)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Cape Conran Coastal Park",
+   "icon": "🌊",
+   "bio_draft": "Coastal park of rock pools, beaches, an East Cape boardwalk and camping on Bass Strait.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 6.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 395,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/cape-conran-coastal-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: 40+ km from Errinundra and Croajingolong's centre (about 85 km); no cluster."
+  },
+  {
+   "name": "Mitchell River National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "mitchell-river-national-park",
+   "coordinates": {
+    "latitude": -37.714279,
+    "longitude": 147.395185
+   },
+   "coordinates_source": "resolve-pin.py OSM waterway=river 'Mitchell River'; visitor point (Salt Lake or Den of Nargun car park) at pins stage",
+   "pin_status": "provisional",
+   "category": "nature",
+   "wiki": "Mitchell River National Park",
+   "icon": "🏞️",
+   "bio_draft": "Gorge and river park with the Billy Goat Bluff and Den of Nargun walks near Dargo.",
+   "visitHoursMin": 2.0,
+   "visitHoursMax": 5.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/mitchell-river-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: about 45 km from the Gippsland Lakes centre and reached by the unsealed Glenaladale road, outside that span; two spots only."
+  },
+  {
+   "name": "Den of Nargun",
+   "action": "standalone",
+   "destination": null,
+   "id": "den-of-nargun",
+   "coordinates": {
+    "latitude": -37.701601,
+    "longitude": 147.358334
+   },
+   "coordinates_source": "resolve-pin.py OSM tourism=attraction 'Den of Nargun'",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": null,
+   "icon": "🪨",
+   "bio_draft": "A cultural loop walk to a cave behind a waterfall, the site of an Aboriginal legend, in Mitchell River National Park.",
+   "visitHoursMin": 1.0,
+   "visitHoursMax": 2.0,
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "views": 0,
+   "counted_sources": [
+    "https://www.parks.vic.gov.au/places-to-see/parks/mitchell-river-national-park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: with Mitchell River National Park only two spots, 3 km apart; neither makes a destination."
+  }
+ ],
+ "existing_fixes": [],
+ "existing_fixes_note": "No existing spots or destinations lie in Gippsland (only Sapphire Coast / Eden NSW spots near the border, unaffected). Nothing misplaced or duplicated.",
+ "standalone_near_destinations": [],
+ "review_list": [
+  {
+   "name": "Vereker Outlook",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: Parks Vic lookout walk (6 km return, 2 hr). Against: described as a lesser-known walk, one source, a viewpoint on a track."
+  },
+  {
+   "name": "Sealers Cove",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: one of the Prom's most popular walks and a remote beach (Parks Vic, Traveller). Against: boardwalk closed after storm damage, long 20 km return."
+  },
+  {
+   "name": "Cleft Island (Skull Rock)",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: Wikivoyage See entry and tourist-guide listing, a 60 m cave in a granite island. Against: reached only by boat, nowhere to land; visit is a tour not a place."
+  },
+  {
+   "name": "Pebbly Beach",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: Visit East Gippsland itinerary and scenic-drives sheet name it, coastal walk to Shipwreck Beach. Against: same tourism board both times, quiet beach, thin detail."
+  },
+  {
+   "name": "Errinundra Rainforest Boardwalk",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: Errinundra Saddle Rainforest Walk, a 1 km boardwalk through old growth (Parks Vic). Against: one source, remote plateau road, a trail within Errinundra National Park."
+  },
+  {
+   "name": "Paynesville",
+   "views": 0,
+   "counted_sources": 0,
+   "case": "For: gateway to Raymond Island koala walk and lakes boating. Against: Wikivoyage lists nothing to see; the draw is Raymond Island."
+  },
+  {
+   "name": "Morwell National Park",
+   "views": 594,
+   "counted_sources": 0,
+   "case": "For: Wikivoyage Gippsland names it for rainforest remnants and koalas, on the Grand Strzelecki Track. Against: small park, short visit, one source."
+  },
+  {
+   "name": "Mushroom Rocks",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "For: granite tors on a half-hour track in Baw Baw National Park (Parks Vic). Against: one source, not at Wilsons Prom as the candidate implied."
+  }
+ ],
+ "notes": [
+  "Pin status: 'ok' = HIGH/MEDIUM resolve-pin.py point or wikipedia point of the named feature; 'provisional' = town/park centroid, area hint or a feature of a different shape; the pins stage re-runs resolve-pin.py. Candidate coordinates that were clearly wrong (Whisky Bay in Antarctica, Bastion Point in Auckland, Squeaky Beach at the park centroid, Tongue Point in Washington, etc.) were replaced by resolve-pin.py points.",
+  "Renamed 'Tooronga Falls' to Toorongo Falls. Agnes Falls re-pinned from OSM waterfall near Toora (Agnes Falls Scenic Reserve). Mount Bishop pin is OSM 'Bishop Peak'; confirm.",
+  "Stick Shed note (recheck): Murtoa's Stick Shed is in the Wimmera, not Gippsland, so it is not placed here.",
+  "Wilsons Promontory National Park, Croajingolong National Park, Gippsland Lakes are the destinations themselves; the candidates of those names are not spots of themselves. Candidates 'Gippsland Lakes' and the park candidates map to their new destinations.",
+  "Walhalla is not a destination: with Baw Baw National Park, Mount Baw Baw and Toorongo Falls there are only 3 spots under a Baw Baw destination. Sale is a hub with two attractions (standalone). Flagged for owner.",
+  "Standalone Sale is a wrapper beside Sale Swing Bridge and Gippsland Art Gallery; kept because the skeptic kept it, but the owner may drop it."
+ ]
+}

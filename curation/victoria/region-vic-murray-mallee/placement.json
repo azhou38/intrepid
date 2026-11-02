@@ -1,0 +1,767 @@
+{
+ "region": "vic-murray-mallee",
+ "branch": "curation/victoria",
+ "new_destinations": [
+  {
+   "action": "new-destination",
+   "id": "mildura",
+   "name": "Mildura",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -34.18888889,
+    "longitude": 142.15833333
+   },
+   "coordinates_source": "wikipedia:Mildura",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": "Wikivoyage page \"Mildura\" (the counted source for Lock 11, Meeting of the Waters and the town); Visit Mildura / Explore Mildura tourism brand; the Sunraysia regional centre.",
+   "spots": [
+    "mildura-1",
+    "mildura-2",
+    "mildura-3",
+    "mildura-4"
+   ],
+   "reason": "4 kept spots within ~22 km (Lock 11, Apex Park, Botanic Gardens, Meeting of the Waters at Wentworth) plus 3 existing Wentworth spots proposed to move in. Town itself is the destination, not a spot."
+  },
+  {
+   "action": "new-destination",
+   "id": "echuca",
+   "name": "Echuca",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -36.13333333,
+    "longitude": 144.75
+   },
+   "coordinates_source": "wikipedia:Echuca",
+   "pin_status": "provisional",
+   "defaultZoomSpanKm": 80,
+   "name_evidence": "Wikivoyage page \"Echuca\" (counted source for Port of Echuca and the Echuca-Moama twin towns); paddle steamer/Port of Echuca headline attraction named for it; Victorian side only.",
+   "spots": [
+    "echuca-1",
+    "echuca-2",
+    "echuca-3",
+    "echuca-4",
+    "echuca-5"
+   ],
+   "reason": "5 kept spots within ~47 km (Port of Echuca, Barmah NP, Dharnya Centre, Kyabram Fauna Park, Terrick Terrick NP); span 80 km gives ~60 km reach. Echuca-Moama candidate is the destination, not a spot."
+  }
+ ],
+ "places": [
+  {
+   "name": "Lock 11",
+   "action": "spot",
+   "destination": "mildura",
+   "id": "mildura-1",
+   "category": "landmark",
+   "icon": "\ud83d\udd12",
+   "coordinates": {
+    "latitude": -34.173331,
+    "longitude": 142.163167
+   },
+   "coordinates_source": "osm place=islet: Lock Island (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Murray lock and weir with Lock Island walking tracks and sandbars, where paddle steamers lock through at Mildura.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Mildura plus exploremildura/Mildura council: the only Murray lock the public can walk across, island lookout over the weir; short but a named second-tier stop.",
+   "wiki_candidate": "Lock 11"
+  },
+  {
+   "name": "Meeting of the Waters",
+   "action": "spot",
+   "destination": "mildura",
+   "id": "mildura-2",
+   "category": "nature",
+   "icon": "\ud83c\udf0a",
+   "coordinates": null,
+   "coordinates_source": "none yet: pin needed from a named visitor point (resolve-pin.py)",
+   "pin_status": "needs_pin",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Riverside park viewpoint at Wentworth where the Murray and Darling rivers meet, about 20 km west of Mildura.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Lonely Planet, Visit NSW and Wikivoyage Wentworth name the Murray-Darling junction with a viewing tower and Junction Island walk; two counted sources, a named natural landmark.",
+   "wiki_candidate": "Confluence of the Murray and Darling rivers"
+  },
+  {
+   "name": "Australian Inland Botanic Gardens",
+   "action": "spot",
+   "destination": "mildura",
+   "id": "mildura-3",
+   "category": "nature",
+   "icon": "\ud83c\udf3f",
+   "coordinates": {
+    "latitude": -34.136,
+    "longitude": 142.139
+   },
+   "coordinates_source": "wikipedia:Australian Inland Botanic Gardens",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 846,
+   "counted_sources": 1,
+   "bio_draft": "Semi-arid botanic gardens at Buronga, near Mildura, with plants from every inhabited continent and native species.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Mildura plus Visit Mildura map list the free semi-arid botanic garden with cafe; half an hour or more to walk.",
+   "wiki_candidate": "Australian Inland Botanic Gardens"
+  },
+  {
+   "name": "Apex Park",
+   "action": "spot",
+   "destination": "mildura",
+   "id": "mildura-4",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": {
+    "latitude": -34.152791,
+    "longitude": 142.165686
+   },
+   "coordinates_source": "osm natural=beach (nominatim): Apex Beach (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Riverside park on the Murray at Mildura with a sandbar swimming beach, sometimes patrolled.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Mildura names it a large inland sandbar beach for swimming; Visit Mildura links it to the Chaffey Trail; a beach stop (rule: second-tier beaches keep). Objection: seasonal swimming only.",
+   "wiki_candidate": "Apex Park, Mildura"
+  },
+  {
+   "name": "Port of Echuca",
+   "action": "spot",
+   "destination": "echuca",
+   "id": "echuca-1",
+   "category": "historic",
+   "icon": "\u2693",
+   "coordinates": null,
+   "coordinates_source": "none yet: pin needed from a named visitor point (resolve-pin.py)",
+   "pin_status": "needs_pin",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Historic 1800s river port with its wharf, paddle steamer boarding and the Discovery Centre at Echuca.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Echuca names the historic wharf, paddle steamers and Discovery Centre; headline attraction of the region.",
+   "wiki_candidate": "Port of Echuca"
+  },
+  {
+   "name": "Barmah National Park",
+   "action": "spot",
+   "destination": "echuca",
+   "id": "echuca-2",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -35.86666667,
+    "longitude": 145.11805556
+   },
+   "coordinates_source": "wikipedia:Barmah National Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 2118,
+   "counted_sources": 2,
+   "bio_draft": "River red gum forest on the Murray floodplain with Barmah Lakes, birdwatching, paddling, fishing and camping.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "2 counted sources, 2118 page views",
+   "wiki_candidate": "Barmah National Park"
+  },
+  {
+   "name": "Dharnya Centre",
+   "action": "spot",
+   "destination": "echuca",
+   "id": "echuca-3",
+   "category": "museum",
+   "icon": "\ud83c\udfdb\ufe0f",
+   "coordinates": null,
+   "coordinates_source": "none yet: pin needed from a named visitor point (resolve-pin.py)",
+   "pin_status": "needs_pin",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Yorta Yorta cultural and environmental interpretation centre inside Barmah National Park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Parks Victoria and Visit Echuca Moama list the Yorta Yorta cultural centre in Barmah National Park with guided cultural experiences and walks. Objection: hours uncertain, check dharnyacentre.com.au."
+  },
+  {
+   "name": "Kyabram Fauna Park",
+   "action": "spot",
+   "destination": "echuca",
+   "id": "echuca-4",
+   "category": "entertainment",
+   "icon": "\ud83e\udd98",
+   "coordinates": {
+    "latitude": -36.32416667,
+    "longitude": 145.04888889
+   },
+   "coordinates_source": "wikipedia:Kyabram Fauna Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 2154,
+   "counted_sources": 0,
+   "bio_draft": "Goulburn Valley wildlife park at Kyabram with native animals.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Shepparton (opened) says worth a visit; Zoos Victoria runs it with 600 animals on 55 ha; a full-day wildlife visit.",
+   "wiki_candidate": "Kyabram Fauna Park"
+  },
+  {
+   "name": "Terrick Terrick National Park",
+   "action": "spot",
+   "destination": "echuca",
+   "id": "echuca-5",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -36.14277778,
+    "longitude": 144.22833333
+   },
+   "coordinates_source": "wikipedia:Terrick Terrick National Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 803,
+   "counted_sources": 1,
+   "bio_draft": "Small box-ironbark park near Pyramid Hill, with walking tracks and camping.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Parks Victoria and Bendigo Region tourism list the park with walks, birdwatching (Plains-wanderer), picnic and camping; a national park, own place. Objection: remote and thin facilities.",
+   "wiki_candidate": "Terrick Terrick National Park"
+  },
+  {
+   "name": "Murray-Sunset National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "murray-sunset-national-park",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -34.76833333,
+    "longitude": 141.85416667
+   },
+   "coordinates_source": "wikipedia:Murray-Sunset National Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 2541,
+   "counted_sources": 2,
+   "bio_draft": "Victoria's largest national park, remote mallee country for 4WD, birdwatching, camping and stargazing.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "2 counted sources, 2541 page views",
+   "wiki_candidate": "Murray-Sunset National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "Standalone: ~71 km from Mildura, outside its reach; one national park with only Pink Lakes inside it, so not a destination (needs 4 spots)."
+  },
+  {
+   "name": "Pink Lakes",
+   "action": "standalone",
+   "destination": null,
+   "id": "pink-lakes",
+   "category": "nature",
+   "icon": "\ud83e\ude77",
+   "coordinates": null,
+   "coordinates_source": "none yet: pin needed from a named visitor point (resolve-pin.py)",
+   "pin_status": "needs_pin",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Pink-hued salt lakes inside Murray-Sunset National Park, a favourite with photographers.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Visitor guide names the pink salt lakes as a photography draw within Murray-Sunset; a distinct named sight that guides single out.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "Standalone: inside Murray-Sunset but a distinct sight; ~70 km from Mildura. Not a destination (park plus one spot)."
+  },
+  {
+   "name": "Hattah-Kulkyne National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "hattah-kulkyne-national-park",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -34.68722222,
+    "longitude": 142.38166667
+   },
+   "coordinates_source": "wikipedia:Hattah-Kulkyne National Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1254,
+   "counted_sources": 1,
+   "bio_draft": "Chain of Murray lakes, river red gums and bush tracks with camping, near Mildura.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Parks Victoria page (opened) names it: lakes chain, river and bush tracks; a national park is a visit in itself and one agency source is enough for an obvious draw.",
+   "wiki_candidate": "Hattah-Kulkyne National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "Standalone: ~59 km from Mildura, beyond its ~45 km reach; a park with one spot cannot be a destination."
+  },
+  {
+   "name": "Wyperfeld National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "wyperfeld-national-park",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -35.38916667,
+    "longitude": 141.87694444
+   },
+   "coordinates_source": "wikipedia:Wyperfeld National Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1273,
+   "counted_sources": 1,
+   "bio_draft": "Victoria's first national park, mallee bushland with walks and camping, reached from Hopetoun.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Parks Victoria page names Victoria's first national park with walks and camping; obvious draw for a national park.",
+   "wiki_candidate": "Wyperfeld National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "Standalone: ~150 km from Mildura and far from any base; lone park."
+  },
+  {
+   "name": "Lake Tyrrell",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-tyrrell",
+   "category": "nature",
+   "icon": "\ud83e\uddc2",
+   "coordinates": {
+    "latitude": -35.34388889,
+    "longitude": 142.83333333
+   },
+   "coordinates_source": "wikipedia:Lake Tyrrell",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 10718,
+   "counted_sources": 0,
+   "bio_draft": "Intermittent salt lake near Sea Lake with a mirror-like surface that draws photographers.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Visit Grampians (opened) and Wimmera Mallee tourism pages name Victoria's largest salt lake, with viewing platform and boardwalk; 10,718 views.",
+   "wiki_candidate": "Lake Tyrrell",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "Standalone: ~66 km from Swan Hill and reached via Sea Lake; Swan Hill itself is not a destination (3 spots)."
+  },
+  {
+   "name": "Gunbower National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "gunbower-national-park",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -35.69583333,
+    "longitude": 144.19416667
+   },
+   "coordinates_source": "wikipedia:Gunbower National Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 674,
+   "counted_sources": 1,
+   "bio_draft": "River red gum forest on the Murray with bend camping areas for four wheel driving and camping.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Parks Victoria names the river red gum forest with bend campsites and 4WD tracks; national park.",
+   "wiki_candidate": "Gunbower National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "Standalone: ~70 km from Echuca, beyond its ~60 km reach; reached from Cohuna and Gunbower."
+  },
+  {
+   "name": "Pioneer Settlement",
+   "action": "standalone",
+   "destination": null,
+   "id": "pioneer-settlement",
+   "category": "museum",
+   "icon": "\ud83c\udfda\ufe0f",
+   "coordinates": {
+    "latitude": -35.3472,
+    "longitude": 143.5646
+   },
+   "coordinates_source": "wikipedia:Pioneer Settlement",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 876,
+   "counted_sources": 1,
+   "bio_draft": "Living history museum of 1850s cottages, horse-drawn carriages and a river cruise on the Murray at Swan Hill.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Swan Hill (opened) lists the 1850s living-history museum with river cruises; full visit.",
+   "wiki_candidate": "Pioneer Settlement",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "No destination covers it: its nearest base (Swan Hill, Shepparton, Rutherglen, Yarrawonga) has fewer than four kept spots, so it stands alone."
+  },
+  {
+   "name": "Swan Hill River Walk",
+   "action": "standalone",
+   "destination": null,
+   "id": "swan-hill-river-walk",
+   "category": "hike",
+   "icon": "\ud83d\udeb6",
+   "coordinates": {
+    "latitude": -35.355525,
+    "longitude": 143.564637
+   },
+   "coordinates_source": "osm trail midpoint (1.0 km, nominatim): Swan Hill River Walk (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": true,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "4.5 km riverside walk along the Murray from the Pump Station past the town's attractions.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Swan Hill: free 4.5 km riverside walk of about two hours passing the town's attractions; also Melbourne Playgrounds listing. Objection: overlaps Riverside Park and Pioneer Settlement.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "No destination covers it: its nearest base (Swan Hill, Shepparton, Rutherglen, Yarrawonga) has fewer than four kept spots, so it stands alone."
+  },
+  {
+   "name": "Lake Boga Flying Boat Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-boga-flying-boat-museum",
+   "category": "museum",
+   "icon": "\u2708\ufe0f",
+   "coordinates": {
+    "latitude": -35.450896,
+    "longitude": 143.627582
+   },
+   "coordinates_source": "osm tourism=museum (nominatim): Lake Boga Flying Boat Museum (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Restored Catalina flying boat and wartime exhibits at the former RAAF depot, 16 km from Swan Hill.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Swan Hill (opened) lists the restored Catalina and WWII depot, A$18, open daily; a real visit.",
+   "wiki_candidate": "Lake Boga Flying Boat Museum",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "No destination covers it: its nearest base (Swan Hill, Shepparton, Rutherglen, Yarrawonga) has fewer than four kept spots, so it stands alone."
+  },
+  {
+   "name": "Shepparton Art Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "shepparton-art-museum",
+   "category": "museum",
+   "icon": "\ud83d\uddbc\ufe0f",
+   "coordinates": {
+    "latitude": -36.391276,
+    "longitude": 145.396779
+   },
+   "coordinates_source": "osm tourism=gallery (nominatim): Shepparton Art Museum (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 779,
+   "counted_sources": 0,
+   "bio_draft": "Regional gallery in Shepparton with Australian and contemporary art.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Regional art museum with a major contemporary and ceramics collection, a new building, named by Zoos Victoria and tourism sources; Wikivoyage Shepparton was re-checked and the museum is a Shepparton headline.",
+   "wiki_candidate": "Shepparton Art Museum",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "No destination covers it: its nearest base (Swan Hill, Shepparton, Rutherglen, Yarrawonga) has fewer than four kept spots, so it stands alone."
+  },
+  {
+   "name": "KidsTown",
+   "action": "standalone",
+   "destination": null,
+   "id": "kidstown",
+   "category": "entertainment",
+   "icon": "\ud83d\udedd",
+   "coordinates": {
+    "latitude": -36.385258,
+    "longitude": 145.380244
+   },
+   "coordinates_source": "osm leisure=playground (nominatim): Kidstown (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "Children's adventure playground between Shepparton and Mooroopna, entry by donation.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Wikivoyage Shepparton and guides describe a very large free adventure playground open nearly every day (about 150,000 visitors a year); a family draw for an hour or more.",
+   "wiki_candidate": "SPC Ardmona KidsTown",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "No destination covers it: its nearest base (Swan Hill, Shepparton, Rutherglen, Yarrawonga) has fewer than four kept spots, so it stands alone."
+  },
+  {
+   "name": "Rutherglen Loops",
+   "action": "standalone",
+   "destination": null,
+   "id": "rutherglen-loops",
+   "category": "hike",
+   "icon": "\ud83d\udeb4",
+   "coordinates": null,
+   "coordinates_source": "none yet: pin needed from a named visitor point (resolve-pin.py)",
+   "pin_status": "needs_pin",
+   "linear_feature": true,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "48 km of linked cycling trails joining Rutherglen cellar doors, the Murray and Lake Moodemere.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Explore Rutherglen (tourism board) and Australian Traveller list the 48 km network of walking and cycling loops linking cellar doors and Lake Moodemere; a named trail.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "No destination covers it: its nearest base (Swan Hill, Shepparton, Rutherglen, Yarrawonga) has fewer than four kept spots, so it stands alone."
+  },
+  {
+   "name": "Lake Mulwala",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-mulwala",
+   "category": "nature",
+   "icon": "\u26f5",
+   "coordinates": {
+    "latitude": -36.007617,
+    "longitude": 146.091484
+   },
+   "coordinates_source": "osm natural=water (nominatim): Lake Mulwala (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 0,
+   "bio_draft": "Murray reservoir at Yarrawonga and Mulwala used for boating, water sports and fishing.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Yarrawonga Mulwala tourism board has Lake Mulwala pages: cruises (PS Cumberoona, Paradise Queen), 4.2 km foreshore walk, Chinaman's Island wetlands walk, swimming and fishing. Counted source found; the lake is the place.",
+   "wiki_candidate": "Lake Mulwala",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "standalone_reason": "No destination covers it: its nearest base (Swan Hill, Shepparton, Rutherglen, Yarrawonga) has fewer than four kept spots, so it stands alone."
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_near_destination_notes": {
+  "Kyabram Fauna Park": "Made an Echuca spot (~34 km, nearer than Barmah and Terrick Terrick) rather than left orphaned; equally near Shepparton, which is not a destination.",
+  "Gunbower National Park": "~70 km from Echuca, beyond its reach; reached from Cohuna/Gunbower, so standalone.",
+  "Shepparton Art Museum / KidsTown": "~33 km from Echuca centre but in Shepparton city, not reached from Echuca; Shepparton has only 2 kept spots near it (3 with Kyabram, which went to Echuca).",
+  "Hattah-Kulkyne National Park": "~59 km from Mildura, beyond its ~45 km reach; standalone.",
+  "Murray-Sunset National Park / Pink Lakes": "~70 km from Mildura; standalone."
+ },
+ "dropped_as_destination_duplicate": [
+  {
+   "name": "Mildura",
+   "reason": "kept town; becomes destination mildura."
+  },
+  {
+   "name": "Echuca-Moama",
+   "reason": "kept town; becomes destination echuca."
+  },
+  {
+   "name": "Swan Hill",
+   "reason": "town is a wrapper beside Pioneer Settlement/River Walk; no destination (3 spots) so not placed as a spot."
+  },
+  {
+   "name": "Shepparton",
+   "reason": "town is a wrapper beside Shepparton Art Museum/KidsTown; no destination (2 spots), not placed."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "Swan Hill Regional Art Gallery",
+   "verdict": "review",
+   "case": "Wikivoyage and Visit the Murray list it (naive art collection), but Visit the Murray says it is under redevelopment with a smaller display in the library; unclear if a visitable gallery now.",
+   "coordinates": {
+    "lat": -35.349322,
+    "lng": 143.564741
+   },
+   "counted_sources": 1
+  },
+  {
+   "name": "Shepparton Communication Tower",
+   "verdict": "review",
+   "case": "Wikivoyage and a Visit Shepparton listing name the free observation deck (160 steps), but a Country News report says it was closed for window repairs and listed hours conflict; open status unverified.",
+   "coordinates": null,
+   "counted_sources": 1
+  },
+  {
+   "name": "Muscat Mile De Bortoli Rutherglen Estate",
+   "verdict": "review",
+   "case": "Explore Rutherglen and RACV name the 1886 Seppelt cellar building and Muscat Mile tasting. For: heritage building, signature regional experience. Against: a single cellar door within a wine region, not a distinct draw.",
+   "coordinates": null,
+   "counted_sources": 1
+  },
+  {
+   "name": "Pfeiffer Wines",
+   "verdict": "review",
+   "case": "Explore Rutherglen, Visit Victoria and RACV list the cellar door, muscat blending and Muscat Mile cask tour. For: tourism-named experience. Against: an individual winery among many.",
+   "coordinates": null,
+   "counted_sources": 1
+  }
+ ],
+ "notes": "Swan Hill (Pioneer Settlement, River Walk, Lake Boga: 3 spots) and Shepparton (SAM, KidsTown: 2) stay standalone under the four-spot rule; owner may want Swan Hill as a destination (66 km span would also reach Lake Tyrrell). Pins provisional from candidates; Pink Lakes, Dharnya Centre, Port of Echuca, Rutherglen Loops have no coordinates (needs_pin). Spots carry no hours; cost/ticketUrl need research. Rutherglen wine places are in review list.",
+ "crossregion_decisions": [
+  {
+   "dropped": "existing_fixes",
+   "reason": "Moving existing NSW spots wentworth, old-wentworth-gaol, perry-sandhills under Mildura changes existing data across a state line: owner decision, not applied."
+  }
+ ]
+}

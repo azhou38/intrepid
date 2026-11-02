@@ -1,0 +1,159 @@
+{
+ "region": "vic-gippsland",
+ "inside_destinations": 29,
+ "standalone": 18,
+ "new_destinations": [
+  "wilsons-promontory",
+  "croajingolong",
+  "gippsland-lakes",
+  "south-gippsland"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Inverloch",
+   "views": 0,
+   "counted_sources": null
+  },
+  {
+   "name": "Agnes Falls",
+   "views": 0,
+   "counted_sources": null
+  },
+  {
+   "name": "Wonthaggi State Coal Mine",
+   "views": 0,
+   "counted_sources": null
+  },
+  {
+   "name": "Coal Creek Community Park and Museum",
+   "views": 0,
+   "counted_sources": null
+  },
+  {
+   "name": "Old Gippstown",
+   "views": 0,
+   "counted_sources": null
+  },
+  {
+   "name": "Port Albert",
+   "views": 0,
+   "counted_sources": null
+  },
+  {
+   "name": "Mount Oberon",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Squeaky Beach",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Orbost",
+   "views": 10684,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Service town; Wikivoyage See is park, exhibition centre only (rule 2,3)."
+  },
+  {
+   "name": "Tidal River",
+   "views": 9791,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Visitor hub/campground; page says base for the park, not a sight (rule 3, part of larger place)."
+  },
+  {
+   "name": "Rame Head",
+   "views": 4770,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage Croajingolong only lists the name; remote multi-day hike, no visitor detail (rule 1,2)."
+  },
+  {
+   "name": "Walhalla Goldfields Railway",
+   "views": 3872,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Heritage railway; place is Walhalla (vehicle rule)."
+  },
+  {
+   "name": "Big Drift",
+   "views": 2809,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Walk closed; no counted visitor source (rule 1,2)."
+  },
+  {
+   "name": "Grand Ridge Road",
+   "views": 1640,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A drive, not a place (rule 3)."
+  },
+  {
+   "name": "Morwell National Park",
+   "views": 594,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Gippsland names it for rainforest remnants and koalas, on the Grand Strzelecki Track. Against: small park, short visit, one source."
+  },
+  {
+   "name": "Coopracambra National Park",
+   "views": 506,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage Gippsland mentions only a 4WD link drive; remote, little visitor infrastructure (rule 2)."
+  },
+  {
+   "name": "Lind National Park",
+   "views": 399,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small park, no visitor detail found in any counted source (rule 1)."
+  },
+  {
+   "name": "Gippsland Lakes Coastal Park",
+   "views": 325,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Broad coastal strip overlapping Ninety Mile Beach and the Gippsland Lakes; no distinct stop named (rule 3)."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Traralgon",
+   "views": 36059,
+   "destination": null
+  },
+  {
+   "name": "Walhalla",
+   "views": 31982,
+   "destination": null
+  },
+  {
+   "name": "Sale",
+   "views": 30861,
+   "destination": null
+  },
+  {
+   "name": "Mount Baw Baw",
+   "views": 7885,
+   "destination": null
+  },
+  {
+   "name": "Buchan Caves",
+   "views": 4135,
+   "destination": null
+  },
+  {
+   "name": "Baw Baw National Park",
+   "views": 1604,
+   "destination": null
+  }
+ ],
+ "benchmark": "No benchmark places in this region (Ninety Mile Beach is kept, as a spot of Gippsland Lakes pinned at Lakes Entrance, not under Cape Reinga; Hump Ridge analogue Wilderness Coast Walk kept; negative benchmarks: Walhalla Goldfields Railway rejected as vehicle, Tidal River rejected as base). Kept lowest are 0-view places with one counted source each, passing on Parks Victoria pages. Spots keep 0 views because most have no own Wikipedia article.",
+ "notes": "Kept 50 = 47 spots + 3 destination-named candidates (Wilsons Promontory National Park, Croajingolong National Park, Gippsland Lakes) which became destinations. Lowest-view kept places score 0; every stronger left-out place has a concrete What-qualifies reason."
+}

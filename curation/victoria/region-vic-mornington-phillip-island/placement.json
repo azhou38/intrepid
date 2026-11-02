@@ -1,0 +1,1168 @@
+{
+ "region": "vic-mornington-phillip-island",
+ "branch": "curation/victoria",
+ "new_destinations": [
+  {
+   "action": "new-destination",
+   "id": "mornington-peninsula",
+   "name": "Mornington Peninsula",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "nature",
+   "rank": 3,
+   "coordinates": {
+    "latitude": -38.36,
+    "longitude": 144.9
+   },
+   "defaultZoomSpanKm": 66,
+   "name_evidence": "Wikivoyage region page \"Mornington Peninsula\" (listed as a counted source for Peninsula Hot Springs and Arthurs Seat State Park); Visit Mornington Peninsula tourism brand (visitmorningtonpeninsula.org); Mornington Peninsula National Park (Parks Victoria).",
+   "spots": [
+    "mornington-peninsula-1",
+    "mornington-peninsula-2",
+    "mornington-peninsula-3",
+    "mornington-peninsula-4",
+    "mornington-peninsula-5",
+    "mornington-peninsula-6",
+    "mornington-peninsula-7",
+    "mornington-peninsula-8",
+    "mornington-peninsula-9",
+    "mornington-peninsula-10",
+    "mornington-peninsula-11",
+    "mornington-peninsula-12",
+    "mornington-peninsula-13",
+    "mornington-peninsula-14",
+    "mornington-peninsula-15",
+    "mornington-peninsula-16",
+    "mornington-peninsula-17",
+    "mornington-peninsula-18",
+    "mornington-peninsula-19",
+    "mornington-peninsula-20",
+    "mornington-peninsula-21",
+    "mornington-peninsula-22",
+    "mornington-peninsula-23",
+    "mornington-peninsula-24",
+    "mornington-peninsula-25",
+    "mornington-peninsula-26",
+    "mornington-peninsula-27"
+   ],
+   "reason": "27 kept spots from Point Nepean to Coolart; named region (not a town). Mornington Peninsula National Park and Point Nepean National Park would be destinations on their own but sit inside the peninsula (centres within 0.75 of its radius), so they are spots of it. Centre set west of the middle so it clears Phillip Island by the overlap test."
+  },
+  {
+   "action": "new-destination",
+   "id": "phillip-island",
+   "name": "Phillip Island",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "island",
+   "rank": 2,
+   "coordinates": {
+    "latitude": -38.49,
+    "longitude": 145.25
+   },
+   "defaultZoomSpanKm": 40,
+   "name_evidence": "Wikivoyage page \"Phillip Island\"; Phillip Island Nature Parks (penguins.org.au) headline attraction named for it (Penguin Parade); the island itself was kept as a candidate and becomes the destination, not a spot.",
+   "spots": [
+    "phillip-island-1",
+    "phillip-island-2",
+    "phillip-island-3",
+    "phillip-island-4",
+    "phillip-island-5",
+    "phillip-island-6",
+    "phillip-island-7",
+    "phillip-island-8",
+    "phillip-island-9",
+    "phillip-island-10"
+   ],
+   "reason": "10 kept spots all on the island. Rank 2: Penguin Parade is a headline Victoria draw."
+  }
+ ],
+ "places": [
+  {
+   "name": "Point Nepean National Park",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-1",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -38.30166667,
+    "longitude": 144.6525
+   },
+   "coordinates_source": "wikipedia:Point Nepean",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 5660,
+   "counted_sources": 3,
+   "bio_draft": "southern tip of the peninsula with Fort Nepean, beaches, walks and the Quarantine Station.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "3 counted sources, 5660 page views"
+  },
+  {
+   "name": "Peninsula Hot Springs",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-2",
+   "category": "entertainment",
+   "icon": "\u2668\ufe0f",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "mineral bathing complex at Fingal with thermal pools and spa.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: Wikivoyage names the thermal bathing complex at Fingal; a major peninsula draw, paid, open daily | skeptic: Zero page views and a single counted source here, but it is the region's best-known attraction."
+  },
+  {
+   "name": "Cape Schanck Lighthouse",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-3",
+   "category": "landmark",
+   "icon": "\ud83d\uddfc",
+   "coordinates": {
+    "latitude": -38.492687,
+    "longitude": 144.886489
+   },
+   "coordinates_source": "wikipedia:Cape Schanck Lighthouse",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1610,
+   "counted_sources": 2,
+   "bio_draft": "working lightstation at the tip of the peninsula on Bass Strait, with its reserve and rock views.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "2 counted sources, 1610 page views"
+  },
+  {
+   "name": "Arthurs Seat Summit",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-4",
+   "category": "viewpoint",
+   "icon": "\u26f0\ufe0f",
+   "coordinates": {
+    "latitude": -38.352,
+    "longitude": 144.953
+   },
+   "coordinates_source": "wikipedia:Arthurs Seat, Victoria",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 11672,
+   "counted_sources": 2,
+   "bio_draft": "305 m summit of Arthurs Seat with views over the bay, reached by road in the state park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "2 counted sources, 11672 page views"
+  },
+  {
+   "name": "Fort Nepean",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-5",
+   "category": "historic",
+   "icon": "\ud83c\udff0",
+   "coordinates": {
+    "latitude": -38.303,
+    "longitude": 144.6524
+   },
+   "coordinates_source": "wikipedia:Fort Nepean",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 5103,
+   "counted_sources": 2,
+   "bio_draft": "19th-century coastal fort in Point Nepean National Park, open to visitors with guided and self-guided access.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "2 counted sources, 5103 page views"
+  },
+  {
+   "name": "Mornington Peninsula National Park",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-6",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -38.50222222,
+    "longitude": 144.88833333
+   },
+   "coordinates_source": "wikipedia:Mornington Peninsula National Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1380,
+   "counted_sources": 2,
+   "bio_draft": "strip of ocean beaches, cliffs and bushland from Point Nepean to Cape Schanck, with walks and surf beaches.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "2 counted sources, 1380 page views"
+  },
+  {
+   "name": "Sorrento",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-7",
+   "category": "historic",
+   "icon": "\ud83c\udfd8\ufe0f",
+   "coordinates": {
+    "latitude": -38.33888889,
+    "longitude": 144.74083333
+   },
+   "coordinates_source": "wikipedia:Sorrento, Victoria",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 13072,
+   "counted_sources": 1,
+   "bio_draft": "historic seaside town where Victoria's first settlement was founded in 1803, with ocean and bay beaches and the ferry to Queenscliff.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: Wikivoyage describes Victoria's first settlement (1803) and two beaches; the town has draws of its own | skeptic: The beaches are separate candidates; town spot may duplicate them."
+  },
+  {
+   "name": "Portsea",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-8",
+   "category": "landmark",
+   "icon": "\ud83c\udfd8\ufe0f",
+   "coordinates": {
+    "latitude": -38.32055556,
+    "longitude": 144.71722222
+   },
+   "coordinates_source": "wikipedia:Portsea, Victoria",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 10912,
+   "counted_sources": 1,
+   "bio_draft": "resort village at the tip of the peninsula, with the Portsea Hotel on the foreshore and the surf beach.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Wikivoyage names Portsea's foreshore pub, sunset and back beach; Parks Victoria lists Portsea Surf Beach; harbour/beach village at the peninsula tip. Objection: one town source, overlaps Point Nepean NP. | skeptic: For: tip-of-peninsula resort village. Against: the surf beach is a separate candidate; a town wrapper."
+  },
+  {
+   "name": "Red Hill",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-9",
+   "category": "nature",
+   "icon": "\ud83c\udf47",
+   "coordinates": {
+    "latitude": -38.355,
+    "longitude": 145.016
+   },
+   "coordinates_source": "wikipedia:Red Hill, Victoria",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 4392,
+   "counted_sources": 2,
+   "bio_draft": "rolling hills with the peninsula's main cellar doors, cheese producers and a community market.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "2 counted sources, 4392 page views"
+  },
+  {
+   "name": "Two Bays Walking Trail",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-10",
+   "category": "hike",
+   "icon": "\ud83e\udd7e",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": true,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "26 km trail from Dromana to Cape Schanck through Arthurs Seat and the national park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: two counted sources (Wikivoyage, Parks Victoria); a named 26 km route promoted by the agency | skeptic: Linear trail overlapping Arthurs Seat and the national park; placement by midpoint."
+  },
+  {
+   "name": "Coastal Walk (Mornington Peninsula)",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-11",
+   "category": "hike",
+   "icon": "\ud83e\udd7e",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": true,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "two-day coastal walk along the clifftops of Mornington Peninsula National Park, Portsea to Flinders.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Parks Victoria's national park page promotes it as the two-day clifftop Coastal Walk through ocean beaches; a named multi-day walk like Hump Ridge. Objection: single agency source, part of the national park; but a linear route is its own draw. | skeptic: Overlaps beach and lookout spots along the same cliffs; one source only."
+  },
+  {
+   "name": "Bushrangers Bay",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-12",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": {
+    "latitude": -38.494819,
+    "longitude": 144.904242
+   },
+   "coordinates_source": "osm natural=bay (nominatim) via resolve-pin (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 3,
+   "bio_draft": "bay in Mornington Peninsula National Park reached by a walk of about 20 minutes, with kangaroos along the way.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "3 counted sources, 0 page views"
+  },
+  {
+   "name": "Arthurs Seat State Park",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-13",
+   "category": "nature",
+   "icon": "\ud83c\udf33",
+   "coordinates": {
+    "latitude": -38.352,
+    "longitude": 144.953
+   },
+   "coordinates_source": "wikipedia:Arthurs Seat, Victoria",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 11672,
+   "counted_sources": 3,
+   "bio_draft": "hill reserve above Dromana with summit views, walking tracks, mountain-bike trails and the Two Bays Trail start.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "3 counted sources, 11672 page views"
+  },
+  {
+   "name": "Flinders Blowhole",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-14",
+   "category": "nature",
+   "icon": "\ud83c\udf0a",
+   "coordinates": {
+    "latitude": -38.485242,
+    "longitude": 144.990787
+   },
+   "coordinates_source": "osm natural=blowhole (nominatim) via resolve-pin (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "blowhole on the rocks at Flinders, reached by a walking track in the national park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: two counted sources (Parks Victoria, regional tourism board); a named coastal feature reached by a walk | skeptic: Short visit; the blowhole depends on swell."
+  },
+  {
+   "name": "Sorrento Ocean Beach",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-15",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": {
+    "latitude": -38.346938,
+    "longitude": 144.72844
+   },
+   "coordinates_source": "osm natural=beach (nominatim) via resolve-pin (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "long surf beach on the Bass Strait side of Sorrento, known as Sorrento Back Beach, with dangerous surf and patrolled sections.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: two counted sources (Wikivoyage, Parks Victoria) name it as an ocean surf beach; second-tier beach stop | skeptic: Dangerous surf and no swimming for most; Portsea and Sorrento back beaches are adjacent."
+  },
+  {
+   "name": "Portsea Surf Beach",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-16",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "ocean surf beach on the tip of the peninsula at Portsea, inside the national park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: two counted sources (Wikivoyage, Parks Victoria) name it as an ocean surf beach; second-tier beach stop | skeptic: Dangerous surf and no swimming for most; Portsea and Sorrento back beaches are adjacent."
+  },
+  {
+   "name": "Gunnamatta Beach",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-17",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "back-beach surf break in Mornington Peninsula National Park, named as a surfing beach by Wikivoyage.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: two counted sources (Wikivoyage, Parks Victoria) name it as an ocean surf beach; second-tier beach stop | skeptic: Dangerous surf and no swimming for most; Portsea and Sorrento back beaches are adjacent."
+  },
+  {
+   "name": "Coolart Wetlands and Homestead",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-18",
+   "category": "nature",
+   "icon": "\ud83e\udd86",
+   "coordinates": {
+    "latitude": -38.38694444,
+    "longitude": 145.13972222
+   },
+   "coordinates_source": "wikipedia:Coolart Wetlands and Homestead Reserve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1666,
+   "counted_sources": 2,
+   "bio_draft": "waterbird wetlands on Western Port with a historic homestead and gardens near Somers.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "2 counted sources, 1666 page views"
+  },
+  {
+   "name": "Mornington",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-19",
+   "category": "historic",
+   "icon": "\u2693",
+   "coordinates": {
+    "latitude": -38.228,
+    "longitude": 145.062
+   },
+   "coordinates_source": "wikipedia:Mornington, Victoria",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 14625,
+   "counted_sources": 1,
+   "bio_draft": "largest town on the peninsula, a main street running down to the beach and pier, with cafes and the Mornington Racecourse.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Wikivoyage calls it the peninsula's largest town with a long main street running to the beach and pier; a harbour town a guide recommends. Objection: one source, generic town. | skeptic: For: harbour town stop. Against: a town wrapper over Mornington Pier, no named sight."
+  },
+  {
+   "name": "McCrae Homestead",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-20",
+   "category": "historic",
+   "icon": "\ud83c\udfe1",
+   "coordinates": {
+    "latitude": -38.34972222,
+    "longitude": 144.93138889
+   },
+   "coordinates_source": "wikipedia:McCrae Homestead",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1535,
+   "counted_sources": 1,
+   "bio_draft": "National Trust homestead at Rosebud, a historic house run by the National Trust.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-2: National Trust page confirms a public heritage homestead with entry charge ($15 adult, last entry 3pm) and Parks Victoria/Wikivoyage listing. Objection: small house, limited open days. | skeptic: For: heritage house open to the public. Against: one source, short visit, limited opening."
+  },
+  {
+   "name": "The Briars",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-21",
+   "category": "historic",
+   "icon": "\ud83c\udfe1",
+   "coordinates": {
+    "latitude": -38.224469,
+    "longitude": 145.032606
+   },
+   "coordinates_source": "wikipedia:Mount Martha House",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 131,
+   "counted_sources": 2,
+   "bio_draft": "National Trust homestead and wildlife sanctuary at Mount Martha, with history and walking tracks.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: two counted sources; open daily with free wildlife sanctuary, paid homestead, walks | skeptic: Mainly a National Trust homestead; modest draw for non-locals."
+  },
+  {
+   "name": "Dromana Beach",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-22",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": {
+    "latitude": -38.330615,
+    "longitude": 144.967876
+   },
+   "coordinates_source": "osm natural=beach (nominatim) via resolve-pin (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "bay beach at Dromana with brightly painted boat sheds lining the shore.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Wikivoyage highlights the beach lined with brightly painted boat sheds; a recognisable photo stop. Objection: one source. | skeptic: For: photogenic boat sheds. Against: a short visit, one source."
+  },
+  {
+   "name": "Sorrento Front Beach",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-23",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "calm bay beach on Port Phillip side of Sorrento, with the foreshore and Sorrento's pier area.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Wikivoyage singles out Sorrento's calm bay beach beside the ocean beach; second-tier beach stop. Objection: one source, ordinary bay beach. | skeptic: For: Sorrento's popular bay beach. Against: overlaps the Sorrento town spot, one source."
+  },
+  {
+   "name": "Rye Ocean Beach",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-24",
+   "category": "beach",
+   "icon": "\ud83c\udfd6\ufe0f",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "ocean surf beach at Rye, inside the national park, listed as a surfing beach.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: two counted sources list it as a surfing beach | skeptic: Another of several adjacent ocean beaches with little to separate them."
+  },
+  {
+   "name": "Coppins Track",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-25",
+   "category": "hike",
+   "icon": "\ud83e\udd7e",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": true,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "coastal track above Sorrento Ocean Beach in Mornington Peninsula National Park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1: two counted sources name this coastal track above Sorrento Ocean Beach | skeptic: Short track overlapping Sorrento Ocean Beach and the coastal walk; could be a duplicate."
+  },
+  {
+   "name": "Mushroom Reef Marine Sanctuary",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-26",
+   "category": "nature",
+   "icon": "\ud83d\udc20",
+   "coordinates": {
+    "latitude": -38.487488,
+    "longitude": 145.016149
+   },
+   "coordinates_source": "osm leisure=nature_reserve (nominatim) via resolve-pin (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "rocky reef marine sanctuary off Flinders Ocean Beach, for snorkelling and rockpools.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Parks Victoria lists the sanctuary at Flinders Ocean Beach for rockpooling and snorkelling; second-tier natural stop. Objection: one source, landslip advisory nearby. | skeptic: For: a distinct activity. Against: one source, tide-dependent, next to Flinders Ocean Beach."
+  },
+  {
+   "name": "Alba Thermal Springs & Spa",
+   "action": "spot",
+   "destination": "mornington-peninsula",
+   "id": "mornington-peninsula-27",
+   "category": "entertainment",
+   "icon": "\u2668\ufe0f",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "day spa with thermal pools on the peninsula, listed as a favourite by the regional tourism board; spa is a commercial venue.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Australian Traveller and others cover a 15 ha thermal springs complex with 31 pools, a paid day-visit attraction like Peninsula Hot Springs. Objection: new commercial spa, premium price. | skeptic: For: thermal pools open to the public. Against: a spa/business and near-duplicate of Peninsula Hot Springs."
+  },
+  {
+   "name": "Penguin Parade",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-1",
+   "category": "nature",
+   "icon": "\ud83d\udc27",
+   "coordinates": {
+    "latitude": -38.510186,
+    "longitude": 145.15065
+   },
+   "coordinates_source": "osm tourism=attraction (nominatim) via resolve-pin (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 2596,
+   "counted_sources": 2,
+   "bio_draft": "nightly sunset parade of little penguins returning to nests at Summerland, run by Phillip Island Nature Parks.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: two counted sources; the nightly little-penguin parade at Summerlands is the island's headline draw | skeptic: Evening only and paid; the parade is nightly all year."
+  },
+  {
+   "name": "The Nobbies",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-2",
+   "category": "viewpoint",
+   "icon": "\ud83c\udf0a",
+   "coordinates": {
+    "latitude": -38.51851,
+    "longitude": 145.118697
+   },
+   "coordinates_source": "osm natural=blowhole (nominatim) via resolve-pin (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 2,
+   "bio_draft": "rocky south-west tip of Phillip Island with a boardwalk, coastal views and an education centre.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: two counted sources; boardwalk headland with an education centre and coastal views | skeptic: Shares a Wikivoyage entry with Seal Rocks."
+  },
+  {
+   "name": "Koala Conservation Centre",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-3",
+   "category": "nature",
+   "icon": "\ud83d\udc28",
+   "coordinates": {
+    "latitude": -38.48333333,
+    "longitude": 145.23333333
+   },
+   "coordinates_source": "wikipedia:Phillip Island Nature Park",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 3777,
+   "counted_sources": 2,
+   "bio_draft": "tree-top boardwalks to see wild koalas in the eucalypts, run by Phillip Island Nature Parks.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "2 counted sources, 3777 page views"
+  },
+  {
+   "name": "Churchill Island",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-4",
+   "category": "historic",
+   "icon": "\ud83d\udc11",
+   "coordinates": {
+    "latitude": -38.5,
+    "longitude": 145.33888889
+   },
+   "coordinates_source": "wikipedia:Churchill Island",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 4983,
+   "counted_sources": 2,
+   "bio_draft": "57-hectare island reached by causeway, with a heritage farm and a farmers' market.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: two counted sources; heritage farm on a causeway island, open daily | skeptic: Farmers market is occasional; the farm itself is the draw."
+  },
+  {
+   "name": "Cape Woolamai",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-5",
+   "category": "hike",
+   "icon": "\ud83e\udd7e",
+   "coordinates": {
+    "latitude": -38.52777778,
+    "longitude": 145.33694444
+   },
+   "coordinates_source": "wikipedia:Cape Woolamai",
+   "pin_status": "provisional",
+   "linear_feature": true,
+   "views": 3385,
+   "counted_sources": 1,
+   "bio_draft": "cape with walking loops among shearwater burrows and a surf beach at the island's south-east.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: Wikivoyage names the cape with walking loops, shearwater burrows and surf beach | skeptic: One counted source, but a headland walk and second-tier stop."
+  },
+  {
+   "name": "Phillip Island Grand Prix Circuit",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-6",
+   "category": "entertainment",
+   "icon": "\ud83c\udfcd\ufe0f",
+   "coordinates": {
+    "latitude": -38.504081,
+    "longitude": 145.234554
+   },
+   "coordinates_source": "osm leisure=sports_centre (nominatim) via resolve-pin (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 48505,
+   "counted_sources": 1,
+   "bio_draft": "purpose-built 1950s circuit hosting the MotoGP Australian Grand Prix, open to visitors on non-event days through track tours.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "1 counted sources, 48505 page views"
+  },
+  {
+   "name": "National Vietnam Veterans Museum",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-7",
+   "category": "museum",
+   "icon": "\ud83c\udf96\ufe0f",
+   "coordinates": {
+    "latitude": -38.5207,
+    "longitude": 145.3245
+   },
+   "coordinates_source": "wikipedia:National Vietnam Veterans Museum",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1032,
+   "counted_sources": 1,
+   "bio_draft": "volunteer-run museum of Vietnam War memorabilia at Cape Woolamai, with over 5,000 items.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: Wikivoyage lists a museum open daily 10-5 with over 5,000 items | skeptic: Volunteer-run and niche; one source."
+  },
+  {
+   "name": "Rhyll Inlet and Conservation Hill",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-8",
+   "category": "nature",
+   "icon": "\ud83e\udd86",
+   "coordinates": {
+    "latitude": -38.456547,
+    "longitude": 145.303132
+   },
+   "coordinates_source": "osm natural=bay (nominatim) via resolve-pin (MEDIUM)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "inlet and wetlands at Rhyll, a feeding and breeding area for birds, with a boardwalk pathway.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Wikivoyage and Visit Phillip Island both describe boardwalks through Ramsar-listed mangroves and a Conservation Hill observation tower with birdlife. Objection: modest birdwatching stop. | skeptic: For: distinct nature stop. Against: a local reserve and a short visit."
+  },
+  {
+   "name": "Phillip Island Chocolate Factory",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-9",
+   "category": "entertainment",
+   "icon": "\ud83c\udf6b",
+   "coordinates": null,
+   "coordinates_source": "none yet: pins stage to resolve",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "commercial factory with a paid interactive chocolate attraction (Panny's Amazing World of Chocolate) at Newhaven.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "coordinates",
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Wikivoyage describes a long-visit attraction with the world's largest chocolate waterfall and interactive displays, open daily. Objection: one source, part retail. | skeptic: For: a named stop with a paid attraction. Against: mainly a shop and cafe."
+  },
+  {
+   "name": "A Maze'N Things",
+   "action": "spot",
+   "destination": "phillip-island",
+   "id": "phillip-island-10",
+   "category": "entertainment",
+   "icon": "\ud83c\udf00",
+   "coordinates": {
+    "latitude": -38.487544,
+    "longitude": 145.261985
+   },
+   "coordinates_source": "osm tourism=theme_park (nominatim) via resolve-pin (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 0,
+   "counted_sources": 1,
+   "bio_draft": "maze, mini-golf, illusions hall and adventure ropes course at Phillip Island Road.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rules 1-3: Wikivoyage lists a daily family attraction (maze averaging 45 min, mini-golf, ropes course, illusions hall) with entry fee. Objection: one source, kids' commercial attraction, older listing. | skeptic: For: open daily and paid. Against: a commercial family venue, not a place travellers seek out."
+  },
+  {
+   "name": "French Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "french-island",
+   "category": "nature",
+   "icon": "\ud83c\udfdd\ufe0f",
+   "coordinates": {
+    "latitude": -38.351151,
+    "longitude": 145.388359
+   },
+   "coordinates_source": "osm place=island (nominatim) via resolve-pin (HIGH)",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 23391,
+   "counted_sources": 2,
+   "bio_draft": "Western Port island with national park, koalas and waterbirds, reached by passenger ferry from Stony Point or Cowes.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: two counted sources (Wikivoyage, Parks Victoria); island national park with koalas and wetlands, reached by ferry | skeptic: Needs a ferry and bike; the island is the spot, the ferry is not.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "State Coal Mine",
+   "action": "standalone",
+   "destination": null,
+   "id": "state-coal-mine",
+   "category": "historic",
+   "icon": "\u26cf\ufe0f",
+   "coordinates": {
+    "latitude": -38.6185499,
+    "longitude": 145.5951091
+   },
+   "coordinates_source": "wikipedia:State Coal Mine",
+   "pin_status": "provisional",
+   "linear_feature": false,
+   "views": 1455,
+   "counted_sources": 1,
+   "bio_draft": "former coal mine museum at Wonthaggi, run by Parks Victoria, with underground tours.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "bio"
+   ],
+   "reason": "Rule 1/2: Wikivoyage lists a Parks Victoria historic mine with underground tours, open daily | skeptic: One counted source; a good heritage tour.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_near_destination_notes": {
+  "French Island": "About 20 km from Phillip Island centre and ~33 km from Mornington Peninsula centre, but reached by its own passenger ferry from Stony Point (or Cowes) and visited as its own overnight/bike trip, not from either base; the Wikivoyage page is separate. Standalone, not a spot of Phillip Island.",
+  "State Coal Mine": "~33 km from Phillip Island centre, across Western Port on the Bass Coast mainland; reached via Wonthaggi, outside the island destination span (75% of 40 km = 30 km). Standalone.",
+  "Bunurong Marine National Park": "More than 40 km from Phillip Island centre and in the Bass Coast/Gippsland side; 3 kept places on this coast (park, Inverloch, State Coal Mine) is below the four-spot bar for a destination, so standalone; Gippsland region pass may already own a nearer base.",
+  "Inverloch": "Same Bass Coast cluster as Bunurong and State Coal Mine (3 spots, no destination); ~45 km from Phillip Island, outside its span. Standalone."
+ },
+ "dropped_as_destination_duplicate": [
+  {
+   "name": "Phillip Island",
+   "reason": "kept candidate for the island; becomes the new destination phillip-island rather than a spot of itself."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "Greens Bush",
+   "verdict": "review",
+   "case": "Rule 1/3: Parks Victoria names it as the kangaroo haven and largest native bushland on the peninsula. For: distinct wildlife and tracks, inland from coast sections. Against: a section of Mornington Peninsula National Park, one source.",
+   "coordinates_note": null,
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Bridgewater Bay",
+   "verdict": "review",
+   "case": "Rule 1: Wikivoyage names Blairgowrie's Bridgewater Bay for rock pools safe for swimming at low tide. For: a named natural feature. Against: single source, tide-dependent, local beach.",
+   "coordinates_note": "candidate coordinates are wrong (a Bridgwater Bay in Somerset, UK): needs a real pin",
+   "views": 1938,
+   "counted_sources": 1
+  }
+ ],
+ "notes": "No existing Victoria destinations or spots in the app, so existing_fixes is empty. All pins provisional (several null) for the pins stage. Linear features (Two Bays, Coastal Walk, Coppins Track, Cape Woolamai) pin at route midpoint. Spots carry no hours.",
+ "crossregion_decisions": [
+  {
+   "dropped": "Inverloch",
+   "reason": "Kept as a spot of South Gippsland (vic-gippsland): Bass Coast belongs to that destination."
+  },
+  {
+   "dropped": "Bunurong Marine National Park",
+   "reason": "Kept as a spot of South Gippsland (vic-gippsland)."
+  }
+ ]
+}

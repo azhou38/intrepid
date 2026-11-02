@@ -1,0 +1,477 @@
+{
+ "inside_destinations": 70,
+ "standalone": 2,
+ "new_destinations": [
+  "melbourne"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Elwood Beach",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Footscray Market",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "McClelland Gallery and Sculpture Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Royal Botanic Gardens Cranbourne",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Koorie Heritage Trust",
+   "views": 825,
+   "counted_sources": 1
+  },
+  {
+   "name": "Victoria Police Museum",
+   "views": 897,
+   "counted_sources": 1
+  },
+  {
+   "name": "Warrandyte State Park",
+   "views": 990,
+   "counted_sources": 1
+  },
+  {
+   "name": "Maranoa Botanic Gardens",
+   "views": 1018,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Melbourne Star",
+   "views": 33737,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: observation wheel reported closed since 2021; no counted visitor source confirms it is operating."
+  },
+  {
+   "name": "Sidney Myer Music Bowl",
+   "views": 18804,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2/4: a concert venue; no counted source found naming a visit outside events."
+  },
+  {
+   "name": "Government House",
+   "views": 11644,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/4: Wikivoyage lists tours that must be booked two weeks ahead and free garden tours one Thursday a month; not there whenever a visitor arrives."
+  },
+  {
+   "name": "Canterbury Streetscapes",
+   "views": 10361,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3: tree-lined residential streets; Wikivoyage names no sight or activity."
+  },
+  {
+   "name": "Palais Theatre",
+   "views": 9267,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Kings Domain",
+   "views": 9226,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: parkland that contains the Shrine of Remembrance, Botanic Gardens and Queen Victoria Gardens; a counted source not found and the sights are separate spots."
+  },
+  {
+   "name": "Melbourne Town Hall",
+   "views": 8876,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: civic building; Wikivoyage names it only as the visitor information centre site."
+  },
+  {
+   "name": "Montague Street Bridge",
+   "views": 7368,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Caulfield Racecourse",
+   "views": 5695,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: race-day venue; Wikivoyage describes events through the year."
+  },
+  {
+   "name": "Melbourne General Cemetery",
+   "views": 5600,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/2: no counted source found; a working cemetery."
+  },
+  {
+   "name": "Scots' Church",
+   "views": 5388,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: working Presbyterian church, Mon-Fri 11-2:30 visiting, no named interior or art draw in the source."
+  },
+  {
+   "name": "Moonee Valley Racecourse",
+   "views": 5146,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Royal Park",
+   "views": 4995,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Half Moon Bay",
+   "views": 4647,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source found for the Melbourne bay (searches return California); revisit only if a guide is found."
+  },
+  {
+   "name": "Sydney Road",
+   "views": 4503,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a shopping strip; Wikivoyage treats it as the Brunswick district centre, not a stop with a thing to see."
+  },
+  {
+   "name": "Yarra River Trail",
+   "views": 4301,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: no distinct Wikivoyage listing found; overlaps the Capital City Trail along the same river."
+  },
+  {
+   "name": "Flagstaff Gardens",
+   "views": 3527,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found (only Wikipedia/heritage register); CBD-edge park."
+  },
+  {
+   "name": "Station Pier",
+   "views": 3234,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3: working ferry and cruise pier; no counted source gives a sight or activity."
+  },
+  {
+   "name": "St Michael's Uniting Church",
+   "views": 2815,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: listed only with hours; no interior feature or art named, a parish church."
+  },
+  {
+   "name": "Princes Pier",
+   "views": 2699,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Governor La Trobe's Cottage",
+   "views": 2399,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Wattle Park",
+   "views": 2321,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: local park with golf and picnic area."
+  },
+  {
+   "name": "Westerfolds Park",
+   "views": 2068,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; local riverside park."
+  },
+  {
+   "name": "La Mama Theatre",
+   "views": 1999,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Alexandra Gardens",
+   "views": 1969,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: riverside lawn strip, part of the Kings Domain/Yarra frontage."
+  },
+  {
+   "name": "Ruffey Lake Park",
+   "views": 1888,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; local lake park."
+  },
+  {
+   "name": "Myuna Farm",
+   "views": 1871,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage lists it (daily, paid): a children's animal farm, an hour or two for families. For: real paid attraction open daily. Against: local family stop, single source."
+  },
+  {
+   "name": "Edinburgh Gardens",
+   "views": 1746,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; local park."
+  },
+  {
+   "name": "Jells Park",
+   "views": 1705,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: ordinary suburban recreation park; Wikivoyage mentions it only in passing for the City of Monash."
+  },
+  {
+   "name": "Queen Victoria Gardens",
+   "views": 1670,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: minor memorials and a floral clock."
+  },
+  {
+   "name": "Brimbank Park",
+   "views": 1586,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; local parkland."
+  },
+  {
+   "name": "St Kilda Sea Baths",
+   "views": 1486,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Lysterfield Park",
+   "views": 1421,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Parks Victoria park with state MTB course and lake canoeing (Wikivoyage); activity park of regional rather than visitor appeal. Only one counted source."
+  },
+  {
+   "name": "Westgate Park",
+   "views": 1355,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; local park."
+  },
+  {
+   "name": "Treasury Gardens",
+   "views": 1332,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: only Wikipedia/heritage listings found; city park beside Fitzroy Gardens."
+  },
+  {
+   "name": "Queens Park",
+   "views": 1328,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Blackburn Lake Sanctuary",
+   "views": 1311,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a local suburban bushland reserve; Wikivoyage entry generic."
+  },
+  {
+   "name": "Plenty Gorge Park",
+   "views": 1303,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted visitor source found; local gorge parkland."
+  },
+  {
+   "name": "Edwardes Lake",
+   "views": 1291,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; local lake park."
+  },
+  {
+   "name": "Melbourne Tram Museum",
+   "views": 1227,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 4: Wikivoyage says open only 2nd and 4th Saturday monthly; not there whenever a visitor arrives."
+  },
+  {
+   "name": "Fawkner Park",
+   "views": 1217,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Bridge Road",
+   "views": 1161,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Churchill National Park",
+   "views": 1096,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted visitor source found; suburban bushland park."
+  },
+  {
+   "name": "Centre for Contemporary Photography",
+   "views": 950,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Monash University Museum of Art",
+   "views": 863,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: one-line Wikivoyage listing naming only the university."
+  },
+  {
+   "name": "St Kilda Botanical Gardens",
+   "views": 861,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3: local-scale suburban garden; no distinct sight beyond a conservatory open weekdays."
+  },
+  {
+   "name": "Schwerkolt Cottage",
+   "views": 849,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3: small pioneer cottage, restricted opening; local heritage stop."
+  },
+  {
+   "name": "Koonung Creek Trail",
+   "views": 844,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: a suburban shared path along a freeway, no destination."
+  },
+  {
+   "name": "Point Cook Coastal Park",
+   "views": 804,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no counted source found; local coastal park."
+  },
+  {
+   "name": "Federation Bells",
+   "views": 792,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: minor public art installation."
+  },
+  {
+   "name": "Mullum Mullum Trail",
+   "views": 755,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: suburban shared path, local use."
+  },
+  {
+   "name": "Australian Jazz Museum",
+   "views": 713,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  },
+  {
+   "name": "Frankston Arts Centre",
+   "views": 615,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: performing-arts venue; shows are events."
+  },
+  {
+   "name": "Maling Road Village",
+   "views": 566,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a boutique shopping strip, not a sight."
+  },
+  {
+   "name": "Hawthorn Town Hall",
+   "views": 563,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a civic building seen from the pavement"
+  },
+  {
+   "name": "Altona Coastal Park",
+   "views": 480,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; overlaps Altona Beach."
+  },
+  {
+   "name": "Keilor Botanic Gardens",
+   "views": 308,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1/3: no counted source found; tiny local garden."
+  },
+  {
+   "name": "Victorian Pride Centre",
+   "views": 178,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: community and meeting building; Wikivoyage lists no exhibit or visitor draw."
+  },
+  {
+   "name": "Moonee Ponds Court House Museum",
+   "views": 87,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2/3/4: venue, shop strip, small local park, race meetings or minor pier/bridge/gallery not a draw for a visitor; or open only on some Sundays."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "McClelland Gallery and Sculpture Park",
+   "views": 0,
+   "note": "outside every existing destination span (none exist); Melbourne-region kept"
+  },
+  {
+   "name": "Royal Botanic Gardens Cranbourne",
+   "views": 0,
+   "note": "outside every existing destination span (none exist); Melbourne-region kept"
+  }
+ ],
+ "benchmark": "No NZ benchmark applies to a Victoria region; Melbourne-specific checks: no vehicle/operator spots (Melbourne Star, the Yarra River Trail and pier-only/bridge entries judged out); Government House, town halls, local parish churches, Melbourne General Cemetery rejected as not visitor draws; St Patrick and St Paul cathedrals kept for visitor interiors per skeptic."
+}

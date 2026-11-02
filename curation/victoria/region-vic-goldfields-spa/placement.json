@@ -1,0 +1,1467 @@
+{
+ "region": "vic-goldfields-spa",
+ "new_destinations": [
+  {
+   "id": "ballarat",
+   "name": "Ballarat",
+   "category": "city",
+   "coordinates": {
+    "lat": -37.5622,
+    "lng": 143.8503
+   },
+   "defaultZoomSpanKm": 50,
+   "rank": 3,
+   "name_evidence": "Wikivoyage \"Ballarat\" page and \"Goldfields\" region listing; Sovereign Hill is a headline attraction; Visit Victoria Goldfields brand."
+  },
+  {
+   "id": "bendigo",
+   "name": "Bendigo",
+   "category": "city",
+   "coordinates": {
+    "lat": -36.757,
+    "lng": 144.279
+   },
+   "defaultZoomSpanKm": 40,
+   "rank": 3,
+   "name_evidence": "Wikivoyage \"Bendigo\" page; bendigoregion.com.au \"Things to do in Bendigo\"; Bendigo Art Gallery headline attraction."
+  },
+  {
+   "id": "daylesford",
+   "name": "Daylesford",
+   "category": "city",
+   "coordinates": {
+    "lat": -37.3417,
+    "lng": 144.1456
+   },
+   "defaultZoomSpanKm": 40,
+   "rank": 3,
+   "name_evidence": "Wikivoyage \"Daylesford\" page (covers Hepburn Springs and Mount Franklin); visithepburnshire.com.au/daylesford; \"Daylesford and Hepburn Springs\" spa country tourism brand."
+  },
+  {
+   "id": "macedon-ranges",
+   "name": "Macedon Ranges",
+   "category": "nature",
+   "coordinates": {
+    "lat": -37.33,
+    "lng": 144.5
+   },
+   "defaultZoomSpanKm": 50,
+   "rank": 3,
+   "name_evidence": "Macedon Ranges is the regional tourism brand (Visit Macedon Ranges) and a Wikivoyage/Wikipedia region name; heading in the region file for Kyneton, Woodend, Mount Macedon and Hanging Rock."
+  },
+  {
+   "id": "castlemaine",
+   "name": "Castlemaine",
+   "category": "city",
+   "coordinates": {
+    "lat": -37.0636,
+    "lng": 144.2172
+   },
+   "defaultZoomSpanKm": 50,
+   "rank": 4,
+   "name_evidence": "Wikivoyage \"Castlemaine\" page (see/do listings include Maldon, diggings, Theatre Royal)."
+  },
+  {
+   "id": "heathcote",
+   "name": "Heathcote",
+   "category": "city",
+   "coordinates": {
+    "lat": -36.9167,
+    "lng": 144.7
+   },
+   "defaultZoomSpanKm": 45,
+   "rank": 5,
+   "name_evidence": "bendigoregion.com.au Things to do in Bendigo names Heathcote wine town; Heathcote wine region (GI) is a tourism brand. WEAK: single counted source, no Wikivoyage page; owner may demote."
+  }
+ ],
+ "spots": [
+  {
+   "name": "Sovereign Hill",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-1",
+   "coordinates": {
+    "lat": -37.57511667,
+    "lng": 143.8659
+   },
+   "coordinates_source": "wikipedia:Sovereign Hill",
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Sovereign Hill",
+   "bio_hint": "museum; open-air recreation of 1850s gold-rush Ballarat",
+   "views": 15026,
+   "counted_sources": 2,
+   "verdict_reason": "2 counted sources, 15026 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Museum of Australian Democracy at Eureka",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-2",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Museum of Australian Democracy at Eureka",
+   "bio_hint": "museum; museum on the 1854 Eureka miners' rebellion",
+   "views": 959,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage; Eureka Stockade site museum.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Eureka Stockade",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Eureka Stockade",
+   "bio_hint": "historic site; site of the 1854 Eureka Stockade in Ballarat",
+   "views": 91271,
+   "counted_sources": 1,
+   "verdict_reason": "1 counted sources, 91271 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base NOTE: Near-duplicate risk with Museum of Australian Democracy at Eureka (same site); both kept by the skeptic, flagged for owner.",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Art Gallery of Ballarat",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-4",
+   "coordinates": {
+    "lat": -37.5605,
+    "lng": 143.8583
+   },
+   "coordinates_source": "wikipedia:Art Gallery of Ballarat",
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Art Gallery of Ballarat",
+   "bio_hint": "gallery; regional gallery holding the Eureka Flag",
+   "views": 3440,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage; holds the Eureka Flag, free.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Lake Wendouree",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-5",
+   "coordinates": {
+    "lat": -37.55055556,
+    "lng": 143.83333333
+   },
+   "coordinates_source": "wikipedia:Lake Wendouree",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Lake Wendouree",
+   "bio_hint": "lake; large lake in the centre of Ballarat with rowing and walks",
+   "views": 8581,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage; 238 ha central lake with walks and rowing.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Ballarat Botanical Gardens",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-6",
+   "coordinates": {
+    "lat": -37.54666667,
+    "lng": 143.82222222
+   },
+   "coordinates_source": "wikipedia:Ballarat Botanical Gardens",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Ballarat Botanical Gardens",
+   "bio_hint": "garden; botanical gardens on the shore of Lake Wendouree",
+   "views": 3395,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage; gardens on Lake Wendouree.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Ballarat Wildlife Park",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-7",
+   "coordinates": {
+    "lat": -37.5698,
+    "lng": 143.8926
+   },
+   "coordinates_source": "wikipedia:Ballarat Wildlife Park",
+   "pin_status": "provisional",
+   "category": "entertainment",
+   "icon_hint": null,
+   "wiki": "Ballarat Wildlife Park",
+   "bio_hint": "zoo; Australian animals, birds and reptiles in Ballarat East",
+   "views": 2033,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1/2: Wikivoyage; paid wildlife park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Kryal Castle",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-8",
+   "coordinates": {
+    "lat": -37.57194444,
+    "lng": 143.95638889
+   },
+   "coordinates_source": "wikipedia:Kryal Castle",
+   "pin_status": "provisional",
+   "category": "entertainment",
+   "icon_hint": null,
+   "wiki": "Kryal Castle",
+   "bio_hint": "attraction; replica medieval castle with shows, just outside Ballarat",
+   "views": 17988,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1/2: Wikivoyage; paid replica castle attraction.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Mount Buninyong",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-9",
+   "coordinates": {
+    "lat": -37.65,
+    "lng": 143.93333333
+   },
+   "coordinates_source": "wikipedia:Mount Buninyong",
+   "pin_status": "provisional",
+   "category": "viewpoint",
+   "icon_hint": null,
+   "wiki": "Mount Buninyong",
+   "bio_hint": "mountain; extinct volcano scenic reserve with summit views near Ballarat",
+   "views": 3002,
+   "counted_sources": 1,
+   "verdict_reason": "Parks Victoria scenic reserve with summit lookout and walking track (extinct volcano); second-tier outlook near Ballarat.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Ballarat Tramway Museum",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-10",
+   "coordinates": {
+    "lat": -37.5515,
+    "lng": 143.8204
+   },
+   "coordinates_source": "wikipedia:Ballarat Tramway Museum",
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Ballarat Tramway Museum",
+   "bio_hint": "museum; historic tram rides through the botanical gardens",
+   "views": 1619,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Ballarat: historic tram rides along 1.3 km through the Botanical Gardens, weekends and holidays; permanent venue. Objection: limited opening.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Clunes",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-11",
+   "coordinates": {
+    "lat": -37.3,
+    "lng": 143.78333333
+   },
+   "coordinates_source": "wikipedia:Clunes, Victoria",
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Clunes, Victoria",
+   "bio_hint": "town; gold-rush town known as a booktown, streetscape used in filming",
+   "views": 11717,
+   "counted_sources": 0,
+   "verdict_reason": "Visit Victoria region page and Visit Hepburn Shire: booktown, gold-rush Fraser St streetscape, museums; permanent draw (festival itself excluded).",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Blue Waters Lake",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-12",
+   "coordinates": {
+    "lat": -37.425,
+    "lng": 143.89166667
+   },
+   "coordinates_source": "wikipedia:Creswick",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Creswick, Victoria",
+   "bio_hint": "lake; former open-cut mine lake in Creswick Regional Park for camping and photography",
+   "views": 7607,
+   "counted_sources": 0,
+   "verdict_reason": "Parks Victoria site page and Goldfields Guide: former gold-mine open cut with turquoise water, 800 m walk; swimming not advised but viewing is the draw.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base"
+  },
+  {
+   "name": "Ballarat to Skipton Rail Trail",
+   "action": "spot",
+   "destination": "ballarat",
+   "id": "ballarat-13",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "hike",
+   "icon_hint": null,
+   "wiki": "Ballarat to Skipton Rail Trail",
+   "bio_hint": "rail trail; 46 km cycling and riding route from Ballarat to Skipton",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Ballarat recommends hiring a bike for the 53 km off-road trail; promoted rail trail like O'Keefe.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside ballarat span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Bendigo Art Gallery",
+   "action": "spot",
+   "destination": "bendigo",
+   "id": "bendigo-1",
+   "coordinates": {
+    "lat": -36.757513,
+    "lng": 144.276967
+   },
+   "coordinates_source": "wikipedia:Bendigo Art Gallery",
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Bendigo Art Gallery",
+   "bio_hint": "gallery; regional gallery on the edge of Rosalind Park",
+   "views": 1484,
+   "counted_sources": 2,
+   "verdict_reason": "2 counted sources, 1484 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside bendigo span and reached from that base"
+  },
+  {
+   "name": "Central Deborah Gold Mine",
+   "action": "spot",
+   "destination": "bendigo",
+   "id": "bendigo-2",
+   "coordinates": {
+    "lat": -36.765,
+    "lng": 144.2702
+   },
+   "coordinates_source": "wikipedia:Central Deborah Gold Mine",
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Central Deborah Gold Mine",
+   "bio_hint": "mine; underground and surface gold-mine tours in Bendigo",
+   "views": 1311,
+   "counted_sources": 2,
+   "verdict_reason": "2 counted sources, 1311 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside bendigo span and reached from that base"
+  },
+  {
+   "name": "Golden Dragon Museum",
+   "action": "spot",
+   "destination": "bendigo",
+   "id": "bendigo-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Golden Dragon Museum",
+   "bio_hint": "museum; Chinese heritage garden and museum with a joss house and the Sun Loong dragon",
+   "views": 2800,
+   "counted_sources": 2,
+   "verdict_reason": "2 counted sources, 2800 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside bendigo span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Sacred Heart Cathedral, Bendigo",
+   "action": "spot",
+   "destination": "bendigo",
+   "id": "bendigo-4",
+   "coordinates": {
+    "lat": -36.76,
+    "lng": 144.274
+   },
+   "coordinates_source": "wikipedia:Sacred Heart Cathedral, Bendigo",
+   "pin_status": "provisional",
+   "category": "religious",
+   "icon_hint": null,
+   "wiki": "Sacred Heart Cathedral, Bendigo",
+   "bio_hint": "church; cathedral on the high point of Bendigo (church, visitor interest to judge)",
+   "views": 6993,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 2: Wikivoyage singles it out as a spectacular cathedral at the town high point.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside bendigo span and reached from that base"
+  },
+  {
+   "name": "Rosalind Park",
+   "action": "spot",
+   "destination": "bendigo",
+   "id": "bendigo-5",
+   "coordinates": {
+    "lat": -36.757,
+    "lng": 144.279
+   },
+   "coordinates_source": "wikipedia:Rosalind Park",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Rosalind Park",
+   "bio_hint": "park; central park with fountain and memorial, beside the art gallery",
+   "views": 964,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage lists the central park (fountain, memorial, Poppet Head lookout path); free open park a guide names. Objection: ordinary city park if only one source.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside bendigo span and reached from that base"
+  },
+  {
+   "name": "Poppet Head Lookout",
+   "action": "spot",
+   "destination": "bendigo",
+   "id": "bendigo-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "viewpoint",
+   "icon_hint": null,
+   "wiki": "",
+   "bio_hint": "lookout; climbable lookout built over a mine shaft with a mosaic of Bendigo's heritage",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage: climbable lookout over region plus heritage mosaic.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside bendigo span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Greater Bendigo National Park",
+   "action": "spot",
+   "destination": "bendigo",
+   "id": "bendigo-7",
+   "coordinates": {
+    "lat": -36.67388889,
+    "lng": 144.25472222
+   },
+   "coordinates_source": "wikipedia:Greater Bendigo National Park",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Greater Bendigo National Park",
+   "bio_hint": "national park; box-ironbark bushland with camping and walks near Bendigo",
+   "views": 649,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Parks Victoria: box-ironbark forest, lookouts, Old Tom Mine Walk.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside bendigo span and reached from that base"
+  },
+  {
+   "name": "Lake Daylesford",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-1",
+   "coordinates": {
+    "lat": -37.34722222,
+    "lng": 144.13777778
+   },
+   "coordinates_source": "wikipedia:Lake Daylesford",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Lake Daylesford",
+   "bio_hint": "lake; artificial lake with walking paths beside Daylesford",
+   "views": 1171,
+   "counted_sources": 2,
+   "verdict_reason": "2 counted sources, 1171 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base"
+  },
+  {
+   "name": "Wombat Hill Botanic Gardens",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-2",
+   "coordinates": {
+    "lat": -37.34305556,
+    "lng": 144.15055556
+   },
+   "coordinates_source": "wikipedia:Wombat Hill Botanic Gardens",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Wombat Hill Botanic Gardens",
+   "bio_hint": "garden; heritage-listed botanic gardens above Daylesford",
+   "views": 714,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage lists heritage-registered gardens above Daylesford; open public gardens.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base"
+  },
+  {
+   "name": "Hepburn Mineral Springs Reserve",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-3",
+   "coordinates": {
+    "lat": -37.31166667,
+    "lng": 144.14194444
+   },
+   "coordinates_source": "wikipedia:Hepburn Mineral Springs Reserve",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Hepburn Mineral Springs Reserve",
+   "bio_hint": "spa; mineral springs reserve with bathhouse and pavilion at Hepburn Springs",
+   "views": 634,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1/2: Wikivoyage spa heartland, bathhouse and spring taps.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base"
+  },
+  {
+   "name": "Convent Gallery",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-4",
+   "coordinates": {
+    "lat": -37.34199722,
+    "lng": 144.14829444
+   },
+   "coordinates_source": "wikipedia:Convent Gallery",
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "",
+   "bio_hint": "gallery; art exhibition in a 19th-century mansion in Daylesford",
+   "views": 623,
+   "counted_sources": 2,
+   "verdict_reason": "Rule 1/2: two counted sources; three-storey gallery in 19th-century mansion, paid entry.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base"
+  },
+  {
+   "name": "Hepburn Regional Park",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-5",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Hepburn Regional Park",
+   "bio_hint": "regional park; bushland with waterfalls, springs and walks around Daylesford",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict_reason": "Rule 1: Parks Victoria and Hepburn Shire: waterfalls, springs, lookout tower, gold relics.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Mineral Springs Loop Walk",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "hike",
+   "icon_hint": null,
+   "wiki": "",
+   "bio_hint": "walk; loop track past mineral springs and Sailors Falls in Hepburn Regional Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Parks page promotes the loop past springs and Sailors Falls.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Hepburn Springs",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-7",
+   "coordinates": {
+    "lat": -37.31666667,
+    "lng": 144.13333333
+   },
+   "coordinates_source": "wikipedia:Hepburn Springs",
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Hepburn Springs",
+   "bio_hint": "town; mineral-spring resort village beside Hepburn Regional Park",
+   "views": 5616,
+   "counted_sources": 2,
+   "verdict_reason": "2 counted sources, 5616 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base NOTE: Kept town retained as a low-order Daylesford spot: its village (bathhouses, cafes) is a draw beyond the reserve; owner may merge into Hepburn Mineral Springs Reserve."
+  },
+  {
+   "name": "Trentham Falls",
+   "action": "spot",
+   "destination": "daylesford",
+   "id": "daylesford-8",
+   "coordinates": {
+    "lat": -37.370029,
+    "lng": 144.324548
+   },
+   "coordinates_source": "wikipedia:Trentham Falls",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Trentham Falls",
+   "bio_hint": "waterfall; 32 m single-drop falls beside Trentham",
+   "views": 374,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage: longest single-drop waterfall in Victoria.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside daylesford span and reached from that base"
+  },
+  {
+   "name": "Hanging Rock",
+   "action": "spot",
+   "destination": "macedon-ranges",
+   "id": "macedon-ranges-1",
+   "coordinates": {
+    "lat": -37.330222,
+    "lng": 144.595083
+   },
+   "coordinates_source": "wikipedia:Hanging Rock, Victoria",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Hanging Rock, Victoria",
+   "bio_hint": "natural landmark; volcanic rock formation and reserve near Woodend",
+   "views": 48128,
+   "counted_sources": 2,
+   "verdict_reason": "2 counted sources, 48128 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside macedon-ranges span and reached from that base"
+  },
+  {
+   "name": "Mount Macedon",
+   "action": "spot",
+   "destination": "macedon-ranges",
+   "id": "macedon-ranges-2",
+   "coordinates": {
+    "lat": -37.38305556,
+    "lng": 144.57638889
+   },
+   "coordinates_source": "wikipedia:Mount Macedon",
+   "pin_status": "provisional",
+   "category": "viewpoint",
+   "icon_hint": null,
+   "wiki": "Mount Macedon",
+   "bio_hint": "mountain; extinct volcano with summit reserve and views",
+   "views": 5607,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Visit Macedon Ranges features it as a nature escape with summit views.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside macedon-ranges span and reached from that base"
+  },
+  {
+   "name": "Mount Macedon Memorial Cross",
+   "action": "spot",
+   "destination": "macedon-ranges",
+   "id": "macedon-ranges-3",
+   "coordinates": {
+    "lat": -37.38844,
+    "lng": 144.57607
+   },
+   "coordinates_source": "wikipedia:Mount Macedon Memorial Cross",
+   "pin_status": "provisional",
+   "category": "monument",
+   "icon_hint": null,
+   "wiki": "Mount Macedon Memorial Cross",
+   "bio_hint": "monument; 21 m memorial cross near the Mount Macedon summit with views",
+   "views": 1235,
+   "counted_sources": 1,
+   "verdict_reason": "Tourism board features the summit cross and reserve views and walks; open landmark, 30+ min.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside macedon-ranges span and reached from that base"
+  },
+  {
+   "name": "Kyneton",
+   "action": "spot",
+   "destination": "macedon-ranges",
+   "id": "macedon-ranges-4",
+   "coordinates": {
+    "lat": -37.23333333,
+    "lng": 144.45
+   },
+   "coordinates_source": "wikipedia:Kyneton",
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Kyneton",
+   "bio_hint": "town; Macedon Ranges market and village town with botanic gardens",
+   "views": 23455,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1: Visit Macedon Ranges names it a historic village to eat, drink and shop; a regional hub.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside macedon-ranges span and reached from that base"
+  },
+  {
+   "name": "Woodend",
+   "action": "spot",
+   "destination": "macedon-ranges",
+   "id": "macedon-ranges-5",
+   "coordinates": {
+    "lat": -37.363,
+    "lng": 144.526
+   },
+   "coordinates_source": "wikipedia:Woodend, Victoria",
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Woodend, Victoria",
+   "bio_hint": "town; Macedon Ranges village at the foot of Mount Macedon",
+   "views": 10082,
+   "counted_sources": 1,
+   "verdict_reason": "Visit Macedon Ranges village page plus Wikivoyage Macedon Ranges section list it as a town to stop in; second-tier village stop.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside macedon-ranges span and reached from that base"
+  },
+  {
+   "name": "Kyneton Botanic Gardens",
+   "action": "spot",
+   "destination": "macedon-ranges",
+   "id": "macedon-ranges-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Kyneton Botanic Gardens",
+   "bio_hint": "garden; mid-1800s botanic gardens with Campaspe River walks",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Visit Macedon Ranges listing and botanic-gardens feature: 1858 heritage gardens, Campaspe River walk access; free open place.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside macedon-ranges span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Turpin Falls",
+   "action": "spot",
+   "destination": "macedon-ranges",
+   "id": "macedon-ranges-7",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Turpin Falls",
+   "bio_hint": "waterfall; falls on the edge of Kyneton",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Visit Macedon Ranges listing and Parks Victoria page (Turpins Falls Scenic Reserve, reopened 2026 with viewing platform). Note official name Turpins Falls; check access status.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside macedon-ranges span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Maldon",
+   "action": "spot",
+   "destination": "castlemaine",
+   "id": "castlemaine-1",
+   "coordinates": {
+    "lat": -36.99166667,
+    "lng": 144.06666667
+   },
+   "coordinates_source": "wikipedia:Maldon, Victoria",
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Maldon, Victoria",
+   "bio_hint": "town; preserved gold-rush town near Castlemaine (Wikipedia only, no Wikivoyage page for the Victorian town)",
+   "views": 13287,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1: Visit Victoria region page names Maldon; National Trust-preserved gold-rush streetscape, mines, steam railway. Obvious draw.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside castlemaine span and reached from that base"
+  },
+  {
+   "name": "Castlemaine Diggings National Heritage Park",
+   "action": "spot",
+   "destination": "castlemaine",
+   "id": "castlemaine-2",
+   "coordinates": {
+    "lat": -37.1915,
+    "lng": 144.2165
+   },
+   "coordinates_source": "wikipedia:Castlemaine Diggings National Heritage Park",
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Castlemaine Diggings National Heritage Park",
+   "bio_hint": "heritage park; gold-rush diggings and relics near Castlemaine",
+   "views": 556,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Wikivoyage; gold-rush diggings park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside castlemaine span and reached from that base"
+  },
+  {
+   "name": "Castlemaine Theatre Royal",
+   "action": "spot",
+   "destination": "castlemaine",
+   "id": "castlemaine-3",
+   "coordinates": {
+    "lat": -37.06361111,
+    "lng": 144.21722222
+   },
+   "coordinates_source": "wikipedia:Castlemaine, Victoria",
+   "pin_status": "provisional",
+   "category": "entertainment",
+   "icon_hint": null,
+   "wiki": "Theatre Royal, Castlemaine",
+   "bio_hint": "theatre; oldest continuously operating theatre in Victoria",
+   "views": 41056,
+   "counted_sources": 1,
+   "verdict_reason": "1 counted sources, 41056 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside castlemaine span and reached from that base"
+  },
+  {
+   "name": "Mount Franklin",
+   "action": "spot",
+   "destination": "castlemaine",
+   "id": "castlemaine-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "viewpoint",
+   "icon_hint": null,
+   "wiki": "Mount Franklin, Victoria",
+   "bio_hint": "volcanic crater; historic gold-mining site (Lalgambuk) with picnic area",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict_reason": "Rule 1: two counted sources, volcanic crater and gold site (Lalgambuk).",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside castlemaine span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  },
+  {
+   "name": "Heathcote-Graytown National Park",
+   "action": "spot",
+   "destination": "heathcote",
+   "id": "heathcote-1",
+   "coordinates": {
+    "lat": -36.79633333,
+    "lng": 144.86633333
+   },
+   "coordinates_source": "wikipedia:Heathcote-Graytown National Park",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Heathcote-Graytown National Park",
+   "bio_hint": "national park; bushland park near Heathcote (Wikipedia only)",
+   "views": 569,
+   "counted_sources": 0,
+   "verdict_reason": "National park with Mt Ida and Viewing Rock lookouts, walks, Graytown gold relics, camping (Parks Victoria page and Wikivoyage Heathcote). National parks qualify.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside heathcote span and reached from that base"
+  },
+  {
+   "name": "Lake Eppalock",
+   "action": "spot",
+   "destination": "heathcote",
+   "id": "heathcote-2",
+   "coordinates": {
+    "lat": -36.850694,
+    "lng": 144.531841
+   },
+   "coordinates_source": "wikipedia:Lake Eppalock",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Lake Eppalock",
+   "bio_hint": "lake; reservoir on the Campaspe River for watersports and camping",
+   "views": 5701,
+   "counted_sources": 0,
+   "verdict_reason": "Bendigo Region tourism and City of Greater Bendigo list it: swimming, sailing, fishing, picnics, free entry; day-trip draw.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside heathcote span and reached from that base"
+  },
+  {
+   "name": "Pink Cliffs Geological Reserve",
+   "action": "spot",
+   "destination": "heathcote",
+   "id": "heathcote-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Pink Cliffs",
+   "bio_hint": "reserve; former gold-mining site with pink cliffs near Heathcote",
+   "views": 2053,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1: Wikivoyage Heathcote: moonscape of gold-sluiced cliffs.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside heathcote span and reached from that base",
+   "pin_note": "Wikipedia \"Pink Cliffs\" is the Utah feature; coordinates discarded"
+  },
+  {
+   "name": "O'Keefe Rail Trail",
+   "action": "spot",
+   "destination": "heathcote",
+   "id": "heathcote-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "hike",
+   "icon_hint": null,
+   "wiki": "O'Keefe Rail Trail",
+   "bio_hint": "rail trail; 50 km trail from Heathcote towards Bendigo",
+   "views": 858,
+   "counted_sources": 0,
+   "verdict_reason": "Bendigo Region tourism page: ~50 km flat trail Bendigo to Heathcote past Lake Eppalock; promoted trail (pin at midpoint).",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "kept; inside heathcote span and reached from that base",
+   "pin_note": "no coordinates in sources; pins stage must resolve"
+  }
+ ],
+ "standalone_spots": [
+  {
+   "name": "Maryborough",
+   "action": "standalone",
+   "destination": null,
+   "id": "maryborough",
+   "coordinates": {
+    "lat": -37.05,
+    "lng": 143.735
+   },
+   "coordinates_source": "wikipedia:Maryborough, Victoria",
+   "pin_status": "provisional",
+   "category": "historic",
+   "icon_hint": null,
+   "wiki": "Maryborough, Victoria",
+   "bio_hint": "town; regional gold-rush town with heritage theatre and fire tower",
+   "views": 29802,
+   "counted_sources": 1,
+   "verdict_reason": "1 counted sources, 29802 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Central goldfields town 43 km from Castlemaine, 50 km from Ballarat: beyond both spans (Castlemaine span 50 km reaches 37.5 km) and a separate trip.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Welcome Stranger Obelisk",
+   "action": "standalone",
+   "destination": null,
+   "id": "welcome-stranger-obelisk",
+   "coordinates": {
+    "lat": -36.76138889,
+    "lng": 143.65244444
+   },
+   "coordinates_source": "wikipedia:Welcome Stranger",
+   "pin_status": "provisional",
+   "category": "monument",
+   "icon_hint": null,
+   "wiki": "Welcome Stranger",
+   "bio_hint": "monument; obelisk marking the site of the Welcome Stranger gold nugget find near Moliagul",
+   "views": 65872,
+   "counted_sources": 1,
+   "verdict_reason": "1 counted sources, 65872 page views",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "At Moliagul, 41 km from Maldon (Castlemaine spot) and 60+ km from Bendigo; own journey.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Kooyoora State Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "kooyoora-state-park",
+   "coordinates": {
+    "lat": -36.60083333,
+    "lng": 143.69277778
+   },
+   "coordinates_source": "wikipedia:Kooyoora State Park",
+   "pin_status": "provisional",
+   "category": "nature",
+   "icon_hint": null,
+   "wiki": "Kooyoora State Park",
+   "bio_hint": "state park; rock formations, lookouts and walking tracks west of Inglewood",
+   "views": 667,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Parks Victoria page: granite boulders, lookouts, walks (Long Rock track).",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "About 70 km from Bendigo; park cluster with Melville Caves and Inglewood has only 3 kept places, so no destination.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Melville Caves",
+   "action": "standalone",
+   "destination": null,
+   "id": "melville-caves",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "viewpoint",
+   "icon_hint": null,
+   "wiki": "Melville Caves",
+   "bio_hint": "caves and lookout; camping area and cave lookout in Kooyoora State Park",
+   "views": 667,
+   "counted_sources": 1,
+   "verdict_reason": "Parks Victoria names the granite caves, lookout and camping (bushranger hideout); distinct walk-in site, though within Kooyoora State Park (objection: part of larger park).",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside Kooyoora State Park; same cluster, too few places for a destination.",
+   "pin_note": "candidate point was Kooyoora State Park, shared with that spot; needs own cave/lookout point",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Eucalyptus Distillery Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "eucalyptus-distillery-museum",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "museum",
+   "icon_hint": null,
+   "wiki": "Eucalyptus Distillery Museum",
+   "bio_hint": "museum; heritage-listed Old Jones' Distillery site in Inglewood",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Bendigo Region tourism listing (Inglewood): Australia's only museum devoted to eucalyptus oil distilling, open daily except Wednesday. Unique niche stop; objection: one source, remote.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inglewood, ~50 km from Bendigo; beyond its span.",
+   "pin_note": "no coordinates in sources; pins stage must resolve",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Goldfields Track",
+   "action": "standalone",
+   "destination": null,
+   "id": "goldfields-track",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_status": "provisional",
+   "category": "hike",
+   "icon_hint": null,
+   "wiki": "Goldfields Track",
+   "bio_hint": "long trail; 210 km walking and cycling track linking Ballarat and Bendigo, day sections in Hepburn Regional Park",
+   "views": 759,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1: Parks page: 210 km Ballarat-Bendigo shared track.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "210 km trail linking Ballarat and Bendigo; belongs to no base; pinned at route midpoint.",
+   "pin_note": "Wikipedia point is the Great Dividing Trail article centroid (146.9E), not on this track; pin = midpoint of the route",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  }
+ ],
+ "existing_fixes": [],
+ "review_list": [
+  {
+   "name": "Black Hill Reserve",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "One board source (bushwalk and wine tasting); only one counted source, short walk. Case for: named by board. Against: single source, minor reserve."
+  },
+  {
+   "name": "Seymour Railway Heritage Centre",
+   "views": 3569,
+   "counted_sources": 1,
+   "case": "One Wikivoyage listing; short visit, opening limited. Case for: heritage railway site. Against: thin evidence."
+  },
+  {
+   "name": "Sailors Falls",
+   "views": 768,
+   "counted_sources": 1,
+   "case": "Parks page names it on the Mineral Springs Loop. For: named waterfall. Against: part of loop already listed, short stop."
+  },
+  {
+   "name": "The Blowhole",
+   "views": 0,
+   "counted_sources": 1,
+   "case": "Parks page: viewing platform on the 1850s mining diversion tunnel. For: distinct heritage sight. Against: short stop, one source."
+  }
+ ],
+ "kept_places_that_became_destinations": {
+  "Ballarat": "ballarat",
+  "Bendigo": "bendigo",
+  "Daylesford": "daylesford",
+  "Castlemaine": "castlemaine",
+  "Heathcote": "heathcote"
+ },
+ "kept_places_dropped_as_wrappers": {},
+ "near_standalone_notes": [
+  {
+   "spot": "Maryborough",
+   "why_not_a_spot": "Central goldfields town 43 km from Castlemaine, 50 km from Ballarat: beyond both spans (Castlemaine span 50 km reaches 37.5 km) and a separate trip."
+  },
+  {
+   "spot": "Welcome Stranger Obelisk",
+   "why_not_a_spot": "At Moliagul, 41 km from Maldon (Castlemaine spot) and 60+ km from Bendigo; own journey."
+  },
+  {
+   "spot": "Kooyoora State Park",
+   "why_not_a_spot": "About 70 km from Bendigo; park cluster with Melville Caves and Inglewood has only 3 kept places, so no destination."
+  },
+  {
+   "spot": "Melville Caves",
+   "why_not_a_spot": "Inside Kooyoora State Park; same cluster, too few places for a destination."
+  },
+  {
+   "spot": "Eucalyptus Distillery Museum",
+   "why_not_a_spot": "Inglewood, ~50 km from Bendigo; beyond its span."
+  },
+  {
+   "spot": "Goldfields Track",
+   "why_not_a_spot": "210 km trail linking Ballarat and Bendigo; belongs to no base; pinned at route midpoint."
+  }
+ ],
+ "notes": [
+  "Hepburn Springs town is a spot of Daylesford (not merged).",
+  "Castlemaine has exactly 3 non-town spots plus Mount Franklin (reachable from Daylesford too); Mount Franklin pin unknown.",
+  "Heathcote name evidence is weak (one counted source).",
+  "Maldon (Wikipedia + Visit Victoria recheck) placed under Castlemaine; Maldon Vintage Machinery Museum stays rejected.",
+  "No existing Victoria spots/destinations in this region; existing_fixes empty.",
+  "Rail trails: Ballarat-Skipton pinned at route midpoint by pins stage; O'Keefe likewise."
+ ]
+}

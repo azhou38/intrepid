@@ -1,0 +1,211 @@
+{
+ "inside_destinations": 42,
+ "standalone": 12,
+ "new_destinations": [
+  {
+   "id": "mount-buffalo-national-park",
+   "name": "Mount Buffalo National Park",
+   "rank": 3,
+   "span_km": 30,
+   "name_evidence": "Parks Victoria visitor page \"Mount Buffalo National Park\" and victoriashighcountry.com.au list it as a flagship High Country park; every national park is a destination (>=4 kept spots)."
+  },
+  {
+   "id": "alpine-national-park",
+   "name": "Alpine National Park",
+   "rank": 2,
+   "span_km": 60,
+   "name_evidence": "Wikivoyage page \"Alpine National Park\" and Parks Victoria \"Alpine National Park\" visitor page; flagship Victorian national park."
+  },
+  {
+   "id": "mansfield",
+   "name": "Mansfield",
+   "rank": 4,
+   "span_km": 80,
+   "name_evidence": "Wikivoyage page \"Mansfield (Victoria)\" (covers Mount Buller and Lake Eildon) and victoriashighcountry.com.au Mansfield/Mount Buller region."
+  },
+  {
+   "id": "bright",
+   "name": "Bright",
+   "rank": 3,
+   "span_km": 40,
+   "name_evidence": "Wikivoyage page \"Bright (Victoria)\", the hub of the Alpine Valleys; guidebook regional town."
+  },
+  {
+   "id": "beechworth",
+   "name": "Beechworth",
+   "rank": 3,
+   "span_km": 60,
+   "name_evidence": "Wikivoyage page \"Beechworth\" and victoriashighcountry.com.au (gold-rush heritage town; Yackandandah and Chiltern are its day trips)."
+  },
+  {
+   "id": "wangaratta",
+   "name": "Wangaratta",
+   "rank": 4,
+   "span_km": 70,
+   "name_evidence": "Wikivoyage page \"Wangaratta\", regional hub covering Glenrowan, Milawa and the King Valley wine country."
+  },
+  {
+   "id": "wodonga",
+   "name": "Wodonga",
+   "rank": 5,
+   "span_km": 40,
+   "name_evidence": "Wikivoyage page \"Wodonga\" (twin city with Albury); Victorian-side base for Hume Dam and the upper Murray."
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Lake Mountain",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Gorge (Mount Buffalo)",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Falls to Hotham Alpine Crossing",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mount Howitt Walking Track",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Craig's Hut Walk",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Kellyland Glenrowan",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Ned Kelly Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "The Big Ned Kelly",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Porepunkah",
+   "views": 16343,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village with no specific sight named (rule 2)."
+  },
+  {
+   "name": "Mount Beauty",
+   "views": 7928,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage Tawonga-Mount Beauty lists services and a lookout but the model town itself has no sight; only the gorge walk and Bogong lookout are draws."
+  },
+  {
+   "name": "Dinner Plain",
+   "views": 6499,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Alpine village base; sources list walks and tours but no distinct sight, and a town is a spot only when the town itself is a draw (COVERAGE: towns)."
+  },
+  {
+   "name": "Eildon",
+   "views": 5366,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Town wrapper; the draw is Lake Eildon and houseboat hire, and no distinct sight is listed."
+  },
+  {
+   "name": "Old Tallangatta",
+   "views": 1034,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Visible only at very low water, not there whenever visitors arrive (rule 4)."
+  },
+  {
+   "name": "Vallejo Gantner Hut",
+   "views": 1022,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A hut/memorial stopover for hikers on a remote track, not a half-hour stop (rule 2/3)."
+  },
+  {
+   "name": "Glenrowan Siege Site",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "review",
+   "reason": "Wikivoyage says you can walk the siege site but little remains standing. For: the historic site of Kelly's last stand. Against: minor, short, and the museum covers the story."
+  },
+  {
+   "name": "Mansfield Botanic Park",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Wikivoyage itself: \"nothing too special\"; local park (rule 3)."
+  },
+  {
+   "name": "Eildon Pondage Walk",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Local pondage walk (rule 3)."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Corryong",
+   "views": 10984,
+   "counted_sources": 2,
+   "placed": "standalone"
+  },
+  {
+   "name": "Omeo",
+   "views": 9663,
+   "counted_sources": 2,
+   "placed": "standalone"
+  },
+  {
+   "name": "Dartmouth Dam",
+   "views": 4993,
+   "counted_sources": 1,
+   "placed": "standalone"
+  },
+  {
+   "name": "Australian Alps Walking Track",
+   "views": 4827,
+   "counted_sources": 2,
+   "placed": "standalone"
+  },
+  {
+   "name": "Murray to the Mountains Rail Trail",
+   "views": 2196,
+   "counted_sources": 3,
+   "placed": "standalone"
+  },
+  {
+   "name": "Lake William Hovell",
+   "views": 1396,
+   "counted_sources": 1,
+   "placed": "standalone"
+  }
+ ],
+ "benchmark": "Region has no benchmark places (Red Rocks, Kapiti, Ninety Mile Beach etc. are other regions). Negative-benchmark checks: no vehicle/operator spots, no weekly markets, no civic buildings kept; Dinner Plain, Eildon and Porepunkah (town wrappers with no distinct sight) rejected.",
+ "counts": {
+  "kept_total": 62,
+  "as_destinations": 7,
+  "as_spots_new": 41,
+  "existing_moved_in": 3,
+  "duplicates_deduped": 2,
+  "standalone": 12,
+  "review": 5,
+  "note": "inside_destinations = 41 new spots + existing Hume Dam; 7 kept places become destinations themselves"
+ }
+}

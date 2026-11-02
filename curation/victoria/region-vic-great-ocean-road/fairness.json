@@ -1,0 +1,239 @@
+{
+ "region": "vic-great-ocean-road",
+ "inside_destinations": 52,
+ "standalone": 6,
+ "new_destinations": [
+  {
+   "id": "geelong",
+   "name": "Geelong",
+   "rank": 3,
+   "span_km": 45,
+   "spots": 4,
+   "name_evidence": "Wikivoyage has a \"Geelong\" city page whose See list names these places; Victoria's second city and regional hub."
+  },
+  {
+   "id": "bellarine-peninsula",
+   "name": "Bellarine Peninsula",
+   "rank": 4,
+   "span_km": 45,
+   "spots": 5,
+   "name_evidence": "Wikivoyage \"Queenscliff\" page describes the Bellarine Peninsula town; Bellarine Peninsula is the tourism brand (Visit Geelong and the Bellarine)."
+  },
+  {
+   "id": "surf-coast",
+   "name": "Surf Coast",
+   "rank": 3,
+   "span_km": 55,
+   "spots": 8,
+   "name_evidence": "Tourism brand \"Surf Coast\" (Surf Coast visitor region at the start of the Great Ocean Road); Wikivoyage Great Ocean Road and Torquay (Victoria) pages list these stops. Name to be confirmed against a visitor source in Pipeline C."
+  },
+  {
+   "id": "lorne",
+   "name": "Lorne",
+   "rank": 3,
+   "span_km": 40,
+   "spots": 4,
+   "name_evidence": "Wikivoyage has a \"Lorne\" page; a major Great Ocean Road summer town."
+  },
+  {
+   "id": "apollo-bay",
+   "name": "Apollo Bay",
+   "rank": 3,
+   "span_km": 75,
+   "spots": 8,
+   "name_evidence": "Wikivoyage has an \"Apollo Bay\" page that lists the Otway walks and falls; Great Ocean Road mid-point town and base for the Otways and Cape Otway."
+  },
+  {
+   "id": "port-campbell-national-park",
+   "name": "Port Campbell National Park",
+   "rank": 2,
+   "span_km": 45,
+   "spots": 8,
+   "name_evidence": "Wikivoyage has \"Port Campbell National Park\" and \"Port Campbell\" pages; Twelve Apostles is the headline attraction of the Great Ocean Road."
+  },
+  {
+   "id": "warrnambool",
+   "name": "Warrnambool",
+   "rank": 4,
+   "span_km": 45,
+   "spots": 7,
+   "name_evidence": "Wikivoyage has a \"Warrnambool\" page; coastal city and base on the Shipwreck Coast."
+  },
+  {
+   "id": "portland",
+   "name": "Portland",
+   "rank": 4,
+   "span_km": 70,
+   "spots": 4,
+   "name_evidence": "Wikivoyage has a \"Portland (Victoria)\" page; Victoria's first permanent European settlement."
+  }
+ ],
+ "kept_total": 58,
+ "lowest_kept": [
+  {
+   "name": "Cape Nelson",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Geelong Waterfront",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Point Addis",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Great Ocean Road Memorial Arch",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Otway Fly",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Deep Blue Hot Springs",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Moyjil - Point Ritchie",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Hopkins Falls",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Camperdown",
+   "views": 16432,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A town whose only listed draw on Wikivoyage is Mt Leura and the lakes view, which are the attractions; a town is not a spot beside its own attractions (COVERAGE: town wrapper)."
+  },
+  {
+   "name": "Wye River",
+   "views": 10099,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village with koalas duplicating Kennett River; no distinct draw (rule 3)."
+  },
+  {
+   "name": "Aireys Inlet",
+   "views": 8244,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village is a wrapper for Split Point Lighthouse; keep the attraction (COVERAGE town wrapper rule)."
+  },
+  {
+   "name": "Cape Otway",
+   "views": 7205,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Duplicate of Cape Otway Lightstation, already a candidate (rule 3)."
+  },
+  {
+   "name": "Rip View Lookout",
+   "views": 6356,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Part of Point Lonsdale headland walks (rule 3)."
+  },
+  {
+   "name": "Lady Julia Percy Island",
+   "views": 4622,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Reached only by charter, no regular landing (rule 2)."
+  },
+  {
+   "name": "Peterborough, Victoria",
+   "views": 3384,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Small town; draw is the nearby Bay of Islands (rule 3)."
+  },
+  {
+   "name": "Point Impossible Beach",
+   "views": 3171,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Lesser beach near Torquay, clothes-optional designation only; no distinct visitor draw (rule 3)."
+  },
+  {
+   "name": "Lake Colac",
+   "views": 2669,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: Wikivoyage Colac names the largest freshwater lake in Victoria, birdwatching, botanic gardens beside it. Against: one source, shallow drought-hit lake, plain town lakeshore."
+  },
+  {
+   "name": "Lavers Hill",
+   "views": 1914,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Gateway village, not a draw itself (candidate note; rule 2)."
+  },
+  {
+   "name": "Geelong Library and Heritage Centre",
+   "views": 1234,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "a civic building seen from the pavement"
+  },
+  {
+   "name": "East Beach, Port Fairy",
+   "views": 70,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: tourism board names it for whale watching, main town beach. Against: one source, overlaps Port Fairy's coast and Griffiths Island, no distinct activity beyond seasonal whales."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Port Fairy",
+   "views": 24150,
+   "counted_sources": 1,
+   "note": "Port Fairy centre is ~28 km west of Warrnambool, an independent base (own Wikivoyage city page) that visitors reach on its own; outside Warrnambool's span (centre-to-centre 28 km vs 17 km reach) and with only three kept places it does not make a destination."
+  },
+  {
+   "name": "Budj Bim Cultural Landscape",
+   "views": 11374,
+   "counted_sources": 2,
+   "note": "~43 km from Portland and ~60 km from Warrnambool, outside both spans; reached via Heywood/Macarthur on its own."
+  },
+  {
+   "name": "Mount Leura",
+   "views": 1613,
+   "counted_sources": 1,
+   "note": "~44 km from Port Campbell National Park centre and ~55 km from Warrnambool; reached from Camperdown on the volcanic plains, outside both spans."
+  },
+  {
+   "name": "The Crags",
+   "views": 354,
+   "counted_sources": 1,
+   "note": "About 10 km from Port Fairy on its own coast, ~35 km from Warrnambool: standalone with Port Fairy."
+  },
+  {
+   "name": "Griffiths Island Lighthouse",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "Part of the Port Fairy cluster, ~28 km from Warrnambool: standalone with Port Fairy."
+  },
+  {
+   "name": "Mount Eccles National Park",
+   "views": 0,
+   "counted_sources": 1,
+   "note": "~45 km from Portland and outside its span; Budj Bim and Mount Eccles are two kept places only (a national park with fewer than four spots is standalone, never a spot of another park)."
+  }
+ ],
+ "benchmark": "Region-specific: Ninety Mile Beach etc. are other regions. Benchmark-relevant items here: Twelve Apostles placed (highest views 83872, 3 sources); no vehicle/operator spots kept (Otway Fly is a place; Bellarine Peninsula Railway kept with named journey rationale); negative benchmarks (library civic building, local parks/gardens, lookouts inside larger spots) rejected; gateway villages (Lavers Hill, Peterborough, Camperdown) rejected as town wrappers/gateways."
+}

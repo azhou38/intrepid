@@ -1,0 +1,2073 @@
+{
+ "region": "vic-melbourne",
+ "branch": "curation/victoria",
+ "new_destinations": [
+  {
+   "id": "melbourne",
+   "name": "Melbourne",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "city",
+   "icon": "🏙️",
+   "rank": 1,
+   "coordinates": {
+    "latitude": -37.8136,
+    "longitude": 144.9631
+   },
+   "coordinates_source": "city centre (Flinders Street / Swanston Street area); to be confirmed by resolve-pin place=city",
+   "defaultZoomSpanKm": 60,
+   "spots": [
+    "melbourne-1",
+    "melbourne-2",
+    "melbourne-3",
+    "melbourne-4",
+    "melbourne-5",
+    "melbourne-6",
+    "melbourne-7",
+    "melbourne-8",
+    "melbourne-9",
+    "melbourne-10",
+    "melbourne-11",
+    "melbourne-12",
+    "melbourne-13",
+    "melbourne-14",
+    "melbourne-15",
+    "melbourne-16",
+    "melbourne-17",
+    "melbourne-18",
+    "melbourne-19",
+    "melbourne-20",
+    "melbourne-21",
+    "melbourne-22",
+    "melbourne-23",
+    "melbourne-24",
+    "melbourne-25",
+    "melbourne-26",
+    "melbourne-27",
+    "melbourne-28",
+    "melbourne-29",
+    "melbourne-30",
+    "melbourne-31",
+    "melbourne-32",
+    "melbourne-33",
+    "melbourne-34",
+    "melbourne-35",
+    "melbourne-36",
+    "melbourne-37",
+    "melbourne-38",
+    "melbourne-39",
+    "melbourne-40",
+    "melbourne-41",
+    "melbourne-42",
+    "melbourne-43",
+    "melbourne-44",
+    "melbourne-45",
+    "melbourne-46",
+    "melbourne-47",
+    "melbourne-48",
+    "melbourne-49",
+    "melbourne-50",
+    "melbourne-51",
+    "melbourne-52",
+    "melbourne-53",
+    "melbourne-54",
+    "melbourne-55",
+    "melbourne-56",
+    "melbourne-57",
+    "melbourne-58",
+    "melbourne-59",
+    "melbourne-60",
+    "melbourne-61",
+    "melbourne-62",
+    "melbourne-63",
+    "melbourne-64",
+    "melbourne-65",
+    "melbourne-66",
+    "melbourne-67",
+    "melbourne-68",
+    "melbourne-69",
+    "melbourne-70"
+   ],
+   "name_evidence": "Wikivoyage has a \"Melbourne\" page with district pages (Melbourne/CBD, /St Kilda and others); the region candidates cite en.wikivoyage.org/wiki/Melbourne/CBD. Victoria capital and a rank-1 headline city.",
+   "notes": "Not an existing destination; Melbourne is Australia second city. Span 60 km (reach 45 km) holds Werribee (31 km), Warrandyte (24), Organ Pipes (25), Dandenong (25), Altona, Williamstown, Brighton. Wikipedia/weighting by owner for rank after Sydney."
+  }
+ ],
+ "spots": [
+  {
+   "name": "Flinders Street Station",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-1",
+   "coordinates": {
+    "latitude": -37.818078,
+    "longitude": 144.96681
+   },
+   "coordinates_source": "wikipedia:Flinders Street railway station",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Flinders Street railway station",
+   "bio_draft": "historic railway station at the heart of the city, with its famous front steps and clock-face facade.",
+   "views": 53977,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 53977 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Federation Square",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-2",
+   "coordinates": {
+    "latitude": -37.817798,
+    "longitude": 144.968714
+   },
+   "coordinates_source": "wikipedia:Federation Square",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Federation Square",
+   "bio_draft": "the city's main meeting place opposite Flinders Street Station, with cultural venues around it.",
+   "views": 19048,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage names it as the city centre meeting place, open at all times with galleries and venues.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Queen Victoria Market",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-3",
+   "coordinates": {
+    "latitude": -37.807,
+    "longitude": 144.9569
+   },
+   "coordinates_source": "wikipedia:Queen Victoria Market",
+   "pin_status": "ok",
+   "category": "market",
+   "wiki": "Queen Victoria Market",
+   "bio_draft": "historic open-air market dating to 1878 with food and produce halls, trading most days.",
+   "views": 16567,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+4: Wikivoyage lists the historic market hall trading most days; major draw.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "NGV International",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-4",
+   "coordinates": {
+    "latitude": -37.8225,
+    "longitude": 144.96888889
+   },
+   "coordinates_source": "wikipedia:National Gallery of Victoria",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "National Gallery of Victoria",
+   "bio_draft": "the National Gallery of Victoria's international art collection on St Kilda Road.",
+   "views": 33732,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 33732 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Royal Botanic Gardens Victoria",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-5",
+   "coordinates": {
+    "latitude": -37.8334,
+    "longitude": 144.98033
+   },
+   "coordinates_source": "wikipedia:Royal Botanic Gardens Victoria",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Royal Botanic Gardens Victoria",
+   "bio_draft": "one of the world's finest botanic gardens, 38 hectares of lakes and plantings, free to enter.",
+   "views": 10528,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage names one of the finest botanic gardens; free, open daily; clear draw.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Melbourne Cricket Ground",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-6",
+   "coordinates": {
+    "latitude": -37.82,
+    "longitude": 144.98333333
+   },
+   "coordinates_source": "wikipedia:Melbourne Cricket Ground",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Melbourne Cricket Ground",
+   "bio_draft": "Melbourne Cricket Ground, a sporting venue with tours and a sports museum.",
+   "views": 309367,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_east"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 309367 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Royal Exhibition Building",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-7",
+   "coordinates": {
+    "latitude": -37.80472222,
+    "longitude": 144.97138889
+   },
+   "coordinates_source": "wikipedia:Royal Exhibition Building",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Royal Exhibition Building",
+   "bio_draft": "1880s exhibition hall in Carlton Gardens, a UNESCO World Heritage site with tours.",
+   "views": 38968,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_north"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 38968 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Melbourne Museum",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-8",
+   "coordinates": {
+    "latitude": -37.803337,
+    "longitude": 144.971445
+   },
+   "coordinates_source": "wikipedia:Melbourne Museum",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Melbourne Museum",
+   "bio_draft": "natural and cultural history museum in Carlton Gardens with exhibits and Bunjilaka gallery.",
+   "views": 13140,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_north"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a ticketed attraction open daily to the public; full-visit length.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Hosier Lane",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-9",
+   "coordinates": {
+    "latitude": -37.816329,
+    "longitude": 144.969078
+   },
+   "coordinates_source": "osm:tourism=artwork Hosier Lane (resolve-pin HIGH, Commons median 32 m)",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Hosier Lane",
+   "bio_draft": "colourful street-art lane across from Federation Square.",
+   "views": 8142,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage points visitors to this lane for ever-changing street art; open always.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "St Kilda Beach",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-10",
+   "coordinates": {
+    "latitude": -37.864,
+    "longitude": 144.982
+   },
+   "coordinates_source": "wikipedia:St Kilda Beach, Victoria",
+   "pin_status": "ok",
+   "category": "beach",
+   "wiki": "St Kilda Beach, Victoria",
+   "bio_draft": "sandy bay beach on Port Phillip, a popular stop on the foreshore.",
+   "views": 9649,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/St_Kilda"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: benchmark second-tier beach, Wikivoyage lists it as the foreshore stop.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Luna Park Melbourne",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-11",
+   "coordinates": {
+    "latitude": -37.868036,
+    "longitude": 144.976369
+   },
+   "coordinates_source": "wikipedia:Luna Park, Melbourne",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Luna Park, Melbourne",
+   "bio_draft": "1912 seaside amusement park with its distinctive face entrance.",
+   "views": 29669,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/St_Kilda"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 29669 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Eureka Tower",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-12",
+   "coordinates": {
+    "latitude": -37.82166667,
+    "longitude": 144.96444444
+   },
+   "coordinates_source": "wikipedia:Eureka Tower",
+   "pin_status": "ok",
+   "category": "viewpoint",
+   "wiki": "Eureka Tower",
+   "bio_draft": "Eureka Skydeck on level 88 with panoramic views over the city.",
+   "views": 34623,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 34623 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Shrine of Remembrance",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-13",
+   "coordinates": {
+    "latitude": -37.83055556,
+    "longitude": 144.97344444
+   },
+   "coordinates_source": "wikipedia:Shrine of Remembrance",
+   "pin_status": "ok",
+   "category": "monument",
+   "wiki": "Shrine of Remembrance",
+   "bio_draft": "1934 classical memorial with exhibition galleries under it, open to visitors daily.",
+   "views": 29170,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 29170 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Old Melbourne Gaol",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-14",
+   "coordinates": {
+    "latitude": -37.80805556,
+    "longitude": 144.96527778
+   },
+   "coordinates_source": "wikipedia:Old Melbourne Gaol",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Old Melbourne Gaol",
+   "bio_draft": "1850s gaol open to visitors with daytime tours and night tours.",
+   "views": 21956,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 21956 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "State Library of Victoria",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-15",
+   "coordinates": {
+    "latitude": -37.809801,
+    "longitude": 144.964787
+   },
+   "coordinates_source": "wikipedia:State Library Victoria",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "State Library of Victoria",
+   "bio_draft": "1854 domed reading room, open to the public with exhibitions and the La Trobe Reading Room.",
+   "views": 15980,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the 1854 classical building, La Trobe Reading Room and exhibitions, open daily to the public.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Melbourne Zoo",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-16",
+   "coordinates": {
+    "latitude": -37.784762,
+    "longitude": 144.952095
+   },
+   "coordinates_source": "wikipedia:Melbourne Zoo",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Melbourne Zoo",
+   "bio_draft": "Australia's oldest zoo, opened in 1861, in Royal Park.",
+   "views": 22933,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_north"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 22933 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Werribee Open Range Zoo",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-17",
+   "coordinates": {
+    "latitude": -37.9229,
+    "longitude": 144.6673
+   },
+   "coordinates_source": "wikipedia:Werribee Open Range Zoo",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Werribee Open Range Zoo",
+   "bio_draft": "open-range zoo within Werribee Park with African and Asian animals.",
+   "views": 8166,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Western_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists daily safari-bus tours; a ticketed zoo, a distinct paid attraction.); inside the Melbourne span and reached from the city. About 22-31 km out but a day trip from the city, inside 75% of the 60 km span."
+  },
+  {
+   "name": "Heide Museum of Modern Art",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-18",
+   "coordinates": {
+    "latitude": -37.75863,
+    "longitude": 145.08421
+   },
+   "coordinates_source": "wikipedia:Heide Museum of Modern Art",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Heide Museum of Modern Art",
+   "bio_draft": "modern art museum with a sculpture garden in Bulleen.",
+   "views": 5982,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Eastern_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the museum and separately its sculpture garden tour (Tue-Sun); major modern-art museum.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Brighton Beach and Bathing Boxes",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-19",
+   "coordinates": {
+    "latitude": -37.9188,
+    "longitude": 144.9873
+   },
+   "coordinates_source": "wikipedia:Brighton Bathing Boxes",
+   "pin_status": "ok",
+   "category": "beach",
+   "wiki": "Brighton Bathing Boxes",
+   "bio_draft": "sandy Port Phillip beach known for its colourful bathing boxes.",
+   "views": 11450,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Southern_suburbs",
+    "https://en.wikivoyage.org/wiki/Melbourne/Dandenong"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (2 counted sources, 11450 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Williamstown",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-20",
+   "coordinates": {
+    "latitude": -37.861,
+    "longitude": 144.885
+   },
+   "coordinates_source": "wikipedia:Williamstown, Victoria",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Williamstown, Victoria",
+   "bio_draft": "bayside waterfront town with Nelson Place, beaches and the Williamstown Botanic Gardens.",
+   "views": 18456,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Western_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage calls it the main tourist destination in Hobsons Bay, historic seaside suburb with beaches, Nelson Place and botanic gardens.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Immigration Museum",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-21",
+   "coordinates": {
+    "latitude": -37.8191,
+    "longitude": 144.9604
+   },
+   "coordinates_source": "wikipedia:Immigration Museum, Melbourne",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Immigration Museum, Melbourne",
+   "bio_draft": "immigration history museum in the restored Old Customs House on Flinders Street.",
+   "views": 4615,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a ticketed attraction open daily to the public; full-visit length.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Australian Centre for the Moving Image",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-22",
+   "coordinates": {
+    "latitude": -37.8176241,
+    "longitude": 144.9685907
+   },
+   "coordinates_source": "wikipedia:Australian Centre for the Moving Image",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Australian Centre for the Moving Image",
+   "bio_draft": "film, television, games and new media museum with cinemas, in Federation Square.",
+   "views": 5226,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a free or touring cultural venue in Southbank/Federation Square; open daily.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Arts Centre Melbourne",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-23",
+   "coordinates": {
+    "latitude": -37.82027778,
+    "longitude": 144.96833333
+   },
+   "coordinates_source": "wikipedia:Arts Centre Melbourne",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Arts Centre Melbourne",
+   "bio_draft": "concert hall, theatres and the Arts Centre spire; tours and performances on most days.",
+   "views": 9801,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a free or touring cultural venue in Southbank/Federation Square; open daily.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "St Patrick's Cathedral",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-24",
+   "coordinates": {
+    "latitude": -37.81,
+    "longitude": 144.97611111
+   },
+   "coordinates_source": "wikipedia:St Patrick's Cathedral, Melbourne",
+   "pin_status": "ok",
+   "category": "religious",
+   "wiki": "St Patrick's Cathedral, Melbourne",
+   "bio_draft": "Gothic Revival cathedral begun in the 1850s, open to visitors on weekdays.",
+   "views": 22511,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 2 church clause: Wikivoyage names an interior open to visitors (Gothic Revival cathedral, major landmark).); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "St Paul's Cathedral",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-25",
+   "coordinates": {
+    "latitude": -37.816853,
+    "longitude": 144.967384
+   },
+   "coordinates_source": "wikipedia:St Paul's Cathedral, Melbourne",
+   "pin_status": "ok",
+   "category": "religious",
+   "wiki": "St Paul's Cathedral, Melbourne",
+   "bio_draft": "Gothic revival cathedral on Flinders Street, open daily to visitors.",
+   "views": 17077,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 2 church clause: Wikivoyage names an interior open to visitors (Gothic Revival cathedral, major landmark).); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Fitzroy Gardens",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-26",
+   "coordinates": {
+    "latitude": -37.8125641,
+    "longitude": 144.9803925
+   },
+   "coordinates_source": "wikipedia:Fitzroy Gardens",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Fitzroy Gardens",
+   "bio_draft": "historic gardens with an avenue of English elms and a conservatory, next to Cooks' Cottage.",
+   "views": 4383,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_east"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the elm avenue, conservatory and Cooks' Cottage grounds; free.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Cooks' Cottage",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-27",
+   "coordinates": {
+    "latitude": -37.81448889,
+    "longitude": 144.97945
+   },
+   "coordinates_source": "wikipedia:Cooks' Cottage",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Cooks' Cottage",
+   "bio_draft": "the parents' cottage of Captain James Cook, moved to Fitzroy Gardens, open daily with entry fee.",
+   "views": 9822,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a ticketed attraction open daily to the public; full-visit length.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Parliament House of Victoria",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-28",
+   "coordinates": {
+    "latitude": -37.811055,
+    "longitude": 144.97329
+   },
+   "coordinates_source": "wikipedia:Parliament House, Melbourne",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Parliament House, Melbourne",
+   "bio_draft": "Victorian parliament house with public tours on weekdays and weekends.",
+   "views": 13694,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists public tours weekdays and weekends of the working 1850s parliament.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Carlton Gardens",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-29",
+   "coordinates": {
+    "latitude": -37.80611111,
+    "longitude": 144.97027778
+   },
+   "coordinates_source": "wikipedia:Carlton Gardens",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Carlton Gardens",
+   "bio_draft": "gardens around the Royal Exhibition Building, with lawns and fountains.",
+   "views": 5783,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_north"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage names the UNESCO-listed gardens around the Royal Exhibition Building; free, strolling.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Melbourne Park",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-30",
+   "coordinates": {
+    "latitude": -37.82267,
+    "longitude": 144.98005
+   },
+   "coordinates_source": "wikipedia:Melbourne Park",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Melbourne Park",
+   "bio_draft": "Melbourne Park tennis centre and arenas beside the Yarra, home of the Australian Open.",
+   "views": 40177,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_east"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 40177 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Albert Park and Lake",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-31",
+   "coordinates": {
+    "latitude": -37.848,
+    "longitude": 144.971
+   },
+   "coordinates_source": "wikipedia:Albert Park and Lake",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Albert Park and Lake",
+   "bio_draft": "lakeside parkland south of the city, with the Grand Prix circuit around it.",
+   "views": 11565,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_south"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: lakeside park circuit with city views; open always.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Block Arcade",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-32",
+   "coordinates": {
+    "latitude": -37.81583333,
+    "longitude": 144.96444444
+   },
+   "coordinates_source": "wikipedia:Block Arcade",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Block Arcade, Melbourne",
+   "bio_draft": "1892 mosaic-floored shopping arcade linking Collins and Elizabeth Streets.",
+   "views": 1956,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the 1891 mosaic-floored arcade as a see; walk-through, tea rooms.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Royal Arcade",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-33",
+   "coordinates": {
+    "latitude": -37.8145,
+    "longitude": 144.9641
+   },
+   "coordinates_source": "wikipedia:Royal Arcade, Melbourne",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Royal Arcade, Melbourne",
+   "bio_draft": "1870 Bourke Street arcade with a shop front and mosaic floor.",
+   "views": 4907,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 2: 1870 public arcade with Gaunt's clock and statues, Wikivoyage-listed, open daily and free to walk through.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "ACDC Lane",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-34",
+   "coordinates": {
+    "latitude": -37.815505,
+    "longitude": 144.970822
+   },
+   "coordinates_source": "wikipedia:ACDC Lane",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "ACDC Lane",
+   "bio_draft": "alley renamed in 2004 after the rock band, with a sign that fans photograph.",
+   "views": 7221,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 3 quirky icon: Wikivoyage names the renamed laneway and sign as a fan photo stop in the bar district; short visit.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Chinatown",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-35",
+   "coordinates": {
+    "latitude": -37.811811,
+    "longitude": 144.967629
+   },
+   "coordinates_source": "osm:nominatim place/neighbourhood 'Chinatown' (provisional: verify at placement)",
+   "pin_status": "provisional",
+   "category": "landmark",
+   "wiki": "Chinatown, Melbourne",
+   "bio_draft": "Little Bourke Street Chinatown with restaurants and arches.",
+   "views": 10791,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage describes it as the longest continuous Chinese settlement in the Western world, with the Chinese Museum; a recognised precinct.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Lygon Street",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-36",
+   "coordinates": {
+    "latitude": -37.799015,
+    "longitude": 144.96682
+   },
+   "coordinates_source": "commons photo median, 7 geotagged files (resolve-pin; OSM attraction -37.7778,144.9708 is the northern street, rejected)",
+   "pin_status": "provisional",
+   "category": "landmark",
+   "wiki": "Lygon Street",
+   "bio_draft": "Italian dining strip through Carlton.",
+   "views": 6677,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage calls it Carlton's epicentre, restaurant-lined Italian dining strip with the Italian Museum nearby.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Brunswick Street",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-37",
+   "coordinates": {
+    "latitude": -37.79833333,
+    "longitude": 144.97847222
+   },
+   "coordinates_source": "wikipedia:Brunswick Street, Melbourne",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Brunswick Street, Melbourne",
+   "bio_draft": "bohemian shopping and dining strip in Fitzroy.",
+   "views": 2669,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage describes a long, lively cafe/bar strip in Fitzroy with eclectic shops and street art nearby.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Chapel Street",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-38",
+   "coordinates": {
+    "latitude": -37.834765,
+    "longitude": 144.996555
+   },
+   "coordinates_source": "wikipedia:Chapel Street, Melbourne",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "Chapel Street, Melbourne",
+   "bio_draft": "shopping and nightlife strip through Prahran and South Yarra.",
+   "views": 4540,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage describes the shopping district as the longest catwalk in the southern hemisphere (Prahran/South Yarra); a recognised strip.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Acland Street",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-39",
+   "coordinates": {
+    "latitude": -37.868993,
+    "longitude": 144.980153
+   },
+   "coordinates_source": "osm:nominatim highway/pedestrian 'Acland Street' (provisional: verify at placement)",
+   "pin_status": "provisional",
+   "category": "landmark",
+   "wiki": "Acland Street",
+   "bio_draft": "St Kilda shopping and cafe strip with cake shops and the Acland Street plaza.",
+   "views": 1723,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/St_Kilda"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage names the cake-shop strip as a St Kilda stop.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "St Kilda Pier",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-40",
+   "coordinates": {
+    "latitude": -37.86472222,
+    "longitude": 144.96777778
+   },
+   "coordinates_source": "wikipedia:St Kilda Pier",
+   "pin_status": "ok",
+   "category": "landmark",
+   "wiki": "St Kilda Pier",
+   "bio_draft": "the St Kilda pier and breakwater, with the kiosk at its end and little penguins at dusk.",
+   "views": 2933,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/St_Kilda"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage names the pier end kiosk and dusk little penguins; open anytime.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Rippon Lea Estate",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-41",
+   "coordinates": {
+    "latitude": -37.8792,
+    "longitude": 144.9995
+   },
+   "coordinates_source": "wikipedia:Rippon Lea Estate",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Rippon Lea Estate",
+   "bio_draft": "heritage mansion and gardens in Elsternwick.",
+   "views": 6519,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Southern_suburbs",
+    "https://en.wikivoyage.org/wiki/Melbourne/Dandenong"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (2 counted sources, 6519 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Werribee Park",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-42",
+   "coordinates": {
+    "latitude": -37.9311,
+    "longitude": 144.6701
+   },
+   "coordinates_source": "wikipedia:Werribee Park",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Werribee Park",
+   "bio_draft": "Werribee Mansion and gardens, a 19th-century estate open to visitors.",
+   "views": 9084,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Western_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists Werribee Mansion (Parks Victoria, Italianate 1870s, daily) and the park grounds; headline estate.); inside the Melbourne span and reached from the city. About 22-31 km out but a day trip from the city, inside 75% of the 60 km span."
+  },
+  {
+   "name": "Melbourne Aquarium",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-43",
+   "coordinates": {
+    "latitude": -37.821044,
+    "longitude": 144.958017
+   },
+   "coordinates_source": "wikipedia:Sea Life Melbourne Aquarium",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Sea Life Melbourne Aquarium",
+   "bio_draft": "aquarium on Flinders Street with over 10,000 aquatic creatures in several zones.",
+   "views": 6691,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a ticketed attraction open daily to the public; full-visit length.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Crown Entertainment Complex",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-44",
+   "coordinates": {
+    "latitude": -37.822324,
+    "longitude": 144.960099
+   },
+   "coordinates_source": "wikipedia:Crown Melbourne",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "wiki": "Crown Melbourne",
+   "bio_draft": "casino and resort precinct on the Yarra at Southbank.",
+   "views": 22695,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 22695 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Ian Potter Centre",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-45",
+   "coordinates": {
+    "latitude": -37.817798,
+    "longitude": 144.968714
+   },
+   "coordinates_source": "wikipedia:Ian Potter Centre: NGV Australia",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Ian Potter Centre: NGV Australia",
+   "bio_draft": "Australian art galleries of the National Gallery of Victoria at Federation Square.",
+   "views": 1976,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a free or touring cultural venue in Southbank/Federation Square; open daily.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Old Treasury Building",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-46",
+   "coordinates": {
+    "latitude": -37.813153,
+    "longitude": 144.974121
+   },
+   "coordinates_source": "wikipedia:Old Treasury Building, Melbourne",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Old Treasury Building, Melbourne",
+   "bio_draft": "1858 Treasury Building housing the Gold Museum and gold rush history.",
+   "views": 4681,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a ticketed attraction open daily to the public; full-visit length.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Polly Woodside",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-47",
+   "coordinates": {
+    "latitude": -37.824716,
+    "longitude": 144.953356
+   },
+   "coordinates_source": "wikipedia:Polly Woodside",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Polly Woodside",
+   "bio_draft": "1885 iron-hulled barque restored as a maritime museum at South Wharf.",
+   "views": 6563,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists a ticketed attraction open daily to the public; full-visit length.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Chinese Museum",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-48",
+   "coordinates": {
+    "latitude": -37.8108,
+    "longitude": 144.969099
+   },
+   "coordinates_source": "wikipedia:Chinese Museum, Melbourne",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Chinese Museum, Melbourne",
+   "bio_draft": "Chinese history in Australia museum in Chinatown.",
+   "views": 1692,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage-listed museum of Chinese-Australian history in Chinatown; a real hour-long visit.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Koorie Heritage Trust",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-49",
+   "coordinates": {
+    "latitude": -37.8183,
+    "longitude": 144.9691
+   },
+   "coordinates_source": "wikipedia:Koorie Heritage Trust",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Koorie Heritage Trust",
+   "bio_draft": "contemporary art and culture of Victoria's First Peoples at Federation Square; free entry.",
+   "views": 825,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists free daily 10-5 gallery of Victorian First Peoples art at Federation Square.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Como House",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-50",
+   "coordinates": {
+    "latitude": -37.837701,
+    "longitude": 145.003852
+   },
+   "coordinates_source": "osm:tourism=viewpoint Como House (resolve-pin MEDIUM, 1.2 km from a remembered hint: verify)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Como House",
+   "bio_draft": "1847 Como estate with formal gardens and house tours.",
+   "views": 3580,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Stonnington"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: 1847 estate with gardens and house tours, Wikivoyage lists it.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Prahran Market",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-51",
+   "coordinates": {
+    "latitude": -37.846376,
+    "longitude": 144.992355
+   },
+   "coordinates_source": "wikipedia:Prahran Market",
+   "pin_status": "ok",
+   "category": "market",
+   "wiki": "Prahran Market",
+   "bio_draft": "permanent market hall in Prahran trading most days.",
+   "views": 1951,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage names it as the permanent market hall in Prahran, open several days; the script flagged no counted source but Wikivoyage Stonnington names it.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Footscray Market",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-52",
+   "coordinates": {
+    "latitude": -37.800591,
+    "longitude": 144.902085
+   },
+   "coordinates_source": "osm:nominatim building/yes (provisional)",
+   "pin_status": "provisional",
+   "category": "market",
+   "wiki": "Footscray Market",
+   "bio_draft": "market in Footscray trading most days.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Western_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the market, open Tue-Sat; multicultural fresh-produce market hall.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Dandenong Market",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-53",
+   "coordinates": {
+    "latitude": -37.9838,
+    "longitude": 145.2158
+   },
+   "coordinates_source": "wikipedia:Dandenong Market",
+   "pin_status": "ok",
+   "category": "market",
+   "wiki": "Dandenong Market",
+   "bio_draft": "indoor market in Dandenong trading most days.",
+   "views": 1256,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Southern_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists it as Melbourne's second oldest and second largest market, open four days a week (1866).); inside the Melbourne span and reached from the city. About 22-31 km out but a day trip from the city, inside 75% of the 60 km span."
+  },
+  {
+   "name": "Capital City Trail",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-54",
+   "coordinates": {
+    "latitude": -37.827987,
+    "longitude": 144.984492
+   },
+   "coordinates_source": "osm:trail midpoint of a Capital City Trail way (resolve-pin MEDIUM, loop of many ways; route midpoint to confirm)",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": "Capital City Trail",
+   "bio_draft": "circuit through the inner suburbs, Docklands and the city.",
+   "views": 6493,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage names the continuous 30 km loop trail along the Yarra and Southbank; a named walk/ride.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Yarra Bend Park",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-55",
+   "coordinates": {
+    "latitude": -37.795407,
+    "longitude": 145.011978
+   },
+   "coordinates_source": "wikipedia:Yarra Bend Park",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Yarra Bend Park",
+   "bio_draft": "large riverside park on the Yarra with views of the city and walking trails.",
+   "views": 2445,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Eastern_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage names it (city views from Yarra Boulevard, trails) in See and Do; large riverside parkland.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Warrandyte State Park",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-56",
+   "coordinates": {
+    "latitude": -37.716,
+    "longitude": 145.245
+   },
+   "coordinates_source": "wikipedia:Warrandyte State Park",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Warrandyte State Park",
+   "bio_draft": "Yarra River bushland park with walking trails and picnic areas.",
+   "views": 990,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Eastern_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the state park and a gold-panning/bushwalking activity; Parks Victoria state park on the Yarra.); inside the Melbourne span and reached from the city. About 22-31 km out but a day trip from the city, inside 75% of the 60 km span."
+  },
+  {
+   "name": "Organ Pipes National Park",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-57",
+   "coordinates": {
+    "latitude": -37.66861111,
+    "longitude": 144.76722222
+   },
+   "coordinates_source": "wikipedia:Organ Pipes National Park",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Organ Pipes National Park",
+   "bio_draft": "small park with basalt organ-pipe cliffs in the north-west of Melbourne.",
+   "views": 6525,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1/2: Parks Victoria page (opened) names the basalt organ-pipe columns and the 3 km walk; Time Out Melbourne also features it. A small park is a standalone spot, fine.); inside the Melbourne span and reached from the city. About 22-31 km out but a day trip from the city, inside 75% of the 60 km span."
+  },
+  {
+   "name": "Maranoa Botanic Gardens",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-58",
+   "coordinates": {
+    "latitude": -37.81055556,
+    "longitude": 145.09027778
+   },
+   "coordinates_source": "wikipedia:Maranoa Botanic Gardens",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Maranoa Botanic Gardens",
+   "bio_draft": "Balwyn botanic gardens with native plantings.",
+   "views": 1018,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Eastern_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists one of Australia's oldest native gardens, 4,000 plants, free and open daily.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "CERES Community Environment Park",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-59",
+   "coordinates": {
+    "latitude": -37.766,
+    "longitude": 144.984
+   },
+   "coordinates_source": "wikipedia:CERES Community Environment Park",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "CERES Community Environment Park",
+   "bio_draft": "environmental education park with a farm, markets and cafes in Brunswick East.",
+   "views": 1961,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Northern_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists this urban farm and sustainability park with a cafe and nursery, open to walk through.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Jewish Museum of Australia",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-60",
+   "coordinates": {
+    "latitude": -37.8603,
+    "longitude": 144.9855
+   },
+   "coordinates_source": "wikipedia:Jewish Museum of Australia",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Jewish Museum of Australia",
+   "bio_draft": "Jewish heritage and culture museum in St Kilda.",
+   "views": 1108,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/St_Kilda"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists this St Kilda museum of Jewish life; open Tue-Thu and Sun.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Jewish Holocaust Centre",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-61",
+   "coordinates": {
+    "latitude": -37.8834,
+    "longitude": 145.0011
+   },
+   "coordinates_source": "wikipedia:Melbourne Holocaust Museum",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Jewish Holocaust Centre",
+   "bio_draft": "Holocaust museum and education centre in Bentleigh East.",
+   "views": 4904,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Dandenong"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists this museum in Elsternwick; survivor-guided museum visit of about an hour.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Scienceworks",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-62",
+   "coordinates": {
+    "latitude": -37.831446,
+    "longitude": 144.89391
+   },
+   "coordinates_source": "osm:nominatim tourism/museum 'Scienceworks' (provisional: verify at placement)",
+   "pin_status": "provisional",
+   "category": "museum",
+   "wiki": "Scienceworks (Melbourne)",
+   "bio_draft": "science and technology museum at Spotswood on the Maribyrnong foreshore.",
+   "views": 5060,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Western_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the interactive science museum at Spotswood.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "RAAF Museum",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-63",
+   "coordinates": {
+    "latitude": -37.930464,
+    "longitude": 144.749073
+   },
+   "coordinates_source": "wikipedia:RAAF Museum",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "RAAF Museum",
+   "bio_draft": "Royal Australian Air Force museum at Point Cook with aircraft.",
+   "views": 6704,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Western_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists aircraft in hangars at Point Cook, Tue-Sun.); inside the Melbourne span and reached from the city. About 22-31 km out but a day trip from the city, inside 75% of the 60 km span."
+  },
+  {
+   "name": "Australian National Aviation Museum",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-64",
+   "coordinates": {
+    "latitude": -37.9767,
+    "longitude": 145.091
+   },
+   "coordinates_source": "wikipedia:Australian National Aviation Museum",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Australian National Aviation Museum",
+   "bio_draft": "aviation museum at Moorabbin Airport with historic aircraft.",
+   "views": 3751,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Dandenong"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1/2: Wikivoyage lists a genuine museum with 50+ aircraft open daily; a distinct indoor draw for aviation fans.); inside the Melbourne span and reached from the city. About 22-31 km out but a day trip from the city, inside 75% of the 60 km span."
+  },
+  {
+   "name": "Grainger Museum",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-65",
+   "coordinates": {
+    "latitude": -37.7975,
+    "longitude": 144.95833333
+   },
+   "coordinates_source": "wikipedia:Grainger Museum",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Grainger Museum",
+   "bio_draft": "collection of Percy Grainger's music and memorabilia at Melbourne University.",
+   "views": 2012,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_north"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists this small composer's museum (Sun-Fri 12-4) as fascinating; distinctive and free to enter on campus.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Ian Potter Museum of Art",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-66",
+   "coordinates": {
+    "latitude": -37.7975,
+    "longitude": 144.96411111
+   },
+   "coordinates_source": "wikipedia:Ian Potter Museum of Art",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Ian Potter Museum of Art",
+   "bio_draft": "university art museum at the University of Melbourne with changing exhibitions.",
+   "views": 1637,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Inner_north"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists the university art museum, open Tue-Sun, a real gallery visit distinct from NGV.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Victoria Police Museum",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-67",
+   "coordinates": {
+    "latitude": -37.8225,
+    "longitude": 144.95411111
+   },
+   "coordinates_source": "wikipedia:Victoria Police Museum",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "Victoria Police Museum",
+   "bio_draft": "displays on the history of policing and crime in Victoria, on Flinders Street.",
+   "views": 897,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/CBD"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage lists Kelly Gang armour and the Russell St bombing car; distinctive exhibits, weekday opening.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Altona Beach",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-68",
+   "coordinates": {
+    "latitude": -37.87222222,
+    "longitude": 144.82083333
+   },
+   "coordinates_source": "wikipedia:Altona Beach",
+   "pin_status": "ok",
+   "category": "beach",
+   "wiki": "Altona Beach",
+   "bio_draft": "long bayside beach at Altona with a coastal park.",
+   "views": 2122,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Western_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage names it the best beach in Melbourne's west, long sandy beach.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Elwood Beach",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-69",
+   "coordinates": {
+    "latitude": -37.889731,
+    "longitude": 144.984165
+   },
+   "coordinates_source": "osm:nominatim natural/beach 'Elwood Beach' (provisional: verify at placement)",
+   "pin_status": "provisional",
+   "category": "beach",
+   "wiki": "Elwood Beach",
+   "bio_draft": "bayside beach in Elwood, named by a travel guide.",
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Lonely Planet attraction page (opened) for a second-tier bay swimming beach, less windy than St Kilda.); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Ramsay Street",
+   "action": "spot",
+   "destination": "melbourne",
+   "id": "melbourne-70",
+   "coordinates": null,
+   "coordinates_source": "none: resolve-pin LOW (private residential cul-de-sac, Pin Oak Court, no OSM feature); pin left to the owner",
+   "pin_status": "unresolved",
+   "category": "landmark",
+   "wiki": "Ramsay Street",
+   "bio_draft": "Ramsay Street set of the television show Neighbours, visited by fans.",
+   "views": 21863,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Eastern_suburbs"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 21863 page views); inside the Melbourne span and reached from the city."
+  },
+  {
+   "name": "Royal Botanic Gardens Cranbourne",
+   "action": "standalone",
+   "destination": null,
+   "id": "royal-botanic-gardens-cranbourne",
+   "coordinates": {
+    "latitude": -38.128603,
+    "longitude": 145.270294
+   },
+   "coordinates_source": "osm:leisure=park Australian Garden (resolve-pin MEDIUM)",
+   "pin_status": "ok",
+   "category": "nature",
+   "wiki": "Royal Botanic Gardens Cranbourne",
+   "bio_draft": "native-plant botanic gardens at Cranbourne.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Dandenong"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "reason": "Kept; about 38-44 km SE of Melbourne's centre, at the edge of its reach and with its own journey (Cranbourne / Langwarrin), so standalone rather than stretching the Melbourne span. The Mornington Peninsula region may also claim McClelland; whichever region applies first owns it."
+  },
+  {
+   "name": "McClelland Gallery and Sculpture Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "mcclelland-gallery-and-sculpture-park",
+   "coordinates": {
+    "latitude": -38.146033,
+    "longitude": 145.176486
+   },
+   "coordinates_source": "osm:tourism=gallery (resolve-pin HIGH)",
+   "pin_status": "ok",
+   "category": "museum",
+   "wiki": "McClelland Sculpture Park + Gallery",
+   "bio_draft": "outdoor sculpture park and gallery in Langwarrin.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Melbourne/Frankston"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "reason": "Kept; about 38-44 km SE of Melbourne's centre, at the edge of its reach and with its own journey (Cranbourne / Langwarrin), so standalone rather than stretching the Melbourne span. The Mornington Peninsula region may also claim McClelland; whichever region applies first owns it."
+  }
+ ],
+ "existing_fixes": [],
+ "existing_fixes_note": "No Melbourne or Victoria destination or spot exists in src/data yet (grep of destinations.ts and spots.ts for Australia/Melbourne found none), so nothing to move or merge. Internal fixes made here: Hosier Lane coordinates (candidate Nominatim point was 30 km north) replaced from resolve-pin HIGH; Ian Potter Centre shares its candidate pin with Federation Square (pin-shared): the pins stage must move it 25 m or more from Federation Square (lesser spot: Ian Potter Centre is later in the list).",
+ "standalone_near_destinations": [
+  {
+   "spot": "Royal Botanic Gardens Cranbourne",
+   "km_from_melbourne_centre": 44,
+   "why_not_a_spot": "Beyond about 75% of the span would still fit at 44 km only by ballooning the span to 90+ km; it is reached from Cranbourne / the Mornington side, not the city."
+  },
+  {
+   "spot": "McClelland Gallery and Sculpture Park",
+   "km_from_melbourne_centre": 38,
+   "why_not_a_spot": "Langwarrin, reached on its own from Frankston or the Mornington side; adding it would balloon the Melbourne span and the Mornington Peninsula region is the likelier owner."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "Woodlands Historic Park",
+   "verdict": "review",
+   "case": "For: Parks Victoria park with an 1840s homestead and reserve by the airport, counted source. Against: Wikivoyage entry is one line, homestead open rarely, little visitor info found."
+  },
+  {
+   "name": "Myuna Farm",
+   "verdict": "review",
+   "case": "Wikivoyage lists it (daily, paid): a children's animal farm, an hour or two for families. For: real paid attraction open daily. Against: local family stop, single source."
+  },
+  {
+   "name": "Lysterfield Park",
+   "verdict": "review",
+   "case": "Parks Victoria park with state MTB course and lake canoeing (Wikivoyage); activity park of regional rather than visitor appeal. Only one counted source."
+  }
+ ],
+ "notes": [
+  "Melbourne is proposed as a new destination (no Victoria destinations exist yet); owner pre-approved. No other new destination: the region has one base. Werribee cluster (Werribee Park, Open Range Zoo, RAAF Museum: 3) is under four and sits inside Melbourne reach, so spots of Melbourne.",
+  "Do not duplicate: Yarra Valley and Dandenong region likely owns Warrandyte, Dandenong Market, Heide-side areas, Myuna and Lysterfield; Mornington/Phillip Island likely owns McClelland. If those regions place them, drop the copy here (spots here are inside the Melbourne span and are plain Melbourne day trips).",
+  "Pins: coordinates not from a named visitor point are pin_status provisional (Wikipedia coordinates are ok but not resolve-pin checked); Ramsay Street has no pin (unresolved). A later pins stage runs resolve-pin.py for every spot.",
+  "Cost, costBasis and ticketUrl are null with needs_research for all spots; bio_draft is the enumerator note and needs rewriting to a fitting bio."
+ ]
+}

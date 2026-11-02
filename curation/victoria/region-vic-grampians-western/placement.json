@@ -1,0 +1,1928 @@
+{
+ "region": "vic-grampians-western",
+ "branch": "curation/victoria",
+ "new_destinations": [
+  {
+   "id": "grampians-national-park",
+   "name": "Grampians National Park",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "park",
+   "icon": "\u26f0\ufe0f",
+   "rank": 2,
+   "coordinates": {
+    "latitude": -37.18,
+    "longitude": 142.47
+   },
+   "coordinates_source": "visual centre of the park's spots around Halls Gap (the visitor hub); candidate park point -37.2078,142.3997",
+   "defaultZoomSpanKm": 100,
+   "name_evidence": "Wikivoyage page \"Grampians National Park\"; visitgrampians.com.au see-do pages; Gariwerd/Grampians is Victoria's flagship park.",
+   "spots": [
+    "grampians-national-park-1",
+    "grampians-national-park-2",
+    "grampians-national-park-3",
+    "grampians-national-park-4",
+    "grampians-national-park-5",
+    "grampians-national-park-6",
+    "grampians-national-park-7",
+    "grampians-national-park-8",
+    "grampians-national-park-9",
+    "grampians-national-park-10",
+    "grampians-national-park-11",
+    "grampians-national-park-12",
+    "grampians-national-park-13",
+    "grampians-national-park-14",
+    "grampians-national-park-15",
+    "grampians-national-park-16",
+    "grampians-national-park-17",
+    "grampians-national-park-18",
+    "grampians-national-park-19",
+    "grampians-national-park-20",
+    "grampians-national-park-21",
+    "grampians-national-park-22",
+    "grampians-national-park-23",
+    "grampians-national-park-24"
+   ]
+  },
+  {
+   "id": "ararat",
+   "name": "Ararat",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "city",
+   "icon": "\ud83c\udfdb\ufe0f",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -37.28333333,
+    "longitude": 142.91666667
+   },
+   "coordinates_source": "wikipedia:Ararat, Victoria (town centre)",
+   "defaultZoomSpanKm": 60,
+   "name_evidence": "Wikivoyage page \"Ararat\" exists; guide-listed galleries, museums and the Aradale and J Ward heritage tours.",
+   "spots": [
+    "ararat-1",
+    "ararat-2",
+    "ararat-3",
+    "ararat-4",
+    "ararat-5",
+    "ararat-6",
+    "ararat-7"
+   ]
+  },
+  {
+   "id": "hamilton-victoria",
+   "name": "Hamilton (Victoria)",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "city",
+   "icon": "\ud83c\udfdb\ufe0f",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -37.73333333,
+    "longitude": 142.01666667
+   },
+   "coordinates_source": "wikipedia:Hamilton, Victoria (town centre)",
+   "defaultZoomSpanKm": 50,
+   "name_evidence": "Wikivoyage page \"Hamilton (Victoria)\" exists; regional centre of the Western District. NAME COLLISION: an NZ destination already has id \"hamilton\" and name \"Hamilton\", so this one needs a disambiguated name (WIKI_IMAGE_OVERRIDES key) - owner to confirm.",
+   "spots": [
+    "hamilton-victoria-1",
+    "hamilton-victoria-2",
+    "hamilton-victoria-3",
+    "hamilton-victoria-4"
+   ]
+  },
+  {
+   "id": "horsham",
+   "name": "Horsham",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne",
+   "category": "city",
+   "icon": "\ud83c\udf3e",
+   "rank": 5,
+   "coordinates": {
+    "latitude": -36.71666667,
+    "longitude": 142.2
+   },
+   "coordinates_source": "wikipedia:Horsham, Victoria (town centre)",
+   "defaultZoomSpanKm": 90,
+   "name_evidence": "Wikivoyage page \"Horsham\" exists; Wimmera hub and base for Mount Arapiles and Little Desert. The Wimmera (Wikivoyage region page exists) is the alternative name, but it reaches into the Grampians destination and the Mallee, so Horsham is the base.",
+   "spots": [
+    "horsham-1",
+    "horsham-2",
+    "horsham-3",
+    "horsham-4",
+    "horsham-5",
+    "horsham-6"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "MacKenzie Falls",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-1",
+   "coordinates": {
+    "latitude": -37.110961,
+    "longitude": 142.409179
+   },
+   "coordinates_source": "resolve-pin HIGH: osm waterway=waterfall \"Mackenzie Falls (Mikunung Wira)\"",
+   "pin_status": "ok",
+   "category": "nature",
+   "bio_draft": "Victoria's largest permanent waterfall plunges into a deep pool at the end of a steep walk from the car park.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park",
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/lakes-waterways"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage and visitgrampians \"must do for all visitors\".); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "The Pinnacle",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-2",
+   "coordinates": {
+    "latitude": -37.160146,
+    "longitude": 142.515692
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=peak \"The Pinnacle\"",
+   "pin_status": "ok",
+   "category": "viewpoint",
+   "bio_draft": "Marked walk from Halls Gap up to a lookout over canyons, Halls Gap and the plains.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/hiking-lookouts",
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage and board call it a highlight of the whole region.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Grampians Peaks Trail",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-3",
+   "coordinates": {
+    "latitude": -37.183809,
+    "longitude": 142.413046
+   },
+   "coordinates_source": "resolve-pin LOW: median of 28 geotagged Commons files; route midpoint not found in OSM",
+   "pin_status": "provisional",
+   "category": "hike",
+   "bio_draft": "13-day long-distance walk linking the Grampians (Gariwerd) peaks, with day-walk sections and hike-in camps.",
+   "views": 782,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/activities/grampians-peaks-trail",
+    "https://www.visitgrampians.com.au/discover/south/dunkeld",
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/galleries-museums"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (3 counted sources, 782 page views); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Boroka Lookout",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-4",
+   "coordinates": {
+    "latitude": -37.122399,
+    "longitude": 142.503543
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint \"Boroka Lookout\"",
+   "pin_status": "ok",
+   "category": "viewpoint",
+   "bio_draft": "Roadside lookout with views across the ranges and the plains toward Halls Gap.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage and board name it; accessible panorama.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "The Balconies",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-5",
+   "coordinates": {
+    "latitude": -37.149515,
+    "longitude": 142.458801
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=viewpoint \"The Balconies Lookout\"",
+   "pin_status": "ok",
+   "category": "viewpoint",
+   "bio_draft": "Short walk to a cliff-top lookout over the Victoria Valley, with views of the Grampians ranges.",
+   "views": 976,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage names it; classic cliff-top lookout.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Reids Lookout",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-6",
+   "coordinates": {
+    "latitude": -37.13,
+    "longitude": 142.43
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "viewpoint",
+   "bio_draft": "Lookout with a panorama of the plains and Halls Gap from the ranges.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage and board name it; panorama over Halls Gap.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Chautauqua Peak",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-7",
+   "coordinates": {
+    "latitude": -37.13,
+    "longitude": 142.5
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "viewpoint",
+   "bio_draft": "Climb to a peak lookout over Halls Gap, with wildlife along the approach track.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage lists it with coordinates; scramble to a lookout.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Mount William",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-8",
+   "coordinates": {
+    "latitude": -37.3,
+    "longitude": 142.4
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": "Mount William, Victoria",
+   "bio_draft": "Walk to the highest point in the Grampians at 1,167 m, with wide views across the park.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/hiking-lookouts"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: board; highest point in the Grampians at 1,167 m.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Venus Baths",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-9",
+   "coordinates": {
+    "latitude": -37.139289,
+    "longitude": 142.508828
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint \"Venus Baths\"",
+   "pin_status": "ok",
+   "category": "nature",
+   "bio_draft": "Loop walk from Halls Gap to granite rock pools beside Stony Creek.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/hiking-lookouts",
+    "https://www.visitgrampians.com.au/discover/central/halls-gap"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: two board pages; loop walk to rock pools from Halls Gap.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Mount Rosea",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-10",
+   "coordinates": {
+    "latitude": -37.196959,
+    "longitude": 142.506573
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=peak \"Mount Rosea\"",
+   "pin_status": "ok",
+   "category": "hike",
+   "bio_draft": "Walk to a summit with 360-degree views of the Serra Range and Mount Difficult.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/hiking-lookouts"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: board; summit walk with 360-degree views.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Halls Gap Zoo",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-11",
+   "coordinates": {
+    "latitude": -37.14777778,
+    "longitude": 142.56361111
+   },
+   "coordinates_source": "wikipedia:Halls Gap Zoo (candidate)",
+   "pin_status": "ok",
+   "category": "entertainment",
+   "bio_draft": "Regional zoo at the foot of the Wonderland Range, with native and exotic animals.",
+   "views": 1221,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/animals-wildlife"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1/2: board names it; paid regional zoo.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Gulgurn Manja Shelter",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-12",
+   "coordinates": {
+    "latitude": -37.05,
+    "longitude": 142.55
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Gulgurn Manja",
+   "bio_draft": "Rock shelter with Aboriginal hand stencils at Laharum, at the foot of the northern Grampians.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park",
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/indigenous-culture",
+    "https://www.visitgrampians.com.au/discover/north/laharum-wartook"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (3 counted sources, 0 page views); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Bunjil Shelter",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-13",
+   "coordinates": {
+    "latitude": -37.139356,
+    "longitude": 142.733365
+   },
+   "coordinates_source": "resolve-pin HIGH: osm historic=archaeological_site \"Bunjil's Shelter\"",
+   "pin_status": "ok",
+   "category": "historic",
+   "bio_draft": "Ancient rock art of the creator being Bunjil near Stawell.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/indigenous-culture"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: board and Halls Gap FAQ name it as the closest site; Aboriginal rock art.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Manja Shelter",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-14",
+   "coordinates": {
+    "latitude": -37.1,
+    "longitude": 142.5
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Rock shelter with some of Victoria's best preserved hand stencils, near Halls Gap.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/indigenous-culture",
+    "https://www.visitgrampians.com.au/discover/south/cavendish"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: two board pages; some of the best hand stencils.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Ngamadjidj Shelter",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-15",
+   "coordinates": {
+    "latitude": -37.1,
+    "longitude": 142.4
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Ngamadjidj",
+   "bio_draft": "Cave of Ghosts rock shelter on the western edge of the range, with white figure paintings.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park",
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/indigenous-culture",
+    "https://www.visitgrampians.com.au/discover/north/laharum-wartook"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (3 counted sources, 0 page views); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Billimina Rock Art Site",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-16",
+   "coordinates": {
+    "latitude": -37.1,
+    "longitude": 142.4
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Rock overhang with Aboriginal art and camp remains in the Wartook Valley.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/indigenous-culture",
+    "https://www.visitgrampians.com.au/discover/south/cavendish"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: two board pages; rock overhang with art.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Hollow Mountain",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-17",
+   "coordinates": {
+    "latitude": -37.0,
+    "longitude": 142.5
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "hike",
+   "bio_draft": "Steep walk to Hollow Mountain (Wudjub-guyan), a rock formation with views and Aboriginal significance.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/laharum-wartook"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: board; walk with rock art at Wudjub-guyan.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Mount Abrupt",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-18",
+   "coordinates": {
+    "latitude": -37.4,
+    "longitude": 142.4
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "hike",
+   "bio_draft": "Steep walk to the summit of Mount Abrupt (Mura Mura) at the south of the Grampians.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/hiking-lookouts",
+    "https://www.visitgrampians.com.au/discover/south/dunkeld"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: two board pages; steep summit walk.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Mount Sturgeon",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-19",
+   "coordinates": {
+    "latitude": -37.633977,
+    "longitude": 142.322986
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=peak \"Mount Sturgeon\"",
+   "pin_status": "ok",
+   "category": "hike",
+   "wiki": "Mount Sturgeon, Victoria",
+   "bio_draft": "Day walk to the summit of Mount Sturgeon (Wurgarri) above Dunkeld, with views over the plains.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/hiking-lookouts",
+    "https://www.visitgrampians.com.au/discover/south/dunkeld"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: two board pages; summit day walk above Dunkeld.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Mount Piccaninny",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-20",
+   "coordinates": {
+    "latitude": -37.5,
+    "longitude": 142.4
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "hike",
+   "bio_draft": "Popular leisurely walk to the summit of Mount Piccaninny (Baingga) for views across the south Grampians.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/hiking-lookouts",
+    "https://www.visitgrampians.com.au/discover/south/dunkeld"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: two board pages; leisurely summit walk.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Silverband Falls",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-21",
+   "coordinates": {
+    "latitude": -37.15277778,
+    "longitude": 142.52777778
+   },
+   "coordinates_source": "wikipedia:Silverband Falls (candidate)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Falls on the Grampians road reached by a short roadside walk.",
+   "views": 485,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage lists it with coordinates; short walk.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Halls Gap",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-22",
+   "coordinates": {
+    "latitude": -37.11666667,
+    "longitude": 142.55
+   },
+   "coordinates_source": "wikipedia:Halls Gap (town point, place=village centre)",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Halls Gap, Victoria",
+   "bio_draft": "Gateway village inside the Grampians, with trail access, a cultural centre, wildlife at dusk and services.",
+   "views": 5448,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/central/halls-gap",
+    "https://en.wikivoyage.org/wiki/Grampians_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: visitgrampians and Wikivoyage name it as the only town and main access point; kangaroos/koalas, Brambuk, trail starts.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Dunkeld",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-23",
+   "coordinates": {
+    "latitude": -37.65,
+    "longitude": 142.35
+   },
+   "coordinates_source": "wikipedia:Dunkeld, Victoria (town point)",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Dunkeld, Victoria",
+   "bio_draft": "Southern gateway village below Mount Sturgeon, with a heritage trail and walks into the Grampians.",
+   "views": 7732,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/south/dunkeld"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: southern Grampians gateway village named in Wikivoyage Grampians National Park (Grampians Tourist Road to Dunkeld) and regional board; village with Mt Sturgeon walks and dining; second-tier stop. Objection: draws are separate peaks.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Stawell",
+   "action": "spot",
+   "destination": "grampians-national-park",
+   "id": "grampians-national-park-24",
+   "coordinates": {
+    "latitude": -37.05,
+    "longitude": 142.76666667
+   },
+   "coordinates_source": "wikipedia:Stawell, Victoria (town point)",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Stawell, Victoria",
+   "bio_draft": "Gold-rush town at the northern gateway to the Grampians, home of the Stawell Gift footrace.",
+   "views": 16239,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/central/stawell"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1/town test: regional hub and Grampians gateway listed in Wikivoyage Wimmera and Grampians pages; gold-rush town (Big Hill, Pioneer Cemetery). Stawell Gift excluded as an event.); inside Grampians National Park's span and reached from that base."
+  },
+  {
+   "name": "Aradale Lunatic Asylum",
+   "action": "spot",
+   "destination": "ararat",
+   "id": "ararat-1",
+   "coordinates": {
+    "latitude": -37.28,
+    "longitude": 142.93
+   },
+   "coordinates_source": "wikipedia:Aradale Mental Hospital (candidate; generic, 130 m from J Ward)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "wiki": "Aradale",
+   "bio_draft": "Former lunatic asylum at Ararat, a large Victorian-era complex now open for guided tours.",
+   "views": 14113,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/central/ararat"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Visit Grampians (opened) names tours of the former asylum; 14k views, guided tours.); inside Ararat's span and reached from that base."
+  },
+  {
+   "name": "J Ward",
+   "action": "spot",
+   "destination": "ararat",
+   "id": "ararat-2",
+   "coordinates": {
+    "latitude": -37.2788,
+    "longitude": 142.9303
+   },
+   "coordinates_source": "wikipedia:J Ward (candidate; 4-decimal, 130 m from Aradale)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Ararat's old gaol for the criminally insane, open for tours and ghost walks.",
+   "views": 6921,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/galleries-museums",
+    "https://www.visitgrampians.com.au/discover/central/ararat"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (2 counted sources, 6921 page views); inside Ararat's span and reached from that base."
+  },
+  {
+   "name": "Gum San Chinese Heritage Centre",
+   "action": "spot",
+   "destination": "ararat",
+   "id": "ararat-3",
+   "coordinates": {
+    "latitude": -37.279269,
+    "longitude": 142.925376
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=museum \"Gum San Chinese Heritage Museum\"",
+   "pin_status": "ok",
+   "category": "museum",
+   "bio_draft": "Heritage centre on Chinese gold miners and their story on the Victorian goldfields.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/galleries-museums",
+    "https://www.visitgrampians.com.au/discover/central/ararat"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: two tourism pages; interpretive centre on Chinese gold miners, a named heritage attraction.); inside Ararat's span and reached from that base."
+  },
+  {
+   "name": "Ararat Gallery TAMA",
+   "action": "spot",
+   "destination": "ararat",
+   "id": "ararat-4",
+   "coordinates": {
+    "latitude": -37.28305556,
+    "longitude": 142.93222222
+   },
+   "coordinates_source": "wikipedia:Ararat Gallery TAMA (candidate)",
+   "pin_status": "ok",
+   "category": "museum",
+   "bio_draft": "Textile art museum established in 1968, with a collection of contemporary fibre art.",
+   "views": 318,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/galleries-museums",
+    "https://www.visitgrampians.com.au/discover/central/ararat"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: two tourism pages; Australia's textile art museum, distinct collection.); inside Ararat's span and reached from that base."
+  },
+  {
+   "name": "Seppelt Great Western",
+   "action": "spot",
+   "destination": "ararat",
+   "id": "ararat-5",
+   "coordinates": {
+    "latitude": -37.136166,
+    "longitude": 142.837371
+   },
+   "coordinates_source": "resolve-pin LOW: median of 1 geotagged Commons file; winery cellars not matched in OSM",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Historic Seppelt winery at Great Western with underground cellar (drive) tours and tastings.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/central/great-western",
+    "https://www.visitgrampians.com.au/see-do/activities/tours"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: two tourism pages; historic winery with underground drives (cellar tours).); inside Ararat's span and reached from that base."
+  },
+  {
+   "name": "Langi Ghiran State Park",
+   "action": "spot",
+   "destination": "ararat",
+   "id": "ararat-6",
+   "coordinates": {
+    "latitude": -37.3,
+    "longitude": 143.11666667
+   },
+   "coordinates_source": "wikipedia:Langi Ghiran State Park (park centroid; needs a visitor point)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Forested range and walks near Ararat, with a rocky peak and views.",
+   "views": 820,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/central/ararat"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Parks Victoria and visitgrampians; 1.8 km art walk with rock shelter, hill walks.); inside Ararat's span and reached from that base."
+  },
+  {
+   "name": "Mount Buangor State Park",
+   "action": "spot",
+   "destination": "ararat",
+   "id": "ararat-7",
+   "coordinates": {
+    "latitude": -37.32849,
+    "longitude": 143.2226
+   },
+   "coordinates_source": "wikipedia:Mount Buangor State Park (park centroid; needs a visitor point)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Forested range near Beaufort with walks, creeks and fern gullies.",
+   "views": 504,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Parks Victoria (now Mount Buangor National Park) names waterfalls walk, summit views.); inside Ararat's span and reached from that base."
+  },
+  {
+   "name": "Hamilton Botanic Gardens",
+   "action": "spot",
+   "destination": "hamilton-victoria",
+   "id": "hamilton-victoria-1",
+   "coordinates": {
+    "latitude": -37.746901,
+    "longitude": 142.02412
+   },
+   "coordinates_source": "resolve-pin HIGH: osm leisure=garden \"Hamilton Botanic Gardens\"",
+   "pin_status": "ok",
+   "category": "nature",
+   "bio_draft": "Botanic gardens with a restored rotunda, a small zoo and mature trees.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hamilton_(Victoria)",
+    "https://www.visitgrampians.com.au/discover/south/hamilton"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage Hamilton and Visit Grampians both name it; a historic botanic garden with rotunda and small zoo.); inside Hamilton (Victoria)'s span and reached from that base."
+  },
+  {
+   "name": "Sir Reginald Ansett Transport Museum",
+   "action": "spot",
+   "destination": "hamilton-victoria",
+   "id": "hamilton-victoria-2",
+   "coordinates": {
+    "latitude": -37.741746,
+    "longitude": 142.036004
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=museum",
+   "pin_status": "ok",
+   "category": "museum",
+   "bio_draft": "Aviation museum on Ansett Australia and its first aircraft, in Hamilton.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hamilton_(Victoria)",
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/galleries-museums"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage Hamilton and a gallery/museum page name it; distinct aviation-history museum.); inside Hamilton (Victoria)'s span and reached from that base."
+  },
+  {
+   "name": "Wannon Falls",
+   "action": "spot",
+   "destination": "hamilton-victoria",
+   "id": "hamilton-victoria-3",
+   "coordinates": {
+    "latitude": -37.67638889,
+    "longitude": 141.84083333
+   },
+   "coordinates_source": "wikipedia:Wannon Falls (candidate)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Falls on the Wannon River south-west of the Grampians, with a viewing platform.",
+   "views": 486,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/lakes-waterways"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1/2: waterfall with lookout platform and picnic reserve 20 km from Hamilton; named by Visit Southern Grampians, Greater Hamilton and Visit Grampians. Objection: falls trickle in summer.); inside Hamilton (Victoria)'s span and reached from that base."
+  },
+  {
+   "name": "Mount Rouse",
+   "action": "spot",
+   "destination": "hamilton-victoria",
+   "id": "hamilton-victoria-4",
+   "coordinates": {
+    "latitude": -37.88241667,
+    "longitude": 142.30061111
+   },
+   "coordinates_source": "wikipedia:Mount Rouse (candidate; summit)",
+   "pin_status": "ok",
+   "category": "hike",
+   "bio_draft": "Volcanic peak near Penshurst with a summit walk and views over the volcanic plains.",
+   "views": 895,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/south/penshurst"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Penshurst tourism page names the volcanic summit walk and views; scenic volcano stop. Objection: one source.); inside Hamilton (Victoria)'s span and reached from that base."
+  },
+  {
+   "name": "Mount Arapiles",
+   "action": "spot",
+   "destination": "horsham",
+   "id": "horsham-1",
+   "coordinates": {
+    "latitude": -36.776,
+    "longitude": 141.7119
+   },
+   "coordinates_source": "wikipedia:Mount Arapiles-Tooan State Park (candidate; peak)",
+   "pin_status": "provisional",
+   "category": "hike",
+   "wiki": "Mount Arapiles-Tooan State Park",
+   "bio_draft": "Mount Arapiles-Tooan State Park: world-class rock climbing cliffs, with walks and views over the Wimmera.",
+   "views": 463,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/natimuk-mt-arapiles"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: visitgrampians page; world-class climbing cliffs, lookout and walks.); inside Horsham's span and reached from that base."
+  },
+  {
+   "name": "Pink Lake Dimboola",
+   "action": "spot",
+   "destination": "horsham",
+   "id": "horsham-2",
+   "coordinates": {
+    "latitude": -36.406798,
+    "longitude": 141.956021
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm leisure=nature_reserve \"Loch Iel (Pink Lake) Lake Reserve\"",
+   "pin_status": "ok",
+   "category": "nature",
+   "bio_draft": "Salt lake near Dimboola that turns pink in dry conditions.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/nature-wildlife/lakes-waterways",
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1/3: Wikivoyage Dimboola lists it first under See, plus two Visit Grampians pages; pink salt lake roadside stop on the Western Highway (quirky icon). Objection: short stop and colour varies.); inside Horsham's span and reached from that base."
+  },
+  {
+   "name": "The Stick Shed",
+   "action": "spot",
+   "destination": "horsham",
+   "id": "horsham-3",
+   "coordinates": {
+    "latitude": -36.63,
+    "longitude": 142.47
+   },
+   "coordinates_source": "area hint at Murtoa (resolve-pin found no feature); must be 25 m clear of the Murtoa silo pin",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Giant 1940s timber grain store at Murtoa, one of the largest of its kind, open to visitors.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/galleries-museums",
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: two tourism pages; Murtoa's huge WWII timber grain store (note's description is wrong), visitor attraction.); inside Horsham's span and reached from that base."
+  },
+  {
+   "name": "Murtoa Silo Art",
+   "action": "spot",
+   "destination": "horsham",
+   "id": "horsham-4",
+   "coordinates": {
+    "latitude": -36.614842,
+    "longitude": 142.471481
+   },
+   "coordinates_source": "resolve-pin LOW: median of 7 geotagged Commons files (Murtoa)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Murtoa on the Wimmera silo art trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).); inside Horsham's span and reached from that base."
+  },
+  {
+   "name": "Rupanyup Silo Art",
+   "action": "spot",
+   "destination": "horsham",
+   "id": "horsham-5",
+   "coordinates": {
+    "latitude": -36.62804,
+    "longitude": 142.632124
+   },
+   "coordinates_source": "resolve-pin MEDIUM: osm tourism=artwork \"Rupanyup Silo Art\"",
+   "pin_status": "ok",
+   "category": "historic",
+   "bio_draft": "Silo mural at Rupanyup on the Wimmera silo art trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).); inside Horsham's span and reached from that base."
+  },
+  {
+   "name": "Arkona Silo Art",
+   "action": "spot",
+   "destination": "horsham",
+   "id": "horsham-6",
+   "coordinates": {
+    "latitude": -36.4,
+    "longitude": 141.9
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Arkona on the Wimmera silo art trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wimmera Mallee Silo Art Trail stop named by tourism board; quirky roadside icon. Objection: remote, brief stop.); inside Horsham's span and reached from that base."
+  },
+  {
+   "name": "Little Desert National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "little-desert-national-park",
+   "coordinates": {
+    "latitude": -36.60666667,
+    "longitude": 141.18861111
+   },
+   "coordinates_source": "wikipedia:Little Desert National Park (park centroid; needs a visitor point)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Large sand-dune heath wilderness south of Nhill, with walks, wildflowers and birds.",
+   "views": 2340,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wimmera"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Parks Victoria page and Wikivoyage; walks, camping, wildflowers, birding.). Park with no other kept spot; 90 km from Horsham, reached from Nhill/Kiata. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Budj Bim National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "budj-bim-national-park",
+   "coordinates": {
+    "latitude": -38.08333333,
+    "longitude": 141.88333333
+   },
+   "coordinates_source": "wikipedia:Budj Bim National Park (park centroid; needs a visitor point)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Volcanic landscape and World Heritage Gunditjmara eel-trap aquaculture system.",
+   "views": 2192,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/South_West_Coast_(Victoria)",
+    "https://www.visitgrampians.com.au/see-do/arts-culture-history/indigenous-culture"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (2 counted sources, 2192 page views). Park with 2 kept places (itself, Lake Surprise): under four, so no destination. 41 km from Hamilton but reached from Heywood/Portland and a World Heritage cultural landscape in its own right.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Lake Surprise",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-surprise",
+   "coordinates": {
+    "latitude": -38.061278,
+    "longitude": 141.922511
+   },
+   "coordinates_source": "resolve-pin HIGH: osm natural=water \"Lake Surprise\"",
+   "pin_status": "ok",
+   "category": "nature",
+   "bio_draft": "Crater lake that is the main attraction of Budj Bim National Park, with walking trails and a lava cave nearby.",
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Mount_Eccles_National_Park"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+2: Wikivoyage Budj Bim National Park names Lake Surprise as the main attraction, crater lake with walking trails.). Kept place inside Budj Bim NP, no destination to hold it (park has 2). 37 km from Hamilton but reached from Macarthur/Heywood.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Lower Glenelg National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "lower-glenelg-national-park",
+   "coordinates": {
+    "latitude": -38.06611111,
+    "longitude": 141.28861111
+   },
+   "coordinates_source": "wikipedia:Lower Glenelg National Park (park centroid; needs a visitor point)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Glenelg River gorge with limestone cliffs, camping and the Great South West Walk.",
+   "views": 547,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Parks Victoria names the limestone gorge, canoe trail, Great South West Walk, Princess Margaret Rose Cave tours.). Park with 3 kept places (itself, Great South West Walk, Princess Margaret Rose Caves): under four, so no destination. Reached from Nelson/Portland, 70 km from Hamilton.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Princess Margaret Rose Caves",
+   "action": "standalone",
+   "destination": null,
+   "id": "princess-margaret-rose-caves",
+   "coordinates": {
+    "latitude": -37.95,
+    "longitude": 141.3
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Tourist limestone cave in Lower Glenelg National Park, open for guided tours.",
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1/2: Lonely Planet lists it as a top choice; guided 45-minute tours of a heavily decorated cave. Note: one listing says closed until late 2026, confirm status.). Cave tourism venue near Nelson on the Glenelg; no destination (park cluster of 3).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Tower Hill Wildlife Reserve",
+   "action": "standalone",
+   "destination": null,
+   "id": "tower-hill-wildlife-reserve",
+   "coordinates": {
+    "latitude": -38.31755547,
+    "longitude": 142.36041538
+   },
+   "coordinates_source": "wikipedia:Tower Hill Wildlife Reserve (candidate; reserve centroid)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Volcanic crater reserve near Koroit with a wildlife enclosure, walks and native animals.",
+   "views": 1712,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage Warrnambool lists it under Do (crater reserve, wildlife walks).). Reached from Warrnambool/Koroit, 100 km from the nearest new destination. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Lake Bullen Merri",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-bullen-merri",
+   "coordinates": {
+    "latitude": -38.25166667,
+    "longitude": 143.10416667
+   },
+   "coordinates_source": "wikipedia:Lake Bullen Merri (lake centroid)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Volcanic crater lake near Camperdown, with walks, swimming and water-skiing.",
+   "views": 1726,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage Camperdown lists 'Visit Lake Bullen Merri' (crater lake, swimming, rowing) with a lookout.). Colac/Camperdown crater lakes cluster has 3 kept places (Colac, Bullen Merri, Gnotuk): under four, so no destination. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Lake Gnotuk",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-gnotuk",
+   "coordinates": {
+    "latitude": -38.26,
+    "longitude": 143.09
+   },
+   "coordinates_source": "area offset from Lake Bullen Merri (candidate reused its point; pin-shared otherwise); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Smaller volcanic crater lake beside Lake Bullen Merri, with a rim walk.",
+   "views": 0,
+   "counted_sources": [],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Wikivoyage Camperdown lists Gnotuk Lookout and the lake; separate salt crater lake from Bullen Merri. Objection: close to Bullen Merri.). As Lake Bullen Merri; 2 km away but a separate lake.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Colac",
+   "action": "standalone",
+   "destination": null,
+   "id": "colac-victoria",
+   "coordinates": {
+    "latitude": -38.34027778,
+    "longitude": 143.58472222
+   },
+   "coordinates_source": "wikipedia:Colac, Victoria (town point)",
+   "pin_status": "ok",
+   "category": "historic",
+   "wiki": "Colac, Victoria",
+   "bio_draft": "Main town of the Otways region, on the shore of Lake Colac, a base for the Otways and the volcanic lakes.",
+   "views": 29008,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Colac"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (1 counted sources, 29008 page views). Town draws are Lake Colac and the Otways, neither a kept spot; cluster of 3 near Colac, so standalone (the Great Ocean Road region run may place Otways places).",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Kara Kara National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "kara-kara-national-park",
+   "coordinates": {
+    "latitude": -36.86055556,
+    "longitude": 143.28527778
+   },
+   "coordinates_source": "wikipedia:Kara Kara National Park (park centroid; needs a visitor point)",
+   "pin_status": "provisional",
+   "category": "nature",
+   "bio_draft": "Forest and hills north of Ararat, listed as a regional bushwalking and nature stop.",
+   "views": 725,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wimmera"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Parks Victoria and Wikivoyage; box-ironbark park with walks and lookouts.). Thin park, one kept place; 60 km from Ararat. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Brim Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "brim-silo-art",
+   "coordinates": {
+    "latitude": -35.95,
+    "longitude": 142.55
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Brim on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Rainbow Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "rainbow-silo-art",
+   "coordinates": {
+    "latitude": -35.9,
+    "longitude": 141.99
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Rainbow on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Rosebery Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "rosebery-silo-art",
+   "coordinates": {
+    "latitude": -35.7,
+    "longitude": 142.2
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Rosebery on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Sea Lake Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "sea-lake-silo-art",
+   "coordinates": {
+    "latitude": -35.506827,
+    "longitude": 142.848444
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint \"Sea Lake Silo Art\"",
+   "pin_status": "ok",
+   "category": "historic",
+   "bio_draft": "Silo mural at Sea Lake on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Patchewollock Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "patchewollock-silo-art",
+   "coordinates": {
+    "latitude": -35.38,
+    "longitude": 141.8
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Patchewollock on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Goroke Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "goroke-silo-art",
+   "coordinates": {
+    "latitude": -36.72,
+    "longitude": 141.47
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Goroke on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Lascelles Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "lascelles-silo-art",
+   "coordinates": {
+    "latitude": -35.608852,
+    "longitude": 142.578455
+   },
+   "coordinates_source": "resolve-pin HIGH: osm tourism=viewpoint \"Lascelles silo art\"",
+   "pin_status": "ok",
+   "category": "historic",
+   "bio_draft": "Silo mural at Lascelles on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Nulawil Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "nulawil-silo-art",
+   "coordinates": {
+    "latitude": -35.8,
+    "longitude": 143.2
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Nulawil on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Serviceton Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "serviceton-silo-art",
+   "coordinates": {
+    "latitude": -36.4,
+    "longitude": 141.0
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Serviceton on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Silo Art Trail stop named by tourism board; roadside icon. Objection: remote, brief stop.). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Woomelang Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "woomelang-silo-art",
+   "coordinates": {
+    "latitude": -35.65,
+    "longitude": 142.65
+   },
+   "coordinates_source": "area hint only (resolve-pin found no matching feature); needs the pins stage",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Woomelang on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: Silo Art Trail stop named by tourism board; roadside icon. Objection: remote, brief stop.). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "Sheep Hills Silo Art",
+   "action": "standalone",
+   "destination": null,
+   "id": "sheep-hills-silo-art",
+   "coordinates": {
+    "latitude": -36.076175,
+    "longitude": 142.421128
+   },
+   "coordinates_source": "resolve-pin LOW: median of 2 geotagged Commons files",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural at Sheep Hills on the Silo Art Trail, a short roadside stop.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1+3: Wimmera Mallee tourism page names it on the Silo Art Trail; a large painted silo travellers detour to photograph (quirky roadside icon, second tier).). Silo-art trail stop; visitors drive the Silo Art Trail rather than base from a town, and it lies beyond any new destination's reach. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  },
+  {
+   "name": "St Arnaud Silo Art and Murals",
+   "action": "standalone",
+   "destination": null,
+   "id": "st-arnaud-silo-art-and-murals",
+   "coordinates": {
+    "latitude": -36.61444444,
+    "longitude": 143.25
+   },
+   "coordinates_source": "wikipedia:St Arnaud, Victoria (town point; silo not pinned)",
+   "pin_status": "provisional",
+   "category": "historic",
+   "bio_draft": "Silo mural and town murals in St Arnaud, on the Silo Art Trail.",
+   "views": 0,
+   "counted_sources": [
+    "https://www.visitgrampians.com.au/discover/north/st-arnaud",
+    "https://www.visitgrampians.com.au/discover/north/wimmera-mallee"
+   ],
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept (Rule 1: two tourism pages; silo art plus town murals trail.). Silo art and town murals at St Arnaud, 55 km from Ararat; reached on the trail. Standalone.",
+   "country": "Australia",
+   "countryCode": "AU",
+   "continent": "Oceania",
+   "timezone": "Australia/Melbourne"
+  }
+ ],
+ "existing_fixes": [],
+ "existing_fixes_note": "No Victoria destination or spot exists in src/data yet, so nothing to move or merge. Hume Dam is not in this region. \"Hamilton\" (NZ) exists as destination id hamilton: the new Victorian one is id hamilton-victoria, name needs owner confirmation.",
+ "standalone_near_destinations": [
+  {
+   "spot": "Lake Surprise",
+   "destination": "hamilton-victoria",
+   "km": 37,
+   "why_not_a_spot": "Kept place inside Budj Bim NP, no destination to hold it (park has 2). 37 km from Hamilton but reached from Macarthur/Heywood."
+  }
+ ],
+ "merged_candidates": [
+  {
+   "name": "Great Western",
+   "merged_into": "Seppelt Great Western",
+   "reason": "Rule \"A town is a spot only when the town itself is a draw\": the town is a wrapper beside its own winery attraction. Kept place is carried by the Seppelt Great Western spot (Ararat); the town is mentioned in the Ararat description."
+  }
+ ],
+ "review_list": [
+  {
+   "name": "Mount Napier State Park",
+   "verdict": "review",
+   "case": "For: volcano with summit walk and lava features, Parks Victoria managed. Against: only one board source and generic text, little verified to do."
+  },
+  {
+   "name": "St Arnaud Range National Park",
+   "verdict": "review",
+   "case": "For: lookouts and walks above St Arnaud, national park. Against: one source, no verified named sight, Parks Victoria page unresolved."
+  },
+  {
+   "name": "Brambuk",
+   "verdict": "review",
+   "case": "For: Wikivoyage Grampians calls it a must-visit Aboriginal cultural centre. Against: Parks Victoria says the cultural centre is closed for refurbishment (only information centre and shop open), targeting reopening mid-2026; reopening unconfirmed. Keep if the owner confirms it has reopened."
+  },
+  {
+   "name": "Cyril Callister Vegemite Museum",
+   "verdict": "review",
+   "case": "For: quirky museum on the Vegemite inventor, named by a tourism page. Against: one source, small, opening arrangements unverified."
+  }
+ ],
+ "notes": "New destinations (owner pre-approved): Grampians National Park (flagship, 24 spots), Ararat (7), Hamilton (Victoria) (4), Horsham (6). Colac, Budj Bim/Lower Glenelg and the Colac crater lakes are clusters of 2-3 kept places each (under four), so standalone. Little Desert and Kara Kara are thin parks: standalone. Silo-art stops outside Horsham reach are standalone. Candidates with no coordinates got an area hint marked pin_status=provisional; resolve-pin HIGH/MEDIUM points are pin_status=ok. All provisional pins go to the pins stage. The Stick Shed candidate note said \"shearing shed\": it is the Murtoa grain store, bio corrected. Mount Napier, St Arnaud Range NP, Brambuk and the Vegemite Museum are review only (not placed).",
+ "crossregion_decisions": [
+  {
+   "dropped": "Great South West Walk",
+   "reason": "Kept as portland-4 (vic-great-ocean-road): Portland is its access point."
+  },
+  {
+   "dropped": "Lake Tyrrell",
+   "reason": "Kept as standalone lake-tyrrell in vic-murray-mallee (Sea Lake, Mallee)."
+  }
+ ]
+}
