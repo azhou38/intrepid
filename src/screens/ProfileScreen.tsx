@@ -666,10 +666,10 @@ export default function ProfileScreen() {
       {/* ── Destinations: Destinations Explored, Top Destinations (by visited spots) ── */}
       {worldMode === 'destinations' && (<>
         <View style={styles.exploredSection}>
-          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} matches={shownDests.length} />}
           <View style={styles.exploredPad}>
             <View style={styles.mapShadow}>{worldMap}</View>
           </View>
+          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} matches={shownDests.length} />}
           {exploredDests.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
           ) : (
@@ -716,10 +716,10 @@ export default function ProfileScreen() {
       {/* ── Spots: Spots Explored ── */}
       {worldMode === 'spots' && (
         <View style={styles.exploredSection}>
-          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} matches={shownSpots.length} />}
           <View style={styles.exploredPad}>
             <View style={styles.mapShadow}>{worldMap}</View>
           </View>
+          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} matches={shownSpots.length} />}
           {exploredSpots.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
           ) : (
@@ -1241,7 +1241,8 @@ const styles = StyleSheet.create({
   filterCount:  { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   // The Explored photo grid: square tiles, three across.
   // The sort is plain text with an underline on the chosen one, so it reads as a lighter tier than the country pills above.
-  sortRow:   { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginBottom: 10 },
+  // Between the map and the grid or list below it.
+  sortRow:   { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginTop: 12, marginBottom: 2 },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
