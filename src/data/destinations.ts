@@ -962,6 +962,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Walk in the cooler {months}, when spring brings wildflowers. Summers reach 45 degrees.",
   },
   {
+    id: 'port-campbell-national-park', name: "Port Campbell National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Melbourne', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -38.635, longitude: 143.0 },
+    category: 'park', icon: "🌊", rank: 2,
+    tagline: "Limestone stacks, arches and gorges on the Great Ocean Road's Shipwreck Coast",
+    description: "Port Campbell National Park protects about 1,750 ha of limestone coast between Peterborough and Princetown, roughly 190 km south-west of Melbourne. The Southern Ocean has carved sheer cliffs, offshore stacks, gorges, arches and blowholes, and erosion that cut caves, then arches, left the Twelve Apostles standing. The clipper Loch Ard was wrecked here in 1878 and only two of the 54 aboard survived. Little penguins can sometimes be seen at dusk, and short-tailed shearwaters return to Mutton Bird Island between October and April.",
+    whyVisit: ["See the Twelve Apostles rise from the sea", "Walk down to cliff-backed beaches", "Look for whales and penguins on the coast", "Follow clifftop lookouts along the coast"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Twelve Apostles", "Hidden beaches", "Coastal wildlife", "Clifftop lookouts"],
+    goodToKnow: [
+      { icon: "🏨", title: "Stay in Port Campbell", detail: "There is no accommodation or camping in the park, and sleeping in car parks is prohibited. The nearest beds are in Port Campbell or Warrnambool." },
+      { icon: "🌊", title: "Don't swim here", detail: "The water is cold even in summer and the beaches are unsuitable for swimming or surfing, so enjoy them from the sand." },
+      { icon: "🐧", title: "Come at dusk for penguins", detail: "Penguins are best seen in summer just after sunset near the Twelve Apostles and London Bridge. Sightings are not guaranteed." },
+    ],
+    bestMonths: [12, 1, 2, 3],
+    bestTimeBlurb: "Visit in {months} for the warmest coastal weather and a chance of penguins after sunset.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
