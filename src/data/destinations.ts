@@ -985,7 +985,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Sandstone ranges of lookouts, waterfalls and rock art, 260 km west of Melbourne",
     description: "Grampians (Gariwerd) National Park covers about 167,000 ha of uplifted sandstone ranges at the western end of the Great Dividing Range, with Mount William the highest point at 1,167 m. Halls Gap is the only town and main access point, and the Wonderland area beside it is the most popular for day walks. The park holds about 90% of Victoria's Aboriginal rock art, and Brambuk, the cultural centre at Halls Gap, is owned and managed by Jardwadjali and Djab Wurrung people. About a third of Victoria's flora grows here, including more than 75 orchid species.",
     whyVisit: ["Walk to lookouts over the ranges", "See Aboriginal rock art in Gariwerd", "Find wildflowers and orchids in spring", "Spot kangaroos and emus at Halls Gap"],
-    whyVisitPhotos: ["View near The Fortress, Grampians.jpg", "ext-dest-grampians-national-park-why2.jpg", "Boronia spp. Grampians National Park, Victoria Australia (4872581645).jpg", ""],
+    whyVisitPhotos: ["View near The Fortress, Grampians.jpg", "ext-dest-grampians-national-park-why2.jpg", "Boronia spp. Grampians National Park, Victoria Australia (4872581645).jpg", "Eastern grey kangaroo - Halls Gap, Victoria, Australia (4843639210).jpg"],
     highlights: ["Mountain lookouts", "Aboriginal rock art", "Spring wildflowers", "Roaming wildlife"],
     goodToKnow: [
       { icon: "🔥", title: "Check track closures", detail: "The 2024-25 fires burned over 135,000 ha and damaged tracks and camps. Check Parks Victoria for open sites before you go." },
@@ -1002,7 +1002,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Little penguins, fur seals and surf beaches on an island two hours from Melbourne.",
     description: "Phillip Island lies at the mouth of Western Port, about 140 km from Melbourne, and is joined to the mainland by a 640 m bridge from San Remo to Newhaven. About 40,000 little penguins live here, and the Penguin Parade at Summerland Beach has run since the 1920s. Seal Rocks, off the Nobbies, hosts Australia's largest fur seal colony, up to about 16,000. Australia's first Grand Prix was held on the island in 1928.",
     whyVisit: ["Watch penguins come ashore at dusk", "See fur seals and wild coastline", "Meet koalas and wallabies", "Surf and walk the beaches"],
-    whyVisitPhotos: ["", "", "", "ext-dest-phillip-island-why4.jpg"],
+    whyVisitPhotos: ["ext-dest-phillip-island-why1.jpg", "", "ext-dest-phillip-island-why3.jpg", "ext-dest-phillip-island-why4.jpg"],
     highlights: ["Penguin Parade", "Seals and coast", "Native wildlife", "Surf beaches"],
     goodToKnow: [
       { icon: "🐧", title: "Penguin times vary", detail: "Penguins arrive about 5:15pm in June to 8:45pm in January. Viewing areas are outdoors, so bring warm, wind-proof layers." },
@@ -1019,7 +1019,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "The southernmost point of mainland Australia, with beaches, tracks and wombats",
     description: "Wilsons Promontory, known as the Prom, is a national park of about 50,000 hectares in South Gippsland, 224 km from Melbourne. About 130 km of walking trails lead to granite headlands, bays and the southernmost lighthouse on the mainland. Tidal River is the hub, with a store, visitor centre and campsites, and its wombats, kangaroos and emus are used to people. The promontory has been a national park in one form or another since 1898, on the traditional country of the Gunaikurnai and Boon Wurrung peoples.",
     whyVisit: ["Walk coastal tracks to the southern tip", "Watch wombats, kangaroos and emus up close", "Swim and relax on white-sand beaches", "Snorkel or dive in the marine parks"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["ext-dest-wilsons-promontory-why1.jpg", "ext-dest-wilsons-promontory-why2.jpg", "ext-dest-wilsons-promontory-why3.jpg", "ext-dest-wilsons-promontory-why4.jpg"],
     highlights: ["Coastal walking", "Wildlife encounters", "White-sand beaches", "Marine parks"],
     goodToKnow: [
       { icon: "🏕️", title: "Book camping early", detail: "Tidal River has 480 unpowered sites. Bookings are essential for Christmas, January and popular long weekends." },
@@ -1036,7 +1036,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Victoria's largest national park, with its highest peak and the Bogong High Plains",
     description: "Alpine National Park covers 6,474 km2 and is the Victorian continuation of Kosciuszko National Park. It holds Victoria's highest point, Mount Bogong at 1,986 m, along with Mount Feathertop (1,922 m), Mount Hotham (1,862 m) and the sub-alpine woodland and grassland of the Bogong High Plains. The 650 km Australian Alps Walking Track, from Walhalla to near Canberra, crosses it. The park protects threatened species including the spotted tree frog, smoky mouse and mountain pygmy possum.",
     whyVisit: ["Walk to Victoria's highest peaks", "Ski the Bogong High Plains", "Hike the Australian Alps Walking Track", "See alpine waterfalls in spring"],
-    whyVisitPhotos: ["", "Looking towards Rocky Knolls.jpg", "", ""],
+    whyVisitPhotos: ["ext-dest-alpine-national-park-why1.jpg", "Looking towards Rocky Knolls.jpg", "ext-dest-alpine-national-park-why3.jpg", "ext-dest-alpine-national-park-why4.jpg"],
     highlights: ["Alpine summits", "Snow season", "Long-distance hiking", "Spring waterfalls"],
     goodToKnow: [
       { icon: "❄️", title: "Winter means skis", detail: "In winter much of the park is snow-covered and only accessible on skis." },
@@ -1257,7 +1257,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Cool-climate wine country an hour from Melbourne, with wildlife and a rail trail.",
     description: "The Yarra Valley is a wine region about an hour's drive from Melbourne, with more than 80 wineries known for cool-climate Chardonnay, Pinot Noir and sparkling wine. The first vineyards were planted in the 1830s, making it one of Australia's oldest wine industries. Beyond the cellar doors are a wildlife sanctuary with breeding programmes for endangered species, and TarraWarra Museum of Art, with its views over the vines.",
     whyVisit: ["Taste cool-climate wines at cellar doors", "Meet native wildlife up close", "Visit galleries among the vineyards"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Rochford Wines vineyard in Yarra Valley Australia.jpg", "", ""],
     highlights: ["Cool-climate wine", "Native wildlife", "Art among vineyards"],
     goodToKnow: [
       { icon: "🚌", title: "Public transport is patchy", detail: "Train to Lilydale, then bus 685 to Yarra Glen, TarraWarra and Healesville. For several cellar doors, book a driver or tour." },
@@ -1274,7 +1274,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A goldfields city that holds the story of Australia's only armed rebellion",
     description: "Ballarat is Victoria's third-largest city, about 110 km north-west of Melbourne. Gold found at Poverty Point on 18 August 1851 turned a sheep station into a major settlement within months. Sovereign Hill, a 25-hectare open-air museum, recreates the town's first ten years, and the Eureka Flag from the 1854 stockade rebellion is held in the city. The Botanical Gardens date from 1857, and Lake Wendouree hosted the 1956 Olympic rowing and kayaking.",
     whyVisit: ["Step into a gold-rush town", "Learn the Eureka Stockade story", "Stroll the botanical gardens and lake"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-ballarat-why1.jpg", "none: only paintings/archive scans, a plaque and a people-focused flag; no photo of the Eureka story passes", ""],
     highlights: ["Gold-rush history", "Eureka story", "Gardens and lake"],
     goodToKnow: [
       { icon: "🚋", title: "Trams run weekends only", detail: "The Ballarat Tramway Museum runs historic trams beside Lake Wendouree on weekends and public and school holidays, from about 12:30 to 5pm." },
@@ -1291,7 +1291,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A gold-rush town turned spa retreat, set among Australia's mineral springs.",
     description: "Daylesford is about an hour and a half north-west of Melbourne, founded in 1852 as a gold mining town. It is one of Australia's few spa towns, with the highest concentration of natural mineral springs in the country. Bathhouses, food and wine, and artists fill the town, and Hepburn Springs lies 3 km north with its Swiss-Italian heritage. The town centre is small and walkable.",
     whyVisit: ["Soak in natural mineral springs", "Taste spring water from town taps", "Wander lakeside and garden paths"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "ext-dest-daylesford-why2.jpg", ""],
     highlights: ["Mineral springs", "Free spring taps", "Lake and gardens"],
     goodToKnow: [
       { icon: "🚗", title: "Bring a car", detail: "Only one V/Line coach stop serves town and the sights are spread out. A car or bike is needed beyond the centre, and it is steep." },
@@ -1308,7 +1308,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A gold-rush city of grand Victorian buildings, mines and Chinese heritage",
     description: "Gold found on Bendigo Creek in 1851 turned a sheep station into one of colonial Australia's largest boomtowns, drawing migrants from Europe and China. The wealth built grand Victorian public buildings, and Sacred Heart Cathedral is the third-largest cathedral in Australia. Visitors can go underground at Central Deborah Gold Mine and see Sun Loong, the world's longest imperial dragon, at the Golden Dragon Museum. Bendigo is Victoria's fourth-largest city, about 140 km north-north-west of Melbourne.",
     whyVisit: ["Go underground in a gold-rush mine", "Admire grand Victorian architecture", "See art at a major regional gallery"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-bendigo-why1.jpg", "", ""],
     highlights: ["Gold-rush mine", "Victorian architecture", "Regional art"],
     goodToKnow: [
       { icon: "🐉", title: "Book for Easter", detail: "The Easter Festival procession draws tens of thousands over the long weekend, so book beds well ahead." },
@@ -1325,7 +1325,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Fern gullies, hill villages and a heritage steam railway east of Melbourne",
     description: "The Dandenong Ranges are low mountain ranges about 35 km east of Melbourne, rising to 633 m at Mount Dandenong, topped by a TV tower. Puffing Billy, a heritage steam railway, runs 24 km on its original mountain track from Belgrave to Gembrook and is the most popular attraction in the ranges. Sheltered gullies hold temperate rainforest, tree ferns and mountain ash forest, with superb lyrebirds and kookaburras. The ranges have been a day-trip and weekend retreat for Melburnians since the 1870s.",
     whyVisit: ["Ride a steam train through the hills", "Walk fern gullies and tall forest", "Wander quiet hill villages"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "ext-dest-dandenong-ranges-why2.jpg", ""],
     highlights: ["Steam railway", "Fern gullies", "Hill villages"],
     goodToKnow: [
       { icon: "🚆", title: "Train from Melbourne", detail: "Belgrave line trains reach Belgrave in just over an hour, where Puffing Billy departs. Buses up the hills run rarely." },
@@ -1359,7 +1359,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A Great Ocean Road coastal town beside Cape Otway and the Otway rainforest",
     description: "Apollo Bay is a coastal town of 1,790 people on the Great Ocean Road, about 191 km from Melbourne. Cape Otway Lightstation, about 30 minutes away, has operated since 1848 and is the oldest surviving lighthouse on mainland Australia. In the hills behind, Maits Rest is a 30-minute rainforest boardwalk with glow worms at night, and the Otway Fly is a steel canopy walk 600 m long and up to 47 m high. The 104 km Great Ocean Walk passes through town on its way to the Twelve Apostles.",
     whyVisit: ["Watch southern right whales from shore", "Walk through Otway rainforest", "Hike the Great Ocean Walk"],
-    whyVisitPhotos: ["", "", "ext-dest-apollo-bay-why3.jpg"],
+    whyVisitPhotos: ["", "ext-dest-apollo-bay-why2.jpg", "ext-dest-apollo-bay-why3.jpg"],
     highlights: ["Whale watching", "Rainforest walks", "Coastal hiking"],
     goodToKnow: [
       { icon: "🚗", title: "Colac route is faster", detail: "Driving via Colac is much quicker than the Great Ocean Road, so use the coast road when you have time for the scenery." },
@@ -1376,7 +1376,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Great Ocean Road beach town with a 3 km main beach and Otway waterfalls nearby",
     description: "Lorne is a Great Ocean Road town 138 km, about two hours, from Melbourne, which began as a logging town. Its main beach runs about 3 km for bathing and surfing, and a pier is used for fishing. Cafes and galleries line Mountjoy Parade, and the town borders Great Otway National Park. The Lorne to Apollo Bay section of the road was finished in November 1932.",
     whyVisit: ["Swim and surf off a long beach", "Chase waterfalls through Otway fern gullies", "Drive the Great Ocean Road coast"],
-    whyVisitPhotos: ["ext-dest-lorne-why1.jpg", "", ""],
+    whyVisitPhotos: ["ext-dest-lorne-why1.jpg", "Lorne VIC 3232, Australia - panoramio.jpg", "ext-dest-lorne-why3.jpg"],
     highlights: ["Beach and surf", "Otway waterfalls", "Coastal drive"],
     goodToKnow: [
       { icon: "🎉", title: "New Year weekend crowds", detail: "Over 20,000 people visit on the first weekend of January for the Pier to Pub swim, so book ahead and expect crowds." },
@@ -1427,7 +1427,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "An Ovens Valley town known for autumn colour, on the edge of the Victorian Alps.",
     description: "Bright is a town of about 2,600 people at 319 m, at the south-eastern end of the Ovens Valley in north-eastern Victoria. Tourism is its main industry, built around the autumn colours of European trees planted in the area. It is a gateway to alpine scenery near Mount Buffalo National Park, Mount Feathertop and Mount Hotham. The old rail line is now a rail trail to Wangaratta, and many paragliding launch sites lie close by.",
     whyVisit: ["See autumn colours along the river", "Cycle rail trails and riverside paths", "Paraglide from nearby launch sites"],
-    whyVisitPhotos: ["", "ext-dest-bright-why2.jpg", ""],
+    whyVisitPhotos: ["ext-dest-bright-why1.jpg", "ext-dest-bright-why2.jpg", ""],
     highlights: ["Autumn colour", "Rail trails", "Paragliding"],
     goodToKnow: [
       { icon: "🍂", title: "Autumn is busiest", detail: "Autumn colours and the Bright Autumn Festival draw crowds, and many houses are holiday rentals. Book accommodation well ahead." },
@@ -1444,7 +1444,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Gold-rush streets, Ned Kelly history and a cool-climate town on a rail trail",
     description: "Beechworth was a gold-producing region and centre of government between 1852 and 1857, and its well-preserved historic precinct includes the Court House and Burke Museum. Ned Kelly spent time in HM Prison Beechworth, and courthouse displays tell the story. The town sits at 560 m, about 284 km from Melbourne, and is one end of the Murray to the Mountains Rail Trail. Waterfalls, Spring Creek Gorge, the Beechworth Bakery, a brewery and wineries round out a stay.",
     whyVisit: ["Walk gold-rush streets and heritage buildings", "Follow Ned Kelly's trail", "Cycle a paved rail trail"],
-    whyVisitPhotos: ["", "Historic Courthouse, Beechworth Victoria.jpg", ""],
+    whyVisitPhotos: ["Beechworth (2).JPG", "Historic Courthouse, Beechworth Victoria.jpg", "ext-dest-beechworth-why3.jpg"],
     highlights: ["Gold-rush heritage", "Ned Kelly history", "Rail trail"],
     goodToKnow: [
       { icon: "🚗", title: "Bring your own car", detail: "There is no car hire in Beechworth, so arrive with a vehicle or plan to walk the compact historic centre." },
@@ -1461,7 +1461,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A Murray River port where paddle steamers still sail from the historic wharf",
     description: "Echuca sits on the Murray River, with the New South Wales town of Moama opposite, and has 15,056 people. Its port is home to the largest paddle steamer fleet in the world, including PS Adelaide (1866), the world's oldest operating wooden-hulled paddle steamer. PS Pevensey (1911) and PS Alexander Arbuthnot (1923) sail commercially from the port daily. Echuca is about 2.5 hours' drive from Melbourne.",
     whyVisit: ["Cruise the Murray on a paddle steamer", "Explore the historic river port", "Walk through Murray River forest"],
-    whyVisitPhotos: ["PS Emmylou (Echuca Wet Dock, 2021).png", "EchucaWharf.JPG", ""],
+    whyVisitPhotos: ["PS Emmylou (Echuca Wet Dock, 2021).png", "EchucaWharf.JPG", "ext-dest-echuca-why3.jpg"],
     highlights: ["Paddle steamers", "River port", "River forests"],
     goodToKnow: [
       { icon: "🚆", title: "Sit in the front carriages", detail: "On the train from Melbourne, sit in the front 3 cars, as the rear 3 decouple at Bendigo." },
@@ -1800,7 +1800,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A port city on Corio Bay and the gateway to the Bellarine and Great Ocean Road",
     description: "Geelong is Victoria's second-largest city, home to 282,809 people in 2023, on Corio Bay about 75 km south-west of Melbourne. Its waterfront is a working maritime area with cafes, an antique carousel and botanical gardens. The National Wool Museum on Moorabool Street takes about 90 minutes and holds a tourist information office. You Yangs Regional Park, 22 km north, has a 3.2 km walk to Flinders Peak (348 m).",
     whyVisit: ["Stroll the waterfront and carousel", "Explore wool and maritime history", "Walk up to wide hill views"],
-    whyVisitPhotos: ["", "", "ext-dest-geelong-why3.jpg"],
+    whyVisitPhotos: ["ext-dest-geelong-why1.jpg", "", "ext-dest-geelong-why3.jpg"],
     highlights: ["Working waterfront", "Wool and maritime", "Hilltop views"],
     goodToKnow: [
       { icon: "✈️", title: "Avalon Airport is close", detail: "Avalon Airport, a second Melbourne-area airport, is about 20 minutes by road from Geelong, with a shuttle to Geelong and South Geelong stations." },
@@ -1832,7 +1832,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Murray River city of paddle steamers, grapes and citrus groves in the Sunraysia",
     description: "Mildura is a regional city on the Victorian bank of the Murray River and the largest settlement in Sunraysia. George Chaffey founded the irrigation settlement in 1887, and the area now grows about 80% of Victoria's grapes and more than 70% of Australia's dried vine fruits, plus citrus, avocados and almonds. Paddle steamers pass through the lock and weir at Lock 11, and the Murray can be cruised on the Paddlesteamer Melbourne or a chartered houseboat. Mungo National Park is about two hours away for a day trip.",
     whyVisit: ["Cruise the Murray by paddlesteamer", "Taste fresh Sunraysia produce", "Swim and walk along the river"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "ext-dest-mildura-why2.jpg", ""],
     highlights: ["Paddlesteamer cruises", "Fresh produce", "River beaches"],
     goodToKnow: [
       { icon: "🍊", title: "Fruit fly zone", detail: "Don't bring fruit or vegetables into Mildura's fruit-fly-free zone, or take them out across the zone or interstate borders. Fines can reach $100,000." },
@@ -1848,7 +1848,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "South-west Victoria's largest town, with shipwreck history and a volcano reserve",
     description: "Warrnambool is the largest town in south-west Victoria, about 260 km west of Melbourne, and is sometimes treated as the end of the Great Ocean Road. Flagstaff Hill Maritime Museum has a replica maritime village and a night show telling the story of the Loch Ard wreck. Tower Hill, 14 km west, is an extinct volcano that erupted at least 34,000 years ago and is now a wildlife reserve. A 37 km rail trail links the town with Port Fairy via Koroit.",
     whyVisit: ["Watch southern right whales from shore", "Learn shipwreck history at a maritime village", "Walk the rim of an extinct volcano"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-warrnambool-why1.jpg", "", "ext-dest-warrnambool-why3.jpg"],
     highlights: ["Shore whale watching", "Maritime history", "Volcano walks"],
     goodToKnow: [
       { icon: "🐋", title: "Whale season June-September", detail: "Southern right whales visit Logans Beach from June to September. Check the visitor centre for confirmed sightings." },
@@ -1880,7 +1880,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Prom Country's wild coast, Strzelecki rainforest and coal-mining heritage",
     description: "South Gippsland, also known as Prom Country, takes in the southernmost point of the Australian mainland. Its draws range from coastal parks and beaches to mountain rainforest and maritime and coal-mining heritage. The State Coal Mine at Wonthaggi worked from 1910 to 1968 and is now a Parks Victoria heritage area with a cafe. The Prom Country Information Centre at Korumburra is about 90 minutes' drive from Melbourne.",
     whyVisit: ["Walk wild coastal parks and beaches", "Explore coal-mining heritage", "Cycle the Great Southern Rail Trail"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-south-gippsland-why1.jpg", "ext-dest-south-gippsland-why2.jpg", "ext-dest-south-gippsland-why3.jpg"],
     highlights: ["Coastal parks", "Mining heritage", "Rail trail"],
     goodToKnow: [
       { icon: "🚗", title: "Drive, don't rely on buses", detail: "V/Line's daily bus runs only from Melbourne to Yarram, so reaching the coastal parks and towns is realistic only by car." },
@@ -1912,7 +1912,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A high-country gateway to Mount Buller skiing, lakes and mountain trails",
     description: "Mansfield is a country town about two hours' drive north-east of Melbourne and the support town for Mount Buller ski resort. Mount Buller has 22 lifts, the highest lift capacity in Victoria, while Mount Stirling is a cross-country and backcountry ski area. In summer, hiking and mountain biking are popular on both mountains, and Lake Eildon is the only inland waterway in Victoria where houseboats are permitted. Mansfield is also on the Ned Kelly Trail.",
     whyVisit: ["Ski and snowboard in winter", "Hike and bike the high country", "Cruise and waterski on big lakes"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-mansfield-why1.jpg", "", ""],
     highlights: ["Winter snow", "High-country trails", "Lake days"],
     goodToKnow: [
       { icon: "⛓️", title: "Carry wheel chains", detail: "Wheel chains must be carried on the road up to Mount Buller throughout the winter season." },
@@ -1928,7 +1928,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Mountain ash forest, scenic drives and Melbourne's nearest winter snowplay",
     description: "Yarra Ranges National Park, created in December 1995, covers 76,003 ha of wet mountain ash forest and cool temperate rainforest in the Great Dividing Range. Mountain ash is the world's tallest flowering tree. Mount Donna Buang (1,245 m) has a 21 m lookout tower with views over Melbourne, the Yarra Valley and the Dandenong and Cathedral Ranges, and near Warburton the Rainforest Gallery is a viewing platform 15 m above the forest floor. About 84% of the park is a water supply catchment closed to the public.",
     whyVisit: ["Walk among the world's tallest flowering trees", "Drive winding mountain ash forest roads", "See Melbourne's nearest snow in winter"],
-    whyVisitPhotos: ["Yarra Ranges National Park (34069164673).jpg", "", "ext-dest-yarra-ranges-national-park-why3.jpg"],
+    whyVisitPhotos: ["Yarra Ranges National Park (34069164673).jpg", "The Beeches Rainforest Walk 01 Pengo.jpg", "ext-dest-yarra-ranges-national-park-why3.jpg"],
     highlights: ["Giant ash forest", "Forest drives", "Winter snowplay"],
     goodToKnow: [
       { icon: "🚫", title: "Most of the park is closed", detail: "Most of the park protects Melbourne's drinking water and is closed to visitors. Stay on signed tracks and roads." },
@@ -3458,7 +3458,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Regional Wimmera River city and gateway to the Silo Art Trail and Mount Arapiles",
     description: "Horsham is a regional city on a bend in the Wimmera River, about 300 km north-west of Melbourne, and the most populous city in the Wimmera. It is the gateway to the Silo Art Trail and the north-western side of the Grampians National Park. Mount Arapiles, about 30 minutes' drive west, rises about 140 m above the plains and is one of Australia's premier rock-climbing sites. In town, the Regional Art Gallery, the Botanic Gardens and the riverside fill a stopover on the Western Highway.",
     whyVisit: ["Go rock climbing on the Wimmera plains", "Follow the Silo Art Trail"],
-    whyVisitPhotos: ["ext-dest-horsham-why1.jpg", ""],
+    whyVisitPhotos: ["ext-dest-horsham-why1.jpg", "ext-dest-horsham-why2.jpg"],
     highlights: ["Rock climbing", "Silo art"],
     goodToKnow: [
       { icon: "💧", title: "Bring water to Arapiles", detail: "Tank water at the Mount Arapiles campground is not for drinking, so bring your own and plenty of it." },
@@ -3474,7 +3474,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A western Victoria wool town with a Guilfoyle garden and a waterfall nearby.",
     description: "Hamilton is a town in western Victoria on the Henty Highway, and calls itself the Wool Capital of the World. The surrounding shire produces as much as 15% of Australia's wool clip. The Botanic Gardens were designed in 1881 by William Guilfoyle, and Wannon Falls drops 30 m over basalt about 19 km west. Grampians National Park is a short drive away.",
     whyVisit: ["Learn Western District wool history", "Stroll a Guilfoyle-designed garden"],
-    whyVisitPhotos: ["", ""],
+    whyVisitPhotos: ["", "ext-dest-hamilton-victoria-why2.jpg"],
     highlights: ["Wool heritage", "Botanic gardens"],
     goodToKnow: [
       { icon: "💧", title: "Falls flow in winter", detail: "Wannon Falls is best in the winter wet and can shrink to a trickle by the end of summer." },
