@@ -3,12 +3,12 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, Modal,
 } from 'react-native';
 import { Pencil, ChevronDown, Check, LayoutGrid, List as ListIcon } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedProps, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, withSpring, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-// Top Countries' tab swipe, and the chips' sideways scroller (gesture-handler's, so the two cooperate).
-import { Gesture, GestureDetector, ScrollView as GHScrollView } from 'react-native-gesture-handler';
+// The chips' sideways scroller (gesture-handler's, so it cooperates with the page's own scroll).
+import { ScrollView as GHScrollView } from 'react-native-gesture-handler';
 import { useStore, useStats, useVisitIndex } from '../store';
 import { DESTINATIONS } from '../data/destinations';
 import { SPOTS, spotCountry, spotCountryCode, spotDestination, spotPhotoTitle } from '../data/spots';
@@ -21,7 +21,7 @@ import CircleFlag from '../components/CircleFlag';
 import WorldMapModal from '../components/WorldMapModal';
 import EditProfileSheet, { ProfileAvatar } from '../components/EditProfileSheet';
 import EntityPhoto from '../components/Map/EntityPhoto';
-import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
+import { thumbCache, photoCache, getOrFetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
 import { getCountryBounds } from '../utils/countryBounds';
 import { ALL_COUNTRIES } from '../data/countries';
@@ -55,6 +55,8 @@ const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP 
 // A spot pin on the card's map, in its map units: the app's teardrop (a round head, the tail's edges tangent to it) with
 // its tip on the place. PIN_TIP is the tip's distance below the head's centre.
 const PIN_R = 1.5, PIN_TIP = 3.4;
+// How much larger the picked spot's pin is drawn than the others.
+const PICK_PIN_SCALE = 2;
 const PIN_TY = (PIN_R * PIN_R) / PIN_TIP, PIN_TX = PIN_R * Math.sqrt(1 - (PIN_R * PIN_R) / (PIN_TIP * PIN_TIP));
 const pinPath = (x: number, y: number) => {
   const cy = y - PIN_TIP;
@@ -89,7 +91,7 @@ export default function ProfileScreen() {
   const visitedSpots = useMemo(() => SPOTS.filter(sp => visitIndex.isSpotVisited(sp.id)), [visitIndex]);
 
   // My World shows one level at a time (the counts at its top choose it): the visited countries filled in, or a dot per
-  // visited destination or spot. Top Countries follows it: ranked by visited spots on Spots, by destinations otherwise.
+  // visited destination or spot. Under it, every level lists what it has explored the same way: a photo grid or a ranked list.
   const [worldMode, setWorldMode] = useState<WorldMode>('countries');
   // The selector's sliding pill: levelSV is the selected item's index (animated between them), selectorWSV the row's inner
   // width (three equal items and two 1 pt dividers).
@@ -194,19 +196,6 @@ export default function ProfileScreen() {
   useEffect(() => {
     levelSV.value = withTiming(WORLD_MODES.findIndex(m => m.mode === worldMode), { duration: 280, easing: Easing.out(Easing.cubic) });
   }, [worldMode]);
-  // Top Countries (on Countries): ranked by visited destinations or visited spots, its own small toggle.
-  const [topRank, setTopRank] = useState<'destinations' | 'spots'>('destinations');
-  const topCountries = useMemo(() => {
-    const by = new Map<string, { country: string; code: string; count: number }>();
-    const add = (code: string | undefined, country: string | undefined) => {
-      if (!code || !country) return;
-      const row = by.get(code) ?? { country, code, count: 0 };
-      row.count += 1; by.set(code, row);
-    };
-    if (topRank === 'destinations') for (const d of visitedDests) add(d.countryCode, d.country);
-    else for (const sp of visitedSpots) add(spotCountryCode(sp), spotCountry(sp));
-    return [...by.values()].sort((x, y) => y.count - x.count || x.country.localeCompare(y.country)).slice(0, 8);
-  }, [topRank, visitedDests, visitedSpots]);
   // The Explored lists for destinations and spots, alphabetical.
   // How the Explored grids are ordered: A–Z, most recently visited first, or best rated first. A spot's rating is its own;
   // a destination has none of its own, so it takes the average of its visited spots' ratings. Places with no date or rating
@@ -253,10 +242,11 @@ export default function ProfileScreen() {
     const destSpots = (id: string) => sum.get(id)?.c ?? 0;
     return { spotDate, destDate, spotVisit, destVisit, destRating, destSpots };
   }, [savedSpots, savedDests, visitedSpots]);
-  const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, spots?: (id: string) => number) =>
+  const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, spots?: (id: string) => number, dests?: (id: string) => number) =>
     [...list].sort((x, y) => {
       if (exploredSort === 'date') { const c = date(y.id).localeCompare(date(x.id)); if (c) return c; }
       else if (exploredSort === 'spots' && spots) { const c = spots(y.id) - spots(x.id); if (c) return c; }
+      else if (exploredSort === 'dests' && dests) { const c = dests(y.id) - dests(x.id); if (c) return c; }
       else if (exploredSort === 'rating') { const c = rating(y.id) - rating(x.id); if (c) return c; }
       return x.name.localeCompare(y.name);
     });
@@ -312,7 +302,6 @@ export default function ProfileScreen() {
     (!spotCountryF || spotCountryCode(sp) === spotCountryF) &&
     (!spotDestF || (spotDestination(sp)?.id ?? SPOT_NO_DEST) === spotDestF)),
   [exploredSpots, spotCountryF, spotDestF]);
-  const maxCountryCount = topCountries[0]?.count ?? 1;
 
   // The map opens full screen to explore (WorldMapModal), on the same level; its tap card counts per country.
   const [mapOpen, setMapOpen] = useState(false);
@@ -328,24 +317,36 @@ export default function ProfileScreen() {
     for (const sp of visitedSpots) if (sp.destinationId) m.set(sp.destinationId, (m.get(sp.destinationId) ?? 0) + 1);
     return m;
   }, [visitedSpots]);
+  // Countries Explored, as Destinations and Spots: every visited country with its visited destinations and spots, its most
+  // recent visit (the latest of its destinations' and spots'), and the average rating of its rated spots.
+  const countryKeys = useMemo(() => {
+    const visit = new Map<string, { start: string; end: string }>();
+    const later = (code: string | null | undefined, v?: { start: string; end: string }) => {
+      if (!code || !v) return;
+      const cur = visit.get(code);
+      if (!cur || v.end > cur.end) visit.set(code, v);
+    };
+    for (const d of visitedDests) later(d.countryCode, sortKeys.destVisit.get(d.id));
+    const rate = new Map<string, { t: number; n: number }>();
+    for (const sp of visitedSpots) {
+      const code = spotCountryCode(sp);
+      later(code, sortKeys.spotVisit.get(sp.id));
+      const r = savedSpots[sp.id]?.rating;
+      if (code && r) { const a = rate.get(code) ?? { t: 0, n: 0 }; a.t += r; a.n += 1; rate.set(code, a); }
+    }
+    const rating = (code: string) => { const a = rate.get(code); return a && a.n ? a.t / a.n : 0; };
+    return { visit, rating };
+  }, [visitedDests, visitedSpots, sortKeys, savedSpots]);
+  const exploredCountries = useMemo(
+    () => sortBy(
+      stats.visitedCountryCodes.map(code => ({ id: code, name: COUNTRY_NAME.get(code) ?? code })),
+      code => countryKeys.visit.get(code)?.end ?? '', countryKeys.rating,
+      code => countsByCountry.get(code)?.spots ?? 0, code => countsByCountry.get(code)?.dests ?? 0),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [stats.visitedCountryCodes, countryKeys, countsByCountry, exploredSort]);
   const modalSpots = useMemo(
     () => visitedSpots.map(sp => ({ spot: sp, country: spotCountry(sp) ?? '', countryCode: spotCountryCode(sp) })),
     [visitedSpots]);
-
-  // Countries Explored: tapping a flag shows its country's name in a small bubble above it for a moment, and fills that country
-  // orange on the world map for as long.
-  const [flagTip, setFlagTip] = useState<string | null>(null);
-  // A tap anywhere else on the screen (or a scroll) closes the bubble; a tap on a flag is that flag's own (see onPress).
-  const flagTapRef = useRef(false);
-  const onScreenTouchEnd = () => setTimeout(() => {
-    if (!flagTapRef.current) setFlagTip(null);
-    flagTapRef.current = false;
-  }, 0);
-  useEffect(() => {
-    if (!flagTip) return;
-    const t = setTimeout(() => setFlagTip(null), 2500);
-    return () => clearTimeout(t);
-  }, [flagTip]);
 
   const visitedCountrySet = visitIndex.visitedCountryCodes;
   const worldDots = useMemo(() => {
@@ -367,38 +368,13 @@ export default function ProfileScreen() {
   const selectMode = (mode: WorldMode) => {
     if (mode === worldMode) return;
     setPickedId(null);
-    if (mode === 'spots' && exploredSort === 'spots') setExploredSort('name');
+    if (!SORT_OPTIONS[mode].includes(exploredSort)) setExploredSort('name');
     Haptics.selectionAsync();
     // The sections below swap with an animation, so the change is seen to follow the selection.
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setWorldMode(mode);
   };
-  // Top Countries' own tabs (ranked by destinations or by spots) can be swiped inside its box: left to Spots, right to
-  // Destinations. It only starts once the finger has gone 25 pt sideways, and fails on a vertical move first, so
-  // scrolling the page is unaffected. Swiping elsewhere on the page does nothing.
-  const pickTopRank = (m: 'destinations' | 'spots') => {
-    if (m === topRank) return;
-    Haptics.selectionAsync();
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    setTopRank(m);
-  };
-  const topRankRef = useRef(pickTopRank);
-  topRankRef.current = pickTopRank;
-  const callTopRank = useRef((left: boolean) => topRankRef.current(left ? 'spots' : 'destinations')).current;
-  const topSwipeXSV = useSharedValue(0);
-  const topSwipe = useMemo(() => Gesture.Pan()
-    .activeOffsetX([-25, 25])
-    .failOffsetY([-12, 12])
-    .onUpdate(e => { topSwipeXSV.value = e.translationX * 0.2; })
-    .onEnd(e => {
-      if (Math.abs(e.translationX) > 60 || Math.abs(e.velocityX) > 600) runOnJS(callTopRank)(e.translationX < 0);
-    })
-    .onFinalize(() => { topSwipeXSV.value = withTiming(0, { duration: 220, easing: Easing.out(Easing.cubic) }); }),
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  []);
-  const topSwipeStyle = useAnimatedStyle(() => ({ transform: [{ translateX: topSwipeXSV.value }] }));
-
-  // The world map: its own card under the Countries selector; under Destinations and Spots it sits inside the Explored card.
+  // The world map, inside the Explored card of every level.
   // With a country picked in the Explored dropdown, the map frames that country: the country's box (and the places visited
   // there), padded, kept in the map's own shape and never tighter than about 25 degrees across (so one place is not a pixel of land).
   const pickedCountry = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
@@ -441,14 +417,14 @@ export default function ProfileScreen() {
           <Path key={c} d={d} fill="#D9DEE5" stroke="white" strokeWidth={(0.9 * mapView.w) / w} strokeLinejoin="round" />
         )) : (WORLD_COUNTRIES as { c: string; d: string }[]).map(({ c, d }, k) => (
           <Path key={k} d={d}
-            fill={worldMode === 'countries' && c === flagTip ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
+            fill={worldMode === 'countries' && c === pickedId ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
             stroke="white" strokeWidth={0.15} />
         ))}
         {!zoomed && (
           <G transform="translate(360 0)">
             {(WORLD_COUNTRIES as { c: string; d: string }[]).filter(e => WRAP_COUNTRIES.has(e.c)).map(({ c, d }, k) => (
               <Path key={k} d={d}
-                fill={worldMode === 'countries' && c === flagTip ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
+                fill={worldMode === 'countries' && c === pickedId ? PICK_COLOR : worldMode === 'countries' && visitedCountrySet.has(c) ? '#10B981' : '#D9DEE5'}
                 stroke="white" strokeWidth={0.15} />
             ))}
           </G>
@@ -456,14 +432,18 @@ export default function ProfileScreen() {
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
             read differently from destinations, as on the full-screen map. */}
         {/* The picked tile's place is drawn last (on top), in orange and a little larger. */}
+        {/* The picked place pops up in front of its neighbours (PickedDot, PickedPin): growing from its usual size to its
+            picked size, with a little overshoot, so moving between two places a few pixels apart still reads as a change. */}
         {worldMode === 'destinations' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => (
-          <Circle key={p.id} cx={p.x} cy={p.y} r={(p.id === pickedId ? 3.2 : 2) * dotScale} fill={p.id === pickedId ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.5 * dotScale} />
+          p.id === pickedId
+            ? <PickedDot key={p.id} cx={p.x} cy={p.y} scale={dotScale} />
+            : <Circle key={p.id} cx={p.x} cy={p.y} r={2 * dotScale} fill="#10B981" stroke="white" strokeWidth={0.5 * dotScale} />
         ))}
         {worldMode === 'spots' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => {
-          const on = p.id === pickedId;
+          if (p.id === pickedId) return <PickedPin key={p.id} x={p.x} y={p.y} scale={dotScale} />;
           return (
-            <G key={p.id} transform={`translate(${p.x} ${p.y}) scale(${dotScale * (on ? 1.6 : 1)}) translate(${-p.x} ${-p.y})`}>
-              <Path d={pinPath(p.x, p.y)} fill={on ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
+            <G key={p.id} transform={`translate(${p.x} ${p.y}) scale(${dotScale}) translate(${-p.x} ${-p.y})`}>
+              <Path d={pinPath(p.x, p.y)} fill="#10B981" stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
               <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
             </G>
           );
@@ -475,7 +455,7 @@ export default function ProfileScreen() {
     </View>
     </Pressable>
   );
-  const worldMap = worldMapAt(worldMode === 'countries' ? WORLD_W : SCREEN_W - 2 * EXPLORED_PAD);
+  const worldMap = worldMapAt(SCREEN_W - 2 * EXPLORED_PAD);
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
     {/* ── Profile header ──────────────────────────────────────────── */}
@@ -504,8 +484,6 @@ export default function ProfileScreen() {
     <Animated.ScrollView
       ref={pageRef}
       style={{ flex: 1 }}
-      onTouchEnd={onScreenTouchEnd}
-      onScrollBeginDrag={() => setFlagTip(null)}
       onLayout={e => setPageH(e.nativeEvent.layout.height)}
       onScroll={onPageScroll}
       scrollEventThrottle={16}
@@ -599,76 +577,48 @@ export default function ProfileScreen() {
       </View>
       <View style={{ height: pinned && selectorH > 0 ? Math.max(0, selectorH - (COMPACT_H + TABS_H)) : 0 }} pointerEvents="none" />
 
-      {/* ── The map, its own card under the selector ── */}
-      {worldMode === 'countries' && <View style={styles.mapCard}>{worldMap}</View>}
-
-      {/* The sections below follow the level chosen in the selector, each a card of its own. */}
-      {worldMode === 'countries' && (<>
-      {/* ── Countries explored ──────────────────────────────────────── */}
-      <View style={styles.panelSection}>
-        <View style={styles.cardHeaderRow}>
-          <Text style={styles.cardTitle}>Countries Explored</Text>
-          <Text style={styles.cardBadge}>{stats.totalCountries}</Text>
+      {/* ── Countries: Countries Explored, as Destinations and Spots (a photo grid or a ranked list, sortable) ── */}
+      {worldMode === 'countries' && (
+        <View style={styles.exploredSection}>
+          <View style={styles.exploredPad}>
+            <View style={styles.mapShadow}>{worldMap}</View>
+          </View>
+          {exploredCountries.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} options={SORT_OPTIONS.countries} countries={[]} total={exploredCountries.length} country={null} onCountry={() => {}} matches={exploredCountries.length} />}
+          {exploredCountries.length === 0 ? (
+            <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No countries visited yet.</Text>
+          ) : exploredView === 'list' ? (
+            <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={exploredCountries.map(c => {
+              const n = countsByCountry.get(c.id);
+              return {
+                // The country's flag beside its name, and its photo in front.
+                key: c.id, name: c.name, countryCode: c.id, sub: '',
+                dests: n?.dests ?? 0, spots: n?.spots ?? 0, rating: countryKeys.rating(c.id),
+                date: visitLabel(countryKeys.visit.get(c.id)), dateKey: countryKeys.visit.get(c.id)?.end ?? '',
+                photo: <CountryPhoto code={c.id} name={c.name} />,
+              };
+            })} />
+          ) : (
+            /* A photo grid: one tile per country, its name and (by the sort) its count, date or rating over its photo. */
+            <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={exploredCountries.map((c, k) => {
+              const n = countsByCountry.get(c.id);
+              const count = (code: string) => (exploredSort === 'dests' ? countsByCountry.get(code)?.dests : countsByCountry.get(code)?.spots) ?? 0;
+              const v = count(c.id);
+              // Sorted by a count, the top three ranks (with any) wear a rank badge, every tile that ties for one.
+              let rk = k + 1;
+              while (rk > 1 && count(exploredCountries[rk - 2].id) === v) rk -= 1;
+              const counted = exploredSort === 'dests' ? n?.dests ?? 0 : exploredSort === 'spots' ? n?.spots ?? 0 : 0;
+              return {
+                key: c.id, name: c.name, countryCode: c.id,
+                sub: tileSub(exploredSort, visitLabel(countryKeys.visit.get(c.id)), countryKeys.rating(c.id),
+                  exploredSort === 'dests' && counted ? `${counted} destination${counted === 1 ? '' : 's'}`
+                  : exploredSort === 'spots' && counted ? `${counted} spot${counted === 1 ? '' : 's'}` : ''),
+                rank: (exploredSort === 'dests' || exploredSort === 'spots') && v > 0 && rk <= 3 ? rk : undefined,
+                photo: <CountryPhoto code={c.id} name={c.name} />,
+              };
+            })} />
+          )}
         </View>
-        {stats.visitedCountryCodes.length > 0 && (
-          <View style={styles.flagGrid}>
-            {stats.visitedCountryCodes.map(code => (
-              <Pressable
-                key={code}
-                style={[styles.flagItem, flagTip === code && { zIndex: 10 }]}
-                onPress={() => { flagTapRef.current = true; Haptics.selectionAsync(); setFlagTip(t => (t === code ? null : code)); }}
-                hitSlop={3}
-              >
-                <CircleFlag countryCode={code} size={24} ring ringWidth={1.5} style={styles.flagRing} />
-                {flagTip === code && (
-                  <View pointerEvents="none" style={styles.flagTipWrap}>
-                    <View style={styles.flagTip}>
-                      <Text style={styles.flagTipTxt} numberOfLines={1}>{COUNTRY_NAME.get(code) ?? code}</Text>
-                    </View>
-                    <View style={styles.flagTipArrow} />
-                  </View>
-                )}
-              </Pressable>
-            ))}
-          </View>
-        )}
-      </View>
-      {/* ── Top Countries ───────────────────────────────────────────── */}
-      {(visitedDests.length > 0 || visitedSpots.length > 0) && (
-        <GestureDetector gesture={topSwipe}>
-        <Animated.View style={[styles.panelSection, topSwipeStyle]} collapsable={false}>
-          <View style={styles.cardHeaderRow}>
-            <Text style={[styles.cardTitle, { marginBottom: 0 }]}>Top Countries</Text>
-            {/* Rank by visited destinations or by visited spots. */}
-            <View style={styles.topToggle}>
-              {(['destinations', 'spots'] as const).map(m => {
-                const on = topRank === m;
-                return (
-                  <Pressable key={m} style={[styles.topToggleBtn, on && styles.topToggleBtnOn]} hitSlop={4}
-                    onPress={() => pickTopRank(m)}>
-                    <Text style={[styles.topToggleTxt, on && styles.topToggleTxtOn]}>{m === 'destinations' ? 'Destinations' : 'Spots'}</Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-          </View>
-          {topCountries.length === 0 && <Text style={styles.topEmpty}>No {topRank} visited yet.</Text>}
-          {topCountries.map(({ country, count, code }) => (
-            <View key={code} style={styles.countryRow}>
-              <CircleFlag countryCode={code} size={22} ring ringWidth={1.5} style={styles.flagRing} />
-              <Text style={styles.countryName} numberOfLines={1}>{country}</Text>
-              <View style={styles.countryBarTrack}>
-                <View style={[styles.countryBarFill, { width: `${(count / maxCountryCount) * 100}%` }]} />
-              </View>
-              <Text style={styles.countryCount}>
-                {count}
-              </Text>
-            </View>
-          ))}
-        </Animated.View>
-        </GestureDetector>
       )}
-      </>)}
 
       {/* ── Destinations: Destinations Explored, Top Destinations (by visited spots) ── */}
       {worldMode === 'destinations' && (<>
@@ -676,7 +626,7 @@ export default function ProfileScreen() {
           <View style={styles.exploredPad}>
             <View style={styles.mapShadow}>{worldMap}</View>
           </View>
-          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} matches={shownDests.length} />}
+          {exploredDests.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} options={SORT_OPTIONS.destinations} countries={destCountries} total={exploredDests.length} country={destCountry} onCountry={setDestCountry} matches={shownDests.length} />}
           {exploredDests.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No destinations visited yet.</Text>
           ) : (
@@ -741,7 +691,7 @@ export default function ProfileScreen() {
           <View style={styles.exploredPad}>
             <View style={styles.mapShadow}>{worldMap}</View>
           </View>
-          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} withSpots={false} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} matches={shownSpots.length} />}
+          {exploredSpots.length > 0 && <SortRow sort={exploredSort} onSort={setExploredSort} view={exploredView} onView={setExploredView} options={SORT_OPTIONS.spots} countries={spotCountries} total={exploredSpots.length} country={spotCountryF} onCountry={setSpotCountryF} dests={spotDests} dest={spotDestF} onDest={setSpotDestF} matches={shownSpots.length} />}
           {exploredSpots.length === 0 ? (
             <Text style={[styles.topEmpty, styles.exploredPad, { marginTop: 12 }]}>No spots visited yet.</Text>
           ) : (
@@ -900,6 +850,34 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
   );
 }
 
+// The picked place, popping up in front of its neighbours: it grows from its usual size to its picked size with a little
+// overshoot (remounted, by its key, for every pick). A spot's pin grows about its tip, so it stays on its place.
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+const AnimatedPath = Animated.createAnimatedComponent(Path);
+const PICK_POP = { damping: 9, stiffness: 260, mass: 0.6 };
+function PickedDot({ cx, cy, scale }: { cx: number; cy: number; scale: number }) {
+  const k = useSharedValue(2 * scale);
+  useEffect(() => { k.value = withSpring(3.2 * scale, PICK_POP); }, [scale]);
+  const props = useAnimatedProps(() => ({ r: k.value }));
+  return <AnimatedCircle cx={cx} cy={cy} fill={PICK_COLOR} stroke="white" strokeWidth={0.5 * scale} animatedProps={props} />;
+}
+function PickedPin({ x, y, scale }: { x: number; y: number; scale: number }) {
+  const k = useSharedValue(scale);
+  useEffect(() => { k.value = withSpring(scale * PICK_PIN_SCALE, PICK_POP); }, [scale]);
+  // pinPath at scale k about the tip, built on the UI thread each frame.
+  const pinProps = useAnimatedProps(() => {
+    const r = PIN_R * k.value, tx = PIN_TX * k.value, ty = PIN_TY * k.value, cy = y - PIN_TIP * k.value;
+    return { d: `M ${x - tx} ${cy + ty} L ${x} ${y} L ${x + tx} ${cy + ty} A ${r} ${r} 0 1 0 ${x - tx} ${cy + ty} Z`, strokeWidth: 0.3 * k.value };
+  });
+  const headProps = useAnimatedProps(() => ({ cy: y - PIN_TIP * k.value, r: 0.55 * k.value }));
+  return (
+    <G>
+      <AnimatedPath fill={PICK_COLOR} stroke="white" strokeLinejoin="round" animatedProps={pinProps} />
+      <AnimatedCircle cx={x} fill="#111111" animatedProps={headProps} />
+    </G>
+  );
+}
+
 // A page dot: dark for the page in view, blending to grey as the swipe moves away from it, in step with the finger.
 function PageDot({ index, scrollX }: { index: number; scrollX: SharedValue<number> }) {
   const st = useAnimatedStyle(() => {
@@ -962,16 +940,38 @@ function TileFooter({ name, sub }: { name: string; sub: string }) {
   );
 }
 
-type ExploredSort = 'name' | 'date' | 'rating' | 'spots';
+type ExploredSort = 'name' | 'date' | 'rating' | 'dests' | 'spots';
 type ExploredView = 'grid' | 'list';
 const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'name', label: 'A–Z' },
   { key: 'date', label: 'Date Visited' },
   { key: 'rating', label: 'Rating' },
-  // Destinations only: the most visited spots first (the first three tiles wear a rank badge).
+  // Countries only: the most visited destinations first. Countries and destinations: the most visited spots first. The first
+  // three tiles wear a rank badge.
+  { key: 'dests', label: 'Destinations Visited' },
   { key: 'spots', label: 'Spots Visited' },
 ];
-// An Explored list in the style of Top Countries: one row per place, in the sort's order, numbered unless it is A–Z. What a
+// The sorts each level offers (a spot has no destinations or spots of its own to count).
+const SORT_OPTIONS: Record<WorldMode, ExploredSort[]> = {
+  countries: ['name', 'date', 'rating', 'dests', 'spots'],
+  destinations: ['name', 'date', 'rating', 'spots'],
+  spots: ['name', 'date', 'rating'],
+};
+// A country's photo: the same image (and cache key) as its country sheet's header, its top destination's photo.
+function CountryPhoto({ code, name }: { code: string; name: string }) {
+  const top = useMemo(() => DESTINATIONS.filter(d => d.countryCode === code).sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name))[0], [code]);
+  const key = `country_${code}`;
+  return (
+    <EntityPhoto
+      cacheKey={key}
+      cache={photoCache}
+      load={() => (top ? getOrFetchWikiThumbnail(key, photoCache, top.name, HEADER_PX, name) : getOrFetchWikiThumbnail(key, photoCache, name, HEADER_PX))}
+      subject={top ? photoSubject(top.name) : undefined}
+      placeholderColor="#E5E7EB"
+    />
+  );
+}
+// An Explored list: one row per place, in the sort's order, numbered unless it is A–Z. What a
 // row measures follows the sort: spots visited (destinations) or rating, as a bar against the top value and the number; the
 // date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. Paged sideways like
 // the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
@@ -1004,19 +1004,20 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   // `photo`: a small photo shown in place of the country flag (a destination's own photo).
   // `photo`: a small photo leading the row. The country's flag sits beside the name, or beside the line under it (flagBelow).
   // `dateKey`: what the date sort orders by (the most recent visit's last day), so rows that tie on it share a rank.
-  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; spots?: number; rating: number; date: string; dateKey: string; photo?: React.ReactNode }[];
+  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; dests?: number; spots?: number; rating: number; date: string; dateKey: string; photo?: React.ReactNode }[];
   sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
   // As in PhotoGrid: a pick lasts only while its row is on the page showing.
   onClearPick: () => void;
 }) {
-  const bar = sort === 'spots' || sort === 'rating';
-  const valueOf = (r: typeof rows[number]) => (sort === 'spots' ? r.spots ?? 0 : r.rating);
+  const counted = sort === 'spots' || sort === 'dests';
+  const bar = counted || sort === 'rating';
+  const valueOf = (r: typeof rows[number]) => (sort === 'spots' ? r.spots ?? 0 : sort === 'dests' ? r.dests ?? 0 : r.rating);
   const max = sort === 'rating' ? 5 : Math.max(1, ...rows.map(valueOf));
   const pages: typeof rows[] = [];
   for (let i = 0; i < rows.length; i += LIST_PAGE_SIZE) pages.push(rows.slice(i, i + LIST_PAGE_SIZE));
   // Rows that tie on what the sort measures share a rank (1, 2, 2, 4), shown only on the first of them, or again on the
   // first row of a page.
-  const tieOf = (r: typeof rows[number]) => (sort === 'spots' ? r.spots ?? 0 : sort === 'rating' ? r.rating : r.dateKey);
+  const tieOf = (r: typeof rows[number]) => (bar ? valueOf(r) : r.dateKey);
   const ranks: number[] = [];
   rows.forEach((r, i) => { ranks.push(i > 0 && tieOf(r) === tieOf(rows[i - 1]) ? ranks[i - 1] : i + 1); });
   const scrollX = useSharedValue(0);
@@ -1044,7 +1045,7 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
               const showRank = j === 0 || rank !== ranks[k - 1];
               // Sorted by spots visited, the top three ranks (with any spots) get the grid's gold, silver and bronze on their
               // rank number, as a badge.
-              const medal = sort === 'spots' && v > 0 && rank <= 3 ? RANK_COLORS[rank - 1] : undefined;
+              const medal = counted && v > 0 && rank <= 3 ? RANK_COLORS[rank - 1] : undefined;
               return (
                 <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
                   {sort !== 'name' && (!showRank ? <View style={styles.rankNumSlot} />
@@ -1090,7 +1091,7 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   );
 }
 
-// The Explored grid / list switch: Top Countries' segmented control (a grey track, the chosen side on a raised white pill),
+// The Explored grid / list switch: a segmented control (a grey track, the chosen side on a raised white pill),
 // with an icon on each side. The pill slides across when the choice changes.
 const VIEW_SEG_W = 34;
 function ViewToggle({ view, onView }: { view: ExploredView; onView: (v: ExploredView) => void }) {
@@ -1118,8 +1119,8 @@ function ViewToggle({ view, onView }: { view: ExploredView; onView: (v: Explored
 type SortCountry = { code: string; name: string; count: number };
 // The row above the Explored map: two dropdown chips side by side, the country filter ("All countries" or the chosen one, with
 // its flag) and the sort order. Each opens a small menu under its chip.
-function SortRow({ sort, onSort, view, onView, withSpots, countries, total, country, onCountry, dests, dest, onDest, matches }: {
-  sort: ExploredSort; onSort: (s: ExploredSort) => void; withSpots: boolean;
+function SortRow({ sort, onSort, view, onView, options, countries, total, country, onCountry, dests, dest, onDest, matches }: {
+  sort: ExploredSort; onSort: (s: ExploredSort) => void; options: ExploredSort[];
   view: ExploredView; onView: (v: ExploredView) => void;
   countries: SortCountry[]; total: number; country: string | null; onCountry: (code: string | null) => void;
   // Spots only, once a country is chosen: that country's destinations (code = destination id) to narrow to.
@@ -1139,7 +1140,7 @@ function SortRow({ sort, onSort, view, onView, withSpots, countries, total, coun
   const chosen = countries.find(c => c.code === country);
   const showDest = !!country && !!dests && dests.length > 1;
   const chosenDest = dests?.find(d => d.code === dest);
-  const sorts = SORTS.filter(o => withSpots || o.key !== 'spots');
+  const sorts = SORTS.filter(o => options.includes(o.key));
   const menuW = menu?.kind === 'sort' ? 180 : 240;
   return (
     <>
@@ -1286,18 +1287,10 @@ const styles = StyleSheet.create({
   selectorPill: { position: 'absolute', top: 6, bottom: 6, left: 6, borderRadius: 12, backgroundColor: '#111827' },
   // A section inside the panel (Explored, Top …): separated from the map or the section above by a hairline.
   // Each section below the selector is a card of its own (the map, Explored, Top …).
-  panelSection: {
-    marginHorizontal: 16, marginBottom: 12, padding: 16, backgroundColor: 'white',
-    borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
-  },
   // The map inside an Explored card: full width of the card, rounded, with room around it.
   // The Explored sections have no card: the map, pills and photo grid run the full screen width.
   exploredSection: { marginBottom: 12 },
   exploredPad: { paddingHorizontal: EXPLORED_PAD },
-  mapCard: {
-    marginHorizontal: 16, marginBottom: 12, overflow: 'hidden', backgroundColor: 'white',
-    borderRadius: 18, borderWidth: 1, borderColor: '#F3F4F6',
-  },
   statItem:    { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 12 },
   statValue:   { fontSize: 22, fontWeight: '800', color: '#111827' },
   statLabel:   { fontSize: 10, color: '#6B7280', marginTop: 2 },
@@ -1308,12 +1301,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white', borderRadius: 18,
     padding: 16, borderWidth: 1, borderColor: '#F3F4F6',
   },
-  cardHeaderRow: {
-    flexDirection: 'row', alignItems: 'center',
-    justifyContent: 'space-between', marginBottom: 10,
-  },
-  cardTitle:  { fontSize: 15, fontWeight: '700', color: '#111827', marginBottom: 12 },
-  cardBadge:  { fontSize: 12, fontWeight: '700', color: '#6366F1' },
   titleWithCount: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
 
   // My World
@@ -1328,12 +1315,6 @@ const styles = StyleSheet.create({
   mapHintTxt:    { fontSize: 11, fontWeight: '500', color: '#6B7280' },
   topEmpty:      { fontSize: 13, color: '#9CA3AF', marginTop: 4 },
   topBy:         { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
-  // Top Countries' Destinations · Spots toggle: a small segmented control beside its title.
-  topToggle:       { flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
-  topToggleBtn:    { paddingHorizontal: 10, paddingVertical: 5, borderRadius: 7 },
-  topToggleBtnOn:  { backgroundColor: 'white', shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
-  topToggleTxt:    { fontSize: 12, fontWeight: '600', color: '#6B7280' },
-  topToggleTxtOn:  { color: '#111827' },
   // Destinations Explored's search box.
   // The Explored lists' country filter: a sideways row of chips; the chosen one is green.
   filterScroll: { marginBottom: 10, flexGrow: 0 },
@@ -1354,13 +1335,13 @@ const styles = StyleSheet.create({
   countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
                  borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
-  // The grid / list toggle at the end of the sort row (ViewToggle): Top Countries' track, two fixed-width sides and a white
+  // The grid / list toggle at the end of the sort row (ViewToggle): a grey track, two fixed-width sides and a white
   // pill that slides under the chosen one.
   viewToggle:     { marginLeft: 'auto', flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
   viewTogglePill: { position: 'absolute', top: 2, bottom: 2, left: 2, width: VIEW_SEG_W, borderRadius: 7, backgroundColor: 'white',
                     shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
   viewToggleBtn:  { width: VIEW_SEG_W, alignItems: 'center', justifyContent: 'center', paddingVertical: 4 },
-  // The Explored list (RankList): Top Countries' rows with a sub line, a page of them the screen wide.
+  // The Explored list (RankList): rows with a sub line, a page of them the screen wide.
   rankPage:    { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 2 },
   rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
   rankRowOn:   { backgroundColor: '#FFF7ED' },
@@ -1429,29 +1410,11 @@ const styles = StyleSheet.create({
   topScrollContent: { paddingHorizontal: 6, paddingTop: 4, paddingBottom: 2 },
   destName:   { width: 110 },
 
-  // Top Countries
-  countryRow: {
-    flexDirection: 'row', alignItems: 'center', gap: 10,
-    marginBottom: 10,
-  },
-  countryName:     { fontSize: 13, fontWeight: '600', color: '#374151', width: 90 },
+  // The Explored list's bars
   countryBarTrack: { flex: 1, height: 6, backgroundColor: '#F3F4F6', borderRadius: 3, overflow: 'hidden' },
   countryBarFill:  { height: '100%', backgroundColor: '#10B981', borderRadius: 3 },
   countryCount:    { fontSize: 14, fontWeight: '700', color: '#111827', width: 30, textAlign: 'right' },
 
-  // Progress bar
-
-  // Flag grid
-  flagGrid:  { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  flagItem:  { alignItems: 'center' },
   // Every flag here in the map's frame: a thin white ring with a soft shadow (the country pills and breadcrumb flags).
   flagRing:  { shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 3 },
-  // The name bubble over a tapped flag: centred above it, with a small pointer underneath.
-  flagTipWrap:  { position: 'absolute', bottom: 30, left: -80, right: -80, alignItems: 'center' },
-  flagTip:      { backgroundColor: '#111827', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5, maxWidth: 184 },
-  flagTipTxt:   { fontSize: 12, fontWeight: '600', color: 'white' },
-  flagTipArrow: {
-    width: 0, height: 0, borderLeftWidth: 5, borderRightWidth: 5, borderTopWidth: 5,
-    borderLeftColor: 'transparent', borderRightColor: 'transparent', borderTopColor: '#111827',
-  },
 });
