@@ -1,0 +1,213 @@
+{
+ "dest:lorne:header": {
+  "candidates": [
+   {
+    "file": "Lorne VIC 3232, Australia - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aspect 3.85 and flat grey beach"
+   },
+   {
+    "file": "Great Ocean Road, Lorne, Australia - Feb 2012.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aspect 2.14 outside 0.6-2.0"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/great-ocean-road/things-to-do/outdoor-activities/walking-and-hiking/lorne-waterfalls-loop/phantom-falls_great-otway-national-park_gor_r_s_1600x900.jpg?ts=20250626290124&c=product&cw=1600&ch=1200",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "1600px under 2000; surfers close-up"
+   },
+   {
+    "file": "https://www.lornevictoria.com.au/wp-content/uploads/2026/05/Lorne-Victoria-MAIN-FEATURE-2026.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "1750px under 2000"
+   }
+  ],
+  "choice": "none: no Lorne photo >=2000px with aspect <=2.0 (Teddy's view is 2.14; others small)",
+  "hero_crop": "n/a"
+ },
+ "dest:lorne:why1": {
+  "candidates": [
+   {
+    "file": "Lorne VIC 3232, Australia - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aspect 3.85, flat grey beach"
+   },
+   {
+    "file": "https://www.greatoceanroadaustralia.org/wp-content/uploads/2019/10/Depositphotos_381752576_l-2015-1920x1080.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Lorne beach and town, 1920px, page is Lorne things-to-do; stock-agency origin (Depositphotos), permission not confirmed"
+   }
+  ],
+  "choice": "https://www.greatoceanroadaustralia.org/wp-content/uploads/2019/10/Depositphotos_381752576_l-2015-1920x1080.jpg",
+  "hero_crop": "ok (from sheet, beach centred)"
+ },
+ "dest:lorne:why2": {
+  "candidates": [
+   {
+    "file": "Lorne VIC 3232, Australia - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "(Erskine lead is in spot sheet; here only web/official hits, none verified Lorne waterfall)"
+   }
+  ],
+  "choice": "none: sheet has no verified Otway waterfall photo; reuse Erskine Falls.jpg (lorne-2 lead, 5184px CC BY-SA 4.0) from same destination",
+  "hero_crop": "n/a"
+ },
+ "dest:lorne:why3": {
+  "candidates": [
+   {
+    "file": "Great Ocean Road, Lorne, Australia - Feb 2012.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Diliff panorama from Teddy's Lookout: Great Ocean Road winding at river mouth; CC BY-SA 3.0; also spot lorne-1"
+   }
+  ],
+  "choice": "Great Ocean Road, Lorne, Australia - Feb 2012.jpg",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  }
+ },
+ "spot:lorne-1": {
+  "candidates": [
+   {
+    "file": "Great Ocean Road, Lorne, Australia - Feb 2012.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Diliff, Teddy's Lookout view, 75 m from pin, file page confirms; CC BY-SA 3.0"
+   },
+   {
+    "file": "Lorne Victoria Teddy Lookout - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "7150px strip, aspect too wide, sliver in crop"
+   }
+  ],
+  "choice": "Great Ocean Road, Lorne, Australia - Feb 2012.jpg",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  }
+ },
+ "spot:lorne-2": {
+  "candidates": [
+   {
+    "file": "Erskine Falls.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Erskine Falls lead, full falls in clear view, CC BY-SA 4.0 5184px"
+   },
+   {
+    "file": "Erskine Falls 0494.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "close-up of cascade"
+   }
+  ],
+  "choice": "Erskine Falls.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:lorne-3": {
+  "candidates": [
+   {
+    "file": "Sheoak Falls.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Sheoak Falls lead, clear waterfall, CC BY 4.0 4032px"
+   },
+   {
+    "file": "https://www.visitmelbourne.com/-/media/images/great-ocean-road/things-to-do/nature-and-wildlife/lakes-and-waterways/sheoak-falls/sheoak-falls_lorne_gor_r_150415_1600x900.jpg?ts=20240503440540&c=product&cw=1600&ch=1200",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "1600 official, lower rank than open licence"
+   }
+  ],
+  "choice": "Sheoak Falls.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:lorne-4": {
+  "candidates": [
+   {
+    "file": "Kennett River Koala Cove Cafe.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "a cafe shopfront, not the place's draw"
+   },
+   {
+    "file": "Alisterus scapularis female.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "parrot close-up, stand-in"
+   },
+   {
+    "file": "Kennett River - views east from hill.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Kennett River coast and beach from hill, 1280px CC BY-SA 4.0"
+   }
+  ],
+  "choice": "Kennett River - views east from hill.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.4
+  }
+ }
+}

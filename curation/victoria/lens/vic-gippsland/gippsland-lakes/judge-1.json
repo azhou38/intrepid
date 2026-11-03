@@ -1,0 +1,182 @@
+{
+ "dest:gippsland-lakes:header": {
+  "candidates": [
+   {
+    "file": "Lakes entrance - the entrance.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "1600 px (<2000 header minimum); GFDL"
+   },
+   {
+    "file": "Kalimna VIC 3909, Australia - panoramio.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aspect >2.0 strip"
+   },
+   {
+    "file": "https://www.visiteastgippsland.com.au/wp-content/uploads/2025/08/Mitchell-River-Silt-Jetties-3-1536x863.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aerial not allowed for headers; 1536 px"
+   }
+  ],
+  "choice": "none: only aerials, <2000 px or strip panoramas; no ground-level wide header",
+  "hero_crop": "n/a"
+ },
+ "dest:gippsland-lakes:why1": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/gippsland/things-to-do/tours/cruises-and-boat-tours/162efd01c0571b201df885f083cbfa3a_1600x1200.jpeg?ts=20210630241206",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Peels cruise boat on Gippsland Lakes; page is the Visit Victoria Gippsland Lakes Cruise listing; 1600x1200; official, used with permission"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/gippsland/things-to-do/tours/cruises-and-boat-tours/162efd01c0571b201df885f083cbfa3a_1600x1200.jpeg?ts=20210630241206",
+  "hero_crop": "ok"
+ },
+ "dest:gippsland-lakes:why2": {
+  "candidates": [
+   {
+    "file": "https://media.vrfish.com.au/wp-content/uploads/2018/11/02181124/IMG_0733.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "all hits are close-ups of fish or anglers, not the place; stand-ins, people/animal fill frame"
+   }
+  ],
+  "choice": "none: only fish/angler close-ups; no photo of fishing on the lakes",
+  "hero_crop": "n/a"
+ },
+ "dest:gippsland-lakes:why3": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/gippsland/see-and-do/tours/cruises-and-boat-tours/9a009c4fafb8552c64847f61ccfefd0e_1600x1200.jpeg?ts=20230907310441",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "dolphins on Peels Cruises Gippsland Lakes listing (Visit Victoria); 1600x1200; official, used with permission"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/gippsland/see-and-do/tours/cruises-and-boat-tours/9a009c4fafb8552c64847f61ccfefd0e_1600x1200.jpeg?ts=20230907310441",
+  "hero_crop": "ok"
+ },
+ "spot:gippsland-lakes-1": {
+  "candidates": [
+   {
+    "file": "Lakes entrance pano.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "2.5:1 panorama, entrance would be a sliver in square crop; GFDL"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/gippsland/destinations/lakes-entrance/lakes-entrance_gip_r_supplied_dgi-1577_1150x863.jpg?ts=20240501100150",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Lakes Entrance sunset over the boat harbour, Visit Victoria Lakes Entrance page; 1150 px, official"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/images/gippsland/destinations/lakes-entrance/lakes-entrance_gip_r_supplied_dgi-1577_1150x863.jpg?ts=20240501100150",
+  "hero_crop": "ok"
+ },
+ "spot:gippsland-lakes-2": {
+  "candidates": [
+   {
+    "file": "Beach panorama - lakes entrance.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "2.3:1 panorama, GFDL"
+   },
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/ninety-mile-beach-marine-national-park/ninety-mile-beach-marine-national-park_1920x1124-1.jpg?rev=08334fa1e1bd407db8091bcc9420ebf6",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "aerial of Ninety Mile Beach coast and lakes, Parks Victoria; 1920x1124, official; crop shows 22-78% width, beach central"
+   }
+  ],
+  "choice": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/ninety-mile-beach-marine-national-park/ninety-mile-beach-marine-national-park_1920x1124-1.jpg?rev=08334fa1e1bd407db8091bcc9420ebf6",
+  "hero_crop": "ok"
+ },
+ "spot:gippsland-lakes-3": {
+  "candidates": [
+   {
+    "file": "Shopping-Strip,-MetungRd, Vic.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "street corner"
+   },
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/gippsland/whats-on/markets-and-vintage/makers-markets/57605b35a87a539a8007ab249afa06c0_1600x1200.jpeg?ts=20261010401024",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "aerial of Metung waterfront and marina (Visit Melbourne Metung Market page); 1600x1200, official"
+   }
+  ],
+  "choice": "https://www.visitmelbourne.com/-/media/atdw/gippsland/whats-on/markets-and-vintage/makers-markets/57605b35a87a539a8007ab249afa06c0_1600x1200.jpeg?ts=20261010401024",
+  "hero_crop": "ok"
+ },
+ "spot:gippsland-lakes-5": {
+  "candidates": [
+   {
+    "file": "Band-Rotunda-Bairnsdale-Vic.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Bairnsdale band rotunda in the town's park, CC BY-SA 3.0, 1600x1200, 2006 colour photo; best available of the town itself"
+   }
+  ],
+  "choice": "Band-Rotunda-Bairnsdale-Vic.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:gippsland-lakes-4": {
+  "candidates": [
+   {
+    "file": "https://clubwyndhamsp.com/wp-content/uploads/2019/06/Griffiths-Sea-Shell-Museum.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "museum interior shell displays, Club Wyndham Lakes Entrance page; 1920x1080; web photo, permission not confirmed (flag)"
+   }
+  ],
+  "choice": "https://clubwyndhamsp.com/wp-content/uploads/2019/06/Griffiths-Sea-Shell-Museum.jpg",
+  "hero_crop": "ok"
+ }
+}

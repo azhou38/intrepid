@@ -968,7 +968,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Limestone stacks, arches and gorges on the Great Ocean Road's Shipwreck Coast",
     description: "Port Campbell National Park protects about 1,750 ha of limestone coast between Peterborough and Princetown, roughly 190 km south-west of Melbourne. The Southern Ocean has carved sheer cliffs, offshore stacks, gorges, arches and blowholes, and erosion that cut caves, then arches, left the Twelve Apostles standing. The clipper Loch Ard was wrecked here in 1878 and only two of the 54 aboard survived. Little penguins can sometimes be seen at dusk, and short-tailed shearwaters return to Mutton Bird Island between October and April.",
     whyVisit: ["See the Twelve Apostles rise from the sea", "Walk down to cliff-backed beaches", "Look for whales and penguins on the coast", "Follow clifftop lookouts along the coast"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["Princetown (AU), Port Campbell National Park, Twelve Apostles -- 2019 -- 0930.jpg", "Peterborough (AU), Port Campbell National Park, Worm Bay -- 2019 -- 0863.jpg", "", ""],
     highlights: ["Twelve Apostles", "Hidden beaches", "Coastal wildlife", "Clifftop lookouts"],
     goodToKnow: [
       { icon: "🏨", title: "Stay in Port Campbell", detail: "There is no accommodation or camping in the park, and sleeping in car parks is prohibited. The nearest beds are in Port Campbell or Warrnambool." },
@@ -985,7 +985,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Sandstone ranges of lookouts, waterfalls and rock art, 260 km west of Melbourne",
     description: "Grampians (Gariwerd) National Park covers about 167,000 ha of uplifted sandstone ranges at the western end of the Great Dividing Range, with Mount William the highest point at 1,167 m. Halls Gap is the only town and main access point, and the Wonderland area beside it is the most popular for day walks. The park holds about 90% of Victoria's Aboriginal rock art, and Brambuk, the cultural centre at Halls Gap, is owned and managed by Jardwadjali and Djab Wurrung people. About a third of Victoria's flora grows here, including more than 75 orchid species.",
     whyVisit: ["Walk to lookouts over the ranges", "See Aboriginal rock art in Gariwerd", "Find wildflowers and orchids in spring", "Spot kangaroos and emus at Halls Gap"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["View near The Fortress, Grampians.jpg", "", "Boronia spp. Grampians National Park, Victoria Australia (4872581645).jpg", ""],
     highlights: ["Mountain lookouts", "Aboriginal rock art", "Spring wildflowers", "Roaming wildlife"],
     goodToKnow: [
       { icon: "🔥", title: "Check track closures", detail: "The 2024-25 fires burned over 135,000 ha and damaged tracks and camps. Check Parks Victoria for open sites before you go." },
@@ -1036,7 +1036,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Victoria's largest national park, with its highest peak and the Bogong High Plains",
     description: "Alpine National Park covers 6,474 km2 and is the Victorian continuation of Kosciuszko National Park. It holds Victoria's highest point, Mount Bogong at 1,986 m, along with Mount Feathertop (1,922 m), Mount Hotham (1,862 m) and the sub-alpine woodland and grassland of the Bogong High Plains. The 650 km Australian Alps Walking Track, from Walhalla to near Canberra, crosses it. The park protects threatened species including the spotted tree frog, smoky mouse and mountain pygmy possum.",
     whyVisit: ["Walk to Victoria's highest peaks", "Ski the Bogong High Plains", "Hike the Australian Alps Walking Track", "See alpine waterfalls in spring"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["", "Looking towards Rocky Knolls.jpg", "", ""],
     highlights: ["Alpine summits", "Snow season", "Long-distance hiking", "Spring waterfalls"],
     goodToKnow: [
       { icon: "❄️", title: "Winter means skis", detail: "In winter much of the park is snow-covered and only accessible on skis." },
@@ -1409,8 +1409,8 @@ export const DESTINATIONS: Destination[] = [
     category: 'park', icon: "⛰️", rank: 3,
     tagline: "Granite tors, snow gums and sheer cliffs on a plateau that tops out at 1,723 m",
     description: "Mount Buffalo National Park covers 31,000 ha about 350 km north-east of Melbourne, and was reserved on 4 November 1898, making it one of Australia's oldest national parks. The plateau has granite boulders and rock formations, sheer cliffs, waterfalls and snow gum woodland, and reaches 1,723 m at The Horn. The Chalet, built in 1910, overlooks sheets of granite and the Ovens and Buckland valleys. Bogong moths shelter in the rock crevices at The Horn, and birds feed on them.",
-    whyVisit: ["Walk granite tors and plateau lookouts", "See wildflowers across the plateau", "Play in the snow in winter"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisit: ["Walk granite tors and plateau lookouts", "See wildflowers across the plateau", "Ski and snowshoe in winter"],
+    whyVisitPhotos: ["Mount Buffalo N.P. 28.jpg", "", ""],
     highlights: ["Granite lookouts", "Summer wildflowers", "Winter snow play"],
     goodToKnow: [
       { icon: "⛓️", title: "Carry snow chains", detail: "Snow chains must be carried every day, for all vehicles including 4WDs, and fitted where road signs say so. Penalties apply." },
@@ -1444,7 +1444,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Gold-rush streets, Ned Kelly history and a cool-climate town on a rail trail",
     description: "Beechworth was a gold-producing region and centre of government between 1852 and 1857, and its well-preserved historic precinct includes the Court House and Burke Museum. Ned Kelly spent time in HM Prison Beechworth, and courthouse displays tell the story. The town sits at 560 m, about 284 km from Melbourne, and is one end of the Murray to the Mountains Rail Trail. Waterfalls, Spring Creek Gorge, the Beechworth Bakery, a brewery and wineries round out a stay.",
     whyVisit: ["Walk gold-rush streets and heritage buildings", "Follow Ned Kelly's trail", "Cycle a paved rail trail"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "Historic Courthouse, Beechworth Victoria.jpg", ""],
     highlights: ["Gold-rush heritage", "Ned Kelly history", "Rail trail"],
     goodToKnow: [
       { icon: "🚗", title: "Bring your own car", detail: "There is no car hire in Beechworth, so arrive with a vehicle or plan to walk the compact historic centre." },
@@ -1461,7 +1461,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A Murray River port where paddle steamers still sail from the historic wharf",
     description: "Echuca sits on the Murray River, with the New South Wales town of Moama opposite, and has 15,056 people. Its port is home to the largest paddle steamer fleet in the world, including PS Adelaide (1866), the world's oldest operating wooden-hulled paddle steamer. PS Pevensey (1911) and PS Alexander Arbuthnot (1923) sail commercially from the port daily. Echuca is about 2.5 hours' drive from Melbourne.",
     whyVisit: ["Cruise the Murray on a paddle steamer", "Explore the historic river port", "Walk through Murray River forest"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["PS Emmylou (Echuca Wet Dock, 2021).png", "EchucaWharf.JPG", ""],
     highlights: ["Paddle steamers", "River port", "River forests"],
     goodToKnow: [
       { icon: "🚆", title: "Sit in the front carriages", detail: "On the train from Melbourne, sit in the front 3 cars, as the rear 3 decouple at Bendigo." },
@@ -1784,7 +1784,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A remote East Gippsland coast of empty beaches, dunes and lighthouses",
     description: "Croajingolong is a linear coastal national park in East Gippsland, about 80 km long and 20 km wide, with the Tasman Sea to the south and Mallacoota at its eastern end. Rocky outcrops, long sandy beaches, coastal dunes and freshwater rivers suit hiking, swimming, snorkelling and sea kayaking. The Wilderness Coast Walk follows the shore, and Point Hicks is believed to be Captain Cook's first Australian landfall. UNESCO nominated the park a World Biosphere Reserve in 1977, and it holds almost 1,000 native plant species.",
     whyVisit: ["Walk a wild coast of empty beaches", "Paddle coastal inlets and rivers", "Stay in historic lighthouse cottages"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["150101-059 Dunes near Pt Hicks.jpg", "", ""],
     highlights: ["Empty beaches", "Inlet paddling", "Lighthouse stays"],
     goodToKnow: [
       { icon: "🍽️", title: "Bring your own food", detail: "Outside Mallacoota there is nowhere to eat or buy supplies in the park, so stock up in town before heading in." },
@@ -1911,7 +1911,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "⛷️", rank: 4,
     tagline: "A high-country gateway to Mount Buller skiing, lakes and mountain trails",
     description: "Mansfield is a country town about two hours' drive north-east of Melbourne and the support town for Mount Buller ski resort. Mount Buller has 22 lifts, the highest lift capacity in Victoria, while Mount Stirling is a cross-country and backcountry ski area. In summer, hiking and mountain biking are popular on both mountains, and Lake Eildon is the only inland waterway in Victoria where houseboats are permitted. Mansfield is also on the Ned Kelly Trail.",
-    whyVisit: ["Ski and snowboard in winter", "Hike and bike the high country", "Houseboat and waterski on big lakes"],
+    whyVisit: ["Ski and snowboard in winter", "Hike and bike the high country", "Cruise and waterski on big lakes"],
     whyVisitPhotos: ["", "", ""],
     highlights: ["Winter snow", "High-country trails", "Lake days"],
     goodToKnow: [
@@ -1928,7 +1928,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Mountain ash forest, scenic drives and Melbourne's nearest winter snowplay",
     description: "Yarra Ranges National Park, created in December 1995, covers 76,003 ha of wet mountain ash forest and cool temperate rainforest in the Great Dividing Range. Mountain ash is the world's tallest flowering tree. Mount Donna Buang (1,245 m) has a 21 m lookout tower with views over Melbourne, the Yarra Valley and the Dandenong and Cathedral Ranges, and near Warburton the Rainforest Gallery is a viewing platform 15 m above the forest floor. About 84% of the park is a water supply catchment closed to the public.",
     whyVisit: ["Walk among the world's tallest flowering trees", "Drive winding mountain ash forest roads", "See Melbourne's nearest snow in winter"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Yarra Ranges National Park (34069164673).jpg", "", ""],
     highlights: ["Giant ash forest", "Forest drives", "Winter snowplay"],
     goodToKnow: [
       { icon: "🚫", title: "Most of the park is closed", detail: "Most of the park protects Melbourne's drinking water and is closed to visitors. Stay on signed tracks and roads." },
@@ -3457,7 +3457,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🧗", rank: 5,
     tagline: "Regional Wimmera River city and gateway to the Silo Art Trail and Mount Arapiles",
     description: "Horsham is a regional city on a bend in the Wimmera River, about 300 km north-west of Melbourne, and the most populous city in the Wimmera. It is the gateway to the Silo Art Trail and the north-western side of the Grampians National Park. Mount Arapiles, about 30 minutes' drive west, rises about 140 m above the plains and is one of Australia's premier rock-climbing sites. In town, the Regional Art Gallery, the Botanic Gardens and the riverside fill a stopover on the Western Highway.",
-    whyVisit: ["Rock climb on the Wimmera plains", "Follow the Silo Art Trail"],
+    whyVisit: ["Go rock climbing on the Wimmera plains", "Follow the Silo Art Trail"],
     whyVisitPhotos: ["", ""],
     highlights: ["Rock climbing", "Silo art"],
     goodToKnow: [

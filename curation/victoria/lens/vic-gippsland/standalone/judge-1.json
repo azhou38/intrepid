@@ -1,0 +1,310 @@
+{
+ "spot:sale": {
+  "candidates": [
+   {
+    "file": "VM 0236 Gippsland Centre Sale.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "shopfront sign only"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/gippsland/destinations/sale-swing-bridge/sale-swing-bridge_gip_r_supplied_1150x863.jpg?ts=20240501340121",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "is Sale Swing Bridge, duplicates neighbour spot"
+   }
+  ],
+  "choice": "none: no photo of Sale town itself: Commons hits are unrelated; #7 shows the Swing Bridge (a separate spot), #6 a shopping-centre sign",
+  "hero_crop": "n/a"
+ },
+ "spot:sale-swing-bridge": {
+  "candidates": [
+   {
+    "file": "20100426 SaleSwingBridge.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 3.0, wikipedia lead, the timber swing bridge over the Thomson/Latrobe; not opened on file page (rate limit) but visitvictoria shots show same bridge"
+   }
+  ],
+  "choice": "20100426 SaleSwingBridge.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:gippsland-art-gallery": {
+  "candidates": [
+   {
+    "file": "Gippsland Art Gallery, Port Of Sale 16FEB18.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 4.0 exterior of the Gippsland Art Gallery, Port of Sale, clear building"
+   }
+  ],
+  "choice": "Gippsland Art Gallery, Port Of Sale 16FEB18.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:old-gippstown": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/gippsland/see-and-do/art-and-culture/history-and-heritage/cdc662c1969e1cc048b63dfe952056f7_1600x1200.jpeg?ts=20251002340337",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitvictoria photo: heritage village main street with period buildings; Commons options show only one church"
+   },
+   {
+    "file": "Moe Old Gippstown Anglican Church 003.JPG",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "single church only, narrower than the village"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/gippsland/see-and-do/art-and-culture/history-and-heritage/cdc662c1969e1cc048b63dfe952056f7_1600x1200.jpeg?ts=20251002340337",
+  "hero_crop": "ok"
+ },
+ "spot:walhalla": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/gippsland/things-to-do/nature-and-wildlife/national-parks-and-reserves/original__9628441_tvic_walhalla1_gip_r_supplieddg_1600x900_6957xo2_1600x1200.jpg?ts=20210625571030",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitvictoria: Walhalla township in its forested valley with road; wide and recognisable"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/gippsland/things-to-do/nature-and-wildlife/national-parks-and-reserves/original__9628441_tvic_walhalla1_gip_r_supplieddg_1600x900_6957xo2_1600x1200.jpg?ts=20210625571030",
+  "hero_crop": "ok"
+ },
+ "spot:baw-baw-national-park": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/gippsland/see-and-do/nature-and-wildlife/national-parks-and-reserves/e132ad2da7edc021308f4c1a53492a83_1600x1200.jpeg?ts=20231218300552",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitvictoria: view over forested ranges from a rock lookout; park landscape without people focus. Lead image given to Mount Baw Baw spot"
+   },
+   {
+    "file": "Baw-baw-view-gippsland.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "same snowy plateau shot is the Mount Baw Baw spot photo (neighbour duplicate)"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/gippsland/see-and-do/nature-and-wildlife/national-parks-and-reserves/e132ad2da7edc021308f4c1a53492a83_1600x1200.jpeg?ts=20231218300552",
+  "hero_crop": "ok"
+ },
+ "spot:mount-baw-baw": {
+  "candidates": [
+   {
+    "file": "Baw-baw-view-gippsland.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 3.0 wikipedia lead, snow-covered summit plateau of Mount Baw Baw"
+   }
+  ],
+  "choice": "Baw-baw-view-gippsland.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:toorongo-falls": {
+  "candidates": [
+   {
+    "file": "Tooronga Falls - Noojee, Victoria, Australia (15069688970).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY 2.0 Rexness Flickr, file page categories Toorongo Falls, Noojee; waterfall with fern forest"
+   },
+   {
+    "file": "Toorongo falls July09.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "GFDL 1.2 licence is not in the accepted list"
+   }
+  ],
+  "choice": "Tooronga Falls - Noojee, Victoria, Australia (15069688970).jpg",
+  "hero_crop": "ok"
+ },
+ "spot:tarra-bulga-national-park": {
+  "candidates": [
+   {
+    "file": "20110528 Tarra-Bulga National Park - Forest near Cyathea Falls.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 3.0 wikipedia lead, fern and tall eucalypt rainforest in Tarra-Bulga; avoids the Corrigans bridge subject"
+   }
+  ],
+  "choice": "20110528 Tarra-Bulga National Park - Forest near Cyathea Falls.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:corrigans-suspension-bridge": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/gippsland/things-to-do/history-and-heritage/bridges/corrigan-suspension-bridge_gip_r_s_147781-3_1600x900.jpg?ts=20240501520333&c=product&cw=1600&ch=1200",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitvictoria 1600 px: the suspension bridge over ferns in Tarra-Bulga; only Commons-free option"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/images/gippsland/things-to-do/history-and-heritage/bridges/corrigan-suspension-bridge_gip_r_s_147781-3_1600x900.jpg?ts=20240501520333&c=product&cw=1600&ch=1200",
+  "hero_crop": "ok"
+ },
+ "spot:port-albert": {
+  "candidates": [
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/gippsland/places-to-stay/motels/5b19d88a8f32026f873bbdb636dc29a1_1600x1200.jpeg?ts=20261006350533",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitmelbourne: Port Albert waterfront across the water; mostly sky and water in a square so zoom needed"
+   },
+   {
+    "file": "Port Welshpool, Victoria.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "harbour partly hidden by parked cars"
+   }
+  ],
+  "choice": "https://www.visitmelbourne.com/-/media/atdw/gippsland/places-to-stay/motels/5b19d88a8f32026f873bbdb636dc29a1_1600x1200.jpeg?ts=20261006350533",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.72,
+   "zoom": 1.8
+  }
+ },
+ "spot:snowy-river-national-park": {
+  "candidates": [
+   {
+    "file": "Little River Gorge.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 3.0 wikipedia lead, Little River Gorge in Snowy River NP; wide gorge view"
+   }
+  ],
+  "choice": "Little River Gorge.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:buchan-caves": {
+  "candidates": [
+   {
+    "file": "Buchan ..Caves Victoria Australia.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 4.0 cave interior with stalactites at Buchan Caves; dark on purpose (cave); page not opened (rate limit), file name and 929 m geotag match"
+   }
+  ],
+  "choice": "Buchan ..Caves Victoria Australia.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:errinundra-national-park": {
+  "candidates": [
+   {
+    "file": "United States firefighters in Australia - 42.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons public domain (US DOI), description: old growth eucalyptus forest in Errinundra National Park, Victoria; person tiny, forest is the focus"
+   }
+  ],
+  "choice": "United States firefighters in Australia - 42.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:cape-conran-coastal-park": {
+  "candidates": [
+   {
+    "file": "Cape Conran - Salmon Rocks.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 4.0, file page: Cape Conran Coastal Park, geotagged -37.8096 148.7271; 988 px (>=960); sky-heavy so zoom"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/gippsland/things-to-do/outdoor-activities/walking-and-hiking/cape-conran-boardwalk_gip_r_supplied-dg_1600x1200.jpg?ts=20240501330553",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "official alternative with boardwalk and sea, kept as fallback"
+   }
+  ],
+  "choice": "Cape Conran - Salmon Rocks.jpg",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.7,
+   "zoom": 1.5
+  }
+ },
+ "spot:den-of-nargun": {
+  "candidates": [
+   {
+    "file": "Den of Nargun.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 4.0, file page: Den of Nargun cave, Mitchell River NP area"
+   }
+  ],
+  "choice": "Den of Nargun.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:mitchell-river-national-park": {
+  "candidates": [],
+  "choice": "keep-current",
+  "hero_crop": "ok",
+  "note": "Mitchell river.jpg CC BY-SA 4.0, file page: Mitchell River from under Little Mertens Falls, category Mitchell River National Park (Western Australia); a river in bush, recognisable"
+ }
+}

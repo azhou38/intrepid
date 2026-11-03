@@ -1,0 +1,80 @@
+{
+ "spot:kinglake-national-park": {
+  "candidates": [
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/kinglake-national-park/1-walking-kinglake-national-park-1920x1124.jpg?rev=9a39beb7c52f4da79298f3d0857bc691",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official parks.vic photo, walkers on forest track in the park; not Masons Falls"
+   },
+   {
+    "file": "Masons Falls.JPG",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Masons Falls, neighbour spot duplicate"
+   }
+  ],
+  "choice": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/kinglake-national-park/1-walking-kinglake-national-park-1920x1124.jpg?rev=9a39beb7c52f4da79298f3d0857bc691",
+  "hero_crop": "ok"
+ },
+ "spot:masons-falls": {
+  "candidates": [
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/high-country/things-to-do/nature-and-wildlife/national-parks-and-reserves/2114126a241acaab9d4003b75cf1073a_1600x1200.jpeg?ts=20210615471114",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitmelbourne photo of the falls on the file page for Masons Falls"
+   },
+   {
+    "file": "Masons Falls.JPG",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "2005 portrait lead, small; fallback"
+   }
+  ],
+  "choice": "https://www.visitmelbourne.com/-/media/atdw/high-country/things-to-do/nature-and-wildlife/national-parks-and-reserves/2114126a241acaab9d4003b75cf1073a_1600x1200.jpeg?ts=20210615471114",
+  "hero_crop": "ok"
+ },
+ "spot:wombelano-falls": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/high-country/see-and-do/nature-and-wildlife/waterfalls/5b7b0619b6192e6206c417a2cfd354c1_1600x1200.jpeg?ts=20250519330741",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitvictoria photo of Wombelano Falls"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/high-country/see-and-do/nature-and-wildlife/waterfalls/5b7b0619b6192e6206c417a2cfd354c1_1600x1200.jpeg?ts=20250519330741",
+  "hero_crop": "ok"
+ },
+ "spot:montsalvat": {
+  "candidates": [
+   {
+    "file": "Montsalvat Melbourne.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "CC BY 2.0 Wikipedia lead, courtyard and buildings of Montsalvat"
+   }
+  ],
+  "choice": "Montsalvat Melbourne.jpg",
+  "hero_crop": "ok"
+ }
+}

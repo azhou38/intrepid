@@ -1,0 +1,231 @@
+{
+ "dest:bright:header": {
+  "candidates": [
+   {
+    "file": "1 bright victoria aerial panorama 2018.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aerial, rejected for headers"
+   },
+   {
+    "file": "https://www.victoriashighcountry.com.au/wp-content/uploads/sites/65/atdw-AU0033722-636329713596d5686ad56233.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "aerial of town, rejected for headers"
+   },
+   {
+    "file": "Bright, Vic autumn.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "only a tree-lined street, 2047 px, not a wide town view"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/high-country/whats-on/community/44acac046fb9256b32553bceee0de5f3_1600x1200.jpeg?ts=20250522300657",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "1600 px, under 2000 minimum, single clock tower"
+   }
+  ],
+  "choice": "none: no non-aerial, >=2000 px wide scenic view of Bright among candidates",
+  "hero_crop": "n/a"
+ },
+ "dest:bright:why1": {
+  "candidates": [
+   {
+    "file": "Bright, Vic autumn.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "CC BY 2.0, 2047 px, Bright (Vic) autumn avenue; file page not fetched (API rate-limited), judged from title and sheet"
+   },
+   {
+    "file": "https://images.squarespace-cdn.com/content/v1/614e8d93e491d90282a47c44/1648614041968-8Y3E8XZDDALYKTCHIP3R/Screen+Shot+2022-03-30+at+1.30.47+pm.png",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "blog screenshot, tier 3, lower than open licence"
+   },
+   {
+    "file": "https://www.ashleapaige.com/wp-content/uploads/2024/06/Bright-Victoria.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "blog photo, place unproven"
+   }
+  ],
+  "choice": "Bright, Vic autumn.jpg",
+  "hero_crop": "ok",
+  "note": "autumn colours along street rather than river"
+ },
+ "dest:bright:why2": {
+  "candidates": [
+   {
+    "file": "https://listings.rdp.tourismnortheast.com.au/wp-content/uploads/sites/6/RS41156_Bright-Rail-Trail-8-of-138-lpr.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "regional tourism board photo, cyclists at Welcome to Bright sign, 2000 px, permission not confirmed"
+   },
+   {
+    "file": "https://tourdevines.com.au/wp-content/uploads/2024/10/PXL_20220928_054404566-scaled.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "weaker; rail trail by river but no place proof"
+   }
+  ],
+  "choice": "https://listings.rdp.tourismnortheast.com.au/wp-content/uploads/sites/6/RS41156_Bright-Rail-Trail-8-of-138-lpr.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:bright:why3": {
+  "candidates": [
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/high-country/see-and-do/tours/sports-tours/10ec651355b830d7f05f0cd6c0b574ac_1600x1200.jpeg?ts=20250704310612",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitmelbourne.com photo, paraglider over Bright valley, 1600 px, used with permission"
+   },
+   {
+    "file": "https://www.victoriashighcountry.com.au/wp-content/uploads/sites/65/atdw-AU1861359-67cb852bf421a9d31ef88c58.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "web photo, lower rank than official"
+   }
+  ],
+  "choice": "https://www.visitmelbourne.com/-/media/atdw/high-country/see-and-do/tours/sports-tours/10ec651355b830d7f05f0cd6c0b574ac_1600x1200.jpeg?ts=20250704310612",
+  "hero_crop": "ok"
+ },
+ "spot:bright-1": {
+  "candidates": [
+   {
+    "file": "1 harrietville aerial pano 2018.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Wikipedia lead aerial pano of Harrietville in its valley, CC BY-SA 4.0, 10157 px; square crop shows 31-69% width, village and ranges visible"
+   },
+   {
+    "file": "Harrietville Gold Monument 003.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "minor monument, not the village"
+   }
+  ],
+  "choice": "1 harrietville aerial pano 2018.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:bright-2": {
+  "candidates": [
+   {
+    "file": "WandiligongManchesterUnityHall.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Wikipedia lead, CC BY-SA 3.0, Manchester Unity Hall in Wandiligong; weak (a building, not the village) but recognisable and open licence"
+   },
+   {
+    "file": "https://www.visitbright.com.au/wp-content/uploads/sites/42/lookout-Bright-4_3-1024x768.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "filename suggests Bright lookout, place unproven, 1024 px"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/high-country/things-to-do/outdoor-activities/walking-and-hiking/road-to-wandiligong_bright_hc_r_143946_1150x863.jpg?ts=20200512100718",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "walk path, not the village"
+   }
+  ],
+  "choice": "WandiligongManchesterUnityHall.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:bright-3": {
+  "candidates": [
+   {
+    "file": "https://www.alltrails.com/mugen/image/location-app-router?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTIwOTk3NzI5L2QzNGEwOWY1MjliNjU2NTNlYzZiNGNiNWZkZDlkNTc0LmpwZyIsImVkaXRzIjp7InRvRm9ybWF0Ijoid2VicCIsInJlc2l6ZSI6eyJ3aWR0aCI6IjEwODAiLCJoZWlnaHQiOiI3MDAiLCJmaXQiOiJjb3ZlciJ9LCJyb3RhdGUiOm51bGwsImpwZWciOnsidHJlbGxpc1F1YW50aXNhdGlvbiI6dHJ1ZSwib3ZlcnNob290RGVyaW5naW5nIjp0cnVlLCJvcHRpbWlzZVNjYW5zIjp0cnVlLCJxdWFudGlzYXRpb25UYWJsZSI6M319fQ%3D%3D&w=3840&q=90",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "alltrails Tronoh Dredge Hole POI, jetty on the water, 1080 px, permission not confirmed"
+   },
+   {
+    "file": "https://alpinevalleygetaways.com.au/wp-content/uploads/2022/04/kayaking-harrietville_01-scaled.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "kayaker is focus, though page named"
+   }
+  ],
+  "choice": "https://www.alltrails.com/mugen/image/location-app-router?url=https%3A%2F%2Fimages.alltrails.com%2FeyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTIwOTk3NzI5L2QzNGEwOWY1MjliNjU2NTNlYzZiNGNiNWZkZDlkNTc0LmpwZyIsImVkaXRzIjp7InRvRm9ybWF0Ijoid2VicCIsInJlc2l6ZSI6eyJ3aWR0aCI6IjEwODAiLCJoZWlnaHQiOiI3MDAiLCJmaXQiOiJjb3ZlciJ9LCJyb3RhdGUiOm51bGwsImpwZWciOnsidHJlbGxpc1F1YW50aXNhdGlvbiI6dHJ1ZSwib3ZlcnNob290RGVyaW5naW5nIjp0cnVlLCJvcHRpbWlzZVNjYW5zIjp0cnVlLCJxdWFudGlzYXRpb25UYWJsZSI6M319fQ%3D%3D&w=3840&q=90",
+  "hero_crop": "ok"
+ },
+ "spot:bright-4": {
+  "candidates": [
+   {
+    "file": "https://listings.rdp.tourismnortheast.com.au/wp-content/uploads/sites/6/Gorge-Walk_Mount-Beauty_1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "visitbright.com.au Mount Beauty Gorge Walk listing photo, 1170 px, hikers in creek gorge, permission not confirmed"
+   },
+   {
+    "file": "https://www.visitbright.com.au/wp-content/uploads/sites/42/Waterfall_Bright_Summer-1.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "page is an itinerary, waterfall place unproven"
+   }
+  ],
+  "choice": "https://listings.rdp.tourismnortheast.com.au/wp-content/uploads/sites/6/Gorge-Walk_Mount-Beauty_1.jpg",
+  "hero_crop": "ok"
+ }
+}

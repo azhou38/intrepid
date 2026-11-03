@@ -1,0 +1,165 @@
+{
+ "dest:portland:header": {
+  "candidates": [
+   {
+    "file": "Cape Nelson Lighthouse, Portland, Australia (Unsplash).jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Cape Nelson lighthouse at night, portrait; not the town in landscape"
+   },
+   {
+    "file": "https://wpenginevisitportlandnsw.s3.us-west-1.amazonaws.com/wp-content/uploads/2023/01/20111103/portland-town-aerial.jpeg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Portland NSW, wrong place"
+   },
+   {
+    "file": "https://www.portofportland.com.au/wp-content/uploads/2019/02/Port_of_Portland_Aerial_January_2019_02.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "port aerial, 1732 px under 2000"
+   }
+  ],
+  "choice": "none: no wide Portland (Victoria) town/coast photo >=2000 px; the rest are Portland Oregon/Maine/NSW"
+ },
+ "dest:portland:why1": {
+  "candidates": [
+   {
+    "file": "https://assets.atdw-online.com.au/images/a71ac8aea97ac547bd326c1fd0fcedd8.jpeg?rect=115%2C0%2C4608%2C3456&w=2048&h=1536&rot=360&q=eyJ0eXBlIjoibGlzdGluZyIsImxpc3RpbmdJZCI6IjU2YjI0NGZhM2VkMTRjYTc0NTMyMmM2MyIsImRpc3RyaWJ1dG9ySWQiOiI1NmIxZWI5MzQ0ZmVjYTNkZjJlMzIwYzgiLCJhcGlrZXlJZCI6IjU2YjFlZTU5MGNmMjEzYWQyMGRjNTgxOSJ9",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "NSW Blue Mountains stand-in"
+   }
+  ],
+  "choice": "none: forest/gorge walking candidates are Blue Mountains NSW"
+ },
+ "dest:portland:why2": {
+  "candidates": [
+   {
+    "file": "https://a9045c5f-4a1a-4c94-a9b7-4eaf07b7de18.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2024/12/10184507/MG_6266-large-1800x700-1.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "seal on a pier, not Portland clifftop; stand-in"
+   }
+  ],
+  "choice": "none: only generic seal close-ups, no Cape Bridgewater clifftop colony/whale view"
+ },
+ "spot:portland-1": {
+  "candidates": [
+   {
+    "file": "Cape Bridgewater Coastline 002.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "CC BY 3.0 Cape Bridgewater coastline, bay and beach; dull sky"
+   },
+   {
+    "file": "https://www.visitportland.com.au/wp-content/uploads/2017/09/Bridgewater-Cafe-Scenic3.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "beach car park and kiosk dominate"
+   }
+  ],
+  "choice": "Cape Bridgewater Coastline 002.JPG",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.62,
+   "zoom": 1.5
+  }
+ },
+ "spot:portland-2": {
+  "candidates": [
+   {
+    "file": "Cape Nelson Lighthouse 002.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "CC BY 3.0 Cape Nelson Lighthouse, 105 m from pin; page checked via candidates"
+   },
+   {
+    "file": "Cape Nelson Lighthouse, Portland, Australia (Unsplash).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "night shot, portrait; first choice stronger is daylight"
+   }
+  ],
+  "choice": "Cape Nelson Lighthouse 002.JPG",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.4
+  }
+ },
+ "spot:portland-3": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/great-ocean-road/things-to-do/nature-and-wildlife/national-parks-and-reserves/original__9071457_tvic_visionsofvictoria1235312833_0qhkitu_1600x1200.jpg?ts=20210625300908",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitvictoria photo on the Discovery Bay Coastal Park page: dunes and coast"
+   },
+   {
+    "file": "Petrified Forest, Cape Bridgewater, VIC.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Petrified Forest at Cape Bridgewater, different place"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/great-ocean-road/things-to-do/nature-and-wildlife/national-parks-and-reserves/original__9071457_tvic_visionsofvictoria1235312833_0qhkitu_1600x1200.jpg?ts=20210625300908",
+  "hero_crop": "ok"
+ },
+ "spot:portland-4": {
+  "candidates": [
+   {
+    "file": "https://www.glenelg.vic.gov.au/files/assets/public/v/1/discover-our-shire/tourism/1920-x-1080-images.jpg?w=1200",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "walker on coastal dune track, Glenelg Shire page for the walk, permission not confirmed"
+   },
+   {
+    "file": "https://greatsouthwestwalk.com/wp-content/uploads/2024/07/GSWWMAP1.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "map"
+   }
+  ],
+  "choice": "https://www.glenelg.vic.gov.au/files/assets/public/v/1/discover-our-shire/tourism/1920-x-1080-images.jpg?w=1200",
+  "hero_crop": "ok"
+ }
+}

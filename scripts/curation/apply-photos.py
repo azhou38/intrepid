@@ -15,7 +15,8 @@ spec = importlib.util.spec_from_file_location('br', 'scripts/curation/brighten.p
 br = importlib.util.module_from_spec(spec); spec.loader.exec_module(br)
 STEPS = [120, 250, 500, 960, 1280, 1920]
 REPO_RAW = 'https://raw.githubusercontent.com/azhou38/intrepid'
-PENDING = 'curation/nz-rest/lens/photos-pending.json'
+RUN = os.environ.get('PHOTO_RUN', 'nz-rest')   # the curation/<run> folder (PHOTO_RUN=victoria for Victoria)
+PENDING = f'curation/{RUN}/lens/photos-pending.json'
 mode = sys.argv[1]
 SCRATCH = '/private/tmp/claude-501/-Users-alexzhou-Developer-mobile-wellington/16edc52c-57b1-4c22-8c60-6565c530b9eb/scratchpad'
 
@@ -143,6 +144,6 @@ for f in sorted(glob.glob(os.environ.get('JUDGE_GLOB', 'curation/nz-rest/lens/ju
 open('src/data/imageOverrides.ts', 'w').write(ov); open('src/data/destinations.ts', 'w').write(dest)
 json.dump(ext, open('src/data/externalPhotos.json', 'w'), indent=1, ensure_ascii=False)
 json.dump(pending, open(PENDING, 'w'), indent=1, ensure_ascii=False)
-json.dump(report, open('curation/nz-rest/lens/photos-report.json', 'w'), indent=1, ensure_ascii=False)
+json.dump(report, open(f'curation/{RUN}/lens/photos-report.json', 'w'), indent=1, ensure_ascii=False)
 print(json.dumps({k: (v if isinstance(v, int) else len(v)) for k, v in report.items()}), 'pending external:', len(pending))
 for u in report['unresolved']: print('UNRESOLVED', u)

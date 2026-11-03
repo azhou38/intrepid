@@ -1,0 +1,237 @@
+{
+ "dest:ararat:header": {
+  "candidates": [
+   {
+    "file": "Ararat Town Hall & Gallery, Ararat, Vic, jjron, 12.01.2011.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Town hall single building, 1600px under 2000 header min"
+   },
+   {
+    "file": "https://www.andritz.com/resource/blob/590784/8c51fc99e23128688a79b7a732091df3/11-australia-ararat-adobestock-294824715-01-data.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "unidentified plains view from a hydro-company page, not a town in its landscape"
+   }
+  ],
+  "choice": "none: no header >=2000px showing Ararat in its landscape; Commons town-hall/streets are 1600px or single buildings",
+  "hero_crop": "n/a"
+ },
+ "dest:ararat:why1": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/grampians/see-and-do/tours/a89b9d9a446d052bded3672f9966d7b0_1600x1200.jpeg?ts=20211207400252",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official visitvictoria Ararat Asylums tour page, night tour at the bluestone asylum buildings; dark on purpose (night)"
+   },
+   {
+    "file": "https://www.thecourier.com.au/images/transform/v1/crop/frm/AwqPiia2uZwqnFib7Qkgcg/c68606ab-5de1-4853-91b8-ce1d8838443f.jpg/r171_112_2030_1349_w2200_h1464_fmax.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "backup",
+    "reason": "daylight Aradale, web photo, permission not confirmed"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/grampians/see-and-do/tours/a89b9d9a446d052bded3672f9966d7b0_1600x1200.jpeg?ts=20211207400252",
+  "hero_crop": "ok",
+  "dark": true,
+  "note": "night tour, dark on purpose; Aradale/J Ward spots could share"
+ },
+ "dest:ararat:why2": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/melbourne/eat-and-drink/wineries/cd40ce997a3570d21886c8b50cb23f23_1600x1200.jpeg?ts=20260312310120",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "wine photos are other regions (Yarra Valley, SA, WA, Mornington)"
+   }
+  ],
+  "choice": "none: all candidates are wine from other regions; recommend sharing spot:ararat-5 candidate 1 (Seppelt cellar gate, visitgrampians official 2391px) or 3 (vineyard rows, visitvictoria)",
+  "hero_crop": "n/a"
+ },
+ "spot:ararat-1": {
+  "candidates": [
+   {
+    "file": "https://gml.com.au/wp-content/uploads/2023/11/IMG_4346-scaled-e1722320510531.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Aradale building and lawn, GML heritage project page, 2432px, permission not confirmed"
+   },
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/grampians/things-to-do/tours/d0bff85f7ee8909d8cf56b6d522b00d3_1600x1200.jpeg?ts=20210813370442",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "HDR dark filter"
+   },
+   {
+    "file": "https://www.canberratimes.com.au/images/transform/v1/crop/frm/ben.fraser/1b5ea927-97e1-4dd4-aca3-2ba73f7a874a.jpg/r0_104_2000_1229_w1200_h678_fmax.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "backup",
+    "reason": "shows Aradale sign, 1200px"
+   }
+  ],
+  "choice": "https://gml.com.au/wp-content/uploads/2023/11/IMG_4346-scaled-e1722320510531.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:ararat-2": {
+  "candidates": [
+   {
+    "file": "Ararat J Ward.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Ararat J Ward bluestone gaol exterior, CC BY 3.0 Mattinbgn (file page not reachable; name and image match)"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/grampians/see-and-do/art-and-culture/history-and-heritage/28d9b05a9deb9fd12be127b8bea46eeb_1600x1200.jpeg?ts=20260701310126",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "backup",
+    "reason": "official tower and wall"
+   },
+   {
+    "file": "Ararat prison asylum.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "overexposed sky, odd crop"
+   }
+  ],
+  "choice": "Ararat J Ward.JPG",
+  "hero_crop": "ok",
+  "note": "distinct from Aradale (different building)"
+ },
+ "spot:ararat-3": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/grampians/see-and-do/art-and-culture/museums/f51c2f46a5e5ac011d79a6c7656e6e54_1600x1200.jpeg?ts=20250501300721",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Gum San facade with steps, official visitvictoria"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/grampians/see-and-do/art-and-culture/museums/f51c2f46a5e5ac011d79a6c7656e6e54_1600x1200.jpeg?ts=20250501300721",
+  "hero_crop": "ok"
+ },
+ "spot:ararat-4": {
+  "candidates": [
+   {
+    "file": "https://assets.visitgrampians.com.au/8bf8ce0221b23/assets/f496d318-eba1-4073-be36-84810596c100/w=3840,h=2560?mtime=1769183069",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "gallery interior with artworks, visitgrampians official 3840px"
+   },
+   {
+    "file": "https://www.ararat.vic.gov.au/sites/default/files/styles/max_1300x1300/public/2024-01/Image.jpg?itok=YQ0yycUt",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "backup",
+    "reason": "exterior, council site"
+   }
+  ],
+  "choice": "https://assets.visitgrampians.com.au/8bf8ce0221b23/assets/f496d318-eba1-4073-be36-84810596c100/w=3840,h=2560?mtime=1769183069",
+  "hero_crop": "ok"
+ },
+ "spot:ararat-5": {
+  "candidates": [
+   {
+    "file": "https://assets.visitgrampians.com.au/8bf8ce0221b23/assets/0219140a-e621-4f16-d260-387712e13c00/w=2391,h=1672?mtime=1768540294",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Seppelt cellar gate in tunnel, visitgrampians official 2391px"
+   }
+  ],
+  "choice": "https://assets.visitgrampians.com.au/8bf8ce0221b23/assets/0219140a-e621-4f16-d260-387712e13c00/w=2391,h=1672?mtime=1768540294",
+  "hero_crop": "ok",
+  "dark": false
+ },
+ "spot:ararat-6": {
+  "candidates": [
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/langi-ghiran-state-park/trees-langi-ghiran-state-park-1920x1124.png?rev=f6b49de570584b20b26163d702c8cf97",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "granite boulders and bush, parks.vic Langi Ghiran page"
+   },
+   {
+    "file": "Barkly St to the Grampians, Ararat, Vic, jjron, 12.01.2011.jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Ararat town street, not the park"
+   }
+  ],
+  "choice": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/langi-ghiran-state-park/trees-langi-ghiran-state-park-1920x1124.png?rev=f6b49de570584b20b26163d702c8cf97",
+  "hero_crop": "ok"
+ },
+ "spot:ararat-7": {
+  "candidates": [
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/mount-buangor-state-park/fern-tree-falls-mount-buangor-state-park-1920x1124.jpg?rev=58312870850946389da1fd8aa0930ae4",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Ferntree Falls, parks.vic Mount Buangor page, official"
+   },
+   {
+    "file": "Mount Buangor State Park.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "backup",
+    "reason": "Commons lead rainbow over tree, less recognisable"
+   }
+  ],
+  "choice": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/mount-buangor-state-park/fern-tree-falls-mount-buangor-state-park-1920x1124.jpg?rev=58312870850946389da1fd8aa0930ae4",
+  "hero_crop": "ok"
+ }
+}

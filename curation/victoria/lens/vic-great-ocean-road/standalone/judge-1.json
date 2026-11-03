@@ -1,0 +1,133 @@
+{
+ "spot:port-fairy": {
+  "candidates": [
+   {
+    "file": "Port Fairy, main street, 30.11.2009.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "street corner, 1000px, GFDL"
+   },
+   {
+    "file": "Port Fairy. Victoria. Australia.jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "sunset over groyne, not recognisably Port Fairy"
+   }
+  ],
+  "choice": "none: no recognisable Port Fairy view (harbour/wharf) on sheet",
+  "hero_crop": null
+ },
+ "spot:griffiths-island-lighthouse": {
+  "candidates": [
+   {
+    "file": "Griffiths Island Lighthouse (33419941062).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY 2.0, lighthouse clear and central"
+   },
+   {
+    "file": "Griffiths Island Lighthouse (44871908542).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "similar, lower ranked"
+   }
+  ],
+  "choice": "Griffiths Island Lighthouse (33419941062).jpg",
+  "hero_crop": {
+   "x": 0.47,
+   "y": 0.5
+  }
+ },
+ "spot:the-crags": {
+  "candidates": [],
+  "choice": "none: candidates are NSW/Scotland/skiing/unproven coast shots; no proven The Crags",
+  "hero_crop": null
+ },
+ "spot:budj-bim-cultural-landscape": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/great-ocean-road/see-and-do/tours/nature-and-wildlife-tours/472890b77e92e4f3a208f9a98fc29982_1600x1200.jpeg?ts=20241111310423",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official Visit Victoria Budj Bim tourism page; stone structure of the heritage area"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/great-ocean-road/see-and-do/tours/nature-and-wildlife-tours/49c30ef6dbb845ac03d38dcf39367763_1600x1200.jpeg?ts=20251112300450",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "boardwalk, alternative"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/great-ocean-road/see-and-do/tours/nature-and-wildlife-tours/472890b77e92e4f3a208f9a98fc29982_1600x1200.jpeg?ts=20241111310423",
+  "hero_crop": "ok"
+ },
+ "spot:mount-eccles-national-park": {
+  "candidates": [
+   {
+    "file": "Budj Bim \u2010 Mt Eccles National Park, Victoria, Australia 08.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "CC0 Commons, crater lake in Budj Bim NP, 353m from pin, distinct from Mount Leura/Budj Bim heritage"
+   },
+   {
+    "file": "Budj Bim \u2010 Mt Eccles National Park, Victoria, Australia 39.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "ok",
+    "reason": "wikipedia lead, lake small in trees"
+   }
+  ],
+  "choice": "Budj Bim \u2010 Mt Eccles National Park, Victoria, Australia 08.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:mount-leura": {
+  "candidates": [
+   {
+    "file": "Mount Leura.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "low distant hill under sky/grass, weak at thumbnail"
+   },
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/great-ocean-road/see-and-do/nature-and-wildlife/national-parks-and-reserves/aaca41b4a2530467c0e0a6fa7b5b17bb_1600x1200.jpeg?ts=20260904340420",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "official Visit Melbourne page for Mt Leura reserve; aerial of crater and Camperdown, spot not header"
+   }
+  ],
+  "choice": "https://www.visitmelbourne.com/-/media/atdw/great-ocean-road/see-and-do/nature-and-wildlife/national-parks-and-reserves/aaca41b4a2530467c0e0a6fa7b5b17bb_1600x1200.jpeg?ts=20260904340420",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  }
+ }
+}

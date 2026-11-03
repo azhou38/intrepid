@@ -1,0 +1,215 @@
+{
+ "dest:horsham:header": {
+  "candidates": [
+   {
+    "file": "McKenzie Falls, Grampians, Victoria Australia (4843663832).jpg",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "McKenzie Falls is in the Grampians, 49 km away"
+   },
+   {
+    "file": "Horsham Australia Mechanics Institute building.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "single building"
+   },
+   {
+    "file": "https://assets.visitgrampians.com.au/8bf8ce0221b23/assets/3946c4a6-aa81-487d-d340-3372908a0700/w=1772,h=1181?mtime=1771290814",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "night street corner, not a town in its landscape"
+   }
+  ],
+  "choice": "none: no spectacular wide Horsham-in-setting photo (only street scenes, a building, McKenzie Falls in the Grampians)",
+  "hero_crop": null
+ },
+ "dest:horsham:why1": {
+  "candidates": [
+   {
+    "file": "https://visithorsham.com.au/wp-content/uploads/Original__9629769_TVIC_cover1_96apmis-1-1536x1152.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "climber on Mt Arapiles overhang above Wimmera plains and lake, matches reason; visithorsham.com.au, permission not confirmed"
+   },
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/you-yangs-regional-park/rock-climbing-2-you-yangs-regional-park-1920x1124.jpg?rev=9cd510b431604a4082a30cde504638bb",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "You Yangs, wrong place"
+   }
+  ],
+  "choice": "https://visithorsham.com.au/wp-content/uploads/Original__9629769_TVIC_cover1_96apmis-1-1536x1152.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "dest:horsham:why2": {
+  "candidates": [
+   {
+    "file": "Rupanyup silo art.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Rupanyup silo art, on the Silo Art Trail, CC BY-SA 4.0, 8000 px; same-destination reuse of the spot photo"
+   }
+  ],
+  "choice": "Rupanyup silo art.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:horsham-1": {
+  "candidates": [
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/mt-arapiles-tooan-state-park/sunrise-walking-mt-arapiles-tooan-state-park-1920x1124.jpg?rev=c7e768e15c90429ea1aed16fb9dd517b",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Mt Arapiles sunrise view, parks.vic.gov.au page for the state park, official"
+   },
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/old-images/grampians/nature-and-wildlife/mt-arapiles_gra_u_supplied_1280x720.jpg?ts=20141020300247&c=product&cw=1600&ch=1200",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "soft, low-res 1280x720 and slim cliff band"
+   },
+   {
+    "file": "Highline (37487794982).jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "summit radio masts, a climber photo not the mountain"
+   }
+  ],
+  "choice": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/mt-arapiles-tooan-state-park/sunrise-walking-mt-arapiles-tooan-state-park-1920x1124.jpg?rev=c7e768e15c90429ea1aed16fb9dd517b",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.5
+  }
+ },
+ "spot:horsham-2": {
+  "candidates": [
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/grampians/see-and-do/nature-and-wildlife/lakes-and-waterways/6dd3ea1416608a1212b248c45a846948_1600x1200.jpeg?ts=20261001330205",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Pink Lake near Dimboola (visitmelbourne page pink-lake-dimboola), clearly pink, official"
+   },
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/news/victorias-pink-lakes/pink-lake-lake-tyrrell-1140x667.png?rev=c85334d9204f4d52a32fe25724275035",
+    "right_place": false,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "Lake Tyrrell, different lake"
+   },
+   {
+    "file": "https://www.visitmelbourne.com/-/media/atdw/grampians/see-and-do/nature-and-wildlife/lakes-and-waterways/6649a071d98e87d9f2b001f926eb9e43_1600x1200.jpeg?ts=20261001330204",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "lake small behind trees"
+   }
+  ],
+  "choice": "https://www.visitmelbourne.com/-/media/atdw/grampians/see-and-do/nature-and-wildlife/lakes-and-waterways/6dd3ea1416608a1212b248c45a846948_1600x1200.jpeg?ts=20261001330205",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:horsham-4": {
+  "candidates": [
+   {
+    "file": "https://assets.visitgrampians.com.au/8bf8ce0221b23/assets/e2602f14-7f5c-4c7d-c58d-f1b4c724de00/w=1879,h=2048?mtime=1768537687",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Murtoa silo art (birds mural), visitgrampians product page, official"
+   }
+  ],
+  "choice": "https://assets.visitgrampians.com.au/8bf8ce0221b23/assets/e2602f14-7f5c-4c7d-c58d-f1b4c724de00/w=1879,h=2048?mtime=1768537687",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:horsham-5": {
+  "candidates": [
+   {
+    "file": "Rupanyup silo art.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Rupanyup silos with both portraits, 17 m from pin, CC BY-SA 4.0"
+   }
+  ],
+  "choice": "Rupanyup silo art.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:horsham-3": {
+  "candidates": [
+   {
+    "file": "Murtoa Stick Shed (1).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "stick shed interior, CC BY-SA 4.0, 66 m from pin"
+   },
+   {
+    "file": "Murtoa Stick Shed.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "reject",
+    "reason": "distant exterior, dull"
+   }
+  ],
+  "choice": "Murtoa Stick Shed (1).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ }
+}

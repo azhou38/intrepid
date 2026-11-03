@@ -1,0 +1,96 @@
+{
+ "dest:castlemaine:header": {
+  "candidates": [],
+  "choice": "none: only close town-hall/post-office facades, a hill-view blurb photo and unconfirmed web hits; no spectacular wide Castlemaine townscape",
+  "hero_crop": null
+ },
+ "dest:castlemaine:why1": {
+  "candidates": [],
+  "choice": "none: no verified Castlemaine Diggings walking photo (parks.vic hits unproven from sheet); searcher to find",
+  "hero_crop": null
+ },
+ "dest:castlemaine:why2": {
+  "candidates": [],
+  "choice": "none: no wide goldfields streetscape of Castlemaine proven; searcher",
+  "hero_crop": null
+ },
+ "dest:castlemaine:why3": {
+  "candidates": [],
+  "choice": "none: no passing Theatre Royal photo in this list (all web hits); spot castlemaine-3 pick (night exterior, CC BY-SA 4.0) could be reused",
+  "hero_crop": null
+ },
+ "spot:castlemaine-1": {
+  "candidates": [
+   {
+    "file": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/MaldonStreetscape.JPG/1280px-MaldonStreetscape.JPG?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Maldon main street heritage shopfronts (Commons MaldonStreetscape.JPG via Wikivoyage Maldon (Victoria)); web hit, permission not confirmed; lead photo is a rooftop view not recognisable"
+   }
+  ],
+  "choice": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/MaldonStreetscape.JPG/1280px-MaldonStreetscape.JPG?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=thumbnail",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:castlemaine-2": {
+  "candidates": [
+   {
+    "file": "Castlemaine Diggings 001.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Wikipedia lead, CC BY-SA 3.0, goldfields diggings ochre cutting with fence; mostly sky so zoom"
+   }
+  ],
+  "choice": "Castlemaine Diggings 001.JPG",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.7,
+   "zoom": 1.6
+  }
+ },
+ "spot:castlemaine-3": {
+  "candidates": [
+   {
+    "file": "RoyalCastlemaine.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Commons CC BY-SA 4.0 Theatre Royal facade at night with lit sign; dark on purpose (night)"
+   }
+  ],
+  "choice": "RoyalCastlemaine.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:castlemaine-4": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/atdw/daylesford-and-the-macedon-ranges/see-and-do/nature-and-wildlife/75f7e3ada3d33e5b6c63968a4c7cec42_1600x1200.jpeg?ts=20261001380102",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "accept",
+    "reason": "Official Visit Victoria photo of Lalgambuk Mount Franklin wooded dome; low in frame so zoom"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/atdw/daylesford-and-the-macedon-ranges/see-and-do/nature-and-wildlife/75f7e3ada3d33e5b6c63968a4c7cec42_1600x1200.jpeg?ts=20261001380102",
+  "hero_crop": {
+   "x": 0.65,
+   "y": 0.7,
+   "zoom": 1.8
+  }
+ }
+}

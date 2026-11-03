@@ -1,0 +1,146 @@
+{
+ "dest:surf-coast:header": {
+  "candidates": [
+   {
+    "file": "Google hits 11-18",
+    "verdict": "reject",
+    "reason": "aerial or unverified/other places (Gold Coast), no page proof"
+   }
+  ],
+  "choice": "none: only off-topic Commons files (race runner, council badge, cuttlebone) and unverified Google web photos of other places; needs searcher",
+  "hero_crop": null
+ },
+ "dest:surf-coast:why1": {
+  "candidates": [
+   {
+    "file": "Google hits 11-18",
+    "verdict": "reject",
+    "reason": "Gold Coast / Phillip Island / unverified"
+   }
+  ],
+  "choice": "none: only off-topic Commons files (race runner, council badge, cuttlebone) and unverified Google web photos of other places; needs searcher",
+  "hero_crop": null
+ },
+ "dest:surf-coast:why2": {
+  "candidates": [
+   {
+    "file": "Google hits 11-18",
+    "verdict": "reject",
+    "reason": "Twelve Apostles/Port Campbell, not the Surf Coast start of the road"
+   }
+  ],
+  "choice": "none: only off-topic Commons files (race runner, council badge, cuttlebone) and unverified Google web photos of other places; needs searcher",
+  "hero_crop": null
+ },
+ "dest:surf-coast:why3": {
+  "candidates": [
+   {
+    "file": "Google hits 11-18",
+    "verdict": "reject",
+    "reason": "kangaroos at other places (Tasmania/WA); #18 golf-course roo unverified as Anglesea"
+   }
+  ],
+  "choice": "none: only off-topic Commons files (race runner, council badge, cuttlebone) and unverified Google web photos of other places; needs searcher",
+  "hero_crop": null
+ },
+ "spot:surf-coast-1": {
+  "candidates": [
+   {
+    "file": "Bells Beach 2019.jpg",
+    "verdict": "pass",
+    "reason": "wikipedia lead, CC BY-SA 4.0, 2042px, the beach itself"
+   }
+  ],
+  "choice": "Bells Beach 2019.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:surf-coast-2": {
+  "candidates": [
+   {
+    "file": "visitvictoria #2",
+    "verdict": "pass",
+    "reason": "official tourism board photo, museum entrance sign legible"
+   },
+   {
+    "file": "Torquay-Australian-National-Surfing-Museum.jpg",
+    "verdict": "weaker",
+    "reason": "CC0 but car park and shed dominate"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/regions/great-ocean-road/see-and-do/art-and-culture/museums/australian-national-surfing-museum",
+  "hero_crop": "ok"
+ },
+ "spot:surf-coast-3": {
+  "candidates": [
+   {
+    "file": "SplitPoint 0072.jpg",
+    "verdict": "pass",
+    "reason": "wikipedia lead, CC BY-SA 3.0, lighthouse itself, 1365px"
+   }
+  ],
+  "choice": "SplitPoint 0072.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.25
+  }
+ },
+ "spot:surf-coast-4": {
+  "candidates": [
+   {
+    "file": "Torquay surf.jpg",
+    "verdict": "pass",
+    "reason": "wikipedia lead, public domain, Torquay coast and town in view"
+   }
+  ],
+  "choice": "Torquay surf.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:surf-coast-8": {
+  "candidates": [
+   {
+    "file": "Great Ocean Road - br\u00e1na - panoramio.jpg",
+    "verdict": "pass",
+    "reason": "CC BY 3.0, geotagged 6 m, the arch"
+   }
+  ],
+  "choice": "Great Ocean Road - br\u00e1na - panoramio.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:surf-coast-5": {
+  "candidates": [
+   {
+    "file": "Shore at Anglesea, Victoria.JPG",
+    "verdict": "pass",
+    "reason": "CC BY-SA 4.0 3264px, Anglesea beach; page title names Anglesea, not opened for categories"
+   }
+  ],
+  "choice": "Shore at Anglesea, Victoria.JPG",
+  "hero_crop": {
+   "x": 0.7,
+   "y": 0.6,
+   "zoom": 1.4
+  }
+ },
+ "spot:surf-coast-6": {
+  "candidates": [
+   {
+    "file": "Point Addis from top lookout.jpg",
+    "verdict": "pass",
+    "reason": "CC BY-SA 3.0 3872px, 220 m from pin, headland and beach"
+   }
+  ],
+  "choice": "Point Addis from top lookout.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:surf-coast-7": {
+  "candidates": [
+   {
+    "file": "Torquay Surf Beach 03.jpg",
+    "verdict": "pass",
+    "reason": "CC BY-SA 4.0 3648px, the surf beach; differs from slot 4 photo"
+   }
+  ],
+  "choice": "Torquay Surf Beach 03.jpg",
+  "hero_crop": "ok"
+ }
+}

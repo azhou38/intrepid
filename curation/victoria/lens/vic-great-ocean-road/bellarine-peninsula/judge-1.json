@@ -1,0 +1,112 @@
+{
+ "dest:bellarine-peninsula:header": {
+  "candidates": [
+   {
+    "file": "Ocean Grove Victoria Australia - panoramio.jpg",
+    "verdict": "reject",
+    "reason": "thin strip, dull"
+   },
+   {
+    "file": "https://www.australia.com/content/dam/digital/australia-com/images/171028-56.jpg",
+    "verdict": "reject",
+    "reason": "couple on jetty is the focus, place unproven"
+   },
+   {
+    "file": "https://onehourout.com.au/oho-content/uploads/2021/03/Facebook5@2x-1.jpg",
+    "verdict": "reject",
+    "reason": "aerial, unclear"
+   }
+  ],
+  "choice": "none: no header-grade photo (>=2000 px, wide, place-proven) among candidates; Commons ones are tiny/odd, official ones <2000 px or people-focused",
+  "hero_crop": null
+ },
+ "dest:bellarine-peninsula:why1": {
+  "candidates": [],
+  "choice": "none: no candidate shows \"stroll historic seaside streets\"; candidates are plants, trains, aerials or unrelated",
+  "hero_crop": null
+ },
+ "dest:bellarine-peninsula:why2": {
+  "candidates": [],
+  "choice": "none: no candidate shows \"swim and surf at beach towns\"; candidates are plants, trains, aerials or unrelated",
+  "hero_crop": null
+ },
+ "dest:bellarine-peninsula:why3": {
+  "candidates": [],
+  "choice": "none: no candidate shows \"taste wine at coastal vineyards\"; candidates are plants, trains, aerials or unrelated",
+  "hero_crop": null
+ },
+ "spot:bellarine-peninsula-1": {
+  "candidates": [
+   {
+    "file": "Miettas at Queenscliff - panoramio.jpg",
+    "verdict": "reject",
+    "reason": "one hotel building, not the town"
+   },
+   {
+    "file": "Queenscliffe Historical Museum.jpg",
+    "verdict": "reject",
+    "reason": "museum building, not the town"
+   }
+  ],
+  "choice": "none: only single buildings; no town view (pier file is GFDL only)",
+  "hero_crop": null
+ },
+ "spot:bellarine-peninsula-2": {
+  "candidates": [
+   {
+    "file": "Fort Queenscliffe (60323220).jpeg",
+    "verdict": "accept",
+    "reason": "disappearing gun at Fort Queenscliff, CC BY-SA 3.0, 2048 px, category Fort Queenscliff, Victoria",
+    "hero_crop": {
+     "x": 0.5,
+     "y": 0.35,
+     "zoom": 1.5
+    }
+   }
+  ],
+  "choice": "Fort Queenscliffe (60323220).jpeg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.35,
+   "zoom": 1.5
+  }
+ },
+ "spot:bellarine-peninsula-3": {
+  "candidates": [
+   {
+    "file": "Bellarine Railway SAR 3620.jpg",
+    "verdict": "accept",
+    "reason": "steam loco at Queenscliff station, CC BY 4.0, 6000 px, cat Bellarine Railway"
+   }
+  ],
+  "choice": "Bellarine Railway SAR 3620.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:bellarine-peninsula-4": {
+  "candidates": [
+   {
+    "file": "Barwon Heads bridge Stevage.jpg",
+    "verdict": "reject",
+    "reason": "bridge a thin sliver in wide panorama"
+   },
+   {
+    "file": "Aerial perspective of Barwon Heads bridge.jpg",
+    "verdict": "accept",
+    "reason": "Barwon Heads Bridge, CC BY-SA 4.0, 4000 px, cat Barwon Heads Bridge"
+   }
+  ],
+  "choice": "Aerial perspective of Barwon Heads bridge.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:bellarine-peninsula-5": {
+  "candidates": [
+   {
+    "file": "Point Lonsdale jetty towards water.jpg",
+    "verdict": "accept",
+    "reason": "Point Lonsdale jetty, CC BY-SA 3.0, 3825 px, geotagged there"
+   }
+  ],
+  "choice": "Point Lonsdale jetty towards water.jpg",
+  "hero_crop": "ok"
+ }
+}

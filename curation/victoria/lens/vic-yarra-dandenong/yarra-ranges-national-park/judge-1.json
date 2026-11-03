@@ -1,0 +1,255 @@
+{
+ "dest:yarra-ranges-national-park:header": {
+  "candidates": [
+   {
+    "file": "Black Spur, Yarra Ranges NP, Vic, Australia - Diliff.jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "Yarra Ranges National Park (34069164673).jpg",
+    "verdict": "reject/not chosen"
+   },
+   {
+    "file": "The Beeches Rainforest Walk 01 Pengo.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "Black Spur, Yarra Ranges NP, Vic, Australia - Diliff.jpg",
+  "hero_crop": "ok",
+  "reason": "Black Spur mountain ash forest road, 5760px 3:2, CC BY-SA, geotagged in park; real photo (light trail long exposure)"
+ },
+ "dest:yarra-ranges-national-park:why1": {
+  "candidates": [
+   {
+    "file": "Yarra Ranges National Park (34069164673).jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "Yarra Ranges National Park - Flickr - Steven Penton.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "Yarra Ranges National Park (34069164673).jpg",
+  "hero_crop": "ok",
+  "reason": "looking up into tall ash forest, 4608px CC BY 2.0, titled Yarra Ranges NP"
+ },
+ "dest:yarra-ranges-national-park:why2": {
+  "candidates": [
+   {
+    "file": "Black Spur, Yarra Ranges NP, Vic, Australia - Diliff.jpg",
+    "verdict": "accept"
+   }
+  ],
+  "choice": "Black Spur, Yarra Ranges NP, Vic, Australia - Diliff.jpg",
+  "hero_crop": "ok",
+  "reason": "winding road through ash forest; same file as header, allowed within destination"
+ },
+ "dest:yarra-ranges-national-park:why3": {
+  "candidates": [
+   {
+    "file": "https://assets.visityarravalley.com.au/12we459678012/assets/de588b43-a68a-4e34-d7ca-8eed54c69e00/fit=contain,w=1920",
+    "verdict": "accept"
+   }
+  ],
+  "choice": "https://assets.visityarravalley.com.au/12we459678012/assets/de588b43-a68a-4e34-d7ca-8eed54c69e00/fit=contain,w=1920",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  },
+  "reason": "Donna Buang tower in snow, visityarravalley page \"Closest Snow to Melbourne - Mt Donna Buang\", official, 1920px"
+ },
+ "spot:yarra-ranges-national-park-1": {
+  "candidates": [
+   {
+    "file": "Mount Donna Buang with its 21m high observation tower.jpg",
+    "verdict": "reject: tower tiny in 2.5:1 panorama, view from summit, subject lost in crop"
+   }
+  ],
+  "choice": "none: Commons shots are wide panoramas with the tower tiny; the searcher should find a tower photo (destination slot candidates: why3 #11 visityarravalley tower in snow, header-sheet #18 visitmelbourne tower already seen) - same-destination sharing recommended",
+  "hero_crop": "fail: tiny subject in panorama"
+ },
+ "spot:yarra-ranges-national-park-3": {
+  "candidates": [
+   {
+    "file": "https://www.visitvictoria.com/-/media/images/yarra-valley-and-dandenong-ranges/things-to-do/nature-and-wildlife/lake-mountain/lake-mountain_yvdr_r_credit-robert-blackburn_1353570_1150x863.jpg?ts=20240515420112",
+    "verdict": "accept"
+   },
+   {
+    "file": "Lake Mountain.jpg",
+    "verdict": "reject/not chosen"
+   },
+   {
+    "file": "Ash Trees Lake Mountain.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "https://www.visitvictoria.com/-/media/images/yarra-valley-and-dandenong-ranges/things-to-do/nature-and-wildlife/lake-mountain/lake-mountain_yvdr_r_credit-robert-blackburn_1353570_1150x863.jpg?ts=20240515420112",
+  "hero_crop": "ok",
+  "reason": "visitvictoria Lake Mountain page, scenic view over burnt ranges, 1150px; weak but the named place; Commons options are blue-filter trees or bare hill"
+ },
+ "spot:yarra-ranges-national-park-4": {
+  "candidates": [
+   {
+    "file": "MarysvilleMainStreet.JPG",
+    "verdict": "accept"
+   },
+   {
+    "file": "Aerial panorama of Marysville, set amongst the Great Dividing Range.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "MarysvilleMainStreet.JPG",
+  "hero_crop": "ok",
+  "reason": "Marysville main street, wikipedia lead; town itself, no overlap with Steavenson Falls"
+ },
+ "spot:yarra-ranges-national-park-5": {
+  "candidates": [
+   {
+    "file": "Steavenson Falls.jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "Steavensonfalls waterfall Marysville Victoria.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "Steavenson Falls.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  },
+  "reason": "Steavenson Falls tall cascade 41 m from pin, portrait 4000x6000, ok in square; slot is script-proven"
+ },
+ "spot:yarra-ranges-national-park-6": {
+  "candidates": [
+   {
+    "file": "Warburton Main Street.jpg",
+    "verdict": "accept"
+   }
+  ],
+  "choice": "Warburton Main Street.jpg",
+  "hero_crop": "ok",
+  "reason": "Warburton main street, wikipedia lead, 203 m from pin; script-proven"
+ },
+ "spot:yarra-ranges-national-park-7": {
+  "candidates": [
+   {
+    "file": "MountainAshWithCars.jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "Black Spur, Yarra Ranges NP, Vic, Australia - Diliff.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "MountainAshWithCars.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.6
+  },
+  "reason": "Black Spur road in ash forest, public domain portrait; shares subject with header only (allowed)"
+ },
+ "spot:yarra-ranges-national-park-8": {
+  "candidates": [
+   {
+    "file": "Cascades - panoramio.jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "The Beeches Rainforest Walk 01 Pengo.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "Cascades - panoramio.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  },
+  "reason": "cascade photo geotagged 320 m from Keppel Falls pin, 967x1200; file page not opened; candidate 1 is The Beeches (wrong place, belongs to slot 11)"
+ },
+ "spot:yarra-ranges-national-park-9": {
+  "candidates": [
+   {
+    "file": "Cathedral Range State Park - panoramio.jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "Cathedral Range, Vic, Australia - Mar 2012.jpg",
+    "verdict": "reject/not chosen"
+   },
+   {
+    "file": "Prickly mountain peaks (Unsplash).jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "Cathedral Range State Park - panoramio.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.45
+  },
+  "reason": "Cathedral Range seen across grassland, 4272px CC BY; avoids the Jawbone Peak photo used by slot 10"
+ },
+ "spot:yarra-ranges-national-park-10": {
+  "candidates": [
+   {
+    "file": "Prickly mountain peaks (Unsplash).jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "Cathedral Range - North Jawbone Peak (Victoria).jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "Prickly mountain peaks (Unsplash).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  },
+  "reason": "ridge with sharp peak, CC0 3570px, geotag 258 m from pin"
+ },
+ "spot:yarra-ranges-national-park-11": {
+  "candidates": [
+   {
+    "file": "The Beeches Rainforest Walk 01 Pengo.jpg",
+    "verdict": "accept"
+   }
+  ],
+  "choice": "The Beeches Rainforest Walk 01 Pengo.jpg",
+  "hero_crop": "ok",
+  "reason": "The Beeches Rainforest Walk, wikipedia lead image of the walk"
+ },
+ "spot:yarra-ranges-national-park-12": {
+  "candidates": [
+   {
+    "file": "https://www.exploreoutdoors.vic.gov.au/__data/assets/image/0029/785108/varieties/image_gallery_large.jpg",
+    "verdict": "accept"
+   },
+   {
+    "file": "https://www.exploreoutdoors.vic.gov.au/__data/assets/image/0026/785105/Ada-Tree1.jpg",
+    "verdict": "reject/not chosen"
+   },
+   {
+    "file": "Ada Tree Mushroom Growing - Nature Finds a way.jpg",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "https://www.exploreoutdoors.vic.gov.au/__data/assets/image/0029/785108/varieties/image_gallery_large.jpg",
+  "hero_crop": "ok",
+  "reason": "Ada Tree giant trunk with viewing platform, exploreoutdoors.vic.gov.au Ada Tree page, 1799px; permission not confirmed (flag). Commons files are mushrooms, rejected"
+ },
+ "spot:yarra-ranges-national-park-13": {
+  "candidates": [
+   {
+    "file": "https://assets.visityarravalley.com.au/12we459678012/assets/yarraranges/850782/gravity=0.5x0.5,fit=cover,h=1078,w=1920",
+    "verdict": "accept"
+   },
+   {
+    "file": "https://www.parks.vic.gov.au/-/media/project/pv/main/parks/images/places-to-see/yarra-ranges-national-park/oshannesy-acquaduct-yarra-ranges-national-park-warburton-1920x1124.jpg?rev=84d8de38fa5842a7af35de1908ac0527",
+    "verdict": "reject/not chosen"
+   }
+  ],
+  "choice": "https://assets.visityarravalley.com.au/12we459678012/assets/yarraranges/850782/gravity=0.5x0.5,fit=cover,h=1078,w=1920",
+  "hero_crop": "ok",
+  "reason": "cyclists on aqueduct trail, visityarravalley O'Shannassy page, 1920px official"
+ }
+}
