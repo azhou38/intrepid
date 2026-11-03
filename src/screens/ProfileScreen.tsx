@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, Modal,
 } from 'react-native';
 import { Pencil, ChevronDown, Check, LayoutGrid, List as ListIcon } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedProps, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -55,6 +55,8 @@ const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP 
 // A spot pin on the card's map, in its map units: the app's teardrop (a round head, the tail's edges tangent to it) with
 // its tip on the place. PIN_TIP is the tip's distance below the head's centre.
 const PIN_R = 1.5, PIN_TIP = 3.4;
+// How much larger the picked spot's pin is drawn than the others.
+const PICK_PIN_SCALE = 2;
 const PIN_TY = (PIN_R * PIN_R) / PIN_TIP, PIN_TX = PIN_R * Math.sqrt(1 - (PIN_R * PIN_R) / (PIN_TIP * PIN_TIP));
 const pinPath = (x: number, y: number) => {
   const cy = y - PIN_TIP;
@@ -433,15 +435,26 @@ export default function ProfileScreen() {
         {worldMode === 'destinations' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => (
           <Circle key={p.id} cx={p.x} cy={p.y} r={(p.id === pickedId ? 3.2 : 2) * dotScale} fill={p.id === pickedId ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.5 * dotScale} />
         ))}
+        {/* Each new pick sends a ring out from its place, so moving between two places a few pixels apart still reads as a change. */}
+        {worldMode === 'destinations' && (() => {
+          const p = worldDots.find(d => d.id === pickedId);
+          return p ? <PickRipple key={p.id} cx={p.x} cy={p.y} from={3.2 * dotScale} to={10 * dotScale} width={0.8 * dotScale} /> : null;
+        })()}
         {worldMode === 'spots' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => {
           const on = p.id === pickedId;
           return (
-            <G key={p.id} transform={`translate(${p.x} ${p.y}) scale(${dotScale * (on ? 1.6 : 1)}) translate(${-p.x} ${-p.y})`}>
+            <G key={p.id} transform={`translate(${p.x} ${p.y}) scale(${dotScale * (on ? PICK_PIN_SCALE : 1)}) translate(${-p.x} ${-p.y})`}>
               <Path d={pinPath(p.x, p.y)} fill={on ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
               <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
             </G>
           );
         })}
+        {worldMode === 'spots' && (() => {
+          const p = worldDots.find(d => d.id === pickedId);
+          // From the picked pin's head (the pin is scaled about its tip).
+          const k = dotScale * PICK_PIN_SCALE;
+          return p ? <PickRipple key={p.id} cx={p.x} cy={p.y - PIN_TIP * k} from={PIN_R * k} to={PIN_R * k + 7 * dotScale} width={0.8 * dotScale} /> : null;
+        })()}
       </Svg>
       {w !== WORLD_W && <View style={styles.mapBorder} pointerEvents="none" />}
       {/* A hint that the map opens. */}
@@ -842,6 +855,15 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
       )}
     </View>
   );
+}
+
+// A ring that spreads out from a newly picked place and fades, once (remounted, by its key, for every pick).
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+function PickRipple({ cx, cy, from, to, width }: { cx: number; cy: number; from: number; to: number; width: number }) {
+  const t = useSharedValue(0);
+  useEffect(() => { t.value = withTiming(1, { duration: 700, easing: Easing.out(Easing.cubic) }); }, []);
+  const props = useAnimatedProps(() => ({ r: from + (to - from) * t.value, strokeOpacity: 1 - t.value }));
+  return <AnimatedCircle cx={cx} cy={cy} fill="none" stroke={PICK_COLOR} strokeWidth={width} animatedProps={props} />;
 }
 
 // A page dot: dark for the page in view, blending to grey as the swipe moves away from it, in step with the finger.
