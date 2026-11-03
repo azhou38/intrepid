@@ -711,7 +711,9 @@ function CountrySheet({
     // one landing in the middle of the settle froze it for a few frames (DestinationSheet's transitionTo, same fix).
     // After a drag ('userUI') it waits for the sheet to land (flushSnapReport, from the settle's end), except MapScreen's
     // half-screen <-> peek report, which starts the map's recentring shift alongside the sheet and stays immediate.
-    pendingReportRef.current = null;
+    // A report still waiting from the last snap is delivered now, not dropped: a swipe down to peek begun before a drag
+    // back from full-screen had landed found MapScreen still at 'full', where it never shifts the map, so the map stayed put.
+    if (pendingReportRef.current) flushSnapReport();
     // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
     const reportParent = () => { if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.(); };
     if (reason !== 'userUI') { reportParent(); reportSnapState(next); }
