@@ -1253,8 +1253,19 @@ function DestinationSheet({
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
   const scrollAnimRef = useAnimatedRef<any>();
-  const onScrollUI = useAnimatedScrollHandler(e => { scrollYSV.value = e.contentOffset.y; });
   const scrollResetSV = useSharedValue(-1);   // -1: idle
+  // The content only scrolls once the sheet rests at full screen. scrollEnabled (React state) only turns off once a drag
+  // down from full has landed, so a swipe up made while the sheet was still settling below full both moved the sheet and
+  // scrolled the content, which carried the header up off the sheet's top edge. Until the sheet is up, any scroll is put
+  // straight back to the top here, on the UI thread (not while resetScrollToTop is easing it there itself).
+  const onScrollUI = useAnimatedScrollHandler(e => {
+    if (e.contentOffset.y > 0 && slideAnim.value > FULL_POS + 1 && scrollResetSV.value < 0) {
+      scrollTo(scrollAnimRef, 0, 0, false);
+      scrollYSV.value = 0;
+      return;
+    }
+    scrollYSV.value = e.contentOffset.y;
+  });
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
   const resetScrollToTop = () => {
     const y0 = scrollYSV.value;
