@@ -968,7 +968,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Limestone stacks, arches and gorges on the Great Ocean Road's Shipwreck Coast",
     description: "Port Campbell National Park protects about 1,750 ha of limestone coast between Peterborough and Princetown, roughly 190 km south-west of Melbourne. The Southern Ocean has carved sheer cliffs, offshore stacks, gorges, arches and blowholes, and erosion that cut caves, then arches, left the Twelve Apostles standing. The clipper Loch Ard was wrecked here in 1878 and only two of the 54 aboard survived. Little penguins can sometimes be seen at dusk, and short-tailed shearwaters return to Mutton Bird Island between October and April.",
     whyVisit: ["See the Twelve Apostles rise from the sea", "Walk down to cliff-backed beaches", "Look for whales and penguins on the coast", "Follow clifftop lookouts along the coast"],
-    whyVisitPhotos: ["Princetown (AU), Port Campbell National Park, Twelve Apostles -- 2019 -- 0930.jpg", "Peterborough (AU), Port Campbell National Park, Worm Bay -- 2019 -- 0863.jpg", "", ""],
+    whyVisitPhotos: ["Princetown (AU), Port Campbell National Park, Twelve Apostles -- 2019 -- 0930.jpg", "Peterborough (AU), Port Campbell National Park, Worm Bay -- 2019 -- 0863.jpg", "", "ext-dest-port-campbell-national-park-why4.jpg"],
     highlights: ["Twelve Apostles", "Hidden beaches", "Coastal wildlife", "Clifftop lookouts"],
     goodToKnow: [
       { icon: "🏨", title: "Stay in Port Campbell", detail: "There is no accommodation or camping in the park, and sleeping in car parks is prohibited. The nearest beds are in Port Campbell or Warrnambool." },
@@ -985,7 +985,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Sandstone ranges of lookouts, waterfalls and rock art, 260 km west of Melbourne",
     description: "Grampians (Gariwerd) National Park covers about 167,000 ha of uplifted sandstone ranges at the western end of the Great Dividing Range, with Mount William the highest point at 1,167 m. Halls Gap is the only town and main access point, and the Wonderland area beside it is the most popular for day walks. The park holds about 90% of Victoria's Aboriginal rock art, and Brambuk, the cultural centre at Halls Gap, is owned and managed by Jardwadjali and Djab Wurrung people. About a third of Victoria's flora grows here, including more than 75 orchid species.",
     whyVisit: ["Walk to lookouts over the ranges", "See Aboriginal rock art in Gariwerd", "Find wildflowers and orchids in spring", "Spot kangaroos and emus at Halls Gap"],
-    whyVisitPhotos: ["View near The Fortress, Grampians.jpg", "", "Boronia spp. Grampians National Park, Victoria Australia (4872581645).jpg", ""],
+    whyVisitPhotos: ["View near The Fortress, Grampians.jpg", "ext-dest-grampians-national-park-why2.jpg", "Boronia spp. Grampians National Park, Victoria Australia (4872581645).jpg", ""],
     highlights: ["Mountain lookouts", "Aboriginal rock art", "Spring wildflowers", "Roaming wildlife"],
     goodToKnow: [
       { icon: "🔥", title: "Check track closures", detail: "The 2024-25 fires burned over 135,000 ha and damaged tracks and camps. Check Parks Victoria for open sites before you go." },
@@ -1002,7 +1002,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Little penguins, fur seals and surf beaches on an island two hours from Melbourne.",
     description: "Phillip Island lies at the mouth of Western Port, about 140 km from Melbourne, and is joined to the mainland by a 640 m bridge from San Remo to Newhaven. About 40,000 little penguins live here, and the Penguin Parade at Summerland Beach has run since the 1920s. Seal Rocks, off the Nobbies, hosts Australia's largest fur seal colony, up to about 16,000. Australia's first Grand Prix was held on the island in 1928.",
     whyVisit: ["Watch penguins come ashore at dusk", "See fur seals and wild coastline", "Meet koalas and wallabies", "Surf and walk the beaches"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["", "", "", "ext-dest-phillip-island-why4.jpg"],
     highlights: ["Penguin Parade", "Seals and coast", "Native wildlife", "Surf beaches"],
     goodToKnow: [
       { icon: "🐧", title: "Penguin times vary", detail: "Penguins arrive about 5:15pm in June to 8:45pm in January. Viewing areas are outdoors, so bring warm, wind-proof layers." },
@@ -1240,7 +1240,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A bay-and-ocean peninsula south of Melbourne with hot springs and vineyards",
     description: "The Mornington Peninsula lies south of Melbourne on the eastern side of Port Phillip Bay, about 40 km long and tapering to Point Nepean. The bay side has sheltered sandy beaches for families, while the ocean side is popular with surfers. Peninsula Hot Springs has mineral-rich thermal pools up to 50 C, and Arthurs Seat reaches 305 m with wide views from its summit road. Point Nepean has an old fort and quarantine station, and is where Prime Minister Harold Holt vanished while swimming in 1967.",
     whyVisit: ["Soak in thermal hot springs", "Walk coastal cliffs and bay beaches", "Taste wine at cellar doors"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "", "ext-dest-mornington-peninsula-why3.jpg"],
     highlights: ["Hot springs", "Coastal walks", "Cellar doors"],
     goodToKnow: [
       { icon: "🚗", title: "Drive or ferry in", detail: "Public transport is limited beyond the main towns, so a car helps. The Sorrento-Queenscliff car ferry runs hourly, 7am-6pm." },
@@ -1359,7 +1359,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A Great Ocean Road coastal town beside Cape Otway and the Otway rainforest",
     description: "Apollo Bay is a coastal town of 1,790 people on the Great Ocean Road, about 191 km from Melbourne. Cape Otway Lightstation, about 30 minutes away, has operated since 1848 and is the oldest surviving lighthouse on mainland Australia. In the hills behind, Maits Rest is a 30-minute rainforest boardwalk with glow worms at night, and the Otway Fly is a steel canopy walk 600 m long and up to 47 m high. The 104 km Great Ocean Walk passes through town on its way to the Twelve Apostles.",
     whyVisit: ["Watch southern right whales from shore", "Walk through Otway rainforest", "Hike the Great Ocean Walk"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "", "ext-dest-apollo-bay-why3.jpg"],
     highlights: ["Whale watching", "Rainforest walks", "Coastal hiking"],
     goodToKnow: [
       { icon: "🚗", title: "Colac route is faster", detail: "Driving via Colac is much quicker than the Great Ocean Road, so use the coast road when you have time for the scenery." },
@@ -1376,7 +1376,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Great Ocean Road beach town with a 3 km main beach and Otway waterfalls nearby",
     description: "Lorne is a Great Ocean Road town 138 km, about two hours, from Melbourne, which began as a logging town. Its main beach runs about 3 km for bathing and surfing, and a pier is used for fishing. Cafes and galleries line Mountjoy Parade, and the town borders Great Otway National Park. The Lorne to Apollo Bay section of the road was finished in November 1932.",
     whyVisit: ["Swim and surf off a long beach", "Chase waterfalls through Otway fern gullies", "Drive the Great Ocean Road coast"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-lorne-why1.jpg", "", ""],
     highlights: ["Beach and surf", "Otway waterfalls", "Coastal drive"],
     goodToKnow: [
       { icon: "🎉", title: "New Year weekend crowds", detail: "Over 20,000 people visit on the first weekend of January for the Pier to Pub swim, so book ahead and expect crowds." },
@@ -1410,7 +1410,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Granite tors, snow gums and sheer cliffs on a plateau that tops out at 1,723 m",
     description: "Mount Buffalo National Park covers 31,000 ha about 350 km north-east of Melbourne, and was reserved on 4 November 1898, making it one of Australia's oldest national parks. The plateau has granite boulders and rock formations, sheer cliffs, waterfalls and snow gum woodland, and reaches 1,723 m at The Horn. The Chalet, built in 1910, overlooks sheets of granite and the Ovens and Buckland valleys. Bogong moths shelter in the rock crevices at The Horn, and birds feed on them.",
     whyVisit: ["Walk granite tors and plateau lookouts", "See wildflowers across the plateau", "Ski and snowshoe in winter"],
-    whyVisitPhotos: ["Mount Buffalo N.P. 28.jpg", "", ""],
+    whyVisitPhotos: ["Mount Buffalo N.P. 28.jpg", "ext-dest-mount-buffalo-national-park-why2.jpg", "ext-dest-mount-buffalo-national-park-why3.jpg"],
     highlights: ["Granite lookouts", "Summer wildflowers", "Winter snow play"],
     goodToKnow: [
       { icon: "⛓️", title: "Carry snow chains", detail: "Snow chains must be carried every day, for all vehicles including 4WDs, and fitted where road signs say so. Penalties apply." },
@@ -1427,7 +1427,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "An Ovens Valley town known for autumn colour, on the edge of the Victorian Alps.",
     description: "Bright is a town of about 2,600 people at 319 m, at the south-eastern end of the Ovens Valley in north-eastern Victoria. Tourism is its main industry, built around the autumn colours of European trees planted in the area. It is a gateway to alpine scenery near Mount Buffalo National Park, Mount Feathertop and Mount Hotham. The old rail line is now a rail trail to Wangaratta, and many paragliding launch sites lie close by.",
     whyVisit: ["See autumn colours along the river", "Cycle rail trails and riverside paths", "Paraglide from nearby launch sites"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "ext-dest-bright-why2.jpg", ""],
     highlights: ["Autumn colour", "Rail trails", "Paragliding"],
     goodToKnow: [
       { icon: "🍂", title: "Autumn is busiest", detail: "Autumn colours and the Bright Autumn Festival draw crowds, and many houses are holiday rentals. Book accommodation well ahead." },
@@ -1784,7 +1784,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A remote East Gippsland coast of empty beaches, dunes and lighthouses",
     description: "Croajingolong is a linear coastal national park in East Gippsland, about 80 km long and 20 km wide, with the Tasman Sea to the south and Mallacoota at its eastern end. Rocky outcrops, long sandy beaches, coastal dunes and freshwater rivers suit hiking, swimming, snorkelling and sea kayaking. The Wilderness Coast Walk follows the shore, and Point Hicks is believed to be Captain Cook's first Australian landfall. UNESCO nominated the park a World Biosphere Reserve in 1977, and it holds almost 1,000 native plant species.",
     whyVisit: ["Walk a wild coast of empty beaches", "Paddle coastal inlets and rivers", "Stay in historic lighthouse cottages"],
-    whyVisitPhotos: ["150101-059 Dunes near Pt Hicks.jpg", "", ""],
+    whyVisitPhotos: ["150101-059 Dunes near Pt Hicks.jpg", "ext-dest-croajingolong-why2.jpg", "ext-dest-croajingolong-why3.jpg"],
     highlights: ["Empty beaches", "Inlet paddling", "Lighthouse stays"],
     goodToKnow: [
       { icon: "🍽️", title: "Bring your own food", detail: "Outside Mallacoota there is nowhere to eat or buy supplies in the park, so stock up in town before heading in." },
@@ -1800,7 +1800,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A port city on Corio Bay and the gateway to the Bellarine and Great Ocean Road",
     description: "Geelong is Victoria's second-largest city, home to 282,809 people in 2023, on Corio Bay about 75 km south-west of Melbourne. Its waterfront is a working maritime area with cafes, an antique carousel and botanical gardens. The National Wool Museum on Moorabool Street takes about 90 minutes and holds a tourist information office. You Yangs Regional Park, 22 km north, has a 3.2 km walk to Flinders Peak (348 m).",
     whyVisit: ["Stroll the waterfront and carousel", "Explore wool and maritime history", "Walk up to wide hill views"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "", "ext-dest-geelong-why3.jpg"],
     highlights: ["Working waterfront", "Wool and maritime", "Hilltop views"],
     goodToKnow: [
       { icon: "✈️", title: "Avalon Airport is close", detail: "Avalon Airport, a second Melbourne-area airport, is about 20 minutes by road from Geelong, with a shuttle to Geelong and South Geelong stations." },
@@ -1896,7 +1896,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A gold-rush boomtown of Victorian hotels, mine diggings and a lively arts scene",
     description: "Castlemaine is a goldfields town founded in 1851, about 123 km from Melbourne and 39 km from Bendigo. Grand gold-era buildings and Victorian hotels survive on most street corners, and mullock heaps and mine shafts mark the Castlemaine Diggings National Heritage Park. Its Theatre Royal, established in 1854, is the oldest continuously operating theatre in mainland Australia. Maldon, 19 km away, was declared Australia's first notable town in 1966 for its largely unchanged 1850s buildings.",
     whyVisit: ["Walk the gold-rush diggings", "Wander preserved goldfields streets", "See a show in a historic theatre"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-castlemaine-why1.jpg", "", ""],
     highlights: ["Gold diggings", "Heritage streets", "Historic theatre"],
     goodToKnow: [
       { icon: "🚂", title: "Steam train to Maldon", detail: "The Victorian Goldfields Railway runs from Castlemaine station to Maldon mostly Fridays to Sundays, so plan a weekend visit around it." },
@@ -1928,7 +1928,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Mountain ash forest, scenic drives and Melbourne's nearest winter snowplay",
     description: "Yarra Ranges National Park, created in December 1995, covers 76,003 ha of wet mountain ash forest and cool temperate rainforest in the Great Dividing Range. Mountain ash is the world's tallest flowering tree. Mount Donna Buang (1,245 m) has a 21 m lookout tower with views over Melbourne, the Yarra Valley and the Dandenong and Cathedral Ranges, and near Warburton the Rainforest Gallery is a viewing platform 15 m above the forest floor. About 84% of the park is a water supply catchment closed to the public.",
     whyVisit: ["Walk among the world's tallest flowering trees", "Drive winding mountain ash forest roads", "See Melbourne's nearest snow in winter"],
-    whyVisitPhotos: ["Yarra Ranges National Park (34069164673).jpg", "", ""],
+    whyVisitPhotos: ["Yarra Ranges National Park (34069164673).jpg", "", "ext-dest-yarra-ranges-national-park-why3.jpg"],
     highlights: ["Giant ash forest", "Forest drives", "Winter snowplay"],
     goodToKnow: [
       { icon: "🚫", title: "Most of the park is closed", detail: "Most of the park protects Melbourne's drinking water and is closed to visitors. Stay on signed tracks and roads." },
@@ -3458,7 +3458,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Regional Wimmera River city and gateway to the Silo Art Trail and Mount Arapiles",
     description: "Horsham is a regional city on a bend in the Wimmera River, about 300 km north-west of Melbourne, and the most populous city in the Wimmera. It is the gateway to the Silo Art Trail and the north-western side of the Grampians National Park. Mount Arapiles, about 30 minutes' drive west, rises about 140 m above the plains and is one of Australia's premier rock-climbing sites. In town, the Regional Art Gallery, the Botanic Gardens and the riverside fill a stopover on the Western Highway.",
     whyVisit: ["Go rock climbing on the Wimmera plains", "Follow the Silo Art Trail"],
-    whyVisitPhotos: ["", ""],
+    whyVisitPhotos: ["ext-dest-horsham-why1.jpg", ""],
     highlights: ["Rock climbing", "Silo art"],
     goodToKnow: [
       { icon: "💧", title: "Bring water to Arapiles", detail: "Tank water at the Mount Arapiles campground is not for drinking, so bring your own and plenty of it." },
