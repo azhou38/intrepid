@@ -1,25 +1,27 @@
 #!/usr/bin/env python3
 """Lens second judge, batched across a run's groups, with the mechanical checks done by script first (PIPELINES.md →
-Pipeline B step 4). The blind second judge then only does what needs eyes: right place, the thing itself, a real photo.
+Pipeline B step 4). The second judge judges ONLY the photo the first judge picked, pass or fail, and only on what
+needs eyes: right place, the thing itself, a real photo, the subject inside the crop. It never picks another file.
 
   python3 scripts/curation/second-judge.py build <lens-dir> [--size 35]
   python3 scripts/curation/second-judge.py split <lens-dir>
 
 build: for every group under <lens-dir> (a folder with task.json, candidates.json, judge-1.json; also candidates-search.json
 and judge-1-search.json when the searcher's finds were judged), takes the slots where the first judge chose a NEW file and
-checks every candidate of those slots, never telling the second judge which one the first judge chose:
+checks the candidate the first judge chose (the slot's `judge_this`) and gives the second judge that one photo to pass or fail:
   size      width under the slot's floor (header 1500, why-visit 1280, spot 960), or a header outside aspect 0.6–2.0 → fail
   licence   NC, all rights reserved, or no licence → fail
   in use    the same file is already another spot's photo → fail; a destination's header or why-visit photo → note only
             (sharing within one destination is allowed: IMAGES.md → "Why visit photos")
   bright    centre-square 40th percentile < 0.22 or mean < 0.30 → note (the reconciler brightens it)
   crop      share of the photo a square (or a 1.6:1 why-visit card) shows → note, and the crop is drawn on the sheet
-Writes <lens-dir>/second/precheck.json (every candidate's results), second/sheets/<group>__<slot>.jpg (each passing
-candidate: whole photo beside the crop the app shows), second/batch-NN.json (the slots, about --size per batch, across
-groups; one second judge per batch) and second/auto-none.json (slots where no candidate passes: no judge needed).
+Writes <lens-dir>/second/precheck.json (the picked candidate's results), second/sheets/<group>__<slot>.jpg (the picked
+photo whole beside the crop the app shows), second/batch-NN.json (the slots, about --size per batch, across groups; one
+second judge per batch) and second/auto-none.json (slots whose picked photo fails the scripted checks: no judge needed).
 
-split: reads the judges' second/batch-NN.out.json ({"<group>|<slot>": {choice, candidates, …}}) plus auto-none.json and
-merges them into each group's judge-2.json, the file record-verdicts.ts and the reconciler already read.
+split: reads the judges' second/batch-NN.out.json ({"<group>|<slot>": {pass: true|false, candidates, hero_crop?, …}}) plus
+auto-none.json and merges them into each group's judge-2.json, the file record-verdicts.ts and the reconciler already
+read: a pass becomes choice = the first judge's file, a fail becomes "none: <reason>".
 Batch size: a judge's cost is mostly its fixed start (reading the rules and files), so 33 slots cost about the same as 10
 on Tonga (58k vs 71k tokens). Keep --size at 30–40; more than about 40 slots makes one agent's turns long.
 """
@@ -45,6 +47,19 @@ def new_file_choice(v):
     c = str(v.get('choice') or '')
     if not c or c.startswith('none') or c == 'keep-current' or v.get('decision') in ('reject', 'none', 'keep-current'): return None
     return c
+
+
+def same_file(a, b):
+    n = lambda x: os.path.basename(str(x or '').split('?')[0]).replace('_', ' ').lower()
+    return bool(a) and bool(b) and (str(a) == str(b) or n(a) == n(b))
+
+
+def picked(cands, choice):
+    """The candidate the first judge chose: by its file or url, or by its number."""
+    c = str(choice or '').strip()
+    for x in cands:
+        if same_file(c, x.get('file')) or same_file(c, x.get('url')) or same_file(c, x.get('page')) or c == str(x.get('n')) or c == f"#{x.get('n')}": return x
+    return None
 
 
 def licence_check(c):
@@ -155,16 +170,22 @@ def build(lens, size):
             if not new_file_choice(v): continue
             sid, k = f'{g}|{s}', kind(s)
             key = (task.get(s) or {}).get('key')
-            rows = [check(c, k, idx, dest_names, key) for c in cands.get(s, [])]
+            first = new_file_choice(v)
+            pick = picked(cands.get(s, []), first)
+            if not pick:
+                pre[sid] = []
+                auto_none[sid] = {'choice': f'none: the first judge\'s pick {first} is not among the slot\'s candidates', 'precheck': []}
+                continue
+            rows = [check(pick, k, idx, dest_names, key)]
             pre[sid] = [r for r, _ in rows]
             ok = [(r, im) for r, im in rows if r['status'] == 'pass']
             if not ok:
-                auto_none[sid] = {'choice': 'none: every candidate failed the scripted checks', 'precheck': pre[sid]}
+                auto_none[sid] = {'choice': 'none: the first judge\'s pick failed the scripted checks: ' + '; '.join(rows[0][0]['fails']), 'precheck': pre[sid]}
                 continue
             sp = os.path.join(out, 'sheets', f"{g}__{s.replace(':', '-')}.jpg")
             sheet(ok, k, sp)
             slots.append({'id': sid, 'group': g, 'slot': s, 'kind': k, 'key': key, 'current': (task.get(s) or {}).get('current'),
-                          'sheet': sp, 'candidates': [{x: r.get(x) for x in ('n', 'file', 'licence', 'notes')} for r, _ in ok]})
+                          'sheet': sp, 'judge_this': {'n': ok[0][0]['n'], 'file': ok[0][0]['file'], 'first_choice': first}, 'candidates': [{x: r.get(x) for x in ('n', 'file', 'licence', 'notes')} for r, _ in ok]})
     for f in glob.glob(os.path.join(out, 'batch-*.json')):
         if not f.endswith('.out.json'): os.remove(f)
     nb = max(1, -(-len(slots) // size)) if slots else 0
@@ -185,6 +206,12 @@ def split(lens):
             g, s = sid.split('|', 1); per.setdefault(g, {})[s] = v
     expected = {s['id'] for f in glob.glob(os.path.join(out, 'batch-[0-9][0-9].json')) for s in json.load(open(f))['slots']}
     missing = sorted(expected - {f'{g}|{s}' for g, d in per.items() for s in d})
+    first = {s['id']: (s.get('judge_this') or {}) for f in glob.glob(os.path.join(out, 'batch-[0-9][0-9].json')) for s in json.load(open(f))['slots']}
+    for g, d in per.items():
+        for s_, v in list(d.items()):
+            if isinstance(v, dict) and 'pass' in v and 'choice' not in v:
+                jt = first.get(f'{g}|{s_}', {})
+                v['choice'] = jt.get('first_choice') if v['pass'] else 'none: second judge failed the first judge\'s pick' + (f": {v.get('reason')}" if v.get('reason') else '')
     for g, d in per.items():
         p = os.path.join(lens, g, 'judge-2.json')
         cur = load(p, {}) or {}; cur.update(d)
