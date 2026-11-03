@@ -94,7 +94,8 @@ const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
 // tween instead of a physical spring, since any spring (even lightly underdamped) reads as
 // "bouncy" here given how large a distance these snaps travel.
 const SNAP_CONFIG  = { duration: 280, easing: Easing.out(Easing.cubic) };
-const MOUNT_SLIDE_DELAY_MS = 40;   // see transitionTo: the slide-in waits out the mount frame
+const MOUNT_SLIDE_DELAY_MS = 40;
+const SIDE_PANELS_WAIT_MS = 450;   // see sidePanelsOn   // see transitionTo: the slide-in waits out the mount frame
 const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
 
 // Legibility scrim over the hero photo: transparent at the top, darkening toward the bottom.
@@ -467,8 +468,12 @@ const GridSpotCard = React.memo(function GridSpotCard({ spot, onSelectSpot }: { 
 // Mounting all of a large destination's cards at once (Sydney's 84) took about 330 ms in one block, which stalled the map
 // and the sheet just after a destination opened; spread over a few frames the cards in view appear at once and the rest
 // follow without a long block.
-const SPOT_GRID_FIRST = 12;
+// The first batch is what full screen shows under the header (three rows), and the rest only start once a sheet opening
+// straight to full screen ("Grid view" from a spot) has finished sliding up (SPOT_GRID_WAIT_MS): adding cards every frame
+// of that slide re-rendered the sheet in the middle of it.
+const SPOT_GRID_FIRST = 6;
 const SPOT_GRID_STEP = 12;
+const SPOT_GRID_WAIT_MS = 400;
 const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot }: {
   spots: typeof SPOTS;
   onSelectSpot?: (spot: Spot) => void;
@@ -477,7 +482,9 @@ const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot }: {
   useEffect(() => { setShown(Math.min(spots.length, SPOT_GRID_FIRST)); }, [spots]);
   useEffect(() => {
     if (shown >= spots.length) return;
-    const id = requestAnimationFrame(() => setShown(n => Math.min(spots.length, n + SPOT_GRID_STEP)));
+    const grow = () => setShown(n => Math.min(spots.length, n + SPOT_GRID_STEP));
+    if (shown <= SPOT_GRID_FIRST) { const t = setTimeout(grow, SPOT_GRID_WAIT_MS); return () => clearTimeout(t); }
+    const id = requestAnimationFrame(grow);
     return () => cancelAnimationFrame(id);
   }, [shown, spots.length]);
   return (
@@ -737,6 +744,15 @@ function DestinationSheet({
   // sheet at full screen, or the Spots tab opened. Mounted with the other panels, it kept the sheet and the map busy for
   // about 2.5 s after every destination tap, right through the sheet's slide-in and the camera move.
   const [spotsPanelOn, setSpotsPanelOn] = useState(startTab === 'spots');
+  // The About and My Visit panels, off screen beside the Spots panel when the sheet opens straight to full screen on Spots
+  // ("Grid view" from a spot), mount once it has slid up (SIDE_PANELS_WAIT_MS): in the opening render they made it
+  // ~85 ms heavier, all of it before the sheet could start to move.
+  const [sidePanelsOn, setSidePanelsOn] = useState(!(resolvedInitialSnap === 'full' && startTab === 'spots'));
+  useEffect(() => {
+    if (sidePanelsOn) return;
+    const t = setTimeout(() => setSidePanelsOn(true), SIDE_PANELS_WAIT_MS);
+    return () => clearTimeout(t);
+  }, [sidePanelsOn]);
 
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
@@ -1232,7 +1248,7 @@ function DestinationSheet({
   const transitionToRef = useRef<(next: SnapState, reason: string) => void>(() => {});
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
-  const [panelsReady, revealPanels] = useDeferredMount();
+  const [panelsReady, revealPanels] = useDeferredMount(undefined, resolvedInitialSnap === 'full' && !leaving);
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
@@ -1889,7 +1905,7 @@ function DestinationSheet({
                         new one (or editing/deleting a specific one) only ever touches that
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
-                    <VisitCardList
+                    {sidePanelsOn && <VisitCardList
                       defaultTitle={`${destination.name} Trip`}
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
@@ -1901,7 +1917,7 @@ function DestinationSheet({
                       }}
                       selectorLabel={spots.length > 0 ? 'Spots Visited' : undefined}
                       selectorItems={spots.length > 0 ? spotSelectorItems : undefined}
-                    />
+                    />}
 
                   </View>
                   )}
@@ -1911,6 +1927,7 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('about', e.nativeEvent.layout.height)}
                   >
+                    {sidePanelsOn && (<>
                     <AboutPanel
                       destination={destination} spots={spots}
                       onSelectSpot={onSelectSpot}
@@ -1920,6 +1937,7 @@ function DestinationSheet({
                       whyScrollRef={whyScrollRef}
                     />
                     <AIContentNote />
+                    </>)}
                   </View>
 
                   {/* ── SPOTS PANEL — full grid, map-view button ── */}

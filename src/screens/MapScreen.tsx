@@ -1299,6 +1299,9 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
 const SHEET_HOLD_MAX_MS = 60;    // see holdSheetUntilCamera: the destination sheet rises while the spot sheet is still sliding away
 const BACK_CAMERA_DELAY_MS = 220;   // spot back to its destination: the zoom-out starts once the spot sheet has slid away
+// "Grid view" from a spot: the camera jumps to the destination's view once the full-screen destination sheet covers the map
+// (its 40 ms mount delay and 280 ms slide, with a margin), so the jump's renders come after the slide (see handleCloseSpotToDestination).
+const GRID_CAMERA_DELAY_MS = 450;
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
 const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
@@ -3965,7 +3968,8 @@ const destItems = useMemo((): DestItem[] =>
 
   const fitDestinationDefaultView = useCallback((
     dest: Destination,
-    mode: 'easeTo' | 'flyTo' = 'easeTo',
+    // 'none': a jump, for a move hidden behind a full-screen sheet.
+    mode: 'easeTo' | 'flyTo' | 'none' = 'easeTo',
     framing: 'topHalf' | 'full' = 'topHalf',
     durationMs = 500,
     // Multiplies the zoom LEVEL (not the visible span): 0.5 lands on half the destination's own
@@ -4430,6 +4434,15 @@ const destItems = useMemo((): DestItem[] =>
       suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650 + BACK_CAMERA_DELAY_MS);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       setDestHomeToDefault(selectedDest, 'topHalf');
+      // "Grid view" (landOnFull) ends with the map hidden behind the full-screen sheet: nothing to watch, so the sheet slides
+      // straight up over the spot sheet, as "Map view"'s swap does, and the camera jumps to the destination's view once it
+      // is covered (GRID_CAMERA_DELAY_MS). Flying there in view held the sheet back until the zoom was under way, and the
+      // flight's renders landed in the middle of its slide, which then took 0.7 s and stuttered.
+      if (landOnFull) {
+        cameraHoldUntilRef.current = Date.now() + GRID_CAMERA_DELAY_MS;
+        fitDestinationDefaultView(selectedDest, 'none', 'topHalf', 0);
+        return;
+      }
       // Plan the pins at the view this lands on from the tap, as an X close does (see beginBackPlan) — only when it zooms out.
       const target = destDefaultCamera(selectedDest, 'topHalf').zoom;
       if (target < camZoomRef.current - ZOOM_EPSILON) {

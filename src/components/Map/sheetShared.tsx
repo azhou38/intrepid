@@ -57,9 +57,11 @@ export function nameFontSize(name: string, sizes: [number, number, number], brea
 // commit (and the slide itself) light. `reveal` mounts it right away instead — call it the moment
 // the sheet heads to full-screen, where the content is visible.
 export const SHEET_PANEL_MOUNT_DELAY_MS = 300;
-export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean, () => void] {
-  const [ready, setReady] = useState(false);
-  const readyRef = useRef(false);
+// `initialReady`: mounted with the sheet instead (a sheet opening straight to full screen, whose panels are in view as it
+// slides up: revealing them during the slide re-rendered the sheet mid-slide, a stall of over 100 ms).
+export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS, initialReady = false): [boolean, () => void] {
+  const [ready, setReady] = useState(initialReady);
+  const readyRef = useRef(initialReady);
   const reveal = useCallback(() => {
     if (readyRef.current) return;
     readyRef.current = true;
