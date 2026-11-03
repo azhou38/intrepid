@@ -4194,6 +4194,11 @@ const destItems = useMemo((): DestItem[] =>
     // The snap was a SIDE EFFECT of the user's own map gesture (panning auto-peeks the open
     // sheet) — shifting the camera here would fight the pan already in their hand.
     if (suppressFrameSyncRef.current) return;
+    // One of our own camera moves is flying (or about to start) to a view framed for the sheet that is coming: a sheet swap
+    // reports its new sheet's snap as it mounts ("← Country" from a destination at bottom-screen mounts the country sheet at
+    // half-screen), and the shift for it started a new camera animation, which cancelled the flight part-way: the
+    // zoom-out to the country stopped at about zoom 5 instead of its default view.
+    if (programmaticCameraMoveRef.current || pendingCameraMoveRef.current || cameraHoldUntilRef.current > Date.now()) return;
     // The user has already deliberately panned/zoomed away from home (either return-prompt is
     // currently showing) — skip the shift entirely rather than just protecting `home` from
     // it. Two reasons:
@@ -4616,13 +4621,16 @@ const destItems = useMemo((): DestItem[] =>
     navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
     setSheetOverride({ cluster });
     fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
+    // The selection change waits until the country sheet has slid up (SHEET_SLIDE_IN_MS): run in the next task, its render
+    // (~150 ms, the whole screen) landed in the middle of the slide and stuttered it. The sheet and the pins already show
+    // the country (sheetOverride, navTarget), so nothing on screen waits for it but the country's border highlight.
     setTimeout(() => {
       setSheetOverride(null);
       // Only if nothing else was selected in between (a stale back must not undo a newer selection).
       if (sameNavSel(from, { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null })) {
         handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
       }
-    }, 0);
+    }, SHEET_SLIDE_IN_MS);
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
