@@ -9,7 +9,7 @@ needs eyes: right place, the thing itself, a real photo, the subject inside the 
 build: for every group under <lens-dir> (a folder with task.json, candidates.json, judge-1.json; also candidates-search.json
 and judge-1-search.json when the searcher's finds were judged), takes the slots where the first judge chose a NEW file and
 checks the candidate the first judge chose (the slot's `judge_this`) and gives the second judge that one photo to pass or fail:
-  size      width under the slot's floor (header 1500, why-visit 1280, spot 960), or a header outside aspect 0.6–2.0 → fail
+  size      width under the slot's floor (960 for all), or a header outside aspect 0.6–2.0 → fail
   licence   NC, all rights reserved, or no licence → fail
   in use    the same file is already another spot's photo → fail; a destination's header or why-visit photo → note only
             (sharing within one destination is allowed: IMAGES.md → "Why visit photos")
@@ -28,7 +28,7 @@ on Tonga (58k vs 71k tokens). Keep --size at 30–40; more than about 40 slots m
 import glob, json, os, re, sys
 from PIL import Image, ImageDraw
 
-MIN_W = {'header': 1500, 'why': 1280, 'spot': 960}
+MIN_W = {'header': 960, 'why': 960, 'spot': 960}
 FLOOR_P40, FLOOR_MEAN = 0.22, 0.30
 
 

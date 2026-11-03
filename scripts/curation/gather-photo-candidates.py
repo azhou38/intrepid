@@ -41,7 +41,7 @@ CACHE = os.path.join('.cache', 'curation')
 os.makedirs(os.path.join(CACHE, 'api'), exist_ok=True)
 os.makedirs(os.path.join(CACHE, 'thumbs'), exist_ok=True)
 BAD = re.compile(r'\b(map|maps|satellite|locator|flag|coat of arms|logo|plan|diagram|drawing|illustration|sketch|painting|engraving|lithograph|poster|chart|landsat|stamp|banknote|coin|svg|historical images|black and white)\b', re.I)
-MIN_W = {'header': 1500, 'why': 1280, 'spot': 960}
+MIN_W = {'header': 960, 'why': 960, 'spot': 960}
 last = {}
 
 def pace(host):
