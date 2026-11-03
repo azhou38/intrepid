@@ -602,8 +602,11 @@ function CountrySheet({
   }));
   // Peek strip: fades in only once the sheet drops past collapsed toward peek — mirrors
   // DestinationSheet's own peekAnimStyle.
+  // 1 while the sheet slides in from below on its way to half-screen, or slides off: the strip then stays hidden instead of
+  // showing in the peek zone and fading out again on the way up (as DestinationSheet's hidePeekSV).
+  const hidePeekSV = useSharedValue(leaving ? 0 : 1);
   const peekAnimStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
+    opacity: hidePeekSV.value === 1 ? 0 : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
 
   // Continuously writes the back-to-world pill's target "bottom" offset as slideAnim moves,
@@ -721,8 +724,9 @@ function CountrySheet({
       pendingReportRef.current = () => { setSnapStateReact(next); reportParent(); };
     }
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
+    if (reason !== 'mount' || next === 'peek') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
     if (reason === 'mount') {
-      slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) runOnJS(revealPanels)(); });
+      slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } });
     } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
@@ -733,7 +737,7 @@ function CountrySheet({
   useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
         if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
       });
       return;
@@ -808,7 +812,7 @@ function CountrySheet({
     closingRef.current = true;
     if (__DEV__) console.log('[sheet] Country', cluster.countryCode, snapStateRef.current, '-> closed', 'reason=exit');
     sheetPose.set(null);
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
   // The UI-thread exit (exitSV, see its prop): marks the sheet closing on the JS side, slides it out, and reports back.
@@ -823,7 +827,7 @@ function CountrySheet({
       if (prev === null || cur === prev) return;
       exitingSV.value = true;
       runOnJS(markExiting)();
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
     [exitSV],
   );
@@ -840,7 +844,7 @@ function CountrySheet({
   const dismissSheetRef = useRef(() => {});
   dismissSheetRef.current = () => {
     sheetPose.set(null);
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
       if (finished) runOnJS(onClose)();
     });
   };
