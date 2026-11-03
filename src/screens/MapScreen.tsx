@@ -6120,7 +6120,10 @@ const destItems = useMemo((): DestItem[] =>
           id="destStamps"
           shape={stampGeoJSON}
           onPress={(e) => {
-            const id = e.features[0]?.properties?.id as string | undefined;
+            // Only a dot that shows takes the tap: each fades out below its tier's zoom (stampOpacityExpr) but stays in the data.
+            const z = camZoomRef.current;
+            const shown = (tier: number) => tier <= 5 && z >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
+            const id = e.features.find(f => shown(Number(f.properties?.tier ?? 99)))?.properties?.id as string | undefined;
             if (!id) return;
             const dest = DESTINATIONS.find(d => d.id === id);
             if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
@@ -6154,8 +6157,15 @@ const destItems = useMemo((): DestItem[] =>
             id="destPhotos"
             shape={nativeDestPins.shape}
             onPress={(e) => {
-              // Skip a pin that is hidden ahead of its gate (see destGateOn).
-              const hit = e.features.find(f => (destTierOnRef.current.get(String(f.properties?.tier ?? '')) ?? destGateOn(String(f.properties?.tier ?? ''), camZoomRef.current)) && !(f.properties?.ho === 1 && hiddenDestIdsRef.current.has(String(f.properties?.id))));
+              // Only a pin that shows takes the tap: not one a back or close plan has put in no layer (DEST_TIER_UNDRAWN), one whose
+              // tier is switched off, one below its tier's gate (hidden natively before destTierOn catches up), or a handoff
+              // destination whose spots have taken over.
+              const shows = (f: GeoJSON.Feature) => {
+                const tier = String(f.properties?.tier ?? '');
+                if (tier === DEST_TIER_UNDRAWN || destTierOnRef.current.get(tier) === false || !destGateOn(tier, camZoomRef.current)) return false;
+                return !(f.properties?.ho === 1 && hiddenDestIdsRef.current.has(String(f.properties?.id)));
+              };
+              const hit = e.features.find(shows);
               const id = hit?.properties?.id as string | undefined;
               if (!id) return;
               const dest = DESTINATIONS.find(d => d.id === id);
