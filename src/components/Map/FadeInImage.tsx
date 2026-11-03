@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, Easing, type SharedValue } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, Easing, type SharedValue } from 'react-native-reanimated';
 import type { ImageProps } from 'react-native';
 import { subjectCoverRect, subjectCoverRectUI, type Subject } from '../../utils/subjectCrop';
 
@@ -39,9 +39,23 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
   // The photo's laid-out width (onLayout). The framing transform below assumes the photo's box already has its framing
   // size; until the layout has caught up it is left off, and the box (the header's full size, 'cover') fills the header.
   const laidW = useSharedValue(known ? -1 : 0);
+  const laidY = useSharedValue(0);
   const sx = subject?.x ?? 0.5, sy = subject?.y ?? 0.5, zoom = subject?.zoom ?? 1;
-  const show = () => { opacity.value = instant ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) }); };
-  useEffect(() => { const t = setTimeout(show, 1500); return () => clearTimeout(t); }, []);   // failsafe, as in BoxImage
+  // Whether the photo is laid out at its framing: its size was known at mount, or it has loaded and the layout has caught
+  // up with the framing size. The photo stays hidden until then and fades in from there. A photo seen for the first time
+  // (the first destination opened after a launch) used to fade in at once, at the plain centred crop it has before its
+  // size is known, and then jump to its framing when that layout landed, a few frames late (later still mid-slide).
+  const placed = useSharedValue(known ? 1 : 0);
+  const fadeIn = () => { 'worklet'; opacity.value = instant ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) }); };
+  useAnimatedReaction(() => {
+    const nw = naturalW.value, nh = naturalH.value;
+    if (placed.value || !nw || !nh) return false;
+    const a = subjectCoverRectUI(frame.width, frame.fullH, nw, nh, sx, sy, zoom);
+    return laidW.value > 0 && Math.abs(laidW.value - a.width) <= 1 && Math.abs(laidY.value - a.top) <= 1;
+  }, (now, prev) => { if (now && !prev) { placed.value = 1; fadeIn(); } });
+  const show = () => { if (placed.value) fadeIn(); };
+  // Failsafe, as in BoxImage: shown after a moment whatever happened (at the plain crop, if the framing never landed).
+  useEffect(() => { const t = setTimeout(() => { placed.value = 1; fadeIn(); }, 1500); return () => clearTimeout(t); }, []);
   // Laid out once at the full-height framing; the move toward the shortest framing is a transform (both framings cover
   // the box at the photo's own aspect, so one is the other scaled and moved). Animating left/top/width/height instead
   // re-laid-out the screen on every frame of a sheet drag.
@@ -76,7 +90,7 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
         {...rest}
         resizeMode="cover"
         style={[layoutStyle, animStyle]}
-        onLayout={e => { if (laidW.value !== -1) laidW.value = e.nativeEvent.layout.width; }}
+        onLayout={e => { laidY.value = e.nativeEvent.layout.y; if (laidW.value !== -1) laidW.value = e.nativeEvent.layout.width; }}
         onLoad={e => {
           const src = e.nativeEvent?.source;
           if (src?.width && src?.height) {

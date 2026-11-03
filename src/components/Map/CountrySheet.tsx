@@ -372,14 +372,16 @@ function CountrySheet({
   // width and the outer two are equal), so every centre follows from one measurement: the middle tab's x and width (three
   // tabs: left centre x/2, middle x + w/2, right x + w + x/2), or the first tab's width (two equal tabs).
   const tabRefSV = useSharedValue({ x: 0, w: 0 });
+  // The scroll offset. Declared above the tab-slide styles: a worklet captures its values when it is created, and one
+  // declared later was still undefined.
+  const scrollY = useSharedValue(0);
   const tabIndicatorStyle = useAnimatedStyle(() => {
     const n = TAB_ORDER.length, { x, w } = tabRefSV.value;
     const centers = w === 0 ? null : n === 3 ? [x / 2, x + w / 2, x + w + x / 2] : [w / 2, w + w / 2];
     const xs = TAB_ORDER.map((_, i) => -i * W).reverse();
-    if (!centers) {
-      return { left: `${interpolate(tabSlideAnim.value, xs, TAB_ORDER.map((_, i) => ((i + 0.5) * 100) / n).reverse(), Extrapolation.CLAMP)}%` as `${number}%` };
-    }
-    return { left: interpolate(tabSlideAnim.value, xs, centers.slice(0, n).reverse(), Extrapolation.CLAMP) };
+    // A transform, not `left`: a layout change every frame of the slide re-laid-out the whole sheet.
+    const cs = centers ? centers.slice(0, n) : TAB_ORDER.map((_, i) => ((i + 0.5) * W) / n);
+    return { transform: [{ translateX: interpolate(tabSlideAnim.value, xs, cs.reverse(), Extrapolation.CLAMP) }] };
   });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
@@ -420,7 +422,12 @@ function CountrySheet({
     const t  = Math.max(0, Math.min(1, progress - i0));
     const h0 = hs[i0] || 0;
     const h1 = hs[i1] || h0;
-    const h  = h0 + (h1 - h0) * t;
+    // A height is a layout change: animated every frame it re-laid-out the whole sheet each frame of the slide, and that
+    // was the stutter. At the top of the content it now holds the taller of the two panels while they slide (nothing is
+    // cut off) and changes once, when the slide lands. Scrolled down, it still follows the slide, so the shorter tab's
+    // scroll extent closes in gradually instead of the page jumping when the offset is clamped at the end.
+    const settled = t === 0 || i0 === i1;
+    const h = settled ? h0 : scrollY.value > 1 ? h0 + (h1 - h0) * t : Math.max(h0, h1);
     return { height: h > 0 ? h : undefined };
   });
 
@@ -439,14 +446,16 @@ function CountrySheet({
     }
   }, [isCountryVisited]);
 
-  const switchTab = useCallback((tab: CountryTab) => {
-    setActiveTab(tab);
-    tabSlideAnim.value = withTiming(tabSlideFor(tab), TAB_CONFIG);
-  }, [TAB_ORDER]);
-
   const setActiveTabJS = useCallback((tab: CountryTab) => {
     setActiveTab(tab);
   }, []);
+  // React's tab state (a re-render of this whole sheet) follows once the slide has landed: committed at the start it
+  // dropped frames of the slide. Everything shown during it (the underline, TabLabel's colour) runs off tabSlideAnim.
+  const switchTab = useCallback((tab: CountryTab) => {
+    tabSlideAnim.value = withTiming(tabSlideFor(tab), TAB_CONFIG, finished => {
+      if (finished) runOnJS(setActiveTabJS)(tab);
+    });
+  }, [TAB_ORDER]);
 
   // ── Sheet animation ──────────────────────────────────────────────────────────
   const snapStateRef = useRef<CountrySnapState>(resolvedInitialSnap);
@@ -474,7 +483,6 @@ function CountrySheet({
     resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y,
   );
   const scrollRef    = useRef<ScrollView>(null);
-  const scrollY      = useSharedValue(0);
 
   // Single shared value doing double duty as both the "clamp ceiling while collapsed" bound
   // and the compact card's own resting position — replaces the old collapsedYRef (JS-only,
@@ -594,8 +602,11 @@ function CountrySheet({
   }));
   // Peek strip: fades in only once the sheet drops past collapsed toward peek — mirrors
   // DestinationSheet's own peekAnimStyle.
+  // 1 while the sheet slides in from below on its way to half-screen, or slides off: the strip then stays hidden instead of
+  // showing in the peek zone and fading out again on the way up (as DestinationSheet's hidePeekSV).
+  const hidePeekSV = useSharedValue(leaving ? 0 : 1);
   const peekAnimStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
+    opacity: hidePeekSV.value === 1 ? 0 : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
 
   // Continuously writes the back-to-world pill's target "bottom" offset as slideAnim moves,
@@ -703,7 +714,9 @@ function CountrySheet({
     // one landing in the middle of the settle froze it for a few frames (DestinationSheet's transitionTo, same fix).
     // After a drag ('userUI') it waits for the sheet to land (flushSnapReport, from the settle's end), except MapScreen's
     // half-screen <-> peek report, which starts the map's recentring shift alongside the sheet and stays immediate.
-    pendingReportRef.current = null;
+    // A report still waiting from the last snap is delivered now, not dropped: a swipe down to peek begun before a drag
+    // back from full-screen had landed found MapScreen still at 'full', where it never shifts the map, so the map stayed put.
+    if (pendingReportRef.current) flushSnapReport();
     // Mounting straight into 'collapsed' never told the parent to collapse; 'peek' and 'full' always did.
     const reportParent = () => { if (next === 'full') onExpand?.(); else if (reason !== 'mount' || next === 'peek') onCollapse?.(); };
     if (reason !== 'userUI') { reportParent(); reportSnapState(next); }
@@ -713,8 +726,9 @@ function CountrySheet({
       pendingReportRef.current = () => { setSnapStateReact(next); reportParent(); };
     }
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
+    if (reason !== 'mount' || next === 'peek') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
     if (reason === 'mount') {
-      slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) runOnJS(revealPanels)(); });
+      slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } });
     } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
@@ -725,7 +739,7 @@ function CountrySheet({
   useLayoutEffect(() => {
     if (leaving) {
       closingRef.current = true;
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
         if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
       });
       return;
@@ -800,7 +814,7 @@ function CountrySheet({
     closingRef.current = true;
     if (__DEV__) console.log('[sheet] Country', cluster.countryCode, snapStateRef.current, '-> closed', 'reason=exit');
     sheetPose.set(null);
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) });
   }, [exitSignal]);
 
   // The UI-thread exit (exitSV, see its prop): marks the sheet closing on the JS side, slides it out, and reports back.
@@ -815,7 +829,7 @@ function CountrySheet({
       if (prev === null || cur === prev) return;
       exitingSV.value = true;
       runOnJS(markExiting)();
-      slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
     [exitSV],
   );
@@ -832,7 +846,7 @@ function CountrySheet({
   const dismissSheetRef = useRef(() => {});
   dismissSheetRef.current = () => {
     sheetPose.set(null);
-    slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
+    hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 280 }, finished => {
       if (finished) runOnJS(onClose)();
     });
   };
@@ -1022,11 +1036,13 @@ function CountrySheet({
         const dir = e.velocityX < 0 ? 1 : -1;
         targetIdx = Math.max(0, Math.min(TAB_ORDER.length - 1, curIdx + dir));
       }
-      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_CONFIG);
       // Always sync JS state rather than trying to skip a no-op by comparing against the
       // (potentially stale, worklet-read) `activeTab` — setActiveTabJS is a harmless no-op
-      // on the JS thread if the tab hasn't actually changed.
-      runOnJS(setActiveTabJS)(TAB_ORDER[targetIdx]);
+      // on the JS thread if the tab hasn't actually changed. It runs once the slide has landed (see switchTab).
+      const target = TAB_ORDER[targetIdx];
+      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_CONFIG, finished => {
+        if (finished) runOnJS(setActiveTabJS)(target);
+      });
     })
     .simultaneousWithExternalGesture(scrollRef);
 
@@ -1493,7 +1509,7 @@ const st = StyleSheet.create({
   tabBtnMiddle: { flex: 0, paddingHorizontal: 22 },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
-  tabIndicator: { position: 'absolute', bottom: 0, width: 28, marginLeft: -14, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
+  tabIndicator: { position: 'absolute', bottom: 0, left: 0, width: 28, marginLeft: -14, height: 2.5, backgroundColor: '#111827', borderRadius: 2 },
 
   // ── Tab content slide track ─────────────────────────────────────────────────
   slideTrack: { overflow: 'hidden', width: W },

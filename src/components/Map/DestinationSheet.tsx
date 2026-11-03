@@ -18,7 +18,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'reac
 // scroll-driven tab bar overlay — still use core Animated and aren't part of this fix.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, runOnUI,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay, useAnimatedScrollHandler
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, withDelay, useAnimatedScrollHandler
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
@@ -94,7 +94,8 @@ const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
 // tween instead of a physical spring, since any spring (even lightly underdamped) reads as
 // "bouncy" here given how large a distance these snaps travel.
 const SNAP_CONFIG  = { duration: 280, easing: Easing.out(Easing.cubic) };
-const MOUNT_SLIDE_DELAY_MS = 40;   // see transitionTo: the slide-in waits out the mount frame
+const MOUNT_SLIDE_DELAY_MS = 40;
+const SIDE_PANELS_WAIT_MS = 450;   // see sidePanelsOn   // see transitionTo: the slide-in waits out the mount frame
 const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
 
 // Legibility scrim over the hero photo: transparent at the top, darkening toward the bottom.
@@ -467,8 +468,12 @@ const GridSpotCard = React.memo(function GridSpotCard({ spot, onSelectSpot }: { 
 // Mounting all of a large destination's cards at once (Sydney's 84) took about 330 ms in one block, which stalled the map
 // and the sheet just after a destination opened; spread over a few frames the cards in view appear at once and the rest
 // follow without a long block.
-const SPOT_GRID_FIRST = 12;
+// The first batch is what full screen shows under the header (three rows), and the rest only start once a sheet opening
+// straight to full screen ("Grid view" from a spot) has finished sliding up (SPOT_GRID_WAIT_MS): adding cards every frame
+// of that slide re-rendered the sheet in the middle of it.
+const SPOT_GRID_FIRST = 6;
 const SPOT_GRID_STEP = 12;
+const SPOT_GRID_WAIT_MS = 400;
 const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot }: {
   spots: typeof SPOTS;
   onSelectSpot?: (spot: Spot) => void;
@@ -477,7 +482,9 @@ const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot }: {
   useEffect(() => { setShown(Math.min(spots.length, SPOT_GRID_FIRST)); }, [spots]);
   useEffect(() => {
     if (shown >= spots.length) return;
-    const id = requestAnimationFrame(() => setShown(n => Math.min(spots.length, n + SPOT_GRID_STEP)));
+    const grow = () => setShown(n => Math.min(spots.length, n + SPOT_GRID_STEP));
+    if (shown <= SPOT_GRID_FIRST) { const t = setTimeout(grow, SPOT_GRID_WAIT_MS); return () => clearTimeout(t); }
+    const id = requestAnimationFrame(grow);
     return () => cancelAnimationFrame(id);
   }, [shown, spots.length]);
   return (
@@ -737,6 +744,15 @@ function DestinationSheet({
   // sheet at full screen, or the Spots tab opened. Mounted with the other panels, it kept the sheet and the map busy for
   // about 2.5 s after every destination tap, right through the sheet's slide-in and the camera move.
   const [spotsPanelOn, setSpotsPanelOn] = useState(startTab === 'spots');
+  // The About and My Visit panels, off screen beside the Spots panel when the sheet opens straight to full screen on Spots
+  // ("Grid view" from a spot), mount once it has slid up (SIDE_PANELS_WAIT_MS): in the opening render they made it
+  // ~85 ms heavier, all of it before the sheet could start to move.
+  const [sidePanelsOn, setSidePanelsOn] = useState(!(resolvedInitialSnap === 'full' && startTab === 'spots'));
+  useEffect(() => {
+    if (sidePanelsOn) return;
+    const t = setTimeout(() => setSidePanelsOn(true), SIDE_PANELS_WAIT_MS);
+    return () => clearTimeout(t);
+  }, [sidePanelsOn]);
 
   // Derive visits from store, carrying the old destination-level photos/notes/spots onto
   // the synthesized legacy entry so a pre-redesign visit still shows its content as its
@@ -796,14 +812,19 @@ function DestinationSheet({
   // settling a tab never has even a slight bounce.
   const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
 
+  // Worklet-readable scroll offset (the drag gesture's full-screen capture gate, the tab slide's height). Declared above
+  // the tab-slide styles: a worklet captures its values when it is created, and one declared later was still undefined.
+  const scrollYSV = useSharedValue(0);
   // Derived indicator position for the tab bar underline — evenly spaced by tab count
+  // Moved with a transform, not `left`: a layout change every frame of the slide re-laid-out the whole sheet.
+  const tabBarWSV = useSharedValue(W);
   const tabIndicatorStyle = useAnimatedStyle(() => ({
-    left: `${interpolate(
+    transform: [{ translateX: interpolate(
       tabSlideAnim.value,
       TAB_ORDER.map((_, i) => -i * W).reverse(),
-      TAB_ORDER.map((_, i) => (i * 100) / TAB_ORDER.length).reverse(),
+      TAB_ORDER.map((_, i) => (i * tabBarWSV.value) / TAB_ORDER.length).reverse(),
       Extrapolation.CLAMP,
-    )}%` as `${number}%`,
+    ) }],
   }));
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
@@ -844,7 +865,12 @@ function DestinationSheet({
     const t  = Math.max(0, Math.min(1, progress - i0));
     const h0 = hs[i0] || 0;
     const h1 = hs[i1] || h0;
-    const h  = h0 + (h1 - h0) * t;
+    // A height is a layout change: animated every frame it re-laid-out the whole sheet each frame of the slide, and that
+    // was the stutter. At the top of the content it now holds the taller of the two panels while they slide (nothing is
+    // cut off) and changes once, when the slide lands. Scrolled down, it still follows the slide, so the shorter tab's
+    // scroll extent closes in gradually instead of the page jumping when the offset is clamped at the end.
+    const settled = t === 0 || i0 === i1;
+    const h = settled ? h0 : scrollYSV.value > 1 ? h0 + (h1 - h0) * t : Math.max(h0, h1);
     return { height: h > 0 ? h : undefined };
   });
 
@@ -867,8 +893,11 @@ function DestinationSheet({
   switchTabRef.current = (newTab: Tab) => {
     if (activeTabRef.current === newTab) return;
     activeTabRef.current = newTab;
-    setActiveTab(newTab);
-    tabSlideAnim.value = withTiming(tabSlideFor(newTab), TAB_SLIDE_CONFIG);
+    // React's tab state (which re-renders this whole sheet) follows once the slide has landed: committed at the start it
+    // dropped frames of the slide. Everything shown during it (the underline, the labels' colour) runs off tabSlideAnim.
+    tabSlideAnim.value = withTiming(tabSlideFor(newTab), TAB_SLIDE_CONFIG, finished => {
+      if (finished) runOnJS(setActiveTabJS)(newTab);
+    });
   };
 
   const snapTabToNearest = () => {
@@ -917,15 +946,16 @@ function DestinationSheet({
         const dir = e.velocityX < 0 ? 1 : -1;
         targetIdx = Math.max(0, Math.min(TAB_ORDER.length - 1, curIdx + dir));
       }
-      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_SLIDE_CONFIG);
       // Always sync JS state, rather than trying to skip a no-op update by comparing
       // against activeTabRef.current here — a plain JS ref read from inside a UI-thread
       // worklet can hold a stale snapshot (refs aren't live-synced across the JS/UI thread
-      // boundary the way a shared value is), which was silently skipping this call and
-      // leaving the previous tab's highlight in place even though the content had already
-      // slid to the new one. setActiveTabJS is a harmless no-op on the JS thread if the tab
-      // hasn't actually changed.
-      runOnJS(setActiveTabJS)(TAB_ORDER[targetIdx]);
+      // boundary the way a shared value is). setActiveTabJS is a harmless no-op on the JS
+      // thread if the tab hasn't actually changed. It runs once the slide has landed (see
+      // switchTabRef): a re-render committed mid-slide dropped frames of it.
+      const target = TAB_ORDER[targetIdx];
+      tabSlideAnim.value = withTiming(-targetIdx * W, TAB_SLIDE_CONFIG, finished => {
+        if (finished) runOnJS(setActiveTabJS)(target);
+      });
     })
     .simultaneousWithExternalGesture(scrollRef)
     // The About tab's "Popular Spots" and "Why visit" carousels are the exception to the simultaneous
@@ -947,7 +977,6 @@ function DestinationSheet({
   // Shared tab-bar content (buttons + sliding indicator) — rendered both inline (scrolls
   // normally with the hero) and in the fixed overlay copy that takes over once scrolled
   // past it, so the two never drift out of sync.
-  const isTabSelected = (tab: Tab) => activeTab === tab;
   const renderTabBarRow = () => (
     <>
       {TAB_ORDER.map((tab, i) => (
@@ -965,9 +994,9 @@ function DestinationSheet({
         >
           {tab === 'visit' ? (
             <View style={{ flexDirection:'row', alignItems:'center', gap:6 }}>
-              <Text style={[st.tabBtnTxt, isTabSelected('visit') && st.tabBtnTxtActive]}>
+              <TabLabel index={i} slide={tabSlideAnim}>
                 {localVisits.length > 1 ? 'My Visits' : 'My Visit'}
-              </Text>
+              </TabLabel>
               {localVisits.length > 1 && (
                 <View style={st.tabVisitBadge}>
                   <Text style={st.tabVisitBadgeTxt}>{localVisits.length}</Text>
@@ -976,11 +1005,11 @@ function DestinationSheet({
             </View>
           ) : tab === 'spots' ? (
             // Count as plain text after the label — "Spots (12)".
-            <Text style={[st.tabBtnTxt, isTabSelected('spots') && st.tabBtnTxtActive]}>
+            <TabLabel index={i} slide={tabSlideAnim}>
               Spots{spots.length > 0 ? ` (${spots.length})` : ''}
-            </Text>
+            </TabLabel>
           ) : (
-            <Text style={[st.tabBtnTxt, isTabSelected(tab) && st.tabBtnTxtActive]}>About</Text>
+            <TabLabel index={i} slide={tabSlideAnim}>About</TabLabel>
           )}
         </Pressable>
         </React.Fragment>
@@ -991,7 +1020,7 @@ function DestinationSheet({
       <Reanimated.View
         style={[
           st.tabIndicatorTrack,
-          { width: `${100 / TAB_ORDER.length}%` },
+          { left: 0, width: `${100 / TAB_ORDER.length}%` },
           tabIndicatorStyle,
         ]}
       >
@@ -1027,9 +1056,6 @@ function DestinationSheet({
   }, []);
   const slideAnim    = useSharedValue(enterFromPrevious ? (sheetPose.get() ?? CLOSE_POS) : CLOSE_POS);
   const lastPos      = useSharedValue(resolvedInitialSnap === 'full' ? FULL_POS : COLLAPSED_Y);
-  // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only
-  // let a downward drag pull the sheet once its inner ScrollView is already at top).
-  const scrollYSV    = useSharedValue(0);
   // The vertical scroll offset at which the inline tab bar's top edge reaches the very top
   // of the sheet — i.e. exactly where it should hand off to the pinned overlay copy. Measured
   // via onLayout (below) rather than computed from HERO_H/insets, since the tab bar's own
@@ -1222,13 +1248,24 @@ function DestinationSheet({
   const transitionToRef = useRef<(next: SnapState, reason: string) => void>(() => {});
   // Full-screen panels mount a moment after the sheet does, or at once on heading to full — see
   // useDeferredMount.
-  const [panelsReady, revealPanels] = useDeferredMount();
+  const [panelsReady, revealPanels] = useDeferredMount(undefined, resolvedInitialSnap === 'full' && !leaving);
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
   const scrollAnimRef = useAnimatedRef<any>();
-  const onScrollUI = useAnimatedScrollHandler(e => { scrollYSV.value = e.contentOffset.y; });
   const scrollResetSV = useSharedValue(-1);   // -1: idle
+  // The content only scrolls once the sheet rests at full screen. scrollEnabled (React state) only turns off once a drag
+  // down from full has landed, so a swipe up made while the sheet was still settling below full both moved the sheet and
+  // scrolled the content, which carried the header up off the sheet's top edge. Until the sheet is up, any scroll is put
+  // straight back to the top here, on the UI thread (not while resetScrollToTop is easing it there itself).
+  const onScrollUI = useAnimatedScrollHandler(e => {
+    if (e.contentOffset.y > 0 && slideAnim.value > FULL_POS + 1 && scrollResetSV.value < 0) {
+      scrollTo(scrollAnimRef, 0, 0, false);
+      scrollYSV.value = 0;
+      return;
+    }
+    scrollYSV.value = e.contentOffset.y;
+  });
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
   const resetScrollToTop = () => {
     const y0 = scrollYSV.value;
@@ -1259,7 +1296,9 @@ function DestinationSheet({
     // commit landing in the middle of the settle cost it a frame (frame traces: a 50 pt jump where the commit landed).
     // After a drag ('userUI') it waits for the sheet to land (flushSnapReport, from the settle's end), except MapScreen's
     // half-screen <-> peek report, which starts the map's recentring shift alongside the sheet and stays immediate.
-    pendingReportRef.current = null;
+    // A report still waiting from the last snap is delivered now, not dropped: a swipe down to peek begun before a drag
+    // back from full-screen had landed found MapScreen still at 'full', where it never shifts the map, so the map stayed put.
+    if (pendingReportRef.current) flushSnapReport();
     const reportMap = () => {
       if (next === 'full') onExpand?.(); else if (reason !== 'mount') onCollapse?.();
       onSnapStateChange?.(next);
@@ -1839,7 +1878,7 @@ function DestinationSheet({
           {/* ── TAB BAR — every destination gets About + Spots; visited also gets My Visit. */}
           <View
             style={[st.tabBar, { marginTop: 0 }]}
-            onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; }}
+            onLayout={e => { tabBarHAnim.value = e.nativeEvent.layout.height; tabBarWSV.value = e.nativeEvent.layout.width; }}
           >
             {renderTabBarRow()}
           </View>
@@ -1877,7 +1916,7 @@ function DestinationSheet({
                         new one (or editing/deleting a specific one) only ever touches that
                         single module's own card; every sibling module is copied through
                         untouched. Shared with CountrySheet/SpotSheet — see VisitCardList. */}
-                    <VisitCardList
+                    {sidePanelsOn && <VisitCardList
                       defaultTitle={`${destination.name} Trip`}
                       visits={localVisits}
                       onEditVisit={setEditingVisitModule}
@@ -1889,7 +1928,7 @@ function DestinationSheet({
                       }}
                       selectorLabel={spots.length > 0 ? 'Spots Visited' : undefined}
                       selectorItems={spots.length > 0 ? spotSelectorItems : undefined}
-                    />
+                    />}
 
                   </View>
                   )}
@@ -1899,6 +1938,7 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('about', e.nativeEvent.layout.height)}
                   >
+                    {sidePanelsOn && (<>
                     <AboutPanel
                       destination={destination} spots={spots}
                       onSelectSpot={onSelectSpot}
@@ -1908,6 +1948,7 @@ function DestinationSheet({
                       whyScrollRef={whyScrollRef}
                     />
                     <AIContentNote />
+                    </>)}
                   </View>
 
                   {/* ── SPOTS PANEL — full grid, map-view button ── */}
@@ -2149,7 +2190,6 @@ const st = StyleSheet.create({
   tabBtn:              { flex:1, paddingVertical:15, alignItems:'center' },
   tabDivider:          { width: StyleSheet.hairlineWidth, marginVertical:14, backgroundColor:'#E5E7EB' },
   tabBtnTxt:           { fontSize:15, fontWeight:'600', color:'#9CA3AF' },
-  tabBtnTxtActive:     { color:'#111827' },
   // The My Visits count — plain gray, doesn't switch color when its tab is selected.
   tabVisitBadge:       { minWidth:20, height:20, borderRadius:6, backgroundColor:'#E5E7EB',
                          paddingHorizontal:5, alignItems:'center', justifyContent:'center' },
@@ -2301,3 +2341,12 @@ const st = StyleSheet.create({
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
 // commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
 export default React.memo(DestinationSheet);
+
+// A tab's label, grey to black as its panel slides into place: driven by the same slide as the underline, so the colour
+// changes with the swipe rather than when the tab state catches up after it (CountrySheet's TabLabel).
+function TabLabel({ index, slide, children }: { index: number; slide: SharedValue<number>; children: React.ReactNode }) {
+  const style = useAnimatedStyle(() => ({
+    color: interpolateColor(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], ['#9CA3AF', '#111827', '#9CA3AF']),
+  }));
+  return <Reanimated.Text style={[st.tabBtnTxt, style]}>{children}</Reanimated.Text>;
+}

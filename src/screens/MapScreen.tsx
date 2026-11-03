@@ -136,6 +136,8 @@ const PLAN_LEAD_MAX_ZOOM = 4;     // cap on the predicted outward travel
 // at most HANDOFF_MAX at once.
 const HANDOFF_BAND = 1.0;
 const HANDOFF_MAX = 6;
+// A handoff slot a destination has just left is not switched on for another one for this long (see handoffSlotFreedAtRef).
+const HANDOFF_SLOT_SETTLE_MS = 300;
 // Destination photo pins are a native Mapbox SymbolLayer (destPhotoSymbols): Mapbox resolves pin-vs-pin and name
 // collisions itself on every rendered frame and fades symbols in and out, so pins never pile up while zooming (the
 // JS plan only decides which destinations are eligible for a photo at all). false falls back to the old MarkerView pins.
@@ -839,15 +841,23 @@ const DEST_GATE_FADE_OUT_MS = 140;
 const destTierOrder = (): string[] => [...destLadder().map((_, i) => `z${i}`).reverse(), ''];
 const destTierStyleCache = new Map<string, any>();
 // `snap`: the opacity changes at once, not animated (a handoff layer changing state while it holds no pin yet).
+// A tier that is on is still hidden natively below its gate: its opacity steps to 0 at the gate on the camera's own zoom,
+// evaluated every frame, so the frame a zoom-out passes the gate it is gone, without waiting for destTierOn's render.
+// That used to be the layer's min zoom, but Mapbox checks a layer's min zoom against the zoom of the TILE it draws:
+// zooming out, it fills in with lower-zoom parent tiles while the new ones are built, and every gated tier was left out
+// of those, so all their pins vanished mid-zoom (Blue Mountains, Jervis Bay, Canberra… zooming out from Sydney) and came
+// back once the tiles caught up.
 const destTierStyle = (tier: string, on: boolean, snap = false) => {
   const key = `${tier}|${on ? 1 : 0}|${snap ? 1 : 0}`;
   let st = destTierStyleCache.get(key);
   if (!st) {
     // Fading out is quicker than fading in, so pins clear out of the way on a fast zoom-out.
     const ms = snap ? 0 : on ? DEST_GATE_FADE_MS : DEST_GATE_FADE_OUT_MS;
+    const gate = tier ? destGateZooms()[tier] : undefined;
+    const shown = !on ? 0 : gate === undefined ? 1 : ['step', ['zoom'], 0, gate, 1];
     st = {
       ...DEST_SYMBOL_STYLE,
-      iconOpacity: on ? 1 : 0, textOpacity: on ? 1 : 0,
+      iconOpacity: shown, textOpacity: shown,
       iconOpacityTransition: { duration: ms, delay: 0 },
       textOpacityTransition: { duration: ms, delay: 0 },
     };
@@ -1289,6 +1299,9 @@ const SPOT_PHOTO_ZOOM_BY_ID = earlySpotZoomTable(SPOT_PHOTO_EARLY_SEPARATION_PX,
 // viewport — so the map never loses a spot, it only stops paying for a photo MarkerView on every one of them.
 const SHEET_HOLD_MAX_MS = 60;    // see holdSheetUntilCamera: the destination sheet rises while the spot sheet is still sliding away
 const BACK_CAMERA_DELAY_MS = 220;   // spot back to its destination: the zoom-out starts once the spot sheet has slid away
+// "Grid view" from a spot: the camera jumps to the destination's view once the full-screen destination sheet covers the map
+// (its 40 ms mount delay and 280 ms slide, with a margin), so the jump's renders come after the slide (see handleCloseSpotToDestination).
+const GRID_CAMERA_DELAY_MS = 450;
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
 const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
@@ -1487,11 +1500,13 @@ function planDestPhotos(planCountry: { countryCode: string } | null, planDest: D
 // ── Spot photo pins and names: one zoom-only plan, as for destinations (planDestPhotos) ───────────────────────────────
 // Each spot gets a PHOTO ZOOM (from which it shows its photo pin rather than its small pin) and a NAME ZOOM with a side
 // (right of the pin, else left). The plan walks the zoom from wide to close over EVERY spot, never just those on screen:
-// a spot becomes a candidate at its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID) and is retried every half level until it has
-// room, clear of the spot pins and names already placed and of the destination pins and names showing at that zoom (a
-// destination's stop once its spots take over). Placed pins and names are never displaced, and zooming in only spreads
-// them apart, so a photo pin or name that shows zoomed out persists zooming in; nothing depends on where the camera is,
-// so panning changes nothing. Priority (curated): visited spots, then the parent destination's rank, then the spot's place
+// photo pins are placed in priority order (most prominent first): a spot's photo pin shows from the first half level, at or
+// past its own photo zoom (SPOT_PHOTO_ZOOM_BY_ID), at which it is clear of every MORE prominent spot's photo pin and of the
+// destination pins and names showing there (a destination's stop once its spots take over). Where two pins would collide
+// the more prominent one gets the photo and the other stays a small pin until the zoom has spread them apart, whichever
+// reached its own zoom first. A name waits, the same way, for room clear of every photo pin (at the zoom both show) and of
+// the names already placed. Pins and names only spread apart zooming in, so one that shows zoomed out persists zooming in;
+// nothing depends on where the camera is, so panning changes nothing. Priority (curated): visited spots, then the parent destination's rank, then the spot's place
 // in its destination's list.
 const SPOT_PLAN_REACH_PT = 340;   // the widest two footprints can reach toward each other (pins plus names)
 function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisited: (id: string) => boolean) {
@@ -1555,39 +1570,65 @@ function planSpotPhotos(destPlan: ReturnType<typeof planDestPhotos>, isSpotVisit
     return true;
   };
   const photoAt = new Map<string, number>(), nameAt = new Map<string, { z: number; side: 'right' | 'left' }>();
-  const tryPin = (i: number, z: number, scale: number) => {
-    if (!clear(ux[i], uy[i], scale, PL, PR, PT, PB) || !clearOfDests(i, z, scale, PL, PR, PT, PB)) return false;
-    photoAt.set(ordered[i].id, z); add(ux[i], uy[i], PL, PR, PT, PB);
+  // Each spot's photo zoom (Infinity: none), and the spots holding one sorted by unit x, for neighbour searches.
+  const pz = new Float64Array(n).fill(Infinity);
+  const byX: number[] = [];
+  // Whether a box around spot i (points, at zoom z) is clear of the photo pins of the spots `among` accepts, each tested at
+  // the later of z and that pin's own photo zoom: where both show, and from there on they only spread apart.
+  const clearOfPins = (i: number, z: number, l: number, r: number, t: number, b: number, among: (k: number) => boolean) => {
+    const reach = (Math.max(-l, r) + (PR - PL)) / (512 * Math.pow(2, z));
+    let lo = 0, hi = byX.length;
+    while (lo < hi) { const m = (lo + hi) >> 1; if (ux[byX[m]] < ux[i] - reach) lo = m + 1; else hi = m; }
+    for (let m = lo; m < byX.length && ux[byX[m]] <= ux[i] + reach; m++) {
+      const k = byX[m];
+      if (k === i || !among(k)) continue;
+      const sc = 512 * Math.pow(2, Math.max(z, pz[k]));
+      const dx = (ux[k] - ux[i]) * sc, dy = (uy[k] - uy[i]) * sc;
+      if (l < dx + PR && r > dx + PL && t < dy + PB && b > dy + PT) return false;
+    }
     return true;
   };
+  const insertX = (i: number) => {
+    let lo = 0, hi = byX.length;
+    while (lo < hi) { const m = (lo + hi) >> 1; if (ux[byX[m]] < ux[i]) lo = m + 1; else hi = m; }
+    byX.splice(lo, 0, i);
+  };
+  // Photo pins, most prominent first (`ordered` is in priority order, so every k < i is more prominent than i): from the
+  // spot's own photo zoom, then every half level, until it is clear of the destinations and of the pins placed so far.
+  for (let i = 0; i < n; i++) {
+    if (!Number.isFinite(first[i])) continue;
+    for (let z = first[i]; z <= 19 + 1e-9; z = Math.floor(z * 2 + 1e-9) / 2 + 0.5) {
+      if (!clearOfDests(i, z, 512 * Math.pow(2, z), PL, PR, PT, PB) || !clearOfPins(i, z, PL, PR, PT, PB, k => k < i)) continue;
+      pz[i] = z; photoAt.set(ordered[i].id, z); insertX(i);
+      break;
+    }
+  }
   const tryName = (i: number, z: number, scale: number) => {
     for (const side of ['right', 'left'] as const) {
       const l = side === 'right' ? 18 : -18 - nw[i], r = side === 'right' ? 18 + nw[i] : -18, t = -23 - nh[i] / 2, b = -23 + nh[i] / 2;
-      if (!clear(ux[i], uy[i], scale, l, r, t, b) || !clearOfDests(i, z, scale, l, r, t, b)) continue;
+      if (!clear(ux[i], uy[i], scale, l, r, t, b) || !clearOfDests(i, z, scale, l, r, t, b) || !clearOfPins(i, z, l, r, t, b, () => true)) continue;
       nameAt.set(ordered[i].id, { z, side }); add(ux[i], uy[i], l, r, t, b);
       return true;
     }
     return false;
   };
-  const byFirst = Array.from({ length: n }, (_, i) => i).filter(i => Number.isFinite(first[i])).sort((a, b) => first[a] - first[b] || a - b);
+  // Names, in priority order: each tried from its spot's photo zoom, then every half level until it has room.
+  const byPhoto = Array.from({ length: n }, (_, i) => i).filter(i => Number.isFinite(pz[i])).sort((a, b) => pz[a] - pz[b] || a - b);
   let next = 0;
-  let waiting: number[] = [], unnamed: number[] = [];
+  let unnamed: number[] = [];
   for (let g = 4; g <= 19; g += 0.5) {
-    // On each half level: rebuild the grid for this zoom, and retry the pins and names still waiting for room.
+    // On each half level: rebuild the grid (names placed so far) for this zoom, and retry the names still waiting.
     rebuild(g);
     const sg = 512 * Math.pow(2, g);
-    const stillWaiting: number[] = [], stillUnnamed: number[] = [];
-    for (const i of waiting) { if (tryPin(i, g, sg)) unnamed.push(i); else stillWaiting.push(i); }
+    const stillUnnamed: number[] = [];
     unnamed.sort((a, b) => a - b);
     for (const i of unnamed) if (!tryName(i, g, sg)) stillUnnamed.push(i);
-    waiting = stillWaiting; unnamed = stillUnnamed;
-    // Then the spots whose own photo zoom falls in this half level, each at that zoom.
-    while (next < byFirst.length && first[byFirst[next]] < g + 0.5 - 1e-9) {
-      const i = byFirst[next++], z = first[i], sz = 512 * Math.pow(2, z);
-      if (!tryPin(i, z, sz)) { waiting.push(i); continue; }
-      if (!tryName(i, z, sz)) unnamed.push(i);
+    unnamed = stillUnnamed;
+    // Then the names of the spots whose photo zoom falls in this half level, each at that zoom.
+    while (next < byPhoto.length && pz[byPhoto[next]] < g + 0.5 - 1e-9) {
+      const i = byPhoto[next++], z = pz[i];
+      if (!tryName(i, z, 512 * Math.pow(2, z))) unnamed.push(i);
     }
-    waiting.sort((a, b) => a - b);
   }
   if (__DEV__) console.log(`[pins] spot plan: ${photoAt.size} photo pins, ${nameAt.size} names, ${Date.now() - t0} ms`);
   return { photoAt, nameAt, sortOf };
@@ -1720,9 +1761,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // swapped in and out left its opacity of 0 stuck on the pill after it was removed, hiding the "← Country" pill when a
   // spot went back to its destination.
   const spotBackPeekSV = useSharedValue(0);
+  // Which mounted sheet positions the pills (see pillOwnerFor below). Declared here because upPillBackPeekStyle reads it.
+  const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
+  // A country sheet has no "← Parent", so the label is hidden the moment the pills pass to one: on "← Country" the country
+  // sheet takes them over while the destination is still selected (its selection change lands a render later), which
+  // showed a stale "← Country" over the country sheet sliding up.
   const upPillBackPeekStyle = useAnimatedStyle(() => ({
     opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
-      * (spotBackPeekSV.value ? pillPeekSV.value : 1),
+      * (spotBackPeekSV.value ? pillPeekSV.value : 1)
+      * (pillOwnerSV.value === PILL_OWNER.country ? 0 : 1),
   }));
   // The full-screen down arrow and the half-screen X share one button and crossfade with the sheet's position as it is
   // dragged, instead of swapping when the snap settles (mapState flips only after the sheet comes to rest).
@@ -1758,7 +1805,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // when it has gone, ownership passes to the new sheet and the pills fade in at its position (pillHandoverSV).
   // Bumped by "← Country" to start the destination sheet's slide off at the tap (DestinationSheet's leaveEarlySV).
   const destLeaveEarlySV = useSharedValue(0);
-  const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
   const pillHandoverSV = useSharedValue(1);
   // During a swap: the live sheet that takes the pills over when the outgoing one finishes its slide (see handOverPills).
   const pillNextOwnerSV = useSharedValue<number>(PILL_OWNER.none);
@@ -3375,14 +3421,18 @@ const destItems = useMemo((): DestItem[] =>
       // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
       symbolZOrder: 'source',
     };
-    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: false, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
+    // Small pins overlap photo pins (and each other) freely. A spot's own small pin is left out while its photo pin is in the
+    // data (img set, see the small pin layers' filter): the data carries a photo exactly from the zoom it shows. (A step on
+    // the camera zoom reading each spot's photo band did not work: Mapbox evaluates a zoom-and-data expression at whole
+    // zoom levels, so a small pin stayed up behind its photo pin until the next whole level.)
+    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'img'], ''], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
@@ -3918,7 +3968,8 @@ const destItems = useMemo((): DestItem[] =>
 
   const fitDestinationDefaultView = useCallback((
     dest: Destination,
-    mode: 'easeTo' | 'flyTo' = 'easeTo',
+    // 'none': a jump, for a move hidden behind a full-screen sheet.
+    mode: 'easeTo' | 'flyTo' | 'none' = 'easeTo',
     framing: 'topHalf' | 'full' = 'topHalf',
     durationMs = 500,
     // Multiplies the zoom LEVEL (not the visible span): 0.5 lands on half the destination's own
@@ -4143,6 +4194,11 @@ const destItems = useMemo((): DestItem[] =>
     // The snap was a SIDE EFFECT of the user's own map gesture (panning auto-peeks the open
     // sheet) — shifting the camera here would fight the pan already in their hand.
     if (suppressFrameSyncRef.current) return;
+    // One of our own camera moves is flying (or about to start) to a view framed for the sheet that is coming: a sheet swap
+    // reports its new sheet's snap as it mounts ("← Country" from a destination at bottom-screen mounts the country sheet at
+    // half-screen), and the shift for it started a new camera animation, which cancelled the flight part-way: the
+    // zoom-out to the country stopped at about zoom 5 instead of its default view.
+    if (programmaticCameraMoveRef.current || pendingCameraMoveRef.current || cameraHoldUntilRef.current > Date.now()) return;
     // The user has already deliberately panned/zoomed away from home (either return-prompt is
     // currently showing) — skip the shift entirely rather than just protecting `home` from
     // it. Two reasons:
@@ -4383,6 +4439,15 @@ const destItems = useMemo((): DestItem[] =>
       suppressDestReturnPromptTimerRef.current = setTimeout(() => { suppressDestReturnPromptRef.current = false; }, 650 + BACK_CAMERA_DELAY_MS);
       // Neither snap this can land on leaves the bottom-screen strip showing, so 'topHalf'.
       setDestHomeToDefault(selectedDest, 'topHalf');
+      // "Grid view" (landOnFull) ends with the map hidden behind the full-screen sheet: nothing to watch, so the sheet slides
+      // straight up over the spot sheet, as "Map view"'s swap does, and the camera jumps to the destination's view once it
+      // is covered (GRID_CAMERA_DELAY_MS). Flying there in view held the sheet back until the zoom was under way, and the
+      // flight's renders landed in the middle of its slide, which then took 0.7 s and stuttered.
+      if (landOnFull) {
+        cameraHoldUntilRef.current = Date.now() + GRID_CAMERA_DELAY_MS;
+        fitDestinationDefaultView(selectedDest, 'none', 'topHalf', 0);
+        return;
+      }
       // Plan the pins at the view this lands on from the tap, as an X close does (see beginBackPlan) — only when it zooms out.
       const target = destDefaultCamera(selectedDest, 'topHalf').zoom;
       if (target < camZoomRef.current - ZOOM_EPSILON) {
@@ -4556,13 +4621,16 @@ const destItems = useMemo((): DestItem[] =>
     navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
     setSheetOverride({ cluster });
     fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
+    // The selection change waits until the country sheet has slid up (SHEET_SLIDE_IN_MS): run in the next task, its render
+    // (~150 ms, the whole screen) landed in the middle of the slide and stuttered it. The sheet and the pins already show
+    // the country (sheetOverride, navTarget), so nothing on screen waits for it but the country's border highlight.
     setTimeout(() => {
       setSheetOverride(null);
       // Only if nothing else was selected in between (a stale back must not undo a newer selection).
       if (sameNavSel(from, { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null })) {
         handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
       }
-    }, 0);
+    }, SHEET_SLIDE_IN_MS);
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
@@ -4597,6 +4665,10 @@ const destItems = useMemo((): DestItem[] =>
   }, [fitCountryDefaultView]);
 
   const handleResetToDest = useCallback(() => {
+    // The country segment's zoom-out (handleZoomToCountry) planned the pins at the country's view and, once it landed, kept
+    // that plan, since the selection did not change. Coming back in it must end: kept, it held the spot pins at the
+    // country's zoom, so only the destination's pin showed, not its spots.
+    releaseSpotCloseTarget();
     // A standalone spot has no destination: this segment recentres on the spot instead.
     if (selectedSpot && (!selectedSpot.destinationId || nearCtxRef.current)) {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -4627,7 +4699,7 @@ const destItems = useMemo((): DestItem[] =>
     setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
     fitDestinationDefaultView(selectedDest, 'flyTo', framing);
-  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault]);
+  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault, releaseSpotCloseTarget]);
 
   // opts.cameraStarted: see handleCloseSpotToDestinationView.
   const handleCloseCountry = useCallback((opts?: { cameraStarted?: boolean }) => {
@@ -5516,27 +5588,48 @@ const destItems = useMemo((): DestItem[] =>
   const handoffJoinedRef = useRef<Set<string>>(new Set());
   const [handoffTick, setHandoffTick] = useState(0);
   const handoffSig = handoffDests.map(h => `${h.dest.id}${h.past ? '-' : '+'}`).join(',');
+  // When each slot's last destination left it. Mapbox applies a layer's style on the next frame but loads a source's new
+  // data in the background, so a slot switched on just after a hidden destination left it still drew that destination for
+  // a frame, at full opacity: zooming in past Coral Coast, its pin flashed once when another destination took its slot.
+  // A slot that must change state is only handed out once its old occupant has had HANDOFF_SLOT_SETTLE_MS to leave the
+  // data; a slot already resting in the wanted state changes nothing and can be reused at once.
+  const handoffSlotFreedAtRef = useRef<number[]>(Array(HANDOFF_MAX).fill(0));
+  const [handoffRetryTick, setHandoffRetryTick] = useState(0);
+  const handoffRetryTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (handoffRetryTimerRef.current) clearTimeout(handoffRetryTimerRef.current); }, []);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const stableHandoffDests = useMemo(() => {
     const slots = handoffSlotRef.current;
+    const freedAt = handoffSlotFreedAtRef.current;
+    const now = Date.now();
     const ids = new Set(handoffDests.map(h => h.dest.id));
-    for (const id of [...slots.keys()]) if (!ids.has(id)) slots.delete(id);
+    for (const [id, k] of [...slots]) if (!ids.has(id)) { slots.delete(id); freedAt[k] = now; }
     const used = new Set(slots.values());
     const out: { dest: Destination; past: boolean; slot: number }[] = [];
+    let retryIn = 0;
     for (const h of handoffDests) {
       let k = slots.get(h.dest.id);
       if (k === undefined) {
         // Prefer a free slot already resting in this destination's state, so it can join at once.
         const want = !h.past;
         for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i) && handoffSlotOnRef.current[i] === want) { k = i; break; }
-        if (k === undefined) for (let i = 0; i < HANDOFF_MAX; i++) if (!used.has(i)) { k = i; break; }
+        if (k === undefined) for (let i = 0; i < HANDOFF_MAX; i++) {
+          if (used.has(i)) continue;
+          const wait = freedAt[i] + HANDOFF_SLOT_SETTLE_MS - now;
+          if (wait <= 0) { k = i; break; }
+          retryIn = retryIn ? Math.min(retryIn, wait) : wait;
+        }
+        // No slot yet: it is drawn as usual until one is free (or not at all, if hidden).
         if (k === undefined) continue;
         slots.set(h.dest.id, k); used.add(k);
       }
       out.push({ ...h, slot: k });
     }
+    if (retryIn && !handoffRetryTimerRef.current) {
+      handoffRetryTimerRef.current = setTimeout(() => { handoffRetryTimerRef.current = null; setHandoffRetryTick(t => t + 1); }, retryIn);
+    }
     return out;
-  }, [handoffSig]);
+  }, [handoffSig, handoffRetryTick]);
   // Each slot's state this render, and which destinations are on their slot's layer (see handoffSlotOnRef).
   const handoffLayers = Array.from({ length: HANDOFF_MAX }, (_, k) => {
     const h = stableHandoffDests.find(x => x.slot === k);
@@ -6075,12 +6168,11 @@ const destItems = useMemo((): DestItem[] =>
                 id={`destPhotoSymbols-${tier || 'ungated'}`}
                 aboveLayerID={i === 0 ? 'destStampCircles' : `destPhotoSymbols-${all[i - 1] || 'ungated'}`}
                 filter={['all', ['==', ['get', 'tier'], tier], ['!=', ['get', 'ho'], 1]] as any}
-                // The tier's gate as the layer's min zoom: Mapbox hides it the frame the camera zooms out past the gate,
-                // where destTierOn only learns of the zoom a render later (half a second and more behind a fast pinch,
-                // in which the pins of the tiers the camera had already left stayed up and piled together). The fade
-                // back in on the way in is still destTierOn's. Not during a close or back plan (backPlan), whose fly-to
-                // can dip below the target's gates on its way out: the plan holds its tiers there instead.
-                minZoomLevel={tier ? destGateZooms()[tier] ?? 0 : 0}
+                // The tier's gate is in its opacity (destTierStyle): Mapbox hides it the frame the camera zooms out past
+                // the gate, where destTierOn only learns of the zoom a render later (half a second and more behind a fast
+                // pinch, in which the pins of the tiers the camera had already left stayed up and piled together). The
+                // fade back in on the way in is still destTierOn's. A close or back plan (backPlan), whose fly-to can dip
+                // below the target's gates on its way out, moves the pins it shows to the ungated '' layer instead.
                 style={destTierStyle(tier, destTierOn(tier))}
               />
             )),
@@ -6095,8 +6187,7 @@ const destItems = useMemo((): DestItem[] =>
                   id={`destHandoff-${k}`}
                   aboveLayerID={k === 0 ? `destPhotoSymbols-${tiers[tiers.length - 1] || 'ungated'}` : `destHandoff-${k - 1}`}
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
-                  // Its destination's tier gate as min zoom, as for the tier layers above.
-                  minZoomLevel={l.h && l.tier ? destGateZooms()[l.tier] ?? 0 : 0}
+                  // Its destination's tier gate is in its opacity, as for the tier layers above.
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
                   style={destTierStyle(l.tier, l.on, l.snap)}
                 />

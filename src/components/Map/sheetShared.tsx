@@ -57,9 +57,11 @@ export function nameFontSize(name: string, sizes: [number, number, number], brea
 // commit (and the slide itself) light. `reveal` mounts it right away instead — call it the moment
 // the sheet heads to full-screen, where the content is visible.
 export const SHEET_PANEL_MOUNT_DELAY_MS = 300;
-export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS): [boolean, () => void] {
-  const [ready, setReady] = useState(false);
-  const readyRef = useRef(false);
+// `initialReady`: mounted with the sheet instead (a sheet opening straight to full screen, whose panels are in view as it
+// slides up: revealing them during the slide re-rendered the sheet mid-slide, a stall of over 100 ms).
+export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS, initialReady = false): [boolean, () => void] {
+  const [ready, setReady] = useState(initialReady);
+  const readyRef = useRef(initialReady);
   const reveal = useCallback(() => {
     if (readyRef.current) return;
     readyRef.current = true;
@@ -1691,13 +1693,8 @@ const vcS = StyleSheet.create({
   memSpotsCarouselContent: { paddingHorizontal:12, gap:6 },
   // width/height come from itemSquareSize (measured to match the photo grid's own tile size),
   // not a fixed value here.
-  // Same green as the visited tag elsewhere (cardVisitedTag's #059669), slightly thinner than
-  // before (was #16A34A at 2px). A whole-pixel width (1, not 1.5) — a fractional borderWidth
-  // here left thin slivers of the card's own background peeking through at the rounded
-  // corners, where the border's curve and the overflow:'hidden' clip plane rounded slightly
-  // differently from each other.
-  memSpotCard:             { borderRadius:14, overflow:'hidden', backgroundColor:'#F3F4F6',
-                              borderWidth:1, borderColor:'#059669' },
+  // No border: the photo runs to the card's rounded edge.
+  memSpotCard:             { borderRadius:14, overflow:'hidden', backgroundColor:'#F3F4F6' },
   memSpotCardStrip:        { position:'absolute', left:0, right:0, bottom:0,
                               paddingHorizontal:8, paddingTop:2, paddingBottom:7, backgroundColor:`rgba(0,0,0,${VISIT_STRIP_OPACITY})` },
   memSpotCardStripFade:    { position:'absolute', left:0, right:0, top:-VISIT_STRIP_FADE_H, height:VISIT_STRIP_FADE_H },
