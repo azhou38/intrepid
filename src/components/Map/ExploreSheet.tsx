@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Pressable, Dimensions, Platform } from 'react-n
 // mechanism to CountrySheet/DestinationSheet's own three-state (collapsed/half/full) drag —
 // see those files for the fuller rationale on why this beats core Animated/PanResponder.
 import Animated, {
-  useSharedValue, useAnimatedStyle, useDerivedValue, withTiming, runOnJS, interpolate, Extrapolation, Easing,
+  useSharedValue, useAnimatedStyle, useDerivedValue, withTiming, withDelay, runOnJS, interpolate, Extrapolation, Easing,
 } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import type { SharedValue } from 'react-native-reanimated';
@@ -31,6 +31,8 @@ const COLLAPSED_Y = Math.max(0, H - BOTTOM_TAB_H - COMPACT_H);
 const HALF_SHIFT = 1;
 const HALF_POS   = H / 2 + HALF_SHIFT;
 const SNAP_CONFIG = { duration: 280, easing: Easing.out(Easing.cubic) };
+// The country / destination / spot sheets' slide-in (a 40 ms start delay and 280 ms) and a frame: see `hidden` below.
+const HIDE_AFTER_MS = 340;
 // Coming back after search (see initialSnap): a touch quicker than the normal entrance, since the
 // user is returning to something they just had open rather than being shown something new.
 const RESTORE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -203,13 +205,16 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
     if (startSnap) onSnapStateChange?.(initialSnap!);
   }, []);
 
-  // Hidden behind a selection (see Props.hidden): drop off-screen at once, as the unmount used to; back at the bottom strip,
-  // sliding up, as soon as the selection closes, reported as a fresh mount would be.
+  // Hidden behind a selection (see Props.hidden): drop off-screen once the selection's sheet has slid up over it
+  // (HIDE_AFTER_MS); back at the bottom strip, sliding up, as soon as the selection closes, reported as a fresh mount would
+  // be. Dropping at once (as the unmount used to) left the bare map for a moment between this strip vanishing and the
+  // new sheet rising from the bottom of the screen.
   const lastHiddenRef = useRef(hidden);
   useLayoutEffect(() => {
     if (hidden === lastHiddenRef.current) return;
     lastHiddenRef.current = hidden;
-    if (hidden) { slideAnim.value = CLOSE_POS; return; }
+    // At full screen it would cover the new sheet (drawn above it, but this one fills the screen), so it still drops at once.
+    if (hidden) { slideAnim.value = snapStateRef.current === 'full' ? CLOSE_POS : withDelay(HIDE_AFTER_MS, withTiming(CLOSE_POS, { duration: 0 })); return; }
     snapStateRef.current = 'collapsed';
     snapStateSV.value = 'collapsed';
     lastPos.value = COLLAPSED_Y;
