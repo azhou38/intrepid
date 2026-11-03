@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, Modal,
 } from 'react-native';
 import { Pencil, ChevronDown, Check, LayoutGrid, List as ListIcon } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, useAnimatedProps, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedProps, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, withSpring, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -432,29 +432,22 @@ export default function ProfileScreen() {
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
             read differently from destinations, as on the full-screen map. */}
         {/* The picked tile's place is drawn last (on top), in orange and a little larger. */}
+        {/* The picked place pops up in front of its neighbours (PickedDot, PickedPin): growing from its usual size to its
+            picked size, with a little overshoot, so moving between two places a few pixels apart still reads as a change. */}
         {worldMode === 'destinations' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => (
-          <Circle key={p.id} cx={p.x} cy={p.y} r={(p.id === pickedId ? 3.2 : 2) * dotScale} fill={p.id === pickedId ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.5 * dotScale} />
+          p.id === pickedId
+            ? <PickedDot key={p.id} cx={p.x} cy={p.y} scale={dotScale} />
+            : <Circle key={p.id} cx={p.x} cy={p.y} r={2 * dotScale} fill="#10B981" stroke="white" strokeWidth={0.5 * dotScale} />
         ))}
-        {/* Each new pick sends a ring out from its place, so moving between two places a few pixels apart still reads as a change. */}
-        {worldMode === 'destinations' && (() => {
-          const p = worldDots.find(d => d.id === pickedId);
-          return p ? <PickRipple key={p.id} cx={p.x} cy={p.y} from={3.2 * dotScale} to={10 * dotScale} width={0.8 * dotScale} /> : null;
-        })()}
         {worldMode === 'spots' && [...worldDots].sort((x, y) => +(x.id === pickedId) - +(y.id === pickedId)).map(p => {
-          const on = p.id === pickedId;
+          if (p.id === pickedId) return <PickedPin key={p.id} x={p.x} y={p.y} scale={dotScale} />;
           return (
-            <G key={p.id} transform={`translate(${p.x} ${p.y}) scale(${dotScale * (on ? PICK_PIN_SCALE : 1)}) translate(${-p.x} ${-p.y})`}>
-              <Path d={pinPath(p.x, p.y)} fill={on ? PICK_COLOR : '#10B981'} stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
+            <G key={p.id} transform={`translate(${p.x} ${p.y}) scale(${dotScale}) translate(${-p.x} ${-p.y})`}>
+              <Path d={pinPath(p.x, p.y)} fill="#10B981" stroke="white" strokeWidth={0.3} strokeLinejoin="round" />
               <Circle cx={p.x} cy={p.y - PIN_TIP} r={0.55} fill="#111111" />
             </G>
           );
         })}
-        {worldMode === 'spots' && (() => {
-          const p = worldDots.find(d => d.id === pickedId);
-          // From the picked pin's head (the pin is scaled about its tip).
-          const k = dotScale * PICK_PIN_SCALE;
-          return p ? <PickRipple key={p.id} cx={p.x} cy={p.y - PIN_TIP * k} from={PIN_R * k} to={PIN_R * k + 7 * dotScale} width={0.8 * dotScale} /> : null;
-        })()}
       </Svg>
       {w !== WORLD_W && <View style={styles.mapBorder} pointerEvents="none" />}
       {/* A hint that the map opens. */}
@@ -857,13 +850,32 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
   );
 }
 
-// A ring that spreads out from a newly picked place and fades, once (remounted, by its key, for every pick).
+// The picked place, popping up in front of its neighbours: it grows from its usual size to its picked size with a little
+// overshoot (remounted, by its key, for every pick). A spot's pin grows about its tip, so it stays on its place.
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-function PickRipple({ cx, cy, from, to, width }: { cx: number; cy: number; from: number; to: number; width: number }) {
-  const t = useSharedValue(0);
-  useEffect(() => { t.value = withTiming(1, { duration: 700, easing: Easing.out(Easing.cubic) }); }, []);
-  const props = useAnimatedProps(() => ({ r: from + (to - from) * t.value, strokeOpacity: 1 - t.value }));
-  return <AnimatedCircle cx={cx} cy={cy} fill="none" stroke={PICK_COLOR} strokeWidth={width} animatedProps={props} />;
+const AnimatedPath = Animated.createAnimatedComponent(Path);
+const PICK_POP = { damping: 9, stiffness: 260, mass: 0.6 };
+function PickedDot({ cx, cy, scale }: { cx: number; cy: number; scale: number }) {
+  const k = useSharedValue(2 * scale);
+  useEffect(() => { k.value = withSpring(3.2 * scale, PICK_POP); }, [scale]);
+  const props = useAnimatedProps(() => ({ r: k.value }));
+  return <AnimatedCircle cx={cx} cy={cy} fill={PICK_COLOR} stroke="white" strokeWidth={0.5 * scale} animatedProps={props} />;
+}
+function PickedPin({ x, y, scale }: { x: number; y: number; scale: number }) {
+  const k = useSharedValue(scale);
+  useEffect(() => { k.value = withSpring(scale * PICK_PIN_SCALE, PICK_POP); }, [scale]);
+  // pinPath at scale k about the tip, built on the UI thread each frame.
+  const pinProps = useAnimatedProps(() => {
+    const r = PIN_R * k.value, tx = PIN_TX * k.value, ty = PIN_TY * k.value, cy = y - PIN_TIP * k.value;
+    return { d: `M ${x - tx} ${cy + ty} L ${x} ${y} L ${x + tx} ${cy + ty} A ${r} ${r} 0 1 0 ${x - tx} ${cy + ty} Z`, strokeWidth: 0.3 * k.value };
+  });
+  const headProps = useAnimatedProps(() => ({ cy: y - PIN_TIP * k.value, r: 0.55 * k.value }));
+  return (
+    <G>
+      <AnimatedPath fill={PICK_COLOR} stroke="white" strokeLinejoin="round" animatedProps={pinProps} />
+      <AnimatedCircle cx={x} fill="#111111" animatedProps={headProps} />
+    </G>
+  );
 }
 
 // A page dot: dark for the page in view, blending to grey as the swipe moves away from it, in step with the finger.
