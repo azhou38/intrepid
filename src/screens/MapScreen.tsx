@@ -4657,6 +4657,10 @@ const destItems = useMemo((): DestItem[] =>
   }, [fitCountryDefaultView]);
 
   const handleResetToDest = useCallback(() => {
+    // The country segment's zoom-out (handleZoomToCountry) planned the pins at the country's view and, once it landed, kept
+    // that plan, since the selection did not change. Coming back in it must end: kept, it held the spot pins at the
+    // country's zoom, so only the destination's pin showed, not its spots.
+    releaseSpotCloseTarget();
     // A standalone spot has no destination: this segment recentres on the spot instead.
     if (selectedSpot && (!selectedSpot.destinationId || nearCtxRef.current)) {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -4687,7 +4691,7 @@ const destItems = useMemo((): DestItem[] =>
     setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
     fitDestinationDefaultView(selectedDest, 'flyTo', framing);
-  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault]);
+  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault, releaseSpotCloseTarget]);
 
   // opts.cameraStarted: see handleCloseSpotToDestinationView.
   const handleCloseCountry = useCallback((opts?: { cameraStarted?: boolean }) => {
