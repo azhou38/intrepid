@@ -5165,7 +5165,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🏙️", rank: 3,
     tagline: "Samoa's easygoing capital and harbour base for Upolu's reefs, falls and history",
     description: "Apia is Samoa's capital, on the north coast of Upolu, with about 42,000 people. It is small and a little worn, and most visitors use it to get their bearings and plan trips around the island. In town the clock tower war memorial marks the centre, and Robert Louis Stevenson's house at Vailima lies 5 km south. In 1889 seven German, American and British warships refused to leave the harbour as a typhoon approached, and all but one were lost.",
-    whyVisit: ["Snorkel the reef at Palolo Deep", "Visit Robert Louis Stevenson's home", "Base yourself for Upolu day trips"],
+    whyVisit: ["Snorkel the reef at Palolo Deep", "Visit Robert Louis Stevenson's home", "Explore Upolu on day trips"],
     whyVisitPhotos: ["", "", ""],
     highlights: ["Marine reserve snorkelling", "Stevenson's Vailima", "Upolu day trips"],
     goodToKnow: [
