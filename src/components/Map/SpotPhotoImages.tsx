@@ -6,6 +6,7 @@ import PinPhoto from './PinPhoto';
 import { photoSubject } from '../../utils/subjectCrop';
 import { spotPhotoTitle, type Spot } from '../../data/spots';
 import { pinPhotoUri, loadPinPhoto } from '../../utils/pinPhotoCache';
+import { pumpedTimeout } from '../../utils/pumpedTimeout';
 import { NO_PHOTO } from '../../data/imageOverrides';
 import PhotoPlaceholder from './PhotoPlaceholder';
 
@@ -46,15 +47,15 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: S
     loadPinPhoto(spot).then(u => { if (u && live) setUrl(u); });
     return () => { live = false; };
   }, [spot.id]);
-  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
-  useEffect(() => () => timers.current.forEach(clearTimeout), []);
+  const timers = useRef<(() => void)[]>([]);
+  useEffect(() => () => timers.current.forEach(cancel => cancel()), []);
   const snap = () => {
-    timers.current.push(setTimeout(() => imageRef.current?.refresh(), SNAP_AFTER_MS));
-    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 500));
+    timers.current.push(pumpedTimeout(() => imageRef.current?.refresh(), SNAP_AFTER_MS));
+    timers.current.push(pumpedTimeout(() => imageRef.current?.refresh(), 500));
   };
   const snapReady = () => {
     snap();
-    timers.current.push(setTimeout(() => onReady(name), READY_AFTER_MS));
+    timers.current.push(pumpedTimeout(() => onReady(name), READY_AFTER_MS));
   };
   // PinPhoto's failsafe can report a photo as shown when it never loaded: that snapshot is still grey, so it doesn't count.
   const loadedRef = useRef(false);

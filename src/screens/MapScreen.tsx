@@ -119,6 +119,7 @@ import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
+import { pumpedTimeout, pumpTimeouts } from '../utils/pumpedTimeout';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
@@ -3218,7 +3219,7 @@ const destItems = useMemo((): DestItem[] =>
   }, [selectionKey]);
   // The pin images holding their photo (see SpotPhotoImages' onReady): until then a spot keeps its small pin, not a grey disc.
   const spotPhotoReadyRef = useRef<Set<string>>(new Set());
-  const spotReadyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const spotReadyTimerRef = useRef<(() => void) | null>(null);
   // A pin's photo arriving fades in over its small pin. A symbol can't fade by itself here (new symbols appear at full
   // opacity, and a layer's opacity only transitions as a whole), so the pins ready together are drawn for a moment by their
   // own layers (spotFadeLayers), which start transparent and fade as one, then move to their usual layers:
@@ -3230,7 +3231,7 @@ const destItems = useMemo((): DestItem[] =>
   const runSpotFade = useCallback(() => {
     spotReadyTimerRef.current = null;
     const wait = pinImagesHoldUntilRef.current - Date.now();
-    const later = (ms: number, next: () => void) => { spotReadyTimerRef.current = setTimeout(next, ms); };
+    const later = (ms: number, next: () => void) => { spotReadyTimerRef.current = pumpedTimeout(next, ms); };
     if (wait > 0) return later(wait, runSpotFade);   // not while a sheet slides in
     if (!spotFadeWaitingRef.current.size) return;
     spotFadingRef.current = spotFadeWaitingRef.current;
@@ -3260,7 +3261,7 @@ const destItems = useMemo((): DestItem[] =>
       return;
     }
     spotFadeWaitingRef.current.add(name);
-    if (!spotReadyTimerRef.current) spotReadyTimerRef.current = setTimeout(runSpotFade, SPOT_READY_BATCH_MS);
+    if (!spotReadyTimerRef.current) spotReadyTimerRef.current = pumpedTimeout(runSpotFade, SPOT_READY_BATCH_MS);
   }, [runSpotFade]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
@@ -3423,10 +3424,10 @@ const destItems = useMemo((): DestItem[] =>
   // the tap.) Most important first; loadPinPhoto puts any a pin is already waiting for ahead of these.
   const spotPrefetchViewRef = useRef({ region, zoom: handoffZoom });
   spotPrefetchViewRef.current = { region, zoom: handoffZoom };
-  const spotPrefetchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const spotPrefetchTimerRef = useRef<(() => void) | null>(null);
   useEffect(() => {
     if (!spotPhotoPlan || spotPrefetchTimerRef.current) return;
-    spotPrefetchTimerRef.current = setTimeout(() => {
+    spotPrefetchTimerRef.current = pumpedTimeout(() => {
       spotPrefetchTimerRef.current = null;
       const { region: r, zoom } = spotPrefetchViewRef.current;
       const coming: Spot[] = [];
@@ -3441,8 +3442,8 @@ const destItems = useMemo((): DestItem[] =>
     }, SPOT_PREFETCH_MS);
   }, [region, handoffZoom, spotPhotoPlan]);
   useEffect(() => () => {
-    if (spotReadyTimerRef.current) clearTimeout(spotReadyTimerRef.current);
-    if (spotPrefetchTimerRef.current) clearTimeout(spotPrefetchTimerRef.current);
+    spotReadyTimerRef.current?.();
+    spotPrefetchTimerRef.current?.();
   }, []);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
@@ -5180,6 +5181,7 @@ const destItems = useMemo((): DestItem[] =>
   }) => {
     const { center, bounds } = state.properties;
     camCenterLngRef.current = center[0];
+    pumpTimeouts();   // timers wait during a pinch: see pumpedTimeout
     const isGestureActive = state.gestures?.isGestureActive ?? false;
     // A close's zoom-out is most of the way there, or the user took over the camera: bring the held-back sheet in now. It
     // waited for the last 0.05 of the zoom, which the easing makes the slowest part: the map then sat with no sheet for
