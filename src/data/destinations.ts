@@ -5176,4 +5176,21 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [5, 6, 7, 8, 9],
     bestTimeBlurb: "Apia is driest in {months}, well clear of the October to March rainy and cyclone season.",
   },
+  {
+    id: 'savaii', name: "Savaiʻi", country: "Samoa", countryCode: 'WS', timezone: 'Pacific/Apia', defaultZoomSpanKm: 90,
+    continent: 'Oceania', coordinates: { latitude: -13.6, longitude: -172.47 },
+    category: 'island', icon: "🌋", rank: 3,
+    tagline: "Samoa's quieter big island of lava fields, blowholes and village life",
+    description: "Savaiʻi is the larger and less developed of Samoa's two main islands, with no real towns, just villages strung along one well-paved road that circles the island. The coast shifts between black volcanic ash, white sand beaches and cliffs, and every few miles brings a colonial-style church. Lava fields from eruptions between 1905 and 1911 can be visited from that road, and the Pulemelei mound is the largest ancient structure in Polynesia. Many travellers call it the real Samoa.",
+    whyVisit: ["Walk across old lava fields", "Watch seawater burst from blowholes", "See Polynesia's largest ancient mound"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Volcanic lava fields", "Alofaʻaga blowholes", "Pulemelei mound"],
+    goodToKnow: [
+      { icon: "⛴️", title: "Plan around the ferry", detail: "The crossing from Mulifanua to Salelologa takes 1 hr 15 min, with up to five sailings a day from 06:00 to 16:00." },
+      { icon: "🚗", title: "Local licence needed", detail: "International licences are not accepted. A local licence costs WST 21 and lasts a month, and a car helps most on the Falealupo Peninsula." },
+      { icon: "🧭", title: "Expect fees and guides", detail: "Blowholes charge WS$5 entry, and some caves and lava sites need a village guide. Agree prices first and ignore unasked coconut-throwing shows." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "Visit in {months} for the driest weather, before the rainy and cyclone season starts in October.",
+  },
 ];

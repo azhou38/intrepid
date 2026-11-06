@@ -3466,4 +3466,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Horsham",
   "Hamilton (Victoria)",
   "Apia",
+  "Savaiʻi",
 ]);
