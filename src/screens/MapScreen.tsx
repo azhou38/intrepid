@@ -3523,18 +3523,20 @@ const destItems = useMemo((): DestItem[] =>
     return layers;
   }, [spotBands, spotNameStyle]);
   // The photo pins and names fading in (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
-  // layers would each be updated natively by a change of opacity.
+  // layers would each be updated natively by a change of opacity. Keyed on the band set like them: when it changes they are
+  // added again just below destStampCircles, so these must be too, or the photos fade in behind the small pins.
   const spotFadeLayers = useMemo(() => {
+    const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const transition = { duration: spotFadeOn ? SPOT_FADE_MS : 0, delay: 0 };
     return [
-      <MapboxGL.SymbolLayer key="p" id="spotPhoto-fade" belowLayerID="destStampCircles"
+      <MapboxGL.SymbolLayer key={`${sig}p`} id="spotPhoto-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
         style={{ ...SPOT_PHOTO_PIN_STYLE, iconOpacity: spotFadeOn ? 1 : 0, iconOpacityTransition: transition } as any} />,
-      <MapboxGL.SymbolLayer key="n" id="spotName-fade" belowLayerID="destStampCircles"
+      <MapboxGL.SymbolLayer key={`${sig}n`} id="spotName-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], 'fade']] as any}
         style={{ ...spotNameStyle, textOpacity: spotFadeOn ? 1 : 0, textOpacityTransition: transition } as any} />,
     ];
-  }, [spotFadeOn, spotNameStyle]);
+  }, [spotFadeOn, spotBands, spotNameStyle]);
 
   const spotLabelPlan = useMemo(() => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
