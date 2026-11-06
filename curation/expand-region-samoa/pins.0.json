@@ -1,0 +1,339 @@
+{
+ "apia-1": {
+  "name": "Mount Vaea",
+  "recommended": {
+   "lat": -13.859086,
+   "lon": -171.772013,
+   "src": "commons",
+   "name": "2 geotagged files",
+   "type": "photo median"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Mount Vaea",
+    "type": "article",
+    "lat": -13.86361111,
+    "lon": -171.77361111,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "commons",
+    "name": "2 geotagged files",
+    "type": "photo median",
+    "lat": -13.859086,
+    "lon": -171.772013,
+    "match": 0.5,
+    "from_hint_m": 533
+   }
+  ]
+ },
+ "apia-3": {
+  "name": "Falemata'aga - Museum of Samoa",
+  "recommended": {
+   "lat": -13.83282,
+   "lon": -171.762405,
+   "src": "commons",
+   "name": "4 geotagged files",
+   "type": "photo median"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "commons",
+    "name": "4 geotagged files",
+    "type": "photo median",
+    "lat": -13.83282,
+    "lon": -171.762405,
+    "match": 0.5,
+    "from_hint_m": 767
+   }
+  ]
+ },
+ "apia-5": {
+  "name": "Papase'ea Sliding Rocks",
+  "recommended": {
+   "lat": -13.870083,
+   "lon": -171.80365,
+   "src": "osm",
+   "name": "Papase'ea Sliding Rocks",
+   "type": "waterway=waterfall (nominatim)"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "osm"
+  ],
+  "candidates": [
+   {
+    "src": "osm",
+    "name": "Papase'ea Sliding Rocks",
+    "type": "waterway=waterfall (nominatim)",
+    "lat": -13.8700835,
+    "lon": -171.8036502,
+    "match": 1.0,
+    "from_hint_m": 129
+   },
+   {
+    "src": "osm",
+    "name": "Papase'ea Sliding Rocks",
+    "type": "waterway=waterfall (nominatim)",
+    "lat": -13.8700835,
+    "lon": -171.8036502,
+    "match": 1.0,
+    "from_hint_m": 129
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -13.865080555556,
+    "lon": -171.78789166667,
+    "match": 0.5,
+    "from_hint_m": 1863
+   }
+  ]
+ },
+ "o-le-pupu-pue-national-park": {
+  "name": "O Le Pupū Pu'e National Park",
+  "recommended": null,
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": []
+ },
+ "lake-lanotoo-national-park": {
+  "name": "Lake Lanoto'o National Park",
+  "recommended": {
+   "lat": -13.910436,
+   "lon": -171.825828,
+   "src": "osm",
+   "name": "Lanoto'o Viewing Platform",
+   "type": "tourism=viewpoint (nominatim)"
+  },
+  "confidence": "MEDIUM",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "osm",
+    "name": "Lanoto'o Viewing Platform",
+    "type": "tourism=viewpoint (nominatim)",
+    "lat": -13.9104358,
+    "lon": -171.8258278,
+    "match": 1.0,
+    "from_hint_m": 5
+   }
+  ]
+ },
+ "piula-cave-pool": {
+  "name": "Piula Cave Pool",
+  "recommended": {
+   "lat": -13.87325,
+   "lon": -171.597126,
+   "src": "osm",
+   "name": "Piula Cave Pool",
+   "type": "tourism=attraction (nominatim)"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "osm"
+  ],
+  "candidates": [
+   {
+    "src": "osm",
+    "name": "Piula Cave Pool",
+    "type": "tourism=attraction (nominatim)",
+    "lat": -13.8732504,
+    "lon": -171.5971257,
+    "match": 1.0,
+    "from_hint_m": 54
+   },
+   {
+    "src": "osm",
+    "name": "Piula Cave Pool",
+    "type": "tourism=attraction (nominatim)",
+    "lat": -13.8732504,
+    "lon": -171.5971257,
+    "match": 1.0,
+    "from_hint_m": 54
+   }
+  ]
+ },
+ "lalomanu-beach": {
+  "name": "Lalomanu Beach",
+  "recommended": {
+   "lat": -14.045914,
+   "lon": -171.448868,
+   "src": "osm",
+   "name": "Lalomanu Beach",
+   "type": "natural=beach (nominatim)"
+  },
+  "confidence": "MEDIUM",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "osm",
+    "name": "Lalomanu Beach",
+    "type": "natural=beach (nominatim)",
+    "lat": -14.0459141,
+    "lon": -171.4488675,
+    "match": 1.0,
+    "from_hint_m": 176
+   },
+   {
+    "src": "osm",
+    "name": "Lalomanu",
+    "type": "place=village (nominatim)",
+    "lat": -14.0414129,
+    "lon": -171.4484648,
+    "match": 1.0,
+    "from_hint_m": 546
+   }
+  ]
+ },
+ "return-to-paradise-beach": {
+  "name": "Return to Paradise Beach",
+  "recommended": {
+   "lat": -13.981149,
+   "lon": -171.945412,
+   "src": "osm",
+   "name": "Return To Paradise Beach",
+   "type": "tourism=attraction (nominatim)"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "osm",
+   "osm"
+  ],
+  "candidates": [
+   {
+    "src": "osm",
+    "name": "Return To Paradise Beach",
+    "type": "tourism=attraction (nominatim)",
+    "lat": -13.9811493,
+    "lon": -171.9454118,
+    "match": 1.0,
+    "from_hint_m": 44
+   },
+   {
+    "src": "osm",
+    "name": "Return To Paradise Beach",
+    "type": "tourism=attraction (nominatim)",
+    "lat": -13.9811493,
+    "lon": -171.9454118,
+    "match": 1.0,
+    "from_hint_m": 44
+   },
+   {
+    "src": "osm",
+    "name": "Return to Paradise Resort & Spa",
+    "type": "leisure=beach_resort (nominatim)",
+    "lat": -13.9801346,
+    "lon": -171.9461798,
+    "match": 1.0,
+    "from_hint_m": 164
+   },
+   {
+    "src": "osm",
+    "name": "Return to Paradise",
+    "type": "tourism=picnic_site (nominatim)",
+    "lat": -13.9813386,
+    "lon": -171.9450465,
+    "match": 1.0,
+    "from_hint_m": 62
+   }
+  ]
+ },
+ "savaii-1": {
+  "name": "Alofaaga Blowholes",
+  "recommended": null,
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": []
+ },
+ "savaii-3": {
+  "name": "Pulemelei Mound",
+  "recommended": {
+   "lat": -13.735183,
+   "lon": -172.323827,
+   "src": "osm",
+   "name": "Pulemelei Ancient Mound",
+   "type": "tourism=attraction (nominatim)"
+  },
+  "confidence": "HIGH",
+  "agreeing": [
+   "wiki"
+  ],
+  "candidates": [
+   {
+    "src": "osm",
+    "name": "Pulemelei Ancient Mound",
+    "type": "tourism=attraction (nominatim)",
+    "lat": -13.7351833,
+    "lon": -172.3238267,
+    "match": 1.0,
+    "from_hint_m": 70
+   },
+   {
+    "src": "wiki",
+    "name": "Pulemelei Mound",
+    "type": "article",
+    "lat": -13.735,
+    "lon": -172.32444444,
+    "match": 1.0,
+    "from_hint_m": 0
+   },
+   {
+    "src": "commons",
+    "name": "1 geotagged files",
+    "type": "photo median",
+    "lat": -13.745388888889,
+    "lon": -172.38475833333,
+    "match": 0.5,
+    "from_hint_m": 6624
+   }
+  ]
+ },
+ "savaii-5": {
+  "name": "Mount Matavanu Lava Fields",
+  "recommended": null,
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "wiki",
+    "name": "Mount Matavanu",
+    "type": "article",
+    "lat": -13.53833333,
+    "lon": -172.39444444,
+    "match": 1.0,
+    "from_hint_m": 819
+   }
+  ]
+ },
+ "savaii-7": {
+  "name": "Tafua Peninsula Rainforest Preserve",
+  "recommended": {
+   "lat": -13.786897,
+   "lon": -172.251083,
+   "src": "commons",
+   "name": "5 geotagged files",
+   "type": "photo median"
+  },
+  "confidence": "LOW",
+  "agreeing": [],
+  "candidates": [
+   {
+    "src": "commons",
+    "name": "5 geotagged files",
+    "type": "photo median",
+    "lat": -13.786897,
+    "lon": -172.251083,
+    "match": 0.5,
+    "from_hint_m": 3739
+   }
+  ]
+ }
+}

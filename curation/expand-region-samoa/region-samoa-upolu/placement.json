@@ -1,0 +1,591 @@
+{
+ "region": "samoa-upolu",
+ "new_destinations": [
+  {
+   "id": "apia",
+   "name": "Apia",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "city",
+   "rank": 3,
+   "defaultZoomSpanKm": 25,
+   "coordinates": {
+    "lat": -13.83045,
+    "lng": -171.76854
+   },
+   "coordinates_source": "provisional: OSM Apia Clock Tower (central Apia) from candidates.json; confirm town centre place=city node with resolve-pin.py",
+   "name_evidence": "Wikivoyage Samoa/Upolu lists Apia as the capital and main city with its own See listings; Lonely Planet Samoa names Apia as the gateway city. Capital and regional hub.",
+   "spots": [
+    "apia-1",
+    "apia-2",
+    "apia-3",
+    "apia-4",
+    "apia-5",
+    "apia-6",
+    "apia-7"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Mount Vaea",
+   "action": "spot",
+   "destination": "apia",
+   "id": "apia-1",
+   "category": "hike",
+   "icon": "⛰️",
+   "bio": "A 472 m summit walk above Apia to Robert Louis Stevenson's tomb, with views over the town and coast.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "lat": -13.86361111,
+    "lng": -171.77361111
+   },
+   "coordinates_source": "wikipedia:Mount Vaea",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside Apia's greater metro area (5 km south of the centre, Vailima).",
+   "views": 12468,
+   "counted_sources": 1
+  },
+  {
+   "name": "Robert Louis Stevenson Museum",
+   "action": "spot",
+   "destination": "apia",
+   "id": "apia-2",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "The Vailima house Robert Louis Stevenson built, now a museum of his collection, 5 km south of Apia.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "lat": -13.8666,
+    "lng": -171.7656
+   },
+   "coordinates_source": "osm tourism=museum Robert Louis Stevenson's Museum",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Vailima, in Apia's metro area.",
+   "views": 4606,
+   "counted_sources": 2
+  },
+  {
+   "name": "Falemata'aga - Museum of Samoa",
+   "action": "spot",
+   "destination": "apia",
+   "id": "apia-3",
+   "category": "museum",
+   "icon": "🏛️",
+   "bio": "Samoa's national museum in a German-era school building in central Apia, with Lapita pottery and historic items.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "wiki": "Falemata'aga",
+   "coordinates": {
+    "lat": -13.8397,
+    "lng": -171.7627
+   },
+   "coordinates_source": "osm tourism=museum Museum of Samoa",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Central Apia.",
+   "views": 350,
+   "counted_sources": 1
+  },
+  {
+   "name": "Palolo Deep Marine Reserve",
+   "action": "spot",
+   "destination": "apia",
+   "id": "apia-4",
+   "category": "nature",
+   "icon": "🐢",
+   "bio": "A snorkelling and turtle-watching marine reserve on Vaiala Beach, just east of Apia, with a drop-off into deep water.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": -13.8253,
+    "lng": -171.758
+   },
+   "coordinates_source": "osm natural=beach Palolo Deep",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "WST",
+   "costBasis": "entry",
+   "cost_source": "candidates note: WS$5 entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "Vaiala, east of central Apia, within the metro area.",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Papase'ea Sliding Rocks",
+   "action": "spot",
+   "destination": "apia",
+   "id": "apia-5",
+   "category": "nature",
+   "icon": "💦",
+   "bio": "A natural water slide over mossy falls into a pool, about 6 km south-west of Apia.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": -13.869335,
+    "lng": -171.80456
+   },
+   "coordinates_source": "wikivoyage listing geo (Papase'ea Sliding Rocks)",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": 5,
+   "costMax": 5,
+   "currency": "WST",
+   "costBasis": "entry",
+   "cost_source": "candidates note: WS$5 entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "reason": "6 km SW of Apia centre (Papase'ea), inside the metro area and span.",
+   "views": 0,
+   "counted_sources": 3
+  },
+  {
+   "name": "Samoa Cultural Village",
+   "action": "spot",
+   "destination": "apia",
+   "id": "apia-6",
+   "category": "entertainment",
+   "icon": "🎭",
+   "bio": "A village-style cultural show and experience in Apia covering Samoan food, crafts and traditions.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": "none: coordinates unresolved",
+   "pin": "TODO: resolve with resolve-pin.py (no source point yet)",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Apia (Lonely Planet places to visit); location to be confirmed by resolve-pin.py, and if it proves outside the metro area it becomes standalone.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Immaculate Conception Cathedral, Apia",
+   "action": "spot",
+   "destination": "apia",
+   "id": "apia-7",
+   "category": "religious",
+   "icon": "⛪",
+   "bio": "The large 19th-century Catholic cathedral on Apia's waterfront, damaged in 2009 and since reopened to visitors.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "lat": -13.8322,
+    "lng": -171.7665
+   },
+   "coordinates_source": "osm tourism=attraction Cathedral of the Immaculate Conception",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Central Apia.",
+   "views": 4616,
+   "counted_sources": 1
+  },
+  {
+   "name": "O Le Pupū Pu'e National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "o-le-pupu-pue-national-park",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "🌴",
+   "bio": "Samoa's main national park on Upolu's south coast, with lava cliffs, rainforest trails and the Mount Fito hike.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "wiki": "O Le Pupū Pu’e National Park",
+   "coordinates": {
+    "lat": -14.01483,
+    "lng": -171.73671
+   },
+   "coordinates_source": "wikivoyage listing geo (O le Pupu-Pui National Park)",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Park legal boundary lies ~25 km from Apia, outside its bounds. Only one other kept place is inside (Togitogiga Falls; Coastal Lava Cliff Walk is review): below the four-spot bar and not a flagship, so standalone, not a destination.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Togitogiga Falls",
+   "action": "standalone",
+   "destination": null,
+   "id": "togitogiga-falls",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A cascade and swimming stop inside O Le Pupū Pu'e National Park, just off the cross-island road.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": -14.014,
+    "lng": -171.7177
+   },
+   "coordinates_source": "osm tourism=attraction Togitogiga Waterfalls",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Inside the park, which is not a destination (see park reason), so standalone; a distinct swim stop, not a wrapper of the park.",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lake Lanoto'o National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "lake-lanotoo-national-park",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "🌿",
+   "bio": "A park of volcanic crater lakes and swamp forest above Apia, reached by a 4WD track and a walk.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": -13.9104,
+    "lng": -171.8258
+   },
+   "coordinates_source": "osm tourism=viewpoint Lanoto'o Viewing Platform",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "~15 km from Apia in the central highlands, outside Apia's metro bounds; a separate park with one kept spot, so standalone.",
+   "views": 474,
+   "counted_sources": 2
+  },
+  {
+   "name": "Papapapai-tai Falls",
+   "action": "standalone",
+   "destination": null,
+   "id": "papapapai-tai-falls",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "💧",
+   "bio": "A roughly 100 m waterfall seen from a roadside viewpoint on the road to Lake Lanoto'o.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "coordinates": {
+    "lat": -13.9425,
+    "lng": -171.7757
+   },
+   "coordinates_source": "osm tourism=viewpoint Papapapaitai-falls",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "~11 km from Apia on the highland road; outside the metro area, so standalone (not Apia's).",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Piula Cave Pool",
+   "action": "standalone",
+   "destination": null,
+   "id": "piula-cave-pool",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "🏊",
+   "bio": "A spring-fed freshwater pool by the sea below Piula Theological College, with caves to explore.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "lat": -13.87316,
+    "lng": -171.596635
+   },
+   "coordinates_source": "wikivoyage listing geo (Piula Cave Pool)",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "North coast near Lufilufi, ~28 km east of Apia, outside its metro bounds; not part of an eastern cluster of four spots.",
+   "views": 1522,
+   "counted_sources": 2
+  },
+  {
+   "name": "To Sua Ocean Trench",
+   "action": "standalone",
+   "destination": null,
+   "id": "to-sua-ocean-trench",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "🌊",
+   "bio": "A deep swimming hole in the lava field with a ladder down to the sea water, near Lotofaga.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "coordinates": {
+    "lat": -14.044,
+    "lng": -171.562
+   },
+   "coordinates_source": "osm tourism=attraction To-Sua Ocean Trench",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "South-east coast, ~35 km from Apia. The south-east cluster (To Sua, Lalomanu, Namu'a; Aleipata Islands in review) has only three kept spots, so standalone; not a destination.",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Lalomanu Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "lalomanu-beach",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A south-east coast beach with views of the Aleipata islands and a base for the coast's boat trips.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": -14.0459,
+    "lng": -171.4505
+   },
+   "coordinates_source": "osm natural=beach Lalomanu Beach",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "South-east coast ~40 km from Apia, outside its bounds; cluster below four kept spots.",
+   "views": 0,
+   "counted_sources": 2
+  },
+  {
+   "name": "Namu'a Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "namua-island",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "A small island inside the reef off Upolu's eastern tip, a boat day trip with turtle spotting.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": {
+    "lat": -14.021057,
+    "lng": -171.416588
+   },
+   "coordinates_source": "wikivoyage listing geo (Namua Island)",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Island off the east tip, outside every destination; cluster below four spots.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Return to Paradise Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "return-to-paradise-beach",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "beach",
+   "icon": "🏖️",
+   "bio": "A sandy beach near Lefaga on the south-west coast, used for the 1953 film Return to Paradise.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": -13.9815,
+    "lng": -171.9456
+   },
+   "coordinates_source": "osm natural=beach Return To Paradise",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Lefaga, ~25 km from Apia across the island, outside its bounds.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Manono Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "manono-island",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "nature",
+   "icon": "🏝️",
+   "bio": "A car-free island off Upolu's western tip with a footpath round the coast and a traditional village.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": -13.833333,
+    "lng": -172.083333
+   },
+   "coordinates_source": "wikivoyage listing geo (Manono Island)",
+   "pin": "TODO: confirm with resolve-pin.py",
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Island off the west tip, ~35 km from Apia, outside its bounds.",
+   "views": 4718,
+   "counted_sources": 1
+  }
+ ],
+ "existing_fixes": [],
+ "no_destination_notes": [
+  "No destination for the south-east coast (Aleipata/Lalomanu): only 3 kept spots (Lalomanu, To Sua, Namu'a), below the four-spot bar; Aleipata Islands is review. They are standalone.",
+  "No destination for O Le Pupū Pu'e: 1 kept spot inside (Togitogiga) + 1 review, not a flagship; both stand alone.",
+  "Savai'i spots belong to samoa-savaii (not proposed here).",
+  "Standalone within ~40 km of Apia (Lanoto'o, Papapapai-tai, Piula, Return to Paradise, Manono, To Sua at ~35 km): each outside Apia's metro bounds, so not its spots."
+ ],
+ "review": [
+  {
+   "name": "Coastal Lava Cliff Walk",
+   "reason": "Wikivoyage names it; a coastal walk with lava cliffs (rule 1,2)"
+  },
+  {
+   "name": "Fuipisia Waterfalls",
+   "reason": "Twin 54 m falls near Apia named by waterfall guides and blogs and apparently LP (poi ids appeared in search, page unreadable). Counted source UNRESOLVED; short walk, village fee."
+  },
+  {
+   "name": "Sopo'aga Waterfalls",
+   "reason": "Lonely Planet lists Sopo'aga Falls (54 m into a gorge by the south coast road), tours routinely stop; viewpoint through a garden, small fee, about 15 minute visit. Counted source exists, so not OSM-only. Against: roadside, short."
+  },
+  {
+   "name": "Aleipata Islands",
+   "reason": "Lonely Planet names Aleipata beaches and reefs; islands reached by boat"
+  },
+  {
+   "name": "Apolima",
+   "reason": "Island between islands, boat access, known but no counted source found in the pages opened"
+  },
+  {
+   "name": "Fagaloa Bay – Uafato Tiavea Conservation Zone",
+   "reason": "Lonely Planet lists Uafato Conservation Area: 14 sq km rainforest to ocean, carvers demonstrate, rough road round Fagaloa Bay; village bird-watching trail opened. Samoa's UNESCO tentative list. Against: remote, rough road, one counted source; name it Uafato Conservation Area."
+  },
+  {
+   "name": "Mulinu'u Peninsula",
+   "reason": "Wikivoyage lists parliament, observatory, tombs; area to see"
+  },
+  {
+   "name": "Apia Fresh Produce Market",
+   "reason": "Wikivoyage: Marketi Fou trades Mon-Sat, kava by cup (daily hall rule 4)"
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "inside_destinations": 9,
+ "standalone": 0,
+ "new_destinations": [
+  "savaii"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Afu Aau Falls",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Falealupo Rainforest Preserve",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tafua Peninsula Rainforest Preserve",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Satoalepai Turtle Reserve",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Paia Dwarfs Cave",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Central Savaiʻi Rainforest",
+   "views": 13388,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Protected area with no visitor source or infrastructure; redirects to the island article (rules 1, 2)."
+  },
+  {
+   "name": "Silisili",
+   "views": 3662,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no visitor source or visit route (rule 1)."
+  },
+  {
+   "name": "Falealupo",
+   "views": 2558,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village/peninsula wrapper; its draws (preserve, beach, church ruins) are separate candidates (rule 3, near-duplicate)."
+  },
+  {
+   "name": "Salelologa",
+   "views": 2500,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Ferry town with market (Wikipedia/Wikivoyage Get in); a gateway at low rank, not an attraction."
+  },
+  {
+   "name": "Moso's Footprint",
+   "views": 1797,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; no visitor source (rule 1)."
+  },
+  {
+   "name": "Mauga Afi",
+   "views": 1343,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; cone with no visitor stop (rule 1)."
+  },
+  {
+   "name": "Safune",
+   "views": 1328,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Village with no visitor listing (rule 1)."
+  },
+  {
+   "name": "Vailoa",
+   "views": 981,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; archaeological village remains, no visitor source (rule 1)."
+  },
+  {
+   "name": "Fagamalo",
+   "views": 970,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Village named only as surf and dive base; no place to see in its own right (rule 2)."
+  },
+  {
+   "name": "Sapapaliʻi",
+   "views": 873,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage only: a monument to John Williams's 1830 landing, a minor memorial with nothing else named (rule 3). Not found in LP."
+  },
+  {
+   "name": "Manase",
+   "views": 725,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage lists Manase for north-coast surf, Raci's Beach Club, beach fales; village beach."
+  },
+  {
+   "name": "Lano",
+   "views": 521,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Village and surf break; no visitor source gives it a stop (rule 1)."
+  },
+  {
+   "name": "Mata o le Afi",
+   "views": 511,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Wikipedia only; volcano with no visitor stop (rule 1)."
+  },
+  {
+   "name": "Aganoa Beach",
+   "views": 467,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage Do names it only as the surf operator's base; no sight or visit described, and no second source found."
+  },
+  {
+   "name": "Satuiatua",
+   "views": 253,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Wikipedia and a blog call the beach picturesque with offshore surf; Wikivoyage only lists the resort."
+  }
+ ],
+ "strongest_outsiders": [],
+ "reviews": [
+  {
+   "name": "Peapea Cave",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage See: lava cave, swiftlets, 10 min from road; guide needed for locked entrance."
+  },
+  {
+   "name": "Falealupo Church Ruins",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Only a travel blog names it; no counted source found in Wikivoyage Savaii (opened) or blog text."
+  },
+  {
+   "name": "Manase",
+   "views": 725,
+   "counted_sources": 1,
+   "reason": "Wikivoyage lists Manase for north-coast surf, Raci's Beach Club, beach fales; village beach."
+  },
+  {
+   "name": "Wreck of the Juno",
+   "views": 0,
+   "counted_sources": 1,
+   "reason": "Wikivoyage Do: 1881 wreck, popular dive off Fagamalo/Manase."
+  },
+  {
+   "name": "Satuiatua",
+   "views": 253,
+   "counted_sources": 0,
+   "reason": "Wikipedia and a blog call the beach picturesque with offshore surf; Wikivoyage only lists the resort."
+  },
+  {
+   "name": "Salelologa",
+   "views": 2500,
+   "counted_sources": 1,
+   "reason": "Ferry town with market (Wikipedia/Wikivoyage Get in); a gateway at low rank, not an attraction."
+  },
+  {
+   "name": "Faleālupo Beach",
+   "views": 0,
+   "counted_sources": 0,
+   "reason": "Wikivoyage (Sleep) says Falealupo Beach Fales are near 'one of the best beaches on the island'; OSM beach feature."
+  }
+ ],
+ "benchmark": "No Samoa-specific benchmark in COVERAGE.md; none of the NZ benchmark places is in this region. Negative benchmarks respected: village wrappers (Falealupo, Fagamalo, Safune) and a minor memorial (Sapapaliʻi) rejected; the Ohakune-style bar applied by source count.",
+ "note": "Score is Wikipedia views only; kept spots rank by Wikivoyage/LP naming (6 of 9 have 0 views because their pages do not exist), so every candidate with views is nominally stronger; each is left out for a concrete What-qualifies reason (Wikipedia-only, no visitor source, village/wrapper, or sent to review)."
+}

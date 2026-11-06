@@ -1,0 +1,951 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-06T18:30:49Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1049013683,
+  "lat": -13.8467429,
+  "lon": -172.1121794,
+  "tags": {
+    "name": "Mauga Tulimanuiva",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 1986623393,
+  "lat": -13.5064177,
+  "lon": -172.4779719,
+  "tags": {
+    "fee": "5 WST",
+    "name": "Peapea Cave",
+    "natural": "cave_entrance",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2889271099,
+  "lat": -13.6364133,
+  "lon": -172.1935920,
+  "tags": {
+    "name": "Vaiana",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3308823945,
+  "lat": -13.5104785,
+  "lon": -172.6310850,
+  "tags": {
+    "name": "Fa'ananu",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3308833746,
+  "lat": -13.5210106,
+  "lon": -172.7859692,
+  "tags": {
+    "name": "Mauga Olotai",
+    "name:sm": "Olotai",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3308880712,
+  "lat": -13.6617341,
+  "lon": -172.3371292,
+  "tags": {
+    "ele": "1025",
+    "name": "Mauga Mafane",
+    "name:ru": "гора Мафане",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3308880713,
+  "lat": -13.6488531,
+  "lon": -172.3260093,
+  "tags": {
+    "name": "Mauga Olomanuuta",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3308880714,
+  "lat": -13.6583196,
+  "lon": -172.3127699,
+  "tags": {
+    "name": "Mauga Maungaloa",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3310759682,
+  "lat": -13.7729001,
+  "lon": -172.3530442,
+  "tags": {
+    "name": "Vaipotopoto",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310799526,
+  "lat": -13.7709971,
+  "lon": -172.3259298,
+  "tags": {
+    "name": "Magalogalo spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310799536,
+  "lat": -13.7695200,
+  "lon": -172.3262302,
+  "tags": {
+    "name": "Matamanu spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310799540,
+  "lat": -13.7625408,
+  "lon": -172.3242051,
+  "tags": {
+    "name": "Tafofatai spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310799541,
+  "lat": -13.7627590,
+  "lon": -172.3244044,
+  "tags": {
+    "name": "Lalomati spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310799545,
+  "lat": -13.7576781,
+  "lon": -172.3037694,
+  "tags": {
+    "name": "Vailupe Spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310805066,
+  "lat": -13.7598092,
+  "lon": -172.2993437,
+  "tags": {
+    "name": "Fogāva'a spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310805084,
+  "lat": -13.7586668,
+  "lon": -172.2947625,
+  "tags": {
+    "name": "Vaipulua spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310805096,
+  "lat": -13.7586199,
+  "lon": -172.2961707,
+  "tags": {
+    "name": "Le'alo'alo spring",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3310911445,
+  "lat": -13.6250202,
+  "lon": -172.4085856,
+  "tags": {
+    "ele": "1391",
+    "name": "Mauga Mua",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3310911446,
+  "lat": -13.6093064,
+  "lon": -172.5079889,
+  "tags": {
+    "name": "Mauga Mata o le afi",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3310911447,
+  "lat": -13.6087433,
+  "lon": -172.5146194,
+  "tags": {
+    "name": "Mauga Mū",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3310911448,
+  "lat": -13.6180446,
+  "lon": -172.5397248,
+  "tags": {
+    "ele": "1847",
+    "name": "Mauga Afi",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3313338442,
+  "lat": -13.7068523,
+  "lon": -172.6030405,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3322292363,
+  "lat": -13.4647992,
+  "lon": -172.4195017,
+  "tags": {
+    "name": "Vai-o-Sina",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3323759901,
+  "lat": -13.6294030,
+  "lon": -172.3870159,
+  "tags": {
+    "ele": "1251",
+    "name": "Mauga Mana'omia",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323759902,
+  "lat": -13.5706413,
+  "lon": -172.2777505,
+  "tags": {
+    "ele": "355",
+    "name": "Mauga Tagotala",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323824579,
+  "lat": -13.6354295,
+  "lon": -172.4199109,
+  "tags": {
+    "ele": "1533",
+    "name": "Mauga Te'elagi",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323824580,
+  "lat": -13.6180584,
+  "lon": -172.5110414,
+  "tags": {
+    "ele": "1783",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323824581,
+  "lat": -13.6268588,
+  "lon": -172.4746920,
+  "tags": {
+    "ele": "1834",
+    "name": "Mauga Si'ope",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323883166,
+  "lat": -13.6204775,
+  "lon": -172.4480198,
+  "tags": {
+    "ele": "1732",
+    "name": "Mauga Mata'aga",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323911923,
+  "lat": -13.5346938,
+  "lon": -172.3860507,
+  "tags": {
+    "name": "Mauga Ma'asina",
+    "name:sm": "Ma'asina",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323911926,
+  "lat": -13.4709630,
+  "lon": -172.4224859,
+  "tags": {
+    "name": "Mataolealelo",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3323916882,
+  "lat": -13.4507443,
+  "lon": -172.4083506,
+  "tags": {
+    "name": "Sāfe'e",
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3323931419,
+  "lat": -13.4804183,
+  "lon": -172.3566403,
+  "tags": {
+    "name": "Mauga To'alepai",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323931420,
+  "lat": -13.4837778,
+  "lon": -172.3735919,
+  "tags": {
+    "name": "Mauga Fualua",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3323931421,
+  "lat": -13.4861774,
+  "lon": -172.3826899,
+  "tags": {
+    "name": "Mauga'ele",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3326268622,
+  "lat": -13.5749590,
+  "lon": -172.3219533,
+  "tags": {
+    "name": "Mauga Puna",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3326268623,
+  "lat": -13.6248362,
+  "lon": -172.3288466,
+  "tags": {
+    "ele": "975",
+    "name": "Mauga Ve'a",
+    "name:sm": "Ve'a",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3326268624,
+  "lat": -13.6301590,
+  "lon": -172.3366572,
+  "tags": {
+    "name": "Mauga Mata'ulano",
+    "name:sm": "Mata'ulano",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3326268625,
+  "lat": -13.6164528,
+  "lon": -172.3379661,
+  "tags": {
+    "ele": "1082",
+    "name": "Mauga To'iave'a",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3327912226,
+  "lat": -13.7347102,
+  "lon": -172.5223921,
+  "tags": {
+    "name": "Mauga Olomanu",
+    "name:sm": "Olomanu",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3327912227,
+  "lat": -13.7277691,
+  "lon": -172.5043033,
+  "tags": {
+    "name": "Mauga Ailao",
+    "name:sm": "Ailao",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3327912228,
+  "lat": -13.7284569,
+  "lon": -172.5219200,
+  "tags": {
+    "name": "Mauga Olotane",
+    "name:sm": "Olotane",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3327912229,
+  "lat": -13.7317087,
+  "lon": -172.4959133,
+  "tags": {
+    "name": "Mauga Fatuafie",
+    "name:sm": "Fatuafie",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3327912230,
+  "lat": -13.7223077,
+  "lon": -172.4914501,
+  "tags": {
+    "name": "Mauga Le'ele",
+    "name:sm": "Le'ele",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3327912232,
+  "lat": -13.7473206,
+  "lon": -172.4828456,
+  "tags": {
+    "name": "Mauga Tiafue",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329427778,
+  "lat": -13.5209975,
+  "lon": -172.7534964,
+  "tags": {
+    "name": "Mauga Fuiono",
+    "name:sm": "Fuiono",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329432887,
+  "lat": -13.5517228,
+  "lon": -172.7441382,
+  "tags": {
+    "name": "Mauga Talu",
+    "name:sm": "Talu",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329434594,
+  "lat": -13.5387265,
+  "lon": -172.6999085,
+  "tags": {
+    "name": "Mauga Sāma'au",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329434595,
+  "lat": -13.5438792,
+  "lon": -172.7134054,
+  "tags": {
+    "name": "Mauga Pu'ega",
+    "natural": "peak",
+    "wikidata": "Q31673202"
+  }
+},
+{
+  "type": "node",
+  "id": 3329438833,
+  "lat": -13.7873236,
+  "lon": -172.2538545,
+  "tags": {
+    "name": "Mauga Tafua",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329465788,
+  "lat": -13.6503452,
+  "lon": -172.2405789,
+  "tags": {
+    "ele": "262",
+    "name": "Mauga Masa",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329465789,
+  "lat": -13.6692099,
+  "lon": -172.1978245,
+  "tags": {
+    "name": "Mauga Misimala",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329465790,
+  "lat": -13.6651859,
+  "lon": -172.2059999,
+  "tags": {
+    "name": "Mauga Vaiala",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329465791,
+  "lat": -13.6626838,
+  "lon": -172.2202692,
+  "tags": {
+    "name": "Mauga Vaiolo",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329501055,
+  "lat": -13.6655247,
+  "lon": -172.2765902,
+  "tags": {
+    "ele": "554",
+    "name": "Mauga Nei",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329501056,
+  "lat": -13.6518048,
+  "lon": -172.2933058,
+  "tags": {
+    "name": "Mauga Olomanutai",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3329501057,
+  "lat": -13.6546615,
+  "lon": -172.2848085,
+  "tags": {
+    "ele": "661",
+    "name": "Mauga Olo",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 3331356655,
+  "lat": -13.4509925,
+  "lon": -172.4088776,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3341092309,
+  "lat": -13.5842048,
+  "lon": -172.2149765,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3372551734,
+  "lat": -13.7669169,
+  "lon": -172.3265263,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3386131092,
+  "lat": -13.4483422,
+  "lon": -172.3455604,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3386131393,
+  "lat": -13.4474552,
+  "lon": -172.3469980,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3396311008,
+  "lat": -13.7340498,
+  "lon": -172.2164474,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3406590109,
+  "lat": -13.5899887,
+  "lon": -172.2096045,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409855947,
+  "lat": -13.6860895,
+  "lon": -172.1894745,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409855991,
+  "lat": -13.7038543,
+  "lon": -172.2027193,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409855992,
+  "lat": -13.7051338,
+  "lon": -172.2042428,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409857141,
+  "lat": -13.7125915,
+  "lon": -172.2033898,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409857142,
+  "lat": -13.7119557,
+  "lon": -172.2033684,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409857143,
+  "lat": -13.6988327,
+  "lon": -172.1995140,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409857144,
+  "lat": -13.6833792,
+  "lon": -172.1850435,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3409857263,
+  "lat": -13.6300150,
+  "lon": -172.1974082,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3432601436,
+  "lat": -13.6430992,
+  "lon": -172.1900307,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3495540993,
+  "lat": -13.6885262,
+  "lon": -172.1931199,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3495541016,
+  "lat": -13.6893629,
+  "lon": -172.1936426,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 3496146250,
+  "lat": -13.7126107,
+  "lon": -172.2042624,
+  "tags": {
+    "natural": "spring"
+  }
+},
+{
+  "type": "node",
+  "id": 11471618109,
+  "lat": -13.5976209,
+  "lon": -172.6199180,
+  "tags": {
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 11471937182,
+  "lat": -13.5875993,
+  "lon": -172.6724464,
+  "tags": {
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 14313406482,
+  "lat": -13.8144997,
+  "lon": -172.1534315,
+  "tags": {
+    "natural": "peak"
+  }
+},
+{
+  "type": "way",
+  "id": 112462594,
+  "center": {
+    "lat": -13.4929569,
+    "lon": -172.7773178
+  },
+  "tags": {
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 112462599,
+  "center": {
+    "lat": -13.4971456,
+    "lon": -172.7635987
+  },
+  "tags": {
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 112462600,
+  "center": {
+    "lat": -13.5152662,
+    "lon": -172.7174862
+  },
+  "tags": {
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 374403248,
+  "center": {
+    "lat": -13.6739996,
+    "lon": -172.6400735
+  },
+  "tags": {
+    "alt_name": "Faiaai Beach",
+    "name": "Fai'a'ai Beach",
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 587597842,
+  "center": {
+    "lat": -13.4992016,
+    "lon": -172.7879268
+  },
+  "tags": {
+    "alt_name": "Falealupo Beach",
+    "name": "Faleālupo Beach",
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 706822260,
+  "center": {
+    "lat": -13.4415140,
+    "lon": -172.3579340
+  },
+  "tags": {
+    "name": "Fagamalo Beach",
+    "natural": "beach",
+    "surface": "sand"
+  }
+},
+{
+  "type": "way",
+  "id": 1230295451,
+  "center": {
+    "lat": -13.7735242,
+    "lon": -172.2847364
+  },
+  "tags": {
+    "name": "Aganoa Beach",
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 1240739243,
+  "center": {
+    "lat": -13.4470775,
+    "lon": -172.3766640
+  },
+  "tags": {
+    "name": "Tanu Beach Fales",
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 1240760358,
+  "center": {
+    "lat": -13.6100548,
+    "lon": -172.2011624
+  },
+  "tags": {
+    "name": "Lano Beach",
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 1240762962,
+  "center": {
+    "lat": -13.5017682,
+    "lon": -172.7900035
+  },
+  "tags": {
+    "name": "Seeti Beach",
+    "natural": "beach"
+  }
+},
+{
+  "type": "way",
+  "id": 1240763176,
+  "center": {
+    "lat": -13.4506392,
+    "lon": -172.4115471
+  },
+  "tags": {
+    "name": "Sevemanaia Beach",
+    "natural": "beach"
+  }
+},
+{
+  "type": "relation",
+  "id": 21776248,
+  "center": {
+    "lat": -13.8194044,
+    "lon": -172.1520469
+  },
+  "tags": {
+    "natural": "beach",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}
