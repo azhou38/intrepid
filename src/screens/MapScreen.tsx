@@ -3250,6 +3250,8 @@ const destItems = useMemo((): DestItem[] =>
     });
   }, []);
   const handleSpotPhotoReady = useCallback((name: string) => {
+    // Once only: PinPhoto's failsafe reports a pin with a subject crop as shown again 1.5 s after it mounts, which faded it in a second time.
+    if (spotPhotoReadyRef.current.has(name)) return;
     // The other ring of a pin already showing (it was just ticked as visited): no fade, the pin only changes its ring.
     const other = name.endsWith('1') ? `${name.slice(0, -1)}0` : `${name.slice(0, -1)}1`;
     if (spotPhotoReadyRef.current.has(other)) {
