@@ -9,7 +9,8 @@ import { fetchWikiThumbnail, thumbCache, manifestThumbUrl } from './photoCache';
 //
 //   pinPhotoUri(spot)          → a local file:// URI when the photo is on disk, else null (synchronous)
 //   loadPinPhoto(spot)         → resolves to a local URI (downloading it once), or the remote URL if the disk fails
-//   prefetchPinPhotos(spots)   → starts downloading every one of them now (most important first), without waiting
+//   prefetchPinPhotos(spots)   → starts downloading every one of them now (most important first), without waiting, behind
+//                                any photo a pin is waiting for
 //
 // Downloads run a few at a time (MAX_PARALLEL) so a destination with 84 spots doesn't open 84 connections at once.
 
@@ -21,6 +22,9 @@ const onDisk = new Map<string, string>();       // spot id -> local file URI
 const destOnDisk = new Map<string, string>();   // destination id -> local file URI (its photo pin; see loadDestPinPhoto)
 const inFlight = new Map<string, Promise<string | null>>();
 const queue: (() => void)[] = [];
+const queuedSpots = new Map<string, () => void>();   // spot id -> its download, while it waits in the queue
+const urgent = new Set<string>();                    // spots a pin is waiting for: ahead of every prefetch
+const prefetched = new Set<string>();                // tried once this session: a failed photo isn't asked for again each pass
 let running = 0;
 let ready: Promise<void> | null = null;
 
@@ -73,9 +77,14 @@ function runNext() {
   while (running < MAX_PARALLEL && queue.length) { running++; queue.shift()!(); }
 }
 
-export function loadPinPhoto(spot: Spot): Promise<string | null> {
+export function loadPinPhoto(spot: Spot, background = false): Promise<string | null> {
   const have = onDisk.get(spot.id);
   if (have) return Promise.resolve(have);
+  if (!background) {
+    urgent.add(spot.id);
+    const job = queuedSpots.get(spot.id);
+    if (job) { queue.splice(queue.indexOf(job), 1); queue.unshift(job); }
+  }
   const pending = inFlight.get(spot.id);
   if (pending) return pending;
   const p = (async () => {
@@ -87,7 +96,8 @@ export function loadPinPhoto(spot: Spot): Promise<string | null> {
     thumbCache.set(`spotpin_${spot.id}`, url);
     if (!DIR) return url;
     return new Promise<string | null>(resolve => {
-      queue.push(async () => {
+      const job = async () => {
+        queuedSpots.delete(spot.id);
         try {
           const target = fileFor(spot);
           const res = await FileSystem.downloadAsync(url, target);
@@ -95,17 +105,23 @@ export function loadPinPhoto(spot: Spot): Promise<string | null> {
           else { await FileSystem.deleteAsync(target, { idempotent: true }); resolve(url); }
         } catch { resolve(url); }
         finally { running--; runNext(); }
-      });
+      };
+      queuedSpots.set(spot.id, job);
+      if (urgent.has(spot.id)) queue.unshift(job); else queue.push(job);
       runNext();
     });
-  })().finally(() => inFlight.delete(spot.id));
+  })().finally(() => { inFlight.delete(spot.id); urgent.delete(spot.id); });
   inFlight.set(spot.id, p);
   return p;
 }
 
 // Start downloading these spots' pin photos now (in the given order, most important first).
 export function prefetchPinPhotos(spots: Spot[]): void {
-  for (const sp of spots) if (!onDisk.has(sp.id)) loadPinPhoto(sp);
+  for (const sp of spots) {
+    if (onDisk.has(sp.id) || prefetched.has(sp.id)) continue;
+    prefetched.add(sp.id);
+    loadPinPhoto(sp, true);
+  }
 }
 
 // Destination pin photos, kept on disk like the spots' (DestPinImages): each launch used to download every destination's

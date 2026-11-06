@@ -1307,6 +1307,10 @@ const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-w
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
+const SPOT_READY_BATCH_MS = 180;  // photo pins whose photos are ready switch together, not one map data update each
+const SPOT_PREFETCH_MS = 250;     // how often the camera's position is checked for pin photos to fetch ahead
+const SPOT_PREFETCH_AHEAD = 1.5;  // zoom levels ahead of a spot's photo pin that its photo starts downloading
+const MAX_SPOT_PREFETCH = 24;     // photos asked for per check
 const MAX_NEW_SPOT_IMAGES = 16;   // spot pin images registered per pass (see nativeSpotPins); further passes follow a frame apart
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
 // destination's headline spots nor is the first to lose its pin.
@@ -3208,6 +3212,18 @@ const destItems = useMemo((): DestItem[] =>
     const t = setTimeout(() => setSpotImagesTick(n => n + 1), PIN_IMAGE_HOLD_MS + 20);
     return () => clearTimeout(t);
   }, [selectionKey]);
+  // The pin images holding their photo (see SpotPhotoImages' onReady): until then a spot keeps its small pin, not a grey disc.
+  const spotPhotoReadyRef = useRef<Set<string>>(new Set());
+  const spotReadyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const handleSpotPhotoReady = useCallback((name: string) => {
+    spotPhotoReadyRef.current.add(name);
+    if (spotReadyTimerRef.current) return;
+    spotReadyTimerRef.current = setTimeout(() => {
+      spotReadyTimerRef.current = null;
+      // While a sheet slides in, the hold's own timer runs the next pass, which picks these up.
+      if (Date.now() >= pinImagesHoldUntilRef.current) setSpotImagesTick(n => n + 1);
+    }, SPOT_READY_BATCH_MS);
+  }, []);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   // A close is planning at its target (closeTarget): see the band properties below.
@@ -3279,9 +3295,15 @@ const destItems = useMemo((): DestItem[] =>
       else pending++;
     }
     spotImagesPendingRef.current = holdImages ? 0 : pending;   // while held, the hold's own timer runs the next pass
+    // A spot's image that holds its photo, or '' while none does. A spot just ticked as visited keeps its old ring until the
+    // new image is ready, rather than dropping to its small pin for a moment.
+    const readyImage = (id: string, visited: boolean) => {
+      const ready = spotPhotoReadyRef.current, img = spotPhotoImageName(id, visited), other = spotPhotoImageName(id, !visited);
+      return ready.has(img) ? img : ready.has(other) ? other : '';
+    };
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
-      const img = spotPhotoImageName(sp.id, visited);
+      const img = readyImage(sp.id, visited);
       const early = isEarly(sp);
       features.push({
         type: 'Feature',
@@ -3290,7 +3312,7 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: specs.has(img) && !early && photoPlan.has(sp.id) && !pinHitsSelected(sp) ? img : '',
+          img: !early && photoPlan.has(sp.id) && !pinHitsSelected(sp) ? img : '',
           label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON && !hitsSelected(sp) ? spotLabelLines(sp.name).join('\n') : '',
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
@@ -3313,8 +3335,8 @@ const destItems = useMemo((): DestItem[] =>
     if (selectedSpot) {
       const visited = visitIndex.isSpotVisited(selectedSpot.id);
       const img = spotPhotoImageName(selectedSpot.id, visited);
-      const selHasPhoto = specs.has(img);
-      if (!selHasPhoto && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
+      const selImg = readyImage(selectedSpot.id, visited);
+      if (!specs.has(img) && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
       // The carousel's neighbours (two either side) get their photos registered ahead, so swiping to one finds its pin
       // image ready: a spot that was only a small pin used to show its blue glow first and its photo pin a moment later.
       const ci = carouselSpots.findIndex(s => s.id === selectedSpot.id), cn = carouselSpots.length;
@@ -3333,7 +3355,7 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: selectedSpot.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: selHasPhoto ? img : '',
+          img: selImg,
           label: spotLabelLines(selectedSpot.name).join('\n'),
           side: spotPhotoPlan?.nameAt.get(selectedSpot.id)?.side ?? 'left', sort: -2_000_000,
           sel: 1,
@@ -3358,6 +3380,32 @@ const destItems = useMemo((): DestItem[] =>
     const id = requestAnimationFrame(() => setSpotImagesTick(t => t + 1));
     return () => cancelAnimationFrame(id);
   }, [nativeSpotPins]);
+  // Fetch the pin photos of the spots in view whose photo pins are coming up, so a zoom finds them ready: otherwise each
+  // starts downloading only when its pin is due, and the spot waits as a small pin. (A tapped destination's are fetched at
+  // the tap.) Most important first; loadPinPhoto puts any a pin is already waiting for ahead of these.
+  const spotPrefetchViewRef = useRef({ region, zoom: handoffZoom });
+  spotPrefetchViewRef.current = { region, zoom: handoffZoom };
+  const spotPrefetchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (!spotPhotoPlan || spotPrefetchTimerRef.current) return;
+    spotPrefetchTimerRef.current = setTimeout(() => {
+      spotPrefetchTimerRef.current = null;
+      const { region: r, zoom } = spotPrefetchViewRef.current;
+      const coming: Spot[] = [];
+      for (const [id, z] of spotPhotoPlan.photoAt) {
+        const sp = SPOT_BY_ID.get(id);
+        if (!sp || spotPhotoZoom(id, z) > zoom + SPOT_PREFETCH_AHEAD || pinPhotoUri(sp)) continue;
+        const { latitude, longitude } = sp.coordinates;
+        if (Math.abs(latitude - r.latitude) <= r.latitudeDelta && Math.abs(longitude - r.longitude) <= r.longitudeDelta) coming.push(sp);
+      }
+      coming.sort((a, b) => (spotPhotoPlan.sortOf.get(a.id) ?? 0) - (spotPhotoPlan.sortOf.get(b.id) ?? 0));
+      prefetchPinPhotos(coming.slice(0, MAX_SPOT_PREFETCH));
+    }, SPOT_PREFETCH_MS);
+  }, [region, handoffZoom, spotPhotoPlan]);
+  useEffect(() => () => {
+    if (spotReadyTimerRef.current) clearTimeout(spotReadyTimerRef.current);
+    if (spotPrefetchTimerRef.current) clearTimeout(spotPrefetchTimerRef.current);
+  }, []);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   // When the selection moves to another spot, the old spot's native pin is back at once, so its marker goes at once too
@@ -6210,7 +6258,7 @@ const destItems = useMemo((): DestItem[] =>
             hold a full photo pin. A native layer (no MarkerView per spot), drawn beneath the destination
             stamps and photo pins, and present for exactly as long as the full pin would have been. */}
         <SpotPinImages />
-        <SpotPhotoImages specs={nativeSpotPins.specs} />
+        <SpotPhotoImages specs={nativeSpotPins.specs} onReady={handleSpotPhotoReady} />
         <MapboxGL.ShapeSource
           id="spotPins"
           shape={nativeSpotPins.shape}

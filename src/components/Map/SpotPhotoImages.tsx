@@ -13,6 +13,9 @@ import PhotoPlaceholder from './PhotoPlaceholder';
 // every frame, which pins fit and fades them in and out with the camera, the way Google Maps does. Each pin's look
 // (teardrop, ring, round photo) is a small React Native view that rnmapbox snapshots into a style image, exactly as
 // DestPinImages does for destinations; its bottom edge is the tip, so the layer anchors it at the bottom.
+//
+// An image is registered before its photo has loaded, and its first snapshot is an empty grey disc. So onReady reports when
+// a snapshot holds the photo (or the placeholder of a spot with none), and until then MapScreen keeps the spot's small pin.
 
 export const SPOT_PHOTO_BUBBLE = 28;
 const TAIL = 10;
@@ -26,11 +29,13 @@ const TAN_Y = (R * R) / TIP_D;
 const TAN_X = R * Math.sqrt(1 - (R * R) / (TIP_D * TIP_D));
 const W = SPOT_PHOTO_BUBBLE + PAD * 2;
 const H = SPOT_PHOTO_BUBBLE + TAIL + PAD * 2;
+const SNAP_AFTER_MS = 60;    // the snapshot after the photo shows
+const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 export const spotPhotoImageName = (id: string, visited: boolean) => `sp:${id}:${visited ? 1 : 0}`;
 
-const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoImageSpec }) {
+const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: SpotPhotoImageSpec; onReady: (name: string) => void }) {
   const { spot, name, visited } = spec;
   const imageRef = useRef<{ refresh: () => void } | null>(null);
   // The photo from the disk cache when it is there (instant), else downloaded once into it.
@@ -44,9 +49,17 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoI
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
   const snap = () => {
-    timers.current.push(setTimeout(() => imageRef.current?.refresh(), 60));
+    timers.current.push(setTimeout(() => imageRef.current?.refresh(), SNAP_AFTER_MS));
     timers.current.push(setTimeout(() => imageRef.current?.refresh(), 500));
   };
+  const snapReady = () => {
+    snap();
+    timers.current.push(setTimeout(() => onReady(name), READY_AFTER_MS));
+  };
+  // PinPhoto's failsafe can report a photo as shown when it never loaded: that snapshot is still grey, so it doesn't count.
+  const loadedRef = useRef(false);
+  const noPhoto = !url && NO_PHOTO.has(spotPhotoTitle(spot));
+  useEffect(() => { if (noPhoto) snapReady(); }, []);
   const ring = visited ? VISITED_COLOR : 'white';
   const cx = PAD + R, cy = PAD + R;
   const tail = `M ${cx} ${cy} L ${cx - TAN_X} ${cy + TAN_Y} L ${cx} ${cy + TIP_D} L ${cx + TAN_X} ${cy + TAN_Y} Z`;
@@ -60,8 +73,8 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoI
         </Svg>
         <View collapsable={false} style={[st.bubble, { borderColor: ring }]}>
           <View collapsable={false} style={st.clip}>
-            {!url && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} />}
-            {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={snap} onShown={snap} resizeMode="cover" />}
+            {noPhoto && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} />}
+            {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={() => { loadedRef.current = true; snap(); }} onShown={() => { if (loadedRef.current) snapReady(); }} resizeMode="cover" />}
           </View>
         </View>
       </View>
@@ -71,10 +84,10 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec }: { spec: SpotPhotoI
 
 // Every image a pin feature may reference. Grow-only (see MapScreen): an image is never unmounted while a symbol could
 // still be fading out with it.
-export default memo(function SpotPhotoImages({ specs }: { specs: SpotPhotoImageSpec[] }) {
+export default memo(function SpotPhotoImages({ specs, onReady }: { specs: SpotPhotoImageSpec[]; onReady: (name: string) => void }) {
   return (
     <MapboxGL.Images>
-      {specs.map(s => <SpotPhotoImage key={s.name} spec={s} />)}
+      {specs.map(s => <SpotPhotoImage key={s.name} spec={s} onReady={onReady} />)}
     </MapboxGL.Images>
   );
 });
