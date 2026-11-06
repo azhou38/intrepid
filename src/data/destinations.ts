@@ -5159,4 +5159,21 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [5, 6, 7, 8, 9, 10],
     bestTimeBlurb: "Come in {months}, the cooler months, for boat trips and dives. Cyclones can occur Nov to Apr.",
   },
+  {
+    id: 'apia', name: "Apia", country: "Samoa", countryCode: 'WS', timezone: 'Pacific/Apia', defaultZoomSpanKm: 25,
+    continent: 'Oceania', coordinates: { latitude: -13.834523, longitude: -171.763095 },
+    category: 'city', icon: "🏙️", rank: 3,
+    tagline: "Samoa's easygoing capital and harbour base for Upolu's reefs, falls and history",
+    description: "Apia is Samoa's capital, on the north coast of Upolu, with about 42,000 people. It is small and a little worn, and most visitors use it to get their bearings and plan trips around the island. In town the clock tower war memorial marks the centre, and Robert Louis Stevenson's house at Vailima lies 5 km south. In 1889 seven German, American and British warships refused to leave the harbour as a typhoon approached, and all but one were lost.",
+    whyVisit: ["Snorkel the reef at Palolo Deep", "Visit Robert Louis Stevenson's home", "Base yourself for Upolu day trips"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Marine reserve snorkelling", "Stevenson's Vailima", "Upolu day trips"],
+    goodToKnow: [
+      { icon: "🌊", title: "Check the Palolo Deep tide", detail: "At low tide you paddle over sharp coral to reach deep water. Read the tide chart at the gate and swim out on the incoming tide." },
+      { icon: "⛪", title: "Sunday is a rest day", detail: "Most shops and businesses close and you should not walk through villages. Dress modestly, with knee-length shorts away from the beach." },
+      { icon: "🐕", title: "Mind dogs after dusk", detail: "Free-roaming dogs are common in Apia in the evening. Most ignore you, and walking in from the suburbs after dark is best avoided." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "Apia is driest in {months}, well clear of the October to March rainy and cyclone season.",
+  },
 ];
