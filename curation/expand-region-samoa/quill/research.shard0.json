@@ -1,0 +1,194 @@
+{
+ "shard": 0,
+ "country": "WS",
+ "spots": {
+  "apia-1": {
+   "name": "Mount Vaea",
+   "coordinates": {
+    "lat": -13.86894583406647,
+    "lng": -171.77637110675107
+   },
+   "coordinates_source": "OSM way 188045332 highway=footway 'Robert Louis Stevenson Tomb Long Trail' (2205 m), midpoint by length; resolve-pin.py returned LOW (no feature), so taken from the Overpass trail geometry. 665 m from placement point (Wikipedia summit point).",
+   "distance_moved_m": 665,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_reason": "Free public walk to the tomb; no operator. The adjacent RLS Museum is a separate spot (apia-2).",
+   "facts": [
+    {
+     "fact": "472 m summit overlooking Apia, about 3 km inland of the town and harbour",
+     "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Mount_Vaea"
+    },
+    {
+     "fact": "Robert Louis Stevenson's grave is at the top, with views east and across the Pacific",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    },
+    {
+     "fact": "The longer, shallower path takes about an hour and is easy; the steeper path is an option if dry; take water",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    },
+    {
+     "fact": "No charge to climb to the grave",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    }
+   ],
+   "bio_suggestion": "A walk of about an hour up a 472 m summit above Apia to Robert Louis Stevenson's grave, with views east over the Pacific.",
+   "notes": "Free per Wikivoyage (updated Jan 2016); unverified since."
+  },
+  "apia-6": {
+   "name": "Samoa Cultural Village",
+   "coordinates": {
+    "lat": -13.83105,
+    "lng": -171.766063
+   },
+   "coordinates_source": "LOW: no OSM/Wikipedia feature. Decoded Google plus code 569M+HHP (Beach Rd, Apia) from the Airial listing; agrees within ~40 m with the Samoa Tourism Authority Visitor Information Fale (Wikivoyage Apia -13.8314,-171.7662). 666 m from the placement hint. Owner may want a map check.",
+   "distance_moved_m": 666,
+   "free": true,
+   "costBasis": "donation",
+   "ticketUrl": "BLOCKED",
+   "ticketUrl_candidate": "https://www.samoa.travel",
+   "ticketUrl_note": "Operator is the Samoa Tourism Authority (info@samoa.travel); samoa.travel returned 403 to scripts. No deep link found; check in a real browser.",
+   "facts": [
+    {
+     "fact": "Ceremonies, rituals, songs, dances and workshops show Samoan customs; participation is free, donations accepted",
+     "url": "https://www.arrivalguides.com/en/Travelguide/samoa/doandsee/samoa-cultural-village-92703"
+    },
+    {
+     "fact": "Address Beach Rd, Apia; contact info@samoa.travel",
+     "url": "https://www.arrivalguides.com/en/Travelguide/samoa/doandsee/samoa-cultural-village-92703"
+    },
+    {
+     "fact": "Show with dances, umu cooking, kava ceremony and crafts (about three hours, listing says 20 tala; conflicts with free)",
+     "url": "https://airial.travel/attractions/samoa/apia/samoa-cultural-village-AEHymE-c"
+    }
+   ],
+   "bio_suggestion": "A Beach Road cultural centre in Apia with songs, dances, umu cooking, kava ceremonies and craft workshops.",
+   "notes": "Price conflict: ArrivalGuides says free with donations, Airial says 20 WST. Neither is official; unverified. Hours conflict and are not recorded. Weekday-only operation per ArrivalGuides is a bio/tips matter."
+  },
+  "papapapai-tai-falls": {
+   "name": "Papapapai-tai Falls",
+   "coordinates": {
+    "lat": -13.9424875,
+    "lng": -171.7756929
+   },
+   "coordinates_source": "OSM tourism=viewpoint 'Papapapaitai-falls' (Nominatim), MEDIUM; Wikivoyage listing -13.942896,-171.775908 within 50 m. resolve-pin.py itself found nothing (name spelling). Moved 1.6 m from placement.",
+   "distance_moved_m": 2,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_reason": "Roadside viewpoint, no steward site.",
+   "facts": [
+    {
+     "fact": "A 100 m drop, near the north-south road 2 km south of the Lanoto'o turn-off",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "fact": "Tallest waterfall in Samoa, seen from a viewing area on the Cross Island Road",
+     "url": "https://hikingtheworld.blog/waterfalls/papapapaitai-falls-samoa"
+    },
+    {
+     "fact": "Primarily a viewing experience, not a swim spot",
+     "url": "https://www.mustseespots.com/samoa/articles/best-waterfalls-in-samoa-a-guide-to-papapapaitai-falefa-togitogiga/"
+    }
+   ],
+   "bio_suggestion": "Samoa's tallest waterfall, a roughly 100 m drop seen from a roadside viewing area on the Cross Island Road.",
+   "notes": "Fee: search results conflict (a guide says no fee; others say small fee at community sites generally). The viewpoint appears free; unverified."
+  },
+  "return-to-paradise-beach": {
+   "name": "Return to Paradise Beach",
+   "coordinates": {
+    "lat": -13.9811493,
+    "lng": -171.9454118
+   },
+   "coordinates_source": "resolve-pin.py HIGH: OSM tourism=attraction 'Return To Paradise Beach' (two matches); 44 m from placement point (OSM natural=beach).",
+   "distance_moved_m": 44,
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_reason": "Public beach; the Return to Paradise Resort next door is a different business.",
+   "facts": [
+    {
+     "fact": "Southwest coast near Lefaga; a beautiful beach",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "fact": "Filmed here for the 1953 film Return to Paradise starring Gary Cooper, written by James Michener",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    }
+   ],
+   "bio_suggestion": "A beach near Lefaga on the south-west coast where the 1953 film Return to Paradise, with Gary Cooper, was shot.",
+   "notes": "UNVERIFIED: no source states an access fee (Wikivoyage price field blank). Samoan beaches are often village-managed and may charge; the owner should confirm."
+  },
+  "savaii-4": {
+   "name": "Afu Aau Falls",
+   "coordinates": {
+    "lat": -13.744167,
+    "lng": -172.313889
+   },
+   "coordinates_source": "LOW from resolve-pin.py (no OSM feature). Wikidata Q31866642 P625 (-13.744167,-172.313889) and Wikivoyage listing (-13.74698,-172.312625) agree within ~350 m; used Wikidata. Plizio gives -13.7832,-172.2751 (5 km off) and was rejected. Needs a map check of the entrance fale.",
+   "distance_moved_m": 380,
+   "free": false,
+   "costMin": 5,
+   "costMax": 10,
+   "currency": "WST",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "ticketUrl_reason": "Community-run (family collects the fee at an entrance fale); no official site found.",
+   "facts": [
+    {
+     "fact": "Also called Olemoe Falls; the most spectacular of Savai'i's jungle waterfalls, a half-hour walk from a 4WD track",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "Spring-fed waterhole about 3 m deep, swimming possible in the dry season; pay at the fale by the entrance",
+     "url": "https://www.lonelyplanet.com/points-of-interest/afu-a-au-falls/1456883"
+    },
+    {
+     "fact": "Signposted on the South Coast Road about 12 km from Salelologa; entry fee collected at the entrance fale; short maintained trail",
+     "url": "https://hikingtheworld.blog/waterfalls/afu-aau-waterfall"
+    }
+   ],
+   "bio_suggestion": "A spring-fed jungle waterfall on Savai'i's south coast, with a swimming hole a short walk from the entrance fale.",
+   "notes": "Fee unverified: blogs report 5 tala per person (International Traveller, hikingtheworld search) and 10 tala (Wanderlog, Trip.com reviewer); no official source. Wikivoyage's half-hour walk conflicts with hikingtheworld's 300 m trail."
+  },
+  "savaii-9": {
+   "name": "Paia Dwarfs Cave",
+   "coordinates": {
+    "lat": -13.4788827,
+    "lng": -172.4096342
+   },
+   "coordinates_source": "resolve-pin.py HIGH: OSM tourism=attraction 'Paia Dwarfs cave' (Nominatim); 1570 m from the Wikivoyage listing geo tag, which is the village-area point.",
+   "distance_moved_m": 1570,
+   "free": false,
+   "costMin": 5,
+   "costMax": 20,
+   "currency": "WST",
+   "costBasis": "tour",
+   "ticketUrl": null,
+   "ticketUrl_reason": "Village-guided; no operator site.",
+   "facts": [
+    {
+     "fact": "Lava tube over a kilometre long in the north-east near Paia; legend says dwarves live there and its end has never been reached",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "A guide from Paia village is essential and exploring can take almost a day",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "Guides are the village matai or local boys; the cave crosses underground rivers",
+     "url": "https://www.lonelyplanet.com/points-of-interest/dwarf-s-cave/1457025"
+    }
+   ],
+   "bio_suggestion": "A lava tube over a kilometre long near Paia village, explored with a local guide, said in legend to be home to dwarves.",
+   "notes": "Guide fee unverified: 5-10 WST (travel blog) vs ST20 (Samoa Observer); neither official. needs: none (guide fee is the price)."
+  }
+ },
+ "unresolved": [
+  "samoa.travel 403 BLOCKED (apia-6 ticketUrl)",
+  "Afu Aau pin LOW",
+  "Return to Paradise Beach fee unverified",
+  "all prices unofficial"
+ ],
+ "park_pass_missing": null
+}

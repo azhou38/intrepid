@@ -51,6 +51,7 @@ COUNTRY_DEFAULTS = {
     'AU': {'country': 'Australia', 'countryCode': 'AU', 'continent': 'Oceania', 'timezone': 'Australia/Sydney', 'currency': 'AUD'},
     'PG': {'country': 'Papua New Guinea', 'countryCode': 'PG', 'continent': 'Oceania', 'timezone': 'Pacific/Port_Moresby', 'currency': 'PGK'},
     'FJ': {'country': 'Fiji', 'countryCode': 'FJ', 'continent': 'Oceania', 'timezone': 'Pacific/Fiji', 'currency': 'FJD'},
+    'WS': {'country': 'Samoa', 'countryCode': 'WS', 'continent': 'Oceania', 'timezone': 'Pacific/Apia', 'currency': 'WST'},
     'TO': {'country': 'Tonga', 'countryCode': 'TO', 'continent': 'Oceania', 'timezone': 'Pacific/Tongatapu', 'currency': 'TOP'},
 }
 if region_cc not in COUNTRY_DEFAULTS:

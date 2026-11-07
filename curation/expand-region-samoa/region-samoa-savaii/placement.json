@@ -1,0 +1,324 @@
+{
+ "region": "samoa-savaii",
+ "new_destinations": [
+  {
+   "id": "savaii",
+   "name": "Savaiʻi",
+   "country": "Samoa",
+   "countryCode": "WS",
+   "continent": "Oceania",
+   "timezone": "Pacific/Apia",
+   "category": "island",
+   "coordinates": {
+    "lat": -13.6,
+    "lng": -172.47
+   },
+   "coordinates_source": "island centre between the kept spots (Falealupo to Tafua); destination centre, not a spot pin",
+   "defaultZoomSpanKm": 90,
+   "rank": 3,
+   "name_evidence": "Wikivoyage has a page 'Savaii' (the island, with See/Do listings); Lonely Planet gives Savai'i its own chapter; tourism brand Samoa Tourism Authority lists Savai'i as one of the two main islands.",
+   "bounds": "The island of Savaiʻi (about 70 km by 45 km); all nine kept places are on it.",
+   "spots": [
+    "savaii-1",
+    "savaii-2",
+    "savaii-3",
+    "savaii-4",
+    "savaii-5",
+    "savaii-6",
+    "savaii-7",
+    "savaii-8",
+    "savaii-9"
+   ],
+   "reason": "9 kept places on one island travellers name; clears the four-spot bar and the name test. Not a town-in-a-bigger-city case. Owner waived pre-approval; reported in final report."
+  }
+ ],
+ "spots": [
+  {
+   "name": "Alofaaga Blowholes",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-1",
+   "coordinates": {
+    "lat": -13.8022,
+    "lng": -172.5197
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "nature",
+   "icon": "🌊",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "bio_draft": "Natural feature: lava-tube blowholes on the south-west coast near Taga village, where waves throw water up through the rock. Wikivoyage lists it first under See.",
+   "views": 1368,
+   "counted_sources": 1,
+   "cost": {
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "WST",
+    "source": "Wikivoyage Savaii"
+   },
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Saleaula Lava Field",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-2",
+   "wiki": "Saleaula",
+   "coordinates": {
+    "lat": -13.45009,
+    "lng": -172.3335
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "nature",
+   "icon": "🌋",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Lava field: flow from the 1905-1911 Matavanu eruptions that buried Saleaula and Salago villages; reached by road from the ferry and a guide is needed for the churches. Fee charged.",
+   "views": 1547,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Pulemelei Mound",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-3",
+   "coordinates": {
+    "lat": -13.735,
+    "lng": -172.324444
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "historic",
+   "icon": "🗿",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "bio_draft": "Historic site: an ancient earthen structure of 60 by 50 m and 12 m high, the largest ancient structure in Polynesia, in Palauli district near Olemoe Falls.",
+   "views": 3414,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Afu Aau Falls",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-4",
+   "wiki": "Afu Aau Waterfall",
+   "coordinates": {
+    "lat": -13.74698,
+    "lng": -172.31262
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "nature",
+   "icon": "💧",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "bio_draft": "Waterfall: the most spectacular jungle waterfall on Savaii (Wikivoyage: Olemoe Falls), a half-hour walk from a 4WD track.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Mount Matavanu Lava Fields",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-5",
+   "wiki": "Mount Matavanu",
+   "coordinates": {
+    "lat": -13.533333,
+    "lng": -172.4
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "hike",
+   "icon": "🥾",
+   "visitHoursMin": 4,
+   "visitHoursMax": 7,
+   "bio_draft": "Lava fields: barren moonscape from the 1905-1911 eruptions of Mt Matavanu, reached by a roughly three-hour walk from Paia village.",
+   "views": 2342,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Falealupo Rainforest Preserve",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-6",
+   "coordinates": {
+    "lat": -13.5094,
+    "lng": -172.7691
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "nature",
+   "icon": "🌳",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "bio_draft": "Nature reserve: a village-run rainforest preserve on the north-west peninsula with a 25 m canopy walkway and a sleeping platform in the trees.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Tafua Peninsula Rainforest Preserve",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-7",
+   "wiki": "Tafua Peninsula",
+   "coordinates": {
+    "lat": -13.7833,
+    "lng": -172.2167
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "hike",
+   "icon": "🌿",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Nature reserve: rainforest with good birdwatching on the south-east peninsula; a walk leads up to the volcanic crater that dominates Tafua.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Satoalepai Turtle Reserve",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-8",
+   "wiki": "Satoalepai",
+   "coordinates": null,
+   "coordinates_source": "",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "nature",
+   "icon": "🐢",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "bio_draft": "Wildlife encounter: a turtle reserve on the east coast, 35 minutes from the ferry, where visitors swim with turtles rescued from fishing nets.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  },
+  {
+   "name": "Paia Dwarfs Cave",
+   "action": "spot",
+   "destination": "savaii",
+   "id": "savaii-9",
+   "coordinates": {
+    "lat": -13.4928,
+    "lng": -172.4073
+   },
+   "coordinates_source": "Wikivoyage Savaii listing geo tag",
+   "needs_pin": true,
+   "pin_note": "TODO resolve-pin.py: source point is the Wikivoyage listing geo tag, not a visitor point; no memory coordinates",
+   "category": "nature",
+   "icon": "🕳️",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Cave: a legendary cave over 1 km long in the north-east near Paia village; exploring it takes most of a day and a guide from Paia is essential.",
+   "views": 0,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "bio",
+    "cost",
+    "ticketUrl",
+    "pin"
+   ],
+   "reason": "Kept on the merits; lies on Savaiʻi island, inside the Savaiʻi destination's bounds and span (max ~35 km from centre, span 90 km). No national park boundary or other destination holds it."
+  }
+ ],
+ "existing_fixes": [],
+ "standalone_near_destination_check": "No standalone spots in this region, so none lies within 40 km of the Savaiʻi centre without being its spot. Upolu (about 60 km east across the Apolima Strait) is placed by another agent; its destination must not overlap (check-new run below).",
+ "reviews_not_placed": [
+  "Peapea Cave",
+  "Falealupo Church Ruins",
+  "Manase",
+  "Wreck of the Juno",
+  "Satuiatua",
+  "Salelologa",
+  "Faleālupo Beach"
+ ]
+}
