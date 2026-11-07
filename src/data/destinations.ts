@@ -5166,7 +5166,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Samoa's easygoing capital and harbour base for Upolu's reefs, falls and history",
     description: "Apia is Samoa's capital, on the north coast of Upolu, with about 42,000 people. It is small and a little worn, and most visitors use it to get their bearings and plan trips around the island. In town the clock tower war memorial marks the centre, and Robert Louis Stevenson's house at Vailima lies 5 km south. In 1889 seven German, American and British warships refused to leave the harbour as a typhoon approached, and all but one were lost.",
     whyVisit: ["Snorkel the reef at Palolo Deep", "Visit Robert Louis Stevenson's home", "Explore Upolu on day trips"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "The Samoan Home of Robert Louis Stevenson (30595201572).jpg", ""],
     highlights: ["Marine reserve snorkelling", "Stevenson's Vailima", "Upolu day trips"],
     goodToKnow: [
       { icon: "🌊", title: "Check the Palolo Deep tide", detail: "At low tide you paddle over sharp coral to reach deep water. Read the tide chart at the gate and swim out on the incoming tide." },
@@ -5183,7 +5183,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Samoa's quieter big island of lava fields, blowholes and village life",
     description: "Savaiʻi is the larger and less developed of Samoa's two main islands, with no real towns, just villages strung along one well-paved road that circles the island. The coast shifts between black volcanic ash, white sand beaches and cliffs, and every few miles brings a colonial-style church. Lava fields from eruptions between 1905 and 1911 can be visited from that road, and the Pulemelei mound is the largest ancient structure in Polynesia. Many travellers call it the real Samoa.",
     whyVisit: ["Walk across old lava fields", "Watch seawater burst from blowholes", "See Polynesia's largest ancient mound"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-savaii-why1.jpg", "Savai'i, Samoa banner 2.jpg", ""],
     highlights: ["Volcanic lava fields", "Alofaʻaga blowholes", "Pulemelei mound"],
     goodToKnow: [
       { icon: "⛴️", title: "Plan around the ferry", detail: "The crossing from Mulifanua to Salelologa takes 1 hr 15 min, with up to five sailings a day from 06:00 to 16:00." },

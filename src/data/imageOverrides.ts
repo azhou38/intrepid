@@ -887,6 +887,14 @@ export const PHOTO_SUBJECT: Record<string, { x?: number; y?: number; zoom?: numb
   "South Jawbone Peak": { x: 0.5, y: 0.5 },
   "Moyjil - Point Ritchie": { x: 0.2, y: 0.4, zoom: 1.4 },
   "You Yangs": { x: 0.5, y: 0.6, zoom: 1.4 },
+  "Mount Vaea": { x: 0.5, y: 0.4, zoom: 1.4 },
+  "Papase'ea Sliding Rocks": { x: 0.65, y: 0.5 },
+  "Savaiʻi": { x: 0.4, y: 0.55, zoom: 1.3 },
+  "Alofaaga Blowholes": { x: 0.5, y: 0.4 },
+  "Papapapai-tai Falls": { x: 0.62, y: 0.45, zoom: 1.3 },
+  "Namu'a Island": { x: 0.5, y: 0.45, zoom: 1.6 },
+  "Manono Island": { x: 0.47, y: 0.4, zoom: 1.2 },
+  "File:Savai'i, Samoa banner 2.jpg": { x: 0.5, y: 0.4 },
 };
 
 export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
@@ -2921,6 +2929,21 @@ export const WIKI_IMAGE_OVERRIDES: Record<string, string> = {
   "Lakes Entrance": "The Gippsland Lakes (39260087155).jpg",
   "Great Southern Rail Trail": "Korumburra railway track.jpg",
   "Old Gippstown": "Moe Old Gippstown Anglican Church 003.JPG",
+  "Mount Vaea": "Round Samoan houses with blue roofs, Lepea village with Mt Vaea beyond.JPG",
+  "Robert Louis Stevenson Museum": "The Samoan Home of Robert Louis Stevenson (30595201572).jpg",
+  "Palolo Deep Marine Reserve": "Coral scene on Palolo Deep Apia Samoa.jpg",
+  "Savaiʻi": "South east coast Savai'i island - Samoa 2009.jpg",
+  "Alofaaga Blowholes": "Blowholes Savai'i 2009.jpg",
+  "Saleaula Lava Field": "Sale'aula church ruin - panoramio - dbrough.jpg",
+  "Falealupo Rainforest Preserve": "View Falealupo rainforest, Savai'i.JPG",
+  "O Le Pupū Pu'e National Park": "Aerial view of the O Le Pupu Pue National Park, Samoa, IUCN BIOPAMA Photos.jpg",
+  "Lake Lanoto'o National Park": "Lanoto'o Lake.jpg",
+  "Papapapai-tai Falls": "Samoa waterfall scenery.jpg",
+  "Piula Cave Pool": "Piula Cave Pool, Upolu island, Samoa.jpg",
+  "To Sua Ocean Trench": "To Sua Ocean Trench.jpg",
+  "Lalomanu Beach": "West on Lalomanu beach Taufua Beach Fales Samoa.jpg",
+  "Namu'a Island": "Namua island Samoa.jpg",
+  "Return to Paradise Beach": "Lefaga, Return to Paradise beach, south coast Upolu Island, Samoa, 2009.jpg",
 };
 
 /**
@@ -3466,5 +3489,4 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Horsham",
   "Hamilton (Victoria)",
   "Apia",
-  "Savaiʻi",
 ]);
