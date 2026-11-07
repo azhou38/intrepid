@@ -1,0 +1,140 @@
+{
+ "spots": {
+  "apia-5": {
+   "coordinates": {
+    "lat": -13.8700835,
+    "lng": -171.8036502
+   },
+   "coordinates_source": "OSM waterway=waterfall 'Papase'ea Sliding Rocks' (resolve-pin HIGH); 129 m from placement point (Wikivoyage geo)",
+   "cost": {
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "WST",
+    "costBasis": "entry",
+    "source": "https://en.wikivoyage.org/wiki/Upolu",
+    "note": "WS$5 per Wikivoyage Upolu listing; not confirmed on an operator page (village-run)"
+   },
+   "ticketUrl": null,
+   "ticketUrl_reason": "village-run falls, no official site found; samoa.travel BLOCKED (403) not checked in browser",
+   "facts": [
+    {
+     "t": "Natural water slide over falls into a pool, 6 km south-west of Apia",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "t": "Soft vegetation under the water lets visitors slide down; better in the rainy season",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "t": "Fun for all ages",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    }
+   ]
+  },
+  "lake-lanotoo-national-park": {
+   "coordinates": {
+    "lat": -13.9104358,
+    "lng": -171.8258278
+   },
+   "coordinates_source": "OSM tourism=viewpoint 'Lanoto'o Viewing Platform' (resolve-pin MEDIUM); 5 m from placement point",
+   "cost": "unverified",
+   "cost_note": "no fee found in Wikipedia or Wikivoyage; no park pass in Samoa listed in parkPasses",
+   "ticketUrl": null,
+   "ticketUrl_reason": "no official site found; Samoa Tourism Authority site (samoa.travel) returns 403 BLOCKED, needs real browser",
+   "facts": [
+    {
+     "t": "Established 2003, 470 ha in central Tuamasaga, Upolu, with three volcanic crater lakes: Lanoto'o, Lanoata'ata, Lanoanea",
+     "url": "https://en.wikipedia.org/wiki/Lake_Lanoto'o_National_Park"
+    },
+    {
+     "t": "Ramsar wetland of international importance since 2004",
+     "url": "https://en.wikipedia.org/wiki/Lake_Lanoto'o_National_Park"
+    },
+    {
+     "t": "Reached by cross-island road south from Apia then 4WD and a walk; goldfish thrive in the lake; rare swamp forest",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    }
+   ]
+  },
+  "namua-island": {
+   "coordinates": {
+    "lat": -14.0220586,
+    "lng": -171.4160859
+   },
+   "coordinates_source": "OSM place=island 'Namu'a Island' (resolve-pin MEDIUM); 124 m from placement point",
+   "cost": "unverified",
+   "cost_note": "boat transfer is transport, not price; only a beach fale rate (WS$70 incl. meals and launch) is sourced, which is accommodation",
+   "ticketUrl": null,
+   "ticketUrl_reason": "no official site found",
+   "facts": [
+    {
+     "t": "Secluded island off Upolu's eastern tip, within the reef",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "t": "Boat leaves from the mainland a few minutes' drive from Lalomanu Beach",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "t": "Turtles often spotted on the short boat trip; beach fales on the island",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    }
+   ]
+  },
+  "savaii-3": {
+   "coordinates": {
+    "lat": -13.7351833,
+    "lng": -172.3238267
+   },
+   "coordinates_source": "OSM tourism=attraction 'Pulemelei Ancient Mound' (resolve-pin HIGH, agrees with Wikipedia geo); 70 m from placement point",
+   "cost": "unverified",
+   "cost_note": "no published fee; blogs/Lonely Planet mention informal local guide fees and access disputes (not a gate fee); Letolo Plantation is private land",
+   "ticketUrl": null,
+   "ticketUrl_reason": "no official site; Lonely Planet page not an operator",
+   "facts": [
+    {
+     "t": "Largest and most ancient human-made structure in the Samoan Islands (also called Tia Seu)",
+     "url": "https://en.wikipedia.org/wiki/Pulemelei_Mound"
+    },
+    {
+     "t": "In Letolo Plantation, Palauli district, east Savai'i",
+     "url": "https://en.wikipedia.org/wiki/Pulemelei_Mound"
+    },
+    {
+     "t": "Base 60 m by 50 m, 12 m tall, near Olemoe Falls",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    }
+   ]
+  },
+  "savaii-8": {
+   "coordinates": null,
+   "coordinates_source": "UNRESOLVED: no OSM/Nominatim feature for Satoalepai, no Wikipedia article; resolve-pin LOW. Needs agency/village map point.",
+   "cost": "unverified",
+   "cost_note": "NZ Herald mentions a $10 swim fee, currency unstated; Arrival Guides says an entrance fee exists, no amount",
+   "cost_urls": [
+    "https://nzherald.co.nz/travel/samoa-dip-your-toes-in-for-true-delight/JA67CWC2I3RGUZQ5GYIN7A2MWY",
+    "https://www.arrivalguides.com/en/Travelguide/samoa/doandsee/swimming-with-turtles-18031"
+   ],
+   "ticketUrl": null,
+   "ticketUrl_reason": "no official site; samoa.travel BLOCKED (403)",
+   "concern": "visitor reviews question the welfare of the turtles and whether it is a rescue sanctuary (Wanderlog, Travography); consider review",
+   "facts": [
+    {
+     "t": "Turtle reserve at Satoalepai, 35-minute drive along the east coast from the ferry",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "t": "Visitors swim with turtles rescued from fishermen's nets",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    }
+   ]
+  }
+ },
+ "blocked": [
+  "https://www.samoa.travel/ (403)"
+ ],
+ "unresolved": [
+  "savaii-8 coordinates",
+  "costs for lake-lanotoo, namua-island, savaii-3, savaii-8"
+ ]
+}

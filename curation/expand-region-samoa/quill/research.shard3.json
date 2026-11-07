@@ -1,0 +1,201 @@
+{
+ "shard": 3,
+ "spots": {
+  "apia-4": {
+   "name": "Palolo Deep Marine Reserve",
+   "coordinates": {
+    "lat": -13.825322,
+    "lng": -171.7579236
+   },
+   "coordinates_source": "OSM natural=beach way 188691920 'Palolo Deep' (nominatim), agrees within ~40 m with Wikivoyage Apia listing geo (-13.8252,-171.7575); confidence HIGH. Moved ~40 m from placement point. Note pins.1 recommended the reef centroid (natural=reef, 416 m offshore) which was not used.",
+   "cost": {
+    "free": false,
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "WST",
+    "costBasis": "entry",
+    "needs": null,
+    "source": "https://en.wikivoyage.org/wiki/Apia",
+    "note": "Wikivoyage price=WST5; airial.travel agrees ($5 Tala). Not from an operator page (samoa.travel blocked). No park pass applies (nt.gov.au list is irrelevant)."
+   },
+   "ticketUrl": null,
+   "ticketUrl_status": "BLOCKED",
+   "ticketUrl_note": "Likely official page on samoa.travel (Samoa Tourism Authority), returns 403 to scripts for https://www.samoa.travel/ ; orchestrator to check in a real browser. No guessed URL recorded.",
+   "facts": [
+    {
+     "fact": "Official underwater park / marine reserve at Vaiala Beach, the only beach in Apia east of the harbour; mostly coral gravel",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    },
+    {
+     "fact": "Snorkelling improves further out (about a quarter mile swim), with occasional turtles and blacktip reef sharks",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    },
+    {
+     "fact": "Check the tide chart at the gate: at low tide it is a long paddle over sharp coral; best on the incoming tide",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    },
+    {
+     "fact": "Snorkels can be rented on site; entry WST 5",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    }
+   ],
+   "bio": "Vaiala Beach marine reserve east of Apia where a swim past the reef edge finds turtles and blacktip reef sharks, best on a rising tide."
+  },
+  "togitogiga-falls": {
+   "name": "Togitogiga Falls",
+   "coordinates": {
+    "lat": -14.0139657,
+    "lng": -171.7177001
+   },
+   "coordinates_source": "OSM waterway=waterfall node 5593724712 'Togitogiga Waterfalls' (nominatim); MEDIUM (single precise OSM feature of right type). Moved ~0 m from placement point. pins.1 recommended place=village Togitogiga (1.4 km away), rejected as a town point.",
+   "cost": {
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": "WST",
+    "costBasis": "entry",
+    "needs": null,
+    "source": "https://www.arrivalguides.com/en/Travelguide/samoa/doandsee/togitogiga-waterfalls-109874",
+    "note": "ArrivalGuides: 'no entry fee here'. Other (non-official) sources mention a small village fee of a few tala or 5 tala; unresolved, treated as free. Not covered by any park pass found (Samoa has none in parkPasses.ts). Parking/bus fares not counted."
+   },
+   "ticketUrl": null,
+   "ticketUrl_status": "BLOCKED",
+   "ticketUrl_note": "Managing body is Samoa's Ministry of Natural Resources and Environment; Samoa Tourism Authority page on samoa.travel is 403 to scripts. Orchestrator to check samoa.travel in a real browser for a Togitogiga or O Le Pupu-Pu'e page; none recorded meanwhile.",
+   "facts": [
+    {
+     "fact": "A series of gentle waterfalls separated by cool waterholes for swimming; best in the wet season",
+     "url": "https://www.lonelyplanet.com/points-of-interest/togitogiga-waterfalls/1456548"
+    },
+    {
+     "fact": "Reached by the access road for O Le Pupu-Pu'e National Park; parking area, changing rooms and toilets on site",
+     "url": "https://www.lonelyplanet.com/points-of-interest/togitogiga-waterfalls/1456548"
+    },
+    {
+     "fact": "Within O Le Pupu-Pu'e National Park on Upolu's south coast, in Salailua village",
+     "url": "https://www.arrivalguides.com/en/Travelguide/samoa/doandsee/togitogiga-waterfalls-109874"
+    },
+    {
+     "fact": "No entry fee, per ArrivalGuides",
+     "url": "https://www.arrivalguides.com/en/Travelguide/samoa/doandsee/togitogiga-waterfalls-109874"
+    }
+   ],
+   "bio": "Cascades and cool swimming holes inside O Le Pupu-Pu'e National Park, with changing rooms, best in the wet season."
+  },
+  "lalomanu-beach": {
+   "name": "Lalomanu Beach",
+   "coordinates": {
+    "lat": -14.0459141,
+    "lng": -171.4488675
+   },
+   "coordinates_source": "OSM natural=beach 'Lalomanu Beach' (nominatim); MEDIUM; ~0 m from placement point; Wikivoyage Lalomanu listing geo (-14.045971,-171.445341) is ~380 m east, not used.",
+   "cost": {
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "currency": "WST",
+    "costBasis": "open",
+    "needs": null,
+    "source": "https://en.wikivoyage.org/wiki/Samoa",
+    "note": "Beach with beach-fale accommodation; no entry charge found in any source; beach fale stays are separate. Unverified that no village fee applies."
+   },
+   "ticketUrl": null,
+   "ticketUrl_status": "none",
+   "ticketUrl_note": "Beach with many independent fale operators and no single steward.",
+   "facts": [
+    {
+     "fact": "Area in the south-east with beautiful beaches and views of small idyllic islands",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "fact": "Lalomanu is a village on Upolu's east coast, in Atua district, population 712",
+     "url": "https://en.wikipedia.org/wiki/Lalomanu"
+    },
+    {
+     "fact": "Namua Island boat leaves from the mainland a few minutes' drive from Lalomanu Beach; turtles often seen on the short boat trip",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    },
+    {
+     "fact": "The 2009 tsunami damaged the lagoon reef but plenty of fish remain; beach fales and a dive shop operate on the beach",
+     "url": "https://en.wikivoyage.org/wiki/Upolu"
+    }
+   ],
+   "bio": "A white-sand beach on Upolu's south-east coast looking out to the small Aleipata islands, with beach fales and boats to Namua Island."
+  },
+  "savaii-2": {
+   "name": "Saleaula Lava Field",
+   "coordinates": {
+    "lat": -13.4506863,
+    "lng": -172.3322543
+   },
+   "coordinates_source": "OSM tourism=attraction node 3329465788 \"Virgin's grave\", the guided visitor stop in the lava field; corroborated by Wikivoyage Savaii listing geo (-13.45009,-172.3335) ~150 m away; MEDIUM. Moved ~140 m from placement point. Not used: OSM tourism=attraction 'Sale'aula Lava Fields' node at -13.4591031,-172.3176139 (1.8 km SE) and place=town node (village point).",
+   "cost": {
+    "free": false,
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "WST",
+    "costBasis": "entry",
+    "needs": null,
+    "source": "https://en.wikivoyage.org/wiki/Savaii",
+    "note": "Wikivoyage: 'A fee is charged', no amount. WST 5 per adult is from a 2022 budget-travel article snippet (eglobaltravelmedia.com.au, not loaded in full) and unverified; locals collect it. One other source says no formal fee. Treat as approximate."
+   },
+   "ticketUrl": null,
+   "ticketUrl_status": "BLOCKED",
+   "ticketUrl_note": "Run by the village (Saleaula Women's Committee per a travel site); no own site. Samoa Tourism Authority listing on samoa.travel is 403 to scripts, orchestrator to check. None recorded meanwhile.",
+   "facts": [
+    {
+     "fact": "Lava from Mt Matavanu eruptions destroyed Sale'aula and Salago villages, flowing over 40 square miles to the sea",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "Eruptions ran 1905 to 1911; lava is up to 400 ft deep",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "More accessible than the Mt Matavanu fields, 30-minute drive east of the ferry",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "A guide is needed to see the two churches that escaped complete destruction and the Virgin's Grave; a fee is charged",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    }
+   ],
+   "bio": "Lava field from the 1905-11 Mt Matavanu eruptions that buried two villages, with guided visits to the surviving churches and the Virgin's Grave."
+  },
+  "savaii-7": {
+   "name": "Tafua Peninsula Rainforest Preserve",
+   "coordinates": {
+    "lat": -13.7873236,
+    "lng": -172.2538545
+   },
+   "coordinates_source": "OSM natural=peak node 'Mauga Tafua' (the volcanic crater the walk climbs), MEDIUM; ~3.9 km from the Wikivoyage listing geo (-13.7833,-172.2167) which is a vague area point. No OSM route found for the walk, so the pin is the crater, not a route midpoint; check against the village-run trail map if one exists.",
+   "cost": {
+    "free": false,
+    "costMin": null,
+    "costMax": null,
+    "currency": "WST",
+    "costBasis": null,
+    "needs": null,
+    "source": "https://en.wikivoyage.org/wiki/Savaii",
+    "note": "UNVERIFIED: Wikivoyage price blank and no source found for any fee or access charge. Cost not set; orchestrator to decide (hold, or free/open if a visitor source confirms)."
+   },
+   "ticketUrl": null,
+   "ticketUrl_status": "unverified",
+   "ticketUrl_note": "No official site found; samoa.travel BLOCKED (403) for any listing.",
+   "facts": [
+    {
+     "fact": "Good stands of rainforest and excellent birdwatching on the south-east peninsula",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "A walk leads up to the volcanic crater that dominates Tafua",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "fact": "OSM marks the crater peak as Mauga Tafua",
+     "url": "https://www.openstreetmap.org/search?query=Mauga%20Tafua"
+    }
+   ],
+   "bio": "Rainforest preserve on Savai'i's south-east peninsula, good for birdwatching, with a walk up to the volcanic crater of Mauga Tafua."
+  }
+ }
+}

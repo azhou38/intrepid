@@ -1,0 +1,181 @@
+{
+ "shard": 2,
+ "built": "2026-11-06",
+ "spots": {
+  "apia-3": {
+   "coordinates": {
+    "lat": -13.8397183,
+    "lng": -171.7626948
+   },
+   "coordinates_source": "OSM tourism=museum 'Museum of Samoa' (Nominatim), agrees with Wikivoyage Apia listing geo -13.8397,-171.7629 (~20 m). Wikipedia Falemata'aga coord -13.83389,-171.76278 is ~645 m north and rounded, not used. Confidence MEDIUM (resolve-pin LOW only because it found no OSM name match for the apostrophe name).",
+   "moved_from_placement_m": 2,
+   "cost": {
+    "free": true,
+    "costBasis": "donation",
+    "currency": "WST",
+    "source": "https://en.wikivoyage.org/wiki/Apia",
+    "note": "Wikivoyage: 'Entry is free though donations are welcome'."
+   },
+   "ticketUrl": null,
+   "ticketUrl_note": "No museum website found; only a ministry page (mesc.gov.ws, Ministry of Education, Sports and Culture) which does not name the museum as its own page. Left out.",
+   "facts": [
+    {
+     "f": "National museum of Samoa, housed in a former school built by the German colonial administration.",
+     "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Falemata'aga"
+    },
+    {
+     "f": "In the Ministry of Education, Sports & Culture compound at Malifa (cnr Ififi/Vaitele Streets), in an over-hundred-year-old colonial building.",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    },
+    {
+     "f": "Holds Lapita pottery, stone adze heads, historical photographs, information on tattooing and examples of Samoan birds.",
+     "url": "https://en.wikivoyage.org/wiki/Apia"
+    }
+   ],
+   "bio_suggestion": "Samoa's national museum in a century-old German school at Malifa, with Lapita pottery, adzes, old photographs and tattoo history."
+  },
+  "o-le-pupu-pue-national-park": {
+   "coordinates": {
+    "lat": -14.0111164,
+    "lng": -171.7327834
+   },
+   "coordinates_source": "OSM tourism=attraction 'Ma Tree' (Nominatim), the end of the park's 700 m Ma Tree Walk beside the Main South Coast Road at the park's visitor area; a visitor point inside the park. resolve-pin returned only the park woodland centroid (-13.98874,-171.72983, 3 km north), not used. Confidence MEDIUM. Placement point (Wikivoyage listing geo) was not a feature.",
+   "moved_from_placement_m": 592,
+   "cost": null,
+   "cost_status": "UNVERIFIED: no official fee found (MNRE/Samoa Conservation page not located; Wikivoyage and Lonely Planet list none). A travel-aggregator page claims WST/$10 adult but is unreliable. No Samoan park pass exists in parkPasses.ts. Orchestrator: leave unpriced or decide.",
+   "ticketUrl": null,
+   "ticketUrl_note": "No official park page found; the managing agency is the Ministry of Natural Resources and Environment (MNRE) but no verified park URL.",
+   "facts": [
+    {
+     "f": "Oldest national park in Samoa, established 1978, 5019 ha on southern-central Upolu from Mount Fito to the coast.",
+     "url": "https://en.wikipedia.org/wiki/O_Le_Pupu-Pu%CA%BFe_National_Park"
+    },
+    {
+     "f": "Includes uplands, valleys, marshes, the O Le Pupu lava field and coastal cliffs; designated a Ramsar wetland in 2016.",
+     "url": "https://en.wikipedia.org/wiki/O_Le_Pupu-Pu%CA%BFe_National_Park"
+    },
+    {
+     "f": "Trails include a six-hour return walk to Pe'ape'a Cave (lava tube with swiftlets) and the 700 m Ma Tree Walk to a giant buttressed tree.",
+     "url": "https://www.lonelyplanet.com/points-of-interest/o-le-pupu-pu-e-national-park/1456547"
+    },
+    {
+     "f": "A 3 km unsealed access road leads to the O Le Pupu lava coast, a rocky coastal trail along lava cliffs.",
+     "url": "https://www.lonelyplanet.com/points-of-interest/o-le-pupu-pu-e-national-park/1456547"
+    }
+   ],
+   "bio_suggestion": "Samoa's oldest national park, running from Mount Fito to a rugged lava coast, with rainforest trails, the Ma Tree and Pe'ape'a Cave."
+  },
+  "to-sua-ocean-trench": {
+   "coordinates": {
+    "lat": -14.0439204,
+    "lng": -171.5620188
+   },
+   "coordinates_source": "OSM tourism=attraction 'To-Sua Ocean Trench' (Nominatim), HIGH: agrees with OSM natural=water (37 m) and Commons photo median (50 m). Moved from placement point by the figure in moved_from_placement_m.",
+   "moved_from_placement_m": 9,
+   "cost": {
+    "costMin": 20,
+    "costMax": 20,
+    "currency": "WST",
+    "costBasis": "entry",
+    "source": "https://www.samoaobserver.ws/category/samoa/97759",
+    "note": "Samoa Observer: operators cut the fee to 15 tala during COVID-19 and raised it back to 20 tala. Adult price; family-run, village-charged. Third-party figure, no official site: approximate."
+   },
+   "ticketUrl": null,
+   "ticketUrl_note": "No official site found. 'to-suaoceantrench.com' (suggested by an aggregator) redirects to an unrelated gambling-spam domain: rejected. samoa.travel BLOCKED (403), see savaii-1.",
+   "facts": [
+    {
+     "f": "A cenote-like collapse doline in the lava field whose origin is a lava tube that reached the sea; the ceiling fell in about 20 m from the cliff.",
+     "url": "https://showcaves.com/english/other/karst/ToSua.html"
+    },
+    {
+     "f": "Swimming hole about 30 m deep with turquoise water, reached by a long wooden ladder, on the Main South Coast Road.",
+     "url": "https://www.samoaobserver.ws/category/samoa/104023"
+    },
+    {
+     "f": "Half way down the vertical walls is a small platform and wooden ladder to a floating jetty in the water.",
+     "url": "https://showcaves.com/english/other/karst/ToSua.html"
+    },
+    {
+     "f": "Run by a local family; adult fee 20 tala.",
+     "url": "https://www.samoaobserver.ws/category/samoa/97759"
+    }
+   ],
+   "bio_suggestion": "A 30 m deep seawater swimming hole in a collapsed lava tube near Lotofaga, reached by a long wooden ladder."
+  },
+  "savaii-1": {
+   "coordinates": {
+    "lat": -13.8016314,
+    "lng": -172.5190434
+   },
+   "coordinates_source": "OSM node 3777914729 tourism=attraction 'blowholes' (wikidata Q4734168, wikipedia en:Alofaaga Blowholes), HIGH: 82 m from the Wikipedia coordinate (-13.8022,-172.5197), an independent source. resolve-pin.py returned no OSM match (name spelling), found by hand in the local OSM extract osm/sav1.json.",
+   "moved_from_placement_m": 95,
+   "cost": {
+    "costMin": 5,
+    "costMax": 5,
+    "currency": "WST",
+    "costBasis": "entry",
+    "source": "https://en.wikivoyage.org/wiki/Savaii",
+    "note": "Wikivoyage: 'entry fee of WS$5 per person' (village charge). Wikipedia says the village charges a small admission. Approximate, third-party."
+   },
+   "ticketUrl": "BLOCKED",
+   "ticketUrl_candidate": "https://www.samoa.travel/sightseeing/x19/Alofaaga-Blowholes (old deep link from the Wikipedia article's external links; archived 2012). samoa.travel root answers 403 captcha to scripts: check in a real browser whether the Samoa Tourism Authority has a current Alofaaga page. If not, no ticketUrl (village-run).",
+   "facts": [
+    {
+     "f": "Lava flows created tubes connecting the clifftop with the ocean; waves force water up through them in fountains.",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    },
+    {
+     "f": "Also called the Taga Blowholes, on the south-west coast of Savai'i in Palauli district, entered from Taga village, south-west of Salelologa wharf.",
+     "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Alofaaga_Blowholes"
+    },
+    {
+     "f": "Fountains spray every few seconds; the village charges a small admission since land is customary-owned.",
+     "url": "https://en.wikipedia.org/wiki/Alofaaga_Blowholes"
+    },
+    {
+     "f": "Rocks are slippery; guides throw coconuts into the blowholes and then ask for money for photos.",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    }
+   ],
+   "bio_suggestion": "Lava-tube blowholes by Taga village where waves shoot fountains from the clifftop rock every few seconds."
+  },
+  "savaii-6": {
+   "coordinates": {
+    "lat": -13.5264263,
+    "lng": -172.7483541
+   },
+   "coordinates_source": "OSM node 3777914723 tourism=attraction 'Canopy walkway' (fee=20 WS), MEDIUM: the preserve's visitor feature, with nearby OSM nodes 'Canopy Walk - Tree' and 'Steel Tower' ~200 m away; also Nominatim. Wikivoyage listing geo (-13.5094,-172.7691) is a coarse point 2.6 km away and Commons photo median (-13.5004,-172.7888, Falealupo beach) is not the preserve: neither used.",
+   "moved_from_placement_m": 2935,
+   "cost": {
+    "costMin": 20,
+    "costMax": 20,
+    "currency": "WST",
+    "costBasis": "entry",
+    "source": "https://www.lonelyplanet.com/points-of-interest/falealupo-canopy-walk/1456953",
+    "note": "Lonely Planet: 'The ST20 admission also covers you for nearby attractions Moso's Footprint and the House of Rock.' OSM fee tag also 20 WS. Approximate."
+   },
+   "ticketUrl": null,
+   "ticketUrl_note": "Customary-owned village preserve, no official site found.",
+   "facts": [
+    {
+     "f": "Customary-owned conservation area on Savai'i's north-west peninsula.",
+     "url": "https://www.lonelyplanet.com/points-of-interest/falealupo-canopy-walk/1456953"
+    },
+    {
+     "f": "Canopy walk: a 24 m bridge strung between two large trees almost 10 m above the forest floor, then a ladder to a platform in a nearly 230-year-old banyan.",
+     "url": "https://www.lonelyplanet.com/points-of-interest/falealupo-canopy-walk/1456953"
+    },
+    {
+     "f": "Wikivoyage: a 25 m canopy walkway and a platform in the trees that sleeps six (no toilet).",
+     "url": "https://en.wikivoyage.org/wiki/Savaii"
+    }
+   ],
+   "bio_suggestion": "Village-run rainforest preserve on Savai'i's north-west tip, with a 24 m canopy bridge to a platform in a 230-year-old banyan."
+  }
+ },
+ "unresolved": [
+  "samoa.travel BLOCKED (403): savaii-1 candidate ticketUrl, needs real browser",
+  "o-le-pupu-pue-national-park fee UNVERIFIED (no official source)",
+  "No Samoan park pass in parkPasses.ts; none needed unless an official park fee is found"
+ ]
+}

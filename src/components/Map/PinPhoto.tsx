@@ -39,7 +39,7 @@ export default function PinPhoto({ instant, onLoad, onShown, style, subject, ...
       <Animated.Image
         {...rest}
         style={[style, { opacity }]}
-        onLoad={e => { if (!instant) fadeIn(); else onShown?.(); onLoad?.(e); }}
+        onLoad={e => { onLoad?.(e); if (!instant) fadeIn(); else onShown?.(); }}
       />
     );
   }

@@ -1,0 +1,35 @@
+{
+ "spot:savaii-3": {
+  "candidates": [
+   {
+    "file": "curation/expand-region-samoa/lens/dl/wmf-b7_wsm_pulemelei_from_north.jpg",
+    "note": "Pulemelei mound clear, 1024 wide, photo, official-ish WMF permission not confirmed (flagged)"
+   }
+  ],
+  "choice": "curation/expand-region-samoa/lens/dl/wmf-b7_wsm_pulemelei_from_north.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1
+  }
+ },
+ "dest:savaii:why3": {
+  "candidates": [
+   {
+    "file": "curation/expand-region-samoa/lens/dl/wmf-b7_wsm_pulemelei_from_north.jpg",
+    "note": "shows mound but 1024 < 1280 why-visit minimum"
+   }
+  ],
+  "choice": "none: 1024px below 1280 why-visit minimum"
+ },
+ "spot:savaii-5": {
+  "candidates": [
+   {
+    "file": "mt-matavanu.jpg",
+    "note": "composite; right panel 950px <960, crater is undifferentiated forest, not recognisable"
+   }
+  ],
+  "choice": "none: composite, panel <960, crater unrecognisable",
+  "hero_crop": "fail: composite"
+ }
+}

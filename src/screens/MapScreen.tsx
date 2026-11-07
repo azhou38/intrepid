@@ -119,6 +119,7 @@ import SpotSheet from '../components/Map/SpotSheet';
 import CountrySheet from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
+import { pumpedTimeout, pumpTimeouts } from '../utils/pumpedTimeout';
 import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prewarmDestinationPins, HEADER_PX } from '../utils/photoCache';
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
@@ -1307,6 +1308,14 @@ const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-w
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
+const SPOT_PHOTO_PIN_STYLE = { iconImage: ['get', 'img'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: false, iconPadding: 2, symbolZOrder: 'source' };
+const SPOT_READY_BATCH_MS = 180;  // photo pins whose photos are ready switch together, not one map data update each
+const SPOT_FADE_DATA_MS = 120;    // the fade's pins reaching the map (still transparent) before it starts
+const SPOT_FADE_MS = 260;         // a photo pin fading in over its small pin
+const SPOT_FADE_RESET_MS = 150;   // the faded pins reaching their usual layers before the fade layers go transparent again
+const SPOT_PREFETCH_MS = 250;     // how often the camera's position is checked for pin photos to fetch ahead
+const SPOT_PREFETCH_AHEAD = 1.5;  // zoom levels ahead of a spot's photo pin that its photo starts downloading
+const MAX_SPOT_PREFETCH = 24;     // photos asked for per check
 const MAX_NEW_SPOT_IMAGES = 16;   // spot pin images registered per pass (see nativeSpotPins); further passes follow a frame apart
 // A standalone spot has no list to rank in; it ranks like a destination's third spot, so it neither crowds out a
 // destination's headline spots nor is the first to lose its pin.
@@ -3208,6 +3217,52 @@ const destItems = useMemo((): DestItem[] =>
     const t = setTimeout(() => setSpotImagesTick(n => n + 1), PIN_IMAGE_HOLD_MS + 20);
     return () => clearTimeout(t);
   }, [selectionKey]);
+  // The pin images holding their photo (see SpotPhotoImages' onReady): until then a spot keeps its small pin, not a grey disc.
+  const spotPhotoReadyRef = useRef<Set<string>>(new Set());
+  const spotReadyTimerRef = useRef<(() => void) | null>(null);
+  // A pin's photo arriving fades in over its small pin. A symbol can't fade by itself here (new symbols appear at full
+  // opacity, and a layer's opacity only transitions as a whole), so the pins ready together are drawn for a moment by their
+  // own layers (spotFadeLayers), which start transparent and fade as one, then move to their usual layers:
+  //   their data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS -> back in their bands -> SPOT_FADE_RESET_MS
+  // Pins that become ready during a fade wait for the next one.
+  const spotFadeWaitingRef = useRef<Set<string>>(new Set());
+  const spotFadingRef = useRef<Set<string>>(new Set());
+  const [spotFadeOn, setSpotFadeOn] = useState(false);
+  const runSpotFade = useCallback(() => {
+    spotReadyTimerRef.current = null;
+    const wait = pinImagesHoldUntilRef.current - Date.now();
+    const later = (ms: number, next: () => void) => { spotReadyTimerRef.current = pumpedTimeout(next, ms); };
+    if (wait > 0) return later(wait, runSpotFade);   // not while a sheet slides in
+    if (!spotFadeWaitingRef.current.size) return;
+    spotFadingRef.current = spotFadeWaitingRef.current;
+    spotFadeWaitingRef.current = new Set();
+    for (const name of spotFadingRef.current) spotPhotoReadyRef.current.add(name);
+    setSpotImagesTick(n => n + 1);
+    later(SPOT_FADE_DATA_MS, () => {
+      setSpotFadeOn(true);
+      later(SPOT_FADE_MS, () => {
+        spotFadingRef.current = new Set();
+        setSpotImagesTick(n => n + 1);
+        later(SPOT_FADE_RESET_MS, () => {
+          setSpotFadeOn(false);
+          later(0, runSpotFade);
+        });
+      });
+    });
+  }, []);
+  const handleSpotPhotoReady = useCallback((name: string) => {
+    // Once only: PinPhoto's failsafe reports a pin with a subject crop as shown again 1.5 s after it mounts, which faded it in a second time.
+    if (spotPhotoReadyRef.current.has(name)) return;
+    // The other ring of a pin already showing (it was just ticked as visited): no fade, the pin only changes its ring.
+    const other = name.endsWith('1') ? `${name.slice(0, -1)}0` : `${name.slice(0, -1)}1`;
+    if (spotPhotoReadyRef.current.has(other)) {
+      spotPhotoReadyRef.current.add(name);
+      setSpotImagesTick(n => n + 1);
+      return;
+    }
+    spotFadeWaitingRef.current.add(name);
+    if (!spotReadyTimerRef.current) spotReadyTimerRef.current = pumpedTimeout(runSpotFade, SPOT_READY_BATCH_MS);
+  }, [runSpotFade]);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   // A close is planning at its target (closeTarget): see the band properties below.
@@ -3279,9 +3334,15 @@ const destItems = useMemo((): DestItem[] =>
       else pending++;
     }
     spotImagesPendingRef.current = holdImages ? 0 : pending;   // while held, the hold's own timer runs the next pass
+    // A spot's image that holds its photo, or '' while none does. A spot just ticked as visited keeps its old ring until the
+    // new image is ready, rather than dropping to its small pin for a moment.
+    const readyImage = (id: string, visited: boolean) => {
+      const ready = spotPhotoReadyRef.current, img = spotPhotoImageName(id, visited), other = spotPhotoImageName(id, !visited);
+      return ready.has(img) ? img : ready.has(other) ? other : '';
+    };
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
-      const img = spotPhotoImageName(sp.id, visited);
+      const img = readyImage(sp.id, visited);
       const early = isEarly(sp);
       features.push({
         type: 'Feature',
@@ -3290,7 +3351,7 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: specs.has(img) && !early && photoPlan.has(sp.id) && !pinHitsSelected(sp) ? img : '',
+          img: !early && photoPlan.has(sp.id) && !pinHitsSelected(sp) ? img : '',
           label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON && !hitsSelected(sp) ? spotLabelLines(sp.name).join('\n') : '',
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
@@ -3300,9 +3361,9 @@ const destItems = useMemo((): DestItem[] =>
           // setting every band layer's min zoom to 0 for the close and back afterwards, and each of those layer changes is
           // a full Mapbox updateLayer on the main thread: with dozens of band layers, ~300 ms frozen at the tap and again
           // as the close ended. Moving the pins in the data costs nothing extra (the data changes at those moments anyway).
-          pb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
+          pb: spotFadingRef.current.has(img) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
           rb: spotGatesOff || must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
-          nb: spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
+          nb: spotFadingRef.current.has(img) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
         },
       });
     }
@@ -3313,8 +3374,8 @@ const destItems = useMemo((): DestItem[] =>
     if (selectedSpot) {
       const visited = visitIndex.isSpotVisited(selectedSpot.id);
       const img = spotPhotoImageName(selectedSpot.id, visited);
-      const selHasPhoto = specs.has(img);
-      if (!selHasPhoto && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
+      const selImg = readyImage(selectedSpot.id, visited);
+      if (!specs.has(img) && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
       // The carousel's neighbours (two either side) get their photos registered ahead, so swiping to one finds its pin
       // image ready: a spot that was only a small pin used to show its blue glow first and its photo pin a moment later.
       const ci = carouselSpots.findIndex(s => s.id === selectedSpot.id), cn = carouselSpots.length;
@@ -3333,7 +3394,7 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: selectedSpot.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: selHasPhoto ? img : '',
+          img: selImg,
           label: spotLabelLines(selectedSpot.name).join('\n'),
           side: spotPhotoPlan?.nameAt.get(selectedSpot.id)?.side ?? 'left', sort: -2_000_000,
           sel: 1,
@@ -3345,7 +3406,7 @@ const destItems = useMemo((): DestItem[] =>
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
     // native source the same shape object unless a feature or its look did, so a pan or zoom doesn't re-push the whole
     // collection to Mapbox each frame.
-    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}|${f.properties!.label ? 1 : 0}|${f.properties!.side}|${f.properties!.sel ?? ''}`).join(',');
+    const sig = features.map(f => `${f.properties!.id}|${f.properties!.img}|${f.properties!.mini}|${f.properties!.sort}|${f.properties!.label ? 1 : 0}|${f.properties!.side}|${f.properties!.sel ?? ''}|${f.properties!.pb === 'fade' ? 1 : 0}`).join(',');
     const last = lastSpotShapeRef.current;
     if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
@@ -3358,6 +3419,32 @@ const destItems = useMemo((): DestItem[] =>
     const id = requestAnimationFrame(() => setSpotImagesTick(t => t + 1));
     return () => cancelAnimationFrame(id);
   }, [nativeSpotPins]);
+  // Fetch the pin photos of the spots in view whose photo pins are coming up, so a zoom finds them ready: otherwise each
+  // starts downloading only when its pin is due, and the spot waits as a small pin. (A tapped destination's are fetched at
+  // the tap.) Most important first; loadPinPhoto puts any a pin is already waiting for ahead of these.
+  const spotPrefetchViewRef = useRef({ region, zoom: handoffZoom });
+  spotPrefetchViewRef.current = { region, zoom: handoffZoom };
+  const spotPrefetchTimerRef = useRef<(() => void) | null>(null);
+  useEffect(() => {
+    if (!spotPhotoPlan || spotPrefetchTimerRef.current) return;
+    spotPrefetchTimerRef.current = pumpedTimeout(() => {
+      spotPrefetchTimerRef.current = null;
+      const { region: r, zoom } = spotPrefetchViewRef.current;
+      const coming: Spot[] = [];
+      for (const [id, z] of spotPhotoPlan.photoAt) {
+        const sp = SPOT_BY_ID.get(id);
+        if (!sp || spotPhotoZoom(id, z) > zoom + SPOT_PREFETCH_AHEAD || pinPhotoUri(sp)) continue;
+        const { latitude, longitude } = sp.coordinates;
+        if (Math.abs(latitude - r.latitude) <= r.latitudeDelta && Math.abs(longitude - r.longitude) <= r.longitudeDelta) coming.push(sp);
+      }
+      coming.sort((a, b) => (spotPhotoPlan.sortOf.get(a.id) ?? 0) - (spotPhotoPlan.sortOf.get(b.id) ?? 0));
+      prefetchPinPhotos(coming.slice(0, MAX_SPOT_PREFETCH));
+    }, SPOT_PREFETCH_MS);
+  }, [region, handoffZoom, spotPhotoPlan]);
+  useEffect(() => () => {
+    spotReadyTimerRef.current?.();
+    spotPrefetchTimerRef.current?.();
+  }, []);
   // Only the selected spot is a MarkerView now.
   const selectedOnly = useMemo(() => (selectedSpot ? [selectedSpot] : []), [selectedSpot]);
   // When the selection moves to another spot, the old spot's native pin is back at once, so its marker goes at once too
@@ -3390,39 +3477,33 @@ const destItems = useMemo((): DestItem[] =>
   // During a close or back plan (closeTarget) the bands are off: its fly-to can dip below the target's zooms on the way.
   // Keyed on the band set, so they are added again in this order whenever it changes. A plain array, not a fragment:
   // ShapeSource hands its source id only to its direct children, and a fragment's layers were never made.
+  const spotNameStyle = useMemo(() => ({
+    textField: ['get', 'label'] as any,
+    textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
+    textSize: 12,
+    textMaxWidth: 10,
+    // The side is spotPhotoPlan's (right of the pin, else left), fixed once the name shows; the plan already kept names
+    // clear, so they are always drawn. A name on the right is left-aligned, one on the left right-aligned.
+    textAnchor: ['case', ['==', ['get', 'side'], 'left'], 'right', 'left'] as any,
+    textOffset: ['case', ['==', ['get', 'side'], 'left'], ['literal', [-1.5, 0]], ['literal', [1.5, 0]]] as any,
+    textJustify: 'auto',
+    textTranslate: [0, -23],
+    textOptional: true,
+    textAllowOverlap: true,
+    textIgnorePlacement: true,
+    textPadding: 2,
+    textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
+    textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
+    textHaloWidth: 1.5,
+  }), [mapType]);
   const spotBandLayers = useMemo(() => {
-    const text = {
-      textField: ['get', 'label'] as any,
-      textFont: ['DIN Pro Bold', 'Arial Unicode MS Bold'],
-      textSize: 12,
-      textMaxWidth: 10,
-      // The side is spotPhotoPlan's (right of the pin, else left), fixed once the name shows; the plan already kept names
-      // clear, so they are always drawn. A name on the right is left-aligned, one on the left right-aligned.
-      textAnchor: ['case', ['==', ['get', 'side'], 'left'], 'right', 'left'] as any,
-      textOffset: ['case', ['==', ['get', 'side'], 'left'], ['literal', [-1.5, 0]], ['literal', [1.5, 0]]] as any,
-      textJustify: 'auto',
-      textTranslate: [0, -23],
-      textOptional: true,
-      textAllowOverlap: true,
-      textIgnorePlacement: true,
-      textPadding: 2,
-      textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
-      textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
-      textHaloWidth: 1.5,
-    };
-    const photoStyle = {
-      iconImage: ['get', 'img'] as any,
-      iconAnchor: 'bottom',
-      // The plan in nativeSpotPins already spaced the photo pins: draw every one (a spot whose photo Mapbox hid would have
-      // no pin at all, since its small pin is not drawn), still recording it so names avoid it.
-      iconAllowOverlap: true,
-      iconIgnorePlacement: false,
-      iconPadding: 2,
-      // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
-      symbolZOrder: 'source',
-    };
+    const text = spotNameStyle;
+    // The plan in nativeSpotPins already spaced the photo pins: draw every one (a spot whose photo Mapbox hid would have
+    // no pin at all, since its small pin is not drawn), still recording it so names avoid it.
+    // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
+    const photoStyle = SPOT_PHOTO_PIN_STYLE;
     // Small pins overlap photo pins (and each other) freely. A spot's own small pin is left out while its photo pin is in the
-    // data (img set, see the small pin layers' filter): the data carries a photo exactly from the zoom it shows. (A step on
+    // data (img set, see the small pin layers' filter; while the photo fades in over it, it stays): the data carries a photo exactly from the zoom it shows. (A step on
     // the camera zoom reading each spot's photo band did not work: Mapbox evaluates a zoom-and-data expression at whole
     // zoom levels, so a small pin stayed up behind its photo pin until the next whole level.)
     const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
@@ -3432,7 +3513,7 @@ const destItems = useMemo((): DestItem[] =>
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'img'], ''], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+        filter={['all', ['!=', ['get', 'sel'], 1], ['any', ['==', ['get', 'img'], ''], ['==', ['get', 'pb'], 'fade']], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
@@ -3443,7 +3524,22 @@ const destItems = useMemo((): DestItem[] =>
         filter={[...base, ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={text as any} />,
     );
     return layers;
-  }, [spotBands, mapType]);
+  }, [spotBands, spotNameStyle]);
+  // The photo pins and names fading in (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
+  // layers would each be updated natively by a change of opacity. Keyed on the band set like them: when it changes they are
+  // added again just below destStampCircles, so these must be too, or the photos fade in behind the small pins.
+  const spotFadeLayers = useMemo(() => {
+    const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
+    const transition = { duration: spotFadeOn ? SPOT_FADE_MS : 0, delay: 0 };
+    return [
+      <MapboxGL.SymbolLayer key={`${sig}p`} id="spotPhoto-fade" belowLayerID="destStampCircles"
+        filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
+        style={{ ...SPOT_PHOTO_PIN_STYLE, iconOpacity: spotFadeOn ? 1 : 0, iconOpacityTransition: transition } as any} />,
+      <MapboxGL.SymbolLayer key={`${sig}n`} id="spotName-fade" belowLayerID="destStampCircles"
+        filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], 'fade']] as any}
+        style={{ ...spotNameStyle, textOpacity: spotFadeOn ? 1 : 0, textOpacityTransition: transition } as any} />,
+    ];
+  }, [spotFadeOn, spotBands, spotNameStyle]);
 
   const spotLabelPlan = useMemo(() => {
     const plan = new Map<string, 'left' | 'right' | 'none'>();
@@ -5085,6 +5181,7 @@ const destItems = useMemo((): DestItem[] =>
   }) => {
     const { center, bounds } = state.properties;
     camCenterLngRef.current = center[0];
+    pumpTimeouts();   // timers wait during a pinch: see pumpedTimeout
     const isGestureActive = state.gestures?.isGestureActive ?? false;
     // A close's zoom-out is most of the way there, or the user took over the camera: bring the held-back sheet in now. It
     // waited for the last 0.05 of the zoom, which the easing makes the slowest part: the map then sat with no sheet for
@@ -6210,7 +6307,7 @@ const destItems = useMemo((): DestItem[] =>
             hold a full photo pin. A native layer (no MarkerView per spot), drawn beneath the destination
             stamps and photo pins, and present for exactly as long as the full pin would have been. */}
         <SpotPinImages />
-        <SpotPhotoImages specs={nativeSpotPins.specs} />
+        <SpotPhotoImages specs={nativeSpotPins.specs} onReady={handleSpotPhotoReady} />
         <MapboxGL.ShapeSource
           id="spotPins"
           shape={nativeSpotPins.shape}
@@ -6244,6 +6341,7 @@ const destItems = useMemo((): DestItem[] =>
             }}
           />
           {spotBandLayers as any /* an array of layers: ShapeSource flattens it (see spotBandLayers) */}
+          {spotFadeLayers as any}
           {/* The selected spot, above every other spot pin and above the destination dots (destStampCircles; the other spot
               layers sit below them), so zoomed out it is not buried under the dots: its small pin until its photo is
               registered, then its photo pin and name, the same images and text as the layers above, always drawn. The glow,

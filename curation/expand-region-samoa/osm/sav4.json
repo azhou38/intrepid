@@ -1,0 +1,608 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-06T18:31:56Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 493994528,
+  "lat": -13.6186911,
+  "lon": -172.4868743,
+  "tags": {
+    "ele": "1857.8",
+    "isolation": "2245",
+    "name": "Mauga Silisili",
+    "natural": "volcano",
+    "prominence": "1858",
+    "source": "Sāmoa Map, University of Hawaii Press, James A. Bier",
+    "source:prominence": "Highest peak of Savai’i Island",
+    "wikidata": "Q1147814",
+    "wikipedia": "en:Silisili"
+  }
+},
+{
+  "type": "node",
+  "id": 994506338,
+  "lat": -13.4524933,
+  "lon": -172.3334196,
+  "tags": {
+    "name": "Sale'aula",
+    "place": "town",
+    "wikidata": "Q2728814",
+    "wikipedia": "en:Saleaula"
+  }
+},
+{
+  "type": "node",
+  "id": 1446569564,
+  "lat": -13.7414328,
+  "lon": -172.3406683,
+  "tags": {
+    "name": "Satupa'itea",
+    "place": "town",
+    "wikidata": "Q651573",
+    "wikipedia": "en:Satupaʻitea"
+  }
+},
+{
+  "type": "node",
+  "id": 1529444079,
+  "lat": -13.7693895,
+  "lon": -172.1200500,
+  "tags": {
+    "capital_city": "Āpia",
+    "country_code_fips": "WS",
+    "country_code_iso3166_1_alpha_2": "WS",
+    "int_name": "Sāmoa",
+    "is_in:ocean": "Pacific",
+    "name": "Sāmoa",
+    "name:am": "ሳሞአ",
+    "name:ar": "ساموا",
+    "name:be": "Самоа",
+    "name:bg": "Самоа",
+    "name:bm": "Samowa",
+    "name:bn": "সামোয়া",
+    "name:bo": "ནུ་བ་ས་མོ་འ།",
+    "name:br": "Samoa",
+    "name:ca": "Samoa",
+    "name:ckb": "ساموا",
+    "name:cs": "Samoa",
+    "name:da": "Samoa",
+    "name:de": "Samoa",
+    "name:dz": "ས་མོ་ཨ",
+    "name:ee": "Samoa nutome",
+    "name:el": "Σαμόα",
+    "name:en": "Sāmoa",
+    "name:eo": "Samoo",
+    "name:es": "Samoa",
+    "name:et": "Samoa",
+    "name:fa": "ساموآ",
+    "name:ff": "Samowaa",
+    "name:fi": "Samoa",
+    "name:fo": "Sámoa",
+    "name:fr": "Samoa",
+    "name:ga": "Samó",
+    "name:gd": "Samotha",
+    "name:gsw": "Samoa",
+    "name:gu": "સમોઆ",
+    "name:gv": "Samoa",
+    "name:ha": "Samowa",
+    "name:he": "סמואה",
+    "name:hi": "समोआ",
+    "name:hr": "Samoa",
+    "name:hu": "Szamoa",
+    "name:hy": "Սամոա",
+    "name:ia": "Samoa",
+    "name:io": "Samoa",
+    "name:is": "Samóa",
+    "name:it": "Samoa",
+    "name:ja": "サモア",
+    "name:jbo": "samoas",
+    "name:ka": "სამოა",
+    "name:kab": "Samwa",
+    "name:km": "សាមូអា",
+    "name:kn": "ಸಮೋವಾ",
+    "name:ko": "사모아",
+    "name:ks": "سیمووا",
+    "name:ksh": "Sammoha",
+    "name:ku": "Samoa",
+    "name:kw": "Samoa",
+    "name:lfn": "Samoa",
+    "name:lg": "Samowa",
+    "name:lo": "ຊາມົວ",
+    "name:lv": "Samoa",
+    "name:mi": "Hāmoa",
+    "name:mk": "Самоа",
+    "name:ml": "സാമോവ",
+    "name:mn": "Самоа",
+    "name:mr": "सामोआ",
+    "name:ne": "सामोआ",
+    "name:no": "Samoa",
+    "name:or": "ସାମୋଆ",
+    "name:pl": "Samoa",
+    "name:rar": "‘Āmoa",
+    "name:rn": "Samowa",
+    "name:ro": "Samoa",
+    "name:ru": "Самоа",
+    "name:se": "Samoa",
+    "name:sg": "Samoäa",
+    "name:si": "සැමෝවා",
+    "name:sk": "Samoa",
+    "name:sl": "Samoa",
+    "name:sm": "Sāmoa",
+    "name:smn": "Samoa",
+    "name:sms": "Samoa",
+    "name:sr": "Самоа",
+    "name:sv": "Samoa",
+    "name:ta": "சமோவா",
+    "name:te": "సమోవా",
+    "name:th": "ประเทศซามัว",
+    "name:ti": "ሳሞአ",
+    "name:tk": "Samoa",
+    "name:to": "Haʻamoa",
+    "name:tok": "ma Samowa",
+    "name:tr": "Samoa",
+    "name:tzl": "Samovia",
+    "name:uk": "Самоа",
+    "name:ur": "ساموآ",
+    "name:vo": "Samovuäns",
+    "name:wal": "Samoowa",
+    "name:yo": "Orílẹ́ède Samọ",
+    "name:zh": "萨摩亚 / 薩摩亞",
+    "name:zh-Hans": "萨摩亚",
+    "name:zh-Hant": "薩摩亞",
+    "name:zu": "i-Samoa",
+    "official_name": "Malo Sa'oloto Tuto'atasi o Sāmoa",
+    "official_name:be": "Незалежная Дзяржава Самоа",
+    "official_name:en": "Independent State of Sāmoa",
+    "official_name:eo": "Sendependa Ŝtato Samoo",
+    "official_name:es": "Estado Independiente de Samoa",
+    "official_name:hr": "Nezavisna Država Samoa",
+    "official_name:ja": "サモア独立国",
+    "official_name:ku": "Dewleta Serbixweya Samoa",
+    "official_name:lb": "Unabhängiger Stat Samoa",
+    "official_name:lt": "Samoa Nepriklausomoji Valstybė",
+    "official_name:no": "Den selvstendige staten Samoa",
+    "official_name:pl": "Niezależne Państwo Samoa",
+    "official_name:ru": "Независимое Государство Самоа",
+    "official_name:sv": "Självständiga staten Samoa",
+    "official_name:vi": "Nhà nước Độc lập Samoa",
+    "old_name:eo": "Okcidenta Samoo",
+    "place": "country",
+    "population": "193000",
+    "source:sqkm": "CIA World Factbook",
+    "sqkm": "2831",
+    "wikidata": "Q683",
+    "wikipedia": "en:Sāmoa"
+  }
+},
+{
+  "type": "node",
+  "id": 2334843702,
+  "lat": -13.7509482,
+  "lon": -172.3107569,
+  "tags": {
+    "name": "Vailoa",
+    "place": "town",
+    "wikidata": "Q7908783",
+    "wikipedia": "en:Vailoa"
+  }
+},
+{
+  "type": "node",
+  "id": 3327018266,
+  "lat": -13.5170756,
+  "lon": -172.6543161,
+  "tags": {
+    "name": "Auala",
+    "place": "village",
+    "wikidata": "Q742641",
+    "wikipedia": "en:Auala"
+  }
+},
+{
+  "type": "node",
+  "id": 3327951693,
+  "lat": -13.5232637,
+  "lon": -172.7021716,
+  "tags": {
+    "name": "Sātaua",
+    "place": "village",
+    "wikidata": "Q7425958",
+    "wikipedia": "en:Sataua"
+  }
+},
+{
+  "type": "node",
+  "id": 3327951694,
+  "lat": -13.5148600,
+  "lon": -172.6709564,
+  "tags": {
+    "name": "Vaisala",
+    "place": "village",
+    "wikidata": "Q7908849",
+    "wikipedia": "en:Vaisala, Samoa"
+  }
+},
+{
+  "type": "node",
+  "id": 3358960369,
+  "lat": -13.7434057,
+  "lon": -172.2185640,
+  "tags": {
+    "name": "Sālelologa",
+    "place": "town",
+    "wikidata": "Q2214151",
+    "wikipedia": "en:Salelologa"
+  }
+},
+{
+  "type": "node",
+  "id": 3777914729,
+  "lat": -13.8016314,
+  "lon": -172.5190434,
+  "tags": {
+    "name": "blowholes",
+    "tourism": "attraction",
+    "wikidata": "Q4734168",
+    "wikipedia": "en:Alofaaga Blowholes"
+  }
+},
+{
+  "type": "way",
+  "id": 90421208,
+  "center": {
+    "lat": -13.7432247,
+    "lon": -172.2578289
+  },
+  "tags": {
+    "aerodrome:type": "public",
+    "aeroway": "aerodrome",
+    "iata": "MXS",
+    "icao": "NSMA",
+    "name": "Maota Airport",
+    "source": "ourairports.com",
+    "wikidata": "Q1030546",
+    "wikipedia": "en:Maota Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 320957612,
+  "center": {
+    "lat": -13.5211587,
+    "lon": -172.6939241
+  },
+  "tags": {
+    "highway": "track",
+    "source": "Mapbox",
+    "wikipedia": "en:Savai'i"
+  }
+},
+{
+  "type": "way",
+  "id": 374557564,
+  "center": {
+    "lat": -13.8493572,
+    "lon": -171.9463273
+  },
+  "tags": {
+    "geological": "outcrop",
+    "geological:outcrop": "hotspot",
+    "wikidata": "Q7409927",
+    "wikipedia": "en:Samoa hotspot"
+  }
+},
+{
+  "type": "way",
+  "id": 381950745,
+  "center": {
+    "lat": -13.5056828,
+    "lon": -172.6279912
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "AAU",
+    "icao": "NSAU",
+    "name": "Asau Airport",
+    "source": "ourairports.com",
+    "wikidata": "Q2903150",
+    "wikipedia": "en:Asau Airport"
+  }
+},
+{
+  "type": "relation",
+  "id": 1872673,
+  "center": {
+    "lat": -13.7576404,
+    "lon": -172.1010547
+  },
+  "tags": {
+    "ISO3166-1": "WS",
+    "ISO3166-1:alpha2": "WS",
+    "ISO3166-1:alpha3": "WSM",
+    "ISO3166-1:numeric": "882",
+    "admin_level": "2",
+    "boundary": "administrative",
+    "driving_side": "left",
+    "flag": "https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg",
+    "name": "Sāmoa",
+    "name:am": "ሳሞአ",
+    "name:ar": "ساموا",
+    "name:be": "Самоа",
+    "name:bg": "Самоа",
+    "name:bm": "Samowa",
+    "name:bn": "সামোয়া",
+    "name:bo": "ནུ་བ་ས་མོ་འ།",
+    "name:br": "Samoa",
+    "name:ca": "Samoa",
+    "name:ckb": "ساموا",
+    "name:cs": "Samoa",
+    "name:da": "Samoa",
+    "name:de": "Samoa",
+    "name:dz": "ས་མོ་ཨ",
+    "name:ee": "Samoa nutome",
+    "name:el": "Σαμόα",
+    "name:en": "Samoa",
+    "name:eo": "Samoo",
+    "name:es": "Samoa",
+    "name:et": "Samoa",
+    "name:fa": "ساموآ",
+    "name:ff": "Samowaa",
+    "name:fi": "Samoa",
+    "name:fo": "Sámoa",
+    "name:fr": "Samoa",
+    "name:fy": "Samoä",
+    "name:ga": "Samó",
+    "name:gd": "Samotha",
+    "name:gn": "Samóa",
+    "name:gsw": "Samoa",
+    "name:gu": "સમોઆ",
+    "name:gv": "Samoa",
+    "name:ha": "Samowa",
+    "name:he": "סמואה",
+    "name:hi": "समोआ",
+    "name:hr": "Samoa",
+    "name:hu": "Szamoa",
+    "name:hy": "Սամոա",
+    "name:ia": "Samoa",
+    "name:io": "Samoa",
+    "name:is": "Samóa",
+    "name:it": "Samoa",
+    "name:ja": "サモア",
+    "name:jbo": "samoas",
+    "name:ka": "სამოა",
+    "name:kab": "Samwa",
+    "name:km": "សាមូអា",
+    "name:kn": "ಸಮೋವಾ",
+    "name:ko": "사모아",
+    "name:ks": "سیمووا",
+    "name:ksh": "Sammoha",
+    "name:ku": "Samoa",
+    "name:lg": "Samowa",
+    "name:li": "Samoa",
+    "name:lo": "ຊາມົວ",
+    "name:lv": "Samoa",
+    "name:mi": "Hāmoa",
+    "name:mk": "Самоа",
+    "name:ml": "സാമോവ",
+    "name:mn": "Самоа",
+    "name:mr": "सामोआ",
+    "name:ne": "सामोआ",
+    "name:nl": "Samoa",
+    "name:no": "Samoa",
+    "name:or": "ସାମୋଆ",
+    "name:pl": "Samoa",
+    "name:pt": "Samoa",
+    "name:rn": "Samowa",
+    "name:ru": "Самоа",
+    "name:se": "Samoa",
+    "name:sg": "Samoäa",
+    "name:si": "සැමෝවා",
+    "name:sk": "Samoa",
+    "name:sl": "Samoa",
+    "name:smn": "Samoa",
+    "name:sms": "Samoa",
+    "name:sr": "Самоа",
+    "name:sv": "Samoa",
+    "name:ta": "சமோவா",
+    "name:te": "సమోవా",
+    "name:th": "ประเทศซามัว",
+    "name:ti": "ሳሞአ",
+    "name:tk": "Samoa",
+    "name:to": "Haʻamoa",
+    "name:tzl": "Samovia",
+    "name:uk": "Самоа",
+    "name:ur": "ساموآ",
+    "name:vi": "Samoa",
+    "name:vo": "Samovuäns",
+    "name:yo": "Orílẹ́ède Samọ",
+    "name:zh": "萨摩亚 / 薩摩亞",
+    "name:zh-Hans": "萨摩亚",
+    "name:zh-Hant": "薩摩亞",
+    "name:zu": "i-Samoa",
+    "official_name": "Malo Sa'oloto Tuto'atasi o Sāmoa",
+    "official_name:be": "Незалежная Дзяржава Самоа",
+    "official_name:ca": "Estat Independent de Samoa",
+    "official_name:cs": "Nezávislý stát Samoa",
+    "official_name:de": "Unabhängiger Staat Samoa",
+    "official_name:en": "Independent State of Samoa",
+    "official_name:eo": "Sendependa Ŝtato Samoo",
+    "official_name:es": "Estado Independiente de Samoa",
+    "official_name:fr": "Samoa occidentales",
+    "official_name:gn": "Tetã Hekosãsóva Samóa",
+    "official_name:hr": "Nezavisna Država Samoa",
+    "official_name:hu": "Szamoai Független Állam",
+    "official_name:ja": "サモア独立国",
+    "official_name:ku": "Dewleta Serbixweya Samoa",
+    "official_name:lb": "Unabhängiger Stat Samoa",
+    "official_name:lt": "Samoa Nepriklausomoji Valstybė",
+    "official_name:no": "Den selvstendige staten Samoa",
+    "official_name:pl": "Niezależne Państwo Samoa",
+    "official_name:pt": "Estado Independente de Samoa",
+    "official_name:ru": "Независимое Государство Самоа",
+    "official_name:sv": "Självständiga staten Samoa",
+    "official_name:vi": "Nhà nước Độc lập Samoa",
+    "old_name": "Western Samoa;German Samoa",
+    "old_name:ca": "Samoa Occidental",
+    "old_name:cs": "Západní Samoa;Německá Samoa",
+    "old_name:de": "Westsamoa",
+    "old_name:eo": "Okcidenta Samoo",
+    "old_name:hr": "Zapadna Samoa",
+    "old_name:hu": "Nyugat-Szamoa;Német Szamoa",
+    "old_name:sl": "Zahodna Samoa",
+    "population": "193000",
+    "timezone": "Pacific/Apia",
+    "type": "boundary",
+    "wikidata": "Q683",
+    "wikimedia_commons": "Category:Samoa",
+    "wikipedia": "en:Samoa"
+  }
+},
+{
+  "type": "relation",
+  "id": 1874071,
+  "center": {
+    "lat": -13.6212519,
+    "lon": -172.4890512
+  },
+  "tags": {
+    "alt_name": "Salafai",
+    "name": "Savāiʻi",
+    "name:ckb": "ساڤای",
+    "name:de": "Savaiʻi",
+    "name:fr": "Savai'i",
+    "name:gsw": "Savaii",
+    "name:sm": "Savāiʻi",
+    "place": "island",
+    "type": "multipolygon",
+    "wikidata": "Q337519",
+    "wikipedia": "en:Savaiʻi"
+  }
+},
+{
+  "type": "relation",
+  "id": 13285389,
+  "center": {
+    "lat": -13.5594666,
+    "lon": -172.6740569
+  },
+  "tags": {
+    "ISO3166-2": "WS-VS",
+    "admin_level": "4",
+    "boundary": "administrative",
+    "name": "Vaisigano",
+    "type": "boundary",
+    "wikidata": "Q1193139",
+    "wikipedia": "de:Vaisigano"
+  }
+},
+{
+  "type": "relation",
+  "id": 13285390,
+  "center": {
+    "lat": -13.6738006,
+    "lon": -172.5185264
+  },
+  "tags": {
+    "ISO3166-2": "WS-SA",
+    "admin_level": "4",
+    "boundary": "administrative",
+    "name": "Satupaʻitea",
+    "type": "boundary",
+    "wikidata": "Q651573",
+    "wikipedia": "de:Satupaʻitea"
+  }
+},
+{
+  "type": "relation",
+  "id": 13285391,
+  "center": {
+    "lat": -13.7066426,
+    "lon": -172.4213974
+  },
+  "tags": {
+    "ISO3166-2": "WS-PA",
+    "admin_level": "4",
+    "boundary": "administrative",
+    "name": "Palauli",
+    "type": "boundary",
+    "wikidata": "Q1147216",
+    "wikipedia": "de:Palauli"
+  }
+},
+{
+  "type": "relation",
+  "id": 13285392,
+  "center": {
+    "lat": -13.6603389,
+    "lon": -172.2684845
+  },
+  "tags": {
+    "ISO3166-2": "WS-FA",
+    "admin_level": "4",
+    "boundary": "administrative",
+    "name": "Faʻasaleleaga",
+    "type": "boundary",
+    "wikidata": "Q1154134",
+    "wikipedia": "de:Faʻasaleleaga"
+  }
+},
+{
+  "type": "relation",
+  "id": 13285429,
+  "center": {
+    "lat": -13.5374657,
+    "lon": -172.4814485
+  },
+  "tags": {
+    "ISO3166-2": "WS-GI",
+    "admin_level": "4",
+    "boundary": "administrative",
+    "name": "Gagaʻifomauga",
+    "type": "boundary",
+    "wikidata": "Q1193134",
+    "wikipedia": "de:Gagaʻifomauga"
+  }
+},
+{
+  "type": "relation",
+  "id": 13285430,
+  "center": {
+    "lat": -13.7218623,
+    "lon": -172.1514155
+  },
+  "tags": {
+    "ISO3166-2": "WS-GE",
+    "admin_level": "4",
+    "boundary": "administrative",
+    "name": "Gagaʻemauga",
+    "type": "boundary",
+    "wikidata": "Q1193143",
+    "wikipedia": "de:Gagaʻemauga"
+  }
+},
+{
+  "type": "relation",
+  "id": 13285778,
+  "center": {
+    "lat": -13.8544610,
+    "lon": -172.0824679
+  },
+  "tags": {
+    "ISO3166-2": "WS-AL",
+    "admin_level": "4",
+    "boundary": "administrative",
+    "name": "Aiga-i-le-Tai",
+    "type": "boundary",
+    "wikidata": "Q1144488",
+    "wikipedia": "de:Aiga-i-le-Tai"
+  }
+}
+
+  ]
+}
