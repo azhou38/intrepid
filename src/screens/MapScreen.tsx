@@ -1307,6 +1307,8 @@ const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its 
 const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
+const DEST_TAP_HANDOFF_LEAD = 0.5;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
+const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const SPOT_PHOTO_PIN_STYLE = { iconImage: ['get', 'img'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: false, iconPadding: 2, symbolZOrder: 'source' };
 const SPOT_MINI_PIN_STYLE = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
@@ -2371,6 +2373,24 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Country pills deliberately keep the live zoom: they belong to the wider view and would otherwise pop in over a
   // still zoomed-in map.
   const planZoomTargetRef = useRef<number | null>(null);
+  // A destination tap flying in to its default view (see destTapHandoff): set at the tap, ended at the map idle once the
+  // camera is there, by a gesture, or by its safety timer; another selection stops it applying.
+  const [destTapPlan, setDestTapPlan] = useState<{ destId: string; target: number } | null>(null);
+  const destTapPlanRef = useRef<{ destId: string; target: number } | null>(null);
+  const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const endDestTapPlan = useCallback(() => {
+    if (destTapPlanTimerRef.current) { clearTimeout(destTapPlanTimerRef.current); destTapPlanTimerRef.current = null; }
+    if (!destTapPlanRef.current) return;
+    destTapPlanRef.current = null;
+    setDestTapPlan(null);
+  }, []);
+  const beginDestTapPlan = useCallback((destId: string, target: number) => {
+    if (target <= camZoomRef.current + ZOOM_EPSILON) { endDestTapPlan(); return; }   // not a flight in
+    destTapPlanRef.current = { destId, target };
+    setDestTapPlan(destTapPlanRef.current);
+    if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
+    destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
+  }, [endDestTapPlan]);
   // Set by a back tap ("← Destination", "← Country"; see beginBackPlan): its target is kept although the parent is
   // selected, so the pins plan at the parent's view from the tap exactly as for an X close.
   const planWithSelRef = useRef(false);
@@ -2438,7 +2458,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // in (Wellington → New Zealand dips to zoom 2 before landing at 3.9): following the live zoom there switched every photo
   // pin off for the dip and back on as the camera climbed in, a burst of pins on landing.
   const backPlan = planHoldRef.current && planZoomTargetRef.current !== null;
-  const handoffZoom = backPlan ? closeTarget! : closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
+  // A destination tap's flight in (destTapPlan): its pin and its spot pins switch over in one step a little before the
+  // camera lands (DEST_TAP_HANDOFF_LEAD), the spot pins already holding their photos, rather than the pin waiting for the
+  // camera to settle, then the small spot pins appearing, then their photos fading in one by one.
+  const destTapHandoff = destTapPlan && selectedDest?.id === destTapPlan.destId && camZoom >= destTapPlan.target - DEST_TAP_HANDOFF_LEAD
+    ? Math.max(camZoom, destTapPlan.target) : null;
+  const handoffZoom = backPlan ? closeTarget! : closeTarget !== null ? Math.min(camZoom, closeTarget) : destTapHandoff ?? camZoom;
   // Each photo tier's on/off: on at and past its gate. Zooming out, Mapbox hides a tier itself the frame the camera passes
   // its gate (the layer's minZoomLevel), so this needs no look-ahead: it used to switch tiers off ahead of the camera to
   // make up for the render lag, which on a fast pinch blanked pins that were still above their gates for a frame or two.
@@ -3335,6 +3360,20 @@ const destItems = useMemo((): DestItem[] =>
       if (fresh < MAX_NEW_SPOT_IMAGES && !holdImages) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
       else pending++;
     }
+    // A destination tap's flight in (destTapPlan): the images of the spot pins it will switch to are made during the
+    // flight, so those pins arrive with their photos instead of as small pins that then fade into photos one by one.
+    if (destTapPlan && spotPhotoPlan && selectedDest?.id === destTapPlan.destId) {
+      const t = destTapPlan.target + ZOOM_EPSILON;
+      for (const sp of spotsInDest) {
+        const z = spotPhotoPlan.photoAt.get(sp.id);
+        if (z === undefined || spotPhotoZoom(sp.id, z) > t || (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? -Infinity) > t) continue;
+        const visited = visitIndex.isSpotVisited(sp.id);
+        const img = spotPhotoImageName(sp.id, visited);
+        if (specs.has(img)) continue;
+        if (fresh < MAX_NEW_SPOT_IMAGES && !holdImages) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
+        else pending++;
+      }
+    }
     spotImagesPendingRef.current = holdImages ? 0 : pending;   // while held, the hold's own timer runs the next pass
     // A spot's image that holds its photo, or '' while none does. A spot just ticked as visited keeps its old ring until the
     // new image is ready, rather than dropping to its small pin for a moment.
@@ -3414,7 +3453,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff, destTapPlan, spotsInDest, selectedDest]);
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
@@ -4203,6 +4242,7 @@ const destItems = useMemo((): DestItem[] =>
     dropCountryIfForeign(dest.country);
     selectedDestRef.current = dest;
     setSelectedDest(dest);
+    beginDestTapPlan(dest.id, destDefaultCamera(dest, 'topHalf').zoom);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
     prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
@@ -4254,7 +4294,7 @@ const destItems = useMemo((): DestItem[] =>
     fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
-  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault]);
+  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault, beginDestTapPlan, destDefaultCamera]);
 
   const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
@@ -5215,6 +5255,7 @@ const destItems = useMemo((): DestItem[] =>
     // open over the map while the user navigates.
     if (isGestureActive && !wasMapGestureActiveRef.current) {
       releaseHeldSelection();   // the user took over the camera: don't keep planning around the closed selection
+      endDestTapPlan();
       releaseSpotCloseTarget();
       if (showMapMenuRef.current) { showMapMenuRef.current = false; setShowMapMenu(false); }
       // The user grabbed the map while a destination's initial fly-to was still in flight —
@@ -5422,7 +5463,7 @@ const destItems = useMemo((): DestItem[] =>
       zoomLeadTimerRef.current = setTimeout(() => { zoomLeadTimerRef.current = null; zoomSampleRef.current = null; setZoomOutLead(0); }, 120);
     });
     camZoomRef.current = state.properties.zoom;
-  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera, releaseSpotCloseTarget]);
+  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera, releaseSpotCloseTarget, endDestTapPlan]);
 
   const handleMapIdle = useCallback((state: {
     properties: {
@@ -5439,6 +5480,8 @@ const destItems = useMemo((): DestItem[] =>
     wasMapGestureActiveRef.current = false;
     if (regionHoldFlushRef.current) { clearTimeout(regionHoldFlushRef.current); regionHoldFlushRef.current = null; }
     releaseSheetsAfterCamera();
+    // A destination tap's flight has landed (not an idle from before it got going): the live zoom takes over.
+    if (destTapPlanRef.current && state.properties.zoom >= destTapPlanRef.current.target - ZOOM_EPSILON) endDestTapPlan();
     // A close's zoom-out has settled: let the pin/pill planning drop the old selection. Not a landed plan, which stands
     // until the user's next move (see planLandedRef).
     if (!planLandedRef.current) {
