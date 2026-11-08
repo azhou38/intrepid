@@ -2397,7 +2397,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // `from`: the selection before the tap, which the destination photo pins keep planning for until the handoff (see
   // destPhotoPlan).
   // `spots`: what the landing view will show (spotsInTapView).
-  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null }; spots: Spot[] };
+  // `fromDot`: it was showing as a dot at the tap, not a photo pin (destPhotoShownRef). It then stays a dot until its spot
+  // pins take over: its photo pin used to appear as the zoom-in passed its tier and fade straight out again.
+  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null }; spots: Spot[]; fromDot: boolean };
+  // Whether a destination's photo pin is on screen this render (promoted, and its tier on at the live zoom).
+  const destPhotoShownRef = useRef<(id: string) => boolean>(() => false);
   const [destTapPlan, setDestTapPlan] = useState<DestTapPlan | null>(null);
   const destTapPlanRef = useRef<DestTapPlan | null>(null);
   const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -2407,9 +2411,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     destTapPlanRef.current = null;
     setDestTapPlan(null);
   }, []);
-  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from'], spots: Spot[]) => {
+  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from'], spots: Spot[], fromDot: boolean) => {
     if (target <= camZoomRef.current + ZOOM_EPSILON) { endDestTapPlan(); return; }   // not a flight in
-    destTapPlanRef.current = { destId, target, from, spots };
+    destTapPlanRef.current = { destId, target, from, spots, fromDot };
     setDestTapPlan(destTapPlanRef.current);
     if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
     destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
@@ -3035,7 +3039,8 @@ const destItems = useMemo((): DestItem[] =>
       if (pendingRevealRef.current.has(dest.id)) continue;   // its photo pin is about to appear — no dot first
       // A tapped destination flying in (destTapPlan): no dot from the tap. Its photo pin fades out on the way in, a little
       // before it is hidden (handoff), and its dot showed through in that gap, before its spot pins came in.
-      if (destTapPlan && destTapPlan.destId === dest.id && selectedDest?.id === dest.id) continue;
+      // A destination tapped as a dot (fromDot) keeps it: it has no photo pin on the way in (see nativeDestPins).
+      if (destTapPlan && !destTapPlan.fromDot && destTapPlan.destId === dest.id && selectedDest?.id === dest.id) continue;
       const tier = dest.countryCode === selCountryCode
         ? 1
         : Math.max(1, dest.rank - (saved ? 1 : 0));
@@ -4325,7 +4330,7 @@ const destItems = useMemo((): DestItem[] =>
     setSelectedDest(dest);
     const tapCam = destDefaultCamera(dest, 'topHalf');
     const tapSpots = spotsInTapView(dest.id, tapCam, tapCam.zoom);
-    beginDestTapPlan(dest.id, tapCam.zoom, tapFrom, tapSpots);
+    beginDestTapPlan(dest.id, tapCam.zoom, tapFrom, tapSpots, !destPhotoShownRef.current(dest.id));
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
     prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
@@ -5780,6 +5785,7 @@ const destItems = useMemo((): DestItem[] =>
     .filter(d => !hiddenDestIds.has(d.id) && stablePhotoIds.has(d.id))
     .sort((a, b) => b.rank - a.rank), // deterministic order
   [stablePhotoIds, hiddenDestIds]);
+  destPhotoShownRef.current = id => promotedDests.some(d => d.id === id) && destGateOn(destPhotoPlan.fadeTier.get(id) ?? '', camZoom);
   // Destinations near their own default zoom (within HANDOFF_BAND levels, around the view): each is drawn on its own small
   // layer (destHandoff-<id>) instead of its tier layer, so that when the camera crosses its default view its photo pin
   // FADES out as its spot pins fade in (and back in on the way out), rather than being pulled from the layer's data at
@@ -5988,7 +5994,9 @@ const destItems = useMemo((): DestItem[] =>
     let added = false;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     const handoffIds = new Set(joinedHandoffDests.map(h => h.dest.id));
-    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...joinedHandoffDests.map(h => h.dest)];
+    // A destination tapped as a dot has no photo pin (nor name) until its spot pins take over (see DestTapPlan's fromDot).
+    const tapDot = destTapPlan?.fromDot && selectedDest?.id === destTapPlan.destId ? destTapPlan.destId : null;
+    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...joinedHandoffDests.map(h => h.dest)].filter(d => d.id !== tapDot);
     for (const dest of drawn) {
       const visited = visitIndex.isDestVisited(dest.id);
       const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
@@ -6021,7 +6029,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget, destTapPlan, selectedDest]);
 
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
