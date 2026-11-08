@@ -6883,8 +6883,9 @@ const destItems = useMemo((): DestItem[] =>
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           // A standalone spot has no destination sheet to open a list in.
-          onGoToList={liveSpotSheet && selectedSpot!.destinationId && !nearCtx ? handleGoToListView : undefined}
-          onTitlePress={liveSpotSheet && selectedDest && !nearCtx ? handleUpNav : undefined}
+          // While leaving, the header keeps its back chevron and "Grid view" (inert): dropping them re-laid it out as it slid.
+          onGoToList={liveSpotSheet ? (selectedSpot!.destinationId && !nearCtx ? handleGoToListView : undefined) : leavingSpot!.dest && !leavingSpot!.nearLabel ? noop : undefined}
+          onTitlePress={liveSpotSheet ? (selectedDest && !nearCtx ? handleUpNav : undefined) : leavingSpot!.dest && !leavingSpot!.nearLabel ? noop : undefined}
           collapseSignal={collapseSheetSignal}
         />
       )}
