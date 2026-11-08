@@ -1360,6 +1360,22 @@ function isSpotRevealed(sp: Spot, zoom: number): boolean {
   const level = SPOT_REVEAL_ZOOM_BY_ID[sp.id];
   return level !== undefined && zoom >= level - ZOOM_EPSILON;
 }
+// The spots a destination tap's landing view (destTapPlan) will show: the destination's own, and every other spot revealed at
+// that zoom inside the view, with a margin. Their pin photos are fetched and their pin images made during the flight, so a
+// neighbouring destination's spots land with their photos together with the tapped destination's, not a second later.
+function spotsInTapView(destId: string, center: { lng: number; lat: number }, zoom: number): Spot[] {
+  const world = 512 * Math.pow(2, zoom), margin = 1.2;
+  const dx = (SCREEN_W_GLOBAL / 2) * margin / world, dy = (H / 2) * margin / world;
+  const cx = (center.lng + 180) / 360, cy = mercY(center.lat);
+  const own: Spot[] = [], others: Spot[] = [];
+  for (const sp of SPOTS) {
+    if (spotParentKey(sp) === destId) { own.push(sp); continue; }
+    if (!isSpotRevealed(sp, zoom)) continue;
+    const x = (sp.coordinates.longitude + 180) / 360, y = mercY(sp.coordinates.latitude);
+    if (Math.abs(x - cx) <= dx && Math.abs(y - cy) <= dy) others.push(sp);
+  }
+  return [...own, ...others];   // its own first
+}
 // The zoom a spot's photo pin shows from: its plan zoom (spotPhotoPlan.photoAt), and never before its own photo zoom (see
 // isEarly in nativeSpotPins).
 const spotPhotoZoom = (id: string, planZoom: number) => Math.max(planZoom, (SPOT_PHOTO_ZOOM_BY_ID[id] ?? -Infinity) - ZOOM_EPSILON);
@@ -2380,7 +2396,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // camera is there, by a gesture, or by its safety timer; another selection stops it applying.
   // `from`: the selection before the tap, which the destination photo pins keep planning for until the handoff (see
   // destPhotoPlan).
-  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null } };
+  // `spots`: what the landing view will show (spotsInTapView).
+  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null }; spots: Spot[] };
   const [destTapPlan, setDestTapPlan] = useState<DestTapPlan | null>(null);
   const destTapPlanRef = useRef<DestTapPlan | null>(null);
   const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -2390,9 +2407,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     destTapPlanRef.current = null;
     setDestTapPlan(null);
   }, []);
-  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from']) => {
+  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from'], spots: Spot[]) => {
     if (target <= camZoomRef.current + ZOOM_EPSILON) { endDestTapPlan(); return; }   // not a flight in
-    destTapPlanRef.current = { destId, target, from };
+    destTapPlanRef.current = { destId, target, from, spots };
     setDestTapPlan(destTapPlanRef.current);
     if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
     destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
@@ -3376,11 +3393,12 @@ const destItems = useMemo((): DestItem[] =>
       if (fresh < MAX_NEW_SPOT_IMAGES && !holdImages) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
       else pending++;
     }
-    // A destination tap's flight in (destTapPlan): the images of the spot pins it will switch to are made during the
-    // flight, so those pins arrive with their photos instead of as small pins that then fade into photos one by one.
+    // A destination tap's flight in (destTapPlan): the images of the spot pins it will switch to, its neighbours' in view
+    // included, are made during the flight, so those pins arrive with their photos instead of as small pins that then fade
+    // into photos one by one.
     if (destTapPlan && spotPhotoPlan && selectedDest?.id === destTapPlan.destId) {
       const t = destTapPlan.target + ZOOM_EPSILON;
-      for (const sp of spotsInDest) {
+      for (const sp of destTapPlan.spots) {
         const z = spotPhotoPlan.photoAt.get(sp.id);
         if (z === undefined || spotPhotoZoom(sp.id, z) > t || (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? -Infinity) > t) continue;
         const visited = visitIndex.isSpotVisited(sp.id);
@@ -3603,16 +3621,20 @@ const destItems = useMemo((): DestItem[] =>
     );
     return layers;
   }, [spotBands, spotNameStyle]);
-  // The photo pins and names fading in, and their small pins fading out (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
-  // layers would each be updated natively by a change of opacity. Keyed on the band set like them: when it changes they are
-  // added again just below destStampCircles, so these must be too, or the photos fade in behind the small pins.
+  // The photo pins and names fading in (see runSpotFade), above the band layers, and their small pins fading out, below them
+  // (`under`): above them the fading small pin jumped in front of the small pins it had been behind before its photo showed.
+  // Apart from spotBandLayers, whose dozens of layers would each be updated natively by a change of opacity. Keyed on the
+  // band set like them: when it changes they are added again just below destStampCircles in render order, so these must be
+  // too, or the photos fade in behind the small pins.
   const spotFadeLayers = useMemo(() => {
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const transition = { duration: spotFadeOn ? SPOT_FADE_MS : 0, delay: 0 };
-    return [
+    const under = (
       <MapboxGL.SymbolLayer key={`${sig}m`} id="spotMini-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
-        style={{ ...SPOT_MINI_PIN_STYLE, iconOpacity: spotFadeOn ? 0 : 1, iconOpacityTransition: transition } as any} />,
+        style={{ ...SPOT_MINI_PIN_STYLE, iconOpacity: spotFadeOn ? 0 : 1, iconOpacityTransition: transition } as any} />
+    );
+    const over = [
       <MapboxGL.SymbolLayer key={`${sig}p`} id="spotPhoto-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
         style={{ ...SPOT_PHOTO_PIN_STYLE, iconOpacity: spotFadeOn ? 1 : 0, iconOpacityTransition: transition } as any} />,
@@ -3620,6 +3642,7 @@ const destItems = useMemo((): DestItem[] =>
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], 'fade']] as any}
         style={{ ...spotNameStyle, textOpacity: spotFadeOn ? 1 : 0, textOpacityTransition: transition } as any} />,
     ];
+    return { under, over };
   }, [spotFadeOn, spotBands, spotNameStyle]);
 
   const spotLabelPlan = useMemo(() => {
@@ -4297,12 +4320,14 @@ const destItems = useMemo((): DestItem[] =>
     dropCountryIfForeign(dest.country);
     selectedDestRef.current = dest;
     setSelectedDest(dest);
-    beginDestTapPlan(dest.id, destDefaultCamera(dest, 'topHalf').zoom, tapFrom);
+    const tapCam = destDefaultCamera(dest, 'topHalf');
+    const tapSpots = spotsInTapView(dest.id, tapCam, tapCam.zoom);
+    beginDestTapPlan(dest.id, tapCam.zoom, tapFrom, tapSpots);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
     prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
-    // Likewise its spots' pin photos (most important first), so they are on disk by the time the camera lands.
-    prefetchPinPhotos(SPOTS.filter(s => s.destinationId === dest.id));
+    // Likewise the pin photos of the spots its view will show (its own first), so they are on disk by the time the camera lands.
+    prefetchPinPhotos(tapSpots);
     setMapState('context');
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
@@ -6456,8 +6481,9 @@ const destItems = useMemo((): DestItem[] =>
               iconOpacityTransition: { duration: 0, delay: 0 },
             }}
           />
+          {spotFadeLayers.under}
           {spotBandLayers as any /* an array of layers: ShapeSource flattens it (see spotBandLayers) */}
-          {spotFadeLayers as any}
+          {spotFadeLayers.over as any}
           {/* The selected spot, above every other spot pin and above the destination dots (destStampCircles; the other spot
               layers sit below them), so zoomed out it is not buried under the dots: its small pin until its photo is
               registered, then its photo pin and name, the same images and text as the layers above, always drawn. The glow,
@@ -6877,8 +6903,9 @@ const destItems = useMemo((): DestItem[] =>
           mapGestureAtSV={mapGestureAtSV}
           onSnapStateChange={handleSheetSnapStateChange}
           // A standalone spot has no destination sheet to open a list in.
-          onGoToList={liveSpotSheet && selectedSpot!.destinationId && !nearCtx ? handleGoToListView : undefined}
-          onTitlePress={liveSpotSheet && selectedDest && !nearCtx ? handleUpNav : undefined}
+          // While leaving, the header keeps its back chevron and "Grid view" (inert): dropping them re-laid it out as it slid.
+          onGoToList={liveSpotSheet ? (selectedSpot!.destinationId && !nearCtx ? handleGoToListView : undefined) : leavingSpot!.dest && !leavingSpot!.nearLabel ? noop : undefined}
+          onTitlePress={liveSpotSheet ? (selectedDest && !nearCtx ? handleUpNav : undefined) : leavingSpot!.dest && !leavingSpot!.nearLabel ? noop : undefined}
           collapseSignal={collapseSheetSignal}
         />
       )}

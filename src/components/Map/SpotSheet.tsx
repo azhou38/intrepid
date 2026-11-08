@@ -958,7 +958,7 @@ function SpotSheet({
     if (leaving) {
       closingRef.current = true;
       hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-        if (finished) { handOverPills(); runOnJS(setGone)(true); }
+        if (finished) { goneSV.value = 1; handOverPills(); runOnJS(setGone)(true); }
       });
       return;
     }
@@ -972,6 +972,11 @@ function SpotSheet({
   // thread only (the static flag FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS is off, so React never learns where it went), and
   // a commit touching the sheet could redraw it where React last knew it: halfway through its slide-in, near the bottom
   // strip. That is what showed for a moment after the slide off, before the destination sheet came up.
+  // `gone` comes a JS render later, and the parent's own commits in that time (the destination sheet mounting) redrew the
+  // strip for ~400 ms (recording e16e497c), so the slide's last frame also hides it from the UI thread (goneSV). Display is
+  // a layout prop: Reanimated commits it to the shadow tree, unlike the transform, so a later commit keeps it hidden.
+  const goneSV = useSharedValue(0);
+  const goneStyle = useAnimatedStyle(() => ({ display: goneSV.value ? 'none' : 'flex' }));
   const [gone, setGone] = useState(false);
   useEffect(() => { if (gone) onExited?.(); }, [gone]);
 
@@ -980,7 +985,7 @@ function SpotSheet({
     if (!leaveNow) return;
     closingRef.current = true;
     hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-      if (finished) { handOverPills(); runOnJS(setGone)(true); }
+      if (finished) { goneSV.value = 1; handOverPills(); runOnJS(setGone)(true); }
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [leaveNow]);
@@ -1347,7 +1352,7 @@ isVisited ? (
   );
 
   return (
-    <View style={[st.backdrop, gone && st.gone]} pointerEvents="box-none">
+    <Reanimated.View style={[st.backdrop, goneStyle, gone && st.gone]} pointerEvents="box-none">
       <Reanimated.View pointerEvents="none"
         style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(0,0,0,0.45)' }, backdropStyle]} />
       <View
@@ -1691,7 +1696,7 @@ isVisited ? (
           onClose={() => setGalleryVisit(null)}
         />
       )}
-    </View>
+    </Reanimated.View>
   );
 }
 
