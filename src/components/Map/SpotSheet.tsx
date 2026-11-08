@@ -34,7 +34,7 @@ import spotGalleries from '../../data/spotGalleries.json';
 import CircleFlag from '../CircleFlag';
 import { flagSource } from '../../utils/flags';
 import { CARD_SCRIM_FADE, CARD_SCRIM_ABOVE, cardScrimStops } from './cardScrim';
-import { fitNameFontSize } from '../../utils/fitNameFontSize';
+import { fitNameSizeExact, breakNameLinesExact } from '../../utils/fitNameFontSize';
 import { photoSubject } from '../../utils/subjectCrop';
 import { titleStatGap } from '../../utils/titleStatGap';
 import FadeInImage from './FadeInImage';
@@ -54,10 +54,11 @@ const heroNameSize = (name: string) => {
   const fontSize = heroFontSize(name, [34, 29, 25, 21], W - 48);
   return { fontSize, lineHeight: Math.round(fontSize * 1.1) };
 };
+const cardNameW = () => CARD_W - 32;
 const cardNameSize = (name: string) => {
-  // Full size (25) for any name that fits on two lines; otherwise just small enough to fit on two, with no word split
-  // across lines.
-  const fontSize = fitNameFontSize(name, 25, 12, CARD_W - 32, 2);
+  // Full size (25) while the name fits on two lines, else three lines down to 21 and four lines held at 23, sized by the
+  // font's real glyph widths so a long name uses the card's full width instead of shrinking early.
+  const fontSize = fitNameSizeExact(name, 25, 12, cardNameW(), 22, -0.3);
   // The margin under the title is sized so the visible gap to the time/cost line is the same at every font size.
   return { fontSize, lineHeight: Math.round(fontSize * 1.12), marginBottom: titleStatGap(fontSize, 1.12, CARD_TITLE_STAT_GAP) };
 };
@@ -235,7 +236,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
             </Svg>
           </View>
           <View pointerEvents="none" style={st.cardImageInfo} onLayout={e => setNameH(e.nativeEvent.layout.height)}>
-            <Text style={[st.cardName, cardNameSize(spot.name)]}>{spot.name}</Text>
+            <Text style={[st.cardName, cardNameSize(spot.name)]}>{breakNameLinesExact(spot.name, cardNameSize(spot.name).fontSize, cardNameW(), -0.3)}</Text>
             <View style={st.cardStatRow}>
               <View style={st.cardTimeRow}>
                 <Clock size={12} color="white" strokeWidth={2.5} />
