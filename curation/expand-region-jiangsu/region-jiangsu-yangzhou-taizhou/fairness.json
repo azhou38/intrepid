@@ -1,0 +1,319 @@
+{
+ "region": "jiangsu-yangzhou-taizhou",
+ "inside_destinations": 20,
+ "standalone": 5,
+ "new_destinations": [
+  [
+   "yangzhou",
+   3,
+   30
+  ],
+  [
+   "taizhou",
+   5,
+   70
+  ]
+ ],
+ "lowest_kept": [
+  {
+   "name": "Longshan Mountain Scenic Resort",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Tomb of Puhaddin",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Shi Kefa Memorial",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Tianning Temple",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wenchang Pavilion",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Lu Family Salt Merchant Residence",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Dongguan Street",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Xiaoqinhuai Canal",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Five-Pavilion Bridge",
+   "views": 2837,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Feature on Slender West Lake already listed (rule 3)."
+  },
+  {
+   "name": "Gaoyou Lake",
+   "views": 1297,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Third-largest lake in Jiangsu; no counted visitor source, no named place to go."
+  },
+  {
+   "name": "Crane Mosque",
+   "views": 1073,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Historic mosque in the old city; interior access unconfirmed."
+  },
+  {
+   "name": "Water Forest",
+   "views": 807,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Xinghua wetland park, 807 views, no counted source."
+  },
+  {
+   "name": "Lianxing Temple White Dagoba",
+   "views": 593,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Landmark inside Slender West Lake park (rule 3)."
+  },
+  {
+   "name": "Qingyun Temple",
+   "views": 579,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage lists the temple; nothing described."
+  },
+  {
+   "name": "Gaoyou–Shaobo Campaign Memorial Hall",
+   "views": 539,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Gaoyou lists free hall in an old church; small."
+  },
+  {
+   "name": "Qintong Boat Festival",
+   "views": 418,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "An annual event (rule 4)."
+  },
+  {
+   "name": "Xu Garden, Yangzhou",
+   "views": 366,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Part of the Slender West Lake park area and no counted source (rule 3, rule 1)."
+  },
+  {
+   "name": "Shaobo Lake",
+   "views": 323,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Lake beside Shaobo Ancient Town; folded into the town spot (rule 3)."
+  },
+  {
+   "name": "Yechun Garden",
+   "views": 270,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Classical garden named in the city tourism listing but no counted source opened; Ge and He gardens are the better known pair."
+  },
+  {
+   "name": "Songjiacheng Sports and Recreation Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Gated sports park used by locals, evening hours only (rule 2, local park)."
+  },
+  {
+   "name": "Baozhang Lake",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local swimming spot north of downtown with a boardwalk (local use, rule 2)."
+  },
+  {
+   "name": "Zhuyuwan Scenic Area and Yangzhou Zoo",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage lists a scenic area and zoo 5 km NE with a dead link."
+  },
+  {
+   "name": "Marco Polo Memorial Hall",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage lists it but calls it a small children-oriented exhibition."
+  },
+  {
+   "name": "Hongyuan Market",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage lists a craft and antiques market north of the centre; opening pattern not shown."
+  },
+  {
+   "name": "Old Grand Canal, Yangzhou",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Canal edge route along old city on unpaved trails; near-duplicate of the Xiaoqinhuai canal and canal sights (rule 3)."
+  },
+  {
+   "name": "Gaoyou Museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage See: free local museum."
+  },
+  {
+   "name": "Baoying Canal Scenic Belt",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "40 km canal belt named in a government guide; no single place."
+  },
+  {
+   "name": "Chongru Temple",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Single gov list; Taizhou temple with no detail of what is there."
+  },
+  {
+   "name": "Chenghuang Temple",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Gov list city-god temple; no detail."
+  },
+  {
+   "name": "Anding Academy",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Historic academy on the gov list; open status unknown."
+  },
+  {
+   "name": "Rishe Garden",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Garden on the gov list; no detail of size or access."
+  },
+  {
+   "name": "Fengcheng River Scenic Area",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Area containing Wanghai Tower; duplicate of the tower spot (rule 3)."
+  },
+  {
+   "name": "Taizhou Old Street",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage itself calls it a misleadingly named new development of restaurants and souvenir stalls."
+  },
+  {
+   "name": "Hu Jintao Birthplace Neighbourhood",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Wikivoyage says the house is unmarked; nothing to see (rule 2)."
+  },
+  {
+   "name": "Xiaoyang Village Cherry Blossom Avenue",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "A 420 m avenue, spring only, a village (rules 3,4)."
+  },
+  {
+   "name": "Binhe Scenic Belt",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Riverside belt, local park-type, no detail."
+  },
+  {
+   "name": "Huangqiao Ancient Town",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Taixing ancient town with a battle site and memorial hall, single gov source."
+  },
+  {
+   "name": "National Ancient Ginkgo Park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Park of ancient ginkgos, best in late autumn; single gov source."
+  },
+  {
+   "name": "Taizhou Wanda Plaza",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Shopping mall (rule 2)."
+  },
+  {
+   "name": "Pozi Street",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Commercial pedestrian street, a shopping district (rule 2)."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Yucheng Postal Stop",
+   "id": "yucheng-postal-stop",
+   "views": 631,
+   "counted_sources": 1
+  },
+  {
+   "name": "Longshan Mountain Scenic Resort",
+   "id": "longshan-yizheng",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Zhenguo Temple",
+   "id": "zhenguo-temple-gaoyou",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Gaoyou Old Town",
+   "id": "gaoyou-old-town",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Qianduo Scenic Area",
+   "id": "qianduo-xinghua",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "benchmark": "Benchmark places (Red Rocks, Kapiti, Sumner etc.) are New Zealand-specific and do not apply to Jiangsu. The negative benchmarks hold: civic buildings and memorial halls without a visit draw stayed review or reject; no vehicle/operator spots were kept.",
+ "note": "Lowest kept spots score 0 views / 0-1 counted sources, so every left-out candidate with any views or counted source scores higher; each is listed with its judge reason from verdicts.json (rule 1-4 of What qualifies or a review hold for a concrete missing source/visit). Reviews await owner approval, nothing silently dropped."
+}

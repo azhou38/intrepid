@@ -1,0 +1,530 @@
+{
+ "changzhou-3": {
+  "lat": 31.7054857,
+  "lon": 119.9196329,
+  "source": "OSM node 9102038136 + Wikidata P625",
+  "feature_type": "historic=archaeological_site",
+  "confidence": "HIGH",
+  "note": "Wikidata 31.705464,119.91946 within 15 m"
+ },
+ "changzhou-6": {
+  "lat": 31.7913951,
+  "lon": 119.9329616,
+  "source": "OSM node 6286170189 (运河五号 ferry terminal) + Wikivoyage geo",
+  "feature_type": "amenity=ferry_terminal",
+  "confidence": "MEDIUM",
+  "note": "Named ferry terminal at the campus waterfront; Wikivoyage geo 31.790336,119.932033 ~150 m away; no OSM tourism feature for the campus"
+ },
+ "tianmu-lake-liyang": {
+  "lat": 31.3037721,
+  "lon": 119.4286978,
+  "source": "OSM way 334129142 天目湖山水园景区",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Main visitor park of the lake (shore access), not the open-water centroid 31.2896,119.42 (1.7 km)"
+ },
+ "huaian-2": {
+  "lat": 33.5171924,
+  "lon": 119.1444212,
+  "source": "OSM way 1228037847 周恩来纪念馆 + Wikivoyage geo",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "Hint 33.51726,119.1446 within 25 m; second OSM museum way on the north side at 33.5181378,119.1447074"
+ },
+ "huaian-5": {
+  "lat": 33.509078,
+  "lon": 119.1394612,
+  "source": "OSM way 1257049529 中国漕运博物馆 + Wikivoyage geo",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "Hint within 65 m"
+ },
+ "huaian-8": {
+  "lat": 33.6098188,
+  "lon": 119.055138,
+  "source": "OSM way 1216432835 张纯如纪念馆 + zh Wikipedia",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 33.60988,119.05543 within 30 m"
+ },
+ "huaian-11": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "RATE-LIMITED/UNRESOLVED: Nominatim finds only bus stops 动物园南门 33.59957,118.98190 and 动物园东门 33.60416,118.98648, no zoo feature; Wikivoyage geo 33.60024,118.9804 agrees with the south-gate stop (~160 m). Retry for the zoo polygon; fallback pin at the Wikivoyage point"
+ },
+ "suqian-2": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED (Nominatim 429): only the open-water relation centroid 34.1322636,118.1606393 and a locality 34.0355897,118.127782 (皂河 side); need a shore park/scenic-area gate (骆马湖风景区) retried"
+ },
+ "sihong-ancient-xucheng": {
+  "lat": 33.4430563,
+  "lon": 118.2028456,
+  "source": "OSM way 1465246985 古徐城景区停车场",
+  "feature_type": "amenity=parking (scenic area car park/entrance)",
+  "confidence": "MEDIUM",
+  "note": "Scenic-area polygon (way 1465246986) centroid 33.4415707,118.203563 is 170 m away; Wikivoyage geo 33.440227,118.208313 ~500 m away"
+ },
+ "nanjing-2": {
+  "lat": 32.0623145,
+  "lon": 118.8347042,
+  "source": "OSM way 380923041 明孝陵",
+  "feature_type": "historic=tomb",
+  "confidence": "MEDIUM",
+  "note": "zh Wikipedia 32.060305,118.834568 is 220 m south; en Wikipedia 32.058271,118.839631 is 650 m; footway 明孝陵 at 32.0560884,118.8346178"
+ },
+ "nanjing-8": {
+  "lat": 32.0725123,
+  "lon": 118.8405689,
+  "source": "OSM node 2600810866 北高峰 (main summit)",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": "Summit of Purple Mountain; en Wikipedia 32.0702,118.845 ~450 m away; script pick was a metro station"
+ },
+ "nanjing-13": {
+  "lat": 32.03957,
+  "lon": 118.812385,
+  "source": "Wikidata/zh Wikipedia 明故宫 P625 (午门 ruins)",
+  "feature_type": "wikidata P625 (heritage site)",
+  "confidence": "MEDIUM",
+  "note": "OSM park way 1161228936 centroid 32.0433532,118.8127786 is 440 m north; script pick was a metro station. Single coordinate source, OSM park as a loose cross-check"
+ },
+ "nanjing-16": {
+  "lat": 32.0557632,
+  "lon": 118.8351547,
+  "source": "OSM way 791617219 梅花山",
+  "feature_type": "landuse=forest (hill park)",
+  "confidence": "MEDIUM",
+  "note": "Centroid of the named hill/park; Wikivoyage geo 32.05193,118.84265 ~700 m SE. Not within 25 m of Ming Xiaoling (500 m)"
+ },
+ "nanjing-20": {
+  "lat": 32.0629615,
+  "lon": 118.7899275,
+  "source": "OSM way 319055520 鸡鸣寺 + Wikipedia",
+  "feature_type": "amenity=place_of_worship",
+  "confidence": "HIGH",
+  "note": "Wikipedia 32.06305556,118.79 within 12 m; script pick was a metro station"
+ },
+ "nanjing-23": {
+  "lat": 32.1535359,
+  "lon": 118.9529986,
+  "source": "OSM way 1243073749 栖霞寺",
+  "feature_type": "amenity=place_of_worship",
+  "confidence": "MEDIUM",
+  "note": "Wikipedia 32.15416667,118.95388889 is ~110 m away (large complex)"
+ },
+ "nanjing-26": {
+  "lat": 32.0641179,
+  "lon": 118.7914376,
+  "source": "OSM way 1061607219 解放门 + Wikivoyage geo",
+  "feature_type": "historic=city_gate",
+  "confidence": "HIGH",
+  "note": "OSM info office node 32.0642217,118.7915211 and Wikivoyage 32.064304,118.791628 within 25 m"
+ },
+ "nanjing-29": {
+  "lat": 32.0434942,
+  "lon": 118.7936005,
+  "source": "OSM way 318198215 江苏省美术馆",
+  "feature_type": "amenity=arts_centre",
+  "confidence": "MEDIUM",
+  "note": "zh Wikipedia 32.04594722,118.78837222 is ~700 m away (likely the old building); OSM is the current museum"
+ },
+ "nanjing-33": {
+  "lat": 32.076112,
+  "lon": 118.7266502,
+  "source": "OSM way 441882720 渡江胜利纪念馆 + Wikivoyage geo",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "Wikivoyage geo within 55 m"
+ },
+ "nanjing-37": {
+  "lat": 32.0557296,
+  "lon": 118.8399035,
+  "source": "OSM node 12035768069 南京海底世界 + Wikidata",
+  "feature_type": "tourism=aquarium",
+  "confidence": "HIGH",
+  "note": "Wikidata 32.0552902,118.8394459 within 60 m"
+ },
+ "nanjing-40": {
+  "lat": 32.1157324,
+  "lon": 118.6392404,
+  "source": "OSM node 7975819119 Sifang Art Museum + Wikivoyage geo",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "Wikivoyage geo 32.116095,118.63987 within 65 m"
+ },
+ "nantong-2": {
+  "lat": 32.0269362,
+  "lon": 120.8559968,
+  "source": "OSM node 12565696440 濠河景区游客中心",
+  "feature_type": "visitor-centre-named bus stop (hint is the OSM tourist-info point)",
+  "confidence": "MEDIUM",
+  "note": "Haohe moat scenic-area visitor centre; moat itself is a ring so a visitor point is used"
+ },
+ "nantong-6": {
+  "lat": 32.0106471,
+  "lon": 120.8716093,
+  "source": "OSM relation 10327368 文峰公园",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Small urban park, centroid; 175 m from the Textile Museum pin"
+ },
+ "nantong-9": {
+  "lat": 32.1020202,
+  "lon": 120.8288556,
+  "source": "OSM way 1464402389 森迪冰雪海洋乐园",
+  "feature_type": "tourism=theme_park",
+  "confidence": "MEDIUM",
+  "note": "Hint is the same OSM feature"
+ },
+ "nantong-12": {
+  "lat": 32.0122916,
+  "lon": 120.8726458,
+  "source": "OSM relation 10327369 南通纺织博物馆",
+  "feature_type": "OSM relation named for the museum (tagged leisure=park)",
+  "confidence": "MEDIUM",
+  "note": "Museum grounds in Wenfeng area; 175 m from Wenfeng Park pin"
+ },
+ "nantong-15": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED (Nominatim 429, Overpass down): no OSM feature found for 中国眼科博物馆 in the first pass and no hint; museum is in Nantong city (Wenfeng/Haohe area), retry"
+ },
+ "jianghai-museum-haimen": {
+  "lat": 31.8659552,
+  "lon": 121.1782724,
+  "source": "OSM way 1558276472 江海博物馆",
+  "feature_type": "landuse=commercial named for the museum",
+  "confidence": "MEDIUM",
+  "note": "Bus stop 江海博物馆 (the hint) at 31.8652209,121.1798 is ~160 m away; no tourism=museum feature found"
+ },
+ "yancheng-3": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED: only OSM place=island way 916214354 (mudflat centroid 32.765192,121.1310039, likely on tidal flat); need the visitor observation/entrance point, retry"
+ },
+ "yancheng-6": {
+  "lat": 33.3593052,
+  "lon": 120.1669072,
+  "source": "OSM way 590692271 中国海盐博物馆",
+  "feature_type": "building=yes (museum building)",
+  "confidence": "MEDIUM",
+  "note": "No second source found"
+ },
+ "suzhou-6": {
+  "lat": 31.296731,
+  "lon": 120.6214474,
+  "source": "OSM way 492154541 沧浪亭 + Wikipedia",
+  "feature_type": "leisure=garden",
+  "confidence": "HIGH",
+  "note": "Wikipedia 31.29702778,120.62113889 within 40 m"
+ },
+ "suzhou-13": {
+  "lat": 31.3183646,
+  "lon": 120.6341018,
+  "source": "OSM way 492151336 耦园 + zh Wikipedia",
+  "feature_type": "leisure=garden",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 31.31830556,120.63452778 within 40 m. The hint 31.31316667,120.609 (en Wikipedia) is wrong, 2.5 km away"
+ },
+ "suzhou-20": {
+  "lat": 31.3165394,
+  "lon": 120.7083885,
+  "source": "OSM node 4614099867 苏州摩天轮 + en Wikipedia",
+  "feature_type": "tourism=attraction",
+  "confidence": "HIGH",
+  "note": "en Wikipedia within 30 m"
+ },
+ "suzhou-24": {
+  "lat": 31.2972684,
+  "lon": 120.6192583,
+  "source": "OSM way 346330952 苏州文庙 + Wikipedia",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "Wikipedia 31.2975,120.61944 within 30 m"
+ },
+ "suzhou-28": {
+  "lat": 31.3148171,
+  "lon": 120.6305874,
+  "source": "OSM node 4701308089 评弹博物馆 + zh Wikipedia",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 31.31474,120.63091 within 35 m"
+ },
+ "suzhou-33": {
+  "lat": 31.3247028,
+  "lon": 120.7192613,
+  "source": "OSM relation 7363894 苏州工业园区 label point",
+  "feature_type": "boundary=administrative (district)",
+  "confidence": "MEDIUM",
+  "note": "District, no single feature; Wikipedia 31.324,120.7233 ~380 m east. Keeps clear of the Ferris wheel pin (1.2 km)"
+ },
+ "suzhou-36": {
+  "lat": 31.258195,
+  "lon": 120.5886477,
+  "source": "OSM way 1387458584 苏州考古博物馆 + zh Wikipedia",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 31.25812389,120.58859306 within 10 m"
+ },
+ "jiangnan-water-towns-3": {
+  "lat": 31.2718078,
+  "lon": 120.8675297,
+  "source": "OSM way 807948826 甪直古镇",
+  "feature_type": "tourism=attraction (ancient town core)",
+  "confidence": "MEDIUM",
+  "note": "Wikidata 31.27359,120.86262 ~500 m away; en Wikipedia 31.27476,120.879149 ~1 km; boundary centroid 31.269,120.859"
+ },
+ "tinglin-garden-kunshan": {
+  "lat": 31.3923135,
+  "lon": 120.9439124,
+  "source": "OSM way 332119716 亭林园",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Wikivoyage geo 31.392942,120.945451 ~150 m away"
+ },
+ "zheng-he-park-taicang": {
+  "lat": 31.6003218,
+  "lon": 121.2443202,
+  "source": "OSM way 559776143 郑和公园",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Wikivoyage geo 31.600633,121.246566 ~215 m away"
+ },
+ "shang-lake-changshu": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED (Nominatim 429): only the open-water relation 1470522 centroid (31.6510137,120.6835717); need a shore park gate (尚湖风景区/尚湖公园), retry"
+ },
+ "wuxi-2": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED (Nominatim 429): OSM nature_reserve way 1047447526 太湖鼋头渚风景区 centroid 31.5246454,120.2019918 vs Wikivoyage geo 31.5178,120.22799 disagree by 2.5 km; need the park gate/headland point, retry"
+ },
+ "wuxi-6": {
+  "lat": 31.4211243,
+  "lon": 120.0716124,
+  "source": "OSM node 9482627579 拈花湾禅意小镇",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "Wikivoyage hint 31.52748,120.28319 is 20 km away in Wuxi city and wrong; OSM node is in Mashan, Binhu district, on Taihu"
+ },
+ "wuxi-10": {
+  "lat": 31.5787435,
+  "lon": 120.3038115,
+  "source": "OSM way 221170269 东林书院 + zh Wikipedia",
+  "feature_type": "leisure=park (academy grounds)",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 31.57817806,120.30366889 within 65 m"
+ },
+ "wuxi-13": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED: no OSM feature for 泰伯庙 in Wuxi (Nominatim result was the Suzhou temple); zh Wikipedia 泰伯庙 31.54376306,120.43022389 (Meicun) is the only source, retry OSM"
+ },
+ "wuxi-16": {
+  "lat": 31.5856141,
+  "lon": 120.2326155,
+  "source": "OSM way 221496135 无锡动物园 + zh Wikipedia",
+  "feature_type": "leisure=park (zoo)",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 31.5856,120.2317 within 85 m"
+ },
+ "wuxi-19": {
+  "lat": 31.5276102,
+  "lon": 120.548406,
+  "source": "OSM way 329441181 荡口古镇景区",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "zh Wikipedia 荡口华氏建筑群 31.52728,120.55 ~150 m away"
+ },
+ "yixing-1": {
+  "lat": 31.2616638,
+  "lon": 119.8256457,
+  "source": "OSM way 1255359940 宜兴陶瓷博物馆 + zh Wikipedia",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 31.26161,119.82566 within 10 m"
+ },
+ "yixing-4": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED: OSM node 13089007449 善卷洞 (31.2997642,119.6683832, odd place_of_worship tag) and Wikidata 31.30327,119.66116 disagree by 730 m; want a cave entrance/gate feature, retry"
+ },
+ "yixing-7": {
+  "lat": 31.326035,
+  "lon": 119.8069295,
+  "source": "OSM node 12688697503 龙背山森林公园",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Single point node, no second source"
+ },
+ "jiangyin-3": {
+  "lat": 31.9211917,
+  "lon": 120.257724,
+  "source": "OSM way 1080533083 君山公园 + Wikivoyage geo",
+  "feature_type": "leisure=park",
+  "confidence": "HIGH",
+  "note": "Wikivoyage geo 31.92173,120.25772 within 60 m"
+ },
+ "jiangyin-6": {
+  "lat": 31.9061064,
+  "lon": 120.2589744,
+  "source": "OSM way 744520924 刘氏兄弟故居 + zh Wikipedia",
+  "feature_type": "leisure=park (residence grounds)",
+  "confidence": "HIGH",
+  "note": "zh Wikipedia 31.90611111,120.25888889 within 10 m"
+ },
+ "xuzhou-3": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED: only the open-water lake centroid (OSM relation 4663748 34.2386636,117.1572272 / zh Wikipedia 34.2376,117.1567); en Wikipedia 34.2345874,117.1186608 differs by 3.5 km; need a shore gate/visitor centre, retry"
+ },
+ "xuzhou-6": {
+  "lat": 34.2567997,
+  "lon": 117.1839631,
+  "source": "OSM node 8180360345 户部山古建筑群",
+  "feature_type": "place=locality",
+  "confidence": "MEDIUM",
+  "note": "Neighbourhood node 户部山 at 34.2578297,117.1824802 ~170 m away; script pick was a bus stop"
+ },
+ "xuzhou-9": {
+  "lat": 34.2086793,
+  "lon": 117.1563303,
+  "source": "OSM way 1496183551 泉山森林公园",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Park polygon centroid (gate not located); Wikivoyage/OSM hint 34.20838,117.15235 within 100 m"
+ },
+ "lianyungang-2": {
+  "lat": 34.76334,
+  "lon": 119.46665,
+  "source": "OSM place=island node 连岛",
+  "feature_type": "place=island",
+  "confidence": "MEDIUM",
+  "note": "Relation centroid 34.7634075,119.4605346 ~560 m west; Wikipedia 34.7575,119.46388889 ~700 m SSW"
+ },
+ "lianyungang-5": {
+  "lat": 34.567812,
+  "lon": 119.1697075,
+  "source": "OSM node 13988094686 孔望山",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": "en Wikipedia 34.5682,119.1683 ~130 m; Wikidata 34.567545,119.167788 ~190 m (carvings are on the hill)"
+ },
+ "lianyungang-8": {
+  "lat": 34.5948626,
+  "lon": 119.2183246,
+  "source": "OSM way 1325570480 连云港市博物馆",
+  "feature_type": "tourism=museum",
+  "confidence": "MEDIUM",
+  "note": "No second source"
+ },
+ "yangzhou-2": {
+  "lat": 32.4011638,
+  "lon": 119.4381972,
+  "source": "OSM node 2429845786 个园 + Wikipedia",
+  "feature_type": "tourism=attraction",
+  "confidence": "HIGH",
+  "note": "en Wikipedia 32.402015,119.438148 within 95 m; garden polygon centroid 32.4010354,119.4382662"
+ },
+ "yangzhou-8": {
+  "lat": 32.3646393,
+  "lon": 119.4219207,
+  "source": "OSM node 8926054841 中国大运河博物馆",
+  "feature_type": "tourism=museum",
+  "confidence": "MEDIUM",
+  "note": "en Wikipedia 32.3642,119.423 is ~115 m away (large museum)"
+ },
+ "yangzhou-11": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED (Nominatim 429, name search returned a Shanxi temple): need OSM/Wikipedia feature for 扬州天宁寺, retry"
+ },
+ "longshan-yizheng": {
+  "lat": 32.2642312,
+  "lon": 119.0672359,
+  "source": "OSM node 13050154377 龙山风景区",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "Located in Qingshan town, Yizheng; single node, no second source"
+ },
+ "qianduo-xinghua": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED: no OSM feature found for 千垛景区 (only 千垛镇 town node 33.0029538,119.7759232 ~3.7 km away); Wikivoyage geo 33.0208,119.8116 is 4 decimals only, retry"
+ },
+ "taizhou-3": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED (Nominatim returned nothing for 梅兰芳纪念馆, no hint): retry"
+ },
+ "taizhou-6": {
+  "lat": 32.6518892,
+  "lon": 120.0924974,
+  "source": "OSM way 1451338712 溱潼古镇旅游景区",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "Hint 32.65191,120.09261 is the same feature"
+ },
+ "zhenjiang-2": {
+  "lat": 32.2403626,
+  "lon": 119.4788567,
+  "source": "OSM node 3181077990 焦山 + Wikipedia",
+  "feature_type": "natural=peak",
+  "confidence": "HIGH",
+  "note": "en Wikipedia 32.24038,119.47882 within 10 m"
+ },
+ "zhenjiang-5": {
+  "lat": 32.21545,
+  "lon": 119.4268389,
+  "source": "OSM way 1303855573 镇江博物馆",
+  "feature_type": "tourism=museum",
+  "confidence": "MEDIUM",
+  "note": "Hint is the same feature; no second source"
+ },
+ "zhenjiang-9": {
+  "lat": null,
+  "lon": null,
+  "source": "",
+  "feature_type": "",
+  "confidence": "LOW",
+  "note": "UNRESOLVED: only a Wikivoyage geo 32.102711,119.479942 and Hengshun vinegar plant landuse 32.1066044,119.4721225 (1 km away); no museum feature, retry"
+ }
+}

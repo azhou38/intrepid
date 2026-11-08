@@ -1,0 +1,532 @@
+[
+ {
+  "name": "Lake Tai",
+  "action": "standalone",
+  "destination": null,
+  "id": "lake-tai",
+  "country": "China",
+  "countryCode": "CN",
+  "continent": "Asia",
+  "timezone": "Asia/Shanghai",
+  "coordinates": {
+   "lat": 31.23333333,
+   "lng": 120.13333333
+  },
+  "coordinates_source": "wikipedia:Lake Tai",
+  "needs_pin": true,
+  "category": "nature",
+  "icon": "🌊",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "bio_draft": "Large freshwater lake shared by Wuxi and Suzhou, known for its fish, pearls and lakeside scenic spots.",
+  "views": 24078,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Lake Tai spans Suzhou, Wuxi, Huzhou and Yixing shores; the Wikipedia point is the centroid in open water, 40 km from Wuxi's centre and over 50 km from Suzhou's, so it belongs to no destination's bounds. One shared standalone spot (owned by the Wuxi region file; Suzhou's duplicate is not placed again).",
+  "pin_note": "Wikipedia centroid is open water; resolve-pin.py must choose a visitor access point (a lake spot in water is allowed, but a shore point is preferred)"
+ },
+ {
+  "name": "Turtle Head Island",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-2",
+  "coordinates": {
+   "lat": 31.5178,
+   "lng": 120.22799
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "nature",
+  "icon": "🌸",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "bio_draft": "Yuantouzhu, a 5A scenic peninsula park on Lake Tai known for its cherry blossoms and lake views.",
+  "views": 874,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 8.7 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Jichang Garden",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-4",
+  "coordinates": {
+   "lat": 31.58075,
+   "lng": 120.27097
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "historic",
+  "icon": "🏯",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "bio_draft": "Classical garden in the Xihui scenic area that Emperor Qianlong copied at the Summer Palace.",
+  "views": 3015,
+  "counted_sources": 2,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 3.2 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Nianhua Bay",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-6",
+  "coordinates": {
+   "lat": 31.52748,
+   "lng": 120.28319
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "entertainment",
+  "icon": "🛕",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "bio_draft": "Zen-themed scenic town beside Lingshan with shops, a canal and a lake setting.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 4.6 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Liyuan Garden",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-8",
+  "wiki": "Liyuan (garden)",
+  "coordinates": {
+   "lat": 31.51954,
+   "lng": 120.254588
+  },
+  "coordinates_source": "wikipedia:Liyuan (garden)",
+  "needs_pin": false,
+  "category": "historic",
+  "icon": "🏯",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "bio_draft": "Classical garden beside Lihu Lake, famous for its Lake Tai rock formations.",
+  "views": 2122,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 6.8 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Donglin Academy",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-10",
+  "coordinates": {
+   "lat": 31.57692,
+   "lng": 120.30866
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "historic",
+  "icon": "🏛️",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "bio_draft": "Ming-era academy with gardens, halls and a stone arch, where scholars prepared for the imperial exams.",
+  "views": 3486,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 1.4 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Wuxi Museum",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-12",
+  "coordinates": {
+   "lat": 31.55164,
+   "lng": 120.301378
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "museum",
+  "icon": "🏛️",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "bio_draft": "Wuxi's largest public museum, covering local history and art, and free to enter.",
+  "views": 1996,
+  "counted_sources": 1,
+  "free": true,
+  "cost": null,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "needs_research": [
+   "ticketUrl"
+  ],
+  "currency": "CNY",
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 1.7 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Dangkou Ancient Town",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-14",
+  "wiki": "Meicun",
+  "coordinates": {
+   "lat": 31.54223,
+   "lng": 120.43339
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "historic",
+  "icon": "🏮",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "bio_draft": "Large old-town scenic area at Meicun on the site of the former Tai Bo capital.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 12.9 km from the centre, inside the 40 km span.",
+  "merge_note": "merged with duplicate wuxi-19 (Wikivoyage lists it as First Ancient Town in Jiangnan)"
+ },
+ {
+  "name": "Wuxi Zoo",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-16",
+  "wiki": "Wuxi Zoo and Taihu Lake Amusement Park",
+  "coordinates": {
+   "lat": 31.58056,
+   "lng": 120.23369
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "entertainment",
+  "icon": "🦒",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "bio_draft": "National 4A zoo in Binhu with over a thousand animals, a sightseeing bus and an amusement area.",
+  "views": 0,
+  "counted_sources": 2,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 6.5 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Wuxi Sunac Sea World",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-18",
+  "coordinates": {
+   "lat": 31.44775,
+   "lng": 120.27081
+  },
+  "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+  "needs_pin": false,
+  "category": "entertainment",
+  "icon": "🦈",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "bio_draft": "Sunac marine park in Binhu with sharks, rays and more than 1,500 species.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), 13.5 km from the centre, inside the 40 km span."
+ },
+ {
+  "name": "Helu City Site",
+  "action": "spot",
+  "destination": "wuxi",
+  "id": "wuxi-20",
+  "wiki": "Helu City",
+  "coordinates": null,
+  "coordinates_source": null,
+  "needs_pin": true,
+  "pin_note": "no source coordinates; resolve-pin.py must find the visitor point before apply",
+  "category": "historic",
+  "icon": "🏺",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "bio_draft": "Archaeological museum at the remains of King Helu of Wu's capital, open since 2012.",
+  "views": 0,
+  "counted_sources": 0,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Wuxi city or its Lake Tai shore (Binhu, Xishan, Huishan, Liangxi), None km from the centre, inside the 40 km span.",
+  "destination_provisional": true
+ },
+ {
+  "name": "Yixing Ceramics Museum",
+  "action": "spot",
+  "destination": "yixing",
+  "id": "yixing-1",
+  "coordinates": {
+   "lat": 31.261775,
+   "lng": 119.82516
+  },
+  "coordinates_source": "Wikivoyage Yixing listing geo tag",
+  "needs_pin": false,
+  "category": "museum",
+  "icon": "🫖",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "bio_draft": "China's first ceramics museum, in Dingshu, showing Yixing teapots and clay ware.",
+  "views": 0,
+  "counted_sources": 2,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Inside Yixing county-level city (Wikivoyage Yixing article), 7.5 km from the centre, inside the 50 km span."
+ },
+ {
+  "name": "Longchi Mountain Scenic Area",
+  "action": "spot",
+  "destination": "yixing",
+  "id": "yixing-3",
+  "wiki": "Longchi Mountain",
+  "coordinates": {
+   "lat": 31.215402,
+   "lng": 119.694544
+  },
+  "coordinates_source": "Wikivoyage Yixing listing geo tag",
+  "needs_pin": false,
+  "category": "nature",
+  "icon": "🌲",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "bio_draft": "Nature reserve in the Zhangzhu hills with a bicycle park and sightseeing car, home to rare pines and magnolias.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Inside Yixing county-level city (Wikivoyage Yixing article), 12.7 km from the centre, inside the 50 km span."
+ },
+ {
+  "name": "Zhanggong's Cave",
+  "action": "spot",
+  "destination": "yixing",
+  "id": "yixing-5",
+  "coordinates": null,
+  "coordinates_source": null,
+  "needs_pin": true,
+  "pin_note": "no source coordinates; resolve-pin.py must find the visitor point before apply",
+  "category": "nature",
+  "icon": "🕳️",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "bio_draft": "Limestone karst cave in Yixing that is a Taoist site with Tang-era inscriptions.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Inside Yixing county-level city (Wikivoyage Yixing article); distance not computable until the pin is resolved.",
+  "destination_provisional": true
+ },
+ {
+  "name": "Longbeishan Forest Park",
+  "action": "spot",
+  "destination": "yixing",
+  "id": "yixing-7",
+  "coordinates": null,
+  "coordinates_source": null,
+  "needs_pin": true,
+  "pin_note": "no source coordinates; resolve-pin.py must find the visitor point before apply",
+  "category": "nature",
+  "icon": "🌲",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "bio_draft": "National 4A forest park in Yixing with 5.5 square km of woodland and recreation.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Inside Yixing county-level city (Wikivoyage Yixing article); distance not computable until the pin is resolved.",
+  "destination_provisional": true
+ },
+ {
+  "name": "Changjing Ancient Town",
+  "action": "spot",
+  "destination": "jiangyin",
+  "id": "jiangyin-2",
+  "coordinates": {
+   "lat": 31.7471,
+   "lng": 120.4782
+  },
+  "coordinates_source": "Wikivoyage Jiangyin listing geo tag",
+  "needs_pin": false,
+  "category": "historic",
+  "icon": "🛶",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "bio_draft": "Ancient water town southeast of Jiangyin with canals, stone bridges and traditional architecture.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Inside Jiangyin county-level city (Wikivoyage Jiangyin article), 20.4 km from the centre, inside the 55 km span."
+ },
+ {
+  "name": "Ebizui Park",
+  "action": "spot",
+  "destination": "jiangyin",
+  "id": "jiangyin-4",
+  "coordinates": {
+   "lat": 31.9356,
+   "lng": 120.2657
+  },
+  "coordinates_source": "Wikivoyage Jiangyin listing geo tag",
+  "needs_pin": false,
+  "category": "nature",
+  "icon": "🌳",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "bio_draft": "Yangtze riverside park named after its goose's-beak shape, with river views and tree-lined paths.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Inside Jiangyin county-level city (Wikivoyage Jiangyin article), 10.1 km from the centre, inside the 55 km span."
+ },
+ {
+  "name": "Former Residence of Liu Brothers",
+  "action": "spot",
+  "destination": "jiangyin",
+  "id": "jiangyin-6",
+  "coordinates": {
+   "lat": 31.90631,
+   "lng": 120.26017
+  },
+  "coordinates_source": "Wikivoyage Jiangyin listing geo tag",
+  "needs_pin": false,
+  "category": "historic",
+  "icon": "🏯",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "bio_draft": "Former home of Liu Bannong and Liu Tianhua, a modern linguist and a musician, with exhibits.",
+  "views": 0,
+  "counted_sources": 1,
+  "cost": null,
+  "costBasis": null,
+  "currency": "CNY",
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl"
+  ],
+  "source_region": "wuxi",
+  "reason": "Inside Jiangyin county-level city (Wikivoyage Jiangyin article), 7.3 km from the centre, inside the 55 km span."
+ }
+]

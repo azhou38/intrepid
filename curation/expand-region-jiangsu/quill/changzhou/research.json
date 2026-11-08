@@ -1,0 +1,306 @@
+{
+ "changzhou-1": {
+  "currency": "CNY",
+  "cost_source": "https://en.wikivoyage.org/wiki/Changzhou",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "unverified",
+  "ticketUrl_evidence": "Wikipedia lists http://www.tianningsi.org/ as the official site; fetch failed (network error, not a block). Retry in a browser.",
+  "notes": "Price from Wikivoyage listing (updated Nov 2019, marked dead link); not confirmed on an operator page. UNRESOLVED: official site unreachable.",
+  "facts": [
+   {
+    "text": "Buddhist temple in Tianning District, Changzhou, with the 13-storey Tianning Pagoda, 153.79 m tall, completed 2007 and described as the tallest pagoda in the world.",
+    "source_url": "https://en.wikipedia.org/wiki/Tianning_Temple_(Changzhou)"
+   },
+   {
+    "text": "The temple grounds date back to the Tang dynasty; the current pagoda was finished in April 2007.",
+    "source_url": "https://en.wikipedia.org/wiki/Tianning_Temple_(Changzhou)"
+   },
+   {
+    "text": "Located at 636 Yanling Middle Road, a few hundred metres east of the Culture Palace metro station.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   }
+  ],
+  "free": false,
+  "costMin": 80,
+  "costMax": 80,
+  "costBasis": "entry",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Tianning Temple (Changzhou)"
+ },
+ "changzhou-2": {
+  "currency": "CNY",
+  "cost_source": "https://en.wikivoyage.org/wiki/Changzhou",
+  "cost_confidence": "guide",
+  "ticketUrl": "http://www.cnkly.com/",
+  "ticketUrl_status": "BLOCKED",
+  "ticketUrl_evidence": "Listed as the official site on the English Wikipedia article (http://www.cnkly.com/); script fetch returns HTTP 405 from a security-guard WAF. Orchestrator to check title in a real browser.",
+  "notes": "Wikivoyage: full day CNY 260, afternoon-only CNY 160 (listing marked dead link). Not confirmed on operator page.",
+  "facts": [
+   {
+    "text": "Theme park in Changzhou, open since September 2000, covering more than 600 mu (0.27 km2), also called the Eastern Jurassic Park.",
+    "source_url": "https://en.wikipedia.org/wiki/China_Dinosaurs_Park"
+   },
+   {
+    "text": "Its museum holds a nearly complete Sinosauropteryx fossil skeleton plus Brachiosaurus and Hadrosaurus fossils.",
+    "source_url": "https://en.wikipedia.org/wiki/China_Dinosaurs_Park"
+   },
+   {
+    "text": "Rides, dancing dinosaurs and a few fossils; at 1 Hanjiang Road, Xinbei District.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   }
+  ],
+  "free": false,
+  "costMin": 260,
+  "costMax": 260,
+  "costBasis": "entry",
+  "visitHoursMin": 4,
+  "visitHoursMax": 8,
+  "wiki": "China Dinosaurs Park"
+ },
+ "changzhou-3": {
+  "currency": "CNY",
+  "cost_source": "https://www.yclyq.com/22706.html",
+  "cost_confidence": "none",
+  "ticketUrl": "https://www.yclyq.com/",
+  "ticketUrl_status": "verified",
+  "ticketUrl_evidence": "Loaded; title '中国春秋淹城旅游区【官网】' (official site of the Chunqiu Yancheng tourist area), linked from Wikipedia's Chunqiu Yancheng article.",
+  "notes": "HOLD for cost: the official page says the ruins park can be bought separately (and park ticket includes it) but gives no standard price. Search snippet (non-official, undated) gave 220 for the amusement park; not used. Pin is the ruins park.",
+  "facts": [
+   {
+    "text": "Remains of an ancient Spring and Autumn period city, now rebuilt and displayed as a tourist attraction rated AAAAA, the highest official rating.",
+    "source_url": "https://en.wikipedia.org/wiki/Chunqiu_Yancheng"
+   },
+   {
+    "text": "Yancheng is a city enclosed by three concentric moats (three cities, three rivers), about 850 m east-west and 750 m north-south, some 2,500 years old.",
+    "source_url": "https://www.cn-yc.com.cn/ljyc"
+   },
+   {
+    "text": "Wooden dugout canoes were unearthed at the site in 1958; two are held in the Wujin Yancheng Museum.",
+    "source_url": "https://www.cn-yc.com.cn/zyjd"
+   },
+   {
+    "text": "The Chunqiu Yancheng tourist area comprises the ruins park, the Spring and Autumn amusement park, the wild animal world and a traditional commercial street.",
+    "source_url": "https://www.yclyq.com/"
+   }
+  ],
+  "free": false,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "entry",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "wiki": "Chunqiu Yancheng"
+ },
+ "changzhou-4": {
+  "currency": "CNY",
+  "cost_source": "https://en.wikivoyage.org/wiki/Changzhou",
+  "cost_confidence": "guide",
+  "ticketUrl": "http://www.redplumpark.com/",
+  "ticketUrl_status": "BLOCKED",
+  "ticketUrl_evidence": "Official site per Wikipedia and Wikivoyage; script fetch returns 403 Forbidden (openresty). Orchestrator to check title in a real browser; free park so omit if it does not load.",
+  "notes": "Free per Wikivoyage listing (marked dead link).",
+  "facts": [
+   {
+    "text": "Hongmei (Red Plum) Park, in northeast Changzhou, is one of the city's largest comprehensive parks at 37 hectares, with gardens and a lake.",
+    "source_url": "https://en.wikipedia.org/wiki/Hongmei_Park"
+   },
+   {
+    "text": "At the rear are the Writing Pagoda (Wenbi Ta) and Red Plum Pavilion; also a flamingo pond and elevated walkway among trees.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   },
+   {
+    "text": "Open all day and free to enter.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "open",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Hongmei Park"
+ },
+ "changzhou-5": {
+  "currency": "CNY",
+  "cost_source": "https://en.wikivoyage.org/wiki/Changzhou",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "No official site found in Wikipedia or Wikivoyage listings (Wikivoyage lists only a phone).",
+  "notes": "Wikivoyage: 05:00-21:00, Free. Kept as entry (No Entry Fee) because the park has set hours; change to open if the orchestrator prefers.",
+  "facts": [
+   {
+    "text": "Small 2.667-hectare Grand Canal park named for the Song poet Su Dongpo, who is commemorated by a boat-fitting pavilion where he once boated.",
+    "source_url": "https://en.wikipedia.org/wiki/Dongpo_Park"
+   },
+   {
+    "text": "Appears like an island, bounded by the Grand Canal and smaller canals; an islet joined by an arching bridge has a Dongpo academy hall fronted by his statue.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   },
+   {
+    "text": "The main garden holds the foundations and carved-stone fragments of a palace built for Emperor Qianlong's visit.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "entry",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "wiki": "Dongpo Park"
+ },
+ "changzhou-6": {
+  "currency": "CNY",
+  "cost_source": null,
+  "cost_confidence": "none",
+  "ticketUrl": null,
+  "ticketUrl_status": "unverified",
+  "ticketUrl_evidence": "Wikipedia lists http://www.yunhe5.cn/index1.html (dead: fetch failed); Wikivoyage listing marked dead link.",
+  "notes": "HOLD for cost: no source states admission. Wikivoyage gives no price. Likely free to walk in but unsourced, so not recorded.",
+  "facts": [
+   {
+    "text": "Creative campus at 141 Sanbao Street, Zhonglou District, founded in late 2008 on 36,388 m2 with about 32,000 m2 of floor area.",
+    "source_url": "https://en.wikipedia.org/wiki/Canal_5_Creative_Campus"
+   },
+   {
+    "text": "A former textile mill on the Grand Canal turned into art studios, restaurants, nightclubs and museums, with the old buildings preserved.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   },
+   {
+    "text": "A tour boat runs here from Dongpo Park.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   }
+  ],
+  "free": false,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "entry",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Canal 5 Creative Campus"
+ },
+ "changzhou-7": {
+  "currency": "CNY",
+  "cost_source": "https://en.wikivoyage.org/wiki/Changzhou",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "unverified",
+  "ticketUrl_evidence": "Wikipedia lists http://www.czmuseum.com/ as official site; fetch failed (network error). Retry in a browser.",
+  "notes": "Free per Wikivoyage (updated Nov 2019). The shard's draft bio mentions a children's natural history museum: not sourced here, drop it.",
+  "facts": [
+   {
+    "text": "Comprehensive museum founded 1958 with more than 20,000 relics in eight sections, including Spring and Autumn green porcelain, Song and Yuan lacquerware and porcelain, and Ming and Qing paintings.",
+    "source_url": "https://en.wikipedia.org/wiki/Changzhou_Museum"
+   },
+   {
+    "text": "The current building west of People's Square opened to the public on 28 April 2007.",
+    "source_url": "https://en.wikipedia.org/wiki/Changzhou_Museum"
+   },
+   {
+    "text": "At 1288 Longcheng Avenue; entry is free, English guides are available for CNY 100.",
+    "source_url": "https://en.wikivoyage.org/wiki/Changzhou"
+   }
+  ],
+  "free": true,
+  "costMin": null,
+  "costMax": null,
+  "costBasis": "entry",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "wiki": "Changzhou Museum"
+ },
+ "changzhou-8": {
+  "currency": "CNY",
+  "cost_source": "http://www.yczoo.com/fare.asp",
+  "cost_confidence": "official",
+  "ticketUrl": "http://www.yczoo.com/",
+  "ticketUrl_status": "verified",
+  "ticketUrl_evidence": "Loaded; title '淹城野生动物园,淹城动物园,常州动物园'; fare page says 欢迎访问淹城野生动物世界官网; also linked from the official Chunqiu Yancheng site. Note: site is http only.",
+  "notes": "Official adult ticket CNY 200 (1.5 m and over); self-drive vehicle ticket CNY 230 per car extra, not used. Shard bio says 'animals in enclosures': prefer walk-through plus self-drive.",
+  "facts": [
+   {
+    "text": "Wild animal park in Wujin District, Changzhou, with walk-through and drive-through areas; visitors may drive their own vehicle through the park.",
+    "source_url": "http://www.yczoo.com/fare.asp"
+   },
+   {
+    "text": "Part of the Chunqiu Yancheng AAAAA tourist area; at 199 Wuyi Middle Road, Wujin.",
+    "source_url": "http://www.yczoo.com/"
+   },
+   {
+    "text": "Wikipedia notes the zoo has been described as open only in spring and autumn; the official page gives no seasonal closure (this conflict is unresolved).",
+    "source_url": "https://en.wikipedia.org/wiki/Yancheng_Wild_Animal_World"
+   }
+  ],
+  "free": false,
+  "costMin": 200,
+  "costMax": 200,
+  "costBasis": "entry",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "wiki": "Yancheng Wild Animal World"
+ },
+ "tianmu-lake-liyang": {
+  "currency": "CNY",
+  "cost_source": "https://www.tmhtour.com/shows/18/166.html",
+  "cost_confidence": "official",
+  "ticketUrl": "https://www.tmhtour.com/",
+  "ticketUrl_status": "verified",
+  "ticketUrl_evidence": "Loaded; title '【官网】天目湖-天目湖旅游官方网站'; operator Jiangsu Tianmu Lake Tourism Co. (Wikipedia's tmhnszh.com redirects here).",
+  "notes": "Official FAQ gives only the holiday-period price: Shanshuiyuan scenic area including boat CNY 180; off-peak price not found, so 180 is likely the upper end. Wikipedia lake area figure (300 km2) looks wrong, do not use.",
+  "facts": [
+   {
+    "text": "Lake 8 km south of Liyang, listed as a provincial tourist resort in 1993 and graded AAAA nature reserve in 2001 (now operated as the Tianmu Lake scenic area).",
+    "source_url": "https://en.wikipedia.org/wiki/Tianmu_Lake"
+   },
+   {
+    "text": "The scenic area offers boat trips on the lake (the Shanshuiyuan ticket includes the boat).",
+    "source_url": "https://www.tmhtour.com/shows/18/166.html"
+   },
+   {
+    "text": "Sits by Nanshan Bamboo Sea, run by the same operator, which is also a 5A scenic area.",
+    "source_url": "https://www.tmhtour.com/shows/42/255.html"
+   }
+  ],
+  "free": false,
+  "costMin": 180,
+  "costMax": 180,
+  "costBasis": "entry",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "wiki": "Tianmu Lake"
+ },
+ "nanshan-bamboo-sea-liyang": {
+  "currency": "CNY",
+  "cost_source": "https://www.tmhtour.com/shows/18/166.html",
+  "cost_confidence": "official",
+  "ticketUrl": "https://www.tmhtour.com/",
+  "ticketUrl_status": "verified",
+  "ticketUrl_evidence": "Same operator site as Tianmu Lake (title '【官网】天目湖-天目湖旅游官方网站'); its guide lists 南山竹海 as one of its scenic areas and its notices name 南山竹海景区.",
+  "notes": "CNY 90 per official FAQ (holiday price, Nanshan Bamboo Sea) and Wikipedia ('90 RMB'). Shard draft says 35,000 mu: the source says 2,300 ha (about 34,500 mu), use hectares.",
+  "facts": [
+   {
+    "text": "Ecological tourist area in the southern mountains of Liyang, open since 2000, near Tianmu Lake.",
+    "source_url": "https://en.wikipedia.org/wiki/Nanshan_Zhuhai"
+   },
+   {
+    "text": "About 2,300 hectares of bamboo make up the 'bamboo sea'.",
+    "source_url": "https://en.wikipedia.org/wiki/Nanshan_Zhuhai"
+   },
+   {
+    "text": "Zones include a lake entertainment district, a historic area and a mountaineering area; a ground cable car runs (service notices on the operator site).",
+    "source_url": "https://en.wikipedia.org/wiki/Nanshan_Zhuhai"
+   }
+  ],
+  "free": false,
+  "costMin": 90,
+  "costMax": 90,
+  "costBasis": "entry",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "wiki": "Nanshan Zhuhai"
+ }
+}

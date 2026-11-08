@@ -1,0 +1,125 @@
+{
+ "changed": [
+  {
+   "id": "yangzhou-3",
+   "field": "bio",
+   "was": "The best-known private garden of late Qing Yangzhou, with tea houses, open grottoes and pleasant views.",
+   "now": "The best-known private garden of the late Qing dynasty, with tea houses, open grottoes and pleasant views.",
+   "reason": "Wikipedia: best-known private garden 'of the late Qing dynasty' (not 'of late Qing Yangzhou')"
+  },
+  {
+   "id": "taizhou-5",
+   "field": "held",
+   "was": "no sourced cost",
+   "now": "premise unsourced: Qinhu Lake wetland park facts (24.5 km, boat to main area) are not on the cited Wikivoyage page; no zh/en Wikipedia page loads; no cost",
+   "reason": "claims cited to Wikivoyage Taizhou are not on that page"
+  },
+  {
+   "id": "taizhou-6",
+   "field": "held",
+   "was": "no sourced cost",
+   "now": "premise unsourced: Qintong Ancient Town and its 4A rating are not on the cited Wikivoyage page and no fetched source gives them; no cost",
+   "reason": "claims cited to Wikivoyage Taizhou are not on that page"
+  },
+  {
+   "id": "taizhou-7",
+   "field": "held",
+   "was": "no sourced cost",
+   "now": "premise unsourced: Guluotang Cultural Block appears in no fetched source (Wikivoyage Taizhou does not list it); no cost",
+   "reason": "claims cited to Wikivoyage Taizhou are not on that page"
+  },
+  {
+   "id": "taizhou",
+   "field": "description",
+   "was": "Taizhou has a history of over 2,000 years and was first established as Tangyue under the Qin dynasty. Its urban core is Hailing District, with Gaogang and Jiangyan beside it, and locals saying Taizhou usually mean Hailing. Hailing was once counted among the Four Lings with Yangzhou, Changzhou and Nanjing, and Jiangyan is known as the Land of Fish and Rice. Temples, memorial halls and lakeside wetlands are the main reasons to stop.",
+   "now": "Taizhou has a history of over 2,000 years and was first established as Tangyue under the Qin dynasty. Its urban core is Hailing District, with Gaogang and Jiangyan beside it, and locals saying Taizhou usually mean Hailing. Hailing was once counted among the Four Lings with Yangzhou, Changzhou and Nanjing, and Jiangyan is known as the Land of Fish and Rice. Temples, memorial halls and old neighbourhoods are the main reasons to stop.",
+   "reason": "Qinhu Lake wetland is not in any fetched source; Wikivoyage lists Jiangyan's old neighbourhood instead"
+  },
+  {
+   "id": "taizhou",
+   "field": "whyVisit",
+   "was": [
+    "Visit temples and memorial halls in Hailing",
+    "Explore Jiangyan's wetlands and old streets"
+   ],
+   "now": [
+    "Visit temples and memorial halls in Hailing",
+    "Walk Jiangyan's old neighbourhood"
+   ],
+   "reason": "wetland claim unsourced; Wikivoyage names Jiangyan's old neighbourhood"
+  },
+  {
+   "id": "taizhou",
+   "field": "highlights",
+   "was": [
+    "Hailing temples",
+    "Jiangyan wetlands"
+   ],
+   "now": [
+    "Hailing temples",
+    "Jiangyan old streets"
+   ],
+   "reason": "matches reworded reason"
+  }
+ ],
+ "unverified": [
+  {
+   "id": "yangzhou-1",
+   "what": "price CNY 30-100 is the 2018 China Daily seasonal policy; Wikivoyage (current) lists CNY 120. Official site shouxihu.net loads (title matches) but shows no price. Kept as sourced, current price unverified; the yangzhou tip already dates it (2018)"
+  },
+  {
+   "id": "yangzhou-2,3,5",
+   "what": "prices from 2017 China Daily government pages (seasonal); aggregators show 45-48; official Daming Temple site damingsi.com verified (title 扬州大明寺), Geyuan/He Garden have no official site found"
+  },
+  {
+   "id": "yangzhou-5",
+   "what": "ticketUrl http://www.damingsi.com/ re-read: loads, title 扬州大明寺 (GBK page); ok"
+  },
+  {
+   "id": "yangzhou-1",
+   "what": "ticketUrl http://www.shouxihu.net/ re-read: loads, title 扬州瘦西湖官网; ok"
+  },
+  {
+   "id": "zhenguo-temple-gaoyou",
+   "what": "ticketUrl http://www.zhenguosi.com/ re-read: loads, title 高邮镇国寺; ok. Free from Wikivoyage Jan 2021"
+  },
+  {
+   "id": "yangzhou-4,9,10,gaoyou-old-town",
+   "what": "free/open inferred (street, canal walk, roundabout pavilion, old town); no source states a fee either way"
+  },
+  {
+   "id": "yangzhou-7,8,11,13",
+   "what": "free per Wikivoyage only (2017-2024); official sites blocked or dead"
+  },
+  {
+   "id": "yucheng-postal-stop",
+   "what": "CNY 30 from Wikivoyage Jan 2021 (dead link on official site); no ticketUrl in final"
+  },
+  {
+   "id": "qianduo-xinghua",
+   "what": "CNY 99 dated spring 2018 (Wikivoyage); bloom late Mar-Apr is a seasonal draw"
+  },
+  {
+   "id": "yangzhou-6,12, longshan-yizheng, taizhou-1,2,3,4",
+   "what": "held for no sourced cost; bios checked and stand (longshan-yizheng premise is a draft bio only)"
+  },
+  {
+   "id": "taizhou",
+   "what": "all 7 Taizhou spots are held, so the destination has no addable spots for now"
+  }
+ ],
+ "held_added": [
+  {
+   "id": "taizhou-5",
+   "reason": "premise unsourced: Qinhu Lake wetland park facts (24.5 km, boat to main area) are not on the cited Wikivoyage page; no zh/en Wikipedia page loads; no cost"
+  },
+  {
+   "id": "taizhou-6",
+   "reason": "premise unsourced: Qintong Ancient Town and its 4A rating are not on the cited Wikivoyage page and no fetched source gives them; no cost"
+  },
+  {
+   "id": "taizhou-7",
+   "reason": "premise unsourced: Guluotang Cultural Block appears in no fetched source (Wikivoyage Taizhou does not list it); no cost"
+  }
+ ]
+}

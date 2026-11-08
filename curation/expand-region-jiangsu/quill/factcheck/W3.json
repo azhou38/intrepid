@@ -1,0 +1,160 @@
+{
+ "changed": [
+  {
+   "id": "wuxi-14",
+   "field": "bio",
+   "was": "A large old town in Ehu, grown from the former residence of Taibo, and rated a 4A scenic area.",
+   "now": "A 4A-rated ancient-town scenic area in Ehu town, Xishan District, free to enter.",
+   "reason": "Taibo-residence origin belongs to Meicun's 'First Ancient Town in Jiangnan' in Wikivoyage, not Dangkou; no source ties it to Dangkou."
+  },
+  {
+   "id": "wuxi-20",
+   "field": "bio",
+   "was": "A museum on the site of King Helu of Wu's capital, housed in a phoenix-shaped building opened in 2012.",
+   "now": "A museum on the site of King Helu of Wu's capital, housed in a phoenix-shaped building.",
+   "reason": "'opened in 2012' not in the cited government page; phoenix-shaped style is."
+  },
+  {
+   "id": "wuxi-11",
+   "field": "bio",
+   "was": "A Lake Tai botanical garden with about 4,000 plum trees that bloom in spring, beside the old Rong family mansions.",
+   "now": "A Lake Tai botanical garden with about 4,000 fruit trees that blossom in spring, beside the old Rong family mansions.",
+   "reason": "Wikipedia says 4000 fruit trees; 'plum trees' number unsupported."
+  },
+  {
+   "id": "wuxi-21",
+   "field": "bio",
+   "was": "An archaeological museum in Hongshan subdistrict, Xinwu District, free to enter and capped at 2,000 visitors a day.",
+   "now": "A museum of the Hongshan archaeological site in Hongshan subdistrict, Xinwu District, free to enter.",
+   "reason": "Daily cap of 2,000 is from an undated news item (transient); free confirmed by government list (China Wu Culture Museum & Hongshan Site Museum, free)."
+  },
+  {
+   "id": "jiangyin-4",
+   "field": "bio",
+   "was": "A Yangtze riverside park named for its goose's-nose shape, part of the Binjiang Fortress area.",
+   "now": "A Yangtze riverside park named for its goose's-nose shape, with river views and tree-lined walking paths.",
+   "reason": "Link to the Binjiang Fortress area is in no source read (Wikivoyage lists Ebizui separately; the government's Binjiang Fortress address is Gongyuan Road 88)."
+  },
+  {
+   "id": "jiangyin-4",
+   "field": "held",
+   "was": null,
+   "now": "free not sourced for Ebizui itself",
+   "reason": "Free rested on the Binjiang Fortress free listing, which is a different address; no source states Ebizui's entry."
+  },
+  {
+   "id": "yixing-4",
+   "field": "costMin",
+   "was": 145,
+   "now": 110,
+   "reason": "Government list (en.wuxi.gov.cn c_1132577, re-read) gives Yixing Shanjuan Cave 110 yuan; Bendibao 145 is undated and unofficial."
+  },
+  {
+   "id": "yixing-4",
+   "field": "costMax",
+   "was": 145,
+   "now": 110,
+   "reason": "same"
+  },
+  {
+   "id": "jiangyin-1",
+   "field": "held/cost",
+   "was": "no sourced cost",
+   "now": "CNY 12 entry (adult)",
+   "reason": "Government list gives Former residence of Xu Xiake 12 yuan; the hold's cost gap is now sourced."
+  },
+  {
+   "id": "jiangyin",
+   "field": "description",
+   "was": "Jiangyin is a port city on the south bank of the lower Yangtze and is administered by Wuxi. Its southern towns hold most of the history: Changjing is a canal water town more than 2,000 years old, and Xu Xiake Town is the birthplace of the Ming geographer and travel writer. On the river, Ebizui Park belongs to the Binjiang Fortress area, part of the Jiangyin Fortress system that defended the Yangtze. Wuxi's airport is 40 to 60 minutes away by car.",
+   "now": "Jiangyin is a port city on the south bank of the lower Yangtze and is administered by Wuxi. Its southern towns hold most of the history: Changjing is a canal water town more than 2,000 years old, and Xu Xiake Town is the birthplace of the Ming geographer and travel writer. On the river, Ebizui Park gives views over the Yangtze, which the Jiangyin Fortress system once defended. Wuxi's airport is 40 to 60 minutes away by car.",
+   "reason": "Ebizui-in-Binjiang-Fortress link unsourced."
+  },
+  {
+   "id": "jiangyin",
+   "field": "whyVisit[1]",
+   "was": "Stroll Yangtze riverside fortress parks",
+   "now": "Stroll Yangtze riverside parks",
+   "reason": "fortress-park link unsourced"
+  }
+ ],
+ "unverified": [
+  {
+   "id": "lake-tai",
+   "what": "free/open for the lake itself has no explicit source (no gate); kept as open"
+  },
+  {
+   "id": "wuxi-2",
+   "what": "ticketUrl http://www.ytz.com.cn/ blocked (502 from scripts); no ticketUrl in spot; price 90 yuan official list incl. ferry"
+  },
+  {
+   "id": "wuxi-4",
+   "what": "70 yuan is the combined Huishan/Xihui ticket (government list); Wikivoyage says 65; 2025-09 'closed management' notice unchecked"
+  },
+  {
+   "id": "wuxi-5",
+   "what": "free conflicts: government list shows Huishan Ancient Town Scenic Area 70 yuan (combined ticket); Wikivoyage says free town street, paid sites inside; kept free"
+  },
+  {
+   "id": "wuxi-6",
+   "what": "140 yuan guide-level (Wikivoyage Oct 2023), no official source"
+  },
+  {
+   "id": "wuxi-18",
+   "what": "150 yuan guide-level (Wikivoyage Dec 2023), no official source"
+  },
+  {
+   "id": "wuxi-17",
+   "what": "200 yuan guide-level (Wikivoyage Dec 2023); no ticketUrl verified"
+  },
+  {
+   "id": "wuxi-1",
+   "what": "210 yuan confirmed by government list; no official site found (no ticketUrl)"
+  },
+  {
+   "id": "yixing-1",
+   "what": "5 yuan (government list) vs free (Wikivoyage Sep 2023); government used"
+  },
+  {
+   "id": "wuxi-10",
+   "what": "free (government list) vs 5 yuan (Wikivoyage); government used"
+  },
+  {
+   "id": "jiangyin-6",
+   "what": "free rests on a c.2020 Ctrip travelogue only; possibly outdated"
+  },
+  {
+   "id": "yixing-6",
+   "what": "free from Ctrip summary (page not loaded); government list also shows Tuanjiu free"
+  },
+  {
+   "id": "wuxi-16",
+   "what": "ticketUrl https://www.wxzoo.com.cn/ re-read: Wuxi Zoo / Taihu Amusement Park site, verified"
+  }
+ ],
+ "held_added": [
+  {
+   "id": "jiangyin-4",
+   "reason": "free not sourced for Ebizui itself"
+  }
+ ],
+ "held_removed": [
+  {
+   "id": "jiangyin-1",
+   "reason": "admission 12 yuan now sourced"
+  }
+ ],
+ "held_confirmed": [
+  "wuxi-3",
+  "wuxi-13",
+  "wuxi-15",
+  "jiangyin-3",
+  "jiangyin-5"
+ ],
+ "dest_checked": [
+  "wuxi",
+  "yixing",
+  "jiangyin"
+ ],
+ "notes": "Destination claims for wuxi and yixing all supported by Wikivoyage (3,000 years, Suzhou <30 min, Metro Line 1/4, June 211 mm rainiest, July high 33C, museum closed Mon / no entry after 16:00; Yixing 7,000 years pottery, Bamboo Sea 31 km, Shanjuan 25 km, Dingshu station and museum, Nanjing-Hangzhou HSR). Jiangyin tips supported (sightseeing bus Apr-Dec, humidity >80%, airport 40-60 min). Wiki titles Yuantouzhu, Jichang Garden, Liyuan (garden), The Plum Garden, Lihu Park, Xihui Park, Shanjuan Cave, Donglin Academy, Wuxi Museum, Grand Buddha at Ling Shan, Lake Tai not individually re-resolved except Yuantouzhu, Jichang, Liyuan, Plum Garden, Lihu (fetched ok). No source names or opening hours in copy."
+}

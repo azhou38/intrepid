@@ -1,0 +1,375 @@
+{
+ "zhenjiang-1": {
+  "name": "Jinshan Temple",
+  "wiki": "Jinshan Temple (Zhenjiang)",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Buddhist temple climbing Jinshan Hill beside a lake, crowned by Cishou Pagoda and set in the White Snake legend.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 50,
+  "costMax": 65,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": "http://www.tourzhenjiang.com/contents/24/14.html",
+  "sources": [
+   "http://www.tourzhenjiang.com/contents/24/14.html",
+   "http://www.tourzhenjiang.com/contents/25/1182.html",
+   "https://en.wikivoyage.org/wiki/Zhenjiang"
+  ],
+  "notes": "Operator ticket notice (page dated 2020-07): Jinshan scenic area adult 50 low season (Jan, Feb, Jun-Aug, Dec) / 65 high season (Mar-May, Sep-Nov). Page is old but a 2025 operator news item still refers to the 'peak-season posted price'. Free: under 6 / 1.4 m, 70+, military, disabled. Price covers the scenic area incl. the temple."
+ },
+ "zhenjiang-2": {
+  "name": "Jiaoshan",
+  "wiki": "Jiaoshan",
+  "icon": "⛰️",
+  "category": "nature",
+  "bio": "Yangtze island reached by boat, with Dinghui Temple and a stele forest of over 400 tablets.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 50,
+  "costMax": 65,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": "http://www.tourzhenjiang.com/contents/24/13.html",
+  "sources": [
+   "http://www.tourzhenjiang.com/contents/24/13.html",
+   "http://www.tourzhenjiang.com/contents/25/1182.html",
+   "https://en.wikipedia.org/wiki/Jiaoshan",
+   "https://en.wikivoyage.org/wiki/Zhenjiang"
+  ],
+  "notes": "Operator ticket notice: Jiaoshan adult 50 low / 65 high season, same as Jinshan. Ferry fare: a 2019 travel blog says the ticket includes the boat; not confirmed on the operator page, so not stated."
+ },
+ "zhenjiang-3": {
+  "name": "Xijindu Ancient Street",
+  "icon": "🏮",
+  "category": "historic",
+  "bio": "Restored Yangtze ferry crossing, a street under 500 m long with buildings from Tang to Qing.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Zhenjiang",
+   "https://m.sohu.com/a/870534962_121106832/",
+   "https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%B4%A5%E6%B8%A1"
+  ],
+  "notes": "Street believed free to walk (Ctrip reviews: open all day, only the Rescue Society exhibit checks tickets) but no non-aggregator source gives a price, so cost left null (held for cost, or orchestrator may accept open/free on https://gs.ctrip.com/html5/you/sight/13/1937.html). No en Wikipedia article. Held: orchestrator may accept free/open on the Ctrip source."
+ },
+ "zhenjiang-4": {
+  "name": "Beigu Hill",
+  "icon": "🏞️",
+  "category": "nature",
+  "bio": "Steep hill on the Yangtze bank topped by Ganlu Temple, with views across to Jiaoshan and Jinshan.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 30,
+  "costMax": 40,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": "http://www.tourzhenjiang.com/contents/24/1088.html",
+  "sources": [
+   "http://www.tourzhenjiang.com/contents/24/1088.html",
+   "http://www.tourzhenjiang.com/contents/25/1182.html"
+  ],
+  "notes": "Operator ticket notice: Beigushan adult 30 low / 40 high season. Wikivoyage 30-50 per park is consistent. en Wikipedia 'Beigu Hill' 404; zh article 北固山 exists."
+ },
+ "zhenjiang-5": {
+  "name": "Zhenjiang Museum",
+  "icon": "🏺",
+  "category": "museum",
+  "bio": "Museum in the former British consulate buildings, with Wu bronzes, Six Dynasties celadon and Tang gold and silver.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "sources": [
+   "https://govt.chinadaily.com.cn/s/202105/06/WS647ffc73498ea274927bdcb9/zhenjiang-museum.html",
+   "https://zh.wikipedia.org/wiki/%E9%95%87%E6%B1%9F%E5%8D%9A%E7%89%A9%E9%A6%86"
+  ],
+  "notes": "DUPLICATE WARNING: zhenjiang-5 (Zhenjiang Museum) and zhenjiang-6 (Former British Consulate) are the same site: the museum occupies the consulate buildings (zh Wikipedia, China Daily), pins 60 m apart. Suggest merging or dropping one. The museum also runs the Pearl S. Buck residence, Lu Xiaobo residence and Mengxi Garden per zh Wikipedia (as of May 2024). No en Wikipedia article. Consulate absorbed here (zhenjiang-6 merged)."
+ },
+ "zhenjiang-6": {
+  "name": "Former British Consulate in Zhenjiang",
+  "icon": "🏛️",
+  "category": "museum",
+  "bio": "Merged into Zhenjiang Museum, which occupies the former British consulate buildings on Yuntai Mountain.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "held": "merged into zhenjiang-5",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Former_British_Consulate_in_Zhenjiang",
+   "https://govt.chinadaily.com.cn/s/202105/06/WS647ffc73498ea274927bdcb9/zhenjiang-museum.html",
+   "https://zh.wikipedia.org/wiki/%E9%95%87%E6%B1%9F%E8%8B%B1%E5%9B%BD%E9%A2%86%E4%BA%8B%E9%A6%86%E6%97%A7%E5%9D%80"
+  ],
+  "notes": "Same site as zhenjiang-5 (the museum is the consulate); free because the museum is free. A 2025 visitor review (via Ctrip search result) says the consulate can only be viewed from the door. Recommend merge or drop as near-duplicate."
+ },
+ "zhenjiang-7": {
+  "name": "Nanshan Park",
+  "icon": "🌲",
+  "category": "nature",
+  "bio": "Forested hills south of the city with temples, springs and a hilltop pagoda looking over city and river.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 30,
+  "costMax": 40,
+  "currency": "CNY",
+  "costBasis": "park",
+  "costPer": "Adult/Day",
+  "ticketUrl": "http://www.tourzhenjiang.com/contents/24/1089.html",
+  "sources": [
+   "http://www.tourzhenjiang.com/contents/24/1089.html",
+   "http://www.tourzhenjiang.com/contents/25/1182.html",
+   "https://en.wikivoyage.org/wiki/Zhenjiang"
+  ],
+  "notes": "Operator ticket notice: Nanshan adult 30 low / 40 high season, same-day, covers Wenyuan, Zhulin and Zhaoyin sites. Not in any park pass. No en Wikipedia article. Priced as the park's own Nanshan gate ticket."
+ },
+ "zhenjiang-8": {
+  "name": "Zhulin Temple",
+  "icon": "🎍",
+  "category": "religious",
+  "bio": "Temple on Jia Hill hidden in a bamboo valley, reached by stone steps up five terraces of old trees.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 30,
+  "costMax": 40,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": "http://www.tourzhenjiang.com/contents/24/1089.html",
+  "sources": [
+   "http://www.tourzhenjiang.com/contents/24/1089.html",
+   "http://www.tourzhenjiang.com/contents/25/1182.html",
+   "https://en.wikivoyage.org/wiki/Zhenjiang"
+  ],
+  "notes": "Priced through the Nanshan scenic-area ticket (30 low / 40 high); notice says it covers Wenyuan, Zhulin and Zhaoyin sites. Same ticket as zhenjiang-7. zh Wikipedia 竹林寺 is a disambiguation page; no en article."
+ },
+ "zhenjiang-9": {
+  "name": "Zhenjiang Vinegar Culture Museum",
+  "wiki": "Zhenjiang Vinegar Culture Museum",
+  "icon": "🏺",
+  "category": "museum",
+  "bio": "Museum on Zhenjiang vinegar with a recreated ancient workshop and an account of modern production.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 30,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Zhenjiang_Vinegar_Culture_Museum",
+   "https://en.wikivoyage.org/wiki/Zhenjiang"
+  ],
+  "notes": "Wikivoyage listing (updated Oct 2023) gives 30 CNY."
+ },
+ "zhenjiang-10": {
+  "name": "Pearl S. Buck Former Residence",
+  "icon": "🏠",
+  "category": "museum",
+  "bio": "Former home of Pearl S. Buck on Dengyun Mountain, now a cultural park with a memorial hall and bookhouse.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Pearl_S._Buck",
+   "https://www.aisixiang.com/data/179477.html",
+   "https://zh.wikipedia.org/wiki/%E9%95%87%E6%B1%9F%E5%8D%9A%E7%89%A9%E9%A6%86"
+  ],
+  "notes": "Admission not found in any source (an old blog mentions reservations in the Covid era). Probably free as a museum site but unsourced. The shard's wiki 'Pearl S. Buck' is the person, not the place, so wiki null."
+ },
+ "mount-mao-jurong": {
+  "name": "Mount Mao",
+  "icon": "⛰️",
+  "category": "nature",
+  "bio": "Taoist holy mountain and birthplace of the Shangqing school, with about an hour's climb to the summit.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 85,
+  "costMax": 85,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Zhenjiang",
+   "https://zh.wikipedia.org/wiki/%E8%8C%85%E5%B1%B1"
+  ],
+  "notes": "Wikivoyage Jurong-side listing (updated Oct 2023): 85 CNY, flagged dead link. A search result notes the summit palace needs a second ticket for the Jurong-side sights (unverified). 'Mount Mao' en Wikipedia redirects to Shangqing School, so wiki null. Placement hours 3-6 vs research 2-4: used research. Pin is a nature_reserve centroid: needs visitor-point pin. 85 CNY is a guide price (dead link)."
+ },
+ "changzhou-1": {
+  "name": "Tianning Temple",
+  "wiki": "Tianning Temple (Changzhou)",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Buddhist temple beside the Grand Canal with the 13-storey, 153.79 m Tianning Pagoda, finished in 2007.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 80,
+  "costMax": 80,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tianning_Temple_(Changzhou)",
+   "https://en.wikivoyage.org/wiki/Changzhou"
+  ],
+  "notes": "Price from Wikivoyage listing (updated Nov 2019, marked dead link); not confirmed on an operator page. UNRESOLVED: official site unreachable."
+ },
+ "changzhou-2": {
+  "name": "China Dinosaur Park",
+  "wiki": "China Dinosaurs Park",
+  "icon": "🦕",
+  "category": "entertainment",
+  "bio": "Theme park with rides, dancing dinosaurs and a museum of fossils including a Sinosauropteryx skeleton.",
+  "visitHoursMin": 4,
+  "visitHoursMax": 8,
+  "costMin": 260,
+  "costMax": 260,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/China_Dinosaurs_Park",
+   "https://en.wikivoyage.org/wiki/Changzhou"
+  ],
+  "notes": "ticketUrl BLOCKED: http://www.cnkly.com/ | Wikivoyage: full day CNY 260, afternoon-only CNY 160 (listing marked dead link). Not confirmed on operator page."
+ },
+ "changzhou-3": {
+  "name": "Chunqiu Yancheng",
+  "wiki": "Chunqiu Yancheng",
+  "icon": "🏰",
+  "category": "historic",
+  "bio": "Rebuilt Spring and Autumn city ruins, about 2,500 years old, enclosed by three concentric moats.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chunqiu_Yancheng",
+   "https://www.cn-yc.com.cn/ljyc",
+   "https://www.cn-yc.com.cn/zyjd",
+   "https://www.yclyq.com/",
+   "https://www.yclyq.com/22706.html"
+  ],
+  "notes": "ticketUrl unverified: https://www.yclyq.com/ | verified ticketUrl if later added: https://www.yclyq.com/ | HOLD for cost: the official page says the ruins park can be bought separately (and park ticket includes it) but gives no standard price. Search snippet (non-official, undated) gave 220 for the amusement park; not used. Pin is the ruins park."
+ },
+ "changzhou-4": {
+  "name": "Hongmei Park",
+  "wiki": "Hongmei Park",
+  "icon": "🌳",
+  "category": "nature",
+  "bio": "Large lakeside park with the Writing Pagoda, Red Plum Pavilion and a flamingo pond.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "open",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hongmei_Park",
+   "https://en.wikivoyage.org/wiki/Changzhou"
+  ],
+  "notes": "ticketUrl BLOCKED: http://www.redplumpark.com/ | Free per Wikivoyage listing (marked dead link). Open-access park, free per guide."
+ },
+ "changzhou-5": {
+  "name": "Dongpo Park",
+  "wiki": "Dongpo Park",
+  "icon": "🌳",
+  "category": "historic",
+  "bio": "Small Grand Canal island park with a Su Dongpo academy hall and statue and Qianlong palace foundations.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Dongpo_Park",
+   "https://en.wikivoyage.org/wiki/Changzhou"
+  ],
+  "notes": "Wikivoyage: 05:00-21:00, Free. Kept as entry (No Entry Fee) because the park has set hours; change to open if the orchestrator prefers."
+ },
+ "changzhou-6": {
+  "name": "Canal 5 Creative Campus",
+  "wiki": "Canal 5 Creative Campus",
+  "icon": "🎨",
+  "category": "entertainment",
+  "bio": "Former textile mill on the Grand Canal turned into art studios, restaurants and museums.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Canal_5_Creative_Campus",
+   "https://en.wikivoyage.org/wiki/Changzhou"
+  ],
+  "notes": "HOLD for cost: no source states admission. Wikivoyage gives no price. Likely free to walk in but unsourced, so not recorded."
+ },
+ "changzhou-7": {
+  "name": "Changzhou Museum",
+  "wiki": "Changzhou Museum",
+  "icon": "🏛️",
+  "category": "museum",
+  "bio": "Museum of over 20,000 relics, from Spring and Autumn green porcelain to Ming and Qing paintings.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Changzhou_Museum",
+   "https://en.wikivoyage.org/wiki/Changzhou"
+  ],
+  "notes": "Free per Wikivoyage (updated Nov 2019). The shard's draft bio mentions a children's natural history museum: not sourced here, drop it."
+ },
+ "changzhou-8": {
+  "name": "Yancheng Safari Park",
+  "wiki": "Yancheng Wild Animal World",
+  "icon": "🦁",
+  "category": "entertainment",
+  "bio": "Wild animal park with walk-through areas and a drive-through route where visitors can bring their own vehicle.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 200,
+  "costMax": 200,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": "http://www.yczoo.com/",
+  "sources": [
+   "http://www.yczoo.com/",
+   "http://www.yczoo.com/fare.asp",
+   "https://en.wikipedia.org/wiki/Yancheng_Wild_Animal_World"
+  ],
+  "notes": "Official adult ticket CNY 200 (1.5 m and over); self-drive vehicle ticket CNY 230 per car extra, not used. Shard bio says 'animals in enclosures': prefer walk-through plus self-drive."
+ },
+ "tianmu-lake-liyang": {
+  "name": "Tianmu Lake",
+  "wiki": "Tianmu Lake",
+  "icon": "🌊",
+  "category": "nature",
+  "bio": "Lake south of Liyang with boat trips, a provincial tourist resort since 1993.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 180,
+  "costMax": 180,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": "https://www.tmhtour.com/",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tianmu_Lake",
+   "https://www.tmhtour.com/shows/18/166.html",
+   "https://www.tmhtour.com/shows/42/255.html"
+  ],
+  "notes": "Official FAQ gives only the holiday-period price: Shanshuiyuan scenic area including boat CNY 180; off-peak price not found, so 180 is likely the upper end. Wikipedia lake area figure (300 km2) looks wrong, do not use."
+ },
+ "nanshan-bamboo-sea-liyang": {
+  "name": "Nanshan Bamboo Sea",
+  "wiki": "Nanshan Zhuhai",
+  "icon": "🎋",
+  "category": "nature",
+  "bio": "Liyang's bamboo sea of about 2,300 hectares, with lakes, a historic area and a ground cable car.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "costMin": 90,
+  "costMax": 90,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": "https://www.tmhtour.com/",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Nanshan_Zhuhai",
+   "https://www.tmhtour.com/shows/18/166.html"
+  ],
+  "notes": "CNY 90 per official FAQ (holiday price, Nanshan Bamboo Sea) and Wikipedia ('90 RMB'). Shard draft says 35,000 mu: the source says 2,300 ha (about 34,500 mu), use hectares."
+ }
+}

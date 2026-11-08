@@ -1,0 +1,104 @@
+{
+ "inside_destinations": 8,
+ "standalone": 2,
+ "new_destinations": [
+  {
+   "id": "changzhou",
+   "name": "Changzhou",
+   "rank": 5,
+   "span_km": 30,
+   "spots": 8,
+   "name_evidence": "Wikivoyage article \"Changzhou\": \"a city of 3.6 million people ... those with a bit of time can spend a pleasant ...\" (guidebook city with See/Do listings; the city tourist site lists the AAAA spots)."
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Dongpo Park",
+   "views": 189,
+   "counted_sources": 2
+  },
+  {
+   "name": "Canal 5 Creative Campus",
+   "views": 326,
+   "counted_sources": 1
+  },
+  {
+   "name": "Hongmei Park",
+   "views": 448,
+   "counted_sources": 2
+  },
+  {
+   "name": "Yancheng Safari Park",
+   "views": 490,
+   "counted_sources": 1
+  },
+  {
+   "name": "Changzhou Museum",
+   "views": 497,
+   "counted_sources": 2
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Qingguo Lane",
+   "views": 690,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Historic street walks are a typical keep."
+  },
+  {
+   "name": "Comb Lane",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Comb craft street could be a worthwhile old-street walk."
+  },
+  {
+   "name": "Qu Qiubai Memorial Hall",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Possibly a minor memorial."
+  },
+  {
+   "name": "Lotus Building",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Distinct landmark on a lake and lit at night."
+  },
+  {
+   "name": "Global Animation Joy Land",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Theme parks are legitimate Do items."
+  },
+  {
+   "name": "Maoshan",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Genuine scenic draw; merge decision belongs to placement."
+  },
+  {
+   "name": "Changdang Lake",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Major freshwater lake with tourism area."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Tianmu Lake",
+   "views": 1010
+  },
+  {
+   "name": "Nanshan Bamboo Sea",
+   "views": 661
+  }
+ ],
+ "benchmark": "N/A (no benchmark places in this region; Lake Tai handled as shared standalone)",
+ "note": "Lowest-scoring kept spots have 0 page views and one counted source (Wikivoyage listing); every left-out candidate listed has a concrete rule from What qualifies (verdict text above). Reviews go to the owner list, not placed."
+}

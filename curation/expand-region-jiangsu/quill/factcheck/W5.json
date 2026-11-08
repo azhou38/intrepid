@@ -1,0 +1,79 @@
+{
+ "changed": [
+  {
+   "id": "huaian-3",
+   "field": "bio",
+   "was": "Canal-side old town of cobbled lanes and brick-and-timber houses laid out in the Ming and Qing eras.",
+   "now": "Canal-side old town of stone-paved lanes and brick-and-timber houses laid out in the Ming and Qing eras.",
+   "reason": "Wikipedia says streets are stone-paved and houses brick-and-timber; 'cobbled' is not stated"
+  },
+  {
+   "id": "xuzhou-8",
+   "field": "bio",
+   "was": "Museum of more than 1,000 Han-dynasty stone sculptures, on the eastern bank of Yunlong Lake.",
+   "now": "Museum of more than 800 Han-dynasty stone sculptures, on the eastern bank of Yunlong Lake.",
+   "reason": "Travel China Guide (updated Jul 2026) says over 800 sculptures, Chinatripedia 'hundreds'; 'over 1,000' is in no source"
+  },
+  {
+   "id": "lianyungang-2",
+   "field": "costMin",
+   "was": 50,
+   "now": 30,
+   "reason": "Chinatripedia: CNY 50 (28 Apr-27 Oct), CNY 30 (28 Oct-27 Apr); peak figure alone omitted the off-season price"
+  },
+  {
+   "id": "lianyungang-3",
+   "field": "costMin",
+   "was": 80,
+   "now": 60,
+   "reason": "Chinatripedia: CNY 80 (20 Apr-20 Oct), CNY 60 (21 Oct-19 Apr); peak figure alone omitted the off-season price"
+  },
+  {
+   "id": "lianyungang",
+   "field": "goodToKnow[2].detail",
+   "was": "Lianyungang Museum is free to enter but closed on Mondays, so schedule it for another day of the week.",
+   "now": "Lianyungang Museum is free to enter but closed on Mondays from April to October, so schedule it for another day.",
+   "reason": "Wikivoyage ties 'closed on Mondays' to the April-October hours only"
+  }
+ ],
+ "unverified": [
+  {
+   "id": "huaian-2",
+   "what": "possible WeChat booking requirement (third-party summary) not confirmed; spot kept free/entry"
+  },
+  {
+   "id": "huaian-1..12, xuzhou-1..10, lianyungang-1..8",
+   "what": "no ticketUrl present on any spot in this group (none to verify); official sites were dead, for-sale or blocked per research"
+  },
+  {
+   "id": "xuzhou-2",
+   "what": "free admission rests on Wikivoyage 2017 (dead link) and Chinatripedia; no official page loads"
+  },
+  {
+   "id": "xuzhou-6",
+   "what": "CNY 45 from a single guide (Chinatripedia); Wikivoyage lists parts separately (Folk Museum 25, Ximatai 30)"
+  },
+  {
+   "id": "huaian-4..7,9..12, xuzhou-10",
+   "what": "prices from Wikivoyage Feb 2018 listings; could be stale (re-read and match, but not official)"
+  },
+  {
+   "id": "lianyungang-4",
+   "what": "CNY 40 and facts from a single Chinatripedia page"
+  },
+  {
+   "id": "lianyungang-5,6,7,xishuang-lake, suqian-2,4, sihong-ancient-xucheng, hongze-lake-wetland-park, xuzhou-9",
+   "what": "already held for no sourced cost; bios checked against sources and stand"
+  }
+ ],
+ "held_added": [
+  {
+   "id": "huaian-3",
+   "reason": "no sourced cost: free/open rests only on a Trip.com review page that does not mention admission"
+  },
+  {
+   "id": "xuzhou-8",
+   "reason": "cost conflict: Chinatripedia free vs Travel China Guide (updated Jul 2026) CNY 30, and the gallery is in the CNY 90 Han Culture combo"
+  }
+ ]
+}

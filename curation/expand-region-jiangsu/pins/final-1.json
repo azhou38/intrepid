@@ -1,0 +1,538 @@
+{
+ "changzhou-2": {
+  "lat": 31.825373,
+  "lon": 119.996862,
+  "source": "OSM way 461360184",
+  "feature_type": "tourism=theme_park",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "changzhou-5": {
+  "lat": 31.769607,
+  "lon": 119.972196,
+  "source": "OSM way 664856403 (东坡公园游客服务中心)",
+  "feature_type": "visitor centre of leisure=park relation 8543304",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "changzhou-8": {
+  "lat": 31.702173,
+  "lon": 119.919053,
+  "source": "OSM way 631156662 (江苏淹城野生动物世界)",
+  "feature_type": "tourism=zoo",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "huaian-1": {
+  "lat": 33.508443,
+  "lon": 119.136899,
+  "source": "OSM way 483067654 (周恩来故居)",
+  "feature_type": "tourism=attraction",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikivoyage:Huai'an listing (27 m), wikidata Q5470154 (39 m)"
+ },
+ "huaian-4": {
+  "lat": 33.529358,
+  "lon": 119.133486,
+  "source": "OSM way 1227999600 (吴承恩故居)",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikivoyage:Huai'an listing (58 m)"
+ },
+ "huaian-7": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Zhenhuai Building is not mapped as its own OSM feature (only bus stops named 镇淮楼 within 100-150 m of the Wikivoyage point 33.50646,119.13925); leave for owner/baidu."
+ },
+ "huaian-10": {
+  "lat": 33.657292,
+  "lon": 119.187865,
+  "source": "OSM way 1083583361 (淮安西游乐园)",
+  "feature_type": "tourism=theme_park",
+  "confidence": "MEDIUM",
+  "note": "hint was 250 m off, at the 西游记大道 road"
+ },
+ "suqian-1": {
+  "lat": 33.937926,
+  "lon": 118.294193,
+  "source": "OSM node 8267450885 (项王故里)",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "script found no pick; hint 760 m east of the OSM attraction node (hint is a Wikivoyage point)"
+ },
+ "suqian-4": {
+  "lat": 33.940483,
+  "lon": 118.293398,
+  "source": "OSM node 8262100089 (宿迁市博物馆)",
+  "feature_type": "tourism=museum",
+  "confidence": "MEDIUM",
+  "note": "hint 300 m off"
+ },
+ "nanjing-1": {
+  "lat": 32.064383,
+  "lon": 118.848288,
+  "source": "OSM way 483693967 (祭堂, the mausoleum hall)",
+  "feature_type": "historic=building",
+  "confidence": "HIGH",
+  "note": "pinned at the memorial hall; agrees with hint:wikipedia:Sun Yat-sen Mausoleum (9 m), wikidata (4 m)"
+ },
+ "nanjing-5": {
+  "lat": 32.022735,
+  "lon": 118.783603,
+  "source": "OSM way 1531638749 (南京夫子庙)",
+  "feature_type": "tourism=attraction + amenity=place_of_worship",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikipedia:Nanjing Fuzimiao (24 m)"
+ },
+ "nanjing-12": {
+  "lat": 32.057678,
+  "lon": 118.862873,
+  "source": "OSM way 1088448627 (灵谷寺)",
+  "feature_type": "amenity=place_of_worship",
+  "confidence": "MEDIUM",
+  "note": "Wikipedia (32.05498,118.86783) and Wikidata (32.0605,118.8621) disagree with each other by 600 m; OSM temple chosen"
+ },
+ "nanjing-15": {
+  "lat": 32.023092,
+  "lon": 118.778656,
+  "source": "OSM way 161322464 (内秦淮河)",
+  "feature_type": "waterway=river (inner Qinhuai, midpoint of the way)",
+  "confidence": "MEDIUM",
+  "note": "a river: pinned on the Inner Qinhuai stretch of the way, 470 m from Confucius Temple and 110 m from Zhan Garden"
+ },
+ "nanjing-19": {
+  "lat": 32.011246,
+  "lon": 118.778256,
+  "source": "OSM relation 19786016 (南京大报恩寺遗址博物馆)",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "agrees with wikidata (48 m), wikidata (47 m)"
+ },
+ "nanjing-22": {
+  "lat": 32.115603,
+  "lon": 118.738533,
+  "source": "OSM way 756599299 (南京长江大桥)",
+  "feature_type": "man_made=bridge",
+  "confidence": "HIGH",
+  "note": "bridge midpoint; hint (Wikipedia 32.1152,118.7388) matches; agrees with hint:wikipedia:Nanjing Yangtze River Bridge (51 m)"
+ },
+ "nanjing-25": {
+  "lat": 32.003324,
+  "lon": 118.774243,
+  "source": "OSM way 1046376641 (雨花台烈士纪念碑)",
+  "feature_type": "historic=memorial",
+  "confidence": "MEDIUM",
+  "note": "scenic-area centroid (32.000653,118.778055) is not a visitor point; pinned at the memorial monument square in the park"
+ },
+ "nanjing-28": {
+  "lat": 32.093953,
+  "lon": 118.796677,
+  "source": "OSM way 62344632 (红山森林动物园)",
+  "feature_type": "tourism=zoo",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "nanjing-32": {
+  "lat": 32.05269,
+  "lon": 118.778082,
+  "source": "OSM way 156229064 (拉贝故居)",
+  "feature_type": "tourism=museum",
+  "confidence": "HIGH",
+  "note": "agrees with wikidata Q1699038 (10 m)"
+ },
+ "nanjing-36": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Sun Quan tomb (孙权墓/吴大帝孙权蒋陵, Meihua Hill) is not mapped in OSM and Wikidata Q10944806 has no coordinates; only a place=locality 孙权纪念馆 (32.052314,118.834559)."
+ },
+ "nanjing-39": {
+  "lat": 32.06641,
+  "lon": 118.998239,
+  "source": "OSM way 165713282 (明文化村 阳山碑材)",
+  "feature_type": "tourism=theme_park",
+  "confidence": "MEDIUM",
+  "note": "Wikipedia point (32.06851,119.00074) is ~290 m north-east; OSM park with the quarry name chosen"
+ },
+ "nantong-1": {
+  "lat": 31.952805,
+  "lon": 120.883024,
+  "source": "OSM node 2987520048 (狼山)",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": "Wikidata Q6486478 (31.965,120.898) is 2 km off; peak chosen"
+ },
+ "nantong-5": {
+  "lat": 32.102555,
+  "lon": 120.819034,
+  "source": "OSM way 568601723 (南通森林野生动物园)",
+  "feature_type": "tourism=theme_park",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "nantong-8": {
+  "lat": 32.020512,
+  "lon": 120.860474,
+  "source": "OSM way 1519474990 (谯楼)",
+  "feature_type": "historic=building",
+  "confidence": "MEDIUM",
+  "note": "Nantong bell tower, beside 钟楼广场"
+ },
+ "nantong-11": {
+  "lat": 31.949133,
+  "lon": 120.890488,
+  "source": "OSM node 2987520109 (剑山)",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": "the five hills (狼山 军山 剑山 黄泥山 马鞍山) are within 3 km; pinned at 剑山, the central one, not on Langshan (nantong-1) or Guangjiao Temple"
+ },
+ "nantong-14": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Eminent Figures Museum is not in OSM or Wikidata; no feature within 3.5 km of Nantong centre."
+ },
+ "wanyuan-pagoda-haian": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Wanyuan Pagoda / Yuantong Temple, Hai'an: not found in OSM (Overpass and Nominatim) or Wikidata."
+ },
+ "yancheng-2": {
+  "lat": 32.988248,
+  "lon": 120.811673,
+  "source": "OSM way 615702271 (大丰麋鹿园)",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "reserve polygon centroid is a different point; pinned at the visitor park"
+ },
+ "yancheng-5": {
+  "lat": 32.837797,
+  "lon": 120.283675,
+  "source": "OSM way 1304870469 (西溪古镇)",
+  "feature_type": "landuse=retail",
+  "confidence": "MEDIUM",
+  "note": "the named old-town polygon in Dongtai; no tourism-tagged feature for the town"
+ },
+ "suzhou-5": {
+  "lat": 31.323111,
+  "lon": 120.624832,
+  "source": "OSM way 44679451 (狮子林)",
+  "feature_type": "leisure=garden",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikipedia:Lion Grove Garden (25 m)"
+ },
+ "suzhou-12": {
+  "lat": 31.318367,
+  "lon": 120.634062,
+  "source": "OSM way 492151336 (耦园)",
+  "feature_type": "leisure=garden",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikipedia:Couple's Retreat Garden (45 m)"
+ },
+ "suzhou-19": {
+  "lat": 31.304505,
+  "lon": 120.687152,
+  "source": "OSM relation 10257135 (李公堤)",
+  "feature_type": "landuse=commercial (the named street district)",
+  "confidence": "MEDIUM",
+  "note": "Wikivoyage point is 210 m west"
+ },
+ "suzhou-23": {
+  "lat": 31.308912,
+  "lon": 120.629565,
+  "source": "OSM way 526782681 (双塔)",
+  "feature_type": "tourism=attraction",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikipedia:Twin Pagodas (Suzhou) (13 m), wikidata (11 m)"
+ },
+ "suzhou-27": {
+  "lat": 31.315539,
+  "lon": 120.631453,
+  "source": "OSM way 614156391 (苏州戏曲博物馆办公楼)",
+  "feature_type": "building=yes (museum offices)",
+  "confidence": "MEDIUM",
+  "note": "museum building is mapped only as offices; within 75 m of the Wikivoyage listing point; agrees with hint:wikivoyage listing (Suzhou#See) (72 m)"
+ },
+ "suzhou-31": {
+  "lat": 31.319389,
+  "lon": 120.605661,
+  "source": "OSM way 206077331 (五峰园)",
+  "feature_type": "leisure=garden",
+  "confidence": "MEDIUM",
+  "note": "Wikipedia/Wikidata point is 270 m south-east; OSM garden chosen"
+ },
+ "suzhou-35": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Qu Garden / Yu Yue residence not in OSM or Wikidata (nearest are 观前街, 城隍庙 and 怡园)."
+ },
+ "jiangnan-water-towns-2": {
+  "lat": 31.159157,
+  "lon": 120.71429,
+  "source": "OSM way 807940510 (同里古镇游览区)",
+  "feature_type": "tourism=attraction",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikipedia:Tongli (92 m)"
+ },
+ "jiangnan-water-towns-7": {
+  "lat": 31.272099,
+  "lon": 120.866957,
+  "source": "OSM way 807948858 (保圣寺)",
+  "feature_type": "amenity=place_of_worship",
+  "confidence": "MEDIUM",
+  "note": "Wikipedia/Wikidata point is 1.1 km east and wrong (not in Luzhi old town); OSM temple chosen"
+ },
+ "bacheng-old-street": {
+  "lat": 31.457915,
+  "lon": 120.875563,
+  "source": "OSM relation 20655755 (巴城老街)",
+  "feature_type": "named street relation",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "yu-mountain-changshu": {
+  "lat": 31.670801,
+  "lon": 120.697439,
+  "source": "OSM node 7704596061 (虞山)",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "lake-tai": {
+  "lat": 31.0611167,
+  "lon": 119.9806648,
+  "source": "OSM node 13093272950 (太湖观景台)",
+  "feature_type": "tourism=viewpoint",
+  "confidence": "MEDIUM",
+  "note": "west-shore lake viewpoint; the centroid (31.2333,120.1333) is open water. A lake spanning four shores has no single visitor point, owner may prefer another shore"
+ },
+ "wuxi-5": {
+  "lat": 31.584011,
+  "lon": 120.270507,
+  "source": "OSM way 298295071 (惠山古镇) [Nominatim]",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "wuxi-9": {
+  "lat": 31.560816,
+  "lon": 120.309786,
+  "source": "OSM way 47701570 (南长街)",
+  "feature_type": "highway=pedestrian (midpoint of the street)",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "wuxi-12": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Wuxi Museum (无锡博物院): Wikidata Q8039396 gives 31.5665,120.265 but no OSM feature of the museum exists there."
+ },
+ "wuxi-15": {
+  "lat": 31.497676,
+  "lon": 120.307366,
+  "source": "OSM way 308362569 (金匮公园)",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "wuxi-18": {
+  "lat": 31.450739,
+  "lon": 120.266496,
+  "source": "OSM way 1526676441 (融创海世界)",
+  "feature_type": "tourism=aquarium",
+  "confidence": "MEDIUM",
+  "note": "Sunac resort complex: pinned at the Sea World aquarium; hint was 520 m south-east"
+ },
+ "wuxi-21": {
+  "lat": 31.494351,
+  "lon": 120.504271,
+  "source": "OSM way 488469273 (鸿山遗址博物馆)",
+  "feature_type": "tourism=museum",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "yixing-3": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Longchi Mountain scenic area: no OSM feature within 1.5-10 km of the hint; only 冒龙池 peak 6 km away (different place)."
+ },
+ "yixing-6": {
+  "lat": 31.370101,
+  "lon": 119.808092,
+  "source": "OSM way 443712841 (氿滨公园)",
+  "feature_type": "leisure=park",
+  "confidence": "MEDIUM",
+  "note": "park on the Tuanjiu lakeshore; lake relation centroid is open water"
+ },
+ "jiangyin-2": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Changjing Ancient Town: only 长泾大福蚕种场 (a silkworm farm) mapped; no old-street feature."
+ },
+ "jiangyin-5": {
+  "lat": 31.934494,
+  "lon": 120.283723,
+  "source": "OSM way 744520923 (黄山炮台旧址)",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "Wikivoyage point is 330 m off"
+ },
+ "xuzhou-2": {
+  "lat": 34.251953,
+  "lon": 117.180626,
+  "source": "OSM way 1363099895 (徐州博物馆)",
+  "feature_type": "tourism=museum",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "xuzhou-5": {
+  "lat": 34.308444,
+  "lon": 117.131436,
+  "source": "OSM way 1425977917 (龟山汉楚王墓)",
+  "feature_type": "historic=tomb",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "xuzhou-8": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Han Stone Relief Art Museum (汉画像石艺术馆): not found in OSM near Xuzhou centre (only 汉兵马俑博物馆 and 狮子山汉楚王墓)."
+ },
+ "lianyungang-1": {
+  "lat": 34.645379,
+  "lon": 119.294948,
+  "source": "OSM node 6081616899 (花果山风景区)",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": "Wikipedia point (34.654,119.288) is 1.1 km away at the summit area; OSM scenic-area node chosen"
+ },
+ "lianyungang-4": {
+  "lat": 34.636968,
+  "lon": 119.33835,
+  "source": "OSM node 10095327304 (渔湾风景区(东南门))",
+  "feature_type": "tourism=attraction (south-east gate)",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "lianyungang-7": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Fenghuangwan Beach: no OSM beach or feature named 凤凰湾 in Lianyungang."
+ },
+ "yangzhou-1": {
+  "lat": 32.404013,
+  "lon": 119.420719,
+  "source": "OSM node 2430259937 (瘦西湖公园南门)",
+  "feature_type": "tourism=attraction (south gate)",
+  "confidence": "HIGH",
+  "note": "main entrance; matches Wikidata Q (32.404051,119.420786); agrees with wikidata (8 m), wikidata (8 m)"
+ },
+ "yangzhou-6": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Lu Family Salt Merchant Residence: Wikidata Q17498521 gives 32.38587,119.44641 but OSM has no feature there (only 何园 440 m away)."
+ },
+ "yangzhou-10": {
+  "lat": 32.396384,
+  "lon": 119.428217,
+  "source": "OSM node 2428777185 (文昌阁)",
+  "feature_type": "tourism=attraction",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "yangzhou-13": {
+  "lat": 32.39604,
+  "lon": 119.449285,
+  "source": "OSM way 234871506 (普哈丁园)",
+  "feature_type": "historic=tomb",
+  "confidence": "HIGH",
+  "note": "agrees with hint:wikipedia:Puhaddin (94 m)"
+ },
+ "gaoyou-old-town": {
+  "lat": null,
+  "lon": null,
+  "source": null,
+  "feature_type": null,
+  "confidence": "LOW",
+  "note": "Old town has no OSM polygon or place node; its district feature (运河·盂城驿历史文化街区, 32.7728,119.434425) is already the pin of Yucheng Postal Stop (yucheng-postal-stop). Candidate old-town landmarks: 高邮州署 n/w1289078157 (32.78384,119.431695), 魁楼 w1315459273 (32.776412,119.438775). Left for owner."
+ },
+ "taizhou-2": {
+  "lat": 32.492753,
+  "lon": 119.906148,
+  "source": "OSM way 1532799441 (古光孝寺)",
+  "feature_type": "amenity=place_of_worship",
+  "confidence": "MEDIUM",
+  "note": "Nominatim places it in 城中街道, Hailing District"
+ },
+ "taizhou-5": {
+  "lat": 32.614937,
+  "lon": 120.078487,
+  "source": "OSM node 13028468028 (溱湖国家湿地公园-南门)",
+  "feature_type": "park south gate",
+  "confidence": "MEDIUM",
+  "note": "main gate beside the boat hall; park centroid is 1.3 km north-east"
+ },
+ "zhenjiang-1": {
+  "lat": 32.217411,
+  "lon": 119.410949,
+  "source": "OSM way 828041000 (金山寺)",
+  "feature_type": "amenity=place_of_worship",
+  "confidence": "MEDIUM",
+  "note": "Wikidata Q (32.2255,119.4221) is 1.4 km off"
+ },
+ "zhenjiang-4": {
+  "lat": 32.220056,
+  "lon": 119.452166,
+  "source": "OSM node 3181077991 (北固山)",
+  "feature_type": "natural=peak",
+  "confidence": "MEDIUM",
+  "note": ""
+ },
+ "zhenjiang-8": {
+  "lat": 32.179124,
+  "lon": 119.445211,
+  "source": "OSM node 12912630535 (南山风景区-南山竹林景区)",
+  "feature_type": "leisure=park (Zhulin bamboo area of Nanshan)",
+  "confidence": "MEDIUM",
+  "note": "temple itself not mapped; matches the Wikivoyage listing point within 10 m; agrees with hint:Wikivoyage listing geo tag (Wikivoyage Zhenjiang, Zhulin Temple) (11 m)"
+ },
+ "mount-mao-jurong": {
+  "lat": 31.787405,
+  "lon": 119.28708,
+  "source": "OSM node 9467588892 (茅山景区客运站)",
+  "feature_type": "amenity=bus_station (scenic area main entrance)",
+  "confidence": "MEDIUM",
+  "note": "nature-reserve centroid is not a visitor point; Jurong-side tourist bus station at the scenic-area gate"
+ }
+}

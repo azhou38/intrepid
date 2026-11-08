@@ -1,0 +1,59 @@
+{
+ "destinations": [
+  {
+   "id": "yangzhou",
+   "name": "Yangzhou",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "lat": 32.39638,
+    "lng": 119.42828
+   },
+   "coordinates_source": "osm:attraction 文昌阁 (Wenchang Pavilion), the old-city roundabout centre",
+   "defaultZoomSpanKm": 30,
+   "name_evidence": "Wikivoyage has a Yangzhou page with See/Do listings (counted source on 17 Yangzhou/Gaoyou candidates); Slender West Lake is its headline.",
+   "reason": "Grand Canal garden city: 13 kept spots (4 gardens/lake, 2 museums, temples, old streets) within 6 km of the centre; fully clears the four-spot bar and name test."
+  },
+  {
+   "id": "taizhou",
+   "name": "Taizhou",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "lat": 32.484,
+    "lng": 119.9224
+   },
+   "coordinates_source": "candidates.json osm:attraction 望海楼 (Wanghailou); city-centre point to be re-resolved from OSM place=city",
+   "defaultZoomSpanKm": 70,
+   "name_evidence": "Wikivoyage page \"Taizhou (Jiangsu)\" and China Daily Jiangsu Taizhou subsite list these attractions (counted sources for Wanghai Tower, Guangxiao Temple, Mei Lanfang Memorial Hall).",
+   "reason": "Regional hub with 7 kept spots across its urban districts (Hailing, Gaogang, Jiangyan); no single headline so rank 5. Span 70 km holds Qintong (~28 km) with room."
+  }
+ ],
+ "spot_ids": [
+  "yangzhou-1",
+  "yangzhou-2",
+  "yangzhou-3",
+  "yangzhou-4",
+  "yangzhou-5",
+  "yangzhou-6",
+  "yangzhou-7",
+  "yangzhou-8",
+  "yangzhou-9",
+  "yangzhou-10",
+  "yangzhou-11",
+  "yangzhou-12",
+  "yangzhou-13",
+  "longshan-yizheng",
+  "yucheng-postal-stop",
+  "zhenguo-temple-gaoyou",
+  "gaoyou-old-town",
+  "qianduo-xinghua",
+  "taizhou-1",
+  "taizhou-2",
+  "taizhou-3",
+  "taizhou-4",
+  "taizhou-5",
+  "taizhou-6",
+  "taizhou-7"
+ ]
+}

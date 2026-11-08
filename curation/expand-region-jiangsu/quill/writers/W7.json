@@ -1,0 +1,58 @@
+{
+ "destinations": [
+  {
+   "id": "nantong",
+   "name": "Nantong",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "lat": 32.0106,
+    "lng": 120.8718
+   },
+   "coordinates_source": "candidates.json osm:park 文峰公园 (Wenfeng Park, in the old centre); re-resolve from OSM place=city",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": "Wikivoyage has a Nantong page with See listings (Langshan, Haohe, Safari Park); Nantong government visitor itineraries name the same places.",
+   "reason": "City of Haohe moat, Langshan and many small museums: 16 kept spots within 11 km of the centre."
+  },
+  {
+   "id": "yancheng",
+   "name": "Yancheng",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "lat": 33.3627,
+    "lng": 120.1625
+   },
+   "coordinates_source": "candidates.json (Yancheng Water Street point, city centre); re-resolve from OSM place=city",
+   "defaultZoomSpanKm": 120,
+   "name_evidence": "Wikivoyage page \"Yancheng\" names the coast and birdwatching (counted source for Coastal Wetlands, Huanghai Forest Park, Salt Museum); Yancheng Coastal Wetlands and Dafeng Milu are the UNESCO/headline draws.",
+   "reason": "Prefecture-named coast region: 6 kept spots (Yellow Sea wetlands, Milu deer, Tiaozini, Dongtai forest and old town, salt museum) with the wetlands as the draw. Considered a \"Yellow Sea Wetlands\" destination or standalone: the wetland places (Coastal Wetlands, Dafeng, Tiaozini, Huanghai Forest) are ~60-120 km apart, a single wetlands name overlaps the Yancheng Coastal Wetlands spot itself, and Wikivoyage groups them under Yancheng, so Yancheng is the traveller-used name. Large span because the draws lie 50-75 km out from the city; flagged for owner to reshape if preferred."
+  }
+ ],
+ "spot_ids": [
+  "nantong-1",
+  "nantong-2",
+  "nantong-3",
+  "nantong-4",
+  "nantong-5",
+  "nantong-6",
+  "nantong-7",
+  "nantong-8",
+  "nantong-9",
+  "nantong-10",
+  "nantong-11",
+  "nantong-12",
+  "nantong-13",
+  "nantong-14",
+  "nantong-15",
+  "nantong-16",
+  "wanyuan-pagoda-haian",
+  "jianghai-museum-haimen",
+  "yancheng-1",
+  "yancheng-2",
+  "yancheng-3",
+  "yancheng-4",
+  "yancheng-5",
+  "yancheng-6"
+ ]
+}

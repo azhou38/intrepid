@@ -1,0 +1,73 @@
+[
+ {
+  "name": "Jichang Garden",
+  "wiki": "Jichang Garden",
+  "views": 3015,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Jichang Garden",
+   "wiki": "Jichang Garden",
+   "coordinates": {
+    "lat": 31.58075,
+    "lng": 120.27097
+   },
+   "coordinates_source": "Wikivoyage Wuxi listing geo tag",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wuxi",
+    "https://en.wuxi.gov.cn/attractions_3.html"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Jichang_Garden"
+   ],
+   "note": "Classical garden: the garden in the Xihui scenic area that Emperor Qianlong copied at the Summer Palace; it has its own entry fee.",
+   "views": 3015
+  }
+ },
+ {
+  "name": "Lake Tai",
+  "wiki": "Lake Tai",
+  "views": 24078,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Lake Tai",
+   "wiki": "Lake Tai",
+   "coordinates": {
+    "lat": 31.23333333,
+    "lng": 120.13333333
+   },
+   "coordinates_source": "wikipedia:Lake Tai",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Wuxi"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Lake_Tai"
+   ],
+   "note": "Lake: the large freshwater lake on Wuxi's southern shore, known for its fish, pearls and lakeside scenic spots; Wikivoyage lists it as a See item.",
+   "views": 24078
+  }
+ },
+ {
+  "name": "Yangshan Peach Resort",
+  "wiki": "Yangshan Mountain",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Yangshan Peach Resort",
+   "wiki": "Yangshan Mountain",
+   "coordinates": null,
+   "coordinates_source": null,
+   "counted_sources": [
+    "https://govt.chinadaily.com.cn/regional/wuxi/attractions/page_3.html"
+   ],
+   "other_sources": [],
+   "note": "Peach resort: Yangshan Mountain's peach orchards, known for spring peach blossom; the blossom festival is a seasonal event, the orchards are permanent.",
+   "views": 0
+  }
+ }
+]

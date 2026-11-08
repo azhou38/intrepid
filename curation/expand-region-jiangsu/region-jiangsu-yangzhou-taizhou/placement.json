@@ -1,0 +1,846 @@
+{
+ "region": "jiangsu-yangzhou-taizhou",
+ "country_fields": {
+  "country": "China",
+  "countryCode": "CN",
+  "continent": "Asia",
+  "timezone": "Asia/Shanghai"
+ },
+ "new_destinations": [
+  {
+   "id": "yangzhou",
+   "name": "Yangzhou",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "lat": 32.39638,
+    "lng": 119.42828
+   },
+   "coordinates_source": "osm:attraction 文昌阁 (Wenchang Pavilion), the old-city roundabout centre",
+   "defaultZoomSpanKm": 30,
+   "name_evidence": "Wikivoyage has a Yangzhou page with See/Do listings (counted source on 17 Yangzhou/Gaoyou candidates); Slender West Lake is its headline.",
+   "reason": "Grand Canal garden city: 13 kept spots (4 gardens/lake, 2 museums, temples, old streets) within 6 km of the centre; fully clears the four-spot bar and name test."
+  },
+  {
+   "id": "taizhou",
+   "name": "Taizhou",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "lat": 32.484,
+    "lng": 119.9224
+   },
+   "coordinates_source": "candidates.json osm:attraction 望海楼 (Wanghailou); city-centre point to be re-resolved from OSM place=city",
+   "defaultZoomSpanKm": 70,
+   "name_evidence": "Wikivoyage page \"Taizhou (Jiangsu)\" and China Daily Jiangsu Taizhou subsite list these attractions (counted sources for Wanghai Tower, Guangxiao Temple, Mei Lanfang Memorial Hall).",
+   "reason": "Regional hub with 7 kept spots across its urban districts (Hailing, Gaogang, Jiangyan); no single headline so rank 5. Span 70 km holds Qintong (~28 km) with room."
+  }
+ ],
+ "spots": [
+  {
+   "name": "Slender West Lake",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-1",
+   "coordinates": {
+    "lat": 32.41,
+    "lng": 119.4175
+   },
+   "coordinates_source": "wikipedia:Slender West Lake",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Slender West Lake",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Scenic lake park northwest of the old city with pavilions, the Five-Pavilion Bridge and gardens around the water.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 8824
+  },
+  {
+   "name": "Geyuan Garden",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-2",
+   "coordinates": {
+    "lat": 32.402015,
+    "lng": 119.438148
+   },
+   "coordinates_source": "wikipedia:Geyuan",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Geyuan",
+   "icon": "🎋",
+   "category": "historic",
+   "bio": "Classical garden famed for its bamboo and rockeries that represent the four seasons.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 1251
+  },
+  {
+   "name": "He Garden",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-3",
+   "coordinates": {
+    "lat": 32.38758,
+    "lng": 119.44347
+   },
+   "coordinates_source": "osm:attraction 何园",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "He Garden",
+   "icon": "🏯",
+   "category": "historic",
+   "bio": "Classical scholar garden with tea houses, open grottoes and pleasant views, one of Jiangsu's best gardens.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 5751
+  },
+  {
+   "name": "Dongguan Street",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-4",
+   "coordinates": {
+    "lat": 32.39985,
+    "lng": 119.4477
+   },
+   "coordinates_source": "osm:attraction 东关古渡 (on Dongguan Street)",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Dongguan Street",
+   "icon": "🏮",
+   "category": "historic",
+   "bio": "Old street and historic lanes east of the centre, with the Wudangxing Taoist palace and shops.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Daming Temple",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-5",
+   "coordinates": {
+    "lat": 32.42166667,
+    "lng": 119.40833333
+   },
+   "coordinates_source": "wikipedia:Daming Temple",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Daming Temple",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "Buddhist temple on the Slender West Lake grounds, rebuilt after the Taiping Rebellion, with a spring and a tea house.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 5569
+  },
+  {
+   "name": "Lu Family Salt Merchant Residence",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Lu Family Residence",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Lavishly furnished 100-room mansion of a Qing-era salt merchant, open to visitors.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Yangzhou Museum",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-7",
+   "coordinates": {
+    "lat": 32.39277778,
+    "lng": 119.36638889
+   },
+   "coordinates_source": "wikipedia:Yangzhou Museum",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Yangzhou Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "City museum in the \"Double Museum\" building with a salvaged Grand Canal boat and a Tang dragon boat on display.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 695
+  },
+  {
+   "name": "China Grand Canal Museum",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-8",
+   "coordinates": {
+    "lat": 32.3642,
+    "lng": 119.423
+   },
+   "coordinates_source": "wikipedia:China Grand Canal Museum",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "China Grand Canal Museum",
+   "icon": "🚢",
+   "category": "museum",
+   "bio": "Museum on the Grand Canal dedicated to the canal's history and boats, free to enter.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "cost_source": "candidate note: \"free to enter\" (Wikivoyage Yangzhou)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 1565
+  },
+  {
+   "name": "Xiaoqinhuai Canal",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-9",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Xiaoqinhuai River",
+   "icon": "🛶",
+   "category": "historic",
+   "bio": "Canal walk that crosses the historic centre, with narrow lanes of the surviving old-city blocks nearby.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Wenchang Pavilion",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-10",
+   "coordinates": {
+    "lat": 32.39638,
+    "lng": 119.42822
+   },
+   "coordinates_source": "osm:attraction 文昌阁",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Wenchang Ge",
+   "icon": "🏯",
+   "category": "landmark",
+   "bio": "Three-storey Ming pavilion at a roundabout marking the symbolic centre of Yangzhou, one of its few surviving old buildings.",
+   "visitHoursMin": 0,
+   "visitHoursMax": 0.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Tianning Temple",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-11",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Tianning Temple",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "Large Buddhist temple with several halls and courtyards, a copy of the Siku Quanshu and a Buddhist culture exhibit.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Shi Kefa Memorial",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-12",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Shi Kefa Memorial Hall",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Memorial hall and temple to the Ming general who refused to surrender Yangzhou to the Qing in 1645.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Tomb of Puhaddin",
+   "action": "spot",
+   "destination": "yangzhou",
+   "id": "yangzhou-13",
+   "coordinates": {
+    "lat": 32.39666667,
+    "lng": 119.44861111
+   },
+   "coordinates_source": "wikipedia:Puhaddin",
+   "reason": "Inside Yangzhou urban area (within ~6 km of Wenchang Pavilion, the old-city centre), well within the 30 km span; visitors base in Yangzhou for it.",
+   "wiki": "Tomb of Puhaddin",
+   "icon": "🕌",
+   "category": "historic",
+   "bio": "Ming-era Islamic tomb complex and park of a 13th-century missionary, with a small exhibit on the Hui community.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yangzhou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Longshan Mountain Scenic Resort",
+   "action": "standalone",
+   "destination": null,
+   "id": "longshan-yizheng",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Standalone: Yizheng is a separate county-level city outside the Yangzhou urban area; 4 or fewer Yizheng places kept, no destination. Reached from Yizheng, not part of Yangzhou bounds. Coordinates unresolved, so exact distance to Yangzhou (about 25-30 km) to be confirmed at pin resolution.",
+   "wiki": "Longshan (Yizheng)",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Hill-top scenic resort and forest park in Qingshan town, the main draw of Yizheng city.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [],
+   "views": 0
+  },
+  {
+   "name": "Yucheng Postal Stop",
+   "action": "standalone",
+   "destination": null,
+   "id": "yucheng-postal-stop",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": {
+    "lat": 32.7728,
+    "lng": 119.43442
+   },
+   "coordinates_source": "osm:historic 运河·盂城驿历史文化街区",
+   "reason": "Standalone: Gaoyou, ~42 km north of Yangzhou centre and a separate county-level city; outside Yangzhou bounds. Only 3 Gaoyou places kept (no destination).",
+   "wiki": "Yucheng Postal Stop",
+   "icon": "🏯",
+   "category": "historic",
+   "bio": "Early-Ming courier relay station on the Grand Canal, the most complete surviving postal stop of its kind.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gaoyou"
+   ],
+   "views": 631
+  },
+  {
+   "name": "Zhenguo Temple",
+   "action": "standalone",
+   "destination": null,
+   "id": "zhenguo-temple-gaoyou",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": {
+    "lat": 32.775077,
+    "lng": 119.4261
+   },
+   "coordinates_source": "wikivoyage:Gaoyou listing (Zhenguo Temple)",
+   "reason": "Standalone: Gaoyou, ~42 km from Yangzhou, outside its bounds; 3 Gaoyou places only. Slug suffixed to stay unique.",
+   "wiki": "Zhenguo Temple",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "Buddhist temple on a small island in the Grand Canal with a pagoda that dates to the Tang era.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gaoyou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Gaoyou Old Town",
+   "action": "standalone",
+   "destination": null,
+   "id": "gaoyou-old-town",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Standalone: the town itself is a draw (markets, old lanes); Gaoyou is outside Yangzhou bounds. Pin unresolved: the Wikivoyage page gives the town centre.",
+   "wiki": "Gaoyou Old Town",
+   "icon": "🏮",
+   "category": "historic",
+   "bio": "Old town of Gaoyou with antique shops, morning food markets and street life.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Gaoyou"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Qianduo Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "id": "qianduo-xinghua",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": {
+    "lat": 33.0208,
+    "lng": 119.8116
+   },
+   "coordinates_source": "wikivoyage:Xinghua listing (Qianduo Scenic Area)",
+   "reason": "Standalone: Xinghua, ~60 km from Taizhou centre, outside its bounds and span; nothing else kept nearby. Seasonal flowers but a permanent scenic area.",
+   "wiki": "Qianduo Scenic Area",
+   "icon": "🌼",
+   "category": "nature",
+   "bio": "Canola flower fields across canal islets north of Xinghua, a spring draw from late March to April.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Xinghua"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Wanghai Tower",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-1",
+   "coordinates": {
+    "lat": 32.48401,
+    "lng": 119.9224
+   },
+   "coordinates_source": "osm:attraction 望海楼 (Wanghailou Scenic Area)",
+   "reason": "Taizhou city proper (Hailing, Gaogang, Jiangyan districts); ~0 km from centre point (it is the centre point); inside the 70 km span.",
+   "wiki": "Wanghai Tower",
+   "icon": "🏯",
+   "category": "landmark",
+   "bio": "Newly built tower in the Fengcheng River scenic area of Taizhou city, with views over the riverside.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://subsites.chinadaily.com.cn/jiangsu/taizhou/2022-10/18/c_840840.htm",
+    "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Guangxiao Temple",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-2",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Taizhou city proper (Hailing, Gaogang, Jiangyan districts); in the urban area; inside the 70 km span.",
+   "wiki": "Guangxiao Temple",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "Buddhist temple in Taizhou city, named in the Taizhou government list of historic sites.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://subsites.chinadaily.com.cn/jiangsu/taizhou/2022-10/18/c_840840.htm",
+    "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Mei Lanfang Memorial Hall",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Taizhou city proper (Hailing, Gaogang, Jiangyan districts); in the urban area; inside the 70 km span.",
+   "wiki": "Mei Lanfang Memorial Hall",
+   "icon": "🎭",
+   "category": "museum",
+   "bio": "Park and memorial museum to the Peking Opera master Mei Lanfang, born in Taizhou.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)",
+    "https://subsites.chinadaily.com.cn/jiangsu/taizhou/2022-10/18/c_840840.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "PLA Navy Establishment Memorial Hall",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-4",
+   "coordinates": {
+    "lat": 32.42743,
+    "lng": 119.9722
+   },
+   "coordinates_source": "osm:museum 中国人民解放军海军诞生地纪念馆",
+   "reason": "Taizhou city proper (Hailing, Gaogang, Jiangyan districts); ~6 km east; inside the 70 km span.",
+   "wiki": "PLA Navy Establishment Place",
+   "icon": "⚓",
+   "category": "museum",
+   "bio": "Memorial museum at the birthplace of the People's Navy, where the navy was founded in Taizhou.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://subsites.chinadaily.com.cn/jiangsu/taizhou/2022-10/18/c_840840.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Qinhu Lake National Wetland Park",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-5",
+   "coordinates": {
+    "lat": 32.61636,
+    "lng": 120.10346
+   },
+   "coordinates_source": "osm:attraction 溱湖国家湿地公园野生动植物保护中心 (park visitor centre)",
+   "reason": "Taizhou city proper (Hailing, Gaogang, Jiangyan districts); ~25 km NE, Jiangyan district; inside the 70 km span.",
+   "wiki": "Qinhu Lake",
+   "icon": "🌿",
+   "category": "nature",
+   "bio": "National wetland park in Jiangyan with reeds, dawn redwoods, lotus and poplars beside the lake.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://subsites.chinadaily.com.cn/jiangsu/taizhou/jiangyan/2026-01/07/c_1153794.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Qintong Ancient Town",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-6",
+   "coordinates": {
+    "lat": 32.65191,
+    "lng": 120.09261
+   },
+   "coordinates_source": "osm:attraction 溱潼古镇旅游景区",
+   "reason": "Taizhou city proper (Hailing, Gaogang, Jiangyan districts); ~28 km NE, Jiangyan district; inside the 70 km span.",
+   "wiki": "Qintong, Jiangsu",
+   "icon": "🏮",
+   "category": "historic",
+   "bio": "Ancient town in Jiangyan district, a 4A-rated attraction beside Qinhu Lake.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://subsites.chinadaily.com.cn/jiangsu/taizhou/jiangyan/2026-01/07/c_1153794.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Guluotang Cultural Block",
+   "action": "spot",
+   "destination": "taizhou",
+   "id": "taizhou-7",
+   "coordinates": {
+    "lat": 32.51127,
+    "lng": 120.14684
+   },
+   "coordinates_source": "osm:viewpoint 姜堰古罗塘文化景区",
+   "reason": "Taizhou city proper (Hailing, Gaogang, Jiangyan districts); ~22 km E, Jiangyan district; inside the 70 km span.",
+   "wiki": "Guluotang Cultural Block",
+   "icon": "🏮",
+   "category": "historic",
+   "bio": "Historic cultural block in the north of Jiangyan district, rated 4A.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://www.chinaservicesinfo.com/regional/taizhou/attractions"
+   ],
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "neighbour_notes": "Standalone spots within ~40 km of a proposed centre: Longshan (Yizheng, ~25-30 km SW of Yangzhou, outside Yangzhou bounds: separate county-level city); Gaoyou trio (~42 km N of Yangzhou, outside bounds). Qianduo is 60 km from Taizhou. Yangzhou to Taizhou centres are 48 km apart, no overlap. Yangzhou-Zhenjiang sibling (~23 km) is checked by the prescreen against existing data only; Zhenjiang is proposed by a sibling run and should be re-checked at merge time.",
+ "no_destination_clusters": "Gaoyou (3 kept places) is below the four-spot bar and Gaoyou is a county-level city under Yangzhou, so standalone."
+}

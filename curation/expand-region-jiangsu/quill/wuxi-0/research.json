@@ -1,0 +1,558 @@
+{
+ "lake-tai": {
+  "facts": [
+   {
+    "text": "Taihu is the third largest freshwater lake in China, in the Yangtze Delta, with its southern shore forming the Jiangsu-Zhejiang border",
+    "source_url": "https://en.wikipedia.org/wiki/Lake_Tai"
+   },
+   {
+    "text": "Famous for its fish and freshwater pearls; the Wuxi shore holds Yuantouzhu, Lingshan and Nianhua Bay",
+    "source_url": "https://en.wikivoyage.org/wiki/Wuxi"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikipedia.org/wiki/Lake_Tai",
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "wiki": "Lake Tai",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "cost_source": "https://en.wikivoyage.org/wiki/Wuxi",
+  "cost_confidence": "none",
+  "ticketUrl": null,
+  "ticketUrl_status": "none-sold-by-many",
+  "ticketUrl_evidence": "Lake with no single steward; sold by many.",
+  "notes": "No source states the lake itself is free; it has no gate, but ticketed scenic areas (Yuantouzhu 90) sit on its shore. Orchestrator decide whether to accept free/open. Visitor point is the shore pin, not the centroid."
+ },
+ "wuxi-2": {
+  "facts": [
+   {
+    "text": "Peninsula on the northwest shore of Lake Tai, named for a rock shaped like a turtle's head; made a park in 1916",
+    "source_url": "https://en.wikipedia.org/wiki/Yuantouzhu"
+   },
+   {
+    "text": "5A scenic area with over 10 spots, known for cherry blossoms from March to April",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1131672.htm"
+   },
+   {
+    "text": "Adult ticket 90 yuan including the ferry",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikipedia.org/wiki/Yuantouzhu",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1131672.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": "Yuantouzhu",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 90,
+  "costMax": 90,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": "http://www.ytz.com.cn/",
+  "ticketUrl_status": "BLOCKED",
+  "ticketUrl_evidence": "Official Chinese site linked from Wikipedia 'Yuantouzhu' external links; http and https return 502/fetch failed from scripts. Orchestrator to check in real browser.",
+  "notes": "Wikipedia article is titled Yuantouzhu (no 'Turtle Head Island (Wuxi)' article). Price is the Wuxi government listing; off-season 70 per a third-party site, not used."
+ },
+ "wuxi-4": {
+  "facts": [
+   {
+    "text": "Classical garden inside Xihui Park near Huishan Temple, Ming dynasty in origin, with a national protected status since 1988",
+    "source_url": "https://en.wikipedia.org/wiki/Jichang_Garden"
+   },
+   {
+    "text": "The Summer Palace's Xiequ Garden and Yuanming Yuan's Double-Crane House imitated it",
+    "source_url": "https://en.wikipedia.org/wiki/Jichang_Garden"
+   },
+   {
+    "text": "Part of Huishan Ancient Town Scenic Area; the 70 yuan ticket covers the relics area and Xihui Scenic Area",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikipedia.org/wiki/Jichang_Garden",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": "Jichang Garden",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 70,
+  "costMax": 70,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Price is the Huishan Ancient Town combined ticket (the garden sits inside it, per Ctrip Q&A the garden needs the full 70 yuan ticket). A 2025-09 notice said the garden was under closed management: check before publishing. No separate official site found."
+ },
+ "wuxi-6": {
+  "facts": [
+   {
+    "text": "Zen-themed town scenic area west of Lingshan Scenic Area in Binhu District",
+    "source_url": "https://en.wikivoyage.org/wiki/Wuxi"
+   },
+   {
+    "text": "Adult ticket 140 yuan",
+    "source_url": "https://en.wikivoyage.org/wiki/Wuxi"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "wiki": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 140,
+  "costMax": 140,
+  "costBasis": "entry",
+  "cost_source": "https://en.wikivoyage.org/wiki/Wuxi",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Wikivoyage listing updated Oct 2023; not on the government price list. Official site not found (searches returned only aggregators). Wikipedia has no article."
+ },
+ "wuxi-8": {
+  "facts": [
+   {
+    "text": "Chinese garden on the shore of Li Lake, named for Fan Li, a minister of the state of Yue",
+    "source_url": "https://en.wikipedia.org/wiki/Liyuan_(garden)"
+   },
+   {
+    "text": "A 100-year-old white wisteria here is nicknamed the Money Tree",
+    "source_url": "https://regional.chinadaily.com.cn/GoWuxi/2025-04/07/c_1083566.htm"
+   },
+   {
+    "text": "4A-rated; ticket 45 yuan high season, 30 low season",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikipedia.org/wiki/Liyuan_(garden)",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+   "https://regional.chinadaily.com.cn/GoWuxi/2025-04/07/c_1083566.htm"
+  ],
+  "wiki": "Liyuan (garden)",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 30,
+  "costMax": 45,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Range is low to high season."
+ },
+ "wuxi-10": {
+  "facts": [
+   {
+    "text": "Academy founded in 1111 under the Northern Song, where Yang Shi taught for 18 years",
+    "source_url": "https://en.wikipedia.org/wiki/Donglin_Academy"
+   },
+   {
+    "text": "Ming and Qing buildings with a stone arch, pool, Lize Hall and temple",
+    "source_url": "https://en.wikivoyage.org/wiki/Wuxi"
+   },
+   {
+    "text": "Government list gives free entry (4A-rated)",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikipedia.org/wiki/Donglin_Academy",
+   "https://en.wikivoyage.org/wiki/Wuxi",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": "Donglin Academy",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Conflict: Wikivoyage says 5 yuan; the Oct 2025 government list says free, used here."
+ },
+ "wuxi-12": {
+  "facts": [
+   {
+    "text": "Opened in 2008; holds nearly 40,000 relics, notably paintings and calligraphy, purple clay teapots and Huishan clay figurines",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/14/c_1131993.htm"
+   },
+   {
+    "text": "Hosts the Wuxi Chinese National Industry and Commerce Museum and the Wuxi Stele Museum",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/14/c_1131993.htm"
+   },
+   {
+    "text": "Free entry, Tuesday to Sunday",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wuxi.gov.cn/2025-10/14/c_1131993.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": "Wuxi Museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Entry free per government list and Wikivoyage. Official museum site not found."
+ },
+ "wuxi-14": {
+  "facts": [
+   {
+    "text": "4A ancient-town scenic area in Xishan District (Ehu town), open at all hours",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   },
+   {
+    "text": "Wikivoyage describes a very large old town developed from the former residence of Taibo",
+    "source_url": "https://en.wikivoyage.org/wiki/Wuxi"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Government list gives Dangkou as free, open 24/7. Wikipedia 'Meicun' redirects to Wuxi, so wiki null. Pin note: the shard's wording 'at Meicun' is wrong; Dangkou is at Ehu town (the Meicun Taibo Temple is a separate site)."
+ },
+ "wuxi-16": {
+  "facts": [
+   {
+    "text": "4A zoo and amusement park at the foot of Huishan, with over 1,000 rare animals from Africa, Asia and elsewhere",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/11/c_1132576.htm"
+   },
+   {
+    "text": "Runs giant panda research programmes",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/11/c_1132576.htm"
+   },
+   {
+    "text": "Ticket 100 yuan",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wuxi.gov.cn/2025-10/11/c_1132576.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 100,
+  "costMax": 100,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": "https://www.wxzoo.com.cn/",
+  "ticketUrl_status": "verified",
+  "ticketUrl_evidence": "Fetched; page title '无锡动物园 太湖欢乐园 ...' names the zoo. URL found via Chinatripedia listing.",
+  "notes": "No Wikipedia article under the shard's wiki title (it 404s); wiki set null."
+ },
+ "wuxi-18": {
+  "facts": [
+   {
+    "text": "Sunac marine park in Binhu with sharks, rays and about 1,500 marine species planned",
+    "source_url": "https://en.wikivoyage.org/wiki/Wuxi"
+   },
+   {
+    "text": "Adult ticket 150 yuan",
+    "source_url": "https://en.wikivoyage.org/wiki/Wuxi"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "wiki": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 150,
+  "costMax": 150,
+  "costBasis": "entry",
+  "cost_source": "https://en.wikivoyage.org/wiki/Wuxi",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Wikivoyage updated Dec 2023. A 2021 ticket site said 220 from; unverified. No official site found."
+ },
+ "wuxi-20": {
+  "facts": [
+   {
+    "text": "Museum on the site of King Helu of Wu's capital, founded 514 BC, with a phoenix-shaped building opened in 2012",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/14/c_1131987.htm"
+   },
+   {
+    "text": "Exhibits relics, a 3D cinema and a multimedia hall",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/14/c_1131987.htm"
+   },
+   {
+    "text": "Ticket 120 yuan, Tuesday to Sunday",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wuxi.gov.cn/2025-10/14/c_1131987.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 120,
+  "costMax": 120,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Government list 120; a 2017 China Daily piece said 60 (outdated). Wikipedia has no article (shard wiki 'Helu City' missing)."
+ },
+ "yixing-1": {
+  "facts": [
+   {
+    "text": "One of China's earliest specialised ceramics museums, with 107 relics from Neolithic pottery to Ming and Qing zisha teapots",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/14/c_1131992.htm"
+   },
+   {
+    "text": "In Dingshu town, Yixing",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/14/c_1131992.htm"
+   },
+   {
+    "text": "Ticket 5 yuan",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wuxi.gov.cn/2025-10/14/c_1131992.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 5,
+  "costMax": 5,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Conflict: Wikivoyage (Sep 2023) says free; the Oct 2025 government list says 5, used here."
+ },
+ "yixing-3": {
+  "facts": [
+   {
+    "text": "Nature reserve in the Zhangzhu hills, with golden pine and magnolia trees unique to China, and a bicycle park",
+    "source_url": "https://en.wikivoyage.org/wiki/Yixing"
+   },
+   {
+    "text": "General entry is free; sightseeing car and bike hire cost extra",
+    "source_url": "https://en.wikivoyage.org/wiki/Yixing"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikivoyage.org/wiki/Yixing"
+  ],
+  "wiki": null,
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "cost_source": "https://en.wikivoyage.org/wiki/Yixing",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Wikivoyage Sep 2023; no Wikipedia article for 'Longchi Mountain'. Not on the government list."
+ },
+ "yixing-5": {
+  "facts": [
+   {
+    "text": "Karst cave scenic area (4A) in Hufu town, Zhangyang village, Yixing",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   },
+   {
+    "text": "Ticket 110 yuan",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "free": false,
+  "costMin": 110,
+  "costMax": 110,
+  "costBasis": "entry",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Listed by the government as 'Zhang Daoling's Cave' (张公洞). The Taoist claim in the draft bio is not confirmed by a loaded source: unverified. No Wikipedia article."
+ },
+ "yixing-7": {
+  "facts": [
+   {
+    "text": "4A forest park on Renmin South Road in Yixing city",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   },
+   {
+    "text": "Free entry, open 6 am to 8:30 pm",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Size claim in the draft (5.5 sq km) not sourced here: unverified."
+ },
+ "jiangyin-2": {
+  "facts": [
+   {
+    "text": "3A ancient water town in Jiangyin with canals and old stone streets (Hebei street)",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   },
+   {
+    "text": "Wikivoyage: more than 2,000 years of history, well-preserved Jiangnan water-town architecture",
+    "source_url": "https://en.wikivoyage.org/wiki/Jiangyin"
+   },
+   {
+    "text": "Free, open 24 hours",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "official",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": ""
+ },
+ "jiangyin-4": {
+  "facts": [
+   {
+    "text": "Yangtze riverside park at 288 Huangshan Road, named for its goose's-nose shape",
+    "source_url": "https://en.wikivoyage.org/wiki/Jiangyin"
+   },
+   {
+    "text": "Part of the Binjiang Fortress tourist area, which the government lists as free",
+    "source_url": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "wiki": null,
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "cost_source": "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Government lists Jiangyin Binjiang Fortress area (Huangshan Lake Park and Ebizui Park per Ctrip) as free; Ebizui itself is free per a Ctrip guide (third party). Medium confidence."
+ },
+ "jiangyin-6": {
+  "facts": [
+   {
+    "text": "Former home of Liu Bannong, linguist and poet, and Liu Tianhua, erhu composer, at 49 Xiheng Street",
+    "source_url": "https://en.wikivoyage.org/wiki/Jiangyin"
+   },
+   {
+    "text": "Six exhibition halls on the three Liu brothers (Liu Bannong, Liu Beimao, Liu Tianhua)",
+    "source_url": "https://gs.ctrip.com/html5/you/travels/235/4080294.html"
+   }
+  ],
+  "bio_sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin",
+   "https://gs.ctrip.com/html5/you/travels/235/4080294.html"
+  ],
+  "wiki": null,
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "cost_source": "https://gs.ctrip.com/html5/you/travels/235/4080294.html",
+  "cost_confidence": "guide",
+  "ticketUrl": null,
+  "ticketUrl_status": "no-official-site",
+  "ticketUrl_evidence": "",
+  "notes": "Free per a Ctrip travelogue (circa 2020), third party and possibly outdated; Jiangyin government page was not loaded. Low-medium confidence."
+ }
+}
