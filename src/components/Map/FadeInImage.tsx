@@ -31,6 +31,11 @@ export default function FadeInImage({ instant, onLoad, style, subject, frame, ..
 // applied at once) already assumed the new one, so the photo showed narrower than the header, dark backdrop either side.
 const naturalSizes = new Map<string, { w: number; h: number }>();
 
+// `instant` (a cached photo URL) skips the fade only when the photo is ready within this long of mounting. A cached URL
+// is not a decoded image: one still loading when a sheet came up (back from a spot to its destination) popped in over
+// the dark header a few hundred ms later. Ready later than this, it fades in like any other.
+const INSTANT_WINDOW_MS = 100;
+
 function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageProps & { instant?: boolean; subject?: Subject; frame: AnimatedFrame }) {
   const opacity = useSharedValue(0);
   const uri = (rest.source as { uri?: string } | undefined)?.uri;
@@ -46,7 +51,11 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
   // (the first destination opened after a launch) used to fade in at once, at the plain centred crop it has before its
   // size is known, and then jump to its framing when that layout landed, a few frames late (later still mid-slide).
   const placed = useSharedValue(known ? 1 : 0);
-  const fadeIn = () => { 'worklet'; opacity.value = instant ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) }); };
+  const [mountedAt] = useState(Date.now);
+  const fadeIn = () => {
+    'worklet';
+    opacity.value = instant && Date.now() - mountedAt < INSTANT_WINDOW_MS ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) });
+  };
   useAnimatedReaction(() => {
     const nw = naturalW.value, nh = naturalH.value;
     if (placed.value || !nw || !nh) return false;
@@ -111,9 +120,10 @@ function BoxImage({ instant, onLoad, style, subject, ...rest }: ImageProps & { i
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
   const [natural, setNatural] = useState<{ w: number; h: number } | null>(null);
   const placed = !!subject && !!box && !!natural;
+  const [mountedAt] = useState(Date.now);
 
   const show = () => {
-    opacity.value = instant ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) });
+    opacity.value = instant && Date.now() - mountedAt < INSTANT_WINDOW_MS ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) });
   };
   // A subject photo appears only once it is placed (it is hidden until then even when `instant`).
   useEffect(() => { if (placed) show(); }, [placed]);
