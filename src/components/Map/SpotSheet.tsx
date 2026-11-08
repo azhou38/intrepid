@@ -20,6 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
+import PatternPlaceholder from './PatternPlaceholder';
 import { Check, Clock, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, LayoutGrid, Plus,
          ExternalLink, Ticket, Globe, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
@@ -42,6 +43,7 @@ import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import PhotoPlaceholder from './PhotoPlaceholder';
+import { NO_PHOTO } from '../../data/imageOverrides';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
@@ -168,6 +170,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
   const [nameH, setNameH] = useState(0);
   const [thumb, setThumb] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
   const thumbWasCachedRef = useRef(thumbCache.has(cacheKey));
+  // No photo to show at all (none exists, or none was found): a patterned field stands in for it, not the bare dark fill.
+  const [noThumb, setNoThumb] = useState(false);
   useEffect(() => {
     if (thumbCache.has(cacheKey)) {
       thumbWasCachedRef.current = true;
@@ -175,8 +179,10 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
       return;
     }
     thumbWasCachedRef.current = false;
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spotPhotoTitle(spot), 960).then(u => { if (u) setThumb(u); });
+    setNoThumb(false);
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spotPhotoTitle(spot), 960).then(u => { if (u) setThumb(u); else setNoThumb(true); });
   }, [spot.id]);
+  const photoless = !thumb && (noThumb || NO_PHOTO.has(spotPhotoTitle(spot)));
 
   // The black scrim is as tall as the text block it sits behind — its measured height (nameH, the whole overlay: name,
   // time/cost and description), the overlay's bottom inset, and a short fade above the first line — so a card with a
@@ -201,6 +207,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
         {/* Image — taller now that the name lives on top of it instead of in their
             own row below, so the card doesn't grow overall despite the extra image height. */}
         <View style={st.cardImageWrap}>
+          {photoless && <PatternPlaceholder seed={spot.id} icon={spot.icon} idPrefix={`cardPat-${gradId}`} />}
           {thumb && (
             <FadeInImage instant={thumbWasCachedRef.current} subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: thumb }} style={StyleSheet.absoluteFill} resizeMode="cover" />
           )}
