@@ -207,7 +207,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
         {/* Image — taller now that the name lives on top of it instead of in their
             own row below, so the card doesn't grow overall despite the extra image height. */}
         <View style={st.cardImageWrap}>
-          {photoless && <PatternPlaceholder seed={spot.id} icon={spot.icon} idPrefix={`cardPat-${gradId}`} />}
+          {photoless && <PatternPlaceholder seed={spot.id} idPrefix={`cardPat-${gradId}`} />}
           {thumb && (
             <FadeInImage instant={thumbWasCachedRef.current} subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: thumb }} style={StyleSheet.absoluteFill} resizeMode="cover" />
           )}
