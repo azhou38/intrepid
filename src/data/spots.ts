@@ -106,6 +106,7 @@ const CURRENCY_FORMAT: Record<string, { prefix?: string; suffix?: string }> = {
   AUD: { prefix: 'AUD ' },
   NZD: { prefix: 'NZD ' },
   CHF: { prefix: 'CHF ' },
+  CNY: { prefix: 'CNY ' },   // ¥ is the yen's here; the yuan spells out its code
   CZK: { suffix: ' Kč' },
   SEK: { suffix: ' SEK' },
   NOK: { suffix: ' NOK' },
@@ -139,7 +140,7 @@ export function formatVisitTime(min: number, max: number): string {
 export type Tone = 'green' | 'yellow' | 'orange';
 export const visitTimeTone = (min: number): Tone => (min <= 1 ? 'green' : min <= 3 ? 'yellow' : 'orange');
 // Approximate USD per unit of each currency, only to place a price against the $10 / $30 thresholds (not for display).
-const USD_PER: Record<string, number> = { USD: 1, EUR: 1.1, GBP: 1.3, JPY: 0.0067, AUD: 0.65, NZD: 0.6, CHF: 1.15, CZK: 0.044, SEK: 0.095, NOK: 0.093, DKK: 0.147, ISK: 0.0073, PGK: 0.25 };
+const USD_PER: Record<string, number> = { USD: 1, EUR: 1.1, GBP: 1.3, JPY: 0.0067, AUD: 0.65, NZD: 0.6, CHF: 1.15, CZK: 0.044, SEK: 0.095, NOK: 0.093, DKK: 0.147, ISK: 0.0073, PGK: 0.25, CNY: 0.14 };
 // A free spot reached through a park pass, priced as that pass: its cost column shows the pass's price ("AUD 10") over the
 // pass's name (spotCostLabel). Null for any other spot.
 function passPriced(spot: Spot): Spot | null {
