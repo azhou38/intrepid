@@ -3069,6 +3069,8 @@ const destItems = useMemo((): DestItem[] =>
     lastStampRef.current = { sig, value };
     return value;
   }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot, destTapPlan, selectedDest]);
+  const stampGeoJSONRef = useRef(stampGeoJSON);
+  stampGeoJSONRef.current = stampGeoJSON;
 
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
@@ -6031,6 +6033,29 @@ const destItems = useMemo((): DestItem[] =>
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
   }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget, destTapPlan, selectedDest]);
 
+  // Destination taps, from a photo pin or a dot. A dot only takes a tap while it shows: each fades out below its tier's zoom
+  // (stampOpacityExpr) but stays in the data.
+  const stampShown = (tier: number) => tier <= 5 && camZoomRef.current >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
+  const pressDest = (id: string) => {
+    const dest = DESTINATIONS.find(d => d.id === id);
+    if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
+  };
+  // A tap the photo pins took though only hidden ones were under it: the nearest shown dot within the dots' own tap reach
+  // (half rnmapbox's default 44 pt box), by screen distance at the live zoom.
+  const pressDotAt = (lng: number, lat: number) => {
+    const world = 512 * Math.pow(2, camZoomRef.current);
+    const tx = (lng + 180) / 360, ty = mercY(lat);
+    let best: string | null = null, bestD = 22;
+    for (const f of stampGeoJSONRef.current.features) {
+      if (!stampShown(Number(f.properties?.tier ?? 99))) continue;
+      const [flng, flat] = f.geometry.coordinates;
+      const dx = ((flng + 180) / 360 - tx) * world, dy = (mercY(flat) - ty) * world;
+      const d = Math.hypot(dx, dy);
+      if (d <= bestD) { bestD = d; best = String(f.properties?.id); }
+    }
+    if (best) pressDest(best);
+  };
+
   // Which sliding sheet is mounted right now. When it changes from one level to another, the incoming sheet is a
   // replacement for the one that was showing and starts where that one rested (see sheetPose) rather than from below
   // the screen. Read during render (the ref is only advanced after the commit), so it is a stable answer for the
@@ -6398,13 +6423,8 @@ const destItems = useMemo((): DestItem[] =>
           id="destStamps"
           shape={stampGeoJSON}
           onPress={(e) => {
-            // Only a dot that shows takes the tap: each fades out below its tier's zoom (stampOpacityExpr) but stays in the data.
-            const z = camZoomRef.current;
-            const shown = (tier: number) => tier <= 5 && z >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
-            const id = e.features.find(f => shown(Number(f.properties?.tier ?? 99)))?.properties?.id as string | undefined;
-            if (!id) return;
-            const dest = DESTINATIONS.find(d => d.id === id);
-            if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
+            const id = e.features.find(f => stampShown(Number(f.properties?.tier ?? 99)))?.properties?.id as string | undefined;
+            if (id) pressDest(id);
           }}
         >
           <MapboxGL.CircleLayer
@@ -6434,6 +6454,10 @@ const destItems = useMemo((): DestItem[] =>
           <MapboxGL.ShapeSource
             id="destPhotos"
             shape={nativeDestPins.shape}
+            // A tap takes a photo pin only when it lands on the pin (or its name) itself. With the default 44 pt box, a tap on a
+            // dot found a nearby pin, often a hidden one (still in the data, see shows below) with a shown neighbour beside it,
+            // and selected the neighbour.
+            hitbox={{ width: 4, height: 4 }}
             onPress={(e) => {
               // Only a pin that shows takes the tap: not one a back or close plan has put in no layer (DEST_TIER_UNDRAWN), one whose
               // tier is switched off, one below its tier's gate (hidden natively before destTierOn catches up), or a handoff
@@ -6445,9 +6469,9 @@ const destItems = useMemo((): DestItem[] =>
               };
               const hit = e.features.find(shows);
               const id = hit?.properties?.id as string | undefined;
-              if (!id) return;
-              const dest = DESTINATIONS.find(d => d.id === id);
-              if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
+              // Only hidden pins under the tap: this source is drawn above the dots, so it took the tap from them. Hand it on.
+              if (!id) { pressDotAt(e.coordinates.longitude, e.coordinates.latitude); return; }
+              pressDest(id);
             }}
           >
             {[...destTierOrder().map((tier, i, all) => (
