@@ -4494,16 +4494,18 @@ const destItems = useMemo((): DestItem[] =>
     // zooms out to the destination's default view instead (the parent destination still gets
     // selected below as internal bookkeeping — SpotSheet needs it — but the user never
     // visited it, so back must not open its sheet). handleSearchSelect overrides after.
-    // A standalone spot opened while a destination is selected goes back up to that destination (it is what the user
-    // came from), with the destination left selected; with nothing selected it is entered from the map.
-    if (!selectedDestRef.current) {
+    // A standalone spot belongs to no destination, so it is always entered from the map: it never shows a destination's
+    // back pill ("← Mildura" on Junction Park, opened from Mildura, read as if it were Mildura's), and its X closes to its
+    // own area.
+    if (!selectedDestRef.current || !dest) {
       setSpotOrigin('map');
     } else {
       setSpotOrigin('destination');
     }
     if (zoomTimerRef.current) { clearTimeout(zoomTimerRef.current); zoomTimerRef.current = null; }
     // Keep the parent destination selected so the country/destination breadcrumb stays present. A standalone spot has
-    // none to select: it only drops a selected country that isn't its own.
+    // none to select: it drops whichever destination was open (see the origin above) and a selected country that isn't
+    // its own.
     if (dest) {
       if (selectedDestRef.current?.id !== dest.id) {
         dropCountryIfForeign(dest.country);
@@ -4511,6 +4513,10 @@ const destItems = useMemo((): DestItem[] =>
         setSelectedDest(dest);
       }
     } else {
+      if (selectedDestRef.current) {
+        selectedDestRef.current = null;
+        setSelectedDest(null);
+      }
       dropCountryIfForeign(country!);
     }
     // Re-tapping the ALREADY-focused spot's own pin (e.g. after panning away, which auto-peeks
