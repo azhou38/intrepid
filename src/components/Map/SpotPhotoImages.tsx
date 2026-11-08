@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
 import PinPhoto from './PinPhoto';
@@ -8,7 +8,7 @@ import { spotPhotoTitle, type Spot } from '../../data/spots';
 import { pinPhotoUri, loadPinPhoto } from '../../utils/pinPhotoCache';
 import { pumpedTimeout } from '../../utils/pumpedTimeout';
 import { NO_PHOTO } from '../../data/imageOverrides';
-import PhotoPlaceholder from './PhotoPlaceholder';
+import PatternPlaceholder from './PatternPlaceholder';
 
 // A spot's photo pin drawn by a native symbol layer (MapScreen's spotPhotos), so Mapbox decides on the render thread,
 // every frame, which pins fit and fades them in and out with the camera, the way Google Maps does. Each pin's look
@@ -23,9 +23,11 @@ const TAIL = 10;
 const RIM = 'rgba(0,0,0,0.22)';
 const VISITED_COLOR = '#10B981';
 const PLACEHOLDER = '#E5E7EB';
-// The bubble of a spot with no photo at all (NO_PHOTO): one colour for every spot, rather than its category's tint, so the
-// pins of photo-less spots read as one kind on the map. A dark slate, distinct from the light grey of a photo still loading.
-const NO_PHOTO_FILL = '#475569';
+// The bubble of a spot with no photo at all (NO_PHOTO): the same slate and contour motif as its card and sheet
+// (PatternPlaceholder), rather than its category's tint, so photo-less spots read as one kind; the spot's emoji sits on it.
+// Fewer, brighter lines than the card, at this size.
+const NO_PHOTO_LEVELS = 5;
+const NO_PHOTO_LINE_OPACITY = 0.18;
 const PAD = 2;
 const R = SPOT_PHOTO_BUBBLE / 2;
 const TIP_D = R + TAIL;
@@ -77,7 +79,12 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: S
         </Svg>
         <View collapsable={false} style={[st.bubble, { borderColor: ring }]}>
           <View collapsable={false} style={st.clip}>
-            {noPhoto && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} style={{ backgroundColor: NO_PHOTO_FILL }} />}
+            {noPhoto && (
+              <View style={st.noPhoto}>
+                <PatternPlaceholder seed={spot.id} idPrefix={`pinPat-${name}`} size={SPOT_PHOTO_BUBBLE - 4} levels={NO_PHOTO_LEVELS} lineOpacity={NO_PHOTO_LINE_OPACITY} />
+                <Text style={st.noPhotoIcon}>{spot.icon ?? '📍'}</Text>
+              </View>
+            )}
             {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={() => { loadedRef.current = true; snap(); }} onShown={() => { if (loadedRef.current) snapReady(); }} resizeMode="cover" />}
           </View>
         </View>
@@ -104,4 +111,9 @@ const st = StyleSheet.create({
     borderRadius: SPOT_PHOTO_BUBBLE / 2, borderWidth: 2, backgroundColor: PLACEHOLDER, overflow: 'hidden',
   },
   clip: { flex: 1, borderRadius: SPOT_PHOTO_BUBBLE / 2, overflow: 'hidden' },
+  noPhoto: { width: SPOT_PHOTO_BUBBLE - 4, height: SPOT_PHOTO_BUBBLE - 4, alignItems: 'center', justifyContent: 'center' },
+  // The same glyph size the category placeholder used (52% of the bubble).
+  noPhotoIcon: {
+    position: 'absolute', fontSize: Math.round((SPOT_PHOTO_BUBBLE - 4) * 0.52), lineHeight: Math.round((SPOT_PHOTO_BUBBLE - 4) * 0.62), textAlign: 'center',
+  },
 });

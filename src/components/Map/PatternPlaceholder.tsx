@@ -2,15 +2,18 @@ import React, { memo, useMemo, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
-// What fills a spot card in the carousel when the spot has no photo at all: a slate field (the colour of a photo-less spot's
-// pin, see SpotPhotoImages) with faint topographic contour lines, like the height lines of a map, so the card reads as a
-// place and not as a photo that failed to load. The terrain is generated from the spot's id: every card differs, and a
-// spot's card is always the same. (A repeated emoji over geometric tiles looked too playful.)
+// What stands in for a spot's photo when it has none at all: a slate field with faint topographic contour lines, like the
+// height lines of a map, so it reads as a place and not as a photo that failed to load. Used wherever the spot's photo
+// would be: its carousel card, its map pin's bubble (with the spot's emoji on it, see SpotPhotoImages), the full-screen
+// hero and the bottom strip. The terrain is generated from the spot's id, so every spot differs and a spot always looks the
+// same. (A repeated emoji over geometric tiles looked too playful.)
 const TOP = '#475569';
 const BOTTOM = '#273244';
 const LINE = 'rgba(255,255,255,0.10)';
-const LEVELS = 13;   // contour lines across the card's range of heights
+const LEVELS = 13;   // contour lines across the field's range of heights
 const CELL = 5;      // points between the height samples the lines are traced on (a card costs a few ms to trace)
+// Finer samples for a small field (a pin's bubble), so its few lines stay smooth.
+const cellFor = (w: number, h: number) => Math.max(1, Math.min(CELL, Math.max(w, h) / 60));
 
 // A small deterministic random sequence from the spot's id (mulberry32).
 function rng(seed: string) {
@@ -27,7 +30,8 @@ function rng(seed: string) {
 // One height field over the card (two hills, a hollow and some gentle waves), traced at LEVELS even heights by marching
 // squares into a single path. Lines of one field never cross, as on a real contour map (rings drawn round separate summits
 // overlapped into a mesh).
-function contourPath(seed: string, w: number, h: number): string {
+function contourPath(seed: string, w: number, h: number, levels: number): string {
+  const CELL = cellFor(w, h);
   const r = rng(seed);
   const hills = [1, 1, -0.6].map(a => ({ x: w * (0.1 + 0.8 * r()), y: h * (0.05 + 0.7 * r()), s: (0.25 + 0.3 * r()) * Math.max(w, h), a }));
   const waves = [0, 1, 2].map(() => ({ kx: (r() * 2 - 1) * 0.03, ky: (r() * 2 - 1) * 0.03, p: r() * Math.PI * 2, a: 0.12 + 0.1 * r() }));
@@ -43,8 +47,8 @@ function contourPath(seed: string, w: number, h: number): string {
     if (v > hi) hi = v;
   }
   let d = '';
-  for (let L = 1; L <= LEVELS; L++) {
-    const t = lo + ((hi - lo) * L) / (LEVELS + 1);
+  for (let L = 1; L <= levels; L++) {
+    const t = lo + ((hi - lo) * L) / (levels + 1);
     for (let j = 0; j < ny - 1; j++) for (let i = 0; i < nx - 1; i++) {
       const a = g[j * nx + i], b = g[j * nx + i + 1], c = g[(j + 1) * nx + i + 1], e = g[(j + 1) * nx + i];
       const x0 = i * CELL, y0 = j * CELL, pts: number[] = [];
@@ -65,18 +69,24 @@ function contourPath(seed: string, w: number, h: number): string {
   return d;
 }
 
-export const PatternPlaceholder = memo(function PatternPlaceholder({ seed, idPrefix }: {
+export const PatternPlaceholder = memo(function PatternPlaceholder({ seed, idPrefix, size, levels = LEVELS, lineOpacity }: {
   seed: string;
-  // Unique per rendered card: the looping carousel renders clones of a spot side by side, and SVG ids must not collide.
+  // Unique per rendered instance: the looping carousel renders clones of a spot side by side, and SVG ids must not collide.
   idPrefix: string;
+  // A fixed square (a pin's bubble, snapshotted into a map image: it must draw on its first frame, not after a layout pass);
+  // otherwise it fills its parent.
+  size?: number;
+  levels?: number;
+  lineOpacity?: number;
 }) {
-  const [box, setBox] = useState<{ w: number; h: number } | null>(null);
-  const lines = useMemo(() => (box ? contourPath(seed, box.w, box.h) : ''), [seed, box]);
+  const [measured, setMeasured] = useState<{ w: number; h: number } | null>(null);
+  const box = size ? { w: size, h: size } : measured;
+  const lines = useMemo(() => (box ? contourPath(seed, box.w, box.h, levels) : ''), [seed, box?.w, box?.h, levels]);
   return (
     <View
       pointerEvents="none"
-      style={[StyleSheet.absoluteFill, { backgroundColor: TOP, overflow: 'hidden' }]}
-      onLayout={e => setBox({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}
+      style={[size ? { width: size, height: size } : StyleSheet.absoluteFill, { backgroundColor: TOP, overflow: 'hidden' }]}
+      onLayout={size ? undefined : e => setMeasured({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}
     >
       <Svg style={StyleSheet.absoluteFill}>
         <Defs>
@@ -86,7 +96,7 @@ export const PatternPlaceholder = memo(function PatternPlaceholder({ seed, idPre
           </SvgLinearGradient>
         </Defs>
         <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${idPrefix}-g)`} />
-        {!!lines && <Path d={lines} fill="none" stroke={LINE} strokeWidth={1} />}
+        {!!lines && <Path d={lines} fill="none" stroke={lineOpacity === undefined ? LINE : `rgba(255,255,255,${lineOpacity})`} strokeWidth={size ? 0.75 : 1} />}
       </Svg>
     </View>
   );
