@@ -119,8 +119,10 @@ const CAROUSEL_WINDOW = 3;
 // the window widens to CAROUSEL_WINDOW once the slide is done.
 const CAROUSEL_WINDOW_AT_MOUNT = 1;
 const CAROUSEL_WIDEN_MS = 600;
-// The full-screen panels (hidden at half-screen) mount after the slide-in rather than during it; heading to full screen
-// still mounts them at once (revealPanels).
+// The full-screen panels (hidden at half-screen) mount after the slide-in rather than during it: the moment it lands (see
+// transitionTo's 'mount'), with this as the fallback. They used to wait this long regardless, and a swipe up in that time
+// had to mount them itself, a blank sheet for ~0.4 s while it did. Heading to full screen still mounts them at once
+// (revealPanels).
 const SPOT_PANEL_MOUNT_DELAY_MS = 900;
 // Most clones of the spots at the other end on each side of the looping carousel (see extendedSpots); fewer when the
 // destination has fewer spots.
@@ -876,7 +878,8 @@ function SpotSheet({
     // are the ones the UI thread spends building this sheet's views (and starting the camera move), so starting at once
     // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
     if (reason !== 'mount') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
-    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) hidePeekSV.value = 0; }));
+    // The full-screen content mounts the moment the slide-in lands (revealPanels), not SPOT_PANEL_MOUNT_DELAY_MS after mount.
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } }));
     else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
