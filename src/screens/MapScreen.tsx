@@ -1307,7 +1307,7 @@ const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its 
 const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
-const DEST_TAP_HANDOFF_LEAD = 0.5;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
+const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
 const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
 const COUNTRY_BACK_SLIDE_MS = 400;   // "← Country": the country sheet's slide-in, a little slower than the usual 280 ms
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
@@ -5714,13 +5714,16 @@ const destItems = useMemo((): DestItem[] =>
     for (const d of DESTINATIONS) {
       const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
       if (level === undefined || !stablePhotoIds.has(d.id)) continue;
-      if (Math.abs(handoffZoom - level) > HANDOFF_BAND) continue;
+      // A tapped destination flying in (destTapPlan) is on its handoff layer from the tap: the JS side sees the flight's
+      // zoom only now and then, so it could reach the band and the handoff in the same render, and with no time on the layer
+      // its pin was cut at once instead of fading.
+      if (Math.abs(handoffZoom - level) > HANDOFF_BAND && destTapPlan?.destId !== d.id) continue;
       if (Math.abs(d.coordinates.latitude - latitude) > latitudeDelta * 1.5 || Math.abs(d.coordinates.longitude - longitude) > longitudeDelta * 1.5) continue;
       out.push({ dest: d, past: hiddenDestIds.has(d.id) });
       if (out.length >= HANDOFF_MAX) break;
     }
     return out;
-  }, [stablePhotoIds, handoffZoom, hiddenDestIds, region]);
+  }, [stablePhotoIds, handoffZoom, hiddenDestIds, region, destTapPlan]);
   // Each handoff destination keeps one of HANDOFF_MAX fixed layers (destHandoff-0 … -5) for as long as it is in the band.
   // The layers are always mounted: adding or removing a map layer mid-zoom made Mapbox redo its whole symbol placement,
   // and every destination photo pin vanished for a frame.
