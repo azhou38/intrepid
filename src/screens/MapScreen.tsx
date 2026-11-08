@@ -832,8 +832,9 @@ const destGateOn = (tier: string, z: number) => {
 // that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
 // A destination pin tier that no layer draws: where a back or close plan puts the pins its target view does not show.
 const DEST_TIER_UNDRAWN = 'undrawn';
-// The selected country's border highlight fading out when its X is tapped (see highlightClosingFor).
-const HL_FADE = { duration: 200, delay: 0 };
+// The selected country's border highlight shows and hides at once, with no fade (also when its X is tapped: see
+// highlightClosingFor).
+const HL_FADE = { duration: 0, delay: 0 };
 const DEST_GATE_FADE_MS = 250;
 const DEST_GATE_FADE_OUT_MS = 140;
 // One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
