@@ -2395,8 +2395,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const planZoomTargetRef = useRef<number | null>(null);
   // A destination tap flying in to its default view (see destTapHandoff): set at the tap, ended at the map idle once the
   // camera is there, by a gesture, or by its safety timer; another selection stops it applying.
-  const [destTapPlan, setDestTapPlan] = useState<{ destId: string; target: number } | null>(null);
-  const destTapPlanRef = useRef<{ destId: string; target: number } | null>(null);
+  // `from`: the selection before the tap, which the destination photo pins keep planning for until the handoff (see
+  // destPhotoPlan).
+  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null } };
+  const [destTapPlan, setDestTapPlan] = useState<DestTapPlan | null>(null);
+  const destTapPlanRef = useRef<DestTapPlan | null>(null);
   const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const endDestTapPlan = useCallback(() => {
     if (destTapPlanTimerRef.current) { clearTimeout(destTapPlanTimerRef.current); destTapPlanTimerRef.current = null; }
@@ -2404,9 +2407,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     destTapPlanRef.current = null;
     setDestTapPlan(null);
   }, []);
-  const beginDestTapPlan = useCallback((destId: string, target: number) => {
+  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from']) => {
     if (target <= camZoomRef.current + ZOOM_EPSILON) { endDestTapPlan(); return; }   // not a flight in
-    destTapPlanRef.current = { destId, target };
+    destTapPlanRef.current = { destId, target, from };
     setDestTapPlan(destTapPlanRef.current);
     if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
     destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
@@ -2880,8 +2883,15 @@ const destItems = useMemo((): DestItem[] =>
     const t = setTimeout(() => setPlanSpot(selectedSpot), PLAN_SPOT_DELAY_MS);
     return () => clearTimeout(t);
   }, [selectedSpot]);
-  const destPhotoPlan = useMemo(() => cachedDestPlan(planCountry, planDest, navTarget ? null : planSpot, visitIndex),
-    [planCountry, planDest, planSpot, navTarget, visitIndex]);
+  // A destination tap's flight in keeps planning for the selection before the tap until its handoff (destTapHandoff):
+  // re-planning at the tap, for the destination now selected, switched pins all over the country between photo pins and
+  // dots at the old zoom, before the camera had moved. By the handoff the camera is close in, and the new plan lands
+  // together with the destination's own switch to its spots.
+  const tapHeld = destTapPlan && selectedDest?.id === destTapPlan.destId && destTapHandoff === null ? destTapPlan.from : null;
+  const destPlanCountry = tapHeld ? tapHeld.country : planCountry;
+  const destPlanDest = tapHeld ? tapHeld.dest : planDest;
+  const destPhotoPlan = useMemo(() => cachedDestPlan(destPlanCountry, destPlanDest, navTarget ? null : planSpot, visitIndex),
+    [destPlanCountry, destPlanDest, planSpot, navTarget, visitIndex]);
   // The same plan with nothing selected: what the spot plan keeps clear of, so selecting or closing never re-plans spots.
   const baseDestPhotoPlan = useMemo(() => cachedDestPlan(null, null, null, visitIndex), [visitIndex]);
   // Prewarm: once a destination or spot sheet has settled, plan the context its back pill lands on (the destination's
@@ -4277,6 +4287,7 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   const handleMarkerPress = useCallback((dest: Destination) => {
+    const tapFrom = { country: selectedCountryRef.current, dest: selectedDestRef.current };   // see beginDestTapPlan
     cameraHoldUntilRef.current = Date.now() + SHEET_SLIDE_IN_MS;
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
@@ -4304,7 +4315,7 @@ const destItems = useMemo((): DestItem[] =>
     dropCountryIfForeign(dest.country);
     selectedDestRef.current = dest;
     setSelectedDest(dest);
-    beginDestTapPlan(dest.id, destDefaultCamera(dest, 'topHalf').zoom);
+    beginDestTapPlan(dest.id, destDefaultCamera(dest, 'topHalf').zoom, tapFrom);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
     prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
