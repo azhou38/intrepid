@@ -5785,7 +5785,11 @@ const destItems = useMemo((): DestItem[] =>
   const handoffDests = useMemo(() => {
     const out: { dest: Destination; past: boolean }[] = [];
     const { latitude, longitude, latitudeDelta, longitudeDelta } = region;
-    for (const d of DESTINATIONS) {
+    // A tapped destination comes first: taken in list order, the HANDOFF_MAX slots could fill with its neighbours before
+    // it was reached, and it lost its layer mid-flight, its pin back on its tier layer at full opacity (Lorne, among the
+    // destinations around Melbourne) until it was hidden.
+    const tapped = destTapPlan ? DESTINATIONS.find(d => d.id === destTapPlan.destId) : undefined;
+    for (const d of tapped ? [tapped, ...DESTINATIONS.filter(x => x !== tapped)] : DESTINATIONS) {
       const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
       if (level === undefined || !stablePhotoIds.has(d.id)) continue;
       // A tapped destination flying in (destTapPlan) is on its handoff layer from the tap: the JS side sees the flight's
@@ -5854,16 +5858,35 @@ const destItems = useMemo((): DestItem[] =>
     return out;
   }, [handoffSig, handoffRetryTick]);
   // Each slot's state this render, and which destinations are on their slot's layer (see handoffSlotOnRef).
+  // Each slot's last style, kept while it is empty: an empty slot used to switch to a plain shown style, and the destination
+  // that had just left it (a tapped one, on its zoom fade) was still in Mapbox's data for a frame or two and drew at full
+  // opacity. And when each slot last snapped to a new state: a destination joins only HANDOFF_SLOT_SETTLE_MS after it, as
+  // Mapbox can load the new data before it applies the snap (Lorne's hidden pin, rejoining a slot just switched off once
+  // the camera landed, showed at half opacity for two frames).
+  const handoffSlotStyleRef = useRef<any[]>(Array(HANDOFF_MAX).fill(null));
+  const handoffSlotSnapAtRef = useRef<number[]>(Array(HANDOFF_MAX).fill(0));
+  const handoffSettleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (handoffSettleTimerRef.current) clearTimeout(handoffSettleTimerRef.current); }, []);
+  const handoffNow = Date.now();
+  let handoffSettleIn = 0;
   const handoffLayers = Array.from({ length: HANDOFF_MAX }, (_, k) => {
+    const kept = handoffSlotStyleRef.current[k];
     const h = stableHandoffDests.find(x => x.slot === k);
-    if (!h) return { h: undefined, tier: '', on: handoffSlotOnRef.current[k], snap: false };
+    if (!h) return { h: undefined, tier: '', on: handoffSlotOnRef.current[k], snap: false, style: kept ?? destTierStyle('', handoffSlotOnRef.current[k]) };
     const tier = destPinPlan.fadeTier.get(h.dest.id) ?? '';
     const on = destTierOn(tier) && !h.past;
     if (!handoffJoinedRef.current.has(h.dest.id)) {
-      if (handoffSlotOnRef.current[k] !== on) return { h: undefined, tier, on, snap: true };
+      if (handoffSlotOnRef.current[k] !== on) return { h: undefined, tier, on, snap: true, style: destTierStyle(tier, on, true) };
+      const wait = handoffSlotSnapAtRef.current[k] + HANDOFF_SLOT_SETTLE_MS - handoffNow;
+      if (wait > 0) {
+        handoffSettleIn = handoffSettleIn ? Math.min(handoffSettleIn, wait) : wait;
+        return { h: undefined, tier, on, snap: false, style: kept ?? destTierStyle(tier, on) };
+      }
       handoffJoinedRef.current.add(h.dest.id);
     }
-    return { h, tier, on, snap: false };
+    const level = DEST_ZOOM_LEVEL_BY_ID[h.dest.id];
+    const style = on && destTapPlan?.destId === h.dest.id && level !== undefined ? destTapFadeStyle(level) : destTierStyle(tier, on);
+    return { h, tier, on, snap: false, style };
   });
   for (const id of [...handoffJoinedRef.current]) if (!stableHandoffDests.some(h => h.dest.id === id)) handoffJoinedRef.current.delete(id);
   const handoffWaiting = handoffLayers.some(l => l.snap);
@@ -5871,8 +5894,16 @@ const destItems = useMemo((): DestItem[] =>
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const joinedHandoffDests = useMemo(() => handoffLayers.flatMap(l => l.h ? [l.h] : []), [joinedSig]);
   useEffect(() => {
-    handoffLayers.forEach((l, k) => { handoffSlotOnRef.current[k] = l.on; });
+    const now = Date.now();
+    handoffLayers.forEach((l, k) => {
+      if (l.snap) handoffSlotSnapAtRef.current[k] = now;
+      handoffSlotOnRef.current[k] = l.on;
+      handoffSlotStyleRef.current[k] = l.style;
+    });
     if (handoffWaiting) setHandoffTick(t => t + 1);
+    if (handoffSettleIn > 0 && !handoffSettleTimerRef.current) {
+      handoffSettleTimerRef.current = setTimeout(() => { handoffSettleTimerRef.current = null; setHandoffTick(t => t + 1); }, handoffSettleIn);
+    }
   });
   void handoffTick;
   // HANDOFF_FADE_MS: a destination's photo pin may leave through the slower handoff fade (see below).
@@ -6435,9 +6466,7 @@ const destItems = useMemo((): DestItem[] =>
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
                   // Its destination's tier gate is in its opacity, as for the tier layers above.
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
-                  style={l.h && l.on && destTapPlan?.destId === l.h.dest.id && DEST_ZOOM_LEVEL_BY_ID[l.h.dest.id] !== undefined
-                    ? destTapFadeStyle(DEST_ZOOM_LEVEL_BY_ID[l.h.dest.id])
-                    : destTierStyle(l.tier, l.on, l.snap)}
+                  style={l.style}
                 />
               );
             })]}
