@@ -3492,9 +3492,12 @@ const destItems = useMemo((): DestItem[] =>
     return value;
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff, destTapPlan, spotsInDest, selectedDest]);
   // Pins due to show their photo (spotFadeWaitingRef, see nativeSpotPins) start their fade, batched (SPOT_READY_BATCH_MS).
+  // After every render, not on nativeSpotPins: the pass that queues pins whose photos have just become ready changes no
+  // feature (they are still small pins), so it hands back the same shape object, and an effect keyed on it never ran:
+  // Christchurch's 13 photo pins sat queued as small pins for good.
   useEffect(() => {
     if (spotFadeWaitingRef.current.size && !spotReadyTimerRef.current) spotReadyTimerRef.current = pumpedTimeout(runSpotFade, SPOT_READY_BATCH_MS);
-  }, [nativeSpotPins, runSpotFade]);
+  });
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
