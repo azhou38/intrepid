@@ -1360,6 +1360,22 @@ function isSpotRevealed(sp: Spot, zoom: number): boolean {
   const level = SPOT_REVEAL_ZOOM_BY_ID[sp.id];
   return level !== undefined && zoom >= level - ZOOM_EPSILON;
 }
+// The spots a destination tap's landing view (destTapPlan) will show: the destination's own, and every other spot revealed at
+// that zoom inside the view, with a margin. Their pin photos are fetched and their pin images made during the flight, so a
+// neighbouring destination's spots land with their photos together with the tapped destination's, not a second later.
+function spotsInTapView(destId: string, center: { lng: number; lat: number }, zoom: number): Spot[] {
+  const world = 512 * Math.pow(2, zoom), margin = 1.2;
+  const dx = (SCREEN_W_GLOBAL / 2) * margin / world, dy = (H / 2) * margin / world;
+  const cx = (center.lng + 180) / 360, cy = mercY(center.lat);
+  const own: Spot[] = [], others: Spot[] = [];
+  for (const sp of SPOTS) {
+    if (spotParentKey(sp) === destId) { own.push(sp); continue; }
+    if (!isSpotRevealed(sp, zoom)) continue;
+    const x = (sp.coordinates.longitude + 180) / 360, y = mercY(sp.coordinates.latitude);
+    if (Math.abs(x - cx) <= dx && Math.abs(y - cy) <= dy) others.push(sp);
+  }
+  return [...own, ...others];   // its own first
+}
 // The zoom a spot's photo pin shows from: its plan zoom (spotPhotoPlan.photoAt), and never before its own photo zoom (see
 // isEarly in nativeSpotPins).
 const spotPhotoZoom = (id: string, planZoom: number) => Math.max(planZoom, (SPOT_PHOTO_ZOOM_BY_ID[id] ?? -Infinity) - ZOOM_EPSILON);
@@ -2380,7 +2396,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // camera is there, by a gesture, or by its safety timer; another selection stops it applying.
   // `from`: the selection before the tap, which the destination photo pins keep planning for until the handoff (see
   // destPhotoPlan).
-  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null } };
+  // `spots`: what the landing view will show (spotsInTapView).
+  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null }; spots: Spot[] };
   const [destTapPlan, setDestTapPlan] = useState<DestTapPlan | null>(null);
   const destTapPlanRef = useRef<DestTapPlan | null>(null);
   const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -2390,9 +2407,9 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     destTapPlanRef.current = null;
     setDestTapPlan(null);
   }, []);
-  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from']) => {
+  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from'], spots: Spot[]) => {
     if (target <= camZoomRef.current + ZOOM_EPSILON) { endDestTapPlan(); return; }   // not a flight in
-    destTapPlanRef.current = { destId, target, from };
+    destTapPlanRef.current = { destId, target, from, spots };
     setDestTapPlan(destTapPlanRef.current);
     if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
     destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
@@ -3376,11 +3393,12 @@ const destItems = useMemo((): DestItem[] =>
       if (fresh < MAX_NEW_SPOT_IMAGES && !holdImages) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
       else pending++;
     }
-    // A destination tap's flight in (destTapPlan): the images of the spot pins it will switch to are made during the
-    // flight, so those pins arrive with their photos instead of as small pins that then fade into photos one by one.
+    // A destination tap's flight in (destTapPlan): the images of the spot pins it will switch to, its neighbours' in view
+    // included, are made during the flight, so those pins arrive with their photos instead of as small pins that then fade
+    // into photos one by one.
     if (destTapPlan && spotPhotoPlan && selectedDest?.id === destTapPlan.destId) {
       const t = destTapPlan.target + ZOOM_EPSILON;
-      for (const sp of spotsInDest) {
+      for (const sp of destTapPlan.spots) {
         const z = spotPhotoPlan.photoAt.get(sp.id);
         if (z === undefined || spotPhotoZoom(sp.id, z) > t || (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? -Infinity) > t) continue;
         const visited = visitIndex.isSpotVisited(sp.id);
@@ -4302,12 +4320,14 @@ const destItems = useMemo((): DestItem[] =>
     dropCountryIfForeign(dest.country);
     selectedDestRef.current = dest;
     setSelectedDest(dest);
-    beginDestTapPlan(dest.id, destDefaultCamera(dest, 'topHalf').zoom, tapFrom);
+    const tapCam = destDefaultCamera(dest, 'topHalf');
+    const tapSpots = spotsInTapView(dest.id, tapCam, tapCam.zoom);
+    beginDestTapPlan(dest.id, tapCam.zoom, tapFrom, tapSpots);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
     prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
-    // Likewise its spots' pin photos (most important first), so they are on disk by the time the camera lands.
-    prefetchPinPhotos(SPOTS.filter(s => s.destinationId === dest.id));
+    // Likewise the pin photos of the spots its view will show (its own first), so they are on disk by the time the camera lands.
+    prefetchPinPhotos(tapSpots);
     setMapState('context');
     setZoomedIntoDestination(true);
     showBreadcrumb(true);
