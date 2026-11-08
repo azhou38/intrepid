@@ -505,20 +505,6 @@ const PIN_EXIT_MS    = 170;
 // See FadePin's `slow`.
 const HANDOFF_FADE_MS = 170;
 
-// The selected country pill's halo (its glow, and an unvisited country's gray border and flag ring) fades in and out with
-// the selection, over the same time as the country's border highlight (HL_FADE_IN). Core Animated, as FadePin: the pills
-// are MarkerViews.
-const HALO_FADE_MS = 250;
-function HaloFade({ on, style, children }: { on: boolean; style?: any; children?: React.ReactNode }) {
-  const opacity = useRef(new Animated.Value(on ? 1 : 0)).current;
-  useLayoutEffect(() => {
-    const toValue = on ? 1 : 0;
-    Animated.timing(opacity, { toValue, duration: HALO_FADE_MS, useNativeDriver: true })
-      .start(({ finished }) => { if (finished) opacity.setValue(toValue); });   // see FadePin
-  }, [on]);
-  return <Animated.View pointerEvents="none" style={[style, { opacity }]}>{children}</Animated.View>;
-}
-
 // Set by MapScreen while a close is zooming out to a known view: pins leaving the plan then use a short fade.
 const closeFade = { fast: false };
 const CLOSE_EXIT_MS = 90;
@@ -848,7 +834,7 @@ const destGateOn = (tier: string, z: number) => {
 const DEST_TIER_UNDRAWN = 'undrawn';
 // The selected country's border highlight fading out when its X is tapped (see highlightClosingFor).
 // The selected country's border highlight fades in when it appears (a country pin, "← Country") and out when it goes.
-const HL_FADE_IN = { duration: 250, delay: 0 };
+const HL_FADE_IN = { duration: 450, delay: 0 };
 const HL_FADE_OUT = { duration: 350, delay: 0 };
 const HL_SNAP = { duration: 0, delay: 0 };
 const DEST_GATE_FADE_MS = 250;
@@ -5675,11 +5661,17 @@ const destItems = useMemo((): DestItem[] =>
   const countryPillMarkers = useMemo(() => renderedCountryPills.map(({ item: cluster, exiting }) => {
     // Not once its country's X has been tapped (highlightClosingFor): the glow goes with the tap, like the border highlight.
     const isSelectedPill = cluster.countryCode === effCountry?.countryCode && highlightClosingFor !== effCountry;
-    // A visited country's pill always has its green border and flag ring; selected, it also glows green. An unvisited
-    // country's has no border until it is selected; then it wears a light-gray border and ring, and a white glow. Checked
-    // against visitedCountryCodeSet (the same source the map boundary highlight uses) rather than cluster.visitedCount,
-    // which only counts destinations — a country visited through its own trips alone has none.
+    // Plain border (no glow/shadow) on every OTHER visited country's pill, always — the
+    // selected country keeps the full glow treatment instead, handled separately below so
+    // the two states never compete on the same element. Checked against
+    // visitedCountryCodeSet (the same source the map boundary highlight uses) rather than
+    // cluster.visitedCount, which only counts destinations — a country visited through its own
+    // trips alone has none.
     const isClusterVisited = visitedCountryCodeSet.has(cluster.countryCode);
+    const isVisitedHighlighted = isClusterVisited && !isSelectedPill;
+    // An unvisited country's pill has no border until it is selected; then it wears a light-gray wrap-around border
+    // (a visited pill's is green), plus a white glow; a selected VISITED country's glow is green.
+    const isUnvisitedPlain = !isClusterVisited && isSelectedPill;
     return (
       <MapboxGL.MarkerView
         key={cluster.country}
@@ -5709,16 +5701,18 @@ const destItems = useMemo((): DestItem[] =>
           >
             <View style={styles.countryPill}>
               {/* Card first so circle (declared last) renders on top */}
-              {/* The selected glow and an unvisited country's gray border fade in and out (HaloFade): the glow is a copy of
-                  the card's shape under its text, the gray border one over it. A visited country's green border is always
-                  there, selected or not. */}
-              <View style={[styles.countryPillCard, isClusterVisited && styles.countryPillCardBorder]}>
-                <HaloFade on={isSelectedPill} style={[styles.countryPillHaloFill, isClusterVisited ? styles.countryPillCardGlow : styles.countryPillCardGlowWhite]} />
+              <View style={[
+                styles.countryPillCard,
+                isSelectedPill && (isClusterVisited ? styles.countryPillCardGlow : styles.countryPillCardGlowWhite),
+                isVisitedHighlighted && styles.countryPillCardBorder,
+                isUnvisitedPlain && styles.countryPillCardBorderGray,
+              ]}>
                 <Text style={styles.countryPillName} numberOfLines={1}>{cluster.country}</Text>
-                {!isClusterVisited && <HaloFade on={isSelectedPill} style={[styles.countryPillHaloBorder, styles.countryPillCardBorderGray]} />}
               </View>
-              <View style={styles.countryPillCircle}>
-                <HaloFade on={isSelectedPill} style={[styles.countryPillHaloFill, isClusterVisited ? styles.countryPillCircleGlow : styles.countryPillCircleGlowWhite]} />
+              <View style={[
+                styles.countryPillCircle,
+                isSelectedPill && (isClusterVisited ? styles.countryPillCircleGlow : styles.countryPillCircleGlowWhite),
+              ]}>
                 <View style={styles.countryPillFlagClip}>
                   <Image
                     source={flagSource(cluster.countryCode)}
@@ -5726,30 +5720,24 @@ const destItems = useMemo((): DestItem[] =>
                     resizeMode="cover"
                   />
                 </View>
-                {isClusterVisited ? (
+                {(isSelectedPill || isVisitedHighlighted || isUnvisitedPlain) && (
                   <>
                     {/* Left semicircle only (clipped to the flag's true outer-cap half) —
                         a full circular ring here would dip into the card's interior for
                         x>12, since the card's own corner curve only spans the left half;
                         past that point the border is flat, filled in by the two bars below.
-                        These ring pieces are plain colored borders with no shadow: a visited
-                        country's (green) always shows, an unvisited one's (gray) only while
-                        it is selected. */}
+                        These ring pieces are plain colored borders with no shadow, so
+                        they're used for the plain "visited, not selected" case too, not just
+                        isSelectedPill — only countryPillCardGlow/countryPillCircleGlow (the
+                        shadow-based glow) is selected-only. Blue variants swap in only for
+                        the selected-but-unvisited case (isVisitedHighlighted alone is
+                        always a visited country, so it's always the green ones). */}
                     <View style={styles.countryPillFlagRingClip}>
-                      <View style={styles.countryPillFlagRingCircle} />
+                      <View style={isUnvisitedPlain ? styles.countryPillFlagRingCirclePlain : styles.countryPillFlagRingCircle} />
                     </View>
-                    <View style={styles.countryPillFlagRingBarTop} />
-                    <View style={styles.countryPillFlagRingBarBottom} />
+                    <View style={isUnvisitedPlain ? styles.countryPillFlagRingBarTopPlain : styles.countryPillFlagRingBarTop} />
+                    <View style={isUnvisitedPlain ? styles.countryPillFlagRingBarBottomPlain : styles.countryPillFlagRingBarBottom} />
                   </>
-                ) : (
-                  // An unvisited country's gray ring shows only while it is selected, fading with its glow.
-                  <HaloFade on={isSelectedPill} style={StyleSheet.absoluteFill}>
-                    <View style={styles.countryPillFlagRingClip}>
-                      <View style={styles.countryPillFlagRingCirclePlain} />
-                    </View>
-                    <View style={styles.countryPillFlagRingBarTopPlain} />
-                    <View style={styles.countryPillFlagRingBarBottomPlain} />
-                  </HaloFade>
                 )}
                 {cluster.visitedCount > 0 && (
                   <View style={styles.countryPillBadge}>
@@ -7128,10 +7116,6 @@ const styles = StyleSheet.create({
   // Same border color as countryPillCardGlow, minus the shadow — used for every OTHER
   // visited country's pill, always (the selected country keeps the full glow above instead).
   countryPillCardBorder: { borderWidth: 1.5, borderColor: 'rgba(22,163,74,0.85)' },
-  // The halo's copies of the card's and the flag circle's shape (see HaloFade): a white fill casting the glow, under the
-  // text and flag, and a border only, over the card.
-  countryPillHaloFill: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, borderRadius: 12, backgroundColor: '#fff' },
-  countryPillHaloBorder: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, borderRadius: 12 },
   // Unvisited and selected: the same border and flag ring as a visited pill, in a light gray.
   countryPillCardBorderGray: { borderWidth: 1.5, borderColor: 'rgba(188,193,202,0.95)' },
   countryPillFlagRingCirclePlain: {
