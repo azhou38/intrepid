@@ -5,6 +5,7 @@ const BOUNDS: Record<string, [number, number, number, number]> = {
   AU: [-43.6, -10.7, 113.3, 153.6],
   BE: [ 49.5,  51.5,   2.5,   6.4],
   CH: [ 45.8,  47.8,   6.0,  10.5],
+  CN: [ 18.2,  53.6,  73.5, 134.8], // mainland China
   CZ: [ 48.6,  51.1,  12.1,  18.9],
   DE: [ 47.3,  55.1,   6.0,  15.0],
   DK: [ 54.5,  57.8,   8.0,  15.2],
@@ -35,7 +36,7 @@ const BOUNDS: Record<string, [number, number, number, number]> = {
 // ranking, just a reasonable approximation of global tourist-arrival prominence.
 const POPULARITY: Record<string, number> = {
   FR: 1, ES: 2, IT: 3, US: 4, GB: 5, DE: 6, JP: 7, GR: 8, AT: 9, NL: 10,
-  PT: 11, CH: 12, CZ: 13, IE: 14, IS: 15, AU: 16, BE: 17, DK: 18, SE: 19, NO: 20, FI: 21, NZ: 22, PG: 23, TO: 24, FJ: 25, WS: 26,
+  PT: 11, CH: 12, CZ: 13, IE: 14, IS: 15, AU: 16, BE: 17, DK: 18, SE: 19, NO: 20, FI: 21, NZ: 22, PG: 23, TO: 24, FJ: 25, WS: 26, CN: 8.5,
 };
 
 /** Lower = more famous/higher display priority. Unknown countries sort last. */

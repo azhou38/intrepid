@@ -176,6 +176,7 @@ const COUNTRY_FACTS: Record<string, { population: string; languages: string[]; c
   PG: { population: '10.3 million', languages: ['English', 'Tok Pisin', 'Hiri Motu'],            currency: 'Papua New Guinean Kina', area: '462,840 km²', capital: 'Port Moresby' },
   TO: { population: '100 thousand', languages: ['Tongan', 'English'],                          currency: 'Tongan Paʻanga',     area: '747 km²',       capital: 'Nukuʻalofa' },
   WS: { population: '220 thousand', languages: ['Samoan', 'English'],                        currency: 'Samoan Tālā',        area: '2,842 km²',     capital: 'Apia' },
+  CN: { population: '1.41 billion', languages: ['Mandarin Chinese'],                       currency: 'Chinese Yuan',       area: '9,597,000 km²', capital: 'Beijing' },
   FJ: { population: '930 thousand', languages: ['English', 'Fijian', 'Fiji Hindi'],        currency: 'Fijian Dollar',      area: '18,274 km²',    capital: 'Suva' },
 };
 
