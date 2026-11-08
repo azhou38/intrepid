@@ -124,7 +124,7 @@ import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prew
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
-import SpotPhotoImages, { spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
+import SpotPhotoImages, { SPOT_PHOTO_BUBBLE, spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED, SPOT_SELECTED_GLOW, SPOT_SELECTED_GLOW_DARK, GLOW_MARGIN } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
@@ -245,6 +245,11 @@ function DestPin({ dest, spotCount, isVisited, isSelected, pinState, hideLabel =
 }
 
 const SPOT_PIN_SIZE = 28;
+// Spot pin geometry for tap tests (pickSpotPinAt): from a pin's coordinate (its image's bottom edge) to its bubble, the
+// photo pin's tail plus image padding (SpotPhotoImages: 10 + 2), and to a small pin's bubble centre (SpotPinImages: a 5 pt
+// radius on a 4 pt tail, 1 pt padding).
+const SPOT_PHOTO_TAIL = 12;
+const SPOT_MINI_LIFT = 10;
 const SPOT_PIN_RIM = 'rgba(0,0,0,0.22)';   // the faint dark rim around a photo spot pin
 // The selected pin is the same size as any other (it used to grow to 40): selection shows in its shadow and glow instead.
 const SPOT_PIN_SIZE_SELECTED = SPOT_PIN_SIZE;
@@ -6039,6 +6044,26 @@ const destItems = useMemo((): DestItem[] =>
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
   }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget, destTapPlan, selectedDest]);
 
+  // Which spot pin a tap is on. The box the map searches (spotPins' hitbox) is generous so the small pins, about 11 pt wide,
+  // are easy to hit, but its first feature was whatever is drawn on top, so a photo pin anywhere in the box won over the
+  // small pin actually tapped. A photo pin now takes the tap only when it lands on its bubble; otherwise the nearest pin.
+  // Both pins hang from their coordinate (icon anchor bottom), the bubble's centre a tail and a radius above it.
+  const pickSpotPinAt = (features: GeoJSON.Feature[], lng: number, lat: number): string | undefined => {
+    const world = 512 * Math.pow(2, camZoomRef.current);
+    const tx = (lng + 180) / 360, ty = mercY(lat);
+    let onPhoto: { id: string; d: number } | null = null, nearest: { id: string; d: number } | null = null;
+    for (const f of features) {
+      if (f.geometry?.type !== 'Point' || !f.properties?.id) continue;
+      const [flng, flat] = f.geometry.coordinates;
+      const photo = !!f.properties.img;
+      const lift = photo ? SPOT_PHOTO_TAIL + SPOT_PHOTO_BUBBLE / 2 : SPOT_MINI_LIFT;
+      const dx = ((flng + 180) / 360 - tx) * world, dy = (mercY(flat) - ty) * world - lift;
+      const d = Math.hypot(dx, dy), id = String(f.properties.id);
+      if (photo && d <= SPOT_PHOTO_BUBBLE / 2 + 2 && (!onPhoto || d < onPhoto.d)) onPhoto = { id, d };
+      if (!nearest || d < nearest.d) nearest = { id, d };
+    }
+    return (onPhoto ?? nearest)?.id;
+  };
   // Destination taps, from a photo pin or a dot. A dot only takes a tap while it shows: each fades out below its tier's zoom
   // (stampOpacityExpr) but stays in the data.
   const stampShown = (tier: number) => tier <= 5 && camZoomRef.current >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
@@ -6524,7 +6549,7 @@ const destItems = useMemo((): DestItem[] =>
           shape={nativeSpotPins.shape}
           hitbox={{ width: 32, height: 40 }}
           onPress={(e) => {
-            const id = e.features[0]?.properties?.id as string | undefined;
+            const id = pickSpotPinAt(e.features, e.coordinates.longitude, e.coordinates.latitude);
             const spot = id ? SPOT_BY_ID.get(id) : undefined;
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
