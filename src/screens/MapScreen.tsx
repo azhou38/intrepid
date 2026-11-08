@@ -833,10 +833,7 @@ const destGateOn = (tier: string, z: number) => {
 // A destination pin tier that no layer draws: where a back or close plan puts the pins its target view does not show.
 const DEST_TIER_UNDRAWN = 'undrawn';
 // The selected country's border highlight fading out when its X is tapped (see highlightClosingFor).
-// The selected country's border highlight fades in when it appears (a country pin, "← Country") and out when it goes.
-const HL_FADE_IN = { duration: 450, delay: 0 };
-const HL_FADE_OUT = { duration: 350, delay: 0 };
-const HL_SNAP = { duration: 0, delay: 0 };
+const HL_FADE = { duration: 200, delay: 0 };
 const DEST_GATE_FADE_MS = 250;
 const DEST_GATE_FADE_OUT_MS = 140;
 // One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
@@ -2655,17 +2652,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   if (hlTarget) hlLastRef.current = hlTarget;
   const hlCountry = hlLastRef.current;
   const hlShown = !!hlTarget && highlightClosingFor !== hlTarget;
-  // A country's highlight is first drawn transparent (its outline put in place at opacity 0, at once), then fades in once
-  // that has reached the map (hlArmed): a newly added or switched outline otherwise appeared at full opacity in one frame,
-  // a fade from the previous country's opacity at best.
-  const hlCode = hlShown ? hlCountry!.countryCode : null;
-  const [hlArmed, setHlArmed] = useState<string | null>(null);
-  useEffect(() => {
-    if (!hlCode) { if (hlArmed) setHlArmed(null); return; }
-    if (hlArmed === hlCode) return;
-    const t = setTimeout(() => setHlArmed(hlCode), 60);
-    return () => clearTimeout(t);
-  }, [hlCode, hlArmed]);
   const navTargetRef = useRef<{ from: NavSel; to: NavSel; country: CountryCluster | null; dest: Destination | null } | null>(null);
   if (navTargetRef.current) {
     const now: NavSel = { country: selectedCountry?.countryCode ?? null, dest: selectedDest?.id ?? null, spot: selectedSpot?.id ?? null };
@@ -6287,8 +6273,7 @@ const destItems = useMemo((): DestItem[] =>
           const glowColor = grayCenterOutline ? '#FFFFFF' : lineColor;
           // 0 once an X close has been tapped on this country (highlightClosingFor): the highlight fades out with the tap,
           // natively, instead of staying up until the close lands at the end of its slide.
-          const hl = hlShown && hlArmed === hlCountry.countryCode ? 1 : 0;
-          const HL_FADE = hl ? HL_FADE_IN : hlShown ? HL_SNAP : HL_FADE_OUT;
+          const hl = hlShown ? 1 : 0;
           return (
             <MapboxGL.VectorSource
               id="countryBoundaries"
