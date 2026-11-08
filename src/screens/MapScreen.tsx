@@ -1334,6 +1334,7 @@ const SPOT_MINI_PIN_STYLE = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bo
 const SPOT_READY_BATCH_MS = 180;  // photo pins whose photos are ready switch together, not one map data update each
 const SPOT_FADE_DATA_MS = 120;    // the fade's pins reaching the map (still transparent) before it starts
 const SPOT_FADE_MS = 260;         // a photo pin fading in over its small pin
+const SPOT_FADE_RESET_MS = 80;    // the fade layers turning transparent, before the next fade's pins go into them
 const SPOT_FADE_SETTLE_MS = 300;  // the faded pins reaching their usual layers before the next fade resets the fade layers
 const SPOT_PREFETCH_MS = 250;     // how often the camera's position is checked for pin photos to fetch ahead
 const SPOT_PREFETCH_AHEAD = 1.5;  // zoom levels ahead of a spot's photo pin that its photo starts downloading
@@ -3270,8 +3271,11 @@ const destItems = useMemo((): DestItem[] =>
   // opacity, and a layer's opacity only transitions as a whole), so the pins ready together are drawn for a moment by their
   // own layers (spotFadeLayers), which start transparent and fade as one while the small pins under them fade out, then move
   // to their usual layers:
-  //   fade layers reset, data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS -> back in their bands
-  //   -> SPOT_FADE_SETTLE_MS -> the next fade
+  //   fade layers reset -> SPOT_FADE_RESET_MS -> data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS
+  //   -> back in their bands -> SPOT_FADE_SETTLE_MS -> the next fade
+  // The reset comes first, on its own: Mapbox can draw a source's new data before a layer's new style, so a reset made in
+  // the same render as the data showed the next pins at full opacity for a frame (left over from the last fade), then
+  // dropped them to nothing, then faded them in, a flash (Caroline Bay, opening Timaru).
   // The reset waits for the next fade, so a move back to the bands that reaches the map late never shows the small pin again
   // or hides the photo. Pins due during a fade wait for the next one.
   // Spot ids: due to show their photo but still drawn as small pins (waiting), fading in (fading), and settled (shown). A
@@ -3281,17 +3285,19 @@ const destItems = useMemo((): DestItem[] =>
   const spotShownRef = useRef<Set<string>>(new Set());
   const spotReadyTickRef = useRef<(() => void) | null>(null);
   const [spotFadeOn, setSpotFadeOn] = useState(false);
+  const spotFadeOnRef = useRef(false);
   const runSpotFade = useCallback(() => {
     spotReadyTimerRef.current = null;
     const wait = pinImagesHoldUntilRef.current - Date.now();
     const later = (ms: number, next: () => void) => { spotReadyTimerRef.current = pumpedTimeout(next, ms); };
     if (wait > 0) return later(wait, runSpotFade);   // not while a sheet slides in
     if (!spotFadeWaitingRef.current.size) return;
+    if (spotFadeOnRef.current) { spotFadeOnRef.current = false; setSpotFadeOn(false); return later(SPOT_FADE_RESET_MS, runSpotFade); }
     spotFadingRef.current = spotFadeWaitingRef.current;
     spotFadeWaitingRef.current = new Set();
-    setSpotFadeOn(false);
     setSpotImagesTick(n => n + 1);
     later(SPOT_FADE_DATA_MS, () => {
+      spotFadeOnRef.current = true;
       setSpotFadeOn(true);
       later(SPOT_FADE_MS, () => {
         for (const id of spotFadingRef.current) spotShownRef.current.add(id);
