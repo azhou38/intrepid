@@ -5200,7 +5200,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A former imperial capital with Ming tombs, a long city wall, lakes and Republic-era sites",
     description: "Nanjing's name means \"southern capital\", and it served as the capital of several dynasties and, from 1927 to 1949, of the Republic of China. The Hongwu Emperor made it his Ming capital in 1368 and built a city wall that remains the most complete in China. Purple Mountain on the eastern side holds the tombs of Sun Yat-sen, the Hongwu Emperor and Sun Quan, while the Qinhuai River and Xuanwu Lake run through the city and the Yangtze lies to the west. The 1937 Nanjing Massacre is remembered at a large memorial hall in Jianye District.",
     whyVisit: ["Visit Ming tombs on Purple Mountain", "Walk the Ming city wall", "Explore Republic-era and wartime history", "Stroll lakes and the Qinhuai River"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["ext-dest-nanjing-why1.jpg", "", "", "ext-dest-nanjing-why4.jpg"],
     highlights: ["Ming tombs", "City wall", "Modern history", "Lakes and canals"],
     goodToKnow: [
       { icon: "🎫", title: "Reserve Purple Mountain entry", detail: "Entry to the Purple Mountain park needs a free reservation, made by WeChat or with your passport at a tourist information centre." },
@@ -5217,7 +5217,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Classical gardens, canal streets and silk heritage in the old Wu capital",
     description: "Suzhou is a city in Jiangsu famed for its classical gardens and traditional waterside architecture, with several gardens on the UNESCO list. It was the capital of the Kingdom of Wu and its walls date to the late 6th century BCE. Visitors pair the gardens with temples, pagodas, museums and restored canal streets in the old city, which is a rectangle about 6 by 3 km. Shanghai is under half an hour away by high-speed train.",
     whyVisit: ["Wander UNESCO-listed classical gardens", "Walk historic canal streets", "Climb pagodas and visit old temples", "Take a day trip to water towns"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["20240203 Lingering Garden 09.jpg", "ext-dest-suzhou-why2.jpg", "", "ext-dest-suzhou-why4.jpg"],
     highlights: ["Classical gardens", "Canal streets", "Pagodas and temples", "Water-town trips"],
     goodToKnow: [
       { icon: "🚄", title: "Shanghai by fast train", detail: "Trains take under half an hour. Check your ticket says Hongqiao, not the old Shanghai Railway Station. Foreigners buy at the counter with a passport." },
@@ -5264,7 +5264,7 @@ export const DESTINATIONS: Destination[] = [
   {
     id: 'jiangnan-water-towns', name: "Jiangnan Water Towns", country: "China", countryCode: 'CN', timezone: 'Asia/Shanghai', defaultZoomSpanKm: 40,
     continent: 'Asia', coordinates: { latitude: 31.2, longitude: 120.865 },
-    category: 'landmark', icon: "🛶", rank: 3,
+    category: 'landmark', icon: "🛶", rank: 4,
     tagline: "Canal towns of old stone bridges and merchant houses east of Suzhou",
     description: "The Jiangnan water towns are a cluster of canal towns around Suzhou, among them Zhouzhuang, Tongli, Luzhi and Qiandeng. Zhouzhuang is China's oldest water town and is often called the Venice of China, with 14 stone bridges. Tongli holds the Retreat and Reflection Garden, the only UNESCO-listed Suzhou garden outside downtown, and Luzhi has Baosheng Temple, one of the Jiangnan region's top four Buddhist temples. Most visitors are Chinese, so the quiet hours are early morning and night.",
     whyVisit: ["Ride boats along old canals", "Cross centuries-old stone bridges", "Tour Qing-era merchant houses"],
@@ -5272,7 +5272,6 @@ export const DESTINATIONS: Destination[] = [
     highlights: ["Canal boat rides", "Stone bridges", "Merchant houses"],
     goodToKnow: [
       { icon: "📅", title: "Skip public holidays", detail: "The narrow alleys and bridges become overcrowded and hard to move through on public holidays, and weekends are busy too." },
-      { icon: "🌅", title: "Arrive early or stay over", detail: "Most visitors arrive after 10:00. An early start or an overnight stay gives you the town at nightfall and in the morning." },
       { icon: "🚇", title: "Reach Tongli by metro", detail: "Suzhou Metro Line 4 ends at Tongli Station, where the tourist desk sells a ticket bundling a shuttle bus and the major sights." },
     ],
     bestMonths: [3, 4, 5, 9, 10, 11],
@@ -5285,7 +5284,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Han royal tombs and terracotta warriors in a lake city on the Beijing-Shanghai line.",
     description: "Xuzhou was the seat of the Chu kings of the Western Han, and their tombs are its main draw. Lion Hill holds a Chu king's tomb and a museum of Han terracotta warriors, while Guishan has a rock-cut tomb palace. In the city, Yunlong Mountain and Yunlong Lake offer walks and views, and Hubu Hill keeps Ming and Qing courtyard houses. It is a major rail hub, roughly halfway between Beijing and Shanghai.",
     whyVisit: ["Explore Han royal tombs", "See Han terracotta warriors", "Stroll the shore of Yunlong Lake"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-xuzhou-why1.jpg", "ext-dest-xuzhou-why2.jpg", ""],
     highlights: ["Han royal tombs", "Terracotta warriors", "Yunlong Lake"],
     goodToKnow: [
       { icon: "🚆", title: "Don't book Suzhou by mistake", detail: "Travellers often buy tickets to Suzhou by accident. Show the characters 徐州 and use Xuzhou East for high-speed trains." },
@@ -5319,7 +5318,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Yangtze ferry-crossing city of famed temple hills, a preserved old quarter and black vinegar.",
     description: "Zhenjiang sits where the Grand Canal meets the Yangtze, across the river from Yangzhou, and was long an important trading stop. Its hill parks, Jinshan, Jiaoshan, Beigu and Nanshan, each carry a temple, pagoda or legend. The Xijindu ferry quarter and the British-era consulate buildings on Yuntai Mountain date from its time as a treaty port. The city is also known for its vinegar, served with steamed dumplings.",
     whyVisit: ["Climb temple hills above the Yangtze", "Walk a preserved old ferry quarter", "Taste Zhenjiang vinegar with dumplings"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["ext-dest-zhenjiang-why1.jpg", "", ""],
     highlights: ["Temple hills", "Old ferry quarter", "Vinegar and dumplings"],
     goodToKnow: [
       { icon: "🎟️", title: "Hill park tickets add up", detail: "Each hill park charges about ¥30 to ¥65, and climbing a pagoda costs roughly ¥10 more. Fees are higher in spring and autumn." },
@@ -5351,7 +5350,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Grand Canal port and hometown of Zhou Enlai, with the old lanes of Wu Cheng'en's Hexia.",
     description: "Huai'an is a Grand Canal port that once handled grain shipments to the imperial capital. It is the hometown of Zhou Enlai, and keeps his childhood home, his family school and a memorial hall. Hexia Old Town has Ming and Qing lanes and the home of Wu Cheng'en, author of Journey to the West. The sights are spread over several districts, from Huai'an District to Qingjiangpu.",
     whyVisit: ["Follow the life of Zhou Enlai", "Walk Ming and Qing canal lanes", "Learn how the Grand Canal moved grain"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "ext-dest-huaian-why2.jpg", ""],
     highlights: ["Zhou Enlai sites", "Old canal lanes", "Grand Canal history"],
     goodToKnow: [
       { icon: "🚄", title: "One high-speed station", detail: "High-speed trains stop only at Huai'an East, in the eastern suburbs. Huai'an Station and Huai'an South serve regular trains." },
@@ -5368,7 +5367,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A teapot town on Lake Tai's west shore with bamboo hills and karst caves",
     description: "Yixing is a county-level city on the west side of Lake Tai with more than 7,000 years of pottery making. It is known for stoneware, especially teapots made from the local clay, which the Yixing Ceramics Museum in Dingshu town traces from Neolithic pottery to Qing zisha ware. The hills to the south hold a bamboo forest park and several cave scenic areas, and Shanjuan Cave is among the earliest cave attractions in China. Nanjing to Hangzhou high-speed trains stop at Yixing station.",
     whyVisit: ["See Yixing's clay teapot tradition", "Walk through bamboo forest hills", "Explore karst caves by boat"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "Yixing, Wuxi, Jiangsu, China - panoramio (1).jpg", ""],
     highlights: ["Teapot heritage", "Bamboo forest", "Karst caves"],
     goodToKnow: [
       { icon: "🚌", title: "Sights are spread out", detail: "Bamboo Sea is 31 km southwest of the city and Shanjuan Cave about 25 km away, so plan on buses or a car." },
