@@ -3337,13 +3337,19 @@ const destItems = useMemo((): DestItem[] =>
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   // A close is planning at its target (closeTarget): see the band properties below.
   const spotGatesOff = closeTarget !== null;
+  // The spot the pins draw as selected: none from an X close's tap (navTargetRef, heading to nothing selected). The selection
+  // itself is only cleared once the sheet has slid off, which comes late while the camera zooms out, and the selected spot
+  // stayed up as a photo pin until the camera had landed. From the tap it is planned like any other spot at the close's
+  // target view, with the rest of the pins.
+  const pinSpot = navTargetRef.current && navTargetRef.current.to.spot === null && navTargetRef.current.from.spot === selectedSpot?.id
+    ? null : selectedSpot;
   const nativeSpotPins = useMemo(() => {
     const must = new Set<string>();
     if (nearCtx) for (const sp of nearCtx.nearest.slice(0, NEAR_PINNED_SPOTS + 1)) must.add(sp.id);
     // Draw and data order: spotPhotoPlan's priority (a near carousel's spots first).
     const rank = (sp: Spot) => (must.has(sp.id) ? -1_000_000 : 0) + (spotPhotoPlan?.sortOf.get(sp.id) ?? 0);
     const specs = spotPhotoSpecsRef.current;
-    const sorted = visibleSpots.filter(sp => sp.id !== selectedSpot?.id).sort((x, y) => rank(x) - rank(y));
+    const sorted = visibleSpots.filter(sp => sp.id !== pinSpot?.id).sort((x, y) => rank(x) - rank(y));
     let added = false, fresh = 0;
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     // Which spots get a photo pin, as before the native layer: a spot already holding its photo goes first (so pins don't
@@ -3367,10 +3373,10 @@ const destItems = useMemo((): DestItem[] =>
       return { l, r: l + w, t: cy - h / 2, b: cy + h / 2 };
     };
     const blockers: Box[] = [];
-    if (selectedSpot) {
-      const m = mercatorPx(selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude, pxPerDegLng), x = m.x, y = -m.y;
+    if (pinSpot) {
+      const m = mercatorPx(pinSpot.coordinates.longitude, pinSpot.coordinates.latitude, pxPerDegLng), x = m.x, y = -m.y;
       blockers.push({ l: x - SPOT_PIN_SIZE / 2 - 2, r: x + SPOT_PIN_SIZE / 2 + 2, t: y - SPOT_PIN_SIZE - 12, b: y });
-      blockers.push(labelBox(selectedSpot, spotPhotoPlan?.nameAt.get(selectedSpot.id)?.side ?? 'left', SPOT_PIN_SIZE / 2 + SPOT_LABEL_GAP));
+      blockers.push(labelBox(pinSpot, spotPhotoPlan?.nameAt.get(pinSpot.id)?.side ?? 'left', SPOT_PIN_SIZE / 2 + SPOT_LABEL_GAP));
     }
     // A spot whose photo pin would sit under the selected pin or its name is drawn as its small pin instead.
     const pinHitsSelected = (sp: Spot) => {
@@ -3465,34 +3471,34 @@ const destItems = useMemo((): DestItem[] =>
     // blue glow under it (spotSelectedGlow). It used to be swapped for an on-screen marker, which loaded its own photo (a grey
     // disc while it did), trailed the map in a camera move, drew its name in another font, and arrived a render or more
     // after the selection. Its photo is registered here if it was not (a spot shown as a small pin), and shown once it is.
-    if (selectedSpot) {
-      const visited = visitIndex.isSpotVisited(selectedSpot.id);
-      const img = spotPhotoImageName(selectedSpot.id, visited);
-      const selImg = readyImage(selectedSpot.id, visited);
+    if (pinSpot) {
+      const visited = visitIndex.isSpotVisited(pinSpot.id);
+      const img = spotPhotoImageName(pinSpot.id, visited);
+      const selImg = readyImage(pinSpot.id, visited);
       // Drawn at once (it is the spot just picked); kept shown, so it doesn't fade in again when it is deselected.
-      if (selImg) { nowDue.add(selectedSpot.id); shown.add(selectedSpot.id); }
-      if (!specs.has(img) && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
+      if (selImg) { nowDue.add(pinSpot.id); shown.add(pinSpot.id); }
+      if (!specs.has(img) && !holdImages) { specs.set(img, { name: img, spot: pinSpot, visited }); added = true; }
       // The carousel's neighbours (two either side) get their photos registered ahead, so swiping to one finds its pin
       // image ready: a spot that was only a small pin used to show its blue glow first and its photo pin a moment later.
-      const ci = carouselSpots.findIndex(s => s.id === selectedSpot.id), cn = carouselSpots.length;
+      const ci = carouselSpots.findIndex(s => s.id === pinSpot.id), cn = carouselSpots.length;
       if (ci >= 0 && cn > 1 && !holdImages) {
         for (const k of [1, -1, 2, -2]) {
           const nb = carouselSpots[(((ci + k) % cn) + cn) % cn];
-          if (nb.id === selectedSpot.id || fresh >= MAX_NEW_SPOT_IMAGES) continue;
+          if (nb.id === pinSpot.id || fresh >= MAX_NEW_SPOT_IMAGES) continue;
           const nv = visitIndex.isSpotVisited(nb.id), nimg = spotPhotoImageName(nb.id, nv);
           if (!specs.has(nimg)) { specs.set(nimg, { name: nimg, spot: nb, visited: nv }); added = true; fresh++; }
         }
       }
       features.push({
         type: 'Feature',
-        id: selectedSpot.id,
-        geometry: { type: 'Point', coordinates: [selectedSpot.coordinates.longitude, selectedSpot.coordinates.latitude] },
+        id: pinSpot.id,
+        geometry: { type: 'Point', coordinates: [pinSpot.coordinates.longitude, pinSpot.coordinates.latitude] },
         properties: {
-          id: selectedSpot.id,
+          id: pinSpot.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
           img: selImg,
-          label: spotLabelLines(selectedSpot.name).join('\n'),
-          side: spotPhotoPlan?.nameAt.get(selectedSpot.id)?.side ?? 'left', sort: -2_000_000,
+          label: spotLabelLines(pinSpot.name).join('\n'),
+          side: spotPhotoPlan?.nameAt.get(pinSpot.id)?.side ?? 'left', sort: -2_000_000,
           sel: 1,
         },
       });
@@ -3510,7 +3516,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff, destTapPlan, spotsInDest, selectedDest]);
+  }, [visibleSpots, pinSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff, destTapPlan, spotsInDest, selectedDest]);
   // Pins due to show their photo (spotFadeWaitingRef, see nativeSpotPins) start their fade, batched (SPOT_READY_BATCH_MS).
   // After every render, not on nativeSpotPins: the pass that queues pins whose photos have just become ready changes no
   // feature (they are still small pins), so it hands back the same shape object, and an effect keyed on it never ran:
