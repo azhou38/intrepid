@@ -3603,16 +3603,20 @@ const destItems = useMemo((): DestItem[] =>
     );
     return layers;
   }, [spotBands, spotNameStyle]);
-  // The photo pins and names fading in, and their small pins fading out (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
-  // layers would each be updated natively by a change of opacity. Keyed on the band set like them: when it changes they are
-  // added again just below destStampCircles, so these must be too, or the photos fade in behind the small pins.
+  // The photo pins and names fading in (see runSpotFade), above the band layers, and their small pins fading out, below them
+  // (`under`): above them the fading small pin jumped in front of the small pins it had been behind before its photo showed.
+  // Apart from spotBandLayers, whose dozens of layers would each be updated natively by a change of opacity. Keyed on the
+  // band set like them: when it changes they are added again just below destStampCircles in render order, so these must be
+  // too, or the photos fade in behind the small pins.
   const spotFadeLayers = useMemo(() => {
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const transition = { duration: spotFadeOn ? SPOT_FADE_MS : 0, delay: 0 };
-    return [
+    const under = (
       <MapboxGL.SymbolLayer key={`${sig}m`} id="spotMini-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
-        style={{ ...SPOT_MINI_PIN_STYLE, iconOpacity: spotFadeOn ? 0 : 1, iconOpacityTransition: transition } as any} />,
+        style={{ ...SPOT_MINI_PIN_STYLE, iconOpacity: spotFadeOn ? 0 : 1, iconOpacityTransition: transition } as any} />
+    );
+    const over = [
       <MapboxGL.SymbolLayer key={`${sig}p`} id="spotPhoto-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
         style={{ ...SPOT_PHOTO_PIN_STYLE, iconOpacity: spotFadeOn ? 1 : 0, iconOpacityTransition: transition } as any} />,
@@ -3620,6 +3624,7 @@ const destItems = useMemo((): DestItem[] =>
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['!=', ['get', 'label'], ''], ['==', ['get', 'nb'], 'fade']] as any}
         style={{ ...spotNameStyle, textOpacity: spotFadeOn ? 1 : 0, textOpacityTransition: transition } as any} />,
     ];
+    return { under, over };
   }, [spotFadeOn, spotBands, spotNameStyle]);
 
   const spotLabelPlan = useMemo(() => {
@@ -6456,8 +6461,9 @@ const destItems = useMemo((): DestItem[] =>
               iconOpacityTransition: { duration: 0, delay: 0 },
             }}
           />
+          {spotFadeLayers.under}
           {spotBandLayers as any /* an array of layers: ShapeSource flattens it (see spotBandLayers) */}
-          {spotFadeLayers as any}
+          {spotFadeLayers.over as any}
           {/* The selected spot, above every other spot pin and above the destination dots (destStampCircles; the other spot
               layers sit below them), so zoomed out it is not buried under the dots: its small pin until its photo is
               registered, then its photo pin and name, the same images and text as the layers above, always drawn. The glow,
