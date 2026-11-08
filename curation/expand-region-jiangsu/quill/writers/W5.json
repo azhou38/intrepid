@@ -1,0 +1,107 @@
+{
+ "destinations": [
+  {
+   "id": "huaian",
+   "name": "Huai'an",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 4,
+   "defaultZoomSpanKm": 40,
+   "coordinates": {
+    "lat": 33.56,
+    "lng": 119.06
+   },
+   "coordinates_source": "midpoint of the kept spots across Huai'an's urban districts (Qingjiangpu, Huai'an, Huaiyin, Qinghe); Pipeline C to replace with the OSM place=city point",
+   "name_evidence": "Wikivoyage has a page 'Huai'an' whose See, Do and Parks listings supply 11 of the 12 kept spots; Zhou Enlai's hometown and Wu Cheng'en's home town are its headline draws.",
+   "rank_reason": "Regional prefecture-level city with a pilgrimage-level headline (Zhou Enlai) and canal heritage, but modest international pull: rank 4.",
+   "near_standalone_note": "Sihong Ancient Xucheng (~75 km) and Hongze Lake Wetland Park (~70 km) are well over 40 km away and outside the city's bounds."
+  },
+  {
+   "id": "suqian",
+   "name": "Suqian",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 5,
+   "defaultZoomSpanKm": 50,
+   "coordinates": {
+    "lat": 33.96,
+    "lng": 118.28
+   },
+   "coordinates_source": "Suqian city (Sucheng/Suyu districts) centre, between Suqian Museum (osm/wikivoyage 33.938,118.298) and Santaishan; Pipeline C to confirm against OSM place=city",
+   "name_evidence": "Wikivoyage has a page 'Suqian' with See, Museums, Historical sites and Parks listings supplying all four spots; Xiang Yu's hometown and Luoma Lake are its named draws.",
+   "rank_reason": "Prefecture-level city, local base with four modest spots: rank 5.",
+   "near_standalone_note": "Sihong Ancient Xucheng (~58 km) and Hongze Lake Wetland Park (~87 km) lie in Sihong County, outside Suqian city's bounds and span: standalone."
+  },
+  {
+   "id": "xuzhou",
+   "name": "Xuzhou",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 4,
+   "defaultZoomSpanKm": 40,
+   "coordinates": {
+    "lat": 34.2568,
+    "lng": 117.18396
+   },
+   "coordinates_source": "osm place 户部山古建筑群 (Hubu Hill, old city centre) from candidates.json; Pipeline C to replace with the OSM place=city point",
+   "name_evidence": "Wikivoyage has a page 'Xuzhou' (See entries for Guishan, Hubu Hill, aquarium); Travel China Guide and Chinatripedia give Xuzhou its own chapter built on Han tombs and Yunlong Lake.",
+   "rank_reason": "Regional city with strong Han-heritage identity but outside the main Jiangsu itineraries: rank 4.",
+   "near_standalone_note": "No standalone kept spot within 40 km."
+  },
+  {
+   "id": "lianyungang",
+   "name": "Lianyungang",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 4,
+   "defaultZoomSpanKm": 60,
+   "coordinates": {
+    "lat": 34.63,
+    "lng": 119.27
+   },
+   "coordinates_source": "approximate centre between Haizhou/Xinpu and the Huaguo-Yuntai range from the kept spots' candidates.json coordinates; Pipeline C to confirm the OSM place=city point",
+   "name_evidence": "Wikivoyage has a page 'Lianyungang' listing the city museum, beach and mountain sights; Mount Huaguo (Monkey King's home, Journey to the West) is the named headline attraction; Travel China Guide and Chinatripedia cover Lianyungang as one chapter.",
+   "rank_reason": "Coastal prefecture city with Mount Huaguo and Lian Island but niche for international visitors: rank 4.",
+   "near_standalone_note": "Xishuang Lake (~51 km) is in Donghai County, outside the bounds and beyond 75% of the span: standalone."
+  }
+ ],
+ "spot_ids": [
+  "huaian-1",
+  "huaian-2",
+  "huaian-3",
+  "huaian-4",
+  "huaian-5",
+  "huaian-6",
+  "huaian-7",
+  "huaian-8",
+  "huaian-9",
+  "huaian-10",
+  "huaian-11",
+  "huaian-12",
+  "suqian-1",
+  "suqian-2",
+  "suqian-3",
+  "suqian-4",
+  "sihong-ancient-xucheng",
+  "hongze-lake-wetland-park",
+  "xuzhou-1",
+  "xuzhou-2",
+  "xuzhou-3",
+  "xuzhou-4",
+  "xuzhou-5",
+  "xuzhou-6",
+  "xuzhou-7",
+  "xuzhou-8",
+  "xuzhou-9",
+  "xuzhou-10",
+  "lianyungang-1",
+  "lianyungang-2",
+  "lianyungang-3",
+  "lianyungang-4",
+  "lianyungang-5",
+  "lianyungang-6",
+  "lianyungang-7",
+  "lianyungang-8",
+  "xishuang-lake"
+ ]
+}

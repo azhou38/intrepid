@@ -1,0 +1,68 @@
+{
+ "dest:huaian:header": {
+  "candidates": [
+   {
+    "file": "https://us-east-cdn.greentourasia.com/image/20260403/OMpfJr/huaianguyunhe1.png",
+    "n": 1,
+    "verdict": "fail",
+    "reason": "high aerial of the canal and city, fails the city-header rule"
+   }
+  ],
+  "choice": "none: high aerial of the canal and city, fails the city-header rule",
+  "hero_crop": null
+ },
+ "dest:huaian:why2": {
+  "candidates": [
+   {
+    "file": "https://us-east-cdn.greentourasia.com/image/20260410/O43h6y/zhongguocaoyunbowu21.jpg",
+    "n": 1,
+    "verdict": "pass",
+    "reason": "Caoyun Museum facade and nine-storey pagoda, museum name visible on facade; fits the grain-transport reason; real photo"
+   },
+   {
+    "file": "https://us-east-cdn.greentourasia.com/image/20260403/OMpfJr/huaianguyunhe1.png",
+    "n": 2,
+    "verdict": "fail",
+    "reason": "high aerial, weaker for this reason"
+   }
+  ],
+  "choice": "https://us-east-cdn.greentourasia.com/image/20260410/O43h6y/zhongguocaoyunbowu21.jpg",
+  "hero_crop": {
+   "x": 0.7,
+   "y": 0.45
+  }
+ },
+ "spot:huaian-9": {
+  "candidates": [
+   {
+    "file": "https://thenanjinger.com/wp-content/uploads/2025/02/The-Nanjinger-Huaian-Museum-1st-in-China-to-Cure-Itself-of-Closed-on-Mondays-Syndrome.jpg",
+    "n": 1,
+    "verdict": "pass",
+    "reason": "Huai'an Museum exterior, name plaque 淮安市博物馆 readable; ground level, 960 px (minimum); permission not confirmed"
+   }
+  ],
+  "choice": "https://thenanjinger.com/wp-content/uploads/2025/02/The-Nanjinger-Huaian-Museum-1st-in-China-to-Cure-Itself-of-Closed-on-Mondays-Syndrome.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5
+  }
+ },
+ "spot:huaian-12": {
+  "candidates": [
+   {
+    "file": "https://us-east-cdn.greentourasia.com/image/20260426/Oy6GzW/zhouenlaitongzhishaoniandushujiuzhijinianguan2.jpg",
+    "n": 1,
+    "verdict": "pass",
+    "reason": "courtyard and moon gate of the Youth Study Site (EXIF/page caption), real colour photo, elevated but not aerial"
+   },
+   {
+    "file": "https://us-east-cdn.greentourasia.com/image/20260426/OOSfpY/zhouenlaitongzhishaoniandushujiuzhijinianguan.jpg",
+    "n": 2,
+    "verdict": "fail",
+    "reason": "near-duplicate, wide 1.9:1 and softer; first is better"
+   }
+  ],
+  "choice": "https://us-east-cdn.greentourasia.com/image/20260426/Oy6GzW/zhouenlaitongzhishaoniandushujiuzhijinianguan2.jpg",
+  "hero_crop": "ok"
+ }
+}

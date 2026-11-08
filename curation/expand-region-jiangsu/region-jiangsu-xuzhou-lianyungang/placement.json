@@ -1,0 +1,645 @@
+{
+ "region": "jiangsu-xuzhou-lianyungang",
+ "new_destinations": [
+  {
+   "id": "xuzhou",
+   "name": "Xuzhou",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 4,
+   "defaultZoomSpanKm": 40,
+   "coordinates": {
+    "lat": 34.2568,
+    "lng": 117.18396
+   },
+   "coordinates_source": "osm place 户部山古建筑群 (Hubu Hill, old city centre) from candidates.json; Pipeline C to replace with the OSM place=city point",
+   "name_evidence": "Wikivoyage has a page 'Xuzhou' (See entries for Guishan, Hubu Hill, aquarium); Travel China Guide and Chinatripedia give Xuzhou its own chapter built on Han tombs and Yunlong Lake.",
+   "spots": 10,
+   "rank_reason": "Regional city with strong Han-heritage identity but outside the main Jiangsu itineraries: rank 4.",
+   "near_standalone_note": "No standalone kept spot within 40 km."
+  },
+  {
+   "id": "lianyungang",
+   "name": "Lianyungang",
+   "action": "new-destination",
+   "category": "city",
+   "rank": 4,
+   "defaultZoomSpanKm": 60,
+   "coordinates": {
+    "lat": 34.63,
+    "lng": 119.27
+   },
+   "coordinates_source": "approximate centre between Haizhou/Xinpu and the Huaguo-Yuntai range from the kept spots' candidates.json coordinates; Pipeline C to confirm the OSM place=city point",
+   "name_evidence": "Wikivoyage has a page 'Lianyungang' listing the city museum, beach and mountain sights; Mount Huaguo (Monkey King's home, Journey to the West) is the named headline attraction; Travel China Guide and Chinatripedia cover Lianyungang as one chapter.",
+   "spots": 8,
+   "rank_reason": "Coastal prefecture city with Mount Huaguo and Lian Island but niche for international visitors: rank 4.",
+   "near_standalone_note": "Xishuang Lake (~51 km) is in Donghai County, outside the bounds and beyond 75% of the span: standalone."
+  }
+ ],
+ "spots": [
+  {
+   "name": "Lion Hill Han Tombs",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-1",
+   "icon": "🏺",
+   "category": "historic",
+   "coordinates": {
+    "lat": 34.24639,
+    "lng": 117.21945
+   },
+   "coordinates_source": "osm:building 狮子山汉楚王墓",
+   "wiki": null,
+   "bio": "Western Han royal tomb of the Chu princes on Lion Hill, with a terracotta army and burial chambers.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Xuzhou",
+    "https://www.travelchinaguide.com/attraction/jiangsu/xuzhou/",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/xuzhou-attractions/"
+   ],
+   "views": 0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Xuzhou Museum",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-2",
+   "icon": "🏛️",
+   "category": "museum",
+   "coordinates": {
+    "lat": 34.25195,
+    "lng": 117.18063
+   },
+   "coordinates_source": "osm:tourism=museum 徐州博物馆",
+   "wiki": null,
+   "bio": "Museum of Han jade burial suits and relics from the city's tombs, free to enter.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Xuzhou",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/xuzhou-attractions/"
+   ],
+   "views": 1029,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Yunlong Lake",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-3",
+   "icon": "🏞️",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.2345874,
+    "lng": 117.1186608
+   },
+   "coordinates_source": "wikipedia:Yunlong Lake (scored)",
+   "wiki": null,
+   "bio": "AAAAA-rated scenic lake in southwest Xuzhou, with bridges, pavilions and walks.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 4,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Xuzhou",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/xuzhou-attractions/",
+    "https://www.travelchinaguide.com/attraction/jiangsu/xuzhou/"
+   ],
+   "views": 468,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Yunlong Mountain",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-4",
+   "icon": "⛰️",
+   "category": "viewpoint",
+   "coordinates": {
+    "lat": 34.25308,
+    "lng": 117.18134
+   },
+   "coordinates_source": "osm:historic 云龙山——土山汉墓 (on the mountain)",
+   "wiki": null,
+   "bio": "Hill in southern Xuzhou with a Song-dynasty crane-flying pavilion, inscriptions and Xinghua Temple.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://www.travelchinaguide.com/attraction/jiangsu/xuzhou/"
+   ],
+   "views": 533,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Guishan Han Tombs",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-5",
+   "icon": "🏺",
+   "category": "historic",
+   "coordinates": {
+    "lat": 34.30844,
+    "lng": 117.13144
+   },
+   "coordinates_source": "osm:building 龟山汉楚王墓",
+   "wiki": null,
+   "bio": "Western Han rock-cut tomb complex of Liu Zhu, King of Chu, in Guishan Scenic Area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Xuzhou",
+    "https://www.travelchinaguide.com/attraction/jiangsu/xuzhou/"
+   ],
+   "views": 0,
+   "free": false,
+   "costMin": 80,
+   "costMax": 80,
+   "currency": "CNY",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Hubu Hill Ancient Architecture Complex",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-6",
+   "icon": "🏘️",
+   "category": "historic",
+   "coordinates": {
+    "lat": 34.2568,
+    "lng": 117.18396
+   },
+   "coordinates_source": "osm:place 户部山古建筑群",
+   "wiki": null,
+   "bio": "Historic courtyard houses of the Zhai and Yu families, home to the Xuzhou Folk Museum.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/xuzhou-attractions/",
+    "https://en.wikivoyage.org/wiki/Xuzhou"
+   ],
+   "views": 0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Huaihai Campaign Memorial Museum",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-7",
+   "icon": "🏛️",
+   "category": "museum",
+   "coordinates": {
+    "lat": 34.23289,
+    "lng": 117.19369
+   },
+   "coordinates_source": "osm:building Memorial Museum of the Huaihai Campaign (淮海战役纪念馆)",
+   "wiki": null,
+   "bio": "Museum and memorial park on the Huaihai Campaign of the Chinese Civil War.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Xuzhou",
+    "https://www.travelchinaguide.com/attraction/jiangsu/xuzhou/",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/xuzhou-attractions/"
+   ],
+   "views": 0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Han Stone Relief Art Museum",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-8",
+   "icon": "🗿",
+   "category": "museum",
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "bio": "Museum of more than a thousand Han-dynasty carved stones, on the eastern bank of Yunlong Lake.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://www.travelchinaguide.com/attraction/jiangsu/xuzhou/",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/xuzhou-attractions/"
+   ],
+   "views": 0,
+   "needs_pin": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Quanshan National Forest Park",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-9",
+   "icon": "🌲",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.20838,
+    "lng": 117.15235
+   },
+   "coordinates_source": "osm:leisure=park 泉山森林公园",
+   "wiki": null,
+   "bio": "Forest park on the five peaks of Mount Quanshan, known for trails, arboretums and birdlife.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://www.travelchinaguide.com/attraction/jiangsu/xuzhou/"
+   ],
+   "views": 0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Xuzhou Aquarium",
+   "action": "spot",
+   "destination": "xuzhou",
+   "id": "xuzhou-10",
+   "icon": "🐠",
+   "category": "entertainment",
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "bio": "Large aquarium on Huxin Island in Yunlong Lake, in the middle of Xuzhou's main lake park.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2.5,
+   "reason": "Inside Xuzhou's urban area, within the Xuzhou destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Xuzhou"
+   ],
+   "views": 0,
+   "needs_pin": true,
+   "free": false,
+   "costMin": 60,
+   "costMax": 60,
+   "currency": "CNY",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Mount Huaguo",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-1",
+   "icon": "🐒",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.654107,
+    "lng": 119.288335
+   },
+   "coordinates_source": "wikipedia:Mount Huaguo (Jiangsu)",
+   "wiki": "Mount Huaguo (Jiangsu)",
+   "bio": "Mountain scenic area said to be the Monkey King's home in Journey to the West.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lianyungang",
+    "https://www.travelchinaguide.com/attraction/jiangsu/lianyungang/",
+    "https://travellutionmedia.com/explorejiangsu/lianyungang/"
+   ],
+   "views": 6360,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Lian Island",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-2",
+   "icon": "🏝️",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.76334,
+    "lng": 119.46665
+   },
+   "coordinates_source": "osm:place=island 连岛",
+   "wiki": null,
+   "bio": "Jiangsu's largest sea island, linked by a 6.7 km sea dyke, with beaches and forest.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span. About 23 km from centre.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lianyungang",
+    "https://www.travelchinaguide.com/attraction/jiangsu/lianyungang/",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/lianyungang-attractions/",
+    "https://travellutionmedia.com/explorejiangsu/lianyungang/"
+   ],
+   "views": 1047,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Yuntai Mountain",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-3",
+   "icon": "⛰️",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.7212,
+    "lng": 119.39638
+   },
+   "coordinates_source": "osm:natural=peak 海上云台山",
+   "wiki": "Yuntai Mountains (Jiangsu)",
+   "bio": "Coastal mountain range with waterfalls, tea villages and a seaside promenade.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span.",
+   "sources": [
+    "https://www.travelchinaguide.com/attraction/jiangsu/lianyungang/",
+    "https://travellutionmedia.com/explorejiangsu/lianyungang/"
+   ],
+   "views": 0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Yuwan Scenic Area",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-4",
+   "icon": "💦",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.63697,
+    "lng": 119.33835
+   },
+   "coordinates_source": "osm:tourism=attraction 渔湾风景区(东南门)",
+   "wiki": null,
+   "bio": "Scenic area at the foot of Yuntai Mountain with waterfalls, rocks and cliffs.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span.",
+   "sources": [
+    "https://www.travelchinaguide.com/attraction/jiangsu/lianyungang/",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/lianyungang-attractions/"
+   ],
+   "views": 0,
+   "free": false,
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "CNY",
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Kongwang Mountain Cliff Carvings",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-5",
+   "icon": "🗿",
+   "category": "historic",
+   "coordinates": {
+    "lat": 34.56795,
+    "lng": 119.1685
+   },
+   "coordinates_source": "osm:leisure=park 孔望山风景区",
+   "wiki": "Kongwang Mountain",
+   "bio": "Han-dynasty Buddhist cliff carvings among the oldest in China, in south Haizhou.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lianyungang",
+    "https://travellutionmedia.com/explorejiangsu/lianyungang/"
+   ],
+   "views": 504,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Qinshan Island",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-6",
+   "icon": "🏝️",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.86648,
+    "lng": 119.26735
+   },
+   "coordinates_source": "osm:natural=coastline 秦山岛 (island)",
+   "wiki": null,
+   "bio": "Sea island off Ganyu with a pebble-beach causeway, a natural ridge and a coastal resort.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span. About 26 km north of centre, within span.",
+   "sources": [
+    "https://travellutionmedia.com/explorejiangsu/lianyungang/"
+   ],
+   "views": 0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Fenghuangwan Beach",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-7",
+   "icon": "🏖️",
+   "category": "beach",
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "bio": "Bathing beach northeast of Lianyungang, reached by bus from Xinpu.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span. Pin unresolved: check against span when pinned.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lianyungang"
+   ],
+   "views": 0,
+   "needs_pin": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Lianyungang Museum",
+   "action": "spot",
+   "destination": "lianyungang",
+   "id": "lianyungang-8",
+   "icon": "🏛️",
+   "category": "museum",
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "bio": "City museum on Chaoyang Road East with local history and archaeology; closed Mondays.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "reason": "Lianyungang prefecture's coast and Yuntai range (Haizhou/Xinpu/Lian Island/Ganyu) reached from Lianyungang city, within the destination's span.",
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lianyungang",
+    "https://chinatripedia.com/jiangsu-travel-guide/jiangsu-attractions/lianyungang-attractions/"
+   ],
+   "views": 0,
+   "needs_pin": true,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Xishuang Lake",
+   "action": "standalone",
+   "destination": null,
+   "id": "xishuang-lake",
+   "icon": "🌾",
+   "category": "nature",
+   "coordinates": {
+    "lat": 34.52966,
+    "lng": 118.71808
+   },
+   "coordinates_source": "osm:leisure=park 东海县西双湖国家湿地公园",
+   "wiki": null,
+   "bio": "Scenic lake in Donghai County with a wetland park, botanical park and a large lily garden.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "reason": "Donghai County, about 51 km from the Lianyungang destination centre: outside its bounds (a separate county, inland) and beyond 75% of its span, so standalone; no other kept place within 40 km.",
+   "sources": [
+    "https://travellutionmedia.com/explorejiangsu/lianyungang/"
+   ],
+   "views": 0,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "needs_pin": false
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "China is a new country. Review verdicts (12) held for the owner and not placed. Han Stone Relief Art Museum, Xuzhou Aquarium, Lianyungang Museum and Fenghuangwan Beach have no coordinates: needs_pin. Wikipedia-centroid/rounded points flagged needs_pin. Xuzhou-Lianyungang centres are ~200 km apart; no overlap with the Huai'an/Suqian proposals."
+}

@@ -1,0 +1,779 @@
+{
+ "region": "jiangsu-nantong-yancheng",
+ "country_fields": {
+  "country": "China",
+  "countryCode": "CN",
+  "continent": "Asia",
+  "timezone": "Asia/Shanghai"
+ },
+ "new_destinations": [
+  {
+   "id": "nantong",
+   "name": "Nantong",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "lat": 32.0106,
+    "lng": 120.8718
+   },
+   "coordinates_source": "candidates.json osm:park 文峰公园 (Wenfeng Park, in the old centre); re-resolve from OSM place=city",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": "Wikivoyage has a Nantong page with See listings (Langshan, Haohe, Safari Park); Nantong government visitor itineraries name the same places.",
+   "reason": "City of Haohe moat, Langshan and many small museums: 16 kept spots within 11 km of the centre."
+  },
+  {
+   "id": "yancheng",
+   "name": "Yancheng",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "lat": 33.3627,
+    "lng": 120.1625
+   },
+   "coordinates_source": "candidates.json (Yancheng Water Street point, city centre); re-resolve from OSM place=city",
+   "defaultZoomSpanKm": 120,
+   "name_evidence": "Wikivoyage page \"Yancheng\" names the coast and birdwatching (counted source for Coastal Wetlands, Huanghai Forest Park, Salt Museum); Yancheng Coastal Wetlands and Dafeng Milu are the UNESCO/headline draws.",
+   "reason": "Prefecture-named coast region: 6 kept spots (Yellow Sea wetlands, Milu deer, Tiaozini, Dongtai forest and old town, salt museum) with the wetlands as the draw. Considered a \"Yellow Sea Wetlands\" destination or standalone: the wetland places (Coastal Wetlands, Dafeng, Tiaozini, Huanghai Forest) are ~60-120 km apart, a single wetlands name overlaps the Yancheng Coastal Wetlands spot itself, and Wikivoyage groups them under Yancheng, so Yancheng is the traveller-used name. Large span because the draws lie 50-75 km out from the city; flagged for owner to reshape if preferred."
+  }
+ ],
+ "spots": [
+  {
+   "name": "Langshan",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-1",
+   "coordinates": {
+    "lat": 31.9528,
+    "lng": 120.883
+   },
+   "coordinates_source": "osm:peak 狼山 (Langshan Hill)",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "wiki": "Langshan (Nantong)",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "A 110 m forested hill above the Yangtze with Buddhist temples and river views, Nantong's must-see.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong",
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm"
+   ],
+   "views": 926
+  },
+  {
+   "name": "Haohe River Scenic and Historic Spot",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-2",
+   "coordinates": {
+    "lat": 32.027,
+    "lng": 120.856
+   },
+   "coordinates_source": "osm:tourist-info 濠河景区游客中心 (visitor centre point)",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "wiki": "Haohe",
+   "icon": "🛶",
+   "category": "nature",
+   "bio": "A 10 km ancient moat around central Nantong with boat trips and evening lights, a national 5A scenic area.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong",
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm",
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Guangjiao Temple",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-3",
+   "coordinates": {
+    "lat": 31.954663,
+    "lng": 120.895449
+   },
+   "coordinates_source": "wikipedia:Guangjiao Temple (Nantong)",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "wiki": "Guangjiao Temple (Nantong)",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "Buddhist temple at the top of Langshan with a Ming-style Great Buddha Hall and the Song-dynasty Zhiyun Pagoda.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [],
+   "views": 510
+  },
+  {
+   "name": "Nantong Museum",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-4",
+   "coordinates": {
+    "lat": 32.013218,
+    "lng": 120.864809
+   },
+   "coordinates_source": "wikipedia:Nantong Museum",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "wiki": "Nantong Museum",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Nantong's main museum, the city's history and its modern industrial pioneer Zhang Jian, named in guide and city itineraries.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong",
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm",
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "views": 1159
+  },
+  {
+   "name": "Nantong Forest Safari Park",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-5",
+   "coordinates": {
+    "lat": 32.1026,
+    "lng": 120.819
+   },
+   "coordinates_source": "osm:theme_park 南通森林野生动物园",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🦒",
+   "category": "entertainment",
+   "bio": "Wildlife park with about 20,000 animals of 300 species and a drive-through safari.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong",
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Wenfeng Park",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-6",
+   "coordinates": {
+    "lat": 32.0106,
+    "lng": 120.8718
+   },
+   "coordinates_source": "osm:park 文峰公园",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "Park with the 39 m Wenfeng Tower, Ming and Qing buildings and the Geyi Art Museum.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Tangzha Ancient Town",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-7",
+   "coordinates": {
+    "lat": 32.0667,
+    "lng": 120.8131
+   },
+   "coordinates_source": "osm:park 唐闸公园 (town centre not in OSM; park point, check)",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "wiki": "Tangzha",
+   "icon": "🏭",
+   "category": "historic",
+   "bio": "Historic town where Nantong's modern industry began, with relics of China's first modern industrial heritage.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2025-04/01/c_1082035.htm",
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Qiaolou Tower",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-8",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🏯",
+   "category": "landmark",
+   "bio": "Watchtower built in 1349 in central Nantong with a Western-influenced clock tower beside it.",
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Nantong Sendi Ice and Snow Park",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-9",
+   "coordinates": {
+    "lat": 32.102,
+    "lng": 120.8292
+   },
+   "coordinates_source": "osm:theme_park 森迪冰雪海洋乐园",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "⛷️",
+   "category": "entertainment",
+   "bio": "Indoor snow and ice park beside the Forest Safari Park, a year-round winter-sports venue.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Zhou Ji Green Expo Garden",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-10",
+   "coordinates": {
+    "lat": 31.9519,
+    "lng": 120.8746
+   },
+   "coordinates_source": "osm:theme_park 南通园博园",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🌷",
+   "category": "nature",
+   "bio": "Green expo garden in Nantong, a national 4A scenic spot.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://govt.chinadaily.com.cn/regional/nantong/attractions"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Five Mountains",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-11",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🚶",
+   "category": "nature",
+   "bio": "Riverside greenway on the Yangtze with river views and walks, at the foot of the Langshan hills.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Nantong Textile Museum",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-12",
+   "coordinates": {
+    "lat": 32.0124,
+    "lng": 120.8728
+   },
+   "coordinates_source": "osm:park 南通纺织博物馆 (museum name)",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🧵",
+   "category": "museum",
+   "bio": "Museum of Nantong's textile heritage, a niche but recommended stop in the city itinerary.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Chinese Charitable Museum",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-13",
+   "coordinates": {
+    "lat": 32.0011,
+    "lng": 120.8763
+   },
+   "coordinates_source": "osm:building 中华慈善博物馆 (name match)",
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "National museum of philanthropy in Nantong, named in the city's recommended visitor itinerary.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2025-04/01/c_1082035.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Nantong Eminent Figures Museum",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-14",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "Local-history museum on notable figures of Nantong.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Chinese Ophthalmology Museum",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-15",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "👁️",
+   "category": "museum",
+   "bio": "National ophthalmology museum in Nantong, a niche stop in the city itinerary.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Nantong Traditional Chinese Medicine Culture Museum",
+   "action": "spot",
+   "destination": "nantong",
+   "id": "nantong-16",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Inside Nantong urban area, within ~11 km of the centre point and inside the 40 km span.",
+   "icon": "🌿",
+   "category": "museum",
+   "bio": "Traditional Chinese medicine museum in a building blending traditional and modern styles.",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Wanyuan Pagoda",
+   "action": "standalone",
+   "destination": null,
+   "id": "wanyuan-pagoda-haian",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Standalone: Hai'an is a county-level city ~55-60 km from Nantong centre, outside its bounds and span; no pin yet. Only one Hai'an place kept.",
+   "icon": "🏯",
+   "category": "historic",
+   "bio": "Pagoda at Yuantong Temple in northeast Hai'an, a national 3A scenic spot.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://govt.chinadaily.com.cn/regional/nantong/attractions"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Jiangsu Jianghai Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "jianghai-museum-haimen",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": {
+    "lat": 31.8653,
+    "lng": 121.1798
+   },
+   "coordinates_source": "osm:building 江海博物馆 (name match)",
+   "reason": "Standalone: Haimen is ~35 km east of Nantong centre, a separate district outside the 15 km reach and across the metro; within 40 km so noted: not a Nantong spot because it is outside the urban area bounds.",
+   "icon": "🏛️",
+   "category": "museum",
+   "bio": "The first state-owned museum in Haimen district, covering the history of the Jianghai region.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 1.5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://govt.chinadaily.com.cn/regional/nantong/attractions"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Yancheng Coastal Wetlands",
+   "action": "spot",
+   "destination": "yancheng",
+   "id": "yancheng-1",
+   "coordinates": {
+    "lat": 33.53333333,
+    "lng": 120.61666667
+   },
+   "coordinates_source": "wikipedia:Yancheng Coastal Wetlands",
+   "reason": "Coastal reserve ~47 km NE of the city centre, within the Yancheng prefecture coast that Wikivoyage Yancheng treats as the draw; inside the 120 km span.",
+   "wiki": "Yancheng Coastal Wetlands",
+   "icon": "🦢",
+   "category": "nature",
+   "bio": "The largest coastal wetland reserve in China and part of the UNESCO Yellow Sea bird sites, known for red-crowned cranes.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yancheng"
+   ],
+   "views": 841
+  },
+  {
+   "name": "Dafeng Milu Nature Reserve",
+   "action": "spot",
+   "destination": "yancheng",
+   "id": "yancheng-2",
+   "coordinates": {
+    "lat": 32.984,
+    "lng": 120.81
+   },
+   "coordinates_source": "wikipedia:Dafeng Milu Nature Reserve",
+   "reason": "Dafeng district on the Yancheng coast, ~73 km south of the centre point; Yancheng coast is the unit visitors use; inside the 120 km span (90 km allowed). Pin from Wikipedia.",
+   "wiki": "Dafeng Milu Nature Reserve",
+   "icon": "🦌",
+   "category": "nature",
+   "bio": "Reserve where Pere David's deer were reintroduced in 1986, with a water tower, viewing platform and golf-cart tours.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [],
+   "views": 891
+  },
+  {
+   "name": "Tiaozini Tidal Flat",
+   "action": "spot",
+   "destination": "yancheng",
+   "id": "yancheng-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Dongtai coast of Yancheng prefecture; coordinates unresolved, distance (~55-70 km) to be confirmed at pin resolution, standalone if it falls beyond span. Core area has restricted access: visitors reach viewing areas only, not the core mudflat. Fits the Yancheng wetlands cluster.",
+   "icon": "🏖️",
+   "category": "nature",
+   "bio": "Tiaozini mudflat on the Dongtai coast, a migratory bird stopover in the Yancheng wetlands; core area access is restricted.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [],
+   "views": 0
+  },
+  {
+   "name": "Huanghai Forest Park",
+   "action": "spot",
+   "destination": "yancheng",
+   "id": "yancheng-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Dongtai coast, Yancheng prefecture; named in Wikivoyage Yancheng. Pin unresolved: re-verify span at pin resolution.",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Dongtai coastal forest park (Yellow Sea Forest Park) with scenic cycling and hiking trails.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yancheng"
+   ],
+   "views": 0
+  },
+  {
+   "name": "Xixi Ancient Town",
+   "action": "spot",
+   "destination": "yancheng",
+   "id": "yancheng-5",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "Dongtai town in Yancheng prefecture; pin unresolved: re-verify span at pin resolution, else standalone.",
+   "icon": "🏮",
+   "category": "historic",
+   "bio": "Ancient town in Dongtai, cradle of the county and a Buddhist holy place, a 5A scenic area.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "free": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "CNY",
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "counted_sources": [],
+   "views": 0
+  },
+  {
+   "name": "Yancheng China Sea Salt Museum",
+   "action": "spot",
+   "destination": "yancheng",
+   "id": "yancheng-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "needs_pin": true,
+   "reason": "In Yancheng city itself, at the destination centre.",
+   "icon": "🧂",
+   "category": "museum",
+   "bio": "Museum on the history of salt making in Yancheng, free to enter.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "free": true,
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "cost_source": "candidate note: free entry (Wikivoyage Yancheng See)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Yancheng"
+   ],
+   "views": 0
+  }
+ ],
+ "existing_fixes": [],
+ "neighbour_notes": "Standalone within ~40 km of a proposed centre: Jiangsu Jianghai Museum (Haimen, ~35 km E of Nantong, outside the urban bounds and 15 km reach). Wanyuan Pagoda (Hai'an) is ~55-60 km. Nantong to Yancheng centres ~160 km apart, no overlap. Tiaozini restricted core area noted on the spot.",
+ "no_destination_clusters": "Haimen and Hai'an have one kept place each, standalone."
+}

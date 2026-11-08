@@ -1,0 +1,201 @@
+{
+ "nanjing-5": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Sources conflict: govt.chinadaily listing and chinatripedia say free; 2026 guides (wanderinchina) say 30 yuan temple, 50-70 combo. Streets free. Retry with official njfzm.net."
+ },
+ "nanjing-17": {
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "source_url": "https://english.nanjing.gov.cn/IWantto/Travel/PlacestoGo/Parks/202405/t20240511_4663669.html",
+  "source_kind": "government",
+  "confidence": "official",
+  "note": "Nanjing govt lists ticket free; WeChat real-name reservation reportedly required (citiesinsider).",
+  "needs": "booking"
+ },
+ "nanjing-26": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Conflict: pre-2026 guides 30 yuan for the wall section; Jiangsu govt Jun 2026 item says several wall sections now free (en.jiangsu.gov.cn/art/2026/6/15/art_54122_11791236.html) but unclear for Jiefangmen. Retry."
+ },
+ "suzhou-11": {
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "open",
+  "source_url": "https://www.travelchinaguide.com/attraction/jiangsu/suzhou/mudu.htm",
+  "source_kind": "guide",
+  "confidence": "weak",
+  "note": "Town streets free all day; separate 78 yuan combo for gardens (not whole-site)."
+ },
+ "suzhou-29": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "No price on Wikipedia, Lonely Planet, Fodors search; szmuseum.com not confirmed. Retry."
+ },
+ "jiangnan-water-towns-2": {
+  "currency": "CNY",
+  "costBasis": "entry",
+  "source_url": "https://www.chinabound.cn/s/202605/06/WS69fae02b498e36855033c4d0/tongli-ancient-town-suzhou.html",
+  "source_kind": "guide",
+  "confidence": "guide",
+  "note": "100 yuan at gate, 80 online (China Daily listing agrees); boats separate.",
+  "costMin": 100,
+  "costMax": 100
+ },
+ "liuhe-tianfei-palace": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Searched Wikipedia, Ctrip, chinadaily: no price stated. Retry via Ctrip page gs.ctrip.com/html5/you/sight/255/8930.html in browser."
+ },
+ "suzhou-26": {
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "source_url": "https://citiesinsider.com/country/china/suzhou/traditional-arts/zh",
+  "source_kind": "guide",
+  "confidence": "weak",
+  "note": "Free to watch craftspeople per Mar 2026 official WeChat cited by guide; workshop 50-150 extra."
+ },
+ "suzhou-32": {
+  "free": true,
+  "currency": "CNY",
+  "costBasis": "open",
+  "source_url": "https://en.wikipedia.org/wiki/Precious_Belt_Bridge",
+  "source_kind": "guide",
+  "confidence": "weak",
+  "note": "Only a Wanderlog visitor review says ticket free; open bridge in park."
+ },
+ "jiangnan-water-towns-3": {
+  "currency": "CNY",
+  "costBasis": "entry",
+  "source_url": "https://www.suzhou.gov.cn/szsenglish/sz4ajjq/201911/8c696faa83464ce582abf3853e742fd0.shtml",
+  "source_kind": "government",
+  "confidence": "weak",
+  "note": "Suzhou govt (2019) all-inclusive 78; chinatripedia says 55, offpeaktrip 45; town itself free. Dated.",
+  "costMin": 78,
+  "costMax": 78
+ },
+ "wuxi-3": {
+  "currency": "CNY",
+  "costBasis": "entry",
+  "source_url": "https://chinatripedia.com/xihui-park-wuxi-ticket-price-opening-hours-location-and-highlights/",
+  "source_kind": "guide",
+  "confidence": "weak",
+  "note": "Park alone 10; 70 combo for Xihui scenic area; cable car extra. Verify.",
+  "costMin": 10,
+  "costMax": 10
+ },
+ "jiangyin-3": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Search returned only other Junshan parks; no Jiangyin price. Retry."
+ },
+ "zhenjiang-10": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "No admission stated; Covid-era reservation note only. Retry."
+ },
+ "suqian-2": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Ctrip says Luoma Lake resort open all year, price module unclear; beach park free (not the lake). Retry."
+ },
+ "hongze-lake-wetland-park": {
+  "currency": "CNY",
+  "costBasis": "entry",
+  "source_url": "https://www.maigoo.com/citiao/113126.html",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Sihong Hongze Lake Wetland scenic area (5A): adult 60 on Ctrip/maigoo; 88 package with boat/shuttle.",
+  "costMin": 60,
+  "costMax": 60
+ },
+ "lianyungang-6": {
+  "currency": "CNY",
+  "costBasis": "tour",
+  "source_url": "https://touch.piao.qunar.com/touch/list_连云港_景点门票.html",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Qunar adult 138 incl. return ferry (older Sohu 120). Tide dependent.",
+  "costMin": 138,
+  "costMax": 138
+ },
+ "yangzhou-6": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "No price found; Ctrip review says free if dining at the Huaiyang Cuisine Museum inside, else ticket. Retry."
+ },
+ "taizhou-1": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Wanghai Tower free only in Nov-Dec 2025 promo (yzwb); regular price not found."
+ },
+ "taizhou-4": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Ctrip page shows hours 09:00-17:30, no price. Retry in browser."
+ },
+ "taizhou-7": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "No price found; 4A scenic area with ticket sales cutoff, price unstated."
+ },
+ "nantong-10": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Ctrip lists ticket phone/mini-program, price not found."
+ },
+ "jianghai-museum-haimen": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "No admission statement found in travel notes."
+ },
+ "yancheng-4": {
+  "unresolved": true,
+  "currency": "CNY",
+  "source_url": "",
+  "source_kind": "aggregator",
+  "confidence": "weak",
+  "note": "Only group-buy listing ~25 yuan (2023, dahepiao); gate price not found."
+ }
+}

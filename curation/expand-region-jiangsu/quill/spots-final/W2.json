@@ -1,0 +1,865 @@
+{
+ "suzhou-1": {
+  "name": "Humble Administrator's Garden",
+  "wiki": "Humble Administrator's Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Suzhou's largest classical garden at 78 mu, a UNESCO World Heritage component in the old city's northeast.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costMin": 70,
+  "costMax": 80,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Humble_Administrator's_Garden",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Off-season 70, high season 80 (Wikivoyage)."
+ },
+ "suzhou-3": {
+  "name": "Lingering Garden",
+  "wiki": "Lingering Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "One of the largest classical gardens in Suzhou, part of the UNESCO-listed Classical Gardens of Suzhou.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5,
+  "currency": "CNY",
+  "costMin": 45,
+  "costMax": 55,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Off-season 45, high 55."
+ },
+ "suzhou-5": {
+  "name": "Lion Grove Garden",
+  "wiki": "Lion Grove Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "UNESCO-listed classical garden known for its rockery maze, close to the Humble Administrator's Garden.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costMin": 30,
+  "costMax": 40,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Off-season 30, high 40."
+ },
+ "suzhou-7": {
+  "name": "Suzhou Museum",
+  "wiki": "Suzhou Museum",
+  "icon": "🏛️",
+  "category": "museum",
+  "bio": "I.M. Pei's museum beside the Humble Administrator's Garden, with a recreated Ming scholar's study.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": "https://www.szmuseum.com/",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou",
+   "https://www.szmuseum.com/"
+  ],
+  "notes": "Free, booking needed in advance (Wikivoyage)."
+ },
+ "suzhou-9": {
+  "name": "Shantang Street",
+  "wiki": "Shantang Street",
+  "icon": "🏮",
+  "category": "historic",
+  "bio": "Restored canal street about 3.8 km long, linking Changmen to Tiger Hill, with shops in traditional style.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Shantang_Street",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-11": {
+  "name": "Mudu",
+  "wiki": "Mudu",
+  "icon": "🏘️",
+  "category": "historic",
+  "bio": "Water town in Wuzhong District, famed for its history and visited six times by the Qianlong Emperor.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mudu"
+  ],
+  "notes": ""
+ },
+ "suzhou-13": {
+  "name": "Mountain Villa with Embracing Beauty",
+  "wiki": "Mountain Villa with Embracing Beauty",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Rock and water garden at 272 Jingde Road inside the Embroidery Museum, UNESCO-listed in 1997.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mountain_Villa_with_Embracing_Beauty",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-15": {
+  "name": "North Temple Pagoda",
+  "wiki": "Beisi Pagoda",
+  "icon": "🗼",
+  "category": "landmark",
+  "bio": "Nine-storey, 76 m pagoda at Bao'en Temple, once eleven storeys, visible from the train station.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "costMin": 25,
+  "costMax": 25,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Beisi_Pagoda",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-17": {
+  "name": "Pan Gate",
+  "wiki": "Pan Gate",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Combined water and land gate in the old city wall's southwest corner, rebuilt in the 14th century.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costMin": 25,
+  "costMax": 25,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Price includes garden, boat ride, gate and foot bridge."
+ },
+ "suzhou-19": {
+  "name": "Ligongdi",
+  "icon": "🌃",
+  "category": "entertainment",
+  "bio": "A 1,400 m causeway across Jinji Lake, built in the Guangxu reign (1874-1908).",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Draft's bars/clubs claim dropped (unsourced)."
+ },
+ "suzhou-21": {
+  "name": "Guanqian Street",
+  "wiki": "Guanqian Street",
+  "icon": "🛍️",
+  "category": "market",
+  "bio": "Pedestrian-only shopping street near the centre, with craft shops and local restaurants in its back streets.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Free inferred: pedestrian street, no gate."
+ },
+ "suzhou-23": {
+  "name": "Twin Pagodas",
+  "wiki": "Twin Pagodas (Suzhou)",
+  "icon": "🗼",
+  "category": "historic",
+  "bio": "Pair of Northern Song brick pagodas beside the remains of an Arhat temple, with carved stone pillars.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "costMin": 8,
+  "costMax": 8,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-25": {
+  "name": "Xiyuan Temple",
+  "wiki": "Xiyuan Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Buddhist temple just west of Lingering Garden in Wuzhong District.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "costMin": 5,
+  "costMax": 5,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Xiyuan_Temple",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Draft's Ming/Qing halls claim dropped (unsourced)."
+ },
+ "suzhou-27": {
+  "name": "Suzhou Opera Museum",
+  "wiki": "Suzhou Museum of Opera and Theatre",
+  "icon": "🎭",
+  "category": "museum",
+  "bio": "Theatre museum in a Ming latticed-wood theatre, with Kunqu instruments, scripts, masks and costumes.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costMin": 30,
+  "costMax": 30,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Suzhou_Museum_of_Opera_and_Theatre",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Price from older Wikivoyage listing, low confidence. ticketUrl BLOCKED: http://www.kunopera.com.cn/"
+ },
+ "suzhou-29": {
+  "name": "Suzhou Arts and Crafts Museum",
+  "wiki": "Suzhou Arts and Crafts Museum",
+  "icon": "🏺",
+  "category": "museum",
+  "bio": "Crafts museum opened in 2003 at 88 Northwest Street in a Qianlong-era building, with about 1,000 pieces.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "ticketUrl": "https://www.szmuseum.com/",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou",
+   "https://www.szmuseum.com/"
+  ],
+  "notes": "Official site is branch of szmuseum.com (verified): https://www.szmuseum.com/"
+ },
+ "suzhou-31": {
+  "name": "Five Peaks Garden",
+  "wiki": "Five Peaks Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Ming garden named for its five rock peaks, built by the painter Wen Boren and restored from 1979.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Five_Peaks_Garden",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Price from Tarrying Garden listing, same garden.",
+  "held": "no sourced cost"
+ },
+ "suzhou-33": {
+  "name": "Suzhou Industrial Park",
+  "wiki": "Suzhou Industrial Park",
+  "icon": "🏙️",
+  "category": "landmark",
+  "bio": "Planned district around Jinji Lake east of downtown, founded in 1994 under a China-Singapore agreement.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "http://www.sipac.gov.cn/english/",
+   "https://en.wikipedia.org/wiki/Suzhou_Industrial_Park"
+  ],
+  "notes": "Attraction status marginal."
+ },
+ "suzhou-35": {
+  "name": "Former Residence of Yu Yue",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Former home and garden of the poet and scholar Yu Yue, in the Liuhuafang block near Guanqian Street.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "costMin": 1.5,
+  "costMax": 1.5,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Old listing, low confidence; 3-7 with tea. Name has no Wikipedia article."
+ },
+ "suzhou-37": {
+  "name": "Suzhou Zoo",
+  "wiki": "Suzhou Zoo",
+  "icon": "🦒",
+  "category": "entertainment",
+  "bio": "City zoo in Suzhou, one of the animal parks among the city's tourist attractions.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Suzhou_Zoo"
+  ],
+  "notes": ""
+ },
+ "jiangnan-water-towns-2": {
+  "name": "Tongli",
+  "wiki": "Tongli",
+  "icon": "🛶",
+  "category": "historic",
+  "bio": "Canal town in Wujiang, home of the only UNESCO-listed Suzhou garden outside downtown.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tongli",
+   "https://en.wikivoyage.org/wiki/Suzhou",
+   "https://en.wikivoyage.org/wiki/Tongli"
+  ],
+  "notes": "Town ticket bundles shuttle and major sights (Wikivoyage); no price."
+ },
+ "jiangnan-water-towns-4": {
+  "name": "Shen's Residence",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Hall built in 1742 by descendants of Shen Wansan, southeast of Fu'an Bridge in Zhouzhuang.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Zhouzhuang"
+  ],
+  "notes": "Covered by Zhouzhuang town entry (Wikivoyage 160, conflicting figures 50-120); held for consistency. Draft's 'over 100 rooms' dropped."
+ },
+ "jiangnan-water-towns-6": {
+  "name": "Qiandeng Ancient Town",
+  "wiki": "Qiandeng",
+  "icon": "🛶",
+  "category": "historic",
+  "bio": "Water town in Kunshan, 15 km south of the city, and a national historical and cultural town.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Qiandeng",
+   "https://en.wikivoyage.org/wiki/Kunshan"
+  ],
+  "notes": ""
+ },
+ "tinglin-garden-kunshan": {
+  "name": "Tinglin Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Early 20th-century traditional-style garden named for the scholar Gu Yanwu, whose literary name was Tinglin.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Kunshan"
+  ],
+  "notes": "Free per Wikivoyage."
+ },
+ "bacheng-old-street": {
+  "name": "Bacheng Old Street",
+  "icon": "🏮",
+  "category": "historic",
+  "bio": "Stone-paved street of mainly late Qing Jiangnan-style buildings, about 280 m long.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Kunshan"
+  ],
+  "notes": "Open 24 hours, free (Wikivoyage)."
+ },
+ "liuhe-tianfei-palace": {
+  "name": "Liuhe Tianfei Palace",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Taoist temple in Liuhe, founded in the Yuan dynasty and rebuilt several times, where Zheng He prayed.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taicang"
+  ],
+  "notes": ""
+ },
+ "shang-lake-changshu": {
+  "name": "Shang Lake",
+  "icon": "🌊",
+  "category": "nature",
+  "bio": "Lake scenic area in Yushan Town, Changshu, with a bamboo boat ride through a crane reserve.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costMin": 60,
+  "costMax": 60,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Changshu"
+  ],
+  "notes": "Price includes the bamboo boat ride."
+ },
+ "dongting-mountain-lake-tai": {
+  "name": "Dongting Mountain",
+  "icon": "⛰️",
+  "category": "nature",
+  "bio": "Peninsula in Lake Tai in Wuzhong District, Suzhou, known as Dongshan.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [],
+  "notes": "UNRESOLVED: no Wikipedia/Wikivoyage page; needs sourced facts, price and official site."
+ },
+ "suzhou-2": {
+  "name": "Tiger Hill",
+  "wiki": "Tiger Hill, Suzhou",
+  "icon": "⛰️",
+  "category": "landmark",
+  "bio": "Hill park said to resemble a crouching tiger, topped by a 48 m leaning seven-storey brick pagoda.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costMin": 60,
+  "costMax": 70,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tiger_Hill,_Suzhou",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Wikivoyage 70 (60 off-season); a 2026 guide says 80/60. No official site found."
+ },
+ "suzhou-4": {
+  "name": "Master of the Nets Garden",
+  "wiki": "Master of the Nets Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Small classical garden founded in 1140 and rebuilt in 1770, UNESCO-listed and among Suzhou's best proportioned.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costMin": 40,
+  "costMax": 40,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-6": {
+  "name": "Canglang Pavilion",
+  "wiki": "Canglang Pavilion",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "One of Suzhou's oldest scholar gardens, UNESCO-listed and more densely wooded than the others.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costMin": 20,
+  "costMax": 20,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Canglang_Pavilion",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-8": {
+  "name": "Pingjiang Road",
+  "wiki": "Pingjiang Road",
+  "icon": "🏮",
+  "category": "historic",
+  "bio": "Historic street in the northeast old town, paved with hand-cut stones and lined with traditional-style shops.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Pingjiang_Road",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Free inferred: open street, no fee listed."
+ },
+ "suzhou-10": {
+  "name": "Hanshan Temple",
+  "wiki": "Hanshan Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Buddhist temple about 5 km west of the old city, founded in the Liang dynasty (502-557).",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hanshan_Temple",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "ticketUrl BLOCKED: http://www.hanshansi.org/ ; OTA price ~20 not used."
+ },
+ "suzhou-12": {
+  "name": "Couple's Retreat Garden",
+  "wiki": "Couple's Retreat Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Early 20th-century UNESCO-listed garden whose many small rooms and covered walkways suit a rainy day.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "costMin": 20,
+  "costMax": 20,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Couple's_Retreat_Garden",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-14": {
+  "name": "Garden of Cultivation",
+  "wiki": "Garden of Cultivation",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "One of Suzhou's best-preserved Ming gardens, UNESCO-listed, with the best part at the back.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "costMin": 10,
+  "costMax": 10,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Garden_of_Cultivation",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Listed as YiPu Garden on Wikivoyage."
+ },
+ "suzhou-16": {
+  "name": "Temple of Mystery",
+  "wiki": "Xuanmiao Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Taoist temple at the centre of old Suzhou, founded in the 3rd century, with small shops around the hall.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "costMin": 10,
+  "costMax": 10,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Xuanmiao_Temple",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-18": {
+  "name": "Jinji Lake",
+  "wiki": "Jinji Lake",
+  "icon": "🌊",
+  "category": "nature",
+  "bio": "Freshwater lake of 7.18 km2 in the middle of Suzhou Industrial Park, with two man-made islands.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jinji_Lake",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Lakeshore, no fee listed."
+ },
+ "suzhou-20": {
+  "name": "Suzhou Ferris Wheel",
+  "wiki": "Suzhou Ferris Wheel",
+  "icon": "🎡",
+  "category": "entertainment",
+  "bio": "Ferris wheel on the east bank of Jinji Lake, rebuilt in 2025 at 128 m, with views over the lake.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "costMin": 99,
+  "costMax": 99,
+  "costBasis": "ticket",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Suzhou_Ferris_Wheel"
+  ],
+  "notes": "Single 2026 guide price, low confidence; tickets via WeChat mini-program; no official site."
+ },
+ "suzhou-22": {
+  "name": "Suzhou Silk Museum",
+  "wiki": "Suzhou Silk Museum",
+  "icon": "🧵",
+  "category": "museum",
+  "bio": "Museum founded in 1991 on silk and embroidery, with old looms, demonstrations and ancient patterns.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Suzhou_Silk_Museum"
+  ],
+  "notes": "Free per two guides, one older listing says 15: low confidence. ticketUrl unverified: https://www.szsilkmuseum.com/",
+  "held": "no sourced cost"
+ },
+ "suzhou-24": {
+  "name": "Suzhou Confucian Temple",
+  "wiki": "Suzhou Confucian Temple",
+  "icon": "🏛️",
+  "category": "historic",
+  "bio": "Song-dynasty Confucian temple founded in 1035 that holds the Stele Inscription Museum and four great Song steles.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "http://www.szbkmuseum.com/",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Suzhou_Confucian_Temple"
+  ],
+  "notes": "Free per Wikivoyage."
+ },
+ "suzhou-26": {
+  "name": "Suzhou Embroidery Research Institute",
+  "icon": "🧵",
+  "category": "museum",
+  "bio": "Museum, workshop and shop for Suzhou embroidery, a craft with a history of about 2,000 years.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-28": {
+  "name": "Suzhou Pingtan Museum",
+  "icon": "🎭",
+  "category": "museum",
+  "bio": "Museum of Pingtan, storytelling and ballad singing in the Suzhou dialect, with live performances.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Show tickets listed with no amount."
+ },
+ "suzhou-30": {
+  "name": "Garden of Pleasance",
+  "wiki": "Garden of Pleasance",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Very small UNESCO-listed garden in the heart of downtown, a place for a cup of green tea.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Garden_of_Pleasance",
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": ""
+ },
+ "suzhou-32": {
+  "name": "Precious Belt Bridge",
+  "wiki": "Precious Belt Bridge",
+  "icon": "🌉",
+  "category": "landmark",
+  "bio": "Stone arch bridge where the Grand Canal meets Tantai Lake, about 6 km southeast of central Suzhou.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Precious_Belt_Bridge"
+  ],
+  "notes": ""
+ },
+ "suzhou-34": {
+  "name": "City God Temple of Suzhou",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Chinese folk temple dedicated to the City God among the old streets of central Suzhou, free to enter.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Thin source (Wikivoyage name and Free only); bio needs a second source."
+ },
+ "suzhou-36": {
+  "name": "Suzhou Archaeological Museum",
+  "icon": "🏺",
+  "category": "museum",
+  "bio": "One of Suzhou's newest museums, showing artefacts from archaeological sites in the Suzhou area.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "ticketUrl": "https://www.szkgyjs.cn/",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Suzhou"
+  ],
+  "notes": "Official site verified (https://www.szkgyjs.cn/) but price not read."
+ },
+ "jiangnan-water-towns-1": {
+  "name": "Zhouzhuang",
+  "wiki": "Zhouzhuang",
+  "icon": "🛶",
+  "category": "historic",
+  "bio": "Canal town with 14 stone bridges, including Double Bridge and Fu'an Bridge, and the Shen and Zhang residences.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "ticketUrl": "https://en.zhouzhuang.net/",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Zhouzhuang",
+   "https://en.wikivoyage.org/wiki/Zhouzhuang"
+  ],
+  "notes": "Price conflict: Wikivoyage 160 (stale), Ctrip 100, 2025 report 50 weekdays; none official."
+ },
+ "jiangnan-water-towns-3": {
+  "name": "Luzhi",
+  "wiki": "Luzhi",
+  "icon": "🛶",
+  "category": "historic",
+  "bio": "Historic canal town in Wuzhong District, 18 km east of Suzhou, home to Baosheng Temple.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Baosheng_Temple",
+   "https://en.wikipedia.org/wiki/Luzhi"
+  ],
+  "notes": "Streets reportedly free with ticketed sights (aggregators only)."
+ },
+ "jiangnan-water-towns-5": {
+  "name": "Retreat and Reflection Garden",
+  "wiki": "Retreat & Reflection Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "Classical garden in Tongli, UNESCO-listed in 2001 and the only one of its kind outside downtown Suzhou.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Retreat_&_Reflection_Garden",
+   "https://en.wikivoyage.org/wiki/Wujiang"
+  ],
+  "notes": "Guides conflict (50 vs 100); may be in the Tongli town ticket. tongli.net names the town not the garden: not used."
+ },
+ "jiangnan-water-towns-7": {
+  "name": "Baosheng Temple",
+  "wiki": "Baosheng Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "Buddhist temple in Luzhi town, called one of the top four Buddhist temples of the Jiangnan region.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "currency": "CNY",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Baosheng_Temple"
+  ],
+  "notes": "OTA price ~80/59 not used."
+ },
+ "kunshan-opera-museum": {
+  "name": "Kunshan Opera Museum",
+  "icon": "🎭",
+  "category": "museum",
+  "bio": "Museum of Kunqu and other opera in Kunshan's Bacheng area, free to enter.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "https://www.ksoperamuseum.com/",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Kunshan"
+  ],
+  "notes": "Thin source (Wikivoyage); official site verified."
+ },
+ "zheng-he-park-taicang": {
+  "name": "Zheng He Park",
+  "icon": "⚓",
+  "category": "monument",
+  "bio": "Memorial park to Zheng He in Taicang, with a museum and a replica of a treasure ship.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costMin": 30,
+  "costMax": 30,
+  "costBasis": "entry",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taicang"
+  ],
+  "notes": "Undated Wikivoyage price."
+ },
+ "yu-mountain-changshu": {
+  "name": "Yu Mountain",
+  "wiki": "Yushan (Changshu)",
+  "icon": "⛰️",
+  "category": "nature",
+  "bio": "Hill 300 m high and 6.5 km long in northwest Changshu, with a Great Wall section and an old temple at the top.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costMin": 35,
+  "costMax": 35,
+  "costBasis": "park",
+  "costPer": "Per Adult",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Yushan_(Changshu)",
+   "https://en.wikivoyage.org/wiki/Changshu"
+  ],
+  "notes": "Yu Mountain National Forest Park gate fee (Wikivoyage). wiki title is Yushan (Changshu)."
+ },
+ "shajiabang-scenic-area": {
+  "name": "Shajiabang Scenic Area",
+  "wiki": "Shajiabang",
+  "icon": "🏞️",
+  "category": "historic",
+  "bio": "Tourist village beside Yangcheng Lake in Changshu, with a scenic area called Shajiabang Resort.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costMin": 80,
+  "costMax": 100,
+  "costBasis": "entry",
+  "ticketUrl": "http://www.shajiabang.com/",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Shajiabang"
+  ],
+  "notes": "80 low season, 100 high (Wikivoyage). Only one sourced fact for bio."
+ }
+}

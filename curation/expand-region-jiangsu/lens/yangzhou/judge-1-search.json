@@ -1,0 +1,32 @@
+{
+ "dest:yangzhou:why2": {
+  "candidates": [
+   {
+    "file": "https://en.people.cn/mediafile/pic/BIG/20250527/87/920299963348715459.png",
+    "n": 1,
+    "verdict": "fail",
+    "reason": "Xinhua watermark logo, night scene not captioned as Yangzhou"
+   }
+  ],
+  "choice": "none: Xinhua watermark logo, night scene not captioned as Yangzhou",
+  "hero_crop": null
+ },
+ "dest:yangzhou:why3": {
+  "candidates": [
+   {
+    "file": "https://us-east-cdn.greentourasia.com/image/20260426/OU1j32/yangzhouzaocha1.png",
+    "n": 1,
+    "verdict": "fail",
+    "reason": "food table, not the old quarter lanes"
+   },
+   {
+    "file": "https://www.goatsontheroad.com/wp-content/uploads/2013/02/Exploring-The-Old-Town-Of-Yangzhou-China.jpg",
+    "n": 2,
+    "verdict": "pass",
+    "reason": "old-town lane scene (Goats on the Road, Yangzhou old town post), real colour photo, 1400 px; ordinary street, shows the reason; permission not confirmed"
+   }
+  ],
+  "choice": "https://www.goatsontheroad.com/wp-content/uploads/2013/02/Exploring-The-Old-Town-Of-Yangzhou-China.jpg",
+  "hero_crop": "ok"
+ }
+}

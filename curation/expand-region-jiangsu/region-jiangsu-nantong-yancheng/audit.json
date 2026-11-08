@@ -1,0 +1,116 @@
+[
+ {
+  "name": "Haohe River Scenic and Historic Spot",
+  "wiki": "Haohe",
+  "views": 0,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Haohe River Scenic and Historic Spot",
+   "wiki": "Haohe",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong",
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm",
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Haohe"
+   ],
+   "note": "Waterway: the Haohe River, a 10 km ancient moat encircling central Nantong, with e-boat trips and evening lights; a National 5A scenic area.",
+   "views": 0,
+   "coordinates": {
+    "lat": 32.027,
+    "lng": 120.856
+   },
+   "coordinates_source": "osm:tourist-info 濠河景区游客中心 (visitor centre point)"
+  }
+ },
+ {
+  "name": "Nantong Museum",
+  "wiki": "Nantong Museum",
+  "views": 1159,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Nantong Museum",
+   "wiki": "Nantong Museum",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Nantong",
+    "https://en.nantong.gov.cn/2025-04/25/c_1085461.htm",
+    "https://en.nantong.gov.cn/2023-06/13/c_895666.htm"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Nantong_Museum"
+   ],
+   "note": "Museum: Nantong Museum, founded in 1905 by Zhang Jian as China's first museum, a museum complex with garden courtyards beside the Haohe River.",
+   "views": 1159,
+   "coordinates": {
+    "lat": 32.013218,
+    "lng": 120.864809
+   },
+   "coordinates_source": "wikipedia:Nantong Museum"
+  }
+ },
+ {
+  "name": "New Fourth Army Memorial Hall",
+  "wiki": "New Fourth Army Memorial Hall",
+  "views": 399,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "New Fourth Army Memorial Hall",
+   "wiki": "New Fourth Army Memorial Hall",
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/New_Fourth_Army_Memorial_Hall",
+    "https://zh.wikipedia.org/wiki/%E7%9B%90%E5%9F%8E%E5%B8%82"
+   ],
+   "note": "Museum: New Fourth Army Memorial Hall in Yancheng, a Red Army history museum; Chinese Wikipedia names it among the city's attractions.",
+   "views": 399
+  }
+ },
+ {
+  "name": "Xiaoyangkou Tourist Resort",
+  "wiki": "",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Xiaoyangkou Tourist Resort",
+   "wiki": "",
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Rudong_County"
+   ],
+   "note": "Scenic area: Xiaoyangkou tourist resort on the Rudong coast, an AAA scenic area and provincial resort; no English visitor page in hand.",
+   "views": 0
+  }
+ },
+ {
+  "name": "Zhang Jian Memorial Hall",
+  "wiki": "",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Zhang Jian Memorial Hall",
+   "wiki": "",
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Zhang_Jian"
+   ],
+   "note": "Museum: memorial hall on the former Haoyang Villa, the late-life home of industrialist and educator Zhang Jian; a visitor draw named in Nantong tour summaries, status to confirm.",
+   "views": 0,
+   "coordinates": {
+    "lat": 32.0151,
+    "lng": 120.8603
+   },
+   "coordinates_source": "osm:museum 张謇纪念馆"
+  }
+ }
+]

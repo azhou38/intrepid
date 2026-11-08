@@ -1,0 +1,75 @@
+{
+ "destinations": [
+  {
+   "id": "changzhou",
+   "name": "Changzhou",
+   "action": "new-destination",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "category": "city",
+   "icon": "🦕",
+   "rank": 5,
+   "defaultZoomSpanKm": 30,
+   "coordinates": {
+    "lat": 31.7835,
+    "lng": 119.9507
+   },
+   "coordinates_source": "Wikivoyage Changzhou page point",
+   "name_evidence": "Wikivoyage article \"Changzhou\": \"a city of 3.6 million people ... those with a bit of time can spend a pleasant ...\" (guidebook city with See/Do listings; the city tourist site lists the AAAA spots).",
+   "spot_count": 8,
+   "needs_research": [
+    "description",
+    "tagline",
+    "whyVisit",
+    "goodToKnow",
+    "bestMonths",
+    "header",
+    "whyVisitPhotos"
+   ]
+  },
+  {
+   "id": "zhenjiang",
+   "name": "Zhenjiang",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "category": "city",
+   "coordinates": {
+    "lat": 32.188,
+    "lng": 119.424
+   },
+   "coordinates_source": "wikipedia:Zhenjiang (coord)",
+   "defaultZoomSpanKm": 30,
+   "rank": 4,
+   "rank_reason": "Mid-size Yangtze city with three famous hills and a historic ferry quarter; worth a detour beside Nanjing/Yangzhou, not a national highlight.",
+   "name_evidence": "Wikivoyage page 'Zhenjiang' (See/Do listings: Jinshan Temple, Jiaoshan, Beigu Hill, Xijindu, Nanshan); travelchinaguide Zhenjiang attractions list.",
+   "span_reason": "Ten spots within about 12 km of the centre (Vinegar Museum furthest); 30 km span gives 22.5 km."
+  }
+ ],
+ "spot_ids": [
+  "zhenjiang-1",
+  "zhenjiang-2",
+  "zhenjiang-3",
+  "zhenjiang-4",
+  "zhenjiang-5",
+  "zhenjiang-6",
+  "zhenjiang-7",
+  "zhenjiang-8",
+  "zhenjiang-9",
+  "zhenjiang-10",
+  "mount-mao-jurong",
+  "changzhou-1",
+  "changzhou-2",
+  "changzhou-3",
+  "changzhou-4",
+  "changzhou-5",
+  "changzhou-6",
+  "changzhou-7",
+  "changzhou-8",
+  "tianmu-lake-liyang",
+  "nanshan-bamboo-sea-liyang"
+ ]
+}

@@ -1,0 +1,389 @@
+{
+ "yangzhou-1": {
+  "name": "Slender West Lake",
+  "icon": "🏞️",
+  "category": "nature",
+  "bio": "A narrow lake of pavilions, grown from Tang-era city moats and lined with Qing salt merchants' estates.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "wiki": "Slender West Lake",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Slender_West_Lake",
+   "https://en.wikivoyage.org/wiki/Yangzhou",
+   "https://govt.chinadaily.com.cn/s/201804/04/WS5b788949498e855160e8f858/yangzhou-attracts-visitors-with-reduced-scenic-spot-prices.html"
+  ],
+  "currency": "CNY",
+  "costMin": 30,
+  "costMax": 100,
+  "costBasis": "entry",
+  "ticketUrl": "http://www.shouxihu.net/",
+  "notes": "Price is 2018 official policy via government-run China Daily page; Wikivoyage still shows 120 (stale). Seasonal range 30-100; adult peak 100. Free for students Jul-Aug. Cost range is seasonal (30-100 CNY, adult peak 100)."
+ },
+ "yangzhou-2": {
+  "name": "Geyuan Garden",
+  "icon": "🎋",
+  "category": "historic",
+  "bio": "A Qing salt merchant's garden on Dongguan Street, known for its bamboo and stone, with sections for the four seasons.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Geyuan",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou",
+   "https://govt.chinadaily.com.cn/s/201711/29/WS5b784250498e855160e8ccc6/geyuan-garden.html"
+  ],
+  "currency": "CNY",
+  "costMin": 30,
+  "costMax": 45,
+  "costBasis": "entry",
+  "notes": "Price from 2017 China Daily government page; a Ctrip listing shows 48 but is an aggregator and not used."
+ },
+ "yangzhou-3": {
+  "name": "He Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "The best-known private garden of the late Qing dynasty, with tea houses, open grottoes and pleasant views.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "He Garden",
+  "sources": [
+   "https://chinaservicesinfo.com/s/201711/29/WS5b78424e498e855160e8ccc5/he-garden.html",
+   "https://en.wikipedia.org/wiki/He_Garden",
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "costMin": 30,
+  "costMax": 45,
+  "costBasis": "entry",
+  "notes": "Price from 2017 China Daily page; aggregator figures differ (45-48)."
+ },
+ "yangzhou-4": {
+  "name": "Dongguan Street",
+  "icon": "🏮",
+  "category": "historic",
+  "bio": "An old-quarter street in eastern Yangzhou, lined with Geyuan Garden and the Taoist Wudangxing Palace.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Geyuan",
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "notes": "Open public street; free is inferred from it being a street, not from a stated price. No English Wikipedia article (Dongguan_Street is a missing page)."
+ },
+ "yangzhou-5": {
+  "name": "Daming Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "A temple on Shugang Mountain tied to Jianzhen, who ordained monks here in 742 before going to Japan.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Daming Temple",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Daming_Temple",
+   "https://en.wikivoyage.org/wiki/Yangzhou",
+   "https://govt.chinadaily.com.cn/s/201711/29/WS5b784251498e855160e8ccc7/daming-temple.html"
+  ],
+  "currency": "CNY",
+  "costMin": 20,
+  "costMax": 45,
+  "costBasis": "entry",
+  "ticketUrl": "http://www.damingsi.com/",
+  "notes": "Price from 2017 China Daily page; climbing Qiling Pagoda costs extra (not counted)."
+ },
+ "yangzhou-6": {
+  "name": "Lu Family Salt Merchant Residence",
+  "icon": "🏛️",
+  "category": "historic",
+  "bio": "A lavishly furnished salt merchant's home on Kangshan Street, part of the Grand Canal World Heritage listing.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "wiki": "Lu Family Residence",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou",
+   "https://zh.wikipedia.org/wiki/盂城驿"
+  ],
+  "held": "no sourced cost",
+  "notes": "NO PRICE FOUND (held for cost). No English Wikipedia article; zh Wikipedia has 卢氏盐商住宅 but no price. Trip.com page hints the area is under Grand Canal theme construction: check it is open before keeping."
+ },
+ "yangzhou-7": {
+  "name": "Yangzhou Museum",
+  "icon": "🏛️",
+  "category": "museum",
+  "bio": "Yangzhou's largest museum by Mingyue Lake, with a Grand Canal boat and a woodblock printing museum on site.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5,
+  "wiki": "Yangzhou Museum",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Yangzhou_Museum",
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "notes": "ticketUrl BLOCKED: http://www.yzmuseum.com/"
+ },
+ "yangzhou-8": {
+  "name": "China Grand Canal Museum",
+  "icon": "🏛️",
+  "category": "museum",
+  "bio": "A modern museum on the Grand Canal heritage site in Sanwan wetland park.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "wiki": "China Grand Canal Museum",
+  "sources": [
+   "https://en.wikipedia.org/wiki/China_Grand_Canal_Museum",
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "notes": "ticketUrl unverified: https://www.grandcanalmuseum.cn/ Free entry (guide)."
+ },
+ "yangzhou-9": {
+  "name": "Xiaoqinhuai Canal",
+  "icon": "🛶",
+  "category": "historic",
+  "bio": "A canal through the old city centre, with the narrow lanes of a few surviving old blocks nearby.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "notes": "Canal-side walk; free inferred. Wikipedia Xiaoqinhuai_River does not exist."
+ },
+ "yangzhou-10": {
+  "name": "Wenchang Pavilion",
+  "icon": "🏯",
+  "category": "landmark",
+  "bio": "The surviving pavilion of a Confucian academy, standing in the roundabout that marks Yangzhou's symbolic centre.",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.25,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "notes": "Seen from the roundabout; no entry fee stated; free inferred. Wikipedia Wenchang_Ge is a missing page."
+ },
+ "yangzhou-11": {
+  "name": "Tianning Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "A large Buddhist temple with a hall holding a Siku Quanshu copy and statues of the Eight Eccentrics of Yangzhou.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "notes": "Wikipedia \"Tianning Temple\" is a disambiguation page, so wiki=null."
+ },
+ "yangzhou-12": {
+  "name": "Shi Kefa Memorial",
+  "icon": "🏛️",
+  "category": "historic",
+  "bio": "Memorial temple for the Ming general Shi Kefa, who refused to surrender Yangzhou in 1645, with his clothing tomb.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou",
+   "https://zh.wikipedia.org/wiki/史可法纪念馆"
+  ],
+  "held": "no sourced cost",
+  "notes": "NO PRICE FOUND (held for cost). No English Wikipedia article."
+ },
+ "yangzhou-13": {
+  "name": "Tomb of Puhaddin",
+  "icon": "🕌",
+  "category": "historic",
+  "bio": "A park around the tomb of the Islamic missionary Puhaddin, with small exhibits on Yangzhou's Hui Muslim community.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "notes": "English Wikipedia \"Tomb of Puhaddin\" is a redirect to the person page Puhaddin, so wiki=null. Wikivoyage names it Puhaddin Park."
+ },
+ "longshan-yizheng": {
+  "name": "Longshan Mountain Scenic Resort",
+  "icon": "⛰️",
+  "category": "nature",
+  "bio": "A hilltop scenic resort and forest park in Qingshan town, the main draw of Yizheng city.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yangzhou"
+  ],
+  "held": "no sourced cost; sourcing too thin (draft bio only)",
+  "notes": "NO PRICE, NO SOURCE BEYOND DRAFT: Wikivoyage has no Yizheng page and zh Wikipedia 龙山风景区 is a stub with nothing usable. UNRESOLVED; hold."
+ },
+ "yucheng-postal-stop": {
+  "name": "Yucheng Postal Stop",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "China's largest and best-preserved ancient courier station, built in the early Ming dynasty outside Gaoyou's South Gate.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Yucheng Postal Stop",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Yucheng_Postal_Stop",
+   "https://en.wikivoyage.org/wiki/Gaoyou"
+  ],
+  "currency": "CNY",
+  "costMin": 30,
+  "costMax": 30,
+  "costBasis": "entry",
+  "notes": "Wikivoyage Gaoyou, price dated 2021. Wikivoyage flags the link as dead. ticketUrl unverified: http://www.gyycy.cn/ENGLISH/"
+ },
+ "zhenguo-temple-gaoyou": {
+  "name": "Zhenguo Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "A Buddhist temple on a small Grand Canal island, known for a pagoda little changed since the Tang dynasty.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.25,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Gaoyou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": "http://www.zhenguosi.com/",
+  "notes": "English Wikipedia Zhenguo Temple is the Pingyao temple, so wiki=null."
+ },
+ "gaoyou-old-town": {
+  "name": "Gaoyou Old Town",
+  "icon": "🏘️",
+  "category": "historic",
+  "bio": "A short walk through Gaoyou's old town, with antique shops, local goods and early-morning open-air food markets.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Gaoyou"
+  ],
+  "currency": "CNY",
+  "free": true,
+  "costBasis": "open",
+  "notes": "Walkable old town; free inferred."
+ },
+ "qianduo-xinghua": {
+  "name": "Qianduo Scenic Area",
+  "icon": "🌼",
+  "category": "nature",
+  "bio": "Canola flower fields north of Xinghua, ringed by canals and toured by boat, in bloom from late March to April.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Xinghua"
+  ],
+  "currency": "CNY",
+  "costMin": 99,
+  "costMax": 99,
+  "costBasis": "entry",
+  "notes": "Price dated 2018 and from Wikivoyage; the 99 includes the boat ride. Seasonal draw (bloom late Mar-Apr) per source."
+ },
+ "taizhou-1": {
+  "name": "Wanghai Tower",
+  "icon": "🗼",
+  "category": "landmark",
+  "bio": "A newly built tower in the Fengcheng River scenic area on Nanshansi Road in Hailing district.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)"
+  ],
+  "held": "no sourced cost",
+  "notes": "NO PRICE FOUND (held for cost). Wikivoyage URL fengchenghe.com is a dead link and fails to load."
+ },
+ "taizhou-2": {
+  "name": "Guangxiao Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "A temple founded in the Eastern Jin dynasty, keeping a Five Dynasties bronze bell and a Qianlong-era Tripitaka.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)",
+   "https://zh.wikipedia.org/wiki/光孝寺_(泰州)"
+  ],
+  "held": "no sourced cost",
+  "notes": "NO PRICE FOUND. Only the Qing abbot building is old; other buildings rebuilt after 1988 (zh Wikipedia). Wikipedia title is a disambiguation page, so wiki=null."
+ },
+ "taizhou-3": {
+  "name": "Mei Lanfang Memorial Hall",
+  "icon": "🎭",
+  "category": "museum",
+  "bio": "A memorial park and museum on the Mei family ancestral village site, with water on three sides.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)",
+   "https://zh.wikipedia.org/wiki/梅兰芳纪念馆"
+  ],
+  "held": "no sourced cost",
+  "notes": "NO PRICE FOUND from an operator/guide (only a Ctrip visitor review saying free; not used). Held for cost. Phone 0523-86363910 listed."
+ },
+ "taizhou-4": {
+  "name": "PLA Navy Establishment Memorial Hall",
+  "icon": "⚓",
+  "category": "museum",
+  "bio": "A museum at Baima Temple marking where the East China Military Region Navy was founded on 23 April 1949.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/中国人民解放军海军诞生地纪念馆"
+  ],
+  "held": "no sourced cost",
+  "notes": "NO PRICE FOUND (held for cost). No English Wikipedia article."
+ },
+ "taizhou-5": {
+  "name": "Qinhu Lake National Wetland Park",
+  "icon": "🦢",
+  "category": "nature",
+  "bio": "A national wetland park in Jiangyan beside Qinhu Lake, with the main area across the water reached by boat.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)"
+  ],
+  "held": "premise unsourced: Qinhu Lake wetland park facts (24.5 km, boat to main area) are not on the cited Wikivoyage page; no zh/en Wikipedia page loads; no cost",
+  "notes": "NO OFFICIAL/GUIDE PRICE. Ctrip listing shows 80 yuan (includes round-trip boat) but is an aggregator and not recorded as cost. Held for cost. Facts here are from Ctrip search snippet and need a second source before use."
+ },
+ "taizhou-6": {
+  "name": "Qintong Ancient Town",
+  "icon": "🏘️",
+  "category": "historic",
+  "bio": "An ancient town in Jiangyan district beside Qinhu Lake, rated a national 4A attraction.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)"
+  ],
+  "held": "premise unsourced: Qintong Ancient Town and its 4A rating are not on the cited Wikivoyage page and no fetched source gives them; no cost",
+  "notes": "NO OFFICIAL/GUIDE PRICE. Ctrip shows 40 yuan (aggregator, not used). Held for cost. Source for 4A rating is only the draft/Ctrip snippet; needs a second source."
+ },
+ "taizhou-7": {
+  "name": "Guluotang Cultural Block",
+  "icon": "🏘️",
+  "category": "historic",
+  "bio": "A historic cultural block in northern Jiangyan district, rated a national 4A attraction.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Taizhou_(Jiangsu)"
+  ],
+  "held": "premise unsourced: Guluotang Cultural Block appears in no fetched source (Wikivoyage Taizhou does not list it); no cost",
+  "notes": "NO PRICE OR FREE SOURCE (held for cost). Thin sourcing: only draft bio and OSM tag; Wikivoyage Taizhou lists Jiangyan old neighbourhood but not this block by name."
+ }
+}

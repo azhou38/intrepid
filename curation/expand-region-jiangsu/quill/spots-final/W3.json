@@ -1,0 +1,552 @@
+{
+ "lake-tai": {
+  "name": "Lake Tai",
+  "icon": "🌊",
+  "category": "nature",
+  "bio": "The third largest freshwater lake in China, known for its fish and freshwater pearls and lined with scenic areas.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "wiki": "Lake Tai",
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lake_Tai",
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "Free/open is not explicitly sourced (lake has no gate; ticketed areas like Yuantouzhu sit on its shore): orchestrator to confirm."
+ },
+ "wuxi-2": {
+  "name": "Turtle Head Island",
+  "icon": "🌸",
+  "category": "nature",
+  "bio": "A peninsula on Lake Tai's northwest shore named for a turtle-shaped rock, known for cherry blossoms in March and April.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "wiki": "Yuantouzhu",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 90,
+  "costMax": 90,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Yuantouzhu",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1131672.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "ticketUrl BLOCKED: http://www.ytz.com.cn/ . Price includes ferry. wiki=Yuantouzhu."
+ },
+ "wuxi-4": {
+  "name": "Jichang Garden",
+  "icon": "🏯",
+  "category": "historic",
+  "bio": "A Ming-origin classical garden at the foot of Mount Hui that inspired gardens at the Summer Palace and Yuanming Yuan.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Jichang Garden",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 70,
+  "costMax": 70,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jichang_Garden",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "70 is the combined Huishan Ancient Town ticket (govt list); Wikivoyage says 65. A 2025-09 notice said the garden was under closed management: check."
+ },
+ "wuxi-6": {
+  "name": "Nianhua Bay",
+  "icon": "🧘",
+  "category": "entertainment",
+  "bio": "A Zen-themed town scenic area on the Lake Tai shore, just west of the Lingshan Scenic Area in Binhu District.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 140,
+  "costMax": 140,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "Price from Wikivoyage (Oct 2023), guide-level; no official site found."
+ },
+ "wuxi-8": {
+  "name": "Liyuan Garden",
+  "icon": "🌿",
+  "category": "historic",
+  "bio": "A lakeside Chinese garden named for Fan Li, with a 100-year-old white wisteria nicknamed the Money Tree.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "wiki": "Liyuan (garden)",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 30,
+  "costMax": 45,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Liyuan_(garden)",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm",
+   "https://regional.chinadaily.com.cn/GoWuxi/2025-04/07/c_1083566.htm"
+  ],
+  "notes": "Range is low to high season."
+ },
+ "wuxi-10": {
+  "name": "Donglin Academy",
+  "icon": "📚",
+  "category": "historic",
+  "bio": "A Northern Song academy founded in 1111, with Ming and Qing halls, a stone arch and a pool.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "wiki": "Donglin Academy",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "free": true,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Donglin_Academy",
+   "https://en.wikivoyage.org/wiki/Wuxi",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Conflict: Wikivoyage says 5 yuan; govt list (Oct 2025) says free, used."
+ },
+ "wuxi-12": {
+  "name": "Wuxi Museum",
+  "icon": "🏛️",
+  "category": "museum",
+  "bio": "A museum holding nearly 40,000 relics, from paintings and calligraphy to purple clay teapots and Huishan clay figurines.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "wiki": "Wuxi Museum",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "free": true,
+  "sources": [
+   "https://en.wuxi.gov.cn/2025-10/14/c_1131993.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Free per govt list and Wikivoyage."
+ },
+ "wuxi-14": {
+  "name": "Dangkou Ancient Town",
+  "icon": "🏮",
+  "category": "historic",
+  "bio": "A 4A-rated ancient-town scenic area in Ehu town, Xishan District, free to enter.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "free": true,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Free per govt list; at Ehu town, not Meicun."
+ },
+ "wuxi-16": {
+  "name": "Wuxi Zoo",
+  "icon": "🐼",
+  "category": "entertainment",
+  "bio": "A zoo and amusement park at the foot of Huishan with over 1,000 rare animals and giant panda research programmes.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 100,
+  "costMax": 100,
+  "ticketUrl": "https://www.wxzoo.com.cn/",
+  "sources": [
+   "https://en.wuxi.gov.cn/2025-10/11/c_1132576.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "No Wikipedia article."
+ },
+ "wuxi-18": {
+  "name": "Wuxi Sunac Sea World",
+  "icon": "🦈",
+  "category": "entertainment",
+  "bio": "A marine park in Binhu with sharks and rays, planned to hold about 1,500 marine species.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 150,
+  "costMax": 150,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "Price guide-level (Wikivoyage Dec 2023); no official site."
+ },
+ "wuxi-20": {
+  "name": "Helu City Site",
+  "icon": "🏺",
+  "category": "historic",
+  "bio": "A museum on the site of King Helu of Wu's capital, housed in a phoenix-shaped building.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 120,
+  "costMax": 120,
+  "sources": [
+   "https://en.wuxi.gov.cn/2025-10/14/c_1131987.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Govt list 120; older 60 outdated."
+ },
+ "yixing-1": {
+  "name": "Yixing Ceramics Museum",
+  "icon": "🫖",
+  "category": "museum",
+  "bio": "One of China's earliest ceramics museums, with 107 relics from Neolithic pottery to Ming and Qing zisha teapots.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 5,
+  "costMax": 5,
+  "sources": [
+   "https://en.wuxi.gov.cn/2025-10/14/c_1131992.htm",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Conflict: Wikivoyage free vs govt list 5; govt used."
+ },
+ "yixing-3": {
+  "name": "Longchi Mountain Scenic Area",
+  "icon": "🌲",
+  "category": "nature",
+  "bio": "A nature reserve in the Zhangzhu hills with golden pine and magnolia trees unique to China, and a bicycle park.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yixing"
+  ],
+  "notes": "General entry free; sightseeing car and bike hire extra (Wikivoyage)."
+ },
+ "yixing-5": {
+  "name": "Zhanggong's Cave",
+  "icon": "🕳️",
+  "category": "nature",
+  "bio": "A 4A-rated karst cave scenic area in Zhangyang village in Yixing's Hufu town.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 110,
+  "costMax": 110,
+  "sources": [
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Govt lists as Zhang Daoling's Cave; Taoist claim unverified so omitted."
+ },
+ "yixing-7": {
+  "name": "Longbeishan Forest Park",
+  "icon": "🌳",
+  "category": "nature",
+  "bio": "A 4A forest park on Renmin South Road in Yixing city, free to enter.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Size claim omitted (unsourced)."
+ },
+ "jiangyin-2": {
+  "name": "Changjing Ancient Town",
+  "icon": "🏮",
+  "category": "historic",
+  "bio": "A 3A water town in southeast Jiangyin with canals, old stone streets and over 2,000 years of history.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Free, open 24 hours per govt list."
+ },
+ "jiangyin-4": {
+  "name": "Ebizui Park",
+  "icon": "🌊",
+  "category": "nature",
+  "bio": "A Yangtze riverside park named for its goose's-nose shape, with river views and tree-lined walking paths.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "Free is medium confidence (govt lists Binjiang Fortress area free; Ctrip for Ebizui itself).",
+  "held": "free not sourced for Ebizui itself"
+ },
+ "jiangyin-6": {
+  "name": "Former Residence of Liu Brothers",
+  "icon": "🏠",
+  "category": "historic",
+  "bio": "The former home of linguist Liu Bannong and erhu composer Liu Tianhua, with six halls on the three Liu brothers.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "free": true,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin",
+   "https://gs.ctrip.com/html5/you/travels/235/4080294.html"
+  ],
+  "notes": "Free per a Ctrip travelogue (c.2020), possibly outdated; low-medium confidence."
+ },
+ "wuxi-1": {
+  "name": "Grand Buddha at Ling Shan",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "A bronze Buddha statue over 80 m tall at Lingshan on Lake Tai's north shore, one of the largest in China.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "wiki": "Grand Buddha at Ling Shan",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 210,
+  "costMax": 210,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Grand_Buddha_at_Ling_Shan",
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "Price 210 is guide-level (Wikivoyage); other sites show 150-210, uncertain."
+ },
+ "wuxi-3": {
+  "name": "Xihui Park",
+  "icon": "⛰️",
+  "category": "nature",
+  "bio": "A state park west of Wuxi, set up in 1958, with Jichang Garden, the Second Spring under Heaven and a cable car up Mount Hui.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "wiki": "Xihui Park",
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Xihui_Park",
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "Park/old town reported free but main ticket unpriced; merged scenic area with Huishan Ancient Town."
+ },
+ "wuxi-5": {
+  "name": "Huishan Ancient Town",
+  "icon": "🏘️",
+  "category": "historic",
+  "bio": "A historic district at the eastern foot of Huishan with traditional streets, old buildings and ancestral halls.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "free": true,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "Free admission per Wikivoyage; Jichang Garden inside is a separate ticket."
+ },
+ "wuxi-7": {
+  "name": "Lihu Park",
+  "icon": "🎡",
+  "category": "nature",
+  "bio": "A free 300-acre park beside Lake Tai in Binhu District, with a Ferris wheel, a carousel and a maze.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "Lihu Park",
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lihu_Park"
+  ],
+  "notes": "Rides may charge separately."
+ },
+ "wuxi-9": {
+  "name": "Nanchang Street",
+  "icon": "🛶",
+  "category": "historic",
+  "bio": "A renovated canal street beside Qingming Bridge, the best-kept stretch of Wuxi's traditional canal town.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "Some amusement programmes cost extra."
+ },
+ "wuxi-11": {
+  "name": "Plum Garden",
+  "icon": "🌺",
+  "category": "nature",
+  "bio": "A Lake Tai botanical garden with about 4,000 fruit trees that blossom in spring, beside the old Rong family mansions.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "wiki": "The Plum Garden",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 60,
+  "costMax": 60,
+  "sources": [
+   "https://en.wikipedia.org/wiki/The_Plum_Garden",
+   "https://regional.chinadaily.com.cn/GoWuxi/2026-01/19/c_1155685.htm"
+  ],
+  "notes": "Price 60 from a search summary of the Wuxi gov/China Daily listing (page not loaded); may rise in blossom season. Research says ~4000 'fruit trees'; bio says plum trees as the garden is named for plums: verify."
+ },
+ "wuxi-13": {
+  "name": "Taibo Temple",
+  "icon": "🛕",
+  "category": "religious",
+  "bio": "A large Ming and Qing temple complex near an ancient town entrance, among the best preserved in Wuxi.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "held": "site ambiguous",
+  "sources": [
+   "https://govt.chinadaily.com.cn/regional/wuxi/attractions/page_2.html"
+  ],
+  "notes": "Two Taibo sites (Huishan vs Hongshan/Meicun)."
+ },
+ "wuxi-15": {
+  "name": "Jin Gui Park",
+  "icon": "🌷",
+  "category": "nature",
+  "bio": "A 48-hectare park in Binhu District, one of the city's largest, with cherry blossoms and tulips in March and April.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "City park, likely free but unsourced."
+ },
+ "wuxi-17": {
+  "name": "Wuxi Sunac Land",
+  "icon": "🎢",
+  "category": "entertainment",
+  "bio": "An amusement park in Binhu District with a 1,278 m roller coaster that reaches 118 km/h, reachable by Metro Line 1.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 200,
+  "costMax": 200,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Wuxi"
+  ],
+  "notes": "ticketUrl unverified (candidate domain not recorded); price is guide-level (Wikivoyage Dec 2023)."
+ },
+ "wuxi-21": {
+  "name": "Hongshan Archaeological Museum",
+  "icon": "🏺",
+  "category": "museum",
+  "bio": "A museum of the Hongshan archaeological site in Hongshan subdistrict, Xinwu District, free to enter.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "free": true,
+  "sources": [
+   "https://c.m.163.com/news/a/KUIUDHB40550B6IS.html",
+   "https://gs.ctrip.com/html5/you/sight/10/116303.html"
+  ],
+  "notes": "Reservation may still apply (WeChat) - unconfirmed; entry free per 163.com commentary."
+ },
+ "yixing-2": {
+  "name": "Yixing Bamboo Sea",
+  "icon": "🎋",
+  "category": "nature",
+  "bio": "A national 4A bamboo forest park in Hufu town, 31 km southwest of Yixing city, among Wuxi's Eighteen Scenic Spots.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 5,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 78,
+  "costMax": 78,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Yixing"
+  ],
+  "notes": "Price guide-level (Wikivoyage Sep 2023)."
+ },
+ "yixing-4": {
+  "name": "Shanjuan Cave",
+  "icon": "🦇",
+  "category": "nature",
+  "bio": "A cave in Luoyan Mountain with upper, middle, lower and water caves and a boat ride on an underground river.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "wiki": "Shanjuan Cave",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 110,
+  "costMax": 110,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Shanjuan_Cave",
+   "https://m.bendibao.com/show572867_2.html"
+  ],
+  "notes": "Price 145 from Bendibao (undated); adult price unconfirmed by operator."
+ },
+ "yixing-6": {
+  "name": "Tuanjiu Scenic Area",
+  "icon": "🏞️",
+  "category": "nature",
+  "bio": "A lake scenic area in Yixing rated 4A, with the Yiyuan garden and a plaza and park on its east shore.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "currency": "CNY",
+  "costBasis": "open",
+  "free": true,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/10/62558.html"
+  ],
+  "notes": "Free per Ctrip listings via search summary (pages not loaded)."
+ },
+ "jiangyin-1": {
+  "name": "Xu Xiake's Former Residence",
+  "icon": "📖",
+  "category": "historic",
+  "bio": "The Ming-style birthplace of travel writer Xu Xiake, with the study where he wrote his Travel Diaries.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin",
+   "https://en.wuxi.gov.cn/2025-10/15/c_1132577.htm"
+  ],
+  "notes": "No admission price found.",
+  "currency": "CNY",
+  "costBasis": "entry",
+  "costMin": 12,
+  "costMax": 12
+ },
+ "jiangyin-3": {
+  "name": "Junshan Park",
+  "icon": "⛰️",
+  "category": "nature",
+  "bio": "A park that was once a pleasure ground of Wu and Yue nobles, with buildings and inscriptions on Jiangyin's history.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin"
+  ],
+  "notes": "No price in Wikivoyage."
+ },
+ "jiangyin-5": {
+  "name": "Huangshan Fort",
+  "icon": "🏰",
+  "category": "historic",
+  "bio": "A late Qing fort in the Jiangyin Fortress system, with gun emplacements, underground bunkers and observation posts.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "held": "no sourced cost",
+  "sources": [
+   "https://en.wikivoyage.org/wiki/Jiangyin"
+  ],
+  "notes": "No price in listing."
+ }
+}

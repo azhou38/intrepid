@@ -1,0 +1,67 @@
+{
+ "region": "jiangsu-xuzhou-lianyungang",
+ "inside_destinations": 18,
+ "standalone": 1,
+ "new_destinations": [
+  "xuzhou",
+  "lianyungang"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Quanshan National Forest Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Xuzhou Aquarium",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Qinshan Island",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Yunlong Park",
+   "views": 239,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Park on Yunlong Lake's shore, part of the kept lake spot (What qualifies 3)."
+  },
+  {
+   "name": "Han Dynasty Terracotta Warriors Museum",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "Same place as Lion Hill Han Tombs (near-duplicate, What qualifies 3)."
+  },
+  {
+   "name": "Water Curtain Cave",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict": "reject",
+   "reason": "A feature inside Mount Huaguo (part of a larger spot, What qualifies 3)."
+  },
+  {
+   "name": "Xuzhou Botanical Garden",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "One source, generic city garden: marginal (What qualifies 1); held for owner."
+  },
+  {
+   "name": "Pengzu Garden",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Marginal single-source themed garden; held for owner."
+  }
+ ],
+ "strongest_outsiders": [
+  "Xishuang Lake"
+ ],
+ "benchmark": "Benchmarks are NZ-specific: not applicable; Mount Huaguo and Lian Island (highest views/sources) kept; no vehicle/operator/event kept."
+}

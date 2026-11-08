@@ -1,0 +1,145 @@
+{
+ "changed": [
+  {
+   "id": "suzhou-20",
+   "field": "bio",
+   "was": "A 120 m Ferris wheel on the east bank of Jinji Lake with 60 cabins; one turn takes about 20 minutes.",
+   "now": "Ferris wheel on the east bank of Jinji Lake, rebuilt in 2025 at 128 m, with views over the lake.",
+   "reason": "Bio described the 2009 wheel (120 m, 60 cabins); a guide reports it was replaced by a new 128 m wheel opened March 2025"
+  },
+  {
+   "id": "suzhou-31",
+   "field": "bio",
+   "was": "Ming garden named for its five rock peaks, restored from 1979, also listed as Tarrying Garden.",
+   "now": "Ming garden named for its five rock peaks, built by the painter Wen Boren and restored from 1979.",
+   "reason": "Not the same garden as Wikivoyage's Tarrying Garden (that is the Lingering Garden's Wufeng Xianguan hall); Wikipedia gives Wen Boren and 1979 restoration"
+  },
+  {
+   "id": "suzhou-31",
+   "field": "costMin",
+   "was": 10,
+   "now": null,
+   "reason": "CNY 10 belongs to Wikivoyage's separate Tarrying Garden entry; Five Peaks Garden's Wikivoyage entry has no price"
+  },
+  {
+   "id": "suzhou-31",
+   "field": "costMax",
+   "was": 10,
+   "now": null,
+   "reason": "CNY 10 belongs to Wikivoyage's separate Tarrying Garden entry; Five Peaks Garden's Wikivoyage entry has no price"
+  },
+  {
+   "id": "suzhou-31",
+   "field": "costBasis",
+   "was": "entry",
+   "now": null,
+   "reason": "CNY 10 belongs to Wikivoyage's separate Tarrying Garden entry; Five Peaks Garden's Wikivoyage entry has no price"
+  },
+  {
+   "id": "suzhou-31",
+   "field": "held",
+   "was": null,
+   "now": "no sourced cost",
+   "reason": "price was from a different entry"
+  },
+  {
+   "id": "suzhou-22",
+   "field": "free",
+   "was": true,
+   "now": null,
+   "reason": "free rests only on an unreachable third-party page; Wikivoyage lists no price"
+  },
+  {
+   "id": "suzhou-22",
+   "field": "costBasis",
+   "was": "entry",
+   "now": null,
+   "reason": "free rests only on an unreachable third-party page; Wikivoyage lists no price"
+  },
+  {
+   "id": "suzhou-22",
+   "field": "held",
+   "was": null,
+   "now": "no sourced cost",
+   "reason": "free claim unsourced"
+  },
+  {
+   "id": "suzhou",
+   "field": "goodToKnow[2].detail",
+   "was": "Summers can reach 40 degrees and downtown pavements are narrow and crowded with scooters. Use the metro between sights.",
+   "now": "Summers can reach 40 degrees and downtown pavements are narrow and clogged with parked scooters.",
+   "reason": "'Use the metro between sights' is not in any source; 'crowded with scooters' -> 'clogged with parked scooters' per Wikivoyage"
+  },
+  {
+   "id": "jiangnan-water-towns",
+   "field": "description",
+   "was": "The Jiangnan water towns are a cluster of canal towns around Suzhou, among them Zhouzhuang, Tongli, Luzhi and Qiandeng. Zhouzhuang is China's oldest water town and is often called the Venice of China, with 14 stone bridges. Tongli holds the Retreat and Reflection Garden, the only UNESCO-listed Suzhou garden outside downtown, and Luzhi has Baosheng Temple, one of the Jiangnan region's top four Buddhist temples. Most visitors are Chinese tour groups, so the quiet hours are early morning and night.",
+   "now": "The Jiangnan water towns are a cluster of canal towns around Suzhou, among them Zhouzhuang, Tongli, Luzhi and Qiandeng. Zhouzhuang is China's oldest water town and is often called the Venice of China, with 14 stone bridges. Tongli holds the Retreat and Reflection Garden, the only UNESCO-listed Suzhou garden outside downtown, and Luzhi has Baosheng Temple, one of the Jiangnan region's top four Buddhist temples. Most visitors are Chinese, so the quiet hours are early morning and night.",
+   "reason": "Wikivoyage says tourists are predominantly Chinese; 'tour groups' not sourced"
+  }
+ ],
+ "unverified": [
+  {
+   "id": "suzhou-20",
+   "what": "Price CNY 99 adult from a single guide (Cities Insider), no official site; low confidence"
+  },
+  {
+   "id": "suzhou-35",
+   "what": "CNY 1.5 from an old Wikivoyage listing; low confidence"
+  },
+  {
+   "id": "suzhou-27",
+   "what": "CNY 30 from older Wikivoyage listing; official site unreachable"
+  },
+  {
+   "id": "suzhou-7",
+   "what": "Free + booking from Wikivoyage updated 2019; szmuseum.com loads but the booking rule was not read on the site"
+  },
+  {
+   "id": "yu-mountain-changshu",
+   "what": "CNY 35 (Wikivoyage listing, 2019) conflicts with the same page's prose: a CNY 15 gate two-thirds up; basis 'park' with costPer 'Per Adult'"
+  },
+  {
+   "id": "shang-lake-changshu",
+   "what": "CNY 60 from a 2019 Wikivoyage listing"
+  },
+  {
+   "id": "zheng-he-park-taicang",
+   "what": "CNY 30 undated Wikivoyage"
+  },
+  {
+   "id": "shajiabang-scenic-area",
+   "what": "CNY 80-100 Wikivoyage, undated; ticketUrl loads and names the Shajiabang operator"
+  },
+  {
+   "id": "suzhou-34",
+   "what": "City God Temple: bio rests on name and Free fee only (no Wikipedia article)"
+  },
+  {
+   "id": "suzhou",
+   "what": "bestMonths 3-5, 9-11 and the 'mild/wettest summers' blurb inferred from Wikivoyage's climate chart; no source states best months"
+  },
+  {
+   "id": "jiangnan-water-towns",
+   "what": "bestMonths inferred (Wikivoyage says no seasonality); description's Tongli/Luzhi claims supported by Wikivoyage/Wikipedia"
+  },
+  {
+   "id": "liuhe-tianfei-palace",
+   "what": "Held for no price, but Wikivoyage Taicang lists it Free (updated Dec 2023); can be un-held as free (entry)"
+  },
+  {
+   "id": "suzhou-23/25/15/17",
+   "what": "Wikivoyage prices (8/5/25/25) dated Aug 2024 at latest; supported"
+  }
+ ],
+ "held_added": [
+  {
+   "id": "suzhou-31",
+   "reason": "no sourced cost"
+  },
+  {
+   "id": "suzhou-22",
+   "reason": "free claim unsourced"
+  }
+ ]
+}

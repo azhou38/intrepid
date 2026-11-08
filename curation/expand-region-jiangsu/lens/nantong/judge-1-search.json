@@ -1,0 +1,45 @@
+{
+ "dest:nantong:why1": {
+  "candidates": [
+   {
+    "file": "https://www.chinadragontours.com/wp-content/uploads/2026/09/Haohe-River-Scenic-Area-6.jpg",
+    "n": 1,
+    "verdict": "fail",
+    "reason": "daytime promenade with people in focus, not a night moat cruise"
+   }
+  ],
+  "choice": "none: daytime promenade with people in focus, not a night moat cruise",
+  "hero_crop": null
+ },
+ "dest:nantong:why2": {
+  "candidates": [
+   {
+    "file": "https://www.chinadragontours.com/wp-content/uploads/2026/09/Nantong-Langshan-Scenic-Spot-7.jpg",
+    "n": 1,
+    "verdict": "pass",
+    "reason": "Langshan temple complex on its wooded hill at dusk (page: Nantong Langshan Scenic Spot), real photo; dark but dusk; 1200 px fits why-visit; permission not confirmed"
+   }
+  ],
+  "choice": "https://www.chinadragontours.com/wp-content/uploads/2026/09/Nantong-Langshan-Scenic-Spot-7.jpg",
+  "hero_crop": {
+   "x": 0.65,
+   "y": 0.35
+  },
+  "dark": true
+ },
+ "spot:nantong-2": {
+  "candidates": [
+   {
+    "file": "https://www.chinadragontours.com/wp-content/uploads/2026/09/Haohe-River-Scenic-Area-6.jpg",
+    "n": 1,
+    "verdict": "pass",
+    "reason": "Haohe riverside promenade with pagoda (page: Haohe River Scenic Area), real photo, people not the focus; identity from page only; permission not confirmed"
+   }
+  ],
+  "choice": "https://www.chinadragontours.com/wp-content/uploads/2026/09/Haohe-River-Scenic-Area-6.jpg",
+  "hero_crop": {
+   "x": 0.55,
+   "y": 0.4
+  }
+ }
+}

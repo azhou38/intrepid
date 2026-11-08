@@ -1,0 +1,187 @@
+{
+ "inside_destinations": 44,
+ "standalone": 9,
+ "new_destinations": [
+  {
+   "id": "suzhou",
+   "name": "Suzhou",
+   "rank": 2,
+   "span_km": 30,
+   "spots": 37,
+   "name_evidence": "Wikivoyage article \"Suzhou\": \"a city in Jiangsu province, famed for its beautiful gardens and traditional waterside architecture\"; UNESCO classical gardens; Wikivoyage covers the city and puts Kunshan, Changshu, Taicang, Zhangjiagang and Wujiang in separate articles, so the destination holds the city only."
+  },
+  {
+   "id": "jiangnan-water-towns",
+   "name": "Jiangnan Water Towns",
+   "rank": 3,
+   "span_km": 40,
+   "spots": 7,
+   "name_evidence": "Tourism brand and UNESCO Tentative List theme \"Water Towns of Jiangnan\"; Wikivoyage Wujiang: \"a vital part of the Jiangnan water towns\"; Wikivoyage Zhouzhuang: \"China's oldest water town ... the Venice of China\". Not a council, river or statistical region: the name visitors use for Zhouzhuang, Tongli, Luzhi and their neighbours."
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Dongting Mountain",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Ligongdi",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Suzhou Embroidery Research Institute",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Suzhou Pingtan Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "City God Temple of Suzhou",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Tiger Hill Pagoda",
+   "views": 7190,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: the pagoda is part of Tiger Hill (kept separately)"
+  },
+  {
+   "name": "Yangcheng Lake",
+   "views": 6098,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: cycling loop. Against: weak source, large area"
+  },
+  {
+   "name": "Sutong Yangtze River Bridge",
+   "views": 4949,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: road bridge, infrastructure; not a visitor stop"
+  },
+  {
+   "name": "Suzhou Center Mall",
+   "views": 4250,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: shopping mall"
+  },
+  {
+   "name": "Suzhou City Wall",
+   "views": 1406,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: wall remains are Pan Gate's wall (300 m), not a separate stop"
+  },
+  {
+   "name": "Jinxi",
+   "views": 1224,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Case for: water town. Against: no visitor source"
+  },
+  {
+   "name": "Dushu Lake",
+   "views": 1188,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Case for: leisure cycling. Against: no visitor source"
+  },
+  {
+   "name": "Suzhou Museum of Contemporary Art",
+   "views": 897,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "UNRESOLVED: counted source not verified"
+  },
+  {
+   "name": "Lake Shi",
+   "views": 483,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Case for: scenic lake. Against: no counted source"
+  },
+  {
+   "name": "Shangfang Mountain",
+   "views": 363,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Case for: hill walk. Against: no source"
+  },
+  {
+   "name": "Suzhou Museum West",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: separate large museum building. Against: second site of the same museum, far out"
+  },
+  {
+   "name": "Suzhou Art Gallery",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: free, near Canglang. Against: art gallery with no highlight, 0 views"
+  },
+  {
+   "name": "Suzhou Amusement Land",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: functional theme park. Against: bare listing, entertainment venue"
+  },
+  {
+   "name": "Zhenze",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: quiet water town. Against: one source, little to do"
+  },
+  {
+   "name": "Zhang's Residence",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: Ming hall. Against: inside town, may share the town ticket"
+  },
+  {
+   "name": "Yangshan Hot Springs",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Case for: hot-spring day out. Against: hotel resort, one source"
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Tinglin Garden",
+   "views": 0
+  },
+  {
+   "name": "Kunshan Opera Museum",
+   "views": 0
+  },
+  {
+   "name": "Bacheng Old Street",
+   "views": 0
+  },
+  {
+   "name": "Zheng He Park",
+   "views": 0
+  },
+  {
+   "name": "Liuhe Tianfei Palace",
+   "views": 0
+  }
+ ],
+ "benchmark": "N/A (no benchmark places in this region; Lake Tai handled as shared standalone)",
+ "note": "Lowest-scoring kept spots have 0 page views and one counted source (Wikivoyage listing); every left-out candidate listed has a concrete rule from What qualifies (verdict text above). Reviews go to the owner list, not placed."
+}

@@ -1,0 +1,63 @@
+{
+ "inside_destinations": 10,
+ "standalone": 1,
+ "new_destinations": [
+  "zhenjiang"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Beigu Hill",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Nanshan Park",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Zhulin Temple",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Xijindu Ancient Street",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Zhenjiang Museum",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Pearl S. Buck Former Residence",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Mount Mao",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Longchang Temple",
+   "views": 611,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1: only Wikipedia names it (not a counted source on its own); marginal needs two counted sources. Owner review."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Mount Mao",
+   "views": 0,
+   "counted_sources": 1,
+   "distance_km_from_zhenjiang": 48,
+   "note": "standalone, outside Zhenjiang bounds and span"
+  }
+ ],
+ "benchmark": "Benchmark places (NZ) are not in this region; negative-benchmark pattern held: venue-only/chain/exterior-only candidates sent to review (Happy Valley, 1912 Block), operator/vehicle spots none."
+}

@@ -1,0 +1,122 @@
+{
+ "changed": [
+  {
+   "id": "nanjing-3",
+   "field": "cost",
+   "was": {
+    "free": null,
+    "costMin": 50,
+    "costMax": 50,
+    "costBasis": "entry"
+   },
+   "now": "held",
+   "reason": "no sourced cost: the 50 CNY was the Gate of China (Zhonghua Gate) ticket, a separate spot; wall-wide entry not sourced"
+  },
+  {
+   "id": "nanjing-12",
+   "field": "cost",
+   "was": {
+    "free": null,
+    "costMin": 35,
+    "costMax": 35,
+    "costBasis": "entry"
+   },
+   "now": "held",
+   "reason": "no sourced cost: only a low-confidence 35 CNY from a non-official aggregator, other guides say 15 or part of a 70 package"
+  },
+  {
+   "id": "nanjing-14",
+   "field": "cost",
+   "was": {
+    "free": null,
+    "costMin": 50,
+    "costMax": 50,
+    "costBasis": "entry"
+   },
+   "now": "held",
+   "reason": "no sourced cost: 50 CNY came from an unloaded search summary, other sources say 25-45"
+  },
+  {
+   "id": "nanjing-22",
+   "field": "cost",
+   "was": {
+    "free": true,
+    "costMin": null,
+    "costMax": null,
+    "costBasis": "open"
+   },
+   "now": "held",
+   "reason": "no sourced cost: free was inferred, no source states the bridge's access or fee"
+  },
+  {
+   "id": "nanjing-24",
+   "field": "cost",
+   "was": {
+    "free": null,
+    "costMin": 40,
+    "costMax": 40,
+    "costBasis": "entry"
+   },
+   "now": "held",
+   "reason": "no sourced cost: the 40 CNY was Qixia Temple's ticket (2015), not the mountain scenic area's"
+  },
+  {
+   "id": "nanjing-37",
+   "field": "costMin/costMax",
+   "was": [
+    180,
+    180
+   ],
+   "now": [
+    150,
+    150
+   ],
+   "reason": "180 came from nuww.com.cn, which now serves an unrelated spam page (not official); Wikivoyage lists adult 150 (Jun 2019)"
+  }
+ ],
+ "unverified": [
+  {
+   "id": "nanjing-6",
+   "what": "Presidential Palace 40 CNY is a 2015 guide listing; official site njztf.cn returned 502 (retry later)"
+  },
+  {
+   "id": "nanjing-19",
+   "what": "120 CNY is a Nov 2019 guide price, no official page loaded"
+  },
+  {
+   "id": "nanjing-23",
+   "what": "Qixia Temple 40 CNY is a Nov 2015 guide price"
+  },
+  {
+   "id": "nanjing-35",
+   "what": "Yuejiang Lou 40 CNY undated guide price"
+  },
+  {
+   "id": "nanjing-28",
+   "what": "Zoo 40 CNY guide price; official site shows no price"
+  },
+  {
+   "id": "nanjing-37",
+   "what": "150 CNY is a 2019 guide price; no working official site"
+  },
+  {
+   "id": "nanjing-2/16",
+   "what": "70 CNY Purple Mountain area ticket from guide only; official pages show no price"
+  },
+  {
+   "id": "nanjing-27/31/41/10/20/30",
+   "what": "prices are 2015-2021 guide figures (30/20/40/50/10/25); no official page loaded"
+  },
+  {
+   "id": "all",
+   "what": "Wikipedia wiki titles not re-checked by me (API 429); researcher/evidence confirmed them"
+  }
+ ],
+ "held_added": [
+  "nanjing-3",
+  "nanjing-12",
+  "nanjing-14",
+  "nanjing-22",
+  "nanjing-24"
+ ]
+}

@@ -1,0 +1,1094 @@
+[
+ {
+  "id": "changzhou-1",
+  "name": "Tianning Temple",
+  "category": "religious",
+  "destination": "changzhou",
+  "hint": {
+   "lat": 31.77694444,
+   "lng": 119.96527778
+  },
+  "hint_source": "wikipedia:Tianning Temple (Changzhou)",
+  "zh": "天宁寺 (常州)",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "highway",
+   "type": "bus_stop",
+   "name": "天宁寺, 延陵中路, 斜桥巷社区, 天宁街道, 天宁区, 常州市, 江苏省, 213000, 中国",
+   "lat": 31.7757082,
+   "lon": 119.9623387,
+   "from_hint_km": 0.3
+  },
+  "wikidata": [
+   31.77694444,
+   119.96527778
+  ]
+ },
+ {
+  "id": "changzhou-4",
+  "name": "Hongmei Park",
+  "category": "nature",
+  "destination": "changzhou",
+  "hint": {
+   "lat": 31.777,
+   "lng": 119.968
+  },
+  "hint_source": "OpenStreetMap way 229951145 (leisure=park, 红梅公园)",
+  "zh": "红梅公园",
+  "script_confidence": "MEDIUM",
+  "script_pick": {
+   "class": "leisure",
+   "type": "park",
+   "name": "红梅公园, 天宁街道, 天宁区, 常州市, 江苏省, 213000, 中国",
+   "lat": 31.7767151,
+   "lon": 119.9691041,
+   "from_hint_km": 0.1
+  },
+  "wikidata": null
+ },
+ {
+  "id": "changzhou-7",
+  "name": "Changzhou Museum",
+  "category": "museum",
+  "destination": "changzhou",
+  "hint": {
+   "lat": 31.81105,
+   "lng": 119.96696
+  },
+  "hint_source": "OpenStreetMap way 554739824 (tourism=museum, 常州博物馆)",
+  "zh": "常州博物馆",
+  "script_confidence": "MEDIUM",
+  "script_pick": {
+   "class": "tourism",
+   "type": "museum",
+   "name": "常州博物馆, 广场大道, 三井社区, 三井街道, 新北区, 常州市, 江苏省, 213000, 中国",
+   "lat": 31.8110448,
+   "lon": 119.9668571,
+   "from_hint_km": 0.0
+  },
+  "wikidata": null
+ },
+ {
+  "id": "nanshan-bamboo-sea-liyang",
+  "name": "Nanshan Bamboo Sea",
+  "category": "nature",
+  "destination": null,
+  "hint": {
+   "lat": 31.16935,
+   "lng": 119.5207
+  },
+  "hint_source": "OpenStreetMap way 334129131 (leisure=nature_reserve, 南山竹海景区)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "huaian-3",
+  "name": "Hexia Old Town",
+  "category": "historic",
+  "destination": "huaian",
+  "hint": {
+   "lat": 33.52926,
+   "lng": 119.12872
+  },
+  "hint_source": "osm:河下古镇",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "huaian-6",
+  "name": "Huai'an Government House",
+  "category": "historic",
+  "destination": "huaian",
+  "hint": {
+   "lat": 33.51182,
+   "lng": 119.14005
+  },
+  "hint_source": "wikivoyage:Huai'an listing",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "huaian-9",
+  "name": "Huai'an Museum",
+  "category": "museum",
+  "destination": "huaian",
+  "hint": {
+   "lat": 33.61252,
+   "lng": 119.00725
+  },
+  "hint_source": "wikivoyage:Huai'an listing",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "huaian-12",
+  "name": "Zhou Enlai's Childhood School",
+  "category": "historic",
+  "destination": "huaian",
+  "hint": {
+   "lat": 33.59005,
+   "lng": 119.01191
+  },
+  "hint_source": "wikivoyage:Huai'an listing",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "suqian-3",
+  "name": "Santaishan Forest Park",
+  "category": "nature",
+  "destination": "suqian",
+  "hint": {
+   "lat": 34.04074,
+   "lng": 118.33603
+  },
+  "hint_source": "wikivoyage:Suqian listing",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "hongze-lake-wetland-park",
+  "name": "Hongze Lake Wetland Park",
+  "category": "nature",
+  "destination": null,
+  "hint": {
+   "lat": 33.2474,
+   "lng": 118.32896
+  },
+  "hint_source": "wikivoyage:Suqian listing",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nanjing-3",
+  "name": "City Wall of Nanjing",
+  "category": "historic",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.013943,
+   "lng": 118.776838
+  },
+  "hint_source": "wikivoyage listing geo (en.wikivoyage.org/wiki/Nanjing)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nanjing-9",
+  "name": "Xuanwu Lake",
+  "category": "nature",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.07305556,
+   "lng": 118.79833333
+  },
+  "hint_source": "wikipedia:Xuanwu Lake",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nanjing-14",
+  "name": "Jiangnan Examination Hall",
+  "category": "museum",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.023086,
+   "lng": 118.785483
+  },
+  "hint_source": "osm:node/1608062767 (江南贡院)",
+  "zh": "江南贡院",
+  "script_confidence": "MEDIUM",
+  "script_pick": {
+   "class": "tourism",
+   "type": "museum",
+   "name": "江南贡院, 贡院街, 三条营社区, 夫子庙街道, 秦淮区, 南京市, 江苏省, 210001, 中国",
+   "lat": 32.0230861,
+   "lon": 118.7854834,
+   "from_hint_km": 0.0
+  },
+  "wikidata": [
+   32.02189722,
+   118.79038056
+  ]
+ },
+ {
+  "id": "nanjing-17",
+  "name": "Mochou Lake",
+  "category": "nature",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.034512,
+   "lng": 118.757949
+  },
+  "hint_source": "wikipedia:Mochou Lake",
+  "zh": "莫愁湖",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "railway",
+   "type": "station",
+   "name": "莫愁湖, 汉中门大街, 莫愁湖街道, 建邺区, 南京市, 江苏省, 210017, 中国",
+   "lat": 32.039308,
+   "lon": 118.7539956,
+   "from_hint_km": 0.7
+  },
+  "wikidata": [
+   32.03784,
+   118.75753
+  ]
+ },
+ {
+  "id": "nanjing-21",
+  "name": "Drum Tower",
+  "category": "historic",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.060729,
+   "lng": 118.77683
+  },
+  "hint_source": "osm:way/135290880 (鼓楼)",
+  "zh": "鼓樓 (消歧義)",
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nanjing-24",
+  "name": "Qixia Mountain",
+  "category": "nature",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.16027778,
+   "lng": 118.96472222
+  },
+  "hint_source": "wikipedia:Qixia Mountain",
+  "zh": "栖霞山",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "landuse",
+   "type": "forest",
+   "name": "栖霞山, 栖霞区, 南京市, 江苏省, 中国",
+   "lat": 32.1568225,
+   "lon": 118.9627409,
+   "from_hint_km": 0.4
+  },
+  "wikidata": [
+   32.16027778,
+   118.96472222
+  ]
+ },
+ {
+  "id": "nanjing-27",
+  "name": "Meiling Palace",
+  "category": "historic",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.045479,
+   "lng": 118.846507
+  },
+  "hint_source": "wikipedia:Meiling Palace",
+  "zh": "国民政府主席官邸",
+  "script_confidence": "MEDIUM",
+  "script_pick": {
+   "class": "wikidata",
+   "type": "P625",
+   "lat": 32.047608,
+   "lon": 118.841521
+  },
+  "wikidata": [
+   32.047608,
+   118.841521
+  ]
+ },
+ {
+  "id": "nanjing-30",
+  "name": "Nanjing Municipal Museum",
+  "category": "museum",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.036016,
+   "lng": 118.770509
+  },
+  "hint_source": "wikivoyage listing geo (en.wikivoyage.org/wiki/Nanjing)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nanjing-34",
+  "name": "Liji Alley Comfort Station Site",
+  "category": "museum",
+  "destination": "nanjing",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nanjing-38",
+  "name": "Nanjing Science and Technology Museum",
+  "category": "museum",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 31.98872,
+   "lng": 118.77871
+  },
+  "hint_source": "osm:way/92188464 (南京科技馆)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nanjing-41",
+  "name": "Pearl Spring Scenic Area",
+  "category": "nature",
+  "destination": "nanjing",
+  "hint": {
+   "lat": 32.126594,
+   "lng": 118.657569
+  },
+  "hint_source": "wikivoyage listing geo (en.wikivoyage.org/wiki/Nanjing)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nantong-3",
+  "name": "Guangjiao Temple",
+  "category": "religious",
+  "destination": "nantong",
+  "hint": {
+   "lat": 31.954663,
+   "lng": 120.895449
+  },
+  "hint_source": "wikipedia:Guangjiao Temple (Nantong)",
+  "zh": "广教寺",
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nantong-7",
+  "name": "Tangzha Ancient Town",
+  "category": "historic",
+  "destination": "nantong",
+  "hint": {
+   "lat": 32.0667,
+   "lng": 120.8131
+  },
+  "hint_source": "osm:park 唐闸公园 (town centre not in OSM; park point, check)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nantong-10",
+  "name": "Zhou Ji Green Expo Garden",
+  "category": "nature",
+  "destination": "nantong",
+  "hint": {
+   "lat": 31.9519,
+   "lng": 120.8746
+  },
+  "hint_source": "osm:theme_park 南通园博园",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nantong-13",
+  "name": "Chinese Charitable Museum",
+  "category": "museum",
+  "destination": "nantong",
+  "hint": {
+   "lat": 32.0011,
+   "lng": 120.8763
+  },
+  "hint_source": "osm:building 中华慈善博物馆 (name match)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "nantong-16",
+  "name": "Nantong Traditional Chinese Medicine Culture Museum",
+  "category": "museum",
+  "destination": "nantong",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "yancheng-1",
+  "name": "Yancheng Coastal Wetlands",
+  "category": "nature",
+  "destination": "yancheng",
+  "hint": {
+   "lat": 33.53333333,
+   "lng": 120.61666667
+  },
+  "hint_source": "wikipedia:Yancheng Coastal Wetlands",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": [
+   33.28,
+   120.14
+  ]
+ },
+ {
+  "id": "yancheng-4",
+  "name": "Huanghai Forest Park",
+  "category": "nature",
+  "destination": "yancheng",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "suzhou-2",
+  "name": "Tiger Hill",
+  "category": "landmark",
+  "destination": "suzhou",
+  "hint": {
+   "lat": 31.337531,
+   "lng": 120.576167
+  },
+  "hint_source": "wikipedia:Tiger Hill, Suzhou",
+  "zh": "虎丘",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "boundary",
+   "type": "administrative",
+   "name": "虎丘区, 苏州市, 江苏省, 中国",
+   "lat": 31.331282,
+   "lon": 120.4290851,
+   "from_hint_km": 14.0
+  },
+  "wikidata": [
+   31.3375,
+   120.576
+  ]
+ },
+ {
+  "id": "suzhou-9",
+  "name": "Shantang Street",
+  "category": "historic",
+  "destination": "suzhou",
+  "hint": {
+   "lat": 31.3201,
+   "lng": 120.59745
+  },
+  "hint_source": "osm:node/5151296022 (山塘街 attraction)",
+  "zh": "山塘街",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "railway",
+   "type": "station",
+   "name": "山塘街, 广济路, 曹杨社区, 虎丘街道, 姑苏区, 苏州市, 江苏省, 215025, 中国",
+   "lat": 31.321804,
+   "lon": 120.5977835,
+   "from_hint_km": 0.2
+  },
+  "wikidata": null
+ },
+ {
+  "id": "suzhou-18",
+  "name": "Jinji Lake",
+  "category": "nature",
+  "destination": "suzhou",
+  "hint": {
+   "lat": 31.313611,
+   "lng": 120.691667
+  },
+  "hint_source": "wikipedia:Jinji Lake",
+  "zh": "金鸡湖",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "water",
+   "type": "lake",
+   "name": "金鸡湖, 苏州工业园区, 苏州市, 江苏省, 中国",
+   "lat": 31.3136329,
+   "lon": 120.6904097,
+   "from_hint_km": 0.1
+  },
+  "wikidata": [
+   31.313611,
+   120.691667
+  ]
+ },
+ {
+  "id": "suzhou-21",
+  "name": "Guanqian Street",
+  "category": "market",
+  "destination": "suzhou",
+  "hint": {
+   "lat": 31.31318,
+   "lng": 120.62036
+  },
+  "hint_source": "osm:way/442518550 (观前街)",
+  "zh": "观前街",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "highway",
+   "type": "pedestrian",
+   "name": "观前街, 玄妙观社区, 平江街道, 姑苏区, 苏州市, 江苏省, 215005, 中国",
+   "lat": 31.3132048,
+   "lon": 120.620361,
+   "from_hint_km": 0.0
+  },
+  "wikidata": null
+ },
+ {
+  "id": "suzhou-26",
+  "name": "Suzhou Embroidery Research Institute",
+  "category": "museum",
+  "destination": "suzhou",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "suzhou-29",
+  "name": "Suzhou Arts and Crafts Museum",
+  "category": "museum",
+  "destination": "suzhou",
+  "hint": {
+   "lat": 31.32479,
+   "lng": 120.62031
+  },
+  "hint_source": "osm:way/542534218 (苏州工艺美术博物馆)",
+  "zh": "苏州工艺美术博物馆",
+  "script_confidence": "MEDIUM",
+  "script_pick": {
+   "class": "tourism",
+   "type": "museum",
+   "name": "苏州工艺美术博物馆, 88, 西北街社区, 平江街道, 姑苏区, 苏州市, 江苏省, 中国",
+   "lat": 31.3246641,
+   "lon": 120.6203356,
+   "from_hint_km": 0.0
+  },
+  "wikidata": [
+   31.324722,
+   120.453889
+  ]
+ },
+ {
+  "id": "suzhou-34",
+  "name": "City God Temple of Suzhou",
+  "category": "religious",
+  "destination": "suzhou",
+  "hint": {
+   "lat": 31.31361,
+   "lng": 120.61472
+  },
+  "hint_source": "osm:way/529003311 (城隍庙)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "suzhou-37",
+  "name": "Suzhou Zoo",
+  "category": "entertainment",
+  "destination": "suzhou",
+  "hint": null,
+  "hint_source": null,
+  "zh": "苏州上方山森林动物世界",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "leisure",
+   "type": "park",
+   "name": "上方山森林动物世界, 横塘街道, 虎丘区, 苏州市, 江苏省, 中国",
+   "lat": 31.2402533,
+   "lon": 120.5785876,
+   "from_hint_km": null
+  },
+  "wikidata": null
+ },
+ {
+  "id": "jiangnan-water-towns-4",
+  "name": "Shen's Residence",
+  "category": "historic",
+  "destination": "jiangnan-water-towns",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "kunshan-opera-museum",
+  "name": "Kunshan Opera Museum",
+  "category": "museum",
+  "destination": null,
+  "hint": {
+   "lat": 31.37645060143704,
+   "lng": 120.85500302839822
+  },
+  "hint_source": "wikivoyage listing (Kunshan#See)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "liuhe-tianfei-palace",
+  "name": "Liuhe Tianfei Palace",
+  "category": "religious",
+  "destination": null,
+  "hint": {
+   "lat": 31.507447,
+   "lng": 121.263294
+  },
+  "hint_source": "wikivoyage listing (Taicang#See)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "dongting-mountain-lake-tai",
+  "name": "Dongting Mountain",
+  "category": "nature",
+  "destination": null,
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "wuxi-3",
+  "name": "Xihui Park",
+  "category": "nature",
+  "destination": "wuxi",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "wuxi-7",
+  "name": "Lihu Park",
+  "category": "nature",
+  "destination": "wuxi",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "wuxi-11",
+  "name": "Plum Garden",
+  "category": "nature",
+  "destination": "wuxi",
+  "hint": {
+   "lat": 31.554253,
+   "lng": 120.218548
+  },
+  "hint_source": "wikipedia:The Plum Garden",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "wuxi-14",
+  "name": "First Ancient Town in Jiangnan",
+  "category": "historic",
+  "destination": "wuxi",
+  "hint": {
+   "lat": 31.54223,
+   "lng": 120.43339
+  },
+  "hint_source": "Wikivoyage Wuxi listing geo tag",
+  "zh": "无锡市",
+  "script_confidence": "LOW",
+  "script_pick": {
+   "class": "boundary",
+   "type": "administrative",
+   "name": "无锡市, 江苏省, 214000, 中国",
+   "lat": 31.5776626,
+   "lon": 120.2952752,
+   "from_hint_km": 13.7
+  },
+  "wikidata": [
+   31.566667,
+   120.283333
+  ]
+ },
+ {
+  "id": "wuxi-17",
+  "name": "Wuxi Sunac Land",
+  "category": "entertainment",
+  "destination": "wuxi",
+  "hint": {
+   "lat": 31.44945,
+   "lng": 120.26556
+  },
+  "hint_source": "Wikivoyage Wuxi listing geo tag",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "wuxi-20",
+  "name": "Helu City Site",
+  "category": "historic",
+  "destination": "wuxi",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "yixing-2",
+  "name": "Yixing Bamboo Sea",
+  "category": "nature",
+  "destination": "yixing",
+  "hint": {
+   "lat": 31.166135,
+   "lng": 119.692398
+  },
+  "hint_source": "Wikivoyage Yixing listing geo tag",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "yixing-5",
+  "name": "Zhanggong's Cave",
+  "category": "nature",
+  "destination": "yixing",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "jiangyin-1",
+  "name": "Xu Xiake's Former Residence",
+  "category": "historic",
+  "destination": "jiangyin",
+  "hint": {
+   "lat": 31.71231,
+   "lng": 120.31795
+  },
+  "hint_source": "Wikivoyage Jiangyin listing geo tag",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "jiangyin-4",
+  "name": "Ebizui Park",
+  "category": "nature",
+  "destination": "jiangyin",
+  "hint": {
+   "lat": 31.9356,
+   "lng": 120.2657
+  },
+  "hint_source": "Wikivoyage Jiangyin listing geo tag",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "xuzhou-1",
+  "name": "Lion Hill Han Tombs",
+  "category": "historic",
+  "destination": "xuzhou",
+  "hint": {
+   "lat": 34.24639,
+   "lng": 117.21945
+  },
+  "hint_source": "osm:building 狮子山汉楚王墓",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "xuzhou-4",
+  "name": "Yunlong Mountain",
+  "category": "viewpoint",
+  "destination": "xuzhou",
+  "hint": {
+   "lat": 34.25308,
+   "lng": 117.18134
+  },
+  "hint_source": "osm:historic 云龙山——土山汉墓 (on the mountain)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "xuzhou-7",
+  "name": "Huaihai Campaign Memorial Museum",
+  "category": "museum",
+  "destination": "xuzhou",
+  "hint": {
+   "lat": 34.23289,
+   "lng": 117.19369
+  },
+  "hint_source": "osm:building Memorial Museum of the Huaihai Campaign (淮海战役纪念馆)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "xuzhou-10",
+  "name": "Xuzhou Aquarium",
+  "category": "entertainment",
+  "destination": "xuzhou",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "lianyungang-3",
+  "name": "Yuntai Mountain",
+  "category": "nature",
+  "destination": "lianyungang",
+  "hint": {
+   "lat": 34.7212,
+   "lng": 119.39638
+  },
+  "hint_source": "osm:natural=peak 海上云台山",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "lianyungang-6",
+  "name": "Qinshan Island",
+  "category": "nature",
+  "destination": "lianyungang",
+  "hint": {
+   "lat": 34.86648,
+   "lng": 119.26735
+  },
+  "hint_source": "osm:natural=coastline 秦山岛 (island)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "xishuang-lake",
+  "name": "Xishuang Lake",
+  "category": "nature",
+  "destination": null,
+  "hint": {
+   "lat": 34.52966,
+   "lng": 118.71808
+  },
+  "hint_source": "osm:leisure=park 东海县西双湖国家湿地公园",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "yangzhou-4",
+  "name": "Dongguan Street",
+  "category": "historic",
+  "destination": "yangzhou",
+  "hint": {
+   "lat": 32.39985,
+   "lng": 119.4477
+  },
+  "hint_source": "osm:attraction 东关古渡 (on Dongguan Street)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "yangzhou-9",
+  "name": "Xiaoqinhuai Canal",
+  "category": "historic",
+  "destination": "yangzhou",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "yangzhou-12",
+  "name": "Shi Kefa Memorial",
+  "category": "historic",
+  "destination": "yangzhou",
+  "hint": null,
+  "hint_source": null,
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "zhenguo-temple-gaoyou",
+  "name": "Zhenguo Temple",
+  "category": "religious",
+  "destination": null,
+  "hint": {
+   "lat": 32.775077,
+   "lng": 119.4261
+  },
+  "hint_source": "wikivoyage:Gaoyou listing (Zhenguo Temple)",
+  "zh": "镇国寺 (平遥)",
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": [
+   37.2856,
+   112.271
+  ]
+ },
+ {
+  "id": "taizhou-1",
+  "name": "Wanghai Tower",
+  "category": "landmark",
+  "destination": "taizhou",
+  "hint": {
+   "lat": 32.48401,
+   "lng": 119.9224
+  },
+  "hint_source": "osm:attraction 望海楼 (Wanghailou Scenic Area)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "taizhou-4",
+  "name": "PLA Navy Establishment Memorial Hall",
+  "category": "museum",
+  "destination": "taizhou",
+  "hint": {
+   "lat": 32.42743,
+   "lng": 119.9722
+  },
+  "hint_source": "osm:museum 中国人民解放军海军诞生地纪念馆",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "taizhou-7",
+  "name": "Guluotang Cultural Block",
+  "category": "historic",
+  "destination": "taizhou",
+  "hint": {
+   "lat": 32.51127,
+   "lng": 120.14684
+  },
+  "hint_source": "osm:viewpoint 姜堰古罗塘文化景区",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "zhenjiang-3",
+  "name": "Xijindu Ancient Street",
+  "category": "historic",
+  "destination": "zhenjiang",
+  "hint": {
+   "lat": 32.2162,
+   "lng": 119.4246
+  },
+  "hint_source": "OSM tourism=theme_park 西津渡历史文化街区",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "zhenjiang-7",
+  "name": "Nanshan Park",
+  "category": "nature",
+  "destination": "zhenjiang",
+  "hint": {
+   "lat": 32.172676,
+   "lng": 119.435557
+  },
+  "hint_source": "Wikivoyage listing geo tag (Wikivoyage Zhenjiang, Nanshan Park)",
+  "zh": null,
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ },
+ {
+  "id": "zhenjiang-10",
+  "name": "Pearl S. Buck Former Residence",
+  "category": "museum",
+  "destination": "zhenjiang",
+  "hint": {
+   "lat": 32.2048,
+   "lng": 119.4289
+  },
+  "hint_source": "OSM tourism=attraction 赛珍珠纪念馆",
+  "zh": "赛珍珠",
+  "script_confidence": "LOW",
+  "script_pick": null,
+  "wikidata": null
+ }
+]

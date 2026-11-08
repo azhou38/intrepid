@@ -1,0 +1,421 @@
+{
+ "region": "jiangsu-changzhou",
+ "new_destinations": [
+  {
+   "id": "changzhou",
+   "name": "Changzhou",
+   "action": "new-destination",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "category": "city",
+   "icon": "🦕",
+   "rank": 5,
+   "defaultZoomSpanKm": 30,
+   "coordinates": {
+    "lat": 31.7835,
+    "lng": 119.9507
+   },
+   "coordinates_source": "Wikivoyage Changzhou page point",
+   "name_evidence": "Wikivoyage article \"Changzhou\": \"a city of 3.6 million people ... those with a bit of time can spend a pleasant ...\" (guidebook city with See/Do listings; the city tourist site lists the AAAA spots).",
+   "spot_count": 8,
+   "spots": [
+    "changzhou-1",
+    "changzhou-2",
+    "changzhou-3",
+    "changzhou-4",
+    "changzhou-5",
+    "changzhou-6",
+    "changzhou-7",
+    "changzhou-8"
+   ],
+   "needs_research": [
+    "description",
+    "tagline",
+    "whyVisit",
+    "goodToKnow",
+    "bestMonths",
+    "header",
+    "whyVisitPhotos"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Tianning Temple",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-1",
+   "wiki": "Tianning Temple (Changzhou)",
+   "coordinates": {
+    "lat": 31.77694444,
+    "lng": 119.96527778
+   },
+   "coordinates_source": "wikipedia:Tianning Temple (Changzhou)",
+   "needs_pin": false,
+   "category": "religious",
+   "icon": "🛕",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Buddhist temple beside the Grand Canal and Hongmei Park, with the 13-storey Tianning Pagoda.",
+   "views": 7659,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 1.6 km from the centre, inside the 30 km span."
+  },
+  {
+   "name": "China Dinosaur Park",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-2",
+   "wiki": "China Dinosaurs Park",
+   "coordinates": {
+    "lat": 31.82616667,
+    "lng": 119.99761111
+   },
+   "coordinates_source": "wikipedia:China Dinosaurs Park",
+   "needs_pin": false,
+   "category": "entertainment",
+   "icon": "🦕",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "bio_draft": "Theme park in Xinbei with rides, a dinosaur museum and a hot spring area.",
+   "views": 10225,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 6.5 km from the centre, inside the 30 km span."
+  },
+  {
+   "name": "Chunqiu Yancheng",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-3",
+   "coordinates": {
+    "lat": 31.70555,
+    "lng": 119.91827
+   },
+   "coordinates_source": "OpenStreetMap way 631156663 (leisure=park, 春秋淹城遗址公园)",
+   "needs_pin": false,
+   "category": "historic",
+   "icon": "🏰",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "bio_draft": "Rebuilt Spring and Autumn period Yancheng city ruins with three concentric moats and a museum.",
+   "views": 2217,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 9.2 km from the centre, inside the 30 km span."
+  },
+  {
+   "name": "Hongmei Park",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-4",
+   "coordinates": {
+    "lat": 31.777,
+    "lng": 119.968
+   },
+   "coordinates_source": "OpenStreetMap way 229951145 (leisure=park, 红梅公园)",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🌳",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Red Plum Park, one of Changzhou's largest parks, with lakes, pavilions and the Writing Pagoda.",
+   "views": 448,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 1.8 km from the centre, inside the 30 km span.",
+   "pin_note": "source point is a park/lake centroid or area; resolve-pin.py must find the visitor point"
+  },
+  {
+   "name": "Dongpo Park",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-5",
+   "coordinates": {
+    "lat": 31.7691,
+    "lng": 119.973
+   },
+   "coordinates_source": "OpenStreetMap relation 8543304 (leisure=park, 东坡公园)",
+   "needs_pin": false,
+   "category": "historic",
+   "icon": "🌳",
+   "visitHoursMin": 0.75,
+   "visitHoursMax": 1.5,
+   "bio_draft": "Park on a Grand Canal islet with a Dongpo academy hall, a statue of the Song poet and a Qianlong-era palace site.",
+   "views": 189,
+   "counted_sources": 2,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 2.6 km from the centre, inside the 30 km span."
+  },
+  {
+   "name": "Canal 5 Creative Campus",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-6",
+   "coordinates": {
+    "lat": 31.790336,
+    "lng": 119.932033
+   },
+   "coordinates_source": "Wikivoyage Changzhou listing geo tag (Canal 5, 141 Sanbao St)",
+   "needs_pin": false,
+   "category": "entertainment",
+   "icon": "🎨",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "bio_draft": "Former textile mill on the Grand Canal turned into studios, cafes and galleries.",
+   "views": 326,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 1.9 km from the centre, inside the 30 km span."
+  },
+  {
+   "name": "Changzhou Museum",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-7",
+   "coordinates": {
+    "lat": 31.81105,
+    "lng": 119.96696
+   },
+   "coordinates_source": "OpenStreetMap way 554739824 (tourism=museum, 常州博物馆)",
+   "needs_pin": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "bio_draft": "Municipal museum on Civic Square with relics, a children's natural history museum and free entry.",
+   "views": 497,
+   "counted_sources": 2,
+   "free": true,
+   "cost": null,
+   "costBasis": "entry",
+   "ticketUrl": null,
+   "needs_research": [
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 3.4 km from the centre, inside the 30 km span."
+  },
+  {
+   "name": "Yancheng Safari Park",
+   "action": "spot",
+   "destination": "changzhou",
+   "id": "changzhou-8",
+   "wiki": "Yancheng Wild Animal World",
+   "coordinates": {
+    "lat": 31.70217,
+    "lng": 119.91905
+   },
+   "coordinates_source": "OpenStreetMap way 631156662 (tourism=zoo, 江苏淹城野生动物世界)",
+   "needs_pin": false,
+   "category": "entertainment",
+   "icon": "🦁",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "bio_draft": "Drive-through and walk-through safari park in Wujin with animals in enclosures.",
+   "views": 490,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Changzhou city (Tianning, Zhonglou, Xinbei, Wujin), 9.5 km from the centre, inside the 30 km span."
+  },
+  {
+   "name": "Tianmu Lake",
+   "action": "standalone",
+   "destination": null,
+   "id": "tianmu-lake-liyang",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "coordinates": {
+    "lat": 31.28961111,
+    "lng": 119.41997222
+   },
+   "coordinates_source": "wikipedia:Tianmu Lake",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🌊",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "bio_draft": "Large reservoir lake in Liyang on the Jiangsu-Anhui-Zhejiang border, with boat trips and lakeside walks.",
+   "views": 1010,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Liyang is a separate county-level city of Changzhou, 58 km from Changzhou's centre, far outside its span; 33 km from Yixing's centre but across the municipal line and not in its Wikivoyage article. Two kept Liyang spots, below the four-spot bar.",
+   "pin_note": "source point is a park/lake centroid or area; resolve-pin.py must find the visitor point"
+  },
+  {
+   "name": "Nanshan Bamboo Sea",
+   "action": "standalone",
+   "destination": null,
+   "id": "nanshan-bamboo-sea-liyang",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "wiki": "Nanshan Zhuhai",
+   "coordinates": {
+    "lat": 31.16935,
+    "lng": 119.5207
+   },
+   "coordinates_source": "OpenStreetMap way 334129131 (leisure=nature_reserve, 南山竹海景区)",
+   "needs_pin": false,
+   "category": "nature",
+   "icon": "🎋",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "bio_draft": "South Hill Bamboo Sea in Liyang, 35,000 mu of bamboo with a ground rail, lakes and a bamboo culture park.",
+   "views": 661,
+   "counted_sources": 1,
+   "cost": null,
+   "costBasis": null,
+   "currency": "CNY",
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "source_region": "changzhou",
+   "reason": "Liyang, as for Tianmu Lake; 28 km from Yixing's centre but a different county-level city, and not Yixing's Bamboo Sea."
+  }
+ ],
+ "spots_from_other_regions": [],
+ "spots_in_other_destinations_dirs": [],
+ "folded_or_merged": [],
+ "review_list_not_placed": [
+  {
+   "region": "changzhou",
+   "name": "Comb Lane",
+   "objection": "Comb craft street could be a worthwhile old-street walk.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "region": "changzhou",
+   "name": "Qu Qiubai Memorial Hall",
+   "objection": "Possibly a minor memorial.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "region": "changzhou",
+   "name": "Lotus Building",
+   "objection": "Distinct landmark on a lake and lit at night.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "region": "changzhou",
+   "name": "Global Animation Joy Land",
+   "objection": "Theme parks are legitimate Do items.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "region": "changzhou",
+   "name": "Maoshan",
+   "objection": "Genuine scenic draw; merge decision belongs to placement.",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "region": "changzhou",
+   "name": "Changdang Lake",
+   "objection": "Major freshwater lake with tourism area.",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "region": "changzhou",
+   "name": "Qingguo Lane",
+   "objection": "Historic street walks are a typical keep.",
+   "views": 690,
+   "counted_sources": 0
+  }
+ ],
+ "existing_fixes": [],
+ "notes": "Placed together with jiangsu-suzhou and jiangsu-wuxi. Changzhou city (8 kept spots, Wikivoyage article) is a destination; the two Liyang spots (Tianmu Lake, Nanshan Bamboo Sea) are 58+ km away in a different county-level city and stand alone (two spots, below the bar). Maoshan (review) is owned by the Zhenjiang placement.",
+ "standalone_within_40km_of_new_destination": [
+  {
+   "spot": "tianmu-lake-liyang",
+   "destination": "yixing",
+   "km": 33.3,
+   "why_not_a_spot": "Liyang is a separate county-level city of Changzhou, 58 km from Changzhou's centre, far outside its span; 33 km from Yixing's centre but across the municipal line and not in its Wikivoyage article. Two kept Liyang spots, below the four-spot bar."
+  },
+  {
+   "spot": "nanshan-bamboo-sea-liyang",
+   "destination": "yixing",
+   "km": 28.4,
+   "why_not_a_spot": "Liyang, as for Tianmu Lake; 28 km from Yixing's centre but a different county-level city, and not Yixing's Bamboo Sea."
+  }
+ ],
+ "benchmark_note": "No NZ benchmark places in this region."
+}

@@ -1,0 +1,130 @@
+{
+ "inside_destinations": 34,
+ "standalone": 1,
+ "new_destinations": [
+  {
+   "id": "wuxi",
+   "name": "Wuxi",
+   "rank": 3,
+   "span_km": 40,
+   "spots": 21,
+   "name_evidence": "Wikivoyage article \"Wuxi\": \"a major destination for Chinese domestic tourists ... occupies the most scenic part of Lake Tai\"."
+  },
+  {
+   "id": "yixing",
+   "name": "Yixing",
+   "rank": 4,
+   "span_km": 50,
+   "spots": 7,
+   "name_evidence": "Wikivoyage article \"Yixing\": \"an international eco-tourism city\" (county-level city; Yixing teapots, caves, bamboo); a separate Wikivoyage article from Wuxi."
+  },
+  {
+   "id": "jiangyin",
+   "name": "Jiangyin",
+   "rank": 5,
+   "span_km": 55,
+   "spots": 6,
+   "name_evidence": "Wikivoyage article \"Jiangyin\": \"a port city in the lower reaches of the Yangtze River\" with its own See listings; a separate Wikivoyage article from Wuxi."
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "Helu City Site",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Hongshan Archaeological Museum",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Huishan Ancient Town",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Nianhua Bay",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Taibo Temple",
+   "views": 0,
+   "counted_sources": 1
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Huaxi Village",
+   "views": 7896,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: famous model village attraction. Against: no counted source found."
+  },
+  {
+   "name": "Zhongshan Park",
+   "views": 1810,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Local city park commemorating Sun Yat-sen (rule 3)."
+  },
+  {
+   "name": "Xishan Island",
+   "views": 1137,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: Lake Tai island. Against: unidentified; Wikivoyage says Taihu has nothing but Lingshan."
+  },
+  {
+   "name": "China Wu Culture Expo Park",
+   "views": 370,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: large culture park with government listing. Against: no description of what to do; UNRESOLVED search for a guide source."
+  },
+  {
+   "name": "Canal Bund Art Museum",
+   "views": 326,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: art museum on the canal. Against: single source, uncertain identity."
+  },
+  {
+   "name": "Chong'an Temple",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: temple bazaar district. Against: commercial, no named sight; 'fail' if only shops."
+  },
+  {
+   "name": "Yangshan Peach Resort",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: honey-peach orchards. Against: one source; visit is mostly bloom season; coordinates unknown (UNRESOLVED)."
+  },
+  {
+   "name": "Taiji Cave Scenic Area",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "For: Yixing karst cave. Against: no details found."
+  },
+  {
+   "name": "Yaohu Town",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "For: official listing. Against: new, commercial."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Lake Tai",
+   "views": 24078
+  }
+ ],
+ "benchmark": "N/A (no benchmark places in this region; Lake Tai handled as shared standalone)",
+ "note": "Lowest-scoring kept spots have 0 page views and one counted source (Wikivoyage listing); every left-out candidate listed has a concrete rule from What qualifies (verdict text above). Reviews go to the owner list, not placed."
+}

@@ -1,0 +1,26 @@
+{
+ "id": "wuxi-11",
+ "name": "Plum Garden",
+ "built": "2026-11-08",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/The_Plum_Garden",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-08",
+   "title": "The Plum Garden",
+   "excerpt": "The Chinese Plum Garden is a botanical garden on Lake Tai in Jiangsu, China. It is most prominent in spring when 4000 fruit trees blossom in the park."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}
