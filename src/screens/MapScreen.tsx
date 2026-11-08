@@ -1309,10 +1309,11 @@ const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 28
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const SPOT_PHOTO_PIN_STYLE = { iconImage: ['get', 'img'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: false, iconPadding: 2, symbolZOrder: 'source' };
+const SPOT_MINI_PIN_STYLE = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
 const SPOT_READY_BATCH_MS = 180;  // photo pins whose photos are ready switch together, not one map data update each
 const SPOT_FADE_DATA_MS = 120;    // the fade's pins reaching the map (still transparent) before it starts
 const SPOT_FADE_MS = 260;         // a photo pin fading in over its small pin
-const SPOT_FADE_RESET_MS = 150;   // the faded pins reaching their usual layers before the fade layers go transparent again
+const SPOT_FADE_SETTLE_MS = 300;  // the faded pins reaching their usual layers before the next fade resets the fade layers
 const SPOT_PREFETCH_MS = 250;     // how often the camera's position is checked for pin photos to fetch ahead
 const SPOT_PREFETCH_AHEAD = 1.5;  // zoom levels ahead of a spot's photo pin that its photo starts downloading
 const MAX_SPOT_PREFETCH = 24;     // photos asked for per check
@@ -3222,9 +3223,12 @@ const destItems = useMemo((): DestItem[] =>
   const spotReadyTimerRef = useRef<(() => void) | null>(null);
   // A pin's photo arriving fades in over its small pin. A symbol can't fade by itself here (new symbols appear at full
   // opacity, and a layer's opacity only transitions as a whole), so the pins ready together are drawn for a moment by their
-  // own layers (spotFadeLayers), which start transparent and fade as one, then move to their usual layers:
-  //   their data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS -> back in their bands -> SPOT_FADE_RESET_MS
-  // Pins that become ready during a fade wait for the next one.
+  // own layers (spotFadeLayers), which start transparent and fade as one while the small pins under them fade out, then move
+  // to their usual layers:
+  //   fade layers reset, data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS -> back in their bands
+  //   -> SPOT_FADE_SETTLE_MS -> the next fade
+  // The reset waits for the next fade, so a move back to the bands that reaches the map late never shows the small pin again
+  // or hides the photo. Pins that become ready during a fade wait for the next one.
   const spotFadeWaitingRef = useRef<Set<string>>(new Set());
   const spotFadingRef = useRef<Set<string>>(new Set());
   const [spotFadeOn, setSpotFadeOn] = useState(false);
@@ -3237,16 +3241,14 @@ const destItems = useMemo((): DestItem[] =>
     spotFadingRef.current = spotFadeWaitingRef.current;
     spotFadeWaitingRef.current = new Set();
     for (const name of spotFadingRef.current) spotPhotoReadyRef.current.add(name);
+    setSpotFadeOn(false);
     setSpotImagesTick(n => n + 1);
     later(SPOT_FADE_DATA_MS, () => {
       setSpotFadeOn(true);
       later(SPOT_FADE_MS, () => {
         spotFadingRef.current = new Set();
         setSpotImagesTick(n => n + 1);
-        later(SPOT_FADE_RESET_MS, () => {
-          setSpotFadeOn(false);
-          later(0, runSpotFade);
-        });
+        later(SPOT_FADE_SETTLE_MS, runSpotFade);
       });
     });
   }, []);
@@ -3503,17 +3505,17 @@ const destItems = useMemo((): DestItem[] =>
     // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
     const photoStyle = SPOT_PHOTO_PIN_STYLE;
     // Small pins overlap photo pins (and each other) freely. A spot's own small pin is left out while its photo pin is in the
-    // data (img set, see the small pin layers' filter; while the photo fades in over it, it stays): the data carries a photo exactly from the zoom it shows. (A step on
+    // data (img set, see the small pin layers' filter; while its photo fades in, it fades out in spotFadeLayers): the data carries a photo exactly from the zoom it shows. (A step on
     // the camera zoom reading each spot's photo band did not work: Mapbox evaluates a zoom-and-data expression at whole
     // zoom levels, so a small pin stayed up behind its photo pin until the next whole level.)
-    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
+    const miniStyle = SPOT_MINI_PIN_STYLE;
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-        filter={['all', ['!=', ['get', 'sel'], 1], ['any', ['==', ['get', 'img'], ''], ['==', ['get', 'pb'], 'fade']], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'img'], ''], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
@@ -3525,13 +3527,16 @@ const destItems = useMemo((): DestItem[] =>
     );
     return layers;
   }, [spotBands, spotNameStyle]);
-  // The photo pins and names fading in (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
+  // The photo pins and names fading in, and their small pins fading out (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
   // layers would each be updated natively by a change of opacity. Keyed on the band set like them: when it changes they are
   // added again just below destStampCircles, so these must be too, or the photos fade in behind the small pins.
   const spotFadeLayers = useMemo(() => {
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const transition = { duration: spotFadeOn ? SPOT_FADE_MS : 0, delay: 0 };
     return [
+      <MapboxGL.SymbolLayer key={`${sig}m`} id="spotMini-fade" belowLayerID="destStampCircles"
+        filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
+        style={{ ...SPOT_MINI_PIN_STYLE, iconOpacity: spotFadeOn ? 0 : 1, iconOpacityTransition: transition } as any} />,
       <MapboxGL.SymbolLayer key={`${sig}p`} id="spotPhoto-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
         style={{ ...SPOT_PHOTO_PIN_STYLE, iconOpacity: spotFadeOn ? 1 : 0, iconOpacityTransition: transition } as any} />,
