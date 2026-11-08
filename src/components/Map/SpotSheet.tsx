@@ -2091,4 +2091,11 @@ const st = StyleSheet.create({
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
 // commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
-export default React.memo(SpotSheet);
+// A sheet leaving in place (leaveNow) takes no new props at all: a render of it after its slide off, from the parent
+// mounting the sheet that replaces it, redrew it where React last knew it was (the slide runs on the UI thread only, see
+// `gone`), and the carousel showed again as a strip at the bottom while the destination sheet came up.
+export default React.memo(SpotSheet, (prev, next) => {
+  if (prev.leaveNow && next.leaveNow) return true;
+  const keys = Object.keys(next) as (keyof Props)[];
+  return keys.length === Object.keys(prev).length && keys.every(k => Object.is(prev[k], next[k]));
+});
