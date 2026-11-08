@@ -3033,6 +3033,9 @@ const destItems = useMemo((): DestItem[] =>
       // represent it; see zoomedIntoDestIds).
       if (hiddenDestIds.has(dest.id)) continue;
       if (pendingRevealRef.current.has(dest.id)) continue;   // its photo pin is about to appear — no dot first
+      // A tapped destination flying in (destTapPlan): no dot from the tap. Its photo pin fades out on the way in, a little
+      // before it is hidden (handoff), and its dot showed through in that gap, before its spot pins came in.
+      if (destTapPlan && destTapPlan.destId === dest.id && selectedDest?.id === dest.id) continue;
       const tier = dest.countryCode === selCountryCode
         ? 1
         : Math.max(1, dest.rank - (saved ? 1 : 0));
@@ -3060,7 +3063,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { type: 'FeatureCollection' as const, features };
     lastStampRef.current = { sig, value };
     return value;
-  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot, destTapPlan, selectedDest]);
 
   // Discrete tier activation + native style TRANSITION (not a continuous zoom
   // interpolation): the opacity expression only ever targets exactly 0 or 1 per dot, and
