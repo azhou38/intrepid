@@ -9,6 +9,7 @@ import { StyleSheet, Platform, View, Text, ScrollView, Animated, Pressable, Imag
 import { Map, User } from 'lucide-react-native';
 import { useFonts, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-display';
 import * as Haptics from 'expo-haptics';
+import Reanimated, { useSharedValue, useAnimatedStyle, useFrameCallback, runOnJS, Easing as REasing } from 'react-native-reanimated';
 
 import MapScreen     from './src/screens/MapScreen';
 import { ShadowSync, syncAfterTouch } from './src/utils/shadowSync';
@@ -47,24 +48,35 @@ const ICON_SIZE = 22;
 // onMapReady comment). `visible` toggling false starts the fade-out; the screen stays
 // mounted (and blocking touches) through that animation, calling onFadeOutComplete once it's
 // actually done rather than being yanked out the instant mapReady flips.
+// The fade advances per drawn frame, at most LOADING_FADE_MAX_STEP_MS of it a frame: it starts while the map is doing its
+// first heavy work on the main thread (its layers, the destination pin images), and a timed fade that ran into a stall that
+// long went from opaque to gone in a single frame. A stall now holds the fade where it is.
+const LOADING_FADE_MS = 300;
+const LOADING_FADE_MAX_STEP_MS = 34;
 function AppLoadingScreen({ visible, onFadeOutComplete }: { visible: boolean; onFadeOutComplete: () => void }) {
-  const opacity = useRef(new Animated.Value(1)).current;
+  const progress = useSharedValue(0);
+  // Runs until the parent unmounts this screen (onFadeOutComplete).
+  const fade = useFrameCallback(({ timeSincePreviousFrame }) => {
+    if (progress.value >= 1) return;
+    const dt = Math.min(timeSincePreviousFrame ?? 16, LOADING_FADE_MAX_STEP_MS);
+    progress.value = Math.min(1, progress.value + dt / LOADING_FADE_MS);
+    if (progress.value >= 1) runOnJS(onFadeOutComplete)();
+  }, false);
 
   useEffect(() => {
-    if (visible) return;
-    Animated.timing(opacity, { toValue: 0, duration: 300, useNativeDriver: true }).start(({ finished }) => {
-      if (finished) onFadeOutComplete();
-    });
+    if (!visible) fade.setActive(true);
   }, [visible]);
 
+  const style = useAnimatedStyle(() => ({ opacity: 1 - REasing.inOut(REasing.ease)(progress.value) }));
+
   return (
-    <Animated.View
+    <Reanimated.View
       pointerEvents={visible ? 'auto' : 'none'}
-      style={[StyleSheet.absoluteFill, styles.loadingScreen, { opacity }]}
+      style={[StyleSheet.absoluteFill, styles.loadingScreen, style]}
     >
       <Image source={require('./assets/icon.png')} style={styles.loadingLogo} resizeMode="contain" />
       <Text style={styles.loadingWordmark}>Intrepid</Text>
-    </Animated.View>
+    </Reanimated.View>
   );
 }
 
