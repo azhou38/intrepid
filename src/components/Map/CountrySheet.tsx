@@ -9,7 +9,7 @@ import {
 // drag jank (switching the sheet's positioning from `top` to `transform` alone didn't fix it,
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
-  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
+  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, withDelay, runOnJS,
   interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
@@ -96,6 +96,7 @@ interface Props {
   leaving?: boolean;
   onExited?: () => void;
   enterFromPrevious?: boolean;   // this sheet replaces another one that was showing: start where it rested, not below the screen
+  slideInMs?: number;   // its slide-in on mount (SNAP_CONFIG's 280 ms by default; a back to the country is slower)
   isPressBlocked?: () => boolean;   // a press that is really a finger of a map gesture (see MapScreen.pressBlocked)
   // Increments when the parent is about to close this sheet (the back pill's X): slide it off
   // the bottom of the screen first, so it leaves rather than vanishing. Parent then unmounts it.
@@ -142,6 +143,9 @@ const PEEK_Y = Math.max(COLLAPSED_Y, (H - BOTTOM_TAB_H) - PEEK_STRIP_H);
 // "bouncy" here given how large a distance these snaps travel.
 const SNAP_CONFIG  = { duration: 280, easing: Easing.out(Easing.cubic) };
 const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
+// The slide-in on mount starts two frames late, as the destination and spot sheets' do: the frames that build this sheet's
+// views (with the camera moving) swallowed the fast start of the ease-out, so the sheet appeared most of the way up.
+export const COUNTRY_MOUNT_SLIDE_DELAY_MS = 40;
 // 2-column destinations grid — same math as DestinationSheet's own spot grid.
 const GRID_GAP    = 14;
 const GRID_CARD_W = (W - 32 - GRID_GAP) / 2;
@@ -225,7 +229,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, onExited,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, slideInMs, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -729,7 +733,8 @@ function CountrySheet({
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
     if (reason !== 'mount' || next === 'peek') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
     if (reason === 'mount') {
-      slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } });
+      const config = slideInMs ? { ...SNAP_CONFIG, duration: slideInMs } : SNAP_CONFIG;
+      slideAnim.value = withDelay(COUNTRY_MOUNT_SLIDE_DELAY_MS, withTiming(target, config, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } }));
     } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 

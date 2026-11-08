@@ -116,7 +116,7 @@ import { VisitToastHost } from '../components/Map/VisitToast';
 import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
-import CountrySheet from '../components/Map/CountrySheet';
+import CountrySheet, { COUNTRY_MOUNT_SLIDE_DELAY_MS } from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
 import { pumpedTimeout, pumpTimeouts } from '../utils/pumpedTimeout';
@@ -832,8 +832,9 @@ const destGateOn = (tier: string, z: number) => {
 // that is still hidden (it joins its layer DEST_GATE_LEAD early) can never push out one that is showing; '' is on top.
 // A destination pin tier that no layer draws: where a back or close plan puts the pins its target view does not show.
 const DEST_TIER_UNDRAWN = 'undrawn';
-// The selected country's border highlight fading out when its X is tapped (see highlightClosingFor).
-const HL_FADE = { duration: 200, delay: 0 };
+// The selected country's border highlight shows and hides at once, with no fade (also when its X is tapped: see
+// highlightClosingFor).
+const HL_FADE = { duration: 0, delay: 0 };
 const DEST_GATE_FADE_MS = 250;
 const DEST_GATE_FADE_OUT_MS = 140;
 // One layer per photo-plan tier (destPhotoPlan): bottom to top, the latest to switch on first, '' (always shown) on top.
@@ -863,6 +864,21 @@ const destTierStyle = (tier: string, on: boolean, snap = false) => {
       textOpacityTransition: { duration: ms, delay: 0 },
     };
     destTierStyleCache.set(key, st);
+  }
+  return st;
+};
+// A tapped destination flying in (destTapPlan): its pin fades out on the camera's own zoom, evaluated every frame, across
+// DEST_TAP_FADE_FROM..DEST_TAP_FADE_TO levels short of its default view, so it fades during the zoom-in itself rather than
+// whenever the JS side next sees the flight's zoom. The switch to its spot pins (DEST_TAP_HANDOFF_LEAD) falls inside that.
+const DEST_TAP_FADE_FROM = 1.4;
+const DEST_TAP_FADE_TO = 0.6;
+const destTapFadeStyleCache = new Map<number, any>();
+const destTapFadeStyle = (level: number) => {
+  let st = destTapFadeStyleCache.get(level);
+  if (!st) {
+    const shown = ['interpolate', ['linear'], ['zoom'], level - DEST_TAP_FADE_FROM, 1, level - DEST_TAP_FADE_TO, 0];
+    st = { ...DEST_SYMBOL_STYLE, iconOpacity: shown, textOpacity: shown, iconOpacityTransition: { duration: 0, delay: 0 }, textOpacityTransition: { duration: 0, delay: 0 } };
+    destTapFadeStyleCache.set(level, st);
   }
   return st;
 };
@@ -1307,12 +1323,19 @@ const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its 
 const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
+const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
+const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
+const COUNTRY_BACK_SLIDE_MS = 400;   // "← Country": the country sheet's slide-in, a little slower than the usual 280 ms
+const CAMERA_AFTER_PINS_MIN_MS = 80;    // see runCameraAfterPins: an idle sooner than this predates the new pin data
+const CAMERA_AFTER_PINS_MAX_MS = 400;   // its safety net: the camera goes anyway
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const SPOT_PHOTO_PIN_STYLE = { iconImage: ['get', 'img'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: false, iconPadding: 2, symbolZOrder: 'source' };
+const SPOT_MINI_PIN_STYLE = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
 const SPOT_READY_BATCH_MS = 180;  // photo pins whose photos are ready switch together, not one map data update each
 const SPOT_FADE_DATA_MS = 120;    // the fade's pins reaching the map (still transparent) before it starts
 const SPOT_FADE_MS = 260;         // a photo pin fading in over its small pin
-const SPOT_FADE_RESET_MS = 150;   // the faded pins reaching their usual layers before the fade layers go transparent again
+const SPOT_FADE_RESET_MS = 80;    // the fade layers turning transparent, before the next fade's pins go into them
+const SPOT_FADE_SETTLE_MS = 300;  // the faded pins reaching their usual layers before the next fade resets the fade layers
 const SPOT_PREFETCH_MS = 250;     // how often the camera's position is checked for pin photos to fetch ahead
 const SPOT_PREFETCH_AHEAD = 1.5;  // zoom levels ahead of a spot's photo pin that its photo starts downloading
 const MAX_SPOT_PREFETCH = 24;     // photos asked for per check
@@ -2370,6 +2393,27 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Country pills deliberately keep the live zoom: they belong to the wider view and would otherwise pop in over a
   // still zoomed-in map.
   const planZoomTargetRef = useRef<number | null>(null);
+  // A destination tap flying in to its default view (see destTapHandoff): set at the tap, ended at the map idle once the
+  // camera is there, by a gesture, or by its safety timer; another selection stops it applying.
+  // `from`: the selection before the tap, which the destination photo pins keep planning for until the handoff (see
+  // destPhotoPlan).
+  type DestTapPlan = { destId: string; target: number; from: { country: CountryCluster | null; dest: Destination | null } };
+  const [destTapPlan, setDestTapPlan] = useState<DestTapPlan | null>(null);
+  const destTapPlanRef = useRef<DestTapPlan | null>(null);
+  const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const endDestTapPlan = useCallback(() => {
+    if (destTapPlanTimerRef.current) { clearTimeout(destTapPlanTimerRef.current); destTapPlanTimerRef.current = null; }
+    if (!destTapPlanRef.current) return;
+    destTapPlanRef.current = null;
+    setDestTapPlan(null);
+  }, []);
+  const beginDestTapPlan = useCallback((destId: string, target: number, from: DestTapPlan['from']) => {
+    if (target <= camZoomRef.current + ZOOM_EPSILON) { endDestTapPlan(); return; }   // not a flight in
+    destTapPlanRef.current = { destId, target, from };
+    setDestTapPlan(destTapPlanRef.current);
+    if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
+    destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
+  }, [endDestTapPlan]);
   // Set by a back tap ("← Destination", "← Country"; see beginBackPlan): its target is kept although the parent is
   // selected, so the pins plan at the parent's view from the tap exactly as for an X close.
   const planWithSelRef = useRef(false);
@@ -2437,7 +2481,12 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // in (Wellington → New Zealand dips to zoom 2 before landing at 3.9): following the live zoom there switched every photo
   // pin off for the dip and back on as the camera climbed in, a burst of pins on landing.
   const backPlan = planHoldRef.current && planZoomTargetRef.current !== null;
-  const handoffZoom = backPlan ? closeTarget! : closeTarget !== null ? Math.min(camZoom, closeTarget) : camZoom;
+  // A destination tap's flight in (destTapPlan): its pin and its spot pins switch over in one step a little before the
+  // camera lands (DEST_TAP_HANDOFF_LEAD), the spot pins already holding their photos, rather than the pin waiting for the
+  // camera to settle, then the small spot pins appearing, then their photos fading in one by one.
+  const destTapHandoff = destTapPlan && selectedDest?.id === destTapPlan.destId && camZoom >= destTapPlan.target - DEST_TAP_HANDOFF_LEAD
+    ? Math.max(camZoom, destTapPlan.target) : null;
+  const handoffZoom = backPlan ? closeTarget! : closeTarget !== null ? Math.min(camZoom, closeTarget) : destTapHandoff ?? camZoom;
   // Each photo tier's on/off: on at and past its gate. Zooming out, Mapbox hides a tier itself the frame the camera passes
   // its gate (the layer's minZoomLevel), so this needs no look-ahead: it used to switch tiers off ahead of the camera to
   // make up for the render lag, which on a fast pinch blanked pins that were still above their gates for a frame or two.
@@ -2834,8 +2883,15 @@ const destItems = useMemo((): DestItem[] =>
     const t = setTimeout(() => setPlanSpot(selectedSpot), PLAN_SPOT_DELAY_MS);
     return () => clearTimeout(t);
   }, [selectedSpot]);
-  const destPhotoPlan = useMemo(() => cachedDestPlan(planCountry, planDest, navTarget ? null : planSpot, visitIndex),
-    [planCountry, planDest, planSpot, navTarget, visitIndex]);
+  // A destination tap's flight in keeps planning for the selection before the tap until its handoff (destTapHandoff):
+  // re-planning at the tap, for the destination now selected, switched pins all over the country between photo pins and
+  // dots at the old zoom, before the camera had moved. By the handoff the camera is close in, and the new plan lands
+  // together with the destination's own switch to its spots.
+  const tapHeld = destTapPlan && selectedDest?.id === destTapPlan.destId && destTapHandoff === null ? destTapPlan.from : null;
+  const destPlanCountry = tapHeld ? tapHeld.country : planCountry;
+  const destPlanDest = tapHeld ? tapHeld.dest : planDest;
+  const destPhotoPlan = useMemo(() => cachedDestPlan(destPlanCountry, destPlanDest, navTarget ? null : planSpot, visitIndex),
+    [destPlanCountry, destPlanDest, planSpot, navTarget, visitIndex]);
   // The same plan with nothing selected: what the spot plan keeps clear of, so selecting or closing never re-plans spots.
   const baseDestPhotoPlan = useMemo(() => cachedDestPlan(null, null, null, visitIndex), [visitIndex]);
   // Prewarm: once a destination or spot sheet has settled, plan the context its back pill lands on (the destination's
@@ -3220,49 +3276,54 @@ const destItems = useMemo((): DestItem[] =>
   // The pin images holding their photo (see SpotPhotoImages' onReady): until then a spot keeps its small pin, not a grey disc.
   const spotPhotoReadyRef = useRef<Set<string>>(new Set());
   const spotReadyTimerRef = useRef<(() => void) | null>(null);
-  // A pin's photo arriving fades in over its small pin. A symbol can't fade by itself here (new symbols appear at full
+  // A spot's photo pin fades in over its small pin whenever it starts showing: its photo arriving, or the camera zooming in
+  // past its photo zoom again after zooming out. A symbol can't fade by itself here (new symbols appear at full
   // opacity, and a layer's opacity only transitions as a whole), so the pins ready together are drawn for a moment by their
-  // own layers (spotFadeLayers), which start transparent and fade as one, then move to their usual layers:
-  //   their data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS -> back in their bands -> SPOT_FADE_RESET_MS
-  // Pins that become ready during a fade wait for the next one.
+  // own layers (spotFadeLayers), which start transparent and fade as one while the small pins under them fade out, then move
+  // to their usual layers:
+  //   fade layers reset -> SPOT_FADE_RESET_MS -> data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS
+  //   -> back in their bands -> SPOT_FADE_SETTLE_MS -> the next fade
+  // The reset comes first, on its own: Mapbox can draw a source's new data before a layer's new style, so a reset made in
+  // the same render as the data showed the next pins at full opacity for a frame (left over from the last fade), then
+  // dropped them to nothing, then faded them in, a flash (Caroline Bay, opening Timaru).
+  // The reset waits for the next fade, so a move back to the bands that reaches the map late never shows the small pin again
+  // or hides the photo. Pins due during a fade wait for the next one.
+  // Spot ids: due to show their photo but still drawn as small pins (waiting), fading in (fading), and settled (shown). A
+  // pin that stops being due (zoomed out past its photo zoom) leaves `shown`, so it fades in again next time.
   const spotFadeWaitingRef = useRef<Set<string>>(new Set());
   const spotFadingRef = useRef<Set<string>>(new Set());
+  const spotShownRef = useRef<Set<string>>(new Set());
+  const spotReadyTickRef = useRef<(() => void) | null>(null);
   const [spotFadeOn, setSpotFadeOn] = useState(false);
+  const spotFadeOnRef = useRef(false);
   const runSpotFade = useCallback(() => {
     spotReadyTimerRef.current = null;
     const wait = pinImagesHoldUntilRef.current - Date.now();
     const later = (ms: number, next: () => void) => { spotReadyTimerRef.current = pumpedTimeout(next, ms); };
     if (wait > 0) return later(wait, runSpotFade);   // not while a sheet slides in
     if (!spotFadeWaitingRef.current.size) return;
+    if (spotFadeOnRef.current) { spotFadeOnRef.current = false; setSpotFadeOn(false); return later(SPOT_FADE_RESET_MS, runSpotFade); }
     spotFadingRef.current = spotFadeWaitingRef.current;
     spotFadeWaitingRef.current = new Set();
-    for (const name of spotFadingRef.current) spotPhotoReadyRef.current.add(name);
     setSpotImagesTick(n => n + 1);
     later(SPOT_FADE_DATA_MS, () => {
+      spotFadeOnRef.current = true;
       setSpotFadeOn(true);
       later(SPOT_FADE_MS, () => {
+        for (const id of spotFadingRef.current) spotShownRef.current.add(id);
         spotFadingRef.current = new Set();
         setSpotImagesTick(n => n + 1);
-        later(SPOT_FADE_RESET_MS, () => {
-          setSpotFadeOn(false);
-          later(0, runSpotFade);
-        });
+        later(SPOT_FADE_SETTLE_MS, runSpotFade);
       });
     });
   }, []);
+  // An image ready: the next pass (batched, SPOT_READY_BATCH_MS) finds its pin due and queues its fade.
   const handleSpotPhotoReady = useCallback((name: string) => {
-    // Once only: PinPhoto's failsafe reports a pin with a subject crop as shown again 1.5 s after it mounts, which faded it in a second time.
+    // Once only: PinPhoto's failsafe reports a pin with a subject crop as shown again 1.5 s after it mounts.
     if (spotPhotoReadyRef.current.has(name)) return;
-    // The other ring of a pin already showing (it was just ticked as visited): no fade, the pin only changes its ring.
-    const other = name.endsWith('1') ? `${name.slice(0, -1)}0` : `${name.slice(0, -1)}1`;
-    if (spotPhotoReadyRef.current.has(other)) {
-      spotPhotoReadyRef.current.add(name);
-      setSpotImagesTick(n => n + 1);
-      return;
-    }
-    spotFadeWaitingRef.current.add(name);
-    if (!spotReadyTimerRef.current) spotReadyTimerRef.current = pumpedTimeout(runSpotFade, SPOT_READY_BATCH_MS);
-  }, [runSpotFade]);
+    spotPhotoReadyRef.current.add(name);
+    if (!spotReadyTickRef.current) spotReadyTickRef.current = pumpedTimeout(() => { spotReadyTickRef.current = null; setSpotImagesTick(n => n + 1); }, SPOT_READY_BATCH_MS);
+  }, []);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   // A close is planning at its target (closeTarget): see the band properties below.
@@ -3333,6 +3394,20 @@ const destItems = useMemo((): DestItem[] =>
       if (fresh < MAX_NEW_SPOT_IMAGES && !holdImages) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
       else pending++;
     }
+    // A destination tap's flight in (destTapPlan): the images of the spot pins it will switch to are made during the
+    // flight, so those pins arrive with their photos instead of as small pins that then fade into photos one by one.
+    if (destTapPlan && spotPhotoPlan && selectedDest?.id === destTapPlan.destId) {
+      const t = destTapPlan.target + ZOOM_EPSILON;
+      for (const sp of spotsInDest) {
+        const z = spotPhotoPlan.photoAt.get(sp.id);
+        if (z === undefined || spotPhotoZoom(sp.id, z) > t || (SPOT_PHOTO_ZOOM_BY_ID[sp.id] ?? -Infinity) > t) continue;
+        const visited = visitIndex.isSpotVisited(sp.id);
+        const img = spotPhotoImageName(sp.id, visited);
+        if (specs.has(img)) continue;
+        if (fresh < MAX_NEW_SPOT_IMAGES && !holdImages) { specs.set(img, { name: img, spot: sp, visited }); added = true; fresh++; }
+        else pending++;
+      }
+    }
     spotImagesPendingRef.current = holdImages ? 0 : pending;   // while held, the hold's own timer runs the next pass
     // A spot's image that holds its photo, or '' while none does. A spot just ticked as visited keeps its old ring until the
     // new image is ready, rather than dropping to its small pin for a moment.
@@ -3340,10 +3415,19 @@ const destItems = useMemo((): DestItem[] =>
       const ready = spotPhotoReadyRef.current, img = spotPhotoImageName(id, visited), other = spotPhotoImageName(id, !visited);
       return ready.has(img) ? img : ready.has(other) ? other : '';
     };
+    // Which pins draw their photo: due (planned, image ready) and shown or fading in; a due pin not yet either waits for the
+    // next fade as a small pin (see runSpotFade). A ticked spot's ring change keeps it shown: `shown` is by spot.
+    const shown = spotShownRef.current, fading = spotFadingRef.current, waiting = spotFadeWaitingRef.current;
+    const nowDue = new Set<string>();
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
-      const img = readyImage(sp.id, visited);
+      const loaded = readyImage(sp.id, visited);
       const early = isEarly(sp);
+      let img = '';
+      if (loaded && !early && photoPlan.has(sp.id) && !pinHitsSelected(sp)) {
+        nowDue.add(sp.id);
+        if (shown.has(sp.id) || fading.has(sp.id)) img = loaded; else waiting.add(sp.id);
+      }
       features.push({
         type: 'Feature',
         id: sp.id,
@@ -3351,7 +3435,7 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: !early && photoPlan.has(sp.id) && !pinHitsSelected(sp) ? img : '',
+          img,
           label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON && !hitsSelected(sp) ? spotLabelLines(sp.name).join('\n') : '',
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
@@ -3361,9 +3445,9 @@ const destItems = useMemo((): DestItem[] =>
           // setting every band layer's min zoom to 0 for the close and back afterwards, and each of those layer changes is
           // a full Mapbox updateLayer on the main thread: with dozens of band layers, ~300 ms frozen at the tap and again
           // as the close ended. Moving the pins in the data costs nothing extra (the data changes at those moments anyway).
-          pb: spotFadingRef.current.has(img) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
+          pb: img && fading.has(sp.id) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
           rb: spotGatesOff || must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
-          nb: spotFadingRef.current.has(img) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
+          nb: img && fading.has(sp.id) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
         },
       });
     }
@@ -3375,6 +3459,8 @@ const destItems = useMemo((): DestItem[] =>
       const visited = visitIndex.isSpotVisited(selectedSpot.id);
       const img = spotPhotoImageName(selectedSpot.id, visited);
       const selImg = readyImage(selectedSpot.id, visited);
+      // Drawn at once (it is the spot just picked); kept shown, so it doesn't fade in again when it is deselected.
+      if (selImg) { nowDue.add(selectedSpot.id); shown.add(selectedSpot.id); }
       if (!specs.has(img) && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
       // The carousel's neighbours (two either side) get their photos registered ahead, so swiping to one finds its pin
       // image ready: a spot that was only a small pin used to show its blue glow first and its photo pin a moment later.
@@ -3401,6 +3487,8 @@ const destItems = useMemo((): DestItem[] =>
         },
       });
     }
+    for (const id of [...shown]) if (!nowDue.has(id)) shown.delete(id);
+    for (const id of [...waiting]) if (!nowDue.has(id)) waiting.delete(id);
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
     spotPhotoPrevRef.current = new Set(features.filter(f => f.properties!.img).map(f => String(f.properties!.id)));
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
@@ -3412,7 +3500,14 @@ const destItems = useMemo((): DestItem[] =>
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
-  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff]);
+  }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff, destTapPlan, spotsInDest, selectedDest]);
+  // Pins due to show their photo (spotFadeWaitingRef, see nativeSpotPins) start their fade, batched (SPOT_READY_BATCH_MS).
+  // After every render, not on nativeSpotPins: the pass that queues pins whose photos have just become ready changes no
+  // feature (they are still small pins), so it hands back the same shape object, and an effect keyed on it never ran:
+  // Christchurch's 13 photo pins sat queued as small pins for good.
+  useEffect(() => {
+    if (spotFadeWaitingRef.current.size && !spotReadyTimerRef.current) spotReadyTimerRef.current = pumpedTimeout(runSpotFade, SPOT_READY_BATCH_MS);
+  });
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
@@ -3443,6 +3538,7 @@ const destItems = useMemo((): DestItem[] =>
   }, [region, handoffZoom, spotPhotoPlan]);
   useEffect(() => () => {
     spotReadyTimerRef.current?.();
+    spotReadyTickRef.current?.();
     spotPrefetchTimerRef.current?.();
   }, []);
   // Only the selected spot is a MarkerView now.
@@ -3503,17 +3599,17 @@ const destItems = useMemo((): DestItem[] =>
     // Priority comes from the data's order (nativeSpotPins lists the spots by rank), not a symbolSortKey.
     const photoStyle = SPOT_PHOTO_PIN_STYLE;
     // Small pins overlap photo pins (and each other) freely. A spot's own small pin is left out while its photo pin is in the
-    // data (img set, see the small pin layers' filter; while the photo fades in over it, it stays): the data carries a photo exactly from the zoom it shows. (A step on
+    // data (img set, see the small pin layers' filter; while its photo fades in, it fades out in spotFadeLayers): the data carries a photo exactly from the zoom it shows. (A step on
     // the camera zoom reading each spot's photo band did not work: Mapbox evaluates a zoom-and-data expression at whole
     // zoom levels, so a small pin stayed up behind its photo pin until the next whole level.)
-    const miniStyle = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
+    const miniStyle = SPOT_MINI_PIN_STYLE;
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
-        filter={['all', ['!=', ['get', 'sel'], 1], ['any', ['==', ['get', 'img'], ''], ['==', ['get', 'pb'], 'fade']], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
+        filter={['all', ['!=', ['get', 'sel'], 1], ['==', ['get', 'img'], ''], ['==', ['get', 'rb'], k]] as any} minZoomLevel={k === 'a' ? 0 : Number(k)} style={miniStyle as any} />,
     );
     for (const k of photoKeys) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}p${k}`} id={`spotPhoto-${k}`} belowLayerID="destStampCircles"
@@ -3525,13 +3621,16 @@ const destItems = useMemo((): DestItem[] =>
     );
     return layers;
   }, [spotBands, spotNameStyle]);
-  // The photo pins and names fading in (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
+  // The photo pins and names fading in, and their small pins fading out (see runSpotFade), above the band layers. Apart from spotBandLayers, whose dozens of
   // layers would each be updated natively by a change of opacity. Keyed on the band set like them: when it changes they are
   // added again just below destStampCircles, so these must be too, or the photos fade in behind the small pins.
   const spotFadeLayers = useMemo(() => {
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
     const transition = { duration: spotFadeOn ? SPOT_FADE_MS : 0, delay: 0 };
     return [
+      <MapboxGL.SymbolLayer key={`${sig}m`} id="spotMini-fade" belowLayerID="destStampCircles"
+        filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
+        style={{ ...SPOT_MINI_PIN_STYLE, iconOpacity: spotFadeOn ? 0 : 1, iconOpacityTransition: transition } as any} />,
       <MapboxGL.SymbolLayer key={`${sig}p`} id="spotPhoto-fade" belowLayerID="destStampCircles"
         filter={['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1], ['==', ['get', 'pb'], 'fade']] as any}
         style={{ ...SPOT_PHOTO_PIN_STYLE, iconOpacity: spotFadeOn ? 1 : 0, iconOpacityTransition: transition } as any} />,
@@ -3768,6 +3867,23 @@ const destItems = useMemo((): DestItem[] =>
   // switched off, and closing, which moves the camera after the sheet is gone, was always smooth). handleMarkerPress and
   // handleSpotPress set the hold; the camera helpers below wait it out.
   const cameraHoldUntilRef = useRef(0);
+  // "← Country": the camera waits until the map has taken the country's destination pins (planned for the country view at
+  // the tap) before zooming out. The pin data changes at the tap, but Mapbox applies a new GeoJSON in the background, and
+  // with the camera already moving it went on drawing the old pins for about half a second: destinations that are not
+  // photo pins in the country view (Lake Tekapo, Oamaru) showed as the zoom-out passed them, then vanished. The map's next
+  // idle comes once the new data is drawn; the timer is a safety net.
+  const cameraAfterPinsRef = useRef<{ move: () => void; since: number; timer: ReturnType<typeof setTimeout> } | null>(null);
+  const fireCameraAfterPins = useCallback(() => {
+    const job = cameraAfterPinsRef.current;
+    if (!job) return;
+    cameraAfterPinsRef.current = null;
+    clearTimeout(job.timer);
+    job.move();
+  }, []);
+  const runCameraAfterPins = useCallback((move: () => void) => {
+    if (cameraAfterPinsRef.current) clearTimeout(cameraAfterPinsRef.current.timer);
+    cameraAfterPinsRef.current = { move, since: Date.now(), timer: setTimeout(fireCameraAfterPins, CAMERA_AFTER_PINS_MAX_MS) };
+  }, [fireCameraAfterPins]);
   // Runs once, right after the next commit (see handleCloseToMap: an X close from full-screen waits for its pin plan).
   const afterCommitRef = useRef<(() => void) | null>(null);
   // A back tap ("← Country", "← Destination") swaps sheets in one heavy commit; its camera move waits for that commit and
@@ -4171,6 +4287,7 @@ const destItems = useMemo((): DestItem[] =>
   }, []);
 
   const handleMarkerPress = useCallback((dest: Destination) => {
+    const tapFrom = { country: selectedCountryRef.current, dest: selectedDestRef.current };   // see beginDestTapPlan
     cameraHoldUntilRef.current = Date.now() + SHEET_SLIDE_IN_MS;
     // Provenance: a normal drill-down only when the tapped destination actually belongs to
     // the currently selected country — not just "is *some* country selected". Rank-1
@@ -4198,6 +4315,7 @@ const destItems = useMemo((): DestItem[] =>
     dropCountryIfForeign(dest.country);
     selectedDestRef.current = dest;
     setSelectedDest(dest);
+    beginDestTapPlan(dest.id, destDefaultCamera(dest, 'topHalf').zoom, tapFrom);
     // Kick off DestinationSheet's own hero-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for it to mount a render cycle later.
     prefetchWikiThumbnail(dest.id, photoCache, dest.name, HEADER_PX);
@@ -4249,7 +4367,7 @@ const destItems = useMemo((): DestItem[] =>
     fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
-  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault]);
+  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault, beginDestTapPlan, destDefaultCamera]);
 
   const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
@@ -4700,7 +4818,8 @@ const destItems = useMemo((): DestItem[] =>
     // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan).
     const target = countryTargetZoom(cluster);
     if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
-    // The camera starts now, with the sheet's slide (leaveEarlySV above), as an X close's does (startXCloseCamera), not
+    // The camera starts with the sheet's slide (leaveEarlySV above; just after, once the map has taken the new pins: see
+    // runCameraAfterPins), as an X close's does (startXCloseCamera), not
     // once the swap's render commits: that render (the country sheet mounting) took ~0.4 s on the device, a still map
     // between the sheet leaving and the zoom. While it renders the camera zooms out over the old plan's pins, which every
     // pin layer gates natively by zoom (constant min zooms, see spotGatesOff / planTier), so they leave as the zoom passes
@@ -4716,8 +4835,8 @@ const destItems = useMemo((): DestItem[] =>
     const from: NavSel = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
     navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
     setSheetOverride({ cluster });
-    fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
-    // The selection change waits until the country sheet has slid up (SHEET_SLIDE_IN_MS): run in the next task, its render
+    runCameraAfterPins(() => fitCountryDefaultView(cluster, 'flyTo', 'topHalf'));
+    // The selection change waits until the country sheet has slid up (its delay and COUNTRY_BACK_SLIDE_MS): its render
     // (~150 ms, the whole screen) landed in the middle of the slide and stuttered it. The sheet and the pins already show
     // the country (sheetOverride, navTarget), so nothing on screen waits for it but the country's border highlight.
     setTimeout(() => {
@@ -4726,8 +4845,8 @@ const destItems = useMemo((): DestItem[] =>
       if (sameNavSel(from, { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null })) {
         handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
       }
-    }, SHEET_SLIDE_IN_MS);
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView]);
+    }, COUNTRY_MOUNT_SLIDE_DELAY_MS + COUNTRY_BACK_SLIDE_MS + 20);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView, runCameraAfterPins]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
@@ -5210,6 +5329,7 @@ const destItems = useMemo((): DestItem[] =>
     // open over the map while the user navigates.
     if (isGestureActive && !wasMapGestureActiveRef.current) {
       releaseHeldSelection();   // the user took over the camera: don't keep planning around the closed selection
+      endDestTapPlan();
       releaseSpotCloseTarget();
       if (showMapMenuRef.current) { showMapMenuRef.current = false; setShowMapMenu(false); }
       // The user grabbed the map while a destination's initial fly-to was still in flight —
@@ -5417,7 +5537,7 @@ const destItems = useMemo((): DestItem[] =>
       zoomLeadTimerRef.current = setTimeout(() => { zoomLeadTimerRef.current = null; zoomSampleRef.current = null; setZoomOutLead(0); }, 120);
     });
     camZoomRef.current = state.properties.zoom;
-  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera, releaseSpotCloseTarget]);
+  }, [returnPromptProgress, destReturnPromptProgress, mapGestureAtSV, releaseHeldSelection, releaseSheetsAfterCamera, releaseSpotCloseTarget, endDestTapPlan]);
 
   const handleMapIdle = useCallback((state: {
     properties: {
@@ -5434,6 +5554,10 @@ const destItems = useMemo((): DestItem[] =>
     wasMapGestureActiveRef.current = false;
     if (regionHoldFlushRef.current) { clearTimeout(regionHoldFlushRef.current); regionHoldFlushRef.current = null; }
     releaseSheetsAfterCamera();
+    // The new pin data is drawn: a camera move waiting for it starts (see runCameraAfterPins).
+    if (cameraAfterPinsRef.current && Date.now() - cameraAfterPinsRef.current.since >= CAMERA_AFTER_PINS_MIN_MS) fireCameraAfterPins();
+    // A destination tap's flight has landed (not an idle from before it got going): the live zoom takes over.
+    if (destTapPlanRef.current && state.properties.zoom >= destTapPlanRef.current.target - ZOOM_EPSILON) endDestTapPlan();
     // A close's zoom-out has settled: let the pin/pill planning drop the old selection. Not a landed plan, which stands
     // until the user's next move (see planLandedRef).
     if (!planLandedRef.current) {
@@ -5665,13 +5789,16 @@ const destItems = useMemo((): DestItem[] =>
     for (const d of DESTINATIONS) {
       const level = DEST_ZOOM_LEVEL_BY_ID[d.id];
       if (level === undefined || !stablePhotoIds.has(d.id)) continue;
-      if (Math.abs(handoffZoom - level) > HANDOFF_BAND) continue;
+      // A tapped destination flying in (destTapPlan) is on its handoff layer from the tap: the JS side sees the flight's
+      // zoom only now and then, so it could reach the band and the handoff in the same render, and with no time on the layer
+      // its pin was cut at once instead of fading.
+      if (Math.abs(handoffZoom - level) > HANDOFF_BAND && destTapPlan?.destId !== d.id) continue;
       if (Math.abs(d.coordinates.latitude - latitude) > latitudeDelta * 1.5 || Math.abs(d.coordinates.longitude - longitude) > longitudeDelta * 1.5) continue;
       out.push({ dest: d, past: hiddenDestIds.has(d.id) });
       if (out.length >= HANDOFF_MAX) break;
     }
     return out;
-  }, [stablePhotoIds, handoffZoom, hiddenDestIds, region]);
+  }, [stablePhotoIds, handoffZoom, hiddenDestIds, region, destTapPlan]);
   // Each handoff destination keeps one of HANDOFF_MAX fixed layers (destHandoff-0 … -5) for as long as it is in the band.
   // The layers are always mounted: adding or removing a map layer mid-zoom made Mapbox redo its whole symbol placement,
   // and every destination photo pin vanished for a frame.
@@ -6296,7 +6423,9 @@ const destItems = useMemo((): DestItem[] =>
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
                   // Its destination's tier gate is in its opacity, as for the tier layers above.
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
-                  style={destTierStyle(l.tier, l.on, l.snap)}
+                  style={l.h && l.on && destTapPlan?.destId === l.h.dest.id && DEST_ZOOM_LEVEL_BY_ID[l.h.dest.id] !== undefined
+                    ? destTapFadeStyle(DEST_ZOOM_LEVEL_BY_ID[l.h.dest.id])
+                    : destTierStyle(l.tier, l.on, l.snap)}
                 />
               );
             })]}
@@ -6659,6 +6788,7 @@ const destItems = useMemo((): DestItem[] =>
         <CountrySheet
           key={`country-${sheetSwapKey}`}
           cluster={effCountry}
+          slideInMs={sheetOverride ? COUNTRY_BACK_SLIDE_MS : undefined}
           onClose={handleCloseCountry}
           onSelectDestination={handleMarkerPress}
           onExpand={handleSheetExpand}
