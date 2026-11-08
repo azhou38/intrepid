@@ -3262,16 +3262,21 @@ const destItems = useMemo((): DestItem[] =>
   // The pin images holding their photo (see SpotPhotoImages' onReady): until then a spot keeps its small pin, not a grey disc.
   const spotPhotoReadyRef = useRef<Set<string>>(new Set());
   const spotReadyTimerRef = useRef<(() => void) | null>(null);
-  // A pin's photo arriving fades in over its small pin. A symbol can't fade by itself here (new symbols appear at full
+  // A spot's photo pin fades in over its small pin whenever it starts showing: its photo arriving, or the camera zooming in
+  // past its photo zoom again after zooming out. A symbol can't fade by itself here (new symbols appear at full
   // opacity, and a layer's opacity only transitions as a whole), so the pins ready together are drawn for a moment by their
   // own layers (spotFadeLayers), which start transparent and fade as one while the small pins under them fade out, then move
   // to their usual layers:
   //   fade layers reset, data goes in (transparent) -> SPOT_FADE_DATA_MS -> fade -> SPOT_FADE_MS -> back in their bands
   //   -> SPOT_FADE_SETTLE_MS -> the next fade
   // The reset waits for the next fade, so a move back to the bands that reaches the map late never shows the small pin again
-  // or hides the photo. Pins that become ready during a fade wait for the next one.
+  // or hides the photo. Pins due during a fade wait for the next one.
+  // Spot ids: due to show their photo but still drawn as small pins (waiting), fading in (fading), and settled (shown). A
+  // pin that stops being due (zoomed out past its photo zoom) leaves `shown`, so it fades in again next time.
   const spotFadeWaitingRef = useRef<Set<string>>(new Set());
   const spotFadingRef = useRef<Set<string>>(new Set());
+  const spotShownRef = useRef<Set<string>>(new Set());
+  const spotReadyTickRef = useRef<(() => void) | null>(null);
   const [spotFadeOn, setSpotFadeOn] = useState(false);
   const runSpotFade = useCallback(() => {
     spotReadyTimerRef.current = null;
@@ -3281,31 +3286,25 @@ const destItems = useMemo((): DestItem[] =>
     if (!spotFadeWaitingRef.current.size) return;
     spotFadingRef.current = spotFadeWaitingRef.current;
     spotFadeWaitingRef.current = new Set();
-    for (const name of spotFadingRef.current) spotPhotoReadyRef.current.add(name);
     setSpotFadeOn(false);
     setSpotImagesTick(n => n + 1);
     later(SPOT_FADE_DATA_MS, () => {
       setSpotFadeOn(true);
       later(SPOT_FADE_MS, () => {
+        for (const id of spotFadingRef.current) spotShownRef.current.add(id);
         spotFadingRef.current = new Set();
         setSpotImagesTick(n => n + 1);
         later(SPOT_FADE_SETTLE_MS, runSpotFade);
       });
     });
   }, []);
+  // An image ready: the next pass (batched, SPOT_READY_BATCH_MS) finds its pin due and queues its fade.
   const handleSpotPhotoReady = useCallback((name: string) => {
-    // Once only: PinPhoto's failsafe reports a pin with a subject crop as shown again 1.5 s after it mounts, which faded it in a second time.
+    // Once only: PinPhoto's failsafe reports a pin with a subject crop as shown again 1.5 s after it mounts.
     if (spotPhotoReadyRef.current.has(name)) return;
-    // The other ring of a pin already showing (it was just ticked as visited): no fade, the pin only changes its ring.
-    const other = name.endsWith('1') ? `${name.slice(0, -1)}0` : `${name.slice(0, -1)}1`;
-    if (spotPhotoReadyRef.current.has(other)) {
-      spotPhotoReadyRef.current.add(name);
-      setSpotImagesTick(n => n + 1);
-      return;
-    }
-    spotFadeWaitingRef.current.add(name);
-    if (!spotReadyTimerRef.current) spotReadyTimerRef.current = pumpedTimeout(runSpotFade, SPOT_READY_BATCH_MS);
-  }, [runSpotFade]);
+    spotPhotoReadyRef.current.add(name);
+    if (!spotReadyTickRef.current) spotReadyTickRef.current = pumpedTimeout(() => { spotReadyTickRef.current = null; setSpotImagesTick(n => n + 1); }, SPOT_READY_BATCH_MS);
+  }, []);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
   const spotPhotoPrevRef = useRef<Set<string>>(new Set());
   // A close is planning at its target (closeTarget): see the band properties below.
@@ -3397,10 +3396,19 @@ const destItems = useMemo((): DestItem[] =>
       const ready = spotPhotoReadyRef.current, img = spotPhotoImageName(id, visited), other = spotPhotoImageName(id, !visited);
       return ready.has(img) ? img : ready.has(other) ? other : '';
     };
+    // Which pins draw their photo: due (planned, image ready) and shown or fading in; a due pin not yet either waits for the
+    // next fade as a small pin (see runSpotFade). A ticked spot's ring change keeps it shown: `shown` is by spot.
+    const shown = spotShownRef.current, fading = spotFadingRef.current, waiting = spotFadeWaitingRef.current;
+    const nowDue = new Set<string>();
     for (const sp of sorted) {
       const visited = visitIndex.isSpotVisited(sp.id);
-      const img = readyImage(sp.id, visited);
+      const loaded = readyImage(sp.id, visited);
       const early = isEarly(sp);
+      let img = '';
+      if (loaded && !early && photoPlan.has(sp.id) && !pinHitsSelected(sp)) {
+        nowDue.add(sp.id);
+        if (shown.has(sp.id) || fading.has(sp.id)) img = loaded; else waiting.add(sp.id);
+      }
       features.push({
         type: 'Feature',
         id: sp.id,
@@ -3408,7 +3416,7 @@ const destItems = useMemo((): DestItem[] =>
         properties: {
           id: sp.id,
           mini: visited ? SPOT_MINI_PIN_VISITED : SPOT_MINI_PIN_UNVISITED,
-          img: !early && photoPlan.has(sp.id) && !pinHitsSelected(sp) ? img : '',
+          img,
           label: photoPlan.has(sp.id) && (spotPhotoPlan?.nameAt.get(sp.id)?.z ?? Infinity) <= handoffZoom + ZOOM_EPSILON && !hitsSelected(sp) ? spotLabelLines(sp.name).join('\n') : '',
           side: spotPhotoPlan?.nameAt.get(sp.id)?.side ?? 'right',
           sort: rank(sp),
@@ -3418,9 +3426,9 @@ const destItems = useMemo((): DestItem[] =>
           // setting every band layer's min zoom to 0 for the close and back afterwards, and each of those layer changes is
           // a full Mapbox updateLayer on the main thread: with dozens of band layers, ~300 ms frozen at the tap and again
           // as the close ended. Moving the pins in the data costs nothing extra (the data changes at those moments anyway).
-          pb: spotFadingRef.current.has(img) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
+          pb: img && fading.has(sp.id) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.photoBy.get(sp.id) ?? 'a',
           rb: spotGatesOff || must.has(sp.id) || SPOT_REVEAL_ZOOM_BY_ID[sp.id] === undefined ? 'a' : String(spotBand(SPOT_REVEAL_ZOOM_BY_ID[sp.id])),
-          nb: spotFadingRef.current.has(img) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
+          nb: img && fading.has(sp.id) ? 'fade' : spotGatesOff || must.has(sp.id) ? 'a' : spotBands.nameBy.get(sp.id) ?? 'a',
         },
       });
     }
@@ -3432,6 +3440,8 @@ const destItems = useMemo((): DestItem[] =>
       const visited = visitIndex.isSpotVisited(selectedSpot.id);
       const img = spotPhotoImageName(selectedSpot.id, visited);
       const selImg = readyImage(selectedSpot.id, visited);
+      // Drawn at once (it is the spot just picked); kept shown, so it doesn't fade in again when it is deselected.
+      if (selImg) { nowDue.add(selectedSpot.id); shown.add(selectedSpot.id); }
       if (!specs.has(img) && !holdImages) { specs.set(img, { name: img, spot: selectedSpot, visited }); added = true; }
       // The carousel's neighbours (two either side) get their photos registered ahead, so swiping to one finds its pin
       // image ready: a spot that was only a small pin used to show its blue glow first and its photo pin a moment later.
@@ -3458,6 +3468,8 @@ const destItems = useMemo((): DestItem[] =>
         },
       });
     }
+    for (const id of [...shown]) if (!nowDue.has(id)) shown.delete(id);
+    for (const id of [...waiting]) if (!nowDue.has(id)) waiting.delete(id);
     if (added) spotPhotoSpecListRef.current = [...specs.values()];
     spotPhotoPrevRef.current = new Set(features.filter(f => f.properties!.img).map(f => String(f.properties!.id)));
     // visibleSpots is rebuilt on every camera frame (it follows the live bounds), but its CONTENT rarely changes: hand the
@@ -3470,6 +3482,10 @@ const destItems = useMemo((): DestItem[] =>
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
     return value;
   }, [visibleSpots, selectedSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff, destTapPlan, spotsInDest, selectedDest]);
+  // Pins due to show their photo (spotFadeWaitingRef, see nativeSpotPins) start their fade, batched (SPOT_READY_BATCH_MS).
+  useEffect(() => {
+    if (spotFadeWaitingRef.current.size && !spotReadyTimerRef.current) spotReadyTimerRef.current = pumpedTimeout(runSpotFade, SPOT_READY_BATCH_MS);
+  }, [nativeSpotPins, runSpotFade]);
   // Another registration pass a frame later while photo pins are still waiting for their images (see nativeSpotPins).
   useEffect(() => {
     if (spotImagesPendingRef.current <= 0) return;
@@ -3500,6 +3516,7 @@ const destItems = useMemo((): DestItem[] =>
   }, [region, handoffZoom, spotPhotoPlan]);
   useEffect(() => () => {
     spotReadyTimerRef.current?.();
+    spotReadyTickRef.current?.();
     spotPrefetchTimerRef.current?.();
   }, []);
   // Only the selected spot is a MarkerView now.
