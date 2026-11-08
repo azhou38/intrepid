@@ -3083,7 +3083,6 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Lake Sambell",
   "Old Beechworth Gaol",
   "Apex Park",
-  "Meeting of the Waters",
   "Bastion Point",
   "KidsTown",
   "Errinundra National Park",
