@@ -1,0 +1,42 @@
+{
+ "dest:lianyungang:header": {
+  "candidates": [
+   {
+    "file": "https://news.cgtn.com/news/7959544e3349544f7941544f35496a4d3545444f31457a6333566d54/img/defd43d35705446492ea3f8d21e5f251/defd43d35705446492ea3f8d21e5f251.jpg",
+    "n": 1,
+    "verdict": "fail",
+    "reason": "aerial of a snowy waterfront, only 1024 px, identity from article title only"
+   }
+  ],
+  "choice": "none: aerial of a snowy waterfront, only 1024 px, identity from article title only",
+  "hero_crop": null
+ },
+ "dest:lianyungang:why2": {
+  "candidates": [
+   {
+    "file": "https://travellutionmedia.com/explorejiangsu/wp-content/uploads/2022/04/7d908619gy1gwxg4k1yqwj20u00gvgnz.jpg",
+    "n": 1,
+    "verdict": "fail",
+    "reason": "aerial of a cove, does not show the sea dyke the reason names, 1000 px"
+   }
+  ],
+  "choice": "none: aerial of a cove, does not show the sea dyke the reason names, 1000 px",
+  "hero_crop": null
+ },
+ "spot:lianyungang-6": {
+  "candidates": [
+   {
+    "file": "https://govt.chinadaily.com.cn/images/202506/18/685251f1498eec7e133b4ec5.jpeg",
+    "n": 1,
+    "verdict": "pass",
+    "reason": "Qinshan Island silhouetted with its sand causeway at sunrise (China Daily article for Qinshan Island); real photo, dark on purpose (sunrise); 1024 px; permission not confirmed"
+   }
+  ],
+  "choice": "https://govt.chinadaily.com.cn/images/202506/18/685251f1498eec7e133b4ec5.jpeg",
+  "hero_crop": {
+   "x": 0.6,
+   "y": 0.45,
+   "zoom": 1.5
+  }
+ }
+}

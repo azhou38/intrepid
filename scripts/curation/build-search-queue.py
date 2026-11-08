@@ -75,7 +75,7 @@ for r in regions:
                 # Commons first: this slot never had its Google search, so it gets that (cheap) before a searcher agent.
                 if slot in skipped: regather.setdefault(g, []).append(slot); continue
                 queue.append({'slot': slot, 'kind': 'reject', 'region': r, 'destination': g, 'failed_check': v.get('failed_check'),
-                              'why': (v.get('candidates') or [{}])[0].get('reason') if v.get('candidates') else None})
+                              'why': ((lambda c: c.get('reason') if isinstance(c, dict) else c)((v.get('candidates') or [{}])[0])) if v.get('candidates') else None})
     fin = f'curation/{BRANCH}/quill/{r}/final.json'
     pl = f'curation/{BRANCH}/region-{r}/placement.json'
     if os.path.exists(fin) and os.path.exists(pl):
