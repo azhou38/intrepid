@@ -61,9 +61,6 @@ interface Props {
   pillHandoverSV?: SharedValue<number>;
   // How far the sheet is toward full screen (0 at half-screen or below, 1 at full), for MapScreen's down-arrow / X crossfade.
   pillFullSV?: SharedValue<number>;
-  // While true, some other UI owns the pill's position instead — this sheet's writes to
-  // pillOffsetSV are suppressed so the two don't fight.
-  pillOffsetLockedSV?: SharedValue<boolean>;
   // Fires on every snap transition — lets the caller know when this sheet is collapsed vs.
   // full-screen. Identical to DestinationSheet's.
   onSnapStateChange?: (state: CountrySnapState) => void;
@@ -229,7 +226,7 @@ function DestinationsPanel({
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
   cluster, onClose, onSelectDestination, onExpand, onCollapse,
-  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, slideInMs, leaving, onExited,
+  pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, onSnapStateChange, initialTab, initialSnap, collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, slideInMs, leaving, onExited,
 }: Props) {
   // Collapsed (bottom-screen carousel) is the default view whenever a country is selected —
   // callers only pass initialSnap explicitly for the other case (e.g. the destination sheet's
@@ -632,7 +629,7 @@ function CountrySheet({
     ([value, scrollYVal]) => {
       if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
       if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, collapsedYAnim.value], [1, 0], Extrapolation.CLAMP);
-      if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
+      if (!pillOffsetSV) return;
       const PILL_H = 36;
       const SCREEN_H = H - BOTTOM_TAB_H;
       // While full-screen, the pill tracks scroll 1:1, sliding up and off the top edge as

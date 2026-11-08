@@ -958,7 +958,7 @@ function SpotSheet({
     if (leaving) {
       closingRef.current = true;
       hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-        if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
+        if (finished) { handOverPills(); runOnJS(setGone)(true); }
       });
       return;
     }
@@ -968,12 +968,19 @@ function SpotSheet({
     transitionToRef.current(toPeek ? 'peek' : 'collapsed', 'mount');
   }, []);
 
+  // A leaving sheet that has slid off is hidden in a commit of its own before the parent unmounts it. The slide runs on the UI
+  // thread only (the static flag FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS is off, so React never learns where it went), and
+  // a commit touching the sheet could redraw it where React last knew it: halfway through its slide-in, near the bottom
+  // strip. That is what showed for a moment after the slide off, before the destination sheet came up.
+  const [gone, setGone] = useState(false);
+  useEffect(() => { if (gone) onExited?.(); }, [gone]);
+
   // Turned into the outgoing sheet while mounted: the same slide off the bottom an outgoing copy does on mount.
   useEffect(() => {
     if (!leaveNow) return;
     closingRef.current = true;
     hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, finished => {
-      if (finished) { handOverPills(); if (onExited) runOnJS(onExited)(); }
+      if (finished) { handOverPills(); runOnJS(setGone)(true); }
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [leaveNow]);
@@ -1340,7 +1347,7 @@ isVisited ? (
   );
 
   return (
-    <View style={st.backdrop} pointerEvents="box-none">
+    <View style={[st.backdrop, gone && st.gone]} pointerEvents="box-none">
       <Reanimated.View pointerEvents="none"
         style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(0,0,0,0.45)' }, backdropStyle]} />
       <View
@@ -1833,6 +1840,7 @@ const st = StyleSheet.create({
   // on the JS thread every frame; `transform` is GPU-composited and (critically) natively
   // drivable, which is what let the settle-spring animations below switch to
   // `useNativeDriver: true` — the actual fix for this sheet's drag/settle jank.
+  gone: { display: 'none' },
   sheet: {
     position: 'absolute', left: 0, right: 0, top: 0, height: H, overflow: 'hidden',
     borderTopLeftRadius: 24, borderTopRightRadius: 24, backgroundColor: '#F9FAFB',
@@ -2083,4 +2091,11 @@ const st = StyleSheet.create({
 
 // Memoized: the map screen re-renders continuously while the camera moves, and a re-render of the sheet is a React
 // commit on its animated views for no reason. With stable props it now renders only when its own inputs change.
-export default React.memo(SpotSheet);
+// A sheet leaving in place (leaveNow) takes no new props at all: a render of it after its slide off, from the parent
+// mounting the sheet that replaces it, redrew it where React last knew it was (the slide runs on the UI thread only, see
+// `gone`), and the carousel showed again as a strip at the bottom while the destination sheet came up.
+export default React.memo(SpotSheet, (prev, next) => {
+  if (prev.leaveNow && next.leaveNow) return true;
+  const keys = Object.keys(next) as (keyof Props)[];
+  return keys.length === Object.keys(prev).length && keys.every(k => Object.is(prev[k], next[k]));
+});
