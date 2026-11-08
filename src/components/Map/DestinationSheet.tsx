@@ -626,9 +626,6 @@ interface Props {
   pillHandoverSV?: SharedValue<number>;
   // How far this sheet is toward full screen (0 at half-screen or below, 1 at full), for the "← Country" pill's fade.
   pillFullSV?: SharedValue<number>;
-  // While true, some other UI (the spot carousel) owns the pill's position instead — this
-  // sheet's writes to pillOffsetSV are suppressed so the two don't fight.
-  pillOffsetLockedSV?: SharedValue<boolean>;
   // Mount-time only — lets a caller open straight to a specific tab/snap point (e.g. the
   // spot carousel's "list view" button reopening this sheet full-screen on the Spots tab).
   // Ignored on subsequent destination switches, which always reset to the defaults below.
@@ -676,7 +673,7 @@ interface Props {
 
 function DestinationSheet({
   destination, onClose, onExpand, onCollapse, onSelectSpot, onCollapsedTopChange,
-  onSnapStateChange, pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, pillOffsetLockedSV, initialTab, initialSnap,
+  onSnapStateChange, pillOffsetSV, pillOwnerSV, pillOwnerId, pillNextOwnerSV, pillHandoverSV, pillFullSV, initialTab, initialSnap,
   collapseSignal, peekSignal, peekSV, exitSignal, exitSV, onExitDone, mapGestureAtSV, isMapInteracting, isPressBlocked, enterFromPrevious, leaving, leaveNow, leaveEarlySV, onExited,
 }: Props) {
   const insets            = useSafeAreaInsets();
@@ -1098,7 +1095,7 @@ function DestinationSheet({
       if (pillOwnerSV && pillOwnerSV.value !== pillOwnerId) return;   // another sheet owns the pills (see pillOwnerSV)
       // The "← Country" pill fades out over the first part of the slide up to full screen (MapScreen's upPillBackStyle).
       if (pillFullSV) pillFullSV.value = interpolate(value, [FULL_POS, collapsedYAnim.value], [1, 0], Extrapolation.CLAMP);
-      if (!pillOffsetSV || pillOffsetLockedSV?.value) return;
+      if (!pillOffsetSV) return;
       // Approximate rendered height of the back pill itself (MapScreen's st.upPill) — used
       // to convert its target *top* position (matching where the hero's close button used
       // to sit) into the *bottom* offset the pill wrapper actually animates.

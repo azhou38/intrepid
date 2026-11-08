@@ -1777,9 +1777,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // UI thread by the sheet beside pillOffsetSV. The "← Parent" pill fades with it: out as the sheet slides up to full
   // screen, back in as it slides down, instead of appearing and disappearing when the snap state flips.
   const upPillFullSV = useSharedValue(0);
-  // Guards against DestinationSheet's continuous writes fighting the spot-carousel effect's
-  // own target while a spot is selected on top of an still-mounted destination sheet.
-  const spotOwnsPillSV = useSharedValue(false);
   // The back/close pill is shown ONLY while the open sheet is in its bottom-screen (peek)
   // state — at half/full screen the sheet itself names what's selected, so the pill is
   // redundant there. Declared here rather than next to setSheetSnapState (which writes it)
@@ -4700,14 +4697,6 @@ const destItems = useMemo((): DestItem[] =>
     }
   }, [countryInitialTab, countryInitialSnap]);
 
-  // Tells DestinationSheet's own continuous writer (still mounted underneath, possibly still
-  // moving) to back off while SpotSheet owns the pill's position instead — SpotSheet now
-  // writes to upPillBottomSV directly and continuously itself (see its own pillOffsetSV prop
-  // below), matching DestinationSheet's own lockstep-with-the-drag behavior.
-  useEffect(() => {
-    spotOwnsPillSV.value = !!selectedSpot;
-  }, [selectedSpot]);
-
 
   const handleZoomToCountry = useCallback(() => {
     if (!crumb) return;
@@ -6799,7 +6788,6 @@ const destItems = useMemo((): DestItem[] =>
           pillHandoverSV={pillHandoverSV}
           pillOwnerId={PILL_OWNER.country}
           pillFullSV={upPillFullSV}
-          pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           peekSV={peekSheetSV}
@@ -6843,7 +6831,6 @@ const destItems = useMemo((): DestItem[] =>
           pillOwnerId={PILL_OWNER.dest}
           leaveEarlySV={destLeaveEarlySV}
           pillFullSV={upPillFullSV}
-          pillOffsetLockedSV={spotOwnsPillSV}
           collapseSignal={collapseSheetSignal}
           peekSignal={peekSheetSignal}
           peekSV={peekSheetSV}
