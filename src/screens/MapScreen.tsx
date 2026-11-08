@@ -1,7 +1,7 @@
 import React, { memo, useRef, useState, useMemo, useCallback, useEffect, useLayoutEffect } from 'react';
 import { flagSource } from '../utils/flags';
 import { unstable_batchedUpdates, View, StyleSheet, Pressable, Text, Dimensions, Animated, Platform, TextInput, Image, Easing as RNEasing, Keyboard, ScrollView } from 'react-native';
-import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, interpolate as rInterpolate, Extrapolation as RExtrapolation } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, runOnJS, withTiming, Easing, interpolate as rInterpolate, Extrapolation as RExtrapolation, type SharedValue } from 'react-native-reanimated';
 import Svg, { Rect, Path, Circle } from 'react-native-svg';
 import { sheetPose } from '../components/Map/sheetPose';
 import { PILL_OWNER, pillOwnerFor, navTargetStatus, sameNavSel, nearestLng, type NavSel } from '../utils/navTransitions';
@@ -1784,22 +1784,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // in its temporal dead zone when the worklet closes over it, which surfaced as
   // "Cannot read property 'value' of undefined".
   const pillPeekSV = useSharedValue(0);
-  // A spot's "← Destination" pill shows only at peek, where the carousel and its "‹ Destination" title are out of sight:
-  // it fades in with pillPeekSV, and takes taps only while peeking (this state), so the invisible pill never blocks the map.
-  // 1 while that rule applies (a destination's spot open). One style always carries both fades: a second animated style
-  // swapped in and out left its opacity of 0 stuck on the pill after it was removed, hiding the "← Country" pill when a
-  // spot went back to its destination.
-  const spotBackPeekSV = useSharedValue(0);
-  // Which mounted sheet positions the pills (see pillOwnerFor below). Declared here because upPillBackPeekStyle reads it.
+  // Which mounted sheet positions the pills (see pillOwnerFor below), and whose "← Parent" label shows (BackPillLabel).
   const pillOwnerSV = useSharedValue<number>(PILL_OWNER.none);
-  // A country sheet has no "← Parent", so the label is hidden the moment the pills pass to one: on "← Country" the country
-  // sheet takes them over while the destination is still selected (its selection change lands a render later), which
-  // showed a stale "← Country" over the country sheet sliding up.
-  const upPillBackPeekStyle = useAnimatedStyle(() => ({
-    opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
-      * (spotBackPeekSV.value && pillOwnerSV.value === PILL_OWNER.spot ? pillPeekSV.value : 1)
-      * (pillOwnerSV.value === PILL_OWNER.country ? 0 : 1),
-  }));
   // The full-screen down arrow and the half-screen X share one button and crossfade with the sheet's position as it is
   // dragged, instead of swapping when the snap settles (mapState flips only after the sheet comes to rest).
   const upPillArrowStyle = useAnimatedStyle(() => ({ opacity: rInterpolate(upPillFullSV.value, [0.35, 0.65], [0, 1], RExtrapolation.CLAMP) }));
@@ -6080,16 +6066,19 @@ const destItems = useMemo((): DestItem[] =>
     }
   }, [pillOwner, leavingNow]);
   const leavingSpot = spotLeavesInPlace ? leavingSheetRef.current! : null;
-  // The "← Parent" label belongs to the sheet holding the pills: during a swap the outgoing one. Selecting a spot from a
-  // destination's sheet keeps "← Country" on that sheet as it slides off, instead of switching to "← Destination" at the tap.
-  const pillSheet = leavingSheetRef.current;
-  const backName = pillSheet
-    ? (pillSheet.kind === 'spot' ? pillSheet.dest?.name ?? null : pillSheet.kind === 'dest' ? pillSheet.dest?.country ?? null : null)
-    : selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
-  // The spot's peek-only "← Destination" rule for the spot sheet that is mounted (live, or leaving in place).
-  // upPillBackPeekStyle applies it only while that sheet holds the pills, so it never hides the label on the sheet leaving.
-  const spotSlotBackPeek = liveSpotSheet ? spotBackPeekOn : !!leavingSpot?.dest && !leavingSpot.nearLabel;
-  useLayoutEffect(() => { spotBackPeekSV.value = spotSlotBackPeek ? 1 : 0; }, [spotSlotBackPeek, spotBackPeekSV]);
+  // The "← Parent" labels: one for the live sheet and, during a swap, one for the sheet sliding off. Each shows only while
+  // its sheet holds the pills (BackPillLabel), so the label switches on the UI thread the frame the pills pass over,
+  // never a render early or late: selecting a spot keeps "← Country" on the destination sheet as it slides off, and back
+  // to the destination its "← Country" shows only once the spot sheet has gone. A country sheet has no "← Parent".
+  const liveBack = sheetKind === 'spot' ? { name: selectedDest?.name ?? null, owner: PILL_OWNER.spot, peekOnly: spotBackPeekOn }
+    : sheetKind === 'dest' && selectedDest ? { name: selectedDest.country, owner: PILL_OWNER.dest, peekOnly: false }
+    : null;
+  const leavingSheet = leavingSheetRef.current;
+  const leavingBack = !leavingSheet ? null : {
+    name: leavingSheet.kind === 'spot' ? leavingSheet.dest?.name ?? null : leavingSheet.kind === 'dest' ? leavingSheet.dest?.country ?? null : null,
+    owner: destLeavesInPlace ? PILL_OWNER.dest : spotLeavesInPlace ? PILL_OWNER.spot : PILL_OWNER.leavingCopy,
+    peekOnly: leavingSheet.kind === 'spot' && !!leavingSheet.dest && !leavingSheet.nearLabel,
+  };
 
 
   // Stable identities for the destination sheet's callback props (see useStableCallback).
@@ -6979,9 +6968,8 @@ const destItems = useMemo((): DestItem[] =>
               // (upPillBackPeekStyle), rather than popping when the snap state flips.
               const full = mapState === 'sheet';
               // A spot's carousel title is its destination's name and goes back to it (SpotSheet onTitlePress). At peek the
-              // carousel is out of sight, so the pill then fades in to name the destination (spotBackPeek). A carousel titled by
+              // carousel is out of sight, so the pill then fades in to name the destination (peekOnly). A carousel titled by
               // something else (a standalone spot's district) keeps the pill throughout.
-              const spotBackPeek = spotBackPeekOn;
               return (
                 <View style={styles.upPillRow}>
                   <Pressable
@@ -6998,17 +6986,35 @@ const destItems = useMemo((): DestItem[] =>
                       </Reanimated.View>
                     </Reanimated.View>
                   </Pressable>
-                  {!!backName && (
-                    <Reanimated.View
-                      style={upPillBackPeekStyle}
-                      pointerEvents={full || (spotBackPeek && !sheetPeeking) ? 'none' : 'auto'}
-                    >
-                      <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={handleUpNav} hitSlop={6}>
-                        <Text style={styles.upPillArrow}>←</Text>
-                        <Text style={styles.upPillTxt} numberOfLines={1}>{backName}</Text>
-                      </Pressable>
-                    </Reanimated.View>
-                  )}
+                  <View>
+                    {!!liveBack?.name && (
+                      <BackPillLabel
+                        key={`live-${liveBack.owner}-${liveBack.peekOnly}-${liveBack.name}`}
+                        name={liveBack.name}
+                        ownerId={liveBack.owner}
+                        peekOnly={liveBack.peekOnly}
+                        ownerSV={pillOwnerSV}
+                        fullSV={upPillFullSV}
+                        peekSV={pillPeekSV}
+                        onPress={handleUpNav}
+                        pointerEvents={full || (liveBack.peekOnly && !sheetPeeking) ? 'none' : 'auto'}
+                      />
+                    )}
+                    {!!leavingBack?.name && (
+                      <View pointerEvents="none" style={styles.upPillLeavingLabel}>
+                        <BackPillLabel
+                          key={`leaving-${leavingSheet!.seq}`}
+                          name={leavingBack.name}
+                          ownerId={leavingBack.owner}
+                          peekOnly={leavingBack.peekOnly}
+                          ownerSV={pillOwnerSV}
+                          fullSV={upPillFullSV}
+                          peekSV={pillPeekSV}
+                          pointerEvents="none"
+                        />
+                      </View>
+                    )}
+                  </View>
                 </View>
               );
             })()}
@@ -7020,6 +7026,31 @@ const destItems = useMemo((): DestItem[] =>
           Profile tabs, where this screen ends. (It was once hidden, but by the sheets drawn over it, not the tab bar.) */}
       <VisitToastHost bottom={8} />
     </View>
+  );
+}
+
+// One "← Parent" label beside the X, belonging to one sheet (ownerId): shown only while that sheet holds the pills,
+// faded out as the sheet slides up to full screen, and for a spot of a destination (peekOnly) shown only at peek. Keyed by
+// its content where it is rendered, so any change mounts a new one: an animated style's first value is computed in the
+// render that mounts it, so the label's text and its visibility always arrive in the same frame. (A style's later inputs
+// reach the screen only after the commit, which let a new label show for a frame or two before it was hidden.)
+function BackPillLabel({ name, ownerId, peekOnly, ownerSV, fullSV, peekSV, onPress, pointerEvents }: {
+  name: string; ownerId: number; peekOnly: boolean;
+  ownerSV: SharedValue<number>; fullSV: SharedValue<number>; peekSV: SharedValue<number>;
+  onPress?: () => void; pointerEvents: 'auto' | 'none';
+}) {
+  const style = useAnimatedStyle(() => ({
+    opacity: (ownerSV.value === ownerId ? 1 : 0)
+      * rInterpolate(fullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
+      * (peekOnly ? peekSV.value : 1),
+  }));
+  return (
+    <Reanimated.View style={style} pointerEvents={pointerEvents}>
+      <Pressable style={[styles.upPill, styles.upPillFixed]} onPress={onPress} disabled={!onPress} hitSlop={6}>
+        <Text style={styles.upPillArrow}>←</Text>
+        <Text style={styles.upPillTxt} numberOfLines={1}>{name}</Text>
+      </Pressable>
+    </Reanimated.View>
   );
 }
 
@@ -7284,6 +7315,8 @@ const styles = StyleSheet.create({
   // Full-screen's collapse arrow — a solid white circle behind the icon (no shadow, unlike the regular pill).
   // The back pill and the X side by side at half-screen and peek, both 36 pt tall.
   upPillRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  // The outgoing sheet's "← Parent" label, over the live one's place beside the X (only one ever shows: BackPillLabel).
+  upPillLeavingLabel: { position: 'absolute', left: 0, top: 0 },
   upPillFixed: { height: 36, paddingVertical: 0 },
   upPillRound: { width: 36, paddingHorizontal: 0, justifyContent: 'center' },
   upPillIcon: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
