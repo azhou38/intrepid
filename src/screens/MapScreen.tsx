@@ -116,7 +116,7 @@ import { VisitToastHost } from '../components/Map/VisitToast';
 import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
 import SpotSheet from '../components/Map/SpotSheet';
-import CountrySheet from '../components/Map/CountrySheet';
+import CountrySheet, { COUNTRY_MOUNT_SLIDE_DELAY_MS } from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
 import { pumpedTimeout, pumpTimeouts } from '../utils/pumpedTimeout';
@@ -1309,6 +1309,7 @@ const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 28
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const DEST_TAP_HANDOFF_LEAD = 0.5;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
 const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
+const COUNTRY_BACK_SLIDE_MS = 400;   // "← Country": the country sheet's slide-in, a little slower than the usual 280 ms
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const SPOT_PHOTO_PIN_STYLE = { iconImage: ['get', 'img'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: false, iconPadding: 2, symbolZOrder: 'source' };
 const SPOT_MINI_PIN_STYLE = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
@@ -4762,7 +4763,7 @@ const destItems = useMemo((): DestItem[] =>
     navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
     setSheetOverride({ cluster });
     fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
-    // The selection change waits until the country sheet has slid up (SHEET_SLIDE_IN_MS): run in the next task, its render
+    // The selection change waits until the country sheet has slid up (its delay and COUNTRY_BACK_SLIDE_MS): its render
     // (~150 ms, the whole screen) landed in the middle of the slide and stuttered it. The sheet and the pins already show
     // the country (sheetOverride, navTarget), so nothing on screen waits for it but the country's border highlight.
     setTimeout(() => {
@@ -4771,7 +4772,7 @@ const destItems = useMemo((): DestItem[] =>
       if (sameNavSel(from, { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null })) {
         handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
       }
-    }, SHEET_SLIDE_IN_MS);
+    }, COUNTRY_MOUNT_SLIDE_DELAY_MS + COUNTRY_BACK_SLIDE_MS + 20);
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
@@ -6707,6 +6708,7 @@ const destItems = useMemo((): DestItem[] =>
         <CountrySheet
           key={`country-${sheetSwapKey}`}
           cluster={effCountry}
+          slideInMs={sheetOverride ? COUNTRY_BACK_SLIDE_MS : undefined}
           onClose={handleCloseCountry}
           onSelectDestination={handleMarkerPress}
           onExpand={handleSheetExpand}
