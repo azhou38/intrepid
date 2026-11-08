@@ -1328,6 +1328,8 @@ const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin image
 const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
 const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
 const COUNTRY_BACK_SLIDE_MS = 400;   // "← Country": the country sheet's slide-in, a little slower than the usual 280 ms
+const CAMERA_AFTER_PINS_MIN_MS = 80;    // see runCameraAfterPins: an idle sooner than this predates the new pin data
+const CAMERA_AFTER_PINS_MAX_MS = 400;   // its safety net: the camera goes anyway
 const PLAN_SPOT_DELAY_MS = 600;   // see destPhotoPlan: after the sheet's slide-in
 const SPOT_PHOTO_PIN_STYLE = { iconImage: ['get', 'img'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: false, iconPadding: 2, symbolZOrder: 'source' };
 const SPOT_MINI_PIN_STYLE = { iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true, iconPadding: 0, symbolSortKey: ['get', 'sort'] as any };
@@ -3859,6 +3861,23 @@ const destItems = useMemo((): DestItem[] =>
   // switched off, and closing, which moves the camera after the sheet is gone, was always smooth). handleMarkerPress and
   // handleSpotPress set the hold; the camera helpers below wait it out.
   const cameraHoldUntilRef = useRef(0);
+  // "← Country": the camera waits until the map has taken the country's destination pins (planned for the country view at
+  // the tap) before zooming out. The pin data changes at the tap, but Mapbox applies a new GeoJSON in the background, and
+  // with the camera already moving it went on drawing the old pins for about half a second: destinations that are not
+  // photo pins in the country view (Lake Tekapo, Oamaru) showed as the zoom-out passed them, then vanished. The map's next
+  // idle comes once the new data is drawn; the timer is a safety net.
+  const cameraAfterPinsRef = useRef<{ move: () => void; since: number; timer: ReturnType<typeof setTimeout> } | null>(null);
+  const fireCameraAfterPins = useCallback(() => {
+    const job = cameraAfterPinsRef.current;
+    if (!job) return;
+    cameraAfterPinsRef.current = null;
+    clearTimeout(job.timer);
+    job.move();
+  }, []);
+  const runCameraAfterPins = useCallback((move: () => void) => {
+    if (cameraAfterPinsRef.current) clearTimeout(cameraAfterPinsRef.current.timer);
+    cameraAfterPinsRef.current = { move, since: Date.now(), timer: setTimeout(fireCameraAfterPins, CAMERA_AFTER_PINS_MAX_MS) };
+  }, [fireCameraAfterPins]);
   // Runs once, right after the next commit (see handleCloseToMap: an X close from full-screen waits for its pin plan).
   const afterCommitRef = useRef<(() => void) | null>(null);
   // A back tap ("← Country", "← Destination") swaps sheets in one heavy commit; its camera move waits for that commit and
@@ -4792,7 +4811,8 @@ const destItems = useMemo((): DestItem[] =>
     // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan).
     const target = countryTargetZoom(cluster);
     if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
-    // The camera starts now, with the sheet's slide (leaveEarlySV above), as an X close's does (startXCloseCamera), not
+    // The camera starts with the sheet's slide (leaveEarlySV above; just after, once the map has taken the new pins: see
+    // runCameraAfterPins), as an X close's does (startXCloseCamera), not
     // once the swap's render commits: that render (the country sheet mounting) took ~0.4 s on the device, a still map
     // between the sheet leaving and the zoom. While it renders the camera zooms out over the old plan's pins, which every
     // pin layer gates natively by zoom (constant min zooms, see spotGatesOff / planTier), so they leave as the zoom passes
@@ -4808,7 +4828,7 @@ const destItems = useMemo((): DestItem[] =>
     const from: NavSel = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
     navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
     setSheetOverride({ cluster });
-    fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
+    runCameraAfterPins(() => fitCountryDefaultView(cluster, 'flyTo', 'topHalf'));
     // The selection change waits until the country sheet has slid up (its delay and COUNTRY_BACK_SLIDE_MS): its render
     // (~150 ms, the whole screen) landed in the middle of the slide and stuttered it. The sheet and the pins already show
     // the country (sheetOverride, navTarget), so nothing on screen waits for it but the country's border highlight.
@@ -4819,7 +4839,7 @@ const destItems = useMemo((): DestItem[] =>
         handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
       }
     }, COUNTRY_MOUNT_SLIDE_DELAY_MS + COUNTRY_BACK_SLIDE_MS + 20);
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView]);
+  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView, runCameraAfterPins]);
 
   // Destination close/back, provenance-routed: drilled down from the country → back up to it;
   // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
@@ -5527,6 +5547,8 @@ const destItems = useMemo((): DestItem[] =>
     wasMapGestureActiveRef.current = false;
     if (regionHoldFlushRef.current) { clearTimeout(regionHoldFlushRef.current); regionHoldFlushRef.current = null; }
     releaseSheetsAfterCamera();
+    // The new pin data is drawn: a camera move waiting for it starts (see runCameraAfterPins).
+    if (cameraAfterPinsRef.current && Date.now() - cameraAfterPinsRef.current.since >= CAMERA_AFTER_PINS_MIN_MS) fireCameraAfterPins();
     // A destination tap's flight has landed (not an idle from before it got going): the live zoom takes over.
     if (destTapPlanRef.current && state.properties.zoom >= destTapPlanRef.current.target - ZOOM_EPSILON) endDestTapPlan();
     // A close's zoom-out has settled: let the pin/pill planning drop the old selection. Not a landed plan, which stands
