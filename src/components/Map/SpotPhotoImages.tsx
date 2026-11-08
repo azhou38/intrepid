@@ -23,6 +23,9 @@ const TAIL = 10;
 const RIM = 'rgba(0,0,0,0.22)';
 const VISITED_COLOR = '#10B981';
 const PLACEHOLDER = '#E5E7EB';
+// The bubble of a spot with no photo at all (NO_PHOTO): one colour for every spot, rather than its category's tint, so the
+// pins of photo-less spots read as one kind on the map. A dark slate, distinct from the light grey of a photo still loading.
+const NO_PHOTO_FILL = '#475569';
 const PAD = 2;
 const R = SPOT_PHOTO_BUBBLE / 2;
 const TIP_D = R + TAIL;
@@ -74,7 +77,7 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: S
         </Svg>
         <View collapsable={false} style={[st.bubble, { borderColor: ring }]}>
           <View collapsable={false} style={st.clip}>
-            {noPhoto && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} />}
+            {noPhoto && <PhotoPlaceholder icon={spot.icon} category={spot.category} size={SPOT_PHOTO_BUBBLE - 4} style={{ backgroundColor: NO_PHOTO_FILL }} />}
             {url && <PinPhoto instant subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: url }} style={StyleSheet.absoluteFill as any} onLoad={() => { loadedRef.current = true; snap(); }} onShown={() => { if (loadedRef.current) snapReady(); }} resizeMode="cover" />}
           </View>
         </View>
