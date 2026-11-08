@@ -1797,7 +1797,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // showed a stale "← Country" over the country sheet sliding up.
   const upPillBackPeekStyle = useAnimatedStyle(() => ({
     opacity: rInterpolate(upPillFullSV.value, [0, 0.6], [1, 0], RExtrapolation.CLAMP)
-      * (spotBackPeekSV.value ? pillPeekSV.value : 1)
+      * (spotBackPeekSV.value && pillOwnerSV.value === PILL_OWNER.spot ? pillPeekSV.value : 1)
       * (pillOwnerSV.value === PILL_OWNER.country ? 0 : 1),
   }));
   // The full-screen down arrow and the half-screen X share one button and crossfade with the sheet's position as it is
@@ -3118,7 +3118,6 @@ const destItems = useMemo((): DestItem[] =>
   else nearCtxRef.current = selectedSpot.destinationId ? null : nearContextFor(selectedSpot);
   const nearCtx = nearCtxRef.current;
   const spotBackPeekOn = !!selectedSpot && !!selectedDest && !nearCtx;
-  useEffect(() => { spotBackPeekSV.value = spotBackPeekOn ? 1 : 0; }, [spotBackPeekOn, spotBackPeekSV]);
   const selectedSpotDestId = selectedSpot?.destinationId;
   const carouselSpots = useMemo(
     () => nearCtx ? nearCtx.spots
@@ -6081,6 +6080,16 @@ const destItems = useMemo((): DestItem[] =>
     }
   }, [pillOwner, leavingNow]);
   const leavingSpot = spotLeavesInPlace ? leavingSheetRef.current! : null;
+  // The "← Parent" label belongs to the sheet holding the pills: during a swap the outgoing one. Selecting a spot from a
+  // destination's sheet keeps "← Country" on that sheet as it slides off, instead of switching to "← Destination" at the tap.
+  const pillSheet = leavingSheetRef.current;
+  const backName = pillSheet
+    ? (pillSheet.kind === 'spot' ? pillSheet.dest?.name ?? null : pillSheet.kind === 'dest' ? pillSheet.dest?.country ?? null : null)
+    : selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
+  // The spot's peek-only "← Destination" rule for the spot sheet that is mounted (live, or leaving in place).
+  // upPillBackPeekStyle applies it only while that sheet holds the pills, so it never hides the label on the sheet leaving.
+  const spotSlotBackPeek = liveSpotSheet ? spotBackPeekOn : !!leavingSpot?.dest && !leavingSpot.nearLabel;
+  useLayoutEffect(() => { spotBackPeekSV.value = spotSlotBackPeek ? 1 : 0; }, [spotSlotBackPeek, spotBackPeekSV]);
 
 
   // Stable identities for the destination sheet's callback props (see useStableCallback).
@@ -6973,7 +6982,6 @@ const destItems = useMemo((): DestItem[] =>
               // carousel is out of sight, so the pill then fades in to name the destination (spotBackPeek). A carousel titled by
               // something else (a standalone spot's district) keeps the pill throughout.
               const spotBackPeek = spotBackPeekOn;
-              const backName = selectedSpot ? (selectedDest?.name ?? null) : selectedDest ? selectedDest.country : null;
               return (
                 <View style={styles.upPillRow}>
                   <Pressable
