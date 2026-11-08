@@ -866,6 +866,21 @@ const destTierStyle = (tier: string, on: boolean, snap = false) => {
   }
   return st;
 };
+// A tapped destination flying in (destTapPlan): its pin fades out on the camera's own zoom, evaluated every frame, across
+// DEST_TAP_FADE_FROM..DEST_TAP_FADE_TO levels short of its default view, so it fades during the zoom-in itself rather than
+// whenever the JS side next sees the flight's zoom. The switch to its spot pins (DEST_TAP_HANDOFF_LEAD) falls inside that.
+const DEST_TAP_FADE_FROM = 1.4;
+const DEST_TAP_FADE_TO = 0.6;
+const destTapFadeStyleCache = new Map<number, any>();
+const destTapFadeStyle = (level: number) => {
+  let st = destTapFadeStyleCache.get(level);
+  if (!st) {
+    const shown = ['interpolate', ['linear'], ['zoom'], level - DEST_TAP_FADE_FROM, 1, level - DEST_TAP_FADE_TO, 0];
+    st = { ...DEST_SYMBOL_STYLE, iconOpacity: shown, textOpacity: shown, iconOpacityTransition: { duration: 0, delay: 0 }, textOpacityTransition: { duration: 0, delay: 0 } };
+    destTapFadeStyleCache.set(level, st);
+  }
+  return st;
+};
 
 // How many zoom levels out from a destination's settled home view counts as "zoomed out" for
 // its return arrow — log2(1.6), i.e. the same 1.6× visible-span threshold this used to express
@@ -6348,7 +6363,9 @@ const destItems = useMemo((): DestItem[] =>
                   filter={['all', ['==', ['get', 'ho'], 1], ['==', ['get', 'hos'], k]] as any}
                   // Its destination's tier gate is in its opacity, as for the tier layers above.
                   // An empty slot keeps its last state; a destination joins it only once it rests in that destination's state.
-                  style={destTierStyle(l.tier, l.on, l.snap)}
+                  style={l.h && l.on && destTapPlan?.destId === l.h.dest.id && DEST_ZOOM_LEVEL_BY_ID[l.h.dest.id] !== undefined
+                    ? destTapFadeStyle(DEST_ZOOM_LEVEL_BY_ID[l.h.dest.id])
+                    : destTierStyle(l.tier, l.on, l.snap)}
                 />
               );
             })]}
