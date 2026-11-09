@@ -1220,10 +1220,12 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
   // with flex: the sort button shrinks far more readily than the filters (sortDrop), with a minimum width measured from an
   // invisible copy of it showing the short form.
   const [sortMinW, setSortMinW] = useState(0);
+  // With the destination filter beside it, a chosen country shows as its flag alone (no name), leaving the room to that.
+  const flagOnly = !!chosen && showDest;
   const countryInner = (
     <>
-      {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
-      <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All countries'}</Text>
+      {!!chosen && <CircleFlag countryCode={chosen.code} size={flagOnly ? 14 : 12} />}
+      {!flagOnly && <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All countries'}</Text>}
       <Text style={[styles.dropCount, !!chosen && styles.filterTxtOn]}>{matches}</Text>
       <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
     </>
@@ -1249,7 +1251,8 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
           {sortInner(sortOpt.short ? `${sortOpt.short}…` : sortOpt.label)}
         </View>
         {countries.length > 1 && (
-          <Pressable ref={countryRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={() => openMenu('country')}>
+          <Pressable ref={countryRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={() => openMenu('country')}
+            accessibilityLabel={chosen ? chosen.name : 'All countries'}>
             {countryInner}
           </Pressable>
         )}
