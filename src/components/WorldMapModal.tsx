@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { Modal, View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
+import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import { X } from 'lucide-react-native';
@@ -37,8 +38,8 @@ function loadNoLabelsStyle(): Promise<string | null> {
   return noLabelsStyle;
 }
 
-// The title's white outline: copies of it this far off in each direction.
-const HEAD_OUTLINE: [number, number][] = [[-1.5, 0], [1.5, 0], [0, -1.5], [0, 1.5], [-1, -1], [1, -1], [-1, 1], [1, 1]];
+// How far below the safe area the white fade at the top of the map reaches (past the title and level bar).
+const TOP_FADE_H = 150;
 
 // The level switcher's pill slide.
 const LEVEL_SLIDE = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -372,6 +373,18 @@ export default function WorldMapModal({
         </MapboxGL.MapView>
         )}
 
+        {/* The top of the map fading to white behind the title and level bar, so they read clearly on any part of the map
+            without a box round them or a glow round the text. */}
+        <Svg pointerEvents="none" style={[st.topFade, { height: insets.top + TOP_FADE_H }]} width="100%" height="100%">
+          <Defs>
+            <SvgLinearGradient id="wmTopFade" x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0" stopColor="white" stopOpacity={0.96} />
+              <Stop offset="0.55" stopColor="white" stopOpacity={0.8} />
+              <Stop offset="1" stopColor="white" stopOpacity={0} />
+            </SvgLinearGradient>
+          </Defs>
+          <Rect x="0" y="0" width="100%" height="100%" fill="url(#wmTopFade)" />
+        </Svg>
         {/* Top: close, and the same level selector as the card. */}
         <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none">
           {/* What this map is: only the places the user has been, so it is not read as the app's map of everywhere. */}
@@ -379,14 +392,7 @@ export default function WorldMapModal({
             <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
               <X size={18} color="#111827" strokeWidth={2.5} />
             </Pressable>
-            <View style={st.headWrap} pointerEvents="none">
-              {/* A white outline (copies nudged round it, as the Explore map's pin labels do) under the near-black title,
-                  so it stands out from the map without a box. */}
-              {HEAD_OUTLINE.map(([dx, dy], k) => (
-                <Text key={k} style={[st.headTitle, st.headOutline, { transform: [{ translateX: dx }, { translateY: dy }] }]} numberOfLines={1}>My Travels</Text>
-              ))}
-              <Text style={st.headTitle} numberOfLines={1}>My Travels</Text>
-            </View>
+            <Text style={st.headTitle} numberOfLines={1} pointerEvents="none">My Travels</Text>
           </View>
           <View style={st.levels}>
             <Animated.View pointerEvents="none" style={[st.levelPill, levelPillStyle]} />
@@ -464,13 +470,9 @@ const st = StyleSheet.create({
   flagBox: { width: FLAG_BOX, height: FLAG_BOX, alignItems: 'center', justifyContent: 'center' },
   top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, gap: 12 },
   headRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  // Straight on the map: near-black over a white outline and a soft white glow, so it reads over coastlines and green countries.
-  headWrap: { flex: 1 },
-  headTitle: {
-    fontSize: 24, fontFamily: 'PlayfairDisplay_700Bold', color: '#0B1220', letterSpacing: -0.3,
-    textShadowColor: 'rgba(255,255,255,1)', textShadowRadius: 12, textShadowOffset: { width: 0, height: 0 },
-  },
-  headOutline: { position: 'absolute', left: 0, top: 0, color: 'white' },
+  // On the white fade at the top of the map (topFade).
+  headTitle: { flex: 1, fontSize: 24, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827', letterSpacing: -0.3 },
+  topFade: { position: 'absolute', left: 0, right: 0, top: 0 },
   closeBtn: {
     width: 38, height: 38, borderRadius: 19, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center',
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
