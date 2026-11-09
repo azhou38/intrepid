@@ -12,7 +12,10 @@ import { formatSpotCost, formatVisitTime, spotPhotoTitle, type Spot } from '../.
 import { useVisitIndex } from '../../store';
 import { thumbCache, getOrFetchWikiThumbnail } from '../../utils/photoCache';
 import { NO_PHOTO } from '../../data/imageOverrides';
-import PhotoPlaceholder from './PhotoPlaceholder';
+import PatternPlaceholder from './PatternPlaceholder';
+
+// Ids for each card's contour motif (PatternPlaceholder).
+let patternSeq = 0;
 
 // Spot card for the destination sheet's Spots tab. Deliberately the same card as the destination
 // cards in the country sheet — square, photo with the name in white serif over a bottom gradient,
@@ -32,6 +35,8 @@ function SpotCard({ spot, onPress, width }: {
   const cacheKey = `spotcard_${spot.id}`;
   const [photoUrl, setPhotoUrl] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
   const photoWasCachedRef = useRef(thumbCache.has(cacheKey));
+  // Unique per card: the grid and the nearby row can show the same spot at once, and SVG ids must not collide.
+  const [patternId] = useState(() => `spotCardPat-${++patternSeq}`);
 
   useEffect(() => {
     if (thumbCache.has(cacheKey)) {
@@ -74,7 +79,8 @@ function SpotCard({ spot, onPress, width }: {
       {/* Border color matches the shadow's own visited-status tint above. */}
       <View style={[styles.cardClip, isVisited ? { borderColor: '#059669' } : { borderColor: '#9CA3AF' }]}>
         <View style={[styles.cardTop, { height: width }]}>
-          {!photoUrl && NO_PHOTO.has(spotPhotoTitle(spot)) && <PhotoPlaceholder icon={spot.icon} category={spot.category} />}
+          {/* No photo at all: the same slate and contour motif as the spot's carousel card, pin and sheet. */}
+          {!photoUrl && NO_PHOTO.has(spotPhotoTitle(spot)) && <PatternPlaceholder seed={spot.id} idPrefix={patternId} />}
           {photoUrl && (
             <FadeInImage
               instant={photoWasCachedRef.current}

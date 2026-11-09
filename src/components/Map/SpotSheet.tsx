@@ -20,6 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
+import PatternPlaceholder from './PatternPlaceholder';
 import { Check, Clock, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, LayoutGrid, Plus,
          ExternalLink, Ticket, Globe, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
@@ -41,7 +42,7 @@ import FadeInImage from './FadeInImage';
 import SpotCard from './SpotCard';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
-import PhotoPlaceholder from './PhotoPlaceholder';
+import { NO_PHOTO } from '../../data/imageOverrides';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
@@ -119,8 +120,10 @@ const CAROUSEL_WINDOW = 3;
 // the window widens to CAROUSEL_WINDOW once the slide is done.
 const CAROUSEL_WINDOW_AT_MOUNT = 1;
 const CAROUSEL_WIDEN_MS = 600;
-// The full-screen panels (hidden at half-screen) mount after the slide-in rather than during it; heading to full screen
-// still mounts them at once (revealPanels).
+// The full-screen panels (hidden at half-screen) mount after the slide-in rather than during it: the moment it lands (see
+// transitionTo's 'mount'), with this as the fallback. They used to wait this long regardless, and a swipe up in that time
+// had to mount them itself, a blank sheet for ~0.4 s while it did. Heading to full screen still mounts them at once
+// (revealPanels).
 const SPOT_PANEL_MOUNT_DELAY_MS = 900;
 // Most clones of the spots at the other end on each side of the looping carousel (see extendedSpots); fewer when the
 // destination has fewer spots.
@@ -166,6 +169,8 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
   const [nameH, setNameH] = useState(0);
   const [thumb, setThumb] = useState<string | null>(thumbCache.get(cacheKey) ?? null);
   const thumbWasCachedRef = useRef(thumbCache.has(cacheKey));
+  // No photo to show at all (none exists, or none was found): a patterned field stands in for it, not the bare dark fill.
+  const [noThumb, setNoThumb] = useState(false);
   useEffect(() => {
     if (thumbCache.has(cacheKey)) {
       thumbWasCachedRef.current = true;
@@ -173,8 +178,10 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
       return;
     }
     thumbWasCachedRef.current = false;
-    getOrFetchWikiThumbnail(cacheKey, thumbCache, spotPhotoTitle(spot), 960).then(u => { if (u) setThumb(u); });
+    setNoThumb(false);
+    getOrFetchWikiThumbnail(cacheKey, thumbCache, spotPhotoTitle(spot), 960).then(u => { if (u) setThumb(u); else setNoThumb(true); });
   }, [spot.id]);
+  const photoless = !thumb && (noThumb || NO_PHOTO.has(spotPhotoTitle(spot)));
 
   // The black scrim is as tall as the text block it sits behind — its measured height (nameH, the whole overlay: name,
   // time/cost and description), the overlay's bottom inset, and a short fade above the first line — so a card with a
@@ -199,6 +206,7 @@ function CarouselCard({ spot, isActive, onPress, onAddVisit, onAddVisitDetails, 
         {/* Image — taller now that the name lives on top of it instead of in their
             own row below, so the card doesn't grow overall despite the extra image height. */}
         <View style={st.cardImageWrap}>
+          {photoless && <PatternPlaceholder seed={spot.id} idPrefix={`cardPat-${gradId}`} />}
           {thumb && (
             <FadeInImage instant={thumbWasCachedRef.current} subject={photoSubject(spotPhotoTitle(spot))} source={{ uri: thumb }} style={StyleSheet.absoluteFill} resizeMode="cover" />
           )}
@@ -876,7 +884,8 @@ function SpotSheet({
     // are the ones the UI thread spends building this sheet's views (and starting the camera move), so starting at once
     // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
     if (reason !== 'mount') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
-    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) hidePeekSV.value = 0; }));
+    // The full-screen content mounts the moment the slide-in lands (revealPanels), not SPOT_PANEL_MOUNT_DELAY_MS after mount.
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } }));
     else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
@@ -1382,7 +1391,7 @@ isVisited ? (
               <EntityPhoto
                 cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto}
                 subject={photoSubject(spotPhotoTitle(activeSpot))}
-                fallback={<PhotoPlaceholder icon={activeSpot.icon} category={activeSpot.category} />}
+                fallback={<PatternPlaceholder seed={activeSpot.id} idPrefix="spotHeroPat" />}
               />
               <View pointerEvents="none" style={[st.heroTopFade, { height: insets.top + 80 }]}>
                 <Svg style={StyleSheet.absoluteFill}>
@@ -1638,7 +1647,7 @@ isVisited ? (
           style={[st.peekStrip, peekOpacityStyle]}
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
-            <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} subject={photoSubject(spotPhotoTitle(activeSpot))} fallback={<PhotoPlaceholder icon={activeSpot.icon} category={activeSpot.category} />} />
+            <EntityPhoto instant placeholderColor="#111827" cacheKey={activePhotoKey} cache={photoCache} load={loadActivePhoto} subject={photoSubject(spotPhotoTitle(activeSpot))} fallback={<PatternPlaceholder seed={activeSpot.id} idPrefix="spotPeekPat" />} />
             <View pointerEvents="none" style={st.peekScrim} />
             <View pointerEvents="none" style={st.peekPillRow}>
               <View style={st.peekPill} />
