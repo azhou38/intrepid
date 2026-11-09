@@ -638,8 +638,8 @@ export default function ProfileScreen() {
       </View>
       </View>
       {/* Everything below the selector on the page's own colour: the profile header is fixed behind the page, and through
-          a see-through page it showed below the bar as the page scrolled up over it. Reaching up under the card's bottom
-          margin, so no strip of the header shows between the card and the page either. */}
+          a see-through page it showed below the bar as the page scrolled up over it. Reaching up under the selector's
+          see-through space below its card, so no strip of the header shows between the card and the page either. */}
       <View style={styles.pageBelow}>
       <View style={{ height: pinned && selectorH > 0 ? Math.max(0, selectorH - (COMPACT_H + TABS_H)) : 0 }} pointerEvents="none" />
 
@@ -1345,7 +1345,9 @@ const TABS_H = 36;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
-  pageBelow: { backgroundColor: '#F9FAFB', marginTop: -12, paddingTop: 12 },
+  // Reaches up under everything of the selector below its card (the card's margin, the divider and its margin), all of it
+  // see-through: only covering the card's margin left a strip where the header's Edit Profile button showed.
+  pageBelow: { backgroundColor: '#F9FAFB', marginTop: -(12 + 1 + 16), paddingTop: 12 + 1 + 16 },
 
   // Profile header
   // The avatar centred, the name and the line under it centred below.
