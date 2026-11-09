@@ -1044,7 +1044,7 @@ const DEFAULT_SORT: Record<WorldMode, ExploredSort> = { countries: 'dests', dest
 // date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. Paged sideways like
 // the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
 // the page (which scrolls up and down itself).
-const LIST_PAGE_SIZE = 8;
+const LIST_PAGE_SIZE = PAGE_SIZE;   // as many rows as the photo grid has tiles, so a page holds the same places in either view
 // The level selector's pill slide (Countries / Destinations / Spots), after which the page swaps to the new level.
 const PILL_MS = 220;
 // The page's fade out from the tap, and back in once the new level has rendered.
