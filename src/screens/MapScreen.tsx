@@ -125,8 +125,8 @@ import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prew
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
-import SpotPhotoImages, { SPOT_PHOTO_BUBBLE, spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
-import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED, SPOT_SELECTED_GLOW, SPOT_SELECTED_GLOW_DARK, GLOW_MARGIN } from '../components/Map/SpotPinImages';
+import SpotPhotoImages, { SPOT_PHOTO_BUBBLE, SPOT_SELECTED_RING, SPOT_SELECTED_RING_VISITED, spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
+import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
 const EXPLORE_COLOR  = '#6366F1';
@@ -3480,8 +3480,8 @@ const destItems = useMemo((): DestItem[] =>
         },
       });
     }
-    // The selected spot, drawn by the map in its own layers above every other spot pin (spotSelected*), with its name and a
-    // blue glow under it (spotSelectedGlow). It used to be swapped for an on-screen marker, which loaded its own photo (a grey
+    // The selected spot, drawn by the map in its own layers above every other spot pin (spotSelected*), with its name and
+    // an accent outline over it (spotSelectedRing). It used to be swapped for an on-screen marker, which loaded its own photo (a grey
     // disc while it did), trailed the map in a camera move, drew its name in another font, and arrived a render or more
     // after the selection. Its photo is registered here if it was not (a spot shown as a small pin), and shown once it is.
     if (pinSpot) {
@@ -3513,6 +3513,7 @@ const destItems = useMemo((): DestItem[] =>
           label: spotLabelLines(pinSpot.name).join('\n'),
           side: spotPhotoPlan?.nameAt.get(pinSpot.id)?.side ?? 'left', sort: -2_000_000,
           sel: 1,
+          vis: visited ? 1 : 0,   // the selected outline's tick (spotSelectedRing)
         },
       });
     }
@@ -6568,38 +6569,16 @@ const destItems = useMemo((): DestItem[] =>
             if (spot && !pressBlocked()) handleSpotPress(spot);
           }}
         >
-          {/* The selected spot's glow, under every pin: the pin's own teardrop outline in soft white (black on the satellite
-              map; SpotPinImages' SPOT_SELECTED_GLOW), so the shading runs evenly round the bubble and the tail. Its image
-              reaches GLOW_MARGIN past the pin, so it is shifted down by that much to put its tip on the pin's.
-              Every photo pin carries one, invisible, and the selected spot's is turned up (iconOpacity, which switches
-              without a transition): a glow symbol that only appeared on selection was new to Mapbox's placement and faded in
-              over ~0.3 s after the pin, whereas one that is already placed shows at once. Only on photo pins (img set): it
-              used to show on its own while the selected spot's photo was still being registered. */}
-          <MapboxGL.SymbolLayer
-            id="spotSelectedGlow"
-            aboveLayerID="destStampCircles"
-            filter={['!=', ['get', 'img'], ''] as any}
-            style={{
-              iconImage: mapType === 'satellite' ? SPOT_SELECTED_GLOW_DARK : SPOT_SELECTED_GLOW,
-              iconAnchor: 'bottom',
-              iconOffset: [0, GLOW_MARGIN],
-              iconAllowOverlap: true,
-              iconIgnorePlacement: true,
-              iconPitchAlignment: 'viewport',
-              iconOpacity: ['case', ['==', ['get', 'sel'], 1], 1, 0] as any,
-              iconOpacityTransition: { duration: 0, delay: 0 },
-            }}
-          />
           {spotFadeLayers.under}
           {spotBandLayers as any /* an array of layers: ShapeSource flattens it (see spotBandLayers) */}
           {spotFadeLayers.over as any}
           {/* The selected spot, above every other spot pin and above the destination dots (destStampCircles; the other spot
               layers sit below them), so zoomed out it is not buried under the dots: its small pin until its photo is
-              registered, then its photo pin and name, the same images and text as the layers above, always drawn. The glow,
-              the small pin and the photo pin are chained (aboveLayerID) so they keep that order. */}
+              registered, then its photo pin and name, the same images and text as the layers above, always drawn. The small
+              pin, the photo pin and its outline are chained (aboveLayerID) so they keep that order. */}
           <MapboxGL.SymbolLayer
             id="spotSelectedMini"
-            aboveLayerID="spotSelectedGlow"
+            aboveLayerID="destStampCircles"
             filter={['all', ['==', ['get', 'sel'], 1], ['==', ['get', 'img'], '']] as any}
             style={{ iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
           />
@@ -6625,6 +6604,19 @@ const destItems = useMemo((): DestItem[] =>
               textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
               textHaloColor: mapType === 'satellite' ? '#000000' : '#FFFFFF',
               textHaloWidth: 1.5,
+            }}
+          />
+          {/* The selected spot's outline over its photo pin: its rim and tail in slate instead of white (or green),
+              so the selected pin stands out, with a green tick when the spot is visited (SpotPhotoImages' SPOT_SELECTED_RING
+              and SPOT_SELECTED_RING_VISITED, anchored at the pin's tip like the pin). The
+              same feature as the photo pin, so the two appear together. (A white halo, then a drop shadow, were tried first.) */}
+          <MapboxGL.SymbolLayer
+            id="spotSelectedRing"
+            aboveLayerID="spotSelectedPhoto"
+            filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
+            style={{
+              iconImage: ['case', ['==', ['get', 'vis'], 1], SPOT_SELECTED_RING_VISITED, SPOT_SELECTED_RING] as any,
+              iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true,
             }}
           />
         </MapboxGL.ShapeSource>
