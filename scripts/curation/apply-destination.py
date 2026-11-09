@@ -6,7 +6,7 @@
 
 final.json: { destination: { id, name, country, countryCode, timezone, continent, coordinates, category, defaultZoomSpanKm,
               rank, icon, tagline, description, whyVisit[2-4 by popularity], highlights[one per reason], goodToKnow[2-3 {icon,title,detail}, by popularity], bestMonths,
-              bestTimeBlurb, seasonalTags? }, spots, notes }
+              bestTimeBlurb, seasonalTags?, whySubjects[one per reason: { spots?: [spot ids], names?: [place or Wikipedia titles] }] }, spots, notes }
 picks.json:  { "header": "<Commons file>", "why": ["<file>", "<file>", "<file>"] }   (files agreed by both judges; with
              --allow-missing-why a reason with no photo in any tier may be "" or null: it shows as a grey card)
 
@@ -16,7 +16,7 @@ into WIKI_IMAGE_OVERRIDES keyed by the destination's name, and `whyVisitPhotos` 
 accepted header is NOT added (check-destination-headers would fail and the pin would show an unrelated photo): the script
 refuses and says so. Add its spots afterwards with apply-placement.py --dest <id> --overrides <final.json>.
 """
-import json, re, sys
+import json, os, re, sys
 
 args = sys.argv[1:]
 if not args or args[0].startswith('--'):
@@ -39,6 +39,15 @@ if (not picks.get('header') and not no_header) or len(picks['why']) != n_why or 
 for i, w in enumerate(picks['why'], 1):
     if not w:
         print(f'why-visit photo missing: dest:{d["id"]}:why{i} ("{d["whyVisit"][i - 1]}"): a grey card until the owner supplies one')
+# What each reason is ABOUT (the spot or place it shows), so the photo search is by that subject and not by the reason's wording
+# (gather-photo-candidates.py reads scripts/curation/why-subjects.json). Required for a new destination; names or spot ids.
+ws = d.get('whySubjects')
+if not isinstance(ws, list) or len(ws) != n_why or not all(isinstance(x, dict) and (x.get('spots') or x.get('names')) for x in ws):
+    sys.exit(f'refusing: whySubjects must have one entry per reason ({n_why}), each with `spots` (spot ids) or `names` (the place or its Wikipedia title) naming what the reason is about')
+_wsf = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'why-subjects.json')
+_all = json.load(open(_wsf)) if os.path.exists(_wsf) else {}
+_all[d['id']] = ws
+if not dry: json.dump(_all, open(_wsf, 'w'), indent=1, ensure_ascii=False)
 if len(d.get('highlights', [])) != n_why:
     sys.exit(f'refusing: highlights must have one entry per reason ({n_why})')
 if not 2 <= len(d.get('goodToKnow', [])) <= 3 or any(len(t.get('detail', '')) > 160 for t in d.get('goodToKnow', [])):

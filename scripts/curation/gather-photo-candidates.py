@@ -3,11 +3,14 @@
 candidates for a group's `search` slots, and draws one numbered contact sheet per slot, so the judges only look and
 choose. The image-searcher agent is left only the slots this finds nothing for, and the sources it could not reach.
 
-  python3 scripts/curation/gather-photo-candidates.py <group-dir> [--max 10] [--slots spot:a,spot:b] [--force] [--google-all]
+  python3 scripts/curation/gather-photo-candidates.py <group-dir> [--max 10] [--slots spot:a,spot:b] [--force] [--google-all] [--no-google]
 
 Reads <group-dir>/task.json (lens-triage.ts). Per `search` slot, in order:
   1. the Wikipedia article's lead image (a spot's default photo is always offered: image-searcher checklist),
-  2. Commons: a geosearch round the pin (spots) and name searches qualified by destination and country,
+  2. Commons: a geosearch round the pin (spots) and name searches qualified by destination and country; for a WHY-VISIT slot,
+     the subject(s) the reason is about (scripts/curation/why-subjects.json, else inferred from the destination's spots): their
+     lead image, a geosearch round their pin, their Commons category (and its sub-categories) and name searches in English and
+     Chinese. A reason's own wording ("Explore Spring and Autumn period ruins") finds almost nothing; its subject does,
   3. Google Images through Apify (the johnvc/google-images-api actor, 50 results per slot, about $0.005 a slot), ONLY for
      slots where steps 1-2 found no proven photo (commons_proven: a spot's Commons photo whose file title starts with the
      place's name and that is geotagged within 300 m of the pin); proven slots are listed under `_google_skipped` with the
@@ -107,6 +110,105 @@ def destination(did):
     return {'name': m.group(1)[1:-1], 'country': field(block, 'country'), 'coords': (float(c.group(1)), float(c.group(2))) if c else None,
             'why': [w[1:-1] for w in re.findall(r'"[^"]*"|\'[^\']*\'', why.group(1))] if why else []}
 
+# ── Why-visit slots: search by the SUBJECT the reason is about, not by the reason's wording ───────────────────────────────────
+# "Explore Spring and Autumn period ruins" finds almost nothing on Commons, while its subject, the Yancheng Site, has a category
+# of about 40 photos. Each reason is tied to the spot(s) or place(s) it is about: written when the copy is written
+# (scripts/curation/why-subjects.json, one entry per reason: { "spots": [ids], "names": [place or Wikipedia titles] }), or, for a
+# destination without an entry, inferred from the words the reason shares with the destination's spots' names and bios.
+WHY_SUBJECTS_FILE = os.path.join(os.path.dirname(__file__), 'why-subjects.json')
+WHY_SUBJECTS = json.load(open(WHY_SUBJECTS_FILE)) if os.path.exists(WHY_SUBJECTS_FILE) else {}
+REASON_STOP = {'the', 'and', 'of', 'to', 'in', 'on', 'a', 'an', 'at', 'for', 'with', 'from', 'by', 'see', 'visit', 'walk', 'explore', 'stroll', 'climb', 'taste', 'ride', 'cross', 'follow',
+               'wander', 'learn', 'tour', 'browse', 'hike', 'cruise', 'watch', 'spot', 'enjoy', 'discover', 'old', 'ancient', 'historic', 'small', 'local', 'famous', 'along', 'through', 'around', 'into'}
+def dest_spots(did):
+    out = []
+    for l in SPOTS_SRC.split('\n'):
+        if f"destinationId: '{did}'" not in l and f'destinationId: "{did}"' not in l: continue
+        m = re.search(r"\{ id: ['\"]([^'\"]+)['\"]", l); c = re.search(r'latitude: (-?[\d.]+), longitude: (-?[\d.]+)', l)
+        if m: out.append({'id': m.group(1), 'name': field(l, 'name'), 'wiki': field(l, 'wiki'), 'bio': field(l, 'bio') or '', 'coords': (float(c.group(1)), float(c.group(2))) if c else None})
+    return out
+def reason_words(text):
+    return {w for w in re.findall(r"[a-z]{4,}", (text or '').lower()) if w not in REASON_STOP}
+def subjects_for(did, i, reason):
+    """The places reason number `i` of destination `did` is about: the recorded ones, else the best-matching spots."""
+    rec = (WHY_SUBJECTS.get(did) or [])
+    rec = rec[i] if i < len(rec) and rec[i] else None
+    spots = dest_spots(did)
+    out = []
+    if rec:
+        for sid in rec.get('spots', []):
+            s = next((x for x in spots if x['id'] == sid), None) or spot(sid)
+            if s: out.append({'name': s['name'], 'wiki': s.get('wiki') or s['name'], 'coords': s.get('coords'), 'recorded': True})
+        for n in rec.get('names', []): out.append({'name': n, 'wiki': n, 'coords': None, 'recorded': True})
+        return out[:3]
+    rw = reason_words(reason)
+    if not rw: return []
+    df = {}
+    for s in spots:
+        for w in reason_words(s['name'] + ' ' + s['bio']): df[w] = df.get(w, 0) + 1
+    scored = []
+    for s in spots:
+        nw, bw = reason_words(s['name']), reason_words(s['bio'])
+        # a word in the spot's NAME counts triple; rare words (few spots use them) count more
+        sc = sum((3 if w in nw else 1) / df.get(w, 1) for w in rw if w in nw or w in bw)
+        if sc >= 1.5 or (sc >= 1 and rw & nw): scored.append((sc, s))
+    best = sorted(scored, key=lambda x: -x[0])[:2]
+    for sc, s in best:
+        out.append({'name': s['name'], 'wiki': s['wiki'] or s['name'], 'coords': s['coords']})
+    if not best or best[0][0] < 2.5:
+        out += wiki_subjects(reason, did)[:2 - len(out)] if len(out) < 2 else []   # no spot clearly matches: ask Wikipedia
+    return out
+def wiki_subjects(reason, did):
+    """Fallback for a reason whose subject is not one of the destination's spots: the English Wikipedia articles the reason's words
+    find near the destination (an article with coordinates within 100 km of it, other than the destination itself)."""
+    d = destination(did)
+    if not d or not d['coords'] or not reason: return []
+    q = ' '.join(sorted(reason_words(reason))) + ' ' + d['name']
+    st, r = api_json('https://en.wikipedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'query', 'list': 'search', 'srsearch': q, 'srlimit': 8, 'format': 'json', 'formatversion': 2}))
+    titles = [x['title'] for x in (r or {}).get('query', {}).get('search', []) if x['title'].lower() != d['name'].lower()]
+    if not titles: return []
+    st, r = api_json('https://en.wikipedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'query', 'prop': 'coordinates', 'titles': '|'.join(titles), 'colimit': 20, 'format': 'json', 'formatversion': 2}))
+    out = []
+    for t in titles:
+        pg = next((p for p in (r or {}).get('query', {}).get('pages', []) if p.get('title') == t), None)
+        co = (pg or {}).get('coordinates', [None])[0]
+        if co and hav(d['coords'], (co['lat'], co['lon'])) <= 100_000: out.append({'name': re.sub(r'\s*\([^)]*\)$', '', t), 'wiki': t, 'coords': (co['lat'], co['lon'])})
+    return out
+def subject_extras(subj, unresolved):
+    """Commons category members and the Chinese-language title for one subject (Wikipedia → Wikidata → Commons category)."""
+    cat, zh = None, None
+    st, d = api_json('https://en.wikipedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'query', 'prop': 'pageprops|langlinks', 'ppprop': 'wikibase_item', 'lllang': 'zh', 'redirects': 1, 'titles': subj['wiki'], 'format': 'json', 'formatversion': 2}))
+    if d is None: unresolved.append(f'wikipedia page of "{subj["wiki"]}": HTTP {st}'); return None, None
+    for p in d.get('query', {}).get('pages', []):
+        zh = (p.get('langlinks') or [{}])[0].get('title') or zh
+        q = (p.get('pageprops') or {}).get('wikibase_item')
+        if q:
+            st, w = api_json(f'https://www.wikidata.org/w/api.php?action=wbgetentities&ids={q}&props=claims|sitelinks&format=json')
+            if w is None: unresolved.append(f'wikidata {q}: HTTP {st}'); continue
+            e = (w.get('entities') or {}).get(q, {})
+            p373 = (e.get('claims', {}).get('P373') or [{}])[0].get('mainsnak', {}).get('datavalue', {}).get('value')
+            cat = p373 or (e.get('sitelinks', {}).get('commonswiki', {}).get('title') or '').replace('Category:', '') or None
+    if not cat:
+        # no Wikipedia article or Wikidata link: look for a Commons category of that name ("Yancheng Ruins" has about 40 photos)
+        st, d = commons({'action': 'query', 'list': 'search', 'srsearch': subj['name'], 'srnamespace': 14, 'srlimit': 5})
+        ws = name_words(subj['name'])
+        for r in (d or {}).get('query', {}).get('search', []):
+            t = r['title'].replace('Category:', '')
+            if ws and all(w in t.lower() for w in ws): cat = t; break
+    return cat, zh
+def category_files(cat, limit=70):
+    """File titles in a Commons category and, one level down, its subcategories (a place's category often holds its views in them)."""
+    files, subs = [], []
+    for ct in ('file', 'subcat'):
+        st, d = commons({'action': 'query', 'list': 'categorymembers', 'cmtitle': 'Category:' + cat, 'cmtype': ct, 'cmlimit': 120 if ct == 'file' else 6})
+        if d is None: continue
+        for m in d.get('query', {}).get('categorymembers', []):
+            (files if ct == 'file' else subs).append(m['title'])
+    for s in subs[:5]:
+        st, d = commons({'action': 'query', 'list': 'categorymembers', 'cmtitle': s, 'cmtype': 'file', 'cmlimit': 30})
+        if d is None: continue
+        files += [m['title'] for m in d.get('query', {}).get('categorymembers', [])]
+    return [f[5:] for f in files if f.startswith('File:')][:limit]
+
 def fileinfo(titles):
     """Commons imageinfo for up to 50 File: titles at once."""
     out = {}
@@ -131,7 +233,9 @@ def slot_context(sl):
     if not d: return None
     if part.startswith('why'):
         i = int(part[3:]) - 1
-        return {'type': 'why', 'name': d['name'], 'wiki': d['name'], 'coords': d['coords'], 'quals': [d['country']], 'reason': d['why'][i] if i < len(d['why']) else None}
+        reason = d['why'][i] if i < len(d['why']) else None
+        return {'type': 'why', 'name': d['name'], 'wiki': d['name'], 'coords': d['coords'], 'quals': [d['country']], 'reason': reason,
+                'subjects': subjects_for(did, i, reason)}
     return {'type': 'header', 'name': d['name'], 'wiki': d['name'], 'coords': d['coords'], 'quals': [d['country']], 'reason': None}
 
 STOP = {'the', 'of', 'and', 'national', 'park', 'beach', 'reserve', 'lookout', 'point', 'head', 'bay', 'mount', 'lake', 'river', 'falls', 'island', 'big', 'new', 'old', 'north', 'south', 'east', 'west', 'museum', 'gallery', 'garden', 'gardens', 'walk', 'track', 'trail', 'town', 'village', 'house', 'hill', 'nature'}
@@ -151,7 +255,8 @@ def apify_token():
 
 def google_query(ctx):
     where = ' '.join(q for q in ctx['quals'] if q and q.lower() not in ctx['name'].lower())
-    what = f"{ctx['reason']} {ctx['name']}" if ctx['reason'] else ctx['name']
+    subj = [x['name'] for x in ctx.get('subjects') or []][:2]
+    what = ' '.join(subj) + ' ' + ctx['name'] if subj else f"{ctx['reason']} {ctx['name']}" if ctx['reason'] else ctx['name']   # a why-visit photo is searched by its subject
     return f'{what} {where}'.strip()
 
 def google_results(queries, unresolved):
@@ -232,6 +337,27 @@ def gather(sl, ctx, maxn, unresolved, google=None):
         st, d = commons({'action': 'query', 'list': 'search', 'srsearch': q + ' filetype:bitmap', 'srnamespace': 6, 'srlimit': 20})
         if d is None: unresolved.append(f'commons search "{q}": HTTP {st}'); continue
         for r in d.get('query', {}).get('search', []): add(r['title'][5:], 'commons-search')
+    # 3. Why-visit slots: the subject(s) the reason is about (see subjects_for): Wikipedia lead image, Commons geosearch round the
+    #    subject's pin, its Commons category, and name searches in English and in Chinese.
+    cat_titles = set()
+    for sj in ctx.get('subjects') or []:
+        st, d = api_json('https://en.wikipedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'query', 'prop': 'pageimages', 'piprop': 'name', 'redirects': 1, 'titles': sj['wiki'], 'format': 'json', 'formatversion': 2}))
+        for p in (d or {}).get('query', {}).get('pages', []):
+            if p.get('pageimage'): add(p['pageimage'].replace('_', ' '), 'subject-lead')
+        if sj.get('coords'):
+            st, d = commons({'action': 'query', 'list': 'geosearch', 'gscoord': f"{sj['coords'][0]}|{sj['coords'][1]}", 'gsradius': 1500, 'gsnamespace': 6, 'gslimit': 40})
+            if d is None: unresolved.append(f'commons geosearch for "{sj["name"]}": HTTP {st}')
+            else:
+                for g in d.get('query', {}).get('geosearch', []): add(g['title'][5:], 'commons-geo')
+        cat, zh = subject_extras(sj, unresolved)
+        if cat:
+            for t in category_files(cat):
+                add(t, 'commons-category')
+                if sj.get('recorded'): cat_titles.add(t)   # a recorded subject's category names the place; a guessed one only adds candidates
+        for q in [f'"{sj["name"]}"'] + ([zh] if zh else []):
+            st, d = commons({'action': 'query', 'list': 'search', 'srsearch': q + ' filetype:bitmap', 'srnamespace': 6, 'srlimit': 20})
+            if d is None: unresolved.append(f'commons search "{q}": HTTP {st}'); continue
+            for r in d.get('query', {}).get('search', []): add(r['title'][5:], 'commons-search')
     web = []
     for r in google or []:
         img, page = r.get('imageUrl') or '', r.get('link') or ''
@@ -261,7 +387,9 @@ def gather(sl, ctx, maxn, unresolved, google=None):
         yr = re.search(r'(1[5-9]\d\d|20\d\d)', date)
         if yr and int(yr.group(1)) < 2000: continue
         text = ' '.join([t, cats, md.get('ImageDescription', {}).get('value', ''), md.get('ObjectName', {}).get('value', '')]).lower()
-        named = all(w in text for w in name_words(ctx['name']))
+        rec = [sj for sj in ctx.get('subjects') or [] if sj.get('recorded')]
+        # a why-visit photo with recorded subjects is "named" by them (or by their category), not by the destination's name
+        named = (any(all(w in text for w in name_words(sj['name'])) for sj in rec) or t in cat_titles) if rec else all(w in text for w in name_words(ctx['name']))
         co = p['coordinates'][0] if p.get('coordinates') else None
         dist = int(hav(ctx['coords'], (co['lat'], co['lon']))) if co and ctx['coords'] else None
         # Geotagged far from the place: another place of the same name (Sovereign Hill's Red Hill Road for Canberra's Red Hill).
@@ -346,12 +474,12 @@ def main():
         ctx = ctxs.get(sl['slot'])
         if not ctx: continue
         un = []
-        items = gather(sl, ctx, maxn, un, None)
+        items = gather(sl, ctx, max(maxn, 14) if ctx.get('subjects') else maxn, un, None)
         first[sl['slot']] = (items, un)
         proof = None if google_all else commons_proven(items, ctx)
         if proof: skip[sl['slot']] = proof
     gun = {}
-    gres = google_results(sorted({google_query(c) for s, c in ctxs.items() if c and s not in skip}), gun)
+    gres = {} if '--no-google' in a else google_results(sorted({google_query(c) for s, c in ctxs.items() if c and s not in skip}), gun)
     for sl in task['slots']:
         if sl['status'] != 'search' or (only and sl['slot'] not in only): continue
         if sl['slot'] in cands and not force and sl['slot'] not in unresolved_all: continue
@@ -363,7 +491,7 @@ def main():
         else:
             q = google_query(ctx)
             un = list(gun.get(q, []))
-            items = gather(sl, ctx, maxn, un, gres.get(q))
+            items = gather(sl, ctx, max(maxn, 14) if ctx.get('subjects') else maxn, un, gres.get(q))
             skipped_all.pop(sl['slot'], None)
         cands[sl['slot']] = items
         if un: unresolved_all[sl['slot']] = un
