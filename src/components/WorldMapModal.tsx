@@ -80,7 +80,7 @@ const LEVELS: { level: WorldLevel; label: string }[] = [
 
 type Picked =
   | { kind: 'country'; code: string; name: string; dests: number; spots: number }
-  // A destination or spot: its photo (the same small-photo key as the Profile's Explored rows), name, country and flag.
+  // A destination or spot: its photo (the same small-photo key as the Profile's Explored rows), name, flag and spots visited.
   | { kind: 'place'; id: string; name: string; sub: string; code?: string; photoKey: string; photoTitle: string; icon?: string; category?: string };
 
 export default function WorldMapModal({
@@ -119,13 +119,13 @@ export default function WorldMapModal({
     features: level === 'destinations'
       ? dests.map(d => ({
         type: 'Feature', geometry: { type: 'Point', coordinates: [d.coordinates.longitude, d.coordinates.latitude] },
-        properties: { id: d.id, name: d.name, sub: d.country, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
+        properties: { id: d.id, name: d.name, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
           photoKey: `pick_${d.id}`, photoTitle: d.name, icon: d.icon, category: d.category },
       }))
       : level === 'spots'
-        ? spots.map(({ spot, country, countryCode }) => ({
+        ? spots.map(({ spot, countryCode }) => ({
           type: 'Feature', geometry: { type: 'Point', coordinates: [spot.coordinates.longitude, spot.coordinates.latitude] },
-          properties: { id: spot.id, name: spot.name, sub: country, code: countryCode ?? '',
+          properties: { id: spot.id, name: spot.name, code: countryCode ?? '',
             photoKey: `pick_spot_${spot.id}`, photoTitle: spotPhotoTitle(spot), icon: spot.icon, category: spot.category },
         }))
         : [],
@@ -134,7 +134,8 @@ export default function WorldMapModal({
   // The card for a destination or spot feature: its photo, name, and country (with how many spots are visited, for a destination).
   const placeCard = (pr: Record<string, any>): Picked => {
     const n = Number(pr.spots ?? 0);
-    const sub = n > 0 ? `${pr.sub} · ${n} spot${n === 1 ? '' : 's'} visited` : pr.sub;
+    // The country is the flag before the name; the line under it is only the destination's spots visited (none for a spot).
+    const sub = n > 0 ? `${n} spot${n === 1 ? '' : 's'} visited` : '';
     return { kind: 'place', id: pr.id, name: pr.name, sub, code: pr.code || undefined,
       photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category };
   };
@@ -353,9 +354,13 @@ export default function WorldMapModal({
                     <CircleFlag countryCode={picked.code} size={16} ring ringWidth={1.5} style={st.titleFlag} />
                     <Text style={[st.cardTitle, { flexShrink: 1 }]} numberOfLines={1}>{picked.name}</Text>
                   </View>
-                  <Text style={st.cardSub} numberOfLines={1}>
-                    {picked.dests} destination{picked.dests === 1 ? '' : 's'} · {picked.spots} spot{picked.spots === 1 ? '' : 's'} visited
-                  </Text>
+                  {/* What was visited there, leaving out a count of none; nothing at all, and the name sits centred alone. */}
+                  {(picked.dests > 0 || picked.spots > 0) && (
+                    <Text style={st.cardSub} numberOfLines={1}>
+                      {[picked.dests > 0 && `${picked.dests} destination${picked.dests === 1 ? '' : 's'} visited`,
+                        picked.spots > 0 && `${picked.spots} spot${picked.spots === 1 ? '' : 's'} visited`].filter(Boolean).join(', ')}
+                    </Text>
+                  )}
                 </View>
               </>
             ) : (
@@ -378,7 +383,7 @@ export default function WorldMapModal({
                     {!!picked.code && <CircleFlag countryCode={picked.code} size={16} ring ringWidth={1.5} style={st.titleFlag} />}
                     <Text style={[st.cardTitle, { flexShrink: 1 }]} numberOfLines={1}>{picked.name}</Text>
                   </View>
-                  <Text style={st.cardSub} numberOfLines={1}>{picked.sub}</Text>
+                  {!!picked.sub && <Text style={st.cardSub} numberOfLines={1}>{picked.sub}</Text>}
                 </View>
               </>
             )}
