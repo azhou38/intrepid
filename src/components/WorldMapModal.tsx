@@ -38,8 +38,9 @@ function loadNoLabelsStyle(): Promise<string | null> {
   return noLabelsStyle;
 }
 
-// How far below the safe area the white fade at the top of the map reaches (past the title and level bar).
-const TOP_FADE_H = 150;
+// How far below the safe area the white fade at the top of the map reaches: just past the level bar's bottom edge (about
+// 96pt down), so the map shows from right under it.
+const TOP_FADE_H = 112;
 
 // The level switcher's pill slide.
 const LEVEL_SLIDE = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -379,7 +380,7 @@ export default function WorldMapModal({
           <Defs>
             <SvgLinearGradient id="wmTopFade" x1="0" y1="0" x2="0" y2="1">
               <Stop offset="0" stopColor="white" stopOpacity={0.96} />
-              <Stop offset="0.55" stopColor="white" stopOpacity={0.8} />
+              <Stop offset="0.7" stopColor="white" stopOpacity={0.82} />
               <Stop offset="1" stopColor="white" stopOpacity={0} />
             </SvgLinearGradient>
           </Defs>
