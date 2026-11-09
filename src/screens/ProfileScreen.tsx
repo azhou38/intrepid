@@ -88,6 +88,38 @@ function countryMark(d: string): { x: number; y: number; small: boolean } | null
   if (!best) return null;
   return { x: best.cx < WORLD_X0 ? best.cx + 360 : best.cx, y: best.cy, small: Math.max(best.x1 - best.x0, best.y1 - best.y0) < SMALL_COUNTRY };
 }
+// A country's box on the map, in map units: the app's own box for it (countryBounds: the mainland and the islands that
+// belong with it), or, failing that, the detailed outline's largest piece of land with the pieces near it (not the
+// overseas territories, which would stretch the Netherlands' box to the Caribbean).
+const FRAME_PAD = 1.08;   // the framed country's box, enlarged by this, fills the map's width or height
+const NEAR_PIECE = 5;     // map units: a piece of land this close to the largest one is part of the frame
+function countryBox(code: string): { x0: number; y0: number; x1: number; y1: number } | null {
+  const cb = getCountryBounds(code);
+  if (cb) {
+    const a = worldPoint(cb.sw.longitude, cb.ne.latitude), b = worldPoint(cb.ne.longitude, cb.sw.latitude);
+    return { x0: a.x, y0: a.y, x1: b.x, y1: b.y };
+  }
+  const all = require('../data/worldCountriesDetail.json') as { c: string; d: string }[];
+  const d = all.find(e => e.c === code)?.d;
+  if (!d) return null;
+  const pieces = d.split('M').filter(Boolean).map(part => {
+    const n = part.replace(/Z/g, ' ').trim().split(/[\s,]+/).map(Number);
+    let a2 = 0, x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    for (let i = 0; i + 1 < n.length; i += 2) {
+      const x = n[i], y = n[i + 1];
+      a2 += x * n[(i + 3) % n.length] - n[(i + 2) % n.length] * y;
+      x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y);
+    }
+    return { area: Math.abs(a2), x0, x1, y0, y1 };
+  });
+  if (!pieces.length) return null;
+  const main = pieces.reduce((m, p) => (p.area > m.area ? p : m));
+  const near = pieces.filter(p => p.x0 <= main.x1 + NEAR_PIECE && p.x1 >= main.x0 - NEAR_PIECE && p.y0 <= main.y1 + NEAR_PIECE && p.y1 >= main.y0 - NEAR_PIECE);
+  return {
+    x0: Math.min(...near.map(p => p.x0)), y0: Math.min(...near.map(p => p.y0)),
+    x1: Math.max(...near.map(p => p.x1)), y1: Math.max(...near.map(p => p.y1)),
+  };
+}
 const COUNTRY_D = new Map((WORLD_COUNTRIES as { c: string; d: string }[]).map(e => [e.c, e.d]));
 
 // The Spots destination filter's choice for a country's spots that belong to no destination.
@@ -402,8 +434,10 @@ export default function ProfileScreen() {
     setWorldMode(mode);
   };
   // The world map, inside the Explored card of every level.
-  // With a country picked in the Explored dropdown, the map frames that country: the country's box (and the places visited
-  // there), padded, kept in the map's own shape and never tighter than about 25 degrees across (so one place is not a pixel of land).
+  // With a country picked in the Explored dropdown, the map frames that country: the whole country (and the places visited
+  // there), kept in the map's own shape and filling as much of it as it can with a slim margin, so Belgium or Luxembourg is
+  // as big on the card as Spain. Without a box for the country, it never goes tighter than about 25 degrees across (so a
+  // lone place is not framed as a pixel of land).
   const pickedCountry = worldMode === 'destinations' ? destCountry : worldMode === 'spots' ? spotCountryF : null;
   const mapView = useMemo(() => {
     const full = { x: WORLD_X0, y: WORLD_Y0, w: 360, h: WORLD_Y1 - WORLD_Y0 };
@@ -411,14 +445,12 @@ export default function ProfileScreen() {
     const pts = code ? worldDots.filter(d => d.code === code) : [];
     if (!pts.length) return full;
     // The whole country, not only the places visited in it (Japan is more than Kyoto and Tokyo): its box, where we have one.
-    const cb = getCountryBounds(code!);
-    if (cb) pts.push(
-      { id: '', code: code!, ...worldPoint(cb.sw.longitude, cb.ne.latitude) },
-      { id: '', code: code!, ...worldPoint(cb.ne.longitude, cb.sw.latitude) });
+    const box = countryBox(code!);
+    if (box) pts.push({ id: '', code: code!, x: box.x0, y: box.y0 }, { id: '', code: code!, x: box.x1, y: box.y1 });
     const x0 = Math.min(...pts.map(p => p.x)), x1 = Math.max(...pts.map(p => p.x));
     const y0 = Math.min(...pts.map(p => p.y)), y1 = Math.max(...pts.map(p => p.y));
     const shape = WORLD_VH / 360;
-    const w = Math.min(360, Math.max(25, (x1 - x0) * 1.2, ((y1 - y0) * 1.2) / shape));
+    const w = Math.min(360, Math.max(box ? 1 : 25, (x1 - x0) * FRAME_PAD, ((y1 - y0) * FRAME_PAD) / shape));
     const h = w * shape;
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
     return { x: cx - w / 2, y: Math.max(0, Math.min(WORLD_VH - h, cy - h / 2)), w, h };
