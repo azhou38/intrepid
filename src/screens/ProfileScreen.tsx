@@ -656,7 +656,7 @@ export default function ProfileScreen() {
                 key: c.id, name: c.name, countryCode: c.id, sub: '',
                 dests: n?.dests ?? 0, spots: n?.spots ?? 0, rating: countryKeys.rating(c.id),
                 date: visitLabel(countryKeys.visit.get(c.id)),
-                photo: <CountryPhoto code={c.id} name={c.name} />,
+                photo: <CountryPhoto code={c.id} name={c.name} dark />,
               };
             })} />
           ) : (
@@ -712,7 +712,7 @@ export default function ProfileScreen() {
                       cache={thumbCache}
                       load={() => getOrFetchWikiThumbnail(`pick_${d.id}`, thumbCache, d.name, 300)}
                       subject={photoSubject(d.name)}
-                      placeholderColor="#E5E7EB"
+                      placeholderColor={GRID_PHOTO_BG} fadeMs={GRID_PHOTO_FADE_MS}
                     />
                   ),
                 };
@@ -771,7 +771,7 @@ export default function ProfileScreen() {
                       cache={thumbCache}
                       load={() => getOrFetchWikiThumbnail(`pick_spot_${sp.id}`, thumbCache, spotPhotoTitle(sp), 300)}
                       subject={photoSubject(spotPhotoTitle(sp))}
-                      placeholderColor="#E5E7EB"
+                      placeholderColor={GRID_PHOTO_BG} fadeMs={GRID_PHOTO_FADE_MS}
                       fallback={<PhotoPlaceholder icon={sp.icon} category={sp.category} size={30} />}
                     />,
               }))} />
@@ -1421,7 +1421,7 @@ const styles = StyleSheet.create({
   rankPage:    { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 2 },
   rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
   rankRowOn:   { backgroundColor: '#FFF7ED' },
-  rankThumb:   { width: 30, height: 30, borderRadius: 8, overflow: 'hidden', backgroundColor: '#E5E7EB' },
+  rankThumb:   { width: 30, height: 30, borderRadius: 8, overflow: 'hidden', backgroundColor: GRID_PHOTO_BG },
   rankNameCol: { width: 120 },
   // The name takes what is left of the row and is cut short with "…"; the date beside it never shrinks.
   rankNameFlex: { flex: 1, minWidth: 0 },
