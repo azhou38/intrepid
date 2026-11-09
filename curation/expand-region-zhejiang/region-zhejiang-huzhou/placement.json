@@ -12,10 +12,11 @@
    "coordinates_source": "Lianhuazhuang/Wuxing city point from candidates (Wuxing district centre); pin stage to confirm against OSM place=city",
    "pin_needed": true,
    "category": "city",
-   "rank": 4,
+   "rank": 5,
    "defaultZoomSpanKm": 70,
    "name_evidence": "Wikivoyage has a \"Huzhou\" city/prefecture page that lists the Huzhou Museum, Lianhuazhuang and Changxing sights (Chinese Alligator Village).",
-   "reason": "5 kept spots (Huzhou Museum, Lianhuazhuang Park, Brush Museum, Gu Zhu Mountain, Chinese Alligator Village), above the four-spot bar. Rank 4: a prefecture city that guidebooks cover but not a headline; Anji, Nanxun and Moganshan are separate named bases. Overlap checked against Anji, Nanxun, Hangzhou: centres >33 km apart."
+   "reason": "5 kept spots (Huzhou Museum, Lianhuazhuang Park, Brush Museum, Gu Zhu Mountain, Chinese Alligator Village), above the four-spot bar. Rank 4: a prefecture city that guidebooks cover but not a headline; Anji, Nanxun and Moganshan are separate named bases. Overlap checked against Anji, Nanxun, Hangzhou: centres >33 km apart.",
+   "merged_from": "nanxun"
   },
   {
    "name": "Anji",
@@ -32,22 +33,6 @@
    "defaultZoomSpanKm": 60,
    "name_evidence": "Wikivoyage has an \"Anji\" page covering the county: Bamboo Exposition Park, Great Bamboo Sea, Yunshang ski resort; Anji is a tourism brand (\"China Bamboo Town\").",
    "reason": "8 kept spots, a county travellers name (bamboo sea, Tianhuangping). Rank 4: worth a detour from Hangzhou/Shanghai. Moganshan (Deqing, ~22 km E) is outside Anji and stays standalone."
-  },
-  {
-   "name": "Nanxun",
-   "action": "new-destination",
-   "id": "nanxun",
-   "coordinates": {
-    "lat": 30.8716,
-    "lng": 120.4302
-   },
-   "coordinates_source": "Wikivoyage Nanxun listing geotag (scenic area entrance)",
-   "pin_needed": false,
-   "category": "landmark",
-   "rank": 4,
-   "defaultZoomSpanKm": 15,
-   "name_evidence": "Wikivoyage has a \"Nanxun\" page; Nanxun is one of the six famous Jiangnan water towns (Wikipedia/Wikivoyage).",
-   "reason": "4 kept spots (old town, Jiaye Tang, Zhang Shiming, Little Lotus Garden). Not a spot of Jiangnan Water Towns (50 km away, out of its 40 km span, and a different province) or of Wuzhen (15 km, centres outside the 5.6 km overlap radius). Rank 4 like the other water towns."
   }
  ],
  "placements": [
@@ -427,8 +412,8 @@
    "bio_draft": "town: historic silk-trade water town with bridges, Ming and Qing merchant houses; the old town is free, some houses charge; a 5A scenic area",
    "category": "historic",
    "action": "spot",
-   "destination": "nanxun",
-   "id": "nanxun-1",
+   "destination": "huzhou",
+   "id": "huzhou-6",
    "reason": "The old town itself (bridges, canal streets, merchant houses) is the draw and no other spot covers its streets; the town is the destination centre so this spot is the old-quarter street walk. Review whether to rename to \"Nanxun Old Town Streets\".",
    "pin_needed": false
   },
@@ -455,8 +440,8 @@
    "bio_draft": "museum: Jiaye Tang private library (Jiayetang), the largest private library of modern China and an architectural landmark with gardens",
    "category": "museum",
    "action": "spot",
-   "destination": "nanxun",
-   "id": "nanxun-2",
+   "destination": "huzhou",
+   "id": "huzhou-7",
    "reason": "~0.6 km from the town centre.",
    "pin_needed": false
   },
@@ -483,8 +468,8 @@
    "bio_draft": "historic: merchant residence blending Chinese courtyards with stained glass and fireplaces in French style",
    "category": "historic",
    "action": "spot",
-   "destination": "nanxun",
-   "id": "nanxun-3",
+   "destination": "huzhou",
+   "id": "huzhou-8",
    "reason": "Inside the old town.",
    "pin_needed": false
   },
@@ -511,8 +496,8 @@
    "bio_draft": "park: private garden, \"First Private Garden in Jiangnan\", in the ancient town",
    "category": "nature",
    "action": "spot",
-   "destination": "nanxun",
-   "id": "nanxun-4",
+   "destination": "huzhou",
+   "id": "huzhou-9",
    "reason": "Inside the old town.",
    "pin_needed": false
   },

@@ -29,20 +29,6 @@
    "name_evidence": "Wikivoyage 'Xikou' page (Chiang Kai-shek's hometown, Xuedou Mountain); China Daily Ningbo lists 'Xikou-Tengtou Tourist Area' (5A); Xikou itself is the destination, not a spot",
    "spots": 4,
    "note": "33 km from Ningbo centre, centres farther than 0.75x larger radius; outside Ningbo urban metro"
-  },
-  {
-   "name": "Xiangshan",
-   "action": "new-destination",
-   "id": "xiangshan",
-   "category": "nature",
-   "rank": 5,
-   "coordinates": {
-    "lat": 29.25,
-    "lng": 121.88
-   },
-   "defaultZoomSpanKm": 60,
-   "name_evidence": "Xiangshan County coast brand: Xiangshan Film and Television City (China Daily Ningbo attractions page), Shipu old town (Wikivoyage Old towns), Songlan beach and Hua'ao Stone Forest (Wikivoyage)",
-   "spots": 4
   }
  ],
  "placements": [
@@ -488,9 +474,9 @@
   },
   {
    "name": "Xiangshan Global Studios",
-   "action": "spot",
-   "destination": "xiangshan",
-   "id": "xiangshan-1",
+   "action": "standalone",
+   "destination": null,
+   "id": "xiangshan-global-studios",
    "coordinates": {
     "lat": 29.2927,
     "lng": 121.835
@@ -510,9 +496,9 @@
   },
   {
    "name": "Shipu",
-   "action": "spot",
-   "destination": "xiangshan",
-   "id": "xiangshan-2",
+   "action": "standalone",
+   "destination": null,
+   "id": "shipu",
    "coordinates": {
     "lat": 29.2114,
     "lng": 121.9434
@@ -532,9 +518,9 @@
   },
   {
    "name": "Songlan Mountain Beach",
-   "action": "spot",
-   "destination": "xiangshan",
-   "id": "xiangshan-3",
+   "action": "standalone",
+   "destination": null,
+   "id": "songlan-mountain-beach",
    "coordinates": {
     "lat": 29.4343,
     "lng": 121.9618
@@ -554,9 +540,9 @@
   },
   {
    "name": "Hua'ao Stone Forest",
-   "action": "spot",
-   "destination": "xiangshan",
-   "id": "xiangshan-4",
+   "action": "standalone",
+   "destination": null,
+   "id": "hua-ao-stone-forest",
    "coordinates": {
     "lat": 29.0623,
     "lng": 121.8248

@@ -6,30 +6,15 @@
    "id": "longquan",
    "name": "Longquan",
    "category": "city",
-   "rank": 4,
+   "rank": 5,
    "coordinates": {
     "lat": 28.05812,
     "lng": 119.127256
    },
    "defaultZoomSpanKm": 60,
-   "name_evidence": "Wikivoyage Lishui lists Longquan as a district with its celadon kilns, sword factory and museums; Longquan celadon and Longquan sword are named tourism brands (UNESCO-listed celadon craft).",
+   "name_evidence": "Wikivoyage has a Longquan page (outline: celadon and swords, a city in Zhejiang)",
    "reason": "5 kept spots (celadon kiln site, celadon museum, sword factory and museum, Baishanzu). Baishanzu is a national park under construction with one kept spot, so it is a spot of Longquan, not a destination.",
    "coordinates_source": "centre = Longquan Celadon Museum point (Candidates, in Longquan town); refine from OSM place=town at research"
-  },
-  {
-   "action": "new-destination",
-   "id": "songyang",
-   "name": "Songyang",
-   "category": "city",
-   "rank": 5,
-   "coordinates": {
-    "lat": 28.448998,
-    "lng": 119.480901
-   },
-   "defaultZoomSpanKm": 40,
-   "name_evidence": "Wikivoyage Lishui has a Songyang section (old street, Yangjiatang, Damu Mountain tea terraces); WildChina and That's Mags Lishui guides use Songyang as a base for ancient villages.",
-   "reason": "Exactly 4 kept spots; centre on Songyang old street (28.449, 119.481).",
-   "coordinates_source": "centre = Songyang Old Street point (candidates, Wikivoyage geo); refine from OSM place=town at research"
   }
  ],
  "places": [
@@ -139,9 +124,9 @@
   },
   {
    "name": "Songyang Old Street",
-   "action": "spot",
-   "destination": "songyang",
-   "id": "songyang-1",
+   "action": "standalone",
+   "destination": null,
+   "id": "songyang-old-street",
    "coordinates": {
     "lat": 28.448998,
     "lng": 119.480901
@@ -161,9 +146,9 @@
   },
   {
    "name": "Yangjiatang Village",
-   "action": "spot",
-   "destination": "songyang",
-   "id": "songyang-2",
+   "action": "standalone",
+   "destination": null,
+   "id": "yangjiatang-village",
    "coordinates": {
     "lat": 28.463041,
     "lng": 119.542135
@@ -183,9 +168,9 @@
   },
   {
    "name": "Damu Mountain Tea Terraces",
-   "action": "spot",
-   "destination": "songyang",
-   "id": "songyang-3",
+   "action": "standalone",
+   "destination": null,
+   "id": "damu-mountain-tea-terraces",
    "coordinates": null,
    "coordinates_source": null,
    "reason": "Songyang county tea terraces.",
@@ -203,9 +188,9 @@
   },
   {
    "name": "Songzhuang Village",
-   "action": "spot",
-   "destination": "songyang",
-   "id": "songyang-4",
+   "action": "standalone",
+   "destination": null,
+   "id": "songzhuang-village",
    "coordinates": null,
    "coordinates_source": null,
    "reason": "Songyang county village.",
