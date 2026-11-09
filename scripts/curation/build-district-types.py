@@ -15,9 +15,14 @@ pos = {}
 for l in src.split('\n'):
     m = re.search(r"\{ id: ['\"]([^'\"]+)['\"]", l); c = re.search(r"latitude: (-?[\d.]+), longitude: (-?[\d.]+)", l)
     if m and c: pos[m.group(1)] = (float(c.group(1)), float(c.group(2)))
+# Only a standalone spot's carousel is titled with its division, so only those divisions need a type.
+standalone = set()
+for l in src.split('\n'):
+    m = re.search(r"\{ id: ['\"]([^'\"]+)['\"]", l)
+    if m and 'destinationId' not in l and 'countryCode' in l: standalone.add(m.group(1))
 rep = {}
 for sid, v in dist.items():
-    if sid in pos: rep.setdefault(f"{v['c']}|{v['d']}", sid)
+    if sid in pos and sid in standalone: rep.setdefault(f"{v['c']}|{v['d']}", sid)
 
 def curl(url):
     for _ in range(4):
@@ -76,5 +81,13 @@ for b in batches(sorted({x for v in p31.values() for x in v})):
 for key, v in info.items():
     labels = [lab.get(x, '') for x in p31.get(v['q'], [])]
     cache[key] = {'t': short(labels) or ADDR.get(v['addr']), 'p31': labels[:3], 'addr': v['addr']}
+json.dump(cache, open(OUT, 'w'), indent=1, ensure_ascii=False)
+# Where the name lookup found no feature, a country whose second level is one kind of thing gets that kind: Australia's local
+# government areas (not an unincorporated area, authority or island), Samoa's districts.
+for key, v in cache.items():
+    cc, nm = key.split('|', 1)
+    if v['t']: continue
+    if cc == 'AU' and not re.search(r'Area|Authority|Unincorporated|Island', nm): v['t'] = 'Council area'; v['default'] = True
+    elif cc == 'WS': v['t'] = 'District'; v['default'] = True
 json.dump(cache, open(OUT, 'w'), indent=1, ensure_ascii=False)
 print('done', len(cache), 'untyped:', [k for k, v in cache.items() if not v['t']][:40])
