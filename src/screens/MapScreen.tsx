@@ -3328,7 +3328,13 @@ const destItems = useMemo((): DestItem[] =>
     const wait = pinImagesHoldUntilRef.current - Date.now();
     const later = (ms: number, next: () => void) => { spotReadyTimerRef.current = pumpedTimeout(next, ms); };
     if (wait > 0) return later(wait, runSpotFade);   // not while a sheet slides in
-    if (!spotFadeWaitingRef.current.size) return;
+    if (!spotFadeWaitingRef.current.size) {
+      // Idle after a fade has settled (its pins are in their usual layers): put the fade layers back to transparent NOW, so the next
+      // batch finds them already reset. Resetting only once the next batch was due left its data 80-150 ms behind the reset, and when
+      // the map applied the reset late the new pins drew at the old full opacity for a frame, vanished, then faded in (the flicker).
+      if (spotFadeOnRef.current && !spotFadingRef.current.size) { spotFadeOnRef.current = false; pinlog('fade: idle reset'); setSpotFadeOn(false); }
+      return;
+    }
     if (spotFadeOnRef.current) { spotFadeOnRef.current = false; pinlog('fade: reset'); setSpotFadeOn(false); return later(SPOT_FADE_RESET_MS, runSpotFade); }
     spotFadingRef.current = spotFadeWaitingRef.current;
     spotFadeWaitingRef.current = new Set();
