@@ -110,11 +110,11 @@ const st = StyleSheet.create({
     width: DEST_PIN_SIZE + 2, height: DEST_PIN_SIZE + 2, borderRadius: (DEST_PIN_SIZE + 2) / 2,
     marginLeft: -(DEST_PIN_SIZE + 2) / 2, marginTop: -(DEST_PIN_SIZE + 2) / 2 + 1, backgroundColor: 'rgba(0,0,0,0.14)',
   },
-  // A faint, thin grey hairline around the whole pin (outside the white or green ring), so a white ring still reads
-  // against a light map.
+  // Room round the white or green ring where a faint grey hairline used to be (the shadow now sets the pin off the map);
+  // kept as an empty frame so the pin's size and centre are unchanged.
   outline: {
     width: DEST_PIN_SIZE + 2, height: DEST_PIN_SIZE + 2, borderRadius: (DEST_PIN_SIZE + 2) / 2,
-    borderWidth: 1, borderColor: 'rgba(107,114,128,0.35)',
+    alignItems: 'center', justifyContent: 'center',
   },
   disc: {
     width: DEST_PIN_SIZE, height: DEST_PIN_SIZE, borderRadius: DEST_PIN_SIZE / 2,
