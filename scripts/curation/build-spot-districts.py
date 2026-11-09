@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Writes src/data/spotDistricts.json: each spot's second-level administrative division (NZ: the district or city council area,
-e.g. "Selwyn District"; elsewhere the county, municipality or equivalent), from OpenStreetMap's Nominatim reverse geocoder.
+e.g. "Selwyn District"; China: the prefecture-level city; elsewhere the county, municipality or equivalent), from OpenStreetMap's Nominatim reverse geocoder.
 
   python3 scripts/curation/build-spot-districts.py [--only id,id] [--refresh]
 
@@ -36,6 +36,19 @@ for i, (sid, lat, lon) in enumerate(todo):
         except Exception:
             time.sleep(5)
     a = (d or {}).get('address', {})
+    if a.get('country_code') == 'cn':
+        # China: the second level is the prefecture-level city (地级市). The default zoom returns a district or county
+        # (Xihu District, Gusu District), so ask at zoom 7, which returns the prefecture ("Hangzhou City", "Jinhua").
+        time.sleep(1.1)
+        u7 = url.replace('zoom=10', 'zoom=7')
+        r = subprocess.run(['curl', '-s', '-m', '30', '-A', 'IntrepidApp-Curation/1.0', u7], capture_output=True, text=True)
+        try:
+            a7 = json.loads(r.stdout).get('address', {})
+            pref = a7.get('city') or a7.get('state_district') or a7.get('county')
+            if pref:
+                a = dict(a, county=re.sub(r' City$', '', pref))
+        except Exception:
+            pass
     name = a.get('county') or a.get('state_district') or a.get('municipality') or a.get('city') or a.get('town') or a.get('state')
     if name:
         cache[sid] = {'d': name, 'c': (a.get('country_code') or '').upper(), 'r': a.get('state', '')}
