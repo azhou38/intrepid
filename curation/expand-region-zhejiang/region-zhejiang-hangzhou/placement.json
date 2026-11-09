@@ -1,0 +1,1496 @@
+{
+ "region": "zhejiang-hangzhou",
+ "new_destinations": [
+  {
+   "name": "Hangzhou",
+   "action": "new-destination",
+   "id": "hangzhou",
+   "coordinates": {
+    "lat": 30.246,
+    "lng": 120.1384
+   },
+   "coordinates_source": "West Lake centre, OSM relation 2308774 (visitor hub of the city)",
+   "category": "city",
+   "rank": 2,
+   "defaultZoomSpanKm": 80,
+   "name_evidence": "Wikivoyage has a Hangzhou city page whose See section lists West Lake, Lingyin Temple, Leifeng Pagoda, Longjing and Xixi; West Lake is a UNESCO World Heritage Site and Hangzhou a headline Chinese destination (Wikipedia/Wikivoyage \"Hangzhou\").",
+   "reason": "Rank 2: a national highlight in guidebooks, the Jiangnan city built around West Lake. 42 kept spots, far above the four-spot bar. Span 80 km covers Yuhang, Xiaoshan, Binjiang and the near Fuyang and Lin'an districts."
+  }
+ ],
+ "placements": [
+  {
+   "name": "West Lake",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-1",
+   "coordinates": {
+    "lat": 30.246,
+    "lng": 120.1384
+   },
+   "coordinates_source": "OSM relation 2308774 (West Lake) centre",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "the scenic lake at the heart of Hangzhou, ringed by causeways, islands, temples and gardens",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 69075,
+   "counted_sources": 1,
+   "skeptic_objection": null,
+   "km_from_centre": 0.0,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 0.0 km from centre, within span"
+  },
+  {
+   "name": "Lingyin Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-2",
+   "coordinates": {
+    "lat": 30.2428,
+    "lng": 120.0968
+   },
+   "coordinates_source": "OSM node 1218588822 (Lingyin Temple) centre",
+   "pin_needed": false,
+   "category": "religious",
+   "icon": "🛕",
+   "bio_draft": "Buddhist temple at the foot of Feilai Peak west of West Lake",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 31173,
+   "counted_sources": 2,
+   "skeptic_objection": null,
+   "km_from_centre": 4.0,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 4.0 km from centre, within span"
+  },
+  {
+   "name": "Leifeng Pagoda",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-3",
+   "coordinates": {
+    "lat": 30.2339,
+    "lng": 120.145
+   },
+   "coordinates_source": "OSM way 229726934 (Leifeng Pagoda) centre",
+   "pin_needed": false,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "pagoda on Sunset Hill at the south shore of West Lake, the Evening Glow viewpoint",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 21474,
+   "counted_sources": 1,
+   "skeptic_objection": null,
+   "km_from_centre": 1.5,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 1.5 km from centre, within span"
+  },
+  {
+   "name": "Longjing Tea Fields",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-4",
+   "coordinates": {
+    "lat": 30.22393,
+    "lng": 120.10683
+   },
+   "coordinates_source": "OSM node 13371708830 (龙井泉, Longjing Spring)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "tea plantations around Longjing village, visited in the spring harvest",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 71348,
+   "counted_sources": 1,
+   "skeptic_objection": null,
+   "km_from_centre": 3.9,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 3.9 km from centre, within span"
+  },
+  {
+   "name": "Xixi National Wetland Park",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-5",
+   "coordinates": {
+    "lat": 30.2663,
+    "lng": 120.0626
+   },
+   "coordinates_source": "OSM way 783223294 (Xixi National Wetland Park) centre",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "wetland park of ponds, reed marshes and boat trips west of the city",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 10947,
+   "counted_sources": 2,
+   "skeptic_objection": null,
+   "km_from_centre": 7.6,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 7.6 km from centre, within span"
+  },
+  {
+   "name": "Su Causeway",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "willow-lined causeway across West Lake, a Ten Scenes site (Spring Dawn at Su Causeway)",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Part of West Lake, may be seen as one spot.",
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Broken Bridge",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-7",
+   "coordinates": {
+    "lat": 30.257,
+    "lng": 120.14364
+   },
+   "coordinates_source": "wikipedia:Broken Bridge (Hangzhou)",
+   "pin_needed": false,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "causeway bridge on West Lake, the Lingering Snow viewpoint linked to the White Snake legend",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3552,
+   "counted_sources": 1,
+   "skeptic_objection": "Short stop, part of the lake.",
+   "km_from_centre": 1.3,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 1.3 km from centre, within span"
+  },
+  {
+   "name": "Three Pools Mirroring the Moon",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-8",
+   "coordinates": {
+    "lat": 30.24085,
+    "lng": 120.14049
+   },
+   "coordinates_source": "OSM way 975360503 (三潭印月)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "Lesser Yingzhou Isle on West Lake, with three stone pagodas lit by candles at full moon",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Boat access; part of lake.",
+   "km_from_centre": 0.6,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 0.6 km from centre, within span"
+  },
+  {
+   "name": "Solitary Hill",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-9",
+   "coordinates": {
+    "lat": 30.25414,
+    "lng": 120.13781
+   },
+   "coordinates_source": "OSM relation 20083679 (孤山公园, Solitary Hill park)",
+   "pin_needed": false,
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio_draft": "the only natural island on West Lake, with palaces, a restaurant and the seal-engravers society",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Overlaps Zhongshan Park and Zhejiang Museum.",
+   "km_from_centre": 0.9,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 0.9 km from centre, within span"
+  },
+  {
+   "name": "Hefang Street",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-10",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "Wikivoyage Hangzhou describes Hefang Jie at the base of Wushan as a pedestrian old street of stalls and small lanes; open daily, a visitor strolls it for an hour. Source: https://en.wikivoyage.org/wiki/Hangzhou",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hangzhou"
+   ],
+   "skeptic_objection": "Largely a rebuilt shopping street; commercial and shops could make it only a shopping stop.",
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Six Harmonies Pagoda",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-11",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "Wikivoyage Hangzhou names Liuhe Pagoda as the most prominent pagoda, with an adjacent park of pagoda replicas; visitors climb it (rule 2). Source: https://en.wikivoyage.org/wiki/Hangzhou",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hangzhou"
+   ],
+   "skeptic_objection": "Ticketed riverside pagoda; a visit is about an hour and some find it a repeat of other pagodas.",
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Song Dynasty Town",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-12",
+   "coordinates": {
+    "lat": 30.1705,
+    "lng": 120.09027
+   },
+   "coordinates_source": "OSM node 6205292385 (杭州宋城旅游区)",
+   "pin_needed": false,
+   "category": "entertainment",
+   "icon": "🎡",
+   "bio_draft": "Song-dynasty themed amusement park with staged performances",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "skeptic_objection": "Touristy.",
+   "km_from_centre": 9.6,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 9.6 km from centre, within span"
+  },
+  {
+   "name": "Liangzhu Ancient City",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-13",
+   "coordinates": {
+    "lat": 30.4027,
+    "lng": 119.9527
+   },
+   "coordinates_source": "OSM relation 8869354 (Liangzhu National Archaeological Site Park) centre",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏛️",
+   "bio_draft": "UNESCO-listed Neolithic city site of the Liangzhu culture",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Excavation site; large park.",
+   "km_from_centre": 24.9,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 24.9 km from centre, within span"
+  },
+  {
+   "name": "Liangzhu Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-14",
+   "coordinates": {
+    "lat": 30.3798,
+    "lng": 120.0232
+   },
+   "coordinates_source": "OSM way 433830824 (良渚博物院) centre",
+   "pin_needed": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "museum at the Liangzhu archaeological site with jade artefacts",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1912,
+   "counted_sources": 1,
+   "skeptic_objection": "Overlaps Liangzhu site.",
+   "km_from_centre": 18.5,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 18.5 km from centre, within span"
+  },
+  {
+   "name": "China National Tea Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-15",
+   "coordinates": {
+    "lat": 30.2347,
+    "lng": 120.1156
+   },
+   "coordinates_source": "wikipedia:China National Tea Museum",
+   "pin_needed": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "tea museum near the Longjing tea fields with tea history and collections",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1741,
+   "counted_sources": 1,
+   "skeptic_objection": "Niche museum.",
+   "km_from_centre": 2.5,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 2.5 km from centre, within span"
+  },
+  {
+   "name": "China National Silk Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-16",
+   "coordinates": {
+    "lat": 30.225,
+    "lng": 120.1472
+   },
+   "coordinates_source": "wikipedia:China National Silk Museum",
+   "pin_needed": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "national silk museum in Hangzhou with silk weaving and history displays",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2493,
+   "counted_sources": 0,
+   "skeptic_objection": "Museum; may only suit textile fans.",
+   "km_from_centre": 2.5,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 2.5 km from centre, within span"
+  },
+  {
+   "name": "Zhejiang Provincial Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-17",
+   "coordinates": {
+    "lat": 30.25347,
+    "lng": 120.13861
+   },
+   "coordinates_source": "wikipedia:Zhejiang Provincial Museum",
+   "pin_needed": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "largest comprehensive museum in Zhejiang, known for its celadon porcelain",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2573,
+   "counted_sources": 1,
+   "skeptic_objection": "Museum; one source but an obvious draw.",
+   "km_from_centre": 0.8,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 0.8 km from centre, within span"
+  },
+  {
+   "name": "Yue Fei Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-18",
+   "coordinates": {
+    "lat": 30.2375,
+    "lng": 120.14083333
+   },
+   "coordinates_source": "wikipedia:Yue Fei Temple",
+   "pin_needed": false,
+   "category": "religious",
+   "icon": "🛕",
+   "bio_draft": "temple to General Yue Fei on the north-west shore of West Lake, with his tomb",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 10268,
+   "counted_sources": 2,
+   "skeptic_objection": "Rebuilt temple; a short visit if one is not interested in the history.",
+   "km_from_centre": 1.0,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 1.0 km from centre, within span"
+  },
+  {
+   "name": "Baochu Pagoda",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-19",
+   "coordinates": {
+    "lat": 30.26333333,
+    "lng": 120.14361111
+   },
+   "coordinates_source": "wikipedia:Baochu Pagoda",
+   "pin_needed": false,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "stone pagoda on Gem Hill above the north shore of West Lake",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2274,
+   "counted_sources": 1,
+   "skeptic_objection": "The pagoda itself is exterior only.",
+   "km_from_centre": 2.0,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 2.0 km from centre, within span"
+  },
+  {
+   "name": "Feilai Peak",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-20",
+   "coordinates": {
+    "lat": 30.2389,
+    "lng": 120.0964
+   },
+   "coordinates_source": "OSM node 9020762381 (Feilai Peak) centre",
+   "pin_needed": false,
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio_draft": "limestone peak with Buddhist cliff carvings and grottoes",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "skeptic_objection": "Entrance bundled with Lingyin Temple.",
+   "km_from_centre": 4.1,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 4.1 km from centre, within span"
+  },
+  {
+   "name": "Jingci Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-21",
+   "coordinates": {
+    "lat": 30.2295,
+    "lng": 120.149
+   },
+   "coordinates_source": "wikipedia:Jingci Temple",
+   "pin_needed": false,
+   "category": "religious",
+   "icon": "🛕",
+   "bio_draft": "Buddhist temple in Hangzhou",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3022,
+   "counted_sources": 0,
+   "skeptic_objection": "Temples are many.",
+   "km_from_centre": 2.1,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 2.1 km from centre, within span"
+  },
+  {
+   "name": "Wushan Hill",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-22",
+   "coordinates": {
+    "lat": 30.23911,
+    "lng": 120.16008
+   },
+   "coordinates_source": "OSM node 4944243306 (吴山 peak)",
+   "pin_needed": false,
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio_draft": "hill with a pagoda and temple and views over the city and lake",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Entry is under Wushan Square; overlapping.",
+   "km_from_centre": 2.2,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 2.2 km from centre, within span"
+  },
+  {
+   "name": "Hupao Spring",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-23",
+   "coordinates": {
+    "lat": 30.209,
+    "lng": 120.13
+   },
+   "coordinates_source": "wikipedia:Hupao Spring",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "spring with wooded paths, tea houses, bamboo groves and historic structures",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3321,
+   "counted_sources": 1,
+   "skeptic_objection": "One source.",
+   "km_from_centre": 4.2,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 4.2 km from centre, within span"
+  },
+  {
+   "name": "Beijing-Hangzhou Grand Canal Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-24",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "canal museum in the Gongshu district beside the Grand Canal",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Far from the lake; one source.",
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Gongchen Bridge",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-25",
+   "coordinates": {
+    "lat": 30.32047222,
+    "lng": 120.13472222
+   },
+   "coordinates_source": "wikipedia:Gongchen Bridge",
+   "pin_needed": false,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "Ming-era stone canal bridge in Gongshu on the Grand Canal",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1770,
+   "counted_sources": 0,
+   "skeptic_objection": "Short stop; best bundled with the canal museums.",
+   "km_from_centre": 8.3,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 8.3 km from centre, within span"
+  },
+  {
+   "name": "Hangzhou Arts and Crafts Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-26",
+   "coordinates": {
+    "lat": 30.32096,
+    "lng": 120.13332
+   },
+   "coordinates_source": "wikipedia:Hangzhou Arts and Crafts Museum",
+   "pin_needed": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "museum of local arts and crafts",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 775,
+   "counted_sources": 0,
+   "skeptic_objection": "Niche craft museums; next to Grand Canal Museum.",
+   "km_from_centre": 8.3,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 8.3 km from centre, within span"
+  },
+  {
+   "name": "Former Residence of Hu Xueyan",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-27",
+   "coordinates": {
+    "lat": 30.242971,
+    "lng": 120.179464
+   },
+   "coordinates_source": "wikipedia:Former Residence of Hu Xueyan",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏛️",
+   "bio_draft": "1872 Jiangnan mansion and garden of the merchant Hu Xueyan",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2918,
+   "counted_sources": 1,
+   "skeptic_objection": "Short visit.",
+   "km_from_centre": 4.0,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 4.0 km from centre, within span"
+  },
+  {
+   "name": "Hu Qing Yu Tang",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-28",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "traditional Chinese medicine museum in a historic pharmacy and merchant hall",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 2558,
+   "counted_sources": 1,
+   "skeptic_objection": "Partly a shop.",
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Guo's Villa",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-29",
+   "coordinates": {
+    "lat": 30.2459,
+    "lng": 120.12759
+   },
+   "coordinates_source": "OSM node 4500306808 (郭庄)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "traditional private garden of Jiangnan on the west side of West Lake",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "skeptic_objection": "Small garden.",
+   "km_from_centre": 1.0,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 1.0 km from centre, within span"
+  },
+  {
+   "name": "Flower Pond Fish Viewing",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-30",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "Wikivoyage Hangzhou lists Viewing Fish at Flower Pond among the Ten Scenes with its own point; a garden park with koi ponds visitors walk through. Source: https://en.wikivoyage.org/wiki/Hangzhou",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Hangzhou"
+   ],
+   "skeptic_objection": "Part of the West Lake shore, so arguably part of the larger West Lake spot.",
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Jiuxi Smoky Trees",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-31",
+   "coordinates": {
+    "lat": 30.2046,
+    "lng": 120.1085
+   },
+   "coordinates_source": "OSM node 13458238803 centre",
+   "pin_needed": false,
+   "category": "viewpoint",
+   "icon": "⛰️",
+   "bio_draft": "scenic valley of the Jiuxi stream known for its misty trees",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Candidate is a stretch of the Longjing walk; overlaps Longjing Tea Fields.",
+   "km_from_centre": 5.4,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 5.4 km from centre, within span"
+  },
+  {
+   "name": "Hangzhou Botanical Garden",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-32",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "botanical garden with ponds, a peacock farm and seasonal planting",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 1136,
+   "counted_sources": 2,
+   "skeptic_objection": null,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Wansong Academy",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-33",
+   "coordinates": {
+    "lat": 30.22903,
+    "lng": 120.15599
+   },
+   "coordinates_source": "OSM way 520937302 (万松书院)",
+   "pin_needed": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "historic academy on Wansong Mountain with lecture halls and gardens (Ctrip)",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Reconstructed campus.",
+   "km_from_centre": 2.5,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 2.5 km from centre, within span"
+  },
+  {
+   "name": "Jingshan Temple",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-34",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "religious",
+   "icon": "🛕",
+   "bio_draft": "Buddhist temple at Jingshan (Ctrip)",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Active religious site far out in Yuhang; only one official page read via search snippet.",
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); pin pending, location per source inside the urban/West Lake area"
+  },
+  {
+   "name": "Tianducheng",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-35",
+   "coordinates": {
+    "lat": 30.38972222,
+    "lng": 120.24222222
+   },
+   "coordinates_source": "wikipedia:Tianducheng",
+   "pin_needed": false,
+   "category": "landmark",
+   "icon": "🏯",
+   "bio_draft": "Paris-style development with a 108 m replica of the Eiffel Tower",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 60352,
+   "counted_sources": 1,
+   "skeptic_objection": null,
+   "km_from_centre": 18.8,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 18.8 km from centre, within span"
+  },
+  {
+   "name": "Hangzhou Wildlife World",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-36",
+   "coordinates": {
+    "lat": 30.155,
+    "lng": 119.981
+   },
+   "coordinates_source": "OSM way 437732061 (杭州野生动物世界) centre",
+   "pin_needed": false,
+   "category": "entertainment",
+   "icon": "🎡",
+   "bio_draft": "wildlife park about 21 km from the centre, with animal encounters (Ctrip)",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Animal welfare and 2021 leopard-escape stories; zoo-type venue.",
+   "km_from_centre": 18.2,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 18.2 km from centre, within span"
+  },
+  {
+   "name": "Hangzhou Paradise Park",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-37",
+   "coordinates": {
+    "lat": 30.1626,
+    "lng": 120.241
+   },
+   "coordinates_source": "OSM way 443223606 (杭州乐园) centre",
+   "pin_needed": false,
+   "category": "entertainment",
+   "icon": "🎡",
+   "bio_draft": "travel and leisure resort on the south bank of the Qiantang River in Xiaoshan",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "skeptic_objection": "Amusement park.",
+   "km_from_centre": 13.5,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 13.5 km from centre, within span"
+  },
+  {
+   "name": "China Comic and Animation Museum",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-38",
+   "coordinates": {
+    "lat": 30.1645,
+    "lng": 120.2011
+   },
+   "coordinates_source": "OSM way 607445656 centre",
+   "pin_needed": false,
+   "category": "museum",
+   "icon": "🏛️",
+   "bio_draft": "museum of Chinese comics and animation in Xiaoshan",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "The script's Xiaoshan location may mean a different place; verify before applying.",
+   "km_from_centre": 10.9,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 10.9 km from centre, within span"
+  },
+  {
+   "name": "Xianghu Lake",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-39",
+   "coordinates": {
+    "lat": 30.1365,
+    "lng": 120.2106
+   },
+   "coordinates_source": "OSM relation 8450950 centre",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "lake in Xiaoshan with a historic lake park and walking paths",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Local lake park.",
+   "km_from_centre": 14.0,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 14.0 km from centre, within span"
+  },
+  {
+   "name": "Qingshan Lake",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-40",
+   "coordinates": {
+    "lat": 30.23854,
+    "lng": 119.76907
+   },
+   "coordinates_source": "OSM way 1095303329 (青山湖景区)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "reservoir lake in Lin'an (named as a link on Wikivoyage)",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Local greenway.",
+   "km_from_centre": 35.4,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 35.4 km from centre, within span"
+  },
+  {
+   "name": "Longmen Ancient Town",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-41",
+   "coordinates": {
+    "lat": 29.89972222,
+    "lng": 119.95222222
+   },
+   "coordinates_source": "wikipedia:Longmen, Zhejiang",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏛️",
+   "bio_draft": "small ancient town in Fuyang with Qing-dynasty buildings, hometown of Sun Quan",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 797,
+   "counted_sources": 1,
+   "skeptic_objection": "Small town.",
+   "km_from_centre": 42.4,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 42.4 km from centre, within span"
+  },
+  {
+   "name": "Xinsha Island",
+   "action": "spot",
+   "destination": "hangzhou",
+   "id": "hangzhou-42",
+   "coordinates": {
+    "lat": 30.04478,
+    "lng": 119.99201
+   },
+   "coordinates_source": "OSM relation 15692022 (新沙岛旅游度假区)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "island in the middle of the Fuchun River in Fuyang with fresh-water pools and camping",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Mostly local leisure.",
+   "km_from_centre": 26.4,
+   "reason": "Inside Hangzhou's greater metro area (West Lake, urban districts, Yuhang, Xiaoshan, Binjiang, Fuyang, Lin'an districts); 26.4 km from centre, within span"
+  },
+  {
+   "name": "Qiandao Lake",
+   "action": "standalone",
+   "destination": null,
+   "id": "qiandao-lake",
+   "coordinates": {
+    "lat": 29.60916667,
+    "lng": 118.99
+   },
+   "coordinates_source": "wikipedia:Qiandao Lake",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "large reservoir lake of the Xin'an River dotted with over a thousand islands in Chun'an",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 15038,
+   "counted_sources": 1,
+   "skeptic_objection": "Large lake, visit is a day trip by boat; Dragon Island etc. stay rejected as part of it.",
+   "km_from_centre": 131.5,
+   "reason": "Chun'an county reservoir ~130 km from Hangzhou, a separate trip outside the metro area and span. (131.5 km from Hangzhou centre)"
+  },
+  {
+   "name": "Tianmu Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "tianmu-mountain",
+   "coordinates": {
+    "lat": 30.33333333,
+    "lng": 119.41666667
+   },
+   "coordinates_source": "wikipedia:Tianmu Mountain",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "mountain nature reserve in Lin'an with giant firs and walking trails, reached by shuttle bus",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 3892,
+   "counted_sources": 1,
+   "skeptic_objection": "Outline-only page.",
+   "km_from_centre": 69.8,
+   "reason": "Nature reserve in Lin'an ~80 km from West Lake, a separate trip beyond the span; not a Hangzhou-base spot. (69.8 km from Hangzhou centre)"
+  },
+  {
+   "name": "Fuchun Taoyuan",
+   "action": "standalone",
+   "destination": null,
+   "id": "fuchun-taoyuan",
+   "coordinates": {
+    "lat": 30.01375,
+    "lng": 119.62888
+   },
+   "coordinates_source": "OSM way 705696023 (富春桃源)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "scenic area north-west of Fuyang with mountains, lakes, forest and natural villages",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Hard to reach, scattered.",
+   "km_from_centre": 55.3,
+   "reason": "Remote scenic area ~55 km from West Lake in western Fuyang, hard to reach and scattered; outside the area visitors base from, so not forced into Hangzhou's span. (55.3 km from Hangzhou centre)"
+  },
+  {
+   "name": "Taihu Lake Source",
+   "action": "standalone",
+   "destination": null,
+   "id": "taihu-lake-source",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "scenic source area of the Tai Lake in Lin'an (named as a link on Wikivoyage)",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "One-line listing; remote.",
+   "reason": "Remote Lin'an source area well outside the Hangzhou metro and span."
+  },
+  {
+   "name": "Zhexi Grand Canyon",
+   "action": "standalone",
+   "destination": null,
+   "id": "zhexi-grand-canyon",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "scenic canyon in western Zhejiang near Lin'an (named as a link on Wikivoyage)",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "One-line listing, little detail.",
+   "reason": "Remote canyon in western Lin'an beyond the metro and span."
+  },
+  {
+   "name": "Daqi Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "daqi-mountain",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "national forest park near Tonglu with streams, pools and rock formations",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Short description.",
+   "reason": "Tonglu forest park ~70 km from West Lake, a separate county and trip; outside Hangzhou's bounds."
+  },
+  {
+   "name": "Yaolin Fairyland",
+   "action": "standalone",
+   "destination": null,
+   "id": "yaolin-fairyland",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "🌿",
+   "bio_draft": "limestone cave and karst scenic area in Tonglu, also known as Yaolin Cave",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl",
+    "coordinates"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "skeptic_objection": "Touristy.",
+   "reason": "Tonglu karst cave area ~75 km from West Lake, outside Hangzhou's bounds."
+  }
+ ],
+ "review": [
+  {
+   "name": "Bai Causeway",
+   "case_for": "Wikivoyage Hangzhou lists it with one line; walkway to Solitary Hill.",
+   "case_against": "Near-duplicate stroll of the Su/Broken Bridge area."
+  },
+  {
+   "name": "Mid-Lake Pavilion",
+   "case_for": "Wikivoyage Hangzhou lists it; island pavilion reached by lake boat.",
+   "case_against": "Boat-trip stop, short visit, one source."
+  },
+  {
+   "name": "Lord Ruan's Mound",
+   "case_for": "Wikivoyage Hangzhou lists it: man-made island with garden, one line.",
+   "case_against": "Minor island on the same boat circuit as Three Pools."
+  },
+  {
+   "name": "Temple of the Qian Kings",
+   "case_for": "Wikivoyage Hangzhou lists it: memorial with tombs of five Wuyue kings.",
+   "case_against": "Memorial hall, one source, short visit."
+  },
+  {
+   "name": "West Lake Museum",
+   "case_for": "Wikivoyage Hangzhou lists it lists it with address; museum of West Lake.",
+   "case_against": "Minor museum, one source."
+  },
+  {
+   "name": "Zhejiang Museum of Natural History",
+   "case_for": "Wikivoyage Hangzhou lists it lists it; natural history museum.",
+   "case_against": "One source, ordinary city museum."
+  },
+  {
+   "name": "Museum of Chinese Go",
+   "case_for": "Wikivoyage Hangzhou lists it lists it; niche museum.",
+   "case_against": "Only for Go enthusiasts."
+  },
+  {
+   "name": "704 Project",
+   "case_for": "Wikivoyage Hangzhou lists it with hours and CNY 16 entry, but marked dead link; Cold War tunnels.",
+   "case_against": "Current status uncertain, one source."
+  },
+  {
+   "name": "Hangzhou Zoo",
+   "case_for": "Wikivoyage Hangzhou lists it but the entry says poor animal treatment; pandas.",
+   "case_against": "Zoo welfare concerns; ordinary city zoo."
+  },
+  {
+   "name": "Qianjiang New City",
+   "case_for": "Wikivoyage Hangzhou lists it: new business district with modern architecture.",
+   "case_against": "District, little to do for half an hour."
+  },
+  {
+   "name": "Xiling Seal Engravers Society",
+   "case_for": "Wikivoyage Hangzhou lists it: seal-engraving society with workshop and gallery.",
+   "case_against": "Niche."
+  },
+  {
+   "name": "Southern Song Imperial Ancestral Temple Park",
+   "case_for": "Hangzhou tourism lists the Taimiao site only as ruins on the Song imperial route.",
+   "case_against": "Little to see."
+  },
+  {
+   "name": "Zhakou White Pagoda",
+   "case_for": "Hangzhou tourism names it within White Pagoda Park, part of the West Lake cultural landscape (nine-storey, 15 m pagoda).",
+   "case_against": "Small riverside park."
+  },
+  {
+   "name": "Kuahuqiao Site",
+   "case_for": "Official Hangzhou pages describe the Kuahuqiao Relics Museum (8,000-year-old canoe, Mon closed) but only this one source.",
+   "case_against": "Niche museum in Xiaoshan; one source."
+  },
+  {
+   "name": "Tiger Cave Kiln",
+   "case_for": "Hangzhou tourism describes the Tiger Cave kiln site (dragon kilns near the imperial city ruins) but I could not see visitor facilities.",
+   "case_against": "Archaeological ruins; short visit."
+  },
+  {
+   "name": "Phoenix Hill",
+   "case_for": "Hangzhou tourism page 'Phoenix Hill' exists but its fetch failed (blocked/unreachable), so unresolved; the OSM location is also unchecked.",
+   "case_against": "Song palace hill with little to see."
+  },
+  {
+   "name": "Daciyan",
+   "case_for": "Hangzhou tourism describes Daci Rock as a Jiande Buddhist site (Jiande Wikivoyage page has no detail); one thin source.",
+   "case_against": "Temple; could be a local site only."
+  },
+  {
+   "name": "Guanshan Park",
+   "case_for": "Wikivoyage Hangzhou lists it: riverside park with a mountain trail.",
+   "case_against": "Local park."
+  },
+  {
+   "name": "Dongwu Park",
+   "case_for": "Wikivoyage Hangzhou lists it: Three Kingdoms-style park with lake and teahouse.",
+   "case_against": "Local park."
+  },
+  {
+   "name": "Huang Gongwang Mountain National Forest Park",
+   "case_for": "Wikivoyage Hangzhou lists it: forest park with wildlife and gliding.",
+   "case_against": "One source."
+  },
+  {
+   "name": "Yu Dafu Park",
+   "case_for": "Wikivoyage Hangzhou lists it: park with the writer's former house.",
+   "case_against": "Minor."
+  },
+  {
+   "name": "Chenghuang Pavilion",
+   "case_for": "Search of official/tourism sites found nothing; it is a known Wushan landmark, so held rather than rejected.",
+   "case_against": "Rebuilt tower on Wushan."
+  },
+  {
+   "name": "Jade Emperor Hill",
+   "case_for": "Rule 1: Wikivoyage Hangzhou lists Yuhuang Shan Park (a Daoist temple on the summit, views over lake and river, hike). Source: https://en.wikivoyage.org/wiki/Hangzhou",
+   "case_against": "Wikivoyage itself calls it one of the least-visited sites; one source only."
+  },
+  {
+   "name": "Meijiawu Tea Village",
+   "case_for": "Rule 1: Wikivoyage Hangzhou recommends Meijiawu (with Manjuelong and Longjing villages) for tea-house afternoons and guesthouse stays; there is a tea museum nearby. Source: https://en.wikivoyage.org/wiki/Hangzhou",
+   "case_against": "One source; overlaps the Longjing Tea Fields spot and is mostly tea houses and restaurants."
+  },
+  {
+   "name": "Huanglong Cave",
+   "case_for": "Rule 1: Wikivoyage Hangzhou lists Huanglong Cave (one of the New Ten Scenes) on Baochu hill; a garden-and-theatre park. Source: https://en.wikivoyage.org/wiki/Hangzhou",
+   "case_against": "Listing has no visit detail; one source; a short stop near Baochu Pagoda."
+  },
+  {
+   "name": "Hangzhou Confucius Temple",
+   "case_for": "Rule 1: Wikivoyage Hangzhou describes the Confucius Temple with a Stele Forest near Wushan Square; visitors can enter. Source: https://en.wikivoyage.org/wiki/Hangzhou",
+   "case_against": "One source; may be a small museum-like site; check entry status."
+  }
+ ]
+}

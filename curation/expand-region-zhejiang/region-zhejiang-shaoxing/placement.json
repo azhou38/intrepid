@@ -1,0 +1,500 @@
+{
+ "region": "zhejiang-shaoxing",
+ "new_destinations": [
+  {
+   "name": "Shaoxing",
+   "action": "new-destination",
+   "id": "shaoxing",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "lat": 29.9955,
+    "lng": 120.581
+   },
+   "coordinates_source": "Wikivoyage Shaoxing / Lu Xun precinct geo tag (old-town centre)",
+   "defaultZoomSpanKm": 40,
+   "name_evidence": "Wikivoyage 'Shaoxing' city page with See/Do listings; guidebook chapter, 'Venice of the East' water-town brand",
+   "spots": 10
+  }
+ ],
+ "placements": [
+  {
+   "name": "Lu Xun Native Place",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-1",
+   "coordinates": {
+    "lat": 29.995426,
+    "lng": 120.58106
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Shaoxing, Lu Xun's Hometown Tourism Precinct)",
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage Shaoxing lists it first, China Discovery names it; free precinct of Lu Xun's house and old-town buildings, well over half an hour.",
+   "views": 1629,
+   "counted_sources": 1,
+   "category_note": "museum precinct: Lu Xun's former residence and the old-town houses around it, free to visit",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY"
+  },
+  {
+   "name": "Shen Garden",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-2",
+   "coordinates": {
+    "lat": 29.993404,
+    "lng": 120.586143
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Shaoxing, Shen's Garden)",
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage and China Daily top-attractions list both feature it; a Southern Song garden with the Lu You story, entry and wander for an hour.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "garden: Southern Song garden with bridges, streams, the Lu You and Tang Wan story",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY"
+  },
+  {
+   "name": "Orchid Pavilion",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-3",
+   "coordinates": {
+    "lat": 29.929281,
+    "lng": 120.493462
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Shaoxing, The Orchid Pavilion)",
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage lists Lanting with hours and a CNY80 ticket; China Discovery and Shaoxing guides place it among the top sites; the calligraphy birthplace.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "pavilion: the Lanting garden where Wang Xizhi wrote the Orchid Pavilion Preface, in the Lanting scenic area",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY"
+  },
+  {
+   "name": "Mausoleum of Yu the Great",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage intro and listing name it; Dayu legend site at Kuaiji, a major heritage sight, an hour or more.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "historic tomb: mausoleum of Yu the Great at the foot of Kuaiji Mountain, the Xia dynasty founder",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "bounds_note": "coordinates unsourced; placement by Wikivoyage/judge description"
+  },
+  {
+   "name": "East Lake Scenic Area",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-5",
+   "coordinates": {
+    "lat": 30.0007,
+    "lng": 120.628
+   },
+   "coordinates_source": "OSM relation 10123511 (绍兴东湖风景区) centre",
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage (CNY50) and China Daily's top-attractions list; quarry cliffs, caves and wupeng boat rides, half a day.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "scenic area: lake and cliffs with caves, stone bridges and boat rides",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY"
+  },
+  {
+   "name": "Cangqiao Straight Street",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage lists it twice and the intro; China Discovery names it; free old canal street with boat trips and snacks, an hour or more.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "street: pedestrian stone-paved old street of canal-side houses, handicraft and snack shops, free",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "bounds_note": "coordinates unsourced; placement by Wikivoyage/judge description"
+  },
+  {
+   "name": "Bazi Bridge",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-7",
+   "coordinates": {
+    "lat": 30.00224722,
+    "lng": 120.58777222
+   },
+   "coordinates_source": "wikipedia:Bazi Bridge",
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage lists it and China Discovery highlights it as the oldest overpass in China; a quick but named icon with ancient lanes around.",
+   "views": 812,
+   "counted_sources": 1,
+   "category_note": "bridge: one of China's oldest overpass bridges, Northern Song, figure-eight shape",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY"
+  },
+  {
+   "name": "Shusheng Cultural Street",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-8",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: Wikivoyage names it and China Discovery's 'Calligraphy Sage Historic Site'; China Daily government page covers the Jishan historic block of Wang Xizhi with Jiezhu Temple, ink pond and Wenbi Pagoda.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "street: calligraphy exhibitions, writing-tool shops and Shaoxing wine displays, free",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "bounds_note": "coordinates unsourced; placement by Wikivoyage/judge description"
+  },
+  {
+   "name": "Former Residence of Cai Yuanpei",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-9",
+   "coordinates": {
+    "lat": 30.0094,
+    "lng": 120.5794
+   },
+   "coordinates_source": "wikipedia:Former Residence of Cai Yuanpei",
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: China Daily's Shaoxing top-attractions list names it, three Shaoxing-style buildings; free historic house in the Jishan block.",
+   "views": 346,
+   "counted_sources": 0,
+   "category_note": "historic house: former home of the educator Cai Yuanpei, Shaoxing",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY"
+  },
+  {
+   "name": "Zhou Enlai's Ancestral Home",
+   "action": "spot",
+   "destination": "shaoxing",
+   "id": "shaoxing-10",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "reason": "Inside Shaoxing's urban area (old town, Keqiao/Kuaiji suburbs) and within the 40 km span. Verdict: Rule 1-2: China Daily's Shaoxing top-attractions list names it (Zhou Enlai Museum, Ming-era ancestral home with exhibition on Laodong Road); a museum open to visitors.",
+   "views": 0,
+   "counted_sources": 0,
+   "category_note": "historic house: Zhou Enlai's ancestral home, Ming period",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "bounds_note": "coordinates unsourced; placement by Wikivoyage/judge description"
+  },
+  {
+   "name": "Xishi Guli",
+   "action": "standalone",
+   "destination": null,
+   "id": "xishi-guli",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "reason": "Zhuji, about 55 km south of Shaoxing's old town, outside the urban metro; Zhuji has only two kept places so no destination; not a spot of Shaoxing (outside its bounds). Verdict: Rule 1-2: Wikivoyage describes an AAAA tourist area of Ming and Qing buildings on the Xishi legend; permanent, several hours.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "historic area: AAAA-rated tourist area of Ming and Qing buildings on the Xishi legend, Zhuji",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "bounds_note": "coordinates unsourced; placement by Wikivoyage/judge description"
+  },
+  {
+   "name": "Wuxie Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "id": "wuxie-scenic-area",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "reason": "Zhuji forest park ~20 km northwest of Zhuji, far outside Shaoxing's metro; not a spot of Shaoxing (outside its bounds). Verdict: Rule 1-2: Wikivoyage describes a national AAAA forest park with 72 peaks and five waterfalls, 20 km from Zhuji.",
+   "views": 0,
+   "counted_sources": 1,
+   "category_note": "scenic area: national forest park of 72 peaks, cliffs and five waterfalls, 20 km northwest of Zhuji",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "bounds_note": "coordinates unsourced; placement by Wikivoyage/judge description"
+  },
+  {
+   "name": "Dafo Temple",
+   "action": "standalone",
+   "destination": null,
+   "id": "dafo-temple-xinchang",
+   "coordinates": {
+    "lat": 29.496,
+    "lng": 120.8846
+   },
+   "coordinates_source": "wikipedia:Dafo Temple (Xinchang)",
+   "reason": "Xinchang county, ~65 km from Shaoxing centre, beyond the span and bounds; not a spot of Shaoxing (outside its bounds). Verdict: Rule 1-2: Zhejiang government (China Daily) page, Wikipedia, and guides: a 1,600-year-old Buddhist temple with the great Buddha in a cave, called the Dunhuang of the south.",
+   "views": 889,
+   "counted_sources": 0,
+   "category_note": "temple: the Xinchang Dafo Temple, a Buddhist temple with a large Buddha in Xinchang",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY"
+  },
+  {
+   "name": "Nautical Flower Fields of Hangzhou Bay",
+   "action": "standalone",
+   "destination": null,
+   "id": "nautical-flower-fields-hangzhou-bay",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "reason": "Hangzhou Bay New Area (Shangyu), ~40 km north across the plain, outside the old-town metro; one place only; not a spot of Shaoxing (outside its bounds). Verdict: Rule 1-2: Zhejiang government tourism site describes a national AAAA scenic area in Shangyu with year-round flower gardens, lakes and windmill.",
+   "views": 0,
+   "counted_sources": 0,
+   "category_note": "garden: landscaped flower gardens, lakes, a windmill and chapel in the Hangzhou Bay New Area, Shangyu",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "currency": "CNY",
+   "bounds_note": "coordinates unsourced; placement by Wikivoyage/judge description"
+  }
+ ],
+ "review": [
+  {
+   "name": "Green Vine Studio",
+   "case_for": "Rule 1-2: Xu Wei's Ming-era house named by China Discovery among Shaoxing's residences and by a Ctrip travel note as small, quick to see; open historic house but only one weak source.",
+   "case_against": "Small house, a short visit; named only by an operator guide and Ctrip, no Wikivoyage listing."
+  },
+  {
+   "name": "Qiu Jin's Former Residence",
+   "case_for": "Rule 2: a visitor source (itinerary and Shaoxing government page) says the preserved home is free to enter; counted source weak.",
+   "case_against": "Only supporting sources and a short visit; there is also a Qiu Jin monument elsewhere."
+  },
+  {
+   "name": "Fushan Park",
+   "case_for": "Rule 1-3: hill park with the King Yue terrace, Fengyu Pavilion and Spring of Innocence in the old city; free walk, but only trip/aggregator sources found, not a counted one.",
+   "case_against": "Local park feel; its sub-sites are not separate draws, and no counted source confirmed."
+  },
+  {
+   "name": "Shaoxing Museum",
+   "case_for": "Rule 1-2: Wikivoyage listing and a China Daily government page; free city museum on Pianmen Street, closed Mondays.",
+   "case_against": "Generic city museum with a single counted listing; many visitors skip it."
+  },
+  {
+   "name": "Chinese Yellow Wine Museum",
+   "case_for": "Rule 1-2: Wikivoyage lists it with tasting; yellow wine is Shaoxing's signature but only one counted source.",
+   "case_against": "Single source, may be a brand showroom, a short visit."
+  },
+  {
+   "name": "Dongpu",
+   "case_for": "Rule 1: Wikivoyage mentions Dongpu water town only as the home of an antique market; no visitor source describing what to see was found.",
+   "case_against": "No evidence of anything to see beyond a market; searches found nothing."
+  },
+  {
+   "name": "Tomb of Wang Yangming",
+   "case_for": "Rule 1: Ming philosopher's tomb south of Lanting; no counted visitor source found in two searches.",
+   "case_against": "Little for a foreign visitor; no source and unclear access."
+  },
+  {
+   "name": "Jianhu Lake",
+   "case_for": "Rule 1: Keqiao's lake is named by Wikivoyage and China Daily (Jianhu Lake and Anchang Ancient Town) and sold in day tours, but Trip reviews call it average and it is tied to Keyan.",
+   "case_against": "Mixed reviews, may be part of a larger Keyan/Keqiao spot."
+  },
+  {
+   "name": "Mount Xianglu",
+   "case_for": "Rule 1/3: Wikivoyage lists Kuaiji Mountain with hiking and CNY50 ticket, but the Yu mausoleum at its foot is a separate spot, so this is partly a near-duplicate.",
+   "case_against": "Near-duplicate of the mausoleum visit; the hiking is a genuine extra."
+  },
+  {
+   "name": "Tashan Pagoda",
+   "case_for": "Rule 2: Tashan with the seven-storey Yingtian Pagoda is a climbable pagoda over the old city per Ctrip, and a park in the old-city route; no counted source found.",
+   "case_against": "Only Ctrip-level evidence; may duplicate the Yingtian Pagoda entry."
+  },
+  {
+   "name": "Yangshan Stone Buddha",
+   "case_for": "Rule 1-2: Wikivoyage lists the 10 m carved Buddha and Shifo Temple at Yangshan quarry; a quick but distinctive stop.",
+   "case_against": "Single source, short visit, rough Wikivoyage text."
+  },
+  {
+   "name": "Thirteen Lanes Historic Street",
+   "case_for": "Search unresolved (no result found, Fodors blocked by captcha); needs a browser check, not evidence against. Prior note: Rule 1: only a Ctrip name, no counted source in searches; within the old town.",
+   "case_against": "Old-town lanes may be worth a stroll."
+  },
+  {
+   "name": "Confucian Temple of Shaoxing",
+   "case_for": "Search unresolved (no result found, Fodors blocked by captcha); needs a browser check, not evidence against. Prior note: Rule 1-2: a listed heritage temple, no visitor source or evidence of public access found.",
+   "case_against": "Confucian temples can be open museums."
+  },
+  {
+   "name": "Wang Xizhi's Former Residence",
+   "case_for": "Rule 1-3: Jiezhu Temple and ink pond in the Jishan block, covered by a China Daily government page, but it lies inside the Shusheng Cultural Street block already kept.",
+   "case_against": "Part of the same block as Shusheng Cultural Street, likely a near-duplicate."
+  },
+  {
+   "name": "Keyan Scenic Area",
+   "case_for": "Rule 1-2: Zhejiang China Daily page and tour operators name it; quarried rock cliffs and boat ride, a half-day (CNY158 package), but no Wikivoyage entry.",
+   "case_against": "Counted source is thin; Trip reviews say it is worth a visit though."
+  },
+  {
+   "name": "Eastern Zhejiang Canal towpath",
+   "case_for": "Rule 1-2: the Keqiao ancient towpath (古纤道, Tang origin) is described by Chinese travel notes as a walkable stone path; no counted source.",
+   "case_against": "Linear feature of unclear extent; Ctrip-level only."
+  },
+  {
+   "name": "Anchang Ancient Town",
+   "case_for": "Rule 1-2: free water town, listed by Trip/Expedia and sold in Keqiao day tours; China Daily regional page covers Anchang with Jianhu Lake. Counted source is a regional government feature.",
+   "case_against": "Smaller than famous water towns, thin sourcing."
+  },
+  {
+   "name": "Cao'e Temple",
+   "case_for": "Rule 1-2: Wikivoyage mentions it with its temple fair, and travel aggregators list it among Shangyu's main sights; temple is permanent, the fair is not.",
+   "case_against": "Single weak source; fair is an event, the temple itself is thin."
+  },
+  {
+   "name": "Shangyu Museum",
+   "case_for": "Search unresolved (no result found, Fodors blocked by captcha); needs a browser check, not evidence against. Prior note: Rule 1: no visitor source found for a local history museum.",
+   "case_against": "Free museums could be fine."
+  },
+  {
+   "name": "Fengming Mountain",
+   "case_for": "Rule 1-2: aggregators list the glacial landform and waterfall area as a Shangyu top attraction; no counted source.",
+   "case_against": "Little verified; borders other counties."
+  },
+  {
+   "name": "Fuzhi Mountain Stone Rivers",
+   "case_for": "Rule 1-2: Shangyu top attractions with terraces and stone rivers; a canola festival on the terraces is an event.",
+   "case_against": "Aggregator sources, partly seasonal."
+  },
+  {
+   "name": "Hangzhou Bay National Wetland Park",
+   "case_for": "Rule 1-2: an official wetland park but location at the Shangyu/Ningbo boundary not verified and no visitor source found.",
+   "case_against": "Unverified, may fall in another prefecture."
+  },
+  {
+   "name": "Qipan Xiangu and Ruyi Academy",
+   "case_for": "Search unresolved (no result found, Fodors blocked by captcha); needs a browser check, not evidence against. Prior note: Rule 1: no visitor source found for the valley or academy in searches.",
+   "case_against": "Could be real."
+  },
+  {
+   "name": "Five Hundred Luohan Cave",
+   "case_for": "Rule 1-3: Dafo Temple grounds hold a Luohan cave in the Great Buddha scenic area; may be the same complex, location unverified.",
+   "case_against": "May be part of the Dafo Temple spot."
+  },
+  {
+   "name": "Zhuji Museum",
+   "case_for": "Rule 1-2: Wikivoyage lists a free city museum, closed Mondays; one source.",
+   "case_against": "Generic local museum."
+  },
+  {
+   "name": "Fengqiao Temple",
+   "case_for": "Rule 1-2: Wikivoyage lists the Song-era temple where Zhou Enlai spoke in 1939; one source and a short visit.",
+   "case_against": "County-level site, local interest."
+  },
+  {
+   "name": "Douyan Rock Buddha",
+   "case_for": "Rule 1-2: Wikivoyage names a natural rock formation shaped like a seated Buddha; a short stop with a single source.",
+   "case_against": "Quick roadside-style stop."
+  },
+  {
+   "name": "Yue Opera Town",
+   "case_for": "Rule 1-2: Wikivoyage names the Shengzhou birthplace of Yue opera with performances and displays; permanence of the displays is not verified.",
+   "case_against": "Shows are scheduled, venue partly shopping/theming."
+  },
+  {
+   "name": "Shanxi Creek",
+   "case_for": "Rule 1-2: Wikivoyage names the creek praised by poets; scenic but a long river feature with no defined visit.",
+   "case_against": "Single source, vague extent."
+  },
+  {
+   "name": "Gen Pagoda (Zhuji)",
+   "case_for": "Search unresolved (no result found, Fodors blocked by captcha); needs a browser check, not evidence against. Prior note: Rule 1: a listed pagoda with no visitor source found in searches.",
+   "case_against": "Minor heritage pagoda."
+  },
+  {
+   "name": "Zhuji City Wall",
+   "case_for": "Search unresolved (no result found, Fodors blocked by captcha); needs a browser check, not evidence against. Prior note: Rule 1/3: a surviving stretch of city wall with no visitor source found.",
+   "case_against": "Heritage wall."
+  },
+  {
+   "name": "Shangyu Confucian Temple",
+   "case_for": "Search unresolved (no result found, Fodors blocked by captcha); needs a browser check, not evidence against. Prior note: Rule 1-2: a listed Confucian temple, no visitor source or evidence of opening.",
+   "case_against": "Could be a small museum."
+  }
+ ],
+ "standalone_near_destination_note": "All four standalone spots lie 40+ km from Shaoxing's centre (Zhuji ~55 km, Xinchang ~65 km, Hangzhou Bay ~40 km), outside its bounds and span."
+}

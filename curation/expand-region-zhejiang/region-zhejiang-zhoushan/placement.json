@@ -1,0 +1,726 @@
+{
+ "region": "zhejiang-zhoushan",
+ "new_destinations": [
+  {
+   "name": "Mount Putuo",
+   "action": "new-destination",
+   "id": "mount-putuo",
+   "coordinates": {
+    "lat": 30.00972222,
+    "lng": 122.385
+   },
+   "coordinates_source": "Wikipedia: Mount Putuo (island point)",
+   "category": "island",
+   "rank": 3,
+   "defaultZoomSpanKm": 15,
+   "name_evidence": "Wikivoyage has a Putuoshan page (and Zhoushan page listing it); Buddhist sacred island, one of four sacred Buddhist mountains of China, national park.",
+   "spots": 6,
+   "reason": "Six kept spots on the island itself (Puji, South Sea Guanyin, Fayu, Huiji, Foding Mountain, Hundred Step Beach), above the four-spot bar; rank 3 honestly, a famous pilgrimage island but not a top-two country highlight. Span 15 km covers the 8.6 km island. Zhoushan is not proposed as a region destination: the islands are separate ferry bases spread over ~150 km, so a region span would balloon."
+  }
+ ],
+ "placements": [
+  {
+   "name": "Puji Temple",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "id": "mount-putuo-1",
+   "coordinates": {
+    "lat": 29.9878,
+    "lng": 122.3824
+   },
+   "coordinates_source": "Wikivoyage Putuoshan listing geotag (Wikipedia point 1.3 km north-west)",
+   "pin_needed": false,
+   "category": "religious",
+   "icon": "🛕",
+   "bio_draft": "the island's main monastery, with a dawn monks' ritual",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2099,
+   "counted_sources": 1,
+   "skeptic_objection": "Crowded and one of ~80 temples; but it is one of the three famous ones.",
+   "reason": "Inside Mount Putuo island bounds (about 8.6 km long) and within its span. Pin from Wikivoyage listing geotag."
+  },
+  {
+   "name": "South Sea Guanyin",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "id": "mount-putuo-2",
+   "coordinates": {
+    "lat": 29.9763,
+    "lng": 122.3895
+   },
+   "coordinates_source": "OSM Nominatim: OSM artwork Guanyin of the South Sea",
+   "pin_needed": false,
+   "category": "monument",
+   "icon": "🗿",
+   "bio_draft": "33 m bronze Guanyin statue in a stone plaza at the island's south end",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "A statue is a short visit; but it is the island's headline sight.",
+   "reason": "Inside Mount Putuo island bounds (about 8.6 km long) and within its span. Pin from OSM artwork."
+  },
+  {
+   "name": "Fayu Temple",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "id": "mount-putuo-3",
+   "coordinates": {
+    "lat": 30.00272222,
+    "lng": 122.39886111
+   },
+   "coordinates_source": "wikipedia:Fayu Temple",
+   "pin_needed": false,
+   "category": "religious",
+   "icon": "🛕",
+   "bio_draft": "temple of layered halls with a Nine-Dragon ceiling, one of the three great monasteries",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2630,
+   "counted_sources": 1,
+   "skeptic_objection": "Another temple; only the three famous ones are singled out, and this is one.",
+   "reason": "Inside Mount Putuo island bounds (about 8.6 km long) and within its span. "
+  },
+  {
+   "name": "Huiji Temple",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "id": "mount-putuo-4",
+   "coordinates": {
+    "lat": 30.0133,
+    "lng": 122.3857
+   },
+   "coordinates_source": "Wikivoyage Putuoshan listing geotag (Wikipedia point about 1 km north-east)",
+   "pin_needed": false,
+   "category": "religious",
+   "icon": "🛕",
+   "bio_draft": "temple near the top of Foding Mountain, reached by cable car or a step climb",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 984,
+   "counted_sources": 1,
+   "skeptic_objection": "Overlaps the Foding Mountain hike; kept as the temple, the hike is judged separately.",
+   "reason": "Inside Mount Putuo island bounds (about 8.6 km long) and within its span. "
+  },
+  {
+   "name": "Foding Mountain",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "id": "mount-putuo-5",
+   "coordinates": {
+    "lat": 30.011,
+    "lng": 122.3883
+   },
+   "coordinates_source": "Wikivoyage Putuoshan listing geotag (Foding Shan listing)",
+   "pin_needed": false,
+   "category": "hike",
+   "icon": "🥾",
+   "bio_draft": "the island's highest hill, with a step climb to Huiji Temple and sea views",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Summit is a closed radar site and Huiji Temple sits on it, so it can read as part of Huiji.",
+   "reason": "Inside Mount Putuo island bounds (about 8.6 km long) and within its span. Summit is a closed radar site; pin is the Wikivoyage listing geotag."
+  },
+  {
+   "name": "Hundred Step Beach",
+   "action": "spot",
+   "destination": "mount-putuo",
+   "id": "mount-putuo-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "bio_draft": "sand beach beside the hotels with lockers, showers and chair hire",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "One source; ordinary sand beach beside hotels.",
+   "reason": "Inside Mount Putuo island bounds (about 8.6 km long) and within its span. Beach pin must come from OSM natural/beach, not a Wikivoyage listing geotag."
+  },
+  {
+   "name": "Luojia Shan",
+   "action": "standalone",
+   "destination": null,
+   "id": "luojia-shan",
+   "coordinates": {
+    "lat": 29.9717,
+    "lng": 122.4449
+   },
+   "coordinates_source": "OSM Nominatim: OSM island Luojia Shan",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "bio_draft": "small ferry island off Putuo with monasteries, a pagoda and a lighthouse",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Needs a CNY70 ferry with a fixed 2 h window; the place itself is the spot, its pagoda/monasteries are not separate spots.",
+   "reason": "Standalone: a separate island about 5 km east of Mount Putuo reached by ferry, outside Putuo island bounds."
+  },
+  {
+   "name": "Shenjiamen Fishing Port",
+   "action": "standalone",
+   "destination": null,
+   "id": "shenjiamen-fishing-port",
+   "coordinates": {
+    "lat": 29.946412,
+    "lng": 122.305764
+   },
+   "coordinates_source": "Wikivoyage Zhoushan listing geotag (Shenjiamen Fishing Port listing)",
+   "pin_needed": false,
+   "category": "landmark",
+   "icon": "⚓",
+   "bio_draft": "working harbour known for its evening seafood stalls",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Mostly an evening meal stop.",
+   "reason": "Standalone: port town on the Zhoushan main island side, outside Mount Putuo island bounds (about 10 km from it by sea)."
+  },
+  {
+   "name": "Nansha Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "nansha-beach",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "bio_draft": "long mountain-backed beach on Zhujiajian with roped swimming areas",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Entry fee and busy in summer.",
+   "reason": "Standalone: Zhujiajian is a separate island from Putuo; with Dongsha Beach and Wushitang only three kept places there, below the four-spot bar."
+  },
+  {
+   "name": "Dongsha Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "dongsha-beach",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "bio_draft": "quieter scenic beach next to Nansha on Zhujiajian",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Next to Nansha; swimming is forbidden per China Daily, but a distinct beach.",
+   "reason": "Standalone: Zhujiajian island, three kept places only."
+  },
+  {
+   "name": "Wushitang",
+   "action": "standalone",
+   "destination": null,
+   "id": "wushitang-beach",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "bio_draft": "black-pebble beach bay on Zhujiajian known for its cobblestones",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Ticket about CNY30, slippery stones; second-tier beach.",
+   "reason": "Standalone: Zhujiajian island, three kept places only."
+  },
+  {
+   "name": "Dongsha Ancient Town",
+   "action": "standalone",
+   "destination": null,
+   "id": "dongsha-ancient-town",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio_draft": "old fishing town of lanes and courtyard houses on Daishan Island",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Single government-tourism source; ancient-town claims may be exaggerated.",
+   "reason": "Standalone: on Daishan Island (not Zhujiajian); Daishan has only three kept places (with Lulan Qingsha, Moxin Mountain). Candidate pin was a loose name match: re-resolve."
+  },
+  {
+   "name": "Lulan Qingsha",
+   "action": "standalone",
+   "destination": null,
+   "id": "lulan-qingsha",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "bio_draft": "3.6 km sand beach on Daishan Island, paid entry",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Paid entry.",
+   "reason": "Standalone: Daishan Island, three kept places only."
+  },
+  {
+   "name": "Moxin Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "moxin-mountain",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "⛰️",
+   "bio_draft": "Daishan's highest peak with Ciyun temple and sea views",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Local mountain.",
+   "reason": "Standalone: Daishan Island, three kept places only."
+  },
+  {
+   "name": "Gouqi Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "gouqi-island",
+   "coordinates": {
+    "lat": 30.714388,
+    "lng": 122.771423
+   },
+   "coordinates_source": "Wikivoyage Zhoushan listing geotag (island)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "bio_draft": "wolfberry island of fishing harbour, painted villages and sunrise and sunset viewpoints",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 2,
+   "skeptic_objection": "An island-area; its sub-listings (church, sunrise) are folded in.",
+   "reason": "Standalone: Shengsi archipelago, about 85 km from Putuo; separate island group with three kept places (Gouqi, Jihu Beach, Houtouwan), below the four-spot bar."
+  },
+  {
+   "name": "Jihu Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "jihu-beach",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "beach",
+   "icon": "🏖️",
+   "bio_draft": "main beach of Sijiao island with surfing and jet skis",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Sources are commercial; no counted-source page confirmed.",
+   "reason": "Standalone: Shengsi archipelago, three kept places only."
+  },
+  {
+   "name": "Houtouwan Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "houtouwan-village",
+   "coordinates": {
+    "lat": 30.7266,
+    "lng": 122.8193
+   },
+   "coordinates_source": "OSM Nominatim: OSM village HouTouWan",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏚️",
+   "bio_draft": "abandoned fishing village on Shengshan island swallowed by ivy",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Remote; ferry hassle; access rules change.",
+   "reason": "Standalone: Shengsi archipelago, three kept places only."
+  },
+  {
+   "name": "Taohua Island",
+   "action": "standalone",
+   "destination": null,
+   "id": "taohua-island",
+   "coordinates": {
+    "lat": 29.81666667,
+    "lng": 122.26666667
+   },
+   "coordinates_source": "wikipedia:Taohua Island",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🏝️",
+   "bio_draft": "Peach Blossom Island, Condor Heroes filming location with beaches and a botanical valley",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 2305,
+   "counted_sources": 1,
+   "skeptic_objection": "Some attractions are paid and themed.",
+   "reason": "Standalone: separate island about 30 km south-east of Mount Putuo; its sub-sights (Anqi Peak, theme park) are under review."
+  },
+  {
+   "name": "Dongji",
+   "action": "standalone",
+   "destination": null,
+   "id": "dongji",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "🏝️",
+   "bio_draft": "the East Pole islands with a sunrise lookout, fishing villages and a film location",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1597,
+   "counted_sources": 1,
+   "skeptic_objection": "Area covering its sub-spots; ferry-dependent.",
+   "reason": "Standalone: remote island group about 45 km east of Putuo. Township point is not an island point: re-resolve."
+  },
+  {
+   "name": "Dongfu Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "dongfu-mountain",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "viewpoint",
+   "icon": "🌅",
+   "bio_draft": "lookout on Dongji named as the first sunrise over the sea in China",
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Early start; part of Dongji.",
+   "reason": "Standalone: on Dongji; two kept places in the group, so no destination. Verify it is a distinct draw from Dongji when pinned."
+  }
+ ],
+ "review": [
+  {
+   "name": "Thousand Step Beach",
+   "judge_reason": "Rule 1: Wikivoyage names a longer quiet beach. For: second-tier beach a guide names. Against: no facilities and signs forbid swimming.",
+   "objection": "Single source, no swimming; a walk-on-sand stop only."
+  },
+  {
+   "name": "Chaoyin Cave",
+   "judge_reason": "Rule 1+3: Wikivoyage lists carved sea cliffs; guides place the sea cave in the Zijuzhu area with Bukenqu. For: free, short coastal stop. Against: small, may belong with Bukenqu/Zijuzhu.",
+   "objection": "Near-duplicate of the Bukenqu area; short visit."
+  },
+  {
+   "name": "Fanyin Cave",
+   "judge_reason": "Rule 1: Wikivoyage names Shancai/Fanyin Cave on the east coast (bus from Fayu, then forest walk); a guide route lists it on day 2. For: second-tier coastal sight. Against: one source, a small cave.",
+   "objection": "Short stop; mainly a way to reach the quiet east coast."
+  },
+  {
+   "name": "Northern Village",
+   "judge_reason": "Rule 1: Wikivoyage names a partly abandoned historic village with footpaths. For: quirky off-path sight. Against: single source, needs a hike, partly a military training area.",
+   "objection": "Rarely visited; access caveats."
+  },
+  {
+   "name": "Bukenqu Temple",
+   "judge_reason": "Rule 1+2: Wikivoyage names it as the Luojia Shan viewpoint; guides call it the island's ancestral Guanyin temple in the Zijuzhu (Purple Bamboo) area. For: named visitor stop. Against: wording of the source is only a viewpoint; overlap with Chaoyin Cave.",
+   "objection": "Possibly one outing with Chaoyin Cave."
+  },
+  {
+   "name": "Guanyin Dharma Realm",
+   "judge_reason": "Rule 1: only Ctrip; location unconfirmed and no counted source found in a fresh search. For: Ctrip top-sight list. Against: cannot verify what or where it is.",
+   "objection": "Unresolved evidence rather than a negative finding."
+  },
+  {
+   "name": "Xitian Scenic Area",
+   "judge_reason": "Rule 1+2: English guides (Tour Beijing, Our China Story, Trip.com) describe a rock-formation zone with Pantuo Rock and the heart stone. For: named zone. Against: no counted source, rocks are short stops.",
+   "objection": "Rock walk; supporting sources only."
+  },
+  {
+   "name": "Opium War Relics Park",
+   "judge_reason": "Rule 1+2: Wikivoyage lists a free historic park (Zhushan Park) in Dinghai. For: sourced and free. Against: one source, a short local park visit, no second source found.",
+   "objection": "Local park."
+  },
+  {
+   "name": "Zhoushan Museum",
+   "judge_reason": "Rule 1+2: Wikivoyage lists the free city museum (Tue-Sun). For: open to the public. Against: single source, ordinary city museum.",
+   "objection": "Friend test: only if already in Dinghai."
+  },
+  {
+   "name": "Changqiao Ocean Park",
+   "judge_reason": "Rule 1: only Trip.com/Ctrip found (supporting only). For: rated 4.7 aquarium/zoo with shows. Against: no counted source, family resort attraction.",
+   "objection": "Possibly part of a resort complex."
+  },
+  {
+   "name": "Daqingshan",
+   "judge_reason": "Rule 1+2: Wikivoyage names the hiking hill; searches mention a 30 km coastal ring road for cycling. For: hike and sea views. Against: single source.",
+   "objection": "Could be a road/area rather than a place."
+  },
+  {
+   "name": "International Sand Sculpture Art Square",
+   "judge_reason": "Rule 1+4: Ctrip says permanent sand art square on Nansha beach; search shows the sand sculpture festival is seasonal. For: permanent venue. Against: event-driven, no counted source.",
+   "objection": "May be a festival site only."
+  },
+  {
+   "name": "Dawang Beach",
+   "judge_reason": "Rule 1: Wikivoyage names the main paid beach; China Highlights says Gouqi has no good beach. For: named beach. Against: conflicting, minor.",
+   "objection": "Conflicting quality evidence."
+  },
+  {
+   "name": "Sijiao Island",
+   "judge_reason": "Rule 1: China Highlights names the biggest Shengsi island (beaches, fishing hostels, seafood). For: main base. Against: area; Jihu Beach is its beach.",
+   "objection": "Mostly a base."
+  },
+  {
+   "name": "Dongya Cliff",
+   "judge_reason": "Rule 1+2: searched Chinese; Ctrip/Qunar/Daily-paper describe a ticketed (CNY50) cliff boardwalk and the main sunrise spot of Shengshan. For: permanent, visitor-oriented. Against: no counted source reached.",
+   "objection": "Supporting evidence only; weather-dependent."
+  },
+  {
+   "name": "Flower and Bird Island",
+   "judge_reason": "Rule 1+2: Wikivoyage names the nature reserve and 4A scenic island with 1870 lighthouse; China Highlights calls its lighthouse the major draw. For: distinctive. Against: remote, 2 h from Shanghai.",
+   "objection": "Overlaps its lighthouse."
+  },
+  {
+   "name": "Flower and Bird Lighthouse",
+   "judge_reason": "Rule 1+2: Wikivoyage names the 1870 heritage lighthouse; guides name it the headline. For: distinct landmark. Against: same island as Flower and Bird Island; remote.",
+   "objection": "Keep only one of the pair."
+  },
+  {
+   "name": "Liuheng Island",
+   "judge_reason": "Rule 1: official Zhejiang Culture and Tourism Dept page (ct.zj.gov.cn) lists Liuheng Town Scenic Area (105 islets, 08:00-17:00); rapeseed spring flowers. For: official listing. Against: area-level, no specific place named.",
+   "objection": "Not one place; page blocked earlier to fetch."
+  },
+  {
+   "name": "Tower Bay Golden Sands",
+   "judge_reason": "Rule 1: Wikivoyage names Tawan Jinsha scenic area; travel guides place it on Taohua with swimming. For: beach with a source. Against: Taohua Island covers it.",
+   "objection": "Near-duplicate of Taohua."
+  },
+  {
+   "name": "Xiushan Island",
+   "judge_reason": "Rule 1: Wikivoyage lists it undescribed; searches found no attraction. For: sourced listing. Against: no draw found in English or Chinese.",
+   "objection": "Thin."
+  },
+  {
+   "name": "Jintang Island",
+   "judge_reason": "Rule 1: searched; only Liuxing Ancient Street (an event venue) and hotel listings. For: bridge-linked island with an old street. Against: no counted source or named draw.",
+   "objection": "Nothing to see confirmed."
+  },
+  {
+   "name": "Qushan Island",
+   "judge_reason": "Rule 1: searched; only Ctrip/travelogues (Guanyin Mountain, windmill platform, Shalong beach). For: inhabited island with named sights. Against: no counted source; area-level.",
+   "objection": "Unverified by a counted source."
+  },
+  {
+   "name": "Miaozi Lake",
+   "judge_reason": "Rule 1: Wikivoyage/China Services Info name the main port island with inns and the fortune-god statue. For: named main sight. Against: partly an accommodation hub.",
+   "objection": "Overlaps Dongji."
+  },
+  {
+   "name": "Qingbang Island",
+   "judge_reason": "Rule 1: Wikivoyage and China Services Info name it as a main Dongji island. For: sourced. Against: a visitor reports few attractions.",
+   "objection": "Remote."
+  },
+  {
+   "name": "Huangxing Island",
+   "judge_reason": "Rule 1: Wikivoyage and China Services Info name it as a main Dongji island. For: sourced. Against: a visitor reports few attractions.",
+   "objection": "Remote."
+  },
+  {
+   "name": "Daishan Island",
+   "judge_reason": "Rule 1: Wikivoyage lists it. For: second largest island with beaches and museums. Against: area-level; its sights are judged separately; redirect to Daishan County.",
+   "objection": "Destination-level."
+  },
+  {
+   "name": "Shuanghe Mountain",
+   "judge_reason": "Rule 1: Ctrip; China Daily-style itinerary mentions Shuanghe stone wall. For: part of a route. Against: unclear.",
+   "objection": "Unverified."
+  },
+  {
+   "name": "Daishan Lighthouse Museum",
+   "judge_reason": "Rule 1: Ctrip; Zhoushan China Daily lists the China Lighthouse Museum among Daishan museums. For: open museum. Against: no counted page names it as a visit.",
+   "objection": "One of several small museums."
+  },
+  {
+   "name": "China Cape Park",
+   "judge_reason": "Rule 1: Ctrip; itinerary lists Cape Park on the Daishan route. For: headland park. Against: unverified.",
+   "objection": "Unverified."
+  },
+  {
+   "name": "Zijuzhu (Purple Bamboo Forest)",
+   "judge_reason": "Rule 1+2: Tour Beijing, Trip.com and travel guides name the sea-edge forest with Bukenqu Temple and Chaoyin Cave. For: named area on the island route. Against: overlaps the Bukenqu Temple and Chaoyin Cave entries; pick one framing.",
+   "objection": "Duplicate of the Bukenqu/Chaoyin pair."
+  },
+  {
+   "name": "Anqi Peak",
+   "judge_reason": "Rule 1+2: travelchina and CITS-type Taohua guides name Anqi Peak scenic area with rock formations, temples and caves, paid. For: named sight. Against: no counted source, part of Taohua Island.",
+   "objection": "Overlaps Taohua Island."
+  },
+  {
+   "name": "Dafu Rock",
+   "judge_reason": "Rule 1: named in Taohua guides as the scenic area containing the Condor Heroes theme park. For: named. Against: only supporting sources, part of Taohua.",
+   "objection": "Overlaps Taohua Island."
+  },
+  {
+   "name": "Legend of the Condor Heroes Theme Park",
+   "judge_reason": "Rule 1+2: travelchina describes a paid wuxia theme venue on Taohua; Zhoushan China Daily mentions the island's filming. For: permanent venue. Against: overlaps Taohua Island, supporting sources only.",
+   "objection": "Themed attraction near-duplicate of Taohua."
+  },
+  {
+   "name": "China Typhoon Museum",
+   "judge_reason": "Rule 1+2: Zhoushan China Daily (Daishan page) lists it among Daishan's marine museums. For: government tourism source, open museum. Against: one general sentence, no visit details found; opening unverified.",
+   "objection": "One of a cluster of small museums."
+  },
+  {
+   "name": "China Salt Museum",
+   "judge_reason": "Rule 1+2: Zhoushan China Daily (Daishan page) lists it among Daishan's marine museums. For: government tourism source, open museum. Against: one general sentence, no visit details found; opening unverified.",
+   "objection": "One of a cluster of small museums."
+  },
+  {
+   "name": "China Marine Fishery Museum",
+   "judge_reason": "Rule 1+2: Zhoushan China Daily (Daishan page) lists it among Daishan's marine museums. For: government tourism source, open museum. Against: one general sentence, no visit details found; opening unverified.",
+   "objection": "One of a cluster of small museums."
+  },
+  {
+   "name": "Qinglongshan Park",
+   "judge_reason": "Rule 1: only a travelchina listing appeared; no visitor detail. For: Shenjiamen hill park. Against: likely local park.",
+   "objection": "Local park."
+  },
+  {
+   "name": "Dinghai Ancient City",
+   "judge_reason": "Rule 1+2: Trip.com and a second guide list a free old town with historic sites (about 2-3 h). For: walkable heritage town. Against: no counted source reached.",
+   "objection": "Supporting sources only."
+  }
+ ],
+ "near_destination_standalone_note": "Within about 40 km of Mount Putuo (centre 30.010,122.385): Luojia Shan, Shenjiamen Fishing Port, Nansha Beach, Dongsha Beach, Wushitang, Taohua Island lie on other islands, outside its island bounds (and most beyond its 11 km reach); a ferry journey is not bounds."
+}

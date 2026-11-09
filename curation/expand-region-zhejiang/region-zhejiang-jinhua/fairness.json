@@ -1,0 +1,123 @@
+{
+ "inside_destinations": 12,
+ "standalone": 10,
+ "new_destinations": [
+  "jinhua",
+  "wuyi"
+ ],
+ "lowest_kept": [
+  {
+   "name": "Jinhua Mountain",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Taiping Heavenly Kingdom Shiwang Mansion",
+   "views": 0,
+   "counted_sources": 1
+  },
+  {
+   "name": "Wuyi Hot Springs",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Guodong Village",
+   "views": 0,
+   "counted_sources": 0
+  },
+  {
+   "name": "Yuyuan Village",
+   "views": 0,
+   "counted_sources": 0
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Guyue Bridge",
+   "views": 1481,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: protected pagoda, bridge, hall, ancestral hall or tomb, usually seen from outside; fresh search found no visitor source. Searched (English and Chinese, Ctrip, China Daily, Xinhua) and found no visitor source naming something to do there."
+  },
+  {
+   "name": "Xijin Bridge",
+   "views": 1422,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 1-2: Xinhua names it among Yongkang's headline sights (longest stone-pier timber covered bridge in China)."
+  },
+  {
+   "name": "Yanfu Temple",
+   "views": 461,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Rule 2: a search hit calls its Yuan timber hall a unique surviving example visited by Liang Sicheng; no visitor source on access."
+  },
+  {
+   "name": "Binghu Cave",
+   "views": 374,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: part of the Shuanglong cave visit, reached by steps from it; one counted source absent after fresh search."
+  },
+  {
+   "name": "Jingju Temple",
+   "views": 302,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: only Wikipedia lists it; local reservoir/park/temple/bridge with no visitor source. Searched (English and Chinese, Ctrip, China Daily, Xinhua) and found no visitor source naming something to do there."
+  },
+  {
+   "name": "Jinlan Reservoir",
+   "views": 206,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: only Wikipedia lists it; local reservoir/park/temple/bridge with no visitor source. Searched (English and Chinese, Ctrip, China Daily, Xinhua) and found no visitor source naming something to do there."
+  },
+  {
+   "name": "Zhiyan Reservoir",
+   "views": 162,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: only Wikipedia lists it; local reservoir/park/temple/bridge with no visitor source. Searched (English and Chinese, Ctrip, China Daily, Xinhua) and found no visitor source naming something to do there."
+  },
+  {
+   "name": "Zhongzhou Park",
+   "views": 131,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: only Wikipedia lists it; local reservoir/park/temple/bridge with no visitor source. Searched (English and Chinese, Ctrip, China Daily, Xinhua) and found no visitor source naming something to do there."
+  },
+  {
+   "name": "Andi Reservoir",
+   "views": 128,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1-2: only Wikipedia lists it; local reservoir/park/temple/bridge with no visitor source. Searched (English and Chinese, Ctrip, China Daily, Xinhua) and found no visitor source naming something to do there."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Hengdian World Studios",
+   "views": 63971
+  },
+  {
+   "name": "Yiwu International Trade City",
+   "views": 36325
+  },
+  {
+   "name": "Luzhai Residence",
+   "views": 0
+  },
+  {
+   "name": "Xianhua Mountain",
+   "views": 0
+  },
+  {
+   "name": "Fangyan Scenic Area",
+   "views": 0
+  }
+ ],
+ "benchmark": "No NZ benchmark applies to this region. Negative-benchmark types (civic buildings, one-day markets, minor bridges) were sent to review or rejected."
+}

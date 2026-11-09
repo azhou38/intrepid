@@ -1,0 +1,622 @@
+{
+ "region": "zhejiang-lishui",
+ "new_destinations": [
+  {
+   "action": "new-destination",
+   "id": "longquan",
+   "name": "Longquan",
+   "category": "city",
+   "rank": 4,
+   "coordinates": {
+    "lat": 28.05812,
+    "lng": 119.127256
+   },
+   "defaultZoomSpanKm": 60,
+   "name_evidence": "Wikivoyage Lishui lists Longquan as a district with its celadon kilns, sword factory and museums; Longquan celadon and Longquan sword are named tourism brands (UNESCO-listed celadon craft).",
+   "reason": "5 kept spots (celadon kiln site, celadon museum, sword factory and museum, Baishanzu). Baishanzu is a national park under construction with one kept spot, so it is a spot of Longquan, not a destination.",
+   "coordinates_source": "centre = Longquan Celadon Museum point (Candidates, in Longquan town); refine from OSM place=town at research"
+  },
+  {
+   "action": "new-destination",
+   "id": "songyang",
+   "name": "Songyang",
+   "category": "city",
+   "rank": 5,
+   "coordinates": {
+    "lat": 28.448998,
+    "lng": 119.480901
+   },
+   "defaultZoomSpanKm": 40,
+   "name_evidence": "Wikivoyage Lishui has a Songyang section (old street, Yangjiatang, Damu Mountain tea terraces); WildChina and That's Mags Lishui guides use Songyang as a base for ancient villages.",
+   "reason": "Exactly 4 kept spots; centre on Songyang old street (28.449, 119.481).",
+   "coordinates_source": "centre = Songyang Old Street point (candidates, Wikivoyage geo); refine from OSM place=town at research"
+  }
+ ],
+ "places": [
+  {
+   "name": "Dayao Longquan Kiln Site",
+   "action": "spot",
+   "destination": "longquan",
+   "id": "longquan-1",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Longquan celadon kiln site park in Longquan county, within the span.",
+   "bio_note": "heritage: national archaeological site park of Longquan celadon kilns at Dayao village, 126 kiln sites over 5.2 km²",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Baishanzu",
+   "action": "spot",
+   "destination": "longquan",
+   "id": "longquan-2",
+   "coordinates": {
+    "lat": 27.83,
+    "lng": 119.18
+   },
+   "coordinates_source": "wikipedia:Fengyangshan–Baishanzu National Nature Reserve",
+   "reason": "Baishanzu (Fengyangshan-Baishanzu reserve, national park under construction) lies in Longquan county, 27 km south of the centre; one spot so it is not its own destination.",
+   "bio_note": "nature: national AAAA scenic area of forest and metasequoia at 1,857 m, a national park under construction",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": []
+  },
+  {
+   "name": "Longquan Celadon Museum",
+   "action": "spot",
+   "destination": "longquan",
+   "id": "longquan-3",
+   "coordinates": {
+    "lat": 28.05812,
+    "lng": 119.127256
+   },
+   "coordinates_source": "OpenStreetMap tourism/museum (node/5137288015, name match via Nominatim)",
+   "reason": "In Longquan town.",
+   "bio_note": "museum: museum of Longquan celadon in Longquan",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": []
+  },
+  {
+   "name": "Longquan Sword Factory",
+   "action": "spot",
+   "destination": "longquan",
+   "id": "longquan-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "In Longquan town; sword-making.",
+   "bio_note": "workshop: free sword factory where craftsmen forge Longquan swords for visitors",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Longquan Sword Museum",
+   "action": "spot",
+   "destination": "longquan",
+   "id": "longquan-5",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "In Longquan town; sword-making.",
+   "bio_note": "museum: museum of Longquan sword-making",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Songyang Old Street",
+   "action": "spot",
+   "destination": "songyang",
+   "id": "songyang-1",
+   "coordinates": {
+    "lat": 28.448998,
+    "lng": 119.480901
+   },
+   "coordinates_source": "OpenStreetMap highway/living_street (old street way) (way/662787488, name match via Nominatim)",
+   "reason": "In Songyang old town.",
+   "bio_note": "old street: Ming–Qing old street in Songyang with craft workshops and tea merchants, quiet in the evening",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": []
+  },
+  {
+   "name": "Yangjiatang Village",
+   "action": "spot",
+   "destination": "songyang",
+   "id": "songyang-2",
+   "coordinates": {
+    "lat": 28.463041,
+    "lng": 119.542135
+   },
+   "coordinates_source": "OpenStreetMap place/hamlet (node/12852682463, name match via Nominatim)",
+   "reason": "20 min drive from Songyang old town, Songyang county.",
+   "bio_note": "village: ancient village about 20 minutes' drive from Songyang old town",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": []
+  },
+  {
+   "name": "Damu Mountain Tea Terraces",
+   "action": "spot",
+   "destination": "songyang",
+   "id": "songyang-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Songyang county tea terraces.",
+   "bio_note": "terraces: tea gardens on Damu Mountain in Songyang, a bike and hike area",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Songzhuang Village",
+   "action": "spot",
+   "destination": "songyang",
+   "id": "songyang-4",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Songyang county village.",
+   "bio_note": "village: village known for a century-old stone arch bridge built into a tea terrace",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Lishui City Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "lishui-city-museum",
+   "coordinates": {
+    "lat": 28.439064,
+    "lng": 119.919806
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Lishui city (Liandu) has only three kept places (museum, Guyan, Tongji Weir), so no Lishui destination; ~36 km from Songyang centre and outside its bounds.",
+   "bio_note": "museum: city museum on the waterfront covering history, natural history and Lishui's three treasures (celadon, swords, stone carving); free entry",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lishui"
+   ]
+  },
+  {
+   "name": "Guyan Painting Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "guyan-painting-village",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Liandu district, 20 km from Lishui; outside Songyang and Longquan bounds.",
+   "bio_note": "village: scenic Ancient Weir Painting Village on both banks of the river, about 20 km from Lishui, with bamboo boats and painters",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lishui"
+   ],
+   "pin_needed": true
+  },
+  {
+   "name": "Tongji Weir",
+   "action": "standalone",
+   "destination": null,
+   "id": "tongji-weir",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Liandu district irrigation heritage; outside Songyang/Longquan bounds.",
+   "bio_note": "heritage: Tang–Song irrigation weir (national heritage site) in the Lishui area, a walk along the works",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Xiandu Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "id": "xiandu-scenic-area",
+   "coordinates": {
+    "lat": 28.693806,
+    "lng": 120.131521
+   },
+   "coordinates_source": "OpenStreetMap boundary/national_park (centroid) (way/1030383694, name match via Nominatim)",
+   "reason": "Jinyun county 5A area; only Xiandu and Heyang kept there (two spots, no destination); ~70 km from Songyang.",
+   "bio_note": "scenic area: national 5A scenic area of peaks, caves, temples and a 6 km greenway, with a cable car and buses between its areas",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Xiandu"
+   ]
+  },
+  {
+   "name": "Heyang Ancient Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "heyang-ancient-village",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Jinyun county; two kept spots only.",
+   "bio_note": "village: national heritage village of old dwellings in Jinyun",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Yunhe Rice Terraces",
+   "action": "standalone",
+   "destination": null,
+   "id": "yunhe-rice-terraces",
+   "coordinates": {
+    "lat": 28.05054,
+    "lng": 119.48462
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Yunhe county; 32 km from Longquan centre and 44 km from Songyang centre but in Yunhe county, outside both bounds and not reached from either base.",
+   "bio_note": "scenic area: national 5A terraced fields in Chongtou Town, Yunhe, with sunrise and sunset viewpoints and villages inside the terraces",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [
+    "https://en.wikivoyage.org/wiki/Lishui"
+   ]
+  },
+  {
+   "name": "Suichang Gold Mine National Mine Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "suichang-gold-mine-national-mine-park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Suichang county; outside Songyang/Longquan bounds.",
+   "bio_note": "museum park: former gold mine turned national mine park, with tunnels and exhibits",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Shimen Cave Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "id": "shimen-cave-scenic-area",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Qingtian county; two kept spots in Qingtian, no destination.",
+   "bio_note": "scenic area: forest park with Shimen Waterfall, rock inscriptions (a national heritage site) and cave features",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  },
+  {
+   "name": "Qingtian Stone Carving Cultural Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "qingtian-stone-carving-cultural-park",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Qingtian county; two kept spots only.",
+   "bio_note": "museum park: signature cultural attraction on Qingtian stone carving, where local seal carving is shown",
+   "category": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "sources": [],
+   "pin_needed": true
+  }
+ ],
+ "review": [
+  {
+   "name": "Astronomy Tower",
+   "case_for": "Rule 1+2: Wikivoyage names it, paid entry with exhibitions and a top-floor view; one source, short visit.",
+   "case_against": "Rebuilt replica tower, one counted source; could be a 20-minute stop."
+  },
+  {
+   "name": "Lishui Photography Museum",
+   "case_for": "One Wikivoyage source; free museum with rotating shows, an hour at most.",
+   "case_against": "Exhibitions change; one source; only for photography fans."
+  },
+  {
+   "name": "Shahe Pagoda",
+   "case_for": "Rule 1+2: Wikivoyage names this Ming pagoda with a sunset city view; one source.",
+   "case_against": "Short hillside stop, single source."
+  },
+  {
+   "name": "Jinshan Pagoda",
+   "case_for": "Wikivoyage names the quiet Ming pagoda reached by village and trail; one source, rarely visited.",
+   "case_against": "Obscure; a pagoda with a short trail only."
+  },
+  {
+   "name": "Lingshan Temple",
+   "case_for": "Wikivoyage names a hillside Buddhist complex with a dragon-cave temple; one source.",
+   "case_against": "Local temple; value rests on stairs and cave detail."
+  },
+  {
+   "name": "Dongxiyan Scenic Area",
+   "case_for": "Wikivoyage names rock formations, caves and a 1.5 hour loop; one source.",
+   "case_against": "Single source and 45 min by bus; could be generic hill park."
+  },
+  {
+   "name": "Xixi Ancient Village",
+   "case_for": "Wikivoyage names a 1,000-year-old lived-in village; one source.",
+   "case_against": "Many similar villages in Lishui; second tier."
+  },
+  {
+   "name": "Guanling Ancient Road",
+   "case_for": "Wikivoyage names a 1 hour bamboo mountain path between villages; one source.",
+   "case_against": "A short local path."
+  },
+  {
+   "name": "Kuocang Ancient Road",
+   "case_for": "Wikivoyage names a 5-6 hour ridge path between Jinyun and Lishui; one source.",
+   "case_against": "Hard for visitors to do without transport; one source."
+  },
+  {
+   "name": "Baiyun Mountain",
+   "case_for": "Wikivoyage names a mountain park with temple and a rock-carving museum; one source.",
+   "case_against": "Local recreation mountain."
+  },
+  {
+   "name": "Nanming Mountain",
+   "case_for": "Wikivoyage names a mountain park with temple, carvings, waterfalls and views; one source.",
+   "case_against": "Local recreation mountain."
+  },
+  {
+   "name": "Lishan Adventure Park",
+   "case_for": "One Wikivoyage source: a 30-40 minute suspended-bridge course in Lishan village.",
+   "case_against": "Generic family activity park."
+  },
+  {
+   "name": "Lishui Old Street",
+   "case_for": "Rule 1 unresolved: no visitor source names the street reliably; sources conflict on which street. Searched English and Chinese; nothing confirmed.",
+   "case_against": "Review because location is unconfirmed, not because it is weak."
+  },
+  {
+   "name": "Jiulong National Wetland Park",
+   "case_for": "No counted source found; national wetland park in Liandu, plausible walk.",
+   "case_against": "May be an ordinary local park."
+  },
+  {
+   "name": "Chuzhou Celadon Museum",
+   "case_for": "No counted source found for this separate museum; Lishui's celadon story is told at Longquan.",
+   "case_against": "Possible duplicate of Lishui City Museum themes."
+  },
+  {
+   "name": "Huanglong Scenic Area",
+   "case_for": "Rule 3 arguable: one of four areas of Xiandu, with karst and farmland; one source.",
+   "case_against": "Part of the larger Xiandu; separate transit."
+  },
+  {
+   "name": "Kenggen Village",
+   "case_for": "Rule 1: Travel China and thatsmags name the 800-year-old stone village; lanes and teahouses worth an hour, but inside the terraces area.",
+   "case_against": "Part of the Yunhe terraces; may fail rule 3."
+  },
+  {
+   "name": "Xiangong Lake",
+   "case_for": "No counted source found; scenic reservoir lake in Yunhe.",
+   "case_against": "May be a local lake."
+  },
+  {
+   "name": "Jiangnan She Folk Village",
+   "case_for": "No counted source found beyond listings; She cultural village in Yunhe.",
+   "case_against": "Possibly a staged cultural park."
+  },
+  {
+   "name": "Dajibei Waterfall",
+   "case_for": "No counted source found; listed waterfall in Songyang.",
+   "case_against": "Unknown; unverified."
+  },
+  {
+   "name": "Yanqing Temple Pagoda",
+   "case_for": "No visitor source found; Ming pagoda, national heritage site.",
+   "case_against": "Pagoda seen from outside."
+  },
+  {
+   "name": "Nanjianyan Scenic Area",
+   "case_for": "Trip and China Daily mention the Suichang terraces and cliffs; no clear counted source opened.",
+   "case_against": "Possible near-duplicate of terrace areas."
+  },
+  {
+   "name": "Shenlong Valley",
+   "case_for": "Trip listings: 300 m waterfall, rafting; no counted source opened.",
+   "case_against": "Resort/rafting operator element."
+  },
+  {
+   "name": "Qianfo Mountain",
+   "case_for": "Trip listings only: waterfalls and forest scenic area in Suichang.",
+   "case_against": "Little visitor-source coverage."
+  },
+  {
+   "name": "Qianxia Lake",
+   "case_for": "Travel guides and Trip rank it top attraction in Qingtian; no counted source opened.",
+   "case_against": "Resort lake with a themed town."
+  },
+  {
+   "name": "Qingtian Overseas Chinese Town",
+   "case_for": "Search found only listings; European-style 'Little Paris' street.",
+   "case_against": "May be a themed facade."
+  },
+  {
+   "name": "Window of She Culture",
+   "case_for": "Chinese/Trip listings: Dajun She village (4A) with She culture and rafting; no counted source opened.",
+   "case_against": "Cultural performances may be staged."
+  },
+  {
+   "name": "Shexiang Ancient Town",
+   "case_for": "A guide lists free, half a day, with Shisi Temple; no counted source opened.",
+   "case_against": "Could be rebuilt old town."
+  },
+  {
+   "name": "Nayun Sky City",
+   "case_for": "China Daily Lishui mentions Nayun Resort; no clear visitor listing.",
+   "case_against": "Resort."
+  },
+  {
+   "name": "Shisi Temple",
+   "case_for": "Expedia/Trip: 1140 Song wooden temple at 1,000 m, ticketed; key relic with interior to see.",
+   "case_against": "Single counted source not found."
+  },
+  {
+   "name": "Yunzhong Daji",
+   "case_for": "Expedia/Trip: village scenic area, about 300,000 visitors a year, ticket shared with Shisi Temple.",
+   "case_against": "Overlaps Shisi Temple area."
+  },
+  {
+   "name": "Longquan Mountain",
+   "case_for": "Trip: Songcheng Longquan Mountain tourist area 45 km from town, listed in a hotel guide.",
+   "case_against": "Remote, one listing-level source."
+  },
+  {
+   "name": "Baiyun Waterfall",
+   "case_for": "Hotel guide lists White Cloud Cliffs; no counted source opened.",
+   "case_against": "Thin evidence."
+  },
+  {
+   "name": "Qingyuan Mushroom Museum",
+   "case_for": "Wikivoyage names the county mushroom museum, open Tue-Sat; one source.",
+   "case_against": "Short visit; limited days."
+  },
+  {
+   "name": "Huangmaojian",
+   "case_for": "Zhejiang's highest peak (1,929 m) inside the Baishanzu reserve; Expedia/Wikipedia only.",
+   "case_against": "Part of the larger Baishanzu area."
+  },
+  {
+   "name": "Xiyang Hall",
+   "case_for": "Trip guide: free hall honouring the mushroom-cultivation ancestor, beside Lanxi covered bridge; China Daily covers Qingyuan's bridges.",
+   "case_against": "Short stop; one source."
+  },
+  {
+   "name": "Qingyuan Ancient Bridge",
+   "case_for": "China Daily Zhejiang covers Qingyuan's 97 arcade bridges; this is a listed bridge.",
+   "case_against": "Which bridge is not clear; one stop."
+  },
+  {
+   "name": "Chenjiapu Village",
+   "case_for": "WildChina's Songyang guide names this once-abandoned mountain village with stone lanes and boutique stays; thatsmags covers the area; one source.",
+   "case_against": "Mostly a stay destination."
+  },
+  {
+   "name": "Youtian Village",
+   "case_for": "thatsmags names the village 30 min walk from Yangjiatang with a library cafe.",
+   "case_against": "Quiet small village."
+  },
+  {
+   "name": "Rulong Bridge",
+   "case_for": "China Daily Zhejiang and Wikipedia-level sources: China's oldest dated wooden arcade bridge, 1625, in Qingyuan; short visit.",
+   "case_against": "A single bridge."
+  }
+ ],
+ "neighbour_note": "Longquan centre ~28.07,119.14 and Songyang ~28.45,119.48 are ~50 km apart, no overlap. No other Zhejiang sibling proposes Longquan or Songyang. Standalone spots within 40 km of a proposed centre (Yunhe Rice Terraces, Lishui City Museum, Tongji Weir) are outside those destinations' county bounds."
+}

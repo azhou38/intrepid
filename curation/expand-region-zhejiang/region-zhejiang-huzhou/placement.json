@@ -1,0 +1,871 @@
+{
+ "region": "zhejiang-huzhou",
+ "new_destinations": [
+  {
+   "name": "Huzhou",
+   "action": "new-destination",
+   "id": "huzhou",
+   "coordinates": {
+    "lat": 30.8626,
+    "lng": 120.0983
+   },
+   "coordinates_source": "Lianhuazhuang/Wuxing city point from candidates (Wuxing district centre); pin stage to confirm against OSM place=city",
+   "pin_needed": true,
+   "category": "city",
+   "rank": 4,
+   "defaultZoomSpanKm": 70,
+   "name_evidence": "Wikivoyage has a \"Huzhou\" city/prefecture page that lists the Huzhou Museum, Lianhuazhuang and Changxing sights (Chinese Alligator Village).",
+   "reason": "5 kept spots (Huzhou Museum, Lianhuazhuang Park, Brush Museum, Gu Zhu Mountain, Chinese Alligator Village), above the four-spot bar. Rank 4: a prefecture city that guidebooks cover but not a headline; Anji, Nanxun and Moganshan are separate named bases. Overlap checked against Anji, Nanxun, Hangzhou: centres >33 km apart."
+  },
+  {
+   "name": "Anji",
+   "action": "new-destination",
+   "id": "anji",
+   "coordinates": {
+    "lat": 30.56,
+    "lng": 119.65
+   },
+   "coordinates_source": "centre of the Anji spots (county seat Dipu and Tianhuangping); pin stage to confirm",
+   "pin_needed": true,
+   "category": "nature",
+   "rank": 4,
+   "defaultZoomSpanKm": 60,
+   "name_evidence": "Wikivoyage has an \"Anji\" page covering the county: Bamboo Exposition Park, Great Bamboo Sea, Yunshang ski resort; Anji is a tourism brand (\"China Bamboo Town\").",
+   "reason": "8 kept spots, a county travellers name (bamboo sea, Tianhuangping). Rank 4: worth a detour from Hangzhou/Shanghai. Moganshan (Deqing, ~22 km E) is outside Anji and stays standalone."
+  },
+  {
+   "name": "Nanxun",
+   "action": "new-destination",
+   "id": "nanxun",
+   "coordinates": {
+    "lat": 30.8716,
+    "lng": 120.4302
+   },
+   "coordinates_source": "Wikivoyage Nanxun listing geotag (scenic area entrance)",
+   "pin_needed": false,
+   "category": "landmark",
+   "rank": 4,
+   "defaultZoomSpanKm": 15,
+   "name_evidence": "Wikivoyage has a \"Nanxun\" page; Nanxun is one of the six famous Jiangnan water towns (Wikipedia/Wikivoyage).",
+   "reason": "4 kept spots (old town, Jiaye Tang, Zhang Shiming, Little Lotus Garden). Not a spot of Jiangnan Water Towns (50 km away, out of its 40 km span, and a different province) or of Wuzhen (15 km, centres outside the 5.6 km overlap radius). Rank 4 like the other water towns."
+  }
+ ],
+ "placements": [
+  {
+   "name": "Huzhou Museum",
+   "coordinates": {
+    "lat": 30.89196,
+    "lng": 120.08397
+   },
+   "coordinates_source": "Wikivoyage Huzhou listing geotag (listing coordinates)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Huzhou lists it with hours and three permanent exhibitions; a city museum visitors can tour for an hour.",
+   "skeptic_objection": "A provincial-level comprehensive city museum is an ordinary stop; Chinese-only labels likely.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Huzhou Museum",
+   "bio_draft": "museum: Huzhou city's national second-level comprehensive museum (collections, Huzhou history and art), Tue-Sun",
+   "category": "museum",
+   "action": "spot",
+   "destination": "huzhou",
+   "id": "huzhou-1",
+   "reason": "Wuxing urban area, ~2 km from the Huzhou centre; inside the city metro.",
+   "pin_needed": false
+  },
+  {
+   "name": "Lianhuazhuang Park",
+   "coordinates": {
+    "lat": 30.8597,
+    "lng": 120.1007
+   },
+   "coordinates_source": "OSM way 359363095 (莲花庄), leisure=park",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Huzhou lists it (06:00-20:00), lotus pond and old trees on Zhao Mengfu's garden site; a half-hour stroll beside the Brush Museum.",
+   "skeptic_objection": "Largely a 1980s reconstruction; an urban park.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Lianhuazhuang Park",
+   "bio_draft": "park: old garden park with ancient evergreen trees, lotus pond and pavilion in Wuxing",
+   "category": "nature",
+   "action": "spot",
+   "destination": "huzhou",
+   "id": "huzhou-2",
+   "reason": "Wuxing district, ~3 km from the centre; inside the city.",
+   "pin_needed": false
+  },
+  {
+   "name": "Huzhou Brush Museum",
+   "coordinates": {
+    "lat": 30.6973,
+    "lng": 120.3096
+   },
+   "coordinates_source": "OSM way 121039006 (中国湖笔博物馆)",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1-2: Zhejiang tourism (ct.zj.gov.cn China Hubi Museum) and China Daily Huzhou name it; Huzhou brush is one of the Four Treasures of the study and the museum has a Zhao Mengfu hall.",
+   "skeptic_objection": "Sources disagree on location (Lianhuazhuang vs Shanlian town) so the pin needs checking; niche craft museum.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "China Huzhou Brush Museum",
+   "bio_draft": "museum: museum of Huzhou brush-making (Huzhou pen, one of the Four Treasures of the study)",
+   "category": "museum",
+   "action": "spot",
+   "destination": "huzhou",
+   "id": "huzhou-3",
+   "reason": "Shanlian town, Nanxun-Wuxing border, ~28 km from the centre: within the 52 km reach and part of Huzhou municipal area where the Huzhou brush trade is based. Sources disagree on location (Lianhuazhuang vs Shanlian); OSM way 121039006 is at Shanlian, pin stage to confirm.",
+   "pin_needed": true
+  },
+  {
+   "name": "Gu Zhu Mountain",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1-2: huzhou.gov.cn place-of-interest and China Daily describe the Tang Tribute Tea Academy museum on Gu Zhu Mountain, tied to Lu Yu's Classic of Tea.",
+   "skeptic_objection": "Pin should sit at the Tribute Tea Academy, not the mountain; visitor admission details unconfirmed.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Guzhu Mountain",
+   "bio_draft": "historic: mountain where the Tang imperial tribute tea (Guzhu purple bud) was made and where Lu Yu is said to have written the Classic of Tea; ruins of a tribute tea court",
+   "category": "historic",
+   "action": "spot",
+   "destination": "huzhou",
+   "id": "huzhou-4",
+   "reason": "Changxing county, Huzhou prefecture, roughly 30 km NW of the centre (to be confirmed at pin stage); reached from Huzhou city. Pin at the Tang Tribute Tea Academy (the visitor site on the mountain), not the summit.",
+   "pin_needed": true,
+   "pin_note": "Pin at the Tribute Tea Academy (Tang Tribute Tea Academy museum) on Gu Zhu Mountain."
+  },
+  {
+   "name": "Chinese Alligator Village",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Huzhou names it among Changxing's attractions; a breeding park with Chinese alligators.",
+   "skeptic_objection": "A captive-breeding attraction, one source.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Chinese Alligator Village",
+   "bio_draft": "nature: alligator-breeding park with Chinese alligators in Changxing (a wildlife attraction)",
+   "category": "nature",
+   "action": "spot",
+   "destination": "huzhou",
+   "id": "huzhou-5",
+   "reason": "Changxing town, ~20 km NW of the Huzhou centre; Changxing is a district-level part of Huzhou municipality and visitors reach it from Huzhou city.",
+   "pin_needed": true
+  },
+  {
+   "name": "Great Bamboo Sea (Anji)",
+   "coordinates": {
+    "lat": 30.4881,
+    "lng": 119.6533
+   },
+   "coordinates_source": "OSM node 5362816368 (中国大竹海), tourism=attraction",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict_reason": "Rule 1-2: Wikivoyage Anji and Huzhou name it (Wuhe village, Crouching Tiger, Hidden Dragon film location); an obvious draw with two counted sources.",
+   "skeptic_objection": "Remote by minibus and a bus transfer; the name is also used for other bamboo forests in the county.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Great Bamboo Sea (Anji)",
+   "bio_draft": "nature: bamboo forest scenic area of Wuhe village in Tianhuangping, the Anji \"Great Bamboo Sea\" used as a film location (Crouching Tiger, Hidden Dragon); name also used for Yixing's bamboo sea in Jiangsu",
+   "category": "nature",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-1",
+   "reason": "Tianhuangping, ~8 km S of the Anji centre point; headline draw.",
+   "pin_needed": false
+  },
+  {
+   "name": "Anji Bamboo Exposition Park",
+   "coordinates": {
+    "lat": 30.593818,
+    "lng": 119.655999
+   },
+   "coordinates_source": "Wikivoyage Anji listing geotag (listing coordinates)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Anji names it as the county centrepiece with a bamboo museum and a panda house.",
+   "skeptic_objection": "Themed park with a family bias.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Anji Bamboo Exposition Park",
+   "bio_draft": "park: bamboo-themed exposition park with the China Bamboo Museum, Panda House and a zoo area, a county centrepiece",
+   "category": "nature",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-2",
+   "reason": "Anji county seat area, ~4 km N of the Anji centre point.",
+   "pin_needed": false
+  },
+  {
+   "name": "Jiangnan Tianchi",
+   "coordinates": {
+    "lat": 30.4707,
+    "lng": 119.5943
+   },
+   "coordinates_source": "OSM node 5362808428 (江南天池), tourism=attraction",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Anji names the AAAA scenic area at Tianhuangping (also called Tianchi River), with a lake and planetarium; nearby Great Bamboo Sea draws.",
+   "skeptic_objection": "The listing reads as promotional copy; one source.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Jiangnan Tianchi",
+   "bio_draft": "nature: AAAA scenic area at the northern foot of Tianmu Mountain in Tianhuangping, with a planetarium and resort; OSM tags the scenic entrance",
+   "category": "nature",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-3",
+   "reason": "Tianhuangping, ~10 km S of the centre point.",
+   "pin_needed": false
+  },
+  {
+   "name": "Canglong Baipu",
+   "coordinates": {
+    "lat": 30.4457,
+    "lng": 119.603
+   },
+   "coordinates_source": "OSM node 8964547417 (藏龙百瀑), tourism=attraction",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1-2: Zhejiang Dept of Culture and Tourism (ct.zj.gov.cn) and China Daily Huzhou describe the largest waterfall cluster in northern Zhejiang, a gorge walk with cableway.",
+   "skeptic_objection": "Only promotional sources; opening hours vary between listings.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Canglong Baipu",
+   "bio_draft": "nature: \"Hidden Dragon Hundred Waterfalls\" scenic area in Anji with a cableway and a waterfall gorge",
+   "category": "nature",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-4",
+   "reason": "Anji, ~13 km S of the centre point.",
+   "pin_needed": false
+  },
+  {
+   "name": "Anji Yucun",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: China Daily Huzhou government page presents Yucun, a UN Tourism Best Tourism Village, with village walks, bamboo crafts, Future Village hall and Hidden-Dragon Waterfall; open 24 h, a half-day stop.",
+   "skeptic_objection": "Overlaps in area with Tianhuangping/Jiangnan Tianchi and Anji Bamboo Expo Park; busy weekends.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Anji Yucun",
+   "bio_draft": "Rule 1-2: China Daily Huzhou government page presents Yucun, a UN Tourism Best Tourism Village, with village walks, bamboo crafts, Future Village hall and Hidden-Dragon Waterfall; open 24 h, a half-day stop.",
+   "category": "nature",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-5",
+   "reason": "Tianhuangping/Yucun area of Anji county; unpinned, pin stage to locate.",
+   "pin_needed": true
+  },
+  {
+   "name": "Yunshang Grassland Starry Sky Ski Resort",
+   "coordinates": {
+    "lat": 30.455616,
+    "lng": 119.683326
+   },
+   "coordinates_source": "Wikivoyage Anji listing geotag (listing coordinates)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Anji calls it the closest natural ski resort to Hangzhou and China Daily reported it opening Dec 2025; a permanent ski field (grass skiing in summer).",
+   "skeptic_objection": "Operator-run, new, 1,168 m with seasonal snow.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Yunshang Grassland Starry Sky Ski Resort",
+   "bio_draft": "entertainment: mountain ski resort on a grassland plateau, the closest natural-snow ski resort to Hangzhou (seasonal venue)",
+   "category": "entertainment",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-6",
+   "reason": "~12 km S of the centre point.",
+   "pin_needed": false
+  },
+  {
+   "name": "Zhejiang Museum of Natural History Anji Branch",
+   "coordinates": {
+    "lat": 30.67318,
+    "lng": 119.640945
+   },
+   "coordinates_source": "Wikivoyage Anji listing geotag (listing coordinates)",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Anji lists the museum with geology, dinosaur and ecology halls and opening hours.",
+   "skeptic_objection": "Next to Baicaoyuan and aimed at families; a one-source listing.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Zhejiang Museum of Natural History Anji Branch",
+   "bio_draft": "museum: Anji branch of the Zhejiang Museum of Natural History, on the west side of Baicaoyuan, with geology, dinosaur and ecology halls",
+   "category": "museum",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-7",
+   "reason": "Baicaoyuan, Dipu, ~12 km N of the centre point.",
+   "pin_needed": false
+  },
+  {
+   "name": "Wu Changshuo Memorial Hall",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1-2: huzhou China Daily pages describe the Anji hall in Changshuo Park with the artist's residence, statue and works; a memorial museum, not a plaque.",
+   "skeptic_objection": "Wu Changshuo is revered in China but display labels are likely Chinese-only; guide-source evidence is China Daily only.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Wu Changshuo Memorial Hall",
+   "bio_draft": "museum: memorial to the painter and calligrapher Wu Changshuo, who was born in Anji (visitor access not confirmed)",
+   "category": "museum",
+   "action": "spot",
+   "destination": "anji",
+   "id": "anji-8",
+   "reason": "Changshuo Park, Anji county; unpinned, visitor access to be confirmed.",
+   "pin_needed": true
+  },
+  {
+   "name": "Nanxun Ancient Town",
+   "coordinates": {
+    "lat": 30.8716,
+    "lng": 120.4302
+   },
+   "coordinates_source": "Wikivoyage Nanxun listing geotag (scenic area entrance)",
+   "views": 2440,
+   "counted_sources": 2,
+   "verdict_reason": null,
+   "skeptic_objection": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Nanxun",
+   "bio_draft": "town: historic silk-trade water town with bridges, Ming and Qing merchant houses; the old town is free, some houses charge; a 5A scenic area",
+   "category": "historic",
+   "action": "spot",
+   "destination": "nanxun",
+   "id": "nanxun-1",
+   "reason": "The old town itself (bridges, canal streets, merchant houses) is the draw and no other spot covers its streets; the town is the destination centre so this spot is the old-quarter street walk. Review whether to rename to \"Nanxun Old Town Streets\".",
+   "pin_needed": false
+  },
+  {
+   "name": "Jiaye Tang",
+   "coordinates": {
+    "lat": 30.8721,
+    "lng": 120.4232
+   },
+   "coordinates_source": "OSM way 515355380 (嘉业堂藏书楼), tourism=museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Nanxun; a famous private library and garden visitors tour inside.",
+   "skeptic_objection": "Part of Nanxun ancient town's ticketing; keep as it is a distinct gated site.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Jiaye Tang",
+   "bio_draft": "museum: Jiaye Tang private library (Jiayetang), the largest private library of modern China and an architectural landmark with gardens",
+   "category": "museum",
+   "action": "spot",
+   "destination": "nanxun",
+   "id": "nanxun-2",
+   "reason": "~0.6 km from the town centre.",
+   "pin_needed": false
+  },
+  {
+   "name": "Former Residence of Zhang Shiming",
+   "coordinates": {
+    "lat": 30.873443,
+    "lng": 120.426528
+   },
+   "coordinates_source": "Wikivoyage Nanxun listing geotag (listing coordinates)",
+   "views": 425,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Nanxun; walk-in merchant mansion mixing Chinese courtyards with French stained glass.",
+   "skeptic_objection": "One of many Nanxun mansions; could be treated as part of the town.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Former Residence of Zhang Shiming",
+   "bio_draft": "historic: merchant residence blending Chinese courtyards with stained glass and fireplaces in French style",
+   "category": "historic",
+   "action": "spot",
+   "destination": "nanxun",
+   "id": "nanxun-3",
+   "reason": "Inside the old town.",
+   "pin_needed": false
+  },
+  {
+   "name": "Little Lotus Garden",
+   "coordinates": {
+    "lat": 30.8692,
+    "lng": 120.4295
+   },
+   "coordinates_source": "Wikivoyage Nanxun listing geotag (listing coordinates)",
+   "views": 258,
+   "counted_sources": 2,
+   "verdict_reason": "Rule 1-2: Wikivoyage Nanxun and Huzhou; 'First Private Garden in Jiangnan', a walk-in garden of an hour.",
+   "skeptic_objection": "Within the Nanxun scenic area.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Little Lotus Manor",
+   "bio_draft": "park: private garden, \"First Private Garden in Jiangnan\", in the ancient town",
+   "category": "nature",
+   "action": "spot",
+   "destination": "nanxun",
+   "id": "nanxun-4",
+   "reason": "Inside the old town.",
+   "pin_needed": false
+  },
+  {
+   "name": "Mount Mogan",
+   "coordinates": null,
+   "coordinates_source": "OSM way 373365921 (莫干山国家重点风景名胜区), leisure=park",
+   "views": 6577,
+   "counted_sources": 2,
+   "verdict_reason": null,
+   "skeptic_objection": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Mount Mogan",
+   "bio_draft": "nature: mountain and scenic area with a bamboo sea and villas, one of China's four famous summer resorts (zh Wikipedia)",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "id": "mount-mogan",
+   "reason": "Deqing County scenic mountain with its own Wikivoyage page. About 22 km E of the Anji centre but in a separate county and not part of Anji; Moganshan has only 3 kept spots (Mount Mogan, Villa Cluster, Sword Pool; Lu Hua Dang Park and Tashan are review) so it does not clear the four-spot bar. Standalone. Coordinates: OSM way is the scenic-area centroid, so null here and pin at the village/visitor centre.",
+   "pin_needed": true,
+   "pin_note": "OSM way is the scenic-area centroid; take a visitor point (village centre or entrance), not the centroid.",
+   "centroid_hint": {
+    "lat": 30.6087,
+    "lng": 119.8634
+   }
+  },
+  {
+   "name": "Moganshan Villa Cluster",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Moganshan; about 150 early 20th-century villas set in bamboo forest.",
+   "skeptic_objection": "Part of the wider Mount Mogan scenic area, but the villas are a distinct draw visitors walk to.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Moganshan Villa Cluster",
+   "bio_draft": "historic: cluster of about 150 early-20th-century villas built by foreign residents and Republican-era officials, set in bamboo forest",
+   "category": "historic",
+   "action": "standalone",
+   "destination": null,
+   "id": "moganshan-villa-cluster",
+   "reason": "Villas in Moganshan village, inside Mount Mogan scenic area; standalone beside Mount Mogan (a third place, Sword Pool, completes the Moganshan trio, still under four). Pin at the village.",
+   "pin_needed": true
+  },
+  {
+   "name": "Sword Pool Waterfall (Jianchi)",
+   "coordinates": {
+    "lat": 30.6074,
+    "lng": 119.8675
+   },
+   "coordinates_source": "OSM way 751464092 (剑池景区), natural=water",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: Wikivoyage Moganshan; canyon waterfalls and pools below the village with the sword-casting legend.",
+   "skeptic_objection": "Ticket is the Moganshan entry ticket; part of the mountain area.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Sword Pool Waterfall (Jianchi)",
+   "bio_draft": "nature: canyon waterfalls and pools below the Moganshan village (the Sword Pool, with the Grindstone rock), entry ticket needed",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "id": "sword-pool-waterfall",
+   "reason": "Canyon below Moganshan village; standalone for the same reason as Mount Mogan.",
+   "pin_needed": false
+  },
+  {
+   "name": "Xiazhu Lake",
+   "coordinates": {
+    "lat": 30.5169,
+    "lng": 120.0471
+   },
+   "coordinates_source": "OSM way 625175902 (下渚湖), natural=water",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "Rule 1-2: Zhejiang Dept of Culture and Tourism (ct.zj.gov.cn) and China Daily government pages describe a 4A wetland park with crested-ibis base and reed-maze boat trips.",
+   "skeptic_objection": "Out in Deqing and hours conflict between listings; bird sightings are not guaranteed.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Xiazhu Lake",
+   "bio_draft": "nature: Jiangnan's largest wetland, a release site for crested ibis, in Deqing",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "id": "xiazhu-lake",
+   "reason": "Deqing County wetland ~31 km from the Hangzhou centre but in Huzhou prefecture, outside Hangzhou metro bounds; ~20 km from Mount Mogan, not a spot of Anji (~40 km away). Standalone.",
+   "pin_needed": false
+  },
+  {
+   "name": "Xinshi Ancient Town",
+   "coordinates": null,
+   "coordinates_source": null,
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Rule 1-2: China Daily Huzhou government pages describe this Deqing water town, promoted to a provincial 5A tourist attraction, with old streets and canals to walk.",
+   "skeptic_objection": "Another Jiangnan water town beside Nanxun and Wuzhen; crowds and shops.",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "wiki": "Xinshi Ancient Town",
+   "bio_draft": "Rule 1-2: China Daily Huzhou government pages describe this Deqing water town, promoted to a provincial 5A tourist attraction, with old streets and canals to walk.",
+   "category": "nature",
+   "action": "standalone",
+   "destination": null,
+   "id": "xinshi-ancient-town",
+   "reason": "Deqing water town, outside Hangzhou and Anji bounds; standalone. Unpinned: pin stage.",
+   "pin_needed": true
+  },
+  {
+   "name": "Lake Tai",
+   "action": "existing",
+   "destination": null,
+   "id": "lake-tai",
+   "reason": "Already an existing standalone spot (lake-tai); not re-added.",
+   "verdict_reason": null,
+   "views": 24078,
+   "counted_sources": 1
+  }
+ ],
+ "review": [
+  {
+   "name": "Huzhou Art Museum",
+   "case_for": "Rule 1-2: one Wikivoyage listing (daily 09:00-16:30), Greek-style building with calligraphy and relics; a plausible half-hour stop.",
+   "case_against": "Single counted source, no page views; another municipal gallery, only for visitors already in Huzhou city.",
+   "views": 0
+  },
+  {
+   "name": "Huzhou Science and Technology Museum",
+   "case_for": "Rule 1-2: one Wikivoyage listing; open Wed-Sun by online booking, kid-oriented aerospace exhibits.",
+   "case_against": "Local children's science centre, booking in Chinese, not a draw for travellers from elsewhere.",
+   "views": 0
+  },
+  {
+   "name": "Zhao Mengfu Former Residence Memorial",
+   "case_for": "Rule 1-3: China Daily Huzhou and huzhou.gov.cn describe a 4,500 sq m memorial hall to the Yuan calligrapher, open since 2012.",
+   "case_against": "Largely reconstructed; overlaps the Zhao Mengfu hall in the Brush Museum and Lianhuazhuang Park, so may be a near-duplicate.",
+   "views": 0
+  },
+  {
+   "name": "Xishan Yang Wetland",
+   "case_for": "Rule 1-2: Wikivoyage describes it as Huzhou's answer to West Lake with wetland park and painting academy.",
+   "case_against": "One source, thin detail, a local leisure area on the city edge.",
+   "views": 0
+  },
+  {
+   "name": "Taihu Lake Tourist Resort",
+   "case_for": "Rule 1-3: Trip.com lists it (Taihu Longemont Paradise, hot springs, water park, circus); a resort district, not one place.",
+   "case_against": "A district bundling several operator venues, overlapping Taihu Tuying and the amusement park; no counted source.",
+   "views": 0
+  },
+  {
+   "name": "Taihu Lake Amusement Park",
+   "case_for": "Rule 1-2: a permanent amusement and water park on the Taihu shore (Longemont-type resort), but only travel-site evidence found, no counted source.",
+   "case_against": "Operator-run theme park with no visitor-guide source; may be the same venue as the Taihu Lake Tourist Resort entries.",
+   "views": 0
+  },
+  {
+   "name": "Qianshanyang Site",
+   "case_for": "Rule 1-2: Neolithic silk-fragment site; no visitor source found and public access unconfirmed.",
+   "case_against": "The finds are in the Zhejiang silk museum; likely a bare field.",
+   "views": 0
+  },
+  {
+   "name": "Meishan Section (Permian-Triassic boundary)",
+   "case_for": "Rule 1-2: IUGS geoheritage Permian-Triassic golden spike at Changxing with a museum and geopark; no tourism-board source found.",
+   "case_against": "Of interest mainly to geologists; opening and access unconfirmed.",
+   "views": 0
+  },
+  {
+   "name": "Huzhou Taihu Lake Moon Hot Spring Resort",
+   "case_for": "Rule 1-2: a large hot-spring bathing venue (Trip.com's top hot spring in Huzhou, supporting only); visitors can spend hours, but no counted source.",
+   "case_against": "A hotel-linked spa, not a sight; operator-run.",
+   "views": 2
+  },
+  {
+   "name": "Former Residence of Zhang Jingjiang",
+   "case_for": "Rule 1-3: Wikivoyage Nanxun lists Zunde Hall as a late-Qing residence open to visitors.",
+   "case_against": "Another Nanxun mansion, near-duplicate of Zhang Shiming's, little to distinguish for a foreign visitor.",
+   "views": 458
+  },
+  {
+   "name": "Red House (Liu Ansheng Residence)",
+   "case_for": "Rule 1-2: Wikivoyage Nanxun; Jiangnan facade with a European ballroom interior.",
+   "case_against": "Near-duplicate of the other Nanxun mansions.",
+   "views": 0
+  },
+  {
+   "name": "Qiushuli Villa",
+   "case_for": "Rule 1-2: Wikivoyage Nanxun; 1930 East-West villa by the Jiaye Library owner.",
+   "case_against": "Minor villa in the Jiaye precinct; likely part of the Jiaye Tang visit.",
+   "views": 0
+  },
+  {
+   "name": "Jili Silk Exhibition Hall",
+   "case_for": "Rule 1-2: Wikivoyage Nanxun; silk exhibition in the former Chamber of Commerce, tied to Nanxun's silk heritage.",
+   "case_against": "Small exhibition hall, possibly the same building as the Silk Guild Hall.",
+   "views": 0
+  },
+  {
+   "name": "Baijianlou",
+   "case_for": "Rule 1-2: Wikivoyage Nanxun; riverside Ming houses with sunrise views, also named in the Huzhou district overview.",
+   "case_against": "A row of houses on the town's canal, part of the town itself.",
+   "views": 0
+  },
+  {
+   "name": "Guanghui Palace",
+   "case_for": "Rule 1-2: Wikivoyage Nanxun lists the Taoist temple by Guanghui Bridge.",
+   "case_against": "Small temple, one source, adds little beyond the town walk.",
+   "views": 298
+  },
+  {
+   "name": "Digang Ancient Village",
+   "case_for": "Rule 1-2: one Wikivoyage Huzhou listing for a thousand-year-old village with an original street, few tourists.",
+   "case_against": "Little known and the listing itself calls it quiet; second-tier at best.",
+   "views": 0
+  },
+  {
+   "name": "Linghu Ancient Town",
+   "case_for": "Rule 1-2: Wikivoyage Huzhou lists Ming-Qing houses, bridges and canals, open 24 hours.",
+   "case_against": "Quiet and little documented; a second water town beside Nanxun.",
+   "views": 0
+  },
+  {
+   "name": "Silver Diggings Under Heaven",
+   "case_for": "Rule 1-2: Wikivoyage Anji lists a former silver mine and film-set scenic area with tunnels, 07:00-17:00.",
+   "case_against": "One source; a movie-set theme attraction needing taxi access.",
+   "views": 0
+  },
+  {
+   "name": "Dragon King Mountain",
+   "case_for": "Rule 1-2: Wikivoyage Anji lists it (CNY 70), a mountain scenic area with no public transport.",
+   "case_against": "Hard to reach and thin detail in the listing.",
+   "views": 0
+  },
+  {
+   "name": "Baicaoyuan Garden",
+   "case_for": "Rule 1-2: Wikivoyage Anji lists a large man-made garden with mini-zoo and swimming beach (CNY 150).",
+   "case_against": "Family leisure park, high price, mostly amusements.",
+   "views": 0
+  },
+  {
+   "name": "Hello Kitty Park",
+   "case_for": "Rule 1-2: Wikivoyage Anji lists the permanent Hello Kitty theme park with bus access and hours.",
+   "case_against": "Operator-run theme park aimed at children; one source.",
+   "views": 0
+  },
+  {
+   "name": "Tashan Forest Park",
+   "case_for": "Rule 1-2: Wikivoyage Huzhou lists it for morning walks near Tashan town on Mount Mogan.",
+   "case_against": "Generic forest park, one source.",
+   "views": 0
+  },
+  {
+   "name": "Lu Hua Dang Park",
+   "case_for": "Rule 1-2: reed-marsh park on Moganshan (芦花荡公园); no counted source found in this run's search.",
+   "case_against": "Only a candidate-file mention; may be within the main scenic area.",
+   "views": 0
+  },
+  {
+   "name": "Fangfeng Mountain",
+   "case_for": "Rule 1-2: Wikivoyage Huzhou names Fangfeng culture and the mountain in Deqing, but only the temple fair is listed.",
+   "case_against": "The listed draw is an event; nothing confirmed for a regular visit.",
+   "views": 0
+  },
+  {
+   "name": "Fangfeng Temple",
+   "case_for": "Rule 1-2: the temple is permanent though Wikivoyage lists only its annual temple fair; same place as Fangfeng Mountain.",
+   "case_against": "The only sourced hook is the fair; near-duplicate of the mountain.",
+   "views": 0
+  },
+  {
+   "name": "Xianshan Lake Scenic Area",
+   "case_for": "Rule 1-2: Wikivoyage Huzhou names it among Changxing's attractions; lakeside scenic area at Si'an reservoir.",
+   "case_against": "Thin detail, one source.",
+   "views": 0
+  },
+  {
+   "name": "Shuikou Tea Culture Tourism Scenic Area",
+   "case_for": "Rule 1-2: Wikivoyage Huzhou names it among Changxing's attractions; a 4A tea-culture area (Trip.com).",
+   "case_against": "Pin is the town centre only; tea tourism of one source.",
+   "views": 0
+  },
+  {
+   "name": "Taihu Tuying Resort",
+   "case_for": "Rule 1-2: Trip.com and a Wyndham local-area list name Taihu Tuying Ecology Wetland Culture Park in Changxing; counted source not found.",
+   "case_against": "May duplicate Taihu Lake Tourist Resort; operator-run.",
+   "views": 0
+  },
+  {
+   "name": "Taiji Cave",
+   "case_for": "Rule 1: the English Taiji Cave is in Anhui; no Huzhou cave found by search, so the entity is unverified.",
+   "case_against": "The zh Wikipedia link may refer to a real Huzhou cave that I could not confirm.",
+   "views": 0
+  },
+  {
+   "name": "Changxing Taihu Museum",
+   "case_for": "Rule 1-2: only travel-platform listings found (free, 7 floors, lake-view top floor, 09:00-16:30), no Wikivoyage/tourism-board page; a real, open museum.",
+   "case_against": "For: free, notable building on the lakeshore, pairs with Taihu Ancient Town. Against: one non-counted source, a standard county museum.",
+   "views": null
+  },
+  {
+   "name": "Yishang Street Historical and Cultural Block",
+   "case_for": "Rule 1: one China Daily Huzhou item (national historic and cultural block with intangible heritage); old-street walk in Huzhou city.",
+   "case_against": "For: named national block. Against: single counted source, short visit, possibly redeveloped shops.",
+   "views": null
+  },
+  {
+   "name": "Anji Ancient City National Archaeological Site Park",
+   "case_for": "Rule 1-2: one China Daily Huzhou item (cherry blossom park at the Anji ancient city site); open site park.",
+   "case_against": "For: public park on an archaeological site. Against: little to see beyond seasonal blossom, one source.",
+   "views": null
+  },
+  {
+   "name": "Taihu Lake Longemont Paradise",
+   "case_for": "Rule 1-2: China Daily Huzhou names it a national nighttime tourism zone with Nanxun; an operator-run theme-park resort.",
+   "case_against": "For: named nighttime culture zone. Against: operator theme park, details thin.",
+   "views": null
+  }
+ ],
+ "notes": [
+  "Moganshan (3 kept spots) fails the four-spot bar, so Mount Mogan, Villa Cluster and Sword Pool are standalone.",
+  "Standalone within ~40 km of a proposed destination centre: Mount Mogan, Villa Cluster, Sword Pool (~22 km E of Anji; Deqing, outside Anji bounds); Xiazhu Lake (~35 km from Anji, Deqing, outside bounds, ~40 km SE of Huzhou); Xinshi (Deqing, outside bounds). Nanxun/Huzhou 33 km apart, separate towns.",
+  "No Jiangnan Water Towns spots: Nanxun is outside its span."
+ ]
+}

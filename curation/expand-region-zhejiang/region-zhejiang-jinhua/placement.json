@@ -1,0 +1,965 @@
+{
+ "region": "zhejiang-jinhua",
+ "new_destinations": [
+  {
+   "name": "Jinhua",
+   "action": "new-destination",
+   "id": "jinhua",
+   "coordinates": {
+    "lat": 29.079,
+    "lng": 119.647
+   },
+   "coordinates_source": "English Wikipedia \"Jinhua\" article coordinates (city centre)",
+   "category": "city",
+   "rank": 5,
+   "defaultZoomSpanKm": 40,
+   "name_evidence": "Wikivoyage has a \"Jinhua\" page (the prefecture) whose See section lists Shiwang Mansion, Shuanglong Cave and Jinhua Mountain; Wikipedia \"Jinhua\".",
+   "reason": "Regional city and base with 4 kept spots (Shuanglong Cave, Architecture Park, Jinhua Mountain, Shiwang Mansion), meeting the four-spot bar. Rank 5: a local hub, not a national draw. Span 40 km covers the urban Wucheng/Jindong area; Lanxi, Dongyang, Yiwu and Yongkang are separate county-level cities and their spots stay standalone."
+  },
+  {
+   "name": "Wuyi",
+   "action": "new-destination",
+   "id": "wuyi",
+   "coordinates": {
+    "lat": 28.9006,
+    "lng": 119.806
+   },
+   "coordinates_source": "English Wikipedia \"Wuyi County, Zhejiang\" article coordinates (county seat)",
+   "category": "nature",
+   "rank": 5,
+   "defaultZoomSpanKm": 60,
+   "wiki": "Wuyi County, Zhejiang",
+   "name_evidence": "Wikipedia \"Wuyi County, Zhejiang\" and Wikivoyage has a \"Wuyi\" page; China Daily Jinhua presents Wuyi (hot springs, ancient villages, Danxia scenery) as a two-day tour and the Wuyi Hot Springs as a tourism brand. Weak: a county name, also shared with the Fujian Wuyi Mountains, so the owner may rename it \"Wuyi Hot Springs\" or fold it.",
+   "reason": "8 kept spots clustered in one county (hot springs, Ming-Qing villages, Danxia, forest park, old town, family farm): above the four-spot bar, and no larger named region (Jinhua is 25 km away with a different draw) holds them. Rank 5."
+  }
+ ],
+ "placements": [
+  {
+   "name": "Shuanglong Cave",
+   "action": "spot",
+   "destination": "jinhua",
+   "id": "jinhua-1",
+   "coordinates": {
+    "lat": 29.20277778,
+    "lng": 119.62083333
+   },
+   "coordinates_source": "wikipedia:Shuanglong Cave",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🕳️",
+   "bio_draft": "A water-filled karst cave north of Jinhua that visitors enter by boat, with a dragon-head stalactite inside.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1157,
+   "counted_sources": 1,
+   "skeptic_objection": "Wikivoyage page is partly template-quality and the duplicate listing has fake contacts; visit is short and tickets/entry rules unverified.",
+   "verdict_reason": "Rule 1-2: Wikivoyage names it; a water-filled karst cave visitors enter by boat, the region's headline sight (the scenic area around it is its larger frame).",
+   "km_from_centre": 14.0,
+   "reason": "Inside Jinhua's metro area (Wucheng district), about 14 km from the centre, within span."
+  },
+  {
+   "name": "Jinhua Architecture Park",
+   "action": "spot",
+   "destination": "jinhua",
+   "id": "jinhua-2",
+   "coordinates": {
+    "lat": 29.11091,
+    "lng": 119.68686
+   },
+   "coordinates_source": "OSM relation 9395654 (金华建筑艺术公园), park",
+   "pin_needed": false,
+   "category": "landmark",
+   "icon": "🏛️",
+   "bio_draft": "A riverside park of 17 pavilions by Chinese and international architects, laid out along the Yiwu River.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 1237,
+   "counted_sources": 0,
+   "skeptic_objection": "Lonely Planet says it is largely neglected and weathered; 6 km from centre.",
+   "verdict_reason": "Rule 1-2: Lonely Planet describes 16-17 pavilions by international architects along the Yiwu River, conceived by Ai Weiwei; free open-air walk.",
+   "km_from_centre": 5.2,
+   "reason": "Urban Jinhua on the Yiwu River; within bounds."
+  },
+  {
+   "name": "Jinhua Mountain",
+   "action": "spot",
+   "destination": "jinhua",
+   "id": "jinhua-3",
+   "coordinates": {
+    "lat": 29.12,
+    "lng": 119.64
+   },
+   "coordinates_source": "Wikivoyage Jinhua listing geo tag",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "⛰️",
+   "bio_draft": "A scenic area of temples and walking paths on the hills above Jinhua city.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Only one counted source and no page views; may be a local exercise hill.",
+   "verdict_reason": "Rule 1-2: Wikivoyage lists the scenic area with temples and paths above the city; a walkable second-tier stop.",
+   "km_from_centre": 4.6,
+   "reason": "Hills above the city, Wucheng district; within bounds."
+  },
+  {
+   "name": "Taiping Heavenly Kingdom Shiwang Mansion",
+   "action": "spot",
+   "destination": "jinhua",
+   "id": "jinhua-4",
+   "coordinates": {
+    "lat": 29.105,
+    "lng": 119.66
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Jinhua)",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏯",
+   "bio_draft": "The Ming-style residence of a Taiping prince near Wuzhou old city, a 4A museum with many murals.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1.5,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Hours were undetermined on Wikivoyage; Ctrip is supporting evidence only.",
+   "verdict_reason": "Rule 1-2: Wikivoyage lists it; Ctrip describes a national-key 4A museum of a Taiping prince's HQ with many murals, open 09:00-16:30, beside Wuzhou old city.",
+   "km_from_centre": 3.1,
+   "reason": "Beside Wuzhou old city, urban Jinhua; within bounds."
+  },
+  {
+   "name": "Wuyi Hot Springs",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-1",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "entertainment",
+   "icon": "♨️",
+   "bio_draft": "A hot-spring resort area in Wuyi county with spa hotels and pools, usually visited as a two-day trip.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "The provincial page failed to load for me, and it is a spa resort with hotels.",
+   "verdict_reason": "Rule 1-2: a permanent hot-spring resort that the provincial tourism page presents as a two-day tour; a main Wuyi draw.",
+   "reason": "Inside Wuyi county, the destination's base."
+  },
+  {
+   "name": "Guodong Village",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-2",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio_draft": "A Ming-Qing village in Wuyi with preserved traditional houses, entered on a ticket.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Reviews call it small and heavily modernised.",
+   "verdict_reason": "Rule 1-2: China Daily names the Ming-Qing village among Wuyi's must-visit; entry about 30 yuan.",
+   "reason": "Inside Wuyi county."
+  },
+  {
+   "name": "Yuyuan Village",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-3",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio_draft": "A national historic village in Wuyi with 395 protected Ming-Qing buildings.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Remote, about 20 km from the county seat.",
+   "verdict_reason": "Rule 1-2: China Daily names it, a first-batch national historic village with 395 Ming-Qing buildings.",
+   "reason": "Inside Wuyi county."
+  },
+  {
+   "name": "Niutou Mountain Forest Park",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-4",
+   "coordinates": {
+    "lat": 28.66726,
+    "lng": 119.49506
+   },
+   "coordinates_source": "OSM relation 778688258 (牛头山国家森林公园), nature reserve",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🌲",
+   "bio_draft": "A 4A national forest park of about 1,327 hectares in Wuyi county, known for river drifting.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Remote from town; seasonal summer draw.",
+   "verdict_reason": "Rule 1-2: China Daily names a 4A 1,327 ha national forest park with drifting.",
+   "km_from_centre": 39.8,
+   "reason": "Inside Wuyi county (its south), about 40 km from the centre; at the edge of the 60 km span."
+  },
+  {
+   "name": "Dahongyan Scenic Area",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-5",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "⛰️",
+   "bio_draft": "A national 4A scenic area in Wuyi renowned for its Danxia red-rock landforms.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 3,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Only China Daily opened; not previously enumerated.",
+   "verdict_reason": "Rule 1-2: China Daily Wuyi guide names it a national 4A scenic spot renowned for Danxia landform; Ctrip lists it among Wuyi's top sights.",
+   "reason": "Inside Wuyi county."
+  },
+  {
+   "name": "Huatian Meidi",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-6",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "nature",
+   "icon": "🌸",
+   "bio_draft": "A 4A scenic area in Wangzhai, Wuyi, of flower fields and countryside walks.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Flower-themed, European-pastiche resort; both China Daily pieces are same-outlet press; peak bloom is seasonal.",
+   "verdict_reason": "Rule 1-2: China Daily (Jul 2026, and its Flower Town autumn piece) names a 4A scenic area in Wangzhai, Wuyi: ~4 sq km of flower fields, visitor centre, ranch and activities, 550,000 visits in 2025; a permanent venue, well over half an hour.",
+   "reason": "Wangzhai, Wuyi county."
+  },
+  {
+   "name": "Wuyi Ancient City",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-7",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "historic",
+   "icon": "🏯",
+   "bio_draft": "A rebuilt Tang-origin old town with Shuxi Bridge, Hushan Academy and the City God temple.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Rebuilt from 2012, so partly new; one source; overlaps Shuxi Bridge listing.",
+   "verdict_reason": "Rule 1-2: China Daily describes a Tang-origin rebuilt old town with Shuxi Bridge, Hushan Academy and City God Temple, open for evening strolls, night market and night views; a permanent walking district.",
+   "reason": "Wuyi county town."
+  },
+  {
+   "name": "Panda Pig Two End Black International Ranch",
+   "action": "spot",
+   "destination": "wuyi",
+   "id": "wuyi-8",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "entertainment",
+   "icon": "🐖",
+   "bio_draft": "A 4A family farm destination on the Baisha River in Wucheng, spread over 800,000 square metres.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "A farm-themed commercial attraction with a hotel and shop; one outlet covers it.",
+   "verdict_reason": "Rule 1-2: China Daily names a 4A family destination on the Baisha River, Wucheng, 800,000 sq m, smart-farming tours, museum and food, 3.8 million visits; permanent venue.",
+   "reason": "Wucheng, Wuyi county (Baisha River)."
+  },
+  {
+   "name": "Hengdian World Studios",
+   "action": "standalone",
+   "destination": null,
+   "id": "hengdian-world-studios",
+   "coordinates": {
+    "lat": 29.179068,
+    "lng": 120.298083
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Dongyang)",
+   "pin_needed": false,
+   "category": "entertainment",
+   "icon": "🎬",
+   "bio_draft": "A film and TV studio city near Dongyang with reconstructed palaces and streets, open to visitors.",
+   "visitHoursMin": 4,
+   "visitHoursMax": 8,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 63971,
+   "counted_sources": 1,
+   "skeptic_objection": null,
+   "verdict_reason": "1 counted sources, 63971 page views",
+   "reason": "Dongyang county-level city, about 40 km from Jinhua centre and outside its bounds. With Luzhai it is 2 kept places; Hengdian has no Wikivoyage page under its name and Dongyang has only 2 kept spots, so no destination (below the four-spot bar)."
+  },
+  {
+   "name": "Luzhai Residence",
+   "action": "standalone",
+   "destination": null,
+   "id": "luzhai-residence",
+   "coordinates": {
+    "lat": 29.279,
+    "lng": 120.243
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Dongyang)",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏯",
+   "bio_draft": "A Ming-Qing family residential complex in Dongyang, the city's headline historic site.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 1,
+   "skeptic_objection": "Wikivoyage is the only counted source I opened; opening state unverified.",
+   "verdict_reason": "Rule 1-2: Wikivoyage names Lu Mansion, Ming-Qing family complex and Dongyang's headline historic site, open to visitors.",
+   "reason": "Dongyang, outside Jinhua's urban bounds (about 50 km). Dongyang/Hengdian has only 2 kept places, so standalone."
+  },
+  {
+   "name": "Yiwu International Trade City",
+   "action": "standalone",
+   "destination": null,
+   "id": "yiwu-international-trade-city",
+   "coordinates": {
+    "lat": 29.334649,
+    "lng": 120.107083
+   },
+   "coordinates_source": "Wikivoyage listing geo tag (Yiwu)",
+   "pin_needed": false,
+   "category": "market",
+   "icon": "🛍️",
+   "bio_draft": "The world's largest wholesale market for small commodities, trading every day of the year.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 36325,
+   "counted_sources": 1,
+   "skeptic_objection": null,
+   "verdict_reason": "1 counted sources, 36325 page views",
+   "reason": "Yiwu is a separate county-level city with its own Wikivoyage page but only 1 kept place here (its other candidates went to review), so standalone, not a destination."
+  },
+  {
+   "name": "Xianhua Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "xianhua-mountain",
+   "coordinates": {
+    "lat": 29.52492,
+    "lng": 119.89601
+   },
+   "coordinates_source": "OSM peak 7623596821 (仙华山)",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "⛰️",
+   "bio_draft": "A national scenic area of peaks and hiking trails in the hills of Pujiang.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Only China Daily opened; no page views.",
+   "verdict_reason": "Rule 1-2: China Daily (government tourism) names the 4A scenic area with peaks and trails.",
+   "reason": "In Pujiang county, about 50 km from Jinhua; outside bounds. Standalone."
+  },
+  {
+   "name": "Fangyan Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "id": "fangyan-scenic-area",
+   "coordinates": {
+    "lat": 28.92652,
+    "lng": 120.18314
+   },
+   "coordinates_source": "OSM way 992603874 (方岩风景名胜区), attraction",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "⛰️",
+   "bio_draft": "A national 4A Danxia red-stone area in Yongkang, with a 30-minute climb to the Hu Gong temple.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "I only found Trip.com-level pages, not a counted page.",
+   "verdict_reason": "Rule 1-2: national 4A Danxia red-stone area with a 30-minute climb to Hu Gong temple, widely listed by travel guides.",
+   "reason": "In Yongkang, outside Jinhua and Wuyi bounds (about 35 km from Wuyi's centre, a different county). Yongkang has 2 kept places so standalone."
+  },
+  {
+   "name": "Zhuge Bagua Village",
+   "action": "standalone",
+   "destination": null,
+   "id": "zhuge-bagua-village",
+   "coordinates": {
+    "lat": 29.24751,
+    "lng": 119.29911
+   },
+   "coordinates_source": "OSM node 6136468784 (诸葛八卦村游客服务中心), visitor centre at the village entrance",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏘️",
+   "bio_draft": "A Ming-Qing village laid out on the eight trigrams, with halls and a temple to visit.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Evidence found was travel platforms, not a counted page.",
+   "verdict_reason": "Rule 1-2: a famous Ming-Qing village laid out on the eight trigrams, ticketed, with halls and temple to visit.",
+   "reason": "In Lanxi, about 40 km from Jinhua's centre and outside its bounds; Lanxi has only 3 kept places (Liudong, Youbu, Zhuge), below the four-spot bar, and Lanxi is a county-level city rather than a Jinhua district."
+  },
+  {
+   "name": "Liudong Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "liudong-mountain",
+   "coordinates": {
+    "lat": 29.20773,
+    "lng": 119.53592
+   },
+   "coordinates_source": "OSM way 809340449 (六洞山地下长河), underground river attraction in the scenic area",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "🕳️",
+   "bio_draft": "A karst scenic area near Lanxi with caves, an underground river and boat tours.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Sources were listings; not a counted page.",
+   "verdict_reason": "Rule 1-2: Lanxi's top-ranked scenic draw, a karst area with caves, underground river and boat tours.",
+   "reason": "In Lanxi, about 17 km from Jinhua centre but outside Jinhua's urban bounds (Lanxi territory); Lanxi has 3 kept places so no destination. Standalone."
+  },
+  {
+   "name": "Xiangzhu Old Street",
+   "action": "standalone",
+   "destination": null,
+   "id": "xiangzhu-old-street",
+   "coordinates": null,
+   "coordinates_source": null,
+   "pin_needed": true,
+   "category": "market",
+   "icon": "🏮",
+   "bio_draft": "A kilometre-long ancient street in Yongkang, presented as a cultural quarter to stroll.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Partly rebuilt and commercial.",
+   "verdict_reason": "Rule 1-2: China Daily Jinhua (Jul 2024) presents the 1 km ancient street as a new cultural hotspot to walk.",
+   "reason": "In Yongkang, outside any destination's bounds. Standalone."
+  },
+  {
+   "name": "Youbu Ancient Town",
+   "action": "standalone",
+   "destination": null,
+   "id": "youbu-ancient-town",
+   "coordinates": {
+    "lat": 29.12222,
+    "lng": 119.32502
+   },
+   "coordinates_source": "OSM way 1214413126 (游埠古镇), park-tagged town",
+   "pin_needed": false,
+   "category": "historic",
+   "icon": "🏮",
+   "bio_draft": "A millennium-old town in Lanxi known for lantern parades and lion dances.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Lantern parades are events; the town itself is quiet and may be a short stop.",
+   "verdict_reason": "Rule 1-2: China Daily describes it as one of Zhejiang's top four millennium-old towns.",
+   "reason": "In Lanxi, about 31 km from Jinhua centre but outside its bounds. Standalone."
+  },
+  {
+   "name": "Dapan Mountain",
+   "action": "standalone",
+   "destination": null,
+   "id": "dapan-mountain",
+   "coordinates": {
+    "lat": 28.97827,
+    "lng": 120.52263
+   },
+   "coordinates_source": "OSM node 8459711574 (大盘山), peak",
+   "pin_needed": false,
+   "category": "nature",
+   "icon": "⛰️",
+   "bio_draft": "A free national nature reserve and mountain park in Pan'an, popular for hiking.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "costBasis": null,
+   "cost": null,
+   "ticketUrl": null,
+   "currency": "CNY",
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "views": 0,
+   "counted_sources": 0,
+   "skeptic_objection": "Medicinal-plant focus; modest for general visitors.",
+   "verdict_reason": "Rule 1-2: China Daily lists it among Zhejiang's ten mountain parks, a free national nature reserve in Pan'an.",
+   "reason": "In Pan'an county, far from Jinhua and Wuyi (about 50 km from Wuyi centre); outside bounds. Standalone."
+  }
+ ],
+ "review": [
+  {
+   "name": "Tianning Temple Main Hall",
+   "views": 0,
+   "case": "For: national-protected timber hall open all day per listing. Against: a single hall, likely a short local stop.",
+   "judge_reason": "Rule 2: Wikivoyage lists a protected hall; whether visitors go in is unverified."
+  },
+  {
+   "name": "Tongji Bridge",
+   "views": 0,
+   "case": "For: riverside night view. Against: a bridge walk of minutes, not a destination.",
+   "judge_reason": "Rule 2-3: Wikivoyage lists it; Ctrip names the Wu River bridge with night lighting as a highlight, open all day."
+  },
+  {
+   "name": "Huang Daxian Ancestral Temple",
+   "views": 0,
+   "case": "For: pilgrimage significance. Against: inside the Shuanglong area and has one source only.",
+   "judge_reason": "Rule 2: Wikivoyage lists the Daoist temple of Huang Chuping, the origin of the Wong Tai Sin cult, in the Shuanglong area."
+  },
+  {
+   "name": "Jiufeng Mountain",
+   "views": 0,
+   "case": "For: named by a government source. Against: no detail on trails or what to do.",
+   "judge_reason": "Rule 1: China Daily (Tangxi provincial historic town article) names Jiufeng Mountain, tea gardens and villages as tourist draws; Wikivoyage lists the hill."
+  },
+  {
+   "name": "Jinhua Grand Canyon",
+   "views": 0,
+   "case": "For: a named canyon 30 km out with hours. Against: the listing looks unreliable and no second source exists.",
+   "judge_reason": "Rule 1: Wikivoyage listing with placeholder contact details and no image; existence and access unverified, not rejected for that."
+  },
+  {
+   "name": "Jinhua Traditional Snack Street",
+   "views": 0,
+   "case": "For: daily and a place to eat the local thing. Against: only a food street, listing unverified.",
+   "judge_reason": "Rule 2: Wikivoyage lists a daily food street; the draw is eating local snacks."
+  },
+  {
+   "name": "Yanweizhou Park",
+   "views": 0,
+   "case": "For: a notable designed flood-park with bridges. Against: one weak source, and it may be an ordinary city park to visitors. Fresh Chinese search done again: ancient city is the Wuzhou/Gu Zicheng area with Shiwang Mansion, Tianning Temple and Bayong Tower nearby (Ctrip), supporting review.",
+   "judge_reason": "Rule 1: no counted source found by fresh search (only Trip.com/Expedia listings); award-winning riverside landscape park."
+  },
+  {
+   "name": "Wuzhou Ancient City",
+   "views": 0,
+   "case": "For: a pedestrian old-town quarter people stroll. Against: possibly a modern reconstruction with only shops and food. Fresh Chinese search done again: ancient city is the Wuzhou/Gu Zicheng area with Shiwang Mansion, Tianning Temple and Bayong Tower nearby (Ctrip), supporting review.",
+   "judge_reason": "Rule 1: the old-city leisure block opened 2023 but no counted source found by fresh search."
+  },
+  {
+   "name": "Yanfu Temple",
+   "views": 461,
+   "case": "For: architecturally notable interior. Against: no counted source, whether visitors can enter unverified.",
+   "judge_reason": "Rule 2: a search hit calls its Yuan timber hall a unique surviving example visited by Liang Sicheng; no visitor source on access."
+  },
+  {
+   "name": "Xijin Bridge",
+   "views": 1422,
+   "case": "For: a record-length historic bridge. Against: a bridge, short visit, one non-travel source.",
+   "judge_reason": "Rule 1-2: Xinhua names it among Yongkang's headline sights (longest stone-pier timber covered bridge in China)."
+  },
+  {
+   "name": "Dream Valley",
+   "views": 0,
+   "case": "For: a separate amusement area and Yuanmingyuan replica with own entry. Against: part of Hengdian, no counted source.",
+   "judge_reason": "Rule 3: distinct ticketed areas of the Hengdian complex, but sources treat them as sub-areas."
+  },
+  {
+   "name": "New Yuanmingyuan",
+   "views": 0,
+   "case": "For: a separate amusement area and Yuanmingyuan replica with own entry. Against: part of Hengdian, no counted source.",
+   "judge_reason": "Rule 3: distinct ticketed areas of the Hengdian complex, but sources treat them as sub-areas."
+  },
+  {
+   "name": "China Woodcarving Museum",
+   "views": 0,
+   "case": "For: Dongyang woodcarving is its signature craft. Against: one source.",
+   "judge_reason": "Rule 1-2: Wikivoyage names the museum of Dongyang's famous craft; one source, museum visit."
+  },
+  {
+   "name": "Dongyang Woodcarving Town",
+   "views": 0,
+   "case": "For: named by a government source as a craft town. Against: the draw is shopping/workshops and an annual fair.",
+   "judge_reason": "Rule 1-2: China Daily names Dongyang Woodcarving Town (craft fair is an event, the town itself a venue of workshops)."
+  },
+  {
+   "name": "Li Zhai and Cai Zhai Ancient Villages",
+   "views": 0,
+   "case": "For: intact old houses. Against: little other evidence; may be quiet villages.",
+   "judge_reason": "Rule 1-2: Wikivoyage lists two courtyard-house villages; one source."
+  },
+  {
+   "name": "Dongbai Mountain",
+   "views": 0,
+   "case": "For: a real hike. Against: one source, little visitor info.",
+   "judge_reason": "Rule 1-2: Wikivoyage lists a free hiking area with a 1,194 m peak."
+  },
+  {
+   "name": "Yiwu Museum",
+   "views": 0,
+   "case": "For: explains the trade city's history. Against: generic city museum.",
+   "judge_reason": "Rule 2: Wikivoyage lists the city museum with set hours (closed Monday); one source."
+  },
+  {
+   "name": "Yiwu Ocean World",
+   "views": 0,
+   "case": "For: a permanent family venue. Against: generic regional amusement park; Ocean World is inside Paradise so only one is distinct.",
+   "judge_reason": "Rule 1-2: Wikivoyage lists the amusement park and its aquarium (same site); permanent venue."
+  },
+  {
+   "name": "Yiwu Paradise",
+   "views": 0,
+   "case": "For: a permanent family venue. Against: generic regional amusement park; Ocean World is inside Paradise so only one is distinct.",
+   "judge_reason": "Rule 1-2: Wikivoyage lists the amusement park and its aquarium (same site); permanent venue."
+  },
+  {
+   "name": "Yiwu Botanical Garden",
+   "views": 0,
+   "case": "For: big garden named by two counted sources. Against: highlight is a seasonal bloom and it is a city park.",
+   "judge_reason": "Rule 1-2: Wikivoyage lists it, China Daily (Sep 2026) features its muhly grass bloom; a large open garden."
+  },
+  {
+   "name": "Old Station 1970 Cultural and Creative Park",
+   "views": 0,
+   "case": "For: a place to wander. Against: shops and cafes.",
+   "judge_reason": "Rule 1-2: Wikivoyage lists a creative park in a former station, open 10-22."
+  },
+  {
+   "name": "Exotic Street",
+   "views": 0,
+   "case": "For: distinctive to Yiwu's trader culture. Against: mostly restaurants.",
+   "judge_reason": "Rule 1-2: Wikivoyage lists Yiwu's international quarter of Arab/Turkish restaurants."
+  },
+  {
+   "name": "Zhengyi Men Ancient Buildings",
+   "views": 0,
+   "case": "For: well-known cultural site. Against: only news/Ctrip evidence, no counted visitor page.",
+   "judge_reason": "Rule 1-2: search results name the Zhengyi Men (Zheng Yi Men) complex as a national-key site famed for the 'family living together' tradition with ponds, bridges and ancestral hall."
+  },
+  {
+   "name": "Baishiwan Scenic Area",
+   "views": 0,
+   "case": "For: 4A-level natural area. Against: aggregator-only evidence.",
+   "judge_reason": "Rule 1: named as a Pujiang must-see natural area in listing/travel sources, but no counted page opened for it."
+  },
+  {
+   "name": "Shangshan Site",
+   "views": 0,
+   "case": "For: Top-100 archaeological discovery, 14,000 visits in a holiday. Against: park/museum was under construction.",
+   "judge_reason": "Rule 1-2: China Daily reports a Neolithic archaeological park receiving visitors with a museum planned; what visitors can see is uncertain."
+  },
+  {
+   "name": "Shouxian Valley",
+   "views": 0,
+   "case": "For: provincial listing. Against: no detail.",
+   "judge_reason": "Rule 1: Wuyi scenic area listed but I found no counted page for it."
+  },
+  {
+   "name": "Liuxiu Ridge",
+   "views": 0,
+   "case": "For: provincial listing. Against: no detail.",
+   "judge_reason": "Rule 1: Wuyi scenic area listed but I found no counted page for it."
+  },
+  {
+   "name": "Changle Village",
+   "views": 0,
+   "case": "For: ranked top five. Against: near-duplicate of Zhuge's visit.",
+   "judge_reason": "Rule 1: a neighbouring ancient village ranked in Lanxi's top five, museum with fee."
+  },
+  {
+   "name": "Zhiyan Village",
+   "views": 0,
+   "case": "For: intact village. Against: unverified.",
+   "judge_reason": "Rule 1: national-protected village, no visitor source found."
+  },
+  {
+   "name": "Baolu Mountain",
+   "views": 0,
+   "case": "For: top-ten listing. Against: identity uncertain.",
+   "judge_reason": "Rule 1: Lanxi top-ten listing (likely Bailu Mountain), unconfirmed."
+  },
+  {
+   "name": "Jieziyuan Garden",
+   "views": 0,
+   "case": "For: itinerary stop. Against: modern garden.",
+   "judge_reason": "Rule 1-2: a 1986 garden honouring Li Yu, paired in Lanxi itineraries."
+  },
+  {
+   "name": "Shanxibao Village",
+   "views": 0,
+   "case": "For: named by a government guide. Against: no detail on what to see.",
+   "judge_reason": "Rule 1: China Daily names it alongside Guodong and Yuyuan; no detail found."
+  },
+  {
+   "name": "Lanxi Ancient Town",
+   "views": 0,
+   "case": "For: riverside old streets. Against: possibly heavily rebuilt, no counted page.",
+   "judge_reason": "Rule 1-2: old streets and merchant houses; itineraries list Lanxi ancient city."
+  },
+  {
+   "name": "Shenli She Scenic Area",
+   "views": 0,
+   "case": "For: 4A-level natural area. Against: aggregator-only evidence.",
+   "judge_reason": "Rule 1: named as a Pujiang must-see natural area in listing/travel sources, but no counted page opened for it."
+  },
+  {
+   "name": "Shanghe Village",
+   "views": 0,
+   "case": "For: guide recommendation. Against: unverifiable.",
+   "judge_reason": "Rule 1: marked a provincial-guide stop but fresh search found nothing."
+  },
+  {
+   "name": "Baizhangtan Scenic Area",
+   "views": 0,
+   "case": "For: genuine nature draw. Against: no counted source.",
+   "judge_reason": "Rule 1: 4A gorge with waterfalls and rafting, named by travel guides only."
+  },
+  {
+   "name": "Huaxi Scenic Area",
+   "views": 0,
+   "case": "For: named scenic areas. Against: remote and thinly sourced.",
+   "judge_reason": "Rule 1: named by travel guides, no counted source; Dongtou unconfirmed."
+  },
+  {
+   "name": "Wulong Gorge",
+   "views": 0,
+   "case": "For: named scenic areas. Against: remote and thinly sourced.",
+   "judge_reason": "Rule 1: named by travel guides, no counted source; Dongtou unconfirmed."
+  },
+  {
+   "name": "Dongtou Mountain",
+   "views": 0,
+   "case": "For: named scenic areas. Against: remote and thinly sourced.",
+   "judge_reason": "Rule 1: named by travel guides, no counted source; Dongtou unconfirmed."
+  },
+  {
+   "name": "Dayuantang Tea Garden",
+   "views": 0,
+   "case": "For: a distinctive terraced landscape. Against: single source, tea-garden terraces are a short stop.",
+   "judge_reason": "Rule 1-2: China Daily Wuyi guide describes terraced tea garden at 1,100 m with stone steps; a scenic walk, one source."
+  },
+  {
+   "name": "Shibawo Scenic Resort",
+   "views": 0,
+   "case": "For: listed Pan'an nature resort. Against: only aggregator evidence.",
+   "judge_reason": "Rule 1: Pan'an scenic area known from Trip.com listings only; no counted page found."
+  },
+  {
+   "name": "Lan Lake",
+   "views": 0,
+   "case": "For: ranked among Lanxi's top sights. Against: ranking is from an aggregator and I found no detail.",
+   "judge_reason": "Rule 1: a Lanxi top-five attraction ranking lists Lan Lake after Zhuge Bagua Village and Youbu; no counted page opened."
+  },
+  {
+   "name": "Sky City in the Heart of Zhejiang",
+   "views": 0,
+   "case": "Case for: real ticketed attraction with 13,000 pre-sale tickets. Against: one source, opened months ago, an amusement park rather than a place to go out of the way for.",
+   "judge_reason": "Rule 1-2: China Daily (Apr 2026) says it opened to the public Apr 22 in Pan'an: 18 rides, a 120 m Ferris wheel and high-altitude activities, a permanent venue."
+  },
+  {
+   "name": "Four Seasons Flower Valley Garden Expo Park",
+   "views": 0,
+   "case": "Case for: a permanent park a provincial outlet covers. Against: name and location unverified, one source, bloom-driven.",
+   "judge_reason": "Rule 1: no source found under this name. China Daily names the International Garden Expo Park in Yafu village, Wucheng (azaleas late Mar-May, conference area) which may be the same place; Andi location and the name unconfirmed."
+  },
+  {
+   "name": "Gaomu Mountain",
+   "views": 0,
+   "case": "Case for: a walk with a permanent resort. Against: one source and the draw is the April bloom.",
+   "judge_reason": "Rule 1-2: China Daily names Gaomu Mountain tourism resort in Pan'an: 666 ha, 100+ azalea varieties, a 2.8 km walking trail, Qixian Lake Wetland Park to the south."
+  },
+  {
+   "name": "Gu Zicheng",
+   "views": 0,
+   "case": "Case for: named in the brief as a Wuzhou-area draw. Against: nothing sourced.",
+   "judge_reason": "Rule 1: no counted source found for a Gu Zicheng or Bayong-area attraction (Bayong Tower was earlier rejected); cannot confirm what visitors do there. Unresolved, not evidence against."
+  },
+  {
+   "name": "World Ham Exhibition Hall",
+   "views": 0,
+   "case": "Case for: distinctive museum on Jinhua's signature food. Against: one source, short visit, little traction, opening and access not checked.",
+   "judge_reason": "Rule 1-2: China Daily (Mar 2025) says a 1,400 sq m museum opened 2013 and is the nation's sole museum of world hams, with a ham street and cellar; open to the public."
+  }
+ ],
+ "existing_fixes": [],
+ "note_standalone_within_40km": "Jinhua centre: Liudong Mountain (17 km) and Youbu Ancient Town (31 km) are Lanxi county-level city territory, outside the urban bounds; Zhuge Bagua Village (40 km) likewise. Wuyi centre: Fangyan (35 km) is in Yongkang, a different county, outside bounds. Hengdian/Luzhai (Dongyang, 40-50 km from Jinhua) have 2 kept places, below the bar. Sibling regions: no overlap with Hangzhou/Ningbo/Wenzhou proposals (over 100 km away)."
+}
