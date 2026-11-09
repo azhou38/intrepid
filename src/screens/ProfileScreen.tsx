@@ -19,7 +19,7 @@ import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 // paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
-import CountryPhoto from '../components/CountryPhoto';
+import CountryPhoto, { GRID_PHOTO_BG, GRID_PHOTO_FADE_MS } from '../components/CountryPhoto';
 import WorldMapModal from '../components/WorldMapModal';
 import EditProfileSheet, { ProfileAvatar } from '../components/EditProfileSheet';
 import EntityPhoto from '../components/Map/EntityPhoto';
@@ -675,7 +675,7 @@ export default function ProfileScreen() {
                   exploredSort === 'dests' && counted ? `${counted} destination${counted === 1 ? '' : 's'}`
                   : exploredSort === 'spots' && counted ? `${counted} spot${counted === 1 ? '' : 's'}` : ''),
                 rank: exploredSort === 'dests' && v > 0 && rk <= 3 ? rk : undefined,
-                photo: <CountryPhoto code={c.id} name={c.name} />,
+                photo: <CountryPhoto code={c.id} name={c.name} dark />,
               };
             })} />
           )}
@@ -731,7 +731,7 @@ export default function ProfileScreen() {
                     cache={thumbCache}
                     load={() => getOrFetchWikiThumbnail(`pick_${d.id}`, thumbCache, d.name, 300)}
                     subject={photoSubject(d.name)}
-                    placeholderColor="#E5E7EB"
+                    placeholderColor={GRID_PHOTO_BG} fadeMs={GRID_PHOTO_FADE_MS}
                   />
                 ),
               };
@@ -788,7 +788,7 @@ export default function ProfileScreen() {
                     cache={thumbCache}
                     load={() => getOrFetchWikiThumbnail(`pick_spot_${sp.id}`, thumbCache, spotPhotoTitle(sp), 300)}
                     subject={photoSubject(spotPhotoTitle(sp))}
-                    placeholderColor="#E5E7EB"
+                    placeholderColor={GRID_PHOTO_BG} fadeMs={GRID_PHOTO_FADE_MS}
                     fallback={<PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />}
                   />,
             }))} />
@@ -1449,7 +1449,8 @@ const styles = StyleSheet.create({
   pageRange: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   pageDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: PAGE_DOT_OFF },
   // A tile is a shadow-casting shell around a clipped inner box (a view that clips cannot also cast a shadow).
-  tile:     { width: TILE, height: TILE, borderRadius: 10, backgroundColor: '#E5E7EB',
+  // Black behind a photo still loading, which then fades in over it (GRID_PHOTO_FADE_MS).
+  tile:     { width: TILE, height: TILE, borderRadius: 10, backgroundColor: GRID_PHOTO_BG,
               shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 5, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
   tileClip: { flex: 1, borderRadius: 10, overflow: 'hidden' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).

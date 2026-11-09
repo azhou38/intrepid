@@ -20,9 +20,9 @@ import { subjectCoverRect, subjectCoverRectUI, type Subject } from '../../utils/
 // rest), instead of being re-fitted to a measured box a frame late at every step.
 export type AnimatedFrame = { width: number; fullH: number; height: SharedValue<number>; minH: SharedValue<number> };
 
-export default function FadeInImage({ instant, onLoad, style, subject, frame, ...rest }: ImageProps & { instant?: boolean; subject?: Subject; frame?: AnimatedFrame }) {
+export default function FadeInImage({ instant, onLoad, style, subject, frame, fadeMs, ...rest }: ImageProps & { instant?: boolean; subject?: Subject; frame?: AnimatedFrame; fadeMs?: number }) {
   if (frame) return <FramedImage instant={instant} onLoad={onLoad} style={style} subject={subject} frame={frame} {...rest} />;
-  return <BoxImage instant={instant} onLoad={onLoad} style={style} subject={subject} {...rest} />;
+  return <BoxImage instant={instant} onLoad={onLoad} style={style} subject={subject} fadeMs={fadeMs} {...rest} />;
 }
 
 // Each photo's pixel size, once it has loaded: a photo shown again (a sheet remounted for the same place, as going back
@@ -114,7 +114,8 @@ function FramedImage({ instant, onLoad, style, subject, frame, ...rest }: ImageP
   );
 }
 
-function BoxImage({ instant, onLoad, style, subject, ...rest }: ImageProps & { instant?: boolean; subject?: Subject }) {
+// `fadeMs`: a slower, gentler fade (ease in and out) than the default quick one, for a photo arriving over a dark tile.
+function BoxImage({ instant, onLoad, style, subject, fadeMs, ...rest }: ImageProps & { instant?: boolean; subject?: Subject; fadeMs?: number }) {
   const opacity = useSharedValue(instant && !subject ? 1 : 0);
   const animStyle = useAnimatedStyle(() => ({ opacity: opacity.value }));
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
@@ -123,7 +124,8 @@ function BoxImage({ instant, onLoad, style, subject, ...rest }: ImageProps & { i
   const [mountedAt] = useState(Date.now);
 
   const show = () => {
-    opacity.value = instant && Date.now() - mountedAt < INSTANT_WINDOW_MS ? 1 : withTiming(1, { duration: 220, easing: Easing.out(Easing.quad) });
+    opacity.value = instant && Date.now() - mountedAt < INSTANT_WINDOW_MS ? 1
+      : withTiming(1, fadeMs ? { duration: fadeMs, easing: Easing.inOut(Easing.quad) } : { duration: 220, easing: Easing.out(Easing.quad) });
   };
   // A subject photo appears only once it is placed (it is hidden until then even when `instant`).
   useEffect(() => { if (placed) show(); }, [placed]);

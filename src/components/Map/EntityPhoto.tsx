@@ -17,7 +17,7 @@ import type { Subject } from '../../utils/subjectCrop';
 // this small component, so a photo arriving re-renders only the photo, never the sheet around it.
 export default function EntityPhoto({
   cacheKey, cache, load, instant, scrim, placeholderColor, resizeMode = 'cover', style = StyleSheet.absoluteFill,
-  subject, fallback, frame,
+  subject, fallback, frame, fadeMs,
 }: {
   cacheKey: string;                                   // identifies the entity (and is the photoCache key)
   cache: Map<string, string>;
@@ -33,6 +33,8 @@ export default function EntityPhoto({
   fallback?: React.ReactNode;
   // A box whose height animates (see FadeInImage): the photo follows it on the UI thread.
   frame?: AnimatedFrame;
+  // A slower, gentler fade-in for a photo that loads (see FadeInImage).
+  fadeMs?: number;
 }) {
   const cached = cache.get(cacheKey) ?? null;
   const [loaded, setLoaded] = useState<{ key: string; url: string } | null>(null);
@@ -59,7 +61,7 @@ export default function EntityPhoto({
   return (
     <>
       {/* keyed by entity: a fresh instance (and fresh fade state) per photo, never one image swapped in place */}
-      <FadeInImage key={cacheKey} instant={instant ?? meta.current.hit} source={{ uri: url }} style={style} resizeMode={resizeMode} subject={resizeMode === 'cover' ? subject : undefined} frame={resizeMode === 'cover' ? frame : undefined} />
+      <FadeInImage key={cacheKey} instant={instant ?? meta.current.hit} source={{ uri: url }} style={style} resizeMode={resizeMode} subject={resizeMode === 'cover' ? subject : undefined} frame={resizeMode === 'cover' ? frame : undefined} fadeMs={fadeMs} />
       {scrim ? <View pointerEvents="none" style={[StyleSheet.absoluteFill, { backgroundColor: scrim }]} /> : null}
     </>
   );
