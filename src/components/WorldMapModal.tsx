@@ -135,7 +135,7 @@ export default function WorldMapModal({
   const placeCard = (pr: Record<string, any>): Picked => {
     const n = Number(pr.spots ?? 0);
     // The country is the flag before the name; the line under it is only the destination's spots visited (none for a spot).
-    const sub = n > 0 ? `${n} spot${n === 1 ? '' : 's'} visited` : '';
+    const sub = n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '';
     return { kind: 'place', id: pr.id, name: pr.name, sub, code: pr.code || undefined,
       photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category };
   };
@@ -357,8 +357,8 @@ export default function WorldMapModal({
                   {/* What was visited there, leaving out a count of none; nothing at all, and the name sits centred alone. */}
                   {(picked.dests > 0 || picked.spots > 0) && (
                     <Text style={st.cardSub} numberOfLines={1}>
-                      {[picked.dests > 0 && `${picked.dests} destination${picked.dests === 1 ? '' : 's'} visited`,
-                        picked.spots > 0 && `${picked.spots} spot${picked.spots === 1 ? '' : 's'} visited`].filter(Boolean).join(', ')}
+                      {[picked.dests > 0 && `${picked.dests} destination${picked.dests === 1 ? '' : 's'}`,
+                        picked.spots > 0 && `${picked.spots} spot${picked.spots === 1 ? '' : 's'}`].filter(Boolean).join(', ')}
                     </Text>
                   )}
                 </View>
