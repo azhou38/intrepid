@@ -1,0 +1,83 @@
+[
+ {
+  "name": "Jiangshan",
+  "wiki": "Jiangshan",
+  "views": 3515,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Jiangshan",
+   "wiki": "Jiangshan",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Zhejiang",
+    "https://en.wikivoyage.org/wiki/Jiangshan"
+   ],
+   "other_sources": [
+    "https://zh.wikipedia.org/wiki/江山市"
+   ],
+   "note": "city: county-level city in the south-west, gateway to Jianglang Mountain and Nianbadu",
+   "coordinates": {
+    "lat": 28.7418,
+    "lng": 118.6226
+   },
+   "coordinates_source": "OSM place=city (Jiangshan)",
+   "views": 3515
+  }
+ },
+ {
+  "name": "Longyou Caves",
+  "wiki": "Longyou Caves",
+  "views": 124311,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Longyou Caves",
+   "wiki": "Longyou Caves",
+   "counted_sources": [
+    "https://you.ctrip.com/sight/quzhou174.html"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Longyou_Caves",
+    "https://zh.wikipedia.org/wiki/龙游县",
+    "https://de.wikipedia.org/wiki/Longyou-Grotten"
+   ],
+   "note": "cave: the Longyou Grottoes (Xiaonanhai Stone Chamber), a large man-made underground cave complex in Longyou county, a national key cultural relic",
+   "coordinates": {
+    "lat": 29.062,
+    "lng": 119.1844
+   },
+   "coordinates_source": "OSM way 893716464 (Longyou Grottes, tourism=attraction)",
+   "views": 124311
+  }
+ },
+ {
+  "name": "Mount Jianglang",
+  "wiki": "Mount Jianglang",
+  "views": 1896,
+  "counted_sources": 3,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Mount Jianglang",
+   "wiki": "Mount Jianglang",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Jiangshan",
+    "https://en.wikivoyage.org/wiki/Zhejiang",
+    "https://you.ctrip.com/sight/quzhou174.html"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Jianglang_Mountain",
+    "https://zh.wikipedia.org/wiki/江山市"
+   ],
+   "note": "mountain: Jianglang Mountain, a UNESCO Danxia landform with three stone peaks, and an AAAAA scenic area with trails and viewpoints",
+   "coordinates": {
+    "lat": 28.5295,
+    "lng": 118.5657
+   },
+   "coordinates_source": "OSM natural=peak (江郎山)",
+   "views": 1896
+  }
+ }
+]
