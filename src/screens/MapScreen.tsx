@@ -109,6 +109,7 @@ import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopular
 import { DESTINATIONS } from '../data/destinations';
 import spotDistricts from '../data/spotDistricts.json';
 import districtTypes from '../data/districtTypes.json';
+import { pinlog, pinMark } from '../utils/pinLog';   // TEMP: pin flicker probe
 import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotPhotoTitle, spotCountry, spotCountryCode, spotDestination, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
@@ -3271,7 +3272,7 @@ const destItems = useMemo((): DestItem[] =>
     return { photoBy, nameBy, photo: asc(photo), name: asc(name) };
   }, [spotPhotoPlan]);
   useEffect(() => {
-    const t = setTimeout(() => setSpotPhotoPlan(planSpotPhotos(baseDestPhotoPlan, id => visitIndex.isSpotVisited(id))), 0);
+    const t = setTimeout(() => { pinlog('spotPhotoPlan recomputed'); setSpotPhotoPlan(planSpotPhotos(baseDestPhotoPlan, id => visitIndex.isSpotVisited(id))); }, 0);
     return () => clearTimeout(t);
   }, [baseDestPhotoPlan, visitIndex]);
 
@@ -3318,20 +3319,27 @@ const destItems = useMemo((): DestItem[] =>
   const spotReadyTickRef = useRef<(() => void) | null>(null);
   const [spotFadeOn, setSpotFadeOn] = useState(false);
   const spotFadeOnRef = useRef(false);
+  // TEMP: pin flicker probe
+  useEffect(() => { if (selectedDest) { pinMark(); pinlog(`select ${selectedDest.id}`); } }, [selectedDest?.id]);
+  useEffect(() => { pinlog(`spotFadeOn state=${spotFadeOn}`); }, [spotFadeOn]);
   const runSpotFade = useCallback(() => {
     spotReadyTimerRef.current = null;
+    pinlog(`runSpotFade waiting=${spotFadeWaitingRef.current.size} fadeOn=${spotFadeOnRef.current} fading=${spotFadingRef.current.size}`);
     const wait = pinImagesHoldUntilRef.current - Date.now();
     const later = (ms: number, next: () => void) => { spotReadyTimerRef.current = pumpedTimeout(next, ms); };
     if (wait > 0) return later(wait, runSpotFade);   // not while a sheet slides in
     if (!spotFadeWaitingRef.current.size) return;
-    if (spotFadeOnRef.current) { spotFadeOnRef.current = false; setSpotFadeOn(false); return later(SPOT_FADE_RESET_MS, runSpotFade); }
+    if (spotFadeOnRef.current) { spotFadeOnRef.current = false; pinlog('fade: reset'); setSpotFadeOn(false); return later(SPOT_FADE_RESET_MS, runSpotFade); }
     spotFadingRef.current = spotFadeWaitingRef.current;
     spotFadeWaitingRef.current = new Set();
+    pinlog(`fade: data in (fading=${spotFadingRef.current.size})`);
     setSpotImagesTick(n => n + 1);
     later(SPOT_FADE_DATA_MS, () => {
       spotFadeOnRef.current = true;
+      pinlog('fade: opacity on');
       setSpotFadeOn(true);
       later(SPOT_FADE_MS, () => {
+        pinlog(`fade: done, back to bands (shown+=${spotFadingRef.current.size})`);
         for (const id of spotFadingRef.current) spotShownRef.current.add(id);
         spotFadingRef.current = new Set();
         setSpotImagesTick(n => n + 1);
@@ -3344,6 +3352,7 @@ const destItems = useMemo((): DestItem[] =>
     // Once only: PinPhoto's failsafe reports a pin with a subject crop as shown again 1.5 s after it mounts.
     if (spotPhotoReadyRef.current.has(name)) return;
     spotPhotoReadyRef.current.add(name);
+    pinlog(`photo ready ${name}`);
     if (!spotReadyTickRef.current) spotReadyTickRef.current = pumpedTimeout(() => { spotReadyTickRef.current = null; setSpotImagesTick(n => n + 1); }, SPOT_READY_BATCH_MS);
   }, []);
   const lastSpotShapeRef = useRef<{ sig: string; specs: SpotPhotoImageSpec[]; value: any } | null>(null);
@@ -3529,6 +3538,11 @@ const destItems = useMemo((): DestItem[] =>
     if (last && last.sig === sig && last.specs === spotPhotoSpecListRef.current) return last.value;
     const value = { shape: { type: 'FeatureCollection' as const, features }, specs: spotPhotoSpecListRef.current };
     lastSpotShapeRef.current = { sig, specs: spotPhotoSpecListRef.current, value };
+    {
+      let nImg = 0, nFade = 0, nBand = 0;
+      for (const f of features) { if (f.properties!.img) { nImg++; if (f.properties!.pb === 'fade') nFade++; else nBand++; } }
+      pinlog(`shape: features=${features.length} img=${nImg} (fadeLayer=${nFade} bandLayer=${nBand}) handoffZoom=${handoffZoom.toFixed(2)} gatesOff=${spotGatesOff}`);
+    }
     return value;
   }, [visibleSpots, pinSpot, nearCtx, visitIndex, handoffZoom, spotPhotoPlan, spotBands, pinPlanLngDelta, spotImagesTick, carouselSpots, spotGatesOff, destTapPlan, spotsInDest, selectedDest]);
   // Pins due to show their photo (spotFadeWaitingRef, see nativeSpotPins) start their fade, batched (SPOT_READY_BATCH_MS).
@@ -3636,6 +3650,7 @@ const destItems = useMemo((): DestItem[] =>
     const base = ['all', ['!=', ['get', 'img'], ''], ['!=', ['get', 'sel'], 1]];
     const photoKeys = [...spotBands.photo.map(String).reverse(), 'a'];
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
+    pinlog(`band layers rebuilt sig=${sig.length} photoBands=${spotBands.photo.join()}`);
     const layers: React.ReactElement[] = [];
     for (const k of [...SPOT_REVEAL_BANDS.map(String), 'a']) layers.push(
       <MapboxGL.SymbolLayer key={`${sig}m${k}`} id={`spotMini-${k}`} belowLayerID="destStampCircles"
@@ -3658,6 +3673,7 @@ const destItems = useMemo((): DestItem[] =>
   // too, or the photos fade in behind the small pins.
   const spotFadeLayers = useMemo(() => {
     const sig = `${spotBands.photo.join()}|${spotBands.name.join()}`;
+    pinlog(`fade layers rebuilt on=${spotFadeOn} sig=${sig.length}`);
     const transition = { duration: spotFadeOn ? SPOT_FADE_MS : 0, delay: 0 };
     const under = (
       <MapboxGL.SymbolLayer key={`${sig}m`} id="spotMini-fade" belowLayerID="destStampCircles"
