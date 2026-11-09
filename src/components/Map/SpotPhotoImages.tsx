@@ -43,8 +43,15 @@ export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 // recolours the pin's white (or green) rim and tail in slate, the colour of the photo-less spot motif (PatternPlaceholder),
 // so the selected pin stands out from the rest. One image for every spot, so selecting one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
+// The same for a visited spot, with a small green tick badge on the bubble's top right (the tick of the app's "Visited" tags),
+// as its own green rim is covered by the outline.
+export const SPOT_SELECTED_RING_VISITED = 'spotselring:visited';
 const SELECTED_RING_COLOR = '#475569';
 const SELECTED_RING_W = 2.5;
+// Room round the pin for the badge, left, right and above (none below, so the image's bottom edge is still the pin's tip
+// and centred on it, as the layer anchors it at the bottom).
+const RING_M = 5;
+const BADGE_R = 5.5;
 export const spotPhotoImageName = (id: string, visited: boolean) => `sp:${id}:${visited ? 1 : 0}`;
 
 const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: SpotPhotoImageSpec; onReady: (name: string) => void }) {
@@ -99,23 +106,31 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: S
   );
 });
 
-const SelectedRing = memo(function SelectedRing() {
+const SelectedRing = memo(function SelectedRing({ name, visited }: { name: string; visited: boolean }) {
   const imageRef = useRef<{ refresh: () => void } | null>(null);
   useEffect(() => {
     const t1 = setTimeout(() => imageRef.current?.refresh(), 60);
     const t2 = setTimeout(() => imageRef.current?.refresh(), 500);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
-  const cx = PAD + R, cy = PAD + R;
+  const cx = RING_M + PAD + R, cy = RING_M + PAD + R;
   // The tail outside the bubble only (its two tangent edges, closed by the bubble's bottom arc), so it doesn't cover the photo.
   const tail = `M ${cx + TAN_X} ${cy + TAN_Y} L ${cx} ${cy + TIP_D} L ${cx - TAN_X} ${cy + TAN_Y} A ${R} ${R} 0 0 0 ${cx + TAN_X} ${cy + TAN_Y} Z`;
+  const bx = cx + R * 0.72, by = cy - R * 0.72;
   return (
-    <MapboxGL.Image name={SPOT_SELECTED_RING} ref={imageRef as any}>
-      <View collapsable={false} style={st.box}>
-        <Svg width={W} height={H}>
+    <MapboxGL.Image name={name} ref={imageRef as any}>
+      <View collapsable={false} style={{ width: W + RING_M * 2, height: H + RING_M }}>
+        <Svg width={W + RING_M * 2} height={H + RING_M}>
           <Path d={tail} fill={SELECTED_RING_COLOR} />
           {/* Over the bubble's 2 pt rim (radius R-2 to R), a little wider so no white shows at its edges. */}
           <Circle cx={cx} cy={cy} r={R - 1} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={SELECTED_RING_W} />
+          {visited && (
+            <>
+              <Circle cx={bx} cy={by} r={BADGE_R} fill={VISITED_COLOR} stroke="white" strokeWidth={1.5} />
+              <Path d={`M ${bx - 2.4} ${by + 0.2} l 1.7 1.7 l 3.2 -3.4`} fill="none" stroke="white" strokeWidth={1.6}
+                strokeLinecap="round" strokeLinejoin="round" />
+            </>
+          )}
         </Svg>
       </View>
     </MapboxGL.Image>
@@ -127,7 +142,8 @@ const SelectedRing = memo(function SelectedRing() {
 export default memo(function SpotPhotoImages({ specs, onReady }: { specs: SpotPhotoImageSpec[]; onReady: (name: string) => void }) {
   return (
     <MapboxGL.Images>
-      <SelectedRing />
+      <SelectedRing name={SPOT_SELECTED_RING} visited={false} />
+      <SelectedRing name={SPOT_SELECTED_RING_VISITED} visited />
       {specs.map(s => <SpotPhotoImage key={s.name} spec={s} onReady={onReady} />)}
     </MapboxGL.Images>
   );

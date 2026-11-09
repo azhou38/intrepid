@@ -124,7 +124,7 @@ import { thumbCache, photoCache, fetchWikiThumbnail, prefetchWikiThumbnail, prew
 import DestPinImages, { DEST_PIN_SIZE, destPinImageName, type DestPinImageSpec } from '../components/Map/DestPinImages';
 import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 import { NO_PHOTO } from '../data/imageOverrides';
-import SpotPhotoImages, { SPOT_PHOTO_BUBBLE, SPOT_SELECTED_RING, spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
+import SpotPhotoImages, { SPOT_PHOTO_BUBBLE, SPOT_SELECTED_RING, SPOT_SELECTED_RING_VISITED, spotPhotoImageName, type SpotPhotoImageSpec } from '../components/Map/SpotPhotoImages';
 import SpotPinImages, { SPOT_MINI_PIN_UNVISITED, SPOT_MINI_PIN_VISITED } from '../components/Map/SpotPinImages';
 
 const VISITED_COLOR  = '#10B981';
@@ -3505,6 +3505,7 @@ const destItems = useMemo((): DestItem[] =>
           label: spotLabelLines(pinSpot.name).join('\n'),
           side: spotPhotoPlan?.nameAt.get(pinSpot.id)?.side ?? 'left', sort: -2_000_000,
           sel: 1,
+          vis: visited ? 1 : 0,   // the selected outline's tick (spotSelectedRing)
         },
       });
     }
@@ -6598,13 +6599,17 @@ const destItems = useMemo((): DestItem[] =>
             }}
           />
           {/* The selected spot's outline over its photo pin: its rim and tail in slate instead of white (or green),
-              so the selected pin stands out (SpotPhotoImages' SPOT_SELECTED_RING, the same size and anchor as the pin). The
+              so the selected pin stands out, with a green tick when the spot is visited (SpotPhotoImages' SPOT_SELECTED_RING
+              and SPOT_SELECTED_RING_VISITED, anchored at the pin's tip like the pin). The
               same feature as the photo pin, so the two appear together. (A white halo, then a drop shadow, were tried first.) */}
           <MapboxGL.SymbolLayer
             id="spotSelectedRing"
             aboveLayerID="spotSelectedPhoto"
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
-            style={{ iconImage: SPOT_SELECTED_RING, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
+            style={{
+              iconImage: ['case', ['==', ['get', 'vis'], 1], SPOT_SELECTED_RING_VISITED, SPOT_SELECTED_RING] as any,
+              iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true,
+            }}
           />
         </MapboxGL.ShapeSource>
 
