@@ -17,7 +17,6 @@ Show progress from the first minute, so the owner never has to ask where things 
    - Atlas: judge the marginal band
    - Atlas: place what was kept
    - Atlas: check destinations (overlap + destination skeptic)
-   - Owner review of proposed destinations (blocking)
    - Pins for new spots
    - Quill: research and write
    - Lens: photos
@@ -28,7 +27,7 @@ Show progress from the first minute, so the owner never has to ask where things 
    For a multi-region run, add the region to each step name or repeat the list per region. Advance a step in the same message as the first tool call of the next one. If the plan changes, resend the whole list.
 2. **A status line at every stage boundary.** One short line, always in the same shape: `Stage 3/12: Atlas judging, 24 of 61 marginal candidates judged, 38 kept so far (about 20 min left)`. Give counts that really exist (candidates, kept, spots researched, photo slots done, photos still missing) and an estimate only when it rests on measured pace. Never invent a percentage.
 3. **Long stages report on a rhythm.** During agent waves (Atlas judging, Quill research, Lens search and judging), report after each wave finishes: how many items are done of the total, what is running now, anything held. If a wave runs longer than about ten minutes, say so and what it is waiting on (a rate limit, a blocked site).
-4. **Blocking points are named.** When the run stops for the owner (proposed destinations, the destination skeptic's merges and demotions, the review list, an approval to apply), say it is waiting, list exactly what the owner must decide, and put the decision in the final box with one button per realistic answer.
+4. **Blocking points are named.** When the run stops for the owner (an approval to apply a destination-skeptic merge or demotion of an existing destination, or a question only the owner can answer), say it is waiting, list exactly what the owner must decide, and put the decision in the final box with one button per realistic answer.
 5. **Tally as you go.** Keep a running list of what the final report will need: items left out, weak, unverified, needing the owner, photos still missing. Add to it at each stage so the final report is a read-out, not a reconstruction.
 6. **Offer a live page for long runs.** For a whole-country run, offer once to publish a private progress page (an artifact) showing the stage list, counts and the running tally, updated at each stage boundary. Do not build it unasked.
 
@@ -36,7 +35,7 @@ Show progress from the first minute, so the owner never has to ask where things 
 
 - **Cover everything the prompt names.** If the prompt is "Northern Territory", the run covers all of the Northern Territory; if it is "Iceland", all of Iceland: the land, its destinations, its spots and the ground between them, judged blind to placement.
 - **Nothing a run decides on its own stays silent:** the final report lists everything left out, weak, unverified or needing the owner (see "End of run").
-- **Never merge, never publish without the owner's yes.** New destinations are proposals only; the owner approves them. Existing destinations are never changed unless the owner asks or approves a destination-skeptic proposal.
+- **Never merge, never publish without the owner's yes.** New destinations are added by the run once they pass the name test, the spot bar and the overlap check; they need no owner approval, and the final report lists each (rank, span, name evidence) so the owner can change or remove it afterwards. Existing destinations are never changed unless the owner asks or approves a destination-skeptic merge or demotion.
 - **A fresh, lean orchestrator** (`PIPELINES.md` → "Lean runs"). Start the run in a fresh session that only orchestrates: it runs the scripts, launches the workers, reads their short replies and the ledger, and keeps the tally. It never prints a JSON file, page text, a candidate list or an image into its own context.
 - **The run ledger.** Before each stage, `python3 scripts/curation/run-ledger.py check <run> <stage>` (exit 0 = done with unchanged inputs, skip it); after it, `run-ledger.py mark <run> <stage> done --summary "…"`; `task` per shard or group. Read worker output with `run-ledger.py peek <file>` and `validate <kind> <file>`, never by printing files. `<run>` is `curation/<branch>`.
 - **Workers get paths, return summaries.** Each worker's brief names its role, its input and output paths and the rules section it needs, nothing pasted. Its reply is at most 8 lines: what it wrote, counts, and every unresolved item.
@@ -69,7 +68,7 @@ Ask only what you cannot derive: the country or region, and whether any areas ar
 
 **Gate:** reject the run (say why) if a strong candidate scoring above the lowest kept spot was left out without a concrete "What qualifies" reason, the overlap check fails, or the `COVERAGE.md` benchmark fails.
 
-**Stop and show the owner** the proposed new destinations, the destination skeptic's merges, demotions and re-ranks, and the review list before going on; they approve or change each.
+**Do not stop for approval.** New destinations that pass the checks, and the destination skeptic's keeps and re-ranks of them, go straight into the run. The skeptic's merges and demotions of **existing** destinations are not applied: list them in the final report for the owner. The review list also goes in the report.
 
 ## 2. Pins, before anything is written
 
@@ -84,7 +83,7 @@ Ask only what you cannot derive: the country or region, and whether any areas ar
 
 A spot is applied only with a cost (`free: true`, or a price with its `costBasis`) and a `ticketUrl` decision. **No opening hours are researched or stored** (`WRITING.md` → "No opening hours").
 
-New destinations (once approved) also need: 2–4 `whyVisit` by popularity; 2–3 `goodToKnow` (3 for rank 1–3, 2 for rank 4–5), each detail at most 160 characters; best months; and a blurb with one `{months}`. A spot's `wiki` must be its own Wikipedia article. List a destination's spots in importance order (it decides which get map photos first).
+New destinations also need: 2–4 `whyVisit` by popularity; 2–3 `goodToKnow` (3 for rank 1–3, 2 for rank 4–5), each detail at most 160 characters; best months; and a blurb with one `{months}`. A spot's `wiki` must be its own Wikipedia article. List a destination's spots in importance order (it decides which get map photos first).
 
 ## 4. Lens — photos
 
@@ -103,11 +102,11 @@ New destinations (once approved) also need: 2–4 `whyVisit` by popularity; 2–
 
 `PIPELINES.md` → "Applying edits to src/data". Always `--dry-run` first.
 
-- **New destinations (approved):** `python3 scripts/curation/apply-destination.py <final.json> --picks <picks.json>`.
+- **New destinations:** `python3 scripts/curation/apply-destination.py <final.json> --picks <picks.json>`.
 - **Spots:** `python3 scripts/curation/build-apply-placement.py <region-id>`, then `python3 scripts/curation/apply-region.py <region-id> --dry-run`, then without `--dry-run`. If it stops on evidence in two folders, pass `--evidence curation/<folder>`.
 - **Standalone spots:** add them to the region in `scripts/coverage-regions.json`.
 - **Districts:** new spots need one: `python3 scripts/curation/build-spot-districts.py --only <ids>` (check the result is a real council area, not the state).
-- **Approved destination-skeptic changes** (merges, demotions, re-ranks) are applied only as the owner approved them, and recorded in `scripts/curation/destination-verdicts.json`.
+- **Destination-skeptic changes:** keeps and re-ranks of new destinations are applied and recorded in `scripts/curation/destination-verdicts.json`; merges and demotions of existing destinations only once the owner approves them in the report.
 
 One commit per destination, one for the region's standalone spots.
 
@@ -121,10 +120,10 @@ List by name, with the reason, never "a few" or "some":
 
 - **Left out or not added**, and what unblocks each.
 - **Added but weak:** single-source places, approximate pins, prices from one old page, weak photos.
-- **Needs the owner:** proposed destinations; the destination skeptic's merges, demotions and re-ranks; the review list; photos still missing (its own section); official photos used without permission; links blocked to scripts; anything removed or moved.
+- **Needs the owner:** the destination skeptic's merges and demotions of existing destinations (not applied); the new destinations the run added (to change or remove); the review list; photos still missing (its own section); official photos used without permission; links blocked to scripts; anything removed or moved.
 - **Not verified.**
 
-Atlas also reports the benchmark result, the strongest candidates left out, the inside/standalone split and the destination check's counts (flagged, passed, exempt, and each verdict). Lens reports every photo slot's outcome; Quill every spot the lint skipped and every `ticketUrl` it could not verify. Finish by asking the owner to supply a photo for each missing slot, and to approve or change each proposed destination and destination-skeptic proposal.
+Atlas also reports the benchmark result, the strongest candidates left out, the inside/standalone split and the destination check's counts (flagged, passed, exempt, and each verdict). Lens reports every photo slot's outcome; Quill every spot the lint skipped and every `ticketUrl` it could not verify. Finish by asking the owner to supply a photo for each missing slot, and to approve or change any destination-skeptic merge or demotion of an existing destination. The new destinations were already added: list each so the owner can change or remove it.
 
 ## Cost
 
