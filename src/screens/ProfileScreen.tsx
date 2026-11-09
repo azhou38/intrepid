@@ -239,7 +239,7 @@ export default function ProfileScreen() {
   // The Explored lists for destinations and spots, alphabetical.
   // How the Explored grids are ordered: A–Z, most recently visited first, or (spots only) best rated first. Places with no
   // date or rating come last.
-  const [exploredSort, setExploredSort] = useState<ExploredSort>('name');
+  const [exploredSort, setExploredSort] = useState<ExploredSort>(DEFAULT_SORT.countries);
   // The Explored places as a photo grid, or as a ranked list in the order of the sort (see RankList).
   const [exploredView, setExploredView] = useState<ExploredView>('grid');
   const savedSpots = useStore(s => s.savedSpots);
@@ -409,6 +409,12 @@ export default function ProfileScreen() {
   // mid-slide made the pill stutter.
   const modeSwapRef = useRef<{ mode: WorldMode; timer: ReturnType<typeof setTimeout> } | null>(null);
   useEffect(() => () => { if (modeSwapRef.current) clearTimeout(modeSwapRef.current.timer); }, []);
+  // A level change, from here or the full-screen map: its own default sort, and no pick carried over.
+  const changeMode = (mode: WorldMode) => {
+    setPickedId(null);
+    setExploredSort(DEFAULT_SORT[mode]);
+    setWorldMode(mode);
+  };
   const selectMode = (mode: WorldMode) => {
     if (mode === (modeSwapRef.current?.mode ?? worldMode)) return;
     Haptics.selectionAsync();
@@ -419,11 +425,9 @@ export default function ProfileScreen() {
       mode,
       timer: setTimeout(() => {
         modeSwapRef.current = null;
-        setPickedId(null);
-        if (!SORT_OPTIONS[mode].includes(exploredSort)) setExploredSort('name');
         // The sections below swap with an animation, so the change is seen to follow the selection.
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-        setWorldMode(mode);
+        changeMode(mode);
       }, PILL_MS),
     };
   };
@@ -810,7 +814,7 @@ export default function ProfileScreen() {
       visible={mapOpen}
       onClose={() => setMapOpen(false)}
       level={worldMode}
-      onLevelChange={setWorldMode}
+      onLevelChange={changeMode}
       visitedCountryCodes={[...visitedCountrySet]}
       countryName={code => COUNTRY_NAME.get(code) ?? code}
       dests={visitedDests}
@@ -1033,6 +1037,8 @@ const SORT_OPTIONS: Record<WorldMode, ExploredSort[]> = {
   destinations: ['name', 'date', 'spots'],
   spots: ['name', 'date', 'rating'],
 };
+// Each level's sort when it is chosen: countries by destinations visited, destinations by spots visited, spots A–Z.
+const DEFAULT_SORT: Record<WorldMode, ExploredSort> = { countries: 'dests', destinations: 'spots', spots: 'name' };
 // An Explored list: one row per place, in the sort's order (unnumbered). What a
 // row measures follows the sort: spots visited (destinations) or rating, as a bar against the top value and the number; the
 // date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. Paged sideways like
