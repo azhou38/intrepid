@@ -2,9 +2,10 @@
 // for the rule in full.
 //
 // A destination's header (the big photo at the top of its sheet, also used for its map pin) is the
-// first impression of the place, so it is never left to whatever photo leads the place's Wikipedia
-// article — those are often a single building, a monument, a satellite/aerial view, a map or a crowd
-// shot. Every destination must have a hand-picked Commons file in WIKI_IMAGE_OVERRIDES
+// first impression of the place, so a hand-picked photo is always preferred over whatever leads the
+// place's Wikipedia article (often a single building, a monument, a satellite/aerial view, a map or a
+// crowd shot). A destination with no hand-picked header falls back to that lead image rather than a
+// placeholder. The hand-picked Commons file goes in WIKI_IMAGE_OVERRIDES
 // (src/data/imageOverrides.ts, keyed by the destination's name) that shows the place itself:
 //   • cities and towns — a visually spectacular cityscape or panorama (skyline, waterfront, a sweeping
 //     view over the rooftops); not one building or attraction, and not a high aerial/satellite view;
@@ -42,8 +43,9 @@ export function checkCuratedHeaders(): { errors: string[]; warnings: string[] } 
   for (const d of DESTINATIONS) {
     const curated = !!overrides[d.name] || !!external[d.name] || NO_PHOTO.has(d.name);   // NO_PHOTO: no passing header exists; the owner is asked for one (IMAGES.md)
     if (!curated && !HEADER_REVIEW_BACKLOG.has(d.id)) {
-      errors.push(`${d.name} (${d.id}) has no hand-picked header image — add one to WIKI_IMAGE_OVERRIDES in `
-        + `src/data/imageOverrides.ts (see IMAGES.md, "Headers").`);
+      // No hand-picked header: the destination uses its Wikipedia article's lead image (IMAGES.md, "Headers").
+      warnings.push(`${d.name} (${d.id}) has no hand-picked header; it uses its Wikipedia lead image. Add one to `
+        + `WIKI_IMAGE_OVERRIDES in src/data/imageOverrides.ts when a better photo is found.`);
     }
     if (curated && HEADER_REVIEW_BACKLOG.has(d.id)) {
       warnings.push(`${d.name} (${d.id}) now has a hand-picked header — remove it from HEADER_REVIEW_BACKLOG.`);

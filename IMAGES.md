@@ -65,7 +65,7 @@ Each why-visit photo (one per reason, two to four) is checked on its own: a dest
 
 ## Headers
 
-The first impression of the place, so never left to whatever photo leads its Wikipedia article. Every destination's header (also used for its map pin) must be hand-picked.
+The first impression of the place, so a hand-picked photo is always preferred over whatever leads its Wikipedia article. A destination's header (also used for its map pin) is hand-picked where a photo passes; **when none does, it falls back to its Wikipedia article's lead image** (never a placeholder), and the destination is listed under "Photos still missing" so the owner can supply a better one.
 
 - **Cities and towns:** a spectacular cityscape or panorama of the place itself, such as a skyline, a waterfront, or a sweeping view over the rooftops. Never a single building, monument or attraction, and never a high aerial or satellite view.
 - **Nature destinations (parks, lakes, coasts, mountains, islands, regions):** the landscape the place is known for, shown wide.
