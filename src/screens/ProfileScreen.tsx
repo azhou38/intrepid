@@ -666,9 +666,9 @@ export default function ProfileScreen() {
             /* A photo grid: one tile per country, its name and (by the sort) its count, date or rating over its photo. */
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={exploredCountries.map((c, k) => {
               const n = countsByCountry.get(c.id);
-              const count = (code: string) => (exploredSort === 'dests' ? countsByCountry.get(code)?.dests : countsByCountry.get(code)?.spots) ?? 0;
+              const count = (code: string) => countsByCountry.get(code)?.dests ?? 0;
               const v = count(c.id);
-              // Sorted by a count, the top three ranks (with any) wear a rank badge, every tile that ties for one.
+              // Sorted by destinations visited, the top three ranks (with any) wear a rank badge, every tile that ties for one.
               let rk = k + 1;
               while (rk > 1 && count(exploredCountries[rk - 2].id) === v) rk -= 1;
               const counted = exploredSort === 'dests' ? n?.dests ?? 0 : exploredSort === 'spots' ? n?.spots ?? 0 : 0;
@@ -677,7 +677,7 @@ export default function ProfileScreen() {
                 sub: tileSub(exploredSort, visitLabel(countryKeys.visit.get(c.id)), countryKeys.rating(c.id),
                   exploredSort === 'dests' && counted ? `${counted} destination${counted === 1 ? '' : 's'}`
                   : exploredSort === 'spots' && counted ? `${counted} spot${counted === 1 ? '' : 's'}` : ''),
-                rank: (exploredSort === 'dests' || exploredSort === 'spots') && v > 0 && rk <= 3 ? rk : undefined,
+                rank: exploredSort === 'dests' && v > 0 && rk <= 3 ? rk : undefined,
                 photo: <CountryPhoto code={c.id} name={c.name} />,
               };
             })} />
@@ -722,16 +722,11 @@ export default function ProfileScreen() {
               })} />
             ) : (
             /* A photo grid: one tile per destination, its name and its visited spots over its photo. */
-            <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownDests.map((d, k) => {
+            <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownDests.map(d => {
               const n = spotsByDest.get(d.id) ?? 0;
-              // Its rank by spots visited, shared with the destinations it ties with (as in the list, see RankList).
-              let rk = k + 1;
-              while (rk > 1 && (spotsByDest.get(shownDests[rk - 2].id) ?? 0) === n) rk -= 1;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode,
                 sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), sortKeys.destRating(d.id), exploredSort === 'spots' && n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
-                // Sorted by most spots, the top three ranks (with any spots) wear a rank badge, every tile that ties for one.
-                rank: exploredSort === 'spots' && n > 0 && rk <= 3 ? rk : undefined,
                 photo: (
                   // The same small-photo key as the country sheet's destination pickers, so either can reuse it.
                   <EntityPhoto
@@ -1027,8 +1022,8 @@ const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'name', label: 'A–Z' },
   { key: 'date', label: 'Date Visited' },
   { key: 'rating', label: 'Rating' },
-  // Countries only: the most visited destinations first. Countries and destinations: the most visited spots first. The first
-  // three tiles wear a rank badge.
+  // Countries only: the most visited destinations first (the first three tiles wear a rank badge). Countries and
+  // destinations: the most visited spots first.
   { key: 'dests', label: 'Destinations Visited' },
   { key: 'spots', label: 'Spots Visited' },
 ];
