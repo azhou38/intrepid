@@ -1011,7 +1011,8 @@ function TileFooter({ name, sub, rating }: { name: string; sub: string; rating?:
 
 type ExploredSort = 'name' | 'date' | 'rating' | 'dests' | 'spots';
 type ExploredView = 'grid' | 'list';
-// `short`: the label on the sort button when the row is too narrow for the full one (see SortRow); the menu always has the full.
+// `short`: how far the sort button's label may be cut when the row is too narrow ("Spots…"; see SortRow); the menu always
+// has the full label.
 const SORTS: { key: ExploredSort; label: string; short?: string }[] = [
   { key: 'name', label: 'A–Z' },
   { key: 'date', label: 'Date Visited', short: 'Date' },
@@ -1216,16 +1217,19 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
   const sorts = SORTS.filter(o => options.includes(o.key));
   const sortOpt = sorts.find(o => o.key === sort) ?? sorts[0];
   const menuW = menu?.kind === 'sort' ? 180 : 240;
-  // The row stays one line. When it is too narrow for everything at full size, the sort button first shortens its label
-  // ("Spots Visited" to "Spots"); only if that is still not enough do the place filters cut their names short (sortRow).
-  // What full size needs is measured from an invisible copy of the buttons at their natural widths.
+  // The row stays one line. When it is too narrow for everything at full size, the sort button's label is cut first
+  // ("Spots Vis…"), down to its short form ("Spots…"); only past that do the place filters cut their names short. What the
+  // buttons need is measured from an invisible copy of them at their natural widths, the sort button at full and at least.
   const [rowW, setRowW] = useState(0);
   const [natural, setNatural] = useState<Record<string, number>>({});
   const measureNatural = (key: string, w: number) => setNatural(n => (n[key] === w ? n : { ...n, [key]: w }));
   const shown = [countries.length > 1 && 'country', showDest && 'dest', 'sort'].filter(Boolean) as string[];
   const needW = shown.every(k => natural[k] !== undefined)
     ? shown.reduce((t, k) => t + natural[k], 0) + shown.length * SORT_ROW_GAP + VIEW_TOGGLE_W : 0;
-  const short = rowW > 0 && needW > rowW;
+  // The sort button's width when it gives way: what the row is over by, taken from it, but not below its short form.
+  const over = rowW > 0 && needW > 0 ? needW - rowW : 0;
+  const sortW = over > 0 && natural.sort !== undefined && natural.sortMin !== undefined
+    ? Math.max(natural.sortMin, natural.sort - over) : undefined;
   const countryInner = (
     <>
       {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
@@ -1243,7 +1247,7 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
   const sortInner = (label: string) => (
     <>
       <Text style={styles.sortLabel}>Sort</Text>
-      <Text style={styles.countryDropTxt} numberOfLines={1}>{label}</Text>
+      <Text style={[styles.countryDropTxt, styles.sortDropTxt]} numberOfLines={1}>{label}</Text>
       <ChevronDown size={13} color="#6B7280" strokeWidth={2.4} />
     </>
   );
@@ -1262,6 +1266,9 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
           <View style={[styles.countryDrop, styles.sortDrop, styles.sortMeasureItem]} onLayout={e => measureNatural('sort', e.nativeEvent.layout.width)}>
             {sortInner(sortOpt.label)}
           </View>
+          <View style={[styles.countryDrop, styles.sortDrop, styles.sortMeasureItem]} onLayout={e => measureNatural('sortMin', e.nativeEvent.layout.width)}>
+            {sortInner(sortOpt.short ? `${sortOpt.short}…` : sortOpt.label)}
+          </View>
         </View>
         {countries.length > 1 && (
           <Pressable ref={countryRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={() => openMenu('country')}>
@@ -1273,8 +1280,8 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
             {destInner}
           </Pressable>
         )}
-        <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, styles.sortDrop]} onPress={() => openMenu('sort')}>
-          {sortInner(short ? sortOpt.short ?? sortOpt.label : sortOpt.label)}
+        <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, styles.sortDrop, sortW !== undefined && { width: sortW }]} onPress={() => openMenu('sort')}>
+          {sortInner(sortOpt.label)}
         </Pressable>
         {/* Grid or list, at the end of the row. */}
         <ViewToggle view={view} onView={onView} />
@@ -1455,6 +1462,8 @@ const styles = StyleSheet.create({
   // SortRow's invisible copy of its buttons, laid out at their natural widths to measure what the row needs at full size.
   sortMeasure: { position: 'absolute', left: 0, top: 0, flexDirection: 'row', opacity: 0 },
   sortMeasureItem: { flexShrink: 0 },
+  // Its label fills the room the button is given (sortW) and is cut with an ellipsis within it.
+  sortDropTxt: { flexGrow: 1 },
   // The grid / list toggle at the end of the sort row (ViewToggle): a grey track, two fixed-width sides and a white
   // pill that slides under the chosen one.
   viewToggle:     { marginLeft: 'auto', flexShrink: 0, flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
