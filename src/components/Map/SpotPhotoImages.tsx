@@ -87,6 +87,13 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: S
   return (
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={st.box}>
+        {/* A soft shadow under the pin, as under a destination pin: the teardrop again in faint black, set a little low,
+            inside the image (its size, which the selected outline is matched to, stays as it was). */}
+        <Svg width={W} height={H} style={StyleSheet.absoluteFill}>
+          <Circle cx={cx} cy={cy + 1.5} r={R + 1.5} fill="rgba(0,0,0,0.10)" />
+          <Path d={tail} fill="rgba(0,0,0,0.10)" stroke="rgba(0,0,0,0.10)" strokeWidth={3} strokeLinejoin="round" transform="translate(0 1.5)" />
+          <Circle cx={cx} cy={cy + 1} r={R + 0.5} fill="rgba(0,0,0,0.10)" />
+        </Svg>
         <View style={[st.rim, { left: PAD - 1, top: PAD - 1 }]} />
         <Svg width={W} height={H} style={StyleSheet.absoluteFill}>
           <Path d={tail} fill={RIM} stroke={RIM} strokeWidth={2} strokeLinejoin="round" />

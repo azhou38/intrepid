@@ -68,6 +68,9 @@ const DestPinImage = memo(function DestPinImage({ spec }: { spec: DestPinImageSp
   return (
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={st.box}>
+        {/* A soft shadow under the pin, so it stands off the map (drawn into the image: two faint discs set a little low). */}
+        <View style={[st.shadow, st.shadowWide]} />
+        <View style={[st.shadow, st.shadowNear]} />
         <View collapsable={false} style={st.outline}>
         <View collapsable={false} style={[st.disc, { borderColor: ring }, selected && st.discSelected]}>
           {!url && NO_PHOTO.has(dest.name) && <PhotoPlaceholder icon={dest.icon} category={dest.category} size={DEST_PIN_SIZE - BORDER * 2} />}
@@ -96,11 +99,22 @@ export default memo(function DestPinImages({ specs }: { specs: DestPinImageSpec[
 
 const st = StyleSheet.create({
   box: { width: DEST_PIN_BOX, height: DEST_PIN_BOX, alignItems: 'center', justifyContent: 'center' },
-  // A faint, thin grey hairline around the whole pin (outside the white or green ring), so a white ring still reads
-  // against a light map.
+  // The shadow's discs, centred on the pin and shifted down, within the image's margin (PAD) so the pin's collision box
+  // stays as it was.
+  shadow: { position: 'absolute', left: '50%', top: '50%' },
+  shadowWide: {
+    width: DEST_PIN_SIZE + 3, height: DEST_PIN_SIZE + 3, borderRadius: (DEST_PIN_SIZE + 3) / 2,
+    marginLeft: -(DEST_PIN_SIZE + 3) / 2, marginTop: -(DEST_PIN_SIZE + 3) / 2 + 1.5, backgroundColor: 'rgba(0,0,0,0.10)',
+  },
+  shadowNear: {
+    width: DEST_PIN_SIZE + 2, height: DEST_PIN_SIZE + 2, borderRadius: (DEST_PIN_SIZE + 2) / 2,
+    marginLeft: -(DEST_PIN_SIZE + 2) / 2, marginTop: -(DEST_PIN_SIZE + 2) / 2 + 1, backgroundColor: 'rgba(0,0,0,0.14)',
+  },
+  // Room round the white or green ring where a faint grey hairline used to be (the shadow now sets the pin off the map);
+  // kept as an empty frame so the pin's size and centre are unchanged.
   outline: {
     width: DEST_PIN_SIZE + 2, height: DEST_PIN_SIZE + 2, borderRadius: (DEST_PIN_SIZE + 2) / 2,
-    borderWidth: 1, borderColor: 'rgba(107,114,128,0.35)',
+    alignItems: 'center', justifyContent: 'center',
   },
   disc: {
     width: DEST_PIN_SIZE, height: DEST_PIN_SIZE, borderRadius: DEST_PIN_SIZE / 2,
