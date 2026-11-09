@@ -258,6 +258,11 @@ export default function ProfileScreen() {
     levelSV.value = withTiming(WORLD_MODES.findIndex(m => m.mode === mode), { duration: PILL_MS, easing: Easing.out(Easing.cubic) });
   };
   useEffect(() => { slidePill(worldMode); }, [worldMode]);
+  // The page below the selector: fades out the moment a level is tapped (opacity only, so it needs no re-render and costs the
+  // pill nothing), then back in once the new level has rendered.
+  const contentSV = useSharedValue(1);
+  const contentFadeStyle = useAnimatedStyle(() => ({ opacity: contentSV.value }));
+  useEffect(() => { contentSV.value = withTiming(1, { duration: CONTENT_IN_MS, easing: Easing.out(Easing.cubic) }); }, [worldMode]);
   // The Explored lists for destinations and spots, alphabetical.
   // How the Explored grids are ordered: A–Z, most recently visited first, or (spots only) best rated first. Places with no
   // date or rating come last.
@@ -426,8 +431,8 @@ export default function ProfileScreen() {
   const [pickedId, setPickedId] = useState<string | null>(null);
   const pickTile = (id: string) => { Haptics.selectionAsync(); setPickedId(cur => (cur === id ? null : id)); };
 
-  // A tap slides the pill at once, on the UI thread, and the page below swaps to the new level only once the pill has
-  // landed. Swapping first held the pill back until the whole page had re-rendered, and that render reaching the screen
+  // A tap slides the pill at once, on the UI thread, and fades the page below out; the page swaps to the new level once the
+  // pill has landed. Swapping first held the pill back until the whole page had re-rendered, and that render reaching the screen
   // mid-slide made the pill stutter.
   const modeSwapRef = useRef<{ mode: WorldMode; timer: ReturnType<typeof setTimeout> } | null>(null);
   useEffect(() => () => { if (modeSwapRef.current) clearTimeout(modeSwapRef.current.timer); }, []);
@@ -435,6 +440,7 @@ export default function ProfileScreen() {
     if (mode === (modeSwapRef.current?.mode ?? worldMode)) return;
     Haptics.selectionAsync();
     slidePill(mode);
+    contentSV.value = withTiming(0, { duration: CONTENT_OUT_MS, easing: Easing.out(Easing.quad) });
     if (modeSwapRef.current) clearTimeout(modeSwapRef.current.timer);
     modeSwapRef.current = {
       mode,
@@ -656,6 +662,8 @@ export default function ProfileScreen() {
       </View>
       <View style={{ height: pinned && selectorH > 0 ? Math.max(0, selectorH - (COMPACT_H + TABS_H)) : 0 }} pointerEvents="none" />
 
+      {/* The level's sections, fading out from the tap and back in with the new level (see selectMode). */}
+      <Animated.View style={contentFadeStyle}>
       {/* ── Countries: Countries Explored, as Destinations and Spots (a photo grid or a ranked list, sortable) ── */}
       {worldMode === 'countries' && (
         <View style={styles.exploredSection}>
@@ -814,6 +822,7 @@ export default function ProfileScreen() {
           )}
         </View>
       )}
+      </Animated.View>
     </Animated.ScrollView>
     {editTap && !!editFrame && (
       <Pressable
@@ -1070,6 +1079,9 @@ function CountryPhoto({ code, name }: { code: string; name: string }) {
 const LIST_PAGE_SIZE = 8;
 // The level selector's pill slide (Countries / Destinations / Spots), after which the page swaps to the new level.
 const PILL_MS = 220;
+// The page's fade out from the tap, and back in once the new level has rendered.
+const CONTENT_OUT_MS = 140;
+const CONTENT_IN_MS = 200;
 // A row's rating, sorted by it: five stars, filled to the rating (an average such as 4.3 fills the fifth star by a
 // third), in the rating's colour as on the visit's own stars (RATING_COLORS); five grey outlines for a place unrated.
 const RATING_STAR = 14;
