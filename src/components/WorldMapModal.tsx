@@ -1,11 +1,12 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
+import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { Modal, View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
 import * as Haptics from 'expo-haptics';
 import { X } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import CircleFlag from './CircleFlag';
 import CountryPhoto from './CountryPhoto';
+import { flagSource } from '../utils/flags';
 import EntityPhoto from './Map/EntityPhoto';
 import PhotoPlaceholder from './Map/PhotoPlaceholder';
 import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
@@ -35,8 +36,36 @@ function loadNoLabelsStyle(): Promise<string | null> {
   return noLabelsStyle;
 }
 
-// A visited country's flag on the Countries level.
+// A visited country's flag on the Countries level: a circle of its flag inside a white ring, with a faint edge so the white
+// shows on the pale map. The box is a multiple of 4 points (rnmapbox rounds a snapshot up to one, adding the space at the
+// right and bottom, which would push the icon off centre).
 const FLAG_SIZE = 16;
+const FLAG_RING = 2;
+const FLAG_BOX = 24;
+const FLAG_IMAGE_PREFIX = 'wmflag:';
+const FlagImage = memo(function FlagImage({ code }: { code: string }) {
+  const imageRef = useRef<{ refresh: () => void } | null>(null);
+  // The snapshot is taken from the view as drawn: again once the flag has loaded, and shortly after mount in case.
+  const refresh = () => imageRef.current?.refresh();
+  useEffect(() => {
+    const t1 = setTimeout(refresh, 60), t2 = setTimeout(refresh, 500);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
+  const outer = FLAG_SIZE + FLAG_RING * 2 + 2;
+  return (
+    <MapboxGL.Image name={FLAG_IMAGE_PREFIX + code} ref={imageRef as any}>
+      <View collapsable={false} style={st.flagBox}>
+        <View style={{ width: outer, height: outer, borderRadius: outer / 2, backgroundColor: 'rgba(0,0,0,0.14)', alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ width: outer - 2, height: outer - 2, borderRadius: (outer - 2) / 2, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ width: FLAG_SIZE, height: FLAG_SIZE, borderRadius: FLAG_SIZE / 2, overflow: 'hidden', backgroundColor: '#E5E7EB' }}>
+              <Image source={flagSource(code)} style={{ width: FLAG_SIZE, height: FLAG_SIZE }} resizeMode="cover" onLoad={() => setTimeout(refresh, 30)} />
+            </View>
+          </View>
+        </View>
+      </View>
+    </MapboxGL.Image>
+  );
+});
 
 // The Profile tab's My World map, opened full screen to explore: pinch to zoom, drag to pan, and tap a highlighted country
 // (or, on Destinations and Spots, a dot) for a small card with its name. Deliberately simple next to the Explore tab: no
@@ -146,6 +175,13 @@ export default function WorldMapModal({
 
   // The place drawn orange: the one tapped here (its card is open), else the one picked in the Profile's grid.
   const hlId = picked?.kind === 'place' ? picked.id : pickedId ?? null;
+  const flagPoints = useMemo((): GeoJSON.FeatureCollection => ({
+    type: 'FeatureCollection',
+    features: visitedCountryCodes.flatMap(code => {
+      const at = countryCentreLngLat(code);
+      return at ? [{ type: 'Feature' as const, properties: { code }, geometry: { type: 'Point' as const, coordinates: at } }] : [];
+    }),
+  }), [visitedCountryCodes]);
   const pickedShape = useMemo((): GeoJSON.FeatureCollection => ({
     type: 'FeatureCollection', features: points.features.filter(f => f.properties?.id === hlId),
   }), [points, hlId]);
@@ -221,18 +257,22 @@ export default function WorldMapModal({
               />
             </MapboxGL.VectorSource>
           )}
-          {/* Each visited country's flag at its centre (the map has no labels), small and ringed in white. Taps pass through to
-              the map, so tapping a flag picks its country as tapping the country does. */}
-          {level === 'countries' && visitedCountryCodes.map(code => {
-            const at = countryCentreLngLat(code);
-            return at && (
-              <MapboxGL.MarkerView key={code} coordinate={at} anchor={{ x: 0.5, y: 0.5 }} allowOverlap>
-                <View pointerEvents="none" style={st.flagMarker}>
-                  <CircleFlag countryCode={code} size={FLAG_SIZE} ring ringWidth={2} />
-                </View>
-              </MapboxGL.MarkerView>
-            );
-          })}
+          {/* Each visited country's flag at its centre (the map has no labels), small and ringed in white. Drawn by the map
+              itself (a symbol layer of FlagImage snapshots), not as views over it: a marker view took the tap, so tapping a
+              flag, the obvious place to tap a country, often did nothing. */}
+          {level === 'countries' && visitedCountryCodes.length > 0 && (
+            <>
+              <MapboxGL.Images>
+                {visitedCountryCodes.map(code => <FlagImage key={code} code={code} />)}
+              </MapboxGL.Images>
+              <MapboxGL.ShapeSource id="wmFlags" shape={flagPoints}>
+                <MapboxGL.SymbolLayer
+                  id="wmFlagIcons"
+                  style={{ iconImage: ['concat', FLAG_IMAGE_PREFIX, ['get', 'code']] as any, iconAllowOverlap: true, iconIgnorePlacement: true }}
+                />
+              </MapboxGL.ShapeSource>
+            </>
+          )}
           {/* The app's small spot pin (the green, visited one), so spots read differently from destinations' dots. */}
           <SpotPinImages />
           {level === 'destinations' && (
@@ -351,7 +391,7 @@ export default function WorldMapModal({
 
 const st = StyleSheet.create({
   root: { flex: 1, backgroundColor: '#EEF2F6' },
-  flagMarker: { shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 2, shadowOffset: { width: 0, height: 1 } },
+  flagBox: { width: FLAG_BOX, height: FLAG_BOX, alignItems: 'center', justifyContent: 'center' },
   top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 10 },
   closeBtn: {
     width: 38, height: 38, borderRadius: 19, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center',
