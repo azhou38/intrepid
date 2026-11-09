@@ -658,7 +658,7 @@ export default function ProfileScreen() {
                 // The country's flag beside its name, and its photo in front.
                 key: c.id, name: c.name, countryCode: c.id, sub: '',
                 dests: n?.dests ?? 0, spots: n?.spots ?? 0, rating: countryKeys.rating(c.id),
-                date: visitLabel(countryKeys.visit.get(c.id)), dateKey: countryKeys.visit.get(c.id)?.end ?? '',
+                date: visitLabel(countryKeys.visit.get(c.id)),
                 photo: <CountryPhoto code={c.id} name={c.name} />,
               };
             })} />
@@ -707,7 +707,7 @@ export default function ProfileScreen() {
                 return {
                   // The country as its flag beside the name, not its name.
                   key: d.id, name: d.name, countryCode: d.countryCode, sub: '',
-                  spots: n, rating: sortKeys.destRating(d.id), date: visitLabel(sortKeys.destVisit.get(d.id)), dateKey: sortKeys.destDate.get(d.id) ?? '',
+                  spots: n, rating: sortKeys.destRating(d.id), date: visitLabel(sortKeys.destVisit.get(d.id)),
                   // The destination's own photo in place of its flag: the grid tiles' small photo (same cache key).
                   photo: (
                     <EntityPhoto
@@ -770,7 +770,7 @@ export default function ProfileScreen() {
               <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={shownSpots.map(sp => ({
                 // Its photo in front, and under its name the country's flag and its destination.
                 key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), flagBelow: true, sub: spotDestination(sp)?.name ?? '',
-                rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)), dateKey: sortKeys.spotDate.get(sp.id) ?? '',
+                rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)),
                 // The grid tiles' small photo (same cache key), or the placeholder for a place with none.
                 photo: NO_PHOTO.has(spotPhotoTitle(sp))
                   ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={30} />
@@ -1053,7 +1053,7 @@ function CountryPhoto({ code, name }: { code: string; name: string }) {
     />
   );
 }
-// An Explored list: one row per place, in the sort's order, numbered unless it is A–Z. What a
+// An Explored list: one row per place, in the sort's order (unnumbered). What a
 // row measures follows the sort: spots visited (destinations) or rating, as a bar against the top value and the number; the
 // date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. Paged sideways like
 // the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
@@ -1108,23 +1108,16 @@ const visitLabel = (v?: { start: string; end: string }) => {
 function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   // `photo`: a small photo shown in place of the country flag (a destination's own photo).
   // `photo`: a small photo leading the row. The country's flag sits beside the name, or beside the line under it (flagBelow).
-  // `dateKey`: what the date sort orders by (the most recent visit's last day), so rows that tie on it share a rank.
-  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; dests?: number; spots?: number; rating: number; date: string; dateKey: string; photo?: React.ReactNode }[];
+  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; dests?: number; spots?: number; rating: number; date: string; photo?: React.ReactNode }[];
   sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
   // As in PhotoGrid: a pick lasts only while its row is on the page showing.
   onClearPick: () => void;
 }) {
-  const counted = sort === 'spots' || sort === 'dests';
-  const bar = counted || sort === 'rating';
+  const bar = sort === 'spots' || sort === 'dests' || sort === 'rating';
   const valueOf = (r: typeof rows[number]) => (sort === 'spots' ? r.spots ?? 0 : sort === 'dests' ? r.dests ?? 0 : r.rating);
   const max = sort === 'rating' ? 5 : Math.max(1, ...rows.map(valueOf));
   const pages: typeof rows[] = [];
   for (let i = 0; i < rows.length; i += LIST_PAGE_SIZE) pages.push(rows.slice(i, i + LIST_PAGE_SIZE));
-  // Rows that tie on what the sort measures share a rank (1, 2, 2, 4), shown only on the first of them, or again on the
-  // first row of a page.
-  const tieOf = (r: typeof rows[number]) => (bar ? valueOf(r) : r.dateKey);
-  const ranks: number[] = [];
-  rows.forEach((r, i) => { ranks.push(i > 0 && tieOf(r) === tieOf(rows[i - 1]) ? ranks[i - 1] : i + 1); });
   const scrollX = useSharedValue(0);
   const onListScroll = useAnimatedScrollHandler({ onScroll: e => { scrollX.value = e.contentOffset.x; } });
   const ref = useRef<Animated.ScrollView>(null);
@@ -1146,17 +1139,9 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
         {pages.map((pg, p) => (
           <View key={p} style={styles.rankPage}>
             {pg.map((r, j) => {
-              const v = valueOf(r), k = p * LIST_PAGE_SIZE + j, rank = ranks[k];
-              const showRank = j === 0 || rank !== ranks[k - 1];
-              // Sorted by spots visited, the top three ranks (with any spots) get the grid's gold, silver and bronze on their
-              // rank number, as a badge.
-              const medal = counted && v > 0 && rank <= 3 ? RANK_COLORS[rank - 1] : undefined;
+              const v = valueOf(r);
               return (
                 <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
-                  {sort !== 'name' && (!showRank ? <View style={styles.rankNumSlot} />
-                    : medal
-                    ? <View style={styles.rankNumSlot}><View style={[styles.rankBadge, styles.rankBadgeList, { backgroundColor: medal }]}><Text style={styles.rankTxt}>{rank}</Text></View></View>
-                    : <Text style={styles.rankNum}>{rank}</Text>)}
                   {!!r.photo && <View style={styles.rankThumb}>{r.photo}</View>}
                   <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
                     {/* The country's flag on the left of the name, or (flagBelow) of the line under it. */}
@@ -1451,10 +1436,6 @@ const styles = StyleSheet.create({
   rankPage:    { width: SCREEN_W, paddingHorizontal: EXPLORED_PAD + 4, paddingTop: 2 },
   rankRow:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 7, paddingHorizontal: 6, marginHorizontal: -6, borderRadius: 10 },
   rankRowOn:   { backgroundColor: '#FFF7ED' },
-  rankNum:     { width: 18, fontSize: 13, fontWeight: '700', color: '#9CA3AF', textAlign: 'right' },
-  // A medal rank in the list: the grid's rank badge, in the number's slot (right-aligned like the numbers).
-  rankNumSlot:   { width: 18, alignItems: 'flex-end' },
-  rankBadgeList: { position: 'relative', top: 0, right: 0, width: 18, height: 18, borderRadius: 9 },
   rankThumb:   { width: 30, height: 30, borderRadius: 8, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   rankNameCol: { width: 120 },
   // The name takes what is left of the row and is cut short with "…"; the date beside it never shrinks.
