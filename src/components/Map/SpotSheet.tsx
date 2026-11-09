@@ -1634,7 +1634,7 @@ isVisited ? (
               level hint (not tied to any one card) since the card itself was shrunk to make
               room for it here. */}
           <View pointerEvents="none" style={st.carouselHintRow}>
-            <ChevronUp size={13} color="#111827" strokeWidth={2.5} />
+            <ChevronUp size={13} color="#9CA3AF" strokeWidth={2.5} />
             <Text style={st.carouselHintTxt}>Swipe up to explore</Text>
           </View>
         </Reanimated.View>
@@ -1945,7 +1945,7 @@ const st = StyleSheet.create({
     marginTop: 'auto',
     paddingTop: 3, paddingBottom: COLLAPSED_GAP,
   },
-  carouselHintTxt: { fontSize: 12, fontWeight: '600', color: '#111827' },
+  carouselHintTxt: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
 
   // Peek strip — thin hero-image sliver with the active spot's name, shown while peeking.
   peekStrip: {
