@@ -13,6 +13,7 @@ import { NO_PHOTO } from '../data/imageOverrides';
 import { spotPhotoTitle } from '../data/spots';
 import SpotPinImages, { SPOT_MINI_PIN_VISITED, SPOT_MINI_PIN_PICKED } from './Map/SpotPinImages';
 import { getCountryBounds } from '../utils/countryBounds';
+import { countryCentreLngLat } from '../utils/countryCentre';
 import type { Destination } from '../types';
 import type { Spot } from '../data/spots';
 
@@ -32,6 +33,9 @@ function loadNoLabelsStyle(): Promise<string | null> {
     .catch(() => { noLabelsStyle = null; return null; });
   return noLabelsStyle;
 }
+
+// A visited country's flag on the Countries level.
+const FLAG_SIZE = 16;
 
 // The Profile tab's My World map, opened full screen to explore: pinch to zoom, drag to pan, and tap a highlighted country
 // (or, on Destinations and Spots, a dot) for a small card with its name. Deliberately simple next to the Explore tab: no
@@ -216,6 +220,18 @@ export default function WorldMapModal({
               />
             </MapboxGL.VectorSource>
           )}
+          {/* Each visited country's flag at its centre (the map has no labels), small and ringed in white. Taps pass through to
+              the map, so tapping a flag picks its country as tapping the country does. */}
+          {level === 'countries' && visitedCountryCodes.map(code => {
+            const at = countryCentreLngLat(code);
+            return at && (
+              <MapboxGL.MarkerView key={code} coordinate={at} anchor={{ x: 0.5, y: 0.5 }} allowOverlap>
+                <View pointerEvents="none" style={st.flagMarker}>
+                  <CircleFlag countryCode={code} size={FLAG_SIZE} ring ringWidth={2} />
+                </View>
+              </MapboxGL.MarkerView>
+            );
+          })}
           {/* The app's small spot pin (the green, visited one), so spots read differently from destinations' dots. */}
           <SpotPinImages />
           {level === 'destinations' && (
@@ -333,6 +349,7 @@ export default function WorldMapModal({
 
 const st = StyleSheet.create({
   root: { flex: 1, backgroundColor: '#EEF2F6' },
+  flagMarker: { shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 2, shadowOffset: { width: 0, height: 1 } },
   top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 10 },
   closeBtn: {
     width: 38, height: 38, borderRadius: 19, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center',

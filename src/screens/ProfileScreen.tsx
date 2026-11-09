@@ -25,6 +25,7 @@ import EntityPhoto from '../components/Map/EntityPhoto';
 import { thumbCache, photoCache, getOrFetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
 import { getCountryBounds } from '../utils/countryBounds';
+import { countryCentreMapUnits } from '../utils/countryCentre';
 import { ALL_COUNTRIES } from '../data/countries';
 
 const COUNTRY_NAME = new Map(ALL_COUNTRIES.map(c => [c.code, c.name]));
@@ -64,29 +65,6 @@ const pinPath = (x: number, y: number) => {
   return `M ${x - PIN_TX} ${cy + PIN_TY} L ${x} ${y} L ${x + PIN_TX} ${cy + PIN_TY} A ${PIN_R} ${PIN_R} 0 1 0 ${x - PIN_TX} ${cy + PIN_TY} Z`;
 };
 
-// Where to mark a picked country on the map: the centre (area centroid) of its largest piece of land (France's mainland, not
-// the box round it and its overseas departments), in map units.
-function countryMark(d: string): { x: number; y: number } | null {
-  let best: { area: number; cx: number; cy: number; x0: number; x1: number; y0: number; y1: number } | null = null;
-  for (const part of d.split('M').filter(Boolean)) {
-    const n = part.replace(/Z/g, ' ').trim().split(/[\s,]+/).map(Number);
-    if (n.length < 2) continue;
-    let a2 = 0, sx = 0, sy = 0, x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
-    for (let i = 0; i + 1 < n.length; i += 2) {
-      const x = n[i], y = n[i + 1], nx = n[(i + 2) % n.length], ny = n[(i + 3) % n.length];
-      const cross = x * ny - nx * y;
-      a2 += cross; sx += (x + nx) * cross; sy += (y + ny) * cross;
-      x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y);
-    }
-    const area = Math.abs(a2) / 2;
-    // A sliver with next to no area (a dot-sized island) has no usable centroid: its box's middle instead.
-    const flat = area < 1e-6;
-    const cx = flat ? (x0 + x1) / 2 : sx / (3 * a2), cy = flat ? (y0 + y1) / 2 : sy / (3 * a2);
-    if (!best || area > best.area) best = { area, cx, cy, x0, x1, y0, y1 };
-  }
-  if (!best) return null;
-  return { x: best.cx < WORLD_X0 ? best.cx + 360 : best.cx, y: best.cy };
-}
 // A country's box on the map, in map units: the app's own box for it (countryBounds: the mainland and the islands that
 // belong with it), or, failing that, the detailed outline's largest piece of land with the pieces near it (not the
 // overseas territories, which would stretch the Netherlands' box to the Caribbean).
@@ -119,10 +97,6 @@ function countryBox(code: string): { x0: number; y0: number; x1: number; y1: num
     x1: Math.max(...near.map(p => p.x1)), y1: Math.max(...near.map(p => p.y1)),
   };
 }
-// Every outline of a country joined into one path: some countries come as more than one entry (Australia's mainland, then
-// the Ashmore and Coral Sea reefs), and keeping only the last had Australia's pulse start on a reef off its north-west coast.
-const COUNTRY_D = new Map<string, string>();
-for (const { c, d } of WORLD_COUNTRIES as { c: string; d: string }[]) COUNTRY_D.set(c, (COUNTRY_D.get(c) ?? '') + d);
 
 // The Spots destination filter's choice for a country's spots that belong to no destination.
 const SPOT_NO_DEST = '__none';
@@ -511,8 +485,8 @@ export default function ProfileScreen() {
         )}
         {/* A picked country: a ring pulsing out from its centre once, so even a small one can be found at a glance. */}
         {worldMode === 'countries' && pickedId && (() => {
-          const m = COUNTRY_D.has(pickedId) ? countryMark(COUNTRY_D.get(pickedId)!) : null;
-          return m && <PickedCountryPing key={pickedId} cx={m.x} cy={m.y} u={mapView.w / w} />;
+          const m = countryCentreMapUnits(pickedId);
+          return m && <PickedCountryPing key={pickedId} cx={m.x < WORLD_X0 ? m.x + 360 : m.x} cy={m.y} u={mapView.w / w} />;
         })()}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
             read differently from destinations, as on the full-screen map. */}
