@@ -38,9 +38,9 @@ function loadNoLabelsStyle(): Promise<string | null> {
   return noLabelsStyle;
 }
 
-// How far below the safe area the white fade at the top of the map reaches: just past the level bar's bottom edge (about
-// 96pt down), so the map shows from right under it.
-const TOP_FADE_H = 112;
+// The white fade at the top of the map before the top bar's height has been measured (it then ends at the level bar's
+// bottom edge, so the map shows from right under it).
+const TOP_FADE_H = 96;
 
 // The level switcher's pill slide.
 const LEVEL_SLIDE = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -117,6 +117,8 @@ export default function WorldMapModal({
   const insets = useSafeAreaInsets();
   const mapRef = useRef<MapboxGL.MapView>(null);
   const [picked, setPicked] = useState<Picked | null>(null);
+  // The top bar's height (to the level bar's bottom edge), where the white fade behind it ends.
+  const [topBarH, setTopBarH] = useState<number | null>(null);
   // The level switcher: a tap moves the green pill and the labels' colours, and switches this map's layers (shownLevel), at
   // once; the Profile behind is told once the pill has landed (its re-render for the new level, mid-slide, made it stutter).
   const [shownLevel, setShownLevel] = useState(level);
@@ -376,7 +378,7 @@ export default function WorldMapModal({
 
         {/* The top of the map fading to white behind the title and level bar, so they read clearly on any part of the map
             without a box round them or a glow round the text. */}
-        <Svg pointerEvents="none" style={[st.topFade, { height: insets.top + TOP_FADE_H }]} width="100%" height="100%">
+        <Svg pointerEvents="none" style={[st.topFade, { height: topBarH ?? insets.top + TOP_FADE_H }]} width="100%" height="100%">
           <Defs>
             <SvgLinearGradient id="wmTopFade" x1="0" y1="0" x2="0" y2="1">
               <Stop offset="0" stopColor="white" stopOpacity={0.96} />
@@ -387,7 +389,7 @@ export default function WorldMapModal({
           <Rect x="0" y="0" width="100%" height="100%" fill="url(#wmTopFade)" />
         </Svg>
         {/* Top: close, and the same level selector as the card. */}
-        <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none">
+        <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none" onLayout={e => setTopBarH(e.nativeEvent.layout.height)}>
           {/* What this map is: only the places the user has been, so it is not read as the app's map of everywhere. */}
           <View style={st.headRow} pointerEvents="box-none">
             <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
