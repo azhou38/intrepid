@@ -1114,7 +1114,8 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
               return (
                 <Pressable key={r.key} style={[styles.rankRow, pickedId === r.key && styles.rankRowOn]} onPress={() => onPick(r.key)}>
                   {!!r.photo && <View style={styles.rankThumb}>{r.photo}</View>}
-                  <View style={bar ? styles.rankNameCol : styles.rankNameFlex}>
+                  {/* Sorted by rating, the name takes the room left of the stars, which sit by the number at the right. */}
+                  <View style={bar && sort !== 'rating' ? styles.rankNameCol : styles.rankNameFlex}>
                     {/* The country's flag on the left of the name, or (flagBelow) of the line under it. */}
                     <View style={styles.rankNameRow}>
                       {!!r.countryCode && !r.flagBelow && <CircleFlag countryCode={r.countryCode} size={14} ring ringWidth={1.5} style={styles.flagRing} />}
@@ -1471,7 +1472,7 @@ const styles = StyleSheet.create({
   destName:   { width: 110 },
 
   // The Explored list's bars
-  ratingStarsCol:  { flex: 1, alignItems: 'flex-start' },
+  ratingStarsCol:  { flexShrink: 0 },
   ratingStars:     { flexDirection: 'row', gap: 2 },
   countryBarTrack: { flex: 1, height: 6, backgroundColor: '#F3F4F6', borderRadius: 3, overflow: 'hidden' },
   countryBarFill:  { height: '100%', backgroundColor: '#10B981', borderRadius: 3 },
