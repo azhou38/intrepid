@@ -64,10 +64,8 @@ const pinPath = (x: number, y: number) => {
 };
 
 // Where to mark a picked country on the map: the centre (area centroid) of its largest piece of land (France's mainland, not
-// the box round it and its overseas departments), in map units, and whether it is small enough on the world map to need a fixed ring
-// round it as well as the pulse (a country a few points across barely shows its orange).
-const SMALL_COUNTRY = 6;   // map units (about points on the card) across its largest piece
-function countryMark(d: string): { x: number; y: number; small: boolean } | null {
+// the box round it and its overseas departments), in map units.
+function countryMark(d: string): { x: number; y: number } | null {
   let best: { area: number; cx: number; cy: number; x0: number; x1: number; y0: number; y1: number } | null = null;
   for (const part of d.split('M').filter(Boolean)) {
     const n = part.replace(/Z/g, ' ').trim().split(/[\s,]+/).map(Number);
@@ -86,7 +84,7 @@ function countryMark(d: string): { x: number; y: number; small: boolean } | null
     if (!best || area > best.area) best = { area, cx, cy, x0, x1, y0, y1 };
   }
   if (!best) return null;
-  return { x: best.cx < WORLD_X0 ? best.cx + 360 : best.cx, y: best.cy, small: Math.max(best.x1 - best.x0, best.y1 - best.y0) < SMALL_COUNTRY };
+  return { x: best.cx < WORLD_X0 ? best.cx + 360 : best.cx, y: best.cy };
 }
 // A country's box on the map, in map units: the app's own box for it (countryBounds: the mainland and the islands that
 // belong with it), or, failing that, the detailed outline's largest piece of land with the pieces near it (not the
@@ -488,10 +486,10 @@ export default function ProfileScreen() {
             ))}
           </G>
         )}
-        {/* A picked country: a ring pulsing out from its centre once (and a fixed ring round a small one), so it can be found at a glance. */}
+        {/* A picked country: a ring pulsing out from its centre once, so even a small one can be found at a glance. */}
         {worldMode === 'countries' && pickedId && (() => {
           const m = COUNTRY_D.has(pickedId) ? countryMark(COUNTRY_D.get(pickedId)!) : null;
-          return m && <PickedCountryPing key={pickedId} cx={m.x} cy={m.y} small={m.small} u={mapView.w / w} />;
+          return m && <PickedCountryPing key={pickedId} cx={m.x} cy={m.y} u={mapView.w / w} />;
         })()}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
             read differently from destinations, as on the full-screen map. */}
@@ -925,24 +923,21 @@ function PickedDot({ cx, cy, scale }: { cx: number; cy: number; scale: number })
   const props = useAnimatedProps(() => ({ r: k.value }));
   return <AnimatedCircle cx={cx} cy={cy} fill={PICK_COLOR} stroke="white" strokeWidth={0.5 * scale} animatedProps={props} />;
 }
-// A picked country's mark: one orange ring pulsing out from its centre, over a fixed ring for a small country. Sizes are
-// in points on screen (u: map units per point), as the card's map is drawn at more than one width.
+// A picked country's mark: one orange ring pulsing out from its centre and fading, edged in white so it shows over the
+// country's own orange from the start (an orange ring alone only appeared once it reached the sea, off to one side of a big
+// country). Sizes are in points on screen (u: map units per point), as the card's map is drawn at more than one width.
 const PING_MS = 1600;
-function PickedCountryPing({ cx, cy, small, u }: { cx: number; cy: number; small: boolean; u: number }) {
-  return (
-    <G>
-      <PingRing cx={cx} cy={cy} u={u} />
-      {small && <Circle cx={cx} cy={cy} r={7 * u} fill="none" stroke="white" strokeWidth={3 * u} />}
-      {small && <Circle cx={cx} cy={cy} r={7 * u} fill="none" stroke={PICK_COLOR} strokeWidth={1.6 * u} />}
-    </G>
-  );
-}
-function PingRing({ cx, cy, u }: { cx: number; cy: number; u: number }) {
+function PickedCountryPing({ cx, cy, u }: { cx: number; cy: number; u: number }) {
   const t = useSharedValue(0);
   useEffect(() => { t.value = withTiming(1, { duration: PING_MS, easing: Easing.out(Easing.cubic) }); }, []);
   // Grows from a point at the centre.
   const props = useAnimatedProps(() => ({ r: 22 * t.value * u, strokeOpacity: 0.9 * (1 - t.value) }));
-  return <AnimatedCircle cx={cx} cy={cy} fill="none" stroke={PICK_COLOR} strokeWidth={1.6 * u} animatedProps={props} />;
+  return (
+    <G>
+      <AnimatedCircle cx={cx} cy={cy} fill="none" stroke="white" strokeWidth={3.4 * u} animatedProps={props} />
+      <AnimatedCircle cx={cx} cy={cy} fill="none" stroke={PICK_COLOR} strokeWidth={1.6 * u} animatedProps={props} />
+    </G>
+  );
 }
 function PickedPin({ x, y, scale }: { x: number; y: number; scale: number }) {
   const k = useSharedValue(scale);
