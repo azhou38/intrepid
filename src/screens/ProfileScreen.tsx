@@ -253,10 +253,11 @@ export default function ProfileScreen() {
     const itemW = Math.max(0, (selectorWSV.value - 2) / 3);
     return { width: itemW, transform: [{ translateX: levelSV.value * (itemW + 1) }], opacity: selectorWSV.value > 0 ? 1 : 0 };
   });
-  // The pill follows the level wherever it is chosen (here, or on the full-screen map).
-  useEffect(() => {
-    levelSV.value = withTiming(WORLD_MODES.findIndex(m => m.mode === worldMode), { duration: 280, easing: Easing.out(Easing.cubic) });
-  }, [worldMode]);
+  // The pill follows the level wherever it is chosen (here, from the tap itself: see selectMode; or on the full-screen map).
+  const slidePill = (mode: WorldMode) => {
+    levelSV.value = withTiming(WORLD_MODES.findIndex(m => m.mode === mode), { duration: PILL_MS, easing: Easing.out(Easing.cubic) });
+  };
+  useEffect(() => { slidePill(worldMode); }, [worldMode]);
   // The Explored lists for destinations and spots, alphabetical.
   // How the Explored grids are ordered: A–Z, most recently visited first, or (spots only) best rated first. Places with no
   // date or rating come last.
@@ -425,14 +426,27 @@ export default function ProfileScreen() {
   const [pickedId, setPickedId] = useState<string | null>(null);
   const pickTile = (id: string) => { Haptics.selectionAsync(); setPickedId(cur => (cur === id ? null : id)); };
 
+  // A tap slides the pill at once, on the UI thread, and the page below swaps to the new level only once the pill has
+  // landed. Swapping first held the pill back until the whole page had re-rendered, and that render reaching the screen
+  // mid-slide made the pill stutter.
+  const modeSwapRef = useRef<{ mode: WorldMode; timer: ReturnType<typeof setTimeout> } | null>(null);
+  useEffect(() => () => { if (modeSwapRef.current) clearTimeout(modeSwapRef.current.timer); }, []);
   const selectMode = (mode: WorldMode) => {
-    if (mode === worldMode) return;
-    setPickedId(null);
-    if (!SORT_OPTIONS[mode].includes(exploredSort)) setExploredSort('name');
+    if (mode === (modeSwapRef.current?.mode ?? worldMode)) return;
     Haptics.selectionAsync();
-    // The sections below swap with an animation, so the change is seen to follow the selection.
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    setWorldMode(mode);
+    slidePill(mode);
+    if (modeSwapRef.current) clearTimeout(modeSwapRef.current.timer);
+    modeSwapRef.current = {
+      mode,
+      timer: setTimeout(() => {
+        modeSwapRef.current = null;
+        setPickedId(null);
+        if (!SORT_OPTIONS[mode].includes(exploredSort)) setExploredSort('name');
+        // The sections below swap with an animation, so the change is seen to follow the selection.
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        setWorldMode(mode);
+      }, PILL_MS),
+    };
   };
   // The world map, inside the Explored card of every level.
   // With a country picked in the Explored dropdown, the map frames that country: the whole country (and the places visited
@@ -1054,6 +1068,8 @@ function CountryPhoto({ code, name }: { code: string; name: string }) {
 // the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
 // the page (which scrolls up and down itself).
 const LIST_PAGE_SIZE = 8;
+// The level selector's pill slide (Countries / Destinations / Spots), after which the page swaps to the new level.
+const PILL_MS = 220;
 // A row's rating, sorted by it: five stars, filled to the rating (an average such as 4.3 fills the fifth star by a
 // third), in the rating's colour as on the visit's own stars (RATING_COLORS); five grey outlines for a place unrated.
 const RATING_STAR = 14;
