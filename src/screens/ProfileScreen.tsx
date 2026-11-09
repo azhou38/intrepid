@@ -1209,7 +1209,8 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
     ({ country: countryRef, sort: sortRef, dest: destRef })[kind].current?.measureInWindow((x, y, _w, h) => setMenu({ kind, x, y: y + h + 6 }));
   };
   const chosen = countries.find(c => c.code === country);
-  const showDest = !!country && !!dests && dests.length > 1;
+  // Shown for every chosen country, even one whose spots are all in a single destination, so the row reads the same throughout.
+  const showDest = !!country && !!dests && dests.length > 0;
   const chosenDest = dests?.find(d => d.code === dest);
   const sorts = SORTS.filter(o => options.includes(o.key));
   const sortOpt = sorts.find(o => o.key === sort) ?? sorts[0];
