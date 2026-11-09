@@ -1221,7 +1221,7 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
             <ChevronDown size={13} color={chosenDest ? '#047857' : '#6B7280'} strokeWidth={2.4} />
           </Pressable>
         )}
-        <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={styles.countryDrop} onPress={() => openMenu('sort')}>
+        <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, styles.sortDrop]} onPress={() => openMenu('sort')}>
           <Text style={styles.sortLabel}>Sort</Text>
           <Text style={styles.countryDropTxt} numberOfLines={1}>{(sorts.find(o => o.key === sort) ?? sorts[0]).label}</Text>
           <ChevronDown size={13} color="#6B7280" strokeWidth={2.4} />
@@ -1397,6 +1397,9 @@ const styles = StyleSheet.create({
   countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
                  borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
+  // The sort button shows its whole label ("Destinations Visited" was cut short at the filters' cap, which is for long
+  // place names); the row wraps if it has to.
+  sortDrop: { maxWidth: undefined },
   // The grid / list toggle at the end of the sort row (ViewToggle): a grey track, two fixed-width sides and a white
   // pill that slides under the chosen one.
   viewToggle:     { marginLeft: 'auto', flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
