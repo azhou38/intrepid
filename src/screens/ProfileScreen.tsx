@@ -98,7 +98,7 @@ function countryBox(code: string): { x0: number; y0: number; x1: number; y1: num
     return { x0: a.x, y0: a.y, x1: b.x, y1: b.y };
   }
   const all = require('../data/worldCountriesDetail.json') as { c: string; d: string }[];
-  const d = all.find(e => e.c === code)?.d;
+  const d = all.filter(e => e.c === code).map(e => e.d).join('');
   if (!d) return null;
   const pieces = d.split('M').filter(Boolean).map(part => {
     const n = part.replace(/Z/g, ' ').trim().split(/[\s,]+/).map(Number);
@@ -118,7 +118,10 @@ function countryBox(code: string): { x0: number; y0: number; x1: number; y1: num
     x1: Math.max(...near.map(p => p.x1)), y1: Math.max(...near.map(p => p.y1)),
   };
 }
-const COUNTRY_D = new Map((WORLD_COUNTRIES as { c: string; d: string }[]).map(e => [e.c, e.d]));
+// Every outline of a country joined into one path: some countries come as more than one entry (Australia's mainland, then
+// the Ashmore and Coral Sea reefs), and keeping only the last had Australia's pulse start on a reef off its north-west coast.
+const COUNTRY_D = new Map<string, string>();
+for (const { c, d } of WORLD_COUNTRIES as { c: string; d: string }[]) COUNTRY_D.set(c, (COUNTRY_D.get(c) ?? '') + d);
 
 // The Spots destination filter's choice for a country's spots that belong to no destination.
 const SPOT_NO_DEST = '__none';
