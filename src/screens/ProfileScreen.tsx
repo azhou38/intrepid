@@ -1288,7 +1288,7 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
                 ? [{ code: null as string | null, name: 'All destinations', count: dests!.reduce((n, d) => n + d.count, 0) }, ...dests!].map(d => {
                     const on = (dest ?? null) === d.code;
                     return (
-                      <Pressable key={d.code ?? 'all'} style={styles.dropRow} onPress={() => { Haptics.selectionAsync(); onDest?.(d.code); setMenu(null); }}>
+                      <Pressable key={d.code ?? 'all'} style={[styles.dropRow, d.code === null && styles.dropRowAll]} onPress={() => { Haptics.selectionAsync(); onDest?.(d.code); setMenu(null); }}>
                         <Text style={[styles.dropName, on && styles.dropNameOn]} numberOfLines={1}>{d.name}</Text>
                         <Text style={styles.dropCount}>{d.count}</Text>
                         <View style={styles.dropCheck}>{on && <Check size={14} color="#047857" strokeWidth={3} />}</View>
@@ -1298,7 +1298,7 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
                 : [{ code: null as string | null, name: 'All countries', count: total }, ...countries].map(c => {
                     const on = (country ?? null) === c.code;
                     return (
-                      <Pressable key={c.code ?? 'all'} style={styles.dropRow} onPress={() => { Haptics.selectionAsync(); onCountry(c.code); setMenu(null); }}>
+                      <Pressable key={c.code ?? 'all'} style={[styles.dropRow, c.code === null && styles.dropRowAll]} onPress={() => { Haptics.selectionAsync(); onCountry(c.code); setMenu(null); }}>
                         <View style={styles.dropFlag}>{!!c.code && <CircleFlag countryCode={c.code} size={18} />}</View>
                         <Text style={[styles.dropName, on && styles.dropNameOn]} numberOfLines={1}>{c.name}</Text>
                         <Text style={styles.dropCount}>{c.count}</Text>
@@ -1474,6 +1474,8 @@ const styles = StyleSheet.create({
   dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
               shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 }, elevation: 8 },
   dropRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, paddingVertical: 9 },
+  // A filter menu's "All countries" / "All destinations" row, set apart from the places under it by a divider.
+  dropRowAll: { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E7EB', marginBottom: 4 },
   dropFlag: { width: 18 },
   dropName: { flex: 1, fontSize: 14, fontWeight: '500', color: '#111827' },
   dropNameOn: { color: '#047857', fontWeight: '700' },
