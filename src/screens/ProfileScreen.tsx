@@ -1165,9 +1165,6 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
 // The Explored grid / list switch: a segmented control (a grey track, the chosen side on a raised white pill),
 // with an icon on each side. The pill slides across when the choice changes.
 const VIEW_SEG_W = 34;
-const VIEW_TOGGLE_W = 2 * VIEW_SEG_W + 4;   // its two sides and its track's padding
-// The space between the Explored sort row's buttons.
-const SORT_ROW_GAP = 8;
 function ViewToggle({ view, onView }: { view: ExploredView; onView: (v: ExploredView) => void }) {
   const idx = useSharedValue(view === 'grid' ? 0 : 1);
   useEffect(() => { idx.value = withTiming(view === 'grid' ? 0 : 1, { duration: 220, easing: Easing.out(Easing.cubic) }); }, [view]);
@@ -1217,19 +1214,11 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
   const sorts = SORTS.filter(o => options.includes(o.key));
   const sortOpt = sorts.find(o => o.key === sort) ?? sorts[0];
   const menuW = menu?.kind === 'sort' ? 180 : 240;
-  // The row stays one line. When it is too narrow for everything at full size, the sort button's label is cut first
-  // ("Spots Vis…"), down to its short form ("Spots…"); only past that do the place filters cut their names short. What the
-  // buttons need is measured from an invisible copy of them at their natural widths, the sort button at full and at least.
-  const [rowW, setRowW] = useState(0);
-  const [natural, setNatural] = useState<Record<string, number>>({});
-  const measureNatural = (key: string, w: number) => setNatural(n => (n[key] === w ? n : { ...n, [key]: w }));
-  const shown = [countries.length > 1 && 'country', showDest && 'dest', 'sort'].filter(Boolean) as string[];
-  const needW = shown.every(k => natural[k] !== undefined)
-    ? shown.reduce((t, k) => t + natural[k], 0) + shown.length * SORT_ROW_GAP + VIEW_TOGGLE_W : 0;
-  // The sort button's width when it gives way: what the row is over by, taken from it, but not below its short form.
-  const over = rowW > 0 && needW > 0 ? needW - rowW : 0;
-  const sortW = over > 0 && natural.sort !== undefined && natural.sortMin !== undefined
-    ? Math.max(natural.sortMin, natural.sort - over) : undefined;
+  // The row stays one line. When it is too narrow, the sort button gives way first, its label cut with an ellipsis
+  // ("Spots Vis…"), down to its short form ("Spots…"); only past that do the place filters cut their names short. Done
+  // with flex: the sort button shrinks far more readily than the filters (sortDrop), with a minimum width measured from an
+  // invisible copy of it showing the short form.
+  const [sortMinW, setSortMinW] = useState(0);
   const countryInner = (
     <>
       {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
@@ -1247,28 +1236,16 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
   const sortInner = (label: string) => (
     <>
       <Text style={styles.sortLabel}>Sort</Text>
-      <Text style={[styles.countryDropTxt, styles.sortDropTxt]} numberOfLines={1}>{label}</Text>
+      <Text style={styles.countryDropTxt} numberOfLines={1}>{label}</Text>
       <ChevronDown size={13} color="#6B7280" strokeWidth={2.4} />
     </>
   );
   return (
     <>
-      <View style={styles.sortRow} onLayout={e => setRowW(e.nativeEvent.layout.width - 2 * EXPLORED_PAD)}>
-        {/* The invisible full-size copy (see `short`). */}
-        <View style={styles.sortMeasure} pointerEvents="none">
-          {countries.length > 1 && (
-            <View style={[styles.countryDrop, !!chosen && styles.countryDropOn, styles.sortMeasureItem]}
-              onLayout={e => measureNatural('country', e.nativeEvent.layout.width)}>{countryInner}</View>
-          )}
-          {showDest && (
-            <View style={[styles.countryDrop, styles.sortMeasureItem]} onLayout={e => measureNatural('dest', e.nativeEvent.layout.width)}>{destInner}</View>
-          )}
-          <View style={[styles.countryDrop, styles.sortDrop, styles.sortMeasureItem]} onLayout={e => measureNatural('sort', e.nativeEvent.layout.width)}>
-            {sortInner(sortOpt.label)}
-          </View>
-          <View style={[styles.countryDrop, styles.sortDrop, styles.sortMeasureItem]} onLayout={e => measureNatural('sortMin', e.nativeEvent.layout.width)}>
-            {sortInner(sortOpt.short ? `${sortOpt.short}…` : sortOpt.label)}
-          </View>
+      <View style={styles.sortRow}>
+        {/* The invisible copy of the sort button at its shortest (see sortMinW). */}
+        <View style={[styles.countryDrop, styles.sortMeasure]} pointerEvents="none" onLayout={e => setSortMinW(e.nativeEvent.layout.width)}>
+          {sortInner(sortOpt.short ? `${sortOpt.short}…` : sortOpt.label)}
         </View>
         {countries.length > 1 && (
           <Pressable ref={countryRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={() => openMenu('country')}>
@@ -1280,7 +1257,7 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
             {destInner}
           </Pressable>
         )}
-        <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, styles.sortDrop, sortW !== undefined && { width: sortW }]} onPress={() => openMenu('sort')}>
+        <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, styles.sortDrop, sortMinW > 0 && { minWidth: sortMinW }]} onPress={() => openMenu('sort')}>
           {sortInner(sortOpt.label)}
         </Pressable>
         {/* Grid or list, at the end of the row. */}
@@ -1449,7 +1426,7 @@ const styles = StyleSheet.create({
   // Between the map and the grid or list below it.
   // Always one row: the place filters give way first (their names cut short with an ellipsis), never the sort or the
   // grid/list toggle, which would otherwise wrap onto a second row.
-  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: SORT_ROW_GAP, paddingHorizontal: EXPLORED_PAD, marginTop: 12, marginBottom: 2 },
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginTop: 12, marginBottom: 2 },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
@@ -1458,12 +1435,10 @@ const styles = StyleSheet.create({
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
   // The sort button shows its whole label ("Destinations Visited" was cut short at the filters' cap, which is for long
   // place names); the filters beside it shrink instead (sortRow).
-  sortDrop: { maxWidth: undefined, flexShrink: 0 },
-  // SortRow's invisible copy of its buttons, laid out at their natural widths to measure what the row needs at full size.
-  sortMeasure: { position: 'absolute', left: 0, top: 0, flexDirection: 'row', opacity: 0 },
-  sortMeasureItem: { flexShrink: 0 },
-  // Its label fills the room the button is given (sortW) and is cut with an ellipsis within it.
-  sortDropTxt: { flexGrow: 1 },
+  // Shrinks far more readily than the filters (flexShrink weighs against them), so it gives way first, down to its minWidth.
+  sortDrop: { maxWidth: undefined, flexShrink: 1000 },
+  // SortRow's invisible copy of the sort button at its shortest, sized to its content to measure that width.
+  sortMeasure: { position: 'absolute', left: 0, top: 0, opacity: 0, maxWidth: undefined },
   // The grid / list toggle at the end of the sort row (ViewToggle): a grey track, two fixed-width sides and a white
   // pill that slides under the chosen one.
   viewToggle:     { marginLeft: 'auto', flexShrink: 0, flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
