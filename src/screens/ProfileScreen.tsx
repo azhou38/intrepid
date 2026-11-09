@@ -1011,13 +1011,14 @@ function TileFooter({ name, sub, rating }: { name: string; sub: string; rating?:
 
 type ExploredSort = 'name' | 'date' | 'rating' | 'dests' | 'spots';
 type ExploredView = 'grid' | 'list';
-const SORTS: { key: ExploredSort; label: string }[] = [
+// `short`: the label on the sort button when the row is too narrow for the full one (see SortRow); the menu always has the full.
+const SORTS: { key: ExploredSort; label: string; short?: string }[] = [
   { key: 'name', label: 'A–Z' },
-  { key: 'date', label: 'Date Visited' },
+  { key: 'date', label: 'Date Visited', short: 'Date' },
   { key: 'rating', label: 'Rating' },
   // Countries only: the most visited destinations first. Countries and destinations: the most visited spots first.
-  { key: 'dests', label: 'Destinations Visited' },
-  { key: 'spots', label: 'Spots Visited' },
+  { key: 'dests', label: 'Destinations Visited', short: 'Destinations' },
+  { key: 'spots', label: 'Spots Visited', short: 'Spots' },
 ];
 // The sorts each level offers (a spot has no destinations or spots of its own to count). Rating is a spot's only: a country
 // or destination has no rating of its own, only an average of its spots'.
@@ -1163,6 +1164,9 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
 // The Explored grid / list switch: a segmented control (a grey track, the chosen side on a raised white pill),
 // with an icon on each side. The pill slides across when the choice changes.
 const VIEW_SEG_W = 34;
+const VIEW_TOGGLE_W = 2 * VIEW_SEG_W + 4;   // its two sides and its track's padding
+// The space between the Explored sort row's buttons.
+const SORT_ROW_GAP = 8;
 function ViewToggle({ view, onView }: { view: ExploredView; onView: (v: ExploredView) => void }) {
   const idx = useSharedValue(view === 'grid' ? 0 : 1);
   useEffect(() => { idx.value = withTiming(view === 'grid' ? 0 : 1, { duration: 220, easing: Easing.out(Easing.cubic) }); }, [view]);
@@ -1210,28 +1214,67 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
   const showDest = !!country && !!dests && dests.length > 1;
   const chosenDest = dests?.find(d => d.code === dest);
   const sorts = SORTS.filter(o => options.includes(o.key));
+  const sortOpt = sorts.find(o => o.key === sort) ?? sorts[0];
   const menuW = menu?.kind === 'sort' ? 180 : 240;
+  // The row stays one line. When it is too narrow for everything at full size, the sort button first shortens its label
+  // ("Spots Visited" to "Spots"); only if that is still not enough do the place filters cut their names short (sortRow).
+  // What full size needs is measured from an invisible copy of the buttons at their natural widths.
+  const [rowW, setRowW] = useState(0);
+  const [natural, setNatural] = useState<Record<string, number>>({});
+  const measureNatural = (key: string, w: number) => setNatural(n => (n[key] === w ? n : { ...n, [key]: w }));
+  const shown = [countries.length > 1 && 'country', showDest && 'dest', 'sort'].filter(Boolean) as string[];
+  const needW = shown.every(k => natural[k] !== undefined)
+    ? shown.reduce((t, k) => t + natural[k], 0) + shown.length * SORT_ROW_GAP + VIEW_TOGGLE_W : 0;
+  const short = rowW > 0 && needW > rowW;
+  const countryInner = (
+    <>
+      {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
+      <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All countries'}</Text>
+      <Text style={[styles.dropCount, !!chosen && styles.filterTxtOn]}>{matches}</Text>
+      <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
+    </>
+  );
+  const destInner = (
+    <>
+      <Text style={[styles.countryDropTxt, !!chosenDest && styles.filterTxtOn]} numberOfLines={1}>{chosenDest ? chosenDest.name : 'All destinations'}</Text>
+      <ChevronDown size={13} color={chosenDest ? '#047857' : '#6B7280'} strokeWidth={2.4} />
+    </>
+  );
+  const sortInner = (label: string) => (
+    <>
+      <Text style={styles.sortLabel}>Sort</Text>
+      <Text style={styles.countryDropTxt} numberOfLines={1}>{label}</Text>
+      <ChevronDown size={13} color="#6B7280" strokeWidth={2.4} />
+    </>
+  );
   return (
     <>
-      <View style={styles.sortRow}>
+      <View style={styles.sortRow} onLayout={e => setRowW(e.nativeEvent.layout.width - 2 * EXPLORED_PAD)}>
+        {/* The invisible full-size copy (see `short`). */}
+        <View style={styles.sortMeasure} pointerEvents="none">
+          {countries.length > 1 && (
+            <View style={[styles.countryDrop, !!chosen && styles.countryDropOn, styles.sortMeasureItem]}
+              onLayout={e => measureNatural('country', e.nativeEvent.layout.width)}>{countryInner}</View>
+          )}
+          {showDest && (
+            <View style={[styles.countryDrop, styles.sortMeasureItem]} onLayout={e => measureNatural('dest', e.nativeEvent.layout.width)}>{destInner}</View>
+          )}
+          <View style={[styles.countryDrop, styles.sortDrop, styles.sortMeasureItem]} onLayout={e => measureNatural('sort', e.nativeEvent.layout.width)}>
+            {sortInner(sortOpt.label)}
+          </View>
+        </View>
         {countries.length > 1 && (
           <Pressable ref={countryRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={() => openMenu('country')}>
-            {!!chosen && <CircleFlag countryCode={chosen.code} size={12} />}
-            <Text style={[styles.countryDropTxt, !!chosen && styles.filterTxtOn]} numberOfLines={1}>{chosen ? chosen.name : 'All countries'}</Text>
-            <Text style={[styles.dropCount, !!chosen && styles.filterTxtOn]}>{matches}</Text>
-            <ChevronDown size={13} color={chosen ? '#047857' : '#6B7280'} strokeWidth={2.4} />
+            {countryInner}
           </Pressable>
         )}
         {showDest && (
           <Pressable ref={destRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosenDest && styles.countryDropOn]} onPress={() => openMenu('dest')}>
-            <Text style={[styles.countryDropTxt, !!chosenDest && styles.filterTxtOn]} numberOfLines={1}>{chosenDest ? chosenDest.name : 'All destinations'}</Text>
-            <ChevronDown size={13} color={chosenDest ? '#047857' : '#6B7280'} strokeWidth={2.4} />
+            {destInner}
           </Pressable>
         )}
         <Pressable ref={sortRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, styles.sortDrop]} onPress={() => openMenu('sort')}>
-          <Text style={styles.sortLabel}>Sort</Text>
-          <Text style={styles.countryDropTxt} numberOfLines={1}>{(sorts.find(o => o.key === sort) ?? sorts[0]).label}</Text>
-          <ChevronDown size={13} color="#6B7280" strokeWidth={2.4} />
+          {sortInner(short ? sortOpt.short ?? sortOpt.label : sortOpt.label)}
         </Pressable>
         {/* Grid or list, at the end of the row. */}
         <ViewToggle view={view} onView={onView} />
@@ -1399,7 +1442,7 @@ const styles = StyleSheet.create({
   // Between the map and the grid or list below it.
   // Always one row: the place filters give way first (their names cut short with an ellipsis), never the sort or the
   // grid/list toggle, which would otherwise wrap onto a second row.
-  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginTop: 12, marginBottom: 2 },
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: SORT_ROW_GAP, paddingHorizontal: EXPLORED_PAD, marginTop: 12, marginBottom: 2 },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
@@ -1409,6 +1452,9 @@ const styles = StyleSheet.create({
   // The sort button shows its whole label ("Destinations Visited" was cut short at the filters' cap, which is for long
   // place names); the filters beside it shrink instead (sortRow).
   sortDrop: { maxWidth: undefined, flexShrink: 0 },
+  // SortRow's invisible copy of its buttons, laid out at their natural widths to measure what the row needs at full size.
+  sortMeasure: { position: 'absolute', left: 0, top: 0, flexDirection: 'row', opacity: 0 },
+  sortMeasureItem: { flexShrink: 0 },
   // The grid / list toggle at the end of the sort row (ViewToggle): a grey track, two fixed-width sides and a white
   // pill that slides under the chosen one.
   viewToggle:     { marginLeft: 'auto', flexShrink: 0, flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
