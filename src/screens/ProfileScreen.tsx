@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, Modal,
 } from 'react-native';
 import { Pencil, ChevronDown, Check, LayoutGrid, List as ListIcon } from 'lucide-react-native';
-import Animated, { useSharedValue, useAnimatedStyle, useAnimatedProps, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, withSpring, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, useAnimatedProps, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, withSpring, withRepeat, withDelay, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -62,6 +62,30 @@ const pinPath = (x: number, y: number) => {
   const cy = y - PIN_TIP;
   return `M ${x - PIN_TX} ${cy + PIN_TY} L ${x} ${y} L ${x + PIN_TX} ${cy + PIN_TY} A ${PIN_R} ${PIN_R} 0 1 0 ${x - PIN_TX} ${cy + PIN_TY} Z`;
 };
+
+// Where to mark a picked country on the map: the middle of its largest piece of land (France's mainland, not the box round
+// it and its overseas departments), in map units, and whether it is small enough on the world map to need a fixed ring
+// round it as well as the pulse (a country a few points across barely shows its orange).
+const SMALL_COUNTRY = 6;   // map units (about points on the card) across its largest piece
+function countryMark(d: string): { x: number; y: number; small: boolean } | null {
+  let best: { area: number; x0: number; x1: number; y0: number; y1: number } | null = null;
+  for (const part of d.split('M').filter(Boolean)) {
+    const n = part.replace(/Z/g, ' ').trim().split(/[\s,]+/).map(Number);
+    if (n.length < 2) continue;
+    let area = 0, x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    for (let i = 0; i + 1 < n.length; i += 2) {
+      const x = n[i], y = n[i + 1], nx = n[(i + 2) % n.length], ny = n[(i + 3) % n.length];
+      area += x * ny - nx * y;
+      x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y);
+    }
+    area = Math.abs(area) / 2;
+    if (!best || area > best.area) best = { area, x0, x1, y0, y1 };
+  }
+  if (!best) return null;
+  const x = (best.x0 + best.x1) / 2;
+  return { x: x < WORLD_X0 ? x + 360 : x, y: (best.y0 + best.y1) / 2, small: Math.max(best.x1 - best.x0, best.y1 - best.y0) < SMALL_COUNTRY };
+}
+const COUNTRY_D = new Map((WORLD_COUNTRIES as { c: string; d: string }[]).map(e => [e.c, e.d]));
 
 // The Spots destination filter's choice for a country's spots that belong to no destination.
 const SPOT_NO_DEST = '__none';
@@ -429,6 +453,11 @@ export default function ProfileScreen() {
             ))}
           </G>
         )}
+        {/* A picked country: rings pulsing out from it (and a fixed ring round a small one), so it can be found at a glance. */}
+        {worldMode === 'countries' && pickedId && (() => {
+          const m = COUNTRY_D.has(pickedId) ? countryMark(COUNTRY_D.get(pickedId)!) : null;
+          return m && <PickedCountryPing key={pickedId} cx={m.x} cy={m.y} small={m.small} u={mapView.w / w} />;
+        })()}
         {/* Destinations: a dot at each one visited. Spots: a small pin (the app's spot pin, its tip on the place), so they
             read differently from destinations, as on the full-screen map. */}
         {/* The picked tile's place is drawn last (on top), in orange and a little larger. */}
@@ -860,6 +889,27 @@ function PickedDot({ cx, cy, scale }: { cx: number; cy: number; scale: number })
   useEffect(() => { k.value = withSpring(3.2 * scale, PICK_POP); }, [scale]);
   const props = useAnimatedProps(() => ({ r: k.value }));
   return <AnimatedCircle cx={cx} cy={cy} fill={PICK_COLOR} stroke="white" strokeWidth={0.5 * scale} animatedProps={props} />;
+}
+// A picked country's mark: two orange rings pulsing out from its middle in turn, over a fixed ring for a small country.
+// Sizes are in points on screen (u: map units per point), as the card's map is drawn at more than one width.
+const PING_MS = 1600;
+function PickedCountryPing({ cx, cy, small, u }: { cx: number; cy: number; small: boolean; u: number }) {
+  return (
+    <G>
+      <PingRing cx={cx} cy={cy} u={u} delay={0} />
+      <PingRing cx={cx} cy={cy} u={u} delay={PING_MS / 2} />
+      {small && <Circle cx={cx} cy={cy} r={7 * u} fill="none" stroke="white" strokeWidth={3 * u} />}
+      {small && <Circle cx={cx} cy={cy} r={7 * u} fill="none" stroke={PICK_COLOR} strokeWidth={1.6 * u} />}
+    </G>
+  );
+}
+function PingRing({ cx, cy, u, delay }: { cx: number; cy: number; u: number; delay: number }) {
+  const t = useSharedValue(0);
+  useEffect(() => {
+    t.value = withDelay(delay, withRepeat(withTiming(1, { duration: PING_MS, easing: Easing.out(Easing.cubic) }), -1, false));
+  }, []);
+  const props = useAnimatedProps(() => ({ r: (4 + 18 * t.value) * u, strokeOpacity: t.value === 0 ? 0 : 0.9 * (1 - t.value) }));
+  return <AnimatedCircle cx={cx} cy={cy} fill="none" stroke={PICK_COLOR} strokeWidth={1.6 * u} animatedProps={props} />;
 }
 function PickedPin({ x, y, scale }: { x: number; y: number; scale: number }) {
   const k = useSharedValue(scale);
