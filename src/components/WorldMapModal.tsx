@@ -5,6 +5,7 @@ import * as Haptics from 'expo-haptics';
 import { X } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import CircleFlag from './CircleFlag';
+import CountryPhoto from './CountryPhoto';
 import EntityPhoto from './Map/EntityPhoto';
 import PhotoPlaceholder from './Map/PhotoPlaceholder';
 import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
@@ -305,7 +306,8 @@ export default function WorldMapModal({
           <View style={[st.card, { bottom: insets.bottom + 16 }]}>
             {picked.kind === 'country' ? (
               <>
-                <CircleFlag countryCode={picked.code} size={30} ring ringWidth={1.5} style={st.flagRing} />
+                {/* The country's header photo (its country sheet's), as the other cards show a place's photo. */}
+                <View style={st.photo}><CountryPhoto key={picked.code} code={picked.code} name={picked.name} /></View>
                 <View style={{ flex: 1 }}>
                   <Text style={st.cardTitle} numberOfLines={1}>{picked.name}</Text>
                   <Text style={st.cardSub} numberOfLines={1}>
@@ -372,5 +374,4 @@ const st = StyleSheet.create({
   cardSub: { fontSize: 13, color: '#6B7280', marginTop: 2 },
   photo: { width: 52, height: 52, borderRadius: 12, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   subRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
-  flagRing: { shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 3 },
 });

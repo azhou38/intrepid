@@ -19,10 +19,11 @@ import PhotoPlaceholder from '../components/Map/PhotoPlaceholder';
 // paths (x = longitude + 180, y = MILLER_TOP − miller(latitude), in degrees, 84° N to 58° S), one entry per ISO 3166-1 code.
 import WORLD_COUNTRIES from '../data/worldCountries.json';
 import CircleFlag from '../components/CircleFlag';
+import CountryPhoto from '../components/CountryPhoto';
 import WorldMapModal from '../components/WorldMapModal';
 import EditProfileSheet, { ProfileAvatar } from '../components/EditProfileSheet';
 import EntityPhoto from '../components/Map/EntityPhoto';
-import { thumbCache, photoCache, getOrFetchWikiThumbnail, HEADER_PX } from '../utils/photoCache';
+import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
 import { getCountryBounds } from '../utils/countryBounds';
 import { countryCentreMapUnits } from '../utils/countryCentre';
@@ -1031,20 +1032,6 @@ const SORT_OPTIONS: Record<WorldMode, ExploredSort[]> = {
   destinations: ['name', 'date', 'spots'],
   spots: ['name', 'date', 'rating'],
 };
-// A country's photo: the same image (and cache key) as its country sheet's header, its top destination's photo.
-function CountryPhoto({ code, name }: { code: string; name: string }) {
-  const top = useMemo(() => DESTINATIONS.filter(d => d.countryCode === code).sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name))[0], [code]);
-  const key = `country_${code}`;
-  return (
-    <EntityPhoto
-      cacheKey={key}
-      cache={photoCache}
-      load={() => (top ? getOrFetchWikiThumbnail(key, photoCache, top.name, HEADER_PX, name) : getOrFetchWikiThumbnail(key, photoCache, name, HEADER_PX))}
-      subject={top ? photoSubject(top.name) : undefined}
-      placeholderColor="#E5E7EB"
-    />
-  );
-}
 // An Explored list: one row per place, in the sort's order (unnumbered). What a
 // row measures follows the sort: spots visited (destinations) or rating, as a bar against the top value and the number; the
 // date visited for a chronology; nothing extra for A–Z. Tapping a row picks it, as tapping a tile does. Paged sideways like
