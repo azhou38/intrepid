@@ -6597,7 +6597,7 @@ const destItems = useMemo((): DestItem[] =>
               textHaloWidth: 1.5,
             }}
           />
-          {/* The selected spot's outline over its photo pin: its rim and tail in near-black instead of white (or green),
+          {/* The selected spot's outline over its photo pin: its rim and tail in slate instead of white (or green),
               so the selected pin stands out (SpotPhotoImages' SPOT_SELECTED_RING, the same size and anchor as the pin). The
               same feature as the photo pin, so the two appear together. (A white halo, then a drop shadow, were tried first.) */}
           <MapboxGL.SymbolLayer
