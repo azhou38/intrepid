@@ -339,6 +339,8 @@ export default function WorldMapModal({
             <MapboxGL.ShapeSource id="wmSpotPoints" shape={points}>
               <MapboxGL.SymbolLayer
                 id="wmPins"
+                // Not the picked spot: its orange pin (wmPickedPin) is drawn instead, and the green one peeked out behind it.
+                filter={['!=', ['get', 'id'], hlId ?? ''] as any}
                 style={{
                   iconImage: SPOT_MINI_PIN_VISITED,
                   iconAnchor: 'bottom',
