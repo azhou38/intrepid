@@ -664,7 +664,7 @@ export default function ProfileScreen() {
               const counted = exploredSort === 'dests' ? n?.dests ?? 0 : exploredSort === 'spots' ? n?.spots ?? 0 : 0;
               return {
                 key: c.id, name: c.name, countryCode: c.id,
-                sub: tileSub(exploredSort, visitLabel(countryKeys.visit.get(c.id)), countryKeys.rating(c.id),
+                sub: tileSub(exploredSort, visitLabel(countryKeys.visit.get(c.id)),
                   exploredSort === 'dests' && counted ? `${counted} destination${counted === 1 ? '' : 's'}`
                   : exploredSort === 'spots' && counted ? `${counted} spot${counted === 1 ? '' : 's'}` : ''),
                 photo: <CountryPhoto code={c.id} name={c.name} dark />,
@@ -715,7 +715,7 @@ export default function ProfileScreen() {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode,
-                sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), sortKeys.destRating(d.id), exploredSort === 'spots' && n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
+                sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), exploredSort === 'spots' && n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
                 photo: (
                   // The same small-photo key as the country sheet's destination pickers, so either can reuse it.
                   <EntityPhoto
@@ -771,7 +771,8 @@ export default function ProfileScreen() {
             /* The same photo grid for spots: the spot's country under its name. */
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownSpots.map(sp => ({
               key: sp.id, name: sp.name, countryCode: spotCountryCode(sp),
-              sub: tileSub(exploredSort, visitLabel(sortKeys.spotVisit.get(sp.id)), savedSpots[sp.id]?.rating ?? 0, spotCountry(sp) ?? ''),
+              sub: exploredSort === 'rating' ? '' : tileSub(exploredSort, visitLabel(sortKeys.spotVisit.get(sp.id)), spotCountry(sp) ?? ''),
+              rating: exploredSort === 'rating' ? savedSpots[sp.id]?.rating ?? 0 : undefined,
               photo: NO_PHOTO.has(spotPhotoTitle(sp))
                 ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />
                 : // The same small-photo key as the destination sheet's spot pickers, so either can reuse it.
@@ -834,7 +835,7 @@ const PAGE_DOT_ON = '#111827', PAGE_DOT_OFF = '#D1D5DB';
 const SHADOW_ROOM = 6;
 const gridHeight = (n: number) => { const rows = Math.max(1, Math.ceil(n / TILE_COLS)); return TILE * rows + TILE_GAP * (rows - 1); };
 function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
-  tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[];
+  tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode; rating?: number }[];
   pickedId: string | null; onPick: (id: string) => void;
   // A pick only lasts while its tile is on the page showing: this drops it once the page changes (or the list does) and it is gone.
   onClearPick: () => void;
@@ -870,7 +871,7 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
                 {t.photo}
                 {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
                     spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
-                <TileFooter name={t.name} sub={t.sub} />
+                <TileFooter name={t.name} sub={t.sub} rating={t.rating} />
                 {/* The country's flag at the top left. */}
                 {!!t.countryCode && (
                   <View style={styles.tileFlag} pointerEvents="none">
@@ -971,7 +972,8 @@ function PageRange({ scrollX, total, pageCount, pageSize }: { scrollX: SharedVal
 // The footer's top padding, which the scrim fades in over, and how dark it is from there down, behind the text.
 const SCRIM_FADE = 28;
 const SCRIM_UNDER_TEXT = 0.55;
-function TileFooter({ name, sub }: { name: string; sub: string }) {
+// `rating`: sorted by rating, the spot's stars and number under its name (as its list row shows them), in place of `sub`.
+function TileFooter({ name, sub, rating }: { name: string; sub: string; rating?: number }) {
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
   const scrimId = `tileScrim${React.useId().replace(/[^a-zA-Z0-9]/g, '')}`;
   return (
@@ -993,7 +995,12 @@ function TileFooter({ name, sub }: { name: string; sub: string }) {
         </Svg>
       )}
       <Text style={styles.tileName} numberOfLines={3}>{name}</Text>
-      {!!sub && (
+      {rating !== undefined ? (
+        <View style={styles.tileSubRow}>
+          <RatingStars value={rating} size={TILE_STAR} />
+          <Text style={styles.tileSub} numberOfLines={1}>{rating ? rating.toFixed(1).replace(/\.0$/, '') : '–'}</Text>
+        </View>
+      ) : !!sub && (
         <View style={styles.tileSubRow}>
           <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>
         </View>
@@ -1033,18 +1040,19 @@ const CONTENT_IN_MS = 200;
 // A row's rating, sorted by it: five stars, filled to the rating (an average such as 4.3 fills the fifth star by a
 // third), in the rating's colour as on the visit's own stars (RATING_COLORS); five grey outlines for a place unrated.
 const RATING_STAR = 14;
-function RatingStars({ value }: { value: number }) {
+const TILE_STAR = 11;   // on a photo grid tile
+function RatingStars({ value, size = RATING_STAR }: { value: number; size?: number }) {
   const color = RATING_COLORS[Math.round(value)] ?? '#16A34A';
   return (
     <View style={styles.ratingStars}>
       {[0, 1, 2, 3, 4].map(i => {
         const fill = Math.max(0, Math.min(1, value - i));
         return (
-          <View key={i} style={{ width: RATING_STAR, height: RATING_STAR }}>
-            <Star size={RATING_STAR} color="#D1D5DB" strokeWidth={2} />
+          <View key={i} style={{ width: size, height: size }}>
+            <Star size={size} color="#D1D5DB" strokeWidth={2} />
             {fill > 0 && (
-              <View style={[StyleSheet.absoluteFill, { width: RATING_STAR * fill, overflow: 'hidden' }]}>
-                <Star size={RATING_STAR} color={color} fill={color} strokeWidth={2} />
+              <View style={[StyleSheet.absoluteFill, { width: size * fill, overflow: 'hidden' }]}>
+                <Star size={size} color={color} fill={color} strokeWidth={2} />
               </View>
             )}
           </View>
@@ -1053,13 +1061,11 @@ function RatingStars({ value }: { value: number }) {
     </View>
   );
 }
-// A grid tile's line under its name, by the sort: the date visited, or the rating, when sorted by it (an em dash for a place
-// without one, which sorts last); otherwise its usual line (a destination's spots visited when sorted by them, nothing when
-// sorted A–Z; a spot's country).
-const tileSub = (sort: ExploredSort, date: string, rating: number, usual: string) =>
-  sort === 'date' ? (date || '—')
-  : sort === 'rating' ? (rating ? `★ ${rating.toFixed(1).replace(/\.0$/, '')}` : '—')
-  : usual;
+// A grid tile's line under its name, by the sort: the date visited when sorted by it (an em dash for a place without one,
+// which sorts last); otherwise its usual line (a destination's spots visited when sorted by them, nothing when sorted A–Z;
+// a spot's country). Sorted by rating, a spot's tile shows its stars instead (TileFooter).
+const tileSub = (sort: ExploredSort, date: string, usual: string) =>
+  sort === 'date' ? (date || '—') : usual;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const shortDate = (iso: string) => {
   const [y, m, d] = iso.split('-').map(Number);
