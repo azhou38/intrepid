@@ -244,7 +244,7 @@ export default function WorldMapModal({
     return {
       bounds: {
         ne: [Math.max(...lons) + pad, Math.max(...lats) + pad], sw: [Math.min(...lons) - pad, Math.min(...lats) - pad],
-        paddingTop: 120, paddingBottom: 120, paddingLeft: 40, paddingRight: 40,
+        paddingTop: 190, paddingBottom: 120, paddingLeft: 40, paddingRight: 40,   // the top clears the heading and level bar
       },
     };
   }, [focusCountry, dests, spots]);
@@ -371,9 +371,16 @@ export default function WorldMapModal({
 
         {/* Top: close, and the same level selector as the card. */}
         <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none">
-          <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
-            <X size={18} color="#111827" strokeWidth={2.5} />
-          </Pressable>
+          {/* What this map is: only the places the user has been, so it is not read as the app's map of everywhere. */}
+          <View style={st.headRow} pointerEvents="box-none">
+            <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
+              <X size={18} color="#111827" strokeWidth={2.5} />
+            </Pressable>
+            <View style={st.heading} pointerEvents="none">
+              <Text style={st.headTitle} numberOfLines={1}>Where You've Been</Text>
+              <Text style={st.headSub} numberOfLines={1}>Everywhere you've visited, in green</Text>
+            </View>
+          </View>
           <View style={st.levels}>
             <Animated.View pointerEvents="none" style={[st.levelPill, levelPillStyle]} />
             {LEVELS.map(({ level: l, label }, i) => {
@@ -448,13 +455,20 @@ export default function WorldMapModal({
 const st = StyleSheet.create({
   root: { flex: 1, backgroundColor: '#EEF2F6' },
   flagBox: { width: FLAG_BOX, height: FLAG_BOX, alignItems: 'center', justifyContent: 'center' },
-  top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 10 },
+  top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, gap: 12 },
+  headRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  heading: {
+    flex: 1, paddingHorizontal: 14, paddingVertical: 7, backgroundColor: 'rgba(255,255,255,0.92)', borderRadius: 14,
+    shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 3,
+  },
+  headTitle: { fontSize: 19, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827' },
+  headSub: { fontSize: 12, fontWeight: '500', color: '#6B7280', marginTop: 1 },
   closeBtn: {
     width: 38, height: 38, borderRadius: 19, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center',
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
   },
   levels: {
-    flex: 1, flexDirection: 'row', padding: 3, backgroundColor: 'white', borderRadius: 12,
+    flexDirection: 'row', padding: 3, backgroundColor: 'white', borderRadius: 12,
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
   },
   // Each level as wide as its text, with the room left over shared equally, so "Destinations" gets more than "Spots".
