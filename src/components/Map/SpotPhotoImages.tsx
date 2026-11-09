@@ -40,10 +40,10 @@ const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 // The selected spot's outline: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, it
-// recolours the pin's white (or green) rim and tail in the app's accent, so the selected pin stands out from the rest. One
+// recolours the pin's white (or green) rim and tail in near-black, so the selected pin stands out from the rest. One
 // image for every spot, so selecting one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
-const SELECTED_RING_COLOR = '#6366F1';
+const SELECTED_RING_COLOR = '#111827';
 const SELECTED_RING_W = 2.5;
 export const spotPhotoImageName = (id: string, visited: boolean) => `sp:${id}:${visited ? 1 : 0}`;
 
