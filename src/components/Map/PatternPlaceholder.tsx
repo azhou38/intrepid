@@ -4,7 +4,7 @@ import Svg, { Defs, LinearGradient as SvgLinearGradient, Path, Rect, Stop } from
 
 // What stands in for a spot's photo when it has none at all: a slate field with faint topographic contour lines, like the
 // height lines of a map, so it reads as a place and not as a photo that failed to load. Used wherever the spot's photo
-// would be: its carousel card, its map pin's bubble (with the spot's emoji on it, see SpotPhotoImages), the full-screen
+// would be: its carousel card, its map pin's bubble (see SpotPhotoImages), the full-screen
 // hero and the bottom strip. The terrain is generated from the spot's id, so every spot differs and a spot always looks the
 // same. (A repeated emoji over geometric tiles looked too playful.)
 const TOP = '#475569';
