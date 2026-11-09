@@ -49,8 +49,10 @@ export const SPOT_SELECTED_RING_VISITED = 'spotselring:visited';
 const SELECTED_RING_COLOR = '#475569';
 const SELECTED_RING_W = 2.5;
 // Room round the pin for the badge, left, right and above (none below, so the image's bottom edge is still the pin's tip
-// and centred on it, as the layer anchors it at the bottom).
-const RING_M = 5;
+// and centred on it, as the layer anchors it at the bottom). A multiple of 4: rnmapbox rounds a snapshot's width and height
+// up to a multiple of 4 pt, adding the space at the right and bottom, so the outline must round exactly as the pin's own
+// image does (32 x 42 -> 32 x 44) or it sits a point off it, with the pin's rim showing at its edge: 40 x 46 -> 40 x 48.
+const RING_M = 4;
 const BADGE_R = 5.5;
 export const spotPhotoImageName = (id: string, visited: boolean) => `sp:${id}:${visited ? 1 : 0}`;
 
