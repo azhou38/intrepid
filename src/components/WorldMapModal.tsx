@@ -468,7 +468,7 @@ const st = StyleSheet.create({
   headWrap: { flex: 1 },
   headTitle: {
     fontSize: 24, fontFamily: 'PlayfairDisplay_700Bold', color: '#0B1220', letterSpacing: -0.3,
-    textShadowColor: 'rgba(255,255,255,1)', textShadowRadius: 8, textShadowOffset: { width: 0, height: 0 },
+    textShadowColor: 'rgba(255,255,255,1)', textShadowRadius: 12, textShadowOffset: { width: 0, height: 0 },
   },
   headOutline: { position: 'absolute', left: 0, top: 0, color: 'white' },
   closeBtn: {
