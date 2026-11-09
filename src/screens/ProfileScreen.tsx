@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, Dimensions, Pressable, LayoutAnimation, Modal,
 } from 'react-native';
-import { Pencil, ChevronDown, Check, LayoutGrid, List as ListIcon } from 'lucide-react-native';
+import { Pencil, ChevronDown, Check, LayoutGrid, List as ListIcon, Star } from 'lucide-react-native';
+import { RATING_COLORS } from '../components/Map/sheetShared';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedProps, useAnimatedScrollHandler, useAnimatedReaction, runOnJS, useAnimatedRef, scrollTo, withTiming, withSpring, Easing, interpolateColor, interpolate, type SharedValue } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path, Circle, Rect, G, Defs, LinearGradient as SvgLinearGradient, Stop } from 'react-native-svg';
@@ -1058,6 +1059,29 @@ function CountryPhoto({ code, name }: { code: string; name: string }) {
 // the photo grid, LIST_PAGE_SIZE rows to a page with the same dots and range, so the list never scrolls up and down inside
 // the page (which scrolls up and down itself).
 const LIST_PAGE_SIZE = 8;
+// A row's rating, sorted by it: five stars, filled to the rating (an average such as 4.3 fills the fifth star by a
+// third), in the rating's colour as on the visit's own stars (RATING_COLORS); five grey outlines for a place unrated.
+const RATING_STAR = 14;
+function RatingStars({ value }: { value: number }) {
+  const color = RATING_COLORS[Math.round(value)] ?? '#16A34A';
+  return (
+    <View style={styles.ratingStars}>
+      {[0, 1, 2, 3, 4].map(i => {
+        const fill = Math.max(0, Math.min(1, value - i));
+        return (
+          <View key={i} style={{ width: RATING_STAR, height: RATING_STAR }}>
+            <Star size={RATING_STAR} color="#D1D5DB" strokeWidth={2} />
+            {fill > 0 && (
+              <View style={[StyleSheet.absoluteFill, { width: RATING_STAR * fill, overflow: 'hidden' }]}>
+                <Star size={RATING_STAR} color={color} fill={color} strokeWidth={2} />
+              </View>
+            )}
+          </View>
+        );
+      })}
+    </View>
+  );
+}
 // A grid tile's line under its name, by the sort: the date visited, or the rating, when sorted by it (an em dash for a place
 // without one, which sorts last); otherwise its usual line (a destination's spots visited when sorted by them, nothing when
 // sorted A–Z; a spot's country).
@@ -1147,7 +1171,8 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                       </View>
                     )}
                   </View>
-                  {bar && (
+                  {bar && sort === 'rating' && <View style={styles.ratingStarsCol}><RatingStars value={v} /></View>}
+                  {bar && sort !== 'rating' && (
                     <View style={styles.countryBarTrack}>
                       <View style={[styles.countryBarFill, { width: `${(v / max) * 100}%` }]} />
                     </View>
@@ -1492,6 +1517,8 @@ const styles = StyleSheet.create({
   destName:   { width: 110 },
 
   // The Explored list's bars
+  ratingStarsCol:  { flex: 1, alignItems: 'flex-start' },
+  ratingStars:     { flexDirection: 'row', gap: 2 },
   countryBarTrack: { flex: 1, height: 6, backgroundColor: '#F3F4F6', borderRadius: 3, overflow: 'hidden' },
   countryBarFill:  { height: '100%', backgroundColor: '#10B981', borderRadius: 3 },
   countryCount:    { fontSize: 14, fontWeight: '700', color: '#111827', width: 30, textAlign: 'right' },
