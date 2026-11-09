@@ -37,8 +37,8 @@ function loadNoLabelsStyle(): Promise<string | null> {
   return noLabelsStyle;
 }
 
-// The title's white haze: this many glowing copies stacked under it.
-const HEAD_GLOW = [0, 1, 2];
+// The title's white outline: copies of it this far off in each direction.
+const HEAD_OUTLINE: [number, number][] = [[-1.5, 0], [1.5, 0], [0, -1.5], [0, 1.5], [-1, -1], [1, -1], [-1, 1], [1, 1]];
 
 // The level switcher's pill slide.
 const LEVEL_SLIDE = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -380,11 +380,10 @@ export default function WorldMapModal({
               <X size={18} color="#111827" strokeWidth={2.5} />
             </Pressable>
             <View style={st.headWrap} pointerEvents="none">
-              {/* A soft white haze under the near-black title, so it stands out from the map without a box: a few copies of it,
-                  each with a wide white glow, stacked so the glow builds up and fades out gradually (a crisp outline looked
-                  cut out). */}
-              {HEAD_GLOW.map(k => (
-                <Text key={k} style={[st.headTitle, st.headGlow]} numberOfLines={1}>Where You've Been</Text>
+              {/* A white outline (copies nudged round it, as the Explore map's pin labels do) under the near-black title,
+                  so it stands out from the map without a box. */}
+              {HEAD_OUTLINE.map(([dx, dy], k) => (
+                <Text key={k} style={[st.headTitle, st.headOutline, { transform: [{ translateX: dx }, { translateY: dy }] }]} numberOfLines={1}>Where You've Been</Text>
               ))}
               <Text style={st.headTitle} numberOfLines={1}>Where You've Been</Text>
             </View>
@@ -465,15 +464,13 @@ const st = StyleSheet.create({
   flagBox: { width: FLAG_BOX, height: FLAG_BOX, alignItems: 'center', justifyContent: 'center' },
   top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, gap: 12 },
   headRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  // Straight on the map: near-black over a soft white haze (headGlow), so it reads over coastlines and green countries.
+  // Straight on the map: near-black over a white outline and a soft white glow, so it reads over coastlines and green countries.
   headWrap: { flex: 1 },
   headTitle: {
     fontSize: 24, fontFamily: 'PlayfairDisplay_700Bold', color: '#0B1220', letterSpacing: -0.3,
+    textShadowColor: 'rgba(255,255,255,1)', textShadowRadius: 8, textShadowOffset: { width: 0, height: 0 },
   },
-  headGlow: {
-    position: 'absolute', left: 0, top: 0, color: 'white',
-    textShadowColor: 'rgba(255,255,255,0.9)', textShadowRadius: 16, textShadowOffset: { width: 0, height: 0 },
-  },
+  headOutline: { position: 'absolute', left: 0, top: 0, color: 'white' },
   closeBtn: {
     width: 38, height: 38, borderRadius: 19, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center',
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
