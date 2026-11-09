@@ -383,9 +383,9 @@ export default function WorldMapModal({
               {/* A white outline (copies nudged round it, as the Explore map's pin labels do) under the near-black title,
                   so it stands out from the map without a box. */}
               {HEAD_OUTLINE.map(([dx, dy], k) => (
-                <Text key={k} style={[st.headTitle, st.headOutline, { transform: [{ translateX: dx }, { translateY: dy }] }]} numberOfLines={1}>Where You've Been</Text>
+                <Text key={k} style={[st.headTitle, st.headOutline, { transform: [{ translateX: dx }, { translateY: dy }] }]} numberOfLines={1}>My Travels</Text>
               ))}
-              <Text style={st.headTitle} numberOfLines={1}>Where You've Been</Text>
+              <Text style={st.headTitle} numberOfLines={1}>My Travels</Text>
             </View>
           </View>
           <View style={st.levels}>
