@@ -358,7 +358,7 @@ export default function WorldMapModal({
                   {(picked.dests > 0 || picked.spots > 0) && (
                     <Text style={st.cardSub} numberOfLines={1}>
                       {[picked.dests > 0 && `${picked.dests} destination${picked.dests === 1 ? '' : 's'}`,
-                        picked.spots > 0 && `${picked.spots} spot${picked.spots === 1 ? '' : 's'}`].filter(Boolean).join(', ')}
+                        picked.spots > 0 && `${picked.spots} spot${picked.spots === 1 ? '' : 's'}`].filter(Boolean).join(' · ')}
                     </Text>
                   )}
                 </View>
