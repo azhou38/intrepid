@@ -1397,19 +1397,21 @@ const styles = StyleSheet.create({
   // The Explored photo grid: square tiles, three across.
   // The sort is plain text with an underline on the chosen one, so it reads as a lighter tier than the country pills above.
   // Between the map and the grid or list below it.
-  sortRow:   { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginTop: 12, marginBottom: 2 },
+  // Always one row: the place filters give way first (their names cut short with an ellipsis), never the sort or the
+  // grid/list toggle, which would otherwise wrap onto a second row.
+  sortRow:   { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: EXPLORED_PAD, marginTop: 12, marginBottom: 2 },
   sortLabel: { fontSize: 12, fontWeight: '600', color: '#9CA3AF' },
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
   countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
-                 borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
+                 borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170, flexShrink: 1, minWidth: 0 },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
   // The sort button shows its whole label ("Destinations Visited" was cut short at the filters' cap, which is for long
-  // place names); the row wraps if it has to.
-  sortDrop: { maxWidth: undefined },
+  // place names); the filters beside it shrink instead (sortRow).
+  sortDrop: { maxWidth: undefined, flexShrink: 0 },
   // The grid / list toggle at the end of the sort row (ViewToggle): a grey track, two fixed-width sides and a white
   // pill that slides under the chosen one.
-  viewToggle:     { marginLeft: 'auto', flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
+  viewToggle:     { marginLeft: 'auto', flexShrink: 0, flexDirection: 'row', padding: 2, backgroundColor: '#F3F4F6', borderRadius: 9 },
   viewTogglePill: { position: 'absolute', top: 2, bottom: 2, left: 2, width: VIEW_SEG_W, borderRadius: 7, backgroundColor: 'white',
                     shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
   viewToggleBtn:  { width: VIEW_SEG_W, alignItems: 'center', justifyContent: 'center', paddingVertical: 4 },
