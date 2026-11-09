@@ -143,6 +143,13 @@ const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
 // The slide-in on mount starts two frames late, as the destination and spot sheets' do: the frames that build this sheet's
 // views (with the camera moving) swallowed the fast start of the ease-out, so the sheet appeared most of the way up.
 export const COUNTRY_MOUNT_SLIDE_DELAY_MS = 40;
+// After the slide-in lands, the sheet keeps re-sending its position for a moment. Its slide runs on the UI thread only
+// (IOS_SYNCHRONOUSLY_UPDATE_UI_PROPS), so a React update that took its snapshot of the sheet a few frames before the end
+// could reach the screen after the landing and redraw the sheet (and the pills, which follow it) where it was then: on
+// "← Country" it dropped ~17pt for five frames and jumped back. Drifting it by a hundredth of a point over this window
+// re-applies the landed position every frame, so a late redraw like that is overwritten on the next one.
+const LAND_HOLD_MS = 500;
+const LAND_HOLD_PT = 0.01;
 // 2-column destinations grid — same math as DestinationSheet's own spot grid.
 const GRID_GAP    = 14;
 const GRID_CARD_W = (W - 32 - GRID_GAP) / 2;
@@ -732,7 +739,7 @@ function CountrySheet({
     if (reason !== 'mount' || next === 'peek') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
     if (reason === 'mount') {
       const config = slideInMs ? { ...SNAP_CONFIG, duration: slideInMs } : SNAP_CONFIG;
-      slideAnim.value = withDelay(COUNTRY_MOUNT_SLIDE_DELAY_MS, withTiming(target, config, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } }));
+      slideAnim.value = withDelay(COUNTRY_MOUNT_SLIDE_DELAY_MS, withTiming(target, config, finished => { if (finished) { hidePeekSV.value = 0; slideAnim.value = withTiming(target + LAND_HOLD_PT, { duration: LAND_HOLD_MS, easing: Easing.linear }); runOnJS(revealPanels)(); } }));
     } else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
 
