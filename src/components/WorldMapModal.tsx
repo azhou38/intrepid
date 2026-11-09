@@ -116,11 +116,20 @@ export default function WorldMapModal({
   // pill has landed (a level change re-renders the map and the Profile behind it, which, mid-slide, made it stutter).
   const [shownLevel, setShownLevel] = useState(level);
   const levelSV = useSharedValue(LEVELS.findIndex(x => x.level === level));
-  const levelsWSV = useSharedValue(0);
+  // Each level's place and width in the bar (they size to their text), measured; the pill moves and resizes between them as
+  // levelSV runs from one index to the next.
+  const levelBoxesSV = useSharedValue<{ x: number; w: number }[]>([]);
   const levelPillStyle = useAnimatedStyle(() => {
-    const w = Math.max(0, (levelsWSV.value - 6) / LEVELS.length);
-    return { width: w, opacity: levelsWSV.value > 0 ? 1 : 0, transform: [{ translateX: levelSV.value * w }] };
+    const b = levelBoxesSV.value;
+    if (b.length < LEVELS.length || b.some(v => !v)) return { opacity: 0 };
+    const i = Math.max(0, Math.min(LEVELS.length - 1, levelSV.value)), lo = Math.floor(i), hi = Math.min(LEVELS.length - 1, lo + 1), t = i - lo;
+    return { opacity: 1, left: b[lo].x + (b[hi].x - b[lo].x) * t, width: b[lo].w + (b[hi].w - b[lo].w) * t };
   });
+  const measureLevel = (i: number, x: number, w: number) => {
+    const next = [...levelBoxesSV.value];
+    next[i] = { x, w };
+    levelBoxesSV.value = next;
+  };
   const levelSwap = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => { if (levelSwap.current) clearTimeout(levelSwap.current); }, []);
   // Changed from outside (the Profile's own bar): follow it.
@@ -360,12 +369,13 @@ export default function WorldMapModal({
           <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
             <X size={18} color="#111827" strokeWidth={2.5} />
           </Pressable>
-          <View style={st.levels} onLayout={e => { levelsWSV.value = e.nativeEvent.layout.width; }}>
+          <View style={st.levels}>
             <Animated.View pointerEvents="none" style={[st.levelPill, levelPillStyle]} />
-            {LEVELS.map(({ level: l, label }) => {
+            {LEVELS.map(({ level: l, label }, i) => {
               const on = l === shownLevel;
               return (
-                <Pressable key={l} style={st.levelBtn} hitSlop={4} onPress={() => pickLevel(l)}>
+                <Pressable key={l} style={st.levelBtn} hitSlop={4} onPress={() => pickLevel(l)}
+                  onLayout={e => measureLevel(i, e.nativeEvent.layout.x, e.nativeEvent.layout.width)}>
                   <Text style={[st.levelTxt, on && st.levelTxtOn]} numberOfLines={1}>
                     <Text style={st.levelNum}>{levelCounts[l]}</Text> {label}
                   </Text>
@@ -442,9 +452,10 @@ const st = StyleSheet.create({
     flex: 1, flexDirection: 'row', padding: 3, backgroundColor: 'white', borderRadius: 12,
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
   },
-  levelBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 9 },
-  // The green highlight, sliding under the chosen level (its width and place set from the row's measured width).
-  levelPill: { position: 'absolute', top: 3, bottom: 3, left: 3, borderRadius: 9, backgroundColor: '#ECFDF5' },
+  // Each level as wide as its text, with the room left over shared equally, so "Destinations" gets more than "Spots".
+  levelBtn: { flexGrow: 1, flexShrink: 1, flexBasis: 'auto', alignItems: 'center', paddingVertical: 8, paddingHorizontal: 8, borderRadius: 9 },
+  // The green highlight, sliding under the chosen level and taking its width (both measured, see levelBoxesSV).
+  levelPill: { position: 'absolute', top: 3, bottom: 3, borderRadius: 9, backgroundColor: '#ECFDF5' },
   levelTxt: { fontSize: 13, fontWeight: '600', color: '#6B7280' },
   levelNum: { fontWeight: '800' },
   levelTxtOn: { color: '#047857' },
