@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
+import Svg, { Circle, Path } from 'react-native-svg';
 import MapboxGL from '@rnmapbox/maps';
 import PinPhoto from './PinPhoto';
 import { photoSubject } from '../../utils/subjectCrop';
@@ -39,6 +39,12 @@ const SNAP_AFTER_MS = 60;    // the snapshot after the photo shows
 const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
+// The selected spot's outline: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, it
+// recolours the pin's white (or green) rim and tail in the app's accent, so the selected pin stands out from the rest. One
+// image for every spot, so selecting one registers nothing new.
+export const SPOT_SELECTED_RING = 'spotselring';
+const SELECTED_RING_COLOR = '#6366F1';
+const SELECTED_RING_W = 2.5;
 export const spotPhotoImageName = (id: string, visited: boolean) => `sp:${id}:${visited ? 1 : 0}`;
 
 const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: SpotPhotoImageSpec; onReady: (name: string) => void }) {
@@ -93,11 +99,35 @@ const SpotPhotoImage = memo(function SpotPhotoImage({ spec, onReady }: { spec: S
   );
 });
 
+const SelectedRing = memo(function SelectedRing() {
+  const imageRef = useRef<{ refresh: () => void } | null>(null);
+  useEffect(() => {
+    const t1 = setTimeout(() => imageRef.current?.refresh(), 60);
+    const t2 = setTimeout(() => imageRef.current?.refresh(), 500);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
+  const cx = PAD + R, cy = PAD + R;
+  // The tail outside the bubble only (its two tangent edges, closed by the bubble's bottom arc), so it doesn't cover the photo.
+  const tail = `M ${cx + TAN_X} ${cy + TAN_Y} L ${cx} ${cy + TIP_D} L ${cx - TAN_X} ${cy + TAN_Y} A ${R} ${R} 0 0 0 ${cx + TAN_X} ${cy + TAN_Y} Z`;
+  return (
+    <MapboxGL.Image name={SPOT_SELECTED_RING} ref={imageRef as any}>
+      <View collapsable={false} style={st.box}>
+        <Svg width={W} height={H}>
+          <Path d={tail} fill={SELECTED_RING_COLOR} />
+          {/* Over the bubble's 2 pt rim (radius R-2 to R), a little wider so no white shows at its edges. */}
+          <Circle cx={cx} cy={cy} r={R - 1} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={SELECTED_RING_W} />
+        </Svg>
+      </View>
+    </MapboxGL.Image>
+  );
+});
+
 // Every image a pin feature may reference. Grow-only (see MapScreen): an image is never unmounted while a symbol could
 // still be fading out with it.
 export default memo(function SpotPhotoImages({ specs, onReady }: { specs: SpotPhotoImageSpec[]; onReady: (name: string) => void }) {
   return (
     <MapboxGL.Images>
+      <SelectedRing />
       {specs.map(s => <SpotPhotoImage key={s.name} spec={s} onReady={onReady} />)}
     </MapboxGL.Images>
   );
