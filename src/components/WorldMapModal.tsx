@@ -349,7 +349,10 @@ export default function WorldMapModal({
                 {/* The country's header photo (its country sheet's), as the other cards show a place's photo. */}
                 <View style={st.photo}><CountryPhoto key={picked.code} code={picked.code} name={picked.name} /></View>
                 <View style={{ flex: 1 }}>
-                  <Text style={st.cardTitle} numberOfLines={1}>{picked.name}</Text>
+                  <View style={st.titleRow}>
+                    <CircleFlag countryCode={picked.code} size={16} ring ringWidth={1.5} style={st.titleFlag} />
+                    <Text style={[st.cardTitle, { flexShrink: 1 }]} numberOfLines={1}>{picked.name}</Text>
+                  </View>
                   <Text style={st.cardSub} numberOfLines={1}>
                     {picked.dests} destination{picked.dests === 1 ? '' : 's'} · {picked.spots} spot{picked.spots === 1 ? '' : 's'} visited
                   </Text>
@@ -414,4 +417,7 @@ const st = StyleSheet.create({
   cardSub: { fontSize: 13, color: '#6B7280', marginTop: 2 },
   photo: { width: 52, height: 52, borderRadius: 12, overflow: 'hidden', backgroundColor: '#E5E7EB' },
   subRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
+  // A country's flag before its name, ringed in white with a faint edge so the ring shows on the white card.
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  titleFlag: { borderWidth: StyleSheet.hairlineWidth, borderColor: 'rgba(0,0,0,0.18)' },
 });
