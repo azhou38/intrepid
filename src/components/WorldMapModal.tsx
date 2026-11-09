@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { Modal, View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
+import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import { X } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -35,6 +36,9 @@ function loadNoLabelsStyle(): Promise<string | null> {
     .catch(() => { noLabelsStyle = null; return null; });
   return noLabelsStyle;
 }
+
+// The level switcher's pill slide.
+const LEVEL_SLIDE = { duration: 220, easing: Easing.out(Easing.cubic) };
 
 // A visited country's flag on the Countries level: a circle of its flag inside a white ring, with a faint edge so the white
 // shows on the pale map. The box is a multiple of 4 points (rnmapbox rounds a snapshot up to one, adding the space at the
@@ -85,7 +89,7 @@ type Picked =
 
 export default function WorldMapModal({
   visible, onClose, level, onLevelChange, visitedCountryCodes, countryName, dests, spots, countsByCountry, spotsByDest,
-  focusCountry, pickedId,
+  focusCountry, pickedId, levelCounts,
 }: {
   visible: boolean;
   onClose: () => void;
@@ -102,10 +106,37 @@ export default function WorldMapModal({
   focusCountry?: string | null;
   // The destination or spot picked in the Profile's Explored grid: drawn in orange, and a little larger (as is any tapped here).
   pickedId?: string | null;
+  // The number visited at each level, shown beside its name in the level switcher (the Profile bar's own totals).
+  levelCounts: Record<WorldLevel, number>;
 }) {
   const insets = useSafeAreaInsets();
   const mapRef = useRef<MapboxGL.MapView>(null);
   const [picked, setPicked] = useState<Picked | null>(null);
+  // The level switcher: a tap moves the green pill and the labels' colours at once, and the map changes level once the
+  // pill has landed (a level change re-renders the map and the Profile behind it, which, mid-slide, made it stutter).
+  const [shownLevel, setShownLevel] = useState(level);
+  const levelSV = useSharedValue(LEVELS.findIndex(x => x.level === level));
+  const levelsWSV = useSharedValue(0);
+  const levelPillStyle = useAnimatedStyle(() => {
+    const w = Math.max(0, (levelsWSV.value - 6) / LEVELS.length);
+    return { width: w, opacity: levelsWSV.value > 0 ? 1 : 0, transform: [{ translateX: levelSV.value * w }] };
+  });
+  const levelSwap = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (levelSwap.current) clearTimeout(levelSwap.current); }, []);
+  // Changed from outside (the Profile's own bar): follow it.
+  useEffect(() => {
+    setShownLevel(level);
+    levelSV.value = withTiming(LEVELS.findIndex(x => x.level === level), LEVEL_SLIDE);
+  }, [level]);
+  const pickLevel = (l: WorldLevel) => {
+    if (l === shownLevel) return;
+    Haptics.selectionAsync();
+    setPicked(null);
+    setShownLevel(l);
+    levelSV.value = withTiming(LEVELS.findIndex(x => x.level === l), LEVEL_SLIDE);
+    if (levelSwap.current) clearTimeout(levelSwap.current);
+    levelSwap.current = setTimeout(() => { levelSwap.current = null; onLevelChange(l); }, LEVEL_SLIDE.duration);
+  };
   // null until fetched; '' if it could not be (the plain Light style, labels and all, rather than no map).
   const [styleJSON, setStyleJSON] = useState<string | null>(null);
   useEffect(() => {
@@ -329,13 +360,15 @@ export default function WorldMapModal({
           <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
             <X size={18} color="#111827" strokeWidth={2.5} />
           </Pressable>
-          <View style={st.levels}>
+          <View style={st.levels} onLayout={e => { levelsWSV.value = e.nativeEvent.layout.width; }}>
+            <Animated.View pointerEvents="none" style={[st.levelPill, levelPillStyle]} />
             {LEVELS.map(({ level: l, label }) => {
-              const on = l === level;
+              const on = l === shownLevel;
               return (
-                <Pressable key={l} style={[st.levelBtn, on && st.levelBtnOn]} hitSlop={4}
-                  onPress={() => { if (!on) { Haptics.selectionAsync(); setPicked(null); onLevelChange(l); } }}>
-                  <Text style={[st.levelTxt, on && st.levelTxtOn]}>{label}</Text>
+                <Pressable key={l} style={st.levelBtn} hitSlop={4} onPress={() => pickLevel(l)}>
+                  <Text style={[st.levelTxt, on && st.levelTxtOn]} numberOfLines={1}>
+                    <Text style={st.levelNum}>{levelCounts[l]}</Text> {label}
+                  </Text>
                 </Pressable>
               );
             })}
@@ -410,8 +443,10 @@ const st = StyleSheet.create({
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
   },
   levelBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 9 },
-  levelBtnOn: { backgroundColor: '#ECFDF5' },
+  // The green highlight, sliding under the chosen level (its width and place set from the row's measured width).
+  levelPill: { position: 'absolute', top: 3, bottom: 3, left: 3, borderRadius: 9, backgroundColor: '#ECFDF5' },
   levelTxt: { fontSize: 13, fontWeight: '600', color: '#6B7280' },
+  levelNum: { fontWeight: '800' },
   levelTxtOn: { color: '#047857' },
   card: {
     position: 'absolute', left: 16, right: 16, flexDirection: 'row', alignItems: 'center', gap: 12,

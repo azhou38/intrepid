@@ -821,6 +821,7 @@ export default function ProfileScreen() {
       spotsByDest={spotsByDest}
       focusCountry={pickedCountry}
       pickedId={pickedId}
+      levelCounts={{ countries: stats.totalCountries, destinations: stats.totalDestinations, spots: stats.totalSpots }}
     />
     </View>
   );
