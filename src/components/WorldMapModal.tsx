@@ -121,14 +121,16 @@ export default function WorldMapModal({
   const levelBoxesSV = useSharedValue<{ x: number; w: number }[]>([]);
   const levelPillStyle = useAnimatedStyle(() => {
     const b = levelBoxesSV.value;
-    if (b.length < LEVELS.length || b.some(v => !v)) return { opacity: 0 };
+    if (b.length < LEVELS.length) return { opacity: 0 };
     const i = Math.max(0, Math.min(LEVELS.length - 1, levelSV.value)), lo = Math.floor(i), hi = Math.min(LEVELS.length - 1, lo + 1), t = i - lo;
     return { opacity: 1, left: b[lo].x + (b[hi].x - b[lo].x) * t, width: b[lo].w + (b[hi].w - b[lo].w) * t };
   });
+  // Gathered on the JS side and handed over whole: the three layouts arrive together, and each copying the shared value's
+  // last list (not yet updated by the one before) kept only one of them, so the pill never had all three and stayed hidden.
+  const levelBoxes = useRef<{ x: number; w: number }[]>([]);
   const measureLevel = (i: number, x: number, w: number) => {
-    const next = [...levelBoxesSV.value];
-    next[i] = { x, w };
-    levelBoxesSV.value = next;
+    levelBoxes.current[i] = { x, w };
+    if (LEVELS.every((_, k) => levelBoxes.current[k])) levelBoxesSV.value = LEVELS.map((_, k) => levelBoxes.current[k]);
   };
   const levelSwap = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => { if (levelSwap.current) clearTimeout(levelSwap.current); }, []);
