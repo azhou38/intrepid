@@ -51,8 +51,6 @@ const WRAP_COUNTRIES = new Set(['RU', 'US', 'FJ', 'KI', 'NZ']);
 const EXPLORED_PAD = 12;
 // The highlight for a picked tile and its dot on the map.
 const PICK_COLOR = '#F97316';
-// Rank badges: gold, silver, bronze.
-const RANK_COLORS = ['#F59E0B', '#9CA3AF', '#B45309'];
 const WORLD_H = Math.round((WORLD_W * WORLD_VH) / 360);
 const worldPoint = (lon: number, lat: number) => ({ x: lon + 180, y: MILLER_TOP - miller(lat) });
 // A spot pin on the card's map, in its map units: the app's teardrop (a round head, the tail's edges tangent to it) with
@@ -661,20 +659,14 @@ export default function ProfileScreen() {
             })} />
           ) : (
             /* A photo grid: one tile per country, its name and (by the sort) its count, date or rating over its photo. */
-            <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={exploredCountries.map((c, k) => {
+            <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={exploredCountries.map(c => {
               const n = countsByCountry.get(c.id);
-              const count = (code: string) => countsByCountry.get(code)?.dests ?? 0;
-              const v = count(c.id);
-              // Sorted by destinations visited, the top three ranks (with any) wear a rank badge, every tile that ties for one.
-              let rk = k + 1;
-              while (rk > 1 && count(exploredCountries[rk - 2].id) === v) rk -= 1;
               const counted = exploredSort === 'dests' ? n?.dests ?? 0 : exploredSort === 'spots' ? n?.spots ?? 0 : 0;
               return {
                 key: c.id, name: c.name, countryCode: c.id,
                 sub: tileSub(exploredSort, visitLabel(countryKeys.visit.get(c.id)), countryKeys.rating(c.id),
                   exploredSort === 'dests' && counted ? `${counted} destination${counted === 1 ? '' : 's'}`
                   : exploredSort === 'spots' && counted ? `${counted} spot${counted === 1 ? '' : 's'}` : ''),
-                rank: exploredSort === 'dests' && v > 0 && rk <= 3 ? rk : undefined,
                 photo: <CountryPhoto code={c.id} name={c.name} dark />,
               };
             })} />
@@ -842,7 +834,7 @@ const PAGE_DOT_ON = '#111827', PAGE_DOT_OFF = '#D1D5DB';
 const SHADOW_ROOM = 6;
 const gridHeight = (n: number) => { const rows = Math.max(1, Math.ceil(n / TILE_COLS)); return TILE * rows + TILE_GAP * (rows - 1); };
 function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
-  tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode; rank?: number }[];
+  tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode }[];
   pickedId: string | null; onPick: (id: string) => void;
   // A pick only lasts while its tile is on the page showing: this drops it once the page changes (or the list does) and it is gone.
   onClearPick: () => void;
@@ -883,11 +875,6 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
                 {!!t.countryCode && (
                   <View style={styles.tileFlag} pointerEvents="none">
                     <CircleFlag countryCode={t.countryCode} size={16} ring ringWidth={1.5} style={styles.flagRing} />
-                  </View>
-                )}
-                {!!t.rank && (
-                  <View style={[styles.rankBadge, { backgroundColor: RANK_COLORS[t.rank - 1] }]} pointerEvents="none">
-                    <Text style={styles.rankTxt}>{t.rank}</Text>
                   </View>
                 )}
                 {pickedId === t.key && <View style={styles.tileRing} pointerEvents="none" />}
@@ -1021,8 +1008,7 @@ const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'name', label: 'A–Z' },
   { key: 'date', label: 'Date Visited' },
   { key: 'rating', label: 'Rating' },
-  // Countries only: the most visited destinations first (the first three tiles wear a rank badge). Countries and
-  // destinations: the most visited spots first.
+  // Countries only: the most visited destinations first. Countries and destinations: the most visited spots first.
   { key: 'dests', label: 'Destinations Visited' },
   { key: 'spots', label: 'Spots Visited' },
 ];
@@ -1454,12 +1440,10 @@ const styles = StyleSheet.create({
               shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 5, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
   tileClip: { flex: 1, borderRadius: 10, overflow: 'hidden' },
   // A picked tile: an orange ring inside its edge (the tile clips, so the ring is a child).
-  rankBadge: { position: 'absolute', top: 6, right: 6, width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: 'white' },
-  rankTxt:   { fontSize: 11, fontWeight: '800', color: 'white' },
   tileRing: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 10, borderWidth: 3, borderColor: PICK_COLOR },
   tileFooter: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingTop: SCRIM_FADE, paddingHorizontal: 8, paddingBottom: 8 },
   tileName: { fontSize: 13, fontWeight: '700', color: 'white', textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 4 },
-  // A tile's flag, in its top left corner (the rank badge takes the top right).
+  // A tile's flag, in its top left corner.
   tileFlag:   { position: 'absolute', top: 6, left: 6 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
   tileSub:  { flexShrink: 1, fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
