@@ -258,9 +258,8 @@ export default function ProfileScreen() {
     levelSV.value = withTiming(WORLD_MODES.findIndex(m => m.mode === worldMode), { duration: 280, easing: Easing.out(Easing.cubic) });
   }, [worldMode]);
   // The Explored lists for destinations and spots, alphabetical.
-  // How the Explored grids are ordered: A–Z, most recently visited first, or best rated first. A spot's rating is its own;
-  // a destination has none of its own, so it takes the average of its visited spots' ratings. Places with no date or rating
-  // come last.
+  // How the Explored grids are ordered: A–Z, most recently visited first, or (spots only) best rated first. Places with no
+  // date or rating come last.
   const [exploredSort, setExploredSort] = useState<ExploredSort>('name');
   // The Explored places as a photo grid, or as a ranked list in the order of the sort (see RankList).
   const [exploredView, setExploredView] = useState<ExploredView>('grid');
@@ -1033,10 +1032,11 @@ const SORTS: { key: ExploredSort; label: string }[] = [
   { key: 'dests', label: 'Destinations Visited' },
   { key: 'spots', label: 'Spots Visited' },
 ];
-// The sorts each level offers (a spot has no destinations or spots of its own to count).
+// The sorts each level offers (a spot has no destinations or spots of its own to count). Rating is a spot's only: a country
+// or destination has no rating of its own, only an average of its spots'.
 const SORT_OPTIONS: Record<WorldMode, ExploredSort[]> = {
-  countries: ['name', 'date', 'rating', 'dests', 'spots'],
-  destinations: ['name', 'date', 'rating', 'spots'],
+  countries: ['name', 'date', 'dests', 'spots'],
+  destinations: ['name', 'date', 'spots'],
   spots: ['name', 'date', 'rating'],
 };
 // A country's photo: the same image (and cache key) as its country sheet's header, its top destination's photo.
