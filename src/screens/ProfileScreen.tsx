@@ -1251,7 +1251,7 @@ function SortRow({ sort, onSort, view, onView, options, countries, total, countr
           {sortInner(sortOpt.short ? `${sortOpt.short}…` : sortOpt.label)}
         </View>
         {countries.length > 1 && (
-          <Pressable ref={countryRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn]} onPress={() => openMenu('country')}
+          <Pressable ref={countryRef} collapsable={false} hitSlop={6} style={[styles.countryDrop, !!chosen && styles.countryDropOn, flagOnly && styles.dropFixed]} onPress={() => openMenu('country')}
             accessibilityLabel={chosen ? chosen.name : 'All countries'}>
             {countryInner}
           </Pressable>
@@ -1441,6 +1441,8 @@ const styles = StyleSheet.create({
   // place names); the filters beside it shrink instead (sortRow).
   // Shrinks far more readily than the filters (flexShrink weighs against them), so it gives way first, down to its minWidth.
   sortDrop: { maxWidth: undefined, flexShrink: 1000 },
+  // A filter with no name to cut (the country as its flag alone): it keeps its size, or its arrow spilled out of its box.
+  dropFixed: { flexShrink: 0 },
   // SortRow's invisible copy of the sort button at its shortest, sized to its content to measure that width.
   sortMeasure: { position: 'absolute', left: 0, top: 0, opacity: 0, maxWidth: undefined },
   // The grid / list toggle at the end of the sort row (ViewToggle): a grey track, two fixed-width sides and a white
