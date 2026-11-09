@@ -378,16 +378,19 @@ export default function WorldMapModal({
 
         {/* The top of the map fading to white behind the title and level bar, so they read clearly on any part of the map
             without a box round them or a glow round the text. */}
-        <Svg pointerEvents="none" style={[st.topFade, { height: topBarH ?? insets.top + TOP_FADE_H }]} width="100%" height="100%">
-          <Defs>
-            <SvgLinearGradient id="wmTopFade" x1="0" y1="0" x2="0" y2="1">
-              <Stop offset="0" stopColor="white" stopOpacity={0.96} />
-              <Stop offset="0.7" stopColor="white" stopOpacity={0.82} />
-              <Stop offset="1" stopColor="white" stopOpacity={0} />
-            </SvgLinearGradient>
-          </Defs>
-          <Rect x="0" y="0" width="100%" height="100%" fill="url(#wmTopFade)" />
-        </Svg>
+        {/* Sized by this wrapper: the Svg's own width/height props of 100% filled the whole screen, whatever its style said. */}
+        <View pointerEvents="none" style={[st.topFade, { height: topBarH ?? insets.top + TOP_FADE_H }]}>
+          <Svg style={StyleSheet.absoluteFill}>
+            <Defs>
+              <SvgLinearGradient id="wmTopFade" x1="0" y1="0" x2="0" y2="1">
+                <Stop offset="0" stopColor="white" stopOpacity={0.96} />
+                <Stop offset="0.7" stopColor="white" stopOpacity={0.82} />
+                <Stop offset="1" stopColor="white" stopOpacity={0} />
+              </SvgLinearGradient>
+            </Defs>
+            <Rect x="0" y="0" width="100%" height="100%" fill="url(#wmTopFade)" />
+          </Svg>
+        </View>
         {/* Top: close, and the same level selector as the card. */}
         <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none" onLayout={e => setTopBarH(e.nativeEvent.layout.height)}>
           {/* What this map is: only the places the user has been, so it is not read as the app's map of everywhere. */}
