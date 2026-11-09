@@ -13,7 +13,7 @@ import PhotoPlaceholder from './Map/PhotoPlaceholder';
 import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
 import { NO_PHOTO } from '../data/imageOverrides';
-import { spotPhotoTitle } from '../data/spots';
+import { spotPhotoTitle, spotDestination } from '../data/spots';
 import SpotPinImages, { SPOT_MINI_PIN_VISITED, SPOT_MINI_PIN_PICKED } from './Map/SpotPinImages';
 import { getCountryBounds } from '../utils/countryBounds';
 import { countryCentreLngLat } from '../utils/countryCentre';
@@ -165,7 +165,7 @@ export default function WorldMapModal({
       : level === 'spots'
         ? spots.map(({ spot, countryCode }) => ({
           type: 'Feature', geometry: { type: 'Point', coordinates: [spot.coordinates.longitude, spot.coordinates.latitude] },
-          properties: { id: spot.id, name: spot.name, code: countryCode ?? '',
+          properties: { id: spot.id, name: spot.name, code: countryCode ?? '', destName: spotDestination(spot)?.name ?? '',
             photoKey: `pick_spot_${spot.id}`, photoTitle: spotPhotoTitle(spot), icon: spot.icon, category: spot.category },
         }))
         : [],
@@ -174,8 +174,9 @@ export default function WorldMapModal({
   // The card for a destination or spot feature: its photo, name, and country (with how many spots are visited, for a destination).
   const placeCard = (pr: Record<string, any>): Picked => {
     const n = Number(pr.spots ?? 0);
-    // The country is the flag before the name; the line under it is only the destination's spots visited (none for a spot).
-    const sub = n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '';
+    // The country is the flag before the name; the line under it is a destination's spots visited, or the destination a
+    // spot belongs to (none for a standalone spot).
+    const sub = pr.destName ? String(pr.destName) : n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '';
     return { kind: 'place', id: pr.id, name: pr.name, sub, code: pr.code || undefined,
       photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category };
   };
