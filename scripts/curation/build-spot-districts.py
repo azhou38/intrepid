@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Writes src/data/spotDistricts.json: each spot's second-level administrative division (NZ: the district or city council area,
-e.g. "Selwyn District"; elsewhere the county, municipality or equivalent), from OpenStreetMap's Nominatim reverse geocoder.
+e.g. "Selwyn District"; China: the prefecture-level city; elsewhere the county, municipality or equivalent), from OpenStreetMap's Nominatim reverse geocoder.
 
   python3 scripts/curation/build-spot-districts.py [--only id,id] [--refresh]
 
@@ -36,6 +36,19 @@ for i, (sid, lat, lon) in enumerate(todo):
         except Exception:
             time.sleep(5)
     a = (d or {}).get('address', {})
+    if a.get('country_code') == 'cn':
+        # China's second level is the prefecture-level city ("Suzhou City"), one above the district or county-level city that
+        # zoom 10 returns; Nominatim gives it at zoom 7.
+        for _ in range(4):
+            r = subprocess.run(['curl', '-s', '-m', '30', '-A', 'IntrepidApp-Curation/1.0', url.replace('zoom=10', 'zoom=7')], capture_output=True, text=True)
+            try:
+                a2 = json.loads(r.stdout).get('address', {}); break
+            except Exception:
+                time.sleep(5)
+        else:
+            a2 = {}
+        time.sleep(1.1)
+        if a2.get('city'): a = {**a, 'county': a2['city']}
     name = a.get('county') or a.get('state_district') or a.get('municipality') or a.get('city') or a.get('town') or a.get('state')
     if name:
         cache[sid] = {'d': name, 'c': (a.get('country_code') or '').upper(), 'r': a.get('state', '')}

@@ -108,6 +108,7 @@ import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
 import spotDistricts from '../data/spotDistricts.json';
+import districtTypes from '../data/districtTypes.json';
 import { SPOTS, STANDALONE_SPOT_SPAN_KM, spotPhotoTitle, spotCountry, spotCountryCode, spotDestination, type Spot } from '../data/spots';
 import DestinationSheet from '../components/Map/DestinationSheet';
 import CircleFlag from '../components/CircleFlag';
@@ -1207,6 +1208,13 @@ const NEAR_MAX_SPOTS = 10;
 // hold dozens of spots); the rest keep their ordinary pins or dots, and each gets its pin when its card is selected.
 const NEAR_PINNED_SPOTS = 12;
 const SPOT_DISTRICTS = spotDistricts as Record<string, { d: string; c: string; r?: string }>;
+// A division's name with its kind, so "Jurong" reads "Jurong (City)": the kind comes from OpenStreetMap and Wikidata
+// (districtTypes.json). Left alone when the name already says it ("Selwyn District", "Los Angeles County").
+const DISTRICT_TYPES = districtTypes as Record<string, { t?: string | null }>;
+const districtLabel = (x: { c: string; d: string }) => {
+  const t = DISTRICT_TYPES[`${x.c}|${x.d}`]?.t;
+  return !t || new RegExp(`\\b${t.split(' ')[0]}\\b`, 'i').test(x.d) ? x.d : `${x.d} (${t})`;
+};
 const districtKey = (id: string) => { const x = SPOT_DISTRICTS[id]; return x ? `${x.c}|${x.d}` : null; };
 const kmBetween = (a: { latitude: number; longitude: number }, b: { latitude: number; longitude: number }) => {
   const r = Math.PI / 180, dl = (b.latitude - a.latitude) * r, dn = (b.longitude - a.longitude) * r;
@@ -1257,7 +1265,7 @@ function nearContextFor(anchor: Spot): NearContext {
       .map(s => ({ s, km: kmBetween(anchor.coordinates, s.coordinates) }))
       .sort((a, b) => a.km - b.km)
       .map(o => o.s);
-    return { anchor, spots: proximityLoop([anchor, ...others]), nearest: [anchor, ...others], district: SPOT_DISTRICTS[anchor.id].d };
+    return { anchor, spots: proximityLoop([anchor, ...others]), nearest: [anchor, ...others], district: districtLabel(SPOT_DISTRICTS[anchor.id]) };
   }
   let near: Destination | undefined, best = Infinity;
   for (const d of DESTINATIONS) {
