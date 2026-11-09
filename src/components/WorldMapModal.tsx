@@ -115,8 +115,8 @@ export default function WorldMapModal({
   const insets = useSafeAreaInsets();
   const mapRef = useRef<MapboxGL.MapView>(null);
   const [picked, setPicked] = useState<Picked | null>(null);
-  // The level switcher: a tap moves the green pill and the labels' colours at once, and the map changes level once the
-  // pill has landed (a level change re-renders the map and the Profile behind it, which, mid-slide, made it stutter).
+  // The level switcher: a tap moves the green pill and the labels' colours, and switches this map's layers (shownLevel), at
+  // once; the Profile behind is told once the pill has landed (its re-render for the new level, mid-slide, made it stutter).
   const [shownLevel, setShownLevel] = useState(level);
   const levelSV = useSharedValue(LEVELS.findIndex(x => x.level === level));
   // Each level's place and width in the bar (they size to their text), measured; the pill moves and resizes between them as
@@ -161,20 +161,20 @@ export default function WorldMapModal({
 
   const points = useMemo((): GeoJSON.FeatureCollection => ({
     type: 'FeatureCollection',
-    features: level === 'destinations'
+    features: shownLevel === 'destinations'
       ? dests.map(d => ({
         type: 'Feature', geometry: { type: 'Point', coordinates: [d.coordinates.longitude, d.coordinates.latitude] },
         properties: { id: d.id, name: d.name, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
           photoKey: `pick_${d.id}`, photoTitle: d.name, icon: d.icon, category: d.category },
       }))
-      : level === 'spots'
+      : shownLevel === 'spots'
         ? spots.map(({ spot, countryCode }) => ({
           type: 'Feature', geometry: { type: 'Point', coordinates: [spot.coordinates.longitude, spot.coordinates.latitude] },
           properties: { id: spot.id, name: spot.name, code: countryCode ?? '', destName: spotDestination(spot)?.name ?? '',
             photoKey: `pick_spot_${spot.id}`, photoTitle: spotPhotoTitle(spot), icon: spot.icon, category: spot.category },
         }))
         : [],
-  }), [level, dests, spots, spotsByDest]);
+  }), [shownLevel, dests, spots, spotsByDest]);
 
   // The card for a destination or spot feature: its photo, name, and country (with how many spots are visited, for a destination).
   const placeCard = (pr: Record<string, any>): Picked => {
@@ -191,15 +191,15 @@ export default function WorldMapModal({
     const f = points.features.find(x => x.properties?.id === pickedId);
     if (f?.properties) setPicked(placeCard(f.properties));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible, pickedId, level]);
+  }, [visible, pickedId, shownLevel]);
 
   // A tap: whatever highlighted feature is under the finger (a dot first, then a visited country), else nothing.
   const onMapPress = async (e: any) => {
     const x = e?.properties?.screenPointX, y = e?.properties?.screenPointY;
     if (x == null || y == null || !mapRef.current) { setPicked(null); return; }
     try {
-      if (level !== 'countries') {
-        const hit = await mapRef.current.queryRenderedFeaturesAtPoint([x, y], undefined, [level === 'spots' ? 'wmPins' : 'wmDots']);
+      if (shownLevel !== 'countries') {
+        const hit = await mapRef.current.queryRenderedFeaturesAtPoint([x, y], undefined, [shownLevel === 'spots' ? 'wmPins' : 'wmDots']);
         const f = hit?.features?.[0];
         if (f) {
           Haptics.selectionAsync();
@@ -275,7 +275,7 @@ export default function WorldMapModal({
           onPress={onMapPress}
         >
           <MapboxGL.Camera defaultSettings={startView} minZoomLevel={0} maxZoomLevel={9} animationDuration={0} />
-          {level === 'countries' && visitedCountryCodes.length > 0 && (
+          {shownLevel === 'countries' && visitedCountryCodes.length > 0 && (
             <MapboxGL.VectorSource id="wmCountries" url="mapbox://mapbox.country-boundaries-v1">
               <MapboxGL.FillLayer
                 id="wmCountryFill"
@@ -307,7 +307,7 @@ export default function WorldMapModal({
           {/* Each visited country's flag at its centre (the map has no labels), small and ringed in white. Drawn by the map
               itself (a symbol layer of FlagImage snapshots), not as views over it: a marker view took the tap, so tapping a
               flag, the obvious place to tap a country, often did nothing. */}
-          {level === 'countries' && visitedCountryCodes.length > 0 && (
+          {shownLevel === 'countries' && visitedCountryCodes.length > 0 && (
             <>
               <MapboxGL.Images>
                 {visitedCountryCodes.map(code => <FlagImage key={code} code={code} />)}
@@ -322,7 +322,7 @@ export default function WorldMapModal({
           )}
           {/* The app's small spot pin (the green, visited one), so spots read differently from destinations' dots. */}
           <SpotPinImages />
-          {level === 'destinations' && (
+          {shownLevel === 'destinations' && (
             <MapboxGL.ShapeSource id="wmPoints" shape={points}>
               <MapboxGL.CircleLayer
                 id="wmDots"
@@ -338,7 +338,7 @@ export default function WorldMapModal({
               />
             </MapboxGL.ShapeSource>
           )}
-          {level === 'spots' && (
+          {shownLevel === 'spots' && (
             <MapboxGL.ShapeSource id="wmSpotPoints" shape={points}>
               <MapboxGL.SymbolLayer
                 id="wmPins"
@@ -355,7 +355,7 @@ export default function WorldMapModal({
             </MapboxGL.ShapeSource>
           )}
           {/* The picked spot's pin again on top, orange and larger, so it stays visible among the rest. */}
-          {level === 'spots' && !!hlId && (
+          {shownLevel === 'spots' && !!hlId && (
             <MapboxGL.ShapeSource id="wmPickedSpot" shape={pickedShape}>
               <MapboxGL.SymbolLayer
                 id="wmPickedPin"
