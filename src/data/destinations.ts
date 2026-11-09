@@ -5383,7 +5383,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Grand Canal city with a towering pagoda, a dinosaur theme park and ancient moated ruins.",
     description: "Changzhou is a city of 3.6 million in southern Jiangsu that most travellers pass through between Suzhou and Nanjing. Settlement here goes back to the Spring and Autumn period, when the moated city of Yancheng was founded. Visitors with a spare day find temples and parks along the Grand Canal, a former textile mill turned creative campus and a large dinosaur theme park. The Song poet Su Dongpo and Emperor Qianlong both visited in their day.",
     whyVisit: ["Explore Spring and Autumn period ruins", "Stroll Grand Canal temples and parks"],
-    whyVisitPhotos: ["", ""],
+    whyVisitPhotos: ["", "Tianning Temple, Changzhou 9.jpg"],
     highlights: ["Ancient moated city", "Grand Canal parks"],
     goodToKnow: [
       { icon: "🚆", title: "Easy stop on the rail line", detail: "High-speed trains reach Nanjing or Shanghai in about 1.5 hours, mostly from Changzhou North Station, so a day here fits between them." },
