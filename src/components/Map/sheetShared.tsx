@@ -1709,7 +1709,7 @@ const vcS = StyleSheet.create({
 // One color for the WHOLE rating, keyed off the value chosen (not one color per star index) —
 // a 2-star rating shows both filled stars orange, a 5-star rating shows all five green, etc.,
 // reading at a glance as "bad" → "great" rather than a flat single color regardless of rating.
-const RATING_COLORS: Record<number, string> = {
+export const RATING_COLORS: Record<number, string> = {
   1: '#DC2626', // red
   2: '#F97316', // orange
   3: '#EAB308', // yellow

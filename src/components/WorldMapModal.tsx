@@ -1,20 +1,80 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
+import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { Modal, View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
+import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
+import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import { X } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import CircleFlag from './CircleFlag';
+import CountryPhoto from './CountryPhoto';
+import { flagSource } from '../utils/flags';
 import EntityPhoto from './Map/EntityPhoto';
 import PhotoPlaceholder from './Map/PhotoPlaceholder';
 import { thumbCache, getOrFetchWikiThumbnail } from '../utils/photoCache';
 import { photoSubject } from '../utils/subjectCrop';
 import { NO_PHOTO } from '../data/imageOverrides';
-import { spotPhotoTitle } from '../data/spots';
+import { spotPhotoTitle, spotDestination } from '../data/spots';
 import SpotPinImages, { SPOT_MINI_PIN_VISITED, SPOT_MINI_PIN_PICKED } from './Map/SpotPinImages';
 import { getCountryBounds } from '../utils/countryBounds';
+import { countryCentreLngLat } from '../utils/countryCentre';
 import type { Destination } from '../types';
 import type { Spot } from '../data/spots';
+
+// The map's style: Mapbox Light without its text (country, place, water and road names), so the map shows only what has been
+// visited. Fetched once, as soon as the Profile mounts this (hidden) modal, and kept, so it is ready before the map opens.
+const LIGHT_STYLE = 'mapbox/light-v11';
+let noLabelsStyle: Promise<string | null> | null = null;
+function loadNoLabelsStyle(): Promise<string | null> {
+  noLabelsStyle ??= fetch(`https://api.mapbox.com/styles/v1/${LIGHT_STYLE}?access_token=${process.env.EXPO_PUBLIC_MAPBOX_TOKEN ?? ''}`)
+    .then(r => r.json())
+    .then(style => {
+      const layers: any[] = style.layers ?? [];
+      if (!layers.length) return null;
+      style.layers = layers.filter(l => !(l.type === 'symbol' && l.layout?.['text-field']));
+      return JSON.stringify(style);
+    })
+    .catch(() => { noLabelsStyle = null; return null; });
+  return noLabelsStyle;
+}
+
+// The white fade at the top of the map before the top bar's height has been measured (it then ends at the level bar's
+// bottom edge, so the map shows from right under it).
+const TOP_FADE_H = 96;
+
+// The level switcher's pill slide.
+const LEVEL_SLIDE = { duration: 220, easing: Easing.out(Easing.cubic) };
+
+// A visited country's flag on the Countries level: a circle of its flag inside a white ring, with a faint edge so the white
+// shows on the pale map. The box is a multiple of 4 points (rnmapbox rounds a snapshot up to one, adding the space at the
+// right and bottom, which would push the icon off centre).
+const FLAG_SIZE = 16;
+const FLAG_RING = 2;
+const FLAG_BOX = 24;
+const FLAG_IMAGE_PREFIX = 'wmflag:';
+const FlagImage = memo(function FlagImage({ code }: { code: string }) {
+  const imageRef = useRef<{ refresh: () => void } | null>(null);
+  // The snapshot is taken from the view as drawn: again once the flag has loaded, and shortly after mount in case.
+  const refresh = () => imageRef.current?.refresh();
+  useEffect(() => {
+    const t1 = setTimeout(refresh, 60), t2 = setTimeout(refresh, 500);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
+  const outer = FLAG_SIZE + FLAG_RING * 2 + 2;
+  return (
+    <MapboxGL.Image name={FLAG_IMAGE_PREFIX + code} ref={imageRef as any}>
+      <View collapsable={false} style={st.flagBox}>
+        <View style={{ width: outer, height: outer, borderRadius: outer / 2, backgroundColor: 'rgba(0,0,0,0.14)', alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ width: outer - 2, height: outer - 2, borderRadius: (outer - 2) / 2, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ width: FLAG_SIZE, height: FLAG_SIZE, borderRadius: FLAG_SIZE / 2, overflow: 'hidden', backgroundColor: '#E5E7EB' }}>
+              <Image source={flagSource(code)} style={{ width: FLAG_SIZE, height: FLAG_SIZE }} resizeMode="cover" onLoad={() => setTimeout(refresh, 30)} />
+            </View>
+          </View>
+        </View>
+      </View>
+    </MapboxGL.Image>
+  );
+});
 
 // The Profile tab's My World map, opened full screen to explore: pinch to zoom, drag to pan, and tap a highlighted country
 // (or, on Destinations and Spots, a dot) for a small card with its name. Deliberately simple next to the Explore tab: no
@@ -29,12 +89,12 @@ const LEVELS: { level: WorldLevel; label: string }[] = [
 
 type Picked =
   | { kind: 'country'; code: string; name: string; dests: number; spots: number }
-  // A destination or spot: its photo (the same small-photo key as the Profile's Explored rows), name, country and flag.
+  // A destination or spot: its photo (the same small-photo key as the Profile's Explored rows), name, flag and spots visited.
   | { kind: 'place'; id: string; name: string; sub: string; code?: string; photoKey: string; photoTitle: string; icon?: string; category?: string };
 
 export default function WorldMapModal({
   visible, onClose, level, onLevelChange, visitedCountryCodes, countryName, dests, spots, countsByCountry, spotsByDest,
-  focusCountry, pickedId,
+  focusCountry, pickedId, levelCounts,
 }: {
   visible: boolean;
   onClose: () => void;
@@ -51,32 +111,81 @@ export default function WorldMapModal({
   focusCountry?: string | null;
   // The destination or spot picked in the Profile's Explored grid: drawn in orange, and a little larger (as is any tapped here).
   pickedId?: string | null;
+  // The number visited at each level, shown beside its name in the level switcher (the Profile bar's own totals).
+  levelCounts: Record<WorldLevel, number>;
 }) {
   const insets = useSafeAreaInsets();
   const mapRef = useRef<MapboxGL.MapView>(null);
   const [picked, setPicked] = useState<Picked | null>(null);
+  // The top bar's height (to the level bar's bottom edge), where the white fade behind it ends.
+  const [topBarH, setTopBarH] = useState<number | null>(null);
+  // The level switcher: a tap moves the green pill and the labels' colours, and switches this map's layers (shownLevel), at
+  // once; the Profile behind is told once the pill has landed (its re-render for the new level, mid-slide, made it stutter).
+  const [shownLevel, setShownLevel] = useState(level);
+  const levelSV = useSharedValue(LEVELS.findIndex(x => x.level === level));
+  // Each level's place and width in the bar (they size to their text), measured; the pill moves and resizes between them as
+  // levelSV runs from one index to the next.
+  const levelBoxesSV = useSharedValue<{ x: number; w: number }[]>([]);
+  const levelPillStyle = useAnimatedStyle(() => {
+    const b = levelBoxesSV.value;
+    if (b.length < LEVELS.length) return { opacity: 0 };
+    const i = Math.max(0, Math.min(LEVELS.length - 1, levelSV.value)), lo = Math.floor(i), hi = Math.min(LEVELS.length - 1, lo + 1), t = i - lo;
+    return { opacity: 1, left: b[lo].x + (b[hi].x - b[lo].x) * t, width: b[lo].w + (b[hi].w - b[lo].w) * t };
+  });
+  // Gathered on the JS side and handed over whole: the three layouts arrive together, and each copying the shared value's
+  // last list (not yet updated by the one before) kept only one of them, so the pill never had all three and stayed hidden.
+  const levelBoxes = useRef<{ x: number; w: number }[]>([]);
+  const measureLevel = (i: number, x: number, w: number) => {
+    levelBoxes.current[i] = { x, w };
+    if (LEVELS.every((_, k) => levelBoxes.current[k])) levelBoxesSV.value = LEVELS.map((_, k) => levelBoxes.current[k]);
+  };
+  const levelSwap = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (levelSwap.current) clearTimeout(levelSwap.current); }, []);
+  // Changed from outside (the Profile's own bar): follow it.
+  useEffect(() => {
+    setShownLevel(level);
+    levelSV.value = withTiming(LEVELS.findIndex(x => x.level === level), LEVEL_SLIDE);
+  }, [level]);
+  const pickLevel = (l: WorldLevel) => {
+    if (l === shownLevel) return;
+    Haptics.selectionAsync();
+    setPicked(null);
+    setShownLevel(l);
+    levelSV.value = withTiming(LEVELS.findIndex(x => x.level === l), LEVEL_SLIDE);
+    if (levelSwap.current) clearTimeout(levelSwap.current);
+    levelSwap.current = setTimeout(() => { levelSwap.current = null; onLevelChange(l); }, LEVEL_SLIDE.duration);
+  };
+  // null until fetched; '' if it could not be (the plain Light style, labels and all, rather than no map).
+  const [styleJSON, setStyleJSON] = useState<string | null>(null);
+  useEffect(() => {
+    let live = true;
+    loadNoLabelsStyle().then(j => { if (live) setStyleJSON(j ?? ''); });
+    return () => { live = false; };
+  }, [visible]);
 
   const points = useMemo((): GeoJSON.FeatureCollection => ({
     type: 'FeatureCollection',
-    features: level === 'destinations'
+    features: shownLevel === 'destinations'
       ? dests.map(d => ({
         type: 'Feature', geometry: { type: 'Point', coordinates: [d.coordinates.longitude, d.coordinates.latitude] },
-        properties: { id: d.id, name: d.name, sub: d.country, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
+        properties: { id: d.id, name: d.name, code: d.countryCode, spots: spotsByDest.get(d.id) ?? 0,
           photoKey: `pick_${d.id}`, photoTitle: d.name, icon: d.icon, category: d.category },
       }))
-      : level === 'spots'
-        ? spots.map(({ spot, country, countryCode }) => ({
+      : shownLevel === 'spots'
+        ? spots.map(({ spot, countryCode }) => ({
           type: 'Feature', geometry: { type: 'Point', coordinates: [spot.coordinates.longitude, spot.coordinates.latitude] },
-          properties: { id: spot.id, name: spot.name, sub: country, code: countryCode ?? '',
+          properties: { id: spot.id, name: spot.name, code: countryCode ?? '', destName: spotDestination(spot)?.name ?? '',
             photoKey: `pick_spot_${spot.id}`, photoTitle: spotPhotoTitle(spot), icon: spot.icon, category: spot.category },
         }))
         : [],
-  }), [level, dests, spots, spotsByDest]);
+  }), [shownLevel, dests, spots, spotsByDest]);
 
   // The card for a destination or spot feature: its photo, name, and country (with how many spots are visited, for a destination).
   const placeCard = (pr: Record<string, any>): Picked => {
     const n = Number(pr.spots ?? 0);
-    const sub = n > 0 ? `${pr.sub} · ${n} spot${n === 1 ? '' : 's'} visited` : pr.sub;
+    // The country is the flag before the name; the line under it is a destination's spots visited, or the destination a
+    // spot belongs to (none for a standalone spot).
+    const sub = pr.destName ? String(pr.destName) : n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : '';
     return { kind: 'place', id: pr.id, name: pr.name, sub, code: pr.code || undefined,
       photoKey: pr.photoKey, photoTitle: pr.photoTitle, icon: pr.icon, category: pr.category };
   };
@@ -86,15 +195,15 @@ export default function WorldMapModal({
     const f = points.features.find(x => x.properties?.id === pickedId);
     if (f?.properties) setPicked(placeCard(f.properties));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible, pickedId, level]);
+  }, [visible, pickedId, shownLevel]);
 
   // A tap: whatever highlighted feature is under the finger (a dot first, then a visited country), else nothing.
   const onMapPress = async (e: any) => {
     const x = e?.properties?.screenPointX, y = e?.properties?.screenPointY;
     if (x == null || y == null || !mapRef.current) { setPicked(null); return; }
     try {
-      if (level !== 'countries') {
-        const hit = await mapRef.current.queryRenderedFeaturesAtPoint([x, y], undefined, [level === 'spots' ? 'wmPins' : 'wmDots']);
+      if (shownLevel !== 'countries') {
+        const hit = await mapRef.current.queryRenderedFeaturesAtPoint([x, y], undefined, [shownLevel === 'spots' ? 'wmPins' : 'wmDots']);
         const f = hit?.features?.[0];
         if (f) {
           Haptics.selectionAsync();
@@ -117,6 +226,13 @@ export default function WorldMapModal({
 
   // The place drawn orange: the one tapped here (its card is open), else the one picked in the Profile's grid.
   const hlId = picked?.kind === 'place' ? picked.id : pickedId ?? null;
+  const flagPoints = useMemo((): GeoJSON.FeatureCollection => ({
+    type: 'FeatureCollection',
+    features: visitedCountryCodes.flatMap(code => {
+      const at = countryCentreLngLat(code);
+      return at ? [{ type: 'Feature' as const, properties: { code }, geometry: { type: 'Point' as const, coordinates: at } }] : [];
+    }),
+  }), [visitedCountryCodes]);
   const pickedShape = useMemo((): GeoJSON.FeatureCollection => ({
     type: 'FeatureCollection', features: points.features.filter(f => f.properties?.id === hlId),
   }), [points, hlId]);
@@ -135,7 +251,7 @@ export default function WorldMapModal({
     return {
       bounds: {
         ne: [Math.max(...lons) + pad, Math.max(...lats) + pad], sw: [Math.min(...lons) - pad, Math.min(...lats) - pad],
-        paddingTop: 120, paddingBottom: 120, paddingLeft: 40, paddingRight: 40,
+        paddingTop: 190, paddingBottom: 120, paddingLeft: 40, paddingRight: 40,   // the top clears the heading and level bar
       },
     };
   }, [focusCountry, dests, spots]);
@@ -145,10 +261,11 @@ export default function WorldMapModal({
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen" onRequestClose={close}>
       <View style={st.root}>
+        {styleJSON !== null && (
         <MapboxGL.MapView
           ref={mapRef}
           style={StyleSheet.absoluteFill}
-          styleURL={MapboxGL.StyleURL.Light}
+          {...(styleJSON ? { styleJSON } : { styleURL: MapboxGL.StyleURL.Light })}
           projection="mercator"
           rotateEnabled={false}
           pitchEnabled={false}
@@ -162,7 +279,7 @@ export default function WorldMapModal({
           onPress={onMapPress}
         >
           <MapboxGL.Camera defaultSettings={startView} minZoomLevel={0} maxZoomLevel={9} animationDuration={0} />
-          {level === 'countries' && visitedCountryCodes.length > 0 && (
+          {shownLevel === 'countries' && visitedCountryCodes.length > 0 && (
             <MapboxGL.VectorSource id="wmCountries" url="mapbox://mapbox.country-boundaries-v1">
               <MapboxGL.FillLayer
                 id="wmCountryFill"
@@ -191,9 +308,25 @@ export default function WorldMapModal({
               />
             </MapboxGL.VectorSource>
           )}
+          {/* Each visited country's flag at its centre (the map has no labels), small and ringed in white. Drawn by the map
+              itself (a symbol layer of FlagImage snapshots), not as views over it: a marker view took the tap, so tapping a
+              flag, the obvious place to tap a country, often did nothing. */}
+          {shownLevel === 'countries' && visitedCountryCodes.length > 0 && (
+            <>
+              <MapboxGL.Images>
+                {visitedCountryCodes.map(code => <FlagImage key={code} code={code} />)}
+              </MapboxGL.Images>
+              <MapboxGL.ShapeSource id="wmFlags" shape={flagPoints}>
+                <MapboxGL.SymbolLayer
+                  id="wmFlagIcons"
+                  style={{ iconImage: ['concat', FLAG_IMAGE_PREFIX, ['get', 'code']] as any, iconAllowOverlap: true, iconIgnorePlacement: true }}
+                />
+              </MapboxGL.ShapeSource>
+            </>
+          )}
           {/* The app's small spot pin (the green, visited one), so spots read differently from destinations' dots. */}
           <SpotPinImages />
-          {level === 'destinations' && (
+          {shownLevel === 'destinations' && (
             <MapboxGL.ShapeSource id="wmPoints" shape={points}>
               <MapboxGL.CircleLayer
                 id="wmDots"
@@ -209,10 +342,12 @@ export default function WorldMapModal({
               />
             </MapboxGL.ShapeSource>
           )}
-          {level === 'spots' && (
+          {shownLevel === 'spots' && (
             <MapboxGL.ShapeSource id="wmSpotPoints" shape={points}>
               <MapboxGL.SymbolLayer
                 id="wmPins"
+                // Not the picked spot: its orange pin (wmPickedPin) is drawn instead, and the green one peeked out behind it.
+                filter={['!=', ['get', 'id'], hlId ?? ''] as any}
                 style={{
                   iconImage: SPOT_MINI_PIN_VISITED,
                   iconAnchor: 'bottom',
@@ -224,7 +359,7 @@ export default function WorldMapModal({
             </MapboxGL.ShapeSource>
           )}
           {/* The picked spot's pin again on top, orange and larger, so it stays visible among the rest. */}
-          {level === 'spots' && !!hlId && (
+          {shownLevel === 'spots' && !!hlId && (
             <MapboxGL.ShapeSource id="wmPickedSpot" shape={pickedShape}>
               <MapboxGL.SymbolLayer
                 id="wmPickedPin"
@@ -239,19 +374,42 @@ export default function WorldMapModal({
             </MapboxGL.ShapeSource>
           )}
         </MapboxGL.MapView>
+        )}
 
+        {/* The top of the map fading to white behind the title and level bar, so they read clearly on any part of the map
+            without a box round them or a glow round the text. */}
+        {/* Sized by this wrapper: the Svg's own width/height props of 100% filled the whole screen, whatever its style said. */}
+        <View pointerEvents="none" style={[st.topFade, { height: topBarH ?? insets.top + TOP_FADE_H }]}>
+          <Svg style={StyleSheet.absoluteFill}>
+            <Defs>
+              <SvgLinearGradient id="wmTopFade" x1="0" y1="0" x2="0" y2="1">
+                <Stop offset="0" stopColor="white" stopOpacity={0.96} />
+                <Stop offset="0.7" stopColor="white" stopOpacity={0.82} />
+                <Stop offset="1" stopColor="white" stopOpacity={0} />
+              </SvgLinearGradient>
+            </Defs>
+            <Rect x="0" y="0" width="100%" height="100%" fill="url(#wmTopFade)" />
+          </Svg>
+        </View>
         {/* Top: close, and the same level selector as the card. */}
-        <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none">
-          <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
-            <X size={18} color="#111827" strokeWidth={2.5} />
-          </Pressable>
+        <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none" onLayout={e => setTopBarH(e.nativeEvent.layout.height)}>
+          {/* What this map is: only the places the user has been, so it is not read as the app's map of everywhere. */}
+          <View style={st.headRow} pointerEvents="box-none">
+            <Pressable style={st.closeBtn} onPress={close} hitSlop={8} accessibilityLabel="Close map">
+              <X size={18} color="#111827" strokeWidth={2.5} />
+            </Pressable>
+            <Text style={st.headTitle} numberOfLines={1} pointerEvents="none">My Travels</Text>
+          </View>
           <View style={st.levels}>
-            {LEVELS.map(({ level: l, label }) => {
-              const on = l === level;
+            <Animated.View pointerEvents="none" style={[st.levelPill, levelPillStyle]} />
+            {LEVELS.map(({ level: l, label }, i) => {
+              const on = l === shownLevel;
               return (
-                <Pressable key={l} style={[st.levelBtn, on && st.levelBtnOn]} hitSlop={4}
-                  onPress={() => { if (!on) { Haptics.selectionAsync(); setPicked(null); onLevelChange(l); } }}>
-                  <Text style={[st.levelTxt, on && st.levelTxtOn]}>{label}</Text>
+                <Pressable key={l} style={st.levelBtn} hitSlop={4} onPress={() => pickLevel(l)}
+                  onLayout={e => measureLevel(i, e.nativeEvent.layout.x, e.nativeEvent.layout.width)}>
+                  <Text style={[st.levelTxt, on && st.levelTxtOn]} numberOfLines={1}>
+                    <Text style={st.levelNum}>{levelCounts[l]}</Text> {label}
+                  </Text>
                 </Pressable>
               );
             })}
@@ -263,12 +421,20 @@ export default function WorldMapModal({
           <View style={[st.card, { bottom: insets.bottom + 16 }]}>
             {picked.kind === 'country' ? (
               <>
-                <CircleFlag countryCode={picked.code} size={30} ring ringWidth={1.5} style={st.flagRing} />
+                {/* The country's header photo (its country sheet's), as the other cards show a place's photo. */}
+                <View style={st.photo}><CountryPhoto key={picked.code} code={picked.code} name={picked.name} /></View>
                 <View style={{ flex: 1 }}>
-                  <Text style={st.cardTitle} numberOfLines={1}>{picked.name}</Text>
-                  <Text style={st.cardSub} numberOfLines={1}>
-                    {picked.dests} destination{picked.dests === 1 ? '' : 's'} · {picked.spots} spot{picked.spots === 1 ? '' : 's'} visited
-                  </Text>
+                  <View style={st.titleRow}>
+                    <CircleFlag countryCode={picked.code} size={16} ring ringWidth={1.5} style={st.titleFlag} />
+                    <Text style={[st.cardTitle, { flexShrink: 1 }]} numberOfLines={1}>{picked.name}</Text>
+                  </View>
+                  {/* What was visited there, leaving out a count of none; nothing at all, and the name sits centred alone. */}
+                  {(picked.dests > 0 || picked.spots > 0) && (
+                    <Text style={st.cardSub} numberOfLines={1}>
+                      {[picked.dests > 0 && `${picked.dests} destination${picked.dests === 1 ? '' : 's'}`,
+                        picked.spots > 0 && `${picked.spots} spot${picked.spots === 1 ? '' : 's'}`].filter(Boolean).join(' · ')}
+                    </Text>
+                  )}
                 </View>
               </>
             ) : (
@@ -287,11 +453,11 @@ export default function WorldMapModal({
                       />}
                 </View>
                 <View style={{ flex: 1 }}>
-                  <Text style={st.cardTitle} numberOfLines={1}>{picked.name}</Text>
-                  <View style={st.subRow}>
-                    {!!picked.code && <CircleFlag countryCode={picked.code} size={13} />}
-                    <Text style={[st.cardSub, { marginTop: 0, flexShrink: 1 }]} numberOfLines={1}>{picked.sub}</Text>
+                  <View style={st.titleRow}>
+                    {!!picked.code && <CircleFlag countryCode={picked.code} size={16} ring ringWidth={1.5} style={st.titleFlag} />}
+                    <Text style={[st.cardTitle, { flexShrink: 1 }]} numberOfLines={1}>{picked.name}</Text>
                   </View>
+                  {!!picked.sub && <Text style={st.cardSub} numberOfLines={1}>{picked.sub}</Text>}
                 </View>
               </>
             )}
@@ -307,18 +473,26 @@ export default function WorldMapModal({
 
 const st = StyleSheet.create({
   root: { flex: 1, backgroundColor: '#EEF2F6' },
-  top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', gap: 10 },
+  flagBox: { width: FLAG_BOX, height: FLAG_BOX, alignItems: 'center', justifyContent: 'center' },
+  top: { position: 'absolute', left: 0, right: 0, top: 0, paddingHorizontal: 16, gap: 12 },
+  headRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  // On the white fade at the top of the map (topFade).
+  headTitle: { flex: 1, fontSize: 24, fontFamily: 'PlayfairDisplay_700Bold', color: '#111827', letterSpacing: -0.3 },
+  topFade: { position: 'absolute', left: 0, right: 0, top: 0 },
   closeBtn: {
     width: 38, height: 38, borderRadius: 19, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center',
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
   },
   levels: {
-    flex: 1, flexDirection: 'row', padding: 3, backgroundColor: 'white', borderRadius: 12,
+    flexDirection: 'row', padding: 3, backgroundColor: 'white', borderRadius: 12,
     shadowColor: '#000', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 4,
   },
-  levelBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 9 },
-  levelBtnOn: { backgroundColor: '#ECFDF5' },
+  // Each level as wide as its text, with the room left over shared equally, so "Destinations" gets more than "Spots".
+  levelBtn: { flexGrow: 1, flexShrink: 1, flexBasis: 'auto', alignItems: 'center', paddingVertical: 8, paddingHorizontal: 8, borderRadius: 9 },
+  // The green highlight, sliding under the chosen level and taking its width (both measured, see levelBoxesSV).
+  levelPill: { position: 'absolute', top: 3, bottom: 3, borderRadius: 9, backgroundColor: '#ECFDF5' },
   levelTxt: { fontSize: 13, fontWeight: '600', color: '#6B7280' },
+  levelNum: { fontWeight: '800' },
   levelTxtOn: { color: '#047857' },
   card: {
     position: 'absolute', left: 16, right: 16, flexDirection: 'row', alignItems: 'center', gap: 12,
@@ -328,6 +502,7 @@ const st = StyleSheet.create({
   cardTitle: { fontSize: 16, fontWeight: '700', color: '#111827' },
   cardSub: { fontSize: 13, color: '#6B7280', marginTop: 2 },
   photo: { width: 52, height: 52, borderRadius: 12, overflow: 'hidden', backgroundColor: '#E5E7EB' },
-  subRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 3 },
-  flagRing: { shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 3 },
+  // A place's country flag before its name, ringed in white with a faint edge so the ring shows on the white card.
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  titleFlag: { borderWidth: StyleSheet.hairlineWidth, borderColor: 'rgba(0,0,0,0.18)' },
 });
