@@ -16,6 +16,23 @@ import { getCountryBounds } from '../utils/countryBounds';
 import type { Destination } from '../types';
 import type { Spot } from '../data/spots';
 
+// The map's style: Mapbox Light without its text (country, place, water and road names), so the map shows only what has been
+// visited. Fetched once, as soon as the Profile mounts this (hidden) modal, and kept, so it is ready before the map opens.
+const LIGHT_STYLE = 'mapbox/light-v11';
+let noLabelsStyle: Promise<string | null> | null = null;
+function loadNoLabelsStyle(): Promise<string | null> {
+  noLabelsStyle ??= fetch(`https://api.mapbox.com/styles/v1/${LIGHT_STYLE}?access_token=${process.env.EXPO_PUBLIC_MAPBOX_TOKEN ?? ''}`)
+    .then(r => r.json())
+    .then(style => {
+      const layers: any[] = style.layers ?? [];
+      if (!layers.length) return null;
+      style.layers = layers.filter(l => !(l.type === 'symbol' && l.layout?.['text-field']));
+      return JSON.stringify(style);
+    })
+    .catch(() => { noLabelsStyle = null; return null; });
+  return noLabelsStyle;
+}
+
 // The Profile tab's My World map, opened full screen to explore: pinch to zoom, drag to pan, and tap a highlighted country
 // (or, on Destinations and Spots, a dot) for a small card with its name. Deliberately simple next to the Explore tab: no
 // sheets, no pins with photos, no rotation or tilt.
@@ -55,6 +72,13 @@ export default function WorldMapModal({
   const insets = useSafeAreaInsets();
   const mapRef = useRef<MapboxGL.MapView>(null);
   const [picked, setPicked] = useState<Picked | null>(null);
+  // null until fetched; '' if it could not be (the plain Light style, labels and all, rather than no map).
+  const [styleJSON, setStyleJSON] = useState<string | null>(null);
+  useEffect(() => {
+    let live = true;
+    loadNoLabelsStyle().then(j => { if (live) setStyleJSON(j ?? ''); });
+    return () => { live = false; };
+  }, [visible]);
 
   const points = useMemo((): GeoJSON.FeatureCollection => ({
     type: 'FeatureCollection',
@@ -145,10 +169,11 @@ export default function WorldMapModal({
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen" onRequestClose={close}>
       <View style={st.root}>
+        {styleJSON !== null && (
         <MapboxGL.MapView
           ref={mapRef}
           style={StyleSheet.absoluteFill}
-          styleURL={MapboxGL.StyleURL.Light}
+          {...(styleJSON ? { styleJSON } : { styleURL: MapboxGL.StyleURL.Light })}
           projection="mercator"
           rotateEnabled={false}
           pitchEnabled={false}
@@ -239,6 +264,7 @@ export default function WorldMapModal({
             </MapboxGL.ShapeSource>
           )}
         </MapboxGL.MapView>
+        )}
 
         {/* Top: close, and the same level selector as the card. */}
         <View style={[st.top, { paddingTop: insets.top + 8 }]} pointerEvents="box-none">
