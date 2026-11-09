@@ -633,6 +633,10 @@ export default function ProfileScreen() {
         </Animated.View>
       </View>
       </View>
+      {/* Everything below the selector on the page's own colour: the profile header is fixed behind the page, and through
+          a see-through page it showed below the bar as the page scrolled up over it. Reaching up under the card's bottom
+          margin, so no strip of the header shows between the card and the page either. */}
+      <View style={styles.pageBelow}>
       <View style={{ height: pinned && selectorH > 0 ? Math.max(0, selectorH - (COMPACT_H + TABS_H)) : 0 }} pointerEvents="none" />
 
       {/* The level's sections, fading out from the tap and back in with the new level (see selectMode). */}
@@ -791,6 +795,7 @@ export default function ProfileScreen() {
         </View>
       )}
       </Animated.View>
+      </View>
     </Animated.ScrollView>
     {editTap && !!editFrame && (
       <Pressable
@@ -1334,6 +1339,7 @@ const TABS_H = 36;
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F9FAFB' },
+  pageBelow: { backgroundColor: '#F9FAFB', marginTop: -12, paddingTop: 12 },
 
   // Profile header
   // The avatar centred, the name and the line under it centred below.
