@@ -79,9 +79,10 @@ const MOUNT_SLIDE_DELAY_MS = 80;   // see transitionTo: the slide-in waits out t
 // The slide-in on mount: a little slower than a snap (SNAP_CONFIG's 280 ms), and after the mount frames, so it reads as one
 // steady rise rather than one whose start was swallowed by the frames that build the sheet.
 const MOUNT_SLIDE_CONFIG = { duration: 360, easing: Easing.out(Easing.cubic) };
-// When the slide-in has landed, from mount: MapScreen holds the spot's camera move until then (a camera flying under the
-// slide made it stutter).
-export const SPOT_SHEET_SLIDE_IN_MS = MOUNT_SLIDE_DELAY_MS + MOUNT_SLIDE_CONFIG.duration;
+// When the slide-in starts (from mount) and how long it runs: MapScreen times the spot's camera move from these (a camera
+// flying under the fast part of the slide made it stutter).
+export const SPOT_SHEET_SLIDE_IN_START_MS = MOUNT_SLIDE_DELAY_MS;
+export const SPOT_SHEET_SLIDE_IN_DURATION_MS = MOUNT_SLIDE_CONFIG.duration;
 // Tab-panel slide — matches DestinationSheet's own TAB_SLIDE_CONFIG (a plain tween, not the
 // spring this used before switching to Reanimated): no overshoot on switching or settling.
 const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
