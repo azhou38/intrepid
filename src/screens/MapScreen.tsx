@@ -1098,6 +1098,7 @@ const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number]
 // 'auto'. Closed height is exactly MAP_PILL_BTN (a true circle); open height adds the
 // divider + two option rows beneath it.
 const CRUMB_PILL_H        = 40;   // the breadcrumb pill's height (see styles.breadcrumbPillWhite)
+const CRUMB_SWAP_FADE_MS  = 200;  // the breadcrumb fading out as it was, on a new selection or an X close (see crumbFrozenRef)
 const MAP_PILL_BTN        = 44;   // also the pill's fixed width throughout
 const MAP_PILL_OPTION_H   = 44;
 const MAP_PILL_DIVIDER_H  = StyleSheet.hairlineWidth;
@@ -2249,6 +2250,13 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Track visible state so we don't restart an in-progress animation on every camera frame
   const returnPromptVisibleRef     = useRef(false);
   const destReturnPromptVisibleRef = useRef(false);
+  // While the breadcrumb fades out on a selection change (another destination tapped at bottom-screen, or an X close), it
+  // keeps exactly what it showed at the tap: its name (frozenCrumb) and its return arrows (no prompt may open or close
+  // them meanwhile). Otherwise the camera leaving for the new view opened the arrow, or the new name showed, mid-fade.
+  const crumbFrozenRef = useRef(false);
+  const frozenCrumbFadeRef = useRef(false);   // a fadeCrumbForNewSelection is running (it unfreezes when done)
+  const crumbFadeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [frozenCrumb, setFrozenCrumb] = useState<{ name: string; country: string; countryCode: string; standalone: boolean } | null>(null);
   const worldPillScale  = useMemo(() => worldPillAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
   const breadcrumbScale = useMemo(() => breadcrumbAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
   // The breadcrumbs' return arrows. Nothing about them changes the layout: animating the arrow's width (0→20 pt) laid the
@@ -2292,6 +2300,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const hasBreadcrumb = !!(selectedCountry || selectedDest || selectedSpot);
   useLayoutEffect(() => {
     if (hasBreadcrumb) return;
+    crumbFrozenRef.current = false;
+    setFrozenCrumb(null);
     crumbWidthSV.value = 0;
     crumbPeekSV.value = 0;
     sheetCollapsedSV.value = 1;
@@ -2356,14 +2366,14 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // Fallback for state-driven transitions (e.g. selectedCountry changes while map is static).
     // The ref guard prevents restarting an animation already triggered by handleCameraChanged.
     if (showReturnPrompt === returnPromptVisibleRef.current) return;
-    if (isMapInteracting()) return;
+    if (isMapInteracting() || crumbFrozenRef.current) return;
     returnPromptVisibleRef.current = showReturnPrompt;
     returnPromptProgress.value = withTiming(showReturnPrompt ? 1 : 0, showReturnPrompt ? { duration: CRUMB_ARROW_MS, easing: Easing.out(Easing.cubic) } : { duration: 200 });
   }, [showReturnPrompt, returnPromptProgress, mapIdleTick]);
 
   useEffect(() => {
     if (showDestReturnPrompt === destReturnPromptVisibleRef.current) return;
-    if (isMapInteracting()) return;
+    if (isMapInteracting() || crumbFrozenRef.current) return;
     destReturnPromptVisibleRef.current = showDestReturnPrompt;
     destReturnPromptProgress.value = withTiming(showDestReturnPrompt ? 1 : 0, showDestReturnPrompt ? { duration: CRUMB_ARROW_MS, easing: Easing.out(Easing.cubic) } : { duration: 200 });
   }, [showDestReturnPrompt, destReturnPromptProgress, mapIdleTick]);
@@ -3161,6 +3171,38 @@ const destItems = useMemo((): DestItem[] =>
     }
     return selectedDest ? { name: selectedDest.name, country: selectedDest.country, countryCode: selectedDest.countryCode, standalone: false } : null;
   })();
+  const crumbRef = useRef(crumb);
+  crumbRef.current = crumb;
+  const shownCrumb = frozenCrumb ?? crumb;
+  // Fades the breadcrumb out as it is (see crumbFrozenRef) when another destination is tapped while it shows at
+  // bottom-screen: the new destination opens at half-screen, where there is none. Snapping it off, or easing it out while
+  // it already named the new destination and its arrow reset, read as a flash. Then its inputs are set for half-screen.
+  const fadeCrumbForNewSelection = useCallback(() => {
+    frozenCrumbFadeRef.current = true;
+    crumbFrozenRef.current = true;
+    setFrozenCrumb(crumbRef.current);
+    sheetCollapsedSV.value = withTiming(1, { duration: CRUMB_SWAP_FADE_MS, easing: Easing.out(Easing.quad) });
+    // Ended by a timer, not the fade's own callback: the new sheet reports its half-screen snap as it mounts, which
+    // restarts sheetCollapsedSV's animation, so that callback ran unfinished and the breadcrumb stayed frozen on the old
+    // destination.
+    if (crumbFadeTimerRef.current) clearTimeout(crumbFadeTimerRef.current);
+    crumbFadeTimerRef.current = setTimeout(() => { crumbFadeTimerRef.current = null; endCrumbFade(); }, CRUMB_SWAP_FADE_MS + 20);
+  }, []);
+  // An X close: the breadcrumb fades out at the tap, as it is, while the sheet slides off. Left to the close, it stayed up
+  // while the camera zoomed out, its return arrow opening (the camera leaving the destination), and only then faded.
+  const fadeCrumbForClose = useCallback(() => {
+    crumbFrozenRef.current = true;
+    setFrozenCrumb(crumbRef.current);
+    Animated.timing(breadcrumbAnim, { toValue: 0, duration: CRUMB_SWAP_FADE_MS, easing: RNEasing.out(RNEasing.quad), useNativeDriver: true }).start();
+  }, [breadcrumbAnim]);
+  const endCrumbFade = useCallback(() => {
+    frozenCrumbFadeRef.current = false;
+    crumbFrozenRef.current = false;
+    setFrozenCrumb(null);
+    crumbPeekSV.value = 0;
+    returnPromptProgress.value = 0; returnPromptVisibleRef.current = false;
+    destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
+  }, []);
   const visibleSpots = useMemo(() => {
     // Coarse OUTER gate: is the camera at or past ANY destination's own default zoom at all?
     // (MIN_DEST_ZOOM_LEVEL is the loosest of the 45 — the earliest any destination's spots
@@ -3868,6 +3910,8 @@ const destItems = useMemo((): DestItem[] =>
   // its members by stopping their VALUES (a spring's stop() is value.stopAnimation()), which halted the new springs too,
   // and the search bar was left resting half-transparent after a sheet's X.
   const showBreadcrumb = useCallback((show: boolean) => {
+    // A new selection (one made while an X close was still under way, say) brings the breadcrumb back as it now is.
+    if (show && !frozenCrumbFadeRef.current) { crumbFrozenRef.current = false; setFrozenCrumb(null); }
     Animated.spring(worldPillAnim, { toValue: show ? 0 : 1, damping: 22, stiffness: 280, useNativeDriver: true }).start();
     Animated.spring(breadcrumbAnim, { toValue: show ? 1 : 0, damping: 22, stiffness: 280, useNativeDriver: true }).start();
   }, [worldPillAnim, breadcrumbAnim]);
@@ -4387,7 +4431,10 @@ const destItems = useMemo((): DestItem[] =>
     // The new destination opens at half-screen, where there is no breadcrumb. The gate's inputs normally ease over the
     // sheet's slide, which left a breadcrumb that was already showing (the map had been panned, or a country prompt was
     // up) visible for that fade — a flash — so they snap to their half-screen values here instead.
-    if (!openPeeked) {
+    // Unless it was showing (the old sheet at bottom-screen): then it fades out as it was (fadeCrumbForNewSelection).
+    const crumbShowing = sheetCollapsedSV.value < 0.5 && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, crumbPeekSV.value) > 0.05;
+    if (!openPeeked && crumbShowing) fadeCrumbForNewSelection();
+    else if (!openPeeked) {
       crumbPeekSV.value = 0;
       sheetCollapsedSV.value = 1;
       returnPromptProgress.value = 0; returnPromptVisibleRef.current = false;
@@ -4396,7 +4443,7 @@ const destItems = useMemo((): DestItem[] =>
     // setDestHomeToDefault) — not captured from wherever the camera first comes to rest, which a
     // quick pan/zoom before the flight settled used to turn into the wrong home (no arrow).
     setDestHomeToDefault(dest, 'topHalf');
-    destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
+    if (!frozenCrumbFadeRef.current) { destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false; }
     // Suppresses prompt evaluation while the flight is still on its way to home (the camera is
     // legitimately "away" until it lands). A user gesture ends this early — see
     // handleCameraChanged — since from then on the camera is theirs.
@@ -4410,7 +4457,7 @@ const destItems = useMemo((): DestItem[] =>
     fitDestinationDefaultView(dest, 'flyTo', 'topHalf');
     // Reads region via regionRef (not a dep) so this callback stays stable across pans and
     // doesn't bust the memoized destination-pin marker list.
-  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault, beginDestTapPlan, destDefaultCamera]);
+  }, [selectedCountry, showBreadcrumb, animateCamera, dropCountryIfForeign, setDestHomeToDefault, beginDestTapPlan, destDefaultCamera, fadeCrumbForNewSelection]);
 
   const handleSheetExpand = useCallback(() => setMapState('sheet'), []);
   const handleCloseSheet = useCallback(() => {
@@ -4954,8 +5001,12 @@ const destItems = useMemo((): DestItem[] =>
     const framing = sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf';
     setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
-    fitDestinationDefaultView(selectedDest, 'flyTo', framing);
-  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault, releaseSpotCloseTarget]);
+    // From the destination's default zoom or closer in, an ease (no zoom-out arc): flyTo swings out in mid-flight, below
+    // the destination's zoom, so its pin came back over the spot pins for a moment and then faded away again on landing.
+    // From further out, the fly still reads best (a long way in).
+    const atOrInside = !isZoomedOutBeyond(destDefaultCamera(selectedDest, framing).zoom);
+    fitDestinationDefaultView(selectedDest, atOrInside ? 'easeTo' : 'flyTo', framing);
+  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault, releaseSpotCloseTarget, isZoomedOutBeyond, destDefaultCamera]);
 
   // opts.cameraStarted: see handleCloseSpotToDestinationView.
   const handleCloseCountry = useCallback((opts?: { cameraStarted?: boolean }) => {
@@ -5173,6 +5224,7 @@ const destItems = useMemo((): DestItem[] =>
     if (pressBlocked()) return;
     if (sheetExitingRef.current) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    fadeCrumbForClose();
     const close = selectedSpot ? handleCloseSpotToDestinationView
       : selectedDest ? handleCloseDestinationToCountryView
       : handleCloseCountry;
@@ -5203,7 +5255,7 @@ const destItems = useMemo((): DestItem[] =>
     const run = () => { xClosePendingRef.current = false; if (stillFrom()) close({ cameraStarted }); };
     // From full-screen there is no slide: the close runs after the plan's own render.
     closeWithSheetExit(sheetSnapStateRef.current === 'full' ? () => { afterCommitRef.current = run; } : run);
-  }, [selectedSpot, selectedDest, handleCloseSpotToDestinationView, handleCloseDestinationToCountryView, handleCloseCountry, closeWithSheetExit, xCloseTargetZoom, beginBackPlan, startXCloseCamera]);
+  }, [selectedSpot, selectedDest, handleCloseSpotToDestinationView, handleCloseDestinationToCountryView, handleCloseCountry, closeWithSheetExit, xCloseTargetZoom, beginBackPlan, startXCloseCamera, fadeCrumbForClose]);
 
   // Back pill, while the country/destination sheet is full-screen: instead of navigating up
   // a level, just collapse the currently open sheet to its bottom-screen carousel view.
@@ -5448,7 +5500,7 @@ const destItems = useMemo((): DestItem[] =>
       visibleRef: React.MutableRefObject<boolean>,
       progress: Reanimated.SharedValue<number>,
     ) => {
-      if (shouldShow === visibleRef.current) return;
+      if (shouldShow === visibleRef.current || crumbFrozenRef.current) return;
       visibleRef.current = shouldShow;
       progress.value = withTiming(shouldShow ? 1 : 0, { duration: shouldShow ? 250 : 200 });
     };
@@ -6757,7 +6809,7 @@ const destItems = useMemo((): DestItem[] =>
           }}
           pointerEvents="box-none"
         >
-          {crumb?.standalone ? (
+          {shownCrumb?.standalone ? (
             /* Standalone spot: its country alone (it has no destination to name). A tap flies to the country's default
                view, like the country segment of the destination breadcrumb. */
             <Pressable
@@ -6770,13 +6822,13 @@ const destItems = useMemo((): DestItem[] =>
               <View style={styles.breadcrumbPillRow}>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
-                    <Image source={flagSource(crumb.countryCode)} style={styles.bcFlagImg} resizeMode="cover" />
+                    <Image source={flagSource(shownCrumb.countryCode)} style={styles.bcFlagImg} resizeMode="cover" />
                   </View>
                 </View>
-                <Text style={styles.breadcrumbTxtLight}>{crumb.country}</Text>
+                <Text style={styles.breadcrumbTxtLight}>{shownCrumb.country}</Text>
               </View>
             </Pressable>
-          ) : crumb ? (
+          ) : shownCrumb ? (
             /* Destination view: single white pill (fixed height) so black segment overflows below */
             <View style={styles.breadcrumbPillWhite} onLayout={e => { crumbWidthSV.value = e.nativeEvent.layout.width; }}>
               <Reanimated.View pointerEvents="none" style={[styles.crumbWhiteBg, { right: CRUMB_ARROW_SLOT }, destCrumbLeft]} />
@@ -6785,13 +6837,13 @@ const destItems = useMemo((): DestItem[] =>
                 <View style={styles.bcFlagCircle}>
                   <View style={styles.bcFlagClip}>
                     <Image
-                      source={flagSource(crumb.countryCode)}
+                      source={flagSource(shownCrumb.countryCode)}
                       style={styles.bcFlagImg}
                       resizeMode="cover"
                     />
                   </View>
                 </View>
-                <Text style={styles.breadcrumbTxtDark}>{crumb.country}</Text>
+                <Text style={styles.breadcrumbTxtDark}>{shownCrumb.country}</Text>
               </AnimatedPressable>
               <Pressable style={styles.breadcrumbSegmentActive} onPress={handleResetToDest} hitSlop={6}>
                 <Reanimated.View pointerEvents="none" style={[styles.crumbBlackBg, { right: CRUMB_ARROW_SLOT }, destCrumbLeft]} />
@@ -6800,7 +6852,7 @@ const destItems = useMemo((): DestItem[] =>
                   <CornerUpLeft size={14} color="rgba(255,255,255,0.9)" strokeWidth={2.5} />
                 </Reanimated.View>
                 <Reanimated.View style={[styles.breadcrumbPillRow, destCrumbRight]}>
-                  <Text style={styles.breadcrumbTxtLight} numberOfLines={1} ellipsizeMode="tail">{crumb.name}</Text>
+                  <Text style={styles.breadcrumbTxtLight} numberOfLines={1} ellipsizeMode="tail">{shownCrumb.name}</Text>
                 </Reanimated.View>
               </Pressable>
             </View>
