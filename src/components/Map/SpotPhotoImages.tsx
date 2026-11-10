@@ -41,7 +41,7 @@ const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 // The selected spot's highlight: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, a
 // light-medium grey pin round the photo (its rim and its whole tail, the photo itself untouched), with a slight halo hugging
-// its outline (three white rings, about 4 pt in all: a wider one looked unnatural) over the soft shadow of the photo pin
+// its outline (three very light grey rings, about 4 pt in all: a wider one looked unnatural) over the soft shadow of the photo pin
 // under it, and thin dark borders round the photo and round the pin. One image for every spot, so selecting one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
 // The same for a visited spot, with a small green tick badge on the bubble's top right (the tick of the app's "Visited" tags),
@@ -49,9 +49,9 @@ export const SPOT_SELECTED_RING = 'spotselring';
 export const SPOT_SELECTED_RING_VISITED = 'spotselring:visited';
 const SELECTED_RING_COLOR = '#9CA3AF';   // light-medium grey (orange was #F97316)
 const SELECTED_RING_W = 2.5;
-// The halo: rings just outside the pin's outline (distance beyond it, opacity), in white.
+// The halo: rings just outside the pin's outline (distance beyond it, opacity), in a very light grey (white looked too bright).
 const HALO: [number, number][] = [[1.2, 0.95], [2.4, 0.65], [3.6, 0.3]];
-const HALO_COLOR = '#FFFFFF';
+const HALO_COLOR = '#E5E7EB';
 // The thin dark borders round the photo and round the pin.
 const SELECTED_EDGE = '#374151';
 const SELECTED_EDGE_W = 0.6;
