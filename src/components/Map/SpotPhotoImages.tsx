@@ -54,7 +54,7 @@ const HALO: [number, number][] = [[1.3, 0.28], [2.6, 0.12]];
 const HALO_COLOR = '#374151';
 // The thin dark borders round the photo and round the pin.
 const SELECTED_EDGE = '#374151';
-const SELECTED_EDGE_W = 0.8;
+const SELECTED_EDGE_W = 0.6;
 // The pin's teardrop outline, d beyond the bubble's edge: an arc over the top of the bubble between the tail's tangent
 // points, then down to the tip, moved out by half as much (the image ends just below the pin's tip).
 function teardrop(cx: number, cy: number, d: number): string {
