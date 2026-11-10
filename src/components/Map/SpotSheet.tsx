@@ -1093,10 +1093,11 @@ function SpotSheet({
       // An upward drag is heading for full screen: mount the full-screen content now (revealPanels), while the finger is
       // still moving, instead of when the sheet arrives. A swipe up within ~a second of opening used to land on a blank
       // white sheet while that content was mounted.
-      if (e.translationY < -10 && !revealAskedSV.value) { revealAskedSV.value = true; runOnJS(revealPanels)(); }
       // Defense-in-depth mirror of the old directional check — activeOffsetY/failOffsetX
       // should already guarantee this, but costs nothing to double-check.
       if (Math.abs(e.translationX) >= Math.abs(e.translationY)) return;
+      // After the directional check: a sideways carousel swipe drifting upward mounted the full-screen content too.
+      if (e.translationY < -10 && !revealAskedSV.value) { revealAskedSV.value = true; runOnJS(revealPanels)(); }
       // Full-screen: only let this gesture pull the sheet down once its inner ScrollView is
       // already scrolled to the top. The translationY threshold used to be 6 — easily crossed
       // by a few pixels of ordinary touch movement while scrolling content that's already at
@@ -1122,6 +1123,10 @@ function SpotSheet({
     })
     .onEnd(e => {
       if (mapGestureAtSV && Date.now() - mapGestureAtSV.value < 400) { runOnJS(callSnapBack)(); return; }
+      // A gesture that never moved the sheet (a mostly sideways swipe across the carousel that drifted past activeOffsetY:
+      // onUpdate ignored it) changes nothing. Its upward flick speed alone sent the sheet to full screen, blank while its
+      // content mounted.
+      if (!dragEngagedSV.value) return;
       const pos = lastPos.value + e.translationY;
       if (snapStateSV.value === 'peek') {
         // Same as the Explore sheet: a drag carried past the half-screen position commits straight to full-screen
@@ -1136,9 +1141,6 @@ function SpotSheet({
         else if (e.velocityY > 500 || pos > COLLAPSED_Y + 40) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
         else (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
       } else {
-        // Full-screen: a gesture that never actually engaged (e.g. it never got past the
-        // "scrolled to top" gate) shouldn't change the sheet's snap state at all.
-        if (!dragEngagedSV.value) return;
         // Carried past the half-screen position: straight down to the bottom view, like the Explore sheet.
         if (pos >= COLLAPSED_Y) (snapUI('peek'), runOnJS(callSnapToPeekUI)());
         else if (e.velocityY > 800 || pos > H * 0.25) (snapUI('collapsed'), runOnJS(callSnapToCollapsedUI)());
