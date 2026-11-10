@@ -1,0 +1,114 @@
+{
+ "hangzhou-4": {
+  "lat": 30.22417,
+  "lon": 120.10699,
+  "confidence": "HIGH",
+  "source": "OSM n13371708831 amenity=cafe 龙井茶室 (30.22417,120.10699) + Commons geotagged 龙井问茶 files (30.22417,120.107013); matches hint",
+  "feature": "cafe/tea house at Longjing Wencha",
+  "note": "Visitor hub of the Longjing tea-field area; fields surround it."
+ },
+ "hangzhou-28": {
+  "lat": 30.2421975,
+  "lon": 120.1639863,
+  "confidence": "MEDIUM",
+  "source": "Nominatim OSM way/516415152 name 胡庆余堂 (building, 95 Dajing Lane); also node/5018661864 pharmacy 30.24226,120.16442",
+  "feature": "building",
+  "note": "Hu Qing Yu Tang Chinese Medicine Museum, Qinghefang. Two OSM features within 30 m; no independent second source."
+ },
+ "anji-7": {
+  "lat": 30.6717633,
+  "lon": 119.6416327,
+  "confidence": "MEDIUM",
+  "source": "Photon/OSM node/12819666537 tourism=museum 浙江自然博物馆安吉馆",
+  "feature": "museum node",
+  "note": "Hint (30.67318,119.640945) is ~170 m north; OSM museum node used."
+ },
+ "jiaxing-4": {
+  "lat": 30.7735331,
+  "lon": 120.7461061,
+  "confidence": "MEDIUM",
+  "source": "Nominatim OSM way/1030903883 landuse=commercial 月河街区 centroid; 月河码头 ferry terminal node/8824069240 at 30.7728,120.7463 and cafe on the street 30.7741,120.7464 sit on it",
+  "feature": "area centroid of historic street district",
+  "note": "Centroid of a small compact street district (~10 m from the street), so usable as the visitor point."
+ },
+ "hengdian-world-studios": {
+  "lat": 29.1766097,
+  "lon": 120.2986613,
+  "confidence": "MEDIUM",
+  "source": "Photon/OSM way/317231689 tourism=theme_park 明清宫苑 (flagship Hengdian studio); neighbours way/1007605015 广州街·香港街 29.17695,120.29283",
+  "feature": "theme_park way centre",
+  "note": "Hengdian World Studios is a cluster of studios; picked the flagship Ming-Qing Palace. Hint (29.179068,120.298083) is ~280 m away within same cluster. OSM node 'amenity=studio' 横店影视城 at 29.1454,120.3104 is the town, not used."
+ },
+ "longquan-3": {
+  "lat": 28.0581202,
+  "lon": 119.1272557,
+  "confidence": "MEDIUM",
+  "source": "Nominatim OSM node/5137288015 tourism=museum 龍泉青瓷博物馆, 30 Jianchuan Ave",
+  "feature": "museum node",
+  "note": "Equals the hint."
+ },
+ "tongji-weir": {
+  "lat": 28.3072,
+  "lon": 119.7247,
+  "confidence": "HIGH",
+  "source": "zh Wikipedia 通济堰 coords 28.30694,119.72417; Commons geotagged 通济堰/古堰 files (Yantou village) 28.3076,119.7253",
+  "feature": "weir / heritage site",
+  "note": "Midpoint of Wikipedia point and Commons files (~100 m apart)."
+ },
+ "ningbo-7": {
+  "lat": 29.8696,
+  "lon": 121.5392,
+  "confidence": "MEDIUM",
+  "source": "Commons geotagged files on 柳汀 (Liuting) causeway: 瀛洲接武牌坊 29.869646,121.539273; Nominatim park way/62184366 and lake rel/11739816 centroids ~29.8697,121.5395 are the same centroid",
+  "feature": "lakeside causeway landmarks",
+  "note": "Lake and park centroids coincide; chose the central Liuting causeway where visitors stand (牌坊, Guan Gong temple). Within ~30 m of centroid, so it is effectively the centre."
+ },
+ "songlan-mountain-beach": {
+  "lat": 29.4403143,
+  "lon": 121.9666933,
+  "confidence": "HIGH",
+  "source": "OSM way/590770336 natural=beach 松兰山中央沙滩 (29.4403,121.9667) + zh Wikipedia 松兰山 coords 29.44386,121.96786 (~120 m)",
+  "feature": "beach way",
+  "note": "Main (central) beach. Hint is the east beach (way/588989190). Visitor centre is at 29.4281,121.9466 (way/1571225784) if a different pin is wanted."
+ },
+ "quzhou-3": {
+  "lat": 28.879461,
+  "lon": 118.919494,
+  "confidence": "HIGH",
+  "source": "OSM way/856154978 natural=bare_rock 烂柯山 (28.87946,118.91949) + zh Wikipedia 烂柯山 28.87861,118.91917 (~100 m)",
+  "feature": "summit/rock",
+  "note": "Matches hint."
+ },
+ "furong-ancient-village": {
+  "lat": 28.3329,
+  "lon": 120.73019,
+  "confidence": "MEDIUM",
+  "source": "zh Wikipedia 芙蓉村 coords 28.3329,120.73019; hint 28.33328,120.73202 is ~180 m east",
+  "feature": "village",
+  "note": "Single published source; hint within 180 m."
+ },
+ "dongsha-ancient-town": {
+  "lat": 30.3157998,
+  "lon": 122.1391967,
+  "confidence": "MEDIUM",
+  "source": "Photon/OSM node/10727008819 tourism=attraction 东沙古渔镇; zh Wikipedia 东沙菜市场 30.31533,122.14375 (~440 m, same old town)",
+  "feature": "attraction node",
+  "note": "Old fishing town on Zhoushan's Putuo (Dongsha Town)."
+ },
+ "dasha-ao-beach": {
+  "lat": 27.8215115,
+  "lon": 121.1714586,
+  "confidence": "MEDIUM",
+  "source": "Photon/OSM node/13607337573 tourism=attraction 大沙岙 (Wenzhou); beach way/1546274173 大沙岙海滨浴场 at 27.8222,121.1695 (~200 m)",
+  "feature": "attraction node",
+  "note": "Dongtou Island, Wenzhou. Beach way is 200 m west."
+ },
+ "shitang-fishing-village": {
+  "lat": 28.2821474,
+  "lon": 121.6020319,
+  "confidence": "MEDIUM",
+  "source": "OSM node/6144358890 place=town 石塘镇 + zh Wikipedia 石塘镇 28.28185,121.6022 (30 m)",
+  "feature": "town centre",
+  "note": "Town centre of Shitang (Wenling); the stone-house old fishing quarter is in the town, no separate OSM feature found."
+ }
+}

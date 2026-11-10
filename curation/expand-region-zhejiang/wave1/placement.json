@@ -2029,35 +2029,6 @@
    "pin_needed": false
   },
   {
-   "name": "Mawei Waterfall",
-   "action": "spot",
-   "destination": "quzhou",
-   "id": "quzhou-6",
-   "icon": "💧",
-   "category": "nature",
-   "bio": "An 88 m waterfall described as Quzhou's most famous, inside the Yaowang Mountain scenic area.",
-   "visitHoursMin": 1,
-   "visitHoursMax": 2,
-   "coordinates": {
-    "lat": 40.6841403,
-    "lng": 110.8731218
-   },
-   "coordinates_source": "nominatim/wikidata (MEDIUM)",
-   "wiki": null,
-   "cost": null,
-   "costBasis": null,
-   "ticketUrl": null,
-   "needs_research": [
-    "cost",
-    "ticketUrl"
-   ],
-   "reason": "Kept spot; sits inside Yaowang Mountain's area (judge flagged possible overlap, kept as a distinct named sight).",
-   "pin_needed": false,
-   "pin_note": "Skeptic: may be treated as part of Yaowang Mountain.",
-   "region": "zhejiang-quzhou",
-   "zh": "马尾瀑布"
-  },
-  {
    "name": "Mount Jianglang",
    "action": "spot",
    "destination": "jiangshan",
@@ -2438,45 +2409,6 @@
    "zh": "台州博物馆"
   },
   {
-   "name": "Jiufeng Mountain",
-   "action": "spot",
-   "destination": "taizhou",
-   "id": "taizhou-3",
-   "icon": "⛰️",
-   "category": "hike",
-   "bio": "Huangyan hill climbed by stone steps past temples to views over the district, a half-day walk.",
-   "visitHoursMin": 2,
-   "visitHoursMax": 4,
-   "wiki": null,
-   "coordinates": {
-    "lat": 27.3727702,
-    "lng": 112.3234267
-   },
-   "coordinates_source": "nominatim/wikidata (MEDIUM)",
-   "pin_needed": false,
-   "coordinates_hint": {
-    "point": {
-     "lat": 28.6437,
-     "lng": 121.2754
-    },
-    "source": "OSM feature (Nominatim/Overpass, name match): 九峰公园（北门） attraction node",
-    "note": "unverified Nominatim/OSM name match, not a pin"
-   },
-   "cost": null,
-   "costBasis": null,
-   "ticketUrl": null,
-   "needs_research": [
-    "cost",
-    "ticketUrl"
-   ],
-   "currency_hint": "CNY",
-   "reason": "Spot of Taizhou: in the Jiaojiang/Huangyan/Luqiao urban area, within Taizhou's span. Judge: Wikivoyage Do names the Huangyan climb: stone steps, temples, a vegetarian temple restaurant and views; half-day hike.",
-   "views": 0,
-   "counted_sources": 1,
-   "region": "zhejiang-taizhou",
-   "zh": "九峰山"
-  },
-  {
    "name": "Fonte Wild Mainland",
    "action": "spot",
    "destination": "taizhou",
@@ -2514,49 +2446,6 @@
    "counted_sources": 1,
    "region": "zhejiang-taizhou",
    "zh": "台州方特•狂野大陆"
-  },
-  {
-   "name": "Tiantai Mountain",
-   "action": "standalone",
-   "destination": null,
-   "id": "tiantai-mountain",
-   "icon": "⛰️",
-   "category": "nature",
-   "bio": "National 5A scenic area of a box-shaped syncline mountain in Tiantai County, the range that gave Taizhou its name.",
-   "visitHoursMin": 3,
-   "visitHoursMax": 6,
-   "wiki": "Mount Tiantai",
-   "coordinates": {
-    "lat": 40.1310012,
-    "lng": 117.646054
-   },
-   "coordinates_source": "nominatim/wikidata (MEDIUM)",
-   "pin_needed": false,
-   "coordinates_hint": {
-    "point": {
-     "lat": 29.271,
-     "lng": 121.0542
-    },
-    "source": "OSM feature (Nominatim/Overpass, name match): Tiantai Mountain Shiliang Scenic Area ticket way",
-    "note": "unverified Nominatim/OSM name match, not a pin"
-   },
-   "cost": null,
-   "costBasis": null,
-   "ticketUrl": null,
-   "needs_research": [
-    "cost",
-    "ticketUrl"
-   ],
-   "currency_hint": "CNY",
-   "country": "China",
-   "countryCode": "CN",
-   "continent": "Asia",
-   "timezone": "Asia/Shanghai",
-   "reason": "Standalone: only two kept places (this and Guoqing Temple) in the Tiantai area, since its sub-sights (Fangguang, Gaoming, Huading, Qiongtai) are in review; under the four-spot bar. No Wikivoyage Tiantai page. Nearest destination Taizhou is ~70 km away. Judge: Wikivoyage See and travelchinaguide: national 5A box-syncline mountain scenic area, giving Taizhou its name. Wikivoyage geo (30.13,120.65) is wrong; the 29.271,121.054 point is plausible.",
-   "views": 5255,
-   "counted_sources": 1,
-   "region": "zhejiang-taizhou",
-   "zh": "天台山"
   },
   {
    "name": "Guoqing Temple",
