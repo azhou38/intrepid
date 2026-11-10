@@ -39,20 +39,19 @@ const SNAP_AFTER_MS = 60;    // the snapshot after the photo shows
 const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
-// The selected spot's highlight: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, an
-// orange border round the pin's outline (over the top of its bubble's rim and down its tail's edges, not across the bottom
-// of the bubble where the tail meets it), and a soft orange halo round that outline (fading outward, outside the pin only,
-// as this image sits over the photo). Orange is the app's picked-spot colour (the
-// small picked pin, the Profile map). It replaced a slate outline with a solid slate tail, which read as a grey fill. One
-// image for every spot, so selecting one registers nothing new.
+// The selected spot's highlight: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, a
+// light grey border round the pin's outline (over the top of its bubble's rim and down its tail's edges, not across the
+// bottom of the bubble where the tail meets it), and a soft light grey halo round that outline (fading outward, outside the
+// pin only, as this image sits over the photo). It replaced a slate outline with a solid slate tail, which read as a grey
+// fill. One image for every spot, so selecting one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
 // The same for a visited spot, with a small green tick badge on the bubble's top right (the tick of the app's "Visited" tags),
 // as its own green rim is covered by the outline.
 export const SPOT_SELECTED_RING_VISITED = 'spotselring:visited';
-const SELECTED_RING_COLOR = '#F97316';
+const SELECTED_RING_COLOR = '#D1D5DB';   // the app's light grey
 const SELECTED_RING_W = 2.5;
 // The halo: rings outside the bubble, fading as they go out (radius beyond the bubble's edge, opacity).
-const HALO: [number, number][] = [[1.6, 0.42], [3.0, 0.24], [4.4, 0.11]];
+const HALO: [number, number][] = [[1.6, 0.6], [3.0, 0.36], [4.4, 0.16]];
 // The pin's teardrop outline, d beyond (or inside, negative) the bubble's edge: an arc over the top of the bubble between the
 // tail's tangent points, then down to the tip, moved out by half as much (the image ends just below the pin's tip).
 function teardrop(cx: number, cy: number, d: number): string {
