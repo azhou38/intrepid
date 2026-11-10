@@ -116,7 +116,7 @@ import PinPhoto from '../components/Map/PinPhoto';
 import { VisitToastHost } from '../components/Map/VisitToast';
 import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
-import SpotSheet from '../components/Map/SpotSheet';
+import SpotSheet, { SPOT_SHEET_SLIDE_IN_MS } from '../components/Map/SpotSheet';
 import CountrySheet, { COUNTRY_MOUNT_SLIDE_DELAY_MS } from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
@@ -1334,7 +1334,7 @@ const BACK_CAMERA_DELAY_MS = 220;   // spot back to its destination: the zoom-ou
 // (its 40 ms mount delay and 280 ms slide, with a margin), so the jump's renders come after the slide (see handleCloseSpotToDestination).
 const GRID_CAMERA_DELAY_MS = 450;
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
-const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
+const SPOT_CAMERA_DELAY_MS = SPOT_SHEET_SLIDE_IN_MS + 120;   // a spot pin tap: the zoom-in starts once the spot sheet has slid in (the sheet mounts a commit, ~0.1 s, after the tap)
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
@@ -5143,17 +5143,27 @@ const destItems = useMemo((): DestItem[] =>
     setTimeout(() => { sheetExitingRef.current = false; action(); }, SHEET_EXIT_MS + 20);
   }, []);
 
+  // Opening a spot from a destination's (or a country's) sheet, and "← Destination" back from a spot's: the open sheet slides all the way
+  // off first and only then is the next one mounted, to rise in its place. Swapping them in one go (the old sheet sliding
+  // down as the new one rose) put the new sheet's mount, a few hundred ms of work, under both slides, and they stuttered.
+  // A sheet at full screen has no slide off (closeWithSheetExit runs the action at once).
+  const openSpot = useCallback((spot: Spot) => {
+    if ((sheetKindRef.current === 'dest' || sheetKindRef.current === 'country') && sheetPose.get() !== null && !isMapInteracting()) closeWithSheetExit(() => handleSpotPress(spot));
+    else handleSpotPress(spot);
+  }, [closeWithSheetExit, handleSpotPress, isMapInteracting]);
+
   // The pills under the back/X row at half-screen and peek: "← Parent" always opens the parent's sheet (a spot's
   // destination, a destination's country), however the user got here, and X always closes to the map.
-  // The back pill: one level up. The parent's sheet replaces this one (see "Sheet swaps": the outgoing sheet slides down
-  // while the parent's rises in its place), so it closes straight away rather than sliding this sheet off first.
+  // The back pill: one level up. From a destination the country's sheet replaces it in one swap (see "Sheet swaps": the
+  // outgoing sheet slides down while the country's rises in its place); from a spot the spot sheet slides off first and the
+  // destination's then rises (see openSpot).
   const handleUpNav = useCallback(() => {
     if (pressBlocked()) return;   // a pinch finger lifting over the pill is not a press
     if (sheetExitingRef.current) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (selectedSpot) { if (selectedDest) handleCloseSpotToDestination(); }
+    if (selectedSpot) { if (selectedDest) closeWithSheetExit(() => handleCloseSpotToDestination()); }
     else if (selectedDest) handleCloseDestinationSheetToCountry();
-  }, [selectedSpot, selectedDest, handleCloseSpotToDestination, handleCloseDestinationSheetToCountry]);
+  }, [selectedSpot, selectedDest, handleCloseSpotToDestination, handleCloseDestinationSheetToCountry, closeWithSheetExit]);
   // The X pill: close to the map (the sheet slides off first, then the camera steps back; see the *View closes).
   // The zoom an X close will fly out to (the same rules as the close handlers), or null where the camera stays put.
   const xCloseTargetZoom = useCallback((): number | null => {
@@ -6281,7 +6291,7 @@ const destItems = useMemo((): DestItem[] =>
   const destSheetOnClose = useStableCallback(handleCloseDestinationSheet);
   const destSheetOnExpand = useStableCallback(handleSheetExpand);
   const destSheetOnCollapse = useStableCallback(handleCloseSheet);
-  const destSheetOnSelectSpot = useStableCallback(handleSpotPress);
+  const destSheetOnSelectSpot = useStableCallback(openSpot);
   const destSheetOnSnapStateChange = useStableCallback(handleSheetSnapStateChange);
   const destSheetIsMapInteracting = useStableCallback(isFingerDraggingMap);
   const destSheetIsPressBlocked = useStableCallback(pressBlocked);
@@ -6345,7 +6355,7 @@ const destItems = useMemo((): DestItem[] =>
               if (d < best) { best = d; hitId = id; }
             }
             const hitSpot = hitId ? renderedSpots.find(r => r.item.id === hitId && !r.exiting)?.item : undefined;
-            if (hitSpot) { handleSpotPress(hitSpot); return; }
+            if (hitSpot) { openSpot(hitSpot); return; }
             // Same for a destination's name (drawn below its pin, outside the marker's box).
             const dh = destLabelHitRef.current;
             const dt = mercatorPx(c[0], c[1], dh.pxPerDegLng);
@@ -6624,7 +6634,7 @@ const destItems = useMemo((): DestItem[] =>
           onPress={(e) => {
             const id = pickSpotPinAt(e.features, e.coordinates.longitude, e.coordinates.latitude);
             const spot = id ? SPOT_BY_ID.get(id) : undefined;
-            if (spot && !pressBlocked()) handleSpotPress(spot);
+            if (spot && !pressBlocked()) openSpot(spot);
           }}
         >
           {spotFadeLayers.under}
