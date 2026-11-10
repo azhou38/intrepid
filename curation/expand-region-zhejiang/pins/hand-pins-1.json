@@ -110,5 +110,30 @@
   "source": "OSM node/6144358890 place=town 石塘镇 + zh Wikipedia 石塘镇 28.28185,121.6022 (30 m)",
   "feature": "town centre",
   "note": "Town centre of Shitang (Wenling); the stone-house old fishing quarter is in the town, no separate OSM feature found."
+ },
+ "dongtou-islands": {
+  "lat": 27.835,
+  "lon": 121.126,
+  "confidence": "LOW",
+  "source": "zh Wikipedia 洞头岛 coords 27.835,121.126; hint 27.829114,121.128976 (~700 m)",
+  "feature": "main island centroid",
+  "note": "Archipelago; pin is Dongtou main island centre. Main town Beiao is at 27.8385,121.152 (zh Wikipedia 北岙街道) if a visitor hub is preferred."
+ },
+ "wuyi-1": {
+  "lat": 28.840106,
+  "lon": 119.8102955,
+  "confidence": "LOW",
+  "source": "Nominatim OSM way/1126833646 tourism=theme_park 清水湾沁温泉度假山庄, 温泉南路, Wuyi",
+  "feature": "hot-spring resort",
+  "note": "Wuyi Hot Springs is a resort strip along Wenquan South Road (Shuxi subdistrict); this is one resort in it, not an official visitor point. Needs owner or Overpass check."
+ },
+ "zhexi-grand-canyon": {
+  "note": "Not found: OSM has only 天目大峡谷 (Lin'an, 30.3677,119.4715) and 浙北大峡谷 (Anji, 30.4488,119.5048), which are different places. Zhexi Grand Canyon lies in the Qingliangfeng reserve area of Lin'an per web results but no coordinates found; Overpass unreachable."
+ },
+ "taoyuan-qili": {
+  "note": "Not found: Kecheng District, Quzhou, near Qili village ~30 km from city; no OSM/Wikipedia coordinate retrieved (Overpass, Nominatim, Photon rate-limited/unreachable)."
+ },
+ "nautical-flower-fields-hangzhou-bay": {
+  "note": "Not found: address is 花海大道1000号, Jiashao Bridge south end, Binhai New City, Shaoxing (Ctrip); coordinate lookup failed (geocoders unreachable)."
  }
 }

@@ -1,0 +1,380 @@
+{
+ "hangzhou-3": {
+  "verdict": "pass",
+  "bio": "Rebuilt five-storey pagoda on Sunset Hill by West Lake, with the original's remains below and lake views from the top.",
+  "changes": [
+   "Ruins at the base and 40 CNY confirmed by several 2026 pages and Wikipedia (which cites the operator)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "ticketUrl http://jing.leifengta.com unreachable from script: orchestrator browser check"
+  ]
+ },
+ "hangzhou-11": {
+  "verdict": "edited",
+  "bio": "Eight-sided, seven-storey brick-and-wood pagoda on Yuelun Hill above the Qiantang River, 59.89 m tall.",
+  "changes": [
+   "'its bridge' unsourced, cut; added confirmed shape/height (zh Wikipedia)",
+   "Climbing needs park entry 20 + tower 10 = 30 CNY per a visitor-booklet-based 2026 guide; draft 10 was tower-only (2011)"
+  ],
+  "cost_fields": {
+   "costMin": 30,
+   "costMax": 30
+  },
+  "ticketUrl": null,
+  "wiki": "Liuhe Pagoda",
+  "unresolved": [
+   "price 30 not from an official page (price_source_weak stays true)",
+   "no official site found"
+  ]
+ },
+ "hangzhou-17": {
+  "verdict": "edited",
+  "bio": "Zhejiang's provincial museum, with ancient ceramics and lacquerware in its Gushan hall on West Lake.",
+  "changes": [
+   "Leifeng Pagoda relics claim not found in any source, cut; ceramics and lacquer confirmed (zh Wikipedia)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free entry rests on a 2011 Guangming Daily headline ('zero threshold') and no current official page; needs=booking unconfirmed",
+   "ticketUrl http://www.zhejiangmuseum.com/ fetch failed (blocked): orchestrator browser check"
+  ]
+ },
+ "hangzhou-21": {
+  "verdict": "edited",
+  "bio": "Buddhist temple at the foot of Nanping Hill on West Lake, paired with Lingyin Temple and home of the Evening Bell scene.",
+  "changes": [
+   "Added Evening Bell scene (Wikipedia); price sources conflict: 10 (Trip.com post, last month) vs 15 (chinatripedia)"
+  ],
+  "cost_fields": {
+   "costMin": 10,
+   "costMax": 15
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 10-15 CNY not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "hangzhou-27": {
+  "verdict": "pass",
+  "bio": "A nationally protected Jiangnan mansion and garden in Hangzhou's Qinghefang historic district, built in the 1870s.",
+  "changes": [
+   "Built 1872-75 confirmed (Wikipedia); 20 CNY adult corroborated by two pages updated 2026"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "hangzhou-32": {
+  "verdict": "edited",
+  "bio": "Hillside botanical garden on the north-west shore of West Lake, with more than 3,400 plant species and a plum-blossom garden.",
+  "changes": [
+   "'about 3,400' -> 'more than 3,400' (3,458 per Wikipedia)",
+   "10 CNY adult corroborated by Trip.com 2026 guide"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price not from an official page (weak)",
+   "no official site confirmed"
+  ]
+ },
+ "hangzhou-37": {
+  "verdict": "pass",
+  "bio": "Amusement park on the Xianghu lake shore in Xiaoshan, with rides and a neighbouring water park.",
+  "changes": [
+   "Water park separate ticket confirmed; 'from 128' (Trip/offpeak 2026) to 190 range stays"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price range from aggregators only (weak)",
+   "no official site"
+  ]
+ },
+ "huzhou-1": {
+  "verdict": "edited",
+  "bio": "Huzhou's city museum, with a Wuxing history exhibition, excavated relics and calligraphy and paintings, free to enter.",
+  "changes": [
+   "'Renhuangshan district' not confirmed by zh Wikipedia (lists Wuxing Rd 1), cut; exhibits from zh Wikipedia",
+   "Official site found and loaded: www.huzhoumuseum.com (title 湖州市博物馆)",
+   "Note: the Wuxing Fu exhibition is closed 9-23 Nov 2026 for maintenance (temporary, not in bio)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "http://www.huzhoumuseum.com/",
+  "wiki": null,
+  "unresolved": [
+   "free entry from Ctrip/chinatripedia only; official page does not state it",
+   "booking/ID requirement unknown"
+  ]
+ },
+ "anji-3": {
+  "verdict": "edited",
+  "bio": "Upper reservoir of the Tianhuangping pumped-storage plant, with lakeside paths and a tour bus around the lake.",
+  "changes": [
+   "'small tourist train' unsourced, replaced by tour bus (Trip.com); reservoir identity from zh Wikipedia",
+   "80 CNY entry corroborated by chinatripedia and opentravelguide (2026)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "huzhou-7": {
+  "verdict": "edited",
+  "bio": "Private library built 1920-24 by silk merchant Liu Chenggan in Nanxun, beside Xiaolian Villa.",
+  "changes": [
+   "Added builder (opentravelguide); '160,000 volumes' and 'moated gardens' not confirmed in sources read, cut"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "25 CNY is a combination ticket with Xiaolian Villa (2026 guide); no library-only price; all-inclusive Nanxun ticket about 85",
+   "no official site"
+  ]
+ },
+ "jiaxing-2": {
+  "verdict": "edited",
+  "bio": "Pavilion on a man-made island in Nanhu lake, Jiaxing, reached by boat and ringed by smaller halls and pavilions.",
+  "changes": [
+   "Man-made island (built 1548), present building 1918 and ringed complex confirmed (zh Wikipedia); boat from the visitor centre confirmed by a 2026 guide; 'gardens' softened"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free entry unverified: Nanhu scenic area listed free on Ctrip only; boat is transport"
+  ]
+ },
+ "mos-manor": {
+  "verdict": "edited",
+  "bio": "Late-Qing mansion of the Mo family in Pinghu, a national protected site of about 70 rooms on 4,851 sq m.",
+  "changes": [
+   "'symmetrical halls and a garden' unsourced; replaced with confirmed size (zh Wikipedia)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "28 CNY from a 2023 blog only (weak); Trip.com lists it open 08:30-17:00 with paid tickets, price not shown",
+   "no official site"
+  ]
+ },
+ "xianhua-mountain": {
+  "verdict": "edited",
+  "bio": "Scenic area of rock peaks and hiking trails in the hills north of Pujiang town, rated 4A.",
+  "changes": [
+   "Wording trimmed; 60 CNY per a Trip.com post (about 50 online) agrees with upper end of draft range"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "35-60 CNY range from aggregators only (weak)",
+   "4A and 2 km north of county seat from Ctrip only; no Wikipedia page",
+   "no official site"
+  ]
+ },
+ "ningbo-1": {
+  "verdict": "edited",
+  "bio": "Ming-dynasty private library and garden in Ningbo, built in 1561, with a pond, rockeries and the book pavilion at its centre.",
+  "changes": [
+   "Built 1561 by Fan Qin confirmed (Wikipedia)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.tianyige.com.cn/",
+  "wiki": "Tianyi Ge",
+  "unresolved": [
+   "30 CNY corroborated by a 2026 guide, not official (weak)",
+   "ticketUrl https://www.tianyige.com.cn/ loads with title 天一阁博物院 but body is script-rendered: orchestrator browser check",
+   "'pond, rockeries' from draft, not re-confirmed"
+  ]
+ },
+ "ningbo-6": {
+  "verdict": "edited",
+  "bio": "A restored 19th-century Fujianese guildhall and Mazu temple in Ningbo, now a maritime and folk-art museum.",
+  "changes": [
+   "Dropped 'merchants'' to fit three lines; Fujianese guildhall and Mazu temple confirmed by Wikipedia; 10 RMB corroborated by chinatripedia"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": "Qing'an Guildhall",
+  "unresolved": [
+   "'19th-century' and 'now a museum' not re-read in detail",
+   "price not from an official page (weak)",
+   "no official site"
+  ]
+ },
+ "ningbo-14": {
+  "verdict": "edited",
+  "bio": "Wang Shu-designed art museum in a converted shipping terminal on the Yongjiang riverfront near Ningbo's Old Bund.",
+  "changes": [
+   "Exhibition claim replaced with confirmed architect, former shipping building and location (zh Wikipedia)",
+   "Official site found: www.nma.org.cn (loads, title 宁波美术馆)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": "https://www.nma.org.cn/",
+  "wiki": null,
+  "unresolved": [
+   "free entry and online reservation requirement not stated on any page read"
+  ]
+ },
+ "xiangshan-global-studios": {
+  "verdict": "edited",
+  "bio": "Film studio in Xiangshan, open since 2005, with period-set towns built for Chinese productions.",
+  "changes": [
+   "Period towns confirmed (Condor Heroes Town, Spring-Autumn and Warring States, Republic of China town; Wikipedia)",
+   "Price conflict: 125 (eastchinatrip 2026) vs 150 (Ctrip)"
+  ],
+  "cost_fields": {
+   "costMin": 125,
+   "costMax": 150
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price from aggregators only (weak)",
+   "no official site"
+  ]
+ },
+ "qiantong-ancient-town": {
+  "verdict": "edited",
+  "bio": "Ancient village near Ninghai with old lanes, houses and ancestral halls to wander.",
+  "changes": [
+   "'Ming and Qing-era' not confirmed by any source read (zh Wikipedia has no page), cut"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "50-70 CNY from aggregators only (weak)",
+   "Tong clan ancestral hall reported temporarily closed (Ctrip)",
+   "no official site"
+  ]
+ },
+ "qianjiangyuan-national-park": {
+  "verdict": "pass",
+  "bio": "National park in Kaihua covering 252 km2 of evergreen forest with Gutianshan reserve and the headwaters of the Qiantang River.",
+  "changes": [
+   "252 km2, Kaihua, Gutianshan reserve, Qiantang headwaters, muntjac and pheasant confirmed (zh Wikipedia)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "cost UNVERIFIED: no fee or free statement found anywhere (Trip.com lists the forest park as ticketed, no price read); basis 'park' with no price is unfinished, orchestrator must decide",
+   "no official administration site found"
+  ]
+ },
+ "shaoxing-1": {
+  "verdict": "edited",
+  "bio": "Historic quarter around Lu Xun's childhood home in Shaoxing, with his memorial hall, Three Flavours Study and Xianheng Hotel.",
+  "changes": [
+   "Three Flavours Study and Xianheng Hotel (咸亨酒店) confirmed (zh Wikipedia, which names it a hotel, not 'Tavern'); 5A-rated area"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free entry with advance booking from Ctrip/2023 notice only (weak)",
+   "no website; booking via WeChat"
+  ]
+ },
+ "shaoxing-10": {
+  "verdict": "edited",
+  "bio": "Ancestral home of Zhou Enlai's family in Shaoxing, opened as a memorial in 1984, with an exhibition on his life.",
+  "changes": [
+   "Former family home -> ancestral home; 1984 memorial opening, 2001 exhibition hall 'Zhou Enlai life exhibit' confirmed (zh Wikipedia)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free entry from Tuniu/Ctrip only (an old review mentions 18 CNY)",
+   "no official site"
+  ]
+ },
+ "guoqing-temple": {
+  "verdict": "pass",
+  "bio": "Sui-dynasty Buddhist temple on Mount Tiantai, birthplace of the Tiantai school, free to enter.",
+  "changes": [
+   "Built 598, ancestral temple of the Tiantai school confirmed (zh Wikipedia); free admission stated by two 2026 guides"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free entry not from an official page",
+   "no official site"
+  ]
+ },
+ "yucang-mountain": {
+  "verdict": "edited",
+  "bio": "Forested granite mountain park in Cangnan with walking trails and rock carvings.",
+  "changes": [
+   "Queen Mother treasure-store legend not confirmed, cut (zh Wikipedia page 404)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free/open basis rests on one Ctrip page; an older review says 55 CNY; Trip.com lists it as ticketed",
+   "no official site"
+  ]
+ },
+ "mount-putuo-6": {
+  "verdict": "hold",
+  "bio": "Mount Putuo's main sand beach on the island's east side, with deckchairs, parasols and watersports.",
+  "changes": [
+   "'only formal swimming beach' is wrong: Wikipedia names two major beaches (Hundred Step and Thousand Step); reworded",
+   "Cost basis wrong: 120-160 CNY is the Mount Putuo island gate ticket (confirmed 160 in season by 2026 guides), not the beach's own price, and 'park' basis would put a park fee on a spot inside it"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Per WRITING.md this spot should be free:true with needs park-pass and parkPass naming a Mount Putuo scenic-area pass, which must first be added to src/data/parkPasses.ts (160 in season, 120 off-season per 2026 guides); Wikipedia also says the beach itself charges entry, amount unknown; orchestrator decides",
+   "no official site"
+  ]
+ },
+ "jihu-beach": {
+  "verdict": "edited",
+  "bio": "Sandy beach on Sijiao island in the Shengsi Islands, the archipelago's main tourist attraction.",
+  "changes": [
+   "'surfing and jet skis' unsourced, cut; main attraction confirmed (zh Wikipedia)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "40 CNY gate price from 2021-22 third-party pages only (weak)",
+   "no official site"
+  ]
+ }
+}
