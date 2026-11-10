@@ -1097,6 +1097,8 @@ const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number]
 // letting the grow/shrink animation target an exact pixel value instead of an unmeasured
 // 'auto'. Closed height is exactly MAP_PILL_BTN (a true circle); open height adds the
 // divider + two option rows beneath it.
+// The selected spot's pin (photo or mini, and its highlight), this much larger than the others, grown from its tip.
+const SELECTED_PIN_SCALE  = 1.2;
 const CRUMB_PILL_H        = 40;   // the breadcrumb pill's height (see styles.breadcrumbPillWhite)
 const CRUMB_SWAP_FADE_MS  = 200;  // the breadcrumb fading out as it was, on a new selection or an X close (see crumbFrozenRef)
 const MAP_PILL_BTN        = 44;   // also the pill's fixed width throughout
@@ -6638,7 +6640,7 @@ const destItems = useMemo((): DestItem[] =>
             id="spotSelectedMini"
             aboveLayerID="destStampCircles"
             filter={['all', ['==', ['get', 'sel'], 1], ['==', ['get', 'img'], '']] as any}
-            style={{ iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
+            style={{ iconImage: ['get', 'mini'] as any, iconSize: SELECTED_PIN_SCALE, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
           />
           <MapboxGL.SymbolLayer
             id="spotSelectedPhoto"
@@ -6646,6 +6648,7 @@ const destItems = useMemo((): DestItem[] =>
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
               iconImage: ['get', 'img'] as any,
+              iconSize: SELECTED_PIN_SCALE,
               iconAnchor: 'bottom',
               iconAllowOverlap: true,
               iconIgnorePlacement: true,
@@ -6654,9 +6657,10 @@ const destItems = useMemo((): DestItem[] =>
               textSize: 12,
               textMaxWidth: 10,
               textAnchor: ['case', ['==', ['get', 'side'], 'left'], 'right', 'left'] as any,
-              textOffset: ['case', ['==', ['get', 'side'], 'left'], ['literal', [-1.5, 0]], ['literal', [1.5, 0]]] as any,
+              // Beside the larger pin (SELECTED_PIN_SCALE), level with its bubble.
+              textOffset: ['case', ['==', ['get', 'side'], 'left'], ['literal', [-1.75, 0]], ['literal', [1.75, 0]]] as any,
               textJustify: 'auto',
-              textTranslate: [0, -23],
+              textTranslate: [0, -27],
               textAllowOverlap: true,
               textIgnorePlacement: true,
               textColor: mapType === 'satellite' ? '#FFFFFF' : '#111827',
@@ -6664,17 +6668,17 @@ const destItems = useMemo((): DestItem[] =>
               textHaloWidth: 1.5,
             }}
           />
-          {/* The selected spot's outline over its photo pin: its rim and tail in slate instead of white (or green),
-              so the selected pin stands out, with a green tick when the spot is visited (SpotPhotoImages' SPOT_SELECTED_RING
-              and SPOT_SELECTED_RING_VISITED, anchored at the pin's tip like the pin). The
-              same feature as the photo pin, so the two appear together. (A white halo, then a drop shadow, were tried first.) */}
+          {/* The selected spot's highlight over its photo pin: its rim and tail in orange with a soft orange halo, so the
+              selected pin stands out, with a green tick when the spot is visited (SpotPhotoImages' SPOT_SELECTED_RING and
+              SPOT_SELECTED_RING_VISITED, anchored at the pin's tip and scaled like the pin). The same feature as the photo
+              pin, so the two appear together. */}
           <MapboxGL.SymbolLayer
             id="spotSelectedRing"
             aboveLayerID="spotSelectedPhoto"
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
               iconImage: ['case', ['==', ['get', 'vis'], 1], SPOT_SELECTED_RING_VISITED, SPOT_SELECTED_RING] as any,
-              iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true,
+              iconSize: SELECTED_PIN_SCALE, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true,
             }}
           />
         </MapboxGL.ShapeSource>
