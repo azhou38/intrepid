@@ -1029,6 +1029,7 @@ function SpotSheet({
   useLayoutEffect(() => {
     const isFirstFocus = !hasHandledFocusRef.current;
     hasHandledFocusRef.current = true;
+    carouselOffsetRef.current = (initialIndex + loopOffset) * CARD_SNAP;   // see carouselOffsetRef
     requestAnimationFrame(() => carouselRef.current?.scrollTo({ x: (initialIndex + loopOffset) * CARD_SNAP, animated: false }));
     if (!isFirstFocus) transitionToRef.current(isMapInteracting?.() ? 'peek' : 'collapsed', 'selectionChange');
   }, [focusSpotId]);
@@ -1249,7 +1250,10 @@ function SpotSheet({
     return ((i % n) + n) % n;
   }
   const carouselReleasedRef = useRef(false);
-  const carouselOffsetRef = useRef(0);
+  // Where the carousel is scrolled to, from its scroll events; it opens at the tapped card (contentOffset), which sends
+  // none, so it starts there too. Left at 0, the first drag read the carousel as resting on a loop clone and "wrapped"
+  // it a whole loop's length along (25 of 57 jumped to 52).
+  const carouselOffsetRef = useRef((initialIndex + loopOffset) * CARD_SNAP);
   // A new swipe that starts while the carousel is on (or sliding through) a loop clone first moves it, invisibly, to the
   // same place among the real cards. The settle jump only comes once a slide has fully stopped, so a second swipe made
   // before then used to start from a clone and run past the last one into empty space.
