@@ -1,0 +1,154 @@
+{
+ "hangzhou-12": {
+  "lat": 30.17194,
+  "lon": 120.09361,
+  "confidence": "HIGH",
+  "source": "zh.wikipedia 宋城 coords + Commons geotagged Songcheng files (median ~30.1724,120.0929, ~70 m)",
+  "feature": "tourism theme park (attraction)",
+  "note": ""
+ },
+ "hangzhou-42": {
+  "lat": 30.04812,
+  "lon": 119.98937,
+  "confidence": "LOW",
+  "source": "OSM node/6027206536 新沙村 place=village on Xinsha Island (island relation r20713069 centroid 30.04478,119.99201 is 330 m away)",
+  "feature": "village point",
+  "note": "No entrance/ferry/visitor node found in OSM or Commons; village centre used as a stand-in"
+ },
+ "huzhou-4": {
+  "lat": 31.13115,
+  "lon": 119.80154,
+  "confidence": "MEDIUM",
+  "source": "zh.wikipedia 顾渚贡茶院遗址及摩崖 coords (Guzhu Tribute Tea Court site); OSM 顾渚水库 dam at 31.1378,119.8040 and 贡茶古道 ways nearby",
+  "feature": "historic site",
+  "note": "Pinned at the tribute-tea court ruins at the foot of Guzhu Mountain, not the mountain summit"
+ },
+ "xiazhu-lake": {
+  "lat": 30.51384,
+  "lon": 120.03997,
+  "confidence": "LOW",
+  "source": "Commons geotagged Xiazhu Swamp photos (30.5132-30.5140,120.038-120.0415); OSM way/625175902 lake centroid 30.5169,120.0471 is 450 m away; OSM parking nodes 30.51798,120.02728 and 30.52476,120.03812 unverified",
+  "feature": "wetland viewpoint cluster",
+  "note": "No named wetland entrance/visitor-centre node found; chose shore point where photos are taken, not centroid"
+ },
+ "haining-tidal-bore-viewing-park": {
+  "lat": 30.40167,
+  "lon": 120.54501,
+  "confidence": "MEDIUM",
+  "source": "Commons geotagged Zhan'ao Pagoda photos (30.40167,120.54501); zh.wikipedia 盐官海塘 30.40191,120.54302 (190 m W); OSM node/12880316935 盐官观潮胜地公园 bus stop 30.4047,120.54755 (park approach, 480 m NE)",
+  "feature": "landmark / viewing pagoda on seawall",
+  "note": "Main bore-viewing spot of the park at Zhan'ao Pagoda; bus stop is the alternative park-entrance point"
+ },
+ "wuyi-5": {
+  "lat": 28.81862,
+  "lon": 119.65195,
+  "confidence": "LOW",
+  "source": "Commons 大红岩景区停车场 (geotag 28.81862,119.651949); Danxia rock photos at 28.8142,119.6587; Baimu town 28.835,119.648 (OSM n11757292830)",
+  "feature": "car park",
+  "note": "No OSM feature found for the scenic area; address Baimu township, Hengshan village matches location; main car park used as visitor point"
+ },
+ "liudong-mountain": {
+  "lat": 29.20773,
+  "lon": 119.53592,
+  "confidence": "MEDIUM",
+  "source": "OSM way/809340449 六洞山地下长河 tourism=attraction (centre)",
+  "feature": "tourism=attraction",
+  "note": "Underground river attraction of Liudong Mountain; matches the provided hint"
+ },
+ "yangjiatang-village": {
+  "lat": 28.46304,
+  "lon": 119.54214,
+  "confidence": "MEDIUM",
+  "source": "OSM node/12852682463 杨家堂村 place=hamlet (only match in Songyang area)",
+  "feature": "place=hamlet",
+  "note": "Village point, 3.5 km from Sandu township"
+ },
+ "suichang-gold-mine-national-mine-park": {
+  "lat": 28.61522,
+  "lon": 119.41905,
+  "confidence": "LOW",
+  "source": "OSM way/561433450 named 遂昌金矿国家矿山公园 but tagged landuse=residential (centroid); park address is Lianzhu township (OSM town 28.615,119.42546, 600 m E), Huayuanling",
+  "feature": "landuse polygon centroid",
+  "note": "Name-matched polygon only; no gate or museum node found"
+ },
+ "ningbo-16": {
+  "lat": 29.96263,
+  "lon": 121.72112,
+  "confidence": "HIGH",
+  "source": "OSM way/298086857 招宝山旅游风景区 tourism=attraction centre; Wikidata Q8070604 29.96248,121.72197 and Commons Baotuo Temple at the summit 29.96248,121.72194 (all within ~90 m)",
+  "feature": "tourism=attraction / hilltop temple and Weiyuan Fortress",
+  "note": "OSM node 招宝山 at 29.95247,121.71224 is the hill label, not the summit; enwiki coords (29.9604,121.7086) are 1 km west"
+ },
+ "danshan-chishui": {
+  "lat": 29.79557,
+  "lon": 121.15593,
+  "confidence": "MEDIUM",
+  "source": "OSM node/5864604627 柿林村 tourism=attraction + place=village (scenic area is in Shilin village, Dalan town, Yuyao per tourism pages); ticket way 29.79211,121.15573",
+  "feature": "tourism=attraction village",
+  "note": "Provided hint (29.8138,121.1106) is 4.6 km away near Dalan stream and does not match the scenic area"
+ },
+ "jiangshan-4": {
+  "lat": 28.3678,
+  "lon": 118.50743,
+  "confidence": "MEDIUM",
+  "source": "OSM way/535973233 仙霞古道 centre; zh.wikipedia/Wikidata 仙霞关 28.36778,118.50889 (140 m E)",
+  "feature": "historic pass / old road",
+  "note": "Pass on Fujian border ridge; tunnel at 28.365,118.5035"
+ },
+ "shaoxing-7": {
+  "lat": 30.002247,
+  "lon": 120.587772,
+  "confidence": "HIGH",
+  "source": "Wikidata Q10892089 / enwiki Bazi Bridge 30.002247,120.587772; Commons Shaoxing Bazi Qiao photos within 8-25 m",
+  "feature": "bridge",
+  "note": ""
+ },
+ "taozhu-ancient-city": {
+  "lat": 28.82894,
+  "lon": 121.53395,
+  "confidence": "HIGH",
+  "source": "zh.wikipedia 桃渚城 28.82894,121.53384; Commons 桃渚财神庙 28.828938,121.53395 (10 m); OSM place=village 桃渚 n12464801649 28.83089,121.53192 (220 m)",
+  "feature": "historic walled town",
+  "note": ""
+ },
+ "baima-ao-beach": {
+  "lat": 28.16237,
+  "lon": 121.37415,
+  "confidence": "MEDIUM",
+  "source": "OSM node/6555510189 白马岙 leisure=beach_resort",
+  "feature": "beach resort node",
+  "note": "No natural=beach way found; hint 70 m away agrees"
+ },
+ "yandang-mountains-2": {
+  "lat": 28.36474,
+  "lon": 121.08347,
+  "confidence": "HIGH",
+  "source": "OSM way/686702244 灵岩寺 Lingyan Temple; Commons 灵岩寺 28.36426,121.08420 (~60 m)",
+  "feature": "place_of_worship in Lingyan reserve",
+  "note": "Ticket office is OSM node/13951409601 at 28.36419,121.07766; car park / stone carvings cluster at 28.3618-28.3625,121.0877-121.0882 (500 m E)"
+ },
+ "baizhangji-waterfall": {
+  "lat": 27.84667,
+  "lon": 120.01083,
+  "confidence": "MEDIUM",
+  "source": "Wikidata Q17028083 / zh.wikipedia 百丈漈 27.84667,120.01083; Commons 百丈漈飞瀑 27.84538,120.01177 (170 m)",
+  "feature": "waterfall",
+  "note": "Hint (27.8337,120.0064) is Baizhangji town (OSM place=town 27.8371,120.00199), not the falls"
+ },
+ "mount-putuo-5": {
+  "lat": 30.01129,
+  "lon": 122.38632,
+  "confidence": "HIGH",
+  "source": "OSM node/915535747 natural=peak (Foding summit area of Mount Putuo); zh.wikipedia 普陀山 30.0108,122.3864; Commons Huiji Temple 30.01164,122.38561 (~70 m)",
+  "feature": "natural=peak",
+  "note": "Category is hike: pinned on the summit/Huiji Temple, no OSM hiking route found for the Foding path; hint 270 m E"
+ },
+ "dongji": {
+  "lat": 30.19579,
+  "lon": 122.68194,
+  "confidence": "HIGH",
+  "source": "OSM node/11930091658 东极村 place=village; zh.wikipedia 东极镇 30.1958,122.68195; OSM 东极镇 n4849375970 30.19531,122.68045",
+  "feature": "village (Miaozihu Island)",
+  "note": "Dongji is an island group; pinned at the main settlement on Miaozihu (ferry terminal n11895325432 at 30.19163,122.68417)"
+ }
+}
