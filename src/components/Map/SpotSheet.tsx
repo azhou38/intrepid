@@ -119,12 +119,14 @@ const CAROUSEL_WINDOW = 3;
 // The sheet's first frames mount only the active card and its two neighbours (the slide-in is when the JS thread is busiest);
 // the window widens to CAROUSEL_WINDOW once the slide is done.
 const CAROUSEL_WINDOW_AT_MOUNT = 1;
-const CAROUSEL_WIDEN_MS = 600;
-// The full-screen panels (hidden at half-screen) mount after the slide-in rather than during it: the moment it lands (see
-// transitionTo's 'mount'), with this as the fallback. They used to wait this long regardless, and a swipe up in that time
-// had to mount them itself, a blank sheet for ~0.4 s while it did. Heading to full screen still mounts them at once
-// (revealPanels).
-const SPOT_PANEL_MOUNT_DELAY_MS = 900;
+// After the camera's zoom to the spot (it starts as the slide lands, ~0.45 s, and takes 0.5 s): widening mounts a few more
+// cards, ~0.1 s of work that stalled the zoom when it ran alongside it.
+const CAROUSEL_WIDEN_MS = 1000;
+// The full-screen panels (hidden at half-screen) mount after the slide-in and the camera's zoom to the spot, not during
+// either: mounting them is ~0.35 s of work, and when it ran as the slide landed (where the zoom starts) the card stayed
+// blank and the camera stood still for over a second after a pin tap. Heading to full screen mounts them at once, a swipe
+// up included (revealPanels; the hero's dark backdrop stands in until they arrive).
+const SPOT_PANEL_MOUNT_DELAY_MS = 1300;
 // Most clones of the spots at the other end on each side of the looping carousel (see extendedSpots); fewer when the
 // destination has fewer spots.
 const MAX_LOOP_CLONES = 6;
@@ -884,8 +886,8 @@ function SpotSheet({
     // are the ones the UI thread spends building this sheet's views (and starting the camera move), so starting at once
     // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
     if (reason !== 'mount') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
-    // The full-screen content mounts the moment the slide-in lands (revealPanels), not SPOT_PANEL_MOUNT_DELAY_MS after mount.
-    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) { hidePeekSV.value = 0; runOnJS(revealPanels)(); } }));
+    // The full-screen content mounts SPOT_PANEL_MOUNT_DELAY_MS after mount (once the camera has zoomed), not as this lands.
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) hidePeekSV.value = 0; }));
     else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
@@ -1582,6 +1584,10 @@ isVisited ? (
               magic-number height that only happens to fit on some devices. */}
           <GHScrollView
             ref={carouselRef}
+            // At the tapped spot's card from the first frame: the scrollTo that puts it there (see the focusSpotId effect)
+            // waits for a frame callback on the JS thread, busy as the sheet opens, and until then a far-off placeholder
+            // card showed, blank, for up to a second.
+            contentOffset={{ x: (initialIndex + loopOffset) * CARD_SNAP, y: 0 }}
             horizontal
             directionalLockEnabled
             showsHorizontalScrollIndicator={false}

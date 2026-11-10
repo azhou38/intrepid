@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useState } from 'react';
+import React, { memo, useEffect, useMemo, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
@@ -11,9 +11,27 @@ const TOP = '#475569';
 const BOTTOM = '#273244';
 const LINE = 'rgba(255,255,255,0.10)';
 const LEVELS = 13;   // contour lines across the field's range of heights
-const CELL = 5;      // points between the height samples the lines are traced on (a card costs a few ms to trace)
+const CELL = 7;      // points between the height samples the lines are traced on (5 made a card's path ~34,000 characters)
 // Finer samples for a small field (a pin's bubble), so its few lines stay smooth.
-const cellFor = (w: number, h: number) => Math.max(1, Math.min(CELL, Math.max(w, h) / 60));
+const cellFor = (w: number, h: number) => Math.max(1, Math.min(CELL, Math.max(w, h) / 45));
+// A field that fills its parent traces its lines this long after it is laid out, not in the render that lays it out: a card
+// or a sheet's hero appears as a spot sheet slides up and the camera zooms to the spot, and three or four of them tracing at
+// once (and their long paths reaching the screen) held the sheet and the camera back by a few hundred ms. The slate shows at
+// once and the lines follow.
+const TRACE_DELAY_MS = 450;
+// Traced paths, by seed, size and levels: a spot's card or hero shown again draws its lines at once.
+const traced = new Map<string, string>();
+function tracedPath(seed: string, w: number, h: number, levels: number): string {
+  const key = `${seed}|${Math.round(w)}|${Math.round(h)}|${levels}`;
+  let d = traced.get(key);
+  if (d === undefined) {
+    d = contourPath(seed, w, h, levels);
+    traced.set(key, d);
+    if (traced.size > 80) traced.delete(traced.keys().next().value!);
+  }
+  return d;
+}
+const isTraced = (seed: string, w: number, h: number, levels: number) => traced.has(`${seed}|${Math.round(w)}|${Math.round(h)}|${levels}`);
 
 // A small deterministic random sequence from the spot's id (mulberry32).
 function rng(seed: string) {
@@ -81,7 +99,16 @@ export const PatternPlaceholder = memo(function PatternPlaceholder({ seed, idPre
 }) {
   const [measured, setMeasured] = useState<{ w: number; h: number } | null>(null);
   const box = size ? { w: size, h: size } : measured;
-  const lines = useMemo(() => (box ? contourPath(seed, box.w, box.h, levels) : ''), [seed, box?.w, box?.h, levels]);
+  // A fixed size (a pin's bubble, small and snapshotted) traces at once; a field filling its parent waits (TRACE_DELAY_MS),
+  // unless its lines are already traced.
+  const [due, setDue] = useState(!!size);
+  const ready = !!box && (due || isTraced(seed, box.w, box.h, levels));
+  useEffect(() => {
+    if (!box || ready) return;
+    const t = setTimeout(() => setDue(true), TRACE_DELAY_MS);
+    return () => clearTimeout(t);
+  }, [box?.w, box?.h, ready]);
+  const lines = useMemo(() => (box && ready ? tracedPath(seed, box.w, box.h, levels) : ''), [seed, box?.w, box?.h, levels, ready]);
   return (
     <View
       pointerEvents="none"
