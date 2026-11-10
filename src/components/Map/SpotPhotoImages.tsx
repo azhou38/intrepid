@@ -40,9 +40,8 @@ const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 // The selected spot's highlight: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, an
-// orange border round the pin's outline (over the top of its bubble's rim and down its tail's edges, not across the bottom
-// of the bubble where the tail meets it), and a soft orange halo round that outline (fading outward, outside the pin only,
-// as this image sits over the photo). Orange is the app's picked-spot colour (the
+// orange pin round the photo (its rim and its whole tail, the photo itself untouched), and a soft orange halo round the pin's
+// outline (fading outward, outside the pin only, as this image sits over the photo). Orange is the app's picked-spot colour (the
 // small picked pin, the Profile map). It replaced a slate outline with a solid slate tail, which read as a grey fill. One
 // image for every spot, so selecting one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
@@ -136,6 +135,7 @@ const SelectedRing = memo(function SelectedRing({ name, visited }: { name: strin
   const cx = RING_M + PAD + R, cy = RING_M + PAD + R;
 
   const bx = cx + R * 0.72, by = cy - R * 0.72;
+  const tailFill = `M ${cx + TAN_X} ${cy + TAN_Y} L ${cx} ${cy + TIP_D} L ${cx - TAN_X} ${cy + TAN_Y} A ${R} ${R} 0 0 0 ${cx + TAN_X} ${cy + TAN_Y} Z`;
   return (
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={{ width: W + RING_M * 2, height: H + RING_M }}>
@@ -144,9 +144,10 @@ const SelectedRing = memo(function SelectedRing({ name, visited }: { name: strin
           {HALO.map(([d, o]) => (
             <Path key={d} d={teardrop(cx, cy, d)} fill="none" stroke={SELECTED_RING_COLOR} strokeOpacity={o} strokeWidth={1.6} strokeLinejoin="round" />
           ))}
-          {/* The border: the outline over the bubble's 2 pt rim (radius R-2 to R), a little wider so no white shows at its
-              edges. */}
-          <Path d={teardrop(cx, cy, -1)} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={SELECTED_RING_W} strokeLinejoin="round" />
+          {/* The pin in orange: its tail (outside the bubble, closed by the bubble's bottom arc, so it doesn't cover the photo),
+              and its 2 pt rim (radius R-2 to R), a little wider so no white shows at its edges. */}
+          <Path d={tailFill} fill={SELECTED_RING_COLOR} />
+          <Circle cx={cx} cy={cy} r={R - 1} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={SELECTED_RING_W} />
           {visited && (
             <>
               <Circle cx={bx} cy={by} r={BADGE_R} fill={VISITED_COLOR} stroke="white" strokeWidth={1.5} />
