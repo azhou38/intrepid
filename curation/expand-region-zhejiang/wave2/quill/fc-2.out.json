@@ -1,0 +1,337 @@
+{
+ "hangzhou-13": {
+  "verdict": "edited",
+  "bio": "5,300-year-old walled city of the Liangzhu culture in Hangzhou, a World Heritage site toured by shuttle.",
+  "changes": [
+   "Cost basis fixed: draft 80 was entry 60 + shuttle 20; shuttle is transport, so adult entry is 60 (Qunar guide 60 entry/20 shuttle, matches 2019 report)",
+   "Added 5,300-year age (2 sources: official Liangzhu site and zh Wikipedia give 5300-4300 BP)",
+   "ticketUrl set to the site management committee's site (loads, titled 良渚遗址官网)",
+   "wiki set: en title is 'Archaeological ruins of Liangzhu City'"
+  ],
+  "cost_fields": {
+   "costMin": 60,
+   "costMax": 60
+  },
+  "ticketUrl": "http://www.lzsite.cn",
+  "wiki": "Archaeological ruins of Liangzhu City",
+  "unresolved": [
+   "Price 60 from reseller/guide pages and a 2019 report, no official current price loaded; keep price_source_weak",
+   "Booking is by WeChat account"
+  ]
+ },
+ "hangzhou-35": {
+  "verdict": "pass",
+  "bio": "Paris-style housing estate in Hangzhou, with a 108 m replica of the Eiffel Tower.",
+  "changes": [
+   "108 m replica confirmed on en Wikipedia",
+   "free kept: no source states it; cost_unverified"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free is unsourced (public estate streets)"
+  ]
+ },
+ "hangzhou-5": {
+  "verdict": "edited",
+  "bio": "Wetland park of watercourses, ponds and marshes west of Hangzhou, explored on foot or by traditional rowing boat.",
+  "changes": [
+   "'reed marshes' and 'canals' not in sources; reworded to confirmed watercourses, ponds, marshes",
+   "Adult 80 CNY (boat extra) matches several 2026 pages and the park's ticket notice snippet; one page says 70; no official page loaded"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price 80 still price_source_weak (no official page loaded; one source says 70)",
+   "Official site likely https://xixiwetland.com.cn (search snippet) but the page loads empty to script; needs browser check; ticketUrl left null"
+  ]
+ },
+ "anji-5": {
+  "verdict": "edited",
+  "bio": "Village in Anji where the 'green mountains are gold' saying was born, with a stone monument and bamboo-hill walks.",
+  "changes": [
+   "Removed unconfirmed 'cultural hall' and 'bamboo crafts'; kept confirmed two-mountains monument (Hangzhou news) and bamboo-hill setting (Ctrip)",
+   "Free access confirmed by several guide pages (national 4A, no gate fee; paid sights inside)"
+  ],
+  "cost_fields": {
+   "cost_unverified": false
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free from guide pages only, no official page"
+  ]
+ },
+ "huzhou-4": {
+  "verdict": "hold",
+  "bio": "Tea mountain where Tang emperors' tribute tea was made, with the Tribute Tea Academy on its slope.",
+  "changes": [
+   "Bio confirmed: academy at Tiger Head Rock on Guzhu mountain, founded 770 CE, oversaw Tang tribute Zisun tea",
+   "Dropped nothing from bio; Lu Yu link was not in the bio"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "No price found for the Datang Tribute Tea Academy from any loadable source; cannot set cost or free. Hold until a price is found",
+   "No official site"
+  ]
+ },
+ "haining-tidal-bore-viewing-park": {
+  "verdict": "pass",
+  "bio": "Riverside park at Yanguan on the Qiantang River, where visitors watch the tidal bore roll upstream along the sea wall.",
+  "changes": [
+   "Bio ok (Yanguan, Qiantang bore)",
+   "Prices conflict across sources (off-season 30-50, 80, bore-season 90-120); draft range 30-90 kept"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price unresolved: sources conflict 30-120; operator pays via WeChat mini-program",
+   "Old Salt Granary alternative is free (not this spot)"
+  ]
+ },
+ "fangyan-scenic-area": {
+  "verdict": "edited",
+  "bio": "Danxia red-rock scenic area in Yongkang with a cliffside walkway and a temple to the Song official Hu Ze.",
+  "changes": [
+   "'half-hour climb' not confirmed; replaced with the confirmed cliff walkway and Hu Gong shrine (Ctrip)",
+   "Price 60 from (65 online 64.9) matches several pages; adult 60-65 kept"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price from resellers/Ctrip only; no official page"
+  ]
+ },
+ "youbu-ancient-town": {
+  "verdict": "pass",
+  "bio": "A river-port town in Lanxi with old streets, a 500 m breakfast lane and lantern and lion-dance traditions.",
+  "changes": [
+   "Lantern and lion-dance traditions, 500 m breakfast (tea) street and river-port history all confirmed (Ctrip, news)",
+   "Free confirmed by Ctrip guide only"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free from guide page only"
+  ]
+ },
+ "shimen-cave-scenic-area": {
+  "verdict": "edited",
+  "bio": "Forest park on the Oujiang near Qingtian, with a 112 m waterfall, rock inscriptions and a shrine to Liu Ji.",
+  "changes": [
+   "Waterfall 112.5 m, rock inscriptions and Liu Wencheng shrine confirmed on Ctrip",
+   "Adult 60 (includes the ferry across the river) confirmed by two ticket pages; 80 joint ticket exists with Boen ancient village"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price 60 not from an official page"
+  ]
+ },
+ "danshan-chishui": {
+  "verdict": "edited",
+  "bio": "Canyon and cliff scenic area in Dalan town, Yuyao, in the Siming Mountains, with Taoist cultural sites.",
+  "changes": [
+   "'Dahan' was wrong; the town is Dalan (大岚镇)",
+   "Price 65 listed as official door price, online 49.9-59.9; draft 60 changed to 65 adult door price"
+  ],
+  "cost_fields": {
+   "costMin": 65,
+   "costMax": 65
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price from wenku/Qunar summaries, no official page"
+  ]
+ },
+ "ningbo-7": {
+  "verdict": "edited",
+  "bio": "Lake in central Ningbo, a Tang-era reservoir later shaped with Song-era islets, bridges and old halls.",
+  "changes": [
+   "'dug in the Tang era' and 'crescent-shaped' not confirmed; zh Wikipedia: Tang-era reservoir, Song islets (ten islets)",
+   "Free confirmed by several pages (5A scenic area part, free park)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free from guide pages only"
+  ]
+ },
+ "xikou-2": {
+  "verdict": "edited",
+  "bio": "Buddhist mountain above Xikou with Xuedou Temple, the Maitreya Budai's seat, and the Qianzhangyan cliff.",
+  "changes": [
+   "Reworded to zh Wikipedia facts: Xuedou Temple is Budai (Maitreya)'s dojo; cliff Qianzhangyan"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price 150 is Ctrip 'from' price and may include in-area shuttle; weak"
+  ]
+ },
+ "jiangshan-4": {
+  "verdict": "edited",
+  "bio": "Mountain pass on the Xianxia ancient road through Xianxialing, with four gates and about five km of stone-paved path.",
+  "changes": [
+   "Bio confirmed by zh Wikipedia (four gates, five km stone path)",
+   "Price filled: ticket about 55-60 (several 2024-2026 pages; 55 often a joint ticket with Dai Li's former residence)"
+  ],
+  "cost_fields": {
+   "costMin": 55,
+   "costMax": 60
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price weak; the March 2026 free promotion has ended per researcher"
+  ]
+ },
+ "quzhou-4": {
+  "verdict": "edited",
+  "bio": "National forest park at Huangtankou near Quzhou, known for a glass skywalk and a glass slide over wooded hills.",
+  "changes": [
+   "Dropped 'timber boardwalks' (unconfirmed); China Daily confirms national forest park, 15 sq km, Huangtankou",
+   "Qunar lists skywalk+slide combo; park entry 65 unconfirmed"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price 65 not confirmed on a loaded page; weak"
+  ]
+ },
+ "wuxie-scenic-area": {
+  "verdict": "edited",
+  "bio": "National scenic area near Zhuji with a five-tier waterfall, forested hills and a lake crossed by ferry.",
+  "changes": [
+   "Five-tier waterfall, ferry across Wuxie Lake, national scenic area confirmed",
+   "Price 60 (from, Ctrip) up to 70 list"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price weak"
+  ]
+ },
+ "dongji-islands": {
+  "verdict": "pass",
+  "bio": "Island group off Zhoushan, reached by boat from the mainland, with fishing villages, cliffs and sea views.",
+  "changes": [
+   "Island scenic area free per two pages; 45 islands confirmed on zh Wikipedia"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Free from guide pages only; ferry separate"
+  ]
+ },
+ "taozhu-ancient-city": {
+  "verdict": "edited",
+  "bio": "Ming-dynasty fortified town at Taozhu in Linhai, built against Japanese pirate raids.",
+  "changes": [
+   "'with its original walls' unconfirmed; Ctrip says Ming anti-pirate relics in Linhai"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price 20 (city alone) from Ctrip/reseller; one page says 14.5; weak"
+  ]
+ },
+ "furong-ancient-village": {
+  "verdict": "edited",
+  "bio": "Ancient village in Yantou, Yongjia County, in the Nanxi River area, on a shared ticket with two nearby villages.",
+  "changes": [
+   "Dropped unsourced 'old lanes and halls'; location Yantou town confirmed"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Price 18 from one reseller page, which also lists 9 (group price); weak",
+   "No English Wikipedia article"
+  ]
+ },
+ "wuyanling-national-nature-reserve": {
+  "verdict": "edited",
+  "bio": "Forested mountain nature reserve in Taishun County, rising to 1,611 m at Baiyun Peak on the Zhejiang-Fujian border.",
+  "changes": [
+   "'walking trails' unconfirmed; replaced with the border location",
+   "Price is seasonal: adult 120 peak, 80 shoulder, 60 off-peak per a 2026 summary; draft 60 widened to 60-120"
+  ],
+  "cost_fields": {
+   "costMin": 60,
+   "costMax": 120
+  },
+  "ticketUrl": null,
+  "wiki": "Wuyanling National Nature Reserve",
+  "unresolved": [
+   "wyl.org.cn is blocked: orchestrator browser check",
+   "Price weak"
+  ]
+ },
+ "yuhai-tower": {
+  "verdict": "edited",
+  "bio": "A Qing-era scholar's library house in Rui'an, built in 1888 and one of Zhejiang's four great private libraries.",
+  "changes": [
+   "'rooms now used as exhibits' unconfirmed; replaced with confirmed four-great-libraries status",
+   "Free year-round confirmed by zh Wikipedia"
+  ],
+  "cost_fields": {
+   "price_source_weak": false
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": []
+ },
+ "gouqi-island": {
+  "verdict": "edited",
+  "bio": "Island in the Shengsi archipelago with Dawang Beach, East Cliff sunrise views and an abandoned stone village.",
+  "changes": [
+   "Replaced unconfirmed 'painted villages' and 'fishing harbour' with Ctrip/Qunar-confirmed sights"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Dawang Beach plus East Cliff joint ticket 50 CNY, other sights free: spot kept free but sights carry a fee",
+   "Weak sources"
+  ]
+ },
+ "mount-putuo-5": {
+  "verdict": "edited",
+  "bio": "Highest hill on Putuo island, climbed by stone steps or cable car, with sea views and Huiji Temple at the top.",
+  "changes": [
+   "Island gate fee 140/160 is Mount Putuo's, not Foding's: removed from the spot; Foding has no own charge (Huiji Temple, mount-putuo-4, has its 5 CNY)",
+   "Huiji Temple is the island's highest point (confirmed)"
+  ],
+  "cost_fields": {
+   "free": true,
+   "costBasis": "open",
+   "costMin": null,
+   "costMax": null,
+   "costPer": null
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Island gate fee needs a decision (no park pass in parkPasses.ts); Foding overlaps mount-putuo-4 (Huiji Temple), consider merging",
+   "Cable car extra, not counted"
+  ]
+ }
+}

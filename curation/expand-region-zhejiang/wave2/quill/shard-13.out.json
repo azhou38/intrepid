@@ -1,0 +1,108 @@
+{
+ "qiandao-lake": {
+  "bio": "Man-made lake in Chun'an with over a thousand islands, explored by boat from the lakeside piers.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costMin": 45.5,
+  "costMax": 195,
+  "currency": "CNY",
+  "costBasis": "ticket",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official website found; tickets sold via WeChat mini-programs (reported as 玩转千岛湖). Not verified.",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/千岛湖",
+   "https://gs.ctrip.com/html5/you/sight/2249.html"
+  ],
+  "notes": "Price weak: Ctrip shows from 45.5 (south-east lake zone) to 195 (central lake combo with boat); varies by zone/season. Wikipedia: 1,078 islands over 2,500 sq m, reservoir 1959 (en summary). Unverified: any official fee."
+ },
+ "jinhua-3": {
+  "bio": "Wooded limestone mountain north of Jinhua city, with a cave cluster, temples and walking paths.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/金华山"
+  ],
+  "notes": "zh Wikipedia: Jinhua Mountain (also Beishan), highest peak Dapanjian 1311 m, 50+ caves in karst belt Shuanglong cave to Lanxi. The 5A Shuanglong scenic area (separate ticket, Ctrip) is the paid part; entry fee for this spot UNVERIFIED, free/open is a placeholder. Bio's 'temples/paths' from draft, not independently sourced."
+ },
+ "ningbo-7": {
+  "bio": "Crescent-shaped lake in central Ningbo, dug in the Tang era, with ten islets, bridges and old mansions.",
+  "icon": "🌙",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Municipal park, no official site found",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/月湖_(宁波)",
+   "https://you.ctrip.com/sight/ningbo83/135930.html"
+  ],
+  "notes": "Ctrip: free; zh Wikipedia: dug in Tang, ten islets shaped in Song, 0.2 sq km. Park gates have closing hours so costBasis could be entry (No Entry Fee) if the owner prefers. Rowing boats cost extra."
+ },
+ "shaoxing-8": {
+  "bio": "Historic lanes in Shaoxing's old town around the Wang Xizhi residence, Jiezhu Temple and the Ink Pond.",
+  "icon": "🖌️",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Historic district, no single steward site found",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/蕺山历史文化街区",
+   "https://gs.ctrip.com/html5/you/sight/18/2001585.html"
+  ],
+  "notes": "zh Wikipedia: district also called Shusheng Guli, holds Wang Xizhi's former residence (Jiezhu Temple, Ink Pond), Ti Shan Bridge. Street itself assumed free; individual sites (Jishan Academy 4 CNY per undated Ctrip travelogue) may charge: unverified."
+ },
+ "south-yandang-mountain": {
+  "bio": "Rocky scenic mountain area in Pingyang County, Wenzhou, known for its cliffs, caves, temples and a cable car.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "free": false,
+  "costMin": null,
+  "costMax": null,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/pingyang1012/110077.html"
+  ],
+  "notes": "PRICE UNVERIFIED: Ctrip page has conflicting text (mixes Beiyandang description) and shows status temporarily closed, reopening TBD. Cable car 25 one-way/40 return seen only in non-official travelogue. Consider holding. Is in Pingyang County, Wenzhou."
+ },
+ "shenjiamen-fishing-port": {
+  "bio": "Working harbour on Zhoushan's Putuo district waterfront, lined with seafood restaurants and evening stalls.",
+  "icon": "⚓",
+  "category": "landmark",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Working port, no single steward",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/120124/132785.html",
+   "https://zh.wikipedia.org/wiki/沈家门"
+  ],
+  "notes": "Ctrip: free, no ticket. zh Wikipedia: national central fishing port. Night stalls (Binggang Road) are a Ctrip/news claim, location has moved (Bansheng Dong pier to East Port): bio kept general."
+ }
+}

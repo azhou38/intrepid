@@ -1,0 +1,113 @@
+{
+ "hangzhou-23": {
+  "bio": "A spring and park in southwest Hangzhou with wooded paths, bamboo groves and tea houses.",
+  "icon": "⛲",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 15,
+  "costMax": 15,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; not verified",
+  "wiki": null,
+  "sources": [
+   "https://www.dahepiao.com/lvyounews1/20250721522100.html",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Hupao_Spring"
+  ],
+  "notes": "Adult 15 CNY (concession 7.5) from ticket-agent articles and Qunar, agree across sources; not official. Park-gate price, not a pass."
+ },
+ "huzhou-4": {
+  "bio": "Tea mountain where Tang emperors' tribute tea was made, with the Tribute Tea Academy on its slope.",
+  "icon": "🍵",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://m.maigoo.com/citiao/199056.html",
+   "https://touch.travel.qunar.com/youji/7880509"
+  ],
+  "notes": "UNVERIFIED cost: no ticket price found for the mountain or the Datang Tribute Tea Academy (Tiger Head Rock, Changxing, built 770 CE). Needs a price source before applying; do not mark free. Lu Yu Classic of Tea link comes from the draft, not confirmed in sources fetched."
+ },
+ "longquan-3": {
+  "bio": "A kiln-shaped museum in Longquan showing the history and craft of Longquan celadon.",
+  "icon": "🏺",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/16671.html"
+  ],
+  "notes": "Ctrip lists it free, advance booking needed, but also flagged 'temporarily closed' (snapshot date unknown). Verify open status and booking before applying."
+ },
+ "gengong-buddhist-kingdom": {
+  "bio": "A Buddhist-themed scenic park in Kaihua County, in the hills of Quzhou.",
+  "icon": "🛕",
+  "category": "entertainment",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 118,
+  "costMax": 180,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/kaihua1001/143278.html",
+   "https://www.dahepiao.com/lvyounews1/20220912296246.html"
+  ],
+  "notes": "Ctrip: list 180, from 118 (weak, discounted). Address Genbo Rd 1, Kaihua. Bio is generic because nothing about the attractions was verified from a source; rewrite if a source is found. Zhejiang location is Kaihua, not Kecheng."
+ },
+ "linhai-ancient-city-wall": {
+  "bio": "Climb the old Taizhou city walls from Lanshengmen gate for views over Linhai's old town.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 55,
+  "costMax": 60,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "Official presence is a mini-program; no site found",
+  "wiki": "Walled City of Taizhou Fu",
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/402/62848.html",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Walled_City_of_Taizhou_Fu"
+  ],
+  "notes": "Ctrip: 60 listed, from 55, for the Taizhou Fu Cultural Tourism Area (walls). Ziyang Street is free. East Lake price unclear."
+ },
+ "yuhai-tower": {
+  "bio": "A Qing-era scholar's library house in Rui'an, built in 1888, with rooms now used as exhibits.",
+  "icon": "📚",
+  "category": "historic",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "free": true,
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "sources": [
+   "https://zh.wikipedia.org/wiki/%E7%8E%89%E6%B5%B7%E6%A5%BC",
+   "https://gs.ctrip.com/html5/you/sight/Ruian535/1488639.html"
+  ],
+  "notes": "Free per a Qunar user comment only (weak). Built 1888 by Sun Yiyan; national key heritage site 1996; collection moved to Rui'an Museum 2013."
+ }
+}
