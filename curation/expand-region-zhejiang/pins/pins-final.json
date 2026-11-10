@@ -219,10 +219,13 @@
  },
  "hangzhou-24": {
   "name": "Beijing-Hangzhou Grand Canal Museum",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "京杭大运河博物馆",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 30.319674,
+   "lon": 120.136993
+  },
+  "source": "overpass way/424289940 tourism=museum"
  },
  "hangzhou-25": {
   "name": "Gongchen Bridge",
@@ -327,10 +330,13 @@
  },
  "hangzhou-36": {
   "name": "Hangzhou Wildlife World",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "杭州野生动物世界",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 30.1550091,
+   "lon": 119.9809686
+  },
+  "source": "overpass way/437732061 tourism=zoo"
  },
  "hangzhou-37": {
   "name": "Hangzhou Paradise Park",
@@ -446,17 +452,23 @@
  },
  "huzhou-1": {
   "name": "Huzhou Museum",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "湖州市博物馆",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 30.8920107,
+   "lon": 120.0839419
+  },
+  "source": "overpass way/981518705 tourism=museum"
  },
  "huzhou-2": {
   "name": "Lianhuazhuang Park",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "莲花庄",
+  "confidence": "AREA",
+  "point": {
+   "lat": 30.859718,
+   "lon": 120.100661
+  },
+  "source": "overpass way/359363095 leisure=park"
  },
  "huzhou-3": {
   "name": "Huzhou Brush Museum",
@@ -484,10 +496,13 @@
  },
  "anji-1": {
   "name": "Great Bamboo Sea (Anji)",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "中国大竹海",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 30.4880617,
+   "lon": 119.6533169
+  },
+  "source": "overpass node/5362816368 tourism=attraction"
  },
  "anji-2": {
   "name": "Anji Bamboo Exposition Park",
@@ -521,10 +536,13 @@
  },
  "anji-5": {
   "name": "Anji Yucun",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "余村",
+  "confidence": "AREA",
+  "point": {
+   "lat": 30.5274639,
+   "lon": 119.60683
+  },
+  "source": "overpass node/9107228610 place=village"
  },
  "anji-6": {
   "name": "Yunshang Grassland Starry Sky Ski Resort",
@@ -542,10 +560,13 @@
  },
  "anji-8": {
   "name": "Wu Changshuo Memorial Hall",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "吴昌硕纪念馆",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 30.6227491,
+   "lon": 119.6985431
+  },
+  "source": "overpass relation/19404027 tourism=museum"
  },
  "huzhou-6": {
   "name": "Nanxun Ancient Town",
@@ -610,10 +631,13 @@
  },
  "xiazhu-lake": {
   "name": "Xiazhu Lake",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "下渚湖",
+  "confidence": "AREA",
+  "point": {
+   "lat": 30.5169249,
+   "lon": 120.047051
+  },
+  "source": "overpass way/625175902 natural=water"
  },
  "xinshi-ancient-town": {
   "name": "Xinshi Ancient Town",
@@ -657,10 +681,13 @@
  },
  "jiaxing-3": {
   "name": "Meiwan Street",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "梅湾街",
+  "confidence": "AREA",
+  "point": {
+   "lat": 30.7554259,
+   "lon": 120.7429541
+  },
+  "source": "overpass way/1259695931 landuse=retail"
  },
  "jiaxing-4": {
   "name": "Yuehe Street",
@@ -688,7 +715,7 @@
  },
  "wuzhen-2": {
   "name": "Wuzhen Eastern Quarter",
-  "zh": null,
+  "zh": "乌镇东栅",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -804,14 +831,17 @@
  },
  "wuyi-4": {
   "name": "Niutou Mountain Forest Park",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "牛头山国家森林公园",
+  "confidence": "AREA",
+  "point": {
+   "lat": 28.6672612,
+   "lon": 119.4950594
+  },
+  "source": "overpass way/778688258 leisure=nature_reserve"
  },
  "wuyi-5": {
   "name": "Dahongyan Scenic Area",
-  "zh": null,
+  "zh": "大红岩",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -901,17 +931,23 @@
  },
  "youbu-ancient-town": {
   "name": "Youbu Ancient Town",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "游埠古镇",
+  "confidence": "AREA",
+  "point": {
+   "lat": 29.1222228,
+   "lon": 119.3250183
+  },
+  "source": "overpass way/1214413126 leisure=park"
  },
  "dapan-mountain": {
   "name": "Dapan Mountain",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "大盘山",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 28.9782657,
+   "lon": 120.5226317
+  },
+  "source": "overpass node/8459711574 natural=peak"
  },
  "longquan-1": {
   "name": "Dayao Longquan Kiln Site",
@@ -932,7 +968,7 @@
  },
  "longquan-3": {
   "name": "Longquan Celadon Museum",
-  "zh": null,
+  "zh": "龙泉青瓷博物馆",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -960,14 +996,17 @@
  },
  "yangjiatang-village": {
   "name": "Yangjiatang Village",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "杨家堂村",
+  "confidence": "AREA",
+  "point": {
+   "lat": 28.4630415,
+   "lon": 119.5421354
+  },
+  "source": "overpass node/12852682463 place=hamlet"
  },
  "damu-mountain-tea-terraces": {
   "name": "Damu Mountain Tea Terraces",
-  "zh": null,
+  "zh": "大木山茶园",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -988,10 +1027,13 @@
  },
  "guyan-painting-village": {
   "name": "Guyan Painting Village",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "古堰画乡",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 28.3040368,
+   "lon": 119.7316363
+  },
+  "source": "overpass relation/13389373 tourism=attraction"
  },
  "tongji-weir": {
   "name": "Tongji Weir",
@@ -1009,7 +1051,7 @@
  },
  "heyang-ancient-village": {
   "name": "Heyang Ancient Village",
-  "zh": null,
+  "zh": "河阳古民居",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1023,10 +1065,13 @@
  },
  "suichang-gold-mine-national-mine-park": {
   "name": "Suichang Gold Mine National Mine Park",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "遂昌金矿国家矿山公园",
+  "confidence": "AREA",
+  "point": {
+   "lat": 28.6152243,
+   "lon": 119.4190506
+  },
+  "source": "overpass way/561433450 landuse=residential"
  },
  "shimen-cave-scenic-area": {
   "name": "Shimen Cave Scenic Area",
@@ -1249,14 +1294,14 @@
  },
  "songlan-mountain-beach": {
   "name": "Songlan Mountain Beach",
-  "zh": null,
+  "zh": "松兰山",
   "confidence": "LOW",
   "point": null,
   "source": null
  },
  "hua-ao-stone-forest": {
   "name": "Hua'ao Stone Forest",
-  "zh": null,
+  "zh": "花岙石林",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1273,10 +1318,13 @@
  },
  "liangshanbo-butterfly-temple": {
   "name": "Liangshanbo Butterfly Temple",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "梁祝文化公园",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 29.9105699,
+   "lon": 121.4799995
+  },
+  "source": "overpass way/329915695 tourism=attraction"
  },
  "shanglin-lake-yue-kilns": {
   "name": "Shanglin Lake Yue Kilns",
@@ -1287,10 +1335,13 @@
  },
  "siming-mountain-national-forest-park": {
   "name": "Siming Mountain National Forest Park",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "四明山国家森林公园",
+  "confidence": "AREA",
+  "point": {
+   "lat": 29.7390657,
+   "lon": 121.0747083
+  },
+  "source": "overpass relation/13096583 leisure=nature_reserve"
  },
  "danshan-chishui": {
   "name": "Danshan Chishui",
@@ -1301,10 +1352,13 @@
  },
  "baishuichong-waterfall": {
   "name": "Baishuichong Waterfall",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "白水冲",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 29.8754819,
+   "lon": 121.0911825
+  },
+  "source": "overpass node/11971076474 waterway=waterfall"
  },
  "five-dragon-pool": {
   "name": "Five Dragon Pool",
@@ -1325,7 +1379,7 @@
  },
  "quzhou-1": {
   "name": "Quzhou Ancient City",
-  "zh": null,
+  "zh": "衢州古城",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1346,17 +1400,20 @@
  },
  "quzhou-4": {
   "name": "Yaowang Mountain",
-  "zh": null,
+  "zh": "药王山",
   "confidence": "LOW",
   "point": null,
   "source": null
  },
  "quzhou-5": {
   "name": "Tianji Longmen Gorge",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "天脊龙门",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 28.7267408,
+   "lon": 118.9572018
+  },
+  "source": "overpass node/5430674504 tourism=attraction"
  },
  "quzhou-6": {
   "name": "Mawei Waterfall",
@@ -1397,10 +1454,13 @@
  },
  "jiangshan-3": {
   "name": "Qingyang Village",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "清漾村",
+  "confidence": "AREA",
+  "point": {
+   "lat": 28.5740338,
+   "lon": 118.5776002
+  },
+  "source": "overpass node/6085566737 place=village"
  },
  "jiangshan-4": {
   "name": "Xianxia Pass",
@@ -1428,7 +1488,7 @@
  },
  "qicai-changhong": {
   "name": "Qicai Changhong Scenic Area",
-  "zh": null,
+  "zh": "七彩长虹",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1455,10 +1515,13 @@
  },
  "changshan-geopark": {
   "name": "Changshan Geopark",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "常山金钉子国家地质公园",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 28.8723971,
+   "lon": 118.492332
+  },
+  "source": "overpass node/5263548589 tourism=attraction"
  },
  "jiming-mountain-folk-houses": {
   "name": "Jiming Mountain Folk Houses",
@@ -1469,7 +1532,7 @@
  },
  "taoyuan-qili": {
   "name": "Taoyuan Qili Scenic Area",
-  "zh": null,
+  "zh": "桃源七里",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1537,7 +1600,7 @@
  },
  "shaoxing-8": {
   "name": "Shusheng Cultural Street",
-  "zh": null,
+  "zh": "书圣故里",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1622,10 +1685,13 @@
  },
  "taizhou-4": {
   "name": "Fonte Wild Mainland",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "台州方特•狂野大陆",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 28.5529767,
+   "lon": 121.5710356
+  },
+  "source": "overpass way/903619728 tourism=theme_park"
  },
  "tiantai-mountain": {
   "name": "Tiantai Mountain",
@@ -1666,7 +1732,7 @@
  },
  "ziyang-old-street": {
   "name": "Ziyang Old Street",
-  "zh": null,
+  "zh": "紫阳街",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1680,7 +1746,7 @@
  },
  "dongji-islands": {
   "name": "Dongji Islands",
-  "zh": null,
+  "zh": "东极岛",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1701,24 +1767,27 @@
  },
  "shitang-fishing-village": {
   "name": "Shitang Fishing Village",
-  "zh": null,
+  "zh": "石塘",
   "confidence": "LOW",
   "point": null,
   "source": null
  },
  "shepan-island": {
   "name": "Shepan Island",
-  "zh": null,
+  "zh": "蛇蟠岛",
   "confidence": "LOW",
   "point": null,
   "source": null
  },
  "fangshan-geopark": {
   "name": "Fangshan Global Geopark",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "方山",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 28.635931,
+   "lon": 121.2792351
+  },
+  "source": "overpass node/3322731860 natural=peak"
  },
  "dalu-island": {
   "name": "Dalu Island",
@@ -1729,21 +1798,24 @@
  },
  "dongsha-fishing-village": {
   "name": "Dongsha Fishing Village",
-  "zh": null,
+  "zh": "东沙渔村",
   "confidence": "LOW",
   "point": null,
   "source": null
  },
  "baima-ao-beach": {
   "name": "Baima Ao Beach",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "白马岙",
+  "confidence": "AREA",
+  "point": {
+   "lat": 28.1623691,
+   "lon": 121.3741486
+  },
+  "source": "overpass node/6555510189 leisure=beach_resort"
  },
  "wu-zixiong-glass-art-museum": {
   "name": "Wu Zixiong Glass Art Museum",
-  "zh": null,
+  "zh": "吴子雄玻璃艺术馆",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1777,7 +1849,7 @@
  },
  "dongtou-islands": {
   "name": "Dongtou Islands",
-  "zh": null,
+  "zh": "洞头列岛",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1794,7 +1866,7 @@
  },
  "south-yandang-mountain": {
   "name": "South Yandang Mountain",
-  "zh": null,
+  "zh": "南雁荡山",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1842,7 +1914,7 @@
  },
  "furong-ancient-village": {
   "name": "Furong Ancient Village",
-  "zh": null,
+  "zh": "芙蓉古村",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1890,7 +1962,7 @@
  },
  "master-and-apprentice-bridges": {
   "name": "Master and Apprentice Bridges",
-  "zh": null,
+  "zh": "泗溪姐妹桥",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1904,7 +1976,7 @@
  },
  "xiandie-rock": {
   "name": "Xiandie Rock",
-  "zh": null,
+  "zh": "仙叠岩",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1918,10 +1990,13 @@
  },
  "wanghai-tower": {
   "name": "Wanghai Tower",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "望海楼",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 27.840083,
+   "lon": 121.1250005
+  },
+  "source": "overpass way/1484030362 tourism=attraction"
  },
  "liu-ji-temple-and-tomb": {
   "name": "Liu Ji Temple and Tomb",
@@ -1966,7 +2041,7 @@
  },
  "mount-putuo-5": {
   "name": "Foding Mountain",
-  "zh": null,
+  "zh": "佛顶山",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1983,7 +2058,7 @@
  },
  "luojia-shan": {
   "name": "Luojia Shan",
-  "zh": null,
+  "zh": "洛迦山",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -1997,10 +2072,13 @@
  },
  "nansha-beach": {
   "name": "Nansha Beach",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "南沙",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 29.8770882,
+   "lon": 122.4053367
+  },
+  "source": "overpass way/857410251 natural=beach"
  },
  "dongsha-beach": {
   "name": "Dongsha Beach",
@@ -2014,7 +2092,7 @@
  },
  "wushitang-beach": {
   "name": "Wushitang",
-  "zh": null,
+  "zh": "乌石塘",
   "confidence": "LOW",
   "point": null,
   "source": null
@@ -2028,10 +2106,13 @@
  },
  "lulan-qingsha": {
   "name": "Lulan Qingsha",
-  "zh": null,
-  "confidence": "LOW",
-  "point": null,
-  "source": null
+  "zh": "鹿栏晴沙",
+  "confidence": "MEDIUM",
+  "point": {
+   "lat": 30.3170291,
+   "lon": 122.2219415
+  },
+  "source": "overpass way/87632653 natural=beach"
  },
  "moxin-mountain": {
   "name": "Moxin Mountain",
@@ -2086,7 +2167,7 @@
  },
  "dongfu-mountain": {
   "name": "Dongfu Mountain",
-  "zh": null,
+  "zh": "东福山",
   "confidence": "LOW",
   "point": null,
   "source": null
