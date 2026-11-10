@@ -6638,7 +6638,9 @@ const destItems = useMemo((): DestItem[] =>
             id="spotSelectedMini"
             aboveLayerID="destStampCircles"
             filter={['all', ['==', ['get', 'sel'], 1], ['==', ['get', 'img'], '']] as any}
-            style={{ iconImage: ['get', 'mini'] as any, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
+            // iconSize set to 1 outright: a style key deleted from a layer keeps its last value on the native layer, and
+            // the selected pin stayed 1.2x after a trial of that size was reverted.
+            style={{ iconImage: ['get', 'mini'] as any, iconSize: 1, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true }}
           />
           <MapboxGL.SymbolLayer
             id="spotSelectedPhoto"
@@ -6646,6 +6648,7 @@ const destItems = useMemo((): DestItem[] =>
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
               iconImage: ['get', 'img'] as any,
+              iconSize: 1,
               iconAnchor: 'bottom',
               iconAllowOverlap: true,
               iconIgnorePlacement: true,
@@ -6674,7 +6677,7 @@ const destItems = useMemo((): DestItem[] =>
             filter={['all', ['==', ['get', 'sel'], 1], ['!=', ['get', 'img'], '']] as any}
             style={{
               iconImage: ['case', ['==', ['get', 'vis'], 1], SPOT_SELECTED_RING_VISITED, SPOT_SELECTED_RING] as any,
-              iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true,
+              iconSize: 1, iconAnchor: 'bottom', iconAllowOverlap: true, iconIgnorePlacement: true,
             }}
           />
         </MapboxGL.ShapeSource>
