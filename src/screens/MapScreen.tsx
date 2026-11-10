@@ -116,7 +116,7 @@ import PinPhoto from '../components/Map/PinPhoto';
 import { VisitToastHost } from '../components/Map/VisitToast';
 import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
-import SpotSheet from '../components/Map/SpotSheet';
+import SpotSheet, { SPOT_SHEET_SLIDE_IN_MS } from '../components/Map/SpotSheet';
 import CountrySheet, { COUNTRY_MOUNT_SLIDE_DELAY_MS } from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
@@ -1334,7 +1334,7 @@ const BACK_CAMERA_DELAY_MS = 220;   // spot back to its destination: the zoom-ou
 // (its 40 ms mount delay and 280 ms slide, with a margin), so the jump's renders come after the slide (see handleCloseSpotToDestination).
 const GRID_CAMERA_DELAY_MS = 450;
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
-const SPOT_CAMERA_DELAY_MS = 180;   // a spot pin tap: the zoom-in starts part-way through the spot sheet's slide-in
+const SPOT_CAMERA_DELAY_MS = SPOT_SHEET_SLIDE_IN_MS + 120;   // a spot pin tap: the zoom-in starts once the spot sheet has slid in (the sheet mounts a commit, ~0.1 s, after the tap)
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
@@ -5143,12 +5143,12 @@ const destItems = useMemo((): DestItem[] =>
     setTimeout(() => { sheetExitingRef.current = false; action(); }, SHEET_EXIT_MS + 20);
   }, []);
 
-  // Opening a spot from a destination's sheet, and "← Destination" back from a spot's: the open sheet slides all the way
+  // Opening a spot from a destination's (or a country's) sheet, and "← Destination" back from a spot's: the open sheet slides all the way
   // off first and only then is the next one mounted, to rise in its place. Swapping them in one go (the old sheet sliding
   // down as the new one rose) put the new sheet's mount, a few hundred ms of work, under both slides, and they stuttered.
   // A sheet at full screen has no slide off (closeWithSheetExit runs the action at once).
   const openSpot = useCallback((spot: Spot) => {
-    if (sheetKindRef.current === 'dest' && sheetPose.get() !== null && !isMapInteracting()) closeWithSheetExit(() => handleSpotPress(spot));
+    if ((sheetKindRef.current === 'dest' || sheetKindRef.current === 'country') && sheetPose.get() !== null && !isMapInteracting()) closeWithSheetExit(() => handleSpotPress(spot));
     else handleSpotPress(spot);
   }, [closeWithSheetExit, handleSpotPress, isMapInteracting]);
 

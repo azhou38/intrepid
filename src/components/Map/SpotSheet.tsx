@@ -75,7 +75,13 @@ const CLOSE_POS   = H + 40;  // fully off-screen
 // (not two, one per animation system) — the whole sheet runs on Reanimated, same as
 // DestinationSheet, so there's no more core-Animated/Reanimated Easing split to keep in sync.
 const SNAP_CONFIG = { duration: 280, easing: Easing.out(Easing.cubic) };
-const MOUNT_SLIDE_DELAY_MS = 40;   // see transitionTo: the slide-in waits out the mount frame
+const MOUNT_SLIDE_DELAY_MS = 80;   // see transitionTo: the slide-in waits out the mount frames
+// The slide-in on mount: a little slower than a snap (SNAP_CONFIG's 280 ms), and after the mount frames, so it reads as one
+// steady rise rather than one whose start was swallowed by the frames that build the sheet.
+const MOUNT_SLIDE_CONFIG = { duration: 360, easing: Easing.out(Easing.cubic) };
+// When the slide-in has landed, from mount: MapScreen holds the spot's camera move until then (a camera flying under the
+// slide made it stutter).
+export const SPOT_SHEET_SLIDE_IN_MS = MOUNT_SLIDE_DELAY_MS + MOUNT_SLIDE_CONFIG.duration;
 // Tab-panel slide — matches DestinationSheet's own TAB_SLIDE_CONFIG (a plain tween, not the
 // spring this used before switching to Reanimated): no overshoot on switching or settling.
 const TAB_SLIDE_CONFIG = { duration: 220, easing: Easing.out(Easing.cubic) };
@@ -887,7 +893,7 @@ function SpotSheet({
     // let that work swallow the fast part of the slide and it looked like lag. Closing has no such frame, and was smooth.
     if (reason !== 'mount') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
     // The full-screen content mounts SPOT_PANEL_MOUNT_DELAY_MS after mount (once the camera has zoomed), not as this lands.
-    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, SNAP_CONFIG, finished => { if (finished) hidePeekSV.value = 0; }));
+    if (reason === 'mount') slideAnim.value = withDelay(MOUNT_SLIDE_DELAY_MS, withTiming(target, MOUNT_SLIDE_CONFIG, finished => { if (finished) hidePeekSV.value = 0; }));
     else if (reason !== 'userUI') slideAnim.value = withTiming(target, SNAP_CONFIG);
   };
   const snapToFullRef = useRef(() => {});
