@@ -40,26 +40,15 @@ const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 // The selected spot's highlight: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, a
-// light-medium grey pin round the photo (its rim and its whole tail, the photo itself untouched), and a soft dark grey halo round
-// the pin's outline (fading outward, outside the pin only, as this image sits over the photo). One image for every spot, so
-// selecting one registers nothing new.
+// light-medium grey pin round the photo (its rim and its whole tail, the photo itself untouched). It keeps the soft shadow of
+// the photo pin under it, as every pin has (a wider halo round it looked unnatural). One image for every spot, so selecting
+// one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
 // The same for a visited spot, with a small green tick badge on the bubble's top right (the tick of the app's "Visited" tags),
 // as its own green rim is covered by the outline.
 export const SPOT_SELECTED_RING_VISITED = 'spotselring:visited';
 const SELECTED_RING_COLOR = '#9CA3AF';   // light-medium grey (orange was #F97316)
 const SELECTED_RING_W = 2.5;
-// The halo: rings outside the bubble, fading as they go out (radius beyond the bubble's edge, opacity).
-const HALO: [number, number][] = [[1.6, 0.5], [3.0, 0.3], [4.4, 0.14]];
-// The halo's own colour, darker than the pin's light grey, so it reads as a shadow round it.
-const HALO_COLOR = '#374151';
-// The pin's teardrop outline, d beyond (or inside, negative) the bubble's edge: an arc over the top of the bubble between the
-// tail's tangent points, then down to the tip, moved out by half as much (the image ends just below the pin's tip).
-function teardrop(cx: number, cy: number, d: number): string {
-  const r = R + d, tip = TIP_D + d / 2;
-  const ty = (r * r) / tip, tx = r * Math.sqrt(1 - (r * r) / (tip * tip));
-  return `M ${cx - tx} ${cy + ty} A ${r} ${r} 0 1 1 ${cx + tx} ${cy + ty} L ${cx} ${cy + tip} Z`;
-}
 // Room round the pin for the badge, left, right and above (none below, so the image's bottom edge is still the pin's tip
 // and centred on it, as the layer anchors it at the bottom). A multiple of 4: rnmapbox rounds a snapshot's width and height
 // up to a multiple of 4 pt, adding the space at the right and bottom, so the outline must round exactly as the pin's own
@@ -141,10 +130,6 @@ const SelectedRing = memo(function SelectedRing({ name, visited }: { name: strin
     <MapboxGL.Image name={name} ref={imageRef as any}>
       <View collapsable={false} style={{ width: W + RING_M * 2, height: H + RING_M }}>
         <Svg width={W + RING_M * 2} height={H + RING_M}>
-          {/* The halo: the outline again, further out each time and fainter. */}
-          {HALO.map(([d, o]) => (
-            <Path key={d} d={teardrop(cx, cy, d)} fill="none" stroke={HALO_COLOR} strokeOpacity={o} strokeWidth={1.6} strokeLinejoin="round" />
-          ))}
           {/* The pin in orange: its tail (outside the bubble, closed by the bubble's bottom arc, so it doesn't cover the photo),
               and its 2 pt rim (radius R-2 to R), a little wider so no white shows at its edges. */}
           <Path d={tailFill} fill={SELECTED_RING_COLOR} />
