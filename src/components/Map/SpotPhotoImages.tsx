@@ -40,7 +40,7 @@ const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 // The selected spot's highlight: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, a
-// light-medium grey pin round the photo (its rim and its whole tail, the photo itself untouched), and a soft grey halo round
+// light-medium grey pin round the photo (its rim and its whole tail, the photo itself untouched), and a soft dark grey halo round
 // the pin's outline (fading outward, outside the pin only, as this image sits over the photo). One image for every spot, so
 // selecting one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
@@ -50,7 +50,9 @@ export const SPOT_SELECTED_RING_VISITED = 'spotselring:visited';
 const SELECTED_RING_COLOR = '#9CA3AF';   // light-medium grey (orange was #F97316)
 const SELECTED_RING_W = 2.5;
 // The halo: rings outside the bubble, fading as they go out (radius beyond the bubble's edge, opacity).
-const HALO: [number, number][] = [[1.6, 0.42], [3.0, 0.24], [4.4, 0.11]];
+const HALO: [number, number][] = [[1.6, 0.5], [3.0, 0.3], [4.4, 0.14]];
+// The halo's own colour, darker than the pin's light grey, so it reads as a shadow round it.
+const HALO_COLOR = '#374151';
 // The pin's teardrop outline, d beyond (or inside, negative) the bubble's edge: an arc over the top of the bubble between the
 // tail's tangent points, then down to the tip, moved out by half as much (the image ends just below the pin's tip).
 function teardrop(cx: number, cy: number, d: number): string {
@@ -141,7 +143,7 @@ const SelectedRing = memo(function SelectedRing({ name, visited }: { name: strin
         <Svg width={W + RING_M * 2} height={H + RING_M}>
           {/* The halo: the outline again, further out each time and fainter. */}
           {HALO.map(([d, o]) => (
-            <Path key={d} d={teardrop(cx, cy, d)} fill="none" stroke={SELECTED_RING_COLOR} strokeOpacity={o} strokeWidth={1.6} strokeLinejoin="round" />
+            <Path key={d} d={teardrop(cx, cy, d)} fill="none" stroke={HALO_COLOR} strokeOpacity={o} strokeWidth={1.6} strokeLinejoin="round" />
           ))}
           {/* The pin in orange: its tail (outside the bubble, closed by the bubble's bottom arc, so it doesn't cover the photo),
               and its 2 pt rim (radius R-2 to R), a little wider so no white shows at its edges. */}
