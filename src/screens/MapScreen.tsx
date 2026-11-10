@@ -2255,6 +2255,7 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // them meanwhile). Otherwise the camera leaving for the new view opened the arrow, or the new name showed, mid-fade.
   const crumbFrozenRef = useRef(false);
   const frozenCrumbFadeRef = useRef(false);   // a fadeCrumbForNewSelection is running (it unfreezes when done)
+  const crumbFadeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [frozenCrumb, setFrozenCrumb] = useState<{ name: string; country: string; countryCode: string; standalone: boolean } | null>(null);
   const worldPillScale  = useMemo(() => worldPillAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
   const breadcrumbScale = useMemo(() => breadcrumbAnim.interpolate({ inputRange: [0, 1], outputRange: [0.88, 1] }), []);
@@ -3180,9 +3181,12 @@ const destItems = useMemo((): DestItem[] =>
     frozenCrumbFadeRef.current = true;
     crumbFrozenRef.current = true;
     setFrozenCrumb(crumbRef.current);
-    sheetCollapsedSV.value = withTiming(1, { duration: CRUMB_SWAP_FADE_MS, easing: Easing.out(Easing.quad) }, finished => {
-      if (finished) runOnJS(endCrumbFade)();
-    });
+    sheetCollapsedSV.value = withTiming(1, { duration: CRUMB_SWAP_FADE_MS, easing: Easing.out(Easing.quad) });
+    // Ended by a timer, not the fade's own callback: the new sheet reports its half-screen snap as it mounts, which
+    // restarts sheetCollapsedSV's animation, so that callback ran unfinished and the breadcrumb stayed frozen on the old
+    // destination.
+    if (crumbFadeTimerRef.current) clearTimeout(crumbFadeTimerRef.current);
+    crumbFadeTimerRef.current = setTimeout(() => { crumbFadeTimerRef.current = null; endCrumbFade(); }, CRUMB_SWAP_FADE_MS + 20);
   }, []);
   // An X close: the breadcrumb fades out at the tap, as it is, while the sheet slides off. Left to the close, it stayed up
   // while the camera zoomed out, its return arrow opening (the camera leaving the destination), and only then faded.
