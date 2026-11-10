@@ -5001,8 +5001,12 @@ const destItems = useMemo((): DestItem[] =>
     const framing = sheetSnapStateRef.current === 'peek' ? 'full' : 'topHalf';
     setDestHomeToDefault(selectedDest, framing);
     destFlightInterruptedRef.current = false;
-    fitDestinationDefaultView(selectedDest, 'flyTo', framing);
-  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault, releaseSpotCloseTarget]);
+    // From the destination's default zoom or closer in, an ease (no zoom-out arc): flyTo swings out in mid-flight, below
+    // the destination's zoom, so its pin came back over the spot pins for a moment and then faded away again on landing.
+    // From further out, the fly still reads best (a long way in).
+    const atOrInside = !isZoomedOutBeyond(destDefaultCamera(selectedDest, framing).zoom);
+    fitDestinationDefaultView(selectedDest, atOrInside ? 'easeTo' : 'flyTo', framing);
+  }, [selectedDest, selectedSpot, fitSpotView, fitDestinationDefaultView, setDestHomeToDefault, releaseSpotCloseTarget, isZoomedOutBeyond, destDefaultCamera]);
 
   // opts.cameraStarted: see handleCloseSpotToDestinationView.
   const handleCloseCountry = useCallback((opts?: { cameraStarted?: boolean }) => {
