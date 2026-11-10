@@ -40,18 +40,19 @@ const READY_AFTER_MS = 120;  // when that snapshot has reached the map
 
 export type SpotPhotoImageSpec = { name: string; spot: Spot; visited: boolean };
 // The selected spot's highlight: drawn over its photo pin (MapScreen's spotSelectedRing layer), the same size and anchor, an
-// near-black border over the pin's white (or green) rim and along its tail's edges, and a soft dark halo round it (rings
-// fading outward, outside the bubble only, as this image sits over the photo). Near-black is the app's selection colour
-// (the breadcrumb's active segment, the Profile's level pill); green already means visited. It replaced a slate outline
-// with a solid slate tail, which read as a grey fill. One image for every spot, so selecting one registers nothing new.
+// thicker white border over the pin's white (or green) rim and along its tail's edges, a faint grey edge just outside it
+// so the white still reads on a pale map, and a soft white halo round it (rings fading outward, outside the bubble only, as
+// this image sits over the photo). It replaced a slate outline with a solid slate tail, which read as a grey fill. One
+// image for every spot, so selecting one registers nothing new.
 export const SPOT_SELECTED_RING = 'spotselring';
 // The same for a visited spot, with a small green tick badge on the bubble's top right (the tick of the app's "Visited" tags),
 // as its own green rim is covered by the outline.
 export const SPOT_SELECTED_RING_VISITED = 'spotselring:visited';
-const SELECTED_RING_COLOR = '#111827';
-const SELECTED_RING_W = 2.5;
+const SELECTED_RING_COLOR = '#FFFFFF';
+const SELECTED_RING_W = 3.5;           // over the 2 pt rim and a little beyond it, so it reads heavier than an unselected pin's
+const SELECTED_EDGE = 'rgba(0,0,0,0.28)';
 // The halo: rings outside the bubble, fading as they go out (radius beyond the bubble's edge, opacity).
-const HALO: [number, number][] = [[1.6, 0.26], [3.0, 0.14], [4.4, 0.06]];
+const HALO: [number, number][] = [[2.4, 0.75], [3.6, 0.45], [4.8, 0.2]];
 // Room round the pin for the badge, left, right and above (none below, so the image's bottom edge is still the pin's tip
 // and centred on it, as the layer anchors it at the bottom). A multiple of 4: rnmapbox rounds a snapshot's width and height
 // up to a multiple of 4 pt, adding the space at the right and bottom, so the outline must round exactly as the pin's own
@@ -137,11 +138,13 @@ const SelectedRing = memo(function SelectedRing({ name, visited }: { name: strin
           {HALO.map(([d, o]) => (
             <Circle key={d} cx={cx} cy={cy} r={R + d} fill="none" stroke={SELECTED_RING_COLOR} strokeOpacity={o} strokeWidth={1.6} />
           ))}
-          <Path d={tailEdges} fill="none" stroke={SELECTED_RING_COLOR} strokeOpacity={0.12} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" />
+          <Path d={tailEdges} fill="none" stroke={SELECTED_RING_COLOR} strokeOpacity={0.45} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" />
           {/* The border: over the bubble's 2 pt rim (radius R-2 to R), a little wider so no white shows at its edges, and
               along the tail's edges. */}
-          <Path d={tailEdges} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" />
-          <Circle cx={cx} cy={cy} r={R - 1} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={SELECTED_RING_W} />
+          <Path d={tailEdges} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={3} strokeLinejoin="round" strokeLinecap="round" />
+          <Circle cx={cx} cy={cy} r={R - 0.5} fill="none" stroke={SELECTED_RING_COLOR} strokeWidth={SELECTED_RING_W} />
+          {/* The faint grey edge round the white border. */}
+          <Circle cx={cx} cy={cy} r={R + 1.6} fill="none" stroke={SELECTED_EDGE} strokeWidth={0.8} />
           {visited && (
             <>
               <Circle cx={bx} cy={by} r={BADGE_R} fill={VISITED_COLOR} stroke="white" strokeWidth={1.5} />
