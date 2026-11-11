@@ -5251,7 +5251,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A canal town of stone bridges and wooden houses, built for strolling by day and by night",
     description: "Wuzhen is a water town in northern Zhejiang, laid out around narrow canals and split into two main quarters on opposite sides of a canal. The Eastern Quarter holds restored shops, temples and small museums, plus the former home of writer Mao Dun nearby. The larger Western Quarter is built around a network of narrow canals and can be crossed by boat-bus. Both are often crowded.",
     whyVisit: ["Wander canals and stone bridges", "Stay overnight in a canal-side inn", "Ride a boat through the water town", "Visit small museums and old shops"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["A picture from China every day 067.jpg", "", "A picture from China every day 066.jpg", "A picture from China every day 065.jpg"],
     highlights: ["Canal-side strolls", "Traditional-house inns", "Boat rides", "Heritage museums"],
     goodToKnow: [
       { icon: "🎟️", title: "Two separate quarters", detail: "The Eastern and Western Quarters sit on opposite sides of a canal and are entered separately, so decide which to visit." },
@@ -5319,7 +5319,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A canal-threaded old town of writers, calligraphy and rice wine, east of Hangzhou",
     description: "Shaoxing is a canal city of stone bridges, black-awning boats and old lanes in northern Zhejiang. It is tied to writers and scholars: Lu Xun grew up here, and Wang Xizhi wrote the Orchid Pavilion Preface at a stream-side garden in 353. Its Song-dynasty gardens and bridges sit alongside the memorial site of Yu the Great at Mount Kuaiji. It is also known for its yellow rice wine.",
     whyVisit: ["Wander canal-side old town lanes", "Walk gardens tied to famous poets", "Follow Lu Xun and Zhou Enlai"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Shaoxing Bazi Qiao 2017.12.09 16-16-06.jpg", "", ""],
     highlights: ["Canal old town", "Poets' gardens", "Literary heritage"],
     goodToKnow: [
       { icon: "🚤", title: "Go by canal boat", detail: "Boats on the old-town waterways give a different view of the bridges and lanes than walking does." },
