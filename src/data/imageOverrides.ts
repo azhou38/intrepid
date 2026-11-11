@@ -3629,4 +3629,13 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Suqian Museum",
   "Sihong Ancient Xucheng Scenic Area",
   "Yancheng China Sea Salt Museum",
+  "Hangzhou",
+  "Wuzhen",
+  "Ningbo",
+  "Shaoxing",
+  "Mount Putuo",
+  "Quzhou",
+  "Anji",
+  "Huzhou",
+  "Jiaxing",
 ]);

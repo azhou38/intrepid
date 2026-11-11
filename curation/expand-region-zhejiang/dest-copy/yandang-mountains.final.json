@@ -1,55 +1,55 @@
 {
-  "destination": {
-    "id": "yandang-mountains",
-    "name": "Yandang Mountains",
-    "country": "China",
-    "countryCode": "CN",
-    "timezone": "Asia/Shanghai",
-    "continent": "Asia",
-    "coordinates": {
-      "lat": 28.37,
-      "lng": 121.06
-    },
-    "category": "mountain",
-    "defaultZoomSpanKm": 30,
-    "rank": 3,
-    "icon": "🏔️",
-    "tagline": "Sheer rock walls, tall waterfalls and a cave temple on Zhejiang's coast",
-    "description": "The Yandang Mountains are a scenic area on Zhejiang's southern coast, near Yueqing, with steep rock faces, gorges and waterfalls. The area is divided into sections, each with its own character. Lingyan has the sheer Pingxia rock wall and Tianzhu Peak, Dalongchu has a 197 m waterfall, and Sanzhe is gorge country with falls. Lingfeng has Guanyin Temple, built into a cave between two leaning peaks.",
-    "whyVisit": [
-      "Hike beneath towering rock walls",
-      "See waterfalls drop through gorges",
-      "Visit temples set among peaks"
-    ],
-    "highlights": [
-      "Rock walls",
-      "Waterfalls",
-      "Mountain temples"
-    ],
-    "goodToKnow": [
-      {
-        "icon": "🗺️",
-        "title": "Pick sections, not all",
-        "detail": "The area splits into sections such as Lingyan, Dalongchu and Sanzhe, so pick one or two rather than all."
-      },
-      {
-        "icon": "🎟️",
-        "title": "Check what tickets cover",
-        "detail": "Confirm at each scenic area what your ticket covers before you go in."
-      },
-      {
-        "icon": "🌧️",
-        "title": "Waterfalls like rain",
-        "detail": "Falls such as Dalongchu are likely to look fuller after rain."
-      }
-    ],
-    "bestMonths": [
-      4,
-      5,
-      10,
-      11
-    ],
-    "bestTimeBlurb": "{months} suit hiking in cooler, clearer weather. Summers are hot, with typhoon risk."
+ "destination": {
+  "id": "yandang-mountains",
+  "name": "Yandang Mountains",
+  "country": "China",
+  "countryCode": "CN",
+  "timezone": "Asia/Shanghai",
+  "continent": "Asia",
+  "coordinates": {
+   "latitude": 28.37,
+   "longitude": 121.06
   },
-  "notes": "FACT-CHECK: Changed: cut 'Lingfeng is the fourth major section' (unsupported; now Guanyin Temple in a cave between two peaks, per Wikipedia); tagline 'temple-topped peaks' -> 'a cave temple'; removed per-section entrance claim. Hundred Step Beach is Mount Putuo's, not Yandang's. Unverified: bestMonths, ticket structure, waterfall-after-rain tip, typhoons 'from August'. Earlier notes: Start values kept from wave1/destinations.json. Copy drawn from spot bios and general knowledge of the places; no figures beyond the bios (197 m falls, 33 m statue). Mount Putuo: Hundred Step Beach and Lingfeng named from the placement/destination evidence only."
+  "category": "mountain",
+  "defaultZoomSpanKm": 30,
+  "rank": 3,
+  "icon": "🏔️",
+  "tagline": "Sheer rock walls, tall waterfalls and a cave temple on Zhejiang's coast",
+  "description": "The Yandang Mountains are a scenic area on Zhejiang's southern coast, near Yueqing, with steep rock faces, gorges and waterfalls. The area is divided into sections, each with its own character. Lingyan has the sheer Pingxia rock wall and Tianzhu Peak, Dalongchu has a 197 m waterfall, and Sanzhe is gorge country with falls. Lingfeng has Guanyin Temple, built into a cave between two leaning peaks.",
+  "whyVisit": [
+   "Hike beneath towering rock walls",
+   "See waterfalls drop through gorges",
+   "Visit temples set among peaks"
+  ],
+  "highlights": [
+   "Rock walls",
+   "Waterfalls",
+   "Mountain temples"
+  ],
+  "goodToKnow": [
+   {
+    "icon": "🗺️",
+    "title": "Pick sections, not all",
+    "detail": "The area splits into sections such as Lingyan, Dalongchu and Sanzhe, so pick one or two rather than all."
+   },
+   {
+    "icon": "🎟️",
+    "title": "Check what tickets cover",
+    "detail": "Confirm at each scenic area what your ticket covers before you go in."
+   },
+   {
+    "icon": "🌧️",
+    "title": "Waterfalls like rain",
+    "detail": "Falls such as Dalongchu are likely to look fuller after rain."
+   }
+  ],
+  "bestMonths": [
+   4,
+   5,
+   10,
+   11
+  ],
+  "bestTimeBlurb": "{months} suit hiking in cooler, clearer weather. Summers are hot, with typhoon risk."
+ },
+ "notes": "FACT-CHECK: Changed: cut 'Lingfeng is the fourth major section' (unsupported; now Guanyin Temple in a cave between two peaks, per Wikipedia); tagline 'temple-topped peaks' -> 'a cave temple'; removed per-section entrance claim. Hundred Step Beach is Mount Putuo's, not Yandang's. Unverified: bestMonths, ticket structure, waterfall-after-rain tip, typhoons 'from August'. Earlier notes: Start values kept from wave1/destinations.json. Copy drawn from spot bios and general knowledge of the places; no figures beyond the bios (197 m falls, 33 m statue). Mount Putuo: Hundred Step Beach and Lingfeng named from the placement/destination evidence only."
 }
