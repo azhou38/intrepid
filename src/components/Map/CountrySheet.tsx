@@ -1121,8 +1121,14 @@ function CountrySheet({
           the drag jank. The gesture itself is now a Reanimated/Gesture-Handler worklet (see
           `pan` above), which is the bigger fix: it runs on the UI thread with no per-frame
           JS-thread round trip at all. */}
+      {/* The sheet moves as one plain, unstyled view (transform only); its shadow and its rounded, clipped body sit still
+          inside it, as DestinationSheet's do. A view with only its top corners rounded is drawn by React Native as a bitmap,
+          and moving such a view itself (with its shadow, here) redrew that bitmap on the CPU every frame of a drag: frames
+          dropped, worst at 120 Hz, so swipes juddered. The shadow is a sibling behind the body so the clip doesn't cut it. */}
       <GestureDetector gesture={pan}>
-      <Animated.View style={[st.sheet, sheetAnimStyle]}>
+      <Animated.View style={[st.sheetMover, sheetAnimStyle]}>
+      <View pointerEvents="none" style={st.sheetShadow} />
+      <View style={st.sheet}>
         <View style={[StyleSheet.absoluteFill, { overflow: 'hidden', borderTopLeftRadius: 28, borderTopRightRadius: 28 }]}>
 
           {/* ── HEADER PHOTO — a fixed layer BEHIND the scroll content (Spotify-style): scrolling slides the header
@@ -1377,13 +1383,18 @@ function CountrySheet({
           {/* ── PEEK STRIP — a thin sliver of the header image with the country's name,
               shown only once the sheet has been dropped down past collapsed (via peekSignal,
               fired when the user pans/zooms the map). Tapping it returns to collapsed. ── */}
+          {/* Its fade is on a plain outer view: fading the rounded strip itself redrew its bitmap every frame (see the sheet). */}
           <Animated.View
             pointerEvents="box-none"
-            style={[{
-              position: 'absolute', left: 0, right: 0, top: 0, height: PEEK_STRIP_H, overflow: 'hidden',
+            style={[{ position: 'absolute', left: 0, right: 0, top: 0, height: PEEK_STRIP_H }, peekAnimStyle]}
+          >
+          <View
+            pointerEvents="box-none"
+            style={{
+              position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, overflow: 'hidden',
               backgroundColor: '#111827',
               borderTopLeftRadius: 28, borderTopRightRadius: 28,
-            }, peekAnimStyle]}
+            }}
           >
             <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
               <EntityPhoto instant cacheKey={countryPhotoKey} cache={photoCache} load={loadCountryPhoto} style={StyleSheet.absoluteFill as any} />
@@ -1411,9 +1422,11 @@ function CountrySheet({
                 </View>
               </View>
             </Pressable>
+          </View>
           </Animated.View>
 
         </View>
+      </View>
       </Animated.View>
       </GestureDetector>
 
@@ -1454,6 +1467,11 @@ const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFill, zIndex: 200, elevation: 200 },
 
   sheet: {
+    position: 'absolute', left: 0, right: 0, top: 0, height: H, overflow: 'hidden',
+    borderTopLeftRadius: 28, borderTopRightRadius: 28, backgroundColor: '#F9FAFB',
+  },
+  sheetMover: { position: 'absolute', left: 0, right: 0, top: 0, height: H },
+  sheetShadow: {
     position: 'absolute', left: 0, right: 0, top: 0, height: H,
     borderTopLeftRadius: 28, borderTopRightRadius: 28, backgroundColor: '#F9FAFB',
     shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 20,
