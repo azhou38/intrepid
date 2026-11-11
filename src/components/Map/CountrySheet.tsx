@@ -10,7 +10,7 @@ import {
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, withDelay, runOnJS,
-  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue,
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, useAnimatedScrollHandler,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
@@ -106,6 +106,10 @@ interface Props {
 
 const { height: H, width: W } = Dimensions.get('window');
 const FULL_POS    = 0;
+// The content's scroll view, animated so its scroll position reaches the drag gesture on the UI thread (onScrollUI), as
+// DestinationSheet's does: read from the JS thread's onScroll, busy with the map, it lagged, and a drag down from full screen
+// misread whether the content was at its top.
+const SheetScrollView = Animated.createAnimatedComponent(ScrollView);
 const CLOSE_POS   = H + 40;
 // Same bottom-tab-bar reservation App.tsx's Tab.Navigator uses for its own tabBarStyle
 // height — the country sheet lives inside that "Map" tab's screen, so anything it shows
@@ -696,6 +700,17 @@ function CountrySheet({
   const scrollAnimRef = useAnimatedRef<any>();
   const scrollResetSV = useSharedValue(-1);   // -1: idle
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
+  // The content only scrolls once the sheet rests at full screen (as DestinationSheet's): until it is up, any scroll is put
+  // straight back to the top here, on the UI thread (not while resetScrollToTop is easing it there itself). A swipe up still
+  // settling below full both moved the sheet and scrolled the content, and the two fought.
+  const onScrollUI = useAnimatedScrollHandler(e => {
+    if (e.contentOffset.y > 0 && slideAnim.value > FULL_POS + 1 && scrollResetSV.value < 0) {
+      scrollTo(scrollAnimRef, 0, 0, false);
+      scrollY.value = 0;
+      return;
+    }
+    scrollY.value = e.contentOffset.y;
+  });
   const resetScrollToTop = () => {
     const y0 = scrollY.value;
     if (y0 <= 0) return;
@@ -956,7 +971,9 @@ function CountrySheet({
       // shouldn't be read as "start collapsing the sheet," since that also drags the
       // back-navigation pill (the down arrow) along with it, making it look like it moves
       // during ordinary scrolling.
-      if (snapStateSV.value === 'full' && !(scrollY.value <= 1 && e.translationY > 24)) return;
+      // Once the drag has engaged it carries on (as DestinationSheet's): re-checked every frame, the sheet froze whenever the
+      // finger came back within 24 pt or the content moved, then jumped when the check passed again.
+      if (snapStateSV.value === 'full' && !dragEngagedSV.value && !(scrollY.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
@@ -1127,7 +1144,7 @@ function CountrySheet({
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
           <Animated.View style={[{ flex: 1 }, headerShiftStyle]}>
-          <ScrollView
+          <SheetScrollView
             ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
             style={{ flex: 1 }}
             // Only scrollable at full-screen — while collapsed/peeking there's nothing to
@@ -1140,7 +1157,7 @@ function CountrySheet({
             stickyHeaderIndices={[1]}
             bounces={false}
             showsVerticalScrollIndicator={false}
-            onScroll={e => { scrollY.value = e.nativeEvent.contentOffset.y; }}
+            onScroll={onScrollUI}
             scrollEventThrottle={16}
             // The sheet runs behind the app's own bottom tab bar (BOTTOM_TAB_H, which already
             // includes the safe area), so the last content has to be able to clear it — the old
@@ -1346,7 +1363,7 @@ function CountrySheet({
             </GestureDetector>
             )}
             </View>
-          </ScrollView>
+          </SheetScrollView>
           </Animated.View>
           {/* ── COMPACT TITLE BAR — fixed at the very top and only fades in place (no movement): in as the tab bar arrives
               under it and pins, out again as it scrolls back down. */}
