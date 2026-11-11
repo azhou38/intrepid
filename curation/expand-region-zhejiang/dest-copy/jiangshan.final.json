@@ -1,51 +1,51 @@
 {
- "destination": {
-  "id": "jiangshan",
-  "country": "China",
-  "countryCode": "CN",
-  "timezone": "Asia/Shanghai",
-  "continent": "Asia",
-  "name": "Jiangshan",
-  "coordinates": {
-   "lat": 28.53,
-   "lng": 118.57
+  "destination": {
+    "id": "jiangshan",
+    "country": "China",
+    "countryCode": "CN",
+    "timezone": "Asia/Shanghai",
+    "continent": "Asia",
+    "name": "Jiangshan",
+    "coordinates": {
+      "lat": 28.53,
+      "lng": 118.57
+    },
+    "category": "mountain",
+    "defaultZoomSpanKm": 50,
+    "rank": 4,
+    "icon": "⛰️",
+    "tagline": "Danxia sandstone peaks, a clan village and a stone-paved pass in south-west Zhejiang",
+    "description": "Jiangshan is a county-level city in south-west Zhejiang and the base for Mount Jianglang, three sandstone peaks in a line that are part of China Danxia World Heritage. Nearby Qingyang Village is the ancestral village of the Jiangnan Mao clan, with a clan ancestral hall. The Xianxia ancient road climbs through four gates on about five km of stone-paved path.",
+    "whyVisit": [
+      "Climb Danxia sandstone peaks",
+      "Walk an ancient stone road",
+      "Visit an old clan village"
+    ],
+    "highlights": [
+      "Danxia peaks",
+      "Ancient stone road",
+      "Clan village"
+    ],
+    "goodToKnow": [
+      {
+        "icon": "🪜",
+        "title": "Expect a steep climb",
+        "detail": "Mount Jianglang's peaks are a sandstone climb. Start early and bring water."
+      },
+      {
+        "icon": "🚕",
+        "title": "Sights are spread out",
+        "detail": "The peaks, village and pass are separate stops, so a taxi or hired driver from Jiangshan town helps."
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "bestTimeBlurb": "Jiangshan is best in {months}, when clear, cooler days make the long climbs comfortable."
   },
-  "category": "mountain",
-  "defaultZoomSpanKm": 50,
-  "rank": 4,
-  "icon": "⛰️",
-  "tagline": "Danxia sandstone peaks, ancient clan villages and a stone-paved pass on the Zhejiang border",
-  "description": "Jiangshan is a county-level city in south-west Zhejiang and the base for Mount Jianglang, three red sandstone peaks in a line that are part of China Danxia World Heritage. Nearby Qingyang Village is the ancestral village of the Jiangnan Mao clan, with a clan ancestral hall. The Xianxia ancient road climbs through four gates on about five km of stone-paved path.",
-  "whyVisit": [
-   "Climb Danxia sandstone peaks",
-   "Walk an ancient stone road",
-   "Visit old clan villages"
-  ],
-  "highlights": [
-   "Danxia peaks",
-   "Ancient stone road",
-   "Clan villages"
-  ],
-  "goodToKnow": [
-   {
-    "icon": "🪜",
-    "title": "Expect steep stairs",
-    "detail": "Reaching the summit viewpoints on Mount Jianglang means a long climb on steps. Start early and bring water."
-   },
-   {
-    "icon": "🚕",
-    "title": "Sights are spread out",
-    "detail": "The peaks, village and pass lie some distance apart. Taxis or a hired driver from Jiangshan town work best."
-   }
-  ],
-  "bestMonths": [
-   4,
-   5,
-   9,
-   10,
-   11
-  ],
-  "bestTimeBlurb": "Jiangshan is best in {months}, when clear, cooler days make the long climbs comfortable."
- },
- "notes": "Wave1 values kept. Judge note: Wikivoyage Jiangshan page exists."
+  "notes": "FACT-CHECK: Changed: removed 'red' sandstone and 'Zhejiang border' (unsourced), 'clan villages' now one village (only Qingyang sourced; whyVisit/highlight singular), 'long climb on steps' softened. Unverified: bestMonths, tip about taxis. Earlier notes: Wave1 values kept. Judge note: Wikivoyage Jiangshan page exists."
 }
