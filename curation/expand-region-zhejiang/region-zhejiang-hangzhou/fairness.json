@@ -1,0 +1,170 @@
+{
+ "inside_destinations": 42,
+ "standalone": 7,
+ "new_destinations": 1,
+ "lowest_kept": [
+  {
+   "name": "Beijing-Hangzhou Grand Canal Museum",
+   "views": 0
+  },
+  {
+   "name": "China Comic and Animation Museum",
+   "views": 0
+  },
+  {
+   "name": "Daqi Mountain",
+   "views": 0
+  },
+  {
+   "name": "Feilai Peak",
+   "views": 0
+  },
+  {
+   "name": "Flower Pond Fish Viewing",
+   "views": 0
+  },
+  {
+   "name": "Fuchun Taoyuan",
+   "views": 0
+  },
+  {
+   "name": "Guo's Villa",
+   "views": 0
+  },
+  {
+   "name": "Hangzhou Paradise Park",
+   "views": 0
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Temple of the Qian Kings",
+   "views": 1583,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Hangzhou lists it: memorial with tombs of five Wuyue kings. | Memorial hall, one source, short visit."
+  },
+  {
+   "name": "Hangzhou Zoo",
+   "views": 1457,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Hangzhou lists it but the entry says poor animal treatment; pandas. | Zoo welfare concerns; ordinary city zoo."
+  },
+  {
+   "name": "Qianjiang New City",
+   "views": 6362,
+   "counted_sources": 1,
+   "verdict": "review",
+   "reason": "Wikivoyage Hangzhou lists it: new business district with modern architecture. | District, little to do for half an hour."
+  },
+  {
+   "name": "Kuahuqiao Site",
+   "views": 2324,
+   "counted_sources": 0,
+   "verdict": "review",
+   "reason": "Official Hangzhou pages describe the Kuahuqiao Relics Museum (8,000-year-old canoe, Mon closed) but only this one source. | Niche museum in Xiaoshan; one source."
+  },
+  {
+   "name": "Ten Scenes of West Lake",
+   "views": 5599,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 3: the umbrella list for West Lake; its sites are judged on their own"
+  },
+  {
+   "name": "Hangzhou Museum",
+   "views": 1094,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Fresh search of Hangzhou tourism bureau, China Daily and ChinaHighlights found no listing for it (city guides list the Southern Song Relics Display Hall and others instead)."
+  },
+  {
+   "name": "Dragon Well Manor",
+   "views": 1366,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Fresh search found no distinct site."
+  },
+  {
+   "name": "Lou Wai Lou",
+   "views": 2278,
+   "counted_sources": 1,
+   "verdict": "reject",
+   "reason": "Rule 2: a restaurant."
+  },
+  {
+   "name": "Qiantang River Bridge",
+   "views": 1563,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: a bridge seen in passing; Wikipedia only."
+  },
+  {
+   "name": "Cathedral of the Immaculate Conception (Hangzhou)",
+   "views": 3865,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 2: church with no visitor source naming anything to see."
+  },
+  {
+   "name": "Hangzhou City Wall",
+   "views": 1032,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Fresh search found nothing visitor-oriented."
+  },
+  {
+   "name": "Mount Mogan",
+   "views": 6577,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Out-of-region duplicate: Mount Mogan belongs to Huzhou, not Hangzhou; judged in the Huzhou pass."
+  },
+  {
+   "name": "Huangmaojian",
+   "views": 1065,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 1: no source, location unclear."
+  },
+  {
+   "name": "Zhongshan Park",
+   "views": 1810,
+   "counted_sources": 0,
+   "verdict": "reject",
+   "reason": "Rule 3: Zhongshan Park is in Solitary Hill's Wikivoyage entry."
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Qiandao Lake",
+   "km_from_hangzhou": 131.5
+  },
+  {
+   "name": "Tianmu Mountain",
+   "km_from_hangzhou": 69.8
+  },
+  {
+   "name": "Fuchun Taoyuan",
+   "km_from_hangzhou": 55.3
+  },
+  {
+   "name": "Taihu Lake Source",
+   "km_from_hangzhou": null
+  },
+  {
+   "name": "Zhexi Grand Canyon",
+   "km_from_hangzhou": null
+  },
+  {
+   "name": "Daqi Mountain",
+   "km_from_hangzhou": null
+  },
+  {
+   "name": "Yaolin Fairyland",
+   "km_from_hangzhou": null
+  }
+ ],
+ "benchmark": "Not a NZ run; no benchmark places apply. Hangzhou kept as rank-2 destination; Qiandao Lake/Tianmu Mountain standalone (outside span); no other cluster reaches four spots (Fuyang 3, Tonglu 2). Fuchun Taoyuan (~55 km) is standalone because outside realistic base reach."
+}

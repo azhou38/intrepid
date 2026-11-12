@@ -1,0 +1,142 @@
+{
+ "hangzhou-19": {
+  "bio": "Slender seven-storey stone pagoda on Baoshi Hill, one of West Lake's landmarks, with views over the lake.",
+  "icon": "🗼",
+  "category": "landmark",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "open hill, no single steward site found",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Baochu_Pagoda",
+    "https://zh.wikipedia.org/wiki/保俶塔"
+   ],
+   "cost": [
+    "https://chinahangzhoutour.com/attractions/show/baochu-pagoda.htm"
+   ]
+  },
+  "notes": "Free per travel sites only (weak, no official statement); pagoda reopened after restoration 2020 (ehangzhou.gov.cn/2020-04/28/c_269937.htm). Zh Wikipedia: 8-sided 7-tier, 45.3 m. Views claim from Baoshi Hill guides, mark view wording unverified.",
+  "price_source_weak": true
+ },
+ "hangzhou-38": {
+  "bio": "China's first national-level comic and animation museum, on Baima Lake in Binjiang, with over 20,000 works.",
+  "icon": "🎬",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": null,
+  "ticket_note": "booking is via the WeChat public account CCAMuseum; zh Wikipedia lists an official website only as an archived page, not loaded",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/中国动漫博物馆"
+   ],
+   "cost": [
+    "https://zh.wikipedia.org/wiki/中国动漫博物馆",
+    "https://www.ehangzhou.gov.cn/2021-12/24/c_279019.htm",
+    "https://govt.chinadaily.com.cn/s/202107/02/WS60de75b4498e02b3aaaae3d0/china-cartoon-and-animation-museum.html"
+   ]
+  },
+  "notes": "Free, WeChat booking required (zh Wikipedia, ehangzhou). Closed Mon-Tue per sources (not recorded)."
+ },
+ "jiaxing-5": {
+  "bio": "Jiaxing's city museum, with permanent galleries on the prehistory and history of the Jiaxing area.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticketUrl_blocked": "http://www.jxmuseum.cn",
+  "ticket_note": "URL taken from memory of the museum's domain, returned 403 GeoBL from this network; not confirmed it is the museum site; check in a real browser",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/嘉兴博物馆"
+   ],
+   "cost": [
+    "https://regional.chinadaily.com.cn/ezhejiang/jiaxing/2025-01/10/c_1063642.htm"
+   ]
+  },
+  "notes": "General admission free per China Daily listing (2025); reservation rules unverified. Zh Wikipedia: national first-class museum, 'Hexing Origins' and 'Fertile Jiahe' exhibitions. Domain jxmuseum.cn is unconfirmed."
+ },
+ "ningbo-15": {
+  "bio": "Conch-shaped museum of China's ports and underwater archaeology in Beilun, with hands-on halls on harbour technology.",
+  "icon": "⚓",
+  "category": "museum",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "official site not found; chinaportmuseum.com and similar did not load; check in a browser",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://zh.wikipedia.org/wiki/中国港口博物馆"
+   ],
+   "cost": [
+    "https://zh.wikipedia.org/wiki/中国港口博物馆",
+    "https://govt.chinadaily.com.cn/s/202104/20/WS607e739b498e7a02c6f6aed0/china-port-museum.html"
+   ]
+  },
+  "notes": "CONFLICT: zh Wikipedia says four main halls are free and only the science-exploration and Digital Ocean halls cost 30 CNY (extras, only Wed/Sat/Sun); China Daily lists general admission 30 CNY. Recorded free per Wikipedia; if China Daily is right use costMin=costMax=30. Needs owner/browser check.",
+  "price_source_weak": true,
+  "alt_cost_cny": 30
+ },
+ "quzhou-6": {
+  "bio": "Quzhou's best-known waterfall, an 88 m horsetail drop in Yaowang Mountain scenic area in Qujiang district.",
+  "icon": "💧",
+  "category": "nature",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 45,
+  "costMax": 65,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "no official Yaowang Mountain site found",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://govt.chinadaily.com.cn/s/202606/03/WS6a4cdf48498e23165e0707f2/quzhous-waterfalls-offer-serene-escape-into-natures-cool-embrace.html"
+   ],
+   "cost": [
+    "https://touch.travel.qunar.com/poi/703005",
+    "https://regional.chinadaily.com.cn/ezhejiang/equzhou/2022-08/02/c_795628.htm"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "COORDINATES WRONG: 40.684,110.873 is in Inner Mongolia, not Quzhou; must be re-resolved (Yaowang Mountain, Huangtankou, Qujiang district). Price: Qunar shows 45 (page) / 65 (search snippet) for Yaowang Mountain ticket, weak. Quzhou policy: Yaowang Mountain free Mon-Fri except holidays (2022) and free for foreign visitors 1 Nov-31 Mar in 2025 initiative; not carried into price. Whether the price covers the waterfall unverified."
+ },
+ "yucang-mountain": {
+  "bio": "Forested granite mountain park in Cangnan, said to be the Queen Mother's treasure store, with walking trails and rock carvings.",
+  "icon": "⛰️",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "no official site found",
+  "wiki": null,
+  "sources": {
+   "bio": [
+    "https://gs.ctrip.com/html5/you/sight/2049/16196.html"
+   ],
+   "cost": [
+    "https://gs.ctrip.com/html5/you/sight/2049/16196.html"
+   ]
+  },
+  "price_source_weak": true,
+  "notes": "Ctrip: 4A national forest park, listed free with no ticket (an older review says 55 CNY, probably outdated). Gate/open status unverified; costBasis may be entry if staffed. Legend and rock-carving claims from Ctrip review, weak."
+ }
+}

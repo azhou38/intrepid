@@ -37,18 +37,18 @@ for i, (sid, lat, lon) in enumerate(todo):
             time.sleep(5)
     a = (d or {}).get('address', {})
     if a.get('country_code') == 'cn':
-        # China's second level is the prefecture-level city ("Suzhou City"), one above the district or county-level city that
-        # zoom 10 returns; Nominatim gives it at zoom 7.
-        for _ in range(4):
-            r = subprocess.run(['curl', '-s', '-m', '30', '-A', 'IntrepidApp-Curation/1.0', url.replace('zoom=10', 'zoom=7')], capture_output=True, text=True)
-            try:
-                a2 = json.loads(r.stdout).get('address', {}); break
-            except Exception:
-                time.sleep(5)
-        else:
-            a2 = {}
+        # China: the second level is the prefecture-level city (地级市). The default zoom returns a district or county
+        # (Xihu District, Gusu District), so ask at zoom 7, which returns the prefecture ("Hangzhou City", "Jinhua").
         time.sleep(1.1)
-        if a2.get('city'): a = {**a, 'county': a2['city']}
+        u7 = url.replace('zoom=10', 'zoom=7')
+        r = subprocess.run(['curl', '-s', '-m', '30', '-A', 'IntrepidApp-Curation/1.0', u7], capture_output=True, text=True)
+        try:
+            a7 = json.loads(r.stdout).get('address', {})
+            pref = a7.get('city') or a7.get('state_district') or a7.get('county')
+            if pref:
+                a = dict(a, county=re.sub(r' City$', '', pref))
+        except Exception:
+            pass
     name = a.get('county') or a.get('state_district') or a.get('municipality') or a.get('city') or a.get('town') or a.get('state')
     if name:
         cache[sid] = {'d': name, 'c': (a.get('country_code') or '').upper(), 'r': a.get('state', '')}

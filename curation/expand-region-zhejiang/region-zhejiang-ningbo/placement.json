@@ -1,0 +1,862 @@
+{
+ "region": "zhejiang-ningbo",
+ "new_destinations": [
+  {
+   "name": "Ningbo",
+   "action": "new-destination",
+   "id": "ningbo",
+   "category": "city",
+   "rank": 3,
+   "coordinates": {
+    "lat": 29.8683,
+    "lng": 121.544
+   },
+   "defaultZoomSpanKm": 70,
+   "name_evidence": "Wikivoyage 'Ningbo' city page lists See/Do sections for the city and surroundings; major port city on guidebook itineraries",
+   "spots": 16
+  },
+  {
+   "name": "Xikou",
+   "action": "new-destination",
+   "id": "xikou",
+   "category": "nature",
+   "rank": 4,
+   "coordinates": {
+    "lat": 29.6897,
+    "lng": 121.2761
+   },
+   "defaultZoomSpanKm": 30,
+   "name_evidence": "Wikivoyage 'Xikou' page (Chiang Kai-shek's hometown, Xuedou Mountain); China Daily Ningbo lists 'Xikou-Tengtou Tourist Area' (5A); Xikou itself is the destination, not a spot",
+   "spots": 4,
+   "note": "33 km from Ningbo centre, centres farther than 0.75x larger radius; outside Ningbo urban metro"
+  }
+ ],
+ "placements": [
+  {
+   "name": "Tianyi Pavilion",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-1",
+   "coordinates": {
+    "lat": 29.87362,
+    "lng": 121.53568
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Ningbo's best-known sight, oldest private library; Wikivoyage lists hours and en",
+   "views": 5538,
+   "counted_sources": 1,
+   "verdict_reason": "Ningbo's best-known sight, oldest private library; Wikivoyage lists hours and entry (rule 1-2 obvious draw)",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Old Bund",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-2",
+   "coordinates": {
+    "lat": 29.8791,
+    "lng": 121.5564
+   },
+   "coordinates_source": "OSM tourism/historic feature (Overpass) 宁波老外滩 (attraction)",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; China Daily Ningbo government attractions page and Zhejiang Dept of Culture and ",
+   "views": 2003,
+   "counted_sources": 0,
+   "verdict_reason": "China Daily Ningbo government attractions page and Zhejiang Dept of Culture and Tourism page both name it; free riverside historic district with consulate and cathedral",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Ningbo Museum",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-3",
+   "coordinates": {
+    "lat": 29.8174,
+    "lng": 121.5409
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wang Shu-designed city museum named by Wikivoyage with address and hours; archit",
+   "views": 8825,
+   "counted_sources": 1,
+   "verdict_reason": "Wang Shu-designed city museum named by Wikivoyage with address and hours; architecture and exhibits (rule 2)",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tiantong Temple",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-4",
+   "coordinates": {
+    "lat": 29.8069,
+    "lng": 121.7908
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage: major Chan temple of 300 CE with 20+ ancient buildings in forest par",
+   "views": 2568,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: major Chan temple of 300 CE with 20+ ancient buildings in forest park (rule 2 interior)",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Temple of King Ashoka",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-5",
+   "coordinates": {
+    "lat": 29.8486,
+    "lng": 121.73929
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage: Ayuwang monastery with relic and Sheli Pagoda, a major draw",
+   "views": 5786,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: Ayuwang monastery with relic and Sheli Pagoda, a major draw",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Qing'an Guildhall",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-6",
+   "coordinates": {
+    "lat": 29.8749,
+    "lng": 121.5583
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage names the 1191 guild halls with Matu temple and shipbuilding museum; ",
+   "views": 2516,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage names the 1191 guild halls with Matu temple and shipbuilding museum; interior to visit (rule 2)",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Moon Lake",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-7",
+   "coordinates": {
+    "lat": 29.869444,
+    "lng": 121.539444
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage Do listing: lakeside park with boating and pagodas, free, an easy hou",
+   "views": 1145,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Do listing: lakeside park with boating and pagodas, free, an easy hour (rule 1-2)",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tianfeng Pagoda",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-8",
+   "coordinates": {
+    "lat": 29.86786,
+    "lng": 121.5469
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage: climbable pagoda in a small park with a view, a short second-tier st",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: climbable pagoda in a small park with a view, a short second-tier stop",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Baoguo Temple",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-9",
+   "coordinates": {
+    "lat": 29.9826,
+    "lng": 121.51605
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage: state-protected temple with 1000-year-old timber main hall; architec",
+   "views": 1285,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: state-protected temple with 1000-year-old timber main hall; architecture interest",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Cicheng",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-10",
+   "coordinates": {
+    "lat": 29.985847,
+    "lng": 121.446131
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage: preserved Ming-Qing old town, award-winning conservation, tricycle t",
+   "views": 1017,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: preserved Ming-Qing old town, award-winning conservation, tricycle tours",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Dongqian Lake",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-11",
+   "coordinates": {
+    "lat": 29.7665,
+    "lng": 121.6555
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage: largest natural lake in Zhejiang, rentals and boats; popular spot",
+   "views": 1613,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: largest natural lake in Zhejiang, rentals and boats; popular spot",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Ningbo Ocean World",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-12",
+   "coordinates": {
+    "lat": 29.856,
+    "lng": 121.5789
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage names large aquarium with prices (rule 1-2); permanent venue",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage names large aquarium with prices (rule 1-2); permanent venue",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Ningbo Youngor Zoo",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-13",
+   "coordinates": {
+    "lat": 29.808,
+    "lng": 121.6742
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage names zoo with 10,000 animals and hours; permanent venue",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage names zoo with 10,000 animals and hours; permanent venue",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Ningbo Museum of Art",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-14",
+   "coordinates": {
+    "lat": 29.8811,
+    "lng": 121.5573
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wang Shu building named by Wikivoyage; interior galleries open",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wang Shu building named by Wikivoyage; interior galleries open",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "China Port Museum",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-15",
+   "coordinates": {
+    "lat": 29.758726,
+    "lng": 121.905448
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage names national maritime museum with transport directions; real museum",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage names national maritime museum with transport directions; real museum visit",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Zhaobao Mountain",
+   "action": "spot",
+   "destination": "ningbo",
+   "id": "ningbo-16",
+   "coordinates": {
+    "lat": 29.9601,
+    "lng": 121.7186
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Inside Ningbo urban districts/Beilun/Zhenhai metro and within ~75% of the 70 km span; Wikivoyage names forested hill with temples, 57.6 m pagoda and hours",
+   "views": 463,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage names forested hill with temples, 57.6 m pagoda and hours",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Chiang Kai-shek's Former Residence",
+   "action": "spot",
+   "destination": "xikou",
+   "id": "xikou-1",
+   "coordinates": {
+    "lat": 29.6834,
+    "lng": 121.2801
+   },
+   "coordinates_source": "OSM tourism/historic feature (Overpass) 蒋氏故居 (attraction)",
+   "reason": "Xikou-Tengtou scenic area, Fenghua; cluster around Xikou base",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Xikou: hometown of Chiang, a domestic and Taiwanese draw; house to visit",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Xuedou Mountain",
+   "action": "spot",
+   "destination": "xikou",
+   "id": "xikou-2",
+   "coordinates": {
+    "lat": 29.6844,
+    "lng": 121.2159
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Xikou-Tengtou scenic area, Fenghua; cluster around Xikou base",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: 85 km2 scenic area of peaks, waterfalls and temples with bus access",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Xuedou Temple",
+   "action": "spot",
+   "destination": "xikou",
+   "id": "xikou-3",
+   "coordinates": {
+    "lat": 29.6874,
+    "lng": 121.2175
+   },
+   "coordinates_source": "OSM tourism/historic feature (Overpass) 雪窦寺 (historic)",
+   "reason": "Xikou-Tengtou scenic area, Fenghua; cluster around Xikou base",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Xikou: one of the great Chan temples; interior visit",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Tengtou Village",
+   "action": "spot",
+   "destination": "xikou",
+   "id": "xikou-4",
+   "coordinates": {
+    "lat": 29.7031,
+    "lng": 121.3866
+   },
+   "coordinates_source": "OSM tourism/historic feature (Overpass) place=village",
+   "reason": "Xikou-Tengtou scenic area, Fenghua; cluster around Xikou base",
+   "views": 0,
+   "counted_sources": 0,
+   "verdict_reason": "China Daily Ningbo government page: Xikou-Tengtou Tourist Area (5A), Tengtou village with Ming relics is a stated draw",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Xiangshan Global Studios",
+   "action": "standalone",
+   "destination": null,
+   "id": "xiangshan-global-studios",
+   "coordinates": {
+    "lat": 29.2927,
+    "lng": 121.835
+   },
+   "coordinates_source": "OSM tourism/historic feature (Overpass) 象山影视城 (theme_park)",
+   "reason": "Xiangshan county coast, ~70 km SE of Ningbo, outside its bounds and span",
+   "views": 1896,
+   "counted_sources": 0,
+   "verdict_reason": "China Daily Ningbo government attractions page names Xiangshan Film and Television City (4A); permanent venue",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Shipu",
+   "action": "standalone",
+   "destination": null,
+   "id": "shipu",
+   "coordinates": {
+    "lat": 29.2114,
+    "lng": 121.9434
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Xiangshan county coast, ~70 km SE of Ningbo, outside its bounds and span",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage Old towns: Ming-era fishing port with harbour and waterfront",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Songlan Mountain Beach",
+   "action": "standalone",
+   "destination": null,
+   "id": "songlan-mountain-beach",
+   "coordinates": {
+    "lat": 29.4343,
+    "lng": 121.9618
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Xiangshan county coast, ~70 km SE of Ningbo, outside its bounds and span",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: developed seaside beach resort; beaches are a guide-named second tier",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Hua'ao Stone Forest",
+   "action": "standalone",
+   "destination": null,
+   "id": "hua-ao-stone-forest",
+   "coordinates": {
+    "lat": 29.0623,
+    "lng": 121.8248
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Xiangshan county coast, ~70 km SE of Ningbo, outside its bounds and span",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage lists it with a photo and directions; distinct geological site",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Hemudu Site Museum",
+   "action": "standalone",
+   "destination": null,
+   "id": "hemudu-site-museum",
+   "coordinates": {
+    "lat": 29.9621,
+    "lng": 121.3494
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Yuyao district site, ~22 km from Ningbo centre but outside the urban-district metro and a separate Yuyao trip; no cluster of four",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict_reason": "Two Wikivoyage listings; museum at a 7,000-year-old Neolithic site",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Liangshanbo Butterfly Temple",
+   "action": "standalone",
+   "destination": null,
+   "id": "liangshanbo-butterfly-temple",
+   "coordinates": null,
+   "coordinates_source": null,
+   "reason": "Cixi, outside Ningbo urban metro; Cixi has only two kept spots so no destination",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Cixi Wikivoyage plus China Daily Ningbo page for the Liangzhu (Butterfly Lovers) Culture Park",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "pin_needed": true
+  },
+  {
+   "name": "Shanglin Lake Yue Kilns",
+   "action": "standalone",
+   "destination": null,
+   "id": "shanglin-lake-yue-kilns",
+   "coordinates": {
+    "lat": 30.1229,
+    "lng": 121.337
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Cixi/Shanglin Lake, ~34 km from Ningbo centre, outside urban metro; Cixi has two kept spots",
+   "views": 602,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage names national-protected celadon kiln site; heritage draw",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Siming Mountain National Forest Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "siming-mountain-national-forest-park",
+   "coordinates": {
+    "lat": 29.7487,
+    "lng": 121.0957
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Siming mountains in Yuyao, ~45 km from Ningbo centre, a separate mountain trip outside metro",
+   "views": 0,
+   "counted_sources": 2,
+   "verdict_reason": "Two Wikivoyage listings; large forest park with waterfalls and trails",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Danshan Chishui",
+   "action": "standalone",
+   "destination": null,
+   "id": "danshan-chishui",
+   "coordinates": {
+    "lat": 29.8138,
+    "lng": 121.1106
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Siming mountains, outside Ningbo metro and beyond its span",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage listing with hours and phone; red rock scenic area with entry",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Baishuichong Waterfall",
+   "action": "standalone",
+   "destination": null,
+   "id": "baishuichong-waterfall",
+   "coordinates": {
+    "lat": 29.8718,
+    "lng": 121.0915
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Siming mountains, outside Ningbo metro and beyond its span",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: 53 m waterfall into a pool with hours",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Five Dragon Pool",
+   "action": "standalone",
+   "destination": null,
+   "id": "five-dragon-pool",
+   "coordinates": {
+    "lat": 29.7968,
+    "lng": 121.2576
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Fenghua hills ~12 km from Xikou, not Xikou's town or Xuedou area per sources; a separate trip",
+   "views": 0,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: waterfall, centuries-old temple and trails, hours and CNY40",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  },
+  {
+   "name": "Qiantong Ancient Town",
+   "action": "standalone",
+   "destination": null,
+   "id": "qiantong-ancient-town",
+   "coordinates": {
+    "lat": 29.2295,
+    "lng": 121.3495
+   },
+   "coordinates_source": "Wikivoyage listing geo tag",
+   "reason": "Southern Ninghai/Fenghua border, ~70 km from Ningbo centre, outside its bounds and span",
+   "views": 710,
+   "counted_sources": 1,
+   "verdict_reason": "Wikivoyage: Ming-Qing village with directions; a classic day trip",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ]
+  }
+ ],
+ "review": [
+  {
+   "name": "Drum Tower",
+   "case_for": "Wikivoyage names it as a symbol of Ningbo, but a short look at a tower at a shopping street entrance",
+   "case_against": "Exterior-only landmark; counter: guide calls it a symbol and photographs it"
+  },
+  {
+   "name": "Ningbo Banking Guild Hall",
+   "case_for": "Open guild hall with an coin museum (CNY10) named by Wikivoyage; one source, short visit",
+   "case_against": "Niche coin museum; counter: genuine interior to enter"
+  },
+  {
+   "name": "Nantang Old Street",
+   "case_for": "Itineraries on Trip.com/Expedia/chinatripedia pair it with Old Bund and Tianyi; Chinese-language sources only, no counted source found; still under repair",
+   "case_against": "Commercial restored street"
+  },
+  {
+   "name": "Ningbo Bang Museum",
+   "case_for": "Wikivoyage names it with hours; niche museum on merchant groups, one source",
+   "case_against": "Small appeal; counter: open museum interior"
+  },
+  {
+   "name": "Cathedral of Our Lady of the Seven Sorrows",
+   "case_for": "Bare Wikivoyage listing with no stated thing to see; church rule requires visitor source naming something, but it anchors the Old Bund area",
+   "case_against": "Parish church seen from street; counter: Gothic landmark in Bund area"
+  },
+  {
+   "name": "Ningbo Wildlife Park",
+   "case_for": "Only Ctrip names it, possibly duplicate of Youngor Zoo at the same lake",
+   "case_against": "May be same venue as Youngor Zoo"
+  },
+  {
+   "name": "Guanzong Temple",
+   "case_for": "Trip.com says it is one of four major temples of eastern Zhejiang; Zhejiang tourism page for Dongqian area found, no counted source naming it",
+   "case_against": "Local temple"
+  },
+  {
+   "name": "Hangzhou Bay Bridge",
+   "case_for": "Famous sea bridge (36 km) with a viewing tower and platform at Cixi; no counted source in this pass",
+   "case_against": "Infrastructure; counter: bridge sightseeing platform is a stop"
+  },
+  {
+   "name": "Hangzhou Bay National Wetland Park",
+   "case_for": "Wetland park with boardwalk named by Ctrip only; no counted source",
+   "case_against": "Single non-counted source"
+  },
+  {
+   "name": "Maitreya Statue (Xuedou)",
+   "case_for": "Giant Maitreya statue by Xuedou Temple, Ctrip only",
+   "case_against": "Part of Xuedou area; counter: notable landmark"
+  },
+  {
+   "name": "Zhedong Jiuzhaigou",
+   "case_for": "Wikivoyage lists a ticketed valley with trails; one source",
+   "case_against": "Branded scenic area; counter: real forest valley walk"
+  },
+  {
+   "name": "Arhat Valley",
+   "case_for": "Wikivoyage valley trail with streams, ticketed; one source, clusters near Danshan Chishui",
+   "case_against": "Overlaps neighbouring scenic areas"
+  },
+  {
+   "name": "Nanxi Hot Spring",
+   "case_for": "Hot-spring resort in national forest park, Wikivoyage; permanent venue but one source and remote",
+   "case_against": "Remote 76 km from Ninghai; counter: well-known resort"
+  },
+  {
+   "name": "Zhedong Grand Canyon",
+   "case_for": "Wikivoyage names canyon trail; one source, a stub description",
+   "case_against": "Remote; counter: known canyon walk"
+  },
+  {
+   "name": "Baisha Bay",
+   "case_for": "Bay beach on Xiangshan coast, no counted source found",
+   "case_against": "Likely a minor beach"
+  },
+  {
+   "name": "Luomon Global Park",
+   "case_for": "Romon U-Park, a 200,000 m2 permanent amusement park with six zones (Wikipedia, China Daily); no counted source",
+   "case_against": "Chain-style amusement park"
+  },
+  {
+   "name": "Fantawild Oriental Wonderland (Ningbo)",
+   "case_for": "Permanent theme park; no counted source found",
+   "case_against": "Amusement parks are valid venues; no source verification"
+  },
+  {
+   "name": "Running Man Park",
+   "case_for": "Permanent family theme park near Xiangshan studios named in Trip.com posts only",
+   "case_against": "Tied to TV show IP"
+  },
+  {
+   "name": "Zhejiang Customs Site Museum",
+   "case_for": "Free restored 1840s customs house museum on the Old Bund (Trip.com, search); no counted source found",
+   "case_against": "Small museum"
+  },
+  {
+   "name": "Ningbo-Korea Exchange History Exhibition Hall",
+   "case_for": "Moon Lake area guides name the former Korean embassy site with displayed relics; no counted source for the hall itself",
+   "case_against": "Part of Moon Lake area"
+  },
+  {
+   "name": "Stone Sculpture Park of the Southern Song Dynasty",
+   "case_for": "Southern Song stone carvings are on the Dongqian Lake North Gate route in a Zhejiang tourism-department page; sub-site of the lake",
+   "case_against": "Part of Dongqian Lake"
+  },
+  {
+   "name": "Former Residence of Pao Yue-kong",
+   "case_for": "Restored ancestral home with Lv An Tang hall, covered by Shine and Ningbo China Daily; no counted source",
+   "case_against": "Minor house"
+  },
+  {
+   "name": "Pan Tianshou Former Residence",
+   "case_for": "Chinaholiday listing and China Daily Ningbo mention the Ninghai residence; hours unconfirmed",
+   "case_against": "Small house"
+  },
+  {
+   "name": "Tashan Weir",
+   "case_for": "Tang-era weir (833) in national protected heritage listing, described as the highlight of Tashanyan village; no counted visitor source",
+   "case_against": "Remote engineering structure"
+  }
+ ],
+ "existing_fixes": [],
+ "note_standalone_within_40km": "Five Dragon Pool (12 km from Xikou): not in Xikou's town/Xuedou bounds; Hemudu, Shanglin, Liangshanbo, Siming spots: outside Ningbo urban metro; no destination within 40 km claims them. All Zhejiang destinations are new; no overlap expected."
+}

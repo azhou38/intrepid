@@ -1,0 +1,115 @@
+{
+ "hangzhou-17": {
+  "bio": "Zhejiang's provincial museum, with ceramics, lacquerware and Leifeng Pagoda relics at its garden-like Gushan hall by West Lake.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": null,
+  "ticketUrl_blocked": "http://www.zhejiangmuseum.com/",
+  "ticket_note": "Official site www.zhejiangmuseum.com (from zh.wikipedia infobox) returned 403 / ICP filing wall to script; check in real browser.",
+  "wiki": null,
+  "sources": {
+   "free": "https://zh.wikipedia.org/wiki/浙江省博物馆 (free since 1 Jan 2004)",
+   "bio": "https://zh.wikipedia.org/wiki/浙江省博物馆; https://en.wikipedia.org/api/rest_v1/page/summary/Zhejiang_Provincial_Museum",
+   "ticketUrl": "https://zh.wikipedia.org/wiki/浙江省博物馆"
+  },
+  "notes": "Coordinates presumably one of its sites (Gushan hall vs Zhijiang). Free admission; reservation was required in 2020, current booking requirement unverified (needs=booking tentative). Special exhibits may need separate reservation."
+ },
+ "hangzhou-36": {
+  "bio": "Large safari park in Fuyang with walk-through zones, a drive-through area and animal shows.",
+  "icon": "🦁",
+  "category": "entertainment",
+  "visitHoursMin": 4,
+  "visitHoursMax": 6,
+  "costMin": 210,
+  "costMax": 220,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": "https://www.hzsp.com/",
+  "wiki": null,
+  "sources": {
+   "ticketUrl": "https://www.hzsp.com/ (title 杭州野生动物世界官方网站, loaded)",
+   "cost": "https://gs.ctrip.com/html5/you/sight/1513.html; https://www.dahepiao.com/lvyounews1/20220316260174.html",
+   "bio": "https://www.hzsp.com/ (walk zone 步行区, drive zone 车行区, shows)"
+  },
+  "notes": "Official page shows no price in fetched text. Ctrip adult from CNY 210 (2026), older ticket-seller list 220. Weak. Self-drive vehicle pass is extra and excluded. Location in Fuyang district (registered address Yinhu Street)."
+ },
+ "xinshi-ancient-town": {
+  "bio": "Water town in Deqing with old canal streets to walk and hand-rowed boat rides, free to enter.",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "No single official site found; place is open streets.",
+  "wiki": null,
+  "sources": {
+   "cost": "https://gs.ctrip.com/html5/you/sight/1011.html (search summary: no entrance fee, boat ride CNY 28 extra)",
+   "bio": "https://gs.ctrip.com/html5/you/sight/1011.html"
+  },
+  "notes": "Weak (Ctrip only). Search results show it as 4A, not 5A; the draft's 5A claim is unconfirmed and not used. Boat ride excluded from price. Ctrip page not re-fetched for the cost."
+ },
+ "ningbo-13": {
+  "bio": "Safari-style zoo of about 1,900 mu by Dongqian Lake, with elephants, pandas, sea lion shows and walk-through areas.",
+  "icon": "🐘",
+  "category": "entertainment",
+  "visitHoursMin": 4,
+  "visitHoursMax": 6,
+  "costMin": 70,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": "http://www.nbzoo.com/",
+  "wiki": null,
+  "sources": {
+   "ticketUrl": "http://www.nbzoo.com/ (loaded; phone 0574-88378378 and Dongqian Lake address match Ctrip listing; page has no title tag, shows 门票价格 menu, elephant/panda/sea lion show items)",
+   "cost": "https://www.dahepiao.com/lvyounews1/20211115230160.html (70 yuan from, 2021)",
+   "bio": "http://www.nbzoo.com/; https://govt.chinadaily.com.cn/s/201712/15/WS5b7854a5498e855160e8d855/ningbo-youngor-zoo.html"
+  },
+  "notes": "Price is from a 2021 reseller page and probably outdated; official price page not found (/ticket.html 404). Verify. Now listed as Ningbo Wildlife Park (宁波野生动物园) on Ctrip; 1,900 mu from China Daily."
+ },
+ "qianjiangyuan-national-park": {
+  "bio": "National park in Kaihua covering 252 km2 of evergreen forest with Gutianshan reserve and the headwaters of the Qiantang River.",
+  "icon": "🌲",
+  "category": "nature",
+  "visitHoursMin": 3,
+  "visitHoursMax": 6,
+  "costBasis": "park",
+  "cost_unverified": true,
+  "ticketUrl": null,
+  "ticket_note": "Park authority site (Qianjiangyuan National Park Administration) not found or verified.",
+  "wiki": null,
+  "sources": {
+   "bio": "https://zh.wikipedia.org/wiki/钱江源国家公园 (252 km2, Kaihua, Gutianshan reserve, forest park, scenic area; black muntjac, white-necked long-tailed pheasant)"
+  },
+  "notes": "Cost UNVERIFIED: no source found for entry fee or free; the park includes Gutianshan, Qixi etc. whose fees differ. Needs a check. No English Wikipedia article."
+ },
+ "wanghai-tower": {
+  "bio": "Rebuilt tower on Dongtou island, Wenzhou, with upper-floor views over the island chain and fishing harbour.",
+  "icon": "🏯",
+  "category": "viewpoint",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "costMin": 27,
+  "costMax": 30,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Dongtou scenic area operator not identified.",
+  "wiki": null,
+  "sources": {
+   "cost": "https://touch.piao.qunar.com/touch/detail.htm?id=10594 (adult 27); https://gs.ctrip.com/html5/you/sight/506/118016.html (from 30)",
+   "bio": "https://you.ctrip.com/sight/dongtou506/118016.html (first built 434, rebuilt, opened 2007, national 4A)"
+  },
+  "notes": "Weak prices (Qunar/Ctrip). Coordinates 27.840,121.125 are Dongtou; verify the pin is the tower. Original 434 AD building claim is from Ctrip text."
+ }
+}

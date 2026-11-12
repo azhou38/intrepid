@@ -1,0 +1,119 @@
+{
+ "hangzhou-41": {
+  "bio": "Fuyang town where nearly everyone is surnamed Sun, with a Sun clan ancestral hall and old streets to walk.",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 70,
+  "costMax": 70,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; Ctrip lists the ancestral hall with fees 'ask the scenic area'.",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Longmen_Ancient_Town",
+   "https://gs.ctrip.com/html5/you/sight/hangzhou14/1953344.html",
+   "https://gs.ctrip.com/html5/you/travels/1513/4035190.html"
+  ],
+  "notes": "UNVERIFIED price: 70 CNY adult from an undated Ctrip travelogue; Ctrip sight page gives none. Could be free to enter the town. Wikipedia article 'Longmen, Zhejiang' is the whole town, so wiki left null."
+ },
+ "jiaxing-4": {
+  "bio": "Canal-side old quarter in Jiaxing, with three parallel streets, teahouses, a flower and bird market and boat rides.",
+  "icon": "🏮",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "Open street district, no single steward site found.",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/Jiaxing272/117749.html"
+  ],
+  "notes": "Free per Ctrip (weak). Facts (three rivers, three streets, flower and bird market, boat tours) from Ctrip page and search summary."
+ },
+ "five-dragon-pool": {
+  "bio": "Ningbo's 4A gorge of five linked pools and waterfalls on a stepped trail, with a glass bridge, in Yinzhou's hills.",
+  "icon": "🌊",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "costMin": 50,
+  "costMax": 50,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found; tel 0574-87893576 on China Daily page.",
+  "wiki": null,
+  "sources": [
+   "https://govt.chinadaily.com.cn/s/201712/15/WS5b78547d498e855160e8d83c/five-dragon-pools-scenic-area.html",
+   "https://touch.piao.qunar.com/touch/detail.htm?id=4703"
+  ],
+  "notes": "50 CNY from 2017 government page; Qunar lists 45. Glass bridge ticket is extra. NAME CLASH: English Wikipedia 'Five Dragon Pool' is Jinan's, so the photo lookup by name would pull the wrong place: needs an override or distinct name (zh label also says Jinan). Coordinates are Ningbo Yinzhou, unchecked by me. Gate fee not a pass."
+ },
+ "quzhou-4": {
+  "bio": "Forest park near Quzhou with timber boardwalks, a glass skywalk and a glass slide in the Huangtankou hills.",
+  "icon": "🌲",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3,
+  "costMin": 65,
+  "costMax": 65,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://govt.chinadaily.com.cn/s/201804/25/WS5cda2643498e079e68020a00/yaowang-mountain-scenic-spot.html",
+   "https://touch.piao.qunar.com/touch/detail.htm?id=1621"
+  ],
+  "notes": "Adult 65 CNY from search summary of Ctrip/Qunar (weak; I could not see it on the fetched Qunar page, which shows 79 for skywalk+slide combo). National forest park, AAAA, 15 sq km (China Daily). Skywalk and slide extra. Evidence bundle pass-list was NT Australia, irrelevant."
+ },
+ "dasha-ao-beach": {
+  "bio": "Dongtou island's fine iron-sand beach, three-sided by hills, with a cliff cafe and indoor shore-life hall.",
+  "icon": "🏖️",
+  "category": "beach",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 25,
+  "costMax": 25,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "No official site found.",
+  "wiki": null,
+  "sources": [
+   "https://www.163.com/dy/article/L3G20R2T0534UO9X.html"
+  ],
+  "notes": "25 CNY from Wenzhou Daily article (Aug 2026, republished on NetEase), after reopening 31 Jul 2026. Inside Xiandieyan scenic area. Indoor hall may be separately charged."
+ },
+ "mount-putuo-1": {
+  "bio": "Mount Putuo's main temple, known as the Front Temple, with a lotus pond, Great Compassion Hall and Guanyin worship.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "costMin": 5,
+  "costMax": 5,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "needs": null,
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "Mount Putuo scenic area official site not verified.",
+  "wiki": null,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/16/2124.html",
+   "https://zh.wikipedia.org/wiki/普济寺"
+  ],
+  "notes": "5 CNY incense voucher from a Ctrip travelogue (weak, other source omits Puji). Ctrip page shows 245 which is the island's combined ticket with ferry, not Puji's own; the island gate fee is not the spot's price. Name 'Great Compassion Hall' (大圆通殿) is from search summary, verify wording. Needs checking if Puji is actually free."
+ }
+}

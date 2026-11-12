@@ -1,0 +1,154 @@
+{
+ "hangzhou-9": {
+  "lat": 30.254194,
+  "lon": 120.137781,
+  "confidence": "MEDIUM",
+  "source": "OSM node/9035381272 place=island 孤山 (via Photon); Wikidata Q10122551 30.253,120.1375 (~130 m away)",
+  "feature": "hill-island centroid (on the hill)",
+  "note": "Gushan is a small hill; centroid lies on it."
+ },
+ "hangzhou-41": {
+  "lat": 29.902064,
+  "lon": 119.947412,
+  "confidence": "MEDIUM",
+  "source": "Photon/OSM way/1509810480 tourism=theme_park 龙门古镇 (town P1 parking 29.9069,119.9426 and place=town 29.9043,119.9445 nearby)",
+  "feature": "scenic area way centre (old town)",
+  "note": "Centre of the mapped 龙门古镇 attraction polygon, not the modern town point."
+ },
+ "huzhou-2": {
+  "lat": 30.859672,
+  "lon": 120.101096,
+  "confidence": "MEDIUM",
+  "source": "Photon/OSM way/359363095 leisure=park 莲花庄",
+  "feature": "park way centre",
+  "note": "Small park; centroid is within the park and ~100 m of the garden."
+ },
+ "jiangshan-3": {
+  "lat": 28.574034,
+  "lon": 118.5776,
+  "confidence": "HIGH",
+  "source": "OSM node/6085566737 place=village 清漾村 (via Photon) + Commons median of 22 geotagged 清漾村 files 28.57406,118.57840 (~55 m)",
+  "feature": "village node",
+  "note": ""
+ },
+ "zhuge-bagua-village": {
+  "lat": 29.25107,
+  "lon": 119.29139,
+  "confidence": "HIGH",
+  "source": "Commons geotagged files median (15 files, 29.25107,119.29139) + zh.wikipedia 诸葛村 29.25139,119.29194 (~60 m apart)",
+  "feature": "village centre (heritage village core)",
+  "note": "Hint 29.24751,119.29911 was ~700 m east of the village core."
+ },
+ "mount-putuo-4": {
+  "lat": 30.01327,
+  "lon": 122.38571,
+  "confidence": "HIGH",
+  "source": "Wikidata Q11074160 慧济禅寺 30.01336,122.38597 + Commons median of 7 temple files (30.01327,122.38571) (~25 m apart)",
+  "feature": "temple",
+  "note": "Huiji Temple (Foding Mountain, Putuo)."
+ },
+ "shaoxing-6": {
+  "lat": 29.99939,
+  "lon": 120.57354,
+  "confidence": "LOW",
+  "source": "Commons File:仓桥直街 - panoramio.jpg geotag; other Commons files on the street at 29.9959-30.0018,120.5734-120.5736 (street runs N-S)",
+  "feature": "street (point on street, not route midpoint)",
+  "note": "Overpass/Photon/Nominatim all unreachable; OSM route midpoint not checked. Street runs roughly 29.996-30.002 N along lon 120.5735, so point is on it within ~200 m."
+ },
+ "ziyang-old-street": {
+  "lat": 28.83972,
+  "lon": 121.11694,
+  "confidence": "LOW",
+  "source": "Commons File:紫阳古街.JPG geotag (single file)",
+  "feature": "street (single photo geotag)",
+  "note": "Single Commons geotag of the street; OSM way not checked (services unreachable)."
+ },
+ "wuyanling-national-nature-reserve": {
+  "lat": 27.7101,
+  "lon": 119.67374,
+  "confidence": "MEDIUM",
+  "source": "Commons File:乌岩岭景区入口 - panoramio.jpg geotag (scenic area entrance); zh.wikipedia/Wikidata Q8039405 point 27.705668,119.67523 is ~450 m away",
+  "feature": "main entrance (geotagged photo)",
+  "note": "Not the reserve centroid (27.7087,119.6557, 1.9 km west)."
+ },
+ "wuyi-4": {
+  "lat": 28.642301,
+  "lon": 119.452203,
+  "confidence": "LOW",
+  "source": "OSM node/7269975516 natural=peak 牛头山 (via Photon) = Wikidata Q28794846 = zh.wikipedia 牛头山 (武义) 28.64228,119.45221",
+  "feature": "summit (park namesake peak)",
+  "note": "Park entrance/visitor centre not found (services unreachable). Peak is 4.5 km SW of the forest-park polygon centroid 28.667,119.495."
+ },
+ "wuzhen-3": {
+  "lat": 30.74067,
+  "lon": 120.4896111,
+  "confidence": "LOW",
+  "source": "Wikidata Q10878218 乌镇茅盾故居 30.74067,120.48961; Commons File:茅盾故居 - panoramio.jpg 30.74366,120.48986 (~330 m N)",
+  "feature": "building (Wikidata point)",
+  "note": "Two sources ~330 m apart; OSM building not checked (services unreachable). The todo hint (30.74962,120.48166) is ~1.2 km away in Xizha and looks wrong."
+ },
+ "yandang-mountains-1": {
+  "lat": 28.37962,
+  "lon": 121.10367,
+  "confidence": "LOW",
+  "source": "Commons File:雁荡山灵峰 - panoramio.jpg geotag (single file)",
+  "feature": "photo geotag in the scenic area",
+  "note": "The todo hint (28.38117,121.11057) is ~680 m east; neither verified against OSM entrance (services unreachable)."
+ },
+ "siming-mountain-national-forest-park": {
+  "lat": 29.7487,
+  "lon": 121.0957,
+  "confidence": "LOW",
+  "source": "todo hint (unverified). OSM relation/13096583 centroid 29.739,121.073 and OSM node/5986031527 geopark attraction 29.7623,121.0376 (大山村) both several km from it",
+  "feature": "hint only",
+  "note": "No visitor gate located; Overpass/Photon/Nominatim unreachable."
+ },
+ "songyang-old-street": {
+  "lat": 28.448998,
+  "lon": 119.480901,
+  "confidence": "LOW",
+  "source": "todo hint (unverified; 6-decimal, probably an OSM point). Wikidata county seat Q1197840 28.45668,119.48013 is ~850 m north",
+  "feature": "hint only",
+  "note": "Street not located in OSM (services unreachable)."
+ },
+ "yunhe-rice-terraces": {
+  "lat": 28.05054,
+  "lon": 119.48462,
+  "confidence": "LOW",
+  "source": "todo hint (unverified); Chongtou town (zh.wikipedia 崇头镇) 28.05886,119.48772 is ~1 km NE",
+  "feature": "hint only",
+  "note": "Terraces are at Chongtou; no OSM/Commons point found."
+ },
+ "ningbo-12": {
+  "lat": 29.856,
+  "lon": 121.5789,
+  "confidence": "LOW",
+  "source": "todo hint (unverified)",
+  "feature": "hint only",
+  "note": "Nothing found on Commons/Wikidata/zh.wikipedia for 宁波海洋世界; hint falls in Dongliu subdistrict."
+ },
+ "sword-pool-waterfall": {
+  "lat": 30.6074,
+  "lon": 119.8675,
+  "confidence": "LOW",
+  "source": "todo hint (unverified); Mogan Mountain villas Wikidata 30.6024,119.8600 (~1 km)",
+  "feature": "hint only",
+  "note": "No waterfall feature found (Overpass unreachable)."
+ },
+ "dongsha-fishing-village": {
+  "lat": 28.073915,
+  "lon": 121.288366,
+  "confidence": "LOW",
+  "source": "todo hint (unverified, 6-decimal); Pu'an lighthouse zh.wikipedia 28.07208,121.29097 nearby (~370 m)",
+  "feature": "hint only",
+  "note": "Village not located in OSM/Commons (services unreachable)."
+ },
+ "taohua-island": {
+  "lat": 29.8167,
+  "lon": 122.267,
+  "confidence": "LOW",
+  "source": "Wikidata Q716299 桃花島 29.8167,122.267 (4-decimal, island centroid; = todo hint)",
+  "feature": "island centroid",
+  "note": "Rounded centroid, not a visitor point (Taohua town / ferry pier not located; services unreachable)."
+ }
+}

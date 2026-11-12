@@ -1,0 +1,120 @@
+{
+ "hangzhou-5": {
+  "bio": "Wetland park of reed marshes, ponds and canals west of Hangzhou, explored on foot or by traditional boat.",
+  "icon": "🌾",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 80,
+  "costMax": 80,
+  "currency": "CNY",
+  "costBasis": "park",
+  "costPer": "Adult/Day",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "xixiwetland.com is a parked domain, not the park's site; no verified official site found",
+  "wiki": null,
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Xixi_National_Wetland_Park",
+   "cost": "https://zh.wikipedia.org/wiki/西溪国家湿地公园"
+  },
+  "notes": "80 CNY adult from zh.wikipedia ticket table marked outdated; one ticket enters east and west zones once each that day. Boat fare extra. Verify current price."
+ },
+ "wuzhen-2": {
+  "bio": "The Eastern Quarter of Wuzhen water town, with canals, stone bridges, old workshops and the Mao Dun former residence.",
+  "icon": "🏮",
+  "category": "historic",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "costMin": 110,
+  "costMax": 110,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": "http://www.wuzhen.com.cn",
+  "ticket_note": "homepage title reads Wuzhen tourism official website; loads over http only (https fails from script); deep ticket page not checked",
+  "wiki": null,
+  "sources": {
+   "bio": "https://en.wikipedia.org/wiki/Wuzhen",
+   "cost": "https://www.dahepiao.com/lvyounews1/20240316452127.html",
+   "link": "http://www.wuzhen.com.cn"
+  },
+  "notes": "110 CNY from third-party ticket sites, not the operator page; East+West combined 190. Verify. Wikipedia article for Wuzhen Eastern Quarter does not exist."
+ },
+ "ningbo-10": {
+  "bio": "Walled former county town of Jiangbei with Tang-era origins, old lanes, a Confucian temple and the county yamen.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "no single official site found; cicheng.com.cn did not show a place title",
+  "wiki": null,
+  "sources": {
+   "bio": "https://en.wikipedia.org/api/rest_v1/page/summary/Cicheng",
+   "cost": "https://gs.ctrip.com/html5/you/sight/120095/1479281.html"
+  },
+  "notes": "Town streets free per Ctrip/Qunar travel notes (weak); some sights inside (yamen, Confucian temple) charge, e.g. 75 CNY four-site combo. Wikipedia 'Cicheng' is the town article, so the 'Tang-era origins' claim is from it (8th century); no wiki field needed."
+ },
+ "dafo-temple-xinchang": {
+  "bio": "Temple in Xinchang town built around a giant Buddha carved into the cliff, known as the first rock-cut Buddha of Jiangnan.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 68,
+  "costMax": 80,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site found",
+  "wiki": null,
+  "sources": {
+   "cost": "https://www.dahepiao.com/lvyounews1/20250225504991.html",
+   "address": "https://you.ctrip.com/sight/xinchang1167/57572.html"
+  },
+  "notes": "Ctrip lists 80 CNY, ticket reseller lists from 68; both weak. 'Jiangnan first rock-cut Buddha' is from the Ctrip page title only (weak). Wikipedia dab page lists 'Dafo Temple (Xinchang)' but that article was not read, so wiki is null; check it exists."
+ },
+ "furong-ancient-village": {
+  "bio": "Ancient village in Yongjia County on the Nanxi River, with old lanes and halls, on a shared ticket with two nearby villages.",
+  "icon": "🏘️",
+  "category": "historic",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "costMin": 18,
+  "costMax": 18,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site found",
+  "wiki": null,
+  "sources": {
+   "cost": "https://www.dahepiao.com/lvyounews1/20241214498073.html"
+  },
+  "notes": "18 CNY from ticket reseller (2024); combined with Lishui Old Street and Cangpo 36 CNY. Bio details beyond location and ticket are unverified (no source read): confirm before use. No English Wikipedia article."
+ },
+ "mount-putuo-4": {
+  "bio": "Temple near the summit of Foding Mountain on Mount Putuo, reached by cable car or about 45 minutes on foot.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "costMin": 5,
+  "costMax": 5,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "price_source_weak": true,
+  "ticketUrl": null,
+  "ticket_note": "no official site loaded (putuoshan.gov.cn unreachable)",
+  "wiki": null,
+  "sources": {
+   "cost": "https://post.smzdm.com/p/a2028x87/",
+   "access": "https://gs.ctrip.com/html5/you/sight/16/110364.html"
+  },
+  "notes": "5 CNY incense-flower ticket for the three main temples per a blog; the Mount Putuo scenic area gate fee (160 CNY, blog) is a separate fee, and cable car 70 return, neither is this cost. Verify whether the scenic-area fee should be attached by park rule. Wikipedia 'Huiji Temple' is a disambiguation page, wiki null."
+ }
+}

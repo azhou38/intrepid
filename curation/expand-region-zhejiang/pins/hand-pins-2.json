@@ -1,0 +1,148 @@
+{
+ "hangzhou-5": {
+  "lat": 30.257327,
+  "lon": 120.056453,
+  "confidence": "MEDIUM",
+  "source": "OSM way/463217862 西溪湿地周家村售票处",
+  "feature": "ticket office (main Zhoujiacun south gate)",
+  "note": "Wikipedia 30.2706,120.0625 is the wetland interior; other OSM entrances: visitor centre w783321243 30.267492,120.085295 (east, 西溪天堂)"
+ },
+ "hangzhou-35": {
+  "lat": 30.385305,
+  "lon": 120.243499,
+  "confidence": "MEDIUM",
+  "source": "OSM way/337741972 天都城埃菲尔铁塔 (Eiffel Tower of Tiandu)",
+  "feature": "landmark replica tower",
+  "note": "Wikipedia/OSM neighbourhood node 30.38972,120.24222 is 490 m north (district centre)"
+ },
+ "xiandu-scenic-area": {
+  "lat": 28.692667,
+  "lon": 120.1384,
+  "confidence": "HIGH",
+  "source": "OSM way/1030312129 鼎湖峰 attraction + peak node n5622749310 + zh Wikipedia 仙都 28.69222,120.13917",
+  "feature": "Dinghu Peak, headline feature of scenic area",
+  "note": "OSM scenic-area centroid (w1030383694 28.694389,120.1269) not used"
+ },
+ "luzhai-residence": {
+  "lat": 29.26606,
+  "lon": 120.242274,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1528242678 东阳卢宅 (Residence of the Lu Family in Dongyang)",
+  "feature": "attraction building complex",
+  "note": "hint 29.279,120.243 was 1.4 km north, not used"
+ },
+ "ningbo-10": {
+  "lat": 29.986227,
+  "lon": 121.445379,
+  "confidence": "MEDIUM",
+  "source": "OSM way/1249862962 慈城古县城 (Cicheng Ancient Town) attraction",
+  "feature": "attraction area centre",
+  "note": "zh Wikipedia town 29.98017,121.44516 ~700 m south (town point)"
+ },
+ "hua-ao-stone-forest": {
+  "lat": 29.067998,
+  "lon": 121.827977,
+  "confidence": "LOW",
+  "source": "OSM way/1184234217 花岙石林景区 nature_reserve centroid",
+  "feature": "scenic-area polygon centroid",
+  "note": "centroid of the stone forest scenic area on the coast; no entrance/ticket node found yet"
+ },
+ "quzhou-4": {
+  "lat": 28.76508,
+  "lon": 118.977352,
+  "confidence": "MEDIUM",
+  "source": "OSM node/5430941057 药王山入口",
+  "feature": "entrance node",
+  "note": ""
+ },
+ "shaoxing-2": {
+  "lat": 29.99298,
+  "lon": 120.586215,
+  "confidence": "MEDIUM",
+  "source": "OSM way/845557536 沈氏园 (Shen Yuan) park, matches hint 29.993404,120.586143",
+  "feature": "park/garden way centre",
+  "note": ""
+ },
+ "taizhou-2": {
+  "lat": 28.664842,
+  "lon": 121.410787,
+  "confidence": "MEDIUM",
+  "source": "OSM way/325388356 台州海洋世界 aquarium",
+  "feature": "aquarium building",
+  "note": "second way w456929094 28.663874,121.409851"
+ },
+ "moxin-mountain": {
+  "lat": 30.261449,
+  "lon": 122.190757,
+  "confidence": "MEDIUM",
+  "source": "OSM node/12071380633 磨心山景区 attraction",
+  "feature": "scenic-area node",
+  "note": "in Daishan; summit radar station node n13987986138 30.264166,122.194918"
+ },
+ "wuyi-2": {
+  "lat": 28.81333,
+  "lon": 119.83028,
+  "confidence": "LOW",
+  "source": "zh Wikipedia 郭洞村 coordinates (28.81333,119.83028); OSM name lookup within 10-15 km returned nothing",
+  "feature": "village point from Wikipedia",
+  "note": "single source, village centre; not verified against OSM"
+ },
+ "liu-ji-temple-and-tomb": {
+  "lat": 27.91945,
+  "lon": 119.95151,
+  "confidence": "LOW",
+  "source": "zh Wikipedia 刘基庙 coordinates (27.91945,119.95151)",
+  "feature": "temple point from Wikipedia",
+  "note": "single source; OSM lookup timed out/found nothing"
+ },
+ "shepan-island": {
+  "lat": 29.14527778,
+  "lon": 121.41111111,
+  "confidence": "LOW",
+  "source": "zh Wikipedia 蛇蟠岛 coordinates",
+  "feature": "island/scenic area point from Wikipedia",
+  "note": "island centre, not a visitor point; OSM search timed out"
+ },
+ "mount-mogan": {
+  "lat": 30.608708,
+  "lon": 119.863366,
+  "confidence": "LOW",
+  "source": "OSM way/373365921 莫干山国家重点风景名胜区 centroid",
+  "feature": "scenic-area centroid",
+  "note": "centroid, not visitor point; no visitor-centre/gate node found (en Wikipedia 30.6333,119.8333 also a centroid)"
+ },
+ "wuzhen-1": {
+  "lat": 30.75683,
+  "lon": 120.47892,
+  "confidence": "LOW",
+  "source": "input hint only; OSM 西栅 lookups timed out",
+  "feature": "hint",
+  "note": "not verified; en Wikipedia Wuzhen town point is 30.74275,120.487778"
+ },
+ "nanji-islands": {
+  "lat": 27.465658,
+  "lon": 121.077842,
+  "confidence": "LOW",
+  "source": "input hint (not an area centroid); not verified",
+  "feature": "hint",
+  "note": "visitor point not confirmed; area centroid 27.4577,121.0397"
+ },
+ "daqi-mountain": {
+  "confidence": "LOW",
+  "source": "OSM/Wikipedia name lookups returned nothing or timed out",
+  "feature": "unresolved",
+  "note": "no coordinate found"
+ },
+ "longquan-4": {
+  "confidence": "LOW",
+  "source": "OSM/Wikipedia name lookups returned nothing or timed out",
+  "feature": "unresolved",
+  "note": "no coordinate found"
+ },
+ "cangpo-village": {
+  "confidence": "LOW",
+  "source": "OSM/Wikipedia name lookups returned nothing or timed out",
+  "feature": "unresolved",
+  "note": "no coordinate found"
+ }
+}

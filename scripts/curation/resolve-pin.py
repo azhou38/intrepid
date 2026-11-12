@@ -71,19 +71,31 @@ sels = TYPES.get(cat, TYPES['nature'])
 ALL = sorted({x for v in TYPES.values() for x in v})
 
 
+# Mirrors in order of preference; the first that answers a status probe is used (overpass-api.de refuses some networks).
+OVERPASS_MIRRORS = ['https://overpass-api.de/api', 'https://maps.mail.ru/osm/tools/overpass/api']
+
+
 def overpass_up():
-    # Probe Overpass's status page once and remember the answer for five minutes across processes: while it is down, every query
-    # would wait out its timeout three times before the Nominatim fallback ran.
+    # Probe the Overpass mirrors once and remember the answer for five minutes across processes: while they are down, every query
+    # would wait out its timeout three times before the Nominatim fallback ran. Returns the working endpoint, or None.
     f = '/tmp/resolve-pin-overpass-health'
     try:
-        t, ok = open(f).read().split()
-        if time.time() - float(t) < 300: return ok == '1'
+        t, ep = open(f).read().split()
+        if time.time() - float(t) < 300: return None if ep == '-' else ep
     except Exception:
         pass
-    r = subprocess.run(['curl', '-s', '-m', '10', '-o', '/dev/null', '-w', '%{http_code}', '-A', UA, 'https://overpass-api.de/api/status'], capture_output=True, text=True)
-    ok = r.stdout.strip() == '200'
-    open(f, 'w').write(f'{time.time()} {int(ok)}')
-    return ok
+    ep = '-'
+    for base in OVERPASS_MIRRORS:
+        for _ in range(4):   # a busy mirror answers 504 for most requests and 200 for the rest
+            # a real one-node query, not /status: mail.ru's status page times out while its interpreter answers
+            r = subprocess.run(['curl', '-s', '-m', '25', '-A', UA, '--data-urlencode', 'data=[out:json][timeout:10];node(1);out ids;', base + '/interpreter'], capture_output=True, text=True)
+            if '"elements"' in r.stdout:
+                ep = base + '/interpreter'
+                break
+            time.sleep(3)
+        if ep != '-': break
+    open(f, 'w').write(f'{time.time()} {ep}')
+    return None if ep == '-' else ep
 
 
 OVERPASS_UP = overpass_up()
@@ -97,15 +109,15 @@ def search(selectors):
         k, v = sel.split('=')
         body += f'nwr["{k}"](around:8000,{lat0},{lon0});' if v == '*' else f'nwr["{k}"="{v}"](around:8000,{lat0},{lon0});'
     q = f'[out:json][timeout:30];({body});out center tags 300;'
-    o = get('https://overpass-api.de/api/interpreter', ('data=' + urllib.parse.quote(q)).encode())
+    o = get(OVERPASS_UP, ('data=' + urllib.parse.quote(q)).encode())
     found = []
     for e in (o or {}).get('elements', []):
-        t = e.get('tags', {}); n = fold(t.get('name') or t.get('name:en') or '')
+        t = e.get('tags', {}); n = fold(' '.join(t.get(k, '') for k in ('name', 'name:en', 'alt_name:en', 'int_name', 'official_name:en', 'alt_name')))
         hit = [w for w in words if w in n]
         if not hit: continue
         la, lo = (e['lat'], e['lon']) if 'lat' in e else (e['center']['lat'], e['center']['lon'])
         kind = next((f'{k}={t[k]}' for k in ('natural', 'tourism', 'waterway', 'historic', 'highway', 'amenity', 'leisure', 'man_made') if k in t), 'feature')
-        found.append({'src': 'osm', 'name': t.get('name'), 'type': kind, 'lat': la, 'lon': lo, 'match': len(hit) / max(1, len(words))})
+        found.append({'src': 'osm', 'name': t.get('name:en') or t.get('name'), 'type': kind, 'lat': la, 'lon': lo, 'match': len(hit) / max(1, len(words))})
     return o, found
 
 
@@ -119,7 +131,7 @@ cands += found
 # A trail or hike is pinned roughly at the CENTRE of the route (halfway along its length), not at the trailhead.
 if cat == 'hike' or re.search(r'\b(Track|Walk|Walkway|Trail|Circuit|Crossing|Route)\b', name, re.I):
     tq = '[out:json][timeout:40];(way["highway"~"path|track|footway|steps"](around:8000,%s,%s);rel["route"~"hiking|foot"](around:8000,%s,%s););out geom tags 400;' % (lat0, lon0, lat0, lon0)
-    to = get('https://overpass-api.de/api/interpreter', ('data=' + urllib.parse.quote(tq)).encode()) if OVERPASS_UP else None
+    to = get(OVERPASS_UP, ('data=' + urllib.parse.quote(tq)).encode()) if OVERPASS_UP else None
     for e in (to or {}).get('elements', []):
         t = e.get('tags', {}); n = fold(t.get('name') or '')
         if not [w for w in words if w in n]: continue

@@ -1,0 +1,102 @@
+[
+ {
+  "name": "Li Shutong Memorial Hall",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Li Shutong Memorial Hall",
+   "counted_sources": [],
+   "other_sources": [
+    "https://zh.wikipedia.org/wiki/平湖市"
+   ],
+   "note": "museum: memorial hall to the monk and artist Li Shutong in Pinghu",
+   "views": 0
+  }
+ },
+ {
+  "name": "Nanhu Revolutionary Memorial Hall",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Nanhu Revolutionary Memorial Hall",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Jiaxing"
+   ],
+   "other_sources": [
+    "https://zh.wikipedia.org/wiki/嘉兴市"
+   ],
+   "note": "museum: large newer memorial hall on South Lake's east side on Communist Party history",
+   "views": 0,
+   "coordinates": {
+    "lat": 30.74986,
+    "lng": 120.75693
+   },
+   "coordinates_source": "OSM way 437711876 (南湖革命纪念馆)"
+  }
+ },
+ {
+  "name": "Nanhu Revolutionary Memorial Hall (old branch)",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Nanhu Revolutionary Memorial Hall (old branch)",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Jiaxing"
+   ],
+   "other_sources": [],
+   "note": "museum: older memorial hall by South Lake's east shore, Communist Party history",
+   "views": 0,
+   "coordinates": {
+    "lat": 30.76028,
+    "lng": 120.7573
+   },
+   "coordinates_source": "OSM node 10713396287 (南湖革命纪念馆老馆)"
+  }
+ },
+ {
+  "name": "Pinghu Library",
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Pinghu Library",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Pinghu"
+   ],
+   "other_sources": [],
+   "note": "civic: public library, not a visitor attraction",
+   "views": 0
+  }
+ },
+ {
+  "name": "Wuzhen",
+  "views": 27290,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Wuzhen",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Tongxiang"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Wuzhen",
+    "https://you.ctrip.com/sight/jiaxing272/s0-p1.html"
+   ],
+   "note": "town: preserved canal water town west of Jiaxing city, with the Eastern and Western Quarters, Mao Dun's home town",
+   "views": 27290,
+   "coordinates": {
+    "lat": 30.74275,
+    "lng": 120.487778
+   },
+   "coordinates_source": "wikipedia:Wuzhen"
+  }
+ }
+]

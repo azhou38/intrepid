@@ -1,0 +1,115 @@
+{
+ "hangzhou-2": {
+  "bio": "Chan Buddhist temple at the foot of Feilai Peak, known for its many pagodas and rock-carved grottos.",
+  "icon": "🛕",
+  "category": "religious",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": "https://www.lingyinsi.com",
+  "wiki": null,
+  "price_source_weak": true,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Lingyin_Temple",
+   "https://www.yzwb.net/news/txs/202511/t20251129_294897.html",
+   "https://www.lingyinsi.com/"
+  ],
+  "notes": "Free entry with advance reservation reported from 1 Dec 2025 (old fee 45 CNY Feilai Peak + 30 CNY incense ticket); news is from Nov 2025, current policy unverified. Official site title 杭州灵隐寺 loaded OK."
+ },
+ "hangzhou-40": {
+  "bio": "Large reservoir lake in Lin'an ringed by a 42 km greenway for walking and cycling, with water-sports areas.",
+  "icon": "🏞️",
+  "category": "nature",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 4,
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticket_note": "No single official site found; WeChat-only or none known",
+  "wiki": null,
+  "sources": [
+   "https://hznews.hangzhou.com.cn/chengshi/content/2018-03/08/content_6815317.htm",
+   "https://hznews.hangzhou.com.cn/jingji/content/2020-03/24/content_7700780.htm"
+  ],
+  "notes": "Greenway is public; free status of the lake itself unverified for 2026 (a 2020 free-opening notice was temporary). Paid water-sports centre is an extra. Pin note: some guides say the scenic-area entrance is across the lake."
+ },
+ "mos-manor": {
+  "bio": "Late-Qing Jiangnan gentry mansion in Pinghu, a national protected site with symmetrical halls and a garden.",
+  "icon": "🏯",
+  "category": "historic",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "costMin": 28,
+  "costMax": 28,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official website found; official presence unverified",
+  "wiki": null,
+  "price_source_weak": true,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/533/16168.html"
+  ],
+  "notes": "28 CNY from a March 2023 travel blog; Ctrip page says paid, price on request. Unverified."
+ },
+ "ningbo-3": {
+  "bio": "Ningbo's history museum in Yinzhou, now part of Ningbo Museum Institute, covering the area's history and local customs.",
+  "icon": "🏛️",
+  "category": "museum",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 2.5,
+  "free": true,
+  "costBasis": "entry",
+  "needs": "booking",
+  "ticketUrl": "https://www.nbmuseum.cn",
+  "wiki": null,
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Ningbo_Museum",
+   "https://www.chinanews.com.cn/sh/news/2008/12-02/1470863.shtml",
+   "https://www.nbmuseum.cn/"
+  ],
+  "notes": "Free admission reported by 2008 news (free ticket required, daily cap); 2020 report of advance reservation. Official site 宁波博物院 loaded; it says the museum wing closed for works from 16 Mar 2026 with reopening to be announced, so reopening is unverified. Current booking rule unverified."
+ },
+ "sanqu-stone-forest": {
+  "bio": "Karst stone forest in Changshan county with limestone pinnacles, caves and a lake, on a walking route.",
+  "icon": "🪨",
+  "category": "nature",
+  "visitHoursMin": 2,
+  "visitHoursMax": 3.5,
+  "costMin": 60,
+  "costMax": 60,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "No official site found",
+  "wiki": null,
+  "price_source_weak": true,
+  "sources": [
+   "https://touch.piao.qunar.com/touch/detail.htm?id=928",
+   "https://gs.ctrip.com/html5/you/sight/174/1407699.html"
+  ],
+  "notes": "Adult 60 CNY from Qunar (Ctrip from 58); aggregator prices only. Bio detail about caves/lake and walking route not verified from a source; treat bio as unverified, Ctrip says 27.58 km2 4A scenic area."
+ },
+ "dongsha-beach": {
+  "bio": "Quieter sandy beach on Zhujiajian island beside Nansha, with free showers reported and calmer crowds.",
+  "icon": "🏖️",
+  "category": "beach",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "costMin": 10,
+  "costMax": 35,
+  "currency": "CNY",
+  "costBasis": "entry",
+  "ticketUrl": null,
+  "ticket_note": "Managed as part of Zhujiajian scenic area; no separate official site found",
+  "wiki": null,
+  "price_source_weak": true,
+  "sources": [
+   "https://gs.ctrip.com/html5/you/sight/zhoushan479/139887.html",
+   "https://touch.travel.qunar.com/comment/5800384"
+  ],
+  "notes": "Conflicting prices: Ctrip 35 from, Qunar 2021 review 10 CNY, no charge after 18:00; Zhujiajian page says from 10. Unverified. Bio's 'quieter' and 'free showers' come from reviews/draft, unverified."
+ }
+}

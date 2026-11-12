@@ -1,0 +1,733 @@
+{
+ "region": "zhejiang-quzhou",
+ "new_destinations": [
+  {
+   "id": "quzhou",
+   "name": "Quzhou",
+   "action": "new-destination",
+   "rank": 4,
+   "category": "city",
+   "icon": "🏯",
+   "coordinates": {
+    "lat": 28.9739,
+    "lng": 118.8541
+   },
+   "coordinates_source": "OSM place=city relation (Quzhou); city centre point",
+   "defaultZoomSpanKm": 50,
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "name_evidence": "China Daily Quzhou government tourism pages use 'Quzhou' as the heading for its ancient city, Confucius South Family Temple and Lanke Mountain; English Wikipedia 'Quzhou' (~18k views/yr); Wikivoyage Zhejiang lists it as a city. Wikivoyage has no own Quzhou page (judge note).",
+   "reason": "Prefecture-level city and regional hub with seven kept spots in and around it; rank 4 (worth a detour, not a national top-tier draw).",
+   "spot_ids": [
+    "quzhou-1",
+    "quzhou-2",
+    "quzhou-3",
+    "quzhou-4",
+    "quzhou-5",
+    "quzhou-6",
+    "quzhou-7"
+   ]
+  },
+  {
+   "id": "jiangshan",
+   "name": "Jiangshan",
+   "action": "new-destination",
+   "rank": 4,
+   "category": "mountain",
+   "icon": "⛰️",
+   "coordinates": {
+    "lat": 28.53,
+    "lng": 118.57
+   },
+   "coordinates_source": "Centre between Mount Jianglang (OSM peak) and its village/pass cluster; not from memory of a town centre",
+   "defaultZoomSpanKm": 50,
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "name_evidence": "Wikivoyage 'Jiangshan' page and the Wikivoyage Zhejiang region page (counted); China Daily gov Jiangshan one-day itinerary listing Jianglang Mountain, Nianbadu, Qingyang and Xianxia Pass. Named for the county-level city which travellers use as the base for Jianglang Mountain.",
+   "reason": "Four kept spots around the Jiangshan base (Mount Jianglang, Nianbadu, Qingyang Village, Xianxia Pass); the town Jiangshan itself is the gateway, not a separate spot beside its own attractions.",
+   "spot_ids": [
+    "jiangshan-1",
+    "jiangshan-2",
+    "jiangshan-3",
+    "jiangshan-4"
+   ]
+  }
+ ],
+ "spots": [
+  {
+   "name": "Quzhou Ancient City",
+   "action": "spot",
+   "destination": "quzhou",
+   "id": "quzhou-1",
+   "icon": "🏯",
+   "category": "historic",
+   "bio": "Walled old town of Quzhou around the riverside Shuiting Gate, with the Three Streets and Seven Alleys lanes to wander.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot of Quzhou: old town inside the city; also absorbs the Quzhou City Wall candidate (one spot at Shuiting Gate).",
+   "pin_needed": true
+  },
+  {
+   "name": "Confucius South Family Temple",
+   "action": "spot",
+   "destination": "quzhou",
+   "id": "quzhou-2",
+   "icon": "🛕",
+   "category": "religious",
+   "bio": "Ancestral temple of the southern branch of Confucius's descendants, set in Quzhou's old town.",
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "coordinates": {
+    "lat": 28.96354,
+    "lng": 118.87212
+   },
+   "coordinates_source": "OSM way 1494317479 (孔氏南宗家庙, historic=building)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot: inside Quzhou's urban area."
+  },
+  {
+   "name": "Lanke Mountain",
+   "action": "spot",
+   "destination": "quzhou",
+   "id": "quzhou-3",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Mountain tied to a Go (weiqi) legend, with a natural stone bridge, Baoyan Temple and a Go park.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": 28.87945,
+    "lng": 118.91951
+   },
+   "coordinates_source": "OSM way 856154978 (烂柯山, natural=bare_rock)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot: about 10 km from the city centre, in Quzhou's greater metro."
+  },
+  {
+   "name": "Yaowang Mountain",
+   "action": "spot",
+   "destination": "quzhou",
+   "id": "quzhou-4",
+   "icon": "🌲",
+   "category": "nature",
+   "bio": "Scenic area with Shennong Gully, a stone forest and the 88 m Mawei Waterfall.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 5,
+   "coordinates": {
+    "lat": 28.76508,
+    "lng": 118.97735
+   },
+   "coordinates_source": "OSM node 5430941057 (药王山入口, visitor entrance)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot: about 22 km south-east of Quzhou, within the 50 km span."
+  },
+  {
+   "name": "Tianji Longmen Gorge",
+   "action": "spot",
+   "destination": "quzhou",
+   "id": "quzhou-5",
+   "icon": "🏞️",
+   "category": "nature",
+   "bio": "Scenic area of canyons, peaks and waterfalls next to Yaowang Mountain.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": 28.72674,
+    "lng": 118.9572
+   },
+   "coordinates_source": "OSM node 5430674504 (天脊龙门, tourism=attraction; a second node 6565624050 sits 2 km away)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot: about 28 km south-east of Quzhou, within span (75% of 50 km)."
+  },
+  {
+   "name": "Mawei Waterfall",
+   "action": "spot",
+   "destination": "quzhou",
+   "id": "quzhou-6",
+   "icon": "💧",
+   "category": "nature",
+   "bio": "An 88 m waterfall described as Quzhou's most famous, inside the Yaowang Mountain scenic area.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot; sits inside Yaowang Mountain's area (judge flagged possible overlap, kept as a distinct named sight).",
+   "pin_needed": true,
+   "pin_note": "Skeptic: may be treated as part of Yaowang Mountain."
+  },
+  {
+   "name": "Duze Old Street",
+   "action": "spot",
+   "destination": "quzhou",
+   "id": "quzhou-7",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Restored 820 m Qing-dynasty street with blacksmith and bamboo-weaving craft shops.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot, added by judge; in Kecheng District; confirm it lies within Quzhou's bounds when pinned.",
+   "pin_needed": true
+  },
+  {
+   "name": "Mount Jianglang",
+   "action": "spot",
+   "destination": "jiangshan",
+   "id": "jiangshan-1",
+   "icon": "⛰️",
+   "category": "nature",
+   "bio": "Red-sandstone peak trio near Jiangshan, a UNESCO-listed China Danxia site with a stairway up the central rock.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": 28.5295,
+    "lng": 118.5657
+   },
+   "coordinates_source": "OSM natural=peak (江郎山)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot: headline of the Jiangshan destination."
+  },
+  {
+   "name": "Nianbadu",
+   "action": "spot",
+   "destination": "jiangshan",
+   "id": "jiangshan-2",
+   "icon": "🏘️",
+   "category": "historic",
+   "bio": "Ming-Qing ancient town in southern Jiangshan, rated 5A, with old streets and a river setting.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "coordinates": {
+    "lat": 28.2937,
+    "lng": 118.4781
+   },
+   "coordinates_source": "OSM place=village/town (Nianbadu)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot: about 25 km from Jianglang, within Jiangshan's span; a place of its own."
+  },
+  {
+   "name": "Qingyang Village",
+   "action": "spot",
+   "destination": "jiangshan",
+   "id": "jiangshan-3",
+   "icon": "🏡",
+   "category": "historic",
+   "bio": "Mao-clan ancestral village near Jianglang Mountain with an ancestral house and a tower.",
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "coordinates": {
+    "lat": 28.57403,
+    "lng": 118.5776
+   },
+   "coordinates_source": "OSM node 6085566737 (清漾村, place=village)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot: 5 km from Mount Jianglang."
+  },
+  {
+   "name": "Xianxia Pass",
+   "action": "spot",
+   "destination": "jiangshan",
+   "id": "jiangshan-4",
+   "icon": "🛤️",
+   "category": "historic",
+   "bio": "Ancient Zhejiang-Fujian road and mountain pass, a heritage trail on a Jiangshan one-day itinerary.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Kept spot, limited scale; pin must be sourced and confirmed inside Jiangshan's span.",
+   "pin_needed": true,
+   "pin_note": "Trail: pin at midpoint of route."
+  },
+  {
+   "name": "Gengong Buddhist Kingdom",
+   "action": "standalone",
+   "destination": null,
+   "id": "gengong-buddhist-kingdom",
+   "icon": "🗿",
+   "category": "entertainment",
+   "bio": "Root-carving cultural park in Kaihua, home to the world's largest root statue of Sakyamuni.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "lat": 29.14032,
+    "lng": 118.38624
+   },
+   "coordinates_source": "OSM way 759949402 (根宫佛国文化旅游区, leisure=park)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: Kaihua has only two kept places (this and Qicai Changhong), under the four-spot bar; Kaihua is not a destination travellers name for a trip. >40 km from Quzhou's centre (about 50 km), outside its bounds.",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "name": "Qianjiangyuan National Park",
+   "action": "standalone",
+   "destination": null,
+   "id": "qianjiangyuan-national-park",
+   "icon": "🌳",
+   "category": "nature",
+   "bio": "National park protecting the headwaters of the Qiantang River, with primeval forest and rich wildlife in Kaihua.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: a national park is a destination only with four spots or flagship rank; only Qicai Changhong is kept inside (Gutianshan and the Forest Park entry are review/duplicates, one entry placed). Candidate point is a relation centroid.",
+   "pin_note": "Candidate point (29.31043, 118.2114) is a relation centroid; needs a visitor point (visitor centre or main entrance).",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai",
+   "pin_needed": true,
+   "candidate_centroid": {
+    "lat": 29.31043,
+    "lng": 118.2114
+   }
+  },
+  {
+   "name": "Qicai Changhong Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "id": "qicai-changhong",
+   "icon": "🏔️",
+   "category": "nature",
+   "bio": "Mountain scenic area in Kaihua's national park zone, with Taihui Mountain and the Gaotiankeng stargazing village.",
+   "visitHoursMin": 2,
+   "visitHoursMax": 5,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: inside Qianjiangyuan's zone but the park is a standalone spot, which cannot hold spots; 35 km from Kaihua.",
+   "pin_needed": true,
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "name": "Longyou Caves",
+   "action": "standalone",
+   "destination": null,
+   "id": "longyou-caves",
+   "icon": "🕳️",
+   "category": "historic",
+   "bio": "Man-made grottoes carved in sandstone about 2,000 years ago; 36 chambers open to visitors in Longyou County.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "lat": 29.062,
+    "lng": 119.1844
+   },
+   "coordinates_source": "OSM way 893716464 (Longyou Grottes, tourism=attraction)",
+   "wiki": "Longyou Caves",
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: ~45 km east of Quzhou centre, outside its bounds; Longyou has no other kept spots.",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "name": "Sanqu Stone Forest",
+   "action": "standalone",
+   "destination": null,
+   "id": "sanqu-stone-forest",
+   "icon": "🪨",
+   "category": "nature",
+   "bio": "4A national geology park of karst stone pillars within Changshan UNESCO Global Geopark.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": {
+    "lat": 28.98829,
+    "lng": 118.50087
+   },
+   "coordinates_source": "OSM node 5263557298 (三衢石林, tourism=attraction)",
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: Changshan County, ~35 km west of Quzhou, outside the city's bounds. Judge noted possible renovation closure; verify.",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "name": "Changshan Geopark",
+   "action": "standalone",
+   "destination": null,
+   "id": "changshan-geopark",
+   "icon": "🌏",
+   "category": "nature",
+   "bio": "UNESCO Global Geopark of 1,043 sq km around Changshan with dispersed geological sites.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: large dispersed area in Changshan County, placed at its main visitor point; outside Quzhou's bounds. Overlaps Sanqu Stone Forest (kept separately as a distinct 4A site).",
+   "pin_needed": true,
+   "pin_note": "Needs main visitor point.",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "name": "Jiming Mountain Folk Houses",
+   "action": "standalone",
+   "destination": null,
+   "id": "jiming-mountain-folk-houses",
+   "icon": "🏛️",
+   "category": "historic",
+   "bio": "Minju Garden of 34 relocated ancient buildings, a provincial key relic.",
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: location unconfirmed (pin needed); no destination known to hold it.",
+   "pin_needed": true,
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai"
+  },
+  {
+   "name": "Taoyuan Qili Scenic Area",
+   "action": "standalone",
+   "destination": null,
+   "id": "taoyuan-qili",
+   "icon": "🌾",
+   "category": "nature",
+   "bio": "Largest national 4A rural-leisure scenic area in Zhejiang with waterfalls, a stone forest and ancient villages.",
+   "visitHoursMin": 3,
+   "visitHoursMax": 6,
+   "coordinates": null,
+   "coordinates_source": null,
+   "wiki": null,
+   "cost": null,
+   "costBasis": null,
+   "ticketUrl": null,
+   "needs_research": [
+    "cost",
+    "ticketUrl"
+   ],
+   "reason": "Standalone: large rural area, placed at its main visitor point once pinned; bounds against Quzhou unconfirmed so not a Quzhou spot.",
+   "pin_needed": true,
+   "pin_note": "Main visitor point needed.",
+   "country": "China",
+   "countryCode": "CN",
+   "continent": "Asia",
+   "timezone": "Asia/Shanghai"
+  }
+ ],
+ "review": [
+  {
+   "name": "Fushan Park",
+   "case_for": "Old-town hill park beside the former prefecture seat; only a Chinese Wikipedia mention found, no visitor page located in this pass",
+   "case_against": "Could be an ordinary city park; but may hold old-town heritage sights worth a stop"
+  },
+  {
+   "name": "Quzhou Museum",
+   "case_for": "Museum in the old-town cultural district; no counted visitor source found in this pass",
+   "case_against": "A city museum is a real indoor stop but no guide located names it"
+  },
+  {
+   "name": "Wuxi River Wetland Park",
+   "case_for": "Named in a China Daily gov wetlands piece (paddling, egrets), one counted source, short visit",
+   "case_against": "Provincial wetland, mostly local leisure; but a source does name it"
+  },
+  {
+   "name": "Wulong Lake",
+   "case_for": "Eco-holiday zone named only on Chinese Wikipedia in this pass; unverified",
+   "case_against": "Could be a local resort reservoir"
+  },
+  {
+   "name": "Guanxiong Gorge",
+   "case_for": "Only a Ctrip description; no counted source found",
+   "case_against": "A gorge described as dangerous may not be a regular visit"
+  },
+  {
+   "name": "Jiulong Lake",
+   "case_for": "Ctrip listing only, details unchecked",
+   "case_against": "Possibly a local reservoir resort"
+  },
+  {
+   "name": "Meishudi Scenic Area",
+   "case_for": "Ctrip listing only, details unchecked",
+   "case_against": "Unknown draw"
+  },
+  {
+   "name": "Gumiecheng Ecological Park",
+   "case_for": "Ctrip listing only; ecological park named after the ancient Gumie state",
+   "case_against": "Possibly a modern park without a distinct draw"
+  },
+  {
+   "name": "Moon Lake (Wanyao Reservoir)",
+   "case_for": "Only Chinese Wikipedia found; no visitor source located",
+   "case_against": "A reservoir scenic spot may have a boardwalk or viewpoints"
+  },
+  {
+   "name": "Xiakou Reservoir",
+   "case_for": "Only Chinese Wikipedia found; no visitor source located",
+   "case_against": "Reservoir mainly of local use"
+  },
+  {
+   "name": "Sanqingkou Porcelain Workshop",
+   "case_for": "National key relic family workshop; no visitor source located in this pass, visitor access unverified",
+   "case_against": "May be a working private workshop, not open"
+  },
+  {
+   "name": "Fugai Mountain",
+   "case_for": "China Daily gov tourism page page describes it as part of Jianglang Mountain National Scenic Spot (boulder summit, autumn foliage), so it may be part of the larger Jianglang spot",
+   "case_against": "If it is a separate visitor entrance 9 km from Nianbadu it is a distinct hike"
+  },
+  {
+   "name": "Qianjiangyuan National Forest Park",
+   "case_for": "Own China Daily gov tourism page page (45 sq km, source of the Qiantang River, wildlife) but it is part of the Qianjiangyuan National Park candidate, so near-duplicate",
+   "case_against": "Strong named visitor page; the park designation merges it, so decide one entry at placement"
+  },
+  {
+   "name": "Gutianshan National Nature Reserve",
+   "case_for": "Named in the Kaihua itinerary of China Daily gov tourism page as Gutian Mountain, a part of Qianjiangyuan National Park; reserve core may be restricted",
+   "case_against": "Part of the larger park; public access unclear"
+  },
+  {
+   "name": "Huaqian Valley",
+   "case_for": "Ctrip listing only, details unchecked",
+   "case_against": "Unknown draw"
+  },
+  {
+   "name": "Shengtan Gully Scenic Area",
+   "case_for": "Chinese Wikipedia mention only; not verified",
+   "case_against": "Unknown scale"
+  },
+  {
+   "name": "Nanhua Mountain Scenic Area",
+   "case_for": "Chinese Wikipedia mention only; not verified",
+   "case_against": "Unknown scale"
+  },
+  {
+   "name": "Nanhu Island",
+   "case_for": "Chinese Wikipedia mention only; not verified",
+   "case_against": "Unknown scale"
+  },
+  {
+   "name": "Yuping Park",
+   "case_for": "Chinese Wikipedia mention only; likely a county-seat park",
+   "case_against": "Probably an ordinary town park"
+  },
+  {
+   "name": "Shenlong Waterfall",
+   "case_for": "130 m cascade in the Qianjiangyuan area per Xinhua; a news source, not a tourism page",
+   "case_against": "Inside the park, so may be part of it"
+  },
+  {
+   "name": "Liuchun Lake",
+   "case_for": "Holiday resort lake, only Chinese Wikipedia found",
+   "case_against": "Resort lake, uncertain visitor value"
+  },
+  {
+   "name": "Dazhuhai Bamboo Sea",
+   "case_for": "National forest park per Chinese Wikipedia only; not verified",
+   "case_against": "Bamboo forests are a plausible walk, source lacking"
+  },
+  {
+   "name": "Sanmenyuan Village",
+   "case_for": "National historic village per Chinese Wikipedia only; not verified",
+   "case_against": "Village houses may be private"
+  },
+  {
+   "name": "Fanzeng Mountain Volcanic Neck",
+   "case_for": "Landform mention only, no visitor source located",
+   "case_against": "Probably a drive-by landform"
+  },
+  {
+   "name": "Hengshan Tower",
+   "case_for": "Heritage listing only, location unconfirmed",
+   "case_against": "Unknown access"
+  },
+  {
+   "name": "Shaoyi Hall",
+   "case_for": "Heritage listing only, location unconfirmed",
+   "case_against": "Unknown access"
+  },
+  {
+   "name": "Dai Li Former Residence",
+   "case_for": "Spymaster's former residence with hidden passages in Baoan township; no visitor source located",
+   "case_against": "Dark-tourism curiosity, open status unverified"
+  },
+  {
+   "name": "Wenfeng Pagoda",
+   "case_for": "China Daily gov tourism page lists Wenfeng Tower on Tashan Mountain with views, one of Changshan's 10 ancient spots",
+   "case_against": "A short stop in a county seat"
+  },
+  {
+   "name": "Taihui Mountain",
+   "case_for": "Rule 3: named as one of the two main spots of Qicai Changhong; likely part of the larger scenic area spot.",
+   "case_against": "For: distinct 'Potala of Jiangnan' mountain. Against: part of Qicai Changhong."
+  },
+  {
+   "name": "Gaotiankeng Village",
+   "case_for": "Rule 1-3: China Daily 2023 piece on this mountain village and its dark-night astronomical museum; part of Qicai Changhong, observatory access reported unreliable.",
+   "case_against": "For: stargazing village. Against: inside Qicai Changhong, small, access doubtful."
+  },
+  {
+   "name": "Longyou Bamboo Weaving Museum",
+   "case_for": "Rule 1-2: one China Daily Quzhou page (Xikou town, craftsmen, study tours, provincial rural museum shortlist); visit length and open access unclear.",
+   "case_against": "For: working craft museum. Against: one source, small rural museum in a village."
+  },
+  {
+   "name": "Zhaoxian Ancient Ferry",
+   "case_for": "Rule 1-2: China Daily lists it in Zhaoxian's old street, an official crossing since before the Tang, repaired; one source, short visit.",
+   "case_against": "For: historic crossing and old street. Against: single mention, brief stop."
+  },
+  {
+   "name": "Shimen Valley",
+   "case_for": "Rule 1-2: China Daily mentions it only as a misty valley 13 km from Changshan seat with a Zhao Bian study link; nothing to do described.",
+   "case_against": "For: scenic valley. Against: passing mention, no visitor detail."
+  },
+  {
+   "name": "Yanjiayu Island",
+   "case_for": "Rule 1-2: China Daily Quzhou ancient city page calls it a former barren land turned tourism complex near Shuiting Gate; operator-run, one passing mention.",
+   "case_against": "For: city-side leisure island. Against: one-sentence source, details unverified."
+  }
+ ],
+ "notes": "Quzhou City Wall merged into Quzhou Ancient City. Jiangshan town is the destination, not a separate spot. Qianjiangyuan National Forest Park and Gutianshan are in review; one park entry placed. Standalone spots within 40 km of Quzhou's centre: Sanqu Stone Forest (~35 km) and Longyou Caves (~45 km) lie in other counties outside its bounds. Standalone spots within 40 km of Jiangshan centre: none."
+}

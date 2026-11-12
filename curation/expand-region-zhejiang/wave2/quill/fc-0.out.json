@@ -1,0 +1,328 @@
+{
+ "hangzhou-1": {
+  "verdict": "edited",
+  "bio": "Hangzhou's freshwater lake, ringed by hills, with causeways, islands, pagodas and temples, free to visit.",
+  "changes": [
+   "bio: 'free lakeside promenade' reworded to 'free to visit' (the whole lake area has been free since 2002 per Hangzhou Daily 2017); added hills, which Wikipedia confirms"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "ticketUrl: hzwestlake.gov.cn failed to load (fetch failed); none set, orchestrator may check in a browser"
+  ]
+ },
+ "hangzhou-26": {
+  "verdict": "edited",
+  "bio": "Former textile-factory museum in Hangzhou with galleries of crafts, knives and swords, fans and umbrellas.",
+  "changes": [
+   "bio: 'canal-side' not confirmed by any source read, replaced with former textile factory (Wikipedia/China Daily); free admission confirmed by China Daily Zhejiang 2021 (General admission: Free); wiki article exists and covers the merged complex"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": "Hangzhou Arts and Crafts Museum",
+  "unresolved": [
+   "ticketUrl: zgdjss.com not loaded; none set"
+  ]
+ },
+ "hangzhou-4": {
+  "verdict": "edited",
+  "bio": "Tea plantations around Longjing village in Hangzhou's hills, where Dragon Well tea is grown and sold.",
+  "changes": [
+   "bio: 'terraces' -> 'plantations' (Wikipedia wording)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": "Longjing, Hangzhou",
+  "unresolved": [
+   "free: no official source found; open village assumed, kept price_source_weak"
+  ]
+ },
+ "qiandao-lake": {
+  "verdict": "edited",
+  "bio": "Reservoir lake in Chun'an, created in 1959, dotted with 1,078 islands above 2,500 square metres.",
+  "changes": [
+   "bio: 'explored by boat from lakeside piers' not confirmed; replaced with zh Wikipedia facts (1959 reservoir, 1,078 islands over 2,500 sq m, Chun'an)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 45.5-195 CNY from Ctrip only (varies by zone); no official figure found; still price_source_weak",
+   "no official website"
+  ]
+ },
+ "anji-7": {
+  "verdict": "edited",
+  "bio": "Anji branch of the Zhejiang Museum of Natural History, with a dinosaur hall from Triassic to Cretaceous.",
+  "changes": [
+   "bio: geology and ecology halls not confirmed; only the dinosaur hall (Triassic to Cretaceous) is in the 2018 Hangzhou Daily opening report"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.zmnh.com",
+  "wiki": null,
+  "unresolved": [
+   "free/booking rule is from 2018, not re-confirmed on the official site; zmnh.com loads (title 浙江自然博物院) but is script-rendered"
+  ]
+ },
+ "moganshan-villa-cluster": {
+  "verdict": "edited",
+  "bio": "154 Western-style villas, mostly built by foreign residents from the 1890s, among Moganshan's bamboo forest.",
+  "changes": [
+   "bio: now 154 Western-style villas (118 foreign-owned) from the 1890s per zh Wikipedia; dropped 'near Hangzhou' and 'officials'",
+   "wiki left null: English 'Mount Mogan' article is the mountain, not the villa cluster"
+  ],
+  "cost_fields": {},
+  "ticketUrl": "https://www.mgsfjq.com/",
+  "wiki": null,
+  "unresolved": [
+   "price 80 CNY is the mountain scenic ticket from blogs, villa cluster not priced separately; price_source_weak kept",
+   "ticketUrl mgsfjq.com loads, title 莫干山官网; body script-rendered so content unread"
+  ]
+ },
+ "jiaxing-4": {
+  "verdict": "edited",
+  "bio": "Canal-side quarter in Jiaxing of three rivers and three streets, with teahouses, a flower and bird market and a zongzi museum.",
+  "changes": [
+   "bio: 'boat rides' unconfirmed, replaced with the zongzi culture museum (Ctrip lists it); 'three rivers, three streets' confirmed; free per Ctrip (免费开放 无需购票)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free from Ctrip only, no official source"
+  ]
+ },
+ "liudong-mountain": {
+  "verdict": "edited",
+  "bio": "Karst scenic area near Lanxi with limestone caves and an underground river.",
+  "changes": [
+   "bio: 'explored by boat' unconfirmed, dropped; caves and Underground River (地下长河) confirmed on Ctrip, 4A"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "Ctrip says paid, 'ask the scenic area for the price'; 69-74 CNY from Qunar only, still price_source_weak",
+   "no official site"
+  ]
+ },
+ "heyang-ancient-village": {
+  "verdict": "hold",
+  "bio": "Old village in Jinyun with Ming and Qing ancestral halls and houses, noted for their wood and brick carving.",
+  "changes": [
+   "the only source (Ctrip /sight/31575.html) loads a page about Ellora, Ontario (Elora Gorge), not Heyang; nothing about Heyang is confirmed, including price and the carving claim"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "no valid source for existence, bio or the 35-40 CNY price"
+  ]
+ },
+ "xiandu-scenic-area": {
+  "verdict": "edited",
+  "bio": "National 5A scenic area in Jinyun around Dinghu Peak, Furong Gorge and Ni Weng Cave.",
+  "changes": [
+   "bio: cable car and shuttle buses unconfirmed, replaced with Dinghu Peak, Furong Gorge and Ni Weng Cave (zh Wikipedia); 5A confirmed (2020)",
+   "costBasis 'park' -> 'entry': a scenic-area ticket, not a park fee with costPer"
+  ],
+  "cost_fields": {
+   "costBasis": "entry"
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 70-110 CNY from Ctrip and a 2020 travelogue; 110 includes shuttle; no current official figure, price_source_weak kept",
+   "no official site"
+  ]
+ },
+ "ningbo-10": {
+  "verdict": "edited",
+  "bio": "Walled town in Ningbo's Jiangbei district dating from the 8th century, with old lanes and a Confucian temple.",
+  "changes": [
+   "bio: 'former county town', 'Tang-era' and 'county yamen' not in sources read; kept 8th-century walled town (Wikipedia), Confucian temple (Wikipedia photo/caption)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free town streets from Ctrip only; some inner sights charge"
+  ]
+ },
+ "shipu": {
+  "verdict": "pass",
+  "bio": "A fishing-harbour old town on Xiangshan's coast, with stone-paved streets, old houses and a working seafood port.",
+  "changes": [
+   "bio reworded 'stone lanes' to 'stone-paved streets' (Ctrip review); Ctrip currently shows 石浦渔港古城 4A, ticket 50 起, consistent with the 50-60 range"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price weak: Ctrip 'from 50' only"
+  ]
+ },
+ "gengong-buddhist-kingdom": {
+  "verdict": "hold",
+  "bio": "Root-carving themed Buddhist park in Kaihua, a national 5A scenic area of carved-root halls, bonsai and rocks.",
+  "changes": [
+   "bio rewritten from Ctrip: root-carving theme park, national 5A, carved-root halls, bonsai and rocks",
+   "Ctrip's current page says 免费开放 无需购票 (free, no ticket) while the draft has 118-180 CNY (earlier Ctrip list 180): the two conflict"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "cost contradictory (free vs 118-180 CNY); no official source found; no official site"
+  ]
+ },
+ "quzhou-2": {
+  "verdict": "edited",
+  "bio": "Temple of the Confucius family's southern branch in Quzhou, where they settled after the Song court fled south.",
+  "changes": [
+   "bio: 'ticket bundled with a miniature Analects' not confirmed, replaced with the history confirmed by zh Wikipedia (settled in Quzhou after the Song court fled south, 1129-1136)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 10 CNY from Ctrip 'from 10' (Qunar 7); weak",
+   "no official site; no English Wikipedia article (Confucius_Family_Temple_(Quzhou) is 404)"
+  ]
+ },
+ "shaoxing-2": {
+  "verdict": "pass",
+  "bio": "Song-dynasty garden in Shaoxing where the poet Lu You wrote of his lost love Tang Wan, with ponds and pavilions.",
+  "changes": [
+   "Lu You and Tang Wan at Shen Garden confirmed in zh Wikipedia (1155, Chai Tou Feng); Ctrip now shows 门票¥40起 matching the 40 CNY draft"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 40 CNY is a Ctrip 'from' price; no official source, price_source_weak kept"
+  ]
+ },
+ "dachen-islands": {
+  "verdict": "edited",
+  "bio": "Island group off Taizhou reached by ferry, held by the Nationalists until their 1955 evacuation, now with fishing villages.",
+  "changes": [
+   "bio: 'clifftop walkway' and 'wartime sites' not in a source read; replaced with the 1955 Nationalist evacuation and fishing villages (Wikipedia / Ctrip)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "no island entry fee per Ctrip only; ferry and the Jiawu walkway charge separately and are not the cost"
+  ]
+ },
+ "shitang-fishing-village": {
+  "verdict": "pass",
+  "bio": "Wenling coastal fishing town of stacked stone houses, many now guesthouses, beside the Millennium Dawn viewing park.",
+  "changes": [
+   "stone houses and converted guesthouses confirmed by an Dec 2025 report (Haili village, 500+ stone houses); Millennium Dawn park (千年曙光园) is the Ctrip address"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free/open not stated by any source; no steward site"
+  ]
+ },
+ "baizhangji-waterfall": {
+  "verdict": "pass",
+  "bio": "Wencheng waterfall whose first drop of 207 m was recognised in 2013 as China's tallest single drop.",
+  "changes": [
+   "207 m first drop and the 2013 recognition as China's largest single-drop waterfall confirmed by The Paper (Guinness-style recognition) and zh Wikipedia"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 65 CNY not confirmed (Ctrip travelogue only); price_source_weak kept",
+   "official scenic-area site not found"
+  ]
+ },
+ "south-yandang-mountain": {
+  "verdict": "hold",
+  "bio": "Rocky scenic mountain area in Pingyang County, Wenzhou, known for its cliffs, caves and temples.",
+  "changes": [
+   "bio: dropped 'cable car' (non-official source only)",
+   "Ctrip lists it as temporarily closed, reopening date to be decided; no price found (free=false with no cost)"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "cannot confirm it is currently open; no price"
+  ]
+ },
+ "yandang-mountains-3": {
+  "verdict": "pass",
+  "bio": "Scenic area in the Yandang Mountains whose 197 m waterfall is among China's tallest single-drop falls.",
+  "changes": [
+   "197 m Dalongchu waterfall confirmed by zh Wikipedia (Yueqing, Yandang); Ctrip shows 门票¥50起 matching draft"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "price 50 CNY is Ctrip 'from' only; weak; no official site"
+  ]
+ },
+ "dongji": {
+  "verdict": "pass",
+  "bio": "Island group off Zhoushan with fishing villages, Miaozihu and Qingbang islands, and the setting of the film Hou Hui Wu Qi.",
+  "changes": [
+   "fishing villages and the four inhabited islands (Miaozihu, Qingbang, Huangxing, Dongfushan) and the film 后会无期 confirmed on zh Wikipedia (Dongji town)"
+  ],
+  "cost_fields": {
+   "cost_unverified": true
+  },
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "free not confirmed by any source; ferry fares are transport"
+  ]
+ },
+ "mount-putuo-1": {
+  "verdict": "edited",
+  "bio": "Largest temple on Mount Putuo, a Guanyin sanctuary founded in 916 by the monk Hui'e.",
+  "changes": [
+   "bio: lotus pond, 'Great Compassion Hall' and 'Front Temple' unconfirmed; replaced with Wikipedia facts (Puji Temple, founded 916 by Hui'e on Mount Putuo)",
+   "wiki 'Puji Temple' exists and is this temple"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": "Puji Temple",
+  "unresolved": [
+   "price 5 CNY (incense voucher) from Ctrip travelogue only; the island ticket (Ctrip 220-245) is not the spot's cost; weak",
+   "Ctrip lists Puji as paid (245 起) so Puji's own fee is unclear",
+   "no official site (putuoshan.gov.cn failed to load)"
+  ]
+ },
+ "wushitang-beach": {
+  "verdict": "hold",
+  "bio": "Black-pebble shore on Zhujiajian island in Putuo, known for its smooth dark cobblestones.",
+  "changes": [
+   "bio is plausible (Ctrip: 乌石砾滩 in Wushitang scenic area, open all year) but not further confirmed"
+  ],
+  "cost_fields": {},
+  "ticketUrl": null,
+  "wiki": null,
+  "unresolved": [
+   "cost unknown: Ctrip says fee to be confirmed with the scenic area; neither free nor price can be stated"
+  ]
+ }
+}
