@@ -103,6 +103,7 @@ import { Layers, Check, X, Search, CornerUpLeft, ChevronDown } from 'lucide-reac
 import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
 import { useStore, useVisitIndex } from '../store';
+import { requestShadowSync } from '../utils/shadowSync';
 import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
@@ -1097,6 +1098,7 @@ const CAMERA_DEFAULT_SETTINGS = { centerCoordinate: [10, 20] as [number, number]
 // letting the grow/shrink animation target an exact pixel value instead of an unmeasured
 // 'auto'. Closed height is exactly MAP_PILL_BTN (a true circle); open height adds the
 // divider + two option rows beneath it.
+const GRID_VIEW_REGION_HOLD_MS = 1200;   // see handleGoToListView: past the sheet's slide-up and the camera's move
 const CRUMB_PILL_H        = 40;   // the breadcrumb pill's height (see styles.breadcrumbPillWhite)
 const CRUMB_SWAP_FADE_MS  = 200;  // the breadcrumb fading out as it was, on a new selection or an X close (see crumbFrozenRef)
 const MAP_PILL_BTN        = 44;   // also the pill's fixed width throughout
@@ -1857,6 +1859,15 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // During a swap: the live sheet that takes the pills over when the outgoing one finishes its slide (see handOverPills).
   const pillNextOwnerSV = useSharedValue<number>(PILL_OWNER.none);
   const upPillWrapStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -upPillBottomSV.value }], opacity: pillShownSV.value * pillHandoverSV.value }));
+  // Once the pills have faded in on the sheet taking them over, a few small commits re-apply their current (shown) values
+  // (see shadowSync.tsx). The fade runs on the UI thread only, and the commit that mounts that sheet ("← Country" mounting
+  // the country sheet) could reach the screen after it, redrawing the pills at the opacity it began with, 0: the X
+  // stayed hidden over the country sheet until something else happened to redraw it.
+  const syncPillsShown = useCallback(() => { requestShadowSync(); requestShadowSync(200); requestShadowSync(500); }, []);
+  useAnimatedReaction(
+    () => pillHandoverSV.value >= 1,
+    (done, prev) => { if (done && prev === false) runOnJS(syncPillsShown)(); },
+  );
   // One-shot mount hints for DestinationSheet, set right before it (re)mounts so it can open
   // straight to a specific tab/snap point (e.g. the spot carousel's "list view" button).
   // Cleared again immediately after — DestinationSheet only reads these in its initial
@@ -4331,6 +4342,9 @@ const destItems = useMemo((): DestItem[] =>
     );
     afterSheetSlideIn(() => {
       beginProgrammaticCameraMove(durationMs);
+      // The camera's position reaches React once, as it lands, not every frame of the zoom (see regionHoldUntilRef): each
+      // update re-rendered the map's layers (20-70 ms), and the zoom runs alongside the spot sheet's slide, which stuttered.
+      regionHoldUntilRef.current = Date.now() + durationMs + 50;
       setCameraShortest({
         centerCoordinate: [spot.coordinates.longitude, centerLat],
         zoomLevel,
@@ -4788,6 +4802,9 @@ const destItems = useMemo((): DestItem[] =>
   // to its full-screen Spots grid rather than the usual collapsed compact card. Always a
   // deliberate move INTO the destination, so it bypasses the provenance router.
   const handleGoToListView = useCallback(() => {
+    // The destination sheet opens at full screen, covering the map: the camera's move to the destination reaches React once,
+    // after it, rather than re-rendering the hidden map's layers every frame under the sheet's slide-up (see regionHoldUntilRef).
+    regionHoldUntilRef.current = Date.now() + GRID_VIEW_REGION_HOLD_MS;
     setDestInitialTab('spots');
     setDestInitialSnap('full');
     handleCloseSpotToDestination(undefined, true);
@@ -5135,9 +5152,11 @@ const destItems = useMemo((): DestItem[] =>
     sheetExitingRef.current = false;
     action?.();
   }, []);
-  const closeWithSheetExit = useCallback((action: () => void) => {
+  // fromFull: slide the sheet off from full screen too (opening a spot from a destination's full-screen grid: "Map view").
+  // Otherwise a full-screen sheet has nothing to slide off over, and the action runs at once.
+  const closeWithSheetExit = useCallback((action: () => void, fromFull = false) => {
     if (sheetExitingRef.current) return;
-    if (sheetSnapStateRef.current === 'full') { action(); return; }
+    if (sheetSnapStateRef.current === 'full' && !fromFull) { action(); return; }
     sheetExitingRef.current = true;
     if (sheetKindRef.current) {
       sheetExitActionRef.current = action;
@@ -5153,9 +5172,12 @@ const destItems = useMemo((): DestItem[] =>
   // down as the new one rose) put the new sheet's mount, a few hundred ms of work, under both slides, and they stuttered.
   // A sheet at full screen has no slide off (closeWithSheetExit runs the action at once).
   const openSpot = useCallback((spot: Spot) => {
-    if ((sheetKindRef.current === 'dest' || sheetKindRef.current === 'country') && sheetPose.get() !== null && !isMapInteracting()) {
+    // A sheet at full screen ("Map view" from a destination's spot grid) slides down too, rather than vanishing as the spot
+    // sheet rises (it has no resting pose there, so sheetPose is null).
+    const sheetUp = sheetKindRef.current === 'dest' || sheetKindRef.current === 'country';
+    if (sheetUp && (sheetPose.get() !== null || sheetSnapStateRef.current === 'full') && !isMapInteracting()) {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);   // at the tap, not after the slide off
-      closeWithSheetExit(() => handleSpotPress(spot, true));
+      closeWithSheetExit(() => handleSpotPress(spot, true), true);
     } else handleSpotPress(spot);
   }, [closeWithSheetExit, handleSpotPress, isMapInteracting]);
 

@@ -468,25 +468,42 @@ const GridSpotCard = React.memo(function GridSpotCard({ spot, onSelectSpot }: { 
 // Mounting all of a large destination's cards at once (Sydney's 84) took about 330 ms in one block, which stalled the map
 // and the sheet just after a destination opened; spread over a few frames the cards in view appear at once and the rest
 // follow without a long block.
-// The first batch is what full screen shows under the header (three rows), and the rest only start once a sheet opening
-// straight to full screen ("Grid view" from a spot) has finished sliding up (SPOT_GRID_WAIT_MS): adding cards every frame
-// of that slide re-rendered the sheet in the middle of it.
+// The first batch is what full screen shows under the header (three rows); a little later (SPOT_GRID_WAIT_MS, once a sheet
+// opening straight to full screen has slid up) it fills the screen, and after that cards are added only as the content is
+// scrolled toward them (SPOT_GRID_AHEAD of them past the bottom of the screen). Building every card in the background
+// (Melbourne's or Sydney's 80-odd, ~8 ms each) kept the JS thread busy for one to two seconds after each "Grid view", and
+// toggling Grid view / Map view a few times piled that work up until the sheets stuttered.
 const SPOT_GRID_FIRST = 6;
-const SPOT_GRID_STEP = 12;
 const SPOT_GRID_WAIT_MS = 400;
-const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot }: {
+const SPOT_GRID_AHEAD = 1.0;   // screen heights of cards built past the bottom of the screen
+const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot, scrollYSV }: {
   spots: typeof SPOTS;
   onSelectSpot?: (spot: Spot) => void;
+  scrollYSV: SharedValue<number>;   // the sheet's content scroll, which draws in more cards (see SPOT_GRID_AHEAD)
 }) {
   const [shown, setShown] = useState(Math.min(spots.length, SPOT_GRID_FIRST));
   useEffect(() => { setShown(Math.min(spots.length, SPOT_GRID_FIRST)); }, [spots]);
+  // A grid row's height (a card and the gap under it), from the grid's own layout.
+  const rowHSV = useSharedValue(0);
+  // Cards wanted for the content scrolled to y: every row from the top of the content to SPOT_GRID_AHEAD screens past the
+  // bottom of the screen (the grid starts part-way down the content, so this keeps a little more than that in hand).
+  const wantFor = (y: number, rowH: number) => {
+    'worklet';
+    return rowH > 0 ? Math.ceil((y + H * (1 + SPOT_GRID_AHEAD)) / rowH) * 2 : 0;
+  };
+  const growTo = useCallback((n: number) => setShown(cur => Math.max(cur, Math.min(spots.length, n))), [spots.length]);
   useEffect(() => {
-    if (shown >= spots.length) return;
-    const grow = () => setShown(n => Math.min(spots.length, n + SPOT_GRID_STEP));
-    if (shown <= SPOT_GRID_FIRST) { const t = setTimeout(grow, SPOT_GRID_WAIT_MS); return () => clearTimeout(t); }
-    const id = requestAnimationFrame(grow);
-    return () => cancelAnimationFrame(id);
+    if (shown > SPOT_GRID_FIRST || shown >= spots.length) return;
+    const t = setTimeout(() => growTo(Math.max(SPOT_GRID_FIRST + 2, wantFor(scrollYSV.value, rowHSV.value))), SPOT_GRID_WAIT_MS);
+    return () => clearTimeout(t);
   }, [shown, spots.length]);
+  const shownSV = useSharedValue(shown);
+  shownSV.value = shown;
+  useAnimatedReaction(
+    () => wantFor(scrollYSV.value, rowHSV.value),
+    want => { if (want > shownSV.value && shownSV.value < spots.length) runOnJS(growTo)(want); },
+    [spots.length],
+  );
   return (
     <View style={{ gap: 16 }}>
       {spots.length > 0 && (
@@ -497,7 +514,7 @@ const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot }: {
       )}
 
       {spots.length > 0 ? (
-        <View style={st.spotsGrid}>
+        <View style={st.spotsGrid} onLayout={e => { const rows = Math.ceil(shown / 2); if (rows) rowHSV.value = (e.nativeEvent.layout.height - 20) / rows; }}>
           {spots.slice(0, shown).map(spot => (
             <GridSpotCard key={spot.id} spot={spot} onSelectSpot={onSelectSpot} />
           ))}
@@ -1431,7 +1448,9 @@ function DestinationSheet({
       if (prev === null || cur === prev) return;
       exitingSV.value = true;
       runOnJS(markExiting)();
-      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+      // From above half-screen (full screen: "Map view" from the spot grid) the slide is twice as long, so it gets longer too.
+      const exitMs = slideAnim.value < COLLAPSED_Y - 1 ? 280 : 180;
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: exitMs, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
     [exitSV],
   );
@@ -1953,7 +1972,7 @@ function DestinationSheet({
                     style={st.slidePanel}
                     onLayout={e => measurePanel('spots', e.nativeEvent.layout.height)}
                   >
-                    {spotsPanelOn && <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} />}
+                    {spotsPanelOn && <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} scrollYSV={scrollYSV} />}
                   </View>
                 </Reanimated.View>
               </Reanimated.View>
