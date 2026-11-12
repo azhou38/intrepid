@@ -10,7 +10,7 @@ import {
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, withDelay, runOnJS,
-  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue,
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, useAnimatedScrollHandler,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
@@ -106,6 +106,10 @@ interface Props {
 
 const { height: H, width: W } = Dimensions.get('window');
 const FULL_POS    = 0;
+// The content's scroll view, animated so its scroll position reaches the drag gesture on the UI thread (onScrollUI), as
+// DestinationSheet's does: read from the JS thread's onScroll, busy with the map, it lagged, and a drag down from full screen
+// misread whether the content was at its top.
+const SheetScrollView = Animated.createAnimatedComponent(ScrollView);
 const CLOSE_POS   = H + 40;
 // Same bottom-tab-bar reservation App.tsx's Tab.Navigator uses for its own tabBarStyle
 // height — the country sheet lives inside that "Map" tab's screen, so anything it shows
@@ -143,6 +147,9 @@ const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
 // The slide-in on mount starts two frames late, as the destination and spot sheets' do: the frames that build this sheet's
 // views (with the camera moving) swallowed the fast start of the ease-out, so the sheet appeared most of the way up.
 export const COUNTRY_MOUNT_SLIDE_DELAY_MS = 40;
+// A drag's snap report goes out by this long after release even if the settle's end never reports (see transitionTo); the
+// settle rests by ~370 ms.
+const REPORT_FALLBACK_MS = 450;
 // After the slide-in lands, the sheet keeps re-sending its position for a moment. Its slide runs on the UI thread only
 // (IOS_SYNCHRONOUSLY_UPDATE_UI_PROPS), so a React update that took its snapshot of the sheet a few frames before the end
 // could reach the screen after the landing and redraw the sheet (and the pills, which follow it) where it was then: on
@@ -482,6 +489,8 @@ function CountrySheet({
   }, [onSnapStateChange]);
   // A drag's snap, reported to React once the sheet has landed — see transitionTo.
   const pendingReportRef = useRef<(() => void) | null>(null);
+  const reportTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (reportTimerRef.current) clearTimeout(reportTimerRef.current); }, []);
   const flushSnapReport = useCallback(() => {
     const report = pendingReportRef.current;
     pendingReportRef.current = null;
@@ -696,6 +705,17 @@ function CountrySheet({
   const scrollAnimRef = useAnimatedRef<any>();
   const scrollResetSV = useSharedValue(-1);   // -1: idle
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
+  // The content only scrolls once the sheet rests at full screen (as DestinationSheet's): until it is up, any scroll is put
+  // straight back to the top here, on the UI thread (not while resetScrollToTop is easing it there itself). A swipe up still
+  // settling below full both moved the sheet and scrolled the content, and the two fought.
+  const onScrollUI = useAnimatedScrollHandler(e => {
+    if (e.contentOffset.y > 0 && slideAnim.value > FULL_POS + 1 && scrollResetSV.value < 0) {
+      scrollTo(scrollAnimRef, 0, 0, false);
+      scrollY.value = 0;
+      return;
+    }
+    scrollY.value = e.contentOffset.y;
+  });
   const resetScrollToTop = () => {
     const y0 = scrollY.value;
     if (y0 <= 0) return;
@@ -734,6 +754,14 @@ function CountrySheet({
     else {
       onSnapStateChange?.(next);
       pendingReportRef.current = () => { setSnapStateReact(next); reportParent(); };
+    }
+    // The settle's end delivers it (flushSnapReport); should that never come (a settle cut short), it goes out once the
+    // sheet has surely landed, not with the next swipe, where its render (a MapScreen re-render) landed on that swipe's
+    // own settle and stuttered it.
+    if (reason === 'userUI' && pendingReportRef.current) {
+      const pending = pendingReportRef.current;
+      if (reportTimerRef.current) clearTimeout(reportTimerRef.current);
+      reportTimerRef.current = setTimeout(() => { if (pendingReportRef.current === pending) flushSnapReport(); }, REPORT_FALLBACK_MS);
     }
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
     if (reason !== 'mount' || next === 'peek') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
@@ -956,7 +984,9 @@ function CountrySheet({
       // shouldn't be read as "start collapsing the sheet," since that also drags the
       // back-navigation pill (the down arrow) along with it, making it look like it moves
       // during ordinary scrolling.
-      if (snapStateSV.value === 'full' && !(scrollY.value <= 1 && e.translationY > 24)) return;
+      // Once the drag has engaged it carries on (as DestinationSheet's): re-checked every frame, the sheet froze whenever the
+      // finger came back within 24 pt or the content moved, then jumped when the check passed again.
+      if (snapStateSV.value === 'full' && !dragEngagedSV.value && !(scrollY.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
@@ -1104,8 +1134,14 @@ function CountrySheet({
           the drag jank. The gesture itself is now a Reanimated/Gesture-Handler worklet (see
           `pan` above), which is the bigger fix: it runs on the UI thread with no per-frame
           JS-thread round trip at all. */}
+      {/* The sheet moves as one plain, unstyled view (transform only); its shadow and its rounded, clipped body sit still
+          inside it, as DestinationSheet's do. A view with only its top corners rounded is drawn by React Native as a bitmap,
+          and moving such a view itself (with its shadow, here) redrew that bitmap on the CPU every frame of a drag: frames
+          dropped, worst at 120 Hz, so swipes juddered. The shadow is a sibling behind the body so the clip doesn't cut it. */}
       <GestureDetector gesture={pan}>
-      <Animated.View style={[st.sheet, sheetAnimStyle]}>
+      <Animated.View style={[st.sheetMover, sheetAnimStyle]}>
+      <View pointerEvents="none" style={st.sheetShadow} />
+      <View style={st.sheet}>
         <View style={[StyleSheet.absoluteFill, { overflow: 'hidden', borderTopLeftRadius: 28, borderTopRightRadius: 28 }]}>
 
           {/* ── HEADER PHOTO — a fixed layer BEHIND the scroll content (Spotify-style): scrolling slides the header
@@ -1127,7 +1163,7 @@ function CountrySheet({
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
           <Animated.View style={[{ flex: 1 }, headerShiftStyle]}>
-          <ScrollView
+          <SheetScrollView
             ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
             style={{ flex: 1 }}
             // Only scrollable at full-screen — while collapsed/peeking there's nothing to
@@ -1140,7 +1176,7 @@ function CountrySheet({
             stickyHeaderIndices={[1]}
             bounces={false}
             showsVerticalScrollIndicator={false}
-            onScroll={e => { scrollY.value = e.nativeEvent.contentOffset.y; }}
+            onScroll={onScrollUI}
             scrollEventThrottle={16}
             // The sheet runs behind the app's own bottom tab bar (BOTTOM_TAB_H, which already
             // includes the safe area), so the last content has to be able to clear it — the old
@@ -1346,7 +1382,7 @@ function CountrySheet({
             </GestureDetector>
             )}
             </View>
-          </ScrollView>
+          </SheetScrollView>
           </Animated.View>
           {/* ── COMPACT TITLE BAR — fixed at the very top and only fades in place (no movement): in as the tab bar arrives
               under it and pins, out again as it scrolls back down. */}
@@ -1360,13 +1396,18 @@ function CountrySheet({
           {/* ── PEEK STRIP — a thin sliver of the header image with the country's name,
               shown only once the sheet has been dropped down past collapsed (via peekSignal,
               fired when the user pans/zooms the map). Tapping it returns to collapsed. ── */}
+          {/* Its fade is on a plain outer view: fading the rounded strip itself redrew its bitmap every frame (see the sheet). */}
           <Animated.View
             pointerEvents="box-none"
-            style={[{
-              position: 'absolute', left: 0, right: 0, top: 0, height: PEEK_STRIP_H, overflow: 'hidden',
+            style={[{ position: 'absolute', left: 0, right: 0, top: 0, height: PEEK_STRIP_H }, peekAnimStyle]}
+          >
+          <View
+            pointerEvents="box-none"
+            style={{
+              position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, overflow: 'hidden',
               backgroundColor: '#111827',
               borderTopLeftRadius: 28, borderTopRightRadius: 28,
-            }, peekAnimStyle]}
+            }}
           >
             <Pressable style={StyleSheet.absoluteFill} onPress={() => { if (isPressBlocked?.()) return; snapToCollapsedRef.current(); }}>
               <EntityPhoto instant cacheKey={countryPhotoKey} cache={photoCache} load={loadCountryPhoto} style={StyleSheet.absoluteFill as any} />
@@ -1394,9 +1435,11 @@ function CountrySheet({
                 </View>
               </View>
             </Pressable>
+          </View>
           </Animated.View>
 
         </View>
+      </View>
       </Animated.View>
       </GestureDetector>
 
@@ -1437,6 +1480,11 @@ const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFill, zIndex: 200, elevation: 200 },
 
   sheet: {
+    position: 'absolute', left: 0, right: 0, top: 0, height: H, overflow: 'hidden',
+    borderTopLeftRadius: 28, borderTopRightRadius: 28, backgroundColor: '#F9FAFB',
+  },
+  sheetMover: { position: 'absolute', left: 0, right: 0, top: 0, height: H },
+  sheetShadow: {
     position: 'absolute', left: 0, right: 0, top: 0, height: H,
     borderTopLeftRadius: 28, borderTopRightRadius: 28, backgroundColor: '#F9FAFB',
     shadowColor: '#000', shadowOpacity: 0.22, shadowRadius: 20,

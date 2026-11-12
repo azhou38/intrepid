@@ -15,6 +15,11 @@ module.exports = ({ config }) => ({
       bundleIdentifier: 'com.alexzhou.intrepid',
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false,
+        // The app's own animations (Reanimated's sheets) run at 60 Hz on a ProMotion iPhone, not 120: at 120 the sheets
+        // flashed between their snap layouts mid-swipe (their position and their header's crop landing on different
+        // frames), and screen recording, which caps the display at 60, made them smooth. Scrolling and the system stay at
+        // 120. Expo's template sets this to true.
+        CADisableMinimumFrameDurationOnPhone: false,
       },
     },
     android: {
