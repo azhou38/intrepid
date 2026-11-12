@@ -868,7 +868,9 @@ function CountrySheet({
       if (prev === null || cur === prev) return;
       exitingSV.value = true;
       runOnJS(markExiting)();
-      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: 180, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
+      // From above half-screen (full screen: "Map view" from the spot grid) the slide is twice as long, so it gets longer too.
+      const exitMs = slideAnim.value < COLLAPSED_Y - 1 ? 280 : 180;
+      hidePeekSV.value = 1; slideAnim.value = withTiming(CLOSE_POS, { duration: exitMs, easing: Easing.in(Easing.cubic) }, () => { runOnJS(exitDone)(); });
     },
     [exitSV],
   );
