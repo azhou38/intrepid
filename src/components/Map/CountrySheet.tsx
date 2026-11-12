@@ -147,6 +147,9 @@ const QUICK_CONFIG = { duration: 150, easing: Easing.out(Easing.cubic) };
 // The slide-in on mount starts two frames late, as the destination and spot sheets' do: the frames that build this sheet's
 // views (with the camera moving) swallowed the fast start of the ease-out, so the sheet appeared most of the way up.
 export const COUNTRY_MOUNT_SLIDE_DELAY_MS = 40;
+// A drag's snap report goes out by this long after release even if the settle's end never reports (see transitionTo); the
+// settle rests by ~370 ms.
+const REPORT_FALLBACK_MS = 450;
 // After the slide-in lands, the sheet keeps re-sending its position for a moment. Its slide runs on the UI thread only
 // (IOS_SYNCHRONOUSLY_UPDATE_UI_PROPS), so a React update that took its snapshot of the sheet a few frames before the end
 // could reach the screen after the landing and redraw the sheet (and the pills, which follow it) where it was then: on
@@ -486,6 +489,8 @@ function CountrySheet({
   }, [onSnapStateChange]);
   // A drag's snap, reported to React once the sheet has landed — see transitionTo.
   const pendingReportRef = useRef<(() => void) | null>(null);
+  const reportTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (reportTimerRef.current) clearTimeout(reportTimerRef.current); }, []);
   const flushSnapReport = useCallback(() => {
     const report = pendingReportRef.current;
     pendingReportRef.current = null;
@@ -749,6 +754,14 @@ function CountrySheet({
     else {
       onSnapStateChange?.(next);
       pendingReportRef.current = () => { setSnapStateReact(next); reportParent(); };
+    }
+    // The settle's end delivers it (flushSnapReport); should that never come (a settle cut short), it goes out once the
+    // sheet has surely landed, not with the next swipe, where its render (a MapScreen re-render) landed on that swipe's
+    // own settle and stuttered it.
+    if (reason === 'userUI' && pendingReportRef.current) {
+      const pending = pendingReportRef.current;
+      if (reportTimerRef.current) clearTimeout(reportTimerRef.current);
+      reportTimerRef.current = setTimeout(() => { if (pendingReportRef.current === pending) flushSnapReport(); }, REPORT_FALLBACK_MS);
     }
     // 'userUI': the gesture worklet already started this exact animation on the UI thread (see snapUI).
     if (reason !== 'mount' || next === 'peek') hidePeekSV.value = 0;   // any later snap (to peek included) shows the strip normally
