@@ -116,7 +116,7 @@ import PinPhoto from '../components/Map/PinPhoto';
 import { VisitToastHost } from '../components/Map/VisitToast';
 import { photoSubject } from '../utils/subjectCrop';
 import { computeSearchResults, computeSuggestions, SearchResultRows, toRecentSearch, type SearchResult } from '../components/Map/SearchResults';
-import SpotSheet, { SPOT_SHEET_SLIDE_IN_MS } from '../components/Map/SpotSheet';
+import SpotSheet, { SPOT_SHEET_SLIDE_IN_START_MS, SPOT_SHEET_SLIDE_IN_DURATION_MS } from '../components/Map/SpotSheet';
 import CountrySheet, { COUNTRY_MOUNT_SLIDE_DELAY_MS } from '../components/Map/CountrySheet';
 import ExploreSheet from '../components/Map/ExploreSheet';
 import { prefetchPinPhotos, pinPhotoUri, loadPinPhoto } from '../utils/pinPhotoCache';
@@ -1334,7 +1334,10 @@ const BACK_CAMERA_DELAY_MS = 220;   // spot back to its destination: the zoom-ou
 // (its 40 ms mount delay and 280 ms slide, with a margin), so the jump's renders come after the slide (see handleCloseSpotToDestination).
 const GRID_CAMERA_DELAY_MS = 450;
 const SHEET_HOLD_RELEASE_ZOOM = 0.6;   // see handleCameraChanged: how near its target a close's zoom-out releases the next sheet
-const SPOT_CAMERA_DELAY_MS = SPOT_SHEET_SLIDE_IN_MS + 120;   // a spot pin tap: the zoom-in starts once the spot sheet has slid in (the sheet mounts a commit, ~0.1 s, after the tap)
+// A spot pin tap: the zoom-in starts once the spot sheet's slide-in is ~60% through (it mounts a commit, ~0.1 s, after the
+// tap). Its ease-out has covered nearly all its distance by then and only settles, so a camera move no longer stutters it;
+// waiting for the very end made the zoom feel late.
+const SPOT_CAMERA_DELAY_MS = 100 + SPOT_SHEET_SLIDE_IN_START_MS + Math.round(SPOT_SHEET_SLIDE_IN_DURATION_MS * 0.6);
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
@@ -4542,7 +4545,10 @@ const destItems = useMemo((): DestItem[] =>
   }, [setSheetSnapState, setDestHomeToDefault]);
 
   // ── Spot selection ──────────────────────────────────────────────────────────
-  const handleSpotPress = useCallback((spot: Spot) => {
+  // hapticDone: openSpot gave the tap's haptic already (at the tap, not after the open sheet's slide off).
+  const handleSpotPress = useCallback((spot: Spot, hapticDone = false) => {
+    // First, so the tap is felt at once (it came after the selection's bookkeeping, at the end of this handler).
+    if (!hapticDone) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     cameraHoldUntilRef.current = Date.now() + SPOT_CAMERA_DELAY_MS;
     // Tapping a pin (rather than swiping the carousel) leaves any near context: a destination's spot then opens in that
     // destination's own context, and a standalone one starts its own near context.
@@ -4610,7 +4616,6 @@ const destItems = useMemo((): DestItem[] =>
       returnPromptProgress.value = 0; returnPromptVisibleRef.current = false;
       destReturnPromptProgress.value = 0; destReturnPromptVisibleRef.current = false;
     }
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // 280ms (down from 500) — tapping a new spot pin, the carousel itself is also sliding to
     // match (see SpotSheet's own focusSpotId effect), and the slower of the two dominates how
     // sluggish the combined transition reads.
@@ -5148,8 +5153,10 @@ const destItems = useMemo((): DestItem[] =>
   // down as the new one rose) put the new sheet's mount, a few hundred ms of work, under both slides, and they stuttered.
   // A sheet at full screen has no slide off (closeWithSheetExit runs the action at once).
   const openSpot = useCallback((spot: Spot) => {
-    if ((sheetKindRef.current === 'dest' || sheetKindRef.current === 'country') && sheetPose.get() !== null && !isMapInteracting()) closeWithSheetExit(() => handleSpotPress(spot));
-    else handleSpotPress(spot);
+    if ((sheetKindRef.current === 'dest' || sheetKindRef.current === 'country') && sheetPose.get() !== null && !isMapInteracting()) {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);   // at the tap, not after the slide off
+      closeWithSheetExit(() => handleSpotPress(spot, true));
+    } else handleSpotPress(spot);
   }, [closeWithSheetExit, handleSpotPress, isMapInteracting]);
 
   // The pills under the back/X row at half-screen and peek: "← Parent" always opens the parent's sheet (a spot's
