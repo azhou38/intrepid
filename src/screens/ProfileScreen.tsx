@@ -1110,7 +1110,7 @@ const styles = StyleSheet.create({
   sortPill:  { paddingVertical: 3, borderBottomWidth: 2, borderBottomColor: 'transparent' },
   sortPillOn: { borderBottomColor: '#111827' },
   countryDrop: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10,
-                 borderWidth: 1, borderColor: '#E5E7EB', maxWidth: 170 },
+                 borderWidth: 1, borderColor: '#E5E7EB', maxWidth: '100%' },
   countryDropOn: { backgroundColor: '#ECFDF5', borderColor: '#A7F3D0' },
   countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
   dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
