@@ -1291,6 +1291,372 @@
         "den-of-nargun"
       ],
       "timezone": "Australia/Melbourne"
+    },
+    {
+      "id": "qld-brisbane",
+      "name": "Brisbane & Moreton Bay (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Brisbane",
+          "Moreton Bay Region",
+          "Ipswich",
+          "North Stradbroke Island",
+          "Moreton Island",
+          "Redcliffe"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions in Brisbane",
+          "Tourist attractions in Queensland",
+          "Beaches of Queensland",
+          "Islands of Moreton Bay",
+          "Moreton Bay Region"
+        ],
+        "bbox": [
+          -27.95,
+          152.5,
+          -26.85,
+          153.6
+        ]
+      }
+    },
+    {
+      "id": "qld-gold-coast",
+      "name": "Gold Coast & Scenic Rim (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Gold Coast",
+          "Scenic Rim",
+          "Lamington National Park",
+          "Tamborine Mountain"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions on the Gold Coast, Queensland",
+          "Scenic Rim Region",
+          "Gold Coast, Queensland",
+          "Beaches of the Gold Coast, Queensland"
+        ],
+        "bbox": [
+          -28.6,
+          152.3,
+          -27.85,
+          153.6
+        ]
+      }
+    },
+    {
+      "id": "qld-sunshine-coast",
+      "name": "Sunshine Coast & Hinterland (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Sunshine Coast",
+          "Noosa",
+          "Maleny",
+          "Caloundra"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions in the Sunshine Coast Region",
+          "Sunshine Coast Region",
+          "Noosa Shire",
+          "Beaches of the Sunshine Coast, Queensland"
+        ],
+        "bbox": [
+          -26.95,
+          152.4,
+          -25.95,
+          153.2
+        ]
+      }
+    },
+    {
+      "id": "qld-fraser-bundaberg",
+      "name": "Fraser Coast & Bundaberg (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Fraser Coast",
+          "Fraser Island",
+          "Hervey Bay",
+          "Bundaberg",
+          "Maryborough (Queensland)",
+          "Rainbow Beach"
+        ],
+        "wikipedia_categories": [
+          "Fraser Coast Region",
+          "K'gari",
+          "Tourist attractions in Bundaberg",
+          "Bundaberg Region",
+          "Great Sandy National Park"
+        ],
+        "bbox": [
+          -26.4,
+          151.7,
+          -24.45,
+          153.4
+        ]
+      }
+    },
+    {
+      "id": "qld-capricorn",
+      "name": "Gladstone & Capricorn (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Gladstone",
+          "Rockhampton",
+          "Yeppoon",
+          "Capricorn Coast",
+          "Agnes Water",
+          "Heron Island"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions in Rockhampton",
+          "Capricorn Coast",
+          "Gladstone Region",
+          "Rockhampton Region",
+          "Capricornia Cays National Park"
+        ],
+        "bbox": [
+          -25.0,
+          149.5,
+          -22.6,
+          152.1
+        ]
+      }
+    },
+    {
+      "id": "qld-mackay-whitsundays",
+      "name": "Mackay & Whitsundays (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Whitsundays",
+          "Airlie Beach",
+          "Mackay",
+          "Bowen",
+          "Eungella",
+          "Hamilton Island"
+        ],
+        "wikipedia_categories": [
+          "Whitsunday Islands",
+          "Tourist attractions in Mackay",
+          "Whitsunday Region",
+          "Mackay Region",
+          "Whitsunday Islands National Park"
+        ],
+        "bbox": [
+          -22.5,
+          147.0,
+          -19.8,
+          149.6
+        ]
+      }
+    },
+    {
+      "id": "qld-townsville",
+      "name": "Townsville & Magnetic Island (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Townsville",
+          "Magnetic Island",
+          "Charters Towers",
+          "Ingham",
+          "Hinchinbrook Island",
+          "Ayr"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions in Townsville",
+          "Townsville Region",
+          "Magnetic Island",
+          "Burdekin Region"
+        ],
+        "bbox": [
+          -20.0,
+          145.3,
+          -18.3,
+          147.5
+        ]
+      }
+    },
+    {
+      "id": "qld-cairns-tablelands",
+      "name": "Cairns, Tablelands & Cassowary Coast (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Cairns",
+          "Atherton Tablelands",
+          "Mission Beach",
+          "Cardwell",
+          "Innisfail",
+          "Kuranda",
+          "Great Barrier Reef"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions in Cairns",
+          "Cairns Region",
+          "Tablelands Region",
+          "Cassowary Coast Region",
+          "Great Barrier Reef",
+          "Tourist attractions in Far North Queensland"
+        ],
+        "bbox": [
+          -18.7,
+          144.5,
+          -16.7,
+          146.4
+        ]
+      }
+    },
+    {
+      "id": "qld-daintree-cape-york",
+      "name": "Daintree, Cooktown & Cape York (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Port Douglas",
+          "Daintree National Park",
+          "Cooktown",
+          "Cape York Peninsula",
+          "Torres Strait Islands",
+          "Laura",
+          "Cape Tribulation"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions in Far North Queensland",
+          "Shire of Douglas",
+          "Cape York Peninsula",
+          "Torres Strait Islands",
+          "Daintree National Park"
+        ],
+        "bbox": [
+          -16.95,
+          141.0,
+          -10.5,
+          146.0
+        ]
+      }
+    },
+    {
+      "id": "qld-darling-downs",
+      "name": "Southern Downs & Darling Downs (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Toowoomba",
+          "Warwick",
+          "Stanthorpe",
+          "Granite Belt",
+          "Goondiwindi",
+          "Dalby",
+          "Chinchilla"
+        ],
+        "wikipedia_categories": [
+          "Toowoomba Region",
+          "Southern Downs Region",
+          "Darling Downs",
+          "Granite Belt",
+          "Tourist attractions in Toowoomba"
+        ],
+        "bbox": [
+          -29.2,
+          149.8,
+          -26.5,
+          152.5
+        ]
+      }
+    },
+    {
+      "id": "qld-central-highlands",
+      "name": "Maranoa, Central Highlands & South Burnett (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Roma (Queensland)",
+          "Carnarvon National Park",
+          "Emerald (Queensland)",
+          "Sapphire Gemfields",
+          "Charleville",
+          "Bunya Mountains",
+          "Kingaroy",
+          "Somerset Region",
+          "Lockyer Valley"
+        ],
+        "wikipedia_categories": [
+          "Central Highlands Region, Queensland",
+          "Maranoa Region",
+          "South Burnett Region",
+          "Bunya Mountains National Park",
+          "Lockyer Valley Region",
+          "Somerset Region"
+        ],
+        "bbox": [
+          -28.9,
+          146.0,
+          -22.5,
+          153.0
+        ]
+      }
+    },
+    {
+      "id": "qld-outback-gulf",
+      "name": "Outback & Gulf Savannah (QLD)",
+      "destinations": [],
+      "standalone": [],
+      "timezone": "Australia/Brisbane",
+      "sources": {
+        "wikivoyage": [
+          "Outback Queensland",
+          "Longreach",
+          "Winton",
+          "Mount Isa",
+          "Birdsville",
+          "Gulf Savannah",
+          "Karumba",
+          "Undara Volcanic National Park",
+          "Lawn Hill National Park"
+        ],
+        "wikipedia_categories": [
+          "Tourist attractions in Queensland",
+          "Longreach Region",
+          "Winton, Queensland",
+          "Mount Isa",
+          "Channel Country",
+          "Gulf Country",
+          "Undara Volcanic National Park"
+        ],
+        "bbox": [
+          -29.2,
+          138.0,
+          -16.7,
+          146.0
+        ]
+      }
     }
   ],
   "PG": [
