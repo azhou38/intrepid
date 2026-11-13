@@ -6221,7 +6221,11 @@ const destItems = useMemo((): DestItem[] =>
   };
   // Destination taps, from a photo pin or a dot. A dot only takes a tap while it shows: each fades out below its tier's zoom
   // (stampOpacityExpr) but stays in the data.
-  const stampShown = (tier: number) => tier <= 5 && camZoomRef.current >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
+  // Tested at the WHOLE zoom level below the camera's, as Mapbox draws them: stampOpacityExpr reads both the zoom and each
+  // dot's tier, and Mapbox works such an expression out per map tile, at the tile's whole zoom level, not at the camera's
+  // exact zoom. At zoom 2.22 a tier whose threshold is 2.1 is still hidden (it shows from zoom 3), and tested against 2.22
+  // its dots took taps while invisible: a tap by Sydney's dot at the world view opened Wollongong.
+  const stampShown = (tier: number) => tier <= 5 && Math.floor(camZoomRef.current + ZOOM_EPSILON) >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
   const pressDest = (id: string) => {
     const dest = DESTINATIONS.find(d => d.id === id);
     if (dest && !pressBlocked()) { if (selectedDestRef.current?.id === dest.id) handleResetToDest(); else handleMarkerPress(dest); }
