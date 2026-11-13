@@ -53,7 +53,10 @@ const ICON_SIZE = 22;
 // long went from opaque to gone in a single frame. A stall now holds the fade where it is.
 const LOADING_FADE_MS = 300;
 const LOADING_FADE_MAX_STEP_MS = 34;
-function AppLoadingScreen({ visible, onFadeOutComplete }: { visible: boolean; onFadeOutComplete: () => void }) {
+// fontReady: the serif has registered (or its wait has run out). The wordmark is drawn only then: this screen shows before
+// the font has loaded, and text drawn before a font registers uses the system font and keeps it (nothing re-renders it), so
+// on a slow font load the wordmark came up, and stayed, in sans.
+function AppLoadingScreen({ visible, fontReady, onFadeOutComplete }: { visible: boolean; fontReady: boolean; onFadeOutComplete: () => void }) {
   const progress = useSharedValue(0);
   // Runs until the parent unmounts this screen (onFadeOutComplete).
   const fade = useFrameCallback(({ timeSincePreviousFrame }) => {
@@ -75,7 +78,7 @@ function AppLoadingScreen({ visible, onFadeOutComplete }: { visible: boolean; on
       style={[StyleSheet.absoluteFill, styles.loadingScreen, style]}
     >
       <Image source={require('./assets/icon.png')} style={styles.loadingLogo} resizeMode="contain" />
-      <Text style={styles.loadingWordmark}>Intrepid</Text>
+      <Text key={fontReady ? 'serif' : 'wait'} style={[styles.loadingWordmark, !fontReady && { opacity: 0 }]}>Intrepid</Text>
     </Reanimated.View>
   );
 }
@@ -169,6 +172,7 @@ export default function App() {
           {loadingScreenMounted && (
             <AppLoadingScreen
               visible={!mapReady}
+              fontReady={fontGateOpen}
               onFadeOutComplete={() => setLoadingScreenMounted(false)}
             />
           )}
