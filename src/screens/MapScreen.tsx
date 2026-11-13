@@ -104,6 +104,7 @@ import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
 import { useStore, useVisitIndex } from '../store';
 import { requestShadowSync } from '../utils/shadowSync';
+import { sheetInMotion } from '../utils/sheetMotion';
 import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
 import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
@@ -2339,7 +2340,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // destination prompt is written from BOTH a memo and handleCameraChanged's raw camera
   // events, so watching the rendered value is the only way to catch every case. Without this
   // an invisible breadcrumb keeps swallowing taps at the top of the map.
-  const [crumbInteractive, setCrumbInteractive] = useState(false);
+  const [crumbInteractive, setCrumbInteractiveNow] = useState(false);
+  // Not while a sheet is being dragged or settling (see sheetMotion.ts): the latest value goes in once it has come to rest.
+  const crumbInteractiveWantRef = useRef(false);
+  const crumbInteractiveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const setCrumbInteractive = useCallback((v: boolean) => {
+    crumbInteractiveWantRef.current = v;
+    if (crumbInteractiveTimerRef.current) return;
+    const apply = () => {
+      if (sheetInMotion()) { crumbInteractiveTimerRef.current = setTimeout(apply, 120); return; }
+      crumbInteractiveTimerRef.current = null;
+      setCrumbInteractiveNow(crumbInteractiveWantRef.current);
+    };
+    apply();
+  }, []);
   useAnimatedReaction(
     () => sheetCollapsedSV.value <= 0.5
       && Math.max(returnPromptProgress.value, destReturnPromptProgress.value, crumbPeekSV.value) > 0.05,
@@ -3028,11 +3042,13 @@ const destItems = useMemo((): DestItem[] =>
     // Fade origin: the world-view boundary normally, or the selected country's own
     // per-country threshold (see getCountryStampThreshold) — a geographically wide country
     // (Australia, US...) needs a wider view than the flat world cutoff allows before its
-    // own stamps should appear.
-    const countryCode = planCountry?.countryCode ?? planDest?.countryCode;
+    // own stamps should appear. Only for a country selected on its own (or a back heading to one): with a destination or
+    // a spot selected the dots keep their usual thresholds, as with nothing selected. Taking the destination's country
+    // there kept dots up zooming out well past where they normally go.
+    const countryCode = !planDest && !selectedSpot ? planCountry?.countryCode : undefined;
     const threshold = countryCode ? getCountryStampThreshold(countryCode) : WORLD_VIEW_LATDELTA;
     return Math.max(0, latDeltaToZoom(threshold) - 0.35);
-  }, [planCountry, planDest]);
+  }, [planCountry, planDest, selectedSpot]);
   const STAMP_TIER_STEP = 0.6; // zoom levels between successive tiers' fade-ins
 
   // Highest tier currently switched on — a discrete step function of the camera zoom.
@@ -3063,9 +3079,9 @@ const destItems = useMemo((): DestItem[] =>
 
   const lastStampRef = useRef<{ sig: string; value: GeoJSON.FeatureCollection<GeoJSON.Point> } | null>(null);
   const stampGeoJSON = useMemo(() => {
-    // With a spot selected its country's dots fade with the zoom like any others (they used to stay up zooming out, all
-    // on the earliest tier); the selected country's head start is for a country or destination selected on its own.
-    const selCountryCode = selectedSpot ? undefined : (planCountry?.countryCode ?? planDest?.countryCode);
+    // With a destination or a spot selected its country's dots fade with the zoom like any others (they used to stay up
+    // zooming out, all on the earliest tier); the selected country's head start is for a country selected on its own.
+    const selCountryCode = selectedSpot || planDest ? undefined : planCountry?.countryCode;
 
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const dest of DESTINATIONS) {
@@ -5119,7 +5135,10 @@ const destItems = useMemo((): DestItem[] =>
     setSheetSnapState(openPeeked || isFingerDraggingMap() ? 'peek' : 'collapsed');
     // The back tap's follow-up (cameraStarted) is silent: the tap itself already gave the haptic.
     if (!opts?.cameraStarted) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (!opts?.cameraStarted) fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf');
+    // The camera starts once the map has drawn the selection (its border highlight, its pins), not at the tap: started at
+    // once, the flight's own tile loading kept the highlight waiting until the camera had landed. A short wait at most
+    // (runCameraAfterPins: the map's next idle, or CAMERA_AFTER_PINS_MAX_MS).
+    if (!opts?.cameraStarted) runCameraAfterPins(() => fitCountryDefaultView(cluster, cameraMode, openPeeked ? 'full' : 'topHalf'));
     // Kick off CountrySheet's own header-photo fetch right now, in parallel with the sheet's
     // slide-up/camera animation, instead of waiting for CountrySheet to mount and run its own
     // effect a render cycle later — same top-destination lookup CountrySheet uses for its
@@ -5131,7 +5150,7 @@ const destItems = useMemo((): DestItem[] =>
     const cacheKey = `country_${cluster.countryCode}`;
     if (topDest) prefetchWikiThumbnail(cacheKey, photoCache, topDest.name, HEADER_PX, cluster.country);
     else prefetchWikiThumbnail(cacheKey, photoCache, cluster.country, HEADER_PX);
-  }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState]);
+  }, [showBreadcrumb, animateCamera, fitCountryDefaultView, setSheetSnapState, runCameraAfterPins]);
 
   // Closing from the back pill's X while a sheet is half-screen or bottom-screen: let it slide
   // off the bottom first (exitSignal → the sheets' own slide-out), and only then run the actual
@@ -5595,6 +5614,8 @@ const destItems = useMemo((): DestItem[] =>
     // if this ever shows up as jank on lower-end devices, that batching is the first place to
     // look before backing the number off again.
     const now = Date.now();
+    // A sheet being dragged or settling: the camera's position reaches React once it has come to rest (see sheetMotion.ts).
+    if (!isGestureActive && sheetInMotion()) regionHoldUntilRef.current = Math.max(regionHoldUntilRef.current, now + 250);
     if (!isGestureActive && now < regionHoldUntilRef.current) {
       if (regionHoldFlushRef.current) clearTimeout(regionHoldFlushRef.current);
       regionHoldFlushRef.current = setTimeout(() => {

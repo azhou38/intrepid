@@ -7,12 +7,15 @@ import {
   type StyleProp, type TextStyle,
 } from 'react-native';
 import { ScrollView as GHScrollView, Gesture, GestureDetector, State } from 'react-native-gesture-handler';
-import Reanimated, { useSharedValue, useAnimatedStyle, withTiming, runOnJS } from 'react-native-reanimated';
+import Reanimated, { useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, scrollTo } from 'react-native-reanimated';
+import { sheetInMotion } from '../../utils/sheetMotion';
+import type { SharedValue, AnimatedRef } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { X, Check, Camera, Calendar, Pencil, ChevronDown, ChevronRight, Trash2, Star, NotebookPen, Plus } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Svg, { Defs, LinearGradient as SvgLinearGradient, Stop, Rect } from 'react-native-svg';
 import type { PhotoEntry, Visit } from '../../types';
+import { localFileUri, keepPickedPhoto } from '../../utils/localFiles';
 
 const { width: W, height: H } = Dimensions.get('window');
 
@@ -59,6 +62,117 @@ export function nameFontSize(name: string, sizes: [number, number, number], brea
 export const SHEET_PANEL_MOUNT_DELAY_MS = 300;
 // `initialReady`: mounted with the sheet instead (a sheet opening straight to full screen, whose panels are in view as it
 // slides up: revealing them during the slide re-rendered the sheet mid-slide, a stall of over 100 ms).
+// Each tab of a sheet keeps its own scroll position. A sheet's tabs sit side by side in one vertical ScrollView, so they
+// shared one: switching from a tab scrolled down to a shorter one dragged the page up as its height closed in, and coming
+// back found the other tab's position. Now:
+//  - begin() (a tab tap, or a tab swipe starting) records where the tab being left was, and decides where each other tab
+//    will be: where it was left, but never above the point where the header has scrolled away (pinY) while it is scrolled
+//    away now, so the header doesn't jump back; with the header still showing every tab stays where the page is.
+//  - while the tabs slide, each panel is drawn at its own position (panelShift) and the track keeps room for it (trackRoom),
+//    so nothing moves up or down;
+//  - land(i), as the slide lands on tab i, scrolls the page to tab i's position in the same frame, so it shows no change.
+export function useTabScrollMemory({ count, slide, width, scrollY, scrollRef, pinY }: {
+  count: number;
+  slide: SharedValue<number>;   // the tab row's translateX: 0, -width, -2*width...
+  width: number;
+  scrollY: SharedValue<number>;
+  scrollRef: AnimatedRef<any>;
+  pinY: SharedValue<number>;    // the scroll at which the header has scrolled away and the tab bar pins
+}) {
+  const savedSV = useSharedValue<number[]>([]);
+  const targetsSV = useSharedValue<number[]>([]);
+  const activeSV = useSharedValue(false);
+  const begin = () => {
+    'worklet';
+    if (activeSV.value) return;   // a slide already under way (a second swipe mid-slide) keeps its plan
+    const from = Math.max(0, Math.min(count - 1, Math.round(-slide.value / width)));
+    const y = scrollY.value;
+    const saved = savedSV.value.slice();
+    saved[from] = y;
+    savedSV.value = saved;
+    const pin = pinY.value;
+    const t: number[] = [];
+    for (let i = 0; i < count; i++) t.push(i === from || y < pin ? y : Math.max(pin, saved[i] ?? pin));
+    targetsSV.value = t;
+    activeSV.value = true;
+  };
+  const land = (index: number) => {
+    'worklet';
+    if (!activeSV.value) return;
+    activeSV.value = false;
+    const y = targetsSV.value[index] ?? scrollY.value;
+    if (Math.abs(y - scrollY.value) > 0.5) {
+      scrollTo(scrollRef, 0, y, false);
+      scrollY.value = y;
+    }
+  };
+  return { begin, land, activeSV, targetsSV };
+}
+export type TabScrollMemory = ReturnType<typeof useTabScrollMemory>;
+// A panel's vertical shift while the tabs slide: drawn at its own tab's position rather than the page's.
+export function usePanelShift(mem: TabScrollMemory, scrollY: SharedValue<number>, index: number) {
+  return useAnimatedStyle(() => {
+    const t = mem.targetsSV.value[index];
+    return { transform: [{ translateY: mem.activeSV.value && t !== undefined ? scrollY.value - t : 0 }] };
+  });
+}
+// The extra height a sliding panel needs below its own content for its shift (see usePanelShift).
+export function trackRoom(mem: TabScrollMemory, scrollY: SharedValue<number>, index: number) {
+  'worklet';
+  const t = mem.targetsSV.value[index];
+  return mem.activeSV.value && t !== undefined ? Math.max(0, scrollY.value - t) : 0;
+}
+
+// A long two-column grid of cards (a destination's spots, a country's destinations) that builds only what is near the screen:
+// `first` cards at once, a screenful `waitMs` later, then more only as the sheet's content is scrolled toward them (`ahead`
+// screen heights past the bottom of the screen). Building every card in the background (80 to 180 of them, ~8 ms each, in
+// batches) kept the JS thread busy for seconds, and each batch reached the screen as an update in the middle of whatever
+// the sheet was doing: swipes stuttered until the whole grid had been built. Nothing is added while a sheet is being dragged
+// or settling (sheetMotion.ts).
+export function useLazyGrid({ count, first, scrollY, waitMs = 400, ahead = 1 }: {
+  count: number; first: number; scrollY: SharedValue<number>; waitMs?: number; ahead?: number;
+}) {
+  const [shown, setShown] = useState(Math.min(count, first));
+  useEffect(() => { setShown(Math.min(count, first)); }, [count, first]);
+  // A grid row's height (a card and the gap under it), from the grid's own layout.
+  const rowHSV = useSharedValue(0);
+  const screenH = Dimensions.get('window').height;
+  const wantFor = (y: number, rowH: number) => {
+    'worklet';
+    return rowH > 0 ? Math.ceil((y + screenH * (1 + ahead)) / rowH) * 2 : 0;
+  };
+  const wantRef = useRef(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
+  const growTo = useCallback((n: number) => {
+    wantRef.current = Math.max(wantRef.current, n);
+    if (timerRef.current) return;
+    const apply = () => {
+      if (sheetInMotion()) { timerRef.current = setTimeout(apply, 150); return; }
+      timerRef.current = null;
+      setShown(cur => Math.max(cur, Math.min(count, wantRef.current)));
+    };
+    apply();
+  }, [count]);
+  useEffect(() => {
+    if (shown > first || shown >= count) return;
+    const t = setTimeout(() => growTo(Math.max(first + 2, wantFor(scrollY.value, rowHSV.value))), waitMs);
+    return () => clearTimeout(t);
+  }, [shown, count, first]);
+  const shownSV = useSharedValue(shown);
+  shownSV.value = shown;
+  useAnimatedReaction(
+    () => wantFor(scrollY.value, rowHSV.value),
+    want => { if (want > shownSV.value && shownSV.value < count) runOnJS(growTo)(want); },
+    [count],
+  );
+  const onGridLayout = useCallback((height: number, padding = 20) => {
+    const rows = Math.ceil(shownSV.value / 2);
+    if (rows) rowHSV.value = (height - padding) / rows;
+  }, []);
+  return { shown, onGridLayout };
+}
+
 // paused: the timer does not run (a sheet sliding off: its panels would mount, a render of it, under the next sheet's slide).
 export function useDeferredMount(delayMs = SHEET_PANEL_MOUNT_DELAY_MS, initialReady = false, paused = false): [boolean, () => void] {
   const [ready, setReady] = useState(initialReady);
@@ -497,7 +611,7 @@ function EditableGridTile({ photo, index, hidden, draggable, tileSize, offsetX, 
   // swallowed, since gesture-handler's recognizer claims the touch responder chain ahead of RN's
   // own touchable system, even when the pan itself never activates (activateAfterLongPress or
   // not). Only the image itself needs to be draggable, so only it goes inside the detector.
-  const image = <Image source={{ uri: photo.uri }} style={pcS.imgFill} resizeMode="cover" />;
+  const image = <Image source={{ uri: localFileUri(photo.uri) }} style={pcS.imgFill} resizeMode="cover" />;
 
   // This tile's slot position in the grid (tiles are absolutely positioned, never reordered as
   // views — see EditablePhotoGrid's renderList). Animates to its live preview slot during a drag;
@@ -822,7 +936,7 @@ function EditablePhotoGrid({ photos, onDelete, onReorder, maxRows, onDragActiveC
               }, overlayStyle]}
             >
               <View style={{ flex: 1, borderRadius: 10, overflow: 'hidden' }}>
-                <Image source={{ uri: dragPhoto.uri }} style={pcS.imgFill} resizeMode="cover" />
+                <Image source={{ uri: localFileUri(dragPhoto.uri) }} style={pcS.imgFill} resizeMode="cover" />
               </View>
             </Reanimated.View>
           )}
@@ -922,7 +1036,7 @@ export function PhotoCollage({ photos, onAdd, onDelete, onReorder, hideAddMore, 
   // caller-supplied style, since it's merged first) makes the tile fill its parent by default.
   const tile = (uri: string, idx: number, style?: object) => (
     <View style={[{ overflow: 'hidden', flex: 1 }, style]}>
-      <Image source={{ uri }} style={pcS.imgFill} resizeMode="cover" />
+      <Image source={{ uri: localFileUri(uri) }} style={pcS.imgFill} resizeMode="cover" />
       {spotTag(idx)}
       {delBtn(idx)}
     </View>
@@ -1126,7 +1240,7 @@ export function PhotoGalleryModal({ photos, title, onClose }: {
         <ScrollView contentContainerStyle={pgS.grid} showsVerticalScrollIndicator={false}>
           {photos.map((p, i) => (
             <Pressable key={p.assetId ?? p.uri ?? i} style={pgS.tile} onPress={() => setViewerIndex(i)}>
-              <Image source={{ uri: p.uri }} style={pcS.imgFill} resizeMode="cover" />
+              <Image source={{ uri: localFileUri(p.uri) }} style={pcS.imgFill} resizeMode="cover" />
               {!!p.spotName && (
                 <View pointerEvents="none" style={pcS.spotTag}>
                   <Text style={pcS.spotTagTxt} numberOfLines={1}>📍 {p.spotName}</Text>
@@ -1240,7 +1354,7 @@ export function PhotoViewerModal({ photos, initialIndex, onClose }: {
             >
               {loopPhotos.map((p, i) => (
                 <View key={`${p.assetId ?? p.uri ?? i}-${i}`} style={pvS.page}>
-                  <Image source={{ uri: p.uri }} style={pvS.image} resizeMode="contain" />
+                  <Image source={{ uri: localFileUri(p.uri) }} style={pvS.image} resizeMode="contain" />
                 </View>
               ))}
             </ScrollView>
@@ -1917,11 +2031,13 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
       const picked: PhotoEntry[] = result.assets.map(a => ({
         uri: a.uri, width: a.width, height: a.height, assetId: a.assetId ?? undefined,
       }));
-      const newEntries = dedupeNewPhotos(localPhotos, picked);
-      if (newEntries.length === 0) {
+      const fresh = dedupeNewPhotos(localPhotos, picked);
+      if (fresh.length === 0) {
         Alert.alert('Already added', "You've already added every photo you picked.");
         return;
       }
+      // Kept in the app's documents, not the picker's cache copy (see keepPickedPhoto).
+      const newEntries = await Promise.all(fresh.map(async p => ({ ...p, uri: await keepPickedPhoto(p.uri) })));
       const updated = [...localPhotos, ...newEntries];
       setLocalPhotos(updated);
       commit();

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo } from 'react';
+import { beginSheetMotion, endSheetMotion, sheetInMotion } from '../../utils/sheetMotion';
 import * as Haptics from 'expo-haptics';
 import { flagSource } from '../../utils/flags';
 import {
@@ -56,6 +57,10 @@ import {
   parseDateStr, DatePickerModal, PhotoGalleryModal,
   VisitCardList, VisitModuleSheet, type VisitSelectorItem,
   useDeferredMount,
+  useTabScrollMemory,
+  useLazyGrid,
+  usePanelShift,
+  trackRoom,
   AIContentNote, nameFontSize, heroFontSize,
 } from './sheetShared';
 
@@ -481,29 +486,7 @@ const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot, scrollY
   onSelectSpot?: (spot: Spot) => void;
   scrollYSV: SharedValue<number>;   // the sheet's content scroll, which draws in more cards (see SPOT_GRID_AHEAD)
 }) {
-  const [shown, setShown] = useState(Math.min(spots.length, SPOT_GRID_FIRST));
-  useEffect(() => { setShown(Math.min(spots.length, SPOT_GRID_FIRST)); }, [spots]);
-  // A grid row's height (a card and the gap under it), from the grid's own layout.
-  const rowHSV = useSharedValue(0);
-  // Cards wanted for the content scrolled to y: every row from the top of the content to SPOT_GRID_AHEAD screens past the
-  // bottom of the screen (the grid starts part-way down the content, so this keeps a little more than that in hand).
-  const wantFor = (y: number, rowH: number) => {
-    'worklet';
-    return rowH > 0 ? Math.ceil((y + H * (1 + SPOT_GRID_AHEAD)) / rowH) * 2 : 0;
-  };
-  const growTo = useCallback((n: number) => setShown(cur => Math.max(cur, Math.min(spots.length, n))), [spots.length]);
-  useEffect(() => {
-    if (shown > SPOT_GRID_FIRST || shown >= spots.length) return;
-    const t = setTimeout(() => growTo(Math.max(SPOT_GRID_FIRST + 2, wantFor(scrollYSV.value, rowHSV.value))), SPOT_GRID_WAIT_MS);
-    return () => clearTimeout(t);
-  }, [shown, spots.length]);
-  const shownSV = useSharedValue(shown);
-  shownSV.value = shown;
-  useAnimatedReaction(
-    () => wantFor(scrollYSV.value, rowHSV.value),
-    want => { if (want > shownSV.value && shownSV.value < spots.length) runOnJS(growTo)(want); },
-    [spots.length],
-  );
+  const { shown, onGridLayout } = useLazyGrid({ count: spots.length, first: SPOT_GRID_FIRST, scrollY: scrollYSV, waitMs: SPOT_GRID_WAIT_MS, ahead: SPOT_GRID_AHEAD });
   return (
     <View style={{ gap: 16 }}>
       {spots.length > 0 && (
@@ -514,7 +497,7 @@ const SpotsPanel = React.memo(function SpotsPanel({ spots, onSelectSpot, scrollY
       )}
 
       {spots.length > 0 ? (
-        <View style={st.spotsGrid} onLayout={e => { const rows = Math.ceil(shown / 2); if (rows) rowHSV.value = (e.nativeEvent.layout.height - 20) / rows; }}>
+        <View style={st.spotsGrid} onLayout={e => onGridLayout(e.nativeEvent.layout.height)}>
           {spots.slice(0, shown).map(spot => (
             <GridSpotCard key={spot.id} spot={spot} onSelectSpot={onSelectSpot} />
           ))}
@@ -818,7 +801,17 @@ function DestinationSheet({
   // shared value (not core Animated) — the gesture below writes to it directly from the UI
   // thread with zero JS-thread hop per frame, which is what makes the tab swipe track the
   // finger smoothly instead of lagging behind it.
+  const scrollYSV = useSharedValue(0);
   const tabSlideAnim    = useSharedValue(-TAB_ORDER.indexOf(startTab) * W);
+  const scrollAnimRef   = useAnimatedRef<any>();
+  // Each tab's own scroll position (useTabScrollMemory); tabPinYSV is the scroll at which the hero has scrolled away and
+  // the tab bar pins, set once the hero's height is known (below).
+  const tabPinYSV       = useSharedValue(0);
+  const tabScroll       = useTabScrollMemory({ count: TAB_ORDER.length, slide: tabSlideAnim, width: W, scrollY: scrollYSV, scrollRef: scrollAnimRef, pinY: tabPinYSV });
+  const panelShift0     = usePanelShift(tabScroll, scrollYSV, 0);
+  const panelShift1     = usePanelShift(tabScroll, scrollYSV, 1);
+  const panelShift2     = usePanelShift(tabScroll, scrollYSV, 2);
+  const panelShiftFor   = (tab: Tab) => [panelShift0, panelShift1, panelShift2][TAB_ORDER.indexOf(tab)] ?? panelShift0;
   const activeTabRef    = useRef<Tab>(startTab);
   const tabSwipeBaseRef = useSharedValue(0);
   const tabSlideFor = (tab: Tab) => -TAB_ORDER.indexOf(tab) * W;
@@ -828,7 +821,6 @@ function DestinationSheet({
 
   // Worklet-readable scroll offset (the drag gesture's full-screen capture gate, the tab slide's height). Declared above
   // the tab-slide styles: a worklet captures its values when it is created, and one declared later was still undefined.
-  const scrollYSV = useSharedValue(0);
   // Derived indicator position for the tab bar underline — evenly spaced by tab count
   // Moved with a transform, not `left`: a layout change every frame of the slide re-laid-out the whole sheet.
   const tabBarWSV = useSharedValue(W);
@@ -883,8 +875,10 @@ function DestinationSheet({
     // was the stutter. At the top of the content it now holds the taller of the two panels while they slide (nothing is
     // cut off) and changes once, when the slide lands. Scrolled down, it still follows the slide, so the shorter tab's
     // scroll extent closes in gradually instead of the page jumping when the offset is clamped at the end.
+    // While the tabs slide each panel keeps its own position (useTabScrollMemory), so the track holds room for both of them
+    // and the page never moves; it changes once, when the slide lands.
     const settled = t === 0 || i0 === i1;
-    const h = settled ? h0 : scrollYSV.value > 1 ? h0 + (h1 - h0) * t : Math.max(h0, h1);
+    const h = settled ? h0 : Math.max(h0 + trackRoom(tabScroll, scrollYSV, i0), h1 + trackRoom(tabScroll, scrollYSV, i1));
     return { height: h > 0 ? h : undefined };
   });
 
@@ -907,15 +901,18 @@ function DestinationSheet({
   switchTabRef.current = (newTab: Tab) => {
     if (activeTabRef.current === newTab) return;
     activeTabRef.current = newTab;
+    const idx = TAB_ORDER.indexOf(newTab);
+    runOnUI(tabScroll.begin)();
     // React's tab state (which re-renders this whole sheet) follows once the slide has landed: committed at the start it
     // dropped frames of the slide. Everything shown during it (the underline, the labels' colour) runs off tabSlideAnim.
     tabSlideAnim.value = withTiming(tabSlideFor(newTab), TAB_SLIDE_CONFIG, finished => {
-      if (finished) runOnJS(setActiveTabJS)(newTab);
+      if (finished) { tabScroll.land(idx); runOnJS(setActiveTabJS)(newTab); }
     });
   };
 
   const snapTabToNearest = () => {
-    tabSlideAnim.value = withTiming(tabSlideFor(activeTabRef.current), TAB_SLIDE_CONFIG);
+    const idx = TAB_ORDER.indexOf(activeTabRef.current);
+    tabSlideAnim.value = withTiming(tabSlideFor(activeTabRef.current), TAB_SLIDE_CONFIG, finished => { if (finished) tabScroll.land(idx); });
   };
 
   const setActiveTabJS = useCallback((tab: Tab) => {
@@ -934,6 +931,7 @@ function DestinationSheet({
     .activeOffsetX([-12, 12])
     .failOffsetY([-10, 10])
     .onStart(() => {
+      tabScroll.begin();
       tabSwipeBaseRef.value = tabSlideAnim.value;
     })
     .onUpdate(e => {
@@ -968,7 +966,7 @@ function DestinationSheet({
       // switchTabRef): a re-render committed mid-slide dropped frames of it.
       const target = TAB_ORDER[targetIdx];
       tabSlideAnim.value = withTiming(-targetIdx * W, TAB_SLIDE_CONFIG, finished => {
-        if (finished) runOnJS(setActiveTabJS)(target);
+        if (finished) { tabScroll.land(targetIdx); runOnJS(setActiveTabJS)(target); }
       });
     })
     .simultaneousWithExternalGesture(scrollRef)
@@ -1002,6 +1000,7 @@ function DestinationSheet({
             // Tapping a subtab (from any snap state, even the already-active tab — the
             // tab bar is only ever fully reachable/readable at half-screen, so the tap
             // itself signals "show me this content") always expands to full-screen.
+            if (sheetInMotion()) return;   // the end of a drag, not a tap (see transitionTo)
             if (snapStateRef.current !== 'full') snapToFullRef.current();
             switchTabRef.current(tab);
           }}
@@ -1091,6 +1090,12 @@ function DestinationSheet({
   // Cleared when the opening slide lands (transitionTo's 'mount' animation); see SpotSheet's hidePeekSV.
   const peekAnimStyle = useAnimatedStyle(() => ({
     opacity: hidePeekSV.value === 1 ? 0 : interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [0, 1], Extrapolation.CLAMP),
+  }));
+  // The half-screen content over the hero photo (the name, the tabs) fades out over the same stretch as the
+  // peek strip fades in, as SpotSheet's carousel does: left as it was, it showed under the strip all the way down. The photo
+  // itself stays. Not while the sheet slides in or off.
+  const halfContentStyle = useAnimatedStyle(() => ({
+    opacity: hidePeekSV.value === 1 ? 1 : interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [1, 0], Extrapolation.CLAMP),
   }));
   // Continuously writes the back-to-country pill's target "bottom" offset as slideAnim (or
   // scroll position — see below) moves, so the parent's pill mirrors the sheet's own top edge
@@ -1194,6 +1199,7 @@ function DestinationSheet({
   // instead of being clipped at its edge. Without this the tab bar rendered flush against
   // the window boundary with the last few px (its underline) pushed just past it.
   const fullHeroH = HERO_H - insets.bottom;
+  tabPinYSV.value = fullHeroH - TAB_BAR_TUCK - (insets.top + 48);   // as compactBarStyle's `at` (COMPACT_BAR_H)
   // The hero's height, computed once on the UI thread and shared by the box and the photo inside it, so the photo moves
   // in step with the box (see FadeInImage's `frame`) instead of being re-fitted a frame late after each layout pass.
   const collapsedHeroHSV = useDerivedValue(() => COMPACT_H - Math.max(0, tabBarHAnim.value - TAB_BAR_TUCK));
@@ -1266,7 +1272,6 @@ function DestinationSheet({
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
-  const scrollAnimRef = useAnimatedRef<any>();
   const scrollResetSV = useSharedValue(-1);   // -1: idle
   // The content only scrolls once the sheet rests at full screen. scrollEnabled (React state) only turns off once a drag
   // down from full has landed, so a swipe up made while the sheet was still settling below full both moved the sheet and
@@ -1291,6 +1296,9 @@ function DestinationSheet({
   };
 
   transitionToRef.current = (next, reason) => {
+    // A tap that is really the end of a drag (a swipe down that began on the header or the tab bar also fired their
+    // onPress, which expands the sheet: it went up instead of down) does nothing while the sheet is moving.
+    if (reason === 'user' && sheetInMotion()) return;
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back — otherwise a late
     // peek/collapse would cancel the slide-out and leave a sheet that's about to unmount hanging on screen.
     if (closingRef.current && reason !== 'selectionChange') return;
@@ -1486,10 +1494,7 @@ function DestinationSheet({
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
   const callSnapToPeek      = useCallback(() => snapToPeekRef.current(), []);
   const callSnapBack = useCallback(() => {
-    const st = snapStateRef.current;
-    if (st === 'peek') snapToPeekRef.current();
-    else if (st === 'full') snapToFullRef.current();
-    else snapToCollapsedRef.current();
+    transitionToRef.current(snapStateRef.current, 'snapBack');
   }, []);
   const callDismissSheet    = useCallback(() => dismissSheetRef.current(), []);
   const logDismiss = useCallback(() => { if (__DEV__) console.log('[sheet-trace] DestinationSheet dismiss-by-swipe completed'); }, []);
@@ -1533,7 +1538,8 @@ function DestinationSheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYAnim.value;
     snapStateSV.value = next;
     lastPos.value = target;
-    slideAnim.value = withSheetSettle(target, velocity, finished => { if (finished) runOnJS(flushSnapReport)(); });
+    beginSheetMotion();
+    slideAnim.value = withSheetSettle(target, velocity, finished => { if (finished) { endSheetMotion(); runOnJS(flushSnapReport)(); } });
   };
   // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
   const peekFromMapGesture = useCallback(() => {
@@ -1583,6 +1589,7 @@ function DestinationSheet({
       // gate each frame froze the sheet mid-drag whenever the scroll offset read above 1 for a moment.
       if (snapStateSV.value === 'full' && !dragEngagedSV.value && !(scrollYSV.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
+      beginSheetMotion();   // the sheet is being dragged (sheetMotion.ts); cleared when its settle ends
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
         // Peek is the lowest point now — swiping down from either collapsed or peek can no
@@ -1722,7 +1729,7 @@ function DestinationSheet({
       <View style={st.sheet}>
 
         {/* ── FULL CONTENT — fills entire sheet, hero starts at y=0 ──────── */}
-        <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
+        <Reanimated.View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]}>
         <KeyboardAvoidingView
           style={{ flex: 1 }}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -1773,7 +1780,7 @@ function DestinationSheet({
               </View>
           <Reanimated.View style={[StyleSheet.absoluteFill, st.heroDim, heroDimStyle]} />
         </Reanimated.View>
-        <Reanimated.View style={[{ flex: 1 }, heroShiftStyle]}>
+        <Reanimated.View style={[{ flex: 1 }, heroShiftStyle, halfContentStyle]}>
         <SheetScrollView
           ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
           style={{ flex: 1 }}
@@ -1922,8 +1929,8 @@ function DestinationSheet({
 
                   {/* ── MY VISIT PANEL — visited destinations only ──────── */}
                   {isVisited && (
-                  <View
-                    style={st.slidePanel}
+                  <Reanimated.View
+                    style={[st.slidePanel, panelShiftFor('visit')]}
                     onLayout={e => measurePanel('visit', e.nativeEvent.layout.height)}
                   >
 
@@ -1946,12 +1953,12 @@ function DestinationSheet({
                       selectorItems={spots.length > 0 ? spotSelectorItems : undefined}
                     />}
 
-                  </View>
+                  </Reanimated.View>
                   )}
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
-                  <View
-                    style={st.slidePanel}
+                  <Reanimated.View
+                    style={[st.slidePanel, panelShiftFor('about')]}
                     onLayout={e => measurePanel('about', e.nativeEvent.layout.height)}
                   >
                     {sidePanelsOn && (<>
@@ -1965,15 +1972,15 @@ function DestinationSheet({
                     />
                     <AIContentNote />
                     </>)}
-                  </View>
+                  </Reanimated.View>
 
                   {/* ── SPOTS PANEL — full grid, map-view button ── */}
-                  <View
-                    style={st.slidePanel}
+                  <Reanimated.View
+                    style={[st.slidePanel, panelShiftFor('spots')]}
                     onLayout={e => measurePanel('spots', e.nativeEvent.layout.height)}
                   >
                     {spotsPanelOn && <SpotsPanel spots={spots} onSelectSpot={onSelectSpot} scrollYSV={scrollYSV} />}
-                  </View>
+                  </Reanimated.View>
                 </Reanimated.View>
               </Reanimated.View>
             )}
@@ -1993,7 +2000,7 @@ function DestinationSheet({
           <Text style={st.compactBarTitle} numberOfLines={1}>{destination.name}</Text>
         </Reanimated.View>
 
-        </View>{/* end full-content wrapper */}
+        </Reanimated.View>{/* end full-content wrapper */}
 
 
         {/* ── PEEK STRIP — a thin sliver of the hero image with the destination's name,
