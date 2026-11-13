@@ -6211,6 +6211,14 @@ const destItems = useMemo((): DestItem[] =>
     }
     return (onPhoto ?? nearest)?.id;
   };
+  // Whether a spot pin feature is drawn at the live zoom: the selected spot always; a photo pin from its photo band's zoom
+  // (`pb`), a small pin from its reveal band's (`rb`); 'a' is always, 'fade' a photo fading in (see spotBandLayers).
+  const spotPinShows = (f: GeoJSON.Feature): boolean => {
+    const pr = f.properties ?? {};
+    if (pr.sel === 1) return true;
+    const band = String((pr.img ? pr.pb : pr.rb) ?? 'a');
+    return band === 'a' || band === 'fade' || camZoomRef.current >= Number(band) - ZOOM_EPSILON;
+  };
   // Destination taps, from a photo pin or a dot. A dot only takes a tap while it shows: each fades out below its tier's zoom
   // (stampOpacityExpr) but stays in the data.
   const stampShown = (tier: number) => tier <= 5 && camZoomRef.current >= stampFadeBaseZoom + STAMP_TIER_STEP * (Math.max(1, tier) - 1);
@@ -6696,9 +6704,14 @@ const destItems = useMemo((): DestItem[] =>
           shape={nativeSpotPins.shape}
           hitbox={{ width: 32, height: 40 }}
           onPress={(e) => {
-            const id = pickSpotPinAt(e.features, e.coordinates.longitude, e.coordinates.latitude);
+            // Only a pin that shows takes the tap: a spot stays in the data below the zoom its pin appears at (its band's
+            // layer has that as its min zoom), and a tap there used to open a spot with nothing drawn under the finger.
+            const shown = e.features.filter(spotPinShows);
+            const id = pickSpotPinAt(shown, e.coordinates.longitude, e.coordinates.latitude);
             const spot = id ? SPOT_BY_ID.get(id) : undefined;
-            if (spot && !pressBlocked()) openSpot(spot);
+            if (spot) { if (!pressBlocked()) openSpot(spot); return; }
+            // Only hidden pins under the tap: hand it on to a destination dot there, if one shows (as the photo pins do).
+            pressDotAt(e.coordinates.longitude, e.coordinates.latitude);
           }}
         >
           {spotFadeLayers.under}
