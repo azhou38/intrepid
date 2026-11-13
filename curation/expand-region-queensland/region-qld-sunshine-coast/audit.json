@@ -1,0 +1,121 @@
+[
+ {
+  "name": "Australia Zoo",
+  "wiki": "Australia Zoo",
+  "views": 161439,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Australia Zoo",
+   "wiki": "Australia Zoo",
+   "wikidata": "Q781321",
+   "coordinates": {
+    "lat": -26.8366,
+    "lng": 152.9595
+   },
+   "coordinates_source": "Wikivoyage Sunshine Coast listing geo tag",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Sunshine_Coast"
+   ],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Australia_Zoo",
+    "https://www.openstreetmap.org/way/193842643"
+   ],
+   "note": "See listing: Owned and run by the family of the late Steve Irwin, is a popular tourist drawcard. The site tends to be frequented more by overseas visitors.",
+   "views": 161439
+  }
+ },
+ {
+  "name": "Fair Hill",
+  "wiki": null,
+  "views": 91,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Fair Hill",
+   "wiki": null,
+   "wikidata": "Q21910838",
+   "coordinates": {
+    "lat": -26.5385216,
+    "lng": 152.9726843
+   },
+   "coordinates_source": "OpenStreetMap node/8630851944",
+   "counted_sources": [],
+   "other_sources": [
+    "https://www.openstreetmap.org/node/8630851944"
+   ],
+   "note": "OpenStreetMap natural=peak",
+   "views": 91,
+   "disambiguation": true
+  }
+ },
+ {
+  "name": "Laguna Bay",
+  "views": 33343,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Laguna Bay",
+   "aliases": [],
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Noosa_Heads"
+   ],
+   "other_sources": [],
+   "note": "Bay: a sheltered bay at Noosa Heads used for scuba diving, sailing and learn-to-surf lessons.",
+   "views": 33343,
+   "redirect_to": "Laguna de Bay",
+   "coordinates": {
+    "lat": 14.38333333,
+    "lng": 121.25
+   },
+   "coordinates_source": "wikipedia:Laguna de Bay"
+  }
+ },
+ {
+  "name": "National Finals Rodeo",
+  "wiki": "National Finals Rodeo (Australia)",
+  "views": 0,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "National Finals Rodeo",
+   "wiki": "National Finals Rodeo (Australia)",
+   "wikidata": "Q6972671",
+   "coordinates": null,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/National_Finals_Rodeo_(Australia)"
+   ],
+   "note": "Listed in Sport in the Sunshine Coast, Queensland on Wikipedia",
+   "views": 0
+  }
+ },
+ {
+  "name": "Noosa River Caravan Park",
+  "wiki": "Noosa River Caravan Park",
+  "views": 675,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Noosa River Caravan Park",
+   "wiki": "Noosa River Caravan Park",
+   "wikidata": "Q24090150",
+   "coordinates": {
+    "lat": -26.3945,
+    "lng": 153.0739
+   },
+   "coordinates_source": "wikipedia:Noosa River Caravan Park",
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Noosa_River_Caravan_Park"
+   ],
+   "note": "Listed in Shire of Noosa on Wikipedia",
+   "views": 675
+  }
+ }
+]

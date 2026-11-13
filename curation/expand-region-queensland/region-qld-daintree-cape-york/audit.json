@@ -1,0 +1,115 @@
+[
+ {
+  "name": "Birdwatching",
+  "wiki": null,
+  "views": 69582,
+  "counted_sources": 1,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Birdwatching",
+   "wiki": null,
+   "aliases": [],
+   "coordinates": null,
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Normanton"
+   ],
+   "other_sources": [],
+   "note": "Do listing",
+   "views": 69582
+  }
+ },
+ {
+  "name": "Coen",
+  "wiki": "Coen, Queensland",
+  "views": 17884,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Coen",
+   "wiki": "Coen, Queensland",
+   "counted_sources": [
+    "https://tropicalnorthqueensland.org.au/listing/itinerary/cape-york/",
+    "https://www.cooktownandcapeyork.com/go/cape/location_summary"
+   ],
+   "other_sources": [],
+   "note": "Town: small historic Cape York town with a post office, a hotel and a free camp at The Bend nearby.",
+   "views": 17884,
+   "coordinates": {
+    "lat": -13.9436,
+    "lng": 143.1986
+   },
+   "coordinates_source": "wikipedia:Coen, Queensland"
+  }
+ },
+ {
+  "name": "Daintree River Cruise Centre",
+  "wiki": null,
+  "views": 0,
+  "counted_sources": 1,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Daintree River Cruise Centre",
+   "wiki": null,
+   "coordinates": {
+    "lat": -16.254741,
+    "lng": 145.360701
+   },
+   "coordinates_source": "Wikivoyage Daintree Rainforest listing geo tag",
+   "counted_sources": [
+    "https://en.wikivoyage.org/wiki/Daintree_Rainforest"
+   ],
+   "other_sources": [],
+   "note": "Do listing: Operates an \"Ultimate Wildlife Experience Cruise\" where you can learn about the history and the geography of the Daintree Rainforest and also see wildlife including the Northern Australian iconic crocodiles – these ones ",
+   "views": 0
+  }
+ },
+ {
+  "name": "Laura",
+  "wiki": "Laura, Queensland",
+  "views": 5188,
+  "counted_sources": 2,
+  "script_verdict": "keep",
+  "rule": "auto-keep",
+  "candidate": {
+   "name": "Laura",
+   "wiki": "Laura, Queensland",
+   "counted_sources": [
+    "https://tropicalnorthqueensland.org.au/listing/itinerary/cape-york/",
+    "https://www.cooktownandcapeyork.com/go/cape/location_summary"
+   ],
+   "other_sources": [
+    "https://en.wikivoyage.org/wiki/Laura (no page: 404 on retry)"
+   ],
+   "note": "Town: small Lakeland settlement on the Mulligan Highway, base for the Quinkan rock art sites and the Laura Quinkan Dance Festival.",
+   "views": 5188,
+   "coordinates": {
+    "lat": -15.5576,
+    "lng": 144.4463
+   },
+   "coordinates_source": "wikipedia:Laura, Queensland"
+  }
+ },
+ {
+  "name": "Sheraton Grand Mirage Resort, Port Douglas",
+  "wiki": "Sheraton Grand Mirage Resort, Port Douglas",
+  "views": 3771,
+  "counted_sources": 0,
+  "script_verdict": "reject",
+  "rule": "auto-reject",
+  "candidate": {
+   "name": "Sheraton Grand Mirage Resort, Port Douglas",
+   "wiki": "Sheraton Grand Mirage Resort, Port Douglas",
+   "wikidata": "Q20874889",
+   "coordinates": null,
+   "counted_sources": [],
+   "other_sources": [
+    "https://en.wikipedia.org/wiki/Sheraton_Grand_Mirage_Resort%2C_Port_Douglas"
+   ],
+   "note": "Listed in Port Douglas, Queensland on Wikipedia",
+   "views": 3771
+  }
+ }
+]
