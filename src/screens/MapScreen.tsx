@@ -1345,6 +1345,7 @@ const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 28
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
 const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
+const DEST_TAP_PLAN_IDLE_MAX_MS = 10000;   // how long a landed flight's plan waits for the map idle before the safety net ends it anyway
 const COUNTRY_BACK_SLIDE_MS = 400;   // "← Country": the country sheet's slide-in, a little slower than the usual 280 ms
 const CAMERA_AFTER_PINS_MIN_MS = 80;    // see runCameraAfterPins: an idle sooner than this predates the new pin data
 const CAMERA_AFTER_PINS_MAX_MS = 400;   // its safety net: the camera goes anyway
@@ -2467,7 +2468,20 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     destTapPlanRef.current = { destId, target, from, spots, fromDot };
     setDestTapPlan(destTapPlanRef.current);
     if (destTapPlanTimerRef.current) clearTimeout(destTapPlanTimerRef.current);
-    destTapPlanTimerRef.current = setTimeout(endDestTapPlan, DEST_TAP_PLAN_MAX_MS);
+    // The safety net ends the plan only if the flight never got near its target. A flight that has landed waits for the
+    // map idle to end it (handleMapIdle, with the exact resting zoom): the last camera event of a flight can report a zoom
+    // a hair under the target, and ending the plan on that (the idle came later than this timer, the map still loading
+    // the landing view's tiles and photos) showed the destination's pin again over its spots until the idle put it right.
+    const startedAt = Date.now();
+    const check = () => {
+      destTapPlanTimerRef.current = null;
+      const plan = destTapPlanRef.current;
+      if (!plan) return;
+      const landed = camZoomRef.current >= plan.target - DEST_TAP_HANDOFF_LEAD;
+      if (landed && Date.now() - startedAt < DEST_TAP_PLAN_IDLE_MAX_MS) { destTapPlanTimerRef.current = setTimeout(check, 500); return; }
+      endDestTapPlan();
+    };
+    destTapPlanTimerRef.current = setTimeout(check, DEST_TAP_PLAN_MAX_MS);
   }, [endDestTapPlan]);
   // Set by a back tap ("← Destination", "← Country"; see beginBackPlan): its target is kept although the parent is
   // selected, so the pins plan at the parent's view from the tap exactly as for an X close.
