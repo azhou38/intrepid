@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
+import { beginSheetMotion, endSheetMotion, sheetInMotion } from '../../utils/sheetMotion';
 import {
   View, Text, StyleSheet, Pressable, ScrollView, Alert,
   Dimensions, Platform, Linking, Image,
@@ -13,7 +14,7 @@ import { ScrollView as GHScrollView, Gesture, GestureDetector } from 'react-nati
 // importing a plain `Animated` name, since `View`/`Pressable`/etc above already come from core
 // react-native and mixing the two default-export namings would be confusing.
 import Reanimated, {
-  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS,
+  useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, runOnUI,
   interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -46,6 +47,9 @@ import { NO_PHOTO } from '../../data/imageOverrides';
 import {
   VisitCardList, VisitModuleSheet, PhotoGalleryModal,
   useDeferredMount,
+  useTabScrollMemory,
+  usePanelShift,
+  trackRoom,
   AIContentNote, nameFontSize, heroFontSize,
 } from './sheetShared';
 
@@ -557,6 +561,15 @@ function SpotSheet({
   // spring this used before migration for the same plain-tween, no-overshoot feel SNAP_CONFIG
   // already gives the sheet's own position (see that migration's own reasoning).
   const tabSlideAnim    = useSharedValue(0);
+  const scrollYSV    = useSharedValue(0);
+  const scrollAnimRef = useAnimatedRef<any>();
+  // Each tab's own scroll position (useTabScrollMemory); tabPinYSV is the scroll at which the hero has scrolled away and the
+  // tab bar pins (compactBarStyle's `at`).
+  const tabPinYSV = useSharedValue(0);
+  tabPinYSV.value = (HERO_H - insets.bottom) - 24 - (insets.top + 6 + 36);
+  const tabScroll = useTabScrollMemory({ count: 2, slide: tabSlideAnim, width: W, scrollY: scrollYSV, scrollRef: scrollAnimRef, pinY: tabPinYSV });
+  const panelShiftVisit = usePanelShift(tabScroll, scrollYSV, 0);
+  const panelShiftAbout = usePanelShift(tabScroll, scrollYSV, 1);
   const activeTabRef    = useRef<'visit' | 'about'>('visit');
   const tabSwipeBaseRef = useSharedValue(0);
   const tabIndicatorLeft = useAnimatedStyle(() => ({
@@ -575,7 +588,11 @@ function SpotSheet({
     const [hVisit, hAbout] = panelHeightsSV.value;
     if (!hVisit || !hAbout) return { height: undefined };   // until both are measured
     const t = Math.max(0, Math.min(1, -tabSlideAnim.value / W));
-    return { height: hVisit + (hAbout - hVisit) * t };
+    // While the tabs slide each panel keeps its own position (useTabScrollMemory), so the track holds room for both and the
+    // page never moves (it followed the slide's height before, dragging a scrolled page up); it changes once the slide lands.
+    if (t === 0) return { height: hVisit };
+    if (t === 1) return { height: hAbout };
+    return { height: Math.max(hVisit + trackRoom(tabScroll, scrollYSV, 0), hAbout + trackRoom(tabScroll, scrollYSV, 1)) };
   });
   const slideRowStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: tabSlideAnim.value }],
@@ -586,7 +603,9 @@ function SpotSheet({
     if (activeTabRef.current === newTab) return;
     activeTabRef.current = newTab;
     setActiveTab(newTab);
-    tabSlideAnim.value = withTiming(newTab === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+    runOnUI(tabScroll.begin)();
+    const idx = newTab === 'visit' ? 0 : 1;
+    tabSlideAnim.value = withTiming(newTab === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG, finished => { if (finished) tabScroll.land(idx); });
   };
   const setActiveTabJS = useCallback((tab: 'visit' | 'about') => {
     activeTabRef.current = tab;
@@ -618,7 +637,8 @@ function SpotSheet({
   const snapTabToNearest = () => {
     'worklet';
     const nearest: 'visit' | 'about' = tabSlideAnim.value > -W / 2 ? 'visit' : 'about';
-    tabSlideAnim.value = withTiming(nearest === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+    const nIdx = nearest === 'visit' ? 0 : 1;
+    tabSlideAnim.value = withTiming(nearest === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG, finished => { if (finished) tabScroll.land(nIdx); });
     runOnJS(setActiveTabJS)(nearest);
   };
   // A real UI-thread worklet now (no `.runOnJS(true)`) — matches DestinationSheet's own
@@ -636,6 +656,7 @@ function SpotSheet({
     .activeOffsetX([-12, 12])
     .failOffsetY([-10, 10])
     .onStart(() => {
+      tabScroll.begin();
       tabSwipeBaseRef.value = tabSlideAnim.value;
       tabDragEngagedSV.value = false;
     })
@@ -664,7 +685,8 @@ function SpotSheet({
         const targetIdx = Math.max(0, Math.min(1, curIdx + dir));
         goTo = targetIdx === 0 ? 'visit' : 'about';
       }
-      tabSlideAnim.value = withTiming(goTo === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG);
+      const goIdx = goTo === 'visit' ? 0 : 1;
+      tabSlideAnim.value = withTiming(goTo === 'visit' ? 0 : -W, TAB_SLIDE_CONFIG, finished => { if (finished) tabScroll.land(goIdx); });
       // Always sync JS state rather than trying to skip a no-op by comparing against
       // activeTabRef.current here — a plain JS ref read from inside a UI-thread worklet can
       // hold a stale snapshot (refs aren't live-synced across the JS/UI boundary the way a
@@ -741,7 +763,6 @@ function SpotSheet({
   // Worklet-readable scroll offset, for the drag gesture's full-screen capture gate (only let
   // a downward drag pull the sheet once its inner ScrollView is already at top) — a plain ref
   // can't be read reliably from a UI-thread worklet (see the tab gesture's own comment on why).
-  const scrollYSV    = useSharedValue(0);
 
   // COLLAPSED_Y is a plain module constant (this sheet's carousel is always exactly
   // half-screen, never a dynamically measured height the way DestinationSheet's collapsed card
@@ -863,7 +884,6 @@ function SpotSheet({
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
-  const scrollAnimRef = useAnimatedRef<any>();
   const scrollResetSV = useSharedValue(-1);   // -1: idle
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
   const resetScrollToTop = () => {
@@ -876,6 +896,9 @@ function SpotSheet({
   };
 
   transitionToRef.current = (next, reason) => {
+    // A tap that is really the end of a drag (a swipe down that began on the header or the tab bar also fired their
+    // onPress, which expands the sheet: it went up instead of down) does nothing while the sheet is moving.
+    if (reason === 'user' && sheetInMotion()) return;
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
     closingRef.current = false;
@@ -921,10 +944,7 @@ function SpotSheet({
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
   const callSnapToPeek      = useCallback(() => snapToPeekRef.current(), []);
   const callSnapBack = useCallback(() => {
-    const st = snapStateRef.current;
-    if (st === 'peek') snapToPeekRef.current();
-    else if (st === 'full') snapToFullRef.current();
-    else snapToCollapsedRef.current();
+    transitionToRef.current(snapStateRef.current, 'snapBack');
   }, []);
 
   // Slide off the bottom, quickly, when the parent signals it's closing this sheet.
@@ -1073,7 +1093,8 @@ function SpotSheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : COLLAPSED_Y;
     snapStateSV.value = next;
     lastPos.value = target;
-    slideAnim.value = withTiming(target, SNAP_CONFIG);
+    beginSheetMotion();
+    slideAnim.value = withTiming(target, SNAP_CONFIG, finished => { if (finished) endSheetMotion(); });
   };
   // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
   const peekFromMapGesture = useCallback(() => {
@@ -1124,6 +1145,7 @@ function SpotSheet({
       // deliberate pull before the sheet (and the pill riding along with it) starts moving.
       if (snapStateSV.value === 'full' && !(scrollYSV.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
+      beginSheetMotion();   // the sheet is being dragged (sheetMotion.ts); cleared when its settle ends
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
         // Peek is the lowest point now — swiping down from either collapsed or peek can no
@@ -1349,6 +1371,7 @@ isVisited ? (
                   // Tapping a subtab from half/bottom-screen expands to full, same as the
                   // other sheets' own tab bars — the tab bar itself is only fully readable at
                   // full-screen, so tapping it signals "show me this content".
+                  if (sheetInMotion()) return;   // the end of a drag, not a tap (see transitionTo)
                   if (snapStateRef.current !== 'full') snapToFullRef.current();
                   switchTabRef.current('visit');
                 }}
@@ -1359,6 +1382,7 @@ isVisited ? (
               <Pressable
                 style={st.tabBtn}
                 onPress={() => {
+                  if (sheetInMotion()) return;   // the end of a drag, not a tap (see transitionTo)
                   if (snapStateRef.current !== 'full') snapToFullRef.current();
                   switchTabRef.current('about');
                 }}
@@ -1507,7 +1531,7 @@ isVisited ? (
               <Reanimated.View style={[st.slideTrack, slideTrackStyle]}>
                 <Reanimated.View style={[st.slideRow, slideRowStyle]}>
                   {/* ── MY VISIT PANEL ─────────────────────────────────── */}
-                  <View style={st.slidePanel} onLayout={e => measurePanel(0, e.nativeEvent.layout.height)}>
+                  <Reanimated.View style={[st.slidePanel, panelShiftVisit]} onLayout={e => measurePanel(0, e.nativeEvent.layout.height)}>
                     {/* Each logged visit is its own standalone module — its own title, dates,
                         photos, and notes — like a separate journal entry. Shared with
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
@@ -1522,12 +1546,12 @@ isVisited ? (
                       ratingValue={savedSpot?.rating}
                       hideSingleDayCount
                     />
-                  </View>
+                  </Reanimated.View>
 
                   {/* ── ABOUT PANEL ────────────────────────────────────── */}
-                  <View style={st.slidePanel} onLayout={e => measurePanel(1, e.nativeEvent.layout.height)}>
+                  <Reanimated.View style={[st.slidePanel, panelShiftAbout]} onLayout={e => measurePanel(1, e.nativeEvent.layout.height)}>
                     <SpotAbout spot={activeSpot} tabbed nearbySpots={nearbySpots} onSelectNearby={handleSelectNearby} onExplore={() => snapToCollapsedRef.current()} nearbyHlScrollRef={nearbyHlScrollRef} />
-                  </View>
+                  </Reanimated.View>
                 </Reanimated.View>
               </Reanimated.View>
             ) : (

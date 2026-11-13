@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useLayoutEffect, useState, useMemo, useCallback } from 'react';
+import { beginSheetMotion, endSheetMotion, sheetInMotion } from '../../utils/sheetMotion';
 import {
   View, Text, StyleSheet, Pressable, Alert,
   Dimensions, Platform,
@@ -10,7 +11,7 @@ import {
 // since the bottleneck was the gesture pipeline itself, not which style property it drove).
 import Animated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, withDelay, runOnJS,
-  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, useAnimatedScrollHandler,
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, useDerivedValue, useAnimatedScrollHandler, runOnUI,
 } from 'react-native-reanimated';
 import type { SharedValue } from 'react-native-reanimated';
 import { pillBottomForSheet } from '../../utils/navTransitions';
@@ -35,7 +36,7 @@ import CircleFlag from '../CircleFlag';
 import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import DestinationCard from './DestinationCard';
-import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, AIContentNote, type VisitSelectorItem } from './sheetShared';
+import { VisitCardList, VisitModuleSheet, PhotoGalleryModal, useDeferredMount, useLazyGrid, useTabScrollMemory, usePanelShift, trackRoom, AIContentNote, type VisitSelectorItem } from './sheetShared';
 
 interface Props {
   cluster: CountryCluster;
@@ -202,31 +203,27 @@ type CountrySnapState = 'peek' | 'collapsed' | 'full';
 // including its frame-by-frame mount: all of a large country's cards at once (Australia's 144) was one long block of JS
 // work landing in the back tap's swap; the first cards mount at once and the rest follow a dozen per frame.
 const DEST_GRID_FIRST = 12;
-const DEST_GRID_STEP = 12;
 const GridDestinationCard = React.memo(function GridDestinationCard({ dest, isVisited, onSelectDestination }: {
   dest: Destination; isVisited: boolean; onSelectDestination: (dest: Destination) => void;
 }) {
   const onPress = useCallback(() => onSelectDestination(dest), [onSelectDestination, dest]);
   return <DestinationCard dest={dest} isVisited={isVisited} width={GRID_CARD_W} showCountry={false} showHighlights={false} onPress={onPress} />;
 });
-function DestinationsPanel({
-  dests, isDestVisited, onSelectDestination,
+const DestinationsPanel = React.memo(function DestinationsPanel({
+  dests, isDestVisited, onSelectDestination, scrollY,
 }: {
   dests: Destination[];
   isDestVisited: (id: string) => boolean;
   onSelectDestination: (dest: Destination) => void;
+  scrollY: SharedValue<number>;   // the sheet's content scroll, which draws in more cards (useLazyGrid)
 }) {
-  const [shown, setShown] = useState(Math.min(dests.length, DEST_GRID_FIRST));
-  useEffect(() => { setShown(Math.min(dests.length, DEST_GRID_FIRST)); }, [dests]);
-  useEffect(() => {
-    if (shown >= dests.length) return;
-    const id = requestAnimationFrame(() => setShown(n => Math.min(dests.length, n + DEST_GRID_STEP)));
-    return () => cancelAnimationFrame(id);
-  }, [shown, dests.length]);
+  // Built as it is scrolled to (useLazyGrid): all of a big country's cards (Australia's 179), a dozen a frame, took seconds
+  // of updates that landed on every swipe of the sheet until the last one was built.
+  const { shown, onGridLayout } = useLazyGrid({ count: dests.length, first: DEST_GRID_FIRST, scrollY });
   return (
     <View style={{ gap: 16 }}>
       {dests.length > 0 ? (
-        <View style={st.destGrid}>
+        <View style={st.destGrid} onLayout={e => onGridLayout(e.nativeEvent.layout.height)}>
           {dests.slice(0, shown).map(dest => (
             <GridDestinationCard key={dest.id} dest={dest} isVisited={isDestVisited(dest.id)} onSelectDestination={onSelectDestination} />
           ))}
@@ -236,7 +233,7 @@ function DestinationsPanel({
       )}
     </View>
   );
-}
+});
 
 // ── Main component ─────────────────────────────────────────────────────────────
 function CountrySheet({
@@ -392,6 +389,15 @@ function CountrySheet({
   // The scroll offset. Declared above the tab-slide styles: a worklet captures its values when it is created, and one
   // declared later was still undefined.
   const scrollY = useSharedValue(0);
+  const scrollAnimRef = useAnimatedRef<any>();
+  // Each tab's own scroll position (useTabScrollMemory); tabPinYSV is the scroll at which the header has scrolled away and
+  // the tab bar pins (set below, once the header's height is known).
+  const tabPinYSV = useSharedValue(0);
+  const tabScroll = useTabScrollMemory({ count: TAB_ORDER.length, slide: tabSlideAnim, width: W, scrollY, scrollRef: scrollAnimRef, pinY: tabPinYSV });
+  const panelShift0 = usePanelShift(tabScroll, scrollY, 0);
+  const panelShift1 = usePanelShift(tabScroll, scrollY, 1);
+  const panelShift2 = usePanelShift(tabScroll, scrollY, 2);
+  const panelShiftFor = (tab: CountryTab) => [panelShift0, panelShift1, panelShift2][TAB_ORDER.indexOf(tab)] ?? panelShift0;
   const tabIndicatorStyle = useAnimatedStyle(() => {
     const n = TAB_ORDER.length, { x, w } = tabRefSV.value;
     const centers = w === 0 ? null : n === 3 ? [x / 2, x + w / 2, x + w + x / 2] : [w / 2, w + w / 2];
@@ -443,8 +449,10 @@ function CountrySheet({
     // was the stutter. At the top of the content it now holds the taller of the two panels while they slide (nothing is
     // cut off) and changes once, when the slide lands. Scrolled down, it still follows the slide, so the shorter tab's
     // scroll extent closes in gradually instead of the page jumping when the offset is clamped at the end.
+    // While the tabs slide each panel keeps its own position (useTabScrollMemory), so the track holds room for both of them
+    // and the page never moves; it changes once, when the slide lands.
     const settled = t === 0 || i0 === i1;
-    const h = settled ? h0 : scrollY.value > 1 ? h0 + (h1 - h0) * t : Math.max(h0, h1);
+    const h = settled ? h0 : Math.max(h0 + trackRoom(tabScroll, scrollY, i0), h1 + trackRoom(tabScroll, scrollY, i1));
     return { height: h > 0 ? h : undefined };
   });
 
@@ -469,8 +477,10 @@ function CountrySheet({
   // React's tab state (a re-render of this whole sheet) follows once the slide has landed: committed at the start it
   // dropped frames of the slide. Everything shown during it (the underline, TabLabel's colour) runs off tabSlideAnim.
   const switchTab = useCallback((tab: CountryTab) => {
+    const idx = Math.max(0, TAB_ORDER.indexOf(tab));
+    runOnUI(tabScroll.begin)();
     tabSlideAnim.value = withTiming(tabSlideFor(tab), TAB_CONFIG, finished => {
-      if (finished) runOnJS(setActiveTabJS)(tab);
+      if (finished) { tabScroll.land(idx); runOnJS(setActiveTabJS)(tab); }
     });
   }, [TAB_ORDER]);
 
@@ -544,6 +554,8 @@ function CountrySheet({
   // Spotify-style header (see the fixed HEADER PHOTO layer): the photo dims as content covers it, the header text fades
   // as it nears the compact title bar, the bar fades in once the name has gone under it, and the tab bar pins below it.
   const COMPACT_BAR_H = insets.top + 48;
+  // As compactBarStyle's `at`: the scroll at which the header has gone and the tab bar pins (see tabPinYSV).
+  useAnimatedReaction(() => headerFullHAnim.value - TAB_BAR_TUCK - COMPACT_BAR_H, v => { tabPinYSV.value = v; }, [COMPACT_BAR_H]);
   const COMPACT_FADE_PT = 70;   // how far below its pinned spot the tab bar is when the title bar starts fading in
   const headerNameYSV = useSharedValue(insets.top + 80);
   const headerDimStyle = useAnimatedStyle(() => ({
@@ -624,6 +636,12 @@ function CountrySheet({
   // 1 while the sheet slides in from below on its way to half-screen, or slides off: the strip then stays hidden instead of
   // showing in the peek zone and fading out again on the way up (as DestinationSheet's hidePeekSV).
   const hidePeekSV = useSharedValue(leaving ? 0 : 1);
+  // The half-screen content over the header photo (the name, the stats, the tabs) fades out over the same
+  // stretch as the peek strip fades in, as SpotSheet's carousel does: left as it was, it showed under the strip all the way
+  // down. The photo itself stays. Not while the sheet slides in or off.
+  const halfContentStyle = useAnimatedStyle(() => ({
+    opacity: hidePeekSV.value === 1 ? 1 : interpolate(slideAnim.value, [collapsedYAnim.value, PEEK_Y], [1, 0], Extrapolation.CLAMP),
+  }));
   const peekAnimStyle = useAnimatedStyle(() => ({
     opacity: hidePeekSV.value === 1 ? 0 : interpolate(slideAnim.value, [COLLAPSED_Y, PEEK_Y], [0, 1], Extrapolation.CLAMP),
   }));
@@ -702,7 +720,6 @@ function CountrySheet({
   // Scrolls the content back to its top on the UI thread, over a fixed 220ms — finishing before the sheet settles at
   // half-screen (SNAP_CONFIG, 280ms), so it never still looks like it's scrolling once the sheet has landed. (The
   // ScrollView's own animated scrollTo has a fixed, longer duration of its own.)
-  const scrollAnimRef = useAnimatedRef<any>();
   const scrollResetSV = useSharedValue(-1);   // -1: idle
   useAnimatedReaction(() => scrollResetSV.value, y => { if (y >= 0) scrollTo(scrollAnimRef, 0, y, false); });
   // The content only scrolls once the sheet rests at full screen (as DestinationSheet's): until it is up, any scroll is put
@@ -726,6 +743,9 @@ function CountrySheet({
   };
 
   transitionToRef.current = (next, reason) => {
+    // A tap that is really the end of a drag (a swipe down that began on the header or the tab bar also fired their
+    // onPress, which expands the sheet: it went up instead of down) does nothing while the sheet is moving.
+    if (reason === 'user' && sheetInMotion()) return;
     // Once the parent has told this sheet to leave, only a NEW selection may bring it back.
     if (closingRef.current && reason !== 'selectionChange') return;
     closingRef.current = false;
@@ -897,10 +917,7 @@ function CountrySheet({
   const callSnapToCollapsed = useCallback(() => snapToCollapsedRef.current(), []);
   const callSnapToPeek      = useCallback(() => snapToPeekRef.current(), []);
   const callSnapBack = useCallback(() => {
-    const st = snapStateRef.current;
-    if (st === 'peek') snapToPeekRef.current();
-    else if (st === 'full') snapToFullRef.current();
-    else snapToCollapsedRef.current();
+    transitionToRef.current(snapStateRef.current, 'snapBack');
   }, []);
   const callDismissSheet    = useCallback(() => dismissSheetRef.current(), []);
 
@@ -943,7 +960,8 @@ function CountrySheet({
     const target = next === 'full' ? FULL_POS : next === 'peek' ? PEEK_Y : collapsedYAnim.value;
     snapStateSV.value = next;
     lastPos.value = target;
-    slideAnim.value = withSheetSettle(target, velocity, finished => { if (finished) runOnJS(flushSnapReport)(); });
+    beginSheetMotion();
+    slideAnim.value = withSheetSettle(target, velocity, finished => { if (finished) { endSheetMotion(); runOnJS(flushSnapReport)(); } });
   };
   // Map gesture started (peekSV): drop to the bottom strip on the UI thread right away; the JS bookkeeping follows.
   const peekFromMapGesture = useCallback(() => {
@@ -990,6 +1008,7 @@ function CountrySheet({
       // finger came back within 24 pt or the content moved, then jumped when the check passed again.
       if (snapStateSV.value === 'full' && !dragEngagedSV.value && !(scrollY.value <= 1 && e.translationY > 24)) return;
       dragEngagedSV.value = true;
+      beginSheetMotion();   // the sheet is being dragged (sheetMotion.ts); cleared when its settle ends
       const raw = lastPos.value + e.translationY;
       if (snapStateSV.value === 'collapsed' || snapStateSV.value === 'peek') {
         // Peek is the lowest point — swiping down from either collapsed or peek can no
@@ -1058,6 +1077,7 @@ function CountrySheet({
     .activeOffsetX([-12, 12])
     .failOffsetY([-10, 10])
     .onStart(() => {
+      tabScroll.begin();
       tabSwipeBaseSV.value = tabSlideAnim.value;
     })
     .onUpdate(e => {
@@ -1084,7 +1104,7 @@ function CountrySheet({
       // on the JS thread if the tab hasn't actually changed. It runs once the slide has landed (see switchTab).
       const target = TAB_ORDER[targetIdx];
       tabSlideAnim.value = withTiming(-targetIdx * W, TAB_CONFIG, finished => {
-        if (finished) runOnJS(setActiveTabJS)(target);
+        if (finished) { tabScroll.land(targetIdx); runOnJS(setActiveTabJS)(target); }
       });
     })
     .simultaneousWithExternalGesture(scrollRef);
@@ -1101,6 +1121,7 @@ function CountrySheet({
               // Tapping a subtab from half/bottom-screen expands to full, same as
               // DestinationSheet's own tab bar — the tab bar is only fully readable at
               // full-screen, so tapping it signals "show me this content".
+              if (sheetInMotion()) return;   // the end of a drag, not a tap (see transitionTo)
               if (snapStateRef.current !== 'full') snapToFullRef.current();
               switchTab(tab);
             }}
@@ -1164,7 +1185,7 @@ function CountrySheet({
           </Animated.View>
 
           {/* ── FULL CONTENT ─────────────────────────────────────────────── */}
-          <Animated.View style={[{ flex: 1 }, headerShiftStyle]}>
+          <Animated.View style={[{ flex: 1 }, headerShiftStyle, halfContentStyle]}>
           <SheetScrollView
             ref={(r: any) => { (scrollRef as any).current = r; scrollAnimRef(r); }}
             style={{ flex: 1 }}
@@ -1289,8 +1310,8 @@ function CountrySheet({
 
                 {/* ── MY VISIT PANEL — visited countries only ─────────── */}
                 {isCountryVisited && (
-                  <View
-                    style={st.slidePanel}
+                  <Animated.View
+                    style={[st.slidePanel, panelShiftFor('visit')]}
                     onLayout={e => measurePanel('visit', e.nativeEvent.layout.height)}
                   >
                     {/* Each logged visit is its own standalone module — its own title, dates,
@@ -1309,12 +1330,12 @@ function CountrySheet({
                       selectorLabel={dests.length > 0 ? 'Destinations Visited' : undefined}
                       selectorItems={dests.length > 0 ? destSelectorItems : undefined}
                     />
-                  </View>
+                  </Animated.View>
                 )}
 
                 {/* ── ABOUT PANEL ──────────────────────────────────────── */}
-                <View
-                  style={st.slidePanel}
+                <Animated.View
+                  style={[st.slidePanel, panelShiftFor('about')]}
                   onLayout={e => measurePanel('about', e.nativeEvent.layout.height)}
                 >
                   <View style={st.glanceCard}>
@@ -1365,19 +1386,20 @@ function CountrySheet({
                     )}
                   </View>
                   <AIContentNote />
-                </View>
+                </Animated.View>
 
                 {/* ── DESTINATIONS PANEL ───────────────────────────────── */}
-                <View
-                  style={st.slidePanel}
+                <Animated.View
+                  style={[st.slidePanel, panelShiftFor('destinations')]}
                   onLayout={e => measurePanel('destinations', e.nativeEvent.layout.height)}
                 >
                   <DestinationsPanel
                     dests={dests}
                     isDestVisited={visitIndex.isDestVisited}
                     onSelectDestination={onSelectDestination}
+                    scrollY={scrollY}
                   />
-                </View>
+                </Animated.View>
 
               </Animated.View>
             </Animated.View>
@@ -1392,8 +1414,6 @@ function CountrySheet({
             <Animated.View style={[st.compactBarBacking, { height: COMPACT_BAR_H + COMPACT_FADE_PT }, compactBarBackingStyle]} />
             <Text style={st.compactBarTitle} numberOfLines={1}>{cluster.country}</Text>
           </Animated.View>
-
-
 
           {/* ── PEEK STRIP — a thin sliver of the header image with the country's name,
               shown only once the sheet has been dropped down past collapsed (via peekSignal,

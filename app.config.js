@@ -15,11 +15,11 @@ module.exports = ({ config }) => ({
       bundleIdentifier: 'com.alexzhou.intrepid',
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false,
-        // The app's own animations (Reanimated's sheets) run at 60 Hz on a ProMotion iPhone, not 120: at 120 the sheets
-        // flashed between their snap layouts mid-swipe (their position and their header's crop landing on different
-        // frames), and screen recording, which caps the display at 60, made them smooth. Scrolling and the system stay at
-        // 120. Expo's template sets this to true.
-        CADisableMinimumFrameDurationOnPhone: false,
+        // The app's own animations (Reanimated's sheets) run at up to 120 Hz on a ProMotion iPhone. At 120 the sheets once
+        // flashed between their snap layouts mid-swipe, so this was set to false (60 Hz); React updates that land while a
+        // sheet moves are now held back until it rests (src/utils/sheetMotion.ts), the suspected cause, and this is back on
+        // to see whether the flashes stay away. Needs a native rebuild.
+        CADisableMinimumFrameDurationOnPhone: true,
       },
     },
     android: {
