@@ -1538,10 +1538,7 @@ isVisited ? (
                         here (a spot has nothing beneath it to tag a visit with). */}
                     {/* The spot's one rating, above its visits: it is the spot's, not any one visit's (the visit cards
                         used to each show and edit it, so rating one visit changed them all). */}
-                    <View style={st.yourRating}>
-                      <Text style={st.yourRatingLabel}>Your rating</Text>
-                      <StarRating value={savedSpot?.rating ?? 0} size={22} onChange={r => updateSpot(activeSpot.id, { rating: r })} />
-                    </View>
+                    <YourRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
                       noun="Visit"
@@ -1900,6 +1897,39 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
     </>
   );
 }
+
+// A spot's "Your rating" row (My Visit). The stars follow a tap at once, from their own state: written straight to the
+// store, a tap re-rendered the whole spot sheet (and everything else reading saved spots) before the stars could change,
+// which read as slow. The store gets the rating a moment later, once taps have stopped.
+const RATING_SAVE_MS = 400;
+const YourRating = React.memo(function YourRating({ spotId, value }: { spotId: string; value: number }) {
+  const updateSpot = useStore(s => s.updateSpot);
+  const [shown, setShown] = useState(value);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingRef = useRef<{ spotId: string; rating: number } | null>(null);
+  const flush = useCallback(() => {
+    if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
+    const p = pendingRef.current;
+    pendingRef.current = null;
+    if (p) updateSpot(p.spotId, { rating: p.rating });
+  }, [updateSpot]);
+  // Another spot, or a rating changed elsewhere (the visit editor): show it, saving any rating still pending first.
+  useEffect(() => { if (!pendingRef.current) setShown(value); }, [value]);
+  useEffect(() => { flush(); setShown(value); }, [spotId]);   // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => flush, [flush]);
+  const onChange = useCallback((r: number) => {
+    setShown(r);
+    pendingRef.current = { spotId, rating: r };
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(flush, RATING_SAVE_MS);
+  }, [spotId, flush]);
+  return (
+    <View style={st.yourRating}>
+      <Text style={st.yourRatingLabel}>Your rating</Text>
+      <StarRating value={shown} size={22} onChange={onChange} />
+    </View>
+  );
+});
 
 const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFill, zIndex: 210, elevation: 210 } as any,
