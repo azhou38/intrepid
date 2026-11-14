@@ -5471,6 +5471,20 @@ const destItems = useMemo((): DestItem[] =>
           suppressDestReturnPromptTimerRef.current = null;
         }
       }
+      // A pan that begins before the map idle has recorded the country's home view (see handleMapIdle): the home is where
+      // the camera rested when the pan began. The idle waits for every tile and photo of the view to load, often longer
+      // than the user waits after landing (a return tap's especially, which clears the home), and the idle after the pan
+      // then recorded the panned-to view as home: the return arrow never showed. Not mid-way through the app's own move.
+      const homePending = countryCacheArmRef.current !== null && Date.now() < countryCacheArmRef.current.at;
+      if (selectedCountryRef.current && !selectedDestRef.current && !selectedSpotRef.current && !countryHomeRegionRef.current
+          && !homePending && !programmaticCameraMoveRef.current) {
+        const home: Region = {
+          latitude: center[1], longitude: center[0],
+          latitudeDelta: Math.abs(bounds.ne[1] - bounds.sw[1]), longitudeDelta: Math.abs(bounds.ne[0] - bounds.sw[0]),
+        };
+        countryHomeRegionRef.current = home;
+        setCountryHomeRegion(home);
+      }
       // Likewise for a country fit still in flight — the user owns the camera now, so drop the pending capture
       // rather than have the idle after THEIR pan recorded as the country's default camera.
       countryCacheArmRef.current = null;
