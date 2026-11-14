@@ -1,0 +1,34 @@
+{
+ "audited": 11,
+ "differ": 4,
+ "differences": [
+  {
+   "name": "Bushwalking",
+   "script": "keep",
+   "judge": "reject",
+   "agree": false,
+   "reason": "Generic activity heading, not a place"
+  },
+  {
+   "name": "Football",
+   "script": "keep",
+   "judge": "reject",
+   "agree": false,
+   "reason": "Sports matches, events and not a place"
+  },
+  {
+   "name": "St Patrick's Day",
+   "script": "keep",
+   "judge": "reject",
+   "agree": false,
+   "reason": "Annual parade, rule 4"
+  },
+  {
+   "name": "The University of Queensland",
+   "script": "keep",
+   "judge": "review",
+   "agree": false,
+   "reason": "Wikivoyage names the sandstone cloisters, lakes and jacarandas; campus is publicly walkable and has museums, but a campus is arguable"
+  }
+ ]
+}

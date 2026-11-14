@@ -1,0 +1,17 @@
+# Queensland run tally (running list for the final report)
+- Branch curation/expand-region-queensland; 12 regions in scripts/coverage-regions.json; APIFY token copied to worktree .env.local.
+- Blocked to scripts (retry in in-app browser): queensland.com, parks.desi/des.qld.gov.au (QPWS), parliament.qld.gov.au, mackaytourism.com.au (429), visitfrasercoast.com, visitbundaberg.com.au, tablelands.qld.gov.au, toowoombaandgoldenwestdowns.com.au, granitebeltwine.com.au, discoversouthburnett.com.au (500), lockyervalley.qld.gov.au, gulfsavannah.com.au, visitgulfsavannah.com.au, winton.qld.gov.au, discovergladstone.com.au, visitrockhampton.com.au, capricorncoast.com.au, greatkeppelisland.com.au, mackayisaac.com sub-pages, innothotsprings/nerada/herbertonhistoricvillage/innisfailtramway, southerndownsholidays/stanthorpetourism.
+- Judges mostly opened only Wikivoyage pages: keeps are single-source unless noted.
+- Reviews with blocked sole source (queensland.com): Mother Mountain Rockpools, Mount Tinbeerwah, Steve Weis Gallery, Noosa Botanic Gardens, Majestic Theatre.
+- Judged on 'no counted source in 1-2 tries' not on the place: Lake Wyaralong (reject), Gold Coast tail.
+- Recall gaps to check: Sarina Sugar Shed, Finch Hatton Gorge, Broken River (Mackay); Mulligan Falls (Townsville); Wikivoyage Capricorn Coast missing; 'Gladstone (Queensland)' missed by structured pass; Carnarvon Gorge walks on snippets only.
+- Bad candidate coords (re-resolve pins): Passage Peak (Alaska), Amiens (France), Bowen Consolidated Colliery, Hill Inlet Lookout (island centre), Ripley's none.
+- Cross-region duplicates to dedupe at merge: Paronella Park, Skyrail, Riversleigh, Heron Island, Magnetic Island NP, Lizard Island NP, Green Island, Museum of Australian Army Flying, Joseph Banks lookouts, Stanthorpe Heritage Museum, Queensland Transport Museum, Great Barrier Reef/Whitsunday Islands (generic: destination layer).
+- Possible NSW-side: Point Danger lighthouse; Bald Rock NSW.
+- Fact claim unverified: Ballandean Estate 'oldest winery'.
+- Naming fixes: 'Carnavon Gorge' -> Carnarvon; 'Swim' = Cairns Esplanade Lagoon; 'Stradbroke Island' -> North Stradbroke Island; 'Moogerah Dam' -> Lake Moogerah; 'Mount Tamborine' -> Tamborine Mountain.
+- Tail triage: 3,448 low-interest zero-source candidates rejected by name triage (not by source); 25-sample audited per region (all rejected so far).
+- Overlap risk to check at placement: Queen Mary Falls/Main Range NP, Mount Barney NP, Cooloola Great Walk/Great Sandy.
+- Recall adds from judges: Sarina Sugar Shed, Finch Hatton Gorge, Broken River, Miles Historical Village Museum, Coolmunda Dam (not in candidate lists). Harlaxton House rejected (no public-access source). Gondwana Rainforests = grouping, reject.
+- Darling Downs rejects hiding probable draws behind locality names (recall check): Jondaryan Woolshed, Crows Nest Falls park, Spring Bluff station gardens. Glenlyon Dam may be NSW; Kingsthorpe is English.
+- Audit guard (>1 in 10 differ on 5-12-item samples) tripped in 7 of 12 regions (Brisbane, Capricorn, Daintree, Darling Downs, Fraser, Outback, Sunshine, Townsville); script auto-keeps were wrong (Amiens=France, Moonie, Tennis, Marina, Fish, Nomads, St Patrick's Day, Laguna Bay). Reran the judge on ALL 506 script auto decisions (auto-recheck/).
