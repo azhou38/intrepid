@@ -2135,7 +2135,7 @@ const st = StyleSheet.create({
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
   // The panel's own gap (16) and the visit list's top padding (20) already sit between this row and the first visit card,
   // so the row takes some of that back.
-  myRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 4, marginTop: 6, marginBottom: -8 },
+  myRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 10, marginTop: 6, marginBottom: -8 },
   myRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
   myRatingNum: { marginLeft: -4, fontSize: 15, fontWeight: '700', color: '#6B7280', fontVariant: ['tabular-nums'] },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
