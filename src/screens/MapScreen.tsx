@@ -3030,17 +3030,10 @@ const destItems = useMemo((): DestItem[] =>
   }, [zoomedIntoDestIds, zoomedPastDefaultIds]);
   const hiddenDestIds = useStableSet(hiddenDestIdsRaw);
 
-  const stampFadeBaseZoom = useMemo(() => {
-    // Fade origin: the world-view boundary normally, or the selected country's own
-    // per-country threshold (see getCountryStampThreshold) — a geographically wide country
-    // (Australia, US...) needs a wider view than the flat world cutoff allows before its
-    // own stamps should appear. Only for a country selected on its own (or a back heading to one): with a destination or
-    // a spot selected the dots keep their usual thresholds, as with nothing selected. Taking the destination's country
-    // there kept dots up zooming out well past where they normally go.
-    const countryCode = !planDest && !selectedSpot ? planCountry?.countryCode : undefined;
-    const threshold = countryCode ? getCountryStampThreshold(countryCode) : WORLD_VIEW_LATDELTA;
-    return Math.max(0, latDeltaToZoom(threshold) - 0.35);
-  }, [planCountry, planDest, selectedSpot]);
+  // Fade origin: the world-view boundary, whatever is selected. A selected country used to start its own dots at a wider
+  // view (getCountryStampThreshold) and all on the first tier, so selecting it showed every one of its dots at once; they
+  // now come in rank by rank at the same zooms as with nothing selected.
+  const stampFadeBaseZoom = Math.max(0, latDeltaToZoom(WORLD_VIEW_LATDELTA) - 0.35);
   const STAMP_TIER_STEP = 0.6; // zoom levels between successive tiers' fade-ins
 
   // Highest tier currently switched on — a discrete step function of the camera zoom.
@@ -3071,10 +3064,6 @@ const destItems = useMemo((): DestItem[] =>
 
   const lastStampRef = useRef<{ sig: string; value: GeoJSON.FeatureCollection<GeoJSON.Point> } | null>(null);
   const stampGeoJSON = useMemo(() => {
-    // With a destination or a spot selected its country's dots fade with the zoom like any others (they used to stay up
-    // zooming out, all on the earliest tier); the selected country's head start is for a country selected on its own.
-    const selCountryCode = selectedSpot || planDest ? undefined : planCountry?.countryCode;
-
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const dest of DESTINATIONS) {
       const saved = visitIndex.isDestVisited(dest.id);
@@ -3086,9 +3075,7 @@ const destItems = useMemo((): DestItem[] =>
       // before it is hidden (handoff), and its dot showed through in that gap, before its spot pins came in.
       // A destination tapped as a dot (fromDot) keeps it: it has no photo pin on the way in (see nativeDestPins).
       if (destTapPlan && !destTapPlan.fromDot && destTapPlan.destId === dest.id && selectedDest?.id === dest.id) continue;
-      const tier = dest.countryCode === selCountryCode
-        ? 1
-        : Math.max(1, dest.rank - (saved ? 1 : 0));
+      const tier = Math.max(1, dest.rank - (saved ? 1 : 0));
       // Cull features more than one tier beyond the active one — purely so far-from-
       // visible dots can't swallow taps meant for the map. One tier of headroom stays
       // mounted (at opacity 0) so an incoming tier fades IN from an already-present
