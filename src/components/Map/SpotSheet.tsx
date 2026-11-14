@@ -2119,7 +2119,7 @@ const st = StyleSheet.create({
 
   // Content
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
-  yourRating: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 4, marginBottom: 14 },
+  yourRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 4, marginBottom: 14 },
   yourRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
   slideRow: { flexDirection: 'row', alignItems: 'flex-start', width: W * 2 },
