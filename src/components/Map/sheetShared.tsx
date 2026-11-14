@@ -1909,6 +1909,9 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   onRatingChange?: (v: number) => void;
 }) {
   const insets = useSafeAreaInsets();
+  // The rating row is the place's own rating, asked for only while it has none (decided when the editor opens, so rating it
+  // here doesn't take the row away mid-edit). Once rated, it is edited outside the visits (SpotSheet's "My rating").
+  const askRating = useRef(!ratingValue).current;
   const isLegacy = visit?.id === 'legacy';
   const defaultTitle = defaultTripTitle(entityName, noun, visit ? 0 : existingCount);
   const idRef = useRef(visit?.id ?? Date.now().toString());
@@ -2245,10 +2248,10 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
               </Pressable>
             </View>
 
-            {onRatingChange && (
+            {onRatingChange && askRating && (
               <View style={esS.section}>
                 <View style={esS.sectionHead}>
-                  <Text style={esS.sectionTitle}>Rating</Text>
+                  <Text style={esS.sectionTitle}>Rate this spot</Text>
                 </View>
                 <View style={esS.ratingRow}>
                   {/* onRatingChange itself writes straight to the caller's store (rating lives

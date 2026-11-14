@@ -15,7 +15,7 @@ import { ScrollView as GHScrollView, Gesture, GestureDetector } from 'react-nati
 // react-native and mixing the two default-export namings would be confusing.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, runOnUI,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
@@ -45,7 +45,7 @@ import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import { NO_PHOTO } from '../../data/imageOverrides';
 import {
-  VisitCardList, VisitModuleSheet, PhotoGalleryModal,
+  VisitCardList, VisitModuleSheet, PhotoGalleryModal, StarRating,
   useDeferredMount,
   useTabScrollMemory,
   usePanelShift,
@@ -1376,7 +1376,7 @@ isVisited ? (
                   switchTabRef.current('visit');
                 }}
               >
-                <Text style={[st.tabBtnTxt, activeTab === 'visit' && st.tabBtnTxtActive]}>My Visit</Text>
+                <TabLabel index={0} slide={tabSlideAnim}>My Visit</TabLabel>
               </Pressable>
               <View style={st.tabDivider} />
               <Pressable
@@ -1387,7 +1387,7 @@ isVisited ? (
                   switchTabRef.current('about');
                 }}
               >
-                <Text style={[st.tabBtnTxt, activeTab === 'about' && st.tabBtnTxtActive]}>About</Text>
+                <TabLabel index={1} slide={tabSlideAnim}>About</TabLabel>
               </Pressable>
               <Reanimated.View style={[st.tabIndicatorTrack, tabIndicatorLeft]}>
                 <View style={st.tabIndicator} />
@@ -1536,6 +1536,9 @@ isVisited ? (
                         photos, and notes — like a separate journal entry. Shared with
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
                         here (a spot has nothing beneath it to tag a visit with). */}
+                    {/* The spot's one rating, above its visits: it is the spot's, not any one visit's (the visit cards
+                        used to each show and edit it, so rating one visit changed them all). */}
+                    <MyRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
                       noun="Visit"
@@ -1543,7 +1546,6 @@ isVisited ? (
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}
-                      ratingValue={savedSpot?.rating}
                       hideSingleDayCount
                     />
                   </Reanimated.View>
@@ -1736,9 +1738,8 @@ isVisited ? (
           onClose={() => setEditingVisitModule(null)}
           // No selectorLabel/selectorItems — a spot has nothing beneath it to tag a visit with.
           onRemoveLegacy={() => unsaveSpot(activeSpot.id)}
-          // Rating lives outside the visits system (it's a per-spot attribute, not tied to any
-          // one trip) — rendered by VisitModuleSheet itself, right under Dates, rather than a
-          // separate always-visible card on the My Visit tab.
+          // The spot's one rating (not the visit's): edited in the My Visit tab's "My rating" row. The editor asks for it
+          // only while the spot has none, so logging a first visit can rate it in passing.
           ratingValue={savedSpot?.rating ?? 0}
           onRatingChange={r => updateSpot(activeSpot.id, { rating: r })}
           // Spots call these "visits", not "trips" — a spot is a single stop, not a whole
@@ -1896,6 +1897,49 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
     </>
   );
 }
+
+// A tab's label, its colour following the panels' slide (the selected one dark): it changes with the tap or swipe, not when
+// the tab state catches up once the slide has ended (the other sheets' TabLabel).
+function TabLabel({ index, slide, children }: { index: number; slide: SharedValue<number>; children: React.ReactNode }) {
+  const style = useAnimatedStyle(() => ({
+    color: interpolateColor(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], ['#9CA3AF', '#111827', '#9CA3AF']),
+  }));
+  return <Reanimated.Text style={[st.tabBtnTxt, style]} numberOfLines={1}>{children}</Reanimated.Text>;
+}
+
+// A spot's "My rating" row (My Visit). The stars follow a tap at once, from their own state: written straight to the
+// store, a tap re-rendered the whole spot sheet (and everything else reading saved spots) before the stars could change,
+// which read as slow. The store gets the rating a moment later, once taps have stopped.
+const RATING_SAVE_MS = 400;
+const MyRating = React.memo(function MyRating({ spotId, value }: { spotId: string; value: number }) {
+  const updateSpot = useStore(s => s.updateSpot);
+  const [shown, setShown] = useState(value);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingRef = useRef<{ spotId: string; rating: number } | null>(null);
+  const flush = useCallback(() => {
+    if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
+    const p = pendingRef.current;
+    pendingRef.current = null;
+    if (p) updateSpot(p.spotId, { rating: p.rating });
+  }, [updateSpot]);
+  // Another spot, or a rating changed elsewhere (the visit editor): show it, saving any rating still pending first.
+  useEffect(() => { if (!pendingRef.current) setShown(value); }, [value]);
+  useEffect(() => { flush(); setShown(value); }, [spotId]);   // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => flush, [flush]);
+  const onChange = useCallback((r: number) => {
+    setShown(r);
+    pendingRef.current = { spotId, rating: r };
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(flush, RATING_SAVE_MS);
+  }, [spotId, flush]);
+  return (
+    <View style={st.myRating}>
+      <Text style={st.myRatingLabel}>My rating</Text>
+      <StarRating value={shown} size={22} onChange={onChange} />
+      {shown > 0 && <Text style={st.myRatingNum}>{shown}</Text>}
+    </View>
+  );
+});
 
 const st = StyleSheet.create({
   backdrop: { ...StyleSheet.absoluteFill, zIndex: 210, elevation: 210 } as any,
@@ -2077,7 +2121,6 @@ const st = StyleSheet.create({
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
-  tabBtnTxtActive: { color: '#111827' },
   // Sliding underline — outer track keeps the existing per-tab left/width positioning; the
   // visible bar itself is a narrower, centered child so it doesn't span the full tab width.
   tabIndicatorTrack: { position: 'absolute', bottom: 0, width: '50%', alignItems: 'center' },
@@ -2085,6 +2128,11 @@ const st = StyleSheet.create({
 
   // Content
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
+  // The panel's own gap (16) and the visit list's top padding (20) already sit between this row and the first visit card,
+  // so the row takes some of that back.
+  myRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 4, marginTop: 6, marginBottom: -8 },
+  myRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
+  myRatingNum: { marginLeft: -4, fontSize: 15, fontWeight: '700', color: '#6B7280', fontVariant: ['tabular-nums'] },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
   slideRow: { flexDirection: 'row', alignItems: 'flex-start', width: W * 2 },
   slidePanel: { width: W, paddingHorizontal: 16, gap: 16 },
