@@ -244,6 +244,7 @@ export default function ProfileScreen() {
   const [exploredView, setExploredView] = useState<ExploredView>('grid');
   const savedSpots = useStore(s => s.savedSpots);
   const savedDests = useStore(s => s.savedDestinations);
+  const savedCountries = useStore(s => s.savedCountries);
   const sortKeys = useMemo(() => {
     // Each place's most recent visit (the one that ended last): its last day sorts the date sort (spotDate, destDate), and
     // its start and end are what the tiles and rows show (spotVisit, destVisit; see visitLabel).
@@ -377,6 +378,14 @@ export default function ProfileScreen() {
       if (code && rs) ranges.set(code, [...(ranges.get(code) ?? []), ...rs]);
     };
     for (const d of visitedDests) { later(d.countryCode, sortKeys.destVisit.get(d.id)); add(d.countryCode, sortKeys.destRanges.get(d.id)); }
+    // The country's own visits (its sheet's My Visit), as well as its destinations' and spots'.
+    for (const [code, cv] of Object.entries(savedCountries)) {
+      const own: { start: string; end: string }[] = [];
+      if (cv.visitDate) own.push({ start: cv.visitDate, end: cv.visitDate });
+      for (const v of cv.visits ?? []) if (v.startDate) own.push({ start: v.startDate, end: v.endDate && v.endDate > v.startDate ? v.endDate : v.startDate });
+      for (const v of own) later(code, v);
+      add(code, own);
+    }
     const rate = new Map<string, { t: number; n: number }>();
     for (const sp of visitedSpots) {
       const code = spotCountryCode(sp);
@@ -387,7 +396,7 @@ export default function ProfileScreen() {
     }
     const rating = (code: string) => { const a = rate.get(code); return a && a.n ? a.t / a.n : 0; };
     return { visit, rating, ranges };
-  }, [visitedDests, visitedSpots, sortKeys, savedSpots]);
+  }, [visitedDests, visitedSpots, sortKeys, savedSpots, savedCountries]);
   const exploredCountries = useMemo(
     () => sortBy(
       stats.visitedCountryCodes.map(code => ({ id: code, name: COUNTRY_NAME.get(code) ?? code })),
@@ -1026,7 +1035,8 @@ function TileFooter({ name, sub, more, rating }: { name: string; sub: string; mo
         </View>
       ) : !!sub && (
         <View style={styles.tileSubRow}>
-          <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>
+          {/* Wraps rather than cutting off: a visit's whole date range shows ("28 Feb – 4 Mar 2025"), on two lines if need be. */}
+          <Text style={styles.tileSub}>{sub}</Text>
         </View>
       )}
       {!!more && <Text style={styles.tileMore} numberOfLines={1}>{more}</Text>}
@@ -1520,8 +1530,9 @@ const styles = StyleSheet.create({
   rankNameRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
   rankSubRow:  { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
   rankSub:     { flexShrink: 1, fontSize: 11, color: '#9CA3AF' },
-  rankDateCol: { marginLeft: 'auto', flexShrink: 0, alignItems: 'flex-end' },
-  rankDateTxt: { fontSize: 12, fontWeight: '600', color: '#6B7280' },
+  // A long date range wraps onto a second line (right-aligned) rather than squeezing the name.
+  rankDateCol: { marginLeft: 'auto', paddingLeft: 8, flexShrink: 0, maxWidth: '42%', alignItems: 'flex-end' },
+  rankDateTxt: { fontSize: 12, fontWeight: '600', color: '#6B7280', textAlign: 'right' },
   rankMore:    { marginTop: 1, fontSize: 11, fontWeight: '500', color: '#9CA3AF' },
   countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
   dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
