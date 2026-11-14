@@ -107,7 +107,7 @@ import { requestShadowSync } from '../utils/shadowSync';
 import { sheetInMotion } from '../utils/sheetMotion';
 import type { Destination, CountryCluster } from '../types';
 import type GeoJSON from 'geojson';
-import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity } from '../utils/countryBounds';
+import { getCountryRegion, getCountryBounds, getCountryCenter, getCountryPopularity, getCountryOutline } from '../utils/countryBounds';
 import { DESTINATIONS } from '../data/destinations';
 import spotDistricts from '../data/spotDistricts.json';
 import districtTypes from '../data/districtTypes.json';
@@ -4182,7 +4182,7 @@ const destItems = useMemo((): DestItem[] =>
         return;
       }
 
-      const topBound = 0;                     // the very top of the screen
+      const topBound = insets.top + 8;        // below the status bar: a tall country's top went under it (New Zealand's)
       const bottomBound = framing === 'full'
         ? Math.max(40, mapViewH - PEEK_STRIP_H) // top of the peek strip — all the visible map
         : H / 2;                                // matches CountrySheet's own COLLAPSED_Y
@@ -4206,6 +4206,7 @@ const destItems = useMemo((): DestItem[] =>
           // Fields added by the @rnmapbox/maps patch (not in its types): frame the bounds inside this screen
           // window at `shrink` of its size. See the block comment above.
           mode: 'fitWindow',
+          points: getCountryOutline(cluster.countryCode) ?? undefined,
           windowTop: topBound,
           windowBottom: bottomBound,
           shrink: SHRINK,
@@ -4219,7 +4220,7 @@ const destItems = useMemo((): DestItem[] =>
       // once FIT_MS has elapsed.
       countryCacheArmRef.current = { code: cluster.countryCode, key: cacheKey, at: Date.now() + FIT_MS };
     });
-  }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove, afterSheetSlideIn]);
+  }, [fitCoords, cancelCountryCapture, beginProgrammaticCameraMove, afterSheetSlideIn, insets.top]);
 
   // The zoom fitCountryDefaultView's half-screen ('topHalf') framing lands on: the camera it captured last time, or else an
   // estimate from the country's bounds (the same 90% fit, in mercator). Only a look-ahead target for the pin planning while
