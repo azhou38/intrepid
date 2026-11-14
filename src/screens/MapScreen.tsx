@@ -1344,6 +1344,7 @@ const SPOT_CAMERA_DELAY_MS = 100 + SPOT_SHEET_SLIDE_IN_START_MS + Math.round(SPO
 const SHEET_SLIDE_IN_MS = 340;   // the sheets' slide-in (40 ms start delay + 280 ms) plus a frame; see afterSheetSlideIn
 const PIN_IMAGE_HOLD_MS = 450;    // see pinImagesHoldUntilRef: no new pin images while a sheet slides in
 const DEST_TAP_HANDOFF_LEAD = 1.0;   // see destTapPlan: how near its default zoom the camera switches a tapped destination to its spots
+const SPOT_FLIGHT_MAX_MS = 6000;   // see spotFlightDestId: its safety net, should the camera never get there
 const DEST_TAP_PLAN_MAX_MS = 3000;   // its safety net, should the flight never get there
 const DEST_TAP_PLAN_IDLE_MAX_MS = 10000;   // how long a landed flight's plan waits for the map idle before the safety net ends it anyway
 const COUNTRY_BACK_SLIDE_MS = 400;   // "← Country": the country sheet's slide-in, a little slower than the usual 280 ms
@@ -2433,6 +2434,25 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // Whether a destination's photo pin is on screen this render (promoted, and its tier on at the live zoom).
   const destPhotoShownRef = useRef<(id: string) => boolean>(() => false);
   const [destTapPlan, setDestTapPlan] = useState<DestTapPlan | null>(null);
+  // A spot selected from further out than its destination's default view (from search, say): its destination's pin and dot
+  // stay off the map while the camera flies in. Selected, the destination's pin is drawn at every zoom, so it came up at the
+  // start of the flight and went again once the camera passed the destination's default view, where its spots take over.
+  // Ends once the camera is past that view (the map idle), at the user's own gesture, or after SPOT_FLIGHT_MAX_MS.
+  const [spotFlightDestId, setSpotFlightDestId] = useState<string | null>(null);
+  const spotFlightDestIdRef = useRef<string | null>(null);
+  const spotFlightTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const endSpotFlight = useCallback(() => {
+    if (spotFlightTimerRef.current) { clearTimeout(spotFlightTimerRef.current); spotFlightTimerRef.current = null; }
+    if (!spotFlightDestIdRef.current) return;
+    spotFlightDestIdRef.current = null;
+    setSpotFlightDestId(null);
+  }, []);
+  const beginSpotFlight = useCallback((destId: string) => {
+    spotFlightDestIdRef.current = destId;
+    setSpotFlightDestId(destId);
+    if (spotFlightTimerRef.current) clearTimeout(spotFlightTimerRef.current);
+    spotFlightTimerRef.current = setTimeout(endSpotFlight, SPOT_FLIGHT_MAX_MS);
+  }, [endSpotFlight]);
   const destTapPlanRef = useRef<DestTapPlan | null>(null);
   const destTapPlanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const endDestTapPlan = useCallback(() => {
@@ -3063,6 +3083,9 @@ const destItems = useMemo((): DestItem[] =>
   }
 
   const lastStampRef = useRef<{ sig: string; value: GeoJSON.FeatureCollection<GeoJSON.Point> } | null>(null);
+  // The destination kept off the map while a selected spot's camera flies in (spotFlightDestId): only while that spot,
+  // still selected, belongs to it.
+  const spotFlightHideId = spotFlightDestId && selectedSpot && spotDestination(selectedSpot)?.id === spotFlightDestId ? spotFlightDestId : null;
   const stampGeoJSON = useMemo(() => {
     const features: GeoJSON.Feature<GeoJSON.Point>[] = [];
     for (const dest of DESTINATIONS) {
@@ -3071,6 +3094,7 @@ const destItems = useMemo((): DestItem[] =>
       // represent it; see zoomedIntoDestIds).
       if (hiddenDestIds.has(dest.id)) continue;
       if (pendingRevealRef.current.has(dest.id)) continue;   // its photo pin is about to appear — no dot first
+      if (dest.id === spotFlightHideId) continue;   // a selected spot's destination while the camera flies in (spotFlightDestId)
       // A tapped destination flying in (destTapPlan): no dot from the tap. Its photo pin fades out on the way in, a little
       // before it is hidden (handoff), and its dot showed through in that gap, before its spot pins came in.
       // A destination tapped as a dot (fromDot) keeps it: it has no photo pin on the way in (see nativeDestPins).
@@ -3100,7 +3124,7 @@ const destItems = useMemo((): DestItem[] =>
     const value = { type: 'FeatureCollection' as const, features };
     lastStampRef.current = { sig, value };
     return value;
-  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot, destTapPlan, selectedDest]);
+  }, [savedDestinations, visitIndex, planCountry, planDest, activeStampTier, hiddenDestIds, revealTick, selectedSpot, destTapPlan, selectedDest, spotFlightHideId]);
   const stampGeoJSONRef = useRef(stampGeoJSON);
   stampGeoJSONRef.current = stampGeoJSON;
 
@@ -4584,6 +4608,8 @@ const destItems = useMemo((): DestItem[] =>
     // Keep the parent destination selected so the country/destination breadcrumb stays present. A standalone spot has
     // none to select: it drops whichever destination was open (see the origin above) and a selected country that isn't
     // its own.
+    if (dest && !isPastDestDefaultZoom(dest.id, camZoomRef.current)) beginSpotFlight(dest.id);
+    else endSpotFlight();
     if (dest) {
       if (selectedDestRef.current?.id !== dest.id) {
         dropCountryIfForeign(dest.country);
@@ -5457,6 +5483,7 @@ const destItems = useMemo((): DestItem[] =>
     if (isGestureActive && !wasMapGestureActiveRef.current) {
       releaseHeldSelection();   // the user took over the camera: don't keep planning around the closed selection
       endDestTapPlan();
+      endSpotFlight();
       releaseSpotCloseTarget();
       if (showMapMenuRef.current) { showMapMenuRef.current = false; setShowMapMenu(false); }
       // The user grabbed the map while a destination's initial fly-to was still in flight —
@@ -5701,6 +5728,7 @@ const destItems = useMemo((): DestItem[] =>
     if (cameraAfterPinsRef.current && Date.now() - cameraAfterPinsRef.current.since >= CAMERA_AFTER_PINS_MIN_MS) fireCameraAfterPins();
     // A destination tap's flight has landed (not an idle from before it got going): the live zoom takes over.
     if (destTapPlanRef.current && state.properties.zoom >= destTapPlanRef.current.target - ZOOM_EPSILON) endDestTapPlan();
+    if (spotFlightDestIdRef.current && isPastDestDefaultZoom(spotFlightDestIdRef.current, state.properties.zoom)) endSpotFlight();
     // A close's zoom-out has settled: let the pin/pill planning drop the old selection. Not a landed plan, which stands
     // until the user's next move (see planLandedRef).
     if (!planLandedRef.current) {
@@ -6132,7 +6160,7 @@ const destItems = useMemo((): DestItem[] =>
     const handoffIds = new Set(joinedHandoffDests.map(h => h.dest.id));
     // A destination tapped as a dot has no photo pin (nor name) until its spot pins take over (see DestTapPlan's fromDot).
     const tapDot = destTapPlan?.fromDot && selectedDest?.id === destTapPlan.destId ? destTapPlan.destId : null;
-    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...joinedHandoffDests.map(h => h.dest)].filter(d => d.id !== tapDot);
+    const drawn = [...promotedDests.filter(d => !handoffIds.has(d.id)), ...joinedHandoffDests.map(h => h.dest)].filter(d => d.id !== tapDot && d.id !== spotFlightHideId);
     for (const dest of drawn) {
       const visited = visitIndex.isDestVisited(dest.id);
       const badge = visited ? (visitedSpotCountByDest[dest.id] ?? 0) : 0;
@@ -6165,7 +6193,7 @@ const destItems = useMemo((): DestItem[] =>
     }
     if (added) destPinSpecListRef.current = [...specs.values()];
     return { shape: { type: 'FeatureCollection' as const, features }, specs: destPinSpecListRef.current };
-  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget, destTapPlan, selectedDest]);
+  }, [promotedDests, joinedHandoffDests, visitIndex, visitedSpotCountByDest, destPhotoPlan, planDest, stablePhotoIds, backPlan, closeTarget, destTapPlan, selectedDest, spotFlightHideId]);
 
   // Which spot pin a tap is on. The box the map searches (spotPins' hitbox) is generous so the small pins, about 11 pt wide,
   // are easy to hit, but its first feature was whatever is drawn on top, so a photo pin anywhere in the box won over the
