@@ -7383,21 +7383,21 @@ const styles = StyleSheet.create({
   },
   countryPillCardGlow: {
     borderWidth: 1.5, borderColor: 'rgba(22,163,74,0.85)',
-    shadowColor: '#16A34A', shadowOpacity: 0.7, shadowRadius: 10,
-    shadowOffset: { width: 6, height: 0 },
+    shadowColor: '#16A34A', shadowOpacity: 0.45, shadowRadius: 5,
+    shadowOffset: { width: 3, height: 0 },
   },
   countryPillCircleGlow: {
-    shadowColor: '#16A34A', shadowOpacity: 0.7, shadowRadius: 10,
-    shadowOffset: { width: -6, height: 0 },
+    shadowColor: '#16A34A', shadowOpacity: 0.45, shadowRadius: 5,
+    shadowOffset: { width: -3, height: 0 },
   },
   // Selected but unvisited: the same split glow as above, white (the gray border comes from countryPillCardBorderGray).
   countryPillCardGlowWhite: {
-    shadowColor: '#FFFFFF', shadowOpacity: 0.9, shadowRadius: 10,
-    shadowOffset: { width: 6, height: 0 },
+    shadowColor: '#FFFFFF', shadowOpacity: 0.6, shadowRadius: 5,
+    shadowOffset: { width: 3, height: 0 },
   },
   countryPillCircleGlowWhite: {
-    shadowColor: '#FFFFFF', shadowOpacity: 0.9, shadowRadius: 10,
-    shadowOffset: { width: -6, height: 0 },
+    shadowColor: '#FFFFFF', shadowOpacity: 0.6, shadowRadius: 5,
+    shadowOffset: { width: -3, height: 0 },
   },
   // Same border color as countryPillCardGlow, minus the shadow — used for every OTHER
   // visited country's pill, always (the selected country keeps the full glow above instead).
