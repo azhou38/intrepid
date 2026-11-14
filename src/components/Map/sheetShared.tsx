@@ -1843,7 +1843,8 @@ export function StarRating({ value, onChange, size = 30 }: {
   return (
     <View style={{ flexDirection: 'row', gap: 6 }}>
       {[1, 2, 3, 4, 5].map(n => (
-        <Pressable key={n} disabled={!onChange} onPress={() => onChange?.(n)} hitSlop={6}>
+        // Tapping the star already chosen clears the rating (0: not rated), the usual way to take a rating back.
+        <Pressable key={n} disabled={!onChange} onPress={() => onChange?.(n === value ? 0 : n)} hitSlop={6}>
           <Star
             size={size}
             color={n <= value ? color : '#D1D5DB'}

@@ -1743,7 +1743,7 @@ isVisited ? (
           // The spot's one rating (not the visit's): edited in the My Visit tab's "My rating" row. The editor asks for it
           // only while the spot has none, so logging a first visit can rate it in passing.
           ratingValue={savedSpot?.rating ?? 0}
-          onRatingChange={r => updateSpot(activeSpot.id, { rating: r })}
+          onRatingChange={r => updateSpot(activeSpot.id, { rating: r || undefined })}
           // Spots call these "visits", not "trips" — a spot is a single stop, not a whole
           // journey. Also hides the "1 day" subtitle for a same-day visit (still shows a real
           // multi-day count, e.g. camping).
@@ -1922,7 +1922,7 @@ const MyRating = React.memo(function MyRating({ spotId, value }: { spotId: strin
     if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
     const p = pendingRef.current;
     pendingRef.current = null;
-    if (p) updateSpot(p.spotId, { rating: p.rating });
+    if (p) updateSpot(p.spotId, { rating: p.rating || undefined });   // 0: cleared (StarRating), stored as no rating
   }, [updateSpot]);
   // Another spot, or a rating changed elsewhere (the visit editor): show it, saving any rating still pending first.
   useEffect(() => { if (!pendingRef.current) setShown(value); }, [value]);
