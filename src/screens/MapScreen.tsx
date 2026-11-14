@@ -4954,14 +4954,6 @@ const destItems = useMemo((): DestItem[] =>
     }, COUNTRY_MOUNT_SLIDE_DELAY_MS + COUNTRY_BACK_SLIDE_MS + 20);
   }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView, runCameraAfterPins]);
 
-  // Destination close/back, provenance-routed: drilled down from the country → back up to it;
-  // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
-  // destination's own zoom level instead, no fabricated country sheet in between.
-  const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
-    if (destOrigin === 'country') handleCloseDestinationSheetToCountry(toCollapsed);
-    else handleCloseDestinationToCountryView();
-  }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView]);
-
   // The breadcrumb's own back-return while a country (and no destination) is selected: just
   // re-centre the camera, leaving the sheet exactly where it is. So the framing has to follow
   // the sheet's CURRENT snap rather than assume one — in practice that's bottom-screen, since
@@ -5166,15 +5158,24 @@ const destItems = useMemo((): DestItem[] =>
     setTimeout(() => { sheetExitingRef.current = false; action(); }, SHEET_EXIT_MS + 20);
   }, []);
 
-  // Opening a spot from a destination's (or a country's) sheet, and "← Destination" back from a spot's: the open sheet slides all the way
-  // off first and only then is the next one mounted, to rise in its place. Swapping them in one go (the old sheet sliding
-  // down as the new one rose) put the new sheet's mount, a few hundred ms of work, under both slides, and they stuttered.
-  // A sheet at full screen has no slide off (closeWithSheetExit runs the action at once).
+  // Destination close/back, provenance-routed: drilled down from the country → back up to it;
+  // entered laterally (map pin tap with nothing selected, or search) → zoom out to half the
+  // destination's own zoom level instead, no fabricated country sheet in between.
+  const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
+    // Back up to the country's sheet: the destination's slides all the way off first, then the country's rises (see openSpot).
+    if (destOrigin === 'country') closeWithSheetExit(() => handleCloseDestinationSheetToCountry(toCollapsed), true);
+    else handleCloseDestinationToCountryView();
+  }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView, closeWithSheetExit]);
+
+  // Sheet transitions by direction. Going IN a level (country -> destination, destination or country -> spot) is the quick
+  // swap: the old sheet slides down as the new one rises (see the sheet swaps below). Going back OUT (spot -> destination,
+  // destination -> country) is sequential: the open sheet slides all the way off first (closeWithSheetExit), and only then
+  // is the parent's sheet mounted, to rise from the bottom in its place.
   const openSpot = useCallback((spot: Spot) => {
-    // A sheet at full screen ("Map view" from a destination's spot grid) slides down too, rather than vanishing as the spot
-    // sheet rises (it has no resting pose there, so sheetPose is null).
+    // Except from full screen ("Map view" from a destination's spot grid), which has no resting pose for the swap to slide
+    // from (sheetPose is null): the sheet slides down first, rather than vanishing as the spot sheet rises.
     const sheetUp = sheetKindRef.current === 'dest' || sheetKindRef.current === 'country';
-    if (sheetUp && (sheetPose.get() !== null || sheetSnapStateRef.current === 'full') && !isMapInteracting()) {
+    if (sheetUp && sheetSnapStateRef.current === 'full' && !isMapInteracting()) {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);   // at the tap, not after the slide off
       closeWithSheetExit(() => handleSpotPress(spot, true), true);
     } else handleSpotPress(spot);
@@ -5189,8 +5190,9 @@ const destItems = useMemo((): DestItem[] =>
     if (pressBlocked()) return;   // a pinch finger lifting over the pill is not a press
     if (sheetExitingRef.current) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    if (selectedSpot) { if (selectedDest) closeWithSheetExit(() => handleCloseSpotToDestination()); }
-    else if (selectedDest) handleCloseDestinationSheetToCountry();
+    // Going out a level: the sheet slides all the way off, then the parent's rises (see openSpot).
+    if (selectedSpot) { if (selectedDest) closeWithSheetExit(() => handleCloseSpotToDestination(), true); }
+    else if (selectedDest) closeWithSheetExit(() => handleCloseDestinationSheetToCountry(), true);
   }, [selectedSpot, selectedDest, handleCloseSpotToDestination, handleCloseDestinationSheetToCountry, closeWithSheetExit]);
   // The X pill: close to the map (the sheet slides off first, then the camera steps back; see the *View closes).
   // The zoom an X close will fly out to (the same rules as the close handlers), or null where the camera stays put.
