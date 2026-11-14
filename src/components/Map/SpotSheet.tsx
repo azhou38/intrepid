@@ -45,7 +45,7 @@ import { sheetPose } from './sheetPose';
 import EntityPhoto from './EntityPhoto';
 import { NO_PHOTO } from '../../data/imageOverrides';
 import {
-  VisitCardList, VisitModuleSheet, PhotoGalleryModal,
+  VisitCardList, VisitModuleSheet, PhotoGalleryModal, StarRating,
   useDeferredMount,
   useTabScrollMemory,
   usePanelShift,
@@ -1536,6 +1536,12 @@ isVisited ? (
                         photos, and notes — like a separate journal entry. Shared with
                         DestinationSheet/CountrySheet — see VisitCardList. No selector section
                         here (a spot has nothing beneath it to tag a visit with). */}
+                    {/* The spot's one rating, above its visits: it is the spot's, not any one visit's (the visit cards
+                        used to each show and edit it, so rating one visit changed them all). */}
+                    <View style={st.yourRating}>
+                      <Text style={st.yourRatingLabel}>Your rating</Text>
+                      <StarRating value={savedSpot?.rating ?? 0} size={22} onChange={r => updateSpot(activeSpot.id, { rating: r })} />
+                    </View>
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
                       noun="Visit"
@@ -1543,7 +1549,6 @@ isVisited ? (
                       onEditVisit={setEditingVisitModule}
                       onNewVisit={() => setEditingVisitModule('new')}
                       onOpenGallery={setGalleryVisit}
-                      ratingValue={savedSpot?.rating}
                       hideSingleDayCount
                     />
                   </Reanimated.View>
@@ -1736,9 +1741,8 @@ isVisited ? (
           onClose={() => setEditingVisitModule(null)}
           // No selectorLabel/selectorItems — a spot has nothing beneath it to tag a visit with.
           onRemoveLegacy={() => unsaveSpot(activeSpot.id)}
-          // Rating lives outside the visits system (it's a per-spot attribute, not tied to any
-          // one trip) — rendered by VisitModuleSheet itself, right under Dates, rather than a
-          // separate always-visible card on the My Visit tab.
+          // The spot's one rating (not the visit's): edited in the My Visit tab's "Your rating" row. The editor asks for it
+          // only while the spot has none, so logging a first visit can rate it in passing.
           ratingValue={savedSpot?.rating ?? 0}
           onRatingChange={r => updateSpot(activeSpot.id, { rating: r })}
           // Spots call these "visits", not "trips" — a spot is a single stop, not a whole
@@ -2085,6 +2089,8 @@ const st = StyleSheet.create({
 
   // Content
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
+  yourRating: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 4, marginBottom: 14 },
+  yourRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
   slideRow: { flexDirection: 'row', alignItems: 'flex-start', width: W * 2 },
   slidePanel: { width: W, paddingHorizontal: 16, gap: 16 },
