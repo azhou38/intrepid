@@ -1927,6 +1927,7 @@ const YourRating = React.memo(function YourRating({ spotId, value }: { spotId: s
     <View style={st.yourRating}>
       <Text style={st.yourRatingLabel}>Your rating</Text>
       <StarRating value={shown} size={22} onChange={onChange} />
+      {shown > 0 && <Text style={st.yourRatingNum}>{shown}</Text>}
     </View>
   );
 });
@@ -2123,6 +2124,7 @@ const st = StyleSheet.create({
   // so the row takes some of that back.
   yourRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 4, marginBottom: -8 },
   yourRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
+  yourRatingNum: { marginLeft: -4, fontSize: 15, fontWeight: '700', color: '#6B7280', fontVariant: ['tabular-nums'] },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
   slideRow: { flexDirection: 'row', alignItems: 'flex-start', width: W * 2 },
   slidePanel: { width: W, paddingHorizontal: 16, gap: 16 },
