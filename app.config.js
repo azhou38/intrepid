@@ -50,7 +50,9 @@ module.exports = ({ config }) => ({
           locationWhenInUsePermission: 'Intrepid needs location to show your position on the map.',
         },
       ],
-      'expo-font',
+      // The serif embedded in the app itself, so the loading screen's wordmark has it from the first frame (useFonts in
+      // App.tsx loads it at runtime, which can finish after the loading screen is up). Needs a native rebuild.
+      ['expo-font', { fonts: ['node_modules/@expo-google-fonts/playfair-display/700Bold/PlayfairDisplay_700Bold.ttf'] }],
       'expo-status-bar',
     ],
     extra: {

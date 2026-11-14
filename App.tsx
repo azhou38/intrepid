@@ -53,9 +53,10 @@ const ICON_SIZE = 22;
 // long went from opaque to gone in a single frame. A stall now holds the fade where it is.
 const LOADING_FADE_MS = 300;
 const LOADING_FADE_MAX_STEP_MS = 34;
-// fontReady: the serif has registered (or its wait has run out). The wordmark is drawn only then: this screen shows before
-// the font has loaded, and text drawn before a font registers uses the system font and keeps it (nothing re-renders it), so
-// on a slow font load the wordmark came up, and stayed, in sans.
+// fontReady: the serif has registered at runtime (or its wait has run out). The wordmark uses the copy embedded in the app
+// (app.config.js), there from the first frame: waiting for the runtime load instead held the wordmark back on a slow start.
+// It is drawn again once fontReady is set, which puts it right should a build without the embedded copy have drawn it in
+// the system font (text drawn before its font registers keeps the fallback).
 function AppLoadingScreen({ visible, fontReady, onFadeOutComplete }: { visible: boolean; fontReady: boolean; onFadeOutComplete: () => void }) {
   const progress = useSharedValue(0);
   // Runs until the parent unmounts this screen (onFadeOutComplete).
@@ -78,7 +79,7 @@ function AppLoadingScreen({ visible, fontReady, onFadeOutComplete }: { visible: 
       style={[StyleSheet.absoluteFill, styles.loadingScreen, style]}
     >
       <Image source={require('./assets/icon.png')} style={styles.loadingLogo} resizeMode="contain" />
-      <Text key={fontReady ? 'serif' : 'wait'} style={[styles.loadingWordmark, !fontReady && { opacity: 0 }]}>Intrepid</Text>
+      <Text key={fontReady ? 'serif' : 'wait'} style={styles.loadingWordmark}>Intrepid</Text>
     </Reanimated.View>
   );
 }
@@ -195,5 +196,6 @@ const styles = StyleSheet.create({
   tabLabel: { fontSize: 11, fontWeight: '600', marginTop: 2 },
   loadingScreen: { backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' },
   loadingLogo: { width: 96, height: 96, borderRadius: 22, marginBottom: 16 },
-  loadingWordmark: { fontFamily: 'PlayfairDisplay_700Bold', fontSize: 28, color: '#111827', letterSpacing: 0.5 },
+  // The embedded font's own name on iOS (its PostScript name); Android names an embedded font after its file.
+  loadingWordmark: { fontFamily: Platform.OS === 'ios' ? 'PlayfairDisplay-Bold' : 'PlayfairDisplay_700Bold', fontSize: 28, color: '#111827', letterSpacing: 0.5 },
 });
