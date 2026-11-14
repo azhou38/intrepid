@@ -1936,7 +1936,7 @@ const MyRating = React.memo(function MyRating({ spotId, value }: { spotId: strin
   }, [spotId, flush]);
   return (
     <View style={st.myRating}>
-      <Text style={st.myRatingLabel}>My rating</Text>
+      <Text style={st.myRatingLabel}>My Rating</Text>
       <StarRating value={shown} size={22} onChange={onChange} />
       {shown > 0 && <Text style={st.myRatingNum}>{shown}</Text>}
     </View>
