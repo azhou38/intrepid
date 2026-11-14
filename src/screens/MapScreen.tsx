@@ -4893,7 +4893,28 @@ const destItems = useMemo((): DestItem[] =>
   // fires from a swipe-down while the destination sheet was itself collapsed) lands the
   // country sheet in its own collapsed view too. Only ever called for deliberate upward
   // navigation — the provenance router below decides whether "close" means this.
-  const handleCloseDestinationSheetToCountry = useCallback((toCollapsed?: boolean) => {
+  // The country cluster a destination belongs to, built afresh (CountrySheet remounts from it on a back to the country).
+  const countryClusterOf = useCallback((dest: Destination): CountryCluster => {
+    const dests  = DESTINATIONS.filter(d => d.country === dest.country);
+    const center = getCountryCenter(dest.countryCode);
+    return {
+      country:      dest.country,
+      countryCode:  dest.countryCode,
+      latitude:     center?.latitude  ?? dest.coordinates.latitude,
+      longitude:    center?.longitude ?? dest.coordinates.longitude,
+      count:        dests.length,
+      minRank:      Math.min(...dests.map(d => d.rank)),
+      visitedCount: dests.filter(d => visitIndex.isDestVisited(d.id)).length,
+    };
+  }, [visitIndex]);
+  // "← Country"'s zoom-out, started at the tap (cameraStarted below), while the destination's sheet slides off.
+  const startCountryBackCamera = useCallback((): boolean => {
+    const dest = selectedDestRef.current;
+    if (!dest) return false;
+    fitCountryDefaultView(countryClusterOf(dest), 'flyTo', 'topHalf');
+    return true;
+  }, [fitCountryDefaultView, countryClusterOf]);
+  const handleCloseDestinationSheetToCountry = useCallback((toCollapsed?: boolean, opts?: { cameraStarted?: boolean }) => {
     if (!selectedDest) return;
     // Start the destination sheet's slide off now, on the UI thread, as an X does, rather than when the swap's render
     // commits: that render (the country sheet mounting) held the slide, and with it the whole response to the tap, back.
@@ -4904,29 +4925,18 @@ const destItems = useMemo((): DestItem[] =>
     if (toCollapsed) setCountryInitialSnap('collapsed');
 
     // Rebuild the country cluster so CountrySheet can remount
-    const dests  = DESTINATIONS.filter(d => d.country === selectedDest.country);
-    const center = getCountryCenter(selectedDest.countryCode);
-    const cluster: CountryCluster = {
-      country:      selectedDest.country,
-      countryCode:  selectedDest.countryCode,
-      latitude:     center?.latitude  ?? selectedDest.coordinates.latitude,
-      longitude:    center?.longitude ?? selectedDest.coordinates.longitude,
-      count:        dests.length,
-      minRank:      Math.min(...dests.map(d => d.rank)),
-      visitedCount: dests.filter(d => visitIndex.isDestVisited(d.id)).length,
-    };
+    const cluster = countryClusterOf(selectedDest);
     // handleCountryPress clears selectedDest/mapState/zoomedIntoDestination and calls
     // fitCoords. 'flyTo' — a destination zooming back out to its full country's bounds is
     // the same big-pan/deep-zoom combination pure easeTo reads badly for (see
     // animateCamera's own comment on the equivalent zoom-IN case). Always lands on the
     // country's default view, however far out the user has zoomed — this is deliberate upward
     // navigation ("‹ Country"), not the bare-X close isZoomedOutBeyond's stay-put rule is for.
-    // Plan the pins at the country's view from the tap, as an X close does (see beginBackPlan).
-    const target = countryTargetZoom(cluster);
-    if (target !== null) beginBackPlan(target, BACK_CAMERA_DELAY_MS + 500);
-    // The camera starts with the sheet's slide (leaveEarlySV above; just after, once the map has taken the new pins: see
-    // runCameraAfterPins), as an X close's does (startXCloseCamera), not
-    // once the swap's render commits: that render (the country sheet mounting) took ~0.4 s on the device, a still map
+    // No plan at the country's view from the tap (beginBackPlan, as an X close does): the pins follow the camera as it
+    // zooms out, the destination's spot pins leaving and its pin coming back each at its own zoom. Planned ahead, they all
+    // switched at the tap, before the camera moved.
+    // The camera starts at the tap (startCountryBackCamera, before the sheet's slide off), as an X close's does
+    // (startXCloseCamera), not once the swap's render commits: that render (the country sheet mounting) took ~0.4 s on the device, a still map
     // between the sheet leaving and the zoom. While it renders the camera zooms out over the old plan's pins, which every
     // pin layer gates natively by zoom (constant min zooms, see spotGatesOff / planTier), so they leave as the zoom passes
     // their gates; the country's plan lands with the render. (It used to wait for the swap because the pins were on-screen
@@ -4941,7 +4951,7 @@ const destItems = useMemo((): DestItem[] =>
     const from: NavSel = { country: selectedCountryRef.current?.countryCode ?? null, dest: selectedDestRef.current?.id ?? null, spot: selectedSpotRef.current?.id ?? null };
     navTargetRef.current = { from, to: { country: cluster.countryCode, dest: null, spot: null }, country: cluster, dest: null };
     setSheetOverride({ cluster });
-    runCameraAfterPins(() => fitCountryDefaultView(cluster, 'flyTo', 'topHalf'));
+    if (!opts?.cameraStarted) fitCountryDefaultView(cluster, 'flyTo', 'topHalf');
     // The selection change waits until the country sheet has slid up (its delay and COUNTRY_BACK_SLIDE_MS): its render
     // (~150 ms, the whole screen) landed in the middle of the slide and stuttered it. The sheet and the pins already show
     // the country (sheetOverride, navTarget), so nothing on screen waits for it but the country's border highlight.
@@ -4952,7 +4962,7 @@ const destItems = useMemo((): DestItem[] =>
         handleCountryPress(cluster, 'flyTo', false, { cameraStarted: true });
       }
     }, COUNTRY_MOUNT_SLIDE_DELAY_MS + COUNTRY_BACK_SLIDE_MS + 20);
-  }, [selectedDest, savedDestinations, handleCountryPress, visitIndex, countryTargetZoom, beginBackPlan, isMapInteracting, fitCountryDefaultView, runCameraAfterPins]);
+  }, [selectedDest, savedDestinations, handleCountryPress, isMapInteracting, fitCountryDefaultView, countryClusterOf]);
 
   // The breadcrumb's own back-return while a country (and no destination) is selected: just
   // re-centre the camera, leaving the sheet exactly where it is. So the framing has to follow
@@ -5163,9 +5173,11 @@ const destItems = useMemo((): DestItem[] =>
   // destination's own zoom level instead, no fabricated country sheet in between.
   const handleCloseDestinationSheet = useCallback((toCollapsed?: boolean) => {
     // Back up to the country's sheet: the destination's slides all the way off first, then the country's rises (see openSpot).
-    if (destOrigin === 'country') closeWithSheetExit(() => handleCloseDestinationSheetToCountry(toCollapsed), true);
-    else handleCloseDestinationToCountryView();
-  }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView, closeWithSheetExit]);
+    if (destOrigin === 'country') {
+      const cameraStarted = startCountryBackCamera();
+      closeWithSheetExit(() => handleCloseDestinationSheetToCountry(toCollapsed, { cameraStarted }), true);
+    } else handleCloseDestinationToCountryView();
+  }, [destOrigin, handleCloseDestinationSheetToCountry, handleCloseDestinationToCountryView, closeWithSheetExit, startCountryBackCamera]);
 
   // Sheet transitions by direction. Going IN a level (country -> destination, destination or country -> spot) is the quick
   // swap: the old sheet slides down as the new one rises (see the sheet swaps below). Going back OUT (spot -> destination,
@@ -5192,8 +5204,11 @@ const destItems = useMemo((): DestItem[] =>
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     // Going out a level: the sheet slides all the way off, then the parent's rises (see openSpot).
     if (selectedSpot) { if (selectedDest) closeWithSheetExit(() => handleCloseSpotToDestination(), true); }
-    else if (selectedDest) closeWithSheetExit(() => handleCloseDestinationSheetToCountry(), true);
-  }, [selectedSpot, selectedDest, handleCloseSpotToDestination, handleCloseDestinationSheetToCountry, closeWithSheetExit]);
+    else if (selectedDest) {
+      const cameraStarted = startCountryBackCamera();   // the zoom-out starts at the tap, while the sheet slides off
+      closeWithSheetExit(() => handleCloseDestinationSheetToCountry(undefined, { cameraStarted }), true);
+    }
+  }, [selectedSpot, selectedDest, handleCloseSpotToDestination, handleCloseDestinationSheetToCountry, closeWithSheetExit, startCountryBackCamera]);
   // The X pill: close to the map (the sheet slides off first, then the camera steps back; see the *View closes).
   // The zoom an X close will fly out to (the same rules as the close handlers), or null where the camera stays put.
   const xCloseTargetZoom = useCallback((): number | null => {
