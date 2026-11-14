@@ -244,6 +244,7 @@ export default function ProfileScreen() {
   const [exploredView, setExploredView] = useState<ExploredView>('grid');
   const savedSpots = useStore(s => s.savedSpots);
   const savedDests = useStore(s => s.savedDestinations);
+  const savedCountries = useStore(s => s.savedCountries);
   const sortKeys = useMemo(() => {
     // Each place's most recent visit (the one that ended last): its last day sorts the date sort (spotDate, destDate), and
     // its start and end are what the tiles and rows show (spotVisit, destVisit; see visitLabel).
@@ -251,9 +252,16 @@ export default function ProfileScreen() {
     const destDate = new Map<string, string>();
     const spotVisit = new Map<string, { start: string; end: string }>();
     const destVisit = new Map<string, { start: string; end: string }>();
+    // Every dated visit of each place, for its visit count (visitCount).
+    const spotRanges = new Map<string, { start: string; end: string }[]>();
+    const destRanges = new Map<string, { start: string; end: string }[]>();
     const bump = (m: Map<string, string>, vm: Map<string, { start: string; end: string }>, id: string, start?: string, end?: string) => {
       if (!start) return;
       const e = end && end > start ? end : start;
+      const rm = vm === spotVisit ? spotRanges : destRanges;
+      const rs = rm.get(id) ?? [];
+      rs.push({ start, end: e });
+      rm.set(id, rs);
       if (e > (m.get(id) ?? '')) { m.set(id, e); vm.set(id, { start, end: e }); }
     };
     for (const [id, dv] of Object.entries(savedDests)) {
@@ -279,7 +287,7 @@ export default function ProfileScreen() {
     }
     const destRating = (id: string) => { const a = sum.get(id); return a && a.n ? a.t / a.n : 0; };
     const destSpots = (id: string) => sum.get(id)?.c ?? 0;
-    return { spotDate, destDate, spotVisit, destVisit, destRating, destSpots };
+    return { spotDate, destDate, spotVisit, destVisit, destRating, destSpots, spotRanges, destRanges };
   }, [savedSpots, savedDests, visitedSpots]);
   const sortBy = <T extends { id: string; name: string }>(list: T[], date: (id: string) => string, rating: (id: string) => number, spots?: (id: string) => number, dests?: (id: string) => number) =>
     [...list].sort((x, y) => {
@@ -365,17 +373,30 @@ export default function ProfileScreen() {
       const cur = visit.get(code);
       if (!cur || v.end > cur.end) visit.set(code, v);
     };
-    for (const d of visitedDests) later(d.countryCode, sortKeys.destVisit.get(d.id));
+    const ranges = new Map<string, { start: string; end: string }[]>();
+    const add = (code: string | null | undefined, rs?: { start: string; end: string }[]) => {
+      if (code && rs) ranges.set(code, [...(ranges.get(code) ?? []), ...rs]);
+    };
+    for (const d of visitedDests) { later(d.countryCode, sortKeys.destVisit.get(d.id)); add(d.countryCode, sortKeys.destRanges.get(d.id)); }
+    // The country's own visits (its sheet's My Visit), as well as its destinations' and spots'.
+    for (const [code, cv] of Object.entries(savedCountries)) {
+      const own: { start: string; end: string }[] = [];
+      if (cv.visitDate) own.push({ start: cv.visitDate, end: cv.visitDate });
+      for (const v of cv.visits ?? []) if (v.startDate) own.push({ start: v.startDate, end: v.endDate && v.endDate > v.startDate ? v.endDate : v.startDate });
+      for (const v of own) later(code, v);
+      add(code, own);
+    }
     const rate = new Map<string, { t: number; n: number }>();
     for (const sp of visitedSpots) {
       const code = spotCountryCode(sp);
       later(code, sortKeys.spotVisit.get(sp.id));
+      add(code, sortKeys.spotRanges.get(sp.id));
       const r = savedSpots[sp.id]?.rating;
       if (code && r) { const a = rate.get(code) ?? { t: 0, n: 0 }; a.t += r; a.n += 1; rate.set(code, a); }
     }
     const rating = (code: string) => { const a = rate.get(code); return a && a.n ? a.t / a.n : 0; };
-    return { visit, rating };
-  }, [visitedDests, visitedSpots, sortKeys, savedSpots]);
+    return { visit, rating, ranges };
+  }, [visitedDests, visitedSpots, sortKeys, savedSpots, savedCountries]);
   const exploredCountries = useMemo(
     () => sortBy(
       stats.visitedCountryCodes.map(code => ({ id: code, name: COUNTRY_NAME.get(code) ?? code })),
@@ -661,7 +682,7 @@ export default function ProfileScreen() {
                 // The country's flag beside its name, and its photo in front.
                 key: c.id, name: c.name, countryCode: c.id, sub: '',
                 dests: n?.dests ?? 0, spots: n?.spots ?? 0, rating: countryKeys.rating(c.id),
-                date: visitLabel(countryKeys.visit.get(c.id)),
+                date: visitLabel(countryKeys.visit.get(c.id)), more: moreVisits(exploredSort, countryKeys.ranges.get(c.id)),
                 photo: <CountryPhoto code={c.id} name={c.name} dark />,
               };
             })} />
@@ -672,6 +693,7 @@ export default function ProfileScreen() {
               const counted = exploredSort === 'dests' ? n?.dests ?? 0 : exploredSort === 'spots' ? n?.spots ?? 0 : 0;
               return {
                 key: c.id, name: c.name, countryCode: c.id,
+                more: moreVisits(exploredSort, countryKeys.ranges.get(c.id)),
                 sub: tileSub(exploredSort, visitLabel(countryKeys.visit.get(c.id)),
                   exploredSort === 'dests' && counted ? `${counted} destination${counted === 1 ? '' : 's'}`
                   : exploredSort === 'spots' && counted ? `${counted} spot${counted === 1 ? '' : 's'}` : ''),
@@ -704,7 +726,7 @@ export default function ProfileScreen() {
                 return {
                   // The country as its flag beside the name, not its name.
                   key: d.id, name: d.name, countryCode: d.countryCode, sub: '',
-                  spots: n, rating: sortKeys.destRating(d.id), date: visitLabel(sortKeys.destVisit.get(d.id)),
+                  spots: n, rating: sortKeys.destRating(d.id), date: visitLabel(sortKeys.destVisit.get(d.id)), more: moreVisits(exploredSort, sortKeys.destRanges.get(d.id)),
                   // The destination's own photo in place of its flag: the grid tiles' small photo (same cache key).
                   photo: (
                     <EntityPhoto
@@ -723,6 +745,7 @@ export default function ProfileScreen() {
               const n = spotsByDest.get(d.id) ?? 0;
               return {
                 key: d.id, name: d.name, countryCode: d.countryCode,
+                more: moreVisits(exploredSort, sortKeys.destRanges.get(d.id)),
                 sub: tileSub(exploredSort, visitLabel(sortKeys.destVisit.get(d.id)), exploredSort === 'spots' && n > 0 ? `${n} spot${n === 1 ? '' : 's'}` : ''),
                 photo: (
                   // The same small-photo key as the country sheet's destination pickers, so either can reuse it.
@@ -762,7 +785,7 @@ export default function ProfileScreen() {
               <RankList sort={exploredSort} pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} rows={shownSpots.map(sp => ({
                 // Its photo in front, and under its name the country's flag and its destination.
                 key: sp.id, name: sp.name, countryCode: spotCountryCode(sp), flagBelow: true, sub: spotDestination(sp)?.name ?? '',
-                rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)),
+                rating: savedSpots[sp.id]?.rating ?? 0, date: visitLabel(sortKeys.spotVisit.get(sp.id)), more: moreVisits(exploredSort, sortKeys.spotRanges.get(sp.id)),
                 // The grid tiles' small photo (same cache key), or the placeholder for a place with none.
                 photo: NO_PHOTO.has(spotPhotoTitle(sp))
                   ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={30} />
@@ -780,6 +803,7 @@ export default function ProfileScreen() {
             <PhotoGrid pickedId={pickedId} onPick={pickTile} onClearPick={() => setPickedId(null)} tiles={shownSpots.map(sp => ({
               key: sp.id, name: sp.name, countryCode: spotCountryCode(sp),
               sub: exploredSort === 'rating' ? '' : tileSub(exploredSort, visitLabel(sortKeys.spotVisit.get(sp.id)), spotCountry(sp) ?? ''),
+              more: moreVisits(exploredSort, sortKeys.spotRanges.get(sp.id)),
               rating: exploredSort === 'rating' ? savedSpots[sp.id]?.rating ?? 0 : undefined,
               photo: NO_PHOTO.has(spotPhotoTitle(sp))
                 ? <PhotoPlaceholder icon={sp.icon} category={sp.category} size={TILE} />
@@ -844,7 +868,7 @@ const PAGE_DOT_ON = '#111827', PAGE_DOT_OFF = '#D1D5DB';
 const SHADOW_ROOM = 6;
 const gridHeight = (n: number) => { const rows = Math.max(1, Math.ceil(n / TILE_COLS)); return TILE * rows + TILE_GAP * (rows - 1); };
 function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
-  tiles: { key: string; name: string; countryCode?: string | null; sub: string; photo: React.ReactNode; rating?: number }[];
+  tiles: { key: string; name: string; countryCode?: string | null; sub: string; more?: string; photo: React.ReactNode; rating?: number }[];
   pickedId: string | null; onPick: (id: string) => void;
   // A pick only lasts while its tile is on the page showing: this drops it once the page changes (or the list does) and it is gone.
   onClearPick: () => void;
@@ -880,7 +904,7 @@ function PhotoGrid({ tiles, pickedId, onPick, onClearPick }: {
                 {t.photo}
                 {/* The text sits in a footer pinned to the tile's bottom, full width. Its scrim is measured from the footer, so it
                     spans the tile and grows with the text (one line or two) instead of being a fixed band. */}
-                <TileFooter name={t.name} sub={t.sub} rating={t.rating} />
+                <TileFooter name={t.name} sub={t.sub} more={t.more} rating={t.rating} />
                 {/* The country's flag at the top left. */}
                 {!!t.countryCode && (
                   <View style={styles.tileFlag} pointerEvents="none">
@@ -982,7 +1006,7 @@ function PageRange({ scrollX, total, pageCount, pageSize }: { scrollX: SharedVal
 const SCRIM_FADE = 28;
 const SCRIM_UNDER_TEXT = 0.55;
 // `rating`: sorted by rating, the spot's stars and number under its name (as its list row shows them), in place of `sub`.
-function TileFooter({ name, sub, rating }: { name: string; sub: string; rating?: number }) {
+function TileFooter({ name, sub, more, rating }: { name: string; sub: string; more?: string; rating?: number }) {
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
   const scrimId = `tileScrim${React.useId().replace(/[^a-zA-Z0-9]/g, '')}`;
   return (
@@ -1011,9 +1035,11 @@ function TileFooter({ name, sub, rating }: { name: string; sub: string; rating?:
         </View>
       ) : !!sub && (
         <View style={styles.tileSubRow}>
-          <Text style={styles.tileSub} numberOfLines={1}>{sub}</Text>
+          {/* Wraps rather than cutting off: a visit's whole date range shows ("28 Feb – 4 Mar 2025"), on two lines if need be. */}
+          <Text style={styles.tileSub}>{sub}</Text>
         </View>
       )}
+      {!!more && <Text style={styles.tileMore} numberOfLines={1}>{more}</Text>}
     </View>
   );
 }
@@ -1095,10 +1121,32 @@ const visitLabel = (v?: { start: string; end: string }) => {
   if (m1 !== m2) return `${d1} ${MONTHS[m1 - 1]} – ${shortDate(v.end)}`;
   return `${d1}–${shortDate(v.end)}`;
 };
+// How many separate visits a place has had: its dated visits with overlapping or back-to-back dates (one trip recorded
+// on a destination and on its spots, or a country's destinations on one trip) counted once.
+const nextDay = (iso: string) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().slice(0, 10);
+};
+const visitCount = (ranges?: { start: string; end: string }[]) => {
+  if (!ranges?.length) return 0;
+  const rs = [...ranges].sort((a, b) => a.start.localeCompare(b.start));
+  let n = 1, end = rs[0].end;
+  for (const r of rs.slice(1)) {
+    if (r.start <= nextDay(end)) { if (r.end > end) end = r.end; }
+    else { n += 1; end = r.end; }
+  }
+  return n;
+};
+// Under the date when sorted by it: the visits besides the one shown (its most recent), for a place visited more than once.
+const moreVisits = (sort: ExploredSort, ranges?: { start: string; end: string }[]) => {
+  const extra = sort === 'date' ? visitCount(ranges) - 1 : 0;
+  return extra > 0 ? `+ ${extra} visit${extra === 1 ? '' : 's'}` : '';
+};
 function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
   // `photo`: a small photo shown in place of the country flag (a destination's own photo).
   // `photo`: a small photo leading the row. The country's flag sits beside the name, or beside the line under it (flagBelow).
-  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; dests?: number; spots?: number; rating: number; date: string; photo?: React.ReactNode }[];
+  rows: { key: string; name: string; countryCode?: string | null; flagBelow?: boolean; sub: string; dests?: number; spots?: number; rating: number; date: string; more?: string; photo?: React.ReactNode }[];
   sort: ExploredSort; pickedId: string | null; onPick: (id: string) => void;
   // As in PhotoGrid: a pick lasts only while its row is on the page showing.
   onClearPick: () => void;
@@ -1154,7 +1202,12 @@ function RankList({ rows, sort, pickedId, onPick, onClearPick }: {
                     </View>
                   )}
                   {bar && <Text style={styles.countryCount}>{v ? (sort === 'rating' ? v.toFixed(1).replace(/\.0$/, '') : v) : '–'}</Text>}
-                  {sort === 'date' && <Text style={styles.rankDate}>{r.date || '–'}</Text>}
+                  {sort === 'date' && (
+                    <View style={styles.rankDateCol}>
+                      <Text style={styles.rankDateTxt}>{r.date || '–'}</Text>
+                      {!!r.more && <Text style={styles.rankMore}>{r.more}</Text>}
+                    </View>
+                  )}
                 </Pressable>
               );
             })}
@@ -1477,7 +1530,10 @@ const styles = StyleSheet.create({
   rankNameRow: { flexDirection: 'row', alignItems: 'center', gap: 5 },
   rankSubRow:  { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
   rankSub:     { flexShrink: 1, fontSize: 11, color: '#9CA3AF' },
-  rankDate:    { marginLeft: 'auto', flexShrink: 0, fontSize: 12, fontWeight: '600', color: '#6B7280' },
+  // A long date range wraps onto a second line (right-aligned) rather than squeezing the name.
+  rankDateCol: { marginLeft: 'auto', paddingLeft: 8, flexShrink: 0, maxWidth: '42%', alignItems: 'flex-end' },
+  rankDateTxt: { fontSize: 12, fontWeight: '600', color: '#6B7280', textAlign: 'right' },
+  rankMore:    { marginTop: 1, fontSize: 11, fontWeight: '500', color: '#9CA3AF' },
   countryDropTxt: { fontSize: 12, fontWeight: '600', color: '#374151', flexShrink: 1 },
   dropMenu: { position: 'absolute', width: 220, backgroundColor: 'white', borderRadius: 14, paddingVertical: 6,
               shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 }, elevation: 8 },
@@ -1511,6 +1567,7 @@ const styles = StyleSheet.create({
   tileFlag:   { position: 'absolute', top: 6, left: 6 },
   tileSubRow: { flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 1 },
   tileSub:  { flexShrink: 1, fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.9)' },
+  tileMore: { marginTop: 1, fontSize: 10, fontWeight: '600', color: 'rgba(255,255,255,0.75)' },
   // Destinations Explored's rows: photo, name, country and spots visited; about five rows, then the list scrolls.
   destRowsScroll: { maxHeight: 300 },
   destRow:        { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 8 },
