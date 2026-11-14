@@ -136,8 +136,10 @@ const CAROUSEL_WIDEN_MS = 1000;
 // The full-screen panels (hidden at half-screen) mount after the slide-in and the camera's zoom to the spot, not during
 // either: mounting them is ~0.35 s of work, and when it ran as the slide landed (where the zoom starts) the card stayed
 // blank and the camera stood still for over a second after a pin tap. Heading to full screen mounts them at once, a swipe
-// up included (revealPanels; the hero's dark backdrop stands in until they arrive).
-const SPOT_PANEL_MOUNT_DELAY_MS = 1300;
+// up included (revealPanels; the hero's dark backdrop stands in until they arrive). Just after the zoom ends (~0.95 s), not
+// later: a swipe up within the wait mounted them mid-swipe, so the sheet rose blank (the backdrop, white below) for a third
+// of a second, and their mount's commit re-applied the carousel's fade as it was a moment before (a flash of the card).
+const SPOT_PANEL_MOUNT_DELAY_MS = 950;
 // Most clones of the spots at the other end on each side of the looping carousel (see extendedSpots); fewer when the
 // destination has fewer spots.
 const MAX_LOOP_CLONES = 6;
