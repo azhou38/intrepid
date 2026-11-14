@@ -1538,7 +1538,7 @@ isVisited ? (
                         here (a spot has nothing beneath it to tag a visit with). */}
                     {/* The spot's one rating, above its visits: it is the spot's, not any one visit's (the visit cards
                         used to each show and edit it, so rating one visit changed them all). */}
-                    <YourRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />
+                    <MyRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
                       noun="Visit"
@@ -1738,7 +1738,7 @@ isVisited ? (
           onClose={() => setEditingVisitModule(null)}
           // No selectorLabel/selectorItems — a spot has nothing beneath it to tag a visit with.
           onRemoveLegacy={() => unsaveSpot(activeSpot.id)}
-          // The spot's one rating (not the visit's): edited in the My Visit tab's "Your rating" row. The editor asks for it
+          // The spot's one rating (not the visit's): edited in the My Visit tab's "My rating" row. The editor asks for it
           // only while the spot has none, so logging a first visit can rate it in passing.
           ratingValue={savedSpot?.rating ?? 0}
           onRatingChange={r => updateSpot(activeSpot.id, { rating: r })}
@@ -1898,11 +1898,11 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
   );
 }
 
-// A spot's "Your rating" row (My Visit). The stars follow a tap at once, from their own state: written straight to the
+// A spot's "My rating" row (My Visit). The stars follow a tap at once, from their own state: written straight to the
 // store, a tap re-rendered the whole spot sheet (and everything else reading saved spots) before the stars could change,
 // which read as slow. The store gets the rating a moment later, once taps have stopped.
 const RATING_SAVE_MS = 400;
-const YourRating = React.memo(function YourRating({ spotId, value }: { spotId: string; value: number }) {
+const MyRating = React.memo(function MyRating({ spotId, value }: { spotId: string; value: number }) {
   const updateSpot = useStore(s => s.updateSpot);
   const [shown, setShown] = useState(value);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -1924,10 +1924,10 @@ const YourRating = React.memo(function YourRating({ spotId, value }: { spotId: s
     timerRef.current = setTimeout(flush, RATING_SAVE_MS);
   }, [spotId, flush]);
   return (
-    <View style={st.yourRating}>
-      <Text style={st.yourRatingLabel}>Your rating</Text>
+    <View style={st.myRating}>
+      <Text style={st.myRatingLabel}>My rating</Text>
       <StarRating value={shown} size={22} onChange={onChange} />
-      {shown > 0 && <Text style={st.yourRatingNum}>{shown}</Text>}
+      {shown > 0 && <Text style={st.myRatingNum}>{shown}</Text>}
     </View>
   );
 });
@@ -2122,9 +2122,9 @@ const st = StyleSheet.create({
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
   // The panel's own gap (16) and the visit list's top padding (20) already sit between this row and the first visit card,
   // so the row takes some of that back.
-  yourRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 4, marginTop: 6, marginBottom: -8 },
-  yourRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
-  yourRatingNum: { marginLeft: -4, fontSize: 15, fontWeight: '700', color: '#6B7280', fontVariant: ['tabular-nums'] },
+  myRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 4, marginTop: 6, marginBottom: -8 },
+  myRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
+  myRatingNum: { marginLeft: -4, fontSize: 15, fontWeight: '700', color: '#6B7280', fontVariant: ['tabular-nums'] },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
   slideRow: { flexDirection: 'row', alignItems: 'flex-start', width: W * 2 },
   slidePanel: { width: W, paddingHorizontal: 16, gap: 16 },

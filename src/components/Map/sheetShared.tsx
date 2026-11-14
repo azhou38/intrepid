@@ -1910,7 +1910,7 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
 }) {
   const insets = useSafeAreaInsets();
   // The rating row is the place's own rating, asked for only while it has none (decided when the editor opens, so rating it
-  // here doesn't take the row away mid-edit). Once rated, it is edited outside the visits (SpotSheet's "Your rating").
+  // here doesn't take the row away mid-edit). Once rated, it is edited outside the visits (SpotSheet's "My rating").
   const askRating = useRef(!ratingValue).current;
   const isLegacy = visit?.id === 'legacy';
   const defaultTitle = defaultTripTitle(entityName, noun, visit ? 0 : existingCount);
