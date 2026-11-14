@@ -144,8 +144,10 @@ export default function ProfileScreen() {
   const pageRef = useAnimatedRef<Animated.ScrollView>();
   const settle = (y: number) => {
     'worklet';
-    const pin = stickyYSV.value;
-    if (y > 1 && y < pin - 1) scrollTo(pageRef, 0, y < pin / 2 ? 0 : pin + PIN_SETTLE_PAST, true);
+    const pin = stickyYSV.value, rest = pin + PIN_SETTLE_PAST;
+    if (y > 1 && y < pin - 1) scrollTo(pageRef, 0, y < pin / 2 ? 0 : rest, true);
+    // Pinned, but with the blank room under the bar still showing (a scroll back up, or a fling that ran out there).
+    else if (y >= pin - 1 && y < rest - 1) scrollTo(pageRef, 0, rest, true);
   };
   const onPageScroll = useAnimatedScrollHandler({
     onScroll: e => { scrollSV.value = e.contentOffset.y; },
@@ -1390,8 +1392,9 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 // The pinned bar's top strip, holding its small avatar and name.
 const COMPACT_H = 40;
 // How far past the selector's pinned point a scroll that settles there comes to rest (see settle): at the pinned point
-// itself the blank room the selector card leaves under the pinned bar sat between the bar and the map.
-const PIN_SETTLE_PAST = 36;
+// itself the blank room the selector card leaves under the pinned bar (~65 pt) sat between the bar and the map. This
+// leaves ~17 pt.
+const PIN_SETTLE_PAST = 48;
 // The Edit Profile button's height.
 const EDIT_H = 26;
 // How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
