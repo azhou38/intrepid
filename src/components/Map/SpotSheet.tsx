@@ -15,7 +15,7 @@ import { ScrollView as GHScrollView, Gesture, GestureDetector } from 'react-nati
 // react-native and mixing the two default-export namings would be confusing.
 import Reanimated, {
   useSharedValue, useAnimatedStyle, useAnimatedReaction, withTiming, runOnJS, runOnUI,
-  interpolate, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
+  interpolate, interpolateColor, Extrapolation, Easing, scrollTo, useAnimatedRef, withDelay
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { SharedValue } from 'react-native-reanimated';
@@ -1376,7 +1376,7 @@ isVisited ? (
                   switchTabRef.current('visit');
                 }}
               >
-                <Text style={[st.tabBtnTxt, activeTab === 'visit' && st.tabBtnTxtActive]}>My Visit</Text>
+                <TabLabel index={0} slide={tabSlideAnim}>My Visit</TabLabel>
               </Pressable>
               <View style={st.tabDivider} />
               <Pressable
@@ -1387,7 +1387,7 @@ isVisited ? (
                   switchTabRef.current('about');
                 }}
               >
-                <Text style={[st.tabBtnTxt, activeTab === 'about' && st.tabBtnTxtActive]}>About</Text>
+                <TabLabel index={1} slide={tabSlideAnim}>About</TabLabel>
               </Pressable>
               <Reanimated.View style={[st.tabIndicatorTrack, tabIndicatorLeft]}>
                 <View style={st.tabIndicator} />
@@ -1898,6 +1898,15 @@ function SpotAbout({ spot, tabbed, nearbySpots, onSelectNearby, onExplore, nearb
   );
 }
 
+// A tab's label, its colour following the panels' slide (the selected one dark): it changes with the tap or swipe, not when
+// the tab state catches up once the slide has ended (the other sheets' TabLabel).
+function TabLabel({ index, slide, children }: { index: number; slide: SharedValue<number>; children: React.ReactNode }) {
+  const style = useAnimatedStyle(() => ({
+    color: interpolateColor(slide.value, [-(index + 1) * W, -index * W, -(index - 1) * W], ['#9CA3AF', '#111827', '#9CA3AF']),
+  }));
+  return <Reanimated.Text style={[st.tabBtnTxt, style]} numberOfLines={1}>{children}</Reanimated.Text>;
+}
+
 // A spot's "My rating" row (My Visit). The stars follow a tap at once, from their own state: written straight to the
 // store, a tap re-rendered the whole spot sheet (and everything else reading saved spots) before the stars could change,
 // which read as slow. The store gets the rating a moment later, once taps have stopped.
@@ -2112,7 +2121,6 @@ const st = StyleSheet.create({
   tabBtn: { flex: 1, paddingVertical: 15, alignItems: 'center' },
   tabDivider: { width: StyleSheet.hairlineWidth, marginVertical: 14, backgroundColor: '#E5E7EB' },
   tabBtnTxt: { fontSize: 15, fontWeight: '600', color: '#9CA3AF' },
-  tabBtnTxtActive: { color: '#111827' },
   // Sliding underline — outer track keeps the existing per-tab left/width positioning; the
   // visible bar itself is a narrower, centered child so it doesn't span the full tab width.
   tabIndicatorTrack: { position: 'absolute', bottom: 0, width: '50%', alignItems: 'center' },
