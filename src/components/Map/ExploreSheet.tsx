@@ -83,9 +83,12 @@ interface Props {
   // so closing that selection slides it straight back up (at the bottom strip) instead of building it again: the rebuild
   // took long enough that it had to wait for the camera's zoom-out to finish, which read as a long delay.
   hidden?: boolean;
+  // True while MapScreen's search is open. The sheet stays mounted and where it is, just invisible (it is drawn above the
+  // search's white backdrop), so closing search shows it again at once.
+  searching?: boolean;
 }
 
-function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, onSearchPress, initialSnap, initialScrollY, onScrollYChange, onMountSnap, mapGestureAtSV, hidden }: Props) {
+function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, onSearchPress, initialSnap, initialScrollY, onScrollYChange, onMountSnap, mapGestureAtSV, hidden, searching }: Props) {
   // Internal names (see ExploreSnapState) differ from the shared vocabulary: shared 'peek' is
   // this sheet's 'collapsed', shared 'collapsed' is its 'half'.
   const startSnap = useRef<ExploreSnapState | null>(
@@ -315,8 +318,15 @@ function ExploreSheet({ collapseSignal, onSnapStateChange, onSelectDestination, 
     />
   ), [initialScrollY, snapState, searchProgress, onSelectDestination]);
 
+  // Invisible while searching, and also while a search result's selection hides it: a sheet shown again for the moment
+  // before it drops off would flash over the selection's own sheet.
+  const searchHideRef = useRef(false);
+  if (searching) searchHideRef.current = true;
+  else if (!hidden) searchHideRef.current = false;
+  const invisible = searchHideRef.current;
+
   return (
-    <View style={st.backdrop} pointerEvents={hidden ? 'none' : 'box-none'}>
+    <View style={[st.backdrop, invisible && { opacity: 0 }]} pointerEvents={hidden || invisible ? 'none' : 'box-none'}>
       <Animated.View
         pointerEvents={snapStateRef.current === 'full' ? 'box-none' : 'none'}
         style={StyleSheet.absoluteFill}

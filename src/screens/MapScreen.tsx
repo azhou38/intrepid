@@ -2026,19 +2026,8 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   const searchExpandedWidth  = SCREEN_W_GLOBAL - 24;
   const searchWidthAnim = useRef(new Animated.Value(searchCollapsedWidth)).current;
   const searchFromSheetRef = useRef(false);
-  // Where the Explore sheet was (shared snap vocabulary, plus its feed's scroll offset) — recorded from its own reports, and
-  // captured into exploreRestore when search opens (the sheet unmounts while searching), so
-  // closing search remounts it right where it was rather than at the bottom strip. Cleared once
-  // search closes, and on picking a result (that leaves the sheet behind for a
-  // country/destination/spot, after which the normal bottom-strip entrance applies).
+  // Where the Explore sheet is (shared snap vocabulary), from its own reports.
   const exploreSnapRef = useRef<'peek' | 'collapsed' | 'full'>('peek');
-  const exploreScrollYRef = useRef(0);
-  const [exploreRestore, setExploreRestore] =
-    useState<{ snap: 'peek' | 'collapsed' | 'full'; scrollY: number } | undefined>(undefined);
-  // Closing search via its X/backdrop holds the Explore sheet's remount back by a frame (see
-  // closeSearch), so the commit that closes search stays light. The restore hint is only cleared
-  // once the sheet has actually remounted with it.
-  const [exploreHeld, setExploreHeld] = useState(false);
   // True from a spot's "‹ Destination" back until its zoom-out reaches the destination's view. Mounting a sheet during a
   // zoom-out (the destination sheet is a few hundred ms of render, on the UI thread the map draws on) froze the camera
   // animation, so the map jumped from the zoomed-in view to the zoomed-out one with no frames between. (The Explore sheet
@@ -2066,16 +2055,6 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
     // map with no sheet for a noticeable moment.
     sheetAfterCameraTimerRef.current = setTimeout(releaseSheetsAfterCamera, Math.min(durationMs + 300, SHEET_HOLD_MAX_MS));
   }, [releaseSheetsAfterCamera]);
-  // Layout effect: the frame's wait starts with the close commit itself, not once passive effects run.
-  useLayoutEffect(() => {
-    if (!exploreHeld) return;
-    const id = requestAnimationFrame(() => setExploreHeld(false));
-    return () => cancelAnimationFrame(id);
-  }, [exploreHeld]);
-  useEffect(() => {
-    if (searchFocused) setExploreRestore({ snap: exploreSnapRef.current, scrollY: exploreScrollYRef.current });
-    else if (exploreRestore && !exploreHeld) setExploreRestore(undefined);
-  }, [searchFocused, exploreHeld]);
   // The bar's width and the layers pill swap instantly — no animation. Animating them (the bar
   // widening while the pill faded out) read as the two shapes merging into each other.
   // Layout effect: applied in the same commit as the focus change, not once the (heavy) screen's
@@ -2115,12 +2094,11 @@ export default function MapScreen({ onMapReady }: { onMapReady?: () => void } = 
   // happens in the one commit that clears searchFocused (the width and fade via the layout effects
   // above), so no frame shows half of it. An earlier version started the fade and width change
   // imperatively before that commit, which showed one frame of the narrowed bar with the X still
-  // in it, pushed left. What keeps that commit light (it used to take ~0.5s) is that the Explore
-  // sheet's remount waits a frame (exploreHeld).
+  // in it, pushed left. The Explore sheet stays mounted through search (hidden: see its `searching`), so
+  // the same commit shows it again where it was, with nothing to build.
   const closeSearch = useCallback(() => {
     searchFromSheetRef.current = false;
     searchInputRef.current?.blur();
-    setExploreHeld(true);
     setSearchFocused(false);
     setSearchQuery('');
   }, []);
@@ -5354,7 +5332,6 @@ const destItems = useMemo((): DestItem[] =>
 
   const handleSearchSelect = useCallback((item: SearchResult) => {
     addRecentSearch(toRecentSearch(item));
-    setExploreRestore(undefined);
     setSearchQuery('');
     setSearchFocused(false);
     // clear() as well as the state reset: the native field's own text can otherwise linger (or
@@ -5426,8 +5403,6 @@ const destItems = useMemo((): DestItem[] =>
   // The Explore sheet's props are all STABLE on purpose. MapScreen re-renders every ~50ms while the
   // camera moves, and the sheet (with its ~50 photo cards) re-rendering each time was real JS
   // work competing with the map's own pin updates — inline arrow props here defeated React.memo.
-  const exploreRestoreRef = useRef(exploreRestore);
-  exploreRestoreRef.current = exploreRestore;
   const handleExploreSnapChange = useCallback((state: 'peek' | 'collapsed' | 'full') => {
     exploreSnapRef.current = state;
     handleSheetSnapStateChange(state);
@@ -5440,10 +5415,7 @@ const destItems = useMemo((): DestItem[] =>
     // — the sheet restored at peek after closing search — read as a collapsed→peek move and
     // shifted the map. It also kept later Explore swipes from shifting when they should have.
     setSheetSnapState(state);
-    // A fresh (non-restored) sheet starts at the top of its feed.
-    if (!exploreRestoreRef.current) exploreScrollYRef.current = 0;
   }, [setSheetSnapState]);
-  const handleExploreScrollY = useCallback((y: number) => { exploreScrollYRef.current = y; }, []);
   const handleExploreSearchPress = useCallback(() => {
     // Opened from the sheet's own bar (which sits exactly where this one does, already
     // full-width): skip the width/fade animations so the hand-off is seamless.
@@ -7033,21 +7005,19 @@ const destItems = useMemo((): DestItem[] =>
           Shown whenever nothing is selected; hidden the instant the user drills into a
           country/destination/spot, exactly like the other sheets are mutually exclusive
           with each other. ─────────────────────────────────────────────────────────────── */}
-      {/* Stays mounted (hidden off-screen) behind a selection, so closing it slides the sheet straight back up. */}
-      {!searchFocused && !exploreHeld && (
-        <ExploreSheet
-          hidden={!!(selectedCountry || selectedDest || selectedSpot)}
-          collapseSignal={peekSheetSignal}
-          onSnapStateChange={handleExploreSnapChange}
-          onSelectDestination={handleExploreSelect}
-          initialSnap={exploreRestore?.snap}
-          onMountSnap={handleExploreMountSnap}
-          initialScrollY={exploreRestore?.scrollY}
-          mapGestureAtSV={mapGestureAtSV}
-          onScrollYChange={handleExploreScrollY}
-          onSearchPress={handleExploreSearchPress}
-        />
-      )}
+      {/* Stays mounted (hidden off-screen) behind a selection, so closing it slides the sheet straight back up, and
+          (hidden in place) while search is open, so closing search shows it again at once, where it was. It used to
+          unmount for search and be built again on the close, its whole feed, which held it back a noticeable moment. */}
+      <ExploreSheet
+        hidden={!!(selectedCountry || selectedDest || selectedSpot)}
+        searching={searchFocused}
+        collapseSignal={peekSheetSignal}
+        onSnapStateChange={handleExploreSnapChange}
+        onSelectDestination={handleExploreSelect}
+        onMountSnap={handleExploreMountSnap}
+        mapGestureAtSV={mapGestureAtSV}
+        onSearchPress={handleExploreSearchPress}
+      />
 
 {/* ── Country sheet ─────────────────────────────────────────────────── */}
       {effCountry && !effDest && !effSpot && (
