@@ -1843,7 +1843,8 @@ export function StarRating({ value, onChange, size = 30 }: {
   return (
     <View style={{ flexDirection: 'row', gap: 6 }}>
       {[1, 2, 3, 4, 5].map(n => (
-        <Pressable key={n} disabled={!onChange} onPress={() => onChange?.(n)} hitSlop={6}>
+        // Tapping the star already chosen clears the rating (0: not rated), the usual way to take a rating back.
+        <Pressable key={n} disabled={!onChange} onPress={() => onChange?.(n === value ? 0 : n)} hitSlop={6}>
           <Star
             size={size}
             color={n <= value ? color : '#D1D5DB'}
@@ -1909,9 +1910,10 @@ export function VisitModuleSheet<T extends VisitSelectorItem>({
   onRatingChange?: (v: number) => void;
 }) {
   const insets = useSafeAreaInsets();
-  // The rating row is the place's own rating, asked for only while it has none (decided when the editor opens, so rating it
-  // here doesn't take the row away mid-edit). Once rated, it is edited outside the visits (SpotSheet's "My rating").
-  const askRating = useRef(!ratingValue).current;
+  // The rating row is the place's own rating, asked for while it has none, or while it has no visits logged (SpotSheet's
+  // My Rating, where it is otherwise edited, shows only alongside a visit). Decided when the editor opens, so rating it
+  // here doesn't take the row away mid-edit.
+  const askRating = useRef(!ratingValue || existingCount === 0).current;
   const isLegacy = visit?.id === 'legacy';
   const defaultTitle = defaultTripTitle(entityName, noun, visit ? 0 : existingCount);
   const idRef = useRef(visit?.id ?? Date.now().toString());

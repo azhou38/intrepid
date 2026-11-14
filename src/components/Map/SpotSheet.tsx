@@ -504,7 +504,9 @@ function SpotSheet({
   const handleDeleteVisitModule = useCallback((id: string) => {
     if (!savedSpot) return;
     const updated = localVisits.filter(v => v.id !== id);
-    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
+    // The rating goes with the last visit: it is only shown, and set, alongside visits (My Rating, the visit editor), so a
+    // rating left behind would be one nothing shows or can change.
+    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate, ...(updated.length ? {} : { rating: undefined }) });
   }, [savedSpot, localVisits, activeSpot.id, updateSpot]);
 
   const carouselRef = useRef<ScrollView>(null);
@@ -1540,7 +1542,8 @@ isVisited ? (
                         here (a spot has nothing beneath it to tag a visit with). */}
                     {/* The spot's one rating, above its visits: it is the spot's, not any one visit's (the visit cards
                         used to each show and edit it, so rating one visit changed them all). */}
-                    <MyRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />
+                    {/* Only alongside a visit: with none logged (the last one removed), there is nothing to rate yet. */}
+                    {localVisits.length > 0 && <MyRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />}
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
                       noun="Visit"
@@ -1743,7 +1746,7 @@ isVisited ? (
           // The spot's one rating (not the visit's): edited in the My Visit tab's "My rating" row. The editor asks for it
           // only while the spot has none, so logging a first visit can rate it in passing.
           ratingValue={savedSpot?.rating ?? 0}
-          onRatingChange={r => updateSpot(activeSpot.id, { rating: r })}
+          onRatingChange={r => updateSpot(activeSpot.id, { rating: r || undefined })}
           // Spots call these "visits", not "trips" — a spot is a single stop, not a whole
           // journey. Also hides the "1 day" subtitle for a same-day visit (still shows a real
           // multi-day count, e.g. camping).
@@ -1922,7 +1925,7 @@ const MyRating = React.memo(function MyRating({ spotId, value }: { spotId: strin
     if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
     const p = pendingRef.current;
     pendingRef.current = null;
-    if (p) updateSpot(p.spotId, { rating: p.rating });
+    if (p) updateSpot(p.spotId, { rating: p.rating || undefined });   // 0: cleared (StarRating), stored as no rating
   }, [updateSpot]);
   // Another spot, or a rating changed elsewhere (the visit editor): show it, saving any rating still pending first.
   useEffect(() => { if (!pendingRef.current) setShown(value); }, [value]);
@@ -2132,7 +2135,7 @@ const st = StyleSheet.create({
   content: { backgroundColor: 'white', padding: 16, gap: 16 },
   // The panel's own gap (16) and the visit list's top padding (20) already sit between this row and the first visit card,
   // so the row takes some of that back.
-  myRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 4, marginTop: 6, marginBottom: -8 },
+  myRating: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 10, marginTop: 6, marginBottom: -8 },
   myRatingLabel: { fontSize: 15, fontWeight: '700', color: '#111827' },
   myRatingNum: { marginLeft: -4, fontSize: 15, fontWeight: '700', color: '#6B7280', fontVariant: ['tabular-nums'] },
   slideTrack: { overflow: 'hidden', marginHorizontal: -16, width: W },
