@@ -504,7 +504,9 @@ function SpotSheet({
   const handleDeleteVisitModule = useCallback((id: string) => {
     if (!savedSpot) return;
     const updated = localVisits.filter(v => v.id !== id);
-    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate });
+    // The rating goes with the last visit: it is only shown, and set, alongside visits (My Rating, the visit editor), so a
+    // rating left behind would be one nothing shows or can change.
+    updateSpot(activeSpot.id, { visits: updated, visitDate: updated[0]?.startDate, ...(updated.length ? {} : { rating: undefined }) });
   }, [savedSpot, localVisits, activeSpot.id, updateSpot]);
 
   const carouselRef = useRef<ScrollView>(null);
@@ -1540,7 +1542,8 @@ isVisited ? (
                         here (a spot has nothing beneath it to tag a visit with). */}
                     {/* The spot's one rating, above its visits: it is the spot's, not any one visit's (the visit cards
                         used to each show and edit it, so rating one visit changed them all). */}
-                    <MyRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />
+                    {/* Only alongside a visit: with none logged (the last one removed), there is nothing to rate yet. */}
+                    {localVisits.length > 0 && <MyRating spotId={activeSpot.id} value={savedSpot?.rating ?? 0} />}
                     <VisitCardList
                       defaultTitle={`${activeSpot.name} Visit`}
                       noun="Visit"
