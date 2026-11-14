@@ -145,7 +145,7 @@ export default function ProfileScreen() {
   const settle = (y: number) => {
     'worklet';
     const pin = stickyYSV.value;
-    if (y > 1 && y < pin - 1) scrollTo(pageRef, 0, y < pin / 2 ? 0 : pin, true);
+    if (y > 1 && y < pin - 1) scrollTo(pageRef, 0, y < pin / 2 ? 0 : pin + PIN_SETTLE_PAST, true);
   };
   const onPageScroll = useAnimatedScrollHandler({
     onScroll: e => { scrollSV.value = e.contentOffset.y; },
@@ -575,7 +575,7 @@ export default function ProfileScreen() {
       keyboardShouldPersistTaps="handled"
       // Always tall enough to scroll the bar all the way to its pinned point, however little is below it (a country with a
       // couple of tiles): a short page would otherwise clamp the scroll part-way, leaving the header half faded.
-      contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100, minHeight: pageH + 16 + headerH + 16 - COMPACT_H }}
+      contentContainerStyle={{ paddingTop: 16, paddingBottom: insets.bottom + 100, minHeight: pageH + 16 + headerH + 16 - COMPACT_H + PIN_SETTLE_PAST }}
       showsVerticalScrollIndicator={false}
     >
       {/* Room for the profile header, which sits fixed behind the page (above the ScrollView). */}
@@ -1389,6 +1389,9 @@ function StatDivider({ index, level }: { index: number; level: SharedValue<numbe
 
 // The pinned bar's top strip, holding its small avatar and name.
 const COMPACT_H = 40;
+// How far past the selector's pinned point a scroll that settles there comes to rest (see settle): at the pinned point
+// itself the blank room the selector card leaves under the pinned bar sat between the bar and the map.
+const PIN_SETTLE_PAST = 36;
 // The Edit Profile button's height.
 const EDIT_H = 26;
 // How many points of scroll, ending where the bar pins, the bar fills in over and the full header fades out over.
