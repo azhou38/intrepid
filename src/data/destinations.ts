@@ -2303,6 +2303,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the drier, cooler part of the year, before the heavy summer rain.",
   },
   {
+    id: 'cooktown', name: "Cooktown", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 65,
+    continent: 'Oceania', coordinates: { latitude: -15.47008, longitude: 145.25824 },
+    category: 'city', icon: "⚓", rank: 4,
+    tagline: "A frontier port where Captain Cook beached the Endeavour, gateway to Cape York",
+    description: "Cooktown is a small coastal town on the Endeavour River estuary, where Captain Cook beached his ship for 48 days in 1770. A century later it was the port for the Palmer River goldfields, and grand buildings were built in that boom. The town has a frontier feel, far from the resort towns further south. Grassy Hill and rainforest sit around it, and it is the base for travel north into Cape York.",
+    whyVisit: ["Trace Captain Cook's 1770 visit", "Climb Grassy Hill for sweeping views", "Go bushwalking in tropical rainforest"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Captain Cook history", "Grassy Hill views", "Rainforest walks"],
+    goodToKnow: [
+      { icon: "🐊", title: "Crocodiles and stingers", detail: "Crocodiles have been sighted at Finch Bay and Cherry Tree Bay, and stingers are present in season. Do not wade in creeks or the sea." },
+      { icon: "🌧️", title: "Wet season flooding", detail: "Flooding has cut the town off in the wet. Check road conditions before driving and never cross a flooded creek." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Visit in {months}, the dry season, for warm, less humid days. The wet season runs December to April.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
