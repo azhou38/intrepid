@@ -1660,6 +1660,23 @@ export const DESTINATIONS: Destination[] = [
     seasonalTags: [{ tag: 'wildlife-migration', months: [6, 7, 8, 9, 10, 11] }],
   },
   {
+    id: 'atherton-tablelands', name: "Atherton Tablelands", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -17.27009, longitude: 145.58428 },
+    category: 'nature', icon: "🌳", rank: 3,
+    tagline: "A volcanic plateau of crater lakes, giant fig trees and rainforest waterfalls",
+    description: "The Atherton Tablelands is a plateau behind Cairns in Far North Queensland, built by volcanic activity over millions of years. Its crater lakes, Lake Eacham and Lake Barrine, are maar volcanoes, and remnant rainforest in national parks holds twelve bird species found only in the Tablelands and nearby ranges. Waterfalls such as Millaa Millaa Falls and Millstream Falls, strangler figs like the Curtain Fig Tree and the historic mining town of Herberton make good stops for a drive around the plateau.",
+    whyVisit: ["Visit volcanic crater lakes", "See waterfalls tumble in the hills", "Stand beneath strangler figs"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Crater lakes", "Tableland waterfalls", "Strangler fig trees"],
+    goodToKnow: [
+      { icon: "🚗", title: "You need a car", detail: "Sights are spread across the plateau, which is reached from Cairns on State Route 52 or National Route 1. Yungaburra and Atherton have lodging." },
+      { icon: "🐦", title: "Bring binoculars", detail: "The Tablelands are an Important Bird Area, with golden and tooth-billed bowerbirds found only in the region and nearby ranges." },
+      { icon: "🌧️", title: "Wet season rain", detail: "The wet season runs December to March, with heavy rain." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the drier part of the year, which makes the drives and walks easier.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
