@@ -2255,6 +2255,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the drier part of the year, best for the beach and the offshore islands.",
   },
   {
+    id: 'rockhampton', name: "Rockhampton", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 35,
+    continent: 'Oceania', coordinates: { latitude: -23.37821, longitude: 150.51342 },
+    category: 'city', icon: "🐂", rank: 4,
+    tagline: "Australia's beef capital on the Tropic of Capricorn, with caves and a zoo",
+    description: "Rockhampton is Central Queensland's regional centre and one of the state's oldest cities, founded in 1855. It sits almost exactly on the Tropic of Capricorn and is regarded as Australia's beef capital, so a steakhouse meal is a local must. Visitors come for the Rockhampton Zoo and Botanic Gardens, the Heritage Village, the Dreamtime Cultural Centre and an extensive regional art gallery. Capricorn Caves lie 26 km north and Mount Archer gives views over the city.",
+    whyVisit: ["Tour the Capricorn Caves", "Eat steak in the beef capital", "Look over the city from Mount Archer"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Cave tours", "Beef capital steaks", "City lookout views"],
+    goodToKnow: [
+      { icon: "🚗", title: "Car makes it easy", detail: "Sights are spread out, and the caves are 26 km north on the Bruce Highway. A car or hire is simplest." },
+      { icon: "🌉", title: "Friday bridge traffic", detail: "Expect delays of up to about 10 minutes on Friday afternoons when crossing the bridges towards Yeppoon." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the dry season, better for the caves, lookouts and gardens. Flooding is common in the wet.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
