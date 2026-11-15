@@ -1115,6 +1115,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the dry season, with Jun–Aug the peak. Stinger season runs about Oct–May.",
   },
   {
+    id: 'kgari', name: "K'gari", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 80,
+    continent: 'Oceania', coordinates: { latitude: -25.24672, longitude: 153.1468 },
+    category: 'island', icon: "🏝️", rank: 2,
+    tagline: "A World Heritage sand island of freshwater lakes and rainforest on the dunes",
+    description: "K'gari, formerly Fraser Island, is a sand island about 122 km long off Queensland's southern coast, and was inscribed as a World Heritage Site in 1992. Most of it is Great Sandy National Park. The main beach doubles as a highway for 4WDs, passing Eli Creek, the SS Maheno wreck and Indian Head, while coloured sand cliffs and more than 100 freshwater lakes lie inland. Dingoes live wild here, and visitors must keep food secured and never feed them.",
+    whyVisit: ["Swim in clear freshwater lakes", "Drive the beach highway in a 4WD", "Walk rainforest growing on sand dunes", "Spot rays, turtles and dolphins from headlands"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Freshwater lakes", "Beach driving", "Dune rainforest", "Headland wildlife"],
+    goodToKnow: [
+      { icon: "🎫", title: "Vehicle permit required", detail: "Every vehicle needs a permit on the windscreen, and campers outside commercial campgrounds need a camping permit. Get both before you go." },
+      { icon: "🚙", title: "4WD and barge only", detail: "Vehicles cross by barge from River Heads or Inskip Point, and the sand roads need a 4WD. Allow about three days, or take a guided tour if unsure." },
+      { icon: "🐕", title: "Stay dingo safe", detail: "Feeding dingoes is fined. Lock food away when unattended, and skip ocean swimming, where surf and sharks are a risk." },
+    ],
+    bestMonths: [6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are the dry, mild months, with humpback whales passing in Jul–Aug.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,

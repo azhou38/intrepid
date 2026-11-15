@@ -3633,4 +3633,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Brisbane",
   "Gold Coast",
   "Cairns",
+  "K'gari",
 ]);
