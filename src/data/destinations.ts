@@ -2319,6 +2319,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit in {months}, the dry season, for warm, less humid days. The wet season runs December to April.",
   },
   {
+    id: 'winton', name: "Winton", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 25,
+    continent: 'Oceania', coordinates: { latitude: -22.39074, longitude: 143.03991 },
+    category: 'landmark', icon: "🦕", rank: 4,
+    tagline: "The outback town where Waltzing Matilda was first performed and dinosaurs roamed",
+    description: "Winton is a small town in outback Queensland, about two hours from Longreach. It is where Waltzing Matilda was first performed in 1895, and it was the first headquarters of the company that became Qantas. The surrounding country is rich in dinosaur fossils, including Australovenator, which is named for the town. Quirky stops such as Arno's Wall and the Musical Fence add to the outback character.",
+    whyVisit: ["Follow the Waltzing Matilda story", "Dig into outback dinosaur history", "Explore quirky outback attractions"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Waltzing Matilda story", "Dinosaur country", "Outback oddities"],
+    goodToKnow: [
+      { icon: "🌡️", title: "Summer heat", detail: "Summer days often reach 40°C. Visitor season runs April to October, and tours and experiences are reduced outside it." },
+      { icon: "🚗", title: "Bring a car", detail: "There is no public transport in town and the nearest hire cars are in Longreach, about two hours away. The dinosaur sites involve unsealed roads." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Visit in {months}, when the outback is milder and tours run. Summer is harsh, with days often reaching 40°C.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
