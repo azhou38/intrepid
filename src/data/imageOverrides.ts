@@ -3631,4 +3631,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Yancheng China Sea Salt Museum",
   "Whitsundays",
   "Brisbane",
+  "Gold Coast",
 ]);

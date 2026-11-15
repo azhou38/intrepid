@@ -1081,6 +1081,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is drier and less humid, which suits walking the river and parks. Summer is hot and stormy.",
   },
   {
+    id: 'gold-coast', name: "Gold Coast", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 30,
+    continent: 'Oceania', coordinates: { latitude: -27.99726, longitude: 153.43152 },
+    category: 'city', icon: "🏄", rank: 2,
+    tagline: "Surf beaches, theme parks and a glitzy skyline on a warm subtropical coast",
+    description: "The Gold Coast is a long strip of ocean beaches in Queensland's south-east corner, with more than 50 km of sand, almost all of it patrolled. Surfers Paradise is the high-rise hub of tourist activity, while Burleigh Heads and Currumbin have a quieter, local feel. Theme parks and wildlife sanctuaries fill out a visit, and rainforest-covered hills sit just inland.",
+    whyVisit: ["Surf and swim the patrolled beaches", "Ride the theme parks", "Meet native wildlife at sanctuaries", "Explore the Burleigh Heads coast"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Patrolled surf beaches", "Theme parks", "Wildlife sanctuaries", "Headland coast"],
+    goodToKnow: [
+      { icon: "🚩", title: "Swim between the flags", detail: "Almost all beaches from the Seaway to Coolangatta are patrolled. Swim between the red and yellow flags and escape a rip by swimming parallel to shore." },
+      { icon: "🚋", title: "Tram and train links", detail: "A light-rail line runs along the coast through Surfers Paradise, and a train links the Gold Coast with Brisbane." },
+      { icon: "🎢", title: "Buy park tickets ahead", detail: "Discounted and combo tickets for the theme parks are sold before you travel, so buy ahead." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are the drier months, with mild days for beaches and theme parks. Summer brings storms.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
