@@ -1098,6 +1098,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are the drier months, with mild days for beaches and theme parks. Summer brings storms.",
   },
   {
+    id: 'cairns', name: "Cairns", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -16.91964, longitude: 145.77798 },
+    category: 'city', icon: "🐠", rank: 2,
+    tagline: "The tropical gateway to the Great Barrier Reef, the Daintree and Kuranda",
+    description: "Cairns is a city of about 150,000 on Trinity Bay in Far North Queensland, and its main industry is tourism. Reef trips, dive and snorkel tours, rafting and skydiving leave from here, and Kuranda and the Daintree Rainforest are day trips away. In town, a free lagoon pool and barbecues line the Esplanade, and the swimming beaches lie just north and south of the city.",
+    whyVisit: ["Set out for the Great Barrier Reef", "Cool off in the Esplanade Lagoon", "Visit Kuranda and the Daintree rainforest", "Raft rivers or go skydiving"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Reef trips", "Esplanade Lagoon", "Rainforest day trips", "Adventure tours"],
+    goodToKnow: [
+      { icon: "🪼", title: "Stinger season", detail: "From about October to May, swim only in net enclosures, such as Palm Cove, or the free Esplanade Lagoon." },
+      { icon: "🌀", title: "Wet season cyclones", detail: "Tropical cyclones can hit between December and March, damaging infrastructure and stopping public activities. Check forecasts before booking then." },
+      { icon: "🗓️", title: "Peak season crowds", detail: "June to August is busiest, and the first two weeks of July (school holidays) are the peak." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the dry season, with Jun–Aug the peak. Stinger season runs about Oct–May.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
