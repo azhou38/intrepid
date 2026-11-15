@@ -2207,6 +2207,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the drier, cooler half of the year, better for rainforest walks and lookouts.",
   },
   {
+    id: 'kuranda', name: "Kuranda", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 20,
+    continent: 'Oceania', coordinates: { latitude: -16.82093, longitude: 145.63327 },
+    category: 'landmark', icon: "🦋", rank: 4,
+    tagline: "A rainforest village in the hills above Cairns, reached by train or Skyrail",
+    description: "Kuranda is a small village beside Barron Gorge National Park, about 40 minutes by road from Cairns. Most visitors arrive by the Kuranda Scenic Railway, which climbs 329 m over 34 km, or by the Skyrail gondola over the rainforest canopy. In the village are its markets and wildlife attractions, including Birdworld, a butterfly sanctuary and Koala Gardens, and Barron Falls can be seen from the railway platform.",
+    whyVisit: ["Ride the train or Skyrail up", "Meet koalas, birds and butterflies", "Walk the Barron Gorge tracks"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Scenic rail and gondola", "Wildlife parks", "Gorge walks"],
+    goodToKnow: [
+      { icon: "🚆", title: "Go up one way, back the other", detail: "Many visitors take the Scenic Railway up in the morning and the Skyrail down, or the reverse. Carriages are not air-conditioned and booking is recommended." },
+      { icon: "⏰", title: "Midday crowds", detail: "The village and markets are packed in the middle of the day with visitors. Arrive early for quieter streets." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the dry season, easier for the village and gorge walks. Barron Falls is only a trickle then.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

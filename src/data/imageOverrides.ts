@@ -3645,4 +3645,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Scenic Rim",
   "Glass House Mountains",
   "Sunshine Coast Hinterland",
+  "Kuranda",
 ]);
