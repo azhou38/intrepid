@@ -2239,6 +2239,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are the drier months, a good time for the bays and walking tracks.",
   },
   {
+    id: 'mission-beach', name: "Mission Beach", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 70,
+    continent: 'Oceania', coordinates: { latitude: -17.86723, longitude: 146.10718 },
+    category: 'beach', icon: "🏖️", rank: 4,
+    tagline: "Four beach villages on 14 km of golden sand, backed by tropical rainforest",
+    description: "Mission Beach is a string of four beach villages on the Cassowary Coast, about halfway between Townsville and Cairns. Wide golden sand backs onto lush tropical rainforest, where the cassowary is the most notable resident. Offshore are Dunk Island and the Family Islands. Eateries, boutiques and art galleries sit among the palms.",
+    whyVisit: ["Spot cassowaries in the rainforest", "Walk 14 km of golden beach", "Visit tropical islands offshore"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Wild cassowaries", "Golden beaches", "Island escapes"],
+    goodToKnow: [
+      { icon: "🦤", title: "Drive slowly for cassowaries", detail: "Cassowaries cross roads in the rainforest and have been hit by cars. Keep to the speed limit, and never feed or approach one." },
+      { icon: "🚗", title: "Off the Bruce Highway", detail: "The village is a 26 km detour off the Bruce Highway near Tully, or 16 km from El Arish. Buses stop at Wongaling Beach." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the drier part of the year, best for the beach and the offshore islands.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
