@@ -2191,6 +2191,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the cooler, drier half of the year, better for the summit climbs. Summer is hot and stormy.",
   },
   {
+    id: 'sunshine-coast-hinterland', name: "Sunshine Coast Hinterland", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 30,
+    continent: 'Oceania', coordinates: { latitude: -26.70251, longitude: 152.8134 },
+    category: 'nature', icon: "🌿", rank: 4,
+    tagline: "Waterfalls, rainforest walks and hill towns in the Blackall Range inland",
+    description: "The Blackall Range rises just inland from the Sunshine Coast, with hill towns such as Maleny and Montville and a string of small national parks. Kondalilla National Park has 327 hectares of subtropical rainforest, with Kondalilla Falls dropping 90 m, and Mapleton Falls drops 120 m. The 58 km Sunshine Coast Hinterland Great Walk starts near Lake Baroon at Montville and takes four to six days. Maleny and Montville both have visitor centres, which makes the range an easy day trip from the beaches.",
+    whyVisit: ["Walk to waterfalls in subtropical rainforest", "Wander the hinterland hill towns", "Hike a multi-day Great Walk"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Rainforest waterfalls", "Hill town browsing", "Multi-day Great Walk"],
+    goodToKnow: [
+      { icon: "⛺", title: "Book Great Walk campsites", detail: "Campsites on the Hinterland Great Walk have water, toilets and platforms, and must be booked ahead." },
+      { icon: "👨‍👩‍👧", title: "Busy in school holidays", detail: "Waterfall parks such as Mapleton Falls can be crowded in the holidays, so arrive early or visit midweek." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the drier, cooler half of the year, better for rainforest walks and lookouts.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
