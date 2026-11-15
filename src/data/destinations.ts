@@ -1149,6 +1149,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Dry, sunny days from {months} suit the beaches and the Mount Coolum walk. Summer is humid and stormy.",
   },
   {
+    id: 'daintree', name: "Daintree", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -16.23624, longitude: 145.42203 },
+    category: 'park', icon: "🌿", rank: 2,
+    tagline: "Ancient World Heritage rainforest that meets the Great Barrier Reef at the shore",
+    description: "The Daintree is a tropical rainforest in Far North Queensland, thought to be over 135 million years old and part of the Wet Tropics World Heritage Area. It is one of the few places where two World Heritage sites, the rainforest and the Great Barrier Reef, meet. Visitors cross the Daintree River by ferry to reach Cape Tribulation and its beaches, boardwalks and wildlife. The cassowary is its icon, alongside about 430 bird species.",
+    whyVisit: ["Walk boardwalks through ancient rainforest", "Spot cassowaries and rare birds", "Cruise the river for crocodiles", "See rainforest meet reef beaches"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Ancient rainforest", "Wildlife spotting", "River cruises", "Rainforest beaches"],
+    goodToKnow: [
+      { icon: "⛴️", title: "Cross the river by ferry", detail: "Cape Tribulation lies north of the Daintree River, which you cross by ferry. Allow time for the crossing when planning your day." },
+      { icon: "🐊", title: "Crocodiles and stingers", detail: "Crocodiles live in the river, creeks and sea, and stingers are present in summer. Stay away from the shore and never swim at night." },
+      { icon: "🌧️", title: "Avoid the wet season", detail: "November to March is the rainy and cyclone season. Check road conditions before heading north of the river." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are the drier months, easier for walking. Nov–Mar is the rainy and cyclone season.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
