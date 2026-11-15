@@ -1,0 +1,464 @@
+{
+ "shard": "shard-23",
+ "spots": [
+  {
+   "id": "bowen-1",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Queens Beach article (Bowen, Queensland covers the suburb)",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "One of Bowen's eight beaches",
+     "source": "https://en.wikivoyage.org/wiki/Bowen",
+     "status": "supported",
+     "fix": "source says \"8 beaches\""
+    },
+    {
+     "text": "Tourism Bowen lists Queens Beach among Bowen's best beaches",
+     "source": "https://www.tourismbowen.com.au/see-do/beaches",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Bowen's longest beach, about 5 km, with walking/cycling tracks and BBQs",
+     "source": "search-summary of travel sites only, no page read",
+     "status": "unsupported",
+     "fix": "drop variant 2; use variant 1 but cut \"walking and cycling tracks and barbecues\" unless sourced (not in Wikivoyage or Tourism Bowen page read)"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "One of Bowen's eight beaches, with walking and cycling tracks and barbecues along the foreshore.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Bowen's longest beach, about 5 km of sand with foreshore walking and cycling tracks and BBQs.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "bowen-4",
+   "wikipedia": {
+    "title": "Hideaway Bay, Queensland",
+    "right_place": true,
+    "note": "article is correct (\"sometimes written as Hydeaway Bay\"); Hydeaway_Bay title 404s",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Coastal locality facing sheltered Shoal Bay, about 45 km north of Airlie Beach (30 km NE of Proserpine) via Dingo Beach Road",
+     "source": "https://en.wikipedia.org/wiki/Hideaway_Bay,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Shallow coral and seagrass flats; islands shelter it from swell",
+     "source": "Wikipedia article does not mention coral/seagrass in the text read",
+     "status": "unverifiable",
+     "fix": "variant 1 says \"shallow coral flats\": cut or source (queensland.com BLOCKED)"
+    },
+    {
+     "text": "Tiny hamlet on a no-through road (variant 2)",
+     "source": "queensland.com BLOCKED",
+     "status": "unverifiable",
+     "fix": "prefer variant 1 minus coral claim, or check in browser"
+    },
+    {
+     "text": "Name spelling: spot is \"Hydeaway Bay\"; Wikipedia headline is Hideaway Bay",
+     "source": "",
+     "status": "supported",
+     "fix": "set wiki to \"Hideaway Bay, Queensland\"; keep name as shown if sources use Hydeaway"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Quiet sandy beach on sheltered Shoal Bay with shallow coral flats, 45 km north of Airlie Beach.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Small Whitsunday Coast hamlet on a no-through road, with a curving beach sheltered by nearby islands.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "townsville-4",
+   "wikipedia": {
+    "title": "The Strand, Townsville",
+    "right_place": true,
+    "note": "correct; bare \"The Strand\" is a disambiguation",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Seaside foreshore in North Ward, views of port and Magnetic Island; jetty, recreational park, restaurants, cafes, pools",
+     "source": "https://en.wikipedia.org/wiki/The_Strand,_Townsville",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Calm swimming beach thanks to Magnetic Island's shelter; Rockpool artificial lagoon at one end",
+     "source": "https://en.wikivoyage.org/wiki/Townsville",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Free water playground at the southern end",
+     "source": "https://en.wikivoyage.org/wiki/Townsville",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Rockpool is free",
+     "source": "not stated",
+     "status": "unverifiable",
+     "fix": "unverifiable-default; not in bio"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Townsville's seaside foreshore, with a jetty, cafes, the Rockpool lagoon and views to Magnetic Island.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Townsville's foreshore promenade with a calm swimming beach, Rockpool lagoon and a free water playground.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "magnetic-island-1",
+   "wikipedia": {
+    "title": "Horseshoe Bay, Queensland",
+    "right_place": true,
+    "note": "bay, town and suburb on Magnetic Island; correct",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Largest bay on the island, hub for watersports, dining, sunsets; stinger net in summer; calm water for swimming, kayaking, paddleboarding",
+     "source": "https://en.wikivoyage.org/wiki/Magnetic_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Walk to Radical Bay via Balding Bay: 3 km, 45 min, from eastern end of Horseshoe Bay beach; tide-dependent",
+     "source": "https://en.wikivoyage.org/wiki/Magnetic_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Variant 2 omits that Balding Bay is clothes-optional: fine",
+     "source": "",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Magnetic Island's largest bay, with calm water for swimming, kayaking and paddleboarding.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "The island's largest bay, with watersports, dining and sunsets, and a walk to Radical Bay via Balding Bay.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "magnetic-island-4",
+   "wikipedia": {
+    "title": "Florence Bay, Queensland",
+    "right_place": true,
+    "note": "exists but is a locality stub (mostly Magnetic Island National Park); right place, no useful text",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Less crowded beach, crystal-clear water, vibrant coral close to shore, ideal for snorkelling on calm days",
+     "source": "https://en.wikivoyage.org/wiki/Magnetic_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "\"Reached by walking track\" (variant 2)",
+     "source": "https://en.wikivoyage.org/wiki/Magnetic_Island",
+     "status": "unsupported",
+     "fix": "not stated for Florence Bay (the walking-track/4WD line is Radical Bay's); use variant 1"
+    },
+    {
+     "text": "Locality is almost all within Magnetic Island National Park",
+     "source": "https://en.wikipedia.org/wiki/Florence_Bay,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free/open; no day-use fee known, QPWS not checked",
+     "source": "QPWS BLOCKED",
+     "status": "unverifiable",
+     "fix": "unverifiable-default"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Less crowded Magnetic Island beach with clear water and coral close to shore for calm-day snorkelling.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Magnetic Island beach reached by walking track, with clear water and coral near the shore.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "magnetic-island-5",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Radical Bay article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Secluded, palm-fringed beach by walking track or 4WD (if permitted), known for excellent snorkelling",
+     "source": "https://en.wikivoyage.org/wiki/Magnetic_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "3 km walk (45 min) from Horseshoe Bay via Balding Bay",
+     "source": "https://en.wikivoyage.org/wiki/Magnetic_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free/open; park fee not sourced",
+     "source": "QPWS not checked",
+     "status": "unverifiable",
+     "fix": "unverifiable-default"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Secluded palm-fringed Magnetic Island beach known for snorkelling, a 3 km walk from Horseshoe Bay.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Palm-fringed Magnetic Island beach for snorkelling, reached on a 3 km track from Horseshoe Bay.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "atherton-tablelands-13",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "bare \"Mount Baldy\" is a disambiguation; no article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Circuit of Mount Baldy and Yabi Mountain, about 2.5 hours, steep, views over Atherton and the tablelands",
+     "source": "https://www.aussiebushwalking.com/qld/far-north/mount-baldy-and-yabi-mountain",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "8.4 km circuit (both variants)",
+     "source": "aussiebushwalking says 8.6 km return (user-provided); QPWS map PDF 403",
+     "status": "unsupported",
+     "fix": "say \"about 8.5 km\" or drop the number; QPWS figure unverified"
+    },
+    {
+     "text": "Herberton Range summit (variant 1 says \"Herberton Range\")",
+     "source": "QPWS page BLOCKED",
+     "status": "unverifiable",
+     "fix": "range name from researcher's search summary only"
+    },
+    {
+     "text": "Cost: free/open; QPWS fee unverified",
+     "source": "https://parks.qld.gov.au/parks/herberton-range BLOCKED",
+     "status": "unverifiable",
+     "fix": "unverifiable-default"
+    },
+    {
+     "text": "ticketUrl QPWS Herberton Range",
+     "source": "BLOCKED",
+     "status": "unverifiable",
+     "fix": "check in browser; omit if not confirmed"
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Herberton Range summit with wide tableland views, climbed on an 8.4 km circuit with Yabi Mountain.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Steep 8.4 km return circuit, about 2.5 hours, over Mount Baldy and Yabi Mountain near Atherton.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "mission-beach-2",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Clump Point Lookout article; Mission Beach, Queensland covers Clump Point",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Clump Point Lookout, Clump Point Lookout Rd, 24/7, Free",
+     "source": "https://en.wikivoyage.org/wiki/Mission_Beach",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Clump Point is the northern end of a 13 km Coral Sea beach running south to Tam O'Shanter Point",
+     "source": "https://en.wikipedia.org/wiki/Mission_Beach,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free (stated on Wikivoyage); costBasis open",
+     "source": "",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Free lookout at Mission Beach's Clump Point, the north end of a 13 km beach, open 24 hours.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Lookout at Clump Point, the northern end of a 13 km Coral Sea beach at Mission Beach.",
+     "bio_fit": "2 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "port-douglas-1",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Four Mile Beach article (Port Douglas covers it)",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Four miles of golden sand and palm trees",
+     "source": "https://en.wikipedia.org/wiki/Port_Douglas",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Firm sand good for cycling; netted area at north end patrolled by lifeguards (stinger season Nov-May)",
+     "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Crocodile warning signs; beach closed if one is sighted",
+     "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Port Douglas's main beach, four miles of golden sand and palms, with a patrolled netted swimming area.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Firm golden sand at Port Douglas suited to cycling, with a patrolled stinger net at the north end.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  }
+ ]
+}

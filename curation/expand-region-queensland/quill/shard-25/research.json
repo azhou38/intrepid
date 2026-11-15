@@ -1,0 +1,54 @@
+{
+"rainbow-beach-1": {
+ "name":"Double Island Point",
+ "facts":{
+  "what":"Coastal headland, next headland north of Noosa, inside the Cooloola section of Great Sandy National Park, about 12 km south along the beach from Rainbow Beach; has the Double Island Point Lighthouse; Wolf Rock is four volcanic pinnacles offshore; named by Cook in 1770; Kabi Kabi country",
+  "sources":["https://en.wikipedia.org/wiki/Double_Island_Point"],
+  "access_note":"Reached by 4WD along the beach: a Cooloola Recreation Area vehicle access permit is required. QPWS 2026 closures list shows 'Natural Sand Movement and access to Double Island Point' 5 Dec 2025 to 5 Dec 2026 (via web search summary of parks.qld.gov.au; unverified on page)"},
+ "cost":{"free":false,"costBasis":"permit","needs":"permit","costMin":null,"costMax":null,"currency":"AUD","note":"Spot itself charges nothing; vehicle access permit applies to driving there. Fee not verified: QPWS page https://parks.qld.gov.au/management/managed-areas/recreation/vehicle-permits is BLOCKED to scripts (third-party figures $14.40/day, ~$35.50/week not used). Orchestrator to confirm current Cooloola fee in browser, or choose open/free with the permit in bio."},
+ "ticketUrl":"BLOCKED","ticketUrl_candidate":"https://parks.qld.gov.au/parks/cooloola (QPWS, 403 to scripts, also parks.qld.gov.au/parks/great-sandy)",
+ "park_pass":"none in src/data/parkPasses.ts for Queensland; no pass missing identified, only vehicle permit",
+ "unverified":["permit fee","current access closure status","lighthouse public access","bio detail beyond Wikipedia"]
+},
+"whitsundays-10": {
+ "name":"South Molle Island",
+ "facts":{
+  "what":"Whitsunday island, 4.66 km2, highest point Mount Jeffreys (194 m), 16 km of walking and cycling tracks, most of it in Molle Islands National Park; popular walk to Mount Jeffreys and on to Sandy Bay",
+  "sources":["https://en.wikipedia.org/wiki/South_Molle_Island"],
+  "resort_status":"Resort at Bauer Bay was destroyed by Cyclone Debbie (2017) and as of Wikipedia's 2019 text remained closed; QPWS alert (via search summary, parks.qld.gov.au/park-alerts/26157) says the privately owned Bauer Bay jetty is closed to the public 30 Jan-31 Dec 2026 after Cyclone Koji, with walkers still able to use the designated path from Bauer Bay beach to the national park trails. Reopening not confirmed."},
+ "cost":{"free":true,"costBasis":"open","note":"National park walking; no entry fee found, QPWS Molle Islands page BLOCKED (https://parks.qld.gov.au/parks/molle-islands). Getting there (boat/seaplane) is transport, not the price."},
+ "ticketUrl":"BLOCKED","ticketUrl_candidate":"https://parks.qld.gov.au/parks/molle-islands (managing agency; 403 to scripts, title unchecked). www.southmolleisland.com.au unreachable.",
+ "concern":"Access is difficult now (resort and jetty closed); orchestrator may hold or word bio around the national park walks",
+ "unverified":["how a visitor can reach it now","resort reopening","camping fees"]
+},
+"townsville-1": {
+ "name":"Reef HQ Aquarium",
+ "facts":{
+  "what":"Great Barrier Reef Marine Park Authority's national education centre, opened June 1987, the world's largest living tropical reef aquarium; Wikipedia says 'was' the largest, with a turtle hospital",
+  "sources":["https://www.greatbarrierreefaquarium.au/","https://en.wikipedia.org/wiki/Reef_HQ"],
+  "status":"CLOSED: the official site says the aquarium is being redeveloped, its fish and corals were relocated to AIMS, and 'a reopening date' depends on lease negotiation with the landholder. No reopening date."},
+ "cost":{"free":null,"costBasis":null,"note":"No current price: the aquarium is closed and the site lists none. Do not add a price."},
+ "ticketUrl":"https://www.greatbarrierreefaquarium.au/","ticketUrl_checked":"loaded 200, title 'Great Barrier Reef Aquarium' (reefhq.com.au redirects here)",
+ "recommendation":"Fails 'there whenever a visitor arrives' while closed with no reopening date: hold for owner / drop",
+ "unverified":["reopening date","future prices"]
+},
+"townsville-2": {
+ "name":"Castle Hill",
+ "facts":{
+  "what":"Heritage-listed pink granite monolith (Indigenous name Cootharinga), 286 m, dominating Townsville's skyline; a 2.6 km bitumen road reaches Hynes Lookout on the second peak, with views over the city and Cleveland Bay to Magnetic Island; the Goat Track is a rough path of 758 stairs",
+  "sources":["https://en.wikipedia.org/wiki/Castle_Hill,_Townsville"]},
+ "cost":{"free":true,"costBasis":"open","note":"No fee mentioned in Wikipedia; public reserve, lookout and tracks"},
+ "ticketUrl":"none","ticketUrl_note":"No single official visitor site verified; Townsville City Council site (townsville.qld.gov.au) returned 403 captcha to scripts, so BLOCKED if the orchestrator wants a council page: https://www.townsville.qld.gov.au/about-townsville/attractions/castle-hill (a guess, not a verified page)",
+ "unverified":["council page","any fee"]
+},
+"townsville-3": {
+ "name":"Museum of Tropical Queensland",
+ "facts":{
+  "what":"Now named Queensland Museum Tropics, Townsville: galleries on World Heritage rainforests, the Great Barrier Reef and HMS Pandora, the ship sent to capture the Bounty mutineers",
+  "sources":["https://en.wikipedia.org/wiki/Queensland_Museum_Tropics","https://www.museum.qld.gov.au/tropics/plan-your-visit"],
+  "note":"Name changed: the shown name should be considered 'Queensland Museum Tropics' (wiki title)"},
+ "cost":{"free":true,"costBasis":"entry","note":"Official page: 'Entry to all North Queensland galleries is free'; some exhibitions and events have a charge (extras, not counted)"},
+ "ticketUrl":"https://www.museum.qld.gov.au/tropics","ticketUrl_checked":"loaded 200, title 'Queensland Museum Tropics'",
+ "unverified":[]
+}
+}

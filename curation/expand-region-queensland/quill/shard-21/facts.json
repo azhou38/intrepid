@@ -1,0 +1,458 @@
+{
+ "shard": "shard-21",
+ "spots": [
+  {
+   "id": "gold-coast-20",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Tallebudgera Beach article; Palm Beach, Queensland covers the area (do not use Tallebudgera, Queensland: the suburb)",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Tallebudgera Creek is a popular swimming lagoon, one of the few patrolled beaches in water protected from the surf",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Pin may be creek mouth vs surf beach; Wikivoyage lists Creek (lagoon) and Palm Beach (incl. Tallebudgera Surf Beach) separately: possible duplicate of gold-coast-18",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "unverifiable",
+     "fix": "owner call"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Patrolled Gold Coast beach beside Tallebudgera Creek, a swimming lagoon sheltered from the surf.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Palm Beach-area surf beach whose creek mouth is a calm, patrolled lagoon for swimmers wary of the surf.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "moreton-island-4",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "Honeymoon Bay is a disambiguation with no Moreton entry; leave wiki empty",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "North-facing beach surrounded by rocky headland; one of four pocket beaches on the Cape Moreton peninsula",
+     "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Hazard (rips, rocks)",
+     "source": "search summary of QPWS, never fetched",
+     "status": "unverifiable",
+     "fix": "not in bio; keep out"
+    },
+    {
+     "text": "Bio variant 1 says \"reached by 4WD\": Wikivoyage says 4WD needs a Moreton Island Recreation Area vehicle access permit, and lists North Point as reached by personal 4WD or tour bus",
+     "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Variant 2 \"picnic stop on the northern drive\" is from QPWS journeys page (unfetched)",
+     "source": "https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island/journeys/northern-island-discovery-drive",
+     "status": "unverifiable",
+     "fix": "use variant 1"
+    },
+    {
+     "text": "Cost: free/open; vehicle permit and barge are transport, not the spot's price",
+     "source": "QPWS BLOCKED",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: free/open; confirm no entry fee in browser"
+    },
+    {
+     "text": "ticketUrl QPWS Moreton Island page",
+     "source": "BLOCKED",
+     "status": "unverifiable",
+     "fix": "check in browser; add only if title names the park"
+    },
+    {
+     "text": "Pin ~40 m from moreton-island-5 (North Point); near-duplicate area",
+     "source": "",
+     "status": "unverifiable",
+     "fix": "owner call on merging"
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "North-facing pocket beach ringed by rocky headland on the Cape Moreton peninsula, reached by 4WD.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Picnic stop on Moreton Island's northern drive: a north-facing pocket beach under a rocky headland.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "moreton-island-5",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "\"North Point\" is Hong Kong; no Queensland article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Protected cove on NW side of Cape Moreton with the Champagne Pools (natural ocean pool among the rocks) and North Point Light",
+     "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Reached by personal 4WD or 4WD bus tour from Tangalooma",
+     "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Category: pin is a cove/Champagne Pools area, not a lookout",
+     "source": "",
+     "status": "unverifiable",
+     "fix": "consider nature"
+    },
+    {
+     "text": "Cost: free/open; campground permit and vehicle permit are not the spot's price",
+     "source": "QPWS BLOCKED",
+     "status": "unverifiable",
+     "fix": "unverifiable-default"
+    },
+    {
+     "text": "ticketUrl QPWS North Point attraction page",
+     "source": "https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island/attractions/north-point BLOCKED",
+     "status": "unverifiable",
+     "fix": "check in browser"
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Cove at Cape Moreton with the Champagne Pools, a natural ocean pool among the rocks, and North Point Light.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Protected cove on the north-west side of Cape Moreton, with the Champagne Pools and a lighthouse.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "moreton-island-7",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Mount Tempest article; covered in Moreton Island article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Highest point on Moreton Island at 280 m AHD, reputedly the highest stabilised coastal sandhill in the world",
+     "source": "https://en.wikipedia.org/wiki/Moreton_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Wikivoyage: \"Walk up Mount Tempest the highest sand dune in the world\"",
+     "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Walk length, trailhead, marked track",
+     "source": "",
+     "status": "unverifiable",
+     "fix": "visitHours is an estimate; bio makes no walk claim beyond Wikivoyage"
+    },
+    {
+     "text": "Cost: free/open inside Moreton Island NP",
+     "source": "QPWS BLOCKED",
+     "status": "unverifiable",
+     "fix": "unverifiable-default"
+    },
+    {
+     "text": "ticketUrl QPWS Moreton Island",
+     "source": "BLOCKED",
+     "status": "unverifiable",
+     "fix": "check in browser"
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Moreton Island's highest point at 280 m, reputedly the highest stabilised coastal sandhill in the world.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Walk up the sandhill that tops Moreton Island at 280 m, reputedly the world's highest of its kind.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "sunshine-coast-2",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no beach article; Maroochydore, Queensland is the suburb",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Closest beach to Maroochydore town centre, patrolled almost all the time; quite long, waves good for surfing",
+     "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Long beach beside Maroochydore's town centre, patrolled almost all the time, with waves good for surfing.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Maroochydore's closest beach: a long, mostly patrolled stretch with surfable waves.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "sunshine-coast-13",
+   "wikipedia": {
+    "title": "Kings Beach, Queensland",
+    "right_place": true,
+    "note": "suburb article; \"Kings Beach\" alone is a disambiguation. Set wiki to this title",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Very popular patrolled beach; Kings Beach Ocean Pool at the northern end is a 25 m seawater pool",
+     "source": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/kings-beach",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Green space, playgrounds, cafes and restaurants beside the beach (council page)",
+     "source": "same",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Ocean pool is free",
+     "source": "no charge stated",
+     "status": "unverifiable",
+     "fix": "unverifiable-default"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Patrolled Caloundra surf beach with a 25 m seawater ocean pool, a surf club, parkland and cafes.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Caloundra's main patrolled surf beach, with an ocean pool at the northern end and cafes beside the sand.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "sunshine-coast-14",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Bulcock Beach article; Caloundra, Queensland covers the name",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Popular with families and patrolled by Caloundra City Life Saving Club; strong current in Pumicestone Passage; boardwalk with bars and restaurants; boardwalk over the rocks from Kings Beach",
+     "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Variant 2 omits patrol: fine",
+     "source": "",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Patrolled family beach on Pumicestone Passage in Caloundra, with a boardwalk of bars and restaurants.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Caloundra beach reached by a boardwalk over the rocks from Kings Beach, popular for families and fishing.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "noosa-3",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no article; Noosa Heads, Queensland covers it",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Main beach fronts Hastings Street; Noosa National Park at its eastern end",
+     "source": "https://en.wikivoyage.org/wiki/Noosa",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Catamaran hire and sailing instruction on Laguna Bay",
+     "source": "https://en.wikivoyage.org/wiki/Noosa_Heads",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "\"Noosa's town beach\": Wikivoyage says \"main beach\", not \"town beach\"",
+     "source": "",
+     "status": "supported",
+     "fix": "minor; acceptable"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Beach on Laguna Bay fronting Hastings Street, with Noosa National Park at the eastern end of the strip.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Noosa's town beach on Laguna Bay, steps from Hastings Street, with catamaran hire and sailing lessons.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "sunshine-coast-hinterland-7",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "One of the highest points in the Maleny area, views of the Glass House Mountains and islands off the coast; Reesville Road",
+     "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "370 m detour off Reesville Road near Cumner Lane, near 360-degree views of the hinterland",
+     "source": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/howells-knob-lookout",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Council-recognised stargazing site (Dark Sky Reserve); no toilets or water",
+     "source": "council stargazing page (search summary only)",
+     "status": "unverifiable",
+     "fix": "variant 2 relies on it; use variant 1, or fetch the page first"
+    },
+    {
+     "text": "Elevation 561 vs 533 m",
+     "source": "",
+     "status": "unverifiable",
+     "fix": "not used in bios"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: council directory page is not an operator or ticket page",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Hinterland lookout near Maleny with views of the Glass House Mountains and islands off the coast.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Maleny-area high point on Reesville Road with hinterland views and a council-recognised stargazing site.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  }
+ ]
+}

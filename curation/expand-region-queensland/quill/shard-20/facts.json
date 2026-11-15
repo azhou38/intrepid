@@ -1,0 +1,478 @@
+{
+ "shard": "shard-20",
+ "spots": [
+  {
+   "id": "brisbane-20",
+   "wikipedia": {
+    "title": "Margate, Queensland",
+    "right_place": true,
+    "note": "suburb article; correct place, no beach article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Margate is a coastal suburb on the Redcliffe Peninsula, a popular South East Queensland recreation area",
+     "source": "https://en.wikipedia.org/wiki/Margate,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Margate Beach is a See listing under Redcliffe",
+     "source": "https://en.wikivoyage.org/wiki/Redcliffe",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Beach in the coastal suburb of Margate on the Redcliffe Peninsula, a popular South East Queensland getaway.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Beach at Margate, a coastal suburb on the Redcliffe Peninsula, a popular recreation area for South East Queensland.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "brisbane-28",
+   "wikipedia": {
+    "title": "Mount Glorious",
+    "right_place": true,
+    "note": "article is the mountain and locality; correct",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "619 m peak in the D'Aguilar Range",
+     "source": "https://en.wikipedia.org/wiki/Mount_Glorious",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Named from Elizabeth Patrick's remark about the view at a 1915 picnic",
+     "source": "https://en.wikipedia.org/wiki/Mount_Glorious",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "About 41 km by road NW of Brisbane CBD; surrounding forest is Brisbane Forest Park and D'Aguilar National Park",
+     "source": "https://en.wikipedia.org/wiki/Mount_Glorious",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free/open; D'Aguilar NP fee not checked",
+     "source": "https://parks.desi.qld.gov.au/parks/daguilar BLOCKED",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: QPWS blocked (403), recheck in the in-app browser; no Queensland day-use fee known"
+    },
+    {
+     "text": "ticketUrl: QPWS D'Aguilar page",
+     "source": "BLOCKED",
+     "status": "unverifiable",
+     "fix": "omit unless confirmed in browser; a village/peak may need no link"
+    },
+    {
+     "text": "Variant 2 calls it a \"mountain village\"; the draw (a lookout?) is not sourced",
+     "source": "",
+     "status": "unverifiable",
+     "fix": "prefer variant 1 or 3; both are sourced facts"
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "A 619 m peak in the D'Aguilar Range, named after a remark about its view at a 1915 picnic.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Mountain village 41 km by road from Brisbane, surrounded by D'Aguilar National Park forest.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Village on a 619 m peak in the D'Aguilar Range, named for a visitor's remark about the view.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "gold-coast-8",
+   "wikipedia": {
+    "title": "Miami, Queensland",
+    "right_place": true,
+    "note": "suburb article, Gold Coast (not Florida); correct",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Wikivoyage lists \"Nobby Beach and Miami\" as one quiet 2 km beach, popular with locals, ample parking and barbecues, at the southern end of the sand from the Seaway",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "South Nobby headland separates it from North Burleigh and gives views of beaches north and south",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": "bio says \"beside South Nobby headland\": fine"
+    },
+    {
+     "text": "Near-duplicate of gold-coast-19 Nobby Beach (Wikivoyage lists them as one beach)",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "unverifiable",
+     "fix": "owner call on merging"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Quiet 2 km beach popular with locals, with ample parking and barbecue facilities beside South Nobby headland.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Quiet local beach with parking and barbecues, at the southern end of the sand running from the Seaway.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "gold-coast-9",
+   "wikipedia": {
+    "title": "Burleigh Heads, Queensland",
+    "right_place": true,
+    "note": "suburb article; correct, no beach article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Burleigh Beach faces the Coral Sea and starts at Burleigh Head, an 80 m cape at the northern mouth of Tallebudgera Creek",
+     "source": "https://en.wikipedia.org/wiki/Burleigh_Heads,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "A nice beach with a large park and a hill good for picnics, cafes around, sheltered when winds blow from the south",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Popular beach and surfing location",
+     "source": "https://en.wikipedia.org/wiki/Burleigh_Heads,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Surf beach below an 80 m headland, with a large park for picnics and cafes close by.",
+     "bio_fit": "2 lines — fits"
+    },
+    {
+     "text": "Beach beneath Burleigh Head, sheltered when southerly winds leave Surfers Paradise exposed.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Popular surfing beach starting at Burleigh Head, with a large park and cafes around it.",
+     "bio_fit": "2 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "gold-coast-11",
+   "wikipedia": {
+    "title": "Broadbeach, Queensland",
+    "right_place": true,
+    "note": "suburb article; correct, no beach article",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Wikivoyage \"Broadbeach (Kurrawa Beach)\": 2 km, often the same surf as Surfers Paradise but far less busy",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Kurrawa Park just inland has cafes, restaurants and Jupiters Casino",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Broadbeach is the second busiest tourist suburb with a casino, 2 shopping complexes and many restaurants",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "DUPLICATE: Wikivoyage treats Broadbeach and Kurrawa Beach as one beach (gold-coast-12)",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "unverifiable",
+     "fix": "owner call on merging"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "A 2 km beach with surf like Surfers Paradise but far less busy, backed by cafes and restaurants.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Beach in the Gold Coast's second busiest tourist suburb, with cafes, restaurants and a casino just inland.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "gold-coast-12",
+   "wikipedia": {
+    "title": "none",
+    "right_place": true,
+    "note": "no Wikipedia article for Kurrawa Beach/Kurrawa (404 per researcher); Broadbeach, Queensland is the suburb",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Kurrawa Surf Club is right in front of the beach",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Variant 1 reads \"Kurrawa Surf Club's 2 km beach\" and \"a casino in Kurrawa Park\": the 2 km is the beach, not the club; source calls Kurrawa Park a shopping centre containing the casino",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "unsupported",
+     "fix": "use variant 2, or reword variant 1 to \"Broadbeach's 2 km Kurrawa Beach, with the surf club, cafes and a casino just inland\""
+    },
+    {
+     "text": "Possible duplicate of gold-coast-11",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "unverifiable",
+     "fix": "owner call"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Kurrawa Surf Club's 2 km beach, with cafes, restaurants and a casino in Kurrawa Park just inland.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Broadbeach's 2 km beach in front of Kurrawa Surf Club, with cafes and restaurants in the park behind.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "gold-coast-17",
+   "wikipedia": {
+    "title": "Kirra, Queensland",
+    "right_place": true,
+    "note": "neighbourhood article, Coolangatta; correct",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Kirra Point separates Kirra Beach and Coolangatta Beach and is noted as one of the world's premier surf breaks",
+     "source": "https://en.wikipedia.org/wiki/Kirra,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Sand pumping across the Tweed River mouth has filled in the former barrels",
+     "source": "https://en.wikipedia.org/wiki/Kirra,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Famous surfing spot; beach very wide from Tweed sand bypassing",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Variant 2 wording \"Beachside Coolangatta neighbourhood beach\" is clumsy but accurate",
+     "source": "",
+     "status": "supported",
+     "fix": "prefer variant 1"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Beach beside Kirra Point, a noted surf break whose famous barrels sand pumping has since filled in.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Beachside Coolangatta neighbourhood beach at Kirra Point, one of the world's premier surf breaks.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "gold-coast-18",
+   "wikipedia": {
+    "title": "Palm Beach, Queensland",
+    "right_place": true,
+    "note": "suburb article; correct",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "3.3 km beach that includes Tallebudgera Surf Beach and Pacific Beach",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "About 19 km south of Surfers Paradise",
+     "source": "https://en.wikipedia.org/wiki/Palm_Beach,_Queensland",
+     "status": "supported",
+     "fix": "source figure (19.2 km) is by road; say \"by road\" or drop"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "A 3.3 km beach about 19 km south of Surfers Paradise, taking in Tallebudgera Surf Beach and Pacific Beach.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Long southern Gold Coast beach that includes Tallebudgera Surf Beach and Pacific Beach.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  },
+  {
+   "id": "gold-coast-19",
+   "wikipedia": {
+    "title": "Mermaid Beach, Queensland",
+    "right_place": true,
+    "note": "Nobby Beach is a neighbourhood in the south of Mermaid Beach suburb (article says so); Nobby_Beach redirects here. Views are the suburb's: use as wiki title only if photo lookup works",
+    "fix": null
+   },
+   "claims": [
+    {
+     "text": "Quiet beach popular with locals, ample parking and barbecues, at the southern end of the sand from the Seaway",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "About 6 km (SSE) from Surfers Paradise",
+     "source": "https://en.wikipedia.org/wiki/Mermaid_Beach,_Queensland",
+     "status": "supported",
+     "fix": null
+    },
+    {
+     "text": "Near-duplicate of gold-coast-8 (Wikivoyage \"Nobby Beach and Miami\")",
+     "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+     "status": "unverifiable",
+     "fix": "owner call"
+    },
+    {
+     "text": "Cost: free, costBasis open (no entry, ticket or staffed gate)",
+     "source": "none: no source states a fee",
+     "status": "unverifiable",
+     "fix": "unverifiable-default: keep free/open; no source states a charge"
+    },
+    {
+     "text": "ticketUrl: none",
+     "source": "no ticketUrl: open beach, no single steward",
+     "status": "supported",
+     "fix": null
+    }
+   ],
+   "bio_variants": [
+    {
+     "text": "Quiet locals' beach with ample parking and barbecue facilities, about 6 km from Surfers Paradise.",
+     "bio_fit": "3 lines — fits"
+    },
+    {
+     "text": "Quiet beach at the southern end of the sand from the Gold Coast Seaway, with parking and barbecues.",
+     "bio_fit": "3 lines — fits"
+    }
+   ]
+  }
+ ]
+}

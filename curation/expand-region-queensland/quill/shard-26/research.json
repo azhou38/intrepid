@@ -1,0 +1,55 @@
+{
+ "shard": "shard-26",
+ "note": "Evidence bundles held only a town-level Wikipedia stub or 404s. No Queensland park pass in src/data/parkPasses.ts; none needed.",
+ "spots": [
+  {
+   "id": "townsville-5", "name": "Maritime Museum of Townsville",
+   "bio_facts": [
+    {"fact": "Museum at 42-68 Palmer Street, South Townsville, run by the Townsville Maritime Museum Ltd", "source": "https://www.tmml.org.au/about/museum-info/ (via web search summary; page itself BLOCKED to scripts)"}
+   ],
+   "cost": {"costMin": 8, "costMax": 8, "currency": "AUD", "costBasis": "entry", "sources": ["https://www.tmml.org.au/about/museum-info/ (search summary: adult $8, concession $5, child $5, family $15)"], "note": "older directory listings show $5-6; official figure taken"},
+   "ticketUrl": "BLOCKED: https://www.tmml.org.au/ (Vercel security checkpoint; check in a real browser; museum-info page https://www.tmml.org.au/about/museum-info/)",
+   "unverified": ["bio content beyond address (collections not read); adult price from search summary of blocked official page"]
+  },
+  {
+   "id": "townsville-6", "name": "The Palmetum",
+   "correct_wikipedia_title": "The Palmetum, Townsville",
+   "bio_facts": [
+    {"fact": "Palm-only botanical garden in Douglas, main entrance University Road, opened 1988 as a Bicentennial project", "source": "https://en.wikipedia.org/wiki/The_Palmetum,_Townsville (search summary)"},
+    {"fact": "About 300 species across all six palm subfamilies, about 60 Australian natives, many rare in the wild", "source": "search summary of Wikipedia/council material, not fetched"}
+   ],
+   "cost": {"free": true, "costBasis": "entry", "sources": ["https://en.wikipedia.org/wiki/The_Palmetum,_Townsville (search summary: admission free)"], "note": "council-run garden with staffed hours, so entry not open; not a Qld park pass spot"},
+   "ticketUrl": "BLOCKED: https://www.townsville.qld.gov.au/facilities-and-recreation/parks-beaches-and-community-venues/popular-parks-and-playgrounds/parks/palmetum (Cloudflare; council page, check in browser)",
+   "unverified": ["free entry only from search summary; council page blocked", "wiki field should be 'The Palmetum, Townsville' (404 for The_Palmetum)"]
+  },
+  {
+   "id": "townsville-8", "name": "Army Museum North Queensland",
+   "bio_facts": [
+    {"fact": "Army museum at Jezzine Barracks, Kissing Point, Townsville; backpacks not permitted; guided tours and groups of 10+ bookable", "source": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland (search summary; page returned nothing to curl)"}
+   ],
+   "cost": {"free": true, "costBasis": "entry", "sources": ["https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland (search summary: admission free, donations welcome)"], "note": "staffed museum, so 'entry' not 'donation' unless the page asks for donations explicitly"},
+   "ticketUrl": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland (managing agency page; could not be loaded by script, seen only in search results: orchestrator to confirm title in a browser)",
+   "unverified": ["page not loaded directly", "exhibits not read, so bio needs a second source"]
+  },
+  {
+   "id": "townsville-9", "name": "Billabong Sanctuary",
+   "bio_facts": [
+    {"fact": "11-hectare wildlife sanctuary in Nome, 17 km south of Townsville", "source": "https://en.wikipedia.org/wiki/Billabong_Sanctuary"},
+    {"fact": "Daily crocodile feeding, hand-feeding kangaroos, koala photos, reptile show, wombat and meerkat experiences; ZAA accredited", "source": "https://www.billabongsanctuary.com.au/"}
+   ],
+   "cost": {"costMin": 54, "costMax": 54, "currency": "AUD", "costBasis": "entry", "sources": ["https://www.billabongsanctuary.com.au/plan-your-visit/opening-hours-prices/ (Adults $54)"], "note": "koala photo from $25 is an extra"},
+   "ticketUrl": "https://www.billabongsanctuary.com.au/ (loaded; title 'Things to Do in Townsville - Billabong Sanctuary Wildlife Park')",
+   "unverified": []
+  },
+  {
+   "id": "ingham-1", "name": "Wallaman Falls",
+   "bio_facts": [
+    {"fact": "Cascade and horsetail waterfall on Stony Creek in Girringun National Park, Wet Tropics World Heritage area; main drop 268 m, the country's tallest single-drop waterfall; pool 20 m deep; about 100,000 visitors a year", "source": "https://en.wikipedia.org/wiki/Wallaman_Falls"},
+    {"fact": "Day-use area with lookout and toilets; Bangurru camping area nearby (paid, booked online)", "source": "https://parks.qld.gov.au/parks/girringun-wallaman (search summary; BLOCKED to scripts)"}
+   ],
+   "cost": {"free": true, "costBasis": "open", "sources": ["search summaries of https://parks.qld.gov.au/parks/girringun-wallaman: no day-use fee stated"], "note": "camping fee applies only to the campground; Queensland has no state park pass in parkPasses.ts"},
+   "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/girringun-wallaman (QPWS 403 to scripts; managing agency page, check in browser)",
+   "unverified": ["no-fee status for the lookout not read on the QPWS page"]
+  }
+ ]
+}

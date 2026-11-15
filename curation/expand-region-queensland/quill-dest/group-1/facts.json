@@ -1,0 +1,469 @@
+{
+ "brisbane": {
+  "structure": {
+   "rank": 2,
+   "whyVisit": "4 of 4, all start with action verb, 4-6 words (ok)",
+   "goodToKnow": "3 of 3 (ok); detail 1 is 162 chars, over the 160 limit",
+   "fix": "shorten go card tip"
+  },
+  "claims": [
+   {
+    "text": "Capital of Queensland, leafy river city built around loops of the Brisbane River",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "South Bank Parklands, City Botanic Gardens, cultural precinct easy to wander on foot",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (South Bank listings; walkability is the drafter's inference)",
+    "status": "unverifiable",
+    "fix": "keep; mild inference, or say 'South Bank Parklands and City Botanic Gardens are central'"
+   },
+   {
+    "text": "Lone Pine Koala Sanctuary: cuddle a koala",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (Lone Pine listing: 'Cuddle a koala', 130+ koalas)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Mount Coot-tha looks out over the city",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (night view from Mount Coot-tha)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Museums and galleries cover art, history",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (Queensland Museum, Queensland Art Gallery)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "CityCat and ferry services run along the river",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (extensive ferry network, CityCat)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "CityCat/ferries are a 'cheap' way to reach South Bank, New Farm",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane",
+    "status": "unverifiable",
+    "fix": "Drop 'cheap' and the named stops: 'CityCat and ferry services run along the river and are a good way to see the city from the water.'"
+   },
+   {
+    "text": "go card covers trains, buses, ferries and trams",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (touch on/off each mode: trains, trams, buses, ferries)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "go card has cheaper fares than paper tickets",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane",
+    "status": "unsupported",
+    "fix": "Remove the claim; page does not state a discount."
+   },
+   {
+    "text": "go card needs $10 deposit, sold at stations and shops",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane ($10 deposit; station counters, busway/tram machines, newsagents)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "go card tip detail length 162 chars (limit 160)",
+    "source": "WRITING.md",
+    "status": "unsupported",
+    "fix": "Suggested: 'The go card covers trains, buses, ferries and trams across Brisbane. It needs a $10 deposit and is sold at stations and selected shops.'"
+   },
+   {
+    "text": "Summer hot, humid, afternoon storms; plan outdoor sights for morning",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (summer humidity, afternoon thunderstorms); morning advice is general",
+    "status": "supported",
+    "fix": "advice part is common sense, acceptable"
+   },
+   {
+    "text": "Best months Apr-Oct, mild dry weather",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane (winter Jun-Aug dry season, sunny; autumn still warm)",
+    "status": "supported",
+    "fix": "Apr-Oct ok; Wikivoyage names winter as dry, consistent"
+   },
+   {
+    "text": "Blurb: summer hot, humid and stormy",
+    "source": "https://en.wikivoyage.org/wiki/Brisbane",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "seasonalTags [] (none)",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "whyVisit all start with action verb (Cuddle, Stroll, Explore, Ride); count 4 matches rank 2",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "gold-coast": {
+  "structure": {
+   "rank": 2,
+   "whyVisit": "4 of 4, verbs Surf/Ride/Meet/Walk (ok)",
+   "goodToKnow": "3 of 3, details 150/134/108 (ok)"
+  },
+  "claims": [
+   {
+    "text": "More than 50 km of patrolled sand",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (over 52 km of ocean beaches maintained by council; almost all between Seaway and Coolangatta patrolled)",
+    "status": "supported",
+    "fix": "Optional tighten: 'more than 50 km of ocean beaches, almost all patrolled'"
+   },
+   {
+    "text": "Surfers Paradise is the high-rise hub of tourist activity",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (most commercialised tourist suburb)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Burleigh Heads and Currumbin have a quieter, local feel",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (Currumbin: residential, families and locals; Burleigh: surfers and families)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Theme parks, wildlife sanctuaries; Currumbin Wildlife Sanctuary",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (Currumbin Wildlife Sanctuary, Dreamworld, Movie World, Sea World)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Mild, sunny climate; rainforest hills just inland",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (mild sub-tropical, Hinterland section)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Burleigh Heads' headland walk",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (Burleigh Heads has a national park; no walk named)",
+    "status": "unverifiable",
+    "fix": "Reword to 'Explore Burleigh Heads' coast' or confirm a walking track (not shown on page); highlight 'Coastal headlands' same"
+   },
+   {
+    "text": "Swim between flags, almost all beaches Seaway-Coolangatta patrolled, escape rip by swimming parallel",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (Stay safe, Swimming)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Light-rail line runs along the coast through Surfers Paradise",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (G:link L1 Helensvale-Burleigh Heads via Surfers Paradise)",
+    "status": "supported",
+    "fix": "Drafter marked unverified; now confirmed"
+   },
+   {
+    "text": "A train links the Gold Coast with Brisbane",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (T5 Brisbane Airport-Varsity Lakes line, half-hourly)",
+    "status": "supported",
+    "fix": "Drafter marked unverified; now confirmed"
+   },
+   {
+    "text": "'so a car is optional'",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+    "status": "unverifiable",
+    "fix": "Inference; fine, or end at 'along the coast.'"
+   },
+   {
+    "text": "Theme parks spread across northern suburbs",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+    "status": "unverifiable",
+    "fix": "Drop 'spread across the northern suburbs' (not on page); Sea World at The Spit, Dreamworld/Movie World north"
+   },
+   {
+    "text": "Theme park tickets can be cheaper online; plan one park per day",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (buy discounted tickets before you travel; combo tickets)",
+    "status": "supported",
+    "fix": "'one park per day' is advice; keep or drop. Suggest: 'Discounted and combo tickets are sold before you travel, so buy ahead.'"
+   },
+   {
+    "text": "Best months Apr, May, Sep, Oct, Nov; summer storms",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast (winter little rain, summer frequent storms; year-round mild)",
+    "status": "unverifiable",
+    "fix": "Months not stated; Wikivoyage only says winter dry/summer stormy. Winter months (Jun-Aug) also fit; consider 4-10 or cite another guide."
+   },
+   {
+    "text": "Blurb 'fewer crowds'",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast",
+    "status": "unverifiable",
+    "fix": "Drop 'fewer crowds'; not sourced"
+   },
+   {
+    "text": "seasonalTags []",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "whyVisit all start with action verb; count 4 matches rank 2",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "gold-coast-hinterland": {
+  "structure": {
+   "rank": 4,
+   "whyVisit": "3 of 3, verbs Walk/Take/Hike (ok)",
+   "goodToKnow": "2 of 2 (ok), details 87/85"
+  },
+  "claims": [
+   {
+    "text": "Rural area west of Gold Coast, rainforest-covered mountain ranges, mostly national park",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Purling Brook Falls",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland; https://en.wikipedia.org/wiki/Springbrook_National_Park (name only in navbox)",
+    "status": "unverifiable",
+    "fix": "Waterfall not on the Wikivoyage page; Purling Brook Falls is in Springbrook NP; confirm via another source or drop"
+   },
+   {
+    "text": "Coomera Falls and Morans Falls",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland (not mentioned); https://en.wikipedia.org/wiki/Lamington_National_Park (both in Lamington NP)",
+    "status": "supported",
+    "fix": "Supported by Wikipedia Lamington; page citation in sources should be the Lamington article"
+   },
+   {
+    "text": "Lookouts across the coast and Numinbah Valley",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland (Freeman's Lookout, Rosin's Lookout facing Numinbah Valley)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Gold Coast Hinterland Great Walk (long-distance)",
+    "source": "https://en.wikipedia.org/wiki/Gold_Coast_Hinterland (54 km, three days, Lamington-Springbrook, opened 2008)",
+    "status": "supported",
+    "fix": "Optional add: 'three-day, 54 km'"
+   },
+   {
+    "text": "A car is far easier; public transport west of M1 very sparse",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'Drive or join a tour from the coast'",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland",
+    "status": "unverifiable",
+    "fix": "Tours not on page; fine as advice or drop 'join a tour'"
+   },
+   {
+    "text": "Waterfall tracks wet and slippery; sturdy shoes, stay behind barriers",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland",
+    "status": "unverifiable",
+    "fix": "General safety advice, not in source; keep only if owner accepts, or replace with Pages Pinnacle: 6 km return, experienced hikers"
+   },
+   {
+    "text": "Best months Mar-May, Sep-Nov; waterfalls still run after summer rain",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast_Hinterland",
+    "status": "unverifiable",
+    "fix": "No climate on page; months from general knowledge. Waterfall timing unverified; drop 'waterfalls still run after summer rain' or cite a guide."
+   },
+   {
+    "text": "seasonalTags []",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "whyVisit all start with action verb; count 3 matches rank 4",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "scenic-rim": {
+  "structure": {
+   "rank": 4,
+   "whyVisit": "3 of 3, verbs Climb/Walk/Look (ok)",
+   "goodToKnow": "2 of 2 (ok), details 130/104"
+  },
+  "claims": [
+   {
+    "text": "Rural region in Great Dividing Range foothills, an hour south of Brisbane and inland from Gold Coast",
+    "source": "https://en.wikivoyage.org/wiki/Scenic_Rim (an hour south of Brisbane, an hour inland from the Gold Coast)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "More than 30,000 hectares of parkland incl. World Heritage Gondwana Rainforests parks",
+    "source": "https://en.wikivoyage.org/wiki/Scenic_Rim",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Mount Barney draws walkers",
+    "source": "https://en.wikivoyage.org/wiki/Scenic_Rim (Mount Barney National Park listed); https://en.wikipedia.org/wiki/Mount_Barney (routes need rock-scrambling, 8-9 hr)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Mount Maroon draws walkers",
+    "source": "https://en.wikipedia.org/wiki/Mount_Maroon (stub; only mentions climbers rescued)",
+    "status": "unverifiable",
+    "fix": "Weakly sourced; keep Barney, soften Maroon or confirm with QPWS (blocked)"
+   },
+   {
+    "text": "Lake Moogerah",
+    "source": "https://en.wikivoyage.org/wiki/Scenic_Rim (Lake Moogerah dam, Moogerah Peaks NP)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Spicers Gap",
+    "source": "https://en.wikipedia.org/wiki/Spicers_Gap (Main Range NP, Gondwana Rainforests)",
+    "status": "supported",
+    "fix": "Not on Wikivoyage page"
+   },
+   {
+    "text": "Queen Mary Falls in the Scenic Rim",
+    "source": "https://en.wikipedia.org/wiki/Queen_Mary_Falls (in Southern Downs Region, Main Range NP, 10 km east of Killarney)",
+    "status": "unsupported",
+    "fix": "Falls lie in the Southern Downs Region, not Scenic Rim Regional Council; drop from description or say 'on the edge of the region'"
+   },
+   {
+    "text": "'farm-gate stops'",
+    "source": "https://en.wikivoyage.org/wiki/Scenic_Rim (farming industry, wineries)",
+    "status": "unverifiable",
+    "fix": "Wineries and farming are on the page; 'farm-gate stops' not stated; reword 'wineries and farm country'"
+   },
+   {
+    "text": "Transport very limited; only one major highway (Mount Lindesay Highway), other roads narrow",
+    "source": "https://en.wikivoyage.org/wiki/Scenic_Rim",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Peaks for experienced walkers; steep rocky; go early, carry water",
+    "source": "https://en.wikipedia.org/wiki/Mount_Barney (rock-scrambling, only South Ridge for less experienced, water scarce)",
+    "status": "supported",
+    "fix": "Barney supported; Maroon not sourced; 'go early' is advice"
+   },
+   {
+    "text": "Best months Apr-Oct; summer heat and storms",
+    "source": "https://en.wikipedia.org/wiki/Scenic_Rim (subtropical, winters mild)",
+    "status": "unverifiable",
+    "fix": "No seasonal advice on pages; general knowledge"
+   },
+   {
+    "text": "seasonalTags []",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "whyVisit all start with action verb; count 3 matches rank 4",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "moreton-island": {
+  "structure": {
+   "rank": 3,
+   "whyVisit": "4 of 4 but rank 3 requires 3: drop one (suggest 'Drive the island's long beach', or the weakest)",
+   "goodToKnow": "2 of 2 but rank 3 requires 3: add one tip (e.g. fuel stove / no open fires at North Point is thin; better a tip on 4WD taxi from Bulwer or tides; needs a source)",
+   "fix": "fix counts"
+  },
+  "claims": [
+   {
+    "text": "Sand island 36 km long, 35 km off Brisbane, 98% national park",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Tangalooma Wrecks: sunken ships forming artificial reef, snorkelling",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Freshwater lakes, giant dunes, long surf beach",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (Blue Lagoon, sandhills, Surfside 40 km beach)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Cape Moreton has the state's oldest lighthouse",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (Queensland's oldest lighthouse, opened 1857)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Humpback whales pass offshore on annual migration (Jun-Nov)",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (June to November)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Sandboard down giant dunes",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (sand boarding down some of the world's highest coastal sandhills)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Drive the island's long beach (4WD)",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (4WD down the Surfside, 40 km)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Vehicle and passenger ferries leave the Brisbane River daily in peak periods",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (MICAT from Port of Brisbane, daily in peak periods, twice Fri/Sun, none Tue off-peak; vehicle and passenger ferries run daily)",
+    "status": "supported",
+    "fix": "Timetable changes; wording 'daily in peak periods' matches page"
+   },
+   {
+    "text": "Resort runs passenger services from Pinkenba",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (Tangalooma Island Resort from Holt St Wharf Pinkenba, 3-4 daily)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Only 4WD vehicles can drive the island; each needs vehicle access permit",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Camping needs a permit obtained before arrival",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (Permits)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Best months Jun-Nov; mild dry days",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island (whales Jun-Nov); dry-day claim from general knowledge",
+    "status": "supported",
+    "fix": "Whale months supported; 'mild, dry days' unsourced but consistent with SE Queensland winter"
+   },
+   {
+    "text": "seasonalTags [{label, months}] shape",
+    "source": "src/types/index.ts SeasonalSignal",
+    "status": "unsupported",
+    "fix": "Schema is {tag:'wildlife-migration', months:[6,7,8,9,10,11], strength?}; use that instead of label"
+   },
+   {
+    "text": "whyVisit all start with action verb",
+    "source": "-",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ }
+}

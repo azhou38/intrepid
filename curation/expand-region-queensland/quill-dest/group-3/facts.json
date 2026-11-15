@@ -1,0 +1,337 @@
+{
+ "_structure": {
+  "whyVisit starts with action verb": "all pass ('Ferry across to Magnetic Island' reads as a verb; 'Dive', 'Tour', 'Watch', 'Head' etc. fine)",
+  "whyVisit counts": "gladstone r5=2, bundaberg r4=3, kgari r2=4, whitsundays r1=4, townsville r3=3: all match",
+  "goodToKnow counts": "gladstone r5=2, bundaberg r4=2 (rule: 2 for rank 4-5, ok), kgari r2=3, whitsundays r1=3, townsville r3=3: all match",
+  "detail length": "all <=160 (max 158 K'gari permit)",
+  "source named in app text": "none"
+ },
+ "gladstone": [
+  {
+   "text": "Coastal industrial city between Bundaberg and Rockhampton",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Queensland's largest natural harbour",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland) (See intro)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Auckland Point looks over harbour, marina and ports",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Tondoon Botanic Gardens offers rainforest walks just south of centre",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland) (wet and dry rainforest walks; gardens 8 km south)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Ferries from the marina reach Curtis Island and Great Barrier Reef trips",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland) (Marina Parklands: ferries to the reef and Curtis Island)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Facing Island and Lake Awoonga within easy reach",
+   "source": "input.json spot list; not in Wikivoyage page",
+   "status": "unverifiable",
+   "fix": "Spots are in the app, but no fetched source states distance; soften to 'nearby' or accept as spot-list fact."
+  },
+  {
+   "text": "Free guided industry tours run from the visitor centre on set weekdays",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland) (QAL Mon, Boyne smelter Fri, power station Mon; undated)",
+   "status": "supported",
+   "fix": "Wikivoyage undated, currency unchecked; 'set weekdays' wording is safe."
+  },
+  {
+   "text": "Tip: alumina refinery, smelter and power station tours leave from the marina visitor centre, bookings essential",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland)",
+   "status": "supported",
+   "fix": "Bookings essential is stated only for the Queensland Alumina tour; narrow to 'Book the alumina refinery tour; smelter and power station tours also leave from the marina' or accept (minor)."
+  },
+  {
+   "text": "Tip: gardens and wetter months bring mosquitoes; wet season Oct-Mar",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland) ; https://en.wikipedia.org/wiki/Gladstone,_Queensland",
+   "status": "supported",
+   "fix": "Wikivoyage says bring repellent for the gardens only; wet season Oct-Mar from Wikipedia. Link between them is inference but harmless."
+  },
+  {
+   "text": "Best months Apr-Sep, dry season",
+   "source": "https://en.wikipedia.org/wiki/Gladstone,_Queensland (dry Apr-Sep)",
+   "status": "supported",
+   "fix": "Dry season is sourced; 'best' is inference from it. No guide best-time line."
+  },
+  {
+   "text": "whyVisit 'See the working harbour from above' / 'Take a boat to the reef and islands'",
+   "source": "https://en.wikivoyage.org/wiki/Gladstone_(Queensland)",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "bundaberg": [
+  {
+   "text": "Sugar city on Burnett River, about 4.5 hours from Brisbane",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Home of Bundaberg Rum and Bundaberg Ginger Beer",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Botanic Gardens hold Hinkler Hall of Aviation honouring Bert Hinkler",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Hummock gives views over city and out to sea",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Mon Repos and Bargara on beaches about 10 km away",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Southern gateway to the Great Barrier Reef, reef trips to Lady Musgrave and Lady Elliot",
+   "source": "https://en.wikipedia.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Tour the rum distillery and ginger beer brewery",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg (Distillery tours; Bundaberg Barrel)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Mon Repos turtles lay from about December, hatchlings to about February, at night, ranger only",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": "Official Mon Repos season (usually Nov-Mar) not checked; bundabergregion.com.au unavailable. Wording 'around' is fine."
+  },
+  {
+   "text": "Bargara has most of the beachside accommodation",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": "Wikivoyage says Bargara has many apartments and resorts; 'most' is stronger than source. Change to 'has many of the beachside stays'."
+  },
+  {
+   "text": "Best months May-Oct, mild and dry",
+   "source": "none fetched; Wikipedia climate only",
+   "status": "unverifiable",
+   "fix": "No guidebook best-time line. Flag as inference from climate; cite a guide or keep flagged."
+  },
+  {
+   "text": "Turtle nesting and hatching roughly Dec-Feb in blurb",
+   "source": "https://en.wikivoyage.org/wiki/Bundaberg",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "kgari": [
+  {
+   "text": "About 122 km long, formerly Fraser Island, World Heritage 1992, off southern Queensland coast",
+   "source": "https://en.wikivoyage.org/wiki/K'gari",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Over 100 freshwater lakes, coloured sand cliffs, rainforest on dunes",
+   "source": "https://en.wikivoyage.org/wiki/K'gari",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Most of it is Great Sandy National Park",
+   "source": "https://en.wikivoyage.org/wiki/K'gari",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Main beach is a highway for 4WDs passing Eli Creek, SS Maheno wreck and Indian Head",
+   "source": "https://en.wikivoyage.org/wiki/K'gari (beach classed as highway; See list)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Dingoes live wild; keep food secured, never feed them",
+   "source": "https://en.wikivoyage.org/wiki/K'gari (Stay safe)",
+   "status": "supported",
+   "fix": "Advice supported by Wikivoyage only; QPWS blocked (403)."
+  },
+  {
+   "text": "Every vehicle travelling to K'gari needs a permit on the windscreen; campers outside commercial campgrounds need a camping permit",
+   "source": "https://en.wikivoyage.org/wiki/K'gari (Fees and permits)",
+   "status": "supported",
+   "fix": "Supported verbatim by Wikivoyage (undated, QPWS blocked). Keep, but 'Get both before you go' is advice not in source: acceptable, or cut."
+  },
+  {
+   "text": "Vehicles cross by barge from River Heads or Inskip Point; sand roads need 4WD; allow about three days",
+   "source": "https://en.wikivoyage.org/wiki/K'gari",
+   "status": "supported",
+   "fix": "Source says 'ferry'/'barge' and 'three days'; 'take a guided tour if unsure' supported (tour recommended if uncomfortable driving)."
+  },
+  {
+   "text": "Feeding dingoes carries a $250 fine",
+   "source": "https://en.wikivoyage.org/wiki/K'gari (Stay safe)",
+   "status": "unverifiable",
+   "fix": "Figure is from undated Wikivoyage and QPWS (blocked) could not confirm; penalty is likely higher now. Cut the amount: 'Feeding dingoes is fined.'"
+  },
+  {
+   "text": "Skip ocean swimming, surf and sharks a risk",
+   "source": "https://en.wikivoyage.org/wiki/K'gari",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Spot rays, turtles and dolphins from headlands",
+   "source": "https://en.wikivoyage.org/wiki/K'gari (Indian Head: sharks, rays, turtles, dolphins)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Humpback whales passing Jul-Aug",
+   "source": "https://en.wikivoyage.org/wiki/K'gari (Platypus Bay, tours from Hervey Bay)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Best months Jun-Oct, dry mild",
+   "source": "https://en.wikivoyage.org/wiki/K'gari (winters dry, mild)",
+   "status": "supported",
+   "fix": "Dry winter supported; 'best' months are inference, no guide best-time line. Flag."
+  }
+ ],
+ "whitsundays": [
+  {
+   "text": "Group of 74 islands off Queensland, part of Great Barrier Reef, most national parks",
+   "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Whitehaven Beach about 4.5 km of fine white silica sand on Whitsunday Island",
+   "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+   "status": "supported",
+   "fix": "Same page also says 7 km; 4.5 km is stated; acceptable. Consider dropping the length."
+  },
+  {
+   "text": "Day trips from Airlie Beach combine beach, snorkelling stop and lunch",
+   "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Resorts on Hamilton, Daydream and South Molle; many others only campsites",
+   "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Hamilton Island and Proserpine airports; ferries timed to meet most flights",
+   "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Hamilton Island busiest in Sep-Oct and Christmas",
+   "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands (Hamilton section)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Book ahead for day trips",
+   "source": "none",
+   "status": "unverifiable",
+   "fix": "Advice is inference from peak times; no source says trips sell out. Soften or accept as advice."
+  },
+  {
+   "text": "Bring your own water and supplies for island camping",
+   "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands (campers must carry sufficient water, 5 L/person/day)",
+   "status": "supported",
+   "fix": "'Supplies' is inference; water is supported."
+  },
+  {
+   "text": "Best months May-Oct, drier",
+   "source": "none fetched",
+   "status": "unverifiable",
+   "fix": "Wikivoyage gives no best months and tourismwhitsundays fetched had none. Inference only: needs a guide or BOM check (also stinger season Oct-May not mentioned)."
+  },
+  {
+   "text": "Hike to island lookouts / Sail between island national parks / Snorkel reefs",
+   "source": "W",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "townsville": [
+  {
+   "text": "About 174,000 people, 320 sunny days a year",
+   "source": "https://en.wikivoyage.org/wiki/Townsville",
+   "status": "supported",
+   "fix": "Source says 173,724 (2021): 'about 174,000' fine."
+  },
+  {
+   "text": "Castle Hill in city centre, views east to Magnetic Island",
+   "source": "https://en.wikivoyage.org/wiki/Townsville",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "The Strand beachfront with rockpool and cafes",
+   "source": "https://en.wikivoyage.org/wiki/Townsville",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Reef HQ Aquarium and Museum of Tropical Queensland side by side on Flinders St",
+   "source": "https://en.wikivoyage.org/wiki/Townsville",
+   "status": "supported",
+   "fix": "Both on Flinders St (2-68 and 70-102): adjacent."
+  },
+  {
+   "text": "Closest large centre to SS Yongala, one of Australia's top dive sites",
+   "source": "https://en.wikivoyage.org/wiki/Townsville",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Passenger and car ferries to Magnetic Island about 25 minutes",
+   "source": "https://en.wikivoyage.org/wiki/Townsville",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Day trips to Yongala leave from Townsville and Magnetic Island; operators ask for at least six logged dives",
+   "source": "https://en.wikivoyage.org/wiki/Townsville (Adrenalin Dive listing)",
+   "status": "supported",
+   "fix": "Requirement is one operator's, undated; reword 'Some operators ask for logged dives'."
+  },
+  {
+   "text": "Most rain in Jan-Mar; summer hot, humid, wet; winter dry and mild",
+   "source": "https://en.wikivoyage.org/wiki/Townsville",
+   "status": "unverifiable",
+   "fix": "Wet humid summers and dry winters supported; 'Jan-Mar' is only in the climate chart, not in fetched text. Say 'summer' only or verify."
+  },
+  {
+   "text": "Best months May-Oct, dry and sunny",
+   "source": "none; Wikivoyage 'dry winters'",
+   "status": "unverifiable",
+   "fix": "Inference; no guide best-time line."
+  }
+ ]
+}

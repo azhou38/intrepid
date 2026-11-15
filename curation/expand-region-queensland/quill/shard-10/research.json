@@ -1,0 +1,254 @@
+{
+ "rainbow-beach-1": {
+  "facts": {
+   "what": "Coastal headland in the Cooloola section of Great Sandy National Park, next headland north of Noosa, about 12 km south along the beach from Rainbow Beach",
+   "lighthouse_walk": "Short steep walk to the historic lighthouse from a gate at the headland's southern beach (QPWS, via search snippet; page BLOCKED), open 24 hours"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Double_Island_Point",
+   "lighthouse_walk": "https://parks.qld.gov.au/parks/cooloola/journeys/double-island-point-lighthouse-walk (BLOCKED to scripts; seen in search snippet only)"
+  },
+  "bio_draft": "A headland with a historic lighthouse, reached by a short steep walk and a beach drive from Rainbow Beach.",
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "Walking in is free. Driving the beach to the headland needs a Queensland vehicle access permit and 4WD (search snippets disagree: $13.40-$14.40/day; one QPWS page says none for Teewah to Double Island Point). Vehicle permit is transport, not the spot's price; put in destination tip. Fee UNVERIFIED (QPWS blocked)."
+  },
+  "coordinates_note": "Placement pin kept (MEDIUM, OSM leisure=park Double Island Point Conservation Park); 0 m moved. Headland is a conservation-park centroid-ish point; lighthouse is the visitor point: reviewer may move onto the lighthouse.",
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/cooloola/journeys/double-island-point-lighthouse-walk (QPWS 403 to scripts; check in browser)",
+  "visit_hours": [
+   0.5,
+   1.5
+  ],
+  "unverified": [
+   "vehicle permit fee/requirement",
+   "exact lighthouse walk length"
+  ]
+ },
+ "whitsundays-10": {
+  "facts": {
+   "what": "Resort island in the Whitsunday section of the Great Barrier Reef Marine Park, hilly, bays and 16 km of walking and cycling tracks, mostly protected in Molle Islands National Park",
+   "status": "Old resort wrecked by Cyclone Debbie 2017, island listed for sale June 2025, no reopening found; Bauer Bay jetty closed after Cyclone Koji damage (QPWS alert)"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/South_Molle_Island",
+   "status": "https://parks.qld.gov.au/park-alerts/26157 (via search snippet; BLOCKED to scripts)"
+  },
+  "bio_draft": "Hilly Whitsunday island with bays and 16 km of walking tracks, mostly within Molle Islands National Park.",
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "National park land, no day-use fee found; camping fees only. UNVERIFIED (QPWS blocked). Access is by private boat or charter; no public operator checked."
+  },
+  "coordinates_note": "Placement pin is OSM natural=reef South Molle Reef (MEDIUM), a reef point off the island not the island itself; recommend re-pinning onto the island (e.g. Bauer Bay or the main walking-track area) with resolve-pin.py. Not moved by me.",
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/molle-islands (QPWS; check in browser). Resort site none (derelict).",
+  "visit_hours": [
+   2,
+   5
+  ],
+  "unverified": [
+   "current accessibility: jetty closed, resort derelict (consider holding spot for review)",
+   "camping fee"
+  ],
+  "flag": "Access/accessibility doubtful: jetty closed, resort ruined; reviewer should consider review status"
+ },
+ "townsville-1": {
+  "facts": {
+   "status": "Great Barrier Reef Aquarium (formerly Reef HQ) is CLOSED to the public for redevelopment; reopening reported for 2029 (A$180m), demolition late 2026",
+   "operator": "Great Barrier Reef Marine Park Authority"
+  },
+  "sources": {
+   "status": "https://www.greatbarrierreefaquarium.au/about (fetched OK, title 'About - Great Barrier Reef Aquarium'); 2029: search results (gbrmpa / attractionsmanagement), not fetched"
+  },
+  "bio_draft": null,
+  "cost": {
+   "unverified": true,
+   "note": "Closed, no current price."
+  },
+  "coordinates_note": "Placement pin HIGH, kept.",
+  "ticketUrl": "https://www.greatbarrierreefaquarium.au/ (verified: operator GBRMPA; title names the aquarium; reefhq.com.au redirects here). Only worth adding if the spot is kept.",
+  "visit_hours": null,
+  "unverified": [
+   "price",
+   "reopening date"
+  ],
+  "flag": "CLOSED until about 2029: fails 'open to the public'. Recommend dropping or holding for review; rename would be Great Barrier Reef Aquarium."
+ },
+ "townsville-2": {
+  "facts": {
+   "what": "Heritage-listed isolated pink granite monolith in Townsville; Indigenous name Cootharinga"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Castle_Hill%2C_Townsville"
+  },
+  "bio_draft": "Pink granite monolith rising over Townsville, known as Cootharinga, with a steep walk to the summit lookout.",
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "Public hill and lookout, no gate; council-managed. No fee source fetched (council site BLOCKED) but no entry mechanism exists."
+  },
+  "coordinates_note": "Placement pin HIGH, kept.",
+  "ticketUrl": "none (open lookout, council land; no single steward site loaded)",
+  "visit_hours": [
+   0.5,
+   1.5
+  ],
+  "unverified": [
+   "summit walk length/difficulty not sourced; bio walk claim comes from general knowledge, trim if unsourced"
+  ]
+ },
+ "townsville-3": {
+  "facts": {
+   "what": "Queensland Museum Tropics, 70-102 Flinders Street; galleries on rainforests, reefs and HMS Pandora",
+   "admission": "Entry to all North Queensland galleries including Pandora and Enchanted Rainforest is free; some exhibitions charge",
+   "name": "Official name is Queensland Museum Tropics (spot named Museum of Tropical Queensland)"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Queensland_Museum_Tropics",
+   "admission": "https://www.museum.qld.gov.au/tropics/plan-your-visit/hours-and-admission",
+   "name": "https://www.museum.qld.gov.au/tropics"
+  },
+  "bio_draft": "Queensland Museum's Townsville branch, free to enter, with the HMS Pandora wreck gallery and an Enchanted Rainforest.",
+  "cost": {
+   "free": true,
+   "costBasis": "entry"
+  },
+  "coordinates_note": "Placement pin HIGH, kept.",
+  "ticketUrl": "https://www.museum.qld.gov.au/tropics (verified, title Queensland Museum Tropics)",
+  "visit_hours": [
+   1,
+   2
+  ],
+  "unverified": [],
+  "rename_suggestion": "Queensland Museum Tropics"
+ },
+ "townsville-5": {
+  "facts": {
+   "what": "Maritime Museum of Townsville, 42-68 Palmer Street, South Townsville, on Ross Creek; est. 1986, run by Townsville Maritime Museum Limited",
+   "admission": "Adult $8, concession $5, child $5, family $15 (per search snippet of tmml.org.au admission page)"
+  },
+  "sources": {
+   "what": "https://www.tmml.org.au/about/museum-info/ (BLOCKED: Vercel checkpoint; seen via search snippet)",
+   "admission": "search snippet of https://www.tmml.org.au (not loaded)"
+  },
+  "bio_draft": "Small museum on Ross Creek covering Townsville's seafaring history, shipwrecks and Great Barrier Reef shipping.",
+  "cost": {
+   "costMin": 8,
+   "costMax": 8,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "confidence": "low: search snippet only, site blocked"
+  },
+  "coordinates_note": "Placement pin kept; no resolve-pin rerun (the Wikipedia summary resolves to Townsville, no article).",
+  "ticketUrl": "BLOCKED: https://www.tmml.org.au/ (Vercel security checkpoint 429/403; check in browser). Note maritimemuseum.com.au is the Brisbane Queensland Maritime Museum, NOT this one.",
+  "visit_hours": [
+   0.75,
+   1.5
+  ],
+  "unverified": [
+   "price, check in browser",
+   "bio contents beyond founding/location"
+  ]
+ },
+ "townsville-6": {
+  "facts": {
+   "what": "The Palmetum: about 17 ha botanical garden devoted to palms beside James Cook University, entrance University Road",
+   "cost": "Free (search snippets of council material and a travel guide)"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/The_Palmetum,_Townsville (summary fetched OK; the 'The_Palmetum' title 404s, wiki field should be 'The Palmetum, Townsville')",
+   "cost": "https://www.townsville.qld.gov.au/facilities-and-recreation/parks-beaches-and-community-venues/popular-parks-and-playgrounds/parks/palmetum (BLOCKED to scripts)"
+  },
+  "bio_draft": "Free 17-hectare garden on James Cook University's edge holding hundreds of palm species.",
+  "cost": {
+   "free": true,
+   "costBasis": "entry",
+   "note": "Council-run garden; hours sources conflict (sunrise-sunset vs weekdays 9-5), so staffed-or-gated unclear: kept 'entry' not 'open'"
+  },
+  "coordinates_note": "Placement pin kept (not rerun).",
+  "ticketUrl": "BLOCKED: https://www.townsville.qld.gov.au/facilities-and-recreation/parks-beaches-and-community-venues/popular-parks-and-playgrounds/parks/palmetum (council 403; check in browser)",
+  "visit_hours": [
+   1,
+   2
+  ],
+  "unverified": [
+   "free entry only from snippets",
+   "species count (~300, varying)"
+  ],
+  "wiki_fix": "The Palmetum, Townsville"
+ },
+ "townsville-8": {
+  "facts": {
+   "what": "Army Museum of North Queensland at the centre of Jezzine Barracks, Kissing Point; three galleries (colonial era to Boer War, World Wars, recent conflicts); volunteer run",
+   "admission": "Free; open Wed, Fri, Sun 9am-1pm (hours not stored)"
+  },
+  "sources": {
+   "what": "https://www.army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland",
+   "admission": "same page"
+  },
+  "bio_draft": "Free volunteer-run museum at Jezzine Barracks with three galleries on North Queensland's Army history, including WWI trench displays.",
+  "cost": {
+   "free": true,
+   "costBasis": "entry"
+  },
+  "coordinates_note": "Placement pin kept.",
+  "ticketUrl": "https://www.army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland (verified, title Army Museum of North Queensland)",
+  "visit_hours": [
+   0.5,
+   1.5
+  ],
+  "unverified": [
+   "limited opening (three mornings a week): worth a tip in the bio or destination tips, e.g. 'open Wed, Fri and Sun mornings'"
+  ]
+ },
+ "townsville-9": {
+  "facts": {
+   "what": "11-hectare wildlife sanctuary at Nome, 17 km south of Townsville; koalas, crocodiles, cassowary, wombats, kangaroos",
+   "price": "Adult $54, child (4-16) $37, family $152, seniors/students $49; open 9am-4pm"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Billabong_Sanctuary",
+   "price": "https://www.billabongsanctuary.com.au/plan-your-visit/opening-hours-prices/"
+  },
+  "bio_draft": "Wildlife park 17 km south of Townsville with koalas, crocodiles, cassowaries and daily keeper shows.",
+  "cost": {
+   "costMin": 54,
+   "costMax": 54,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "coordinates_note": "Placement pin kept.",
+  "ticketUrl": "https://www.billabongsanctuary.com.au/ (verified, title names Billabong Sanctuary Wildlife Park)",
+  "visit_hours": [
+   2,
+   4
+  ],
+  "unverified": [
+   "'daily keeper shows' wording: page has a Show Times section, not loaded"
+  ]
+ },
+ "ingham-1": {
+  "facts": {
+   "what": "Cascade and horsetail waterfall on Stony Creek in the Wet Tropics; main drop 268 m, the tallest single-drop waterfall in Australia; pool 20 m deep; about 100,000 visitors a year"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Wallaman_Falls"
+  },
+  "bio_draft": "Australia's tallest single-drop waterfall, plunging 268 metres into a deep pool in the Wet Tropics.",
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "Queensland national park lookout, no day-use entry fee found; camping fee applies at the campground only. UNVERIFIED: QPWS page BLOCKED. Not covered by any known park pass in parkPasses.ts."
+  },
+  "coordinates_note": "Placement pin kept (MEDIUM/HIGH per placement).",
+  "ticketUrl": "BLOCKED: https://parks.desi.qld.gov.au/parks/wallaman-falls (QPWS 403; check in browser, also confirm park name Girringun NP)",
+  "visit_hours": [
+   0.5,
+   1.5
+  ],
+  "unverified": [
+   "park fee/permit",
+   "park name"
+  ]
+ }
+}
