@@ -1,0 +1,122 @@
+{
+ "placements": [
+  {
+   "id": "townsville-2",
+   "name": "Castle Hill",
+   "action": "spot",
+   "destination": "townsville",
+   "coordinates": {
+    "latitude": -19.258033,
+    "longitude": 146.802625
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Castle Hill",
+    "category": "viewpoint",
+    "icon": "🔭",
+    "bio": "Heritage-listed pink granite hill, 286 m above Townsville, climbed by the 758-step Goat Track or by road.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "wiki": "Castle Hill, Townsville",
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "townsville-3",
+   "name": "Museum of Tropical Queensland",
+   "action": "spot",
+   "destination": "townsville",
+   "coordinates": {
+    "latitude": -19.257383,
+    "longitude": 146.822243
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Museum of Tropical Queensland",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "Museum galleries on rainforests, reefs and HMS Pandora, the ship sent to capture the Bounty mutineers.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "wiki": "Queensland Museum Tropics",
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.museum.qld.gov.au/tropics"
+   }
+  },
+  {
+   "id": "townsville-6",
+   "name": "The Palmetum",
+   "action": "spot",
+   "destination": "townsville",
+   "coordinates": {
+    "latitude": -19.312533,
+    "longitude": 146.764673
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "The Palmetum",
+    "category": "nature",
+    "icon": "🌿",
+    "bio": "Council botanic garden of palms only, about 300 species across 17 hectares.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "wiki": "The Palmetum, Townsville",
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "townsville-8",
+   "name": "Army Museum North Queensland",
+   "action": "spot",
+   "destination": "townsville",
+   "coordinates": {
+    "latitude": -19.240052,
+    "longitude": 146.802745
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Army Museum North Queensland",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "North Queensland military history museum at the centre of Jezzine Barracks on Kissing Point.",
+    "visitHoursMin": 0.75,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland"
+   }
+  },
+  {
+   "id": "townsville-9",
+   "name": "Billabong Sanctuary",
+   "action": "spot",
+   "destination": "townsville",
+   "coordinates": {
+    "latitude": -19.374182,
+    "longitude": 146.906128
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Billabong Sanctuary",
+    "category": "entertainment",
+    "icon": "🎡",
+    "bio": "11-hectare wildlife sanctuary 17 km south of Townsville, with paid photos with koalas and crocodiles.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 54,
+    "costMax": 54,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.billabongsanctuary.com.au/"
+   }
+  }
+ ]
+}

@@ -49,3 +49,11 @@ Pending shard-10 ids skipped as instructed: rainbow-beach-1, whitsundays-10, tow
 - scripts/coverage-regions.json: 25 destinations and 49 standalone spots added to the qld-* regions (backlog shows no Queensland orphan).
 - scripts/curation/why-subjects.json: entries for the 25 destinations (written by apply-destination.py).
 - Held for later: spots have no photos set (grey/Wikipedia default); name_fix suggestions not applied; Whitsundays/GBR overlap not rechecked.
+
+## Follow-up apply (shard 10 + Whitehaven duplicate)
+Adapters: `build-shard10.py` (same rules as build.py, from final-spots-shard10.json), `qld-lgas-shard10.py` (districts for the new ids). Applied with apply-placement.py per destination, then spots put in importance order within their destination.
+- Applied 7: whitsundays-10 South Molle Island (re-pinned from the reef to the island: resolve-pin HIGH, OSM place=island -20.269673,148.838316), townsville-2 Castle Hill, -3 Museum of Tropical Queensland, -6 The Palmetum, -8 Army Museum North Queensland, -9 Billabong Sanctuary, ingham-1 Wallaman Falls. Districts from the ABS LGA service (Whitsunday, Townsville, Hinchinbrook). No new standalone spots, so no region-list change.
+- Not applied: rainbow-beach-1 Double Island Point (permit required, fee not read, not free; park page blocked); townsville-1 Reef HQ (no bio, closed for redevelopment to about 2029); townsville-5 Maritime Museum of Townsville (review: no collection facts, price unverified, official site blocked).
+- Removed whitsundays-1 Whitehaven Beach (duplicate of great-barrier-reef-2) from spots.ts and spotDistricts.json; it was in no region list. Its photo-shared lint flag is gone.
+- Unverified carried over: The Palmetum free/open is from a search snippet (council page blocked); visit hours are estimates.
+- Lint (--offline) for qld-townsville, qld-fraser-bundaberg, qld-mackay-whitsundays: only rainbow-beach-5 Wolf Rock no-ticket remains (first batch, unverified link). Townsville now has 6 spots, so its thin-destination flag is cleared. tsc: the 5 pre-existing MapScreen errors only.
