@@ -1608,6 +1608,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the drier half of the year, which suits the beach, river cruises and park walks.",
   },
   {
+    id: 'port-douglas', name: "Port Douglas", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 35,
+    continent: 'Oceania', coordinates: { latitude: -16.4846, longitude: 145.46363 },
+    category: 'beach', icon: "🌴", rank: 3,
+    tagline: "A palm-lined resort town where the Great Barrier Reef meets the Daintree",
+    description: "Port Douglas is a small resort town about an hour north of Cairns, with a village feel and palm trees taller than the buildings. Four Mile Beach runs along its front, and Macrossan Street is lined with cafes, pubs and restaurants. It is a base for reef trips and for the Daintree Rainforest, with Cape Tribulation a 90-minute drive on sealed roads. Wildlife parks and Mossman Gorge sit close by.",
+    whyVisit: ["Sail out to the Great Barrier Reef", "Stroll Four Mile Beach at sunset", "Meet crocodiles and cassowaries at wildlife parks"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Reef trips", "Four Mile Beach", "Wildlife encounters"],
+    goodToKnow: [
+      { icon: "🐊", title: "Crocodiles on the beach", detail: "Saltwater crocodiles live here. Heed warning signs on Four Mile Beach, avoid the water's edge at dusk, and stay out if it is closed." },
+      { icon: "🪼", title: "Stinger season Nov to May", detail: "Swim in the netted, lifeguard-patrolled area at the north end of Four Mile Beach, and check the day's stinger risk sign." },
+      { icon: "🚌", title: "Cairns is the gateway", detail: "The airport is in Cairns, one hour south on the winding Captain Cook Highway. Shuttles run from the airport, and tours pick up at hotels." },
+    ],
+    bestMonths: [5, 6, 7, 8, 9],
+    bestTimeBlurb: "{months} is the peak season, with dry weather. Stingers are around from about Nov–May, so swim in the net.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
