@@ -1,0 +1,126 @@
+{
+ "placements": [
+  {
+   "id": "kuranda-1",
+   "name": "Barron Falls",
+   "action": "spot",
+   "destination": "kuranda",
+   "coordinates": {
+    "latitude": -16.833611,
+    "longitude": 145.643594
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Barron Falls",
+    "category": "nature",
+    "icon": "💧",
+    "bio": "Tiered cascade where the Barron River drops off the Atherton Tableland, best after wet-season rain.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "kuranda-3",
+   "name": "Rainforestation Nature Park",
+   "action": "spot",
+   "destination": "kuranda",
+   "coordinates": {
+    "latitude": -16.823676,
+    "longitude": 145.652057
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Rainforestation Nature Park",
+    "category": "entertainment",
+    "icon": "🌳",
+    "bio": "Rainforest park opened in 1976 near Kuranda, with a wildlife park and an amphibious Army Duck tour.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 23,
+    "costMax": 71,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.rainforest.com.au/"
+   }
+  },
+  {
+   "id": "kuranda-4",
+   "name": "Australian Butterfly Sanctuary",
+   "action": "spot",
+   "destination": "kuranda",
+   "coordinates": {
+    "latitude": -16.819771,
+    "longitude": 145.632773
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Australian Butterfly Sanctuary",
+    "category": "entertainment",
+    "icon": "🎡",
+    "bio": "Walk-through aviary in Kuranda with over 1,200 butterflies and a breeding laboratory tour.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 25,
+    "costMax": 25,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://australianbutterflies.com/"
+   }
+  },
+  {
+   "id": "kuranda-5",
+   "name": "Birdworld",
+   "action": "spot",
+   "destination": "kuranda",
+   "coordinates": {
+    "latitude": -16.819336,
+    "longitude": 145.63241
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Birdworld",
+    "category": "entertainment",
+    "icon": "🎡",
+    "bio": "Aviary at the Kuranda Heritage Markets where more than 350 birds fly free, cassowary included.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 24,
+    "costMax": 24,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.birdworldkuranda.com/"
+   }
+  },
+  {
+   "id": "kuranda-6",
+   "name": "Kuranda Koala Gardens",
+   "action": "spot",
+   "destination": "kuranda",
+   "coordinates": {
+    "latitude": -16.818835,
+    "longitude": 145.632615
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Kuranda Koala Gardens",
+    "category": "nature",
+    "icon": "🐨",
+    "bio": "Small wildlife park in Kuranda with koalas, wombats, quokkas, crocodiles and a nocturnal exhibit.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 24,
+    "costMax": 24,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.koalagardens.com/"
+   }
+  }
+ ]
+}

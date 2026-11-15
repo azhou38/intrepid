@@ -1,0 +1,548 @@
+{
+ "placements": [
+  {
+   "id": "brisbane-1",
+   "name": "Queensland Museum",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.472776,
+    "longitude": 153.017984
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Queensland Museum",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "Queensland's state museum, holding over 15 million items across natural history, culture and science.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.museum.qld.gov.au/kurilpa"
+   }
+  },
+  {
+   "id": "brisbane-2",
+   "name": "Museum of Brisbane",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.468715,
+    "longitude": 153.023419
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Museum of Brisbane",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "A history and art museum inside Brisbane City Hall, with exhibitions on the city's past and present.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "wiki": "Museum_of_Brisbane",
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.museumofbrisbane.com.au/"
+   }
+  },
+  {
+   "id": "brisbane-3",
+   "name": "Queensland Art Gallery",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.472575,
+    "longitude": 153.018561
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Queensland Art Gallery",
+    "category": "museum",
+    "icon": "🖼️",
+    "bio": "Art museum at South Bank, part of QAGOMA and 150 m from the Gallery of Modern Art.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "wiki": "Queensland_Art_Gallery",
+    "free": true,
+    "costBasis": "entry"
+   }
+  },
+  {
+   "id": "brisbane-4",
+   "name": "Lone Pine Koala Sanctuary",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.535178,
+    "longitude": 152.968366
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Lone Pine Koala Sanctuary",
+    "category": "entertainment",
+    "icon": "🐨",
+    "bio": "An 18-hectare koala sanctuary founded in 1927, with daily talks and kangaroo feeding included.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 4,
+    "wiki": "Lone_Pine_Koala_Sanctuary",
+    "costMin": 63,
+    "costMax": 63,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://lonepinekoalasanctuary.com/"
+   }
+  },
+  {
+   "id": "brisbane-5",
+   "name": "Brisbane Botanic Gardens Mount Coot-tha",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.477901,
+    "longitude": 152.974634
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Brisbane Botanic Gardens Mount Coot-tha",
+    "category": "nature",
+    "icon": "🌿",
+    "bio": "Subtropical botanic gardens beneath Mount Coot-tha, with a Tropical Display Dome and a Japanese Garden.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "wiki": "Brisbane Botanic Gardens, Mount Coot-tha",
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/brisbane-botanic-gardens-mt-coot-tha"
+   }
+  },
+  {
+   "id": "brisbane-6",
+   "name": "South Bank Parklands",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.477559,
+    "longitude": 153.0224
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "South Bank Parklands",
+    "category": "nature",
+    "icon": "🌳",
+    "bio": "Parkland on the Expo 88 site, with a free lagoon beach, rainforest and a riverfront promenade.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://www.visitsouthbank.com.au/"
+   }
+  },
+  {
+   "id": "brisbane-7",
+   "name": "Queens Wharf",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.473523,
+    "longitude": 153.0254
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Queens Wharf",
+    "category": "landmark",
+    "icon": "🏛️",
+    "bio": "CBD riverside precinct opened in 2024, with a 250 m Sky Deck, Neville Bonner Bridge and heritage buildings.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "wiki": "Queen's Wharf, Brisbane",
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://queenswharfbrisbane.com.au/"
+   }
+  },
+  {
+   "id": "brisbane-8",
+   "name": "City Botanic Gardens",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.472795,
+    "longitude": 153.031287
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "City Botanic Gardens",
+    "category": "nature",
+    "icon": "🌿",
+    "bio": "Heritage-listed 18-hectare gardens on the CBD riverfront, begun in 1825 as a penal settlement farm.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "wiki": "City_Botanic_Gardens",
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/city-botanic-gardens"
+   }
+  },
+  {
+   "id": "brisbane-9",
+   "name": "Cathedral of St Stephen",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.468669,
+    "longitude": 153.028983
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Cathedral of St Stephen",
+    "category": "religious",
+    "icon": "⛪",
+    "bio": "Gothic Revival cathedral consecrated in 1874, next to Queensland's oldest Catholic church.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "wiki": "Cathedral of St Stephen, Brisbane",
+    "free": true,
+    "costBasis": "donation",
+    "ticketUrl": "https://www.cathedralofststephen.org.au/"
+   }
+  },
+  {
+   "id": "brisbane-10",
+   "name": "Brisbane City Hall Clock Tower",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.468781,
+    "longitude": 153.023755
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Brisbane City Hall Clock Tower",
+    "category": "landmark",
+    "icon": "🏛️",
+    "bio": "A 64 m clock tower modelled on St Mark's Campanile in Venice, reached by lift on free booked tours.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "wiki": "Brisbane City Hall",
+    "free": true,
+    "costBasis": "entry",
+    "needs": "booking",
+    "ticketUrl": "https://www.museumofbrisbane.com.au/whats-on/clock-tower-tours/"
+   }
+  },
+  {
+   "id": "brisbane-11",
+   "name": "Queensland Maritime Museum",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.481848,
+    "longitude": 153.026251
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Queensland Maritime Museum",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "Maritime museum on the Brisbane River with the WW2 frigate HMAS Diamantina, a light ship and a dry dock.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 18,
+    "costMax": 18,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://maritimemuseum.com.au/"
+   }
+  },
+  {
+   "id": "brisbane-12",
+   "name": "Commissariat Store Museum",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.473269,
+    "longitude": 153.024253
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Commissariat Store Museum",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "Convict-built storehouse of 1828-29, one of two Moreton Bay penal colony buildings left, now a museum.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "wiki": "Commissariat_Store,_Brisbane",
+    "costMin": 12,
+    "costMax": 12,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.commissariatstore.org.au/"
+   }
+  },
+  {
+   "id": "brisbane-13",
+   "name": "MacArthur Museum",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.468561,
+    "longitude": 153.027397
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "MacArthur Museum",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "Museum on level 8 of MacArthur Chambers, General MacArthur's 1942 headquarters, on Brisbane's war years.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "costMin": 10,
+    "costMax": 10,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://mmb.org.au/"
+   }
+  },
+  {
+   "id": "brisbane-14",
+   "name": "Sir Thomas Brisbane Planetarium",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.47574,
+    "longitude": 152.976983
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Sir Thomas Brisbane Planetarium",
+    "category": "entertainment",
+    "icon": "🎡",
+    "bio": "Planetarium in the Mt Coot-tha botanic gardens with fulldome sky shows in the Cosmic Skydome.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 17.5,
+    "costMax": 17.5,
+    "currency": "AUD",
+    "costBasis": "ticket",
+    "ticketUrl": "https://www.brisbane.qld.gov.au/libraries-venues-and-facilities/venue-and-places/sir-thomas-brisbane-planetarium"
+   }
+  },
+  {
+   "id": "brisbane-16",
+   "name": "Kangaroo Point Cliffs",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.478377,
+    "longitude": 153.034085
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Kangaroo Point Cliffs",
+    "category": "nature",
+    "icon": "🌿",
+    "bio": "Heritage-listed river cliffs facing the CBD, popular for rock climbing and running, with a boardwalk.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "brisbane-17",
+   "name": "New Farm Park",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.469255,
+    "longitude": 153.051439
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "New Farm Park",
+    "category": "nature",
+    "icon": "🌳",
+    "bio": "Riverfront park on the Queensland Heritage Register, with picnic shelters, barbecues and tennis courts.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "brisbane-19",
+   "name": "Redcliffe Jetty",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.226252,
+    "longitude": 153.116521
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Redcliffe Jetty",
+    "category": "landmark",
+    "icon": "🏛️",
+    "bio": "Jetty on Redcliffe Parade over Moreton Bay, a popular fishing spot.",
+    "visitHoursMin": 0.25,
+    "visitHoursMax": 0.75,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "brisbane-22",
+   "name": "Fort Lytton National Park",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.410226,
+    "longitude": 153.151516
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Fort Lytton National Park",
+    "category": "historic",
+    "icon": "🏚️",
+    "bio": "Pentagonal 19th-century fort with guns behind grassy ramparts, run as a national park with guided tours.",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 2.5,
+    "free": true,
+    "costBasis": "entry"
+   }
+  },
+  {
+   "id": "brisbane-24",
+   "name": "Daisy Hill Koala Centre",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.62278,
+    "longitude": 153.157
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Daisy Hill Koala Centre",
+    "category": "nature",
+    "icon": "🐨",
+    "bio": "Ranger-run centre in Daisy Hill Conservation Park where you see wild koalas up close, free to enter.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://parks.qld.gov.au/parks/daisy-hill-koala-centre"
+   }
+  },
+  {
+   "id": "brisbane-15",
+   "name": "Mount Coot-tha",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.485032,
+    "longitude": 152.958911
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Mount Coot-tha",
+    "category": "viewpoint",
+    "icon": "🔭",
+    "bio": "Heritage-listed lookout over Brisbane and Moreton Bay, with walking tracks and botanic gardens nearby.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 2,
+    "wiki": "Mount_Coot-tha,_Queensland",
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://www.brisbane.qld.gov.au/libraries-venues-and-facilities/malls-and-precincts/mt-coot-tha-precinct"
+   }
+  },
+  {
+   "id": "brisbane-20",
+   "name": "Margate Beach",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.245534,
+    "longitude": 153.111486
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Margate Beach",
+    "category": "beach",
+    "icon": "🏖️",
+    "bio": "Beach at Margate on the Redcliffe Peninsula, a popular South East Queensland getaway.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 2,
+    "wiki": "Margate, Queensland",
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "brisbane-28",
+   "name": "Mount Glorious",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.333854,
+    "longitude": 152.772926
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Mount Glorious",
+    "category": "viewpoint",
+    "icon": "🔭",
+    "bio": "A 619 m peak in the D'Aguilar Range, named after a remark about its view at a 1915 picnic.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "brisbane-26",
+   "name": "Wellington Point",
+   "action": "spot",
+   "destination": "brisbane",
+   "coordinates": {
+    "latitude": -27.503254,
+    "longitude": 153.239634
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Wellington Point",
+    "category": "viewpoint",
+    "icon": "🔭",
+    "bio": "Seaside spot in the City of Redland with a sandbar walk to King Island at low tide.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "wiki": "Wellington Point, Queensland",
+    "free": true,
+    "costBasis": "open"
+   }
+  }
+ ]
+}

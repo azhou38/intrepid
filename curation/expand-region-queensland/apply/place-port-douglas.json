@@ -1,0 +1,98 @@
+{
+ "placements": [
+  {
+   "id": "port-douglas-3",
+   "name": "Wildlife Habitat Port Douglas",
+   "action": "spot",
+   "destination": "port-douglas",
+   "coordinates": {
+    "latitude": -16.525746,
+    "longitude": 145.46394
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Wildlife Habitat Port Douglas",
+    "category": "entertainment",
+    "icon": "🦘",
+    "bio": "Wildlife sanctuary near Port Douglas with five habitats, elevated boardwalks and hand-feeding of wallabies.",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 50,
+    "costMax": 50,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.wildlifehabitat.com.au/"
+   }
+  },
+  {
+   "id": "port-douglas-4",
+   "name": "Hartley's Crocodile Adventures",
+   "action": "spot",
+   "destination": "port-douglas",
+   "coordinates": {
+    "latitude": -16.665103,
+    "longitude": 145.563895
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Hartley's Crocodile Adventures",
+    "category": "entertainment",
+    "icon": "🎡",
+    "bio": "A 10-hectare wildlife sanctuary between Cairns and Port Douglas, with displays and a lagoon boat ride.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 50,
+    "costMax": 50,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.crocodileadventures.com/how-to-find-us/tickets/"
+   }
+  },
+  {
+   "id": "port-douglas-5",
+   "name": "Spring Creek Falls",
+   "action": "spot",
+   "destination": "port-douglas",
+   "coordinates": {
+    "latitude": -16.597483,
+    "longitude": 145.487093
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Spring Creek Falls",
+    "category": "nature",
+    "icon": "💧",
+    "bio": "Spring Creek's waterfall and swimming pool in the Mowbray Valley, with crocodile warnings downstream.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "port-douglas-1",
+   "name": "Four Mile Beach",
+   "action": "spot",
+   "destination": "port-douglas",
+   "coordinates": {
+    "latitude": -16.507078,
+    "longitude": 145.467382
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Four Mile Beach",
+    "category": "beach",
+    "icon": "🏖️",
+    "bio": "Port Douglas's main beach, four miles of golden sand and palms, with a patrolled netted swimming area.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open"
+   }
+  }
+ ]
+}

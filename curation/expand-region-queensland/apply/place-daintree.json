@@ -1,0 +1,51 @@
+{
+ "placements": [
+  {
+   "id": "daintree-3",
+   "name": "Daintree Discovery Centre",
+   "action": "spot",
+   "destination": "daintree",
+   "coordinates": {
+    "latitude": -16.237882,
+    "longitude": 145.428184
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Daintree Discovery Centre",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "Interpretive centre with a canopy tower, aerial walkway and boardwalks introducing the Daintree rainforest.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "costMin": 41,
+    "costMax": 41,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.discoverthedaintree.com/"
+   }
+  },
+  {
+   "id": "daintree-4",
+   "name": "Noah Beach",
+   "action": "spot",
+   "destination": "daintree",
+   "coordinates": {
+    "latitude": -16.15079,
+    "longitude": 145.445794
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Noah Beach",
+    "category": "beach",
+    "icon": "🏖️",
+    "bio": "Campground beside Cape Tribulation Road in Daintree National Park, at the edge of two World Heritage sites.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "free": true,
+    "costBasis": "open"
+   }
+  }
+ ]
+}

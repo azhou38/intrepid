@@ -1,0 +1,121 @@
+{
+ "placements": [
+  {
+   "id": "cairns-3",
+   "name": "Cairns Aquarium",
+   "action": "spot",
+   "destination": "cairns",
+   "coordinates": {
+    "latitude": -16.91862,
+    "longitude": 145.773616
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Cairns Aquarium",
+    "category": "entertainment",
+    "icon": "🎡",
+    "bio": "Aquarium of Wet Tropics rainforest and Great Barrier Reef animals, with a Turtle Rehabilitation Centre.",
+    "visitHoursMin": 1.5,
+    "visitHoursMax": 3,
+    "costMin": 61,
+    "costMax": 61,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.cairnsaquarium.com.au/"
+   }
+  },
+  {
+   "id": "cairns-4",
+   "name": "Cairns Esplanade Lagoon",
+   "action": "spot",
+   "destination": "cairns",
+   "coordinates": {
+    "latitude": -16.91964,
+    "longitude": 145.777976
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Cairns Esplanade Lagoon",
+    "category": "nature",
+    "icon": "🌿",
+    "bio": "Free saltwater lagoon on the Cairns Esplanade, lifeguard-monitored, with toilets and showers.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "cairns-5",
+   "name": "Cairns Botanic Gardens",
+   "action": "spot",
+   "destination": "cairns",
+   "coordinates": {
+    "latitude": -16.900099,
+    "longitude": 145.75043
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Cairns Botanic Gardens",
+    "category": "nature",
+    "icon": "🌿",
+    "bio": "Free botanic gardens in Edge Hill, with Flecker Garden, Centenary Lakes and a conservatory.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 2,
+    "free": true,
+    "costBasis": "entry"
+   }
+  },
+  {
+   "id": "cairns-7",
+   "name": "Cairns Museum",
+   "action": "spot",
+   "destination": "cairns",
+   "coordinates": {
+    "latitude": -16.922192,
+    "longitude": 145.775304
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Cairns Museum",
+    "category": "museum",
+    "icon": "🏛️",
+    "bio": "Cairns Historical Society museum in the old School of Arts, with four permanent galleries and kids' trails.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 1.5,
+    "costMin": 15,
+    "costMax": 15,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://cairnsmuseum.org.au/"
+   }
+  },
+  {
+   "id": "cairns-8",
+   "name": "Cairns Regional Gallery",
+   "action": "spot",
+   "destination": "cairns",
+   "coordinates": {
+    "latitude": -16.92129,
+    "longitude": 145.777156
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Cairns Regional Gallery",
+    "category": "museum",
+    "icon": "🖼️",
+    "bio": "Free regional art gallery in Cairns' heritage Public Curators and Court House buildings.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1,
+    "free": true,
+    "costBasis": "entry",
+    "ticketUrl": "https://www.cairnsartgallery.com.au/"
+   }
+  }
+ ]
+}

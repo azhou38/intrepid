@@ -1,0 +1,117 @@
+{
+ "placements": [
+  {
+   "id": "mission-beach-1",
+   "name": "Dunk Island",
+   "action": "spot",
+   "destination": "mission-beach",
+   "coordinates": {
+    "latitude": -17.935636,
+    "longitude": 146.143279
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Dunk Island",
+    "category": "nature",
+    "icon": "🏝️",
+    "bio": "Island 4 km off Mission Beach, mostly national park, reached by water taxi and ringed by reefs.",
+    "visitHoursMin": 3,
+    "visitHoursMax": 6,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "mission-beach-3",
+   "name": "Paronella Park",
+   "action": "spot",
+   "destination": "mission-beach",
+   "coordinates": {
+    "latitude": -17.652479,
+    "longitude": 145.957355
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Paronella Park",
+    "category": "entertainment",
+    "icon": "🌳",
+    "bio": "Spanish-style castle park opened by Jose Paronella in 1935 beside Mena Creek Falls, now rainforest.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "costMin": 62,
+    "costMax": 62,
+    "currency": "AUD",
+    "costBasis": "entry",
+    "ticketUrl": "https://www.paronellapark.com.au/"
+   }
+  },
+  {
+   "id": "mission-beach-4",
+   "name": "Golden Gumboot",
+   "action": "spot",
+   "destination": "mission-beach",
+   "coordinates": {
+    "latitude": -17.933951,
+    "longitude": 145.927168
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Golden Gumboot",
+    "category": "nature",
+    "icon": "🌿",
+    "bio": "A 7.9 m golden gumboot in Tully marking its record 1950 rainfall.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.25,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "mission-beach-2",
+   "name": "Clump Point Lookout",
+   "action": "spot",
+   "destination": "mission-beach",
+   "coordinates": {
+    "latitude": -17.856652,
+    "longitude": 146.117075
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Clump Point Lookout",
+    "category": "viewpoint",
+    "icon": "🔭",
+    "bio": "Lookout at Clump Point, the northern end of a 13 km Coral Sea beach at Mission Beach.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "mission-beach-5",
+   "name": "Etty Bay",
+   "action": "spot",
+   "destination": "mission-beach",
+   "coordinates": {
+    "latitude": -17.559517,
+    "longitude": 146.092198
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Etty Bay",
+    "category": "beach",
+    "icon": "🏖️",
+    "bio": "Etty Bay is a sheltered 700-metre beach near Innisfail, reached by a scenic road over the Moresby Range.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open"
+   }
+  }
+ ]
+}

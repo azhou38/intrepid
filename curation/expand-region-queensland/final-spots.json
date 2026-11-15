@@ -3596,6 +3596,418 @@
   ],
   "_shard": "shard-09"
  },
+ "rainbow-beach-1": {
+  "id": "rainbow-beach-1",
+  "source_id": "qld-272",
+  "name": "Double Island Point",
+  "wiki": null,
+  "action": "standalone",
+  "destination": null,
+  "category": "viewpoint",
+  "coordinates": {
+   "latitude": -25.932533,
+   "longitude": 153.189168
+  },
+  "needs_pin": false,
+  "pin_confidence": "MEDIUM",
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm leisure=park (nominatim) Double Island Point Conservation Park",
+  "reason": "Inside Rainbow Beach's bounds: 10.5 km from its centre, within 0.75 x its 20 km span; Cooloola; filed under sunshine-coast",
+  "part_of": null,
+  "order_in_destination": 1,
+  "views": 2324,
+  "cost": {
+   "costBasis": "permit",
+   "needs": "permit",
+   "note": "Cooloola vehicle access permit required; fee not read (qld.gov.au states none), so none recorded; default: park page blocked"
+  },
+  "costBasis": null,
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "former_destination": "rainbow-beach",
+  "bio": "Cooloola headland with an 1884 lighthouse and a right-hand surf break on its northern side.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "ticketUrl_blocked": [
+   "https://parks.qld.gov.au/parks/cooloola/journeys/double-island-point-lighthouse-walk (403)"
+  ],
+  "unverified": [
+   "permit fee and unit",
+   "visit hours are an estimate",
+   "how visitors reach the headland (left out of bio)"
+  ],
+  "_shard": "shard-10"
+ },
+ "whitsundays-10": {
+  "id": "whitsundays-10",
+  "source_id": "qld-333",
+  "name": "South Molle Island",
+  "wiki": "South Molle Island",
+  "action": "spot",
+  "destination": "whitsundays",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -20.258101,
+   "longitude": 148.843959
+  },
+  "needs_pin": false,
+  "pin_confidence": "MEDIUM",
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm natural=reef (nominatim) South Molle Reef",
+  "reason": "Inside Whitsundays's bounds: 3.3 km from its centre, within 0.75 x its 30 km span",
+  "part_of": null,
+  "order_in_destination": 10,
+  "views": 3439,
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "default: park page blocked"
+  },
+  "costBasis": null,
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "Hilly Whitsunday island with about 16 km of walking tracks, reached by boat.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "ticketUrl_blocked": [
+   "https://parks.qld.gov.au/parks/molle-islands/things-to-do (403)"
+  ],
+  "pin_flag": "Pin is on the reef, not the island: re-pin on South Molle Island (Bauer Bay or Mount Jeffreys) via resolve-pin.py.",
+  "unverified": [
+   "jetty and resort status (no resort or jetty promised in bio)",
+   "visit hours are an estimate",
+   "whether the island is still a visitor draw (owner to confirm)"
+  ],
+  "_shard": "shard-10"
+ },
+ "townsville-1": {
+  "id": "townsville-1",
+  "source_id": "qld-454",
+  "name": "Reef HQ Aquarium",
+  "wiki": "Reef HQ",
+  "action": "spot",
+  "destination": "townsville",
+  "category": "entertainment",
+  "coordinates": {
+   "latitude": -19.257587,
+   "longitude": 146.823071
+  },
+  "needs_pin": false,
+  "pin_confidence": "HIGH",
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=aquarium (nominatim) Reef HQ",
+  "reason": "Inside Townsville's bounds: 1.8 km from its centre, within 0.75 x its 25 km span",
+  "part_of": null,
+  "order_in_destination": 1,
+  "views": 2040,
+  "cost": null,
+  "costBasis": null,
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": null,
+  "held": "closed for redevelopment until about 2029",
+  "unverified": [
+   "ticketUrl https://www.greatbarrierreefaquarium.au/ loads; use only once reopened"
+  ],
+  "_shard": "shard-10"
+ },
+ "townsville-2": {
+  "id": "townsville-2",
+  "source_id": "qld-447",
+  "name": "Castle Hill",
+  "wiki": "Castle Hill, Townsville",
+  "action": "spot",
+  "destination": "townsville",
+  "category": "viewpoint",
+  "coordinates": {
+   "latitude": -19.258033,
+   "longitude": 146.802625
+  },
+  "needs_pin": false,
+  "pin_confidence": "HIGH",
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm natural=peak (nominatim) Castle Hill",
+  "reason": "Inside Townsville's bounds: 1.6 km from its centre, within 0.75 x its 25 km span",
+  "part_of": null,
+  "order_in_destination": 2,
+  "views": 4730,
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "default: no source states a fee"
+  },
+  "costBasis": null,
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "Heritage-listed pink granite hill, 286 m above Townsville, climbed by the 758-step Goat Track or by road.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "unverified": [
+   "walking times (visit hours are an estimate)"
+  ],
+  "_shard": "shard-10"
+ },
+ "townsville-3": {
+  "id": "townsville-3",
+  "source_id": "qld-451",
+  "name": "Museum of Tropical Queensland",
+  "wiki": "Queensland Museum Tropics",
+  "action": "spot",
+  "destination": "townsville",
+  "category": "museum",
+  "coordinates": {
+   "latitude": -19.257383,
+   "longitude": 146.822243
+  },
+  "needs_pin": false,
+  "pin_confidence": "HIGH",
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=museum (nominatim) Museum of Tropical Queensland",
+  "reason": "Inside Townsville's bounds: 1.7 km from its centre, within 0.75 x its 25 km span",
+  "part_of": null,
+  "order_in_destination": 3,
+  "views": 732,
+  "cost": {
+   "free": true,
+   "costBasis": "entry",
+   "note": "general entry free (museum page); some exhibitions charge"
+  },
+  "costBasis": null,
+  "ticketUrl": "https://www.museum.qld.gov.au/tropics",
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "Museum galleries on rainforests, reefs and HMS Pandora, the ship sent to capture the Bounty mutineers.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "name_fix": "Queensland Museum Tropics",
+  "unverified": [
+   "visit hours are an estimate"
+  ],
+  "_shard": "shard-10"
+ },
+ "townsville-5": {
+  "id": "townsville-5",
+  "source_id": "qld-462",
+  "name": "Maritime Museum of Townsville",
+  "wiki": null,
+  "action": "spot",
+  "destination": "townsville",
+  "category": "museum",
+  "coordinates": {
+   "latitude": -19.259428,
+   "longitude": 146.822946
+  },
+  "needs_pin": false,
+  "pin_confidence": "HIGH",
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=museum (nominatim) The Maritime Museum of Townsville",
+  "reason": "Inside Townsville's bounds: 2.0 km from its centre, within 0.75 x its 25 km span",
+  "part_of": null,
+  "order_in_destination": 5,
+  "views": 142547,
+  "cost": null,
+  "costBasis": null,
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "South Townsville museum on Palmer Street devoted to the city's maritime history.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "ticketUrl_blocked": [
+   "https://www.tmml.org.au/ (bot wall, title not verified)"
+  ],
+  "review": "No source read describes the collection; a distinctive fact is needed before this ships.",
+  "unverified": [
+   "AUD 8 adult price (search summary only, official page blocked): no price recorded",
+   "bio's maritime-history description (no page read)",
+   "visit hours are an estimate"
+  ],
+  "_shard": "shard-10"
+ },
+ "townsville-6": {
+  "id": "townsville-6",
+  "source_id": "qld-456",
+  "name": "The Palmetum",
+  "wiki": "The Palmetum, Townsville",
+  "action": "spot",
+  "destination": "townsville",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -19.312533,
+   "longitude": 146.764673
+  },
+  "needs_pin": false,
+  "pin_confidence": "HIGH",
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm leisure=park (nominatim) The Palmetum",
+  "reason": "Inside Townsville's bounds: 8.9 km from its centre, within 0.75 x its 25 km span",
+  "part_of": null,
+  "order_in_destination": 6,
+  "views": 0,
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "default: free claim from search snippet, council page blocked"
+  },
+  "costBasis": null,
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "Council botanic garden of palms only, about 300 species across 17 hectares.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "ticketUrl_blocked": [
+   "Townsville City Council Palmetum page (blocked): omitted"
+  ],
+  "unverified": [
+   "free entry and whether gated (open vs entry basis)",
+   "visit hours are an estimate"
+  ],
+  "_shard": "shard-10"
+ },
+ "townsville-8": {
+  "id": "townsville-8",
+  "source_id": "qld-445",
+  "name": "Army Museum North Queensland",
+  "wiki": null,
+  "action": "spot",
+  "destination": "townsville",
+  "category": "museum",
+  "coordinates": {
+   "latitude": -19.240052,
+   "longitude": 146.802745
+  },
+  "needs_pin": false,
+  "pin_confidence": "HIGH",
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=museum (nominatim) Army Museum of North Queensland",
+  "reason": "Inside Townsville's bounds: 1.1 km from its centre, within 0.75 x its 25 km span",
+  "part_of": null,
+  "order_in_destination": 8,
+  "views": 0,
+  "cost": {
+   "free": true,
+   "costBasis": "entry",
+   "note": "admission free (Army page)"
+  },
+  "costBasis": null,
+  "ticketUrl": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland",
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "North Queensland military history museum at the centre of Jezzine Barracks on Kissing Point.",
+  "visitHoursMin": 0.75,
+  "visitHoursMax": 1.5,
+  "tip_candidate": "Army Museum North Queensland opens Wednesday, Friday and Sunday, 9 am to 1 pm (Army page): check before going.",
+  "unverified": [
+   "visit hours are an estimate"
+  ],
+  "_shard": "shard-10"
+ },
+ "townsville-9": {
+  "id": "townsville-9",
+  "source_id": "qld-460",
+  "name": "Billabong Sanctuary",
+  "wiki": "Billabong Sanctuary",
+  "action": "spot",
+  "destination": "townsville",
+  "category": "entertainment",
+  "coordinates": {
+   "latitude": -19.374182,
+   "longitude": 146.906128
+  },
+  "needs_pin": false,
+  "pin_confidence": "MEDIUM",
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm tourism=zoo (nominatim) Billabong Sanctuary",
+  "reason": "Inside Townsville's bounds: 17.4 km from its centre, within 0.75 x its 25 km span",
+  "part_of": null,
+  "order_in_destination": 9,
+  "views": 1334,
+  "cost": {
+   "costMin": 54,
+   "costMax": 54,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "adult entry (operator page); photo experiences extra"
+  },
+  "costBasis": null,
+  "ticketUrl": "https://www.billabongsanctuary.com.au/",
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "11-hectare wildlife sanctuary 17 km south of Townsville, with paid photos with koalas and crocodiles.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "unverified": [
+   "visit hours are an estimate"
+  ],
+  "_shard": "shard-10"
+ },
+ "ingham-1": {
+  "id": "ingham-1",
+  "source_id": "qld-466",
+  "name": "Wallaman Falls",
+  "wiki": "Wallaman Falls",
+  "action": "spot",
+  "destination": "ingham",
+  "category": "nature",
+  "coordinates": {
+   "latitude": -18.592125,
+   "longitude": 145.801599
+  },
+  "needs_pin": false,
+  "pin_confidence": "HIGH",
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm waterway=waterfall (nominatim) Wallaman Falls",
+  "reason": "Inside Ingham's bounds: 37.0 km from its centre, within 0.75 x its 60 km span",
+  "part_of": "Girringun National Park",
+  "order_in_destination": 1,
+  "views": 5834,
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "default: park page blocked"
+  },
+  "costBasis": null,
+  "ticketUrl": null,
+  "needs_research": [
+   "cost",
+   "ticketUrl",
+   "bio"
+  ],
+  "bio": "Australia's tallest single-drop waterfall, a 268 m plunge on Stony Creek in the Wet Tropics.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "ticketUrl_blocked": [
+   "https://parks.qld.gov.au/parks/girringun-wallaman/things-to-do (403)"
+  ],
+  "unverified": [
+   "Girringun National Park, lookout and picnic tables (snippet only, left out of bio)",
+   "Djinda walk closure 9-20 Nov 2026 (park alert unverified, left out of copy)",
+   "visit hours are an estimate"
+  ],
+  "_shard": "shard-10"
+ },
  "ingham-3": {
   "id": "ingham-3",
   "source_id": "qld-095",

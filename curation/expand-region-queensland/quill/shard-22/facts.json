@@ -1,497 +1,305 @@
 {
- "shard": "shard-22",
- "spots": [
-  {
-   "id": "glass-house-mountains-3",
-   "wikipedia": {
-    "title": "Wild Horse Mountain",
-    "right_place": true,
-    "note": "article is the smallest Glass House Mountain; right place"
+ "glass-house-mountains-3": {
+  "claims": [
+   {
+    "text": "Smallest Glass House Mountain, 123 m, east of Bruce Highway",
+    "source": "https://en.wikipedia.org/wiki/Wild_Horse_Mountain",
+    "status": "supported",
+    "fix": ""
    },
-   "claims": [
-    {
-     "text": "Smallest of the Glass House Mountains, 123 m, east of the Bruce Highway so views of the other peaks",
-     "source": "https://en.wikipedia.org/wiki/Wild_Horse_Mountain",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Narrow sealed road (gated) to the summit, car park at base, rotunda-style building with interpretive displays at the top",
-     "source": "https://en.wikipedia.org/wiki/Wild_Horse_Mountain",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Part of Beerburrum East State Forest, managed by Queensland Parks and Forests",
-     "source": "https://en.wikipedia.org/wiki/Wild_Horse_Mountain",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "About 1.4 km return walk",
-     "source": "search summary only; council page 404",
-     "status": "unverifiable",
-     "fix": "not in bios; keep out"
-    },
-    {
-     "text": "Cost: free/open; state forest fee not checked",
-     "source": "QPWS (parks.qld.gov.au) BLOCKED 403",
-     "status": "unverifiable",
-     "fix": "unverifiable-default"
-    },
-    {
-     "text": "ticketUrl: none",
-     "source": "no ticketUrl: no single steward",
-     "status": "supported",
-     "fix": null
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Smallest of the Glass House Mountains at 123 m, with views of the other peaks from the summit.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "A narrow sealed road and a short walk lead to a summit building with interpretive displays.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Beerburrum East State Forest lookout on the smallest Glass House Mountain, east of the Bruce Highway.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "gladstone-7",
-   "wikipedia": {
-    "title": "none",
-    "right_place": true,
-    "note": "no article. Official name is now Auckland Hill Lookout; draft name Auckland Point is the older name"
+   {
+    "text": "Narrow sealed gated road, summit building with interpretive displays",
+    "source": "https://en.wikipedia.org/wiki/Wild_Horse_Mountain",
+    "status": "supported",
+    "fix": "Variant 2 'short walk' is only from a search summary"
    },
-   "claims": [
-    {
-     "text": "Five modern viewing platforms, stairway from East Shores Parklands to three access points, barbecue areas; run by Gladstone Ports Corporation; Stage 2 opened Aug 2025",
-     "source": "https://gpcl.com.au/environment/parklands/auckland-hill-lookout/",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Views of Gladstone Harbour",
-     "source": "https://gpcl.com.au/environment/parklands/auckland-hill-lookout/",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Views of islands, industry and marina",
-     "source": "cited Wikivoyage URL (Gladstone,_Queensland) returns 404; page not readable",
-     "status": "unverifiable",
-     "fix": "variants 1 and 3 name \"islands\", \"industry\", \"marina\": keep \"harbour\" only unless sourced"
-    },
-    {
-     "text": "Cost: free/open",
-     "source": "GPC page lists no fee; Wikivoyage cited but unreadable",
-     "status": "unverifiable",
-     "fix": "unverifiable-default"
-    },
-    {
-     "text": "ticketUrl https://gpcl.com.au/environment/parklands/auckland-hill-lookout/ (title \"Auckland Hill Lookout - Gladstone Ports Corporation\")",
-     "source": "page loaded fresh",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Name Auckland Point vs Auckland Hill Lookout",
-     "source": "",
-     "status": "unverifiable",
-     "fix": "owner decision on rename"
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Lookout above Gladstone with views of the harbour, islands and industry from five viewing platforms.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Hill lookout beside East Shores Parkland, with stairways and platforms overlooking Gladstone harbour.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Overview of Gladstone's harbour, islands, marina and port industry, reached by stairs from East Shores.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "kgari-8",
-   "wikipedia": {
-    "title": "none (K'gari article is the island)",
-    "right_place": true,
-    "note": "75 Mile Beach has no article; do not set wiki to K'gari or the photo would match the island spots"
+   {
+    "text": "Beerburrum East State Forest",
+    "source": "https://en.wikipedia.org/wiki/Wild_Horse_Mountain",
+    "status": "supported",
+    "fix": ""
    },
-   "claims": [
-    {
-     "text": "\"75-Mile Beach\" (120 km) runs along most of the east coast, officially a main road, a landing strip; vehicles give way to aircraft",
-     "source": "https://en.wikipedia.org/wiki/Fraser_Island",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Along the beach: Champagne Pools, Indian Head, Maheno wreck, Eli Creek outflow",
-     "source": "https://en.wikipedia.org/wiki/Fraser_Island",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "A vehicle access permit must be bought before driving on K'gari",
-     "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Permit fee AUD 57.80 (1 month or less)",
-     "source": "qld.gov.au page read fresh shows no fee; QPWS fee page BLOCKED; only a search summary",
-     "status": "unverifiable",
-     "fix": "price unverified: check the QPWS fee page in a browser before using; costBasis permit/needs permit is right per brief"
-    },
-    {
-     "text": "ticketUrl QPWS K'gari page",
-     "source": "BLOCKED",
-     "status": "unverifiable",
-     "fix": "check in browser"
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "K'gari's east-coast beach, officially a main road, where planes land and vehicles give way to aircraft.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "About 120 km of sand along K'gari's east coast, passing Eli Creek, the Maheno wreck and Champagne Pools.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "A beach highway along most of K'gari's east coast, past Eli Creek, the Maheno wreck and Indian Head.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "rainbow-beach-5",
-   "wikipedia": {
-    "title": "Wolf Rock (Queensland)",
-    "right_place": true,
-    "note": "four volcanic pinnacles 2 km NNE of Double Island Point; right place"
+   {
+    "text": "1.4 km return walk",
+    "source": "search summary",
+    "status": "unverifiable",
+    "fix": "council page 404 to fetcher; not in any bio. Hours estimate."
    },
-   "claims": [
-    {
-     "text": "Four volcanic pinnacles, popular scuba spot",
-     "source": "https://en.wikipedia.org/wiki/Wolf_Rock_(Queensland)",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Queensland's most important habitat for critically endangered grey nurse shark; no fishing since 19 Dec 2003, diving permitted",
-     "source": "https://en.wikipedia.org/wiki/Wolf_Rock_(Queensland)",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Depth 12-40 m, not for introductory dives",
-     "source": "https://wolfrockdive.com.au/ (not found on page) and search summary",
-     "status": "unverifiable",
-     "fix": "not in bios"
-    },
-    {
-     "text": "Cost AUD 195-280 two-dive trip (tour)",
-     "source": "third-party listings; wolfrockdive.com.au read fresh shows no price",
-     "status": "unverifiable",
-     "fix": "price unverified; operator-set, varies. Either leave unpriced for the owner or confirm on an operator page"
-    },
-    {
-     "text": "Category beach is wrong; pin is on Rainbow Beach/Double Island, not the rock (~2 km offshore)",
-     "source": "",
-     "status": "unsupported",
-     "fix": "recategorise (nature) and re-pin"
-    },
-    {
-     "text": "ticketUrl: none",
-     "source": "none: dive trips sold by several operators",
-     "status": "supported",
-     "fix": null
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Four volcanic pinnacles off Double Island Point, a dive site and key habitat for grey nurse sharks.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Scuba dive site of four volcanic pinnacles near Double Island Point, with fishing banned since 2003.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Dive trips from Rainbow Beach reach four pinnacles that are Queensland's key grey nurse shark habitat.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "whitsundays-2",
-   "wikipedia": {
-    "title": "none (redirects to Whitsunday Island)",
-    "right_place": true,
-    "note": "no lookout article"
+   {
+    "text": "free, open",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "unverifiable-default; QPWS state-forest page not read"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "gladstone-7": {
+  "claims": [
+   {
+    "text": "Five viewing platforms, stairways from East Shores, adjoining East Shores Parkland",
+    "source": "https://gpcl.com.au/environment/parklands/auckland-hill-lookout/",
+    "status": "supported",
+    "fix": "Re-read: page loaded 200, title 'Auckland Hill Lookout - Gladstone Ports Corporation'"
    },
-   "claims": [
-    {
-     "text": "Whitehaven Beach about 4.5 km of 98% pure silica sand; the view from the lookout across Hill Inlet is remarkable",
-     "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Whitehaven Beach image is the one most used in tourism brochures (variant 3 \"the brochure view across Hill Inlet\": source gives the brochure image to Whitehaven, not to the lookout)",
-     "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
-     "status": "unsupported",
-     "fix": "reword variant 3 without \"brochure view\", or use variant 1/2"
-    },
-    {
-     "text": "Short walk at Tongue Point/Tongue Bay in Whitsunday Islands National Park",
-     "source": "QPWS page BLOCKED, search summary",
-     "status": "unverifiable",
-     "fix": "track length 340 m to 1.4 km disagrees: bios say \"short\" only; ok"
-    },
-    {
-     "text": "Cost: free/open (boat/tour is transport); QPWS fee unverified",
-     "source": "QPWS (parks.qld.gov.au) BLOCKED 403",
-     "status": "unverifiable",
-     "fix": "unverifiable-default"
-    },
-    {
-     "text": "ticketUrl QPWS Hill Inlet track page",
-     "source": "BLOCKED",
-     "status": "unverifiable",
-     "fix": "check in browser"
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Short walk at Tongue Point on Whitsunday Island overlooking Hill Inlet and Whitehaven Beach.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Short walk from Tongue Bay to a lookout over Hill Inlet and Whitehaven Beach's silica sand.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "The brochure view across Hill Inlet to Whitehaven Beach, from a short track on Whitsunday Island.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "whitsundays-12",
-   "wikipedia": {
-    "title": "none",
-    "right_place": true,
-    "note": "Wikipedia \"Passage Peak\" is Alaska; do not use"
+   {
+    "text": "Views of harbour, islands, industry",
+    "source": "https://en.wikivoyage.org/wiki/Gladstone,_Queensland",
+    "status": "supported",
+    "fix": ""
    },
-   "claims": [
-    {
-     "text": "Highest point on Hamilton Island; spectacular but challenging walk; start from Scenic Trail Entrance via Saddle Junction",
-     "source": "https://www.hamiltonisland.com.au/community-and-development/community-facilities/walking-trails",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Hour of hard walking, or 3 hours return strolling; highest point",
-     "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "\"steep, stepped\" (variant 1) and 2.7 km / 1 h 15 min",
-     "source": "trail page read fresh gives 1.8 km/45 min to Saddle Junction only; Passage Peak line has no steps or distance",
-     "status": "unverifiable",
-     "fix": "drop \"stepped\" or source it"
-    },
-    {
-     "text": "ticketUrl Hamilton Island walking trails page (title \"Natural Reserve and Walking Trails | Hamilton Island\", names Passage Peak)",
-     "source": "page loaded fresh",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Cost: free/open (island reached by ferry/flight)",
-     "source": "no fee on the page",
-     "status": "unverifiable",
-     "fix": "unverifiable-default"
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Highest point on Hamilton Island, a steep, stepped walk to views across the Whitsundays.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Challenging walk to Hamilton Island's highest point for views over the Whitsundays.",
-     "bio_fit": "2 lines — fits"
-    },
-    {
-     "text": "Hamilton Island's highest point, climbed from the Scenic Trail entrance via Saddle Junction.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "whitsundays-13",
-   "wikipedia": {
-    "title": "none",
-    "right_place": true,
-    "note": "no article"
+   {
+    "text": "Name Auckland Point Lookout",
+    "source": "https://gpcl.com.au/environment/parklands/auckland-hill-lookout/",
+    "status": "unsupported",
+    "fix": "Official name is Auckland Hill Lookout; use it in the spot name (owner call) or keep Auckland Point with wiki note"
    },
-   "claims": [
-    {
-     "text": "Snorkelling/diving bay on NW side of Hayman Island; depths 3-18 m, visibility 3-15 m; step off the beach onto the reef",
-     "source": "queensland.com listing BLOCKED; search summary",
-     "status": "unverifiable",
-     "fix": "check in browser; variant 1 \"3 to 18 m\" and variant 3 \"3 to 15 m\" refer to depth vs visibility respectively"
-    },
-    {
-     "text": "Hayman Island is privately owned: people without arrangements may not dock; reached by charter and resort boats",
-     "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Cost: free/open assumed; boat is transport",
-     "source": "no source",
-     "status": "unverifiable",
-     "fix": "unverifiable-default"
-    },
-    {
-     "text": "ticketUrl: none",
-     "source": "none: reached by many operators",
-     "status": "supported",
-     "fix": null
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Hayman Island bay where you step off the beach to snorkel or dive the reef at 3 to 18 m.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Snorkelling and diving bay on Hayman Island's northwest side, reached by boat.",
-     "bio_fit": "2 lines — fits"
-    },
-    {
-     "text": "Reef-fringed bay on Hayman Island with visibility usually 3 to 15 m, visited by charter and resort boats.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "whitsundays-14",
-   "wikipedia": {
-    "title": "none",
-    "right_place": true,
-    "note": "covered in Airlie Beach, Queensland"
+   {
+    "text": "Cafe at the top",
+    "source": "https://en.wikivoyage.org/wiki/Gladstone,_Queensland",
+    "status": "unverifiable",
+    "fix": "Not in bios; keep out"
    },
-   "claims": [
-    {
-     "text": "4,300 sq m lagoon holding 4.5 million litres of fresh, self-chlorinated water on the Airlie Beach foreshore, open to everyone",
-     "source": "https://www.whitsundayrc.qld.gov.au/Community-and-Environment/Facilities-and-Recreation/Aquatic-Facilities",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Lifeguards patrol all year; grassy sunbathing spots, playgrounds, BBQ areas; no admission fee",
-     "source": "https://www.tourismwhitsundays.com.au/products/airlie-beach-lagoon",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Safe from stingers all year (swim without a stinger suit)",
-     "source": "council aquatic page",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "Cost: free, open (no admission fee)",
-     "source": "tourismwhitsundays product page \"Free Entry\"",
-     "status": "supported",
-     "fix": null
-    },
-    {
-     "text": "ticketUrl council Aquatic Facilities page (title \"Aquatic Facilities | Whitsunday Regional Council\", heading Airlie Beach Lagoon)",
-     "source": "page loaded fresh",
-     "status": "supported",
-     "fix": "general page; the tourismwhitsundays product page is a more specific alternative"
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Lifeguarded public lagoon on the Airlie Beach foreshore holding 4.5 million litres of fresh water.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Swim year-round without a stinger suit in Airlie Beach's lifeguarded lagoon, ringed by lawns and BBQs.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Town-centre lagoon of 4,300 sq m with grassy sunbathing areas, playgrounds and barbecues beside the foreshore.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  },
-  {
-   "id": "whitsundays-15",
-   "wikipedia": {
-    "title": "none",
-    "right_place": true,
-    "note": "no article"
+   {
+    "text": "free, open",
+    "source": "https://en.wikivoyage.org/wiki/Gladstone,_Queensland",
+    "status": "supported",
+    "fix": "Wikivoyage lists free; ticketUrl is the Ports Corporation page, which is the steward"
    },
-   "claims": [
-    {
-     "text": "Lookout in Conway National Park above Airlie Beach with views of Pioneer Bay and the Whitsunday Islands",
-     "source": "QPWS BLOCKED; search summary",
-     "status": "unverifiable",
-     "fix": "check in browser"
-    },
-    {
-     "text": "3.6 km return from turn-off (variant 2); about 3 hours from Kara Crescent (variant 3)",
-     "source": "search summaries only; aussiebushwalking URL guessed 404",
-     "status": "unverifiable",
-     "fix": "cut distances/time from bios until read in browser"
-    },
-    {
-     "text": "Cost: free/open; Conway NP fee unverified",
-     "source": "QPWS (parks.qld.gov.au) BLOCKED 403",
-     "status": "unverifiable",
-     "fix": "unverifiable-default"
-    },
-    {
-     "text": "ticketUrl QPWS Honeyeater Lookout page",
-     "source": "BLOCKED",
-     "status": "unverifiable",
-     "fix": "check in browser"
-    }
-   ],
-   "bio_variants": [
-    {
-     "text": "Steep walk in Conway National Park to a lookout over Pioneer Bay and the Whitsunday Islands.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Lookout above Airlie Beach in Conway National Park, about 3.6 km return from the turn-off.",
-     "bio_fit": "3 lines — fits"
-    },
-    {
-     "text": "Hill walk above Airlie Beach with views of Pioneer Bay and the islands, about three hours from Kara Crescent.",
-     "bio_fit": "3 lines — fits"
-    }
-   ]
-  }
- ]
+   {
+    "text": "Pin",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "Researcher says OSM feature was a waterway and Wikivoyage geo is 2.5 km off: pin must be re-resolved"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "kgari-8": {
+  "claims": [
+   {
+    "text": "~120 km along east coast, officially a main road, planes land, vehicles give way",
+    "source": "https://en.wikipedia.org/wiki/Fraser_Island",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Eli Creek, Maheno wreck, Champagne Pools, Indian Head along it",
+    "source": "https://en.wikipedia.org/wiki/Fraser_Island",
+    "status": "supported",
+    "fix": "Variant 2 omits Indian Head; fine. Champagne Pools lie at the north end of the beach route; acceptable."
+   },
+   {
+    "text": "Vehicle access permit needed before driving on K'gari",
+    "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+    "status": "supported",
+    "fix": "Re-read fresh: confirms permit needed (last reviewed 15 Jul 2026), no fee on page"
+   },
+   {
+    "text": "Permit AUD 57.80 (1 month or less)",
+    "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+    "status": "unverifiable",
+    "fix": "UNRESOLVED: fee not on any page I could read (fees sub-page 404). $57.80 is from a search summary. Per-vehicle, so if kept use costPer 'Per Vehicle', costBasis permit, needs permit. Alternative: free/open with the permit as a getting-there cost. Do not ship until confirmed in a browser."
+   },
+   {
+    "text": "ticketUrl none",
+    "source": "none",
+    "status": "supported",
+    "fix": "QPWS K'gari page blocked; add in browser"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "rainbow-beach-5": {
+  "claims": [
+   {
+    "text": "DUPLICATE of shard-19 rainbow-beach-5 (Wolf Rock)",
+    "source": "curation/expand-region-queensland/quill/shard-19/facts.json",
+    "status": "unsupported",
+    "fix": "Same id and place. KEEP the shard-19 entry; drop this shard-22 entry entirely (or at minimum its price)."
+   },
+   {
+    "text": "Four volcanic pinnacles ~2 km NNE of Double Island Point; fishing banned since 2003; key grey nurse shark habitat",
+    "source": "https://en.wikipedia.org/wiki/Wolf_Rock_(Queensland)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Price AUD 195-280 (tour)",
+    "source": "third-party listings",
+    "status": "unsupported",
+    "fix": "Wrong. Operator's charters page, re-read now, lists $300 (Advanced+ diver with Nitrox and weights) and $370 (all equipment); shard-19's AUD 300-370 is the supported figure. Remove this 195-280 range."
+   },
+   {
+    "text": "ticketUrl none",
+    "source": "https://wolfrockdive.com.au/",
+    "status": "supported",
+    "fix": "Many operators; fine"
+   },
+   {
+    "text": "Category beach / pin on shore",
+    "source": "none",
+    "status": "unsupported",
+    "fix": "Boat-only dive site; category 'beach' is wrong (nature) and pin is not on the rock"
+   }
+  ],
+  "bio_fit": "all 3 variants fit (moot if dropped)"
+ },
+ "whitsundays-2": {
+  "claims": [
+   {
+    "text": "Short walk at Tongue Point, Whitsunday Island, over Hill Inlet and Whitehaven Beach",
+    "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+    "status": "supported",
+    "fix": "QPWS track page blocked; location corroborated by Wikivoyage"
+   },
+   {
+    "text": "Brochure view across Hill Inlet",
+    "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Track length 340 m to 1.4 km",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "sources disagree; no length in bios"
+   },
+   {
+    "text": "free, open, no fee",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "unverifiable-default; QPWS blocked. Boat/tour cost is transport"
+   },
+   {
+    "text": "ticketUrl QPWS hill-inlet-lookout-track",
+    "source": "https://parks.qld.gov.au/parks/whitsunday-islands/journeys/hill-inlet-lookout-track",
+    "status": "unverifiable",
+    "fix": "BLOCKED 403; verify in browser or omit"
+   }
+  ],
+  "bio_fit": "all 3 variants fit; variant 2 'silica sand' supported by Wikivoyage"
+ },
+ "whitsundays-12": {
+  "claims": [
+   {
+    "text": "Highest point on Hamilton Island; spectacular but challenging walk; start from Scenic Trail Entrance via Saddle Junction",
+    "source": "https://www.hamiltonisland.com.au/community-and-development/community-facilities/walking-trails",
+    "status": "supported",
+    "fix": "Re-read fresh: Grade 3 (Challenging) with many steps, 2.7 km, 1 hour 15 minutes one way"
+   },
+   {
+    "text": "Visit hours 1.5-3 (Wikivoyage ~1 hr hard to 3 hr return)",
+    "source": "https://en.wikivoyage.org/wiki/Whitsunday_Islands",
+    "status": "supported",
+    "fix": "Official page says 1h15 one way, so 2.5 h return plus summit time: 1.5-3 is a bit low; suggest 2-3"
+   },
+   {
+    "text": "free, open",
+    "source": "https://www.hamiltonisland.com.au/community-and-development/community-facilities/walking-trails",
+    "status": "unverifiable",
+    "fix": "unverifiable-default; the page states no fee. Island transport not counted."
+   },
+   {
+    "text": "ticketUrl trails page",
+    "source": "https://www.hamiltonisland.com.au/community-and-development/community-facilities/walking-trails",
+    "status": "supported",
+    "fix": "Loaded, title names Hamilton Island trails and Passage Peak; resort-run page, acceptable as the steward"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "whitsundays-13": {
+  "claims": [
+   {
+    "text": "Blue Pearl Bay, NW side of Hayman Island; snorkel/dive, 3-18 m, visibility 3-15 m",
+    "source": "https://www.queensland.com/au/en/things-to-do/attractions/p-56b261ba2cbcbe7073adc009-blue-pearl-bay-hayman-island",
+    "status": "unverifiable",
+    "fix": "queensland.com BLOCKED to scripts; facts only from a listing summary. Bio variant 1 '3 to 18 m' and variant 3 '3 to 15 m' both come from the same snippet; use variant 2 (no numbers) unless verified in browser."
+   },
+   {
+    "text": "Reached by boat; resort and charter boats visit",
+    "source": "search summary",
+    "status": "unverifiable",
+    "fix": "unread"
+   },
+   {
+    "text": "free, open",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "unverifiable-default"
+   },
+   {
+    "text": "ticketUrl none",
+    "source": "none",
+    "status": "supported",
+    "fix": "Many operators; fine"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "whitsundays-14": {
+  "claims": [
+   {
+    "text": "Open to everyone; 4,300 sq m, 4.5 million litres fresh self-chlorinated water, Airlie Beach foreshore",
+    "source": "https://www.whitsundayrc.qld.gov.au/Community-and-Environment/Facilities-and-Recreation/Aquatic-Facilities",
+    "status": "supported",
+    "fix": "Re-read fresh: matches"
+   },
+   {
+    "text": "Lifeguarded; lawns, playgrounds, BBQs",
+    "source": "https://www.tourismwhitsundays.com.au/products/airlie-beach-lagoon",
+    "status": "supported",
+    "fix": "Page lists lifeguard patrol hours; tourism page not re-fetched"
+   },
+   {
+    "text": "Swim year-round without a stinger suit",
+    "source": "https://en.wikivoyage.org/wiki/Airlie_Beach",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free; costBasis open",
+    "source": "https://www.whitsundayrc.qld.gov.au/Community-and-Environment/Facilities-and-Recreation/Aquatic-Facilities",
+    "status": "supported",
+    "fix": "'open to everyone', no fee on page; lifeguarded but ungated so 'open' is right"
+   },
+   {
+    "text": "ticketUrl council aquatic page",
+    "source": "https://www.whitsundayrc.qld.gov.au/Community-and-Environment/Facilities-and-Recreation/Aquatic-Facilities",
+    "status": "supported",
+    "fix": "Title 'Aquatic Facilities | Whitsunday Regional Council', names the lagoon. A general page; acceptable but not a lagoon-specific link"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "whitsundays-15": {
+  "claims": [
+   {
+    "text": "Lookout in Conway National Park over Pioneer Bay and the Whitsunday Islands",
+    "source": "https://parks.qld.gov.au/parks/conway/journeys/honeyeater-lookout",
+    "status": "unverifiable",
+    "fix": "QPWS BLOCKED, search summary only"
+   },
+   {
+    "text": "~3.6 km return from the turn-off; ~3 hours from Kara Crescent",
+    "source": "search summary",
+    "status": "unverifiable",
+    "fix": "Distances unread; variants 2 and 3 quote them; prefer variant 1 (no numbers) or verify in browser"
+   },
+   {
+    "text": "free, open",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "unverifiable-default"
+   },
+   {
+    "text": "ticketUrl QPWS honeyeater-lookout",
+    "source": "https://parks.qld.gov.au/parks/conway/journeys/honeyeater-lookout",
+    "status": "unverifiable",
+    "fix": "BLOCKED; verify in browser or omit"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ }
 }

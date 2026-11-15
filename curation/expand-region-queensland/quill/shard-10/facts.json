@@ -1,0 +1,297 @@
+{
+ "rainbow-beach-1": {
+  "claims": [
+   {
+    "text": "1884 timber lighthouse on the headland; reached on foot",
+    "source": "https://en.wikipedia.org/wiki/Double_Island_Point",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Right-hand surf break on the northern side",
+    "source": "https://en.wikipedia.org/wiki/Double_Island_Point",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "12 km south of Rainbow Beach township / next headland north of Noosa",
+    "source": "https://en.wikipedia.org/wiki/Double_Island_Point",
+    "status": "supported",
+    "fix": "Fine; variant 2 'north of Noosa' is correct but weaker than variant 1"
+   },
+   {
+    "text": "free + needs permit (Cooloola vehicle access) ",
+    "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+    "status": "unverifiable",
+    "fix": "qld.gov.au confirms a permit is required to drive Cooloola but states no fee; fee table not read. Keep free:true; do not price or set needs until the fee is read in a browser. Per-vehicle driving permit is a getting-there cost, not the headland's price."
+   },
+   {
+    "text": "ticketUrl managing-agency page",
+    "source": "https://parks.qld.gov.au/parks/cooloola/journeys/double-island-point-lighthouse-walk",
+    "status": "unverifiable",
+    "fix": "BLOCKED 403; verify in browser before use, else omit"
+   },
+   {
+    "text": "visit hours 1-2 (estimate)",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "estimate flagged by researcher"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "whitsundays-10": {
+  "claims": [
+   {
+    "text": "About 16 km of walking tracks, 194 m highest point, mostly Molle Islands National Park",
+    "source": "https://en.wikipedia.org/wiki/South_Molle_Island",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Mount Jeffreys climb ~2.35 km one way from Bauer Bay",
+    "source": "https://en.wikipedia.org/wiki/South_Molle_Island",
+    "status": "supported",
+    "fix": "Time (1 hr) from QPWS snippet only"
+   },
+   {
+    "text": "Reached by boat; jetty closed (QPWS alert to 31 Dec 2026), resort closed since Cyclone Debbie",
+    "source": "https://en.wikipedia.org/wiki/South_Molle_Island",
+    "status": "unverifiable",
+    "fix": "Alert only seen as search snippet. Bios say 'by boat' which is safe. Owner should confirm the island is still a visitor draw."
+   },
+   {
+    "text": "free:true, costBasis open (no fee)",
+    "source": "none stated",
+    "status": "unverifiable",
+    "fix": "unverifiable-default: no fee read on park page (QPWS blocked); Queensland parks have no day-use fee; keep free/open"
+   },
+   {
+    "text": "ticketUrl molle-islands things-to-do",
+    "source": "https://parks.qld.gov.au/parks/molle-islands/things-to-do",
+    "status": "unverifiable",
+    "fix": "BLOCKED 403; verify in browser or omit"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "townsville-1": {
+  "claims": [
+   {
+    "text": "Closed for redevelopment, on track to reopen 2029",
+    "source": "https://www.greatbarrierreefaquarium.au/",
+    "status": "supported",
+    "fix": "Re-read: page loaded 200, title 'Great Barrier Reef Aquarium'. Not open to visitors: drop or hold the spot (fails COVERAGE test 2). No price, no bio."
+   },
+   {
+    "text": "ticketUrl",
+    "source": "https://www.greatbarrierreefaquarium.au/",
+    "status": "supported",
+    "fix": "Loads, but only use if the spot is kept after reopening"
+   }
+  ]
+ },
+ "townsville-2": {
+  "claims": [
+   {
+    "text": "286 m heritage-listed pink granite monolith",
+    "source": "https://en.wikipedia.org/wiki/Castle_Hill,_Townsville",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Road 2.6 km to summit; Goat Track 758 stairs; views to Magnetic Island",
+    "source": "https://en.wikipedia.org/wiki/Castle_Hill,_Townsville",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free, open",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "unverifiable-default for an open council reserve"
+   },
+   {
+    "text": "visit hours 0.5-1.5",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "estimate"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "townsville-3": {
+  "claims": [
+   {
+    "text": "Galleries on rainforests, reefs and HMS Pandora (sent to capture the Bounty mutineers)",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/Queensland_Museum_Tropics",
+    "status": "supported",
+    "fix": "Variant 2 phrase 'sent to capture' is a loose clause: 'the ship sent to capture the Bounty mutineers' is the supported wording"
+   },
+   {
+    "text": "General entry free",
+    "source": "https://museum.qld.gov.au/tropics/plan-your-visit/visit-as-a-group",
+    "status": "supported",
+    "fix": "Re-read the museum page (loaded, title 'Queensland Museum Tropics'); researcher read the free-entry line. Some exhibitions charge; free:true, costBasis entry is right."
+   },
+   {
+    "text": "ticketUrl https://www.museum.qld.gov.au/tropics",
+    "source": "https://www.museum.qld.gov.au/tropics",
+    "status": "supported",
+    "fix": "Loaded, title names the museum"
+   },
+   {
+    "text": "Spot name should change to Queensland Museum Tropics",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/Queensland_Museum_Tropics",
+    "status": "supported",
+    "fix": "Current name is Queensland Museum Tropics; owner call"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "townsville-5": {
+  "claims": [
+   {
+    "text": "Run by Townsville Maritime Museum Ltd, 42-68 Palmer Street, South Townsville",
+    "source": "https://www.tmml.org.au/about/museum-info/",
+    "status": "unverifiable",
+    "fix": "Re-fetch returned Vercel Security Checkpoint (429, BLOCKED): fact only from a search summary. Check in browser."
+   },
+   {
+    "text": "Adult $8 (concession $5, child $5, family $15)",
+    "source": "https://www.tmml.org.au/about/museum-info/",
+    "status": "unverifiable",
+    "fix": "UNRESOLVED: official page blocked by bot wall and not read; $8 comes from a search summary. costBasis entry would be right if confirmed. Do not ship $8 until read in a browser."
+   },
+   {
+    "text": "ticketUrl https://www.tmml.org.au/",
+    "source": "https://www.tmml.org.au/",
+    "status": "unverifiable",
+    "fix": "Blocked, title not verified; confirm in browser (not maritimemuseum.com.au)"
+   },
+   {
+    "text": "Bios: 'devoted to the city's maritime history'",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "No source read describes the collection; both bios are thin. Need a distinctive fact before shipping."
+   }
+  ],
+  "bio_fit": "both variants fit"
+ },
+ "townsville-6": {
+  "claims": [
+   {
+    "text": "Palm-only garden, ~300 species, almost 17 ha, opened Sept 1988; Licuala Walk and Tokuyama Garden",
+    "source": "https://en.wikipedia.org/wiki/The_Palmetum,_Townsville",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free council garden",
+    "source": "https://www.townsville.qld.gov.au/about-council/news-and-publications/media-releases/2021/october/rediscover-palmetum-after-recent-enhancements",
+    "status": "unverifiable",
+    "fix": "Free claim from a search snippet and an AAA listing, not the council page (blocked). unverifiable-default; ticketUrl council page BLOCKED, confirm in browser. 'open' vs 'entry' basis depends on whether gated."
+   },
+   {
+    "text": "Bio variant 2 'Japanese Tokuyama Garden'",
+    "source": "https://en.wikipedia.org/wiki/The_Palmetum,_Townsville",
+    "status": "supported",
+    "fix": "Tokuyama is a sister city; fine"
+   }
+  ],
+  "bio_fit": "all 3 variants fit"
+ },
+ "townsville-8": {
+  "claims": [
+   {
+    "text": "Centre of Jezzine Barracks, Kissing Point; collects North Queensland military history",
+    "source": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland",
+    "status": "supported",
+    "fix": "Re-read, loaded 200"
+   },
+   {
+    "text": "Admission free",
+    "source": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland",
+    "status": "supported",
+    "fix": "Re-read: 'Admission is free'. free:true, costBasis entry."
+   },
+   {
+    "text": "Open Wed, Fri, Sun 9 am to 1 pm only",
+    "source": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland",
+    "status": "supported",
+    "fix": "Official page now confirms the limited days the researcher left out. Add to bio or Townsville goodToKnow (e.g. 'open Wednesday, Friday and Sunday mornings'); do not store hours."
+   },
+   {
+    "text": "ticketUrl army.gov.au page",
+    "source": "https://army.gov.au/community/engage-and-learn/army-museums/army-museum-north-queensland",
+    "status": "supported",
+    "fix": "Title 'Army Museum of North Queensland | Australian Army'"
+   }
+  ],
+  "bio_fit": "both variants fit (check again if the days are added)"
+ },
+ "townsville-9": {
+  "claims": [
+   {
+    "text": "11-hectare sanctuary at Nome, 17 km south of Townsville",
+    "source": "https://en.wikipedia.org/wiki/Billabong_Sanctuary",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Adult entry $54",
+    "source": "https://www.billabongsanctuary.com.au/plan-your-visit/opening-hours-prices",
+    "status": "supported",
+    "fix": "Re-read fresh: 'Adults $54'; child $37. costBasis entry, 54 AUD."
+   },
+   {
+    "text": "Paid photos with koala, python, lizard, crocodile from $25",
+    "source": "https://www.billabongsanctuary.com.au/plan-your-visit/opening-hours-prices",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.billabongsanctuary.com.au/",
+    "source": "https://www.billabongsanctuary.com.au/plan-your-visit/opening-hours-prices",
+    "status": "supported",
+    "fix": "Loads 200, title names the sanctuary"
+   }
+  ],
+  "bio_fit": "both variants fit"
+ },
+ "ingham-1": {
+  "claims": [
+   {
+    "text": "268 m drop, Australia's tallest single-drop, Stony Creek, Wet Tropics, plunge pool 20 m",
+    "source": "https://en.wikipedia.org/wiki/Wallaman_Falls",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Girringun National Park, lookout and picnic tables",
+    "source": "https://parks.des.qld.gov.au/parks/girringun-wallaman/camping.html",
+    "status": "unverifiable",
+    "fix": "Search snippet only; QPWS BLOCKED"
+   },
+   {
+    "text": "free:true, open (no day-use fee)",
+    "source": "none",
+    "status": "unverifiable",
+    "fix": "unverifiable-default: not read on park page"
+   },
+   {
+    "text": "Djinda walk closure 9-20 Nov 2026",
+    "source": "https://parks.qld.gov.au/park-alerts",
+    "status": "unverifiable",
+    "fix": "Park alert unverified; closure window is current (today 15 Nov 2026) but a walk closure does not affect the falls lookout bios. Keep out of copy."
+   },
+   {
+    "text": "ticketUrl girringun-wallaman things-to-do",
+    "source": "https://parks.qld.gov.au/parks/girringun-wallaman/things-to-do",
+    "status": "unverifiable",
+    "fix": "BLOCKED 403; verify in browser or omit"
+   }
+  ],
+  "bio_fit": "all 3 variants fit; variant 3 'Wet Tropics World Heritage area' supported"
+ }
+}

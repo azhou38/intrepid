@@ -1,0 +1,95 @@
+{
+ "placements": [
+  {
+   "id": "noosa-1",
+   "name": "Noosa National Park",
+   "action": "spot",
+   "destination": "noosa",
+   "coordinates": {
+    "latitude": -26.384025,
+    "longitude": 153.105869
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Noosa National Park",
+    "category": "nature",
+    "icon": "🌳",
+    "bio": "Headland national park with coastal walks, eucalypt forest and wallum heath, and koalas often seen.",
+    "visitHoursMin": 2,
+    "visitHoursMax": 4,
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://parks.qld.gov.au/parks/noosa"
+   }
+  },
+  {
+   "id": "noosa-6",
+   "name": "Lake MacDonald",
+   "action": "spot",
+   "destination": "noosa",
+   "coordinates": {
+    "latitude": -26.396517,
+    "longitude": 152.943954
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Lake MacDonald",
+    "category": "nature",
+    "icon": "💧",
+    "bio": "Lake about 4 km north-east of Cooroy with a park, on-water recreation and the Noosa Botanic Gardens.",
+    "visitHoursMin": 0.5,
+    "visitHoursMax": 1.5,
+    "wiki": "Six Mile Creek Dam",
+    "free": true,
+    "costBasis": "open",
+    "ticketUrl": "https://www.seqwater.com.au/dams/lake-macdonald-six-mile-creek"
+   }
+  },
+  {
+   "id": "noosa-3",
+   "name": "Noosa Main Beach",
+   "action": "spot",
+   "destination": "noosa",
+   "coordinates": {
+    "latitude": -26.383727,
+    "longitude": 153.084693
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Noosa Main Beach",
+    "category": "beach",
+    "icon": "🏖️",
+    "bio": "Beach on Laguna Bay fronting Hastings Street, with Noosa National Park at the eastern end of the strip.",
+    "visitHoursMin": 1,
+    "visitHoursMax": 3,
+    "free": true,
+    "costBasis": "open"
+   }
+  },
+  {
+   "id": "noosa-7",
+   "name": "Mount Cooroora",
+   "action": "spot",
+   "destination": "noosa",
+   "coordinates": {
+    "latitude": -26.37119,
+    "longitude": 152.837956
+   },
+   "photo": null,
+   "photoless": true,
+   "spot": {
+    "name": "Mount Cooroora",
+    "category": "viewpoint",
+    "icon": "🔭",
+    "bio": "A 439 m volcanic plug west of Pomona, the highest point of Tuchekoi National Park.",
+    "visitHoursMin": 0,
+    "visitHoursMax": 0.5,
+    "free": true,
+    "costBasis": "open"
+   }
+  }
+ ]
+}
