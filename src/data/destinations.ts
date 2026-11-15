@@ -2175,6 +2175,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Cooler, drier weather from {months} is best for climbing and bushwalking. Summer brings heat and storms.",
   },
   {
+    id: 'glass-house-mountains', name: "Glass House Mountains", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 20,
+    continent: 'Oceania', coordinates: { latitude: -26.9043, longitude: 152.93022 },
+    category: 'mountain', icon: "⛰️", rank: 4,
+    tagline: "Volcanic peaks rising from a flat coastal plain, with walks and lookouts",
+    description: "Captain Cook named these peaks in 1770, thinking they looked like glass houses as he sailed past. They are the cores of extinct volcanoes, formed 25 to 27 million years ago, rising from a flat plain north of Brisbane. Most of the range is protected as Glass House Mountains National Park, with montane heath, forest and small rainforest patches rich in threatened and endemic species. Mount Beerwah, the highest at 555 m, has been closed to climbers since 2008 because of rockfall risk.",
+    whyVisit: ["Climb a volcanic peak for the view", "Photograph the peaks from lookouts", "Spot Tibrogargan's giant ape profile"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Summit views", "Lookout photography", "Mountain shapes"],
+    goodToKnow: [
+      { icon: "🚫", title: "Beerwah is closed", detail: "The Mount Beerwah summit route has been closed since 2008 because of rockfall, so pick another peak to climb." },
+      { icon: "⛺", title: "No camping in the park", detail: "There is no camping inside the national park. The nearest options are Beerwah State Forest or motels in Beerwah and the township." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the cooler, drier half of the year, better for the summit climbs. Summer is hot and stormy.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
