@@ -2271,6 +2271,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the dry season, better for the caves, lookouts and gardens. Flooding is common in the wet.",
   },
   {
+    id: 'bundaberg', name: "Bundaberg", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 30,
+    continent: 'Oceania', coordinates: { latitude: -24.85171, longitude: 152.33628 },
+    category: 'city', icon: "🐢", rank: 4,
+    tagline: "Rum, ginger beer and sugar country, with turtle beaches and reef trips",
+    description: "Bundaberg is a sugar city on the Burnett River, about 4.5 hours north of Brisbane, and the home of Bundaberg Rum and Bundaberg Ginger Beer. Its Botanic Gardens hold the Hinkler Hall of Aviation, honouring local aviator Bert Hinkler. The Hummock gives views over the city and out to sea, while Mon Repos and Bargara sit on the beaches about 10 km away. It is also known as the southern gateway to the Great Barrier Reef, with reef trips to Lady Musgrave and Lady Elliot islands.",
+    whyVisit: ["Tour the rum distillery and ginger beer brewery", "Watch turtles nest at Mon Repos", "Head out to the southern Great Barrier Reef"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Rum and ginger beer", "Turtle nesting", "Southern reef"],
+    goodToKnow: [
+      { icon: "🐢", title: "Turtles need a ranger", detail: "Mon Repos turtles lay from around December and hatchlings emerge to about February, always at night. You can only watch with a ranger." },
+      { icon: "🏖️", title: "Stay by the beach", detail: "The ocean beaches at Bargara and Mon Repos are about 10 km from the town centre, and Bargara has many of the beachside stays." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is mild and dry. Turtle nesting and hatching runs roughly Dec–Feb.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,

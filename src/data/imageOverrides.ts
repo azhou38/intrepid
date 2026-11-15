@@ -3649,4 +3649,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Magnetic Island",
   "Mission Beach",
   "Rockhampton",
+  "Bundaberg",
 ]);
