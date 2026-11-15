@@ -1064,6 +1064,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Walk and ride in {months}, when the alpine air is cool. Winter snow means skis.",
   },
   {
+    id: 'brisbane', name: "Brisbane", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -27.46878, longitude: 153.02375 },
+    category: 'city', icon: "🌆", rank: 2,
+    tagline: "A leafy river city of parks, museums and koalas, with ferries along the water",
+    description: "Brisbane is Queensland's capital, a leafy river city built around the loops of the Brisbane River. South Bank Parklands, the City Botanic Gardens and the cultural precinct sit near the centre. Its museums and galleries cover art and history, Lone Pine Koala Sanctuary has more than 130 koalas, and Mount Coot-tha looks out over the city.",
+    whyVisit: ["Cuddle koalas at Lone Pine", "Stroll the South Bank riverside", "Explore art and history museums", "Ride a CityCat along the river"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Koala encounters", "Riverside parklands", "Museums and galleries", "River ferries"],
+    goodToKnow: [
+      { icon: "🚆", title: "Get a go card", detail: "The go card covers trains, buses, ferries and trams across Brisbane. It needs a $10 deposit and is sold at stations and selected shops." },
+      { icon: "☀️", title: "Sun and storms", detail: "Summer is hot and humid with afternoon storms, so bring sun protection and plan outdoor sights for the morning." },
+      { icon: "⛴️", title: "Use the river", detail: "CityCat and ferry services run along the river and are a good way to see the city from the water." },
+    ],
+    bestMonths: [3, 4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is drier and less humid, which suits walking the river and parks. Summer is hot and stormy.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
