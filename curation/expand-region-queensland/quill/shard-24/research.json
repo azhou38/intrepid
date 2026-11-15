@@ -1,0 +1,204 @@
+[
+ {
+  "id": "daintree-4",
+  "name": "Noah Beach",
+  "correct_wikipedia": "none (Wikipedia has only the Noah locality section within Daintree National Park)",
+  "facts": [
+   {
+    "f": "Noah Beach camping area is the only national park campground in the Cape Tribulation section of Daintree National Park, on Cape Tribulation Rd, 5.8 km south of Cape Tribulation village (search snippet of QPWS page)",
+    "src": "https://parks.qld.gov.au/parks/daintree-cape-tribulation/camping/noah-beach (BLOCKED to scripts)"
+   },
+   {
+    "f": "Wikivoyage lists Noah Beach camping area as a campground beside the road at the edge of two World Heritage sites; booking via Queensland Parks",
+    "src": "https://en.wikivoyage.org/wiki/Daintree_National_Park"
+   },
+   {
+    "f": "Noah Creek is a 1 km walk south along the beach; crocodiles may be present (QPWS snippet, unverified by fetch)",
+    "src": "https://parks.qld.gov.au/parks/daintree-cape-tribulation/camping/noah-beach"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs": null,
+   "note": "Day visit: no entry fee found; camping fee is for the campground only, not the beach. Verify on QPWS."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/daintree-cape-tribulation/camping/noah-beach (403; check in browser; the park page may be a better ticketUrl, e.g. https://parks.qld.gov.au/parks/daintree)",
+  "unverified": [
+   "walk/swim details, crocodile warning wording, park pass absence, official QPWS page text"
+  ]
+ },
+ {
+  "id": "cooktown-2",
+  "name": "Grassy Hill",
+  "correct_wikipedia": "none found (Wikipedia 'Grassy Hill' is Hong Kong; the Cooktown lookout is covered under Cooktown, Queensland / Cooktown Lighthouse)",
+  "facts": [
+   {
+    "f": "Grassy Hill is close to Cooktown town and gives a view little changed from what Captain Cook could have seen; sunsets are noted",
+    "src": "https://en.wikivoyage.org/wiki/Cooktown"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs": null,
+   "note": "Wikivoyage lists no fee; open lookout (default, not source-confirmed)"
+  },
+  "ticketUrl": "none (open lookout, council/no single steward)",
+  "unverified": [
+   "lighthouse on summit, lookout height, road access, exact view claims (only Wikivoyage snippet fetched)"
+  ]
+ },
+ {
+  "id": "cooktown-5",
+  "name": "Elim Beach",
+  "correct_wikipedia": "none (no 'Elim Beach' or 'Elim, Queensland' article; Elim is covered in 'Hope Vale, Queensland')",
+  "facts": [
+   {
+    "f": "Elim Beach is home to the Coloured Sands, whose dune formations are a 300 m walk along the beach; campground at the water's edge with views to Cape Bedford",
+    "src": "https://hopevale.qld.gov.au/visitor-information"
+   },
+   {
+    "f": "Drive from Hope Vale to Elim takes about an hour on a sealed road through white silica sand hills; 4WD only on the beach, at low tide, with extreme caution",
+    "src": "https://hopevale.qld.gov.au/visitor-information"
+   },
+   {
+    "f": "Elim Aboriginal Mission was established in 1895 on the beach on Cape Bedford's north shore, later moved inland to Hope Vale",
+    "src": "https://en.wikipedia.org/wiki/Hope_Vale,_Queensland"
+   },
+   {
+    "f": "Coloured Sands permit about $10 from the Hope Vale service station (map included); permit price from a 3rd-party page, council page says 'Coloured Sands permit and camping' without price",
+    "src": "https://www.exploroz.com/places/86985/qld+elim-beach-coloured-sands ; https://www.hopevale.qld.gov.au/places-visit"
+   }
+  ],
+  "cost": {
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "costPer": "Per Vehicle? unverified (exploroz says $10 permit)",
+   "needs": "permit",
+   "note": "Aboriginal land permit; per person vs vehicle not stated: confirm with Hope Vale council. Camping fee separate."
+  },
+  "ticketUrl": "https://www.hopevale.qld.gov.au/places-visit (Hope Vale Aboriginal Shire Council; title confirmed, mentions Elim Beach permit)",
+  "unverified": [
+   "permit price and unit (council page lists no price)",
+   "campground closure each November (search snippet only)"
+  ]
+ },
+ {
+  "id": "winton-2",
+  "name": "Australian Age of Dinosaurs",
+  "correct_wikipedia": "Australian Age of Dinosaurs (correct as is)",
+  "category_note": "placement category 'beach' is wrong: use museum",
+  "facts": [
+   {
+    "f": "Nonprofit museum in Winton founded 2002 by David and Judy Elliott; holds the largest collection of Australian dinosaur fossils, including holotypes of Diamantinasaurus matildae, Savannasaurus elliottorum and Australovenator wintonensis; runs a fossil preparation laboratory",
+    "src": "https://en.wikipedia.org/wiki/Australian_Age_of_Dinosaurs"
+   },
+   {
+    "f": "Site designated Australia's first International Dark-Sky Sanctuary in 2019",
+    "src": "https://en.wikipedia.org/wiki/Australian_Age_of_Dinosaurs"
+   },
+   {
+    "f": "Outback Queensland lists indicative rates $78 to $260",
+    "src": "https://www.outbackqueensland.com.au/attractions/australian-age-of-dinosaurs-2/"
+   }
+  ],
+  "cost": {
+   "costMin": 78,
+   "costMax": 78,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "note": "$78 is the low indicative rate on the tourism board page and matches the Ultimate Dinosaur Tour adult price in a 3rd-party guide; official price page not fetched (aaod's plan-a-visit URL 404, home page script-rendered)"
+  },
+  "ticketUrl": "https://australianageofdinosaurs.com/ (title 'The Australian Age of Dinosaurs Museum of Natural History' confirmed)",
+  "unverified": [
+   "official adult price",
+   "opening days (not recorded)"
+  ]
+ },
+ {
+  "id": "mount-morgan",
+  "name": "Mount Morgan",
+  "correct_wikipedia": "Mount Morgan, Queensland (town) or Mount Morgan Mine (the visitor attraction; article has coordinates -23.64111, 150.37528)",
+  "pin_flag": "placement pin -23.633333,150.383333 is a rounded town-centre point, not a viewpoint or the mine; category 'viewpoint' is wrong. Re-pin on the mine/Arthur Timms Lookout (or make it a town spot) via resolve-pin.py.",
+  "facts": [
+   {
+    "f": "Mount Morgan is a rural town in the Rockhampton Region, former administrative centre of Mount Morgan Shire until 2008",
+    "src": "https://en.wikipedia.org/wiki/Mount_Morgan,_Queensland"
+   },
+   {
+    "f": "The former mine (1882-1981; copper, gold, silver) is now a tourist attraction with remaining structures including the General Office, Gold Rooms and Main Stack; the Arthur Timms lookout overlooks the mine buildings and township",
+    "src": "https://en.wikipedia.org/wiki/Mount_Morgan_Mine"
+   },
+   {
+    "f": "Wikivoyage suggests a railway tour at the former gold-mining town",
+    "src": "https://en.wikivoyage.org/wiki/Mount_Morgan"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "Only if kept as town/lookout; mine tours' price not found. If the spot becomes the mine tour, cost is unverified."
+  },
+  "ticketUrl": "unverified (no official site found; https://www.mountmorgan.com.au/ loaded but script-rendered, title not readable)",
+  "unverified": [
+   "mine tour operator and price",
+   "railway museum details"
+  ]
+ },
+ {
+  "id": "big-peanut",
+  "name": "Big Peanut",
+  "correct_wikipedia": "none (no article; a different, small 'Big Peanut' is at Tolga)",
+  "facts": [
+   {
+    "f": "Kingaroy's Big Peanut is a sculpture in Lions Park, unveiled in 2021",
+    "src": "https://southburnett.com.au/news2/2025/02/25/big-peanut-to-gain-game-fame/"
+   },
+   {
+    "f": "Made by artist Kano from cogs and gears of retired farm equipment; craned into place November 2021 (search snippets, not fetched)",
+    "src": "https://southburnett.com.au/news2/2021/11/04/big-day-for-peanut-lovers"
+   },
+   {
+    "f": "Kingaroy is billed the Peanut Capital of Australia; peanut silos dominate Haly Street",
+    "src": "https://en.wikivoyage.org/wiki/Kingaroy"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "Roadside public park sculpture; default"
+  },
+  "ticketUrl": "none (council park sculpture)",
+  "unverified": [
+   "artist and materials (snippet only)",
+   "overlap with a Kingaroy destination or silos spot"
+  ]
+ },
+ {
+  "id": "black-stump",
+  "name": "Black Stump",
+  "correct_wikipedia": "Blackall, Queensland (Black Stump is a general idiom article; the Blackall monument has no own article)",
+  "facts": [
+   {
+    "f": "Blackall claims the origin of 'beyond the black stump'; the stump marked the original Astro Station of 1887, was moved to Thistle Street for tourists, and the current one is a reconstruction after the original burned",
+    "src": "https://en.wikipedia.org/wiki/Blackall,_Queensland ; https://en.wikipedia.org/wiki/Black_Stump"
+   },
+   {
+    "f": "Monument in Thistle Street has an explanation of the town's claim",
+    "src": "https://en.wikivoyage.org/wiki/Blackall"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "Open roadside monument (Wikivoyage lists no fee)"
+  },
+  "ticketUrl": "none (open monument)",
+  "unverified": [
+   "Coolah/Merriwagga also claim a black stump; Blackall tourism page not fetched"
+  ]
+ }
+]

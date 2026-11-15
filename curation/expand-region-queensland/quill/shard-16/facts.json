@@ -1,0 +1,238 @@
+{
+ "josephine-falls": [
+  {
+   "text": "Tiered cascade on Josephine Creek, Wooroonooran National Park, short walk from day-use car park with toilets and picnic tables",
+   "source": "https://en.wikipedia.org/wiki/Josephine_Falls; research QPWS snippet",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Creek can flash-flood",
+   "source": "QPWS search snippet only (page BLOCKED, 403 captcha)",
+   "status": "unverifiable",
+   "fix": "BLOCKED: confirm in in-app browser"
+  },
+  {
+   "text": "Price: free, costBasis open, no park pass",
+   "source": "QPWS page BLOCKED; no QLD day-use entry fee known; no pass in parkPasses applies",
+   "status": "unverifiable",
+   "fix": "Keep free/open pending browser check; note possible closure of viewing platforms and swimming area 2 Nov 2026 to 28 Feb 2027 (snippet only), which affects a visit now"
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/wooroonooran-josephine-falls",
+   "source": "fetch: 403 'Just a moment...'",
+   "status": "unverifiable",
+   "fix": "BLOCKED: check title in real browser; do not drop on this basis"
+  },
+  {
+   "text": "visit 0.5-1.5 h (estimate; walk 1.2-1.6 km return)",
+   "source": "estimate-marked",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "number-7-dam": [
+  {
+   "text": "Dee River dam near Mount Morgan, drinking water, playgrounds, picnic areas, barbecues, fishing for yellowbelly and saratoga, camping not allowed",
+   "source": "https://en.wikipedia.org/wiki/Number_7_Dam; rockhamptonregion.qld.gov.au page (playground, picnic tables, fishing loaded 2026-11-15); camping ban from snippet",
+   "status": "supported",
+   "fix": "Bio 3 'Big Dam' name confirmed by council page"
+  },
+  {
+   "text": "Price: free, open",
+   "source": "council page lists a public park, no entry fee text; no explicit free statement",
+   "status": "supported",
+   "fix": "Acceptable"
+  },
+  {
+   "text": "ticketUrl council No. 7 Dam page",
+   "source": "fetched OK, title 'No. 7 Dam Rockhampton Regional Council'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "the-big-rig": [
+  {
+   "text": "Oil Patch Museum with vintage rigs/machinery, tower and tree walk with views over Roma, evening Night Show",
+   "source": "https://www.bigrigroma.com.au/ (fetched fresh) and bigrigroma.rezdy.com; outbackqueensland page via research",
+   "status": "supported",
+   "fix": "Site confirms 40 m tower, interactive exhibits and machinery; 'tower walk' in bio 2 means the tower/treewalk: fine"
+  },
+  {
+   "text": "Price AUD 20 entry (Self Guided Tour, 50 min)",
+   "source": "https://bigrigroma.rezdy.com fetched fresh: Self Guided Tour 'From AUD $20.00'; Night Show $20; Day and Night $35",
+   "status": "supported",
+   "fix": "Page does not label adult; 'From' price is the base ticket. Keep entry 20 as approximate; basis 'tour' also defensible (self-guided), 'entry' ok"
+  },
+  {
+   "text": "ticketUrl https://www.bigrigroma.com.au/",
+   "source": "fetched fresh, title 'The Big Rig - Experience a Slice of Roma's History', Maranoa tourism contact; real site",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "boondooma-dam": [
+  {
+   "text": "Lake Boondooma, built 1980-83 (Wikipedia); lookout, picnic areas, boat ramp, toilets, BBQs, camping facility (private)",
+   "source": "Sunwater page fetched fresh (facilities list: boat ramp, lookout, picnic, toilets, BBQs, camping); Wikipedia",
+   "status": "supported",
+   "fix": "Swimming/sailing/kayaking from Wikipedia, not Sunwater page"
+  },
+  {
+   "text": "Price: free, open",
+   "source": "no fee found on Sunwater page (Fees and charges link only); SIP and private camping are extras",
+   "status": "supported",
+   "fix": "Acceptable"
+  },
+  {
+   "text": "ticketUrl Sunwater dam page",
+   "source": "fetched OK, title 'Boondooma Dam - Sunwater'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "bjelke-petersen-dam": [
+  {
+   "text": "Lake Barambah, Barker Creek, opened 1988 (Wikipedia); lookout, picnic areas, boat ramp, toilets, BBQs, camping facility (private)",
+   "source": "Sunwater page fetched fresh (facilities list: boat ramp, lookout, picnic, toilets, BBQs, camping); Wikipedia",
+   "status": "supported",
+   "fix": "Swimming/sailing/kayaking from Wikipedia, not Sunwater page"
+  },
+  {
+   "text": "Price: free, open",
+   "source": "no fee found on Sunwater page (Fees and charges link only); SIP and private camping are extras",
+   "status": "supported",
+   "fix": "Acceptable"
+  },
+  {
+   "text": "ticketUrl Sunwater dam page",
+   "source": "fetched OK, title 'Bjelke-Petersen Dam - Sunwater'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "brisbane-valley-rail-trail": [
+  {
+   "text": "161 km, Wulkuraka to Yarraman, former railway line, walkers cyclists horse riders, gravel",
+   "source": "https://www.brisbanevalleyrailtrail.com.au/ fetched fresh; Wikipedia",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Queensland's longest rail trail",
+   "source": "Wikipedia per research; site text not checked for 'longest'",
+   "status": "supported",
+   "fix": "Research says longest in Queensland and Australia; acceptable"
+  },
+  {
+   "text": "Somerset Region",
+   "source": "Wikipedia per research; Somerset is one of three councils (Ipswich, Somerset, Toowoomba)",
+   "status": "supported",
+   "fix": "Bio 3 'through the Somerset Region' is partial: trail also crosses Ipswich and Toowoomba regions. Prefer bio 1 or 2"
+  },
+  {
+   "text": "Price: free, open",
+   "source": "no fee on association site",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl brisbanevalleyrailtrail.com.au",
+   "source": "fetched OK, title names the trail; users association not agency",
+   "status": "supported",
+   "fix": "Acceptable as official trail site"
+  }
+ ],
+ "miles-historical-village": [
+  {
+   "text": "About 30 buildings, 1920s-style streetscape, steam train, Hippong Homestead, war museum, Artesian Basin display",
+   "source": "https://www.mhv.org.au/ fetched fresh (menu, 'over 30 buildings'); Wikipedia",
+   "status": "supported",
+   "fix": "Site says 'over 30'; 'about 30' fine; '1920s-style' from Wikipedia/research"
+  },
+  {
+   "text": "Price AUD 24 entry adult",
+   "source": "https://www.mhv.org.au/book-now fetched fresh: Adults $24.00 (entry), $34.00 (with tour); seniors $21, students $12",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://www.mhv.org.au/",
+   "source": "fetched fresh, operator site",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "queensland-transport-museum": [
+  {
+   "text": "Gatton museum, original military vehicles back to WWI, kids activity corner, in Lockyer Valley Cultural Centre",
+   "source": "https://www.luvyalockyer.com.au/queensland-transport-museum fetched fresh (tourism listing)",
+   "status": "supported",
+   "fix": "Bio 3 'field gear' from research, not rechecked; bio 1 safest. Name 'Transport Museum' while content is military vehicles: fine"
+  },
+  {
+   "text": "Price AUD 10 entry adult",
+   "source": "https://www.luvyalockyer.com.au/queensland-transport-museum: Adult $10.00 (concession $8, family $30)",
+   "status": "supported",
+   "fix": "Regional tourism listing, not operator site: approximate"
+  },
+  {
+   "text": "ticketUrl none",
+   "source": "no operator site found; tourism-board page not used",
+   "status": "unverifiable",
+   "fix": "Leave ticketUrl out"
+  },
+  {
+   "text": "wiki field resolves to Gatton article",
+   "source": "research",
+   "status": "unsupported",
+   "fix": "Drop wiki or override; no own Wikipedia article"
+  }
+ ],
+ "green-hill-fort": [
+  {
+   "text": "Built 1891-93 against feared Russian threat, three six-inch guns, WWII signals station, underground bunker museum",
+   "source": "https://en.wikipedia.org/wiki/Green_Hill_Fort; ozatwar; anzacsquare (via research)",
+   "status": "supported",
+   "fix": "Not re-fetched fully; Wikivoyage confirms bunker museum and late-1800s build"
+  },
+  {
+   "text": "Price: free, open (fort ruins free; bunker $4 is an extra)",
+   "source": "https://en.wikivoyage.org/wiki/Thursday_Island fetched fresh: 'Visiting the fort ruins above ground is free', bunker $4 for tour groups or pre-organised",
+   "status": "unverifiable",
+   "fix": "Free supported only by Wikivoyage (2018-era), no agency; keep free/open, flag as approximate"
+  },
+  {
+   "text": "ticketUrl none",
+   "source": "no official site found",
+   "status": "unverifiable",
+   "fix": "Leave out"
+  }
+ ],
+ "split-rock": [
+  {
+   "text": "Quinkan rock art ~12-15 km south of Laura, 30-minute self-guided walk past three sites, only site open without a guide, paintings thought up to 14,000 years",
+   "source": "https://www.anggnarra.org.au/copy-of-rock-art-tours-tickets fetched fresh (12 km, 30-min walk, three sites named, 14,000 years); ExploreOz says 14 km, 15-min climb, 1.1 km return",
+   "status": "supported",
+   "fix": "Bios give no distance, fine; 'three painted sites' ok"
+  },
+  {
+   "text": "Price AUD 40 entry (self-guided)",
+   "source": "ExploreOz 'now $40 per person' (third party); operator page has no price; other listings $30-33",
+   "status": "unverifiable",
+   "fix": "Price unconfirmed on operator page; keep approximate AUD 40 only if owner accepts, else leave unverified"
+  },
+  {
+   "text": "ticketUrl https://www.anggnarra.org.au/copy-of-rock-art-tours-tickets",
+   "source": "fetched fresh, operator page 'Split Rock art tours' (Ang-Gnarra). Deep link has 'copy-of' slug: odd but live",
+   "status": "supported",
+   "fix": "Consider homepage https://www.anggnarra.org.au/ if preferred"
+  },
+  {
+   "text": "category museum",
+   "source": "input",
+   "status": "unsupported",
+   "fix": "Change to historic or nature: open-air rock art site"
+  }
+ ]
+}

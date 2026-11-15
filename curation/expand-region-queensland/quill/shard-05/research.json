@@ -1,0 +1,219 @@
+{
+ "scenic-rim-7": {
+  "facts": {
+   "what": "Mountain pass 100 km west of Brisbane, the original route over the Great Dividing Range there; now inside Main Range National Park, popular with campers and bushwalkers; Spicers Gap State Forest lies west; part of Gondwana Rainforests",
+   "walk": "Governors Chair lookout return walk about 300 m (~15 min), cliff edge, unfenced (search of QPWS Main Range things-to-do page, not loaded)"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Spicers_Gap",
+   "walk": "https://parks.desi.qld.gov.au/parks/main-range/things-to-do (seen in search result only; BLOCKED to scripts)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "No day-use fee found; camping permits cost extra (not the price). No Queensland park pass exists in parkPasses.ts. Gate-fee absence unverified because QPWS is blocked."
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrlCandidate": "https://parks.qld.gov.au/parks/main-range",
+  "unverified": [
+   "no day-use fee (QPWS page blocked; search found none)",
+   "ticketUrl needs real-browser check of Main Range National Park page"
+  ]
+ },
+ "scenic-rim-9": {
+  "facts": {
+   "what": "Reservoir behind Moogerah Dam on Reynolds Creek, Scenic Rim; designated swimming area at A G Muller Park (opened 2014); popular for waterskiing, jetskis; stocked impoundment permit needed to fish (from Lake Moogerah Caravan Park); dam wall gives access to Mount Edwards in Moogerah Peaks National Park"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Moogerah_Dam"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "Lake shore and swimming area free; fishing permit, camping and boat hire are extras."
+  },
+  "ticketUrl": "none",
+  "unverified": [
+   "no single official steward found (SEQ Water/Scenic Rim council not confirmed); visitscenicrim.com.au homepage loads but no Lake Moogerah page checked"
+  ]
+ },
+ "moreton-island-1": {
+  "facts": {
+   "what": "15 vessels deliberately scuttled from the 1960s to 1980s north of Tangalooma Island Resort, now an artificial reef with dolphins, turtles, wobbegongs and 200+ fish species; popular snorkelling spot and calm anchorage; resort is ~70 min from Brisbane by express catamaran",
+   "access": "Public may use the beach in front of the resort"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Tangalooma,_Queensland",
+   "access": "https://en.wikipedia.org/wiki/Tangalooma,_Queensland",
+   "resort": "https://www.tangalooma.com/ (title: Tangalooma Island Resort; lists Wrecks Snorkel Tour)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "Wrecks themselves free to view/snorkel; resort snorkel tours and ferry are extra (not the price, no prices fetched)."
+  },
+  "ticketUrl": "none",
+  "ticketNote": "Wrecks are reached via resort tours or private boat; resort homepage https://www.tangalooma.com/ is an operator not the wrecks' steward, so omitted.",
+  "unverified": [
+   "Wikipedia page title for wiki field is a section anchor 'Tangalooma, Queensland#Tangalooma Ship Wrecks'; no own article"
+  ]
+ },
+ "moreton-island-3": {
+  "facts": {
+   "what": "Oldest lighthouse in Queensland (built by NSW Government pre-1859), two red bands, sandstone, at Cape Moreton, NE tip of Moreton Island; marks northern entrance to Moreton Bay; Queensland Heritage Register 2004",
+   "access": "Reached from Scarborough; permit and four-wheel drive mandatory per Wikipedia; lighthouse closed to the public though station is accessible; a museum was set in the second assistant's quarters in 1988"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Cape_Moreton_Light",
+   "access": "https://en.wikipedia.org/wiki/Cape_Moreton_Light",
+   "vap": "https://parks.qld.gov.au/management/managed-areas/recreation/vehicle-permits (search result; vehicle access permit with fees for Moreton Island Recreation Area, sold by Mulgumpin Camping)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "No entry fee found. Vehicle access permit and ferry are transport, not the price."
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrlCandidate": "https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island",
+  "unverified": [
+   "whether the museum is open to visitors",
+   "VAP fee amount (not found; not the spot price)",
+   "ticketUrl needs browser check",
+   "bio should not say you can enter the lighthouse"
+  ]
+ },
+ "moreton-island-6": {
+  "facts": {
+   "what": "Heritage-listed WWII fortification (RAN 3 Cowan Cowan, Cowan Cowan Battery) at 30 Jessie Wadsworth Street, Cowan Cowan; Queensland Heritage Register 1 Oct 2007; closed as a fort by 1960; much of it since removed or lost into the residential township"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Fort_Cowan_Cowan"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "No fee found."
+  },
+  "ticketUrl": "none",
+  "unverified": [
+   "how much is visible to visitors and public access (Wikipedia says much removed); consider review against COVERAGE.md bar 2",
+   "no visitor source found"
+  ]
+ },
+ "north-stradbroke-island-2": {
+  "facts": {
+   "what": "Clifftop boardwalk and path at Point Lookout, North Stradbroke; one of the best land-based vantage points to see dolphins, turtles, manta rays (Nov-Feb) and humpback whales (May-Oct) per the council; boardwalk restored and reopened Nov 2021 after storm damage"
+  },
+  "sources": {
+   "what": "https://www.redlandscoasttoday.com.au/2021/11/point-lookout-gorge-walk-reopens-after-restoration (search result, not loaded)",
+   "wildlife": "https://www.redland.qld.gov.au/info/20125/our_suburbs_and_islands/170/point_lookout (search summary; fetch gave 404, so unverified)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "Council reserve walk; no fee found."
+  },
+  "ticketUrl": "none",
+  "unverified": [
+   "Redland council Point Lookout page 404 on fetch",
+   "walk length/time not sourced (OSM midpoint 0.2 km per pin tool only)",
+   "wiki: no Wikipedia article"
+  ]
+ },
+ "north-stradbroke-island-3": {
+  "facts": {
+   "what": "National park on North Stradbroke Island (Minjerribah) that contains the former Blue Lake National Park; two sections open to visitors, including Kaboora (Blue Lake) on the east side; a restricted zone covers the south incl. Stingaree Island"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Naree_Budjong_Djara_National_Park",
+   "sections": "https://parks.qld.gov.au/parks/naree-budjong-djara/visiting-safely (search summary; BLOCKED to scripts)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "No entry fee found; camping is outside the park and driving on the island needs a vehicle access permit (transport, not the price). Park is Queensland, no state pass applies."
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrlCandidate": "https://parks.qld.gov.au/parks/naree-budjong-djara",
+  "unverified": [
+   "no day-use fee confirmed (QPWS blocked)",
+   "ticketUrl needs real-browser check",
+   "category 'entertainment' in placement looks wrong; should be nature/park"
+  ]
+ },
+ "sunshine-coast-6": {
+  "facts": {
+   "what": "Marine mammal park, oceanarium and wildlife sanctuary at Mooloolaba, owned by Merlin Entertainments (Sea Life brand), ZAA member",
+   "price": "Adult (15+) online advance $37 weekdays / $45 weekends outside school holidays, $49 school holidays, public holidays and on-the-day (official 'Dive Below the Surface' page)"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Sea_Life_Sunshine_Coast",
+   "price": "https://www.visitsealife.com/sunshine-coast/dive-below-the-surface/ (fetched, $37/$45/$49 shown in rows; labels from search summary)"
+  },
+  "cost": {
+   "costMin": 37,
+   "costMax": 49,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Dynamic pricing by capacity and day; typical adult online."
+  },
+  "ticketUrl": "https://www.visitsealife.com/sunshine-coast/",
+  "ticketUrlCheck": "loaded 200, title 'SEA LIFE Sunshine Coast Aquarium in Mooloolaba, AUS - Official Website'",
+  "unverified": [
+   "opening hours deliberately not recorded"
+  ]
+ },
+ "sunshine-coast-8": {
+  "facts": {
+   "what": "Zoo at the Big Pineapple, Woombye, opened Nov 2013; many animals relocated from the closed Alma Park Zoo in 2014; over 50 species and 10+ animal encounters; at 76 Nambour Connection Road"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/wiki/Wildlife_HQ_Zoo",
+   "detail": "https://bigpineapple.com.au/collection/wildlife-hq-zoo/",
+   "price": "https://bigpineapple.com.au/collection/wildlife-hq-zoo/ (Zoo only: Adults $54, Kids $40, Seniors $47; with train $63)"
+  },
+  "cost": {
+   "costMin": 54,
+   "costMax": 54,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Zoo-only adult price from the Big Pineapple's official page; not on whqzoo.com (no price there)."
+  },
+  "ticketUrl": "https://whqzoo.com/",
+  "ticketUrlCheck": "loaded 200, title 'Home - Wildlife HQ'; /tickets 404 so homepage used",
+  "unverified": [
+   "price date unknown (undated Big Pineapple page); whqzoo.com shows no general price"
+  ]
+ },
+ "sunshine-coast-9": {
+  "facts": {
+   "what": "Privately owned family theme park on the Sunshine Coast just off the Bruce Highway (Palmview), about 30 rides and attractions including SX360, Dingo Racer, Redback spinning coaster and Sideshow Alley; mini golf, slime workshop and Sideshow Alley games cost extra; under-3s free; every guest needs a ticket, no spectator pass"
+  },
+  "sources": {
+   "what": "https://www.aussieworld.com.au/",
+   "tickets": "https://www.aussieworld.com.au/faqs",
+   "wiki": "https://en.wikipedia.org/wiki/Aussie_World"
+  },
+  "cost": {
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "status": "unverified",
+   "note": "Official ticket page is script-rendered (HubTickets), no price in fetched HTML. Reseller adult range A$39.60 to A$53 (Bookme, Air NZ, RAA, Rezdy via search), not official."
+  },
+  "ticketUrl": "https://www.aussieworld.com.au/",
+  "ticketUrlCheck": "loaded 200, title 'Aussie World | The Sunshine Coast Theme Park'",
+  "unverified": [
+   "official adult general admission price: read it in a real browser at https://www.aussieworld.com.au/tickets",
+   "opening hours not recorded"
+  ]
+ }
+}

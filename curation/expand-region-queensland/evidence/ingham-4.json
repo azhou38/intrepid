@@ -1,0 +1,26 @@
+{
+ "id": "ingham-4",
+ "name": "Jourama Falls",
+ "built": "2026-11-15",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Jourama_Falls",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-15",
+   "title": "Paluma Range National Park",
+   "excerpt": "Paluma Range is a national park located between Ingham and Townsville, in north Queensland, Australia. The park is 1188 km north of Brisbane."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

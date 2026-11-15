@@ -1,0 +1,72 @@
+{
+ "gold-coast-3": {
+  "bio": "Australia's largest theme park, with over 40 rides plus Tiger Island and WILD wildlife precincts.",
+  "visitHoursMin": 5, "visitHoursMax": 8,
+  "cost": { "costMin": 99, "costMax": 109, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.dreamworld.com.au/",
+  "unverified": []
+ },
+ "gold-coast-4": {
+  "bio": "Theme park and oceanarium with marine mammal exhibits, rides and a wildlife rescue focus.",
+  "visitHoursMin": 4, "visitHoursMax": 7,
+  "cost": { "costBasis": "entry", "price": null, "status": "unverified" },
+  "ticketUrl_blocked": "https://seaworld.com.au/",
+  "unverified": ["adult price (operator blocked; third-party only, not applied): check https://seaworld.com.au/tickets in a real browser"]
+ },
+ "gold-coast-5": {
+  "bio": "Australia's only film theme park, opened in 1991 in Oxenford beside Village Roadshow Studios.",
+  "visitHoursMin": 5, "visitHoursMax": 8,
+  "cost": { "costBasis": "entry", "price": null, "status": "unverified" },
+  "ticketUrl_blocked": "https://movieworld.com.au/",
+  "unverified": ["adult price (operator blocked): check https://movieworld.com.au/tickets in a real browser"]
+ },
+ "gold-coast-21": {
+  "bio": "Swim, picnic and paddle at the creek mouth beside Burleigh Head National Park.",
+  "visitHoursMin": 0.5, "visitHoursMax": 2,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["public access terms (no agency page found; queensland.com page blocked)"]
+ },
+ "gold-coast-22": {
+  "bio": "The Gold Coast's only Aboriginal cultural centre, community-run, with an art gallery and headland walks.",
+  "visitHoursMin": 0.5, "visitHoursMax": 2,
+  "cost": { "free": true, "costBasis": "entry" },
+  "ticketUrl": "https://www.jellurgal.com.au/",
+  "unverified": ["no Wikipedia article: leave wiki empty"]
+ },
+ "gold-coast-24": {
+  "bio": "Water park that was Australia's most visited in 2019, with 1.12 million visitors, open all year.",
+  "visitHoursMin": 4, "visitHoursMax": 6,
+  "cost": { "costBasis": "entry", "price": null, "status": "unverified" },
+  "ticketUrl_blocked": "https://wetnwild.com.au/",
+  "unverified": ["adult price (operator blocked, no source price): check in a real browser"]
+ },
+ "gold-coast-25": {
+  "bio": "Seasonal water park with surf-themed slides, the Cave of Waves wave pool and a kids' Pipeline Plunge area.",
+  "visitHoursMin": 3, "visitHoursMax": 5,
+  "cost": { "costMin": 79, "costMax": 79, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.dreamworld.com.au/our-worlds/whitewater-world/",
+  "unverified": []
+ },
+ "gold-coast-26": {
+  "bio": "More than 100 classic cars, buggies and motorcycles from 1911 onward, in Upper Coomera.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": { "costMin": 24, "costMax": 24, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.gcmm.com.au/",
+  "unverified": ["price dated Oct 2023 on the operator's page, may have changed", "no Wikipedia article"]
+ },
+ "gold-coast-27": {
+  "bio": "Surfers Paradise arts precinct with a gallery, theatres, a cinema and dining.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "wiki": null,
+  "wiki_review": "Current wiki 'Gold Coast City Art Gallery' is the closed old gallery, not HOTA: review the wiki title and the photo",
+  "cost": { "free": true, "costBasis": "entry" },
+  "ticketUrl": "https://hota.com.au/",
+  "unverified": ["free general gallery entry (second-hand only; confirm at hota.com.au/faqs/visiting-faqs in browser)"]
+ },
+ "gold-coast-28": {
+  "bio": "Large Southport park on Marine Parade beside the Broadwater, reopened in 2009, with play and barbecue areas.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["water play area (secondary source; left out)", "free access (no council page found)"]
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "_note": "bio-fit.py not run (no shell); all bios hand-counted at 110 characters or fewer. visitHours are estimates.",
+ "mount-isa-underground-hospital-and-museum": {
+  "bio": "A 30-minute guided tour through four tunnels of the underground hospital volunteer miners built in 1942.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "category": "museum",
+  "cost": {"free": false, "costMin": 25, "costMax": 25, "currency": "AUD", "costBasis": "tour", "needs": null},
+  "ticketUrl": "https://www.undergroundhospital.com.au",
+  "unverified": []
+ },
+ "australian-workers-heritage-centre": {
+  "bio": "Outback heritage centre in Barcaldine telling the story of Australian workers and the labour movement.",
+  "visitHoursMin": 1.5, "visitHoursMax": 3,
+  "cost": {"free": false, "costMin": 25, "costMax": 25, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.australianworkersheritagecentre.com.au",
+  "unverified": ["site banner says closed for the 2026 season: check before a run; Tree of Knowledge Memorial is a separate town site, left out of bio"]
+ },
+ "porcupine-gorge-national-park": {
+  "bio": "National park 60 km north of Hughenden with a gorge lookout and a walking track down to swimming waterholes.",
+  "visitHoursMin": 2, "visitHoursMax": 4,
+  "category": "nature",
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": null, "note": "No Entry Fee basis; day-use fee not confirmed, QPWS blocked"},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/porcupine-gorge (403 captcha; fallback https://www.visithughenden.com.au/attraction/porcupine-gorge-national-park/ is not the steward)",
+  "unverified": ["no day-use fee and camping fee (QPWS blocked)"]
+ },
+ "eromanga-natural-history-museum": {
+  "bio": "Eromanga museum that is home to Cooper, Australia's largest dinosaur, a titanosaur about 30 m long.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": false, "costMin": 38, "costMax": 38, "currency": "AUD", "costBasis": "tour", "needs": null, "note": "APPROXIMATE: page's rate period ended 31 Mar 2026"},
+  "ticketUrl": "https://enhm.com.au/",
+  "unverified": ["current adult price", "tour days and the summer pre-booked period are not in the bio"]
+ },
+ "flinders-discovery-centre": {
+  "bio": "Hughenden museum and visitor centre with dinosaur and railway exhibits and a children's fossil dig.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": {"free": false, "costMin": 20, "costMax": 20, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.visithughenden.com.au/flinders-discovery-centre/",
+  "unverified": ["link is the centre's page on the Flinders Shire tourism site, no separate domain"]
+ },
+ "kronosaurus-korner": {
+  "bio": "Richmond's marine fossil museum on Goldring Street, part of the Dinosaur Trail.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": false, "costMin": 40, "costMax": 40, "currency": "AUD", "costBasis": "entry", "needs": null, "note": "APPROXIMATE: price table dated 01.01.2024"},
+  "ticketUrl": "https://www.kronosauruskorner.com.au",
+  "unverified": ["current adult price", "Kronosaurus specifics not read first-hand, bio kept generic"]
+ },
+ "min-min-encounter": {
+  "bio": "A 45-minute animatronic show in Boulia on the Min Min light phenomenon.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "category": "entertainment",
+  "cost": {"free": false, "costMin": 38.5, "costMax": 38.5, "currency": "AUD", "costBasis": "tour", "needs": null, "note": "'from' price, adult split not shown; 'ticket' is an alternative basis"},
+  "ticketUrl": "https://www.boulia.qld.gov.au",
+  "unverified": ["address 25 Herbert Street not tied to the venue", "council homepage used; a deep link to the Min Min Encounter page was not checked"]
+ },
+ "muttaburrasaurus-interpretation-centre": {
+  "bio": "Muttaburra centre with a replica Muttaburrasaurus skeleton from a grazier's 1963 find.",
+  "visitHoursMin": 0.25, "visitHoursMax": 0.75,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": null, "note": "approximate: single tourism listing"},
+  "ticketUrl": "https://www.explorethebarcaldineregion.com.au/Explore-Experience/Things-to-Explore/Muttaburrasaurus-Interpretation-Centre-",
+  "unverified": ["free entry (one tourism listing; confirm with Barcaldine Regional Council)"]
+ },
+ "cobbold-gorge": {
+  "bio": "Guided tour of Australia's youngest gorge on a cattle station, with a glass bridge and boat cruise.",
+  "visitHoursMin": 3, "visitHoursMax": 4,
+  "cost": {"free": false, "costMin": 156, "costMax": 156, "currency": "AUD", "costBasis": "tour", "needs": null, "note": "self-drive day visitor adult; ex-Forsayth transfer 225"},
+  "ticketUrl": "https://www.cobboldgorge.com.au",
+  "unverified": []
+ },
+ "brisbane-15": {
+  "bio": "Heritage-listed lookout over Brisbane and Moreton Bay, with walking tracks and botanic gardens nearby.",
+  "visitHoursMin": 0.5, "visitHoursMax": 2,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": "https://www.brisbane.qld.gov.au/libraries-venues-and-facilities/malls-and-precincts/mt-coot-tha-precinct",
+  "unverified": ["free inferred from council page (no fee stated)", "'open all hours' left out of bio"]
+ }
+}

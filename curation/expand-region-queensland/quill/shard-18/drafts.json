@@ -1,0 +1,104 @@
+{
+ "notes": {
+  "category_fixes": {
+   "mount-isa-underground-hospital-and-museum": "placement says viewpoint; should be museum",
+   "porcupine-gorge-national-park": "placement says entertainment; should be nature",
+   "min-min-encounter": "placement says nature; should be entertainment (animatronic show; museum is a weaker fit)"
+  },
+  "hours_are_estimates": "All visitHoursMin/Max are estimates, except where a duration is sourced: Mount Isa tour 30 min, Min Min show 45 min, Cobbold Gorge tour about 3 hours, Eromanga tour 1 hour.",
+  "kronosaurus-korner": "Bio kept generic; Kronosaurus specifics not read first-hand in research.",
+  "bio_lengths": "All variants are 110 characters or fewer by hand count; run bio-fit.py to confirm."
+ },
+ "spots": {
+  "mount-isa-underground-hospital-and-museum": {
+   "bio": [
+    "Guided tour of Australia's only underground hospital, dug by volunteer miners in 1942.",
+    "A 30-minute guided tour through four tunnels of the underground hospital volunteer miners built in 1942."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "hours_note": "tour length sourced (30 min); range is an estimate"
+  },
+  "australian-workers-heritage-centre": {
+   "bio": [
+    "Barcaldine museum on Australia's labour movement, with exhibitions and the Tree of Knowledge Memorial.",
+    "Outback heritage centre in Barcaldine telling the story of Australian workers and the labour movement."
+   ],
+   "visitHoursMin": 1.5,
+   "visitHoursMax": 3,
+   "hours_note": "estimate"
+  },
+  "porcupine-gorge-national-park": {
+   "bio": [
+    "National park 60 km north of Hughenden with a gorge lookout and a walking track down to swimming waterholes.",
+    "A walking track from the Pyramid camping area drops to the gorge floor, its rock formation and waterholes."
+   ],
+   "visitHoursMin": 2,
+   "visitHoursMax": 4,
+   "hours_note": "estimate"
+  },
+  "eromanga-natural-history-museum": {
+   "bio": [
+    "Eromanga museum that is home to Cooper, Australia's largest dinosaur, a titanosaur about 30 m long.",
+    "Guided tours of Cooper, a 30 m titanosaur, plus a fossil workshop, at Eromanga's natural history museum."
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "hours_note": "tour is one hour (sourced); range is an estimate"
+  },
+  "flinders-discovery-centre": {
+   "bio": [
+    "Hughenden museum and visitor centre with dinosaur and railway exhibits and a children's fossil dig.",
+    "Hughenden's visitor centre and museum covering dinosaurs, First Nations, pastoral and railway history."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "hours_note": "estimate"
+  },
+  "kronosaurus-korner": {
+   "bio": [
+    "Marine fossil museum in Richmond and a stop on the Dinosaur Trail.",
+    "Richmond's marine fossil museum on Goldring Street, part of the Dinosaur Trail."
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 2,
+   "hours_note": "estimate"
+  },
+  "min-min-encounter": {
+   "bio": [
+    "A 45-minute animatronic show in Boulia on the Min Min light phenomenon.",
+    "Boulia's animatronic show on the Min Min lights, the only show of its kind in Queensland."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 1,
+   "hours_note": "show length sourced (45 min); range is an estimate"
+  },
+  "muttaburrasaurus-interpretation-centre": {
+   "bio": [
+    "Muttaburra centre with a replica Muttaburrasaurus skeleton from a grazier's 1963 find.",
+    "Replica Muttaburrasaurus skeleton and displays on the dinosaur a grazier found near the Thomson River."
+   ],
+   "visitHoursMin": 0.25,
+   "visitHoursMax": 0.75,
+   "hours_note": "estimate"
+  },
+  "cobbold-gorge": {
+   "bio": [
+    "Australia's youngest gorge, seen on a guided walk, glass bridge and boat cruise.",
+    "Guided tour of Australia's youngest gorge on a cattle station, with a glass bridge and boat cruise."
+   ],
+   "visitHoursMin": 3,
+   "visitHoursMax": 4,
+   "hours_note": "tour about 3 hours (sourced); upper end is an estimate"
+  },
+  "brisbane-15": {
+   "bio": [
+    "Heritage-listed lookout over Brisbane and Moreton Bay, with walking tracks and botanic gardens nearby.",
+    "Open-all-hours lookout over Brisbane and Moreton Bay, with walking tracks in the surrounding reserve."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "hours_note": "estimate"
+  }
+ }
+}

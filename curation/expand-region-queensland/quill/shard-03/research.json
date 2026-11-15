@@ -1,0 +1,206 @@
+{
+ "gold-coast-3": {
+  "facts": {
+   "what": "Australia's largest theme park, with over 40 rides and attractions, on the Gold Coast; precincts include Tiger Island, WILD wildlife and Rivertown",
+   "operator": "Coast Entertainment Operations Limited (sister park WhiteWater World)"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Dreamworld_(Australia)",
+    "https://www.dreamworld.com.au/"
+   ],
+   "operator": "https://www.dreamworld.com.au/tickets"
+  },
+  "cost_source": "https://www.dreamworld.com.au/tickets",
+  "ticketUrl": "https://www.dreamworld.com.au/",
+  "ticketUrl_check": "200, title 'Dreamworld | Australia's Favourite Theme Park on the Gold Coast'",
+  "coordinates_source": "placement pin kept (resolved in placement.pinned.json)",
+  "unverified": [],
+  "costMin": 99,
+  "costMax": 109,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_note": "1-day adult: dated ticket from $99, flexible ticket $109 (operator ticket page read 2026-11-15)"
+ },
+ "gold-coast-4": {
+  "facts": {
+   "what": "Marine mammal park, oceanarium and theme park on the Gold Coast with rides and animal exhibits; promotes wildlife rescue and rehabilitation; run by Village Roadshow Theme Parks"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Sea_World_(Australia)"
+  },
+  "cost_source": "https://www.endlesstravelplans.com/destinations/comparisons/gold-coast-theme-parks-cost (not the operator)",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_url": "https://seaworld.com.au/",
+  "unverified": [
+   "adult price not read from operator (seaworld.com.au is Cloudflare-blocked; check https://seaworld.com.au/tickets in a real browser)"
+  ],
+  "costMin": 99,
+  "costMax": 114,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_note": "PROVISIONAL, third-party only: comparison site (endlesstravelplans.com, Sept 2026) lists 1-day adult dated $99, gate $114; operator page blocked",
+  "ticket_note": "BLOCKED: https://seaworld.com.au/"
+ },
+ "gold-coast-5": {
+  "facts": {
+   "what": "Film-related theme park in Oxenford on the Gold Coast, opened 3 June 1991, in a 154-hectare precinct with Village Roadshow Studios and Wet'n'Wild; Australia's only film theme park"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Warner_Bros._Movie_World"
+  },
+  "cost_source": "https://www.endlesstravelplans.com/destinations/comparisons/gold-coast-theme-parks-cost (not the operator)",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_url": "https://movieworld.com.au/",
+  "unverified": [
+   "adult price not read from operator (movieworld.com.au Cloudflare-blocked; check https://movieworld.com.au/tickets in a real browser)"
+  ],
+  "costMin": 99,
+  "costMax": 114,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_note": "PROVISIONAL, third-party only: comparison site (Sept 2026) lists 1-day adult $99, gate $114; operator page blocked",
+  "ticket_note": "BLOCKED: https://movieworld.com.au/"
+ },
+ "gold-coast-21": {
+  "facts": {
+   "what": "Creek about 25 km long in the Gold Coast area, known for fishing; its mouth at Burleigh Heads is a popular swimming spot beside Burleigh Head National Park",
+   "swimming": "guide sources describe swimming, picnicking, watersports and fishing (oceanswims.com, brisbanekids.com.au; secondary)"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Tallebudgera_Creek",
+   "swimming": "https://oceanswims.com/guide/tallebudgera-creek/"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_reason": "open waterway with no single steward; queensland.com page BLOCKED (403) https://www.queensland.com/things-to-do/attractions/p-56fbabbec3da9d9a7b8b057d-tallebudgera-creek",
+  "unverified": [
+   "no council/agency page found confirming public access terms"
+  ],
+  "free": true,
+  "costBasis": "open",
+  "cost_note": "open creek and foreshore, no gate; no pass found (Queensland parks charge no day-use entry; not a pass-listed spot); parking is not a cost",
+  "ticket_note": "open waterway with no single steward; queensland.com page BLOCKED (403) https://www.queensland.com/things-to-do/attractions/p-56fbabbec3da9d9a7b8b057d-tallebudgera-creek"
+ },
+ "gold-coast-22": {
+  "facts": {
+   "what": "Gold Coast's only dedicated Aboriginal cultural centre, owned and operated by the local Aboriginal community, at the base of Jellurgal (Burleigh Headland) beside Tallebudgera Creek, 1711 Gold Coast Highway; art gallery, gift shop and cultural displays; guided walking tours of the headland",
+   "entry": "no admission fee for the centre, gallery and shop",
+   "tours": "Jellurgal Walkabout (2 hr) adult $59; Journey (3.5 hr) adult $149; Cruise with Culture adult $69"
+  },
+  "sources": {
+   "what": [
+    "https://www.jellurgal.com.au/",
+    "https://www.jellurgal.com.au/about/getting-here"
+   ],
+   "entry": "https://www.jellurgal.com.au/about/faq",
+   "tours": "https://www.jellurgal.com.au/tours"
+  },
+  "ticketUrl": "https://www.jellurgal.com.au/",
+  "ticketUrl_check": "200, title 'Home - Jellurgal Cultural Experiences'",
+  "unverified": [
+   "no Wikipedia article (wiki field should stay empty)"
+  ],
+  "free": true,
+  "costBasis": "entry",
+  "cost_note": "centre entry free per official FAQ; guided tours are extras (not the price)"
+ },
+ "gold-coast-24": {
+  "facts": {
+   "what": "Water park in Oxenford, owned by Village Roadshow Theme Parks; most visited water park in Australia in 2019 (1,120,000 visitors); open all year with some seasonal ride closures"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Wet'n'Wild_Gold_Coast"
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_url": "https://wetnwild.com.au/",
+  "unverified": [
+   "adult price (operator Cloudflare-blocked; check https://wetnwild.com.au/ tickets in a real browser); no price found even on third-party results, cost left for orchestrator"
+  ],
+  "cost_unresolved": "price unverified: operator page BLOCKED, no source price",
+  "ticket_note": "BLOCKED: https://wetnwild.com.au/"
+ },
+ "gold-coast-25": {
+  "facts": {
+   "what": "Seasonal water park at Coomera, sister park to Dreamworld, with surf-themed slides, Cave of Waves wave pool and Pipeline Plunge kids' area; operated by Coast Entertainment",
+   "season": "seasonal; hours vary through the year"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/WhiteWater_World",
+    "https://www.dreamworld.com.au/our-worlds/whitewater-world/"
+   ],
+   "season": "https://www.dreamworld.com.au/our-worlds/whitewater-world/"
+  },
+  "cost_source": "https://www.dreamworld.com.au/tickets",
+  "ticketUrl": "https://www.dreamworld.com.au/our-worlds/whitewater-world/",
+  "ticketUrl_check": "whitewaterworld.com.au redirects here (200), title 'WhiteWater World | Water Park at Dreamworld'",
+  "unverified": [],
+  "costMin": 79,
+  "costMax": 79,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_note": "1-day adult $79 (operator ticket page read 2026-11-15)"
+ },
+ "gold-coast-26": {
+  "facts": {
+   "what": "Museum at 107 Kriedeman Road, Upper Coomera, opened October 2020, with over 100 classic cars, horse-drawn buggies and motorcycles from 1911 to the early 2000s plus memorabilia, on 12 acres beside Stanley's Barn restaurant",
+   "bookings": "no booking needed for the museum"
+  },
+  "sources": {
+   "what": "https://www.gcmm.com.au/about-us",
+   "address": "https://www.gcmm.com.au/contact-us"
+  },
+  "cost_source": "https://www.gcmm.com.au/about-us",
+  "ticketUrl": "https://www.gcmm.com.au/",
+  "ticketUrl_check": "200, title 'Gold Coast Motor Museum'",
+  "coordinates_source": "resolve-pin HIGH: OSM tourism=museum way 951660052 at -27.9101545,153.2578248, matches 107 Kriedeman Rd; 0 m from placement point",
+  "unverified": [
+   "price dated Oct 2023 on the operator's own page",
+   "no Wikipedia article"
+  ],
+  "costMin": 24,
+  "costMax": 24,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "cost_note": "adult $24, seniors $18, 13-17 $10, under 13 free; page says prices updated 2/10/2023 (may have changed)"
+ },
+ "gold-coast-27": {
+  "facts": {
+   "what": "HOTA, Home of the Arts: Gold Coast City Council arts precinct in Surfers Paradise with a gallery (opened 2021, replacing the Gold Coast City Art Gallery, closed 2018), theatres, cinema and dining; gallery entry reported free, some exhibitions and events ticketed"
+  },
+  "sources": {
+   "what": [
+    "https://hota.com.au/",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Gold_Coast_City_Art_Gallery"
+   ],
+   "free": "hota.com.au/faqs/visiting-faqs as quoted in search result (FAQ answers are script-rendered, not read directly)"
+  },
+  "ticketUrl": "https://hota.com.au/",
+  "ticketUrl_check": "200, title 'HOTA, Home of the Arts'",
+  "coordinates_source": "resolve-pin HIGH gives -28.000118,153.417455 (OSM amenity=ferry_terminal named HOTA), 144 m from placement point -28.001226,153.416691; placement point kept unless owner prefers the move (precinct is large)",
+  "unverified": [
+   "free-entry statement not read directly from the FAQ page (collapsed accordion); 'wiki' title Gold Coast City Art Gallery describes the closed old gallery, not HOTA: Wikipedia article for HOTA not checked, so photo and wiki mapping need review"
+  ],
+  "free": true,
+  "costBasis": "entry",
+  "cost_note": "general gallery entry free per HOTA visiting FAQ (second-hand); events and major exhibitions ticketed"
+ },
+ "gold-coast-28": {
+  "facts": {
+   "what": "Large community park in Southport on Marine Parade beside the Broadwater, redeveloped and reopened 23 August 2009, with play areas, barbecue areas and a water play area"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Southport_Broadwater_Parklands",
+   "water play": "https://citiesinsider.com/country/australia/gold-coast/recreation-and-parks/en (secondary)"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_reason": "council-run open park; no official page found (City of Gold Coast guessed deep link 404); Wikipedia 'official website' link points to a master-plan page",
+  "unverified": [
+   "no council page confirming free access; secondary sources only"
+  ],
+  "free": true,
+  "costBasis": "open",
+  "cost_note": "public park, free entry; paid parking is not the price",
+  "ticket_note": "council-run open park; no official page found (City of Gold Coast guessed deep link 404); Wikipedia 'official website' link points to a master-plan page"
+ }
+}

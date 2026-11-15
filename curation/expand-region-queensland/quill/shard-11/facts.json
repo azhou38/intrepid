@@ -1,0 +1,323 @@
+{
+ "ingham-3": {
+  "claims": [
+   {
+    "text": "32 km walk on Hinchinbrook Island's east coast, in Hinchinbrook Island National Park",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/Thorsborne_Trail (evidence bundle)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "reached by (private) ferry",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/Thorsborne_Trail",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "walked over two to five nights",
+    "source": "QPWS Thorsborne page BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser; research only has a search snippet",
+    "status": "unverifiable",
+    "fix": "Check in browser before keeping variants 1 and 3; variant 2 avoids it."
+   },
+   {
+    "text": "booked permit (variant 3)",
+    "source": "QPWS camping page BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser",
+    "status": "unverifiable",
+    "fix": "Permit/booking requirement unconfirmed on the page."
+   },
+   {
+    "text": "cost 7.5 AUD per night, costBasis permit, needs permit, costPer Per Night",
+    "source": "https://parks.qld.gov.au/parks/hinchinbrook-thorsborne/camping BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser",
+    "status": "unverifiable",
+    "fix": "Do not ship the price unverified; confirm the per-person camping fee in a browser, else leave cost unverified. Basis is correct for a permit/camping fee."
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/hinchinbrook-thorsborne",
+    "source": "same, BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser",
+    "status": "unverifiable",
+    "fix": "Not loaded; verify in browser or omit."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true,
+   true
+  ]
+ },
+ "ingham-4": {
+  "claims": [
+   {
+    "text": "Waterfall in Paluma Range National Park, day-use area, between Ingham and Townsville",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/Jourama_Falls; QPWS via snippet only",
+    "status": "supported",
+    "fix": "Wikipedia confirms location; day-use detail from QPWS snippet (unverifiable directly)."
+   },
+   {
+    "text": "creekside camping / short walk to waterfall (variant 2)",
+    "source": "QPWS page BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser",
+    "status": "unverifiable",
+    "fix": ""
+   },
+   {
+    "text": "free: true, costBasis open",
+    "source": "https://parks.qld.gov.au/parks/paluma-range BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser",
+    "status": "unverifiable",
+    "fix": "No day-use fee found; Queensland has no pass for it. 'open' is doubtful for a camping/day-use area but acceptable; confirm in browser."
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/paluma-range",
+    "source": "same",
+    "status": "unverifiable",
+    "fix": "Not loaded; verify in browser."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "ingham-5": {
+  "claims": [
+   {
+    "text": "Natural and constructed wetlands in Ingham with birdlife, named for the Eastern Grass Owl",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/TYTO_Wetlands",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "beside the TYTO Regional Art Gallery (variant 2)",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/TYTO_Wetlands; 2020 report",
+    "status": "unverifiable",
+    "fix": "Gallery status from 2020 report; confirm still open or use variant 1."
+   },
+   {
+    "text": "free: true, costBasis open",
+    "source": "no official page found",
+    "status": "unverifiable",
+    "fix": "No fee found; not on an official page. Prefer variant 1."
+   },
+   {
+    "text": "no ticketUrl",
+    "source": "tyto.com.au redirects to council generic page; research tried",
+    "status": "supported",
+    "fix": "Leave out."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "ingham-7": {
+  "claims": [
+   {
+    "text": "Waterfall about 1 km upstream of Zoe Bay on Hinchinbrook Island's Thorsborne Trail",
+    "source": "hikingtheworld.blog, Hinchinbrook Eco Tours rezdy; not an official source",
+    "status": "unverifiable",
+    "fix": "Only blog/operator support; QPWS page blocked."
+   },
+   {
+    "text": "freshwater pools at base and top; reachable by boat",
+    "source": "hikingtheworld.blog / Hinchinbrook Eco Tours",
+    "status": "unverifiable",
+    "fix": ""
+   },
+   {
+    "text": "free: true, costBasis open",
+    "source": "no fee found; reached via permit trail or boat",
+    "status": "unverifiable",
+    "fix": "Plausible; 'open' is questionable for a spot reached only via a permitted trail or tour. Consider costBasis 'open' retained but confirm."
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/hinchinbrook/attractions/south-zoe-bay-day-use-area",
+    "source": "BLOCKED",
+    "status": "unverifiable",
+    "fix": "Page is a different place (South Zoe Bay day-use) and unloaded; omit unless verified."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "ingham-8": {
+  "claims": [
+   {
+    "text": "Day-use/picnic area on a creek in Mount Spec section of Paluma Range National Park, toilets",
+    "source": "QPWS big-crystal-creek page BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser",
+    "status": "unverifiable",
+    "fix": ""
+   },
+   {
+    "text": "swimming at Paradise waterhole; The Rockslides further downstream",
+    "source": "QPWS snippet",
+    "status": "unverifiable",
+    "fix": "Variant 2 avoids the swimming claim; prefer it until confirmed."
+   },
+   {
+    "text": "free: true, costBasis open",
+    "source": "no fee found",
+    "status": "unverifiable",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/paluma-range/attractions/big-crystal-creek-day-use-area-mount-spec-section",
+    "source": "BLOCKED",
+    "status": "unverifiable",
+    "fix": "Verify in browser."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "ingham-9": {
+  "claims": [
+   {
+    "text": "Day-use area on Mt Spec Road, Paluma Range National Park, stone bridge, swimming spot",
+    "source": "QPWS little-crystal-creek page BLOCKED (403 bot wall, re-read fresh 2026-11-15): needs in-app browser",
+    "status": "unverifiable",
+    "fix": ""
+   },
+   {
+    "text": "temporary closure 7 Feb 2025 to 6 Dec 2026 or 16 Jun 2027",
+    "source": "QPWS snippet",
+    "status": "unverifiable",
+    "fix": "FLAG: closed through the date today (2026-11-15) possibly. Check in browser; if closed, hold the spot or add a goodToKnow."
+   },
+   {
+    "text": "free: true, costBasis open",
+    "source": "no fee found",
+    "status": "unverifiable",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/paluma-range/attractions/little-crystal-creek-day-use-area-mount-spec-section",
+    "source": "BLOCKED",
+    "status": "unverifiable",
+    "fix": "Verify in browser."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "cairns-3": {
+  "claims": [
+   {
+    "text": "more than 16,000 animals, Wet Tropics and Great Barrier Reef, 11 zones, Turtle Rehabilitation Centre",
+    "source": "https://www.cairnsaquarium.com.au/ (home page and nav: Turtle Rehabilitation Centre confirmed; homepage says Wet Tropics and Reef animals); 16,000 / 11 zones from research",
+    "status": "unverifiable",
+    "fix": "Wet Tropics/Reef and Turtle centre confirmed; the 16,000 and 11-zone figures were not in the fresh pages I read: use variant 1 only if checked, else cut the number."
+   },
+   {
+    "text": "adult entry 61 AUD, costBasis entry",
+    "source": "https://www.cairnsaquarium.com.au/tickets/general-admission/ (fresh, adult ages 15+ A$61)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.cairnsaquarium.com.au/",
+    "source": "fresh fetch: title 'Cairns Aquarium | Marine Life Encounters...', 200",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "cairns-4": {
+  "claims": [
+   {
+    "text": "Free 4800 sq m saltwater lagoon on the Esplanade, lifeguarded, croc-free, toilets and showers",
+    "source": "swimmingholeheaven.com and council media release via search summary; council site BLOCKED",
+    "status": "unverifiable",
+    "fix": "Not read on an official page; free and lifeguarded are widely stated but unconfirmed."
+   },
+   {
+    "text": "free: true, costBasis open",
+    "source": "council page BLOCKED",
+    "status": "unverifiable",
+    "fix": "Reasonable; a lagoon with no gate."
+   },
+   {
+    "text": "no ticketUrl",
+    "source": "council steward; esplanade page BLOCKED",
+    "status": "supported",
+    "fix": "Leave out (council-run open space)."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "cairns-5": {
+  "claims": [
+   {
+    "text": "Botanic gardens in Edge Hill (Collins Avenue)",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/Cairns_Botanic_Gardens (Flecker Botanic Gardens, Edge Hill)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Flecker Garden, Centenary Lakes and Watkins Munro Martin Conservatory",
+    "source": "tropicalnorthqueensland.org.au listing; council page BLOCKED",
+    "status": "unverifiable",
+    "fix": ""
+   },
+   {
+    "text": "free entry; costBasis entry (free: true)",
+    "source": "council Friends page via search summary",
+    "status": "unverifiable",
+    "fix": "Bio variant 2 says 'Free'; unconfirmed on a fetched page. costBasis 'entry' (No Entry Fee) is the right basis if free."
+   },
+   {
+    "text": "ticketUrl https://www.cairns.qld.gov.au/experience-cairns/botanic-gardens/visit-the-gardens",
+    "source": "fresh fetch 403 bot wall",
+    "status": "unverifiable",
+    "fix": "Verify in browser or omit."
+   },
+   {
+    "text": "pass list: nt-parks unreadable in bundle",
+    "source": "irrelevant (not NT)",
+    "status": "supported",
+    "fix": "No park pass applies."
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ },
+ "cairns-7": {
+  "claims": [
+   {
+    "text": "Social history museum in School of Arts building; four permanent galleries; kids' discovery trails; run by Cairns Historical Society",
+    "source": "https://cairnsmuseum.org.au/ (fresh)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "adult entry 15 AUD, costBasis entry",
+    "source": "https://cairnsmuseum.org.au/visitor-information/ (fresh: Adult $15)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://cairnsmuseum.org.au/",
+    "source": "fresh fetch title 'Cairns Museum', 200",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "bio_fit": [
+   true,
+   true
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "brisbane-11": {
+  "bio": "Maritime museum on the Brisbane River with the WW2 frigate HMAS Diamantina, a light ship and a dry dock.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": { "costMin": 18, "costMax": 18, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://maritimemuseum.com.au/",
+  "unverified": []
+ },
+ "brisbane-12": {
+  "bio": "Convict-built storehouse of 1828-29, one of two Moreton Bay penal colony buildings left, now a museum.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": { "costMin": 12, "costMax": 12, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.commissariatstore.org.au/",
+  "unverified": []
+ },
+ "brisbane-13": {
+  "bio": "Museum on level 8 of MacArthur Chambers, General MacArthur's 1942 headquarters, on Brisbane's war years.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": { "costMin": 10, "costMax": 10, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://mmb.org.au/",
+  "unverified": ["level 8 entrance detail partly from a search summary"]
+ },
+ "brisbane-14": {
+  "bio": "Planetarium in the Mt Coot-tha botanic gardens with fulldome sky shows in the Cosmic Skydome.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": { "costMin": 17.5, "costMax": 17.5, "currency": "AUD", "costBasis": "ticket" },
+  "ticketUrl": "https://www.brisbane.qld.gov.au/libraries-venues-and-facilities/venue-and-places/sir-thomas-brisbane-planetarium",
+  "unverified": ["$17.50 adult show price not re-seen on the council page"]
+ },
+ "brisbane-16": {
+  "bio": "Heritage-listed river cliffs facing the CBD, popular for rock climbing and running, with a boardwalk.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": []
+ },
+ "brisbane-17": {
+  "bio": "Riverfront park on the Queensland Heritage Register, with picnic shelters, barbecues and tennis courts.",
+  "visitHoursMin": 0.5, "visitHoursMax": 2,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["category 'entertainment' on input is wrong for a park; 'nature' suggested"]
+ },
+ "brisbane-19": {
+  "bio": "Jetty on Redcliffe Parade over Moreton Bay, a popular fishing spot.",
+  "visitHoursMin": 0.25, "visitHoursMax": 0.75,
+  "category": "landmark",
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["1885 and 1930s pavilion history left out (search summary only)", "category 'beach' on input is a poor fit; 'landmark' suggested"]
+ },
+ "brisbane-22": {
+  "bio": "Pentagonal 19th-century fort with guns behind grassy ramparts, run as a national park with guided tours.",
+  "visitHoursMin": 1.5, "visitHoursMax": 2.5,
+  "cost": { "free": true, "costBasis": "entry" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/fort-lytton",
+  "unverified": ["free vs weekday guided visit adult $7.60 (QPWS page 403: confirm in browser; if the tour is the standard price use 7.60 as 'tour')", "no Queensland pass expected"]
+ },
+ "brisbane-24": {
+  "bio": "Ranger-run centre in Daisy Hill Conservation Park where you see wild koalas up close, free to enter.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "entry" },
+  "ticketUrl": "https://parks.qld.gov.au/parks/daisy-hill-koala-centre",
+  "unverified": ["ranger talk times (search summary only; not used)"]
+ },
+ "gold-coast-2": {
+  "bio": "Heritage-listed wildlife sanctuary at Currumbin, known for wild rainbow lorikeets that flock to feed.",
+  "visitHoursMin": 3, "visitHoursMax": 5,
+  "cost": { "costMin": 70, "costMax": 70, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://currumbinsanctuary.com.au/",
+  "unverified": ["$125 price column not identified (likely membership); $70 taken as adult day entry"]
+ }
+}

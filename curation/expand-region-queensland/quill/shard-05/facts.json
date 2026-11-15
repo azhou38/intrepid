@@ -1,0 +1,198 @@
+[
+ {
+  "id": "scenic-rim-7",
+  "text": "Spicers Gap: old Great Dividing Range pass in Main Range National Park (bio 1, 2)",
+  "source": "https://en.wikipedia.org/wiki/Spicers_Gap",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "scenic-rim-7",
+  "text": "Short walk to Governors Chair lookout (bio 1); 300 m return, cliff-edge lookout (bio 3)",
+  "source": "QPWS Main Range page, blocked (search snippet only)",
+  "status": "unverifiable",
+  "fix": "Bio 1 safe (no number). Bio 3's 300 m needs a browser check of parks.qld.gov.au/parks/main-range; it is also 'near Brisbane' at ~100 km, loose. Prefer bio 1 or 2."
+ },
+ {
+  "id": "scenic-rim-7",
+  "text": "cost: free, open; ticketUrl https://parks.qld.gov.au/parks/main-range",
+  "source": "parks.qld.gov.au (403 bot wall)",
+  "status": "unverifiable",
+  "fix": "BLOCKED: check in the in-app browser that no day-use fee applies and the page names Main Range NP. Free/open is consistent with Queensland practice; no pass in parkPasses.ts applies. Report: no Queensland pass defined."
+ },
+ {
+  "id": "scenic-rim-9",
+  "text": "Lake on Reynolds Creek, swimming area at A G Muller Park, dam-wall access to Mount Edwards, waterski/jetski, stocked impoundment permit to fish (bios 1-3)",
+  "source": "https://en.wikipedia.org/wiki/Moogerah_Dam",
+  "status": "supported",
+  "fix": "Bio 3 'Swim, waterski or fish' is fine; permit is an extra, not a price."
+ },
+ {
+  "id": "scenic-rim-9",
+  "text": "cost free/open; no ticketUrl",
+  "source": "no single steward found",
+  "status": "supported",
+  "fix": "Omit ticketUrl as proposed. Free beach/lake access: costBasis open is acceptable."
+ },
+ {
+  "id": "moreton-island-1",
+  "text": "15 vessels scuttled north of Tangalooma Island Resort; turtles, wobbegongs, 200+ fish species; snorkelling (bios 1-3)",
+  "source": "https://en.wikipedia.org/wiki/Tangalooma,_Queensland",
+  "status": "supported",
+  "fix": "Bio 3 'reached by resort snorkel tour or private boat' is a fair reading of the access note; 'a short way' paraphrase only. Wiki field is a section anchor: use 'Tangalooma, Queensland' or give a photo override."
+ },
+ {
+  "id": "moreton-island-1",
+  "text": "cost free/open; no ticketUrl",
+  "source": "tangalooma.com is an operator (tours), wrecks have no steward",
+  "status": "supported",
+  "fix": "Wrecks are reached only by boat or tour; costBasis 'open' is acceptable but the visitor will pay for the tour. Omit ticketUrl as proposed."
+ },
+ {
+  "id": "moreton-island-3",
+  "text": "Queensland's oldest lighthouse, sandstone, two red bands, Cape Moreton NE tip, marks northern entrance to Moreton Bay (bios 1-3); heritage-listed",
+  "source": "https://en.wikipedia.org/wiki/Cape_Moreton_Light",
+  "status": "supported",
+  "fix": "Bio 1/2 fine. Bio 3 'closed to the public but seen from outside' matches 'closed to the public though station is accessible'."
+ },
+ {
+  "id": "moreton-island-3",
+  "text": "cost free/open; ticketUrl https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island",
+  "source": "parks.qld.gov.au (403)",
+  "status": "unverifiable",
+  "fix": "BLOCKED: confirm in a browser that the page names Moreton Island and that the vehicle access permit is transport only. Do not set needs:'permit' on the spot unless the owner wants the VAP treated as the cost of reaching it (research says transport, not price)."
+ },
+ {
+  "id": "moreton-island-6",
+  "text": "Heritage-listed WWII battery at Cowan Cowan; closed by 1960; much removed; QHR 2007 (bios 1, 2)",
+  "source": "https://en.wikipedia.org/wiki/Fort_Cowan_Cowan",
+  "status": "supported",
+  "fix": "Only source is Wikipedia; no visitor source or public access found. Fails COVERAGE bar 1 and 2: send to review, do not add outright (as the writer suggests)."
+ },
+ {
+  "id": "north-stradbroke-island-2",
+  "text": "Clifftop boardwalk at Point Lookout; dolphins, turtles, manta rays, humpbacks (bio 1)",
+  "source": "redland.qld.gov.au (404 on fetch; search summary only)",
+  "status": "unverifiable",
+  "fix": "Wildlife list is from a search summary. Re-check on a live council page or Redland tourism before shipping."
+ },
+ {
+  "id": "north-stradbroke-island-2",
+  "text": "Humpbacks May to October, manta rays November to February (bio 2)",
+  "source": "search summary of council page",
+  "status": "unverifiable",
+  "fix": "Seasons not confirmed on a loaded page; use bio 1 until verified."
+ },
+ {
+  "id": "north-stradbroke-island-2",
+  "text": "Reopened in 2021 after storm damage (bio 3)",
+  "source": "redlandscoasttoday.com.au headline, not loaded",
+  "status": "unverifiable",
+  "fix": "Tried: search result only. Drop the date or verify; 'transient-ish' history, bio 1 is safest."
+ },
+ {
+  "id": "north-stradbroke-island-2",
+  "text": "cost free/open; no ticketUrl; no Wikipedia article for photo",
+  "source": "council reserve",
+  "status": "supported",
+  "fix": "Omit ticketUrl. Walk length not sourced, so visit hours remain an estimate (allowed)."
+ },
+ {
+  "id": "north-stradbroke-island-3",
+  "text": "Minjerribah national park containing Kaboora (Blue Lake), two sections open (bio 1); contains the former Blue Lake National Park (bio 2)",
+  "source": "https://en.wikipedia.org/wiki/Naree_Budjong_Djara_National_Park",
+  "status": "supported",
+  "fix": "Bio 2 supported by Wikipedia. 'Two sections open' comes from a blocked QPWS summary: prefer bio 2 or verify. Category should be nature, not entertainment."
+ },
+ {
+  "id": "north-stradbroke-island-3",
+  "text": "cost free/open; ticketUrl https://parks.qld.gov.au/parks/naree-budjong-djara",
+  "source": "parks.qld.gov.au (403)",
+  "status": "unverifiable",
+  "fix": "BLOCKED: browser check for no day-use fee and that the page is this park. Mention: Blue Lake itself is within Naree Budjong Djara, so costBasis could be open; no park pass applies."
+ },
+ {
+  "id": "sunshine-coast-6",
+  "text": "Marine mammal park/oceanarium/wildlife sanctuary at Mooloolaba, Merlin Sea Life brand (bios 1, 2)",
+  "source": "https://en.wikipedia.org/wiki/Sea_Life_Sunshine_Coast",
+  "status": "supported",
+  "fix": "Bio 2 is a stale Wikipedia-style description (the site now emphasises penguins and seals); bio 1 preferred. 'Wildlife sanctuary' not confirmed on the official page."
+ },
+ {
+  "id": "sunshine-coast-6",
+  "text": "Adult price AUD 37-49 (General Admission, Adult 15+: $45 weekend advance, $37 weekday advance, $49 holiday/on the day), costBasis entry",
+  "source": "https://www.visitsealife.com/sunshine-coast/dive-below-the-surface/ (re-read fresh)",
+  "status": "supported",
+  "fix": "costMin 37, costMax 49, costBasis 'entry'. Dynamic pricing, so approximate. Price includes an 8-photo Digi Photo Pass per the page."
+ },
+ {
+  "id": "sunshine-coast-6",
+  "text": "ticketUrl https://www.visitsealife.com/sunshine-coast/",
+  "source": "re-fetched, 200, title 'SEA LIFE Sunshine Coast Aquarium in Mooloolaba, AUS - Official Website'",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "sunshine-coast-8",
+  "text": "Zoo at Big Pineapple, Woombye, 50+ species, 10+ animal encounters (bio 1)",
+  "source": "https://bigpineapple.com.au/collection/wildlife-hq-zoo/ (re-read) and whqzoo.com",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "sunshine-coast-8",
+  "text": "Opened 2013, animals relocated from Alma Park Zoo in 2014 (bio 2)",
+  "source": "https://en.wikipedia.org/wiki/Wildlife_HQ_Zoo",
+  "status": "supported",
+  "fix": "History-only bio; bio 1 says more about the visit."
+ },
+ {
+  "id": "sunshine-coast-8",
+  "text": "Adult price AUD 54, zoo only, costBasis entry",
+  "source": "https://bigpineapple.com.au/collection/wildlife-hq-zoo/ (re-read fresh: Zoo Only Adults $54, Kids $40, Seniors $47; combo with train $63)",
+  "status": "supported",
+  "fix": "costMin=costMax=54. whqzoo.com/prices renders prices by script, not readable; price date unknown."
+ },
+ {
+  "id": "sunshine-coast-8",
+  "text": "ticketUrl https://whqzoo.com/",
+  "source": "re-fetched, 200, title 'Home - Wildlife HQ', own nav has Prices page",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "sunshine-coast-9",
+  "text": "Family theme park off the Bruce Highway, about 30 rides, Redback spinning coaster (bio 1); SX360, Dingo Racer, Sideshow Alley (bio 2); Palmview, mini golf, sideshow games (bio 3)",
+  "source": "https://www.aussieworld.com.au/ and Wikipedia (Aussie World)",
+  "status": "supported",
+  "fix": "Official home says 'up to 30' rides and names SX360 and Dingo Racer; 'Redback' and 'mini golf' come from Wikipedia/FAQ via the researcher, not re-seen on the home page: low risk. Bio 2 'Privately owned' is Wikipedia wording. Prefer bio 3 or 1."
+ },
+ {
+  "id": "sunshine-coast-9",
+  "text": "Adult entry price (costBasis entry)",
+  "source": "https://www.aussieworld.com.au/tickets (re-read fresh: script-rendered HubTickets, no price in HTML)",
+  "status": "unverifiable",
+  "fix": "Resellers show A$39.60-53 but are not official; leave cost 'unverified' and read in a real browser at https://www.aussieworld.com.au/tickets. Do not write a price until then."
+ },
+ {
+  "id": "sunshine-coast-9",
+  "text": "ticketUrl https://www.aussieworld.com.au/",
+  "source": "re-fetched, 200, title 'Aussie World | The Sunshine Coast Theme Park'",
+  "status": "supported",
+  "fix": ""
+ },
+ {
+  "id": "all",
+  "text": "Visit hours ranges (estimates allowed)",
+  "source": "writer estimate",
+  "status": "supported",
+  "fix": "All ranges plausible and use quarter-hour steps; sunshine-coast-6 1.5-3 and zoo 2-4 reach hours so use hours, fine."
+ },
+ {
+  "id": "all",
+  "text": "bio-fit.py run on all 26 bio variants",
+  "source": "python3 scripts/curation/bio-fit.py --text",
+  "status": "supported",
+  "fix": "All 26 fit in 3 lines (2 for north-stradbroke-island-3 variant 2)."
+ }
+]

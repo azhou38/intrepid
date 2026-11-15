@@ -1,0 +1,191 @@
+{
+ "ingham-3": {
+  "facts": {
+   "length": "32 km along the east coast of Hinchinbrook Island National Park; accessed by private ferry to/from Ramsay Bay or George Point, schedule varies with tides; described as iconic by Australian Geographic and one of the best multi-day hikes in Australia by The Guardian",
+   "camping": "Permits sold per Thorsborne Trail Pass (2-5 nights), seasonal release; max independent group 6; 2027 permit release 9 Sep-31 Dec 2026 (per search snippet of QPWS pages)"
+  },
+  "sources": {
+   "length": "https://en.wikipedia.org/api/rest_v1/page/summary/Thorsborne_Trail",
+   "camping": "https://parks.qld.gov.au/parks/hinchinbrook-thorsborne/camping (BLOCKED to scripts; read via search result snippet)"
+  },
+  "free": false,
+  "costMin": 7.5,
+  "costMax": 7.5,
+  "currency": "AUD",
+  "costBasis": "permit",
+  "costPer": "Per Night",
+  "needs": "permit",
+  "cost_note": "QPWS national park camping fee $7.50 per adult per night, reported in search summary of QPWS pages; not confirmed on the page (403). Re-check in browser.",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/hinchinbrook-thorsborne",
+  "unverified": [
+   "exact permit fee on QPWS page",
+   "hours not researched by design"
+  ]
+ },
+ "ingham-4": {
+  "facts": {
+   "what": "Day-use area and short walk to waterfall in Mount Spec/Jourama Falls section of Paluma Range National Park, between Ingham and Townsville; camping area beside Waterview Creek; shelter shed and picnic table; open 24 hours; lookout walking track update listed 18 Mar 2026 to 22 Oct 2027"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Jourama_Falls ; QPWS pages https://parks.qld.gov.au/parks/paluma-range/things-to-do (BLOCKED, via search snippet)"
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_note": "No day-use fee found; camping is separate (fee applies, amount not found). No Queensland-wide entry pass exists.",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/paluma-range",
+  "unverified": [
+   "QPWS page contents (403)",
+   "camping fee amount",
+   "track closure status"
+  ]
+ },
+ "ingham-5": {
+  "facts": {
+   "what": "Mix of natural and manmade wetlands in Ingham supporting freshwater species and birdlife, named for the Eastern Grass Owl (Tyto longimembris); site of TYTO Regional Art Gallery (Hinchinbrook Shire Council, opened March 2011), conference centre, cafe and visitor information centre (2020 report; may have changed)"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/TYTO_Wetlands ; web search results (birdingplaces.eu, Hinchinbrook Shire Council docs)"
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_note": "No entry fee found for wetlands; not confirmed on an official page.",
+  "ticketUrl": "none",
+  "ticketUrl_note": "tyto.com.au redirects to generic council 'Hinchinbrook Way' page, no TYTO page; council site hinchinbrook.qld.gov.au tyto-regional-art-gallery 404. Could use council site if owner wants.",
+  "unverified": [
+   "gallery/wetlands entry fee not on an official page",
+   "wiki: TYTO Regional Art Gallery article exists but covers the gallery"
+  ]
+ },
+ "ingham-7": {
+  "facts": {
+   "what": "Waterfall about 1 km upstream of the beach and lagoon at Zoe Bay on Hinchinbrook Island; on the Thorsborne Trail, also reachable by boat (about 45 min per one operator); freshwater pools at base and top; QPWS asks walkers to stay on trail and not camp at Zoe Falls"
+  },
+  "sources": {
+   "what": "https://hikingtheworld.blog/waterfalls/zoe-falls/ ; https://hinchinbrookecotours.rezdy.com/648764/zoe-bay-falls ; QPWS Thorsborne walking page (BLOCKED, via search snippet)"
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_note": "Reached on foot via Thorsborne Trail (permit/camping for overnight) or boat tour; the falls themselves charge nothing found. Marked free; boat transport not counted.",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/hinchinbrook/attractions/south-zoe-bay-day-use-area",
+  "unverified": [
+   "no Wikipedia article",
+   "QPWS page contents (403)",
+   "swimming safety (crocodiles in Zoe Bay itself)"
+  ]
+ },
+ "ingham-8": {
+  "facts": {
+   "what": "Day-use (picnic) area in the Mount Spec section of Paluma Range National Park; flush toilets; swimming is at Paradise waterhole and The Rockslides natural waterslide is further downstream; open 24 hours but wet-weather access may be cut when causeways flood; limited mobile coverage"
+  },
+  "sources": {
+   "what": "https://parks.qld.gov.au/parks/paluma-range/attractions/big-crystal-creek-day-use-area-mount-spec-section (BLOCKED, via search snippet)"
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_note": "No day-use fee found; camping area separate with fees.",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/paluma-range/attractions/big-crystal-creek-day-use-area-mount-spec-section",
+  "unverified": [
+   "QPWS page contents (403)"
+  ]
+ },
+ "ingham-9": {
+  "facts": {
+   "what": "Day-use area about two-thirds of the way along Mt Spec Road towards Paluma, Paluma Range National Park; short walk to swimming spot near a stone bridge; picnic tables, sheltered barbecues, accessible toilets; warnings against jumping or diving; QPWS lists a temporary closure from 7 Feb 2025 to 6 Dec 2026 (older listing) or 16 Jun 2027 (newer page)"
+  },
+  "sources": {
+   "what": "https://parks.qld.gov.au/parks/paluma-range/attractions/little-crystal-creek-day-use-area-mount-spec-section ; https://parks.qld.gov.au/parks/paluma-range/visiting-safely (both BLOCKED, via search snippet)"
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_note": "No day-use fee found.",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/paluma-range/attractions/little-crystal-creek-day-use-area-mount-spec-section",
+  "flag": "Temporary closure reported to Dec 2026 or Jun 2027: check in browser before keeping or bio wording",
+  "unverified": [
+   "current closure status and end date"
+  ]
+ },
+ "cairns-3": {
+  "facts": {
+   "what": "Aquarium with more than 16,000 aquatic animals in 9 ecosystems across 11 zones, showing Tropical North Queensland's Wet Tropics rainforest and Great Barrier Reef animals; has a Turtle Rehabilitation Centre (tours A$20)",
+   "price": "General admission adult (15+) A$61, child A$35, concession A$48, family A$173"
+  },
+  "sources": {
+   "what": "https://www.cairnsaquarium.com.au/tickets/general-admission/",
+   "price": "https://www.cairnsaquarium.com.au/tickets/general-admission/ (retrieved 2026-11-15)"
+  },
+  "free": false,
+  "costMin": 61,
+  "costMax": 61,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "ticketUrl": "https://www.cairnsaquarium.com.au/",
+  "ticketUrl_check": "title 'Cairns Aquarium | Marine Life Encounters & More in Cairns - Australia', 200",
+  "unverified": []
+ },
+ "cairns-4": {
+  "facts": {
+   "what": "4800 sq m salt water swimming lagoon on the Cairns Esplanade, free, year-round, lifeguard-monitored, with toilets and showers; periodic closures for maintenance (5-week closure every two years, 2026/27 renewal budgeted); a constructed, croc-free pool; no dogs"
+  },
+  "sources": {
+   "what": "https://www.cairns.qld.gov.au/about-council/news-notices/news/media-releases/beloved-esplanade-lagoons-maintenance-program (via search summary; council site BLOCKED to scripts) ; https://swimmingholeheaven.com/qld-cairns-lagoon.htm"
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_note": "Free per council description in search results; gate/ticket-free public lagoon.",
+  "ticketUrl": "none",
+  "ticketUrl_note": "Council is the steward; Esplanade page https://www.cairns.qld.gov.au/experience-cairns/Cairns-Esplanade/esplanade-sport-and-fitness-facilities is BLOCKED (403). Orchestrator may check in browser; otherwise none.",
+  "unverified": [
+   "Wikipedia: no article",
+   "closure status for maintenance period"
+  ]
+ },
+ "cairns-5": {
+  "facts": {
+   "what": "Botanic gardens in Edge Hill comprising Flecker Garden, Centenary Lakes and the Watkins Munro Martin Conservatory; entry free; free Friends-run guided walks of Flecker Garden on weekday mornings (reported); possible construction works July-Nov 2026 (commercial listing)"
+  },
+  "sources": {
+   "what": "https://www.cairns.qld.gov.au/_media/redirects/friends-of-the-botanic-gardens2 (council-hosted Friends page, via search summary); https://tropicalnorthqueensland.org.au/listing/product/flecker-botanic-gardens/"
+  },
+  "free": true,
+  "costBasis": "entry",
+  "needs": null,
+  "cost_note": "Entry free (Friends page: 'Entry is free'). Gardens have gate hours so costBasis entry.",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://www.cairns.qld.gov.au/experience-cairns/botanic-gardens/visit-the-gardens (403 to script; from council nav)",
+  "unverified": [
+   "Centenary Lakes inclusion; evidence says Flecker Botanical Gardens is same place - WP title 'Cairns Botanic Gardens' not checked",
+   "construction closures"
+  ]
+ },
+ "cairns-7": {
+  "facts": {
+   "what": "Social history museum in the historic School of Arts building in central Cairns, run by the Cairns Historical Society; four permanent galleries plus a changing ground-floor gallery; kids' discovery trails",
+   "price": "Adult $15, child (under 14) $6, family $30, concession $12; members free"
+  },
+  "sources": {
+   "what": "https://cairnsmuseum.org.au/",
+   "price": "https://cairnsmuseum.org.au/visitor-information/ (retrieved 2026-11-15)"
+  },
+  "free": false,
+  "costMin": 15,
+  "costMax": 15,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "ticketUrl": "https://cairnsmuseum.org.au/",
+  "ticketUrl_check": "title 'Cairns Museum', 200",
+  "unverified": []
+ }
+}

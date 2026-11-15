@@ -1,0 +1,280 @@
+[
+ {
+  "id": "sunshine-coast-10",
+  "claims": [
+   {
+    "text": "Lighthouses built 1896 and 1968 at Kings Beach, mark entrance to Moreton Bay",
+    "source": "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Heritage-listed (bio 1, 3)",
+    "source": "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+    "status": "unverifiable",
+    "fix": "Council page does not say heritage-listed; Wikipedia summary only per researcher. Safe to keep bio 2 (no listing claim)."
+   },
+   {
+    "text": "Guided tours on some Saturdays (2nd and 4th, 9am-3pm or appointment)",
+    "source": "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+    "status": "supported",
+    "fix": "Bio 3 'open for guided tours' is fine but bio 2 'some Saturdays' is more exact. Do not store hours."
+   },
+   {
+    "text": "Price: costBasis tour, amount",
+    "source": "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+    "status": "unverifiable",
+    "fix": "Council says only 'Adult entry fees apply. Children free.' No amount found; leave cost unverified. Basis is entry (adult entry fee), not tour: change costBasis to 'entry' when an amount is found."
+   },
+   {
+    "text": "ticketUrl council heritage page",
+    "source": "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+    "status": "supported",
+    "fix": "Loaded 200 fresh, titled Caloundra Lighthouses; acceptable, Friends' own site not found."
+   }
+  ]
+ },
+ {
+  "id": "sunshine-coast-11",
+  "claims": [
+   {
+    "text": "Over 80 historic military and civilian aircraft on two hectares, many undercover, free guides most days",
+    "source": "https://www.qldair.museum/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Adult entry AUD 25 (entry basis); concession 18, child 12.50, family 60",
+    "source": "https://www.qldair.museum/",
+    "status": "supported",
+    "fix": "Re-read fresh: admission prices ADULT $25. costMin=costMax=25, costBasis 'entry'."
+   },
+   {
+    "text": "ticketUrl https://www.qldair.museum/",
+    "source": "https://www.qldair.museum/",
+    "status": "supported",
+    "fix": "Loaded 200 fresh, title Queensland Air Museum, Buy Tickets link; not qam.com.au."
+   },
+   {
+    "text": "Bio: 'Caloundra Airport'",
+    "source": "https://www.qldair.museum/",
+    "status": "supported",
+    "fix": "Site says adjacent to the Caloundra Aerodrome on Pathfinder Drive; 'at Caloundra Airport' acceptable, 'beside' is more exact (optional)."
+   }
+  ]
+ },
+ {
+  "id": "sunshine-coast-18",
+  "claims": [
+   {
+    "text": "900 m (one way) elevated boardwalk through eucalypt, melaleuca, rainforest to mangroves on Maroochy River; audio trail; crabs and birds",
+    "source": "https://www.sunshinecoast.qld.gov.au/environment/get-involved-in-conservation/environmental-education-centres/maroochy-wetlands-sanctuary",
+    "status": "supported",
+    "fix": "Bio 1 says '900 m boardwalk' without 'one way'; fine. Council page names crabs, birds, audio trail; 'fiddler crabs' and 'visitor centre' come from the third-party page and the council's 'visitor centres' heading only: prefer bio 1 or 3 minus 'visitor centre' if not confirmed."
+   },
+   {
+    "text": "Free entry (free: true, basis open)",
+    "source": "same council page",
+    "status": "unverifiable",
+    "fix": "Council page states no fee and says 'free of steps and hills' only; free comes from third-party listing. Accept free:true with that caveat; 'open' basis acceptable (no gate seen)."
+   },
+   {
+    "text": "ticketUrl council page",
+    "source": "same council page",
+    "status": "supported",
+    "fix": "Loaded 200, headed Maroochy wetlands sanctuary."
+   },
+   {
+    "text": "Pin",
+    "source": "research.json",
+    "status": "unverifiable",
+    "fix": "Pin is a river-end pontoon (MEDIUM), not the boardwalk midpoint or entrance: orchestrator to re-pin about 450 m inland. Category entertainment should be nature."
+   }
+  ]
+ },
+ {
+  "id": "sunshine-coast-20",
+  "claims": [
+   {
+    "text": "Serenity Falls aka Buderim Falls, in Buderim Forest Park, 600 m walkway from Lindsay Rd, arch bridge, waterhole, best after rain",
+    "source": "https://www.visitsunshinecoast.com/attraction/57e1b260744d76636a0cfe91/buderim-falls",
+    "status": "supported",
+    "fix": "Tourism listing, not re-fetched; all bio variants consistent with it."
+   },
+   {
+    "text": "Free, basis open, no pass",
+    "source": "buderim-forest-park council page (directory shell)",
+    "status": "unverifiable",
+    "fix": "No fee statement on any page read; council park, no Queensland pass applies. Accept free:true (open access)."
+   },
+   {
+    "text": "ticketUrl Buderim Forest Park council page",
+    "source": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/buderim-forest-park",
+    "status": "supported",
+    "fix": "Loaded 200 fresh titled Buderim Forest Park; a directory list page, so weak. Consider omitting ticketUrl (open place, no one steward page for the falls)."
+   }
+  ]
+ },
+ {
+  "id": "noosa-1",
+  "claims": [
+   {
+    "text": "Coastal scenery, eucalypt forest, wallum heath, rainforest pockets; walks Coastal, Noosa Hill, Alexandria Bay; koalas often seen on Noosa Hill Walk",
+    "source": "https://parks.qld.gov.au/parks/noosa",
+    "status": "supported",
+    "fix": "Re-read fresh, loaded 200."
+   },
+   {
+    "text": "No day-use fee; free, basis open; no camping",
+    "source": "https://parks.qld.gov.au/parks/noosa",
+    "status": "supported",
+    "fix": "Page lists 'No camping' and no fee line. Basis 'open' vs 'entry': it is a national park with no gate; accept 'open'. No Queensland pass in parkPasses.ts applies."
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/noosa",
+    "source": "same",
+    "status": "supported",
+    "fix": "Loaded 200, title Noosa National Park."
+   }
+  ]
+ },
+ {
+  "id": "noosa-6",
+  "claims": [
+   {
+    "text": "Drinking-water dam about 4 km NE of Cooroy, official name Six Mile Creek Dam; Lake Macdonald Park and Noosa Botanic Gardens",
+    "source": "https://www.seqwater.com.au/dams/lake-macdonald-six-mile-creek",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Bio 3: 'non-motorised on-water recreation'",
+    "source": "same",
+    "status": "unsupported",
+    "fix": "Seqwater page lists electric boating at Lake Macdonald Park. Drop 'non-motorised'; use bio 2 or say 'on-water recreation'."
+   },
+   {
+    "text": "'About 4 km north-east of Cooroy' (bio 2)",
+    "source": "research.json / Wikipedia",
+    "status": "unverifiable",
+    "fix": "Not on Seqwater page; Wikipedia summary only. Acceptable if Wikipedia confirms."
+   },
+   {
+    "text": "Free, basis open",
+    "source": "same",
+    "status": "unverifiable",
+    "fix": "No fee stated; reasonable. Note lake held at 39.1% and temporary closures during dam works (put in a tip, not bio). Set wiki 'Six Mile Creek Dam' or 'Lake Macdonald, Queensland'."
+   },
+   {
+    "text": "ticketUrl Seqwater page",
+    "source": "same",
+    "status": "supported",
+    "fix": "Loaded 200 fresh, title Lake Macdonald (Six Mile Creek) | Seqwater."
+   }
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-1",
+  "claims": [
+   {
+    "text": "Rural town, former timber town then dairy and fruit centre, population about 4,000 (3,959 in 2021)",
+    "source": "https://en.wikipedia.org/api/rest_v1/page/summary/Maleny%2C_Queensland",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Bio says why to stop",
+    "source": "evidence bundle",
+    "status": "unsupported",
+    "fix": "Both bios give only demographics and history, no visitor reason (WRITING.md: what it is and why worth a stop). Needs a visitor source (Wikivoyage / tourism board) before it can be written; hold. Category should be town-type not nature."
+   },
+   {
+    "text": "No ticketUrl; free open",
+    "source": "none",
+    "status": "supported",
+    "fix": "Town with no single steward: correct."
+   }
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-4",
+  "claims": [
+   {
+    "text": "90 m waterfall into rainforest, Blackall Range near Montville, picnic area, Picnic Creek circuit 1.7 km, protected since 1906",
+    "source": "https://apps.des.qld.gov.au/park-brochures/sunshinecoast-hinterland-guide/21",
+    "status": "supported",
+    "fix": "Bio 1 says '90 m waterfall' ok."
+   },
+   {
+    "text": "No day fee; free, basis open",
+    "source": "same brochure",
+    "status": "supported",
+    "fix": "No Queensland pass applies; camping only at Great Walk bush camp."
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/kondalilla",
+    "source": "parks.qld.gov.au",
+    "status": "unverifiable",
+    "fix": "BLOCKED (403 bot wall) re-tested fresh; check in the in-app browser before use. Not evidence against."
+   },
+   {
+    "text": "Pin shared with sunshine-coast-hinterland-5",
+    "source": "placement.pinned.json",
+    "status": "unsupported",
+    "fix": "Both at -26.671711,152.8655 (Falls Lookout): lint pin-shared. The circuit must be re-pinned at its route midpoint."
+   }
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-5",
+  "claims": [
+   {
+    "text": "4.7 km return, Grade 3, over 300 stairs, 2-3 hr, rock pools, base of falls, bunya pines and piccabeen palms",
+    "source": "https://apps.des.qld.gov.au/park-brochures/sunshinecoast-hinterland-guide/21",
+    "status": "supported",
+    "fix": "Bio 1 'from the picnic area down to the base' consistent."
+   },
+   {
+    "text": "Free, basis open",
+    "source": "brochure",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl (same blocked QPWS page)",
+    "source": "parks.qld.gov.au",
+    "status": "unverifiable",
+    "fix": "BLOCKED, browser check needed."
+   },
+   {
+    "text": "Pin at same point as park",
+    "source": "placement.pinned.json",
+    "status": "unsupported",
+    "fix": "Move to route midpoint (OSM route / agency map)."
+   }
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-8",
+  "claims": [
+   {
+    "text": "Dam on Obi Obi Creek about 7 km north of Maleny forming Lake Baroon; picnic, kayaking, sailing, fishing, designated swimming at Southern area, walking trails",
+    "source": "https://www.seqwater.com.au/dams/baroon-pocket",
+    "status": "supported",
+    "fix": "Re-read fresh. 'swimming area' ok (designated only). Bio 2 'bush walks' ok."
+   },
+   {
+    "text": "Free, basis open",
+    "source": "same",
+    "status": "unverifiable",
+    "fix": "Not stated on page; fishing needs a permit (not an entry fee). Accept free:true. Category viewpoint is odd: recreation lake, nature."
+   },
+   {
+    "text": "ticketUrl Seqwater Baroon Pocket",
+    "source": "same",
+    "status": "supported",
+    "fix": "Loaded 200, title Baroon Pocket | Seqwater."
+   }
+  ]
+ }
+]

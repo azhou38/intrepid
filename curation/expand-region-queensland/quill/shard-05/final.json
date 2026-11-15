@@ -1,0 +1,73 @@
+{
+ "scenic-rim-7": {
+  "bio": "The original road over the Great Dividing Range west of Brisbane, now a base for campers and bushwalkers.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/main-range",
+  "unverified": ["no day-use fee (QPWS blocked)", "Governors Chair 300 m walk left out of bio (snippet only)", "no Queensland pass in parkPasses.ts applies"]
+ },
+ "scenic-rim-9": {
+  "bio": "Lake on Reynolds Creek with a swimming area at A G Muller Park and dam-wall access to Mount Edwards.",
+  "visitHoursMin": 1, "visitHoursMax": 3,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["no single official steward page found"]
+ },
+ "moreton-island-1": {
+  "bio": "Fifteen scuttled ships off Tangalooma form a reef for snorkelling with turtles, wobbegongs and fish.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "wiki": "Tangalooma, Queensland",
+  "wiki_note": "Suggestion: the input wiki is a section anchor; photo may need an override",
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["resort snorkel tours and ferry are extra and unpriced"]
+ },
+ "moreton-island-3": {
+  "bio": "Queensland's oldest lighthouse, a sandstone tower with two red bands, viewed from the Cape Moreton headland.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island",
+  "unverified": ["whether the quarters museum is open", "vehicle access permit fee is transport, not the spot price (no 'permit' need set)"]
+ },
+ "moreton-island-6": {
+  "bio": "Heritage-listed WWII battery at Cowan Cowan, closed by 1960, with much of it since removed.",
+  "visitHoursMin": 0, "visitHoursMax": 0.5,
+  "review": true,
+  "review_reason": "Only source is Wikipedia; no visitor source or public access found, so it may fail the spot bar (visible remains, public access).",
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["how much is visible and whether the public can reach it"]
+ },
+ "north-stradbroke-island-2": {
+  "bio": "Clifftop boardwalk and path along the headland at Point Lookout, run as a council reserve walk.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["wildlife and season claims left out (council page 404, search summary only): restore once a live page confirms them", "2021 reopening date (news headline only)", "no Wikipedia article: photo needs checking"]
+ },
+ "north-stradbroke-island-3": {
+  "bio": "Minjerribah national park that contains Kaboora (Blue Lake), formerly Blue Lake National Park.",
+  "visitHoursMin": 1, "visitHoursMax": 3,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/naree-budjong-djara",
+  "unverified": ["no day-use fee (QPWS blocked)", "no Queensland pass applies"]
+ },
+ "sunshine-coast-6": {
+  "bio": "Marine park and oceanarium at Mooloolaba, run under the Sea Life brand.",
+  "visitHoursMin": 1.5, "visitHoursMax": 3,
+  "cost": { "costMin": 37, "costMax": 49, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.visitsealife.com/sunshine-coast/",
+  "unverified": ["dynamic pricing: approximate", "'wildlife sanctuary' not confirmed on the official page (left out)"]
+ },
+ "sunshine-coast-8": {
+  "bio": "Zoo at the Big Pineapple in Woombye with over 50 species and more than ten animal encounters.",
+  "visitHoursMin": 2, "visitHoursMax": 4,
+  "cost": { "costMin": 54, "costMax": 54, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://whqzoo.com/",
+  "unverified": ["price date unknown (undated Big Pineapple page)"]
+ },
+ "sunshine-coast-9": {
+  "bio": "Family theme park at Palmview, off the Bruce Highway, with up to 30 rides, mini golf and sideshow games.",
+  "visitHoursMin": 2, "visitHoursMax": 4,
+  "cost": { "costBasis": "entry", "price": null, "status": "unverified" },
+  "ticketUrl": "https://www.aussieworld.com.au/",
+  "unverified": ["official adult price (ticket page script-rendered): read https://www.aussieworld.com.au/tickets in a real browser"]
+ }
+}

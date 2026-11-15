@@ -1,0 +1,378 @@
+{
+ "brisbane-1": {
+  "name": "Queensland Museum",
+  "wiki": "Queensland Museum",
+  "facts": {
+   "what": "State museum of Queensland, now branded Queensland Museum Kurilpa, South Brisbane; natural history, cultural heritage, science; over 15.2 million items; SparkLab science centre inside."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Queensland_Museum",
+     "what": "state museum, 15.2m items",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://www.museum.qld.gov.au/kurilpa",
+     "what": "Queensland Museum Kurilpa, state foremost collecting institution",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.museum.qld.gov.au/kurilpa/plan-your-visit/hours-and-admission",
+     "what": "Entry free; SparkLab and some exhibitions ticketed",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "entry"
+  },
+  "ticketUrl": "https://www.museum.qld.gov.au/kurilpa",
+  "ticketUrl_check": "page title \"Queensland Museum Kurilpa\"",
+  "notes": "Free general entry; SparkLab/some exhibitions charge extras (not the price).",
+  "unverified": [],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-2": {
+  "name": "Museum of Brisbane",
+  "wiki": "Museum of Brisbane",
+  "facts": {
+   "what": "History and art museum on Level 3 of Brisbane City Hall, CBD; exhibitions on contemporary and historic Brisbane, tours, workshops."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Museum_of_Brisbane",
+     "what": "location Level 3 City Hall",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.museumofbrisbane.com.au/visit-us/",
+     "what": "\"Entry is free.\"",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "entry"
+  },
+  "ticketUrl": "https://www.museumofbrisbane.com.au/",
+  "ticketUrl_check": "title \"Home - Museum of Brisbane | MoB\"",
+  "notes": "",
+  "unverified": [],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-3": {
+  "name": "Queensland Art Gallery",
+  "wiki": "Queensland Art Gallery",
+  "facts": {
+   "what": "Art museum at South Bank, part of QAGOMA, 150 m from the Gallery of Modern Art."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Queensland_Art_Gallery",
+     "what": "QAG at South Bank, part of QAGOMA, 150 m from GOMA",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.qagoma.qld.gov.au/visit/ticket-faqs/",
+     "what": "per web-search summary of the official site: general entry free; some exhibitions/cinema ticketed. Page itself BLOCKED to scripts, not loaded by me",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "entry"
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://www.qagoma.qld.gov.au/",
+  "ticketUrl_check": "403 \"Just a moment...\" on / and /visit: orchestrator to open in a real browser, confirm title and that general entry is free",
+  "notes": "Free cost rests on search summary of official page; confirm in browser.",
+  "unverified": [
+   "free entry (official page blocked)"
+  ],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-4": {
+  "name": "Lone Pine Koala Sanctuary",
+  "wiki": "Lone Pine Koala Sanctuary",
+  "facts": {
+   "what": "18-hectare koala sanctuary in Fig Tree Pocket; daily talks, shows, feedings and free-range kangaroo feeding included in entry; claims to be the world oldest koala sanctuary (est. 1927).",
+   "visit": "Operator says most visitors spend three to four hours."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Lone_Pine_Koala_Sanctuary",
+     "what": "18 ha, Fig Tree Pocket",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://lonepinekoalasanctuary.com/tickets-membership/",
+     "what": "inclusions, 3-4 hours, est. 1927 on site title/menu",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://lonepinekoalasanctuary.com/tickets-membership/",
+     "what": "Adult 18+ $63, child 3-13 $45; yearly pass $101",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "costMin": 63,
+   "costMax": 63,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "ticketUrl": "https://lonepinekoalasanctuary.com/",
+  "ticketUrl_check": "title \"Visit Lone Pine - World's Oldest & Largest Koala Sanctuary\"; koala.net redirects here",
+  "notes": "Site banner: full closure 17-18 Nov (2026) for power upgrade; transient, do not write. Parking free per operator.",
+  "unverified": [],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-5": {
+  "name": "Brisbane Botanic Gardens Mount Coot-tha",
+  "wiki": "Brisbane Botanic Gardens, Mount Coot-tha",
+  "facts": {
+   "what": "56-hectare subtropical botanic gardens at the foot of Mount Coot-tha, about 7 km from the CBD; Tropical Display Dome, Japanese Garden, Sir Thomas Brisbane Planetarium nearby; ~1.4 million visitors a year (Wikipedia)."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/brisbane-botanic-gardens-mt-coot-tha",
+     "what": "56 ha, Queensland premier subtropical botanic gardens",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Brisbane_Botanic_Gardens,_Mount_Coot-tha",
+     "what": "7 km from CBD, dome, Japanese Garden",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/brisbane-botanic-gardens-mt-coot-tha",
+     "what": "\"free entry\"",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "entry"
+  },
+  "ticketUrl": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/brisbane-botanic-gardens-mt-coot-tha",
+  "ticketUrl_check": "title \"Brisbane Botanic Gardens Mt Coot-tha | Brisbane City Council\" (managing agency)",
+  "notes": "Category in placement is viewpoint; probably nature/garden (owner/writer). Staffed gardens with a car park and dome: kept as entry, not open. Is a council park, no Qld park pass.",
+  "unverified": [],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-6": {
+  "name": "South Bank Parklands",
+  "wiki": "South Bank Parklands",
+  "facts": {
+   "what": "Riverside parkland on the Expo 88 site, opened 20 June 1992; rainforest, grassed areas, riverfront promenade, Streets Beach lagoon, Grand Arbour, Wheel of Brisbane, Nepalese Peace Pagoda, restaurants and shops."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/South_Bank_Parklands",
+     "what": "opened 1992, Expo 88 site, features",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.visitsouthbank.com.au/places/streets-beach-at-south-bank-parklands",
+     "what": "Streets Beach free, lifeguarded seven days a week",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://www.visitsouthbank.com.au/",
+     "what": "Visit South Bank official precinct site",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "https://www.visitsouthbank.com.au/",
+  "ticketUrl_check": "title \"Visit South Bank\"; precinct site, not independently confirmed as steward (South Bank Corporation) - fine to use or omit",
+  "notes": "Open precinct, no gate; Wheel of Brisbane etc. are extras not priced. Parking under parklands is paid, ignored.",
+  "unverified": [],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-7": {
+  "name": "Queen's Wharf",
+  "wiki": "Queen's Wharf, Brisbane",
+  "facts": {
+   "what": "12-hectare riverside precinct in the CBD: Sky Deck rooftop runway (250 m) with bars, restaurants, the Star Brisbane casino and hotels, Neville Bonner Bridge to South Bank, riverside bikeway and mangrove walk, and repurposed heritage buildings (nine of eleven state-owned heritage sites open to the public per Wikipedia). Opened in stages from 29 August 2024."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Queen%27s_Wharf,_Brisbane",
+     "what": "12 ha, Sky Deck, Neville Bonner Bridge, 11 heritage sites, staged opening 29 Aug 2024",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://queenswharfbrisbane.com.au/",
+     "what": "Sky Deck 250 m runway, three venues; lifestyle precinct",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Queen%27s_Wharf,_Brisbane",
+     "what": "Sky Deck \"will be open to the public 24/7\" (planned wording); no entry charge found",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "https://queenswharfbrisbane.com.au/",
+  "ticketUrl_check": "title \"Queen's Wharf Brisbane - Brisbane's Newest Entertainment Lifestyle Precinct\"",
+  "notes": "WRONG WIKI: evidence bundle matched Queens Wharf (Newcastle NSW). Use wiki \"Queen's Wharf, Brisbane\". Free/open is from Wikipedia only; no official page loaded stating free entry to the precinct/Sky Deck.",
+  "unverified": [
+   "free entry to precinct and Sky Deck (Wikipedia only)"
+  ],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-8": {
+  "name": "City Botanic Gardens",
+  "wiki": "City Botanic Gardens",
+  "facts": {
+   "what": "Heritage-listed 18-hectare riverside gardens at Gardens Point in the CBD with 1.2 km of river frontage; heritage, exotic and native plants and trees; established 1825 as a farm for the Moreton Bay penal settlement, horticultural use since 1828."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/city-botanic-gardens",
+     "what": "18 ha, 1.2 km river frontage",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/City_Botanic_Gardens",
+     "what": "1825 farm, heritage register",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/city-botanic-gardens",
+     "what": "public council park; no fee mentioned",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/city-botanic-gardens",
+  "ticketUrl_check": "title \"City Botanic Gardens | Brisbane City Council\" (managing agency)",
+  "notes": "No Qld park pass. \"Free\" rests on no fee on council page plus open council park; page does not say \"free\" explicitly.",
+  "unverified": [
+   "explicit \"free\" statement"
+  ],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-9": {
+  "name": "Cathedral of St Stephen",
+  "wiki": "Cathedral of St Stephen, Brisbane",
+  "facts": {
+   "what": "Gothic Revival Catholic cathedral, consecrated 1874, spired sandstone towers, imported Munich stained glass and a Harry Clarke \"Mayne\" window; beside it Pugin-designed Old St Stephen's Church (1847-50), the oldest Catholic church in Queensland."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Cathedral_of_St_Stephen,_Brisbane",
+     "what": "Gothic Revival, Munich glass, Harry Clarke window, Pugin chapel 1847-50",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://www.cathedralofststephen.org.au/history.html",
+     "what": "Pugin chapel history; Cathedral Guides & Welcomers listed",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.cathedralofststephen.org.au/",
+     "what": "donations welcome; no entry fee mentioned",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "donation"
+  },
+  "ticketUrl": "https://www.cathedralofststephen.org.au/",
+  "ticketUrl_check": "title \"St Stephen's Cathedral, Brisbane - HOME\"",
+  "notes": "COVERAGE test: church kept only if a visitor source names something to see; Wikipedia lists windows/Pugin chapel, but no counted visitor source read by me (placement reason should be rechecked). Opening/visiting times not recorded.",
+  "unverified": [
+   "visitor-source naming something to see; visiting access and any fee"
+  ],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ },
+ "brisbane-10": {
+  "name": "Brisbane City Hall Clock Tower",
+  "wiki": "Brisbane City Hall",
+  "facts": {
+   "what": "Italian Renaissance City Hall (opened 8 April 1930) with a 64 m clock tower modelled on St Mark's Campanile, Venice; four 4.8 m clock faces, Westminster chimes; observation platform reached by lift. Visited on free Museum of Brisbane Clock Tower Tours.",
+   "note": "Wikipedia says view is now somewhat restricted by taller buildings."
+  },
+  "sources": {
+   "what": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Brisbane_City_Hall",
+     "what": "tower, clocks, platform, 1930",
+     "retrieved": "2026-11-15"
+    },
+    {
+     "url": "https://www.museumofbrisbane.com.au/whats-on/clock-tower-tours/",
+     "what": "Clock Tower Tours; 360 degree view heritage",
+     "retrieved": "2026-11-15"
+    }
+   ],
+   "cost": [
+    {
+     "url": "https://www.museumofbrisbane.com.au/whats-on/clock-tower-tours/",
+     "what": "\"Clock Tower Tours are free. Book via the button\" / phone (07) 3339 0800",
+     "retrieved": "2026-11-15"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "entry",
+   "needs": "booking"
+  },
+  "ticketUrl": "https://www.museumofbrisbane.com.au/whats-on/clock-tower-tours/",
+  "ticketUrl_check": "title \"Clock Tower Tours - Museum of Brisbane | MoB\" (tour operator; City Hall page is brisbane.qld.gov.au/cityhall)",
+  "notes": "Wikipedia article for the spot does not exist under its name: use wiki \"Brisbane City Hall\" (tower is a section). Tour times not recorded.",
+  "unverified": [
+   "whether tours run regularly / spot suits permanent-venue test (booking required)"
+  ],
+  "coordinates": "pin from input.json (already resolved); not re-resolved here"
+ }
+}

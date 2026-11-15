@@ -1,0 +1,80 @@
+{
+ "_note": "bio-fit.py not run (no shell); all bios hand-counted at 110 characters or fewer. visitHours are estimates.",
+ "winton-1": {
+  "bio": "Winton museum on the story of Waltzing Matilda, with a WW1 exhibition and the Qantilda Museum.",
+  "visitHoursMin": 1.5, "visitHoursMax": 3,
+  "cost": {"free": false, "currency": "AUD", "costBasis": "entry", "needs": null, "note": "NO PRICE: official site blocked; 35 adult seen only in a search summary"},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://matildacentre.com.au (403, redirects to experiencewinton.com.au; check title in browser)",
+  "unverified": ["adult price (35 per search summary, not confirmed)", "2015 fire and 2018 reopening not in bio (researcher only)"],
+  "name_fix": "suggestion: Waltzing Matilda Centre"
+ },
+ "winton-3": {
+  "bio": "A long wall in Arno's Park built by an opal miner and studded with typewriters and a kitchen sink.",
+  "visitHoursMin": 0, "visitHoursMax": 0.5,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": null,
+  "unverified": ["no page read (guide search summaries only)", "free inferred from open park"]
+ },
+ "winton-4": {
+  "bio": "A wire fence fitted with steel pieces visitors can play, designed by percussionist Graeme Leak.",
+  "visitHoursMin": 0, "visitHoursMax": 0.25,
+  "category": "landmark",
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": null,
+  "unverified": ["no page read (guide search summaries only)", "free inferred", "year and 'first' claims left out"]
+ },
+ "winton-5": {
+  "bio": "Station-turned-park near Winton with a restored homestead and camping at Bough Shed Waterhole.",
+  "visitHoursMin": 1, "visitHoursMax": 3,
+  "category": "nature",
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/bladensburg (403; URL constructed from QPWS pattern, unconfirmed)",
+  "unverified": ["QPWS page unread", "whether the homestead centre is staffed"]
+ },
+ "charleville-1": {
+  "bio": "Self-guided centre on the history of the Flying Doctor, beside a base serving south-west Queensland.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "donation", "needs": null},
+  "ticketUrl": "https://flyingdoctor.org.au/support-us/visit-us",
+  "unverified": ["free or donation rests on third-party directories, not the RFDS page", "pin: confirm it is the visitor centre on John Flynn Way, not the hangar"]
+ },
+ "carnarvon-national-park-1": {
+  "bio": "Lookout above Carnarvon Gorge, reached by a walking track in Carnarvon National Park.",
+  "visitHoursMin": 2, "visitHoursMax": 3,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": "https://parks.qld.gov.au/parks/carnarvon-gorge",
+  "unverified": ["walk length and time", "link to the Great Walk's final section (not confirmed, left out)", "overlap with the Carnarvon Great Walk spot"]
+ },
+ "carnarvon-national-park-2": {
+  "bio": "Cave in Carnarvon Gorge with Indigenous stencil rock art, a site paired with the Art Gallery.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": "https://parks.qld.gov.au/parks/carnarvon-gorge",
+  "unverified": ["track distance and time", "access restrictions or cultural protocols"]
+ },
+ "carnarvon-national-park-3": {
+  "bio": "Multi-day walking track through Carnarvon National Park with five walkers' camps, booked in advance.",
+  "visitHoursMin": 48, "visitHoursMax": 96,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": "permit", "note": "Camping permit needed; NO PRICE (7.75 was a general camping snippet, unconfirmed; 'ticket' basis was wrong)"},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/carnarvon-great-walk/about (403; verified fallback https://parks.qld.gov.au/parks/carnarvon-gorge lists the Great Walk)",
+  "unverified": ["camp fee", "87 km length (left out)", "season dates (sources conflict)", "pin is the midpoint of a 15.1 km section only: re-pin at whole-route midpoint"]
+ },
+ "cooloola-great-walk": {
+  "bio": "102 km coastal walk through Great Sandy National Park from Noosa North Shore to Rainbow Beach.",
+  "visitHoursMin": 72, "visitHoursMax": 120,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": "permit", "note": "Camping permit needed; NO PRICE (7.75 general snippet unconfirmed; 'ticket' basis was wrong)"},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/great-walks-cooloola (403)",
+  "unverified": ["Great Walk camp fee", "pin is the midpoint of a 1.2 km segment only: re-pin at whole-route midpoint"]
+ },
+ "laidley-pioneer-village-and-museum": {
+  "bio": "Volunteer-run museum of historic buildings, including a chapel, school house, jail and blacksmith shop.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": false, "costMin": 10, "costMax": 10, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.laidleypioneervillage.org.au/",
+  "unverified": ["older listings say gold-coin donation; official site's 10 used"]
+ }
+}

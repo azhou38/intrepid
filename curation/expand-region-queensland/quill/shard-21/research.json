@@ -1,0 +1,284 @@
+[
+ {
+  "id": "gold-coast-20",
+  "name": "Tallebudgera Beach",
+  "correct_wikipedia_title": "none (Tallebudgera, Queensland is the suburb; Palm Beach, Queensland covers the area)",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "Tallebudgera Creek is a popular swimming lagoon, good for people uncomfortable in the surf; one of the few patrolled beaches in water protected from the surf.",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   },
+   {
+    "fact": "Palm Beach area includes Tallebudgera Surf Beach and Pacific Beach.",
+    "source": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "basis_source": "default for open beach/lookout; no source states a charge"
+  },
+  "ticketUrl": "none (no single steward found)",
+  "unverified": [
+   "patrol hours",
+   "whether the pin is the creek mouth or the surf beach: Wikivoyage lists Tallebudgera Creek (lagoon) and Tallebudgera Surf Beach separately"
+  ],
+  "notes": "Wikipedia: no article 'Tallebudgera Beach' (404)."
+ },
+ {
+  "id": "moreton-island-4",
+  "name": "Honeymoon Bay",
+  "correct_wikipedia_title": "none (en.wikipedia 'Honeymoon Bay' is a disambiguation page with no Moreton Island entry)",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "North-facing beach surrounded by rocky headland; one of four pocket beaches on the Cape Moreton peninsula.",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island"
+   },
+   {
+    "fact": "Lies between Cape Moreton and North Point, edged by about 15 m bluffs; known as hazardous with rips, hidden rocks and big waves (from search summary of Queensland Parks wording, not fetched).",
+    "source": "https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island/journeys/northern-island-discovery-drive"
+   },
+   {
+    "fact": "Listed as a picnic stop on the Northern Island discovery drive; reached by 4WD, which needs a Moreton Island Recreation Area vehicle access permit.",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs_note": "Reaching it needs a vehicle access permit and barge; those are transport, not the spot's price. Park page BLOCKED, check whether a national park entry fee exists (none known)"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island (managing agency page for Moreton Island National Park; 403 to scripts, check in browser)",
+  "unverified": [
+   "swimming advice (conflicts across sources)",
+   "QPWS page content (BLOCKED)"
+  ],
+  "notes": "Pin is ~40 m from North Point's pin (moreton-island-5): within the 25 m threshold? no, just outside, but near-duplicate area; Wikivoyage coords differ by ~65 m. Both lie on the same cove."
+ },
+ {
+  "id": "moreton-island-5",
+  "name": "North Point",
+  "correct_wikipedia_title": "none (en.wikipedia 'North Point' is Hong Kong; no Queensland article found; 'Cape Moreton' / Moreton Island National Park cover it)",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "Protected cove on the north-west side of Cape Moreton, home of the Champagne Pools, a natural ocean pool hollowed out among the rocks, and North Point Light.",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island"
+   },
+   {
+    "fact": "Open fires are not permitted at North Point campground, which is within walking distance of the lighthouse and Honeymoon Bay (search summary of Queensland Parks).",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island"
+   },
+   {
+    "fact": "Reached by personal 4WD or 4WD bus tour from Tangalooma.",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island"
+   },
+   {
+    "fact": "On the incoming tide water cascades over the rocks at the Champagne Pools (Queensland Parks wording via search summary).",
+    "source": "https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island/attractions/north-point"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "camping permit fee applies to the campground only, not the spot; vehicle permit is transport"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island/attractions/north-point (QPWS 403)",
+  "unverified": [
+   "whether Champagne Pools swimming is allowed (sources conflict)",
+   "category: pin is the cove/Champagne Pools area, not clearly a lookout; consider 'nature' or merging with Honeymoon Bay (pins ~40 m apart)"
+  ],
+  "notes": ""
+ },
+ {
+  "id": "moreton-island-7",
+  "name": "Mount Tempest",
+  "correct_wikipedia_title": "none (en.wikipedia has no Mount Tempest article, 404; covered in Moreton Island article)",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "Highest point on Moreton Island at 280 m AHD, reputedly the highest stabilised coastal sandhill in the world.",
+    "source": "https://en.wikipedia.org/wiki/Moreton_Island"
+   },
+   {
+    "fact": "Wikivoyage: 'Walk up Mount Tempest the highest sand dune in the world' (listed as a thing to do).",
+    "source": "https://en.wikivoyage.org/wiki/Moreton_Island"
+   },
+   {
+    "fact": "Storm Mountain (264 m) is another large sandhill close by.",
+    "source": "https://en.wikipedia.org/wiki/Moreton_Island"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "inside Moreton Island National Park; no entry fee found; vehicle access permit is transport. Check QPWS (BLOCKED)"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/gheebulum-kunungai-moreton-island (QPWS)",
+  "unverified": [
+   "walk length/time/trailhead",
+   "whether a marked track exists",
+   "entry fee (QPWS BLOCKED)"
+  ],
+  "notes": "Walks are trail-like: resolve-pin midpoint rule not applied; pin is a point on the dune per input."
+ },
+ {
+  "id": "sunshine-coast-2",
+  "name": "Maroochydore Beach",
+  "correct_wikipedia_title": "none (Maroochydore, Queensland covers the suburb; no beach article, 404)",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "Closest beach to Maroochydore town centre, patrolled almost all the time.",
+    "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast"
+   },
+   {
+    "fact": "Quite long, with waves good for surfing.",
+    "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "basis_source": "default for open beach/lookout; no source states a charge"
+  },
+  "ticketUrl": "none",
+  "unverified": [
+   "patrol times (see Beachsafe)"
+  ],
+  "notes": "Sunshine Coast Council directory page exists but fetched text is mostly navigation: https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/maroochydore-beach"
+ },
+ {
+  "id": "sunshine-coast-13",
+  "name": "Kings Beach",
+  "correct_wikipedia_title": "Kings Beach, Queensland",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "Very popular patrolled beach with the Caloundra (Mets) Surf Club at the northern end of the precinct.",
+    "source": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/kings-beach"
+   },
+   {
+    "fact": "Kings Beach Ocean Pool at the northern end is a 25 m seawater pool with disabled access and a children's wading area.",
+    "source": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/kings-beach"
+   },
+   {
+    "fact": "Large green spaces, playgrounds, cafes and restaurants beside the beach; main patrolled surf beach with a webcam.",
+    "source": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/kings-beach"
+   },
+   {
+    "fact": "Bulcock Beach is reached from Kings Beach by a boardwalk over the rocks; Caloundra Lighthouses sit at Kings Beach.",
+    "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "ocean pool free to use per sources (no charge mentioned): unverified"
+  },
+  "ticketUrl": "none",
+  "unverified": [
+   "ocean pool charge (none stated)",
+   "patrol times"
+  ],
+  "notes": "The 'Kings Beach' en.wikipedia title is a disambiguation page; the suburb article is 'Kings Beach, Queensland'; no beach-only article."
+ },
+ {
+  "id": "sunshine-coast-14",
+  "name": "Bulcock Beach",
+  "correct_wikipedia_title": "none (no article, 404; Caloundra, Queensland covers history of Bulcock Beach name)",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "Popular with families and patrolled by the Caloundra City Life Saving Club; beware the strong current in Pumicestone Passage.",
+    "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast"
+   },
+   {
+    "fact": "Has a boardwalk with bars and restaurants and popular fishing spots, accessible by a boardwalk over the rocks from Kings Beach.",
+    "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast"
+   },
+   {
+    "fact": "Named after Robert Bulcock, who bought land here in 1875; his son subdivided it as the Bulcock Estate in 1917.",
+    "source": "https://en.wikipedia.org/wiki/Caloundra,_Queensland"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "basis_source": "default for open beach/lookout; no source states a charge"
+  },
+  "ticketUrl": "none",
+  "unverified": [
+   "patrol times",
+   "Wikivoyage spells Pumistone (typo); correct is Pumicestone Passage"
+  ],
+  "notes": ""
+ },
+ {
+  "id": "noosa-3",
+  "name": "Noosa Main Beach",
+  "correct_wikipedia_title": "none (no article, 404; Noosa Heads, Queensland covers it as 'Noosa Beach')",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "Main beach fronts onto Hastings Street, the resort's main tourist strip; Noosa Woods and Noosa Spit are at the end of Hastings Street and Noosa National Park is at its eastern end.",
+    "source": "https://en.wikivoyage.org/wiki/Noosa"
+   },
+   {
+    "fact": "Catamaran hire and sailing instruction are offered on Noosa's Laguna Bay (extras, not the price).",
+    "source": "https://en.wikivoyage.org/wiki/Noosa_Heads"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "basis_source": "default for open beach/lookout; no source states a charge"
+  },
+  "ticketUrl": "none",
+  "unverified": [
+   "patrol/facility details",
+   "how the north-facing Laguna Bay beach is described by the council"
+  ],
+  "notes": ""
+ },
+ {
+  "id": "sunshine-coast-hinterland-7",
+  "name": "Howells Knob Lookout",
+  "correct_wikipedia_title": "none (no article, 404)",
+  "coordinates": null,
+  "coordinates_source": "placement pin from input.json (resolved earlier); not re-resolved",
+  "facts": [
+   {
+    "fact": "One of the highest points in the Maleny area, with good views of the Glass House Mountains and islands off the coast; Reesville Road, off Maleny-Kenilworth Road.",
+    "source": "https://en.wikivoyage.org/wiki/Sunshine_Coast"
+   },
+   {
+    "fact": "Sunshine Coast Council: a 370 m detour off Reesville Road near Cumner Lane, near 360-degree views of the hinterland (from search summary; page fetched but body is nav-heavy).",
+    "source": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/howells-knob-lookout"
+   },
+   {
+    "fact": "Council-recognised stargazing site in the Sunshine Coast Dark Sky Reserve; no public toilets or drinking water (search summary).",
+    "source": "https://www.sunshinecoast.qld.gov.au/environment/dark-sky/stargazing-in-our-hinterland"
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "none (council page is the managing page, not a ticket link; omit)",
+  "unverified": [
+   "elevation (561 m vs 533 m differ)"
+  ],
+  "notes": "Name spelling: Wikivoyage 'Howells Knob', council 'Howell's Knob'."
+ }
+]

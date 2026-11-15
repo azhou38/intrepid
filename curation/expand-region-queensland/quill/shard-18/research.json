@@ -1,0 +1,326 @@
+{
+ "mount-isa-underground-hospital-and-museum": {
+  "name": "Mount Isa Underground Hospital and Museum",
+  "coordinates": {
+   "latitude": -20.731055,
+   "longitude": 139.494642
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm tourism=museum (nominatim) Underground Hospital & Museum",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Fully guided 30-minute tour of Australia's first and only underground hospital, built by volunteer miners in 1942; four tunnels fitted out to the original layout; collection of medical equipment gathered by matron Beth Anderson",
+    "sources": [
+     "https://undergroundhospital.rezdy.com",
+     "https://www.outbackqueensland.com.au/attractions/mount-isa-underground-hospital-and-museum/"
+    ]
+   }
+  ],
+  "cost": {
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "sources": [
+    "https://undergroundhospital.rezdy.com"
+   ],
+   "note": "Operator booking page, 'From AUD $25.00' for the 30-min guided tour (access is by guided tour only). Child/concession not recorded."
+  },
+  "ticketUrl": "https://www.undergroundhospital.com.au",
+  "unverified": [
+   "Whether undergroundhospital.com.au is the operator's own site: its title is 'Underground Hospital' and the page loads, but the text fetched was mostly about Mount Isa heritage (Tent House); no explicit operator statement. Operator booking page https://undergroundhospital.rezdy.com is the fallback.",
+   "Category 'viewpoint' in placement looks wrong: should be museum."
+  ]
+ },
+ "australian-workers-heritage-centre": {
+  "name": "Australian Workers Heritage Centre",
+  "coordinates": {
+   "latitude": -23.553186,
+   "longitude": 145.287925
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=theme_park (nominatim) Australian Workers Heritage Centre",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Outback museum and heritage centre in Barcaldine, on the Australian labour movement (Barcaldine played a major role); centre site has Displays & Exhibitions, Cafe 1891, Tree of Knowledge Memorial and Great Shearers' Strike pages",
+    "sources": [
+     "https://www.australianworkersheritagecentre.com.au/discover/plan-your-visit",
+     "https://en.wikipedia.org/api/rest_v1/page/summary/Australian_Workers_Heritage_Centre"
+    ]
+   }
+  ],
+  "cost": {
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "sources": [
+    "https://www.australianworkersheritagecentre.com.au/discover/plan-your-visit"
+   ],
+   "note": "Adult $25.00 (concession $21.50, child 6-15 $13, under 6 free)."
+  },
+  "ticketUrl": "https://www.australianworkersheritagecentre.com.au",
+  "unverified": []
+ },
+ "porcupine-gorge-national-park": {
+  "name": "Porcupine Gorge National Park",
+  "coordinates": {
+   "latitude": -20.411943,
+   "longitude": 144.440602
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm natural=cliff (nominatim) Porcupine Gorge",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "National park of 54.1 km2 in Flinders Shire, 60 km north of Hughenden, est. 1970, managed by QPWS",
+    "sources": [
+     "https://en.wikipedia.org/api/rest_v1/page/summary/Porcupine_Gorge_National_Park"
+    ]
+   },
+   {
+    "fact": "Two viewpoints: a lookout over the gorge (no base access) and the Pyramid camping area, from which a walking track descends to the gorge base and the Pyramid rock formation; waterholes for swimming",
+    "sources": [
+     "https://www.visithughenden.com.au/attraction/porcupine-gorge-national-park/"
+    ]
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "sources": [
+    "https://www.visithughenden.com.au/attraction/porcupine-gorge-national-park/"
+   ],
+   "note": "Source mentions only camping permits/fees at Pyramid campground; no day-use entry fee stated. QPWS page blocked so no-entry-fee not confirmed first-hand. No Queensland-wide park pass in parkPasses.ts applies. Consider costBasis 'entry' (park gate-free) rather than 'open' if the orchestrator wants fixed rule for parks."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/porcupine-gorge (403 captcha; check in browser). Fallback: https://www.visithughenden.com.au/attraction/porcupine-gorge-national-park/",
+  "unverified": [
+   "QPWS page blocked: confirm no day-use fee and camping fee",
+   "Category 'entertainment' in placement looks wrong: should be nature"
+  ]
+ },
+ "eromanga-natural-history-museum": {
+  "name": "Eromanga Natural History Museum",
+  "coordinates": {
+   "latitude": -26.698404,
+   "longitude": 143.275623
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=museum (nominatim) Eromanga Natural History Museum",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Museum at 1 Dinosaur Drive, Eromanga, home of 'Cooper', Australia's largest dinosaur (titanosaur, about 30 m long, 6.5 m high); guided tours Tue-Sat; fossil workshop",
+    "sources": [
+     "https://enhm.com.au/",
+     "https://enhm.com.au/tours-programs/"
+    ]
+   },
+   {
+    "fact": "Nov to 2 Feb the museum is open for pre-booked tours only",
+    "sources": [
+     "https://enhm.com.au/"
+    ]
+   }
+  ],
+  "cost": {
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "sources": [
+    "https://enhm.com.au/?p=413"
+   ],
+   "note": "Australian Dinosaur Giants Tour, one hour guided, adult $38 (concession $35, child $20); admission is by guided tour."
+  },
+  "ticketUrl": "https://enhm.com.au/",
+  "unverified": []
+ },
+ "flinders-discovery-centre": {
+  "name": "Flinders Discovery Centre",
+  "coordinates": {
+   "latitude": -20.843301,
+   "longitude": 144.200859
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=museum (nominatim) Flinders Discovery Centre",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Accredited visitor information centre at 37 Gray Street, Hughenden; museum extended in 2023 with exhibits on dinosaurs, First Nations, pastoral, sheep and railway history, plus a children's fossil dig area",
+    "sources": [
+     "https://www.visithughenden.com.au/flinders-discovery-centre/"
+    ]
+   }
+  ],
+  "cost": {
+   "costMin": 20,
+   "costMax": 20,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "sources": [
+    "https://www.visithughenden.com.au/flinders-discovery-centre/"
+   ],
+   "note": "Museum entry adult $20 (senior $15, child 5-17 $10)."
+  },
+  "ticketUrl": "https://www.visithughenden.com.au/flinders-discovery-centre/",
+  "unverified": [
+   "Site is the Flinders Shire tourism site (the centre's page), not a separate domain"
+  ]
+ },
+ "kronosaurus-korner": {
+  "name": "Kronosaurus Korner",
+  "coordinates": {
+   "latitude": -20.731668,
+   "longitude": 143.143728
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=museum (nominatim) Kronosaurus Korner",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Marine fossil museum at 91-93 Goldring St, Richmond; Dinosaur Trail attraction",
+    "sources": [
+     "https://www.kronosauruskorner.com.au/visit-us",
+     "https://www.kronosauruskorner.com.au/kronosaurus-korner"
+    ]
+   }
+  ],
+  "cost": {
+   "costMin": 40,
+   "costMax": 40,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "sources": [
+    "https://www.kronosauruskorner.com.au/visit-us"
+   ],
+   "note": "Adults $40 (page says effective 01.01.2024; may be stale)."
+  },
+  "ticketUrl": "https://www.kronosauruskorner.com.au",
+  "unverified": [
+   "Admission price dated 01.01.2024 on official page",
+   "Marine reptile (Kronosaurus) specifics not read first-hand from a source in this run; bio should stay generic (marine fossil museum) unless re-fetched"
+  ]
+ },
+ "min-min-encounter": {
+  "name": "Min Min Encounter",
+  "coordinates": {
+   "latitude": -22.911724,
+   "longitude": 139.911178
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm amenity=theatre (nominatim) Min Min Encounter Centre",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "45-minute animatronic show on the Min Min light phenomenon, opened April 2000 in Boulia; the only show of its kind in Queensland; shows 9am to 4pm daily; at 25 Herbert Street, Boulia area",
+    "sources": [
+     "https://bouliashire.rezdy.com/437395/min-min-encounter"
+    ]
+   }
+  ],
+  "cost": {
+   "costMin": 38.5,
+   "costMax": 38.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "sources": [
+    "https://bouliashire.rezdy.com/437395/min-min-encounter"
+   ],
+   "note": "Boulia Shire booking page 'From AUD $38.50' for the show; adult-only split not shown. Council-run."
+  },
+  "ticketUrl": "https://www.boulia.qld.gov.au",
+  "unverified": [
+   "Category 'nature' in placement is wrong: should be entertainment/museum",
+   "Address '25 Herbert Street' came from Outback Queensland listing and was not tied to this venue first-hand",
+   "Adult vs from price: 'From' price taken as adult"
+  ]
+ },
+ "muttaburrasaurus-interpretation-centre": {
+  "name": "Muttaburrasaurus Interpretation Centre",
+  "coordinates": {
+   "latitude": -22.594065,
+   "longitude": 144.547661
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=attraction (nominatim) Muttaburrasaurus Interpretation Centre",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Centre at 9 Bruford Street, Muttaburra, with replica Muttaburrasaurus langdoni skeleton and displays; the 1963 find by grazier Doug Langdon near the Thomson River; the original bones are in the Queensland Museum",
+    "sources": [
+     "https://www.digthetropic.com.au/muttaburra-interpretation-centre",
+     "https://www.outbackqueensland.com.au/attractions/muttaburrasaurus-interpretation-centre/"
+    ]
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "entry",
+   "sources": [
+    "https://www.outbackqueensland.com.au/attractions/muttaburrasaurus-interpretation-centre/"
+   ],
+   "note": "Outback Queensland lists 'Non Smoking Experience is free'; a travel blog says free. Staffed or gated status not confirmed so 'entry' not 'open'."
+  },
+  "ticketUrl": "https://www.digthetropic.com.au/muttaburra-interpretation-centre",
+  "unverified": [
+   "Operator is Barcaldine Regional Council; its own page https://www.explorethebarcaldineregion.com.au/Explore-Experience/Things-to-Explore/Muttaburrasaurus-Interpretation-Centre- is a better ticketUrl candidate (page returned 200 but no content checked); Dig the Tropic is a regional trail site. Orchestrator may prefer the council page.",
+   "Free status from one tourism listing"
+  ]
+ },
+ "cobbold-gorge": {
+  "name": "Cobbold Gorge",
+  "coordinates": {
+   "latitude": -18.815981,
+   "longitude": 143.406169
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm natural=gorge (nominatim) Cobbold Gorge",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Youngest gorge in Australia, on a privately owned cattle station nature refuge; access by guided tour only, about 3 hours including a circular escarpment walk, glass bridge and boat cruise",
+    "sources": [
+     "https://www.cobboldgorge.com.au/tours/day-visitor-gorge-tour"
+    ]
+   }
+  ],
+  "cost": {
+   "costMin": 156,
+   "costMax": 156,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "sources": [
+    "https://www.cobboldgorge.com.au/tours/day-visitor-gorge-tour"
+   ],
+   "note": "Self-drive day visitor adult $156 (child $78); ex-Forsayth transfers $225. In-house guest rate is lower."
+  },
+  "ticketUrl": "https://www.cobboldgorge.com.au",
+  "unverified": [
+   "Search snippet said $150 earlier; the fetched page showed $156, used"
+  ]
+ },
+ "brisbane-15": {
+  "name": "Mount Coot-tha",
+  "coordinates": {
+   "latitude": -27.485032,
+   "longitude": 152.958911
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm natural=peak (nominatim) Mount Coot-tha (One Tree Hill)",
+  "distance_moved_m": 0,
+  "facts": [
+   {
+    "fact": "Mt Coot-tha Lookout, Brisbane's highest point lookout (heritage-listed) with views over the city and Moreton Bay; open 24 hours; Brisbane City Council manages the Mt Coot-tha precinct and reserve with walking tracks and botanic gardens",
+    "sources": [
+     "https://www.brisbane.qld.gov.au/things-to-see-and-do/council-venues-and-precincts/mt-coot-tha-precinct",
+     "https://en.wikipedia.org/api/rest_v1/page/summary/Mount_Coot-tha%2C_Queensland"
+    ]
+   }
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "sources": [
+    "https://www.brisbane.qld.gov.au/things-to-see-and-do/council-venues-and-precincts/mt-coot-tha-precinct"
+   ],
+   "note": "Lookout open 24/7; no fee stated; parking not a cost."
+  },
+  "ticketUrl": "https://www.brisbane.qld.gov.au/things-to-see-and-do/council-venues-and-precincts/mt-coot-tha-precinct",
+  "unverified": [
+   "Free status inferred from council page (open 24h, no fee mentioned)"
+  ]
+ }
+}

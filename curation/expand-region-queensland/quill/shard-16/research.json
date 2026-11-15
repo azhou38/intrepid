@@ -1,0 +1,236 @@
+{
+ "josephine-falls": {
+  "facts": {
+   "what": "Tiered cascade waterfall on Josephine Creek in Wooroonooran National Park (Bellenden Ker/Palmerston section), Far North Queensland; short walking track from a day-use car park with toilets, picnic tables and shelter; creek can flash-flood at any time of year; viewing platforms and swimming area have a temporary closure 2 Nov 2026 to 28 Feb 2027"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Josephine_Falls",
+    "https://parks.qld.gov.au/parks/wooroonooran-josephine-falls/journeys/josephine-falls-walking-track (via search snippet; page BLOCKED to scripts)"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "parkPass": null,
+  "cost_notes": "Queensland national parks charge no day-use entry fee; official pages only mention camping fees (search snippet of parks.qld.gov.au; direct page BLOCKED). No Queensland day-use pass exists in parkPasses.ts; none needed.",
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/wooroonooran-josephine-falls",
+  "ticketUrl_note": "QPWS 403 captcha: orchestrator to check in a real browser (title should name Josephine Falls / Wooroonooran National Park); also confirm no day-use fee and the Nov 2026 to Feb 2027 closure.",
+  "unverified": [
+   "day-use fee on the QPWS page itself",
+   "walk length (1.2 to 1.6 km return, sources disagree)",
+   "closure dates 2 Nov 2026 to 28 Feb 2027 (from search snippet only)"
+  ]
+ },
+ "number-7-dam": {
+  "facts": {
+   "what": "Concrete gravity dam on the Dee River near Mount Morgan, the town's main drinking-water source, also called the Big Dam; surrounds have playgrounds, barbecues, picnic areas, toilets; fishing for yellowbelly, saratoga and redclaw; camping prohibited"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Number_7_Dam",
+    "https://www.rockhamptonregion.qld.gov.au/FacilitiesRecreation/Parks-Open-Spaces/Parks-Playground-Finder/No.-7-Dam",
+    "https://qld.gov.au/recreation/activities/areas-facilities/fossicking/fossicking-areas-in-queensland/capricorn-region (camping prohibited; via search snippet)"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_notes": "No entry charge found; council parks page lists it as a public park with picnic facilities. Fishing needs a SIP permit (not the price).",
+  "ticketUrl": "https://www.rockhamptonregion.qld.gov.au/FacilitiesRecreation/Parks-Open-Spaces/Parks-Playground-Finder/No.-7-Dam",
+  "ticketUrl_note": "Rockhampton Regional Council, managing agency; title 'No. 7 Dam Rockhampton Regional Council' (loaded OK).",
+  "unverified": [
+   "no explicit 'free' statement on council page (page body not extracted)"
+  ]
+ },
+ "the-big-rig": {
+  "facts": {
+   "what": "Oil and gas heritage attraction at 2 Riggers Road, Roma: Oil Patch Museum with vintage equipment and machinery, Peter Keegan Museum, Big Rig Tower and Tree Walk with views over Roma, Oil Patch Challenge for kids, evening Night Show; run by Maranoa Regional Council tourism; Self Guided Tour about 50 minutes"
+  },
+  "sources": {
+   "what": [
+    "https://www.outbackqueensland.com.au/attractions/the-big-rig-tower-tree-walk-and-oil-patch-museum/",
+    "https://www.bigrigroma.com.au/"
+   ],
+   "cost": [
+    "https://bigrigroma.rezdy.com (operator's booking page: Self Guided Tour from AUD 20.00; Night Show from 20; Day and Night 35)"
+   ]
+  },
+  "costMin": 20,
+  "costMax": 20,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "cost_notes": "Self Guided Tour adult from AUD 20 on the operator's own Rezdy store; Outback Queensland lists indicative rates $15 to $55 for the site's range of products.",
+  "ticketUrl": "https://www.bigrigroma.com.au/",
+  "ticketUrl_note": "Official site (tourism@maranoa.qld.gov.au; title 'The Big Rig - Experience a Slice of Roma's History'); bigrig.com.au is an unrelated wheel-accessories business, do not use.",
+  "suggest_category": "museum is fine (also a tower walk)",
+  "unverified": [
+   "whether the AUD 20 is adult-only (page does not label it) and current 2026-27 price"
+  ]
+ },
+ "boondooma-dam": {
+  "facts": {
+   "what": "Rock-filled embankment dam on the Boyne River, South Burnett, built 1980-83, forming Lake Boondooma; lookout, picnic areas, boat ramp, toilets, BBQs, privately run camping and cabins; swimming, sailing, fishing (Stocked Impoundment Permit required)"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Boondooma_Dam",
+    "https://www.sunwater.com.au/dams/boondooma-dam/"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_notes": "Day visit to lookout and picnic areas: no fee found; camping is private and not the price; SIP fishing permit is an extra, not the price.",
+  "ticketUrl": "https://www.sunwater.com.au/dams/boondooma-dam/",
+  "ticketUrl_note": "Sunwater (owner) page, title 'Boondooma Dam \u2013 Sunwater'; facilities managed by South Burnett Regional Council.",
+  "unverified": [
+   "no explicit statement that day use is free"
+  ]
+ },
+ "brisbane-valley-rail-trail": {
+  "facts": {
+   "what": "161 km rail trail from Wulkuraka (Ipswich) via Somerset Region to Yarraman (Toowoomba Region) on the old Brisbane Valley railway line; open to walkers, touring cyclists and horse riders; longest rail trail in Queensland and Australia; gravel, off-road, traffic-free"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Brisbane_Valley_Rail_Trail",
+    "https://www.brisbanevalleyrailtrail.com.au/"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_notes": "No trail fee found on the user association site or Wikipedia; bike hire and shuttles are extras.",
+  "ticketUrl": "https://www.brisbanevalleyrailtrail.com.au/",
+  "ticketUrl_note": "BVRT Users Association site ('everything you need to know'; title names the trail). Not an agency; councils (Somerset, Ipswich, Toowoomba) manage it and no single council page was found (somerset.qld.gov.au/brisbane-valley-rail-trail 404). Orchestrator may prefer this or none.",
+  "unverified": [
+   "managing-agency page",
+   "trail fee statement from an agency"
+  ]
+ },
+ "miles-historical-village": {
+  "facts": {
+   "what": "Open-air museum at Miles with about 30 buildings in a 1920s-style streetscape, plus war museum, lapidary and shell collections, Hippong Homestead, steam train and Great Artesian Basin display; ticket valid for the next day too; guided tours pre-booked (2 to 10 people)"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Miles_Historical_Village_and_Museum",
+    "https://www.mhv.org.au/book-now"
+   ],
+   "cost": [
+    "https://www.mhv.org.au/book-now (Entry adult $24; entry plus guided tour $34)"
+   ]
+  },
+  "costMin": 24,
+  "costMax": 24,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "cost_notes": "Adult entry $24.00 on operator's ticket page (seniors $21, students $12, under school age free).",
+  "ticketUrl": "https://www.mhv.org.au/",
+  "ticketUrl_note": "Operator site, title 'Miles Historical Village Museum' (loaded OK); deep link https://www.mhv.org.au/book-now also verified.",
+  "unverified": []
+ },
+ "queensland-transport-museum": {
+  "facts": {
+   "what": "Museum at 34 Lake Apex Drive, Gatton, inside the Lockyer Valley Cultural Centre, with original military vehicles back to World War 1, field gear and a kids' activity corner; wiki field currently resolves to the Gatton article, so Wikipedia has no own article: suggest wiki be dropped/overridden"
+  },
+  "sources": {
+   "what": [
+    "https://luvyalockyer.com.au/queensland-transport-museum (Tourism Lockyer Valley)"
+   ],
+   "cost": [
+    "https://luvyalockyer.com.au/queensland-transport-museum (Adult $10, concession $8, 6-15 $5, family $30)"
+   ]
+  },
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "cost_notes": "Adult $10.00 per the regional tourism listing; the museum's own site not found.",
+  "ticketUrl": "none",
+  "ticketUrl_note": "No operator site found (qldtransportmuseum.com.au and lockyervalleyculturalcentre.com.au did not load; qtm.org.au is a Tamil group). Tourism Lockyer Valley page https://www.luvyalockyer.com.au/queensland-transport-museum is a destination-marketing page, not the operator's, so not used.",
+  "unverified": [
+   "operator website",
+   "closure notes on listing (10 Aug 2026 date has passed)"
+  ]
+ },
+ "bjelke-petersen-dam": {
+  "facts": {
+   "what": "Earth and rock-fill dam on Barker Creek near Wondai/Moffatdale, forming Lake Barambah; opened 1988; boat ramps, lookout, picnic areas, BBQs, toilets; swimming, kayaking, sailing; fishing needs a SIP permit; private camping; eastern facilities managed by South Burnett Regional Council, north-west by Sunwater"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Bjelke-Petersen_Dam",
+    "https://www.sunwater.com.au/dams/bjelke-petersen-dam/"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_notes": "No day-use fee found; camping is private, fishing permit an extra.",
+  "ticketUrl": "https://www.sunwater.com.au/dams/bjelke-petersen-dam/",
+  "ticketUrl_note": "Sunwater page, title 'Bjelke-Petersen Dam \u2013 Sunwater'.",
+  "unverified": [
+   "no explicit statement that day use is free"
+  ]
+ },
+ "green-hill-fort": {
+  "facts": {
+   "what": "Heritage-listed pre-Federation fort on Green Hill, Thursday Island, built 1891-93 against a feared Russian threat; three six-inch breech-loading guns remain; reused as WWII signals and wireless station; underground bunker museum on pearling, shipping and military history; handed to Torres Shire Council as a public park and tourist attraction in 1993"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Green_Hill_Fort",
+    "https://ozatwar.com/bunkers/greenhillfort.htm",
+    "https://www.anzacsquare.qld.gov.au/historic-places/queensland-wwii-history-map/green-hill-fort-and-wireless-station"
+   ],
+   "cost": [
+    "https://en.wikivoyage.org/wiki/Thursday_Island (fort ruins free; bunker entry $4; bunker open to tour groups or pre-organised)"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "cost_notes": "Fort ruins above ground free per Wikivoyage; $4 bunker museum is an extra inside it, not the price; no agency confirmation found.",
+  "ticketUrl": "none",
+  "ticketUrl_note": "No official site found (TSIRC site loaded but has no fort page; ownership of fort unclear: Torres Strait Regional Authority/Historical Society sources conflict).",
+  "unverified": [
+   "free access from an official source",
+   "bunker museum price $4 (2018 Wikivoyage) and opening arrangements",
+   "current operator"
+  ]
+ },
+ "split-rock": {
+  "facts": {
+   "what": "Split Rock Galleries, about 12 to 15 km south of Laura on Cape York: Quinkan rock art sites (paintings, engravings, hand stencils thought up to 14,000 years old) on sandstone escarpments, the only Quinkan site open to the public without a guide; 30-minute self-guided walk past three sites (Split Rock Galleries, Flying Fox Art Site, Tall Spirits Art Site); uneven rocky ground; guided tours booked via the Quinkan Cultural Centre (Ang-Gnarra Aboriginal Corporation)"
+  },
+  "sources": {
+   "what": [
+    "https://www.anggnarra.org.au/copy-of-rock-art-tours-tickets",
+    "https://en.wikipedia.org/wiki/Quinkan_rock_art",
+    "https://www.exploroz.com/places/122333/qld+split-rock"
+   ],
+   "cost": [
+    "https://www.exploroz.com/places/122333/qld+split-rock ('cost for a self guided tour is now $40 per person'; third party)"
+   ]
+  },
+  "costMin": 40,
+  "costMax": 40,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "cost_notes": "Self-guided fee $40 pp per ExploreOz; other listings $30 to $33; Wikipedia 'small fee'; operator page has no price, so treat as approximate.",
+  "ticketUrl": "https://www.anggnarra.org.au/copy-of-rock-art-tours-tickets",
+  "ticketUrl_note": "Operator page headed 'Split Rock Art | Ang Gnarra Aborigina' (loaded OK).",
+  "suggest_category": "historic (or nature); placement has 'museum', which misdescribes an open-air rock art site",
+  "unverified": [
+   "current self-guided fee ($30 to $40, sources conflict)",
+   "distance from Laura (12 vs 14 vs 15 km)"
+  ]
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "_note": "bio-fit.py not run (no shell); all bios hand-counted at 110 characters or fewer. visitHours are estimates. No opening days in bios.",
+ "sunshine-coast-hinterland-10": {
+  "bio": "Conondale National Park waterfall with pools for swimming, about an hour's walk return from the creek.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/conondale/things-to-do (403)",
+  "unverified": ["no day-use fee, track length and time (QPWS blocked; third-party support only)", "access needs high-clearance 4WD on Booloumba Creek Road", "no Wikipedia article"]
+ },
+ "sunshine-coast-hinterland-12": {
+  "bio": "Multi-day Great Walk from Booloumba Creek through Conondale National Park, with permit-only camps.",
+  "visitHoursMin": 24, "visitHoursMax": 72,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": "permit", "note": "Camping permit needed; no price (7.75 snippet figure not confirmed for Great Walk camps)"},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/great-walks-conondale-range (403)",
+  "unverified": ["camp fee per night", "official length (56 km is unofficial, left out of bio) and days", "no Wikipedia article"]
+ },
+ "sunshine-coast-hinterland-13": {
+  "bio": "Four-day-plus walk through Kondalilla and Mapleton Falls National Parks, with permit-only camping.",
+  "visitHoursMin": 24, "visitHoursMax": 72,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": "permit", "note": "Camping permit needed; no price; day sections free to walk"},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/great-walks-sunshine-coast (403; derived URL, host seen was parks.des.qld.gov.au)",
+  "unverified": ["camp fee", "exact length (53 to 58.8 km by source, left out of bio)", "no Wikipedia article"]
+ },
+ "glass-house-mountains-4": {
+  "bio": "Zoo and botanical garden at Beerwah with over 1,200 animals, opened by Bob and Lyn Irwin in 1970.",
+  "visitHoursMin": 4, "visitHoursMax": 7,
+  "cost": {"free": false, "costMin": 77.45, "costMax": 77.45, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://australiazoo.com.au/",
+  "unverified": []
+ },
+ "toowoomba-1": {
+  "bio": "Toowoomba branch of the Queensland Museum Network, on Lindsay Street, free for local council residents.",
+  "visitHoursMin": 1, "visitHoursMax": 2.5,
+  "cost": {"free": false, "costMin": 12.5, "costMax": 12.5, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.museum.qld.gov.au/cobb-and-co",
+  "unverified": ["coach collection claim not sourced, left out"],
+  "name_fix": "suggestion: Queensland Museum Cobb+Co (official name); wiki title Cobb & Co Museum"
+ },
+ "granite-belt-2": {
+  "bio": "Free-entry public gallery in Stanthorpe that hosts the Stanthorpe Art Prize.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.srag.org.au/",
+  "unverified": ["free entry rests on a regional tourism listing, not the gallery's own page", "no Wikipedia article"],
+  "name_fix": "suggestion: Stanthorpe Regional Art Gallery (official name)"
+ },
+ "rockhampton-1": {
+  "bio": "Limestone caves 23 km north of Rockhampton, among Australia's largest privately owned cave systems.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": false, "currency": "AUD", "costBasis": "tour", "needs": null, "note": "NO PRICE: operator page uses a booking widget; 37.50 (search snippet) vs 70 conflict, neither confirmed"},
+  "ticketUrl": "https://capricorncaves.com.au/",
+  "unverified": ["adult Cathedral Cave Tour price", "'among the largest privately owned' and 'all ages' not re-seen on the operator page"]
+ },
+ "rockhampton-3": {
+  "bio": "Free-entry zoo on Spencer Street, next to the Botanic Gardens and Murray Lagoon.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.rockhamptonzoo.com.au/",
+  "unverified": ["free entry stated on council news pages, not the zoo site"]
+ },
+ "rockhampton-4": {
+  "bio": "Indigenous cultural arts and education centre on the Bruce Highway, with guided tours of about an hour.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": false, "costMin": 16, "costMax": 16, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.dreamtimecentre.com.au/",
+  "unverified": ["weekdays-only access kept out of the bio: put in the destination's goodToKnow if wanted", "price page undated"]
+ },
+ "rockhampton-5": {
+  "bio": "Heritage buildings and local history displays in Rockhampton, explored on a self-guided tour.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": false, "costMin": 6, "costMax": 6, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://heritagevillage.rockhamptonregion.qld.gov.au/",
+  "unverified": ["homepage title not separately checked (Visit Us and FAQ pages load)"]
+ }
+}

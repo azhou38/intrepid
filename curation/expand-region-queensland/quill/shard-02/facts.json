@@ -1,0 +1,202 @@
+{
+ "brisbane-11": [
+  {
+   "text": "price AUD 18 adult entry, costBasis entry",
+   "source": "https://maritimemuseum.com.au/visit/ (re-read: Adult $18)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://maritimemuseum.com.au/",
+   "source": "title 'Queensland Maritime Museum' (visit page loaded)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio variants 1-3 (frigate Diamantina, light ship, dry dock, engines, near South Bank)",
+   "source": "Wikipedia/museum site per research",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "brisbane-12": [
+  {
+   "text": "price AUD 12 adult entry",
+   "source": "https://www.commissariatstore.org.au/ (re-read: Adult $12)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl",
+   "source": "homepage title 'Commissariat Store Museum'",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 1 and 2 (1828-29 convict-built, one of two, RHSQ)",
+   "source": "Wikipedia bundle: built 1828-29 by convict labour",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 3 'open ... Tuesday to Friday'",
+   "source": "commissariatstore.org.au says OPENING Tuesday to Friday",
+   "status": "supported",
+   "fix": "Supported by the official page, but it is an opening-days statement; prefer variant 1 or 2 per WRITING.md no-hours rule."
+  }
+ ],
+ "brisbane-13": [
+  {
+   "text": "price AUD 10 adult entry",
+   "source": "https://mmb.org.au/ (re-read: Adults $10)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://mmb.org.au/",
+   "source": "title names MacArthur Museum Brisbane",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 2 'open Tuesday, Thursday and Sunday'",
+   "source": "mmb.org.au: 'We are open Tuesdays, Thursdays, and Sundays'",
+   "status": "supported",
+   "fix": "Official page supports it, but opening-days statement; prefer variant 1 or 3. Variant 1 level 8 supported by mmb.org.au 'Level 8 MacArthur Chambers'."
+  }
+ ],
+ "brisbane-14": [
+  {
+   "text": "ticket AUD 17.50 adult show",
+   "source": "council page (re-read): free to visit, charges for Cosmic Skydome shows; $17.50 figure not visible in my re-read excerpt",
+   "status": "unverifiable",
+   "fix": "Re-confirm $17.50 on the council page/show booking page; basis ticket is right (visit free, shows paid)."
+  },
+  {
+   "text": "ticketUrl council planetarium page",
+   "source": "title 'Sir Thomas Brisbane Planetarium | Brisbane City Council'",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio variants 1-3",
+   "source": "council page: Display Zone, Sundial Courtyard free; Cosmic Skydome",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "brisbane-16": [
+  {
+   "text": "free, open, no ticketUrl",
+   "source": "Wikipedia/council park list; open park, no steward page",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio variants 1-3 (heritage-listed, boardwalk, climbing, kayak hire, ferry/foot access)",
+   "source": "Wikipedia bundle + council",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "brisbane-17": [
+  {
+   "text": "free, open, no ticketUrl",
+   "source": "council park page; open park",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 1-3 (built 1914-1950, Heritage Register, shelters, barbecues, kiosk, playground/tennis)",
+   "source": "Wikipedia bundle: built 1914 to 1950",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "brisbane-19": [
+  {
+   "text": "free, open",
+   "source": "public jetty, ATDW listing",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 1 (jetty on Redcliffe Parade, fishing)",
+   "source": "ATDW listing address 139 Redcliffe Parade",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 2 'history back to 1885' and bio 3 '1930s bathing pavilion'",
+   "source": "search summary only (moretondaily); not in bundle",
+   "status": "unverifiable",
+   "fix": "Use variant 1, or confirm the history on a fetched page first."
+  }
+ ],
+ "brisbane-22": [
+  {
+   "text": "cost free + costBasis entry",
+   "source": "visit.brisbane.qld.au 'Experience is free' (re-read); QPWS page https://parks.qld.gov.au/parks/fort-lytton returned 403",
+   "status": "unverifiable",
+   "fix": "UNRESOLVED: QPWS blocked; research notes weekday tour adult $7.60. Needs browser check; if tour is the standard, tour 7.60."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/fort-lytton",
+   "source": "BLOCKED 403 captcha (re-fetched)",
+   "status": "unverifiable",
+   "fix": "Unresolved: verify in a real browser before adding."
+  },
+  {
+   "text": "bio 1 and 2 (pentagonal fort, first historic national park, guided tours)",
+   "source": "Wikipedia bundle: created 1990 as Queensland's first historic national park",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 3 'open Sundays and by weekday booking'",
+   "source": "search summary of blocked QPWS page only",
+   "status": "unsupported",
+   "fix": "Drop it: opening-days claim without a readable official page; use variant 1 or 2."
+  }
+ ],
+ "brisbane-24": [
+  {
+   "text": "free, costBasis entry",
+   "source": "QPWS about page (re-read): free admission",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/daisy-hill-koala-centre",
+   "source": "title names Daisy Hill Koala Centre (about page loaded; main page not re-fetched)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 1 ('ranger-run', free) and 3",
+   "source": "QPWS about page; 'ranger talks' in bio 2 supported only by search summary times, talks themselves unverified",
+   "status": "unverifiable",
+   "fix": "Variant 1 or 3 safer than 2."
+  }
+ ],
+ "gold-coast-2": [
+  {
+   "text": "price AUD 70 adult entry",
+   "source": "https://currumbinsanctuary.com.au/visit/ (re-read: Adult 18+ $70 day pass; $125 is membership column)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://currumbinsanctuary.com.au/",
+   "source": "homepage names sanctuary; states lorikeet feeding 8am and 4pm free, no ticket",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "bio 1-3 (heritage-listed, 1940s, free lorikeet feeding 8am/4pm)",
+   "source": "Wikipedia built from 1947; official homepage",
+   "status": "supported",
+   "fix": ""
+  }
+ ]
+}

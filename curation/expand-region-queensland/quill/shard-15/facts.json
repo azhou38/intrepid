@@ -1,0 +1,196 @@
+{
+ "winton-1": [
+  {
+   "text": "Museum devoted to Waltzing Matilda, rebuilt after 2015 fire, reopened 2018; WW1 exhibition, travelling-art gallery, Qantilda Museum",
+   "source": "outbackqueensland.com.au page (WW1, gallery, Qantilda confirmed); fire/2018 dates from researcher (Wikipedia Winton) not re-read",
+   "status": "supported",
+   "fix": "Bio variants 2 and 3 are confirmed by the page read; variant 1 dates rest on the researcher. All 3 fit."
+  },
+  {
+   "text": "Cost AUD 35 adult entry (costBasis entry)",
+   "source": "matildacentre.com.au and experiencewinton.com.au both 403 to script; outbackqueensland page only says indicative rates $18 to $125",
+   "status": "unverifiable",
+   "fix": "Price BLOCKED: confirm $35 adult in a real browser before applying; do not ship unchecked."
+  },
+  {
+   "text": "ticketUrl https://matildacentre.com.au",
+   "source": "403 bot wall, redirects to experiencewinton.com.au",
+   "status": "unverifiable",
+   "fix": "BLOCKED: check in browser that the title names the Waltzing Matilda Centre."
+  }
+ ],
+ "winton-3": [
+  {
+   "text": "Wall in Arno's Park built by opal miner Arno Grotjahn, concrete and rock from Opalton claim, set with typewriters, motorbikes, kitchen sink",
+   "source": "Not in bundle excerpts; Lonely Planet/drivenorthwestqld via search summaries only",
+   "status": "unverifiable",
+   "fix": "Bio variant 1 (no name, typewriters, sink) is lowest risk; keep wording of whichever is chosen to what the search sources say. Park location unconfirmed by a page read."
+  },
+  {
+   "text": "free: true, costBasis open",
+   "source": "open park wall, no fee source",
+   "status": "supported",
+   "fix": "Acceptable: open outdoor sight; no ticketUrl is right."
+  }
+ ],
+ "winton-4": [
+  {
+   "text": "Wire fence with playable steel pieces, designed by Graeme Leak, 2003 Queensland Music Festival, built by townspeople",
+   "source": "search summaries only; qmf.org.au page 404",
+   "status": "unverifiable",
+   "fix": "Plausible from several guides but no page read; variant 1 omits the year and is safer. Category 'nature' in placement looks wrong (installation/landmark)."
+  },
+  {
+   "text": "free: true, open",
+   "source": "open installation",
+   "status": "supported",
+   "fix": "Acceptable; no ticketUrl."
+  }
+ ],
+ "winton-5": [
+  {
+   "text": "National park 16 km from Winton on Bladensburg Station, restored homestead, camping at Bough Shed Waterhole, birdwatching",
+   "source": "outbackqueensland.com.au Bladensburg page (camping, Bough Shed, birdwatching, free) and Wikipedia article",
+   "status": "supported",
+   "fix": "Variant 3 best. Category should be nature, not entertainment."
+  },
+  {
+   "text": "free: true, open; no park pass",
+   "source": "outbackqueensland page 'Experience is free'; Queensland has no day-use pass; camping fee not the spot price",
+   "status": "supported",
+   "fix": "costBasis open is arguable (homestead office) but acceptable."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/bladensburg",
+   "source": "403 bot wall; URL constructed by researcher",
+   "status": "unverifiable",
+   "fix": "BLOCKED: confirm in browser or omit."
+  }
+ ],
+ "charleville-1": [
+  {
+   "text": "RFDS visitor centre next to operational Charleville base (since 1943, ~622,000 sq km), self-guided, historic radios and film",
+   "source": "flyingdoctor.org.au/support-us/visit-us re-read: confirms base, 1943, 622,000 sq km, history of the RFDS; radios/film/self-guided from travelactionmatildacountry only",
+   "status": "supported",
+   "fix": "Variants 2 (history, base, SW Queensland) fully supported by official page; variants 1 and 3 add details from the directory site only."
+  },
+  {
+   "text": "free: true, costBasis donation",
+   "source": "Official RFDS page states no fee or donation; only third-party directories say free/donation",
+   "status": "unverifiable",
+   "fix": "Unverified officially; the same page lists opening hours (not used). Keep free/donation but report as unconfirmed."
+  },
+  {
+   "text": "ticketUrl https://flyingdoctor.org.au/support-us/visit-us",
+   "source": "re-fetched 200, title Visit the Flying Doctor, lists Charleville RFDS Visitor Centre",
+   "status": "supported",
+   "fix": "Generic national page; acceptable."
+  }
+ ],
+ "carnarvon-national-park-1": [
+  {
+   "text": "Boolimba Bluff lookout above Carnarvon Gorge, on final section of Carnarvon Great Walk, descending to Carnarvon Creek",
+   "source": "QPWS Carnarvon Gorge page re-read lists a Boolimba Bluff walk and a Carnarvon Great Walk; the 'final section of the Great Walk' claim rests on a Wikipedia caption not re-read",
+   "status": "unverifiable",
+   "fix": "Existence confirmed; the Great Walk link is unconfirmed, safest to say 'Lookout above Carnarvon Gorge' only. Walk time 2-3 hr unverified (estimate allowed)."
+  },
+  {
+   "text": "free: true, open",
+   "source": "Carnarvon Gorge page lists no day-use fee",
+   "status": "supported",
+   "fix": "OK for entry; QPWS has no day-use pass."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/carnarvon-gorge",
+   "source": "Re-fetched 200, title 'Carnarvon Gorge, Carnarvon National Park'",
+   "status": "supported",
+   "fix": "Verified."
+  }
+ ],
+ "carnarvon-national-park-2": [
+  {
+   "text": "Cathedral Cave: stencil rock art by Indigenous artists, with the Art Gallery",
+   "source": "QPWS page lists a Cathedral Cave walk and Art Gallery walk; stencil art from Wikipedia (bundle)",
+   "status": "supported",
+   "fix": "Either variant; 'Cave' label in variant 2 is fine. Distance/time unverified (estimate allowed)."
+  },
+  {
+   "text": "free: true, open; ticketUrl carnarvon-gorge page",
+   "source": "Re-fetched 200 and names Carnarvon Gorge",
+   "status": "supported",
+   "fix": "Verified."
+  }
+ ],
+ "carnarvon-national-park-3": [
+  {
+   "text": "Multi-day track with five walkers' camps, booked in advance / up to 12 months ahead",
+   "source": "QPWS Great Walk pages 403; researcher read from search results",
+   "status": "unverifiable",
+   "fix": "BLOCKED. Variant 1 safer ('booked in advance'); the '12 months ahead' figure is unverified. No 87 km in bio, good."
+  },
+  {
+   "text": "Cost AUD 7.75 per night, costBasis ticket, needs permit",
+   "source": "QPWS camping fees page 403; figure from a search snippet and not Great Walk specific",
+   "status": "unsupported",
+   "fix": "Wrong basis: a camping fee under 'ticket' is not what the label says. Treat as 'permit' need with the permit's fee, or leave cost unverified until the fee page is read in a browser. Do not ship 7.75 unverified."
+  },
+  {
+   "text": "Pin: midpoint of a 15.1 km section only",
+   "source": "researcher note",
+   "status": "unverifiable",
+   "fix": "Pin is not the midpoint of the whole route: re-pin before applying."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/carnarvon-great-walk/about",
+   "source": "403 bot wall",
+   "status": "unverifiable",
+   "fix": "BLOCKED: confirm in browser; fallback verified carnarvon-gorge page lists the Carnarvon Great Walk."
+  }
+ ],
+ "cooloola-great-walk": [
+  {
+   "text": "102 km coastal walk, Great Sandy National Park, Noosa North Shore to Rainbow Beach, opened 2010, five-day trek",
+   "source": "Wikipedia Cooloola Great Walk in bundle: 102 km, opened 2010, five-day trek confirmed",
+   "status": "supported",
+   "fix": "All 3 variants supported. 'e-permit walkers' camps' (variant 2) from search results only."
+  },
+  {
+   "text": "Cost AUD 7.75 per night, costBasis ticket, needs permit",
+   "source": "QPWS camping fees page 403; search snippet only, not Cooloola specific",
+   "status": "unsupported",
+   "fix": "Same fault as carnarvon-3: wrong basis and unverified figure. Fix: permit need with the permit's fee verified in browser, or leave cost unverified."
+  },
+  {
+   "text": "Pin midpoint of a 1.2 km segment only",
+   "source": "researcher note",
+   "status": "unverifiable",
+   "fix": "Re-pin at whole-route midpoint."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/great-walks-cooloola",
+   "source": "403 bot wall",
+   "status": "unverifiable",
+   "fix": "BLOCKED: confirm in browser."
+  }
+ ],
+ "laidley-pioneer-village-and-museum": [
+  {
+   "text": "Volunteer-run museum with chapel, school house, jail, post office, tractor museum, blacksmith shop",
+   "source": "laidleypioneervillage.org.au visit-us navigation lists Pioneer Chapel, School House, Jail, Post Office Shop, Tractor Museum, Blacksmith Shop; Wikipedia in bundle",
+   "status": "supported",
+   "fix": "Either variant; variant 2 'Open-air' consistent."
+  },
+  {
+   "text": "AUD 10 adult entry, costBasis entry",
+   "source": "Re-read laidleypioneervillage.org.au home and visit-us: Adults $10, Concession $8, children $2.50",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://www.laidleypioneervillage.org.au/",
+   "source": "Re-fetched 200, title 'Laidley Pioneer Village & Museum | Step Back in Time'",
+   "status": "supported",
+   "fix": "Verified."
+  }
+ ]
+}

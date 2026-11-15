@@ -1,0 +1,81 @@
+{
+ "bundaberg-2": {
+  "bio": "Museum in Bundaberg Botanic Gardens on aviator Bert Hinkler, with flight simulators and historic aircraft.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "cost": {"costMin": 27, "costMax": 27, "currency": "AUD", "costBasis": "entry", "note": "Adult $27; includes Hinkler House"},
+  "ticketUrl": "https://bundaberg.qld.gov.au/Community/Things-to-see-and-do/Hinkler-Hall-of-Aviation/Visitor-information",
+  "unverified": ["No Hinkler-specific domain reachable; the council visitor page is the operator's"]
+ },
+ "bundaberg-4": {
+  "bio": "Brewery visit with a guided tasting of up to 15 Bundaberg drinks and a self-guided history gallery.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "cost": {"costMin": 23, "costMax": 23, "currency": "AUD", "costBasis": "tour", "note": "Adult tasting plus gallery, includes a mixed 6-pack"},
+  "ticketUrl": "https://bundabergbarrel.com/",
+  "unverified": ["'Up to 15 brews' and the history gallery not re-confirmed on the page read"]
+ },
+ "bundaberg-6": {
+  "bio": "Extinct volcano rising over cane fields, with a lookout opened in 1931 and wide views over the farmland.",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["No fee or gate source; free/open inferred", "PIN CHECK: researcher flags the pin as OSM basketball courts, possibly not the summit lookout; verify before applying", "No single steward site, so no ticketUrl"]
+ },
+ "bundaberg-8": {
+  "bio": "35 unusual craters outside Bundaberg, with viewing platforms, an augmented reality trail and a cafe.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "cost": {"costMin": 20.5, "costMax": 20.5, "currency": "AUD", "costBasis": "entry", "note": "Adult $20.50"},
+  "ticketUrl": "https://mysterycraters.com.au/",
+  "unverified": []
+ },
+ "kgari-1": {
+  "bio": "Perched freshwater lake in Great Sandy National Park with a beach of nearly pure silica sand.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "cost": {"free": true, "needs": "permit", "note": "No fee recorded: the $57.80 vehicle permit figure is unconfirmed and applies only to driving on K'gari; walkers and tour or ferry visitors need none"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kgari-fraser",
+  "unverified": ["Vehicle permit fee (unconfirmed, QPWS blocked: check in a browser)", "Lake figures (150 ha, 5 m, 100 m) researcher-sourced; omitted from the bio"]
+ },
+ "kgari-2": {
+  "bio": "1905 ocean liner beached on 75 Mile Beach in 1935 when a cyclone broke its towline.",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "cost": {"free": true, "needs": "permit", "note": "No fee recorded: vehicle permit fee unconfirmed; applies only to driving on K'gari"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kgari-fraser",
+  "unverified": ["Vehicle permit fee (QPWS blocked: check in a browser)"]
+ },
+ "kgari-4": {
+  "bio": "Small green freshwater lake on K'gari's east side, slowly being swallowed by the Hammerstone Sandblow.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "cost": {"free": true, "needs": "permit", "note": "No fee recorded: vehicle permit fee unconfirmed; applies only to driving on K'gari"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kgari-fraser",
+  "unverified": ["Vehicle permit fee (QPWS blocked)", "Walk-in distance and time not sourced"]
+ },
+ "kgari-5": {
+  "bio": "Named rock pools on K'gari's east coast, close to Indian Head on the beach.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "needs": "permit", "note": "No fee recorded: vehicle permit fee unconfirmed; applies only to driving on K'gari"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kgari-fraser",
+  "unverified": ["THIN EVIDENCE: only name and location sourced; no article and QPWS blocked. Rewrite bio and consider review once read in a browser", "Vehicle permit fee (QPWS blocked)"]
+ },
+ "kgari-7": {
+  "bio": "Large lake of about 200 ha on K'gari, its water tinted red by wallum swamp, with a campground.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "needs": "permit", "note": "No fee recorded: vehicle permit fee unconfirmed; applies only to driving on K'gari"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kgari-fraser",
+  "unverified": ["Vehicle permit fee (QPWS blocked)", "Camping fees not recorded"]
+ },
+ "kgari-9": {
+  "bio": "Queensland's tallest lighthouse, an 1870 cast-iron tower at Sandy Cape on K'gari's northern tip.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"free": true, "needs": "permit", "note": "No fee recorded: vehicle permit fee unconfirmed; applies only to driving on K'gari"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kgari-fraser",
+  "unverified": ["THIN EVIDENCE: public access to the tower and remote 4WD access not sourced; confirm in a browser", "Vehicle permit fee (QPWS blocked)"]
+ }
+}

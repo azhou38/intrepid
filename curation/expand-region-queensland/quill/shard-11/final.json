@@ -1,0 +1,80 @@
+{
+ "ingham-3": {
+  "bio": "A 32 km multi-day coastal trail in Hinchinbrook Island National Park, reached by private ferry.",
+  "visitHoursMin": 48,
+  "visitHoursMax": 120,
+  "cost": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/hinchinbrook-thorsborne",
+  "unverified": ["Permit fee UNVERIFIED: candidate AUD 7.50 per adult per night (needs permit, costBasis permit, costPer Per Night) from a search summary only; QPWS blocked, confirm in a browser", "Two to five nights and booking requirement unconfirmed on the page, left out of the bio", "Visit hours are an estimate from the 2-5 night pass"]
+ },
+ "ingham-4": {
+  "bio": "Waterfall in Paluma Range National Park, a short walk from a day-use area between Ingham and Townsville.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/paluma-range",
+  "unverified": ["No day-use fee found; QPWS page blocked, confirm in a browser", "Camping is separate with a fee (amount not found)", "A lookout track update window (to 22 Oct 2027) is unverified"]
+ },
+ "ingham-5": {
+  "bio": "Natural and constructed wetlands in Ingham with birdlife, named for the Eastern Grass Owl.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["No entry fee on an official page; free/open inferred", "Gallery and cafe next door (2020 report) dropped from the bio", "No ticketUrl: official site redirects to a generic council page"]
+ },
+ "ingham-7": {
+  "bio": "Hinchinbrook Island waterfall with pools at its base and top, reached on the Thorsborne Trail or by boat.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/hinchinbrook/attractions/south-zoe-bay-day-use-area (a different place, South Zoe Bay day-use: not a match)",
+  "unverified": ["Only blog and operator sources; QPWS blocked. Confirm the bio in a browser", "Crocodiles in Zoe Bay itself (a goodToKnow candidate)", "'open' is questionable for a spot reached only via a permitted trail or tour"]
+ },
+ "ingham-8": {
+  "bio": "Picnic area on a creek in the Mount Spec section of Paluma Range National Park, upstream of The Rockslides.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/paluma-range/attractions/big-crystal-creek-day-use-area-mount-spec-section",
+  "unverified": ["QPWS blocked, all details from search snippets", "Swimming claim dropped until confirmed", "Wet-weather causeway flooding can cut access (goodToKnow candidate)"]
+ },
+ "ingham-9": {
+  "bio": "Creek day-use area on Mt Spec Road in Paluma Range National Park, known for its stone bridge.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/paluma-range/attractions/little-crystal-creek-day-use-area-mount-spec-section",
+  "unverified": ["FLAG: temporary closure listed from 7 Feb 2025 to 6 Dec 2026 (older listing) or 16 Jun 2027 (newer). Check status in a browser; if closed, hold the spot or add a goodToKnow", "QPWS blocked, details from snippets"]
+ },
+ "cairns-3": {
+  "bio": "Aquarium of Wet Tropics rainforest and Great Barrier Reef animals, with a Turtle Rehabilitation Centre.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "cost": {"costMin": 61, "costMax": 61, "currency": "AUD", "costBasis": "entry", "note": "Adult (15+) general admission"},
+  "ticketUrl": "https://www.cairnsaquarium.com.au/",
+  "unverified": ["Animal count (16,000) and zone count (11) dropped from the bio: not in the pages re-read"]
+ },
+ "cairns-4": {
+  "bio": "Free saltwater lagoon on the Cairns Esplanade, lifeguard-monitored, with toilets and showers.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Free and lifeguarded rest on a council release via search summary and a swimming-hole site; council site blocked", "Closes for maintenance (5 weeks every two years; 2026/27 renewal budgeted): goodToKnow candidate"]
+ },
+ "cairns-5": {
+  "bio": "Free botanic gardens in Edge Hill, with Flecker Garden, Centenary Lakes and a conservatory.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "entry"},
+  "ticketUrl_blocked": "https://www.cairns.qld.gov.au/experience-cairns/botanic-gardens/visit-the-gardens",
+  "unverified": ["Free entry from a council-hosted Friends page via search summary; fetched page blocked", "Possible construction works Jul-Nov 2026 (commercial listing, unverified)"]
+ },
+ "cairns-7": {
+  "bio": "Cairns Historical Society museum in the old School of Arts, with four permanent galleries and kids' trails.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "cost": {"costMin": 15, "costMax": 15, "currency": "AUD", "costBasis": "entry", "note": "Adult"},
+  "ticketUrl": "https://cairnsmuseum.org.au/",
+  "unverified": []
+ }
+}

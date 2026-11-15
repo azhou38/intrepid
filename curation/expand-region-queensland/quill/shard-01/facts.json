@@ -1,0 +1,356 @@
+{
+ "brisbane-1": {
+  "bioFit": [
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "Over 15 million items",
+    "source": "https://en.wikipedia.org/wiki/Queensland_Museum",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "SparkLab science centre",
+    "source": "https://www.museum.qld.gov.au/kurilpa/plan-your-visit/hours-and-admission",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free entry: free:true, costBasis entry (SparkLab/exhibitions extra, not the price)",
+    "source": "https://www.museum.qld.gov.au/kurilpa/plan-your-visit/hours-and-admission",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.museum.qld.gov.au/kurilpa",
+    "source": "title 'Queensland Museum Kurilpa' re-read",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "brisbane-2": {
+  "bioFit": [
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "Level 3 of City Hall, history and art",
+    "source": "https://www.museumofbrisbane.com.au/visit-us/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'tours and workshops' (bio 2)",
+    "source": "visit-us page lists tours, events, MoB Makers",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Entry is free; free:true entry",
+    "source": "https://www.museumofbrisbane.com.au/visit-us/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.museumofbrisbane.com.au/",
+    "source": "title 'Home - Museum of Brisbane | MoB' re-read",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "brisbane-3": {
+  "bioFit": [
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "Part of QAGOMA, 150 m from GOMA",
+    "source": "https://en.wikipedia.org/wiki/Queensland_Art_Gallery",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free entry: free:true entry",
+    "source": "qagoma.qld.gov.au (403 bot wall, BLOCKED to scripts; researcher used a search summary)",
+    "status": "unverifiable",
+    "fix": "Confirm in the in-app browser that general entry is free before shipping."
+   },
+   {
+    "text": "ticketUrl https://www.qagoma.qld.gov.au/",
+    "source": "403 'Just a moment...'; BLOCKED, needs real-browser check of title",
+    "status": "unverifiable",
+    "fix": "Open in the in-app browser; keep the link only if the title names the gallery."
+   }
+  ]
+ },
+ "brisbane-4": {
+  "bioFit": [
+   true,
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "18 hectares, Fig Tree Pocket, founded 1927",
+    "source": "https://en.wikipedia.org/wiki/Lone_Pine_Koala_Sanctuary",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Daily talks/shows, kangaroo feeding included; most people spend 3-4 hours",
+    "source": "https://lonepinekoalasanctuary.com/tickets-membership/ and homepage",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'Free-range kangaroos' (bio 3)",
+    "source": "operator says visitors feed the kangaroos; 'free-range' wording not seen",
+    "status": "unverifiable",
+    "fix": "Prefer bio 1 or 2; or say 'kangaroo feeding'."
+   },
+   {
+    "text": "Adult 18+ $63 AUD: costMin=costMax=63, costBasis entry (re-read fresh; child $45, student/senior $50)",
+    "source": "https://lonepinekoalasanctuary.com/tickets-membership/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "visitHours 3-4 (operator)",
+    "source": "same page",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://lonepinekoalasanctuary.com/",
+    "source": "title 'Visit Lone Pine' re-read; homepage lists opening 9-5 daily. Banner notes 17-18 Nov closure (transient, keep out of copy)",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "brisbane-5": {
+  "bioFit": [
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "56 hectares, Mount Coot-tha, premier subtropical gardens",
+    "source": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/brisbane-botanic-gardens-mt-coot-tha",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Tropical Display Dome and Japanese Garden",
+    "source": "https://en.wikipedia.org/wiki/Brisbane_Botanic_Gardens,_Mount_Coot-tha; council page mentions Tropical Dome and Japanese Gardens",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'free entry': free:true; costBasis entry acceptable for a staffed garden with facilities (no Qld park pass; council park)",
+    "source": "council page re-read",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl = council page",
+    "source": "title 'Brisbane Botanic Gardens Mt Coot-tha | Brisbane City Council' re-read",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "category 'viewpoint' in input looks wrong (garden: nature)",
+    "source": "n/a",
+    "status": "unverifiable",
+    "fix": "Owner/writer to set category nature."
+   }
+  ]
+ },
+ "brisbane-6": {
+  "bioFit": [
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "Expo 88 site, rainforest, Wheel of Brisbane, riverfront promenade",
+    "source": "https://en.wikipedia.org/wiki/South_Bank_Parklands",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Streets Beach lagoon free",
+    "source": "https://www.visitsouthbank.com.au/places/streets-beach-at-south-bank-parklands (Price Free, lifeguarded)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, costBasis open (no gate)",
+    "source": "visitsouthbank.com.au; open precinct",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.visitsouthbank.com.au/",
+    "source": "title 'Visit South Bank' re-read; precinct site of South Bank Corporation. Acceptable; omit if no single steward is wanted",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "brisbane-7": {
+  "bioFit": [
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "12-hectare riverside CBD precinct (Queen's Wharf, Brisbane only)",
+    "source": "https://en.wikipedia.org/wiki/Queen%27s_Wharf,_Brisbane",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Sky Deck 250 m rooftop runway",
+    "source": "https://queenswharfbrisbane.com.au/ (Sky Deck's 250-metre rooftop runway)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Neville Bonner Bridge to South Bank; heritage buildings (nine of 11 sites open)",
+    "source": "https://en.wikipedia.org/wiki/Queen%27s_Wharf,_Brisbane",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Opened 2024 (staged opening 29 Aug 2024)",
+    "source": "https://en.wikipedia.org/wiki/Queen%27s_Wharf,_Brisbane",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free/open (costBasis open): Wikipedia says Sky Deck 'will be open to the public 24/7'; official page does not state entry is free",
+    "source": "queenswharfbrisbane.com.au re-read (site is part placeholder, lorem ipsum text)",
+    "status": "unverifiable",
+    "fix": "Treat free:true/open as unconfirmed; confirm precinct and Sky Deck are free and open access."
+   },
+   {
+    "text": "ticketUrl https://queenswharfbrisbane.com.au/",
+    "source": "title names Queen's Wharf Brisbane; right place (not Newcastle). Page is half placeholder, so check in browser",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "brisbane-8": {
+  "bioFit": [
+   true,
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "18 ha, 1.2 km river frontage, heritage/exotic/native plants",
+    "source": "https://www.brisbane.qld.gov.au/parks-and-recreation/botanic-gardens/city-botanic-gardens",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Begun 1825 as penal settlement farm, heritage-listed",
+    "source": "https://en.wikipedia.org/wiki/City_Botanic_Gardens",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, costBasis open: park 'Open 24 hours, 7 days a week', no fee mentioned",
+    "source": "council page re-read",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl = council page",
+    "source": "title 'City Botanic Gardens | Brisbane City Council' re-read",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "brisbane-9": {
+  "bioFit": [
+   true,
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "Gothic Revival, consecrated 1874, Munich glass, Harry Clarke window",
+    "source": "https://en.wikipedia.org/wiki/Cathedral_of_St_Stephen,_Brisbane",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Pugin-designed Old St Stephen's, Queensland's oldest Catholic church",
+    "source": "Wikipedia; https://www.cathedralofststephen.org.au/history.html confirms Pugin design, first Mass 1850; 'oldest in Queensland' wording from Wikipedia",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, costBasis donation: donations welcome, no fee found; public access/times not stated on site",
+    "source": "https://www.cathedralofststephen.org.au/",
+    "status": "unverifiable",
+    "fix": "Visitor source and public access still unconfirmed (COVERAGE church test); cathedral site has 'Guides & Welcomers' but no opening hours read."
+   },
+   {
+    "text": "ticketUrl https://www.cathedralofststephen.org.au/",
+    "source": "title \"St Stephen's Cathedral, Brisbane - HOME\" re-read",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "brisbane-10": {
+  "bioFit": [
+   true,
+   true,
+   true
+  ],
+  "claims": [
+   {
+    "text": "64 m tower modelled on St Mark's Campanile, four 4.8 m faces, observation platform by lift",
+    "source": "https://en.wikipedia.org/wiki/Brisbane_City_Hall",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free booked Clock Tower Tours, 10:15am-4:45pm daily every 15 min (lift, 7 people)",
+    "source": "https://www.museumofbrisbane.com.au/whats-on/clock-tower-tours/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, costBasis entry, needs booking",
+    "source": "same page ('Tickets Free', must be booked)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl = tours page",
+    "source": "title 'Clock Tower Tours - Museum of Brisbane | MoB' re-read",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Wikipedia article is Brisbane City Hall (tower is a section); keep wiki 'Brisbane City Hall'",
+    "source": "n/a",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ }
+}

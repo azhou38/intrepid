@@ -1,0 +1,26 @@
+{
+ "id": "kgari-1",
+ "name": "Lake McKenzie",
+ "built": "2026-11-15",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Lake_McKenzie",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-15",
+   "title": "Lake McKenzie",
+   "excerpt": "Lake McKenzie (Boorangoora) is a perched lake on K'gari or Fraser Island in Queensland, Australia. The lake is located in the Great Sandy National Park."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

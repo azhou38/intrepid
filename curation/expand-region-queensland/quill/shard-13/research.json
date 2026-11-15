@@ -1,0 +1,224 @@
+{
+ "atherton-tablelands-7": {
+  "facts": [],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "Roadside tree in Crater Lakes National Park (Danbulla); no fee source readable"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/crater-lakes (QPWS 403; check in browser, confirm page names the Cathedral Fig Tree and Danbulla)",
+  "sources": {},
+  "unverified": [
+   "bio facts: no Wikipedia article (404) and QPWS blocked; need height/location description from QPWS or Wikivoyage",
+   "free/no-fee: Queensland NP no-day-fee rule only, QPWS blocked",
+   "whether tree is in Crater Lakes NP or Danbulla State Forest"
+  ],
+  "coordinates_source": "from placement: MEDIUM osm natural=tree 'Cathedral Fig Tree' (nominatim); moved 0 m"
+ },
+ "atherton-tablelands-9": {
+  "facts": [
+   "A tiered plunge waterfall on The Millstream in the Wet Tropics, about 15 km southwest of Ravenshoe, reached from the Kennedy Highway",
+   "Two sets of falls, Big and Little Millstream, about 500 m apart; the larger is reputed the widest single-drop waterfall in Australia",
+   "Big Millstream Falls about 27 m high; protected in Millstream Falls National Park"
+  ],
+  "sources": {
+   "facts": "https://en.wikipedia.org/wiki/Millstream_Falls"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "no fee source read (QPWS 403); Queensland NP no day-use fee rule"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/millstream-falls (QPWS 403; check in browser)",
+  "unverified": [
+   "no-fee status from QPWS"
+  ],
+  "coordinates_source": "placement HIGH: OSM waterway=waterfall Big Millstream Falls + Wikipedia; moved 0 m"
+ },
+ "atherton-tablelands-10": {
+  "facts": [
+   "National park in Far North Queensland, 3.64 km2, on the Atherton Tableland (Wikipedia)"
+  ],
+  "sources": {
+   "facts": "https://en.wikipedia.org/wiki/Mount_Hypipamee_National_Park"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "no fee source read (QPWS 403)"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/mount-hypipamee (QPWS 403; check in browser)",
+  "unverified": [
+   "crater (Dinner Falls / crater lookout) details: Wikipedia excerpt gave none; take from QPWS in browser",
+   "no-fee status from QPWS",
+   "category: placement says viewpoint, spot is the national park / crater walk"
+  ],
+  "coordinates_source": "placement MEDIUM: OSM natural=peak Mount Hypipamee; Wikipedia park coord 17.425,145.486 is ~0.1 km away"
+ },
+ "atherton-tablelands-12": {
+  "facts": [
+   "Open-air historic museum in Herberton on a 16-acre site with over 50 restored period buildings from the 1860s set out like a tin-mining town (Wikipedia); the operator says 60+ original buildings with shops, tearooms, antique vehicles and tractors",
+   "Largest private collection of its type in Queensland; reopened 2009 after closing in 2003",
+   "Open 7 days 9.30am-4pm, last entry 2.30pm (operator; not to be stored)"
+  ],
+  "sources": {
+   "facts": "https://en.wikipedia.org/wiki/Historic_Village_Herberton",
+   "price": "https://www.historicvillageherberton.com.au/visit/plan-your-visit/opening-times-prices/",
+   "site": "https://www.historicvillageherberton.com.au/"
+  },
+  "cost": {
+   "costMin": 46,
+   "costMax": 46,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Adult $46; operator page says prices current until 15 April 2026, so confirm"
+  },
+  "ticketUrl": "https://www.historicvillageherberton.com.au/",
+  "unverified": [
+   "price validity date (page says to 15 Apr 2026)"
+  ],
+  "coordinates_source": "placement HIGH: OSM tourism=museum + Wikipedia; moved 0 m"
+ },
+ "atherton-tablelands-14": {
+  "facts": [
+   "Heritage-listed former temple, now museum, on Herberton Road, Atherton, built 1903; one of the oldest original Chinese temples in Australasia (also Hou Wang Miau, Atherton Joss House)",
+   "Last remnant of Atherton's Chinatown; timber and tin temple museum run by the National Trust; admission includes a guided tour (Lonely Planet)"
+  ],
+  "sources": {
+   "facts": "https://en.wikipedia.org/wiki/Hou_Wang_Temple",
+   "tour": "https://www.lonelyplanet.com/points-of-interest/hou-wang-miau-temple/1158603",
+   "price": "https://www.atlasobscura.com/places/hou-wang-temple (third party, possibly dated)"
+  },
+  "cost": {
+   "costMin": 10,
+   "costMax": 10,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Adult $10 from Atlas Obscura only; operator page not found. Flag as approximate"
+  },
+  "ticketUrl": "none found: houwang.org.au unreachable, nationaltrust.org.au guessed paths 404; operator (National Trust Qld / Tablelands) page unresolved, search tropicalnorthqueensland.org.au listing ?p=54286 404 too",
+  "unverified": [
+   "adult price from operator",
+   "official site",
+   "category in placement is 'nature'; should be historic/religious (a museum/temple)"
+  ],
+  "coordinates_source": "placement MEDIUM: OSM tourism=museum Hou Wang Temple; Wikipedia geohack 17.278839S 145.471842E is about 20 m away"
+ },
+ "mission-beach-1": {
+  "facts": [
+   "Island 4 km off the coast opposite Mission Beach, one of the Family Islands; most of it lies in Family Islands National Park and the Great Barrier Reef World Heritage Area; known as Coonanglebah",
+   "Surrounded by reefs with diverse birdlife; reached from Mission Beach by water taxi (about 10 min, wading boarding at Wongaling, per tourism listing)",
+   "Resort infrastructure was damaged by Cyclone Yasi (2011); the island was bought in 2022 (Wikipedia)"
+  ],
+  "sources": {
+   "facts": "https://en.wikipedia.org/wiki/Dunk_Island",
+   "parks": "https://parks.qld.gov.au/parks/family-islands",
+   "transport": "https://tropicalnorthqueensland.org.au/listing/product/mission-beach-dunk-island-water-taxi (search snippet)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "Island national park land is free to visit; the water taxi (about $40 adult) is transport, not the price. Resort is private"
+  },
+  "ticketUrl": "none (reached by several water-taxi operators; the island is national park and private)",
+  "unverified": [
+   "current resort/visitor access status and whether the private owner restricts parts of the island",
+   "QPWS Family Islands page fee text not matched (page loads; Dunk Island camping/walk details not read)",
+   "trail facts (Mt Kootaloo 2-hr return, Muggy Muggy beach) are from a reseller snippet only"
+  ],
+  "coordinates_source": "placement MEDIUM: OSM leisure=resort Dunk Island Resort; island pin on the resort site, acceptable for an island visitor point"
+ },
+ "mission-beach-3": {
+  "facts": [
+   "At Mena Creek, 120 km south of Cairns; a Spanish-style castle park built by Jose Paronella, opened to the public in 1935, beside Mena Creek Falls",
+   "5 ha with tennis courts, bridges, a tunnel and 7,500 tropical plants, now rainforest; State and National Heritage listed and National Trust listed",
+   "Day and night tours; first night in the on-site van park included in admission"
+  ],
+  "sources": {
+   "facts": "https://www.paronellapark.com.au/",
+   "wiki": "https://en.wikipedia.org/wiki/Paronella_Park",
+   "price": "https://www.paronellapark.com.au/visit/admission-prices"
+  },
+  "cost": {
+   "costMin": 62,
+   "costMax": 62,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Adult $62 (pensioner $56, child 5-15 $34); day admission"
+  },
+  "ticketUrl": "https://www.paronellapark.com.au/",
+  "unverified": [
+   "whether $62 includes the night tour (page lists adult admission only)"
+  ],
+  "coordinates_source": "placement HIGH: OSM tourism=attraction + Wikipedia; moved 0 m"
+ },
+ "mission-beach-4": {
+  "facts": [
+   "A 7.9 m golden gumboot monument in Tully, opened in May 2003 by the Tully Lions and Rotary Clubs at a cost of $90,000; the height represents Tully's record 1950 rainfall",
+   "Tied to the Golden Gumboot wettest-town competition among Tully, Innisfail and Babinda"
+  ],
+  "sources": {
+   "facts": "https://en.wikipedia.org/wiki/Golden_Gumboot"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "roadside monument, no gate"
+  },
+  "ticketUrl": "none (monument; Tully tourism page not needed)",
+  "unverified": [
+   "exact location (Tully, near the Information Centre) from source; pin is OSM tourism=attraction"
+  ],
+  "coordinates_source": "placement MEDIUM: OSM tourism=attraction The Golden Gumboot; moved 0 m"
+ },
+ "mission-beach-6": {
+  "facts": [
+   "National park in Far North Queensland part of the Wooroonooran Important Bird Area (BirdLife), supporting Wet Tropics endemic birds",
+   "Pin is the Tully Gorge Day Use Area (OSM amenity=shelter)"
+  ],
+  "sources": {
+   "facts": "https://en.wikipedia.org/wiki/Tully_Gorge_National_Park"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD",
+   "note": "no fee source read (QPWS 403); camping fees would not be the price"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/tully-gorge (QPWS 403; check in browser, confirm it names Tully Gorge NP)",
+  "unverified": [
+   "activities (swimming, rafting, walks) and bio details: Wikipedia excerpt too thin, read QPWS",
+   "distance 49.5 km from Mission Beach, near the edge of its span",
+   "category in placement is 'entertainment', should be nature"
+  ],
+  "coordinates_source": "placement MEDIUM: OSM amenity=shelter Tully Gorge Day Use Area; park centroid in Wikipedia 17.8125,145.7208 not used"
+ },
+ "port-douglas-3": {
+  "facts": [
+   "Wildlife sanctuary 5 minutes from the centre of Port Douglas with five environments (Wetlands, Rainforest, Savannah, Nocturnal, Woodlands), elevated boardwalks, hand-feeding of wallabies and kangaroos, croc feeding, koala photos, Southern Cassowary",
+   "Eco-certified; open daily 8am-4pm (operator; not to be stored); ticket valid for purchase date plus four more days"
+  ],
+  "sources": {
+   "facts": "https://www.wildlifehabitat.com.au/",
+   "price": "https://www.wildlifehabitat.com.au/book-now/",
+   "visitor": "https://www.wildlifehabitat.com.au/plan-your-visit/visitor-information/"
+  },
+  "cost": {
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Park Admission adult $50, child 4-14 $30 (operator book-now page); ticket valid 5 days"
+  },
+  "ticketUrl": "https://www.wildlifehabitat.com.au/",
+  "unverified": [
+   "no Wikipedia article (404) so no wiki field; formerly Rainforest Habitat per placement"
+  ],
+  "coordinates_source": "placement MEDIUM: OSM tourism=zoo Wildlife Habitat Port Douglas; moved 0 m"
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "id": "cooktown-4",
+ "name": "Mount Cook National Park",
+ "built": "2026-11-15",
+ "sources": [
+  {
+   "kind": "wikipedia",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Mount_Cook_National_Park%2C_Australia",
+   "status": "ok",
+   "http": 200,
+   "retrieved": "2026-11-15",
+   "title": "Mount Cook National Park, Australia",
+   "excerpt": "Mount Cook National Park is a protected area in the locality of Cooktown, in the Shire of Cook, Queensland, Australia."
+  }
+ ],
+ "passLists": [
+  {
+   "pass": "nt-parks",
+   "url": "https://nt.gov.au/parks/visitor-pass",
+   "listed": null
+  }
+ ],
+ "unresolved": [
+  "pass list unreadable: https://nt.gov.au/parks/visitor-pass"
+ ]
+}

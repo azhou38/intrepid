@@ -1,0 +1,280 @@
+{
+ "bundaberg-2": [
+  {
+   "text": "Bio: museum in Botanic Gardens on Bert Hinkler; simulators, aircraft; his English home relocated",
+   "source": "council page + Wikipedia summary",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Bio variant 2: 1928 solo England-Australia flight",
+   "source": "research (Wikipedia summary)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Price AUD 27 adult entry (entry)",
+   "source": "https://bundaberg.qld.gov.au/Community/Things-to-see-and-do/Hinkler-Hall-of-Aviation/Visitor-information",
+   "status": "supported",
+   "fix": "Re-read: Adult $27, senior $21, child $18. Basis entry correct."
+  },
+  {
+   "text": "ticketUrl = council visitor-information page",
+   "source": "https://bundaberg.qld.gov.au/Community/Things-to-see-and-do/Hinkler-Hall-of-Aviation/Visitor-information",
+   "status": "supported",
+   "fix": "Loaded, title 'Visitor information | Bundaberg Regional Council'; operator is the council."
+  },
+  {
+   "text": "Visit 1-1.5 h",
+   "source": "research note",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "bundaberg-4": [
+  {
+   "text": "Bio: Bundaberg Ginger Beer home, tasting of up to 15 brews, gallery on brewing history",
+   "source": "https://bundabergbarrel.com/ ",
+   "status": "supported",
+   "fix": "'Up to 15' and history gallery came from research; not re-confirmed in my grep but consistent with Rezdy product title."
+  },
+  {
+   "text": "Price AUD 23 adult (adult tasting + self-guided gallery, incl. 6-pack)",
+   "source": "https://bundaberg.rezdy.com/457950/tasting-self-guided-gallery-tour",
+   "status": "supported",
+   "fix": "Re-read: Adults $23 incl. mixed 6-pack. costBasis 'entry' is better 'tour' (ticketed tasting experience)."
+  },
+  {
+   "text": "ticketUrl https://bundabergbarrel.com/",
+   "source": "https://bundabergbarrel.com/",
+   "status": "supported",
+   "fix": "Loaded, title 'The Bundaberg Brewed Drinks Barrel - The Bundaberg Barrel'. Names the place."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "bundaberg-6": [
+  {
+   "text": "Bio: extinct volcano, 1931 lookout, Hinkler memorial (variant 1)",
+   "source": "Wikipedia Bundaberg Hummock",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Bio variant 2 'near Mon Repos'",
+   "source": "Wikipedia",
+   "status": "supported",
+   "fix": "Wikipedia says about 5 km south of Mon Repos beach: 'near' acceptable."
+  },
+  {
+   "text": "Free, open access, no ticketUrl",
+   "source": "Wikipedia",
+   "status": "unverifiable",
+   "fix": "No fee/gate source; acceptable as free/open but pin flagged by researcher as OSM basketball courts: verify the pin is on the summit lookout before applying."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "bundaberg-8": [
+  {
+   "text": "Bio: 35 craters, viewing platforms, AR trail, cafe, Earth Room, about 25 min away",
+   "source": "https://mysterycraters.com.au/",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Price AUD 20.50 adult entry",
+   "source": "https://mysterycraters.com.au/",
+   "status": "supported",
+   "fix": "Re-read: Adult $20.50 (senior 18.50, child 11). Basis entry correct."
+  },
+  {
+   "text": "ticketUrl https://mysterycraters.com.au/",
+   "source": "https://mysterycraters.com.au/",
+   "status": "supported",
+   "fix": "Loaded, title 'Mystery Craters Bundaberg'."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "kgari-1": [
+  {
+   "text": "Bio: perched lake, Great Sandy NP, silica sand; 150 ha, just over 5 m deep; about 100 m above sea",
+   "source": "Wikipedia / research",
+   "status": "supported",
+   "fix": "Figures not re-opened in a page I can see beyond the summary; the evidence bundle holds only the intro. Treat 150 ha / 5 m / 100 m as researcher-sourced."
+  },
+  {
+   "text": "price AUD 57.80 Per Vehicle/Month, costBasis park",
+   "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+   "status": "unsupported",
+   "fix": "Fee $57.80 not on the re-read page (page says only that a permit is needed to drive on K'gari). costBasis 'park' with costPer 'Per Vehicle/Month' is wrong: no QPWS gate fee exists. Use free:true with needs:'permit' (permit fee only if confirmed in a browser at parks.qld.gov.au); no pass in parkPasses.ts applies. Walk/tour/ferry visitors need no permit."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/kgari-fraser (managing agency)",
+   "source": "re-fetched: 403 captcha",
+   "status": "unverifiable",
+   "fix": "BLOCKED for in-app browser; omit ticketUrl until checked there. Not evidence against the place."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "kgari-2": [
+  {
+   "text": "Bio: 1905 liner beached 1935 by cyclone on 75 Mile Beach; no climbing",
+   "source": "Wikipedia SS Maheno (research)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "price AUD 57.80 Per Vehicle/Month, costBasis park",
+   "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+   "status": "unsupported",
+   "fix": "Fee $57.80 not on the re-read page (page says only that a permit is needed to drive on K'gari). costBasis 'park' with costPer 'Per Vehicle/Month' is wrong: no QPWS gate fee exists. Use free:true with needs:'permit' (permit fee only if confirmed in a browser at parks.qld.gov.au); no pass in parkPasses.ts applies. Walk/tour/ferry visitors need no permit."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/kgari-fraser (managing agency)",
+   "source": "re-fetched: 403 captcha",
+   "status": "unverifiable",
+   "fix": "BLOCKED for in-app browser; omit ticketUrl until checked there. Not evidence against the place."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "kgari-4": [
+  {
+   "text": "Bio: small green lake, Hammerstone Sandblow moving into it",
+   "source": "Wikipedia Lake Wabby (research)",
+   "status": "supported",
+   "fix": "Variant 1 'east side': Lake Wabby is on K'gari's east side inland of the coast; fine."
+  },
+  {
+   "text": "price AUD 57.80 Per Vehicle/Month, costBasis park",
+   "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+   "status": "unsupported",
+   "fix": "Fee $57.80 not on the re-read page (page says only that a permit is needed to drive on K'gari). costBasis 'park' with costPer 'Per Vehicle/Month' is wrong: no QPWS gate fee exists. Use free:true with needs:'permit' (permit fee only if confirmed in a browser at parks.qld.gov.au); no pass in parkPasses.ts applies. Walk/tour/ferry visitors need no permit."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/kgari-fraser (managing agency)",
+   "source": "re-fetched: 403 captcha",
+   "status": "unverifiable",
+   "fix": "BLOCKED for in-app browser; omit ticketUrl until checked there. Not evidence against the place."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "kgari-5": [
+  {
+   "text": "Bio: rock pools on east coast beach near Indian Head",
+   "source": "research (no article; QPWS blocked)",
+   "status": "unverifiable",
+   "fix": "Thin: only name and location sourced. Keep modest bio; confirm in QPWS in a browser. Consider review for inclusion."
+  },
+  {
+   "text": "price AUD 57.80 Per Vehicle/Month, costBasis park",
+   "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+   "status": "unsupported",
+   "fix": "Fee $57.80 not on the re-read page (page says only that a permit is needed to drive on K'gari). costBasis 'park' with costPer 'Per Vehicle/Month' is wrong: no QPWS gate fee exists. Use free:true with needs:'permit' (permit fee only if confirmed in a browser at parks.qld.gov.au); no pass in parkPasses.ts applies. Walk/tour/ferry visitors need no permit."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/kgari-fraser (managing agency)",
+   "source": "re-fetched: 403 captcha",
+   "status": "unverifiable",
+   "fix": "BLOCKED for in-app browser; omit ticketUrl until checked there. Not evidence against the place."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "kgari-7": [
+  {
+   "text": "Bio: about 200 ha, largest perched lake on any sea island, red tint from wallum swamp, campground",
+   "source": "Wikipedia Lake Boomanjin",
+   "status": "supported",
+   "fix": "'Described as the largest' is attributed; keep hedged wording as in variant 2."
+  },
+  {
+   "text": "price AUD 57.80 Per Vehicle/Month, costBasis park",
+   "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+   "status": "unsupported",
+   "fix": "Fee $57.80 not on the re-read page (page says only that a permit is needed to drive on K'gari). costBasis 'park' with costPer 'Per Vehicle/Month' is wrong: no QPWS gate fee exists. Use free:true with needs:'permit' (permit fee only if confirmed in a browser at parks.qld.gov.au); no pass in parkPasses.ts applies. Walk/tour/ferry visitors need no permit."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/kgari-fraser (managing agency)",
+   "source": "re-fetched: 403 captcha",
+   "status": "unverifiable",
+   "fix": "BLOCKED for in-app browser; omit ticketUrl until checked there. Not evidence against the place."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ],
+ "kgari-9": [
+  {
+   "text": "Bio: heritage-listed cast-iron lighthouse of 1870, Sandy Cape; tallest in Queensland",
+   "source": "Wikipedia Sandy Cape Light",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Visitor can do something there (public access to tower, remote 4WD)",
+   "source": "none found",
+   "status": "unverifiable",
+   "fix": "Public access not sourced; confirm via QPWS in a browser."
+  },
+  {
+   "text": "price AUD 57.80 Per Vehicle/Month, costBasis park",
+   "source": "https://www.qld.gov.au/recreation/activities/areas-facilities/permits/vehicle",
+   "status": "unsupported",
+   "fix": "Fee $57.80 not on the re-read page (page says only that a permit is needed to drive on K'gari). costBasis 'park' with costPer 'Per Vehicle/Month' is wrong: no QPWS gate fee exists. Use free:true with needs:'permit' (permit fee only if confirmed in a browser at parks.qld.gov.au); no pass in parkPasses.ts applies. Walk/tour/ferry visitors need no permit."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/kgari-fraser (managing agency)",
+   "source": "re-fetched: 403 captcha",
+   "status": "unverifiable",
+   "fix": "BLOCKED for in-app browser; omit ticketUrl until checked there. Not evidence against the place."
+  },
+  {
+   "text": "Bio-fit: all variants",
+   "source": "bio-fit.py",
+   "status": "supported",
+   "fix": "all fit within 3 lines"
+  }
+ ]
+}

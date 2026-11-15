@@ -1,0 +1,60 @@
+{
+ "gold-coast-11": {
+  "bio": "Broadbeach's surf beach, quieter than Surfers Paradise, with Kurrawa Park and the surf club on the shore.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["'Patrolled' not stated by the source, so left out", "Free/open inferred for an open public beach"]
+ },
+ "gold-coast-19": {
+  "bio": "A quiet beach popular with locals, with ample parking and barbecue facilities.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Free/open inferred for an open public beach", "Placement name is 'Nobby Beach'; Wikipedia redirects to the Mermaid Beach suburb"]
+ },
+ "sunshine-coast-13": {
+  "bio": "Caloundra's main patrolled surf beach, with a saltwater swimming pool, cafes and the surf club close by.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Free/open inferred for an open public beach"]
+ },
+ "bowen-1": {
+  "bio": "Among Bowen's best beaches, alongside Horseshoe Bay, with a tourist village close by.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Free/open inferred for an open public beach", "'Town side of the peninsula' dropped: not sourced"]
+ },
+ "magnetic-island-5": {
+  "bio": "Secluded, palm-fringed bay reached by a 3 km track from Horseshoe Bay, known for snorkelling.",
+  "visitHoursMin": 1.5,
+  "visitHoursMax": 3,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Magnetic Island National Park page blocked: confirm no day-use fee in a browser", "Track is tide-dependent (goodToKnow candidate)"]
+ },
+ "moreton-island-7": {
+  "bio": "Walk up a giant sand dune on Moreton Island, listed as the highest in the world.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/moreton-island",
+  "unverified": ["No walking fee found; the island's vehicle permit covers vehicles only", "Tangalooma access side and 'views' dropped: not sourced"]
+ },
+ "glass-house-mountains-2": {
+  "bio": "A 259 m peak and the sixth tallest of the Glass House Mountains, climbed by a summit walking track.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/glass-house-mountains",
+  "unverified": ["Walk distance (2.6 vs 2.8 km) and grade disagree between sources; left out", "No day-use fee confirmed (QPWS blocked)", "Pin is the OSM peak; walk midpoint not resolved"]
+ },
+ "rainbow-beach-5": {
+  "bio": "Four volcanic pinnacles off Double Island Point, a dive site with grey nurse sharks year-round.",
+  "visitHoursMin": 5,
+  "visitHoursMax": 6,
+  "cost": {"costMin": 300, "costMax": 370, "currency": "AUD", "costBasis": "tour", "note": "Operator dive charter: $300 (Advanced+ diver with Nitrox cylinders and weights) to $370 (all equipment supplied); corrected from the older 195-260 listing"},
+  "unverified": ["Dive trips are sold by many operators, so no ticketUrl (Wolf Rock Dive, https://wolfrockdive.com.au/, is one)", "Mostly requires Advanced Open Water certification (listings)"]
+ }
+}

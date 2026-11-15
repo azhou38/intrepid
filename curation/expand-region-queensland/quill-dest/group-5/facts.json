@@ -1,0 +1,284 @@
+{
+ "mission-beach": {
+  "rank": 4,
+  "counts": "whyVisit 3 ok (rank 4); goodToKnow 3 but rank 4 needs 2: cut one (drop the base-between-cities tip or merge); all details <=160; verbs ok",
+  "claims": [
+   {
+    "text": "Tagline/desc: four beach villages, 14 km of golden beach, between Townsville and Cairns, Cassowary Coast",
+    "source": "https://en.wikivoyage.org/wiki/Mission_Beach",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Ringed by World Heritage rainforest / rainforest backs onto the sand",
+    "source": "https://en.wikipedia.org/wiki/Mission_Beach,_Queensland",
+    "status": "unverifiable",
+    "fix": "Wikipedia says World Heritage reef on one side and rainforest; 'World Heritage' on the rainforest not stated in fetched text. Say 'lush tropical rainforest' (Wikivoyage) or keep only if a source is added."
+   },
+   {
+    "text": "Endangered southern cassowary still roams the lowland rainforest",
+    "source": "https://en.wikipedia.org/wiki/Mission_Beach,_Queensland",
+    "status": "unverifiable",
+    "fix": "Wikipedia: cassowary 'most notable', thriving despite clearing and traffic; 'endangered' and 'southern' not in fetched text. Drop 'endangered' or source it."
+   },
+   {
+    "text": "Dunk Island and the Family Islands sit in the Great Barrier Reef Marine Park",
+    "source": "https://en.wikivoyage.org/wiki/Mission_Beach",
+    "status": "unverifiable",
+    "fix": "Wikivoyage lists Dunk Island and Family Islands under See; Marine Park membership not stated. Say 'Offshore are Dunk Island and the Family Islands'."
+   },
+   {
+    "text": "Galleries, cafes and small resorts between palms and forest",
+    "source": "Wikivoyage Mission Beach",
+    "status": "unverifiable",
+    "fix": "Source says eateries, boutiques and art galleries; 'small resorts' not stated. Cut 'small resorts'."
+   },
+   {
+    "text": "Marine stingers present from about November to May",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "unsupported",
+    "fix": "Dates are Port Douglas's (Wikivoyage), not Mission Beach's; no Mission Beach source states them. Reword to 'Marine stingers are present in the warmer wet months; swim only in netted areas or wear a stinger suit' (still unsourced for MB, so prefer cutting this tip or sourcing from a Cassowary Coast council/QLD Health page). Also net availability unconfirmed."
+   },
+   {
+    "text": "Cassowaries cross roads and have been hit by cars",
+    "source": "https://en.wikipedia.org/wiki/Mission_Beach,_Queensland",
+    "status": "supported",
+    "fix": "Wikipedia cites traffic as a pressure; fine. 'Keep to speed limit, never feed' is general advice (unsourced, acceptable)."
+   },
+   {
+    "text": "Detour 26 km off Bruce Hwy near Tully, 16 km from El Arish; buses stop at Wongaling Beach",
+    "source": "https://en.wikivoyage.org/wiki/Mission_Beach",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Best months May-Oct, stinger-free swimming",
+    "source": "none (no tourism source fetched; queensland.com blocked)",
+    "status": "unsupported",
+    "fix": "No fetched Mission Beach source gives best months. May-Oct is a dry-season inference; 'stinger-free swimming' relies on the borrowed Port Douglas dates. Drop 'stinger-free' from the blurb and mark months as inferred, or source from a Tropical Tourism North Queensland/Cassowary Coast page."
+   }
+  ]
+ },
+ "port-douglas": {
+  "rank": 3,
+  "counts": "whyVisit 3 ok; goodToKnow 3 ok; details <=160; verbs ok",
+  "claims": [
+   {
+    "text": "Small resort town an hour north of Cairns, village feel, palms taller than buildings",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Four Mile Beach; Macrossan Street cafes, pubs, restaurants",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": "Macrossan St is named as the main downtown; cafes/pubs/restaurants appear for the town generally. Fine."
+   },
+   {
+    "text": "Base for reef trips and Daintree; Cape Tribulation 90-minute drive on sealed roads",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Wildlife parks and Mossman Gorge close by",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Saltwater crocodiles; warning signs on Four Mile Beach; avoid water's edge at dusk; beach closed if croc sighted",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": "Tip says 'stay out if it is closed': fine."
+   },
+   {
+    "text": "Stinger season Nov to May; netted, lifeguard-patrolled area at north end of Four Mile Beach; signs show daily risk",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Airport in Cairns, one hour south on winding Captain Cook Hwy; shuttles from airport; tours pick up at hotels",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Best months May-Oct, dry, no stinger season",
+    "source": "https://en.wikivoyage.org/wiki/Port_Douglas",
+    "status": "supported",
+    "fix": "Wikivoyage peak season is May-Sep; October is an unsourced extension. Either use 5-9 or accept Oct as dry-season inference. 'No stinger season' is correct for May (stinger season ends May inclusive): May is inside stinger season, so change blurb to 'few stingers' or use 6-9/6-10."
+   }
+  ]
+ },
+ "daintree": {
+  "rank": 2,
+  "counts": "whyVisit 4 ok; goodToKnow 3 ok; details <=160; verbs ok",
+  "claims": [
+   {
+    "text": "Over 135 million years old; Wet Tropics World Heritage Area; about 430 bird species",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "One of few places where two World Heritage sites (rainforest and Great Barrier Reef) meet",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "supported",
+    "fix": "Source: 'the only place in the world' where two World Heritage sites meet; 'one of the few' is safe."
+   },
+   {
+    "text": "Cross the Daintree River by cable ferry to Cape Tribulation",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "unverifiable",
+    "fix": "Source says 'ferry' only. Drop 'cable' unless sourced."
+   },
+   {
+    "text": "Cassowary is the icon",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "supported",
+    "fix": "'The most iconic one of all in the Daintree is the cassowary'."
+   },
+   {
+    "text": "Ferry fares (Sep 2025) $31 one-way / $51 return per car",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "supported",
+    "fix": "Matches the page, but dated Sep 2025 (14 months old) and a dated fare in app text goes stale: cut the figures ('The ferry crosses to Cape Tribulation; fares are charged per vehicle') or say 'about $30 one way'. Official Douglas Shire page not fetched."
+   },
+   {
+    "text": "Crocodiles in river, creeks and sea; stingers present in summer; never swim at night",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "supported",
+    "fix": "'Sea' and 'never swim at night' are reasonable reading of the 2016 Thornton Beach night-swim death; not worded in source."
+   },
+   {
+    "text": "Nov-Mar rainy and cyclone season; check road conditions north of river",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "supported",
+    "fix": "Road-conditions advice is generic, not sourced; harmless."
+   },
+   {
+    "text": "Boardwalks, river cruises for crocodiles, rainforest meets reef beaches",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Best months May-Oct",
+    "source": "https://en.wikivoyage.org/wiki/Daintree_Rainforest",
+    "status": "unverifiable",
+    "fix": "Inferred only from Wikivoyage's 'avoid Nov-Mar'; no tourism source states May-Oct. Note Apr is also outside the rainy season. Acceptable but flag as inferred."
+   }
+  ]
+ },
+ "cooktown": {
+  "rank": 4,
+  "counts": "whyVisit 3 ok; goodToKnow 2 ok; details <=160; verbs ok",
+  "claims": [
+   {
+    "text": "Cook beached Endeavour for 48 days in 1770 on the Endeavour River estuary",
+    "source": "https://en.wikivoyage.org/wiki/Cooktown",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Palmer River goldfields port a century later (1873); grand buildings from the boom remain",
+    "source": "https://en.wikivoyage.org/wiki/Cooktown",
+    "status": "unverifiable",
+    "fix": "Source says grand permanent buildings 'were established'; survival not stated. Reword to 'grand buildings were built in the boom'."
+   },
+   {
+    "text": "Frontier feel; base for Cape York",
+    "source": "https://en.wikivoyage.org/wiki/Cooktown",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Grassy Hill, waterfalls and rainforest around the town",
+    "source": "https://en.wikivoyage.org/wiki/Cooktown",
+    "status": "unverifiable",
+    "fix": "Wikivoyage Cooktown mentions Grassy Hill and rainforests but no waterfalls. Waterfalls (Isabella Falls, Trevathan Falls) are only in the input spot list; 'Chase waterfalls in the rainforest' has no cited source. Cite a source for the falls or soften."
+   },
+   {
+    "text": "Crocodiles sighted at Finch Bay and Cherry Tree Bay; stingers in season; do not wade in creeks or sea",
+    "source": "https://en.wikivoyage.org/wiki/Cooktown",
+    "status": "supported",
+    "fix": "Source says creeks harbour crocs and stingers; 'sea' wading is a fair extension."
+   },
+   {
+    "text": "Roads north can close quickly as creeks rise at crossings",
+    "source": "https://en.wikivoyage.org/wiki/Cooktown",
+    "status": "unsupported",
+    "fix": "Source only says creeks over the TRACK on bushwalks in the wet and that the town was historically cut off by flooding. Reword: 'Flooding has cut the town off in the wet. Check road conditions before driving and never cross a flooded creek.'"
+   },
+   {
+    "text": "Wet season December-April, dry May-November",
+    "source": "https://en.wikipedia.org/wiki/Cooktown",
+    "status": "supported",
+    "fix": "Blurb says wet runs Dec-Apr: correct. Best months 5-10 is a trim of Wikipedia's May-Nov; no tourism-board source."
+   }
+  ]
+ },
+ "winton": {
+  "rank": 4,
+  "counts": "whyVisit 2 but rank 4 needs 3: add a third general reason (e.g. 'Play the Musical Fence' is a spot, prefer 'Explore outback art and oddities' or similar) with highlight and subject; goodToKnow 2 ok; details <=160; verbs ok",
+  "claims": [
+   {
+    "text": "Outback town between Longreach and Mount Isa",
+    "source": "https://en.wikivoyage.org/wiki/Winton",
+    "status": "unverifiable",
+    "fix": "Wikivoyage places it in Central Queensland, ~2 h drive from Longreach; 'between Longreach and Mount Isa' not stated. Say 'in outback Queensland, about two hours from Longreach'."
+   },
+   {
+    "text": "Waltzing Matilda first performed there in 1895",
+    "source": "https://en.wikivoyage.org/wiki/Winton",
+    "status": "supported",
+    "fix": "Written 1895 at Dagworth Station, first performed at the Gregory Hotel in town that year. Fine."
+   },
+   {
+    "text": "First headquarters of the company that became Qantas",
+    "source": "https://en.wikivoyage.org/wiki/Winton",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Australovenator named for the town",
+    "source": "https://en.wikipedia.org/wiki/Winton,_Queensland",
+    "status": "supported",
+    "fix": "A. wintonensis, named after the town."
+   },
+   {
+    "text": "Arno's Wall and Musical Fence",
+    "source": "https://en.wikivoyage.org/wiki/Winton",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'Learn the story of Waltzing Matilda' (implies a working museum)",
+    "source": "https://en.wikivoyage.org/wiki/Winton",
+    "status": "unverifiable",
+    "fix": "Waltzing Matilda Centre burned down in June 2015 (Wikipedia and Wikivoyage); the remaining Qantilda Museum (Elderslie St) is described as what is left, with a steam locomotive. No fetched source says a rebuilt centre opened; the spot 'Waltzing Matilda Centre' (winton-1) needs current status checked at the official site (outbackatwinton.com.au) before the reason promises a museum. Safer wording: 'Follow the Waltzing Matilda story'."
+   },
+   {
+    "text": "Summer days often reach 40C; visitor season April-October, tours reduced outside",
+    "source": "https://en.wikivoyage.org/wiki/Winton",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "No public transport; nearest hire cars in Longreach about two hours away; dinosaur sites on unsealed roads",
+    "source": "https://en.wikivoyage.org/wiki/Winton",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Best months Apr-Oct",
+    "source": "Winton Wikivoyage (visitor season Apr-Oct)",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ }
+}

@@ -1,0 +1,278 @@
+{
+ "sunshine-coast-hinterland-10": {
+  "facts": {
+   "what": "Waterfall reached by an easy 1.5 km return walk (about 1 hour) through tall open forest from Booloumba Creek day-use area in Conondale National Park; swimming in pools at the base",
+   "access": "High-clearance 4WD needed for Booloumba Creek Road (several creek crossings); turn-off about 13 km past Conondale"
+  },
+  "sources": {
+   "what": [
+    "https://www.aussiebushwalking.com/qld/se-qld/sunshine-coast/conondale-np/",
+    "https://parks.qld.gov.au/parks/conondale/things-to-do (BLOCKED, via search snippet)"
+   ],
+   "access": [
+    "https://parks.qld.gov.au/parks/conondale/camping/booloumba-creek-1 (BLOCKED, via search snippet)"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs": null,
+   "note": "Day-use walk; no entry fee found in any readable source, but QPWS Conondale page BLOCKED so not confirmed. Camping at Booloumba Creek needs a QPWS permit but that is not the price of the falls. Conondale NP is not on any pass in parkPasses.ts (Queensland has no entry pass)."
+  },
+  "ticketUrl": "https://parks.qld.gov.au/parks/conondale/things-to-do",
+  "ticketUrlStatus": "BLOCKED (403 to scripts; managing agency QPWS Conondale National Park page, URL taken from search results, title/heading not verified)",
+  "unverified": [
+   "QPWS Conondale pages BLOCKED: confirm free day use, track length/time and current closures (fallen trees/planned works alert 1 May-30 Nov 2026 reported for the Great Walk) in browser",
+   "No Wikipedia article (404)"
+  ]
+ },
+ "sunshine-coast-hinterland-12": {
+  "facts": {
+   "what": "Conondale Range Great Walk starts and finishes at Booloumba Creek day-use area in Conondale National Park; walkers' camps Wongai, Tallowwood and Summer Falls; camping permits required, bookable up to 12 months ahead; max 4 people per camp site",
+   "length": "56 km per placement (Atlas/OSM); official length unverified"
+  },
+  "sources": {
+   "what": [
+    "https://parks.desi.qld.gov.au/parks/great-walks-conondale-range/camping (BLOCKED, via search snippet)"
+   ]
+  },
+  "cost": {
+   "free": false,
+   "costBasis": "permit",
+   "needs": "permit",
+   "costPer": "Per Night",
+   "costMin": null,
+   "costMax": null,
+   "note": "Camping permit fee only. Official walkers' camp fee not obtained (QPWS BLOCKED). General QPWS rate per search snippet of parks.qld.gov.au/camping/bookings: $7.75 per person per night, $31 per family (undated; $7.25/$29 for 2024-25 per qld.gov.au). Not confirmed for Great Walk camps: needs browser check before writing costMin/costMax."
+  },
+  "ticketUrl": "https://parks.qld.gov.au/parks/great-walks-conondale-range",
+  "ticketUrlStatus": "BLOCKED (403; QPWS managing agency page, URL from search results)",
+  "unverified": [
+   "Great Walk camp fee per night",
+   "Official length/days",
+   "No Wikipedia article",
+   "Placement pin is midpoint per resolve-pin (trail midpoint) already in input; not re-resolved"
+  ]
+ },
+ "sunshine-coast-hinterland-13": {
+  "facts": {
+   "what": "58.8 km Great Walk (official park page per search snippet; other sources 53-58 km), at least 4 days, crossing Maleny and Mapleton plateau and Blackall Range through Kondalilla and Mapleton Falls National Parks and Bunya Pines; designated camping permits essential, bookable up to 12 months ahead; Baroon Pocket Dam to Flaxton first section 16.1 km",
+   "ends": "Baroon Pocket Dam carpark (North Maleny) to Delicia Road, Mapleton"
+  },
+  "sources": {
+   "what": [
+    "https://parks.des.qld.gov.au/parks/great-walks-sunshine-coast/walking (BLOCKED, via search snippet)",
+    "https://www.aussiebushwalking.com/qld/se-qld/kondalilla-np/sunshine-coast-hinterland-great-walk",
+    "https://www.weekendnotes.com/sunshine-coast-hinterland-great-walk/"
+   ]
+  },
+  "cost": {
+   "free": false,
+   "costBasis": "permit",
+   "needs": "permit",
+   "costPer": "Per Night",
+   "costMin": null,
+   "costMax": null,
+   "note": "Same as Conondale Range Great Walk: camping permit fee not confirmed (QPWS BLOCKED); day sections are free to walk."
+  },
+  "ticketUrl": "https://parks.qld.gov.au/parks/great-walks-sunshine-coast",
+  "ticketUrlStatus": "BLOCKED (403; QPWS managing agency; exact URL derived from the parks.des host seen in search, verify in browser)",
+  "unverified": [
+   "Camp fee",
+   "exact length",
+   "no Wikipedia article"
+  ]
+ },
+ "glass-house-mountains-4": {
+  "facts": {
+   "what": "Zoological and botanical garden in Beerwah on over 750 acres (110 open to public), over 1,200 animals; opened 3 June 1970 by Bob and Lyn Irwin; home of the Crocodile Hunter",
+   "price": "Adult $77.45, child (3-14) $51.95, concession $67.45; includes $2 Wildlife Hospital Sneak Peek, conservation shows, free shuttle/bus tour, splash park; open daily 9am-5pm (hours not to be stored)"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Australia_Zoo"
+   ],
+   "price": [
+    "https://australiazoo.com.au/tickets/"
+   ]
+  },
+  "cost": {
+   "free": false,
+   "costMin": 77.45,
+   "costMax": 77.45,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null
+  },
+  "ticketUrl": "https://australiazoo.com.au/",
+  "ticketUrlStatus": "verified: title 'Australia Zoo - Home of The Crocodile Hunter'",
+  "unverified": []
+ },
+ "toowoomba-1": {
+  "facts": {
+   "what": "Queensland Museum Cobb+Co at 27 Lindsay Street, Toowoomba, part of the Queensland Museum Network (name now Queensland Museum Cobb+Co); houses Cobb & Co coach collection",
+   "price": "Adult $12.50, concession $10, child (3-15) $6.50, under 3 free; Toowoomba Regional Council residents free"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Cobb_%26_Co_Museum"
+   ],
+   "price": [
+    "https://www.museum.qld.gov.au/cobb-and-co/plan-your-visit/hours-and-admission"
+   ]
+  },
+  "cost": {
+   "free": false,
+   "costMin": 12.5,
+   "costMax": 12.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null
+  },
+  "ticketUrl": "https://www.museum.qld.gov.au/cobb-and-co",
+  "ticketUrlStatus": "verified: title 'Queensland Museum Cobb+Co'",
+  "unverified": [
+   "Coach collection claim comes from my knowledge of the museum, not read in a fetched source; re-source before using in the bio. Name in app: consider 'Queensland Museum Cobb+Co' (official name; Wikipedia title Cobb & Co Museum redirects)"
+  ]
+ },
+ "granite-belt-2": {
+  "facts": {
+   "what": "Public gallery in Stanthorpe run by the Stanthorpe Art Gallery Society (srag.org.au); hosts the $50,000 Stanthorpe Art Prize 2026; donations welcomed",
+   "price": "Free entry per regional tourism listing and exhibition listings"
+  },
+  "sources": {
+   "what": [
+    "https://www.srag.org.au/"
+   ],
+   "price": [
+    "https://southerndownsandgranitebelt.com.au/attractions/galleries-museums-and-collections/stanthorpe-regional-art-gallery/ (search snippet: free entry; page itself loaded but fee line not located)"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "entry",
+   "needs": null,
+   "note": "Free entry; donations welcomed on official site (not asked at the door per any source), so 'entry' not 'donation'"
+  },
+  "ticketUrl": "https://www.srag.org.au/",
+  "ticketUrlStatus": "verified: title 'Stanthorpe Regional Art Gallery'",
+  "unverified": [
+   "Free entry stated by tourism listing/search snippet only; gallery's own page did not state it",
+   "No Wikipedia article (404); art-gallery name in placement is 'Stanthorpe Art Gallery', official name Stanthorpe Regional Art Gallery (rename?)"
+  ]
+ },
+ "rockhampton-1": {
+  "facts": {
+   "what": "Limestone caves 23 km north of Rockhampton, one of the largest privately owned cave systems in Australia; family-owned on 80 acres of bush; guided tours (Cathedral Cave Tour 45 min, all ages), cabins and caravan sites, licensed cafe; surcharge for buying at the kiosk, book online",
+   "price": "Cathedral Cave Tour adult $37.50 per queensland.com listing (search snippet; US-site variant showed $70 so conflicting), concession $32.50; Expedia AU $39.50"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Capricorn_Caves",
+    "https://capricorncaves.com.au/",
+    "https://capricorncaves.com.au/cathedral-cave-tour/"
+   ],
+   "price": [
+    "https://www.queensland.com/au/en/things-to-do/tours/p-59756e1bc9d4859822a804e2-capricorn-caves--tours (BLOCKED to scripts; snippet only)"
+   ]
+  },
+  "cost": {
+   "free": false,
+   "costMin": 37.5,
+   "costMax": 37.5,
+   "currency": "AUD",
+   "costBasis": "tour",
+   "needs": null,
+   "note": "PROVISIONAL: operator page prices sit in a booking widget not readable by script; confirm adult Cathedral Cave Tour price on the operator booking page in a browser"
+  },
+  "ticketUrl": "https://capricorncaves.com.au/",
+  "ticketUrlStatus": "verified: title 'Capricorn Caves | Rockhampton, Queensland Cave Tours...'",
+  "unverified": [
+   "Adult price (provisional, conflicting listings)",
+   "Not in any park pass: privately owned"
+  ]
+ },
+ "rockhampton-3": {
+  "facts": {
+   "what": "Council-owned zoo in Rockhampton next to the Botanic Gardens and Murray Lagoon, 100 Spencer Street; entry free",
+   "price": "Entry free"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Rockhampton_Zoo",
+    "https://www.rockhamptonregion.qld.gov.au/AboutCouncil/News-and-announcements/Latest-News/Nine-new-reasons-to-visit-Rockhampton-Zoo"
+   ],
+   "price": [
+    "https://rockhamptonregion.qld.gov.au/AboutCouncil/News-and-announcements/Latest-News/New-opening-hours-for-Rockhampton-Zoo"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "entry",
+   "needs": null
+  },
+  "ticketUrl": "https://www.rockhamptonzoo.com.au/",
+  "ticketUrlStatus": "verified: council's /Zoo page redirects to rockhamptonzoo.com.au, title 'Home Rockhampton Zoo'",
+  "unverified": [
+   "Free-entry statement is from council news pages, not the zoo site itself"
+  ]
+ },
+ "rockhampton-4": {
+  "facts": {
+   "what": "Indigenous cultural arts and education centre on the Bruce Highway, Rockhampton; guided tours about 1 hour",
+   "price": "Adults $16, seniors $12, adult students $14, school-age children $8 (hours not stored)"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Dreamtime_Cultural_Centre",
+    "https://www.dreamtimecentre.com.au/visitor-information/"
+   ],
+   "price": [
+    "https://www.dreamtimecentre.com.au/visitor-information/"
+   ]
+  },
+  "cost": {
+   "free": false,
+   "costMin": 16,
+   "costMax": 16,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null
+  },
+  "ticketUrl": "https://www.dreamtimecentre.com.au/",
+  "ticketUrlStatus": "verified: title 'Dreamtime Cultural Centre'",
+  "unverified": [
+   "Operator page lists weekday-only access (Mon-Fri, closed weekends and public holidays): mention in bio/tip if useful, as a fact that matters",
+   "Price page undated"
+  ]
+ },
+ "rockhampton-5": {
+  "facts": {
+   "what": "Tourist attraction and multipurpose venue in Rockhampton with heritage buildings and local history displays; self-guided tour; free onsite parking",
+   "price": "General admission $6 per person (FAQ and Visit Us pages); markets free entry"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Rockhampton_Heritage_Village",
+    "https://heritagevillage.rockhamptonregion.qld.gov.au/Visit-Us"
+   ],
+   "price": [
+    "https://heritagevillage.rockhamptonregion.qld.gov.au/Visit-Us",
+    "https://heritagevillage.rockhamptonregion.qld.gov.au/Plan-Your-Visit/Frequently-Asked-Questions"
+   ]
+  },
+  "cost": {
+   "free": false,
+   "costMin": 6,
+   "costMax": 6,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null
+  },
+  "ticketUrl": "https://heritagevillage.rockhamptonregion.qld.gov.au/",
+  "ticketUrlStatus": "verified: Visit Us / FAQ pages load on this host, about Heritage Village (homepage title not separately checked)",
+  "unverified": [
+   "Older listing showed $5; $6 is the current official figure"
+  ]
+ }
+}

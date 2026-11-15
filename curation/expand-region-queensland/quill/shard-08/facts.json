@@ -1,0 +1,261 @@
+{
+ "bioFit": {
+  "rockhampton-6": "all 3 variants fit (3 lines or fewer)",
+  "rockhampton-7": "all 3 variants fit (3 lines or fewer)",
+  "rockhampton-8": "all 3 variants fit (3 lines or fewer)",
+  "rockhampton-9": "all 3 variants fit (3 lines or fewer)",
+  "capricorn-coast-4": "all 3 variants fit (3 lines or fewer)",
+  "gladstone-2": "all 3 variants fit (3 lines or fewer)",
+  "gladstone-3": "all 3 variants fit (3 lines or fewer)",
+  "gladstone-5": "all 3 variants fit (3 lines or fewer)",
+  "gladstone-6": "all 3 variants fit (3 lines or fewer)",
+  "gladstone-8": "all 3 variants fit (3 lines or fewer)"
+ },
+ "claims": {
+  "rockhampton-6": [
+   {
+    "text": "Free entry (costBasis entry, free)",
+    "source": "https://www.rmoa.com.au/ ('Free entry', fresh)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Opened 2022; Quay Street; Fitzroy River",
+    "source": "Wikipedia Rockhampton_Museum_of_Art (opened 25 Feb 2022)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.rmoa.com.au/",
+    "source": "fresh load: title Home Rockhampton Museum of Art",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "rockhampton-7": [
+   {
+    "text": "Built 1899-1900, Quay Street, heritage walk stop",
+    "source": "Wikipedia Customs_House,_Rockhampton; ATDW (1898-1901, CBD Heritage Walk)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Classic Revival, copper dome, sandstone (variants 0,1)",
+    "source": "ATDW fresh read",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free, open (costBasis open), no ticketUrl",
+    "source": "no single official site; interior access unconfirmed",
+    "status": "unverifiable",
+    "fix": "Interior open to visitors is unconfirmed; exterior-only stop risks failing COVERAGE test 2. Bios correctly promise no entry; variant 2 ('seen from the street') is the most honest. Owner to judge keep vs review."
+   }
+  ],
+  "rockhampton-8": [
+   {
+    "text": "50-hectare park by the Bruce Highway; waterfall, wetland walks, playground",
+    "source": "Wikipedia Kershaw_Gardens; council page fresh",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "No admission fee, free camping (costBasis open)",
+    "source": "council page fresh: Waterfall Walks, Free Camping; page lists 'Fees and Charges' section generically",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl council Kershaw Gardens page",
+    "source": "fresh load, title Kershaw Gardens",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'Rainforest walks' (variants 0,1)",
+    "source": "Wikipedia/council excerpts read show waterfall, wetlands, People's Forest; 'rainforest' not confirmed in what I read",
+    "status": "unverifiable",
+    "fix": "Use variant 2's wording minus 'rainforest', or confirm on council page."
+   }
+  ],
+  "rockhampton-9": [
+   {
+    "text": "Adult $10 entry",
+    "source": "https://archerparkrailmuseum.com/ fresh: $10 Adult, $7 Concession, $6 Child; valid to 31 Dec 2026",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Heritage-listed former station 1897-1908, Denison Street, function room",
+    "source": "Wikipedia Archer_Park_Rail_Museum; site title",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://archerparkrailmuseum.com/",
+    "source": "fresh load: title names museum",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Variant 2 '$10' in bio",
+    "source": "price in bio would go stale after 31 Dec 2026",
+    "status": "unsupported",
+    "fix": "Avoid variant 2; price belongs in cost field. Use variant 0 or 1."
+   }
+  ],
+  "capricorn-coast-4": [
+   {
+    "text": "12 m, concrete and steel, unveiled 30 May 1970, Churchill's Lookout / Constitution Hill, Cook 1770",
+    "source": "Wikipedia Singing_Ship (fresh)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free/open (costBasis open), no ticketUrl",
+    "source": "inferred; open roadside monument, no official site",
+    "status": "unverifiable",
+    "fix": "Acceptable as open access; no source states it."
+   }
+  ],
+  "gladstone-2": [
+   {
+    "text": "14 km long, protects harbour",
+    "source": "Wikipedia Facing_Island: 14.2 km",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Ferry (Curtis Ferry Services lands at Farmers Point); 4WD only beyond South End",
+    "source": "curtisferryservices.com.au fresh",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'from the marina' (variant 1,2)",
+    "source": "not stated on ferry page",
+    "status": "unverifiable",
+    "fix": "Use variant 0 (no marina claim)."
+   },
+   {
+    "text": "Free, open; camping permit needed for South End camping",
+    "source": "ferry page; ferry fare is transport, not counted. costBasis open is acceptable",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "No ticketUrl",
+    "source": "multiple operators/blocked tourism page; omission fine",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "gladstone-3": [
+   {
+    "text": "About 30 km / 30 minutes from Gladstone; reservoir on Boyne River",
+    "source": "Wikipedia Awoonga_Dam",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Picnic areas, two walking trails, birdlife, free Boynedale bush camp",
+    "source": "GAWB page fresh",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Free (open); ticketUrl GAWB recreation page",
+    "source": "GAWB states no fee; free camp stated; entry fee not mentioned anywhere; page title names Lake Awoonga",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Barramundi fishing",
+    "source": "Wikipedia/GAWB mention not located in my read",
+    "status": "unverifiable",
+    "fix": "Confirm on Wikipedia Awoonga_Dam or drop; variant 2 (birdwatching) avoids it."
+   }
+  ],
+  "gladstone-5": [
+   {
+    "text": "Free entry (costBasis entry)",
+    "source": "https://gragm.qld.gov.au/ 'FREE ENTRY' fresh",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "1933-34 former town hall, 144 Goondoon St, heritage-listed",
+    "source": "Wikipedia Gladstone_Regional_Art_Gallery_and_Museum",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://gragm.qld.gov.au/",
+    "source": "fresh load title names place",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "gladstone-6": [
+   {
+    "text": "Entry free; Crown of Gold tree; Yujo Bonsai House; tours",
+    "source": "council page fresh ('Entry to the Botanic Gardens is free')",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "'free guided garden tours'",
+    "source": "council page has Tours link only; free tours not confirmed",
+    "status": "unverifiable",
+    "fix": "Drop 'free' before tours in variant 0."
+   },
+   {
+    "text": "'Japanese-style' (variant 1)",
+    "source": "inferred from name",
+    "status": "unverifiable",
+    "fix": "Cut 'Japanese-style'."
+   },
+   {
+    "text": "ticketUrl council botanic gardens page",
+    "source": "fresh load, title Gladstone Tondoon Botanic Gardens",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "costBasis entry vs open",
+    "source": "staffed gardens; either defensible",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "gladstone-8": [
+   {
+    "text": "Over 20 museums & collections, largest country market in region",
+    "source": "official site fresh",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Adult $5 entry",
+    "source": "ExplorOz only, undated; official site shows no price",
+    "status": "unverifiable",
+    "fix": "Leave cost as unverified (or owner confirms by phone); do not ship $5 unflagged."
+   },
+   {
+    "text": "'kiosk' (variants 1,2)",
+    "source": "not located in fresh homepage read; only market and museums confirmed",
+    "status": "unverifiable",
+    "fix": "Use variant 0."
+   },
+   {
+    "text": "ticketUrl https://callioperiverhistoricalvillage.com/",
+    "source": "fresh load title names place",
+    "status": "supported",
+    "fix": ""
+   }
+  ]
+ },
+ "unresolved": [
+  "queensland.com / QPWS not needed; Gladstone Region tourism pages BLOCKED (not used as evidence)"
+ ]
+}

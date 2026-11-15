@@ -1,0 +1,83 @@
+{
+ "port-douglas-4": {
+  "bio": "A 10-hectare wildlife sanctuary between Cairns and Port Douglas, with displays and a lagoon boat ride.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "cost": {"costMin": 50, "costMax": 50, "currency": "AUD", "costBasis": "entry", "note": "Adult; child $25"},
+  "ticketUrl": "https://www.crocodileadventures.com/how-to-find-us/tickets/",
+  "unverified": []
+ },
+ "port-douglas-5": {
+  "bio": "Spring Creek's waterfall and swimming pool in the Mowbray Valley, with crocodile warnings downstream.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Walk length sources differ (one says about two hours each way); left out of the bio", "Managing agency unknown (possibly Mowbray National Park); no ticketUrl"]
+ },
+ "daintree-3": {
+  "bio": "Interpretive centre with a canopy tower, aerial walkway and boardwalks introducing the Daintree rainforest.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"costMin": 41, "costMax": 41, "currency": "AUD", "costBasis": "entry", "note": "Adult; includes audio tour and 7-day re-entry"},
+  "ticketUrl": "https://www.discoverthedaintree.com/",
+  "name_fix": "SUGGESTION: official name is 'Daintree Rainforest Discovery Centre'",
+  "unverified": []
+ },
+ "cooktown-1": {
+  "bio": "Museum in an 1888 convent building with Endeavour artefacts, Guugu Yimithiir objects and river views.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 1.5,
+  "cost": {"costMin": 25, "costMax": 25, "currency": "AUD", "costBasis": "entry", "note": "Adult"},
+  "ticketUrl": "https://nationaltrustqld.org.au/visitor-sites/Cooktown-Museum/",
+  "name_fix": "SUGGESTION: now branded 'Cooktown Museum' (formerly James Cook Museum); the wiki title is already Cooktown Museum",
+  "unverified": ["Seasonal closures per the operator"]
+ },
+ "cooktown-3": {
+  "bio": "Botanic gardens from 1878 with a gallery and cafe, 1.5 km from town and free to enter.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"free": true, "costBasis": "open"},
+  "notes": "Wikipedia article is titled Gallop Botanic Reserve; set wiki if the photo lookup needs it.",
+  "unverified": ["No ticketUrl: council gardens page URL not found (guessed deep link 404)"]
+ },
+ "cooktown-4": {
+  "bio": "National park just south of Cooktown with a summit walk to Mount Cook and a day-use car park.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/mount-cook",
+  "unverified": ["No day-use fee inferred; QPWS blocked, confirm in a browser", "Walk length conflicts (3 km vs 6 km return); left out"]
+ },
+ "cooktown-6": {
+  "bio": "Swimming-hole waterfall several kilometres down Battlecamp Road, where the creek crossing can flood.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "notes": "This is Isabella Falls near Cooktown, not the Cairns one.",
+  "unverified": ["No fee found in any source", "Informal campsites dropped from the bio: snippet only", "Distance from Cooktown differs between sources"]
+ },
+ "cooktown-7": {
+  "bio": "Cascading falls and a swimming hole south of Cooktown on Mt Amos Road, with 4WD recommended.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "notes": "Also spelled Trevethan/Trevathan Falls.",
+  "unverified": ["Nearby land is private and access permission or fee is unconfirmed", "No ticketUrl: natural site with no steward"]
+ },
+ "cape-york-2": {
+  "bio": "Day-use waterfall and swimming hole in Apudthama National Park on the Old Telegraph Track, 4WD only.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/apudthama",
+  "unverified": ["Day-use fee conflicting (one source says 'small park fee'); QPWS blocked, confirm in a browser", "Crocodile-free swim claim is from blogs: not used"]
+ },
+ "cape-york-6": {
+  "bio": "Telegraph station on the Wenlock River, built in 1887 and closed in 1987, now a camping stop.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": null,
+  "ticketUrl": "https://www.moretonstation.com.au/",
+  "unverified": ["COST UNRESOLVED: no day-visit price on the operator site; camping is a private charge. Do not record free; owner to decide", "Whether non-guests may visit the historic station for a fee"]
+ }
+}

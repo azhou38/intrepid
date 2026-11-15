@@ -1,0 +1,359 @@
+{
+ "cactoblastis-memorial-hall": {
+  "facts": [
+   "Timber hall completed 1936 at Boonarga, about 12 km south-east of Chinchilla on the Warrego Highway, built as a monument to the cactoblastis moth that overcame prickly pear in Queensland and NSW; built by Jack Schloss; Queensland Heritage Register 21 Sep 1993",
+   "Still a working community hall managed by the Boonarga Cactoblastis Memorial Hall Committee (council page: bookings via the committee)"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Cactoblastis_Memorial_Hall",
+     "fact": "history, 1936, heritage listing"
+    },
+    {
+     "url": "https://www.wdrc.qld.gov.au/Community-Recreation/Venues-for-Hire/Boonarga-Cactoblastis-Memorial-Hall",
+     "fact": "venue for hire, committee-managed"
+    },
+    {
+     "url": "https://chinchillamuseum.com.au/articles/cactoblastis/",
+     "fact": "10 km east of Chinchilla, built by local farmers and dedicated to the moth"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs": null,
+   "source": "No entry source exists; roadside heritage hall seen from the highway/rest area (campingaustralia lists a rest area). Treated as open access, no gate or ticket.",
+   "confidence": "medium"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_note": "Only a council hire page and a heritage register entry exist; no official visitor site. Not linked.",
+  "visitHours": "0-0.25",
+  "flags": [
+   "Marginal under COVERAGE test 2: a hall seen from the road; interior access only when the committee opens it. Orchestrator may send to review."
+  ],
+  "unverified": [
+   "whether the interior is open to visitors",
+   "any visitor-source (non-Wikipedia, non-heritage) naming it as a stop beyond Chinchilla museum article and Waymarking"
+  ],
+  "id": "cactoblastis-memorial-hall"
+ },
+ "darling-downs-zoo": {
+  "facts": [
+   "Zoo at Pilton (Clifton area), corner Gatton-Clifton Rd and Baines Rd, about 2 hours west of Brisbane; four geographic areas with animals mostly from Africa, South America, South-East Asia and Australia",
+   "Big cats, giraffe, cheetah, lions, pygmy hippo, meerkats, siamang; free daily keeper talks; paid encounters ($80-$150 per person, extras not entry); Zoofari night tour",
+   "Open daily except Christmas Day (hours not recorded)"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://darlingdownszoo.com.au/",
+     "fact": "address, animals, free talks, encounters"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Darling_Downs_Zoo",
+     "fact": "four areas, animals from Africa, South America, SE Asia, Australia"
+    },
+    {
+     "url": "https://darlingdownszoo.com.au/encounters/",
+     "fact": "encounter prices"
+    }
+   ]
+  },
+  "cost": {
+   "costMin": 38,
+   "costMax": 38,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null,
+   "source": "https://www.familiesmagazine.com.au/?p=40312 (third-party, undated): Adults $38, children 3-15 $24",
+   "confidence": "low"
+  },
+  "ticketUrl": "https://darlingdownszoo.com.au/",
+  "ticketUrl_note": "Official site loaded, title 'Darling Downs Zoo - Queensland'. Ticket page /tickets/ 404s; its ticket tables are on a Roller widget (ecom.roller.app/darlingdownszoo/tickets/en/home, JavaScript-rendered, unreadable to script).",
+  "visitHours": "2-4",
+  "unverified": [
+   "current adult admission price (official figure is JS-rendered; $38 is third-party and undated, likely out of date): check in a real browser at https://darlingdownszoo.com.au/ -> Tickets"
+  ],
+  "id": "darling-downs-zoo"
+ },
+ "jondaryan-woolshed": {
+  "facts": [
+   "Heritage-listed shearing shed on Evanslea Road, Jondaryan, built 1859-60 on the former Jondaryan pastoral station (at one time the largest freehold station in Queensland); scene of labour conflict in the late 1880s-early 1890s, a test case for the Queensland Shearers Union before the 1891 shearers' strike",
+   "Site also has a recreated 19th-century village and a museum collection; operated by Toowoomba Regional Council; about 30 minutes west of Toowoomba on the Warrego Highway; allow about an hour; caravan park/accommodation on site"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Jondaryan_Woolshed",
+     "fact": "built 1859-60, station, shearers union history"
+    },
+    {
+     "url": "https://www.jondaryanwoolshed.com.au/about",
+     "fact": "location, village, allow an hour, fees"
+    }
+   ]
+  },
+  "cost": {
+   "costMin": 12,
+   "costMax": 12,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null,
+   "source": "https://www.jondaryanwoolshed.com.au/about : Adults $12, concession $10, child $6, family $30; 'valid until 30 June 2027'",
+   "confidence": "high"
+  },
+  "ticketUrl": "https://www.jondaryanwoolshed.com.au/",
+  "ticketUrl_note": "Official site, title 'The Woolshed at Jondaryan'.",
+  "visitHours": "1-2",
+  "unverified": [],
+  "id": "jondaryan-woolshed"
+ },
+ "leslie-dam": {
+  "facts": [
+   "Concrete gravity dam on Sandy Creek, completed 1965 to form Lake Leslie, 13 km west of Warwick on the Cunningham Highway; supplies Warwick and irrigates about 124 sq km",
+   "Facilities: boat ramp, picnic area with toilets, boat hire and fuel, permits and bait on site; fishing in a stocked impoundment needs a stocked impoundment permit; camping at Washpool Camping Reserve (34 powered, 46 unpowered sites) and Lake Leslie Tourist Park"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Leslie_Dam",
+     "fact": "dam, 1965, Lake Leslie, irrigation"
+    },
+    {
+     "url": "https://southerndownsandgranitebelt.com.au/what-to-do/adventure-and-sports/fishing-boating/",
+     "fact": "13 km west of Warwick; boat ramp, picnic area, permits"
+    },
+    {
+     "url": "https://www.sdrc.qld.gov.au/living-here/parks-sports-recreation/caravan-camping-information/washpool-reserve-camping-area",
+     "fact": "Washpool camping, site counts, fishing with permit"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs": null,
+   "source": "No day-use charge found in the sources above; fishing permit and camping are extras, not entry. No source states 'free' explicitly",
+   "confidence": "medium"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_note": "No single official visitor site for the dam; the council page covers only Washpool camping. Not linked.",
+  "visitHours": "1-3",
+  "unverified": [
+   "explicit statement that day access is free",
+   "stocked impoundment permit price"
+  ],
+  "id": "leslie-dam"
+ },
+ "museum-of-australian-army-flying": {
+  "facts": [
+   "Australian Army Flying Museum at Museum Drive, Oakey, beside the Army Aviation Training Centre (Swartz Barracks); collection of aircraft and memorabilia from all eras of Australian military flying, including Sopwith Camel and Handley Page replicas, Bell 47 Sioux, Iroquois, Black Hawk, Chinook and MRH90 Taipan",
+   "Kids area, undercover BBQ and picnic facilities; free admission, donations welcome; museum display building has no security requirements"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://armyflyingmuseum.com.au/",
+     "fact": "collection, free, donations, picnic and BBQ, Museum Drive Oakey"
+    },
+    {
+     "url": "https://www.army.gov.au/community/engage-and-learn/army-museums/australian-army-flying-museum",
+     "fact": "admission free, display building access, tours by request"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "donation",
+   "needs": null,
+   "source": "https://armyflyingmuseum.com.au/ 'All activities, tours and displays are FREE! Donations are welcome'",
+   "confidence": "high"
+  },
+  "ticketUrl": "https://www.armyflyingmuseum.com.au/",
+  "ticketUrl_note": "Official museum site, title 'Australian Army Flying Museum'; Army page https://www.army.gov.au/community/engage-and-learn/army-museums/australian-army-flying-museum also names it.",
+  "visitHours": "1-2",
+  "unverified": [
+   "booking: the Army page says visitors must book ahead by contacting the museum, the museum's own site only says tours need a week's notice; a fact for the bio/tips only if confirmed"
+  ],
+  "id": "museum-of-australian-army-flying"
+ },
+ "maryborough-military-and-colonial-museum": {
+  "facts": [
+   "Non-profit museum at 106 Wharf Street, Maryborough, created by John and Else Meyers for the Fraser Coast community; military and colonial-era displays",
+   "Part of a $25 Portside Pass covering three museums and Gatakers Artspace"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Maryborough_Military_and_Colonial_Museum",
+     "fact": "address, founders"
+    },
+    {
+     "url": "https://www.maryboroughmuseum.org/about.html",
+     "fact": "non-profit heritage endowment, colonial era and military displays"
+    },
+    {
+     "url": "https://www.maryboroughmuseum.org/visitors.html",
+     "fact": "fees, Portside pass"
+    }
+   ]
+  },
+  "cost": {
+   "costMin": 15,
+   "costMax": 15,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null,
+   "source": "https://www.maryboroughmuseum.org/visitors.html : Adults $15.00, couples $25, families $30",
+   "confidence": "high"
+  },
+  "ticketUrl": "https://www.maryboroughmuseum.org/",
+  "ticketUrl_note": "Operator site; about page title 'About the Maryborough Military & Colonial Museum'. Homepage itself not separately checked.",
+  "visitHours": "1-2",
+  "unverified": [],
+  "id": "maryborough-military-and-colonial-museum"
+ },
+ "urangan-pier": {
+  "facts": [
+   "Former deep-water cargo pier built 1913-17 (originally 1124 m) to export sugar, timber and coal, served by a railway extension from Pialba; closed 1985, 239 m demolished, 868 m retained after public outcry; last 220 m restored by 2009",
+   "Council says the 868 m pier is kept safe for fishing, walking and sightseeing; restoration works from Jan 2025, reopened after coastal protection works (Fraser Coast Regional Council); anglers target whiting; toilets, free parking beside Pier Park (parking not a price)"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Urangan_Pier",
+     "fact": "history and length"
+    },
+    {
+     "url": "https://www.frasercoast.qld.gov.au/About-Council/Stay-Informed/News/Urangan-Pier-reopens-as-coastal-protection-works-wrap-up",
+     "fact": "868 m, fishing walking sightseeing, reopened"
+    },
+    {
+     "url": "https://queensland.com/en-gb/attraction/urangan-pier",
+     "fact": "free access, whiting (via search summary; queensland.com 403 to scripts)"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs": null,
+   "source": "Open public pier, no gate or ticket (visitor sources via search summary)",
+   "confidence": "high"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_note": "Council-owned open pier; no dedicated official page found. queensland.com page BLOCKED to scripts: https://queensland.com/en-gb/attraction/urangan-pier (not needed).",
+  "visitHours": "0.5-1",
+  "unverified": [],
+  "id": "urangan-pier"
+ },
+ "mackay-regional-botanic-gardens": {
+  "facts": [
+   "Gardens at 9 Lagoon Street, West Mackay, showcasing flora of the Central Queensland Coast Bioregion (rainforest, beaches, mangrove waterways, open eucalypt forest); features include Tropical Shade Garden, Lagoons Outlook Deck, Monsoon Waterway, Malta Garden, Eulamere Boardwalk, Lagoons Gallery and cafe, and Under the Banyan Playgarden; run by Mackay Regional Council"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://www.mackay.qld.gov.au/Parks-and-facilities/Mackay-Regional-Botanic-Gardens",
+     "fact": "bioregion flora, address, cafe, gallery, playgarden"
+    },
+    {
+     "url": "https://www.ourmackay.com.au/Mackay-Regional-Botanic-Gardens",
+     "fact": "named garden areas"
+    }
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "needs": null,
+   "source": "Council pages list no entry charge; Localista and Science Week listings (via search summary) say admission is free",
+   "confidence": "medium"
+  },
+  "ticketUrl": "https://www.mackay.qld.gov.au/Parks-and-facilities/Mackay-Regional-Botanic-Gardens",
+  "ticketUrl_note": "Managing council's page for the gardens, title 'Mackay Regional Botanic Gardens | Mackay Regional Council'. The gardens' own mackayregionalbotanicgardens.com.au redirects to https://www.ourmackay.com.au/Mackay-Regional-Botanic-Gardens (council site, loaded; either would do).",
+  "visitHours": "1-2",
+  "unverified": [
+   "an explicit 'free entry' statement on a council page"
+  ],
+  "id": "mackay-regional-botanic-gardens"
+ },
+ "john-flynn-place-museum": {
+  "facts": [
+   "Museum in Cloncurry on four levels with a rear courtyard, tracing Rev John Flynn and the Royal Flying Doctor Service, which was born in Cloncurry in 1928; covers Alfred Traeger's pedal radio, pilots and outback nurses; includes an art gallery",
+   "Council operated (Cloncurry Shire Council); a combined pass covers it and Cloncurry Unearthed"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://cloncurryshirecouncil.rezdy.com/741794/john-flynn-place-museum-birthplace-of-the-royal-flying-doctor-service-2026",
+     "fact": "four levels, RFDS born Cloncurry 1928, Traeger"
+    },
+    {
+     "url": "https://www.outbackqueensland.com.au/attractions/john-flynn-place-museum-and-art-gallery/",
+     "fact": "museum and art gallery, council email"
+    }
+   ]
+  },
+  "cost": {
+   "costMin": 13.5,
+   "costMax": 13.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "needs": null,
+   "source": "https://cloncurryshirecouncil.rezdy.com/741794/john-flynn-place-museum-birthplace-of-the-royal-flying-doctor-service-2026 : Adult from $13.50 (senior 11.50, child 9, family 35)",
+   "confidence": "high"
+  },
+  "ticketUrl": "https://cloncurryshirecouncil.rezdy.com/741794/john-flynn-place-museum-birthplace-of-the-royal-flying-doctor-service-2026",
+  "ticketUrl_note": "Cloncurry Shire Council's own booking page (Rezdy host is council's account), title 'John Flynn Place Museum Entry Booking'. No council web page for the museum was loaded; orchestrator may prefer to find one on cloncurry.qld.gov.au.",
+  "visitHours": "1-2",
+  "unverified": [
+   "a council-site page for the museum"
+  ],
+  "id": "john-flynn-place-museum"
+ },
+ "lark-quarry-dinosaur-trackways": {
+  "facts": [
+   "Dinosaur Stampede National Monument in Lark Quarry Conservation Park: fossil footprints (more than 3,300) from about 95 million years ago, considered the only known record of a dinosaur stampede (interpretation challenged recently: may be a river crossing); footprints under a sheltered walkway/building",
+   "About 110 km south-west of Winton (about 2 hours, partly unsealed; check road conditions after rain); visits are by guided tour only per Lonely Planet (tour times not recorded); council-run (Winton Shire Council)"
+  ],
+  "sources": {
+   "facts": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Lark_Quarry_Dinosaur_Trackways",
+     "fact": "stampede record, challenged interpretation"
+    },
+    {
+     "url": "https://www.lonelyplanet.com/points-of-interest/dinosaur-stampede-national-monument/1157448",
+     "fact": "110 km SW of Winton, guided tour only"
+    },
+    {
+     "url": "https://reddirttours.rezdy.com/324499/stampede-special",
+     "fact": "3300+ footprints (operator page)"
+    }
+   ]
+  },
+  "cost": {
+   "costBasis": "tour",
+   "needs": null,
+   "costMin": null,
+   "costMax": null,
+   "currency": "AUD",
+   "source": "UNVERIFIED. Official site https://dinosaurtrackways.com.au (found by search) fetch failed from scripts (status 0). Red Dirt Tours 'Stampede Special' is $90 adult but is an operator tour with transport from Winton, not the site fee",
+   "confidence": "none"
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_url": "https://dinosaurtrackways.com.au/",
+  "ticketUrl_note": "UNRESOLVED: appears to be the Winton Shire Council site for Dinosaur Stampede (search results titled 'Dinosaur Stampede - Home page' / 'Planning your visit' https://dinosaurtrackways.com.au/visit/home); unreachable to scripts, check price, tour times and title in a real browser. dinosaurstampede.com.au is a parked domain: do not use. QPWS page https://parks.qld.gov.au/things-to-do/articles/dinosaur-fossil-mysteries-queensland-outback is BLOCKED (403); experiencewinton.com.au page also 403.",
+  "park_pass": "No Queensland park pass applies (none in parkPasses.ts for QLD); QPWS conservation park, entry via the monument's guided tour. Verify in browser.",
+  "visitHours": "1-2",
+  "unverified": [
+   "adult tour price",
+   "tour times and booking requirement",
+   "whether any QPWS conservation park fee applies"
+  ],
+  "id": "lark-quarry-dinosaur-trackways"
+ }
+}

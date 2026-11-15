@@ -1,0 +1,83 @@
+{
+ "cairns-8": {
+  "bio": "Free regional art gallery in Cairns' heritage Public Curators and Court House buildings.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"free": true, "costBasis": "entry"},
+  "ticketUrl": "https://www.cairnsartgallery.com.au/",
+  "name_fix": "SUGGESTION: the venue now trades as 'Cairns Art Gallery' (old name Cairns Regional Gallery); owner decides on renaming",
+  "unverified": []
+ },
+ "kuranda-1": {
+  "bio": "Tiered cascade where the Barron River drops off the Atherton Tableland, best after wet-season rain.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/barron-gorge",
+  "unverified": ["No-fee status unconfirmed (QPWS blocked); candidate URL slug not loaded", "Lookout access details"]
+ },
+ "kuranda-3": {
+  "bio": "Rainforest park opened in 1976 near Kuranda, with a wildlife park and an amphibious Army Duck tour.",
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "cost": {"costMin": 23, "costMax": 71, "currency": "AUD", "costBasis": "entry", "note": "Adult: Koala & Wildlife Park $23 up to the three-attraction Big Nature Package $71; owner may prefer 23-34 for single entries"},
+  "ticketUrl": "https://www.rainforest.com.au/",
+  "unverified": ["Whether a single typical price (23 vs 71) is preferred"]
+ },
+ "kuranda-4": {
+  "bio": "Walk-through aviary in Kuranda with over 1,200 butterflies and a breeding laboratory tour.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"costMin": 25, "costMax": 25, "currency": "AUD", "costBasis": "entry", "note": "Adult, approximate: from a tourism-association listing labelled 2025; operator price page is an image"},
+  "ticketUrl": "https://australianbutterflies.com/",
+  "unverified": ["2026 adult price not read from the operator"]
+ },
+ "kuranda-5": {
+  "bio": "Aviary at the Kuranda Heritage Markets where more than 350 birds fly free, cassowary included.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"costMin": 24, "costMax": 24, "currency": "AUD", "costBasis": "entry", "note": "Adult"},
+  "ticketUrl": "https://www.birdworldkuranda.com/",
+  "notes": "Leave wiki empty: the Wikipedia 'Birdworld' article is a UK park.",
+  "unverified": []
+ },
+ "kuranda-6": {
+  "bio": "Small wildlife park in Kuranda with koalas, wombats, quokkas, crocodiles and a nocturnal exhibit.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"costMin": 24, "costMax": 24, "currency": "AUD", "costBasis": "entry", "note": "Adult; koala-pat photo extra"},
+  "ticketUrl": "https://www.koalagardens.com/",
+  "unverified": []
+ },
+ "atherton-tablelands-1": {
+  "bio": "Plunge waterfall about 18 metres high on Theresa Creek Road, with a swimming hole at its base.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["No fee statement found; council-managed land", "No ticketUrl: only a council works notice exists"]
+ },
+ "atherton-tablelands-2": {
+  "bio": "Crater lake 65 metres deep in Crater Lakes National Park, open to swimming and canoeing.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/crater-lakes",
+  "unverified": ["No-fee status unconfirmed (QPWS blocked)"]
+ },
+ "atherton-tablelands-3": {
+  "bio": "Largest of the crater lakes, with a 4.5 km shoreline, walking tracks and boat cruises.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/crater-lakes",
+  "unverified": ["1926 tea house dropped from the bio: not re-confirmed", "No-fee status unconfirmed (QPWS blocked)", "QPWS reported a lake circuit closure 7 Oct-4 Nov 2026 (search snippet, unconfirmed)"]
+ },
+ "atherton-tablelands-6": {
+  "bio": "Giant strangler fig more than 500 years old, reached by a short boardwalk near Yungaburra.",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/curtain-fig (guessed slug, unverified)",
+  "unverified": ["No-fee status unconfirmed (QPWS blocked)"]
+ }
+}

@@ -1,0 +1,280 @@
+{
+ "gold-coast-29": [
+  {
+   "text": "Bio: tidal lake/mangroves ~1200 ha, 8 km from Southport, Melaleuca boardwalk, koalas, flying foxes, migratory birds; all 3 variants fit bio-fit",
+   "source": "https://en.wikipedia.org/wiki/Coombabah_Lake_Conservation_Park",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Category 'entertainment' should be 'nature'",
+   "source": "research category_note",
+   "status": "supported",
+   "fix": "Use category nature (writer/orchestrator)"
+  },
+  {
+   "text": "Cost: free, costBasis open (no Queensland national park day-entry fee)",
+   "source": "parks.qld.gov.au/before-you-visit/permits-and-fees (BLOCKED to scripts; search snippet only)",
+   "status": "unverifiable",
+   "fix": "Keep free:true; confirm in browser. No park pass in parkPasses.ts needed."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/coombabah-lake",
+   "source": "fetch 403; path not confirmed by any source",
+   "status": "unverifiable",
+   "fix": "Leave out unless browser confirms the path (QPWS vs City of Gold Coast)"
+  },
+  {
+   "text": "visitHours 0.5-1.5 (estimate)",
+   "source": "estimate",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "gold-coast-hinterland-4": [
+  {
+   "text": "Bio: horsetail waterfall, Springbrook NP, World Heritage, Purling Brook Falls circuit (both variants; fit ok)",
+   "source": "https://en.wikipedia.org/wiki/Purling_Brook_Falls; parks.qld.gov.au/parks/springbrook (read fresh, lists the circuit)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost: free, costBasis open (no Queensland national park day-entry fee)",
+   "source": "parks.qld.gov.au/before-you-visit/permits-and-fees (BLOCKED to scripts; search snippet only)",
+   "status": "unverifiable",
+   "fix": "Keep free:true; confirm in browser. No park pass in parkPasses.ts needed."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/springbrook",
+   "source": "loaded fresh: title 'Springbrook National Park | Parks and forests'",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "visitHours 1-2 (estimate; a review says 4 km walk)",
+   "source": "estimate",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "gold-coast-hinterland-5": [
+  {
+   "text": "Bio: 64 m segmented waterfall, upper Coomera River, Lamington NP, graded tracks from Binna Burra (variant 1 matches source; variant 2 'gorge' ok)",
+   "source": "https://en.wikipedia.org/wiki/Coomera_Falls",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost: free, costBasis open (no Queensland national park day-entry fee)",
+   "source": "parks.qld.gov.au/before-you-visit/permits-and-fees (BLOCKED to scripts; search snippet only)",
+   "status": "unverifiable",
+   "fix": "Keep free:true; confirm in browser. No park pass in parkPasses.ts needed."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/lamington (path guessed from slug)",
+   "source": "QPWS page 403 to scripts (BLOCKED): check ticketUrl in the in-app browser",
+   "status": "unverifiable",
+   "fix": "Keep only if browser loads it and names Lamington; else omit"
+  },
+  {
+   "text": "visitHours 2-4 (estimate; Coomera Circuit is 17.5 km, so a falls-only visit may be shorter)",
+   "source": "estimate",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "gold-coast-hinterland-6": [
+  {
+   "text": "Bio: plunge waterfall on Morans Creek, Lamington NP Green Mountains, Morans Falls Track 4.4 km return",
+   "source": "https://en.wikipedia.org/wiki/Morans_Falls",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost: free, costBasis open (no Queensland national park day-entry fee)",
+   "source": "parks.qld.gov.au/before-you-visit/permits-and-fees (BLOCKED to scripts; search snippet only)",
+   "status": "unverifiable",
+   "fix": "Keep free:true; confirm in browser. No park pass in parkPasses.ts needed."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/lamington",
+   "source": "QPWS page 403 to scripts (BLOCKED): check ticketUrl in the in-app browser",
+   "status": "unverifiable",
+   "fix": "Same as hinterland-5"
+  },
+  {
+   "text": "visitHours 1-2",
+   "source": "4.4 km return, estimate",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "gold-coast-hinterland-7": [
+  {
+   "text": "Bio: 54 km walk linking Lamington and Springbrook NPs, three days, subtropical rainforest (both variants)",
+   "source": "https://en.wikipedia.org/wiki/Gold_Coast_Hinterland_Great_Walk",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost AUD 7.25 per night (costBasis entry, costPer Per Night, needs permit)",
+   "source": "2024 search snippet only; qld.gov.au/recreation/activities/camping/fees loaded fresh and gives no figure; parks.qld.gov.au camping pages 403",
+   "status": "unverifiable",
+   "fix": "Do not ship 7.25 as verified. Also a camping fee is not the track's price: prefer free:true, costBasis open or needs:'permit' with no price until an official page is read in a browser."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/great-walks-gold-coast-hinterland",
+   "source": "QPWS page 403 to scripts (BLOCKED): check ticketUrl in the in-app browser",
+   "status": "unverifiable",
+   "fix": "Confirm in browser"
+  },
+  {
+   "text": "visitHours 24-30 (estimate, three days)",
+   "source": "estimate",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Pin is a 6.5 km OSM segment midpoint, not the whole route",
+   "source": "research pin_note",
+   "status": "unverifiable",
+   "fix": "Orchestrator decide: agency route-map midpoint"
+  }
+ ],
+ "tamborine-mountain-1": [
+  {
+   "text": "Bio: 1.5 km walk, 300 m steel canopy bridges, 40 m cantilever bridge 30 m above Cedar Creek (variant 2 says 'cantilever 30 m above': ok)",
+   "source": "https://skywalktamborine.com/ (read fresh)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost AUD 21.50 adult, costBasis entry",
+   "source": "https://skywalktamborine.com/prices read fresh: Adults 18+ $21.5",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://skywalktamborine.com/",
+   "source": "loaded fresh: title 'Tamborine Rainforest Skywalk'",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "visitHours 1-2 (estimate)",
+   "source": "estimate",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "tamborine-mountain-2": [
+  {
+   "text": "Bio: purpose-built cave at Cedar Creek Estate, 30-minute guided daytime tours, biologists, rainforest boardwalk, winery (both variants)",
+   "source": "https://cedarcreekestate.com.au/glow-worms/ read fresh",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost AUD 34 adult, costBasis tour",
+   "source": "Rezdy operator page read fresh: Adult From $34.00 (30 min; includes Dragon's Garden entry)",
+   "status": "supported",
+   "fix": "Price is 'from'; fine as adult tour price"
+  },
+  {
+   "text": "ticketUrl https://cedarcreekestate.com.au/glow-worms/",
+   "source": "loaded fresh: title 'Glow Worm Tours Tamborine Mountain - Cedar Creek Estate'",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "visitHours 0.5-1",
+   "source": "30 min tour from operator",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "tamborine-mountain-3": [
+  {
+   "text": "Bio: Grade 3, ~1 km, Joalah section, basalt-column falls, pool (both variants)",
+   "source": "visitscenicrim.com.au Curtis Falls page (per research; not re-read); Wikipedia places Curtis Road track in Palm Grove, conflict noted",
+   "status": "supported",
+   "fix": "Variant 2 names Joalah; use it only if Scenic Rim page confirmed (not re-opened)"
+  },
+  {
+   "text": "Cost: free, costBasis open (no Queensland national park day-entry fee)",
+   "source": "parks.qld.gov.au/before-you-visit/permits-and-fees (BLOCKED to scripts; search snippet only)",
+   "status": "unverifiable",
+   "fix": "Keep free:true; confirm in browser. No park pass in parkPasses.ts needed."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/tamborine",
+   "source": "QPWS page 403 to scripts (BLOCKED): check ticketUrl in the in-app browser",
+   "status": "unverifiable",
+   "fix": "Confirm in browser"
+  },
+  {
+   "text": "visitHours 0.5-1 (estimate)",
+   "source": "estimate",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "scenic-rim-1": [
+  {
+   "text": "Bio: NSW border, Mount Barney 1359 m second-highest in SE Qld; 17,660 ha World Heritage park (both variants; 'volcanic' dropped from draft)",
+   "source": "https://en.wikipedia.org/wiki/Mount_Barney_National_Park",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost: free, costBasis open (no Queensland national park day-entry fee)",
+   "source": "parks.qld.gov.au/before-you-visit/permits-and-fees (BLOCKED to scripts; search snippet only)",
+   "status": "unverifiable",
+   "fix": "Keep free:true; confirm in browser. No park pass in parkPasses.ts needed."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/mount-barney",
+   "source": "QPWS page 403 to scripts (BLOCKED): check ticketUrl in the in-app browser",
+   "status": "unverifiable",
+   "fix": "Confirm in browser"
+  },
+  {
+   "text": "category viewpoint -> nature/hike; pin may be a summit not a visitor point",
+   "source": "research notes",
+   "status": "unverifiable",
+   "fix": "Orchestrator: check pin"
+  },
+  {
+   "text": "visitHours 4-8 (estimate)",
+   "source": "estimate",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "scenic-rim-6": [
+  {
+   "text": "Bio: ~40 m plunge waterfall, Main Range NP, circuit ~2 km/~40 min, picnic area, 10 km east of Killarney (both variants)",
+   "source": "https://en.wikipedia.org/wiki/Queen_Mary_Falls (QPWS pages via search only)",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Cost: free, costBasis open (no Queensland national park day-entry fee)",
+   "source": "parks.qld.gov.au/before-you-visit/permits-and-fees (BLOCKED to scripts; search snippet only)",
+   "status": "unverifiable",
+   "fix": "Keep free:true; confirm in browser. No park pass in parkPasses.ts needed."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/main-range",
+   "source": "QPWS page 403 to scripts (BLOCKED): check ticketUrl in the in-app browser",
+   "status": "unverifiable",
+   "fix": "Confirm in browser"
+  },
+  {
+   "text": "visitHours 0.5-1.5",
+   "source": "circuit ~40 min per research",
+   "status": "supported",
+   "fix": ""
+  }
+ ]
+}

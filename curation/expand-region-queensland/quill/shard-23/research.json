@@ -1,0 +1,271 @@
+[
+ {
+  "id": "bowen-1",
+  "name": "Queens Beach",
+  "correct_wikipedia_title": null,
+  "bio_facts": [
+   "Queens Beach is one of Bowen's eight beaches, which ring the town's peninsula",
+   "Described by tourism sites as Bowen's longest beach, about 5 km, with walking and cycling tracks and BBQs along the foreshore",
+   "Listed among 'Bowen's best beaches' by Tourism Bowen"
+  ],
+  "sources": {
+   "eight beaches": [
+    "https://en.wikivoyage.org/wiki/Bowen",
+    "https://en.wikipedia.org/wiki/Bowen,_Queensland"
+   ],
+   "Tourism Bowen listing": [
+    "https://www.tourismbowen.com.au/beaches"
+   ],
+   "5 km, BBQs, tracks": [
+    "web search result summarising travel sites (no single fetched page); treat as unverified"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [
+   "5 km length and foreshore facilities come from search summaries of travel sites, not a fetched page",
+   "Tourism Bowen's own Queens Beach page URL not found (guessed paths 404)"
+  ],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Wikipedia has no Queens Beach article (the suburb is covered in 'Bowen, Queensland'). Open beach: free/open. No ticketUrl (beach, no steward)."
+ },
+ {
+  "id": "bowen-4",
+  "name": "Hydeaway Bay",
+  "correct_wikipedia_title": "Hideaway Bay, Queensland",
+  "bio_facts": [
+   "Hydeaway Bay (also spelled Hideaway Bay) is a small coastal locality on the Whitsunday Coast, about 45 km north of Airlie Beach, reached via Dingo Beach Road",
+   "Long, gently curving sandy beach on sheltered Shoal Bay with shallow coral and seagrass flats; islands such as Saddleback, Rattray and Gloucester shelter it from swell",
+   "Queensland Tourism calls it a tiny hamlet on a no-through road; the nearest shop is a small store at the caravan park and Dingo Beach has the pub and boat ramp"
+  ],
+  "sources": {
+   "locality, beach, islands": [
+    "https://en.wikipedia.org/wiki/Hideaway_Bay,_Queensland"
+   ],
+   "tiny hamlet, no-through road, shop": [
+    "https://www.queensland.com/places-to-see/destination-information/p-56b26046aeeeaaf773cf2fca-hydeaway-bay (BLOCKED to scripts; read via search summary)"
+   ],
+   "beach length 1.5 km": [
+    "Tourism Bowen via search summary, page not fetched"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [
+   "Beach length (1.5 km) and 'hardly see a soul' from search summaries; queensland.com BLOCKED for the in-app browser"
+  ],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Wikipedia title uses 'Hideaway'; the spot's wiki field 'Hydeaway Bay' returns 404, so set wiki to 'Hideaway Bay, Queensland'. Evidence bundle had no Wikipedia text. Free/open."
+ },
+ {
+  "id": "townsville-4",
+  "name": "The Strand",
+  "correct_wikipedia_title": "The Strand, Townsville",
+  "bio_facts": [
+   "The Strand is Townsville's seaside foreshore in North Ward, with views over the port and Magnetic Island",
+   "Has a jetty, a recreational park, restaurants, cafes and pools; the Rockpool swimming lagoon is at one end and a free water playground at the southern end",
+   "Sandy beach is generally calm for swimming thanks to Magnetic Island's shelter"
+  ],
+  "sources": {
+   "foreshore, features": [
+    "https://en.wikipedia.org/wiki/The_Strand,_Townsville"
+   ],
+   "beach, Rockpool, water playground": [
+    "https://en.wikivoyage.org/wiki/Townsville"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [
+   "Rockpool and playground free status from Wikivoyage ('free' stated for the playground only)"
+  ],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Evidence bundle held the 'Strand' disambiguation page: wrong; correct title is 'The Strand, Townsville' (coords -19.24583, 146.81111 match the pin). Open foreshore, free/open. No single steward site found (council); none."
+ },
+ {
+  "id": "magnetic-island-1",
+  "name": "Horseshoe Bay",
+  "correct_wikipedia_title": "Horseshoe Bay, Queensland",
+  "bio_facts": [
+   "Horseshoe Bay is the largest bay on Magnetic Island, a hub for watersports, dining and sunset watching",
+   "Calm water suited to swimming, kayaking and paddleboarding, with a stinger net in summer",
+   "Walking track from its eastern end to Radical Bay via Balding Bay (3 km, about 45 minutes; tide-dependent)"
+  ],
+  "sources": {
+   "bay, watersports, net": [
+    "https://en.wikivoyage.org/wiki/Magnetic_Island"
+   ],
+   "walk to Radical Bay": [
+    "https://en.wikivoyage.org/wiki/Magnetic_Island"
+   ],
+   "town/suburb on the island": [
+    "https://en.wikipedia.org/wiki/Horseshoe_Bay,_Queensland"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Evidence bundle held the 'Horseshoe Bay' disambiguation page. Correct article is the suburb article. Free/open beach; no ticketUrl."
+ },
+ {
+  "id": "magnetic-island-4",
+  "name": "Florence Bay",
+  "correct_wikipedia_title": "Florence Bay, Queensland",
+  "bio_facts": [
+   "Florence Bay is a less-crowded Magnetic Island beach with clear water and coral close to shore, good for snorkelling on calm days",
+   "Reached by walking track on the island's east coast; it lies in the island's national park (the western and northern part is park)"
+  ],
+  "sources": {
+   "beach, coral, snorkelling": [
+    "https://en.wikivoyage.org/wiki/Magnetic_Island"
+   ],
+   "locality only; no people": [
+    "https://en.wikipedia.org/wiki/Florence_Bay,_Queensland"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [
+   "Walking-track length/start and park status not fetched from QPWS (BLOCKED); whether any day-use fee applies: Queensland national parks generally charge none, unverified"
+  ],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Wikipedia article exists but is a census-locality stub, no useful facts beyond location (-19.1194,146.8719). Evidence bundle had a 404, but the article exists under 'Florence Bay, Queensland'."
+ },
+ {
+  "id": "magnetic-island-5",
+  "name": "Radical Bay",
+  "correct_wikipedia_title": null,
+  "bio_facts": [
+   "Radical Bay is a secluded, palm-fringed Magnetic Island beach known for excellent snorkelling",
+   "Reached by walking track (3 km, about 45 minutes from Horseshoe Bay via Balding Bay) or 4WD where permitted",
+   "The Forts Walk starts at the Radical Bay turnoff"
+  ],
+  "sources": {
+   "all facts": [
+    "https://en.wikivoyage.org/wiki/Magnetic_Island"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [
+   "Wikipedia: no Radical Bay article found ('Radical Bay, Queensland' not checked successfully; treat as none)",
+   "Park fee: none sourced"
+  ],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Free/open. Correct Wikipedia title: none found."
+ },
+ {
+  "id": "atherton-tablelands-13",
+  "name": "Mount Baldy",
+  "correct_wikipedia_title": null,
+  "bio_facts": [
+   "Mount Baldy (1,109 m per the Queensland parks page, 1,107 m in another source) is a summit in the Herberton Range west of Atherton with wide eastern views over the tablelands",
+   "The Baldy-Yabi circuit is 8.4 km return, about 2.5 hours, steep in places with loose rock, joining the summits of Mount Baldy and Yabi Mountain",
+   "Track starts off Rifle Range Road, Atherton; the wider Herberton Range area prohibits camping"
+  ],
+  "sources": {
+   "all facts": [
+    "https://parks.qld.gov.au/parks/herberton-range/about (BLOCKED, read via search summary)",
+    "https://www.aussiebushwalking.com/qld/far-north/mount-baldy-and-yabi-mountain",
+    "https://parks.desi.qld.gov.au/__data/assets/pdf_file/0019/164404/baldy-yabi-circuit-map.pdf"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/herberton-range (managing agency; check title in browser)",
+  "unverified": [
+   "Entry fee: Queensland national parks mostly charge none, but not confirmed (QPWS BLOCKED)",
+   "Facts come from search summaries; verify in browser",
+   "Pin is a summit/trailhead choice: if the pin is on the summit it is a viewpoint, if walk circuit midpoint, say so"
+  ],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Evidence bundle held the 'Mount Baldy' disambiguation: wrong. No Wikipedia article for this Mount Baldy: none. Cost proposal free/open pending QPWS check; if the walk is a 2.5 h hike, a bio may call it hike/viewpoint."
+ },
+ {
+  "id": "mission-beach-2",
+  "name": "Clump Point Lookout",
+  "correct_wikipedia_title": null,
+  "bio_facts": [
+   "Clump Point Lookout is a lookout on Clump Point Lookout Road, Mission Beach, open 24/7 and free",
+   "Clump Point is the northern end of a 13 km Coral Sea beach running south to Tam O'Shanter Point, with views to the Family Islands",
+   "The nearby jetty is now named Perry Harvey Jetty (formerly Clump Point Jetty)"
+  ],
+  "sources": {
+   "lookout, free, 24/7": [
+    "https://en.wikivoyage.org/wiki/Mission_Beach"
+   ],
+   "point, beach length": [
+    "https://en.wikipedia.org/wiki/Mission_Beach,_Queensland"
+   ],
+   "jetty name": [
+    "https://www.cassowarycoast.qld.gov.au/Living-Here/Places-and-Spaces/Marine-Facilities"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [
+   "View content from the lookout itself not sourced (Family Islands view is from the beach article)"
+  ],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Wikipedia: no Clump Point Lookout article (404); Clump Point is covered in 'Mission Beach, Queensland'. Free/open lookout (source: Wikivoyage 'Free')."
+ },
+ {
+  "id": "port-douglas-1",
+  "name": "Four Mile Beach",
+  "correct_wikipedia_title": null,
+  "bio_facts": [
+   "Four Mile Beach is Port Douglas's main beach, known for four miles of golden sand and palm trees",
+   "Firm sand suits cycling; a netted stinger area at the north end is lifeguard-patrolled, and the stinger season runs November to May",
+   "Crocodile warning signs advise staying out of the water's edge; the beach is closed if one is sighted"
+  ],
+  "sources": {
+   "golden sand, palms": [
+    "https://en.wikipedia.org/wiki/Port_Douglas"
+   ],
+   "cycling, stinger net, crocodile warnings": [
+    "https://en.wikivoyage.org/wiki/Port_Douglas"
+   ]
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "currency": "AUD"
+  },
+  "ticketUrl": null,
+  "unverified": [],
+  "coordinates": "keep placement pin (HIGH, from pins-merged); no move",
+  "notes": "Wikipedia has no Four Mile Beach article (en.wikipedia 404; the spot's wiki is null): none. Free/open; no ticketUrl."
+ }
+]

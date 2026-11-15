@@ -1,0 +1,243 @@
+{
+ "bundaberg-2": {
+  "facts": [
+   "Centrepiece visitor attraction in Bundaberg Botanic Gardens, built as a tribute to aviator Bert Hinkler",
+   "Displays memorabilia, interactive exhibits, flight simulators and historic aircraft covering his life; building designed to represent an aircraft wing",
+   "Admission includes entry to Hinkler House, his English home relocated brick by brick from Southampton in 1983",
+   "Allow 1-1.5 hours for the Hall and House",
+   "Hinkler flew first solo England-Australia, Feb 1928"
+  ],
+  "cost": {
+   "costMin": 27,
+   "costMax": 27,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Adult $27 (child $18, senior $21); includes Hinkler House; combined ticket with Fairymead House and Historical Museum exists. Council page."
+  },
+  "ticketUrl": "https://bundaberg.qld.gov.au/Community/Things-to-see-and-do/Hinkler-Hall-of-Aviation/Visitor-information (Bundaberg Regional Council, operator; loaded, title 'Visitor information', content names Hinkler Hall)",
+  "sources": {
+   "facts": [
+    "https://bundaberg.qld.gov.au/Community/Things-to-see-and-do/Hinkler-Hall-of-Aviation/Visitor-information",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Hinkler_Hall_of_Aviation"
+   ],
+   "cost": "https://bundaberg.qld.gov.au/Community/Things-to-see-and-do/Hinkler-Hall-of-Aviation/Visitor-information"
+  },
+  "unverified": [
+   "no separate hinkler-specific domain reachable (hinklerhallofaviation.com.au failed to load)"
+  ]
+ },
+ "bundaberg-4": {
+  "facts": [
+   "Home of Bundaberg Ginger Beer, 147 Bargara Road, Bundaberg",
+   "Guided tasting of up to 15 Bundaberg brews plus self-guided gallery tour about brewing history (55+ years)",
+   "Adult ticket includes a mixed 6-pack"
+  ],
+  "cost": {
+   "costMin": 23,
+   "costMax": 23,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Tasting + Self Guided Gallery Tour, adult $23 incl. 6-pack (senior $20, under 18 $9). Operator's Rezdy booking page embedded on its site. Entry to the venue itself may be a ticketed tasting; costBasis tour is an alternative (guided tasting)."
+  },
+  "ticketUrl": "https://bundabergbarrel.com/ (loaded; title 'The Bundaberg Brewed Drinks Barrel - The Bundaberg Barrel')",
+  "sources": {
+   "facts": [
+    "https://bundabergbarrel.com/"
+   ],
+   "cost": "https://bundaberg.rezdy.com/457950/tasting-self-guided-gallery-tour"
+  },
+  "unverified": []
+ },
+ "bundaberg-6": {
+  "facts": [
+   "Extinct volcano remnant in Qunaba, about 5 km south of Mon Repos beach, rising over flat cane land",
+   "Summit has Hummock Lookout (opened 1931), memorial to Bert Hinkler and heritage-listed Sir Anthony's Rest",
+   "Excellent views over surrounding farmland"
+  ],
+  "cost": {
+   "free": true,
+   "costBasis": "open",
+   "note": "Public lookout; no fee source found, no gate (unverified beyond Wikipedia describing a public lookout)."
+  },
+  "ticketUrl": "none (open lookout, no single steward site found)",
+  "sources": {
+   "facts": [
+    "https://en.wikipedia.org/wiki/Bundaberg_Hummock"
+   ]
+  },
+  "unverified": [
+   "no fee/gate confirmation from a council page; pin is OSM basketball courts at Hummock, may not be summit lookout: orchestrator to check"
+  ]
+ },
+ "bundaberg-8": {
+  "facts": [
+   "35 unusual crater formations, about 25 minutes from Bundaberg (Bullyard)",
+   "Viewing platforms, augmented reality trail, indoor Earth Room, cafe",
+   "Open daily 9am-2:30pm per site (not to be stored); allow 1 hour"
+  ],
+  "cost": {
+   "costMin": 20.5,
+   "costMax": 20.5,
+   "currency": "AUD",
+   "costBasis": "entry",
+   "note": "Adult $20.50 (senior $18.50, child $11) from operator homepage 'Admission Prices'."
+  },
+  "ticketUrl": "https://mysterycraters.com.au/ (loaded; title 'Mystery Craters Bundaberg')",
+  "sources": {
+   "facts": [
+    "https://mysterycraters.com.au/"
+   ],
+   "cost": "https://mysterycraters.com.au/"
+  },
+  "unverified": [
+   "geological origin not sourced beyond 'mystery'"
+  ]
+ },
+ "kgari-1": {
+  "facts": [
+   "Perched lake on K'gari (Boorangoora) in Great Sandy National Park",
+   "About 150 ha, just over 5 m deep, about 100 m above sea level, inland from Eurong; nearly pure silica sand beach",
+   "Sunscreen and soaps pollute the lakes; drones prohibited 21 Dec 2025 to 10 Dec 2026 (per search summary of QPWS)"
+  ],
+  "cost": {
+   "costMin": 57.8,
+   "costMax": 57.8,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Month",
+   "needs": "permit",
+   "note": "K'gari vehicle access permit (QPWS), approximate. Search-engine summary of the qld.gov.au vehicle permit page gives $57.80 for one month or less (the fetched page text did not show the figure); a permit is needed only to drive a vehicle on K'gari, not for tour or ferry-only visitors. No separate day-use or entry fee found for the site. Orchestrator to confirm at parks.qld.gov.au (blocked); if the pass is better modelled as free+permit, adjust."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/kgari-fraser (QPWS managing agency, 403 captcha; check in browser)",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fraser_Island",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Lake_McKenzie",
+   "https://qld.gov.au/recreation/activities/areas-facilities/permits/vehicle"
+  ],
+  "unverified": [
+   "current permit fee on official QPWS page (blocked)"
+  ]
+ },
+ "kgari-2": {
+  "facts": [
+   "Former Union Company ocean liner built in Scotland 1905, beached on K'gari's east coast in July 1935 after a cyclone broke its towline",
+   "About three and a half storeys buried in sand; climbing on the wreck is not permitted",
+   "Sits on 75 Mile Beach, a designated road"
+  ],
+  "cost": {
+   "costMin": 57.8,
+   "costMax": 57.8,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Month",
+   "needs": "permit",
+   "note": "K'gari vehicle access permit (QPWS), approximate. Search-engine summary of the qld.gov.au vehicle permit page gives $57.80 for one month or less (the fetched page text did not show the figure); a permit is needed only to drive a vehicle on K'gari, not for tour or ferry-only visitors. No separate day-use or entry fee found for the site. Orchestrator to confirm at parks.qld.gov.au (blocked); if the pass is better modelled as free+permit, adjust."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/kgari-fraser (QPWS managing agency, 403 captcha; check in browser)",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fraser_Island",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/SS_Maheno",
+   "https://qld.gov.au/recreation/activities/areas-facilities/permits/vehicle"
+  ],
+  "unverified": [
+   "current permit fee on official QPWS page (blocked)"
+  ]
+ },
+ "kgari-4": {
+  "facts": [
+   "Small freshwater green lake in Great Sandy National Park on K'gari's east side",
+   "Adjacent Hammerstone Sandblow is slowly moving into it; it will eventually disappear under the sand"
+  ],
+  "cost": {
+   "costMin": 57.8,
+   "costMax": 57.8,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Month",
+   "needs": "permit",
+   "note": "K'gari vehicle access permit (QPWS), approximate. Search-engine summary of the qld.gov.au vehicle permit page gives $57.80 for one month or less (the fetched page text did not show the figure); a permit is needed only to drive a vehicle on K'gari, not for tour or ferry-only visitors. No separate day-use or entry fee found for the site. Orchestrator to confirm at parks.qld.gov.au (blocked); if the pass is better modelled as free+permit, adjust."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/kgari-fraser (QPWS managing agency, 403 captcha; check in browser)",
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Lake_Wabby",
+   "https://qld.gov.au/recreation/activities/areas-facilities/permits/vehicle"
+  ],
+  "unverified": [
+   "current permit fee on official QPWS page (blocked)",
+   "walk-in distance/time not sourced"
+  ]
+ },
+ "kgari-5": {
+  "facts": [
+   "Rock pools on K'gari's east coast beach, near Indian Head, named as a feature of the east-coast beach",
+   "Further description (ocean spill-over pools for swimming) not sourced: no Wikipedia article"
+  ],
+  "cost": {
+   "costMin": 57.8,
+   "costMax": 57.8,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Month",
+   "needs": "permit",
+   "note": "K'gari vehicle access permit (QPWS), approximate. Search-engine summary of the qld.gov.au vehicle permit page gives $57.80 for one month or less (the fetched page text did not show the figure); a permit is needed only to drive a vehicle on K'gari, not for tour or ferry-only visitors. No separate day-use or entry fee found for the site. Orchestrator to confirm at parks.qld.gov.au (blocked); if the pass is better modelled as free+permit, adjust."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/kgari-fraser (QPWS managing agency, 403 captcha; check in browser)",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fraser_Island",
+   "https://qld.gov.au/recreation/activities/areas-facilities/permits/vehicle"
+  ],
+  "unverified": [
+   "current permit fee on official QPWS page (blocked)",
+   "what the pools are and swimming details: need QPWS page (blocked) for bio"
+  ]
+ },
+ "kgari-7": {
+  "facts": [
+   "About 200 ha, described as the largest perched lake on any sea island in the world",
+   "Fed by two creeks through wallum swamp which tints the water red",
+   "Lake Boomanjin camping area exists (QPWS)"
+  ],
+  "cost": {
+   "costMin": 57.8,
+   "costMax": 57.8,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Month",
+   "needs": "permit",
+   "note": "K'gari vehicle access permit (QPWS), approximate. Search-engine summary of the qld.gov.au vehicle permit page gives $57.80 for one month or less (the fetched page text did not show the figure); a permit is needed only to drive a vehicle on K'gari, not for tour or ferry-only visitors. No separate day-use or entry fee found for the site. Orchestrator to confirm at parks.qld.gov.au (blocked); if the pass is better modelled as free+permit, adjust."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/kgari-fraser (QPWS managing agency, 403 captcha; check in browser)",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fraser_Island",
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Lake_Boomanjin",
+   "https://qld.gov.au/recreation/activities/areas-facilities/permits/vehicle"
+  ],
+  "unverified": [
+   "current permit fee on official QPWS page (blocked)"
+  ]
+ },
+ "kgari-9": {
+  "facts": [
+   "Heritage-listed active lighthouse at Sandy Cape, K'gari's northern point",
+   "Built 1870; tallest lighthouse in Queensland; one of first in Australia built of bolted prefabricated cast-iron segments; sibling of Bustard Head Light"
+  ],
+  "cost": {
+   "costMin": 57.8,
+   "costMax": 57.8,
+   "currency": "AUD",
+   "costBasis": "park",
+   "costPer": "Per Vehicle/Month",
+   "needs": "permit",
+   "note": "K'gari vehicle access permit (QPWS), approximate. Search-engine summary of the qld.gov.au vehicle permit page gives $57.80 for one month or less (the fetched page text did not show the figure); a permit is needed only to drive a vehicle on K'gari, not for tour or ferry-only visitors. No separate day-use or entry fee found for the site. Orchestrator to confirm at parks.qld.gov.au (blocked); if the pass is better modelled as free+permit, adjust."
+  },
+  "ticketUrl": "BLOCKED: https://parks.qld.gov.au/parks/kgari-fraser (QPWS managing agency; check in browser)",
+  "sources": [
+   "https://en.wikipedia.org/api/rest_v1/page/summary/Sandy_Cape_Light",
+   "https://qld.gov.au/recreation/activities/areas-facilities/permits/vehicle"
+  ],
+  "unverified": [
+   "current permit fee on official QPWS page (blocked)",
+   "public access to the lighthouse/tower and remote 4WD access not sourced"
+  ]
+ }
+}

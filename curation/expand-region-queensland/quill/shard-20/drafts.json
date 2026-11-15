@@ -1,0 +1,115 @@
+{
+ "shard": "shard-20",
+ "notes": [
+  "gold-coast-11 (Broadbeach Beach) and gold-coast-12 (Kurrawa Beach) may be one beach: Wikivoyage lists 'Broadbeach (Kurrawa Beach)' as one 2 km beach; pins are 1.3 km apart. Owner call on merging.",
+  "gold-coast-8 (Miami Beach) and gold-coast-19 (Nobby Beach) may be one beach: Wikivoyage lists 'Nobby Beach and Miami' as one 2 km beach. Owner call on merging.",
+  "All visitHours values are estimates (no source gives visit lengths). Bio lengths are hand-counted, not measured: run bio-fit.py.",
+  "brisbane-20 facts are thin: the variants say only what and where."
+ ],
+ "spots": [
+  {
+   "id": "brisbane-20",
+   "bio_variants": [
+    "Beach in the coastal suburb of Margate on the Redcliffe Peninsula, a popular South East Queensland getaway.",
+    "Beach at Margate, a coastal suburb on the Redcliffe Peninsula, a popular recreation area for South East Queensland."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null
+  },
+  {
+   "id": "brisbane-28",
+   "bio_variants": [
+    "A 619 m peak in the D'Aguilar Range, named after a remark about its view at a 1915 picnic.",
+    "Mountain village 41 km by road from Brisbane, surrounded by D'Aguilar National Park forest.",
+    "Village on a 619 m peak in the D'Aguilar Range, named for a visitor's remark about the view."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null
+  },
+  {
+   "id": "gold-coast-8",
+   "bio_variants": [
+    "Quiet 2 km beach popular with locals, with ample parking and barbecue facilities beside South Nobby headland.",
+    "Quiet local beach with parking and barbecues, at the southern end of the sand running from the Seaway."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null
+  },
+  {
+   "id": "gold-coast-9",
+   "bio_variants": [
+    "Surf beach below an 80 m headland, with a large park for picnics and cafes close by.",
+    "Beach beneath Burleigh Head, sheltered when southerly winds leave Surfers Paradise exposed.",
+    "Popular surfing beach starting at Burleigh Head, with a large park and cafes around it."
+   ],
+   "visitHoursMin": 1,
+   "visitHoursMax": 3,
+   "visitHours_estimate": true,
+   "held": null
+  },
+  {
+   "id": "gold-coast-11",
+   "bio_variants": [
+    "A 2 km beach with surf like Surfers Paradise but far less busy, backed by cafes and restaurants.",
+    "Beach in the Gold Coast's second busiest tourist suburb, with cafes, restaurants and a casino just inland."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null,
+   "possible_duplicate_of": "gold-coast-12"
+  },
+  {
+   "id": "gold-coast-12",
+   "bio_variants": [
+    "Kurrawa Surf Club's 2 km beach, with cafes, restaurants and a casino in Kurrawa Park just inland.",
+    "Broadbeach's 2 km beach in front of Kurrawa Surf Club, with cafes and restaurants in the park behind."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null,
+   "possible_duplicate_of": "gold-coast-11"
+  },
+  {
+   "id": "gold-coast-17",
+   "bio_variants": [
+    "Beach beside Kirra Point, a noted surf break whose famous barrels sand pumping has since filled in.",
+    "Beachside Coolangatta neighbourhood beach at Kirra Point, one of the world's premier surf breaks."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null
+  },
+  {
+   "id": "gold-coast-18",
+   "bio_variants": [
+    "A 3.3 km beach about 19 km south of Surfers Paradise, taking in Tallebudgera Surf Beach and Pacific Beach.",
+    "Long southern Gold Coast beach that includes Tallebudgera Surf Beach and Pacific Beach."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null
+  },
+  {
+   "id": "gold-coast-19",
+   "bio_variants": [
+    "Quiet locals' beach with ample parking and barbecue facilities, about 6 km from Surfers Paradise.",
+    "Quiet beach at the southern end of the sand from the Gold Coast Seaway, with parking and barbecues."
+   ],
+   "visitHoursMin": 0.5,
+   "visitHoursMax": 2,
+   "visitHours_estimate": true,
+   "held": null,
+   "possible_duplicate_of": "gold-coast-8"
+  }
+ ]
+}

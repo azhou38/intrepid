@@ -1,0 +1,75 @@
+{
+ "atherton-tablelands-7": {
+  "bio": null,
+  "held": "Cathedral Fig Tree: needs QPWS/Wikivoyage facts",
+  "visitHoursMin": null, "visitHoursMax": null,
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/crater-lakes",
+  "unverified": ["bio facts", "no-fee status", "whether the tree is in Crater Lakes NP or Danbulla State Forest"]
+ },
+ "atherton-tablelands-9": {
+  "bio": "Tiered plunge waterfall near Ravenshoe, reputed to be the widest single-drop fall in Australia.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/millstream-falls",
+  "unverified": ["no-fee status (QPWS blocked)"]
+ },
+ "atherton-tablelands-10": {
+  "bio": null,
+  "held": "Mount Hypipamee: needs QPWS facts (crater details not yet read)",
+  "visitHoursMin": null, "visitHoursMax": null,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/mount-hypipamee",
+  "unverified": ["bio facts", "no-fee status", "category viewpoint vs national park"]
+ },
+ "atherton-tablelands-12": {
+  "bio": "Open-air museum of over 50 restored 1860s-style buildings laid out like a tin-mining town in Herberton.",
+  "visitHoursMin": 2, "visitHoursMax": 4,
+  "cost": { "costMin": 46, "costMax": 46, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.historicvillageherberton.com.au/",
+  "unverified": ["price page said current to 15 Apr 2026: approximate until rechecked"]
+ },
+ "atherton-tablelands-14": {
+  "bio": "Timber and tin temple museum from 1903 in Atherton, the last remnant of the town's Chinatown.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "category": "historic",
+  "cost": { "costMin": 10, "costMax": 10, "currency": "AUD", "costBasis": "entry" },
+  "unverified": ["adult $10 from a third-party listing only: approximate", "no official site verified (houwang.org.au unreachable, National Trust paths 404): ticketUrl omitted"]
+ },
+ "mission-beach-1": {
+  "bio": "Island 4 km off Mission Beach, mostly national park, reached by water taxi and ringed by reefs.",
+  "visitHoursMin": 3, "visitHoursMax": 6,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["free/open: part of the island is private resort land; current access unconfirmed", "water taxi detail from a tourism snippet", "no ticketUrl (several water-taxi operators)"]
+ },
+ "mission-beach-3": {
+  "bio": "Spanish-style castle park opened by Jose Paronella in 1935 beside Mena Creek Falls, now rainforest.",
+  "visitHoursMin": 2, "visitHoursMax": 4,
+  "cost": { "costMin": 62, "costMax": 62, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.paronellapark.com.au/",
+  "unverified": ["whether $62 includes the night tour"]
+ },
+ "mission-beach-4": {
+  "bio": "A 7.9 m golden gumboot in Tully marking its record 1950 rainfall.",
+  "visitHoursMin": 0, "visitHoursMax": 0.25,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": []
+ },
+ "mission-beach-6": {
+  "bio": null,
+  "held": "Tully Gorge National Park: needs QPWS facts; pin is 49.5 km from Mission Beach, near the edge of its span",
+  "visitHoursMin": null, "visitHoursMax": null,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/tully-gorge",
+  "unverified": ["activities and bio details", "no-fee status"]
+ },
+ "port-douglas-3": {
+  "bio": "Wildlife sanctuary near Port Douglas with five habitats, elevated boardwalks and hand-feeding of wallabies.",
+  "visitHoursMin": 1.5, "visitHoursMax": 3,
+  "cost": { "costMin": 50, "costMax": 50, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.wildlifehabitat.com.au/",
+  "unverified": ["no Wikipedia article (no wiki field)"]
+ }
+}

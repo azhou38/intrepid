@@ -1,0 +1,202 @@
+{
+ "sunshine-coast-hinterland-10": [
+  {
+   "text": "Easy 1.5 km return walk, about 1 hr, to waterfall with swimming pools, Conondale NP",
+   "source": "aussiebushwalking.com Conondale page (via research); QPWS blocked",
+   "status": "unverifiable",
+   "fix": "Only third-party/snippet support; bio variants 1-3 acceptable but confirm length/time on QPWS in browser. Variant 3 'about an hour's walk return from the creek' matches research."
+  },
+  {
+   "text": "cost: free, costBasis open, no pass",
+   "source": "QPWS BLOCKED; Queensland has no entry pass",
+   "status": "unverifiable",
+   "fix": "Keep free/open provisionally; confirm no day-use fee in browser."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/conondale/things-to-do",
+   "source": "URL from search snippet, page BLOCKED (403)",
+   "status": "unverifiable",
+   "fix": "BLOCKED: verify in in-app browser before use; omit if it fails."
+  }
+ ],
+ "sunshine-coast-hinterland-12": [
+  {
+   "text": "56 km walk, camps Wongai, Tallowwood, Summer Falls, starts/ends Booloumba Creek, bookable 12 months ahead",
+   "source": "QPWS great-walks-conondale-range BLOCKED (snippet); length from Atlas/OSM",
+   "status": "unverifiable",
+   "fix": "Length 56 km is unofficial; prefer variant 2 (no length) or confirm length in browser. Variant 3 'bookable a year ahead' matches snippet."
+  },
+  {
+   "text": "cost: permit, Per Night, no price",
+   "source": "QPWS BLOCKED",
+   "status": "unverifiable",
+   "fix": "Leave costMin/costMax empty (unverified); do not use $7.75 snippet figure."
+  },
+  {
+   "text": "visit hours 24-72 (estimate)",
+   "source": "estimate-marked",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl parks.qld.gov.au/parks/great-walks-conondale-range",
+   "source": "BLOCKED 403",
+   "status": "unverifiable",
+   "fix": "Verify in browser."
+  }
+ ],
+ "sunshine-coast-hinterland-13": [
+  {
+   "text": "58 km, at least four days, Maleny to Mapleton, Kondalilla and Mapleton Falls NPs, permit camping",
+   "source": "weekendnotes/aussiebushwalking; QPWS BLOCKED (official 58.8 km per snippet, others 53-58)",
+   "status": "unverifiable",
+   "fix": "Length varies by source; variant 2 (no length) is safest. Variant 1 '58 km' approximately fits; variant 3 'Baroon Pocket Dam to Mapleton' is supported."
+  },
+  {
+   "text": "cost: permit, Per Night, no price",
+   "source": "QPWS BLOCKED",
+   "status": "unverifiable",
+   "fix": "Leave price empty."
+  },
+  {
+   "text": "ticketUrl parks.qld.gov.au/parks/great-walks-sunshine-coast",
+   "source": "URL derived, BLOCKED",
+   "status": "unverifiable",
+   "fix": "Derived URL, unconfirmed (QPWS host seen was parks.des.qld.gov.au); verify in browser."
+  }
+ ],
+ "glass-house-mountains-4": [
+  {
+   "text": "Opened 3 June 1970 by Bob and Lyn Irwin; over 1,200 animals; 110 acres open to public; Wildlife Hospital",
+   "source": "Wikipedia Australia_Zoo summary (via research)",
+   "status": "supported",
+   "fix": "All three bios supported. 'Zoo and botanical garden' (variant 2) also in Wikipedia text."
+  },
+  {
+   "text": "Adult $77.45, costBasis entry",
+   "source": "https://australiazoo.com.au/tickets/ re-read fresh: 'Adult: $77.45 each'",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://australiazoo.com.au/",
+   "source": "re-fetched: title 'Australia Zoo - Home of The Crocodile Hunter'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "toowoomba-1": [
+  {
+   "text": "Queensland Museum Cobb+Co, Lindsay Street, part of Queensland Museum Network; free for Toowoomba Regional Council residents",
+   "source": "museum.qld.gov.au hours-and-admission re-read; Wikipedia",
+   "status": "supported",
+   "fix": "Variants 2 and 3 fine. Note variant 2 wording 'free for local council residents' matches official."
+  },
+  {
+   "text": "Adult $12.50, costBasis entry",
+   "source": "museum.qld.gov.au/cobb-and-co/plan-your-visit/hours-and-admission re-read fresh: Adult $12.50",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://www.museum.qld.gov.au/cobb-and-co",
+   "source": "re-fetched: title 'Queensland Museum Cobb+Co'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "granite-belt-2": [
+  {
+   "text": "Run by Stanthorpe Art Gallery Society; hosts $50,000 Stanthorpe Art Prize; donations welcomed",
+   "source": "srag.org.au re-read: $50,000 Stanthorpe Art Prize 2026, donations welcomed",
+   "status": "supported",
+   "fix": "Official name is Stanthorpe Regional Art Gallery; 'Art Gallery Society' name taken from research (not re-seen verbatim)."
+  },
+  {
+   "text": "Free entry, costBasis entry",
+   "source": "tourism listing snippet only; gallery's own page does not state free entry",
+   "status": "unverifiable",
+   "fix": "Free entry supported by regional tourism listing only; bio variants 1 and 3 ('Free') rest on it. Variant 2 avoids the claim but 'worth $50,000' is the 2026 prize and may change; prefer variant 1 or 3 once confirmed."
+  },
+  {
+   "text": "ticketUrl https://www.srag.org.au/",
+   "source": "re-fetched: title 'Stanthorpe Regional Art Gallery'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "rockhampton-1": [
+  {
+   "text": "23 km north of Rockhampton, 80 acres of bush, family-owned, Cathedral Cave Tour 45 min",
+   "source": "capricorncaves.com.au re-read: '80 acres of native bushland, 23km north of Rockhampton'; tour page 'Duration: 45 minutes'",
+   "status": "supported",
+   "fix": "'Among Australia's largest privately owned cave systems' (variant 1), 'suited to all ages' and 'licensed cafe/cabins' not re-seen on fetched text (from research Wikipedia/operator); acceptable but variant 3 safest only if cafe/cabins confirmed."
+  },
+  {
+   "text": "Adult cave tour price $37.50 (vs $70 conflicting)",
+   "source": "operator pages capricorncaves.com.au/ and /cave_tours/cathedral-cave-tour/ re-read fresh: no price shown (booking widget); queensland.com blocked",
+   "status": "unverifiable",
+   "fix": "Neither $37.50 nor $70 is supported by the operator page. Do not write a price; leave cost unverified (booking screen in browser). If a number must be used, $37.50 is only a search-snippet listing."
+  },
+  {
+   "text": "ticketUrl https://capricorncaves.com.au/",
+   "source": "re-fetched: title 'Capricorn Caves | Rockhampton, Queensland Cave Tours...'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "rockhampton-3": [
+  {
+   "text": "Council-owned, 100 Spencer Street, beside Botanic Gardens and Murray Lagoon, free entry",
+   "source": "council news pages (via research); rockhamptonzoo.com.au homepage loads (title 'Home Rockhampton Zoo') but states no fee",
+   "status": "supported",
+   "fix": "Free entry rests on council pages, not the zoo site; acceptable. Costbasis entry/free ok."
+  },
+  {
+   "text": "ticketUrl https://www.rockhamptonzoo.com.au/",
+   "source": "re-fetched: title 'Home Rockhampton Zoo'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "rockhampton-4": [
+  {
+   "text": "Indigenous cultural centre, Bruce Highway, tours about 1 hr, Mon-Fri only",
+   "source": "dreamtimecentre.com.au/visitor-information re-read: 9am-3pm Mon-Fri; tours 10.30am & 1.00pm approx 1 hour",
+   "status": "supported",
+   "fix": "Variants 2 and 3 'Monday to Friday' supported."
+  },
+  {
+   "text": "Adult $16, costBasis entry",
+   "source": "re-read fresh: 'ADULTS $16.00 pp'",
+   "status": "supported",
+   "fix": "Note: tours are separate listing on site; entry price is the admission adult price."
+  },
+  {
+   "text": "ticketUrl https://www.dreamtimecentre.com.au/",
+   "source": "re-fetched: title 'Dreamtime Cultural Centre'",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "rockhampton-5": [
+  {
+   "text": "Heritage buildings, local history displays, self-guided, free parking",
+   "source": "Visit Us / homepage re-read ('affordable admission and free onsite parking'); Wikipedia",
+   "status": "supported",
+   "fix": "Variant 2 'history displays' etc supported."
+  },
+  {
+   "text": "General admission $6, costBasis entry",
+   "source": "heritagevillage.rockhamptonregion.qld.gov.au/Visit-Us re-read fresh: 'General admission is $6 per person'",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl https://heritagevillage.rockhamptonregion.qld.gov.au/",
+   "source": "re-fetched: title 'Home Website title', content about Heritage Village",
+   "status": "supported",
+   "fix": ""
+  }
+ ]
+}

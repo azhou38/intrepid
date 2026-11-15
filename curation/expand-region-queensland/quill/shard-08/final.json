@@ -1,0 +1,79 @@
+{
+ "rockhampton-6": {
+  "bio": "Free public art museum on Quay Street, opened in 2022 beside the Fitzroy River, with changing exhibitions.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "entry"},
+  "ticketUrl": "https://www.rmoa.com.au/",
+  "unverified": ["Some special exhibitions may be ticketed; general entry is free"]
+ },
+ "rockhampton-7": {
+  "bio": "Domed sandstone customs house of 1899-1900 on Quay Street, seen from outside on the heritage walk.",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Interior public access unconfirmed (exterior-only stop; owner to judge keep vs review against COVERAGE test 2)", "No single official visitor site, so no ticketUrl"]
+ },
+ "rockhampton-8": {
+  "bio": "A 50-hectare park of waterfall and wetland walks beside the Bruce Highway, with a playground.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl": "https://www.rockhamptonregion.qld.gov.au/FacilitiesRecreation/Parks-Open-Spaces/Parks-Playground-Finder/Kershaw-Gardens",
+  "unverified": ["'Rainforest' walks dropped from the bio: not confirmed on a source read"]
+ },
+ "rockhampton-9": {
+  "bio": "Heritage-listed former railway station on Denison Street, now a museum of Rockhampton's rail history.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"costMin": 10, "costMax": 10, "currency": "AUD", "costBasis": "entry", "note": "Adult $10; museum prices valid to 31 Dec 2026, recheck for 2027"},
+  "ticketUrl": "https://archerparkrailmuseum.com/",
+  "unverified": ["Steam tram detail omitted (unverified)", "Price dated: valid to 31 Dec 2026"]
+ },
+ "capricorn-coast-4": {
+  "bio": "12-metre monument at Emu Park's Churchill's Lookout that sings in the wind, honouring Cook's 1770 voyage.",
+  "visitHoursMin": 0,
+  "visitHoursMax": 0.5,
+  "cost": {"free": true, "costBasis": "open"},
+  "unverified": ["Free/open inferred for an open roadside monument; no source states it", "No official site, so no ticketUrl"]
+ },
+ "gladstone-2": {
+  "bio": "A 14 km-long island sheltering Gladstone Harbour, reached by ferry, with 4WD tracks, beaches and camping.",
+  "visitHoursMin": 3,
+  "visitHoursMax": 8,
+  "cost": {"free": true, "costBasis": "open", "note": "Ferry fare is transport, not counted; camping at South End needs a permit"},
+  "unverified": ["Ferry fare not recorded", "No single official site (one ferry operator; tourism page blocked), so no ticketUrl", "'From the marina' dropped: not on the ferry page", "Pin is an OSM waste facility; owner may prefer a visitor point"]
+ },
+ "gladstone-3": {
+  "bio": "Lake behind Awoonga Dam, a half-hour drive from Gladstone, with picnic areas, walks and birdwatching.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 3,
+  "cost": {"free": true, "costBasis": "open"},
+  "ticketUrl": "https://www.gawb.qld.gov.au/community-recreation/lake-awoonga-recreation-area/",
+  "unverified": ["Barramundi fishing dropped: not confirmed", "Free rests on Wikipedia ('free recreation areas'); the recreation page states no entry fee", "Pin is the dam wall, not the recreation area"]
+ },
+ "gladstone-5": {
+  "bio": "Free gallery and local history museum in a 1930s former town hall on Goondoon Street.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "entry"},
+  "ticketUrl": "https://gragm.qld.gov.au/",
+  "unverified": []
+ },
+ "gladstone-6": {
+  "bio": "Council-run botanic gardens with the Crown of Gold tree, a bonsai house and garden tours.",
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "cost": {"free": true, "costBasis": "entry"},
+  "ticketUrl": "https://www.gladstone.qld.gov.au/Things-To-Do/Gladstone-Tondoon-Botanic-Gardens",
+  "unverified": ["'Free' guided tours and 'Japanese-style' dropped: unconfirmed", "costBasis entry vs open: owner may prefer open"]
+ },
+ "gladstone-8": {
+  "bio": "Open-air museum of over 20 heritage buildings and collections beside the Calliope River.",
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "cost": null,
+  "ticketUrl": "https://callioperiverhistoricalvillage.com/",
+  "unverified": ["Entry price UNVERIFIED: $5 adult from a third-party directory only, undated; official site shows none. Candidate AUD 5 entry, confirm by phone before shipping", "Kiosk dropped: not confirmed"]
+ }
+}

@@ -1,0 +1,209 @@
+{
+ "shard": "shard-20",
+ "spots": [
+  {
+   "id": "brisbane-20",
+   "name": "Margate Beach",
+   "correct_wikipedia_title": "Margate, Queensland (suburb article; no beach article)",
+   "bio_facts": [
+    "Margate is a coastal suburb on the Redcliffe Peninsula, a popular recreational destination for South East Queensland",
+    "Listed under See on Wikivoyage Moreton Bay (Redcliffe) with coordinates -27.244167 153.111944 but no description"
+   ],
+   "sources": {
+    "Margate, Queensland": "https://en.wikipedia.org/wiki/Margate,_Queensland",
+    "Wikivoyage": "https://en.wikivoyage.org/wiki/Redcliffe"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "what the beach itself offers (swimming, patrols, facilities): Wikivoyage listing has no text; Moreton Bay council page not found"
+   ],
+   "verdict": "thin facts; bio can say only what it is and where"
+  },
+  {
+   "id": "brisbane-28",
+   "name": "Mount Glorious",
+   "correct_wikipedia_title": "Mount Glorious",
+   "bio_facts": [
+    "Mount Glorious is a mountain (619 m) in the D'Aguilar Range and a rural locality in the City of Moreton Bay, about 41 km by road north-west of Brisbane CBD",
+    "Surrounding forest is part of Brisbane Forest Park and D'Aguilar National Park",
+    "Named after a remark about the view by Elizabeth Patrick at a 1915 picnic"
+   ],
+   "sources": {
+    "Mount Glorious": "https://en.wikipedia.org/wiki/Mount_Glorious",
+    "D'Aguilar NP": "https://en.wikipedia.org/wiki/D%27Aguilar_National_Park"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": "BLOCKED",
+   "ticketUrl_note": "https://parks.desi.qld.gov.au/parks/daguilar returned 403 (bot wall): check in browser for the QPWS D'Aguilar National Park page and any entry fee/needs; the spot is a village/mountain so a ticketUrl may not suit",
+   "cost_source": "none found; QPWS blocked",
+   "unverified": [
+    "QPWS fee/pass for D'Aguilar NP",
+    "whether a lookout is the draw (no source read names one); pin is OSM natural=peak ~0.5 km from Wikipedia's coordinates (27.3350,152.7678)"
+   ],
+   "park_pass": "none known; no Queensland pass in parkPasses.ts checked"
+  },
+  {
+   "id": "gold-coast-8",
+   "name": "Miami Beach",
+   "correct_wikipedia_title": "Miami, Queensland (suburb article; not Miami Beach, Florida)",
+   "bio_facts": [
+    "Miami is a coastal suburb in the City of Gold Coast",
+    "Wikivoyage lists 'Nobby Beach and Miami' as one 2 km beach, quiet and popular with locals with ample parking and barbecue facilities, at the southern end of a continuous stretch of sand from the Gold Coast Seaway",
+    "South Nobby headland separates it from North Burleigh and gives views of the beaches north and south"
+   ],
+   "sources": {
+    "Miami, Queensland": "https://en.wikipedia.org/wiki/Miami,_Queensland",
+    "Wikivoyage Gold Coast": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach, council-patrolled, no single steward",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "no fee, hours or patrol details checked on City of Gold Coast pages (goldcoast.qld.gov.au beaches page 404)",
+    "Wikivoyage combines Miami with Nobby Beach (gold-coast-19): possible near-duplicate, owner call"
+   ]
+  },
+  {
+   "id": "gold-coast-9",
+   "name": "Burleigh Heads Beach",
+   "correct_wikipedia_title": "Burleigh Heads, Queensland (suburb; no beach article)",
+   "bio_facts": [
+    "Burleigh Beach faces the Coral Sea and starts at Burleigh Head, an 80 m cape at the northern mouth of Tallebudgera Creek",
+    "Wikivoyage: a nice beach with a large park and a hill good for picnics; cafes surround it; sheltered when southerly winds make Surfers exposed",
+    "Burleigh Heads is a popular beach and surfing location; the James Street precinct has cafes and shops",
+    "G:Link tram L1 terminates at Burleigh Heads"
+   ],
+   "sources": {
+    "Burleigh Heads, Queensland": "https://en.wikipedia.org/wiki/Burleigh_Heads,_Queensland",
+    "Wikivoyage Gold Coast": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach, council-patrolled, no single steward",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "no fee, hours or patrol details checked on City of Gold Coast pages (goldcoast.qld.gov.au beaches page 404)"
+   ]
+  },
+  {
+   "id": "gold-coast-11",
+   "name": "Broadbeach Beach",
+   "correct_wikipedia_title": "Broadbeach, Queensland (suburb; no beach article)",
+   "bio_facts": [
+    "Wikivoyage lists 'Broadbeach (Kurrawa Beach)' as a 2 km beach with often the same surf conditions as Surfers Paradise but far less busy",
+    "Kurrawa Park just inland has cafes, restaurants and Jupiters Casino",
+    "Broadbeach is the Gold Coast's second busiest tourist suburb with a casino, two shopping complexes and many restaurants"
+   ],
+   "sources": {
+    "Wikivoyage Gold Coast": "https://en.wikivoyage.org/wiki/Gold_Coast",
+    "Broadbeach, Queensland": "https://en.wikipedia.org/wiki/Broadbeach,_Queensland"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach, council-patrolled, no single steward",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "no fee, hours or patrol details checked on City of Gold Coast pages (goldcoast.qld.gov.au beaches page 404)",
+    "DUPLICATE: Wikivoyage treats Broadbeach and Kurrawa Beach as the same 2 km beach (gold-coast-11 and gold-coast-12 are likely one place)"
+   ]
+  },
+  {
+   "id": "gold-coast-12",
+   "name": "Kurrawa Beach",
+   "correct_wikipedia_title": "none (no article; Wikipedia 'Kurrawa' 404)",
+   "bio_facts": [
+    "Wikivoyage names Broadbeach's beach 'Kurrawa Beach' (2 km), with Kurrawa Park and its cafes, restaurants and casino just inland",
+    "Kurrawa Surf Club sits in front of the beach"
+   ],
+   "sources": {
+    "Wikivoyage Gold Coast": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach, council-patrolled, no single steward",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "no fee, hours or patrol details checked on City of Gold Coast pages (goldcoast.qld.gov.au beaches page 404)",
+    "DUPLICATE of gold-coast-11 (Broadbeach Beach) per Wikivoyage; pins are 1.3 km apart, recommend merging or owner decision"
+   ]
+  },
+  {
+   "id": "gold-coast-17",
+   "name": "Kirra Beach",
+   "correct_wikipedia_title": "Kirra, Queensland (neighbourhood article)",
+   "bio_facts": [
+    "Kirra is a beachside neighbourhood of Coolangatta; Kirra Point separates Kirra Beach from Coolangatta Beach and is noted as one of the world's premier surf breaks",
+    "Sand pumping across the Tweed River mouth has filled in the famous barrels and widened the beach",
+    "Kirra Surf Life Saving Club and Kirra Beach tourist park are on the beach (Wikivoyage)"
+   ],
+   "sources": {
+    "Kirra, Queensland": "https://en.wikipedia.org/wiki/Kirra,_Queensland",
+    "Wikivoyage Gold Coast": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach, council-patrolled, no single steward",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "no fee, hours or patrol details checked on City of Gold Coast pages (goldcoast.qld.gov.au beaches page 404)"
+   ]
+  },
+  {
+   "id": "gold-coast-18",
+   "name": "Palm Beach",
+   "correct_wikipedia_title": "Palm Beach, Queensland",
+   "bio_facts": [
+    "Palm Beach is a coastal suburb on the Gold Coast, about 19 km south of Surfers Paradise",
+    "Wikivoyage: a 3.3 km beach that includes Tallebudgera Surf Beach and Pacific Beach"
+   ],
+   "sources": {
+    "Palm Beach, Queensland": "https://en.wikipedia.org/wiki/Palm_Beach,_Queensland",
+    "Wikivoyage Gold Coast": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach, council-patrolled, no single steward",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "no fee, hours or patrol details checked on City of Gold Coast pages (goldcoast.qld.gov.au beaches page 404)",
+    "pin is a beach feature; Wikipedia's suburb point is the suburb centre, not the beach"
+   ]
+  },
+  {
+   "id": "gold-coast-19",
+   "name": "Nobby Beach",
+   "correct_wikipedia_title": "Mermaid Beach, Queensland (redirect target; Nobby Beach is a neighbourhood, so views are the suburb's)",
+   "bio_facts": [
+    "Nobby Beach is part of the Mermaid Beach suburb, about 6 km SSE of Surfers Paradise",
+    "Wikivoyage: a quiet beach popular with locals thanks to ample parking and barbecue facilities, at the southern end of a continuous stretch of sand from the Gold Coast Seaway"
+   ],
+   "sources": {
+    "Mermaid Beach, Queensland": "https://en.wikipedia.org/wiki/Nobby_Beach",
+    "Wikivoyage Gold Coast": "https://en.wikivoyage.org/wiki/Gold_Coast"
+   },
+   "free": true,
+   "costBasis": "open",
+   "ticketUrl": null,
+   "ticketUrl_note": "none: open beach, council-patrolled, no single steward",
+   "cost_source": "no source states a fee; open beach default",
+   "unverified": [
+    "no fee, hours or patrol details checked on City of Gold Coast pages (goldcoast.qld.gov.au beaches page 404)",
+    "near-duplicate of Miami Beach (gold-coast-8): Wikivoyage joins them as 'Nobby Beach and Miami'"
+   ]
+  }
+ ],
+ "missing_pass": null,
+ "notes": "Evidence bundles held wrong-place Wikipedia text; researched from Wikivoyage Gold Coast / Moreton Bay and Wikipedia suburb articles. Cached fetches in session scratchpad. Costs are open-beach defaults, not sourced fees. No opening hours recorded."
+}

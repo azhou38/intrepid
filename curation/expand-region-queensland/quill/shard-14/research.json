@@ -1,0 +1,220 @@
+{
+ "port-douglas-4": {
+  "facts": {
+   "what": "10-hectare wildlife sanctuary and ecotourism park at Wangetti between Cairns and Port Douglas, adjoining Wet Tropics rainforest with guided and self-guided walks",
+   "included": "Admission includes wildlife displays, presentations, at least one ~20 min boat ride on Hartley's Lagoon and self-guided walks"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Hartley's_Crocodile_Adventures",
+   "included": "https://www.crocodileadventures.com/how-to-find-us/tickets/",
+   "cost": "https://www.crocodileadventures.com/how-to-find-us/tickets/"
+  },
+  "cost": {
+   "costMin": 50,
+   "costMax": 50,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "ticketUrl": "https://www.crocodileadventures.com/how-to-find-us/tickets/",
+  "ticketUrl_check": "Page title 'Tickets & Hours ... Hartley's Crocodile Adventures' loaded (200); adult $50, child (4-15) $25, family $125; entry-only tickets need no pre-booking. Plain homepage https://www.crocodileadventures.com/ not loaded separately.",
+  "unverified": [
+   "current price date (page names a 14 June Ironman closure, consistent with 2026)"
+  ]
+ },
+ "port-douglas-5": {
+  "facts": {
+   "what": "Waterfall and swimming hole, also called Black Rock Waterfalls, in the Mowbray Valley south of Port Douglas; reached by driving to the end of Spring Creek Road then following the creek up, about two hours each way rock-hopping",
+   "safety": "Swim only in the pool itself: crocodiles may be present in brackish water downstream of the creek crossing"
+  },
+  "sources": {
+   "what": "https://tropicalnorthqueensland.org.au/articles/port-douglas-daintree-swimming-holes/",
+   "safety": "https://tropicalnorthqueensland.org.au/articles/port-douglas-daintree-swimming-holes/ (listed under Free Activities)",
+   "cost": "https://tropicalnorthqueensland.org.au/articles/port-douglas-daintree-swimming-holes/"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_check": "Open natural site, no single steward; official-site search found only tourism pages and queensland.com (403, BLOCKED: https://queensland.com/au/en/things-to-do/attractions/p-5de70f730dbf4ae5125d3c9c-spring-creek-falls, not needed as ticketUrl).",
+  "notes": "The gold coin donation in the same TNQ article is for Mason's Swimming Hole, not Spring Creek; the 2-hour walk time conflicts with other sources describing a short walk, so keep the bio vague on walk length.",
+  "unverified": [
+   "land tenure/managing agency (possibly Mowbray NP; QPWS blocked)",
+   "walk length (sources differ)",
+   "Wikipedia: no article"
+  ]
+ },
+ "daintree-3": {
+  "facts": {
+   "what": "Daintree Rainforest Discovery Centre: introduction to the Daintree with an interpretive centre, canopy tower, aerial walkway, boardwalks and cafe",
+   "fee_includes": "Entry includes audio tour (8 languages), 68-page interpretive guide book and a 7 day re-entry pass"
+  },
+  "sources": {
+   "what": "https://www.discoverthedaintree.com/",
+   "fee_includes": "https://www.discoverthedaintree.com/",
+   "cost": "https://www.discoverthedaintree.com/ (Entry fees: Adult $41, Concession $38, Child $19, Family $100)"
+  },
+  "cost": {
+   "costMin": 41,
+   "costMax": 41,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "ticketUrl": "https://www.discoverthedaintree.com/",
+  "ticketUrl_check": "Title 'Daintree Rainforest Discovery Centre | Tours & Information' loaded (200). Official name is Daintree Rainforest Discovery Centre (spot name is Daintree Discovery Centre; consider renaming).",
+  "unverified": [
+   "Wikipedia: no article",
+   "no park pass applies (private/operator entry fee)"
+  ]
+ },
+ "cooktown-1": {
+  "facts": {
+   "what": "Museum in an 1888-89 Sisters of Mercy convent and school building, now Cooktown Museum (formerly James Cook Museum), run by the National Trust of Queensland; heritage-listed 1992",
+   "highlights": "Artefacts from HMB Endeavour including a jettisoned cannon and anchor, Guugu Yimithiir artefacts, Gold Rush and Chinese migration displays, verandah views over the Endeavour River",
+   "rename": "Now branded Cooktown Museum; Wikipedia article title is Cooktown Museum (redirect from James Cook Museum)"
+  },
+  "sources": {
+   "what": "https://nationaltrustqld.org.au/visitor-sites/Cooktown-Museum/",
+   "highlights": "https://nationaltrustqld.org.au/visitor-sites/Cooktown-Museum/",
+   "rename": "https://en.wikipedia.org/api/rest_v1/page/summary/James_Cook_Museum",
+   "cost": "https://nationaltrustqld.org.au/visitor-sites/Cooktown-Museum/ (Adult $25, Concession $20, Youth $15, Family $65)"
+  },
+  "cost": {
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD",
+   "costBasis": "entry"
+  },
+  "ticketUrl": "https://nationaltrustqld.org.au/visitor-sites/Cooktown-Museum/",
+  "ticketUrl_check": "Title 'Cooktown Museum | National Trust of Australia (Queensland)' loaded (200).",
+  "unverified": [
+   "opening hours deliberately not recorded; seasonal closures exist per operator"
+  ]
+ },
+ "cooktown-3": {
+  "facts": {
+   "what": "Cooktown Botanic Gardens, established 1878 within the 62-hectare Gallop Botanic Reserve, 1.5 km from the town centre; heritage-listed; Nature's Powerhouse art gallery, visitor information centre and cafe inside",
+   "access": "Open 24 hours; admission is free"
+  },
+  "sources": {
+   "what": "https://www.cooktownandcapeyork.com/do/nature/plants/botanic_gardens",
+   "access": "https://www.cooktownandcapeyork.com/do/nature/plants/botanic_gardens",
+   "wiki": "https://en.wikipedia.org/api/rest_v1/page/summary/Cooktown_Botanic_Gardens",
+   "cost": "https://www.cooktownandcapeyork.com/do/nature/plants/botanic_gardens ('Admission is free')"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_check": "Council-owned (Cook Shire Council). Council guessed deep link https://www.cook.qld.gov.au/services/facilities/cooktown-botanical-gardens 404'd; council site nav lists a 'Cooktown Botanic Gardens' page but its URL was not found. Candidate: homepage https://www.cook.qld.gov.au/ (not verified for a gardens page); left as none.",
+  "unverified": [
+   "Cook Shire Council gardens page URL",
+   "Wikipedia article is titled Gallop Botanic Reserve (set wiki accordingly if photo lookup needs it)"
+  ]
+ },
+ "cooktown-4": {
+  "facts": {
+   "what": "National park immediately south of Cooktown, about 2 km from the main street, with a summit walk to Mount Cook and basic day-use facilities (car park); no camping",
+   "walk": "Summit walk length is reported as about 3 km return in one source and 6 km return in another"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Mount_Cook_National_Park%2C_Australia; search snippet of https://parks.qld.gov.au/parks/mount-cook (page itself BLOCKED)",
+   "walk": "unresolved",
+   "cost": "no day-use entry fee on Queensland national parks; QPWS page not readable"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_url": "https://parks.qld.gov.au/parks/mount-cook",
+  "ticketUrl_check": "403 'Just a moment' to script; managing agency is QPWS. Orchestrator to confirm in a real browser the page names Mount Cook National Park and shows no day-use fee.",
+  "unverified": [
+   "walk length (3 km vs 6 km return)",
+   "no day-use fee (QPWS page blocked)",
+   "park pass: none applicable (Queensland has no day-entry pass)"
+  ]
+ },
+ "cooktown-6": {
+  "facts": {
+   "what": "Waterfall with a safe swimming hole several km down Battlecamp Road, reached by continuing past Endeavour Falls Tourist Park towards Hope Vale; road crosses the creek and can flood",
+   "camping": "A couple of informal campsites at the falls"
+  },
+  "sources": {
+   "what": "https://www.cooktownandcapeyork.com/do/nature/waterfalls",
+   "camping": "https://www.4wdingaustralia.com/travel-queensland/isabella-falls-cooktown/ (search snippet, not fetched)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_check": "Open natural site; regional site https://www.cooktownandcapeyork.com/do/nature/waterfalls lists it, no single steward.",
+  "unverified": [
+   "no fee stated by any source (none found); distance/time from Cooktown differs between sources",
+   "not the Isabella Falls in Edmonton, Cairns"
+  ]
+ },
+ "cooktown-7": {
+  "facts": {
+   "what": "Cascading falls into a swimming hole south of Cooktown, reached from the Mulligan Highway via Mt Amos Road (13.5 km south of Cooktown); 4WD recommended, short walk from end of road; stream continues to private swimming pools near the parking area",
+   "spelling": "Also spelled Trevethan Falls"
+  },
+  "sources": {
+   "what": "https://www.cooktownandcapeyork.com/do/nature/waterfalls",
+   "access": "https://tropicalnorthqueensland.org.au/listing/product/trevathan-falls/",
+   "private_pools": "https://www.exploroz.com/places/109316/qld+trevethan"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "none",
+  "ticketUrl_check": "No official operator; TNQ and Cooktown pages list it as a natural site.",
+  "unverified": [
+   "no fee stated, but nearby land is private (campgrounds booked via Hipcamp); whether falls access has a fee or permission is unconfirmed",
+   "access via private land not confirmed"
+  ]
+ },
+ "cape-york-2": {
+  "facts": {
+   "what": "Day-use waterfall and swimming hole in Apudthama National Park (formerly Jardine River NP) on the Old Telegraph Track, with picnic area, toilets and boardwalk; no camping; one of few designated crocodile-free swim spots on Cape York",
+   "access": "4WD only, dry season (about May-November), about 3 km along the Old Telegraph Track from Bramwell Junction"
+  },
+  "sources": {
+   "what": "https://tropicalnorthqueensland.org.au/listing/product/fruit-bat-falls (search result)",
+   "access": "https://www.cooktownandcapeyork.com/do/nature/np/jardine-river",
+   "rename": "https://en.wikipedia.com/wiki/Apudthama_National_Park (search result: 2022 re-description)"
+  },
+  "cost": {
+   "free": true,
+   "costBasis": "open"
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_url": "https://parks.qld.gov.au/parks/apudthama",
+  "ticketUrl_check": "Managing agency QPWS, 403 to script. Confirm in browser that the page names Apudthama National Park and whether Fruit Bat Falls has a day-use fee (one source says 'small park fee'; QPWS lists camping fees only).",
+  "unverified": [
+   "day-use fee (conflicting; none confirmed)",
+   "crocodile-free claim is from blogs/guides, not QPWS",
+   "park pass: none applicable"
+  ]
+ },
+ "cape-york-6": {
+  "facts": {
+   "what": "Telegraph station on the banks of the Wenlock River, part of the Cape York Telegraph Line, completed 1887 and closed 1987; now a camping, safari-tent and accommodation business 293 km from the Tip",
+   "on_site": "3 km walking track along the river, short detour to Cave Creek natural bridge; Wenlock River has barramundi but estuarine crocodiles"
+  },
+  "sources": {
+   "what": "https://en.wikipedia.org/api/rest_v1/page/summary/Moreton_Telegraph_Station",
+   "on_site": "https://www.moretonstation.com.au/"
+  },
+  "cost": null,
+  "ticketUrl": "https://www.moretonstation.com.au/",
+  "ticketUrl_check": "Title 'Moreton Telegraph Station Cape York - Camping And Accommodation' loaded (200).",
+  "unverified": [
+   "COST: no day-visit or entry price found on the operator site; camping is a private charge (about $15 adult unpowered per an undated blog), not a state park fee. Needs a decision: day-visit price unknown, do not record free",
+   "whether non-guests can visit the historic station for a fee"
+  ]
+ }
+}

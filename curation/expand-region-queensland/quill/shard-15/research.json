@@ -1,0 +1,268 @@
+{
+ "winton-1": {
+  "facts": {
+   "what": "Museum in Winton at 50 Elderslie Street, billed as the first museum in the world dedicated to a song (Waltzing Matilda); rebuilt and reopened 20 April 2018 after a June 2015 fire; also holds a WW1 exhibition, a travelling-art gallery and the Qantilda Museum (Winton Shire history).",
+   "pin": "kept placement point, HIGH (OSM tourism=museum + Wikipedia/Commons), moved 0 m"
+  },
+  "sources": {
+   "what": [
+    "https://www.outbackqueensland.com.au/attractions/waltzing-matilda-centre/",
+    "https://en.wikipedia.org/wiki/Winton,_Queensland"
+   ],
+   "cost": [
+    "https://matildacentre.com.au (via search result, page BLOCKED to scripts)",
+    "https://www.experiencewinton.com.au/Waltzing-Matilda-Centre/About-Us/Waltzing-Matilda-Centre (BLOCKED to scripts; search summary: adult $35, concession $30, child 5-16 $17, family $90, under 5 and locals free)",
+    "https://www.outbackqueensland.com.au/attractions/waltzing-matilda-centre/ (indicative rates $18 to $125)"
+   ]
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://matildacentre.com.au",
+  "ticketUrl_note": "Official site per search results (operator's own home page, lists adult $35). Script fetch redirects to experiencewinton.com.au and gets 403 Access Denied. Check in a real browser that the title names the Waltzing Matilda Centre.",
+  "unverified": [
+   "adult $35 read from search-result summary of the official page, not page text; Rezdy booking shows $38 (agent, not used)"
+  ],
+  "costMin": 35,
+  "costMax": 35,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "ticket_note": "Official site per search results (operator's own home page, lists adult $35). Script fetch redirects to experiencewinton.com.au and gets 403 Access Denied. Check in a real browser that the title names the Waltzing Matilda Centre."
+ },
+ "winton-3": {
+  "facts": {
+   "what": "Wall in Arno's Park, Vindex Street behind the North Gregory Hotel, built by German-born opal miner Arno Grotjahn from concrete and rock from his Opalton claim and studded with junk (motorbikes, typewriters, a kitchen sink); roughly 2 m high and 70+ m long (sources differ on length and build time)."
+  },
+  "sources": {
+   "what": [
+    "https://www.lonelyplanet.com/australia/queensland/winton/attractions/arno-s-wall/a/poi-sig/1157447/1306478 (search result)",
+    "https://drivenorthwestqld.com.au/things-to-do/arnos-wall/ (search result)",
+    "https://en.wikipedia.org/wiki/Winton,_Queensland (lists it under Attractions)",
+    "https://www.experiencewinton.com.au/Things-To-Do/See-do-around-town/Arnos-Wall (BLOCKED)"
+   ],
+   "cost": [
+    "Open outdoor wall in a park; no fee source found"
+   ]
+  },
+  "ticketUrl": "none",
+  "ticketUrl_note": "Open roadside/park sight, no steward site (Experience Winton page is the town tourism page, BLOCKED; not an official operator).",
+  "unverified": [
+   "exact length/build time (sources differ); no fee page read, free inferred from open park location"
+  ],
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "ticket_note": "Open roadside/park sight, no steward site (Experience Winton page is the town tourism page, BLOCKED; not an official operator)."
+ },
+ "winton-4": {
+  "facts": {
+   "what": "Winton's Musical Fence: a long wire fence fitted with steel pieces that visitors play, designed by percussionist Graeme Leak, commissioned by the Queensland Music Festival in 2003 and built and first played by townspeople; later sampled by Gotye."
+  },
+  "sources": {
+   "what": [
+    "search results summarising Lonely Planet and other guides; https://qmf.org.au/history/wintons-musical-fence (listed in search, now 404 to script)",
+    "https://australiantraveller.com/qld/outback-qld/winton-150 (search result)"
+   ],
+   "cost": [
+    "Open outdoor installation; no fee source found"
+   ]
+  },
+  "ticketUrl": "none",
+  "ticketUrl_note": "Public installation, no steward site found.",
+  "unverified": [
+   "'world's first/only musical fence' claim: sources differ, do not use",
+   "location detail beyond pin (placement says OSM tourism=attraction); free inferred"
+  ],
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "ticket_note": "Public installation, no steward site found."
+ },
+ "winton-5": {
+  "facts": {
+   "what": "National park in Shire of Winton, 16 km of road from Winton; centred on Bladensburg Station (sheep, then cattle); the restored homestead, probably moved to the site in the 1910s, is the park's information centre and ranger office; camping at Bough Shed Waterhole beside Surprise Creek (permits and fees apply); birdwatching and 4WD.",
+   "pin": "kept placement point (OSM Bladensburg Homestead, MEDIUM), moved 0 m; it is the park's homestead visitor point"
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Bladensburg_National_Park",
+    "https://www.outbackqueensland.com.au/attractions/bladensburg-national-park/"
+   ],
+   "cost": [
+    "https://www.outbackqueensland.com.au/attractions/bladensburg-national-park/ (tagged 'Experience is free'; camping permits and fees apply)"
+   ]
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/bladensburg",
+  "ticketUrl_note": "QPWS pages return 403 to scripts; the URL is my construction from the QPWS pattern, not confirmed. Check in a real browser (title should name Bladensburg National Park) and take the park page from QPWS's own site/search.",
+  "park_pass": "No Queensland day-use pass applies; nothing to add to parkPasses.ts. Camping fee is separate, not the spot price.",
+  "unverified": [
+   "QPWS page unread; whether the homestead centre is staffed or when; category 'entertainment' in placement looks wrong, should be nature"
+  ],
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "ticket_note": "QPWS pages return 403 to scripts; the URL is my construction from the QPWS pattern, not confirmed. Check in a real browser (title should name Bladensburg National Park) and take the park page from QPWS's own site/search."
+ },
+ "charleville-1": {
+  "facts": {
+   "what": "RFDS visitor centre next to the operational Charleville base (opened 1943, services about 622,000 sq km of south-west Queensland) on John Flynn Way; history of the Flying Doctor, historic radio and medical artefacts, a theatrette film on today's operations, self-guided.",
+   "pin": "kept placement point (OSM amenity=doctors, RFDS Charleville Base, MEDIUM), moved 0 m. Check it is the visitor centre on John Flynn Way, not the hangar."
+  },
+  "sources": {
+   "what": [
+    "https://flyingdoctor.org.au/support-us/visit-us (official; entry 9, Charleville RFDS Visitors Centre, base operating since 1943, ~622,000 sq km)",
+    "https://travelactionmatildacountry.com.au/directory/royal-flying-doctor-service-2/ (self-guided tour, theatrette, John Flynn Way)"
+   ],
+   "cost": [
+    "https://travelactionmatildacountry.com.au/directory/royal-flying-doctor-service-2/ ('free attraction', $0.00)",
+    "search results: Wanderlog 'free entry, donations welcome'; Aussietowns 'by donation'; Traveller 'no charge, donations appreciated'",
+    "Wikivoyage '$3 adult' is a dead-link stale figure, not used"
+   ]
+  },
+  "ticketUrl": "https://flyingdoctor.org.au/support-us/visit-us",
+  "ticketUrl_note": "Loaded 200; official RFDS 'Visit the Flying Doctor' page lists the Charleville RFDS Visitor Centre. Generic national page, not a Charleville deep link (old Charleville URLs 404).",
+  "unverified": [
+   "whether a fee is now charged (sources say free/donation, none official); queensland.com listing BLOCKED (https://www.queensland.com/au/en/things-to-do/attractions/p-56b25f47aeeeaaf773cf1bff-charleville-royal-flying-doctor-service-visitor-centre)"
+  ],
+  "free": true,
+  "costBasis": "donation",
+  "needs": null,
+  "ticket_note": "Loaded 200; official RFDS 'Visit the Flying Doctor' page lists the Charleville RFDS Visitor Centre. Generic national page, not a Charleville deep link (old Charleville URLs 404)."
+ },
+ "carnarvon-national-park-1": {
+  "facts": {
+   "what": "Lookout and bluff above Carnarvon Gorge; the last section of the Carnarvon Great Walk descends from Boolimba Bluff to Carnarvon Creek (park caption). Placement pin is the OSM natural=peak.",
+   "unverified_note": "No visitor-page text read (QPWS BLOCKED): walk length, grade and time are unverified."
+  },
+  "sources": {
+   "what": [
+    "QPWS Carnarvon Great Walk about page via search result: https://parks.des.qld.gov.au/parks/carnarvon-great-walk/about (BLOCKED)",
+    "https://en.wikipedia.org/wiki/Carnarvon_National_Park"
+   ],
+   "cost": [
+    "https://parks.qld.gov.au/parks/carnarvon-gorge (BLOCKED); no day-use entry fee found in any source; brief says Queensland national parks mostly charge none"
+   ]
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/carnarvon-gorge",
+  "ticketUrl_note": "Managing agency page for Carnarvon Gorge section (appears in search results as parks.qld.gov.au/parks/carnarvon-gorge/about/faq); BLOCKED to scripts, check in a real browser.",
+  "unverified": [
+   "walk length/time, any day-use fee, whether Boolimba is a separate spot from the Great Walk (overlap) "
+  ],
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "ticket_note": "Managing agency page for Carnarvon Gorge section (appears in search results as parks.qld.gov.au/parks/carnarvon-gorge/about/faq); BLOCKED to scripts, check in a real browser."
+ },
+ "carnarvon-national-park-2": {
+  "facts": {
+   "what": "Cathedral Cave in Carnarvon Gorge: one of the stencil rock-art sites (with the Art Gallery) made by Indigenous artists; stencilling techniques regarded by some researchers as the best in the world (hedge, do not use 'best').",
+   "unverified_note": "QPWS visitor page BLOCKED: track distance/time unverified."
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Carnarvon_National_Park"
+   ],
+   "cost": [
+    "no day-use fee found; brief default"
+   ]
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/carnarvon-gorge",
+  "ticketUrl_note": "Same QPWS Carnarvon Gorge page; BLOCKED to scripts.",
+  "unverified": [
+   "distance from visitor area, track name, access restrictions/cultural protocols, fee"
+  ],
+  "free": true,
+  "costBasis": "open",
+  "needs": null,
+  "ticket_note": "Same QPWS Carnarvon Gorge page; BLOCKED to scripts."
+ },
+ "carnarvon-national-park-3": {
+  "facts": {
+   "what": "Multi-day walking track through Carnarvon National Park with five walkers' camps (Big Bend, Gadd's, West Branch, Consuelo, Cabbage Tree zone); max 6 per group, max two nights in a row; open seasonally (sources conflict: 1 Mar to 31 Oct vs closed Nov to Feb: hedge, 'closed in the hottest months'); bookable up to 12 months ahead. Length 87 km is from the placement note, not a source I read.",
+   "pin": "kept placement point (OSM trail midpoint of a 15.1 km section, MEDIUM): a partial route; midpoint of the whole 87 km is not verified, flag for the orchestrator"
+  },
+  "sources": {
+   "what": [
+    "https://parks.des.qld.gov.au/parks/carnarvon-great-walk/about (BLOCKED; seen in search results)",
+    "https://parks.des.qld.gov.au/parks/carnarvon-great-walk/camping (search result)"
+   ],
+   "cost": [
+    "QPWS camping fees page https://parks.qld.gov.au/experiences/camping/camping_fees : $7.75 per person per night (search-result text; not Great Walk specific, page BLOCKED)",
+    "Great Walk page: camping permits required, fees apply"
+   ]
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/carnarvon-great-walk/about",
+  "ticketUrl_note": "Managing agency page (URL seen in search results); BLOCKED to scripts. Booking is via book.parks.qld.gov.au (do not use as ticketUrl).",
+  "unverified": [
+   "Great Walk fee exact figure (general QPWS rate used), 87 km length, season dates, whole-route midpoint pin"
+  ],
+  "costMin": 7.75,
+  "costMax": 7.75,
+  "currency": "AUD",
+  "costBasis": "ticket",
+  "costPer": "Per Night",
+  "needs": "permit",
+  "confidence": "low",
+  "ticket_note": "Managing agency page (URL seen in search results); BLOCKED to scripts. Booking is via book.parks.qld.gov.au (do not use as ticketUrl)."
+ },
+ "cooloola-great-walk": {
+  "facts": {
+   "what": "102 km coastal bushwalking route in Great Sandy National Park, Noosa North Shore through Cooloola to Rainbow Beach, planned as a five-day trek, opened 2010; walkers' camps each with 7 unnumbered sites (max 2 people per site, one night per camp); e-permit camping, booked and paid in advance.",
+   "pin": "kept placement point (OSM trail midpoint of a 1.2 km segment, MEDIUM): only a short segment matched, so it may not be the midpoint of the 102 km route; flag. Check against the QPWS route map."
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/wiki/Cooloola_Great_Walk",
+    "https://parks.desi.qld.gov.au/parks/great-walks-cooloola/camping (search result, BLOCKED)",
+    "https://book.parks.qld.gov.au/cooloola-great-walk (search result)"
+   ],
+   "cost": [
+    "QPWS camping fee $7.75 per person per night (https://parks.qld.gov.au/experiences/camping/camping_fees, search-result text, BLOCKED to scripts)",
+    "older Cooloola figures $6.75-$7 are stale"
+   ]
+  },
+  "ticketUrl": "BLOCKED",
+  "ticketUrl_candidate": "https://parks.qld.gov.au/parks/great-walks-cooloola",
+  "ticketUrl_note": "Managing agency; camping subpage URL seen in search results; BLOCKED to scripts. Confirm in a browser.",
+  "unverified": [
+   "whether Cooloola Great Walk fee equals the general rate; whole-route midpoint pin"
+  ],
+  "costMin": 7.75,
+  "costMax": 7.75,
+  "currency": "AUD",
+  "costBasis": "ticket",
+  "costPer": "Per Night",
+  "needs": "permit",
+  "confidence": "low",
+  "ticket_note": "Managing agency; camping subpage URL seen in search results; BLOCKED to scripts. Confirm in a browser."
+ },
+ "laidley-pioneer-village-and-museum": {
+  "facts": {
+   "what": "Volunteer-run open-air museum in Laidley (corner of Drayton and Pioneer Streets, Lockyer Valley) with historic buildings (chapel, school house, jail, post office, tractor museum, blacksmith shop) and machinery showing rural Queensland life.",
+   "pin": "kept placement point, HIGH, moved 0 m"
+  },
+  "sources": {
+   "what": [
+    "https://www.laidleypioneervillage.org.au/",
+    "https://en.wikipedia.org/wiki/Laidley_Pioneer_Village_and_Museum"
+   ],
+   "cost": [
+    "https://www.laidleypioneervillage.org.au/visit-us (Adults $10, Concession $8, children 6-13 $2.50, 0-5 free)"
+   ]
+  },
+  "ticketUrl": "https://www.laidleypioneervillage.org.au/",
+  "ticketUrl_note": "Loaded 200, title 'Laidley Pioneer Village & Museum | Step Back in Time'.",
+  "unverified": [
+   "National Trust listings say gold-coin donation (older); official site used"
+  ],
+  "costMin": 10,
+  "costMax": 10,
+  "currency": "AUD",
+  "costBasis": "entry",
+  "needs": null,
+  "ticket_note": "Loaded 200, title 'Laidley Pioneer Village & Museum | Step Back in Time'."
+ }
+}

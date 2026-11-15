@@ -1,0 +1,94 @@
+{
+ "_note": "Spot bios only. Variants hand-counted at <=105 characters; bio-fit.py NOT run (no shell in this run). visitHours marked estimate where not from a source.",
+ "gold-coast-29": {
+  "bio": [
+   "Tidal wetland of mangroves and marsh, with a Melaleuca boardwalk for spotting migratory birds and koalas.",
+   "A 1200 ha tidal lake and mangrove reserve near Southport, with a boardwalk for watching wildlife.",
+   "Mangroves and tidal marsh on Coombabah Creek, where a boardwalk leads to birds, koalas and flying foxes."
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "hours_basis": "estimate"
+ },
+ "gold-coast-hinterland-4": {
+  "bio": [
+   "A horsetail waterfall in Springbrook National Park, reached on the Purling Brook Falls circuit.",
+   "Purling Brook drops as a horsetail waterfall in Springbrook National Park's World Heritage rainforest."
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "hours_basis": "estimate"
+ },
+ "gold-coast-hinterland-5": {
+  "bio": [
+   "A 64 m segmented waterfall in Lamington National Park, reached on graded tracks from Binna Burra.",
+   "The upper Coomera River drops 64 m in segments into a gorge in Lamington National Park."
+  ],
+  "visitHoursMin": 2,
+  "visitHoursMax": 4,
+  "hours_basis": "estimate"
+ },
+ "gold-coast-hinterland-6": {
+  "bio": [
+   "A plunge waterfall in Lamington National Park, reached by a 4.4 km return track from Green Mountains.",
+   "A 4.4 km return walk in Lamington National Park's Green Mountains section to a plunge waterfall."
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "hours_basis": "estimate (track length from research)"
+ },
+ "gold-coast-hinterland-7": {
+  "bio": [
+   "A 54 km, three-day walk linking Lamington and Springbrook National Parks through subtropical rainforest.",
+   "A 54 km rainforest track from Lamington to Springbrook, usually walked over three days."
+  ],
+  "visitHoursMin": 24,
+  "visitHoursMax": 30,
+  "hours_basis": "estimate (three days per research)"
+ },
+ "tamborine-mountain-1": {
+  "bio": [
+   "A 1.5 km rainforest walk with 300 m of canopy bridges and a 40 m cantilever bridge over Cedar Creek.",
+   "Steel bridges carry walkers through the rainforest canopy, with a cantilever 30 m above Cedar Creek."
+  ],
+  "visitHoursMin": 1,
+  "visitHoursMax": 2,
+  "hours_basis": "estimate"
+ },
+ "tamborine-mountain-2": {
+  "bio": [
+   "A purpose-built cave at Cedar Creek Estate, where 30-minute guided daytime tours show native glow worms.",
+   "Biologist-led daytime tours walk a rainforest boardwalk into a glow worm cave at a Tamborine winery."
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "hours_basis": "tour length 30 min from operator; range estimate"
+ },
+ "tamborine-mountain-3": {
+  "bio": [
+   "A short Grade 3 rainforest walk in Tamborine National Park to a waterfall over basalt columns.",
+   "A 1 km track in Tamborine National Park's Joalah section ends at a pool beneath basalt-column falls."
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1,
+  "hours_basis": "estimate (track about 1 km)"
+ },
+ "scenic-rim-1": {
+  "bio": [
+   "Rugged peaks on the NSW border, with Mount Barney the second-highest in south-east Queensland.",
+   "A 17,660 ha World Heritage park of remote bushwalking, led by 1359 m Mount Barney."
+  ],
+  "visitHoursMin": 4,
+  "visitHoursMax": 8,
+  "hours_basis": "estimate (only three short day-use tracks per research; summit routes are remote-area)"
+ },
+ "scenic-rim-6": {
+  "bio": [
+   "A 40 m plunge waterfall in Main Range National Park, with a 2 km circuit and picnic area.",
+   "A roughly 40-minute circuit leads to a 40 m plunge waterfall east of Killarney."
+  ],
+  "visitHoursMin": 0.5,
+  "visitHoursMax": 1.5,
+  "hours_basis": "circuit about 40 min per research"
+ }
+}

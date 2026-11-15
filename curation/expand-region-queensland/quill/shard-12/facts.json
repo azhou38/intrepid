@@ -1,0 +1,333 @@
+{
+ "cairns-8": {
+  "claims": [
+   {
+    "text": "Free entry",
+    "source": "https://www.cairnsartgallery.com.au/ (reloaded: Free Entry Public Curators, Mulgrave & Court House)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Heritage Public Curators and Court House buildings; changing exhibitions",
+    "source": "https://www.cairnsartgallery.com.au/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.cairnsartgallery.com.au/",
+    "source": "reloaded, title 'Cairns Art Gallery'",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "costBasis entry, free:true (label 'No Entry Fee')",
+    "source": "gallery page",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "bioFit": {
+   "0": "fits (2 lines)",
+   "1": "fits (3 lines)"
+  },
+  "note": "Venue trades as Cairns Art Gallery; name 'Cairns Regional Gallery' is the old name (owner call on rename)."
+ },
+ "kuranda-1": {
+  "claims": [
+   {
+    "text": "Steep tiered cascade; Barron River; best after wet-season rain",
+    "source": "https://en.wikipedia.org/wiki/Barron_Falls",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Drops off the Atherton Tableland / in Barron Gorge National Park",
+    "source": "https://en.wikipedia.org/wiki/Barron_Falls",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, open, no fee",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Keep free/open pending in-app browser check of QPWS Barron Gorge page"
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/barron-gorge",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Candidate only; slug not loaded. Verify in browser or omit"
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits"
+  }
+ },
+ "kuranda-3": {
+  "claims": [
+   {
+    "text": "Opened 1976",
+    "source": "https://www.rainforest.com.au/ (since 1976)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Koala & Wildlife Park, Pamagirri Aboriginal Experience, Army Duck tour",
+    "source": "https://www.rainforest.com.au/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Prices: Koala & Wildlife Park adult $23; Pamagirri/Army Duck $34; Big Nature Package adult $71",
+    "source": "https://www.rainforest.com.au/book-now/ (reloaded)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "costMin 23 / costMax 71 as 'entry' (Adult)",
+    "source": "book-now page",
+    "status": "supported",
+    "fix": "Acceptable but 71 is a three-attraction package; owner may prefer 23-34 for single entries"
+   },
+   {
+    "text": "ticketUrl https://www.rainforest.com.au/",
+    "source": "reloaded, title 'Rainforestation Nature Park Kuranda'",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits"
+  },
+  "note": "Variant 0 'Aboriginal experience' is fine; 'koala park' vs site name 'Koala & Wildlife Park' is slightly loose, prefer variant 1."
+ },
+ "kuranda-4": {
+  "claims": [
+   {
+    "text": "Over 1,200 butterflies; breeding laboratory tour",
+    "source": "https://australianbutterflies.com/ (reloaded)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Largest butterfly flight aviary in Australia",
+    "source": "https://australianbutterflies.com/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Adult $25",
+    "source": "https://www.kuranda.org/listing/australian-butterfly-sanctuary (reloaded; third-party listing, Adult $25)",
+    "status": "unverifiable",
+    "fix": "Operator's own price not text-readable; keep $25 flagged approximate"
+   },
+   {
+    "text": "ticketUrl https://australianbutterflies.com/",
+    "source": "reloaded, title 'Visit the Iconic Australian Butterfly Sanctuary'",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits (2 lines)"
+  },
+  "note": "Variant 1 states a superlative; it is on the operator's own page, so sourced."
+ },
+ "kuranda-5": {
+  "claims": [
+   {
+    "text": "Over 350 birds incl. cassowary; free-flying; Kuranda Heritage Markets",
+    "source": "https://www.birdworldkuranda.com/",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Adult $24",
+    "source": "https://www.birdworldkuranda.com/ (reloaded)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.birdworldkuranda.com/",
+    "source": "reloaded, title 'Birdworld Kuranda'",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits"
+  },
+  "note": "Page says 'one of Australia's largest collections of free-flying birds'; fine. Leave wiki empty (Birdworld article is UK park)."
+ },
+ "kuranda-6": {
+  "claims": [
+   {
+    "text": "Koalas, wombats, quokkas, crocodiles, nocturnal exhibit",
+    "source": "https://www.koalagardens.com/ (reloaded; nocturnal mentioned)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Adult $24",
+    "source": "https://www.koalagardens.com/ (reloaded)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "ticketUrl https://www.koalagardens.com/",
+    "source": "reloaded, title 'Kuranda Koala Gardens'",
+    "status": "supported",
+    "fix": ""
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits"
+  }
+ },
+ "atherton-tablelands-1": {
+  "claims": [
+   {
+    "text": "About 18 metres high plunge waterfall",
+    "source": "https://en.wikipedia.org/wiki/Millaa_Millaa_Falls (18.3 m)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Swimming at base; heritage-listed",
+    "source": "https://en.wikipedia.org/wiki/Millaa_Millaa_Falls",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Theresa Creek Road",
+    "source": "https://en.wikipedia.org/wiki/Millaa_Millaa_Falls",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, open",
+    "source": "no fee statement found on council page",
+    "status": "unverifiable",
+    "fix": "Council land, no fee known; keep free"
+   },
+   {
+    "text": "ticketUrl none",
+    "source": "TRC project page is a works notice, not visitor page",
+    "status": "supported",
+    "fix": "Omit ticketUrl"
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits (2 lines)"
+  }
+ },
+ "atherton-tablelands-2": {
+  "claims": [
+   {
+    "text": "Volcanic crater lake, 65 m deep (65.5 m)",
+    "source": "https://en.wikipedia.org/wiki/Lake_Eacham_(Queensland)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Swimming and canoeing; in Crater Lakes National Park",
+    "source": "https://en.wikipedia.org/wiki/Lake_Eacham_(Queensland)",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, open",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Keep free pending browser check"
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/crater-lakes",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Candidate; verify title in browser or omit"
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits"
+  }
+ },
+ "atherton-tablelands-3": {
+  "claims": [
+   {
+    "text": "Largest crater lake, 4.5 km shoreline",
+    "source": "https://en.wikipedia.org/wiki/Lake_Barrine",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Walking tracks and operator cruises",
+    "source": "https://en.wikipedia.org/wiki/Lake_Barrine",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "1926 tea house",
+    "source": "per researcher from Wikipedia; not re-confirmed in excerpt",
+    "status": "unverifiable",
+    "fix": "Confirm on Wikipedia/operator page before shipping or drop the clause"
+   },
+   {
+    "text": "free:true, open",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Keep free pending browser check"
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/crater-lakes",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Candidate; verify in browser or omit"
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits"
+  }
+ },
+ "atherton-tablelands-6": {
+  "claims": [
+   {
+    "text": "About 50 m high, 39 m trunk circumference, 500+ years",
+    "source": "https://en.wikipedia.org/wiki/Curtain_Fig_Tree",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "Boardwalk about 50 m from road/car park",
+    "source": "https://en.wikipedia.org/wiki/Curtain_Fig_Tree",
+    "status": "supported",
+    "fix": ""
+   },
+   {
+    "text": "free:true, open",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Keep free pending browser check"
+   },
+   {
+    "text": "ticketUrl https://parks.qld.gov.au/parks/curtain-fig (guessed slug)",
+    "source": "parks.qld.gov.au (403 bot wall, BLOCKED for the in-app browser)",
+    "status": "unverifiable",
+    "fix": "Unverified guess; omit unless confirmed in browser"
+   }
+  ],
+  "bioFit": {
+   "0": "fits",
+   "1": "fits"
+  },
+  "note": "Variant 0 'hanging aerial roots' not in drafts; fine."
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "sunshine-coast-10": {
+  "bio": "Pair of lighthouses beside Kings Beach, built in 1896 and 1968, marking the entrance to Moreton Bay.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1,
+  "cost": { "costBasis": "entry", "price": null, "status": "unverified", "note": "Council says adult entry fees apply, children free; no amount found" },
+  "ticketUrl": "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+  "unverified": ["adult entry price amount", "'heritage-listed' not on the council page (left out)", "tours run only some Saturdays: put in a tip, not the bio"]
+ },
+ "sunshine-coast-11": {
+  "bio": "Volunteer-run museum beside Caloundra Airport with over 80 historic military and civilian aircraft.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": { "costMin": 25, "costMax": 25, "currency": "AUD", "costBasis": "entry" },
+  "ticketUrl": "https://www.qldair.museum/",
+  "unverified": []
+ },
+ "sunshine-coast-18": {
+  "bio": "900 m boardwalk at Bli Bli through eucalypt, melaleuca and rainforest to Maroochy River mangroves.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl": "https://www.sunshinecoast.qld.gov.au/environment/get-involved-in-conservation/environmental-education-centres/maroochy-wetlands-sanctuary",
+  "unverified": ["free entry (no council statement; third-party listing)", "pin is a river-end pontoon (MEDIUM), not the boardwalk midpoint: re-pin about 450 m inland"]
+ },
+ "sunshine-coast-20": {
+  "bio": "Waterfall in Buderim Forest Park, reached by a walkway from Lindsay Rd and best after rain.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_omitted": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/buderim-forest-park (loads and names the park, but is a directory page, not the falls' steward)",
+  "unverified": ["no explicit free statement on a council page"]
+ },
+ "noosa-1": {
+  "bio": "Headland national park with coastal walks, eucalypt forest and wallum heath, and koalas often seen.",
+  "visitHoursMin": 2, "visitHoursMax": 4,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl": "https://parks.qld.gov.au/parks/noosa",
+  "unverified": []
+ },
+ "noosa-6": {
+  "bio": "Lake about 4 km north-east of Cooroy with a park, on-water recreation and the Noosa Botanic Gardens.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "wiki": "Six Mile Creek Dam",
+  "wiki_note": "Suggestion: 'Lake MacDonald' is a disambiguation page; 'Lake Macdonald, Queensland' is the alternative",
+  "name_fix": "Lake Macdonald (suggestion only)",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl": "https://www.seqwater.com.au/dams/lake-macdonald-six-mile-creek",
+  "unverified": ["explicit free statement", "lake level reduced and temporary closures during dam works: tip, not bio"]
+ },
+ "sunshine-coast-hinterland-1": {
+  "bio": null,
+  "held": "Maleny: no visitor-source facts on what to see or do; needs a visitor source before a bio can say why to stop",
+  "visitHoursMin": null, "visitHoursMax": null,
+  "cost": { "free": true, "costBasis": "open" },
+  "unverified": ["what visitors do in Maleny", "category 'nature' looks wrong for a town"]
+ },
+ "sunshine-coast-hinterland-4": {
+  "bio": "Blackall Range national park near Montville where a 90 m waterfall drops into rainforest.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kondalilla",
+  "unverified": ["QPWS fee line (blocked)", "pin shared with sunshine-coast-hinterland-5: re-pin one"]
+ },
+ "sunshine-coast-hinterland-5": {
+  "bio": "4.7 km Grade 3 circuit of over 300 stairs past rock pools to the base of the falls and back up the ridge.",
+  "visitHoursMin": 2, "visitHoursMax": 3,
+  "category": "hike",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/kondalilla",
+  "unverified": ["pin is the park's Falls Lookout point: move to the route midpoint"]
+ },
+ "sunshine-coast-hinterland-8": {
+  "bio": "Dam forming Lake Baroon north of Maleny, with picnic areas, kayaking, fishing and a swimming area.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "category": "nature",
+  "cost": { "free": true, "costBasis": "open" },
+  "ticketUrl": "https://www.seqwater.com.au/dams/baroon-pocket",
+  "unverified": ["free entry not stated on the page (fishing needs a permit, an extra)", "lookout walk left out (not read on an official page)"]
+ }
+}

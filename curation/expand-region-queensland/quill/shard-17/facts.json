@@ -1,0 +1,42 @@
+{
+ "cactoblastis-memorial-hall": {"claims":[
+  {"text":"Hall built 1936 at Boonarga to honour the cactoblastis moth (bio variants 1-3)","source":"wikipedia Cactoblastis_Memorial_Hall; chinchillamuseum.com.au","status":"supported","fix":"Variant 3 'east of Chinchilla' fine; variant 2 'Heritage-listed' supported (QHR 1993)."},
+  {"text":"free: true, costBasis open","source":"no entry source; council hire page","status":"unverifiable","fix":"Keep free/open only if the spot is kept; it is a committee-run hall, interior access unverified. Marginal on COVERAGE test 2 (review candidate). Visit hours 0-0.25 estimate OK."},
+  {"text":"ticketUrl none","source":"council hire page only","status":"supported","fix":"Leave out."}]},
+ "darling-downs-zoo": {"claims":[
+  {"text":"Four regions, lions, cheetahs, giraffe, pygmy hippo, keeper talks, Pilton/Clifton","source":"darlingdownszoo.com.au; wikipedia","status":"supported","fix":"Variant 3 lists continents; fine."},
+  {"text":"Adult entry AUD 38","source":"familiesmagazine (third-party, undated)","status":"unsupported","fix":"Official site re-read: tickets are on a JS Roller widget (ecom.roller.app, returns only 'Checkout'); no price readable. Do not ship 38: mark price unverified/BROWSER CHECK at https://darlingdownszoo.com.au/ -> Tickets."},
+  {"text":"ticketUrl https://darlingdownszoo.com.au/","source":"fresh fetch 200, title 'Darling Downs Zoo - Queensland'","status":"supported","fix":"none"}]},
+ "jondaryan-woolshed": {"claims":[
+  {"text":"1859-60 shed, recreated village, museum, 30 min west of Toowoomba, 1891 strike","source":"wikipedia; jondaryanwoolshed.com.au/about","status":"supported","fix":"none"},
+  {"text":"Adult entry AUD 12, costBasis entry","source":"/about re-read fresh: Adults $12","status":"supported","fix":"none"},
+  {"text":"ticketUrl https://www.jondaryanwoolshed.com.au/","source":"fresh fetch 200, title 'The Woolshed at Jondaryan'","status":"supported","fix":"none"}]},
+ "leslie-dam": {"claims":[
+  {"text":"13 km west of Warwick, Sandy Creek, Lake Leslie, boat ramp, picnic, 1965; boat hire, camping nearby","source":"wikipedia; southerndownsandgranitebelt; sdrc","status":"supported","fix":"Variant 3 'Reservoir' ok; 'stocked impoundment' variant 2 ok."},
+  {"text":"free: true, open","source":"no charge found, no explicit statement","status":"unverifiable","fix":"Acceptable (dam shore, no gate; fishing permit and camping are extras) but not explicitly sourced."},
+  {"text":"ticketUrl none","source":"-","status":"supported","fix":"Leave out."}]},
+ "museum-of-australian-army-flying": {"claims":[
+  {"text":"Oakey, beside Army Aviation Centre; Sioux, Iroquois, Black Hawk, Chinook, Sopwith Camel replicas","source":"armyflyingmuseum.com.au; army.gov.au","status":"supported","fix":"none"},
+  {"text":"free, costBasis donation","source":"fresh fetch: 'All activities, tours and displays are FREE!' donations welcome","status":"supported","fix":"none. Army page says booking ahead needed: consider a tip, not in bio."},
+  {"text":"ticketUrl https://www.armyflyingmuseum.com.au/","source":"fresh fetch 200, title 'Australian Army Flying Museum'","status":"supported","fix":"none"}]},
+ "maryborough-military-and-colonial-museum": {"claims":[
+  {"text":"Wharf Street, non-profit, military and colonial displays, founded by John and Else Meyers, Portside Pass","source":"wikipedia; maryboroughmuseum.org","status":"supported","fix":"none"},
+  {"text":"Adult entry AUD 15","source":"visitors.html re-read fresh: Adults $15.00 (Portside Pass $25)","status":"supported","fix":"none"},
+  {"text":"ticketUrl https://www.maryboroughmuseum.org/","source":"fresh fetch 200, title 'Maryborough Military & Colonial Museum, Queensland'","status":"supported","fix":"none"}]},
+ "urangan-pier": {"claims":[
+  {"text":"868 m, built 1913-17, sugar/timber/coal, fishing, walking, whiting","source":"wikipedia; Fraser Coast council","status":"supported","fix":"none"},
+  {"text":"free: true, open","source":"open public pier","status":"supported","fix":"none"},
+  {"text":"ticketUrl none","source":"-","status":"supported","fix":"Leave out."}]},
+ "mackay-regional-botanic-gardens": {"claims":[
+  {"text":"Lagoon Street gardens, Central Queensland coast flora, Tropical Shade Garden, boardwalk, gallery, cafe","source":"mackay.qld.gov.au; ourmackay.com.au","status":"supported","fix":"none"},
+  {"text":"free: true, open","source":"council page lists no fee; secondary listings say free","status":"supported","fix":"none (no explicit council statement, low risk)"},
+  {"text":"ticketUrl council page","source":"fresh fetch 200, title 'Mackay Regional Botanic Gardens | Mackay Regional Council'","status":"supported","fix":"none"}]},
+ "john-flynn-place-museum": {"claims":[
+  {"text":"Four levels, RFDS born Cloncurry 1928, Traeger pedal radio, art gallery","source":"rezdy page; outbackqueensland","status":"supported","fix":"none"},
+  {"text":"Adult entry AUD 13.50","source":"rezdy page re-read fresh: Adult From $13.50","status":"supported","fix":"'From' price; fine."},
+  {"text":"ticketUrl rezdy booking page","source":"fresh fetch 200, title 'John Flynn Place Museum Entry Booking'","status":"supported","fix":"Official council booking account; acceptable, council page would be preferable if found."}]},
+ "lark-quarry-dinosaur-trackways": {"claims":[
+  {"text":"3,300+ footprints, ~95 million years, shelter; 110 km SW of Winton, partly unsealed; guided tours","source":"wikipedia; Lonely Planet","status":"supported","fix":"Variant 3 'only known stampede' is hedged ('once read as') appropriately. Dinosaur Stampede also called 'National Monument'."},
+  {"text":"Tour price (none stated in draft)","source":"dinosaurtrackways.com.au fetch failed (status 0)","status":"unverifiable","fix":"UNRESOLVED: price and tour times need in-app browser. Red Dirt Tours $90 is an operator tour, not the site fee; do not use. Do not ship a price."},
+  {"text":"ticketUrl https://dinosaurtrackways.com.au/","source":"unreachable to scripts; title unchecked","status":"unverifiable","fix":"UNRESOLVED: verify in browser. dinosaurstampede.com.au is parked: never use."}]}
+}

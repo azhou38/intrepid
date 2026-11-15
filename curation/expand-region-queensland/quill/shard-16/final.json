@@ -1,0 +1,76 @@
+{
+ "_note": "bio-fit.py not run (no shell); all bios hand-counted at 110 characters or fewer. visitHours are estimates.",
+ "josephine-falls": {
+  "bio": "Tiered cascade on Josephine Creek in Wooroonooran National Park, a short walk from a day-use car park.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": null,
+  "ticketUrl_blocked": "https://parks.qld.gov.au/parks/wooroonooran-josephine-falls (403 captcha; check title in browser)",
+  "unverified": ["no day-use fee (QPWS blocked)", "walk length (1.2 to 1.6 km return)", "viewing platforms and swimming area closure 2 Nov 2026 to 28 Feb 2027 (search snippet only); flash-flood claim left out"]
+ },
+ "number-7-dam": {
+  "bio": "Dee River dam near Mount Morgan with picnic areas, barbecues and fishing for yellowbelly and saratoga.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": "https://www.rockhamptonregion.qld.gov.au/FacilitiesRecreation/Parks-Open-Spaces/Parks-Playground-Finder/No.-7-Dam",
+  "unverified": ["no explicit 'free' statement on the council page"]
+ },
+ "the-big-rig": {
+  "bio": "Roma's oil and gas heritage site, with an Oil Patch Museum and a tower and tree walk over the town.",
+  "visitHoursMin": 1, "visitHoursMax": 2,
+  "cost": {"free": false, "costMin": 20, "costMax": 20, "currency": "AUD", "costBasis": "entry", "needs": null, "note": "approximate: self-guided tour 'from' price, not labelled adult"},
+  "ticketUrl": "https://www.bigrigroma.com.au/",
+  "unverified": ["whether 20 is adult-only and current"]
+ },
+ "boondooma-dam": {
+  "bio": "Rock-filled dam on the Boyne River forming Lake Boondooma, with a lookout, picnic areas and boat ramp.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": "https://www.sunwater.com.au/dams/boondooma-dam/",
+  "unverified": ["no explicit statement that day use is free"]
+ },
+ "brisbane-valley-rail-trail": {
+  "bio": "Queensland's longest rail trail: 161 km of gravel path for walkers, cyclists and riders on a former line.",
+  "visitHoursMin": 2, "visitHoursMax": 6,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": "https://www.brisbanevalleyrailtrail.com.au/",
+  "unverified": ["site is the users' association, not a managing agency", "no agency fee statement"]
+ },
+ "miles-historical-village": {
+  "bio": "Open-air museum in Miles with about 30 buildings in a 1920s-style streetscape and a steam train.",
+  "visitHoursMin": 1.5, "visitHoursMax": 3,
+  "cost": {"free": false, "costMin": 24, "costMax": 24, "currency": "AUD", "costBasis": "entry", "needs": null},
+  "ticketUrl": "https://www.mhv.org.au/",
+  "unverified": []
+ },
+ "queensland-transport-museum": {
+  "bio": "Gatton museum of original military vehicles dating back to World War 1, with a kids' activity corner.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "wiki": null,
+  "cost": {"free": false, "costMin": 10, "costMax": 10, "currency": "AUD", "costBasis": "entry", "needs": null, "note": "approximate: from regional tourism listing, not the museum"},
+  "ticketUrl": null,
+  "unverified": ["no operator website found", "no own Wikipedia article: wiki field resolves to Gatton, drop it", "closure note on listing"]
+ },
+ "bjelke-petersen-dam": {
+  "bio": "Lake Barambah near Wondai, with a lookout, picnic areas, swimming and kayaking beside the dam.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null},
+  "ticketUrl": "https://www.sunwater.com.au/dams/bjelke-petersen-dam/",
+  "unverified": ["no explicit statement that day use is free", "swimming and kayaking from Wikipedia, not the Sunwater page"]
+ },
+ "green-hill-fort": {
+  "bio": "Thursday Island fort built 1891 to 1893 against a feared Russian threat, with three guns still in place.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "cost": {"free": true, "currency": "AUD", "costBasis": "open", "needs": null, "note": "approximate: fort free per Wikivoyage only; bunker about 4 is an extra"},
+  "ticketUrl": null,
+  "unverified": ["free access from an official source", "bunker price and opening arrangements", "current operator"]
+ },
+ "split-rock": {
+  "bio": "Quinkan paintings, engravings and stencils thought to be up to 14,000 years old, on a walk near Laura.",
+  "visitHoursMin": 0.5, "visitHoursMax": 1.5,
+  "category": "historic",
+  "cost": {"free": false, "costMin": 40, "costMax": 40, "currency": "AUD", "costBasis": "entry", "needs": null, "note": "UNVERIFIED: third-party figure, operator page shows no price; other listings 30 to 33"},
+  "ticketUrl": "https://www.anggnarra.org.au/copy-of-rock-art-tours-tickets",
+  "unverified": ["self-guided fee (30 to 40, sources conflict)", "distance from Laura (12 to 15 km)", "deep link slug has 'copy-of': homepage https://www.anggnarra.org.au/ is an alternative"]
+ }
+}

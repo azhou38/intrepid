@@ -1,0 +1,297 @@
+[
+ {
+  "id": "sunshine-coast-10",
+  "name": "Caloundra Lighthouses",
+  "coordinates": {
+   "latitude": -26.801651,
+   "longitude": 153.137449
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm man_made=lighthouse (nominatim) Old Caloundra Light (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Heritage-listed pair of lighthouses at 3 Canberra Terrace, Kings Beach, Caloundra: Old Caloundra Light (1896, oldest surviving building in Caloundra) and New Caloundra Light (1968); mark the entry to Moreton Bay and the North West Channel.",
+   "tours": "Friends of Caloundra Lighthouses run guided tours of the buildings; council lists 2nd and 4th Saturday of the month 9am-3pm or by appointment (not to be stored as hours)."
+  },
+  "sources": {
+   "what": [
+    "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Caloundra_Lighthouses"
+   ],
+   "tours": [
+    "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses"
+   ]
+  },
+  "cost": null,
+  "costBasis": "tour",
+  "costNote": "Council page says 'Adult entry fees apply. Children free.' with no amount; one third-party listing says about $5 (not official, not used). Amount unverified.",
+  "ticketUrl": "https://heritage.sunshinecoast.qld.gov.au/museums-and-places/museums/caloundra-lighthouses",
+  "ticketUrlCheck": "Loaded 200, title 'Caloundra Lighthouses' (Sunshine Coast Council heritage site; council owns the precinct). Friends' own site unreachable (caloundralighthouses.org.au, friendsofcaloundralighthouses.org.au fetch failed: guessed domains, not used).",
+  "suggested_bio_note": "Tours run only some Saturdays: put that in the bio or tips, not hours.",
+  "unverified": [
+   "adult tour/entry price amount",
+   "Friends of Caloundra Lighthouses own website"
+  ]
+ },
+ {
+  "id": "sunshine-coast-11",
+  "name": "Queensland Air Museum",
+  "coordinates": {
+   "latitude": -26.79813,
+   "longitude": 153.108486
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm tourism=museum (nominatim) Queensland Air Museum (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Not-for-profit, all-volunteer aviation museum at Caloundra Airport with over 80 historic military and civilian aircraft on two hectares, plus aero-engines and artefacts; free volunteer guides most days; many exhibits undercover.",
+   "price": "Adult $25, concession $18, child $12.50, family $60 (2 adults + 3 children under 15)."
+  },
+  "sources": {
+   "what": [
+    "https://www.qldair.museum/",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Queensland_Air_Museum"
+   ],
+   "price": [
+    "https://www.qldair.museum/"
+   ]
+  },
+  "cost": {
+   "costMin": 25,
+   "costMax": 25,
+   "currency": "AUD"
+  },
+  "costBasis": "entry",
+  "ticketUrl": "https://www.qldair.museum/",
+  "ticketUrlCheck": "Loaded 200, title 'Queensland Air Museum'. qam.com.au is NOT the museum (redirects to an unrelated site); qam.org.au is Queensland Agricultural Merchants.",
+  "unverified": []
+ },
+ {
+  "id": "sunshine-coast-18",
+  "name": "Maroochy Wetlands Sanctuary",
+  "coordinates": {
+   "latitude": -26.609783,
+   "longitude": 153.056412
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm man_made=pier (nominatim) Maroochy Wetlands Sanctuary Private Pontoon (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Council-run wetland sanctuary at the end of Sports Rd, Bli Bli, on the Maroochy River: 900 m (one way) elevated boardwalk through eucalypt, melaleuca and rainforest to mangroves and the river; birds, crabs (fiddler, sentinel), water mouse habitat; audio trail; visitor centre; best in daylight, cooler months (fewer mosquitoes).",
+   "cost": "Boardwalk is free; council page lists no entry fee (council page says nothing on fees; third-party listings say free)."
+  },
+  "sources": {
+   "what": [
+    "https://www.sunshinecoast.qld.gov.au/environment/get-involved-in-conservation/environmental-education-centres/maroochy-wetlands-sanctuary",
+    "https://brisbanekids.com.au/maroochy-wetlands-sanctuary-in-bli-bli/"
+   ],
+   "cost": [
+    "https://www.sunshinecoast.qld.gov.au/environment/get-involved-in-conservation/environmental-education-centres/maroochy-wetlands-sanctuary",
+    "https://brisbanekids.com.au/maroochy-wetlands-sanctuary-in-bli-bli/"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": "https://www.sunshinecoast.qld.gov.au/environment/get-involved-in-conservation/environmental-education-centres/maroochy-wetlands-sanctuary",
+  "ticketUrlCheck": "Loaded 200, council page headed 'Maroochy wetlands sanctuary' (title says Volunteering).",
+  "suggested_category": "nature (placement has entertainment)",
+  "pin_flag": "Pin is OSM man_made=pier 'Maroochy Wetlands Sanctuary Private Pontoon' (MEDIUM): that is the river end of the boardwalk, not the Sports Rd entrance. Boardwalk midpoint would be roughly 450 m inland; orchestrator to decide, I did not move it.",
+  "note": "Cruise Maroochy eco cruise includes an hour at the sanctuary (last Friday of month, not Dec); cruise is not the spot.",
+  "unverified": [
+   "no official fee statement; free taken from third-party listings and absence on council page"
+  ]
+ },
+ {
+  "id": "sunshine-coast-20",
+  "name": "Serenity Falls",
+  "coordinates": {
+   "latitude": -26.677945,
+   "longitude": 153.047459
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm waterway=waterfall (nominatim) Serenity Falls (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Waterfall (also called Buderim Falls) in the 45 ha Buderim Forest Park: 600 m walkway from Lindsay Rd (wheelchair-friendly) then rugged trail up, or direct access from Quorn Close via bush track (easy to moderate); high arch bridge over the creek and a waterhole; best after rain.",
+   "address": "11 Harrys Lane, Buderim."
+  },
+  "sources": {
+   "what": [
+    "https://www.visitsunshinecoast.com/attraction/57e1b260744d76636a0cfe91/buderim-falls"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": "https://www.sunshinecoast.qld.gov.au/experience-sunshine-coast/beaches-and-parks/beaches-and-parks-directory/buderim-forest-park",
+  "ticketUrlCheck": "Loaded 200, title 'Buderim Forest Park | Sunshine Coast Council' (council-managed park; page is a directory shell, details not extracted).",
+  "note": "Council park, no pass; no fee on tourism listing.",
+  "unverified": [
+   "no explicit 'free' statement found on a council page"
+  ]
+ },
+ {
+  "id": "noosa-1",
+  "name": "Noosa National Park",
+  "coordinates": {
+   "latitude": -26.384025,
+   "longitude": 153.105869
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm natural=peak (nominatim) Noosa Hill (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "National park on Noosa Headland with coastal scenery, eucalypt forest, wallum heath and pockets of rainforest; walks include Coastal Walk, Noosa Hill Walk, Alexandria Bay Walk, Emu Mountain Summit Walk; koalas often seen along the tracks. Camping not allowed (page lists 'No camping').",
+   "cost": "No day-use entry fee shown on the QPWS park page."
+  },
+  "sources": {
+   "what": [
+    "https://parks.qld.gov.au/parks/noosa",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Noosa_National_Park"
+   ],
+   "cost": [
+    "https://parks.qld.gov.au/parks/noosa"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": "https://parks.qld.gov.au/parks/noosa",
+  "ticketUrlCheck": "Loaded 200 from script, title 'Noosa National Park | Parks and forests'.",
+  "suggested_category": "nature (placement has entertainment)",
+  "note": "No Queensland park pass exists in parkPasses.ts for day entry; none needed. Parking at Noosa headland is a known trap (goodToKnow, not price).",
+  "unverified": [
+   "fee absence inferred from park page listing no day-use fee; page not fully read"
+  ]
+ },
+ {
+  "id": "noosa-6",
+  "name": "Lake MacDonald",
+  "coordinates": {
+   "latitude": -26.396517,
+   "longitude": 152.943954
+  },
+  "coordinates_source": "HIGH: two independent sources within 100 m (OSM + Wikipedia/Commons), from pins-merged; osm natural=water (nominatim) Lake Macdonald (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Lake Macdonald (officially Six Mile Creek Dam), a drinking-water dam about 4 km north-east of Cooroy, run by Seqwater; open for on-water recreation, Lake Macdonald Park (off Lake Macdonald Drive) and the Noosa Botanic Gardens; lake held at reduced level during dam improvement works (to 39.1% since July 2025) and temporary closures possible; no swimming or motorised boating/water skiing (per Seqwater recreation search result).",
+   "wiki": "Wikipedia 'Lake MacDonald' is a disambiguation: use 'Six Mile Creek Dam' or 'Lake Macdonald, Queensland' for wiki."
+  },
+  "sources": {
+   "what": [
+    "https://www.seqwater.com.au/dams/lake-macdonald-six-mile-creek",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Lake_MacDonald"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": "https://www.seqwater.com.au/dams/lake-macdonald-six-mile-creek",
+  "ticketUrlCheck": "Loaded 200, title 'Lake Macdonald (Six Mile Creek) | Seqwater'.",
+  "note": "Placement flagged for review: reduced water level and construction; whether it clears the visitor-draw bar is the orchestrator's call.",
+  "unverified": [
+   "no walking track length or swimming rule re-read on the Seqwater page itself (swimming ban from search result)",
+   "explicit 'free' not stated"
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-1",
+  "name": "Maleny",
+  "coordinates": {
+   "latitude": -26.758557,
+   "longitude": 152.849861
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm landuse=retail (nominatim) Maleny (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Rural town and locality in the Sunshine Coast hinterland, a former timber town then dairy and fruit centre; 2021 population 3,959."
+  },
+  "sources": {
+   "what": [
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Maleny%2C_Queensland"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": null,
+  "ticketUrlCheck": "None: a town with no single steward (council/tourism pages not used).",
+  "suggested_category": "town: placement 'nature' looks wrong",
+  "note": "Bio needs visitor-source facts (Wikivoyage/tourism) about what Maleny offers: not gathered; evidence bundle holds only Wikipedia's population line.",
+  "unverified": [
+   "what visitors do in Maleny (no visitor source read)"
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-4",
+  "name": "Kondalilla National Park",
+  "coordinates": {
+   "latitude": -26.671711,
+   "longitude": 152.8655
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm tourism=viewpoint (nominatim) Kondalilla Falls Lookout (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "National park on the Blackall Range, 91 km north of Brisbane, near Montville; main waterfall drops 90 m into rainforest; 100 m downhill walk from car park to a grassed picnic area with barbecues, tables, toilets; Picnic Creek circuit 1.7 km return; protected since 1906, national park since 1945; no vehicle camping (Flaxton walkers' camp only, on the Sunshine Coast Hinterland Great Walk).",
+   "cost": "Queensland Government park brochure lists no day-use fee; camping only at the Great Walk bush camp."
+  },
+  "sources": {
+   "what": [
+    "https://apps.des.qld.gov.au/park-brochures/sunshinecoast-hinterland-guide/21",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Kondalilla_National_Park"
+   ],
+   "cost": [
+    "https://apps.des.qld.gov.au/park-brochures/sunshinecoast-hinterland-guide/21"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": "BLOCKED",
+  "ticketUrlCandidate": "https://parks.qld.gov.au/parks/kondalilla",
+  "ticketUrlCheck": "403 Cloudflare 'Just a moment...' to script on the park page and /about: orchestrator to check in a real browser (and confirm there is no day fee).",
+  "suggested_category": "nature (placement has entertainment)",
+  "unverified": [
+   "QPWS park page fee line (blocked)"
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-5",
+  "name": "Kondalilla Falls Circuit",
+  "coordinates": {
+   "latitude": -26.671711,
+   "longitude": 152.8655
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm tourism=viewpoint (nominatim) Kondalilla Falls Lookout (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Kondalilla Falls circuit: 4.7 km return (2-3 hr), Grade 3 track, over 300 stairs, from the picnic area through rainforest and open forest to rock pools, down to the base of the 90 m falls, up the ridge past bunya pines and piccabeen palms.",
+   "trailhead": "Kondalilla Falls car park, Kondalilla Falls Rd (off Montville-Mapleton Rd)."
+  },
+  "sources": {
+   "what": [
+    "https://apps.des.qld.gov.au/park-brochures/sunshinecoast-hinterland-guide/21",
+    "https://www.visitsunshinecoast.com/journey/56b2624daeeeaaf773cf5a47/kondalilla-falls-circuit-kondalilla-national-park"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": "BLOCKED",
+  "ticketUrlCandidate": "https://parks.qld.gov.au/parks/kondalilla",
+  "ticketUrlCheck": "Same QPWS page as Kondalilla National Park (403 to script). Never give it the Kondalilla National Park's pin: route midpoint needed, placement pin is MEDIUM OSM.",
+  "pin_flag": "Confirm this pin is on the circuit, not at the picnic area / park pin (lint pin-shared may fire against sunshine-coast-hinterland-4); trail should be pinned at its midpoint.",
+  "unverified": [
+   "QPWS page (blocked)",
+   "pin vs route midpoint not re-checked (resolve-pin not rerun)"
+  ]
+ },
+ {
+  "id": "sunshine-coast-hinterland-8",
+  "name": "Baroon Pocket Dam",
+  "coordinates": {
+   "latitude": -26.699198,
+   "longitude": 152.865322
+  },
+  "coordinates_source": "MEDIUM: one precise OSM feature of the right type, from pins-merged; osm waterway=dam (nominatim) Baroon Pocket Dam (kept from placement.pinned.json; distance moved 0 m; not re-resolved by this step)",
+  "facts": {
+   "what": "Dam on Obi Obi Creek about 7 km north of Maleny, completed 1989, forming Lake Baroon (380 ha); Seqwater recreation areas (Northern, Southern, Spillway Lookout) with picnic, BBQ, kayaking, canoeing, sailing, rowing, electric boating, fishing (council permit) and designated swimming at the Southern area; bush walking trails; no water skiing or jet skis.",
+   "lookout": "A 2.2 km walk leads to Baroon lookout over Obi Obi Gorge (search summary, Wikipedia: not read on the Seqwater page)."
+  },
+  "sources": {
+   "what": [
+    "https://www.seqwater.com.au/dams/baroon-pocket",
+    "https://en.wikipedia.org/api/rest_v1/page/summary/Baroon_Pocket_Dam"
+   ]
+  },
+  "free": true,
+  "costBasis": "open",
+  "ticketUrl": "https://www.seqwater.com.au/dams/baroon-pocket",
+  "ticketUrlCheck": "Loaded 200, title 'Baroon Pocket | Seqwater'.",
+  "suggested_category": "placement has viewpoint; lake recreation areas fit nature",
+  "unverified": [
+   "free entry from a search summary only; Seqwater page does not state it",
+   "lookout walk detail not read on an official page"
+  ]
+ }
+]

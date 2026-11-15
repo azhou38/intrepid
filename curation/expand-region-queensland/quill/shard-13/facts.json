@@ -1,0 +1,250 @@
+{
+ "atherton-tablelands-7": [
+  {
+   "text": "HELD: no bio drafted (needs QPWS/Wikivoyage facts); visit hours null",
+   "source": "drafts.json",
+   "status": "unverifiable",
+   "fix": "Held deliberately; nothing to check. Free/open cost and Crater Lakes ticketUrl unverified (QPWS blocked). Do not apply until facts found."
+  }
+ ],
+ "atherton-tablelands-9": [
+  {
+   "text": "Tiered plunge waterfall near Ravenshoe, reputed widest single-drop fall in Australia (v1)",
+   "source": "https://en.wikipedia.org/wiki/Millstream_Falls",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Big and Little Millstream Falls 500 m apart in a national park SW of Ravenshoe (v2)",
+   "source": "https://en.wikipedia.org/wiki/Millstream_Falls",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "27 m tiered waterfall on The Millstream (v3)",
+   "source": "https://en.wikipedia.org/wiki/Millstream_Falls",
+   "status": "supported",
+   "fix": "Wikipedia gives 27.23 m for Big Millstream; 27 m ok."
+  },
+  {
+   "text": "Cost: free, open, no fee",
+   "source": "QPWS blocked; Queensland NP no day fee",
+   "status": "unverifiable",
+   "fix": "Keep free/open but unverified; confirm on QPWS in browser."
+  },
+  {
+   "text": "ticketUrl https://parks.qld.gov.au/parks/millstream-falls",
+   "source": "BLOCKED",
+   "status": "unverifiable",
+   "fix": "BLOCKED (QPWS 403): needs in-app browser"
+  }
+ ],
+ "atherton-tablelands-10": [
+  {
+   "text": "HELD: no bio drafted (needs QPWS facts)",
+   "source": "drafts.json",
+   "status": "unverifiable",
+   "fix": "Held deliberately. Cost free/open and ticketUrl unverified (QPWS blocked). Placement category viewpoint vs national park to resolve."
+  }
+ ],
+ "atherton-tablelands-12": [
+  {
+   "text": "Open-air museum, 50+ restored 1860s-style buildings like a tin-mining town, Herberton (v1)",
+   "source": "https://en.wikipedia.org/wiki/Historic_Village_Herberton",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Restored period buildings, tearooms, antique vehicles (v2)",
+   "source": "https://www.historicvillageherberton.com.au/",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Queensland's largest private collection of its type (v3)",
+   "source": "https://en.wikipedia.org/wiki/Historic_Village_Herberton",
+   "status": "supported",
+   "fix": "Wording ambiguous ('its type' undefined); prefer v1 or v2."
+  },
+  {
+   "text": "Adult entry AUD 46, costBasis entry",
+   "source": "https://www.historicvillageherberton.com.au/visit/plan-your-visit/opening-times-prices/",
+   "status": "supported",
+   "fix": "Re-read: Adults $46.00. Page states prices current to 15 Apr 2026, now past; price still shown, flag approximate."
+  },
+  {
+   "text": "ticketUrl https://www.historicvillageherberton.com.au/",
+   "source": "same site",
+   "status": "supported",
+   "fix": "Loads, title names Historic Village Herberton."
+  }
+ ],
+ "atherton-tablelands-14": [
+  {
+   "text": "Timber and tin temple museum from 1903, last remnant of Atherton's Chinatown (v1)",
+   "source": "https://www.lonelyplanet.com/points-of-interest/hou-wang-miau-temple/1158603",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "One of Australasia's oldest original Chinese temples, museum with guided tours (v2)",
+   "source": "https://en.wikipedia.org/wiki/Hou_Wang_Temple",
+   "status": "supported",
+   "fix": "Wikipedia excerpt read for 1903 only; 'oldest in Australasia' from research note, not re-seen; prefer v1 or v3."
+  },
+  {
+   "text": "Heritage-listed 1903 Chinese temple museum, guided tour (v3)",
+   "source": "Lonely Planet / Wikipedia",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Adult entry AUD 10",
+   "source": "https://www.atlasobscura.com/places/hou-wang-temple",
+   "status": "unverifiable",
+   "fix": "Atlas Obscura only ($10 adult); no operator page. Approximate; confirm with National Trust."
+  },
+  {
+   "text": "ticketUrl none",
+   "source": "research",
+   "status": "unverifiable",
+   "fix": "No official site verified; leave out and say so. Placement category 'nature' should be historic/religious."
+  }
+ ],
+ "mission-beach-1": [
+  {
+   "text": "Island 4 km off Mission Beach, mostly national park, water taxi, reefs (v1)",
+   "source": "https://en.wikipedia.org/wiki/Dunk_Island",
+   "status": "supported",
+   "fix": "Distance and national park share from Wikipedia per research; water taxi from tourism snippet only. 'Ringed by reefs' ok."
+  },
+  {
+   "text": "Family Islands island with reefs and birdlife (v2)",
+   "source": "https://en.wikipedia.org/wiki/Dunk_Island",
+   "status": "supported",
+   "fix": "Clumsy 'Family Islands island'."
+  },
+  {
+   "text": "Coonanglebah, Family Islands island 4 km off Mission Beach, water taxi (v3)",
+   "source": "https://en.wikipedia.org/wiki/Dunk_Island",
+   "status": "supported",
+   "fix": "Coonanglebah confirmed on Wikipedia."
+  },
+  {
+   "text": "Cost: free, open",
+   "source": "research",
+   "status": "unverifiable",
+   "fix": "Island is part private resort land; free/open unverified (QPWS page not matched). Water taxi is transport, not cost."
+  },
+  {
+   "text": "ticketUrl none",
+   "source": "research",
+   "status": "supported",
+   "fix": "Reasonable: several operators."
+  }
+ ],
+ "mission-beach-3": [
+  {
+   "text": "Spanish-style castle park built by Jose Paronella in 1935 beside Mena Creek Falls, now rainforest (v1)",
+   "source": "https://www.paronellapark.com.au/",
+   "status": "supported",
+   "fix": "He opened it in 1935 (building began earlier); 'built in 1935' is slightly loose, prefer 'opened in 1935'."
+  },
+  {
+   "text": "Heritage-listed castle park at Mena Creek, day and night tours (v2)",
+   "source": "https://www.paronellapark.com.au/",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "5 ha park of bridges, tunnel, tropical plants around 1935 castle (v3)",
+   "source": "https://www.paronellapark.com.au/",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Adult entry AUD 62",
+   "source": "https://www.paronellapark.com.au/visit/admission-prices",
+   "status": "supported",
+   "fix": "Re-read: Adults $62. Whether it includes the night tour is unstated."
+  },
+  {
+   "text": "ticketUrl https://www.paronellapark.com.au/",
+   "source": "same",
+   "status": "supported",
+   "fix": "Loads (200); title names Paronella Park."
+  }
+ ],
+ "mission-beach-4": [
+  {
+   "text": "7.9 m golden gumboot in Tully marking record 1950 rainfall (v1)",
+   "source": "https://en.wikipedia.org/wiki/Golden_Gumboot",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Opened 2003, height set by record 1950 rainfall (v2)",
+   "source": "https://en.wikipedia.org/wiki/Golden_Gumboot",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Stands for wettest-town rivalry with Innisfail and Babinda (v3)",
+   "source": "https://en.wikipedia.org/wiki/Golden_Gumboot",
+   "status": "unsupported",
+   "fix": "The boot's height represents the 1950 record; the rivalry is the competition it relates to, not what it stands for. Use v1 or v2."
+  },
+  {
+   "text": "Cost: free, open",
+   "source": "roadside monument",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "ticketUrl none",
+   "source": "research",
+   "status": "supported",
+   "fix": ""
+  }
+ ],
+ "mission-beach-6": [
+  {
+   "text": "HELD: no bio drafted (needs QPWS facts)",
+   "source": "drafts.json",
+   "status": "unverifiable",
+   "fix": "Held deliberately. Free/open and ticketUrl unverified (QPWS blocked). Category 'entertainment' should be nature; pin is 49.5 km from Mission Beach."
+  }
+ ],
+ "port-douglas-3": [
+  {
+   "text": "Wildlife sanctuary with five habitats, boardwalks, hand-feeding of wallabies (v1)",
+   "source": "https://www.wildlifehabitat.com.au/",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Wetlands, rainforest, savannah, croc feeding, koala photos (v2)",
+   "source": "https://www.wildlifehabitat.com.au/",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Five minutes from Port Douglas, kangaroo feeding and a cassowary (v3)",
+   "source": "https://www.wildlifehabitat.com.au/",
+   "status": "supported",
+   "fix": ""
+  },
+  {
+   "text": "Adult entry AUD 50",
+   "source": "https://www.wildlifehabitat.com.au/book-now/",
+   "status": "supported",
+   "fix": "Re-read: Adult $50 park admission."
+  },
+  {
+   "text": "ticketUrl https://www.wildlifehabitat.com.au/",
+   "source": "same",
+   "status": "supported",
+   "fix": "Loads, title names Wildlife Habitat Port Douglas."
+  }
+ ]
+}
