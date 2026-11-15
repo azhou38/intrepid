@@ -877,6 +877,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} brings mild days for exploring on foot. Summer can be hot and winters cool and damp.",
   },
   {
+    id: 'whitsundays', name: "Whitsundays", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 30,
+    continent: 'Oceania', coordinates: { latitude: -20.23788, longitude: 148.86722 },
+    category: 'island', icon: "⛵", rank: 1,
+    tagline: "Island national parks, white silica beaches and reef snorkelling off Airlie Beach",
+    description: "The Whitsundays are a group of 74 islands off Queensland's coast, forming part of the Great Barrier Reef, and most are national parks. Whitehaven Beach, fine white silica sand on Whitsunday Island, is the usual destination for day trips. Trips from Airlie Beach typically combine the beach, a snorkelling stop and lunch, while resorts on islands such as Hamilton, Daydream and South Molle offer places to stay. Many other islands have only campsites.",
+    whyVisit: ["Walk Whitehaven Beach's white silica sand", "Snorkel coral reefs and island bays", "Sail between island national parks", "Hike to island lookouts"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Whitehaven Beach", "Reef snorkelling", "Island sailing", "Lookout hikes"],
+    goodToKnow: [
+      { icon: "🚤", title: "Book day trips early", detail: "Most day trips leave Airlie Beach for Whitehaven, a snorkel stop and lunch. Hamilton Island is busiest in Sep–Oct and at Christmas, so book ahead." },
+      { icon: "✈️", title: "Two airports", detail: "Hamilton Island and Proserpine both have airports, and ferries are timed to meet most flights to reach Airlie Beach and the resort islands." },
+      { icon: "⛺", title: "Camping on islands", detail: "Most islands are national parks without accommodation, but many have campsites. Campers must carry their own water." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are the drier months, with sunnier days for sailing, snorkelling and beach time.",
+  },
+  {
     id: 'blue-mountains', name: "Blue Mountains", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 50,
     continent: 'Oceania', coordinates: { latitude: -33.63059, longitude: 150.30665 },
     category: 'park', icon: "⛰️", rank: 2,
