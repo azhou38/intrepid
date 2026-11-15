@@ -1069,7 +1069,7 @@ export const DESTINATIONS: Destination[] = [
     category: 'city', icon: "🌆", rank: 2,
     tagline: "A leafy river city of parks, museums and koalas, with ferries along the water",
     description: "Brisbane is Queensland's capital, a leafy river city built around the loops of the Brisbane River. South Bank Parklands, the City Botanic Gardens and the cultural precinct sit near the centre. Its museums and galleries cover art and history, Lone Pine Koala Sanctuary has more than 130 koalas, and Mount Coot-tha looks out over the city.",
-    whyVisit: ["Cuddle koalas at Lone Pine", "Stroll the South Bank riverside", "Explore art and history museums", "Ride a CityCat along the river"],
+    whyVisit: ["Meet koalas at Lone Pine", "Stroll the South Bank riverside", "Explore art and history museums", "Ride a CityCat along the river"],
     whyVisitPhotos: ["", "", "", ""],
     highlights: ["Koala encounters", "Riverside parklands", "Museums and galleries", "River ferries"],
     goodToKnow: [

@@ -120,7 +120,7 @@ async function checkWiki(title: string): Promise<string | null> {
       const n = w.trim().split(/\s+/).length;
       if (n < 2 || n > 8) add(it, 'shape', `whyVisit "${w}" is ${n} words (needs 2–8)`);
       // A reason is an action and its subject, never a bare name ("Len Lye Centre", "Tongariro Alpine Crossing").
-      if (!/^(See|Visit|Walk|Hike|Cross|Climb|Swim|Soak|Taste|Sail|Cruise|Explore|Watch|Spot|Meet|Ride|Paddle|Kayak|Dive|Snorkel|Wander|Stroll|Sip|Eat|Try|Hunt|Ski|Soar|Fly|Drive|Join|Feed|Stay|Discover|Relax|Trek|Camp|Float|Raft|Bungy|Gaze|Admire|Browse|Tour|Cycle|Bike|Surf|Fish|Dine|Shop|Roam|Find|Enjoy|Experience|Take|Hear|Step|Stand|Ascend|Descend|Sample|Look|Spend|Go|Board|Paraglide|Zipline|Scramble|Marvel|Sandboard|Dig|Punt|View|Photograph|Pan|Learn|Feel|Taste|Cheer|Shelter|Pause|Pass|Reach|Follow|Hunt|Scale|Wade|Bathe|Ramble|Savour|Sunbathe|Stargaze|Whale-watch|Heli-hike|Stop|Chase|Canoe|Listen|Picnic|Golf|Sled|Ski-tour|Snowshoe|Abseil)\b/i.test(w.trim())) add(it, 'shape', `whyVisit "${w}" does not start with an action (e.g. "Walk the…", "See the…")`);
+      if (!/^(See|Visit|Walk|Hike|Cross|Climb|Swim|Soak|Taste|Sail|Cruise|Explore|Watch|Spot|Meet|Ride|Paddle|Kayak|Dive|Snorkel|Wander|Stroll|Sip|Eat|Try|Hunt|Ski|Soar|Fly|Drive|Join|Feed|Stay|Discover|Relax|Trek|Camp|Float|Raft|Bungy|Gaze|Admire|Browse|Tour|Cycle|Bike|Surf|Fish|Dine|Shop|Roam|Find|Enjoy|Experience|Take|Hear|Step|Stand|Ascend|Descend|Sample|Look|Spend|Go|Board|Paraglide|Zipline|Scramble|Marvel|Sandboard|Dig|Punt|View|Photograph|Pan|Learn|Feel|Taste|Cheer|Shelter|Pause|Pass|Reach|Follow|Hunt|Scale|Wade|Bathe|Ramble|Savour|Sunbathe|Stargaze|Whale-watch|Heli-hike|Stop|Chase|Canoe|Listen|Picnic|Golf|Sled|Ski-tour|Snowshoe|Abseil|Set|Head|Cool|Trace)\b/i.test(w.trim())) add(it, 'shape', `whyVisit "${w}" does not start with an action (e.g. "Walk the…", "See the…")`);
     }
     if ((d.highlights?.length ?? 0) !== nWhy) add(it, 'shape', `${d.highlights?.length ?? 0} highlights (needs one per whyVisit: ${nWhy})`);
     // Promise only what is there whenever a visitor arrives (WRITING.md → "Voice"): a passing state is never a reason.
@@ -135,7 +135,7 @@ async function checkWiki(title: string): Promise<string | null> {
     if (((d.bestTimeBlurb ?? '').match(/\{months\}/g) ?? []).length !== 1) add(it, 'shape', 'bestTimeBlurb needs exactly one {months}');
     if ((d.bestTimeBlurb ?? '').includes(';')) add(it, 'voice', 'bestTimeBlurb has a semicolon: give a second thought its own sentence (WRITING.md)');
     for (const [f, v] of [['tagline', d.tagline], ['description', d.description]] as const) {
-      const m = (v ?? '').replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
+      const m = (v ?? '').replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').replace(/\bSurfers Paradise\b/g, 'Surfers').match(MARKETING); if (m) add(it, 'voice', `${f}: "${m[0]}"`);
     }
     if (it.checks.length) issues.push(it);
   }
@@ -156,7 +156,7 @@ async function checkWiki(title: string): Promise<string | null> {
     if (sentences(s.bio) > 1) add(it, 'bio', 'more than one sentence');
     const nWords = s.bio.trim().split(/\s+/).filter(Boolean).length;
     if (nWords < 10) add(it, 'bio', `only ${nWords} words (min 10): say what it is, where, and why it is worth a stop`);
-    const m = s.bio.replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
+    const m = s.bio.replace(/\bbirds?[- ]of[- ]paradise\b/gi, 'birds').replace(/\bSurfers Paradise\b/g, 'Surfers').match(MARKETING); if (m) add(it, 'bio', `marketing word "${m[0]}"`);
     const tl = tooLong.get(s.id); if (tl) add(it, 'bio', `${tl.lines} lines on the carousel card (max 3): cut ~${tl.cut} characters`);
     // The standalone-spot carousel lists every spot of the same second-level division (src/data/spotDistricts.json).
     if (!spotDistricts[s.id]) add(it, 'district', 'no entry in src/data/spotDistricts.json: run scripts/curation/build-spot-districts.py --only ' + s.id);

@@ -1295,8 +1295,14 @@
     {
       "id": "qld-brisbane",
       "name": "Brisbane & Moreton Bay (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "brisbane",
+        "moreton-island"
+      ],
+      "standalone": [
+        "north-stradbroke-island-2",
+        "north-stradbroke-island-3"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1325,8 +1331,16 @@
     {
       "id": "qld-gold-coast",
       "name": "Gold Coast & Scenic Rim (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "gold-coast",
+        "gold-coast-hinterland",
+        "scenic-rim"
+      ],
+      "standalone": [
+        "tamborine-mountain-1",
+        "tamborine-mountain-2",
+        "tamborine-mountain-3"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1352,8 +1366,15 @@
     {
       "id": "qld-sunshine-coast",
       "name": "Sunshine Coast & Hinterland (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "sunshine-coast",
+        "noosa",
+        "sunshine-coast-hinterland",
+        "glass-house-mountains"
+      ],
+      "standalone": [
+        "cooloola-great-walk"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1379,8 +1400,15 @@
     {
       "id": "qld-fraser-bundaberg",
       "name": "Fraser Coast & Bundaberg (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "bundaberg",
+        "kgari"
+      ],
+      "standalone": [
+        "maryborough-military-and-colonial-museum",
+        "urangan-pier",
+        "rainbow-beach-5"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1409,8 +1437,15 @@
     {
       "id": "qld-capricorn",
       "name": "Gladstone & Capricorn (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "rockhampton",
+        "gladstone"
+      ],
+      "standalone": [
+        "capricorn-coast-4",
+        "number-7-dam",
+        "capricorn-coast-5"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1439,8 +1474,14 @@
     {
       "id": "qld-mackay-whitsundays",
       "name": "Mackay & Whitsundays (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "whitsundays"
+      ],
+      "standalone": [
+        "mackay-regional-botanic-gardens",
+        "bowen-1",
+        "bowen-4"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1469,7 +1510,11 @@
     {
       "id": "qld-townsville",
       "name": "Townsville & Magnetic Island (QLD)",
-      "destinations": [],
+      "destinations": [
+        "townsville",
+        "magnetic-island",
+        "ingham"
+      ],
       "standalone": [],
       "timezone": "Australia/Brisbane",
       "sources": {
@@ -1498,8 +1543,15 @@
     {
       "id": "qld-cairns-tablelands",
       "name": "Cairns, Tablelands & Cassowary Coast (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "cairns",
+        "kuranda",
+        "atherton-tablelands",
+        "mission-beach"
+      ],
+      "standalone": [
+        "josephine-falls"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1530,8 +1582,16 @@
     {
       "id": "qld-daintree-cape-york",
       "name": "Daintree, Cooktown & Cape York (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "port-douglas",
+        "daintree",
+        "cooktown"
+      ],
+      "standalone": [
+        "cape-york-2",
+        "green-hill-fort",
+        "split-rock"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1562,7 +1622,14 @@
       "id": "qld-darling-downs",
       "name": "Southern Downs & Darling Downs (QLD)",
       "destinations": [],
-      "standalone": [],
+      "standalone": [
+        "toowoomba-1",
+        "granite-belt-2",
+        "miles-historical-village",
+        "jondaryan-woolshed",
+        "leslie-dam",
+        "museum-of-australian-army-flying"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1593,7 +1660,19 @@
       "id": "qld-central-highlands",
       "name": "Maranoa, Central Highlands & South Burnett (QLD)",
       "destinations": [],
-      "standalone": [],
+      "standalone": [
+        "charleville-1",
+        "carnarvon-national-park-1",
+        "carnarvon-national-park-2",
+        "carnarvon-national-park-3",
+        "laidley-pioneer-village-and-museum",
+        "the-big-rig",
+        "boondooma-dam",
+        "brisbane-valley-rail-trail",
+        "queensland-transport-museum",
+        "bjelke-petersen-dam",
+        "big-peanut"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
@@ -1626,8 +1705,24 @@
     {
       "id": "qld-outback-gulf",
       "name": "Outback & Gulf Savannah (QLD)",
-      "destinations": [],
-      "standalone": [],
+      "destinations": [
+        "winton"
+      ],
+      "standalone": [
+        "john-flynn-place-museum",
+        "mount-isa-underground-hospital-and-museum",
+        "australian-workers-heritage-centre",
+        "porcupine-gorge-national-park",
+        "eromanga-natural-history-museum",
+        "flinders-discovery-centre",
+        "kronosaurus-korner",
+        "min-min-encounter",
+        "muttaburrasaurus-interpretation-centre",
+        "cobbold-gorge",
+        "black-stump-blackall",
+        "cunnamulla-1",
+        "tree-of-knowledge"
+      ],
       "timezone": "Australia/Brisbane",
       "sources": {
         "wikivoyage": [
