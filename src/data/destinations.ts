@@ -1625,6 +1625,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is the peak season, with dry weather. Stingers are around from about Nov–May, so swim in the net.",
   },
   {
+    id: 'townsville', name: "Townsville", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 25,
+    continent: 'Oceania', coordinates: { latitude: -19.24564, longitude: 146.81123 },
+    category: 'city', icon: "🌴", rank: 3,
+    tagline: "A sunny tropical city with a beachfront Strand, Magnetic Island and a dive wreck",
+    description: "Townsville is a laid-back coastal city of about 174,000 people in North Queensland, with an average of 320 days of sunshine a year. Castle Hill rises in the city centre with views east to Magnetic Island, and The Strand runs along the beachfront with a rockpool and cafes. Reef HQ Aquarium and the Museum of Tropical Queensland sit side by side on Flinders Street. It is the closest large centre to the SS Yongala wreck, one of Australia's top dive sites.",
+    whyVisit: ["Take the ferry to Magnetic Island", "Dive the SS Yongala wreck", "Walk Castle Hill for city views"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Magnetic Island", "Yongala dive", "Castle Hill"],
+    goodToKnow: [
+      { icon: "🌧️", title: "Humid summers", detail: "Summer is hot, humid and wet. Winter is dry and mild, so plan outdoor sightseeing for then." },
+      { icon: "⛴️", title: "Magnetic Island ferry", detail: "Passenger and car ferries reach Magnetic Island in about 25 minutes, so it works as an easy day trip." },
+      { icon: "🤿", title: "Yongala needs experience", detail: "Day trips to the Yongala leave from Townsville and Magnetic Island, and some operators ask for a minimum number of logged dives." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are dry and mild, good for the Strand, Castle Hill and the ferry to Magnetic Island.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
