@@ -2143,6 +2143,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Warm {months} days suit forest walks and drives, and Jun–Aug brings snow to Mount Donna Buang.",
   },
   {
+    id: 'gold-coast-hinterland', name: "Gold Coast Hinterland", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 20,
+    continent: 'Oceania', coordinates: { latitude: -28.20287, longitude: 153.22428 },
+    category: 'park', icon: "🌿", rank: 4,
+    tagline: "Rainforest waterfalls and mountain lookouts just behind the Gold Coast",
+    description: "The Gold Coast Hinterland is the rural area west of the Gold Coast, made up of rainforest-covered mountain ranges, most of it national park. Walking tracks lead to waterfalls such as Coomera Falls and Morans Falls in Lamington National Park. Freeman's Lookout and Rosin's Lookout face the Numinbah Valley, and the 54 km Gold Coast Hinterland Great Walk links Lamington and Springbrook over three days.",
+    whyVisit: ["Walk to rainforest waterfalls", "Take in lookouts over the coast", "Hike the Great Walk through rainforest"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Rainforest waterfalls", "Mountain lookouts", "Long-distance walking"],
+    goodToKnow: [
+      { icon: "🚗", title: "A car is far easier", detail: "Public transport west of the M1 is very sparse, so a car is far easier." },
+      { icon: "🥾", title: "Pages Pinnacle needs experience", detail: "The Pages Pinnacle walk is about 6 km return and suits experienced hikers." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} are the cooler, drier months, which suit waterfall walks and lookouts.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
