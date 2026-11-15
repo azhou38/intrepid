@@ -1132,6 +1132,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are the dry, mild months, with humpback whales passing in Jul–Aug.",
   },
   {
+    id: 'sunshine-coast', name: "Sunshine Coast", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 25,
+    continent: 'Oceania', coordinates: { latitude: -26.68113, longitude: 153.1219 },
+    category: 'beach', icon: "🏖️", rank: 2,
+    tagline: "Long surf beaches, rainforest hills and relaxed seaside towns north of Brisbane",
+    description: "The Sunshine Coast stretches for nearly 70 km north of Brisbane, from Caloundra through Mooloolaba and Maroochydore to Coolum. Most of its draw is the white-sand beaches, many patrolled by surf life savers, with a salt-water pool at Kings Beach and kitesurfing at Golden Beach. Behind the beaches sit family attractions such as Australia's Big Pineapple, a wildlife zoo and an aquarium. It is a holiday coast for Queenslanders as much as for visitors.",
+    whyVisit: ["Swim and surf patrolled beaches", "Climb a steep coastal peak", "Meet animals at zoos and aquariums", "Explore Caloundra's lighthouses and beaches"],
+    whyVisitPhotos: ["", "", "", ""],
+    highlights: ["Patrolled surf beaches", "Coastal summit walk", "Wildlife and aquariums", "Caloundra coast"],
+    goodToKnow: [
+      { icon: "🚩", title: "Swim between the flags", detail: "Swim only between the red and yellow flags on patrolled beaches." },
+      { icon: "🚗", title: "A car is the easiest way", detail: "The coast is about 70 km long and the hinterland and attractions are spread out, so a car or tour makes it far simpler to cover." },
+      { icon: "🏖️", title: "Popular holiday coast", detail: "It is a popular holiday spot, so book ahead." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Dry, sunny days from {months} suit the beaches and the Mount Coolum walk. Summer is humid and stormy.",
+  },
+  {
     id: 'mclaren-vale', name: "McLaren Vale", country: "Australia", countryCode: 'AU', timezone: 'Australia/Adelaide', defaultZoomSpanKm: 45,
     continent: 'Oceania', coordinates: { latitude: -35.219773, longitude: 138.541119 },
     category: 'nature', icon: "🍷", rank: 3,
