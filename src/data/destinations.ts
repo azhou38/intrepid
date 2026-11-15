@@ -3880,6 +3880,22 @@ export const DESTINATIONS: Destination[] = [
     bestMonths: [6, 7, 8, 9, 10],
     bestTimeBlurb: "Visit in {months}, when Wannon Falls is at its fullest after the winter rains.",
   },
+  {
+    id: 'gladstone', name: "Gladstone", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 45,
+    continent: 'Oceania', coordinates: { latitude: -23.84522, longitude: 151.25729 },
+    category: 'city', icon: "⚓", rank: 5,
+    tagline: "A working port on Queensland's largest natural harbour, with island boat trips",
+    description: "Gladstone is a coastal industrial city between Bundaberg and Rockhampton, built around Queensland's largest natural harbour. Auckland Point looks over the harbour, marina and ports, and Tondoon Botanic Gardens offers rainforest walks just south of the centre. Ferries from the marina reach Curtis Island and Great Barrier Reef trips, and Facing Island and Lake Awoonga are nearby. Free guided industry tours run from the visitor centre on set weekdays.",
+    whyVisit: ["See the working harbour from above", "Take a boat to the reef and islands"],
+    whyVisitPhotos: ["", ""],
+    highlights: ["Harbour views", "Reef and islands"],
+    goodToKnow: [
+      { icon: "🏭", title: "Book industry tours", detail: "Free alumina refinery, smelter and power station tours leave from the marina visitor centre on set weekdays. Book the refinery tour ahead." },
+      { icon: "🦟", title: "Pack insect repellent", detail: "The botanic gardens have mosquitoes, so carry insect repellent, especially in the wetter months." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the dry season, with sunnier, less humid days for the harbour and gardens.",
+  },
   // New Zealand — South Island. Header images and whyVisitPhotos are picked visually with
   // scripts/photo-picker.ts (see IMAGES.md), not guessed.
   {
