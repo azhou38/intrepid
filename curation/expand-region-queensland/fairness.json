@@ -1,0 +1,448 @@
+{
+ "inside_destinations": 340,
+ "standalone": 113,
+ "new_destinations": [
+  {
+   "id": "brisbane",
+   "name": "Brisbane",
+   "rank": 2,
+   "defaultZoomSpanKm": 40,
+   "spots": 29,
+   "name_evidence": "Wikivoyage 'Brisbane' (city page); Queensland capital"
+  },
+  {
+   "id": "gold-coast",
+   "name": "Gold Coast",
+   "rank": 2,
+   "defaultZoomSpanKm": 30,
+   "spots": 31,
+   "name_evidence": "Wikivoyage 'Gold Coast' (city page); Gold Coast tourism brand"
+  },
+  {
+   "id": "gold-coast-hinterland",
+   "name": "Gold Coast Hinterland",
+   "rank": 3,
+   "defaultZoomSpanKm": 20,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Gold Coast Hinterland' (region page)"
+  },
+  {
+   "id": "tamborine-mountain",
+   "name": "Tamborine Mountain",
+   "rank": 4,
+   "defaultZoomSpanKm": 20,
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Tamborine Mountain' (page); candidate kept as a place"
+  },
+  {
+   "id": "scenic-rim",
+   "name": "Scenic Rim",
+   "rank": 4,
+   "defaultZoomSpanKm": 40,
+   "spots": 10,
+   "name_evidence": "Wikivoyage 'Scenic Rim' (region page); Scenic Rim Regional Council tourism brand"
+  },
+  {
+   "id": "moreton-island",
+   "name": "Moreton Island",
+   "rank": 3,
+   "defaultZoomSpanKm": 30,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Moreton Island' (page); Moreton Island National Park"
+  },
+  {
+   "id": "north-stradbroke-island",
+   "name": "North Stradbroke Island",
+   "rank": 4,
+   "defaultZoomSpanKm": 25,
+   "spots": 5,
+   "name_evidence": "Wikivoyage 'North Stradbroke Island' (page)"
+  },
+  {
+   "id": "sunshine-coast",
+   "name": "Sunshine Coast",
+   "rank": 2,
+   "defaultZoomSpanKm": 25,
+   "spots": 22,
+   "name_evidence": "Wikivoyage 'Sunshine Coast' (region page); Visit Sunshine Coast brand"
+  },
+  {
+   "id": "noosa",
+   "name": "Noosa",
+   "rank": 3,
+   "defaultZoomSpanKm": 35,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Noosa' (page); Noosa National Park"
+  },
+  {
+   "id": "sunshine-coast-hinterland",
+   "name": "Sunshine Coast Hinterland",
+   "rank": 4,
+   "defaultZoomSpanKm": 30,
+   "spots": 13,
+   "name_evidence": "Wikivoyage 'Sunshine Coast' (Hinterland section: Maleny, Montville, Kondalilla); Sunshine Coast Hinterland Great Walk; Visit Sunshine Coast 'Hinterland' (brand not independently re-verified)"
+  },
+  {
+   "id": "glass-house-mountains",
+   "name": "Glass House Mountains",
+   "rank": 4,
+   "defaultZoomSpanKm": 20,
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Glass House Mountains' (page)"
+  },
+  {
+   "id": "toowoomba",
+   "name": "Toowoomba",
+   "rank": 4,
+   "defaultZoomSpanKm": 20,
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Toowoomba' (page); regional hub"
+  },
+  {
+   "id": "granite-belt",
+   "name": "Granite Belt",
+   "rank": 5,
+   "defaultZoomSpanKm": 25,
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Granite Belt' (redirects to Darling Downs/Stanthorpe page); Granite Belt wine region brand"
+  },
+  {
+   "id": "rockhampton",
+   "name": "Rockhampton",
+   "rank": 4,
+   "defaultZoomSpanKm": 35,
+   "spots": 10,
+   "name_evidence": "Wikivoyage 'Rockhampton' (page)"
+  },
+  {
+   "id": "capricorn-coast",
+   "name": "Capricorn Coast",
+   "rank": 4,
+   "defaultZoomSpanKm": 45,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Yeppoon' (Capricorn Coast section); Capricorn Coast tourism brand (Livingstone Shire)"
+  },
+  {
+   "id": "gladstone",
+   "name": "Gladstone",
+   "rank": 5,
+   "defaultZoomSpanKm": 45,
+   "spots": 10,
+   "name_evidence": "Wikivoyage 'Gladstone' (page); regional port hub"
+  },
+  {
+   "id": "bundaberg",
+   "name": "Bundaberg",
+   "rank": 4,
+   "defaultZoomSpanKm": 30,
+   "spots": 10,
+   "name_evidence": "Wikivoyage 'Bundaberg' (page)"
+  },
+  {
+   "id": "kgari",
+   "name": "K'gari",
+   "rank": 1,
+   "defaultZoomSpanKm": 80,
+   "spots": 11,
+   "name_evidence": "Wikivoyage 'K'gari' (page, formerly Fraser Island); World Heritage island"
+  },
+  {
+   "id": "rainbow-beach",
+   "name": "Rainbow Beach",
+   "rank": 4,
+   "defaultZoomSpanKm": 20,
+   "spots": 6,
+   "name_evidence": "Wikivoyage 'Rainbow Beach (Queensland)' (page)"
+  },
+  {
+   "id": "whitsundays",
+   "name": "Whitsundays",
+   "rank": 1,
+   "defaultZoomSpanKm": 30,
+   "spots": 18,
+   "name_evidence": "Wikivoyage 'Whitsunday Islands' (page; 'Whitsundays' redirects); Tourism Whitsundays brand"
+  },
+  {
+   "id": "bowen",
+   "name": "Bowen",
+   "rank": 5,
+   "defaultZoomSpanKm": 35,
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Bowen' (page)"
+  },
+  {
+   "id": "townsville",
+   "name": "Townsville",
+   "rank": 3,
+   "defaultZoomSpanKm": 25,
+   "spots": 10,
+   "name_evidence": "Wikivoyage 'Townsville' (page)"
+  },
+  {
+   "id": "magnetic-island",
+   "name": "Magnetic Island",
+   "rank": 4,
+   "defaultZoomSpanKm": 20,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Magnetic Island' (page)"
+  },
+  {
+   "id": "ingham",
+   "name": "Ingham",
+   "rank": 5,
+   "defaultZoomSpanKm": 60,
+   "spots": 11,
+   "name_evidence": "Wikivoyage 'Ingham' (page); Hinchinbrook Island National Park (Wikivoyage page)"
+  },
+  {
+   "id": "cairns",
+   "name": "Cairns",
+   "rank": 2,
+   "defaultZoomSpanKm": 40,
+   "spots": 12,
+   "name_evidence": "Wikivoyage 'Cairns' (page); gateway to the Great Barrier Reef and Daintree"
+  },
+  {
+   "id": "kuranda",
+   "name": "Kuranda",
+   "rank": 4,
+   "defaultZoomSpanKm": 20,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Kuranda' (page)"
+  },
+  {
+   "id": "atherton-tablelands",
+   "name": "Atherton Tablelands",
+   "rank": 3,
+   "defaultZoomSpanKm": 60,
+   "spots": 15,
+   "name_evidence": "Wikivoyage 'Atherton Tablelands' (region page)"
+  },
+  {
+   "id": "mission-beach",
+   "name": "Mission Beach",
+   "rank": 4,
+   "defaultZoomSpanKm": 70,
+   "spots": 6,
+   "name_evidence": "Wikivoyage 'Mission Beach' (page)"
+  },
+  {
+   "id": "port-douglas",
+   "name": "Port Douglas",
+   "rank": 3,
+   "defaultZoomSpanKm": 35,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Port Douglas' (page)"
+  },
+  {
+   "id": "daintree",
+   "name": "Daintree",
+   "rank": 2,
+   "defaultZoomSpanKm": 40,
+   "spots": 5,
+   "name_evidence": "Wikivoyage 'Daintree Rainforest' (page; 'Daintree' and 'Cape Tribulation' redirect to it)"
+  },
+  {
+   "id": "cooktown",
+   "name": "Cooktown",
+   "rank": 4,
+   "defaultZoomSpanKm": 65,
+   "spots": 9,
+   "name_evidence": "Wikivoyage 'Cooktown' (page)"
+  },
+  {
+   "id": "cape-york",
+   "name": "Cape York",
+   "rank": 4,
+   "defaultZoomSpanKm": 80,
+   "spots": 8,
+   "name_evidence": "Wikivoyage 'Far North Queensland' (Cape York Peninsula redirect); Cape York Peninsula region name"
+  },
+  {
+   "id": "winton",
+   "name": "Winton",
+   "rank": 4,
+   "defaultZoomSpanKm": 25,
+   "spots": 7,
+   "name_evidence": "Wikivoyage 'Winton' (page)"
+  },
+  {
+   "id": "charleville",
+   "name": "Charleville",
+   "rank": 5,
+   "defaultZoomSpanKm": 20,
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Charleville' (page)"
+  },
+  {
+   "id": "cunnamulla",
+   "name": "Cunnamulla",
+   "rank": 5,
+   "defaultZoomSpanKm": 20,
+   "spots": 4,
+   "name_evidence": "Wikivoyage 'Cunnamulla' (page)"
+  },
+  {
+   "id": "carnarvon-national-park",
+   "name": "Carnarvon National Park",
+   "rank": 3,
+   "defaultZoomSpanKm": 20,
+   "spots": 5,
+   "name_evidence": "Queensland Parks 'Carnarvon National Park (Carnarvon Gorge)'; flagship park"
+  }
+ ],
+ "lowest_kept": [
+  {
+   "name": "South Bank Parklands",
+   "views": 0,
+   "where": "brisbane"
+  },
+  {
+   "name": "Brisbane City Hall Clock Tower",
+   "views": 0,
+   "where": "brisbane"
+  },
+  {
+   "name": "MacArthur Museum",
+   "views": 0,
+   "where": "brisbane"
+  },
+  {
+   "name": "Redcliffe Jetty",
+   "views": 0,
+   "where": "brisbane"
+  },
+  {
+   "name": "Daisy Hill Koala Centre",
+   "views": 0,
+   "where": "brisbane"
+  },
+  {
+   "name": "Redlands IndigiScapes Centre",
+   "views": 0,
+   "where": "brisbane"
+  },
+  {
+   "name": "Sirromet Wines",
+   "views": 0,
+   "where": "brisbane"
+  },
+  {
+   "name": "Burleigh Heads Beach",
+   "views": 0,
+   "where": "gold-coast"
+  },
+  {
+   "name": "Broadbeach Beach",
+   "views": 0,
+   "where": "gold-coast"
+  },
+  {
+   "name": "Kurrawa Beach",
+   "views": 0,
+   "where": "gold-coast"
+  },
+  {
+   "name": "Kirra Beach",
+   "views": 0,
+   "where": "gold-coast"
+  },
+  {
+   "name": "Nobby Beach",
+   "views": 0,
+   "where": "gold-coast"
+  }
+ ],
+ "stronger_left_out": [
+  {
+   "name": "Swim",
+   "views": 4107,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "Not a place: generic listing fragment (it is Cairns Esplanade Lagoon, kept as such)"
+  },
+  {
+   "name": "Tropical Fruit World",
+   "views": 1916,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "Outside Queensland: Duranbah, NSW"
+  },
+  {
+   "name": "(3,448 zero-source tail candidates)",
+   "views": null,
+   "counted_sources": 0,
+   "verdict": "rejected",
+   "reason": "Rejected on name triage, 25-sample audited per region; no scored candidate with a higher score than the lowest kept was left out without a stated reason (see global-keeps-excluded.json)"
+  }
+ ],
+ "strongest_outsiders": [
+  {
+   "name": "Artspace Mackay",
+   "views": 81200,
+   "reason": "No usable pin yet; outside every proposed destination's bounds by place (no destination covers it)"
+  },
+  {
+   "name": "Mackay",
+   "views": 81200,
+   "reason": "No destination within 40 km (nearest Whitsundays, 106 km): outside every destination's bounds"
+  },
+  {
+   "name": "Mount Isa",
+   "views": 79528,
+   "reason": "No destination within 40 km (nearest Winton, 411 km): outside every destination's bounds"
+  },
+  {
+   "name": "Thursday Island",
+   "views": 47268,
+   "reason": "No destination within 40 km (nearest Cape York, 155 km): outside every destination's bounds; Torres Strait"
+  },
+  {
+   "name": "Maryborough",
+   "views": 38744,
+   "reason": "No destination within 40 km (nearest K'gari, 55 km): outside every destination's bounds"
+  },
+  {
+   "name": "Seventeen Seventy",
+   "views": 32143,
+   "reason": "No destination within 40 km (nearest Gladstone, 73 km): outside every destination's bounds; Pairs with Agnes Water"
+  },
+  {
+   "name": "Warwick",
+   "views": 31897,
+   "reason": "No destination within 40 km (nearest Granite Belt, 50 km): outside every destination's bounds"
+  },
+  {
+   "name": "Longreach",
+   "views": 30990,
+   "reason": "No destination within 40 km (nearest Winton, 171 km): outside every destination's bounds"
+  },
+  {
+   "name": "Lizard Island",
+   "views": 23673,
+   "reason": "No destination within 40 km (nearest Cooktown, 92 km): outside every destination's bounds; Island and national park merged; filed in 4 regio"
+  },
+  {
+   "name": "Australian Workers Heritage Centre",
+   "views": 19828,
+   "reason": "No destination within 40 km (nearest Winton, 264 km): outside every destination's bounds; Barcaldine"
+  },
+  {
+   "name": "Lady Elliot Island",
+   "views": 19110,
+   "reason": "No destination within 40 km (nearest Bundaberg, 91 km): outside every destination's bounds"
+  },
+  {
+   "name": "Agnes Water",
+   "views": 15712,
+   "reason": "No destination within 40 km (nearest Gladstone, 77 km): outside every destination's bounds; Base with Seventeen Seventy"
+  }
+ ],
+ "benchmark": {
+  "kgari_not_under_hervey_bay": "pass: K'gari is its own destination (rank 1); Urangan Pier standalone; Hervey Bay is not a destination",
+  "great_barrier_reef_not_a_spot": "pass: no spot named Great Barrier Reef; existing destination retained; reef-site entries are specific places",
+  "vehicles_not_spots": "pass with one flag: no ferry/cruise/train spots; Skyrail Rainforest Cableway kept by the judge for its stops, flagged for the owner",
+  "no_overlap": "36 new destinations; no overlaps by the 0.75 x half-span rule (script run below)",
+  "not_applicable": "NZ-only items (Red Rocks, Kapiti, Ninety Mile Beach etc.) do not apply to Queensland"
+ }
+}

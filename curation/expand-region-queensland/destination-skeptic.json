@@ -1,0 +1,222 @@
+[
+ {
+  "id": "brisbane",
+  "verdict": "keep",
+  "rule": "Rule of thumb (headline city)",
+  "reason": "State capital, Wikivoyage city page, 28 pinned spots; rank 2 exempt and honest."
+ },
+ {
+  "id": "gold-coast",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page and tourism brand, 28 pinned spots. Burleigh Heads Beach and Burleigh Head National Park sit in different features (beach vs park), so not a wrapper; keep both. No overlap with Hinterland/Tamborine/Scenic Rim (centres beyond 0.75 x half-span)."
+ },
+ {
+  "id": "gold-coast-hinterland",
+  "verdict": "rerank",
+  "new_rank": 4,
+  "rule": "Ranking destinations",
+  "reason": "Wikivoyage region page and tourism brand pass the name test, 6 pinned spots (Lamington unpinned). Mostly waterfalls and park walks, so a detour-tier region, not rank 3."
+ },
+ {
+  "id": "tamborine-mountain",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Own Wikivoyage page, widely named; exactly 4 pinned spots (meets the bar). Centre is 28 km from Hinterland and 25+ km from Gold Coast: no overlap."
+ },
+ {
+  "id": "scenic-rim",
+  "verdict": "keep",
+  "rule": "Prefer the region travellers name",
+  "reason": "Wikivoyage region page and Scenic Rim Regional Council brand; 9 pinned spots; Main Range unpinned. Span 40 fits Barney to Moogerah."
+ },
+ {
+  "id": "moreton-island",
+  "verdict": "keep",
+  "rule": "Rule of thumb",
+  "reason": "Island with its own national park and Wikivoyage page, 7 pinned spots. Not a Brisbane spot: separate trip with an island stay. No overlap with North Stradbroke (~40 km apart)."
+ },
+ {
+  "id": "north-stradbroke-island",
+  "verdict": "review",
+  "rule": "Rule of thumb (count pinned spots only)",
+  "reason": "Name is strong (Straddie, Wikivoyage page) but only 3 spots have a usable pin (Brown Lake, Blue Lake unpinned), below the 4 bar and rank 4 is not exempt. For: 5 spots, a real island stay. Against: thin until the two lakes are pinned. Keep if both lakes get MEDIUM+ pins; otherwise demote to standalone spots."
+ },
+ {
+  "id": "sunshine-coast",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage region page and Visit Sunshine Coast brand, 20 pinned spots; rank 2 fine."
+ },
+ {
+  "id": "noosa",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page, a name travellers say; 4 pinned spots meets the bar exactly (Coastal Walk, Hastings Street, Everglades unpinned, expected to resolve). Centre 30+ km from Sunshine Coast centre, no overlap."
+ },
+ {
+  "id": "sunshine-coast-hinterland",
+  "verdict": "keep",
+  "rule": "Prefer the region travellers name / name test",
+  "reason": "No standalone Wikivoyage page, but Wikivoyage has a Hinterland section and Visit Sunshine Coast and the Sunshine Coast Hinterland Great Walk use the name as a brand; Maleny/Montville are searched by it. 11 pinned spots. Passes on the tourism-brand route; rank 4."
+ },
+ {
+  "id": "glass-house-mountains",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Own Wikivoyage page, an iconic named landform; exactly 4 pinned spots incl. Australia Zoo, so it meets the bar. Marginal: reassess if one pin is lost."
+ },
+ {
+  "id": "toowoomba",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements",
+  "reason": "Regional city hub with Wikivoyage page and guidebook chapter; kept without a headline sight. 3 pinned spots (Ju Raku En unpinned), one short of the bar, but the settlement rule applies; rank 4 acceptable."
+ },
+ {
+  "id": "granite-belt",
+  "verdict": "review",
+  "rule": "Rule of thumb (count pinned spots only) / name test",
+  "reason": "Name passes via the wine-region brand despite the Wikivoyage redirect (to Darling Downs/Stanthorpe). Only 3 usable pins (Varias unpinned) and Pyramid/Varias are weak spots. For: a real named wine and granite region, Girraween headline. Against: under 4 pinned. Keep as rank 5 if Varias is pinned and the two weak spots hold; otherwise demote its spots to standalone (Girraway NP and Stanthorpe Art Gallery)."
+ },
+ {
+  "id": "rockhampton",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements",
+  "reason": "Regional hub with Wikivoyage page, 9 pinned spots. Capricorn Coast centre ~35 km away, outside the overlap radius."
+ },
+ {
+  "id": "capricorn-coast",
+  "verdict": "keep",
+  "rule": "Prefer the region travellers name over one town",
+  "reason": "No Wikivoyage page of its own (Yeppoon section) but the Capricorn Coast tourism brand is the name visitors use, and it correctly replaces a Yeppoon destination. 7 pinned spots; rank 4."
+ },
+ {
+  "id": "gladstone",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements",
+  "reason": "Regional port city with Wikivoyage page, 8 pinned spots. Rank 5 is honest for a gateway to Curtis/Facing islands and Awoonga; do not raise."
+ },
+ {
+  "id": "bundaberg",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements",
+  "reason": "Wikivoyage page, regional hub, 7 pinned spots including Mon Repos turtles; rank 4."
+ },
+ {
+  "id": "kgari",
+  "verdict": "rerank",
+  "new_rank": 2,
+  "rule": "Ranking destinations",
+  "reason": "World Heritage island with 10 pinned spots, but rank 1 should be kept for the handful of world-famous destinations; a country highlight, rank 2 (Great Barrier Reef and Whitsundays carry rank 1 in Queensland). Owner may overrule."
+ },
+ {
+  "id": "rainbow-beach",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page; 4 pinned spots (Double Island Point, Coloured Sands, Inskip Point, Wolf Rock). Carlo Sand Blow and Great Beach Drive are unpinned, and Great Beach Drive is a long feature that should stay standalone anyway. Meets the bar exactly. ~40 km from K'gari centre: no overlap."
+ },
+ {
+  "id": "whitsundays",
+  "verdict": "keep",
+  "rule": "Rule of thumb (headline) / name test",
+  "reason": "Tourism Whitsundays brand, Wikivoyage Whitsunday Islands page, 17 pinned spots. No overlap with great-barrier-reef (centre ~220 km away); rank 1 acceptable alongside the reef."
+ },
+ {
+  "id": "bowen",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements",
+  "reason": "Wikivoyage town page, exactly 4 pinned spots; rank 5 honest. Marginal. Centre ~90 km from the Whitsundays: no overlap."
+ },
+ {
+  "id": "townsville",
+  "verdict": "keep",
+  "rule": "Granularity: sizable settlements",
+  "reason": "Regional city, Wikivoyage page, 9 pinned spots. Rank 3 is generous for a base; acceptable as the main northern city but rank 4 would be defensible."
+ },
+ {
+  "id": "magnetic-island",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Island with own Wikivoyage page, 6 pinned spots. Centre 12 km from Townsville, above the 9 km overlap threshold, so no overlap under the rule; separate island stay."
+ },
+ {
+  "id": "ingham",
+  "verdict": "rerank",
+  "new_rank": 4,
+  "rule": "Ranking destinations",
+  "reason": "Wikivoyage page; 9 pinned spots incl. Hinchinbrook Island, Thorsborne Trail, Wallaman Falls: strong enough that rank 5 undersells it. Span 60 is acceptable: the farthest pinned spots (Wallaman ~40 km, Orpheus ~40 km) lie within 75% of it. Consider whether Hinchinbrook is the better name (review later)."
+ },
+ {
+  "id": "cairns",
+  "verdict": "keep",
+  "rule": "Rule of thumb (headline)",
+  "reason": "Wikivoyage page, gateway to the reef and Daintree, 10 pinned spots; rank 2 fine. Not an overlap with great-barrier-reef (centre ~340 km)."
+ },
+ {
+  "id": "kuranda",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page, 6 pinned spots. 19 km from Cairns centre, above the 15 km overlap threshold. Skyrail Rainforest Cableway is a vehicle and must not ship as a spot: the places at either end (Barron Gorge, Kuranda) already cover it, so drop it into the bio of Barron Falls/Barron Gorge. Remaining 6 spots clear the bar."
+ },
+ {
+  "id": "atherton-tablelands",
+  "verdict": "keep",
+  "rule": "Prefer the region travellers name",
+  "reason": "Wikivoyage region page, 14 pinned spots; rank 3."
+ },
+ {
+  "id": "mission-beach",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page, 6 pinned spots. Span 70 is wide for a town base: Paronella Park and Tully Gorge are 40-50 km out. Fine under 75% of span, but check each lies within the Cassowary Coast area."
+ },
+ {
+  "id": "port-douglas",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page, 6 pinned spots. Centre 27 km from Daintree: no overlap."
+ },
+ {
+  "id": "daintree",
+  "verdict": "keep",
+  "rule": "Rule of thumb (headline) / name test",
+  "reason": "Daintree Rainforest Wikivoyage page ('Cape Tribulation' redirects there), World Heritage rainforest. Only 4 pinned spots, but rank 2 headline is exempt. A rank 2 is justified by Mossman Gorge and Cape Tribulation; keep."
+ },
+ {
+  "id": "cooktown",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page, 7 pinned spots; remote regional base, rank 4 fine."
+ },
+ {
+  "id": "cape-york",
+  "verdict": "review",
+  "rule": "Rule of thumb (count pinned spots only)",
+  "reason": "Cape York is a name travellers use and the Tip is a headline trip in itself. But only 3 spots are pinned (Tip, Elliot Falls, Old Telegraph Track, Chilli Beach, Iron Range unpinned) and a span of 80 km covers a peninsula hundreds of km long. For: headline destination, unmistakable name. Against: sparse data, span too small for the region. Keep at rank 4 if the Tip, Elliot Falls and Old Telegraph Track get pins (4+ with Fruit Bat/Twin Falls); otherwise demote to standalone spots."
+ },
+ {
+  "id": "winton",
+  "verdict": "keep",
+  "rule": "A destination is a name travellers actually use",
+  "reason": "Wikivoyage page, 5 pinned spots, Australian Age of Dinosaurs a headline attraction; rank 4 acceptable as an outback anchor."
+ },
+ {
+  "id": "charleville",
+  "verdict": "demote",
+  "rule": "Rule of thumb (count pinned spots only)",
+  "reason": "Only 1 usable pin (RFDS Charleville); Cosmos Centre, Bilby Experience and School of the Air are unpinned. Rank 5 small town without a guidebook chapter. Spots become standalone. Reinstate as a rank 5 destination if three more pins resolve."
+ },
+ {
+  "id": "cunnamulla",
+  "verdict": "demote",
+  "rule": "Rule of thumb (count pinned spots only)",
+  "reason": "2 pinned spots (Cunnamulla Fella, Bowra Wildlife Sanctuary); Heritage Trail and Eulo Mud Baths unpinned and weak. Rank 5 outback town. Spots become standalone (Bowra is 70+ km away and was never part of the town)."
+ },
+ {
+  "id": "carnarvon-national-park",
+  "verdict": "rerank",
+  "new_rank": 4,
+  "rule": "Granularity: national parks / Ranking",
+  "reason": "Carnarvon Gorge is a flagship Queensland park (Queensland Parks page), so the headline route lets it stand with 3 pinned spots (Wards Canyon and the Art Gallery unpinned, both expected to resolve). Rank 3 overstates it for a remote outback gorge; rank 4. If the unpinned ones fail, the park stays only as a flagship."
+ }
+]
