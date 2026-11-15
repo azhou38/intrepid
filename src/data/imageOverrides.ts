@@ -3642,4 +3642,5 @@ export const NO_PHOTO: ReadonlySet<string> = new Set([
   "Moreton Island",
   "Atherton Tablelands",
   "Gold Coast Hinterland",
+  "Scenic Rim",
 ]);

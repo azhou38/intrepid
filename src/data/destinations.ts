@@ -2159,6 +2159,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} are the cooler, drier months, which suit waterfall walks and lookouts.",
   },
   {
+    id: 'scenic-rim', name: "Scenic Rim", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 40,
+    continent: 'Oceania', coordinates: { latitude: -28.15985, longitude: 152.58722 },
+    category: 'nature', icon: "⛰️", rank: 4,
+    tagline: "Volcanic peaks, rainforest parks and farm country an hour from Brisbane",
+    description: "The Scenic Rim is a rural region in the foothills of the Great Dividing Range, an hour south of Brisbane and inland from the Gold Coast. It holds more than 30,000 hectares of parkland, including World Heritage listed Gondwana Rainforests parks. Peaks such as Mount Barney draw walkers, while Lake Moogerah and Spicers Gap add lookouts and water, and wineries and farms dot the countryside.",
+    whyVisit: ["Climb rugged peaks like Mount Barney", "Walk rainforest tracks in World Heritage parks", "Look out from mountain gaps and lakes"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Mountain climbs", "Rainforest walks", "Lakes and lookouts"],
+    goodToKnow: [
+      { icon: "🚗", title: "Bring a car", detail: "Public transport is very limited. The Mount Lindesay Highway is the only major road and the rest are narrow, so allow extra drive time." },
+      { icon: "🥾", title: "Peaks need experience", detail: "Mount Barney routes involve rock scrambling and water is scarce. Go early and carry plenty." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "Cooler, drier weather from {months} is best for climbing and bushwalking. Summer brings heat and storms.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
