@@ -2287,6 +2287,22 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "{months} is mild and dry. Turtle nesting and hatching runs roughly Dec–Feb.",
   },
   {
+    id: 'ingham', name: "Ingham", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 60,
+    continent: 'Oceania', coordinates: { latitude: -18.65633, longitude: 146.14631 },
+    category: 'park', icon: "💦", rank: 4,
+    tagline: "A sugar town with Italian roots, close to waterfalls and Hinchinbrook Island",
+    description: "Ingham is a town of about 4,500 on the Bruce Highway between Townsville and Cairns, with a strong Italian heritage from migrants who came to work the sugar cane. Its TYTO Wetlands have an observation tower and boardwalks, and the visitor centre is on Cooper Street. Wallaman Falls nearby has a 268 m main drop, the tallest single drop in Australia. The Thorsborne Trail on Hinchinbrook Island is reached by ferry from Cardwell or Lucinda.",
+    whyVisit: ["See Australia's tallest single-drop waterfall", "Walk the wetland boardwalks", "Walk the Hinchinbrook Island trail"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Waterfall views", "Wetland boardwalks", "Island hiking"],
+    goodToKnow: [
+      { icon: "🛣️", title: "Stop on the Bruce Highway", detail: "Ingham is about 75 to 80 minutes north of Townsville and three hours south of Cairns, and Brisbane to Cairns coaches stop here." },
+      { icon: "ℹ️", title: "Visit the info centre first", detail: "Hinchinbrook Visitor Information Centre on Cooper Street is open daily 9am to 4pm, at the western end of town near the TYTO Wetlands." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the drier, cooler part of the year, before the heavy summer rain.",
+  },
+  {
     id: 'ballina', name: "Ballina", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 20,
     continent: 'Oceania', coordinates: { latitude: -28.86574, longitude: 153.56595 },
     category: 'city', icon: "🦐", rank: 5,
