@@ -1591,6 +1591,23 @@ export const DESTINATIONS: Destination[] = [
     bestTimeBlurb: "Visit in {months} for river cruises without the February Southern 80 crowds.",
   },
   {
+    id: 'noosa', name: "Noosa", country: "Australia", countryCode: 'AU', timezone: 'Australia/Brisbane', defaultZoomSpanKm: 35,
+    continent: 'Oceania', coordinates: { latitude: -26.39708, longitude: 153.08975 },
+    category: 'beach', icon: "🌊", rank: 3,
+    tagline: "A sheltered beach, a headland national park and river cruises to the Everglades",
+    description: "Noosa is a resort area of low-rise buildings, upmarket shopping and dining, set along sheltered beaches, waterways and parks. Hastings Street fronts the main beach, and at its eastern end Noosa National Park covers the headland. Noosaville sits beside the Noosa River, and tours run up the river to the Everglades. The name comes from the local Kabi Kabi word for 'shadow'.",
+    whyVisit: ["Walk the Noosa National Park coast", "Swim at a sheltered main beach", "Cruise the Noosa River to the Everglades"],
+    whyVisitPhotos: ["", "", ""],
+    highlights: ["Headland coastal walks", "Main Beach swimming", "Everglades river cruise"],
+    goodToKnow: [
+      { icon: "🚩", title: "Patrolled beach flags", detail: "Swim between the red and yellow flags. Beach conditions are posted on a blackboard near the surf club." },
+      { icon: "🚤", title: "Everglades tours run the river", detail: "River tours go the full length of the Noosa River to the Everglades, and most include a BBQ or tea stop at Harry's Hut." },
+      { icon: "🏘️", title: "Pick your Noosa", detail: "The name covers several areas: Noosa Heads for Hastings Street, Noosaville by the river and Sunshine Beach to the south." },
+    ],
+    bestMonths: [4, 5, 6, 7, 8, 9, 10],
+    bestTimeBlurb: "{months} is the drier half of the year, which suits the beach, river cruises and park walks.",
+  },
+  {
     id: 'warrumbungle', name: "Warrumbungle National Park", country: "Australia", countryCode: 'AU', timezone: 'Australia/Sydney', defaultZoomSpanKm: 60,
     continent: 'Oceania', coordinates: { latitude: -31.28637, longitude: 148.99753 },
     category: 'park', icon: "🌌", rank: 4,
