@@ -883,7 +883,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Island national parks, white silica beaches and reef snorkelling off Airlie Beach",
     description: "The Whitsundays are a group of 74 islands off Queensland's coast, forming part of the Great Barrier Reef, and most are national parks. Whitehaven Beach, fine white silica sand on Whitsunday Island, is the usual destination for day trips. Trips from Airlie Beach typically combine the beach, a snorkelling stop and lunch, while resorts on islands such as Hamilton, Daydream and South Molle offer places to stay. Many other islands have only campsites.",
     whyVisit: ["Walk Whitehaven Beach's white silica sand", "Snorkel coral reefs and island bays", "Sail between island national parks", "Hike to island lookouts"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["North of Whitehaven Beach - panoramio (2).jpg", "", "", ""],
     highlights: ["Whitehaven Beach", "Reef snorkelling", "Island sailing", "Lookout hikes"],
     goodToKnow: [
       { icon: "🚤", title: "Book day trips early", detail: "Most day trips leave Airlie Beach for Whitehaven, a snorkel stop and lunch. Hamilton Island is busiest in Sep–Oct and at Christmas, so book ahead." },
@@ -1070,7 +1070,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A leafy river city of parks, museums and koalas, with ferries along the water",
     description: "Brisbane is Queensland's capital, a leafy river city built around the loops of the Brisbane River. South Bank Parklands, the City Botanic Gardens and the cultural precinct sit near the centre. Its museums and galleries cover art and history, Lone Pine Koala Sanctuary has more than 130 koalas, and Mount Coot-tha looks out over the city.",
     whyVisit: ["Meet koalas at Lone Pine", "Stroll the South Bank riverside", "Explore art and history museums", "Ride a CityCat along the river"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["Koala 22.jpg", "Streets Beach at South Bank Parklands, Brisbane 03.jpg", "", ""],
     highlights: ["Koala encounters", "Riverside parklands", "Museums and galleries", "River ferries"],
     goodToKnow: [
       { icon: "🚆", title: "Get a go card", detail: "The go card covers trains, buses, ferries and trams across Brisbane. It needs a $10 deposit and is sold at stations and selected shops." },
@@ -1087,7 +1087,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Surf beaches, theme parks and a glitzy skyline on a warm subtropical coast",
     description: "The Gold Coast is a long strip of ocean beaches in Queensland's south-east corner, with more than 50 km of sand, almost all of it patrolled. Surfers Paradise is the high-rise hub of tourist activity, while Burleigh Heads and Currumbin have a quieter, local feel. Theme parks and wildlife sanctuaries fill out a visit, and rainforest-covered hills sit just inland.",
     whyVisit: ["Surf and swim the patrolled beaches", "Ride the theme parks", "Meet native wildlife at sanctuaries", "Explore the Burleigh Heads coast"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["Beach Patrol. (9303641359).jpg", "Air Sea Explorer 1 - Sea World.jpg", "Koalas at Currumbin Wildlife Sanctuary - Currumbin - Queensland - Australia - 01 (35782200801).jpg", "North Burleigh Beach, Gold Coast, Queensland seen from Mick Schamburg Park.jpg"],
     highlights: ["Patrolled surf beaches", "Theme parks", "Wildlife sanctuaries", "Headland coast"],
     goodToKnow: [
       { icon: "🚩", title: "Swim between the flags", detail: "Almost all beaches from the Seaway to Coolangatta are patrolled. Swim between the red and yellow flags and escape a rip by swimming parallel to shore." },
@@ -1104,7 +1104,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "The tropical gateway to the Great Barrier Reef, the Daintree and Kuranda",
     description: "Cairns is a city of about 150,000 on Trinity Bay in Far North Queensland, and its main industry is tourism. Reef trips, dive and snorkel tours, rafting and skydiving leave from here, and Kuranda and the Daintree Rainforest are day trips away. In town, a free lagoon pool and barbecues line the Esplanade, and the swimming beaches lie just north and south of the city.",
     whyVisit: ["Set out for the Great Barrier Reef", "Cool off in the Esplanade Lagoon", "Visit Kuranda and the Daintree rainforest", "Raft rivers or go skydiving"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["", "Cairns Esplanade Lagoon Pool with Mantra Esplanade in the background - panoramio.jpg", "Daintree Rainforest - 2013.04 - panoramio.jpg", ""],
     highlights: ["Reef trips", "Esplanade Lagoon", "Rainforest day trips", "Adventure tours"],
     goodToKnow: [
       { icon: "🪼", title: "Stinger season", detail: "From about October to May, swim only in net enclosures, such as Palm Cove, or the free Esplanade Lagoon." },
@@ -1121,7 +1121,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A World Heritage sand island of freshwater lakes and rainforest on the dunes",
     description: "K'gari, formerly Fraser Island, is a sand island about 122 km long off Queensland's southern coast, and was inscribed as a World Heritage Site in 1992. Most of it is Great Sandy National Park. The main beach doubles as a highway for 4WDs, passing Eli Creek, the SS Maheno wreck and Indian Head, while coloured sand cliffs and more than 100 freshwater lakes lie inland. Dingoes live wild here, and visitors must keep food secured and never feed them.",
     whyVisit: ["Swim in clear freshwater lakes", "Drive the beach highway in a 4WD", "Walk rainforest growing on sand dunes", "Spot rays, turtles and dolphins from headlands"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["", "Seventy-Five Mile Beach.jpg", "", "Australia, Queensland, Fraser Island, Indian Head, south.jpg"],
     highlights: ["Freshwater lakes", "Beach driving", "Dune rainforest", "Headland wildlife"],
     goodToKnow: [
       { icon: "🎫", title: "Vehicle permit required", detail: "Every vehicle needs a permit on the windscreen, and campers outside commercial campgrounds need a camping permit. Get both before you go." },
@@ -1138,7 +1138,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Long surf beaches, rainforest hills and relaxed seaside towns north of Brisbane",
     description: "The Sunshine Coast stretches for nearly 70 km north of Brisbane, from Caloundra through Mooloolaba and Maroochydore to Coolum. Most of its draw is the white-sand beaches, many patrolled by surf life savers, with a salt-water pool at Kings Beach and kitesurfing at Golden Beach. Behind the beaches sit family attractions such as Australia's Big Pineapple, a wildlife zoo and an aquarium. It is a holiday coast for Queenslanders as much as for visitors.",
     whyVisit: ["Swim and surf patrolled beaches", "Climb a steep coastal peak", "Meet animals at zoos and aquariums", "Explore Caloundra's lighthouses and beaches"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["Mooloolaba, Queensland, 04.jpg", "", "Elephants - Australia Zoo - Beerwah Queensland Australia - Flickr - Cindy Andrie.jpg", ""],
     highlights: ["Patrolled surf beaches", "Coastal summit walk", "Wildlife and aquariums", "Caloundra coast"],
     goodToKnow: [
       { icon: "🚩", title: "Swim between the flags", detail: "Swim only between the red and yellow flags on patrolled beaches." },
@@ -1155,7 +1155,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Ancient World Heritage rainforest that meets the Great Barrier Reef at the shore",
     description: "The Daintree is a tropical rainforest in Far North Queensland, thought to be over 135 million years old and part of the Wet Tropics World Heritage Area. It is one of the few places where two World Heritage sites, the rainforest and the Great Barrier Reef, meet. Visitors cross the Daintree River by ferry to reach Cape Tribulation and its beaches, boardwalks and wildlife. The cassowary is its icon, alongside about 430 bird species.",
     whyVisit: ["Walk boardwalks through ancient rainforest", "Spot cassowaries and rare birds", "Cruise the river for crocodiles", "See rainforest meet reef beaches"],
-    whyVisitPhotos: ["", "", "", ""],
+    whyVisitPhotos: ["Rainforest Regenwald Australia (22865104000).jpg", "", "Saltwater Crocodile - 2013.04 - panoramio.jpg", ""],
     highlights: ["Ancient rainforest", "Wildlife spotting", "River cruises", "Rainforest beaches"],
     goodToKnow: [
       { icon: "⛴️", title: "Cross the river by ferry", detail: "Cape Tribulation lies north of the Daintree River, which you cross by ferry. Allow time for the crossing when planning your day." },
@@ -1648,7 +1648,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A sand island of dunes, shipwreck snorkelling and whales off Brisbane",
     description: "Moreton Island is a sand island 36 km long that lies 35 km off Brisbane, and 98% of it is national park. Visitors go for the Tangalooma Wrecks, a cluster of sunken ships that form an artificial reef, and for freshwater lakes, giant dunes and a long surf beach. Cape Moreton has the state's oldest lighthouse, and humpback whales pass offshore on their annual migration.",
     whyVisit: ["Snorkel the Tangalooma Wrecks", "Watch humpback whales pass offshore", "Sandboard down giant dunes"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Morton Island, Queensland Australia - panoramio.jpg", "", ""],
     highlights: ["Shipwreck snorkelling", "Whale watching", "Sandboarding"],
     goodToKnow: [
       { icon: "⛴️", title: "Ferries run from Brisbane", detail: "Vehicle and passenger ferries sail from the Port of Brisbane, daily in peak periods, and the resort runs passenger services from Pinkenba." },
@@ -1666,7 +1666,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A volcanic plateau of crater lakes, giant fig trees and rainforest waterfalls",
     description: "The Atherton Tablelands is a plateau behind Cairns in Far North Queensland, built by volcanic activity over millions of years. Its crater lakes, Lake Eacham and Lake Barrine, are maar volcanoes, and remnant rainforest in national parks holds twelve bird species found only in the Tablelands and nearby ranges. Waterfalls such as Millaa Millaa Falls and Millstream Falls, strangler figs like the Curtain Fig Tree and the historic mining town of Herberton make good stops for a drive around the plateau.",
     whyVisit: ["Visit volcanic crater lakes", "See waterfalls tumble in the hills", "Stand beneath strangler figs"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Reflections in the Atherton Tablelands.jpg", "Millaa Millaa Falls 4 - Atherton Tableland, Queensland, Australia.jpg", "Ficus virens 257305898.jpg"],
     highlights: ["Crater lakes", "Tableland waterfalls", "Strangler fig trees"],
     goodToKnow: [
       { icon: "🚗", title: "You need a car", detail: "Sights are spread across the plateau, which is reached from Cairns on State Route 52 or National Route 1. Yungaburra and Atherton have lodging." },
@@ -2149,7 +2149,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Rainforest waterfalls and mountain lookouts just behind the Gold Coast",
     description: "The Gold Coast Hinterland is the rural area west of the Gold Coast, made up of rainforest-covered mountain ranges, most of it national park. Walking tracks lead to waterfalls such as Coomera Falls and Morans Falls in Lamington National Park. Freeman's Lookout and Rosin's Lookout face the Numinbah Valley, and the 54 km Gold Coast Hinterland Great Walk links Lamington and Springbrook over three days.",
     whyVisit: ["Walk to rainforest waterfalls", "Take in lookouts over the coast", "Hike the Great Walk through rainforest"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Elebana Falls, Lamington National Park.jpg", "", ""],
     highlights: ["Rainforest waterfalls", "Mountain lookouts", "Long-distance walking"],
     goodToKnow: [
       { icon: "🚗", title: "A car is far easier", detail: "Public transport west of the M1 is very sparse, so a car is far easier." },
@@ -2165,7 +2165,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Volcanic peaks, rainforest parks and farm country an hour from Brisbane",
     description: "The Scenic Rim is a rural region in the foothills of the Great Dividing Range, an hour south of Brisbane and inland from the Gold Coast. It holds more than 30,000 hectares of parkland, including World Heritage listed Gondwana Rainforests parks. Peaks such as Mount Barney draw walkers, while Lake Moogerah and Spicers Gap add lookouts and water, and wineries and farms dot the countryside.",
     whyVisit: ["Climb rugged peaks like Mount Barney", "Walk rainforest tracks in World Heritage parks", "Look out from mountain gaps and lakes"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Mt Barney from Lillydale - panoramio.jpg", "", ""],
     highlights: ["Mountain climbs", "Rainforest walks", "Lakes and lookouts"],
     goodToKnow: [
       { icon: "🚗", title: "Bring a car", detail: "Public transport is very limited. The Mount Lindesay Highway is the only major road and the rest are narrow, so allow extra drive time." },
@@ -2181,7 +2181,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Volcanic peaks rising from a flat coastal plain, with walks and lookouts",
     description: "Captain Cook named these peaks in 1770, thinking they looked like glass houses as he sailed past. They are the cores of extinct volcanoes, formed 25 to 27 million years ago, rising from a flat plain north of Brisbane. Most of the range is protected as Glass House Mountains National Park, with montane heath, forest and small rainforest patches rich in threatened and endemic species. Mount Beerwah, the highest at 555 m, has been closed to climbers since 2008 because of rockfall risk.",
     whyVisit: ["Climb a volcanic peak for the view", "Photograph the peaks from lookouts", "Spot Tibrogargan's giant ape profile"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "Glasshouse Mountains - panoramio.jpg", ""],
     highlights: ["Summit views", "Lookout photography", "Mountain shapes"],
     goodToKnow: [
       { icon: "🚫", title: "Beerwah is closed", detail: "The Mount Beerwah summit route has been closed since 2008 because of rockfall, so pick another peak to climb." },
@@ -2197,7 +2197,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Waterfalls, rainforest walks and hill towns in the Blackall Range inland",
     description: "The Blackall Range rises just inland from the Sunshine Coast, with hill towns such as Maleny and Montville and a string of small national parks. Kondalilla National Park has 327 hectares of subtropical rainforest, with Kondalilla Falls dropping 90 m, and Mapleton Falls drops 120 m. The 58 km Sunshine Coast Hinterland Great Walk starts near Lake Baroon at Montville and takes four to six days. Maleny and Montville both have visitor centres, which makes the range an easy day trip from the beaches.",
     whyVisit: ["Walk to waterfalls in subtropical rainforest", "Wander the hinterland hill towns", "Hike a multi-day Great Walk"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "", "Gheerulla Falls (50431175333).jpg"],
     highlights: ["Rainforest waterfalls", "Hill town browsing", "Multi-day Great Walk"],
     goodToKnow: [
       { icon: "⛺", title: "Book Great Walk campsites", detail: "Campsites on the Hinterland Great Walk have water, toilets and platforms, and must be booked ahead." },
@@ -2213,7 +2213,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A rainforest village in the hills above Cairns, reached by train or Skyrail",
     description: "Kuranda is a small village beside Barron Gorge National Park, about 40 minutes by road from Cairns. Most visitors arrive by the Kuranda Scenic Railway, which climbs 329 m over 34 km, or by the Skyrail gondola over the rainforest canopy. In the village are its markets and wildlife attractions, including Birdworld, a butterfly sanctuary and Koala Gardens, and Barron Falls can be seen from the railway platform.",
     whyVisit: ["Ride the train or Skyrail up", "Meet koalas, birds and butterflies", "Walk the Barron Gorge tracks"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Kuranda QLD 4881, Australia - panoramio (30).jpg", "", ""],
     highlights: ["Scenic rail and gondola", "Wildlife parks", "Gorge walks"],
     goodToKnow: [
       { icon: "🚆", title: "Go up one way, back the other", detail: "Many visitors take the Scenic Railway up in the morning and the Skyrail down, or the reverse. Carriages are not air-conditioned and booking is recommended." },
@@ -2277,7 +2277,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Rum, ginger beer and sugar country, with turtle beaches and reef trips",
     description: "Bundaberg is a sugar city on the Burnett River, about 4.5 hours north of Brisbane, and the home of Bundaberg Rum and Bundaberg Ginger Beer. Its Botanic Gardens hold the Hinkler Hall of Aviation, honouring local aviator Bert Hinkler. The Hummock gives views over the city and out to sea, while Mon Repos and Bargara sit on the beaches about 10 km away. It is also known as the southern gateway to the Great Barrier Reef, with reef trips to Lady Musgrave and Lady Elliot islands.",
     whyVisit: ["Tour the rum distillery and ginger beer brewery", "Watch turtles nest at Mon Repos", "Head out to the southern Great Barrier Reef"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["", "Turtle Conservation Park, Mon Repos, Queensland, 2020, 03.jpg", "Near Lady Musgrave Island - panoramio.jpg"],
     highlights: ["Rum and ginger beer", "Turtle nesting", "Southern reef"],
     goodToKnow: [
       { icon: "🐢", title: "Turtles need a ranger", detail: "Mon Repos turtles lay from around December and hatchlings emerge to about February, always at night. You can only watch with a ranger." },
@@ -2293,7 +2293,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "A sugar town with Italian roots, close to waterfalls and Hinchinbrook Island",
     description: "Ingham is a town of about 4,500 on the Bruce Highway between Townsville and Cairns, with a strong Italian heritage from migrants who came to work the sugar cane. Its TYTO Wetlands have an observation tower and boardwalks, and the visitor centre is on Cooper Street. Wallaman Falls nearby has a 268 m main drop, the tallest single drop in Australia. The Thorsborne Trail on Hinchinbrook Island is reached by ferry from Cardwell or Lucinda.",
     whyVisit: ["See Australia's tallest single-drop waterfall", "Walk the wetland boardwalks", "Walk the Hinchinbrook Island trail"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Wallaman Falls - panoramio.jpg", "", ""],
     highlights: ["Waterfall views", "Wetland boardwalks", "Island hiking"],
     goodToKnow: [
       { icon: "🛣️", title: "Stop on the Bruce Highway", detail: "Ingham is about 75 to 80 minutes north of Townsville and three hours south of Cairns, and Brisbane to Cairns coaches stop here." },
@@ -2325,7 +2325,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "The outback town where Waltzing Matilda was first performed and dinosaurs roamed",
     description: "Winton is a small town in outback Queensland, about two hours from Longreach. It is where Waltzing Matilda was first performed in 1895, and it was the first headquarters of the company that became Qantas. The surrounding country is rich in dinosaur fossils, including Australovenator, which is named for the town. Quirky stops such as Arno's Wall and the Musical Fence add to the outback character.",
     whyVisit: ["Follow the Waltzing Matilda story", "Dig into outback dinosaur history", "Explore quirky outback attractions"],
-    whyVisitPhotos: ["", "", ""],
+    whyVisitPhotos: ["Banjo Patterson Statue at the Waltzing Matilda Centre Winton - panoramio.jpg", "Diamantinasaurus models at Australian Age of Dinosaurs.jpg", ""],
     highlights: ["Waltzing Matilda story", "Dinosaur country", "Outback oddities"],
     goodToKnow: [
       { icon: "🌡️", title: "Summer heat", detail: "Summer days often reach 40°C. Visitor season runs April to October, and tours and experiences are reduced outside it." },
