@@ -1,0 +1,88 @@
+{
+ "dest:gladstone:header": {
+  "candidates": [
+   {
+    "file": "Gladstone, QLD, Australia - panoramio.jpg",
+    "verdict": "fail",
+    "reason": "39 km away coastal rocks, under 2000 px, not the harbour city"
+   }
+  ],
+  "choice": "none: no wide Gladstone harbour/city photo among candidates (fireworks, BBQ, engraving)"
+ },
+ "dest:gladstone:why1": {
+  "candidates": [
+   {
+    "file": "Gladstone, QLD, Australia - panoramio.jpg",
+    "verdict": "fail",
+    "reason": "not a harbour view"
+   }
+  ],
+  "choice": "none: no view of the working harbour from above"
+ },
+ "dest:gladstone:why2": {
+  "candidates": [
+   {
+    "file": "Foreshore park looking North towards Facing Island, Tannum Sands, 2014.jpg",
+    "verdict": "fail",
+    "reason": "Tannum Sands foreshore, island a distant sliver; no boat/reef"
+   }
+  ],
+  "choice": "none: no boat, reef or island photo that shows the reason"
+ },
+ "spot:gladstone-2": {
+  "candidates": [
+   {
+    "file": "Beach at Tannum Sands with Facing Island in the distance, 2014.jpg",
+    "verdict": "fail",
+    "reason": "stand-in: Tannum Sands beach with island a faint sliver"
+   }
+  ],
+  "choice": "none: only Tannum Sands views with Facing Island in the distance"
+ },
+ "spot:gladstone-3": {
+  "candidates": [
+   {
+    "file": "Awoonga Dam.JPG",
+    "verdict": "pass",
+    "reason": "dam wall and lake, CC BY-SA 3.0, category Awoonga Dam"
+   }
+  ],
+  "choice": "Awoonga Dam.JPG",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  }
+ },
+ "spot:gladstone-5": {
+  "candidates": [
+   {
+    "file": "Gladstone Regional Art Gallery and Museum (Old Town Hall), 144 Goondoon Street, Gladstone, 2014.JPG",
+    "verdict": "pass",
+    "reason": "building itself, category Gladstone Regional Art Gallery and Museum, CC BY 3.0"
+   }
+  ],
+  "choice": "Gladstone Regional Art Gallery and Museum (Old Town Hall), 144 Goondoon Street, Gladstone, 2014.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:gladstone-6": {
+  "candidates": [
+   {
+    "file": "Botanic Gardens Gladstone.jpg",
+    "verdict": "pass",
+    "reason": "category Tondoon Botanic Gardens, pond and pavilion, 2021, CC BY-SA 4.0"
+   }
+  ],
+  "choice": "Botanic Gardens Gladstone.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:gladstone-7": {
+  "candidates": [
+   {
+    "file": "Little Friarbird (4766671741).jpg",
+    "verdict": "fail",
+    "reason": "a bird, not the lookout"
+   }
+  ],
+  "choice": "none: only a bird photo"
+ }
+}

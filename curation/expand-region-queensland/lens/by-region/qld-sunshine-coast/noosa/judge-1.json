@@ -1,0 +1,101 @@
+{
+ "dest:noosa:header": {
+  "candidates": [
+   {
+    "file": "Noosa - panoramio - AwOiSoAk KaOsIoWa (4).jpg",
+    "verdict": "fail",
+    "reason": "river bank with houses, not a spectacular town-in-landscape; 2006"
+   },
+   {
+    "file": "Noosa Heads, with Main Beach in the centre of the frame.jpg",
+    "verdict": "fail",
+    "reason": "aerial and aspect 2.47"
+   }
+  ],
+  "choice": "none: no wide spectacular ground-level Noosa view; others are groynes, signs, houses, aerial panoramas over 2:1",
+  "hero_crop": "n/a"
+ },
+ "dest:noosa:why1": {
+  "candidates": [
+   {
+    "file": "Surf at Noosa National park.jpg",
+    "verdict": "fail",
+    "reason": "2.2 aspect, crop shows mainly scrub and sand, weak"
+   }
+  ],
+  "choice": "none: no strong national park coast walk photo; recommend sharing the noosa-1 spot photo (Noosa head-raffi kojian-CIMG6549.JPG) if the reconciler accepts it",
+  "hero_crop": "n/a"
+ },
+ "dest:noosa:why2": {
+  "candidates": [
+   {
+    "file": "Noosa Heads SLSC building.jpg",
+    "verdict": "fail",
+    "reason": "building, not the beach"
+   }
+  ],
+  "choice": "none: in-group candidates are club buildings, signs, groynes; recommend sharing the noosa-3 spot photo (Noosa Heads Main Beach 02.2017, 11.jpg)",
+  "hero_crop": "n/a"
+ },
+ "dest:noosa:why3": {
+  "candidates": [
+   {
+    "file": "Noosa River downstream seen from Noosa Boathouse, Noosaville, Queensland.jpg",
+    "verdict": "fail",
+    "reason": "flat river view, no cruise or Everglades"
+   }
+  ],
+  "choice": "none: nothing shows a river cruise or the Everglades",
+  "hero_crop": "n/a"
+ },
+ "spot:noosa-1": {
+  "candidates": [
+   {
+    "file": "Noosa head-raffi kojian-CIMG6549.JPG",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "Wikipedia lead, headland coast and beach in Noosa NP, 1280 px, CC BY 2.5"
+   }
+  ],
+  "choice": "Noosa head-raffi kojian-CIMG6549.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:noosa-3": {
+  "candidates": [
+   {
+    "file": "Noosa Heads Main Beach 02.2017, 11.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "main beach with headland and town behind, geotagged on site, 4032 px, CC BY-SA 4.0"
+   }
+  ],
+  "choice": "Noosa Heads Main Beach 02.2017, 11.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:noosa-6": {
+  "candidates": [],
+  "choice": "none: candidates are Lake Macdonald gates, signs, houses and US/WA fire photos; no photo of Six Mile Creek Dam",
+  "hero_crop": "n/a"
+ },
+ "spot:noosa-7": {
+  "candidates": [
+   {
+    "file": "Mount Cooroora from Hill Street 2023.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": false,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "Wikipedia lead, mountain clear and central; power lines in frame, spot photo only"
+   }
+  ],
+  "choice": "Mount Cooroora from Hill Street 2023.jpg",
+  "hero_crop": "ok"
+ }
+}

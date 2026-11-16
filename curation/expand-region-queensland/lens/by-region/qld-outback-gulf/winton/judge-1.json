@@ -1,0 +1,122 @@
+{
+ "dest:winton:header": {
+  "candidates": [
+   {
+    "file": "Pterosaurs at Australian Age of Dinosaurs.jpg",
+    "verdict": "fail",
+    "reason": "two small pterosaur models in a rock face, not a town in its landscape"
+   },
+   {
+    "file": "Houses on north side of Winton - geograph.org.uk - 8094031.jpg",
+    "verdict": "fail",
+    "reason": "houses on north side of Winton, geograph, probably Winton in Cumbria (UK); wrong place"
+   },
+   {
+    "file": "Precious opal (Koroit Opal Field, Queensland, Australia) 2 (29237103553).jpg",
+    "verdict": "fail",
+    "reason": "opal specimen, not the town"
+   }
+  ],
+  "choice": "none: no wide Winton Queensland town or landscape photo; opal, UK houses, plaque, pterosaur close-up all fail",
+  "hero_crop": null
+ },
+ "dest:winton:why1": {
+  "candidates": [
+   {
+    "file": "Banjo Patterson Statue at the Waltzing Matilda Centre Winton - panoramio.jpg",
+    "verdict": "pass",
+    "reason": "Banjo Paterson statue at the Waltzing Matilda Centre, Winton; coordinates 36 m from pin, category Winton, Queensland; real 2013 colour photo, CC BY-SA 3.0, 2736 px; weak scenic value, portrait so crop needs care"
+   },
+   {
+    "file": "Blue Heeler Hotel, Kynuna.jpg",
+    "verdict": "fail",
+    "reason": "Kynuna hotel, 147 km away, archive-style slide"
+   }
+  ],
+  "choice": "Banjo Patterson Statue at the Waltzing Matilda Centre Winton - panoramio.jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.4
+  }
+ },
+ "dest:winton:why2": {
+  "candidates": [
+   {
+    "file": "Diamantinasaurus models at Australian Age of Dinosaurs.jpg",
+    "verdict": "pass",
+    "reason": "Diamantinasaurus bronze models at Australian Age of Dinosaurs near Winton (file page coords -22.48,143.17), visitors beside it, CC BY-SA 2.0, 2592 px, real 2024 photo"
+   },
+   {
+    "file": "Australian Age of Dinosaurs.jpg",
+    "verdict": "pass",
+    "reason": "coelurosaur herd at same site, alternative but subject smaller"
+   }
+  ],
+  "choice": "Diamantinasaurus models at Australian Age of Dinosaurs.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:winton:why3": {
+  "candidates": [
+   {
+    "file": "Winton Arnos Wall 7-1.jpg",
+    "verdict": "fail",
+    "reason": "Arno's Wall file is a 2100px wide thin strip panorama of junk; fails wide/crop"
+   },
+   {
+    "file": "Musical fence above Carlingheugh Bay - geograph.org.uk - 6970189.jpg",
+    "verdict": "fail",
+    "reason": "Musical fence at Carlingheugh Bay, Scotland: wrong place"
+   }
+  ],
+  "choice": "none: Arno's Wall file is a thin strip, the Musical Fence file is in Scotland; needs searcher",
+  "hero_crop": null
+ },
+ "spot:winton-3": {
+  "candidates": [
+   {
+    "file": "Winton Arnos Wall 7-1.jpg",
+    "verdict": "fail",
+    "reason": "extreme thin strip, subject unreadable at thumbnail"
+   },
+   {
+    "file": "Corfield & Fitzmaurice Store (2013) - closeup.jpg",
+    "verdict": "fail",
+    "reason": "Corfield & Fitzmaurice store, not Arno's Wall"
+   }
+  ],
+  "choice": "none: only a thin strip panorama of the wall; other candidates show other places",
+  "hero_crop": null
+ },
+ "spot:winton-4": {
+  "candidates": [
+   {
+    "file": "Musical fence above Carlingheugh Bay - geograph.org.uk - 6970189.jpg",
+    "verdict": "fail",
+    "reason": "musical fence at Carlingheugh Bay, Scotland: wrong place; check 1"
+   },
+   {
+    "file": "Roundabout in Winton - panoramio.jpg",
+    "verdict": "fail",
+    "reason": "roundabout, not the fence"
+   }
+  ],
+  "choice": "none: the only 'musical fence' file is in Scotland (wrong place); others are Winton street scenes",
+  "hero_crop": null
+ },
+ "spot:winton-5": {
+  "candidates": [
+   {
+    "file": "Bladensberg National Park.jpg",
+    "verdict": "pass",
+    "reason": "Bladensburg National Park file page: mesa edge, coords -22.568,143.128, category Bladensburg NP, WLE 2022, CC BY-SA 4.0, 4032 px; recognisable outback landscape"
+   },
+   {
+    "file": "Scrammy Gorge Winton.jpg",
+    "verdict": "fail",
+    "reason": "Scrammy Gorge lead image, licence FAL (all rights) fails"
+   }
+  ],
+  "choice": "Bladensberg National Park.jpg",
+  "hero_crop": "ok"
+ }
+}

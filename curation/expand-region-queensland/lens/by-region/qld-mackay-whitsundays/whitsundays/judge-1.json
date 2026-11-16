@@ -1,0 +1,153 @@
+{
+ "dest:whitsundays:header": {
+  "candidates": [
+   {
+    "file": "Whitehaven Beach - Northern End.jpg",
+    "verdict": "pass",
+    "reason": "Whitehaven/Hill Inlet from Hill Inlet Lookout (file page), 5456px CC BY-SA 4.0, wide scenic, real photo"
+   },
+   {
+    "file": "Whitsundays, North Queensland.jpg",
+    "verdict": "fail",
+    "reason": "960px under header minimum, caption bar"
+   },
+   {
+    "file": "06. Whiteheaven Beach.jpg",
+    "verdict": "fail",
+    "reason": "3:1 panorama"
+   },
+   {
+    "file": "Whitehaven Beach, Whitsunday Islands National Park.jpg",
+    "verdict": "fail",
+    "reason": "low tide mangroves, not spectacular"
+   }
+  ],
+  "choice": "Whitehaven Beach - Northern End.jpg",
+  "hero_crop": "ok"
+ },
+ "dest:whitsundays:why1": {
+  "candidates": [
+   {
+    "file": "North of Whitehaven Beach - panoramio (2).jpg",
+    "verdict": "pass",
+    "reason": "Visitors walking white silica sand, Whitehaven (file named for it, geo cat from sheet 16.5km), 2000px CC BY 3.0; file page has no description beyond title"
+   }
+  ],
+  "choice": "North of Whitehaven Beach - panoramio (2).jpg",
+  "hero_crop": "ok"
+ },
+ "dest:whitsundays:why2": {
+  "candidates": [
+   {
+    "file": "Snorkeling with fish.JPG",
+    "verdict": "pass",
+    "reason": "Page: snorkeling with colourful fish in Whitsunday Island, CC BY-SA 4.0, 4032px; in Diving at the Great Barrier Reef cat"
+   }
+  ],
+  "choice": "Snorkeling with fish.JPG",
+  "hero_crop": "ok"
+ },
+ "dest:whitsundays:why3": {
+  "candidates": [
+   {
+    "file": "Sailing Boat Horizon.JPG",
+    "verdict": "fail",
+    "reason": "tiny boat on open sea, location unproven"
+   },
+   {
+    "file": "Segeltour Whitsunday Islands National Park (24061837296).jpg",
+    "verdict": "fail",
+    "reason": "person on mast, not the place"
+   }
+  ],
+  "choice": "none: no photo of sailing between islands; only open-sea boat speck or sunsets"
+ },
+ "dest:whitsundays:why4": {
+  "candidates": [
+   {
+    "file": "South Molle hiking.JPG",
+    "verdict": "pass",
+    "reason": "Walking track with sign on South Molle Island hillside above water (geo 605m of spot), 2574px public domain; file page not opened (API rate-limited)"
+   }
+  ],
+  "choice": "South Molle hiking.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:whitsundays-2": {
+  "candidates": [
+   {
+    "file": "HillInlet ST 03.JPG",
+    "verdict": "pass",
+    "reason": "Wikipedia lead; file page: Hill inlet, Whitsunday Island, cat Hill Inlet; 1024px, Attribution licence (check licence acceptability)"
+   },
+   {
+    "file": "Whitehaven Beach - Northern End.jpg",
+    "verdict": "pass",
+    "reason": "same view, but kept for header"
+   }
+  ],
+  "choice": "HillInlet ST 03.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:whitsundays-10": {
+  "candidates": [
+   {
+    "file": "On South Molle Island looking at North Molle and Daydream Islands.JPG",
+    "verdict": "pass",
+    "reason": "Page: southern end of South Molle Island, PD, 2558px, view of island and bays"
+   }
+  ],
+  "choice": "On South Molle Island looking at North Molle and Daydream Islands.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:whitsundays-12": {
+  "candidates": [
+   {
+    "file": "Passage Peak.jpg",
+    "verdict": "pass",
+    "reason": "Page: Passage Peak, highest point on Hamilton Island, CC BY-SA 3.0, 3543px; peak small in frame so zoomed"
+   },
+   {
+    "file": "Passage Peak from Whittier.jpg",
+    "verdict": "fail",
+    "reason": "Alaska"
+   }
+  ],
+  "choice": "Passage Peak.jpg",
+  "hero_crop": {
+   "x": 0.68,
+   "y": 0.7,
+   "zoom": 1.8
+  }
+ },
+ "spot:whitsundays-13": {
+  "candidates": [],
+  "choice": "none: no candidates (no sheet)"
+ },
+ "spot:whitsundays-14": {
+  "candidates": [
+   {
+    "file": "Airlie Beach Lagoon.JPG",
+    "verdict": "pass",
+    "reason": "Page: Airlie Beach Lagoon, cat Airlie Beach and Lagoons of Queensland, CC BY-SA 3.0, 3008px; lagoon with palms recognisable"
+   }
+  ],
+  "choice": "Airlie Beach Lagoon.JPG",
+  "hero_crop": "ok"
+ },
+ "spot:whitsundays-15": {
+  "candidates": [
+   {
+    "file": "Mackinlaya macrosciadea 299059190.jpg",
+    "verdict": "fail",
+    "reason": "plant close-up"
+   },
+   {
+    "file": "ISS030-E-245767 - View of Earth.jpg",
+    "verdict": "fail",
+    "reason": "orbital image"
+   }
+  ],
+  "choice": "none: no photo of the lookout"
+ }
+}

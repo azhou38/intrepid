@@ -1,0 +1,101 @@
+{
+ "dest:townsville:header": {
+  "candidates": [
+   {
+    "file": "Ross River flowing through Townsville CBD.jpg",
+    "verdict": "pass",
+    "reason": "Ross Creek marina, CBD skyline and Castle Hill; 2920px CC BY-SA, wide, real photo. File page not fetched (network error); licence/size from candidates.json"
+   }
+  ],
+  "choice": "Ross River flowing through Townsville CBD.jpg",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.5
+  }
+ },
+ "dest:townsville:why1": {
+  "candidates": [
+   {
+    "file": "Passengers arriving at Magnetic Island, near Townsville, Australia 02.jpg",
+    "verdict": "fail",
+    "reason": "ferry deck crop is mostly pillar and heads, not a spectacular Magnetic Island view"
+   }
+  ],
+  "choice": "none: no ferry/island photo that is wide and shows the reason; Arcadia Lookout (n13) and aerial bays (n11,12) show the island but not the ferry",
+  "hero_crop": null
+ },
+ "dest:townsville:why2": {
+  "candidates": [],
+  "choice": "none: no photo of the SS Yongala wreck dive (only a marker buoy, a museum model, bell, sharks)",
+  "hero_crop": null
+ },
+ "dest:townsville:why3": {
+  "candidates": [],
+  "choice": "none: no Castle Hill view among its candidates; reuse the spot:townsville-2 pick if accepted",
+  "hero_crop": null
+ },
+ "spot:townsville-2": {
+  "candidates": [
+   {
+    "file": "View From Castle Hill Townsville - panoramio (4).jpg",
+    "verdict": "pass",
+    "reason": "View from Castle Hill over the city and coast, 3648px CC BY-SA 3.0, geo 56 m from pin; the view is the draw"
+   }
+  ],
+  "choice": "View From Castle Hill Townsville - panoramio (4).jpg",
+  "hero_crop": {
+   "x": 0.5,
+   "y": 0.5,
+   "zoom": 1.3
+  }
+ },
+ "spot:townsville-3": {
+  "candidates": [
+   {
+    "file": "Museum of Tropical Queensland.jpg",
+    "verdict": "pass",
+    "reason": "Museum of Tropical Queensland building, wikipedia lead, 5534px"
+   }
+  ],
+  "choice": "Museum of Tropical Queensland.jpg",
+  "hero_crop": {
+   "x": 0.45,
+   "y": 0.4
+  }
+ },
+ "spot:townsville-4": {
+  "candidates": [
+   {
+    "file": "Rock pool in the strand Townsville, Queensland.jpg",
+    "verdict": "pass",
+    "reason": "Strand rockpool and beach with palms, harbour behind; 2816px CC BY-SA 2.0"
+   }
+  ],
+  "choice": "Rock pool in the strand Townsville, Queensland.jpg",
+  "hero_crop": "ok"
+ },
+ "spot:townsville-6": {
+  "candidates": [],
+  "choice": "none: lead is a palm-frond close-up; rest are Tenerife/Hyderabad palmetums",
+  "hero_crop": null
+ },
+ "spot:townsville-8": {
+  "candidates": [],
+  "choice": "none: only a shed at Jezzine Barracks, a gun, and tree close-ups; no museum photo",
+  "hero_crop": null
+ },
+ "spot:townsville-9": {
+  "candidates": [
+   {
+    "file": "Dingo Feeding at Billabong (3610064083).jpg",
+    "verdict": "pass",
+    "reason": "Keepers feeding dingoes in Billabong Sanctuary enclosure, 1280px CC BY 2.0; geo 16 km from the pin (sanctuary is out of town, title names Billabong)"
+   }
+  ],
+  "choice": "Dingo Feeding at Billabong (3610064083).jpg",
+  "hero_crop": {
+   "x": 0.4,
+   "y": 0.5
+  }
+ }
+}

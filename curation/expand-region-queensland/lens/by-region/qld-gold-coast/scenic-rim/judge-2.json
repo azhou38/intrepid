@@ -1,0 +1,152 @@
+{
+ "dest:scenic-rim:why1": {
+  "pass": true,
+  "candidates": [
+   {
+    "file": "Mt Barney from Lillydale - panoramio.jpg",
+    "verdict": "pass",
+    "reason": "File page read: licence open, place and subject confirmed by description/categories, real photograph, subject inside crop"
+   }
+  ],
+  "reason": "File page read: licence open, place and subject confirmed by description/categories, real photograph, subject inside crop",
+  "choice": "Mt Barney from Lillydale - panoramio.jpg"
+ },
+ "dest:scenic-rim:why2": {
+  "pass": false,
+  "candidates": [
+   {
+    "file": "Elebana Falls, Lamington National Park.jpg",
+    "verdict": "fail",
+    "reason": "Same file (Elebana Falls, Lamington) is already the Gold Coast Hinterland why-visit photo; reuse across different destinations fails"
+   }
+  ],
+  "reason": "Same file (Elebana Falls, Lamington) is already the Gold Coast Hinterland why-visit photo; reuse across different destinations fails",
+  "choice": "none: second judge failed the first judge's pick: Same file (Elebana Falls, Lamington) is already the Gold Coast Hinterland why-visit photo; reuse across different destinations fails"
+ },
+ "spot:scenic-rim-1": {
+  "pass": true,
+  "candidates": [
+   {
+    "file": "At the Lower Portals, Mt. Barney NP (48126004692).jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop."
+   }
+  ],
+  "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop.",
+  "hero_crop": "ok",
+  "choice": "At the Lower Portals, Mt. Barney NP (48126004692).jpg"
+ },
+ "spot:scenic-rim-2": {
+  "pass": true,
+  "candidates": [
+   {
+    "file": "Mt Barney 0036 0044.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop."
+   }
+  ],
+  "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop.",
+  "hero_crop": "ok",
+  "choice": "Mt Barney 0036 0044.jpg"
+ },
+ "spot:scenic-rim-3": {
+  "pass": true,
+  "candidates": [
+   {
+    "file": "Mount Maroon from Maroon Dam 2.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop."
+   }
+  ],
+  "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop.",
+  "hero_crop": "ok",
+  "choice": "Mount Maroon from Maroon Dam 2.jpg"
+ },
+ "spot:scenic-rim-5": {
+  "pass": true,
+  "candidates": [
+   {
+    "file": "Moogerah Peaks National Park and Mount French cliffs from Templin, Queensland.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop."
+   }
+  ],
+  "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop.",
+  "hero_crop": "ok",
+  "choice": "Moogerah Peaks National Park and Mount French cliffs from Templin, Queensland.jpg"
+ },
+ "spot:scenic-rim-6": {
+  "pass": true,
+  "candidates": [
+   {
+    "file": "Queen Mary Falls 2.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop."
+   }
+  ],
+  "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop.",
+  "hero_crop": "ok",
+  "choice": "Queen Mary Falls 2.jpg"
+ },
+ "spot:scenic-rim-7": {
+  "pass": false,
+  "candidates": [
+   {
+    "file": "View to Mt Mitchell & Mt Cordeaux from Mt Mathieson (19968945750).jpg",
+    "right_place": true,
+    "shows_named_thing": false,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "fail",
+    "reason": "Visible \"Tatiana Gerus @ Flickr\" watermark, and the photo is a view of Mt Mitchell and Mt Cordeaux from Mt Mathieson, not Spicers Gap itself."
+   }
+  ],
+  "reason": "Visible \"Tatiana Gerus @ Flickr\" watermark, and the photo is a view of Mt Mitchell and Mt Cordeaux from Mt Mathieson, not Spicers Gap itself.",
+  "choice": "none: second judge failed the first judge's pick: Visible \"Tatiana Gerus @ Flickr\" watermark, and the photo is a view of Mt Mitchell and Mt Cordeaux from Mt Mathieson, not Spicers Gap itself."
+ },
+ "spot:scenic-rim-9": {
+  "pass": true,
+  "candidates": [
+   {
+    "file": "Lake Moogerah 02.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "spectacular_wide": true,
+    "real_photograph": true,
+    "verdict": "pass",
+    "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop."
+   }
+  ],
+  "reason": "File page read (wikitext): licence accepted, place and subject confirmed from description/categories, real colour photo, subject in crop.",
+  "hero_crop": "ok",
+  "choice": "Lake Moogerah 02.jpg"
+ },
+ "dest:scenic-rim:header": {
+  "choice": "none: the first judge's pick Mt Barney 0036 0044.jpg is not among the slot's candidates",
+  "precheck": []
+ },
+ "dest:scenic-rim:why3": {
+  "choice": "none: the first judge's pick Lake Moogerah 02.jpg is not among the slot's candidates",
+  "precheck": []
+ }
+}

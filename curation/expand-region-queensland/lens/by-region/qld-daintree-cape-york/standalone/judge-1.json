@@ -1,0 +1,45 @@
+{
+ "spot:cape-york-2": {
+  "candidates": [
+   {
+    "file": "Fruit Bat Falls - Jardine River National Park.jpg",
+    "right_place": true,
+    "shows_named_thing": true,
+    "verdict": "pass",
+    "reason": "geotag 26 m, Eliot Creek Jardine River NP, WLE winner, CC BY-SA 4.0, real wide photo"
+   },
+   {
+    "file": "Fruit Bat Falls - Jardine River National Park (cropped).jpg",
+    "verdict": "fail",
+    "reason": "7:1 strip, same scene"
+   }
+  ],
+  "choice": "Fruit Bat Falls - Jardine River National Park.jpg",
+  "hero_crop": {
+   "x": 0.52,
+   "y": 0.6
+  }
+ },
+ "spot:green-hill-fort": {
+  "candidates": [
+   {
+    "file": "Camacinia othello female wings (35059540465).jpg",
+    "verdict": "fail",
+    "reason": "dragonfly wing scan, not the place"
+   }
+  ],
+  "choice": "none: only candidate is a dragonfly wing diagram; google unresolved (401)",
+  "hero_crop": "n/a"
+ },
+ "spot:split-rock": {
+  "candidates": [
+   {
+    "file": "Split Rock Light Station.jpg",
+    "verdict": "fail",
+    "reason": "Split Rock Lighthouse, Minnesota, wrong country"
+   }
+  ],
+  "choice": "none: all candidates are Split Rock Lighthouse Minnesota or other lighthouses; google unresolved (401)",
+  "hero_crop": "n/a"
+ }
+}
